@@ -1597,7 +1597,7 @@ void KGrGame::moveLevelFile ()
 	KGrMessage::information (view, i18n("Move Level"),
 		i18n("You cannot move a level until you "
 		"have created a game and at least two levels. Try "
-		"menu item \"Create Gamee\"."));
+		"menu item \"Create Game\"."));
 	return;
     }
 
