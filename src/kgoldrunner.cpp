@@ -174,11 +174,6 @@ void KGoldrunner::setupActions()
 				game,
 				SLOT(startNextLevel()), actionCollection(),
 				"play_next");
-    (void)			new KAction
-				(i18n("&Tutorial"),
-				0,
-				game, SLOT(startTutorial()), actionCollection(),
-				"tutorial");
 
     // Save Game...
     // Save Edits... (extra copy)
