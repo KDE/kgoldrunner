@@ -2113,7 +2113,7 @@ int KGrGame::selectLevel (int action, int requestedLevel)
 	    case SL_UPD_GAME:	// Can edit info only in a USER collection.
 		KGrMessage::information (view, i18n("Edit Game Info"),
 			i18n("Sorry, you can only edit the game "
-			"information on your own games"));
+			"information on your own games."));
 		continue;			// Re-run the dialog box.
 		break;
 	    default:
