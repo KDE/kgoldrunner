@@ -1001,7 +1001,7 @@ the following special entry:</para>
 Hint</guimenuitem></menuchoice></term>
 <listitem>
 <para>If the current level has a hint, this option pops it up. The
-option is <quote>greyed out</quote> if there is no hint. The status bar
+option is <quote>grayed out</quote> if there is no hint. The status bar
 also has a section to show you whether there is a hint for the current
 level.</para>
 </listitem>
