@@ -938,9 +938,12 @@ void KGoldrunner::setKey (KBAction movement)
             return;                    		// Stay in Mouse Mode.
     }
 
-    if (! hero->started)			// Start when first movement
-	game->startPlaying();			// key is pressed ...
-    game->heroAction (movement);
+    if ( game->getLevel() != 0 )
+    {
+      if (! hero->started )			// Start when first movement
+          game->startPlaying();			// key is pressed ...
+      game->heroAction (movement);
+    }
 }
 
 /******************************************************************************/

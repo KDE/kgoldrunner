@@ -111,6 +111,8 @@ void KGrGame::startLevel (int startingAt, int requestedLevel)
     int selectedLevel = selectLevel (startingAt, requestedLevel);
     if (selectedLevel > 0) {	// If OK, start the selected game and level.
  	newGame (selectedLevel, selectedGame);
+    } else {
+      level = 0;
     }
 }
 
