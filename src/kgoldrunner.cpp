@@ -756,7 +756,7 @@ void KGoldrunner::optionsShowStatusbar()
 
 void KGoldrunner::optionsConfigureKeys()
 {
-    KKeyDialog::configureKeys(actionCollection(), "kgoldrunnerui.rc");
+    KKeyDialog::configure(actionCollection());
 }
 
 void KGoldrunner::optionsConfigureToolbars()
