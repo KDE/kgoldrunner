@@ -8,6 +8,6 @@ package-messages:
 	$(MAKE) -f admin/Makefile.common package-messages
 	$(MAKE) -C po merge
 
+####### Adjust the source code for Qt1 or Qt2 MOC compiler.  #######
 init:
-	####### Adjust the source code for Qt1 or Qt2 MOC compiler.  #######
 	cd $(top_srcdir)/kgoldrunner && ./fix_src "$(VERSION)"
