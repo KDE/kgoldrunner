@@ -27,7 +27,8 @@
 #include "kgoldrunner.moc"
 #include "kgoldrunnerwidget.h"
 
-#include <iostream.h>
+// Obsolete - #include <iostream.h>
+#include <iostream>
 #include <stdlib.h>
 
 // ICON FILES
@@ -61,7 +62,9 @@ KGrCollection::KGrCollection (Owner o, const QString & n, const QString & p,
 /**********************    KGOLDRUNNER (MAIN) CLASS    ************************/
 /******************************************************************************/
 
-#ifndef QT3_PORT_DEBUG
+#ifdef QT3
+#include <kstandarddirs.h>	// Used in KDE3-dependent "getDirectories" code.
+#else
 #include <kstddirs.h>		// Used in KDE2-dependent "getDirectories" code.
 #endif
 
@@ -242,6 +245,7 @@ KGoldrunner::KGoldrunner(QWidget *parent, const char *name, WFlags f)
 	int dw = QApplication::desktop()->width();
 	if (dw > 900) view->changeSize (+1);		// More than 800x600.
 	if (dw > 1100) view->changeSize (+1);		// More than 1024x768.
+	view->setBaseScale();
 #endif
 
 	view->show();
@@ -339,13 +343,6 @@ bool KGoldrunner::getDirectories ()
     // The directory strings are set by KDE 2 at run time and might change in
     // later releases, so use them with caution and only if something gets lost.
 
-#ifdef QT3_PORT_DEBUG
-    // Used fixed directory strings when porting to Qt 3 but testing with KDE 2.
-    // If we use KStandardDirs and KDE library, we get Qt2/Qt3 library clashes.
-    systemDataDir = "/opt/kde2/share/apps/kgoldrun/system/";
-    systemHTMLDir = "/opt/kde2/share/doc/HTML/en/kgoldrun/";
-    userDataDir   = "/home/ianw/kde_user/share/apps/kgoldrun/user/";
-#else
     KStandardDirs * dirs = new KStandardDirs();
 
     // Find the KGoldrunner Users' Guide, English version (en).
@@ -395,7 +392,6 @@ bool KGoldrunner::getDirectories ()
 	    result = FALSE;
 	}
     }
-#endif
 
     return (result);
 }
@@ -1836,11 +1832,33 @@ void KGoldrunner::setKey (KBAction movement)
 {
     if (editMode) return;
 
-    // Using keyboard control automatically disables mouse control.
+    // Using keyboard control can automatically disable mouse control.
     if (mouseMode) {
-	mouseMode = FALSE;
-	opt_menu->setItemChecked (ID_MOUSE, FALSE);
-	opt_menu->setItemChecked (ID_KEYBOARD, TRUE);
+	// Halt the game while a message is displayed.
+	modalFreeze = FALSE;
+	if (! KGrObj::frozen) {
+	    modalFreeze = TRUE;
+	    freeze();
+	}
+	switch (QMessageBox::warning (this, "Switch to Keyboard Mode",
+    "You have pressed a key that can be used to move the Hero.  Do you want\n"
+    "to switch automatically to Keyboard Mode?  Mouse Mode is easier to use\n"
+    "in the long term --- like riding a bike rather than walking !",
+    "Switch to &Keyboard Mode", "Stay in &Mouse Mode", "", 0, 1))
+	{
+	case 0:	mouseMode = FALSE;
+		opt_menu->setItemChecked (ID_MOUSE, FALSE);
+		opt_menu->setItemChecked (ID_KEYBOARD, TRUE);
+		break;
+	case 1:	break;
+	}
+	// Unfreeze the game, but only if it was previously unfrozen.
+	if (modalFreeze) {
+	    unfreeze();
+	    modalFreeze = FALSE;
+	}
+	if (mouseMode)
+	    return;			// Stay in Mouse Mode.
     }
 
     switch (movement) {

@@ -36,7 +36,8 @@
 #include <config.h>
 #endif
 
-#include <iostream.h>
+// Obsolete - #include <iostream.h>
+#include <iostream>
 #include <ctype.h>
 
 #include <qapp.h>
