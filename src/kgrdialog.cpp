@@ -125,9 +125,10 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     QHBox * buttons = new QHBox (this);
     mainLayout->addWidget (buttons);
     buttons->setSpacing (spacing);
-    HELP      = new KPushButton (KStdGuiItem::help(), buttons);
-    OK        = new KPushButton (KStdGuiItem::ok(), buttons);
-    CANCEL    = new KPushButton (KStdGuiItem::cancel(), buttons);
+    // Buttons are for Qt-only portability.  NOT COMPILED in KDE environment.
+    HELP      = new QPushButton (i18n("Help"), buttons);
+    OK        = new QPushButton (i18n("&OK"), buttons);
+    CANCEL    = new QPushButton (i18n("&Cancel"), buttons);
 
     QPoint p  = parent->mapToGlobal (QPoint (0,0));
 
@@ -529,8 +530,9 @@ KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
     QHBox * buttons = new QHBox (dad);
     mainLayout->addWidget (buttons);
     buttons->setSpacing (spacing);
-    QPushButton *	OK = new KPushButton (KStdGuiItem::ok(), buttons);
-    QPushButton *	CANCEL = new KPushButton (KStdGuiItem::cancel(), buttons);
+    // Buttons are for Qt-only portability.  NOT COMPILED in KDE environment.
+    QPushButton *	OK = new QPushButton (i18n("&OK"), buttons);
+    QPushButton *	CANCEL = new QPushButton (i18n("&Cancel"), buttons);
 
     dad->		setCaption (i18n("Edit Name & Hint"));
 #endif
@@ -613,7 +615,7 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
     ecGrp    = new QButtonGroup (1, QButtonGroup::Horizontal, 0, dad);
     mainLayout->addWidget (ecGrp);
     ecTradB  = new QRadioButton (i18n("Traditional rules"), ecGrp);
-    ecKGrB   = new QRadioButton ("KGoldrunner rules", ecGrp);
+    ecKGrB   = new QRadioButton (i18n("KGoldrunner rules"), ecGrp);
 
     nLevL    = new QLabel (i18n( "0 levels" ), dad);
     mainLayout->addWidget (nLevL);
@@ -634,8 +636,9 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
     QHBox * buttons = new QHBox (dad);
     mainLayout->addWidget (buttons);
     buttons->setSpacing (spacing);
-    OK       = new KPushButton (KStdGuiItem::ok(), buttons);
-    CANCEL   = new QPushButton (KStdGuiItem::cancel(), buttons);
+    // Buttons are for Qt-only portability.  NOT COMPILED in KDE environment.
+    OK       = new QPushButton (i18n("&OK"), buttons);
+    CANCEL   = new QPushButton (i18n("&Cancel"), buttons);
 
     QPoint p = parent->mapToGlobal (QPoint (0,0));
 
@@ -792,8 +795,9 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
 #ifdef KGR_PORTABLE
     QHBox *		buttons  = new QHBox (dad);
     buttons->		setSpacing (spacing);
-    QPushButton *	OK       = new KPushButton (KStdGuiItem::ok(), buttons);
-    QPushButton *	CANCEL   = new KPushButton (KStdGuiItem::cancel(), buttons);
+    // Buttons are for Qt-only portability.  NOT COMPILED in KDE environment.
+    QPushButton *	OK       = new QPushButton (i18n("&OK"), buttons);
+    QPushButton *	CANCEL   = new QPushButton (i18n("&Cancel"), buttons);
     mainLayout->	addWidget (buttons);
 
     dad->		setCaption (i18n("Select Saved Game"));
@@ -932,7 +936,8 @@ void KGrMessage::wrapped (QWidget * parent, QString title, QString contents)
 #endif
     mainLayout->addWidget (mle);
 
-    QPushButton *	OK = new KPushButton (KStdGuiItem::ok(), mm);
+    // Button is for Qt-only portability.  NOT COMPILED in KDE environment.
+    QPushButton *	OK = new QPushButton (i18n("&OK"), mm);
     mainLayout->addWidget (OK, Qt::AlignHCenter);
 
     mm->		setCaption (title);
