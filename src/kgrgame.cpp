@@ -26,6 +26,8 @@
 #include <stdlib.h>
 #include <ctype.h>
 
+#include <kglobalsettings.h>
+
 /******************************************************************************/
 /***********************    KGOLDRUNNER GAME CLASS    *************************/
 /******************************************************************************/
@@ -1124,7 +1126,7 @@ void KGrGame::showHighScores()
     QLabel *		hsColHeader  = new QLabel (
 				i18n("    Name                          "
 				"Level  Score       Date"), hs);
-    QFont		f ("courier", 12);
+    QFont		f = KGlobalSettings::fixedFont();
     f.			setFixedPitch (TRUE);
     f.			setBold (TRUE);
     hsColHeader->	setFont (f);

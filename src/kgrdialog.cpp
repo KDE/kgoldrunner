@@ -18,6 +18,8 @@
 #include "kgrgame.h"
 #include "kgrdialog.h"
 
+#include <kglobalsettings.h>
+
 /******************************************************************************/
 /*****************    DIALOG BOX TO SELECT A GAME AND LEVEL   *****************/
 /******************************************************************************/
@@ -757,7 +759,7 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
 
 			lgList   = new QListBox (dad);
 
-    QFont		f ("courier", 12);
+    QFont		f = KGlobalSettings::fixedFont();
 			f.setFixedPitch (TRUE);
     lgList->		setFont (f);
 			f.setBold (TRUE);
