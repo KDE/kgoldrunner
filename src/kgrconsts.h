@@ -10,12 +10,6 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
-// $Log$
-// $OldLog: kgrobj.h,v $
-// Revision 1.4  2003/07/08 13:24:34  ianw
-// Converted to KDE 3.1.1 and Qt 3.1.1
-//
-
 #ifndef KGRCONSTS_H
 #define KGRCONSTS_H
 

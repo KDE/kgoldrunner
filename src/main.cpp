@@ -12,7 +12,7 @@
 #include "kgoldrunner.h"
 
 static const char description[] =
-    I18N_NOOP("<qt>KGoldrunner is a game of action and puzzle solving.  Run through the maze, dodge your enemies, pick up all the gold, then climb up to the next level ...</qt>");
+    I18N_NOOP("<qt>KGoldrunner is a game of action and puzzle solving. Run through the maze, dodge your enemies, pick up all the gold, then climb up to the next level.</qt>");
 
 static const char version[] = "2.0";
 

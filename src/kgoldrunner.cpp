@@ -201,12 +201,12 @@ void KGoldrunner::setupActions()
 				highscores (
 				game, SLOT(showHighScores()), actionCollection());
     hintAction =		new KAction (
-				i18n("&Get a Hint"), "ktip",
+				i18n("&Get Hint"), "ktip",
 				0,
 				game, SLOT(showHint()), actionCollection(),
 				"get_hint");
     killHero =			new KAction (
-				i18n("&Kill the Hero"),
+				i18n("&Kill Hero"),
 				Key_Q,
 				game, SLOT(herosDead()), actionCollection(),
 				"kill_hero");
@@ -228,7 +228,7 @@ void KGoldrunner::setupActions()
     // --------------------------
 
     (void)			new KAction (
-				i18n("&Create a Level"),
+				i18n("&Create Level"),
 				0,
 				game, SLOT(createLevel()), actionCollection(),
 				"create");
@@ -272,7 +272,7 @@ void KGoldrunner::setupActions()
     // --------------------------
 
     (void)			new KAction (
-				i18n("Create a Game"),
+				i18n("Create Game..."),
 				0,
 				this, SLOT(createGame()), actionCollection(),
 				"create_game");
@@ -438,19 +438,19 @@ void KGoldrunner::setupActions()
 
     // Two-handed KB controls and alternate one-handed controls for the hero.
 
-    (void)	new KAction (i18n("Move up"), Key_Up,
+    (void)	new KAction (i18n("Move Up"), Key_Up,
 		this, SLOT(goUp()), actionCollection(), "move_up");
-    (void)	new KAction (i18n("Move right"), Key_Right,
+    (void)	new KAction (i18n("Move Right"), Key_Right,
 		this, SLOT(goR()), actionCollection(), "move_right");
-    (void)	new KAction (i18n("Move down"), Key_Down,
+    (void)	new KAction (i18n("Move Down"), Key_Down,
 		this, SLOT(goDown()), actionCollection(), "move_down");
-    (void)	new KAction (i18n("Move left"), Key_Left,
+    (void)	new KAction (i18n("Move Left"), Key_Left,
 		this, SLOT(goL()), actionCollection(), "move_left");
     (void)	new KAction (i18n("Stop"), Key_Space,
 		this, SLOT(stop()), actionCollection(), "stop");
-    (void)	new KAction (i18n("Dig right"), Key_C,
+    (void)	new KAction (i18n("Dig Right"), Key_C,
 		this, SLOT(digR()), actionCollection(), "dig_right");
-    (void)	new KAction (i18n("Dig left"), Key_Z,
+    (void)	new KAction (i18n("Dig Left"), Key_Z,
 		this, SLOT(digL()), actionCollection(), "dig_left");
 
     // Alternate one-handed controls.  Set up in "kgoldrunnerui.rc".
@@ -583,7 +583,7 @@ void KGoldrunner::adjustHintAction (bool hintAvailable)
     hintAction->setEnabled (hintAvailable);
 
     if (hintAvailable) {
-	statusBar()->changeItem (i18n("   Has HINT   "), ID_HINTAVL);
+	statusBar()->changeItem (i18n("   Has hint   "), ID_HINTAVL);
     }
     else {
 	statusBar()->changeItem (i18n("   No hint   "), ID_HINTAVL);
@@ -843,8 +843,7 @@ bool KGoldrunner::getDirectories()
     if (systemHTMLDir.length() <= 0) {
 	KGrMessage::information (this, i18n("Get Directories"),
 	i18n("Cannot find documentation sub-directory 'en/%1/' "
-	"in area '%2' of the KDE directories ($KDEDIRS). "
-	"Please contact your System Administrator.")
+	"in area '%2' of the KDE directories ($KDEDIRS).")
 	.arg(myDir).arg(dirs->kde_default ("html")));
 	// result = FALSE;		// Don't abort if the doc is missing.
     }
@@ -855,9 +854,8 @@ bool KGoldrunner::getDirectories()
     systemDataDir = dirs->findResourceDir ("data", myDir + "/system/");
     if (systemDataDir.length() <= 0) {
 	KGrMessage::information (this, i18n("Get Directories"),
-	i18n("Cannot find System Games sub-directory '%1/system/' "
-	"in area '%2' of the KDE directories ($KDEDIRS). "
-	"Please contact your System Administrator.")
+	i18n("Cannot find system games sub-directory '%1/system/' "
+	"in area '%2' of the KDE directories ($KDEDIRS).")
 	.arg(myDir).arg(dirs->kde_default ("data")));
 	result = FALSE;			// ABORT if the games data is missing.
     }
@@ -869,9 +867,8 @@ bool KGoldrunner::getDirectories()
     userDataDir   = dirs->saveLocation ("data", myDir + "/user/", create);
     if (userDataDir.length() <= 0) {
 	KGrMessage::information (this, i18n("Get Directories"),
-	i18n("Cannot find or create User Games sub-directory '%1/user/' "
-	"in area '%2' of the KDE user area ($KDEHOME). "
-	"Please contact your System Administrator.")
+	i18n("Cannot find or create user games sub-directory '%1/user/' "
+	"in area '%2' of the KDE user area ($KDEHOME).")
 	.arg(myDir).arg(dirs->kde_default ("data")));
 	// result = FALSE;		// Don't abort if user area is missing.
     }
@@ -880,8 +877,7 @@ bool KGoldrunner::getDirectories()
 	if (! create) {
 	    KGrMessage::information (this, i18n("Get Directories"),
 	    i18n("Cannot find or create 'levels/' directory in "
-	    "sub-directory '%1/user/' in the KDE user area ($KDEHOME). "
-	    "Please contact your System Administrator.").arg(myDir));
+	    "sub-directory '%1/user/' in the KDE user area ($KDEHOME).").arg(myDir));
 	    // result = FALSE;		// Don't abort if user area is missing.
 	}
     }
@@ -911,9 +907,9 @@ void KGoldrunner::setKey (KBAction movement)
 
         switch (KGrMessage::warning (this, i18n("Switch to Keyboard Mode"),
 		i18n("You have pressed a key that can be used to move the "
-		"Hero.  Do you want to switch automatically to keyboard "
-		"control?  Mouse control is easier to use in the long term "
-		"--- like riding a bike rather than walking !"),
+		"Hero. Do you want to switch automatically to keyboard "
+		"control? Mouse control is easier to use in the long term "
+		"- like riding a bike rather than walking!"),
 		i18n("Switch to &Keyboard Mode"), i18n("Stay in &Mouse Mode")))
         {
         case 0: game->setMouseMode (FALSE);	// Set internal mouse mode OFF.
@@ -996,17 +992,17 @@ void KGoldrunner::makeEditToolbar()
     editToolbar->insertSeparator();
 
     editToolbar->insertButton ("filenew",  0,           SIGNAL(clicked()), game,
-			SLOT(createLevel()),  TRUE,  i18n("&Create a Level")); 
+			SLOT(createLevel()),  TRUE,  i18n("&Create a Level"));
     editToolbar->insertButton ("fileopen", 1,           SIGNAL(clicked()), game,
 			SLOT(updateLevel()),  TRUE,  i18n("&Edit Any Level..."));
     editToolbar->insertButton ("filesave", 2,           SIGNAL(clicked()), game,
-			SLOT(saveLevelFile()),TRUE,  i18n("&Save Edits...")); 
+			SLOT(saveLevelFile()),TRUE,  i18n("&Save Edits..."));
 
     editToolbar->insertSeparator();
     editToolbar->insertSeparator();
 
     editToolbar->insertButton ("ktip",     3,           SIGNAL(clicked()), game,
-		SLOT(editNameAndHint()),TRUE,i18n("Edit Name/Hint")); 
+		SLOT(editNameAndHint()),TRUE,i18n("Edit Name/Hint"));
 
     editToolbar->insertSeparator();
     editToolbar->insertSeparator();

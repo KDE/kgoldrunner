@@ -365,8 +365,8 @@ void KGrGame::startTutorial()
     }
     else {
 	KGrMessage::information (view, i18n("Start Tutorial"),
-	    i18n("Cannot find the Tutorial game (file-prefix %1) in "
-	    "the %2 files.  Please contact your System Administrator.")
+	    i18n("Cannot find the tutorial game (file-prefix %1) in "
+	    "the %2 files. Please contact your system administrator.")
 	    .arg("'tute'").arg("'games.dat'"));
     }
 }
@@ -482,9 +482,9 @@ bool KGrGame::openLevelFile (int levelNo, QFile & openlevel)
 
   if (! openlevel.exists()) {
       KGrMessage::information (view, i18n("Load Level"),
-	    i18n("Cannot find file '%1'.  Please contact your "
-	    "System Administrator and make sure '%2' has been "
-	    "run in the '%3' directory")
+	    i18n("Cannot find file '%1'. Please contact your "
+	    "system administrator and make sure '%2' has been "
+	    "run in the '%3' directory.")
 	    .arg(filePath).arg("tar xf levels.tar").arg(systemDataDir.myStr()));
       return (FALSE);
   }
@@ -492,8 +492,8 @@ bool KGrGame::openLevelFile (int levelNo, QFile & openlevel)
   // öffne Level zum lesen
   if (! openlevel.open (IO_ReadOnly)) {
       KGrMessage::information (view, i18n("Load Level"),
-	    i18n("Cannot open file '%1' for read-only.  Please "
-	    "contact your System Administrator.").arg(filePath));
+	    i18n("Cannot open file '%1' for read-only. Please "
+	    "contact your system administrator.").arg(filePath));
       return (FALSE);
   }
 
@@ -737,7 +737,7 @@ void KGrGame::heroAction (KBAction movement)
 void KGrGame::saveGame()		// Save game ID, score and level.
 {
     if (editMode) {myMessage (view, i18n("Save Game"),
-	i18n("Sorry, you cannot save your game play while you are editing.  "
+	i18n("Sorry, you cannot save your game play while you are editing. "
 	"Please try menu item %1.").arg("\"" + i18n("&Save Edits...") + "\""));
 	return;
     }
@@ -768,8 +768,8 @@ void KGrGame::saveGame()		// Save game ID, score and level.
 
     if (! file2.open (IO_WriteOnly)) {
 	KGrMessage::information (view, i18n("Save Game"),
-		i18n("Cannot open file '%1' for output.  Please "
-		"contact your System Administrator.")
+		i18n("Cannot open file '%1' for output. Please "
+		"contact your system administrator.")
 		.arg(userDataDir + "savegame.tmp"));
 	return;
     }
@@ -779,8 +779,8 @@ void KGrGame::saveGame()		// Save game ID, score and level.
     if (file1.exists()) {
 	if (! file1.open (IO_ReadOnly)) {
 	    KGrMessage::information (view, i18n("Save Game"),
-		i18n("Cannot open file '%1' for read-only.  Please "
-		"contact your System Administrator.")
+		i18n("Cannot open file '%1' for read-only. Please "
+		"contact your system administrator.")
 		.arg(userDataDir + "savegame.dat"));
 	    return;
 	}
@@ -818,8 +818,8 @@ void KGrGame::loadGame()		// Re-load game, score and level.
 
     if (! savedGames.open (IO_ReadOnly)) {
 	KGrMessage::information (view, i18n("Load Game"),
-	    i18n("Cannot open file '%1' for read-only.  Please "
-	    "contact your System Administrator.")
+	    i18n("Cannot open file '%1' for read-only. Please "
+	    "contact your system administrator.")
 	    .arg(userDataDir + "savegame.dat"));
 	return;
     }
@@ -872,7 +872,7 @@ void KGrGame::loadGame()		// Re-load game, score and level.
 	else {
 	    KGrMessage::information (view, i18n("Load Game"),
 		i18n("Cannot find the game with prefix '%1'. "
-		"Please contact your System Administrator.").arg(pr));
+		"Please contact your system administrator.").arg(pr));
 	}
     }
 
@@ -920,8 +920,8 @@ void KGrGame::checkHighScore()
 	if (! high1.open (IO_ReadOnly)) {
 	    QString high1_name = high1.name();
 	    KGrMessage::information (view, i18n("Check for High Score"),
-		i18n("Cannot open file '%1' for read-only.  Please "
-		"contact your System Administrator.").arg(high1_name));
+		i18n("Cannot open file '%1' for read-only. Please "
+		"contact your system administrator.").arg(high1_name));
 	    return;
 	}
 
@@ -960,8 +960,8 @@ void KGrGame::checkHighScore()
 
     if (! high2.open (IO_WriteOnly)) {
 	KGrMessage::information (view, i18n("Check for High Score"),
-		i18n("Cannot open file '%1' for output.  Please "
-		"contact your System Administrator.")
+		i18n("Cannot open file '%1' for output. Please "
+		"contact your system administrator.")
 		.arg(userDataDir + "hi_" + collection->prefix + ".tmp"));
 	return;
     }
@@ -987,7 +987,7 @@ void KGrGame::checkHighScore()
     mainLayout->	addWidget (hsnUser);
     mainLayout->	addWidget (OK);
 
-    hsn->		setCaption (i18n("Save High Score") + " - KGoldrunner");
+    hsn->		setCaption (i18n("Save High Score"));
 
     QPoint		p = view->mapToGlobal (QPoint (0,0));
     hsn->		move (p.x() + 50, p.y() + 50);
@@ -1109,8 +1109,7 @@ void KGrGame::showHighScores()
     if (! high1.open (IO_ReadOnly)) {
 	QString high1_name = high1.name();
 	KGrMessage::information (view, i18n("Show High Scores"),
-	    i18n("Cannot open file '%1' for read-only.  Please "
-	    "contact your System Administrator.").arg(high1_name));
+	    i18n("Cannot open file '%1' for read-only.").arg(high1_name));
 	return;
     }
 
@@ -1122,11 +1121,9 @@ void KGrGame::showHighScores()
     QVBoxLayout *	mainLayout = new QVBoxLayout (hs, margin, spacing);
 
     QLabel *		hsHeader = new QLabel (QString (
-					"<center><h2>%1</h2></center><br>"
-					"<center><h3>%2</h3></center>")
-					.arg(i18n("KGoldrunner Hall of Fame"))
-					.arg("\"" + collection->name + "\"" +
-						i18n("Game")),
+					"<center><h2>KGoldrunner Hall of Fame</h2></center><br>"
+					"<center><h3>\"%1\" Game</h3></center>")
+					.arg(collection->name),
 			hs);
     QLabel *		hsColHeader  = new QLabel (
 				i18n("    Name                          "
@@ -1140,12 +1137,12 @@ void KGrGame::showHighScores()
 
     QHBox *		buttons = new QHBox (hs);
     buttons->		setSpacing (spacing);
-    QPushButton *	OK = new QPushButton (i18n("Close"), buttons);
+    QPushButton *	OK = new QPushButton (i18n("&Close"), buttons);
 
     mainLayout->	addWidget (hsHeader);
     mainLayout->	addWidget (hsColHeader);
 
-    hs->		setCaption (i18n("High Scores") + " - KGoldrunner");
+    hs->		setCaption (i18n("High Scores"));
 
     OK->		setAccel (Key_Return);
 
@@ -1323,8 +1320,7 @@ void KGrGame::createLevel()
 	KGrMessage::information (view, i18n("Create Level"),
 		i18n("You cannot create and save a level "
 		"until you have created a game to hold "
-		"it.  Try menu item %1.")
-		.arg("\"" + i18n("Create a Game") + "\""));
+		"it. Try menu item \"Create Game\"."));
 	return;
     }
 
@@ -1372,8 +1368,7 @@ void KGrGame::updateLevel()
     if (! ownerOK (USER)) {
 	KGrMessage::information (view, i18n("Edit Level"),
 		i18n("You cannot edit and save a level until you "
-		"have created a game and a level.  Try menu item %1.")
-		.arg("\"" + i18n("Create a Game") + "\""));
+		"have created a game and a level. Try menu item \"Create Game\"."));
 	return;
     }
 
@@ -1384,10 +1379,10 @@ void KGrGame::updateLevel()
 
     if (owner == SYSTEM) {
 	KGrMessage::information (view, i18n("Edit Level"),
-	    i18n("It is OK to edit a System level, but you MUST save "
-	    "the level in one of your own games.  You're not just "
+	    i18n("It is OK to edit a system level, but you MUST save "
+	    "the level in one of your own games. You're not just "
 	    "taking a peek at the hidden ladders "
-	    "and fall-through bricks, are you? ... :-)"));
+	    "and fall-through bricks, are you? :-)"));
     }
 
     loadEditLevel (lev);
@@ -1537,8 +1532,7 @@ bool KGrGame::saveLevelFile()
     // Open the output file.
     if (! levelFile.open (IO_WriteOnly)) {
 	KGrMessage::information (view, i18n("Save Level"),
-		i18n("Cannot open file '%1' for output.  Please "
-		"contact your System Administrator.").arg(filePath));
+		i18n("Cannot open file '%1' for output.").arg(filePath));
 	return (FALSE);
     }
 
@@ -1589,7 +1583,7 @@ void KGrGame::moveLevelFile ()
 {
     if (level <= 0) {
 	KGrMessage::information (view, i18n("Move Level"),
-		i18n("You must first load a level to be moved.  Use "
+		i18n("You must first load a level to be moved. Use "
 		"the %1 or %2 menu.")
 		.arg("\"" + i18n("Game") + "\"")
 		.arg("\"" + i18n("Editor") + "\""));
@@ -1606,15 +1600,14 @@ void KGrGame::moveLevelFile ()
     if (! ownerOK (USER)) {
 	KGrMessage::information (view, i18n("Move Level"),
 		i18n("You cannot move a level until you "
-		"have created a game and at least two levels.  Try "
-		"menu item %1.")
-		.arg("\"" + i18n("Create a Game") + "\""));
+		"have created a game and at least two levels. Try "
+		"menu item \"Create Gamee\"."));
 	return;
     }
 
     if (collections.at(fromC)->owner != USER) {
 	KGrMessage::information (view, i18n("Move Level"),
-		i18n("Sorry, you cannot move a System level."));
+		i18n("Sorry, you cannot move a system level."));
 	return;
     }
 
@@ -1692,9 +1685,8 @@ void KGrGame::deleteLevelFile ()
     if (! ownerOK (USER)) {
 	KGrMessage::information (view, i18n("Delete Level"),
 		i18n("You cannot delete a level until you "
-		"have created a game and a level.  Try "
-		"menu item %1.")
-		.arg("\"" + i18n("Create a Game") + "\""));
+		"have created a game and a level. Try "
+		"menu item \"Create Game\"."));
 	return;
     }
 
@@ -1731,8 +1723,7 @@ void KGrGame::deleteLevelFile ()
     }
     else {
 	KGrMessage::information (view, i18n("Delete Level"),
-		i18n("Cannot find file '%1' to be deleted.  Please "
-		"contact your System Administrator.").arg(filePath));
+		i18n("Cannot find file '%1' to be deleted.").arg(filePath));
 	return;
     }
 
@@ -1884,9 +1875,9 @@ bool KGrGame::saveOK (bool exiting)
 	    if ((shouldSave) || (editObjArray[i][j] != lastSaveArray[i][j])) {
 		// If shouldSave == TRUE, level name or hint was edited.
 		switch (KGrMessage::warning (view, i18n("Editor"),
-			i18n("You have not saved your work.  Do "
+			i18n("You have not saved your work. Do "
 			"you want to save it now?"),
-			i18n("&Save"), i18n("&DON'T Save"), option2)) {
+			i18n("&Save"), i18n("&Don't Save"), option2)) {
 		case 0: result = saveLevelFile(); break;// Save and continue.
 		case 1: shouldSave = FALSE; break;	// Continue: don't save.
 		case 2: result = FALSE; break;		// Go back to editing.
@@ -2012,8 +2003,7 @@ bool KGrGame::reNumberLevels (int cIndex, int first, int last, int inc)
 	file2 = getFilePath (USER, collections.at(cIndex), i - step);
 	if (! dir.rename (file1, file2, TRUE)) {	// Allow absolute paths.
 	    KGrMessage::information (view, i18n("Save Level"),
-		i18n("Cannot rename file '%1' to '%2'.  Please "
-		"contact your System Administrator.")
+		i18n("Cannot rename file '%1' to '%2'.")
 		.arg(file1).arg(file2));
 	    return (FALSE);
 	}
@@ -2318,10 +2308,9 @@ void KGrGame::mapCollections()
 	if (! d.exists()) {
 	    // There is no "levels" sub-directory: OK if game has no levels yet.
 	    if (colln->nLevels > 0) {
-		KGrMessage::information (view, i18n("Check Games and Levels"),
-			i18n("There is NO directory '%1' to hold levels for"
-			" the '%2' game.  Please contact your "
-			"System Administrator and make sure '%3' "
+		KGrMessage::information (view, i18n("Check Games & Levels"),
+			i18n("There is no directory '%1' to hold levels for"
+			" the '%2' game. Please make sure '%3' "
 			"has been run in the '%4' directory.")
 			.arg(d_path)
 			.arg(colln->name)
@@ -2337,9 +2326,8 @@ void KGrGame::mapCollections()
 	QFileInfo * file;
 
 	if ((files->count() <= 0) && (colln->nLevels > 0)) {
-	    KGrMessage::information (view, i18n("Check Games and Levels"),
-		i18n("There are NO files '%1/%2???.grl' for the %3 "
-		"game.  Please contact your System Administrator.")
+	    KGrMessage::information (view, i18n("Check Games & Levels"),
+		i18n("There are no files '%1/%2???.grl' for the %3 game.")
 		.arg(d_path)
 		.arg(colln->prefix)
 		.arg("\"" + colln->name + "\""));
@@ -2362,10 +2350,9 @@ void KGrGame::mapCollections()
 
 		if (lev > colln->nLevels) {
 		    KGrMessage::information (view,
-			i18n("Check Games and Levels"),
+			i18n("Check Games & Levels"),
 			i18n("File '%1' is beyond the highest level for "
-			"the %2 game and cannot be played.  Please contact "
-			"your System Administrator.")
+			"the %2 game and cannot be played.")
 			.arg(fileName1)
 			.arg("\"" + colln->name + "\""));
 		    break;
@@ -2376,19 +2363,17 @@ void KGrGame::mapCollections()
 		}
 		else if (fileName1.myStr() < fileName2.myStr()) {
 		    KGrMessage::information (view,
-			i18n("Check Games and Levels"),
+			i18n("Check Games & Levels"),
 			i18n("File '%1' is before the lowest level for "
-			"the %2 game and cannot be played.  Please contact "
-			"your System Administrator.")
+			"the %2 game and cannot be played.")
 			.arg(fileName1)
 			.arg("\"" + colln->name + "\""));
 		    break;
 		}
 		else {
 		    KGrMessage::information (view,
-			i18n("Check Games and Levels"),
-			i18n("Cannot find file '%1' for the %2 game.  Please "
-			"contact your System Administrator.")
+			i18n("Check Games & Levels"),
+			i18n("Cannot find file '%1' for the %2 game.")
 			.arg(fileName2)
 			.arg("\"" + colln->name + "\""));
 		    lev++;
@@ -2411,8 +2396,7 @@ bool KGrGame::loadCollections (Owner o)
 	// If the user has not yet created a collection, don't worry.
 	if (o == SYSTEM) {
 	    KGrMessage::information (view, i18n("Load Game Info"),
-		i18n("Cannot find Game Info file '%1'.  Please "
-		"contact your System Administrator.")
+		i18n("Cannot find game info file '%1'.")
 		.arg(filePath));
 	}
 	return (FALSE);
@@ -2420,8 +2404,7 @@ bool KGrGame::loadCollections (Owner o)
 
     if (! c.open (IO_ReadOnly)) {
 	KGrMessage::information (view, i18n("Load Game Info"),
-	    i18n("Cannot open file '%1' for read-only.  Please "
-	    "contact your System Administrator.").arg(filePath));
+	    i18n("Cannot open file '%1' for read-only.").arg(filePath));
 	return (FALSE);
     }
 
@@ -2467,8 +2450,7 @@ bool KGrGame::loadCollections (Owner o)
 	    else if (ch >= 0) {
 		// Not EOF: it's an empty line or out-of-context "about" line.
 		KGrMessage::information (view, i18n("Load Game Info"),
-		    i18n("Format error in Game Info file '%1'.  Please "
-		    "contact your System Administrator.")
+		    i18n("Format error in game info file '%1'.")
 		    .arg(filePath));
 		c.close();
 		return (FALSE);
@@ -2487,7 +2469,7 @@ bool KGrGame::saveCollections (Owner o)
 
     if (o != USER) {
 	KGrMessage::information (view, i18n("Save Game Info"),
-	    i18n("You can only modify USER games."));
+	    i18n("You can only modify user games."));
 	return (FALSE);
     }
 
@@ -2498,8 +2480,7 @@ bool KGrGame::saveCollections (Owner o)
     // Open the output file.
     if (! c.open (IO_WriteOnly)) {
 	KGrMessage::information (view, i18n("Save Game Info"),
-		i18n("Cannot open file '%1' for output.  Please "
-		"contact your System Administrator.").arg(filePath));
+		i18n("Cannot open file '%1' for output.").arg(filePath));
 	return (FALSE);
     }
 

@@ -15,15 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-// $Log$
-// Revision 1.1  2003/08/14 07:11:08  ianw
-// KGoldrunner 2.0 for KDE 3 (KDE application)
-//
-// $OldLog: kgoldrunnerwidget.cpp,v $
-// Revision 1.4  2003/07/08 13:24:34  ianw
-// Converted to KDE 3.1.1 and Qt 3.1.1
-//
-
 #ifdef KGR_PORTABLE
 // If compiling for portability, redefine KDE's i18n.
 #define i18n tr
@@ -115,14 +106,14 @@ bool KGrCanvas::changeSize (int d)
     if ((d < 0) && (scaleStep <= STEP)) {
 	// Note: Smaller scales lose detail (e.g. the joints in brickwork).
 	KGrMessage::information (this, i18n("Change Size"),
-	i18n("Sorry, you cannot make the playing area any smaller."));
+	i18n("Sorry, you cannot make the play area any smaller."));
 	return FALSE;
     }
 
     if ((d >= 0) && (scaleStep >= 2 * STEP)) {
 	// Note: Larger scales go off the edge of the monitor.
 	KGrMessage::information (this, i18n("Change Size"),
-	i18n("Sorry, you cannot make the playing area any larger."));
+	i18n("Sorry, you cannot make the play area any larger."));
 	return FALSE;
     }
 

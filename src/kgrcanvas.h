@@ -15,15 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-// $Log$
-// Revision 1.1  2003/08/14 07:11:08  ianw
-// KGoldrunner 2.0 for KDE 3 (KDE application)
-//
-// $OldLog: kgoldrunnerwidget.h,v $
-// Revision 1.4  2003/07/08 13:24:34  ianw
-// Converted to KDE 3.1.1 and Qt 3.1.1
-//
-
 #ifndef KGRCANVAS_H
 #define KGRCANVAS_H
 

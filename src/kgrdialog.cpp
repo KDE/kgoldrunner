@@ -49,17 +49,15 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     int margin		= 10;
     int spacing		= 10;
     QWidget * dad	= this;
-    QString appName	= " - KGoldrunner";
 #else
     int margin		= this->marginHint();
     int spacing		= this->spacingHint();
     QWidget * dad	= this->plainPage();
-    QString appName	= "";
 #endif
 
     QVBoxLayout * mainLayout = new QVBoxLayout (dad, margin, spacing);
 
-    collnL    = new QLabel ("<b>" + i18n("List of Games") + "</b>", dad);
+    collnL    = new QLabel (i18n("List of games:"), dad);
     mainLayout->addWidget (collnL);
     colln     = new QListBox (dad);
     mainLayout->addWidget (colln);
@@ -71,7 +69,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     QFont f = collnN->font();
     f.setBold (TRUE);    
     collnN->setFont (f);
-    collnA    = new QPushButton (i18n("More info..."), gameInfo);
+    collnA    = new QPushButton (i18n("More Info"), gameInfo);
 
     collnD    = new QLabel ("", dad);		// Description of collection.
     mainLayout->addWidget (collnD);
@@ -81,15 +79,14 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     mainLayout->addWidget (separator);
 
     if ((action == SL_START) || (action == SL_UPD_GAME)) {
-	dad->	setCaption (i18n("Select Game") + appName);
+	dad->	setCaption (i18n("Select Game"));
 	QLabel * startMsg = new QLabel
-	    ("<b>" + i18n("Level 1 of the selected game is ...") + "</b>", dad);
+	    ("<b>" + i18n("Level 1 of the selected game is:") + "</b>", dad);
 	mainLayout->addWidget (startMsg);
     }
     else {
-	dad->	setCaption (i18n("Select Game/Level") + appName);
-	QLabel * selectLev = new QLabel ("<b>" +
-					i18n("Select a Level") + "</b>", dad);
+	dad->	setCaption (i18n("Select Game/Level"));
+	QLabel * selectLev = new QLabel (i18n("Select level:"), dad);
 	mainLayout->addWidget (selectLev);
     }
 
@@ -104,10 +101,10 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     QHBox * numberPair = new QHBox (dad);
     grid->addWidget (numberPair, 2, 1);
     numberPair->setSpacing (spacing);
-    numberL   = new QLabel (i18n("Level Number"), numberPair);
+    numberL   = new QLabel (i18n("Level number:"), numberPair);
     display   = new QLineEdit (numberPair);
 
-    levelNH   = new QPushButton (i18n("Edit Level Name and Hint"), dad);
+    levelNH   = new QPushButton (i18n("Edit Level Name && Hint"), dad);
     mainLayout->addWidget (levelNH);
 
     slName    = new QLabel ("", dad);
@@ -125,8 +122,8 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     mainLayout->addWidget (buttons);
     buttons->setSpacing (spacing);
     HELP      = new QPushButton (i18n("Help"), buttons);
-    OK        = new QPushButton (i18n("OK"), buttons);
-    CANCEL    = new QPushButton (i18n("Cancel"), buttons);
+    OK        = new QPushButton (i18n("&OK"), buttons);
+    CANCEL    = new QPushButton (i18n("&Cancel"), buttons);
 
     QPoint p  = parent->mapToGlobal (QPoint (0,0));
 
@@ -347,7 +344,7 @@ void KGrSLDialog::slAboutColln ()
 {
     // User clicked the "About" button ...
     int		n = slCollnIndex;
-    QString	title = (i18n("About") + "\"%1\"").arg(collections.at(n)->name);
+    QString	title = i18n("About \"%1\"").arg(collections.at(n)->name);
 
     if (collections.at(n)->about.length() > 0) {
 	KGrMessage::wrapped (slParent, title, collections.at(n)->about);
@@ -379,7 +376,7 @@ void KGrSLDialog::slUpdate (const QString & text)
     }
     else
 	KGrMessage::information (this, i18n("Select Level"),
-		i18n("This level number is not valid. It can NOT be used."));
+		i18n("This level number is not valid. It can not be used."));
 }
 
 void KGrSLDialog::slPaintLevel ()
@@ -400,57 +397,52 @@ void KGrSLDialog::slotHelp ()
     // Help for "Select Game and Level" dialog box.
     QString s =
 	i18n("The main button at the bottom echoes the "
-	"menu action you selected.  Click it after choosing "
-	"a game and level - or use %1.")
-	.arg("\"" + i18n("Cancel") + "\"");
+	"menu action you selected. Click it after choosing "
+	"a game and level - or use \"Cancel\".");
 
     if (slAction == SL_START) {
 	s += i18n("\n\nIf this is your first time in KGoldrunner, select the "
-	     "Tutorial game or click %1 and click that item in "
-	     "the Game or Help menu.  The Tutorial game gives you hints "
+	     "tutorial game or click \"Cancel\" and click that item in "
+	     "the Game or Help menu. The tutorial game gives you hints "
 	     "as you go.\n\n"
 	     "Otherwise, just click on the name of a game (in the list box), "
 	     "then, to start at level 001, click on the main button at the "
-	     "bottom.  Play begins when you move the mouse or press a key.")
-	     .arg("\"" + i18n("Cancel") + "\"");
+	     "bottom. Play begins when you move the mouse or press a key.");
     }
     else {
 	switch (slAction) {
 	case SL_UPDATE:
 	    s += i18n("\n\nYou can select System levels for editing (or "
 		 "copying), but you must save the result in a game you have "
-		 "created.  Use the mouse as a paintbrush and the editor "
-		 "toolbar buttons as a palette.  Use the 'Empty Space' button "
+		 "created. Use the mouse as a paintbrush and the editor "
+		 "toolbar buttons as a palette. Use the 'Empty Space' button "
 		 "to erase.");
 	    break;
 	case SL_CREATE:
 	    s += i18n("\n\nYou can add a name and hint to your new level here, "
 		 "but you must save the level you have created into one of "
-		 "your own games.  By default your new level will go at the "
+		 "your own games. By default your new level will go at the "
 		 "end of your game, but you can also select a level number and "
 		 "save into the middle of your game.");
 	    break;
 	case SL_SAVE:
 	    s += i18n("\n\nYou can create or edit a name and hint here, before "
-		 "saving.  If you change the game or level, you can do a copy "
-		 "or %1, but you must always save into one of your "
-		 "own games.  If you save a level into the middle of a series, "
-		 "the other levels are automatically re-numbered.")
-		 .arg("\"" + i18n("Save As") + "\"");
+		 "saving. If you change the game or level, you can do a copy "
+		 "or \"Save As\", but you must always save into one of your "
+		 "own games. If you save a level into the middle of a series, "
+		 "the other levels are automatically re-numbered.");
 	    break;
 	case SL_DELETE:
 	    s += i18n("\n\n You can only delete levels from one of your own "
-		 "games.  If you delete a level from the middle of a series, "
+		 "games. If you delete a level from the middle of a series, "
 		 "the other levels are automatically re-numbered.");
 	    break;
 	case SL_MOVE:
 	    s += i18n("\n\nTo move (re-number) a level, you must first select "
-		 "it by using %1, then you can use "
-		 "%2 to assign it a new number or even a different "
-		 "game.  Other levels are automatically re-numbered as "
-		 "required.  You can only move levels within your own games.")
-		 .arg("\"" + i18n("Edit Any Level...") + "\"")
-		 .arg("\"" + i18n("Move Level...") + "\"");
+		 "it by using \"Edit Any Level...\", then you can use "
+		 "\"Move Level...\" to assign it a new number or even a different "
+		 "game. Other levels are automatically re-numbered as "
+		 "required. You can only move levels within your own games.");
 	    break;
 	case SL_UPD_GAME:
 	    s += i18n("\n\nWhen editing game info you only need to choose a "
@@ -461,18 +453,16 @@ void KGrSLDialog::slotHelp ()
 	    break;
 	}
 	s += i18n("\n\nClick on the list box to choose a game.  "
-	     "Below the list box you can see %1 about the "
+	     "Below the list box you can see \"More Info\" about the "
 	     "selected game, how many levels there are and what "
 	     "rules the enemies follow (see the Settings menu).\n\n"
 	     "You select "
 	     "a level number by typing it or using the scroll bar.  As "
 	     "you vary the game or level, the thumbnail area shows a "
-	     "preview of your choice.")
-	     .arg("\"" + i18n("More Info...") + "\"");
+	     "preview of your choice.");
     }
 
-    KGrMessage::wrapped (slParent, i18n("Help") + ":" +
-					i18n("Select Game and Level"), s);
+    KGrMessage::wrapped (slParent, i18n("Help: Select Game & Level"), s);
 }
 
 /*******************************************************************************
@@ -487,7 +477,7 @@ KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
 #else
 KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
 			QWidget * parent, const char * name)
-		: KDialogBase (KDialogBase::Plain, i18n("Edit Name and Hint"),
+		: KDialogBase (KDialogBase::Plain, i18n("Edit Name & Hint"),
 			KDialogBase::Ok | KDialogBase::Cancel,
 			KDialogBase::Ok, parent, name)
 #endif
@@ -504,12 +494,12 @@ KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
 
     QVBoxLayout * mainLayout = new QVBoxLayout (dad, margin, spacing);
 
-    QLabel *		nameL  = new QLabel (i18n("Name of Level"), dad);
+    QLabel *		nameL  = new QLabel (i18n("Name of level:"), dad);
     mainLayout->addWidget (nameL);
 			nhName  = new QLineEdit (dad);
     mainLayout->addWidget (nhName);
 
-    QLabel *		mleL = new QLabel (i18n("Hint for Level"), dad);
+    QLabel *		mleL = new QLabel (i18n("Hint for level:"), dad);
     mainLayout->addWidget (mleL);
 
    // Set up a widget to hold the wrapped text, using \n for paragraph breaks.
@@ -525,11 +515,10 @@ KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
     QHBox * buttons = new QHBox (dad);
     mainLayout->addWidget (buttons);
     buttons->setSpacing (spacing);
-    QPushButton *	OK = new QPushButton (i18n("OK"), buttons);
-    QPushButton *	CANCEL = new QPushButton (i18n("Cancel"), buttons);
+    QPushButton *	OK = new QPushButton (i18n("&OK"), buttons);
+    QPushButton *	CANCEL = new QPushButton (i18n("&Cancel"), buttons);
 
-    dad->		setCaption (i18n("Edit Name and Hint") +
-							" - KGoldrunner");
+    dad->		setCaption (i18n("Edit Name & Hint");
 #endif
 
     // Base the geometry of the text box on the playing area.
@@ -587,12 +576,10 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
     int margin		= 10;
     int spacing		= 10;
     QWidget * dad	= this;
-    QString appName	= " - KGoldrunner";
 #else
     int margin		= this->marginHint();
     int spacing		= this->spacingHint();
     QWidget * dad	= this->plainPage();
-    QString appName	= "";
 #endif
 
     QVBoxLayout * mainLayout = new QVBoxLayout (dad, margin, spacing);
@@ -600,13 +587,13 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
     QHBox * nameBox = new QHBox (dad);
     mainLayout->addWidget (nameBox);
     nameBox->setSpacing (spacing);
-    nameL    = new QLabel (i18n("Name of Game"), nameBox);
+    nameL    = new QLabel (i18n("Name of game:"), nameBox);
     ecName   = new QLineEdit (nameBox);
 
     QHBox * prefixBox = new QHBox (dad);
     mainLayout->addWidget (prefixBox);
     prefixBox->setSpacing (spacing);
-    prefixL  = new QLabel (i18n("File Name Prefix"), prefixBox);
+    prefixL  = new QLabel (i18n("File name prefix:"), prefixBox);
     ecPrefix = new QLineEdit (prefixBox);
 
     ecGrp    = new QButtonGroup (1, QButtonGroup::Vertical, i18n("Rules"), dad);
@@ -617,7 +604,7 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
     nLevL    = new QLabel ("0 levels", dad);
     mainLayout->addWidget (nLevL);
 
-    mleL     = new QLabel (i18n("About this game ..."), dad);
+    mleL     = new QLabel (i18n("About this game:"), dad);
     mainLayout->addWidget (mleL);
 
    // Set up a widget to hold the wrapped text, using \n for paragraph breaks.
@@ -633,8 +620,8 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
     QHBox * buttons = new QHBox (dad);
     mainLayout->addWidget (buttons);
     buttons->setSpacing (spacing);
-    OK       = new QPushButton (i18n("OK"), buttons);
-    CANCEL   = new QPushButton (i18n("Cancel"), buttons);
+    OK       = new QPushButton (i18n("&OK"), buttons);
+    CANCEL   = new QPushButton (i18n("&Cancel"), buttons);
 
     QPoint p = parent->mapToGlobal (QPoint (0,0));
 
@@ -645,10 +632,10 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
 #endif
 
     if (action == SL_CR_GAME) {
-	this->     setCaption (i18n("Create a Game") + appName);
+	this->     setCaption (i18n("Create Game"));
     }
     else {
-	this->     setCaption (i18n("Edit Game Info") + appName);
+	this->     setCaption (i18n("Edit Game Info"));
     }
 
     QString OKText = "";
@@ -782,12 +769,11 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
 #ifdef KGR_PORTABLE
     QHBox *		buttons  = new QHBox (dad);
     buttons->		setSpacing (spacing);
-    QPushButton *	OK       = new QPushButton (i18n("OK"), buttons);
-    QPushButton *	CANCEL   = new QPushButton (i18n("Cancel"), buttons);
+    QPushButton *	OK       = new QPushButton (i18n("&OK"), buttons);
+    QPushButton *	CANCEL   = new QPushButton (i18n("&Cancel"), buttons);
     mainLayout->	addWidget (buttons);
 
-    dad->		setCaption (i18n("Select Saved Game") +
-							" - KGoldrunner");
+    dad->		setCaption (i18n("Select Saved Game");
 
     // Base the geometry of the list box on the playing area.
     QPoint		p = parent->mapToGlobal (QPoint (0,0));
@@ -849,7 +835,7 @@ void KGrMessage::information (QWidget * parent, QString caption, QString text)
 {
 #ifdef KGR_PORTABLE
     // Force Qt to do word-wrapping (but it ignores "\n" line-breaks).
-    QMessageBox::information (parent, caption + " - KGoldrunner",
+    QMessageBox::information (parent, caption,
 				"<qt>" + text + "</qt>");
 #else
     // KDE does word-wrapping and will observe "\n" line-breaks.
@@ -864,7 +850,7 @@ int KGrMessage::warning (QWidget * parent, QString caption, QString text,
 #ifdef KGR_PORTABLE
     // Display a box with 2 or 3 buttons, depending on label2 == "" or not.
     // Force Qt to do word-wrapping (but it ignores "\n" line-breaks).
-    ans = QMessageBox::warning (parent, caption + " - KGoldrunner",
+    ans = QMessageBox::warning (parent, caption,
 				"<qt>" + text + "</qt>",
 				label0, label1, label2,
 				0, (label2 == "") ? 1 : 2);
@@ -923,10 +909,10 @@ void KGrMessage::wrapped (QWidget * parent, QString title, QString contents)
 #endif
     mainLayout->addWidget (mle);
 
-    QPushButton *	OK = new QPushButton (i18n("OK"), mm);
+    QPushButton *	OK = new QPushButton (i18n("&OK"), mm);
     mainLayout->addWidget (OK, Qt::AlignHCenter);
 
-    mm->		setCaption (title + " - KGoldrunner");
+    mm->		setCaption (title);
 
     // Base the geometry of the text box on the playing area.
     QPoint		p = parent->mapToGlobal (QPoint (0,0));
