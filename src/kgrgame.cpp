@@ -1765,7 +1765,7 @@ void KGrGame::deleteLevelFile ()
 void KGrGame::editCollection (int action)
 {
     int lev = level;
-    int n = collnIndex;
+    int n = -1;
 
     // If editing, choose a collection.
     if (action == SL_UPD_GAME) {
@@ -1791,47 +1791,52 @@ void KGrGame::editCollection (int action)
 	}
 
 	QString ecPrefix = ec->getPrefix();
-	len = ecPrefix.length();
-	if (len == 0) {
-	    KGrMessage::information (view, i18n("Save Game Info"),
-		i18n("You must enter a filename prefix for the game."));
-	    continue;
-	}
-	if (len > 5) {
-	    KGrMessage::information (view, i18n("Save Game Info"),
-		i18n("The filename prefix should not "
-		"be more than 5 characters."));
-	    continue;
-	}
-
-	bool allAlpha = TRUE;
-	for (int i = 0; i < len; i++) {
-	    if (! isalpha(ecPrefix.myChar(i))) {
-		allAlpha = FALSE;
-		break;
+	if ((action == SL_CR_GAME) || (collections.at(n)->nLevels <= 0)) {
+	    // The filename prefix could have been entered, so validate it.
+	    len = ecPrefix.length();
+	    if (len == 0) {
+		KGrMessage::information (view, i18n("Save Game Info"),
+		    i18n("You must enter a filename prefix for the game."));
+		continue;
 	    }
-	}
-	if (! allAlpha) {
-	    KGrMessage::information (view, i18n("Save Game Info"),
-		i18n("The filename prefix should be "
-		"all alphabetic characters."));
-	    continue;
-	}
-
-	bool duplicatePrefix = FALSE;
-	KGrCollection * c;
-	for (c = collections.first(); c != 0; c = collections.next()) {
-	    if (c->prefix == ecPrefix) {
-		duplicatePrefix = TRUE;
-		break;
+	    if (len > 5) {
+		KGrMessage::information (view, i18n("Save Game Info"),
+		    i18n("The filename prefix should not "
+		    "be more than 5 characters."));
+		continue;
 	    }
-	}
 
-	if (duplicatePrefix) {
-	    KGrMessage::information (view, i18n("Save Game Info"),
-		i18n("The filename prefix '%1' is already in use.")
-		.arg(ecPrefix));
-	    continue;
+	    bool allAlpha = TRUE;
+	    for (int i = 0; i < len; i++) {
+		if (! isalpha(ecPrefix.myChar(i))) {
+		    allAlpha = FALSE;
+		    break;
+		}
+	    }
+	    if (! allAlpha) {
+		KGrMessage::information (view, i18n("Save Game Info"),
+		    i18n("The filename prefix should be "
+		    "all alphabetic characters."));
+		continue;
+	    }
+
+	    bool duplicatePrefix = FALSE;
+	    KGrCollection * c;
+	    int imax = collections.count();
+	    for (int i = 0; i < imax; i++) {
+		c = collections.at(i);
+		if ((c->prefix == ecPrefix) && (i != n)) {
+		    duplicatePrefix = TRUE;
+		    break;
+		}
+	    }
+
+	    if (duplicatePrefix) {
+		KGrMessage::information (view, i18n("Save Game Info"),
+		    i18n("The filename prefix '%1' is already in use.")
+		    .arg(ecPrefix));
+		continue;
+	    }
 	}
 
 	// Save the collection details.
