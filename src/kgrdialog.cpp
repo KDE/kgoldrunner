@@ -437,7 +437,7 @@ void KGrSLDialog::slotHelp ()
 		 "the other levels are automatically re-numbered.");
 	    break;
 	case SL_DELETE:
-	    s += i18n("\n\n You can only delete levels from one of your own "
+	    s += i18n("\n\nYou can only delete levels from one of your own "
 		 "games. If you delete a level from the middle of a series, "
 		 "the other levels are automatically re-numbered.");
 	    break;

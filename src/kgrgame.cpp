@@ -2126,7 +2126,7 @@ int KGrGame::selectLevel (int action, int requestedLevel)
 	    (action != SL_CREATE) && (action != SL_SAVE) &&
 	    (action != SL_MOVE) && (action != SL_UPD_GAME)) {
 	    KGrMessage::information (view, i18n("Select Level"),
-		i18n("There is no level %1 in %2,"
+		i18n("There is no level %1 in %2, "
 		"so you cannot play or edit it.")
 		.arg(selectedLevel)
 		.arg("\"" + collections.at(selectedGame)->name + "\""));
