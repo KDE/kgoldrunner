@@ -487,7 +487,8 @@ int KGrGame::loadLevel (int levelNo)
   }
 
   // Put the mouse pointer on the hero.
-  view->setMousePos (startI, startJ);
+  if (mouseMode)
+      view->setMousePos (startI, startJ);
 
   // Connect play-mode slot to signal from "view".
   connect (view, SIGNAL(mouseClick(int)), SLOT(doDig(int)));
