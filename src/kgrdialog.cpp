@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2003 by Ian Wadham and Marco Krüger                     *
+ *   Copyright (C) 2003 by Ian Wadham and Marco Krger                     *
  *   ianw@netspace.net.au                                                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -175,7 +175,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 			OKText = i18n("Delete Level");
 			break;
     case SL_MOVE:	// Can move a level only into a USER collection.
-			OKText = i18n("Move to ...");
+			OKText = i18n("Move To...");
 			break;
     case SL_UPD_GAME:	// Can only edit USER collection details.
 			OKText = i18n("Edit Game Info");
