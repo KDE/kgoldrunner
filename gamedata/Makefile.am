@@ -42,4 +42,6 @@ uninstall-local:
 
 install-exec-local: install-data-local
 	-cd $(kde_datadir)/kgoldrun/system && tar xf levels.tar
+	-chmod 644 $(kde_datadir)/kgoldrun/system/levels/*
+	-chown -R root.root $(kde_datadir)/kgoldrun/system/levels
 	-rm -f $(kde_datadir)/kgoldrun/system/levels.tar
