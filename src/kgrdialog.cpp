@@ -880,10 +880,10 @@ int KGrMessage::warning (QWidget * parent, QString caption, QString text,
     ans = QMessageBox::warning (parent, caption,
 				"<qt>" + text + "</qt>",
 				label0, label1, label2,
-				0, (label2 == "") ? 1 : 2);
+				0, (label2.isEmpty()) ? 1 : 2);
 #else
     // KDE does word-wrapping and will observe "\n" line-breaks.
-    if (label2 == "") {
+    if (label2.isEmpty()) {
 	// Display a box with 2 buttons.
 	ans = KMessageBox::questionYesNo (parent, text, caption,
 			    label0, label1);
