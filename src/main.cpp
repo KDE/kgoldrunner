@@ -21,8 +21,7 @@ int main (int argc, char **argv)
     KAboutData about("kgoldrunner", "KGoldrunner",
     		     version, description,
                      KAboutData::License_GPL,
-		     "(C) 2003 Ian Wadham and Marco Krüger", 0, 0,
-		     "ianw@netspace.net.au");
+		     "(C) 2003 Ian Wadham and Marco Krüger");
     about.addAuthor( "Ian Wadham", I18N_NOOP("Current author"),
     		     "ianw@netspace.net.au" );
     about.addAuthor( "Marco Krüger", I18N_NOOP("Original author"), 0);

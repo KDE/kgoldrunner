@@ -518,7 +518,7 @@ KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
     QPushButton *	OK = new QPushButton (i18n("&OK"), buttons);
     QPushButton *	CANCEL = new QPushButton (i18n("&Cancel"), buttons);
 
-    dad->		setCaption (i18n("Edit Name & Hint");
+    dad->		setCaption (i18n("Edit Name & Hint"));
 #endif
 
     // Base the geometry of the text box on the playing area.
@@ -773,7 +773,7 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
     QPushButton *	CANCEL   = new QPushButton (i18n("&Cancel"), buttons);
     mainLayout->	addWidget (buttons);
 
-    dad->		setCaption (i18n("Select Saved Game");
+    dad->		setCaption (i18n("Select Saved Game"));
 
     // Base the geometry of the list box on the playing area.
     QPoint		p = parent->mapToGlobal (QPoint (0,0));
