@@ -162,6 +162,9 @@ private:
 
     KAction *		saveGame;	// Save game, level, lives and score.
 
+    KAction *		myPause;	// Pause or resume the game.
+    QString		pauseKeys;	// Keystroke names to put in status bar.
+
     KAction *		hintAction;	// Display a hint, if available.
     KAction *		killHero;	// Kill hero (disabled during edits).
     KAction *		highScore;	// High scores (disabled during edits).

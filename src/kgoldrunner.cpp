@@ -193,7 +193,7 @@ void KGoldrunner::setupActions()
     // Kill the Hero
     // --------------------------
 
-    KAction * myPause =		KStdGameAction::
+    myPause =			KStdGameAction::
 				pause (
 				this, SLOT(stopStart()), actionCollection());
     myPause->			setShortcut (Key_Escape); // Alternate key.
@@ -523,6 +523,10 @@ void KGoldrunner::initStatusBar()
     showScore (0);
     showLevel (0);
     adjustHintAction (FALSE);
+
+    // Set the PAUSE/RESUME key-names into the status bar message.
+    pauseKeys = myPause->shortcut().toString();
+    pauseKeys = pauseKeys.replace (';', "\" " + i18n("or") + " \"");
     gameFreeze (FALSE);
 
     statusBar()->setItemFixed (ID_LIVES, -1);		// Fix current sizes.
@@ -572,10 +576,10 @@ void KGoldrunner::gameFreeze (bool on_off)
 {
     if (on_off)
 	statusBar()->changeItem
-		    (i18n("   Press \"P\" or \"Esc\" to RESUME   "), ID_MSG);
+		    (i18n("Press \"%1\" to RESUME").arg(pauseKeys), ID_MSG);
     else
 	statusBar()->changeItem
-		    (i18n("   Press \"P\" or \"Esc\" to PAUSE   "), ID_MSG);
+		    (i18n("Press \"%1\" to PAUSE").arg(pauseKeys), ID_MSG);
 }
 
 void KGoldrunner::adjustHintAction (bool hintAvailable)
@@ -757,6 +761,11 @@ void KGoldrunner::optionsShowStatusbar()
 void KGoldrunner::optionsConfigureKeys()
 {
     KKeyDialog::configure(actionCollection());
+
+    // Update the PAUSE/RESUME message in the status bar.
+    pauseKeys = myPause->shortcut().toString();
+    pauseKeys = pauseKeys.replace (';', "\" " + i18n("or") + " \"");
+    gameFreeze (KGrObject::frozen);	// Refresh the status bar text.
 }
 
 void KGoldrunner::optionsConfigureToolbars()
