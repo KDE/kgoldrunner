@@ -1120,7 +1120,7 @@ void KGrGame::showHighScores()
     int spacing = 10;
     QVBoxLayout *	mainLayout = new QVBoxLayout (hs, margin, spacing);
 
-    QLabel *		hsHeader = new QLabel (QString (
+    QLabel *		hsHeader = new QLabel (i18n (
 					"<center><h2>KGoldrunner Hall of Fame</h2></center><br>"
 					"<center><h3>\"%1\" Game</h3></center>")
 					.arg(collection->name),

@@ -143,9 +143,9 @@ bool KGrCanvas::changeSize (int d)
     return TRUE;
 
 #else
-    KGrMessage::information (this, "Change Size",
-    "Sorry, you cannot change the size of the playing area. "
-    "That function requires Qt Library version 3 or later.");
+    KGrMessage::information (this, i18n( "Change Size" ),
+    i18n( "Sorry, you cannot change the size of the playing area. "
+    "That function requires Qt Library version 3 or later." ));
     return FALSE;
 #endif
 }
@@ -499,7 +499,7 @@ void KGrCanvas::makeBorder ()
     // Draw main part of border, in the order: top, bottom, left, right.
     // Allow some overlap to prevent slits appearing when using "changeSize".
     colour = borderColor;
-    
+
     // The first rectangle is actually a QLabel drawn by "makeTitle()".
     // borderT = drawRectangle (11, 0, 0, FIELDWIDTH*cw + 2*bw, mw);
     borderB = drawRectangle (11, 0, FIELDHEIGHT*cw + bw + lw,
@@ -507,7 +507,7 @@ void KGrCanvas::makeBorder ()
     borderL = drawRectangle (12, 0, bw - lw - 1, mw, FIELDHEIGHT*cw + 2*lw + 2);
     borderR = drawRectangle (12, FIELDWIDTH*cw + bw + lw, bw - lw - 1,
 						mw, FIELDHEIGHT*cw + 2*lw + 2);
-    
+
     // Draw inside edges of border, in the same way.
     colour = QColor (black);
     drawRectangle (10, bw-lw, bw-lw-1, FIELDWIDTH*cw + 2*lw, lw+1);

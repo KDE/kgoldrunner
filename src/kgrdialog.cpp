@@ -71,7 +71,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     gameInfo->setSpacing (spacing);
     collnN    = new QLabel ("", gameInfo);	// Name of selected collection.
     QFont f = collnN->font();
-    f.setBold (TRUE);    
+    f.setBold (TRUE);
     collnN->setFont (f);
     collnA    = new QPushButton (i18n("More Info"), gameInfo);
 
@@ -333,13 +333,12 @@ void KGrSLDialog::slColln (int i)
 
     slShowLevel (number->value());
 
-    QString levCnt;
-    levCnt = levCnt.setNum (collections.at(n)->nLevels);
+    int levCnt = collections.at(n)->nLevels;
     if (collections.at(n)->settings == 'K')
-	collnD->setText (levCnt + i18n(" levels, uses %1 rules.")
+	collnD->setText (i18n("1 level, uses %1 rules.", "%n levels, uses %1 rules.", levCnt)
 					.arg("KGoldrunner"));
     else
-	collnD->setText (levCnt + i18n(" levels, uses %1 rules.")
+	collnD->setText (i18n("1 level, uses %1 rules.", "%n levels, uses %1 rules.", levCnt)
 					.arg(i18n("Traditional")));
     collnN->setText (collections.at(n)->name);
 }
@@ -605,7 +604,7 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
     ecTradB  = new QRadioButton (i18n("Traditional"), ecGrp);
     ecKGrB   = new QRadioButton ("KGoldrunner", ecGrp);
 
-    nLevL    = new QLabel ("0 levels", dad);
+    nLevL    = new QLabel (i18n( "0 levels" ), dad);
     mainLayout->addWidget (nLevL);
 
     mleL     = new QLabel (i18n("About this game:"), dad);
@@ -651,14 +650,13 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
 	    ecPrefix->	setEnabled (FALSE);
 	}
 	QString		s;
-	nLevL->		setText (i18n("%1 levels")
-				.arg(collections.at(defaultGame)->nLevels));
+	nLevL->		setText (i18n("1 level", "%n levels", collections.at(defaultGame)->nLevels));
 	OKText = i18n("Save Changes");
     }
     else {					// Create a collection.
 	ecName->        setText ("");
 	ecPrefix->      setText ("");
-	nLevL->         setText (i18n("%1 levels").arg(0));
+	nLevL->         setText (i18n("0 levels"));
 	OKText = i18n("Save New");
     }
 #ifdef KGR_PORTABLE
