@@ -125,9 +125,9 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     QHBox * buttons = new QHBox (this);
     mainLayout->addWidget (buttons);
     buttons->setSpacing (spacing);
-    HELP      = new QPushButton (i18n("Help"), buttons);
-    OK        = new QPushButton (i18n("&OK"), buttons);
-    CANCEL    = new QPushButton (i18n("&Cancel"), buttons);
+    HELP      = new KPushButton (KStdGuiItem::help(), buttons);
+    OK        = new KPushButton (KStdGuiItem::ok(), buttons);
+    CANCEL    = new KPushButton (KStdGuiItem::cancel(), buttons);
 
     QPoint p  = parent->mapToGlobal (QPoint (0,0));
 
@@ -533,8 +533,8 @@ KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
     QHBox * buttons = new QHBox (dad);
     mainLayout->addWidget (buttons);
     buttons->setSpacing (spacing);
-    QPushButton *	OK = new QPushButton (i18n("&OK"), buttons);
-    QPushButton *	CANCEL = new QPushButton (i18n("&Cancel"), buttons);
+    QPushButton *	OK = new KPushButton (KStdGuiItem::ok(), buttons);
+    QPushButton *	CANCEL = new KPushButton (KStdGuiItem::cancel(), buttons);
 
     dad->		setCaption (i18n("Edit Name & Hint"));
 #endif
@@ -638,8 +638,8 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
     QHBox * buttons = new QHBox (dad);
     mainLayout->addWidget (buttons);
     buttons->setSpacing (spacing);
-    OK       = new QPushButton (i18n("&OK"), buttons);
-    CANCEL   = new QPushButton (i18n("&Cancel"), buttons);
+    OK       = new KPushButton (KStdGuiItem::ok(), buttons);
+    CANCEL   = new QPushButton (KStdGuiItem::cancel(), buttons);
 
     QPoint p = parent->mapToGlobal (QPoint (0,0));
 
@@ -796,8 +796,8 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
 #ifdef KGR_PORTABLE
     QHBox *		buttons  = new QHBox (dad);
     buttons->		setSpacing (spacing);
-    QPushButton *	OK       = new QPushButton (i18n("&OK"), buttons);
-    QPushButton *	CANCEL   = new QPushButton (i18n("&Cancel"), buttons);
+    QPushButton *	OK       = new KPushButton (KStdGuiItem::ok(), buttons);
+    QPushButton *	CANCEL   = new KPushButton (KStdGuiItem::cancel(), buttons);
     mainLayout->	addWidget (buttons);
 
     dad->		setCaption (i18n("Select Saved Game"));
@@ -936,7 +936,7 @@ void KGrMessage::wrapped (QWidget * parent, QString title, QString contents)
 #endif
     mainLayout->addWidget (mle);
 
-    QPushButton *	OK = new QPushButton (i18n("&OK"), mm);
+    QPushButton *	OK = new KPushButton (KStdGuiItem::ok(), mm);
     mainLayout->addWidget (OK, Qt::AlignHCenter);
 
     mm->		setCaption (title);
