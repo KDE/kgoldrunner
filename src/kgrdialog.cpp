@@ -336,22 +336,18 @@ void KGrSLDialog::slColln (int i)
 #ifndef KGR_PORTABLE
     int levCnt = collections.at(n)->nLevels;
     if (collections.at(n)->settings == 'K')
-	collnD->setText (i18n("1 level, uses %1 rules.",
-				"%n levels, uses %1 rules.", levCnt)
-					.arg("KGoldrunner"));
+	collnD->setText (i18n("1 level, uses KGoldrunner rules.",
+				"%n levels, uses KGoldrunner rules.", levCnt));
     else
-	collnD->setText (i18n("1 level, uses %1 rules.",
-				"%n levels, uses %1 rules.", levCnt)
-					.arg(i18n("Traditional")));
+	collnD->setText (i18n("1 level, uses Traditional rules.",
+				"%n levels, uses Traditional rules.", levCnt));
 #else
     QString levCnt;
     levCnt = levCnt.setNum (collections.at(n)->nLevels);
     if (collections.at(n)->settings == 'K')
-	collnD->setText (levCnt + i18n(" levels, uses %1 rules.")
-					.arg("KGoldrunner"));
+	collnD->setText (levCnt + i18n(" levels, uses KGoldrunner rules."));
     else
-	collnD->setText (levCnt + i18n(" levels, uses %1 rules.")
-					.arg(i18n("Traditional")));
+	collnD->setText (levCnt + i18n(" levels, uses Traditional rules."));
 #endif
     collnN->setText (collections.at(n)->name);
 }
@@ -614,10 +610,10 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
     prefixL  = new QLabel (i18n("File name prefix:"), prefixBox);
     ecPrefix = new QLineEdit (prefixBox);
 
-    ecGrp    = new QButtonGroup (1, QButtonGroup::Vertical, i18n("Rules"), dad);
+    ecGrp    = new QButtonGroup (1, QButtonGroup::Horizontal, 0, dad);
     mainLayout->addWidget (ecGrp);
-    ecTradB  = new QRadioButton (i18n("Traditional"), ecGrp);
-    ecKGrB   = new QRadioButton ("KGoldrunner", ecGrp);
+    ecTradB  = new QRadioButton (i18n("Traditional rules"), ecGrp);
+    ecKGrB   = new QRadioButton ("KGoldrunner rules", ecGrp);
 
     nLevL    = new QLabel (i18n( "0 levels" ), dad);
     mainLayout->addWidget (nLevL);
