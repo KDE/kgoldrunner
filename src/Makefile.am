@@ -12,6 +12,7 @@ kgoldrunner_LDFLAGS = $(KDE_RPATH) $(all_libraries)
 
 # the libraries to link against.
 kgoldrunner_LDADD   = $(LIB_KDEGAMES) $(LIB_KFILE) $(LIB_KDEPRINT)
+kgoldrunner_DEPENDENCIES = $(LIB_KDEGAMES_DEP)
 
 # which sources should be compiled for kgoldrunner
 kgoldrunner_SOURCES = kgoldrunner.cpp kgrcanvas.cpp kgrfigure.cpp kgrgame.cpp kgrobject.cpp main.cpp kgrdialog.cpp
