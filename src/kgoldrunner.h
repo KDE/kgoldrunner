@@ -18,27 +18,15 @@
 #ifndef KGOLDRUNNER_H
 #define KGOLDRUNNER_H
 
-// Enable the next "#define" or use compiler option -DQT1 if you want to compile
-// with Qt Library v1.x and KDE v1.x desktop.  Otherwise, we will use Qt v2.x
-// and no particular desktop (thus moving towards independence of O/S).
-//
-// #define QT1
-
 // Macros to smooth out the differences between Qt 1 and Qt 2 classes.
 //
 // "myStr" converts a QString object to a C language "char*" character string.
 // "myChar" extracts a C language character (type "char") from a QString object.
 // "endData" checks for an end-of-file condition.
 //
-#ifdef QT1
-#define myStr		data
-#define myChar(i)	at((i))
-#define endData		eof
-#else
 #define myStr		latin1
 #define myChar(i)	at((i)).latin1()
 #define endData		atEnd
-#endif
 
 /******************************************************************************/
 /*****************************    INCLUDEs     ********************************/
@@ -51,32 +39,27 @@
 #include <iostream.h>
 #include <ctype.h>
 
-#ifdef QT1
-#include <kapp.h>
-#include <kmsgbox.h>
-#else
 #include <qapp.h>
-#endif
 
 #include <qmessagebox.h>
 #include <qdatetime.h>
 
 #include "kgrobj.h"
 
-#ifdef QT1
-#include <ktopwidget.h>
-#else
 #include <qmainwindow.h>
 #include <qpopupmenu.h>
 #include <qmenubar.h>
 #include <qstatusbar.h>
 #include <qtoolbar.h>
 #include <qtoolbutton.h>
-#endif
 
 #include <qcolor.h>
 #include <qkeycode.h>
+#ifdef QT3
+#include <qptrlist.h>
+#else
 #include <qlist.h>
+#endif
 #include <qstring.h>
 
 #include <qdir.h>
@@ -92,11 +75,7 @@
 #include <qscrollbar.h>
 #include <qlineedit.h>
 #include <qpushbutton.h>
-#ifdef QT1
-#include <qmultilinedit.h>
-#else
 #include <qmultilineedit.h>
-#endif
 
 class KGoldrunnerWidget;	// Forward declare the central widget class.
 
@@ -132,6 +111,8 @@ const int ID_NCOLL    = 308;
 
 // Settings Menu
 const int ID_OPT      = 400;
+const int ID_MOUSE    = 421;
+const int ID_KEYBOARD = 422;
 const int ID_KGR      = 401;
 const int ID_TRAD     = 402;
 const int ID_MESLOW   = 403;
@@ -147,6 +128,13 @@ const int ID_CSPEED   = 412;
 const int ID_ISPEED   = 413;
 const int ID_DSPEED   = 414;
 
+// Size Menu
+#ifdef QT3
+const int ID_SIZE     = 500;
+const int ID_LARGER   = 501;
+const int ID_SMALLER  = 502;
+#endif
+
 // HilfeMenue (Help Menu)
 const int ID_HELPMENU = 200;
 const int ID_TUTE     = 201;
@@ -156,23 +144,15 @@ const int ID_ABOUTKGR = 204;
 const int ID_ABOUTQT  = 205;
 
 // Statusbar
-#ifdef QT1
-const int ID_LIFES      = 901;		// ID's of entries in KDE 1 status bar.
-const int ID_SCORE      = 902;
-const int ID_LEVEL      = 903;
-const int ID_LEVELPLACE = 904;
-const int ID_DUMMY      = 905;
-#else
 const int ID_LIFES      = 5;		// Text posns/lengths in Qt2 status bar.
 const int ID_SCORE      = 20;
 const int ID_LEVEL      = 37;
-const int ID_GROUP      = 52;
-const int ID_DUMMY      = 70;
+const int ID_MSG        = 52;
+const int ID_DUMMY      = 80;
 const int L_LIFES	= ID_SCORE - ID_LIFES;
 const int L_SCORE	= ID_LEVEL - ID_SCORE;
-const int L_LEVEL	= ID_GROUP - ID_LEVEL;
-const int L_GROUP	= ID_DUMMY - ID_GROUP;
-#endif
+const int L_LEVEL	= ID_MSG   - ID_LEVEL;
+const int L_MSG		= ID_DUMMY - ID_MSG;
 
 // Edit toolbar
 const int ID_FREE	= 810;
@@ -187,6 +167,10 @@ const int ID_POLE	= 818;
 const int ID_NUGGET	= 819;
 
 enum Owner {SYSTEM, USER};
+
+// Keyboard action codes
+enum KBAction
+    {KB_UP, KB_DOWN, KB_LEFT, KB_RIGHT, KB_DIGLEFT, KB_DIGRIGHT, KB_STOP};
 
 /******************************************************************************/
 /***********************    COLLECTION DATA CLASS    **************************/
@@ -224,16 +208,7 @@ protected:
 /**********************    KGOLDRUNNER (MAIN) CLASS    ************************/
 /******************************************************************************/
 
-#ifdef QT1
-// The MOC compiler "simply skips any preprocessor directives it encounters"
-// (see the QT documentation, "Using the MetaObject Compiler", "Limitations"
-// section).  The following lines are commented/uncommented by the "fix_src"
-// script, invoked during the "make init" step of installation.
-
-//class KGoldrunner : public KTopLevelWidget		// QT1_ONLY
-#else
 class KGoldrunner : public QMainWindow			// QT2PLUS_ONLY
-#endif
 {
 
 	Q_OBJECT
@@ -255,22 +230,15 @@ private:
 	QString systemDataDir;		// Where the system levels are stored.
 	QString userDataDir;		// Where the user levels are stored.
 
-#ifdef QT1
-	KMenuBar   *menuBar;
-#endif
-
 	QPopupMenu *file_menu;
 	QPopupMenu *edit_menu;
 	QPopupMenu *opt_menu;
+#ifdef QT3
+	QPopupMenu *size_menu;
+#endif
 
-#ifdef QT1
-	KStatusBar *statusBar;
-	KToolBar   *toolBar;
-	KIconLoader *loader;
-#else
 	QPopupMenu *help_menu;
 	QString    statusString;
-#endif
 	QPushButton *pauseBtn;
 
 	bool exitWarning;
@@ -297,13 +265,21 @@ private:
 
 	KGrHero *hero;				// The HERO figure !!!
 	int startI, startJ;			// The hero's starting position.
+#ifdef QT3
+	QPtrList<KGrEnemy> enemies;		// The list of enemies.
+#else
 	QList<KGrEnemy> enemies;		// The list of enemies.
+#endif
 	int enemyCount;				// How many enemies.
 	KGrEnemy *enemy;			// One of the enemies.
 
 	int nuggets;				// How many nuggets.
 
+#ifdef QT3
+	QPtrList<KGrCollection>	collections;	// List of ALL collections.
+#else
 	QList<KGrCollection>	collections;	// List of ALL collections.
+#endif
 	KGrCollection *		collection;	// Collection currently in use.
 	Owner			owner;		// Collection owner.
 	int			collnOffset;	// Owner's index in collections.
@@ -333,12 +309,13 @@ private:
 	void startTutorial();
 	void showHint();
 
+	bool mouseMode;			// T = mouse control, F = keyboard.
         bool newLevel;			// T = new level, F = reloading current.
         bool loading;			// Inhibits input until level is loaded.
 	int loadLevel (int);		// Loads from a file in a collection.
 	bool openLevelFile (int, QFile &);
 	void changeObject (unsigned char, int, int);
-	void createObject (KGrObj*, int, int);
+	void createObject (KGrObj*, char, int, int);
 	void setTimings();
 	void initSearchMatrix();
 
@@ -359,6 +336,8 @@ private:
 	void changeLifes (int);
 	void changeScore (int);
 
+	QTimer * dyingTimer;		// Provides a pause when the hero dies.
+
 private slots:
         void commandCallback(int);	// Menu actions.
         void rCheck(int);		// Set/unset ticks on rule menu-items.
@@ -373,15 +352,11 @@ private slots:
 
 	void readMousePos ();		// Timed reading of mouse position.
 	void doDig(int);		// For mouse-click when in play-mode.
+	void setKey(KBAction);		// For keyboard control of hero.
 
 	void lgSelect(int);		// User selected a saved game to load.
 
-/******************************************************************************/
-/**************************  KGOLDRUNNER PAINT EVENT **************************/
-/******************************************************************************/
-
-protected:
-	void paintEvent( QPaintEvent * );
+	void finalBreath ();		// Hero is dead: re-start the level.
 
 /******************************************************************************/
 /**************************  AUTHORS' DEBUGGING AIDS **************************/
@@ -419,14 +394,11 @@ private:
 	void initEdit();
 	void deleteLevel();
 	void insertEditObj (int, int);
+	void setEditableCell (int, int, char);
 	void showEditLevel();
 	bool reNumberLevels (int, int, int, int);
 
 	void makeEditToolbar();
-#ifdef QT1
-	KToolBar    *editToolbar;
-	int         pressedButton;
-#else
 	QToolBar    *editToolbar;
 	QToolButton *createBtn, *updateBtn, *savefileBtn;
 	QToolButton *freeBtn, *edheroBtn, *edenemyBtn;
@@ -434,7 +406,6 @@ private:
 	QToolButton *poleBtn, *nuggetBtn;
 	QToolButton *pressedButton;
 	void setButton (QToolButton *);
-#endif
 
 	// Pixmaps for repainting objects as they are edited.
 	QPixmap digpix[10];
@@ -446,12 +417,6 @@ private slots:
 	void doEdit(int);		// For mouse-click when in edit-mode.
 	void endEdit(int);		// For mouse-release when in edit-mode.
 
-#ifndef QT1
-// The MOC compiler "simply skips any preprocessor directives it encounters"
-// (see the QT documentation, "Using the MetaObject Compiler", "Limitations"
-// section).  The following lines are commented/uncommented by the "fix_src"
-// script, invoked during the "make init" step of installation.
-
 	void freeSlot();				// QT2PLUS_ONLY
 	void edheroSlot();				// QT2PLUS_ONLY
 	void edenemySlot();				// QT2PLUS_ONLY
@@ -462,7 +427,6 @@ private slots:
 	void hladderSlot();				// QT2PLUS_ONLY
 	void poleSlot();				// QT2PLUS_ONLY
 	void nuggetSlot();				// QT2PLUS_ONLY
-#endif
 
 /******************************************************************************/
 /*************************   COLLECTIONS HANDLING   ***************************/
@@ -507,16 +471,7 @@ private slots:
 	void slColln(int);
 	void slAboutColln();
 	void slShowLevel(int);
-#ifdef QT1
-// The MOC compiler "simply skips any preprocessor directives it encounters"
-// (see the QT documentation, "Using the MetaObject Compiler", "Limitations"
-// section).  The following lines are commented/uncommented by the "fix_src"
-// script, invoked during the "make init" step of installation.
-
-//	void slUpdate (const char *);			// QT1_ONLY
-#else
 	void slUpdate (const QString &);		// QT2PLUS_ONLY
-#endif
 	void slPaintLevel();
 	void slHelp();
 	void slNameAndHint();
@@ -543,11 +498,7 @@ private slots:
 private:
 	void myMessage (QWidget *, QString, QString);
 	bool	messageFreeze;		// True when game is frozen temporarily.
-#ifdef QT1
-	void wordWrap (QMultiLineEdit *, int);	// NOT needed with QT 2.
-#endif
 
-#ifndef QT1
 /******************************************************************************/
 /**********************    QT2's SIMPLE HTML BROWSER   ************************/
 /******************************************************************************/
@@ -559,10 +510,8 @@ private:
 
 private:						// QT2PLUS_ONLY
 	void showManual ();				// QT2PLUS_ONLY
-#endif
 };
 
-#ifndef QT1
 /****************************************************************************
 ** $Id$
 **
@@ -631,6 +580,5 @@ private:
 };
 
 #endif // HELPWINDOW_H
-#endif
 
 #endif // KGOLDRUNNER_H

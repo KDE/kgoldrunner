@@ -20,11 +20,7 @@
 
 int main (int argc, char *argv[])
 {
-#ifdef QT1
-    KApplication app (argc, argv, "kgoldrunner");
-#else
     QApplication app (argc, argv);
-#endif
     KGoldrunner widget;
 
     app.setFont(QFont("helvetica", 12));
@@ -39,9 +35,6 @@ int main (int argc, char *argv[])
     // app.setStyle(WindowsStyle);
 
     app.setMainWidget(&widget);
-#ifdef QT1
-    app.setTopWidget(&widget);
-#endif
 
     return app.exec();
 }

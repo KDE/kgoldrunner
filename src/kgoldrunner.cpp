@@ -31,10 +31,6 @@
 #include <stdlib.h>
 
 // ICON FILES
-#include "hero.xpm"
-#include "enemy1.xpm"
-#include "enemy2.xpm"
-
 #include "brick.xpm"
 #include "hgbrick.xpm"
 #include "nugget.xpm"
@@ -65,16 +61,12 @@ KGrCollection::KGrCollection (Owner o, const QString & n, const QString & p,
 /**********************    KGOLDRUNNER (MAIN) CLASS    ************************/
 /******************************************************************************/
 
-#ifdef QT1
-KGoldrunner::KGoldrunner(QWidget *parent, const char *name, WFlags f)
-	: KTopLevelWidget(name)
-#else
-
+#ifndef QT3_PORT_DEBUG
 #include <kstddirs.h>		// Used in KDE2-dependent "getDirectories" code.
+#endif
 
 KGoldrunner::KGoldrunner(QWidget *parent, const char *name, WFlags f)
  	: QMainWindow (parent, name, f)
-#endif
 {
 	// Avoid "saveOK()" check if an error-exit occurs during file checks.
 	editMode = FALSE;
@@ -108,38 +100,13 @@ KGoldrunner::KGoldrunner(QWidget *parent, const char *name, WFlags f)
 	setCaption ("KGoldrunner");
 
 	file_menu = new QPopupMenu();
-#ifdef QT1
-//	file_menu->insertItem(klocale->translate("&Neues Spiel"),ID_NEW);
-	file_menu->insertItem(klocale->translate("&Start Game"),ID_NEW);
-	file_menu->insertItem(klocale->translate("&Play Any Level"),ID_OPEN);
-	file_menu->insertItem(klocale->translate("Play &Next"),ID_NEXT);
-	file_menu->insertItem(klocale->translate("&Kill Hero"),ID_KILL);
-	file_menu->setAccel (Key_K, ID_KILL);
-
-	file_menu->insertSeparator();
-	file_menu->insertItem (klocale->translate("Start &Tutorial"), ID_TUTE);
-	file_menu->insertItem (klocale->translate("Get a &Hint"), ID_HINT);
-
-	file_menu->insertSeparator();
-	file_menu->insertItem (klocale->translate("Load Game"), ID_LOADGAME);
-	file_menu->insertItem (klocale->translate("Save Game"), ID_SAVEGAME);
-	file_menu->insertItem (klocale->translate("Show High Scores"), ID_HIGH);
-	file_menu->setAccel (Key_S, ID_SAVEGAME);
-
-	file_menu->insertSeparator();
-	file_menu->insertItem (klocale->translate("Save Edits"), ID_SAVEFILE);
-
-	file_menu->insertSeparator();
-//	file_menu->insertItem(klocale->translate("&Schließen"),ID_EXIT);
-	file_menu->insertItem(klocale->translate("&Quit"),ID_EXIT);
-#else
 	setUsesBigPixmaps (FALSE);		// Set small toolbar buttons.
 
 	file_menu->insertItem("&Start Game",ID_NEW);
 	file_menu->insertItem("&Play Any Level",ID_OPEN);
 	file_menu->insertItem("Play &Next",ID_NEXT);
-	file_menu->insertItem("&Kill Hero",ID_KILL);
-	file_menu->setAccel (Key_K, ID_KILL);
+	file_menu->insertItem("Kill Hero",ID_KILL);
+	file_menu->setAccel (Key_Q, ID_KILL);
 
 	file_menu->insertSeparator();
 	file_menu->insertItem ("Start &Tutorial", ID_TUTE);
@@ -156,43 +123,15 @@ KGoldrunner::KGoldrunner(QWidget *parent, const char *name, WFlags f)
 
 	file_menu->insertSeparator();
 	file_menu->insertItem("&Quit",ID_EXIT);
-#endif
 
-#ifdef QT1
-	menuBar = new KMenuBar(this, "menubar");
-//	menuBar->insertItem(klocale->translate("&Datei"), file_menu);
-	menuBar->insertItem(klocale->translate("&Game"), file_menu);
-#else
-//	menuBar()->insertItem("&Datei", file_menu);
 	menuBar()->insertItem("&Game", file_menu);
-#endif
 
 	opt_menu = new QPopupMenu();
 	opt_menu->setCheckable (TRUE);
-#ifdef QT1
-	opt_menu->insertItem(klocale->translate("&KGoldrunner Defaults"), ID_KGR);
-	opt_menu->insertItem(klocale->translate("&Traditional Defaults"), ID_TRAD);
+	opt_menu->insertItem("&Mouse Controls Hero", ID_MOUSE);
+	opt_menu->insertItem("&Keyboard Controls Hero", ID_KEYBOARD);
 	opt_menu->insertSeparator();
-	opt_menu->insertItem(klocale->translate("More Enemies Slower"), ID_MESLOW);
-	opt_menu->insertItem(klocale->translate("Always Collect Gold"), ID_ACGOLD);
-	opt_menu->insertItem(klocale->translate("Run through Hole"), ID_RTHOLE);
-	opt_menu->insertItem(klocale->translate("Reappear at Top"), ID_RATOP);
-	opt_menu->insertItem(klocale->translate("Search Strategy - Low"), ID_SRCH1);
-	opt_menu->insertItem(klocale->translate("Search Strategy - Med"), ID_SRCH2);
-	opt_menu->insertSeparator();
-	opt_menu->insertItem(klocale->translate("Normal Speed"), ID_NSPEED);
-	opt_menu->insertItem(klocale->translate("Beginner Speed"), ID_BSPEED);
-	opt_menu->insertItem(klocale->translate("Novice Speed"), ID_VSPEED);
-	opt_menu->insertItem(klocale->translate("Champion Speed"), ID_CSPEED);
-	opt_menu->insertItem(klocale->translate("Increase Speed"), ID_ISPEED);
-	opt_menu->insertItem(klocale->translate("Decrease Speed"), ID_DSPEED);
-	opt_menu->setAccel(Key_Plus, ID_ISPEED);
-	opt_menu->setAccel(Key_Minus, ID_DSPEED);
-
-	menuBar->insertSeparator();
-	menuBar->insertItem(klocale->translate("&Settings"), opt_menu, ID_OPT);
-#else
-	opt_menu->insertItem("&KGoldrunner Defaults", ID_KGR);
+	opt_menu->insertItem("K&Goldrunner Defaults", ID_KGR);
 	opt_menu->insertItem("&Traditional Defaults", ID_TRAD);
 	opt_menu->insertSeparator();
 	opt_menu->insertItem("More Enemies Slower", ID_MESLOW);
@@ -213,28 +152,23 @@ KGoldrunner::KGoldrunner(QWidget *parent, const char *name, WFlags f)
 
 	menuBar()->insertSeparator();
 	menuBar()->insertItem("&Settings", opt_menu, ID_OPT);
-#endif
+
 	// Tick the rules for the default game (or collection of levels).
 	rCheck ((collection->settings == 'K') ? ID_KGR : ID_TRAD);
 
 	// Tick the default speed (which is set when the hero is created).
 	sCheck (ID_NSPEED);
 
+#ifdef QT3
+	size_menu = new QPopupMenu();
+	size_menu->insertItem("&Larger Playing Area", ID_LARGER);
+	size_menu->insertItem("&Smaller Playing Area", ID_SMALLER);
+
+	menuBar()->insertSeparator();
+	menuBar()->insertItem("Si&ze", size_menu, ID_SIZE);
+#endif
+
 	edit_menu = new QPopupMenu();
-#ifdef QT1
-	edit_menu->insertItem(klocale->translate("&Create Level"),ID_CREATE);
-	edit_menu->insertItem(klocale->translate("&Edit Any Level"),ID_UPDATE);
-	edit_menu->insertItem(klocale->translate("Edit &Next"),ID_EDITNEXT);
-	edit_menu->insertSeparator();
-	edit_menu->insertItem(klocale->translate("&Save Level"),ID_SAVEFILE);
-	edit_menu->insertItem(klocale->translate("&Move Level"),ID_MOVEFILE);
-	edit_menu->insertItem(klocale->translate("&Delete Level"),ID_DELEFILE);
-	edit_menu->insertSeparator();
-	edit_menu->insertItem(klocale->translate("Create a Game"),ID_NCOLL);
-	edit_menu->insertItem(klocale->translate("Edit Game Info"),ID_ECOLL);
-	menuBar->insertSeparator();
-	menuBar->insertItem(klocale->translate("&Editor"),edit_menu,ID_EDITMENU);
-#else
 	edit_menu->insertItem("&Create Level",ID_CREATE);
 	edit_menu->insertItem("&Edit Any Level",ID_UPDATE);
 	edit_menu->insertItem("Edit &Next",ID_EDITNEXT);
@@ -247,19 +181,9 @@ KGoldrunner::KGoldrunner(QWidget *parent, const char *name, WFlags f)
 	edit_menu->insertItem("Edit Game Info",ID_ECOLL);
 	menuBar()->insertSeparator();
 	menuBar()->insertItem("&Editor", edit_menu, ID_EDITMENU);
-#endif
 
-	about = "KGoldrunner v1.0 (01/2002)\n\n(C) ";
-#ifdef QT1
-	about += (QString) klocale->translate("von") +
-	  " Marco Krüger, grisuji@gmx.de\n\n";
-	about += (QString) klocale->translate("Extended to v1.0\nby");
-	about += (QString) " Ian Wadham, ianw@netspace.net.au";
-	menuBar->insertSeparator();
-	menuBar->insertItem( klocale->translate("&Help"),
-			     KApplication::getKApplication()->getHelpMenu(TRUE, about ) );
-#else
-	about += (QString) "von Marco Krüger, grisuji@gmx.de\n\n";
+	about = "KGoldrunner v1.0.2 (04/2002)\n\n(C) ";
+	about += (QString) "von Marco Krüger, grisu@cs.tu-berlin.de\n\n";
 	about += (QString) "Extended to v1.0\nby";
 	about += (QString) " Ian Wadham, ianw@netspace.net.au";
 	menuBar()->insertSeparator();
@@ -272,30 +196,21 @@ KGoldrunner::KGoldrunner(QWidget *parent, const char *name, WFlags f)
 	help_menu->insertItem ("About &Qt Toolkit", ID_ABOUTQT);
 	menuBar()->insertSeparator();
 	menuBar()->insertItem ("&Help", help_menu, ID_HELPMENU);
-#endif
 
+#ifndef QT3
 	// Set up the Pause/Resume button and connect the menu signals.
 	pauseBtn = new QPushButton ("PAUSE (Esc)", this);
 	pauseBtn->setFixedSize (90, 25);
 	pauseBtn->setAccel (Key_Escape);
-#ifdef QT1
-	pauseBtn->move (417, 0);
-	connect(menuBar, SIGNAL(activated(int)), SLOT(commandCallback(int)));
-	connect(pauseBtn, SIGNAL(clicked()), SLOT(pauseResume()));
-#else
 	menuBar()->insertSeparator();
 	menuBar()->insertItem (pauseBtn, ID_PAUSE);
-	connect(menuBar(), SIGNAL(activated(int)), SLOT(commandCallback(int)));
 	connect(pauseBtn, SIGNAL(clicked()), SLOT(pauseResume()));
 #endif
+	connect(menuBar(), SIGNAL(activated(int)), SLOT(commandCallback(int)));
 
 	// Allow a clean exit when the user clicks "X" at top right of window.
 	exitWarning = FALSE;
-#ifdef QT1
-	connect (kapp, SIGNAL(lastWindowClosed()), this, SLOT(myQuit()));
-#else
 	connect (qApp, SIGNAL(lastWindowClosed()), this, SLOT(myQuit()));
-#endif
 
 	// Set the game editor mode as OFF, but available.
 	editMode = FALSE;
@@ -305,18 +220,7 @@ KGoldrunner::KGoldrunner(QWidget *parent, const char *name, WFlags f)
 	edit_menu->setItemEnabled (ID_SAVEFILE, FALSE);
 	file_menu->setItemEnabled (ID_SAVEFILE, FALSE);
 
-#ifdef QT1
-	loader = kapp->getIconLoader();
-#endif
-
-#ifdef QT1
-	statusBar = new KStatusBar(this);
 	initStatusBar();
-	setStatusBar(statusBar);
-	statusBar->show();
-#else
-	initStatusBar();
-#endif
 
 	makeEditToolbar();
 
@@ -328,29 +232,31 @@ KGoldrunner::KGoldrunner(QWidget *parent, const char *name, WFlags f)
 
 	enemies.setAutoDelete(TRUE);
 
-	setBackgroundMode (NoBackground);
+	// setBackgroundMode (NoBackground);
 	view = new KGoldrunnerWidget(this);
-	int w = (FIELDWIDTH*4+16)*STEP;
-	int h = (FIELDHEIGHT*4+16)*STEP;
-	view->setFixedSize (w, h);
-#ifdef QT1
-	setView (view);
-#else
 	setCentralWidget (view);
+	setBlankLevel (TRUE);	// Fill the playfield with blank walls.
+
+#ifdef QT3
+	// Base the size of the playing-area on the monitor resolution.
+	int dw = QApplication::desktop()->width();
+	if (dw > 900) view->changeSize (+1);		// More than 800x600.
+	if (dw > 1100) view->changeSize (+1);		// More than 1024x768.
 #endif
 
-	setBlankLevel (TRUE);	// Fill the playfield with blank walls.
 	view->show();
-	view->repaint();	// Paint the border of the playfield.
 
-#ifdef QT1
-	setMenu (menuBar);
-	editToolbar->hide();
+#ifdef QT3
+	removeDockWindow (editToolbar);
+	setDockEnabled (DockBottom, FALSE);
+	setDockEnabled (DockLeft, FALSE);
+	setDockEnabled (DockRight, FALSE);
 #else
 	removeToolBar (editToolbar);
 	setDockEnabled (QMainWindow::Bottom, FALSE);
 	setDockEnabled (QMainWindow::Left, FALSE);
 	setDockEnabled (QMainWindow::Right, FALSE);
+#endif
 
 	// Force QMainWindow to recalculate its widget sizes immediately.
 	qApp->processEvents();
@@ -360,14 +266,18 @@ KGoldrunner::KGoldrunner(QWidget *parent, const char *name, WFlags f)
 	// We also stop the user resizing the main window (it is not supported
 	// by KGoldrunner and only creates ugly grey areas).
 	this->setFixedSize (this->minimumSize());
-#endif
 
-	hero = new KGrHero (QPixmap (hero_xpm), 0, 0);
+	hero = new KGrHero (view, 0, 0);
+	hero->setPlayfield (&playfield);
 	connect (hero, SIGNAL (gotNugget(int)),   SLOT (incScore(int)));
 	connect (hero, SIGNAL (haveAllNuggets()), SLOT (showHidden()));
 	connect (hero, SIGNAL (caughtHero()),     SLOT (herosDead()));
       	connect (hero, SIGNAL (leaveLevel()),     SLOT (nextLevel()));
-	hero->setPlayfield (&playfield);
+
+	// Set mouse control of the hero as the default.
+	mouseMode = TRUE;
+	opt_menu->setItemChecked (ID_MOUSE, TRUE);
+	opt_menu->setItemChecked (ID_KEYBOARD, FALSE);
 
 	// Get the mouse position every 40 msec.  It is used to steer the hero.
 	mouseSampler = new QTimer (this);
@@ -377,6 +287,9 @@ KGoldrunner::KGoldrunner(QWidget *parent, const char *name, WFlags f)
     	enemy = NULL;
 	newLevel = TRUE;			// Next level will be a new one.
 	loading  = TRUE;			// Stop input until it's loaded.
+
+	dyingTimer = new QTimer (this);
+	connect (dyingTimer, SIGNAL(timeout()), SLOT (finalBreath ()));
 	
 	srand(1); // initialisiere Random-Generator
 
@@ -384,11 +297,7 @@ KGoldrunner::KGoldrunner(QWidget *parent, const char *name, WFlags f)
 	this->show();
 
 	// Force the main widget to appear before the "Start Game" dialog does.
-#ifdef QT1
-	kapp->processEvents();
-#else
 	qApp->processEvents();
-#endif
 
 	// Call the "Start Game" menu item and pop up the "Start Game" dialog.
 	modalFreeze = FALSE;
@@ -401,10 +310,6 @@ KGoldrunner::~KGoldrunner()
 	delete editToolbar;
 	delete file_menu;
 	delete edit_menu;
-#ifdef QT1
-	delete menuBar;
-	delete statusBar;
-#endif
 }
 
 bool KGoldrunner::getDirectories ()
@@ -418,36 +323,6 @@ bool KGoldrunner::getDirectories ()
 
     bool result = TRUE;
 
-#ifdef QT1
-    // This piece of code depends on KDE 1 class libraries and Qt 1.  Note
-    // that, in the KDE1/QT1 version of KGoldrunner, the manual is obtained
-    // from a KDE Help class built into the KDE Application.
-
-    systemDataDir = KApplication::kde_datadir() + "/kgoldrun/";
-    userDataDir   = KApplication::localkdedir() + "/share/apps/kgoldrun/";
-
-    // Create the user's "kgoldrun" and "levels" directories, if not present.
-    QDir d (userDataDir.myStr());
-    if (! d.exists()) {
-	if (! d.mkdir (userDataDir.myStr(), TRUE)) {
-	    QMessageBox::information (this, "KGoldrunner - Get Directories",
-	    "Cannot create directory \"" + userDataDir + "\"\n"
-	    "in your HOME work-area.  You will need it if you want to create\n"
-	    "KGoldrunner games.  Please contact your System Administrator.");
-	}
-    }
-    QString s = userDataDir + "levels";
-    d.setPath (s.myStr());
-    if (! d.exists()) {
-	if (! d.mkdir (s.myStr(), TRUE)) {
-	    QMessageBox::information (this, "KGoldrunner - Get Directories",
-	    "Cannot create directory \"" + s + "\"\n"
-	    "in your HOME work-area.  You will need it if you want to create\n"
-	    "KGoldrunner games.  Please contact your System Administrator.");
-	}
-    }
-
-#else
     // This piece of code depends (minimally) on KDE 2 class libraries and Qt 2.
 
     // WHERE THINGS ARE: In the KDE 2 environment (Release 2.1.2), application
@@ -464,6 +339,13 @@ bool KGoldrunner::getDirectories ()
     // The directory strings are set by KDE 2 at run time and might change in
     // later releases, so use them with caution and only if something gets lost.
 
+#ifdef QT3_PORT_DEBUG
+    // Used fixed directory strings when porting to Qt 3 but testing with KDE 2.
+    // If we use KStandardDirs and KDE library, we get Qt2/Qt3 library clashes.
+    systemDataDir = "/opt/kde2/share/apps/kgoldrun/system/";
+    systemHTMLDir = "/opt/kde2/share/doc/HTML/en/kgoldrun/";
+    userDataDir   = "/home/ianw/kde_user/share/apps/kgoldrun/user/";
+#else
     KStandardDirs * dirs = new KStandardDirs();
 
     // Find the KGoldrunner Users' Guide, English version (en).
@@ -594,11 +476,6 @@ void KGoldrunner::keyPressEvent(QKeyEvent *k)
       }
       // Switch the toggles on the Edit Toolbar buttons.
       if (i != 0) {
-#ifdef QT1
-	editToolbar->setButton (pressedButton, FALSE);
-	pressedButton = i;
-	editToolbar->setButton (pressedButton, TRUE);
-#else
 	switch (i) {
 	case ID_FREE:		freeSlot(); break;
 	case ID_ENEMY:		edenemySlot(); break;
@@ -612,7 +489,6 @@ void KGoldrunner::keyPressEvent(QKeyEvent *k)
 	case ID_POLE:		poleSlot(); break;
 	default:		break;
 	}
-#endif
       }
       return;
     }
@@ -625,25 +501,29 @@ void KGoldrunner::keyPressEvent(QKeyEvent *k)
 
     switch (k->key()) {
 
-    // The following keys were the original keyboard controls for KGoldrunner.
-    // They have been commented out since mouse control was implemented in v1.0,
-    // because they do not work properly now.  If they are needed in the future,
-    // they would have to be backed up by a menu item to disable/enable mouse
-    // or keyboard mode and the supporting code changes.
+    // Two-handed keyboard controls for the hero.
+    case Key_Up:	setKey (KB_UP); break;		// Start upwards.
+    case Key_Right:	setKey (KB_RIGHT); break;	// Start right.
+    case Key_Down:	setKey (KB_DOWN); break;	// Start downwards.
+    case Key_Left:	setKey (KB_LEFT); break;	// Start left.
+    case Key_Space:	setKey (KB_STOP); break;	// Stop moving.
+    case Key_Z:		setKey (KB_DIGLEFT); break;	// Stop and dig left.
+    case Key_C:		setKey (KB_DIGRIGHT); break;	// Stop and dig right.
 
-    // case Key_Up: hero->setKey(UP);break;
-    // case Key_Right: hero->setKey(RIGHT);break;
-    // case Key_Down: hero->setKey(DOWN);break;
-    // case Key_Left: hero->setKey(LEFT);break;
-    // case Key_Control:
-    // case Key_Space: hero->dig();break;
-    // case Key_S: hero->digLeft();break;
-    // case Key_F: hero->digRight();break;
+    // Single-group (traditional) keyboard controls for the hero.
+    case Key_I:		setKey (KB_UP); break;		// Start upwards.
+    case Key_L:		setKey (KB_RIGHT); break;	// Start right.
+    case Key_K:		setKey (KB_DOWN); break;	// Start downwards.
+    case Key_J:		setKey (KB_LEFT); break;	// Start left.
+    // case Key_Space:	setKey (KB_STOP); break;	// Stop (as above).
+    case Key_U:		setKey (KB_DIGLEFT); break;	// Stop and dig left.
+    case Key_O:		setKey (KB_DIGRIGHT); break;	// Stop and dig right.
 
-    case Key_K:     herosDead(); break;			// Kill the hero.
-    case Key_S:     saveGame(); break;			// Save the game.
-    case Key_Plus:  hero->setSpeed(+1); break;		// Increase game speed.
-    case Key_Minus: hero->setSpeed(-1); break;		// Decrease game speed.
+    // Other game-play controls.
+    case Key_Q:		herosDead(); break;		// Kill the hero (Quit).
+    case Key_S:		saveGame(); break;		// Save the game.
+    case Key_Plus:	hero->setSpeed(+1); break;	// Increase game speed.
+    case Key_Minus:	hero->setSpeed(-1); break;	// Decrease game speed.
 
     // Halt or restart play.
     case Key_Escape: if (!(KGrObj::frozen)) freeze(); else unfreeze(); break;
@@ -656,7 +536,7 @@ void KGoldrunner::keyPressEvent(QKeyEvent *k)
 	        else {
 		    KGrObj::bugFixed = TRUE;} break;
     case Key_D: if (KGrObj::frozen) showFigurePositions(); break;
-    case Key_L: if (KGrObj::frozen)			// Turn logging on/off.
+    case Key_G: if (KGrObj::frozen)			// Turn logging on/off.
 		    KGrObj::logging = (KGrObj::logging)? FALSE:TRUE; break;
 
     case Key_H: if (KGrObj::frozen) showHeroState(); break;
@@ -667,7 +547,7 @@ void KGoldrunner::keyPressEvent(QKeyEvent *k)
     case Key_4: if (KGrObj::frozen) showEnemyState(4); break;
     case Key_5: if (KGrObj::frozen) showEnemyState(5); break;
     case Key_6: if (KGrObj::frozen) showEnemyState(6); break;
-    case Key_O: if (KGrObj::frozen) showObjectState(); break;
+    case Key_Question: if (KGrObj::frozen) showObjectState(); break;
 
     default: break;
     }
@@ -678,29 +558,36 @@ void KGoldrunner::setBlankLevel(bool playable)
     for (int j=0;j<20;j++)
       for (int i=0;i<28;i++) {
 	if (playable) {
-	    playfield[i+1][j+1] = new KGrFree (freebg, nuggetbg, false, view);
+	    //playfield[i+1][j+1] = new KGrFree (freebg, nuggetbg, false, view);
+	    playfield[i+1][j+1] = new KGrFree (FREE,i+1,j+1,view);
 	}
 	else {
-	    playfield[i+1][j+1] = new KGrEditable (freebg, view);
+	    //playfield[i+1][j+1] = new KGrEditable (freebg, view);
+	    playfield[i+1][j+1] = new KGrEditable (FREE);
+	    view->paintCell (i+1, j+1, FREE);
 	}
 	editObjArray[i+1][j+1] = FREE;
       }
     for (int j=0;j<30;j++) {
-      playfield[j][0]=new KGrBeton(QPixmap ());
+      //playfield[j][0]=new KGrBeton(QPixmap ());
+      playfield[j][0]=new KGrObj (BETON);
       editObjArray[j][0] = BETON;
-      playfield[j][21]=new KGrBeton(QPixmap ());
+      //playfield[j][21]=new KGrBeton(QPixmap ());
+      playfield[j][21]=new KGrObj (BETON);
       editObjArray[j][21] = BETON;
     }
     for (int i=0;i<22;i++) {
-      playfield[0][i]=new KGrBeton(QPixmap ());
+      //playfield[0][i]=new KGrBeton(QPixmap ());
+      playfield[0][i]=new KGrObj (BETON);
       editObjArray[0][i] = BETON;
-      playfield[29][i]=new KGrBeton(QPixmap ());
+      //playfield[29][i]=new KGrBeton(QPixmap ());
+      playfield[29][i]=new KGrObj (BETON);
       editObjArray[29][i] = BETON;
     }
-    for (int j=0;j<22;j++)
-      for (int i=0;i<30;i++) {
-	playfield[i][j]->move(16+i*16,16+j*16);
-    }
+    //for (int j=0;j<22;j++)
+      //for (int i=0;i<30;i++) {
+	//playfield[i][j]->move(16+i*16,16+j*16);
+    //}
 }
 
 void KGoldrunner::startLevel (int action)
@@ -725,10 +612,11 @@ void KGoldrunner::newGame (const int lev)
 	edit_menu->setItemEnabled(ID_SAVEFILE, FALSE);
 	file_menu->setItemEnabled(ID_SAVEFILE, FALSE);
 
-#ifdef QT1
-	editToolbar->hide();
+#ifdef QT3
+	removeDockWindow (editToolbar);
 #else
 	removeToolBar (editToolbar);
+#endif
 
 	// Force QMainWindow to recalculate its widget sizes immediately.
 	qApp->processEvents();
@@ -736,12 +624,8 @@ void KGoldrunner::newGame (const int lev)
 	// Force QMainWindow to release the toolbar space and keep the layout
 	// clean.  Not nice, but I've tried everything else in the Qt book.
 	this->setFixedSize (this->minimumSize());
-#endif
+	view->setHeroVisible (TRUE);
     } // End "if (editMode)".
-
-#ifdef QT1
-    setMenu(menuBar);
-#endif
 
     newLevel = TRUE;
     level = lev;
@@ -755,6 +639,7 @@ void KGoldrunner::newGame (const int lev)
 
     enemyCount = 0;
     enemies.clear();
+    view->deleteEnemySprites();
 
     newLevel = TRUE;;
     loadLevel (level);
@@ -849,16 +734,9 @@ int KGoldrunner::loadLevel (int levelNo)
 		break;
       }
   }
+  openlevel.close();
 
   // Indicate on the menus whether there is a hint for this level.
-#ifdef QT1
-  if (levelHint.length() > 0) {
-      file_menu->changeItem (klocale->translate("Get a &Hint"), ID_HINT);
-  }
-  else {
-      file_menu->changeItem (klocale->translate("NO &Hint"), ID_HINT);
-  }
-#else
   if (levelHint.length() > 0) {
       file_menu->changeItem (ID_HINT, "Get a &Hint");
       help_menu->changeItem (ID_HINT, "&Hint");
@@ -867,14 +745,10 @@ int KGoldrunner::loadLevel (int levelNo)
       file_menu->changeItem (ID_HINT, "NO &Hint");
       help_menu->changeItem (ID_HINT, "NO &Hint");
   }
-#endif
 
-  // Disconnect edit-mode slots from signals from border of "view".
+  // Disconnect edit-mode slots from signals from "view".
   disconnect (view, SIGNAL(mouseClick(int)), 0, 0);
   disconnect (view, SIGNAL(mouseLetGo(int)), 0, 0);
-
-  // Connect play-mode slot to signal from border of "view".
-  connect (view, SIGNAL(mouseClick(int)), SLOT(doDig(int)));
 
   if (newLevel) {
       hero->setEnemyList (&enemies);
@@ -889,7 +763,8 @@ int KGoldrunner::loadLevel (int levelNo)
   initSearchMatrix();
 
   // Re-draw the playfield frame, level title and figures.
-  view->repaint();
+  view->setTitle (getTitle());
+  view->updateCanvas();
 
   // Check if this is a tutorial collection and we are not on the "ENDE" screen.
   if ((collection->prefix.left(4) == "tute") && (levelNo != 0)) {
@@ -902,15 +777,10 @@ int KGoldrunner::loadLevel (int levelNo)
   }
 
   // Put the mouse pointer on the hero.
-  playfield[startI][startJ]->setMousePos();
+  view->setMousePos (startI, startJ);
 
-  // Make sure the figures appear.
-#ifdef QT1
-  kapp->processEvents();
-#else
-  qApp->processEvents();
-#endif
-  this->repaint();
+  // Connect play-mode slot to signal from "view".
+  connect (view, SIGNAL(mouseClick(int)), SLOT(doDig(int)));
 
   // Re-enable player input.
   loading = FALSE;
@@ -921,7 +791,7 @@ int KGoldrunner::loadLevel (int levelNo)
 bool KGoldrunner::openLevelFile (int levelNo, QFile & openlevel)
 {
   QString filePath;
-  QString levelOwner;
+  QString msg;
 
   filePath = getFilePath (owner, collection, levelNo);
 
@@ -930,36 +800,24 @@ bool KGoldrunner::openLevelFile (int levelNo, QFile & openlevel)
   // gucken ob und welcher Level existiert
 
   if (! openlevel.exists()) {
-#ifdef QT1
-	  KMsgBox::message(this,klocale->translate("lade Level"),
-			   klocale->translate("Dieser Level ist nicht vorhanden.\nBitte fragen sie Ihren Systemadministrator"));
-#else
       QMessageBox::information (this, "Load Level",
 	    "Cannot find file \"" + filePath +
 	    "\"\nPlease contact your System Administrator.");
-#endif
       return (FALSE);
   }
 
   // öffne Level zum lesen
   if (! openlevel.open (IO_ReadOnly)) {
-#ifdef QT1
-      KMsgBox::message(this,klocale->translate("lade Level"),
-		       klocale->translate("Fehler beim öffnen des Levels"));
-#else
       QMessageBox::information (this, "Load Level",
 	    "Cannot open file \"" + filePath +
 	    "\"\nfor read-only.  Please contact your System Administrator.");
-#endif
       return (FALSE);
   }
 
-  levelOwner = (owner == SYSTEM) ? "System Level" : "User Level";
-#ifdef QT1
-  statusBar->changeItem(klocale->translate(levelOwner),ID_LEVELPLACE);
-#else
-  levelOwner = levelOwner.leftJustify (L_GROUP, ' ');
-  statusString.replace (ID_GROUP, L_GROUP, levelOwner);
+#ifndef QT3
+  msg = (owner == SYSTEM) ? "System Level" : "User Level";
+  msg = msg.leftJustify (L_MSG, ' ');
+  statusString.replace (ID_MSG, L_MSG, msg);
   statusBar()->message (statusString);
 #endif
 
@@ -970,28 +828,27 @@ void KGoldrunner::changeObject (unsigned char kind, int i, int j)
 {
   delete playfield[i][j];
   switch(kind) {
-  case FREE: createObject(new KGrFree(freebg,nuggetbg,false,view),i,j);break;
-  case LADDER: createObject(new KGrLadder(ladderbg,view),i,j);break;
-  case HLADDER: createObject(new KGrHladder(freebg,nuggetbg,ladderbg,false,
-				view),i,j);break;
-  case BRICK: createObject(new KGrBrick(digpix,view),i,j);break;
-  case BETON: createObject(new KGrBeton(betonbg,view),i,j);break;
-  case FBRICK: createObject(new KGrFbrick(brickbg,view),i,j);break;
-  case POLE: createObject(new KGrPole(polebg,view),i,j);break;
-  case NUGGET: createObject(new KGrFree(freebg,nuggetbg,true,view),i,j);
-		nuggets++;break;
-  case HERO: createObject(new KGrFree(freebg,nuggetbg,false,view),i,j);
+  case FREE:	createObject(new KGrFree(FREE,i,j,view),FREE,i,j);break;
+  case LADDER:	createObject(new KGrObj(LADDER),LADDER,i,j);break;
+  case HLADDER:	createObject(new KGrHladder(HLADDER,i,j,view),FREE,i,j);break;
+  case BRICK:	createObject(new KGrBrick(BRICK,i,j,view),BRICK,i,j);break;
+  case BETON:	createObject(new KGrObj(BETON),BETON,i,j);break;
+  case FBRICK:	createObject(new KGrObj(FBRICK),BRICK,i,j);break;
+  case POLE:	createObject(new KGrObj(POLE),POLE,i,j);break;
+  case NUGGET:	createObject(new KGrFree(NUGGET,i,j,view),NUGGET,i,j);
+				nuggets++;break;
+  case HERO:	createObject(new KGrFree(FREE,i,j,view),FREE,i,j);
     hero->init(i,j);
     startI = i; startJ = j;
     hero->started = FALSE;
     hero->showFigure();
     break;
-  case ENEMY: createObject(new KGrFree(freebg,nuggetbg,false,view),i,j);
+  case ENEMY:	createObject(new KGrFree(FREE,i,j,view),FREE,i,j);
     if (newLevel){
       // Starting a level for the first time.
-      enemy = new KGrEnemy (QPixmap(enemy1_xpm), QPixmap(enemy2_xpm), i, j);
+      enemy = new KGrEnemy (view, i, j);
       enemy->setPlayfield(&playfield);
-      enemy->enemyId=enemyCount++;
+      enemy->enemyId = enemyCount++;
       enemies.append(enemy);
       connect(enemy, SIGNAL(lostNugget()), SLOT(loseNugget()));
       connect(enemy, SIGNAL(trapped(int)), SLOT(incScore(int)));
@@ -1005,19 +862,14 @@ void KGoldrunner::changeObject (unsigned char kind, int i, int j)
     }
     enemy->showFigure();
     break;
-  default :  createObject(new KGrBrick(digpix,view),i,j);break;
+  default :  createObject(new KGrBrick(BRICK,i,j,view),BRICK,i,j);break;
   }
 }
 
-void KGoldrunner::createObject (KGrObj *o, int x, int y)
+void KGoldrunner::createObject (KGrObj *o, char picType, int x, int y)
 {
     playfield[x][y] = o;
-    playfield[x][y]->move(32+(x-1)*16,32+(y-1)*16);
-    playfield[x][y]->show();
-
-    // Connect play-mode slot to signal from playfield element.
-    // Note: Edit-mode slots were disconnected when element was deleted.
-    connect (o, SIGNAL(mouseClick(int)), SLOT(doDig(int)));
+    view->paintCell (x, y, picType);		// Pic maybe not same as object.
 }
 
 void KGoldrunner::setTimings ()
@@ -1110,7 +962,11 @@ void KGoldrunner::saveGame()
     QTime now =   QTime::currentTime();
     QString saved;
     QString day;
+#ifdef QT3
+    day = today.shortDayName(today.dayOfWeek());
+#else
     day = today.dayName(today.dayOfWeek());
+#endif
     saved = saved.sprintf
 		("%-6s %03d %03ld %7ld    %s %04d-%02d-%02d %02d:%02d\n",
 		collection->prefix.myStr(), level, lifes, score,
@@ -1245,11 +1101,7 @@ void KGoldrunner::loadGame()
     bool found = FALSE;
     int  lev;
     if (selectedGame >= 0) {
-#ifdef QT1
-	s = lgList->text(selectedGame);
-#else
 	s = lgList->currentText();
-#endif
 	pr = s.mid (21, 7);			// Get the collection prefix.
 	pr = pr.left (pr.find (" ", 0, FALSE));
 	for (i = 0; i < imax; i++) {		// Find the collection.
@@ -1410,7 +1262,11 @@ void KGoldrunner::checkHighScore()
 
     QDate today = QDate::currentDate();
     QString hsDate;
+#ifdef QT3
+    QString day = today.shortDayName(today.dayOfWeek());
+#else
     QString day = today.dayName(today.dayOfWeek());
+#endif
     hsDate = hsDate.sprintf
 		("%s %04d-%02d-%02d",
 		day.myStr(),
@@ -1510,16 +1366,6 @@ void KGoldrunner::showHighScores()
 
     QDialog *		hs = new QDialog (view, "hsDialog", TRUE,
 			WStyle_Customize | WStyle_NormalBorder | WStyle_Title);
-#ifdef QT1
-    QLabel *		hsHeader = new QLabel (
-					"KGOLDRUNNER HALL OF FAME\n\n\""
-					+ collection->name + "\" Game",
-			hs);
-			hsHeader->setAlignment (AlignCenter);
-    QString		s = hsHeader->fontInfo().family();
-    int			i = hsHeader->fontInfo().pointSize();
-			hsHeader->setFont (QFont (s, i, QFont::Bold));
-#else
     QLabel *		hsHeader = new QLabel (
 					"<center><h2>"
 					"KGoldrunner Hall of Fame"
@@ -1527,7 +1373,6 @@ void KGoldrunner::showHighScores()
 					"<center><h3>\"" + collection->name +
 					"\" Game</h3></center>",
 			hs);
-#endif
     QLabel *		hsColHeader  = new QLabel (
 					"    Name                          "
 					"Level  Score       Date", hs);
@@ -1544,7 +1389,6 @@ void KGoldrunner::showHighScores()
     OK->		setGeometry (10, 330, 90,  25);
 
     OK->		setAccel (Key_Return);
-    connect		(OK, SIGNAL (clicked ()), hs, SLOT (accept ()));
 
     QFont		f ("courier", 12);
     f.			setFixedPitch (TRUE);
@@ -1579,6 +1423,7 @@ void KGoldrunner::showHighScores()
     }
 
     // Start up the dialog box.
+    connect		(OK, SIGNAL (clicked ()), hs, SLOT (accept ()));
     hs->		exec();
 
     delete hs;
@@ -1591,13 +1436,31 @@ void KGoldrunner::pauseResume()
 
 void KGoldrunner::freeze()
 {
-    pauseBtn->setText ("Resume (Esc)");
+    if ((! modalFreeze) && (! messageFreeze)) {
+#ifdef QT3
+	QString msg = "Press \"Esc\" to RESUME";
+	msg = msg.leftJustify (L_MSG, ' ');
+	statusString.replace (ID_MSG, L_MSG, msg);
+	statusBar()->message (statusString);
+#else
+	pauseBtn->setText ("Resume (Esc)");
+#endif
+    }
     KGrObj::frozen = TRUE;	// Halt the game, by blocking all timer events.
 }
 
 void KGoldrunner::unfreeze()
 {
-    pauseBtn->setText ("PAUSE (Esc)");
+    if ((! modalFreeze) && (! messageFreeze)) {
+#ifdef QT3
+	QString msg = "Press \"Esc\" to PAUSE";
+	msg = msg.leftJustify (L_MSG, ' ');
+	statusString.replace (ID_MSG, L_MSG, msg);
+	statusBar()->message (statusString);
+#else
+	pauseBtn->setText ("PAUSE (Esc)");
+#endif
+    }
     KGrObj::frozen = FALSE;	// Restart the game.  Because frozen = FALSE,
     doStep();			// the game goes on running after the step.
 }
@@ -1625,17 +1488,6 @@ QString KGoldrunner::getFilePath (Owner o, KGrCollection * colln, int lev)
 
 void KGoldrunner::initStatusBar()
 {
-#ifdef QT1
-  QString s = statusBar->fontInfo().family();
-  int i = statusBar->fontInfo().pointSize();
-  statusBar->setFont (QFont (s, i, QFont::Bold));
-  statusBar->insertItem(klocale->translate("Lives: 005"),ID_LIFES);
-  statusBar->insertItem(klocale->translate("Score: 00000"),ID_SCORE);
-  statusBar->insertItem(klocale->translate("Level: 000"),ID_LEVEL);
-  statusBar->insertItem(klocale->translate("System Level"),ID_LEVELPLACE);
-  statusBar->insertItem(" KGoldrunner ",ID_DUMMY);
-  statusBar->setAlignment(ID_DUMMY,KStatusBar::Right);
-#else
   QString s = statusBar()->fontInfo().family();
   int i = statusBar()->fontInfo().pointSize();
   statusBar()->setFont (QFont (s, i, QFont::Bold));
@@ -1644,9 +1496,12 @@ void KGoldrunner::initStatusBar()
   statusString.replace (ID_LIFES, L_LIFES, "Lives: 005");
   statusString.replace (ID_SCORE, L_SCORE, "Score: 00000");
   statusString.replace (ID_LEVEL, L_LEVEL, "Level: 000");
-  statusString.replace (ID_GROUP, L_GROUP, "System Level");
-  statusBar()->message (statusString);
+#ifdef QT3
+  statusString.replace (ID_MSG, L_MSG, "Press \"Esc\" to PAUSE");
+#else
+  statusString.replace (ID_MSG, L_MSG, "System Level");
 #endif
+  statusBar()->message (statusString);
 }
 
 void KGoldrunner::changeLevel (int newLevelNo)
@@ -1655,15 +1510,10 @@ void KGoldrunner::changeLevel (int newLevelNo)
   tmp.setNum (newLevelNo);
   if (newLevelNo < 100)
       tmp = tmp.rightJustify (3, '0');
-#ifdef QT1
-  tmp.insert (0, klocale->translate("Level: "));
-  statusBar->changeItem (tmp, ID_LEVEL);
-#else
   tmp.insert (0, "Level: ");
   tmp = tmp.leftJustify (L_LEVEL, ' ');
   statusString.replace (ID_LEVEL, L_LEVEL, tmp);
   statusBar()->message (statusString);
-#endif
 }
 
 void KGoldrunner::changeLifes (int newLives)
@@ -1672,15 +1522,10 @@ void KGoldrunner::changeLifes (int newLives)
   tmp.setNum (newLives);
   if (newLives < 100)
       tmp = tmp.rightJustify (3, '0');
-#ifdef QT1
-  tmp.insert (0, klocale->translate("Lives: "));
-  statusBar->changeItem (tmp, ID_LIFES);
-#else
   tmp.insert (0, "Lives: ");
   tmp = tmp.leftJustify (L_LIFES, ' ');
   statusString.replace (ID_LIFES, L_LIFES, tmp);
   statusBar()->message (statusString);
-#endif
 }
 
 void KGoldrunner::changeScore (int newScore)
@@ -1690,15 +1535,10 @@ void KGoldrunner::changeScore (int newScore)
   if (newScore < 10000) {
       tmp = tmp.rightJustify (5, '0');
   }
-#ifdef QT1
-  tmp.insert (0, klocale->translate("Score: "));
-  statusBar->changeItem (tmp, ID_SCORE);
-#else
   tmp.insert (0, "Score: ");
   tmp = tmp.leftJustify (L_SCORE, ' ');
   statusString.replace (ID_SCORE, L_SCORE, tmp);
   statusBar()->message (statusString);
-#endif
 }
 
 /******************************************************************************/
@@ -1735,6 +1575,12 @@ void KGoldrunner::commandCallback(int i)
     case ID_NCOLL:	if (saveOK ()) {editCollection (ID_NCOLL);} break;
 
     // Settings (options) menu.
+    case ID_MOUSE:	opt_menu->setItemChecked (ID_MOUSE, TRUE);
+			opt_menu->setItemChecked (ID_KEYBOARD, FALSE);
+			mouseMode = TRUE; break;
+    case ID_KEYBOARD:	opt_menu->setItemChecked (ID_MOUSE, FALSE);
+			opt_menu->setItemChecked (ID_KEYBOARD, TRUE);
+			mouseMode = FALSE; break;
     case ID_KGR:	rCheck (ID_KGR); break;		// Set KGr defaults.
     case ID_TRAD:	rCheck (ID_TRAD); break;	// Set Trad defaults.
     case ID_MESLOW:	KGrFigure::variableTiming =
@@ -1760,30 +1606,22 @@ void KGoldrunner::commandCallback(int i)
     case ID_ISPEED:	hero->setSpeed (+1);          sCheck (ID_ISPEED); break;
     case ID_DSPEED:	hero->setSpeed (-1);          sCheck (ID_DSPEED); break;
 
+#ifdef QT3
+    // Size menu actions.
+    case ID_LARGER:	view->changeSize (+1); break;
+    case ID_SMALLER:	if (view->changeSize (-1))
+			    this->setFixedSize (view->size()); break;
+#endif
+
     // Help-menu actions.  Tute and hint are on the game menu in both QT1 & QT2.
     case ID_TUTE:	if (saveOK ()) {startTutorial();} break;
     case ID_HINT:	if (!editMode) {showHint();} break;
-#ifndef QT1
     // These are for QT2 only.  KDE 1 provides the Help-menu in the QT1 version.
     case ID_MANUAL:	showManual (); break;
     case ID_ABOUTKGR:	QMessageBox::about (this, "About KGoldrunner", about);
 			break;
     case ID_ABOUTQT:	QMessageBox::aboutQt (this); break;
-#endif
 
-#ifdef QT1
-    // Edit toolbar/menu actions.
-    case ID_FREE:	editObj = FREE; break;		// Empty space.
-    case ID_HERO:	editObj = HERO; break;		// Hero.
-    case ID_ENEMY:	editObj = ENEMY; break;		// Enemy.
-    case ID_BRICK:	editObj = BRICK; break;		// Brick (can dig).
-    case ID_FBRICK:	editObj = FBRICK; break;	// Trap (fall through).
-    case ID_BETON:	editObj = BETON; break;		// Concrete.
-    case ID_LADDER:	editObj = LADDER; break;	// Ladder.
-    case ID_HLADDER:	editObj = HLADDER; break;	// Hidden ladder.
-    case ID_POLE:	editObj = POLE; break;		// Pole (or bar).
-    case ID_NUGGET:	editObj = NUGGET; break;	// Gold nugget.
-#else
     // Edit toolbar/menu actions.
     case ID_FREE:	freeSlot (); break;		// Empty space.
     case ID_HERO:	edheroSlot (); break;		// Hero.
@@ -1795,19 +1633,9 @@ void KGoldrunner::commandCallback(int i)
     case ID_HLADDER:	hladderSlot (); break;		// Hidden ladder.
     case ID_POLE:	poleSlot (); break;		// Pole (or bar).
     case ID_NUGGET:	nuggetSlot (); break;		// Gold nugget.
-#endif
 
     default : break;
     }
-
-#ifdef QT1
-    // Change the toggles on the edit-object buttons.
-    if ((i >= ID_FREE) && (i <= ID_NUGGET)) {
-	editToolbar->setButton (pressedButton, FALSE);
-	pressedButton = i;
-	editToolbar->setButton (pressedButton, TRUE);
-    }
-#endif
 }
 
 void KGoldrunner::rCheck (int ruleID)
@@ -1877,6 +1705,7 @@ void KGoldrunner::showHidden()
     for (j=1;j<29;j++)
       if (playfield[j][i]->whatIam()==HLADDER)
 	((KGrHladder *)playfield[j][i])->showLadder();
+  view->updateCanvas();
   initSearchMatrix();
 }
 
@@ -1889,30 +1718,34 @@ void KGoldrunner::herosDead()
 {
     // Lose a life.
     if (--lifes > 0) {
-	// Still some life remaining: repeat the current level.
+	// Still some life left, so PAUSE and then re-start the level.
 	changeLifes (lifes);
-	enemyCount = 0;
-	loadLevel (level);
+	KGrObj::frozen = TRUE;		// Freeze the animation and let
+	dyingTimer->start (1000, TRUE);	// the player see what happened.
     }
     else {
 	// Game over: display the "ENDE" screen.
 	changeLifes (lifes);
 	freeze();
-#ifdef QT1
-	QString gameOver = "GAME OVER !!!";
-#else
 	QString gameOver = "<B>" "GAME OVER !!!" "</B>";
-#endif
 	QMessageBox::information (this, collection->name, gameOver);
 	checkHighScore();	// Check if there is a high score for this game.
 
 	enemyCount = 0;
 	enemies.clear();	// Stop the enemies catching the hero again ...
+	view->deleteEnemySprites();
 	unfreeze();		//    ... NOW we can unfreeze.
 	newLevel = TRUE;
 	loadLevel (0);
 	newLevel = FALSE;
     }
+}
+
+void KGoldrunner::finalBreath()
+{
+    enemyCount = 0;		// Hero is dead: re-start the level.
+    loadLevel (level);
+    KGrObj::frozen = FALSE;	// Unfreeze the game, but don't move yet.
 }
 
 void KGoldrunner::nextLevel()
@@ -1938,6 +1771,7 @@ void KGoldrunner::nextLevel()
 
     enemyCount = 0;
     enemies.clear();
+    view->deleteEnemySprites();
     newLevel = TRUE;
     loadLevel (level);
     newLevel = FALSE;
@@ -1951,13 +1785,17 @@ void KGoldrunner::readMousePos()
     // If loading a level for play or editing, ignore mouse-position input.
     if (loading) return;
 
+    // If game control is currently by keyboard, ignore the mouse.
+    if ((! mouseMode) && (! editMode)) return;
+
     p = view->getMousePos ();
-    i = ((p.x() - 32) / 16) + 1; j = ((p.y() - 32) / 16) + 1;
+    i = p.x(); j = p.y();
 
     if (editMode) {
 	// Editing - check if we are in paint mode and have moved the mouse.
 	if (paintEditObj && ((i != oldI) || (j != oldJ))) {
 	    insertEditObj (i, j);
+	    view->updateCanvas();
 	    oldI = i;
 	    oldJ = j;
 	}
@@ -1976,8 +1814,13 @@ void KGoldrunner::readMousePos()
 }
 
 void KGoldrunner::doDig (int button) {
+
+    // If game control is currently by keyboard, ignore the mouse.
+    if (editMode) return;
+    if (! mouseMode) return;
+
     // If loading a level for play or editing, ignore mouse-button input.
-    if (! loading) {
+    if ((! loading) && (! KGrObj::frozen)) {
 	if (! hero->started) {
 	    startPlaying();		// If first player-input, start playing.
 	}
@@ -1989,24 +1832,25 @@ void KGoldrunner::doDig (int button) {
     }
 }
 
-/******************************************************************************/
-/**************************  KGOLDRUNNER PAINT EVENT **************************/
-/******************************************************************************/
-
-void KGoldrunner::paintEvent (QPaintEvent * ev)
+void KGoldrunner::setKey (KBAction movement)
 {
-    if (editMode)		// KGrEditable class has its own repaint.  Don't
-	return;			// repaint the hero's last PLAYING position.
+    if (editMode) return;
 
-    if (ev->rect().width() > 0)	// Use "ev": just to avoid compiler warnings.
-	;
-
-    if (hero != NULL) {
-	hero->showFigure();
+    // Using keyboard control automatically disables mouse control.
+    if (mouseMode) {
+	mouseMode = FALSE;
+	opt_menu->setItemChecked (ID_MOUSE, FALSE);
+	opt_menu->setItemChecked (ID_KEYBOARD, TRUE);
     }
 
-    for (enemy=enemies.first();enemy != 0; enemy = enemies.next()) {
-	enemy->showFigure();
+    switch (movement) {
+    case KB_UP:		hero->setKey (UP); break;
+    case KB_DOWN:	hero->setKey (DOWN); break;
+    case KB_LEFT:	hero->setKey (LEFT); break;
+    case KB_RIGHT:	hero->setKey (RIGHT); break;
+    case KB_STOP:	hero->setKey (STAND); break;
+    case KB_DIGLEFT:	hero->setKey (STAND); hero->digLeft  (); break;
+    case KB_DIGRIGHT:	hero->setKey (STAND); hero->digRight (); break;
     }
 }
 
@@ -2074,7 +1918,7 @@ void KGoldrunner::showObjectState()
     KGrObj * myObject;
 
     p = view->getMousePos ();
-    i = ((p.x() - 32) / 16) + 1; j = ((p.y() - 32) / 16) + 1;
+    i = p.x(); j = p.y();
     myObject = playfield[i][j];
     switch (myObject->whatIam()) {
 	case BRICK:
@@ -2118,7 +1962,6 @@ void KGoldrunner::createLevel()
     for (i = 1; i <= FIELDWIDTH; i++)
     for (j = 1; j <= FIELDHEIGHT; j++) {
 	insertEditObj (i, j);
-	playfield[i][j]->show();
 	editObjArray[i][j] = editObj;
     }
 
@@ -2138,6 +1981,9 @@ void KGoldrunner::createLevel()
 
     // Re-enable player input.
     loading = FALSE;
+
+    view->updateCanvas();				// Show the edit area.
+    view->update();					// Show the level name.
 }
 
 void KGoldrunner::updateLevel()
@@ -2189,7 +2035,6 @@ void KGoldrunner::loadEditLevel (int lev)
     for (i = 1; i <= FIELDWIDTH;  i++) {
 	editObj = levelFile.getch ();
 	insertEditObj (i, j);
-	playfield[i][j]->show();
 	editObjArray[i][j] = editObj;
 	lastSaveArray[i][j] = editObjArray[i][j];	// Copy for "saveOK()".
     }
@@ -2215,10 +2060,11 @@ void KGoldrunner::loadEditLevel (int lev)
     editObj = BRICK;				// Reset default object.
     levelFile.close ();
 
-    showEditLevel();				// Reconnect signals.
-    view->repaint();				// Show the level name.
+    view->setTitle (getTitle());		// Show the level name.
+    view->updateCanvas();			// Show the edit area.
     edit_menu->setItemEnabled (ID_SAVEFILE, TRUE);
     file_menu->setItemEnabled (ID_SAVEFILE, TRUE);
+    showEditLevel();				// Reconnect signals.
 
     // Re-enable player input.
     loading = FALSE;
@@ -2330,7 +2176,8 @@ bool KGoldrunner::saveLevelFile()
 
     level = lev;
     changeLevel (level);
-    view->repaint();				// Display new title.
+    view->setTitle (getTitle());		// Display new title.
+    view->updateCanvas();			// Show the edit area.
     return (TRUE);
 }
 
@@ -2421,7 +2268,8 @@ void KGoldrunner::moveLevelFile ()
 
     level = toL;
     collection = collections.at(toC);
-    view->repaint();			// Re-display details of level.
+    view->setTitle (getTitle());	// Re-write title.
+    view->updateCanvas();		// Re-display details of level.
     changeLevel (level);
 }
 
@@ -2490,6 +2338,7 @@ void KGoldrunner::deleteLevelFile ()
     else if (level > 0) {
 	enemyCount = 0;				// Load level in play mode.
 	enemies.clear();
+	view->deleteEnemySprites();
 	newLevel = TRUE;;
 	loadLevel (level);
 	newLevel = FALSE;
@@ -2543,18 +2392,17 @@ void KGoldrunner::initEdit()
 
 	// We were previously in play mode: stop the hero running or falling.
 	hero->init (1, 1);
+	view->setHeroVisible (FALSE);
 
 	// Show the editor's toolbar.
-#ifdef QT1
-	editToolbar->setBarPos (KToolBar::Top);
-	editToolbar->show();
-	setMenu(menuBar);
+#ifdef QT3
+	addDockWindow (editToolbar, "Editor", DockTop);
 #else
 	addToolBar (editToolbar, "Editor", QMainWindow::Top);
+#endif
 
 	// Force QMainWindow to re-calculate its sizes.
 	qApp->processEvents();
-#endif
     }
 
     paintEditObj = FALSE;
@@ -2562,21 +2410,16 @@ void KGoldrunner::initEdit()
     // Set the default object and button.
     editObj = BRICK;
 
-#ifdef QT1
-    editToolbar->setButton (pressedButton, FALSE);
-    pressedButton = ID_BRICK;
-    editToolbar->setButton (pressedButton, TRUE);
-#else
     pressedButton->setOn (FALSE);
     pressedButton = brickBtn;
     pressedButton->setOn (TRUE);
-#endif
 
     oldI = 0;
     oldJ = 0;
     heroCount = 0;
     enemyCount = 0;
     enemies.clear();
+    view->deleteEnemySprites();
     nuggets = 0;
 
     changeLevel(level);
@@ -2586,7 +2429,8 @@ void KGoldrunner::initEdit()
     deleteLevel();
     setBlankLevel(FALSE);	// Fill play field with Editable objects.
 
-    view->repaint();		// Show title of level.
+    view->setTitle (getTitle());// Show title of level.
+    view->updateCanvas();	// Show the edit area.
 }
 
 void KGoldrunner::deleteLevel()
@@ -2608,63 +2452,36 @@ void KGoldrunner::insertEditObj (int i, int j)
 	heroCount = 0;
     }
 
-    switch (editObj) {
-    case FREE:
-	((KGrEditable *)playfield[i][j])->setType (FREE, freebg); break;
-    case LADDER:
-	((KGrEditable *)playfield[i][j])->setType (LADDER, ladderbg); break;
-    case HLADDER:
-	((KGrEditable *)playfield[i][j])->setType (HLADDER, hladderbg); break;
-    case BRICK:
-	((KGrEditable *)playfield[i][j])->setType (BRICK, brickbg); break;
-    case BETON:
-	((KGrEditable *)playfield[i][j])->setType (BETON, betonbg); break;
-    case FBRICK:
-	((KGrEditable *)playfield[i][j])->setType (FBRICK, fbrickbg); break;
-    case POLE:
-	((KGrEditable *)playfield[i][j])->setType (POLE, polebg); break;
-    case NUGGET:
-	((KGrEditable *)playfield[i][j])->setType (NUGGET, nuggetbg); break;
-    case ENEMY:
-	((KGrEditable *)playfield[i][j])->setType (ENEMY, edenemybg); break;
-    case HERO:
+    if (editObj == HERO) {
 	if (heroCount != 0) {
 	    // Can only have one hero: remove him from his previous position.
 	    for (int m = 1; m <= FIELDWIDTH; m++)
 	    for (int n = 1; n <= FIELDHEIGHT; n++) {
 		if (editObjArray[m][n] == HERO) {
-		    ((KGrEditable *)playfield[m][n])-> setType (FREE, freebg);
-		    editObjArray[m][n] = FREE;
+		    setEditableCell (m, n, FREE);
 		}
 	    }
 	}
 	heroCount = 1;
-	((KGrEditable *)playfield[i][j])->setType (HERO, edherobg); break;
-    default:
-	((KGrEditable *)playfield[i][j])->setType (BRICK, brickbg); break;
     }
 
-    editObjArray[i][j] = editObj;
-    playfield[i][j]->show();
+    setEditableCell (i, j, editObj);
+}
+
+void KGoldrunner::setEditableCell (int i, int j, char type)
+{
+    ((KGrEditable *) playfield[i][j])->setType (type);
+    view->paintCell (i, j, type);
+    editObjArray[i][j] = type;
 }
 
 void KGoldrunner::showEditLevel()
 {
-    int i, j;
-
-    // Disconnect play-mode slots from signals from border of "view".
+    // Disconnect play-mode slots from signals from "view".
     disconnect (view, SIGNAL(mouseClick(int)), 0, 0);
     disconnect (view, SIGNAL(mouseLetGo(int)), 0, 0);
 
-    for (j = 1; j <= FIELDHEIGHT; j++)
-    for (i = 1; i <= FIELDWIDTH; i++) {
-	// Connect edit-mode slots to signals from playfield element.
-	// Note: Play-mode slot was disconnected when element was deleted.
-	connect (playfield[i][j], SIGNAL(mouseClick(int)), SLOT(doEdit(int)));
-	connect (playfield[i][j], SIGNAL(mouseLetGo(int)), SLOT(endEdit(int)));
-    }
-
-    // Connect edit-mode slots to signals from border of "view".
+    // Connect edit-mode slots to signals from "view".
     connect (view, SIGNAL(mouseClick(int)), SLOT(doEdit(int)));
     connect (view, SIGNAL(mouseLetGo(int)), SLOT(endEdit(int)));
 }
@@ -2725,53 +2542,15 @@ void KGoldrunner::makeEditToolbar()
     edherobg	= QPixmap (edithero_xpm);
     edenemybg	= QPixmap (editenemy_xpm);
 
-#ifdef QT1
-    editToolbar = new KToolBar(this);
-#else
     editToolbar = new QToolBar ("Editor", this, QMainWindow::Top, FALSE);
+#ifdef QT3
+    editToolbar->setHorizontallyStretchable (TRUE);
+#else
     editToolbar->setHorizontalStretchable (TRUE);
 #endif
 
     editToolbar->setPalette (QPalette (QColor (90, 90, 155)));
-    setPalettePropagation (AllChildren);
 
-#ifdef QT1
-    // editToolbar->insertButton (loader->loadIcon("filenew.xpm"),
-    editToolbar->insertButton (QPixmap (filenew),
-			       ID_CREATE, TRUE,
-			       klocale->translate("Create Level"));
-    // editToolbar->insertButton (loader->loadIcon("fileopen.xpm"),
-    editToolbar->insertButton (QPixmap (fileopen),
-			       ID_UPDATE, TRUE,
-			       klocale->translate("Edit Any Level"));
-    // editToolbar->insertButton (loader->loadIcon("filefloppy.xpm"),
-    editToolbar->insertButton (QPixmap (filesave),
-			       ID_SAVEFILE, TRUE,
-			       klocale->translate("Save Level"));
-    editToolbar->insertSeparator();
-    editToolbar->insertSeparator();
-
-    editToolbar->insertButton (freebg, ID_FREE, TRUE,
-			       klocale->translate("Empty space"));
-    editToolbar->insertButton (edherobg, ID_HERO, TRUE,
-			       klocale->translate("Hero"));
-    editToolbar->insertButton (edenemybg, ID_ENEMY, TRUE,
-			       klocale->translate("Enemy"));
-    editToolbar->insertButton (brickbg, ID_BRICK, TRUE,
-			       klocale->translate("Brick (can dig)"));
-    editToolbar->insertButton (betonbg, ID_BETON, TRUE,
-			      klocale->translate("Concrete (cannot dig)"));
-    editToolbar->insertButton (fbrickbg, ID_FBRICK, TRUE,
-			       klocale->translate("Trap (can fall through)"));
-    editToolbar->insertButton (ladderbg, ID_LADDER, TRUE,
-			       klocale->translate("Ladder"));
-    editToolbar->insertButton (hladderbg, ID_HLADDER, TRUE,
-			       klocale->translate("Hidden ladder"));
-    editToolbar->insertButton (polebg, ID_POLE, TRUE,
-			       klocale->translate("Pole (or bar)"));
-    editToolbar->insertButton (nuggetbg, ID_NUGGET, TRUE,
-			       klocale->translate("Gold nugget"));
-#else
     createBtn	= new QToolButton (QPixmap (filenew), "Create Level",
 		    QString::null, this, SLOT (createLevel()), editToolbar);
     updateBtn	= new QToolButton (QPixmap (fileopen), "Edit Any Level",
@@ -2801,20 +2580,7 @@ void KGoldrunner::makeEditToolbar()
     nuggetBtn	= new QToolButton (nuggetbg, "Gold nugget",
 		    QString::null, this, SLOT (nuggetSlot()), editToolbar);
     editToolbar->addSeparator();
-#endif
 
-#ifdef QT1
-    editToolbar->setToggle (ID_FREE, TRUE);
-    editToolbar->setToggle (ID_HERO, TRUE);
-    editToolbar->setToggle (ID_ENEMY, TRUE);
-    editToolbar->setToggle (ID_BRICK, TRUE);
-    editToolbar->setToggle (ID_BETON, TRUE);
-    editToolbar->setToggle (ID_FBRICK, TRUE);
-    editToolbar->setToggle (ID_LADDER, TRUE);
-    editToolbar->setToggle (ID_HLADDER, TRUE);
-    editToolbar->setToggle (ID_POLE, TRUE);
-    editToolbar->setToggle (ID_NUGGET, TRUE);
-#else
     freeBtn->setToggleButton (TRUE);
     edheroBtn->setToggleButton (TRUE);
     edenemyBtn->setToggleButton (TRUE);
@@ -2825,21 +2591,9 @@ void KGoldrunner::makeEditToolbar()
     hladderBtn->setToggleButton (TRUE);
     poleBtn->setToggleButton (TRUE);
     nuggetBtn->setToggleButton (TRUE);
-#endif
 
-#ifdef QT1
-    pressedButton = ID_BRICK;
-    editToolbar->setButton (pressedButton, TRUE);
-
-    addToolBar (editToolbar);
-    editToolbar->setBarPos (KToolBar::Top);
-
-    editToolbar->show();
-    connect (editToolbar, SIGNAL(clicked(int)), SLOT(commandCallback(int)));
-#else
     pressedButton = brickBtn;
     pressedButton->setOn (TRUE);
-#endif
 }
 
 /******************************************************************************/
@@ -2853,13 +2607,14 @@ void KGoldrunner::doEdit (int button)
     int i, j;
 
     p = view->getMousePos ();
-    i = ((p.x() - 32) / 16) + 1; j = ((p.y() - 32) / 16) + 1;
+    i = p.x(); j = p.y();
 
     switch (button) {
     case LeftButton:
     case RightButton:
         paintEditObj = TRUE;
         insertEditObj (i, j);
+	view->updateCanvas();
         oldI = i;
         oldJ = j;
         break;
@@ -2875,7 +2630,7 @@ void KGoldrunner::endEdit (int button)
     int i, j;
 
     p = view->getMousePos ();
-    i = ((p.x() - 32) / 16) + 1; j = ((p.y() - 32) / 16) + 1;
+    i = p.x(); j = p.y();
 
     switch (button) {
     case LeftButton:
@@ -2883,6 +2638,7 @@ void KGoldrunner::endEdit (int button)
         paintEditObj = FALSE;
         if ((i != oldI) || (j != oldJ)) {
 	    insertEditObj (i, j);
+	    view->updateCanvas();
 	}
         break;
     default:
@@ -2890,7 +2646,6 @@ void KGoldrunner::endEdit (int button)
     }
 }
 
-#ifndef QT1
 /******************************************************************************/
 /*********************   EDIT-BUTTON SLOTS   **********************************/
 /******************************************************************************/
@@ -2912,7 +2667,6 @@ void KGoldrunner::setButton (QToolButton * btn)
     pressedButton = btn;
     pressedButton->setOn (TRUE);
 }
-#endif
 
 /******************************************************************************/
 /*************************   COLLECTIONS HANDLING   ***************************/
@@ -3153,12 +2907,8 @@ int KGoldrunner::selectLevel (int action)
 			WStyle_Customize | WStyle_NormalBorder | WStyle_Title);
 
     QLabel *		collnL  = new QLabel ("List of Games", sl);
-#ifdef QT1
-    QButtonGroup *	ownerG  = new QButtonGroup ("Owner", sl);
-#else
     QButtonGroup *	ownerG  = new QButtonGroup
 				    (1, QButtonGroup::Horizontal, "Owner", sl);
-#endif
 			systemB = new QRadioButton ("System", ownerG);
 			userB   = new QRadioButton ("User",   ownerG);
 
@@ -3193,12 +2943,7 @@ int KGoldrunner::selectLevel (int action)
     sl->	setGeometry (p.x() + 50, p.y() + 50, 310, 290);
     collnL->	setGeometry (10,  10,  100, 20);
     ownerG->	setGeometry (10,  40,  90,  80);
-#ifdef QT1
-    systemB->	setGeometry (10,  15,  70,  30);
-    userB->	setGeometry (10,  45,  70,  30);
-#else
     // In QT v2.x the buttons are positioned in the box automatically.
-#endif
     colln->	setGeometry (120, 10,  180, 120);
     collnD->	setGeometry (10,  140, 190, 20);
     collnA->	setGeometry (210, 140, 90,  25);
@@ -3216,50 +2961,6 @@ int KGoldrunner::selectLevel (int action)
     OK->	setAccel (Key_Return);
     HELP->	setAccel (Key_F1);
     CANCEL->	setAccel (Key_Escape);
-
-    // Set the actions required when the collection or level changes.
-    connect (systemB, SIGNAL (clicked ()), this, SLOT (slSystemOwner()));
-    connect (userB,   SIGNAL (clicked ()), this, SLOT (slUserOwner()));
-
-    connect (colln,   SIGNAL (highlighted (int)), this, SLOT (slColln (int)));
-    connect (collnA,  SIGNAL (clicked ()), this, SLOT (slAboutColln ()));
-
-#ifdef QT1
-    connect (display, SIGNAL (textChanged (const char *)),
-		this, SLOT (slUpdate (const char *)));
-#else
-    connect (display, SIGNAL (textChanged (const QString &)),
-		this, SLOT (slUpdate (const QString &)));
-#endif
-
-    connect (number,  SIGNAL (valueChanged(int)), this, SLOT(slShowLevel(int)));
-
-    // Enable the name and hint dialog only if saving a new or edited level.
-    // At other times they have not been loaded or initialised.
-    if ((slAction == ID_CREATE) || (slAction == ID_SAVEFILE)) {
-	slName->hide();
-	connect (levelNH,  SIGNAL (clicked ()), this, SLOT (slNameAndHint ()));
-    }
-    else {
-	levelNH->setEnabled (FALSE);
-	levelNH->hide();
-	slName->show();
-    }
-
-    // Repaint the thumbnail whenever the collection or level changes.
-    connect (systemB, SIGNAL (clicked ()), this, SLOT (slPaintLevel()));
-    connect (userB,   SIGNAL (clicked ()), this, SLOT (slPaintLevel()));
-    connect (colln,   SIGNAL (highlighted (int)), this, SLOT (slPaintLevel ()));
-    connect (number,  SIGNAL (sliderReleased()), this, SLOT (slPaintLevel()));
-    connect (number,  SIGNAL (nextLine()), this, SLOT (slPaintLevel()));
-    connect (number,  SIGNAL (prevLine()), this, SLOT (slPaintLevel()));
-    connect (number,  SIGNAL (nextPage()), this, SLOT (slPaintLevel()));
-    connect (number,  SIGNAL (prevPage()), this, SLOT (slPaintLevel()));
-
-    // Set the exits from this dialog box.
-    connect (OK,      SIGNAL (clicked ()), sl,   SLOT (accept ()));
-    connect (CANCEL,  SIGNAL (clicked ()), sl,   SLOT (reject ()));
-    connect (HELP,    SIGNAL (clicked ()), this, SLOT (slHelp ()));
 
     // Set the default for the level-number in the scrollbar.
     number->setValue (level);
@@ -3333,6 +3034,45 @@ int KGoldrunner::selectLevel (int action)
     thumbNail->setLineWidth (1);
     slPaintLevel();
     thumbNail->show();
+
+    // Set the actions required when the collection or level changes.
+    connect (systemB, SIGNAL (clicked ()), this, SLOT (slSystemOwner()));
+    connect (userB,   SIGNAL (clicked ()), this, SLOT (slUserOwner()));
+
+    connect (colln,   SIGNAL (highlighted (int)), this, SLOT (slColln (int)));
+    connect (collnA,  SIGNAL (clicked ()), this, SLOT (slAboutColln ()));
+
+    connect (display, SIGNAL (textChanged (const QString &)),
+		this, SLOT (slUpdate (const QString &)));
+
+    connect (number,  SIGNAL (valueChanged(int)), this, SLOT(slShowLevel(int)));
+
+    // Enable the name and hint dialog only if saving a new or edited level.
+    // At other times they have not been loaded or initialised.
+    if ((slAction == ID_CREATE) || (slAction == ID_SAVEFILE)) {
+	slName->hide();
+	connect (levelNH,  SIGNAL (clicked ()), this, SLOT (slNameAndHint ()));
+    }
+    else {
+	levelNH->setEnabled (FALSE);
+	levelNH->hide();
+	slName->show();
+    }
+
+    // Repaint the thumbnail whenever the collection or level changes.
+    connect (systemB, SIGNAL (clicked ()), this, SLOT (slPaintLevel()));
+    connect (userB,   SIGNAL (clicked ()), this, SLOT (slPaintLevel()));
+    connect (colln,   SIGNAL (highlighted (int)), this, SLOT (slPaintLevel ()));
+    connect (number,  SIGNAL (sliderReleased()), this, SLOT (slPaintLevel()));
+    connect (number,  SIGNAL (nextLine()), this, SLOT (slPaintLevel()));
+    connect (number,  SIGNAL (prevLine()), this, SLOT (slPaintLevel()));
+    connect (number,  SIGNAL (nextPage()), this, SLOT (slPaintLevel()));
+    connect (number,  SIGNAL (prevPage()), this, SLOT (slPaintLevel()));
+
+    // Set the exits from this dialog box.
+    connect (OK,      SIGNAL (clicked ()), sl,   SLOT (accept ()));
+    connect (CANCEL,  SIGNAL (clicked ()), sl,   SLOT (reject ()));
+    connect (HELP,    SIGNAL (clicked ()), this, SLOT (slHelp ()));
 
     while (sl->exec() == QDialog::Accepted) {	// Run the modal dialog box.
 	if ((number->value() >
@@ -3469,17 +3209,10 @@ void KGoldrunner::slColln (int i)
     slCollnIndex = i;
     int n = slCollnIndex + slCollnOffset;		// Collection selected.
     int N = collnIndex + collnOffset;			// Current collection.
-#ifdef QT1
-    if (collections.at(n)->nLevels > 0)
-	number->setRange (1, collections.at(n)->nLevels);
-    else
-	number->setRange (1, 1);			// Avoid range errors.
-#else
     if (collections.at(n)->nLevels > 0)
 	number->setMaxValue (collections.at(n)->nLevels);
     else
 	number->setMaxValue (1);			// Avoid range errors.
-#endif
 
     // Set a default level number for the selected collection.
     switch (slAction) {
@@ -3502,11 +3235,7 @@ void KGoldrunner::slColln (int i)
 	}
 	else {
 	    // Saving new/edited level or relocating a level: use "nLevels + 1".
-#ifdef QT1
-	    number->setRange (1, collections.at(n)->nLevels + 1);
-#else
 	    number->setMaxValue (collections.at(n)->nLevels + 1);
-#endif
 	    number->setValue (number->maxValue());
 	}
 	break;
@@ -3551,11 +3280,7 @@ void KGoldrunner::slShowLevel (int i)
     }
 }
 
-#ifdef QT1
-void KGoldrunner::slUpdate (const char * text)
-#else
 void KGoldrunner::slUpdate (const QString & text)
-#endif
 {
     // Move the slider when a valid level number is entered.
     if (sl) {
@@ -3567,15 +3292,9 @@ void KGoldrunner::slUpdate (const QString & text)
 	    slPaintLevel();
 	}
 	else
-#ifdef QT1
-	    KMsgBox::message (this, klocale->translate("Select Level"),
-			klocale->translate("This level number is not valid.\n"
-					   "It can NOT be used."));
-#else
 	    QMessageBox::information (this, "Select Level",
 			"This level number is not valid.\n"
 					   "It can NOT be used.");
-#endif
     }
 }
 
@@ -3583,7 +3302,7 @@ void KGoldrunner::slPaintLevel ()
 {
     // Repaint the thumbnail sketch of the level whenever the level changes.
     int		n = slCollnIndex + slCollnOffset;
-    if ((n < 0) || (!collections.at(n))) {
+    if (n < 0) {
 	return;					// Owner has no collections.
     }
     QString	filePath = getFilePath
@@ -3685,23 +3404,24 @@ void KGoldrunner::slNameAndHint ()
     nhName->		setText (levelName);
 
     // Configure the QMultiLineEdit box.
-#ifndef QT1
     mle->		setWordWrap (QMultiLineEdit::WidgetWidth);
     mle->		setAlignment (AlignLeft);
-#endif
+#ifndef QT3
     mle->		setFixedVisibleLines (9);
+#endif
 
     mle->		setText (levelHint);
 
     OK->		setGeometry (10,  80 + mle->height(), 90,  25);
     // OK->		setAccel (Key_Return);	// No!  We need it in "mle" box.
-    connect (OK, SIGNAL (clicked ()), nh, SLOT (accept ()));
 
     CANCEL->		setGeometry (210,  80 + mle->height(), 90,  25);
     CANCEL->		setAccel (Key_Escape);
-    connect (CANCEL, SIGNAL (clicked ()), nh, SLOT (reject ()));
 
     nh->		resize (310, 110 + mle->height());
+
+    connect (OK, SIGNAL (clicked ()), nh, SLOT (accept ()));
+    connect (CANCEL, SIGNAL (clicked ()), nh, SLOT (reject ()));
 
     if (nh->exec()) {
 	levelName = nhName->text();
@@ -3826,12 +3546,8 @@ void KGoldrunner::editCollection (int action)
     QLineEdit *		ecName   = new QLineEdit (ec);
     QLabel *		prefixL  = new QLabel ("File Name Prefix", ec);
     QLineEdit *		ecPrefix = new QLineEdit (ec);
-#ifdef QT1
-    QButtonGroup *	ecGrp    = new QButtonGroup ("Settings", ec);
-#else
     QButtonGroup *	ecGrp    = new QButtonGroup (1,
 					QButtonGroup::Vertical, "Settings", ec);
-#endif
 			ecKGrB   = new QRadioButton ("KGoldrunner", ecGrp);
 			ecTradB  = new QRadioButton ("Traditional", ecGrp);
     QLabel *		nLevL    = new QLabel ("", ec);
@@ -3853,12 +3569,7 @@ void KGoldrunner::editCollection (int action)
     ecPrefix->		setGeometry (120, 40,  50,  20);
     nLevL->		setGeometry (180, 40,  100, 20);
     ecGrp->		setGeometry (10,  70,  220, 42);
-#ifdef QT1
-    ecKGrB->		setGeometry (10,  15,  100, 25);
-    ecTradB->		setGeometry (110, 15,  90,  25);
-#else
     // In QT v2.x the buttons are positioned in the box automatically.
-#endif
     mleL->		setGeometry (10, 115,  280, 20);
     mle->		setGeometry (10, 140,  280, 100);
 
@@ -3887,15 +3598,13 @@ void KGoldrunner::editCollection (int action)
     else {
 	ecSetRules ('T');			// Traditional settings.
     }
-    connect (ecKGrB,  SIGNAL (clicked ()), this, SLOT (ecSetKGr ()));
-    connect (ecTradB, SIGNAL (clicked ()), this, SLOT (ecSetTrad ()));
 
     // Configure the QMultiLineEdit box.
-#ifndef QT1
     mle->		setWordWrap (QMultiLineEdit::WidgetWidth);
     mle->		setAlignment (AlignLeft);
-#endif
+#ifndef QT3
     mle->		setFixedVisibleLines (8);
+#endif
 
     if ((action == ID_ECOLL) && (collections.at(n)->about.length() > 0)) {
 	mle->		setText (collections.at(n)->about);
@@ -3906,13 +3615,16 @@ void KGoldrunner::editCollection (int action)
 
     OK->		setGeometry (10,  145 + mle->height(), 100,  25);
     // OK->		setAccel (Key_Return);	// No!  We need it in "mle" box.
-    connect (OK, SIGNAL (clicked ()), ec, SLOT (accept ()));
 
     CANCEL->		setGeometry (190,  145 + mle->height(), 100,  25);
     CANCEL->		setAccel (Key_Escape);
-    connect (CANCEL, SIGNAL (clicked ()), ec, SLOT (reject ()));
 
     ec->		resize (300, 175 + mle->height());
+
+    connect (ecKGrB,  SIGNAL (clicked ()), this, SLOT (ecSetKGr ()));
+    connect (ecTradB, SIGNAL (clicked ()), this, SLOT (ecSetTrad ()));
+    connect (OK, SIGNAL (clicked ()), ec, SLOT (accept ()));
+    connect (CANCEL, SIGNAL (clicked ()), ec, SLOT (reject ()));
 
     while (ec->exec()) {		// Loop through dialog until valid.
 
@@ -3998,11 +3710,9 @@ void KGoldrunner::myMessage (QWidget * parent, QString title, QString contents)
 
     // Make text background grey not white (i.e. same as widget background).
     QPalette		pl = mm->palette();
-#ifdef QT1
-    QColorGroup		cg = pl.normal();
-    QColorGroup		cgNew (cg.foreground(), cg.background(), cg.light(),
-			       cg.dark(), cg.mid(), cg.text(), cg.background());
-			pl.setNormal (cgNew);
+#ifdef QT3
+			pl.setColor (QColorGroup::Base,
+						mm->paletteBackgroundColor());
 #else
 			pl.setColor (QColorGroup::Base, mm->backgroundColor());
 #endif
@@ -4026,29 +3736,24 @@ void KGoldrunner::myMessage (QWidget * parent, QString title, QString contents)
     mle->		setGeometry (15, 15, 330, 155);
 
     mle->		setFrameStyle (QFrame::NoFrame);
-#ifndef QT1
     mle->		setWordWrap (QMultiLineEdit::WidgetWidth);
     mle->		setAlignment (AlignLeft);
-#endif
     mle->		setReadOnly (TRUE);
     mle->		setText (contents);
 
+#ifndef QT3
     mle->		setFixedVisibleLines (10);
-#ifdef QT1
-			// In QT 1 environment, wrap words into lines.
-			wordWrap (mle, 10);
-#endif
-    
     if (mle->		numLines() < 10) {
 	mle->		setFixedVisibleLines (mle->numLines());
     }
+#endif
 
     OK->		setGeometry (10,  25 + mle->height(), 50,  25);
     OK->		setAccel (Key_Return);
 
+    mm->		setFixedSize (350, 55 + mle->height());
     connect (OK, SIGNAL (clicked ()), mm, SLOT (accept ()));
 
-    mm->		setFixedSize (350, 55 + mle->height());
     mm->		exec ();
 
     // Unfreeze the game, but only if it was previosly unfrozen.
@@ -4060,95 +3765,10 @@ void KGoldrunner::myMessage (QWidget * parent, QString title, QString contents)
     delete mm;
 }
 
-#ifdef QT1
-// This code word-wraps a multi-line edit box.  It is not needed with Qt 2.
-void KGoldrunner::wordWrap (QMultiLineEdit * mle, int visibleLines)
-{
-    QString s1 = mle->text() + ' ';	// ' ' forces a break check at the end.
-    QString s2;
-    QFontMetrics m = mle->fontMetrics();
-    int wMax = mle->width();
-    int iMax = s1.length();
-    int nLines = 0;
-    int w = 0;
-    int lastBreak = -1;
-    int i = 0;
-    int iMin = 0;
-    char ch = '\0';
-
-    while (TRUE) {
-
-	s2 = "";
-	nLines = 1;
-	iMin = 0;
-	lastBreak = -1;
-
-	for (i = 0; i < iMax; i++) {
-
-	    ch = s1.myChar(i);
-	    switch (ch) {
-
-	    case ' ':			// Optional break.
-		if (i != iMax - 1)	// Don't copy the last space.
-		    s2 = s2 + ch;
-		if (i > iMin) {
-		    w = m.width ((s1.mid(iMin, i - iMin)).myStr(), -1);
-		    if (w > wMax) {
-			if (lastBreak > iMin) {
-			    // Use the break before this word.
-			    s2.replace (lastBreak, 1, "\n");
-			    iMin = lastBreak + 1;
-			}
-			else {
-			    // This word is longer than the line.
-			    s2.replace (i, 1, "\n");
-			    iMin = i + 1;
-			}
-			nLines++;
-		    }
-		    lastBreak = i;
-		}
-		break;
-
-	    case '\n':			// Forced break.
-		s2 = s2 + ch;
-		if (i > iMin) {
-		    w = m.width ((s1.mid(iMin, i - iMin)).myStr(), -1);
-		    if ((w > wMax) && (lastBreak > iMin)) {
-			// Line too long: put in a break before this word.
-			s2.replace (lastBreak, 1, "\n");
-			nLines++;
-		    }
-		}
-		iMin = i + 1;
-		lastBreak = i;
-		nLines++;
-		break;
-
-	    default:			// Ordinary text character.
-		s2 = s2 + ch;
-		break;
-	    }
-	}
-
-	// Stop when the text will fit the window.
-	if ((nLines <= visibleLines - 3) || (wMax < mle->width()))
-	    break;
-
-	// Allow room for a scrollbar at the right and try again.
-	wMax = wMax - 25;
-    }
-
-    // Put the word-wrapped text into the box.
-    mle->setText (s2.myStr());
-}
-#endif
-
 /******************************************************************************/
 /**********************    QT2's SIMPLE HTML BROWSER   ************************/
 /******************************************************************************/
 
-#ifndef QT1
 // The MOC compiler "simply skips any preprocessor directives it encounters"
 // (see the QT documentation, "Using the MetaObject Compiler", "Limitations"
 // section).  The following lines are commented/uncommented by the "fix_src"
@@ -4298,7 +3918,11 @@ HelpWindow::HelpWindow( const QString& home_, const QString& _path,
 
 
     QToolBar* toolbar = new QToolBar( this );
+#ifdef QT3
+    addDockWindow (toolbar, "Toolbar");
+#else
     addToolBar (toolbar, "Toolbar");
+#endif
     QToolButton* button;
 
     button = new QToolButton( icon_back, tr("Backward"), "", browser, SLOT(backward()), toolbar );
@@ -4316,8 +3940,13 @@ HelpWindow::HelpWindow( const QString& home_, const QString& _path,
 	     this, SLOT( pathSelected( const QString & ) ) );
     toolbar->setStretchableWidget( pathCombo );
     setRightJustification( TRUE );
+#ifdef QT3
+    setDockEnabled( DockLeft, FALSE );
+    setDockEnabled( DockRight, FALSE );
+#else
     setDockEnabled( Left, FALSE );
     setDockEnabled( Right, FALSE );
+#endif
 
     if (homeFound)
 	pathCombo->insertItem( home_ );
@@ -4540,4 +4169,3 @@ void HelpWindow::addBookmark()
 {
     mBookmarks[ bookm->insertItem( caption() ) ] = caption();
 }
-#endif
