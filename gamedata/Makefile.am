@@ -8,6 +8,6 @@ install-data-local:
 	$(mkinstalldirs) $(DESTDIR)$(gamedatadir)
 	pwd=`cd $(srcdir) && pwd` ;\
 	cd $(DESTDIR)$(gamedatadir) && tar -xf $$pwd/levels.tar ;\
-	chown -R root.root levels 2> /dev/null || true ;\
+	chown -R root:root levels 2> /dev/null || true ;\
 	chmod 644 levels/* 2> /dev/null || true 
 
