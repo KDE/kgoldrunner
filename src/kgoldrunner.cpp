@@ -287,31 +287,40 @@ void KGoldrunner::setupActions()
     /***************************   LANDSCAPES MENU  ***************************/
     /**************************************************************************/
 
-    (void)			new KAction (
-				"KGoldrunner",
-				0,
+    // Default shortcut keys are set by "kgoldrunnerui.rc".
+
+    setKGoldrunner =		new KRadioAction (
+				"K&Goldrunner",
+				0,			// Default Shift+G
 				this, SLOT(lsKGoldrunner()), actionCollection(),
 				"kgoldrunner");
-    (void)			new KAction (
-				"Apple II",
-				0,
+    setAppleII =		new KRadioAction (
+				"&Apple II",
+				0,			// Default Shift+A
 				this, SLOT(lsApple2()), actionCollection(),
 				"apple_2");
-    (void)			new KAction (
-				i18n("Ice Cave"),
-				0,
+    setIceCave =		new KRadioAction (
+				i18n("&Ice Cave"),
+				0,			// Default Shift+I
 				this, SLOT(lsIceCave()), actionCollection(),
 				"ice_cave");
-    (void)			new KAction (
-				i18n("Midnight"),
-				0,
+    setMidnight =		new KRadioAction (
+				i18n("&Midnight"),
+				0,			// Default Shift+M
 				this, SLOT(lsMidnight()), actionCollection(),
 				"midnight");
-    (void)			new KAction (
-				i18n("KDE Kool"),
-				0,
+    setKDEKool =		new KRadioAction (
+				i18n("&KDE Kool"),
+				0,			// Default Shift+K
 				this, SLOT(lsKDEKool()), actionCollection(),
 				"kde_kool");
+
+    setKGoldrunner->		setExclusiveGroup ("landscapes");
+    setAppleII->		setExclusiveGroup ("landscapes");
+    setIceCave->		setExclusiveGroup ("landscapes");
+    setMidnight->		setExclusiveGroup ("landscapes");
+    setKDEKool->		setExclusiveGroup ("landscapes");
+    setKGoldrunner->		setChecked (TRUE);
 
     /**************************************************************************/
     /****************************   SETTINGS MENU  ****************************/

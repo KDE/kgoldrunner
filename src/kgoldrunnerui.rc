@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<kpartgui version="2" name="KGoldrunner" >
+<kpartgui version="4" name="KGoldrunner" >
 <MenuBar>
     <Menu name="game" >
 	<Action append="new_merge"	name="play_any" />
@@ -54,6 +54,12 @@
     <Action shortcut="P;Escape"		name="game_pause" />
     <Action shortcut="S"		name="game_save" />
     <Action shortcut="Ctrl+S"		name="save_edits" />
+
+    <Action shortcut="Shift+G"		name="kgoldrunner" />
+    <Action shortcut="Shift+A"		name="apple_2" />
+    <Action shortcut="Shift+I"		name="ice_cave" />
+    <Action shortcut="Shift+M"		name="midnight" />
+    <Action shortcut="Shift+K"		name="kde_kool" />
 
     <Action shortcut="Up;I"		name="move_up" />
     <Action shortcut="Right;L"		name="move_right" />

@@ -168,6 +168,12 @@ private:
 
     KAction *		saveEdits;	// Save a level that has been edited.
 
+    KRadioAction *	setKGoldrunner;	// Show default "KGoldrunner" landscape.
+    KRadioAction *	setAppleII;	// Show "Apple II" landscape.
+    KRadioAction *	setIceCave;	// Show "Ice Cave" landscape.
+    KRadioAction *	setMidnight;	// Show "Midnight" landscape.
+    KRadioAction *	setKDEKool;	// Show "KDE Kool" landscape.
+
     KRadioAction *	setMouse;	// Show mouse/keyboard mode on menu.
     KRadioAction *	setKeyboard;	// Show mouse/keyboard mode on menu.
 
