@@ -37,7 +37,5 @@ xdg_apps_DATA = KGoldrunner.desktop
 rcdir = $(kde_datadir)/kgoldrunner
 rc_DATA = kgoldrunnerui.rc
 
-kde_icon_KDEICON = hi16-app-kgoldrunner.png hi32-app-kgoldrunner.png
-
 AM_CXXFLAGS = -DQT3
 
