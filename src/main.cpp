@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2003 Ian Wadham and Marco Krüger <ianw@netspace.net.au>
+ * Copyright (C) 2003 Ian Wadham and Marco KrÃ¼ger <ianw@netspace.net.au>
  */
 
 #include <kapplication.h>
@@ -21,10 +21,10 @@ int main (int argc, char **argv)
     KAboutData about("kgoldrunner", I18N_NOOP("KGoldrunner" ),
     		     version, description,
                      KAboutData::License_GPL,
-		     "(C) 2003 Ian Wadham and Marco Krüger");
+		     "(C) 2003 Ian Wadham and Marco KrÃ¼ger");
     about.addAuthor( "Ian Wadham", I18N_NOOP("Current author"),
     		     "ianw@netspace.net.au" );
-    about.addAuthor( "Marco Krüger", I18N_NOOP("Original author"), 0);
+    about.addAuthor( "Marco KrÃ¼ger", I18N_NOOP("Original author"), 0);
 
     KCmdLineArgs::init (argc, argv, &about);
 
