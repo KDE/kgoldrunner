@@ -119,6 +119,9 @@ void KGrGame::incScore (int n)
 
 void KGrGame::herosDead()
 {
+    if ((level < 1) || (lives <= 0))
+	return;			// Game over: we are in the "ENDE" screen.
+
     // Lose a life.
     if (--lives > 0) {
 	// Still some life left, so PAUSE and then re-start the level.
@@ -139,7 +142,8 @@ void KGrGame::herosDead()
 	view->deleteEnemySprites();
 	unfreeze();		//    ... NOW we can unfreeze.
 	newLevel = TRUE;
-	loadLevel (0);
+	level = 0;
+	loadLevel (level);	// Display the "ENDE" screen.
 	newLevel = FALSE;
     }
 }
