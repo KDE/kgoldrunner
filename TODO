@@ -1,18 +1,18 @@
-KGoldrunner v1.0 - TODO
+KGoldrunner v1.0.3 - TODO
 -----------------------
 
 Some ideas for the future:-
 
-  1.  Port KGoldrunner v1.0 to other O/S's, such as MS Windows and Mac.
-      Note that KGoldrunner v1.0, as configured for Qt 2.x library,
+  1.  Port KGoldrunner v1.0.3 to other O/S's, such as MS Windows and Mac.
+      Note that KGoldrunner v1.0.3, as configured for Qt 3.x library,
       has very small dependence on the KDE desktop (i.e. locations of
-      directories only).  Because Qt 2 is intended to be portable to
-      MS Windows and Mac, so should KGoldrunner v1.0 be.  However Qt 2
+      directories only).  Because Qt 3 is intended to be portable to
+      MS Windows and Mac, so should KGoldrunner v1.0.3 be.  However Qt
       development licences are NOT free on non-UNIX type O/S's.
 
-  2.  Use the "tr" and translation features in Qt 2 to make KGoldrunner
+  2.  Use the "tr" and translation features in Qt to make KGoldrunner
       multi-lingual.  See the Overview on "Internationalization (i18n)"
-      in the Qt 2 Reference Documentation.
+      in the Qt Reference Documentation.
 
   3.  Make the KGoldrunner playing area resizeable.
 
@@ -20,29 +20,29 @@ Some ideas for the future:-
       monitor resolutions.  At 1024x768 pixels the KGoldrunner window
       is rather small and you have to be very precise with the mouse.
 
-      In the Qt 3 version of KGoldrunner resizing has been implemented,
+      In the Qt 3 version of KGoldrunner resizing HAS been implemented,
       using the new "World Matrix" functions of QCanvasWindow (newly
       available in Qt 3).
 
   4.  Add sounds for hero actions such as falling, collecting a nugget,
       getting killed and completing a level.
 
-  5.  Program extra  game objects, such as movable bricks, water,
-      teleportation exits and aquatic enemies.
+  5.  Design and program extra game objects, such as movable bricks,
+      water, teleportation exits and aquatic enemies.
 
       Movable bricks would be pushed up or sideways or would fall into
       an empty space, to change the maze layout.  As with fall-through
       bricks, they should look just like ordinary bricks.
 
       With water, the hero could jump in and swim across the surface, at
-      a slower speed than on land, but the enemies would not follow him.
-      If he has to dive below the surface, he can only hold his breath
-      for a limited time before he dies.
+      a slower speed than on land, but the land enemies would not follow
+      him.  If he has to dive below the surface, he can only hold his
+      breath for a limited time before he dies.
 
       Teleportation exits would be connected in pairs.  If you go through
       one exit, you reappear at the other and vice-versa.
 
       Aquatic enemies would just make life more difficult for the hero
-      in the water.
+      in the water.  Maybe there could be amphibian enemies too.
 
 

@@ -1,17 +1,14 @@
-KGoldrunner v1.0.2 - Known Problems
+KGoldrunner v1.0.3 - Known Problems
 -----------------------------------
 
-1.  In the KDE 1 and Qt v1.x implementation, multi-line edit boxes do not
-    wrap text lines (in Qt 2.x they can, and KGoldrunner uses that feature).
-
-    There is extra code (for temporary use with Qt1.x only) to wrap the text
-    in read-only boxes used for displaying hints, tutorial text and game
-    descriptions.  However, if you want to create or EDIT hints and
-    descriptions, you will have to handle a paragraph as one very long
-    line, using a horizontal scrollbar.  Sorry for the inconvenience.
+1.  Development of the KDE 1 version of KGoldrunner has been discontinued.
+    There is still a tarball for it on "apps.kde.com" under "kgoldrunner".
 
 2.  In Qt 3, multi-line edit boxes have been declared obsolete and the
     functions that handle counts of lines have been deleted.  KGoldrunner
     used those functions to work out how far to shrink a box that had just
     a few lines of text.  In the Qt3 version of KGoldrunner such boxes now
     have empty space in them.
+
+3.  KGoldrunner v1.0.3 should compile and run with KDE 2, if you remove the
+    -DQT3 compiler flag, but it has NOT been regression-tested with KDE 2.

@@ -9,5 +9,3 @@ package-messages:
 	$(MAKE) -C po merge
 
 ####### Adjust the source code for Qt1 or Qt2 MOC compiler.  #######
-init:
-	cd $(top_srcdir)/kgoldrunner && ./fix_src "$(VERSION)"

@@ -1,4 +1,4 @@
-KGoldrunner v1.0 - README
+KGoldrunner v1.0.3 - README
 
 Marco Krüger <grisuji@gmx.de>
 Ian Wadham <ianw@netspace.net.au>
@@ -8,10 +8,10 @@ KGoldrunner is a game in which you, the hero, have to run through a maze
 of ladders, bricks, concrete and climbing bars to collect gold nuggets,
 while being pursued by enemies.  When you have collected all the gold,
 you can move to the next level of the game by climbing to the top of the
-playing area.  KGoldrunner v1.0 has several games (sets of levels) of
+playing area.  This version has several games (sets of levels) of
 varying difficulty and includes a Tutorial game.  It also has an editor
-you can use to make up your own games or vary the released games.  In
-v1.0 you use the mouse to guide the hero and dig holes in bricks.
+you can use to make up your own games or vary the released games.  You
+use the mouse to guide the hero and dig holes in bricks.
 
 KGoldrunner is based on the Lode Runner (TM) game written in the USA
 by Doug Smith in 1983 for the Apple II and Commodore 64 computers.
@@ -19,17 +19,10 @@ by Doug Smith in 1983 for the Apple II and Commodore 64 computers.
 See the file INSTALL for instructions on how to compile, build and
 install KGoldrunner.
 
-Note that there are two release files: "kgoldrunner-1.0-kde1.tgz" for
-compiling, building and installing with Qt library v1.x and KDE v1.x desk
-top and "kgoldrunner-1.0-kde2.tgz" for Qt v2.x library and KDE v2.x desk
-top.  The source code and other files are essentially the same for both
-versions, but the configuration and make files are quite different.
-
-Most of the differences between KDE 1 and KDE 2 source code are handled
-automatically by defining or not defining C++ pre-processor variable "QT1"
-in the make files, but you also have to run "make init" to make some minor
-changes to the source code that satisfy Qt's MOC pre-compiler, which does
-not recognize the C++ pre-processor directives "#ifdef QT1", etc.
+The source code and other files are essentially the same for KDE2/Qt2
+and KDE3/Qt3, depending on the -DQT3 compiler flag, but the configuration
+and make files are quite different.  WARNING: This version has been built,
+compiled and tested ONLY with KDE 3.1.1 and Qt 3.1.1.
 
 Just in case you cannot build and install KGoldrunner ...
 ---------------------------------------------------------
