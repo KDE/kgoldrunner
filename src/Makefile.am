@@ -41,4 +41,3 @@ kde_icon_KDEICON = hi16-app-kgoldrunner.png hi32-app-kgoldrunner.png
 
 AM_CXXFLAGS = -DQT3
 
-SUBDIRS = system

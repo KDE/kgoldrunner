@@ -1,1 +1,1 @@
-SUBDIRS = kgoldrunner
+SUBDIRS = src gamedata
