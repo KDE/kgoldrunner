@@ -588,7 +588,7 @@ void KGoldrunner::adjustHintAction (bool hintAvailable)
     else {
 	statusBar()->changeItem (i18n("   No hint   "), ID_HINTAVL);
     }
-};
+}
 
 void KGoldrunner::markRuleType (char ruleType)
 {
