@@ -18,7 +18,9 @@
 #include "kgrgame.h"
 #include "kgrdialog.h"
 
+#ifndef KGR_PORTABLE
 #include <kglobalsettings.h>
+#endif
 
 /******************************************************************************/
 /*****************    DIALOG BOX TO SELECT A GAME AND LEVEL   *****************/
@@ -758,8 +760,11 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
 			"Day    Date     Time  "), dad);
 
 			lgList   = new QListBox (dad);
-
-    QFont		f = KGlobalSettings::fixedFont();
+#ifdef KGR_PORTABLE
+    QFont		f ("courier", 12);
+#else
+    QFont		f = KGlobalSettings::fixedFont();	// KDE version.
+#endif
 			f.setFixedPitch (TRUE);
     lgList->		setFont (f);
 			f.setBold (TRUE);

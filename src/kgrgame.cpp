@@ -26,7 +26,9 @@
 #include <stdlib.h>
 #include <ctype.h>
 
+#ifndef KGR_PORTABLE
 #include <kglobalsettings.h>
+#endif
 
 /******************************************************************************/
 /***********************    KGOLDRUNNER GAME CLASS    *************************/
@@ -1126,7 +1128,11 @@ void KGrGame::showHighScores()
     QLabel *		hsColHeader  = new QLabel (
 				i18n("    Name                          "
 				"Level  Score       Date"), hs);
-    QFont		f = KGlobalSettings::fixedFont();
+#ifdef KGR_PORTABLE
+    QFont		f ("courier", 12);
+#else
+    QFont		f = KGlobalSettings::fixedFont();	// KDE version.
+#endif
     f.			setFixedPitch (TRUE);
     f.			setBold (TRUE);
     hsColHeader->	setFont (f);
