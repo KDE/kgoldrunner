@@ -662,19 +662,39 @@ void KGrHero::dig(){
 }
 
 void KGrHero::digLeft(){
-  if (((*playfield)[x-1][y+1]->whatIam() == BRICK)&&
-      (((*playfield)[x-1][y]->whatIam() == HLADDER)||
-       ((*playfield)[x-1][y]->whatIam() == FREE)||
-       ((*playfield)[x-1][y]->whatIam() == HOLE)))
-    ((KGrBrick*)(*playfield)[x-1][y+1])->dig();
+  int i = 1;		// If stationary or moving up/down, dig at x-1.
+  if (status == STANDING)
+      setNextDir();
+  if ((status == WALKING) ||
+      ((status == STANDING) && ((nextDir == LEFT) || (nextDir == RIGHT)))) {
+      if ((direction == LEFT) && canWalkLeft())
+          i = 2;	// If walking left, dig at x-2 and stop at x-1.
+      else if ((direction == RIGHT) && canWalkRight())
+          i = 0;	// If walking right, dig at x and stop at x+1.
+  }
+  if (((*playfield)[x-i][y+1]->whatIam() == BRICK)&&
+      (((*playfield)[x-i][y]->whatIam() == HLADDER)||
+       ((*playfield)[x-i][y]->whatIam() == FREE)||
+       ((*playfield)[x-i][y]->whatIam() == HOLE)))
+    ((KGrBrick*)(*playfield)[x-i][y+1])->dig();
 }
 
 void KGrHero::digRight(){
-  if (((*playfield)[x+1][y+1]->whatIam() == BRICK)&&
-      (((*playfield)[x+1][y]->whatIam() == HLADDER)||
-       ((*playfield)[x+1][y]->whatIam() == FREE)||
-       ((*playfield)[x+1][y]->whatIam() == HOLE)))
-    ((KGrBrick*)(*playfield)[x+1][y+1])->dig();
+  int i = 1;		// If stationary or moving up/down, dig at x+1.
+  if (status == STANDING)
+      setNextDir();
+  if ((status == WALKING) ||
+      ((status == STANDING) && ((nextDir == LEFT) || (nextDir == RIGHT)))) {
+      if ((direction == LEFT) && canWalkLeft())
+          i = 0;	// If walking left, dig at x and stop at x-1.
+      else if ((direction == RIGHT) && canWalkRight())
+          i = 2;	// If walking right, dig at x+2 and stop at x+1.
+  }
+  if (((*playfield)[x+i][y+1]->whatIam() == BRICK)&&
+      (((*playfield)[x+i][y]->whatIam() == HLADDER)||
+       ((*playfield)[x+i][y]->whatIam() == FREE)||
+       ((*playfield)[x+i][y]->whatIam() == HOLE)))
+    ((KGrBrick*)(*playfield)[x+i][y+1])->dig();
 }
 
 #ifdef QT3

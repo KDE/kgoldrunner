@@ -134,9 +134,6 @@ private:
 #endif
   KGrCanvas * heroView;
   bool standOnEnemy();
-  bool canWalkRight();
-  bool canWalkLeft();
-  bool canStay();
   bool isInEnemy();
   bool isInside(int, int);
 
