@@ -75,6 +75,9 @@ KGoldrunner::KGoldrunner()
 /*************************  SET UP THE USER INTERFACE  ************************/
 /******************************************************************************/
 
+    // Get catalog for translation
+    KGlobal::locale()->insertCatalogue("libkdegames");
+
     // Tell the KMainWindow that this is the main widget
     setCentralWidget (view);
 
