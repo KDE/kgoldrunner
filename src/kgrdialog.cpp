@@ -189,7 +189,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 
     default:		break;			// Keep the default settings.
     }
-    if (OKText != "") {
+    if (OKText.isEmpty()) {
 #ifdef KGR_PORTABLE
 	OK->setText (OKText);
 #else
@@ -858,7 +858,7 @@ void KGrLGDialog::lgSelect (int n)
 ***********************  CENTRALISED MESSAGE FUNCTIONS  ************************
 *******************************************************************************/
 
-void KGrMessage::information (QWidget * parent, QString caption, QString text)
+void KGrMessage::information (QWidget * parent, const QString &caption, const QString &text)
 {
 #ifdef KGR_PORTABLE
     // Force Qt to do word-wrapping (but it ignores "\n" line-breaks).

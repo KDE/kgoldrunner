@@ -209,7 +209,7 @@ private:
 class KGrMessage : public QDialog
 {
 public:
-    static void information (QWidget * parent, QString caption, QString text);
+    static void information (QWidget * parent, const QString &caption, const QString &text);
     static int warning (QWidget * parent, QString caption, QString text,
 			QString label0, QString label1, QString label2 = "");
     static void wrapped (QWidget * parent, QString caption, QString text);
