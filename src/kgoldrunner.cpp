@@ -930,8 +930,7 @@ void KGoldrunner::makeEditToolbar()
 	edenemybg		= edenemybg.xForm (w);
     }
 
-    editToolbar = new KToolBar (this, QMainWindow::Top,
-					TRUE, i18n("Editor"), TRUE);
+    editToolbar = new KToolBar (this, Qt::DockTop, TRUE, "Editor", TRUE);
 
     // Choose a colour that enhances visibility of the KGoldrunner pixmaps.
     editToolbar->setPalette (QPalette (QColor (150, 150, 230)));

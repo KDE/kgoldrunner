@@ -24,6 +24,7 @@
 // Obsolete - #include <iostream.h>
 #include <iostream>
 #include <stdlib.h>
+#include <ctype.h>
 
 /******************************************************************************/
 /***********************    KGOLDRUNNER GAME CLASS    *************************/

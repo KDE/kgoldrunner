@@ -364,7 +364,7 @@ void KGrSLDialog::slShowLevel (int i)
     QString tmp;
     tmp.setNum(i);
     tmp = tmp.rightJustify(3,'0');
-    display->setText(tmp.data());
+    display->setText(tmp);
 }
 
 void KGrSLDialog::slUpdate (const QString & text)
