@@ -1587,6 +1587,36 @@ enemy move to where you want him.</para>
 
 <para>&kgoldrunner; copyright 2003 Ian Wadham and Marco Krüger.</para>
 
+<para>&kgoldrunner; is inspired by an early computer game called
+<trademark>Lode Runner</trademark> which was written in the USA
+by <trademark class="copyright">Doug Smith</trademark> and first released
+in 1983 by <trademark class="copyright">Broderbund Software</trademark>.  It
+appeared originally on the Apple II and Commodore 64 computers, which was
+where the Wadham family and Marco Krüger got hooked.  It was a major
+best-seller in its day and is one of the all-time great computer games.</para>
+
+<para>You can find out more about <trademark>Lode Runner</trademark> and
+the various versions that have come out since 1983, on the
+website <ulink url="http://entropymine.com/jason/lr">Jason's Lode Runner
+Archive</ulink> (http://entropymine.com/jason/lr/).
+That site also has the story of the game's original development, in the file
+<ulink url="http://entropymine.com/jason/lr/misc/ldhist.html">
+misc/ldhist.html</ulink>.</para>
+
+<para>&kgoldrunner; is an attempt to preserve the spirit of the original
+classic game on a platform that will be portable and will last more than
+a few years.  It is available as free software in source code form.  Copies
+of the original game are unobtainable now and the machines it ran on are
+going into museums.</para>
+
+<para>Marco Krüger developed KGoldrunner as far as v0.3, out of
+nostalgia for the original Commodore 64 game.  Ian Wadham added
+several features and levels and created the current version.  Ian's
+elder son Peter composed the 100 levels in the "Initiation" game and
+the 20 tricky levels in "Vengeance of Peter W".  The other levels
+were composed by Ian, Peter, Marco Krüger and friends and Ian's other
+children, Simon and Genevieve.</para>
+
 &underFDL;
 &underGPL;
 
@@ -1604,6 +1634,31 @@ enemy move to where you want him.</para>
 <title>Compilation and Installation</title>
 &install.compile.documentation;
 </sect1>
+
+</appendix>
+
+<appendix id="porting-kgoldrunner">
+<title>Porting &kgoldrunner; to Other Platforms</title>
+
+<para>&kgoldrunner; is written in C++, using Linux and the free-software
+version of the portable Qt object and GUI library.  The current version
+can be compiled and run either with KDE 3 and Qt 3 or with Qt 3 alone.</para>
+
+<para>The Qt-only version of &kgoldrunner; is intended to be almost
+independent of Linux and the KDE desktop.  That means it should be
+fairly easy to port to other operating systems, such as Windows
+and Macintosh, because the Qt library and C++ language are portable
+to other operating systems and the &kgoldrunner; source code is
+available as free software.</para>
+
+<para>If you would like to port &kgoldrunner;, please email
+Ian Wadham at <emphasis>ianw@netspace.net.au</emphasis>, to obtain
+the latest version of the Qt-only code and the Technical Details
+document.  Of course, you must have your own C++ development
+setup on your target machine.  Also, the Qt library is
+<emphasis>not</emphasis> free software on Windows and Macintosh,
+so you will need to have access to a system with a paid
+Qt Development licence.</para>
 
 </appendix>
 
