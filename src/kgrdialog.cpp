@@ -189,7 +189,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 
     default:		break;			// Keep the default settings.
     }
-    if (OKText.isEmpty()) {
+    if (!OKText.isEmpty()) {
 #ifdef KGR_PORTABLE
 	OK->setText (OKText);
 #else
