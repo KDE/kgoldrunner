@@ -4,7 +4,6 @@ kgoldrunner_SOURCES = kgoldrunnerwidget.cpp kgrobj.cpp kgoldrunner.cpp main.cpp
 SOURCES = kgoldrunnerwidget.cpp kgrobj.cpp kgoldrunner.cpp main.cpp 
 INTERFACES = 
 TRANSLATIONS = 
-KDE_OPTIONS = qtonly
 kgoldrunner_LDADD   = -lqt -lkdecore -lXext -lX11 $(LIBSOCKET)
 
 SUBDIRS = docs system 
