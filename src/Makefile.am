@@ -1,30 +1,40 @@
-####### kdevelop will overwrite this part!!! (begin)##########
+# set the include path for X, qt and KDE
+INCLUDES = $(all_includes)
+
+# these are the headers for your project
+noinst_HEADERS = kgoldrunner.h kgoldrunner.h kgoldrunnerwidget.h kgrobj.h back.xpm beton.xpm brick.xpm editenemy.xpm edithero.xpm enemy1.xpm enemy2.xpm filenew.xpm fileopen.xpm filesave.xpm forward.xpm hero.xpm hgbrick.xpm hladder.xpm home.xpm kgrobj.h ladder.xpm nugget.xpm pole.xpm
+
+# let automoc handle all of the meta source files (moc)
+METASOURCES = AUTO
+
+messages: rc.cpp
+	$(XGETTEXT) *.cpp -o $(podir)/kgoldrunner.pot
+
+KDE_ICON = kgoldrunner
+
+#########################################################################
+# APPLICATION SECTION
+#########################################################################
+# this is the program that gets installed.  it's name is used for all
+# of the other Makefile.am variables
 bin_PROGRAMS = kgoldrunner
 
-## INCLUDES were found outside kdevelop specific part
+# the application source, library search path, and link libraries
+kgoldrunner_SOURCES = main.cpp kgoldrunner.cpp kgoldrunnerwidget.cpp kgrobj.cpp
+kgoldrunner_LDFLAGS = $(KDE_RPATH) $(all_libraries)
+kgoldrunner_LDADD = $(LIB_KDEUI)
 
-kgoldrunner_SOURCES = main.cpp kgrobj.cpp kgoldrunnerwidget.cpp kgoldrunner.cpp 
-SOURCES = main.cpp kgrobj.cpp kgoldrunnerwidget.cpp kgoldrunner.cpp 
-INTERFACES = 
-TRANSLATIONS = 
-KDE_OPTIONS = qtonly
-kgoldrunner_LDADD   = $(LIB_QPE) $(LIB_QT) $(LIBSOCKET)
+# this is where the desktop file will go 
+shelldesktopdir = $(kde_appsdir)/Games/Arcade
+shelldesktop_DATA = KGoldrunner.desktop
 
+# this is where the shell's XML-GUI resource file goes
+shellrcdir = $(kde_datadir)/kgoldrunner
+shellrc_DATA = kgoldrunnerui.rc
 
-EXTRA_DIST = filenew.xpm filesave.xpm fileopen.xpm kgoldrunner.cpp kgoldrunner.h kgoldrunnerwidget.cpp kgoldrunnerwidget.h kgrobj.cpp kgrobj.h main.cpp back.xpm beton.xpm brick.xpm editenemy.xpm edithero.xpm enemy1.xpm enemy2.xpm forward.xpm hero.xpm hgbrick.xpm hladder.xpm home.xpm ladder.xpm mini-kgoldrunner.xpm nugget.xpm pole.xpm 
+AM_CXXFLAGS = -DQT3
 
-####### kdevelop will overwrite this part!!! (end)############
+gamedatadir = $(kde_datadir)/kgoldrun/system
 
-KDE_CXXFLAGS = -DQT3
-
-# set the include path for X, qt and KDE
-INCLUDES= $(all_includes) -I/opt/kde3/include
-
-kgoldrunner_METASOURCES = AUTO
-
-# the library search path. 
-kgoldrunner_LDFLAGS = $(all_libraries) -L/opt/kde3/lib -lkdecore
-
-# them while "make clean", use CLEANFILES
-DISTCLEANFILES = $(kgoldrunner_METASOURCES)
-
+SUBDIRS = system
+kde_icon_KDEICON = kgoldrunner.xpm lo16-app-kgoldrunner.xpm lo32-app-kgoldrunner.xpm

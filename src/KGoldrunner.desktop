@@ -1,12 +1,15 @@
 # KDE Config File  
 [Desktop Entry]
+Encoding=UTF-8
+Name=KGoldrunner
 Type=Application
 Exec=kgoldrunner
 Icon=kgoldrunner.xpm
 MiniIcon=kgoldrunner.xpm
-DocPath=kgoldrun/index.html
+DocPath=kgoldrunner/index.html
 Comment=A game of action and puzzle-solving
 Comment[bs]=Akciona igra sa rješavanjem zagonetke
+Comment[ca]=Un joc d'acció i de resolució de trencaclosques
 Comment[da]=Et spil med action og problemløsning
 Comment[de]=Spiel für Puzzle-Freunde
 Comment[el]=Ένα παιχνίδι ενεργειών και επίλυσης γρίφων
@@ -17,6 +20,7 @@ Comment[he]=משחק פעולה ופיתרון חידות
 Comment[hr]=Igra s akcijom i rješavanjem zagonetaka
 Comment[hu]=ügyességi/logikai játék
 Comment[ja]=アクション、パズル解きゲーム
+Comment[nl]=Een spel met veel actie en raadsels
 Comment[pl]=Gra akcji i rozwiązywania zagadek
 Comment[pt]=Um jogo de acção e de resolução de 'puzzles'
 Comment[pt_BR]=Um jogo de ação e quebra-cabeça
@@ -30,7 +34,6 @@ Comment[zh_CN]=动作与解谜游戏
 Comment[zh_TW]=動作與解謎遊戲
 Comment[zu]=Umdlalo womnyakazo kanye neyokuxazulula i puzzle
 Terminal=0
-Name=KGoldrunner
 Name[fr]=KGoldRunner
 Name[hr]=Potraga za zlatom
 Name[sv]=Kgoldrunner

@@ -1,7 +1,7 @@
 Begin3
 Title:          KGoldrunner 
-Version:        1.0.3
-Entered-date:   22JUN2003
+Version:        1.0.4
+Entered-date:   06JUL2003
 Description:    KGoldrunner is an action game where the hero runs through a
                 maze and dodges enemies.  You must guide him with the mouse
                 and collect all the gold nuggets, then you can climb up into
@@ -13,8 +13,8 @@ Description:    KGoldrunner is an action game where the hero runs through a
                 all-time classic computer game.  It has a Tutorial and
                 over 100 levels: some easy, some very hard.
 Keywords:       arcade game Lode Runner KGoldrunner Loderunner Goldrunner
-Author:         grisuji@gmx.de (Marco Krüger)
-                ianw@netspace.net.au (Ian Wadham)
+Author:         ianw@netspace.net.au (Ian Wadham)
+                grisuji@gmx.de (Marco Krüger)
 Maintained-by:  ianw@netspace.net.au (Ian Wadham)
 Primary-site:   	        
 Alternate-site:  

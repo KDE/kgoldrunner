@@ -47,8 +47,6 @@
 #include "fileopen.xpm"
 #include "filesave.xpm"
 
-#include <kglobalsettings.h>
-
 /******************************************************************************/
 /***********************    COLLECTION DATA CLASS    **************************/
 /******************************************************************************/
@@ -253,7 +251,7 @@ KGoldrunner::KGoldrunner(QWidget *parent, const char *name, WFlags f)
 	view->show();
 
 #ifdef QT3
-	removeDockWindow (editToolbar);
+	editToolbar->hide();
 	setDockEnabled (DockBottom, FALSE);
 	setDockEnabled (DockLeft, FALSE);
 	setDockEnabled (DockRight, FALSE);
@@ -262,16 +260,20 @@ KGoldrunner::KGoldrunner(QWidget *parent, const char *name, WFlags f)
 	setDockEnabled (QMainWindow::Bottom, FALSE);
 	setDockEnabled (QMainWindow::Left, FALSE);
 	setDockEnabled (QMainWindow::Right, FALSE);
-#endif
 
 	// Force QMainWindow to recalculate its widget sizes immediately.
 	qApp->processEvents();
 
 	// Force QMainWindow to release the toolbar space and keep the layout
 	// clean.  Not nice, but I've tried everything else in the Qt book.
+#endif
 	// We also stop the user resizing the main window (it is not supported
 	// by KGoldrunner and only creates ugly grey areas).
 	this->setFixedSize (this->minimumSize());
+
+	// Make it impossible to turn off the editor toolbar.
+	// Accidentally hiding it would make editing impossible.
+	this->setDockMenuEnabled (FALSE);
 
 	hero = new KGrHero (view, 0, 0);
 	hero->setPlayfield (&playfield);
@@ -342,44 +344,56 @@ bool KGoldrunner::getDirectories ()
     // all the KGoldrunner files have similar path names (after "apps") and
     // KDE always locates directories in $KDEHOME and never the released games.
 
-    // The directory strings are set by KDE 2 at run time and might change in
+    // In the KDE 3 environment (Release 3.1.1), $KDEDIRS is set to "/opt/kde3",
+    // so start looking for things there.  The "kgoldrun" sub-directories have
+    // been changed to "kgoldrunner", in line with KDevelop 3 practice.  So we
+    // have "share/doc/HTML/en/kgoldrunner/", "share/apps/kgoldrunner/system/"
+    // and "share/apps/kgoldrunner/user" as the 3 subdirs KGoldrunner uses.
+
+    // The directory strings are set by KDE at run time and might change in
     // later releases, so use them with caution and only if something gets lost.
 
     KStandardDirs * dirs = new KStandardDirs();
 
+#ifdef QT3
+    QString myDir = "kgoldrunner";
+#else
+    QString myDir = "kgoldrun";
+#endif
+
     // Find the KGoldrunner Users' Guide, English version (en).
-    systemHTMLDir = dirs->findResourceDir ("html", "en/kgoldrun/");
+    systemHTMLDir = dirs->findResourceDir ("html", "en/" + myDir + "/");
     if (systemHTMLDir.length() <= 0) {
 	QMessageBox::information (this, "KGoldrunner - Get Directories",
-	"Cannot find documentation sub-directory \"en/kgoldrun/\"\n"
+	"Cannot find documentation sub-directory \"en/" + myDir + "/\"\n"
 	"in area \"" + dirs->kde_default ("html") +
 	"\" of the KDE directories ($KDEDIRS).\n"
 	"Please contact your System Administrator.");
 	result = FALSE;
     }
     else
-	systemHTMLDir.append ("en/kgoldrun/");
+	systemHTMLDir.append ("en/" + myDir + "/");
 
     // Find the system collections in a directory of the required KDE type.
-    systemDataDir = dirs->findResourceDir ("data", "kgoldrun/system/");
+    systemDataDir = dirs->findResourceDir ("data", myDir + "/system/");
     if (systemDataDir.length() <= 0) {
 	QMessageBox::information (this, "KGoldrunner - Get Directories",
-	"Cannot find System Levels sub-directory \"kgoldrun/system/\"\n"
+	"Cannot find System Levels sub-directory \"" + myDir + "/system/\"\n"
 	"in area \"" + dirs->kde_default ("data") +
 	"\" of the KDE directories ($KDEDIRS).\n"
 	"Please contact your System Administrator.");
 	result = FALSE;
     }
     else
-	systemDataDir.append ("kgoldrun/system/");
+	systemDataDir.append (myDir + "/system/");
 
     // Locate and optionally create directories for user collections and levels.
     bool create = TRUE;
-    userDataDir   = dirs->saveLocation ("data", "kgoldrun/user/", create);
+    userDataDir   = dirs->saveLocation ("data", myDir + "/user/", create);
     if (userDataDir.length() <= 0) {
 	QMessageBox::information (this, "KGoldrunner - Get Directories",
-	"Cannot find or create User Levels sub-directory \"kgoldrun/user/\"\n"
-	"in area \"" + dirs->kde_default ("data") +
+	"Cannot find or create User Levels sub-directory \"" + myDir +
+	"/user/\"\nin area \"" + dirs->kde_default ("data") +
 	"\" of the KDE user area ($KDEHOME).\n"
 	"Please contact your System Administrator.");
 	result = FALSE;
@@ -389,7 +403,7 @@ bool KGoldrunner::getDirectories ()
 	if (! create) {
 	    QMessageBox::information (this, "KGoldrunner - Get Directories",
 	    "Cannot find or create \"levels/\" directory in sub-directory\n"
-	    "\"kgoldrun/user/\" in the KDE user area ($KDEHOME).\n"
+	    "\"" + myDir + "/user/\" in the KDE user area ($KDEHOME).\n"
 	    "Please contact your System Administrator.");
 	    result = FALSE;
 	}
@@ -611,10 +625,10 @@ void KGoldrunner::newGame (const int lev)
 	file_menu->setItemEnabled(ID_SAVEFILE, FALSE);
 
 #ifdef QT3
-	removeDockWindow (editToolbar);
+	editToolbar->hide();
+	this->setFixedSize (this->minimumSize());
 #else
 	removeToolBar (editToolbar);
-#endif
 
 	// Force QMainWindow to recalculate its widget sizes immediately.
 	qApp->processEvents();
@@ -622,6 +636,7 @@ void KGoldrunner::newGame (const int lev)
 	// Force QMainWindow to release the toolbar space and keep the layout
 	// clean.  Not nice, but I've tried everything else in the Qt book.
 	this->setFixedSize (this->minimumSize());
+#endif
 	view->setHeroVisible (TRUE);
     } // End "if (editMode)".
 
@@ -800,7 +815,9 @@ bool KGoldrunner::openLevelFile (int levelNo, QFile & openlevel)
   if (! openlevel.exists()) {
       QMessageBox::information (this, "Load Level",
 	    "Cannot find file \"" + filePath +
-	    "\"\nPlease contact your System Administrator.");
+	    "\"\nPlease contact your System Administrator and"
+	    "\nmake sure 'tar xf levels.tar' has been run in"
+	    "\nthe '" + systemDataDir.myStr() + "' directory");
       return (FALSE);
   }
 
@@ -1055,7 +1072,7 @@ void KGoldrunner::loadGame()
     OK->	setAccel (Key_Return);
     CANCEL->	setAccel (Key_Escape);
 
-    QFont	f( KGlobalSettings::fixedFont() );
+    QFont	f ("courier", 12);
     f.setFixedPitch (TRUE);
     lgList->	setFont (f);
     f.setBold (TRUE);
@@ -1388,7 +1405,7 @@ void KGoldrunner::showHighScores()
 
     OK->		setAccel (Key_Return);
 
-    QFont		f( KGlobalSettings::fixedFont() );
+    QFont		f ("courier", 12);
     f.			setFixedPitch (TRUE);
     f.			setBold (TRUE);
     hsColHeader->	setFont (f);
@@ -2416,13 +2433,13 @@ void KGoldrunner::initEdit()
 
 	// Show the editor's toolbar.
 #ifdef QT3
-	addDockWindow (editToolbar, "Editor", DockTop);
+	editToolbar->show();
 #else
 	addToolBar (editToolbar, "Editor", QMainWindow::Top);
-#endif
 
 	// Force QMainWindow to re-calculate its sizes.
 	qApp->processEvents();
+#endif
     }
 
     paintEditObj = FALSE;
@@ -2714,7 +2731,9 @@ void KGoldrunner::mapCollections()
 		QMessageBox::information (this, "Check Games and Levels",
 		"There is NO directory \"" + d_path + "/\" to hold levels for"
 		"\nthe \"" + colln->name + "\" game.\n\nPlease contact your "
-		"System Administrator.");
+		"System Administrator and make sure 'tar xf levels.tar'"
+		"\nhas been run in the '" + systemDataDir.myStr() +
+		"' directory");
 	    }
 	    continue;
 	}
