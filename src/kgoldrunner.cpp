@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+// $Log$
+
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
@@ -3828,7 +3830,6 @@ void KGoldrunner::showManual ()
 }
 
 /****************************************************************************
-** $Id$
 **
 ** Copyright (C) 1992-2000 Trolltech AS.  All rights reserved.
 **
