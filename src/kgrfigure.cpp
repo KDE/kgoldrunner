@@ -18,15 +18,15 @@
 
 #include <stdio.h>
 
-KGrFigure :: KGrFigure (int x, int y)
+KGrFigure :: KGrFigure (int px, int py)
 {
-  this->x = mem_x = x;
-  this->y = mem_y = y;
+  x = mem_x = px;
+  y = mem_y = py;
   relx = mem_relx = 0;
   rely = mem_rely = 0;
 
-  absx = x*16;
-  absy = y*16;
+  absx = px*16;
+  absy = py*16;
 
   nuggets = 0;
   status = STANDING;
@@ -1672,7 +1672,7 @@ bool KGrEnemy::bumpingFriend()
     cmax = enemies->count();
     for (c = 0; c < cmax; c++) {
 	enemy = enemies->at(c);
-	if ((enemy->enemyId != this->enemyId) && (enemy->status != FALLING)) {
+	if ((enemy->enemyId != enemyId) && (enemy->status != FALLING)) {
 	    dx = enemy->getx() - absx;
 	    dy = enemy->gety() - absy;
 	    switch (direction) {
@@ -1683,7 +1683,7 @@ bool KGrEnemy::bumpingFriend()
 			return TRUE;
 		    }
 		    else if (dx >= -16) {
-			if ((dx > -16) && (this->enemyId < enemy->enemyId))
+			if ((dx > -16) && (enemyId < enemy->enemyId))
 			    return FALSE;
 			else
 			    return TRUE;	// Wait for the one in front.
@@ -1697,7 +1697,7 @@ bool KGrEnemy::bumpingFriend()
 			return TRUE;
 		    }
 		    else if (dx <= 16) {
-			if ((dx < 16) && (this->enemyId < enemy->enemyId))
+			if ((dx < 16) && (enemyId < enemy->enemyId))
 			    return FALSE;
 			else
 			    return TRUE;	// Wait for the one in front.
@@ -1711,7 +1711,7 @@ bool KGrEnemy::bumpingFriend()
 			return TRUE;
 		    }
 		    else if (dy >= -16) {
-			if ((dy > -16) && (this->enemyId < enemy->enemyId))
+			if ((dy > -16) && (enemyId < enemy->enemyId))
 			    return FALSE;
 			else
 			    return TRUE;	// Wait for the one above.
@@ -1725,7 +1725,7 @@ bool KGrEnemy::bumpingFriend()
 			return TRUE;
 		    }
 		    else if (dy <= 16) {
-			if ((dy < 16) && (this->enemyId < enemy->enemyId))
+			if ((dy < 16) && (enemyId < enemy->enemyId))
 			    return FALSE;
 			else
 			    return TRUE;	// Wait for the one below.

@@ -54,9 +54,9 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     int spacing		= 10;
     QWidget * dad	= this;
 #else
-    int margin		= this->marginHint();
-    int spacing		= this->spacingHint();
-    QWidget * dad	= this->plainPage();
+    int margin		= marginHint();
+    int spacing		= spacingHint();
+    QWidget * dad	= plainPage();
 #endif
 
     QVBoxLayout * mainLayout = new QVBoxLayout (dad, margin, spacing);
@@ -193,7 +193,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 #ifdef KGR_PORTABLE
 	OK->setText (OKText);
 #else
-	this->setButtonOKText (OKText);
+	setButtonOKText (OKText);
 #endif
     }
 
@@ -505,9 +505,9 @@ KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
     int spacing		= 10;
     QWidget * dad	= this;
 #else
-    int margin		= this->marginHint();
-    int spacing		= this->spacingHint();
-    QWidget * dad	= this->plainPage();
+    int margin		= marginHint();
+    int spacing		= spacingHint();
+    QWidget * dad	= plainPage();
 #endif
 
     QVBoxLayout * mainLayout = new QVBoxLayout (dad, margin, spacing);
@@ -595,9 +595,9 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
     int spacing		= 10;
     QWidget * dad	= this;
 #else
-    int margin		= this->marginHint();
-    int spacing		= this->spacingHint();
-    QWidget * dad	= this->plainPage();
+    int margin		= marginHint();
+    int spacing		= spacingHint();
+    QWidget * dad	= plainPage();
 #endif
 
     QVBoxLayout * mainLayout = new QVBoxLayout (dad, margin, spacing);
@@ -650,10 +650,10 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
 #endif
 
     if (action == SL_CR_GAME) {
-	this->     setCaption (i18n("Create Game"));
+	     setCaption (i18n("Create Game"));
     }
     else {
-	this->     setCaption (i18n("Edit Game Info"));
+	     setCaption (i18n("Edit Game Info"));
     }
 
     QString OKText = "";
@@ -683,7 +683,7 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
 #ifdef KGR_PORTABLE
     OK->setText (OKText);
 #else
-    this->setButtonOKText (OKText);
+    setButtonOKText (OKText);
 #endif
 
     if ((action == SL_CR_GAME) ||
@@ -768,9 +768,9 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
     int spacing		= 10;
     QWidget * dad	= this;
 #else
-    int margin		= this->marginHint();
-    int spacing		= this->spacingHint();
-    QWidget * dad	= this->plainPage();
+    int margin		= marginHint();
+    int spacing		= spacingHint();
+    QWidget * dad	= plainPage();
 #endif
 
     QVBoxLayout *	mainLayout = new QVBoxLayout (dad, margin, spacing);

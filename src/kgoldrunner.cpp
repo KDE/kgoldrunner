@@ -111,7 +111,7 @@ KGoldrunner::KGoldrunner()
     }
     view->setBaseScale();		// Set scale for level-names.
 #endif
-    this->setFixedSize (view->size());
+    setFixedSize (view->size());
 
     makeEditToolbar();			// Uses pixmaps from "view".
     editToolbar->hide();
@@ -121,13 +121,13 @@ KGoldrunner::KGoldrunner()
 
     // Make it impossible to turn off the editor toolbar.
     // Accidentally hiding it would make editing impossible.
-    this->setDockMenuEnabled (FALSE);
+    setDockMenuEnabled (FALSE);
 
     // Set mouse control of the hero as the default.
     game->setMouseMode (TRUE);
 
     // Paint the main widget (title, menu, status bar, blank playfield).
-    this->show();
+    show();
 
     // Force the main widget to appear before the "Start Game" dialog does.
     qApp->processEvents();
@@ -689,13 +689,13 @@ void KGoldrunner::setKGrRules()
 void KGoldrunner::makeLarger()
 {
     if (view->changeSize (+1))
-	this->setFixedSize (view->size());
+	setFixedSize (view->size());
 }
 
 void KGoldrunner::makeSmaller()
 {
     if (view->changeSize (-1))
-	this->setFixedSize (view->size());
+	setFixedSize (view->size());
 }
 
 // Local slots for hero control keys.
