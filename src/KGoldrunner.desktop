@@ -2,6 +2,10 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=KGoldrunner
+Name[fr]=KGoldRunner
+Name[hr]=Potraga za zlatom
+Name[sv]=Kgoldrunner
+Name[xx]=xxKGoldrunnerxx
 Type=Application
 Exec=kgoldrunner
 Icon=kgoldrunner.xpm
@@ -30,10 +34,8 @@ Comment[sv]=Action-spel och pussellösning
 Comment[uk]=Гра для розв'язання загадок
 Comment[ven]=Mutambo wa nyito nau tandulula mandandetande
 Comment[xh]=Umdlalo wentshukumo nosombululo lwe puzzle
+Comment[xx]=xxA game of action and puzzle-solvingxx
 Comment[zh_CN]=动作与解谜游戏
 Comment[zh_TW]=動作與解謎遊戲
 Comment[zu]=Umdlalo womnyakazo kanye neyokuxazulula i puzzle
 Terminal=0
-Name[fr]=KGoldRunner
-Name[hr]=Potraga za zlatom
-Name[sv]=Kgoldrunner
