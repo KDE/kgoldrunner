@@ -1,13 +1,16 @@
-KGoldrunner v1.0.3 - TODO
+KGoldrunner v1.0.4 - TODO
 -----------------------
 
 Some ideas for the future:-
 
-  1.  Port KGoldrunner v1.0.3 to other O/S's, such as MS Windows and Mac.
-      Note that KGoldrunner v1.0.3, as configured for Qt 3.x library,
+  0.  Find a neater way to distribute and install the 100's of game
+      levle files when using KDE 3 and KDevelop 3 (Gideon).
+
+  1.  Port KGoldrunner to other O/S's, such as MS Windows and Mac.
+      Note that KGoldrunner v1.0.4, as configured for Qt 3.x library,
       has very small dependence on the KDE desktop (i.e. locations of
       directories only).  Because Qt 3 is intended to be portable to
-      MS Windows and Mac, so should KGoldrunner v1.0.3 be.  However Qt
+      MS Windows and Mac, so should KGoldrunner v1.0.4 be.  However Qt
       development licences are NOT free on non-UNIX type O/S's.
 
   2.  Use the "tr" and translation features in Qt to make KGoldrunner

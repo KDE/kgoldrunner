@@ -26,11 +26,13 @@ it or regenerate `configure' using a newer version of `autoconf'.
 The simplest way to compile, install and uninstall this package is:
 
   0. Make sure you uncompress the correct release file for your system.
-     File "kgoldrunner-1.0-kde1.tgz" is for use with Qt 1.x library and
-     KDE 1.x desk top and "kgoldrunner-1.0-kde2.tgz" is for Qt 2.x
-     library and KDE 2.x desk top.  Also, make sure you are logged in
-     as "root", the superuser, if you want to do step 4 (install), or
-     use `su root'.
+     File "kgoldrunner-1.0.4-kde3.tar.gz" is for use with Qt 3.1.1 library
+     and KDE 3.1.1 desk top.  Also, make sure you are logged in as "root",
+     the superuser, if you want to do step 4 (install), or use `su root'.
+     Some earlier releases, on "http://apps.kde.com", are file
+     "kgoldrunner-1.0-kde1.tar.gz", for use with Qt 1.x library and
+     KDE 1.x desk top, and "kgoldrunner-1.0-kde2.tar.gz", for Qt 2.x
+     library and KDE 2.x desk top.
 
   1. `cd' to the top directory containing the file "configure.in" and type
      `./configure' to configure the package for your system.  If you're
@@ -41,13 +43,15 @@ The simplest way to compile, install and uninstall this package is:
      Running `configure' takes awhile.  While running, it prints some
      messages telling which features it is checking for.
 
-  2. Type `make init' to make some minor changes to the source code that
-     get around a problem with Qt's MOC pre-compiler.
+  2. Type `make' to compile the package.
 
-  3. Type `make' to compile the package.
+  3. Type `make install' to install program, data files and documentation
+     in the KDE desktop "Games/Arcade" area (working as "root").
 
-  4. Type `make install' to install the programs and any data files and
-     documentation in the KDE desktop Games area (working as "root").
+  4. `cd' to the directory where file "levels.tar" has been installed
+     (e.g. /opt/kde3/share/apps/kgoldrunner/system) and run the command
+     `tar xf levels.tar', which should create a "levels" directory with
+     about 200 files in it (i.e. all the levels in the various games).
 
   5. Type `kgoldrunner' to start the game.  It will then check that all
      the files it requires are in the right places and will report any
