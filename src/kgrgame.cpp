@@ -366,7 +366,7 @@ void KGrGame::startTutorial()
     else {
 	KGrMessage::information (view, i18n("Start Tutorial"),
 	    i18n("Cannot find the tutorial game (file-prefix %1) in "
-	    "the %2 files. Please contact your system administrator.")
+	    "the %2 files.")
 	    .arg("'tute'").arg("'games.dat'"));
     }
 }
@@ -482,8 +482,7 @@ bool KGrGame::openLevelFile (int levelNo, QFile & openlevel)
 
   if (! openlevel.exists()) {
       KGrMessage::information (view, i18n("Load Level"),
-	    i18n("Cannot find file '%1'. Please contact your "
-	    "system administrator and make sure '%2' has been "
+	    i18n("Cannot find file '%1'. Please make sure '%2' has been "
 	    "run in the '%3' directory.")
 	    .arg(filePath).arg("tar xf levels.tar").arg(systemDataDir.myStr()));
       return (FALSE);
@@ -492,8 +491,7 @@ bool KGrGame::openLevelFile (int levelNo, QFile & openlevel)
   // öffne Level zum lesen
   if (! openlevel.open (IO_ReadOnly)) {
       KGrMessage::information (view, i18n("Load Level"),
-	    i18n("Cannot open file '%1' for read-only. Please "
-	    "contact your system administrator.").arg(filePath));
+	    i18n("Cannot open file '%1' for read-only.").arg(filePath));
       return (FALSE);
   }
 
@@ -768,8 +766,7 @@ void KGrGame::saveGame()		// Save game ID, score and level.
 
     if (! file2.open (IO_WriteOnly)) {
 	KGrMessage::information (view, i18n("Save Game"),
-		i18n("Cannot open file '%1' for output. Please "
-		"contact your system administrator.")
+		i18n("Cannot open file '%1' for output.")
 		.arg(userDataDir + "savegame.tmp"));
 	return;
     }
@@ -779,8 +776,7 @@ void KGrGame::saveGame()		// Save game ID, score and level.
     if (file1.exists()) {
 	if (! file1.open (IO_ReadOnly)) {
 	    KGrMessage::information (view, i18n("Save Game"),
-		i18n("Cannot open file '%1' for read-only. Please "
-		"contact your system administrator.")
+		i18n("Cannot open file '%1' for read-only.")
 		.arg(userDataDir + "savegame.dat"));
 	    return;
 	}
@@ -818,8 +814,7 @@ void KGrGame::loadGame()		// Re-load game, score and level.
 
     if (! savedGames.open (IO_ReadOnly)) {
 	KGrMessage::information (view, i18n("Load Game"),
-	    i18n("Cannot open file '%1' for read-only. Please "
-	    "contact your system administrator.")
+	    i18n("Cannot open file '%1' for read-only.")
 	    .arg(userDataDir + "savegame.dat"));
 	return;
     }
@@ -871,8 +866,7 @@ void KGrGame::loadGame()		// Re-load game, score and level.
 	}
 	else {
 	    KGrMessage::information (view, i18n("Load Game"),
-		i18n("Cannot find the game with prefix '%1'. "
-		"Please contact your system administrator.").arg(pr));
+		i18n("Cannot find the game with prefix '%1'.").arg(pr));
 	}
     }
 
@@ -920,8 +914,7 @@ void KGrGame::checkHighScore()
 	if (! high1.open (IO_ReadOnly)) {
 	    QString high1_name = high1.name();
 	    KGrMessage::information (view, i18n("Check for High Score"),
-		i18n("Cannot open file '%1' for read-only. Please "
-		"contact your system administrator.").arg(high1_name));
+		i18n("Cannot open file '%1' for read-only.").arg(high1_name));
 	    return;
 	}
 
@@ -960,8 +953,7 @@ void KGrGame::checkHighScore()
 
     if (! high2.open (IO_WriteOnly)) {
 	KGrMessage::information (view, i18n("Check for High Score"),
-		i18n("Cannot open file '%1' for output. Please "
-		"contact your system administrator.")
+		i18n("Cannot open file '%1' for output.")
 		.arg(userDataDir + "hi_" + collection->prefix + ".tmp"));
 	return;
     }
