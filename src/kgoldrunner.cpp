@@ -850,9 +850,9 @@ bool KGoldrunner::getDirectories()
     // Find the KGoldrunner Users' Guide, English version (en).
     systemHTMLDir = dirs->findResourceDir ("html", "en/" + myDir + "/");
     if (systemHTMLDir.length() <= 0) {
-	KGrMessage::information (this, i18n("Get Directories"),
-	i18n("Cannot find documentation sub-directory 'en/%1/' "
-	"in area '%2' of the KDE directories ($KDEDIRS).")
+	KGrMessage::information (this, i18n("Get Folders"),
+	i18n("Cannot find documentation sub-folder 'en/%1/' "
+	"in area '%2' of the KDE folder ($KDEDIRS).")
 	.arg(myDir).arg(dirs->kde_default ("html")));
 	// result = FALSE;		// Don't abort if the doc is missing.
     }
@@ -862,9 +862,9 @@ bool KGoldrunner::getDirectories()
     // Find the system collections in a directory of the required KDE type.
     systemDataDir = dirs->findResourceDir ("data", myDir + "/system/");
     if (systemDataDir.length() <= 0) {
-	KGrMessage::information (this, i18n("Get Directories"),
-	i18n("Cannot find system games sub-directory '%1/system/' "
-	"in area '%2' of the KDE directories ($KDEDIRS).")
+	KGrMessage::information (this, i18n("Get Folders"),
+	i18n("Cannot find system games sub-folder '%1/system/' "
+	"in area '%2' of the KDE folder ($KDEDIRS).")
 	.arg(myDir).arg(dirs->kde_default ("data")));
 	result = FALSE;			// ABORT if the games data is missing.
     }
@@ -875,8 +875,8 @@ bool KGoldrunner::getDirectories()
     bool create = TRUE;
     userDataDir   = dirs->saveLocation ("data", myDir + "/user/", create);
     if (userDataDir.length() <= 0) {
-	KGrMessage::information (this, i18n("Get Directories"),
-	i18n("Cannot find or create user games sub-directory '%1/user/' "
+	KGrMessage::information (this, i18n("Get Folders"),
+	i18n("Cannot find or create user games sub-folder '%1/user/' "
 	"in area '%2' of the KDE user area ($KDEHOME).")
 	.arg(myDir).arg(dirs->kde_default ("data")));
 	// result = FALSE;		// Don't abort if user area is missing.
@@ -884,9 +884,9 @@ bool KGoldrunner::getDirectories()
     else {
 	create = dirs->makeDir (userDataDir + "levels/");
 	if (! create) {
-	    KGrMessage::information (this, i18n("Get Directories"),
-	    i18n("Cannot find or create 'levels/' directory in "
-	    "sub-directory '%1/user/' in the KDE user area ($KDEHOME).").arg(myDir));
+	    KGrMessage::information (this, i18n("Get Folders"),
+	    i18n("Cannot find or create 'levels/' folder in "
+	    "sub-folder '%1/user/' in the KDE user area ($KDEHOME).").arg(myDir));
 	    // result = FALSE;		// Don't abort if user area is missing.
 	}
     }

@@ -491,7 +491,7 @@ bool KGrGame::openLevelFile (int levelNo, QFile & openlevel)
   if (! openlevel.exists()) {
       KGrMessage::information (view, i18n("Load Level"),
 	    i18n("Cannot find file '%1'. Please make sure '%2' has been "
-	    "run in the '%3' directory.")
+	    "run in the '%3' folder.")
 	    .arg(filePath).arg("tar xf levels.tar").arg(systemDataDir.myStr()));
       return (FALSE);
   }
@@ -2313,9 +2313,9 @@ void KGrGame::mapCollections()
 	    // There is no "levels" sub-directory: OK if game has no levels yet.
 	    if (colln->nLevels > 0) {
 		KGrMessage::information (view, i18n("Check Games & Levels"),
-			i18n("There is no directory '%1' to hold levels for"
+			i18n("There is no folder '%1' to hold levels for"
 			" the '%2' game. Please make sure '%3' "
-			"has been run in the '%4' directory.")
+			"has been run in the '%4' folder.")
 			.arg(d_path)
 			.arg(colln->name)
 			.arg("tar xf levels.tar")
