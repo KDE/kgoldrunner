@@ -1,0 +1,12 @@
+# KDE Config File  
+[Desktop Entry]
+Type=Application
+Exec=kgoldrunner
+Icon=kgoldrunner.xpm
+MiniIcon=kgoldrunner.xpm
+DocPath=kgoldrun/index.html
+Comment=A game of action and puzzle-solving
+Comment[de]=
+Terminal=0
+Name=KGoldrunner
+Name[de]=KGoldrunner

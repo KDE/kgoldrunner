@@ -1,0 +1,21 @@
+KGoldrunner v1.0 - Known Problems
+---------------------------------
+
+1.  Sometimes, but not for long, a runner will vanish.  The more common cases
+    have been fixed, but the basic problem is that the Qt library, especially
+    in Qt v2.x, seems to assume that you are going to do ALL painting in a
+    "paintEvent" function, after you have returned control to the QApplication.
+
+    The Qt documentation hints at this (e.g. in the tutorial), but never seems
+    to say it explicitly.  KGoldrunner does "setBackgroundPixmap", "erase" and
+    "drawPixmap" as the game proceeds and would require major structural change
+    and re-testing to implement "paintEvent" fully.
+
+2.  In the KDE 1 and Qt v1.x implementation, multi-line edit boxes do not
+    wrap text lines (in Qt 2.x they can, and KGoldrunner uses that feature).
+
+    There is extra code (for temporary use with Qt1.x only) to wrap the text
+    in read-only boxes used for displaying hints, tutorial text and game
+    descriptions.  However, if you want to create or EDIT hints and
+    descriptions, you will have to handle a paragraph as one very long
+    line, using a horizontal scrollbar.  Sorry for the inconvenience.
