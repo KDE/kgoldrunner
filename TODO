@@ -1,36 +1,21 @@
-KGoldrunner v1.0.4 - TODO
+KGoldrunner v2.0 - TODO
 -----------------------
 
 Some ideas for the future:-
 
-  0.  Find a neater way to distribute and install the 100's of game
-      levle files when using KDE 3 and KDevelop 3 (Gideon).
-
   1.  Port KGoldrunner to other O/S's, such as MS Windows and Mac.
-      Note that KGoldrunner v1.0.4, as configured for Qt 3.x library,
+      Although KGoldrunner v2.0, as released with the KDE desktop, is
+      a KDE-based application and is not portable, KGoldrunner v2.0-qt,
+      as configured for Qt 3.x library and compiled with -DKGR_PORTABLE,
       has very small dependence on the KDE desktop (i.e. locations of
       directories only).  Because Qt 3 is intended to be portable to
-      MS Windows and Mac, so should KGoldrunner v1.0.4 be.  However Qt
+      MS Windows and Mac, so should KGoldrunner v2.0-qt be.  However Qt
       development licences are NOT free on non-UNIX type O/S's.
 
-  2.  Use the "tr" and translation features in Qt to make KGoldrunner
-      multi-lingual.  See the Overview on "Internationalization (i18n)"
-      in the Qt Reference Documentation.
-
-  3.  Make the KGoldrunner playing area resizeable.
-
-      The point is to make the game easier to see and play at higher
-      monitor resolutions.  At 1024x768 pixels the KGoldrunner window
-      is rather small and you have to be very precise with the mouse.
-
-      In the Qt 3 version of KGoldrunner resizing HAS been implemented,
-      using the new "World Matrix" functions of QCanvasWindow (newly
-      available in Qt 3).
-
-  4.  Add sounds for hero actions such as falling, collecting a nugget,
+  2.  Add sounds for hero actions such as falling, collecting a nugget,
       getting killed and completing a level.
 
-  5.  Design and program extra game objects, such as movable bricks,
+  3.  Design and program extra game objects, such as movable bricks,
       water, teleportation exits and aquatic enemies.
 
       Movable bricks would be pushed up or sideways or would fall into
@@ -47,5 +32,3 @@ Some ideas for the future:-
 
       Aquatic enemies would just make life more difficult for the hero
       in the water.  Maybe there could be amphibian enemies too.
-
-
