@@ -1,42 +1,51 @@
-/***************************************************************************
-                          main.cpp  -  description
-                             -------------------
-    begin                : Wed Jan 23 15:19:17 EST 2002
-    copyright            : (C) 2002 by Marco Krüger and Ian Wadham
-    email                : See menu "Help, About KGoldrunner"
- ***************************************************************************/
+/*
+ * Copyright (C) 2003 Ian Wadham and Marco Krüger <ianw@netspace.net.au>
+ */
 
-/***************************************************************************
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation; either version 2 of the License, or     *
- *   (at your option) any later version.                                   *
- *                                                                         *
- ***************************************************************************/
+#include <kapplication.h>
+#include <dcopclient.h>
+#include <kaboutdata.h>
+#include <kcmdlineargs.h>
+#include <klocale.h>
 
-// $Log$
-
+#include "kgrconsts.h"
 #include "kgoldrunner.h"
-// #include <qtextcodec.h>
 
-int main (int argc, char *argv[])
+static const char description[] =
+    I18N_NOOP("<qt>KGoldrunner is a game of action and puzzle solving.  Run through the maze, dodge your enemies, pick up all the gold, then climb up to the next level ...</qt>");
+
+static const char version[] = "2.0";
+
+int main (int argc, char **argv)
 {
-    QApplication app (argc, argv);
-    KGoldrunner widget;
+    KAboutData about("kgoldrunner", "KGoldrunner",
+    		     version, description,
+                     KAboutData::License_GPL,
+		     "(C) 2003 Ian Wadham and Marco Krüger", 0, 0,
+		     "ianw@netspace.net.au");
+    about.addAuthor( "Ian Wadham", I18N_NOOP("Current author"),
+    		     "ianw@netspace.net.au" );
+    about.addAuthor( "Marco Krüger", I18N_NOOP("Original author"), 0);
 
-    app.setFont(QFont("helvetica", 12));
-    // QTranslator tor( 0 );
-    // set the location where your .qm files are in load() below as the last parameter instead of "."
-    // for development, use "/" to use the english original as
-    // .qm files are stored in the base project directory.
-    // tor.load( QString("kgoldrunner.") + QString(QTextCodec::locale()), "." );
-    // app.installTranslator( &tor );
+    KCmdLineArgs::init (argc, argv, &about);
 
-    /* uncomment the following line, if you want a Windows 95 look*/
-    // app.setStyle(WindowsStyle);
+    KApplication app;
 
-    app.setMainWidget(&widget);
+    // Register as a DCOP client.
+    app.dcopClient()->registerAs (app.name(), false);
 
-    return app.exec();
+    // See if we are starting with session management.
+    if (app.isRestored())
+    {
+        RESTORE(KGoldrunner);
+	return app.exec();
+    }
+    else
+    {
+	KGoldrunner * widget = new KGoldrunner;
+	if (widget->startedOK()) {
+	    widget->show();
+	    return app.exec();
+	}
+    }
 }

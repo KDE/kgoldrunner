@@ -1,7 +1,7 @@
 Begin3
 Title:          KGoldrunner 
-Version:        1.0.4
-Entered-date:   06JUL2003
+Version:        2.0
+Entered-date:   12AUG2003
 Description:    KGoldrunner is an action game where the hero runs through a
                 maze and dodges enemies.  You must guide him with the mouse
                 and collect all the gold nuggets, then you can climb up into
@@ -19,6 +19,6 @@ Maintained-by:  ianw@netspace.net.au (Ian Wadham)
 Primary-site:   	        
 Alternate-site:  
 Original-site:  
-Platforms:      Linux with KDE 2 or KDE 3 Desktop
+Platforms:      Linux with KDE 3 Desktop
 Copying-policy: GPL
 End

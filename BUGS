@@ -1,14 +1,38 @@
-KGoldrunner v1.0.3 - Known Problems
------------------------------------
+KGoldrunner v2.0 - Known Problems
+---------------------------------
 
 1.  Development of the KDE 1 version of KGoldrunner has been discontinued.
     There is still a tarball for it on "apps.kde.com" under "kgoldrunner".
 
-2.  In Qt 3, multi-line edit boxes have been declared obsolete and the
-    functions that handle counts of lines have been deleted.  KGoldrunner
-    used those functions to work out how far to shrink a box that had just
-    a few lines of text.  In the Qt3 version of KGoldrunner such boxes now
-    have empty space in them.
+2.  Now that KGoldrunner v2.0 has been re-written as a KDE 3 application
+    it is no longer portable to non-KDE systems, however a portable
+    (non-KDE) version of KGoldrunner, based on Qt 3, has been written
+    and is currently under test.
 
-3.  KGoldrunner v1.0.3 should compile and run with KDE 2, if you remove the
-    -DQT3 compiler flag, but it has NOT been regression-tested with KDE 2.
+3.  KGoldrunner 2.0 is not designed to work with KDE 2.  It has been tested with
+    KDE 3.1.1 and Qt 3.1.1.
+
+4.  In KGoldrunner 2.0, the KDE library produces the following error message
+    occasionally when KDialogbase or KMessageBox is run:
+
+          WARNING: KDE detected X Error: BadMatch (invalid parameter attributes)
+          \x08 Major opcode:  *
+
+    This apppears to be harmless, i.e. all the desired dialog entries are
+    received by the application and the messages appear on the screen.  One
+    way the X error message can be forced to appear is to run "exec()" twice on
+    one dialog object, e.g, as in a data-entry validation loop:
+
+          while (dialogName->exec() == QDialog::Accepted) {
+	      if validation fails
+	          issue error message;
+	          continue;
+	      else
+	          break;
+          }
+
+    Maybe this is a bug in KDE 3.1.1 and maybe it is already fixed in later KDE.
+    It happens if you do "exec()" twice on an empty KDialogbase object (i.e. one
+    with just OK and Cancel buttons and a caption), so I don't think KGoldrunner
+    is responsible.  Also, the "while ... exec()" loop works fine with QDialog
+    objects and always has.
