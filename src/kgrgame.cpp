@@ -159,8 +159,12 @@ void KGrGame::herosDead()
 
 void KGrGame::finalBreath()
 {
-    enemyCount = 0;		// Hero is dead: re-start the level.
-    loadLevel (level);
+    // Fix bug 95202:	Avoid re-starting if the player selected
+    //			edit mode before the 1.5 seconds were up.
+    if (! editMode) {
+	enemyCount = 0;		// Hero is dead: re-start the level.
+	loadLevel (level);
+    }
     KGrObject::frozen = FALSE;	// Unfreeze the game, but don't move yet.
 }
 
