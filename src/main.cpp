@@ -18,7 +18,7 @@ static const char version[] = "2.0";
 
 int main (int argc, char **argv)
 {
-    KAboutData about("kgoldrunner", "KGoldrunner",
+    KAboutData about("kgoldrunner", I18N_NOOP("KGoldrunner" ),
     		     version, description,
                      KAboutData::License_GPL,
 		     "(C) 2003 Ian Wadham and Marco Krüger");
