@@ -47,6 +47,8 @@
 #include "fileopen.xpm"
 #include "filesave.xpm"
 
+#include <kglobalsettings.h>
+
 /******************************************************************************/
 /***********************    COLLECTION DATA CLASS    **************************/
 /******************************************************************************/
@@ -1053,7 +1055,7 @@ void KGoldrunner::loadGame()
     OK->	setAccel (Key_Return);
     CANCEL->	setAccel (Key_Escape);
 
-    QFont	f ("courier", 12);
+    QFont	f( KGlobalSettings::fixedFont() );
     f.setFixedPitch (TRUE);
     lgList->	setFont (f);
     f.setBold (TRUE);
@@ -1386,7 +1388,7 @@ void KGoldrunner::showHighScores()
 
     OK->		setAccel (Key_Return);
 
-    QFont		f ("courier", 12);
+    QFont		f( KGlobalSettings::fixedFont() );
     f.			setFixedPitch (TRUE);
     f.			setBold (TRUE);
     hsColHeader->	setFont (f);

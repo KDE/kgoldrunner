@@ -16,6 +16,7 @@
  ***************************************************************************/
 
 #include "kgoldrunner.h"
+#include <kglobalsettings.h>
 // #include <qtextcodec.h>
 
 int main (int argc, char *argv[])
@@ -23,7 +24,7 @@ int main (int argc, char *argv[])
     QApplication app (argc, argv);
     KGoldrunner widget;
 
-    app.setFont(QFont("helvetica", 12));
+    app.setFont( KGlobalSettings::generalFont() );
     // QTranslator tor( 0 );
     // set the location where your .qm files are in load() below as the last parameter instead of "."
     // for development, use "/" to use the english original as
