@@ -875,7 +875,7 @@ int KGrMessage::warning (QWidget * parent, QString caption, QString text,
 {
     int ans = 0;
 #ifdef KGR_PORTABLE
-    // Display a box with 2 or 3 buttons, depending on label2 == "" or not.
+    // Display a box with 2 or 3 buttons, depending on if label2 is empty or not.
     // Force Qt to do word-wrapping (but it ignores "\n" line-breaks).
     ans = QMessageBox::warning (parent, caption,
 				"<qt>" + text + "</qt>",
