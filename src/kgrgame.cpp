@@ -2085,6 +2085,8 @@ void KGrGame::endEdit (int button)
 
 int KGrGame::selectLevel (int action, int requestedLevel)
 {
+    int selectedLevel = 0;		// 0 = no selection (Cancel) or invalid.
+
     // Halt the game during the dialog.
     modalFreeze = FALSE;
     if (! KGrObject::frozen) {
@@ -2095,21 +2097,9 @@ int KGrGame::selectLevel (int action, int requestedLevel)
     // Create and run a modal dialog box to select a game and level.
     KGrSLDialog * sl = new KGrSLDialog (action, requestedLevel, collnIndex,
 					collections, this, view, "levelDialog");
-    int selectedLevel = 0;
     while (sl->exec() == QDialog::Accepted) {
 	selectedGame = sl->selectedGame();
-	selectedLevel = sl->selectedLevel();
-	if ((selectedLevel > collections.at (selectedGame)->nLevels) &&
-	    (action != SL_CREATE) && (action != SL_SAVE) &&
-	    (action != SL_MOVE) && (action != SL_UPD_GAME)) {
-	    KGrMessage::information (view, i18n("Select Level"),
-		i18n("There is no level %1 in %2,"
-		"so you cannot play or edit it.")
-		.arg(selectedLevel)
-		.arg("\"" + collections.at(selectedGame)->name + "\""));
-	    continue;				// Re-run the dialog box.
-	}
-
+	selectedLevel = 0;	// In case the selection is invalid.
 	if (collections.at(selectedGame)->owner == SYSTEM) {
 	    switch (action) {
 	    case SL_CREATE:	// Can save only in a USER collection.
@@ -2137,6 +2127,19 @@ int KGrGame::selectLevel (int action, int requestedLevel)
 	    }
 	}
 
+	selectedLevel = sl->selectedLevel();
+	if ((selectedLevel > collections.at (selectedGame)->nLevels) &&
+	    (action != SL_CREATE) && (action != SL_SAVE) &&
+	    (action != SL_MOVE) && (action != SL_UPD_GAME)) {
+	    KGrMessage::information (view, i18n("Select Level"),
+		i18n("There is no level %1 in %2,"
+		"so you cannot play or edit it.")
+		.arg(selectedLevel)
+		.arg("\"" + collections.at(selectedGame)->name + "\""));
+	    selectedLevel = 0;			// Set an invalid selection.
+	    continue;				// Re-run the dialog box.
+	}
+
 	// If "OK", set the results.
 	collection = collections.at (selectedGame);
 	owner = collection->owner;
@@ -2153,7 +2156,7 @@ int KGrGame::selectLevel (int action, int requestedLevel)
     }
 
     delete sl;
-    return (selectedLevel);
+    return (selectedLevel);			// 0 = cancelled or invalid.
 }
 
 bool KGrGame::ownerOK (Owner o)
