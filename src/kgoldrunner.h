@@ -77,6 +77,13 @@ private slots:
     void createGame();
     void editGameInfo();
 
+    // Local slots to set the landscape (colour scheme).
+    void lsKGoldrunner();
+    void lsApple2();
+    void lsIceCave();
+    void lsMidnight();
+    void lsKDEKool();
+
     // Local slots to set mouse/keyboard control of the hero.
     void setMouseMode();
     void setKeyBoardMode();

@@ -16,6 +16,9 @@
  ***************************************************************************/
 
 // $Log$
+// Revision 1.1  2003/08/14 07:11:08  ianw
+// KGoldrunner 2.0 for KDE 3 (KDE application)
+//
 // $OldLog: kgoldrunnerwidget.cpp,v $
 // Revision 1.4  2003/07/08 13:24:34  ianw
 // Converted to KDE 3.1.1 and Qt 3.1.1
@@ -30,23 +33,16 @@
 
 #include "kgrdialog.h"
 #include "kgrcanvas.h"
+#include "kgrgame.h"
 
-// ICON FILES
+// Graphics files for moving figures and background.
 #include "hero.xpm"
 #include "enemy1.xpm"
 #include "enemy2.xpm"
+#include "kgraphics.h"
 
-#include "brick.xpm"
-#include "hgbrick.xpm"
-#include "nugget.xpm"
-#include "pole.xpm"
-#include "beton.xpm"
-#include "ladder.xpm"
-#include "hladder.xpm"
-
-#include "edithero.xpm"
-#include "editenemy.xpm"
 class KGoldrunner;
+
 KGrCanvas::KGrCanvas (QWidget * parent, const char *name)
 	: QCanvasView (0, parent, name)
 {
@@ -57,19 +53,60 @@ KGrCanvas::KGrCanvas (QWidget * parent, const char *name)
     baseScale = scaleStep;
     baseFontSize = fontInfo().pointSize();
 
+    border = 4;			// Allow 2 tile-widths on each side for border.
     cw = 4*STEP;		// Playfield cell width (= four steps).
-    bw = 2*cw;			// Total border width (= 2 cells).
+    bw = border*cw/2;		// Total border width (= two cells).
     lw = cw/8;			// Line width (for edge of border).
     mw = bw - lw;		// Border main-part width.
-
-    borderColor = QColor (192, 64, 64);		// Similar to concrete (beton).
-    textColor   = QColor (230, 230, 230);	// Off-white.
 
     initView();			// Set up the graphics, etc.
 }
 
 KGrCanvas::~KGrCanvas()
 {
+}
+
+void KGrCanvas::changeLandscape (const QString & name)
+{
+    for (int i = 0; colourScheme [i] != ""; i++) {
+	if (colourScheme [i] == name) {
+
+	    // Change XPM colours and re-draw the tile-pictures used by QCanvas.
+	    changeColours (& colourScheme [i]);
+	    makeTiles();
+
+	    // Set all cells to same tile-numbers as before, but new colours.
+	    int tileNo [FIELDWIDTH] [FIELDHEIGHT];
+	    int offset = border / 2;
+
+	    for (int x = 0; x < FIELDWIDTH; x++) {
+		for (int y = 0; y < FIELDHEIGHT; y++) {
+		    tileNo[x][y] = field->tile (x + offset, y + offset);
+		}
+	    }
+
+	    field->setTiles (bgPix, (FIELDWIDTH+border), (FIELDHEIGHT+border),
+			bgw, bgh);		// Sets all tile-numbers to 0.
+
+	    for (int x = 0; x < FIELDWIDTH; x++) {
+		for (int y = 0; y < FIELDHEIGHT; y++) {
+		    field->setTile (x + offset, y + offset, tileNo[x][y]);
+		}
+	    }
+
+	    borderB->setBrush (QBrush (borderColor));
+	    borderL->setBrush (QBrush (borderColor));
+	    borderR->setBrush (QBrush (borderColor));
+
+	    QString t = title->text();
+	    makeTitle ();
+	    setTitle (t);
+
+	    // Repaint the playing area.
+	    updateCanvas();
+	    return;
+	}
+    }
 }
 
 bool KGrCanvas::changeSize (int d)
@@ -303,6 +340,8 @@ QPixmap KGrCanvas::getPixmap (char type)
 
 void KGrCanvas::initView()
 {
+    changeColours (& colourScheme [0]);		// Set "KGoldrunner" landscape.
+
     // Set up the pixmaps for the editable objects.
     freebg	= 0;		// Free space.
     nuggetbg	= 1;		// Nugget.
@@ -321,38 +360,21 @@ void KGrCanvas::initView()
     QImage image;
 
     pixmap = QPixmap (hgbrick_xpm);
-    int w = pixmap.width();
-    int h = pixmap.height();
 
-    bgw = w;			// Save dimensions for "getPixmap".
-    bgh = h;
+    bgw = pixmap.width();	// Save dimensions for "getPixmap".
+    bgh = pixmap.height();
     bgd = pixmap.depth();
 
     // Assemble the background and editing pixmaps into a strip (18 pixmaps).
-    bgPix	= QPixmap ((brickbg + 10) * w, h, bgd);
+    bgPix	= QPixmap ((brickbg + 10) * bgw, bgh, bgd);
 
-    QPainter p (& bgPix);
-
-    // First the single pixmaps ...
-    p.drawPixmap (freebg    *w, 0, QPixmap (hgbrick_xpm));	// Free space.
-    p.drawPixmap (nuggetbg  *w, 0, QPixmap (nugget_xpm));	// Nugget.
-    p.drawPixmap (polebg    *w, 0, QPixmap (pole_xpm));		// Pole or bar.
-    p.drawPixmap (ladderbg  *w, 0, QPixmap (ladder_xpm));	// Ladder.
-    p.drawPixmap (hladderbg *w, 0, QPixmap (hladder_xpm));	// Hidden laddr.
-    p.drawPixmap (edherobg  *w, 0, QPixmap (edithero_xpm));	// Static hero.
-    p.drawPixmap (edenemybg *w, 0, QPixmap (editenemy_xpm));	// Static enemy.
-    p.drawPixmap (betonbg   *w, 0, QPixmap (beton_xpm));	// Concrete.
-
-    // ... then add the 10 brick pixmaps.
-    p.drawPixmap (brickbg   *w, 0, QPixmap (bricks_xpm));	// Bricks.
-
-    p.end();
+    makeTiles();		// Fill the strip with 18 tiles.
 
     // Define the canvas as an array of tiles.  Default tile is 0 (free space).
-    int border = 4;
     int frame = frameWidth()*2;
-    field = new QCanvas ((FIELDWIDTH+border) * w, (FIELDHEIGHT+border) * h);
-    field->setTiles (bgPix, (FIELDWIDTH+border), (FIELDHEIGHT+border), w, h);
+    field = new QCanvas ((FIELDWIDTH+border) * bgw, (FIELDHEIGHT+border) * bgh);
+    field->setTiles (bgPix, (FIELDWIDTH+border), (FIELDHEIGHT+border),
+			bgw, bgh);
 
     // Embed the canvas in the view and make it occupy the whole of the view.
     setCanvas (field);
@@ -461,6 +483,26 @@ void KGrCanvas::initView()
     enemySprites->setAutoDelete(TRUE);
 }
 
+void KGrCanvas::makeTiles ()
+{
+    QPainter p (& bgPix);
+
+    // First draw the single pixmaps (8 tiles) ...
+    p.drawPixmap (freebg    * bgw, 0, QPixmap (hgbrick_xpm));	// Free space.
+    p.drawPixmap (nuggetbg  * bgw, 0, QPixmap (nugget_xpm));	// Nugget.
+    p.drawPixmap (polebg    * bgw, 0, QPixmap (pole_xpm));	// Pole or bar.
+    p.drawPixmap (ladderbg  * bgw, 0, QPixmap (ladder_xpm));	// Ladder.
+    p.drawPixmap (hladderbg * bgw, 0, QPixmap (hladder_xpm));	// Hidden laddr.
+    p.drawPixmap (edherobg  * bgw, 0, QPixmap (edithero_xpm));	// Static hero.
+    p.drawPixmap (edenemybg * bgw, 0, QPixmap (editenemy_xpm));	// Static enemy.
+    p.drawPixmap (betonbg   * bgw, 0, QPixmap (beton_xpm));	// Concrete.
+
+    // ... then add the 10 brick pixmaps.
+    p.drawPixmap (brickbg   * bgw, 0, QPixmap (bricks_xpm));	// Bricks.
+
+    p.end();
+}
+
 void KGrCanvas::makeBorder ()
 {
     // Draw main part of border, in the order: top, bottom, left, right.
@@ -468,11 +510,12 @@ void KGrCanvas::makeBorder ()
     colour = borderColor;
     
     // The first rectangle is actually a QLabel drawn by "makeTitle()".
-    // drawRectangle (11, 0, 0, FIELDWIDTH*cw + 2*bw, mw);
-    drawRectangle (11, 0, FIELDHEIGHT*cw + bw + lw, FIELDWIDTH*cw + 2*bw, mw);
-    drawRectangle (12, 0, bw - lw - 1, mw, FIELDHEIGHT*cw + 2*lw + 2);
-    drawRectangle (12, FIELDWIDTH*cw + bw + lw, bw - lw - 1, mw,
-						FIELDHEIGHT*cw + 2*lw + 2);
+    // borderT = drawRectangle (11, 0, 0, FIELDWIDTH*cw + 2*bw, mw);
+    borderB = drawRectangle (11, 0, FIELDHEIGHT*cw + bw + lw,
+						FIELDWIDTH*cw + 2*bw, mw);
+    borderL = drawRectangle (12, 0, bw - lw - 1, mw, FIELDHEIGHT*cw + 2*lw + 2);
+    borderR = drawRectangle (12, FIELDWIDTH*cw + bw + lw, bw - lw - 1,
+						mw, FIELDHEIGHT*cw + 2*lw + 2);
     
     // Draw inside edges of border, in the same way.
     colour = QColor (black);
@@ -482,7 +525,7 @@ void KGrCanvas::makeBorder ()
     drawRectangle (10, FIELDWIDTH*cw + bw, bw, lw, FIELDHEIGHT*cw);
 }
 
-void KGrCanvas::drawRectangle (int z, int x, int y, int w, int h)
+QCanvasRectangle * KGrCanvas::drawRectangle (int z, int x, int y, int w, int h)
 {
     QCanvasRectangle * r = new QCanvasRectangle (x, y, w, h, field);
 
@@ -490,6 +533,38 @@ void KGrCanvas::drawRectangle (int z, int x, int y, int w, int h)
     r->setPen (QPen (NoPen));
     r->setZ (z);
     r->show();
+
+    return (r);
+}
+
+void KGrCanvas::changeColours (const char * colours [])
+{
+    recolourObject (hgbrick_xpm,   colours);
+    recolourObject (nugget_xpm,    colours);
+    recolourObject (pole_xpm,      colours);
+    recolourObject (ladder_xpm,    colours);
+    recolourObject (hladder_xpm,   colours);
+    recolourObject (edithero_xpm,  colours);
+    recolourObject (edithero_xpm,  colours);
+    recolourObject (editenemy_xpm, colours);
+    recolourObject (beton_xpm,     colours);
+    recolourObject (bricks_xpm,    colours);
+
+    borderColor = QColor (colours [1]);
+    textColor =   QColor (colours [2]);
+
+    KGrThumbNail::backgroundColor = QColor (QString(colours [3]).right(7));
+    KGrThumbNail::brickColor =      QColor (QString(colours [6]).right(7));
+    KGrThumbNail::ladderColor =     QColor (QString(colours [9]).right(7));
+    KGrThumbNail::poleColor =       QColor (QString(colours [11]).right(7));
+}
+
+void KGrCanvas::recolourObject (const char * object [], const char * colours [])
+{
+    int i;
+    for (i = 0; i < 9; i++) {
+	object [i+1] = colours [i+3];
+    }
 }
 
 #include "kgrcanvas.moc"

@@ -34,6 +34,8 @@
 #include <qtextstream.h>
 #include <qdatastream.h>
 
+#include <qcolor.h>
+
 /**
 Sets up games and levels in KGoldrunner and controls the play.
 
@@ -274,6 +276,12 @@ class KGrThumbNail : public QFrame
 public:
     KGrThumbNail (QWidget *parent = 0, const char *name = 0);
     void setFilePath (QString &, QLabel *);	// Set filepath and name field.
+
+    static QColor backgroundColor;
+    static QColor brickColor;
+    static QColor ladderColor;
+    static QColor poleColor;
+
 protected:
     void drawContents (QPainter *);		// Draw a preview of a level.
     QString filePath;

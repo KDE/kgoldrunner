@@ -2184,6 +2184,11 @@ KGrThumbNail::KGrThumbNail (QWidget * parent, const char * name)
     // the thumbnail can be automatically re-painted when required.
 }
 
+QColor KGrThumbNail::backgroundColor = QColor ("#dddddd");
+QColor KGrThumbNail::brickColor =      QColor ("#ff0000");
+QColor KGrThumbNail::ladderColor =     QColor ("#ddcc00");
+QColor KGrThumbNail::poleColor =       QColor ("#aa7700");
+
 void KGrThumbNail::setFilePath (QString & fp, QLabel * sln)
 {
     filePath = fp;				// Keep safe copies of file
@@ -2198,7 +2203,7 @@ void KGrThumbNail::drawContents (QPainter * p)	// Activated via "paintEvent".
     int		fw = 1;				// Set frame width.
     int		n = width() / FIELDWIDTH;	// Set thumbnail cell-size.
 
-    pen.setColor (darkGray);
+    pen.setColor (backgroundColor);
     p->setPen (pen);
 
     openFile.setName (filePath);
@@ -2218,25 +2223,25 @@ void KGrThumbNail::drawContents (QPainter * p)	// Activated via "paintEvent".
 	case BRICK:
 	case BETON:
 	case FBRICK:
-	    pen.setColor (QColor(200,50,50)); p->setPen (pen); break;
+	    pen.setColor (brickColor); p->setPen (pen); break;
 	case LADDER:
-	    pen.setColor (QColor(225,150,70)); p->setPen (pen); break;
+	    pen.setColor (ladderColor); p->setPen (pen); break;
 	case POLE:
-	    pen.setColor (QColor(200,200,200)); p->setPen (pen); break;
+	    pen.setColor (poleColor); p->setPen (pen); break;
 	case HERO:
 	    pen.setColor (green); p->setPen (pen); break;
 	case ENEMY:
 	    pen.setColor (blue); p->setPen (pen); break;
 	default:
 	    // Set the background for FREE, HLADDER and NUGGET.
-	    pen.setColor (darkGray); p->setPen (pen); break;
+	    pen.setColor (backgroundColor); p->setPen (pen); break;
 	}
 
 	// Draw nxn pixels as n lines of length n.
 	p->drawLine (i*n+fw, j*n+fw, i*n+(n-1)+fw, j*n+fw);
 	if (obj == POLE) {
 	    // For a pole, only the top line is drawn in white.
-	    pen.setColor (darkGray);
+	    pen.setColor (backgroundColor);
 	    p->setPen (pen);
 	}
 	for (int k = 1; k < n; k++) {
@@ -2245,9 +2250,12 @@ void KGrThumbNail::drawContents (QPainter * p)	// Activated via "paintEvent".
 
 	// For a nugget, add just a vertical touch  of yellow (2-3 pixels).
 	if (obj == NUGGET) {
-	    pen.setColor (yellow);
+	    int k = (n/2)+fw;
+	    // pen.setColor (QColor("#ffff00"));
+	    pen.setColor (ladderColor);
 	    p->setPen (pen);
-	    p->drawLine (i*n+(n/2)+fw, j*n+(n/2)+fw, i*n+(n/2)+fw, j*n+(n-1)+fw);
+	    p->drawLine (i*n+k, j*n+k, i*n+k, j*n+(n-1)+fw);
+	    p->drawLine (i*n+k+1, j*n+k, i*n+k+1, j*n+(n-1)+fw);
 	}
     }
 

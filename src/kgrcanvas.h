@@ -16,6 +16,9 @@
  ***************************************************************************/
 
 // $Log$
+// Revision 1.1  2003/08/14 07:11:08  ianw
+// KGoldrunner 2.0 for KDE 3 (KDE application)
+//
 // $OldLog: kgoldrunnerwidget.h,v $
 // Revision 1.4  2003/07/08 13:24:34  ianw
 // Converted to KDE 3.1.1 and Qt 3.1.1
@@ -40,6 +43,8 @@ class KGrCanvas : public QCanvasView
 public:
 	KGrCanvas (QWidget * parent = 0, const char *name = 0);
 	virtual ~KGrCanvas();
+
+	void changeLandscape (const QString & name);
 
 	QPoint getMousePos ();
 	void setMousePos (int, int);
@@ -78,9 +83,13 @@ private:
 	int baseScale;			// Starting scale-factor of canvas.
 	int baseFontSize;
 
-	int cw, bw, lw, mw;		// Dimensions of the canvas border.
+	int border;			// Number of tiles allowed for border.
+	int cw, bw, lw, mw;		// Dimensions (in pixels) of the border.
 	QColor borderColor, textColor;	// Border colours.
-	QLabel * title;
+	QLabel * title;			// Title and top part of border.
+	QCanvasRectangle * borderB;	// Bottom part of border.
+	QCanvasRectangle * borderL;	// Left-hand part of border.
+	QCanvasRectangle * borderR;	// Right-hand part of border.
 
 	int freebg, nuggetbg, polebg, ladderbg, hladderbg;
 	int edherobg, edenemybg, betonbg, brickbg, fbrickbg;
@@ -98,13 +107,14 @@ private:
 	QList<QCanvasSprite> * enemySprites;
 #endif
 
-	QCanvasEllipse * endItem1;
-
 	void initView();
+	void makeTiles();
 	void makeBorder();
 	void makeTitle();
 	QColor colour;
-	void drawRectangle (int, int, int, int, int);
+	QCanvasRectangle * drawRectangle (int, int, int, int, int);
+	void changeColours (const char * colours []);
+	void recolourObject (const char * object [], const char * colours []);
 };
 
 #endif // KGRCANVAS_H

@@ -284,6 +284,36 @@ void KGoldrunner::setupActions()
 				"edit_game");
 
     /**************************************************************************/
+    /***************************   LANDSCAPES MENU  ***************************/
+    /**************************************************************************/
+
+    (void)			new KAction (
+				"KGoldrunner",
+				0,
+				this, SLOT(lsKGoldrunner()), actionCollection(),
+				"kgoldrunner");
+    (void)			new KAction (
+				"Apple II",
+				0,
+				this, SLOT(lsApple2()), actionCollection(),
+				"apple_2");
+    (void)			new KAction (
+				i18n("Ice Cave"),
+				0,
+				this, SLOT(lsIceCave()), actionCollection(),
+				"ice_cave");
+    (void)			new KAction (
+				i18n("Midnight"),
+				0,
+				this, SLOT(lsMidnight()), actionCollection(),
+				"midnight");
+    (void)			new KAction (
+				i18n("KDE Kool"),
+				0,
+				this, SLOT(lsKDEKool()), actionCollection(),
+				"kde_kool");
+
+    /**************************************************************************/
     /****************************   SETTINGS MENU  ****************************/
     /**************************************************************************/
 
@@ -597,6 +627,14 @@ void KGoldrunner::stopStart()
 void KGoldrunner::createGame()		{game->editCollection (SL_CR_GAME);}
 void KGoldrunner::editGameInfo()	{game->editCollection (SL_UPD_GAME);}
 
+// Local slots to set the landscape (colour scheme).
+
+void KGoldrunner::lsKGoldrunner()	{view->changeLandscape ("KGoldrunner");}
+void KGoldrunner::lsApple2()		{view->changeLandscape ("Apple II");}
+void KGoldrunner::lsIceCave()		{view->changeLandscape ("Ice Cave");}
+void KGoldrunner::lsMidnight()		{view->changeLandscape ("Midnight");}
+void KGoldrunner::lsKDEKool()		{view->changeLandscape ("KDE Kool");}
+
 // Local slots to set mouse or keyboard control of the hero.
 
 void KGoldrunner::setMouseMode()	{game->setMouseMode (TRUE);}
@@ -671,6 +709,7 @@ void KGoldrunner::saveProperties(KConfig *config)
     // later when this app is restored.
 
     config->setGroup ("Game");		// Prevents a compiler warning.
+    printf ("I am in KGoldrunner::saveProperties.\n");
     // config->writeEntry("qqq", qqq);
 }
 
@@ -682,6 +721,7 @@ void KGoldrunner::readProperties(KConfig *config)
     // in 'saveProperties'
 
     config->setGroup ("Game");		// Prevents a compiler warning.
+    printf ("I am in KGoldrunner::readProperties.\n");
     // QString qqq = config->readEntry("qqq");
 }
 
@@ -914,8 +954,12 @@ void KGoldrunner::makeEditToolbar()
 	QWMatrix w;
 	w = w.scale (2.0, 2.0);
 
-	// In spite of this code, the pixmaps remain SMALL in KDE.
-	// Don't know why.  The code produces big pixmaps in Qt.
+	// The pixmaps shown on the buttons used to remain small and incorrectly
+	// painted, in KDE, in spite of the 2x (32x32) scaling.  "insertButton"
+	// calls QIconSet, to generate a set of icons from each pixmapx, then
+	// seems to select the small size to paint on the button.  The following
+	// line forces all icons, large and small, to be size 32x32 in advance.
+	QIconSet::setIconSize (QIconSet::Small, QSize (32, 32));
 
 	brickbg			= brickbg.xForm (w);
 	fbrickbg		= fbrickbg.xForm (w);
@@ -933,7 +977,7 @@ void KGoldrunner::makeEditToolbar()
     editToolbar = new KToolBar (this, Qt::DockTop, TRUE, "Editor", TRUE);
 
     // Choose a colour that enhances visibility of the KGoldrunner pixmaps.
-    editToolbar->setPalette (QPalette (QColor (150, 150, 230)));
+    // editToolbar->setPalette (QPalette (QColor (150, 150, 230)));
 
     // editToolbar->setHorizontallyStretchable (TRUE);	// Not effective in KDE.
 

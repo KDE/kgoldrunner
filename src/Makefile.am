@@ -17,7 +17,7 @@ kgoldrunner_LDADD   = $(LIB_KDEGAMES) $(LIB_KFILE) $(LIB_KDEPRINT)
 kgoldrunner_SOURCES = kgoldrunner.cpp kgrcanvas.cpp kgrfigure.cpp kgrgame.cpp kgrobject.cpp main.cpp kgrdialog.cpp
 
 # these are the headers for your project
-noinst_HEADERS = back.xpm beton.xpm brick.xpm editenemy.xpm edithero.xpm enemy1.xpm enemy2.xpm filenew.xpm hero.xpm hgbrick.xpm hladder.xpm home.xpm ladder.xpm nugget.xpm pole.xpm fileopen.xpm filesave.xpm forward.xpm kgoldrunner.h kgrcanvas.h kgrconsts.h kgrdialog.h kgrfigure.h kgrgame.h kgrobject.h
+noinst_HEADERS = enemy1.xpm enemy2.xpm hero.xpm kgoldrunner.h kgrcanvas.h kgrconsts.h kgrdialog.h kgrfigure.h kgrgame.h kgrobject.h kgraphics.h
 
 # client stuff
 

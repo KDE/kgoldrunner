@@ -21,6 +21,13 @@
 	<Action				name="create_game" />
 	<Action				name="edit_game" />
     </Menu>
+    <Menu name="landscapes" > <text>&amp;Landscapes</text>
+	<Action				name="kgoldrunner" />
+	<Action				name="apple_2" />
+	<Action				name="ice_cave" />
+	<Action				name="midnight" />
+	<Action				name="kde_kool" />
+    </Menu>
     <Menu name="settings" >
 	<Action append="save_merge"	name="mouse_mode" />
 	<Action append="save_merge"	name="keyboard_mode" />
