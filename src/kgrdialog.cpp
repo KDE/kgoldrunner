@@ -333,13 +333,26 @@ void KGrSLDialog::slColln (int i)
 
     slShowLevel (number->value());
 
+#ifndef KGR_PORTABLE
     int levCnt = collections.at(n)->nLevels;
     if (collections.at(n)->settings == 'K')
-	collnD->setText (i18n("1 level, uses %1 rules.", "%n levels, uses %1 rules.", levCnt)
+	collnD->setText (i18n("1 level, uses %1 rules.",
+				"%n levels, uses %1 rules.", levCnt)
 					.arg("KGoldrunner"));
     else
-	collnD->setText (i18n("1 level, uses %1 rules.", "%n levels, uses %1 rules.", levCnt)
+	collnD->setText (i18n("1 level, uses %1 rules.",
+				"%n levels, uses %1 rules.", levCnt)
 					.arg(i18n("Traditional")));
+#else
+    QString levCnt;
+    levCnt = levCnt.setNum (collections.at(n)->nLevels);
+    if (collections.at(n)->settings == 'K')
+	collnD->setText (levCnt + i18n(" levels, uses %1 rules.")
+					.arg("KGoldrunner"));
+    else
+	collnD->setText (levCnt + i18n(" levels, uses %1 rules.")
+					.arg(i18n("Traditional")));
+#endif
     collnN->setText (collections.at(n)->name);
 }
 
@@ -350,7 +363,9 @@ void KGrSLDialog::slAboutColln ()
     QString	title = i18n("About \"%1\"").arg(collections.at(n)->name);
 
     if (collections.at(n)->about.length() > 0) {
-	KGrMessage::wrapped (slParent, title, collections.at(n)->about);
+	// Convert game description to ASCII and UTF-8 codes, then translate it.
+	KGrMessage::wrapped (slParent, title,
+			i18n((const char *) collections.at(n)->about.utf8()));
     }
     else {
 	KGrMessage::wrapped (slParent, title,
@@ -650,7 +665,13 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
 	    ecPrefix->	setEnabled (FALSE);
 	}
 	QString		s;
-	nLevL->		setText (i18n("1 level", "%n levels", collections.at(defaultGame)->nLevels));
+#ifndef KGR_PORTABLE
+	nLevL->		setText (i18n("1 level", "%n levels",
+					collections.at(defaultGame)->nLevels));
+#else
+	nLevL->		setText (i18n("%1 levels")
+				.arg(collections.at(defaultGame)->nLevels));
+#endif
 	OKText = i18n("Save Changes");
     }
     else {					// Create a collection.
@@ -682,6 +703,7 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
 
     if ((action == SL_UPD_GAME) &&
 	(collections.at(defaultGame)->about.length() > 0)) {
+	// Display and edit the game description in its original language.
 	mle->		setText (collections.at(defaultGame)->about);
     }
     else {

@@ -417,23 +417,34 @@ int KGrGame::loadLevel (int levelNo)
   int c = openlevel.getch();
   levelName = "";
   levelHint = "";
+  QCString levelNameC = "";
+  QCString levelHintC = "";
   i = 1;
   while ((c = openlevel.getch()) != EOF) {
       switch (i) {
       case 1:	if (c == '\n')			// Level name is on one line.
 		    i = 2;
 		else
-		    levelName += (char) c;
+		    levelNameC += (char) c;
 		break;
 
-      case 2:	levelHint += (char) c;		// Hint is on rest of file.
+      case 2:	levelHintC += (char) c;		// Hint is on rest of file.
 		break;
       }
   }
   openlevel.close();
 
+  // If there is a name, recode any UTF-8 substrings and translate it right now.
+  if (levelNameC.length() > 0)
+      levelName = i18n((const char *) levelNameC);
+
   // Indicate on the menus whether there is a hint for this level.
-  emit hintAvailable (levelHint.length() > 0);
+  int len = levelHintC.length();
+  emit hintAvailable (len > 0);
+
+  // If there is a hint, remove the final newline and translate it right now.
+  if (len > 0)
+      levelHint = i18n((const char *) levelHintC.left(len-1));
 
   // Disconnect edit-mode slots from signals from "view".
   disconnect (view, SIGNAL (mouseClick(int)), 0, 0);
@@ -459,7 +470,8 @@ int KGrGame::loadLevel (int levelNo)
   if ((collection->prefix.left(4) == "tute") && (levelNo != 0)) {
       // At the start of a tutorial, put out an introduction.
       if (levelNo == 1)
-	  myMessage (view, collection->name, collection->about);
+	  myMessage (view, collection->name,
+				i18n((const char *) collection->about.utf8()));
 
       // Put out an explanation of this level.
       myMessage (view, getTitle(), levelHint);
@@ -651,20 +663,23 @@ QString KGrGame::getFilePath (Owner o, KGrCollection * colln, int lev)
 
 QString KGrGame::getTitle()
 {
-    // Generate title string "Collection-name - Level NNN, Level-name".
     QString levelTitle;
     if (level == 0) {
+	// Generate a special title: end of game or creating a new level.
 	if (! editMode)
 	    levelTitle = "E N D --- F I N --- E N D E";
 	else
 	    levelTitle = i18n("New Level");
     }
-    else if (levelName.length() > 0)
-	levelTitle.sprintf ("%s - %03d - %s",
-			    collection->name.myStr(), level, levelName.myStr());
-    else
-	levelTitle.sprintf ("%s - %03d",
-			    collection->name.myStr(), level);
+    else {
+	// Generate title string "Collection-name - NNN - Level-name".
+	levelTitle.setNum (level);
+	levelTitle = levelTitle.rightJustify (3,'0');
+	levelTitle = collection->name + " - " + levelTitle;
+	if (levelName.length() > 0) {
+	    levelTitle = levelTitle + " - " + levelName;
+	}
+    }
     return (levelTitle);
 }
 
@@ -1036,7 +1051,9 @@ void KGrGame::checkHighScore()
 	    s1 >> prevDate;
 	    if ((! scoreRecorded) && (score > prevScore)) {
 		highCount++;
-		s2 << thisUser.myStr();
+		// Recode the user's name as UTF-8, in case it contains
+		// non-ASCII chars (e.g. "Krüger" is encoded as "KrÃ¼ger").
+		s2 << (const char *) thisUser.utf8();
 		s2 << (Q_INT16) level;
 		s2 << (Q_INT32) score;
 		s2 << hsDate.myStr();
@@ -1053,7 +1070,9 @@ void KGrGame::checkHighScore()
 	    delete prevDate;
 	}
 	if ((! scoreRecorded) && (highCount < 10)) {
-	    s2 << thisUser.myStr();
+	    // Recode the user's name as UTF-8, in case it contains
+	    // non-ASCII chars (e.g. "Krüger" is encoded as "KrÃ¼ger").
+	    s2 << (const char *) thisUser.utf8();
 	    s2 << (Q_INT16) level;
 	    s2 << (Q_INT32) score;
 	    s2 << hsDate.myStr();
@@ -1061,7 +1080,9 @@ void KGrGame::checkHighScore()
 	high1.close();
     }
     else {
-	s2 << thisUser.myStr();
+	// Recode the user's name as UTF-8, in case it contains
+	// non-ASCII chars (e.g. "Krüger" is encoded as "KrÃ¼ger").
+	s2 << (const char *) thisUser.utf8();
 	s2 << (Q_INT16) level;
 	s2 << (Q_INT32) score;
 	s2 << hsDate.myStr();
@@ -1165,6 +1186,10 @@ void KGrGame::showHighScores()
 	s1 >> prevLevel;
 	s1 >> prevScore;
 	s1 >> prevDate;
+
+	// QString::sprintf expects UTF-8 encoding in its string arguments, so
+	// prevUser has been saved on file as UTF-8 to allow non=ASCII chars
+	// in the user's name (e.g. "Krüger" is encoded as "KrÃ¼ger" in UTF-8).
 
 	line = line.sprintf (hsFormat,
 			     n+1, prevUser, prevLevel, prevScore, prevDate);
@@ -1426,21 +1451,34 @@ void KGrGame::loadEditLevel (int lev)
 
     // Read a newline character, then read in the level name and hint (if any).
     int c = levelFile.getch();
-    levelName = "";
+    QCString levelHintC = "";
+    QCString levelNameC = "";
     levelHint = "";
+    levelName = "";
     i = 1;
     while ((c = levelFile.getch()) != EOF) {
 	switch (i) {
 	case 1:	if (c == '\n')			// Level name is on one line.
 		    i = 2;
 		else
-		    levelName += (char) c;
+		    levelNameC += (char) c;
 		break;
 
-	case 2:	levelHint += (char) c;		// Hint is on rest of file.
+	case 2:	levelHintC += (char) c;		// Hint is on rest of file.
 		break;
 	}
     }
+
+    // Retain the original language of the name and hint when editing,
+    // but remove the final \n and convert non-ASCII, UTF-8 substrings
+    // to Unicode (eg. Ã¼ to ü).
+    int len = levelHintC.length();
+    if (len > 0)
+	levelHint = QString::fromUtf8((const char *) levelHintC.left(len-1));
+
+    len = levelNameC.length();
+    if (len > 0)
+	levelName = QString::fromUtf8((const char *) levelNameC);
 
     editObj = BRICK;				// Reset default object.
     levelFile.close ();
@@ -1548,20 +1586,25 @@ bool KGrGame::saveLevelFile()
     }
     levelFile.putch ('\n');
 
-    int len1 = levelName.length();		// Save the level name (if any).
+    // Save the level name, changing non-ASCII chars to UTF-8 (eg. ü to Ã¼).
+    QCString levelNameC = levelName.utf8();
+    int len1 = levelNameC.length();
     if (len1 > 0) {
 	for (i = 0; i < len1; i++)
-	    levelFile.putch (levelName.myChar(i));
+	    levelFile.putch (levelNameC[i]);
 	levelFile.putch ('\n');			// Add a newline.
     }
 
-    int len2 = levelHint.length();		// Save the level hint (if any).
+    // Save the level hint, changing non-ASCII chars to UTF-8 (eg. ü to Ã¼).
+    QCString levelHintC = levelHint.utf8();
+    int len2 = levelHintC.length();
     char ch = '\0';
+
     if (len2 > 0) {
 	if (len1 <= 0)
 	    levelFile.putch ('\n');		// Leave blank line for name.
 	for (i = 0; i < len2; i++) {
-	    ch = levelHint.myChar(i);
+	    ch = levelHintC[i];
 	    levelFile.putch (ch);		// Copy the character.
 	}
 	if (ch != '\n')
@@ -2258,13 +2301,16 @@ void KGrThumbNail::drawContents (QPainter * p)	// Activated via "paintEvent".
 
     // Absorb a newline character, then read in the level name (if any).
     int c = openFile.getch();
-    QString s = "";
+    QCString s = "";
     while ((c = openFile.getch()) != EOF) {
 	if (c == '\n')			// Level name is on one line.
 	    break;
 	s += (char) c;
     }
-    lName->setText (s);
+    if (s.length() > 0)			// If there is a name, translate it.
+	lName->setText (i18n((const char *) s));
+    else
+	lName->setText ("");
 
     openFile.close();
 }
@@ -2412,8 +2458,8 @@ bool KGrGame::loadCollections (Owner o)
 	return (FALSE);
     }
 
-    QString	line = "";
-    QString	name = "";
+    QCString	line = "";
+    QCString	name = "";
     QString	prefix = "";
     char	settings = ' ';
     int		nLevels = -1;
@@ -2429,7 +2475,7 @@ bool KGrGame::loadCollections (Owner o)
 	}
 	else {
 	    // If first character is a digit, we have a new collection.
-	    if (isdigit(line.myChar(0))) {
+	    if (isdigit(line[0])) {
 		if (nLevels >= 0) {
 		    // If previous collection with no "about" exists, load it.
 		    collections.append (new KGrCollection
@@ -2441,14 +2487,16 @@ bool KGrGame::loadCollections (Owner o)
 		int i, j, len;
 		len = line.length();
 		i = 0;   j = line.find(' ',i); nLevels = line.left(j).toInt();
-		i = j+1; j = line.find(' ',i); settings = line.myChar(i);
+		i = j+1; j = line.find(' ',i); settings = line[i];
 		i = j+1; j = line.find(' ',i); prefix  = line.mid(i,j-i);
 		i = j+1;                       name    = line.right(len-i);
 	    }
 	    // If first character is not a digit, the line should be an "about".
 	    else if (nLevels >= 0) {
 		    collections.append (new KGrCollection
-				(o, name, prefix, settings, nLevels, line));
+				(o, i18n((const char *) name), // Translate now.
+				    prefix, settings, nLevels,
+				    QString::fromUtf8((const char *) line)));
 		    name = ""; prefix = ""; settings = ' '; nLevels = -1;
 	    }
 	    else if (ch >= 0) {
@@ -2490,22 +2538,25 @@ bool KGrGame::saveCollections (Owner o)
 
     // Save the collections.
     KGrCollection *	colln;
-    QString		line;
+    QCString		line;
     int			i, len;
     char		ch;
 
     for (colln = collections.first(); colln != 0; colln = collections.next()) {
 	if (colln->owner == o) {
 	    line.sprintf ("%03d %c %s %s\n", colln->nLevels, colln->settings,
-				colln->prefix.myStr(), colln->name.myStr());
+				colln->prefix.myStr(),
+				(const char *) colln->name.utf8());
 	    len = line.length();
 	    for (i = 0; i < len; i++)
-		c.putch (line.myChar(i));
+		c.putch (line[i]);
 
 	    len = colln->about.length();
 	    if (len > 0) {
+		QCString aboutC = colln->about.utf8();
+		len = aboutC.length();		// Might be longer now.
 		for (i = 0; i < len; i++) {
-		    ch = colln->about.myChar(i);
+		    ch = aboutC[i];
 		    if (ch != '\n') {
 			c.putch (ch);		// Copy the character.
 		    }
