@@ -1,6 +1,7 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1.2-Based Variant V1.0//EN" "dtd/kdex.dtd" [
   <!ENTITY kappname "&KGoldrunner;">
+  <!ENTITY package "kdegames">
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % English "INCLUDE" > <!-- change language only here -->   
 ]>
@@ -15,15 +16,22 @@
     <title>The KGoldrunner Handbook</title>
     <authorgroup>
       <author>
-	<firstname></firstname>
-	<surname>Ian Wadham</surname>
+	<firstname>Ian</firstname>
+	<surname>Wadham</surname>
 	<affiliation><address><email>ianw&#64;netspace&#46;net&#46;au</email></address></affiliation>
+      </author>
+      <author>
+	<firstname>Marco</firstname>
+	<surname>Kr&#252;ger</surname>
+	<affiliation><address><email></email></address></affiliation>
       </author>
     </authorgroup>
     <date>date</date>
-    <releaseinfo>0&#46;1</releaseinfo>
+    <releaseinfo>2&#46;0</releaseinfo>
     <abstract>
-      <para>SHORT DESCRIPTION GOES HERE</para>
+      <para>KGoldrunner, a game of action and puzzle solving.  Run
+	through the maze, dodge your enemies, collect all the gold
+	and climb up to the next level ...</para>
     </abstract>
     <keywordset>
       <keyword>KDE</keyword>
@@ -31,14 +39,84 @@
     </keywordset>
   </bookinfo>
 
-  <chapter id="introduction">
-    <title>Introduction</title>
+<chapter id="introduction">
+<title>Introduction</title>
 
-    <sect1 id="features">
-      <title>Features</title>
-      <para></para>
-    </sect1>
-  </chapter>
+<para>
+THIS IS THE INDEX.DOCBOOK FILE.
+KGoldrunner is an action game where the hero
+	<inlinemediaobject><imageobject>
+	    <imagedata fileref="hero.png" format="PNG"/>
+	</imageobject></inlinemediaobject>
+runs through a maze and dodges enemies
+	<inlinemediaobject><imageobject>
+	    <imagedata fileref="enemy.png" format="PNG"/>
+	</imageobject></inlinemediaobject>
+...
+</para><para>
+You must guide the hero with the mouse or keyboard and collect all
+the gold nuggets,
+then you can climb up into the next level.  Your enemies are also after
+the gold and they will kill you if they catch you!
+</para><para>
+The problem is you have no weapon to kill <emphasis>them</emphasis>.  All
+you can do
+is run away, dig holes in the floor to trap them or lure them into some
+area where they cannot hurt you.  After a short time a trapped enemy climbs
+out of his hole, but if it closes before that, he will die and
+reappear somewhere else.
+</para><para>
+If you have never played before,
+try the <quote>Tutorial</quote> game, which teaches
+you the rules and basic skills.  Then
+try the <quote>Initiation</quote> game.  Experts
+might enjoy the <quote>Challenge</quote> or
+<quote>Vengeance of Peter W</quote> games,
+but the <quote>Initiation</quote> game has 100 levels
+and some are very difficult.  It is a
+good game for achieving a High Score
+... :-) ...
+</para><para>
+As you move to more advanced levels, you will find that
+KGoldrunner combines action, strategy, tactics and puzzle solving ---
+all in one game.  Good luck!
+</para>
+</chapter>
+
+<chapter id="typical_game">
+<title>A Typical Game</title>
+
+<para>
+Below is a typical game in progress.  The hero (green) is at level 4 in
+the Advanced Tutorial game.  The window's status bar shows how many lives
+he has left and how many points he has scored.  It also shows that there
+is a hint available for this level (as there always is with tutorial
+games) and that the action is stopped (while taking this snapshot), but
+can be continued by pressing "P" or "Esc".
+</para><para>
+The hero started at the top left, dug a hole and
+dropped into a line of false bricks and gold where you can now see him
+falling.  The enemy above him will fall into the hole, then climb out
+and be trapped up there till the end of the level.  He could cause the
+hero some problems then, because that is where the hidden ladders appear
+when all the gold is gone.  The hero has to use them to get to the
+next level.
+</para>
+<screenshot>
+<screeninfo>KGoldrunner typical game</screeninfo>
+<mediaobject>
+<imageobject><imagedata fileref="tute008.png" format="PNG"/></imageobject>
+<textobject><phrase>KGoldrunner typical game</phrase></textobject>
+</mediaobject>
+</screenshot>
+<para>
+The enemy on the right is falling and carrying some gold.  Notice his gold
+outline.  The third enemy is coming down a ladder to chase the hero.  The
+hero will have to dodge them both when he reaches the floor ...  This
+level also shows diggable bricks and undiggable concrete and has lots of
+traps (false bricks), which look just like ordinary bricks.
+</para>
+</chapter>
 
   <chapter id="installation">
     <title>Installation</title>
