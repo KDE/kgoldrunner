@@ -5,7 +5,7 @@
 bin_PROGRAMS = kgoldrunner
 
 # set the include path for X, qt and KDE
-INCLUDES = $(all_includes)
+INCLUDES = -I$(top_srcdir)/libkdegames $(all_includes)
 
 # the library search path.
 kgoldrunner_LDFLAGS = $(KDE_RPATH) $(all_libraries)
