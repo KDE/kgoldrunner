@@ -31,8 +31,7 @@ messages: rc.cpp
 KDE_ICON = kgoldrunner
 
 # this is where the kdelnk file will go
-kdelnkdir = $(kde_appsdir)/Games/Arcade
-kdelnk_DATA = KGoldrunner.desktop
+xdg_apps_DATA = KGoldrunner.desktop
 
 # this is where the XML-GUI resource file goes
 rcdir = $(kde_datadir)/kgoldrunner
