@@ -194,7 +194,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 #ifdef KGR_PORTABLE
 	OK->setText (OKText);
 #else
-	setButtonOKText (OKText);
+	setButtonOK (OKText);
 #endif
     }
 
@@ -682,7 +682,7 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
 #ifdef KGR_PORTABLE
     OK->setText (OKText);
 #else
-    setButtonOKText (OKText);
+    setButtonOK (OKText);
 #endif
 
     if ((action == SL_CR_GAME) ||
