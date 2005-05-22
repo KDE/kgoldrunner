@@ -1,4 +1,4 @@
-# KDE Config File  
+# KDE Config File
 [Desktop Entry]
 Encoding=UTF-8
 Name=KGoldrunner
@@ -36,6 +36,7 @@ GenericName[sl]=Igra akcije in reševanja ugank
 GenericName[sr]=Акциона игра са решавањем загонетки
 GenericName[sr@Latn]=Akciona igra sa rešavanjem zagonetki
 GenericName[sv]=Action och pussellösningsspel
+GenericName[uk]=Гра для розгадування головоломки
 Type=Application
 Exec=kgoldrunner
 Icon=kgoldrunner
