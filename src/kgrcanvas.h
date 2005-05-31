@@ -23,12 +23,16 @@
 #endif
 
 #include <qcursor.h>
-#include <qcanvas.h>
+#include <q3canvas.h>
 #include <qlabel.h>
 #include <qimage.h>
 #include <qpainter.h>
+//Added by qt3to4:
+#include <QPixmap>
+#include <QMouseEvent>
+#include <Q3PtrList>
 
-class KGrCanvas : public QCanvasView
+class KGrCanvas : public Q3CanvasView
 {
 	Q_OBJECT
 public:
@@ -68,8 +72,8 @@ protected:
 private:
 	QCursor * m;
 
-	QCanvas * field;
-	QCanvasView * fieldView;
+	Q3Canvas * field;
+	Q3CanvasView * fieldView;
 	int scaleStep;			// Current scale-factor of canvas.
 	int baseScale;			// Starting scale-factor of canvas.
 	int baseFontSize;
@@ -78,24 +82,24 @@ private:
 	int cw, bw, lw, mw;		// Dimensions (in pixels) of the border.
 	QColor borderColor, textColor;	// Border colours.
 	QLabel * title;			// Title and top part of border.
-	QCanvasRectangle * borderB;	// Bottom part of border.
-	QCanvasRectangle * borderL;	// Left-hand part of border.
-	QCanvasRectangle * borderR;	// Right-hand part of border.
+	Q3CanvasRectangle * borderB;	// Bottom part of border.
+	Q3CanvasRectangle * borderL;	// Left-hand part of border.
+	Q3CanvasRectangle * borderR;	// Right-hand part of border.
 
 	int freebg, nuggetbg, polebg, ladderbg, hladderbg;
 	int edherobg, edenemybg, betonbg, brickbg, fbrickbg;
 	int bgw, bgh, bgd;
 	QPixmap bgPix;
 
-	QCanvasPixmapArray * heroArray;
-	QCanvasPixmapArray * enemyArray;
+	Q3CanvasPixmapArray * heroArray;
+	Q3CanvasPixmapArray * enemyArray;
 	int goldEnemy;
 
-	QCanvasSprite * heroSprite;
+	Q3CanvasSprite * heroSprite;
 #ifdef QT3
-	QPtrList<QCanvasSprite> * enemySprites;
+	Q3PtrList<Q3CanvasSprite> * enemySprites;
 #else
-	QList<QCanvasSprite> * enemySprites;
+	QList<Q3CanvasSprite> * enemySprites;
 #endif
 
 	void initView();
@@ -103,7 +107,7 @@ private:
 	void makeBorder();
 	void makeTitle();
 	QColor colour;
-	QCanvasRectangle * drawRectangle (int, int, int, int, int);
+	Q3CanvasRectangle * drawRectangle (int, int, int, int, int);
 	void changeColours (const char * colours []);
 	void recolourObject (const char * object [], const char * colours []);
 };

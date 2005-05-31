@@ -31,6 +31,13 @@
 
 #ifndef KGR_PORTABLE
 #include <kglobalsettings.h>
+//Added by qt3to4:
+#include <Q3CString>
+#include <QTextStream>
+#include <Q3Frame>
+#include <QLabel>
+#include <QVBoxLayout>
+#include <QDate>
 #endif
 
 /******************************************************************************/
@@ -426,8 +433,8 @@ int KGrGame::loadLevel (int levelNo)
   int c = openlevel.getch();
   levelName = "";
   levelHint = "";
-  QCString levelNameC = "";
-  QCString levelHintC = "";
+  Q3CString levelNameC = "";
+  Q3CString levelHintC = "";
   i = 1;
   while ((c = openlevel.getch()) != EOF) {
       switch (i) {
@@ -519,7 +526,7 @@ bool KGrGame::openLevelFile (int levelNo, QFile & openlevel)
   }
 
   // öffne Level zum lesen
-  if (! openlevel.open (IO_ReadOnly)) {
+  if (! openlevel.open (QIODevice::ReadOnly)) {
       KGrMessage::information (view, i18n("Load Level"),
 	    i18n("Cannot open file '%1' for read-only.").arg(filePath));
       return (FALSE);
@@ -741,8 +748,8 @@ void KGrGame::doDig (int button) {
 	    startPlaying();	// If first player-input, start playing.
 	}
 	switch (button) {
-	case LeftButton:	hero->digLeft  (); break;
-	case RightButton:	hero->digRight (); break;
+	case Qt::LeftButton:	hero->digLeft  (); break;
+	case Qt::RightButton:	hero->digRight (); break;
 	default:		break;
 	}
     }
@@ -797,7 +804,7 @@ void KGrGame::saveGame()		// Save game ID, score and level.
     QFile file1 (userDataDir + "savegame.dat");
     QFile file2 (userDataDir + "savegame.tmp");
 
-    if (! file2.open (IO_WriteOnly)) {
+    if (! file2.open (QIODevice::WriteOnly)) {
 	KGrMessage::information (view, i18n("Save Game"),
 		i18n("Cannot open file '%1' for output.")
 		.arg(userDataDir + "savegame.tmp"));
@@ -807,7 +814,7 @@ void KGrGame::saveGame()		// Save game ID, score and level.
     text2 << saved;
 
     if (file1.exists()) {
-	if (! file1.open (IO_ReadOnly)) {
+	if (! file1.open (QIODevice::ReadOnly)) {
 	    KGrMessage::information (view, i18n("Save Game"),
 		i18n("Cannot open file '%1' for read-only.")
 		.arg(userDataDir + "savegame.dat"));
@@ -826,7 +833,7 @@ void KGrGame::saveGame()		// Save game ID, score and level.
     file2.close();
 
     QDir dir;
-    dir.rename (file2.name(), file1.name(), TRUE);
+    dir.rename (file2.name(), file1.name());
     KGrMessage::information (view, i18n("Save Game"),
 				i18n("Your game has been saved."));
 }
@@ -845,7 +852,7 @@ void KGrGame::loadGame()		// Re-load game, score and level.
 	return;
     }
 
-    if (! savedGames.open (IO_ReadOnly)) {
+    if (! savedGames.open (QIODevice::ReadOnly)) {
 	KGrMessage::information (view, i18n("Load Game"),
 	    i18n("Cannot open file '%1' for read-only.")
 	    .arg(userDataDir + "savegame.dat"));
@@ -944,7 +951,7 @@ void KGrGame::checkHighScore()
 
     // If a previous high score file exists, check the current score against it.
     if (prevHigh) {
-	if (! high1.open (IO_ReadOnly)) {
+	if (! high1.open (QIODevice::ReadOnly)) {
 	    QString high1_name = high1.name();
 	    KGrMessage::information (view, i18n("Check for High Score"),
 		i18n("Cannot open file '%1' for read-only.").arg(high1_name));
@@ -984,7 +991,7 @@ void KGrGame::checkHighScore()
     QFile high2 (userDataDir + "hi_" + collection->prefix + ".tmp");
     QDataStream s2;
 
-    if (! high2.open (IO_WriteOnly)) {
+    if (! high2.open (QIODevice::WriteOnly)) {
 	KGrMessage::information (view, i18n("Check for High Score"),
 		i18n("Cannot open file '%1' for output.")
 		.arg(userDataDir + "hi_" + collection->prefix + ".tmp"));
@@ -993,7 +1000,7 @@ void KGrGame::checkHighScore()
 
     // Dialog to ask the user to enter their name.
     QDialog *		hsn = new QDialog (view, "hsNameDialog", TRUE,
-			WStyle_Customize | WStyle_NormalBorder | WStyle_Title);
+			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title);
 
     int margin = 10;
     int spacing = 10;
@@ -1017,7 +1024,7 @@ void KGrGame::checkHighScore()
     QPoint		p = view->mapToGlobal (QPoint (0,0));
     hsn->		move (p.x() + 50, p.y() + 50);
 
-    OK->		setAccel (Key_Return);
+    OK->		setAccel (Qt::Key_Return);
     hsnUser->		setFocus();		// Set the keyboard input on.
 
     connect	(hsnUser, SIGNAL (returnPressed ()), hsn, SLOT (accept ()));
@@ -1102,7 +1109,7 @@ void KGrGame::checkHighScore()
 
     QDir dir;
     dir.rename (high2.name(),
-		userDataDir + "hi_" + collection->prefix + ".dat", TRUE);
+		userDataDir + "hi_" + collection->prefix + ".dat");
     KGrMessage::information (view, i18n("Save High Score"),
 				i18n("Your high score has been saved."));
 
@@ -1137,7 +1144,7 @@ void KGrGame::showHighScores()
 	}
     }
 
-    if (! high1.open (IO_ReadOnly)) {
+    if (! high1.open (QIODevice::ReadOnly)) {
 	QString high1_name = high1.name();
 	KGrMessage::information (view, i18n("Show High Scores"),
 	    i18n("Cannot open file '%1' for read-only.").arg(high1_name));
@@ -1145,7 +1152,7 @@ void KGrGame::showHighScores()
     }
 
     QDialog *		hs = new QDialog (view, "hsDialog", TRUE,
-			WStyle_Customize | WStyle_NormalBorder | WStyle_Title);
+			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title);
 
     int margin = 10;
     int spacing = 10;
@@ -1170,7 +1177,7 @@ void KGrGame::showHighScores()
 
     QLabel *		hsLine [10];
 
-    QHBox *		buttons = new QHBox (hs);
+    Q3HBox *		buttons = new Q3HBox (hs);
     buttons->		setSpacing (spacing);
     QPushButton *	OK = new KPushButton (KStdGuiItem::close(), buttons);
 
@@ -1179,7 +1186,7 @@ void KGrGame::showHighScores()
 
     hs->		setCaption (i18n("High Scores"));
 
-    OK->		setAccel (Key_Return);
+    OK->		setAccel (Qt::Key_Return);
 
     // Set up the format for the high-score lines.
     f.			setBold (FALSE);
@@ -1212,8 +1219,8 @@ void KGrGame::showHighScores()
 	n++;
     }
 
-    QFrame * separator = new QFrame (hs);
-    separator->setFrameStyle (QFrame::HLine + QFrame::Sunken);
+    Q3Frame * separator = new Q3Frame (hs);
+    separator->setFrameStyle (Q3Frame::HLine + Q3Frame::Sunken);
     mainLayout->addWidget (separator);
 
     OK->		setMaximumWidth (100);
@@ -1461,8 +1468,8 @@ void KGrGame::loadEditLevel (int lev)
 
     // Read a newline character, then read in the level name and hint (if any).
     int c = levelFile.getch();
-    QCString levelHintC = "";
-    QCString levelNameC = "";
+    Q3CString levelHintC = "";
+    Q3CString levelNameC = "";
     levelHint = "";
     levelName = "";
     i = 1;
@@ -1582,7 +1589,7 @@ bool KGrGame::saveLevelFile()
     }
 
     // Open the output file.
-    if (! levelFile.open (IO_WriteOnly)) {
+    if (! levelFile.open (QIODevice::WriteOnly)) {
 	KGrMessage::information (view, i18n("Save Level"),
 		i18n("Cannot open file '%1' for output.").arg(filePath));
 	return (FALSE);
@@ -1597,7 +1604,7 @@ bool KGrGame::saveLevelFile()
     levelFile.putch ('\n');
 
     // Save the level name, changing non-ASCII chars to UTF-8 (eg. ü to Ã¼).
-    QCString levelNameC = levelName.utf8();
+    Q3CString levelNameC = levelName.utf8();
     int len1 = levelNameC.length();
     if (len1 > 0) {
 	for (i = 0; i < len1; i++)
@@ -1606,7 +1613,7 @@ bool KGrGame::saveLevelFile()
     }
 
     // Save the level hint, changing non-ASCII chars to UTF-8 (eg. ü to Ã¼).
-    QCString levelHintC = levelHint.utf8();
+    Q3CString levelHintC = levelHint.utf8();
     int len2 = levelHintC.length();
     char ch = '\0';
 
@@ -1690,7 +1697,7 @@ void KGrGame::moveLevelFile ()
     filePath1 = getFilePath (USER, collections.at(fromC), fromL);
     filePath2 = filePath1;
     filePath2 = filePath2.append (".tmp");
-    dir.rename (filePath1, filePath2, TRUE);
+    dir.rename (filePath1, filePath2);
 
     if (toC == fromC) {					// Same collection.
 	if (toL < fromL) {				// Decrease level.
@@ -1725,7 +1732,7 @@ void KGrGame::moveLevelFile ()
 
     // Rename the saved "fromL" file to become "toL".
     filePath1 = getFilePath (USER, collections.at(toC), toL);
-    dir.rename (filePath2, filePath1, TRUE);
+    dir.rename (filePath2, filePath1);
 
     level = toL;
     collection = collections.at(toC);
@@ -2058,7 +2065,7 @@ bool KGrGame::reNumberLevels (int cIndex, int first, int last, int inc)
     while (i != n) {
 	file1 = getFilePath (USER, collections.at(cIndex), i);
 	file2 = getFilePath (USER, collections.at(cIndex), i - step);
-	if (! dir.rename (file1, file2, TRUE)) {	// Allow absolute paths.
+	if (! dir.rename (file1, file2)) {	// Allow absolute paths.
 	    KGrMessage::information (view, i18n("Save Level"),
 		i18n("Cannot rename file '%1' to '%2'.")
 		.arg(file1).arg(file2));
@@ -2090,8 +2097,8 @@ void KGrGame::doEdit (int button)
     i = p.x(); j = p.y();
 
     switch (button) {
-    case LeftButton:
-    case RightButton:
+    case Qt::LeftButton:
+    case Qt::RightButton:
         paintEditObj = TRUE;
         insertEditObj (i, j);
 	view->updateCanvas();
@@ -2113,8 +2120,8 @@ void KGrGame::endEdit (int button)
     i = p.x(); j = p.y();
 
     switch (button) {
-    case LeftButton:
-    case RightButton:
+    case Qt::LeftButton:
+    case Qt::RightButton:
         paintEditObj = FALSE;
         if ((i != oldI) || (j != oldJ)) {
 	    insertEditObj (i, j);
@@ -2227,7 +2234,7 @@ bool KGrGame::ownerOK (Owner o)
 /******************************************************************************/
 
 KGrThumbNail::KGrThumbNail (QWidget * parent, const char * name)
-			: QFrame (parent, name)
+			: Q3Frame (parent, name)
 {
     // Let the parent do all the work.  We need a class here so that
     // QFrame::drawContents (QPainter *) can be re-implemented and
@@ -2257,7 +2264,7 @@ void KGrThumbNail::drawContents (QPainter * p)	// Activated via "paintEvent".
     p->setPen (pen);
 
     openFile.setName (filePath);
-    if ((! openFile.exists()) || (! openFile.open (IO_ReadOnly))) {
+    if ((! openFile.exists()) || (! openFile.open (QIODevice::ReadOnly))) {
 	// There is no file, so fill the thumbnail with "FREE" cells.
 	p->drawRect (QRect(fw, fw, FIELDWIDTH*n, FIELDHEIGHT*n));
 	return;
@@ -2279,9 +2286,9 @@ void KGrThumbNail::drawContents (QPainter * p)	// Activated via "paintEvent".
 	case POLE:
 	    pen.setColor (poleColor); p->setPen (pen); break;
 	case HERO:
-	    pen.setColor (green); p->setPen (pen); break;
+	    pen.setColor (Qt::green); p->setPen (pen); break;
 	case ENEMY:
-	    pen.setColor (blue); p->setPen (pen); break;
+	    pen.setColor (Qt::blue); p->setPen (pen); break;
 	default:
 	    // Set the background for FREE, HLADDER and NUGGET.
 	    pen.setColor (backgroundColor); p->setPen (pen); break;
@@ -2311,7 +2318,7 @@ void KGrThumbNail::drawContents (QPainter * p)	// Activated via "paintEvent".
 
     // Absorb a newline character, then read in the level name (if any).
     int c = openFile.getch();
-    QCString s = "";
+    Q3CString s = "";
     while ((c = openFile.getch()) != EOF) {
 	if (c == '\n')			// Level name is on one line.
 	    break;
@@ -2380,12 +2387,10 @@ void KGrGame::mapCollections()
 	    continue;
 	}
 
-	const QFileInfoList * files = d.entryInfoList
+	const QFileInfoList files = d.entryInfoList
 			(colln->prefix + "???.grl", QDir::Files, QDir::Name);
-	QFileInfoListIterator i (* files);
-	QFileInfo * file;
 
-	if ((files->count() <= 0) && (colln->nLevels > 0)) {
+	if ((files.count() <= 0) && (colln->nLevels > 0)) {
 	    KGrMessage::information (view, i18n("Check Games & Levels"),
 		i18n("There are no files '%1/%2???.grl' for the %3 game.")
 		.arg(d_path)
@@ -2397,9 +2402,9 @@ void KGrGame::mapCollections()
 	// If the prefix is "level", the first file is the "ENDE" screen.
 	int lev = (colln->prefix == "level") ? 0 : 1;
 
-	while ((file = i.current())) {
+        foreach (const QFileInfo& file, files) {
 	    // Get the name of the file found on disk.
-	    fileName1 = file->fileName();
+	    fileName1 = file.fileName();
 
 	    while (TRUE) {
 		// Work out what the file name should be, based on the level no.
@@ -2439,7 +2444,6 @@ void KGrGame::mapCollections()
 		    lev++;
 		}
 	    }
-	    ++i;				// Go to next file info entry.
 	}
     }
 }
@@ -2462,14 +2466,14 @@ bool KGrGame::loadCollections (Owner o)
 	return (FALSE);
     }
 
-    if (! c.open (IO_ReadOnly)) {
+    if (! c.open (QIODevice::ReadOnly)) {
 	KGrMessage::information (view, i18n("Load Game Info"),
 	    i18n("Cannot open file '%1' for read-only.").arg(filePath));
 	return (FALSE);
     }
 
-    QCString	line = "";
-    QCString	name = "";
+    Q3CString	line = "";
+    Q3CString	name = "";
     QString	prefix = "";
     char	settings = ' ';
     int		nLevels = -1;
@@ -2540,7 +2544,7 @@ bool KGrGame::saveCollections (Owner o)
     QFile c (filePath);
 
     // Open the output file.
-    if (! c.open (IO_WriteOnly)) {
+    if (! c.open (QIODevice::WriteOnly)) {
 	KGrMessage::information (view, i18n("Save Game Info"),
 		i18n("Cannot open file '%1' for output.").arg(filePath));
 	return (FALSE);
@@ -2548,7 +2552,7 @@ bool KGrGame::saveCollections (Owner o)
 
     // Save the collections.
     KGrCollection *	colln;
-    QCString		line;
+    Q3CString		line;
     int			i, len;
     char		ch;
 
@@ -2563,7 +2567,7 @@ bool KGrGame::saveCollections (Owner o)
 
 	    len = colln->about.length();
 	    if (len > 0) {
-		QCString aboutC = colln->about.utf8();
+		Q3CString aboutC = colln->about.utf8();
 		len = aboutC.length();		// Might be longer now.
 		for (i = 0; i < len; i++) {
 		    ch = aboutC[i];

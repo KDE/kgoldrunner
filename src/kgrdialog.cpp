@@ -20,6 +20,13 @@
 
 #ifndef KGR_PORTABLE
 #include <kglobalsettings.h>
+//Added by qt3to4:
+#include <QTextStream>
+#include <QGridLayout>
+#include <Q3PtrList>
+#include <Q3Frame>
+#include <QLabel>
+#include <QVBoxLayout>
 #endif
 
 /******************************************************************************/
@@ -28,13 +35,13 @@
 
 #ifdef KGR_PORTABLE
 KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
-			QPtrList<KGrCollection> & gamesList, KGrGame * theGame,
+			Q3PtrList<KGrCollection> & gamesList, KGrGame * theGame,
 			QWidget * parent, const char * name)
 		: QDialog (parent, name, TRUE,
-			WStyle_Customize | WStyle_NormalBorder | WStyle_Title)
+			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title)
 #else
 KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
-			QPtrList<KGrCollection> & gamesList, KGrGame * theGame,
+			Q3PtrList<KGrCollection> & gamesList, KGrGame * theGame,
 			QWidget * parent, const char * name)
 		: KDialogBase (KDialogBase::Plain, i18n("Select Game"),
 		    KDialogBase::Ok | KDialogBase::Cancel | KDialogBase::Help,
@@ -63,10 +70,10 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 
     collnL    = new QLabel (i18n("List of games:"), dad);
     mainLayout->addWidget (collnL);
-    colln     = new QListBox (dad);
+    colln     = new Q3ListBox (dad);
     mainLayout->addWidget (colln);
 
-    QHBox * gameInfo = new QHBox (dad);
+    Q3HBox * gameInfo = new Q3HBox (dad);
     mainLayout->addWidget (gameInfo);
     gameInfo->setSpacing (spacing);
     collnN    = new QLabel ("", gameInfo);	// Name of selected collection.
@@ -78,8 +85,8 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     collnD    = new QLabel ("", dad);		// Description of collection.
     mainLayout->addWidget (collnD);
 
-    QFrame * separator = new QFrame (dad);
-    separator->setFrameStyle (QFrame::HLine + QFrame::Sunken);
+    Q3Frame * separator = new Q3Frame (dad);
+    separator->setFrameStyle (Q3Frame::HLine + Q3Frame::Sunken);
     mainLayout->addWidget (separator);
 
     if ((action == SL_START) || (action == SL_UPD_GAME)) {
@@ -99,10 +106,10 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 
     // Initial range 1->150, small step 1, big step 10 and default value 1.
     number    = new QScrollBar (1, 150, 1, 10, 1,
-				  QScrollBar::Horizontal, dad);
+				  Qt::Horizontal, dad);
     grid->addWidget (number, 1, 1);
 
-    QHBox * numberPair = new QHBox (dad);
+    Q3HBox * numberPair = new Q3HBox (dad);
     grid->addWidget (numberPair, 2, 1);
     numberPair->setSpacing (spacing);
     numberL   = new QLabel (i18n("Level number:"), numberPair);
@@ -122,7 +129,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     thumbNail->	setFixedHeight ((FIELDHEIGHT * cellSize) + 2);
 
 #ifdef KGR_PORTABLE
-    QHBox * buttons = new QHBox (this);
+    Q3HBox * buttons = new Q3HBox (this);
     mainLayout->addWidget (buttons);
     buttons->setSpacing (spacing);
     // Buttons are for Qt-only portability.  NOT COMPILED in KDE environment.
@@ -137,9 +144,9 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     dad->	move (p.x()+2*cell, p.y()+2*cell);
     dad->	setMinimumSize ((FIELDWIDTH*cell/2), (FIELDHEIGHT-1)*cell);
 
-    OK->	setAccel (Key_Return);
-    HELP->	setAccel (Key_F1);
-    CANCEL->	setAccel (Key_Escape);
+    OK->	setAccel (Qt::Key_Return);
+    HELP->	setAccel (Qt::Key_F1);
+    CANCEL->	setAccel (Qt::Key_Escape);
 #endif
 
     // Set the default for the level-number in the scrollbar.
@@ -208,7 +215,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     }
 
     // Paint a thumbnail sketch of the level.
-    thumbNail->setFrameStyle (QFrame::Box | QFrame::Plain);
+    thumbNail->setFrameStyle (Q3Frame::Box | Q3Frame::Plain);
     thumbNail->setLineWidth (1);
     slPaintLevel();
     thumbNail->show();
@@ -488,7 +495,7 @@ void KGrSLDialog::slotHelp ()
 KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
 			QWidget * parent, const char * name)
 		: QDialog (parent, name, TRUE,
-			WStyle_Customize | WStyle_NormalBorder | WStyle_Title)
+			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title)
 #else
 KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
 			QWidget * parent, const char * name)
@@ -519,15 +526,15 @@ KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
 
    // Set up a widget to hold the wrapped text, using \n for paragraph breaks.
 #ifdef QT3
-			mle = new QTextEdit (dad);
-    mle->		setTextFormat (PlainText);
+			mle = new Q3TextEdit (dad);
+    mle->		setTextFormat (Qt::PlainText);
 #else
-			mle = new QMultiLineEdit (dad);
+			mle = new Q3MultiLineEdit (dad);
 #endif
     mainLayout->addWidget (mle);
 
 #ifdef KGR_PORTABLE
-    QHBox * buttons = new QHBox (dad);
+    Q3HBox * buttons = new Q3HBox (dad);
     mainLayout->addWidget (buttons);
     buttons->setSpacing (spacing);
     // Buttons are for Qt-only portability.  NOT COMPILED in KDE environment.
@@ -544,9 +551,9 @@ KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
     mle->		setMinimumSize ((FIELDWIDTH*c/2), (FIELDHEIGHT/2)*c);
 
     // Configure the text box.
-    mle->		setAlignment (AlignLeft);
+    mle->		setAlignment (Qt::AlignLeft);
 #ifndef QT3
-    mle->		setWordWrap (QMultiLineEdit::WidgetWidth);
+    mle->		setWordWrap (Q3MultiLineEdit::WidgetWidth);
     mle->		setFixedVisibleLines (9);
 #endif
 
@@ -555,7 +562,7 @@ KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
 
 #ifdef KGR_PORTABLE
     // OK->		setAccel (Key_Return);	// No!  We need it in "mle" box.
-    CANCEL->		setAccel (Key_Escape);
+    CANCEL->		setAccel (Qt::Key_Escape);
 
     connect (OK, SIGNAL (clicked ()), dad, SLOT (accept ()));
     connect (CANCEL, SIGNAL (clicked ()), dad, SLOT (reject ()));
@@ -572,13 +579,13 @@ KGrNHDialog::~KGrNHDialog()
 
 #ifdef KGR_PORTABLE
 KGrECDialog::KGrECDialog (int action, int collnIndex,
-			QPtrList<KGrCollection> & gamesList,
+			Q3PtrList<KGrCollection> & gamesList,
 			QWidget * parent, const char * name)
 		: QDialog (parent, name, TRUE,
-			WStyle_Customize | WStyle_NormalBorder | WStyle_Title)
+			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title)
 #else
 KGrECDialog::KGrECDialog (int action, int collnIndex,
-			QPtrList<KGrCollection> & gamesList,
+			Q3PtrList<KGrCollection> & gamesList,
 			QWidget * parent, const char * name)
 		: KDialogBase (KDialogBase::Plain, "Edit Game Info",
 			KDialogBase::Ok | KDialogBase::Cancel,
@@ -600,19 +607,19 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
 
     QVBoxLayout * mainLayout = new QVBoxLayout (dad, margin, spacing);
 
-    QHBox * nameBox = new QHBox (dad);
+    Q3HBox * nameBox = new Q3HBox (dad);
     mainLayout->addWidget (nameBox);
     nameBox->setSpacing (spacing);
     nameL    = new QLabel (i18n("Name of game:"), nameBox);
     ecName   = new QLineEdit (nameBox);
 
-    QHBox * prefixBox = new QHBox (dad);
+    Q3HBox * prefixBox = new Q3HBox (dad);
     mainLayout->addWidget (prefixBox);
     prefixBox->setSpacing (spacing);
     prefixL  = new QLabel (i18n("File name prefix:"), prefixBox);
     ecPrefix = new QLineEdit (prefixBox);
 
-    ecGrp    = new QButtonGroup (1, QButtonGroup::Horizontal, 0, dad);
+    ecGrp    = new Q3ButtonGroup (1, Qt::Horizontal, 0, dad);
     mainLayout->addWidget (ecGrp);
     ecTradB  = new QRadioButton (i18n("Traditional rules"), ecGrp);
     ecKGrB   = new QRadioButton (i18n("KGoldrunner rules"), ecGrp);
@@ -625,15 +632,15 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
 
    // Set up a widget to hold the wrapped text, using \n for paragraph breaks.
 #ifdef QT3
-    mle	     = new QTextEdit (dad);
-    mle->    setTextFormat (PlainText);
+    mle	     = new Q3TextEdit (dad);
+    mle->    setTextFormat (Qt::PlainText);
 #else
-    mle      = new QMultiLineEdit (dad);
+    mle      = new Q3MultiLineEdit (dad);
 #endif
     mainLayout->addWidget (mle);
 
 #ifdef KGR_PORTABLE
-    QHBox * buttons = new QHBox (dad);
+    Q3HBox * buttons = new Q3HBox (dad);
     mainLayout->addWidget (buttons);
     buttons->setSpacing (spacing);
     // Buttons are for Qt-only portability.  NOT COMPILED in KDE environment.
@@ -694,9 +701,9 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
     }
 
     // Configure the edit box.
-    mle->		setAlignment (AlignLeft);
+    mle->		setAlignment (Qt::AlignLeft);
 #ifndef QT3
-    mle->		setWordWrap (QMultiLineEdit::WidgetWidth);
+    mle->		setWordWrap (Q3MultiLineEdit::WidgetWidth);
     mle->		setFixedVisibleLines (8);
 #endif
 
@@ -717,7 +724,7 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
     // OK->		setAccel (Key_Return);	// No!  We need it in "mle" box.
 
     CANCEL->		setGeometry (190,  145 + mle->height(), 100,  25);
-    CANCEL->		setAccel (Key_Escape);
+    CANCEL->		setAccel (Qt::Key_Escape);
 
     dad->		resize (300, 175 + mle->height());
 
@@ -749,13 +756,13 @@ void KGrECDialog::ecSetTrad () {ecSetRules ('T');}
 
 #ifdef KGR_PORTABLE
 KGrLGDialog::KGrLGDialog (QFile * savedGames,
-			QPtrList<KGrCollection> & collections,
+			Q3PtrList<KGrCollection> & collections,
 			QWidget * parent, const char * name)
 		: QDialog (parent, name, TRUE,
-			WStyle_Customize | WStyle_NormalBorder | WStyle_Title)
+			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title)
 #else
 KGrLGDialog::KGrLGDialog (QFile * savedGames,
-			QPtrList<KGrCollection> & collections,
+			Q3PtrList<KGrCollection> & collections,
 			QWidget * parent, const char * name)
 		: KDialogBase (KDialogBase::Plain, i18n("Select Saved Game"),
 			KDialogBase::Ok | KDialogBase::Cancel,
@@ -778,7 +785,7 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
 			i18n("Game                       Level/Lives/Score   "
 			"Day    Date     Time  "), dad);
 
-			lgList   = new QListBox (dad);
+			lgList   = new Q3ListBox (dad);
 #ifdef KGR_PORTABLE
     QFont		f ("courier", 12);
 #else
@@ -793,7 +800,7 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
     mainLayout->	addWidget (lgList);
 
 #ifdef KGR_PORTABLE
-    QHBox *		buttons  = new QHBox (dad);
+    Q3HBox *		buttons  = new Q3HBox (dad);
     buttons->		setSpacing (spacing);
     // Buttons are for Qt-only portability.  NOT COMPILED in KDE environment.
     QPushButton *	OK       = new QPushButton (i18n("&OK"), buttons);
@@ -810,8 +817,8 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
     OK->		setMaximumWidth (4*c);
     CANCEL->		setMaximumWidth (4*c);
 
-    OK->		setAccel (Key_Return);
-    CANCEL->		setAccel (Key_Escape);
+    OK->		setAccel (Qt::Key_Return);
+    CANCEL->		setAccel (Qt::Key_Escape);
 #endif
 
 			lgHighlight  = -1;
@@ -912,7 +919,7 @@ void KGrMessage::wrapped (QWidget * parent, QString title, QString contents)
     KMessageBox::information (parent, contents, title);
 #else
     QDialog *		mm = new QDialog (parent, "wrappedMessage", TRUE,
-			WStyle_Customize | WStyle_NormalBorder | WStyle_Title);
+			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title);
 
     int margin = 10;
     int spacing = 10;
@@ -929,10 +936,10 @@ void KGrMessage::wrapped (QWidget * parent, QString title, QString contents)
 
    // Set up a widget to hold the wrapped text, using \n for paragraph breaks.
 #ifdef QT3
-    QTextEdit *		mle = new QTextEdit (mm);
-    mle->		setTextFormat (PlainText);
+    Q3TextEdit *		mle = new Q3TextEdit (mm);
+    mle->		setTextFormat (Qt::PlainText);
 #else
-    QMultiLineEdit *	mle = new QMultiLineEdit (mm);
+    Q3MultiLineEdit *	mle = new Q3MultiLineEdit (mm);
 #endif
     mainLayout->addWidget (mle);
 
@@ -949,20 +956,20 @@ void KGrMessage::wrapped (QWidget * parent, QString title, QString contents)
     mle->		setMinimumSize ((FIELDWIDTH*c/2), (FIELDHEIGHT/2)*c);
     OK->		setMaximumWidth (3*c);
 
-    mle->		setFrameStyle (QFrame::NoFrame);
-    mle->		setAlignment (AlignLeft);
+    mle->		setFrameStyle (Q3Frame::NoFrame);
+    mle->		setAlignment (Qt::AlignLeft);
     mle->		setReadOnly (TRUE);
     mle->		setText (contents);
 
 #ifndef QT3
-    mle->		setWordWrap (QMultiLineEdit::WidgetWidth);
+    mle->		setWordWrap (Q3MultiLineEdit::WidgetWidth);
     mle->		setFixedVisibleLines (10);
     if (mle->		numLines() < 10) {
 	mle->		setFixedVisibleLines (mle->numLines());
     }
 #endif
 
-    OK->		setAccel (Key_Return);
+    OK->		setAccel (Qt::Key_Return);
     connect (OK, SIGNAL (clicked ()), mm, SLOT (accept ()));
 
     mm->		exec ();

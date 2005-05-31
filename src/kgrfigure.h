@@ -19,7 +19,7 @@
 
 #include <qimage.h>
 #ifdef QT3
-#include <qptrlist.h>
+#include <q3ptrlist.h>
 #else
 #include <qlist.h>
 #endif
@@ -111,7 +111,7 @@ public:
   void digRight();
   void startWalk();
 #ifdef QT3
-  void setEnemyList(QPtrList<KGrEnemy> *);
+  void setEnemyList(Q3PtrList<KGrEnemy> *);
 #else
   void setEnemyList(QList<KGrEnemy> *);
 #endif
@@ -128,7 +128,7 @@ public:
 
 private:
 #ifdef QT3
-  QPtrList<KGrEnemy> *enemies;
+  Q3PtrList<KGrEnemy> *enemies;
 #else
   QList<KGrEnemy> *enemies;
 #endif
@@ -166,7 +166,7 @@ public:
   void showFigure();
   void startSearching();
 #ifdef QT3
-  void setEnemyList(QPtrList<KGrEnemy> *);
+  void setEnemyList(Q3PtrList<KGrEnemy> *);
 #else
   void setEnemyList(QList<KGrEnemy> *);
 #endif
@@ -186,7 +186,7 @@ private:
   QTimer *captiveTimer;
   bool canWalkUp();
 #ifdef QT3
-  QPtrList<KGrEnemy> *enemies;
+  Q3PtrList<KGrEnemy> *enemies;
 #else
   QList<KGrEnemy> *enemies;
 #endif

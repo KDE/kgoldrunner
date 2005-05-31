@@ -4,7 +4,10 @@
 
 #include <kprinter.h>
 #include <qpainter.h>
-#include <qpaintdevicemetrics.h>
+#include <q3paintdevicemetrics.h>
+#include <QDesktopWidget>
+//Added by qt3to4:
+#include <QPixmap>
 
 #include <kglobal.h>
 #include <klocale.h>
@@ -115,9 +118,9 @@ KGoldrunner::KGoldrunner()
 
     makeEditToolbar();			// Uses pixmaps from "view".
     editToolbar->hide();
-    setDockEnabled (DockBottom, FALSE);
-    setDockEnabled (DockLeft, FALSE);
-    setDockEnabled (DockRight, FALSE);
+    setDockEnabled (Qt::DockBottom, FALSE);
+    setDockEnabled (Qt::DockLeft, FALSE);
+    setDockEnabled (Qt::DockRight, FALSE);
 
     // Make it impossible to turn off the editor toolbar.
     // Accidentally hiding it would make editing impossible.
@@ -183,7 +186,7 @@ void KGoldrunner::setupActions()
 				save (
 				game, SLOT(saveGame()), actionCollection());
     saveGame->			setText (i18n("&Save Game..."));
-    saveGame->			setShortcut (Key_S); // Alternate key.
+    saveGame->			setShortcut (Qt::Key_S); // Alternate key.
 
     // Pause
     // Show High Scores
@@ -194,7 +197,7 @@ void KGoldrunner::setupActions()
     myPause =			KStdGameAction::
 				pause (
 				this, SLOT(stopStart()), actionCollection());
-    myPause->			setShortcut (Key_Escape); // Alternate key.
+    myPause->			setShortcut (Qt::Key_Escape); // Alternate key.
     highScore =			KStdGameAction::
 				highscores (
 				game, SLOT(showHighScores()), actionCollection());
@@ -205,7 +208,7 @@ void KGoldrunner::setupActions()
 				"get_hint");
     killHero =			new KAction (
 				i18n("&Kill Hero"),
-				Key_Q,
+				Qt::Key_Q,
 				game, SLOT(herosDead()), actionCollection(),
 				"kill_hero");
 
@@ -369,12 +372,12 @@ void KGoldrunner::setupActions()
 				"champion_speed");
     KRadioAction * iSpeed =	new KRadioAction (
 				i18n("Increase Speed"),
-				Key_Plus,
+				Qt::Key_Plus,
 				this, SLOT(incSpeed()), actionCollection(),
 				"increase_speed");
     KRadioAction * dSpeed =	new KRadioAction (
 				i18n("Decrease Speed"),
-				Key_Minus,
+				Qt::Key_Minus,
 				this, SLOT(decSpeed()), actionCollection(),
 				"decrease_speed");
 
@@ -436,19 +439,19 @@ void KGoldrunner::setupActions()
 
     // Two-handed KB controls and alternate one-handed controls for the hero.
 
-    (void)	new KAction (i18n("Move Up"), Key_Up,
+    (void)	new KAction (i18n("Move Up"), Qt::Key_Up,
 		this, SLOT(goUp()), actionCollection(), "move_up");
-    (void)	new KAction (i18n("Move Right"), Key_Right,
+    (void)	new KAction (i18n("Move Right"), Qt::Key_Right,
 		this, SLOT(goR()), actionCollection(), "move_right");
-    (void)	new KAction (i18n("Move Down"), Key_Down,
+    (void)	new KAction (i18n("Move Down"), Qt::Key_Down,
 		this, SLOT(goDown()), actionCollection(), "move_down");
-    (void)	new KAction (i18n("Move Left"), Key_Left,
+    (void)	new KAction (i18n("Move Left"), Qt::Key_Left,
 		this, SLOT(goL()), actionCollection(), "move_left");
-    (void)	new KAction (i18n("Stop"), Key_Space,
+    (void)	new KAction (i18n("Stop"), Qt::Key_Space,
 		this, SLOT(stop()), actionCollection(), "stop");
-    (void)	new KAction (i18n("Dig Right"), Key_C,
+    (void)	new KAction (i18n("Dig Right"), Qt::Key_C,
 		this, SLOT(digR()), actionCollection(), "dig_right");
-    (void)	new KAction (i18n("Dig Left"), Key_Z,
+    (void)	new KAction (i18n("Dig Left"), Qt::Key_Z,
 		this, SLOT(digL()), actionCollection(), "dig_left");
 
     // Alternate one-handed controls.  Set up in "kgoldrunnerui.rc".
@@ -464,31 +467,31 @@ void KGoldrunner::setupActions()
 #ifdef KGR_DEBUG
     // Authors' debugging aids.
 
-    (void)	new KAction (i18n("Step"), Key_Period,
+    (void)	new KAction (i18n("Step"), Qt::Key_Period,
 		game, SLOT(doStep()), actionCollection(), "do_step");
-    (void)	new KAction (i18n("Test Bug Fix"), Key_B,
+    (void)	new KAction (i18n("Test Bug Fix"), Qt::Key_B,
 		game, SLOT(bugFix()), actionCollection(), "bug_fix");
-    (void)	new KAction (i18n("Show Positions"), Key_D,
+    (void)	new KAction (i18n("Show Positions"), Qt::Key_D,
 		game, SLOT(showFigurePositions()), actionCollection(), "step");
-    (void)	new KAction (i18n("Start Logging"), Key_G,
+    (void)	new KAction (i18n("Start Logging"), Qt::Key_G,
 		game, SLOT(startLogging()), actionCollection(), "logging");
-    (void)	new KAction (i18n("Show Hero"), Key_H,
+    (void)	new KAction (i18n("Show Hero"), Qt::Key_H,
 		game, SLOT(showHeroState()), actionCollection(), "show_hero");
-    (void)	new KAction (i18n("Show Object"), Key_Question,
+    (void)	new KAction (i18n("Show Object"), Qt::Key_Question,
 		game, SLOT(showObjectState()), actionCollection(), "show_obj");
-    (void)	new KAction (i18n("Show Enemy") + "0", Key_0,
+    (void)	new KAction (i18n("Show Enemy") + "0", Qt::Key_0,
 		this, SLOT(showEnemy0()), actionCollection(), "show_enemy_0");
-    (void)	new KAction (i18n("Show Enemy") + "1", Key_1,
+    (void)	new KAction (i18n("Show Enemy") + "1", Qt::Key_1,
 		this, SLOT(showEnemy1()), actionCollection(), "show_enemy_1");
-    (void)	new KAction (i18n("Show Enemy") + "2", Key_2,
+    (void)	new KAction (i18n("Show Enemy") + "2", Qt::Key_2,
 		this, SLOT(showEnemy2()), actionCollection(), "show_enemy_2");
-    (void)	new KAction (i18n("Show Enemy") + "3", Key_3,
+    (void)	new KAction (i18n("Show Enemy") + "3", Qt::Key_3,
 		this, SLOT(showEnemy3()), actionCollection(), "show_enemy_3");
-    (void)	new KAction (i18n("Show Enemy") + "4", Key_4,
+    (void)	new KAction (i18n("Show Enemy") + "4", Qt::Key_4,
 		this, SLOT(showEnemy4()), actionCollection(), "show_enemy_4");
-    (void)	new KAction (i18n("Show Enemy") + "5", Key_5,
+    (void)	new KAction (i18n("Show Enemy") + "5", Qt::Key_5,
 		this, SLOT(showEnemy5()), actionCollection(), "show_enemy_5");
-    (void)	new KAction (i18n("Show Enemy") + "6", Key_6,
+    (void)	new KAction (i18n("Show Enemy") + "6", Qt::Key_6,
 		this, SLOT(showEnemy6()), actionCollection(), "show_enemy_6");
 #endif
 
@@ -945,7 +948,7 @@ void KGoldrunner::setKey (KBAction movement)
 /**********************  MAKE A TOOLBAR FOR THE EDITOR   **********************/
 /******************************************************************************/
 
-#include <qwmatrix.h>
+#include <qmatrix.h>
 void KGoldrunner::makeEditToolbar()
 {
     // Set up the pixmaps for the editable objects.
@@ -966,7 +969,7 @@ void KGoldrunner::makeEditToolbar()
 
     if (usesBigPixmaps()) {	// Scale up the pixmaps (to give cleaner looking
 				// icons than leaving it for QToolButton to do).
-	QWMatrix w;
+	QMatrix w;
 	w = w.scale (2.0, 2.0);
 
 	// The pixmaps shown on the buttons used to remain small and incorrectly
@@ -974,7 +977,8 @@ void KGoldrunner::makeEditToolbar()
 	// calls QIconSet, to generate a set of icons from each pixmapx, then
 	// seems to select the small size to paint on the button.  The following
 	// line forces all icons, large and small, to be size 32x32 in advance.
-	QIconSet::setIconSize (QIconSet::Small, QSize (32, 32));
+	//QIcon::setIconSize (QIcon::Small, QSize (32, 32));
+#warning "How to adjust this hack?"	
 
 	brickbg			= brickbg.xForm (w);
 	fbrickbg		= fbrickbg.xForm (w);

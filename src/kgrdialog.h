@@ -27,20 +27,22 @@
 
 #include <qlayout.h>
 
-#include <qlistbox.h>
+#include <q3listbox.h>
 #include <qscrollbar.h>
 #include <qlineedit.h>
-#include <qhbox.h>
+#include <q3hbox.h>
 #include <qpushbutton.h>
-#include <qbuttongroup.h>
+#include <q3buttongroup.h>
 #include <qradiobutton.h>
 #ifdef QT3
-#include <qtextedit.h>
+#include <q3textedit.h>
 #else
-#include <qmultilineedit.h>
+#include <q3multilineedit.h>
 #endif
 
-#include <qptrlist.h>
+#include <q3ptrlist.h>
+//Added by qt3to4:
+#include <QLabel>
 
 /**
 @author Ian Wadham and Marco Krüger
@@ -60,7 +62,7 @@ class KGrSLDialog : public KGR_DIALOG	// KGR_PORTABLE sets QDialog/KDialogBase
 Q_OBJECT
 public:
     KGrSLDialog (int action, int requestedLevel, int collnIndex,
-			QPtrList<KGrCollection> & gamesList, KGrGame * theGame,
+			Q3PtrList<KGrCollection> & gamesList, KGrGame * theGame,
 			QWidget * parent = 0, const char *name = 0);
     ~KGrSLDialog();
 
@@ -78,7 +80,7 @@ private slots:
 
 private:
     int			slAction;
-    QPtrList<KGrCollection> collections;	// List of games.
+    Q3PtrList<KGrCollection> collections;	// List of games.
     int			defaultLevel;
     int			defaultGame;
     int			slCollnIndex;
@@ -87,7 +89,7 @@ private:
     QWidget *		slParent;
 
     QLabel *		collnL;
-    QListBox *		colln;
+    Q3ListBox *		colln;
     QLabel *		collnN;
     QLabel *		collnD;
     QPushButton *	collnA;
@@ -124,9 +126,9 @@ public:
 private:
     QLineEdit *	nhName;
 #ifdef QT3
-    QTextEdit *	mle;
+    Q3TextEdit *	mle;
 #else
-    QMultiLineEdit * mle;
+    Q3MultiLineEdit * mle;
 #endif
 };
 
@@ -139,7 +141,7 @@ class KGrECDialog : public KGR_DIALOG	// KGR_PORTABLE sets QDialog/KDialogBase
 Q_OBJECT
 public:
     KGrECDialog (int action, int collnIndex,
-			QPtrList<KGrCollection> & gamesList,
+			Q3PtrList<KGrCollection> & gamesList,
 			QWidget *parent = 0, const char *name = 0);
     ~KGrECDialog();
 
@@ -154,23 +156,23 @@ private slots:
     void ecSetTrad();
 
 private:
-    QPtrList<KGrCollection> collections;	// List of existing games.
+    Q3PtrList<KGrCollection> collections;	// List of existing games.
     int			defaultGame;
 
     QLabel *		nameL;
     QLineEdit *		ecName;
     QLabel *		prefixL;
     QLineEdit *		ecPrefix;
-    QButtonGroup *	ecGrp;
+    Q3ButtonGroup *	ecGrp;
     QRadioButton *	ecKGrB;
     QRadioButton *	ecTradB;
     QLabel *		nLevL;
 
     QLabel *		mleL;
 #ifdef QT3
-    QTextEdit *		mle;
+    Q3TextEdit *		mle;
 #else
-    QMultiLineEdit *	mle;
+    Q3MultiLineEdit *	mle;
 #endif
 
 #ifdef KGR_PORTABLE
@@ -190,7 +192,7 @@ class KGrLGDialog : public KGR_DIALOG	// KGR_PORTABLE sets QDialog/KDialogBase
 {
 Q_OBJECT
 public:
-    KGrLGDialog (QFile * savedGames, QPtrList<KGrCollection> & collections,
+    KGrLGDialog (QFile * savedGames, Q3PtrList<KGrCollection> & collections,
 			QWidget * parent, const char * name);
     QString getCurrentText() {return (lgList->currentText());}
 
@@ -198,7 +200,7 @@ private slots:
     void lgSelect (int n);
 
 private:
-    QListBox * lgList;
+    Q3ListBox * lgList;
     int lgHighlight;
 };
 
