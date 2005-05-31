@@ -217,6 +217,7 @@ void KGrCanvas::makeTitle ()
     title->setFont (QFont (fontInfo().family(),
 		 (baseFontSize * scaleStep) / baseScale, QFont::Bold));
     title->setAlignment (Qt::AlignCenter);
+    title->setAttribute(Qt::WA_QuitOnClose, false); //Otherwise the close above might exit app
     title->raise();
     title->show();
 }
