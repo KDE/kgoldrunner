@@ -73,9 +73,11 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     colln     = new Q3ListBox (dad);
     mainLayout->addWidget (colln);
 
-    Q3HBox * gameInfo = new Q3HBox (dad);
+    QWidget * gameInfo = new QWidget(dad);
+    QHBoxLayout *hboxLayout1 = new QHBoxLayout(gameInfo);
+    gameInfo->setLayout(hboxLayout1);
     mainLayout->addWidget (gameInfo);
-    gameInfo->setSpacing (spacing);
+    hboxLayout1->setSpacing (spacing);
     collnN    = new QLabel ("", gameInfo);	// Name of selected collection.
     QFont f = collnN->font();
     f.setBold (TRUE);
@@ -109,9 +111,11 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 				  Qt::Horizontal, dad);
     grid->addWidget (number, 1, 1);
 
-    Q3HBox * numberPair = new Q3HBox (dad);
+    QWidget * numberPair = new QWidget(dad);
+    QHBoxLayout *hboxLayout2 = new QHBoxLayout(numberPair);
+    numberPair->setLayout(hboxLayout2);
     grid->addWidget (numberPair, 2, 1);
-    numberPair->setSpacing (spacing);
+    hboxLayout2->setSpacing (spacing);
     numberL   = new QLabel (i18n("Level number:"), numberPair);
     display   = new QLineEdit (numberPair);
 
@@ -129,7 +133,9 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     thumbNail->	setFixedHeight ((FIELDHEIGHT * cellSize) + 2);
 
 #ifdef KGR_PORTABLE
-    Q3HBox * buttons = new Q3HBox (this);
+    QWidget * buttons = new QWidget(this);
+    QHBoxLayout *hboxLayout3 = new QHBoxLayout(buttons);
+    buttons->setLayout(hboxLayout3);
     mainLayout->addWidget (buttons);
     buttons->setSpacing (spacing);
     // Buttons are for Qt-only portability.  NOT COMPILED in KDE environment.
@@ -534,7 +540,9 @@ KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
     mainLayout->addWidget (mle);
 
 #ifdef KGR_PORTABLE
-    Q3HBox * buttons = new Q3HBox (dad);
+    QWidget * buttons = new QWidget(dad);
+    QHBoxLayout *hboxLayout4 = new QHBoxLayout(buttons);
+    buttons->setLayout(hboxLayout4);
     mainLayout->addWidget (buttons);
     buttons->setSpacing (spacing);
     // Buttons are for Qt-only portability.  NOT COMPILED in KDE environment.
@@ -607,15 +615,19 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
 
     QVBoxLayout * mainLayout = new QVBoxLayout (dad, margin, spacing);
 
-    Q3HBox * nameBox = new Q3HBox (dad);
+    QWidget * nameBox = new QWidget(dad);
+    QHBoxLayout *hboxLayout5 = new QHBoxLayout(nameBox);
+    nameBox->setLayout(hboxLayout5);
     mainLayout->addWidget (nameBox);
-    nameBox->setSpacing (spacing);
+    hboxLayout5->setSpacing (spacing);
     nameL    = new QLabel (i18n("Name of game:"), nameBox);
     ecName   = new QLineEdit (nameBox);
 
-    Q3HBox * prefixBox = new Q3HBox (dad);
+    QWidget * prefixBox = new QWidget(dad);
+    QHBoxLayout *hboxLayout6 = new QHBoxLayout(prefixBox);
+    prefixBox->setLayout(hboxLayout6);
     mainLayout->addWidget (prefixBox);
-    prefixBox->setSpacing (spacing);
+    hboxLayout6->setSpacing (spacing);
     prefixL  = new QLabel (i18n("File name prefix:"), prefixBox);
     ecPrefix = new QLineEdit (prefixBox);
 
@@ -640,7 +652,9 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
     mainLayout->addWidget (mle);
 
 #ifdef KGR_PORTABLE
-    Q3HBox * buttons = new Q3HBox (dad);
+    QWidget * buttons = new QWidget(dad);
+    QHBoxLayout *hboxLayout7 = new QHBoxLayout(buttons);
+    buttons->setLayout(hboxLayout7);
     mainLayout->addWidget (buttons);
     buttons->setSpacing (spacing);
     // Buttons are for Qt-only portability.  NOT COMPILED in KDE environment.
@@ -800,7 +814,9 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
     mainLayout->	addWidget (lgList);
 
 #ifdef KGR_PORTABLE
-    Q3HBox *		buttons  = new Q3HBox (dad);
+    QWidget *		buttons  = new QWidget(dad);
+    QHBoxLayout *hboxLayout8 = new QHBoxLayout(buttons);
+    buttons->setLayout(hboxLayout8);
     buttons->		setSpacing (spacing);
     // Buttons are for Qt-only portability.  NOT COMPILED in KDE environment.
     QPushButton *	OK       = new QPushButton (i18n("&OK"), buttons);

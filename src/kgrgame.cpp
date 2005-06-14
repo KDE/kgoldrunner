@@ -1177,8 +1177,10 @@ void KGrGame::showHighScores()
 
     QLabel *		hsLine [10];
 
-    Q3HBox *		buttons = new Q3HBox (hs);
-    buttons->		setSpacing (spacing);
+    QWidget *		buttons = new QWidget(hs);
+    QHBoxLayout *hboxLayout1 = new QHBoxLayout(buttons);
+    buttons->setLayout(hboxLayout1);
+    hboxLayout1->setSpacing (spacing);
     QPushButton *	OK = new KPushButton (KStdGuiItem::close(), buttons);
 
     mainLayout->	addWidget (hsHeader);
