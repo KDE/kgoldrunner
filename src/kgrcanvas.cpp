@@ -31,13 +31,19 @@
 #include "enemy1.xpm"
 #include "enemy2.xpm"
 #include "kgraphics.h"
+//Added by qt3to4:
+#include <QPixmap>
+#include <Q3PtrList>
+#include <QLabel>
+#include <Q3ValueList>
+#include <QMouseEvent>
 
 class KGoldrunner;
 
 KGrCanvas::KGrCanvas (QWidget * parent, const char *name)
-	: QCanvasView (0, parent, name)
+	: Q3CanvasView (0, parent, name)
 {
-    setBackgroundMode (NoBackground);
+    setBackgroundMode (Qt::NoBackground);
     m = new QCursor ();		// For handling the mouse.
 
     scaleStep = STEP;		// Initial scale is 1:1.
@@ -117,7 +123,7 @@ bool KGrCanvas::changeSize (int d)
 	return FALSE;
     }
 
-    QWMatrix wm = worldMatrix();
+    QMatrix wm = worldMatrix();
     double   wmScale = 1.0;
 
     // Set the scale back to 1:1 and calculate the new scale factor.
@@ -211,6 +217,7 @@ void KGrCanvas::makeTitle ()
     title->setFont (QFont (fontInfo().family(),
 		 (baseFontSize * scaleStep) / baseScale, QFont::Bold));
     title->setAlignment (Qt::AlignCenter);
+    title->setAttribute(Qt::WA_QuitOnClose, false); //Otherwise the close above might exit app
     title->raise();
     title->show();
 }
@@ -251,7 +258,7 @@ void KGrCanvas::setMousePos (int i, int j)
 
 void KGrCanvas::makeHeroSprite (int i, int j, int startFrame)
 {
-    heroSprite = new QCanvasSprite (heroArray, field);
+    heroSprite = new Q3CanvasSprite (heroArray, field);
 
     // In KGoldrunner, the top-left visible cell is [1,1] --- in QCanvas [2,2].
     i++; j++;
@@ -267,7 +274,7 @@ void KGrCanvas::setHeroVisible (bool newState)
 
 void KGrCanvas::makeEnemySprite (int i, int j, int startFrame)
 {
-    QCanvasSprite * enemySprite = new QCanvasSprite (enemyArray, field);
+    Q3CanvasSprite * enemySprite = new Q3CanvasSprite (enemyArray, field);
 
     enemySprites->append (enemySprite);
 
@@ -303,7 +310,7 @@ void KGrCanvas::deleteEnemySprites()
 
 QPixmap KGrCanvas::getPixmap (char type)
 {
-    QPixmap pic (bgw, bgh, bgd);
+    QPixmap pic (bgw, bgh);
     QPainter p (& pic);
     int tileNumber;
 
@@ -357,20 +364,20 @@ void KGrCanvas::initView()
     bgd = pixmap.depth();
 
     // Assemble the background and editing pixmaps into a strip (18 pixmaps).
-    bgPix	= QPixmap ((brickbg + 10) * bgw, bgh, bgd);
+    bgPix	= QPixmap ((brickbg + 10) * bgw, bgh);
 
     makeTiles();		// Fill the strip with 18 tiles.
 
     // Define the canvas as an array of tiles.  Default tile is 0 (free space).
     int frame = frameWidth()*2;
-    field = new QCanvas ((FIELDWIDTH+border) * bgw, (FIELDHEIGHT+border) * bgh);
+    field = new Q3Canvas ((FIELDWIDTH+border) * bgw, (FIELDHEIGHT+border) * bgh);
     field->setTiles (bgPix, (FIELDWIDTH+border), (FIELDHEIGHT+border),
 			bgw, bgh);
 
     // Embed the canvas in the view and make it occupy the whole of the view.
     setCanvas (field);
-    setVScrollBarMode (QScrollView::AlwaysOff);
-    setHScrollBarMode (QScrollView::AlwaysOff);
+    setVScrollBarMode (Q3ScrollView::AlwaysOff);
+    setHScrollBarMode (Q3ScrollView::AlwaysOff);
     setFixedSize (field->width() + frame, field->height() + frame);
 
     //////////////////////////////////////////////////////////////////////////
@@ -385,14 +392,14 @@ void KGrCanvas::initView()
 
 #ifdef QT3
     QPixmap   pm;
-    QValueList<QPixmap> pmList;
+    Q3ValueList<QPixmap> pmList;
 
     for (int i = 0; i < 20; i++) {
 	pm.convertFromImage (image.copy (i * 16, 0, 16, 16));
 	pmList.append (pm);
     }
 
-    heroArray = new QCanvasPixmapArray (pmList);	// Hot spots all (0,0).
+    heroArray = new Q3CanvasPixmapArray (pmList);	// Hot spots all (0,0).
 #else
     QPixmap * pm;
     QPoint  * pt;
@@ -408,7 +415,7 @@ void KGrCanvas::initView()
 	ptList.append (pt);
     }
 
-    heroArray = new QCanvasPixmapArray (pmList, ptList);
+    heroArray = new Q3CanvasPixmapArray (pmList, ptList);
 #endif
 
     // Convert pixmap strips for enemy animations into a QCanvasPixmapArray.
@@ -444,7 +451,7 @@ void KGrCanvas::initView()
 	pmList.append (pm);
     }
 
-    enemyArray = new QCanvasPixmapArray (pmList);	// Hot spots all (0,0).
+    enemyArray = new Q3CanvasPixmapArray (pmList);	// Hot spots all (0,0).
 #else
     for (int i = 0; i < 20; i++) {
 	pm = new QPixmap ();
@@ -453,7 +460,7 @@ void KGrCanvas::initView()
 	ptList.append (pt);
     }
 
-    enemyArray = new QCanvasPixmapArray (pmList, ptList);
+    enemyArray = new Q3CanvasPixmapArray (pmList, ptList);
 #endif
 
     goldEnemy = 20;			// Offset of gold-carrying frames.
@@ -467,9 +474,9 @@ void KGrCanvas::initView()
 
     // Create an empty list of enemy sprites.
 #ifdef QT3
-    enemySprites = new QPtrList<QCanvasSprite> ();
+    enemySprites = new Q3PtrList<Q3CanvasSprite> ();
 #else
-    enemySprites = new QList<QCanvasSprite> ();
+    enemySprites = new QList<Q3CanvasSprite> ();
 #endif
     enemySprites->setAutoDelete(TRUE);
 }
@@ -509,19 +516,19 @@ void KGrCanvas::makeBorder ()
 						mw, FIELDHEIGHT*cw + 2*lw + 2);
 
     // Draw inside edges of border, in the same way.
-    colour = QColor (black);
+    colour = QColor (Qt::black);
     drawRectangle (10, bw-lw, bw-lw-1, FIELDWIDTH*cw + 2*lw, lw+1);
     drawRectangle (10, bw-lw, FIELDHEIGHT*cw + bw, FIELDWIDTH*cw + 2*lw, lw+1);
     drawRectangle (10, bw - lw, bw, lw, FIELDHEIGHT*cw);
     drawRectangle (10, FIELDWIDTH*cw + bw, bw, lw, FIELDHEIGHT*cw);
 }
 
-QCanvasRectangle * KGrCanvas::drawRectangle (int z, int x, int y, int w, int h)
+Q3CanvasRectangle * KGrCanvas::drawRectangle (int z, int x, int y, int w, int h)
 {
-    QCanvasRectangle * r = new QCanvasRectangle (x, y, w, h, field);
+    Q3CanvasRectangle * r = new Q3CanvasRectangle (x, y, w, h, field);
 
     r->setBrush (QBrush (colour));
-    r->setPen (QPen (NoPen));
+    r->setPen (QPen (Qt::NoPen));
     r->setZ (z);
     r->show();
 

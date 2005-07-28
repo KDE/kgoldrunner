@@ -17,6 +17,8 @@
 #include "kgrfigure.h"
 
 #include <stdio.h>
+//Added by qt3to4:
+#include <Q3PtrList>
 
 KGrFigure :: KGrFigure (int px, int py)
 {
@@ -698,7 +700,7 @@ void KGrHero::digRight(){
 }
 
 #ifdef QT3
-void KGrHero::setEnemyList(QPtrList<KGrEnemy> *e)
+void KGrHero::setEnemyList(Q3PtrList<KGrEnemy> *e)
 #else
 void KGrHero::setEnemyList(QList<KGrEnemy> *e)
 #endif
@@ -1638,7 +1640,7 @@ bool KGrEnemy::willNotFall (int x, int y)
 }
 
 #ifdef QT3
-void KGrEnemy::setEnemyList(QPtrList<KGrEnemy> *e)
+void KGrEnemy::setEnemyList(Q3PtrList<KGrEnemy> *e)
 #else
 void KGrEnemy::setEnemyList(QList<KGrEnemy> *e)
 #endif
