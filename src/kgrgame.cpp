@@ -32,7 +32,7 @@
 #ifndef KGR_PORTABLE
 #include <kglobalsettings.h>
 //Added by qt3to4:
-#include <Q3CString>
+#include <QByteArray>
 #include <QTextStream>
 #include <Q3Frame>
 #include <QLabel>
@@ -433,8 +433,8 @@ int KGrGame::loadLevel (int levelNo)
   int c = openlevel.getch();
   levelName = "";
   levelHint = "";
-  Q3CString levelNameC = "";
-  Q3CString levelHintC = "";
+  QByteArray levelNameC = "";
+  QByteArray levelHintC = "";
   i = 1;
   while ((c = openlevel.getch()) != EOF) {
       switch (i) {
@@ -1470,8 +1470,8 @@ void KGrGame::loadEditLevel (int lev)
 
     // Read a newline character, then read in the level name and hint (if any).
     int c = levelFile.getch();
-    Q3CString levelHintC = "";
-    Q3CString levelNameC = "";
+    QByteArray levelHintC = "";
+    QByteArray levelNameC = "";
     levelHint = "";
     levelName = "";
     i = 1;
@@ -1606,7 +1606,7 @@ bool KGrGame::saveLevelFile()
     levelFile.putch ('\n');
 
     // Save the level name, changing non-ASCII chars to UTF-8 (eg. ü to Ã¼).
-    Q3CString levelNameC = levelName.utf8();
+    QByteArray levelNameC = levelName.utf8();
     int len1 = levelNameC.length();
     if (len1 > 0) {
 	for (i = 0; i < len1; i++)
@@ -1615,7 +1615,7 @@ bool KGrGame::saveLevelFile()
     }
 
     // Save the level hint, changing non-ASCII chars to UTF-8 (eg. ü to Ã¼).
-    Q3CString levelHintC = levelHint.utf8();
+    QByteArray levelHintC = levelHint.utf8();
     int len2 = levelHintC.length();
     char ch = '\0';
 
@@ -2320,7 +2320,7 @@ void KGrThumbNail::drawContents (QPainter * p)	// Activated via "paintEvent".
 
     // Absorb a newline character, then read in the level name (if any).
     int c = openFile.getch();
-    Q3CString s = "";
+    QByteArray s = "";
     while ((c = openFile.getch()) != EOF) {
 	if (c == '\n')			// Level name is on one line.
 	    break;
@@ -2474,8 +2474,8 @@ bool KGrGame::loadCollections (Owner o)
 	return (FALSE);
     }
 
-    Q3CString	line = "";
-    Q3CString	name = "";
+    QByteArray	line = "";
+    QByteArray	name = "";
     QString	prefix = "";
     char	settings = ' ';
     int		nLevels = -1;
@@ -2554,7 +2554,7 @@ bool KGrGame::saveCollections (Owner o)
 
     // Save the collections.
     KGrCollection *	colln;
-    Q3CString		line;
+    QString		line;
     int			i, len;
     char		ch;
 
@@ -2565,11 +2565,11 @@ bool KGrGame::saveCollections (Owner o)
 				(const char *) colln->name.utf8());
 	    len = line.length();
 	    for (i = 0; i < len; i++)
-		c.putch (line[i]);
+			c.putch (line.toUtf8()[i]);
 
 	    len = colln->about.length();
 	    if (len > 0) {
-		Q3CString aboutC = colln->about.utf8();
+		QByteArray aboutC = colln->about.utf8();
 		len = aboutC.length();		// Might be longer now.
 		for (i = 0; i < len; i++) {
 		    ch = aboutC[i];
