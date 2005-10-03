@@ -79,7 +79,7 @@ KGoldrunner::KGoldrunner()
 /******************************************************************************/
 
     // Get catalog for translation
-    KGlobal::locale()->insertCatalogue("libkdegames");
+    KGlobal::locale()->insertCatalog("libkdegames");
 
     // Tell the KMainWindow that this is the main widget
     setCentralWidget (view);
