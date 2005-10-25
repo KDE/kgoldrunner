@@ -34,7 +34,7 @@ int main (int argc, char **argv)
     app.dcopClient()->registerAs (app.name(), false);
 
     // See if we are starting with session management.
-    if (app.isRestored())
+    if (app.isSessionRestored())
     {
         RESTORE(KGoldrunner);
 	return app.exec();
