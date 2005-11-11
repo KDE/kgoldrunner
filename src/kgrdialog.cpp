@@ -388,7 +388,7 @@ void KGrSLDialog::slShowLevel (int i)
     // Display the level number as the slider is moved.
     QString tmp;
     tmp.setNum(i);
-    tmp = tmp.rightJustify(3,'0');
+    tmp = tmp.rightJustified(3,'0');
     display->setText(tmp);
 }
 
@@ -852,7 +852,7 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
 	for (i = 0; i < imax; i++) {		// Get the collection name.
 	    if (collections.at(i)->prefix == pr) {
 		s = s.insert (0,
-		    collections.at(i)->name.leftJustify (20, ' ', TRUE) + " ");
+		    collections.at(i)->name.leftJustified (20, ' ', TRUE) + " ");
 		break;
 	    }
 	}

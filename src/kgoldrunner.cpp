@@ -545,7 +545,7 @@ void KGoldrunner::showLives (long newLives)
     QString tmp;
     tmp.setNum (newLives);
     if (newLives < 100)
-	tmp = tmp.rightJustify (3, '0');
+	tmp = tmp.rightJustified (3, '0');
     tmp.insert (0, i18n("   Lives: "));
     tmp.append ("   ");
     statusBar()->changeItem (tmp, ID_LIVES);
@@ -556,7 +556,7 @@ void KGoldrunner::showScore (long newScore)
     QString tmp;
     tmp.setNum (newScore);
     if (newScore < 10000)
-	tmp = tmp.rightJustify (5, '0');
+	tmp = tmp.rightJustified (5, '0');
     tmp.insert (0, i18n("   Score: "));
     tmp.append ("   ");
     statusBar()->changeItem (tmp, ID_SCORE);
@@ -567,7 +567,7 @@ void KGoldrunner::showLevel (int newLevelNo)
     QString tmp;
     tmp.setNum (newLevelNo);
     if (newLevelNo < 100)
-	tmp = tmp.rightJustify (3, '0');
+	tmp = tmp.rightJustified (3, '0');
     tmp.insert (0, i18n("   Level: "));
     tmp.append ("   ");
     statusBar()->changeItem (tmp, ID_LEVEL);
@@ -974,7 +974,7 @@ void KGoldrunner::makeEditToolbar()
 
 	// The pixmaps shown on the buttons used to remain small and incorrectly
 	// painted, in KDE, in spite of the 2x (32x32) scaling.  "insertButton"
-	// calls QIconSet, to generate a set of icons from each pixmapx, then
+	// calls QIcon, to generate a set of icons from each pixmapx, then
 	// seems to select the small size to paint on the button.  The following
 	// line forces all icons, large and small, to be size 32x32 in advance.
 	//QIcon::setIconSize (QIcon::Small, QSize (32, 32));

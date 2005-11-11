@@ -668,7 +668,7 @@ QString KGrGame::getFilePath (Owner o, KGrCollection * colln, int lev)
     }
     else {
 	filePath.setNum (lev);		// Convert INT -> QString.
-	filePath = filePath.rightJustify (3,'0'); // Add 0-2 zeros at left.
+	filePath = filePath.rightJustified (3,'0'); // Add 0-2 zeros at left.
 	filePath.append (".grl");	// Add KGoldrunner level-suffix.
 	filePath.prepend (colln->prefix);	// Add collection file-prefix.
     }
@@ -691,7 +691,7 @@ QString KGrGame::getTitle()
     else {
 	// Generate title string "Collection-name - NNN - Level-name".
 	levelTitle.setNum (level);
-	levelTitle = levelTitle.rightJustify (3,'0');
+	levelTitle = levelTitle.rightJustified (3,'0');
 	levelTitle = collection->name + " - " + levelTitle;
 	if (levelName.length() > 0) {
 	    levelTitle = levelTitle + " - " + levelName;
@@ -2411,7 +2411,7 @@ void KGrGame::mapCollections()
 	    while (TRUE) {
 		// Work out what the file name should be, based on the level no.
 		fileName2.setNum (lev);			// Convert to QString.
-		fileName2 = fileName2.rightJustify (3,'0'); // Add zeros.
+		fileName2 = fileName2.rightJustified (3,'0'); // Add zeros.
 		fileName2.append (".grl");		// Add level-suffix.
 		fileName2.prepend (colln->prefix);	// Add colln. prefix.
 
@@ -2499,7 +2499,7 @@ bool KGrGame::loadCollections (Owner o)
 		    name = ""; prefix = ""; settings = ' '; nLevels = -1;
 		}
 		// Decode the first (maybe the only) line in the new collection.
-		line = line.simplifyWhiteSpace();
+		line = line.simplified();
 		int i, j, len;
 		len = line.length();
 		i = 0;   j = line.find(' ',i); nLevels = line.left(j).toInt();
