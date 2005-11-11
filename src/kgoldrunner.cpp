@@ -980,17 +980,17 @@ void KGoldrunner::makeEditToolbar()
 	//QIcon::setIconSize (QIcon::Small, QSize (32, 32));
 #warning "How to adjust this hack?"	
 
-	brickbg			= brickbg.xForm (w);
-	fbrickbg		= fbrickbg.xForm (w);
+	brickbg			= brickbg.transformed (w);
+	fbrickbg		= fbrickbg.transformed (w);
 
-	freebg			= freebg.xForm (w);
-	nuggetbg		= nuggetbg.xForm (w);
-	polebg			= polebg.xForm (w);
-	betonbg			= betonbg.xForm (w);
-	ladderbg		= ladderbg.xForm (w);
-	hladderbg		= hladderbg.xForm (w);
-	edherobg		= edherobg.xForm (w);
-	edenemybg		= edenemybg.xForm (w);
+	freebg			= freebg.transformed (w);
+	nuggetbg		= nuggetbg.transformed (w);
+	polebg			= polebg.transformed (w);
+	betonbg			= betonbg.transformed (w);
+	ladderbg		= ladderbg.transformed (w);
+	hladderbg		= hladderbg.transformed (w);
+	edherobg		= edherobg.transformed (w);
+	edenemybg		= edenemybg.transformed (w);
     }
 
     editToolbar = new KToolBar (this, Qt::DockTop, TRUE, "Editor", TRUE);
