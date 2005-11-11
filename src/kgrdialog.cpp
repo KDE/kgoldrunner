@@ -246,10 +246,13 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 
     connect (colln,   SIGNAL (highlighted (int)), this, SLOT (slPaintLevel ()));
     connect (number,  SIGNAL (sliderReleased()), this, SLOT (slPaintLevel()));
+#warning "kde4: this signal doesn't exist";
+#if 0    
     connect (number,  SIGNAL (nextLine()), this, SLOT (slPaintLevel()));
     connect (number,  SIGNAL (prevLine()), this, SLOT (slPaintLevel()));
     connect (number,  SIGNAL (nextPage()), this, SLOT (slPaintLevel()));
     connect (number,  SIGNAL (prevPage()), this, SLOT (slPaintLevel()));
+#endif
 
 #ifdef KGR_PORTABLE
     // Set the exits from this dialog box.
