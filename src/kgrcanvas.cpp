@@ -35,7 +35,7 @@
 #include <QPixmap>
 #include <Q3PtrList>
 #include <QLabel>
-#include <Q3ValueList>
+#include <QList>
 #include <QMouseEvent>
 
 class KGoldrunner;
@@ -392,7 +392,7 @@ void KGrCanvas::initView()
 
 #ifdef QT3
     QPixmap   pm;
-    Q3ValueList<QPixmap> pmList;
+    QList<QPixmap> pmList;
 
     for (int i = 0; i < 20; i++) {
 	pm.convertFromImage (image.copy (i * 16, 0, 16, 16));
