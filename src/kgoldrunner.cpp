@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2003 Ian Wadham and Marco Krüger <ianw@netspace.net.au>
+ * Copyright (C) 2003 Ian Wadham and Marco KrÃ¼ger <ianw@netspace.net.au>
  */
 
 #include <kprinter.h>

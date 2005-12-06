@@ -2,7 +2,7 @@
                           kgrcanvas.cpp  -  description
                              -------------------
     begin                : Wed Jan 23 2002
-    copyright            : (C) 2002 by Marco Krüger and Ian Wadham
+    copyright            : (C) 2002 by Marco KrÃ¼ger and Ian Wadham
     email                : See menu "Help, About KGoldrunner"
  ***************************************************************************/
 

@@ -1,7 +1,7 @@
 /***************************************************************************
  *                       kgrconsts.h  -  description                       *
  *                           -------------------                           *
- *   Copyright (C) 2003 by Ian Wadham and Marco Krüger                     *
+ *   Copyright (C) 2003 by Ian Wadham and Marco KrÃ¼ger                     *
  *   email       : See menu "Help, About KGoldrunner"                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *

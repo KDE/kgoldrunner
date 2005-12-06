@@ -1,7 +1,7 @@
 /***************************************************************************
  *                      kgrfigure.cpp  -  description                      *
  *                           -------------------                           *
- *   Copyright (C) 2003 by Ian Wadham and Marco Krüger                     *
+ *   Copyright (C) 2003 by Ian Wadham and Marco KrÃ¼ger                     *
  *   email       : See menu "Help, About KGoldrunner"                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -241,10 +241,10 @@ void KGrFigure::walkLeft (int WALKDELAY, int FALLDELAY)
 void KGrFigure::walkRight(int WALKDELAY, int FALLDELAY)
 {
     if (walkCounter++) {		// wenn 0, soll sich Figur nur umdrehen
-	if (++actualPixmap % 4) {	// wenn true, dann ist kein vollständiger Schritt gemacht
+	if (++actualPixmap % 4) {	// wenn true, dann ist kein vollstÃ¤ndiger Schritt gemacht
 	    if (canWalkRight()) {
 		relx += STEP;
-		absx += STEP;	// nur vorwärts gehen, wenn es auch möglich ist
+		absx += STEP;	// nur vorwÃ¤rts gehen, wenn es auch mÃ¶glich ist
 	    }
 	    walkTimer->start ((WALKDELAY * NSPEED) / speed, TRUE);
 	}
@@ -252,7 +252,7 @@ void KGrFigure::walkRight(int WALKDELAY, int FALLDELAY)
 	    actualPixmap -= 4;		// Schritt war vollendet
 	    if (canWalkRight()) {
 		x++;
-	    }				//gehe entgültig nach rechts
+	    }				//gehe entgÃ¼ltig nach rechts
 	    // Always reset position, in case we are stuck partly into a brick.
 	    relx = 0;
 	    absx = x*16;
@@ -316,7 +316,7 @@ int KGrHero::FALLDELAY = 0;
 
 /* Es ist Notwendig der eigentlichen Timerfunktion diese
    Startwalk vorzuschalten, um bei einem evtl. notwendigem
-   Richtungswechsel der Figur diese Bewegung mit einzufügen */
+   Richtungswechsel der Figur diese Bewegung mit einzufÃ¼gen */
 void KGrHero::startWalk ()
 {
   switch (nextDir) {
@@ -367,7 +367,7 @@ void KGrHero::startWalk ()
       break;
     }
   nextDir = STAND;
-  if (status != FALLING)//immer ausführen, ausser beim fallen
+  if (status != FALLING)//immer ausfÃ¼hren, ausser beim fallen
     { status = WALKING; // da sonst der FALLINGstatus wieder
     showFigure ();      // geaendert wird und der falsche Timer anspringt.
     }
@@ -596,7 +596,7 @@ void KGrHero::fallTimeDone()
     if (KGrObject::frozen) {fallFrozen = TRUE; return; }
 
     if (!standOnEnemy()) {
-	if (walkCounter++ < 4) {	// Held fällt vier Positionen
+	if (walkCounter++ < 4) {	// Held fÃ¤llt vier Positionen
 	    fallTimer->start((FALLDELAY * NSPEED) / speed, TRUE);
 	    rely+=STEP;
 	    absy+=STEP;
@@ -612,7 +612,7 @@ void KGrHero::fallTimeDone()
 		walkCounter = 1;
 	    }
 	    else {			// Held hat Boden (oder Feind) unter den
-		status = STANDING;	// Füssen oder hängt an Stange -> steh!
+		status = STANDING;	// FÃ¼ssen oder hÃ¤ngt an Stange -> steh!
 		walkTimer->start((WALKDELAY * NSPEED) / speed, TRUE);
 		direction = (actualPixmap == 19) ? RIGHT : LEFT;
 		if ((*playfield)[x][y]->whatIam() == POLE)
@@ -648,7 +648,7 @@ void KGrHero::showFigure () {
 
   heroView->moveHero (absx, absy, actualPixmap);
 
-  // Merke alte Werte zum löschen der Figur
+  // Merke alte Werte zum lÃ¶schen der Figur
   mem_x = x;
   mem_y = y;
   mem_relx = relx;
@@ -736,7 +736,7 @@ void KGrHero::collectNugget(){
       if (!(--nuggets))
 	emit haveAllNuggets();	// sendet der Application dass alle Nuggets
 			    // gesammelt sind, um versteckte Leitern zu zeigen
-      emit gotNugget(250); // sendet der Application ein Nugget um Score zu erhöhen
+      emit gotNugget(250); // sendet der Application ein Nugget um Score zu erhÃ¶hen
 
     }
 }
@@ -904,7 +904,7 @@ void KGrEnemy::walkTimeDone ()
         else
 	    dropNugget();
       }
-      status = WALKING; // initialisiere die Zählervariablen und
+      status = WALKING; // initialisiere die ZÃ¤hlervariablen und
       walkCounter = 1; // den Timer um den Held weiter
       walkTimer->start ((WALKDELAY * NSPEED) / speed, TRUE); // zu jagen
       startWalk ();
@@ -931,7 +931,7 @@ void KGrEnemy::fallTimeDone ()
 {
   if (KGrObject::frozen) {fallFrozen = TRUE; return; }
 
-  if ((*playfield)[x][y+1]->whatIam() == HOLE) {  // wenn Enemy ins Loch fällt
+  if ((*playfield)[x][y+1]->whatIam() == HOLE) {  // wenn Enemy ins Loch fÃ¤llt
     ((KGrBrick*)(*playfield)[x][y+1])->useHole(); // reserviere das Loch, damit
 						  // kein anderer es benutzt und
     if (nuggets) {			  // er muss Gold vorher fallen lassen
@@ -1058,7 +1058,7 @@ void KGrEnemy::showFigure ()
 {
   enemyView->moveEnemy (enemyId, absx, absy, actualPixmap, nuggets);
 
-  // Merke alte Werte zum löschen der Figur
+  // Merke alte Werte zum lÃ¶schen der Figur
   mem_x = x;
   mem_y = y;
   mem_relx = relx;

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2003 by Ian Wadham and Marco Kr�ger                     *
+ *   Copyright (C) 2003 by Ian Wadham and Marco Krüger                     *
  *   ianw@netspace.net.au                                                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -525,7 +525,7 @@ bool KGrGame::openLevelFile (int levelNo, QFile & openlevel)
       return (FALSE);
   }
 
-  // �ffne Level zum lesen
+  // öffne Level zum lesen
   if (! openlevel.open (QIODevice::ReadOnly)) {
       KGrMessage::information (view, i18n("Load Level"),
 	    i18n("Cannot open file '%1' for read-only.").arg(filePath));
@@ -1069,7 +1069,7 @@ void KGrGame::checkHighScore()
 	    if ((! scoreRecorded) && (score > prevScore)) {
 		highCount++;
 		// Recode the user's name as UTF-8, in case it contains
-		// non-ASCII chars (e.g. "Kr�ger" is encoded as "Krüger").
+		// non-ASCII chars (e.g. "Krüger" is encoded as "KrÃ¼ger").
 		s2 << (const char *) thisUser.utf8();
 		s2 << (Q_INT16) level;
 		s2 << (Q_INT32) score;
@@ -1088,7 +1088,7 @@ void KGrGame::checkHighScore()
 	}
 	if ((! scoreRecorded) && (highCount < 10)) {
 	    // Recode the user's name as UTF-8, in case it contains
-	    // non-ASCII chars (e.g. "Kr�ger" is encoded as "Krüger").
+	    // non-ASCII chars (e.g. "Krüger" is encoded as "KrÃ¼ger").
 	    s2 << (const char *) thisUser.utf8();
 	    s2 << (Q_INT16) level;
 	    s2 << (Q_INT32) score;
@@ -1098,7 +1098,7 @@ void KGrGame::checkHighScore()
     }
     else {
 	// Recode the user's name as UTF-8, in case it contains
-	// non-ASCII chars (e.g. "Kr�ger" is encoded as "Krüger").
+	// non-ASCII chars (e.g. "Krüger" is encoded as "KrÃ¼ger").
 	s2 << (const char *) thisUser.utf8();
 	s2 << (Q_INT16) level;
 	s2 << (Q_INT32) score;
@@ -1208,7 +1208,7 @@ void KGrGame::showHighScores()
 
 	// QString::sprintf expects UTF-8 encoding in its string arguments, so
 	// prevUser has been saved on file as UTF-8 to allow non=ASCII chars
-	// in the user's name (e.g. "Kr�ger" is encoded as "Krüger" in UTF-8).
+	// in the user's name (e.g. "Krüger" is encoded as "KrÃ¼ger" in UTF-8).
 
 	line = line.sprintf (hsFormat,
 			     n+1, prevUser, prevLevel, prevScore, prevDate);
@@ -1490,7 +1490,7 @@ void KGrGame::loadEditLevel (int lev)
 
     // Retain the original language of the name and hint when editing,
     // but remove the final \n and convert non-ASCII, UTF-8 substrings
-    // to Unicode (eg. ü to �).
+    // to Unicode (eg. Ã¼ to ü).
     int len = levelHintC.length();
     if (len > 0)
 	levelHint = QString::fromUtf8((const char *) levelHintC.left(len-1));
@@ -1605,7 +1605,7 @@ bool KGrGame::saveLevelFile()
     }
     levelFile.putch ('\n');
 
-    // Save the level name, changing non-ASCII chars to UTF-8 (eg. � to ü).
+    // Save the level name, changing non-ASCII chars to UTF-8 (eg. ü to Ã¼).
     QByteArray levelNameC = levelName.utf8();
     int len1 = levelNameC.length();
     if (len1 > 0) {
@@ -1614,7 +1614,7 @@ bool KGrGame::saveLevelFile()
 	levelFile.putch ('\n');			// Add a newline.
     }
 
-    // Save the level hint, changing non-ASCII chars to UTF-8 (eg. � to ü).
+    // Save the level hint, changing non-ASCII chars to UTF-8 (eg. ü to Ã¼).
     QByteArray levelHintC = levelHint.utf8();
     int len2 = levelHintC.length();
     char ch = '\0';

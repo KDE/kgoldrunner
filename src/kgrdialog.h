@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2003 by Ian Wadham and Marco Krüger                     *
+ *   Copyright (C) 2003 by Ian Wadham and Marco KrÃ¼ger                     *
  *   ianw@netspace.net.au                                                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -45,7 +45,7 @@
 #include <QLabel>
 
 /**
-@author Ian Wadham and Marco Krüger
+@author Ian Wadham and Marco KrÃ¼ger
 */
 
 class KGrCanvas;

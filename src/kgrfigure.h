@@ -1,7 +1,7 @@
 /***************************************************************************
  *                       kgrfigure.h  -  description                       *
  *                           -------------------                           *
- *   Copyright (C) 2003 by Ian Wadham and Marco Krüger                     *
+ *   Copyright (C) 2003 by Ian Wadham and Marco KrÃ¼ger                     *
  *   email       : See menu "Help, About KGoldrunner"                      *
  *   ianw@netspace.net.au                                                  *
  *                                                                         *
@@ -27,7 +27,7 @@
 #include <qpixmap.h>
 #include <qtimer.h>
 #include <qwidget.h>
-#include <stdlib.h> // für Zufallsfunktionen
+#include <stdlib.h> // fÃ¼r Zufallsfunktionen
 
 class KGrCanvas;
 class KGrObject;
