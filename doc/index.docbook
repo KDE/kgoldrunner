@@ -20,7 +20,7 @@
 <author>
 <firstname>Marco</firstname>
 <surname>Krüger</surname>
-<affiliation><address><email></email></address></affiliation>
+
 </author>
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
@@ -32,7 +32,7 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2003-08-25</date>
+<date>2005-12-10</date>
 <releaseinfo>2.0</releaseinfo>
 
 <abstract>
@@ -190,7 +190,7 @@ desktop version of &kgoldrunner;.</para>
 
 <para>You enter keyboard mode by pressing one of the keys that can
 control the hero or by selecting <guimenuitem>Keyboard
-Control</guimenuitem> on the <guimenu>Settings</guimenu>
+Controls Hero</guimenuitem> on the <guimenu>Settings</guimenu>
 menu.</para>
 
 <para>The movement keys (<keycap>I</keycap>, <keycap>J</keycap>,
@@ -271,7 +271,7 @@ move.</para>
 an enemy. You can also lose by getting caught in a dug brick when it
 closes. Otherwise you can commit suicide by pressing key
 <keycap>Q</keycap> or using the menu item
-<menuchoice><guimenu>Game</guimenu><guimenuitem>Kill the
+<menuchoice><guimenu>Game</guimenu><guimenuitem>Kill
 Hero</guimenuitem></menuchoice>. Why would you want to do that? Well,
 sometimes you can get trapped in a place from which you cannot
 escape. You will stay imprisoned for ever unless you commit
@@ -588,8 +588,7 @@ attempt the real thing.</para>
 and finishing games, saving games, loading saved games, showing high
 scores and getting a hint (if available). The
 <guimenu>Game</guimenu> Menu also contains the
-<guimenuitem>Quit</guimenuitem> option and an option to start the
-Tutorial game without going through the level selection dialog. You can also
+<guimenuitem>Quit</guimenuitem> option. You can also
 quit by clicking the <guiicon>X</guiicon> at the top right of the
 &kgoldrunner; window.</para>
 </listitem>
@@ -642,16 +641,16 @@ option to re-assign keyboard shortcuts and hero-control keys. </para>
 <varlistentry>
 <term><link linkend="help-menu"><guimenu>Help</guimenu></link></term>
 <listitem>
-<para>The <guimenu>Help</guimenu> menu contains an option to start the
-Tutorial game, an option to get a hint (if available), access to the
+<para>The <guimenu>Help</guimenu> menu contains an option
+to get a hint (if available), access to the
 &kgoldrunner; Handbook (this document), <guimenuitem>About
-KGoldrunner</guimenuitem> and <guimenuitem>About KDE</guimenuitem> (or
+&kgoldrunner;</guimenuitem> and <guimenuitem>About &kde;</guimenuitem> (or
 <guimenuitem>About Qt</guimenuitem> Toolkit). </para>
 <para>In the &kde; desktop version, there is also an option to report a
 Bug or Wishlist item.</para>
 <para>If you would like to make a suggestion or you have some new levels
 to contribute, the current author's email address is in the
-<guimenuitem>About KGoldrunner</guimenuitem> menu item.</para>
+<guimenuitem>About &kgoldrunner;</guimenuitem> menu item.</para>
 </listitem>
 </varlistentry>
 </variablelist>
@@ -663,8 +662,9 @@ to contribute, the current author's email address is in the
 
 <variablelist>
 <varlistentry>
-<term><menuchoice><shortcut><keycap>Ctrl+N</keycap></shortcut>
-<guimenu>Game</guimenu><guimenuitem>New Game</guimenuitem>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo></shortcut>
+<guimenu>Game</guimenu><guimenuitem>New Game...</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
@@ -674,8 +674,9 @@ to contribute, the current author's email address is in the
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><shortcut><keycap>Ctrl+O</keycap></shortcut>
-<guimenu>Game</guimenu><guimenuitem>Load Saved Game</guimenuitem>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;<keycap>O</keycap></keycombo></shortcut>
+<guimenu>Game</guimenu><guimenuitem>Load Saved Game...</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
@@ -689,7 +690,7 @@ that level, with the lives and score you saved.</para>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Game</guimenu><guimenuitem>Play Any Level</guimenuitem>
+<guimenu>Game</guimenu><guimenuitem>Play Any Level...</guimenuitem>
 </menuchoice>
 </term>
 <listitem><para>Shows the level selection dialog box, where you choose
@@ -699,7 +700,7 @@ a game and a level to play.</para>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Game</guimenu><guimenuitem>Play Next Level</guimenuitem>
+<guimenu>Game</guimenu><guimenuitem>Play Next Level...</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
@@ -709,20 +710,8 @@ that level or another.</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice>
-<guimenu>Game</guimenu><guimenuitem>Tutorial</guimenuitem>
-</menuchoice>
-</term>
-<listitem>
-<para>Starts the tutorial game, without going through the level
-selection dialog.  At the start of each level there is a text message
-that tells you what to do.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
 <term><menuchoice><shortcut><keycap>S</keycap></shortcut>
-<guimenu>Game</guimenu><guimenuitem>Save Game</guimenuitem>
+<guimenu>Game</guimenu><guimenuitem>Save Game...</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
@@ -739,8 +728,9 @@ short-cut.</para>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><shortcut><keycap>Ctrl+S</keycap></shortcut>
-<guimenu>Game</guimenu><guimenuitem>Save Edits</guimenuitem>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;<keycap>S</keycap></keycombo></shortcut>
+<guimenu>Game</guimenu><guimenuitem>Save Edits...</guimenuitem>
 </menuchoice>
 </term>
 <listitem><para>This option is enabled only if you have been using
@@ -753,7 +743,8 @@ the <guiicon>disk</guiicon> icon on the Editor toolbar.</para>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><shortcut><keycap>P or Esc</keycap></shortcut>
+<term><menuchoice>
+<shortcut><keycap>P or &Esc;</keycap></shortcut>
 <guimenu>Game</guimenu><guimenuitem>Pause</guimenuitem>
 </menuchoice>
 </term>
@@ -763,8 +754,9 @@ the <guiicon>disk</guiicon> icon on the Editor toolbar.</para>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><shortcut><keycap>Ctrl+H</keycap></shortcut>
-<guimenu>Game</guimenu><guimenuitem>Show High Scores</guimenuitem>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;<keycap>H</keycap></keycombo></shortcut>
+<guimenu>Game</guimenu><guimenuitem>Show Highscores</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
@@ -800,7 +792,8 @@ escape.</para>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><shortcut><keycap>Ctrl+Q</keycap></shortcut>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo></shortcut>
 <guimenu>Game</guimenu><guimenuitem>Quit</guimenuitem>
 </menuchoice>
 </term>
@@ -835,7 +828,7 @@ and level number.</para>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Editor</guimenu><guimenuitem>Edit Any Level</guimenuitem>
+<guimenu>Editor</guimenu><guimenuitem>Edit Any Level...</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
@@ -848,7 +841,7 @@ in one of your own games.</para>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Editor</guimenu><guimenuitem>Edit Next Level</guimenuitem>
+<guimenu>Editor</guimenu><guimenuitem>Edit Next Level...</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
@@ -859,15 +852,16 @@ that level or another.</para>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><shortcut><keycap>Ctrl+S</keycap></shortcut>
-<guimenu>Editor</guimenu><guimenuitem>Save Edits</guimenuitem>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;<keycap>S</keycap></keycombo></shortcut>
+<guimenu>Editor</guimenu><guimenuitem>Save Edits...</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
 <para>Shows the level selection dialog box with
 appropriate default settings for saving a new or edited level.  You can
 change the game and level number and achieve a <quote>Save As...</quote>
-effect. This dialog box has a special button, <guibutton>Level Name and
+effect. This dialog box has a special button, <guibutton>Edit Level Name and
 Hint</guibutton>, which shows a dialog box where you can add an optional
 name and hint to your level.</para>
 </listitem>
@@ -875,7 +869,7 @@ name and hint to your level.</para>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Editor</guimenu><guimenuitem>Move Level</guimenuitem>
+<guimenu>Editor</guimenu><guimenuitem>Move Level...</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
@@ -892,7 +886,7 @@ level.</para>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Editor</guimenu><guimenuitem>Delete Level</guimenuitem>
+<guimenu>Editor</guimenu><guimenuitem>Delete Level...</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
@@ -903,7 +897,7 @@ to delete.  You cannot delete a System level.</para>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Editor</guimenu><guimenuitem>Create Game</guimenuitem>
+<guimenu>Editor</guimenu><guimenuitem>Create Game...</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
@@ -918,7 +912,7 @@ optional description or comment about the game.</para>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Editor</guimenu><guimenuitem>Edit Game Info</guimenuitem>
+<guimenu>Editor</guimenu><guimenuitem>Edit Game Info...</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
@@ -940,9 +934,10 @@ is because the prefix is used in level-file names internally.</para>
 <variablelist>
 
 <varlistentry>
-<term><menuchoice><shortcut><keycap>Shift+G</keycap></shortcut>
-<guimenu>Landscapes</guimenu><guimenuitem>
-&kgoldrunner;</guimenuitem></menuchoice></term>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Shift;<keycap>G</keycap></keycombo></shortcut>
+<guimenu>Landscapes</guimenu><guimenuitem>&kgoldrunner;</guimenuitem>
+</menuchoice></term>
 <listitem>
 <para>Gives you the default &kgoldrunner; landscape, with
 red bricks and wooden ladders.</para>
@@ -950,9 +945,10 @@ red bricks and wooden ladders.</para>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><shortcut><keycap>Shift+A</keycap></shortcut>
-<guimenu>Landscapes</guimenu><guimenuitem>
-Apple II</guimenuitem></menuchoice></term>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Shift;<keycap>A</keycap></keycombo></shortcut>
+<guimenu>Landscapes</guimenu><guimenuitem>Apple II</guimenuitem>
+</menuchoice></term>
 <listitem>
 <para>Gives you a nostalgic look at the original Apple II game, as it
 was when you plugged your Apple II into your TV set &mdash; otherwise you had
@@ -967,9 +963,10 @@ recreate on today's pin-sharp monitors.</para>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><shortcut><keycap>Shift+I</keycap></shortcut>
-<guimenu>Landscapes</guimenu><guimenuitem>
-Ice Cave</guimenuitem></menuchoice></term>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Shift;<keycap>I</keycap></keycombo></shortcut>
+<guimenu>Landscapes</guimenu><guimenuitem>Ice Cave</guimenuitem>
+</menuchoice></term>
 <listitem>
 <para>For fans of the movie <quote>Superman</quote> or the
 James Bond movie <quote>Die Another Day</quote> &mdash; or you can
@@ -978,20 +975,22 @@ use it on a hot day.</para>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><shortcut><keycap>Shift+M</keycap></shortcut>
-<guimenu>Landscapes</guimenu><guimenuitem>
-Midnight</guimenuitem></menuchoice></term>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Shift;<keycap>M</keycap></keycombo></shortcut>
+<guimenu>Landscapes</guimenu><guimenuitem>Midnight</guimenuitem>
+</menuchoice></term>
 <listitem>
 <para>For real &kgoldrunner; addicts, on those late-night sessions.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><shortcut><keycap>Shift+K</keycap></shortcut>
-<guimenu>Landscapes</guimenu><guimenuitem>
-KDE Kool</guimenuitem></menuchoice></term>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Shift;<keycap>K</keycap></keycombo></shortcut>
+<guimenu>Landscapes</guimenu><guimenuitem>&kde; Kool</guimenuitem>
+</menuchoice></term>
 <listitem>
-<para>Inspired by the icon colors on the KDE desktop.</para>
+<para>Inspired by the icon colors on the &kde; desktop.</para>
 </listitem>
 </varlistentry>
 
@@ -1004,8 +1003,9 @@ KDE Kool</guimenuitem></menuchoice></term>
 
 <variablelist>
 <varlistentry>
-<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>
-Mouse Controls Hero</guimenuitem></menuchoice></term>
+<term><menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Mouse Controls Hero</guimenuitem>
+</menuchoice></term>
 <listitem>
 <para>Sets mouse control of the hero
 (see <link linkend="mouse-control">Moving Around</link>).</para>
@@ -1013,8 +1013,9 @@ Mouse Controls Hero</guimenuitem></menuchoice></term>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>
-Keyboard Controls Hero</guimenuitem></menuchoice></term>
+<term><menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Keyboard Controls Hero</guimenuitem>
+</menuchoice></term>
 <listitem>
 <para>Sets keyboard control of the hero
 (see <link linkend="keyboard-control">Keyboard Control</link>).</para>
@@ -1022,24 +1023,27 @@ Keyboard Controls Hero</guimenuitem></menuchoice></term>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>
-Normal Speed</guimenuitem></menuchoice></term>
+<term><menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Normal Speed</guimenuitem>
+</menuchoice></term>
 <listitem>
 <para>Sets normal game speed (12 units).</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>
-Beginner Speed</guimenuitem></menuchoice></term>
+<term><menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Beginner Speed</guimenuitem>
+</menuchoice></term>
 <listitem>
 <para>Sets beginner game speed (6 units, half of normal speed).</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>
-Champion Speed</guimenuitem></menuchoice></term>
+<term><menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Champion Speed</guimenuitem>
+</menuchoice></term>
 <listitem>
 <para>Sets champion game speed (18 units, 1.5 times normal speed).</para>
 </listitem>
@@ -1047,8 +1051,8 @@ Champion Speed</guimenuitem></menuchoice></term>
 
 <varlistentry>
 <term><menuchoice><shortcut><keycap>+</keycap></shortcut>
-<guimenu>Settings</guimenu><guimenuitem>
-Increase Speed</guimenuitem></menuchoice></term>
+<guimenu>Settings</guimenu><guimenuitem>Increase Speed	</guimenuitem>
+</menuchoice></term>
 <listitem>
 <para>Increases the game speed by one unit, up to a maximum of 24
 units (twice normal speed).  You can use the <keycap>+</keycap> key
@@ -1059,8 +1063,8 @@ as a shortcut.</para>
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycap>-</keycap></shortcut>
-<guimenu>Settings</guimenu><guimenuitem>
-Decrease Speed</guimenuitem></menuchoice></term>
+<guimenu>Settings</guimenu><guimenuitem>Decrease Speed</guimenuitem>
+</menuchoice></term>
 <listitem>
 <para>Decreases the game speed by one unit, down to a minimum of 3
 units (a quarter of normal speed).  You can use the <keycap>-</keycap> key
@@ -1069,8 +1073,9 @@ as a shortcut.</para>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>
-Traditional Defaults</guimenuitem></menuchoice></term>
+<term><menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Traditional Rules</guimenuitem>
+</menuchoice></term>
 <listitem>
 <para>Sets Traditional default playing rules
 (see <link linkend="choice-of-rules">Choice of Rules</link>).</para>
@@ -1078,8 +1083,9 @@ Traditional Defaults</guimenuitem></menuchoice></term>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>
-&kgoldrunner; Defaults</guimenuitem></menuchoice></term>
+<term><menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>&kgoldrunner; Rules</guimenuitem>
+</menuchoice></term>
 <listitem>
 <para>Sets &kgoldrunner; default playing rules
 (see <link linkend="choice-of-rules">Choice of Rules</link>).</para>
@@ -1087,8 +1093,9 @@ Traditional Defaults</guimenuitem></menuchoice></term>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>
-Larger Playing Area</guimenuitem></menuchoice></term>
+<term><menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Larger Playing Area</guimenuitem>
+</menuchoice></term>
 <listitem>
 <para>When &kgoldrunner; starts, it chooses the size of the playing area
 (in pixels), based on your screen's resolution (e.g. 1024x768).  This
@@ -1098,8 +1105,9 @@ enlarge all the corresponding graphics.</para>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>
-Smaller Playing Area</guimenuitem></menuchoice></term>
+<term><menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Smaller Playing Area</guimenuitem>
+</menuchoice></term>
 <listitem>
 <para>When &kgoldrunner; starts, it chooses the size of the playing area
 (in pixels), based on your screen's resolution (e.g. 1024x768).  This
@@ -1109,11 +1117,12 @@ and shrink all the corresponding graphics.</para>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>
-Configure Shortcuts</guimenuitem></menuchoice></term>
+<term><menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Configure Shortcuts...</guimenuitem>
+</menuchoice></term>
 <listitem>
-<para>In the KDE version only, this item allows you to change the keyboard
-assignments (e.g. for keyboard control of the hero) or to assign your own
+<para>In the &kde; version only, this item allows you to change the keyboard
+assignments (&eg; for keyboard control of the hero) or to assign your own
 shortcut keys for menu items.</para>
 </listitem>
 </varlistentry>
@@ -1125,23 +1134,13 @@ shortcut keys for menu items.</para>
 <title>The <guimenu>Help</guimenu> Menu</title>
 
 <para>In addition to the standard items listed below, &kgoldrunner; has
-the following special entries:</para>
+the following special entry:</para>
 
 <variablelist>
 
 <varlistentry>
-<term><menuchoice><guimenu>Help</guimenu><guimenuitem>
-Tutorial</guimenuitem></menuchoice></term>
-<listitem>
-<para>Starts the Tutorial game, without going through the level selection
-dialog.  At the start of each level there is a text message that tells
-you what to do.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice><guimenu>Help</guimenu><guimenuitem>
-Get Hint</guimenuitem></menuchoice></term>
+<term><menuchoice>
+<guimenu>Help</guimenu><guimenuitem>Get Hint</guimenuitem></menuchoice></term>
 <listitem>
 <para>If the current level has a hint, this option pops it up. The
 option is <quote>grayed out</quote> if there is no hint. The status bar
@@ -1171,8 +1170,8 @@ on every level.</para>
 <title>Creating a Game</title>
 
 <para>Before you create or edit a &kgoldrunner; level, you must create
-a game in which to save it. Use <guimenuitem>
-Create Game</guimenuitem> on the <guimenu>Editor</guimenu> menu. If you
+a game in which to save it. Use <guimenuitem>Create Game</guimenuitem> 
+on the <guimenu>Editor</guimenu> menu. If you
 forget, you will be reminded. </para>
 
 <para>The most important decisions to make when creating a game are to
@@ -1228,7 +1227,7 @@ have no enemies or no bricks.</para>
 <para>Use <guimenuitem>Edit Any Level</guimenuitem> or
 <guimenuitem>Edit Next Level</guimenuitem> on the
 <guimenu>Editor</guimenu> menu to start editing an existing level or use
-<guimenuitem>Create Level</guimenuitem> to start editng a new level.</para>
+<guimenuitem>Create Level</guimenuitem> to start editing a new level.</para>
 
 <para>If you choose
 a System level, you are warned that you will have to save it in one of
@@ -1240,10 +1239,10 @@ it came from, but you can vary that.</para>
 <sect2 id="painting-objects">
 <title>Painting Objects in a Level</title>
 
-<para>The picture below shows the menu bar and the edit toolbar, which
+<para>The picture below shows the menubar and the edit toolbar, which
 appears when you first choose <guimenuitem>Create
 Level</guimenuitem>, <guimenuitem>Edit Any Level</guimenuitem> or
-<guimenuitem>Edit Next</guimenuitem> from the
+<guimenuitem>Edit Next Level</guimenuitem> from the
 <guimenu>Editor</guimenu> menu and so change from Play to Edit
 mode. It disappears when you go back to Play mode. Note also that, in
 Edit mode, false bricks and hidden ladders are made visible in the
@@ -1256,14 +1255,14 @@ Edits</guimenuitem>. The other eleven icons are for editing and
 painting objects in your level. </para>
 
 
-<para>From left to right the other eleven icons are <guiicon>edit name or
-hint (light bulb)</guiicon>, <guiicon>empty space
-(background)</guiicon>, <guiicon>hero</guiicon>,
-<guiicon>enemy</guiicon>, <guiicon>brick (can dig)</guiicon>,
-<guiicon>concrete (cannot dig)</guiicon>, <guiicon>trap or false brick
-(can fall through)</guiicon>, <guiicon>ladder</guiicon>,
-<guiicon>hidden ladder</guiicon>, <guiicon>pole or bar</guiicon> and
-<guiicon>gold nugget</guiicon>.</para>
+<para>From left to right the other eleven icons are <guiicon>Edit Name/Hint
+</guiicon> (light bulb), <guiicon>Empty space</guiicon> (background), 
+<guiicon>Hero</guiicon>,
+<guiicon>Enemy</guiicon>, <guiicon>Brick (can dig)</guiicon>,
+<guiicon>Concrete (cannot dig)</guiicon>, <guiicon>Trap 
+(can fall through)</guiicon>, <guiicon>Ladder</guiicon>,
+<guiicon>Hidden ladder</guiicon>, <guiicon>Pole (or bar)</guiicon> and
+<guiicon>Gold nugget</guiicon>.</para>
 
 <screenshot>
 <screeninfo>Editing a level</screeninfo>
@@ -1275,7 +1274,7 @@ hint (light bulb)</guiicon>, <guiicon>empty space
 </mediaobject>
 </screenshot>
 
-<para>The <guiicon>light bulb</guiicon> icon pops up a dialog in which
+<para>The <guiicon>Edit Name/Hint</guiicon> icon pops up a dialog in which
 you can create or edit your level's name and hint. Both are optional,
 but they are essential for tutorial levels and it is usual to provide
 them with very difficult levels (see the <quote>Vengeance of Peter
@@ -1290,7 +1289,7 @@ single object in a square, or by holding the &LMB; down and dragging
 the mouse, to fill a line or area, such as a long ladder, a large
 block of bricks or a concrete floor. Painting stops wherever you
 release the mouse button. If you make a mistake, you can use the
-<guiicon>empty space</guiicon> icon to erase it.</para>
+<guiicon>Empty space</guiicon> icon to erase it.</para>
 
 <para>The hero icon works differently, because there can be only one
 hero. When you paint the hero, he moves from his previous position to
@@ -1320,12 +1319,12 @@ save it as a copy in one of your own games.</para>
 <title>Adding a Level Name and Hint</title>
 
 <para>On the Save version of the Level Selection Dialog box is a
-button marked <guibutton>Level Name and Hint</guibutton>. You can use
+button marked <guibutton>Edit Level Name &amp; Hint</guibutton>. You can use
 this to put the finishing touches on your level by adding a name and
 hint. Both are optional, but they are essential for tutorial levels
 and it is usual to provide them with very difficult levels (see the
 <quote>Vengeance of Peter W</quote> game). Of course you can also use
-the <guiicon>light bulb</guiicon> icon, at any time, to add or edit a
+the <guiicon>Edit Name/Hint</guiicon> icon, at any time, to add or edit a
 name and hint. </para>
 
 </sect2>
@@ -1609,7 +1608,7 @@ a few years.  It is available as free software in source code form.  Copies
 of the original game are unobtainable now and the machines it ran on are
 going into museums.</para>
 
-<para>Marco Krüger developed KGoldrunner as far as v0.3, out of
+<para>Marco Krüger developed &kgoldrunner; as far as v0.3, out of
 nostalgia for the original Commodore 64 game.  Ian Wadham added
 several features and levels and created the current version.  Ian's
 elder son Peter composed the 100 levels in the "Initiation" game and
@@ -1617,6 +1616,7 @@ the 20 tricky levels in "Vengeance of Peter W".  The other levels
 were composed by Ian, Peter, Marco Krüger and friends and Ian's other
 children, Simon and Genevieve.</para>
 
+<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
 &underFDL;
 &underGPL;
 
@@ -1640,25 +1640,25 @@ children, Simon and Genevieve.</para>
 <appendix id="porting-kgoldrunner">
 <title>Porting &kgoldrunner; to Other Platforms</title>
 
-<para>&kgoldrunner; is written in C++, using Linux and the free-software
-version of the portable Qt object and GUI library.  The current version
-can be compiled and run either with KDE 3 and Qt 3 or with Qt 3 alone.</para>
+<para>&kgoldrunner; is written in C++, using &Linux; and the free-software
+version of the portable &Qt; object and &GUI; library.  The current version
+can be compiled and run either with &kde; 3 and &Qt; 3 or with &Qt; 3 alone.</para>
 
-<para>The Qt-only version of &kgoldrunner; is intended to be almost
-independent of Linux and the KDE desktop.  That means it should be
-fairly easy to port to other operating systems, such as Windows
-and Macintosh, because the Qt library and C++ language are portable
+<para>The &Qt;-only version of &kgoldrunner; is intended to be almost
+independent of &Linux; and the &kde; desktop.  That means it should be
+fairly easy to port to other operating systems, such as &Windows;
+and Macintosh, because the &Qt; library and C++ language are portable
 to other operating systems and the &kgoldrunner; source code is
 available as free software.</para>
 
 <para>If you would like to port &kgoldrunner;, please email
 Ian Wadham at <emphasis>ianw@netspace.net.au</emphasis>, to obtain
-the latest version of the Qt-only code and the Technical Details
+the latest version of the &Qt;-only code and the Technical Details
 document.  Of course, you must have your own C++ development
-setup on your target machine.  Also, the Qt library is
-<emphasis>not</emphasis> free software on Windows and Macintosh,
+setup on your target machine.  Also, the &Qt; library is
+<emphasis>not</emphasis> free software on &Windows; and Macintosh,
 so you will need to have access to a system with a paid
-Qt Development licence.</para>
+&Qt; Development licence.</para>
 
 </appendix>
 
