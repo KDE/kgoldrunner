@@ -2,14 +2,17 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=KGoldrunner
+Name[fr]=KGoldRunner
 Name[x-test]=xxKGoldrunnerxx
 GenericName=Action & Puzzle Solving Game
+GenericName[fr]=Jeu de résolution de puzzle et d'actions
 GenericName[x-test]=xxAction & Puzzle Solving Gamexx
 Type=Application
 Exec=kgoldrunner
 Icon=kgoldrunner
 DocPath=kgoldrunner/index.html
 Comment=A game of action and puzzle-solving
+Comment[fr]=Jeu d'action et de résolution d'énigmes
 Comment[x-test]=xxA game of action and puzzle-solvingxx
 Terminal=false
 Categories=Qt;KDE;Game;ArcadeGame;
