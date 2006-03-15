@@ -2,7 +2,7 @@ kde4_header()
 
 include_directories( ${CMAKE_SOURCE_DIR}/libkdegames ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}  )
 
-
+ADD_DEFINITIONS(-DQT3)
 ########### next target ###############
 
 set(kgoldrunner_SRCS 
@@ -18,7 +18,7 @@ kde4_automoc(${kgoldrunner_SRCS})
 
 kde4_add_executable(kgoldrunner ${kgoldrunner_SRCS})
 
-target_link_libraries(kgoldrunner  ${QT_AND_KDECORE_LIBS} kdeprint )
+target_link_libraries(kgoldrunner  ${LIB_KDEUI} kdegames kdeprint )
 
 install_targets(/bin kgoldrunner )
 

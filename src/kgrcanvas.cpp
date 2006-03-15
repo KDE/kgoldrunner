@@ -37,7 +37,7 @@
 #include <QLabel>
 #include <QList>
 #include <QMouseEvent>
-
+#include <Q3CanvasSprite>
 class KGoldrunner;
 
 KGrCanvas::KGrCanvas (QWidget * parent, const char *name)
