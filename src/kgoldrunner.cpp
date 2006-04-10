@@ -15,7 +15,7 @@
 #include <kmenubar.h>
 #include <kstatusbar.h>
 #include <kkeydialog.h>
-#include <kaccel.h>
+
 #include <kio/netaccess.h>
 #include <kfiledialog.h>
 #include <kconfig.h>
