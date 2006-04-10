@@ -196,8 +196,8 @@ void KGrGame::goUpOneLevel()
 	freeze();
 	KGrMessage::information (view, collection->name,
 	    i18n("<b>CONGRATULATIONS !!!!</b>"
-	    "<p>You have conquered the last level in the %1 game !!</p>")
-	    .arg("<b>\"" + collection->name + "\"</b>"));
+	    "<p>You have conquered the last level in the "
+            "<b>\"%1\"</b> game !!</p>", collection->name));
 	checkHighScore();	// Check if there is a high score for this game.
 
 	unfreeze();
@@ -389,9 +389,9 @@ void KGrGame::startTutorial()
     }
     else {
 	KGrMessage::information (view, i18n("Start Tutorial"),
-	    i18n("Cannot find the tutorial game (file-prefix %1) in "
-	    "the %2 files.")
-	    .arg("'tute'").arg("'games.dat'"));
+	    i18n("Cannot find the tutorial game (file-prefix '%1') in "
+	    "the '%2' files.",
+	    QString("tute"), QString("games.dat")));
     }
 }
 
@@ -520,15 +520,15 @@ bool KGrGame::openLevelFile (int levelNo, QFile & openlevel)
   if (! openlevel.exists()) {
       KGrMessage::information (view, i18n("Load Level"),
 	    i18n("Cannot find file '%1'. Please make sure '%2' has been "
-	    "run in the '%3' folder.")
-	    .arg(filePath).arg("tar xf levels.tar").arg(systemDataDir.myStr()));
+	    "run in the '%3' folder.",
+	     filePath, "tar xf levels.tar", systemDataDir.myStr()));
       return (FALSE);
   }
 
   // öffne Level zum lesen
   if (! openlevel.open (QIODevice::ReadOnly)) {
       KGrMessage::information (view, i18n("Load Level"),
-	    i18n("Cannot open file '%1' for read-only.").arg(filePath));
+	    i18n("Cannot open file '%1' for read-only.", filePath));
       return (FALSE);
   }
 
@@ -776,7 +776,8 @@ void KGrGame::saveGame()		// Save game ID, score and level.
 {
     if (editMode) {myMessage (view, i18n("Save Game"),
 	i18n("Sorry, you cannot save your game play while you are editing. "
-	"Please try menu item %1.").arg("\"" + i18n("&Save Edits...") + "\""));
+	"Please try menu item \"%1\".",
+        i18n("&Save Edits...")));
 	return;
     }
     if (hero->started) {myMessage (view, i18n("Save Game"),
@@ -806,8 +807,8 @@ void KGrGame::saveGame()		// Save game ID, score and level.
 
     if (! file2.open (QIODevice::WriteOnly)) {
 	KGrMessage::information (view, i18n("Save Game"),
-		i18n("Cannot open file '%1' for output.")
-		.arg(userDataDir + "savegame.tmp"));
+		i18n("Cannot open file '%1' for output.",
+		 userDataDir + "savegame.tmp"));
 	return;
     }
     QTextStream text2 (&file2);
@@ -816,8 +817,8 @@ void KGrGame::saveGame()		// Save game ID, score and level.
     if (file1.exists()) {
 	if (! file1.open (QIODevice::ReadOnly)) {
 	    KGrMessage::information (view, i18n("Save Game"),
-		i18n("Cannot open file '%1' for read-only.")
-		.arg(userDataDir + "savegame.dat"));
+		i18n("Cannot open file '%1' for read-only.",
+		 userDataDir + "savegame.dat"));
 	    return;
 	}
 
@@ -854,8 +855,8 @@ void KGrGame::loadGame()		// Re-load game, score and level.
 
     if (! savedGames.open (QIODevice::ReadOnly)) {
 	KGrMessage::information (view, i18n("Load Game"),
-	    i18n("Cannot open file '%1' for read-only.")
-	    .arg(userDataDir + "savegame.dat"));
+	    i18n("Cannot open file '%1' for read-only.",
+	     userDataDir + "savegame.dat"));
 	return;
     }
 
@@ -906,7 +907,7 @@ void KGrGame::loadGame()		// Re-load game, score and level.
 	}
 	else {
 	    KGrMessage::information (view, i18n("Load Game"),
-		i18n("Cannot find the game with prefix '%1'.").arg(pr));
+		i18n("Cannot find the game with prefix '%1'.", pr));
 	}
     }
 
@@ -954,7 +955,7 @@ void KGrGame::checkHighScore()
 	if (! high1.open (QIODevice::ReadOnly)) {
 	    QString high1_name = high1.name();
 	    KGrMessage::information (view, i18n("Check for High Score"),
-		i18n("Cannot open file '%1' for read-only.").arg(high1_name));
+		i18n("Cannot open file '%1' for read-only.", high1_name));
 	    return;
 	}
 
@@ -993,8 +994,8 @@ void KGrGame::checkHighScore()
 
     if (! high2.open (QIODevice::WriteOnly)) {
 	KGrMessage::information (view, i18n("Check for High Score"),
-		i18n("Cannot open file '%1' for output.")
-		.arg(userDataDir + "hi_" + collection->prefix + ".tmp"));
+		i18n("Cannot open file '%1' for output.",
+		 userDataDir + "hi_" + collection->prefix + ".tmp"));
 	return;
     }
 
@@ -1138,8 +1139,8 @@ void KGrGame::showHighScores()
 	high1.setName (systemDataDir + "hi_" + collection->prefix + ".dat");
 	if (! high1.exists()) {
 	    KGrMessage::information (view, i18n("Show High Scores"),
-		    i18n("Sorry, there are no high scores for the %1 game yet.")
-		    .arg("\"" + collection->name + "\""));
+		    i18n("Sorry, there are no high scores for the \"%1\" game yet.",
+		         collection->name));
 	    return;
 	}
     }
@@ -1147,7 +1148,7 @@ void KGrGame::showHighScores()
     if (! high1.open (QIODevice::ReadOnly)) {
 	QString high1_name = high1.name();
 	KGrMessage::information (view, i18n("Show High Scores"),
-	    i18n("Cannot open file '%1' for read-only.").arg(high1_name));
+	    i18n("Cannot open file '%1' for read-only.", high1_name));
 	return;
     }
 
@@ -1160,8 +1161,8 @@ void KGrGame::showHighScores()
 
     QLabel *		hsHeader = new QLabel (i18n (
 					"<center><h2>KGoldrunner Hall of Fame</h2></center><br>"
-					"<center><h3>\"%1\" Game</h3></center>")
-					.arg(collection->name),
+					"<center><h3>\"%1\" Game</h3></center>",
+					 collection->name),
 			hs);
     QLabel *		hsColHeader  = new QLabel (
 				i18n("    Name                          "
@@ -1593,7 +1594,7 @@ bool KGrGame::saveLevelFile()
     // Open the output file.
     if (! levelFile.open (QIODevice::WriteOnly)) {
 	KGrMessage::information (view, i18n("Save Level"),
-		i18n("Cannot open file '%1' for output.").arg(filePath));
+		i18n("Cannot open file '%1' for output.", filePath));
 	return (FALSE);
     }
 
@@ -1650,9 +1651,8 @@ void KGrGame::moveLevelFile ()
     if (level <= 0) {
 	KGrMessage::information (view, i18n("Move Level"),
 		i18n("You must first load a level to be moved. Use "
-		"the %1 or %2 menu.")
-		.arg("\"" + i18n("Game") + "\"")
-		.arg("\"" + i18n("Editor") + "\""));
+		     "the \"%1\" or \"%2\" menu.",
+                     i18n("Game"), i18n("Editor")));
 	return;
     }
 
@@ -1789,7 +1789,7 @@ void KGrGame::deleteLevelFile ()
     }
     else {
 	KGrMessage::information (view, i18n("Delete Level"),
-		i18n("Cannot find file '%1' to be deleted.").arg(filePath));
+		i18n("Cannot find file '%1' to be deleted.", filePath));
 	return;
     }
 
@@ -1891,8 +1891,8 @@ void KGrGame::editCollection (int action)
 
 	    if (duplicatePrefix) {
 		KGrMessage::information (view, i18n("Save Game Info"),
-		    i18n("The filename prefix '%1' is already in use.")
-		    .arg(ecPrefix));
+		    i18n("The filename prefix '%1' is already in use.",
+		     ecPrefix));
 		continue;
 	    }
 	}
@@ -2069,8 +2069,8 @@ bool KGrGame::reNumberLevels (int cIndex, int first, int last, int inc)
 	file2 = getFilePath (USER, collections.at(cIndex), i - step);
 	if (! dir.rename (file1, file2)) {	// Allow absolute paths.
 	    KGrMessage::information (view, i18n("Save Level"),
-		i18n("Cannot rename file '%1' to '%2'.")
-		.arg(file1).arg(file2));
+		i18n("Cannot rename file '%1' to '%2'.",
+		 file1, file2));
 	    return (FALSE);
 	}
 	i = i + step;
@@ -2189,9 +2189,9 @@ int KGrGame::selectLevel (int action, int requestedLevel)
 	    (action != SL_MOVE) && (action != SL_UPD_GAME)) {
 	    KGrMessage::information (view, i18n("Select Level"),
 		i18n("There is no level %1 in %2, "
-		"so you cannot play or edit it.")
-		.arg(selectedLevel)
-		.arg("\"" + collections.at(selectedGame)->name + "\""));
+		"so you cannot play or edit it.",
+		 selectedLevel,
+		 "\"" + collections.at(selectedGame)->name + "\""));
 	    selectedLevel = 0;			// Set an invalid selection.
 	    continue;				// Re-run the dialog box.
 	}
@@ -2380,11 +2380,11 @@ void KGrGame::mapCollections()
 		KGrMessage::information (view, i18n("Check Games & Levels"),
 			i18n("There is no folder '%1' to hold levels for"
 			" the '%2' game. Please make sure '%3' "
-			"has been run in the '%4' folder.")
-			.arg(d_path)
-			.arg(colln->name)
-			.arg("tar xf levels.tar")
-			.arg(systemDataDir));
+			"has been run in the '%4' folder.",
+			 d_path,
+			 colln->name,
+			 "tar xf levels.tar",
+			 systemDataDir));
 	    }
 	    continue;
 	}
@@ -2394,10 +2394,10 @@ void KGrGame::mapCollections()
 
 	if ((files.count() <= 0) && (colln->nLevels > 0)) {
 	    KGrMessage::information (view, i18n("Check Games & Levels"),
-		i18n("There are no files '%1/%2???.grl' for the %3 game.")
-		.arg(d_path)
-		.arg(colln->prefix)
-		.arg("\"" + colln->name + "\""));
+		i18n("There are no files '%1/%2???.grl' for the %3 game.",
+		 d_path,
+		 colln->prefix,
+		 "\"" + colln->name + "\""));
 	    continue;
 	}
 
@@ -2419,9 +2419,9 @@ void KGrGame::mapCollections()
 		    KGrMessage::information (view,
 			i18n("Check Games & Levels"),
 			i18n("File '%1' is beyond the highest level for "
-			"the %2 game and cannot be played.")
-			.arg(fileName1)
-			.arg("\"" + colln->name + "\""));
+			"the %2 game and cannot be played.",
+			 fileName1,
+			 "\"" + colln->name + "\""));
 		    break;
 		}
 		else if (fileName1 == fileName2) {
@@ -2432,17 +2432,17 @@ void KGrGame::mapCollections()
 		    KGrMessage::information (view,
 			i18n("Check Games & Levels"),
 			i18n("File '%1' is before the lowest level for "
-			"the %2 game and cannot be played.")
-			.arg(fileName1)
-			.arg("\"" + colln->name + "\""));
+			"the %2 game and cannot be played.",
+			 fileName1,
+			 "\"" + colln->name + "\""));
 		    break;
 		}
 		else {
 		    KGrMessage::information (view,
 			i18n("Check Games & Levels"),
-			i18n("Cannot find file '%1' for the %2 game.")
-			.arg(fileName2)
-			.arg("\"" + colln->name + "\""));
+			i18n("Cannot find file '%1' for the %2 game.",
+			 fileName2,
+			 "\"" + colln->name + "\""));
 		    lev++;
 		}
 	    }
@@ -2462,15 +2462,15 @@ bool KGrGame::loadCollections (Owner o)
 	// If the user has not yet created a collection, don't worry.
 	if (o == SYSTEM) {
 	    KGrMessage::information (view, i18n("Load Game Info"),
-		i18n("Cannot find game info file '%1'.")
-		.arg(filePath));
+		i18n("Cannot find game info file '%1'.",
+		 filePath));
 	}
 	return (FALSE);
     }
 
     if (! c.open (QIODevice::ReadOnly)) {
 	KGrMessage::information (view, i18n("Load Game Info"),
-	    i18n("Cannot open file '%1' for read-only.").arg(filePath));
+	    i18n("Cannot open file '%1' for read-only.", filePath));
 	return (FALSE);
     }
 
@@ -2518,8 +2518,8 @@ bool KGrGame::loadCollections (Owner o)
 	    else if (ch >= 0) {
 		// Not EOF: it's an empty line or out-of-context "about" line.
 		KGrMessage::information (view, i18n("Load Game Info"),
-		    i18n("Format error in game info file '%1'.")
-		    .arg(filePath));
+		    i18n("Format error in game info file '%1'.",
+		     filePath));
 		c.close();
 		return (FALSE);
 	    }
@@ -2548,7 +2548,7 @@ bool KGrGame::saveCollections (Owner o)
     // Open the output file.
     if (! c.open (QIODevice::WriteOnly)) {
 	KGrMessage::information (view, i18n("Save Game Info"),
-		i18n("Cannot open file '%1' for output.").arg(filePath));
+		i18n("Cannot open file '%1' for output.", filePath));
 	return (FALSE);
     }
 

@@ -577,10 +577,10 @@ void KGoldrunner::gameFreeze (bool on_off)
 {
     if (on_off)
 	statusBar()->changeItem
-		    (i18n("Press \"%1\" to RESUME").arg(pauseKeys), ID_MSG);
+		    (i18n("Press \"%1\" to RESUME", pauseKeys), ID_MSG);
     else
 	statusBar()->changeItem
-		    (i18n("Press \"%1\" to PAUSE").arg(pauseKeys), ID_MSG);
+		    (i18n("Press \"%1\" to PAUSE", pauseKeys), ID_MSG);
 }
 
 void KGoldrunner::adjustHintAction (bool hintAvailable)
@@ -853,8 +853,8 @@ bool KGoldrunner::getDirectories()
     if (systemHTMLDir.length() <= 0) {
 	KGrMessage::information (this, i18n("Get Folders"),
 	i18n("Cannot find documentation sub-folder 'en/%1/' "
-	"in area '%2' of the KDE folder ($KDEDIRS).")
-	.arg(myDir).arg(dirs->kde_default ("html")));
+	"in area '%2' of the KDE folder ($KDEDIRS).",
+	 myDir, dirs->kde_default ("html")));
 	// result = FALSE;		// Don't abort if the doc is missing.
     }
     else
@@ -865,8 +865,8 @@ bool KGoldrunner::getDirectories()
     if (systemDataDir.length() <= 0) {
 	KGrMessage::information (this, i18n("Get Folders"),
 	i18n("Cannot find system games sub-folder '%1/system/' "
-	"in area '%2' of the KDE folder ($KDEDIRS).")
-	.arg(myDir).arg(dirs->kde_default ("data")));
+	"in area '%2' of the KDE folder ($KDEDIRS).",
+	 myDir, dirs->kde_default ("data")));
 	result = FALSE;			// ABORT if the games data is missing.
     }
     else
@@ -878,8 +878,8 @@ bool KGoldrunner::getDirectories()
     if (userDataDir.length() <= 0) {
 	KGrMessage::information (this, i18n("Get Folders"),
 	i18n("Cannot find or create user games sub-folder '%1/user/' "
-	"in area '%2' of the KDE user area ($KDEHOME).")
-	.arg(myDir).arg(dirs->kde_default ("data")));
+	"in area '%2' of the KDE user area ($KDEHOME).",
+	 myDir, dirs->kde_default ("data")));
 	// result = FALSE;		// Don't abort if user area is missing.
     }
     else {
@@ -887,7 +887,7 @@ bool KGoldrunner::getDirectories()
 	if (! create) {
 	    KGrMessage::information (this, i18n("Get Folders"),
 	    i18n("Cannot find or create 'levels/' folder in "
-	    "sub-folder '%1/user/' in the KDE user area ($KDEHOME).").arg(myDir));
+	    "sub-folder '%1/user/' in the KDE user area ($KDEHOME).", myDir));
 	    // result = FALSE;		// Don't abort if user area is missing.
 	}
     }

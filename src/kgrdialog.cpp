@@ -353,10 +353,10 @@ void KGrSLDialog::slColln (int i)
 #ifndef KGR_PORTABLE
     int levCnt = collections.at(n)->nLevels;
     if (collections.at(n)->settings == 'K')
-	collnD->setText (i18n("1 level, uses KGoldrunner rules.",
+	collnD->setText (i18np("1 level, uses KGoldrunner rules.",
 				"%n levels, uses KGoldrunner rules.", levCnt));
     else
-	collnD->setText (i18n("1 level, uses Traditional rules.",
+	collnD->setText (i18np("1 level, uses Traditional rules.",
 				"%n levels, uses Traditional rules.", levCnt));
 #else
     QString levCnt;
@@ -373,7 +373,7 @@ void KGrSLDialog::slAboutColln ()
 {
     // User clicked the "About" button ...
     int		n = slCollnIndex;
-    QString	title = i18n("About \"%1\"").arg(collections.at(n)->name);
+    QString	title = i18n("About \"%1\"", collections.at(n)->name);
 
     if (collections.at(n)->about.length() > 0) {
 	// Convert game description to ASCII and UTF-8 codes, then translate it.
@@ -689,11 +689,11 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
 	}
 	QString		s;
 #ifndef KGR_PORTABLE
-	nLevL->		setText (i18n("1 level", "%n levels",
+	nLevL->		setText (i18np("1 level", "%n levels",
 					collections.at(defaultGame)->nLevels));
 #else
-	nLevL->		setText (i18n("%1 levels")
-				.arg(collections.at(defaultGame)->nLevels));
+	nLevL->		setText (i18n("%1 levels",
+				 collections.at(defaultGame)->nLevels));
 #endif
 	OKText = i18n("Save Changes");
     }
