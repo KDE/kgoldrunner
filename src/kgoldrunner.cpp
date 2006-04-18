@@ -762,7 +762,7 @@ void KGoldrunner::optionsShowStatusbar()
 void KGoldrunner::optionsConfigureKeys()
 {
     KKeyDialog::configure(actionCollection());
-
+	
     // Update the PAUSE/RESUME message in the status bar.
     pauseKeys = myPause->shortcut().toString();
     pauseKeys = pauseKeys.replace (';', "\" " + i18n("or") + " \"");
