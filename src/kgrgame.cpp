@@ -927,8 +927,8 @@ void KGrGame::loadGame()		// Re-load game, score and level.
 void KGrGame::checkHighScore()
 {
     bool	prevHigh  = TRUE;
-    Q_INT16	prevLevel = 0;
-    Q_INT32	prevScore = 0;
+    qint16	prevLevel = 0;
+    qint32	prevScore = 0;
     QString	thisUser  = i18n("Unknown");
     int		highCount = 0;
 
@@ -1072,8 +1072,8 @@ void KGrGame::checkHighScore()
 		// Recode the user's name as UTF-8, in case it contains
 		// non-ASCII chars (e.g. "Krüger" is encoded as "KrÃ¼ger").
 		s2 << (const char *) thisUser.utf8();
-		s2 << (Q_INT16) level;
-		s2 << (Q_INT32) score;
+		s2 << (qint16) level;
+		s2 << (qint32) score;
 		s2 << hsDate.myStr();
 		scoreRecorded = TRUE;
 	    }
@@ -1091,8 +1091,8 @@ void KGrGame::checkHighScore()
 	    // Recode the user's name as UTF-8, in case it contains
 	    // non-ASCII chars (e.g. "Krüger" is encoded as "KrÃ¼ger").
 	    s2 << (const char *) thisUser.utf8();
-	    s2 << (Q_INT16) level;
-	    s2 << (Q_INT32) score;
+	    s2 << (qint16) level;
+	    s2 << (qint32) score;
 	    s2 << hsDate.myStr();
 	}
 	high1.close();
@@ -1101,8 +1101,8 @@ void KGrGame::checkHighScore()
 	// Recode the user's name as UTF-8, in case it contains
 	// non-ASCII chars (e.g. "Krüger" is encoded as "KrÃ¼ger").
 	s2 << (const char *) thisUser.utf8();
-	s2 << (Q_INT16) level;
-	s2 << (Q_INT32) score;
+	s2 << (qint16) level;
+	s2 << (qint32) score;
 	s2 << hsDate.myStr();
     }
 
@@ -1127,8 +1127,8 @@ void KGrGame::showHighScores()
 	return;
     }
 
-    Q_INT16	prevLevel = 0;
-    Q_INT32	prevScore = 0;
+    qint16	prevLevel = 0;
+    qint32	prevScore = 0;
     int		n = 0;
 
     // Look for user's high-score file or for a released high-score file.

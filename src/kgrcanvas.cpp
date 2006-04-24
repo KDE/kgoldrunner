@@ -135,7 +135,7 @@ bool KGrCanvas::changeSize (int d)
 	wmScale = (wmScale * scaleStep) / STEP;
 	wm.scale (wmScale, wmScale);
     }
-    setWorldMatrix (wm);
+    setMatrix (wm);
 
     // Force the title size and position to be re-calculated.
     QString t = title->text();

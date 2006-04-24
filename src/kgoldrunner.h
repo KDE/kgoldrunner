@@ -25,6 +25,7 @@ const int L_LEVEL       = 15;
 #include <kstandarddirs.h>
 #include <kaction.h>
 
+class KRadioAction;
 class KGrGame;
 class KGrCanvas;
 class KGrHero;
