@@ -17,7 +17,7 @@
 // "endData" checks for an end-of-file condition.
 //
 #define myStr		latin1
-#define myChar(i)	at((i)).latin1()
+#define myChar(i)	at((i)).toLatin1()
 #define endData		atEnd
 
 #include <qobject.h>
