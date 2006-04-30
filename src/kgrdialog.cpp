@@ -947,9 +947,9 @@ void KGrMessage::wrapped (QWidget * parent, QString title, QString contents)
     // Make text background grey not white (i.e. same as widget background).
     QPalette		pl = mm->palette();
 #ifdef QT3
-    pl.setColor (QColorGroup::Base, mm->paletteBackgroundColor());
+    pl.setColor (QPalette::Base, mm->paletteBackgroundColor());
 #else
-    pl.setColor (QColorGroup::Base, mm->backgroundColor());
+    pl.setColor (QPalette::Base, mm->backgroundColor());
 #endif
     mm->		setPalette (pl);
 
