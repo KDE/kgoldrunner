@@ -26,8 +26,6 @@ noinst_HEADERS = enemy1.xpm enemy2.xpm hero.xpm kgoldrunner.h kgrcanvas.h kgrcon
 # let automoc handle all of the meta source files (moc)
 METASOURCES = AUTO
 
-messages: rc.cpp
-	$(XGETTEXT) *.cpp -o $(podir)/kgoldrunner.pot
 
 KDE_ICON = kgoldrunner
 
