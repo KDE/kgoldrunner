@@ -66,7 +66,9 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     QWidget * dad	= plainPage();
 #endif
 
-    QVBoxLayout * mainLayout = new QVBoxLayout (dad, margin, spacing);
+    QVBoxLayout * mainLayout = new QVBoxLayout (dad);
+    mainLayout->setSpacing(spacing);
+    mainLayout->setMargin(margin);
 
     collnL    = new QLabel (i18n("List of games:"), dad);
     mainLayout->addWidget (collnL);
@@ -523,7 +525,9 @@ KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
     QWidget * dad	= plainPage();
 #endif
 
-    QVBoxLayout * mainLayout = new QVBoxLayout (dad, margin, spacing);
+    QVBoxLayout * mainLayout = new QVBoxLayout (dad);
+    mainLayout->setSpacing(spacing);
+    mainLayout->setMargin(margin);
 
     QLabel *		nameL  = new QLabel (i18n("Name of level:"), dad);
     mainLayout->addWidget (nameL);
@@ -616,7 +620,9 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
     QWidget * dad	= plainPage();
 #endif
 
-    QVBoxLayout * mainLayout = new QVBoxLayout (dad, margin, spacing);
+    QVBoxLayout * mainLayout = new QVBoxLayout (dad);
+    mainLayout->setSpacing(spacing);
+    mainLayout->setMargin(margin);
 
     QWidget * nameBox = new QWidget(dad);
     QHBoxLayout *hboxLayout5 = new QHBoxLayout(nameBox);
@@ -796,7 +802,9 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
     QWidget * dad	= plainPage();
 #endif
 
-    QVBoxLayout *	mainLayout = new QVBoxLayout (dad, margin, spacing);
+    QVBoxLayout *	mainLayout = new QVBoxLayout (dad);
+    mainLayout->setSpacing(spacing);
+    mainLayout->setMargin(margin);
 
     QLabel *		lgHeader = new QLabel (
 			i18n("Game                       Level/Lives/Score   "
@@ -942,7 +950,9 @@ void KGrMessage::wrapped (QWidget * parent, QString title, QString contents)
 
     int margin = 10;
     int spacing = 10;
-    QVBoxLayout * mainLayout = new QVBoxLayout (mm, margin, spacing);
+    QVBoxLayout * mainLayout = new QVBoxLayout (mm);
+    mainLayout->setSpacing(spacing);
+    mainLayout->setMargin(margin);
 
     // Make text background grey not white (i.e. same as widget background).
     QPalette		pl = mm->palette();
