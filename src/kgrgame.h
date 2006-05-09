@@ -27,14 +27,14 @@
 #else
 #include <qlist.h>
 #endif
-#include <qstring.h>
+#include <QString>
 
-#include <qdir.h>
-#include <qfile.h>
+#include <QDir>
+#include <QFile>
 #include <qtextstream.h>
-#include <qdatastream.h>
+#include <QDataStream>
 
-#include <qcolor.h>
+#include <QColor>
 //Added by qt3to4:
 #include <QPixmap>
 #include <QLabel>

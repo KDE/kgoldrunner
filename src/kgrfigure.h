@@ -26,7 +26,7 @@
 #include <qpainter.h>
 #include <qpixmap.h>
 #include <qtimer.h>
-#include <qwidget.h>
+#include <QWidget>
 #include <stdlib.h> // für Zufallsfunktionen
 
 class KGrCanvas;

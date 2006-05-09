@@ -24,7 +24,7 @@
 
 #include <qcursor.h>
 #include <q3canvas.h>
-#include <qlabel.h>
+#include <QLabel>
 #include <qimage.h>
 #include <qpainter.h>
 //Added by qt3to4:

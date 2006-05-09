@@ -25,13 +25,13 @@
 #include <kmessagebox.h>
 #endif
 
-#include <qlayout.h>
+#include <QLayout>
 
 #include <q3listbox.h>
 #include <qscrollbar.h>
-#include <qlineedit.h>
+#include <QLineEdit>
 #include <q3hbox.h>
-#include <qpushbutton.h>
+#include <QPushButton>
 #include <q3buttongroup.h>
 #include <qradiobutton.h>
 #ifdef QT3
@@ -185,7 +185,7 @@ private:
 ***************  DIALOG TO SELECT A SAVED GAME TO BE RE-LOADED  ****************
 *******************************************************************************/
 
-#include <qfile.h>
+#include <QFile>
 #include <qtextstream.h>
 
 class KGrLGDialog : public KGR_DIALOG	// KGR_PORTABLE sets QDialog/KDialogBase
