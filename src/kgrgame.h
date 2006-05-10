@@ -20,7 +20,7 @@
 #define myChar(i)	at((i)).toLatin1()
 #define endData		atEnd
 
-#include <qobject.h>
+#include <QObject>
 
 #ifdef QT3
 #include <q3ptrlist.h>

@@ -21,7 +21,7 @@
 // Obsolete - #include <iostream.h>
 #include <iostream>
 
-#include <qtimer.h>
+#include <QTimer>
 #include <stdlib.h> // for random
 
 class KGrCanvas;

@@ -25,7 +25,7 @@
 #endif
 #include <qpainter.h>
 #include <qpixmap.h>
-#include <qtimer.h>
+#include <QTimer>
 #include <QWidget>
 #include <stdlib.h> // für Zufallsfunktionen
 
