@@ -1,4 +1,3 @@
-kde4_header()
 
 
 
@@ -7,7 +6,6 @@ kde4_header()
 
 install_files( ${DATA_INSTALL_DIR}/kgoldrunner/system FILES games.dat hi_level.dat hi_plws.dat hi_plwv.dat hi_wad.dat )
 
-kde4_footer()
 
 
 
