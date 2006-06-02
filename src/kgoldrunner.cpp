@@ -111,7 +111,8 @@ KGoldrunner::KGoldrunner()
     if (dw > 1024) {			// More than 1024x768.
 	view->changeSize (+1);
 	view->changeSize (+1);		// Scale 1.75:1.
-	setUsesBigPixmaps (TRUE);	// Use big toolbar buttons.
+#warning Temporarily commented out to enable compilation! Port it!
+	//setUsesBigPixmaps (TRUE);	// Use big toolbar buttons.
     }
     view->setBaseScale();		// Set scale for level-names.
 #endif
@@ -119,13 +120,17 @@ KGoldrunner::KGoldrunner()
 
     makeEditToolbar();			// Uses pixmaps from "view".
     editToolbar->hide();
+#warning Temporarily commented out to enable compilation! Port it!
+    /* 
     setDockEnabled (Qt::DockBottom, FALSE);
     setDockEnabled (Qt::DockLeft, FALSE);
     setDockEnabled (Qt::DockRight, FALSE);
+     */
 
     // Make it impossible to turn off the editor toolbar.
     // Accidentally hiding it would make editing impossible.
-    setDockMenuEnabled (FALSE);
+#warning Temporarily commented out to enable compilation! Port it!
+    //setDockMenuEnabled (FALSE);
 
     // Set mouse control of the hero as the default.
     game->setMouseMode (TRUE);
@@ -1034,6 +1039,8 @@ void KGoldrunner::makeEditToolbar()
     QPixmap edherobg	= view->getPixmap (HERO);
     QPixmap edenemybg	= view->getPixmap (ENEMY);
 
+#warning Temporarily commented out to enable compilation! Port it!
+    /* 
     if (usesBigPixmaps()) {	// Scale up the pixmaps (to give cleaner looking
 				// icons than leaving it for QToolButton to do).
 	QMatrix w;
@@ -1059,6 +1066,7 @@ void KGoldrunner::makeEditToolbar()
 	edherobg		= edherobg.transformed (w);
 	edenemybg		= edenemybg.transformed (w);
     }
+     */
 
     editToolbar = new KToolBar ("Editor", this, Qt::TopToolBarArea, true, true);
 
@@ -1090,49 +1098,81 @@ void KGoldrunner::makeEditToolbar()
     editToolbar->addSeparator();
     editToolbar->addSeparator();
 
-    editToolbar->insertButton (freebg,    (int)FREE,    SIGNAL(clicked()), this,
-		SLOT(freeSlot()),     TRUE,  i18n("Empty space"));
-    editToolbar->insertSeparator();
-    editToolbar->insertButton (edherobg,  (int)HERO,    SIGNAL(clicked()), this,
-		SLOT (edheroSlot()),  TRUE,  i18n("Hero"));
-    editToolbar->insertSeparator();
-    editToolbar->insertButton (edenemybg, (int)ENEMY,   SIGNAL(clicked()), this,
-		SLOT (edenemySlot()), TRUE,  i18n("Enemy"));
-    editToolbar->insertSeparator();
-    editToolbar->insertButton (brickbg,   (int)BRICK,   SIGNAL(clicked()), this,
-		SLOT (brickSlot()),   TRUE,  i18n("Brick (can dig)"));
-    editToolbar->insertSeparator();
-    editToolbar->insertButton (betonbg,   (int)BETON,   SIGNAL(clicked()), this,
-		SLOT (betonSlot()),   TRUE,  i18n("Concrete (cannot dig)"));
-    editToolbar->insertSeparator();
-    editToolbar->insertButton (fbrickbg,  (int)FBRICK,  SIGNAL(clicked()), this,
-		SLOT (fbrickSlot()),  TRUE,  i18n("Trap (can fall through)"));
-    editToolbar->insertSeparator();
-    editToolbar->insertButton (ladderbg,  (int)LADDER,  SIGNAL(clicked()), this,
-		SLOT (ladderSlot()),  TRUE,  i18n("Ladder"));
-    editToolbar->insertSeparator();
-    editToolbar->insertButton (hladderbg, (int)HLADDER, SIGNAL(clicked()), this,
-		SLOT (hladderSlot()), TRUE,  i18n("Hidden ladder"));
-    editToolbar->insertSeparator();
-    editToolbar->insertButton (polebg,    (int)POLE,    SIGNAL(clicked()), this,
-		SLOT (poleSlot()),    TRUE,  i18n("Pole (or bar)"));
-    editToolbar->insertSeparator();
-    editToolbar->insertButton (nuggetbg,  (int)NUGGET,  SIGNAL(clicked()), this,
-		SLOT (nuggetSlot()),  TRUE,  i18n("Gold nugget"));
+    KToggleAction* freebgAct = new KToggleAction( KIcon(freebg), i18n("Empty space"), actionCollection(), "freebg" );
+    connect( freebgAct, SIGNAL(triggered(bool)), this, SLOT(freeSlot()) );
+    editToolbar->addAction( freebgAct );
 
-    editToolbar->setToggle ((int) FREE,    TRUE);
-    editToolbar->setToggle ((int) HERO,    TRUE);
-    editToolbar->setToggle ((int) ENEMY,   TRUE);
-    editToolbar->setToggle ((int) BRICK,   TRUE);
-    editToolbar->setToggle ((int) BETON,   TRUE);
-    editToolbar->setToggle ((int) FBRICK,  TRUE);
-    editToolbar->setToggle ((int) LADDER,  TRUE);
-    editToolbar->setToggle ((int) HLADDER, TRUE);
-    editToolbar->setToggle ((int) POLE,    TRUE);
-    editToolbar->setToggle ((int) NUGGET,  TRUE);
+    editToolbar->addSeparator();
 
-    pressedButton = (int) BRICK;
-    editToolbar->setButton (pressedButton, TRUE);
+    KToggleAction* edherobgAct = new KToggleAction( KIcon(edherobg), i18n("Hero"), actionCollection(), "edherobg" );
+    connect( edherobgAct, SIGNAL(triggered(bool)), this, SLOT(edheroSlot()) );
+    editToolbar->addAction( edherobgAct );
+
+    editToolbar->addSeparator();
+
+    KToggleAction* edenemybgAct = new KToggleAction( KIcon(edenemybg), i18n("Enemy"), actionCollection(), "edenemybg" );
+    connect( edenemybgAct, SIGNAL(triggered(bool)), this, SLOT(edenemySlot()) );
+    editToolbar->addAction( edenemybgAct );
+
+    editToolbar->addSeparator();
+
+    KToggleAction* brickbgAct = new KToggleAction( KIcon(brickbg), i18n("Brick (can dig)"), actionCollection(), "brickbg" );
+    connect( brickbgAct, SIGNAL(triggered(bool)), this, SLOT(brickSlot()) );
+    editToolbar->addAction( brickbgAct );
+
+    editToolbar->addSeparator();
+
+    KToggleAction* betonbgAct = new KToggleAction( KIcon(betonbg), i18n("Concrete (cannot dig)"), actionCollection(), "betonbg" );
+    connect( betonbgAct, SIGNAL(triggered(bool)), this, SLOT(betonSlot()) );
+    editToolbar->addAction( betonbgAct );
+
+    editToolbar->addSeparator();
+
+    KToggleAction* fbrickbgAct = new KToggleAction( KIcon(fbrickbg), i18n("Trap (can fall through)"), actionCollection(), "fbrickbg" );
+    connect( fbrickbgAct, SIGNAL(triggered(bool)), this, SLOT(fbrickSlot()) );
+    editToolbar->addAction( fbrickbgAct );
+
+    editToolbar->addSeparator();
+
+    KToggleAction* ladderbgAct = new KToggleAction( KIcon(ladderbg), i18n("Ladder"), actionCollection(), "ladderbg" );
+    connect( ladderbgAct, SIGNAL(triggered(bool)), this, SLOT(ladderSlot()) );
+    editToolbar->addAction( ladderbgAct );
+
+    editToolbar->addSeparator();
+
+    KToggleAction* hladderbgAct = new KToggleAction( KIcon(hladderbg), i18n("Hidden ladder"), actionCollection(), "hladderbg" );
+    connect( hladderbgAct, SIGNAL(triggered(bool)), this, SLOT(hladderSlot()) );
+    editToolbar->addAction( hladderbgAct );
+
+    editToolbar->addSeparator();
+
+    KToggleAction* polebgAct = new KToggleAction( KIcon(polebg), i18n("Pole (or bar)"), actionCollection(), "polebg" );
+    connect( polebgAct, SIGNAL(triggered(bool)), this, SLOT(poleSlot()) );
+    editToolbar->addAction( polebgAct );
+
+    editToolbar->addSeparator();
+
+    KToggleAction* nuggetbgAct = new KToggleAction( KIcon(nuggetbg), i18n("Gold nugget"), actionCollection(), "nuggetbg" );
+    connect( nuggetbgAct, SIGNAL(triggered(bool)), this, SLOT(nuggetSlot()) );
+    editToolbar->addAction( nuggetbgAct );
+
+    QActionGroup* editButtons = new QActionGroup(this);
+    editButtons->setExclusive(true);
+    editButtons->addAction( freebgAct );
+    editButtons->addAction( edherobgAct );
+    editButtons->addAction( edenemybgAct );
+    editButtons->addAction( brickbgAct );
+    editButtons->addAction( betonbgAct );
+    editButtons->addAction( fbrickbgAct );
+    editButtons->addAction( ladderbgAct );
+    editButtons->addAction( hladderbgAct );
+    editButtons->addAction( polebgAct );
+    editButtons->addAction( nuggetbgAct );
+
+    brickbgAct->setChecked(true);
+    m_defaultEditAct = brickbgAct;
+
+    addToolBar( editToolbar );
 }
 
 /******************************************************************************/
@@ -1140,33 +1180,26 @@ void KGoldrunner::makeEditToolbar()
 /******************************************************************************/
 
 void KGoldrunner::freeSlot()
-		{ game->setEditObj (FREE);    setButton ((int) FREE);    }
+		{ game->setEditObj (FREE);     }
 void KGoldrunner::edheroSlot()
-		{ game->setEditObj (HERO);    setButton ((int) HERO);    }
+		{ game->setEditObj (HERO);     }
 void KGoldrunner::edenemySlot()
-		{ game->setEditObj (ENEMY);   setButton ((int) ENEMY);   }
+		{ game->setEditObj (ENEMY);    }
 void KGoldrunner::brickSlot()
-		{ game->setEditObj (BRICK);   setButton ((int) BRICK);   }
+		{ game->setEditObj (BRICK);    }
 void KGoldrunner::betonSlot()
-		{ game->setEditObj (BETON);   setButton ((int) BETON);   }
+		{ game->setEditObj (BETON);    }
 void KGoldrunner::fbrickSlot()
-		{ game->setEditObj (FBRICK);  setButton ((int) FBRICK);  }
+		{ game->setEditObj (FBRICK);   }
 void KGoldrunner::ladderSlot()
-		{ game->setEditObj (LADDER);  setButton ((int) LADDER);  }
+		{ game->setEditObj (LADDER);   }
 void KGoldrunner::hladderSlot()
-		{ game->setEditObj (HLADDER); setButton ((int) HLADDER); }
+		{ game->setEditObj (HLADDER);  }
 void KGoldrunner::poleSlot()
-		{ game->setEditObj (POLE);    setButton ((int) POLE);    }
+		{ game->setEditObj (POLE);     }
 void KGoldrunner::nuggetSlot()
-		{ game->setEditObj (NUGGET);  setButton ((int) NUGGET);  }
+		{ game->setEditObj (NUGGET);   }
 void KGoldrunner::defaultEditObj()
-		{ setButton ((int) BRICK);				 }
-
-void KGoldrunner::setButton (int btn)
-{
-    editToolbar->setButton (pressedButton, FALSE);
-    pressedButton = btn;
-    editToolbar->setButton (pressedButton, TRUE);
-}
+		{ m_defaultEditAct->setChecked(true); }
 
 #include "kgoldrunner.moc"

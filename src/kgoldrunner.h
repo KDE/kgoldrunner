@@ -23,8 +23,8 @@ const int L_LEVEL       = 15;
 #include <kapplication.h>
 #include <kmainwindow.h>
 #include <kstandarddirs.h>
-#include <kaction.h>
 
+class KAction;
 class KToggleAction;
 class KGrGame;
 class KGrCanvas;
@@ -148,8 +148,6 @@ private:
     void setupActions();
     void initStatusBar();
     void makeEditToolbar();
-    void setButton (int btn);
-
 private:
     bool startupOK;
 
@@ -190,8 +188,7 @@ private:
     // KToggleAction *	m_statusbarAction;
 
     KToolBar *		editToolbar;	// Toolbar for creating/editing levels.
-    int			pressedButton;	// ID of currently set toolbar button.
-
+    KToggleAction *     m_defaultEditAct;
 private slots:
     void freeSlot();			// Set editObj to Free Space.
     void edheroSlot();			// Set editObj to Hero.
