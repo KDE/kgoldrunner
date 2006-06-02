@@ -16,7 +16,7 @@
 // "myChar" extracts a C language character (type "char") from a QString object.
 // "endData" checks for an end-of-file condition.
 //
-#define myStr		latin1
+#define myStr		toLatin1().constData
 #define myChar(i)	at((i)).toLatin1()
 #define endData		atEnd
 

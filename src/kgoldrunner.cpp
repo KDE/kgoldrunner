@@ -25,6 +25,7 @@
 
 #include <kstdaccel.h>
 #include <kaction.h>
+#include <ktoggleaction.h>
 #include <kstdaction.h>
 #include <kstdgameaction.h>
 
@@ -166,17 +167,18 @@ void KGoldrunner::setupActions()
 				load (
 				game, SLOT(loadGame()), actionCollection());
     loadGame->			setText (i18n("&Load Saved Game..."));
-    (void)			new KAction (
+
+    KAction* playAnyAct = 	new KAction (
 				i18n("&Play Any Level..."),
-				0,
-				game, SLOT(startAnyLevel()), actionCollection(),
+				actionCollection(),
 				"play_any");
-    (void)			new KAction (
+    connect(playAnyAct, SIGNAL(triggered(bool)), game, SLOT(startAnyLevel()));
+
+    KAction* playNextAct =	new KAction (
 				i18n("Play &Next Level..."),
-				0,
-				game,
-				SLOT(startNextLevel()), actionCollection(),
+				actionCollection(),
 				"play_next");
+    connect(playNextAct, SIGNAL(triggered(bool)), game, SLOT(startNextLevel()));
 
     // Save Game...
     // Save Edits... (extra copy)
@@ -201,16 +203,17 @@ void KGoldrunner::setupActions()
     highScore =			KStdGameAction::
 				highscores (
 				game, SLOT(showHighScores()), actionCollection());
-    hintAction =		new KAction (
-				i18n("&Get Hint"), "ktip",
-				0,
-				game, SLOT(showHint()), actionCollection(),
+    hintAction =		new KAction ( KIcon("ktip"), 
+				i18n("&Get Hint"),
+				actionCollection(),
 				"get_hint");
+    connect( hintAction, SIGNAL(triggered(bool)), game, SLOT(showHint()));
     killHero =			new KAction (
 				i18n("&Kill Hero"),
-				Qt::Key_Q,
-				game, SLOT(herosDead()), actionCollection(),
+				actionCollection(),
 				"kill_hero");
+    killHero->setShortcut( Qt::Key_Q );
+    connect( killHero, SIGNAL(triggered(bool)), game, SLOT(herosDead()));
 
     // Quit
     // --------------------------
@@ -228,21 +231,23 @@ void KGoldrunner::setupActions()
     // Edit Next Level...
     // --------------------------
 
-    (void)			new KAction (
+    KAction* createAct = 	new KAction (
 				i18n("&Create Level"),
-				0,
-				game, SLOT(createLevel()), actionCollection(),
+				actionCollection(),
 				"create");
-    (void)			new KAction (
+    connect( createAct, SIGNAL(triggered(bool)), game, SLOT(createLevel()));
+
+    KAction* editAnyAct	=	new KAction (
 				i18n("&Edit Any Level..."),
-				0,
-				game, SLOT(updateLevel()), actionCollection(),
+				actionCollection(),
 				"edit_any");
-    (void)			new KAction (
+    connect( editAnyAct, SIGNAL(triggered(bool)), game, SLOT(updateLevel()));
+
+    KAction* editNextAct =	new KAction (
 				i18n("Edit &Next Level..."),
-				0,
-				game, SLOT(updateNext()), actionCollection(),
+				actionCollection(),
 				"edit_next");
+    connect( editNextAct, SIGNAL(triggered(bool)), game, SLOT(updateNext()));
 
     // Save Edits...
     // Move Level...
@@ -251,38 +256,38 @@ void KGoldrunner::setupActions()
 
     saveEdits =			new KAction (
 				i18n("&Save Edits..."),
-				0,
-				game, SLOT(saveLevelFile()), actionCollection(),
+				actionCollection(),
 				"save_edits");
+    connect( saveEdits, SIGNAL(triggered(bool)), game, SLOT(saveLevelFile()));
     saveEdits->setEnabled (FALSE);			// Nothing to save, yet.
 
-    (void)			new KAction (
+    KAction* moveLevel =	new KAction (
 				i18n("&Move Level..."),
-				0,
-				game, SLOT(moveLevelFile()), actionCollection(),
+				actionCollection(),
 				"move_level");
-    (void)			new KAction (
+    connect( moveLevel, SIGNAL(triggered(bool)), game, SLOT(moveLevelFile()));
+
+    KAction* deleteLevel =	new KAction (
 				i18n("&Delete Level..."),
-				0,
-				game,
-				SLOT(deleteLevelFile()), actionCollection(),
+				actionCollection(),
 				"delete_level");
+    connect( deleteLevel, SIGNAL(triggered(bool)), game, SLOT(deleteLevelFile()));
 
     // Create a Game
     // Edit Game Info...
     // --------------------------
 
-    (void)			new KAction (
+    KAction* createGame	=	new KAction (
 				i18n("Create Game..."),
-				0,
-				this, SLOT(createGame()), actionCollection(),
+				actionCollection(),
 				"create_game");
-    (void)			new KAction (
+    connect( createGame, SIGNAL(triggered(bool)), this, SLOT(createGame()));
+
+    KAction* editGame =		new KAction (
 				i18n("Edit Game Info..."),
-				0,
-				this,
-				SLOT(editGameInfo()), actionCollection(),
+				actionCollection(),
 				"edit_game");
+    connect( editGame, SIGNAL(triggered(bool)), this, SLOT(editGameInfo()));
 
     /**************************************************************************/
     /***************************   LANDSCAPES MENU  ***************************/
@@ -290,38 +295,50 @@ void KGoldrunner::setupActions()
 
     // Default shortcut keys are set by "kgoldrunnerui.rc".
 
-    setKGoldrunner =		new KRadioAction (
+    // Default Shift+G
+    setKGoldrunner =		new KToggleAction (
 				"K&Goldrunner",
-				0,			// Default Shift+G
-				this, SLOT(lsKGoldrunner()), actionCollection(),
+				actionCollection(),
 				"kgoldrunner");
-    setAppleII =		new KRadioAction (
-				"&Apple II",
-				0,			// Default Shift+A
-				this, SLOT(lsApple2()), actionCollection(),
-				"apple_2");
-    setIceCave =		new KRadioAction (
-				i18n("&Ice Cave"),
-				0,			// Default Shift+I
-				this, SLOT(lsIceCave()), actionCollection(),
-				"ice_cave");
-    setMidnight =		new KRadioAction (
-				i18n("&Midnight"),
-				0,			// Default Shift+M
-				this, SLOT(lsMidnight()), actionCollection(),
-				"midnight");
-    setKDEKool =		new KRadioAction (
-				i18n("&KDE Kool"),
-				0,			// Default Shift+K
-				this, SLOT(lsKDEKool()), actionCollection(),
-				"kde_kool");
+    connect( setKGoldrunner, SIGNAL(triggered(bool)), this, SLOT(lsKGoldrunner()));
 
-    setKGoldrunner->		setExclusiveGroup ("landscapes");
-    setAppleII->		setExclusiveGroup ("landscapes");
-    setIceCave->		setExclusiveGroup ("landscapes");
-    setMidnight->		setExclusiveGroup ("landscapes");
-    setKDEKool->		setExclusiveGroup ("landscapes");
-    setKGoldrunner->		setChecked (TRUE);
+    // Default Shift+A
+    setAppleII =		new KToggleAction (
+				"&Apple II",
+				actionCollection(),
+				"apple_2");
+    connect( setAppleII, SIGNAL(triggered(bool)), this, SLOT(lsApple2()));
+
+    // Default Shift+I
+    setIceCave =		new KToggleAction (
+				i18n("&Ice Cave"),
+				actionCollection(),
+				"ice_cave");
+    connect( setIceCave, SIGNAL(triggered(bool)), this, SLOT(lsIceCave()));
+
+    // Default Shift+M
+    setMidnight =		new KToggleAction (
+				i18n("&Midnight"),
+				actionCollection(),
+				"midnight");
+    connect( setMidnight, SIGNAL(triggered(bool)), this, SLOT(lsMidnight()));
+
+    // Default Shift+K
+    setKDEKool =		new KToggleAction (
+				i18n("&KDE Kool"),
+				actionCollection(),
+				"kde_kool");
+    connect( setKDEKool, SIGNAL(triggered(bool)), this, SLOT(lsKDEKool()));
+
+    QActionGroup* landscapesGrp = new QActionGroup(this);
+    landscapesGrp->addAction(setKGoldrunner);
+    landscapesGrp->addAction(setAppleII);
+    landscapesGrp->addAction(setIceCave);
+    landscapesGrp->addAction(setMidnight);
+    landscapesGrp->addAction(setKDEKool);
+    landscapesGrp->setExclusive(true);
+
+    setKGoldrunner->setChecked(true);
 
     /**************************************************************************/
     /****************************   SETTINGS MENU  ****************************/
@@ -331,22 +348,23 @@ void KGoldrunner::setupActions()
     // Keyboard Controls Hero
     // --------------------------
 
-    setMouse =			new KRadioAction (
+    setMouse =			new KToggleAction (
 				i18n("&Mouse Controls Hero"),
-				0,
-				this,
-				SLOT(setMouseMode()), actionCollection(),
+				actionCollection(),
 				"mouse_mode");
-    setKeyboard =		new KRadioAction (
-				i18n("&Keyboard Controls Hero"),
-				0,
-				this,
-				SLOT(setKeyBoardMode()), actionCollection(),
-				"keyboard_mode");
+    connect( setMouse, SIGNAL(triggered(bool)), this, SLOT(setMouseMode()));
 
-    setMouse->			setExclusiveGroup ("control");
-    setKeyboard->		setExclusiveGroup ("control");
-    setMouse->			setChecked (TRUE);
+    setKeyboard =		new KToggleAction (
+				i18n("&Keyboard Controls Hero"),
+				actionCollection(),
+				"keyboard_mode");
+    connect( setKeyboard, SIGNAL(triggered(bool)), this, SLOT(setKeyBoardMode()));
+
+    QActionGroup* controlGrp = new QActionGroup(this);
+    controlGrp->addAction(setMouse);
+    controlGrp->addAction(setKeyboard);
+    controlGrp->setExclusive(true);
+    setMouse->setChecked(true);
 
     // Normal Speed
     // Beginner Speed
@@ -355,72 +373,82 @@ void KGoldrunner::setupActions()
     // Decrease Speed
     // --------------------------
 
-    KRadioAction * nSpeed =	new KRadioAction (
+    KToggleAction * nSpeed =	new KToggleAction (
 				i18n("Normal Speed"),
-				0,
-				this, SLOT(normalSpeed()), actionCollection(),
+				actionCollection(),
 				"normal_speed");
-    KRadioAction * bSpeed =	new KRadioAction (
-				i18n("Beginner Speed"),
-				0,
-				this, SLOT(beginSpeed()), actionCollection(),
-				"beginner_speed");
-    KRadioAction * cSpeed =	new KRadioAction (
-				i18n("Champion Speed"),
-				0,
-				this, SLOT(champSpeed()), actionCollection(),
-				"champion_speed");
-    KRadioAction * iSpeed =	new KRadioAction (
-				i18n("Increase Speed"),
-				Qt::Key_Plus,
-				this, SLOT(incSpeed()), actionCollection(),
-				"increase_speed");
-    KRadioAction * dSpeed =	new KRadioAction (
-				i18n("Decrease Speed"),
-				Qt::Key_Minus,
-				this, SLOT(decSpeed()), actionCollection(),
-				"decrease_speed");
+    connect( nSpeed, SIGNAL(triggered(bool)), this, SLOT(normalSpeed()));
 
-    nSpeed->			setExclusiveGroup ("speed");
-    bSpeed->			setExclusiveGroup ("speed");
-    cSpeed->			setExclusiveGroup ("speed");
-    iSpeed->			setExclusiveGroup ("speed");
-    dSpeed->			setExclusiveGroup ("speed");
-    nSpeed->			setChecked (TRUE);
+    KToggleAction * bSpeed =	new KToggleAction (
+				i18n("Beginner Speed"),
+				actionCollection(),
+				"beginner_speed");
+    connect( bSpeed, SIGNAL(triggered(bool)), this, SLOT(beginSpeed()));
+
+    KToggleAction * cSpeed =	new KToggleAction (
+				i18n("Champion Speed"),
+				actionCollection(),
+				"champion_speed");
+    connect( cSpeed, SIGNAL(triggered(bool)), this, SLOT(champSpeed()));
+
+    KToggleAction * iSpeed =	new KToggleAction (
+				i18n("Increase Speed"),
+				actionCollection(),
+				"increase_speed");
+    iSpeed->setShortcut( Qt::Key_Plus );
+    connect( iSpeed, SIGNAL(triggered(bool)), this, SLOT(incSpeed()));
+
+    KToggleAction * dSpeed =	new KToggleAction (
+				i18n("Decrease Speed"),
+				actionCollection(),
+				"decrease_speed");
+    iSpeed->setShortcut( Qt::Key_Minus );
+    connect( dSpeed, SIGNAL(triggered(bool)), this, SLOT(decSpeed()));
+
+    QActionGroup* speedGrp = new QActionGroup(this);
+    speedGrp->addAction(nSpeed);
+    speedGrp->addAction(bSpeed);
+    speedGrp->addAction(cSpeed);
+    speedGrp->addAction(iSpeed);
+    speedGrp->addAction(dSpeed);
+    nSpeed->setChecked(true);
 
     // Traditional Rules
     // KGoldrunner Rules
     // --------------------------
 
-    tradRules =			new KRadioAction (
+    tradRules =			new KToggleAction (
 				i18n("&Traditional Rules"),
-				0,
-				this, SLOT(setTradRules()), actionCollection(),
+				actionCollection(),
 				"trad_rules");
-    kgrRules =			new KRadioAction (
-				i18n("K&Goldrunner Rules"),
-				0,
-				this, SLOT(setKGrRules()), actionCollection(),
-				"kgr_rules");
+    connect( tradRules, SIGNAL(triggered(bool)), this, SLOT(setTradRules()));
 
-    tradRules->			setExclusiveGroup ("rules");
-    kgrRules->			setExclusiveGroup ("rules");
-    tradRules->			setChecked (TRUE);
+    kgrRules =			new KToggleAction (
+				i18n("K&Goldrunner Rules"),
+				actionCollection(),
+				"kgr_rules");
+    connect( kgrRules, SIGNAL(triggered(bool)), this, SLOT(setKGrRules()));
+
+    QActionGroup* rulesGrp = new QActionGroup(this);
+    rulesGrp->addAction(tradRules);
+    rulesGrp->addAction(kgrRules);
+    tradRules->setChecked (true);
 
     // Larger Playing Area
     // Smaller Playing Area
     // --------------------------
 
-    (void)			new KAction (
+    KAction* largerArea =	new KAction (
 				i18n("Larger Playing Area"),
-				0,
-				this, SLOT(makeLarger()), actionCollection(),
+				actionCollection(),
 				"larger_area");
-    (void)			new KAction (
+    connect( largerArea, SIGNAL(triggered(bool)), this, SLOT(makeLarger()));
+
+    KAction* smallerArea =	new KAction (
 				i18n("Smaller Playing Area"),
-				0,
-				this, SLOT(makeSmaller()), actionCollection(),
+				actionCollection(),
 				"smaller_area");
+    connect( smallerArea, SIGNAL(triggered(bool)), this, SLOT(makeSmaller()));
 
     // Configure Shortcuts...
     // Configure Toolbars...
@@ -439,20 +467,33 @@ void KGoldrunner::setupActions()
 
     // Two-handed KB controls and alternate one-handed controls for the hero.
 
-    (void)	new KAction (i18n("Move Up"), Qt::Key_Up,
-		this, SLOT(goUp()), actionCollection(), "move_up");
-    (void)	new KAction (i18n("Move Right"), Qt::Key_Right,
-		this, SLOT(goR()), actionCollection(), "move_right");
-    (void)	new KAction (i18n("Move Down"), Qt::Key_Down,
-		this, SLOT(goDown()), actionCollection(), "move_down");
-    (void)	new KAction (i18n("Move Left"), Qt::Key_Left,
-		this, SLOT(goL()), actionCollection(), "move_left");
-    (void)	new KAction (i18n("Stop"), Qt::Key_Space,
-		this, SLOT(stop()), actionCollection(), "stop");
-    (void)	new KAction (i18n("Dig Right"), Qt::Key_C,
-		this, SLOT(digR()), actionCollection(), "dig_right");
-    (void)	new KAction (i18n("Dig Left"), Qt::Key_Z,
-		this, SLOT(digL()), actionCollection(), "dig_left");
+    KAction* moveUp = new KAction (i18n("Move Up"), actionCollection(), "move_up");
+    moveUp->setShortcut( Qt::Key_Up );
+    connect( moveUp, SIGNAL(triggered(bool)), this, SLOT(goUp()));
+
+    KAction* moveRight = new KAction (i18n("Move Right"), actionCollection(), "move_right");
+    moveRight->setShortcut( Qt::Key_Right );
+    connect( moveRight, SIGNAL(triggered(bool)), this, SLOT(goR()));
+
+    KAction* moveDown = new KAction (i18n("Move Down"), actionCollection(), "move_down");
+    moveDown->setShortcut( Qt::Key_Down );
+    connect( moveDown, SIGNAL(triggered(bool)), this, SLOT(goDown()));
+
+    KAction* moveLeft = new KAction (i18n("Move Left"), actionCollection(), "move_left");
+    moveLeft->setShortcut( Qt::Key_Left );
+    connect( moveLeft, SIGNAL(triggered(bool)), this, SLOT(goL()));
+
+    KAction* stop = new KAction (i18n("Stop"), actionCollection(), "stop");
+    stop->setShortcut( Qt::Key_Space );
+    connect( stop, SIGNAL(triggered(bool)), this, SLOT(stop()));
+
+    KAction* digRight = new KAction (i18n("Dig Right"), actionCollection(), "dig_right");
+    digRight->setShortcut( Qt::Key_C );
+    connect( digRight, SIGNAL(triggered(bool)), this, SLOT(digR()));
+
+    KAction* digLeft = new KAction (i18n("Dig Left"), actionCollection(), "dig_left");
+    digLeft->setShortcut( Qt::Key_Z );
+    connect( digLeft, SIGNAL(triggered(bool)), this, SLOT(digL()));
 
     // Alternate one-handed controls.  Set up in "kgoldrunnerui.rc".
 
@@ -467,32 +508,58 @@ void KGoldrunner::setupActions()
 #ifdef KGR_DEBUG
     // Authors' debugging aids.
 
-    (void)	new KAction (i18n("Step"), Qt::Key_Period,
-		game, SLOT(doStep()), actionCollection(), "do_step");
-    (void)	new KAction (i18n("Test Bug Fix"), Qt::Key_B,
-		game, SLOT(bugFix()), actionCollection(), "bug_fix");
-    (void)	new KAction (i18n("Show Positions"), Qt::Key_D,
-		game, SLOT(showFigurePositions()), actionCollection(), "step");
-    (void)	new KAction (i18n("Start Logging"), Qt::Key_G,
-		game, SLOT(startLogging()), actionCollection(), "logging");
-    (void)	new KAction (i18n("Show Hero"), Qt::Key_H,
-		game, SLOT(showHeroState()), actionCollection(), "show_hero");
-    (void)	new KAction (i18n("Show Object"), Qt::Key_Question,
-		game, SLOT(showObjectState()), actionCollection(), "show_obj");
-    (void)	new KAction (i18n("Show Enemy") + "0", Qt::Key_0,
-		this, SLOT(showEnemy0()), actionCollection(), "show_enemy_0");
-    (void)	new KAction (i18n("Show Enemy") + "1", Qt::Key_1,
-		this, SLOT(showEnemy1()), actionCollection(), "show_enemy_1");
-    (void)	new KAction (i18n("Show Enemy") + "2", Qt::Key_2,
-		this, SLOT(showEnemy2()), actionCollection(), "show_enemy_2");
-    (void)	new KAction (i18n("Show Enemy") + "3", Qt::Key_3,
-		this, SLOT(showEnemy3()), actionCollection(), "show_enemy_3");
-    (void)	new KAction (i18n("Show Enemy") + "4", Qt::Key_4,
-		this, SLOT(showEnemy4()), actionCollection(), "show_enemy_4");
-    (void)	new KAction (i18n("Show Enemy") + "5", Qt::Key_5,
-		this, SLOT(showEnemy5()), actionCollection(), "show_enemy_5");
-    (void)	new KAction (i18n("Show Enemy") + "6", Qt::Key_6,
-		this, SLOT(showEnemy6()), actionCollection(), "show_enemy_6");
+    KAction* step = new KAction (i18n("Step"), actionCollection(), "do_step");
+    step->setShortcut( Qt::Key_Period );
+    connect( step, SIGNAL(triggered(bool)), game, SLOT(doStep()) );
+
+    KAction* bugFix = new KAction (i18n("Test Bug Fix"), actionCollection(), "bug_fix");
+    bugFix->setShortcut( Qt::Key_B );
+    connect( bugFix, SIGNAL(triggered(bool)), game, SLOT(bugFix()) );
+
+    KAction* showPos = new KAction (i18n("Show Positions"), actionCollection(), "step");
+    showPos->setShortcut( Qt::Key_D );
+    connect( showPos, SIGNAL(triggered(bool)), game, SLOT(showFigurePositions()) );
+
+    KAction* startLog = new KAction (i18n("Start Logging"), actionCollection(), "logging");
+    startLog->setShortcut( Qt::Key_G );
+    connect( startLog, SIGNAL(triggered(bool)), game, SLOT(startLogging()) );
+
+    KAction* showHero = new KAction (i18n("Show Hero"), actionCollection(), "show_hero");
+    showHero->setShortcut( Qt::Key_H );
+    connect( showHero, SIGNAL(triggered(bool)), game, SLOT(showHeroState()) );
+
+    KAction* showObj = new KAction (i18n("Show Object"), actionCollection(), "show_obj");
+    showObj->setShortcut( Qt::Key_Question );
+    connect( showObj, SIGNAL(triggered(bool)), game, SLOT(showObjectState()) );
+
+    KAction* showEnemy0 = new KAction (i18n("Show Enemy") + "0", actionCollection(), "show_enemy_0");
+    showEnemy0->setShortcut( Qt::Key_0 );
+    connect( showEnemy0, SIGNAL(triggered(bool)), game, SLOT(showEnemy0()) );
+
+    KAction* showEnemy1 = new KAction (i18n("Show Enemy") + "1", actionCollection(), "show_enemy_1");
+    showEnemy1->setShortcut( Qt::Key_1 );
+    connect( showEnemy1, SIGNAL(triggered(bool)), game, SLOT(showEnemy1()) );
+
+    KAction* showEnemy2 = new KAction (i18n("Show Enemy") + "2", actionCollection(), "show_enemy_2");
+    showEnemy2->setShortcut( Qt::Key_2 );
+    connect( showEnemy2, SIGNAL(triggered(bool)), game, SLOT(showEnemy2()) );
+
+    KAction* showEnemy3 = new KAction (i18n("Show Enemy") + "3", actionCollection(), "show_enemy_3");
+    showEnemy3->setShortcut( Qt::Key_3 );
+    connect( showEnemy3, SIGNAL(triggered(bool)), game, SLOT(showEnemy3()) );
+
+    KAction* showEnemy4 = new KAction (i18n("Show Enemy") + "4", actionCollection(), "show_enemy_4");
+    showEnemy4->setShortcut( Qt::Key_4 );
+    connect( showEnemy4, SIGNAL(triggered(bool)), game, SLOT(showEnemy4()) );
+
+    KAction* showEnemy5 = new KAction (i18n("Show Enemy") + "5", actionCollection(), "show_enemy_5");
+    showEnemy5->setShortcut( Qt::Key_5 );
+    connect( showEnemy5, SIGNAL(triggered(bool)), game, SLOT(showEnemy5()) );
+
+    KAction* showEnemy6 = new KAction (i18n("Show Enemy") + "6", actionCollection(), "show_enemy_6");
+    showEnemy6->setShortcut( Qt::Key_6 );
+    connect( showEnemy6, SIGNAL(triggered(bool)), game, SLOT(showEnemy6()) );
+
 #endif
 
     /**************************************************************************/
@@ -598,9 +665,9 @@ void KGoldrunner::adjustHintAction (bool hintAvailable)
 void KGoldrunner::markRuleType (char ruleType)
 {
     if (ruleType == 'T')
-	tradRules->activate();
+	tradRules->trigger();
     else
-	kgrRules->activate();
+	kgrRules->trigger();
 }
 
 void KGoldrunner::setEditMenu (bool on_off)
@@ -813,7 +880,7 @@ void KGoldrunner::optionsPreferences()
 void KGoldrunner::changeStatusbar(const QString& text)
 {
     // display the text on the statusbar
-    statusBar()->message(text);
+    statusBar()->showMessage(text);
 }
 
 void KGoldrunner::changeCaption(const QString& text)
@@ -993,7 +1060,7 @@ void KGoldrunner::makeEditToolbar()
 	edenemybg		= edenemybg.transformed (w);
     }
 
-    editToolbar = new KToolBar (this, Qt::DockTop, TRUE, "Editor", TRUE);
+    editToolbar = new KToolBar ("Editor", this, Qt::TopToolBarArea, true, true);
 
     // Choose a colour that enhances visibility of the KGoldrunner pixmaps.
     // editToolbar->setPalette (QPalette (QColor (150, 150, 230)));
@@ -1003,23 +1070,25 @@ void KGoldrunner::makeEditToolbar()
     // All those separators are just to get reasonable visual spacing of the
     // pixmaps in KDE.  "setHorizontallyStretchable(TRUE)" does it in Qt.
 
-    editToolbar->insertSeparator();
+    editToolbar->addSeparator();
 
-    editToolbar->insertButton ("filenew",  0,           SIGNAL(clicked()), game,
-			SLOT(createLevel()),  TRUE,  i18n("&Create a Level"));
-    editToolbar->insertButton ("fileopen", 1,           SIGNAL(clicked()), game,
-			SLOT(updateLevel()),  TRUE,  i18n("&Edit Any Level..."));
-    editToolbar->insertButton ("filesave", 2,           SIGNAL(clicked()), game,
-			SLOT(saveLevelFile()),TRUE,  i18n("&Save Edits..."));
+    KAction* fileNewAct = new KAction( i18n("&Create a Level"), actionCollection(), "filenew" );
+    connect( fileNewAct, SIGNAL(triggered(bool)), game, SLOT(createLevel()) );
 
-    editToolbar->insertSeparator();
-    editToolbar->insertSeparator();
+    KAction* fileOpenAct = new KAction( i18n("&Edit Any Level..."), actionCollection(), "fileopen" );
+    connect( fileOpenAct, SIGNAL(triggered(bool)), game, SLOT(updateLevel()) );
 
-    editToolbar->insertButton ("ktip",     3,           SIGNAL(clicked()), game,
-		SLOT(editNameAndHint()),TRUE,i18n("Edit Name/Hint"));
+    KAction* fileSaveAct = new KAction( i18n("&Save Edits..."), actionCollection(), "filesave" );
+    connect( fileSaveAct, SIGNAL(triggered(bool)), game, SLOT(saveLevelFile()) );
 
-    editToolbar->insertSeparator();
-    editToolbar->insertSeparator();
+    editToolbar->addSeparator();
+    editToolbar->addSeparator();
+
+    KAction* ktipAct = new KAction( i18n("Edit Name/Hint"), actionCollection(), "ktip" );
+    connect( ktipAct, SIGNAL(triggered(bool)), game, SLOT(editNameAndHint()) );
+
+    editToolbar->addSeparator();
+    editToolbar->addSeparator();
 
     editToolbar->insertButton (freebg,    (int)FREE,    SIGNAL(clicked()), this,
 		SLOT(freeSlot()),     TRUE,  i18n("Empty space"));

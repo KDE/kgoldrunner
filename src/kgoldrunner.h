@@ -25,7 +25,7 @@ const int L_LEVEL       = 15;
 #include <kstandarddirs.h>
 #include <kaction.h>
 
-class KRadioAction;
+class KToggleAction;
 class KGrGame;
 class KGrCanvas;
 class KGrHero;
@@ -172,17 +172,17 @@ private:
 
     KAction *		saveEdits;	// Save a level that has been edited.
 
-    KRadioAction *	setKGoldrunner;	// Show default "KGoldrunner" landscape.
-    KRadioAction *	setAppleII;	// Show "Apple II" landscape.
-    KRadioAction *	setIceCave;	// Show "Ice Cave" landscape.
-    KRadioAction *	setMidnight;	// Show "Midnight" landscape.
-    KRadioAction *	setKDEKool;	// Show "KDE Kool" landscape.
+    KToggleAction *	setKGoldrunner;	// Show default "KGoldrunner" landscape.
+    KToggleAction *	setAppleII;	// Show "Apple II" landscape.
+    KToggleAction *	setIceCave;	// Show "Ice Cave" landscape.
+    KToggleAction *	setMidnight;	// Show "Midnight" landscape.
+    KToggleAction *	setKDEKool;	// Show "KDE Kool" landscape.
 
-    KRadioAction *	setMouse;	// Show mouse/keyboard mode on menu.
-    KRadioAction *	setKeyboard;	// Show mouse/keyboard mode on menu.
+    KToggleAction *	setMouse;	// Show mouse/keyboard mode on menu.
+    KToggleAction *	setKeyboard;	// Show mouse/keyboard mode on menu.
 
-    KRadioAction *	tradRules;	// Set Traditional rules.
-    KRadioAction *	kgrRules;	// Set KGoldrunner rules.
+    KToggleAction *	tradRules;	// Set Traditional rules.
+    KToggleAction *	kgrRules;	// Set KGoldrunner rules.
 
     KGrHero *	hero;			// Pointer to the hero.
 
