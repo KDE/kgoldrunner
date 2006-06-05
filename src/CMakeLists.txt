@@ -1,5 +1,5 @@
 
-include_directories( ${CMAKE_SOURCE_DIR}/libkdegames  )
+include_directories( ${CMAKE_SOURCE_DIR}/libkdegames ${QDBUS_INCLUDE_DIRS} )
 
 ADD_DEFINITIONS(-DQT3)
 ########### next target ###############

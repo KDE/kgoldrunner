@@ -3,11 +3,10 @@
  */
 
 #include <kapplication.h>
-#include <dcopclient.h>
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
 #include <klocale.h>
-
+#include <dbus/qdbus.h>
 #include "kgrconsts.h"
 #include "kgoldrunner.h"
 
@@ -29,10 +28,8 @@ int main (int argc, char **argv)
     KCmdLineArgs::init (argc, argv, &about);
 
     KApplication app;
-
-    // Register as a DCOP client.
-    app.dcopClient()->registerAs (app.name(), false);
-
+	QString nameapp = QString("org.kde.%1").arg(app.name());
+	QDBus::sessionBus().busService()->requestName(nameapp, /*flags=*/0);
     // See if we are starting with session management.
     if (app.isSessionRestored())
     {
