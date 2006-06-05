@@ -147,7 +147,7 @@ private:
     void setupAccel();
     void setupActions();
     void initStatusBar();
-    void makeEditToolbar();
+    void setupEditToolbarActions();
 private:
     bool startupOK;
 

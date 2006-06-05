@@ -10,7 +10,7 @@
 	<Action append="misc_merge"	name="kill_hero" />
     </Menu>
     <Menu name="editor" > <text>&amp;Editor</text>
-	<Action				name="create" />
+	<Action				name="create_level" />
 	<Action				name="edit_any" />
 	<Action				name="edit_next" />
 	<Separator/>
@@ -49,6 +49,25 @@
 	<Action				name="get_hint" />
     </Menu>
 </MenuBar>
+
+<ToolBar name="editToolbar" hidden="true" newline="true"><text>Edit Toolbar</text>
+    <Action name="create_level" />
+    <Action name="edit_any" />
+    <Action name="save_edits" />
+    <Separator />
+    <Action name="edit_hint" />
+    <Separator />
+    <Action name="freebg" />
+    <Action name="edherobg" />
+    <Action name="edenemybg" />
+    <Action name="brickbg" />
+    <Action name="betonbg" />
+    <Action name="fbrickbg" />
+    <Action name="ladderbg" />
+    <Action name="hladderbg" />
+    <Action name="polebg" />
+    <Action name="nuggetbg" />
+</ToolBar>
 
 <ActionProperties>
     <Action shortcut="P;Escape"		name="game_pause" />

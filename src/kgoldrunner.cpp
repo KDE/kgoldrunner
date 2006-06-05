@@ -2,28 +2,17 @@
  * Copyright (C) 2003 Ian Wadham and Marco Krüger <ianw@netspace.net.au>
  */
 
-#include <kprinter.h>
-#include <qpainter.h>
-#include <q3paintdevicemetrics.h>
-#include <QDesktopWidget>
-//Added by qt3to4:
 #include <QPixmap>
+#include <QDesktopWidget>
 
 #include <kglobal.h>
-#include <klocale.h>
-#include <kiconloader.h>
-#include <kmenubar.h>
 #include <kstatusbar.h>
 #include <kkeydialog.h>
 
-#include <kio/netaccess.h>
-#include <kfiledialog.h>
 #include <kconfig.h>
 
-#include <kedittoolbar.h>
 #include <ktoolbar.h>
 
-#include <kstdaccel.h>
 #include <kaction.h>
 #include <ktoggleaction.h>
 #include <kstdaction.h>
@@ -111,26 +100,12 @@ KGoldrunner::KGoldrunner()
     if (dw > 1024) {			// More than 1024x768.
 	view->changeSize (+1);
 	view->changeSize (+1);		// Scale 1.75:1.
-#warning Temporarily commented out to enable compilation! Port it!
-	//setUsesBigPixmaps (TRUE);	// Use big toolbar buttons.
     }
     view->setBaseScale();		// Set scale for level-names.
 #endif
     setFixedSize (view->size());
 
-    makeEditToolbar();			// Uses pixmaps from "view".
-    editToolbar->hide();
-#warning Temporarily commented out to enable compilation! Port it!
-    /* 
-    setDockEnabled (Qt::DockBottom, FALSE);
-    setDockEnabled (Qt::DockLeft, FALSE);
-    setDockEnabled (Qt::DockRight, FALSE);
-     */
-
-    // Make it impossible to turn off the editor toolbar.
-    // Accidentally hiding it would make editing impossible.
-#warning Temporarily commented out to enable compilation! Port it!
-    //setDockMenuEnabled (FALSE);
+    toolBar("editToolbar")->setAllowedAreas(Qt::TopToolBarArea);
 
     // Set mouse control of the hero as the default.
     game->setMouseMode (TRUE);
@@ -236,13 +211,13 @@ void KGoldrunner::setupActions()
     // Edit Next Level...
     // --------------------------
 
-    KAction* createAct = 	new KAction (
+    KAction* createAct = 	new KAction ( KIcon("filenew"), 
 				i18n("&Create Level"),
 				actionCollection(),
-				"create");
+				"create_level");
     connect( createAct, SIGNAL(triggered(bool)), game, SLOT(createLevel()));
 
-    KAction* editAnyAct	=	new KAction (
+    KAction* editAnyAct	=	new KAction ( KIcon("fileopen"),
 				i18n("&Edit Any Level..."),
 				actionCollection(),
 				"edit_any");
@@ -259,7 +234,7 @@ void KGoldrunner::setupActions()
     // Delete Level...
     // --------------------------
 
-    saveEdits =			new KAction (
+    saveEdits =			new KAction ( KIcon("filesave"), 
 				i18n("&Save Edits..."),
 				actionCollection(),
 				"save_edits");
@@ -500,6 +475,8 @@ void KGoldrunner::setupActions()
     digLeft->setShortcut( Qt::Key_Z );
     connect( digLeft, SIGNAL(triggered(bool)), this, SLOT(digL()));
 
+    setupEditToolbarActions();			// Uses pixmaps from "view".
+
     // Alternate one-handed controls.  Set up in "kgoldrunnerui.rc".
 
     // Key_I, "move_up"
@@ -685,10 +662,10 @@ void KGoldrunner::setEditMenu (bool on_off)
     highScore->setEnabled  (! on_off);
 
     if (on_off){
-	editToolbar->show();
+	toolBar("editToolbar")->show();
     }
     else {
-	editToolbar->hide();
+	toolBar("editToolbar")->hide();
     }
 }
 
@@ -1021,7 +998,7 @@ void KGoldrunner::setKey (KBAction movement)
 /******************************************************************************/
 
 #include <qmatrix.h>
-void KGoldrunner::makeEditToolbar()
+void KGoldrunner::setupEditToolbarActions()
 {
     // Set up the pixmaps for the editable objects.
     QPixmap pixmap;
@@ -1039,122 +1016,60 @@ void KGoldrunner::makeEditToolbar()
     QPixmap edherobg	= view->getPixmap (HERO);
     QPixmap edenemybg	= view->getPixmap (ENEMY);
 
-#warning Temporarily commented out to enable compilation! Port it!
-    /* 
-    if (usesBigPixmaps()) {	// Scale up the pixmaps (to give cleaner looking
-				// icons than leaving it for QToolButton to do).
-	QMatrix w;
-	w = w.scale (2.0, 2.0);
+    // Scale up the pixmaps (to give cleaner looking
+    // icons than leaving it for QToolButton to do).
+    QMatrix w;
+    w = w.scale (2.0, 2.0);
 
-	// The pixmaps shown on the buttons used to remain small and incorrectly
-	// painted, in KDE, in spite of the 2x (32x32) scaling.  "insertButton"
-	// calls QIcon, to generate a set of icons from each pixmapx, then
-	// seems to select the small size to paint on the button.  The following
-	// line forces all icons, large and small, to be size 32x32 in advance.
-	//QIcon::setIconSize (QIcon::Small, QSize (32, 32));
 #warning "How to adjust this hack?"	
 
-	brickbg			= brickbg.transformed (w);
-	fbrickbg		= fbrickbg.transformed (w);
+    brickbg		= brickbg.transformed (w);
+    fbrickbg		= fbrickbg.transformed (w);
 
-	freebg			= freebg.transformed (w);
-	nuggetbg		= nuggetbg.transformed (w);
-	polebg			= polebg.transformed (w);
-	betonbg			= betonbg.transformed (w);
-	ladderbg		= ladderbg.transformed (w);
-	hladderbg		= hladderbg.transformed (w);
-	edherobg		= edherobg.transformed (w);
-	edenemybg		= edenemybg.transformed (w);
-    }
-     */
-
-    editToolbar = new KToolBar ("Editor", this, Qt::TopToolBarArea, true, true);
+    freebg		= freebg.transformed (w);
+    nuggetbg		= nuggetbg.transformed (w);
+    polebg		= polebg.transformed (w);
+    betonbg		= betonbg.transformed (w);
+    ladderbg		= ladderbg.transformed (w);
+    hladderbg		= hladderbg.transformed (w);
+    edherobg		= edherobg.transformed (w);
+    edenemybg		= edenemybg.transformed (w);
 
     // Choose a colour that enhances visibility of the KGoldrunner pixmaps.
     // editToolbar->setPalette (QPalette (QColor (150, 150, 230)));
 
-    // editToolbar->setHorizontallyStretchable (TRUE);	// Not effective in KDE.
-
-    // All those separators are just to get reasonable visual spacing of the
-    // pixmaps in KDE.  "setHorizontallyStretchable(TRUE)" does it in Qt.
-
-    editToolbar->addSeparator();
-
-    KAction* fileNewAct = new KAction( i18n("&Create a Level"), actionCollection(), "filenew" );
-    connect( fileNewAct, SIGNAL(triggered(bool)), game, SLOT(createLevel()) );
-
-    KAction* fileOpenAct = new KAction( i18n("&Edit Any Level..."), actionCollection(), "fileopen" );
-    connect( fileOpenAct, SIGNAL(triggered(bool)), game, SLOT(updateLevel()) );
-
-    KAction* fileSaveAct = new KAction( i18n("&Save Edits..."), actionCollection(), "filesave" );
-    connect( fileSaveAct, SIGNAL(triggered(bool)), game, SLOT(saveLevelFile()) );
-
-    editToolbar->addSeparator();
-    editToolbar->addSeparator();
-
-    KAction* ktipAct = new KAction( i18n("Edit Name/Hint"), actionCollection(), "ktip" );
+    KAction* ktipAct = new KAction( KIcon("ktip"), i18n("Edit Name/Hint"), actionCollection(), "edit_hint" );
     connect( ktipAct, SIGNAL(triggered(bool)), game, SLOT(editNameAndHint()) );
-
-    editToolbar->addSeparator();
-    editToolbar->addSeparator();
 
     KToggleAction* freebgAct = new KToggleAction( KIcon(freebg), i18n("Empty space"), actionCollection(), "freebg" );
     connect( freebgAct, SIGNAL(triggered(bool)), this, SLOT(freeSlot()) );
-    editToolbar->addAction( freebgAct );
-
-    editToolbar->addSeparator();
 
     KToggleAction* edherobgAct = new KToggleAction( KIcon(edherobg), i18n("Hero"), actionCollection(), "edherobg" );
     connect( edherobgAct, SIGNAL(triggered(bool)), this, SLOT(edheroSlot()) );
-    editToolbar->addAction( edherobgAct );
-
-    editToolbar->addSeparator();
 
     KToggleAction* edenemybgAct = new KToggleAction( KIcon(edenemybg), i18n("Enemy"), actionCollection(), "edenemybg" );
     connect( edenemybgAct, SIGNAL(triggered(bool)), this, SLOT(edenemySlot()) );
-    editToolbar->addAction( edenemybgAct );
-
-    editToolbar->addSeparator();
 
     KToggleAction* brickbgAct = new KToggleAction( KIcon(brickbg), i18n("Brick (can dig)"), actionCollection(), "brickbg" );
     connect( brickbgAct, SIGNAL(triggered(bool)), this, SLOT(brickSlot()) );
-    editToolbar->addAction( brickbgAct );
-
-    editToolbar->addSeparator();
 
     KToggleAction* betonbgAct = new KToggleAction( KIcon(betonbg), i18n("Concrete (cannot dig)"), actionCollection(), "betonbg" );
     connect( betonbgAct, SIGNAL(triggered(bool)), this, SLOT(betonSlot()) );
-    editToolbar->addAction( betonbgAct );
-
-    editToolbar->addSeparator();
 
     KToggleAction* fbrickbgAct = new KToggleAction( KIcon(fbrickbg), i18n("Trap (can fall through)"), actionCollection(), "fbrickbg" );
     connect( fbrickbgAct, SIGNAL(triggered(bool)), this, SLOT(fbrickSlot()) );
-    editToolbar->addAction( fbrickbgAct );
-
-    editToolbar->addSeparator();
 
     KToggleAction* ladderbgAct = new KToggleAction( KIcon(ladderbg), i18n("Ladder"), actionCollection(), "ladderbg" );
     connect( ladderbgAct, SIGNAL(triggered(bool)), this, SLOT(ladderSlot()) );
-    editToolbar->addAction( ladderbgAct );
-
-    editToolbar->addSeparator();
 
     KToggleAction* hladderbgAct = new KToggleAction( KIcon(hladderbg), i18n("Hidden ladder"), actionCollection(), "hladderbg" );
     connect( hladderbgAct, SIGNAL(triggered(bool)), this, SLOT(hladderSlot()) );
-    editToolbar->addAction( hladderbgAct );
-
-    editToolbar->addSeparator();
 
     KToggleAction* polebgAct = new KToggleAction( KIcon(polebg), i18n("Pole (or bar)"), actionCollection(), "polebg" );
     connect( polebgAct, SIGNAL(triggered(bool)), this, SLOT(poleSlot()) );
-    editToolbar->addAction( polebgAct );
-
-    editToolbar->addSeparator();
 
     KToggleAction* nuggetbgAct = new KToggleAction( KIcon(nuggetbg), i18n("Gold nugget"), actionCollection(), "nuggetbg" );
     connect( nuggetbgAct, SIGNAL(triggered(bool)), this, SLOT(nuggetSlot()) );
-    editToolbar->addAction( nuggetbgAct );
 
     QActionGroup* editButtons = new QActionGroup(this);
     editButtons->setExclusive(true);
@@ -1171,8 +1086,6 @@ void KGoldrunner::makeEditToolbar()
 
     brickbgAct->setChecked(true);
     m_defaultEditAct = brickbgAct;
-
-    addToolBar( editToolbar );
 }
 
 /******************************************************************************/
