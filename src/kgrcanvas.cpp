@@ -212,8 +212,10 @@ void KGrCanvas::makeTitle ()
     title->setFixedWidth (((FIELDWIDTH * cw + 2 * bw) * scaleStep) / STEP);
     title->setFixedHeight ((mw * scaleStep) / STEP);
     title->move (0, 0);
-    title->setPaletteBackgroundColor (borderColor);
-    title->setPaletteForegroundColor (textColor);
+    QPalette palette;
+    palette.setColor(title->backgroundRole(), borderColor);
+    palette.setColor(title->foregroundRole(), textColor);
+    title->setPalette(palette);
     title->setFont (QFont (fontInfo().family(),
 		 (baseFontSize * scaleStep) / baseScale, QFont::Bold));
     title->setAlignment (Qt::AlignCenter);
@@ -388,14 +390,14 @@ void KGrCanvas::initView()
 
     // Convert the pixmap strip for hero animation into a QCanvasPixmapArray.
     pixmap = QPixmap (hero_xpm);
-    image = pixmap.convertToImage ();
+    image = pixmap.toImage ();
 
 #ifdef QT3
     QPixmap   pm;
     QList<QPixmap> pmList;
 
     for (int i = 0; i < 20; i++) {
-	pm.convertFromImage (image.copy (i * 16, 0, 16, 16));
+	pm = QPixmap::fromImage (image.copy (i * 16, 0, 16, 16));
 	pmList.append (pm);
     }
 
@@ -421,13 +423,13 @@ void KGrCanvas::initView()
     // Convert pixmap strips for enemy animations into a QCanvasPixmapArray.
     // First convert the pixmaps for enemies with no gold ...
     pixmap = QPixmap (enemy1_xpm);
-    image = pixmap.convertToImage ();
+    image = pixmap.toImage ();
 
     pmList.clear();
 
 #ifdef QT3
     for (int i = 0; i < 20; i++) {
-	pm.convertFromImage (image.copy (i * 16, 0, 16, 16));
+	pm = QPixmap::fromImage (image.copy (i * 16, 0, 16, 16));
 	pmList.append (pm);
     }
 #else
@@ -443,11 +445,11 @@ void KGrCanvas::initView()
 
     // ... then convert the gold-carrying enemies.
     pixmap = QPixmap (enemy2_xpm);
-    image = pixmap.convertToImage ();
+    image = pixmap.toImage ();
 
 #ifdef QT3
     for (int i = 0; i < 20; i++) {
-	pm.convertFromImage (image.copy (i * 16, 0, 16, 16));
+	pm = QPixmap::fromImage (image.copy (i * 16, 0, 16, 16));
 	pmList.append (pm);
     }
 

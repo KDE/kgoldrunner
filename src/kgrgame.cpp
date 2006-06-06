@@ -81,7 +81,7 @@ KGrGame::KGrGame (KGrCanvas * theView, QString theSystemDir, QString theUserDir)
     // Get the mouse position every 40 msec.  It is used to steer the hero.
     mouseSampler = new QTimer (this);
     connect (mouseSampler, SIGNAL(timeout()), SLOT (readMousePos ()));
-    mouseSampler->start (40, FALSE);
+    mouseSampler->start (40);
 
     srand(1); 				// initialisiere Random-Generator
 }
@@ -143,7 +143,8 @@ void KGrGame::herosDead()
 	// Still some life left, so PAUSE and then re-start the level.
 	emit showLives (lives);
 	KGrObject::frozen = TRUE;	// Freeze the animation and let
-	dyingTimer->start (1500, TRUE);	// the player see what happened.
+	dyingTimer->setSingleShot(true);
+	dyingTimer->start (1500);	// the player see what happened.
     }
     else {
 	// Game over: display the "ENDE" screen.
@@ -487,7 +488,7 @@ int KGrGame::loadLevel (int levelNo)
       // At the start of a tutorial, put out an introduction.
       if (levelNo == 1)
 	  myMessage (view, collection->name,
-				i18n((const char *) collection->about.utf8()));
+				i18n(collection->about.toUtf8().constData()));
 
       // Put out an explanation of this level.
       myMessage (view, getTitle(), levelHint);
@@ -513,7 +514,7 @@ bool KGrGame::openLevelFile (int levelNo, QFile & openlevel)
 
   filePath = getFilePath (owner, collection, levelNo);
 
-  openlevel.setName (filePath);
+  openlevel.setFileName (filePath);
 
   // gucken ob und welcher Level existiert
 
@@ -834,7 +835,7 @@ void KGrGame::saveGame()		// Save game ID, score and level.
     file2.close();
 
     QDir dir;
-    dir.rename (file2.name(), file1.name());
+    dir.rename (file2.fileName(), file1.fileName());
     KGrMessage::information (view, i18n("Save Game"),
 				i18n("Your game has been saved."));
 }
@@ -884,7 +885,7 @@ void KGrGame::loadGame()		// Re-load game, score and level.
 
     if (! s.isNull()) {
 	pr = s.mid (21, 7);			// Get the collection prefix.
-	pr = pr.left (pr.find (" ", 0, FALSE));
+	pr = pr.left (pr.indexOf (" ", 0, Qt::CaseInsensitive));
 
 	for (i = 0; i < imax; i++) {		// Find the collection.
 	    if (collections.at(i)->prefix == pr) {
@@ -944,7 +945,7 @@ void KGrGame::checkHighScore()
     QDataStream s1;
 
     if (! high1.exists()) {
-	high1.setName (systemDataDir + "hi_" + collection->prefix + ".dat");
+	high1.setFileName (systemDataDir + "hi_" + collection->prefix + ".dat");
 	if (! high1.exists()) {
 	    prevHigh = FALSE;
 	}
@@ -953,7 +954,7 @@ void KGrGame::checkHighScore()
     // If a previous high score file exists, check the current score against it.
     if (prevHigh) {
 	if (! high1.open (QIODevice::ReadOnly)) {
-	    QString high1_name = high1.name();
+	    QString high1_name = high1.fileName();
 	    KGrMessage::information (view, i18n("Check for High Score"),
 		i18n("Cannot open file '%1' for read-only.", high1_name));
 	    return;
@@ -1000,8 +1001,9 @@ void KGrGame::checkHighScore()
     }
 
     // Dialog to ask the user to enter their name.
-    QDialog *		hsn = new QDialog (view, "hsNameDialog", TRUE,
+    QDialog *		hsn = new QDialog (view,
 			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title);
+    hsn->setObjectName("hsNameDialog");
 
     int margin = 10;
     int spacing = 10;
@@ -1022,12 +1024,12 @@ void KGrGame::checkHighScore()
     mainLayout->	addWidget (hsnUser);
     mainLayout->	addWidget (OK);
 
-    hsn->		setCaption (i18n("Save High Score"));
+    hsn->		setWindowTitle (i18n("Save High Score"));
 
     QPoint		p = view->mapToGlobal (QPoint (0,0));
     hsn->		move (p.x() + 50, p.y() + 50);
 
-    OK->		setAccel (Qt::Key_Return);
+    OK->		setShortcut (Qt::Key_Return);
     hsnUser->		setFocus();		// Set the keyboard input on.
 
     connect	(hsnUser, SIGNAL (returnPressed ()), hsn, SLOT (accept ()));
@@ -1073,7 +1075,7 @@ void KGrGame::checkHighScore()
 		highCount++;
 		// Recode the user's name as UTF-8, in case it contains
 		// non-ASCII chars (e.g. "Krüger" is encoded as "KrÃ¼ger").
-		s2 << (const char *) thisUser.utf8();
+		s2 << thisUser.toUtf8().constData();
 		s2 << (qint16) level;
 		s2 << (qint32) score;
 		s2 << hsDate.myStr();
@@ -1092,7 +1094,7 @@ void KGrGame::checkHighScore()
 	if ((! scoreRecorded) && (highCount < 10)) {
 	    // Recode the user's name as UTF-8, in case it contains
 	    // non-ASCII chars (e.g. "Krüger" is encoded as "KrÃ¼ger").
-	    s2 << (const char *) thisUser.utf8();
+	    s2 << thisUser.toUtf8().constData();
 	    s2 << (qint16) level;
 	    s2 << (qint32) score;
 	    s2 << hsDate.myStr();
@@ -1102,7 +1104,7 @@ void KGrGame::checkHighScore()
     else {
 	// Recode the user's name as UTF-8, in case it contains
 	// non-ASCII chars (e.g. "Krüger" is encoded as "KrÃ¼ger").
-	s2 << (const char *) thisUser.utf8();
+	s2 << thisUser.toUtf8().constData();
 	s2 << (qint16) level;
 	s2 << (qint32) score;
 	s2 << hsDate.myStr();
@@ -1111,7 +1113,7 @@ void KGrGame::checkHighScore()
     high2.close();
 
     QDir dir;
-    dir.rename (high2.name(),
+    dir.rename (high2.fileName(),
 		userDataDir + "hi_" + collection->prefix + ".dat");
     KGrMessage::information (view, i18n("Save High Score"),
 				i18n("Your high score has been saved."));
@@ -1138,7 +1140,7 @@ void KGrGame::showHighScores()
     QDataStream s1;
 
     if (! high1.exists()) {
-	high1.setName (systemDataDir + "hi_" + collection->prefix + ".dat");
+	high1.setFileName (systemDataDir + "hi_" + collection->prefix + ".dat");
 	if (! high1.exists()) {
 	    KGrMessage::information (view, i18n("Show High Scores"),
 		    i18n("Sorry, there are no high scores for the \"%1\" game yet.",
@@ -1148,14 +1150,15 @@ void KGrGame::showHighScores()
     }
 
     if (! high1.open (QIODevice::ReadOnly)) {
-	QString high1_name = high1.name();
+	QString high1_name = high1.fileName();
 	KGrMessage::information (view, i18n("Show High Scores"),
 	    i18n("Cannot open file '%1' for read-only.", high1_name));
 	return;
     }
 
-    QDialog *		hs = new QDialog (view, "hsDialog", TRUE,
+    QDialog *		hs = new QDialog (view,
 			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title);
+    hs->setObjectName("hsDialog");
 
     int margin = 10;
     int spacing = 10;
@@ -1191,9 +1194,9 @@ void KGrGame::showHighScores()
     mainLayout->	addWidget (hsHeader);
     mainLayout->	addWidget (hsColHeader);
 
-    hs->		setCaption (i18n("High Scores"));
+    hs->		setWindowTitle (i18n("High Scores"));
 
-    OK->		setAccel (Qt::Key_Return);
+    OK->		setShortcut (Qt::Key_Return);
 
     // Set up the format for the high-score lines.
     f.			setBold (FALSE);
@@ -1611,7 +1614,7 @@ bool KGrGame::saveLevelFile()
     levelFile.putch ('\n');
 
     // Save the level name, changing non-ASCII chars to UTF-8 (eg. ü to Ã¼).
-    QByteArray levelNameC = levelName.utf8();
+    QByteArray levelNameC = levelName.toUtf8();
     int len1 = levelNameC.length();
     if (len1 > 0) {
 	for (i = 0; i < len1; i++)
@@ -1620,7 +1623,7 @@ bool KGrGame::saveLevelFile()
     }
 
     // Save the level hint, changing non-ASCII chars to UTF-8 (eg. ü to Ã¼).
-    QByteArray levelHintC = levelHint.utf8();
+    QByteArray levelHintC = levelHint.toUtf8();
     int len2 = levelHintC.length();
     char ch = '\0';
 
@@ -2269,7 +2272,7 @@ void KGrThumbNail::drawContents (QPainter * p)	// Activated via "paintEvent".
     pen.setColor (backgroundColor);
     p->setPen (pen);
 
-    openFile.setName (filePath);
+    openFile.setFileName (filePath);
     if ((! openFile.exists()) || (! openFile.open (QIODevice::ReadOnly))) {
 	// There is no file, so fill the thumbnail with "FREE" cells.
 	p->drawRect (QRect(fw, fw, FIELDWIDTH*n, FIELDHEIGHT*n));
@@ -2394,7 +2397,7 @@ void KGrGame::mapCollections()
 	}
 
 	const QFileInfoList files = d.entryInfoList
-			(colln->prefix + "???.grl", QDir::Files, QDir::Name);
+			(QStringList(colln->prefix + "???.grl"), QDir::Files, QDir::Name);
 
 	if ((files.count() <= 0) && (colln->nLevels > 0)) {
 	    KGrMessage::information (view, i18n("Check Games & Levels"),
@@ -2506,9 +2509,9 @@ bool KGrGame::loadCollections (Owner o)
 		line = line.simplified();
 		int i, j, len;
 		len = line.length();
-		i = 0;   j = line.find(' ',i); nLevels = line.left(j).toInt();
-		i = j+1; j = line.find(' ',i); settings = line[i];
-		i = j+1; j = line.find(' ',i); prefix  = line.mid(i,j-i);
+		i = 0;   j = line.indexOf(' ',i); nLevels = line.left(j).toInt();
+		i = j+1; j = line.indexOf(' ',i); settings = line[i];
+		i = j+1; j = line.indexOf(' ',i); prefix  = line.mid(i,j-i);
 		i = j+1;                       name    = line.right(len-i);
 	    }
 	    // If first character is not a digit, the line should be an "about".
@@ -2566,14 +2569,14 @@ bool KGrGame::saveCollections (Owner o)
 	if (colln->owner == o) {
 	    line.sprintf ("%03d %c %s %s\n", colln->nLevels, colln->settings,
 				colln->prefix.myStr(),
-				(const char *) colln->name.utf8());
+				colln->name.toUtf8().constData());
 	    len = line.length();
 	    for (i = 0; i < len; i++)
 			c.putch (line.toUtf8()[i]);
 
 	    len = colln->about.length();
 	    if (len > 0) {
-		QByteArray aboutC = colln->about.utf8();
+		QByteArray aboutC = colln->about.toUtf8();
 		len = aboutC.length();		// Might be longer now.
 		for (i = 0; i < len; i++) {
 		    ch = aboutC[i];

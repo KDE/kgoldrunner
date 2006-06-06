@@ -116,7 +116,8 @@ void KGrBrick::dig (void)
   iamA = HOLE;
   objectView->paintCell (xpos, ypos, BRICK, dig_counter);
   objectView->updateCanvas();
-  timer->start ((DIGDELAY * NSPEED) / speed, TRUE);
+  timer->setSingleShot(true);
+  timer->start ((DIGDELAY * NSPEED) / speed);
 }
 
 void KGrBrick::doStep() {
@@ -143,13 +144,15 @@ void KGrBrick::timeDone ()
     if (dig_counter == 5) {
 	hole_counter--;
 	if (hole_counter > 0) {
-	    timer->start ((DIGDELAY * NSPEED) / speed, TRUE);
+            timer->setSingleShot(true);
+	    timer->start ((DIGDELAY * NSPEED) / speed);
 	    return;
 	}
     }
     if (dig_counter < 9) {
 	dig_counter++;
-	timer->start ((DIGDELAY * NSPEED) / speed, TRUE);
+        timer->setSingleShot(true);
+	timer->start ((DIGDELAY * NSPEED) / speed);
 	if (dig_counter >= 8)
 	    iamA = BRICK;
     }

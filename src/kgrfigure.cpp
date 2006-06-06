@@ -152,7 +152,8 @@ void KGrFigure::walkUp(int WALKDELAY)
 	    rely -= STEP;
 	    absy -= STEP;
 	}
-	walkTimer->start ((WALKDELAY * NSPEED) / speed, TRUE);
+	walkTimer->setSingleShot( true );
+	walkTimer->start ((WALKDELAY * NSPEED) / speed);
     }
     else {
 	// End of 4-step cycle: move up to next cell, if possible.
@@ -182,7 +183,8 @@ void KGrFigure::walkDown(int WALKDELAY, int FALLDELAY)
 		rely += STEP;
 		absy += STEP;
 	    }
-	    walkTimer->start ((WALKDELAY * NSPEED) / speed, TRUE);
+	    walkTimer->setSingleShot( true );
+	    walkTimer->start ((WALKDELAY * NSPEED) / speed);
 	}
 	else {
 	    // End of 4-step cycle: move down to next cell, if possible.
@@ -214,7 +216,8 @@ void KGrFigure::walkLeft (int WALKDELAY, int FALLDELAY)
 		relx -= STEP;
 		absx -=STEP;
 	    }
-	    walkTimer->start ((WALKDELAY * NSPEED) / speed, TRUE);
+	    walkTimer->setSingleShot( true );
+	    walkTimer->start ((WALKDELAY * NSPEED) / speed);
 	}
 	else {
 	    // End of 4-pixmap cycle: start again, in next cell if possible.
@@ -246,7 +249,8 @@ void KGrFigure::walkRight(int WALKDELAY, int FALLDELAY)
 		relx += STEP;
 		absx += STEP;	// nur vorwärts gehen, wenn es auch möglich ist
 	    }
-	    walkTimer->start ((WALKDELAY * NSPEED) / speed, TRUE);
+	    walkTimer->setSingleShot( true );
+	    walkTimer->start ((WALKDELAY * NSPEED) / speed);
 	}
 	else {
 	    actualPixmap -= 4;		// Schritt war vollendet
@@ -274,7 +278,8 @@ void KGrFigure::initFall(int apm, int FALLDELAY)
   actualPixmap = apm;
   walkCounter=1;
   walkTimer->stop();
-  fallTimer->start((FALLDELAY * NSPEED) / speed, TRUE);
+  walkTimer->setSingleShot( true );
+  fallTimer->start((FALLDELAY * NSPEED) / speed);
 }
 
 void KGrFigure::showFigure ()
@@ -583,7 +588,10 @@ void KGrHero::walkTimeDone ()
     if (!canStand()&&!hangAtPole())
       initFall(FALL1, FALLDELAY);
     else
-      walkTimer->start ((WALKDELAY * NSPEED) / speed, TRUE);
+    {
+        walkTimer->setSingleShot( true );
+        walkTimer->start ((WALKDELAY * NSPEED) / speed);
+    }
   if(isInEnemy()) {
     walkTimer->stop();
     emit caughtHero();
@@ -597,7 +605,8 @@ void KGrHero::fallTimeDone()
 
     if (!standOnEnemy()) {
 	if (walkCounter++ < 4) {	// Held fällt vier Positionen
-	    fallTimer->start((FALLDELAY * NSPEED) / speed, TRUE);
+	    fallTimer->setSingleShot(true);
+	    fallTimer->start((FALLDELAY * NSPEED) / speed);
 	    rely+=STEP;
 	    absy+=STEP;
 	}
@@ -608,12 +617,14 @@ void KGrHero::fallTimeDone()
 	    absy = y*16;		// wird Null und Figur eins runter
 	    collectNugget();		// gesetzt. Zeit evtl. Nugget zu nehmen
 	    if (! (canStand()||hangAtPole())) {	// Held muss wohl weiterfallen.
-		fallTimer->start((FALLDELAY * NSPEED) / speed, TRUE);
+		fallTimer->setSingleShot(true);
+		fallTimer->start((FALLDELAY * NSPEED) / speed);
 		walkCounter = 1;
 	    }
 	    else {			// Held hat Boden (oder Feind) unter den
 		status = STANDING;	// Füssen oder hängt an Stange -> steh!
-		walkTimer->start((WALKDELAY * NSPEED) / speed, TRUE);
+		walkTimer->setSingleShot(true);
+		walkTimer->start((WALKDELAY * NSPEED) / speed);
 		direction = (actualPixmap == 19) ? RIGHT : LEFT;
 		if ((*playfield)[x][y]->whatIam() == POLE)
 		    actualPixmap = (direction == RIGHT)? RIGHTCLIMB1:LEFTCLIMB1;
@@ -632,11 +643,13 @@ void KGrHero::fallTimeDone()
 		actualPixmap = (direction == RIGHT)? RIGHTCLIMB1:LEFTCLIMB1;
 	    else
 		actualPixmap = (direction == RIGHT)? RIGHTWALK1:LEFTWALK1;
-	    walkTimer->start((WALKDELAY * NSPEED) / speed, TRUE);
+	    walkTimer->setSingleShot( true );
+	    walkTimer->start((WALKDELAY * NSPEED) / speed);
 	}
 	else {
 	    // Else, freeze hero until enemy moves out of the way.
-	    fallTimer->start((FALLDELAY * NSPEED) / speed, TRUE);
+	    fallTimer->setSingleShot(true);
+	    fallTimer->start((FALLDELAY * NSPEED) / speed);
 	}
     }
     if (isInEnemy() && (! standOnEnemy()))
@@ -906,7 +919,8 @@ void KGrEnemy::walkTimeDone ()
       }
       status = WALKING; // initialisiere die Zählervariablen und
       walkCounter = 1; // den Timer um den Held weiter
-      walkTimer->start ((WALKDELAY * NSPEED) / speed, TRUE); // zu jagen
+      walkTimer->setSingleShot( true );
+      walkTimer->start ((WALKDELAY * NSPEED) / speed); // zu jagen
       startWalk ();
       }
   }
@@ -922,7 +936,8 @@ void KGrEnemy::walkTimeDone ()
       rely = 0; absy = 16 * y;
       startWalk ();
     }
-    walkTimer->start ((WALKDELAY * NSPEED) / speed, TRUE);
+    walkTimer->setSingleShot( true );
+    walkTimer->start ((WALKDELAY * NSPEED) / speed);
   }
   showFigure();
 }
@@ -959,12 +974,14 @@ void KGrEnemy::fallTimeDone ()
     }
 
   if (standOnEnemy()) {				// Don't fall into a friend.
-    fallTimer->start((FALLDELAY * NSPEED) / speed, TRUE);
+    fallTimer->setSingleShot(true);
+    fallTimer->start((FALLDELAY * NSPEED) / speed);
     return;
   }
 
   if (walkCounter++ < 4){
-    fallTimer->start((FALLDELAY * NSPEED) / speed, TRUE);
+    fallTimer->setSingleShot(true);
+    fallTimer->start((FALLDELAY * NSPEED) / speed);
     { rely+=STEP; absy+=STEP;}
   }
   else {
@@ -972,10 +989,12 @@ void KGrEnemy::fallTimeDone ()
     if ((*playfield)[x][y]->whatIam() == USEDHOLE) {
         captiveCounter = 0;
         status = CAPTIVE;
-        captiveTimer->start((CAPTIVEDELAY * NSPEED) / speed, TRUE);
+        captiveTimer->setSingleShot(true);
+        captiveTimer->start((CAPTIVEDELAY * NSPEED) / speed);
     }
     else if (!(canStand()||hangAtPole())) {
-	fallTimer->start((FALLDELAY * NSPEED) / speed, TRUE);
+	fallTimer->setSingleShot(true);
+	fallTimer->start((FALLDELAY * NSPEED) / speed);
 	walkCounter=1;
     }
     else {
@@ -988,7 +1007,8 @@ void KGrEnemy::fallTimeDone ()
     status = WALKING;
     walkCounter = 1;
     direction = searchbestway(x,y,herox,heroy);
-    walkTimer->start ((WALKDELAY * NSPEED) / speed, TRUE);
+    walkTimer->setSingleShot( true );
+    walkTimer->start ((WALKDELAY * NSPEED) / speed);
     startWalk ();
     if (!nuggets)
       collectNugget();
@@ -1008,11 +1028,13 @@ void KGrEnemy::captiveTimeDone()
       status = WALKING;
       walkCounter = 1;
       direction = UP;
-      walkTimer->start ((WALKDELAY * NSPEED) / speed, TRUE);
+      walkTimer->setSingleShot( true );
+      walkTimer->start ((WALKDELAY * NSPEED) / speed);
       captiveCounter = 0;
     } else {
       captiveCounter ++;
-      captiveTimer->start((CAPTIVEDELAY * NSPEED) / speed, TRUE);
+      captiveTimer->setSingleShot(true);
+      captiveTimer->start((CAPTIVEDELAY * NSPEED) / speed);
       showFigure();
     }
 }
@@ -1024,11 +1046,13 @@ void KGrEnemy::startSearching()
 
     if (canStand()||((*playfield)[x][y+1]->whatIam()==USEDHOLE)) {
 	status = WALKING;
-	walkTimer->start ((WALKDELAY * NSPEED) / speed, TRUE);
+	walkTimer->setSingleShot( true );
+	walkTimer->start ((WALKDELAY * NSPEED) / speed);
     }
     else {
 	status = FALLING;
-	fallTimer->start ((FALLDELAY * NSPEED) / speed, TRUE);
+	fallTimer->setSingleShot( true );
+	fallTimer->start ((FALLDELAY * NSPEED) / speed);
     }
 
     walkCounter = 1;

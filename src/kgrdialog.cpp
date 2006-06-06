@@ -94,23 +94,25 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     mainLayout->addWidget (separator);
 
     if ((action == SL_START) || (action == SL_UPD_GAME)) {
-	dad->	setCaption (i18n("Select Game"));
+	dad->	setWindowTitle (i18n("Select Game"));
 	QLabel * startMsg = new QLabel
 	    ("<b>" + i18n("Level 1 of the selected game is:") + "</b>", dad);
 	mainLayout->addWidget (startMsg);
     }
     else {
-	dad->	setCaption (i18n("Select Game/Level"));
+	dad->	setWindowTitle (i18n("Select Game/Level"));
 	QLabel * selectLev = new QLabel (i18n("Select level:"), dad);
 	mainLayout->addWidget (selectLev);
     }
 
-    QGridLayout * grid = new QGridLayout (3, 2, -1);
+    QGridLayout * grid = new QGridLayout;
     mainLayout->addLayout (grid);
 
-    // Initial range 1->150, small step 1, big step 10 and default value 1.
-    number    = new QScrollBar (1, 150, 1, 10, 1,
-				  Qt::Horizontal, dad);
+    number    = new QScrollBar (Qt::Horizontal, dad);
+    number->setRange(1, 150);
+    number->setSingleStep(1);
+    number->setPageStep(10);
+    number->setValue(1);
     grid->addWidget (number, 1, 1);
 
     QWidget * numberPair = new QWidget(dad);
@@ -127,7 +129,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     slName    = new QLabel ("", dad);
     grid->addWidget (slName, 3, 1);
     thumbNail = new KGrThumbNail (dad);
-    grid->addMultiCellWidget (thumbNail, 1, 3, 2, 2);
+    grid->addWidget (thumbNail, 1, 2, 3, 1);
 
     // Set thumbnail cell size to about 1/5 of game cell size.
     int cellSize = parent->width() / (5 * (FIELDWIDTH + 4));
@@ -316,9 +318,9 @@ void KGrSLDialog::slColln (int i)
     int n = slCollnIndex;				// Collection selected.
     int N = defaultGame;				// Current collection.
     if (collections.at(n)->nLevels > 0)
-	number->setMaxValue (collections.at(n)->nLevels);
+	number->setMaximum (collections.at(n)->nLevels);
     else
-	number->setMaxValue (1);			// Avoid range errors.
+	number->setMaximum (1);			// Avoid range errors.
 
     // Set a default level number for the selected collection.
     switch (slAction) {
@@ -341,8 +343,8 @@ void KGrSLDialog::slColln (int i)
 	}
 	else {
 	    // Saving new/edited level or relocating a level: use "nLevels + 1".
-	    number->setMaxValue (collections.at(n)->nLevels + 1);
-	    number->setValue (number->maxValue());
+	    number->setMaximum (collections.at(n)->nLevels + 1);
+	    number->setValue (number->maximum());
 	}
 	break;
     default:
@@ -380,7 +382,7 @@ void KGrSLDialog::slAboutColln ()
     if (collections.at(n)->about.length() > 0) {
 	// Convert game description to ASCII and UTF-8 codes, then translate it.
 	KGrMessage::wrapped (slParent, title,
-			i18n((const char *) collections.at(n)->about.utf8()));
+			i18n(collections.at(n)->about.toUtf8().constData()));
     }
     else {
 	KGrMessage::wrapped (slParent, title,
@@ -859,7 +861,7 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
     // Read the saved games into the list box.
     while (! gameText.endData()) {
 	s = gameText.readLine();		// Read in one saved game.
-	pr = s.left (s.find (" ", 0, FALSE));	// Get the collection prefix.
+	pr = s.left (s.indexOf (" ", 0, Qt::CaseInsensitive));	// Get the collection prefix.
 	for (i = 0; i < imax; i++) {		// Get the collection name.
 	    if (collections.at(i)->prefix == pr) {
 		s = s.insert (0,
