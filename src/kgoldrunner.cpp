@@ -91,6 +91,9 @@ KGoldrunner::KGoldrunner()
     // position, icon size, etc.
     setAutoSaveSettings();
 
+    // explicitly hide an edit toolbar - we need it in edit mode only
+    toolBar("editToolbar")->hide();
+    toolBar("editToolbar")->setAllowedAreas(Qt::TopToolBarArea);
 #ifdef QT3
     // Base size of playing-area and widgets on the monitor resolution.
     int dw = KApplication::desktop()->width();
@@ -105,7 +108,6 @@ KGoldrunner::KGoldrunner()
 #endif
     setFixedSize (view->size());
 
-    toolBar("editToolbar")->setAllowedAreas(Qt::TopToolBarArea);
 
     // Set mouse control of the hero as the default.
     game->setMouseMode (TRUE);
@@ -183,7 +185,7 @@ void KGoldrunner::setupActions()
     highScore =			KStdGameAction::
 				highscores (
 				game, SLOT(showHighScores()), actionCollection());
-    hintAction =		new KAction ( KIcon("ktip"), 
+    hintAction =		new KAction ( KIcon("ktip"),
 				i18n("&Get Hint"),
 				actionCollection(),
 				"get_hint");
@@ -211,7 +213,7 @@ void KGoldrunner::setupActions()
     // Edit Next Level...
     // --------------------------
 
-    KAction* createAct = 	new KAction ( KIcon("filenew"), 
+    KAction* createAct = 	new KAction ( KIcon("filenew"),
 				i18n("&Create Level"),
 				actionCollection(),
 				"create_level");
@@ -234,7 +236,7 @@ void KGoldrunner::setupActions()
     // Delete Level...
     // --------------------------
 
-    saveEdits =			new KAction ( KIcon("filesave"), 
+    saveEdits =			new KAction ( KIcon("filesave"),
 				i18n("&Save Edits..."),
 				actionCollection(),
 				"save_edits");
@@ -811,7 +813,7 @@ void KGoldrunner::optionsShowStatusbar()
 void KGoldrunner::optionsConfigureKeys()
 {
     KKeyDialog::configure(actionCollection());
-	
+
     // Update the PAUSE/RESUME message in the status bar.
     pauseKeys = myPause->shortcut().toString();
     pauseKeys = pauseKeys.replace (';', "\" " + i18n("or") + " \"");
@@ -1021,7 +1023,7 @@ void KGoldrunner::setupEditToolbarActions()
     QMatrix w;
     w = w.scale (2.0, 2.0);
 
-#warning "How to adjust this hack?"	
+#warning "How to adjust this hack?"
 
     brickbg		= brickbg.transformed (w);
     fbrickbg		= fbrickbg.transformed (w);
