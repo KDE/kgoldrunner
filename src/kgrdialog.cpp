@@ -37,7 +37,7 @@
 KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 			Q3PtrList<KGrCollection> & gamesList, KGrGame * theGame,
 			QWidget * parent, const char * name)
-		: QDialog (parent, name, TRUE,
+		: QDialog (parent, name, true,
 			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title)
 #else
 KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
@@ -82,7 +82,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     hboxLayout1->setSpacing (spacing);
     collnN    = new QLabel ("", gameInfo);	// Name of selected collection.
     QFont f = collnN->font();
-    f.setBold (TRUE);
+    f.setBold (true);
     collnN->setFont (f);
     collnA    = new QPushButton (i18n("More Info"), gameInfo);
 
@@ -160,7 +160,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 #endif
 
     // Set the default for the level-number in the scrollbar.
-    number->	setTracking (TRUE);
+    number->	setTracking (true);
     number->setValue (requestedLevel);
 
     slSetCollections (defaultGame);
@@ -171,8 +171,8 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     case SL_START:	// Must start at level 1, but can choose a collection.
 			OKText = i18n("Start Game");
 			number->setValue (1);
-			number->setEnabled(FALSE);
-			display->setEnabled(FALSE);
+			number->setEnabled(false);
+			display->setEnabled(false);
 			number->hide();
 			numberL->hide();
 			display->hide();
@@ -198,8 +198,8 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     case SL_UPD_GAME:	// Can only edit USER collection details.
 			OKText = i18n("Edit Game Info");
 			number->setValue (1);
-			number->setEnabled(FALSE);
-			display->setEnabled(FALSE);
+			number->setEnabled(false);
+			display->setEnabled(false);
 			number->hide();
 			numberL->hide();
 			display->hide();
@@ -244,7 +244,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 	connect (levelNH,  SIGNAL (clicked()), game, SLOT (editNameAndHint()));
     }
     else {
-	levelNH->setEnabled (FALSE);
+	levelNH->setEnabled (false);
 	levelNH->hide();
     }
 
@@ -295,7 +295,7 @@ void KGrSLDialog::slSetCollections (int cIndex)
     }
     // Mark the currently selected collection (or default 0).
     colln->setCurrentItem (cIndex);
-    colln->setSelected (cIndex, TRUE);
+    colln->setSelected (cIndex, true);
 
     // Fetch and display information on the selected collection.
     slColln (cIndex);
@@ -313,7 +313,7 @@ void KGrSLDialog::slColln (int i)
     }
 
     // User "highlighted" a new collection (with one click) ...
-    colln->setSelected (i, TRUE);			// One click = selected.
+    colln->setSelected (i, true);			// One click = selected.
     slCollnIndex = i;
     int n = slCollnIndex;				// Collection selected.
     int N = defaultGame;				// Current collection.
@@ -403,7 +403,7 @@ void KGrSLDialog::slUpdate (const QString & text)
 {
     // Move the slider when a valid level number is entered.
     QString s = text;
-    bool ok = FALSE;
+    bool ok = false;
     int n = s.toInt (&ok);
     if (ok) {
 	number->setValue (n);
@@ -507,7 +507,7 @@ void KGrSLDialog::slotHelp ()
 #ifdef KGR_PORTABLE
 KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
 			QWidget * parent, const char * name)
-		: QDialog (parent, name, TRUE,
+		: QDialog (parent, name, true,
 			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title)
 #else
 KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
@@ -598,7 +598,7 @@ KGrNHDialog::~KGrNHDialog()
 KGrECDialog::KGrECDialog (int action, int collnIndex,
 			Q3PtrList<KGrCollection> & gamesList,
 			QWidget * parent, const char * name)
-		: QDialog (parent, name, TRUE,
+		: QDialog (parent, name, true,
 			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title)
 #else
 KGrECDialog::KGrECDialog (int action, int collnIndex,
@@ -693,7 +693,7 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
 	ecPrefix->	setText (collections.at(defaultGame)->prefix);
 	if (collections.at(defaultGame)->nLevels > 0) {
 	    // Collection already has some levels, so cannot change the prefix.
-	    ecPrefix->	setEnabled (FALSE);
+	    ecPrefix->	setEnabled (false);
 	}
 	QString		s;
 #ifndef KGR_PORTABLE
@@ -764,12 +764,12 @@ KGrECDialog::~KGrECDialog()
 
 void KGrECDialog::ecSetRules (const char settings)
 {
-    ecKGrB->	setChecked (FALSE);
-    ecTradB->	setChecked (FALSE);
+    ecKGrB->	setChecked (false);
+    ecTradB->	setChecked (false);
     if (settings == 'K')
-	ecKGrB->	setChecked (TRUE);
+	ecKGrB->	setChecked (true);
     else
-	ecTradB->	setChecked (TRUE);
+	ecTradB->	setChecked (true);
 }
 
 void KGrECDialog::ecSetKGr ()  {ecSetRules ('K');}	// Radio button slots.
@@ -783,7 +783,7 @@ void KGrECDialog::ecSetTrad () {ecSetRules ('T');}
 KGrLGDialog::KGrLGDialog (QFile * savedGames,
 			Q3PtrList<KGrCollection> & collections,
 			QWidget * parent, const char * name)
-		: QDialog (parent, name, TRUE,
+		: QDialog (parent, name, true,
 			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title)
 #else
 KGrLGDialog::KGrLGDialog (QFile * savedGames,
@@ -818,9 +818,9 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
 #else
     QFont		f = KGlobalSettings::fixedFont();	// KDE version.
 #endif
-			f.setFixedPitch (TRUE);
+			f.setFixedPitch (true);
     lgList->		setFont (f);
-			f.setBold (TRUE);
+			f.setBold (true);
     lgHeader->		setFont (f);
 
     mainLayout->	addWidget (lgHeader);
@@ -865,7 +865,7 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
 	for (i = 0; i < imax; i++) {		// Get the collection name.
 	    if (collections.at(i)->prefix == pr) {
 		s = s.insert (0,
-		    collections.at(i)->name.leftJustified (20, ' ', TRUE) + " ");
+		    collections.at(i)->name.leftJustified (20, ' ', true) + " ");
 		break;
 	    }
 	}
@@ -875,7 +875,7 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
 
     // Mark row 0 (the most recently saved game) as the default selection.
     lgList->	setCurrentItem (0);
-    lgList->	setSelected (0, TRUE);
+    lgList->	setSelected (0, true);
 		lgHighlight = 0;
 
     connect (lgList, SIGNAL (highlighted (int)), this, SLOT (lgSelect (int)));
@@ -947,7 +947,7 @@ void KGrMessage::wrapped (QWidget * parent, QString title, QString contents)
 #ifndef KGR_PORTABLE
     KMessageBox::information (parent, contents, title);
 #else
-    QDialog *		mm = new QDialog (parent, "wrappedMessage", TRUE,
+    QDialog *		mm = new QDialog (parent, "wrappedMessage", true,
 			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title);
 
     int margin = 10;
@@ -989,7 +989,7 @@ void KGrMessage::wrapped (QWidget * parent, QString title, QString contents)
 
     mle->		setFrameStyle (Q3Frame::NoFrame);
     mle->		setAlignment (Qt::AlignLeft);
-    mle->		setReadOnly (TRUE);
+    mle->		setReadOnly (true);
     mle->		setText (contents);
 
 #ifndef QT3

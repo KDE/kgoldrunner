@@ -51,24 +51,24 @@ KGrGame::KGrGame (KGrCanvas * theView, QString theSystemDir, QString theUserDir)
     userDataDir = theUserDir;
 
     // Set the game-editor OFF, but available.
-    editMode = FALSE;
-    paintEditObj = FALSE;
+    editMode = false;
+    paintEditObj = false;
     editObj  = BRICK;
-    shouldSave = FALSE;
+    shouldSave = false;
 
-    enemies.setAutoDelete(TRUE);
+    enemies.setAutoDelete(true);
 
     hero = new KGrHero (view, 0, 0);	// The hero is born ... Yay !!!
     hero->setPlayfield (&playfield);
 
-    setBlankLevel (TRUE);		// Fill the playfield with blank walls.
+    setBlankLevel (true);		// Fill the playfield with blank walls.
 
     enemy = NULL;
-    newLevel = TRUE;			// Next level will be a new one.
-    loading  = TRUE;			// Stop input until it is loaded.
+    newLevel = true;			// Next level will be a new one.
+    loading  = true;			// Stop input until it is loaded.
 
-    modalFreeze = FALSE;
-    messageFreeze = FALSE;
+    modalFreeze = false;
+    messageFreeze = false;
 
     connect (hero, SIGNAL (gotNugget(int)),   SLOT (incScore(int)));
     connect (hero, SIGNAL (caughtHero()),     SLOT (herosDead()));
@@ -111,7 +111,7 @@ void KGrGame::startNextLevel()
 
 void KGrGame::startLevel (int startingAt, int requestedLevel)
 {
-    if (! saveOK (FALSE)) {				// Check unsaved work.
+    if (! saveOK (false)) {				// Check unsaved work.
 	return;
     }
     // Use dialog box to select game and level: startingAt = ID_FIRST or ID_ANY.
@@ -142,7 +142,7 @@ void KGrGame::herosDead()
     if (--lives > 0) {
 	// Still some life left, so PAUSE and then re-start the level.
 	emit showLives (lives);
-	KGrObject::frozen = TRUE;	// Freeze the animation and let
+	KGrObject::frozen = true;	// Freeze the animation and let
 	dyingTimer->setSingleShot(true);
 	dyingTimer->start (1500);	// the player see what happened.
     }
@@ -158,10 +158,10 @@ void KGrGame::herosDead()
 	enemies.clear();	// Stop the enemies catching the hero again ...
 	view->deleteEnemySprites();
 	unfreeze();		//    ... NOW we can unfreeze.
-	newLevel = TRUE;
+	newLevel = true;
 	level = 0;
 	loadLevel (level);	// Display the "ENDE" screen.
-	newLevel = FALSE;
+	newLevel = false;
     }
 }
 
@@ -173,7 +173,7 @@ void KGrGame::finalBreath()
 	enemyCount = 0;		// Hero is dead: re-start the level.
 	loadLevel (level);
     }
-    KGrObject::frozen = FALSE;	// Unfreeze the game, but don't move yet.
+    KGrObject::frozen = false;	// Unfreeze the game, but don't move yet.
 }
 
 void KGrGame::showHiddenLadders()
@@ -212,9 +212,9 @@ void KGrGame::goUpOneLevel()
     enemyCount = 0;
     enemies.clear();
     view->deleteEnemySprites();
-    newLevel = TRUE;
+    newLevel = true;
     loadLevel (level);
-    newLevel = FALSE;
+    newLevel = false;
 }
 
 void KGrGame::loseNugget()
@@ -234,17 +234,17 @@ int KGrGame::getLevel()		// Return the current game-level.
 
 bool KGrGame::inMouseMode()
 {
-    return (mouseMode);		// Return TRUE if game is under mouse control.
+    return (mouseMode);		// Return true if game is under mouse control.
 }
 
 bool KGrGame::inEditMode()
 {
-    return (editMode);		// Return TRUE if the game-editor is active.
+    return (editMode);		// Return true if the game-editor is active.
 }
 
 bool KGrGame::isLoading()
 {
-    return (loading);		// Return TRUE if a level is being loaded.
+    return (loading);		// Return true if a level is being loaded.
 }
 
 void KGrGame::setMouseMode (bool on_off)
@@ -255,33 +255,33 @@ void KGrGame::setMouseMode (bool on_off)
 void KGrGame::freeze()
 {
     if ((! modalFreeze) && (! messageFreeze)) {
-	emit gameFreeze (TRUE);	// Do visual feedback in the GUI.
+	emit gameFreeze (true);	// Do visual feedback in the GUI.
     }
-    KGrObject::frozen = TRUE;	// Halt the game, by blocking all timer events.
+    KGrObject::frozen = true;	// Halt the game, by blocking all timer events.
 }
 
 void KGrGame::unfreeze()
 {
     if ((! modalFreeze) && (! messageFreeze)) {
-	emit gameFreeze (FALSE);// Do visual feedback in the GUI.
+	emit gameFreeze (false);// Do visual feedback in the GUI.
     }
-    KGrObject::frozen = FALSE;	// Restart the game.  Because frozen == FALSE,
+    KGrObject::frozen = false;	// Restart the game.  Because frozen == false,
     restart();			// the game goes on running after the next step.
 }
 
 void KGrGame::setMessageFreeze (bool on_off)
 {
     if (on_off) {		// Freeze the game action during a message.
-	messageFreeze = FALSE;
+	messageFreeze = false;
 	if (! KGrObject::frozen) {
-	    messageFreeze = TRUE;
+	    messageFreeze = true;
 	    freeze();
 	}
     }
     else {			// Unfreeze the game action after a message.
 	if (messageFreeze) {
 	    unfreeze();
-	    messageFreeze = FALSE;
+	    messageFreeze = false;
 	}
     }
 }
@@ -326,19 +326,19 @@ void KGrGame::setBlankLevel(bool playable)
 void KGrGame::newGame (const int lev, const int gameIndex)
 {
     // Ignore player input from keyboard or mouse while the screen is set up.
-    loading = TRUE;		// "loadLevel (level)" will reset it.
+    loading = true;		// "loadLevel (level)" will reset it.
 
     if (editMode) {
-	emit setEditMenu (FALSE);	// Disable edit menu items and toolbar.
+	emit setEditMenu (false);	// Disable edit menu items and toolbar.
 
-	editMode = FALSE;
-	paintEditObj = FALSE;
+	editMode = false;
+	paintEditObj = false;
 	editObj = BRICK;
 
-	view->setHeroVisible (TRUE);
+	view->setHeroVisible (true);
     }
 
-    newLevel = TRUE;
+    newLevel = true;
     level = lev;
     collnIndex = gameIndex;
     collection = collections.at (collnIndex);
@@ -356,26 +356,26 @@ void KGrGame::newGame (const int lev, const int gameIndex)
     enemies.clear();
     view->deleteEnemySprites();
 
-    newLevel = TRUE;;
+    newLevel = true;;
     loadLevel (level);
-    newLevel = FALSE;
+    newLevel = false;
 }
 
 void KGrGame::startTutorial()
 {
-    if (! saveOK (FALSE)) {				// Check unsaved work.
+    if (! saveOK (false)) {				// Check unsaved work.
 	return;
     }
 
     int i, index;
     int imax = collections.count();
-    bool found = FALSE;
+    bool found = false;
 
     index = 0;
     for (i = 0; i < imax; i++) {
 	index = i;			// Index within owner.
 	if (collections.at(i)->prefix == "tute") {
-	    found = TRUE;
+	    found = true;
 	    break;
 	}
     }
@@ -418,7 +418,7 @@ int KGrGame::loadLevel (int levelNo)
   }
 
   // Ignore player input from keyboard or mouse while the screen is set up.
-  loading = TRUE;
+  loading = true;
 
   nuggets = 0;
   enemyCount=0;
@@ -502,7 +502,7 @@ int KGrGame::loadLevel (int levelNo)
   connect (view, SIGNAL(mouseClick(int)), SLOT(doDig(int)));
 
   // Re-enable player input.
-  loading = FALSE;
+  loading = false;
 
   return 1;
 }
@@ -523,17 +523,17 @@ bool KGrGame::openLevelFile (int levelNo, QFile & openlevel)
 	    i18n("Cannot find file '%1'. Please make sure '%2' has been "
 	    "run in the '%3' folder.",
 	     filePath, "tar xf levels.tar", systemDataDir.myStr()));
-      return (FALSE);
+      return (false);
   }
 
   // öffne Level zum lesen
   if (! openlevel.open (QIODevice::ReadOnly)) {
       KGrMessage::information (view, i18n("Load Level"),
 	    i18n("Cannot open file '%1' for read-only.", filePath));
-      return (FALSE);
+      return (false);
   }
 
-  return (TRUE);
+  return (true);
 }
 
 void KGrGame::changeObject (unsigned char kind, int i, int j)
@@ -552,7 +552,7 @@ void KGrGame::changeObject (unsigned char kind, int i, int j)
   case HERO:	createObject(new KGrFree (FREE,i,j,view),FREE,i,j);
     hero->init(i,j);
     startI = i; startJ = j;
-    hero->started = FALSE;
+    hero->started = false;
     hero->showFigure();
     break;
   case ENEMY:	createObject(new KGrFree (FREE,i,j,view),FREE,i,j);
@@ -842,7 +842,7 @@ void KGrGame::saveGame()		// Save game ID, score and level.
 
 void KGrGame::loadGame()		// Re-load game, score and level.
 {
-    if (! saveOK (FALSE)) {				// Check unsaved work.
+    if (! saveOK (false)) {				// Check unsaved work.
 	return;
     }
 
@@ -862,9 +862,9 @@ void KGrGame::loadGame()		// Re-load game, score and level.
     }
 
     // Halt the game during the loadGame() dialog.
-    modalFreeze = FALSE;
+    modalFreeze = false;
     if (!KGrObject::frozen) {
-	modalFreeze = TRUE;
+	modalFreeze = true;
 	freeze();
     }
 
@@ -877,7 +877,7 @@ void KGrGame::loadGame()		// Re-load game, score and level.
 	s = lg->getCurrentText();
     }
 
-    bool found = FALSE;
+    bool found = false;
     QString pr;
     int  lev;
     int i;
@@ -892,7 +892,7 @@ void KGrGame::loadGame()		// Re-load game, score and level.
 		collection = collections.at(i);
 		collnIndex  = i;
 		owner = collections.at(i)->owner;
-		found = TRUE;
+		found = true;
 		break;
 	    }
 	}
@@ -915,7 +915,7 @@ void KGrGame::loadGame()		// Re-load game, score and level.
     // Unfreeze the game, but only if it was previously unfrozen.
     if (modalFreeze) {
         unfreeze();
-	modalFreeze = FALSE;
+	modalFreeze = false;
     }
 
     delete lg;
@@ -927,7 +927,7 @@ void KGrGame::loadGame()		// Re-load game, score and level.
 
 void KGrGame::checkHighScore()
 {
-    bool	prevHigh  = TRUE;
+    bool	prevHigh  = true;
     qint16	prevLevel = 0;
     qint32	prevScore = 0;
     QString	thisUser  = i18n("Unknown");
@@ -947,7 +947,7 @@ void KGrGame::checkHighScore()
     if (! high1.exists()) {
 	high1.setFileName (systemDataDir + "hi_" + collection->prefix + ".dat");
 	if (! high1.exists()) {
-	    prevHigh = FALSE;
+	    prevHigh = false;
 	}
     }
 
@@ -962,7 +962,7 @@ void KGrGame::checkHighScore()
 
 	// Read previous users, levels and scores from the high score file.
 	s1.setDevice (&high1);
-	bool found = FALSE;
+	bool found = false;
 	highCount = 0;
 	while (! s1.endData()) {
 	    char * prevUser;
@@ -975,7 +975,7 @@ void KGrGame::checkHighScore()
 	    delete prevDate;
 	    highCount++;
 	    if (score > prevScore) {
-		found = TRUE;			// We have a high score.
+		found = true;			// We have a high score.
 		break;
 	    }
 	}
@@ -1035,7 +1035,7 @@ void KGrGame::checkHighScore()
     connect	(hsnUser, SIGNAL (returnPressed ()), hsn, SLOT (accept ()));
     connect	(OK,      SIGNAL (clicked ()),       hsn, SLOT (accept ()));
 
-    while (TRUE) {
+    while (true) {
 	hsn->exec();
 	thisUser = hsnUser->text();
 	if (thisUser.length() > 0)
@@ -1062,7 +1062,7 @@ void KGrGame::checkHighScore()
 
     if (prevHigh) {
 	high1.reset();
-	bool scoreRecorded = FALSE;
+	bool scoreRecorded = false;
 	highCount = 0;
 	while ((! s1.endData()) && (highCount < 10)) {
 	    char * prevUser;
@@ -1079,7 +1079,7 @@ void KGrGame::checkHighScore()
 		s2 << (qint16) level;
 		s2 << (qint32) score;
 		s2 << hsDate.myStr();
-		scoreRecorded = TRUE;
+		scoreRecorded = true;
 	    }
 	    if (highCount < 10) {
 		highCount++;
@@ -1179,8 +1179,8 @@ void KGrGame::showHighScores()
 #else
     QFont		f = KGlobalSettings::fixedFont();	// KDE version.
 #endif
-    f.			setFixedPitch (TRUE);
-    f.			setBold (TRUE);
+    f.			setFixedPitch (true);
+    f.			setBold (true);
     hsColHeader->	setFont (f);
 
     QLabel *		hsLine [10];
@@ -1199,7 +1199,7 @@ void KGrGame::showHighScores()
     OK->		setShortcut (Qt::Key_Return);
 
     // Set up the format for the high-score lines.
-    f.			setBold (FALSE);
+    f.			setBold (false);
     QString		line;
     const char *	hsFormat = "%2d. %-30.30s %3d %7ld  %s";
 
@@ -1267,7 +1267,7 @@ void KGrGame::restart()
 
     temp = KGrObject::frozen;
 
-    KGrObject::frozen = FALSE;	// Temporarily restart the game, by re-running
+    KGrObject::frozen = false;	// Temporarily restart the game, by re-running
 				// any timer events that have been blocked.
 
     readMousePos();		// Set hero's direction.
@@ -1287,7 +1287,7 @@ void KGrGame::restart()
 		((KGrBrick *)playfield[i][j])->doStep();
     }
 
-    KGrObject::frozen = temp;	// If frozen was TRUE, halt again, which gives a
+    KGrObject::frozen = temp;	// If frozen was true, halt again, which gives a
 				// single-step effect, otherwise go on running.
 }
 
@@ -1340,7 +1340,7 @@ void KGrGame::showObjectState()
 void KGrGame::bugFix()
 {
     if (KGrObject::frozen) {		// Toggle a bug fix on/off dynamically.
-	KGrObject::bugFixed = (KGrObject::bugFixed) ? FALSE : TRUE;
+	KGrObject::bugFixed = (KGrObject::bugFixed) ? false : true;
 	printf ("%s", (KGrObject::bugFixed) ? "\n" : "");
 	printf (">>> Bug fix is %s\n", (KGrObject::bugFixed) ? "ON" : "OFF\n");
     }
@@ -1349,7 +1349,7 @@ void KGrGame::bugFix()
 void KGrGame::startLogging()
 {
     if (KGrObject::frozen) {		// Toggle logging on/off dynamically.
-	KGrObject::logging = (KGrObject::logging) ? FALSE : TRUE;
+	KGrObject::logging = (KGrObject::logging) ? false : true;
 	printf ("%s", (KGrObject::logging) ? "\n" : "");
 	printf (">>> Logging is %s\n", (KGrObject::logging) ? "ON" : "OFF\n");
     }
@@ -1368,7 +1368,7 @@ void KGrGame::createLevel()
 {
     int	i, j;
 
-    if (! saveOK (FALSE)) {				// Check unsaved work.
+    if (! saveOK (false)) {				// Check unsaved work.
 	return;
     }
 
@@ -1381,7 +1381,7 @@ void KGrGame::createLevel()
     }
 
     // Ignore player input from keyboard or mouse while the screen is set up.
-    loading = TRUE;
+    loading = true;
 
     level = 0;
     initEdit();
@@ -1409,7 +1409,7 @@ void KGrGame::createLevel()
     }
 
     // Re-enable player input.
-    loading = FALSE;
+    loading = false;
 
     view->updateCanvas();				// Show the edit area.
     view->update();					// Show the level name.
@@ -1417,7 +1417,7 @@ void KGrGame::createLevel()
 
 void KGrGame::updateLevel()
 {
-    if (! saveOK (FALSE)) {				// Check unsaved work.
+    if (! saveOK (false)) {				// Check unsaved work.
 	return;
     }
 
@@ -1446,7 +1446,7 @@ void KGrGame::updateLevel()
 
 void KGrGame::updateNext()
 {
-    if (! saveOK (FALSE)) {				// Check unsaved work.
+    if (! saveOK (false)) {				// Check unsaved work.
 	return;
     }
     level++;
@@ -1462,7 +1462,7 @@ void KGrGame::loadEditLevel (int lev)
 	return;
 
     // Ignore player input from keyboard or mouse while the screen is set up.
-    loading = TRUE;
+    loading = true;
 
     level = lev;
     initEdit();
@@ -1515,7 +1515,7 @@ void KGrGame::loadEditLevel (int lev)
     showEditLevel();				// Reconnect signals.
 
     // Re-enable player input.
-    loading = FALSE;
+    loading = false;
 }
 
 void KGrGame::editNameAndHint()
@@ -1529,7 +1529,7 @@ void KGrGame::editNameAndHint()
     if (nh->exec() == QDialog::Accepted) {
 	levelName = nh->getName();
 	levelHint = nh->getHint();
-	shouldSave = TRUE;
+	shouldSave = true;
     }
 
     delete nh;
@@ -1547,7 +1547,7 @@ bool KGrGame::saveLevelFile()
     if (! editMode) {
 	KGrMessage::information (view, i18n("Save Level"),
 		i18n("Inappropriate action: you are not editing a level."));
-	return (FALSE);
+	return (false);
     }
 
     // Save the current collection index.
@@ -1565,7 +1565,7 @@ bool KGrGame::saveLevelFile()
     // Pop up dialog box, which could change the collection or level or both.
     selectedLevel = selectLevel (action, selectedLevel);
     if (selectedLevel == 0)
-	return (FALSE);
+	return (false);
 
     // Get the new collection (if changed).
     int n = collnIndex;
@@ -1576,10 +1576,10 @@ bool KGrGame::saveLevelFile()
 
     if ((action == SL_SAVE) && (n == N) && (selectedLevel == level)) {
 	// This is a normal edit: the old file is to be re-written.
-	isNew = FALSE;
+	isNew = false;
     }
     else {
-	isNew = TRUE;
+	isNew = true;
 	// Check if the file is to be inserted in or appended to the collection.
 	if (levelFile.exists()) {
 	    switch (KGrMessage::warning (view, i18n("Save Level"),
@@ -1589,10 +1589,10 @@ bool KGrGame::saveLevelFile()
 
 	    case 0:	if (! reNumberLevels (n, selectedLevel,
 					    collections.at(n)->nLevels, +1)) {
-			    return (FALSE);
+			    return (false);
 			}
 			break;
-	    case 1:	return (FALSE);
+	    case 1:	return (false);
 			break;
 	    }
 	}
@@ -1602,7 +1602,7 @@ bool KGrGame::saveLevelFile()
     if (! levelFile.open (QIODevice::WriteOnly)) {
 	KGrMessage::information (view, i18n("Save Level"),
 		i18n("Cannot open file '%1' for output.", filePath));
-	return (FALSE);
+	return (false);
     }
 
     // Save the level.
@@ -1639,7 +1639,7 @@ bool KGrGame::saveLevelFile()
     }
 
     levelFile.close ();
-    shouldSave = FALSE;
+    shouldSave = false;
 
     if (isNew) {
 	collections.at(n)->nLevels++;
@@ -1650,7 +1650,7 @@ bool KGrGame::saveLevelFile()
     emit showLevel (level);
     view->setTitle (getTitle());		// Display new title.
     view->updateCanvas();			// Show the edit area.
-    return (TRUE);
+    return (true);
 }
 
 void KGrGame::moveLevelFile ()
@@ -1817,9 +1817,9 @@ void KGrGame::deleteLevelFile ()
 	enemyCount = 0;				// Load level in play mode.
 	enemies.clear();
 	view->deleteEnemySprites();
-	newLevel = TRUE;;
+	newLevel = true;;
 	loadLevel (level);
-	newLevel = FALSE;
+	newLevel = false;
     }
     else {
 	createLevel();				// No levels left in collection.
@@ -1871,10 +1871,10 @@ void KGrGame::editCollection (int action)
 		continue;
 	    }
 
-	    bool allAlpha = TRUE;
+	    bool allAlpha = true;
 	    for (int i = 0; i < len; i++) {
 		if (! isalpha(ecPrefix.myChar(i))) {
-		    allAlpha = FALSE;
+		    allAlpha = false;
 		    break;
 		}
 	    }
@@ -1885,13 +1885,13 @@ void KGrGame::editCollection (int action)
 		continue;
 	    }
 
-	    bool duplicatePrefix = FALSE;
+	    bool duplicatePrefix = false;
 	    KGrCollection * c;
 	    int imax = collections.count();
 	    for (int i = 0; i < imax; i++) {
 		c = collections.at(i);
 		if ((c->prefix == ecPrefix) && (i != n)) {
-		    duplicatePrefix = TRUE;
+		    duplicatePrefix = true;
 		    break;
 		}
 	    }
@@ -1937,7 +1937,7 @@ bool KGrGame::saveOK (bool exiting)
     bool	result;
     QString	option2 = i18n("&Go on editing");
 
-    result = TRUE;
+    result = true;
 
     if (editMode) {
 	if (exiting) {					// If window is closing,
@@ -1946,14 +1946,14 @@ bool KGrGame::saveOK (bool exiting)
 	for (j = 1; j <= FIELDHEIGHT; j++)
 	for (i = 1; i <= FIELDWIDTH; i++) {		// Check cell changes.
 	    if ((shouldSave) || (editObjArray[i][j] != lastSaveArray[i][j])) {
-		// If shouldSave == TRUE, level name or hint was edited.
+		// If shouldSave == true, level name or hint was edited.
 		switch (KGrMessage::warning (view, i18n("Editor"),
 			i18n("You have not saved your work. Do "
 			"you want to save it now?"),
-			i18n("&Save"), i18n("&Don't Save"), option2)) {
+			i18n("&Save"), i18n("&Do Not Save"), option2)) {
 		case 0: result = saveLevelFile(); break;// Save and continue.
-		case 1: shouldSave = FALSE; break;	// Continue: don't save.
-		case 2: result = FALSE; break;		// Go back to editing.
+		case 1: shouldSave = false; break;	// Continue: don't save.
+		case 2: result = false; break;		// Go back to editing.
 		}
 		return (result);
 	    }
@@ -1966,15 +1966,15 @@ void KGrGame::initEdit()
 {
     if (! editMode) {
 
-	editMode = TRUE;
-	emit setEditMenu (TRUE);	// Enable edit menu items and toolbar.
+	editMode = true;
+	emit setEditMenu (true);	// Enable edit menu items and toolbar.
 
 	// We were previously in play mode: stop the hero running or falling.
 	hero->init (1, 1);
-	view->setHeroVisible (FALSE);
+	view->setHeroVisible (false);
     }
 
-    paintEditObj = FALSE;
+    paintEditObj = false;
 
     // Set the default object and button.
     editObj = BRICK;
@@ -1993,12 +1993,12 @@ void KGrGame::initEdit()
     emit showScore (0);
 
     deleteLevel();
-    setBlankLevel(FALSE);	// Fill playfield with Editable objects.
+    setBlankLevel(false);	// Fill playfield with Editable objects.
 
     view->setTitle (getTitle());// Show title of level.
     view->updateCanvas();	// Show the edit area.
 
-    shouldSave = FALSE;		// Used to flag editing of name or hint.
+    shouldSave = false;		// Used to flag editing of name or hint.
 }
 
 void KGrGame::deleteLevel()
@@ -2078,12 +2078,12 @@ bool KGrGame::reNumberLevels (int cIndex, int first, int last, int inc)
 	    KGrMessage::information (view, i18n("Save Level"),
 		i18n("Cannot rename file '%1' to '%2'.",
 		 file1, file2));
-	    return (FALSE);
+	    return (false);
 	}
 	i = i + step;
     }
 
-    return (TRUE);
+    return (true);
 }
 
 void KGrGame::setLevel (int lev)
@@ -2108,7 +2108,7 @@ void KGrGame::doEdit (int button)
     switch (button) {
     case Qt::LeftButton:
     case Qt::RightButton:
-        paintEditObj = TRUE;
+        paintEditObj = true;
         insertEditObj (i, j);
 	view->updateCanvas();
         oldI = i;
@@ -2131,7 +2131,7 @@ void KGrGame::endEdit (int button)
     switch (button) {
     case Qt::LeftButton:
     case Qt::RightButton:
-        paintEditObj = FALSE;
+        paintEditObj = false;
         if ((i != oldI) || (j != oldJ)) {
 	    insertEditObj (i, j);
 	    view->updateCanvas();
@@ -2151,9 +2151,9 @@ int KGrGame::selectLevel (int action, int requestedLevel)
     int selectedLevel = 0;		// 0 = no selection (Cancel) or invalid.
 
     // Halt the game during the dialog.
-    modalFreeze = FALSE;
+    modalFreeze = false;
     if (! KGrObject::frozen) {
-	modalFreeze = TRUE;
+	modalFreeze = true;
 	freeze();
     }
 
@@ -2215,22 +2215,22 @@ int KGrGame::selectLevel (int action, int requestedLevel)
     // Unfreeze the game, but only if it was previously unfrozen.
     if (modalFreeze) {
 	unfreeze();
-	modalFreeze = FALSE;
+	modalFreeze = false;
     }
 
     delete sl;
-    return (selectedLevel);			// 0 = cancelled or invalid.
+    return (selectedLevel);			// 0 = canceled or invalid.
 }
 
 bool KGrGame::ownerOK (Owner o)
 {
     // Check that this owner has at least one collection.
     KGrCollection * c;
-    bool OK = FALSE;
+    bool OK = false;
 
     for (c = collections.first(); c != 0; c = collections.next()) {
 	if (c->owner == o) {
-	    OK = TRUE;
+	    OK = true;
 	    break;
 	}
     }
@@ -2351,10 +2351,10 @@ void KGrThumbNail::drawContents (QPainter * p)	// Activated via "paintEvent".
 bool KGrGame::initCollections ()
 {
     // Initialise the list of collections of levels (i.e. the list of games).
-    collections.setAutoDelete(TRUE);
+    collections.setAutoDelete(true);
     owner = SYSTEM;				// Use system levels initially.
     if (! loadCollections (SYSTEM))		// Load system collections list.
-	return (FALSE);				// If no collections, abort.
+	return (false);				// If no collections, abort.
     loadCollections (USER);			// Load user collections list.
 						// If none, don't worry.
 
@@ -2365,7 +2365,7 @@ bool KGrGame::initCollections ()
     collection = collections.at (collnIndex);
     level = 1;					// Default start is at level 1.
 
-    return (TRUE);
+    return (true);
 }
 
 void KGrGame::mapCollections()
@@ -2415,7 +2415,7 @@ void KGrGame::mapCollections()
 	    // Get the name of the file found on disk.
 	    fileName1 = file.fileName();
 
-	    while (TRUE) {
+	    while (true) {
 		// Work out what the file name should be, based on the level no.
 		fileName2.setNum (lev);			// Convert to QString.
 		fileName2 = fileName2.rightJustified (3,'0'); // Add zeros.
@@ -2472,13 +2472,13 @@ bool KGrGame::loadCollections (Owner o)
 		i18n("Cannot find game info file '%1'.",
 		 filePath));
 	}
-	return (FALSE);
+	return (false);
     }
 
     if (! c.open (QIODevice::ReadOnly)) {
 	KGrMessage::information (view, i18n("Load Game Info"),
 	    i18n("Cannot open file '%1' for read-only.", filePath));
-	return (FALSE);
+	return (false);
     }
 
     QByteArray	line = "";
@@ -2528,14 +2528,14 @@ bool KGrGame::loadCollections (Owner o)
 		    i18n("Format error in game info file '%1'.",
 		     filePath));
 		c.close();
-		return (FALSE);
+		return (false);
 	    }
 	    line = "";
 	}
     }
 
     c.close();
-    return (TRUE);
+    return (true);
 }
 
 bool KGrGame::saveCollections (Owner o)
@@ -2545,7 +2545,7 @@ bool KGrGame::saveCollections (Owner o)
     if (o != USER) {
 	KGrMessage::information (view, i18n("Save Game Info"),
 	    i18n("You can only modify user games."));
-	return (FALSE);
+	return (false);
     }
 
     filePath = ((o == SYSTEM)? systemDataDir : userDataDir) + "games.dat";
@@ -2556,7 +2556,7 @@ bool KGrGame::saveCollections (Owner o)
     if (! c.open (QIODevice::WriteOnly)) {
 	KGrMessage::information (view, i18n("Save Game Info"),
 		i18n("Cannot open file '%1' for output.", filePath));
-	return (FALSE);
+	return (false);
     }
 
     // Save the collections.
@@ -2594,7 +2594,7 @@ bool KGrGame::saveCollections (Owner o)
     }
 
     c.close();
-    return (TRUE);
+    return (true);
 }
 
 /******************************************************************************/
@@ -2604,12 +2604,12 @@ bool KGrGame::saveCollections (Owner o)
 void KGrGame::myMessage (QWidget * parent, QString title, QString contents)
 {
     // Halt the game while the message is displayed.
-    setMessageFreeze (TRUE);
+    setMessageFreeze (true);
 
     KGrMessage::wrapped (parent, title, contents);
 
     // Unfreeze the game, but only if it was previously unfrozen.
-    setMessageFreeze (FALSE);
+    setMessageFreeze (false);
 }
 
 /******************************************************************************/

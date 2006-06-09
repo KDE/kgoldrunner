@@ -38,10 +38,10 @@ KGrFigure :: KGrFigure (int px, int py)
 }
 
 // Initialise the global settings flags.
-bool           KGrFigure::variableTiming = TRUE;
-bool           KGrFigure::alwaysCollectNugget    = TRUE;
-bool           KGrFigure::runThruHole    = TRUE;
-bool           KGrFigure::reappearAtTop  = TRUE;
+bool           KGrFigure::variableTiming = true;
+bool           KGrFigure::alwaysCollectNugget    = true;
+bool           KGrFigure::runThruHole    = true;
+bool           KGrFigure::reappearAtTop  = true;
 SearchStrategy KGrFigure::searchStrategy = LOW;
 
 int KGrFigure::herox = 0;
@@ -305,12 +305,12 @@ KGrHero :: KGrHero (KGrCanvas * view, int x, int y)
   herox = x;
   heroy = y;
 
-  started = FALSE;
-  mouseMode = TRUE;
+  started = false;
+  mouseMode = true;
   walkCounter = 1;
 
-  walkFrozen = FALSE;
-  fallFrozen = FALSE;
+  walkFrozen = false;
+  fallFrozen = false;
 
   connect (walkTimer, SIGNAL (timeout ()), SLOT (walkTimeDone ()));
   connect (fallTimer, SIGNAL (timeout ()), SLOT (fallTimeDone ()));
@@ -382,22 +382,22 @@ void KGrHero::setKey(Direction key)
 {
     // Keyboard control of hero: direction is fixed until next key is pressed.
     // Sets a simulated mouse-pointer above, below, left, right or on the hero.
-    mouseMode = FALSE;
-    stopped = FALSE;
+    mouseMode = false;
+    stopped = false;
     switch (key) {
     case UP:	mousex = x; mousey = 0; break;
     case DOWN:	mousex = x; mousey = FIELDHEIGHT + 1; break;
     case LEFT:	mousex = 0; mousey = y; break;
     case RIGHT:	mousex = FIELDWIDTH + 1; mousey = y; break;
-    case STAND:	stopped = TRUE;  mousex = x; mousey = y; break;
+    case STAND:	stopped = true;  mousex = x; mousey = y; break;
     }
 }
 
 void KGrHero::setDirection(int i, int j)
 {
     // Mouse control of hero: direction is updated continually on a timer.
-    mouseMode = TRUE;
-    stopped = FALSE;
+    mouseMode = true;
+    stopped = false;
     mousex = i;
     mousey = j;
 }
@@ -448,11 +448,11 @@ void KGrHero::setNextDir()
 
 void KGrHero::doStep() {
     if (walkFrozen) {
-	walkFrozen = FALSE;
+	walkFrozen = false;
 	walkTimeDone();
     }
     if (fallFrozen) {
-	fallFrozen = FALSE;
+	fallFrozen = false;
 	fallTimeDone();
     }
 }
@@ -481,7 +481,7 @@ void KGrHero::init(int a,int b)
     walkTimer->stop();
     fallTimer->stop();
     walkCounter = 1;
-    started = FALSE;
+    started = false;
 
     x = mem_x = a;
     y = mem_y = b;
@@ -505,9 +505,9 @@ void KGrHero::init(int a,int b)
 
 void KGrHero::start()
 {
-    started = TRUE;
-    walkFrozen = FALSE;
-    fallFrozen = FALSE;
+    started = true;
+    walkFrozen = false;
+    fallFrozen = false;
 
     if (!(canStand()||hangAtPole())) {		// Held muss wohl fallen...
 	status = FALLING;
@@ -541,7 +541,7 @@ void KGrHero::setSpeed (int gamespeed)
 void KGrHero::walkTimeDone ()
 {
   if (! started) return;	// Ignore signals from earlier play.
-  if (KGrObject::frozen) {walkFrozen = TRUE; return; }
+  if (KGrObject::frozen) {walkFrozen = true; return; }
 
   if ((*playfield)[x][y]->whatIam() == BRICK) {
     emit caughtHero();		// Brick closed over hero.
@@ -601,7 +601,7 @@ void KGrHero::walkTimeDone ()
 void KGrHero::fallTimeDone()
 {
     if (! started) return;		// Ignore signals from earlier play.
-    if (KGrObject::frozen) {fallFrozen = TRUE; return; }
+    if (KGrObject::frozen) {fallFrozen = true; return; }
 
     if (!standOnEnemy()) {
 	if (walkCounter++ < 4) {	// Held fällt vier Positionen
@@ -808,9 +808,9 @@ KGrEnemy :: KGrEnemy (KGrCanvas * view, int x, int y)
   birthX=x;
   birthY=y;
 
-  walkFrozen = FALSE;
-  fallFrozen = FALSE;
-  captiveFrozen = FALSE;
+  walkFrozen = false;
+  fallFrozen = false;
+  captiveFrozen = false;
 
   captiveTimer = new QTimer (this);
   connect (captiveTimer,SIGNAL(timeout()),SLOT(captiveTimeDone()));
@@ -824,15 +824,15 @@ int KGrEnemy::CAPTIVEDELAY = 0;
 
 void KGrEnemy::doStep() {
     if (walkFrozen) {
-	walkFrozen = FALSE;
+	walkFrozen = false;
 	walkTimeDone();
     }
     if (fallFrozen) {
-	fallFrozen = FALSE;
+	fallFrozen = false;
 	fallTimeDone();
     }
     if (captiveFrozen) {
-	captiveFrozen = FALSE;
+	captiveFrozen = false;
 	captiveTimeDone();
     }
 }
@@ -881,7 +881,7 @@ void KGrEnemy::init(int a,int b)
 
 void KGrEnemy::walkTimeDone ()
 {
-  if (KGrObject::frozen) {walkFrozen = TRUE; return; }
+  if (KGrObject::frozen) {walkFrozen = true; return; }
 
   // Check we are alive BEFORE checking for friends being in the way.
   // Maybe a friend overhead is blocking our escape from a brick.
@@ -944,7 +944,7 @@ void KGrEnemy::walkTimeDone ()
 
 void KGrEnemy::fallTimeDone ()
 {
-  if (KGrObject::frozen) {fallFrozen = TRUE; return; }
+  if (KGrObject::frozen) {fallFrozen = true; return; }
 
   if ((*playfield)[x][y+1]->whatIam() == HOLE) {  // wenn Enemy ins Loch fällt
     ((KGrBrick*)(*playfield)[x][y+1])->useHole(); // reserviere das Loch, damit
@@ -1020,7 +1020,7 @@ void KGrEnemy::fallTimeDone ()
 
 void KGrEnemy::captiveTimeDone()
 {
-  if (KGrObject::frozen) {captiveFrozen = TRUE; return; }
+  if (KGrObject::frozen) {captiveFrozen = true; return; }
   if ((*playfield)[x][y]->whatIam()==BRICK)
     dieAndReappear();
   else
@@ -1130,7 +1130,7 @@ void KGrEnemy::dieAndReappear()
 
     if (reappearAtTop) {
 	// Follow Traditional rules: enemies reappear at top.
-	looking = TRUE;
+	looking = true;
 	y = 2;
 	// Randomly look for a free spot in row 2.  Limit the number of tries.
 	for (i = 1; ((i <= 3) && looking); i++) {
@@ -1138,7 +1138,7 @@ void KGrEnemy::dieAndReappear()
 	    switch ((*playfield)[x][2]->whatIam()) {
 	    case FREE:
 	    case HLADDER:
-		looking = FALSE;
+		looking = false;
 		break;
 	    default:
 		break;
@@ -1153,7 +1153,7 @@ void KGrEnemy::dieAndReappear()
 		switch ((*playfield)[x][y]->whatIam()) {
 		case FREE:
 		case HLADDER:
-		    looking = FALSE;
+		    looking = false;
 		    break;
 		default:
 		    break;
@@ -1533,7 +1533,7 @@ int KGrEnemy::distanceDown (int x, int y, int deltah)
 
     int rungs = -1;
     int exitRung = 0;
-    bool canGoThru = TRUE;
+    bool canGoThru = true;
     char objType;
 
     // If there is a way down at (x,y), return its length, else return zero.
@@ -1550,7 +1550,7 @@ int KGrEnemy::distanceDown (int x, int y, int deltah)
 	    if ((objType == HOLE) && (rungs < 0))
 		rungs = 0;		// Enemy can go SIDEWAYS through a hole.
 	    else
-		canGoThru = FALSE;	// Cannot go through here.
+		canGoThru = false;	// Cannot go through here.
 	    break;
 	case LADDER:
 	case POLE:			// Can go through or stop.
@@ -1568,7 +1568,7 @@ int KGrEnemy::distanceDown (int x, int y, int deltah)
 			exitRung = rungs;
 		}
 		else
-		    canGoThru = FALSE;	// Should stop at hero's level.
+		    canGoThru = false;	// Should stop at hero's level.
 	    }
 	    break;
 	default:
@@ -1596,9 +1596,9 @@ bool KGrEnemy::searchOK (int direction, int x, int y)
     if (canWalkLR (direction, x, y) > 0) {
 	// Can go into that cell, but check for a fall.
 	if (willNotFall (x+direction, y))
-	    return TRUE;
+	    return true;
     }
-    return FALSE;			// Cannot go into and through that cell.
+    return false;			// Cannot go into and through that cell.
 }
 
 int KGrEnemy::canWalkLR (int direction, int x, int y)
@@ -1630,7 +1630,7 @@ bool KGrEnemy::willNotFall (int x, int y)
     switch ( (*playfield)[x][y]->whatIam()) {
     case LADDER:
     case POLE:
-	return TRUE; break;		// OK, can hang on ladder or pole.
+	return true; break;		// OK, can hang on ladder or pole.
     default:
 	break;
     }
@@ -1654,12 +1654,12 @@ bool KGrEnemy::willNotFall (int x, int y)
 	for (c = 0; c < cmax; c++) {
 	    enemy = enemies->at(c);
 	    if ((enemy->getx()==16*x) && (enemy->gety()==16*(y+1)))
-		return TRUE;		// Standing on a friend.
+		return true;		// Standing on a friend.
 	}
-	return FALSE; break;		// Will fall: there is no floor.
+	return false; break;		// Will fall: there is no floor.
 
     default:
-	return TRUE; break;		// OK, will not fall.
+	return true; break;		// OK, will not fall.
     }
 }
 
@@ -1726,13 +1726,13 @@ bool KGrEnemy::bumpingFriend()
 		if ((dx >= -32) && (dx < 16) && (dy > -16) && (dy < 16)) {
 		    if ((enemy->direction == RIGHT) &&
 			(enemy->status == WALKING)  && (absx%16==0)) {
-			return TRUE;
+			return true;
 		    }
 		    else if (dx >= -16) {
 			if ((dx > -16) && (enemyId < enemy->enemyId))
-			    return FALSE;
+			    return false;
 			else
-			    return TRUE;	// Wait for the one in front.
+			    return true;	// Wait for the one in front.
 		    }
 		}
 		break;
@@ -1740,13 +1740,13 @@ bool KGrEnemy::bumpingFriend()
 		if ((dx > -16) && (dx < 32) && (dy > -16) && (dy < 16)) {
 		    if ((enemy->direction == LEFT) &&
 			(enemy->status == WALKING) && (absx%16==0)) {
-			return TRUE;
+			return true;
 		    }
 		    else if (dx <= 16) {
 			if ((dx < 16) && (enemyId < enemy->enemyId))
-			    return FALSE;
+			    return false;
 			else
-			    return TRUE;	// Wait for the one in front.
+			    return true;	// Wait for the one in front.
 		    }
 		}
 		break;
@@ -1754,13 +1754,13 @@ bool KGrEnemy::bumpingFriend()
 		if ((dy >= -32) && (dy < 16) && (dx > -16) && (dx < 16)) {
 		    if ((enemy->direction == DOWN) &&
 			(enemy->status == WALKING) && (absy%16==0)) {
-			return TRUE;
+			return true;
 		    }
 		    else if (dy >= -16) {
 			if ((dy > -16) && (enemyId < enemy->enemyId))
-			    return FALSE;
+			    return false;
 			else
-			    return TRUE;	// Wait for the one above.
+			    return true;	// Wait for the one above.
 		    }
 		}
 		break;
@@ -1768,13 +1768,13 @@ bool KGrEnemy::bumpingFriend()
 		if ((dy > -16) && (dy < 32) && (dx > -16) && (dx < 16)) {
 		    if ((enemy->direction == UP) &&
 			(enemy->status == WALKING) && (absy%16==0)) {
-			return TRUE;
+			return true;
 		    }
 		    else if (dy <= 16) {
 			if ((dy < 16) && (enemyId < enemy->enemyId))
-			    return FALSE;
+			    return false;
 			else
-			    return TRUE;	// Wait for the one below.
+			    return true;	// Wait for the one below.
 		    }
 		}
 		break;
@@ -1783,7 +1783,7 @@ bool KGrEnemy::bumpingFriend()
 	    }
 	}
     }
-    return FALSE;
+    return false;
 }
 
 KGrEnemy :: ~KGrEnemy ()

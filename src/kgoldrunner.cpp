@@ -1,5 +1,19 @@
 /*
  * Copyright (C) 2003 Ian Wadham and Marco Krüger <ianw@netspace.net.au>
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
 #include <QPixmap>
@@ -35,12 +49,12 @@ KGoldrunner::KGoldrunner()
 /******************************************************************************/
 
     // Avoid "saveOK()" check if an error-exit occurs during the file checks.
-    startupOK = TRUE;
+    startupOK = true;
 
     // Get directory paths for the system levels, user levels and manual.
     if (! getDirectories()) {
 	fprintf (stderr, "getDirectories() FAILED\n");
-	startupOK = FALSE;
+	startupOK = false;
 	return;				// If games directory not found, abort.
     }
 
@@ -58,7 +72,7 @@ KGoldrunner::KGoldrunner()
 
     // Initialise the collections of levels (i.e. the list of games).
     if (! game->initCollections()) {
-	startupOK = FALSE;
+	startupOK = false;
 	return;				// If no game files, abort.
     }
 
@@ -110,7 +124,7 @@ KGoldrunner::KGoldrunner()
 
 
     // Set mouse control of the hero as the default.
-    game->setMouseMode (TRUE);
+    game->setMouseMode (true);
 
     // Paint the main widget (title, menu, status bar, blank playfield).
     show();
@@ -241,7 +255,7 @@ void KGoldrunner::setupActions()
 				actionCollection(),
 				"save_edits");
     connect( saveEdits, SIGNAL(triggered(bool)), game, SLOT(saveLevelFile()));
-    saveEdits->setEnabled (FALSE);			// Nothing to save, yet.
+    saveEdits->setEnabled (false);			// Nothing to save, yet.
 
     KAction* moveLevel =	new KAction (
 				i18n("&Move Level..."),
@@ -563,7 +577,7 @@ void KGoldrunner::initStatusBar()
     int i = statusBar()->fontInfo().pointSize();
     statusBar()->setFont (QFont (s, i, QFont::Bold));
 
-    statusBar()->setSizeGripEnabled (FALSE);		// Use Settings menu ...
+    statusBar()->setSizeGripEnabled (false);		// Use Settings menu ...
 
     statusBar()->insertItem ("", ID_LIVES);
     statusBar()->insertItem ("", ID_SCORE);
@@ -574,12 +588,12 @@ void KGoldrunner::initStatusBar()
     showLives (5);					// Start with 5 lives.
     showScore (0);
     showLevel (0);
-    adjustHintAction (FALSE);
+    adjustHintAction (false);
 
     // Set the PAUSE/RESUME key-names into the status bar message.
     pauseKeys = myPause->shortcut().toString();
     pauseKeys = pauseKeys.replace (';', "\" " + i18n("or") + " \"");
-    gameFreeze (FALSE);
+    gameFreeze (false);
 
     statusBar()->setItemFixed (ID_LIVES, -1);		// Fix current sizes.
     statusBar()->setItemFixed (ID_SCORE, -1);
@@ -702,8 +716,8 @@ void KGoldrunner::lsKDEKool()		{view->changeLandscape ("KDE Kool");}
 
 // Local slots to set mouse or keyboard control of the hero.
 
-void KGoldrunner::setMouseMode()	{game->setMouseMode (TRUE);}
-void KGoldrunner::setKeyBoardMode()	{game->setMouseMode (FALSE);}
+void KGoldrunner::setMouseMode()	{game->setMouseMode (true);}
+void KGoldrunner::setKeyBoardMode()	{game->setMouseMode (false);}
 
 // Local slots to set game speed.
 
@@ -717,19 +731,19 @@ void KGoldrunner::decSpeed()		{hero->setSpeed (-1);}
 
 void KGoldrunner::setTradRules()
 {
-    KGrFigure::variableTiming = TRUE;
-    KGrFigure::alwaysCollectNugget = TRUE;
-    KGrFigure::runThruHole = TRUE;
-    KGrFigure::reappearAtTop = TRUE;
+    KGrFigure::variableTiming = true;
+    KGrFigure::alwaysCollectNugget = true;
+    KGrFigure::runThruHole = true;
+    KGrFigure::reappearAtTop = true;
     KGrFigure::searchStrategy = LOW;
 }
 
 void KGoldrunner::setKGrRules()
 {
-    KGrFigure::variableTiming = FALSE;
-    KGrFigure::alwaysCollectNugget = FALSE;
-    KGrFigure::runThruHole = FALSE;
-    KGrFigure::reappearAtTop = FALSE;
+    KGrFigure::variableTiming = false;
+    KGrFigure::alwaysCollectNugget = false;
+    KGrFigure::runThruHole = false;
+    KGrFigure::reappearAtTop = false;
     KGrFigure::searchStrategy = MEDIUM;
 }
 
@@ -875,7 +889,7 @@ void KGoldrunner::changeCaption(const QString& text)
 
 bool KGoldrunner::getDirectories()
 {
-    bool result = TRUE;
+    bool result = true;
 
     // WHERE THINGS ARE: In the KDE 3 environment (Release 3.1.1), application
     // documentation and data files are in a directory structure given by
@@ -906,7 +920,7 @@ bool KGoldrunner::getDirectories()
 	i18n("Cannot find documentation sub-folder 'en/%1/' "
 	"in area '%2' of the KDE folder ($KDEDIRS).",
 	 myDir, dirs->kde_default ("html")));
-	// result = FALSE;		// Don't abort if the doc is missing.
+	// result = false;		// Don't abort if the doc is missing.
     }
     else
 	systemHTMLDir.append ("en/" + myDir + "/");
@@ -918,20 +932,20 @@ bool KGoldrunner::getDirectories()
 	i18n("Cannot find system games sub-folder '%1/system/' "
 	"in area '%2' of the KDE folder ($KDEDIRS).",
 	 myDir, dirs->kde_default ("data")));
-	result = FALSE;			// ABORT if the games data is missing.
+	result = false;			// ABORT if the games data is missing.
     }
     else
 	systemDataDir.append (myDir + "/system/");
 
     // Locate and optionally create directories for user collections and levels.
-    bool create = TRUE;
+    bool create = true;
     userDataDir   = dirs->saveLocation ("data", myDir + "/user/", create);
     if (userDataDir.length() <= 0) {
 	KGrMessage::information (this, i18n("Get Folders"),
 	i18n("Cannot find or create user games sub-folder '%1/user/' "
 	"in area '%2' of the KDE user area ($KDEHOME).",
 	 myDir, dirs->kde_default ("data")));
-	// result = FALSE;		// Don't abort if user area is missing.
+	// result = false;		// Don't abort if user area is missing.
     }
     else {
 	create = dirs->makeDir (userDataDir + "levels/");
@@ -939,7 +953,7 @@ bool KGoldrunner::getDirectories()
 	    KGrMessage::information (this, i18n("Get Folders"),
 	    i18n("Cannot find or create 'levels/' folder in "
 	    "sub-folder '%1/user/' in the KDE user area ($KDEHOME).", myDir));
-	    // result = FALSE;		// Don't abort if user area is missing.
+	    // result = false;		// Don't abort if user area is missing.
 	}
     }
 
@@ -952,9 +966,9 @@ bool KGoldrunner::getDirectories()
 bool KGoldrunner::queryClose ()
 {
     // Last chance to save: user has clicked "X" widget or menu-Quit.
-    bool cannotContinue = TRUE;
+    bool cannotContinue = true;
     game->saveOK (cannotContinue);
-    return (TRUE);
+    return (true);
 }
 
 void KGoldrunner::setKey (KBAction movement)
@@ -964,7 +978,7 @@ void KGoldrunner::setKey (KBAction movement)
     // Using keyboard control can automatically disable mouse control.
     if (game->inMouseMode()) {
         // Halt the game while a message is displayed.
-        game->setMessageFreeze (TRUE);
+        game->setMessageFreeze (true);
 
         switch (KGrMessage::warning (this, i18n("Switch to Keyboard Mode"),
 		i18n("You have pressed a key that can be used to move the "
@@ -973,15 +987,15 @@ void KGoldrunner::setKey (KBAction movement)
 		"- like riding a bike rather than walking!"),
 		i18n("Switch to &Keyboard Mode"), i18n("Stay in &Mouse Mode")))
         {
-        case 0: game->setMouseMode (FALSE);	// Set internal mouse mode OFF.
-		setMouse->setChecked (FALSE);	// Adjust the Settings menu.
-		setKeyboard->setChecked (TRUE);
+        case 0: game->setMouseMode (false);	// Set internal mouse mode OFF.
+		setMouse->setChecked (false);	// Adjust the Settings menu.
+		setKeyboard->setChecked (true);
                 break;
         case 1: break;
         }
 
         // Unfreeze the game, but only if it was previously unfrozen.
-        game->setMessageFreeze (FALSE);
+        game->setMessageFreeze (false);
 
         if (game->inMouseMode())
             return;                    		// Stay in Mouse Mode.

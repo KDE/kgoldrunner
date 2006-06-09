@@ -113,14 +113,14 @@ bool KGrCanvas::changeSize (int d)
 	// Note: Smaller scales lose detail (e.g. the joints in brickwork).
 	KGrMessage::information (this, i18n("Change Size"),
 	i18n("Sorry, you cannot make the play area any smaller."));
-	return FALSE;
+	return false;
     }
 
     if ((d >= 0) && (scaleStep >= 2 * STEP)) {
 	// Note: Larger scales go off the edge of the monitor.
 	KGrMessage::information (this, i18n("Change Size"),
 	i18n("Sorry, you cannot make the play area any larger."));
-	return FALSE;
+	return false;
     }
 
     QMatrix wm = worldMatrix();
@@ -146,13 +146,13 @@ bool KGrCanvas::changeSize (int d)
     int frame = frameWidth()*2;
     setFixedSize ((FIELDWIDTH  + 4) * 4 * scaleStep + frame,
 		  (FIELDHEIGHT + 4) * 4 * scaleStep + frame);
-    return TRUE;
+    return true;
 
 #else
     KGrMessage::information (this, i18n( "Change Size" ),
     i18n( "Sorry, you cannot change the size of the playing area. "
     "That function requires Qt Library version 3 or later." ));
-    return FALSE;
+    return false;
 #endif
 }
 
@@ -206,7 +206,7 @@ void KGrCanvas::makeTitle ()
     // object does not always display scaled-up fonts cleanly (in Qt 3.1.1).
 
     if (title != 0)
-	title->close (TRUE);		// Close and delete previous title.
+	title->close (true);		// Close and delete previous title.
 
     title = new QLabel ("", this);
     title->setFixedWidth (((FIELDWIDTH * cw + 2 * bw) * scaleStep) / STEP);
@@ -266,7 +266,7 @@ void KGrCanvas::makeHeroSprite (int i, int j, int startFrame)
     i++; j++;
     heroSprite->move (i * 4 * STEP, j * 4 * STEP, startFrame);
     heroSprite->setZ (1);
-    heroSprite->setVisible (TRUE);
+    heroSprite->setVisible (true);
 }
 
 void KGrCanvas::setHeroVisible (bool newState)
@@ -480,7 +480,7 @@ void KGrCanvas::initView()
 #else
     enemySprites = new QList<Q3CanvasSprite> ();
 #endif
-    enemySprites->setAutoDelete(TRUE);
+    enemySprites->setAutoDelete(true);
 }
 
 void KGrCanvas::makeTiles ()

@@ -26,18 +26,18 @@ KGrObject::KGrObject (char objType)
 {
     iamA = objType;
     searchValue = 0;
-    blocker = FALSE;
+    blocker = false;
     if ((objType == BRICK) || (objType == BETON) || (objType == FBRICK)) {
-	blocker = TRUE;
+	blocker = true;
     }
     xpos = 0;
     ypos = 0;
     objectView = NULL;
 }
 
-bool KGrObject::frozen = FALSE;	// Initialise game as running, not halted.
-bool KGrObject::bugFixed = FALSE;// Initialise game with dynamic bug-fix OFF.
-bool KGrObject::logging = FALSE;// Initialise game with log printing OFF.
+bool KGrObject::frozen = false;	// Initialise game as running, not halted.
+bool KGrObject::bugFixed = false;// Initialise game with dynamic bug-fix OFF.
+bool KGrObject::logging = false;// Initialise game with log printing OFF.
 
 char KGrObject::whatIam ()
 {
@@ -103,7 +103,7 @@ KGrBrick::KGrBrick (char objType, int i, int j, KGrCanvas * view)
   ypos		= j;
   objectView	= view;
   dig_counter = 0;
-  holeFrozen = FALSE;
+  holeFrozen = false;
   iamA = BRICK;
   timer = new QTimer (this);
   connect (timer, SIGNAL (timeout ()), SLOT (timeDone ()));
@@ -122,7 +122,7 @@ void KGrBrick::dig (void)
 
 void KGrBrick::doStep() {
     if (holeFrozen) {
-	holeFrozen = FALSE;
+	holeFrozen = false;
 	timeDone();
     }
 }
@@ -138,7 +138,7 @@ void KGrBrick::showState (int i, int j)
 
 void KGrBrick::timeDone ()
 {
-    if (KGrObject::frozen) {holeFrozen = TRUE; return;}
+    if (KGrObject::frozen) {holeFrozen = true; return;}
 
     // When the hole is complete, we need a longer delay.
     if (dig_counter == 5) {

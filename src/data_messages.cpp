@@ -1,3 +1,19 @@
+/*
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+*/
+
 /* This is a dummy *.cpp program that contains strings extracted from
    KGoldrunner game data files.  It is not intended to be compiled or
    executed.  Its only function is to hold the strings in a place where
@@ -50,7 +66,7 @@ i18n("Now you have to dig to get the gold!  Just use the left and right mouse bu
 
 // From levels/tute004.grl (in levels.tar).
 i18n("You Have ENEMIES !!!");
-i18n("Well, it's been nice and easy up to now, but the game would be no fun without enemies.  They are after the gold too: worse still they are after you!  You die if they catch you, but maybe you will have a few lives left and can start again."
+i18n("Well, it has been nice and easy up to now, but the game would be no fun without enemies.  They are after the gold too: worse still they are after you!  You die if they catch you, but maybe you will have a few lives left and can start again."
 "\n"
 "\nYou can handle enemies by running away, digging a hole or luring them into part of the playing area where they get stranded."
 "\n"
@@ -154,7 +170,7 @@ i18n("This is just a nice easy level to finish up with.  Have fun with the other
 // From levels/level018.grl (in levels.tar).
 
 // From levels/plws001.grl (in levels.tar).
-i18n("Don't Panic");
+i18n("Do not Panic");
 
 // From levels/plws002.grl (in levels.tar).
 i18n("Lust for Gold");
@@ -213,7 +229,7 @@ i18n("Delayed Trap");
 i18n("Nowhere to Hide");
 
 // From levels/plws020.grl (in levels.tar).
-i18n("Watch the Centre");
+i18n("Watch the Center");
 
 // From levels/plws021.grl (in levels.tar).
 i18n("Where to Dig?");
@@ -342,10 +358,10 @@ i18n("Party On !!!");
 i18n("Cross-stitch");
 
 // From levels/plws063.grl (in levels.tar).
-i18n("Can't Get Up There");
+i18n("Can Not Get Up There");
 
 // From levels/plws064.grl (in levels.tar).
-i18n("They're Everywhere !!!");
+i18n("They are Everywhere !!!");
 
 // From levels/plws065.grl (in levels.tar).
 i18n("Rooftops");
@@ -393,7 +409,7 @@ i18n("The Saucer");
 i18n("The Dotted Line");
 
 // From levels/plws080.grl (in levels.tar).
-i18n("Don't Look Down (1)");
+i18n("Do Not Look Down (1)");
 
 // From levels/plws081.grl (in levels.tar).
 i18n("Getting Started");
@@ -405,13 +421,13 @@ i18n("Digging Hassle");
 i18n("Easy Middle");
 
 // From levels/plws084.grl (in levels.tar).
-i18n("Don't Look Down (2)");
+i18n("Do Not Look Down (2)");
 
 // From levels/plws085.grl (in levels.tar).
 i18n("Which Way?");
 
 // From levels/plws086.grl (in levels.tar).
-i18n("Don't Look Down (3)");
+i18n("Do Not Look Down (3)");
 
 // From levels/plws087.grl (in levels.tar).
 i18n("Drop ???");
@@ -484,7 +500,7 @@ i18n("Goldrunner Prophecy");
 i18n("The Rosette");
 
 // From levels/wad009.grl (in levels.tar).
-i18n("He's Got the Gold");
+i18n("He Has Got the Gold");
 
 // From levels/wad010.grl (in levels.tar).
 i18n("Towers of Gold");
