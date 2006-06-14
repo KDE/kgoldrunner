@@ -2,8 +2,8 @@
                          kgrgraphics.h  -  description
                              -------------------
     begin                : Wed Jan 23 2002
-    copyright            : (C) 2002 by Marco KrÃ¼ger and Ian Wadham
-    email                : See menu "Help, About KGoldrunner"
+    Copyright 2002 Marco Krüger
+    Copyright 2002 Ian Wadham <ianw@netspace.net.au>
  ***************************************************************************/
 
 /***************************************************************************
