@@ -20,8 +20,8 @@
 
 #else
 #include <klocale.h>
-#include <kdialogbase.h>
-#define KGR_DIALOG KDialogBase
+#include <kdialog.h>
+#define KGR_DIALOG KDialog
 #include <kmessagebox.h>
 #endif
 

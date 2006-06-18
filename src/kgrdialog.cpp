@@ -43,9 +43,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 			Q3PtrList<KGrCollection> & gamesList, KGrGame * theGame,
 			QWidget * parent, const char * name)
-		: KDialogBase (KDialogBase::Plain, i18n("Select Game"),
-		    KDialogBase::Ok | KDialogBase::Cancel | KDialogBase::Help,
-		    KDialogBase::Ok, parent, name)
+		: KDialog (parent)
 #endif
 {
     slAction     = action;
@@ -63,7 +61,12 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 #else
     int margin		= marginHint();
     int spacing		= spacingHint();
-    QWidget * dad	= plainPage();
+    QWidget * dad	= new QWidget(this);
+	setMainWidget(dad);
+	setCaption(i18n("Select Game"));
+	setButtons(KDialog::Ok | KDialog::Cancel | KDialog::Help);
+	setDefaultButton(KDialog::Ok);
+
 #endif
 
     QVBoxLayout * mainLayout = new QVBoxLayout (dad);
@@ -211,7 +214,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 #ifdef KGR_PORTABLE
 	OK->setText (OKText);
 #else
-	setButtonGuiItem( KDialogBase::Ok, OKText);
+	setButtonGuiItem( KDialog::Ok, OKText);
 #endif
     }
 
@@ -512,9 +515,7 @@ KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
 #else
 KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
 			QWidget * parent, const char * name)
-		: KDialogBase (KDialogBase::Plain, i18n("Edit Name & Hint"),
-			KDialogBase::Ok | KDialogBase::Cancel,
-			KDialogBase::Ok, parent, name)
+		: KDialog (parent)
 #endif
 {
 #ifdef KGR_PORTABLE
@@ -522,9 +523,13 @@ KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
     int spacing		= 10;
     QWidget * dad	= this;
 #else
+	setCaption(i18n("Edit Name & Hint"));
+	setButtons(KDialog::Ok | KDialog::Cancel);
+	setDefaultButton(KDialog::Ok);
     int margin		= marginHint();
     int spacing		= spacingHint();
-    QWidget * dad	= plainPage();
+    QWidget * dad	= new QWidget(this);
+	setMainWidget(dad);
 #endif
 
     QVBoxLayout * mainLayout = new QVBoxLayout (dad);
@@ -604,9 +609,7 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
 KGrECDialog::KGrECDialog (int action, int collnIndex,
 			Q3PtrList<KGrCollection> & gamesList,
 			QWidget * parent, const char * name)
-		: KDialogBase (KDialogBase::Plain, "Edit Game Info",
-			KDialogBase::Ok | KDialogBase::Cancel,
-			KDialogBase::Ok, parent, name)
+		: KDialog(parent)
 #endif
 {
     collections  = gamesList;
@@ -617,9 +620,13 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
     int spacing		= 10;
     QWidget * dad	= this;
 #else
+	setCaption(i18n("Edit Game Info"));
+	setButtons(KDialog::Ok | KDialog::Cancel);
+	setDefaultButton(KDialog::Ok);
     int margin		= marginHint();
     int spacing		= spacingHint();
-    QWidget * dad	= plainPage();
+    QWidget * dad	= new QWidget(this);
+	setMainWidget(dad);
 #endif
 
     QVBoxLayout * mainLayout = new QVBoxLayout (dad);
@@ -714,7 +721,7 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
 #ifdef KGR_PORTABLE
     OK->setText (OKText);
 #else
-    setButtonGuiItem( KDialogBase::Ok, OKText);
+    setButtonGuiItem( KDialog::Ok, OKText);
 #endif
 
     if ((action == SL_CR_GAME) ||
@@ -789,9 +796,7 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
 KGrLGDialog::KGrLGDialog (QFile * savedGames,
 			Q3PtrList<KGrCollection> & collections,
 			QWidget * parent, const char * name)
-		: KDialogBase (KDialogBase::Plain, i18n("Select Saved Game"),
-			KDialogBase::Ok | KDialogBase::Cancel,
-			KDialogBase::Ok, parent, name)
+		: KDialog (parent)
 #endif
 {
 #ifdef KGR_PORTABLE
@@ -799,9 +804,13 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
     int spacing		= 10;
     QWidget * dad	= this;
 #else
+	setCaption(i18n("Select Saved Game"));
+	setButtons(KDialog::Ok | KDialog::Cancel);
+	setDefaultButton(KDialog::Ok);
     int margin		= marginHint();
     int spacing		= spacingHint();
-    QWidget * dad	= plainPage();
+    QWidget * dad	= new QWidget(this);
+	setMainWidget(dad);
 #endif
 
     QVBoxLayout *	mainLayout = new QVBoxLayout (dad);
