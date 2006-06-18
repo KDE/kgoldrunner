@@ -580,7 +580,7 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
 KGrECDialog::KGrECDialog (int action, int collnIndex,
 			QPtrList<KGrCollection> & gamesList,
 			QWidget * parent, const char * name)
-		: KDialogBase (KDialogBase::Plain, "Edit Game Info",
+		: KDialogBase (KDialogBase::Plain, i18n("Edit Game Info"),
 			KDialogBase::Ok | KDialogBase::Cancel,
 			KDialogBase::Ok, parent, name)
 #endif
