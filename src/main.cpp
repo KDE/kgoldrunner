@@ -21,7 +21,7 @@
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
 #include <klocale.h>
-#include <dbus/qdbus.h>
+#include <QtDBus/QtDBus>
 #include "kgrconsts.h"
 #include "kgoldrunner.h"
 
@@ -44,7 +44,7 @@ int main (int argc, char **argv)
 
     KApplication app;
     QString nameapp = QString("org.kde.%1").arg(app.objectName());
-    QDBus::sessionBus().busService()->requestName(nameapp, /*flags=*/0);
+    QDBus::sessionBus().interface()->registerService(nameapp);
     // See if we are starting with session management.
     if (app.isSessionRestored())
     {
