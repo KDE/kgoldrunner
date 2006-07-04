@@ -4,7 +4,7 @@
 
 ########### install files ###############
 
-install_files( ${DATA_INSTALL_DIR}/kgoldrunner/system FILES games.dat hi_level.dat hi_plws.dat hi_plwv.dat hi_wad.dat )
+install( FILES games.dat hi_level.dat hi_plws.dat hi_plwv.dat hi_wad.dat  DESTINATION  ${DATA_INSTALL_DIR}/kgoldrunner/system )
 
 # no chmod:chown stuff which was in original Makefile.am
 # is it needed? dimsuz

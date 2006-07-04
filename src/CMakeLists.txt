@@ -24,8 +24,8 @@ install_targets(/bin kgoldrunner )
 
 ########### install files ###############
 
-install_files( ${XDG_APPS_DIR} FILES KGoldrunner.desktop )
-install_files( ${DATA_INSTALL_DIR}/kgoldrunner FILES kgoldrunnerui.rc )
+install( FILES KGoldrunner.desktop  DESTINATION  ${XDG_APPS_DIR} )
+install( FILES kgoldrunnerui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kgoldrunner )
 
 kde4_install_icons( ${ICON_INSTALL_DIR}  hicolor )
 
