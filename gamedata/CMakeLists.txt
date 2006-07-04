@@ -8,7 +8,7 @@ install( FILES games.dat hi_level.dat hi_plws.dat hi_plwv.dat hi_wad.dat  DESTIN
 
 # no chmod:chown stuff which was in original Makefile.am
 # is it needed? dimsuz
-install( CODE "EXEC_PROGRAM(tar ${CMAKE_INSTALL_PREFIX}/${DATA_INSTALL_DIR}/kgoldrunner/system
+install( CODE "EXEC_PROGRAM(tar ${DATA_INSTALL_DIR}/kgoldrunner/system
 ARGS -xf ${CMAKE_CURRENT_SOURCE_DIR}/levels.tar)" )
 
 
