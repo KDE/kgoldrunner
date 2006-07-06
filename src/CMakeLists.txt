@@ -19,7 +19,7 @@ kde4_add_executable(kgoldrunner ${kgoldrunner_SRCS})
 
 target_link_libraries(kgoldrunner  ${KDE4_KDEUI_LIBS} kdegames kdeprint )
 
-install_targets(/bin kgoldrunner )
+install(TARGETS kgoldrunner  DESTINATION ${BIN_INSTALL_DIR} )
 
 
 ########### install files ###############
