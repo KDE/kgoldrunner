@@ -17,7 +17,7 @@ kde4_automoc(${kgoldrunner_SRCS})
 
 kde4_add_executable(kgoldrunner ${kgoldrunner_SRCS})
 
-target_link_libraries(kgoldrunner  ${KDE4_KDEUI_LIBS} kdegames kdeprint )
+target_link_libraries(kgoldrunner  ${KDE4_KDEUI_LIBS} kdegames ${KDE4_KDEPRINT_LIBS} )
 
 install(TARGETS kgoldrunner  DESTINATION ${BIN_INSTALL_DIR} )
 
