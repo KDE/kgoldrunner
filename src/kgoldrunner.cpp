@@ -32,6 +32,7 @@
 #include <ktoggleaction.h>
 #include <kstdaction.h>
 #include <kstdgameaction.h>
+#include <kicon.h>
 
 #include "kgrconsts.h"
 #include "kgrobject.h"
