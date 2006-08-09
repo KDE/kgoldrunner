@@ -2,7 +2,7 @@
                          kgrcanvas.h  -  description
                              -------------------
     begin                : Wed Jan 23 2002
-    Copyright 2002 Marco Krüger
+    Copyright 2002 Marco Krger
     Copyright 2002 Ian Wadham <ianw@netspace.net.au>
  ***************************************************************************/
 
@@ -22,17 +22,20 @@
 #include <config.h>
 #endif
 
+#include "kgrscene.h"
+#include "kgrsprite.h"
+
 #include <qcursor.h>
-#include <q3canvas.h>
 #include <QLabel>
-#include <qimage.h>
-#include <qpainter.h>
-//Added by qt3to4:
+#include <QImage>
+#include <QPainter>
 #include <QPixmap>
 #include <QMouseEvent>
-#include <Q3PtrList>
+#include <QList>
+#include <QGraphicsView>
+#include <QGraphicsRectItem>
 
-class KGrCanvas : public Q3CanvasView
+class KGrCanvas : public QGraphicsView
 {
 	Q_OBJECT
 public:
@@ -47,7 +50,7 @@ public:
 	bool changeSize (int);
 	void setBaseScale ();
 
-	void updateCanvas ();
+	//void updateCanvas ();
 	void paintCell (int, int, char, int offset = 0);
 	void setTitle (QString);
 
@@ -65,15 +68,15 @@ signals:
 	void mouseClick (int);
 	void mouseLetGo (int);
 
-protected:
-	void contentsMousePressEvent (QMouseEvent *);
-	void contentsMouseReleaseEvent (QMouseEvent *);
+public slots:
+	void contentsMouseClick (int);
+	void contentsMouseLetGo (int);
 
 private:
 	QCursor * m;
 
-	Q3Canvas * field;
-	Q3CanvasView * fieldView;
+	KGrScene * field;
+	//Q3CanvasView * fieldView;
 	int scaleStep;			// Current scale-factor of canvas.
 	int baseScale;			// Starting scale-factor of canvas.
 	int baseFontSize;
@@ -82,32 +85,27 @@ private:
 	int cw, bw, lw, mw;		// Dimensions (in pixels) of the border.
 	QColor borderColor, textColor;	// Border colours.
 	QLabel * title;			// Title and top part of border.
-	Q3CanvasRectangle * borderB;	// Bottom part of border.
-	Q3CanvasRectangle * borderL;	// Left-hand part of border.
-	Q3CanvasRectangle * borderR;	// Right-hand part of border.
+	QGraphicsRectItem * borderT;	// Bottom part of border.
+	QGraphicsRectItem * borderB;	// Bottom part of border.
+	QGraphicsRectItem * borderL;	// Left-hand part of border.
+	QGraphicsRectItem * borderR;	// Right-hand part of border.
 
 	int freebg, nuggetbg, polebg, ladderbg, hladderbg;
 	int edherobg, edenemybg, betonbg, brickbg, fbrickbg;
 	int bgw, bgh, bgd;
 	QPixmap bgPix;
 
-	Q3CanvasPixmapArray * heroArray;
-	Q3CanvasPixmapArray * enemyArray;
 	int goldEnemy;
 
-	Q3CanvasSprite * heroSprite;
-#ifdef QT3
-	Q3PtrList<Q3CanvasSprite> * enemySprites;
-#else
-	QList<Q3CanvasSprite> * enemySprites;
-#endif
+	KGrSprite * heroSprite;
+	QList<KGrSprite *> * enemySprites;
 
 	void initView();
 	void makeTiles();
 	void makeBorder();
 	void makeTitle();
 	QColor colour;
-	Q3CanvasRectangle * drawRectangle (int, int, int, int, int);
+	QGraphicsRectItem * drawRectangle (int, int, int, int, int);
 	void changeColours (const char * colours []);
 	void recolourObject (const char * object [], const char * colours []);
 };

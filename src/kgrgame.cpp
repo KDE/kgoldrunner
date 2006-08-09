@@ -1,5 +1,5 @@
 /***************************************************************************
-    Copyright 2003 Marco Krüger
+    Copyright 2003 Marco Krger
     Copyright 2003 Ian Wadham <ianw@netspace.net.au>
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -31,10 +31,8 @@
 
 #ifndef KGR_PORTABLE
 #include <kglobalsettings.h>
-//Added by qt3to4:
 #include <QByteArray>
 #include <QTextStream>
-#include <Q3Frame>
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QDate>
@@ -55,8 +53,6 @@ KGrGame::KGrGame (KGrCanvas * theView, QString theSystemDir, QString theUserDir)
     paintEditObj = false;
     editObj  = BRICK;
     shouldSave = false;
-
-    enemies.setAutoDelete(true);
 
     hero = new KGrHero (view, 0, 0);	// The hero is born ... Yay !!!
     hero->setPlayfield (&playfield);
@@ -88,6 +84,10 @@ KGrGame::KGrGame (KGrCanvas * theView, QString theSystemDir, QString theUserDir)
 
 KGrGame::~KGrGame()
 {
+   //release collections
+   while (!collections.isEmpty())
+	        delete collections.takeFirst();
+
 }
 
 /******************************************************************************/
@@ -155,7 +155,10 @@ void KGrGame::herosDead()
 	checkHighScore();	// Check if there is a high score for this game.
 
 	enemyCount = 0;
-	enemies.clear();	// Stop the enemies catching the hero again ...
+	//todo enemies.clear();	// Stop the enemies catching the hero again ...
+	while (!enemies.isEmpty())
+	        delete enemies.takeFirst();
+
 	view->deleteEnemySprites();
 	unfreeze();		//    ... NOW we can unfreeze.
 	newLevel = true;
@@ -183,10 +186,10 @@ void KGrGame::showHiddenLadders()
     for (j=1;j<29;j++)
       if (playfield[j][i]->whatIam()==HLADDER)
 	((KGrHladder *)playfield[j][i])->showLadder();
-  view->updateCanvas();
+  //view->updateCanvas();
   initSearchMatrix();
 }
-
+// 
 void KGrGame::goUpOneLevel()
 {
     lives++;			// Level completed: gain another life.
@@ -210,7 +213,10 @@ void KGrGame::goUpOneLevel()
     }
 
     enemyCount = 0;
-    enemies.clear();
+    //enemies.clear();
+    while (!enemies.isEmpty())
+        delete enemies.takeFirst();
+
     view->deleteEnemySprites();
     newLevel = true;
     loadLevel (level);
@@ -353,7 +359,11 @@ void KGrGame::newGame (const int lev, const int gameIndex)
     emit showLevel (level);
 
     enemyCount = 0;
-    enemies.clear();
+
+    //enemies.clear();
+    while (!enemies.isEmpty())
+        delete enemies.takeFirst();
+
     view->deleteEnemySprites();
 
     newLevel = true;;
@@ -469,8 +479,11 @@ int KGrGame::loadLevel (int levelNo)
 
   if (newLevel) {
       hero->setEnemyList (&enemies);
-      for (enemy=enemies.first();enemy != 0; enemy = enemies.next())
-	enemy->setEnemyList(&enemies);
+	QListIterator<KGrEnemy *> i(enemies);
+        while (i.hasNext()){
+		KGrEnemy * enemy = i.next();
+		enemy->setEnemyList(&enemies);
+	}
   }
 
   hero->setNuggets(nuggets);
@@ -481,7 +494,7 @@ int KGrGame::loadLevel (int levelNo)
 
   // Re-draw the playfield frame, level title and figures.
   view->setTitle (getTitle());
-  view->updateCanvas();
+  //view->updateCanvas();
 
   // Check if this is a tutorial collection and we are not on the "ENDE" screen.
   if ((collection->prefix.left(4) == "tute") && (levelNo != 0)) {
@@ -719,7 +732,7 @@ void KGrGame::readMousePos()
 	// Editing - check if we are in paint mode and have moved the mouse.
 	if (paintEditObj && ((i != oldI) || (j != oldJ))) {
 	    insertEditObj (i, j);
-	    view->updateCanvas();
+	    //view->updateCanvas();
 	    oldI = i;
 	    oldJ = j;
 	}
@@ -791,11 +804,7 @@ void KGrGame::saveGame()		// Save game ID, score and level.
     QTime now =   QTime::currentTime();
     QString saved;
     QString day;
-#ifdef QT3
     day = today.shortDayName(today.dayOfWeek());
-#else
-    day = today.dayName(today.dayOfWeek());
-#endif
     saved = saved.sprintf
 		("%-6s %03d %03ld %7ld    %s %04d-%02d-%02d %02d:%02d\n",
 		collection->prefix.myStr(), level, lives, startScore,
@@ -834,6 +843,7 @@ void KGrGame::saveGame()		// Save game ID, score and level.
 
     file2.close();
 
+    //TODO This is not working, savegame.tmp is created but the rename fails
     QDir dir;
     dir.rename (file2.fileName(), file1.fileName());
     KGrMessage::information (view, i18n("Save Game"),
@@ -1048,11 +1058,7 @@ void KGrGame::checkHighScore()
 
     QDate today = QDate::currentDate();
     QString hsDate;
-#ifdef QT3
     QString day = today.shortDayName(today.dayOfWeek());
-#else
-    QString day = today.dayName(today.dayOfWeek());
-#endif
     hsDate = hsDate.sprintf
 		("%s %04d-%02d-%02d",
 		day.myStr(),
@@ -1229,8 +1235,8 @@ void KGrGame::showHighScores()
 	n++;
     }
 
-    Q3Frame * separator = new Q3Frame (hs);
-    separator->setFrameStyle (Q3Frame::HLine + Q3Frame::Sunken);
+    QFrame * separator = new QFrame (hs);
+    separator->setFrameStyle (QFrame::HLine + QFrame::Sunken);
     mainLayout->addWidget (separator);
 
     OK->		setMaximumWidth (100);
@@ -1295,8 +1301,10 @@ void KGrGame::showFigurePositions()
 {
     if (KGrObject::frozen) {
 	hero->showState('p');
-	for (enemy=enemies.first();enemy != 0; enemy = enemies.next()) {
-	    enemy->showState('p');
+	QListIterator<KGrEnemy *> i(enemies);
+        while (i.hasNext()){
+		KGrEnemy * enemy = i.next();
+		enemy->showState('p');
 	}
     }
 }
@@ -1311,8 +1319,10 @@ void KGrGame::showHeroState()
 void KGrGame::showEnemyState(int enemyId)
 {
     if (KGrObject::frozen) {
-	for (enemy=enemies.first();enemy != 0; enemy = enemies.next()) {
-	    if (enemy->enemyId == enemyId) enemy->showState('s');
+	QListIterator<KGrEnemy *> i(enemies);
+        while (i.hasNext()){
+		KGrEnemy * enemy = i.next();
+		if (enemy->enemyId == enemyId) enemy->showState('s');
 	}
     }
 }
@@ -1411,7 +1421,7 @@ void KGrGame::createLevel()
     // Re-enable player input.
     loading = false;
 
-    view->updateCanvas();				// Show the edit area.
+    //view->updateCanvas();				// Show the edit area.
     view->update();					// Show the level name.
 }
 
@@ -1511,7 +1521,7 @@ void KGrGame::loadEditLevel (int lev)
     levelFile.close ();
 
     view->setTitle (getTitle());		// Show the level name.
-    view->updateCanvas();			// Show the edit area.
+    //view->updateCanvas();			// Show the edit area.
     showEditLevel();				// Reconnect signals.
 
     // Re-enable player input.
@@ -1649,7 +1659,7 @@ bool KGrGame::saveLevelFile()
     level = selectedLevel;
     emit showLevel (level);
     view->setTitle (getTitle());		// Display new title.
-    view->updateCanvas();			// Show the edit area.
+    //view->updateCanvas();			// Show the edit area.
     return (true);
 }
 
@@ -1746,7 +1756,7 @@ void KGrGame::moveLevelFile ()
     level = toL;
     collection = collections.at(toC);
     view->setTitle (getTitle());	// Re-write title.
-    view->updateCanvas();		// Re-display details of level.
+    //view->updateCanvas();		// Re-display details of level.
     emit showLevel (level);
 }
 
@@ -1815,7 +1825,10 @@ void KGrGame::deleteLevelFile ()
     }
     else if (level > 0) {
 	enemyCount = 0;				// Load level in play mode.
-	enemies.clear();
+	//enemies.clear();
+	while (!enemies.isEmpty())
+        	delete enemies.takeFirst();
+
 	view->deleteEnemySprites();
 	newLevel = true;;
 	loadLevel (level);
@@ -1984,7 +1997,10 @@ void KGrGame::initEdit()
     oldJ = 0;
     heroCount = 0;
     enemyCount = 0;
-    enemies.clear();
+    //enemies.clear();
+    while (!enemies.isEmpty())
+        delete enemies.takeFirst();
+
     view->deleteEnemySprites();
     nuggets = 0;
 
@@ -1996,7 +2012,7 @@ void KGrGame::initEdit()
     setBlankLevel(false);	// Fill playfield with Editable objects.
 
     view->setTitle (getTitle());// Show title of level.
-    view->updateCanvas();	// Show the edit area.
+    //view->updateCanvas();	// Show the edit area.
 
     shouldSave = false;		// Used to flag editing of name or hint.
 }
@@ -2110,7 +2126,7 @@ void KGrGame::doEdit (int button)
     case Qt::RightButton:
         paintEditObj = true;
         insertEditObj (i, j);
-	view->updateCanvas();
+	//view->updateCanvas();
         oldI = i;
         oldJ = j;
         break;
@@ -2134,7 +2150,7 @@ void KGrGame::endEdit (int button)
         paintEditObj = false;
         if ((i != oldI) || (j != oldJ)) {
 	    insertEditObj (i, j);
-	    view->updateCanvas();
+	    //view->updateCanvas();
 	}
         break;
     default:
@@ -2225,14 +2241,15 @@ int KGrGame::selectLevel (int action, int requestedLevel)
 bool KGrGame::ownerOK (Owner o)
 {
     // Check that this owner has at least one collection.
-    KGrCollection * c;
     bool OK = false;
 
-    for (c = collections.first(); c != 0; c = collections.next()) {
+    QListIterator<KGrCollection *> i(collections);
+    while (i.hasNext()){
+	KGrCollection * c = i.next();
 	if (c->owner == o) {
 	    OK = true;
 	    break;
-	}
+	}		// Pit is blocked.  Find another way.
     }
 
     return (OK);
@@ -2243,7 +2260,7 @@ bool KGrGame::ownerOK (Owner o)
 /******************************************************************************/
 
 KGrThumbNail::KGrThumbNail (QWidget * parent, const char * name)
-			: Q3Frame (parent, name)
+			: QFrame (parent, name)
 {
     // Let the parent do all the work.  We need a class here so that
     // QFrame::drawContents (QPainter *) can be re-implemented and
@@ -2261,21 +2278,31 @@ void KGrThumbNail::setFilePath (QString & fp, QLabel * sln)
     lName = sln;				// path and level name field.
 }
 
-void KGrThumbNail::drawContents (QPainter * p)	// Activated via "paintEvent".
+// This was previously a Q3Frame
+// void KGrThumbNail::drawContents (QPainter * p)
+//
+// In Qt4 there is no longer this method for QFrame, suggested
+// workaround is to reimplement paintEvent
+//
+// TODO We need to respect the frame area, and draw inside it
+//
+void KGrThumbNail::paintEvent (QPaintEvent * event)
 {
+
+    QPainter  p(this);
     QFile	openFile;
-    QPen	pen = p->pen();
+    QPen	pen = p.pen();
     char	obj = FREE;
     int		fw = 1;				// Set frame width.
     int		n = width() / FIELDWIDTH;	// Set thumbnail cell-size.
 
     pen.setColor (backgroundColor);
-    p->setPen (pen);
+    p.setPen (pen);
 
     openFile.setFileName (filePath);
     if ((! openFile.exists()) || (! openFile.open (QIODevice::ReadOnly))) {
 	// There is no file, so fill the thumbnail with "FREE" cells.
-	p->drawRect (QRect(fw, fw, FIELDWIDTH*n, FIELDHEIGHT*n));
+	p.drawRect (QRect(fw, fw, FIELDWIDTH*n, FIELDHEIGHT*n));
 	return;
     }
 
@@ -2289,29 +2316,29 @@ void KGrThumbNail::drawContents (QPainter * p)	// Activated via "paintEvent".
 	case BRICK:
 	case BETON:
 	case FBRICK:
-	    pen.setColor (brickColor); p->setPen (pen); break;
+	    pen.setColor (brickColor); p.setPen (pen); break;
 	case LADDER:
-	    pen.setColor (ladderColor); p->setPen (pen); break;
+	    pen.setColor (ladderColor); p.setPen (pen); break;
 	case POLE:
-	    pen.setColor (poleColor); p->setPen (pen); break;
+	    pen.setColor (poleColor); p.setPen (pen); break;
 	case HERO:
-	    pen.setColor (Qt::green); p->setPen (pen); break;
+	    pen.setColor (Qt::green); p.setPen (pen); break;
 	case ENEMY:
-	    pen.setColor (Qt::blue); p->setPen (pen); break;
+	    pen.setColor (Qt::blue); p.setPen (pen); break;
 	default:
 	    // Set the background for FREE, HLADDER and NUGGET.
-	    pen.setColor (backgroundColor); p->setPen (pen); break;
+	    pen.setColor (backgroundColor); p.setPen (pen); break;
 	}
 
 	// Draw nxn pixels as n lines of length n.
-	p->drawLine (i*n+fw, j*n+fw, i*n+(n-1)+fw, j*n+fw);
+	p.drawLine (i*n+fw, j*n+fw, i*n+(n-1)+fw, j*n+fw);
 	if (obj == POLE) {
 	    // For a pole, only the top line is drawn in white.
 	    pen.setColor (backgroundColor);
-	    p->setPen (pen);
+	    p.setPen (pen);
 	}
 	for (int k = 1; k < n; k++) {
-	    p->drawLine (i*n+fw, j*n+k+fw, i*n+(n-1)+fw, j*n+k+fw);
+	    p.drawLine (i*n+fw, j*n+k+fw, i*n+(n-1)+fw, j*n+k+fw);
 	}
 
 	// For a nugget, add just a vertical touch  of yellow (2-3 pixels).
@@ -2319,9 +2346,9 @@ void KGrThumbNail::drawContents (QPainter * p)	// Activated via "paintEvent".
 	    int k = (n/2)+fw;
 	    // pen.setColor (QColor("#ffff00"));
 	    pen.setColor (ladderColor);
-	    p->setPen (pen);
-	    p->drawLine (i*n+k, j*n+k, i*n+k, j*n+(n-1)+fw);
-	    p->drawLine (i*n+k+1, j*n+k, i*n+k+1, j*n+(n-1)+fw);
+	    p.setPen (pen);
+	    p.drawLine (i*n+k, j*n+k, i*n+k, j*n+(n-1)+fw);
+	    p.drawLine (i*n+k+1, j*n+k, i*n+k+1, j*n+(n-1)+fw);
 	}
     }
 
@@ -2351,7 +2378,7 @@ void KGrThumbNail::drawContents (QPainter * p)	// Activated via "paintEvent".
 bool KGrGame::initCollections ()
 {
     // Initialise the list of collections of levels (i.e. the list of games).
-    collections.setAutoDelete(true);
+    //collections.setAutoDelete(true);
     owner = SYSTEM;				// Use system levels initially.
     if (! loadCollections (SYSTEM))		// Load system collections list.
 	return (false);				// If no collections, abort.
@@ -2377,7 +2404,10 @@ void KGrGame::mapCollections()
     QString		fileName2;
 
     // Find KGoldrunner level files, sorted by name (same as numerical order).
-    for (colln = collections.first(); colln != 0; colln = collections.next()) {
+    QListIterator<KGrCollection *> i(collections);
+    while (i.hasNext()){
+	colln = i.next();
+    //for (colln = collections.first(); colln != 0; colln = collections.next()) {
 	d.setPath ((colln->owner == SYSTEM)	? systemDataDir + "levels/"
 						: userDataDir + "levels/");
 	d_path = d.path();
@@ -2565,7 +2595,10 @@ bool KGrGame::saveCollections (Owner o)
     int			i, len;
     char		ch;
 
-    for (colln = collections.first(); colln != 0; colln = collections.next()) {
+    QListIterator<KGrCollection *> it(collections);
+    while (it.hasNext()){
+	colln = it.next();
+    //for (colln = collections.first(); colln != 0; colln = collections.next()) {
 	if (colln->owner == o) {
 	    line.sprintf ("%03d %c %s %s\n", colln->nLevels, colln->settings,
 				colln->prefix.myStr(),

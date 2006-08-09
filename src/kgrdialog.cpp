@@ -1,5 +1,5 @@
 /***************************************************************************
-    Copyright 2003 Marco Krüger
+    Copyright 2003 Marco Krger
     Copyright 2003 Ian Wadham <ianw@netspace.net.au>
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -20,11 +20,9 @@
 
 #ifndef KGR_PORTABLE
 #include <kglobalsettings.h>
-//Added by qt3to4:
 #include <QTextStream>
 #include <QGridLayout>
-#include <Q3PtrList>
-#include <Q3Frame>
+#include <QFrame>
 #include <QLabel>
 #include <QVBoxLayout>
 #endif
@@ -35,13 +33,13 @@
 
 #ifdef KGR_PORTABLE
 KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
-			Q3PtrList<KGrCollection> & gamesList, KGrGame * theGame,
+			QList<KGrCollection *> & gamesList, KGrGame * theGame,
 			QWidget * parent, const char * name)
 		: QDialog (parent, name, true,
 			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title)
 #else
 KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
-			Q3PtrList<KGrCollection> & gamesList, KGrGame * theGame,
+			QList<KGrCollection *> & gamesList, KGrGame * theGame,
 			QWidget * parent, const char * name)
 		: KDialog (parent)
 #endif
@@ -75,7 +73,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 
     collnL    = new QLabel (i18n("List of games:"), dad);
     mainLayout->addWidget (collnL);
-    colln     = new Q3ListBox (dad);
+    colln     = new QListWidget (dad);
     mainLayout->addWidget (colln);
 
     QWidget * gameInfo = new QWidget(dad);
@@ -92,8 +90,8 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     collnD    = new QLabel ("", dad);		// Description of collection.
     mainLayout->addWidget (collnD);
 
-    Q3Frame * separator = new Q3Frame (dad);
-    separator->setFrameStyle (Q3Frame::HLine + Q3Frame::Sunken);
+    QFrame * separator = new QFrame (dad);
+    separator->setFrameStyle (QFrame::HLine + QFrame::Sunken);
     mainLayout->addWidget (separator);
 
     if ((action == SL_START) || (action == SL_UPD_GAME)) {
@@ -228,12 +226,12 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     }
 
     // Paint a thumbnail sketch of the level.
-    thumbNail->setFrameStyle (Q3Frame::Box | Q3Frame::Plain);
+    thumbNail->setFrameStyle (QFrame::Box | QFrame::Plain);
     thumbNail->setLineWidth (1);
     slPaintLevel();
     thumbNail->show();
 
-    connect (colln,   SIGNAL (highlighted (int)), this, SLOT (slColln (int)));
+    connect (colln,   SIGNAL (itemClicked (QListWidgetItem *)), this, SLOT (slColln (QListWidgetItem *)));
     connect (collnA,  SIGNAL (clicked ()), this, SLOT (slAboutColln ()));
 
     connect (display, SIGNAL (textChanged (const QString &)),
@@ -251,7 +249,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 	levelNH->hide();
     }
 
-    connect (colln,   SIGNAL (highlighted (int)), this, SLOT (slPaintLevel ()));
+    connect (colln,   SIGNAL (itemClicked (QListWidgetItem *)), this, SLOT (slPaintLevel ()));
     connect (number,  SIGNAL (sliderReleased()), this, SLOT (slPaintLevel()));
 #warning "kde4: this signal doesn't exist";
 #if 0    
@@ -287,7 +285,7 @@ void KGrSLDialog::slSetCollections (int cIndex)
     slCollnIndex = -1;
 
     for (i = 0; i < imax; i++) {
-	colln->insertItem (collections.at(i)->name, -1);
+	colln->addItem(collections.at(i)->name);
 	if (slCollnIndex < 0) {
 	    slCollnIndex = i;		// There is at least one collection.
 	}
@@ -297,26 +295,28 @@ void KGrSLDialog::slSetCollections (int cIndex)
 	return;				// There are no collections (unlikely).
     }
     // Mark the currently selected collection (or default 0).
-    colln->setCurrentItem (cIndex);
-    colln->setSelected (cIndex, true);
+    colln->setCurrentRow(cIndex);
+    colln->setItemSelected ( colln->item (cIndex), true );
 
     // Fetch and display information on the selected collection.
-    slColln (cIndex);
+    slColln ( colln->item (cIndex) );
 }
 
 /******************************************************************************/
 /*****************    SLOTS USED BY LEVEL SELECTION DIALOG    *****************/
 /******************************************************************************/
 
-void KGrSLDialog::slColln (int i)
+void KGrSLDialog::slColln (QListWidgetItem * item)
 {
+
     if (slCollnIndex < 0) {
 	// Ignore the "highlighted" signal caused by inserting in an empty box.
 	return;
     }
-
+    int i = colln->row ( item );
     // User "highlighted" a new collection (with one click) ...
-    colln->setSelected (i, true);			// One click = selected.
+    colln->setItemSelected ( item, true );  // One click = selected
+
     slCollnIndex = i;
     int n = slCollnIndex;				// Collection selected.
     int N = defaultGame;				// Current collection.
@@ -545,12 +545,8 @@ KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
     mainLayout->addWidget (mleL);
 
    // Set up a widget to hold the wrapped text, using \n for paragraph breaks.
-#ifdef QT3
-			mle = new Q3TextEdit (dad);
+			mle = new QTextEdit (dad);
     mle->		setTextFormat (Qt::PlainText);
-#else
-			mle = new Q3MultiLineEdit (dad);
-#endif
     mainLayout->addWidget (mle);
 
 #ifdef KGR_PORTABLE
@@ -574,10 +570,6 @@ KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
 
     // Configure the text box.
     mle->		setAlignment (Qt::AlignLeft);
-#ifndef QT3
-    mle->		setWordWrap (Q3MultiLineEdit::WidgetWidth);
-    mle->		setFixedVisibleLines (9);
-#endif
 
     nhName->		setText (levelName);
     mle->		setText (levelHint);
@@ -601,13 +593,13 @@ KGrNHDialog::~KGrNHDialog()
 
 #ifdef KGR_PORTABLE
 KGrECDialog::KGrECDialog (int action, int collnIndex,
-			Q3PtrList<KGrCollection> & gamesList,
+			QList<KGrCollection *> & gamesList,
 			QWidget * parent, const char * name)
 		: QDialog (parent, name, true,
 			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title)
 #else
 KGrECDialog::KGrECDialog (int action, int collnIndex,
-			Q3PtrList<KGrCollection> & gamesList,
+			QList<KGrCollection *> & gamesList,
 			QWidget * parent, const char * name)
 		: KDialog(parent)
 #endif
@@ -633,6 +625,7 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
     mainLayout->setSpacing(spacing);
     mainLayout->setMargin(margin);
 
+    //TODO need to fix this layout
     QWidget * nameBox = new QWidget(dad);
     QHBoxLayout *hboxLayout5 = new QHBoxLayout(nameBox);
     nameBox->setLayout(hboxLayout5);
@@ -641,6 +634,7 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
     nameL    = new QLabel (i18n("Name of game:"), nameBox);
     ecName   = new QLineEdit (nameBox);
 
+    //TODO need to fix this layout
     QWidget * prefixBox = new QWidget(dad);
     QHBoxLayout *hboxLayout6 = new QHBoxLayout(prefixBox);
     prefixBox->setLayout(hboxLayout6);
@@ -649,10 +643,17 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
     prefixL  = new QLabel (i18n("File name prefix:"), prefixBox);
     ecPrefix = new QLineEdit (prefixBox);
 
-    ecGrp    = new Q3ButtonGroup (1, Qt::Horizontal, 0, dad);
-    mainLayout->addWidget (ecGrp);
-    ecTradB  = new QRadioButton (i18n("Traditional rules"), ecGrp);
-    ecKGrB   = new QRadioButton (i18n("KGoldrunner rules"), ecGrp);
+    //In Qt4, QButtonGroup is no longer a widget...
+    ecGrp    = new QButtonGroup (dad);
+    ecTradB  = new QRadioButton (i18n("Traditional rules"), dad); //last parameter was ecGrp
+    ecKGrB   = new QRadioButton (i18n("KGoldrunner rules"), dad); //last parameter was ecGrp
+    ecGrp->addButton(ecTradB);
+    ecGrp->addButton(ecKGrB);
+
+    //..so we need to add the radio buttons directly to the layout
+    mainLayout->addWidget (ecTradB);
+    mainLayout->addWidget (ecKGrB);
+
 
     nLevL    = new QLabel (i18n( "0 levels" ), dad);
     mainLayout->addWidget (nLevL);
@@ -661,12 +662,8 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
     mainLayout->addWidget (mleL);
 
    // Set up a widget to hold the wrapped text, using \n for paragraph breaks.
-#ifdef QT3
-    mle	     = new Q3TextEdit (dad);
+    mle	     = new QTextEdit (dad);
     mle->    setTextFormat (Qt::PlainText);
-#else
-    mle      = new Q3MultiLineEdit (dad);
-#endif
     mainLayout->addWidget (mle);
 
 #ifdef KGR_PORTABLE
@@ -734,10 +731,6 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
 
     // Configure the edit box.
     mle->		setAlignment (Qt::AlignLeft);
-#ifndef QT3
-    mle->		setWordWrap (Q3MultiLineEdit::WidgetWidth);
-    mle->		setFixedVisibleLines (8);
-#endif
 
     if ((action == SL_UPD_GAME) &&
 	(collections.at(defaultGame)->about.length() > 0)) {
@@ -788,13 +781,13 @@ void KGrECDialog::ecSetTrad () {ecSetRules ('T');}
 
 #ifdef KGR_PORTABLE
 KGrLGDialog::KGrLGDialog (QFile * savedGames,
-			Q3PtrList<KGrCollection> & collections,
+			QList<KGrCollection *> & collections,
 			QWidget * parent, const char * name)
 		: QDialog (parent, name, true,
 			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title)
 #else
 KGrLGDialog::KGrLGDialog (QFile * savedGames,
-			Q3PtrList<KGrCollection> & collections,
+			QList<KGrCollection *> & collections,
 			QWidget * parent, const char * name)
 		: KDialog (parent)
 #endif
@@ -821,7 +814,7 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
 			i18n("Game                       Level/Lives/Score   "
 			"Day    Date     Time  "), dad);
 
-			lgList   = new Q3ListBox (dad);
+    lgList   = new QListWidget (dad);
 #ifdef KGR_PORTABLE
     QFont		f ("courier", 12);
 #else
@@ -878,25 +871,25 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
 		break;
 	    }
 	}
-	lgList-> insertItem (s);
+	lgList-> addItem (s);
     }
     savedGames->close();
 
     // Mark row 0 (the most recently saved game) as the default selection.
     lgList->	setCurrentItem (0);
-    lgList->	setSelected (0, true);
+    lgList->	setItemSelected  (lgList->currentItem(), true);
 		lgHighlight = 0;
 
-    connect (lgList, SIGNAL (highlighted (int)), this, SLOT (lgSelect (int)));
+    connect (lgList, SIGNAL ( itemClicked ( QListWidgetItem * )), this, SLOT (lgSelect (QListWidgetItem *)));
 #ifdef KGR_PORTABLE
     connect (OK,     SIGNAL (clicked ()),        this, SLOT (accept ()));
     connect (CANCEL, SIGNAL (clicked ()),        this, SLOT (reject ()));
 #endif
 }
 
-void KGrLGDialog::lgSelect (int n)
+void KGrLGDialog::lgSelect (QListWidgetItem * item)
 {
-    lgHighlight = n;
+    lgHighlight = lgList->row(item);
 }
 
 /*******************************************************************************
@@ -967,20 +960,12 @@ void KGrMessage::wrapped (QWidget * parent, QString title, QString contents)
 
     // Make text background grey not white (i.e. same as widget background).
     QPalette		pl = mm->palette();
-#ifdef QT3
     pl.setColor (QPalette::Base, mm->paletteBackgroundColor());
-#else
-    pl.setColor (QPalette::Base, mm->backgroundColor());
-#endif
     mm->		setPalette (pl);
 
    // Set up a widget to hold the wrapped text, using \n for paragraph breaks.
-#ifdef QT3
-    Q3TextEdit *		mle = new Q3TextEdit (mm);
+    QTextEdit *		mle = new QTextEdit (mm);
     mle->		setTextFormat (Qt::PlainText);
-#else
-    Q3MultiLineEdit *	mle = new Q3MultiLineEdit (mm);
-#endif
     mainLayout->addWidget (mle);
 
     // Button is for Qt-only portability.  NOT COMPILED in KDE environment.
@@ -996,18 +981,10 @@ void KGrMessage::wrapped (QWidget * parent, QString title, QString contents)
     mle->		setMinimumSize ((FIELDWIDTH*c/2), (FIELDHEIGHT/2)*c);
     OK->		setMaximumWidth (3*c);
 
-    mle->		setFrameStyle (Q3Frame::NoFrame);
+    mle->		setFrameStyle (QFrame::NoFrame);
     mle->		setAlignment (Qt::AlignLeft);
     mle->		setReadOnly (true);
     mle->		setText (contents);
-
-#ifndef QT3
-    mle->		setWordWrap (Q3MultiLineEdit::WidgetWidth);
-    mle->		setFixedVisibleLines (10);
-    if (mle->		numLines() < 10) {
-	mle->		setFixedVisibleLines (mle->numLines());
-    }
-#endif
 
     OK->		setAccel (Qt::Key_Return);
     connect (OK, SIGNAL (clicked ()), mm, SLOT (accept ()));

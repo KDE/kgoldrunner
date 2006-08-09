@@ -1,7 +1,7 @@
 /***************************************************************************
  *                       kgrfigure.h  -  description                       *
  *                           -------------------                           *
-    Copyright 2003 Marco Krüger
+    Copyright 2003 Marco Krger
     Copyright 2003 Ian Wadham <ianw@netspace.net.au>
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -16,14 +16,10 @@
 // Obsolete - #include <iostream.h>
 #include <iostream>
 
-#include <qimage.h>
-#ifdef QT3
-#include <q3ptrlist.h>
-#else
-#include <qlist.h>
-#endif
-#include <qpainter.h>
-#include <qpixmap.h>
+#include <QImage>
+#include <QList>
+#include <QPainter>
+#include <QPixmap>
 #include <QTimer>
 #include <QWidget>
 #include <stdlib.h> // fÃ¼r Zufallsfunktionen
@@ -109,11 +105,7 @@ public:
   void digLeft();
   void digRight();
   void startWalk();
-#ifdef QT3
-  void setEnemyList(Q3PtrList<KGrEnemy> *);
-#else
-  void setEnemyList(QList<KGrEnemy> *);
-#endif
+  void setEnemyList(QList<KGrEnemy *> *);
   void init(int,int);
   void setKey(Direction);
   void setDirection(int, int);
@@ -126,11 +118,7 @@ public:
   void showState (char);
 
 private:
-#ifdef QT3
-  Q3PtrList<KGrEnemy> *enemies;
-#else
-  QList<KGrEnemy> *enemies;
-#endif
+  QList<KGrEnemy *> *enemies;
   KGrCanvas * heroView;
   bool standOnEnemy();
   bool isInEnemy();
@@ -164,11 +152,7 @@ public:
   virtual ~KGrEnemy();
   void showFigure();
   void startSearching();
-#ifdef QT3
-  void setEnemyList(Q3PtrList<KGrEnemy> *);
-#else
-  void setEnemyList(QList<KGrEnemy> *);
-#endif
+  void setEnemyList(QList<KGrEnemy *> *);
   virtual void init(int,int);
   static int WALKDELAY;
   static int FALLDELAY;
@@ -184,11 +168,7 @@ private:
   int captiveCounter;
   QTimer *captiveTimer;
   bool canWalkUp();
-#ifdef QT3
-  Q3PtrList<KGrEnemy> *enemies;
-#else
-  QList<KGrEnemy> *enemies;
-#endif
+  QList<KGrEnemy *> *enemies;
   bool standOnEnemy();
   bool bumpingFriend();
 

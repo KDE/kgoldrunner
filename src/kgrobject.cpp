@@ -2,7 +2,7 @@
                         kgrobject.cpp  -  description
                              -------------------
     begin                : Wed Jan 23 2002
-    Copyright 2002 Marco Krüger
+    Copyright 2002 Marco Krger
     Copyright 2002 Ian Wadham <ianw@netspace.net.au>
  ***************************************************************************/
 
@@ -115,7 +115,7 @@ void KGrBrick::dig (void)
   hole_counter = HOLETIME;
   iamA = HOLE;
   objectView->paintCell (xpos, ypos, BRICK, dig_counter);
-  objectView->updateCanvas();
+  //objectView->updateCanvas();
   timer->setSingleShot(true);
   timer->start ((DIGDELAY * NSPEED) / speed);
 }
@@ -161,7 +161,7 @@ void KGrBrick::timeDone ()
 
     // Brick pix:- 0 normal, 1-4 crumbling, 5 hole complete, 6-9 re-growing.
     objectView->paintCell (xpos, ypos, BRICK, dig_counter);
-    objectView->updateCanvas();
+    //objectView->updateCanvas();
 }
 
 void KGrBrick::useHole() {

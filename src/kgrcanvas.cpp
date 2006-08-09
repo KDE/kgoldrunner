@@ -2,7 +2,7 @@
                           kgrcanvas.cpp  -  description
                              -------------------
     begin                : Wed Jan 23 2002
-    Copyright 2002 Marco Krüger
+    Copyright 2002 Marco Krger
     Copyright 2002 Ian Wadham <ianw@netspace.net.au>
  ***************************************************************************/
 
@@ -31,17 +31,17 @@
 #include "enemy1.xpm"
 #include "enemy2.xpm"
 #include "kgraphics.h"
-//Added by qt3to4:
+
 #include <QPixmap>
-#include <Q3PtrList>
+#include <QList>
 #include <QLabel>
 #include <QList>
 #include <QMouseEvent>
-#include <Q3CanvasSprite>
+
 class KGoldrunner;
 
 KGrCanvas::KGrCanvas (QWidget * parent, const char *name)
-	: Q3CanvasView (0, parent, name)
+	: QGraphicsView (0, parent)
 {
     setBackgroundMode (Qt::NoBackground);
     m = new QCursor ();		// For handling the mouse.
@@ -91,6 +91,7 @@ void KGrCanvas::changeLandscape (const QString & name)
 		}
 	    }
 
+	    borderT->setBrush (QBrush (borderColor));
 	    borderB->setBrush (QBrush (borderColor));
 	    borderL->setBrush (QBrush (borderColor));
 	    borderR->setBrush (QBrush (borderColor));
@@ -99,8 +100,6 @@ void KGrCanvas::changeLandscape (const QString & name)
 	    makeTitle ();
 	    setTitle (t);
 
-	    // Repaint the playing area.
-	    updateCanvas();
 	    return;
 	}
     }
@@ -108,7 +107,6 @@ void KGrCanvas::changeLandscape (const QString & name)
 
 bool KGrCanvas::changeSize (int d)
 {
-#ifdef QT3
     if ((d < 0) && (scaleStep <= STEP)) {
 	// Note: Smaller scales lose detail (e.g. the joints in brickwork).
 	KGrMessage::information (this, i18n("Change Size"),
@@ -123,7 +121,7 @@ bool KGrCanvas::changeSize (int d)
 	return false;
     }
 
-    QMatrix wm = worldMatrix();
+    QMatrix wm = matrix();
     double   wmScale = 1.0;
 
     // Set the scale back to 1:1 and calculate the new scale factor.
@@ -135,7 +133,7 @@ bool KGrCanvas::changeSize (int d)
 	wmScale = (wmScale * scaleStep) / STEP;
 	wm.scale (wmScale, wmScale);
     }
-    setWorldMatrix (wm);
+    setMatrix (wm);
 
     // Force the title size and position to be re-calculated.
     QString t = title->text();
@@ -144,21 +142,9 @@ bool KGrCanvas::changeSize (int d)
 
     // Fit the QCanvasView and its frame to the canvas.
     int frame = frameWidth()*2;
-    setFixedSize ((FIELDWIDTH  + 4) * 4 * scaleStep + frame,
-		  (FIELDHEIGHT + 4) * 4 * scaleStep + frame);
+    setFixedSize ((FIELDWIDTH  + 4) * 4 * scaleStep + frame, (FIELDHEIGHT + 4) * 4 * scaleStep + frame);
     return true;
 
-#else
-    KGrMessage::information (this, i18n( "Change Size" ),
-    i18n( "Sorry, you cannot change the size of the playing area. "
-    "That function requires Qt Library version 3 or later." ));
-    return false;
-#endif
-}
-
-void KGrCanvas::updateCanvas()
-{
-    field->update();
 }
 
 void KGrCanvas::paintCell (int x, int y, char type, int offset)
@@ -224,12 +210,12 @@ void KGrCanvas::makeTitle ()
     title->show();
 }
 
-void KGrCanvas::contentsMousePressEvent (QMouseEvent * m) {
-    emit mouseClick (m->button ());
+void KGrCanvas::contentsMouseClick (int i) {
+    emit mouseClick (i);
 }
 
-void KGrCanvas::contentsMouseReleaseEvent (QMouseEvent * m) {
-    emit mouseLetGo (m->button ());
+void KGrCanvas::contentsMouseLetGo (int i) {
+    emit mouseLetGo (i);
 }
 
 QPoint KGrCanvas::getMousePos ()
@@ -260,7 +246,16 @@ void KGrCanvas::setMousePos (int i, int j)
 
 void KGrCanvas::makeHeroSprite (int i, int j, int startFrame)
 {
-    heroSprite = new Q3CanvasSprite (heroArray, field);
+    heroSprite = new KGrSprite (0, field);
+
+    // Process the pixmap with the hero frames
+    //////////////////////////////////////////////////////////////////////////
+    // The pixmaps for hero and enemies are arranged in strips of 20: walk  //
+    // right (4), walk left (4), climb right along bar (4), climb left (4), //
+    // climb up ladder (2) and fall (2) --- total 20.                       //
+    //////////////////////////////////////////////////////////////////////////
+    // Our KGrSprite class will extract the frames from the strip (16x16 pix, 20 frames)
+    heroSprite->addFrames(QPixmap (hero_xpm), 16, 16, 20 );
 
     // In KGoldrunner, the top-left visible cell is [1,1] --- in QCanvas [2,2].
     i++; j++;
@@ -276,7 +271,19 @@ void KGrCanvas::setHeroVisible (bool newState)
 
 void KGrCanvas::makeEnemySprite (int i, int j, int startFrame)
 {
-    Q3CanvasSprite * enemySprite = new Q3CanvasSprite (enemyArray, field);
+    KGrSprite * enemySprite = new KGrSprite (0, field);
+
+    //////////////////////////////////////////////////////////////////////////
+    // The pixmaps for hero and enemies are arranged in strips of 20: walk  //
+    // right (4), walk left (4), climb right along bar (4), climb left (4), //
+    // climb up ladder (2) and fall (2) --- total 20.                       //
+    //////////////////////////////////////////////////////////////////////////
+    // Our KGrSprite class will extract the frames from the strip (16x16 pix, 20 frames)
+    // First convert the pixmap for enemies with no gold ...
+    enemySprite->addFrames(QPixmap (enemy1_xpm), 16, 16, 20 );
+
+    // Now adds the frames for enemies with no gold ...
+    enemySprite->addFrames(QPixmap (enemy2_xpm), 16, 16, 20 );
 
     enemySprites->append (enemySprite);
 
@@ -291,7 +298,6 @@ void KGrCanvas::moveHero (int x, int y, int frame)
 {
     // In KGoldrunner, the top-left visible cell is [1,1] --- in QCanvas [2,2].
     heroSprite->move (x + 4 * STEP, y + 4 * STEP, frame);
-    updateCanvas();
 }
 
 void KGrCanvas::moveEnemy (int id, int x, int y, int frame, int nuggets)
@@ -302,12 +308,12 @@ void KGrCanvas::moveEnemy (int id, int x, int y, int frame, int nuggets)
 
     // In KGoldrunner, the top-left visible cell is [1,1] --- in QCanvas [2,2].
     enemySprites->at(id)->move (x + 4 * STEP, y + 4 * STEP, frame);
-    updateCanvas();
 }
 
 void KGrCanvas::deleteEnemySprites()
 {
-    enemySprites->clear();
+    while (!enemySprites->isEmpty())
+            delete enemySprites->takeFirst();
 }
 
 QPixmap KGrCanvas::getPixmap (char type)
@@ -372,98 +378,28 @@ void KGrCanvas::initView()
 
     // Define the canvas as an array of tiles.  Default tile is 0 (free space).
     int frame = frameWidth()*2;
-    field = new Q3Canvas ((FIELDWIDTH+border) * bgw, (FIELDHEIGHT+border) * bgh);
+    field = new KGrScene();
+    field->setSceneRect(0,0,(FIELDWIDTH+border) * bgw, (FIELDHEIGHT+border) * bgh);
+
+    //Set the KGrScene to this QGraphicsView
+    setScene(field);
+
+    //Now set our tileset in the scene
     field->setTiles (bgPix, (FIELDWIDTH+border), (FIELDHEIGHT+border),
 			bgw, bgh);
 
-    // Embed the canvas in the view and make it occupy the whole of the view.
-    setCanvas (field);
-    setVScrollBarMode (Q3ScrollView::AlwaysOff);
-    setHScrollBarMode (Q3ScrollView::AlwaysOff);
+    //TODO setVScrollBarMode (Q3ScrollView::AlwaysOff);
+    //TODO setHScrollBarMode (Q3ScrollView::AlwaysOff);
+    setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize (field->width() + frame, field->height() + frame);
 
-    //////////////////////////////////////////////////////////////////////////
-    // The pixmaps for hero and enemies are arranged in strips of 20: walk  //
-    // right (4), walk left (4), climb right along bar (4), climb left (4), //
-    // climb up ladder (2) and fall (2) --- total 20.                       //
-    //////////////////////////////////////////////////////////////////////////
+    //Enable background caching at the view level
+    setCacheMode(QGraphicsView::CacheBackground);
 
-    // Convert the pixmap strip for hero animation into a QCanvasPixmapArray.
-    pixmap = QPixmap (hero_xpm);
-    image = pixmap.toImage ();
-
-#ifdef QT3
-    QPixmap   pm;
-    QList<QPixmap> pmList;
-
-    for (int i = 0; i < 20; i++) {
-	pm = QPixmap::fromImage (image.copy (i * 16, 0, 16, 16));
-	pmList.append (pm);
-    }
-
-    heroArray = new Q3CanvasPixmapArray (pmList);	// Hot spots all (0,0).
-#else
-    QPixmap * pm;
-    QPoint  * pt;
-    QList<QPixmap> pmList;
-    QList<QPoint>  ptList;
-
-    pt = new QPoint (0, 0);		// "Hot spot" not used in KGoldrunner.
-
-    for (int i = 0; i < 20; i++) {
-	pm = new QPixmap ();
-	pm->convertFromImage (image.copy (i * 16, 0, 16, 16));
-	pmList.append (pm);
-	ptList.append (pt);
-    }
-
-    heroArray = new Q3CanvasPixmapArray (pmList, ptList);
-#endif
-
-    // Convert pixmap strips for enemy animations into a QCanvasPixmapArray.
-    // First convert the pixmaps for enemies with no gold ...
-    pixmap = QPixmap (enemy1_xpm);
-    image = pixmap.toImage ();
-
-    pmList.clear();
-
-#ifdef QT3
-    for (int i = 0; i < 20; i++) {
-	pm = QPixmap::fromImage (image.copy (i * 16, 0, 16, 16));
-	pmList.append (pm);
-    }
-#else
-    ptList.clear();
-
-    for (int i = 0; i < 20; i++) {
-	pm = new QPixmap ();
-	pm->convertFromImage (image.copy (i * 16, 0, 16, 16));
-	pmList.append (pm);
-	ptList.append (pt);
-    }
-#endif
-
-    // ... then convert the gold-carrying enemies.
-    pixmap = QPixmap (enemy2_xpm);
-    image = pixmap.toImage ();
-
-#ifdef QT3
-    for (int i = 0; i < 20; i++) {
-	pm = QPixmap::fromImage (image.copy (i * 16, 0, 16, 16));
-	pmList.append (pm);
-    }
-
-    enemyArray = new Q3CanvasPixmapArray (pmList);	// Hot spots all (0,0).
-#else
-    for (int i = 0; i < 20; i++) {
-	pm = new QPixmap ();
-	pm->convertFromImage (image.copy (i * 16, 0, 16, 16));
-	pmList.append (pm);
-	ptList.append (pt);
-    }
-
-    enemyArray = new Q3CanvasPixmapArray (pmList, ptList);
-#endif
+    //Relay mouse events received from QGraphicsScene and send them upstream
+    connect( field, SIGNAL(mouseClick(int)), this, SLOT(contentsMouseClick(int)) );
+    connect( field, SIGNAL(mouseLetGo(int)), this, SLOT(contentsMouseLetGo(int)) );
 
     goldEnemy = 20;			// Offset of gold-carrying frames.
 
@@ -475,12 +411,7 @@ void KGrCanvas::initView()
     makeTitle();
 
     // Create an empty list of enemy sprites.
-#ifdef QT3
-    enemySprites = new Q3PtrList<Q3CanvasSprite> ();
-#else
-    enemySprites = new QList<Q3CanvasSprite> ();
-#endif
-    enemySprites->setAutoDelete(true);
+    enemySprites = new QList<KGrSprite *> ();
 }
 
 void KGrCanvas::makeTiles ()
@@ -509,8 +440,7 @@ void KGrCanvas::makeBorder ()
     // Allow some overlap to prevent slits appearing when using "changeSize".
     colour = borderColor;
 
-    // The first rectangle is actually a QLabel drawn by "makeTitle()".
-    // borderT = drawRectangle (11, 0, 0, FIELDWIDTH*cw + 2*bw, mw);
+    borderT = drawRectangle (11, 0, 0, FIELDWIDTH*cw + 2*bw, mw);
     borderB = drawRectangle (11, 0, FIELDHEIGHT*cw + bw + lw,
 						FIELDWIDTH*cw + 2*bw, mw);
     borderL = drawRectangle (12, 0, bw - lw - 1, mw, FIELDHEIGHT*cw + 2*lw + 2);
@@ -525,13 +455,13 @@ void KGrCanvas::makeBorder ()
     drawRectangle (10, FIELDWIDTH*cw + bw, bw, lw, FIELDHEIGHT*cw);
 }
 
-Q3CanvasRectangle * KGrCanvas::drawRectangle (int z, int x, int y, int w, int h)
+QGraphicsRectItem * KGrCanvas::drawRectangle (int z, int x, int y, int w, int h)
 {
-    Q3CanvasRectangle * r = new Q3CanvasRectangle (x, y, w, h, field);
+    QGraphicsRectItem * r = new QGraphicsRectItem (x, y, w, h, 0, field);
 
     r->setBrush (QBrush (colour));
     r->setPen (QPen (Qt::NoPen));
-    r->setZ (z);
+    r->setZValue (z);
     r->show();
 
     return (r);

@@ -39,6 +39,8 @@ int main (int argc, char **argv)
     about.addAuthor( "Ian Wadham", I18N_NOOP("Current author"),
     		     "ianw@netspace.net.au" );
     about.addAuthor( "Marco Krüger", I18N_NOOP("Original author"), 0);
+    about.addCredit("Mauricio Piacentini", I18N_NOOP("Port to QGraphicsView framework"), 
+		      "mauricio@tabuleiro.com");
 
     KCmdLineArgs::init (argc, argv, &about);
 

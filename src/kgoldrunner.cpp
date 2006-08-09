@@ -42,6 +42,8 @@
 #include "kgrgame.h"
 #include "kgoldrunner.h"
 
+#include <QtDebug>
+
 KGoldrunner::KGoldrunner()
     : KMainWindow (0, "KGoldrunner"),
       view (new KGrCanvas (this))
@@ -110,9 +112,10 @@ KGoldrunner::KGoldrunner()
     // explicitly hide an edit toolbar - we need it in edit mode only
     toolBar("editToolbar")->hide();
     toolBar("editToolbar")->setAllowedAreas(Qt::TopToolBarArea);
-#ifdef QT3
+
     // Base size of playing-area and widgets on the monitor resolution.
     int dw = KApplication::desktop()->width();
+
     if (dw > 800) {				// More than 800x600.
 	view->changeSize (+1);		// Scale 1.25:1.
     }
@@ -121,8 +124,12 @@ KGoldrunner::KGoldrunner()
 	view->changeSize (+1);		// Scale 1.75:1.
     }
     view->setBaseScale();		// Set scale for level-names.
-#endif
-    setFixedSize (view->size());
+
+    //TODO - Investigate more flexible resizing? 
+    // Our scaling code in the view is not returning accurate values, or
+    // setFixedSize is not doing the right thing
+    //
+    //setFixedSize (view->size());
 
 
     // Set mouse control of the hero as the default.
@@ -140,7 +147,10 @@ KGoldrunner::KGoldrunner()
 
 KGoldrunner::~KGoldrunner()
 {
-    delete editToolbar;
+	//Investigate:
+	//KGoldRunner crashes (KDE4) on quit when this is not commented out
+	//Maybe a change in Qt or KDElibs since 3.x?
+	//    delete editToolbar;
 }
 
 void KGoldrunner::setupActions()
@@ -493,6 +503,15 @@ void KGoldrunner::setupActions()
     digLeft->setShortcut( Qt::Key_Z );
     connect( digLeft, SIGNAL(triggered(bool)), this, SLOT(digL()));
 
+    // Plug actions into the gui, or accelerators will not work (KDE4)
+    addAction(moveUp);
+    addAction(moveDown);
+    addAction(moveLeft);
+    addAction(moveRight);
+    addAction(digLeft);
+    addAction(digRight);
+    addAction(stop);
+
     setupEditToolbarActions();			// Uses pixmaps from "view".
 
     // Alternate one-handed controls.  Set up in "kgoldrunnerui.rc".
@@ -753,14 +772,31 @@ void KGoldrunner::setKGrRules()
 
 void KGoldrunner::makeLarger()
 {
+    QSize newsize;
     if (view->changeSize (+1))
-	setFixedSize (view->size());
+	// TODO - Investigate resizing options
+	// setFixedSize seems broken in KMainWindow right now
+	// or there is something wrong with our scaling code
+	//
+	//setFixedSize (view->size());
+	//setGeometry(0,0,view->size().rwidth (),view->size().rheight ());
+	//TODO - Maybe we need a layout manager here? View is not shrinking automatically
+	resize(newsize);
 }
 
 void KGoldrunner::makeSmaller()
 {
+    QSize newsize;
     if (view->changeSize (-1))
-	setFixedSize (view->size());
+	// TODO - Investigate resizing options
+	// setFixedSize seems broken in KMainWindow right now
+	// or there is something wrong with our scaling code
+	//
+	//setFixedSize (view->size());
+	//setGeometry(0,0,view->size().rwidth (),view->size().rheight ());
+	//TODO - Maybe we need a layout manager here? View is not shrinking automatically
+	resize(newsize);
+
 }
 
 // Local slots for hero control keys.
@@ -892,11 +928,7 @@ bool KGoldrunner::getDirectories()
 
     KStandardDirs * dirs = new KStandardDirs();
 
-#ifdef QT3
     QString myDir = "kgoldrunner";
-#else
-    QString myDir = "kgoldrun";
-#endif
 
     // Find the KGoldrunner Users' Guide, English version (en).
     systemHTMLDir = dirs->findResourceDir ("html", "en/" + myDir + "/");

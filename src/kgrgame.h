@@ -21,24 +21,16 @@
 #define endData		atEnd
 
 #include <QObject>
-
-#ifdef QT3
-#include <q3ptrlist.h>
-#else
-#include <qlist.h>
-#endif
+#include <QList>
 #include <QString>
-
 #include <QDir>
 #include <QFile>
-#include <qtextstream.h>
+#include <QTextStream>
 #include <QDataStream>
-
 #include <QColor>
-//Added by qt3to4:
 #include <QPixmap>
 #include <QLabel>
-#include <Q3Frame>
+#include <QFrame>
 
 /**
 Sets up games and levels in KGoldrunner and controls the play.
@@ -158,11 +150,7 @@ private:
     KGrHero *			hero;		// The HERO figure !!  Yay !!!
     int				startI, startJ;	// The hero's starting position.
 
-#ifdef QT3
-    Q3PtrList<KGrEnemy>		enemies;	// The list of enemies.
-#else
-    QList<KGrEnemy>		enemies;	// The list of enemies.
-#endif
+    QList<KGrEnemy *>		enemies;	// The list of enemies.
     int				enemyCount;	// How many enemies.
     KGrEnemy *			enemy;		// One of the enemies.
 
@@ -250,11 +238,7 @@ private slots:
 private:
 
 // Note that a collection of KGoldrunner levels is the same thing as a "game".
-#ifdef QT3
-    Q3PtrList<KGrCollection>	collections;	// List of ALL collections.
-#else
-    QList<KGrCollection>	collections;	// List of ALL collections.
-#endif
+    QList<KGrCollection *>	collections;	// List of ALL collections.
 
     KGrCollection *		collection;	// Collection currently in use.
     Owner			owner;		// Collection owner.
@@ -275,7 +259,7 @@ private:
 /**********************    CLASS TO DISPLAY THUMBNAIL   ***********************/
 /******************************************************************************/
 
-class KGrThumbNail : public Q3Frame
+class KGrThumbNail : public QFrame
 {
 public:
     KGrThumbNail (QWidget *parent = 0, const char *name = 0);
@@ -287,7 +271,8 @@ public:
     static QColor poleColor;
 
 protected:
-    void drawContents (QPainter *);		// Draw a preview of a level.
+    //void drawContents (QPainter *);		// Draw a preview of a level.
+    void paintEvent ( QPaintEvent * event );
     QString filePath;
     QLabel * lName;
 };

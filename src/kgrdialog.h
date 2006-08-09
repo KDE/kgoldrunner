@@ -27,22 +27,15 @@
 
 #include <QLayout>
 
-#include <q3listbox.h>
-#include <qscrollbar.h>
+#include <QListWidget>
+#include <QScrollBar>
 #include <QLineEdit>
-#include <q3hbox.h>
 #include <QPushButton>
-#include <q3buttongroup.h>
-#include <qradiobutton.h>
-#ifdef QT3
-#include <q3textedit.h>
-#else
-#include <q3multilineedit.h>
-#endif
-
-#include <q3ptrlist.h>
-//Added by qt3to4:
+#include <QButtonGroup>
+#include <QRadioButton>
+#include <QList>
 #include <QLabel>
+#include <QTextEdit>
 
 /**
 @author Ian Wadham and Marco Krüger
@@ -62,7 +55,7 @@ class KGrSLDialog : public KGR_DIALOG	// KGR_PORTABLE sets QDialog/KDialogBase
 Q_OBJECT
 public:
     KGrSLDialog (int action, int requestedLevel, int collnIndex,
-			Q3PtrList<KGrCollection> & gamesList, KGrGame * theGame,
+			QList<KGrCollection *> & gamesList, KGrGame * theGame,
 			QWidget * parent = 0, const char *name = 0);
     ~KGrSLDialog();
 
@@ -71,7 +64,8 @@ public:
 
 private slots:
     void slSetCollections (int cIndex);
-    void slColln (int i);
+    //void slColln (int i);
+    void slColln (QListWidgetItem *);
     void slAboutColln ();
     void slShowLevel (int i);
     void slUpdate (const QString & text);
@@ -80,7 +74,7 @@ private slots:
 
 private:
     int			slAction;
-    Q3PtrList<KGrCollection> collections;	// List of games.
+    QList<KGrCollection *> collections;	// List of games.
     int			defaultLevel;
     int			defaultGame;
     int			slCollnIndex;
@@ -89,7 +83,7 @@ private:
     QWidget *		slParent;
 
     QLabel *		collnL;
-    Q3ListBox *		colln;
+    QListWidget *	colln;
     QLabel *		collnN;
     QLabel *		collnD;
     QPushButton *	collnA;
@@ -120,16 +114,12 @@ public:
 			QWidget * parent = 0, const char * name = 0);
     ~KGrNHDialog();
 
-    QString	getName()	{return (nhName->text());}
-    QString	getHint()	{return (mle->text());}
+    const QString	getName()	{return (nhName->text());}
+    const QString	getHint()	{return (mle->toPlainText ());}
 
 private:
     QLineEdit *	nhName;
-#ifdef QT3
-    Q3TextEdit *	mle;
-#else
-    Q3MultiLineEdit * mle;
-#endif
+    QTextEdit *	mle;
 };
 
 /*******************************************************************************
@@ -141,14 +131,14 @@ class KGrECDialog : public KGR_DIALOG	// KGR_PORTABLE sets QDialog/KDialogBase
 Q_OBJECT
 public:
     KGrECDialog (int action, int collnIndex,
-			Q3PtrList<KGrCollection> & gamesList,
+			QList<KGrCollection *> & gamesList,
 			QWidget *parent = 0, const char *name = 0);
     ~KGrECDialog();
 
-    QString	getName()	{return (ecName->text());}
-    QString	getPrefix()	{return (ecPrefix->text());}
-    bool	isTrad()	{return (ecTradB->isChecked());}
-    QString	getAboutText()	{return (mle->text());}
+    const QString	getName()	{return (ecName->text());}
+    const QString	getPrefix()	{return (ecPrefix->text());}
+    const bool	isTrad()	{return (ecTradB->isChecked());}
+    const QString	getAboutText()	{return (mle->toPlainText());}
 
 private slots:
     void ecSetRules (const char settings);
@@ -156,24 +146,20 @@ private slots:
     void ecSetTrad();
 
 private:
-    Q3PtrList<KGrCollection> collections;	// List of existing games.
+    QList<KGrCollection *> collections;	// List of existing games.
     int			defaultGame;
 
     QLabel *		nameL;
     QLineEdit *		ecName;
     QLabel *		prefixL;
     QLineEdit *		ecPrefix;
-    Q3ButtonGroup *	ecGrp;
+    QButtonGroup *	ecGrp;
     QRadioButton *	ecKGrB;
     QRadioButton *	ecTradB;
     QLabel *		nLevL;
 
     QLabel *		mleL;
-#ifdef QT3
-    Q3TextEdit *		mle;
-#else
-    Q3MultiLineEdit *	mle;
-#endif
+    QTextEdit *		mle;
 
 #ifdef KGR_PORTABLE
     QPushButton *	OK;
@@ -192,15 +178,15 @@ class KGrLGDialog : public KGR_DIALOG	// KGR_PORTABLE sets QDialog/KDialogBase
 {
 Q_OBJECT
 public:
-    KGrLGDialog (QFile * savedGames, Q3PtrList<KGrCollection> & collections,
+    KGrLGDialog (QFile * savedGames, QList<KGrCollection *> & collections,
 			QWidget * parent, const char * name);
-    QString getCurrentText() {return (lgList->currentText());}
+    const QString getCurrentText() {return (lgList->currentItem()->text());}
 
 private slots:
-    void lgSelect (int n);
+    void lgSelect (QListWidgetItem * item);
 
 private:
-    Q3ListBox * lgList;
+    QListWidget * lgList;
     int lgHighlight;
 };
 

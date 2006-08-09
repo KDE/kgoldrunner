@@ -1,7 +1,7 @@
 /***************************************************************************
  *                      kgrfigure.cpp  -  description                      *
  *                           -------------------                           *
-    Copyright 2003 Marco Krüger
+    Copyright 2003 Marco Krger
     Copyright 2003 Ian Wadham <ianw@netspace.net.au>
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,8 +17,7 @@
 #include "kgrfigure.h"
 
 #include <stdio.h>
-//Added by qt3to4:
-#include <Q3PtrList>
+#include <QList>
 
 KGrFigure :: KGrFigure (int px, int py)
 {
@@ -712,11 +711,7 @@ void KGrHero::digRight(){
     ((KGrBrick*)(*playfield)[x+i][y+1])->dig();
 }
 
-#ifdef QT3
-void KGrHero::setEnemyList(Q3PtrList<KGrEnemy> *e)
-#else
-void KGrHero::setEnemyList(QList<KGrEnemy> *e)
-#endif
+void KGrHero::setEnemyList(QList<KGrEnemy *> * e)
 {
   enemies = e;
 }
@@ -1577,8 +1572,10 @@ int KGrEnemy::distanceDown (int x, int y, int deltah)
 	}
     }
     if (rungs == 1) {
-	for (KGrEnemy *enemy=enemies->first();enemy!=0;enemy=enemies->next()) {
-	    if((x*16==enemy->getx()) && (y*16+16==enemy->gety()))
+	QListIterator<KGrEnemy *> i(*enemies);
+        while (i.hasNext()){
+		KGrEnemy * enemy = i.next();
+		if((x*16==enemy->getx()) && (y*16+16==enemy->gety()))
 		rungs = 0;		// Pit is blocked.  Find another way.
 	}
     }
@@ -1663,11 +1660,7 @@ bool KGrEnemy::willNotFall (int x, int y)
     }
 }
 
-#ifdef QT3
-void KGrEnemy::setEnemyList(Q3PtrList<KGrEnemy> *e)
-#else
-void KGrEnemy::setEnemyList(QList<KGrEnemy> *e)
-#endif
+void KGrEnemy::setEnemyList(QList<KGrEnemy *> * e)
 {
   enemies = e;
 }
