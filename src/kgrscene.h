@@ -42,6 +42,7 @@ signals:
 protected:
     void mousePressEvent ( QGraphicsSceneMouseEvent * mouseEvent );
     void mouseReleaseEvent ( QGraphicsSceneMouseEvent * mouseEvent );
+    void wheelEvent ( QGraphicsSceneWheelEvent * wheelEvent );
     void keyPressEvent ( QKeyEvent * keyEvent );
     void keyReleaseEvent ( QKeyEvent * keyEvent );
 

@@ -105,6 +105,11 @@ void KGrScene::mouseReleaseEvent ( QGraphicsSceneMouseEvent * mouseEvent )
     emit mouseLetGo(mouseEvent->button());
 }
 
+void KGrScene::wheelEvent ( QGraphicsSceneWheelEvent * wheelEvent )
+{
+    // This method should prevent wheel events from reaching the QGraphicsScene and moving it
+}
+
 void KGrScene::keyPressEvent ( QKeyEvent * keyEvent ) 
 {
     // This method prevents keys from reaching the QGraphicsScene and moving it
