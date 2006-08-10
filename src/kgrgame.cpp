@@ -843,9 +843,24 @@ void KGrGame::saveGame()		// Save game ID, score and level.
 
     file2.close();
 
-    //TODO This is not working, savegame.tmp is created but the rename fails
-    QDir dir;
-    dir.rename (file2.fileName(), file1.fileName());
+    QDir * dir = new QDir ( userDataDir );
+
+    // On some filesystems we must delete the original savegame.dat
+    // or the upcoming QDir::rename will fail, according to Qt4 docs.
+    // This seems to be true at least with reiserfs
+    if (! dir->remove (userDataDir + "savegame.dat")){
+	    KGrMessage::information (view, i18n("Save Game"),
+		i18n("Cannot remove old '%1' save file.",
+		 userDataDir + "savegame.dat"));
+	    return;
+	}
+
+    if (! dir->rename (userDataDir + "savegame.tmp", userDataDir + "savegame.dat")){
+	    KGrMessage::information (view, i18n("Save Game"),
+		i18n("Cannot rename save file '%1' to '%2'.",
+		 userDataDir + "savegame.tmp",userDataDir + "savegame.dat"));
+	    return;
+	}
     KGrMessage::information (view, i18n("Save Game"),
 				i18n("Your game has been saved."));
 }
