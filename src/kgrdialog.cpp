@@ -25,6 +25,7 @@
 #include <QFrame>
 #include <QLabel>
 #include <QVBoxLayout>
+#include <QSpacerItem>
 #endif
 
 /******************************************************************************/
@@ -57,8 +58,8 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     int spacing		= 10;
     QWidget * dad	= this;
 #else
-    int margin		= marginHint();
-    int spacing		= spacingHint();
+    int margin		= marginHint(); 
+    int spacing		= spacingHint(); 
     QWidget * dad	= new QWidget(this);
 	setMainWidget(dad);
 	setCaption(i18n("Select Game"));
@@ -71,27 +72,47 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     mainLayout->setSpacing(spacing);
     mainLayout->setMargin(margin);
 
+    QHBoxLayout * hboxLayout = new QHBoxLayout();
+    hboxLayout->setSpacing(6);
+    hboxLayout->setMargin(0);
+
     collnL    = new QLabel (i18n("List of games:"), dad);
-    mainLayout->addWidget (collnL);
+    hboxLayout->addWidget (collnL);
+
+    QSpacerItem * spacerItem = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+    hboxLayout->addItem(spacerItem);
+
+    mainLayout->addLayout(hboxLayout);
+
     colln     = new QListWidget (dad);
     mainLayout->addWidget (colln);
 
-    QWidget * gameInfo = new QWidget(dad);
-    QHBoxLayout *hboxLayout1 = new QHBoxLayout(gameInfo);
-    gameInfo->setLayout(hboxLayout1);
-    mainLayout->addWidget (gameInfo);
-    hboxLayout1->setSpacing (spacing);
-    collnN    = new QLabel ("", gameInfo);	// Name of selected collection.
+    QHBoxLayout * hboxLayout1 = new QHBoxLayout();
+    hboxLayout1->setSpacing(6);
+    hboxLayout1->setMargin(0);
+
+    collnN    = new QLabel ("", dad);	// Name of selected collection.
     QFont f = collnN->font();
     f.setBold (true);
     collnN->setFont (f);
-    collnA    = new QPushButton (i18n("More Info"), gameInfo);
+
+    hboxLayout1->addWidget(collnN);
+
+    QSpacerItem * spacerItem1 = new QSpacerItem(21, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+    hboxLayout1->addItem(spacerItem1);
+
+    collnA = new QPushButton(i18n("More Info"), dad);
+    hboxLayout1->addWidget(collnA);
+
+    mainLayout->addLayout(hboxLayout1);
 
     collnD    = new QLabel ("", dad);		// Description of collection.
     mainLayout->addWidget (collnD);
 
+
     QFrame * separator = new QFrame (dad);
-    separator->setFrameStyle (QFrame::HLine + QFrame::Sunken);
+    separator->setFrameShape(QFrame::HLine);
     mainLayout->addWidget (separator);
 
     if ((action == SL_START) || (action == SL_UPD_GAME)) {
@@ -251,13 +272,6 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 
     connect (colln,   SIGNAL (itemClicked (QListWidgetItem *)), this, SLOT (slPaintLevel ()));
     connect (number,  SIGNAL (sliderReleased()), this, SLOT (slPaintLevel()));
-#warning "kde4: this signal doesn't exist";
-#if 0    
-    connect (number,  SIGNAL (nextLine()), this, SLOT (slPaintLevel()));
-    connect (number,  SIGNAL (prevLine()), this, SLOT (slPaintLevel()));
-    connect (number,  SIGNAL (nextPage()), this, SLOT (slPaintLevel()));
-    connect (number,  SIGNAL (prevPage()), this, SLOT (slPaintLevel()));
-#endif
 
 #ifdef KGR_PORTABLE
     // Set the exits from this dialog box.
