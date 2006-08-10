@@ -27,6 +27,7 @@
 #include <kconfig.h>
 
 #include <ktoolbar.h>
+#include <kmenubar.h>
 
 #include <kaction.h>
 #include <ktoggleaction.h>
@@ -41,8 +42,6 @@
 #include "kgrdialog.h"
 #include "kgrgame.h"
 #include "kgoldrunner.h"
-
-#include <QtDebug>
 
 KGoldrunner::KGoldrunner()
     : KMainWindow (0, "KGoldrunner"),
@@ -100,6 +99,7 @@ KGoldrunner::KGoldrunner()
 
     // Connect the game actions to the menu and toolbar displays.
     connect(game, SIGNAL (setEditMenu (bool)),	SLOT (setEditMenu (bool)));
+    connect(game, SIGNAL (setEditMenu (bool)),	SLOT (resizeMainWindow ()));
     connect(game, SIGNAL (markRuleType (char)), SLOT (markRuleType (char)));
     connect(game, SIGNAL (hintAvailable(bool)),	SLOT (adjustHintAction(bool)));
     connect(game, SIGNAL (defaultEditObj()),	SLOT (defaultEditObj()));
@@ -116,21 +116,19 @@ KGoldrunner::KGoldrunner()
     // Base size of playing-area and widgets on the monitor resolution.
     int dw = KApplication::desktop()->width();
 
-    if (dw > 800) {				// More than 800x600.
+    // We need to consider the height as well, widescreen displays out there... (i.e. 1280x768)
+    int dh = KApplication::desktop()->height();
+
+
+    if ((dw > 800)&&(dh > 600)) {				// More than 800x600.
 	view->changeSize (+1);		// Scale 1.25:1.
     }
-    if (dw > 1024) {			// More than 1024x768.
+    if ((dw > 1024)&&(dh > 768))  {			// More than 1024x768.
 	view->changeSize (+1);
 	view->changeSize (+1);		// Scale 1.75:1.
     }
-    view->setBaseScale();		// Set scale for level-names.
-
-    //TODO - Investigate more flexible resizing? 
-    // Our scaling code in the view is not returning accurate values, or
-    // setFixedSize is not doing the right thing
-    //
-    //setFixedSize (view->size());
-
+    //Does not seem to be necessary in KDE4 and QGV, and causes resizing issues
+    //view->setBaseScale();		// Set scale for level-names.
 
     // Set mouse control of the hero as the default.
     game->setMouseMode (true);
@@ -783,33 +781,32 @@ void KGoldrunner::setKGrRules()
 
 // Local slots to make playing area larger or smaller.
 
+void KGoldrunner::resizeMainWindow()
+{
+    // TODO - Investigate resizing options
+    // For now, we get the area of our view, menubar and statusBar, and add the editToolbar (if visible)
+    int newHeight = view->size().height() + statusBar()->height() + menuBar()->height();
+    if (!toolBar("editToolbar")->isHidden())
+	newHeight = newHeight + toolBar("editToolbar")->height();
+
+    setFixedSize (view->size().width(), newHeight);
+
+    //Maybe we need a layout manager here? Then we could possibly just use...
+    //resize(view->size());
+}
+
 void KGoldrunner::makeLarger()
 {
     QSize newsize;
     if (view->changeSize (+1))
-	// TODO - Investigate resizing options
-	// setFixedSize seems broken in KMainWindow right now
-	// or there is something wrong with our scaling code
-	//
-	//setFixedSize (view->size());
-	//setGeometry(0,0,view->size().rwidth (),view->size().rheight ());
-	//TODO - Maybe we need a layout manager here? View is not shrinking automatically
-	resize(newsize);
+	resizeMainWindow();
 }
 
 void KGoldrunner::makeSmaller()
 {
     QSize newsize;
     if (view->changeSize (-1))
-	// TODO - Investigate resizing options
-	// setFixedSize seems broken in KMainWindow right now
-	// or there is something wrong with our scaling code
-	//
-	//setFixedSize (view->size());
-	//setGeometry(0,0,view->size().rwidth (),view->size().rheight ());
-	//TODO - Maybe we need a layout manager here? View is not shrinking automatically
-	resize(newsize);
-
+	resizeMainWindow();
 }
 
 // Local slots for hero control keys.

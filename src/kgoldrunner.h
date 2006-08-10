@@ -116,6 +116,7 @@ private slots:
     void setKGrRules();
 
     // Local slots to make playing area larger or smaller.
+    void resizeMainWindow();
     void makeLarger();
     void makeSmaller();
 
