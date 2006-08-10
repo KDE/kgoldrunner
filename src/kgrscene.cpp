@@ -107,14 +107,13 @@ void KGrScene::mouseReleaseEvent ( QGraphicsSceneMouseEvent * mouseEvent )
 
 void KGrScene::keyPressEvent ( QKeyEvent * keyEvent ) 
 {
-    //TODO Investigate why arrow keys are not being passed to KAction
-    // This method prevents them from reaching the QGraphicsScene and moving it
+    // This method prevents keys from reaching the QGraphicsScene and moving it
 }
 
 void KGrScene::keyReleaseEvent ( QKeyEvent * keyEvent ) 
 {
-    //TODO Investigate why arrow keys are not being passed to KAction
-    // This method prevents them from reaching the QGraphicsScene and moving it
+
+    // This method prevents keys from reaching the QGraphicsScene and moving it
 }
 
 #include "kgrscene.moc"

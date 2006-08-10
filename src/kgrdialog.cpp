@@ -639,23 +639,21 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
     mainLayout->setSpacing(spacing);
     mainLayout->setMargin(margin);
 
-    //TODO need to fix this layout
-    QWidget * nameBox = new QWidget(dad);
-    QHBoxLayout *hboxLayout5 = new QHBoxLayout(nameBox);
-    nameBox->setLayout(hboxLayout5);
-    mainLayout->addWidget (nameBox);
+    QHBoxLayout *hboxLayout5 = new QHBoxLayout();
     hboxLayout5->setSpacing (spacing);
-    nameL    = new QLabel (i18n("Name of game:"), nameBox);
-    ecName   = new QLineEdit (nameBox);
+    nameL    = new QLabel (i18n("Name of game:"), dad);
+    hboxLayout5->addWidget(nameL);
+    ecName   = new QLineEdit (dad);
+    hboxLayout5->addWidget(ecName);
+    mainLayout->addLayout(hboxLayout5);
 
-    //TODO need to fix this layout
-    QWidget * prefixBox = new QWidget(dad);
-    QHBoxLayout *hboxLayout6 = new QHBoxLayout(prefixBox);
-    prefixBox->setLayout(hboxLayout6);
-    mainLayout->addWidget (prefixBox);
+    QHBoxLayout *hboxLayout6 = new QHBoxLayout();
     hboxLayout6->setSpacing (spacing);
-    prefixL  = new QLabel (i18n("File name prefix:"), prefixBox);
-    ecPrefix = new QLineEdit (prefixBox);
+    prefixL  = new QLabel (i18n("File name prefix:"), dad);
+    hboxLayout6->addWidget(prefixL);
+    ecPrefix = new QLineEdit (dad);
+    hboxLayout6->addWidget(ecPrefix);
+    mainLayout->addLayout(hboxLayout6);
 
     //In Qt4, QButtonGroup is no longer a widget...
     ecGrp    = new QButtonGroup (dad);

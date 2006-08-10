@@ -388,8 +388,6 @@ void KGrCanvas::initView()
     field->setTiles (bgPix, (FIELDWIDTH+border), (FIELDHEIGHT+border),
 			bgw, bgh);
 
-    //TODO setVScrollBarMode (Q3ScrollView::AlwaysOff);
-    //TODO setHScrollBarMode (Q3ScrollView::AlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize (field->width() + frame, field->height() + frame);
