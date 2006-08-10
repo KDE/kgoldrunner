@@ -136,6 +136,9 @@ KGoldrunner::KGoldrunner()
     // Paint the main widget (title, menu, status bar, blank playfield).
     show();
 
+    // Resize it if necessary, set it fixed
+    resizeMainWindow();
+
     // Force the main widget to appear before the "Start Game" dialog does.
     qApp->processEvents();
 
@@ -783,8 +786,7 @@ void KGoldrunner::setKGrRules()
 
 void KGoldrunner::resizeMainWindow()
 {
-    // TODO - Investigate resizing options
-    // For now, we get the area of our view, menubar and statusBar, and add the editToolbar (if visible)
+    // Get the area of our view, menubar and statusBar, and add the editToolbar (if visible)
     int newHeight = view->size().height() + statusBar()->height() + menuBar()->height();
     if (!toolBar("editToolbar")->isHidden())
 	newHeight = newHeight + toolBar("editToolbar")->height();

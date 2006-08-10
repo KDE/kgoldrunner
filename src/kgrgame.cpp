@@ -2367,6 +2367,11 @@ void KGrThumbNail::paintEvent (QPaintEvent * event)
 	}
     }
 
+    //Finally, draw a small black inset border
+    pen.setColor (Qt::black); 
+    p.setPen (pen);
+    p.drawRect(rect().left(), rect().top(), (rect().right())-1, (rect().bottom()) - 1);
+
     // Absorb a newline character, then read in the level name (if any).
     int c = openFile.getch();
     QByteArray s = "";
