@@ -36,6 +36,7 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QDate>
+#include <QSpacerItem>
 #endif
 
 /******************************************************************************/
@@ -1188,7 +1189,7 @@ void KGrGame::showHighScores()
     mainLayout->setMargin(margin);
 
     QLabel *		hsHeader = new QLabel (i18n (
-					"<center><h2>KGoldrunner Hall of Fame</h2></center><br>"
+					"<center><h2>KGoldrunner Hall of Fame</h2></center>"
 					"<center><h3>\"%1\" Game</h3></center>",
 					 collection->name),
 			hs);
@@ -1206,18 +1207,10 @@ void KGrGame::showHighScores()
 
     QLabel *		hsLine [10];
 
-    QWidget *		buttons = new QWidget(hs);
-    QHBoxLayout *hboxLayout1 = new QHBoxLayout(buttons);
-    buttons->setLayout(hboxLayout1);
-    hboxLayout1->setSpacing (spacing);
-    QPushButton *	OK = new KPushButton (KStdGuiItem::close(), buttons);
-
     mainLayout->	addWidget (hsHeader);
     mainLayout->	addWidget (hsColHeader);
 
     hs->		setWindowTitle (i18n("High Scores"));
-
-    OK->		setShortcut (Qt::Key_Return);
 
     // Set up the format for the high-score lines.
     f.			setBold (false);
@@ -1254,8 +1247,15 @@ void KGrGame::showHighScores()
     separator->setFrameStyle (QFrame::HLine + QFrame::Sunken);
     mainLayout->addWidget (separator);
 
+    QHBoxLayout *hboxLayout1 = new QHBoxLayout();
+    hboxLayout1->setSpacing (spacing);
+    QSpacerItem * spacerItem = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+    hboxLayout1->addItem(spacerItem);
+    QPushButton *	OK = new KPushButton (KStdGuiItem::close(), hs);
+    OK->		setShortcut (Qt::Key_Return);
     OK->		setMaximumWidth (100);
-    mainLayout->	addWidget (buttons);
+    hboxLayout1->addWidget (OK);
+    mainLayout->	addLayout (hboxLayout1);
 
     QPoint		p = view->mapToGlobal (QPoint (0,0));
     hs->		move (p.x() + 50, p.y() + 50);
