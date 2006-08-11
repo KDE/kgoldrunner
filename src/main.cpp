@@ -28,7 +28,7 @@
 static const char description[] =
     I18N_NOOP("KGoldrunner is a game of action and puzzle solving");
 
-static const char version[] = "2.0";
+static const char version[] = "2.1";
 
 int main (int argc, char **argv)
 {
@@ -39,7 +39,7 @@ int main (int argc, char **argv)
     about.addAuthor( "Ian Wadham", I18N_NOOP("Current author"),
     		     "ianw@netspace.net.au" );
     about.addAuthor( "Marco Krüger", I18N_NOOP("Original author"), 0);
-    about.addCredit("Mauricio Piacentini", I18N_NOOP("Port to QGraphicsView framework"), 
+    about.addCredit("Mauricio Piacentini", I18N_NOOP("Port to KDE4"), 
 		      "mauricio@tabuleiro.com");
 
     KCmdLineArgs::init (argc, argv, &about);
