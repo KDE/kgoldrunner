@@ -18,9 +18,7 @@
 #ifndef KGRCANVAS_H
 #define KGRCANVAS_H
 
-#ifdef HAVE_CONFIG_H
 #include <config.h>
-#endif
 
 #include "kgrscene.h"
 #include "kgrsprite.h"

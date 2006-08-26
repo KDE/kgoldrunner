@@ -17,9 +17,7 @@
 #ifndef KGRSPRITE_H
 #define KGRSPRITE_H
 
-#ifdef HAVE_CONFIG_H
 #include <config.h>
-#endif
 
 #include <QGraphicsPixmapItem>
 #include <QPixmap>

@@ -20,9 +20,7 @@
 #ifndef _KGOLDRUNNER_H_
 #define _KGOLDRUNNER_H_
 
-#ifdef HAVE_CONFIG_H
 #include <config.h>
-#endif
 
 // Status bar
 const int ID_LIVES      = 0;            // Field IDs in KDE status bar.
