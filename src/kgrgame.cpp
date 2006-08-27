@@ -2595,10 +2595,10 @@ bool KGrGame::saveCollections (Owner o)
     if (o != USER) {
 	KGrMessage::information (view, i18n("Save Game Info"),
 	    i18n("You can only modify user games."));
-	return (false);
+	return false;
     }
 
-    filePath = ((o == SYSTEM)? systemDataDir : userDataDir) + "games.dat";
+    filePath = userDataDir + "games.dat";
 
     QFile c (filePath);
 
