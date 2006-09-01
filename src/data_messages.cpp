@@ -8,22 +8,24 @@
 
 dont_call_me() {
 
-i18n("TRANSLATORS: Please see the notes in the data_messages.cpp file.");
 
-// NOTES: Strings in this file originate from KGoldrunner DATA files,
-// as installed in $KDEDIR/share/apps/kgoldrunner/system.  They are
-// names and descriptions of games and names and hints for levels. The
-// C++ comments indicate which data file the strings came from.  You
-// may sometimes need to look at the corresponding game or level graphics
-// to work out a good translation (e.g. Initiation 25, Mongolian Horde).
+/*i18n:
+   NOTES: Strings in this file originate from KGoldrunner DATA files,
+   as installed in $KDEDIR/share/apps/kgoldrunner/system.  They are
+   names and descriptions of games and names and hints for levels. The
+   C++ comments indicate which data file the strings came from.  You
+   may sometimes need to look at the corresponding game or level graphics
+   to work out a good translation (e.g. Initiation 25, Mongolian Horde).
 
-// To ease the burden on translators, this file does not include all the
-// data messages.  For example, the hints on championship games are not
-// included.  A player that good should not need a hint and maybe has no
-// need of a translation ... :-)  The most urgent translations would be
-// names and hints for the Tutorial games, then the game names and
-// descriptions (as appearing in the main dialog box) and then the other
-// level names and hints.
+   To ease the burden on translators, this file does not include all the
+   data messages.  For example, the hints on championship games are not
+   included.  A player that good should not need a hint and maybe has no
+   need of a translation ... :-)  The most urgent translations would be
+   names and hints for the Tutorial games, then the game names and
+   descriptions (as appearing in the main dialog box) and then the other
+   level names and hints.
+*/
+i18n("TRANSLATORS: Please see the notes in the translation comment.");
 
 // From levels/tute001.grl (in levels.tar).
 i18n("Hi !!");
