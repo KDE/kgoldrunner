@@ -136,14 +136,11 @@ KGoldrunner::KGoldrunner()
     // Paint the main widget (title, menu, status bar, blank playfield).
     show();
 
-    // Force the main widget to appear before the "Start Game" dialog does.
-    qApp->processEvents();
+    // Schedule the call to the "Start Game" function, pop up the "Start Game" dialog.
+    QMetaObject::invokeMethod(game, "startLevelOne", Qt::QueuedConnection);
 
-    // Call the "Start Game" function and pop up the "Start Game" dialog.
-    game->startLevelOne();
-
-    // Resize main window if necessary after both were shown
-    resizeMainWindow();
+    // Schedule resizing of main window
+    QMetaObject::invokeMethod(this, "resizeMainWindow", Qt::QueuedConnection);
 }
 
 KGoldrunner::~KGoldrunner()
