@@ -846,6 +846,7 @@ void KGrGame::saveGame()		// Save game ID, score and level.
 
     QDir * dir = new QDir ( userDataDir );
 
+    if (file1.exists()) {
     // On some filesystems we must delete the original savegame.dat
     // or the upcoming QDir::rename will fail, according to Qt4 docs.
     // This seems to be true at least with reiserfs
@@ -855,6 +856,7 @@ void KGrGame::saveGame()		// Save game ID, score and level.
 		 userDataDir + "savegame.dat"));
 	    return;
 	}
+    }
 
     if (! dir->rename (userDataDir + "savegame.tmp", userDataDir + "savegame.dat")){
 	    KGrMessage::information (view, i18n("Save Game"),
