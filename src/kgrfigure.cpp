@@ -277,7 +277,7 @@ void KGrFigure::initFall(int apm, int FALLDELAY)
   actualPixmap = apm;
   walkCounter=1;
   walkTimer->stop();
-  walkTimer->setSingleShot( true );
+  fallTimer->setSingleShot( true );
   fallTimer->start((FALLDELAY * NSPEED) / speed);
 }
 
