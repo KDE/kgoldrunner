@@ -233,7 +233,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 #ifdef KGR_PORTABLE
 	OK->setText (OKText);
 #else
-	setButtonGuiItem( KDialog::Ok, OKText);
+	setButtonGuiItem( KDialog::Ok, KGuiItem(OKText));
 #endif
     }
 
@@ -730,7 +730,7 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
 #ifdef KGR_PORTABLE
     OK->setText (OKText);
 #else
-    setButtonGuiItem( KDialog::Ok, OKText);
+    setButtonGuiItem( KDialog::Ok, KGuiItem(OKText));
 #endif
 
     if ((action == SL_CR_GAME) ||
@@ -936,13 +936,13 @@ int KGrMessage::warning (QWidget * parent, QString caption, QString text,
     if (label2.isEmpty()) {
 	// Display a box with 2 buttons.
 	ans = KMessageBox::questionYesNo (parent, text, caption,
-			    label0, label1);
+			    KGuiItem(label0), KGuiItem(label1));
 	ans = (ans == KMessageBox::Yes) ? 0 : 1;
     }
     else {
 	// Display a box with 3 buttons.
 	ans = KMessageBox::questionYesNoCancel (parent, text, caption,
-			    label0, label1);
+			    KGuiItem(label0), KGuiItem(label1));
 	if (ans == KMessageBox::Cancel)
 	    ans = 2;
 	else
