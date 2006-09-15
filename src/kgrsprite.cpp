@@ -17,10 +17,11 @@
 #include "kgrsprite.h"
 #include <QImage>
 
-KGrSprite::KGrSprite( QGraphicsItem * parent, QGraphicsScene * scene )
-    : QGraphicsPixmapItem(parent,scene)
+KGrSprite::KGrSprite( KGrGameCanvasAbstract* canvas  )
+    : KGrGameCanvasPixmap(canvas)
 {
     m_frames = new QList<QPixmap> ();
+    m_frame = 0;
 }
 
 KGrSprite::~KGrSprite()
@@ -29,25 +30,30 @@ KGrSprite::~KGrSprite()
     delete m_frames;
 }
 
-void KGrSprite::addFrames ( const QPixmap& p, int tilewidth, int tileheight, int numframes )
+void KGrSprite::addFrames ( const QPixmap& p, int tilewidth, int tileheight, int numframes, double scale )
 {
     QPixmap   pm;
     QImage image = p.toImage ();
+    m_scale = scale;
     for (int i = 0; i < numframes; i++) {
 	pm = QPixmap::fromImage (image.copy (i * tilewidth, 0, tilewidth, tileheight));
-	m_frames->append (pm);
+	m_frames->append (pm.scaledToHeight ( tileheight*scale, Qt::FastTransformation ));
     }
 }
 
 void KGrSprite::move(double x, double y, int frame)
 {
-    setPixmap(m_frames->at(frame));
-    setPos(x,y);
+    m_frame = frame;
+    m_loc.setX(x);
+    m_loc.setY(y);
+    setPixmap(m_frames->at(m_frame));
+    moveTo(x*m_scale,y*m_scale);
 }
 
 void KGrSprite::setZ ( qreal z )
 {
-    setZValue ( z );
+    //hero and enemy sprites are above other elements
+    raise();
 }
 
 #include "kgrsprite.moc"

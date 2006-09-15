@@ -19,21 +19,30 @@
 
 #include <config.h>
 
-#include <QGraphicsPixmapItem>
+#include "kgrgamecanvas.h"
 #include <QPixmap>
 #include <QList>
 
-class KGrSprite : public QGraphicsPixmapItem
+
+class KGrSprite : public KGrGameCanvasPixmap
 {
 public:
-    KGrSprite ( QGraphicsItem * parent = 0, QGraphicsScene * scene = 0  );
+    KGrSprite ( KGrGameCanvasAbstract* canvas = NULL);
     ~KGrSprite();
     void move(double x, double y, int frame);
     void setZ ( qreal z );
-    void addFrames ( const QPixmap& p, int tilewidth, int tileheight, int numframes );
+    void addFrames ( const QPixmap& p, int tilewidth, int tileheight, int numframes, double scale );
+    inline QPoint currentLoc() { return m_loc; };
+    inline void clearFrames() { if (m_frames) m_frames->clear();};
+    inline int currentFrame(){ return m_frame;};
+    inline void setScale (double scale){ m_scale=scale;};
+    inline double scale(){ return m_scale;};
 
 private:
     QList<QPixmap> * m_frames;
+    double    m_scale;
+    int m_frame;
+    QPoint m_loc;
 };
 
 #endif // KGRSPRITE_H

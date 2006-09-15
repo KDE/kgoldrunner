@@ -38,12 +38,13 @@
 #include <QList>
 #include <QMouseEvent>
 
+
 class KGoldrunner;
 
 KGrCanvas::KGrCanvas (QWidget * parent, const char *name)
-	: QGraphicsView (0, parent)
+	: KGrGameCanvasWidget (parent)
 {
-    setBackgroundMode (Qt::NoBackground);
+    //setBackgroundMode (Qt::NoBackground);
     m = new QCursor ();		// For handling the mouse.
 
     scaleStep = STEP;		// Initial scale is 1:1.
@@ -55,6 +56,9 @@ KGrCanvas::KGrCanvas (QWidget * parent, const char *name)
     bw = border*cw/2;		// Total border width (= two cells).
     lw = cw/8;			// Line width (for edge of border).
     mw = bw - lw;		// Border main-part width.
+
+    heroSprite = 0;
+    enemySprites = 0;
 
     initView();			// Set up the graphics, etc.
 }
@@ -78,23 +82,20 @@ void KGrCanvas::changeLandscape (const QString & name)
 
 	    for (int x = 0; x < FIELDWIDTH; x++) {
 		for (int y = 0; y < FIELDHEIGHT; y++) {
-		    tileNo[x][y] = field->tile (x + offset, y + offset);
+		    tileNo[x][y] = playfield->tile (x + offset, y + offset);
 		}
 	    }
 
-	    field->setTiles (bgPix, (FIELDWIDTH+border), (FIELDHEIGHT+border),
-			bgw, bgh);		// Sets all tile-numbers to 0.
+	    playfield->setTiles (bgPix, (FIELDWIDTH+border), (FIELDHEIGHT+border),
+			bgw, bgh, (1.0 * scaleStep) / STEP);		// Sets all tile-numbers to 0.
 
 	    for (int x = 0; x < FIELDWIDTH; x++) {
 		for (int y = 0; y < FIELDHEIGHT; y++) {
-		    field->setTile (x + offset, y + offset, tileNo[x][y]);
+		    playfield->setTile (x + offset, y + offset, tileNo[x][y]);
 		}
 	    }
 
-	    borderT->setBrush (QBrush (borderColor));
-	    borderB->setBrush (QBrush (borderColor));
-	    borderL->setBrush (QBrush (borderColor));
-	    borderR->setBrush (QBrush (borderColor));
+	    makeBorder();
 
 	    QString t = title->text();
 	    makeTitle ();
@@ -121,27 +122,71 @@ bool KGrCanvas::changeSize (int d)
 	return false;
     }
 
-    QMatrix wm = matrix();
     double   wmScale = 1.0;
-
-    // Set the scale back to 1:1 and calculate the new scale factor.
-    wm.reset();
     scaleStep = (d < 0) ? (scaleStep - 1) : (scaleStep + 1);
+    wmScale = (wmScale * scaleStep) / STEP;
 
-    // If scale > 1:1, scale up to the new factor (e.g. 1.25:1, 1.5:1, etc.)
-    if (scaleStep > STEP) {
-	wmScale = (wmScale * scaleStep) / STEP;
-	wm.scale (wmScale, wmScale);
+    if (playfield) {
+    //Scale background
+	// Set all cells to same tile-numbers as before, but new colours.
+	 int tileNo [FIELDWIDTH] [FIELDHEIGHT];
+	 int offset = border / 2;
+
+	for (int x = 0; x < FIELDWIDTH; x++) {
+	    for (int y = 0; y < FIELDHEIGHT; y++) {
+		tileNo[x][y] = playfield->tile (x + offset, y + offset);
+	    }
+	}
+
+	playfield->setTiles (bgPix, (FIELDWIDTH+border), (FIELDHEIGHT+border),
+		bgw, bgh, wmScale);		// Sets all tile-numbers to 0.
+
+	for (int x = 0; x < FIELDWIDTH; x++) {
+	    for (int y = 0; y < FIELDHEIGHT; y++) {
+		playfield->setTile (x + offset, y + offset, tileNo[x][y]);
+	    }
+	}
     }
-    setMatrix (wm);
 
+   int spriteframe;
+   QPoint spriteloc;
+
+    //hero
+    if (heroSprite) {
+    	spriteframe = heroSprite->currentFrame();
+    	spriteloc = heroSprite->currentLoc();
+    	heroSprite->clearFrames();
+    	heroSprite->addFrames(QPixmap (hero_xpm), 16, 16, 20, wmScale );
+    	heroSprite->move (spriteloc.x(), spriteloc.y(), spriteframe);
+    }
+
+    //enemies
+    if (enemySprites)
+    {
+	for (int i = 0; i < enemySprites->size(); ++i) {
+    	    KGrSprite * thisenemy = enemySprites->at(i);
+	    if (thisenemy) {
+		spriteframe = thisenemy->currentFrame();
+    		spriteloc = thisenemy->currentLoc();
+    		thisenemy->clearFrames();
+    		thisenemy->addFrames(QPixmap (enemy1_xpm), 16, 16, 20, wmScale);
+		// Now adds the frames for enemies with no gold ...
+    		thisenemy->addFrames(QPixmap (enemy2_xpm), 16, 16, 20, wmScale);
+    		thisenemy->move (spriteloc.x(), spriteloc.y(), spriteframe);
+	    }
+	}
+    }
+
+    //recreate border
+    makeBorder ();
     // Force the title size and position to be re-calculated.
     QString t = title->text();
     makeTitle ();
     setTitle (t);
 
+
     // Fit the QCanvasView and its frame to the canvas.
-    int frame = frameWidth()*2;
+    int frame = 0;//frameWidth()*2;
     setFixedSize ((FIELDWIDTH  + 4) * 4 * scaleStep + frame, (FIELDHEIGHT + 4) * 4 * scaleStep + frame);
     return true;
 
@@ -169,7 +214,7 @@ void KGrCanvas::paintCell (int x, int y, char type, int offset)
 
     // In KGoldrunner, the top-left visible cell is [1,1] --- in QCanvas [2,2].
     x++; y++;
-    field->setTile (x, y, tileNumber);	// Paint cell with required pixmap.
+    playfield->setTile (x, y, tileNumber);	// Paint cell with required pixmap.
 }
 
 void KGrCanvas::setBaseScale ()
@@ -210,18 +255,20 @@ void KGrCanvas::makeTitle ()
     title->show();
 }
 
-void KGrCanvas::contentsMouseClick (int i) {
-    emit mouseClick (i);
+void KGrCanvas::mousePressEvent ( QMouseEvent * mouseEvent )
+{
+    emit mouseClick(mouseEvent->button());
 }
 
-void KGrCanvas::contentsMouseLetGo (int i) {
-    emit mouseLetGo (i);
+void KGrCanvas::mouseReleaseEvent ( QMouseEvent * mouseEvent )
+{
+    emit mouseLetGo(mouseEvent->button());
 }
 
 QPoint KGrCanvas::getMousePos ()
 {
     int i, j;
-    int fw = frameWidth();
+    int fw = 0;//frameWidth();
     int cell = 4 * scaleStep;
     QPoint p = mapFromGlobal (m->pos());
 
@@ -233,7 +280,7 @@ QPoint KGrCanvas::getMousePos ()
 
 void KGrCanvas::setMousePos (int i, int j)
 {
-    int fw = frameWidth();
+    int fw = 0;//frameWidth();
     int cell = 4 * scaleStep;
 
     // In KGoldrunner, the top-left visible cell is [1,1] --- in QCanvas [2,2].
@@ -246,7 +293,7 @@ void KGrCanvas::setMousePos (int i, int j)
 
 void KGrCanvas::makeHeroSprite (int i, int j, int startFrame)
 {
-    heroSprite = new KGrSprite (0, field);
+    heroSprite = new KGrSprite (this);
 
     // Process the pixmap with the hero frames
     //////////////////////////////////////////////////////////////////////////
@@ -255,7 +302,7 @@ void KGrCanvas::makeHeroSprite (int i, int j, int startFrame)
     // climb up ladder (2) and fall (2) --- total 20.                       //
     //////////////////////////////////////////////////////////////////////////
     // Our KGrSprite class will extract the frames from the strip (16x16 pix, 20 frames)
-    heroSprite->addFrames(QPixmap (hero_xpm), 16, 16, 20 );
+    heroSprite->addFrames(QPixmap (hero_xpm), 16, 16, 20, (1.0 * scaleStep) / STEP );
 
     // In KGoldrunner, the top-left visible cell is [1,1] --- in QCanvas [2,2].
     i++; j++;
@@ -271,7 +318,7 @@ void KGrCanvas::setHeroVisible (bool newState)
 
 void KGrCanvas::makeEnemySprite (int i, int j, int startFrame)
 {
-    KGrSprite * enemySprite = new KGrSprite (0, field);
+    KGrSprite * enemySprite = new KGrSprite (this);
 
     //////////////////////////////////////////////////////////////////////////
     // The pixmaps for hero and enemies are arranged in strips of 20: walk  //
@@ -280,10 +327,10 @@ void KGrCanvas::makeEnemySprite (int i, int j, int startFrame)
     //////////////////////////////////////////////////////////////////////////
     // Our KGrSprite class will extract the frames from the strip (16x16 pix, 20 frames)
     // First convert the pixmap for enemies with no gold ...
-    enemySprite->addFrames(QPixmap (enemy1_xpm), 16, 16, 20 );
+    enemySprite->addFrames(QPixmap (enemy1_xpm), 16, 16, 20, (1.0 * scaleStep) / STEP );
 
     // Now adds the frames for enemies with no gold ...
-    enemySprite->addFrames(QPixmap (enemy2_xpm), 16, 16, 20 );
+    enemySprite->addFrames(QPixmap (enemy2_xpm), 16, 16, 20, (1.0 * scaleStep) / STEP );
 
     enemySprites->append (enemySprite);
 
@@ -377,27 +424,14 @@ void KGrCanvas::initView()
     makeTiles();		// Fill the strip with 18 tiles.
 
     // Define the canvas as an array of tiles.  Default tile is 0 (free space).
-    int frame = frameWidth()*2;
-    field = new KGrScene();
-    field->setSceneRect(0,0,(FIELDWIDTH+border) * bgw, (FIELDHEIGHT+border) * bgh);
-
-    //Set the KGrScene to this QGraphicsView
-    setScene(field);
+    int frame = 0;//frameWidth()*2;
+    playfield = new KGrScene(this);
 
     //Now set our tileset in the scene
-    field->setTiles (bgPix, (FIELDWIDTH+border), (FIELDHEIGHT+border),
-			bgw, bgh);
+    playfield->setTiles (bgPix, (FIELDWIDTH+border), (FIELDHEIGHT+border),
+			bgw, bgh, (1.0 * scaleStep) / STEP);
 
-    setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    setFixedSize (field->width() + frame, field->height() + frame);
-
-    //Enable background caching at the view level
-    setCacheMode(QGraphicsView::CacheBackground);
-
-    //Relay mouse events received from QGraphicsScene and send them upstream
-    connect( field, SIGNAL(mouseClick(int)), this, SLOT(contentsMouseClick(int)) );
-    connect( field, SIGNAL(mouseLetGo(int)), this, SLOT(contentsMouseLetGo(int)) );
+    setFixedSize ((FIELDWIDTH+border) * bgw, (FIELDHEIGHT+border) * bgh);
 
     goldEnemy = 20;			// Offset of gold-carrying frames.
 
@@ -438,28 +472,46 @@ void KGrCanvas::makeBorder ()
     // Allow some overlap to prevent slits appearing when using "changeSize".
     colour = borderColor;
 
-    borderT = drawRectangle (11, 0, 0, FIELDWIDTH*cw + 2*bw, mw);
-    borderB = drawRectangle (11, 0, FIELDHEIGHT*cw + bw + lw,
+    while (!borderRectangles.isEmpty())
+            delete borderRectangles.takeFirst();
+
+    border = 4;			// Allow 2 tile-widths on each side for border.
+    cw = 4*STEP;		// Playfield cell width (= four steps).
+    bw = border*cw/2;		// Total border width (= two cells).
+    lw = cw/8;			// Line width (for edge of border).
+    mw = bw - lw;		// Border main-part width.*/
+    KGrGameCanvasRectangle * nextRectangle;
+
+    nextRectangle = drawRectangle (11, 0, 0, FIELDWIDTH*cw + 2*bw, mw);
+    borderRectangles.append(nextRectangle);
+    nextRectangle = drawRectangle (11, 0, FIELDHEIGHT*cw + bw + lw,
 						FIELDWIDTH*cw + 2*bw, mw);
-    borderL = drawRectangle (12, 0, bw - lw - 1, mw, FIELDHEIGHT*cw + 2*lw + 2);
-    borderR = drawRectangle (12, FIELDWIDTH*cw + bw + lw, bw - lw - 1,
+    borderRectangles.append(nextRectangle);
+    nextRectangle = drawRectangle (12, 0, bw - lw - 1, mw, FIELDHEIGHT*cw + 2*lw + 2);
+    borderRectangles.append(nextRectangle);
+    nextRectangle = drawRectangle (12, FIELDWIDTH*cw + bw + lw, bw - lw - 1,
 						mw, FIELDHEIGHT*cw + 2*lw + 2);
+    borderRectangles.append(nextRectangle);
 
     // Draw inside edges of border, in the same way.
     colour = QColor (Qt::black);
-    drawRectangle (10, bw-lw, bw-lw-1, FIELDWIDTH*cw + 2*lw, lw+1);
-    drawRectangle (10, bw-lw, FIELDHEIGHT*cw + bw, FIELDWIDTH*cw + 2*lw, lw+1);
-    drawRectangle (10, bw - lw, bw, lw, FIELDHEIGHT*cw);
-    drawRectangle (10, FIELDWIDTH*cw + bw, bw, lw, FIELDHEIGHT*cw);
+    nextRectangle = drawRectangle (10, bw-lw, bw-lw-1, FIELDWIDTH*cw + 2*lw, lw+1);
+    borderRectangles.append(nextRectangle);
+    nextRectangle = drawRectangle (10, bw-lw, FIELDHEIGHT*cw + bw, FIELDWIDTH*cw + 2*lw, lw+1);
+    borderRectangles.append(nextRectangle);
+    nextRectangle = drawRectangle (10, bw - lw, bw, lw, FIELDHEIGHT*cw);
+    borderRectangles.append(nextRectangle);
+    nextRectangle = drawRectangle (10, FIELDWIDTH*cw + bw, bw, lw, FIELDHEIGHT*cw);
+    borderRectangles.append(nextRectangle);
 }
 
-QGraphicsRectItem * KGrCanvas::drawRectangle (int z, int x, int y, int w, int h)
+KGrGameCanvasRectangle * KGrCanvas::drawRectangle (int z, int x, int y, int w, int h)
 {
-    QGraphicsRectItem * r = new QGraphicsRectItem (x, y, w, h, 0, field);
+   double wmScale = (1.0 * scaleStep) / STEP;
+   KGrGameCanvasRectangle * r = new KGrGameCanvasRectangle (colour, QSize(w*wmScale,h*wmScale), this);
 
-    r->setBrush (QBrush (colour));
-    r->setPen (QPen (Qt::NoPen));
-    r->setZValue (z);
+
+    r->moveTo(x*wmScale,y*wmScale);
     r->show();
 
     return (r);

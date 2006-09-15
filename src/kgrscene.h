@@ -18,41 +18,33 @@
 #ifndef KGRSCENE_H
 #define KGRSCENE_H
 
+#include "kgrgamecanvas.h"
+
 #include <QObject>
-#include <QGraphicsScene>
-#include <QGraphicsSceneMouseEvent>
-#include <QGraphicsPixmapItem>
 #include <QPixmap>
 #include <QList>
 #include <QPainter>
 
-class KGrScene : public QGraphicsScene
+class KGrScene : public KGrGameCanvasGroup
 {
-    Q_OBJECT
 public:
-    KGrScene ( QObject* parent = 0 );
+    KGrScene ( KGrGameCanvasAbstract* canvas = NULL);
     ~KGrScene();
     void setTile( int x, int y, int tilenum );
-    void setTiles( const QPixmap& p, int h, int v, int tilewidth, int tileheight );
+    void setTiles( const QPixmap& p, int h, int v, int tilewidth, int tileheight, double scale );
     int  tile( int x, int y ) const;
-signals:
-    void mouseClick (int);
-    void mouseLetGo (int);
-
-protected:
-    void mousePressEvent ( QGraphicsSceneMouseEvent * mouseEvent );
-    void mouseReleaseEvent ( QGraphicsSceneMouseEvent * mouseEvent );
-    void wheelEvent ( QGraphicsSceneWheelEvent * wheelEvent );
-    void keyPressEvent ( QKeyEvent * keyEvent );
-    void keyReleaseEvent ( QKeyEvent * keyEvent );
+    inline void setScale (double scale){ m_scale=scale;};
+    inline double scale(){ return m_scale;};
 
 private:
-    QList<QGraphicsPixmapItem *> m_tilesprites;
+    QList<KGrGameCanvasPixmap *> m_tilesprites;
     QList<QPixmap> m_tileset;
+    QList<int> m_tilenumbers;
     int m_tilew;
     int m_tileh;
     int m_numTilesH;
     int m_numTilesV;
+    double m_scale;
 };
 
 #endif // KGRSCENE_H

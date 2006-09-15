@@ -22,6 +22,7 @@
 
 #include "kgrscene.h"
 #include "kgrsprite.h"
+#include "kgrgamecanvas.h"
 
 #include <qcursor.h>
 #include <QLabel>
@@ -30,10 +31,9 @@
 #include <QPixmap>
 #include <QMouseEvent>
 #include <QList>
-#include <QGraphicsView>
-#include <QGraphicsRectItem>
 
-class KGrCanvas : public QGraphicsView
+
+class KGrCanvas : public KGrGameCanvasWidget
 {
 	Q_OBJECT
 public:
@@ -66,15 +66,14 @@ signals:
 	void mouseClick (int);
 	void mouseLetGo (int);
 
-public slots:
-	void contentsMouseClick (int);
-	void contentsMouseLetGo (int);
+protected:
+	virtual void mousePressEvent ( QMouseEvent * mouseEvent );
+	virtual void mouseReleaseEvent ( QMouseEvent * mouseEvent );
 
 private:
 	QCursor * m;
 
-	KGrScene * field;
-	//Q3CanvasView * fieldView;
+	KGrScene * playfield;
 	int scaleStep;			// Current scale-factor of canvas.
 	int baseScale;			// Starting scale-factor of canvas.
 	int baseFontSize;
@@ -83,10 +82,6 @@ private:
 	int cw, bw, lw, mw;		// Dimensions (in pixels) of the border.
 	QColor borderColor, textColor;	// Border colours.
 	QLabel * title;			// Title and top part of border.
-	QGraphicsRectItem * borderT;	// Bottom part of border.
-	QGraphicsRectItem * borderB;	// Bottom part of border.
-	QGraphicsRectItem * borderL;	// Left-hand part of border.
-	QGraphicsRectItem * borderR;	// Right-hand part of border.
 
 	int freebg, nuggetbg, polebg, ladderbg, hladderbg;
 	int edherobg, edenemybg, betonbg, brickbg, fbrickbg;
@@ -97,13 +92,14 @@ private:
 
 	KGrSprite * heroSprite;
 	QList<KGrSprite *> * enemySprites;
+	QList<KGrGameCanvasRectangle *> borderRectangles;
 
 	void initView();
 	void makeTiles();
 	void makeBorder();
 	void makeTitle();
 	QColor colour;
-	QGraphicsRectItem * drawRectangle (int, int, int, int, int);
+	KGrGameCanvasRectangle * drawRectangle (int, int, int, int, int);
 	void changeColours (const char * colours []);
 	void recolourObject (const char * object [], const char * colours []);
 };
