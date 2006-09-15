@@ -475,7 +475,7 @@ void KGrCanvas::makeBorder ()
     while (!borderRectangles.isEmpty())
             delete borderRectangles.takeFirst();
 
-    border = 4;			// Allow 2 tile-widths on each side for border.
+   /* border = 4;			// Allow 2 tile-widths on each side for border.
     cw = 4*STEP;		// Playfield cell width (= four steps).
     bw = border*cw/2;		// Total border width (= two cells).
     lw = cw/8;			// Line width (for edge of border).
@@ -490,12 +490,13 @@ void KGrCanvas::makeBorder ()
     nextRectangle = drawRectangle (12, 0, bw - lw - 1, mw, FIELDHEIGHT*cw + 2*lw + 2);
     borderRectangles.append(nextRectangle);
     nextRectangle = drawRectangle (12, FIELDWIDTH*cw + bw + lw, bw - lw - 1,
-						mw, FIELDHEIGHT*cw + 2*lw + 2);
+						mw, FIELDHEIGHT*cw + 2*lw + 3);
     borderRectangles.append(nextRectangle);
 
     // Draw inside edges of border, in the same way.
     colour = QColor (Qt::black);
-    nextRectangle = drawRectangle (10, bw-lw, bw-lw-1, FIELDWIDTH*cw + 2*lw, lw+1);
+
+    nextRectangle = drawRectangle (10, bw-lw, bw-lw, FIELDWIDTH*cw + 2*lw, lw+1);
     borderRectangles.append(nextRectangle);
     nextRectangle = drawRectangle (10, bw-lw, FIELDHEIGHT*cw + bw, FIELDWIDTH*cw + 2*lw, lw+1);
     borderRectangles.append(nextRectangle);
