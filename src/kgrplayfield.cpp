@@ -16,15 +16,15 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "kgrscene.h"
+#include "kgrplayfield.h"
 
-KGrScene::KGrScene( KGrGameCanvasAbstract* canvas )
+KGrPlayField::KGrPlayField( KGrGameCanvasAbstract* canvas )
     : KGrGameCanvasGroup(canvas)
 {
 	show();
 }
 
-KGrScene::~KGrScene()
+KGrPlayField::~KGrPlayField()
 {
     //Clear all stored data
     while (!m_tilesprites.isEmpty())
@@ -33,7 +33,7 @@ KGrScene::~KGrScene()
     m_tilenumbers.clear();
 }
 
-void KGrScene::setTile( int x, int y, int tilenum )
+void KGrPlayField::setTile( int x, int y, int tilenum )
 {
     //Cache tilenum (for tile(x,y)
     m_tilenumbers[y*m_numTilesH + x] = tilenum;
@@ -41,7 +41,7 @@ void KGrScene::setTile( int x, int y, int tilenum )
     m_tilesprites.at(y*m_numTilesH + x)->setPixmap(m_tileset.at(tilenum));
 }
 
-void KGrScene::setTiles( const QPixmap& p, int h, int v, int tilewidth, int tileheight, double scale )
+void KGrPlayField::setTiles( const QPixmap& p, int h, int v, int tilewidth, int tileheight, double scale )
 {
     QPixmap   pm;
     m_tilew = tilewidth*scale;
@@ -83,7 +83,7 @@ void KGrScene::setTiles( const QPixmap& p, int h, int v, int tilewidth, int tile
     }
 }
 
-int KGrScene::tile( int x, int y ) const
+int KGrPlayField::tile( int x, int y ) const
 {
     if(x >= m_numTilesH || x < 0 || y >= m_numTilesV || y < 0)
         return 0;
@@ -92,5 +92,5 @@ int KGrScene::tile( int x, int y ) const
 }
 
 
-#include "kgrscene.moc"
+#include "kgrplayfield.moc"
 

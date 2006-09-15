@@ -41,6 +41,8 @@ int main (int argc, char **argv)
     about.addAuthor( "Marco Krüger", I18N_NOOP("Original author"), 0);
     about.addCredit("Mauricio Piacentini", I18N_NOOP("Port to KDE4"), 
 		      "mauricio@tabuleiro.com");
+    about.addCredit("Maurizio Monge", I18N_NOOP("Canvas classes for KDE4"), 
+		      "maurizio.monge@gmail.com");
 
     KCmdLineArgs::init (argc, argv, &about);
 

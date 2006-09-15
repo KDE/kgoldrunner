@@ -20,7 +20,7 @@
 
 #include <config.h>
 
-#include "kgrscene.h"
+#include "kgrplayfield.h"
 #include "kgrsprite.h"
 #include "kgrgamecanvas.h"
 
@@ -73,7 +73,7 @@ protected:
 private:
 	QCursor * m;
 
-	KGrScene * playfield;
+	KGrPlayField * playfield;
 	int scaleStep;			// Current scale-factor of canvas.
 	int baseScale;			// Starting scale-factor of canvas.
 	int baseFontSize;

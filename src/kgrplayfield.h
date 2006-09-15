@@ -15,8 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef KGRSCENE_H
-#define KGRSCENE_H
+#ifndef KGRPLAYFIELD_H
+#define KGRPLAYFIELD_H
 
 #include "kgrgamecanvas.h"
 
@@ -25,11 +25,11 @@
 #include <QList>
 #include <QPainter>
 
-class KGrScene : public KGrGameCanvasGroup
+class KGrPlayField : public KGrGameCanvasGroup
 {
 public:
-    KGrScene ( KGrGameCanvasAbstract* canvas = NULL);
-    ~KGrScene();
+    KGrPlayField ( KGrGameCanvasAbstract* canvas = NULL);
+    ~KGrPlayField();
     void setTile( int x, int y, int tilenum );
     void setTiles( const QPixmap& p, int h, int v, int tilewidth, int tileheight, double scale );
     int  tile( int x, int y ) const;
@@ -47,4 +47,4 @@ private:
     double m_scale;
 };
 
-#endif // KGRSCENE_H
+#endif // KGRPLAYFIELD_H

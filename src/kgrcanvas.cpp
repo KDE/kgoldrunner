@@ -425,7 +425,7 @@ void KGrCanvas::initView()
 
     // Define the canvas as an array of tiles.  Default tile is 0 (free space).
     int frame = 0;//frameWidth()*2;
-    playfield = new KGrScene(this);
+    playfield = new KGrPlayField(this);
 
     //Now set our tileset in the scene
     playfield->setTiles (bgPix, (FIELDWIDTH+border), (FIELDHEIGHT+border),
