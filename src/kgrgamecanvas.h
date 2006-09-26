@@ -146,7 +146,7 @@ public:
     virtual ~KGrGameCanvasItem();
 
     /** schedule an update if the item */
-    void changed() { changedInternal(); }
+    void changed() { KGrGameCanvasItem::changedInternal(); }
 
     /** Returns true if the item is visible */
     bool visible() const { return m_visible; }
