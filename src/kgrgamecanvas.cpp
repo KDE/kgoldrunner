@@ -512,9 +512,10 @@ void KGrGameCanvasGroup::ensureAnimating() {
 }
 
 void KGrGameCanvasGroup::ensurePendingUpdate() {
-  m_child_rect_changed = true;
-
-  KGrGameCanvasItem::changed();
+   if(!m_changed || !m_child_rect_changed) {
+     m_child_rect_changed = true;
+     KGrGameCanvasItem::changed();
+   }
 }
 
 void KGrGameCanvasGroup::updateChanges() {
