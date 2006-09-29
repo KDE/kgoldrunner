@@ -30,7 +30,7 @@ class KGrObject : public QObject
 {
   Q_OBJECT
 public:
-  KGrObject (char objType);
+  explicit KGrObject (char objType);
   virtual ~KGrObject();
 
   // STATIC GLOBAL FLAGS.

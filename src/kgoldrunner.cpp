@@ -555,37 +555,37 @@ void KGoldrunner::setupActions()
     connect( showObj, SIGNAL(triggered(bool)), game, SLOT(showObjectState()) );
     addAction(showObj);
 
-    KAction* showEnemy0 = new KAction (i18n("Show Enemy") + "0", actionCollection(), "show_enemy_0");
+    KAction* showEnemy0 = new KAction (i18n("Show Enemy") + '0', actionCollection(), "show_enemy_0");
     showEnemy0->setShortcut( Qt::Key_0 );
     connect( showEnemy0, SIGNAL(triggered(bool)), game, SLOT(showEnemy0()) );
     addAction(showEnemy0);
 
-    KAction* showEnemy1 = new KAction (i18n("Show Enemy") + "1", actionCollection(), "show_enemy_1");
+    KAction* showEnemy1 = new KAction (i18n("Show Enemy") + '1', actionCollection(), "show_enemy_1");
     showEnemy1->setShortcut( Qt::Key_1 );
     connect( showEnemy1, SIGNAL(triggered(bool)), game, SLOT(showEnemy1()) );
     addAction(showEnemy1);
 
-    KAction* showEnemy2 = new KAction (i18n("Show Enemy") + "2", actionCollection(), "show_enemy_2");
+    KAction* showEnemy2 = new KAction (i18n("Show Enemy") + '2', actionCollection(), "show_enemy_2");
     showEnemy2->setShortcut( Qt::Key_2 );
     connect( showEnemy2, SIGNAL(triggered(bool)), game, SLOT(showEnemy2()) );
     addAction(showEnemy2);
 
-    KAction* showEnemy3 = new KAction (i18n("Show Enemy") + "3", actionCollection(), "show_enemy_3");
+    KAction* showEnemy3 = new KAction (i18n("Show Enemy") + '3', actionCollection(), "show_enemy_3");
     showEnemy3->setShortcut( Qt::Key_3 );
     connect( showEnemy3, SIGNAL(triggered(bool)), game, SLOT(showEnemy3()) );
     addAction(showEnemy3);
 
-    KAction* showEnemy4 = new KAction (i18n("Show Enemy") + "4", actionCollection(), "show_enemy_4");
+    KAction* showEnemy4 = new KAction (i18n("Show Enemy") + '4', actionCollection(), "show_enemy_4");
     showEnemy4->setShortcut( Qt::Key_4 );
     connect( showEnemy4, SIGNAL(triggered(bool)), game, SLOT(showEnemy4()) );
     addAction(showEnemy4);
 
-    KAction* showEnemy5 = new KAction (i18n("Show Enemy") + "5", actionCollection(), "show_enemy_5");
+    KAction* showEnemy5 = new KAction (i18n("Show Enemy") + '5', actionCollection(), "show_enemy_5");
     showEnemy5->setShortcut( Qt::Key_5 );
     connect( showEnemy5, SIGNAL(triggered(bool)), game, SLOT(showEnemy5()) );
     addAction(showEnemy5);
 
-    KAction* showEnemy6 = new KAction (i18n("Show Enemy") + "6", actionCollection(), "show_enemy_6");
+    KAction* showEnemy6 = new KAction (i18n("Show Enemy") + '6', actionCollection(), "show_enemy_6");
     showEnemy6->setShortcut( Qt::Key_6 );
     connect( showEnemy6, SIGNAL(triggered(bool)), game, SLOT(showEnemy6()) );
     addAction(showEnemy6);
@@ -940,7 +940,7 @@ bool KGoldrunner::getDirectories()
     QString myDir = "kgoldrunner";
 
     // Find the KGoldrunner Users' Guide, English version (en).
-    systemHTMLDir = dirs->findResourceDir ("html", "en/" + myDir + "/");
+    systemHTMLDir = dirs->findResourceDir ("html", "en/" + myDir + '/');
     if (systemHTMLDir.length() <= 0) {
 	KGrMessage::information (this, i18n("Get Folders"),
 	i18n("Cannot find documentation sub-folder 'en/%1/' "
@@ -949,7 +949,7 @@ bool KGoldrunner::getDirectories()
 	// result = false;		// Don't abort if the doc is missing.
     }
     else
-	systemHTMLDir.append ("en/" + myDir + "/");
+	systemHTMLDir.append ("en/" + myDir + '/');
 
     // Find the system collections in a directory of the required KDE type.
     systemDataDir = dirs->findResourceDir ("data", myDir + "/system/");

@@ -50,7 +50,7 @@ public:
 
 	//void updateCanvas ();
 	void paintCell (int, int, char, int offset = 0);
-	void setTitle (QString);
+	void setTitle (const QString&);
 
 	void makeHeroSprite (int, int, int);
 	void setHeroVisible (bool);

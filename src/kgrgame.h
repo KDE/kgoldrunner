@@ -47,7 +47,7 @@ class KGrGame : public QObject
 {
 Q_OBJECT
 public:
-    KGrGame (KGrCanvas * theView, QString theSystemDir, QString theUserDir);
+    KGrGame (KGrCanvas * theView, const QString &theSystemDir, const QString &theUserDir);
     ~KGrGame();
 
     bool initCollections();
@@ -252,7 +252,7 @@ private:
 /**********************    WORD-WRAPPED MESSAGE BOX    ************************/
 /******************************************************************************/
 
-    void myMessage (QWidget * parent, QString title, QString contents);
+    void myMessage (QWidget * parent, const QString &title, const QString &contents);
 };
 
 /******************************************************************************/

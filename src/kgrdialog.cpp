@@ -879,7 +879,7 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
 	for (i = 0; i < imax; i++) {		// Get the collection name.
 	    if (collections.at(i)->prefix == pr) {
 		s = s.insert (0,
-		    collections.at(i)->name.leftJustified (20, ' ', true) + " ");
+		    collections.at(i)->name.leftJustified (20, ' ', true) + ' ');
 		break;
 	    }
 	}
@@ -920,8 +920,8 @@ void KGrMessage::information (QWidget * parent, const QString &caption, const QS
 #endif
 }
 
-int KGrMessage::warning (QWidget * parent, QString caption, QString text,
-			    QString label0, QString label1, QString label2)
+int KGrMessage::warning (QWidget * parent, const QString &caption, const QString &text,
+			    const QString &label0, const QString &label1, const QString &label2)
 {
     int ans = 0;
 #ifdef KGR_PORTABLE
@@ -956,7 +956,7 @@ int KGrMessage::warning (QWidget * parent, QString caption, QString text,
 /**********************    WORD-WRAPPED MESSAGE BOX    ************************/
 /******************************************************************************/
 
-void KGrMessage::wrapped (QWidget * parent, QString title, QString contents)
+void KGrMessage::wrapped (QWidget * parent, const QString &title, const QString &contents)
 {
 #ifndef KGR_PORTABLE
     KMessageBox::information (parent, contents, title);

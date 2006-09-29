@@ -226,7 +226,7 @@ void KGrCanvas::setBaseScale ()
     setTitle (t);
 }
 
-void KGrCanvas::setTitle (QString newTitle)
+void KGrCanvas::setTitle (const QString &newTitle)
 {
     title->setText (newTitle);
 }

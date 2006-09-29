@@ -137,7 +137,7 @@ private:
 public:
     /** Constructor, it allows you to specify the reference canvas or to create
         an orphan item that will be put into a canvas in a second moment.
-        The item is always hidden after beeing created.
+        The item is always hidden after being created.
         Note that the restacking functions are quite intelligent and will only
         repaint if there is an actual need of doing it. So if you call raise on
         an item that is already (locally) on the top, no redraw will take place */

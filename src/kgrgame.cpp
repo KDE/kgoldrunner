@@ -43,7 +43,7 @@
 /***********************    KGOLDRUNNER GAME CLASS    *************************/
 /******************************************************************************/
 
-KGrGame::KGrGame (KGrCanvas * theView, QString theSystemDir, QString theUserDir)
+KGrGame::KGrGame (KGrCanvas * theView, const QString &theSystemDir, const QString &theUserDir)
 {
     view = theView;
     systemDataDir = theSystemDir;
@@ -836,7 +836,7 @@ void KGrGame::saveGame()		// Save game ID, score and level.
 	QTextStream text1 (&file1);
 	int n = 30;			// Limit the file to the last 30 saves.
 	while ((! text1.endData()) && (--n > 0)) {
-	    saved = text1.readLine() + "\n";
+	    saved = text1.readLine() + '\n';
 	    text2 << saved;
 	}
 	file1.close();
@@ -2656,7 +2656,7 @@ bool KGrGame::saveCollections (Owner o)
 /**********************    WORD-WRAPPED MESSAGE BOX    ************************/
 /******************************************************************************/
 
-void KGrGame::myMessage (QWidget * parent, QString title, QString contents)
+void KGrGame::myMessage (QWidget * parent, const QString &title, const QString &contents)
 {
     // Halt the game while the message is displayed.
     setMessageFreeze (true);
