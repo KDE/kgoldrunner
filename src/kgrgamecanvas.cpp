@@ -241,7 +241,7 @@ KGrGameCanvasItem::~KGrGameCanvasItem() {
   }
 }
 
-void KGrGameCanvasItem::changedInternal() {
+void KGrGameCanvasItem::changed() {
   if(!m_changed) {
     m_changed = true;
     if(m_canvas)
@@ -514,8 +514,7 @@ void KGrGameCanvasGroup::ensureAnimating() {
 void KGrGameCanvasGroup::ensurePendingUpdate() {
   m_child_rect_changed = true;
 
-  if(!m_changed)
-    changed();
+  KGrGameCanvasItem::changed();
 }
 
 void KGrGameCanvasGroup::updateChanges() {
@@ -530,9 +529,9 @@ void KGrGameCanvasGroup::updateChanges() {
   m_changed = false;
 }
 
-void KGrGameCanvasGroup::changedInternal() {
+void KGrGameCanvasGroup::changed() {
   if(!m_changed) {
-    KGrGameCanvasItem::changedInternal();
+    KGrGameCanvasItem::changed();
 
     for(int i=0;i<m_items.size();i++)
       m_items[i]->changed();

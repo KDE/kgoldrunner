@@ -132,7 +132,6 @@ private:
 
     /* function to update pending changes, called from parent */
     virtual void updateChanges();
-    virtual void changedInternal();
 
 public:
     /** Constructor, it allows you to specify the reference canvas or to create
@@ -146,7 +145,7 @@ public:
     virtual ~KGrGameCanvasItem();
 
     /** schedule an update if the item */
-    void changed() { KGrGameCanvasItem::changedInternal(); }
+    void changed();
 
     /** Returns true if the item is visible */
     bool visible() const { return m_visible; }
@@ -274,7 +273,7 @@ private:
     virtual void invalidate(const QRect& r, bool translate = true);
     virtual void invalidate(const QRegion& r, bool translate = true);
     virtual void updateChanges();
-    virtual void changedInternal();
+    virtual void changed();
 
 public:
     /** Constructor */
