@@ -12,8 +12,7 @@ set(kgoldrunner_SRCS
    kgrgame.cpp 
    kgrobject.cpp 
    main.cpp 
-   kgrdialog.cpp 
-   kgrgamecanvas.cpp )
+   kgrdialog.cpp )
 
 kde4_automoc(${kgoldrunner_SRCS})
 
