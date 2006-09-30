@@ -22,7 +22,7 @@
 
 #include "kgrplayfield.h"
 #include "kgrsprite.h"
-#include "kgrgamecanvas.h"
+#include "kgamecanvas.h"
 
 #include <qcursor.h>
 #include <QLabel>
@@ -33,7 +33,7 @@
 #include <QList>
 
 
-class KGrCanvas : public KGrGameCanvasWidget
+class KGrCanvas : public KGameCanvasWidget
 {
 	Q_OBJECT
 public:
@@ -92,14 +92,14 @@ private:
 
 	KGrSprite * heroSprite;
 	QList<KGrSprite *> * enemySprites;
-	QList<KGrGameCanvasRectangle *> borderRectangles;
+	QList<KGameCanvasRectangle *> borderRectangles;
 
 	void initView();
 	void makeTiles();
 	void makeBorder();
 	void makeTitle();
 	QColor colour;
-	KGrGameCanvasRectangle * drawRectangle (int, int, int, int, int);
+	KGameCanvasRectangle * drawRectangle (int, int, int, int, int);
 	void changeColours (const char * colours []);
 	void recolourObject (const char * object [], const char * colours []);
 };

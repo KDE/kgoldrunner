@@ -17,8 +17,8 @@
 #include "kgrsprite.h"
 #include <QImage>
 
-KGrSprite::KGrSprite( KGrGameCanvasAbstract* canvas  )
-    : KGrGameCanvasPixmap(canvas)
+KGrSprite::KGrSprite( KGameCanvasAbstract* canvas  )
+    : KGameCanvasPixmap(canvas)
 {
     m_frames = new QList<QPixmap> ();
     m_frame = 0;

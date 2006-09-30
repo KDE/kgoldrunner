@@ -24,10 +24,10 @@
 #include <QList>
 
 
-class KGrSprite : public KGrGameCanvasPixmap
+class KGrSprite : public KGameCanvasPixmap
 {
 public:
-    KGrSprite ( KGrGameCanvasAbstract* canvas = NULL);
+    KGrSprite ( KGameCanvasAbstract* canvas = NULL);
     ~KGrSprite();
     void move(double x, double y, int frame);
     void setZ ( qreal z );

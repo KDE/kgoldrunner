@@ -24,15 +24,12 @@ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __KGRGAMECANVAS_H__
-#define __KGRGAMECANVAS_H__
+#ifndef __KGAMECANVAS_H__
+#define __KGAMECANVAS_H__
 
 /*
  *  Author: Maurizio Monge <maurizio.monge@gmail.com>
  */
-
-// KGr temporary namespace changes: mauricio@tabuleiro.com
-// TODO find a module to add these classes to other kdegames modules (maybe libkdegames? or own subdirectory?)
 
 #include <QList>
 #include <QPoint>
@@ -43,43 +40,43 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QRegion>
 #include <QWidget>
 
-class KGrGameCanvasItem;
+class KGameCanvasItem;
 
 /**
-    \class KGrGameCanvasAbstract canvas.h <canvas.h>
+    \class KGameCanvasAbstract canvas.h <canvas.h>
     \brief Container class.
 
-    A KGrGameCanvasAbstract is a set of canvas items.
+    A KGameCanvasAbstract is a set of canvas items.
 */
-class KGrGameCanvasAbstract
+class KGameCanvasAbstract
 {
 protected:
-    friend class KGrGameCanvasItem;
+    friend class KGameCanvasItem;
 
-    QList<KGrGameCanvasItem*> m_items;
-    QList<KGrGameCanvasItem*> m_animated_items;
+    QList<KGameCanvasItem*> m_items;
+    QList<KGameCanvasItem*> m_animated_items;
 
 public:
     /** The constructor */
-    KGrGameCanvasAbstract();
+    KGameCanvasAbstract();
 
-    virtual ~KGrGameCanvasAbstract();
+    virtual ~KGameCanvasAbstract();
 
     /** Returns a const pointer to the list holding all the items in the canvas */
-    const QList<KGrGameCanvasItem*>* items() const { return &m_items; };
+    const QList<KGameCanvasItem*>* items() const { return &m_items; };
 
     /** Helper function to retrieve the topmost item at the given position */
-    KGrGameCanvasItem* itemAt(QPoint pos) const;
+    KGameCanvasItem* itemAt(QPoint pos) const;
 
     /** Overload, same as above */
-    KGrGameCanvasItem* itemAt(int x, int y) const { return itemAt(QPoint(x,y)); }
+    KGameCanvasItem* itemAt(int x, int y) const { return itemAt(QPoint(x,y)); }
 
     /** Helper function to retrieve all the items at the given position,
         starting from the topmost one. */
-    QList<KGrGameCanvasItem*> itemsAt(QPoint pos) const;
+    QList<KGameCanvasItem*> itemsAt(QPoint pos) const;
 
     /** Overload, same as above */
-    QList<KGrGameCanvasItem*> itemsAt(int x, int y) const { return itemsAt(QPoint(x,y)); }
+    QList<KGameCanvasItem*> itemsAt(int x, int y) const { return itemsAt(QPoint(x,y)); }
 
     /** Virtual function to let know the canvas that it has animated items in it */
     virtual void ensureAnimating() = 0;
@@ -93,32 +90,32 @@ public:
     /** Virtual function to update a region */
     virtual void invalidate(const QRegion& r, bool translate = true) = 0;
 
-    /** Returns the toplevel non-group KGrGameCanvasWidget object */
-    virtual class KGrGameCanvasWidget* topLevelCanvas() = 0;
+    /** Returns the toplevel non-group KGameCanvasWidget object */
+    virtual class KGameCanvasWidget* topLevelCanvas() = 0;
 };
 
 
-class KGrGameCanvasAbstract;
+class KGameCanvasAbstract;
 
 /**
-    \class KGrGameCanvasItem canvas.h <canvas.h>
+    \class KGameCanvasItem canvas.h <canvas.h>
     \brief An abstract item.
 
-    A KGrGameCanvasItem is an abstract class to represent a generic item that can be
+    A KGameCanvasItem is an abstract class to represent a generic item that can be
     put in a canvas.
 */
-class KGrGameCanvasItem
+class KGameCanvasItem
 {
 private:
-    friend class KGrGameCanvasAbstract;
-    friend class KGrGameCanvasWidget;
-    friend class KGrGameCanvasGroup;
+    friend class KGameCanvasAbstract;
+    friend class KGameCanvasWidget;
+    friend class KGameCanvasGroup;
 
     bool m_visible;
     bool m_animated;
     int  m_opacity;
     QPoint m_pos;
-    KGrGameCanvasAbstract *m_canvas;
+    KGameCanvasAbstract *m_canvas;
 
     bool m_changed;
     QRect m_last_rect;
@@ -140,9 +137,9 @@ public:
         Note that the restacking functions are quite intelligent and will only
         repaint if there is an actual need of doing it. So if you call raise on
         an item that is already (locally) on the top, no redraw will take place */
-    KGrGameCanvasItem(KGrGameCanvasAbstract* canvas = NULL);
+    KGameCanvasItem(KGameCanvasAbstract* canvas = NULL);
 
-    virtual ~KGrGameCanvasItem();
+    virtual ~KGameCanvasItem();
 
     /** schedule an update if the item */
     void changed();
@@ -178,20 +175,20 @@ public:
     void lower();
 
     /** Restacks the item immediately over ref */
-    void stackOver(KGrGameCanvasItem* ref);
+    void stackOver(KGameCanvasItem* ref);
 
     /** Restacks the item immediately under ref */
-    void stackUnder(KGrGameCanvasItem* ref);
+    void stackUnder(KGameCanvasItem* ref);
 
     /** Returns the canvas that is actually "owning" the item */
-    KGrGameCanvasAbstract *canvas() const { return m_canvas; }
+    KGameCanvasAbstract *canvas() const { return m_canvas; }
 
     /** Returns the toplevel canvas widget, or NULL */
-    KGrGameCanvasWidget *topLevelCanvas() const { return m_canvas ? m_canvas->topLevelCanvas() : NULL; }
+    KGameCanvasWidget *topLevelCanvas() const { return m_canvas ? m_canvas->topLevelCanvas() : NULL; }
 
     /** Lets you specify the owning canvas. Call this function with canvas
         set to NULL to remove the item from the current canvas. */
-    void putInCanvas(KGrGameCanvasAbstract *canvas);
+    void putInCanvas(KGameCanvasAbstract *canvas);
 
     /** Returns the position of the item */
     QPoint pos() const { return m_pos; }
@@ -224,14 +221,14 @@ public:
 
 
 /**
-    \class KGrGameCanvasDummy canvas.h <canvas.h>
+    \class KGameCanvasDummy canvas.h <canvas.h>
     \brief A dummy (empty) item.
 
-    A KGrGameCanvasDummy is an empty, invisible item.
+    A KGameCanvasDummy is an empty, invisible item.
     You can use it as reference for stacking items in the canvas using the
     stackOver and stackUnder functions.
 */
-class KGrGameCanvasDummy : public KGrGameCanvasItem
+class KGameCanvasDummy : public KGameCanvasItem
 {
 private:
     /** This function does nothing (of course) */
@@ -240,9 +237,9 @@ private:
 
 public:
     /** Constructor */
-    KGrGameCanvasDummy(KGrGameCanvasAbstract* canvas = NULL);
+    KGameCanvasDummy(KGameCanvasAbstract* canvas = NULL);
 
-    virtual ~KGrGameCanvasDummy();
+    virtual ~KGameCanvasDummy();
 
     /** This function does nothing (of course) */
     virtual void paint(QPainter* p);
@@ -253,13 +250,13 @@ public:
 
 
 /**
-    \class KGrGameCanvasGroup canvas.h <canvas.h>
+    \class KGameCanvasGroup canvas.h <canvas.h>
     \brief An item containing other items.
 
-    A KGrGameCanvasGroup is an KGrGameCanvasItem, but it is also a KGrGameCanvasAbstract,
+    A KGameCanvasGroup is an KGameCanvasItem, but it is also a KGameCanvasAbstract,
     so you can add children items to it. Just an inner canvas, if you prefer.
 */
-class KGrGameCanvasGroup : public KGrGameCanvasItem, public KGrGameCanvasAbstract
+class KGameCanvasGroup : public KGameCanvasItem, public KGameCanvasAbstract
 {
 private:
     mutable bool m_child_rect_changed;
@@ -277,9 +274,9 @@ private:
 
 public:
     /** Constructor */
-    KGrGameCanvasGroup(KGrGameCanvasAbstract* canvas = NULL);
+    KGameCanvasGroup(KGameCanvasAbstract* canvas = NULL);
 
-    virtual ~KGrGameCanvasGroup();
+    virtual ~KGameCanvasGroup();
 
     /** This paints all the children */
     virtual void paint(QPainter* p);
@@ -291,28 +288,28 @@ public:
     virtual void advance(int msecs);
 
     /** returns the toplevel canvas (or null if it is in an orphan tree) */
-    KGrGameCanvasWidget* topLevelCanvas();
+    KGameCanvasWidget* topLevelCanvas();
 };
 
 /**
-    \class KGrGameCanvasPicture canvas.h <canvas.h>
+    \class KGameCanvasPicture canvas.h <canvas.h>
     \brief A picture, ie a collection of paint operations.
 
-    A KGrGameCanvasPicture is a picture that can be replayed on the canvas.
+    A KGameCanvasPicture is a picture that can be replayed on the canvas.
 */
-class KGrGameCanvasPicture : public KGrGameCanvasItem
+class KGameCanvasPicture : public KGameCanvasItem
 {
 private:
     QPicture m_picture;
 
 public:
     /** Constructor, specifying the picture to use */
-    KGrGameCanvasPicture(const QPicture& picture, KGrGameCanvasAbstract* canvas = NULL);
+    KGameCanvasPicture(const QPicture& picture, KGameCanvasAbstract* canvas = NULL);
 
     /** Constructor, creating with an empty picture */
-    KGrGameCanvasPicture(KGrGameCanvasAbstract* canvas = NULL);
+    KGameCanvasPicture(KGameCanvasAbstract* canvas = NULL);
 
-    virtual ~KGrGameCanvasPicture();
+    virtual ~KGameCanvasPicture();
 
     /** Returns the picture */
     QPicture picture() const { return m_picture; }
@@ -325,12 +322,12 @@ public:
 };
 
 /**
-    \class KGrGameCanvasPixmap canvas.h <canvas.h>
+    \class KGameCanvasPixmap canvas.h <canvas.h>
     \brief A pixmap (sprite).
 
-    A KGrGameCanvasPixmap is a pixmap that can be put in the canvas.
+    A KGameCanvasPixmap is a pixmap that can be put in the canvas.
 */
-class KGrGameCanvasPixmap : public KGrGameCanvasItem
+class KGameCanvasPixmap : public KGameCanvasItem
 {
 private:
     QPixmap m_pixmap;
@@ -343,12 +340,12 @@ private:
 
 public:
     /** Constructor, specifying the pixmap to use */
-    KGrGameCanvasPixmap(const QPixmap& pixmap, KGrGameCanvasAbstract* canvas = NULL);
+    KGameCanvasPixmap(const QPixmap& pixmap, KGameCanvasAbstract* canvas = NULL);
 
     /** Constructor, creating with an empty pixmap */
-    KGrGameCanvasPixmap(KGrGameCanvasAbstract* canvas = NULL);
+    KGameCanvasPixmap(KGameCanvasAbstract* canvas = NULL);
 
-    virtual ~KGrGameCanvasPixmap();
+    virtual ~KGameCanvasPixmap();
 
     /** Returns the pixmap */
     QPixmap pixmap() const { return m_pixmap; }
@@ -361,12 +358,12 @@ public:
 };
 
 /**
-    \class KGrGameCanvasTiledPixmap canvas.h <canvas.h>
+    \class KGameCanvasTiledPixmap canvas.h <canvas.h>
     \brief A tiled pixmap (brush).
 
-    A KGrGameCanvasPixmap is a pixmap that can be put in the canvas.
+    A KGameCanvasPixmap is a pixmap that can be put in the canvas.
 */
-class KGrGameCanvasTiledPixmap : public KGrGameCanvasItem
+class KGameCanvasTiledPixmap : public KGameCanvasItem
 {
 private:
     QPixmap m_pixmap;
@@ -382,13 +379,13 @@ private:
 
 public:
     /** Constructor, specifying the pixmap and the parameters to use */
-    KGrGameCanvasTiledPixmap(const QPixmap& pixmap, QSize size, QPoint origin,
-                            bool move_orig, KGrGameCanvasAbstract* canvas = NULL);
+    KGameCanvasTiledPixmap(const QPixmap& pixmap, QSize size, QPoint origin,
+                            bool move_orig, KGameCanvasAbstract* canvas = NULL);
 
     /** Constructor, creating with an empty pixmap */
-    KGrGameCanvasTiledPixmap(KGrGameCanvasAbstract* canvas = NULL);
+    KGameCanvasTiledPixmap(KGameCanvasAbstract* canvas = NULL);
 
-    virtual ~KGrGameCanvasTiledPixmap();
+    virtual ~KGameCanvasTiledPixmap();
 
     /** Returns the pixmap */
     QPixmap pixmap() const { return m_pixmap; }
@@ -417,12 +414,12 @@ public:
 
 
 /**
-    \class KGrGameCanvasRectangle canvas.h <canvas.h>
+    \class KGameCanvasRectangle canvas.h <canvas.h>
     \brief A solid rectangle.
 
-    A KGrGameCanvasPixmap is a pixmap that can be put in the canvas.
+    A KGameCanvasPixmap is a pixmap that can be put in the canvas.
 */
-class KGrGameCanvasRectangle : public KGrGameCanvasItem
+class KGameCanvasRectangle : public KGameCanvasItem
 {
 private:
     QColor m_color;
@@ -434,12 +431,12 @@ private:
 
 public:
     /** Constructor, specifying the pixmap and the parameters to use */
-    KGrGameCanvasRectangle(const QColor& color, QSize size, KGrGameCanvasAbstract* canvas = NULL);
+    KGameCanvasRectangle(const QColor& color, QSize size, KGameCanvasAbstract* canvas = NULL);
 
     /** Constructor, creating with an empty pixmap */
-    KGrGameCanvasRectangle(KGrGameCanvasAbstract* canvas = NULL);
+    KGameCanvasRectangle(KGameCanvasAbstract* canvas = NULL);
 
-    virtual ~KGrGameCanvasRectangle();
+    virtual ~KGameCanvasRectangle();
 
     /** Returns the color */
     QColor color() const { return m_color; }
@@ -455,12 +452,12 @@ public:
 };
 
 /**
-    \class KGrGameCanvasText canvas.h <canvas.h>
-    \brief KGrGameCanvasText.
+    \class KGameCanvasText canvas.h <canvas.h>
+    \brief KGameCanvasText.
 
-    A KGrGameCanvasText is a text that can be put in the canvas.
+    A KGameCanvasText is a text that can be put in the canvas.
 */
-class KGrGameCanvasText : public KGrGameCanvasItem
+class KGameCanvasText : public KGameCanvasItem
 {
 public:
     /** Specifies the meaning of the x coordinate of the item. It can
@@ -500,14 +497,14 @@ private:
 
 public:
     /** Constructor, specifying the text and the parameters to use */
-    KGrGameCanvasText(const QString& text, const QColor& color,
+    KGameCanvasText(const QString& text, const QColor& color,
                     const QFont& font, HPos hp, VPos vp,
-                    KGrGameCanvasAbstract* canvas = NULL);
+                    KGameCanvasAbstract* canvas = NULL);
 
     /** Constructor, creating with an empty text */
-    KGrGameCanvasText(KGrGameCanvasAbstract* canvas = NULL);
+    KGameCanvasText(KGameCanvasAbstract* canvas = NULL);
 
-    virtual ~KGrGameCanvasText();
+    virtual ~KGameCanvasText();
 
     /** Returns the text */
     QString text() const { return m_text; }
@@ -544,20 +541,20 @@ public:
 };
 
 /**
-    \class KGrGameCanvasWidget canvas.h <canvas.h>
+    \class KGameCanvasWidget canvas.h <canvas.h>
     \brief Container widget.
 
-    A KGrGameCanvasWidget is a widget that can contain many KGrGameCanvasItem (images, rectangles, lines, etc).
+    A KGameCanvasWidget is a widget that can contain many KGameCanvasItem (images, rectangles, lines, etc).
     Portions of the widget are automatically redrawn to update the changes made to the items.
 */
-class KGrGameCanvasWidget : public QWidget, public KGrGameCanvasAbstract
+class KGameCanvasWidget : public QWidget, public KGameCanvasAbstract
 {
 Q_OBJECT
 private:
-    friend class KGrGameCanvasItem;
+    friend class KGameCanvasItem;
     friend class AnimationNotifier;
 
-    class  KGrGameCanvasWidgetPrivate *priv;
+    class  KGameCanvasWidgetPrivate *priv;
 
     virtual void ensureAnimating();
     virtual void ensurePendingUpdate();
@@ -572,19 +569,19 @@ private slots:
 
 public:
     /** The constructor */
-    KGrGameCanvasWidget(QWidget* parent = NULL);
+    KGameCanvasWidget(QWidget* parent = NULL);
 
-    virtual ~KGrGameCanvasWidget();
+    virtual ~KGameCanvasWidget();
 
     /** Set the delay of the animation, in milliseconds */
     void setAnimationDelay(int d);
 
     /** Return the number of millisecons from the creation of the canvas
-        (see also KGrGameCanvasItem::advance)*/
+        (see also KGameCanvasItem::advance)*/
     int mSecs();
 
     /** returns 'this' */
-    KGrGameCanvasWidget* topLevelCanvas();
+    KGameCanvasWidget* topLevelCanvas();
 };
 
 

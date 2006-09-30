@@ -18,17 +18,17 @@
 #ifndef KGRPLAYFIELD_H
 #define KGRPLAYFIELD_H
 
-#include "kgrgamecanvas.h"
+#include "kgamecanvas.h"
 
 #include <QObject>
 #include <QPixmap>
 #include <QList>
 #include <QPainter>
 
-class KGrPlayField : public KGrGameCanvasGroup
+class KGrPlayField : public KGameCanvasGroup
 {
 public:
-    KGrPlayField ( KGrGameCanvasAbstract* canvas = NULL);
+    KGrPlayField ( KGameCanvasAbstract* canvas = NULL);
     ~KGrPlayField();
     void setTile( int x, int y, int tilenum );
     void setTiles( const QPixmap& p, int h, int v, int tilewidth, int tileheight, double scale );
@@ -37,7 +37,7 @@ public:
     inline double scale(){ return m_scale;};
 
 private:
-    QList<KGrGameCanvasPixmap *> m_tilesprites;
+    QList<KGameCanvasPixmap *> m_tilesprites;
     QList<QPixmap> m_tileset;
     QList<int> m_tilenumbers;
     int m_tilew;

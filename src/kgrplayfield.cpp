@@ -18,8 +18,8 @@
 
 #include "kgrplayfield.h"
 
-KGrPlayField::KGrPlayField( KGrGameCanvasAbstract* canvas )
-    : KGrGameCanvasGroup(canvas)
+KGrPlayField::KGrPlayField( KGameCanvasAbstract* canvas )
+    : KGameCanvasGroup(canvas)
 {
 	show();
 }
@@ -72,7 +72,7 @@ void KGrPlayField::setTiles( const QPixmap& p, int h, int v, int tilewidth, int 
     int totaltiles = m_numTilesH*m_numTilesV;
     for(int i=0;i<totaltiles;++i)
     {
-	KGrGameCanvasPixmap * thissprite = new KGrGameCanvasPixmap(this);
+	KGrGameCanvasPixmap * thissprite = new KGameCanvasPixmap(this);
 	thissprite->moveTo((i % m_numTilesH)*m_tilew, (i/m_numTilesH)*m_tileh);
 	thissprite->setPixmap(m_tileset.at(0));
 	thissprite->show();

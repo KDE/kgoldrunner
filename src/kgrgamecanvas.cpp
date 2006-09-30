@@ -24,8 +24,7 @@ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-// KGr temporary namespace changes: mauricio@tabuleiro.com
-// TODO find a module to add these classes to other kdegames modules (maybe libkdegames? or own subdirectory?)
+// KGame namespace changes: mauricio@tabuleiro.com
 
 #include <QPaintEvent>
 #include <QPainter>
@@ -33,11 +32,11 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QApplication>
 #include <QTimer>
 #include <QTime>
-#include "kgrgamecanvas.h"
+#include "kgamecanvas.h"
 
 /*
   TODO:
-    - (maybe) allow an item to be destroyed while calling KGrGameCanvasItem::advance.
+    - (maybe) allow an item to be destroyed while calling KGameCanvasItem::advance.
     - When a group is hidden/destroyed should only update items (optimize for sparse groups)
 */
 
@@ -45,31 +44,31 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define DEBUG_CANVAS_PAINTS      0
 
 /*
-    KGrGameCanvasAbstract
+    KGameCanvasAbstract
 */
-KGrGameCanvasAbstract::KGrGameCanvasAbstract() {
+KGameCanvasAbstract::KGameCanvasAbstract() {
 
 }
 
-KGrGameCanvasAbstract::~KGrGameCanvasAbstract() {
+KGameCanvasAbstract::~KGameCanvasAbstract() {
   for(int i=0;i<m_items.size();i++)
     m_items[i]->m_canvas = NULL;
 }
 
-KGrGameCanvasItem* KGrGameCanvasAbstract::itemAt(QPoint pt) const {
+KGameCanvasItem* KGameCanvasAbstract::itemAt(QPoint pt) const {
   for(int i=m_items.size()-1;i>=0;i--) {
-    KGrGameCanvasItem *el = m_items[i];
+    KGameCanvasItem *el = m_items[i];
     if(el->m_visible && el->rect().contains(pt))
       return el;
   }
   return NULL;
 }
 
-QList<KGrGameCanvasItem*> KGrGameCanvasAbstract::itemsAt(QPoint pt) const {
-  QList<KGrGameCanvasItem*> retv;
+QList<KGameCanvasItem*> KGameCanvasAbstract::itemsAt(QPoint pt) const {
+  QList<KGameCanvasItem*> retv;
 
   for(int i=m_items.size()-1;i>=0;i--) {
-    KGrGameCanvasItem *el = m_items[i];
+    KGameCanvasItem *el = m_items[i];
     if(el->m_visible && el->rect().contains(pt))
       retv.append(el);
   }
@@ -79,9 +78,9 @@ QList<KGrGameCanvasItem*> KGrGameCanvasAbstract::itemsAt(QPoint pt) const {
 
 
 /*
-    KGrGameCanvasWidget
+    KGameCanvasWidget
 */
-class KGrGameCanvasWidgetPrivate {
+class KGameCanvasWidgetPrivate {
 public:
   QTimer m_anim_timer;
   QTime m_anim_time;
@@ -92,7 +91,7 @@ public:
   bool debug_paints;
 #endif //DEBUG_CANVAS_PAINTS
 
-  KGrGameCanvasWidgetPrivate()
+  KGameCanvasWidgetPrivate()
   : m_pending_update(false)
 #if DEBUG_CANVAS_PAINTS
   , debug_paints(false)
@@ -100,23 +99,23 @@ public:
   {}
 };
 
-KGrGameCanvasWidget::KGrGameCanvasWidget(QWidget* parent)
+KGameCanvasWidget::KGameCanvasWidget(QWidget* parent)
 : QWidget(parent)
-, priv(new KGrGameCanvasWidgetPrivate()) {
+, priv(new KGameCanvasWidgetPrivate()) {
   priv->m_anim_time.start();
   connect(&priv->m_anim_timer, SIGNAL(timeout()), this, SLOT(processAnimations()));
 }
 
-KGrGameCanvasWidget::~KGrGameCanvasWidget() {
+KGameCanvasWidget::~KGameCanvasWidget() {
   delete priv;
 }
 
-void KGrGameCanvasWidget::ensureAnimating() {
+void KGameCanvasWidget::ensureAnimating() {
   if(!priv->m_anim_timer.isActive() )
       priv->m_anim_timer.start();
 }
 
-void KGrGameCanvasWidget::ensurePendingUpdate() {
+void KGameCanvasWidget::ensurePendingUpdate() {
   if(priv->m_pending_update)
     return;
   priv->m_pending_update = true;
@@ -128,9 +127,9 @@ void KGrGameCanvasWidget::ensurePendingUpdate() {
 #endif //DEBUG_DONT_MERGE_UPDATES
 }
 
-void KGrGameCanvasWidget::updateChanges() {
+void KGameCanvasWidget::updateChanges() {
   for(int i=0;i<m_items.size();i++) {
-    KGrGameCanvasItem *el = m_items[i];
+    KGameCanvasItem *el = m_items[i];
 
     if(el->m_changed)
       el->updateChanges();
@@ -154,17 +153,17 @@ void KGrGameCanvasWidget::updateChanges() {
   priv->m_pending_update_reg = QRegion();
 }
 
-void KGrGameCanvasWidget::invalidate(const QRect& r, bool /*translate*/) {
+void KGameCanvasWidget::invalidate(const QRect& r, bool /*translate*/) {
   priv->m_pending_update_reg |= r;
   ensurePendingUpdate();
 }
 
-void KGrGameCanvasWidget::invalidate(const QRegion& r, bool /*translate*/) {
+void KGameCanvasWidget::invalidate(const QRegion& r, bool /*translate*/) {
   priv->m_pending_update_reg |= r;
   ensurePendingUpdate();
 }
 
-void KGrGameCanvasWidget::paintEvent(QPaintEvent *event) {
+void KGameCanvasWidget::paintEvent(QPaintEvent *event) {
 #if DEBUG_CANVAS_PAINTS
   if(priv->debug_paints)
   {
@@ -179,7 +178,7 @@ void KGrGameCanvasWidget::paintEvent(QPaintEvent *event) {
   QRegion evreg = event->region();
 
   for(int i=0;i<m_items.size();i++) {
-    KGrGameCanvasItem *el = m_items[i];
+    KGameCanvasItem *el = m_items[i];
     if( el->m_visible && evr.intersects( el->rect() )
         && evreg.contains( el->rect() ) ) {
       el->m_last_rect = el->rect();
@@ -190,7 +189,7 @@ void KGrGameCanvasWidget::paintEvent(QPaintEvent *event) {
   QApplication::syncX();
 }
 
-void KGrGameCanvasWidget::processAnimations() {
+void KGameCanvasWidget::processAnimations() {
   if(m_animated_items.empty() ) {
     priv->m_anim_timer.stop();
     return;
@@ -198,7 +197,7 @@ void KGrGameCanvasWidget::processAnimations() {
 
   int tm = priv->m_anim_time.elapsed();
   for(int i=0;i<m_animated_items.size();i++) {
-    KGrGameCanvasItem *el = m_animated_items[i];
+    KGameCanvasItem *el = m_animated_items[i];
     el->advance(tm);
   }
 
@@ -206,32 +205,32 @@ void KGrGameCanvasWidget::processAnimations() {
     priv->m_anim_timer.stop();
 }
 
-void KGrGameCanvasWidget::setAnimationDelay(int d) {
+void KGameCanvasWidget::setAnimationDelay(int d) {
   priv->m_anim_timer.setInterval(d);
 }
 
-int KGrGameCanvasWidget::mSecs() {
+int KGameCanvasWidget::mSecs() {
   return priv->m_anim_time.elapsed();
 }
 
-KGrGameCanvasWidget* KGrGameCanvasWidget::topLevelCanvas() {
+KGameCanvasWidget* KGameCanvasWidget::topLevelCanvas() {
   return this;
 }
 
 /*
-    KGrGameCanvasItem
+    KGameCanvasItem
 */
-KGrGameCanvasItem::KGrGameCanvasItem(KGrGameCanvasAbstract* KGrGameCanvas)
+KGameCanvasItem::KGameCanvasItem(KGameCanvasAbstract* KGameCanvas)
 : m_visible(false)
 , m_animated(false)
 , m_opacity(255)
 , m_pos(0,0)
-, m_canvas(KGrGameCanvas)
+, m_canvas(KGameCanvas)
 , m_changed(false) {
   if(m_canvas) m_canvas->m_items.append(this);
 }
 
-KGrGameCanvasItem::~KGrGameCanvasItem() {
+KGameCanvasItem::~KGameCanvasItem() {
   if(m_canvas) {
     m_canvas->m_items.removeAll(this);
     if(m_animated)
@@ -241,7 +240,7 @@ KGrGameCanvasItem::~KGrGameCanvasItem() {
   }
 }
 
-void KGrGameCanvasItem::changed() {
+void KGameCanvasItem::changed() {
   if(!m_changed) {
     m_changed = true;
     if(m_canvas)
@@ -249,7 +248,7 @@ void KGrGameCanvasItem::changed() {
   }
 }
 
-void KGrGameCanvasItem::updateChanges() {
+void KGameCanvasItem::updateChanges() {
   if(!m_changed)
     return;
   if(m_canvas) {
@@ -260,9 +259,9 @@ void KGrGameCanvasItem::updateChanges() {
   m_changed = false;
 }
 
-QPixmap *KGrGameCanvasItem::transparence_pixmap_cache = NULL;
+QPixmap *KGameCanvasItem::transparence_pixmap_cache = NULL;
 
-QPixmap* KGrGameCanvasItem::getTransparenceCache(QSize s) {
+QPixmap* KGameCanvasItem::getTransparenceCache(QSize s) {
   if(!transparence_pixmap_cache)
     transparence_pixmap_cache = new QPixmap();
   if(s.width()>transparence_pixmap_cache->width() ||
@@ -276,7 +275,7 @@ QPixmap* KGrGameCanvasItem::getTransparenceCache(QSize s) {
   return transparence_pixmap_cache;
 }
 
-void KGrGameCanvasItem::paintInternal(QPainter* pp, const QRect& /*prect*/,
+void KGameCanvasItem::paintInternal(QPainter* pp, const QRect& /*prect*/,
                     const QRegion& /*preg*/, QPoint /*delta*/, double cumulative_opacity) {
   int opacity = int(cumulative_opacity*m_opacity + 0.5);
 
@@ -324,7 +323,7 @@ void KGrGameCanvasItem::paintInternal(QPainter* pp, const QRect& /*prect*/,
   pp->drawPixmap(mr.topLeft(), *cache, QRect(QPoint(),mr.size()) );
 }
 
-void KGrGameCanvasItem::putInCanvas(KGrGameCanvasAbstract *c) {
+void KGameCanvasItem::putInCanvas(KGameCanvasAbstract *c) {
   if(m_canvas == c)
       return;
 
@@ -349,7 +348,7 @@ void KGrGameCanvasItem::putInCanvas(KGrGameCanvasAbstract *c) {
   }
 }
 
-void KGrGameCanvasItem::setVisible(bool v) {
+void KGameCanvasItem::setVisible(bool v) {
   if(m_visible == v)
       return;
 
@@ -364,7 +363,7 @@ void KGrGameCanvasItem::setVisible(bool v) {
     m_last_rect = QRect();
 }
 
-void KGrGameCanvasItem::setAnimated(bool a) {
+void KGameCanvasItem::setAnimated(bool a) {
   if(m_animated == a)
     return;
 
@@ -379,25 +378,25 @@ void KGrGameCanvasItem::setAnimated(bool a) {
   }
 }
 
-void KGrGameCanvasItem::setOpacity(int o) {
+void KGameCanvasItem::setOpacity(int o) {
   m_opacity = o;
 
   if(m_canvas && m_visible)
     changed();
 }
 
-bool KGrGameCanvasItem::layered() const { return true; }
+bool KGameCanvasItem::layered() const { return true; }
 
-void KGrGameCanvasItem::advance(int /*msecs*/) { }
+void KGameCanvasItem::advance(int /*msecs*/) { }
 
-void KGrGameCanvasItem::updateAfterRestack(int from, int to)
+void KGameCanvasItem::updateAfterRestack(int from, int to)
 {
     int inc = from>to ? -1 : 1;
 
     QRegion upd;
     for(int i=from; i!=to;i+=inc)
     {
-        KGrGameCanvasItem *el = m_canvas->m_items[i];
+        KGameCanvasItem *el = m_canvas->m_items[i];
         if(!el->m_visible)
             continue;
 
@@ -410,7 +409,7 @@ void KGrGameCanvasItem::updateAfterRestack(int from, int to)
         m_canvas->invalidate(upd);
 }
 
-void KGrGameCanvasItem::raise()
+void KGameCanvasItem::raise()
 {
     if(!m_canvas || m_canvas->m_items.last() == this)
         return;
@@ -422,7 +421,7 @@ void KGrGameCanvasItem::raise()
         updateAfterRestack(old_pos, m_canvas->m_items.size()-1);
 }
 
-void KGrGameCanvasItem::lower()
+void KGameCanvasItem::lower()
 {
     if(!m_canvas || m_canvas->m_items.first() == this)
         return;
@@ -435,14 +434,14 @@ void KGrGameCanvasItem::lower()
         updateAfterRestack(old_pos, 0);
 }
 
-void KGrGameCanvasItem::stackOver(KGrGameCanvasItem* ref)
+void KGameCanvasItem::stackOver(KGameCanvasItem* ref)
 {
     if(!m_canvas)
         return;
 
     if(ref->m_canvas != m_canvas)
     {
-        qCritical("KGrGameCanvasItem::stackOver: Argument must be a sibling item!\n");
+        qCritical("KGameCanvasItem::stackOver: Argument must be a sibling item!\n");
         return;
     }
 
@@ -459,7 +458,7 @@ void KGrGameCanvasItem::stackOver(KGrGameCanvasItem* ref)
         updateAfterRestack(old_pos, i+1);
 }
 
-void KGrGameCanvasItem::stackUnder(KGrGameCanvasItem* ref)
+void KGameCanvasItem::stackUnder(KGameCanvasItem* ref)
 {
     if(!m_canvas)
         return;
@@ -467,7 +466,7 @@ void KGrGameCanvasItem::stackUnder(KGrGameCanvasItem* ref)
 
     if(ref->m_canvas != m_canvas)
     {
-        qCritical("KGrGameCanvasItem::stackUnder: Argument must be a sibling item!\n");
+        qCritical("KGameCanvasItem::stackUnder: Argument must be a sibling item!\n");
         return;
     }
 
@@ -484,7 +483,7 @@ void KGrGameCanvasItem::stackUnder(KGrGameCanvasItem* ref)
         updateAfterRestack(old_pos, i);
 }
 
-void KGrGameCanvasItem::moveTo(QPoint newpos)
+void KGameCanvasItem::moveTo(QPoint newpos)
 {
   if(m_pos == newpos)
     return;
@@ -494,35 +493,35 @@ void KGrGameCanvasItem::moveTo(QPoint newpos)
 }
 
 /*
-    KGrGameCanvasGroup
+    KGameCanvasGroup
 */
-KGrGameCanvasGroup::KGrGameCanvasGroup(KGrGameCanvasAbstract* KGrGameCanvas)
-: KGrGameCanvasItem(KGrGameCanvas)
-, KGrGameCanvasAbstract()
+KGameCanvasGroup::KGameCanvasGroup(KGameCanvasAbstract* KGameCanvas)
+: KGameCanvasItem(KGameCanvas)
+, KGameCanvasAbstract()
 , m_child_rect_changed(true) {
 
 }
 
-KGrGameCanvasGroup::~KGrGameCanvasGroup() {
+KGameCanvasGroup::~KGameCanvasGroup() {
 
 }
 
-void KGrGameCanvasGroup::ensureAnimating() {
+void KGameCanvasGroup::ensureAnimating() {
   setAnimated(true);
 }
 
-void KGrGameCanvasGroup::ensurePendingUpdate() {
+void KGameCanvasGroup::ensurePendingUpdate() {
    if(!m_changed || !m_child_rect_changed) {
      m_child_rect_changed = true;
-     KGrGameCanvasItem::changed();
+     KGameCanvasItem::changed();
    }
 }
 
-void KGrGameCanvasGroup::updateChanges() {
+void KGameCanvasGroup::updateChanges() {
   if(!m_changed)
     return;
   for(int i=0;i<m_items.size();i++) {
-    KGrGameCanvasItem *el = m_items[i];
+    KGameCanvasItem *el = m_items[i];
 
     if(el->m_changed)
       el->updateChanges();
@@ -530,33 +529,33 @@ void KGrGameCanvasGroup::updateChanges() {
   m_changed = false;
 }
 
-void KGrGameCanvasGroup::changed() {
+void KGameCanvasGroup::changed() {
   if(!m_changed) {
-    KGrGameCanvasItem::changed();
+    KGameCanvasItem::changed();
 
     for(int i=0;i<m_items.size();i++)
       m_items[i]->changed();
   }
 }
 
-void KGrGameCanvasGroup::invalidate(const QRect& r, bool translate) {
+void KGameCanvasGroup::invalidate(const QRect& r, bool translate) {
   if(m_canvas)
     m_canvas->invalidate(translate ? r.translated(m_pos) : r);
   if(!m_changed)
     ensurePendingUpdate();
 }
 
-void KGrGameCanvasGroup::invalidate(const QRegion& r, bool translate) {
+void KGameCanvasGroup::invalidate(const QRegion& r, bool translate) {
   if(m_canvas)
     m_canvas->invalidate(translate ? r.translated(m_pos) : r);
   if(!m_changed)
     ensurePendingUpdate();
 }
 
-void KGrGameCanvasGroup::advance(int msecs) {
+void KGameCanvasGroup::advance(int msecs) {
   for(int i=0;i<m_animated_items.size();i++)
   {
-      KGrGameCanvasItem *el = m_animated_items[i];
+      KGameCanvasItem *el = m_animated_items[i];
       el->advance(msecs);
   }
 
@@ -564,7 +563,7 @@ void KGrGameCanvasGroup::advance(int msecs) {
       setAnimated(false);
 }
 
-void KGrGameCanvasGroup::paintInternal(QPainter* p, const QRect& prect,
+void KGameCanvasGroup::paintInternal(QPainter* p, const QRect& prect,
           const QRegion& preg, QPoint delta, double cumulative_opacity) {
   cumulative_opacity *= (m_opacity/255.0);
 
@@ -572,7 +571,7 @@ void KGrGameCanvasGroup::paintInternal(QPainter* p, const QRect& prect,
   p->translate(m_pos);
 
   for(int i=0;i<m_items.size();i++) {
-    KGrGameCanvasItem *el = m_items[i];
+    KGameCanvasItem *el = m_items[i];
     QRect r = el->rect().translated(delta);
 
     if( el->m_visible && prect.intersects( r ) && preg.contains( r ) ) {
@@ -584,11 +583,11 @@ void KGrGameCanvasGroup::paintInternal(QPainter* p, const QRect& prect,
   p->translate(-m_pos);
 }
 
-void KGrGameCanvasGroup::paint(QPainter* /*p*/) {
+void KGameCanvasGroup::paint(QPainter* /*p*/) {
   Q_ASSERT(!"This function should never be called");
 }
 
-QRect KGrGameCanvasGroup::rect() const
+QRect KGameCanvasGroup::rect() const
 {
   if(!m_child_rect_changed)
     return m_last_child_rect.translated(m_pos);
@@ -597,7 +596,7 @@ QRect KGrGameCanvasGroup::rect() const
   m_last_child_rect = QRect();
   for(int i=0;i<m_items.size();i++)
   {
-    KGrGameCanvasItem *el = m_items[i];
+    KGameCanvasItem *el = m_items[i];
     if(el->m_visible)
       m_last_child_rect |= el->rect();
   }
@@ -605,63 +604,63 @@ QRect KGrGameCanvasGroup::rect() const
   return m_last_child_rect.translated(m_pos);
 }
 
-KGrGameCanvasWidget* KGrGameCanvasGroup::topLevelCanvas()
+KGameCanvasWidget* KGameCanvasGroup::topLevelCanvas()
 {
     return m_canvas ? m_canvas->topLevelCanvas() : NULL;
 }
 
 /*
-    KGrGameCanvasDummy
+    KGameCanvasDummy
 */
-KGrGameCanvasDummy::KGrGameCanvasDummy(KGrGameCanvasAbstract* KGrGameCanvas)
-    : KGrGameCanvasItem(KGrGameCanvas)
+KGameCanvasDummy::KGameCanvasDummy(KGameCanvasAbstract* KGameCanvas)
+    : KGameCanvasItem(KGameCanvas)
 {
 
 }
 
-KGrGameCanvasDummy::~KGrGameCanvasDummy()
+KGameCanvasDummy::~KGameCanvasDummy()
 {
 
 }
 
-void KGrGameCanvasDummy::paintInternal(QPainter* /*pp*/, const QRect& /*prect*/,
+void KGameCanvasDummy::paintInternal(QPainter* /*pp*/, const QRect& /*prect*/,
                     const QRegion& /*preg*/, QPoint /*delta*/, double /*cumulative_opacity*/) {
 }
 
-void KGrGameCanvasDummy::paint(QPainter* /*p*/) {
+void KGameCanvasDummy::paint(QPainter* /*p*/) {
 }
 
-QRect KGrGameCanvasDummy::rect() const
+QRect KGameCanvasDummy::rect() const
 {
     return QRect();
 }
 
 
 /*
-    KGrGameCanvasPixmap
+    KGameCanvasPixmap
 */
-KGrGameCanvasPixmap::KGrGameCanvasPixmap(const QPixmap& p, KGrGameCanvasAbstract* KGrGameCanvas)
-    : KGrGameCanvasItem(KGrGameCanvas), m_pixmap(p) {
+KGameCanvasPixmap::KGameCanvasPixmap(const QPixmap& p, KGameCanvasAbstract* KGameCanvas)
+    : KGameCanvasItem(KGameCanvas), m_pixmap(p) {
 
 }
 
-KGrGameCanvasPixmap::KGrGameCanvasPixmap(KGrGameCanvasAbstract* KGrGameCanvas)
-    : KGrGameCanvasItem(KGrGameCanvas) {
+KGameCanvasPixmap::KGameCanvasPixmap(KGameCanvasAbstract* KGameCanvas)
+    : KGameCanvasItem(KGameCanvas) {
 
 }
 
-KGrGameCanvasPixmap::~KGrGameCanvasPixmap() {
+KGameCanvasPixmap::~KGameCanvasPixmap() {
 
 }
 
-void KGrGameCanvasPixmap::setPixmap(const QPixmap& p) {
+void KGameCanvasPixmap::setPixmap(const QPixmap& p) {
   m_pixmap = p;
   if(visible() && canvas() )
     changed();
 }
 
 #if QT_VERSION >= 0x040200
-void KGrGameCanvasPixmap::paintInternal(QPainter* p, const QRect& /*prect*/,
+void KGameCanvasPixmap::paintInternal(QPainter* p, const QRect& /*prect*/,
                   const QRegion& /*preg*/, QPoint /*delta*/, double cumulative_opacity) {
   int op = int(cumulative_opacity*opacity() + 0.5);
 
@@ -676,21 +675,21 @@ void KGrGameCanvasPixmap::paintInternal(QPainter* p, const QRect& /*prect*/,
 }
 #endif
 
-void KGrGameCanvasPixmap::paint(QPainter* p) {
+void KGameCanvasPixmap::paint(QPainter* p) {
   p->drawPixmap(pos(), m_pixmap);
 }
 
-QRect KGrGameCanvasPixmap::rect() const {
+QRect KGameCanvasPixmap::rect() const {
     return QRect(pos(), m_pixmap.size());
 }
 
 
 /*
-    KGrGameCanvasTiledPixmap
+    KGameCanvasTiledPixmap
 */
-KGrGameCanvasTiledPixmap::KGrGameCanvasTiledPixmap(const QPixmap& pixmap, QSize size, QPoint origin,
-                        bool move_orig, KGrGameCanvasAbstract* KGrGameCanvas)
-    : KGrGameCanvasItem(KGrGameCanvas)
+KGameCanvasTiledPixmap::KGameCanvasTiledPixmap(const QPixmap& pixmap, QSize size, QPoint origin,
+                        bool move_orig, KGameCanvasAbstract* KGameCanvas)
+    : KGameCanvasItem(KGameCanvas)
     , m_pixmap(pixmap)
     , m_size(size)
     , m_origin(origin)
@@ -698,31 +697,31 @@ KGrGameCanvasTiledPixmap::KGrGameCanvasTiledPixmap(const QPixmap& pixmap, QSize 
 
 }
 
-KGrGameCanvasTiledPixmap::KGrGameCanvasTiledPixmap(KGrGameCanvasAbstract* KGrGameCanvas)
-    : KGrGameCanvasItem(KGrGameCanvas)
+KGameCanvasTiledPixmap::KGameCanvasTiledPixmap(KGameCanvasAbstract* KGameCanvas)
+    : KGameCanvasItem(KGameCanvas)
     , m_size(0,0)
     , m_origin(0,0)
     , m_move_orig(false) {
 
 }
 
-KGrGameCanvasTiledPixmap::~KGrGameCanvasTiledPixmap() {
+KGameCanvasTiledPixmap::~KGameCanvasTiledPixmap() {
 
 }
 
-void KGrGameCanvasTiledPixmap::setPixmap(const QPixmap& pixmap) {
+void KGameCanvasTiledPixmap::setPixmap(const QPixmap& pixmap) {
     m_pixmap = pixmap;
     if(visible() && canvas() )
       changed();
 }
 
-void KGrGameCanvasTiledPixmap::setSize(QSize size) {
+void KGameCanvasTiledPixmap::setSize(QSize size) {
   m_size = size;
   if(visible() && canvas() )
     changed();
 }
 
-void KGrGameCanvasTiledPixmap::setOrigin(QPoint origin)
+void KGameCanvasTiledPixmap::setOrigin(QPoint origin)
 {
   m_origin = m_move_orig ? origin - pos() : origin;
 
@@ -731,7 +730,7 @@ void KGrGameCanvasTiledPixmap::setOrigin(QPoint origin)
 }
 
 
-void KGrGameCanvasTiledPixmap::setMoveOrigin(bool move_orig)
+void KGameCanvasTiledPixmap::setMoveOrigin(bool move_orig)
 {
   if(move_orig && !m_move_orig)
       m_origin -= pos();
@@ -741,7 +740,7 @@ void KGrGameCanvasTiledPixmap::setMoveOrigin(bool move_orig)
 }
 
 #if QT_VERSION >= 0x040200
-void KGrGameCanvasTiledPixmap::paintInternal(QPainter* p, const QRect& /*prect*/,
+void KGameCanvasTiledPixmap::paintInternal(QPainter* p, const QRect& /*prect*/,
                   const QRegion& /*preg*/, QPoint /*delta*/, double cumulative_opacity) {
   int op = int(cumulative_opacity*opacity() + 0.5);
 
@@ -759,7 +758,7 @@ void KGrGameCanvasTiledPixmap::paintInternal(QPainter* p, const QRect& /*prect*/
 }
 #endif
 
-void KGrGameCanvasTiledPixmap::paint(QPainter* p)
+void KGameCanvasTiledPixmap::paint(QPainter* p)
 {
     if(m_move_orig)
         p->drawTiledPixmap( rect(), m_pixmap, m_origin);
@@ -767,50 +766,50 @@ void KGrGameCanvasTiledPixmap::paint(QPainter* p)
         p->drawTiledPixmap( rect(), m_pixmap, m_origin+pos() );
 }
 
-QRect KGrGameCanvasTiledPixmap::rect() const
+QRect KGameCanvasTiledPixmap::rect() const
 {
     return QRect(pos(), m_size);
 }
 
 
 /*
-    KGrGameCanvasRectangle
+    KGameCanvasRectangle
 */
-KGrGameCanvasRectangle::KGrGameCanvasRectangle(const QColor& color, QSize size, KGrGameCanvasAbstract* KGrGameCanvas)
-    : KGrGameCanvasItem(KGrGameCanvas)
+KGameCanvasRectangle::KGameCanvasRectangle(const QColor& color, QSize size, KGameCanvasAbstract* KGameCanvas)
+    : KGameCanvasItem(KGameCanvas)
     , m_color(color)
     , m_size(size)
 {
 
 }
 
-KGrGameCanvasRectangle::KGrGameCanvasRectangle(KGrGameCanvasAbstract* KGrGameCanvas)
-    : KGrGameCanvasItem(KGrGameCanvas)
+KGameCanvasRectangle::KGameCanvasRectangle(KGameCanvasAbstract* KGameCanvas)
+    : KGameCanvasItem(KGameCanvas)
     , m_size(0,0)
 {
 
 }
 
-KGrGameCanvasRectangle::~KGrGameCanvasRectangle()
+KGameCanvasRectangle::~KGameCanvasRectangle()
 {
 
 }
 
-void KGrGameCanvasRectangle::setColor(const QColor& color)
+void KGameCanvasRectangle::setColor(const QColor& color)
 {
   m_color = color;
   if(visible() && canvas() )
     changed();
 }
 
-void KGrGameCanvasRectangle::setSize(QSize size)
+void KGameCanvasRectangle::setSize(QSize size)
 {
   m_size = size;
   if(visible() && canvas() )
     changed();
 }
 
-void KGrGameCanvasRectangle::paintInternal(QPainter* p, const QRect& /*prect*/,
+void KGameCanvasRectangle::paintInternal(QPainter* p, const QRect& /*prect*/,
                   const QRegion& /*preg*/, QPoint /*delta*/, double cumulative_opacity) {
   QColor col = m_color;
   cumulative_opacity *= opacity()/255.0;
@@ -819,22 +818,22 @@ void KGrGameCanvasRectangle::paintInternal(QPainter* p, const QRect& /*prect*/,
   p->fillRect( rect(), col );
 }
 
-void KGrGameCanvasRectangle::paint(QPainter* p) {
+void KGameCanvasRectangle::paint(QPainter* p) {
   p->fillRect( rect(), m_color );
 }
 
-QRect KGrGameCanvasRectangle::rect() const {
+QRect KGameCanvasRectangle::rect() const {
     return QRect(pos(), m_size);
 }
 
 
 /*
-    KGrGameCanvasText
+    KGameCanvasText
 */
-KGrGameCanvasText::KGrGameCanvasText(const QString& text, const QColor& color,
+KGameCanvasText::KGameCanvasText(const QString& text, const QColor& color,
                         const QFont& font, HPos hp, VPos vp,
-                        KGrGameCanvasAbstract* KGrGameCanvas)
-    : KGrGameCanvasItem(KGrGameCanvas)
+                        KGameCanvasAbstract* KGameCanvas)
+    : KGameCanvasItem(KGameCanvas)
     , m_text(text)
     , m_color(color)
     , m_font(font)
@@ -843,8 +842,8 @@ KGrGameCanvasText::KGrGameCanvasText(const QString& text, const QColor& color,
     calcBoundingRect();
 }
 
-KGrGameCanvasText::KGrGameCanvasText(KGrGameCanvasAbstract* KGrGameCanvas)
-    : KGrGameCanvasItem(KGrGameCanvas)
+KGameCanvasText::KGameCanvasText(KGameCanvasAbstract* KGameCanvas)
+    : KGameCanvasItem(KGameCanvas)
     , m_text("")
     , m_color(Qt::black)
     , m_font(QApplication::font())
@@ -853,11 +852,11 @@ KGrGameCanvasText::KGrGameCanvasText(KGrGameCanvasAbstract* KGrGameCanvas)
 
 }
 
-KGrGameCanvasText::~KGrGameCanvasText() {
+KGameCanvasText::~KGameCanvasText() {
 
 }
 
-void KGrGameCanvasText::calcBoundingRect() {
+void KGameCanvasText::calcBoundingRect() {
     m_bounding_rect = QFontMetrics(m_font).boundingRect(m_text);
     /*printf("b rect is %d %d %d %d\n",
         m_bounding_rect.x(),
@@ -866,7 +865,7 @@ void KGrGameCanvasText::calcBoundingRect() {
         m_bounding_rect.height() );*/
 }
 
-void KGrGameCanvasText::setText(const QString& text) {
+void KGameCanvasText::setText(const QString& text) {
   if(m_text == text)
     return;
   m_text = text;
@@ -876,11 +875,11 @@ void KGrGameCanvasText::setText(const QString& text) {
     changed();
 }
 
-void KGrGameCanvasText::setColor(const QColor& color) {
+void KGameCanvasText::setColor(const QColor& color) {
   m_color = color;
 }
 
-void KGrGameCanvasText::setFont(const QFont& font) {
+void KGameCanvasText::setFont(const QFont& font) {
   m_font = font;
   calcBoundingRect();
 
@@ -888,14 +887,14 @@ void KGrGameCanvasText::setFont(const QFont& font) {
     changed();
 }
 
-void KGrGameCanvasText::setPositioning(HPos hp, VPos vp) {
+void KGameCanvasText::setPositioning(HPos hp, VPos vp) {
   pos() += offsetToDrawPos();
   m_hpos = hp;
   m_vpos = vp;
   pos() -= offsetToDrawPos();
 }
 
-QPoint KGrGameCanvasText::offsetToDrawPos() const {
+QPoint KGameCanvasText::offsetToDrawPos() const {
     QPoint retv;
 
     switch(m_hpos) {
@@ -931,7 +930,7 @@ QPoint KGrGameCanvasText::offsetToDrawPos() const {
     return retv;
 }
 
-void KGrGameCanvasText::paintInternal(QPainter* p, const QRect& /*prect*/,
+void KGameCanvasText::paintInternal(QPainter* p, const QRect& /*prect*/,
                   const QRegion& /*preg*/, QPoint /*delta*/, double cumulative_opacity) {
   QColor col = m_color;
   cumulative_opacity *= opacity()/255.0;
@@ -942,38 +941,38 @@ void KGrGameCanvasText::paintInternal(QPainter* p, const QRect& /*prect*/,
   p->drawText( pos() + offsetToDrawPos(), m_text);
 }
 
-void KGrGameCanvasText::paint(QPainter* p) {
+void KGameCanvasText::paint(QPainter* p) {
   p->setPen(m_color);
   p->setFont(m_font);
   p->drawText( pos() + offsetToDrawPos(), m_text);
 }
 
-QRect KGrGameCanvasText::rect() const {
+QRect KGameCanvasText::rect() const {
     return m_bounding_rect.translated( pos() + offsetToDrawPos() );
 }
 
 
 /*
-    KGrGameCanvasPicture
+    KGameCanvasPicture
 */
-KGrGameCanvasPicture::KGrGameCanvasPicture(const QPicture& p, KGrGameCanvasAbstract* KGrGameCanvas)
-    : KGrGameCanvasItem(KGrGameCanvas), m_picture(p)
+KGameCanvasPicture::KGameCanvasPicture(const QPicture& p, KGameCanvasAbstract* KGameCanvas)
+    : KGameCanvasItem(KGameCanvas), m_picture(p)
 {
 
 }
 
-KGrGameCanvasPicture::KGrGameCanvasPicture(KGrGameCanvasAbstract* KGrGameCanvas)
-    : KGrGameCanvasItem(KGrGameCanvas)
+KGameCanvasPicture::KGameCanvasPicture(KGameCanvasAbstract* KGameCanvas)
+    : KGameCanvasItem(KGameCanvas)
 {
 
 }
 
-KGrGameCanvasPicture::~KGrGameCanvasPicture()
+KGameCanvasPicture::~KGameCanvasPicture()
 {
 
 }
 
-void KGrGameCanvasPicture::setPicture(const QPicture& p)
+void KGameCanvasPicture::setPicture(const QPicture& p)
 {
   m_picture = p;
 
@@ -981,15 +980,15 @@ void KGrGameCanvasPicture::setPicture(const QPicture& p)
     changed();
 }
 
-void KGrGameCanvasPicture::paint(QPainter* p)
+void KGameCanvasPicture::paint(QPainter* p)
 {
     p->drawPicture(pos(), m_picture);
 }
 
-QRect KGrGameCanvasPicture::rect() const
+QRect KGameCanvasPicture::rect() const
 {
     return m_picture.boundingRect().translated( pos());
 }
 
 
-#include "kgrgamecanvas.moc"
+#include "kgamecanvas.moc"
