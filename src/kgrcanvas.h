@@ -19,10 +19,10 @@
 #define KGRCANVAS_H
 
 #include <config.h>
+#include <kgamecanvas.h>
 
 #include "kgrplayfield.h"
 #include "kgrsprite.h"
-#include "kgamecanvas.h"
 
 #include <qcursor.h>
 #include <QLabel>

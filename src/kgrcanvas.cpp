@@ -42,7 +42,7 @@
 class KGoldrunner;
 
 KGrCanvas::KGrCanvas (QWidget * parent, const char *name)
-	: KGrGameCanvasWidget (parent)
+	: KGameCanvasWidget (parent)
 {
     //setBackgroundMode (Qt::NoBackground);
     m = new QCursor ();		// For handling the mouse.
@@ -480,7 +480,7 @@ void KGrCanvas::makeBorder ()
     bw = border*cw/2;		// Total border width (= two cells).
     lw = cw/8;			// Line width (for edge of border).
     mw = bw - lw;		// Border main-part width.*/
-    KGrGameCanvasRectangle * nextRectangle;
+    KGameCanvasRectangle * nextRectangle;
 
     nextRectangle = drawRectangle (11, 0, 0, FIELDWIDTH*cw + 2*bw, mw);
     borderRectangles.append(nextRectangle);
@@ -506,10 +506,10 @@ void KGrCanvas::makeBorder ()
     borderRectangles.append(nextRectangle);
 }
 
-KGrGameCanvasRectangle * KGrCanvas::drawRectangle (int z, int x, int y, int w, int h)
+KGameCanvasRectangle * KGrCanvas::drawRectangle (int z, int x, int y, int w, int h)
 {
    double wmScale = (1.0 * scaleStep) / STEP;
-   KGrGameCanvasRectangle * r = new KGrGameCanvasRectangle (colour, QSize(w*wmScale,h*wmScale), this);
+   KGameCanvasRectangle * r = new KGameCanvasRectangle (colour, QSize(w*wmScale,h*wmScale), this);
 
 
     r->moveTo(x*wmScale,y*wmScale);

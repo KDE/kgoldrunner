@@ -18,7 +18,7 @@
 #ifndef KGRPLAYFIELD_H
 #define KGRPLAYFIELD_H
 
-#include "kgamecanvas.h"
+#include <kgamecanvas.h>
 
 #include <QObject>
 #include <QPixmap>

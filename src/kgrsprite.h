@@ -19,7 +19,8 @@
 
 #include <config.h>
 
-#include "kgrgamecanvas.h"
+#include <kgamecanvas.h>
+
 #include <QPixmap>
 #include <QList>
 
