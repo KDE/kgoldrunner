@@ -367,12 +367,12 @@ void KGoldrunner::setupActions()
 				0,
 				this, SLOT(champSpeed()), actionCollection(),
 				"champion_speed");
-    KRadioAction * iSpeed =	new KRadioAction (
+    (void)			new KAction (		// Repeatable action.
 				i18n("Increase Speed"),
 				Key_Plus,
 				this, SLOT(incSpeed()), actionCollection(),
 				"increase_speed");
-    KRadioAction * dSpeed =	new KRadioAction (
+    (void)			new KAction (		// Repeatable action.
 				i18n("Decrease Speed"),
 				Key_Minus,
 				this, SLOT(decSpeed()), actionCollection(),
@@ -381,8 +381,6 @@ void KGoldrunner::setupActions()
     nSpeed->			setExclusiveGroup ("speed");
     bSpeed->			setExclusiveGroup ("speed");
     cSpeed->			setExclusiveGroup ("speed");
-    iSpeed->			setExclusiveGroup ("speed");
-    dSpeed->			setExclusiveGroup ("speed");
     nSpeed->			setChecked (TRUE);
 
     // Traditional Rules
