@@ -397,26 +397,24 @@ void KGoldrunner::setupActions()
 				"champion_speed");
     connect( cSpeed, SIGNAL(triggered(bool)), this, SLOT(champSpeed()));
 
-    KToggleAction * iSpeed =	new KToggleAction (
+    KAction * iSpeed =		new KAction (		// Repeatable action.
 				i18n("Increase Speed"),
 				actionCollection(),
 				"increase_speed");
     iSpeed->setShortcut( Qt::Key_Plus );
     connect( iSpeed, SIGNAL(triggered(bool)), this, SLOT(incSpeed()));
 
-    KToggleAction * dSpeed =	new KToggleAction (
+    KAction * dSpeed =		new KAction (		// Repeatable action.
 				i18n("Decrease Speed"),
 				actionCollection(),
 				"decrease_speed");
-    iSpeed->setShortcut( Qt::Key_Minus );
+    dSpeed->setShortcut( Qt::Key_Minus );
     connect( dSpeed, SIGNAL(triggered(bool)), this, SLOT(decSpeed()));
 
     QActionGroup* speedGrp = new QActionGroup(this);
     speedGrp->addAction(nSpeed);
     speedGrp->addAction(bSpeed);
     speedGrp->addAction(cSpeed);
-    speedGrp->addAction(iSpeed);
-    speedGrp->addAction(dSpeed);
     nSpeed->setChecked(true);
 
     // Traditional Rules

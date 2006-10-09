@@ -87,5 +87,8 @@
     <Action shortcut="Space"		name="stop" />
     <Action shortcut="Z;U"		name="dig_left" />
     <Action shortcut="C;O"		name="dig_right" />
+
+    <Action shortcut="+"		name="increase_speed" />
+    <Action shortcut="-"		name="decrease_speed" />
 </ActionProperties>
 </kpartgui>
