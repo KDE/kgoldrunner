@@ -10,6 +10,11 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
+/*
+ * Many thanks to Kevin Krammer and Alex Sopicki for translating the
+ * original comments in this program code from German into English.
+ */
+
 #include "kgrconsts.h"
 #include "kgrobject.h"
 #include "kgrcanvas.h"
@@ -196,7 +201,7 @@ void KGrFigure::walkDown(int WALKDELAY, int FALLDELAY)
 
 	    // Must be able to halt at a pole when going down.
 	    if (! (canStand() || hangAtPole()))
-		initFall(FALL2, FALLDELAY);	// kein Halt....urgs
+		initFall(FALL2, FALLDELAY);	// Nothing to hold: so fall.
 	    else
 		// Wait for caller to set next direction.
 		status = STANDING;
@@ -242,32 +247,32 @@ void KGrFigure::walkLeft (int WALKDELAY, int FALLDELAY)
 
 void KGrFigure::walkRight(int WALKDELAY, int FALLDELAY)
 {
-    if (walkCounter++) {		// wenn 0, soll sich Figur nur umdrehen
-	if (++actualPixmap % 4) {	// wenn true, dann ist kein vollständiger Schritt gemacht
-	    if (canWalkRight()) {
+    if (walkCounter++) {		// If 0, just turn the figure around.
+	if (++actualPixmap % 4) {	// If true, the animation is incomplete.
+	    if (canWalkRight()) {	// Move right, if it's possible.
 		relx += STEP;
-		absx += STEP;	// nur vorwärts gehen, wenn es auch möglich ist
+		absx += STEP;
 	    }
 	    walkTimer->setSingleShot( true );
 	    walkTimer->start ((WALKDELAY * NSPEED) / speed);
 	}
 	else {
-	    actualPixmap -= 4;		// Schritt war vollendet
+	    actualPixmap -= 4;		// The animation cycle is complete.
 	    if (canWalkRight()) {
 		x++;
-	    }				//gehe entgültig nach rechts
+	    }				// Set the figure's new position.
 	    // Always reset position, in case we are stuck partly into a brick.
 	    relx = 0;
 	    absx = x*16;
 
-	    if (!(canStand()||hangAtPole())) // kein Halt mehr...arrrgghhh
+	    if (!(canStand()||hangAtPole())) // Cannot hold on: so fall.
 		initFall (FALL2, FALLDELAY);
 	    else
-		status = STANDING;	// Figur hat Halt
+		status = STANDING;	     // Else, stand.
 	}
     }
     else {
-	status = STANDING;		// Figur sollte sich nur Umdrehen.
+	status = STANDING;		// Just turn the figure around.
     }
 }
 
@@ -318,9 +323,9 @@ KGrHero :: KGrHero (KGrCanvas * view, int x, int y)
 int KGrHero::WALKDELAY = 0;
 int KGrHero::FALLDELAY = 0;
 
-/* Es ist Notwendig der eigentlichen Timerfunktion diese
-   Startwalk vorzuschalten, um bei einem evtl. notwendigem
-   Richtungswechsel der Figur diese Bewegung mit einzufügen */
+/* It is necessary to execute startWalk before the timer-function code, in order
+   to take changes of direction into account when doing the animation steps.
+*/
 void KGrHero::startWalk ()
 {
   switch (nextDir) {
@@ -345,8 +350,9 @@ void KGrHero::startWalk ()
 	  ((*playfield)[x][y+1]->whatIam () == LADDER))
 	{walkCounter = 1;
 	direction = DOWN;}
-      else // wenn figur an Stange haengt und nichts unter ihr,
-	if (hangAtPole() && (!canStand())) // dann soll sie fallen
+      else			// If the hero is hanging from a pole and there
+				// is nothing to stand on, let him fall.
+	if (hangAtPole() && (!canStand()))
 	  { status = STANDING;
 	  actualPixmap = (direction==RIGHT)?19:18;
 	  walkCounter=1;
@@ -371,9 +377,9 @@ void KGrHero::startWalk ()
       break;
     }
   nextDir = STAND;
-  if (status != FALLING)//immer ausführen, ausser beim fallen
-    { status = WALKING; // da sonst der FALLINGstatus wieder
-    showFigure ();      // geaendert wird und der falsche Timer anspringt.
+  if (status != FALLING)	// Always execute, unless we are falling, in
+    { status = WALKING;		// which case the state change would be wrong
+    showFigure ();		// and the wrong timer would be triggered.
     }
 } // END KGrHero::startWalk
 
@@ -508,7 +514,7 @@ void KGrHero::start()
     walkFrozen = false;
     fallFrozen = false;
 
-    if (!(canStand()||hangAtPole())) {		// Held muss wohl fallen...
+    if (!(canStand()||hangAtPole())) {		// Hero must fall ...
 	status = FALLING;
 	fallTimeDone();
     }
@@ -575,11 +581,9 @@ void KGrHero::walkTimeDone ()
 	else  status = STANDING;
       break;
       }
-    herox=x;heroy=y; // Koordinatenvariablen neu
-    // wenn Held genau ein Feld weitergelaufen ist,
-    if ((relx==0)&&(rely==0)) // dann setzte statische
-      {
-      collectNugget(); // und nehme evtl. Nugget
+    herox=x; heroy=y;			// Set the hero's new position.
+    if ((relx==0)&&(rely==0)) {		// If he has just completed a move, see
+      collectNugget();			// if there is a nugget to collect.
       }
     showFigure();
     }
@@ -603,25 +607,25 @@ void KGrHero::fallTimeDone()
     if (KGrObject::frozen) {fallFrozen = true; return; }
 
     if (!standOnEnemy()) {
-	if (walkCounter++ < 4) {	// Held fällt vier Positionen
+	if (walkCounter++ < 4) {	// The hero must fall four steps.
 	    fallTimer->setSingleShot(true);
 	    fallTimer->start((FALLDELAY * NSPEED) / speed);
 	    rely+=STEP;
 	    absy+=STEP;
 	}
-	else {				//Held ist ein Feld weitergefallen
-	    // Verschiebung der Figur zum 0-Punkt des Objekts (Brick etc...)
+	else {				// When done, move to the start position
+					// of the next object (brick, etc.).
 	    heroy = ++y;
 	    rely = 0;
-	    absy = y*16;		// wird Null und Figur eins runter
-	    collectNugget();		// gesetzt. Zeit evtl. Nugget zu nehmen
-	    if (! (canStand()||hangAtPole())) {	// Held muss wohl weiterfallen.
+	    absy = y*16;
+	    collectNugget();		// See if there is a nugget to collect.
+	    if (! (canStand()||hangAtPole())) {	// The hero goes on falling.
 		fallTimer->setSingleShot(true);
 		fallTimer->start((FALLDELAY * NSPEED) / speed);
 		walkCounter = 1;
 	    }
-	    else {			// Held hat Boden (oder Feind) unter den
-		status = STANDING;	// Füssen oder hängt an Stange -> steh!
+	    else {			// The hero can stand or hang on a pole,
+		status = STANDING;	// so change his state to STANDING.
 		walkTimer->setSingleShot(true);
 		walkTimer->start((WALKDELAY * NSPEED) / speed);
 		direction = (actualPixmap == 19) ? RIGHT : LEFT;
@@ -660,7 +664,7 @@ void KGrHero::showFigure () {
 
   heroView->moveHero (absx, absy, actualPixmap);
 
-  // Merke alte Werte zum löschen der Figur
+  // Save old values for when we delete the figure from its old position later.
   mem_x = x;
   mem_y = y;
   mem_relx = relx;
@@ -742,9 +746,9 @@ void KGrHero::collectNugget(){
     {
       ((KGrFree *)(*playfield)[x][y])->setNugget(false);
       if (!(--nuggets))
-	emit haveAllNuggets();	// sendet der Application dass alle Nuggets
-			    // gesammelt sind, um versteckte Leitern zu zeigen
-      emit gotNugget(250); // sendet der Application ein Nugget um Score zu erhöhen
+	emit haveAllNuggets();	// Tell the application that all the nuggets are
+				// gone, so that it can show the hidden ladders.
+      emit gotNugget(250);	// Tell the application to increase the score.
 
     }
 }
@@ -753,8 +757,8 @@ void KGrHero::loseNugget() {
 
     // Enemy trapped or dead and could not drop nugget (NO SCORE for this).
     if (! (--nuggets))
-	emit haveAllNuggets();	// Sendet der Application dass alle Nuggets
-			  // gesammelt sind, um versteckte Leitern zu zeigen.
+	emit haveAllNuggets();	// Tell the application that all the nuggets are
+				// gone, so that it can show the hidden ladders.
 }
 
 bool KGrHero::isInEnemy(){
@@ -855,9 +859,9 @@ void KGrEnemy::showState(char option)
 
 void KGrEnemy::init(int a,int b)
 {
-  walkTimer->stop(); // alles stoppen bevor die Werte neu gesetzt
-  fallTimer->stop(); // werden, da es sonst zu ungewollten Effekten
-  captiveTimer->stop(); // kommen kann
+  walkTimer->stop();		// Stop all timers (avoid run-ons of old level).
+  fallTimer->stop();
+  captiveTimer->stop();
   walkCounter = 1;
   captiveCounter = 0;
 
@@ -880,8 +884,8 @@ void KGrEnemy::walkTimeDone ()
 
   // Check we are alive BEFORE checking for friends being in the way.
   // Maybe a friend overhead is blocking our escape from a brick.
-  if ((*playfield)[x][y]->whatIam()==BRICK) {	// sollte er aber in einem Brick
-    dieAndReappear();				// sein, dann stirbt er wohl
+  if ((*playfield)[x][y]->whatIam()==BRICK) {	// If stuck in a brick, die.
+    dieAndReappear();
     return;			// Must leave "walkTimeDone" when an enemy dies.
     }
 
@@ -890,8 +894,7 @@ void KGrEnemy::walkTimeDone ()
       case UP:		walkUp (WALKDELAY);
 			if ((rely == 0) &&
 			    ((*playfield)[x][y+1]->whatIam() == USEDHOLE))
-			    // Enemy kletterte grad aus einem Loch hinaus
-			    // -> gib es frei!
+			    // Enemy climbs out of hole, mark it as free.
 			    ((KGrBrick *)(*playfield)[x][y+1])->unUseHole();
 			break;
       case DOWN:	walkDown (WALKDELAY, FALLDELAY); break;
@@ -903,19 +906,19 @@ void KGrEnemy::walkTimeDone ()
 			status = STANDING;
 			break;
     }
-    // wenn die Figur genau ein Feld gelaufen ist
-    if (status == STANDING) { // dann suche den Helden
-      direction = searchbestway(x,y,herox,heroy); // und
+    // If we have completed a move, look for the hero again.
+    if (status == STANDING) {
+      direction = searchbestway(x,y,herox,heroy);
       if (walkCounter >= 4) {
         if (! nuggets)
 	    collectNugget();
         else
 	    dropNugget();
       }
-      status = WALKING; // initialisiere die Zählervariablen und
-      walkCounter = 1; // den Timer um den Held weiter
+      status = WALKING;
+      walkCounter = 1;
       walkTimer->setSingleShot( true );
-      walkTimer->start ((WALKDELAY * NSPEED) / speed); // zu jagen
+      walkTimer->start ((WALKDELAY * NSPEED) / speed);
       startWalk ();
       }
   }
@@ -941,10 +944,9 @@ void KGrEnemy::fallTimeDone ()
 {
   if (KGrObject::frozen) {fallFrozen = true; return; }
 
-  if ((*playfield)[x][y+1]->whatIam() == HOLE) {  // wenn Enemy ins Loch fällt
-    ((KGrBrick*)(*playfield)[x][y+1])->useHole(); // reserviere das Loch, damit
-						  // kein anderer es benutzt und
-    if (nuggets) {			  // er muss Gold vorher fallen lassen
+  if ((*playfield)[x][y+1]->whatIam() == HOLE) { // If the enemy is falling into
+    ((KGrBrick*)(*playfield)[x][y+1])->useHole();// a hole, mark it as used and
+    if (nuggets) {				 // drop any gold he is holding.
       nuggets=0;
       switch ((*playfield)[x][y]->whatIam()) {
       case FREE:
@@ -963,8 +965,8 @@ void KGrEnemy::fallTimeDone ()
 	}
   }
 
-  if ((*playfield)[x][y]->whatIam()==BRICK) {	// sollte er aber in einem Brick
-    dieAndReappear();				// sein, dann stirbt er wohl
+  if ((*playfield)[x][y]->whatIam()==BRICK) {	// If stuck in a brick, die.
+    dieAndReappear();
     return;			// Must leave "fallTimeDone" when an enemy dies.
     }
 
@@ -1077,7 +1079,7 @@ void KGrEnemy::showFigure ()
 {
   enemyView->moveEnemy (enemyId, absx, absy, actualPixmap, nuggets);
 
-  // Merke alte Werte zum löschen der Figur
+  // Save old values for when we delete the figure from its old position later.
   mem_x = x;
   mem_y = y;
   mem_relx = relx;
@@ -1283,23 +1285,23 @@ int i,j;
 Direction KGrEnemy :: searchleftway(int ew,int eh){
 int i,j;
  i=j=eh;
- if ( ((*playfield)[ew][eh]->searchValue & CANWALKLEFT) || /* kann figur nach links laufen ?*/
+ if ( ((*playfield)[ew][eh]->searchValue & CANWALKLEFT) || /* Can walk left? */
 	     (runThruHole && ( (*playfield)[ew-1][eh]->whatIam() == HOLE)))
    return LEFT;
- else while((i>=0)||(j<=FIELDHEIGHT)){ /* in den grenzen ?*/
+ else while((i>=0)||(j<=FIELDHEIGHT)){			/* Within bounds? */
    if (i>=0)
-     if ( ((*playfield)[ew][i]->searchValue & CANWALKLEFT) || /* ein weg nach links- oben gefunden ?*/
+     if ( ((*playfield)[ew][i]->searchValue & CANWALKLEFT) || /* Up and left? */
 	     (runThruHole && ( (*playfield)[ew-1][i]->whatIam() == HOLE)))
-       return UP; /* geh nach oben */
+       return UP;					/* Go up. */
      else
-       if (!( (*playfield)[ew][i--]->searchValue & CANWALKUP)) /* sonst ...*/
+       if (!( (*playfield)[ew][i--]->searchValue & CANWALKUP)) /* Otherwise */
 	 i=-1;
    if (j<=FIELDHEIGHT)
-     if ( ((*playfield)[ew][j]->searchValue & CANWALKLEFT) || /* ein weg nach links- unten gefunden ?*/
+     if ( ((*playfield)[ew][j]->searchValue & CANWALKLEFT) || /* Down and L? */
 	     (runThruHole && ( (*playfield)[ew-1][j]->whatIam() == HOLE)))
-       return DOWN; /* geh nach unten */
+       return DOWN;					/* Go down. */
      else
-       if (!( (*playfield)[ew][j++]->searchValue&CANWALKDOWN)) /* sonst ... */
+       if (!( (*playfield)[ew][j++]->searchValue&CANWALKDOWN)) /* Otherwise */
        j=FIELDHEIGHT+1;
  }
  return STAND; /* default */

@@ -10,6 +10,11 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
+/*
+ * Many thanks to Kevin Krammer and Alex Sopicki for translating the
+ * original comments in this program code from German into English.
+ */
+
 #ifndef KGRFIGURE_H
 #define KGRFIGURE_H
 
@@ -22,7 +27,7 @@
 #include <QPixmap>
 #include <QTimer>
 #include <QWidget>
-#include <stdlib.h> // für Zufallsfunktionen
+#include <stdlib.h>			// For random-number generator.
 
 class KGrCanvas;
 class KGrObject;
@@ -61,15 +66,15 @@ protected:
   static int herox;
   static int heroy;
 
-  static int speed;		// Adjustable game-speed factor.
+  static int speed;			// Adjustable game-speed factor.
 
   int x, y;
   int absx, absy;
-  int relx, rely; // Figur wird um relx,rely Pixel verschoben
+  int relx, rely;			// Relative movement, in pixels.
   int mem_x,mem_y,mem_relx,mem_rely;
   int walkCounter;
   int nuggets;
-  int actualPixmap; // ArrayPos der zu zeichnenden Pixmap
+  int actualPixmap;			// Array index of the pixmap to draw.
   QTimer *walkTimer;
   QTimer *fallTimer;
 
