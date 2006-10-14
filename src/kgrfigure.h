@@ -51,9 +51,10 @@ public:
 
   static Timing varTiming [6];		// Optional 6 sets of timing values,
 					// dependent on number of enemies.
-  void incnuggetd();
   int getx();
   int gety();
+  Status getStatus();
+
   int getnuggets();
   void setNuggets(int n);
   void setPlayfield(KGrObject *(*p)[30][22]);

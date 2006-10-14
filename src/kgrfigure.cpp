@@ -76,6 +76,11 @@ int KGrFigure::gety()
   return absy;
 }
 
+Status KGrFigure::getStatus()
+{
+    return status;
+}
+
 void KGrFigure::init(int a,int b)
 {
   walkTimer->stop();
@@ -575,13 +580,19 @@ void KGrHero::walkTimeDone ()
       {
       collectNugget(); // und nehme evtl. Nugget
       }
-    showFigure();
+    showFigure();	// Is this REDUNDANT now?  See showFigure() below.
+			//////////////////////////////////////////////////
     }
   if (status == STANDING)
     if (!canStand()&&!hangAtPole())
       initFall(FALL1, FALLDELAY);
     else
       walkTimer->start ((WALKDELAY * NSPEED) / speed, TRUE);
+
+  // This additional showFigure() is to update the hero position after it is
+  // altered by the hero-enemy deadlock fix in standOnEnemy().  Messy, but ...
+  ////////////////////////////////////////////////////////////////////////////
+  showFigure();
   if(isInEnemy()) {
     walkTimer->stop();
     emit caughtHero();
@@ -615,8 +626,9 @@ void KGrHero::fallTimeDone()
 		direction = (actualPixmap == 19) ? RIGHT : LEFT;
 		if ((*playfield)[x][y]->whatIam() == POLE)
 		    actualPixmap = (direction == RIGHT)? RIGHTCLIMB1:LEFTCLIMB1;
-		else
-		    actualPixmap = (direction == RIGHT)? RIGHTWALK1:LEFTWALK1;
+		// else
+		    // Reduce jerkiness when descending over a falling enemy.
+		    // actualPixmap = (direction == RIGHT)? RIGHTWALK1:LEFTWALK1;
 	    }
 	}
 	showFigure();
@@ -628,8 +640,9 @@ void KGrHero::fallTimeDone()
 	    direction = (actualPixmap == 19) ? RIGHT : LEFT;
 	    if ((*playfield)[x][y]->whatIam() == POLE)
 		actualPixmap = (direction == RIGHT)? RIGHTCLIMB1:LEFTCLIMB1;
-	    else
-		actualPixmap = (direction == RIGHT)? RIGHTWALK1:LEFTWALK1;
+	    // else
+		// Reduce jerkiness when descending over a falling enemy.
+		// actualPixmap = (direction == RIGHT)? RIGHTWALK1:LEFTWALK1;
 	    walkTimer->start((WALKDELAY * NSPEED) / speed, TRUE);
 	}
 	else {
@@ -719,6 +732,12 @@ bool KGrHero::standOnEnemy()
 		 ((absy + 12) == enemy->gety())) &&
 		(((absx - 16) <  enemy->getx()) &&
 		 ((absx + 16) >  enemy->getx()))) {
+                if (((absy + 12) == enemy->gety()) &&
+                    (enemy->getStatus() != FALLING)) {
+                    absy = absy - rely; // Bounce back from overlap, to avoid
+                    rely = 0;           // hero-enemy mid-cycle deadlock.
+                    walkCounter = 1;
+		}
 		return true;
 	    }
 	}
@@ -890,7 +909,16 @@ void KGrEnemy::walkTimeDone ()
       default:		// Switch search direction in KGoldrunner search (only).
 			searchStatus = (searchStatus==VERTIKAL) ?
 					HORIZONTAL : VERTIKAL;
-			status = STANDING;
+
+                        // In KGoldrunner rules, if a hole opens under an enemy
+                        // who is standing and waiting to move, he should fall.
+                        if (!(canStand()||hangAtPole())) {
+                            initFall (actualPixmap, FALLDELAY);
+                        }
+                        else {
+                            status = STANDING;
+                        }
+
 			break;
     }
     // wenn die Figur genau ein Feld gelaufen ist
@@ -911,6 +939,11 @@ void KGrEnemy::walkTimeDone ()
   else {
     // A friend is in the way.  Try a new direction, but not if leaving a hole.
     Direction dirn;
+
+    // In KGoldrunner rules, change the search strategy,
+    // to avoid enemy-enemy deadlock.
+    searchStatus = (searchStatus==VERTIKAL) ? HORIZONTAL : VERTIKAL;
+
     dirn = searchbestway (x, y, herox, heroy);
     if ((dirn != direction) && ((*playfield)[x][y]->whatIam() != USEDHOLE)) {
       direction = dirn;
