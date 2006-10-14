@@ -69,7 +69,7 @@ KGrCanvas::~KGrCanvas()
 
 void KGrCanvas::changeLandscape (const QString & name)
 {
-    for (int i = 0; colourScheme [i] != ""; i++) {
+    for (int i = 0; strcmp (colourScheme [i], "") != 0; i++) {
 	if (colourScheme [i] == name) {
 
 	    // Change XPM colours and re-draw the tile-pictures used by QCanvas.
