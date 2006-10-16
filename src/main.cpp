@@ -47,8 +47,6 @@ int main (int argc, char **argv)
     KCmdLineArgs::init (argc, argv, &about);
 
     KApplication app;
-    QString nameapp = QString("org.kde.%1").arg(app.objectName());
-    QDBusConnection::sessionBus().interface()->registerService(nameapp);
     // See if we are starting with session management.
     if (app.isSessionRestored())
     {
