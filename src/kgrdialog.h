@@ -56,7 +56,7 @@ Q_OBJECT
 public:
     KGrSLDialog (int action, int requestedLevel, int collnIndex,
 			QList<KGrCollection *> & gamesList, KGrGame * theGame,
-			QWidget * parent = 0, const char *name = 0);
+			QWidget * parent = 0);
     ~KGrSLDialog();
 
     int selectedLevel()	{return (number->value());}
@@ -111,7 +111,7 @@ class KGrNHDialog : public KGR_DIALOG	// KGR_PORTABLE sets QDialog/KDialogBase
 Q_OBJECT
 public:
     KGrNHDialog (const QString & levelName, const QString & levelHint,
-			QWidget * parent = 0, const char * name = 0);
+			QWidget * parent = 0);
     ~KGrNHDialog();
 
     const QString	getName()	{return (nhName->text());}
@@ -132,7 +132,7 @@ Q_OBJECT
 public:
     KGrECDialog (int action, int collnIndex,
 			QList<KGrCollection *> & gamesList,
-			QWidget *parent = 0, const char *name = 0);
+			QWidget *parent = 0);
     ~KGrECDialog();
 
     const QString	getName()	{return (ecName->text());}
@@ -179,7 +179,7 @@ class KGrLGDialog : public KGR_DIALOG	// KGR_PORTABLE sets QDialog/KDialogBase
 Q_OBJECT
 public:
     KGrLGDialog (QFile * savedGames, QList<KGrCollection *> & collections,
-			QWidget * parent, const char * name);
+			QWidget * parent);
     const QString getCurrentText() {return (lgList->currentItem()->text());}
 
 private slots:

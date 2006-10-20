@@ -41,7 +41,7 @@
 
 class KGoldrunner;
 
-KGrCanvas::KGrCanvas (QWidget * parent, const char *name)
+KGrCanvas::KGrCanvas (QWidget * parent)
 	: KGameCanvasWidget (parent)
 {
     //setBackgroundMode (Qt::NoBackground);
@@ -424,7 +424,6 @@ void KGrCanvas::initView()
     makeTiles();		// Fill the strip with 18 tiles.
 
     // Define the canvas as an array of tiles.  Default tile is 0 (free space).
-    int frame = 0;//frameWidth()*2;
     playfield = new KGrPlayField(this);
 
     //Now set our tileset in the scene
@@ -506,13 +505,15 @@ void KGrCanvas::makeBorder ()
     borderRectangles.append(nextRectangle);
 }
 
-KGameCanvasRectangle * KGrCanvas::drawRectangle (int z, int x, int y, int w, int h)
+KGameCanvasRectangle * KGrCanvas::drawRectangle
+			(int /* z (unused) */, int x, int y, int w, int h)
 {
    double wmScale = (1.0 * scaleStep) / STEP;
-   KGameCanvasRectangle * r = new KGameCanvasRectangle (colour, QSize(w*wmScale,h*wmScale), this);
+   KGameCanvasRectangle * r = new KGameCanvasRectangle (colour,
+			QSize((int)(w * wmScale), (int)(h * wmScale)), this);
 
 
-    r->moveTo(x*wmScale,y*wmScale);
+    r->moveTo ((int)(x * wmScale), (int)(y * wmScale));
     r->show();
 
     return (r);

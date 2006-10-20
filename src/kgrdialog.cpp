@@ -35,13 +35,13 @@
 #ifdef KGR_PORTABLE
 KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 			QList<KGrCollection *> & gamesList, KGrGame * theGame,
-			QWidget * parent, const char * name)
+			QWidget * parent)
 		: QDialog (parent, name, true,
 			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title)
 #else
 KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 			QList<KGrCollection *> & gamesList, KGrGame * theGame,
-			QWidget * parent, const char * name)
+			QWidget * parent)
 		: KDialog (parent)
 #endif
 {
@@ -523,12 +523,12 @@ void KGrSLDialog::slotHelp ()
 
 #ifdef KGR_PORTABLE
 KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
-			QWidget * parent, const char * name)
+			QWidget * parent)
 		: QDialog (parent, name, true,
 			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title)
 #else
 KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
-			QWidget * parent, const char * name)
+			QWidget * parent)
 		: KDialog (parent)
 #endif
 {
@@ -608,13 +608,13 @@ KGrNHDialog::~KGrNHDialog()
 #ifdef KGR_PORTABLE
 KGrECDialog::KGrECDialog (int action, int collnIndex,
 			QList<KGrCollection *> & gamesList,
-			QWidget * parent, const char * name)
+			QWidget * parent)
 		: QDialog (parent, name, true,
 			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title)
 #else
 KGrECDialog::KGrECDialog (int action, int collnIndex,
 			QList<KGrCollection *> & gamesList,
-			QWidget * parent, const char * name)
+			QWidget * parent)
 		: KDialog(parent)
 #endif
 {
@@ -794,13 +794,13 @@ void KGrECDialog::ecSetTrad () {ecSetRules ('T');}
 #ifdef KGR_PORTABLE
 KGrLGDialog::KGrLGDialog (QFile * savedGames,
 			QList<KGrCollection *> & collections,
-			QWidget * parent, const char * name)
+			QWidget * parent)
 		: QDialog (parent, name, true,
 			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title)
 #else
 KGrLGDialog::KGrLGDialog (QFile * savedGames,
 			QList<KGrCollection *> & collections,
-			QWidget * parent, const char * name)
+			QWidget * parent)
 		: KDialog (parent)
 #endif
 {

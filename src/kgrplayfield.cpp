@@ -44,8 +44,8 @@ void KGrPlayField::setTile( int x, int y, int tilenum )
 void KGrPlayField::setTiles( const QPixmap& p, int h, int v, int tilewidth, int tileheight, double scale )
 {
     QPixmap   pm;
-    m_tilew = tilewidth*scale;
-    m_tileh = tileheight*scale;
+    m_tilew = (int)(tilewidth  * scale);
+    m_tileh = (int)(tileheight * scale);
     m_numTilesH = h;
     m_numTilesV = v;
 

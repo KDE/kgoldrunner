@@ -898,8 +898,7 @@ void KGrGame::loadGame()		// Re-load game, score and level.
 
     QString s;
 
-    KGrLGDialog * lg = new KGrLGDialog (&savedGames, collections,
-						view, "loadDialog");
+    KGrLGDialog * lg = new KGrLGDialog (&savedGames, collections, view);
 
     if (lg->exec() == QDialog::Accepted) {
 	s = lg->getCurrentText();
@@ -1551,7 +1550,7 @@ void KGrGame::editNameAndHint()
 	return;
 
     // Run a dialog box to create/edit the level name and hint.
-    KGrNHDialog * nh = new KGrNHDialog (levelName, levelHint, view, "NHDialog");
+    KGrNHDialog * nh = new KGrNHDialog (levelName, levelHint, view);
 
     if (nh->exec() == QDialog::Accepted) {
 	levelName = nh->getName();
@@ -1871,8 +1870,7 @@ void KGrGame::editCollection (int action)
 	n = collnIndex;
     }
 
-    KGrECDialog * ec = new KGrECDialog (action, n, collections,
-					view, "editGameDialog");
+    KGrECDialog * ec = new KGrECDialog (action, n, collections, view);
 
     while (ec->exec() == QDialog::Accepted) {	// Loop until valid.
 
@@ -2192,7 +2190,7 @@ int KGrGame::selectLevel (int action, int requestedLevel)
 
     // Create and run a modal dialog box to select a game and level.
     KGrSLDialog * sl = new KGrSLDialog (action, requestedLevel, collnIndex,
-					collections, this, view, "levelDialog");
+					collections, this, view);
     while (sl->exec() == QDialog::Accepted) {
 	selectedGame = sl->selectedGame();
 	selectedLevel = 0;	// In case the selection is invalid.
@@ -2303,7 +2301,7 @@ void KGrThumbNail::setFilePath (QString & fp, QLabel * sln)
 //
 // TODO We need to respect the frame area, and draw inside it
 //
-void KGrThumbNail::paintEvent (QPaintEvent * event)
+void KGrThumbNail::paintEvent (QPaintEvent * /* event (unused) */)
 {
 
     QPainter  p(this);

@@ -37,7 +37,7 @@ class KGrCanvas : public KGameCanvasWidget
 {
 	Q_OBJECT
 public:
-	KGrCanvas (QWidget * parent = 0, const char *name = 0);
+	KGrCanvas (QWidget * parent = 0);
 	virtual ~KGrCanvas();
 
 	void changeLandscape (const QString & name);
