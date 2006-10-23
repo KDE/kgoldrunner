@@ -14,7 +14,7 @@ set(kgoldrunner_SRCS
    main.cpp 
    kgrdialog.cpp )
 
-kde4_automoc(kgoldrunner ${kgoldrunner_SRCS})
+kde4_automoc(${kgoldrunner_SRCS})
 
 kde4_add_executable(kgoldrunner ${kgoldrunner_SRCS})
 
