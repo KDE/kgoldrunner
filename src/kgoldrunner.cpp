@@ -1061,7 +1061,9 @@ void KGoldrunner::setupEditToolbarActions()
     QMatrix w;
     w = w.scale (2.0, 2.0);
 
+#ifdef __GNUC__
 #warning "How to adjust this hack?"
+#endif
 
     brickbg		= brickbg.transformed (w);
     fbrickbg		= fbrickbg.transformed (w);
