@@ -1,6 +1,6 @@
 /*
     Copyright 2002 Marco Krüger
-    Copyright 2002 Ian Wadham <ianw@netspace.net.au>
+    Copyright 2002 Ian Wadham <ianw2@optusnet.com.au>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by

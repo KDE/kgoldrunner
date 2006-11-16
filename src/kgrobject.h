@@ -3,7 +3,7 @@
                              -------------------
     begin                : Wed Jan 23 2002
     Copyright 2002 Marco Krüger
-    Copyright 2002 Ian Wadham <ianw@netspace.net.au>
+    Copyright 2002 Ian Wadham <ianw2@optusnet.com.au>
  ***************************************************************************/
 
 /***************************************************************************

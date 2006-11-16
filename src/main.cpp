@@ -1,6 +1,6 @@
 /*
     Copyright 2003 Marco Krüger
-    Copyright 2003 Ian Wadham <ianw@netspace.net.au>
+    Copyright 2003 Ian Wadham <ianw2@optusnet.com.au>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@ int main (int argc, char **argv)
                      KAboutData::License_GPL,
 		     "(C) 2003 Ian Wadham and Marco Krüger");
     about.addAuthor( "Ian Wadham", I18N_NOOP("Current author"),
-    		     "ianw@netspace.net.au" );
+    		     "ianw2@optusnet.com.au" );
     about.addAuthor( "Marco Krüger", I18N_NOOP("Original author"), 0);
     about.addCredit("Mauricio Piacentini", I18N_NOOP("Port to KDE4"), 
 		      "mauricio@tabuleiro.com");
