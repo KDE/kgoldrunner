@@ -3,7 +3,7 @@
  *                           -------------------                           *
  *   Copyright (C) 2003 by Ian Wadham and Marco Krüger                     *
  *   email       : See menu "Help, About KGoldrunner"                      *
- *   ianw@netspace.net.au                                                  *
+ *   ianw2@optusnet.com.au                                                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
