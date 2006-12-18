@@ -31,7 +31,7 @@
 
 #include <kaction.h>
 #include <ktoggleaction.h>
-#include <kstdaction.h>
+#include <kstandardaction.h>
 #include <kstdgameaction.h>
 #include <kicon.h>
 
@@ -458,10 +458,10 @@ void KGoldrunner::setupActions()
     // Configure Toolbars...
     // --------------------------
 
-    KStdAction::keyBindings (
+    KStandardAction::keyBindings (
 				this, SLOT(optionsConfigureKeys()),
 				actionCollection());
-    // KStdAction::configureToolbars (
+    // KStandardAction::configureToolbars (
 				// this, SLOT(optionsConfigureToolbars()),
 				// actionCollection());
 
