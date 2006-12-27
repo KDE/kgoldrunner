@@ -32,7 +32,7 @@
 #include <kaction.h>
 #include <ktoggleaction.h>
 #include <kstandardaction.h>
-#include <kstdgameaction.h>
+#include <kstandardgameaction.h>
 #include <kicon.h>
 
 #include "kgrconsts.h"
@@ -164,12 +164,12 @@ void KGoldrunner::setupActions()
     // Tutorial
     // --------------------------
 
-    KAction * newAction =	KStdGameAction::
+    KAction * newAction =	KStandardGameAction::
 				gameNew (
 				game,
 				SLOT(startLevelOne()), actionCollection());
     newAction->			setText (i18n("&New Game..."));
-    KAction * loadGame =	KStdGameAction::
+    KAction * loadGame =	KStandardGameAction::
 				load (
 				game, SLOT(loadGame()), actionCollection());
     loadGame->			setText (i18n("&Load Saved Game..."));
@@ -190,7 +190,7 @@ void KGoldrunner::setupActions()
     // Save Edits... (extra copy)
     // --------------------------
 
-    saveGame =			KStdGameAction::
+    saveGame =			KStandardGameAction::
 				save (
 				game, SLOT(saveGame()), actionCollection());
     saveGame->			setText (i18n("&Save Game..."));
@@ -202,11 +202,11 @@ void KGoldrunner::setupActions()
     // Kill the Hero
     // --------------------------
 
-    myPause =			KStdGameAction::
+    myPause =			KStandardGameAction::
 				pause (
 				this, SLOT(stopStart()), actionCollection());
     myPause->			setShortcut (Qt::Key_Escape); // Alternate key.
-    highScore =			KStdGameAction::
+    highScore =			KStandardGameAction::
 				highscores (
 				game, SLOT(showHighScores()), actionCollection());
     hintAction =		new KAction ( KIcon("ktip"),
@@ -224,7 +224,7 @@ void KGoldrunner::setupActions()
     // Quit
     // --------------------------
 
-    (void)			KStdGameAction::
+    (void)			KStandardGameAction::
 				quit (
 				this, SLOT(close()), actionCollection());
 
