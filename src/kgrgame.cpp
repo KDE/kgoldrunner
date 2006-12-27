@@ -27,7 +27,7 @@
 #include <ctype.h>
 
 #include <kpushbutton.h>
-#include <kstdguiitem.h>
+#include <KStandardGuiItem>
 
 #ifndef KGR_PORTABLE
 #include <kglobalsettings.h>
@@ -1045,7 +1045,7 @@ void KGrGame::checkHighScore()
 			"it may be enshrined <br>in the KGoldrunner Hall of Fame."),
 			hsn);
     QLineEdit *		hsnUser = new QLineEdit (hsn);
-    QPushButton *	OK = new KPushButton (KStdGuiItem::ok(), hsn);
+    QPushButton *	OK = new KPushButton (KStandardGuiItem::ok(), hsn);
 
     mainLayout->	addWidget (hsnMessage);
     mainLayout->	addWidget (hsnUser);
@@ -1252,7 +1252,7 @@ void KGrGame::showHighScores()
     hboxLayout1->setSpacing (spacing);
     QSpacerItem * spacerItem = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
     hboxLayout1->addItem(spacerItem);
-    QPushButton *	OK = new KPushButton (KStdGuiItem::close(), hs);
+    QPushButton *	OK = new KPushButton (KStandardGuiItem::close(), hs);
     OK->		setShortcut (Qt::Key_Return);
     OK->		setMaximumWidth (100);
     hboxLayout1->addWidget (OK);
