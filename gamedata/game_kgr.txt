@@ -1,4 +1,4 @@
-G018 K level KGoldrunner
+G018 K kgr KGoldrunner
  These levels were composed by Marco Krüger, the original author of the KGoldrunner program, and some of his friends and contributors.  They use KGoldrunner rules.  The enemies run fast and have an aggressive search strategy.  Enjoy! .... :-) ....
 L001
  MZMMMMMMMMMMMMMMMMMMMMMMMMZMMZ                        ZMMZ                  E     ZMMZ                        ZMMZ            NN          ZMMMMHMMMMMMMMMMMMMMMMMMMMMMMMM  H                       MM  H                       MM  H   N                   MMMMMMMMMMMMMMHMMMMMMMMMMMMMMM            H             MM E          H             MM    MM      H       N     MM            HMMMMMMHMMMMMMMM            H      H      MM     N      H      H      MMMMMMMMHMMMMMM      H      MM      H            H      MM      H      R     H      MMMMMMMMMMMMMMMMMMMMMMMMMMMMM
