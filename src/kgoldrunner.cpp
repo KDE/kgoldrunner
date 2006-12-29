@@ -44,12 +44,13 @@
 #include "kgoldrunner.h"
 
 KGoldrunner::KGoldrunner()
-    : KMainWindow (0, "KGoldrunner"),
-      view (new KGrCanvas (this))
+      : view (new KGrCanvas (this))
 {
 /******************************************************************************/
 /*************  FIND WHERE THE GAMES DATA AND HANDBOOK SHOULD BE  *************/
 /******************************************************************************/
+
+    setObjectName ("KGoldrunner");
 
     // Avoid "saveOK()" check if an error-exit occurs during the file checks.
     startupOK = true;

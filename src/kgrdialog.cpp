@@ -438,10 +438,11 @@ void KGrSLDialog::slPaintLevel ()
     if (n < 0) {
 	return;					// Owner has no collections.
     }
-    QString	filePath = game->getFilePath
-		(collections.at(n)->owner, collections.at(n), number->value());
-    thumbNail->setFilePath (filePath, slName);
-    thumbNail->repaint();			// Will call "drawContents (p)".
+    // Fetch level-data and save layout, name and label in the thumbnail.
+    QString	dir = game->getDirectory (collections.at(n)->owner);
+    thumbNail->setLevelData (dir, collections.at(n)->prefix,
+				number->value(), slName);
+    thumbNail->repaint();			// Will call "paintEvent (e)".
 }
 
 void KGrSLDialog::slotHelp ()

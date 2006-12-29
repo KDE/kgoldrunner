@@ -1,0 +1,34 @@
+G005 T tutea Advanced Tutorial
+ This tutorial is preparation for some of the things you might find in the middle levels of the 'Initiation' game.  Enjoy ....
+L001
+ R             T T T H  TT                TT  TETHTT  TT             T  T    H   TNNH   T       T    T   H  T   H T TT     TE   H T  HTT    H  H  T   T     H  T  NN    HN H   T T      H   TTTTTTTTHNNH T  T  T    H    NNN     NNH  TT TTT    H    TNN     NNH   T NNN    H    TNN     NNH    T NN TT H    TTTT      H     TNN   TH   T NN T     H TTTTNNN    H  T TNNT T    H N    NT    H T T NN T T   H N    N     HT T  N T   T  H         T  H    T T    N  H          T HT    T     N  H           TH           N  H           NH           N  H   N  N     H   N       N
+ Bars and Ladders
+ There's nowhere to dig, so you must dodge the enemies and avoid falling to the concrete at the wrong time.  Try to keep the enemies together.
+ 
+ If an enemy has a gold outline, he is holding a nugget.  He might drop it as he runs over the concrete or maybe at the top of a ladder ...... patience, patience !!
+L002
+                 EEEE  MXMXMXTTZT   NNNNNNNNNNNNN  XMXMXMMXZXMXMXMXMXMXMXMXMXMXMXMXMX  Z                           Z                           Z                           Z                           Z                           Z                         MMMMMMMMMMMMH                           H                           H                           H       R       MMMMMMMMMMMMHMMMMMMMMH                  H        H                  H        HMMMMMH            H        H     HMMMMMMMMMMMMHMMMMMMMMH     H            H        H     HMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+ To kill .....
+ You cannot get up to the gold, so you must get the enemies to bring it down to you.  But how do you get them to keep going back?
+ 
+ If you are feeling stressed, you can hit the P or Esc key and take a break.  Also, you can use the Settings menu to slow down the action.
+L003
+                         NNNHTTMMMMMMMMMMMMMMMMMMMMMMMMMHN M                        HMMM                        H                           H                           HMMM  TTTTMMMMMHMMMHNNNNNNNNH  MNN    M    H  MMMMMMMMMMM  MMMHHHMM    H               MMMMMMMM    H                           H                MMM        H                M M        H                MMM        H                MMM        H                M M        H                MMM        H                           H       R     NMHMMMMMMH  E HMMMMMMMMH    MMMMMMMMMMMMMMMMMMMMMMMMMMMM
+   ...  Or not to kill?
+ It is best not to kill the enemy.  Try it and you will find out why ... Heh, heh, heh !! ... ;-)
+ 
+ If you do kill him unintentionally, before you have collected the gold at the top left, you can still finish the level by digging away the side of the pit he is in.
+L004
+  Z    Z                     RZ    Z   E                 MZ    ZMMMMMMMMMMHFFMMMMMMMH XMXXXX          H         H            NNNNNH E NNNNN H MFM     HXFXXXXXXMMXXXXXXXH MNM     H F               H MFM     H F               H MNM     H F               H MFM     H F               H MNM  NNNH FNNNNN  E NNNNN H MFM HMMMMMMMMMMMFMMMMMMMM H MNM H  NNFF               H MFM H  MMMF               H MNM H   F F        N   NN H MFM H   MFF      HMMMFMMMMH MNM H    NF      H        H MFM H    NF      H        H NNNNH    NF      H N   NN HFMMMMMMMMMMMFFMMMMMMMMMMMMMM
+ Traps
+ Some of the bricks here are not what they seem.  They are known as false bricks, fall-through bricks or traps.  If you try to walk on them, you fall through.  If the enemies walk on them, they can descend on you without warning.  Sometimes you have to fall through a brick to get some gold.
+ 
+ At the start, jump into the concrete pit, dig and drop through.  That will get one enemy tied up for a while .... :-)
+L005
+ ZZZZZZZZZZZZZRZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZNNNNNZZNNNZZZZZZNNNZNNNNNNZMMMMMMHHMMMZZZZZZMMMHMMMMMMMMMMMMMMHHMMMZZZZMMMZHMMMMMMMMMZZZMMMHZMMMNZMMMZZHMMZZZZZMMZZZZMMHZZMMMMMMZZZHMMZZZZZMMNNNMMMHZZZMFFMZZZZHMMNNNZZMMMMMMMNHZZZMNNMZZZZHMMMMMZZMMMMMMMNHZZZMMMMZZZZHMMMMMZZMMZZZMMMHZZZMFFMZZZZHMMZZZZZMMZZZZMMHZZZMNNMZZZZHMMZZZZZMMZZZZMMHZZZMMMMZZZZHMMZZZZZMMNNNMMMHZZZMNNMZZZZHMMNNNNNMMMMMMMZZHZZMMMMZZZHZMMMMMMMMMMMMMZZZHZZMFFMZZZHZMMMMMMMZZZZZZZZZHZZZZZZZZZHZZZZZZZZZZZZZZZZEHZZZZZZZZZHEZZZZZZZMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+ Bye .......
+ This is just a nice easy level to finish up with.  Have fun with the other games in KGoldrunner.
+ 
+ Note that there is a game Editor in which you and your friends can make up levels and challenge each other.  There is also a KGoldrunner Handbook in the Help Menu, which contains more detail than this Tutorial.
+ 
+ It's been a pleasure showing you around.  Bye !!!
