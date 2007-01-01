@@ -421,133 +421,120 @@ void KGrGame::showHint()
 
 int KGrGame::loadLevel (int levelNo)
 {
-  int i,j;
-  QFile openlevel;
+    // Ignore player input from keyboard or mouse while the screen is set up.
+    loading = true;
 
-  if (! openLevelFile (levelNo, openlevel)) {
-      return 0;
-  }
-
-  // Ignore player input from keyboard or mouse while the screen is set up.
-  loading = true;
-
-  nuggets = 0;
-  enemyCount=0;
-  startScore = score;				// What we will save, if asked.
-
-  // lade den Level
-  for (j=1;j<21;j++)
-    for (i=1;i<29;i++) {
-	changeObject(openlevel.getch(),i,j);
+    // Read the level data.
+    LevelData d;
+    if (! readLevelData (levelNo, d)) {
+	loading = false;
+	return 0;
     }
 
-  // Absorb a newline character, then read in the level name and hint (if any).
-  int c = openlevel.getch();
-  levelName = "";
-  levelHint = "";
-  QByteArray levelNameC = "";
-  QByteArray levelHintC = "";
-  i = 1;
-  while ((c = openlevel.getch()) != EOF) {
-      switch (i) {
-      case 1:	if (c == '\n')			// Level name is on one line.
-		    i = 2;
-		else
-		    levelNameC += (char) c;
-		break;
+    nuggets = 0;
+    enemyCount=0;
+    startScore = score;				// What we will save, if asked.
 
-      case 2:	levelHintC += (char) c;		// Hint is on rest of file.
-		break;
-      }
-  }
-  openlevel.close();
-
-  // If there is a name, recode any UTF-8 substrings and translate it right now.
-  if (levelNameC.length() > 0)
-      levelName = i18n((const char *) levelNameC);
-
-  // Indicate on the menus whether there is a hint for this level.
-  int len = levelHintC.length();
-  emit hintAvailable (len > 0);
-
-  // If there is a hint, remove the final newline and translate it right now.
-  if (len > 0)
-      levelHint = i18n((const char *) levelHintC.left(len-1));
-
-  // Disconnect edit-mode slots from signals from "view".
-  disconnect (view, SIGNAL (mouseClick(int)), 0, 0);
-  disconnect (view, SIGNAL (mouseLetGo(int)), 0, 0);
-
-  if (newLevel) {
-      hero->setEnemyList (&enemies);
-	QListIterator<KGrEnemy *> i(enemies);
-        while (i.hasNext()){
-		KGrEnemy * enemy = i.next();
-		enemy->setEnemyList(&enemies);
+    int i, j;
+    // Load the level-layout, hero and enemies.
+    for (j = 1; j <= FIELDHEIGHT; j++) {
+	for (i = 1; i <= FIELDWIDTH; i++) {
+	    changeObject (d.layout.at ((j-1)*FIELDWIDTH + (i-1)), i , j);
 	}
-  }
+    }
 
-  hero->setNuggets(nuggets);
-  setTimings();
+    levelName = "";
+    levelHint = "";
 
-  // Set direction-flags to use during enemy searches.
-  initSearchMatrix();
+    // If there is a name, translate the UTF-8 coded QByteArray right now.
+    if (d.name.length() > 0) {
+	levelName = i18n((const char *) d.name);
+    }
 
-  // Re-draw the playfield frame, level title and figures.
-  view->setTitle (getTitle());
-  //view->updateCanvas();
+    // Indicate on the menus whether there is a hint for this level.
+    int len = d.hint.length();
+    emit hintAvailable (len > 0);
 
-  // Check if this is a tutorial collection and we are not on the "ENDE" screen.
-  if ((collection->prefix.left(4) == "tute") && (levelNo != 0)) {
-      // At the start of a tutorial, put out an introduction.
-      if (levelNo == 1)
-	  myMessage (view, collection->name,
-				i18n(collection->about.toUtf8().constData()));
+    // If there is a hint, translate it right now.
+    if (len > 0) {
+	levelHint = i18n((const char *) d.hint);
+    }
 
-      // Put out an explanation of this level.
-      myMessage (view, getTitle(), levelHint);
-  }
+    // Disconnect edit-mode slots from signals from "view".
+    disconnect (view, SIGNAL (mouseClick(int)), 0, 0);
+    disconnect (view, SIGNAL (mouseLetGo(int)), 0, 0);
 
-  // Put the mouse pointer on the hero.
-  if (mouseMode)
-      view->setMousePos (startI, startJ);
+    if (newLevel) {
+	hero->setEnemyList (&enemies);
+	QListIterator<KGrEnemy *> i (enemies);
+	while (i.hasNext()) {
+	    KGrEnemy * enemy = i.next();
+	    enemy->setEnemyList (&enemies);
+	}
+    }
 
-  // Connect play-mode slot to signal from "view".
-  connect (view, SIGNAL(mouseClick(int)), SLOT(doDig(int)));
+    hero->setNuggets (nuggets);
+    setTimings();
 
-  // Re-enable player input.
-  loading = false;
+    // Set direction-flags to use during enemy searches.
+    initSearchMatrix();
 
-  return 1;
+    // Re-draw the playfield frame, level title and figures.
+    view->setTitle (getTitle());
+
+    // Check if this is a tutorial collection and not on the "ENDE" screen.
+    if ((collection->prefix.left(4) == "tute") && (levelNo != 0)) {
+	// At the start of a tutorial, put out an introduction.
+	if (levelNo == 1) {
+	    myMessage (view, collection->name,
+			i18n(collection->about.toUtf8().constData()));
+	}
+	// Put out an explanation of this level.
+	myMessage (view, getTitle(), levelHint);
+    }
+
+    // If in mouse mode, not keyboard mode, put the mouse pointer on the hero.
+    if (mouseMode) {
+	view->setMousePos (startI, startJ);
+    }
+
+    // Connect play-mode slot to signal from "view".
+    connect (view, SIGNAL(mouseClick(int)), SLOT(doDig(int)));
+
+    // Re-enable player input.
+    loading = false;
+
+    return 1;
 }
 
-bool KGrGame::openLevelFile (int levelNo, QFile & openlevel)
+bool KGrGame::readLevelData (int levelNo, LevelData & d)
 {
-  QString filePath;
-  QString msg;
+    KGrGameIO io;
+    // If system game or ENDE screen, choose system dir, else choose user dir.
+    const QString dir = ((owner == SYSTEM) || (levelNo == 0)) ?
+					systemDataDir : userDataDir;
+    IOStatus stat = io.fetchLevelData (dir, collection->prefix, levelNo, d);
 
-  filePath = getFilePath (owner, collection, levelNo);
+    switch (stat) {
+    case NotFound:
+	KGrMessage::information (view, i18n("Read Level Data"),
+	    i18n("Cannot find file '%1'.", d.filePath));
+	break;
+    case NoRead:
+    case NoWrite:
+	KGrMessage::information (view, i18n("Read Level Data"),
+	    i18n("Cannot open file '%1' for read-only.", d.filePath));
+	break;
+    case UnexpectedEOF:
+	KGrMessage::information (view, i18n("Read Level Data"),
+	    i18n("Reached end of file '%1' without finding level data.",
+	    d.filePath));
+	break;
+    case OK:
+	break;
+    }
 
-  openlevel.setFileName (filePath);
-
-  // gucken ob und welcher Level existiert
-
-  if (! openlevel.exists()) {
-      KGrMessage::information (view, i18n("Load Level"),
-	    i18n("Cannot find file '%1'. Please make sure '%2' has been "
-	    "run in the '%3' folder.",
-	     filePath, "tar xf levels.tar", systemDataDir.myStr()));
-      return (false);
-  }
-
-  // öffne Level zum lesen
-  if (! openlevel.open (QIODevice::ReadOnly)) {
-      KGrMessage::information (view, i18n("Load Level"),
-	    i18n("Cannot open file '%1' for read-only.", filePath));
-      return (false);
-  }
-
-  return (true);
+    return (stat == OK);
 }
 
 void KGrGame::changeObject (unsigned char kind, int i, int j)
@@ -670,6 +657,11 @@ void KGrGame::startPlaying () {
 	}
 	hero->start();
     }
+}
+
+QString KGrGame::getDirectory (Owner o)
+{
+    return ((o == SYSTEM) ? systemDataDir : userDataDir);
 }
 
 QString KGrGame::getFilePath (Owner o, KGrCollection * colln, int lev)
@@ -1481,63 +1473,42 @@ void KGrGame::updateNext()
 
 void KGrGame::loadEditLevel (int lev)
 {
-    int i, j;
-    QFile levelFile;
-
-    if (! openLevelFile (lev, levelFile))
-	return;
-
     // Ignore player input from keyboard or mouse while the screen is set up.
     loading = true;
+
+    // Read the level data.
+    LevelData d;
+    if (! readLevelData (lev, d)) {
+	loading = false;
+	return;
+    }
 
     level = lev;
     initEdit();
 
+    int i, j;
     // Load the level.
     for (j = 1; j <= FIELDHEIGHT; j++)
     for (i = 1; i <= FIELDWIDTH;  i++) {
-	editObj = levelFile.getch ();
+	editObj = d.layout.at ((j-1)*FIELDWIDTH + (i-1));
 	insertEditObj (i, j);
 	editObjArray[i][j] = editObj;
 	lastSaveArray[i][j] = editObjArray[i][j];	// Copy for "saveOK()".
     }
 
-    // Read a newline character, then read in the level name and hint (if any).
-    int c = levelFile.getch();
-    QByteArray levelHintC = "";
-    QByteArray levelNameC = "";
-    levelHint = "";
-    levelName = "";
-    i = 1;
-    while ((c = levelFile.getch()) != EOF) {
-	switch (i) {
-	case 1:	if (c == '\n')			// Level name is on one line.
-		    i = 2;
-		else
-		    levelNameC += (char) c;
-		break;
-
-	case 2:	levelHintC += (char) c;		// Hint is on rest of file.
-		break;
-	}
-    }
-
     // Retain the original language of the name and hint when editing,
-    // but remove the final \n and convert non-ASCII, UTF-8 substrings
-    // to Unicode (eg. Ã¼ to ü).
-    int len = levelHintC.length();
+    // but convert non-ASCII, UTF-8 substrings to Unicode (eg. Ã¼ to ü).
+    int len = d.hint.length();
     if (len > 0)
-	levelHint = QString::fromUtf8((const char *) levelHintC.left(len-1));
+	levelHint = QString::fromUtf8((const char *) d.hint);
 
-    len = levelNameC.length();
+    len = d.name.length();
     if (len > 0)
-	levelName = QString::fromUtf8((const char *) levelNameC);
+	levelName = QString::fromUtf8((const char *) d.name);
 
     editObj = BRICK;				// Reset default object.
-    levelFile.close ();
 
     view->setTitle (getTitle());		// Show the level name.
-    //view->updateCanvas();			// Show the edit area.
     showEditLevel();				// Reconnect signals.
 
     // Re-enable player input.
@@ -2287,10 +2258,23 @@ QColor KGrThumbNail::brickColor =      QColor ("#ff0000");
 QColor KGrThumbNail::ladderColor =     QColor ("#ddcc00");
 QColor KGrThumbNail::poleColor =       QColor ("#aa7700");
 
-void KGrThumbNail::setFilePath (QString & fp, QLabel * sln)
+void KGrThumbNail::setLevelData (QString dir, QString prefix, int level,
+					QLabel * sln)
 {
-    filePath = fp;				// Keep safe copies of file
-    lName = sln;				// path and level name field.
+    KGrGameIO io;
+    LevelData d;
+
+    IOStatus stat = io.fetchLevelData (dir, prefix, level, d);
+    if (stat == OK) {
+	// Keep a safe copy of the layout.  Translate and display the name.
+	levelLayout = d.layout;
+	sln->setText (i18n((const char *) d.name));
+    }
+    else {
+	// Level-data inaccessible or not found.
+	levelLayout = "";
+	sln->setText ("");
+    }
 }
 
 // This was previously a Q3Frame
@@ -2303,7 +2287,6 @@ void KGrThumbNail::setFilePath (QString & fp, QLabel * sln)
 //
 void KGrThumbNail::paintEvent (QPaintEvent * /* event (unused) */)
 {
-
     QPainter  p(this);
     QFile	openFile;
     QPen	pen = p.pen();
@@ -2314,8 +2297,7 @@ void KGrThumbNail::paintEvent (QPaintEvent * /* event (unused) */)
     pen.setColor (backgroundColor);
     p.setPen (pen);
 
-    openFile.setFileName (filePath);
-    if ((! openFile.exists()) || (! openFile.open (QIODevice::ReadOnly))) {
+    if (levelLayout == "") {
 	// There is no file, so fill the thumbnail with "FREE" cells.
 	p.drawRect (QRect(fw, fw, FIELDWIDTH*n, FIELDHEIGHT*n));
 	return;
@@ -2324,7 +2306,7 @@ void KGrThumbNail::paintEvent (QPaintEvent * /* event (unused) */)
     for (int j = 0; j < FIELDHEIGHT; j++)
     for (int i = 0; i < FIELDWIDTH; i++) {
 
-	obj = openFile.getch();
+	obj = levelLayout.at (j*FIELDWIDTH + i);
 
 	// Set the colour of each object.
 	switch (obj) {
@@ -2367,25 +2349,11 @@ void KGrThumbNail::paintEvent (QPaintEvent * /* event (unused) */)
 	}
     }
 
-    //Finally, draw a small black inset border
+    // Finally, draw a small black inset border.
     pen.setColor (Qt::black); 
     p.setPen (pen);
-    p.drawRect(rect().left(), rect().top(), (rect().right())-1, (rect().bottom()) - 1);
-
-    // Absorb a newline character, then read in the level name (if any).
-    int c = openFile.getch();
-    QByteArray s = "";
-    while ((c = openFile.getch()) != EOF) {
-	if (c == '\n')			// Level name is on one line.
-	    break;
-	s += (char) c;
-    }
-    if (s.length() > 0)			// If there is a name, translate it.
-	lName->setText (i18n((const char *) s));
-    else
-	lName->setText ("");
-
-    openFile.close();
+    p.drawRect(rect().left(), rect().top(),
+		(rect().right())-1, (rect().bottom()) - 1);
 }
 
 /******************************************************************************/
@@ -2405,7 +2373,7 @@ bool KGrGame::initCollections ()
     loadCollections (USER);			// Load user collections list.
 						// If none, don't worry.
 
-    mapCollections();				// Check ".grl" file integrity.
+    // DISABLED xxxxx  mapCollections();	// Check ".grl" file integrity.
 
     // Set the default collection (first one in the SYSTEM "games.dat" file).
     collnIndex = 0;
@@ -2425,29 +2393,27 @@ void KGrGame::mapCollections()
 
     // Find KGoldrunner level files, sorted by name (same as numerical order).
     QListIterator<KGrCollection *> i(collections);
-    while (i.hasNext()){
+    while (i.hasNext()) {
 	colln = i.next();
-    //for (colln = collections.first(); colln != 0; colln = collections.next()) {
-	d.setPath ((colln->owner == SYSTEM)	? systemDataDir + "levels/"
-						: userDataDir + "levels/");
+	if (colln->owner == SYSTEM) {
+	    // Skip these checks now we are using KGoldrunner 3 file formats.
+	    continue;
+	}
+	d.setPath (getDirectory (colln->owner) + "levels/");
 	d_path = d.path();
 	if (! d.exists()) {
 	    // There is no "levels" sub-directory: OK if game has no levels yet.
 	    if (colln->nLevels > 0) {
 		KGrMessage::information (view, i18n("Check Games & Levels"),
 			i18n("There is no folder '%1' to hold levels for"
-			" the '%2' game. Please make sure '%3' "
-			"has been run in the '%4' folder.",
-			 d_path,
-			 colln->name,
-			 "tar xf levels.tar",
-			 systemDataDir));
+			" the '%2' game.", d_path, colln->name));
 	    }
 	    continue;
 	}
 
 	const QFileInfoList files = d.entryInfoList
-			(QStringList(colln->prefix + "???.grl"), QDir::Files, QDir::Name);
+			(QStringList(colln->prefix + "???.grl"),
+			 QDir::Files, QDir::Name);
 
 	if ((files.count() <= 0) && (colln->nLevels > 0)) {
 	    KGrMessage::information (view, i18n("Check Games & Levels"),
@@ -2511,7 +2477,7 @@ bool KGrGame::loadCollections (Owner o)
 {
     QString	filePath;
 
-    filePath = ((o == SYSTEM)? systemDataDir : userDataDir) + "games.dat";
+    filePath = getDirectory (o) + "games.dat";
 
     QFile c (filePath);
 

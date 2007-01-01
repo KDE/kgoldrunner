@@ -32,6 +32,8 @@
 #include <QLabel>
 #include <QFrame>
 
+#include "kgrgameio.h"
+
 /**
 Sets up games and levels in KGoldrunner and controls the play.
 
@@ -67,7 +69,7 @@ public:
 
     void setEditObj (char newEditObj);	// Set object for editor to paint.
 
-    QString getFilePath (Owner o, KGrCollection * colln, int lev);
+    QString getDirectory (Owner o);
 
 public slots:
     void startLevelOne();		// Start any game from level 1.
@@ -113,7 +115,7 @@ private slots:
 private:
     void setBlankLevel (bool playable);
     int  loadLevel (int levelNo);
-    bool openLevelFile (int levelNo, QFile & openlevel);
+    bool readLevelData (int levelNo, LevelData & d);
     void changeObject (unsigned char kind, int i, int j);
     void createObject (KGrObject *o, char picType, int x, int y);
     void setTimings ();
@@ -212,6 +214,7 @@ private:
     bool shouldSave;		// True if name or hint was edited.
 
 private:
+    QString getFilePath  (Owner o, KGrCollection * colln, int lev);
     void loadEditLevel (int);	// Load and display an existing level for edit.
     void initEdit();
     void deleteLevel();
@@ -263,7 +266,7 @@ class KGrThumbNail : public QFrame
 {
 public:
     KGrThumbNail (QWidget *parent = 0, const char *name = 0);
-    void setFilePath (QString &, QLabel *);	// Set filepath and name field.
+    void setLevelData (QString dir, QString prefix, int level, QLabel * sln);
 
     static QColor backgroundColor;
     static QColor brickColor;
@@ -271,10 +274,12 @@ public:
     static QColor poleColor;
 
 protected:
-    //void drawContents (QPainter *);		// Draw a preview of a level.
-    void paintEvent ( QPaintEvent * event );
-    QString filePath;
-    QLabel * lName;
+    void paintEvent ( QPaintEvent * event );	// Draw a preview of a level.
+
+private:
+    QByteArray levelName;
+    QByteArray levelLayout;
+    QLabel *   lName;				// Place to write level-name.
 };
 
 /******************************************************************************/

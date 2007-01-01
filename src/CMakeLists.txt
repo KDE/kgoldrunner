@@ -10,6 +10,7 @@ set(kgoldrunner_SRCS
    kgrcanvas.cpp 
    kgrfigure.cpp 
    kgrgame.cpp 
+   kgrgameio.cpp 
    kgrobject.cpp 
    main.cpp 
    kgrdialog.cpp )
