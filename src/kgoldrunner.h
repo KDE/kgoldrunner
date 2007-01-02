@@ -37,7 +37,7 @@ const int L_LEVEL       = 15;
 #include <kmainwindow.h>
 #include <kstandarddirs.h>
 
-class KAction;
+class QAction;
 class KToggleAction;
 class KGrGame;
 class KGrCanvas;
@@ -173,16 +173,16 @@ private:
     QString systemDataDir;		// Where the system levels are stored.
     QString userDataDir;		// Where the user levels are stored.
 
-    KAction *		saveGame;	// Save game, level, lives and score.
+    QAction *		saveGame;	// Save game, level, lives and score.
 
-    KAction *		myPause;	// Pause or resume the game.
+    QAction *		myPause;	// Pause or resume the game.
     QString		pauseKeys;	// Keystroke names to put in status bar.
 
-    KAction *		hintAction;	// Display a hint, if available.
-    KAction *		killHero;	// Kill hero (disabled during edits).
-    KAction *		highScore;	// High scores (disabled during edits).
+    QAction *		hintAction;	// Display a hint, if available.
+    QAction *		killHero;	// Kill hero (disabled during edits).
+    QAction *		highScore;	// High scores (disabled during edits).
 
-    KAction *		saveEdits;	// Save a level that has been edited.
+    QAction *		saveEdits;	// Save a level that has been edited.
 
     KToggleAction *	setKGoldrunner;	// Show default "KGoldrunner" landscape.
     KToggleAction *	setAppleII;	// Show "Apple II" landscape.
