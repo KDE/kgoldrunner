@@ -90,7 +90,3 @@ int KGrPlayField::tile( int x, int y ) const
     //we stored the tilenumber as custom data in the sprite
     return m_tilenumbers.at(y*m_numTilesH + x);
 }
-
-
-#include "kgrplayfield.moc"
-

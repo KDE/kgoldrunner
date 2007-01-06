@@ -61,5 +61,3 @@ void KGrSprite::setZ (qreal /* z (unused) */)
     // Hero and enemy sprites are above other elements.
     raise();
 }
-
-#include "kgrsprite.moc"
