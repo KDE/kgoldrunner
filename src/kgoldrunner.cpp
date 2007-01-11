@@ -35,6 +35,7 @@
 #include <kstandardaction.h>
 #include <kstandardgameaction.h>
 #include <kicon.h>
+#include <kapplication.h>
 
 #include "kgrconsts.h"
 #include "kgrobject.h"
