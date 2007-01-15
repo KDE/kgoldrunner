@@ -12,16 +12,18 @@
 #
 # Pass 1: in games.dat, convert '\n' character sequences to actual newlines,
 # then copy the game-data and description to the new game-file's header.
-sed -e 's:\\n:\n:g' games.dat | while read line
+sed -e 's/\\n/\\\\n/g' games.dat | while read line
 do
     case "$line" in
 	0*|1*)	echo "Pass 1: $line"
 		set -- $line				# Re-parse game-data.
 		prefix="$3"				# Get fixed ID of game.
 		game="game_$prefix.txt"			# Generate file name.
-		echo "G$line" >"$game"			# Write game-data line.
+		echo "// G$1 $2 $3" >"$game"		# Write game-data line.
+		shift; shift; shift
+		echo " i18n(\"$*\");" >>$game		# Append name of game.
 		;;
-	*)	echo " $line" >>"$game"			# Append game-desc line.
+	*)	echo " i18n(\"$line\");" >>"$game"	# Append game-desc line.
 		;;
     esac
 done
@@ -45,10 +47,38 @@ do
 			lev="0""$lev"
 		    fi
 
-		    echo "L$lev" >>"$game"		# Append level-header.
+		    echo "// L$lev" >>"$game"		# Append level-header.
 		    lev="levels/$prefix$lev.grl"	# Get level's file path.
-		    sed -e 's/^/ /' "$lev" >>"$game"	# Append level-data,
-							# with a leading space.
+		    case "$prefix" in
+		    plws|tute*)
+			# Normal or tutorial games ...
+			# Append level-data with a leading comment, level-name
+			# with 'i18n("");' and hint (if any) with 'i18n("");'.
+			sed -e '
+				1s:^://  :
+				2,3s/^/ i18n("/
+				2s/$/");/
+				3,$s/$/\\n"/
+				4,$s/^/ "/
+				$s/\\n"/");/
+			' "$lev" >>"$game"
+			;;
+		    *)
+			# Championship games ...
+			# Append level-data with a leading comment, level-name
+			# with 'i18n("");' and hint with 'NOTi18n("");'.
+			sed -e '
+				1s:^://  :
+				2s/^/ i18n("/
+				2s/$/");/
+				3s/^/ NOTi18n("/
+				3,$s/$/\\n"/
+				4,$s/^/ "/
+				$s/\\n"/");/
+			' "$lev" >>"$game"
+			;;
+		    esac
+
 		    let "i = $i + 1"
 		done
 		;;

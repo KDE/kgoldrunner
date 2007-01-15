@@ -443,22 +443,15 @@ int KGrGame::loadLevel (int levelNo)
 	}
     }
 
-    levelName = "";
-    levelHint = "";
-
     // If there is a name, translate the UTF-8 coded QByteArray right now.
-    if (d.name.length() > 0) {
-	levelName = i18n((const char *) d.name);
-    }
+    levelName = (d.name.size() > 0) ? i18n((const char *) d.name) : "";
 
     // Indicate on the menus whether there is a hint for this level.
     int len = d.hint.length();
     emit hintAvailable (len > 0);
 
     // If there is a hint, translate it right now.
-    if (len > 0) {
-	levelHint = i18n((const char *) d.hint);
-    }
+    levelHint = (len > 0) ? i18n((const char *) d.hint) : "";
 
     // Disconnect edit-mode slots from signals from "view".
     disconnect (view, SIGNAL (mouseClick(int)), 0, 0);
@@ -1498,13 +1491,10 @@ void KGrGame::loadEditLevel (int lev)
 
     // Retain the original language of the name and hint when editing,
     // but convert non-ASCII, UTF-8 substrings to Unicode (eg. Ã¼ to ü).
-    int len = d.hint.length();
-    if (len > 0)
-	levelHint = QString::fromUtf8((const char *) d.hint);
-
-    len = d.name.length();
-    if (len > 0)
-	levelName = QString::fromUtf8((const char *) d.name);
+    levelName = (d.name.size() > 0) ?
+		QString::fromUtf8((const char *) d.name) : "";
+    levelHint = (d.hint.size() > 0) ?
+		QString::fromUtf8((const char *) d.hint) : "";
 
     editObj = BRICK;				// Reset default object.
 
@@ -2268,7 +2258,7 @@ void KGrThumbNail::setLevelData (QString dir, QString prefix, int level,
     if (stat == OK) {
 	// Keep a safe copy of the layout.  Translate and display the name.
 	levelLayout = d.layout;
-	sln->setText (i18n((const char *) d.name));
+	sln->setText ((d.name.size() > 0) ? i18n((const char *) d.name) : "");
     }
     else {
 	// Level-data inaccessible or not found.
@@ -2475,83 +2465,48 @@ void KGrGame::mapCollections()
 
 bool KGrGame::loadCollections (Owner o)
 {
-    QString	filePath;
+    KGrGameIO io;
+    QList<GameData *> gameList;
+    qDebug() << "Called KGrGame::loadCollections";
+    IOStatus status = io.fetchGameListData (getDirectory (o), gameList);
 
-    filePath = getDirectory (o) + "games.dat";
-
-    QFile c (filePath);
-
-    if (! c.exists()) {
+    bool result = false;
+    switch (status) {
+    case NotFound:
 	// If the user has not yet created a collection, don't worry.
 	if (o == SYSTEM) {
 	    KGrMessage::information (view, i18n("Load Game Info"),
 		i18n("Cannot find game info file '%1'.",
-		 filePath));
+		    gameList.last()->filePath));
 	}
-	return (false);
-    }
-
-    if (! c.open (QIODevice::ReadOnly)) {
+	break;
+    case NoRead:
+    case NoWrite:
 	KGrMessage::information (view, i18n("Load Game Info"),
-	    i18n("Cannot open file '%1' for read-only.", filePath));
-	return (false);
+	    i18n("Cannot open file '%1' for read-only.", 
+		gameList.last()->filePath));
+	break;
+    case UnexpectedEOF:
+	KGrMessage::information (view, i18n("Load Game Info"),
+	    i18n("Reached end of file '%1' before finding end of game-data.",
+		gameList.last()->filePath));
+	break;
+    case OK:
+	qDebug() << "gameList count" << gameList.count();
+	foreach (GameData * g, gameList) {
+	    collections.append (new KGrCollection
+		    (o, i18n((const char *) g->name), // Translate now.
+			g->prefix, g->rules, g->nLevels,
+			QString::fromUtf8((const char *) g->about)));
+	    qDebug() << g->prefix << "File Path XXX:" << g->filePath;
+	}
+	result = true;
+	break;
     }
 
-    QByteArray	line = "";
-    QByteArray	name = "";
-    QString	prefix = "";
-    char	settings = ' ';
-    int		nLevels = -1;
-
-    int ch = 0;
-    while (ch >= 0) {
-	ch = c.getch();
-	if (((char) ch != '\n') && (ch >= 0)) {
-	    // If not end-of-line and not end-of-file, add to the line.
-	    if (ch == '\r')		{line += '\n';}
-	    else if (ch == '\\')	{ch = c.getch(); line += '\n';}
-	    else			{line += (char) ch;}
-	}
-	else {
-	    // If first character is a digit, we have a new collection.
-	    if (isdigit(line[0])) {
-		if (nLevels >= 0) {
-		    // If previous collection with no "about" exists, load it.
-		    collections.append (new KGrCollection
-				(o, name, prefix, settings, nLevels, ""));
-		    name = ""; prefix = ""; settings = ' '; nLevels = -1;
-		}
-		// Decode the first (maybe the only) line in the new collection.
-		line = line.simplified();
-		int i, j, len;
-		len = line.length();
-		i = 0;   j = line.indexOf(' ',i); nLevels = line.left(j).toInt();
-		i = j+1; j = line.indexOf(' ',i); settings = line[i];
-		i = j+1; j = line.indexOf(' ',i); prefix  = line.mid(i,j-i);
-		i = j+1;                       name    = line.right(len-i);
-	    }
-	    // If first character is not a digit, the line should be an "about".
-	    else if (nLevels >= 0) {
-		    collections.append (new KGrCollection
-				(o, i18n((const char *) name), // Translate now.
-				    prefix, settings, nLevels,
-				    QString::fromUtf8((const char *) line)));
-		    name = ""; prefix = ""; settings = ' '; nLevels = -1;
-	    }
-	    else if (ch >= 0) {
-		// Not EOF: it's an empty line or out-of-context "about" line.
-		KGrMessage::information (view, i18n("Load Game Info"),
-		    i18n("Format error in game info file '%1'.",
-		     filePath));
-		c.close();
-		return (false);
-	    }
-	    line = "";
-	}
-    }
-
-    c.close();
-    return (true);
+    while (! gameList.isEmpty())
+        delete gameList.takeFirst();
+    return (result);
 }
 
 bool KGrGame::saveCollections (Owner o)

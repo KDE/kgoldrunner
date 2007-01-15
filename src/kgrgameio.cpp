@@ -13,7 +13,7 @@
  *                                                                         *
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program; if not, write to the                         *
- *   Free Software Foundation, Inc.,                                       *
+ *   Free Software Foundation, Inc.,                                      *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
@@ -25,28 +25,140 @@ KGrGameIO::KGrGameIO ()
 {
 }
 
+IOStatus KGrGameIO::fetchGameListData
+	(const QString & dir, QList<GameData *> & gameList)
+{
+    QDir directory (dir);
+    QStringList pattern;
+    pattern << "game_*";
+    QStringList files = directory.entryList (pattern, QDir::Files, QDir::Name);
+
+    // KGr 3 has a game's data and all its levels in one file.
+    // KGr 2 has all game-data in "games.dat" and each level in a separate file.
+    bool kgr3Format = (files.count() > 0);
+    if (! kgr3Format) {
+	files << "games.dat";
+    }
+
+    // Loop to read each file containing game-data.
+    foreach (const QString filename, files) {
+	if (filename == "game_ende.txt") {
+	    continue;			// Skip the "ENDE" file.
+	}
+
+	GameData * g = initGameData (dir + filename);
+	gameList.append (g);
+	// qDebug() << endl << "GAME PATH:" << g->filePath;
+
+	openFile.setFileName (g->filePath);
+
+	// Check that the game-file exists.
+	if (! openFile.exists()) {
+	    return (NotFound);
+	}
+
+	// Open the file for read-only.
+	if (! openFile.open (QIODevice::ReadOnly)) {
+	    return (NoRead);
+	}
+
+	char c;
+	QByteArray textLine;
+
+	// Find the first line of game-data.
+	c = getALine (kgr3Format, textLine);
+	if (kgr3Format) {
+	    while ((c != 'G') && (c != '\0')) {
+		c = getALine (kgr3Format, textLine);
+	    }
+	}
+	if (c == '\0') {
+	    openFile.close();
+	    return (UnexpectedEOF);	// We reached end-of-file unexpectedly.
+	}
+
+	// Loop to extract the game-data for each game on the file.
+	while (c != '\0') {
+	    if (kgr3Format && (c == 'L')) {
+		break;			// End of KGr 3 game-file header.
+	    }
+	    // Decode line 1 of the game-data.
+	    QList<QByteArray> fields = textLine.split (' ');
+	    g->nLevels = fields.at(0).toInt();
+	    g->rules   = fields.at(1).at(0);
+	    g->prefix  = fields.at(2);
+	    // qDebug() << "Levels:" << g->nLevels << "Rules:" << g->rules <<
+		// "Prefix:" << g->prefix;
+
+	    if (kgr3Format) {
+		// KGr 3 Format: get skill, get game-name from next line.
+		g->skill = fields.at(3).at(0);
+		c = getALine (kgr3Format, textLine);
+		if (c == ' ') {
+		    g->name = removeNewline (textLine);
+		}
+	    }
+	    else {
+		// KGr 2 Format: get game-name from end of line 1.
+		int n = 0;
+		// Skip the first 3 fields and extract the rest of the line.
+		n = textLine.indexOf(' ', n) + 1;
+		n = textLine.indexOf(' ', n) + 1;
+		n = textLine.indexOf(' ', n) + 1;
+		g->name = removeNewline (textLine.right (textLine.size() - n));
+	    }
+	    // qDebug() << "Skill:" << g->skill << "Name:" << g->name;
+
+	    // Loop to accumulate lines of about-data.  If kgr3Format, exit on
+	    // EOF or 'L' line.  If not kgr3Format, exit on EOF or numeric line.
+	    while (c != '\0') {
+		c = getALine (kgr3Format, textLine);
+		if ((c == '\0') ||
+		    (kgr3Format && (c == 'L')) ||
+		    ((! kgr3Format) &&
+		    (textLine.at(0) >= '0') && (textLine.at(0) <= '9'))) {
+		    break;
+		}
+		g->about.append (textLine);
+	    }
+	    g->about = removeNewline (g->about);	// Remove final '\n'.
+	    // qDebug() << "Info about: [" + g->about + "]" << endl;
+
+	    if ((! kgr3Format) && (c != '\0')) {
+		g = initGameData (dir + filename);
+		gameList.append (g);
+	    }
+	} // END: game-data loop
+
+	openFile.close();
+
+    } // END: filename loop
+
+    return (OK);
+}
+
 IOStatus KGrGameIO::fetchLevelData
-	(const QString dir, QString prefix, const int level, LevelData & d)
+	(const QString & dir, const QString & prefix,
+		const int level, LevelData & d)
 {
     d.filePath = getFilePath (dir, prefix, level);
-    qDebug() << "FILE" << d.filePath;
+    d.level  = level;		// Level number.
+    d.layout = "";		// Codes for the level layout (mandatory).
+    d.name   = "";		// Level name (optional).
+    d.hint   = "";		// Level hint (optional).
 
-    openLevel.setFileName (d.filePath);
+    // qDebug() << endl << "LEVEL PATH:" << d.filePath;
+    openFile.setFileName (d.filePath);
 
     // Check that the level-file exists.
-    if (! openLevel.exists()) {
+    if (! openFile.exists()) {
 	return (NotFound);
     }
 
     // Open the file for read-only.
-    if (! openLevel.open (QIODevice::ReadOnly)) {
+    if (! openFile.open (QIODevice::ReadOnly)) {
 	return (NoRead);
     }
-
-    d.level  = level;
-    d.layout = "";
-    d.name   = "";
-    d.hint   = "";
 
     char c;
     QByteArray textLine;
@@ -54,7 +166,6 @@ IOStatus KGrGameIO::fetchLevelData
 
     // Determine whether the file is in KGoldrunner v3 or v2 format.
     bool kgr3Format = (d.filePath.endsWith (".txt"));
-    qDebug() << "kgr3Format:" << kgr3Format;
 
     if (kgr3Format) {
 	// In KGr 3 format, if a line starts with 'L', check the number.
@@ -64,7 +175,7 @@ IOStatus KGrGameIO::fetchLevelData
 	    } 
 	}
 	if (c == '\0') {
-	    openLevel.close();		// We reached end-of-file.
+	    openFile.close();		// We reached end-of-file.
 	    return (UnexpectedEOF);
 	}
     }  
@@ -86,12 +197,16 @@ IOStatus KGrGameIO::fetchLevelData
 	}
     }
 
-    openLevel.close();
+    // qDebug() << "Level:" << level << "Layout length:" << d.layout.size();
+    // qDebug() << "Name:" << "[" + d.name + "]";
+    // qDebug() << "Hint:" << "[" + d.hint + "]";
+
+    openFile.close();
     return (result);
 }
 
 QString KGrGameIO::getFilePath
-	(const QString dir, const QString prefix, const int level)
+	(const QString & dir, const QString & prefix, const int level)
 {
     QString filePath = ((level == 0) ? "ende" : prefix);
     filePath = dir + "game_" + filePath + ".txt";
@@ -117,22 +232,49 @@ QString KGrGameIO::getFilePath
     return (filePath);
 }
 
-char KGrGameIO::getALine (bool kgr3, QByteArray & line)
+char KGrGameIO::getALine (const bool kgr3, QByteArray & line)
 {
     char c;
     line = "";
-    while (openLevel.getChar(&c)) {
+    while (openFile.getChar(&c)) {
 	line = line.append (c);
 	if (c == '\n') {
 	    break;
 	}
     }
 
+    // qDebug() << "Raw line:" << line;
     if (line.size() <= 0) {
 	// Return a '\0' byte if end-of-file.
 	return ('\0');
     }
     if (kgr3) {
+	// In KGr 3 format, strip off leading and trailing syntax.
+	if (line.startsWith ("// ")) {
+	    line = line.right (line.size() - 3);
+	    // qDebug() << "Stripped comment is:" << line;
+	}
+	else {
+	    if (line.startsWith (" i18n(\"")) {
+		line = " " + line.right (line.size() - 7);
+	    }
+	    else if (line.startsWith (" NOTi18n(\"")) {
+		line = " " + line.right (line.size() - 10);
+	    }
+	    else if (line.startsWith (" \"")) {
+		line = " " + line.right (line.size() - 2);
+	    }
+	    if (line.endsWith ("\");\n")) {
+		line = line.left (line.size() - 4) + "\n";
+	    }
+	    else if (line.endsWith ("\\n\"\n")) {
+		line = line.left (line.size() - 4) + "\n";
+	    }
+	    else if (line.endsWith ("\"\n")) {
+		line = line.left (line.size() - 2);
+	    }
+	    // qDebug() << "Stripped syntax is:" << line;
+	}
 	// In Kgr 3 format, return the first byte if not end-of-file.
 	c = line.at (0);
 	line = line.right (line.size() - 1);
@@ -153,6 +295,20 @@ QByteArray KGrGameIO::removeNewline (const QByteArray & line)
     else {
 	return (line);
     }
+}
+
+GameData * KGrGameIO::initGameData (const QString & filePath)
+{
+    GameData * g = new GameData;
+    g->filePath = filePath;
+    g->owner    = USER;	// Owner of the game: "System" or "User".
+    g->nLevels  = 0;	// Number of levels in the game.
+    g->rules    = 'T';	// Game's rules: KGoldrunner or Traditional.
+    g->prefix   = "";	// Game's filename prefix.
+    g->skill    = 'N';	// Game's skill: Tutorial, Normal or Champion.
+    g->name     = "";	// Name of the game.
+    g->about    = "";	// Optional text about the game.
+    return (g);
 }
 
 #include "kgrgameio.moc"

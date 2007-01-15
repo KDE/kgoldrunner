@@ -1,50 +1,51 @@
-G007 T tute Tutorial
- This tutorial is a collection of easy levels that teaches you the rules of KGoldrunner and helps you develop the skills you need to get started.  Each level has a brief explanation, then you play .....
- 
- When you move on to play more advanced levels, you will find that KGoldrunner combines action, strategy and puzzle solving --- all in one game.
-L001
- R                          Z                           Z  MM    MM      MM  MM     Z  MM    MM      MM  MM     Z  MM    MM      MM  MM     Z  MM    MM      MM  MM     Z  MM    MM  MM  MM  MM     Z  MMMMMMMM  MM  MM  MM     Z  MMMMMMMM      MM  MM     Z  MM    MM  MM  MM  MM     Z  MM    MM  MM  MM  MM     Z  MM    MM  MM  MM  MM     Z  MM    MM  MM             Z  MM    MM  MM  MM  MM     Z  MM    MM  MM  MM  MM   NNZ                        HMMM                        HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
- Hi !!
- Hi !  Welcome to KGoldrunner !  The idea of the game is to pick up all the gold nuggets, then climb to the top of the playing area and move up to the next level.  A hidden ladder will appear as you collect the last nugget.
- 
- The hero (the green figure) is your deputy.  To collect the nuggets, just point the mouse where you want him to go.  At first gravity takes over and he falls ...
-L002
- R                          ZN                          ZN                          ZN                          ZN                          ZN                          ZN                          ZN                          ZNNN   M                    ZMMMN  M                    ZMMMN  MNNNNNNNN  NN        ZMMMNN MHMMMMMMH  HM        ZMMMMHMMHMMMMMMH  H         ZMMMMH  HNNNNNMH  H TTTTNNNNZMMMMH  HMMMMHXH  H     XXXXXMMMMH       H HNNH         XMMMMH       H HXXH         XMMMMH       H    X         XMMMMHNNNNNNNH    X         XMMMMMMMMMMMMH    XXXXXXXXXXX
- Navigation
- This is an exercise in moving around.  Follow the track of gold nuggets until the ladder pops up at the right.  The hero can only follow the mouse along simple paths (like _ | L or U), so be careful not to get too far ahead of him.
- 
- DANGER: Try not to fall off the ladder or bar into the concrete pit at the bottom right.  If you do get trapped there, the only way out is to kill the hero (press key Q for quit) and start the level again.
-L003
- R                          ZMMMMMMMM                   ZM      M                   ZM NNNN M      TT           ZMMMMMMMMMMMMMH  XXMMMXXXXXXZ     M      MH  MMMMMMMMMMMZ     M      MH  XXMMMMMMMXXZ     M      MH  MM       MMZ     M NNNN MH  XXNNNNNNNXXZMMMMMMMMMMMMMH  MMXXXXMMMMMZM      MM    H  XXMMMMMMMXXZM      M     H  MMXXXXMMMMMZMMM NNMM     H  XX       XXZMMMMMMMMN    H  MMMM     MMZMMMMMMMMMXXXXH  XXNNMHNNNXXZM     NNN    H  MMMMMMMMMMMZM     MMM  NNH  XXMMMMMMMXXZMNNN     HMMMH  MMMMMMMMMMMZMMMMH    H NNH          NNNZMMMMMMMMMMMMMMMMMMMMMMMMMMMM
- Digging
- Now you have to dig to get the gold!  Just use the left and right mouse buttons to dig left or right of the hero's position.  The hero can then jump into and through the hole he has dug.  He can also dig several holes in a row and run sideways through the dug holes.  Be careful though.  After a while the holes close up and you can get trapped and killed.
- 
- In the third box down, you have to dig two holes, jump in and quickly dig one more, to get through two layers.  On the right, you have to dig three, then two then one to get through.  There are also two little puzzles to work out along the way.  Good luck!
- 
- By the way, you can dig through brick, but not concrete.
-L004
- E                          ZMMMMH                      Z    H                      Z    H                      Z    HR   E                 ZMMMMMMMMMMMMMH          HMMM             H          H                H          H  N             H          HMMM            HH          H   N           H           H   MMMMMMMMMMMMH           H  N            H          HHMMM            H          HMMMMN           H          H    MMMMMMMMMMMMH          H         M      H          H         M      H          H   NE   EM  N   H NNNNN HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
- You Have ENEMIES !!!
- Well, it's been nice and easy up to now, but the game would be no fun without enemies.  They are after the gold too: worse still they are after you!  You die if they catch you, but maybe you will have a few lives left and can start again.
- 
- You can handle enemies by running away, digging a hole or luring them into part of the playing area where they get stranded.
- 
- If an enemy falls into a hole, he gives up any gold he is carrying, then gets stuck in the hole for a time and climbs out.  If the hole closes while he is in it, he dies and reappears somewhere else on the screen.  You can deliberately kill enemies by digging several holes in a row.
- 
- More importantly, you can run over an enemy's head.  You must do that right at the start of this level.  Dig a hole, trap the enemy, wait for him to fall all the way in, then run over him, with the other enemy in hot pursuit...
-L005
- R                           HXMXXXXXXXMXXXXXXXMXXXXXXXXMH TT     TT TTTTT    TTTTTTTH TT    TT  TTTTTT   TTTTTTTH TT   TT   TT   TT  TT N   H TT  TT    TT   NTT TT N   H TT TT N   TT   NTT TT N   H TTTT      TT   NTT TT     H TTT N N   TT    TT TT     H TTT N     TT    TT TTTTT  H TTT N N   TT    TT TTTTTN H TTT       TT    TT TT   N H TTTT      TT    TT TT   N H TTNTT N   TT    TT TT   N H TTN TT    TT    TT TT     H TTN  TT   TT  NTT  TT     H TTN  NTT  TTTTTT   TTTTTTTH TT     TT TTTTT    TTTTTTTH                    NNNNNN HHHHHHHHHHHHHHHHHHHH MMMMMMM
- Bars
- You can move horizontally along bars (or poles), but if you move down you will let go and fall ....  Also, note that you can collect gold by falling onto it.
-L006
-                            Z            E   E          ZMMMMMMHMMMMMMMFMMMMMMMMMMMMZMMMMHHH      MNM           Z    H H      MNM           Z    H H      MFM           Z    H H      MNM           ZMMMHH H      MNM           Z   H  H      MFM           Z   H  H      MNM           Z   H  H      MNM           Z   H  H      MFM           Z E H  H                    ZMMFH  H      XXXXXXXXXXXXXXZHHHH  H                    ZH     H                    ZH     H                    ZH     H     HMXXXXXXXXXXXXMHH   R H     HMNNNMMMMMMNNNMHHMMMMFMMMMMMMMMMMMMMMMMMMMMM
- False Bricks
- Some of the bricks in this level are not what they seem.  If you walk onto them you fall through.  The enemies fall through them too.
-L007
- ZRZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZNNNNNZZZZZZZZZZZZZZZNNNNNNZMMMMMMHHMMMZZZZZZMMMHMMMMMMMMMMMMMMHHMMMZZZZMMMZHMMMMMMMMMZZZMMMHZMMMZZMMMZZHMMZZZZZMMZZZZMMHZZMMMMMMZZZHMMZZZZZMMNNNMMMHZZZMFFMZZZZHMMNNNZZMMMMMMMNHZZZMZZMZZZZHMMMMMZZMMMMMMMNHZZZMMMMZZZZHMMMMMZZMMZZZMMMHZZZMFFMZZZZHMMZZZZZMMZZZZMMHZZZMZZMZZZZHMMZZZZZMMZZZZMMHZZZMMMMZZZZHMMZZZZZMMNNNMMMHZZZMZZMZZZZHMMNNNNNMMMMMMMZZHZZMMMMZZZHZMMMMMMMMMMMMMZZZHZZMFFMZZZHZMMMMMMMZZZZZZZZZHZZZZZZZZZHZZZZZZZZZZZZZZZZEHZZZZZZZZZHEZZZZZZZMMMMMMMMMMMMMMMMMMMMMMMMMMMM
- Bye .......
- This is just a nice easy level to finish up with.  Have fun with the other games in KGoldrunner.
- 
- Note that there is a game Editor in which you and your friends can make up levels and challenge each other.  There is also a KGoldrunner Handbook in the Help Menu, which contains more detail than this Tutorial.
- 
- It's been a pleasure showing you around.  Bye !!!
+// G007 T tute T
+ i18n("Tutorial");
+ i18n("This tutorial is a collection of easy levels that teaches you the rules of KGoldrunner and helps you develop the skills you need to get started.  Each level has a brief explanation, then you play .....\n"
+ "\n"
+ "When you move on to play more advanced levels, you will find that KGoldrunner combines action, strategy and puzzle solving --- all in one game.");
+// L001
+//  R                          Z                           Z  MM    MM      MM  MM     Z  MM    MM      MM  MM     Z  MM    MM      MM  MM     Z  MM    MM      MM  MM     Z  MM    MM  MM  MM  MM     Z  MMMMMMMM  MM  MM  MM     Z  MMMMMMMM      MM  MM     Z  MM    MM  MM  MM  MM     Z  MM    MM  MM  MM  MM     Z  MM    MM  MM  MM  MM     Z  MM    MM  MM             Z  MM    MM  MM  MM  MM     Z  MM    MM  MM  MM  MM   NNZ                        HMMM                        HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+ i18n("Hi !!");
+ i18n("Hi !  Welcome to KGoldrunner !  The idea of the game is to pick up all the gold nuggets, then climb to the top of the playing area and move up to the next level.  A hidden ladder will appear as you collect the last nugget.\n"
+ "\n"
+ "The hero (the green figure) is your deputy.  To collect the nuggets, just point the mouse where you want him to go.  At first gravity takes over and he falls ...");
+// L002
+//  R                          ZN                          ZN                          ZN                          ZN                          ZN                          ZN                          ZN                          ZNNN   M                    ZMMMN  M                    ZMMMN  MNNNNNNNN  NN        ZMMMNN MHMMMMMMH  HM        ZMMMMHMMHMMMMMMH  H         ZMMMMH  HNNNNNMH  H TTTTNNNNZMMMMH  HMMMMHXH  H     XXXXXMMMMH       H HNNH         XMMMMH       H HXXH         XMMMMH       H    X         XMMMMHNNNNNNNH    X         XMMMMMMMMMMMMH    XXXXXXXXXXX
+ i18n("Navigation");
+ i18n("This is an exercise in moving around.  Follow the track of gold nuggets until the ladder pops up at the right.  The hero can only follow the mouse along simple paths (like _ | L or U), so be careful not to get too far ahead of him.\n"
+ "\n"
+ "DANGER: Try not to fall off the ladder or bar into the concrete pit at the bottom right.  If you do get trapped there, the only way out is to kill the hero (press key Q for quit) and start the level again.");
+// L003
+//  R                          ZMMMMMMMM                   ZM      M                   ZM NNNN M      TT           ZMMMMMMMMMMMMMH  XXMMMXXXXXXZ     M      MH  MMMMMMMMMMMZ     M      MH  XXMMMMMMMXXZ     M      MH  MM       MMZ     M NNNN MH  XXNNNNNNNXXZMMMMMMMMMMMMMH  MMXXXXMMMMMZM      MM    H  XXMMMMMMMXXZM      M     H  MMXXXXMMMMMZMMM NNMM     H  XX       XXZMMMMMMMMN    H  MMMM     MMZMMMMMMMMMXXXXH  XXNNMHNNNXXZM     NNN    H  MMMMMMMMMMMZM     MMM  NNH  XXMMMMMMMXXZMNNN     HMMMH  MMMMMMMMMMMZMMMMH    H NNH          NNNZMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+ i18n("Digging");
+ i18n("Now you have to dig to get the gold!  Just use the left and right mouse buttons to dig left or right of the hero's position.  The hero can then jump into and through the hole he has dug.  He can also dig several holes in a row and run sideways through the dug holes.  Be careful though.  After a while the holes close up and you can get trapped and killed.\n"
+ "\n"
+ "In the third box down, you have to dig two holes, jump in and quickly dig one more, to get through two layers.  On the right, you have to dig three, then two then one to get through.  There are also two little puzzles to work out along the way.  Good luck!\n"
+ "\n"
+ "By the way, you can dig through brick, but not concrete.");
+// L004
+//  E                          ZMMMMH                      Z    H                      Z    H                      Z    HR   E                 ZMMMMMMMMMMMMMH          HMMM             H          H                H          H  N             H          HMMM            HH          H   N           H           H   MMMMMMMMMMMMH           H  N            H          HHMMM            H          HMMMMN           H          H    MMMMMMMMMMMMH          H         M      H          H         M      H          H   NE   EM  N   H NNNNN HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+ i18n("You Have ENEMIES !!!");
+ i18n("Well, it's been nice and easy up to now, but the game would be no fun without enemies.  They are after the gold too: worse still they are after you!  You die if they catch you, but maybe you will have a few lives left and can start again.\n"
+ "\n"
+ "You can handle enemies by running away, digging a hole or luring them into part of the playing area where they get stranded.\n"
+ "\n"
+ "If an enemy falls into a hole, he gives up any gold he is carrying, then gets stuck in the hole for a time and climbs out.  If the hole closes while he is in it, he dies and reappears somewhere else on the screen.  You can deliberately kill enemies by digging several holes in a row.\n"
+ "\n"
+ "More importantly, you can run over an enemy's head.  You must do that right at the start of this level.  Dig a hole, trap the enemy, wait for him to fall all the way in, then run over him, with the other enemy in hot pursuit...");
+// L005
+//  R                           HXMXXXXXXXMXXXXXXXMXXXXXXXXMH TT     TT TTTTT    TTTTTTTH TT    TT  TTTTTT   TTTTTTTH TT   TT   TT   TT  TT N   H TT  TT    TT   NTT TT N   H TT TT N   TT   NTT TT N   H TTTT      TT   NTT TT     H TTT N N   TT    TT TT     H TTT N     TT    TT TTTTT  H TTT N N   TT    TT TTTTTN H TTT       TT    TT TT   N H TTTT      TT    TT TT   N H TTNTT N   TT    TT TT   N H TTN TT    TT    TT TT     H TTN  TT   TT  NTT  TT     H TTN  NTT  TTTTTT   TTTTTTTH TT     TT TTTTT    TTTTTTTH                    NNNNNN HHHHHHHHHHHHHHHHHHHH MMMMMMM
+ i18n("Bars");
+ i18n("You can move horizontally along bars (or poles), but if you move down you will let go and fall ....  Also, note that you can collect gold by falling onto it.");
+// L006
+//                             Z            E   E          ZMMMMMMHMMMMMMMFMMMMMMMMMMMMZMMMMHHH      MNM           Z    H H      MNM           Z    H H      MFM           Z    H H      MNM           ZMMMHH H      MNM           Z   H  H      MFM           Z   H  H      MNM           Z   H  H      MNM           Z   H  H      MFM           Z E H  H                    ZMMFH  H      XXXXXXXXXXXXXXZHHHH  H                    ZH     H                    ZH     H                    ZH     H     HMXXXXXXXXXXXXMHH   R H     HMNNNMMMMMMNNNMHHMMMMFMMMMMMMMMMMMMMMMMMMMMM
+ i18n("False Bricks");
+ i18n("Some of the bricks in this level are not what they seem.  If you walk onto them you fall through.  The enemies fall through them too.");
+// L007
+//  ZRZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZNNNNNZZZZZZZZZZZZZZZNNNNNNZMMMMMMHHMMMZZZZZZMMMHMMMMMMMMMMMMMMHHMMMZZZZMMMZHMMMMMMMMMZZZMMMHZMMMZZMMMZZHMMZZZZZMMZZZZMMHZZMMMMMMZZZHMMZZZZZMMNNNMMMHZZZMFFMZZZZHMMNNNZZMMMMMMMNHZZZMZZMZZZZHMMMMMZZMMMMMMMNHZZZMMMMZZZZHMMMMMZZMMZZZMMMHZZZMFFMZZZZHMMZZZZZMMZZZZMMHZZZMZZMZZZZHMMZZZZZMMZZZZMMHZZZMMMMZZZZHMMZZZZZMMNNNMMMHZZZMZZMZZZZHMMNNNNNMMMMMMMZZHZZMMMMZZZHZMMMMMMMMMMMMMZZZHZZMFFMZZZHZMMMMMMMZZZZZZZZZHZZZZZZZZZHZZZZZZZZZZZZZZZZEHZZZZZZZZZHEZZZZZZZMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+ i18n("Bye .......");
+ i18n("This is just a nice easy level to finish up with.  Have fun with the other games in KGoldrunner.\n"
+ "\n"
+ "Note that there is a game Editor in which you and your friends can make up levels and challenge each other.  There is also a KGoldrunner Handbook in the Help Menu, which contains more detail than this Tutorial.\n"
+ "\n"
+ "It's been a pleasure showing you around.  Bye !!!");

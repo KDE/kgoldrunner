@@ -22,6 +22,7 @@
 #define _KGRGAMEIO_H_
 
 #include <QByteArray>
+#include <QDir>
 #include <QFile>
 
 #include "kgrconsts.h"
@@ -31,12 +32,14 @@ enum IOStatus {OK, NotFound, NoRead, NoWrite, UnexpectedEOF};
 
 // GameData structure: contains attributes of a KGoldrunner game.
 typedef struct {
+    QString	filePath;	// Full file-path (for error messages).
     Owner	owner;		// Owner of the game: "System" or "User".
-    QString	name;		// Name of the game.
-    QString     prefix;		// Game's filename prefix.
-    char        settings;	// Game's rules: KGoldrunner or Traditional.
     int         nLevels;	// Number of levels in the game.
-    QString     about;		// Optional text about the game.
+    char        rules;		// Game's rules: KGoldrunner or Traditional.
+    QString     prefix;		// Game's filename prefix.
+    char        skill;		// Game's skill: Tutorial, Normal or Champion.
+    QByteArray  name;		// Name of the game.
+    QByteArray  about;		// Optional info about the game.
 } GameData;
 
 // LevelData structure: contains attributes of a KGoldrunner level.
@@ -85,17 +88,24 @@ public:
     KGrGameIO ();
 
     /**
+     * Find and read data for games, into a list of GameData structures.
+     */
+    IOStatus fetchGameListData (const QString & dir,
+				QList<GameData *> & gameList);
+    /**
      * Find and read data for a level of a game, into a LevelData structure.
      */
-    IOStatus fetchLevelData
-	    (const QString dir, QString prefix, const int level, LevelData & d);
+    IOStatus fetchLevelData (const QString & dir, const QString & prefix,
+				const int level, LevelData & d);
 
 private:
-    QFile		openLevel;
-    QString		getFilePath (QString dir, const QString prefix,
-							const int level);
-    char		getALine (bool kgr3, QByteArray & line);
+    QFile		openFile;
+
+    QString		getFilePath (const QString & dir,
+				const QString & prefix, const int level);
+    char		getALine (const bool kgr3, QByteArray & line);
     QByteArray		removeNewline (const QByteArray & line);
+    GameData *		initGameData (const QString & filePath);
 };
 
 #endif // _KGRGAMEIO_H_

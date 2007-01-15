@@ -1,3 +1,25 @@
-L000
-                                                                                                  R              XXXXXXXXXXXXXXXXXXXXXXXXXXXXN EHHHH H   H HH   HHHHE H N   H    HH  H H H  H     H     HHH  HHH H H  H HH    H     H    H HHH H  H H     H     H    H  HH H  H H        N  HHHH H   H HHH  HHHH  H NMMMMMMMMMMMMMMMMMMMMMMMMMMMM                                                                                                                                                                                                                                
-"Ende" screen
+/*i18n:
+   NOTES: Files 'gamedata/game_*.txt' are KGoldrunner DATA files.  They
+   are installed in $KDEDIR/share/apps/kgoldrunner/system and contain
+   names and descriptions of games, plus names and hints for levels.  You
+   may sometimes need to look at the corresponding game or level graphics
+   to work out a good translation (e.g. Initiation 25, Mongolian Horde).
+
+   To see any level of any game, run KGoldrunner, cancel the startup
+   dialog and select menu Game->Play Any Level...  If you start to play
+   a level, you will probably need to stop the animation by pressing
+   the Pause key (default Esc or P).
+
+   To ease the burden on translators, the .pot does not include all the
+   data messages.  For example, the hints on championship games are not
+   included.  A player that good should not need a hint and maybe has no
+   need of a translation ... :-)  The most urgent translations would be
+   names and hints for the Tutorial games, then the game names and
+   descriptions (as appearing in the main dialog box) and then the other
+   level names and hints.
+*/
+i18n("TRANSLATORS: Please see the notes in the translation comment.");
+
+// L000
+//                                                                                                   R              XXXXXXXXXXXXXXXXXXXXXXXXXXXXN EHHHH H   H HH   HHHHE H N   H    HH  H H H  H     H     HHH  HHH H H  H HH    H     H    H HHH H  H H     H     H    H  HH H  H H        N  HHHH H   H HHH  HHHH  H NMMMMMMMMMMMMMMMMMMMMMMMMMMMM                                                                                                                                                                                                                                
+ NOTi18n("This is the Ende screen");
