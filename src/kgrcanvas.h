@@ -18,7 +18,6 @@
 #ifndef KGRCANVAS_H
 #define KGRCANVAS_H
 
-#include <config.h>
 #include <kgamecanvas.h>
 
 #include "kgrplayfield.h"

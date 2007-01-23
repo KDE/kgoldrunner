@@ -17,8 +17,6 @@
 #ifndef KGRSPRITE_H
 #define KGRSPRITE_H
 
-#include <config.h>
-
 #include <kgamecanvas.h>
 
 #include <QPixmap>
