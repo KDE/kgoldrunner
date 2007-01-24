@@ -27,6 +27,7 @@
 	<Action				name="ice_cave" />
 	<Action				name="midnight" />
 	<Action				name="kde_kool" />
+	<Action				name="svg_1" />
     </Menu>
     <Menu name="settings" >
 	<Action append="save_merge"	name="mouse_mode" />

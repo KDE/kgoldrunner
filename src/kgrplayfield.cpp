@@ -1,5 +1,5 @@
 /***************************************************************************
-                         kgrscene.cpp  -  description
+                       kgrplayfield.cpp  -  description
                              -------------------
     begin                : Fri Aug 04 2006
     Copyright 2006 Mauricio Piacentini
@@ -16,12 +16,14 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QtDebug>
 #include "kgrplayfield.h"
 
 KGrPlayField::KGrPlayField( KGameCanvasAbstract* canvas )
     : KGameCanvasGroup(canvas)
 {
-	show();
+    backdrop = 0;
+    show();
 }
 
 KGrPlayField::~KGrPlayField()
@@ -31,6 +33,7 @@ KGrPlayField::~KGrPlayField()
             delete m_tilesprites.takeFirst();
     m_tileset.clear();
     m_tilenumbers.clear();
+    delete backdrop;
 }
 
 void KGrPlayField::setTile( int x, int y, int tilenum )
@@ -38,35 +41,62 @@ void KGrPlayField::setTile( int x, int y, int tilenum )
     //Cache tilenum (for tile(x,y)
     m_tilenumbers[y*m_numTilesH + x] = tilenum;
     //Update the sprite pixmap using our tileset cache
-    m_tilesprites.at(y*m_numTilesH + x)->setPixmap(m_tileset.at(tilenum));
+    // IDW inserted
+    if ((backdrop != 0) && (tilenum == 0)) {
+	m_tilesprites.at(y*m_numTilesH + x)->hide();
+    }
+    else {
+	m_tilesprites.at(y*m_numTilesH + x)->setPixmap(m_tileset.at(tilenum));
+	m_tilesprites.at(y*m_numTilesH + x)->show();
+	m_tilesprites.at(y*m_numTilesH + x)->raise();
+    }
+    // IDW deleted
+    // m_tilesprites.at(y*m_numTilesH + x)->setPixmap(m_tileset.at(tilenum));
 }
 
-void KGrPlayField::setTiles( const QPixmap& p, int h, int v, int tilewidth, int tileheight, double scale )
+void KGrPlayField::setTiles (const QImage * background, const QImage & image,
+				int h, int v, int tilewidth, int tileheight)
 {
+    qDebug () << "setTiles() called";
     QPixmap   pm;
-    m_tilew = (int)(tilewidth  * scale);
-    m_tileh = (int)(tileheight * scale);
+    m_tilew = tilewidth; // (int)(tilewidth  * scale);
+    m_tileh = tileheight; // (int)(tileheight * scale);
     m_numTilesH = h;
     m_numTilesV = v;
 
+    qDebug () << "deleting backdrop";
+    delete backdrop;
+    backdrop = 0;
+    qDebug () << "backdrop deleted";
+    if (background != 0) {
+	qDebug () << "Set backdrop";
+	backdrop = new KGameCanvasPixmap (this);
+	backdrop->moveTo (0, 0);
+	backdrop->setPixmap (QPixmap::fromImage (*background));
+	backdrop->show();
+	qDebug () << "Backdrop OK";
+    }
+
     //Find out how many tiles in our tileset pixmap
-    int tilesetw = p.width();
+    int tilesetw = image.width();
     int tilecount = tilesetw/tilewidth;
+    qDebug() << "Tile count:" << tilecount;
 
     //Clear previously cached tile data
     while (!m_tilesprites.isEmpty())
             delete m_tilesprites.takeFirst();
     m_tileset.clear();
     m_tilenumbers.clear();
+    qDebug() << "Previous tile set deleted OK ...";
 
     //Now store our tileset as a list of Pixmaps, one for each tile
-    QImage image = p.toImage ();
     for(int i=0;i<tilecount;++i)
     {
-        QImage image = p.toImage ();
-        pm = QPixmap::fromImage (image.copy (i * tilewidth, 0, tilewidth, tileheight));
-	m_tileset.append(pm.scaledToHeight ( m_tileh, Qt::FastTransformation ));
+        pm = QPixmap::fromImage (image.copy (i * tilewidth, 0,
+					tilewidth, tileheight));
+	m_tileset.append (pm);
     }
+    qDebug() << "Tile set created OK ...";
 
     //Create the list of tile sprites, arranged as a grid
     int totaltiles = m_numTilesH*m_numTilesV;
@@ -74,13 +104,16 @@ void KGrPlayField::setTiles( const QPixmap& p, int h, int v, int tilewidth, int 
     {
 	KGameCanvasPixmap * thissprite = new KGameCanvasPixmap(this);
 	thissprite->moveTo((i % m_numTilesH)*m_tilew, (i/m_numTilesH)*m_tileh);
-	thissprite->setPixmap(m_tileset.at(0));
-	thissprite->show();
+	if (backdrop == 0) {
+	    thissprite->setPixmap(m_tileset.at(0));
+	    thissprite->show();
+	}
 
 	//Finally, store the item in our tilesprite list
 	m_tilesprites.append(thissprite);
 	m_tilenumbers.append(0);
     }
+    qDebug() << "Tile sprites list set OK ...";
 }
 
 int KGrPlayField::tile( int x, int y ) const

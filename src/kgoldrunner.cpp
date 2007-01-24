@@ -46,7 +46,7 @@
 #include "kgoldrunner.h"
 
 KGoldrunner::KGoldrunner()
-      : view (new KGrCanvas (this))
+      // : view (new KGrCanvas (this))
 {
 /******************************************************************************/
 /*************  FIND WHERE THE GAMES DATA AND HANDBOOK SHOULD BE  *************/
@@ -74,6 +74,20 @@ KGoldrunner::KGoldrunner()
 /************************  SET PLAYFIELD AND GAME DATA  ***********************/
 /******************************************************************************/
 
+    // Base the size of playing-area and widgets on the monitor resolution.
+    int dw = KApplication::desktop()->width();
+
+    // Need to consider the height, for widescreen displays (eg. 1280x768).
+    int dh = KApplication::desktop()->height();
+
+    double scale = 1.0;
+    if ((dw > 800) && (dh > 600)) {			// More than 800x600.
+	scale = 1.25;			// Scale 1.25:1.
+    }
+    if ((dw > 1024) && (dh > 768))  {			// More than 1024x768.
+	scale = 1.75;			// Scale 1.75:1.
+    }
+    view = new KGrCanvas (this, scale, systemDataDir);
     game = new KGrGame (view, systemDataDir, userDataDir);
 
     // Initialise the collections of levels (i.e. the list of games).
@@ -81,6 +95,8 @@ KGoldrunner::KGoldrunner()
 	startupOK = false;
 	return;				// If no game files, abort.
     }
+
+    view->setBaseScale();		// Set scale for level-titles font.
 
     hero = game->getHero();		// Get a pointer to the hero.
 
@@ -115,23 +131,6 @@ KGoldrunner::KGoldrunner()
     // explicitly hide an edit toolbar - we need it in edit mode only
     toolBar("editToolbar")->hide();
     toolBar("editToolbar")->setAllowedAreas(Qt::TopToolBarArea);
-
-    // Base size of playing-area and widgets on the monitor resolution.
-    int dw = KApplication::desktop()->width();
-
-    // We need to consider the height as well, widescreen displays out there... (i.e. 1280x768)
-    int dh = KApplication::desktop()->height();
-
-
-    if ((dw > 800)&&(dh > 600)) {				// More than 800x600.
-	view->changeSize (+1);		// Scale 1.25:1.
-    }
-    if ((dw > 1024)&&(dh > 768))  {			// More than 1024x768.
-	view->changeSize (+1);
-	view->changeSize (+1);		// Scale 1.75:1.
-    }
-    //Does not seem to be necessary in KDE4 and QGV, and causes resizing issues
-    //view->setBaseScale();		// Set scale for level-names.
 
     // Set mouse control of the hero as the default.
     game->setMouseMode (true);
@@ -324,15 +323,23 @@ void KGoldrunner::setupActions()
     actionCollection()->addAction("kde_kool", setKDEKool);
     connect( setKDEKool, SIGNAL(triggered(bool)), this, SLOT(lsKDEKool()));
 
+    // Default Shift+V
+    setSVG_1 =			new KToggleAction (
+				i18n("&SVG 1"),
+				this);
+    actionCollection()->addAction("svg_1", setSVG_1);
+    connect( setSVG_1, SIGNAL(triggered(bool)), this, SLOT(lsSVG_1()));
+
     QActionGroup* landscapesGrp = new QActionGroup(this);
     landscapesGrp->addAction(setKGoldrunner);
     landscapesGrp->addAction(setAppleII);
     landscapesGrp->addAction(setIceCave);
     landscapesGrp->addAction(setMidnight);
     landscapesGrp->addAction(setKDEKool);
+    landscapesGrp->addAction(setSVG_1);
     landscapesGrp->setExclusive(true);
 
-    setKGoldrunner->setChecked(true);
+    setSVG_1->setChecked(true);
 
     /**************************************************************************/
     /****************************   SETTINGS MENU  ****************************/
@@ -743,6 +750,7 @@ void KGoldrunner::lsApple2()		{view->changeLandscape ("Apple II");}
 void KGoldrunner::lsIceCave()		{view->changeLandscape ("Ice Cave");}
 void KGoldrunner::lsMidnight()		{view->changeLandscape ("Midnight");}
 void KGoldrunner::lsKDEKool()		{view->changeLandscape ("KDE Kool");}
+void KGoldrunner::lsSVG_1()		{view->changeLandscape ("SVG 1");}
 
 // Local slots to set mouse or keyboard control of the hero.
 

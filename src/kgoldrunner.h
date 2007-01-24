@@ -94,6 +94,7 @@ private slots:
     void lsIceCave();
     void lsMidnight();
     void lsKDEKool();
+    void lsSVG_1();
 
     // Local slots to set mouse/keyboard control of the hero.
     void setMouseMode();
@@ -186,6 +187,7 @@ private:
     KToggleAction *	setIceCave;	// Show "Ice Cave" landscape.
     KToggleAction *	setMidnight;	// Show "Midnight" landscape.
     KToggleAction *	setKDEKool;	// Show "KDE Kool" landscape.
+    KToggleAction *	setSVG_1;	// Show "SVG 1" landscape.
 
     KToggleAction *	setMouse;	// Show mouse/keyboard mode on menu.
     KToggleAction *	setKeyboard;	// Show mouse/keyboard mode on menu.

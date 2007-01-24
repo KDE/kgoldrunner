@@ -2492,13 +2492,11 @@ bool KGrGame::loadCollections (Owner o)
 		gameList.last()->filePath));
 	break;
     case OK:
-	qDebug() << "gameList count" << gameList.count();
 	foreach (GameData * g, gameList) {
 	    collections.append (new KGrCollection
 		    (o, i18n((const char *) g->name), // Translate now.
 			g->prefix, g->rules, g->nLevels,
 			QString::fromUtf8((const char *) g->about)));
-	    qDebug() << g->prefix << "File Path XXX:" << g->filePath;
 	}
 	result = true;
 	break;

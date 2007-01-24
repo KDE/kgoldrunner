@@ -80,6 +80,9 @@ static const char * colourScheme [] = {
     ": c #f9d26a", /* Ladder light */
     "# c #c19a68", /* Ladder dark */
     "a c #af7516", /* Pole or bar */
+    "SVG 1",
+    "SVG",         /* SVG landscape */
+    "kgr_1",       /* Filename prefix */
     ""             /* TERMINATOR */
 };
 

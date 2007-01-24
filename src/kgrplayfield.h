@@ -25,13 +25,16 @@
 #include <QList>
 #include <QPainter>
 
+#include <KSvgRenderer>
+
 class KGrPlayField : public KGameCanvasGroup
 {
 public:
-    KGrPlayField ( KGameCanvasAbstract* canvas = NULL);
+    KGrPlayField ( KGameCanvasAbstract* canvas = NULL );
     ~KGrPlayField();
     void setTile( int x, int y, int tilenum );
-    void setTiles( const QPixmap& p, int h, int v, int tilewidth, int tileheight, double scale );
+    void setTiles (const QImage * background, const QImage & image,
+				int h, int v, int tilewidth, int tileheight);
     int  tile( int x, int y ) const;
     inline void setScale (double scale){ m_scale=scale;};
     inline double scale(){ return m_scale;};
@@ -45,6 +48,7 @@ private:
     int m_numTilesH;
     int m_numTilesV;
     double m_scale;
+    KGameCanvasPixmap * backdrop;
 };
 
 #endif // KGRPLAYFIELD_H

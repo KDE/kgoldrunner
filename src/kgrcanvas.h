@@ -31,12 +31,14 @@
 #include <QMouseEvent>
 #include <QList>
 
+class KSvgRenderer;
 
 class KGrCanvas : public KGameCanvasWidget
 {
 	Q_OBJECT
 public:
-	KGrCanvas (QWidget * parent = 0);
+	KGrCanvas (QWidget * parent, const double scale,
+				const QString & systemDataDir);
 	virtual ~KGrCanvas();
 
 	void changeLandscape (const QString & name);
@@ -84,8 +86,9 @@ private:
 
 	int freebg, nuggetbg, polebg, ladderbg, hladderbg;
 	int edherobg, edenemybg, betonbg, brickbg, fbrickbg;
-	int bgw, bgh, bgd;
-	QPixmap bgPix;
+	int bgw, bgh;			// Size of KGoldrunner 2 tile QPixmap.
+	int imgW, imgH;			// Scaled size of KGr 3 tile QImage.
+	QImage bgPix;			// Strip of 18 tile images.
 
 	int goldEnemy;
 
@@ -101,6 +104,10 @@ private:
 	KGameCanvasRectangle * drawRectangle (int, int, int, int, int);
 	void changeColours (const char * colours []);
 	void recolourObject (const char * object [], const char * colours []);
+
+	KSvgRenderer * svg;
+	QString picsDataDir;
+	QString filePrefixSVG;
 };
 
 #endif // KGRCANVAS_H

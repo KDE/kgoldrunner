@@ -38,18 +38,22 @@
 #include <QList>
 #include <QMouseEvent>
 
+#include <KSvgRenderer>
 
-class KGoldrunner;
+// class KGoldrunner;
 
-KGrCanvas::KGrCanvas (QWidget * parent)
-	: KGameCanvasWidget (parent)
+KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
+			const QString & systemDataDir)
+			: KGameCanvasWidget (parent)
 {
     //setBackgroundMode (Qt::NoBackground);
     m = new QCursor ();		// For handling the mouse.
 
     scaleStep = STEP;		// Initial scale is 1:1.
     baseScale = scaleStep;
-    baseFontSize = fontInfo().pointSize();
+    baseFontSize = fontInfo().pointSize() + 2;
+    scaleStep = (int) ((scale * STEP) + 0.05);
+    qDebug() << "Scale" << scale << "Scaled Step" << scaleStep;
 
     border = 4;			// Allow 2 tile-widths on each side for border.
     cw = 4*STEP;		// Playfield cell width (= four steps).
@@ -60,6 +64,9 @@ KGrCanvas::KGrCanvas (QWidget * parent)
     heroSprite = 0;
     enemySprites = 0;
 
+    svg = 0;
+    picsDataDir = systemDataDir + "../pics/";
+    filePrefixSVG = "";
     initView();			// Set up the graphics, etc.
 }
 
@@ -69,12 +76,13 @@ KGrCanvas::~KGrCanvas()
 
 void KGrCanvas::changeLandscape (const QString & name)
 {
+    qDebug() << "Looking for landscape:" << name;
     for (int i = 0; strcmp (colourScheme [i], "") != 0; i++) {
 	if (colourScheme [i] == name) {
 
+	    qDebug() << "Found it: going to change colours.";
 	    // Change XPM colours and re-draw the tile-pictures used by QCanvas.
 	    changeColours (& colourScheme [i]);
-	    makeTiles();
 
 	    // Set all cells to same tile-numbers as before, but new colours.
 	    int tileNo [FIELDWIDTH] [FIELDHEIGHT];
@@ -86,8 +94,9 @@ void KGrCanvas::changeLandscape (const QString & name)
 		}
 	    }
 
-	    playfield->setTiles (bgPix, (FIELDWIDTH+border), (FIELDHEIGHT+border),
-			bgw, bgh, (1.0 * scaleStep) / STEP);		// Sets all tile-numbers to 0.
+	    qDebug() << "Going to make tiles.";
+	    makeTiles();
+	    qDebug() << "Made tiles OK.";
 
 	    for (int x = 0; x < FIELDWIDTH; x++) {
 		for (int y = 0; y < FIELDHEIGHT; y++) {
@@ -127,8 +136,8 @@ bool KGrCanvas::changeSize (int d)
     wmScale = (wmScale * scaleStep) / STEP;
 
     if (playfield) {
-    //Scale background
-	// Set all cells to same tile-numbers as before, but new colours.
+	//Scale background
+	// Set all cells to same tile-numbers as before.
 	 int tileNo [FIELDWIDTH] [FIELDHEIGHT];
 	 int offset = border / 2;
 
@@ -138,8 +147,12 @@ bool KGrCanvas::changeSize (int d)
 	    }
 	}
 
-	playfield->setTiles (bgPix, (FIELDWIDTH+border), (FIELDHEIGHT+border),
-		bgw, bgh, wmScale);		// Sets all tile-numbers to 0.
+	imgW = (bgw * scaleStep) / STEP;
+	imgH = (bgh * scaleStep) / STEP;
+
+	qDebug() << "Going to make tiles: resize.";
+	makeTiles();
+	qDebug() << "Made tiles OK.";
 
 	for (int x = 0; x < FIELDWIDTH; x++) {
 	    for (int y = 0; y < FIELDHEIGHT; y++) {
@@ -157,6 +170,8 @@ bool KGrCanvas::changeSize (int d)
     	spriteloc = heroSprite->currentLoc();
     	heroSprite->clearFrames();
     	heroSprite->addFrames(QPixmap (hero_xpm), 16, 16, 20, wmScale );
+	// Force re-draw of both pixmap and position at the new scale.
+    	heroSprite->move (0, 0, (spriteframe > 0) ? 0 : 1);
     	heroSprite->move (spriteloc.x(), spriteloc.y(), spriteframe);
     }
 
@@ -172,6 +187,8 @@ bool KGrCanvas::changeSize (int d)
     		thisenemy->addFrames(QPixmap (enemy1_xpm), 16, 16, 20, wmScale);
 		// Now adds the frames for enemies with no gold ...
     		thisenemy->addFrames(QPixmap (enemy2_xpm), 16, 16, 20, wmScale);
+		// Force re-draw of both pixmap and position at the new scale.
+		thisenemy->move (0, 0, (spriteframe > 0) ? 0 : 1);
     		thisenemy->move (spriteloc.x(), spriteloc.y(), spriteframe);
 	    }
 	}
@@ -365,7 +382,7 @@ void KGrCanvas::deleteEnemySprites()
 
 QPixmap KGrCanvas::getPixmap (char type)
 {
-    QPixmap pic (bgw, bgh);
+    QImage pic (bgw, bgh, QImage::Format_ARGB32_Premultiplied);
     QPainter p (& pic);
     int tileNumber;
 
@@ -385,15 +402,18 @@ QPixmap KGrCanvas::getPixmap (char type)
     }
 
     // Copy a tile of width bgw and height bgh from the tile-array.
-    p.drawPixmap (0, 0, bgPix, tileNumber * bgw, 0, bgw, bgh);
+    p.drawImage (0, 0, bgPix, tileNumber * bgw, 0, bgw, bgh);
     p.end();
 
-    return (pic);
+    return QPixmap::fromImage (pic);
 }
 
 void KGrCanvas::initView()
 {
-    changeColours (& colourScheme [0]);		// Set "KGoldrunner" landscape.
+    changeColours (& colourScheme [0]);		// Set "KGoldrunner" colours.
+
+    // TODO: Set up (properly) a default SVG theme OR one from user's KConfig.
+    filePrefixSVG = "kgr_1";			// FORCE SVG (TESTING) ...
 
     // Set up the pixmaps for the editable objects.
     freebg	= 0;		// Free space.
@@ -409,30 +429,26 @@ void KGrCanvas::initView()
     brickbg	= 8;		// Solid brick - 1st pixmap.
     fbrickbg	= 15;		// False brick - 8th pixmap (for editing).
 
-    QPixmap pixmap;
-    QImage image;
-
-    pixmap = QPixmap (hgbrick_xpm);
+    QPixmap pixmap = QPixmap (hgbrick_xpm);
 
     bgw = pixmap.width();	// Save dimensions for "getPixmap".
     bgh = pixmap.height();
-    bgd = pixmap.depth();
 
     // Assemble the background and editing pixmaps into a strip (18 pixmaps).
-    bgPix	= QPixmap ((brickbg + 10) * bgw, bgh);
+    imgW = (bgw * scaleStep) / STEP;
+    imgH = (bgh * scaleStep) / STEP;
+    bgPix    = QImage ((brickbg + 10) * imgW, imgH,
+			QImage::Format_ARGB32_Premultiplied);
+
+    // Define the canvas as an array of tiles.  Default tile is 0 (free space).
+    playfield = new KGrPlayField (this);
 
     makeTiles();		// Fill the strip with 18 tiles.
 
-    // Define the canvas as an array of tiles.  Default tile is 0 (free space).
-    playfield = new KGrPlayField(this);
+    setFixedSize (((FIELDWIDTH+border)  * bgw * scaleStep) / STEP,
+		  ((FIELDHEIGHT+border) * bgh * scaleStep) / STEP);
 
-    //Now set our tileset in the scene
-    playfield->setTiles (bgPix, (FIELDWIDTH+border), (FIELDHEIGHT+border),
-			bgw, bgh, (1.0 * scaleStep) / STEP);
-
-    setFixedSize ((FIELDWIDTH+border) * bgw, (FIELDHEIGHT+border) * bgh);
-
-    goldEnemy = 20;			// Offset of gold-carrying frames.
+    goldEnemy = 20;		// Offset of gold-carrying frames.
 
     // Draw the border around the playing area (z = 0).
     makeBorder();
@@ -447,22 +463,91 @@ void KGrCanvas::initView()
 
 void KGrCanvas::makeTiles ()
 {
+    qDebug() << "filePrefixSVG:" << filePrefixSVG;
+    if (filePrefixSVG != "") {
+	QString filePath = picsDataDir + filePrefixSVG + ".svg";
+	// filePath = "/home/ianw/kgr.svg";	// TESTING ...
+	qDebug() << "Opening SVG renderer, file:" << filePath;
+	svg = new KSvgRenderer (filePath);
+
+	// TODO: Remove this hack when brick-blaster is implemented.
+	QString filePrefixSVGsave = filePrefixSVG;
+	for (int i = 0; strcmp (colourScheme [i], "") != 0; i++) {
+	    if (colourScheme [i] == "Midnight") {
+		// HACK (till brick-blaster in): makes dug bricks dark in SVG.
+		changeColours (& colourScheme [i]);
+	    }
+	}
+	filePrefixSVG = filePrefixSVGsave;
+    }
+
+    bgPix.fill (0);
+    qDebug() << "Scaling bgpix:" << scaleStep << imgW << imgH;
+    bgPix = bgPix.scaledToHeight (imgH);
+    qDebug() << "Scaling OK." << bgPix.size();
+
     QPainter p (& bgPix);
 
-    // First draw the single pixmaps (8 tiles) ...
-    p.drawPixmap (freebg    * bgw, 0, QPixmap (hgbrick_xpm));	// Free space.
-    p.drawPixmap (nuggetbg  * bgw, 0, QPixmap (nugget_xpm));	// Nugget.
-    p.drawPixmap (polebg    * bgw, 0, QPixmap (pole_xpm));	// Pole or bar.
-    p.drawPixmap (ladderbg  * bgw, 0, QPixmap (ladder_xpm));	// Ladder.
-    p.drawPixmap (hladderbg * bgw, 0, QPixmap (hladder_xpm));	// Hidden laddr.
-    p.drawPixmap (edherobg  * bgw, 0, QPixmap (edithero_xpm));	// Static hero.
-    p.drawPixmap (edenemybg * bgw, 0, QPixmap (editenemy_xpm));	// Static enemy.
-    p.drawPixmap (betonbg   * bgw, 0, QPixmap (beton_xpm));	// Concrete.
+    // Draw the non-SVG tiles (for Editor): free, hidden ladder, hero and enemy.
+    p.drawImage (freebg    * imgW, 0, QImage(hgbrick_xpm).scaledToHeight(imgH));
+    p.drawImage (hladderbg * imgW, 0, QImage(hladder_xpm).scaledToHeight(imgH));
+    p.drawImage (edherobg * imgW, 0, QImage(edithero_xpm).scaledToHeight(imgH));
+    p.drawImage (edenemybg*imgW, 0, QImage(editenemy_xpm).scaledToHeight(imgH));
 
-    // ... then add the 10 brick pixmaps.
-    p.drawPixmap (brickbg   * bgw, 0, QPixmap (bricks_xpm));	// Bricks.
+    // ... then add the 10 brick and digging pixmaps.
+    p.drawImage (brickbg   * imgW, 0, QImage(bricks_xpm).scaledToHeight(imgH));
 
-    p.end();
+    // Make an empty background image.
+    QImage * background = 0;
+
+    qDebug() << "Is it SVG?";
+    if ((! svg) || (! svg->isValid())) {
+	qDebug() << "No.";
+	// If not in SVG mode, draw nugget, bar, ladder and concrete.
+	p.drawImage (nuggetbg*imgW, 0, QImage(nugget_xpm).scaledToHeight(imgH));
+	p.drawImage (polebg  *imgW, 0, QImage(pole_xpm).scaledToHeight(imgH));
+	p.drawImage (ladderbg*imgW, 0, QImage(ladder_xpm).scaledToHeight(imgH));
+	p.drawImage (betonbg *imgW, 0, QImage(beton_xpm).scaledToHeight(imgH));
+    }
+    else {
+	// Else, draw SVG background and tiles.
+	qDebug() << "Yes.";
+	qDebug () << "Load SVG backdrop ...";
+	background = new QImage ((FIELDWIDTH+border) * imgW,
+				(FIELDHEIGHT+border) * imgH,
+				QImage::Format_ARGB32_Premultiplied);
+	background->fill (0);
+	QPainter b (background);
+	svg->render (&b, "background");
+	qDebug () << "SVG backdrop OK ...";
+
+	// Draw SVG versions of nugget, bar, ladder, concrete and brick.
+	QImage img (imgW, imgH, QImage::Format_ARGB32_Premultiplied);
+	QPainter q (&img);
+	img.fill (0);
+	svg->render (&q, "gold");
+	p.drawImage (nuggetbg * imgW,  0, img);
+	img.fill (0);
+	svg->render (&q, "bar");
+	p.drawImage (polebg * imgW,  0, img);
+	img.fill (0);
+	svg->render (&q, "ladder");
+	p.drawImage (ladderbg * imgW,  0, img);
+	img.fill (0);
+	svg->render (&q, "concrete");
+	p.drawImage (betonbg * imgW, 0, img);
+	img.fill (0);
+	svg->render (&q, "brick");
+	p.drawImage (brickbg * imgW, 0, img);
+    }
+
+    //Now set our tileset in the scene
+    playfield->setTiles (background, bgPix,
+		(FIELDWIDTH+border), (FIELDHEIGHT+border), imgW, imgH);
+
+    delete svg;			// Finished with SVG rendering.
+    svg = 0;
+    delete background;
 }
 
 void KGrCanvas::makeBorder ()
@@ -474,23 +559,22 @@ void KGrCanvas::makeBorder ()
     while (!borderRectangles.isEmpty())
             delete borderRectangles.takeFirst();
 
-   /* border = 4;			// Allow 2 tile-widths on each side for border.
-    cw = 4*STEP;		// Playfield cell width (= four steps).
-    bw = border*cw/2;		// Total border width (= two cells).
-    lw = cw/8;			// Line width (for edge of border).
-    mw = bw - lw;		// Border main-part width.*/
     KGameCanvasRectangle * nextRectangle;
 
-    nextRectangle = drawRectangle (11, 0, 0, FIELDWIDTH*cw + 2*bw, mw);
-    borderRectangles.append(nextRectangle);
-    nextRectangle = drawRectangle (11, 0, FIELDHEIGHT*cw + bw + lw,
+    // IF SVG, NO COLOURED BORDER: background fills canvas now.
+    if (filePrefixSVG == "") {
+	nextRectangle = drawRectangle (11, 0, 0, FIELDWIDTH*cw + 2*bw, mw);
+	borderRectangles.append(nextRectangle);
+	nextRectangle = drawRectangle (11, 0, FIELDHEIGHT*cw + bw + lw,
 						FIELDWIDTH*cw + 2*bw, mw);
-    borderRectangles.append(nextRectangle);
-    nextRectangle = drawRectangle (12, 0, bw - lw - 1, mw, FIELDHEIGHT*cw + 2*lw + 2);
-    borderRectangles.append(nextRectangle);
-    nextRectangle = drawRectangle (12, FIELDWIDTH*cw + bw + lw, bw - lw - 1,
+	borderRectangles.append(nextRectangle);
+	nextRectangle = drawRectangle (12, 0, bw - lw - 1,
+						mw, FIELDHEIGHT*cw + 2*lw + 2);
+	borderRectangles.append(nextRectangle);
+	nextRectangle = drawRectangle (12, FIELDWIDTH*cw + bw + lw, bw - lw - 1,
 						mw, FIELDHEIGHT*cw + 2*lw + 3);
-    borderRectangles.append(nextRectangle);
+	borderRectangles.append(nextRectangle);
+    }
 
     // Draw inside edges of border, in the same way.
     colour = QColor (Qt::black);
@@ -521,6 +605,13 @@ KGameCanvasRectangle * KGrCanvas::drawRectangle
 
 void KGrCanvas::changeColours (const char * colours [])
 {
+    if (strcmp (colours [1], "SVG") == 0) {
+	filePrefixSVG = colours [2];	// KGoldrunner 3 landscape, SVG-based.
+	qDebug() << "SVG landscape: looking for files '" + filePrefixSVG +".*'";
+	return;
+    }
+
+    filePrefixSVG = "";			// KGoldrunner 2 landscape, xpm-based.
     recolourObject (hgbrick_xpm,   colours);
     recolourObject (nugget_xpm,    colours);
     recolourObject (pole_xpm,      colours);
