@@ -26,7 +26,7 @@
 class KGrSprite : public KGameCanvasPixmap
 {
 public:
-    KGrSprite ( KGameCanvasAbstract* canvas = NULL);
+    explicit KGrSprite ( KGameCanvasAbstract* canvas = NULL);
     ~KGrSprite();
     void move(double x, double y, int frame);
     void setZ ( qreal z );

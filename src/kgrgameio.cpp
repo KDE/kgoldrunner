@@ -256,19 +256,19 @@ char KGrGameIO::getALine (const bool kgr3, QByteArray & line)
 	}
 	else {
 	    if (line.startsWith (" i18n(\"")) {
-		line = " " + line.right (line.size() - 7);
+		line = ' ' + line.right (line.size() - 7);
 	    }
 	    else if (line.startsWith (" NOTi18n(\"")) {
-		line = " " + line.right (line.size() - 10);
+		line = ' ' + line.right (line.size() - 10);
 	    }
 	    else if (line.startsWith (" \"")) {
-		line = " " + line.right (line.size() - 2);
+		line = ' ' + line.right (line.size() - 2);
 	    }
 	    if (line.endsWith ("\");\n")) {
-		line = line.left (line.size() - 4) + "\n";
+		line = line.left (line.size() - 4) + '\n';
 	    }
 	    else if (line.endsWith ("\\n\"\n")) {
-		line = line.left (line.size() - 4) + "\n";
+		line = line.left (line.size() - 4) + '\n';
 	    }
 	    else if (line.endsWith ("\"\n")) {
 		line = line.left (line.size() - 2);

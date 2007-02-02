@@ -30,7 +30,7 @@
 class KGrPlayField : public KGameCanvasGroup
 {
 public:
-    KGrPlayField ( KGameCanvasAbstract* canvas = NULL );
+    explicit KGrPlayField ( KGameCanvasAbstract* canvas = NULL );
     ~KGrPlayField();
     void setTile( int x, int y, int tilenum );
     void setTiles (const QImage * background, const QImage & image,

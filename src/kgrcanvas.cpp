@@ -464,7 +464,7 @@ void KGrCanvas::initView()
 void KGrCanvas::makeTiles ()
 {
     qDebug() << "filePrefixSVG:" << filePrefixSVG;
-    if (filePrefixSVG != "") {
+    if (!filePrefixSVG.isEmpty()) {
 	QString filePath = picsDataDir + filePrefixSVG + ".svg";
 	// filePath = "/home/ianw/kgr.svg";	// TESTING ...
 	qDebug() << "Opening SVG renderer, file:" << filePath;
@@ -562,7 +562,7 @@ void KGrCanvas::makeBorder ()
     KGameCanvasRectangle * nextRectangle;
 
     // IF SVG, NO COLOURED BORDER: background fills canvas now.
-    if (filePrefixSVG == "") {
+    if (filePrefixSVG.isEmpty()) {
 	nextRectangle = drawRectangle (11, 0, 0, FIELDWIDTH*cw + 2*bw, mw);
 	borderRectangles.append(nextRectangle);
 	nextRectangle = drawRectangle (11, 0, FIELDHEIGHT*cw + bw + lw,

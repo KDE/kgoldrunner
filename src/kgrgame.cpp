@@ -2287,7 +2287,7 @@ void KGrThumbNail::paintEvent (QPaintEvent * /* event (unused) */)
     pen.setColor (backgroundColor);
     p.setPen (pen);
 
-    if (levelLayout == "") {
+    if (levelLayout.isEmpty()) {
 	// There is no file, so fill the thumbnail with "FREE" cells.
 	p.drawRect (QRect(fw, fw, FIELDWIDTH*n, FIELDHEIGHT*n));
 	return;
