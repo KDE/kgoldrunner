@@ -2236,8 +2236,9 @@ bool KGrGame::ownerOK (Owner o)
 /******************************************************************************/
 
 KGrThumbNail::KGrThumbNail (QWidget * parent, const char * name)
-			: QFrame (parent, name)
+			: QFrame (parent)
 {
+    setObjectName(name);
     // Let the parent do all the work.  We need a class here so that
     // QFrame::drawContents (QPainter *) can be re-implemented and
     // the thumbnail can be automatically re-painted when required.

@@ -561,7 +561,7 @@ KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
 
    // Set up a widget to hold the wrapped text, using \n for paragraph breaks.
 			mle = new QTextEdit (dad);
-    mle->		setTextFormat (Qt::PlainText);
+    mle->		setAcceptRichText (false);
     mainLayout->addWidget (mle);
 
 #ifdef KGR_PORTABLE
@@ -676,7 +676,7 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
 
    // Set up a widget to hold the wrapped text, using \n for paragraph breaks.
     mle	     = new QTextEdit (dad);
-    mle->    setTextFormat (Qt::PlainText);
+    mle->    setAcceptRichText (false);
     mainLayout->addWidget (mle);
 
 #ifdef KGR_PORTABLE
