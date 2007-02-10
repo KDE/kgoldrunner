@@ -473,7 +473,7 @@ void KGrCanvas::makeTiles ()
 	// TODO: Remove this hack when brick-blaster is implemented.
 	QString filePrefixSVGsave = filePrefixSVG;
 	for (int i = 0; strcmp (colourScheme [i], "") != 0; i++) {
-	    if (colourScheme [i] == "Midnight") {
+	    if (!strcmp(colourScheme [i], "Midnight")) {
 		// HACK (till brick-blaster in): makes dug bricks dark in SVG.
 		changeColours (& colourScheme [i]);
 	    }
