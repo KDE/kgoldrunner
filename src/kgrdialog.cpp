@@ -375,10 +375,10 @@ void KGrSLDialog::slColln (QListWidgetItem * item)
     int levCnt = collections.at(n)->nLevels;
     if (collections.at(n)->settings == 'K')
 	collnD->setText (i18np("1 level, uses KGoldrunner rules.",
-				"%n levels, uses KGoldrunner rules.", levCnt));
+				"%1 levels, uses KGoldrunner rules.", levCnt));
     else
 	collnD->setText (i18np("1 level, uses Traditional rules.",
-				"%n levels, uses Traditional rules.", levCnt));
+				"%1 levels, uses Traditional rules.", levCnt));
 #else
     QString levCnt;
     levCnt = levCnt.setNum (collections.at(n)->nLevels);
@@ -714,7 +714,7 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
 	}
 	QString		s;
 #ifndef KGR_PORTABLE
-	nLevL->		setText (i18np("1 level", "%n levels",
+	nLevL->		setText (i18np("1 level", "%1 levels",
 					collections.at(defaultGame)->nLevels));
 #else
 	nLevL->		setText (i18n("%1 levels",
