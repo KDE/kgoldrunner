@@ -889,7 +889,8 @@ void KGoldrunner::optionsConfigureKeys()
 
 void KGoldrunner::optionsConfigureToolbars()
 {
-    saveMainWindowSettings(KGlobal::config().data(), autoSaveGroup());
+    KConfigGroup cg( KGlobal::config(), autoSaveGroup());
+    saveMainWindowSettings( cg );
 }
 
 void KGoldrunner::newToolbarConfig()
@@ -898,7 +899,7 @@ void KGoldrunner::newToolbarConfig()
     // recreate our GUI, and re-apply the settings (e.g. "text under icons", etc.)
     createGUI();
 
-    applyMainWindowSettings(KGlobal::config().data(), autoSaveGroup());
+    applyMainWindowSettings( KGlobal::config()->group( autoSaveGroup()) );
 }
 
 void KGoldrunner::optionsPreferences()
