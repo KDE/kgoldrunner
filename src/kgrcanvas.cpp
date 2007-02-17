@@ -35,7 +35,6 @@
 #include <QPixmap>
 #include <QList>
 #include <QLabel>
-#include <QList>
 #include <QMouseEvent>
 
 #include <KSvgRenderer>
