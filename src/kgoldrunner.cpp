@@ -834,25 +834,23 @@ void KGoldrunner::showEnemy4()		{game->showEnemyState (4);}
 void KGoldrunner::showEnemy5()		{game->showEnemyState (5);}
 void KGoldrunner::showEnemy6()		{game->showEnemyState (6);}
 
-void KGoldrunner::saveProperties(KConfig *config)
+void KGoldrunner::saveProperties(KConfigGroup &config)
 {
     // The 'config' object points to the session managed
     // config file.  Anything you write here will be available
     // later when this app is restored.
 
-    config->setGroup ("Game");		// Prevents a compiler warning.
     printf ("I am in KGoldrunner::saveProperties.\n");
     // config->writeEntry("qqq", qqq);
 }
 
-void KGoldrunner::readProperties(KConfig *config)
+void KGoldrunner::readProperties(const KConfigGroup &config)
 {
     // The 'config' object points to the session managed
     // config file.  This function is automatically called whenever
     // the app is being restored.  Read in here whatever you wrote
     // in 'saveProperties'
 
-    config->setGroup ("Game");		// Prevents a compiler warning.
     printf ("I am in KGoldrunner::readProperties.\n");
     // QString qqq = config->readEntry("qqq");
 }
