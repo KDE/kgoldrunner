@@ -239,12 +239,12 @@ void KGoldrunner::setupActions()
 
     QAction* createAct = actionCollection()->addAction("create_level");
     createAct->setText(i18n("&Create Level"));
-    createAct->setIcon(KIcon("filenew"));
+    createAct->setIcon(KIcon("document-new"));
     connect( createAct, SIGNAL(triggered(bool)), game, SLOT(createLevel()));
 
     QAction* editAnyAct	= actionCollection()->addAction("edit_any");
     editAnyAct->setText(i18n("&Edit Any Level..."));
-    editAnyAct->setIcon(KIcon("fileopen"));
+    editAnyAct->setIcon(KIcon("document-open"));
     connect( editAnyAct, SIGNAL(triggered(bool)), game, SLOT(updateLevel()));
 
     QAction* editNextAct = actionCollection()->addAction("edit_next");
@@ -258,7 +258,7 @@ void KGoldrunner::setupActions()
 
     saveEdits =	actionCollection()->addAction("save_edits");
     saveEdits->setText(i18n("&Save Edits..."));
-    saveEdits->setIcon(KIcon("filesave"));
+    saveEdits->setIcon(KIcon("document-save"));
     connect( saveEdits, SIGNAL(triggered(bool)), game, SLOT(saveLevelFile()));
     saveEdits->setEnabled (false);			// Nothing to save, yet.
 
