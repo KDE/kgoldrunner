@@ -1595,18 +1595,18 @@ bool KGrGame::saveLevelFile()
     // Save the level.
     for (j = 1; j < 21; j++)
     for (i = 1; i < 29; i++) {
-	levelFile.putch (editObjArray[i][j]);
+	levelFile.putChar (editObjArray[i][j]);
 	lastSaveArray[i][j] = editObjArray[i][j];	// Copy for "saveOK()".
     }
-    levelFile.putch ('\n');
+    levelFile.putChar ('\n');
 
     // Save the level name, changing non-ASCII chars to UTF-8 (eg. ü to Ã¼).
     QByteArray levelNameC = levelName.toUtf8();
     int len1 = levelNameC.length();
     if (len1 > 0) {
 	for (i = 0; i < len1; i++)
-	    levelFile.putch (levelNameC[i]);
-	levelFile.putch ('\n');			// Add a newline.
+	    levelFile.putChar (levelNameC[i]);
+	levelFile.putChar ('\n');			// Add a newline.
     }
 
     // Save the level hint, changing non-ASCII chars to UTF-8 (eg. ü to Ã¼).
@@ -1616,13 +1616,13 @@ bool KGrGame::saveLevelFile()
 
     if (len2 > 0) {
 	if (len1 <= 0)
-	    levelFile.putch ('\n');		// Leave blank line for name.
+	    levelFile.putChar ('\n');		// Leave blank line for name.
 	for (i = 0; i < len2; i++) {
 	    ch = levelHintC[i];
-	    levelFile.putch (ch);		// Copy the character.
+	    levelFile.putChar (ch);		// Copy the character.
 	}
 	if (ch != '\n')
-	    levelFile.putch ('\n');		// Add a newline character.
+	    levelFile.putChar ('\n');		// Add a newline character.
     }
 
     levelFile.close ();
@@ -2545,7 +2545,7 @@ bool KGrGame::saveCollections (Owner o)
 				colln->name.toUtf8().constData());
 	    len = line.length();
 	    for (i = 0; i < len; i++)
-			c.putch (line.toUtf8()[i]);
+			c.putChar (line.toUtf8()[i]);
 
 	    len = colln->about.length();
 	    if (len > 0) {
@@ -2554,14 +2554,14 @@ bool KGrGame::saveCollections (Owner o)
 		for (i = 0; i < len; i++) {
 		    ch = aboutC[i];
 		    if (ch != '\n') {
-			c.putch (ch);		// Copy the character.
+			c.putChar (ch);		// Copy the character.
 		    }
 		    else {
-			c.putch ('\\');		// Change newline to \ and n.
-			c.putch ('n');
+			c.putChar ('\\');	// Change newline to \ and n.
+			c.putChar ('n');
 		    }
 		}
-		c.putch ('\n');			// Add a real newline.
+		c.putChar ('\n');		// Add a real newline.
 	    }
 	}
     }
