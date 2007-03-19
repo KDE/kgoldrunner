@@ -19,6 +19,7 @@
 
 #include <QPixmap>
 #include <QDesktopWidget>
+#include <QApplication>
 
 #include <kglobal.h>
 #include <kstatusbar.h>
@@ -35,7 +36,6 @@
 #include <kstandardaction.h>
 #include <kstandardgameaction.h>
 #include <kicon.h>
-#include <kapplication.h>
 
 #include "kgrconsts.h"
 #include "kgrobject.h"
@@ -75,10 +75,10 @@ KGoldrunner::KGoldrunner()
 /******************************************************************************/
 
     // Base the size of playing-area and widgets on the monitor resolution.
-    int dw = KApplication::desktop()->width();
+    int dw = QApplication::desktop()->width();
 
     // Need to consider the height, for widescreen displays (eg. 1280x768).
-    int dh = KApplication::desktop()->height();
+    int dh = QApplication::desktop()->height();
 
     double scale = 1.0;
     if ((dw > 800) && (dh > 600)) {			// More than 800x600.
