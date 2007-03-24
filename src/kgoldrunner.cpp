@@ -26,6 +26,7 @@
 #include <kkeydialog.h>
 
 #include <kconfig.h>
+#include <kconfiggroup.h>
 
 #include <ktoolbar.h>
 #include <kmenubar.h>
@@ -36,6 +37,9 @@
 #include <kstandardaction.h>
 #include <kstandardgameaction.h>
 #include <kicon.h>
+#include <KMenu>
+#include <KCmdLineArgs>
+#include <KAboutData>
 
 #include "kgrconsts.h"
 #include "kgrobject.h"
@@ -96,6 +100,7 @@ KGoldrunner::KGoldrunner()
 	return;				// If no game files, abort.
     }
 
+    qDebug() << "Calling view->setBaseScale() ...";
     view->setBaseScale();		// Set scale for level-titles font.
 
     hero = game->getHero();		// Get a pointer to the hero.
@@ -128,7 +133,9 @@ KGoldrunner::KGoldrunner()
     // position, icon size, etc.
     setAutoSaveSettings();
 
-    // explicitly hide an edit toolbar - we need it in edit mode only
+    // Explicitly hide the edit toolbar - we need it in edit mode only and we
+    // always start in play mode, even if the last session ended in edit mode
+    // and the config file says to show the edit toolbar.
     toolBar("editToolbar")->hide();
     toolBar("editToolbar")->setAllowedAreas(Qt::TopToolBarArea);
 
@@ -138,11 +145,11 @@ KGoldrunner::KGoldrunner()
     // Paint the main widget (title, menu, status bar, blank playfield).
     show();
 
-    // Schedule the call to the "Start Game" function, pop up the "Start Game" dialog.
+    // Queue the call to the "Start Game" dialog: let KMainWindow show first.
     QMetaObject::invokeMethod(game, "startLevelOne", Qt::QueuedConnection);
 
-    // Schedule resizing of main window
-    QMetaObject::invokeMethod(this, "resizeMainWindow", Qt::QueuedConnection);
+    // Queue the resizing of KMainWindow.
+    // IDW QMetaObject::invokeMethod(this, "resizeMainWindow", Qt::QueuedConnection);
 }
 
 KGoldrunner::~KGoldrunner()
@@ -283,63 +290,12 @@ void KGoldrunner::setupActions()
     connect( editGame, SIGNAL(triggered(bool)), this, SLOT(editGameInfo()));
 
     /**************************************************************************/
-    /***************************   LANDSCAPES MENU  ***************************/
+    /*****************************   THEMES MENU  *****************************/
     /**************************************************************************/
 
-    // Default shortcut keys are set by "kgoldrunnerui.rc".
-
-    // Default Shift+G
-    setKGoldrunner =		new KToggleAction (
-				"K&Goldrunner",
-				this);
-    actionCollection()->addAction("kgoldrunner", setKGoldrunner);
-    connect( setKGoldrunner, SIGNAL(triggered(bool)), this, SLOT(lsKGoldrunner()));
-
-    // Default Shift+A
-    setAppleII =		new KToggleAction (
-				"&Apple II",
-				this);
-    actionCollection()->addAction("apple_2", setAppleII);
-    connect( setAppleII, SIGNAL(triggered(bool)), this, SLOT(lsApple2()));
-
-    // Default Shift+I
-    setIceCave =		new KToggleAction (
-				i18n("&Ice Cave"),
-				this);
-    actionCollection()->addAction("ice_cave", setIceCave);
-    connect( setIceCave, SIGNAL(triggered(bool)), this, SLOT(lsIceCave()));
-
-    // Default Shift+M
-    setMidnight =		new KToggleAction (
-				i18n("&Midnight"),
-				this);
-    actionCollection()->addAction("midnight", setMidnight);
-    connect( setMidnight, SIGNAL(triggered(bool)), this, SLOT(lsMidnight()));
-
-    // Default Shift+K
-    setKDEKool =		new KToggleAction (
-				i18n("&KDE Kool"),
-				this);
-    actionCollection()->addAction("kde_kool", setKDEKool);
-    connect( setKDEKool, SIGNAL(triggered(bool)), this, SLOT(lsKDEKool()));
-
-    // Default Shift+V
-    setSVG_1 =			new KToggleAction (
-				i18n("&SVG 1"),
-				this);
-    actionCollection()->addAction("svg_1", setSVG_1);
-    connect( setSVG_1, SIGNAL(triggered(bool)), this, SLOT(lsSVG_1()));
-
-    QActionGroup* landscapesGrp = new QActionGroup(this);
-    landscapesGrp->addAction(setKGoldrunner);
-    landscapesGrp->addAction(setAppleII);
-    landscapesGrp->addAction(setIceCave);
-    landscapesGrp->addAction(setMidnight);
-    landscapesGrp->addAction(setKDEKool);
-    landscapesGrp->addAction(setSVG_1);
-    landscapesGrp->setExclusive(true);
-
-    setSVG_1->setChecked(true);
+    // The Themes menu is obtained AFTER calling setupGUI(), by locating an
+    // open-ended list of theme-files and plugging the translated text-names of
+    // the themes in place of ActionList <name="theme_list" /> in the ui.rc file.
 
     /**************************************************************************/
     /****************************   SETTINGS MENU  ****************************/
@@ -428,18 +384,6 @@ void KGoldrunner::setupActions()
     rulesGrp->addAction(tradRules);
     rulesGrp->addAction(kgrRules);
     tradRules->setChecked (true);
-
-    // Larger Playing Area
-    // Smaller Playing Area
-    // --------------------------
-
-    QAction* largerArea = actionCollection()->addAction("larger_area");
-    largerArea->setText(i18n("Larger Playing Area"));
-    connect( largerArea, SIGNAL(triggered(bool)), this, SLOT(makeLarger()));
-
-    QAction* smallerArea = actionCollection()->addAction("smaller_area");
-    smallerArea->setText(i18n("Smaller Playing Area"));
-    connect( smallerArea, SIGNAL(triggered(bool)), this, SLOT(makeSmaller()));
 
     // Configure Shortcuts...
     // Configure Toolbars...
@@ -601,7 +545,61 @@ void KGoldrunner::setupActions()
     /**************************   NOW SET IT ALL UP  **************************/
     /**************************************************************************/
 
-    createGUI();
+    setupGUI();
+
+    // Will look for themes in files "---/share/apps/kgoldrunner/pics/*.desktop".
+    KGlobal::dirs()->addResourceType ("theme",
+		KStandardDirs::kde_default("data") +
+		KCmdLineArgs::aboutData()->appName() +
+		"/pics/");
+
+    QSignalMapper * themeChoice = new QSignalMapper (this);
+    setThemeMenu ("theme", "*.desktop", "theme_list", themeChoice);
+    connect (themeChoice, SIGNAL (mapped (const QString &)),
+		this, SLOT (changeTheme (const QString &)));
+}
+
+void KGoldrunner::setThemeMenu (const char * resource,
+	const QString & filePattern, const char * plugActionName,
+	QSignalMapper * themeMapper)
+{
+    QStringList themeFilepaths = KGlobal::dirs()->findAllResources
+	(resource, filePattern, KStandardDirs::NoDuplicates); // Find files.
+
+    KConfigGroup gameGroup (KGlobal::config(), "KDEGame"); // Get prev theme.
+    QString currentThemeFilepath = gameGroup.readEntry ("ThemeFilepath", "");
+    qDebug() << endl << "Config() Theme" << currentThemeFilepath;
+
+    KToggleAction * newTheme;				// Action for a theme.
+    QString actionName;					// Name of the theme.
+    QList<QAction *> themeList;				// Themes for menu.
+    QActionGroup * themeGroup = new QActionGroup (this);
+    themeGroup->setExclusive (true);			// Exclusive toggles.
+
+    foreach (QString filepath, themeFilepaths) {	// Read each theme-file.
+	KConfig theme (filepath, KConfig::OnlyLocal);	// Extract theme-name.
+	KConfigGroup group = theme.group ("KDEGameTheme");
+	actionName = group.readEntry ("Name", "Missing Name");	// Translated.
+
+	newTheme = new KToggleAction (actionName, this);
+	themeGroup->addAction (newTheme);		// Add to toggle-group.
+
+	if ((currentThemeFilepath == filepath) ||	// If theme prev chosen
+	    ((currentThemeFilepath.isEmpty()) &&	// or it is the default
+	     (filepath.indexOf ("default") >= 0)) ||
+	    ((filepath == themeFilepaths.last()) &&
+	     (themeGroup->checkedAction() == 0))) {	// or last in the list,
+	    newTheme->setChecked (true);		// mark it as chosen and
+	    view->changeTheme (filepath);		// tell graphics init.
+	}
+
+	connect (newTheme, SIGNAL(triggered (bool)), themeMapper, SLOT(map ()));
+	themeMapper->setMapping (newTheme, filepath);	// Add path to signal.
+	themeList.append (newTheme);			// Theme --> menu list.
+    }
+
+    unplugActionList (plugActionName);
+    plugActionList   (plugActionName, themeList);	// Insert list in menu.
 }
 
 /******************************************************************************/
@@ -614,13 +612,13 @@ void KGoldrunner::initStatusBar()
     int i = statusBar()->fontInfo().pointSize();
     statusBar()->setFont (QFont (s, i, QFont::Bold));
 
-    statusBar()->setSizeGripEnabled (false);		// Use Settings menu ...
+    statusBar()->setSizeGripEnabled (true);		// Use Settings menu ...
 
-    statusBar()->insertItem ("", ID_LIVES);
-    statusBar()->insertItem ("", ID_SCORE);
-    statusBar()->insertItem ("", ID_LEVEL);
-    statusBar()->insertItem ("", ID_HINTAVL);
-    statusBar()->insertItem ("", ID_MSG, QSizePolicy::Horizontally);
+    statusBar()->insertPermanentItem ("", ID_LIVES);
+    statusBar()->insertPermanentItem ("", ID_SCORE);
+    statusBar()->insertPermanentItem ("", ID_LEVEL);
+    statusBar()->insertPermanentItem ("", ID_HINTAVL);
+    statusBar()->insertPermanentItem ("", ID_MSG, QSizePolicy::Horizontally);
 
     showLives (5);					// Start with 5 lives.
     showScore (0);
@@ -635,6 +633,7 @@ void KGoldrunner::initStatusBar()
     statusBar()->setItemFixed (ID_LIVES, -1);		// Fix current sizes.
     statusBar()->setItemFixed (ID_SCORE, -1);
     statusBar()->setItemFixed (ID_LEVEL, -1);
+    statusBar()->setItemFixed (ID_HINTAVL, -1);
 
     connect(game, SIGNAL (showLives (long)),	SLOT (showLives (long)));
     connect(game, SIGNAL (showScore (long)),	SLOT (showScore (long)));
@@ -657,8 +656,8 @@ void KGoldrunner::showScore (long newScore)
 {
     QString tmp;
     tmp.setNum (newScore);
-    if (newScore < 10000)
-	tmp = tmp.rightJustified (5, '0');
+    if (newScore < 1000000)
+	tmp = tmp.rightJustified (7, '0');
     tmp.insert (0, i18n("   Score: "));
     tmp.append ("   ");
     statusBar()->changeItem (tmp, ID_SCORE);
@@ -715,11 +714,32 @@ void KGoldrunner::setEditMenu (bool on_off)
     highScore->setEnabled  (! on_off);
 
     if (on_off){
+	// Set the editToolbar icons to the current tile-size.
+	toolBar("editToolbar")->setIconSize (view->getPixmap(BRICK).size());
+
+	// Set the editToolbar icons up with pixmaps of the current theme.
+	setEditIcon ("brickbg",   BRICK);
+	setEditIcon ("fbrickbg",  FBRICK);
+	setEditIcon ("freebg",    FREE);
+	setEditIcon ("nuggetbg",  NUGGET);
+	setEditIcon ("polebg",    POLE);
+	setEditIcon ("betonbg",   BETON);
+	setEditIcon ("ladderbg",  LADDER);
+	setEditIcon ("hladderbg", HLADDER);
+	setEditIcon ("edherobg",  HERO);
+	setEditIcon ("edenemybg", ENEMY);
+
 	toolBar("editToolbar")->show();
     }
     else {
 	toolBar("editToolbar")->hide();
     }
+}
+
+void KGoldrunner::setEditIcon (const QString & actionName, const char iconType)
+{
+    ((KToggleAction *) (actionCollection()->action(actionName)))->
+		setIcon(KIcon(view->getPixmap(iconType)));
 }
 
 /******************************************************************************/
@@ -738,19 +758,18 @@ void KGoldrunner::stopStart()
     }
 }
 
+void KGoldrunner::changeTheme (const QString & themeFilepath)
+{
+    view->changeTheme (themeFilepath);
+    if (game->inEditMode()) {
+	setEditMenu (true);
+    }
+}
+
 // Local slots to create or edit game information.
 
 void KGoldrunner::createGame()		{game->editCollection (SL_CR_GAME);}
 void KGoldrunner::editGameInfo()	{game->editCollection (SL_UPD_GAME);}
-
-// Local slots to set the landscape (colour scheme).
-
-void KGoldrunner::lsKGoldrunner()	{view->changeLandscape ("KGoldrunner");}
-void KGoldrunner::lsApple2()		{view->changeLandscape ("Apple II");}
-void KGoldrunner::lsIceCave()		{view->changeLandscape ("Ice Cave");}
-void KGoldrunner::lsMidnight()		{view->changeLandscape ("Midnight");}
-void KGoldrunner::lsKDEKool()		{view->changeLandscape ("KDE Kool");}
-void KGoldrunner::lsSVG_1()		{view->changeLandscape ("SVG 1");}
 
 // Local slots to set mouse or keyboard control of the hero.
 
@@ -789,29 +808,19 @@ void KGoldrunner::setKGrRules()
 
 void KGoldrunner::resizeMainWindow()
 {
+    qDebug() << "KGoldrunner::resizeMainWindow() called ...";
+    return; // IDW
+
     // Get the area of our view, menubar and statusBar, and add the editToolbar (if visible)
     int newHeight = view->size().height() + statusBar()->height() + menuBar()->height();
     if (!toolBar("editToolbar")->isHidden())
 	newHeight = newHeight + toolBar("editToolbar")->height();
 
-    setFixedSize (view->size().width(), newHeight);
+    // IDW setFixedSize (view->size().width(), newHeight);
+    resize (view->size().width(), newHeight);
 
     //Maybe we need a layout manager here? Then we could possibly just use...
     //resize(view->size());
-}
-
-void KGoldrunner::makeLarger()
-{
-    QSize newsize;
-    if (view->changeSize (+1))
-	resizeMainWindow();
-}
-
-void KGoldrunner::makeSmaller()
-{
-    QSize newsize;
-    if (view->changeSize (-1))
-	resizeMainWindow();
 }
 
 // Local slots for hero control keys.
@@ -834,46 +843,44 @@ void KGoldrunner::showEnemy4()		{game->showEnemyState (4);}
 void KGoldrunner::showEnemy5()		{game->showEnemyState (5);}
 void KGoldrunner::showEnemy6()		{game->showEnemyState (6);}
 
-void KGoldrunner::saveProperties(KConfigGroup &config)
+void KGoldrunner::saveProperties(KConfigGroup & /* config - unused */)
 {
     // The 'config' object points to the session managed
     // config file.  Anything you write here will be available
     // later when this app is restored.
 
-    printf ("I am in KGoldrunner::saveProperties.\n");
-    // config->writeEntry("qqq", qqq);
+    qDebug() << "I am in KGoldrunner::saveProperties.";
 }
 
-void KGoldrunner::readProperties(const KConfigGroup &config)
+void KGoldrunner::readProperties(const KConfigGroup & /* config - unused */)
 {
     // The 'config' object points to the session managed
     // config file.  This function is automatically called whenever
     // the app is being restored.  Read in here whatever you wrote
     // in 'saveProperties'
 
-    printf ("I am in KGoldrunner::readProperties.\n");
-    // QString qqq = config->readEntry("qqq");
+    qDebug() << "I am in KGoldrunner::readProperties.";
 }
 
-void KGoldrunner::optionsShowToolbar()
-{
+// void KGoldrunner::optionsShowToolbar()
+// {
     // this is all very cut and paste code for showing/hiding the
     // toolbar
     // if (m_toolbarAction->isChecked())
         // toolBar()->show();
     // else
         // toolBar()->hide();
-}
+// }
 
-void KGoldrunner::optionsShowStatusbar()
-{
+// void KGoldrunner::optionsShowStatusbar()
+// {
     // this is all very cut and paste code for showing/hiding the
     // statusbar
     // if (m_statusbarAction->isChecked())
         // statusBar()->show();
     // else
         // statusBar()->hide();
-}
+// }
 
 void KGoldrunner::optionsConfigureKeys()
 {
@@ -885,30 +892,30 @@ void KGoldrunner::optionsConfigureKeys()
     gameFreeze (KGrObject::frozen);	// Refresh the status bar text.
 }
 
-void KGoldrunner::optionsConfigureToolbars()
-{
-    KConfigGroup cg( KGlobal::config(), autoSaveGroup());
-    saveMainWindowSettings( cg );
-}
+// void KGoldrunner::optionsConfigureToolbars()
+// {
+    // KConfigGroup cg (KGlobal::config(), autoSaveGroup());
+    // saveMainWindowSettings (cg);
+// }
 
-void KGoldrunner::newToolbarConfig()
-{
+// void KGoldrunner::newToolbarConfig()
+// {
     // this slot is called when user clicks "Ok" or "Apply" in the toolbar editor.
     // recreate our GUI, and re-apply the settings (e.g. "text under icons", etc.)
-    createGUI();
+    // createGUI();
 
-    applyMainWindowSettings( KGlobal::config()->group( autoSaveGroup()) );
-}
+    // applyMainWindowSettings( KGlobal::config()->group( autoSaveGroup()) );
+// }
 
-void KGoldrunner::optionsPreferences()
-{
+// void KGoldrunner::optionsPreferences()
+// {
     // popup some sort of preference dialog, here
     // KGoldrunnerPreferences dlg;
     // if (dlg.exec())
     // {
         // redo your settings
     // }
-}
+// }
 
 void KGoldrunner::changeStatusbar(const QString& text)
 {
@@ -948,9 +955,9 @@ bool KGoldrunner::getDirectories()
     systemHTMLDir = dirs->findResourceDir ("html", "en/" + myDir + '/');
     if (systemHTMLDir.length() <= 0) {
 	KGrMessage::information (this, i18n("Get Folders"),
-	i18n("Cannot find documentation sub-folder 'en/%1/' "
-	"in area '%2' of the KDE folder ($KDEDIRS).",
-	 myDir, dirs->kde_default ("html")));
+		i18n("Cannot find documentation sub-folder 'en/%1/' "
+		"in area '%2' of the KDE folder ($KDEDIRS).",
+		myDir, dirs->kde_default ("html")));
 	// result = false;		// Don't abort if the doc is missing.
     }
     else
@@ -1044,108 +1051,70 @@ void KGoldrunner::setKey (KBAction movement)
 /**********************  MAKE A TOOLBAR FOR THE EDITOR   **********************/
 /******************************************************************************/
 
-#include <qmatrix.h>
 void KGoldrunner::setupEditToolbarActions()
 {
-    // Set up the pixmaps for the editable objects.
-    QPixmap pixmap;
-    QImage image;
-
-    QPixmap brickbg	= view->getPixmap (BRICK);
-    QPixmap fbrickbg	= view->getPixmap (FBRICK);
-
-    QPixmap freebg	= view->getPixmap (FREE);
-    QPixmap nuggetbg	= view->getPixmap (NUGGET);
-    QPixmap polebg	= view->getPixmap (POLE);
-    QPixmap betonbg	= view->getPixmap (BETON);
-    QPixmap ladderbg	= view->getPixmap (LADDER);
-    QPixmap hladderbg	= view->getPixmap (HLADDER);
-    QPixmap edherobg	= view->getPixmap (HERO);
-    QPixmap edenemybg	= view->getPixmap (ENEMY);
-
-    // Scale up the pixmaps (to give cleaner looking
-    // icons than leaving it for QToolButton to do).
-    QMatrix w;
-    w = w.scale (2.0, 2.0);
-
-#ifdef __GNUC__
-#warning "How to adjust this hack?"
-#endif
-
-    brickbg		= brickbg.transformed (w);
-    fbrickbg		= fbrickbg.transformed (w);
-
-    freebg		= freebg.transformed (w);
-    nuggetbg		= nuggetbg.transformed (w);
-    polebg		= polebg.transformed (w);
-    betonbg		= betonbg.transformed (w);
-    ladderbg		= ladderbg.transformed (w);
-    hladderbg		= hladderbg.transformed (w);
-    edherobg		= edherobg.transformed (w);
-    edenemybg		= edenemybg.transformed (w);
-
     // Choose a colour that enhances visibility of the KGoldrunner pixmaps.
     // editToolbar->setPalette (QPalette (QColor (150, 150, 230)));
 
-    QAction* ktipAct = actionCollection()->addAction( "edit_hint" );
-    ktipAct->setIcon( KIcon("ktip") );
-    ktipAct->setText( i18n("Edit Name/Hint") );
-    connect( ktipAct, SIGNAL(triggered(bool)), game, SLOT(editNameAndHint()) );
+    QAction* ktipAct = actionCollection()->addAction ("edit_hint");
+    ktipAct->setIcon (KIcon("ktip"));
+    ktipAct->setText (i18n("Edit Name/Hint"));
+    connect (ktipAct, SIGNAL(triggered(bool)), game, SLOT(editNameAndHint()));
 
-    KToggleAction* freebgAct = new KToggleAction( KIcon(freebg), i18n("Empty space"), this );
-    actionCollection()->addAction( "freebg", freebgAct );
-    connect( freebgAct, SIGNAL(triggered(bool)), this, SLOT(freeSlot()) );
+    KToggleAction* freebgAct = new KToggleAction (i18n("Empty space"), this);
+    actionCollection()->addAction ("freebg", freebgAct);
+    connect (freebgAct, SIGNAL(triggered(bool)), this, SLOT(freeSlot()));
 
-    KToggleAction* edherobgAct = new KToggleAction( KIcon(edherobg), i18n("Hero"), this );
+    KToggleAction* edherobgAct = new KToggleAction (i18n("Hero"), this);
     actionCollection()->addAction( "edherobg", edherobgAct );
-    connect( edherobgAct, SIGNAL(triggered(bool)), this, SLOT(edheroSlot()) );
+    connect (edherobgAct, SIGNAL(triggered(bool)), this, SLOT(edheroSlot()));
 
-    KToggleAction* edenemybgAct = new KToggleAction( KIcon(edenemybg), i18n("Enemy"), this );
+    KToggleAction* edenemybgAct = new KToggleAction (i18n("Enemy"), this );
     actionCollection()->addAction( "edenemybg", edenemybgAct );
-    connect( edenemybgAct, SIGNAL(triggered(bool)), this, SLOT(edenemySlot()) );
+    connect (edenemybgAct, SIGNAL(triggered(bool)), this, SLOT(edenemySlot()));
 
-    KToggleAction* brickbgAct = new KToggleAction( KIcon(brickbg), i18n("Brick (can dig)"), this );
-    actionCollection()->addAction( "brickbg", brickbgAct );
-    connect( brickbgAct, SIGNAL(triggered(bool)), this, SLOT(brickSlot()) );
+    KToggleAction* brickbgAct = new KToggleAction (i18n("Brick (can dig)"), this);
+    actionCollection()->addAction ("brickbg", brickbgAct);
+    connect (brickbgAct, SIGNAL(triggered(bool)), this, SLOT(brickSlot()));
 
-    KToggleAction* betonbgAct = new KToggleAction( KIcon(betonbg), i18n("Concrete (cannot dig)"), this );
-    actionCollection()->addAction( "betonbg", betonbgAct );
-    connect( betonbgAct, SIGNAL(triggered(bool)), this, SLOT(betonSlot()) );
+    KToggleAction* betonbgAct = new KToggleAction (i18n("Concrete (cannot dig)"), this);
+    actionCollection()->addAction ("betonbg", betonbgAct);
+    connect (betonbgAct, SIGNAL(triggered(bool)), this, SLOT(betonSlot()));
 
-    KToggleAction* fbrickbgAct = new KToggleAction( KIcon(fbrickbg), i18n("Trap (can fall through)"), this );
-    actionCollection()->addAction( "fbrickbg", fbrickbgAct );
-    connect( fbrickbgAct, SIGNAL(triggered(bool)), this, SLOT(fbrickSlot()) );
+    KToggleAction* fbrickbgAct = new KToggleAction (i18n("Trap (can fall through)"), this);
+    actionCollection()->addAction ("fbrickbg", fbrickbgAct);
+    connect (fbrickbgAct, SIGNAL(triggered(bool)), this, SLOT(fbrickSlot()));
 
-    KToggleAction* ladderbgAct = new KToggleAction( KIcon(ladderbg), i18n("Ladder"), this );
-    actionCollection()->addAction( "ladderbg", ladderbgAct );
-    connect( ladderbgAct, SIGNAL(triggered(bool)), this, SLOT(ladderSlot()) );
+    KToggleAction* ladderbgAct = new KToggleAction (i18n("Ladder"), this);
+    actionCollection()->addAction ("ladderbg", ladderbgAct);
+    connect (ladderbgAct, SIGNAL(triggered(bool)), this, SLOT(ladderSlot()));
 
-    KToggleAction* hladderbgAct = new KToggleAction( KIcon(hladderbg), i18n("Hidden ladder"), this );
-    actionCollection()->addAction( "hladderbg", hladderbgAct );
-    connect( hladderbgAct, SIGNAL(triggered(bool)), this, SLOT(hladderSlot()) );
+    KToggleAction* hladderbgAct = new KToggleAction (i18n("Hidden ladder"), this);
+    actionCollection()->addAction ("hladderbg", hladderbgAct);
+    connect (hladderbgAct, SIGNAL(triggered(bool)), this, SLOT(hladderSlot()));
 
-    KToggleAction* polebgAct = new KToggleAction( KIcon(polebg), i18n("Pole (or bar)"), this );
-    actionCollection()->addAction( "polebg", polebgAct );
-    connect( polebgAct, SIGNAL(triggered(bool)), this, SLOT(poleSlot()) );
+    KToggleAction* polebgAct = new KToggleAction (i18n("Pole (or bar)"), this);
+    actionCollection()->addAction ("polebg", polebgAct);
+    connect (polebgAct, SIGNAL(triggered(bool)), this, SLOT(poleSlot()));
 
-    KToggleAction* nuggetbgAct = new KToggleAction( KIcon(nuggetbg), i18n("Gold nugget"), this );
-    actionCollection()->addAction( "nuggetbg", nuggetbgAct );
-    connect( nuggetbgAct, SIGNAL(triggered(bool)), this, SLOT(nuggetSlot()) );
+    KToggleAction* nuggetbgAct = new KToggleAction (i18n("Gold nugget"), this);
+    actionCollection()->addAction ("nuggetbg", nuggetbgAct);
+    connect (nuggetbgAct, SIGNAL(triggered(bool)), this, SLOT(nuggetSlot()));
 
     QActionGroup* editButtons = new QActionGroup(this);
-    editButtons->setExclusive(true);
-    editButtons->addAction( freebgAct );
-    editButtons->addAction( edherobgAct );
-    editButtons->addAction( edenemybgAct );
-    editButtons->addAction( brickbgAct );
-    editButtons->addAction( betonbgAct );
-    editButtons->addAction( fbrickbgAct );
-    editButtons->addAction( ladderbgAct );
-    editButtons->addAction( hladderbgAct );
-    editButtons->addAction( polebgAct );
-    editButtons->addAction( nuggetbgAct );
+    editButtons->setExclusive (true);
+    editButtons->addAction (freebgAct);
+    editButtons->addAction (edherobgAct);
+    editButtons->addAction (edenemybgAct);
+    editButtons->addAction (brickbgAct);
+    editButtons->addAction (betonbgAct);
+    editButtons->addAction (fbrickbgAct);
+    editButtons->addAction (ladderbgAct);
+    editButtons->addAction (hladderbgAct);
+    editButtons->addAction (polebgAct);
+    editButtons->addAction (nuggetbgAct);
 
-    brickbgAct->setChecked(true);
+    brickbgAct->setChecked (true);
     m_defaultEditAct = brickbgAct;
 }
 
@@ -1175,5 +1144,11 @@ void KGoldrunner::nuggetSlot()
 		{ game->setEditObj (NUGGET);   }
 void KGoldrunner::defaultEditObj()
 		{ m_defaultEditAct->setChecked(true); }
+
+QSize KGoldrunner::sizeHint()
+{
+    qDebug() << "KGoldrunner::sizeHint() called ... 640x600";
+    return QSize (640, 600);
+}
 
 #include "kgoldrunner.moc"

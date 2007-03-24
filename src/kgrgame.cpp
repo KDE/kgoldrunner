@@ -2244,11 +2244,6 @@ KGrThumbNail::KGrThumbNail (QWidget * parent, const char * name)
     // the thumbnail can be automatically re-painted when required.
 }
 
-QColor KGrThumbNail::backgroundColor = QColor ("#dddddd");
-QColor KGrThumbNail::brickColor =      QColor ("#ff0000");
-QColor KGrThumbNail::ladderColor =     QColor ("#ddcc00");
-QColor KGrThumbNail::poleColor =       QColor ("#aa7700");
-
 void KGrThumbNail::setLevelData (QString dir, QString prefix, int level,
 					QLabel * sln)
 {
@@ -2268,22 +2263,30 @@ void KGrThumbNail::setLevelData (QString dir, QString prefix, int level,
     }
 }
 
-// This was previously a Q3Frame
-// void KGrThumbNail::drawContents (QPainter * p)
+// This was previously a Q3Frame event
+//     void KGrThumbNail::drawContents (QPainter * p)
 //
-// In Qt4 there is no longer this method for QFrame, suggested
-// workaround is to reimplement paintEvent
-//
-// TODO We need to respect the frame area, and draw inside it
-//
+// In Qt4 there is no longer such a method for QFrame.  The
+// workaround is to reimplement paintEvent for this widget.
+
 void KGrThumbNail::paintEvent (QPaintEvent * /* event (unused) */)
 {
-    QPainter  p(this);
+    QPainter    p (this);
     QFile	openFile;
     QPen	pen = p.pen();
     char	obj = FREE;
     int		fw = 1;				// Set frame width.
     int		n = width() / FIELDWIDTH;	// Set thumbnail cell-size.
+
+    QColor backgroundColor = QColor ("#000038"); // Midnight blue.
+    QColor brickColor =      QColor ("#9c0f0f"); // Oxygen's brick-red.
+    QColor concreteColor =   QColor ("#585858"); // Dark grey.
+    QColor ladderColor =     QColor ("#a0a0a0"); // Steely grey.
+    QColor poleColor =       QColor ("#a0a0a0"); // Steely grey.
+    QColor heroColor =       QColor ("#00ff00"); // Green.
+    QColor enemyColor =      QColor ("#0080ff"); // Bright blue.
+    QColor gold;
+    gold.setNamedColor ("gold");		 // Gold.
 
     pen.setColor (backgroundColor);
     p.setPen (pen);
@@ -2302,23 +2305,24 @@ void KGrThumbNail::paintEvent (QPaintEvent * /* event (unused) */)
 	// Set the colour of each object.
 	switch (obj) {
 	case BRICK:
-	case BETON:
 	case FBRICK:
 	    pen.setColor (brickColor); p.setPen (pen); break;
+	case BETON:
+	    pen.setColor (concreteColor); p.setPen (pen); break;
 	case LADDER:
 	    pen.setColor (ladderColor); p.setPen (pen); break;
 	case POLE:
 	    pen.setColor (poleColor); p.setPen (pen); break;
 	case HERO:
-	    pen.setColor (Qt::green); p.setPen (pen); break;
+	    pen.setColor (heroColor); p.setPen (pen); break;
 	case ENEMY:
-	    pen.setColor (Qt::blue); p.setPen (pen); break;
+	    pen.setColor (enemyColor); p.setPen (pen); break;
 	default:
-	    // Set the background for FREE, HLADDER and NUGGET.
+	    // Set the background colour for FREE, HLADDER and NUGGET.
 	    pen.setColor (backgroundColor); p.setPen (pen); break;
 	}
 
-	// Draw nxn pixels as n lines of length n.
+	// Draw n x n pixels as n lines of length n.
 	p.drawLine (i*n+fw, j*n+fw, i*n+(n-1)+fw, j*n+fw);
 	if (obj == POLE) {
 	    // For a pole, only the top line is drawn in white.
@@ -2332,19 +2336,17 @@ void KGrThumbNail::paintEvent (QPaintEvent * /* event (unused) */)
 	// For a nugget, add just a vertical touch  of yellow (2-3 pixels).
 	if (obj == NUGGET) {
 	    int k = (n/2)+fw;
-	    // pen.setColor (QColor("#ffff00"));
-	    pen.setColor (ladderColor);
+	    pen.setColor (gold);	// Gold.
 	    p.setPen (pen);
 	    p.drawLine (i*n+k, j*n+k, i*n+k, j*n+(n-1)+fw);
 	    p.drawLine (i*n+k+1, j*n+k, i*n+k+1, j*n+(n-1)+fw);
 	}
     }
 
-    // Finally, draw a small black inset border.
+    // Finally, draw a small black border around the outside of the thumbnail.
     pen.setColor (Qt::black); 
     p.setPen (pen);
-    p.drawRect(rect().left(), rect().top(),
-		(rect().right())-1, (rect().bottom()) - 1);
+    p.drawRect (rect().left(), rect().top(), rect().right(), rect().bottom());
 }
 
 /******************************************************************************/
@@ -2468,7 +2470,6 @@ bool KGrGame::loadCollections (Owner o)
 {
     KGrGameIO io;
     QList<GameData *> gameList;
-    qDebug() << "Called KGrGame::loadCollections";
     IOStatus status = io.fetchGameListData (getDirectory (o), gameList);
 
     bool result = false;

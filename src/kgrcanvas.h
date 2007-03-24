@@ -30,8 +30,9 @@
 #include <QPixmap>
 #include <QMouseEvent>
 #include <QList>
+#include <QTime> // IDW
 
-class KSvgRenderer;
+#include <KSvgRenderer>
 
 class KGrCanvas : public KGameCanvasWidget
 {
@@ -41,15 +42,11 @@ public:
 				const QString & systemDataDir);
 	virtual ~KGrCanvas();
 
-	void changeLandscape (const QString & name);
-
 	QPoint getMousePos ();
 	void setMousePos (int, int);
 
-	bool changeSize (int);
 	void setBaseScale ();
 
-	//void updateCanvas ();
 	void paintCell (int, int, char, int offset = 0);
 	void setTitle (const QString&);
 
@@ -63,6 +60,8 @@ public:
 
 	QPixmap getPixmap (char type);
 
+	void changeTheme (const QString & themeFilepath);
+
 signals:
 	void mouseClick (int);
 	void mouseLetGo (int);
@@ -70,17 +69,23 @@ signals:
 protected:
 	virtual void mousePressEvent ( QMouseEvent * mouseEvent );
 	virtual void mouseReleaseEvent ( QMouseEvent * mouseEvent );
+	virtual void resizeEvent (QResizeEvent * event);
+	virtual QSize sizeHint() const;
 
 private:
-	QCursor * m;
+	QCursor * m;			// Mouse cursor.
+	KGrPlayField * playfield;	// Array of tiles where runners can run.
 
-	KGrPlayField * playfield;
 	int scaleStep;			// Current scale-factor of canvas.
 	int baseScale;			// Starting scale-factor of canvas.
 	int baseFontSize;
 
+	int nCellsW;			// Number of tiles horizontally.
+	int nCellsH;			// Number of tiles vertically.
 	int border;			// Number of tiles allowed for border.
-	int cw, bw, lw, mw;		// Dimensions (in pixels) of the border.
+	int lineDivider;		// Fraction of a tile for inner border.
+	QPoint topLeft;			// Top left point of the tile array.
+
 	QColor borderColor, textColor;	// Border colours.
 	QLabel * title;			// Title and top part of border.
 
@@ -88,7 +93,7 @@ private:
 	int edherobg, edenemybg, betonbg, brickbg, fbrickbg;
 	int bgw, bgh;			// Size of KGoldrunner 2 tile QPixmap.
 	int imgW, imgH;			// Scaled size of KGr 3 tile QImage.
-	QImage bgPix;			// Strip of 18 tile images.
+	int oldImgW, oldImgH;
 
 	int goldEnemy;
 
@@ -97,17 +102,41 @@ private:
 	QList<KGameCanvasRectangle *> borderRectangles;
 
 	void initView();
-	void makeTiles();
+	void drawTheScene (bool changePixmaps);
+	void makeTiles (bool changePixmaps);
 	void makeBorder();
 	void makeTitle();
+
 	QColor colour;
-	KGameCanvasRectangle * drawRectangle (int, int, int, int, int);
+	KGameCanvasRectangle * drawRectangle (int x, int y, int w, int h);
 	void changeColours (const char * colours []);
 	void recolourObject (const char * object [], const char * colours []);
 
-	KSvgRenderer * svg;
+	QList<QPixmap> * tileset;
+	void appendSVGTile (QImage & img, QPainter & q, const QString & name);
+
+	QList<QPixmap> * heroFrames;
+	QList<QPixmap> * enemyFrames;
+	void appendXPMFrames (const QImage & image,
+		QList<QPixmap> * frames, const int nFrames);
+	void appendSVGFrames (const QString & elementPattern,
+		QList<QPixmap> * frames, const int nFrames);
+
+	KSvgRenderer svg;
 	QString picsDataDir;
-	QString filePrefixSVG;
+	QString filepathSVG;
+	QString m_themeFilepath;
+	void loadSVGTheme();
+
+	enum GraphicsType {NONE, SVG, XPM, PNG};
+	GraphicsType tileGraphics;
+	GraphicsType backgroundGraphics;
+	GraphicsType runnerGraphics;
+
+	// IDW - Temporary ... should use a more general playfield (grid) idea.
+	int tileNo [FIELDWIDTH] [FIELDHEIGHT];
+	int resizeCount;		// IDW - Temporary, for qDebug() logs.
+	QTime t; // IDW
 };
 
 #endif // KGRCANVAS_H

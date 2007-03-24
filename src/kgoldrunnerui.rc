@@ -21,13 +21,8 @@
 	<Action				name="create_game" />
 	<Action				name="edit_game" />
     </Menu>
-    <Menu name="landscapes" > <text>&amp;Landscapes</text>
-	<Action				name="kgoldrunner" />
-	<Action				name="apple_2" />
-	<Action				name="ice_cave" />
-	<Action				name="midnight" />
-	<Action				name="kde_kool" />
-	<Action				name="svg_1" />
+    <Menu name="themes" > <text>&amp;Themes</text>
+	<ActionList			name="theme_list" />
     </Menu>
     <Menu name="settings" >
 	<Action append="save_merge"	name="mouse_mode" />
@@ -41,9 +36,6 @@
 	<Separator append="save_merge" />
 	<Action append="save_merge"	name="trad_rules" />
 	<Action append="save_merge"	name="kgr_rules" />
-	<Separator append="save_merge" />
-	<Action append="save_merge"	name="larger_area" />
-	<Action append="save_merge"	name="smaller_area" />
     </Menu>
     <Menu name="help" >
 	<Action				name="tutorial" />

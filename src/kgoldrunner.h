@@ -33,6 +33,7 @@ const int L_LEVEL       = 15;
 
 #include <kmainwindow.h>
 #include <kstandarddirs.h>
+#include <QSignalMapper>
 
 class QAction;
 class KToggleAction;
@@ -84,17 +85,12 @@ private slots:
     // Slot to pause or restart the game.
     void stopStart();
 
+    // Slot to change the graphics theme.
+    void changeTheme (const QString & themeFilepath);
+
     // Local slots to create or edit game information.
     void createGame();
     void editGameInfo();
-
-    // Local slots to set the landscape (colour scheme).
-    void lsKGoldrunner();
-    void lsApple2();
-    void lsIceCave();
-    void lsMidnight();
-    void lsKDEKool();
-    void lsSVG_1();
 
     // Local slots to set mouse/keyboard control of the hero.
     void setMouseMode();
@@ -113,8 +109,6 @@ private slots:
 
     // Local slots to make playing area larger or smaller.
     void resizeMainWindow();
-    void makeLarger();
-    void makeSmaller();
 
     // Local slots for hero control keys.
     void goUp();
@@ -136,12 +130,12 @@ private slots:
     void showEnemy5();
     void showEnemy6();
 
-    void optionsShowToolbar();
-    void optionsShowStatusbar();
+    // void optionsShowToolbar();
+    // void optionsShowStatusbar();
     void optionsConfigureKeys();
-    void optionsConfigureToolbars();
-    void optionsPreferences();
-    void newToolbarConfig();
+    // void optionsConfigureToolbars();
+    // void optionsPreferences();
+    // void newToolbarConfig();
 
     void changeStatusbar(const QString& text);
     void changeCaption(const QString& text);
@@ -154,12 +148,18 @@ private slots:
     void adjustHintAction (bool);	// Enable/disable "Hint" action.
     void markRuleType (char ruleType);	// Check game's rule type in the menu.
     void setEditMenu (bool on_off);	// Enable/disable "Save Edits" action.
+    void setEditIcon (const QString & actionName, const char iconType);
+
+    QSize sizeHint();
 
 private:
     void setupAccel();
     void setupActions();
     void initStatusBar();
     void setupEditToolbarActions();
+    void setThemeMenu (const char * resource, const QString & filePattern,
+			const char * plugActionName, QSignalMapper * themeMapper);
+
 private:
     bool startupOK;
 
@@ -181,13 +181,6 @@ private:
     QAction *		highScore;	// High scores (disabled during edits).
 
     QAction *		saveEdits;	// Save a level that has been edited.
-
-    KToggleAction *	setKGoldrunner;	// Show default "KGoldrunner" landscape.
-    KToggleAction *	setAppleII;	// Show "Apple II" landscape.
-    KToggleAction *	setIceCave;	// Show "Ice Cave" landscape.
-    KToggleAction *	setMidnight;	// Show "Midnight" landscape.
-    KToggleAction *	setKDEKool;	// Show "KDE Kool" landscape.
-    KToggleAction *	setSVG_1;	// Show "SVG 1" landscape.
 
     KToggleAction *	setMouse;	// Show mouse/keyboard mode on menu.
     KToggleAction *	setKeyboard;	// Show mouse/keyboard mode on menu.

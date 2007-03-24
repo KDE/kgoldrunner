@@ -23,8 +23,8 @@ static const char * colourScheme [] = {
     "KGoldrunner",
     "#5a5a9b",     /* Border - periwinkle blue */
     "#ffffff",     /* Title-text - pure-white. */
-    ". c #c8b0a0", /* Background */
-    "; c #b8a090", /* Background mortar */
+    ". c #d8c0b0", /* Background */
+    "; c #cdb4a4", /* Background mortar */
     "o c #ff0000", /* Solid light */
     "x c #c05040", /* Solid */
     "s c #b00020", /* Solid dark */
@@ -44,23 +44,11 @@ static const char * colourScheme [] = {
     ": c #dddddd", /* Ladder light */
     "# c #dddddd", /* Ladder dark */
     "a c #dddddd", /* Pole or bar */
-    "Ice Cave",
-    "#aabaf0",     /* Border - pale blue */
-    "#ffffff",     /* Title-text - pure-white. */
-    ". c #efefff", /* Background */
-    "; c #d0dfef", /* Background mortar */
-    "o c #ffffff", /* Solid light */
-    "x c #d0f0ff", /* Solid */
-    "s c #b0d8f0", /* Solid dark */
-    "+ c #a8c8ff", /* Mortar */
-    ": c #ffffff", /* Ladder light */
-    "# c #f9d26a", /* Ladder dark */
-    "a c #40a0ff", /* Pole or bar */
     "Midnight",
     "#5a5a9b",     /* Border - periwinkle blue */
     "#ffffff",     /* Title-text - pure-white. */
-    ". c #000040", /* Background */
-    "; c #000020", /* Background mortar */
+    ". c #000038", /* Background */
+    "; c #00002d", /* Background mortar */
     "o c #880000", /* Solid light */
     "x c #702820", /* Solid */
     "s c #680010", /* Solid dark */
@@ -68,21 +56,6 @@ static const char * colourScheme [] = {
     ": c #563622", /* Ladder light */
     "# c #422a12", /* Ladder dark */
     "a c #666666", /* Pole or bar */
-    "KDE Kool",
-    "#aabaf0",     /* Border - pale blue */
-    "#ffffff",     /* Title-text - pure-white. */
-    ". c #eef7ff", /* Background */
-    "; c #eef7ff", /* Background mortar */
-    "o c #ecfdfe", /* Solid light */
-    "x c #c1dafe", /* Solid */
-    "s c #c1dafe", /* Solid dark */
-    "+ c #9a9afe", /* Mortar */
-    ": c #f9d26a", /* Ladder light */
-    "# c #c19a68", /* Ladder dark */
-    "a c #af7516", /* Pole or bar */
-    "SVG 1",
-    "SVG",         /* SVG landscape */
-    "kgr_1",       /* Filename prefix */
     ""             /* TERMINATOR */
 };
 

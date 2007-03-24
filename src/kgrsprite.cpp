@@ -20,27 +20,20 @@
 KGrSprite::KGrSprite( KGameCanvasAbstract* canvas  )
     : KGameCanvasPixmap(canvas)
 {
-    m_frames = new QList<QPixmap> ();
     m_frame = 0;
 }
 
 KGrSprite::~KGrSprite()
 {
-    m_frames->clear();
-    delete m_frames;
 }
 
-void KGrSprite::addFrames ( const QPixmap& p, int tilewidth, int tileheight, int numframes, double scale )
+void KGrSprite::addFrames (QList<QPixmap> * frames, const QPoint & topLeft,
+				const double scale)
 {
-    QPixmap   pm;
-    QImage image = p.toImage ();
+    m_frames = frames;
     m_scale = scale;
-    for (int i = 0; i < numframes; i++) {
-        pm = QPixmap::fromImage (image.copy
-			(i * tilewidth, 0, tilewidth, tileheight));
-        m_frames->append (pm.scaledToHeight
-			((int)(tileheight * scale), Qt::FastTransformation));
-    }
+    m_tlX = topLeft.x();
+    m_tlY = topLeft.y();
 }
 
 void KGrSprite::move(double x, double y, int frame)
@@ -49,10 +42,10 @@ void KGrSprite::move(double x, double y, int frame)
         m_frame = frame;
         setPixmap(m_frames->at(m_frame));
     }
-    if ((m_loc.x()!=x) || (m_loc.y()!=y)) {
+    if ((m_loc.x() != x) || (m_loc.y() != y)) {
         m_loc.setX ((int)x);
         m_loc.setY ((int)y);
-        moveTo ((int)(x * m_scale), (int)(y * m_scale));
+        moveTo ((int)(x * m_scale) + m_tlX, (int)(y * m_scale) + m_tlY);
     }
 }
 

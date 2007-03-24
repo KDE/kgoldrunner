@@ -30,7 +30,8 @@ public:
     ~KGrSprite();
     void move(double x, double y, int frame);
     void setZ ( qreal z );
-    void addFrames ( const QPixmap& p, int tilewidth, int tileheight, int numframes, double scale );
+    void addFrames (QList<QPixmap> * frames, const QPoint & topLeft,
+						const double scale);
     inline QPoint currentLoc() { return m_loc; };
     inline void clearFrames() { if (m_frames) m_frames->clear();};
     inline int currentFrame(){ return m_frame;};
@@ -41,7 +42,9 @@ private:
     QList<QPixmap> * m_frames;
     double    m_scale;
     int m_frame;
-    QPoint m_loc;
+    QPoint m_loc;		// Location relative to top-left of playfield.
+    int m_tlX;			// X co-ordinate of top-left.
+    int m_tlY;			// Y co-ordinate of top-left.
 };
 
 #endif // KGRSPRITE_H

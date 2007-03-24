@@ -30,25 +30,21 @@
 class KGrPlayField : public KGameCanvasGroup
 {
 public:
-    explicit KGrPlayField ( KGameCanvasAbstract* canvas = NULL );
+    explicit KGrPlayField (KGameCanvasAbstract* canvas = NULL);
     ~KGrPlayField();
-    void setTile( int x, int y, int tilenum );
-    void setTiles (const QImage * background, const QImage & image,
-				int h, int v, int tilewidth, int tileheight);
-    int  tile( int x, int y ) const;
-    inline void setScale (double scale){ m_scale=scale;};
-    inline double scale(){ return m_scale;};
+    void setTile (int x, int y, int tilenum);
+    void setBackground (const QPixmap * background);
+    void setTiles (QList<QPixmap> * tileset, const QPoint & topLeft,
+	const int h, const int v, const int tilewidth, const int tileheight);
 
 private:
     QList<KGameCanvasPixmap *> m_tilesprites;
-    QList<QPixmap> m_tileset;
-    QList<int> m_tilenumbers;
+    QList<QPixmap> * m_tileset;
     int m_tilew;
     int m_tileh;
     int m_numTilesH;
     int m_numTilesV;
-    double m_scale;
-    KGameCanvasPixmap * backdrop;
+    KGameCanvasPixmap * m_background;
 };
 
 #endif // KGRPLAYFIELD_H

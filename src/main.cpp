@@ -21,7 +21,6 @@
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
 #include <klocale.h>
-#include <QtDBus/QtDBus>
 #include "kgrconsts.h"
 #include "kgoldrunner.h"
 

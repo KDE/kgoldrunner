@@ -1,0 +1,85 @@
+THEMES IN KGOLDRUNNER
+
+For each pictorial theme in KGoldrunner there is a "*.desktop" file in the area
+kdegames/kgoldrunner/pics in the KDE SVN source-code repository, or in the area
+$HOME/.kde/share/apps/kgoldrunner/pics, the user's local data area.  If two
+*.desktop files have the same name, the one in the local area takes precedence.
+
+Files in the SVN area are released and installed with KGoldrunner.  Files in the
+local area can be used for development and testing of themes or for holding
+downloaded and copied themes, whatever the method of transfer or copying.  One
+of the theme files is called "default.desktop".  That theme is used whenever
+the game runs for the first time for a particular user.  On subsequent occasions
+the last-used theme is loaded.
+
+Each *.desktop file must start with the "group" line, which says [KDEGameTheme].
+There must also be a line which gives the name of the theme (e.g. Name=Foo Bar).
+That line gets picked up and translated into various languages.  Some other
+standard (but optional) lines are Description=..., Author=..., AuthorEmail=...
+and VersionFormat=...
+
+XPM THEMES
+
+XPM themes are retained from KGoldrunner 2 (KDE 3) as "classic" or "nostalgia"
+items.  The required graphics are embedded in the program, together with an
+array of color-schemes.  The *.desktop file must contain a ColorIndex=n line,
+to indicate which color scheme to use.  Example, theme-file "apple_2.desktop":
+
+    [KDEGameTheme]
+    Name=Apple II
+    Author=Ian Wadham
+    ColorIndex=1
+
+SVG THEMES
+
+These themes are the standard for KGoldrunner 3+ (KDE 4+).  The *.desktop file
+must contain a FileName=xxxx line to indicate where to find the SVG graphics.
+The filename must end in .svg or .svgz and the file must be in or relative to
+the same folder as the *.desktop file.  Example, theme-file "default.desktop":
+
+    [KDEGameTheme]
+    Name=KGR 1 (default)
+    Description=A simple SVG theme for testing and program development only.
+    FileName=kgr_1.svg
+
+As SVG themes become more sophisticated, it is expected that other meta-data
+will be needed in the *.desktop file.  Some examples might be the number of
+animation frames, the color of the game-title and the names of additional files.
+
+SVG ELEMENTS
+
+The elements in the SVG file must have standard names, corresponding to their
+role in the KGoldrunner game.  Each element should be set in a perfectly square
+space.  It will typically be displayed in about 24x24 to 36x36 pixels (7-10mm),
+so detail can be sketchy, as for an icon.  The elements are:
+
+    gold            Any kind of prize or reward, not necessarily a gold piece.
+    hero_n          A set of frames for the running hero (e.g. n = 1 to 20).
+    enemy_n         An equivalent set of frames for the enemies.
+    gold_enemy_n    An equivalent set of frames for enemies carrying gold.
+    concrete        A piece of hard floor that the hero CANNOT dig through.
+    brick           A piece of floor that the hero CAN dig through.
+    ladder          A means for the hero and enemies to move upward.
+    bar             A means for the hero and enemies to move over an abyss.
+    false_brick     A piece of floor that gives way under the hero and enemies.
+    hidden_ladder   A ladder that appears when the hero has all the gold and can
+                    proceed to the next level of the game.
+    background      See below.
+
+The background element is not square like the others.  It will be displayed
+behind the other elements and scaled to a space equivalent to 32 x 24 smaller
+elements, at least.  It could be stretched further in either direction, at the
+user's whim, and will always fill the central widget.  The actual play-area will
+always be 28 x 20 square elements.  The play-area has a thin black frame around
+it and a title-text above it.  The space around the play-area is a buffer-zone,
+to protect against mouse-action spilling over into the surrounding desktop.
+
+It is possible that the background and animation frames could be provided as PNG
+files, depending on the source (e.g. photograph or animation package).  That is
+yet to be decided.
+
+The background should make arbitrary arrangements of smaller elements easily
+visible and recognisable to the game player, i.e. it must be playable in all
+levels of all games.  This should be tested by displaying several levels with
+a new theme before it is released (e.g. use the Game->Play Any Level dialog).
+
