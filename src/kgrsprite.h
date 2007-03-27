@@ -32,11 +32,11 @@ public:
     void setZ ( qreal z );
     void addFrames (QList<QPixmap> * frames, const QPoint & topLeft,
 						const double scale);
-    inline QPoint currentLoc() { return m_loc; };
-    inline void clearFrames() { if (m_frames) m_frames->clear();};
-    inline int currentFrame(){ return m_frame;};
-    inline void setScale (double scale){ m_scale=scale;};
-    inline double scale(){ return m_scale;};
+    inline QPoint currentLoc() { return m_loc; }
+    inline void clearFrames() { if (m_frames) m_frames->clear();}
+    inline int currentFrame(){ return m_frame;}
+    inline void setScale (double scale){ m_scale=scale;}
+    inline double scale(){ return m_scale;}
 
 private:
     QList<QPixmap> * m_frames;
