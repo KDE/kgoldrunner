@@ -253,7 +253,7 @@ void KGrFigure::walkLeft (int WALKDELAY, int FALLDELAY)
 void KGrFigure::walkRight(int WALKDELAY, int FALLDELAY)
 {
     if (walkCounter++) {		// If 0, just turn the figure around.
-	if (++actualPixmap % 4) {	// If true, the animation is incomplete.
+	if ((++actualPixmap%4) != 0)  {	// If true, the animation is incomplete.
 	    if (canWalkRight()) {	// Move right, if it's possible.
 		relx += STEP;
 		absx += STEP;
@@ -1030,7 +1030,7 @@ void KGrEnemy::fallTimeDone ()
     else {
 	status = STANDING;
 	if (hangAtPole())
-	  actualPixmap=(direction ==RIGHT)?8:12;
+	  actualPixmap=(direction ==RIGHT)?RIGHTCLIMB1:LEFTCLIMB1;
     }
   }
   if (status == STANDING) {

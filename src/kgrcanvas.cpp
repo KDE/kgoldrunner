@@ -467,7 +467,7 @@ void KGrCanvas::initView()
     tileset     = new QList<QPixmap>();	// The tiles that can be set in there.
     heroFrames  = new QList<QPixmap>();	// Animation frames for the hero.
     enemyFrames = new QList<QPixmap>();	// Animation frames for enemies.
-    goldEnemy = 20;			// Offset of gold-carrying frames.
+    goldEnemy = 36;			// Offset of gold-carrying frames.
 
     // Set a null graphics theme (will initialise in KGrCanvas::changeTheme()).
     m_themeFilepath = "";
