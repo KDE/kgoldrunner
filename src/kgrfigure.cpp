@@ -230,7 +230,7 @@ void KGrFigure::walkLeft (int WALKDELAY, int FALLDELAY)
 	}
 	else {
 	    // End of 4-pixmap cycle: start again, in next cell if possible.
-	    actualPixmap -= 4;
+            if ((actualPixmap%8) == 0) actualPixmap -= 8;
 	    if (canWalkLeft()) {
 		x--;
 	    }
@@ -262,7 +262,7 @@ void KGrFigure::walkRight(int WALKDELAY, int FALLDELAY)
 	    walkTimer->start ((WALKDELAY * NSPEED) / speed);
 	}
 	else {
-	    actualPixmap -= 4;		// The animation cycle is complete.
+	    if ((actualPixmap%8) == 0) actualPixmap -= 8;	// The animation cycle is complete.
 	    if (canWalkRight()) {
 		x++;
 	    }				// Set the figure's new position.

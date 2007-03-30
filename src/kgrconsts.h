@@ -1,7 +1,7 @@
 /***************************************************************************
  *                       kgrconsts.h  -  description                       *
  *                           -------------------                           *
-    Copyright 2003 Marco Krüger
+    Copyright 2003 Marco Krger
     Copyright 2003 Ian Wadham <ianw2@optusnet.com.au>
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -64,10 +64,10 @@ const int STEP = 4;
 
 const double DROPNUGGETDELAY = 70.0;	// Enemy holds gold for avg. 12.5 cells.
 
-enum Position		{RIGHTWALK1,RIGHTWALK2,RIGHTWALK3,RIGHTWALK4,
-			 LEFTWALK1,LEFTWALK2,LEFTWALK3,LEFTWALK4,
-			 RIGHTCLIMB1,RIGHTCLIMB2,RIGHTCLIMB3,RIGHTCLIMB4,
-			 LEFTCLIMB1,LEFTCLIMB2,LEFTCLIMB3,LEFTCLIMB4,
+enum Position		{RIGHTWALK1,RIGHTWALK2,RIGHTWALK3,RIGHTWALK4,RIGHTWALK5,RIGHTWALK6,RIGHTWALK7,RIGHTWALK8,
+			 LEFTWALK1,LEFTWALK2,LEFTWALK3,LEFTWALK4,LEFTWALK5,LEFTWALK6,LEFTWALK7,LEFTWALK8,
+			 RIGHTCLIMB1,RIGHTCLIMB2,RIGHTCLIMB3,RIGHTCLIMB4,RIGHTCLIMB5,RIGHTCLIMB6,RIGHTCLIMB7,RIGHTCLIMB8,
+			 LEFTCLIMB1,LEFTCLIMB2,LEFTCLIMB3,LEFTCLIMB4,LEFTCLIMB5,LEFTCLIMB6,LEFTCLIMB7,LEFTCLIMB8,
 			 CLIMB1,CLIMB2,
 			 FALL1,FALL2};
 enum Status		{STANDING,FALLING,WALKING,CLIMBING,CAPTIVE};

@@ -123,19 +123,19 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
 
 	if (runnerGraphics == SVG) {
 	    // Draw the hero's animation frames.
-	    appendSVGFrames ("hero_%1", heroFrames, 20);
+	    appendSVGFrames ("hero_%1", heroFrames, 36);
 
 	    // Draw the enemies' animation frames.
-	    appendSVGFrames ("enemy_%1", enemyFrames, 20);          // Plain.
-	    appendSVGFrames ("gold_enemy_%1", enemyFrames, 20);     // Has gold.
+	    appendSVGFrames ("enemy_%1", enemyFrames, 36);          // Plain.
+	    appendSVGFrames ("gold_enemy_%1", enemyFrames, 36);     // Has gold.
 	}
 	else {
 	    // Draw the hero's animation frames.
-	    appendXPMFrames (QImage (hero_xpm), heroFrames, 20);
+	    appendXPMFrames (QImage (hero_xpm), heroFrames, 36);
 
 	    // Draw the enemies' animation frames.
-	    appendXPMFrames (QImage(enemy1_xpm), enemyFrames, 20);  // Plain.
-	    appendXPMFrames (QImage (enemy2_xpm), enemyFrames, 20); // Has gold.
+	    appendXPMFrames (QImage(enemy1_xpm), enemyFrames, 36);  // Plain.
+	    appendXPMFrames (QImage (enemy2_xpm), enemyFrames, 36); // Has gold.
 	}
     }
 
