@@ -359,7 +359,7 @@ void KGrHero::startWalk ()
 				// is nothing to stand on, let him fall.
 	if (hangAtPole() && (!canStand()))
 	  { status = STANDING;
-	  actualPixmap = (direction==RIGHT)?19:18;
+	  actualPixmap = (direction==RIGHT)?FALL2:FALL1;
 	  walkCounter=1;
 	  direction=STAND;
 	  walkTimer->stop();
@@ -639,7 +639,7 @@ void KGrHero::fallTimeDone()
 		status = STANDING;	// so change his state to STANDING.
 		walkTimer->setSingleShot(true);
 		walkTimer->start((WALKDELAY * NSPEED) / speed);
-		direction = (actualPixmap == 19) ? RIGHT : LEFT;
+		direction = (actualPixmap == FALL2) ? RIGHT : LEFT;
 		if ((*playfield)[x][y]->whatIam() == POLE)
 		    actualPixmap = (direction == RIGHT)? RIGHTCLIMB1:LEFTCLIMB1;
 		// else
@@ -653,7 +653,7 @@ void KGrHero::fallTimeDone()
 	if (rely == 0) {
 	    // If at the bottom of a cell, try to walk or just stand still.
 	    status = STANDING;
-	    direction = (actualPixmap == 19) ? RIGHT : LEFT;
+	    direction = (actualPixmap == FALL2) ? RIGHT : LEFT;
 	    if ((*playfield)[x][y]->whatIam() == POLE)
 		actualPixmap = (direction == RIGHT)? RIGHTCLIMB1:LEFTCLIMB1;
 	    // else
