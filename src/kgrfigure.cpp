@@ -229,7 +229,13 @@ void KGrFigure::walkLeft (int WALKDELAY, int FALLDELAY)
 	    walkTimer->start ((WALKDELAY * NSPEED) / speed);
 	}
 	else {
-	    // End of 4-pixmap walk cycle: use alternate step graphics for next sequence
+            //stay at the current cycle graphics, for pending update
+            //In the previous version there was a reset to actualPixmap - 4, but for our two phase run we need better detection
+            if (hangAtPole()) 
+              actualPixmap = (alternateStepGraphics == true) ? LEFTCLIMB8 : LEFTCLIMB4;
+            else
+              actualPixmap = (alternateStepGraphics == true) ? LEFTWALK8 : LEFTWALK4;
+	    // End of 4-pixmap walk cycle: set use alternate step graphics for next sequence
             alternateStepGraphics = !alternateStepGraphics;
 	    if (canWalkLeft()) {
 		x--;
@@ -262,6 +268,12 @@ void KGrFigure::walkRight(int WALKDELAY, int FALLDELAY)
 	    walkTimer->start ((WALKDELAY * NSPEED) / speed);
 	}
 	else {
+            //stay at the current cycle graphics, for pending update
+            //In the previous version there was a reset to actualPixmap - 4, but for our two phase run we need better detection
+            if (hangAtPole()) 
+              actualPixmap = (alternateStepGraphics == true) ? RIGHTCLIMB8 : RIGHTCLIMB4;
+            else
+              actualPixmap = (alternateStepGraphics == true) ? RIGHTWALK8 : RIGHTWALK4;
 	    // End of 4-pixmap walk cycle: use alternate step graphics for next sequence
             alternateStepGraphics = !alternateStepGraphics;
 	    if (canWalkRight()) {
