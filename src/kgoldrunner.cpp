@@ -23,7 +23,7 @@
 
 #include <kglobal.h>
 #include <kstatusbar.h>
-#include <kkeydialog.h>
+#include <kshortcutsdialog.h>
 
 #include <kconfig.h>
 #include <kconfiggroup.h>
@@ -884,7 +884,7 @@ void KGoldrunner::readProperties(const KConfigGroup & /* config - unused */)
 
 void KGoldrunner::optionsConfigureKeys()
 {
-    KKeyDialog::configure(actionCollection());
+    KShortcutsDialog::configure(actionCollection());
 
     // Update the PAUSE/RESUME message in the status bar.
     pauseKeys = myPause->shortcut().toString();
