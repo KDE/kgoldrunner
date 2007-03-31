@@ -76,6 +76,7 @@ protected:
   int walkCounter;
   int nuggets;
   int actualPixmap;			// Array index of the pixmap to draw.
+  bool alternateStepGraphics;
   QTimer *walkTimer;
   QTimer *fallTimer;
 

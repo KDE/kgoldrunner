@@ -229,8 +229,8 @@ void KGrFigure::walkLeft (int WALKDELAY, int FALLDELAY)
 	    walkTimer->start ((WALKDELAY * NSPEED) / speed);
 	}
 	else {
-	    // End of 4-pixmap cycle: start again, in next cell if possible.
-            if ((actualPixmap%8) == 0) actualPixmap -= 8;
+	    // End of 4-pixmap walk cycle: use alternate step graphics for next sequence
+            alternateStepGraphics = !alternateStepGraphics;
 	    if (canWalkLeft()) {
 		x--;
 	    }
@@ -262,7 +262,8 @@ void KGrFigure::walkRight(int WALKDELAY, int FALLDELAY)
 	    walkTimer->start ((WALKDELAY * NSPEED) / speed);
 	}
 	else {
-	    if ((actualPixmap%8) == 0) actualPixmap -= 8;	// The animation cycle is complete.
+	    // End of 4-pixmap walk cycle: use alternate step graphics for next sequence
+            alternateStepGraphics = !alternateStepGraphics;
 	    if (canWalkRight()) {
 		x++;
 	    }				// Set the figure's new position.
@@ -320,6 +321,7 @@ KGrHero :: KGrHero (KGrCanvas * view, int x, int y)
 
   walkFrozen = false;
   fallFrozen = false;
+  alternateStepGraphics = false;
 
   connect (walkTimer, SIGNAL (timeout ()), SLOT (walkTimeDone ()));
   connect (fallTimer, SIGNAL (timeout ()), SLOT (fallTimeDone ()));
@@ -340,10 +342,10 @@ void KGrHero::startWalk ()
 	direction = UP;}
       break;
     case RIGHT:
-      if (hangAtPole())
-	actualPixmap = RIGHTCLIMB1;
-      else
-	actualPixmap = RIGHTWALK1;
+      if (hangAtPole()) 
+	actualPixmap = (alternateStepGraphics == true) ? RIGHTCLIMB5 : RIGHTCLIMB1;
+       else 
+	actualPixmap = (alternateStepGraphics == true) ? RIGHTWALK5 : RIGHTWALK1;
       if (direction != RIGHT)
 	walkCounter = 0;
       else
@@ -367,9 +369,9 @@ void KGrHero::startWalk ()
       break;
     case LEFT:
       if (hangAtPole())
-	actualPixmap = LEFTCLIMB1;
+	actualPixmap = (alternateStepGraphics == true) ? LEFTCLIMB5 : LEFTCLIMB1;
       else
-	actualPixmap = LEFTWALK1;
+	actualPixmap = (alternateStepGraphics == true) ? LEFTWALK5 : LEFTWALK1;
       if (direction != LEFT)
 	walkCounter = 0;
       else
@@ -826,6 +828,7 @@ KGrEnemy :: KGrEnemy (KGrCanvas * view, int x, int y)
   birthX=x;
   birthY=y;
 
+  alternateStepGraphics = false;
   walkFrozen = false;
   fallFrozen = false;
   captiveFrozen = false;
@@ -1133,15 +1136,15 @@ void KGrEnemy::startWalk ()
     switch (direction) {
     case UP:	break;
     case RIGHT:	if (hangAtPole())
-		    actualPixmap = RIGHTCLIMB1;
+		    actualPixmap = (alternateStepGraphics == true) ? RIGHTCLIMB5 : RIGHTCLIMB1;
 		else
-		    actualPixmap = RIGHTWALK1;
+		    actualPixmap = (alternateStepGraphics == true) ? RIGHTWALK5 : RIGHTWALK1;
 		break;
     case DOWN:	break;
     case LEFT:	if (hangAtPole())
-		    actualPixmap = LEFTCLIMB1;
+		    actualPixmap = (alternateStepGraphics == true) ? LEFTCLIMB5 : LEFTCLIMB1;
 		else
-		    actualPixmap = LEFTWALK1;
+		    actualPixmap = (alternateStepGraphics == true) ? LEFTWALK5 : LEFTWALK1;
 		break;
     default:	break;
     }
