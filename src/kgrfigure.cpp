@@ -592,8 +592,6 @@ void KGrHero::walkTimeDone ()
     if ((relx==0)&&(rely==0)) {		// If he has just completed a move, see
       collectNugget();			// if there is a nugget to collect.
       }
-    showFigure();	// Is this REDUNDANT now?  See showFigure() below.
-			//////////////////////////////////////////////////
   }
   if (status == STANDING)
     if (!canStand()&&!hangAtPole())

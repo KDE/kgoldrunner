@@ -399,6 +399,7 @@ void KGrCanvas::moveHero (int x, int y, int frame)
 {
     // In KGoldrunner, the top-left visible cell is [1,1]: in KGrSprite [0,0].
     heroSprite->move (x - bgw, y - bgh, frame);
+qDebug() << frame;
 }
 
 void KGrCanvas::moveEnemy (int id, int x, int y, int frame, int nuggets)
