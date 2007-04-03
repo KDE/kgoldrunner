@@ -5,7 +5,7 @@
 ########### install files ###############
 
 install( FILES README
-               default.desktop kgr_1.svg
+               default.desktop kgr_default.svg
                kgoldrunner.desktop
                apple_2.desktop
                midnight.desktop
