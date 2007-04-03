@@ -1,8 +1,8 @@
 [KDEGameTheme]
 Name=KGoldRunner Default
 Description=A light and clean theme for KDE4
-Author=Mauricio Piacentini / Johann Ollivier Lapeyre
+Author=Mauricio Piacentini
 FileName=kgr_default.svg
 DrawCanvasBorder=1
-BorderColor=#003380
+BorderColor=#2C89A0
 TextColor=#FFFFFF

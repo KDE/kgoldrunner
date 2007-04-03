@@ -497,16 +497,6 @@ void KGrCanvas::makeTiles (bool changePixmaps)
 
     if (tileGraphics == SVG) {
 	SVGmode = svg.isValid();
-
-	// TODO: Remove this hack when brick-blaster is implemented.
-	/*QString filepathSVGsave = filepathSVG;
-	for (int i = 0; strcmp (colourScheme [i], "") != 0; i++) {
-	    if (!strcmp(colourScheme [i], "Midnight")) {
-		// HACK (till brick-blaster in): makes dug bricks dark in SVG.
-		changeColours (& colourScheme [i]);
-	    }
-	}
-	filepathSVG = filepathSVGsave;*/
     }
 
     // TODO: Sort out whether QImage or QPixmap is best for loading the background.
@@ -547,6 +537,16 @@ void KGrCanvas::makeTiles (bool changePixmaps)
 	    appendSVGTile (img, q, "concrete");
 	    appendSVGTile (img, q, "false_brick");
 	    appendSVGTile (img, q, "brick");
+            //add blasted bricks from SVG
+            appendSVGTile (img, q, "brick_1");
+            appendSVGTile (img, q, "brick_2");
+            appendSVGTile (img, q, "brick_3");
+            appendSVGTile (img, q, "brick_4");
+            appendSVGTile (img, q, "brick_5");
+            appendSVGTile (img, q, "brick_6");
+            appendSVGTile (img, q, "brick_7");
+            appendSVGTile (img, q, "brick_8");
+            appendSVGTile (img, q, "brick_9");
 	}
 	else {
 	    tileset->append (QPixmap(hgbrick_xpm).scaledToHeight(imgH));
@@ -561,12 +561,11 @@ void KGrCanvas::makeTiles (bool changePixmaps)
 				    (bricks.copy (2 * imgW, 0, imgW, imgH)));
 	    tileset->append (QPixmap::fromImage	// Extract whole-brick image.
 				    (bricks.copy (0 * imgW, 0, imgW, imgH)));
-	}
-
-	// Make the digging sprites.
-	for (int i = 1; i < 10; i++) {
-	    tileset->append (QPixmap::fromImage
-				    (bricks.copy (i * imgW, 0, imgW, imgH)));
+            // Make the digging sprites.
+            for (int i = 1; i < 10; i++) {
+                tileset->append (QPixmap::fromImage
+                                        (bricks.copy (i * imgW, 0, imgW, imgH)));
+            }
 	}
 
     }	// END if (changePixmaps).
