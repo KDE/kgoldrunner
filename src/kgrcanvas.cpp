@@ -110,10 +110,10 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
     }
 
     /* ******************************************************************** */
-    /* The pixmaps for hero and enemies are arranged in strips of 20: walk  */
-    /* right (4), walk left (4), climb right along bar (4), climb left (4), */
-    /* climb up ladder (2) and fall (2) --- total 20.  The appendFrames()   */
-    /* method extracts the 20 (16x16 pix) frames from the strip, scales     */
+    /* The pixmaps for hero and enemies are arranged in strips of 36: walk  */
+    /* right (8), walk left (8), climb right along bar (8), climb left (8), */
+    /* climb up ladder (2) and fall (2) --- total 36.  The appendFrames()   */
+    /* method extracts the frames from the strip, scales                    */
     /* them and adds them to a list of frames (QPixmaps).                   */
     /* ******************************************************************** */
 
@@ -212,6 +212,20 @@ void KGrCanvas::changeTheme (const QString & themeFilepath)
     KConfigGroup group = theme.group ("KDEGameTheme");
     QString f = group.readEntry ("FileName", "");
 
+    //Check if the theme asks us to draw our border, and set the specified color
+    themeDrawBorder = group.readEntry ("DrawCanvasBorder", 0);
+    if (themeDrawBorder) {
+      QString themeBorderColor = group.readEntry ("BorderColor", "");
+      if (!themeBorderColor.isEmpty()) {
+        borderColor.setNamedColor(themeBorderColor);
+      }
+    }
+    //If specified, also set the title color
+    QString themeTextColor = group.readEntry ("TextColor", "");
+    if (!themeTextColor.isEmpty()) {
+      textColor.setNamedColor(themeTextColor);
+    }
+
     if (f.endsWith (".svg") || f.endsWith (".svgz")) {
 	// Load a SVG theme (KGoldrunner 3+ and KDE 4+).
 	filepathSVG = themeFilepath.left (themeFilepath.lastIndexOf("/")+1) + f;
@@ -227,6 +241,7 @@ void KGrCanvas::changeTheme (const QString & themeFilepath)
 	tileGraphics = XPM;
 	backgroundGraphics = XPM;
 	runnerGraphics = XPM;
+        themeDrawBorder = 1;
     }
 
     // If there is no theme previously loaded, KGrCanvas is just starting up
@@ -399,7 +414,6 @@ void KGrCanvas::moveHero (int x, int y, int frame)
 {
     // In KGoldrunner, the top-left visible cell is [1,1]: in KGrSprite [0,0].
     heroSprite->move (x - bgw, y - bgh, frame);
-qDebug() << frame;
 }
 
 void KGrCanvas::moveEnemy (int id, int x, int y, int frame, int nuggets)
@@ -485,14 +499,14 @@ void KGrCanvas::makeTiles (bool changePixmaps)
 	SVGmode = svg.isValid();
 
 	// TODO: Remove this hack when brick-blaster is implemented.
-	QString filepathSVGsave = filepathSVG;
+	/*QString filepathSVGsave = filepathSVG;
 	for (int i = 0; strcmp (colourScheme [i], "") != 0; i++) {
 	    if (!strcmp(colourScheme [i], "Midnight")) {
 		// HACK (till brick-blaster in): makes dug bricks dark in SVG.
 		changeColours (& colourScheme [i]);
 	    }
 	}
-	filepathSVG = filepathSVGsave;
+	filepathSVG = filepathSVGsave;*/
     }
 
     // TODO: Sort out whether QImage or QPixmap is best for loading the background.
@@ -590,8 +604,8 @@ void KGrCanvas::makeBorder ()
 
     KGameCanvasRectangle * nextRectangle;
 
-    // If SVG/PNG background, no coloured border: the background fills the canvas.
-    if (tileGraphics == XPM) {
+    // If SVG/PNG background, coloured border is specified in the theme properties, otherwise the background fills the canvas.
+    if (themeDrawBorder) {
 	nextRectangle = drawRectangle (0, 0, cw, tlY - lw);
 	borderRectangles.append(nextRectangle);
 	nextRectangle = drawRectangle (0, tlY + ph + lw,
@@ -642,6 +656,7 @@ void KGrCanvas::changeColours (const char * colours [])
 
     borderColor = QColor (colours [1]);
     textColor =   QColor (colours [2]);
+qDebug() << "inside change colours";
 
     // IDW KGrThumbNail::backgroundColor = QColor (QString(colours [3]).right(7));
     // IDW KGrThumbNail::brickColor =      QColor (QString(colours [6]).right(7));

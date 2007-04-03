@@ -126,6 +126,7 @@ private:
 	QString picsDataDir;
 	QString filepathSVG;
 	QString m_themeFilepath;
+        short themeDrawBorder;
 	void loadSVGTheme();
 
 	enum GraphicsType {NONE, SVG, XPM, PNG};
