@@ -22,9 +22,7 @@
 
 #include "kgrconsts.h"
 
-#include "kgrdialog.h"
 #include "kgrcanvas.h"
-// IDW #include "kgrgame.h"
 
 // Graphics files for moving figures and background.
 #include "hero.xpm"
@@ -36,6 +34,10 @@
 #include <QList>
 #include <QLabel>
 #include <QMouseEvent>
+
+#include <QDebug>
+
+#include <KConfig>
 
 KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
 			const QString & systemDataDir)
@@ -515,11 +517,7 @@ void KGrCanvas::makeTiles (bool changePixmaps)
 	svg.render (&b, "background");
     }
 
-    // TODO: When brick-blaster is implemented, put ALL XPM code inside "else".
     if (changePixmaps) {
-	QImage bricks (bricks_xpm);
-	bricks = bricks.scaledToHeight(imgH);
-
 	tileset->clear();
 
 	if (SVGmode && (tileGraphics == SVG)) {
@@ -537,7 +535,8 @@ void KGrCanvas::makeTiles (bool changePixmaps)
 	    appendSVGTile (img, q, "concrete");
 	    appendSVGTile (img, q, "false_brick");
 	    appendSVGTile (img, q, "brick");
-            //add blasted bricks from SVG
+
+            // Add SVG versions of blasted bricks.
             appendSVGTile (img, q, "brick_1");
             appendSVGTile (img, q, "brick_2");
             appendSVGTile (img, q, "brick_3");
@@ -549,6 +548,9 @@ void KGrCanvas::makeTiles (bool changePixmaps)
             appendSVGTile (img, q, "brick_9");
 	}
 	else {
+	    QImage bricks (bricks_xpm);
+	    bricks = bricks.scaledToHeight(imgH);
+
 	    tileset->append (QPixmap(hgbrick_xpm).scaledToHeight(imgH));
 	    tileset->append (QPixmap(nugget_xpm).scaledToHeight(imgH));
 	    tileset->append (QPixmap(pole_xpm).scaledToHeight(imgH));
@@ -559,12 +561,11 @@ void KGrCanvas::makeTiles (bool changePixmaps)
 	    tileset->append (QPixmap(beton_xpm).scaledToHeight(imgH));
 	    tileset->append (QPixmap::fromImage	// Extract false-brick image.
 				    (bricks.copy (2 * imgW, 0, imgW, imgH)));
-	    tileset->append (QPixmap::fromImage	// Extract whole-brick image.
-				    (bricks.copy (0 * imgW, 0, imgW, imgH)));
-            // Make the digging sprites.
-            for (int i = 1; i < 10; i++) {
+
+            // Make the brick-digging sprites (whole brick and blasted bricks).
+            for (int i = 0; i < 10; i++) {
                 tileset->append (QPixmap::fromImage
-                                        (bricks.copy (i * imgW, 0, imgW, imgH)));
+				    (bricks.copy (i * imgW, 0, imgW, imgH)));
             }
 	}
 
@@ -655,12 +656,6 @@ void KGrCanvas::changeColours (const char * colours [])
 
     borderColor = QColor (colours [1]);
     textColor =   QColor (colours [2]);
-qDebug() << "inside change colours";
-
-    // IDW KGrThumbNail::backgroundColor = QColor (QString(colours [3]).right(7));
-    // IDW KGrThumbNail::brickColor =      QColor (QString(colours [6]).right(7));
-    // IDW KGrThumbNail::ladderColor =     QColor (QString(colours [9]).right(7));
-    // IDW KGrThumbNail::poleColor =       QColor (QString(colours [11]).right(7));
 }
 
 void KGrCanvas::loadSVGTheme()

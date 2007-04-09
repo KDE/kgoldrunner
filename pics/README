@@ -23,7 +23,7 @@ XPM THEMES
 XPM themes are retained from KGoldrunner 2 (KDE 3) as "classic" or "nostalgia"
 items.  The required graphics are embedded in the program, together with an
 array of color-schemes.  The *.desktop file must contain a ColorIndex=n line,
-to indicate which color scheme to use.  Example, theme-file "apple_2.desktop":
+to indicate which color-scheme to use.  Example, theme-file "apple_2.desktop":
 
     [KDEGameTheme]
     Name=Apple II
@@ -32,19 +32,32 @@ to indicate which color scheme to use.  Example, theme-file "apple_2.desktop":
 
 SVG THEMES
 
-These themes are the standard for KGoldrunner 3+ (KDE 4+).  The *.desktop file
+SVG themes are the standard for KGoldrunner 3+ (KDE 4+).  The *.desktop file
 must contain a FileName=xxxx line to indicate where to find the SVG graphics.
 The filename must end in .svg or .svgz and the file must be in or relative to
 the same folder as the *.desktop file.  Example, theme-file "default.desktop":
 
     [KDEGameTheme]
-    Name=KGR 1 (default)
-    Description=A simple SVG theme for testing and program development only.
-    FileName=kgr_1.svg
+    Name=KGoldRunner Default
+    Name[sv]=Standard Kgoldrunner
+    Description=A light and clean theme for KDE4
+    Description[sv]=Ett lätt och rent tema för KDE4
+    Author=Mauricio Piacentini
+    FileName=kgr_default.svg
+    DrawCanvasBorder=1
+    BorderColor=#2C89A0
+    TextColor=#FFFFFF
+
+Note that Name and Description have been translated (into Swedish).
+DrawCanvasBorder=1 says that a border is required around this theme, rather
+than the default behavior of letting the background fill the canvas (see
+below).  BorderColor and TextColor supply hex color codes for the border
+area and the text of the game and level titles.
 
 As SVG themes become more sophisticated, it is expected that other meta-data
-will be needed in the *.desktop file.  Some examples might be the number of
-animation frames, the color of the game-title and the names of additional files.
+will be needed in the *.desktop files.  Such changes must be matched with
+code-changes by KGoldrunner's maintainers that will read the new meta-data
+and act on it.  Artists and maintainers need to work together on this.
 
 SVG ELEMENTS
 
@@ -54,11 +67,12 @@ space.  It will typically be displayed in about 24x24 to 36x36 pixels (7-10mm),
 so detail can be sketchy, as for an icon.  The elements are:
 
     gold            Any kind of prize or reward, not necessarily a gold piece.
-    hero_n          A set of frames for the running hero (e.g. n = 1 to 20).
+    hero_n          A set of frames for the running hero (e.g. n = 1 to 36).
     enemy_n         An equivalent set of frames for the enemies.
     gold_enemy_n    An equivalent set of frames for enemies carrying gold.
     concrete        A piece of hard floor that the hero CANNOT dig through.
     brick           A piece of floor that the hero CAN dig through.
+    brick_n         A set of frames for brick-digging animation (n = 1 to 9).
     ladder          A means for the hero and enemies to move upward.
     bar             A means for the hero and enemies to move over an abyss.
     false_brick     A piece of floor that gives way under the hero and enemies.

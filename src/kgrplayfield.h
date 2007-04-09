@@ -25,8 +25,6 @@
 #include <QList>
 #include <QPainter>
 
-#include <KSvgRenderer>
-
 class KGrPlayField : public KGameCanvasGroup
 {
 public:
