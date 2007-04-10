@@ -618,7 +618,7 @@ void KGoldrunner::initStatusBar()
     statusBar()->insertPermanentItem ("", ID_SCORE);
     statusBar()->insertPermanentItem ("", ID_LEVEL);
     statusBar()->insertPermanentItem ("", ID_HINTAVL);
-    statusBar()->insertPermanentItem ("", ID_MSG, QSizePolicy::Horizontally);
+    statusBar()->insertPermanentItem ("", ID_MSG, 1);
 
     showLives (5);					// Start with 5 lives.
     showScore (0);

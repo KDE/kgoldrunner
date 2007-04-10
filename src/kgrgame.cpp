@@ -1014,7 +1014,7 @@ void KGrGame::checkHighScore()
 
     // Dialog to ask the user to enter their name.
     QDialog *		hsn = new QDialog (view,
-			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title);
+			Qt::WindowTitleHint);
     hsn->setObjectName("hsNameDialog");
 
     int margin = 10;
@@ -1165,7 +1165,7 @@ void KGrGame::showHighScores()
     }
 
     QDialog *		hs = new QDialog (view,
-			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title);
+			Qt::WindowTitleHint);
     hs->setObjectName("hsDialog");
 
     int margin = 10;
