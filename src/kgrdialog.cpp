@@ -8,6 +8,8 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
+#include "kgrdialog.h"
+
 #ifdef KGR_PORTABLE
 // If compiling for portability, redefine KDE's i18n.
 #define i18n tr
@@ -16,7 +18,6 @@
 #include "kgrconsts.h"
 #include "kgrcanvas.h"
 #include "kgrgame.h"
-#include "kgrdialog.h"
 
 #ifndef KGR_PORTABLE
 #include <kglobalsettings.h>

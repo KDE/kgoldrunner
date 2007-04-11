@@ -33,6 +33,7 @@
 #include <QFrame>
 
 #include "kgrgameio.h"
+#include "kgrcanvas.h"
 
 /**
 Sets up games and levels in KGoldrunner and controls the play.
@@ -265,8 +266,8 @@ private:
 class KGrThumbNail : public QFrame
 {
 public:
-    KGrThumbNail (QWidget *parent = 0, const char *name = 0);
-    void setLevelData (QString dir, QString prefix, int level, QLabel * sln);
+    explicit KGrThumbNail (QWidget *parent = 0, const char *name = 0);
+    void setLevelData (const QString& dir, const QString& prefix, int level, QLabel * sln);
 
     static QColor backgroundColor;
     static QColor brickColor;

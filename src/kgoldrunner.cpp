@@ -17,6 +17,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
+#include "kgoldrunner.h"
+
 #include <QPixmap>
 #include <QDesktopWidget>
 #include <QApplication>
@@ -41,13 +43,11 @@
 #include <KCmdLineArgs>
 #include <KAboutData>
 
-#include "kgrconsts.h"
 #include "kgrobject.h"
 #include "kgrfigure.h"
 #include "kgrcanvas.h"
 #include "kgrdialog.h"
 #include "kgrgame.h"
-#include "kgoldrunner.h"
 
 KGoldrunner::KGoldrunner()
       // : view (new KGrCanvas (this))

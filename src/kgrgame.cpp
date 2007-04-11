@@ -8,6 +8,8 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
+#include "kgrgame.h"
+
 #ifdef KGR_PORTABLE
 // If compiling for portability, redefine KDE's i18n.
 #define i18n tr
@@ -18,8 +20,6 @@
 #include "kgrfigure.h"
 #include "kgrcanvas.h"
 #include "kgrdialog.h"
-
-#include "kgrgame.h"
 
 // Obsolete - #include <iostream.h>
 #include <iostream>
@@ -2244,7 +2244,7 @@ KGrThumbNail::KGrThumbNail (QWidget * parent, const char * name)
     // the thumbnail can be automatically re-painted when required.
 }
 
-void KGrThumbNail::setLevelData (QString dir, QString prefix, int level,
+void KGrThumbNail::setLevelData (const QString& dir, const QString& prefix, int level,
 					QLabel * sln)
 {
     KGrGameIO io;

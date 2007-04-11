@@ -22,6 +22,7 @@
 
 #include "kgrplayfield.h"
 #include "kgrsprite.h"
+#include "kgrconsts.h"
 
 #include <qcursor.h>
 #include <QLabel>

@@ -18,8 +18,8 @@
  ***************************************************************************/
 
 
-#include <QtDebug>
 #include "kgrgameio.h"
+#include <QtDebug>
 
 KGrGameIO::KGrGameIO ()
 {

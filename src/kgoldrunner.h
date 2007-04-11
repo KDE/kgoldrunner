@@ -34,6 +34,7 @@ const int L_LEVEL       = 15;
 #include <kmainwindow.h>
 #include <kstandarddirs.h>
 #include <QSignalMapper>
+#include "kgrconsts.h"
 
 class QAction;
 class KToggleAction;

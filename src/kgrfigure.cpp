@@ -15,11 +15,11 @@
  * original comments in this program code from German into English.
  */
 
+#include "kgrfigure.h"
+
 #include "kgrconsts.h"
 #include "kgrobject.h"
 #include "kgrcanvas.h"
-
-#include "kgrfigure.h"
 
 #include <stdio.h>
 #include <QList>

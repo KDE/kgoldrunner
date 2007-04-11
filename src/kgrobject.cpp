@@ -15,10 +15,10 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "kgrobject.h"
+
 #include "kgrconsts.h"
 #include "kgrcanvas.h"
-
-#include "kgrobject.h"
 
 #include <stdio.h>
 

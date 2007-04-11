@@ -29,6 +29,8 @@
 #include <QWidget>
 #include <stdlib.h>			// For random-number generator.
 
+#include "kgrconsts.h"
+
 class KGrCanvas;
 class KGrObject;
 class KGrEnemy;
