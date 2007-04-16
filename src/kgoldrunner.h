@@ -31,7 +31,7 @@ const int L_LIVES       = 15;		// Lengths of fields.
 const int L_SCORE       = 17;
 const int L_LEVEL       = 15;
 
-#include <kmainwindow.h>
+#include <kxmlguiwindow.h>
 #include <kstandarddirs.h>
 #include <QSignalMapper>
 #include "kgrconsts.h"
@@ -50,7 +50,7 @@ class KGrHero;
  * @author $AUTHOR <$EMAIL>
  * @version $APP_VERSION
  */
-class KGoldrunner : public KMainWindow
+class KGoldrunner : public KXmlGuiWindow
 {
     Q_OBJECT
 public:
