@@ -142,9 +142,10 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     QHBoxLayout *hboxLayout2 = new QHBoxLayout(numberPair);
     numberPair->setLayout(hboxLayout2);
     grid->addWidget (numberPair, 2, 1);
-    hboxLayout2->setSpacing (spacing);
     numberL   = new QLabel (i18n("Level number:"), numberPair);
     display   = new QLineEdit (numberPair);
+    hboxLayout2->addWidget (numberL);
+    hboxLayout2->addWidget (display);
 
     levelNH   = new QPushButton (i18n("Edit Level Name && Hint"), dad);
     mainLayout->addWidget (levelNH);

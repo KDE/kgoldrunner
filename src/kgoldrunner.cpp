@@ -210,22 +210,24 @@ void KGoldrunner::setupActions()
     // Kill the Hero
     // --------------------------
 
-    myPause =			KStandardGameAction::
-				pause (
-				this, SLOT(stopStart()), this);
-    actionCollection()->addAction(myPause->objectName(), myPause);
-    myPause->			setShortcut (Qt::Key_Escape); // Alternate key.
-    highScore =			KStandardGameAction::
-				highscores (
-				game, SLOT(showHighScores()), this);
+    // KAction * myPause: to get KAction::shortcut() not QAction::shortcut().
+    myPause = KStandardGameAction::pause (this, SLOT(stopStart()), this);
+    actionCollection()->addAction (myPause->objectName(), myPause);
+    KShortcut pauseShortcut = myPause->shortcut();
+    pauseShortcut.setAlternate (Qt::Key_Escape);	// Add "Esc" shortcut.
+    myPause->setShortcut (pauseShortcut);
+
+    highScore = KStandardGameAction::highscores
+				(game, SLOT(showHighScores()), this);
     actionCollection()->addAction(highScore->objectName(), highScore);
-    hintAction = actionCollection()->addAction("get_hint");
-    hintAction->setText(i18n("&Get Hint"));
-    hintAction->setIcon(KIcon("ktip"));
-    connect( hintAction, SIGNAL(triggered(bool)), game, SLOT(showHint()));
+
+    hintAction = KStandardGameAction::hint
+				(game, SLOT(showHint()), this);
+    actionCollection()->addAction(hintAction->objectName(), hintAction);
+
     killHero =	actionCollection()->addAction("kill_hero");
-    killHero->setText(i18n("&Kill Hero"));
-    killHero->setShortcut( Qt::Key_Q );
+    killHero->setText (i18n("&Kill Hero"));
+    killHero->setShortcut (Qt::Key_Q);
     connect( killHero, SIGNAL(triggered(bool)), game, SLOT(herosDead()));
 
     // Quit

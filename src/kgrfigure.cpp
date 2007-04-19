@@ -905,7 +905,7 @@ void KGrEnemy::init(int a,int b)
   absx=16*x;
   absy=16*y;
 
-  actualPixmap = 19;
+  actualPixmap = FALL2;
 
   status = STANDING;
 }

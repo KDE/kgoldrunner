@@ -6,7 +6,6 @@
 	<Action append="new_merge"	name="play_next" />
 	<Action append="new_merge"	name="tutorial" />
 	<Action append="save_merge"	name="save_edits" />
-	<Action append="misc_merge"	name="get_hint" />
 	<Action append="misc_merge"	name="kill_hero" />
     </Menu>
     <Menu name="editor" > <text>&amp;Editor</text>
@@ -39,7 +38,6 @@
     </Menu>
     <Menu name="help" >
 	<Action				name="tutorial" />
-	<Action				name="get_hint" />
     </Menu>
 </MenuBar>
 

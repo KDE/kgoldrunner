@@ -21,6 +21,7 @@ KGrSprite::KGrSprite( KGameCanvasAbstract* canvas  )
     : KGameCanvasPixmap(canvas)
 {
     m_frame = 0;
+    m_loc.setX (-1);		// Makes move() work OK if first (x,y) is (0,0).
 }
 
 KGrSprite::~KGrSprite()

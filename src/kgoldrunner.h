@@ -37,6 +37,7 @@ const int L_LEVEL       = 15;
 #include "kgrconsts.h"
 
 class QAction;
+class KAction;
 class KToggleAction;
 class KGrGame;
 class KGrCanvas;
@@ -174,7 +175,8 @@ private:
 
     QAction *		saveGame;	// Save game, level, lives and score.
 
-    QAction *		myPause;	// Pause or resume the game.
+    // A KAction is needed here, to get access to KShortcut::setAlternate().
+    KAction *		myPause;	// Pause or resume the game.
     QString		pauseKeys;	// Keystroke names to put in status bar.
 
     QAction *		hintAction;	// Display a hint, if available.
