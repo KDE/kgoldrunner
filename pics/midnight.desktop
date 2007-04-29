@@ -1,5 +1,6 @@
 [KDEGameTheme]
 Name=Midnight
 Name[sv]=Midnatt
+Name[x-test]=xxMidnightxx
 Author=Ian Wadham
 ColorIndex=2

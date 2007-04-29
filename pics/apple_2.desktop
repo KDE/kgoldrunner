@@ -1,4 +1,5 @@
 [KDEGameTheme]
 Name=Apple II
+Name[x-test]=xxApple IIxx
 Author=Ian Wadham
 ColorIndex=1
