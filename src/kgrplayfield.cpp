@@ -2,8 +2,8 @@
                        kgrplayfield.cpp  -  description
                              -------------------
     begin                : Fri Aug 04 2006
-    Copyright 2006 Mauricio Piacentini
-    Copyright 2006 Dmitry Suzdalev
+    Copyright 2006 Mauricio Piacentini <mauricio@tabuleiro.com>
+    Copyright 2006 Dmitry Suzdalev <dimsuz@gmail.com>
 
  ***************************************************************************/
 

@@ -1,7 +1,7 @@
 /***************************************************************************
  *                       kgrconsts.h  -  description                       *
  *                           -------------------                           *
-    Copyright 2003 Marco Krger
+    Copyright 2003 Marco Krüger <grisuji@gmx.de>
     Copyright 2003 Ian Wadham <ianw2@optusnet.com.au>
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *

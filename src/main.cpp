@@ -1,5 +1,5 @@
 /*
-    Copyright 2003 Marco Krüger
+    Copyright 2003 Marco Krüger <grisuji@gmx.de>
     Copyright 2003 Ian Wadham <ianw2@optusnet.com.au>
 
     This program is free software; you can redistribute it and/or modify
@@ -37,7 +37,8 @@ int main (int argc, char **argv)
 		     "(C) 2003 Ian Wadham and Marco Krüger");
     about.addAuthor( "Ian Wadham", I18N_NOOP("Current author"),
     		     "ianw2@optusnet.com.au" );
-    about.addAuthor( "Marco Krüger", I18N_NOOP("Original author"), 0);
+    about.addAuthor( "Marco Krüger", I18N_NOOP("Original author"),
+    					"grisuji@gmx.de" );
     about.addCredit("Mauricio Piacentini", I18N_NOOP("Port to KDE4"), 
 		      "mauricio@tabuleiro.com");
     about.addCredit("Maurizio Monge", I18N_NOOP("Canvas classes for KDE4"), 

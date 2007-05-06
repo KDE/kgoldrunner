@@ -2,7 +2,7 @@
                          kgrcanvas.h  -  description
                              -------------------
     begin                : Wed Jan 23 2002
-    Copyright 2002 Marco Krger
+    Copyright 2002 Marco Krüger <grisuji@gmx.de>
     Copyright 2002 Ian Wadham <ianw2@optusnet.com.au>
  ***************************************************************************/
 

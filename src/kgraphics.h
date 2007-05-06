@@ -2,7 +2,7 @@
                          kgrgraphics.h  -  description
                              -------------------
     begin                : Wed Jan 23 2002
-    Copyright 2002 Marco Krüger
+    Copyright 2002 Marco KrÃ¼ger <grisuji@gmx.de>
     Copyright 2002 Ian Wadham <ianw2@optusnet.com.au>
  ***************************************************************************/
 
