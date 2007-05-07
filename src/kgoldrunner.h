@@ -155,12 +155,10 @@ private slots:
     QSize sizeHint();
 
 private:
-    void setupAccel();
     void setupActions();
     void initStatusBar();
     void setupEditToolbarActions();
-    void setThemeMenu (const char * resource, const QString & filePattern,
-			const char * plugActionName, QSignalMapper * themeMapper);
+    void setupThemes();
 
 private:
     bool startupOK;

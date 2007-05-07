@@ -121,6 +121,11 @@ KGoldrunner::KGoldrunner()
     // and a status bar.
     initStatusBar();
 
+    setupGUI();
+
+    // Find the theme-files and generate the Themes menu.
+    setupThemes();
+
     // Connect the game actions to the menu and toolbar displays.
     connect(game, SIGNAL (setEditMenu (bool)),	SLOT (setEditMenu (bool)));
     connect(game, SIGNAL (setEditMenu (bool)),	SLOT (resizeMainWindow ()));
@@ -542,35 +547,26 @@ void KGoldrunner::setupActions()
     addAction(showEnemy6);
 
 #endif
+}
 
-    /**************************************************************************/
-    /**************************   NOW SET IT ALL UP  **************************/
-    /**************************************************************************/
-
-    setupGUI();
-
-    // Will look for themes in files "---/share/apps/kgoldrunner/pics/*.desktop".
+void KGoldrunner::setupThemes ()
+{
+    // Look for themes in files "---/share/apps/kgoldrunner/pics/*.desktop".
     KGlobal::dirs()->addResourceType ("theme",
 		KStandardDirs::kde_default("data") +
 		KCmdLineArgs::aboutData()->appName() +
 		"/pics/");
 
-    QSignalMapper * themeChoice = new QSignalMapper (this);
-    setThemeMenu ("theme", "*.desktop", "theme_list", themeChoice);
-    connect (themeChoice, SIGNAL (mapped (const QString &)),
-		this, SLOT (changeTheme (const QString &)));
-}
-
-void KGoldrunner::setThemeMenu (const char * resource,
-	const QString & filePattern, const char * plugActionName,
-	QSignalMapper * themeMapper)
-{
     QStringList themeFilepaths = KGlobal::dirs()->findAllResources
-	(resource, filePattern, KStandardDirs::NoDuplicates); // Find files.
+	("theme", "*.desktop", KStandardDirs::NoDuplicates); // Find files.
 
     KConfigGroup gameGroup (KGlobal::config(), "KDEGame"); // Get prev theme.
     QString currentThemeFilepath = gameGroup.readEntry ("ThemeFilepath", "");
     qDebug() << endl << "Config() Theme" << currentThemeFilepath;
+
+    QSignalMapper * themeMapper = new QSignalMapper (this);
+    connect (themeMapper, SIGNAL (mapped (const QString &)),
+		this, SLOT (changeTheme (const QString &)));
 
     KToggleAction * newTheme;				// Action for a theme.
     QString actionName;					// Name of the theme.
@@ -580,8 +576,8 @@ void KGoldrunner::setThemeMenu (const char * resource,
 
     foreach (QString filepath, themeFilepaths) {	// Read each theme-file.
 	KConfig theme (filepath, KConfig::OnlyLocal);	// Extract theme-name.
-	KConfigGroup group = theme.group ("KDEGameTheme");
-	actionName = group.readEntry ("Name", "Missing Name");	// Translated.
+	KConfigGroup group = theme.group ("KDEGameTheme");	// Translated.
+	actionName = group.readEntry ("Name", i18n("Missing Name"));
 
 	newTheme = new KToggleAction (actionName, this);
 	themeGroup->addAction (newTheme);		// Add to toggle-group.
@@ -600,8 +596,8 @@ void KGoldrunner::setThemeMenu (const char * resource,
 	themeList.append (newTheme);			// Theme --> menu list.
     }
 
-    unplugActionList (plugActionName);
-    plugActionList   (plugActionName, themeList);	// Insert list in menu.
+    unplugActionList ("theme_list");
+    plugActionList   ("theme_list", themeList);		// Insert list in menu.
 }
 
 /******************************************************************************/
