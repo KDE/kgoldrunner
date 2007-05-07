@@ -829,28 +829,37 @@ void KGrGame::saveGame()		// Save game ID, score and level.
 
     file2.close();
 
-    QDir * dir = new QDir ( userDataDir );
+    if (safeRename (userDataDir+"savegame.tmp", userDataDir+"savegame.dat")) {
+	KGrMessage::information (view, i18n("Save Game"),
+				i18n("Your game has been saved."));
+    }
+    else {
+	KGrMessage::information (view, i18n("Save Game"),
+				i18n("Error: Failed to save your game."));
+    }
+}
 
-    if (file1.exists()) {
-    // On some filesystems we must delete the original savegame.dat
-    // or the upcoming QDir::rename will fail, according to Qt4 docs.
-    // This seems to be true at least with reiserfs
-    if (! dir->remove (userDataDir + "savegame.dat")){
-	    KGrMessage::information (view, i18n("Save Game"),
-		i18n("Cannot remove old '%1' save file.",
-		 userDataDir + "savegame.dat"));
-	    return;
+bool KGrGame::safeRename (const QString & oldName, const QString & newName)
+{
+    QFile newFile (newName);
+    if (newFile.exists()) {
+	// On some file systems we cannot rename if a file with the new name
+	// already exists.  We must delete the existing file, otherwise the
+	// upcoming QFile::rename will fail, according to Qt4 docs.  This
+	// seems to be true with reiserfs at least.
+	if (! newFile.remove()) {
+	    KGrMessage::information (view, i18n("Rename File"),
+		i18n("Cannot delete previous version of file '%1'.", newName));
+	    return false;
 	}
     }
-
-    if (! dir->rename (userDataDir + "savegame.tmp", userDataDir + "savegame.dat")){
-	    KGrMessage::information (view, i18n("Save Game"),
-		i18n("Cannot rename save file '%1' to '%2'.",
-		 userDataDir + "savegame.tmp",userDataDir + "savegame.dat"));
-	    return;
-	}
-    KGrMessage::information (view, i18n("Save Game"),
-				i18n("Your game has been saved."));
+    QFile oldFile (oldName);
+    if (! oldFile.rename (newName)) {
+	KGrMessage::information (view, i18n("Rename File"),
+	    i18n("Cannot rename file '%1' to '%2'.", oldName, newName));
+	return false;
+    }
+    return true;
 }
 
 void KGrGame::loadGame()		// Re-load game, score and level.
@@ -1120,11 +1129,15 @@ void KGrGame::checkHighScore()
 
     high2.close();
 
-    QDir dir;
-    dir.rename (high2.fileName(),
-		userDataDir + "hi_" + collection->prefix + ".dat");
-    KGrMessage::information (view, i18n("Save High Score"),
+    if (safeRename (high2.fileName(),
+		userDataDir + "hi_" + collection->prefix + ".dat")) {
+	KGrMessage::information (view, i18n("Save High Score"),
 				i18n("Your high score has been saved."));
+    }
+    else {
+	KGrMessage::information (view, i18n("Save High Score"),
+				i18n("Error: Failed to save your high score."));
+    }
 
     showHighScores();
     return;
@@ -1685,7 +1698,6 @@ void KGrGame::moveLevelFile ()
 	}
     }
 
-    QDir dir;
     QString filePath1;
     QString filePath2;
 
@@ -1693,7 +1705,8 @@ void KGrGame::moveLevelFile ()
     filePath1 = getFilePath (USER, collections.at(fromC), fromL);
     filePath2 = filePath1;
     filePath2 = filePath2.append (".tmp");
-    dir.rename (filePath1, filePath2);
+    if (! safeRename (filePath1, filePath2))
+	return;
 
     if (toC == fromC) {					// Same collection.
 	if (toL < fromL) {				// Decrease level.
@@ -1728,7 +1741,7 @@ void KGrGame::moveLevelFile ()
 
     // Rename the saved "fromL" file to become "toL".
     filePath1 = getFilePath (USER, collections.at(toC), toL);
-    dir.rename (filePath2, filePath1);
+    safeRename (filePath2, filePath1); // IDW
 
     level = toL;
     collection = collections.at(toC);
@@ -2049,7 +2062,6 @@ void KGrGame::showEditLevel()
 bool KGrGame::reNumberLevels (int cIndex, int first, int last, int inc)
 {
     int i, n, step;
-    QDir dir;
     QString file1, file2;
 
     if (inc > 0) {
@@ -2066,10 +2078,7 @@ bool KGrGame::reNumberLevels (int cIndex, int first, int last, int inc)
     while (i != n) {
 	file1 = getFilePath (USER, collections.at(cIndex), i);
 	file2 = getFilePath (USER, collections.at(cIndex), i - step);
-	if (! dir.rename (file1, file2)) {	// Allow absolute paths.
-	    KGrMessage::information (view, i18n("Save Level"),
-		i18n("Cannot rename file '%1' to '%2'.",
-		 file1, file2));
+	if (! safeRename (file1, file2)) {
 	    return (false);
 	}
 	i = i + step;

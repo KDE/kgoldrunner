@@ -891,7 +891,8 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
     savedGames->close();
 
     // Mark row 0 (the most recently saved game) as the default selection.
-    lgList->	setCurrentItem (0);
+    lgList->	setSelectionMode (QAbstractItemView::SingleSelection);
+    lgList->	setCurrentRow (0);
     lgList->	setItemSelected  (lgList->currentItem(), true);
 		lgHighlight = 0;
 

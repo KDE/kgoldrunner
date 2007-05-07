@@ -129,6 +129,8 @@ private:
 
     void restart();			// Kickstart the game action.
 
+    bool safeRename (const QString & oldName, const QString & newName);
+
 /******************************************************************************/
 /**************************  PLAYFIELD AND GAME DATA  *************************/
 /******************************************************************************/
