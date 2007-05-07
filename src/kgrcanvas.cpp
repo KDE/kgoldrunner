@@ -92,16 +92,20 @@ KGrCanvas::~KGrCanvas()
 void KGrCanvas::drawTheScene (bool changePixmaps)
 {
     // The pixmaps for tiles and sprites have to be re-loaded
-    // if and only if the theme or cell size has changed.
+    // if and only if the theme or the cell size has changed.
+
+    // The background has to be re-loaded if the theme has
+    // changed, the cell size has changed or the canvas size
+    // has changed and the bg must fill it (! themeDrawBorder).
 
     double scale = (double) imgW / (double) bgw;
     qDebug() << "Called KGrCanvas::drawTheScene() - Images:" << imgW<<"x"<<imgH;
 
-    // Draw the tiles in the playfield.
+    // Draw the tiles and background in the playfield.
     if (playfield) {
 	makeTiles (changePixmaps);
 
-	// Set all cells to same tiles (i.e. tile-numbers) as before.
+	// Set each cell to same type of tile (i.e. tile-number) as before.
 	for (int x = 0; x < FIELDWIDTH; x++) {
 	    for (int y = 0; y < FIELDHEIGHT; y++) {
 		playfield->setTile (x, y, tileNo[x][y]);
@@ -494,25 +498,26 @@ void KGrCanvas::initView()
 void KGrCanvas::makeTiles (bool changePixmaps)
 {
     bool SVGmode = false;
+    bool fillCanvas = (! themeDrawBorder);	// Background must fill canvas?
 
     if (tileGraphics == SVG) {
 	SVGmode = svg.isValid();
     }
 
-    // TODO: Sort out whether QImage or QPixmap is best for loading the background.
     // Make an empty background image.
-    // QImage * background = 0;
-    QPixmap * background = 0;
+    QImage * background = 0;
 
     if (SVGmode && (backgroundGraphics == SVG)) {
-	// Draw SVG background and tiles.
-	// background = new QImage (this->width(), this->height(),
-				// QImage::Format_ARGB32_Premultiplied);
-	// background->fill (0);
-	background = new QPixmap (this->width(), this->height());
+	if (fillCanvas || changePixmaps) {
+	    // Draw SVG background and tiles.
+	    int w = fillCanvas ? (this->width())  : (nCellsW * imgW);
+	    int h = fillCanvas ? (this->height()) : (nCellsH * imgH);
+	    background = new QImage (w, h, QImage::Format_ARGB32_Premultiplied);
+	    background->fill (0);
 
-	QPainter b (background);
-	svg.render (&b, "background");
+	    QPainter b (background);
+	    svg.render (&b, "background");
+	}
     }
 
     if (changePixmaps) {
@@ -570,7 +575,9 @@ void KGrCanvas::makeTiles (bool changePixmaps)
     }	// END if (changePixmaps).
 
     // Now set our tileset in the scene.
-    playfield->setBackground (background);
+    QPoint tl;
+    tl = themeDrawBorder ? topLeft : QPoint (0, 0);
+    playfield->setBackground (background, tl);
     playfield->setTiles (tileset, topLeft, nCellsW, nCellsH, imgW, imgH);
 
     delete background;
@@ -602,7 +609,8 @@ void KGrCanvas::makeBorder ()
 
     KGameCanvasRectangle * nextRectangle;
 
-    // If SVG/PNG background, coloured border is specified in the theme properties, otherwise the background fills the canvas.
+    // If SVG/PNG background, coloured border is specified in the theme
+    // properties, otherwise the background fills the canvas.
     if (themeDrawBorder) {
 	nextRectangle = drawRectangle (0, 0, cw, tlY - lw);
 	borderRectangles.append(nextRectangle);
