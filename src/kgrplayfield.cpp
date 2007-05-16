@@ -47,17 +47,22 @@ void KGrPlayField::setTile (int x, int y, int tilenum)
     }
 }
 
-void KGrPlayField::setBackground (const QImage * background, const QPoint & tl)
+void KGrPlayField::setBackground (const bool create, const QImage * background,
+					const QPoint & tl)
 {
-    delete m_background;
-    m_background = 0;
-    if (background != 0) {
-	m_background = new KGameCanvasPixmap (this);
-	m_background->moveTo (tl.x(), tl.y());
-	m_background->setPixmap (QPixmap::fromImage (* background));
-	m_background->show();
+    if (create) {
+	delete m_background;				// Create a background
+	m_background = 0;				// from tile zero
+	if (background != 0) {				// or a QImage.
+	    m_background = new KGameCanvasPixmap (this);
+	    m_background->moveTo (tl.x(), tl.y());
+	    m_background->setPixmap (QPixmap::fromImage (* background));
+	    m_background->show();
+	}
     }
-
+    else {
+	m_background->moveTo (tl.x(), tl.y());		// Move an existing bg.
+    }
 }
 
 void KGrPlayField::setTiles (QList<QPixmap> * tileset, const QPoint & topLeft,

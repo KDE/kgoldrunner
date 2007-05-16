@@ -31,7 +31,8 @@ public:
     explicit KGrPlayField (KGameCanvasAbstract* canvas = NULL);
     ~KGrPlayField();
     void setTile (int x, int y, int tilenum);
-    void setBackground (const QImage * background, const QPoint & tl);
+    void setBackground (const bool create, const QImage * background,
+				const QPoint & tl);
     void setTiles (QList<QPixmap> * tileset, const QPoint & topLeft,
 	const int h, const int v, const int tilewidth, const int tileheight);
 

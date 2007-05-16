@@ -574,10 +574,13 @@ void KGrCanvas::makeTiles (bool changePixmaps)
 
     }	// END if (changePixmaps).
 
-    // Now set our tileset in the scene.
+    // Create a new background - or just move the existing KGameCanvasPixmap.
+    bool create = (backgroundGraphics != SVG) || (background != 0);
     QPoint tl;
     tl = themeDrawBorder ? topLeft : QPoint (0, 0);
-    playfield->setBackground (background, tl);
+    playfield->setBackground (create, background, tl);
+
+    // Now set our tileset in the scene.
     playfield->setTiles (tileset, topLeft, nCellsW, nCellsH, imgW, imgH);
 
     delete background;
