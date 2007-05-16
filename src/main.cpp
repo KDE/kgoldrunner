@@ -27,7 +27,7 @@
 static const char description[] =
     I18N_NOOP("KGoldrunner is a game of action and puzzle solving");
 
-static const char version[] = "2.1";
+static const char version[] = "3.0";
 
 int main (int argc, char **argv)
 {
@@ -39,10 +39,21 @@ int main (int argc, char **argv)
     		     "ianw2@optusnet.com.au" );
     about.addAuthor( "Marco Krüger", I18N_NOOP("Original author"),
     					"grisuji@gmx.de" );
-    about.addCredit("Mauricio Piacentini", I18N_NOOP("Port to KDE4"), 
+    about.addCredit("Mauricio Piacentini",
+		      I18N_NOOP("Port to KDE4, Qt4 and KGameCanvas classes"), 
 		      "mauricio@tabuleiro.com");
-    about.addCredit("Maurizio Monge", I18N_NOOP("Canvas classes for KDE4"), 
+    about.addCredit("Maurizio Monge",
+		      I18N_NOOP("KGameCanvas classes for KDE4"), 
 		      "maurizio.monge@gmail.com");
+    about.addCredit("Mauricio Piacentini",
+		      I18N_NOOP("Artwork for runners and default theme"), 
+		      "mauricio@tabuleiro.com");
+    about.addCredit("Johann Ollivier Lapeyre",
+		      I18N_NOOP("Artwork for bars and ladders"), 
+		      "johann.ollivierlapeyre@gmail.com");
+    about.addCredit("Eugene T",
+		      I18N_NOOP("Artwork for background of Geek City theme"), 
+		      "irs_me@hotmail.com");
 
     KCmdLineArgs::init (argc, argv, &about);
 
