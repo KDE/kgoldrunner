@@ -1,0 +1,8 @@
+[KDEGameTheme]
+Name=Geek City
+Description=The hero is trapped inside a computer.
+Author=Eugene T and Mauricio Piacentini
+FileName=kgr_geek.svgz
+DrawCanvasBorder=1
+BorderColor=#687D54
+TextColor=#FFFFFF
