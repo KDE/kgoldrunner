@@ -51,7 +51,7 @@ int main (int argc, char **argv)
     about.addCredit("Johann Ollivier Lapeyre",
 		      I18N_NOOP("Artwork for bars and ladders"), 
 		      "johann.ollivierlapeyre@gmail.com");
-    about.addCredit("Eugene T",
+    about.addCredit("Eugene Trounev",
 		      I18N_NOOP("Artwork for background of Geek City theme"), 
 		      "irs_me@hotmail.com");
 
