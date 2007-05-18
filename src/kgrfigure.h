@@ -170,6 +170,8 @@ public:
   void doStep();
   void showState (char);
 
+  static void makeReappearanceSequence();
+
 private:
   KGrCanvas * enemyView;
   int birthX, birthY;
@@ -182,6 +184,9 @@ private:
   bool bumpingFriend();
 
   void startWalk();
+
+  static int reappearIndex;
+  static int reappearPos [FIELDWIDTH];
   void dieAndReappear();
   Direction searchbestway(int,int,int,int);
   Direction searchdownway(int,int);

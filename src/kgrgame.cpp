@@ -80,7 +80,7 @@ KGrGame::KGrGame (KGrCanvas * theView, const QString &theSystemDir, const QStrin
     connect (mouseSampler, SIGNAL(timeout()), SLOT (readMousePos ()));
     mouseSampler->start (40);
 
-    srand(1); 				// initialisiere Random-Generator
+    srand (time(0)); 			// Initialise random number generator.
 }
 
 KGrGame::~KGrGame()
@@ -468,6 +468,11 @@ int KGrGame::loadLevel (int levelNo)
 
     hero->setNuggets (nuggets);
     setTimings();
+
+    // Make a new sequence of all possible x co-ordinates for enemy rebirth.
+    if (KGrFigure::reappearAtTop && (enemies.count() > 0)) {
+	KGrEnemy::makeReappearanceSequence();
+    }
 
     // Set direction-flags to use during enemy searches.
     initSearchMatrix();

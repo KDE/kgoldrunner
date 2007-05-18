@@ -1160,6 +1160,38 @@ void KGrEnemy::startWalk ()
     }
 }
 
+int KGrEnemy::reappearIndex = FIELDWIDTH;
+int KGrEnemy::reappearPos [FIELDWIDTH];
+
+void KGrEnemy::makeReappearanceSequence ()
+{
+    // The idea is to make each possible x co-ord come up once per FIELDWIDTH
+    // reappearances of enemies.  This is not truly random, but it reduces the
+    // tedium in levels where you must keep killing enemies until a particular
+    // x or range of x comes up (e.g. if they have to collect gold for you).
+
+    // First put the positions in ascending sequence.
+    for (int k = 0; k < FIELDWIDTH; k++) {
+	reappearPos [k] = k + 1;
+    }
+
+    int z;
+    int left = FIELDWIDTH;
+    int temp;
+
+    // Shuffle the x co-ords of reappearance positions, for x = 1 to FIELDWIDTH.
+    for (int k = 0; k < FIELDWIDTH; k++) {
+	// Pick a random element from those that are left.
+	z = (int)((left * (float) rand()) / RAND_MAX);
+	// Exchange its value with the last of the ones left.
+	temp = reappearPos [z];
+	reappearPos [z] = reappearPos [left - 1];
+	reappearPos [left - 1] = temp;
+	left--;
+    }
+    reappearIndex = 0;
+}
+
 void KGrEnemy::dieAndReappear()
 {
     bool looking;
@@ -1177,8 +1209,11 @@ void KGrEnemy::dieAndReappear()
 	y = 2;
 	// Randomly look for a free spot in row 2.  Limit the number of tries.
 	for (i = 1; ((i <= 3) && looking); i++) {
-	    x = (int)((FIELDWIDTH * (float) rand()) / RAND_MAX) + 1;
-	    switch ((*playfield)[x][2]->whatIam()) {
+	    if (reappearIndex >= FIELDWIDTH) {
+		makeReappearanceSequence();	// Get next array of random x.
+	    }
+	    x = reappearPos [reappearIndex++];
+	    switch ((*playfield)[x][y]->whatIam()) {
 	    case FREE:
 	    case HLADDER:
 		looking = false;
