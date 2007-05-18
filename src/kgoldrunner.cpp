@@ -1143,7 +1143,7 @@ void KGoldrunner::nuggetSlot()
 void KGoldrunner::defaultEditObj()
 		{ m_defaultEditAct->setChecked(true); }
 
-QSize KGoldrunner::sizeHint()
+QSize KGoldrunner::sizeHint() const
 {
     qDebug() << "KGoldrunner::sizeHint() called ... 640x600";
     return QSize (640, 600);

@@ -152,7 +152,7 @@ private slots:
     void setEditMenu (bool on_off);	// Enable/disable "Save Edits" action.
     void setEditIcon (const QString & actionName, const char iconType);
 
-    QSize sizeHint();
+    QSize sizeHint() const;
 
 private:
     void setupActions();
