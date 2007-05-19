@@ -160,10 +160,6 @@ KGoldrunner::KGoldrunner()
 
 KGoldrunner::~KGoldrunner()
 {
-	//Investigate:
-	//KGoldRunner crashes (KDE4) on quit when this is not commented out
-	//Maybe a change in Qt or KDElibs since 3.x?
-	//    delete editToolbar;
 }
 
 void KGoldrunner::setupActions()
