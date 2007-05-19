@@ -603,8 +603,6 @@ void KGoldrunner::setupThemes ()
 
 void KGoldrunner::initStatusBar()
 {
-    statusBar()->setSizeGripEnabled (true);		// Use Settings menu ...
-
     statusBar()->insertPermanentItem ("", ID_LIVES);
     statusBar()->insertPermanentItem ("", ID_SCORE);
     statusBar()->insertPermanentItem ("", ID_LEVEL);
