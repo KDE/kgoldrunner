@@ -1,6 +1,7 @@
 [KDEGameTheme]
 Name=Geek City
 Description=The hero is trapped inside a computer.
+Description[el]=Ο ήρωας έχει παγιδευτεί μέσα σε έναν υπολογιστή
 Author=Eugene Trounev and Mauricio Piacentini
 FileName=kgr_geek.svgz
 DrawCanvasBorder=1

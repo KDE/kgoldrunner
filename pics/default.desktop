@@ -1,8 +1,10 @@
 [KDEGameTheme]
 Name=KGoldRunner Default
+Name[el]=Προκαθορισμένο KGoldrunner
 Name[sv]=Standard Kgoldrunner
 Name[x-test]=xxKGoldRunner Defaultxx
 Description=A light and clean theme for KDE4
+Description[el]=Ένα απλό και ελαφρύ θέμα για το KDE4
 Description[sv]=Ett lätt och rent tema för KDE4
 Description[x-test]=xxA light and clean theme for KDE4xx
 Author=Mauricio Piacentini
