@@ -41,7 +41,6 @@
 @author Ian Wadham and Marco Krüger
 */
 
-class KGrCanvas;
 class KGrGame;
 class KGrCollection;
 class KGrThumbNail;
