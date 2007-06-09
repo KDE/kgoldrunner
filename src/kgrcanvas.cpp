@@ -264,9 +264,15 @@ void KGrCanvas::changeTheme (const QString & themeFilepath)
 
 void KGrCanvas::resizeEvent (QResizeEvent * event /* (unused) */)
 {
-    t.start();
     resizeCount++;			// IDW
     qDebug() << endl << "KGrCanvas::resizeEvent:" << resizeCount << event->size();
+    qDebug() << "Resize pending?" << QWidget::testAttribute (Qt::WA_PendingResizeEvent);
+    // To reduce overheads, re-render only when no later resize is scheduled.
+    if (QWidget::testAttribute (Qt::WA_PendingResizeEvent))  {
+	return;
+    }
+
+    t.start(); // IDW
     double w = (double) event->size().width()  / (nCellsW + border);
     double h = (double) event->size().height() / (nCellsH + border);
     int cellSize = (w < h) ? (int) (w + 0.05) : (int) (h + 0.05);
