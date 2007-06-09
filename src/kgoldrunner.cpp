@@ -1,7 +1,6 @@
 /*
     Copyright 2002 Marco Krüger <grisuji@gmx.de>
     Copyright 2002 Ian Wadham <ianw2@optusnet.com.au>
-    Copyright 2007 Simon Hürlimann <simon.huerlimann@huerlisi.ch>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -603,6 +602,12 @@ void KGoldrunner::setupThemes ()
 
 void KGoldrunner::initStatusBar()
 {
+    // QString s = statusBar()->fontInfo().family();	// Set bold font.
+    // int i = statusBar()->fontInfo().pointSize();
+    // statusBar()->setFont (QFont (s, i, QFont::Bold));
+
+    statusBar()->setSizeGripEnabled (true);
+
     statusBar()->insertPermanentItem ("", ID_LIVES);
     statusBar()->insertPermanentItem ("", ID_SCORE);
     statusBar()->insertPermanentItem ("", ID_LEVEL);
