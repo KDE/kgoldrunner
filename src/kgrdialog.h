@@ -11,7 +11,7 @@
 #define KGRDIALOG_QT_H
 
 // If portable version, use QDialog and QMessageBox.
-// If KDE version, use KDialogBase and KMessageBox.
+// If KDE version, use KDialog and KMessageBox.
 
 #ifdef KGR_PORTABLE
 #include <qdialog.h>
@@ -49,7 +49,7 @@ class KGrThumbNail;
 /*******************    DIALOG TO SELECT A GAME AND LEVEL   *******************/
 /******************************************************************************/
 
-class KGrSLDialog : public KGR_DIALOG	// KGR_PORTABLE sets QDialog/KDialogBase
+class KGrSLDialog : public KGR_DIALOG	// KGR_PORTABLE sets QDialog/KDialog
 {
 Q_OBJECT
 public:
@@ -105,7 +105,7 @@ private:
 *************** DIALOG BOX TO CREATE/EDIT A LEVEL NAME AND HINT ****************
 *******************************************************************************/
 
-class KGrNHDialog : public KGR_DIALOG	// KGR_PORTABLE sets QDialog/KDialogBase
+class KGrNHDialog : public KGR_DIALOG	// KGR_PORTABLE sets QDialog/KDialog
 {
 Q_OBJECT
 public:
@@ -125,7 +125,7 @@ private:
 ***************** DIALOG TO CREATE OR EDIT A GAME (COLLECTION) *****************
 *******************************************************************************/
 
-class KGrECDialog : public KGR_DIALOG	// KGR_PORTABLE sets QDialog/KDialogBase
+class KGrECDialog : public KGR_DIALOG	// KGR_PORTABLE sets QDialog/KDialog
 {
 Q_OBJECT
 public:
@@ -173,7 +173,7 @@ private:
 #include <QFile>
 #include <qtextstream.h>
 
-class KGrLGDialog : public KGR_DIALOG	// KGR_PORTABLE sets QDialog/KDialogBase
+class KGrLGDialog : public KGR_DIALOG	// KGR_PORTABLE sets QDialog/KDialog
 {
 Q_OBJECT
 public:
