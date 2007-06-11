@@ -1,7 +1,9 @@
 [KDEGameTheme]
 Name=Geek City
+Name[es]=Ciudad griega
 Description=The hero is trapped inside a computer.
 Description[el]=Ο ήρωας έχει παγιδευτεί μέσα σε έναν υπολογιστή
+Description[es]=El héroe está atrapado dentro de una máquina.
 Description[ja]=ヒーローがコンピュータの中に閉じ込められています。
 Author=Eugene Trounev and Mauricio Piacentini
 FileName=kgr_geek.svgz
