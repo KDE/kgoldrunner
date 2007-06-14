@@ -548,10 +548,8 @@ void KGoldrunner::setupActions()
 void KGoldrunner::setupThemes ()
 {
     // Look for themes in files "---/share/apps/kgoldrunner/pics/*.desktop".
-    KGlobal::dirs()->addResourceType ("theme",
-		KStandardDirs::kde_default("data") +
-		KCmdLineArgs::aboutData()->appName() +
-		"/pics/");
+    KGlobal::dirs()->addResourceType ("theme", "data", KCmdLineArgs::aboutData()->appName() +
+                                      "/pics/");
 
     QStringList themeFilepaths = KGlobal::dirs()->findAllResources
 	("theme", "*.desktop", KStandardDirs::NoDuplicates); // Find files.
@@ -951,7 +949,7 @@ bool KGoldrunner::getDirectories()
 	KGrMessage::information (this, i18n("Get Folders"),
 		i18n("Cannot find documentation sub-folder 'en/%1/' "
 		"in area '%2' of the KDE folder ($KDEDIRS).",
-		myDir, dirs->kde_default ("html")));
+		myDir, dirs->resourceDirs("html").join( ":" )));
 	// result = false;		// Don't abort if the doc is missing.
     }
     else
@@ -963,7 +961,7 @@ bool KGoldrunner::getDirectories()
 	KGrMessage::information (this, i18n("Get Folders"),
 	i18n("Cannot find system games sub-folder '%1/system/' "
 	"in area '%2' of the KDE folder ($KDEDIRS).",
-	 myDir, dirs->kde_default ("data")));
+	 myDir, dirs->resourceDirs ("data").join( ":" )));
 	result = false;			// ABORT if the games data is missing.
     }
     else
@@ -976,7 +974,7 @@ bool KGoldrunner::getDirectories()
 	KGrMessage::information (this, i18n("Get Folders"),
 	i18n("Cannot find or create user games sub-folder '%1/user/' "
 	"in area '%2' of the KDE user area ($KDEHOME).",
-	 myDir, dirs->kde_default ("data")));
+	 myDir, dirs->resourceDirs ("data").join( ":"));
 	// result = false;		// Don't abort if user area is missing.
     }
     else {
