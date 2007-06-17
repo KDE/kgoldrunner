@@ -25,6 +25,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <ctype.h>
+#include <time.h>
 
 #include <kpushbutton.h>
 #include <KStandardGuiItem>
