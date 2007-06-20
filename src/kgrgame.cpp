@@ -1919,7 +1919,7 @@ void KGrGame::editCollection (int action)
 	}
 	if (action == SL_CR_GAME) {
 	    collections.append (new KGrCollection (USER,
-			ecName, ecPrefix, settings, 0, ec->getAboutText()));
+		ecName, ecPrefix, settings, 0, ec->getAboutText(), 'N'));
 	}
 	else {
 	    collection->name		= ecName;
@@ -2513,7 +2513,7 @@ bool KGrGame::loadCollections (Owner o)
 	    collections.append (new KGrCollection
 		    (o, i18n((const char *) g->name), // Translate now.
 			g->prefix, g->rules, g->nLevels,
-			QString::fromUtf8((const char *) g->about)));
+			QString::fromUtf8((const char *) g->about), g->skill));
 	}
 	result = true;
 	break;
@@ -2606,10 +2606,11 @@ void KGrGame::myMessage (QWidget * parent, const QString &title, const QString &
 /******************************************************************************/
 
 KGrCollection::KGrCollection (Owner o, const QString & n, const QString & p,
-			      const char s, int nl, const QString & a)
+               const char s, int nl, const QString & a, const char sk = 'N')
 {
     // Holds information about a collection of KGoldrunner levels (i.e. a game).
-    owner = o; name = n; prefix = p; settings = s; nLevels = nl; about = a;
+    owner = o; name = n; prefix = p; settings = s; nLevels = nl;
+    about = a; skill = sk;
 }
 
 #include "kgrgame.moc"

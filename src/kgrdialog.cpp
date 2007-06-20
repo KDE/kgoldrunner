@@ -85,8 +85,15 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 
     mainLayout->addLayout(hboxLayout);
 
-    colln     = new QListWidget (dad);
+    colln     = new QTreeWidget (dad);
     mainLayout->addWidget (colln);
+    colln->setColumnCount (4);
+    colln->setHeaderLabels (QStringList() <<
+                            i18n("Name of Game") <<
+                            i18n("Rules") <<
+                            i18n("Levels") <<
+                            i18n("Skill"));
+    colln->setRootIsDecorated (false);
 
     QHBoxLayout * hboxLayout1 = new QHBoxLayout();
     hboxLayout1->setSpacing(6);
@@ -170,18 +177,11 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     HELP      = new QPushButton (i18n("Help"), buttons);
     OK        = new QPushButton (i18n("&OK"), buttons);
     CANCEL    = new QPushButton (i18n("&Cancel"), buttons);
-
-    QPoint p  = parent->mapToGlobal (QPoint (0,0));
+#endif
 
     // Base the geometry of the dialog box on the playing area.
     int cell = parent->width() / (FIELDWIDTH + 4);
-    dad->	move (p.x()+2*cell, p.y()+2*cell);
-    dad->	setMinimumSize ((FIELDWIDTH*cell/2), (FIELDHEIGHT-1)*cell);
-
-    OK->	setAccel (Qt::Key_Return);
-    HELP->	setAccel (Qt::Key_F1);
-    CANCEL->	setAccel (Qt::Key_Escape);
-#endif
+    dad->	setMinimumSize ((FIELDWIDTH*cell/2), (FIELDHEIGHT-3)*cell);
 
     // Set the default for the level-number in the scrollbar.
     number->	setTracking (true);
@@ -254,7 +254,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     slPaintLevel();
     thumbNail->show();
 
-    connect (colln,   SIGNAL (itemClicked (QListWidgetItem *)), this, SLOT (slColln (QListWidgetItem *)));
+    connect (colln,   SIGNAL (itemSelectionChanged()), this, SLOT (slColln()));
     connect (collnA,  SIGNAL (clicked ()), this, SLOT (slAboutColln ()));
 
     connect (display, SIGNAL (textChanged (const QString &)),
@@ -272,7 +272,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 	levelNH->hide();
     }
 
-    connect (colln,   SIGNAL (itemClicked (QListWidgetItem *)), this, SLOT (slPaintLevel ()));
+    connect (colln, SIGNAL(itemSelectionChanged()), this, SLOT(slPaintLevel()));
     connect (number,  SIGNAL (sliderReleased()), this, SLOT (slPaintLevel()));
 
 #ifdef KGR_PORTABLE
@@ -301,39 +301,69 @@ void KGrSLDialog::slSetCollections (int cIndex)
     slCollnIndex = -1;
 
     for (i = 0; i < imax; i++) {
-	colln->addItem(collections.at(i)->name);
+	QStringList data;
+	data << collections.at(i)->name << 
+	    ((collections.at(i)->settings == 'K') ? 
+		i18nc("Rules", "KGoldrunner") :
+                i18nc("Rules", "Traditional")) <<
+	    QString().setNum (collections.at(i)->nLevels) <<
+	    ((collections.at(i)->skill == 'T') ? 
+		i18nc("Skill Level", "Tutorial") :
+	        ((collections.at(i)->skill == 'N') ? 
+		i18nc("Skill Level", "Normal") :
+		i18nc("Skill Level", "Championship")));
+	KGrGameListItem * thisGame = new KGrGameListItem (data, i);
+	colln->addTopLevelItem (thisGame);
+
 	if (slCollnIndex < 0) {
 	    slCollnIndex = i;		// There is at least one collection.
+	}
+	if (i == cIndex) {
+	    // Mark the currently selected collection (or default 0).
+	    colln->setCurrentItem (thisGame);
 	}
     }
 
     if (slCollnIndex < 0) {
 	return;				// There are no collections (unlikely).
     }
-    // Mark the currently selected collection (or default 0).
-    colln->setCurrentRow(cIndex);
-    colln->setItemSelected ( colln->item (cIndex), true );
 
     // Fetch and display information on the selected collection.
-    slColln ( colln->item (cIndex) );
+    slColln ();
+
+    // IDW Make the column for the game's name a bit wider.
+    // colln->show();
+    // QTreeWidgetItem * row = colln->currentItem();
+    // qDebug() << "Size hint for column 0:" << row->sizeHint (0);
+    // IDW row->setSizeHint (0, QSize (colln->width()/2, 30));
+    // row->setSizeHint (0, QSize (180, 20));
+    // qDebug() << "Size hint for column 0:" << row->sizeHint (0);
+    // QWidget * w = colln->itemWidget (row, 0);
+    // if (w) {
+    // int h = w->height();
+    // w->setMinimumSize (colln->width()/2, h);
+    // }
+    // else qDebug() << "The widget pointer is null.";
 }
 
 /******************************************************************************/
 /*****************    SLOTS USED BY LEVEL SELECTION DIALOG    *****************/
 /******************************************************************************/
 
-void KGrSLDialog::slColln (QListWidgetItem * item)
+void KGrSLDialog::slColln ()
 {
 
     if (slCollnIndex < 0) {
 	// Ignore the "highlighted" signal caused by inserting in an empty box.
 	return;
     }
-    int i = colln->row ( item );
-    // User "highlighted" a new collection (with one click) ...
-    colln->setItemSelected ( item, true );  // One click = selected
 
-    slCollnIndex = i;
+    if (colln->selectedItems().size() <= 0) {
+	return;
+    }
+
+    slCollnIndex = (dynamic_cast<KGrGameListItem *>
+			(colln->selectedItems().first()))->id();
     int n = slCollnIndex;				// Collection selected.
     int N = defaultGame;				// Current collection.
     if (collections.at(n)->nLevels > 0)
@@ -1009,6 +1039,27 @@ void KGrMessage::wrapped (QWidget * parent, const QString &title, const QString 
 
     delete mm;
 #endif	// KGR_PORTABLE
+}
+
+/*******************************************************************************
+*************************  ITEM FOR THE LIST OF GAMES  *************************
+*******************************************************************************/
+
+KGrGameListItem::KGrGameListItem (const QStringList & data,
+                                  const int internalId)
+        : QTreeWidgetItem (data)
+{
+    mInternalId = internalId;
+}
+
+int KGrGameListItem::id () const
+{
+    return mInternalId;
+}
+
+void KGrGameListItem::setId (const int internalId)
+{
+    mInternalId = internalId;
 }
 
 #include "kgrdialog.moc"

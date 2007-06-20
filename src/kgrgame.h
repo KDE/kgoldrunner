@@ -294,13 +294,14 @@ class KGrCollection
 {
 public:
     KGrCollection (Owner o, const QString & n, const QString & p,
-		   const char s, int nl, const QString & a);
+		   const char s, int nl, const QString & a, const char sk);
     Owner	owner;		// Collection owner: "System" or "User".
     QString	name;		// Collection name.
     QString	prefix;		// Collection's filename prefix.
     char	settings;	// Collection rules: KGoldrunner or Traditional.
     int		nLevels;	// Number of levels in the collection.
     QString	about;		// Optional text about the collection.
+    char	skill;		// Skill level: Tutorial, Normal or Champion.
 };
 
 #endif

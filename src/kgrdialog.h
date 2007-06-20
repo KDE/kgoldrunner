@@ -28,6 +28,8 @@
 #include <QLayout>
 
 #include <QListWidget>
+#include <QTreeWidget>
+#include <QTreeWidgetItem>
 #include <QScrollBar>
 #include <QLineEdit>
 #include <QPushButton>
@@ -44,6 +46,7 @@
 class KGrGame;
 class KGrCollection;
 class KGrThumbNail;
+class KGrGameListItem;
 
 /******************************************************************************/
 /*******************    DIALOG TO SELECT A GAME AND LEVEL   *******************/
@@ -63,8 +66,7 @@ public:
 
 private slots:
     void slSetCollections (int cIndex);
-    //void slColln (int i);
-    void slColln (QListWidgetItem *);
+    void slColln ();
     void slAboutColln ();
     void slShowLevel (int i);
     void slUpdate (const QString & text);
@@ -82,7 +84,7 @@ private:
     QWidget *		slParent;
 
     QLabel *		collnL;
-    QListWidget *	colln;
+    QTreeWidget *	colln;
     QLabel *		collnN;
     QLabel *		collnD;
     QPushButton *	collnA;
@@ -200,6 +202,20 @@ public:
     static int warning (QWidget * parent, const QString &caption, const QString &text,
 			const QString &label0, const QString &label1, const QString &label2 = "");
     static void wrapped (QWidget * parent, const QString &caption, const QString &text);
+};
+
+/*******************************************************************************
+*************************  ITEM FOR THE LIST OF GAMES  *************************
+*******************************************************************************/
+
+class KGrGameListItem : public QTreeWidgetItem
+{
+public:
+    KGrGameListItem (const QStringList & data, const int internalId = -1);
+    int id () const;
+    void setId (const int internalId);
+private:
+    int mInternalId;
 };
 
 #endif
