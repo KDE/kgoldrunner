@@ -2,7 +2,6 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=KGoldrunner
-Name[ar]=لعبة البحث عن الذهب (KGoldrunner)
 Name[be]=Залатая ліхаманка
 Name[fr]=KGoldRunner
 Name[hr]=KPotraga za zlatom
@@ -60,7 +59,6 @@ Exec=kgoldrunner
 Icon=kgoldrunner
 DocPath=kgoldrunner/index.html
 Comment=A game of action and puzzle-solving
-Comment[ar]=لعبة حركة وحلَ ألغاز
 Comment[be]=Актыўная гульня з галаваломкамі
 Comment[ca]=Un joc d'acció i solució de trencaclosques
 Comment[cs]=Akční hra s řešením hádanek
