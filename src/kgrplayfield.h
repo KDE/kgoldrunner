@@ -25,14 +25,30 @@
 #include <QList>
 #include <QPainter>
 
+/**
+ * The KGrPlayField is a KGameCanvasGroup managing the graphical representation
+ * of the playfield.
+ */
 class KGrPlayField : public KGameCanvasGroup
 {
 public:
     explicit KGrPlayField (KGameCanvasAbstract* canvas = NULL);
     ~KGrPlayField();
+
+    /** Set the tile at grid position (x, y) to be tilenum */
     void setTile (int x, int y, int tilenum);
+    
+    /** Set the background for the playground */
     void setBackground (const bool create, const QImage * background,
 				const QPoint & tl);
+    
+    /** 
+     * Set the tileset to use for the playfield and clear it to the background. 
+     * The origin relative to the canvas is passed in \param topLeft, the
+     * number of tiles the playground is composed of are passed in \param h and
+     * \param v, and \param tileWidth and \tileHeight contain the size of the
+     * single tile.
+     **/
     void setTiles (QList<QPixmap> * tileset, const QPoint & topLeft,
 	const int h, const int v, const int tilewidth, const int tileheight);
 
