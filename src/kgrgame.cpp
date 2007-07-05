@@ -723,11 +723,19 @@ void KGrGame::readMousePos()
     if (editMode) {
 	// Editing - check if we are in paint mode and have moved the mouse.
 	if (paintEditObj && ((i != oldI) || (j != oldJ))) {
-	    insertEditObj (i, j);
+	    insertEditObj (i, j, editObj);
 	    //view->updateCanvas();
 	    oldI = i;
 	    oldJ = j;
 	}
+	if (paintAltObj && ((i != oldI) || (j != oldJ))) {
+	    insertEditObj (i, j, FREE);
+	    //view->updateCanvas();
+	    oldI = i;
+	    oldJ = j;
+	}
+	// Highlight the cursor position
+	
     }
     else {
 	// Playing - if  the level has started, control the hero.
@@ -1422,13 +1430,12 @@ void KGrGame::createLevel()
     editObj = FREE;
     for (i = 1; i <= FIELDWIDTH; i++)
     for (j = 1; j <= FIELDHEIGHT; j++) {
-	insertEditObj (i, j);
-	editObjArray[i][j] = editObj;
+	insertEditObj (i, j, FREE);
+	editObjArray[i][j] = FREE;
     }
 
-    editObj = HERO;
-    insertEditObj (1, 1);
-    editObjArray[1][1] = editObj;
+    insertEditObj (1, 1, HERO);
+    editObjArray[1][1] = HERO;
     editObj = BRICK;
 
     showEditLevel();
@@ -1503,7 +1510,7 @@ void KGrGame::loadEditLevel (int lev)
     for (j = 1; j <= FIELDHEIGHT; j++)
     for (i = 1; i <= FIELDWIDTH;  i++) {
 	editObj = d.layout.at ((j-1)*FIELDWIDTH + (i-1));
-	insertEditObj (i, j);
+	insertEditObj (i, j, editObj);
 	editObjArray[i][j] = editObj;
 	lastSaveArray[i][j] = editObjArray[i][j];	// Copy for "saveOK()".
     }
@@ -2020,7 +2027,7 @@ void KGrGame::deleteLevel()
 	delete playfield[j][i];
 }
 
-void KGrGame::insertEditObj (int i, int j)
+void KGrGame::insertEditObj (int i, int j, char obj)
 {
     if ((i < 1) || (j < 1) || (i > FIELDWIDTH) || (j > FIELDHEIGHT))
 	return;		// Do nothing: mouse pointer is out of playfield.
@@ -2044,7 +2051,7 @@ void KGrGame::insertEditObj (int i, int j)
 	heroCount = 1;
     }
 
-    setEditableCell (i, j, editObj);
+    setEditableCell (i, j, obj);
 }
 
 void KGrGame::setEditableCell (int i, int j, char type)
@@ -2114,9 +2121,15 @@ void KGrGame::doEdit (int button)
 
     switch (button) {
     case Qt::LeftButton:
-    case Qt::RightButton:
         paintEditObj = true;
-        insertEditObj (i, j);
+        insertEditObj (i, j, editObj);
+	//view->updateCanvas();
+        oldI = i;
+        oldJ = j;
+        break;
+    case Qt::RightButton:
+        paintAltObj = true;
+        insertEditObj (i, j, FREE);
 	//view->updateCanvas();
         oldI = i;
         oldJ = j;
@@ -2137,10 +2150,16 @@ void KGrGame::endEdit (int button)
 
     switch (button) {
     case Qt::LeftButton:
-    case Qt::RightButton:
         paintEditObj = false;
         if ((i != oldI) || (j != oldJ)) {
-	    insertEditObj (i, j);
+	    insertEditObj (i, j, editObj);
+	    //view->updateCanvas();
+	}
+        break;
+    case Qt::RightButton:
+        paintAltObj = false;
+        if ((i != oldI) || (j != oldJ)) {
+	    insertEditObj (i, j, FREE);
 	    //view->updateCanvas();
 	}
         break;

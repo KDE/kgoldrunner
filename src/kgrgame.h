@@ -211,6 +211,7 @@ private:
     bool editMode;		// Flag to change keyboard and mouse functions.
     char editObj;		// Type of object to be painted by the mouse.
     bool paintEditObj;		// Sets painting on/off (toggled by clicking).
+    bool paintAltObj;		// Sets painting for the alternate object on/off
     int  oldI, oldJ;		// Last mouse position painted.
     int  editLevel;		// Level to be edited (= 0 for new level).
     int  heroCount;		// Can enter at most one hero.
@@ -221,7 +222,7 @@ private:
     void loadEditLevel (int);	// Load and display an existing level for edit.
     void initEdit();
     void deleteLevel();
-    void insertEditObj (int, int);
+    void insertEditObj (int, int, char object);
     void setEditableCell (int, int, char);
     void showEditLevel();
     bool reNumberLevels (int, int, int, int);
