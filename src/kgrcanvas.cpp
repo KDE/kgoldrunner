@@ -22,11 +22,13 @@
 #define i18n tr
 #endif
 
+#ifndef USE_THEMECLASS
 // Graphics files for moving figures and background.
 #include "hero.xpm"
 #include "enemy1.xpm"
 #include "enemy2.xpm"
 #include "kgraphics.h"
+#endif
 
 #include <QPixmap>
 #include <QList>
@@ -41,6 +43,9 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
 			const QString & systemDataDir)
 			: KGameCanvasWidget (parent),
 			  topLeft (0, 0), bgw (4 * STEP), bgh (4 * STEP)
+#ifdef USE_THEMECLASS
+			, theme(systemDataDir)
+#endif
 {
     resizeCount = 0;		// IDW
 
@@ -63,8 +68,10 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
     // Create an empty list of enemy sprites.
     enemySprites = new QList<KGrSprite *> ();
 
+#ifndef USE_THEMECLASS
     picsDataDir = systemDataDir + "../pics/";
     filepathSVG = "";
+#endif
 
     qDebug() << "Calling initView() ...";
     initView();			// Set up the graphics, etc.
@@ -125,6 +132,7 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
 	heroFrames->clear();
 	enemyFrames->clear();
 
+#ifndef USE_THEMECLASS
 	if (runnerGraphics == SVG) {
 	    // Draw the hero's animation frames.
 	    appendSVGFrames ("hero_%1", heroFrames, 36);
@@ -141,6 +149,10 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
 	    appendXPMFrames (QImage(enemy1_xpm), enemyFrames, 36);  // Plain.
 	    appendXPMFrames (QImage (enemy2_xpm), enemyFrames, 36); // Has gold.
 	}
+#else
+	*heroFrames << theme.hero(imgH);
+	*enemyFrames << theme.enemy(imgH);
+#endif
     }
 
     int spriteframe;
@@ -159,6 +171,7 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
 
     if (enemySprites) {
 	for (int i = 0; i < enemySprites->size(); ++i) {
+	    qDebug("accessing enemySprite %d\n", i);
     	    KGrSprite * thisenemy = enemySprites->at(i);
 	    if (thisenemy) {
 		spriteframe = thisenemy->currentFrame();
@@ -181,6 +194,7 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
     setTitle (t);
 }
 
+#ifndef USE_THEMECLASS
 void KGrCanvas::appendXPMFrames (const QImage & image,
 		QList<QPixmap> * frames, const int nFrames)
 {
@@ -203,9 +217,11 @@ void KGrCanvas::appendSVGFrames (const QString & elementPattern,
 	frames->append (QPixmap::fromImage (img));
     }
 }
+#endif
 
 void KGrCanvas::changeTheme (const QString & themeFilepath)
 {
+#ifndef USE_THEMECLASS
     qDebug() << endl << "New Theme -" << themeFilepath;
     if (! m_themeFilepath.isEmpty() && (themeFilepath == m_themeFilepath)) {
 	qDebug() << "NO CHANGE OF THEME ...";
@@ -260,9 +276,14 @@ void KGrCanvas::changeTheme (const QString & themeFilepath)
     gameGroup.writeEntry ("ThemeFilepath", themeFilepath);
     gameGroup.sync();			// Ensure that the entry goes to disk.
     m_themeFilepath = themeFilepath;
+#else 
+    theme.load(themeFilepath);
+    const bool changePixmaps = true;
+    drawTheScene (changePixmaps);	// Not startup, so re-draw play-area.
+#endif
 }
 
-void KGrCanvas::resizeEvent (QResizeEvent * event /* (unused) */)
+void KGrCanvas::resizeEvent (QResizeEvent * event )
 {
     resizeCount++;			// IDW
     qDebug() << endl << "KGrCanvas::resizeEvent:" << resizeCount << event->size();
@@ -344,8 +365,13 @@ void KGrCanvas::makeTitle ()
     title->resize (width(), topLeft.y() - lw);
     title->move (0, 0);
     QPalette palette;
+#ifndef USE_THEMECLASS
     palette.setColor(title->backgroundRole(), borderColor);
     palette.setColor(title->foregroundRole(), textColor);
+#else
+    palette.setColor(title->backgroundRole(), theme.borderColor());
+    palette.setColor(title->foregroundRole(), theme.textColor());
+#endif
     title->setPalette(palette);
     title->setFont (QFont (fontInfo().family(),
 		 (baseFontSize * scaleStep) / baseScale, QFont::Bold));
@@ -433,6 +459,7 @@ void KGrCanvas::moveEnemy (int id, int x, int y, int frame, int nuggets)
     }
 
     // In KGoldrunner, the top-left visible cell is [1,1]: in KGrSprite [0,0].
+    qDebug("accessing enemySprite %d\n", id);
     enemySprites->at(id)->move (x - bgw, y - bgh, frame);
 }
 
@@ -461,6 +488,7 @@ QPixmap KGrCanvas::getPixmap (char type)
     default:      tileNumber = freebg;  break;
     }
 
+    qDebug("accessing tile %d\n", tileNumber);
     return tileset->at(tileNumber);
 }
 
@@ -495,21 +523,23 @@ void KGrCanvas::initView()
     goldEnemy = 36;			// Offset of gold-carrying frames.
 
     // Set a null graphics theme (will initialise in KGrCanvas::changeTheme()).
+#ifndef USE_THEMECLASS
     m_themeFilepath = "";
     tileGraphics = NONE;
     backgroundGraphics = NONE;
     runnerGraphics = NONE;
+#endif
 }
 
 void KGrCanvas::makeTiles (bool changePixmaps)
 {
+#ifndef USE_THEMECLASS
     bool SVGmode = false;
     bool fillCanvas = (! themeDrawBorder);	// Background must fill canvas?
 
     if (tileGraphics == SVG) {
 	SVGmode = svg.isValid();
     }
-
     // Make an empty background image.
     QImage * background = 0;
 
@@ -525,10 +555,18 @@ void KGrCanvas::makeTiles (bool changePixmaps)
 	    svg.render (&b, "background");
 	}
     }
+#else
+    // Make an empty background image.
+    bool fillCanvas = !theme.isBorderRequired();	// Background must fill canvas?
+    int w = fillCanvas ? (this->width())  : (nCellsW * imgW);
+    int h = fillCanvas ? (this->height()) : (nCellsH * imgH);
+    QImage background = theme.background(w, h);
+#endif
 
     if (changePixmaps) {
 	tileset->clear();
 
+#ifndef USE_THEMECLASS
 	if (SVGmode && (tileGraphics == SVG)) {
 	    // Draw SVG versions of nugget, bar, ladder, concrete and brick.
 	    QImage img (imgW, imgH, QImage::Format_ARGB32_Premultiplied);
@@ -577,34 +615,53 @@ void KGrCanvas::makeTiles (bool changePixmaps)
 				    (bricks.copy (i * imgW, 0, imgW, imgH)));
             }
 	}
+#else
+	*tileset << theme.tiles(imgH);
+#endif
 
     }	// END if (changePixmaps).
 
+#ifndef USE_THEMECLASS
     // Create a new background - or just move the existing KGameCanvasPixmap.
     bool create = (backgroundGraphics != SVG) || (background != 0);
     QPoint tl;
     tl = themeDrawBorder ? topLeft : QPoint (0, 0);
     playfield->setBackground (create, background, tl);
+#else 
+    if (theme.isWithBackground()) {
+	playfield->setBackground (true, 
+			&background, 
+			theme.isBorderRequired() ? topLeft : QPoint(0, 0));
+    }
+#endif
 
     // Now set our tileset in the scene.
     playfield->setTiles (tileset, topLeft, nCellsW, nCellsH, imgW, imgH);
 
+#ifndef USE_THEMECLASS
     delete background;
+#endif
 }
 
+#ifndef USE_THEMECLASS
 void KGrCanvas::appendSVGTile (QImage & img, QPainter & q, const QString & name)
 {
     img.fill (0);
     svg.render (&q, name);
     tileset->append (QPixmap::fromImage (img));
 }
+#endif
 
 void KGrCanvas::makeBorder ()
 {
     // Draw main part of border, in the order: top, bottom, left, right.
     // Allow some overlap to prevent slits appearing when resizing.
 
+#ifndef USE_THEMECLASS
     colour = borderColor;
+#else
+    colour = theme.borderColor();
+#endif
     int cw = width();				// Size of canvas.
     int ch = width();
     int pw = nCellsW * imgW;			// Size of playfield.
@@ -620,7 +677,11 @@ void KGrCanvas::makeBorder ()
 
     // If SVG/PNG background, coloured border is specified in the theme
     // properties, otherwise the background fills the canvas.
+#ifndef USE_THEMECLASS
     if (themeDrawBorder) {
+#else
+    if (theme.isBorderRequired()) {
+#endif
 	nextRectangle = drawRectangle (0, 0, cw, tlY - lw);
 	borderRectangles.append(nextRectangle);
 	nextRectangle = drawRectangle (0, tlY + ph + lw,
@@ -655,6 +716,7 @@ KGameCanvasRectangle * KGrCanvas::drawRectangle (int x, int y, int w, int h)
     return (r);
 }
 
+#ifndef USE_THEMECLASS
 void KGrCanvas::changeColours (const char * colours [])
 {
     // KGoldrunner 2 landscape, xpm-based.
@@ -672,7 +734,9 @@ void KGrCanvas::changeColours (const char * colours [])
     borderColor = QColor (colours [1]);
     textColor =   QColor (colours [2]);
 }
+#endif
 
+#ifndef USE_THEMECLASS
 void KGrCanvas::loadSVGTheme()
 {
     t.start();
@@ -693,6 +757,7 @@ void KGrCanvas::recolourObject (const char * object [], const char * colours [])
 	object [i+1] = colours [i+3];
     }
 }
+#endif
 
 QSize KGrCanvas::sizeHint() const
 {

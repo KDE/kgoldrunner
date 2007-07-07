@@ -8,6 +8,7 @@ set(kgoldrunner_SRCS
    kgrsprite.cpp 
    kgoldrunner.cpp 
    kgrcanvas.cpp 
+   kgrtheme.cpp 
    kgrfigure.cpp 
    kgrgame.cpp 
    kgrgameio.cpp 

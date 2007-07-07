@@ -302,7 +302,37 @@ static const char * beton_xpm []={
 "xsxxsxssxsxxsxss",
 "++++++++++++++++"};
 
+/* XPM - Cursor */
+static const char * cursor_xpm []={
+"16 16 9 1",
+". c #c8b0a0", /* Background */
+"; c #b8a090", /* Background mortar */
+"o c #ff0000", /* Solid light */
+"x c #c05040", /* Solid */
+"s c #b00020", /* Solid dark */
+"+ c #500000", /* Mortar */
+": c #b47444", /* Ladder light */
+"# c #845424", /* Ladder dark */
+"a c #ffffff", /* Pole or bar */
+"xxxxxxxxxxxxxxxx"
+"x..............x",
+"x..............x",
+"x..............x",
+"x..............x",
+"x..............x",
+"x..............x",
+"x..............x",
+"x..............x",
+"x..............x",
+"x..............x",
+"x..............x",
+"x..............x",
+"x..............x",
+"x..............x",
+"xxxxxxxxxxxxxxxx"};
+
 /* XPM - Bricks (10 pics - from whole brick to background [hole] and back) */
+
 static const char * bricks_xpm []={
 "160 16 9 1",
 ". c #c8b0a0", /* Background */

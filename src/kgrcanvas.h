@@ -33,7 +33,14 @@
 #include <QList>
 #include <QTime> // IDW
 
+//#define USE_THEMECLASS
+#undef USE_THEMECLASS
+
+#ifndef USE_THEMECLASS
 #include <KSvgRenderer>
+#else
+#include "kgrtheme.h"
+#endif
 
 class KGrCanvas : public KGameCanvasWidget
 {
@@ -87,7 +94,9 @@ private:
 	int lineDivider;		// Fraction of a tile for inner border.
 	QPoint topLeft;			// Top left point of the tile array.
 
+#ifndef USE_THEMECLASS
 	QColor borderColor, textColor;	// Border colours.
+#endif
 	QLabel * title;			// Title and top part of border.
 
 	int freebg, nuggetbg, polebg, ladderbg, hladderbg;
@@ -110,19 +119,24 @@ private:
 
 	QColor colour;
 	KGameCanvasRectangle * drawRectangle (int x, int y, int w, int h);
+#ifndef USE_THEMECLASS
 	void changeColours (const char * colours []);
 	void recolourObject (const char * object [], const char * colours []);
+#endif
 
 	QList<QPixmap> * tileset;
 	void appendSVGTile (QImage & img, QPainter & q, const QString & name);
 
 	QList<QPixmap> * heroFrames;
 	QList<QPixmap> * enemyFrames;
+#ifndef USE_THEMECLASS
 	void appendXPMFrames (const QImage & image,
 		QList<QPixmap> * frames, const int nFrames);
 	void appendSVGFrames (const QString & elementPattern,
 		QList<QPixmap> * frames, const int nFrames);
+#endif
 
+#ifndef USE_THEMECLASS
 	KSvgRenderer svg;
 	QString picsDataDir;
 	QString filepathSVG;
@@ -134,11 +148,18 @@ private:
 	GraphicsType tileGraphics;
 	GraphicsType backgroundGraphics;
 	GraphicsType runnerGraphics;
+#else
+	KGrTheme theme;
+#endif
 
 	// IDW - Temporary ... should use a more general playfield (grid) idea.
 	int tileNo [FIELDWIDTH] [FIELDHEIGHT];
+
+	// The tiles can have different aspect, but the same features. This
+	// additional array is used to select a different variant for the same
+	// basic tile.
+	int tileAttr [FIELDWIDTH] [FIELDHEIGHT];
 	int resizeCount;		// IDW - Temporary, for qDebug() logs.
 	QTime t; // IDW
 };
-
 #endif // KGRCANVAS_H
