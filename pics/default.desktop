@@ -2,6 +2,8 @@
 Name=KGoldRunner Default
 Name[el]=Προκαθορισμένο KGoldrunner
 Name[es]=KGoldRunner predeterminado
+Name[fa]=پیش‌فرض KGoldRunner
+Name[ga]=Réamhshocrú KGoldrunner
 Name[ja]=KGoldrunner デフォルト
 Name[pt]=Predefinição do KGoldrunner
 Name[pt_BR]=Predefinição do KGoldrunner
@@ -11,6 +13,7 @@ Name[zh_TW]=KGoldRunner 預設
 Description=A light and clean theme for KDE4
 Description[el]=Ένα απλό και ελαφρύ θέμα για το KDE4
 Description[es]=Un tema luminoso y limpio para KDE4
+Description[fa]=چهره روشن و تمیز برای KDE4
 Description[ja]=KDE4 用の軽くてきれいなテーマ
 Description[pt]=Um tema limpo e leve para o KDE4
 Description[pt_BR]=Um tema limpo e leve para o KDE4
