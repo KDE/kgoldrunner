@@ -73,13 +73,16 @@ void KGrTheme::load(const QString& themeFilepath)
 	filepathSVG = themeFilepath.left (themeFilepath.lastIndexOf("/")+1) + f;
 	if (! filepathSVG.isEmpty()) {
 	    svg.load (filepathSVG);
+	    if (svg.elementExists("background")) {
+		hasBackground = true;
+	    } else {
+		hasBackground = false;
+	    }
 	}
 	tileGraphics = SVG;
 	backgroundGraphics = SVG;
 	runnerGraphics = SVG;
-	hasBackground = true;
-    }
-    else {
+    } else {
 	// Load a XPM theme (KGoldrunner 2 and KDE 3).
 	int colorIndex = group.readEntry ("ColorIndex", 0);
 	changeColors (& colourScheme [colorIndex * 12]);
@@ -87,6 +90,7 @@ void KGrTheme::load(const QString& themeFilepath)
 	backgroundGraphics = XPM;
 	runnerGraphics = XPM;
         themeDrawBorder = 1;
+	hasBackground = false;
     }
 
     // Save the user's selected theme in KDE's config-group data for the game.
