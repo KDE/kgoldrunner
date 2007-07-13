@@ -5,97 +5,97 @@
 // L001
 //  R                          Z                           H                           H                           H                           H                           H                           H                MMMXH      H                MNHXH      H               XXXXXH      H                  HXH      H                  HTH      H     HMMHXMMM     H H      H     HM HX  X     H        H     HMNHX N M    H        H     HMXHXXXXM    H        HHHHHHHHHHHHHHHHHHHHHHHHHHHHHXXXXXHXXXXXXXXXXXXHXXXXXXXHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHXXXXXHXXXXXXXXXXXXHXXXXXXXHH
  i18n("Impossible?");
- NOTi18n("No, it's not impossible.  There is a trick in how you dig the bricks next to the gold nuggets.");
+ i18n("No, it's not impossible.  There is a trick in how you dig the bricks next to the gold nuggets.");
 // L002
 //  E   TTT  T ETTT TT    T  TEZ TTH T TH TH T H  TTMH  H TZH TT  T     T T MTTM H HTTZHHT THT TTTTH T TTMM H   HTZH TH   T  T    T  TTT H HT ZHH   TH  H TH TMTHMMM MTHTTZH HT   TTH  H T MM   M H  TZH   H H     H TT   T  THTT ZH TTH H HT  H T  TH TH T T ZHHT   TH  TH  T H  T  TTH TZN TH HT     H T  HT    THT HTHTT   H  TH  T TTT  THT TT H   HT TH   H TH    HT   HT   HT  H   TH  T TH   THT H T H  HTH  T  H THT  THT TTHTT RHXE  TTTTHTTTTTTTTTTTTTHTTTXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("The Runaround");
- NOTi18n("Go up the left side to the top and across.  Drop down left of the bricks.  There is more than one route from these bars to the gold.\n"
+ i18n("Go up the left side to the top and across.  Drop down left of the bricks.  There is more than one route from these bars to the gold.\n"
  "\n"
  "When starting, wait on a short ladder while the enemy above falls past you on the left.");
 // L003
 //   HTTTTTTTTTH   TTTTTTTTTTTTZH    TT   HHTHFM T      H  ZFFFMH M  HMHTHMHHEMMMMMMHTTZMMMMH  MFMHTTTMH   MMMMMH  Z   THE  MHHTTHMH T  TTTTT  Z TH T     HHT MMH THTTTT   ZH    TTT  H  HMHH HTTTT T  Z HT    HMTHTTHMHT H H  H   Z T H   HMMMMMM H THTTTTH   ZH TTH THE     TH T  TTTHT  Z HTT      TTTH TTT H   H E Z TTT H   HT  T  H HTTTT H FZH T TH    TH  TTHT  HTTHTHFZHT HT    H  THTHT TTTTTH   Z  T TH  H THTTTTTHTTTH T  NZRH H HM  TH H   H H H HFFHZZXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Short Cut?");
- NOTi18n("Yes, you just have time to zip across the bottom, dodging all the enemies to get to the gold.");
+ i18n("Yes, you just have time to zip across the bottom, dodging all the enemies to get to the gold.");
 // L004
 //    Z                         ZT    TTT    TT    T  T      TZ TT  TZ  T TZ  T ZT ZT   ZT    TZ   T ZT       T  ZT  TZ  ZT   T    Z     Z ZT TZZT     Z   T   ZT   Z    Z   TZ    ZT   T    Z   MHN    ZT       ZT  T  E  NNMMH   NE ZT       ZTTT HMMMN  MMMMH            N   H N MM N  EH TTTTTT   HMMHN MMHN MHMFMNHHNN    TT HN HH   MH MHMFMHNMMMMH     MMHT MN  H MHMFMNH     HM M    THNHMMMMMHMFMHN  HMMHM  MNNH  NHMN  MHMFMNHRHFNHHM   MM ENMHMFMMMHMFNHNXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Sky Walker");
- NOTi18n("To get the gold in the cave, dig two bricks, wait till they start to re-appear, then quickly dig the third brick (your escape route).  Run back up, dig and drop onto the gold.\n"
+ i18n("To get the gold in the cave, dig two bricks, wait till they start to re-appear, then quickly dig the third brick (your escape route).  Run back up, dig and drop onto the gold.\n"
  "\n"
  "You can JUST get past the fourth enemy if you wait on the bottom ladder as he falls to the floor next to you.  Finally, take a wandering route through the sky and emerge at the top left.");
 // L005
 //  R  TT   M T EHTTT         ZZMMH MMMMMMTT HMNNN HMMMMMMZZ  H   MMNMTTTHMMH  HMMMHNMZZMM MMH MFMTTTHMMHM HMMMMMMZZNNNMMH   H TTHM  M HM     ZZMMMMMH MMMH  HM XMMHMHXXXXX M MMMHTHMH TMHN X MHMH      X M NHTHMH HMMXMX MHM XXXXXZXX M NNHMH  MN MX MHM      H  E MNNHMH HMM MX MHMHXXXXXHHXH MMMMMMM MMXMXNMHMH     HH HN            XFMHMXXXXXXHHXXXXXXXXXXXXXH   MHM  EN HHH EN          HXXMMHMHXXXHTTHXXXXXXXXXXXXXH H  HMH   H T             NNN MMHMXXXXH  XXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("The Vault");
- NOTi18n("You can trap enemies in the bottom vault by waiting at the bottom of the long ladder.  To kill them, come out, dig one brick, then go back and wait again.");
+ i18n("You can trap enemies in the bottom vault by waiting at the bottom of the long ladder.  To kill them, come out, dig one brick, then go back and wait again.");
 // L006
 //  TRMMMMMM   E   FF          ZFXMMMMMMHMFMHM FFHMXMXMXMZMZF    H MHM MHFH MHFZFZFZZNMZM   H  MHM MHNH MHMZMZMZMMMZM  H   MHM MHFHNMHMZZZZZZHMZMHMMHNEMHMM HFHZZHMXMXMXMHMZMHMMFXXMHMTHMFHFZHMHFHFHFHMZMFMMFMMMHMMFMMMFMHMFMMMMMZMZM TTTTHMHXT T  TMHMNHNHNHNMZMNNNNNHMHM H HT MHMHNHNHNHMZMNNNNNHMHMHT T   HMNHNHNHNMZMNNNNNHMHM H HHMZHMHNHNHNHMZMNNNNNHMHMTHTHTHMHMNHNHNHNMZMNNNNNHMH  T H NMHMHNHNHNHMZMMMMMMFMHMZ MFFFMHMFXFXFXFMZ        H FZ     H    M    ZXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Patchwork Quilt");
- NOTi18n("To get the gold in the top middle section, dig three bricks next to the trapped enemy, wait till they start to re-appear, dig once more, then run up and right to fall back to where the enemy was.\n"
+ i18n("To get the gold in the top middle section, dig three bricks next to the trapped enemy, wait till they start to re-appear, dig once more, then run up and right to fall back to where the enemy was.\n"
  "\n"
  "Now you can dig and get onto the ladders before he gets back to you.");
 // L007
 //        NNTT    T HH       T HHMMFMHMM  H   FXMHXXFHXXFEXHH  F H  HTFHMFF MH   HT MM HHMHF HMTH  HMM  MHT  H H TTH  HFXH TH  HT X M  H H H  MHHMMMMHF H    HM  XMMMH H X HH T    H  XH H X M   H H  THMXFHXXXMXXHH  H  M TH  M HMM   HM    TT H H  MH  H MH THHX HMHXTH   H XXX MHT  MH MHH XMMHTTTTM MHMHTH   H MHXHHHT N H     FHH H  XMMMH MMHH  HX MXH   X   H    TN H   HHXM    H   M   MXH   HTMXXTHH    TH HXM      HTN HN    HRHX M   H FXX FHXM FNHXXXXXHXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Do You Need Him?");
- NOTi18n("You can leave the enemy where he is.\n"
+ i18n("You can leave the enemy where he is.\n"
  "\n"
  "Go nearly to the gold at the bottom right.  Don't pick it up yet., but go up and get the two nuggets at the top left.  Then you can come back down to where you were and complete the level.");
 // L008
 //   NRN    TTTTTT HT    TT N N FMMHMMMMH   N  H MMMHN MMMMMFFFZFFFMHMMMM  H N XHN N N N NNZNN MHTNTTH H   XHN MMMMMFXXXXXXMH MFFH H XMXHN  N N FMMMMM NTTTTTH H  NXHN MMMMMFMMMMM HM M    H   XHN N N NMMMMMMEHH T  N H   XHN MMMMMN     TTH FFMMMH   XHN  N N MMMMMMTNH        N XHN MMMMMNTTTTTTNH      FMM XHNZ     M TTTTTTTHTTTTTNT  MMMFMMMMH HFXFXFXFXFXFXFXFMHMM    MMH HFFFFFFFFFFFFFFFNHMM Z  MMH HTTT     N       HMMZNN MMH H E MMMMMMMMMMMH  EMHFMMHHHXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Stuck in Storage");
- NOTi18n("First clean out the cave by digging three bricks at the right.  Later you can kill enemies on the bottom bricks and trap them in the cave.\n"
+ i18n("First clean out the cave by digging three bricks at the right.  Later you can kill enemies on the bottom bricks and trap them in the cave.\n"
  "\n"
  "At the right, get the vertical row of gold first, then go across and get the gold on the horizontal platforms.  Stay right, dig through the last platform, then dig and get the right hand nugget in the cave.  Finally pick up the left hand nugget.");
 // L009
 //  ERT   T TT   T             NXX XXX X  XHX HXXX  HXXXMFXH   XX  X HTHX H    XH    XXH XXX  X  H X  H T X HXHX   H   X XX TX  XTHT X  XXHXXMFHXX X   XH FXH H    XXXHT  FH   XXX  XHFXH H  XH     XHFH XX   X XHXH  XXXXHXHXX  HMH   HX X XHXHX     H H  XX XHXXXX  X XHXHX XHXXX H      T     X   HXH X H   HXXXX HFH XXXX HX HX H  HXXXX    X TH     XX XX HX  H    HXX    HMXXXXX    HX XXHXXXXXXXX HFTTTTTTTHXXXX TTTHXXXXXXXXXXTH               E            XXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("So Far for So Little");
- NOTi18n("At the start, go down and dig.  At the finish, approach the gold from below.");
+ i18n("At the start, go down and dig.  At the finish, approach the gold from below.");
 // L010
 //  E  TTTTTTTTTTRTTTTTTTTTTT  ENMH         ZM           HMNX H         ZMX          H X H         MZT M          H H         TMZMN H          HH        M MZMNHMH TTTTTT  HH       TMHMZMM NHM        HH      MNMHMZMM MHMT       HH     MM MHMZMM NHM M      HH    TMM NHNZMM MHMNMM T   HHT HMNNNNX MZMMNNNM MHM    HH HMMXXXMM MZMMMMH  THXM   HH MNNNNNMM MZM N MMMNNNMM  HH  XXXMM TTMZMHMNNNNMXXMXM HHMNNN MMMMMMZMH MXXXMMMT MMHH MMM MMMNNNZNMH        M  HXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Pharaoh's Tomb");
- NOTi18n("Finish by collecting the two nuggets either side of a ladder on the left, then the four at the very bottom of the tomb.  You need to get an enemy to fall onto the hanging nugget in the left side of the pyramid.  You need another to fill the pit at bottom left.\n"
+ i18n("Finish by collecting the two nuggets either side of a ladder on the left, then the four at the very bottom of the tomb.  You need to get an enemy to fall onto the hanging nugget in the left side of the pyramid.  You need another to fill the pit at bottom left.\n"
  "\n"
  "The rest is several digging puzzles, often with limited time to get out before your escape route closes.  Enjoy!");
 // L011
 //   HHHHT M    MMMMMMMMMMMMMMMZHFM M  MHM MZHZH MHHHHMZZZZZHFMMHF MHMM ZM M MHMHMMZMMMHHHHHHFMHHHH ZMFHHHHMHM ZZZZZMMMMHFHHMMMNZM MMMMHZMFMMMMHHMMMHMMMMHMZZMHHHHHZFHHZZHMHHHHHHHMHHHM MHHMMMMF MHFFHMHHMMMMMTT ZHMHHMTTT MMZHHFHMHHMHMMHHHTFHHZMH   H FFMHHHMHHHHMHM MM MMFMHF  HHH HHMMFHMMHMHMMMMFMMMHHM MHMMTHM HHZHMHMZHHHHHHHHHM MHHMHMMHMH ZHHHHMMMMMMMMMMMHZHM HMMHMH HHMMM  HHHHHHHHHHFM HMH HHH HHMZH  MMMMMMMMMMMMHMHHFM   HHRFH FHHHHHHHHHHHHHHH HHZFFHXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Entangled");
- NOTi18n("Drop from the bar at top left and you will get to the gold.  Exit right and up, on the ladders that appear.  Go across the top until you are seven or eight spaces from the right, then go down.\n"
+ i18n("Drop from the bar at top left and you will get to the gold.  Exit right and up, on the ladders that appear.  Go across the top until you are seven or eight spaces from the right, then go down.\n"
  "\n"
  "As you head diagonally down to the left, there are two false bricks.  Drop into the second one, stay inside it and dig right.  Now fall into a string of ladders that leads down and to the left ....");
 // L012
 //   NNNNNNZZ FRNENE F ZZNNNNNN  XMXMXMHZ  FMMMMM  ZHMXMXMX        HZ   HNHHT  ZH        NNNNNNHZ   HHNH T ZHNNNNNN  MXMXMXHZ   HNHH  NZHXMXMXM        HZ  THHNH  FZH        NNNNNNHZ TNHNHHT NZHNNNNNN  XMXMXMHZNNNHHNHNTNZHMXMXMX        HZFNNHNHHNNNZH        NNNNNNHZNNTHHNHNNFZHNNNNNN  MXMXMXHZNT HNHHTNNZHXMXMXM        HHN  HHNH TNZH         NNNNNHZM  HNHH  NHHNNNNN  MZMMMMMHZ   HHNH  MZHMMMMMZM MMMMXXMFFMMMZMMMMFFMXXMMMF     HHHHHHHHHHHHHHHHHHH E   XXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Flying Tower");
- NOTi18n("Well you just have to be fast and accurate on this one and that's all we can say ....");
+ i18n("Well you just have to be fast and accurate on this one and that's all we can say ....");
 // L013
 //                       Z                           Z               MMMMMMMM    Z              M   HRHHHM   Z             MHN NHNHNHHM  Z            MHNHNHHNHNNNHM Z           MEHNNHNHNHNNNHEMZ           MTHTTTTHTHTTTTTMZ           MNHNNNNHNHNNNNNMZ           MNHNNNNHNHNNNNNMZ           MNHNNNNHNHNNNNNMZ           MNHNNNNHNHNHHHNMZ            MHNNNNHNHNNNHM Z             FNNNNHNHNNHF  Z              MNNNHNHHHF   Z               MMMFMFMMNNNNZMMMMMMXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Pot Hole");
- NOTi18n("Well, the old MG was pretty fast and agile in its day and you have to be too.\n"
+ i18n("Well, the old MG was pretty fast and agile in its day and you have to be too.\n"
  "\n"
  "You can try digging three bricks left and one centre to kill one of the enemies right at the start, but chances are he will fall into the pot hole on the right and you'll have no chance of collecting the last lot of gold.");
 // L014
 //  M            Z              M            Z                           Z                       N   Z   EEE        MMMMMMMMMMMMMHMMMMMMMMFFFFMM      ZZZNZZZH                   Z       H                  Z        H  NNNNN          Z         H  FFFMM         Z          H               ZFMMMMMMMMMMH              M FMMMMFFM   H               M MMMMFMMRNNH              M MMMMMFMMMMMH              MMMMNNNNNNMHHH  NNNNNNNNNNNNMXXXXXXXXXXXXFFXXXHXXHXXHXXHXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Sticky Ladders");
- NOTi18n("Start by going about three quarters the way up the ladder.  The enemies run right.  Run to the top in time to get one to fall through a false brick while the others run towards you.  Go left, dig two holes to trap them, then run right, dig and fall to the bottom of the first small ladder on the right.  The enemies should come down the long ladder and fill up the two false bricks at its foot.\n"
+ i18n("Start by going about three quarters the way up the ladder.  The enemies run right.  Run to the top in time to get one to fall through a false brick while the others run towards you.  Go left, dig two holes to trap them, then run right, dig and fall to the bottom of the first small ladder on the right.  The enemies should come down the long ladder and fill up the two false bricks at its foot.\n"
  "\n"
  "Dig and catch the third enemy on top of the thick brick area, then run to the second space from the bottom of the long ladder, next to a row of bricks.  The enemy should run into the pits on the left.");
 // L015
 //  TTTTTTTTH                 EZ   NNN  H      N             T MMMFFMMHMMFMMHTTTTTTT    H T MMMMMHHMMMMM        HHH H  T FMMHHTTT        HHMMFH H N TNMHH    T  NT  TTTTTHH H X  T H      T H EH        H     TH M M   TH HNH TT N  H        M M      TTTH T N  H  HHHHH M M     THH     N  H  HMFMH M M    HT     N N  H  HMNMH MNM   HTTH      N  H  HMNMH MFF   H    TH T N  H  HMNMH  E MMMMM      H N  HR HMNMH             HH  N  XXXXX  HXMXMXMXMXMXMXMXMXMXMXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("The Laboratory");
- NOTi18n("You have to go up the leftmost ladder to get to every nugget and then exit to the next level.  Come across from the right to collect the top centre nugget.\n"
+ i18n("You have to go up the leftmost ladder to get to every nugget and then exit to the next level.  Come across from the right to collect the top centre nugget.\n"
  "\n"
  "Get past enemies on the 'bunsen burner' by killing them on the right of it, by dropping through the middle of it when they are nearly touching you and will fall after you OR by jumping left over their heads before they get to the top of the burner.");
 // L016
 //  HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHNHHHHHHHHNHHHHHHHHHHHHHHHHHHHHHHNHHHHHHHHNHHHNHHHHNHHHNHHHHHHHHHHHHHHHHHHHHHHHHHHHHHNHHHHHHHHHNHHHHHHHHHNHHHHHHHHHHHNHHHHHHHHHHNHHHHHHHHHHHHHNHHHHHHHHHHHHHHHHHHHHHHHHNHHHHHHHNHHHHHHHHHHHHHHHHHHHHHHHHNHHHHHHNHHHHHHHNHHHHHHHHHHHHHHHHHHHHHHHHNHHHHHHNHHHHHNHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHNHHHHNHHHHHHNHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHNHHHNHHHHNHHHHRHNHEHHHNHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Pete likes Ladders");
- NOTi18n("Keep going between the top and bottom to dodge the enemy.  Pick up nuggets when you can.  If the enemy gets one he can only drop it in one of the empty spaces.  So keep him running through them and wait patiently ....");
+ i18n("Keep going between the top and bottom to dodge the enemy.  Pick up nuggets when you can.  If the enemy gets one he can only drop it in one of the empty spaces.  So keep him running through them and wait patiently ....");
 // L017
 //             ZZZZZZZZZZZ   EE MMH       Z  HHHHTTT  Z     F HTTTTT Z  HNNNN  N   Z    N N     H   HTTTT    N  Z   F N    ZH   TTTTH   MMM  Z  M N ZZZ H   HTTTTNNNMMF   Z MMNZZ Z H    HTTHMMMMNF    Z ZZZ   ZH TTTH  N   MMFFMMMHZXN    MMM FHTT N      NNNNHZXH      FFMTTH N  NN  MMMFHZXH      FNH TH    HHNNNNNNHZXH  TH  FMFH   FF NNHNMFFMHZXH T HTTTTHH   N  NH FNNNNHZXHT      H TT  F NH  FMMFMHZN   R  TTTH  H F HH  F    HHMMMMMMMXMXMXMXMXMXMXMXMXMXHXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Where's the Roof?");
- NOTi18n("First clear up all the gold at the left and top, then dig out the cave and collect the gold on the ladders between the two low walls of false brick.\n"
+ i18n("First clear up all the gold at the left and top, then dig out the cave and collect the gold on the ladders between the two low walls of false brick.\n"
  "\n"
  "If there is an enemy in that section, kill him by hiding in the bottom of a false wall and digging one hole next to it.  He will die as he attempts to get you.  This won't work if there is gold on the brick you want to dig .....");
 // L018
 //    H NHNTHTTNMMMM     HHHE XX  H H H H NMMMMM     HHHHXXX  T T H    MM        H XHXXX HNNHNHTHTT MMMM     HXXXXXX H H HNHHNNNMMMM    MM  XMEH H H TNHHNNMMMM    MMM  XMNH H T H THNMMMMMM  MMMHN XMNH HNH HTH MMMMMMMM MM NHNXMNH THH HHH MMMMMMMMFMMNHHHXMNHEHHHH HHNMMMMMMMMFMNMMHHH NH H TH H HMMMMMMMMFMMMMHHXFNH H HT T HMMMMMMNMFMFHTHNXFNH HNHH H HMMMMMMHN M HNN XFNH T HHNH THHHHHHHH   HN  XFNH H HHNT HMMMMMMHHN  HN  XFNHRH HH H HMMMMMHNNH  HN  E NHXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Ninja Style");
- NOTi18n("After collecting all the gold on the left, stay over there, go up high, get the enemy to follow you, then drop to the floor.  If an enemy falls near the middle ladder on the right, quickly climb to a point higher than that ladder.  After a few tries, you should get all three enemies at the right onto the long rightmost ladder.  Now it is easy to clear out the first two areas of gold on the right.\n"
+ i18n("After collecting all the gold on the left, stay over there, go up high, get the enemy to follow you, then drop to the floor.  If an enemy falls near the middle ladder on the right, quickly climb to a point higher than that ladder.  After a few tries, you should get all three enemies at the right onto the long rightmost ladder.  Now it is easy to clear out the first two areas of gold on the right.\n"
  "\n"
  "Attract three or maybe only two enemies onto the middle ladder at the right.  Go up near the hole in the concrete, drop, run right, go up the long ladder, drop left and collect the gold.\n"
  "\n"
@@ -105,7 +105,7 @@
 // L019
 //  RTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTHHT     N N N M TTT MMN     HH T    FFF FH M T MH MHTTTMHH  MENMMMMNNH  MNMHH MHTTTMHH  XMXMHHHFM    MHH  MHTENMHH  MHHHHMHN NTMN H EMMMMMMMHH  MFHMF FMH   FXMXM   T   HH TTN NT H  HNNH     MH MHMHHMN MFM HNMNMHHH MMMMMHM F HHN   M H NMMMHFF MMMMMH  N HHNNNNN NNNNTTHX   MMNMMH M HHMMMMMFMMMMZXFXXX MMMMMHN MHH          Z      HHHHHH   HH   TT    NZNNNNNNNNNNNNN  HMFFH  FFM MMMMMMMMMMMMMMM MMXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Cooperation?");
- NOTi18n("It looks as though you should trap two enemies in the two pits at the bottom.  Try it, but it is very hard to get one into the right hand pit and you are apt to get an enemy with gold in the left hand pit.  Four false bricks further left prevent you running over from the left and digging.\n"
+ i18n("It looks as though you should trap two enemies in the two pits at the bottom.  Try it, but it is very hard to get one into the right hand pit and you are apt to get an enemy with gold in the left hand pit.  Four false bricks further left prevent you running over from the left and digging.\n"
  "\n"
  "It's best to pick up the bottom row of gold last, dropping in via the hanging nugget at the right and escaping via the ladder that appears.\n"
  "\n"
@@ -117,7 +117,7 @@
 // L020
 //   H                       T  XHXNNNNNNNNHTNTNNNNNNNNHHFMEXHXXXXXXXXXXFXFMXXXXXXXHFFFMXH                     HT F XH                       H  XHX   HXXXXH            HM MHHXXXXX    H    E      TH M H  TTH HX  H   MNM    H  ZZ H  TTH HXHM  X XX     HFH  ZH  TTH HXHH X      TT HTH  ZH  TTHTH XFMX   TXX  N  H  ZH  TEH   MHM   H     N  H TZH X H   T      H XH  N  HXZ XX H           XX H  N  H Z   H        NNNN   H  N  HZ NRHXMN   HMFMMM MMHX  XHMM H XXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Triple Trap");
- NOTi18n("Trap the first enemy immediately.  Go up and right and hang on the ladder to the right of a short bar.  As the enemy arrives, climb up quickly.  As he reaches you again, go left, drop and go up the left hand ladder to the top.\n"
+ i18n("Trap the first enemy immediately.  Go up and right and hang on the ladder to the right of a short bar.  As the enemy arrives, climb up quickly.  As he reaches you again, go left, drop and go up the left hand ladder to the top.\n"
  "\n"
  "The enemy should head right, over the concrete, and fall.  Now go down to the bottom left corner.  The enemy should drop into a false brick next to the gold.\n"
  "\n"

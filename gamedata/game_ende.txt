@@ -10,15 +10,16 @@
    a level, you will probably need to stop the animation by pressing
    the Pause key (default Esc or P).
 
-   To ease the burden on translators, the .pot does not include all the
-   data messages.  For example, the hints on championship games are not
-   included.  A player that good should not need a hint and maybe has no
-   need of a translation ... :-)  The most urgent translations would be
-   names and hints for the Tutorial games, then the game names and
-   descriptions (as appearing in the main dialog box) and then the other
-   level names and hints.
+   The most urgent translations would be names and hints for the Tutorial
+   games, then the game names and descriptions (as appearing in the main
+   dialog box) and then the other level names and finally the remaining
+   hints, which are intended for experienced players and champions.
+
+   Messages marked as NOTi18n should deliberately be left untranslated. The
+   one below is never displayed and the "Das Boot" message in the Initiation
+   game is a foreign-language phrase (the name of a German movie).
 */
-i18n("TRANSLATORS: Please see the notes in the translation comment.");
+ i18n("TRANSLATORS: Please see the notes in the translation comment.");
 
 // L000
 //                                                                                                   R              XXXXXXXXXXXXXXXXXXXXXXXXXXXXN EHHHH H   H HH   HHHHE H N   H    HH  H H H  H     H     HHH  HHH H H  H HH    H     H    H HHH H  H H     H     H    H  HH H  H H        N  HHHH H   H HHH  HHHH  H NMMMMMMMMMMMMMMMMMMMMMMMMMMMM                                                                                                                                                                                                                                
