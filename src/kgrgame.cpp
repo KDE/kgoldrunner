@@ -44,11 +44,13 @@
 /***********************    KGOLDRUNNER GAME CLASS    *************************/
 /******************************************************************************/
 
-KGrGame::KGrGame (KGrCanvas * theView, const QString &theSystemDir, const QString &theUserDir)
+KGrGame::KGrGame (KGrCanvas * theView, 
+		const QString &theSystemDir, const QString &theUserDir) : 
+	view(theView), systemDataDir(theSystemDir), userDataDir(theUserDir), level(0)
 {
-    view = theView;
-    systemDataDir = theSystemDir;
-    userDataDir = theUserDir;
+    //view = theView;
+    //systemDataDir = theSystemDir;
+    //userDataDir = theUserDir;
 
     // Set the game-editor OFF, but available.
     editMode = false;
@@ -88,8 +90,7 @@ KGrGame::~KGrGame()
 {
    //release collections
    while (!collections.isEmpty())
-	        delete collections.takeFirst();
-
+	delete collections.takeFirst();
 }
 
 /******************************************************************************/
@@ -432,6 +433,7 @@ int KGrGame::loadLevel (int levelNo)
 	return 0;
     }
 
+    view->loadBackground(levelNo);
     nuggets = 0;
     enemyCount=0;
     startScore = score;				// What we will save, if asked.

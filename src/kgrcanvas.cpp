@@ -84,6 +84,8 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
     }
 
     title = 0;
+    graphicSet = 0;
+    setMinimumSize(FIELDWIDTH + 4, FIELDHEIGHT + 4);
 }
 
 KGrCanvas::~KGrCanvas()
@@ -107,6 +109,9 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
 
     double scale = (double) imgW / (double) bgw;
     qDebug() << "Called KGrCanvas::drawTheScene() - Images:" << imgW<<"x"<<imgH;
+    if (imgW == 0) {
+        return;
+    }
 
     // Draw the tiles and background in the playfield.
     if (playfield) {
@@ -221,8 +226,8 @@ void KGrCanvas::appendSVGFrames (const QString & elementPattern,
 
 void KGrCanvas::changeTheme (const QString & themeFilepath)
 {
-#ifndef USE_THEMECLASS
     qDebug() << endl << "New Theme -" << themeFilepath;
+#ifndef USE_THEMECLASS
     if (! m_themeFilepath.isEmpty() && (themeFilepath == m_themeFilepath)) {
 	qDebug() << "NO CHANGE OF THEME ...";
 	return;					// No change of theme.
@@ -459,7 +464,7 @@ void KGrCanvas::moveEnemy (int id, int x, int y, int frame, int nuggets)
     }
 
     // In KGoldrunner, the top-left visible cell is [1,1]: in KGrSprite [0,0].
-    qDebug("accessing enemySprite %d\n", id);
+    // qDebug("accessing enemySprite %d\n", id);
     enemySprites->at(id)->move (x - bgw, y - bgh, frame);
 }
 
@@ -531,6 +536,23 @@ void KGrCanvas::initView()
 #endif
 }
 
+void KGrCanvas::loadBackground(int level)
+{
+#ifdef USE_THEMECLASS
+    qDebug() << "loadBackground called" << endl;
+    graphicSet = level - 1;
+    bool fillCanvas = !theme.isBorderRequired();	// Background must fill canvas?
+    int w = fillCanvas ? (this->width())  : (nCellsW * imgW);
+    int h = fillCanvas ? (this->height()) : (nCellsH * imgH);
+    if (theme.isWithBackground()) {
+	QImage background = theme.background(w, h, graphicSet);
+	playfield->setBackground (true, 
+		&background, 
+		theme.isBorderRequired() ? topLeft : QPoint(0, 0));
+    }
+#endif
+}
+
 void KGrCanvas::makeTiles (bool changePixmaps)
 {
 #ifndef USE_THEMECLASS
@@ -557,10 +579,11 @@ void KGrCanvas::makeTiles (bool changePixmaps)
     }
 #else
     // Make an empty background image.
-    bool fillCanvas = !theme.isBorderRequired();	// Background must fill canvas?
-    int w = fillCanvas ? (this->width())  : (nCellsW * imgW);
-    int h = fillCanvas ? (this->height()) : (nCellsH * imgH);
-    QImage background = theme.background(w, h);
+    //bool fillCanvas = !theme.isBorderRequired();	// Background must fill canvas?
+    //int w = fillCanvas ? (this->width())  : (nCellsW * imgW);
+    //int h = fillCanvas ? (this->height()) : (nCellsH * imgH);
+    // QImage background = theme.background(w, h, 0);
+    loadBackground(graphicSet);
 #endif
 
     if (changePixmaps) {
@@ -628,11 +651,11 @@ void KGrCanvas::makeTiles (bool changePixmaps)
     tl = themeDrawBorder ? topLeft : QPoint (0, 0);
     playfield->setBackground (create, background, tl);
 #else 
-    if (theme.isWithBackground()) {
-	playfield->setBackground (true, 
-			&background, 
-			theme.isBorderRequired() ? topLeft : QPoint(0, 0));
-    }
+    //if (theme.isWithBackground()) {
+//	playfield->setBackground (true, 
+//			&background, 
+//			theme.isBorderRequired() ? topLeft : QPoint(0, 0));
+//    }
 #endif
 
     // Now set our tileset in the scene.

@@ -23,18 +23,37 @@
 #include <QImage>
 #include <KSvgRenderer>
 
+/**
+ * KGrTheme handles KGoldrunner theme management.
+ */
 class KGrTheme
 {
 public:
     KGrTheme(const QString &systemDataDir);
-    void load (const QString & themeFilepath);
-    QList<QPixmap> tiles(int size);
-    QList<QPixmap> hero(int size);
-    QList<QPixmap> enemy(int size);
-    QImage background(int width, int height);
-    bool isBorderRequired() { return themeDrawBorder; }
-    bool isWithBackground() { return hasBackground; }
+
+    /** 
+     * load a theme given the name of its .desktop file 
+     */
+    void load(const QString & themeFilepath);
+    
+    QList<QPixmap> tiles(unsigned int size);
+    
+    QList<QPixmap> hero(unsigned int size);
+    
+    QList<QPixmap> enemy(unsigned int size);
+    
+    /**
+     * prepares an image with the background variant \param variant with size
+     * \param width and \param height.
+     */
+    QImage background(unsigned int width, unsigned int height, unsigned int variant);
+    
+    bool isBorderRequired() const { return themeDrawBorder; }
+    
+    bool isWithBackground() const { return numBackgrounds > 0; }
+    
     QColor borderColor() { return m_borderColor; }
+    
     QColor textColor() { return m_textColor; }
 private:
     KSvgRenderer svg;
@@ -48,13 +67,13 @@ private:
     void recolorObject (const char * object [], const char * colours []);
     QList<QPixmap> xpmFrames (const QImage & image, int size, const int nFrames);
     QPixmap svgTile (QImage &image, QPainter &painter, const QString &name);
-    QList<QPixmap> svgFrames (const QString & elementPattern, int size, const int nFrames);
+    QList<QPixmap> svgFrames (const QString & elementPattern, unsigned int size, int nFrames);
 
     enum GraphicsType { NONE, SVG, XPM, PNG };
     GraphicsType tileGraphics;
     GraphicsType backgroundGraphics;
     GraphicsType runnerGraphics;
-    bool hasBackground;
+    int numBackgrounds;
 };
 
 #endif // KGRTHEME_H

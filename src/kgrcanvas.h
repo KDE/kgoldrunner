@@ -33,8 +33,8 @@
 #include <QList>
 #include <QTime> // IDW
 
-//#define USE_THEMECLASS
-#undef USE_THEMECLASS
+#define USE_THEMECLASS
+//#undef USE_THEMECLASS
 
 #ifndef USE_THEMECLASS
 #include <KSvgRenderer>
@@ -69,6 +69,11 @@ public:
 	QPixmap getPixmap (char type);
 
 	void changeTheme (const QString & themeFilepath);
+
+	/**
+	 * Load background appropriate for level \param level
+	 */
+	void loadBackground(int level);
 
 signals:
 	void mouseClick (int);
@@ -125,7 +130,9 @@ private:
 #endif
 
 	QList<QPixmap> * tileset;
+#ifndef USE_THEMECLASS
 	void appendSVGTile (QImage & img, QPainter & q, const QString & name);
+#endif
 
 	QList<QPixmap> * heroFrames;
 	QList<QPixmap> * enemyFrames;
@@ -155,11 +162,8 @@ private:
 	// IDW - Temporary ... should use a more general playfield (grid) idea.
 	int tileNo [FIELDWIDTH] [FIELDHEIGHT];
 
-	// The tiles can have different aspect, but the same features. This
-	// additional array is used to select a different variant for the same
-	// basic tile.
-	int tileAttr [FIELDWIDTH] [FIELDHEIGHT];
 	int resizeCount;		// IDW - Temporary, for qDebug() logs.
 	QTime t; // IDW
+	unsigned int graphicSet;
 };
 #endif // KGRCANVAS_H

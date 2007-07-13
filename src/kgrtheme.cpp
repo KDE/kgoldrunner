@@ -37,7 +37,7 @@ KGrTheme::KGrTheme(const QString &systemDataDir) :
 	tileGraphics(NONE),
 	backgroundGraphics(NONE),
 	runnerGraphics(NONE),
-	hasBackground(false)
+	numBackgrounds(0)
 {
 }
 
@@ -73,10 +73,18 @@ void KGrTheme::load(const QString& themeFilepath)
 	filepathSVG = themeFilepath.left (themeFilepath.lastIndexOf("/")+1) + f;
 	if (! filepathSVG.isEmpty()) {
 	    svg.load (filepathSVG);
-	    if (svg.elementExists("background")) {
-		hasBackground = true;
-	    } else {
-		hasBackground = false;
+	    
+	    // The thema may have multiple backgrounds, called background0...backgroundN
+	    // or just one background, called background0 or simply background.
+	    QString backgroundPattern("background%1");
+	    numBackgrounds = 0;
+	    while (svg.elementExists(backgroundPattern.arg(numBackgrounds))) {
+		++numBackgrounds;
+	    }
+	    if (numBackgrounds == 0) {
+		if (svg.elementExists("background")) {
+		    numBackgrounds = 1;
+		}
 	    }
 	}
 	tileGraphics = SVG;
@@ -90,7 +98,7 @@ void KGrTheme::load(const QString& themeFilepath)
 	backgroundGraphics = XPM;
 	runnerGraphics = XPM;
         themeDrawBorder = 1;
-	hasBackground = false;
+	numBackgrounds = 0;
     }
 
     // Save the user's selected theme in KDE's config-group data for the game.
@@ -100,20 +108,27 @@ void KGrTheme::load(const QString& themeFilepath)
     m_themeFilepath = themeFilepath;
 }
 
-QImage KGrTheme::background(int width, int height)
+QImage KGrTheme::background(unsigned int width, unsigned int height, unsigned int variant)
 {
-    if (svg.isValid() && (backgroundGraphics == SVG)) {
+    qDebug() << "KGrTheme::background(" << width <<", " << height <<", "<< variant << ") called" << endl;
+    if ((width != 0) && (height != 0) && 
+	    (backgroundGraphics == SVG) && numBackgrounds > 0) {
 	QImage background(width, height, QImage::Format_ARGB32_Premultiplied);
 	background.fill(0);
 	QPainter painter(&background);
-	svg.render(&painter, "background");
+	variant %= numBackgrounds;
+	QString backgroundName = "background%1";
+	qDebug() << "Trying to load background " << backgroundName.arg(variant) << endl;
+	if (svg.elementExists(backgroundName.arg(variant))) 
+	    svg.render(&painter, backgroundName.arg(variant));
+	else if (svg.elementExists("background")) 
+	    svg.render(&painter, "background");
 	return background;
-    } else {
-	return QImage();
     }
+    return QImage();
 }
 
-QList<QPixmap> KGrTheme::hero(int size)
+QList<QPixmap> KGrTheme::hero(unsigned int size)
 {
     if (runnerGraphics == SVG) {
 	return svgFrames("hero_%1", size, 36);
@@ -122,7 +137,7 @@ QList<QPixmap> KGrTheme::hero(int size)
     }
 }
 
-QList<QPixmap> KGrTheme::enemy(int size)
+QList<QPixmap> KGrTheme::enemy(unsigned int size)
 {
     QList<QPixmap> frames;
     if (runnerGraphics == SVG) {
@@ -136,7 +151,7 @@ QList<QPixmap> KGrTheme::enemy(int size)
 }
 
 QList<QPixmap> KGrTheme::svgFrames (const QString &elementPattern,
-		int size, const int nFrames)
+		unsigned int size, int nFrames)
 {
     QImage img (size, size, QImage::Format_ARGB32_Premultiplied);
     QPainter q (&img);
@@ -151,7 +166,7 @@ QList<QPixmap> KGrTheme::svgFrames (const QString &elementPattern,
 }
 
 QList<QPixmap> KGrTheme::xpmFrames (const QImage & image,
-		int size, const int nFrames)
+		int size, int nFrames)
 {
     QPixmap   pm;
     QList<QPixmap> frames;
@@ -169,7 +184,7 @@ QPixmap KGrTheme::svgTile (QImage & img, QPainter & q, const QString & name)
     return QPixmap::fromImage (img);
 }
 
-QList<QPixmap> KGrTheme::tiles(int size)
+QList<QPixmap> KGrTheme::tiles(unsigned int size)
 {
     QList<QPixmap> list;
     if (tileGraphics == SVG) {
