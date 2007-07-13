@@ -1,3 +1,4 @@
+#define KGR_DEBUG 1
 /*
     Copyright 2002 Marco Krüger <grisuji@gmx.de>
     Copyright 2002 Ian Wadham <ianw2@optusnet.com.au>
@@ -484,7 +485,7 @@ void KGoldrunner::setupActions()
 
     QAction* showHero = actionCollection()->addAction("show_hero");
     showHero->setText(i18n("Show Hero"));
-    showHero->setShortcut( Qt::Key_H );
+    showHero->setShortcut( Qt::Key_R );		// H is for Hint now.
     connect( showHero, SIGNAL(triggered(bool)), game, SLOT(showHeroState()) );
     addAction(showHero);
 

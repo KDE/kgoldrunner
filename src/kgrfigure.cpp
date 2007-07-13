@@ -232,9 +232,15 @@ void KGrFigure::walkLeft (int WALKDELAY, int FALLDELAY)
             //stay at the current cycle graphics, for pending update
             //In the previous version there was a reset to actualPixmap - 4, but for our two phase run we need better detection
             if (hangAtPole()) 
-              actualPixmap = (alternateStepGraphics == true) ? LEFTCLIMB8 : LEFTCLIMB4;
+              if (KGrObject::bugFixed) // IDW
+              actualPixmap = (alternateStepGraphics == true) ? LEFTCLIMB1 : LEFTCLIMB5; // IDW
+              else // IDW
+              actualPixmap = (alternateStepGraphics == true) ? LEFTCLIMB8 : LEFTCLIMB4; // IDW
             else
-              actualPixmap = (alternateStepGraphics == true) ? LEFTWALK8 : LEFTWALK4;
+              if (KGrObject::bugFixed) // IDW
+              actualPixmap = (alternateStepGraphics == true) ? LEFTWALK1 : LEFTWALK5; // IDW
+              else // IDW
+              actualPixmap = (alternateStepGraphics == true) ? LEFTWALK8 : LEFTWALK4; // IDW
 	    // End of 4-pixmap walk cycle: set use alternate step graphics for next sequence
             alternateStepGraphics = !alternateStepGraphics;
 	    if (canWalkLeft()) {
@@ -271,9 +277,15 @@ void KGrFigure::walkRight(int WALKDELAY, int FALLDELAY)
             //stay at the current cycle graphics, for pending update
             //In the previous version there was a reset to actualPixmap - 4, but for our two phase run we need better detection
             if (hangAtPole()) 
-              actualPixmap = (alternateStepGraphics == true) ? RIGHTCLIMB8 : RIGHTCLIMB4;
+              if (KGrObject::bugFixed) // IDW
+              actualPixmap = (alternateStepGraphics == true) ? RIGHTCLIMB1 : RIGHTCLIMB5; // IDW
+              else // IDW
+              actualPixmap = (alternateStepGraphics == true) ? RIGHTCLIMB8 : RIGHTCLIMB4; // IDW
             else
-              actualPixmap = (alternateStepGraphics == true) ? RIGHTWALK8 : RIGHTWALK4;
+              if (KGrObject::bugFixed) // IDW
+              actualPixmap = (alternateStepGraphics == true) ? RIGHTWALK1 : RIGHTWALK5; // IDW
+              else // IDW
+              actualPixmap = (alternateStepGraphics == true) ? RIGHTWALK8 : RIGHTWALK4; // IDW
 	    // End of 4-pixmap walk cycle: use alternate step graphics for next sequence
             alternateStepGraphics = !alternateStepGraphics;
 	    if (canWalkRight()) {
