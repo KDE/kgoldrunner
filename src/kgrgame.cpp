@@ -433,7 +433,7 @@ int KGrGame::loadLevel (int levelNo)
 	return 0;
     }
 
-    view->loadBackground(levelNo);
+    view->setLevel(levelNo);
     nuggets = 0;
     enemyCount=0;
     startScore = score;				// What we will save, if asked.

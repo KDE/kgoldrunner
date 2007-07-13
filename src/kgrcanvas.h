@@ -69,11 +69,11 @@ public:
 	QPixmap getPixmap (char type);
 
 	void changeTheme (const QString & themeFilepath);
-
 	/**
-	 * Load background appropriate for level \param level
+	 * setLevel is meant as a way to communicate that new graphics can
+	 * be used if multiple sets are available in the theme.
 	 */
-	void loadBackground(int level);
+	void setLevel(unsigned int level);
 
 signals:
 	void mouseClick (int);
@@ -99,9 +99,6 @@ private:
 	int lineDivider;		// Fraction of a tile for inner border.
 	QPoint topLeft;			// Top left point of the tile array.
 
-#ifndef USE_THEMECLASS
-	QColor borderColor, textColor;	// Border colours.
-#endif
 	QLabel * title;			// Title and top part of border.
 
 	int freebg, nuggetbg, polebg, ladderbg, hladderbg;
@@ -117,6 +114,12 @@ private:
 	QList<KGameCanvasRectangle *> borderRectangles;
 
 	void initView();
+
+	/**
+	 * Load background appropriate for current level
+	 */
+	void loadBackground();
+
 	void drawTheScene (bool changePixmaps);
 	void makeTiles (bool changePixmaps);
 	void makeBorder();
@@ -124,46 +127,18 @@ private:
 
 	QColor colour;
 	KGameCanvasRectangle * drawRectangle (int x, int y, int w, int h);
-#ifndef USE_THEMECLASS
-	void changeColours (const char * colours []);
-	void recolourObject (const char * object [], const char * colours []);
-#endif
 
 	QList<QPixmap> * tileset;
-#ifndef USE_THEMECLASS
-	void appendSVGTile (QImage & img, QPainter & q, const QString & name);
-#endif
 
 	QList<QPixmap> * heroFrames;
 	QList<QPixmap> * enemyFrames;
-#ifndef USE_THEMECLASS
-	void appendXPMFrames (const QImage & image,
-		QList<QPixmap> * frames, const int nFrames);
-	void appendSVGFrames (const QString & elementPattern,
-		QList<QPixmap> * frames, const int nFrames);
-#endif
-
-#ifndef USE_THEMECLASS
-	KSvgRenderer svg;
-	QString picsDataDir;
-	QString filepathSVG;
-	QString m_themeFilepath;
-        short themeDrawBorder;
-	void loadSVGTheme();
-
-	enum GraphicsType {NONE, SVG, XPM, PNG};
-	GraphicsType tileGraphics;
-	GraphicsType backgroundGraphics;
-	GraphicsType runnerGraphics;
-#else
 	KGrTheme theme;
-#endif
 
 	// IDW - Temporary ... should use a more general playfield (grid) idea.
 	int tileNo [FIELDWIDTH] [FIELDHEIGHT];
 
 	int resizeCount;		// IDW - Temporary, for qDebug() logs.
 	QTime t; // IDW
-	unsigned int graphicSet;
+	unsigned int level;
 };
 #endif // KGRCANVAS_H
