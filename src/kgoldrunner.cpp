@@ -234,9 +234,7 @@ void KGoldrunner::setupActions()
     // Quit
     // --------------------------
 
-    (void)			KStandardGameAction::
-				quit (
-				this, SLOT(close()), actionCollection());
+    KStandardGameAction::quit (this, SLOT(close()), actionCollection());
 
     /**************************************************************************/
     /***************************   GAME EDITOR MENU  **************************/
@@ -308,15 +306,11 @@ void KGoldrunner::setupActions()
     // Keyboard Controls Hero
     // --------------------------
 
-    setMouse =			new KToggleAction (
-				i18n("&Mouse Controls Hero"),
-				this);
+    setMouse = new KToggleAction(i18n("&Mouse Controls Hero"), this);
     actionCollection()->addAction("mouse_mode", setMouse);
     connect( setMouse, SIGNAL(triggered(bool)), this, SLOT(setMouseMode()));
 
-    setKeyboard =		new KToggleAction (
-				i18n("&Keyboard Controls Hero"),
-				this);
+    setKeyboard = new KToggleAction (i18n("&Keyboard Controls Hero"), this);
     actionCollection()->addAction("keyboard_mode", setKeyboard);
     connect( setKeyboard, SIGNAL(triggered(bool)), this, SLOT(setKeyBoardMode()));
 
