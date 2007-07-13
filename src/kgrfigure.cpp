@@ -24,7 +24,7 @@
 #include <stdio.h>
 #include <QList>
 
-KGrFigure :: KGrFigure (int px, int py)
+KGrFigure :: KGrFigure (int px, int py) : direction(RIGHT)
 {
   x = mem_x = px;
   y = mem_y = py;
