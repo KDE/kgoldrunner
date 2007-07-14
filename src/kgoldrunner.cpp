@@ -498,43 +498,43 @@ void KGoldrunner::setupActions()
     QAction* showEnemy0 = actionCollection()->addAction("show_enemy_0");
     showEnemy0->setText(i18n("Show Enemy") + '0');
     showEnemy0->setShortcut( Qt::Key_0 );
-    connect( showEnemy0, SIGNAL(triggered(bool)), game, SLOT(showEnemy0()) );
+    connect( showEnemy0, SIGNAL(triggered(bool)), this, SLOT(showEnemy0()) );
     addAction(showEnemy0);
 
     QAction* showEnemy1 = actionCollection()->addAction("show_enemy_1");
     showEnemy1->setText(i18n("Show Enemy") + '1');
     showEnemy1->setShortcut( Qt::Key_1 );
-    connect( showEnemy1, SIGNAL(triggered(bool)), game, SLOT(showEnemy1()) );
+    connect( showEnemy1, SIGNAL(triggered(bool)), this, SLOT(showEnemy1()) );
     addAction(showEnemy1);
 
     QAction* showEnemy2 = actionCollection()->addAction("show_enemy_2");
     showEnemy2->setText(i18n("Show Enemy") + '2');
     showEnemy2->setShortcut( Qt::Key_2 );
-    connect( showEnemy2, SIGNAL(triggered(bool)), game, SLOT(showEnemy2()) );
+    connect( showEnemy2, SIGNAL(triggered(bool)), this, SLOT(showEnemy2()) );
     addAction(showEnemy2);
 
     QAction* showEnemy3 = actionCollection()->addAction("show_enemy_3");
     showEnemy3->setText(i18n("Show Enemy") + '3');
     showEnemy3->setShortcut( Qt::Key_3 );
-    connect( showEnemy3, SIGNAL(triggered(bool)), game, SLOT(showEnemy3()) );
+    connect( showEnemy3, SIGNAL(triggered(bool)), this, SLOT(showEnemy3()) );
     addAction(showEnemy3);
 
     QAction* showEnemy4 = actionCollection()->addAction("show_enemy_4");
     showEnemy4->setText(i18n("Show Enemy") + '4');
     showEnemy4->setShortcut( Qt::Key_4 );
-    connect( showEnemy4, SIGNAL(triggered(bool)), game, SLOT(showEnemy4()) );
+    connect( showEnemy4, SIGNAL(triggered(bool)), this, SLOT(showEnemy4()) );
     addAction(showEnemy4);
 
     QAction* showEnemy5 = actionCollection()->addAction("show_enemy_5");
     showEnemy5->setText(i18n("Show Enemy") + '5');
     showEnemy5->setShortcut( Qt::Key_5 );
-    connect( showEnemy5, SIGNAL(triggered(bool)), game, SLOT(showEnemy5()) );
+    connect( showEnemy5, SIGNAL(triggered(bool)), this, SLOT(showEnemy5()) );
     addAction(showEnemy5);
 
     QAction* showEnemy6 = actionCollection()->addAction("show_enemy_6");
     showEnemy6->setText(i18n("Show Enemy") + '6');
     showEnemy6->setShortcut( Qt::Key_6 );
-    connect( showEnemy6, SIGNAL(triggered(bool)), game, SLOT(showEnemy6()) );
+    connect( showEnemy6, SIGNAL(triggered(bool)), this, SLOT(showEnemy6()) );
     addAction(showEnemy6);
 
 #endif
