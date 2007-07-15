@@ -455,7 +455,9 @@ void KGoldrunner::setupActions()
     // Key_O, "dig_right"
     // Key_U, "dig_left"
 
-#ifdef KGR_DEBUG
+    KConfigGroup gameGroup (KGlobal::config(), "Debugging"); // Get prev theme.
+    bool addDebuggingShortcuts = gameGroup.readEntry ("DebuggingShortcuts", false);
+    if (!addDebuggingShortcuts) return;
     // Authors' debugging aids.
 
     QAction* step = actionCollection()->addAction("do_step");
@@ -535,8 +537,6 @@ void KGoldrunner::setupActions()
     showEnemy6->setShortcut( Qt::Key_6 );
     connect( showEnemy6, SIGNAL(triggered(bool)), this, SLOT(showEnemy6()) );
     addAction(showEnemy6);
-
-#endif
 }
 
 void KGoldrunner::setupThemes ()
