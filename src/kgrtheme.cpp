@@ -204,15 +204,10 @@ QList<QPixmap> KGrTheme::tiles(unsigned int size)
 	list.append(svgTile(img, painter, "brick"));
 
 	// Add SVG versions of blasted bricks.
-	list.append(svgTile(img, painter, "brick_1"));
-	list.append(svgTile(img, painter, "brick_2"));
-	list.append(svgTile(img, painter, "brick_3"));
-	list.append(svgTile(img, painter, "brick_4"));
-	list.append(svgTile(img, painter, "brick_5"));
-	list.append(svgTile(img, painter, "brick_6"));
-	list.append(svgTile(img, painter, "brick_7"));
-	list.append(svgTile(img, painter, "brick_8"));
-	list.append(svgTile(img, painter, "brick_9"));
+	QString brickPattern("brick_%1");
+	for (int i = 1; i <= 9; ++i) {
+	    list.append(svgTile(img, painter, brickPattern.arg(i)));
+	}
     } else {
 	QImage bricks (bricks_xpm);
 	bricks = bricks.scaledToHeight(size);
