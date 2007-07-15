@@ -427,7 +427,13 @@ void KGrCanvas::loadBackground()
 	playfield->setBackground (true, 
 		&background, 
 		theme.isBorderRequired() ? topLeft : QPoint(0, 0));
+    } else {
+	playfield->setBackground (true, 
+		NULL, 
+		theme.isBorderRequired() ? topLeft : QPoint(0, 0));
     }
+
+
 }
 
 void KGrCanvas::makeTiles (bool changePixmaps)
