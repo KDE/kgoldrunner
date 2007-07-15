@@ -61,6 +61,8 @@ typedef struct {
 const int DIGDELAY = 200;
 
 const int STEP = 4;
+const int gameCycle = 4;		// Animation frames per playfield tile.
+const int graphicsCycle = 8;		// Animation frames per running cycle.
 
 const double DROPNUGGETDELAY = 70.0;	// Enemy holds gold for avg. 12.5 cells.
 

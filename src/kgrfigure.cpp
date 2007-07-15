@@ -155,7 +155,7 @@ bool KGrFigure::hangAtPole()
 void KGrFigure::walkUp(int WALKDELAY)
 {
     actualPixmap = (actualPixmap == CLIMB1) ? CLIMB2 : CLIMB1;
-    if (walkCounter++ < 4) {
+    if (walkCounter++ < gameCycle) {
 	// Not end of 4-step cycle: move one step up, if possible.
 	if (canWalkUp()) {
 	    rely -= STEP;
@@ -186,7 +186,7 @@ void KGrFigure::walkDown(int WALKDELAY, int FALLDELAY)
     }
     else {
 	actualPixmap = (actualPixmap == CLIMB1) ? CLIMB2 : CLIMB1;
-	if (walkCounter++ < 4) {
+	if (walkCounter++ < gameCycle) {
 	    // Not end of 4-step cycle: move one step down, if possible.
 	    if (canWalkDown()) {
 		rely += STEP;
@@ -219,7 +219,7 @@ void KGrFigure::walkLeft (int WALKDELAY, int FALLDELAY)
     // If counter != 0, the figure is walking, otherwise he is turning around.
     if (walkCounter++ != 0) {
 	// Change to the next pixmap in the animation.
-	if ((++actualPixmap%4) != 0) {
+	if ((++actualPixmap % gameCycle) != 0) {
 	    // Not end of 4-pixmap cycle: move one step left, if possible.
 	    if (canWalkLeft()) {
 		relx -= STEP;
@@ -229,20 +229,13 @@ void KGrFigure::walkLeft (int WALKDELAY, int FALLDELAY)
 	    walkTimer->start ((WALKDELAY * NSPEED) / speed);
 	}
 	else {
-            //stay at the current cycle graphics, for pending update
-            //In the previous version there was a reset to actualPixmap - 4, but for our two phase run we need better detection
-            if (hangAtPole()) 
-              if (KGrObject::bugFixed) // IDW
-              actualPixmap = (alternateStepGraphics == true) ? LEFTCLIMB1 : LEFTCLIMB5; // IDW
-              else // IDW
-              actualPixmap = (alternateStepGraphics == true) ? LEFTCLIMB8 : LEFTCLIMB4; // IDW
-            else
-              if (KGrObject::bugFixed) // IDW
-              actualPixmap = (alternateStepGraphics == true) ? LEFTWALK1 : LEFTWALK5; // IDW
-              else // IDW
-              actualPixmap = (alternateStepGraphics == true) ? LEFTWALK8 : LEFTWALK4; // IDW
-	    // End of 4-pixmap walk cycle: set use alternate step graphics for next sequence
-            alternateStepGraphics = !alternateStepGraphics;
+	    // Check if we are half way through the 8-frame graphics cycle.
+            alternateStepGraphics = true;
+            if ((actualPixmap % graphicsCycle) == 0) {
+                alternateStepGraphics = false;	// Finished the 8-frame cycle.
+                actualPixmap -= graphicsCycle;	// Repeat it.
+            }
+
 	    if (canWalkLeft()) {
 		x--;
 	    }
@@ -265,7 +258,8 @@ void KGrFigure::walkLeft (int WALKDELAY, int FALLDELAY)
 void KGrFigure::walkRight(int WALKDELAY, int FALLDELAY)
 {
     if (walkCounter++) {		// If 0, just turn the figure around.
-	if ((++actualPixmap%4) != 0)  {	// If true, the animation is incomplete.
+	if ((++actualPixmap % gameCycle) != 0)  {
+            // The 4-frame cycle per playfield tile is incomplete.
 	    if (canWalkRight()) {	// Move right, if it's possible.
 		relx += STEP;
 		absx += STEP;
@@ -274,20 +268,13 @@ void KGrFigure::walkRight(int WALKDELAY, int FALLDELAY)
 	    walkTimer->start ((WALKDELAY * NSPEED) / speed);
 	}
 	else {
-            //stay at the current cycle graphics, for pending update
-            //In the previous version there was a reset to actualPixmap - 4, but for our two phase run we need better detection
-            if (hangAtPole()) 
-              if (KGrObject::bugFixed) // IDW
-              actualPixmap = (alternateStepGraphics == true) ? RIGHTCLIMB1 : RIGHTCLIMB5; // IDW
-              else // IDW
-              actualPixmap = (alternateStepGraphics == true) ? RIGHTCLIMB8 : RIGHTCLIMB4; // IDW
-            else
-              if (KGrObject::bugFixed) // IDW
-              actualPixmap = (alternateStepGraphics == true) ? RIGHTWALK1 : RIGHTWALK5; // IDW
-              else // IDW
-              actualPixmap = (alternateStepGraphics == true) ? RIGHTWALK8 : RIGHTWALK4; // IDW
-	    // End of 4-pixmap walk cycle: use alternate step graphics for next sequence
-            alternateStepGraphics = !alternateStepGraphics;
+	    // Check if we are half way through the 8-frame graphics cycle.
+            alternateStepGraphics = true;
+            if ((actualPixmap % graphicsCycle) == 0) {
+                alternateStepGraphics = false;	// Finished the 8-frame cycle.
+                actualPixmap -= graphicsCycle;	// Repeat it.
+            }
+
 	    if (canWalkRight()) {
 		x++;
 	    }				// Set the figure's new position.
@@ -367,9 +354,9 @@ void KGrHero::startWalk ()
       break;
     case RIGHT:
       if (hangAtPole()) 
-	actualPixmap = (alternateStepGraphics == true) ? RIGHTCLIMB5 : RIGHTCLIMB1;
+	actualPixmap = (alternateStepGraphics) ? RIGHTCLIMB5 : RIGHTCLIMB1;
        else 
-	actualPixmap = (alternateStepGraphics == true) ? RIGHTWALK5 : RIGHTWALK1;
+	actualPixmap = (alternateStepGraphics) ? RIGHTWALK5 : RIGHTWALK1;
       if (direction != RIGHT)
 	walkCounter = 0;
       else
@@ -393,9 +380,9 @@ void KGrHero::startWalk ()
       break;
     case LEFT:
       if (hangAtPole())
-	actualPixmap = (alternateStepGraphics == true) ? LEFTCLIMB5 : LEFTCLIMB1;
+	actualPixmap = (alternateStepGraphics) ? LEFTCLIMB5 : LEFTCLIMB1;
       else
-	actualPixmap = (alternateStepGraphics == true) ? LEFTWALK5 : LEFTWALK1;
+	actualPixmap = (alternateStepGraphics) ? LEFTWALK5 : LEFTWALK1;
       if (direction != LEFT)
 	walkCounter = 0;
       else
@@ -642,7 +629,7 @@ void KGrHero::fallTimeDone()
     if (KGrObject::frozen) {fallFrozen = true; return; }
 
     if (!standOnEnemy()) {
-	if (walkCounter++ < 4) {	// The hero must fall four steps.
+	if (walkCounter++ < gameCycle) {// The hero must fall four steps.
 	    fallTimer->setSingleShot(true);
 	    fallTimer->start((FALLDELAY * NSPEED) / speed);
 	    rely+=STEP;
@@ -962,7 +949,7 @@ void KGrEnemy::walkTimeDone ()
     // If we have completed a move, look for the hero again.
     if (status == STANDING) {
       direction = searchbestway(x,y,herox,heroy);
-      if (walkCounter >= 4) {
+      if (walkCounter >= gameCycle) {
         if (! nuggets)
 	    collectNugget();
         else
@@ -1034,7 +1021,7 @@ void KGrEnemy::fallTimeDone ()
     return;
   }
 
-  if (walkCounter++ < 4){
+  if (walkCounter++ < gameCycle){
     fallTimer->setSingleShot(true);
     fallTimer->start((FALLDELAY * NSPEED) / speed);
     { rely+=STEP; absy+=STEP;}
@@ -1156,19 +1143,24 @@ bool KGrEnemy::canWalkUp()
 void KGrEnemy::startWalk ()
 {
     switch (direction) {
-    case UP:	break;
-    case RIGHT:	if (hangAtPole())
-		    actualPixmap = (alternateStepGraphics == true) ? RIGHTCLIMB5 : RIGHTCLIMB1;
-		else
-		    actualPixmap = (alternateStepGraphics == true) ? RIGHTWALK5 : RIGHTWALK1;
-		break;
-    case DOWN:	break;
-    case LEFT:	if (hangAtPole())
-		    actualPixmap = (alternateStepGraphics == true) ? LEFTCLIMB5 : LEFTCLIMB1;
-		else
-		    actualPixmap = (alternateStepGraphics == true) ? LEFTWALK5 : LEFTWALK1;
-		break;
-    default:	break;
+    case UP:
+	break;
+    case RIGHT:
+	if (hangAtPole())
+	    actualPixmap = (alternateStepGraphics) ? RIGHTCLIMB5 : RIGHTCLIMB1;
+	else
+	    actualPixmap = (alternateStepGraphics) ? RIGHTWALK5 : RIGHTWALK1;
+	break;
+    case DOWN:
+	break;
+    case LEFT:
+	if (hangAtPole())
+	    actualPixmap = (alternateStepGraphics) ? LEFTCLIMB5 : LEFTCLIMB1;
+	else
+	    actualPixmap = (alternateStepGraphics) ? LEFTWALK5 : LEFTWALK1;
+	break;
+    default:
+	break;
     }
 }
 

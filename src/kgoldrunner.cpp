@@ -1,4 +1,3 @@
-#define KGR_DEBUG 1
 /*
     Copyright 2002 Marco Krüger <grisuji@gmx.de>
     Copyright 2002 Ian Wadham <ianw2@optusnet.com.au>
