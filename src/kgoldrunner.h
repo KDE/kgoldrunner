@@ -39,6 +39,7 @@ const int L_LEVEL       = 15;
 class QAction;
 class KAction;
 class KToggleAction;
+class KToggleFullScreenAction;
 class KGrGame;
 class KGrCanvas;
 class KGrHero;
@@ -151,6 +152,7 @@ private slots:
     void markRuleType (char ruleType);	// Check game's rule type in the menu.
     void setEditMenu (bool on_off);	// Enable/disable "Save Edits" action.
     void setEditIcon (const QString & actionName, const char iconType);
+    void viewFullScreen(bool activation);
 
     QSize sizeHint() const;
 
@@ -183,6 +185,7 @@ private:
 
     QAction *		saveEdits;	// Save a level that has been edited.
 
+    KToggleFullScreenAction *fullScreen; // Show Full Screen Mode on menu.
     KToggleAction *	setMouse;	// Show mouse/keyboard mode on menu.
     KToggleAction *	setKeyboard;	// Show mouse/keyboard mode on menu.
 

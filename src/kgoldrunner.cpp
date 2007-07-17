@@ -36,6 +36,7 @@
 #include <kaction.h>
 #include <kactioncollection.h>
 #include <ktoggleaction.h>
+#include <ktogglefullscreenaction.h>
 #include <kstandardaction.h>
 #include <kstandardgameaction.h>
 #include <kicon.h>
@@ -382,6 +383,11 @@ void KGoldrunner::setupActions()
     rulesGrp->addAction(kgrRules);
     tradRules->setChecked (true);
 
+    // FullScreen
+    fullScreen = KStandardAction::fullScreen(this, SLOT(viewFullScreen(bool)), this, this);
+    actionCollection()->addAction(fullScreen->objectName(), fullScreen);
+
+    
     // Configure Shortcuts...
     // Configure Toolbars...
     // --------------------------
@@ -537,6 +543,14 @@ void KGoldrunner::setupActions()
     showEnemy6->setShortcut( Qt::Key_6 );
     connect( showEnemy6, SIGNAL(triggered(bool)), this, SLOT(showEnemy6()) );
     addAction(showEnemy6);
+}
+
+void KGoldrunner::viewFullScreen(bool activation)
+{
+    if (activation) 
+	showFullScreen();
+    else
+	showNormal();
 }
 
 void KGoldrunner::setupThemes ()
