@@ -142,7 +142,7 @@ QList<QPixmap> KGrTheme::enemy(unsigned int size)
     QList<QPixmap> frames;
     if (runnerGraphics == SVG) {
 	frames << svgFrames("enemy_%1", size, 36);
-	frames << svgFrames("enemy_%1", size, 36);
+	frames << svgFrames("gold_enemy_%1", size, 36);
     } else {
 	frames << xpmFrames(QImage(enemy1_xpm), size, 36);
 	frames << xpmFrames(QImage(enemy2_xpm), size, 36);
