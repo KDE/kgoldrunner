@@ -148,6 +148,7 @@ void KGrGame::herosDead()
 	KGrObject::frozen = true;	// Freeze the animation and let
 	dyingTimer->setSingleShot(true);
 	dyingTimer->start (1500);	// the player see what happened.
+	view->fadeOut();
     }
     else {
 	// Game over: display the "ENDE" screen.
@@ -423,6 +424,7 @@ void KGrGame::showHint()
 
 int KGrGame::loadLevel (int levelNo)
 {
+    view->fadeIn();
     // Ignore player input from keyboard or mouse while the screen is set up.
     loading = true;
 

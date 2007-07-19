@@ -32,6 +32,7 @@
 #include <QMouseEvent>
 #include <QList>
 #include <QTime> // IDW
+#include <QTimeLine> // IDW
 
 #define USE_THEMECLASS
 //#undef USE_THEMECLASS
@@ -41,6 +42,7 @@
 #else
 #include "kgrtheme.h"
 #endif
+
 
 class KGrCanvas : public KGameCanvasWidget
 {
@@ -66,6 +68,9 @@ public:
 	void moveEnemy (int, int, int, int, int);
 	void deleteEnemySprites();
 
+	void fadeIn();
+	void fadeOut();
+
 	QPixmap getPixmap (char type);
 
 	void changeTheme (const QString & themeFilepath);
@@ -84,6 +89,9 @@ protected:
 	virtual void mouseReleaseEvent ( QMouseEvent * mouseEvent );
 	virtual void resizeEvent (QResizeEvent * event);
 	virtual QSize sizeHint() const;
+
+private slots:
+	void drawSpotLight(qreal value);
 
 private:
 	QCursor * m;			// Mouse cursor.
@@ -108,6 +116,9 @@ private:
 	int oldImgW, oldImgH;
 
 	int goldEnemy;
+
+	KGameCanvasPicture *m_spotLight;
+	QTimeLine m_fadingTimeLine;
 
 	KGrSprite * heroSprite;
 	QList<KGrSprite *> * enemySprites;

@@ -31,11 +31,14 @@
 
 #include <KConfig>
 
+#include <cmath>
+
 KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
 			const QString & systemDataDir)
 			: KGameCanvasWidget (parent),
-			  topLeft (0, 0), bgw (4 * STEP), bgh (4 * STEP)
-			, theme(systemDataDir)
+			  topLeft (0, 0), bgw (4 * STEP), bgh (4 * STEP),
+			  m_fadingTimeLine(1000, this),
+			  theme(systemDataDir)
 {
     resizeCount = 0;		// IDW
 
@@ -71,6 +74,8 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
     title = 0;
     level = 0;
     setMinimumSize(FIELDWIDTH + 4, FIELDHEIGHT + 4);
+    m_spotLight = new KGameCanvasPicture(this);
+    connect(&m_fadingTimeLine, SIGNAL(valueChanged(qreal)), this, SLOT(drawSpotLight(qreal)));
 }
 
 KGrCanvas::~KGrCanvas()
@@ -81,6 +86,19 @@ KGrCanvas::~KGrCanvas()
     delete tileset;
     delete heroFrames;
     delete enemyFrames;
+    delete m_spotLight;
+}
+
+void KGrCanvas::fadeIn()
+{
+	m_fadingTimeLine.setDirection(QTimeLine::Forward);
+	m_fadingTimeLine.start();
+}
+
+void KGrCanvas::fadeOut()
+{
+	m_fadingTimeLine.setDirection(QTimeLine::Backward);
+	m_fadingTimeLine.start();
 }
 
 void KGrCanvas::drawTheScene (bool changePixmaps)
@@ -163,6 +181,7 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
     QString t = title->text();
     makeTitle ();
     setTitle (t);
+
 }
 
 void KGrCanvas::changeTheme (const QString & themeFilepath)
@@ -432,8 +451,6 @@ void KGrCanvas::loadBackground()
 		NULL, 
 		theme.isBorderRequired() ? topLeft : QPoint(0, 0));
     }
-
-
 }
 
 void KGrCanvas::makeTiles (bool changePixmaps)
@@ -506,6 +523,36 @@ void KGrCanvas::makeBorder ()
     borderRectangles.append(nextRectangle);
     nextRectangle = drawRectangle (tlX + pw, tlY, lw, ph);
     borderRectangles.append(nextRectangle);
+}
+
+void KGrCanvas::drawSpotLight(qreal value)
+{
+	if (value < 0.0001) {
+		m_spotLight->setVisible(false);
+		return;
+	} 
+	m_spotLight->setVisible(true);
+	QPicture picture;
+	qreal w = width();
+	qreal h = height();
+	qreal d = ::sqrt(w*w + h*h);
+
+	// Setup a radial gradient
+	QPointF center(w / 2, h / 2);
+	QRadialGradient gradient(center, 0.5 * d * value, center);
+	gradient.setColorAt(1.0, QColor(0, 0, 0, 255));
+	gradient.setColorAt(0.8, QColor(0, 0, 0, 0));
+	//gradient.setColorAt(0.0, QColor(0, 0, 0, 0));
+
+	QBrush brush(gradient);
+
+	// Draw a transparent circle over the scene.
+	QPainter p(&picture);
+	p.setCompositionMode(QPainter::CompositionMode_SourceOver);
+
+	p.fillRect(QRectF(0.0, 0.0, w, h), brush);
+
+	m_spotLight->setPicture(picture);
 }
 
 KGameCanvasRectangle * KGrCanvas::drawRectangle (int x, int y, int w, int h)
