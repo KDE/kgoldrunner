@@ -37,7 +37,7 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
 			const QString & systemDataDir)
 			: KGameCanvasWidget (parent),
 			  topLeft (0, 0), bgw (4 * STEP), bgh (4 * STEP),
-			  m_fadingTimeLine(1000, this),
+			  m_fadingTimeLine(1500, this),
 			  theme(systemDataDir)
 {
     resizeCount = 0;		// IDW
@@ -76,6 +76,7 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
     setMinimumSize(FIELDWIDTH + 4, FIELDHEIGHT + 4);
     m_spotLight = new KGameCanvasPicture(this);
     connect(&m_fadingTimeLine, SIGNAL(valueChanged(qreal)), this, SLOT(drawSpotLight(qreal)));
+    m_fadingTimeLine.setUpdateInterval(100);
 }
 
 KGrCanvas::~KGrCanvas()
@@ -527,32 +528,39 @@ void KGrCanvas::makeBorder ()
 
 void KGrCanvas::drawSpotLight(qreal value)
 {
-	if (value < 0.0001) {
-		m_spotLight->setVisible(false);
-		return;
-	} 
-	m_spotLight->setVisible(true);
-	QPicture picture;
-	qreal w = width();
-	qreal h = height();
-	qreal d = ::sqrt(w*w + h*h);
+    if (value > 0.99) {
+	// Hide the spotlight animation -- all scene visible
+	m_spotLight->hide();
+	m_spotLight->lower();
+	return;
+    } 
+    m_spotLight->raise();
+    m_spotLight->show();
+    QPicture picture;
+    qreal w = qreal(nCellsW * imgW);
+    qreal h = qreal(nCellsH * imgW);
+    qreal x = qreal(topLeft.x());
+    qreal y = qreal(topLeft.y());
+    qreal d = ::sqrt(w * w + h * h);
 
+    QPainter p(&picture);
+    if (value < 0.01) {
+	p.fillRect(QRectF(x, y, w, h), QColor(0, 0, 0, 255));
+    } else {
 	// Setup a radial gradient
-	QPointF center(w / 2, h / 2);
+	QPointF center(width() * 0.5, height() * 0.5);
 	QRadialGradient gradient(center, 0.5 * d * value, center);
-	gradient.setColorAt(1.0, QColor(0, 0, 0, 255));
-	gradient.setColorAt(0.8, QColor(0, 0, 0, 0));
-	//gradient.setColorAt(0.0, QColor(0, 0, 0, 0));
+	gradient.setColorAt(1.00, QColor(0, 0, 0, 255));
+	gradient.setColorAt(0.85, QColor(0, 0, 0, 0));
 
 	QBrush brush(gradient);
 
 	// Draw a transparent circle over the scene.
-	QPainter p(&picture);
 	p.setCompositionMode(QPainter::CompositionMode_SourceOver);
+	p.fillRect(QRectF(x, y, w, h), brush);
+    }
 
-	p.fillRect(QRectF(0.0, 0.0, w, h), brush);
-
-	m_spotLight->setPicture(picture);
+    m_spotLight->setPicture(picture);
 }
 
 KGameCanvasRectangle * KGrCanvas::drawRectangle (int x, int y, int w, int h)
