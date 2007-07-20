@@ -76,7 +76,7 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
     setMinimumSize(FIELDWIDTH + 4, FIELDHEIGHT + 4);
     m_spotLight = new KGameCanvasPicture(this);
     connect(&m_fadingTimeLine, SIGNAL(valueChanged(qreal)), this, SLOT(drawSpotLight(qreal)));
-    m_fadingTimeLine.setUpdateInterval(100);
+    m_fadingTimeLine.setUpdateInterval(10);
 }
 
 KGrCanvas::~KGrCanvas()
@@ -528,12 +528,15 @@ void KGrCanvas::makeBorder ()
 
 void KGrCanvas::drawSpotLight(qreal value)
 {
+    static int count = 0;
     if (value > 0.99) {
+	count = 0;
 	// Hide the spotlight animation -- all scene visible
 	m_spotLight->hide();
 	m_spotLight->lower();
 	return;
-    } 
+    }
+    count++;
     m_spotLight->raise();
     m_spotLight->show();
     QPicture picture;
@@ -541,26 +544,58 @@ void KGrCanvas::drawSpotLight(qreal value)
     qreal h = qreal(nCellsH * imgW);
     qreal x = qreal(topLeft.x());
     qreal y = qreal(topLeft.y());
-    qreal d = ::sqrt(w * w + h * h);
+    qreal dh = 0.5 * ::sqrt(w * w + h * h);
 
     QPainter p(&picture);
     if (value < 0.01) {
 	p.fillRect(QRectF(x, y, w, h), QColor(0, 0, 0, 255));
     } else {
-	// Setup a radial gradient
+	qreal wh = w * 0.5;
+	qreal radius = dh * value;
 	QPointF center(width() * 0.5, height() * 0.5);
-	QRadialGradient gradient(center, 0.5 * d * value, center);
+	QRadialGradient gradient(center, radius, center);
 	gradient.setColorAt(1.00, QColor(0, 0, 0, 255));
 	gradient.setColorAt(0.85, QColor(0, 0, 0, 0));
 
 	QBrush brush(gradient);
-
+        QBrush blackbrush(QColor(0, 0, 0, 255));
 	// Draw a transparent circle over the scene.
 	p.setCompositionMode(QPainter::CompositionMode_SourceOver);
-	p.fillRect(QRectF(x, y, w, h), brush);
+#if 0
+	if (radius < h * 0.5) {
+	    qreal diameter = radius * 2.0;
+	    p.fillRect(QRectF(x, y, 1.0 + wh - radius, h), blackbrush);
+	    p.fillRect(QRectF(x + wh + radius, y, wh - radius, h), blackbrush);
+	    p.fillRect(QRectF(x + wh - radius, y, diameter, 0.5 * h - radius + 1.0), blackbrush);
+	    p.fillRect(QRectF(x + wh - radius, y + h * 0.5 + radius, 2.0 * radius, 0.5 * h - radius), blackbrush);
+	    p.fillRect(QRectF(x + wh - radius, y + h * 0.5 - radius, diameter, diameter), brush);
+	} else if (radius < wh) {
+	    p.fillRect(QRectF(x, y, 1 + wh - radius, h), blackbrush);
+	    p.fillRect(QRectF(x + wh + radius, y, wh - radius, h), blackbrush);
+	    p.fillRect(QRectF(x + wh - radius, y, 2.0 * radius, h), brush);
+	} else {
+	    p.fillRect(QRectF(x, y, w, h), brush);
+	}
+#else
+	if (radius < wh) {
+	    qreal diameter = radius * 2.0;
+	    p.fillRect(QRectF(x, y, 1.0 + wh - radius, h), blackbrush);
+	    p.fillRect(QRectF(x + wh + radius, y, wh - radius, h), blackbrush);
+	    if (radius < h * 0.5) {
+		p.fillRect(QRectF(x + wh - radius, y, diameter, 0.5 * h - radius + 1.0), blackbrush);
+		p.fillRect(QRectF(x + wh - radius, y + h * 0.5 + radius, 2.0 * radius, 0.5 * h - radius), blackbrush);
+		p.fillRect(QRectF(x + wh - radius, y + h * 0.5 - radius, diameter, diameter), brush);
+	    } else {
+		p.fillRect(QRectF(x + wh - radius, y, 2.0 * radius, h), brush);
+	    }
+	} else {
+	    p.fillRect(QRectF(x, y, w, h), brush);
+	}
+#endif
     }
 
     m_spotLight->setPicture(picture);
+    kDebug() << "spotlight frame count: " << count << ", value:" << value << endl;
 }
 
 KGameCanvasRectangle * KGrCanvas::drawRectangle (int x, int y, int w, int h)
