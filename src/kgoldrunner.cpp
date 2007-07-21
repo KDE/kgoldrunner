@@ -555,9 +555,9 @@ void KGoldrunner::viewFullScreen(bool activation)
 
 void KGoldrunner::setupThemes ()
 {
-    // Look for themes in files "---/share/apps/kgoldrunner/pics/*.desktop".
+    // Look for themes in files "---/share/apps/kgoldrunner/themes/*.desktop".
     KGlobal::dirs()->addResourceType ("theme", "data", QString(KCmdLineArgs::aboutData()->appName()) +
-                                      QString("/pics/"));
+                                      QString("/themes/"));
 
     QStringList themeFilepaths = KGlobal::dirs()->findAllResources
 	("theme", "*.desktop", KStandardDirs::NoDuplicates); // Find files.

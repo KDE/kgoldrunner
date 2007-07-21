@@ -1,8 +1,8 @@
 THEMES IN KGOLDRUNNER
 
 For each pictorial theme in KGoldrunner there is a "*.desktop" file in the area
-kdegames/kgoldrunner/pics in the KDE SVN source-code repository, or in the area
-$HOME/.kde/share/apps/kgoldrunner/pics, the user's local data area.  If two
+kdegames/kgoldrunner/themes in the KDE SVN source-code repository, or in the area
+$HOME/.kde/share/apps/kgoldrunner/themes, the user's local data area.  If two
 *.desktop files have the same name, the one in the local area takes precedence.
 
 Files in the SVN area are released and installed with KGoldrunner.  Files in the
@@ -79,6 +79,7 @@ so detail can be sketchy, as for an icon.  The elements are:
     hidden_ladder   A ladder that appears when the hero has all the gold and can
                     proceed to the next level of the game.
     background      See below.
+    background<n>   Background set (n starts at 0)
 
 The background element is not square like the others.  It will be displayed
 behind the other elements and scaled to a space equivalent to 32 x 24 smaller
@@ -87,6 +88,11 @@ user's whim, and will always fill the central widget.  The actual play-area will
 always be 28 x 20 square elements.  The play-area has a thin black frame around
 it and a title-text above it.  The space around the play-area is a buffer-zone,
 to protect against mouse-action spilling over into the surrounding desktop.
+
+In alternative to a single background element, a series of background0,
+background1, ... backgroundn can be provided. Each level will load a different
+background until the last background provided is reached, after which the first
+one is used again.
 
 It is possible that the background and animation frames could be provided as PNG
 files, depending on the source (e.g. photograph or animation package).  That is

@@ -60,7 +60,7 @@ private:
     KSvgRenderer svg;
     QColor m_borderColor, m_textColor;	// Border colours.
 
-    QString picsDataDir;
+    QString themeDataDir;
     QString filepathSVG;
     QString m_themeFilepath;
     short themeDrawBorder;

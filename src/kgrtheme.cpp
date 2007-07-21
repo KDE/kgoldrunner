@@ -31,7 +31,7 @@
 static const int XPMSIZE = 16;
 
 KGrTheme::KGrTheme(const QString &systemDataDir) : 
-	picsDataDir(systemDataDir + "../pics/"),
+	themeDataDir(systemDataDir + "../theme/"),
 	filepathSVG(""), 
 	m_themeFilepath(""), 
 	tileGraphics(NONE),
