@@ -43,9 +43,9 @@ KGrTheme::KGrTheme(const QString &systemDataDir) :
 
 void KGrTheme::load(const QString& themeFilepath)
 {
-    qDebug() << endl << "New Theme -" << themeFilepath;
+    kDebug() << endl << "New Theme -" << themeFilepath;
     if (!m_themeFilepath.isEmpty() && (themeFilepath == m_themeFilepath)) {
-	qDebug() << "NO CHANGE OF THEME ...";
+	kDebug() << "NO CHANGE OF THEME ...";
 	return;					// No change of theme.
     }
 
@@ -110,7 +110,7 @@ void KGrTheme::load(const QString& themeFilepath)
 
 QImage KGrTheme::background(unsigned int width, unsigned int height, unsigned int variant)
 {
-    qDebug() << "KGrTheme::background(" << width <<", " << height <<", "<< variant << ") called" << endl;
+    kDebug() << "KGrTheme::background(" << width <<"," << height <<", "<< variant << ") called";
     if ((width != 0) && (height != 0) && 
 	    (backgroundGraphics == SVG) && numBackgrounds > 0) {
 	QImage background(width, height, QImage::Format_ARGB32_Premultiplied);
@@ -118,7 +118,7 @@ QImage KGrTheme::background(unsigned int width, unsigned int height, unsigned in
 	QPainter painter(&background);
 	variant %= numBackgrounds;
 	QString backgroundName = "background%1";
-	qDebug() << "Trying to load background " << backgroundName.arg(variant) << endl;
+	kDebug() << "Trying to load background" << backgroundName.arg(variant);
 	if (svg.elementExists(backgroundName.arg(variant))) 
 	    svg.render(&painter, backgroundName.arg(variant));
 	else if (svg.elementExists("background")) 

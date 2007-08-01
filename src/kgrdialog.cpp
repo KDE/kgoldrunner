@@ -334,16 +334,16 @@ void KGrSLDialog::slSetCollections (int cIndex)
     // IDW Make the column for the game's name a bit wider.
     // colln->show();
     // QTreeWidgetItem * row = colln->currentItem();
-    // qDebug() << "Size hint for column 0:" << row->sizeHint (0);
+    // kDebug() << "Size hint for column 0:" << row->sizeHint (0);
     // IDW row->setSizeHint (0, QSize (colln->width()/2, 30));
     // row->setSizeHint (0, QSize (180, 20));
-    // qDebug() << "Size hint for column 0:" << row->sizeHint (0);
+    // kDebug() << "Size hint for column 0:" << row->sizeHint (0);
     // QWidget * w = colln->itemWidget (row, 0);
     // if (w) {
     // int h = w->height();
     // w->setMinimumSize (colln->width()/2, h);
     // }
-    // else qDebug() << "The widget pointer is null.";
+    // else kDebug() << "The widget pointer is null.";
 }
 
 /******************************************************************************/

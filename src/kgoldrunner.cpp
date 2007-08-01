@@ -101,7 +101,7 @@ KGoldrunner::KGoldrunner()
 	return;				// If no game files, abort.
     }
 
-    qDebug() << "Calling view->setBaseScale() ...";
+    kDebug() << "Calling view->setBaseScale() ...";
     view->setBaseScale();		// Set scale for level-titles font.
 
     hero = game->getHero();		// Get a pointer to the hero.
@@ -564,7 +564,7 @@ void KGoldrunner::setupThemes ()
 
     KConfigGroup gameGroup (KGlobal::config(), "KDEGame"); // Get prev theme.
     QString currentThemeFilepath = gameGroup.readEntry ("ThemeFilepath", "");
-    qDebug() << endl << "Config() Theme" << currentThemeFilepath;
+    kDebug() << endl << "Config() Theme" << currentThemeFilepath;
 
     QSignalMapper * themeMapper = new QSignalMapper (this);
     connect (themeMapper, SIGNAL (mapped (const QString &)),
@@ -808,7 +808,7 @@ void KGoldrunner::setKGrRules()
 
 void KGoldrunner::resizeMainWindow()
 {
-    qDebug() << "KGoldrunner::resizeMainWindow() called ...";
+    kDebug() << "KGoldrunner::resizeMainWindow() called ...";
     return; // IDW
 
     // Get the area of our view, menubar and statusBar, and add the editToolbar (if visible)
@@ -849,7 +849,7 @@ void KGoldrunner::saveProperties(KConfigGroup & /* config - unused */)
     // config file.  Anything you write here will be available
     // later when this app is restored.
 
-    qDebug() << "I am in KGoldrunner::saveProperties.";
+    kDebug() << "I am in KGoldrunner::saveProperties.";
 }
 
 void KGoldrunner::readProperties(const KConfigGroup & /* config - unused */)
@@ -859,7 +859,7 @@ void KGoldrunner::readProperties(const KConfigGroup & /* config - unused */)
     // the app is being restored.  Read in here whatever you wrote
     // in 'saveProperties'
 
-    qDebug() << "I am in KGoldrunner::readProperties.";
+    kDebug() << "I am in KGoldrunner::readProperties.";
 }
 
 // void KGoldrunner::optionsShowToolbar()
@@ -1147,7 +1147,7 @@ void KGoldrunner::defaultEditObj()
 
 QSize KGoldrunner::sizeHint() const
 {
-    qDebug() << "KGoldrunner::sizeHint() called ... 640x600";
+    kDebug() << "KGoldrunner::sizeHint() called ... 640x600";
     return QSize (640, 600);
 }
 

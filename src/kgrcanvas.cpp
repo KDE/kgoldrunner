@@ -27,7 +27,7 @@
 #include <QLabel>
 #include <QMouseEvent>
 
-#include <QDebug>
+#include <KDebug>
 
 #include <KConfig>
 
@@ -42,14 +42,14 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
 {
     resizeCount = 0;		// IDW
 
-    qDebug() << "Called KGrCanvas::KGrCanvas ..." << this->size();
+    kDebug() << "Called KGrCanvas::KGrCanvas ..." << this->size();
     m = new QCursor ();		// For handling the mouse.
 
     scaleStep = STEP;		// Initial scale is 1:1.
     baseScale = scaleStep;
     baseFontSize = fontInfo().pointSize() + 2;
     scaleStep = (int) ((scale * STEP) + 0.05);
-    qDebug() << "Scale" << scale << "Scaled Step" << scaleStep;
+    kDebug() << "Scale" << scale << "Scaled Step" << scaleStep;
 
     nCellsW = FIELDWIDTH;
     nCellsH = FIELDHEIGHT;
@@ -61,7 +61,7 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
     // Create an empty list of enemy sprites.
     enemySprites = new QList<KGrSprite *> ();
 
-    qDebug() << "Calling initView() ...";
+    kDebug() << "Calling initView() ...";
     initView();			// Set up the graphics, etc.
 
     // Initialise the KGoldrunner grid.
@@ -112,7 +112,7 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
     // has changed and the bg must fill it (! themeDrawBorder).
 
     double scale = (double) imgW / (double) bgw;
-    qDebug() << "Called KGrCanvas::drawTheScene() - Images:" << imgW<<"x"<<imgH;
+    kDebug() << "Called KGrCanvas::drawTheScene() - Images:" << imgW<<"x"<<imgH;
     if (imgW == 0) {
         return;
     }
@@ -161,7 +161,7 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
 
     if (enemySprites) {
 	for (int i = 0; i < enemySprites->size(); ++i) {
-	    qDebug("accessing enemySprite %d\n", i);
+	    kDebug() << "accessing enemySprite" << i;
     	    KGrSprite * thisenemy = enemySprites->at(i);
 	    if (thisenemy) {
 		spriteframe = thisenemy->currentFrame();
@@ -187,7 +187,7 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
 
 void KGrCanvas::changeTheme (const QString & themeFilepath)
 {
-    qDebug() << endl << "New Theme -" << themeFilepath;
+    kDebug() << endl << "New Theme -" << themeFilepath;
     theme.load(themeFilepath);
     const bool changePixmaps = true;
     drawTheScene (changePixmaps);	// Not startup, so re-draw play-area.
@@ -196,8 +196,8 @@ void KGrCanvas::changeTheme (const QString & themeFilepath)
 void KGrCanvas::resizeEvent (QResizeEvent * event )
 {
     resizeCount++;			// IDW
-    qDebug() << endl << "KGrCanvas::resizeEvent:" << resizeCount << event->size();
-    qDebug() << "Resize pending?" << QWidget::testAttribute (Qt::WA_PendingResizeEvent);
+    kDebug() << endl << "KGrCanvas::resizeEvent:" << resizeCount << event->size();
+    kDebug() << "Resize pending?" << QWidget::testAttribute (Qt::WA_PendingResizeEvent);
     // To reduce overheads, re-render only when no later resize is scheduled.
     if (QWidget::testAttribute (Qt::WA_PendingResizeEvent))  {
 	return;
@@ -364,7 +364,7 @@ void KGrCanvas::moveEnemy (int id, int x, int y, int frame, int nuggets)
     }
 
     // In KGoldrunner, the top-left visible cell is [1,1]: in KGrSprite [0,0].
-    // qDebug("accessing enemySprite %d\n", id);
+    // kDebug() << "accessing enemySprite" << id;
     enemySprites->at(id)->move (x - bgw, y - bgh, frame);
 }
 
@@ -393,7 +393,7 @@ QPixmap KGrCanvas::getPixmap (char type)
     default:      tileNumber = freebg;  break;
     }
 
-    qDebug("accessing tile %d\n", tileNumber);
+    kDebug() << "accessing tile" << tileNumber;
     return tileset->at(tileNumber);
 }
 
@@ -438,7 +438,7 @@ void KGrCanvas::setLevel(unsigned int l)
 
 void KGrCanvas::loadBackground()
 {
-    qDebug() << "loadBackground called" << endl;
+    kDebug() << "loadBackground called";
     bool fillCanvas = !theme.isBorderRequired();	// Background must fill canvas?
     int w = fillCanvas ? (this->width())  : (nCellsW * imgW);
     int h = fillCanvas ? (this->height()) : (nCellsH * imgH);
@@ -595,7 +595,7 @@ void KGrCanvas::drawSpotLight(qreal value)
     }
 
     m_spotLight->setPicture(picture);
-    kDebug() << "spotlight frame count: " << count << ", value:" << value << endl;
+    kDebug() << "spotlight frame count:" << count << ", value:" << value;
 }
 
 KGameCanvasRectangle * KGrCanvas::drawRectangle (int x, int y, int w, int h)

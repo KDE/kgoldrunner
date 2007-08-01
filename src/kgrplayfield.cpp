@@ -17,7 +17,7 @@
  ***************************************************************************/
 
 #include "kgrplayfield.h"
-#include <QtDebug>
+#include <KDebug>
 
 KGrPlayField::KGrPlayField( KGameCanvasAbstract* canvas )
     : KGameCanvasGroup(canvas)
