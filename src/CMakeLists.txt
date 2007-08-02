@@ -1,6 +1,4 @@
 
-include_directories( ${CMAKE_SOURCE_DIR}/libkdegames ${QDBUS_INCLUDE_DIRS} )
-
 ########### next target ###############
 
 set(kgoldrunner_SRCS 
