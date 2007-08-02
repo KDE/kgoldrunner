@@ -48,7 +48,7 @@ IOStatus KGrGameIO::fetchGameListData
 
 	GameData * g = initGameData (dir + filename);
 	gameList.append (g);
-	// kDebug() << endl << "GAME PATH:" << g->filePath;
+	// kDebug()<< "GAME PATH:" << g->filePath;
 
 	openFile.setFileName (g->filePath);
 
@@ -147,7 +147,7 @@ IOStatus KGrGameIO::fetchLevelData
     d.name   = "";		// Level name (optional).
     d.hint   = "";		// Level hint (optional).
 
-    // kDebug() << endl << "LEVEL PATH:" << d.filePath;
+    // kDebug()<< "LEVEL PATH:" << d.filePath;
     openFile.setFileName (d.filePath);
 
     // Check that the level-file exists.

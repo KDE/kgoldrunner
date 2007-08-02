@@ -564,7 +564,7 @@ void KGoldrunner::setupThemes ()
 
     KConfigGroup gameGroup (KGlobal::config(), "KDEGame"); // Get prev theme.
     QString currentThemeFilepath = gameGroup.readEntry ("ThemeFilepath", "");
-    kDebug() << endl << "Config() Theme" << currentThemeFilepath;
+    kDebug()<< "Config() Theme" << currentThemeFilepath;
 
     QSignalMapper * themeMapper = new QSignalMapper (this);
     connect (themeMapper, SIGNAL (mapped (const QString &)),

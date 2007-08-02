@@ -187,7 +187,7 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
 
 void KGrCanvas::changeTheme (const QString & themeFilepath)
 {
-    kDebug() << endl << "New Theme -" << themeFilepath;
+    kDebug()<< "New Theme -" << themeFilepath;
     theme.load(themeFilepath);
     const bool changePixmaps = true;
     drawTheScene (changePixmaps);	// Not startup, so re-draw play-area.
@@ -196,7 +196,7 @@ void KGrCanvas::changeTheme (const QString & themeFilepath)
 void KGrCanvas::resizeEvent (QResizeEvent * event )
 {
     resizeCount++;			// IDW
-    kDebug() << endl << "KGrCanvas::resizeEvent:" << resizeCount << event->size();
+    kDebug()<< "KGrCanvas::resizeEvent:" << resizeCount << event->size();
     kDebug() << "Resize pending?" << QWidget::testAttribute (Qt::WA_PendingResizeEvent);
     // To reduce overheads, re-render only when no later resize is scheduled.
     if (QWidget::testAttribute (Qt::WA_PendingResizeEvent))  {

@@ -43,7 +43,7 @@ KGrTheme::KGrTheme(const QString &systemDataDir) :
 
 void KGrTheme::load(const QString& themeFilepath)
 {
-    kDebug() << endl << "New Theme -" << themeFilepath;
+    kDebug()<< "New Theme -" << themeFilepath;
     if (!m_themeFilepath.isEmpty() && (themeFilepath == m_themeFilepath)) {
 	kDebug() << "NO CHANGE OF THEME ...";
 	return;					// No change of theme.
