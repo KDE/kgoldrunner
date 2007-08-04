@@ -76,7 +76,7 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
     setMinimumSize(FIELDWIDTH + 4, FIELDHEIGHT + 4);
     m_spotLight = new KGameCanvasPicture(this);
     connect(&m_fadingTimeLine, SIGNAL(valueChanged(qreal)), this, SLOT(drawSpotLight(qreal)));
-    m_fadingTimeLine.setUpdateInterval(10);
+    //m_fadingTimeLine.setUpdateInterval(10);
 }
 
 KGrCanvas::~KGrCanvas()
@@ -548,35 +548,29 @@ void KGrCanvas::drawSpotLight(qreal value)
 
     QPainter p(&picture);
     if (value < 0.01) {
+	// Draw a solid black background if the circle would be too small/
 	p.fillRect(QRectF(x, y, w, h), QColor(0, 0, 0, 255));
     } else {
+	static const qreal outerRatio = 1.00;
+	static const qreal innerRatio = 0.85;
+	static const qreal sqrt1_2 = 0.5 * ::sqrt(2);
 	qreal wh = w * 0.5;
+	qreal hh = h * 0.5;
 	qreal radius = dh * value;
+	qreal innerRadius = radius * innerRatio;
+	qreal innerDistance = sqrt1_2 * innerRadius;
+	qreal side = 2.0 * innerDistance;
+
 	QPointF center(width() * 0.5, height() * 0.5);
 	QRadialGradient gradient(center, radius, center);
-	gradient.setColorAt(1.00, QColor(0, 0, 0, 255));
-	gradient.setColorAt(0.85, QColor(0, 0, 0, 0));
+	gradient.setColorAt(outerRatio, QColor(0, 0, 0, 255));
+	gradient.setColorAt(innerRatio, QColor(0, 0, 0, 0));
 
 	QBrush brush(gradient);
         QBrush blackbrush(QColor(0, 0, 0, 255));
 	// Draw a transparent circle over the scene.
 	p.setCompositionMode(QPainter::CompositionMode_SourceOver);
 #if 0
-	if (radius < h * 0.5) {
-	    qreal diameter = radius * 2.0;
-	    p.fillRect(QRectF(x, y, 1.0 + wh - radius, h), blackbrush);
-	    p.fillRect(QRectF(x + wh + radius, y, wh - radius, h), blackbrush);
-	    p.fillRect(QRectF(x + wh - radius, y, diameter, 0.5 * h - radius + 1.0), blackbrush);
-	    p.fillRect(QRectF(x + wh - radius, y + h * 0.5 + radius, 2.0 * radius, 0.5 * h - radius), blackbrush);
-	    p.fillRect(QRectF(x + wh - radius, y + h * 0.5 - radius, diameter, diameter), brush);
-	} else if (radius < wh) {
-	    p.fillRect(QRectF(x, y, 1 + wh - radius, h), blackbrush);
-	    p.fillRect(QRectF(x + wh + radius, y, wh - radius, h), blackbrush);
-	    p.fillRect(QRectF(x + wh - radius, y, 2.0 * radius, h), brush);
-	} else {
-	    p.fillRect(QRectF(x, y, w, h), brush);
-	}
-#else
 	if (radius < wh) {
 	    qreal diameter = radius * 2.0;
 	    p.fillRect(QRectF(x, y, 1.0 + wh - radius, h), blackbrush);
@@ -590,6 +584,39 @@ void KGrCanvas::drawSpotLight(qreal value)
 	    }
 	} else {
 	    p.fillRect(QRectF(x, y, w, h), brush);
+	}
+#else
+	if (radius < wh) {
+	    // If the spotlight radius is smaller than half the scene width, draw
+	    // black rectangles to its sides, which is faster.
+	    qreal diameter = radius * 2.0;
+	    p.fillRect(QRectF(x, y, 1.0 + wh - radius, h), blackbrush);
+	    p.fillRect(QRectF(x + wh + radius, y, wh - radius, h), blackbrush);
+	    if (radius < hh) {
+		// If the spotlight radius is smaller than half the scene
+		// height, draw black rectangles to its top and bottom sides,
+		// which is faster.
+		p.fillRect(QRectF(x + wh - radius, y, diameter, hh - radius + 1.0), blackbrush);
+		p.fillRect(QRectF(x + wh - radius, y + hh + radius, diameter, hh - radius), blackbrush);
+		
+		// Draw the spotlight circle, but skip the transparent center.
+		p.fillRect(QRectF(x + wh - radius, y + hh - radius, radius - innerDistance, diameter), brush);
+		p.fillRect(QRectF(x + wh + innerDistance, y + hh - radius, radius - innerDistance, diameter), brush);
+		p.fillRect(QRectF(x + wh - innerDistance, y + hh - radius, side, radius - innerDistance), brush);
+		p.fillRect(QRectF(x + wh - innerDistance, y + hh + innerDistance, side, radius - innerDistance), brush);
+	    } else {
+		// Else draw the radial gradient
+		p.fillRect(QRectF(x + wh - radius, y, diameter, h), brush);
+	    }
+	} else {
+	    // If the spotlight is bigger than the scene, draw only the
+	    // sections where the gradient is not transparent.
+	    p.fillRect(QRectF(x, y, wh - innerDistance, h), brush);
+	    p.fillRect(QRectF(x + wh + innerDistance, y, wh - innerDistance, h), brush);
+	    if (innerDistance < hh) {
+		p.fillRect(QRectF(x + wh - innerDistance, y, side, hh - innerDistance), brush);
+		p.fillRect(QRectF(x + wh - innerDistance, y + hh + innerDistance, side, hh - innerDistance), brush);
+	    }
 	}
 #endif
     }
