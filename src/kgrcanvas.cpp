@@ -37,7 +37,7 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
 			const QString & systemDataDir)
 			: KGameCanvasWidget (parent),
 			  topLeft (0, 0), bgw (4 * STEP), bgh (4 * STEP),
-			  m_fadingTimeLine(1500, this),
+			  m_fadingTimeLine(1000, this),
 			  theme(systemDataDir)
 {
     resizeCount = 0;		// IDW
@@ -75,6 +75,8 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
     level = 0;
     setMinimumSize(FIELDWIDTH + 4, FIELDHEIGHT + 4);
     m_spotLight = new KGameCanvasPicture(this);
+    m_fadingTimeLine.setCurveShape(QTimeLine::LinearCurve);
+    m_fadingTimeLine.setUpdateInterval( 80 );
     connect(&m_fadingTimeLine, SIGNAL(valueChanged(qreal)), this, SLOT(drawSpotLight(qreal)));
     //m_fadingTimeLine.setUpdateInterval(10);
 }
