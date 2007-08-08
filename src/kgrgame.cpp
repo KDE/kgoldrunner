@@ -30,6 +30,13 @@
 #include <kpushbutton.h>
 #include <KStandardGuiItem>
 
+#define USE_KSCOREDIALOG 1
+
+#ifdef USE_KSCOREDIALOG
+#include <KScoreDialog>
+#include <QDate>
+#else
+
 #ifndef KGR_PORTABLE
 #include <kglobalsettings.h>
 #include <QByteArray>
@@ -38,6 +45,8 @@
 #include <QVBoxLayout>
 #include <QDate>
 #include <QSpacerItem>
+#endif
+
 #endif
 
 /******************************************************************************/
@@ -966,6 +975,21 @@ void KGrGame::loadGame()		// Re-load game, score and level.
 
 void KGrGame::checkHighScore()
 {
+#ifdef USE_KSCOREDIALOG
+    KScoreDialog scoreDialog(
+	    KScoreDialog::Name | KScoreDialog::Level | 
+	    KScoreDialog::Date | KScoreDialog::Score, 
+	    view);
+    scoreDialog.setConfigGroup(collection->prefix);
+    KScoreDialog::FieldInfo scoreInfo;
+    scoreInfo[KScoreDialog::Level].setNum(level);
+    scoreInfo[KScoreDialog::Score].setNum(score);
+    QDate today = QDate::currentDate();
+    scoreInfo[KScoreDialog::Date] = today.toString("ddd yyyy MM dd");
+    if (scoreDialog.addScore(scoreInfo)) {
+	scoreDialog.exec();
+    }
+#else
     bool	prevHigh  = true;
     qint16	prevLevel = 0;
     qint32	prevScore = 0;
@@ -1159,10 +1183,18 @@ void KGrGame::checkHighScore()
 
     showHighScores();
     return;
+#endif
 }
 
 void KGrGame::showHighScores()
 {
+#ifdef USE_KSCOREDIALOG
+    KScoreDialog scoreDialog(
+	    KScoreDialog::Name | KScoreDialog::Level | 
+	    KScoreDialog::Date | KScoreDialog::Score, 
+	    view);
+    scoreDialog.exec();
+#else
     // Don't keep high scores for tutorial games.
     if (collection->prefix.left(4) == "tute") {
 	KGrMessage::information (view, i18n("Show High Scores"),
@@ -1282,6 +1314,7 @@ void KGrGame::showHighScores()
     hs->		exec();
 
     delete hs;
+#endif
 }
 
 /******************************************************************************/
@@ -2624,6 +2657,7 @@ void KGrGame::myMessage (QWidget * parent, const QString &title, const QString &
     setMessageFreeze (false);
 }
 
+
 /******************************************************************************/
 /***********************    COLLECTION DATA CLASS    **************************/
 /******************************************************************************/
@@ -2637,3 +2671,4 @@ KGrCollection::KGrCollection (Owner o, const QString & n, const QString & p,
 }
 
 #include "kgrgame.moc"
+// vi: set sw=4 :
