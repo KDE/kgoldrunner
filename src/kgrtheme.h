@@ -57,11 +57,11 @@ public:
     
     QColor textColor() { return m_textColor; }
 private:
-    KSvgRenderer svg;
+    KSvgRenderer svgSet;
+    KSvgRenderer svgActors;
     QColor m_borderColor, m_textColor;	// Border colours.
 
     QString themeDataDir;
-    QString filepathSVG;
     QString m_themeFilepath;
     short themeDrawBorder;
     void changeColors (const char * colours []);

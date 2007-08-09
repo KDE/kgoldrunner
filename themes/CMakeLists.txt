@@ -12,9 +12,9 @@ install( FILES README
                midnight.desktop
                DESTINATION ${DATA_INSTALL_DIR}/kgoldrunner/themes )
 
-install( FILES default/kgr_default.svg
+install( FILES default/set.svg default/actors.svg
                DESTINATION ${DATA_INSTALL_DIR}/kgoldrunner/themes/default )
 
-install( FILES kgr_geek/kgr_geek.svgz
+install( FILES kgr_geek/set.svgz kgr_geek/actors.svgz
                DESTINATION ${DATA_INSTALL_DIR}/kgoldrunner/themes/kgr_geek )
 

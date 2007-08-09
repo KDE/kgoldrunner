@@ -32,7 +32,6 @@ static const int XPMSIZE = 16;
 
 KGrTheme::KGrTheme(const QString &systemDataDir) : 
 	themeDataDir(systemDataDir + "../theme/"),
-	filepathSVG(""), 
 	m_themeFilepath(""), 
 	tileGraphics(NONE),
 	backgroundGraphics(NONE),
@@ -51,7 +50,6 @@ void KGrTheme::load(const QString& themeFilepath)
 
     KConfig theme (themeFilepath, KConfig::OnlyLocal);	// Read graphics config.
     KConfigGroup group = theme.group ("KDEGameTheme");
-    QString f = group.readEntry ("FileName", "");
 
     // Check if the theme asks us to draw our border, and set the specified
     // color
@@ -68,28 +66,37 @@ void KGrTheme::load(const QString& themeFilepath)
       m_textColor.setNamedColor(themeTextColor);
     }
 
+    QString f = group.readEntry ("Set", "");
     if (f.endsWith (".svg") || f.endsWith (".svgz")) {
 	// Load a SVG theme (KGoldrunner 3+ and KDE 4+).
-	filepathSVG = themeFilepath.left (themeFilepath.lastIndexOf("/")+1) + f;
-	if (! filepathSVG.isEmpty()) {
-	    svg.load (filepathSVG);
+	QString path = themeFilepath.left(themeFilepath.lastIndexOf("/") + 1) + f;
+	if (!path.isEmpty()) {
+	    svgSet.load(path);
 	    
-	    // The thema may have multiple backgrounds, called background0...backgroundN
-	    // or just one background, called background0 or simply background.
+	    // The theme may have multiple backgrounds, called
+	    // background0...backgroundN or just one background, called
+	    // background0 or simply background.
 	    QString backgroundPattern("background%1");
 	    numBackgrounds = 0;
-	    while (svg.elementExists(backgroundPattern.arg(numBackgrounds))) {
+	    while (svgSet.elementExists(backgroundPattern.arg(numBackgrounds))) {
 		++numBackgrounds;
 	    }
 	    if (numBackgrounds == 0) {
-		if (svg.elementExists("background")) {
+		if (svgSet.elementExists("background")) {
 		    numBackgrounds = 1;
 		}
 	    }
 	}
-	tileGraphics = SVG;
-	backgroundGraphics = SVG;
-	runnerGraphics = SVG;
+	f = group.readEntry ("Actors", "default/actors.svg");
+	if (f.endsWith (".svg") || f.endsWith (".svgz")) {
+	    QString path = themeFilepath.left(themeFilepath.lastIndexOf("/") + 1) + f;
+	    if (!path.isEmpty()) {
+		svgActors.load(path);
+	    }
+	    tileGraphics = SVG;
+	    backgroundGraphics = SVG;
+	    runnerGraphics = SVG;
+	}
     } else {
 	// Load a XPM theme (KGoldrunner 2 and KDE 3).
 	int colorIndex = group.readEntry ("ColorIndex", 0);
@@ -110,7 +117,6 @@ void KGrTheme::load(const QString& themeFilepath)
 
 QImage KGrTheme::background(unsigned int width, unsigned int height, unsigned int variant)
 {
-    kDebug() << "KGrTheme::background(" << width <<"," << height <<", "<< variant << ") called";
     if ((width != 0) && (height != 0) && 
 	    (backgroundGraphics == SVG) && numBackgrounds > 0) {
 	QImage background(width, height, QImage::Format_ARGB32_Premultiplied);
@@ -119,10 +125,10 @@ QImage KGrTheme::background(unsigned int width, unsigned int height, unsigned in
 	variant %= numBackgrounds;
 	QString backgroundName = "background%1";
 	kDebug() << "Trying to load background" << backgroundName.arg(variant);
-	if (svg.elementExists(backgroundName.arg(variant))) 
-	    svg.render(&painter, backgroundName.arg(variant));
-	else if (svg.elementExists("background")) 
-	    svg.render(&painter, "background");
+	if (svgSet.elementExists(backgroundName.arg(variant))) 
+	    svgSet.render(&painter, backgroundName.arg(variant));
+	else if (svgSet.elementExists("background")) 
+	    svgSet.render(&painter, "background");
 	return background;
     }
     return QImage();
@@ -159,7 +165,7 @@ QList<QPixmap> KGrTheme::svgFrames (const QString &elementPattern,
     for (int i = 1; i <= nFrames; i++) {
 	QString s = elementPattern.arg(i);	// e.g. "hero_1", "hero_2", etc.
 	img.fill (0);
-	svg.render (&q, s);
+	svgActors.render (&q, s);
 	frames.append (QPixmap::fromImage (img));
     }
     return frames;
@@ -180,7 +186,7 @@ QList<QPixmap> KGrTheme::xpmFrames (const QImage & image,
 QPixmap KGrTheme::svgTile (QImage & img, QPainter & q, const QString & name)
 {
     img.fill (0);
-    svg.render (&q, name);
+    svgSet.render (&q, name);
     return QPixmap::fromImage (img);
 }
 
