@@ -62,10 +62,10 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     int margin		= marginHint(); 
     int spacing		= spacingHint(); 
     QWidget * dad	= new QWidget(this);
-	setMainWidget(dad);
-	setCaption(i18n("Select Game"));
-	setButtons(KDialog::Ok | KDialog::Cancel | KDialog::Help);
-	setDefaultButton(KDialog::Ok);
+    setMainWidget(dad);
+    setCaption(i18n("Select Game"));
+    setButtons(KDialog::Ok | KDialog::Cancel | KDialog::Help);
+    setDefaultButton(KDialog::Ok);
 
 #endif
 
@@ -570,9 +570,9 @@ KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
     int spacing		= 10;
     QWidget * dad	= this;
 #else
-	setCaption(i18n("Edit Name & Hint"));
-	setButtons(KDialog::Ok | KDialog::Cancel);
-	setDefaultButton(KDialog::Ok);
+    setCaption(i18n("Edit Name & Hint"));
+    setButtons(KDialog::Ok | KDialog::Cancel);
+    setDefaultButton(KDialog::Ok);
     int margin		= marginHint();
     int spacing		= spacingHint();
     QWidget * dad	= new QWidget(this);
@@ -659,13 +659,13 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
     int spacing		= 10;
     QWidget * dad	= this;
 #else
-	setCaption(i18n("Edit Game Info"));
-	setButtons(KDialog::Ok | KDialog::Cancel);
-	setDefaultButton(KDialog::Ok);
+    setCaption(i18n("Edit Game Info"));
+    setButtons(KDialog::Ok | KDialog::Cancel);
+    setDefaultButton(KDialog::Ok);
     int margin		= marginHint();
     int spacing		= spacingHint();
     QWidget * dad	= new QWidget(this);
-	setMainWidget(dad);
+    setMainWidget(dad);
 #endif
 
     QVBoxLayout * mainLayout = new QVBoxLayout (dad);
@@ -842,13 +842,13 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
     int spacing		= 10;
     QWidget * dad	= this;
 #else
-	setCaption(i18n("Select Saved Game"));
-	setButtons(KDialog::Ok | KDialog::Cancel);
-	setDefaultButton(KDialog::Ok);
+    setCaption(i18n("Select Saved Game"));
+    setButtons(KDialog::Ok | KDialog::Cancel);
+    setDefaultButton(KDialog::Ok);
     int margin		= marginHint();
     int spacing		= spacingHint();
     QWidget * dad	= new QWidget(this);
-	setMainWidget(dad);
+    setMainWidget(dad);
 #endif
 
     QVBoxLayout *	mainLayout = new QVBoxLayout (dad);
