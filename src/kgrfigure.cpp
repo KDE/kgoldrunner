@@ -450,7 +450,11 @@ void KGrHero::setNextDir()
     }
     else if ((dy > 0) &&
 	     (canWalkDown() ||
-	      standOnEnemy() ||
+	      // Trial fix, 10 Aug 07.  Removing the next test makes enemies
+	      // behave like bricks if you are standing, walking or falling on
+	      // their heads.  So you cannot die when walking over a trapped
+	      // enemy in mouse-mode, preventing a common beginner's problem.
+	      // standOnEnemy() ||
 	      (hangAtPole() && ((*playfield)[x][y+1]->whatIam() != BRICK) &&
 			       ((*playfield)[x][y+1]->whatIam() != BETON)))) {
 	nextDir = DOWN;
