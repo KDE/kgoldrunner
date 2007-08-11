@@ -174,7 +174,7 @@
        xlink:href="#linearGradient2783"
        id="linearGradient2383"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.500000,0.000000,0.000000,1.000000,480.0000,1.186828e-13)"
+       gradientTransform="matrix(0.5,0,0,1,480,0)"
        x1="816"
        y1="600.09448"
        x2="848"
@@ -184,7 +184,7 @@
        xlink:href="#linearGradient2783"
        id="linearGradient2282"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.500000,0.000000,0.000000,1.000000,416.0000,1.186828e-13)"
+       gradientTransform="matrix(0.5,0,0,1,416,0)"
        x1="816"
        y1="600.09448"
        x2="848"
@@ -233,7 +233,8 @@
        y1="-101.98989"
        x2="-245.55905"
        y2="-315.50995"
-       gradientUnits="userSpaceOnUse" />
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(11.77597,-513.22279)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient4002"
@@ -243,7 +244,7 @@
        y1="-101.98989"
        x2="-245.55905"
        y2="-315.50995"
-       gradientTransform="translate(-303.15581,2.1587377)" />
+       gradientTransform="translate(11.77595,6.77721)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient4010"
@@ -253,7 +254,7 @@
        y1="-101.98989"
        x2="-245.55905"
        y2="-315.50995"
-       gradientTransform="translate(-303.15581,-243.91442)" />
+       gradientTransform="translate(11.77595,266.77719)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient3993"
@@ -263,7 +264,7 @@
        y1="-101.98989"
        x2="-245.55905"
        y2="-315.50995"
-       gradientTransform="translate(-0.5141077,-243.91442)" />
+       gradientTransform="translate(11.775992,-253.22278)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient2783"
@@ -359,21 +360,21 @@
      objecttolerance="10"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.50000003"
-     inkscape:cx="494.15075"
-     inkscape:cy="261.45348"
+     inkscape:zoom="0.35355341"
+     inkscape:cx="438.32284"
+     inkscape:cy="435.2242"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:window-width="1280"
-     inkscape:window-height="800"
+     inkscape:window-width="1270"
+     inkscape:window-height="747"
      inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-y="26"
      width="864px"
      height="96px"
      showguides="true"
      inkscape:guide-bbox="true"
      fill="#00a7b3"
-     showgrid="false" />
+     showgrid="true" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -391,12 +392,12 @@
      id="layer1"
      style="display:inline">
     <rect
-       style="fill:url(#linearGradient3657);fill-opacity:1.0"
+       style="fill:url(#linearGradient3657);fill-opacity:1"
        id="background0"
        width="292.43384"
        height="236.04646"
-       x="-391.77597"
-       y="-326.82367"
+       x="-380"
+       y="-840.04645"
        inkscape:label="#rect18035" />
     <g
        id="Layer"
@@ -405,7 +406,7 @@
        style="display:inline"
        id="bar"
        inkscape:label="#g2906"
-       transform="matrix(0.4041622,0,0,0.4041622,51.93868,-217.73734)">
+       transform="matrix(0.4041622,0,0,0.4041622,-53.097534,-175.47084)">
       <rect
          y="24.094482"
          x="552"
@@ -425,27 +426,27 @@
        style="display:inline"
        id="ladder"
        inkscape:label="#g2385"
-       transform="matrix(0.404162,0.000000,0.000000,0.404162,28.66918,-422.8769)">
+       transform="matrix(0.404162,0,0,0.404162,-153.3296,-622.40175)">
       <rect
          y="536.09448"
-         x="800.00000"
-         height="128.00000"
-         width="128.00000"
+         x="800"
+         height="128"
+         width="128"
          id="rect2210"
-         style="opacity:1.0000000;color:#000000;fill:none;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0990000;stroke-linecap:butt;stroke-linejoin:round;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4.0000000;stroke-dasharray:none;stroke-dashoffset:0.0000000;stroke-opacity:0.18823524;visibility:visible;display:inline;overflow:visible" />
+         style="opacity:1;color:#000000;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.09899998;stroke-linecap:butt;stroke-linejoin:round;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.18823523;visibility:visible;display:inline;overflow:visible" />
       <rect
          y="536.09448"
-         x="824.00000"
-         height="128.00000"
-         width="16.000000"
+         x="824"
+         height="128"
+         width="16"
          id="rect2212"
-         style="opacity:1.0000000;color:#000000;fill:url(#linearGradient2282);fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0990000;stroke-linecap:butt;stroke-linejoin:round;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4.0000000;stroke-dasharray:none;stroke-dashoffset:0.0000000;stroke-opacity:0.18823524;visibility:visible;display:inline;overflow:visible" />
+         style="opacity:1;color:#000000;fill:url(#linearGradient2282);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.09899998;stroke-linecap:butt;stroke-linejoin:round;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.18823523;visibility:visible;display:inline;overflow:visible" />
       <rect
-         style="opacity:1.0000000;color:#000000;fill:url(#linearGradient2383);fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0990000;stroke-linecap:butt;stroke-linejoin:round;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4.0000000;stroke-dasharray:none;stroke-dashoffset:0.0000000;stroke-opacity:0.18823524;visibility:visible;display:inline;overflow:visible"
+         style="opacity:1;color:#000000;fill:url(#linearGradient2383);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.09899998;stroke-linecap:butt;stroke-linejoin:round;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.18823523;visibility:visible;display:inline;overflow:visible"
          id="rect2224"
-         width="16.000000"
-         height="128.00000"
-         x="888.00000"
+         width="16"
+         height="128"
+         x="888"
          y="536.09448" />
       <path
          style="color:#000000;fill:url(#linearGradient2276);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.09899998;stroke-linecap:butt;stroke-linejoin:round;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:0.18823523;visibility:visible;display:inline;overflow:visible"
@@ -472,7 +473,7 @@
        style="display:inline"
        id="hidden_ladder"
        inkscape:label="#g2238"
-       transform="matrix(0.4041622,0,0,0.4041622,190.42885,-358.6494)">
+       transform="matrix(0.4041622,0,0,0.4041622,-120.04182,-558.33021)">
       <rect
          style="opacity:1;color:#000000;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.09899998;stroke-linecap:butt;stroke-linejoin:round;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.18823529;visibility:visible;display:inline;overflow:visible"
          id="rect2191"
@@ -520,13 +521,13 @@
        id="empty"
        width="50.737892"
        height="50.745491"
-       x="83.766586"
-       y="-338.50449"
+       x="170.49553"
+       y="-345.24103"
        inkscape:label="#rect2259" />
     <g
        id="concrete"
        inkscape:label="#g4039"
-       transform="translate(-4.0037064,-6.2499936)">
+       transform="translate(86.897615,-6.7327614)">
       <rect
          style="color:#000000;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.625;stroke-linecap:butt;stroke-linejoin:round;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible"
          id="rect6402"
@@ -582,7 +583,7 @@
     <g
        id="brick"
        inkscape:label="#g8357"
-       transform="translate(3.7348919,-5.4443789)">
+       transform="translate(91.416062,-10.512899)">
       <g
          transform="matrix(0.7826519,0,0,1,28.524602,-0.3213057)"
          id="g8224">
@@ -731,7 +732,7 @@
     <g
        inkscape:label="#g8357"
        id="brick_1"
-       transform="translate(98.205261,98.683895)">
+       transform="translate(161.41606,-10.512899)">
       <g
          id="g8397"
          transform="matrix(0.7826519,0,0,1,28.524602,-0.3213057)">
@@ -869,7 +870,7 @@
       </g>
     </g>
     <g
-       transform="translate(641.65879,98.683895)"
+       transform="translate(707.16558,-10.536328)"
        id="brick_9"
        inkscape:label="#g8357">
       <g
@@ -1027,7 +1028,7 @@
     <g
        id="brick_8"
        inkscape:label="#g9662"
-       transform="translate(333.83115,98.707324)">
+       transform="translate(399.33794,-10.512899)">
       <g
          transform="matrix(0.7826519,0,0,1,268.5246,-0.3213057)"
          id="g8607">
@@ -1122,7 +1123,7 @@
     <g
        inkscape:label="#g9662"
        id="brick_4"
-       transform="translate(65.739112,97.016779)">
+       transform="translate(131.62411,-10.512899)">
       <g
          id="g9689"
          transform="matrix(0.7826519,0,0,1,268.5246,-0.3213057)" />
@@ -1198,15 +1199,15 @@
        transform="matrix(-0.9695698,0,0,1,543.81879,27.846739)"
        id="g9952" />
     <rect
-       y="-114.89516"
-       x="446.49319"
+       y="-224.11539"
+       x="511.99997"
        height="49.649883"
        width="52.84166"
        id="brick_5"
        style="fill:none;fill-opacity:1;stroke:none"
        inkscape:label="#rect9954" />
     <g
-       transform="translate(195.89945,98.707324)"
+       transform="translate(261.40624,-10.512899)"
        id="brick_6"
        inkscape:label="#g9662">
       <g
@@ -1278,7 +1279,7 @@
          style="fill:none;fill-opacity:1;stroke:none" />
     </g>
     <g
-       transform="translate(263.83115,98.707324)"
+       transform="translate(329.33794,-10.512899)"
        inkscape:label="#g9662"
        id="brick_7">
       <g
@@ -1382,7 +1383,7 @@
     <g
        id="brick_3"
        inkscape:label="#g10154"
-       transform="translate(30.273575,95.86632)">
+       transform="translate(95.780365,-13.353903)">
       <g
          id="g10028"
          transform="translate(205.86339,27.502004)">
@@ -1454,7 +1455,7 @@
     <g
        id="brick_2"
        inkscape:label="#g10127"
-       transform="translate(30.273575,95.86632)">
+       transform="translate(95.780365,-13.353903)">
       <g
          id="g8541"
          transform="matrix(0.7826519,0,0,1,164.38799,2.4962697)">
@@ -1560,7 +1561,7 @@
          y="-210.76147" />
     </g>
     <g
-       transform="translate(469.96121,9.0943637)"
+       transform="translate(21.416062,-10.512899)"
        inkscape:label="#g8357"
        id="false_brick">
       <g
@@ -1687,28 +1688,29 @@
        id="background2"
        width="292.43384"
        height="236.04646"
-       x="-694.93176"
-       y="-324.66495"
+       x="-380"
+       y="-320.04645"
        inkscape:label="#rect18035" />
     <rect
        style="fill:url(#linearGradient3987);fill-opacity:1;display:inline"
        id="background3"
        width="292.43384"
        height="236.04646"
-       x="-694.93176"
-       y="-570.7381"
+       x="-380"
+       y="-60.046463"
        inkscape:label="#rect18035" />
     <rect
        style="fill:url(#linearGradient3991);fill-opacity:1;display:inline"
        id="background1"
        width="292.43384"
        height="236.04646"
-       x="-392.2901"
-       y="-570.7381"
+       x="-380"
+       y="-580.04645"
        inkscape:label="#rect18035" />
     <g
        id="gold"
-       inkscape:label="#g7536">
+       inkscape:label="#g7536"
+       transform="translate(-299.4686,62.051941)">
       <rect
          y="-206.05194"
          x="467.73584"
