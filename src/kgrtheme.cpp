@@ -186,7 +186,12 @@ QList<QPixmap> KGrTheme::xpmFrames (const QImage & image,
 QPixmap KGrTheme::svgTile (QImage & img, QPainter & q, const QString & name)
 {
     img.fill (0);
-    svgSet.render (&q, name);
+    
+    if (svgSet.elementExists(name)) {
+	svgSet.render (&q, name);
+    } else {
+	svgActors.render(&q, name);
+    }
     return QPixmap::fromImage (img);
 }
 
