@@ -30,7 +30,9 @@
 #include <kpushbutton.h>
 #include <KStandardGuiItem>
 
-#define USE_KSCOREDIALOG 1
+// Do NOT change KGoldrunner over to KScoreDialog until we have found a way
+// to preserve high-score data pre-existing from the KGr high-score methods.
+// #define USE_KSCOREDIALOG 1 // IDW - 11 Aug 07.
 
 #ifdef USE_KSCOREDIALOG
 #include <KScoreDialog>
@@ -1112,15 +1114,11 @@ void KGrGame::checkHighScore()
     connect	(hsnUser, SIGNAL (returnPressed ()), hsn, SLOT (accept ()));
     connect	(OK,      SIGNAL (clicked ()),       hsn, SLOT (accept ()));
 
-    while (true) {
-	hsn->exec();
-	thisUser = hsnUser->text();
-	if (thisUser.length() > 0)
-	    break;
-	KGrMessage::information (view, i18n("Save High Score"),
-			i18n("You must enter something.  Please try again."));
-    }
-
+    // Run the dialog to get the player's name.  Use "-" if nothing is entered.
+    hsn->exec();
+    thisUser = hsnUser->text();
+    if (thisUser.length() <= 0)
+	thisUser = "-";
     delete hsn;
 
     QDate today = QDate::currentDate();
@@ -1187,8 +1185,9 @@ void KGrGame::checkHighScore()
 
     if (safeRename (high2.fileName(),
 		userDataDir + "hi_" + collection->prefix + ".dat")) {
-	KGrMessage::information (view, i18n("Save High Score"),
-				i18n("Your high score has been saved."));
+	// Remove a redundant popup message.
+	// KGrMessage::information (view, i18n("Save High Score"),
+				// i18n("Your high score has been saved."));
     }
     else {
 	KGrMessage::information (view, i18n("Save High Score"),
