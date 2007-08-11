@@ -78,7 +78,6 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
     m_fadingTimeLine.setCurveShape(QTimeLine::LinearCurve);
     m_fadingTimeLine.setUpdateInterval( 80 );
     connect(&m_fadingTimeLine, SIGNAL(valueChanged(qreal)), this, SLOT(drawSpotLight(qreal)));
-    //m_fadingTimeLine.setUpdateInterval(10);
 }
 
 KGrCanvas::~KGrCanvas()
@@ -92,14 +91,25 @@ KGrCanvas::~KGrCanvas()
     delete m_spotLight;
 }
 
+void KGrCanvas::goToBlack()
+{
+	t.start(); // IDW
+	// IDW kDebug() << "Go to black ...";
+	drawSpotLight (0);
+}
+
 void KGrCanvas::fadeIn()
 {
+	t.start(); // IDW
+	// IDW kDebug() << t.elapsed() << "msec" << "Fading in ..."; // IDW
 	m_fadingTimeLine.setDirection(QTimeLine::Forward);
 	m_fadingTimeLine.start();
 }
 
 void KGrCanvas::fadeOut()
 {
+	t.start(); // IDW
+	// IDW kDebug() << t.elapsed() << "msec" << "Fading out ..."; // IDW
 	m_fadingTimeLine.setDirection(QTimeLine::Backward);
 	m_fadingTimeLine.start();
 }
@@ -434,7 +444,9 @@ void KGrCanvas::setLevel(unsigned int l)
 {
     if (l != level) {
 	level= l;
-	loadBackground();
+	if (theme.multipleBackgrounds()) {
+	    loadBackground();
+	}
     }
 }
 
@@ -532,6 +544,7 @@ void KGrCanvas::drawSpotLight(qreal value)
 {
     static int count = 0;
     if (value > 0.99) {
+	// IDW kDebug() << t.elapsed() << "msec" << "Hide spotlight, value:" << value; // IDW
 	count = 0;
 	// Hide the spotlight animation -- all scene visible
 	m_spotLight->hide();
@@ -624,7 +637,7 @@ void KGrCanvas::drawSpotLight(qreal value)
     }
 
     m_spotLight->setPicture(picture);
-    kDebug() << "spotlight frame count:" << count << ", value:" << value;
+    // IDW kDebug() << t.elapsed() << "msec" << "Spotlight frame count: " << count << ", value:" << value; // IDW
 }
 
 KGameCanvasRectangle * KGrCanvas::drawRectangle (int x, int y, int w, int h)

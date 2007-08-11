@@ -363,6 +363,7 @@ void KGrGame::newGame (const int lev, const int gameIndex)
     // Ignore player input from keyboard or mouse while the screen is set up.
     loading = true;		// "loadLevel (level)" will reset it.
 
+    view->goToBlack();
     if (editMode) {
 	emit setEditMenu (false);	// Disable edit menu items and toolbar.
 
@@ -449,7 +450,6 @@ void KGrGame::showHint()
 
 int KGrGame::loadLevel (int levelNo)
 {
-    view->fadeIn();
     // Ignore player input from keyboard or mouse while the screen is set up.
     loading = true;
 
@@ -460,10 +460,11 @@ int KGrGame::loadLevel (int levelNo)
 	return 0;
     }
 
-    view->setLevel(levelNo);
+    view->setLevel(levelNo);		// Switch and render background if reqd.
+    view->fadeIn();			// Then run the fade-in animation.
     nuggets = 0;
     enemyCount=0;
-    startScore = score;				// What we will save, if asked.
+    startScore = score;			// The score we will save, if asked.
 
     int i, j;
     // Load the level-layout, hero and enemies.

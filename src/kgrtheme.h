@@ -52,6 +52,8 @@ public:
     bool isBorderRequired() const { return themeDrawBorder; }
     
     bool isWithBackground() const { return numBackgrounds > 0; }
+
+    bool multipleBackgrounds() const { return numBackgrounds > 1; }
     
     QColor borderColor() { return m_borderColor; }
     

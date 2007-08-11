@@ -32,7 +32,7 @@
 #include <QMouseEvent>
 #include <QList>
 #include <QTime> // IDW
-#include <QTimeLine> // IDW
+#include <QTimeLine>
 
 #define USE_THEMECLASS
 //#undef USE_THEMECLASS
@@ -68,6 +68,7 @@ public:
 	void moveEnemy (int, int, int, int, int);
 	void deleteEnemySprites();
 
+	void goToBlack();
 	void fadeIn();
 	void fadeOut();
 
@@ -148,7 +149,7 @@ private:
 	// IDW - Temporary ... should use a more general playfield (grid) idea.
 	int tileNo [FIELDWIDTH] [FIELDHEIGHT];
 
-	int resizeCount;		// IDW - Temporary, for qDebug() logs.
+	int resizeCount;		// IDW - Temporary, for kDebug() logs.
 	QTime t; // IDW
 	unsigned int level;
 };
