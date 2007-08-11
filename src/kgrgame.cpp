@@ -160,13 +160,27 @@ void KGrGame::herosDead()
 	view->fadeOut();
     }
     else {
-	// Game over: display the "ENDE" screen.
+	// Game over.
 	emit showLives (lives);
 	freeze();
 	QString gameOver = "<NOBR><B>" + i18n("GAME OVER !!!") + "</B></NOBR>";
 	KGrMessage::information (view, collection->name, gameOver);
 	checkHighScore();	// Check if there is a high score for this game.
 
+	// Offer the player a chance to start this level again with 5 new lives.
+	switch (KGrMessage::warning (view, i18n("Retry Level?"),
+			    i18n("Would you like to try this level again?"),
+			    i18n("&Try Again"), i18n("&Finish"))) {
+	case 0:
+	    unfreeze();			// Offer accepted.
+	    newGame (level, collnIndex);
+	    return;
+	    break;
+	case 1:
+	    break;			// Offer rejected.
+	}
+
+	// Game completely over: display the "ENDE" screen.
 	enemyCount = 0;
 	//todo enemies.clear();	// Stop the enemies catching the hero again ...
 	while (!enemies.isEmpty())
