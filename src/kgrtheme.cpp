@@ -42,7 +42,7 @@ KGrTheme::KGrTheme(const QString &systemDataDir) :
 
 void KGrTheme::load(const QString& themeFilepath)
 {
-    kDebug()<< "New Theme -" << themeFilepath;
+    kDebug() << "New Theme -" << themeFilepath;
     if (!m_themeFilepath.isEmpty() && (themeFilepath == m_themeFilepath)) {
 	kDebug() << "NO CHANGE OF THEME ...";
 	return;					// No change of theme.
@@ -165,7 +165,12 @@ QList<QPixmap> KGrTheme::svgFrames (const QString &elementPattern,
     for (int i = 1; i <= nFrames; i++) {
 	QString s = elementPattern.arg(i);	// e.g. "hero_1", "hero_2", etc.
 	img.fill (0);
-	svgActors.render (&q, s);
+	    if (svgActors.elementExists(s)) {
+	    svgActors.render (&q, s);
+	}else {
+	    // The theme does not contain the needed element.
+	    kWarning() << "The needed element" << s << "is not in the theme.";
+	}
 	frames.append (QPixmap::fromImage (img));
     }
     return frames;
@@ -189,8 +194,11 @@ QPixmap KGrTheme::svgTile (QImage & img, QPainter & q, const QString & name)
     
     if (svgSet.elementExists(name)) {
 	svgSet.render (&q, name);
-    } else {
+    } else if (svgSet.elementExists(name)) {
 	svgActors.render(&q, name);
+    } else {
+	// The theme does not contain the needed element.
+	kWarning() << "The needed element" << name << "is not in the theme.";
     }
     return QPixmap::fromImage (img);
 }
