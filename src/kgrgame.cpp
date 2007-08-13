@@ -10,11 +10,6 @@
 
 #include "kgrgame.h"
 
-#ifdef KGR_PORTABLE
-// If compiling for portability, redefine KDE's i18n.
-#define i18n tr
-#endif
-
 #include "kgrconsts.h"
 #include "kgrobject.h"
 #include "kgrfigure.h"
@@ -39,15 +34,15 @@
 #include <QDate>
 #else
 
-#ifndef KGR_PORTABLE
-#include <kglobalsettings.h>
 #include <QByteArray>
 #include <QTextStream>
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QDate>
 #include <QSpacerItem>
-#endif
+#include <QTreeWidget>
+#include <QHeaderView>
+#include <QTreeWidgetItem>
 
 #endif
 
@@ -1256,31 +1251,23 @@ void KGrGame::showHighScores()
 					"<center><h3>\"%1\" Game</h3></center>",
 					 collection->name),
 			hs);
-    QLabel *		hsColHeader  = new QLabel (
-				i18n("    Name                          "
-				"Level  Score       Date"), hs);
-#ifdef KGR_PORTABLE
-    QFont		f ("courier", 12);
-#else
-    QFont		f = KGlobalSettings::fixedFont();	// KDE version.
-#endif
-    f.			setFixedPitch (true);
-    f.			setBold (true);
-    hsColHeader->	setFont (f);
+    mainLayout->addWidget (hsHeader, 10);
 
-    QLabel *		hsLine [10];
-
-    mainLayout->	addWidget (hsHeader);
-    mainLayout->	addWidget (hsColHeader);
+    QTreeWidget * scores = new QTreeWidget (hs);
+    mainLayout->addWidget (scores, 50);
+    scores->setColumnCount (5);
+    scores->setHeaderLabels (QStringList() <<
+                            i18nc("1, 2, 3 etc.", "Rank") <<
+                            i18nc("Person", "Name") <<
+                            i18nc("Game level reached", "Level") <<
+                            i18n("Score") <<
+                            i18n("Date"));
+    scores->setRootIsDecorated (false);
 
     hs->		setWindowTitle (i18n("High Scores"));
 
-    // Set up the format for the high-score lines.
-    f.			setBold (false);
-    QString		line;
-    const char *	hsFormat = "%2d. %-30.30s %3d %7ld  %s";
-
     // Read and display the users, levels and scores from the high score file.
+    scores->clear();
     s1.setDevice (&high1);
     n = 0;
     while ((! s1.endData()) && (n < 10)) {
@@ -1291,20 +1278,37 @@ void KGrGame::showHighScores()
 	s1 >> prevScore;
 	s1 >> prevDate;
 
-	// QString::sprintf expects UTF-8 encoding in its string arguments, so
 	// prevUser has been saved on file as UTF-8 to allow non=ASCII chars
 	// in the user's name (e.g. "Krüger" is encoded as "KrÃ¼ger" in UTF-8).
-
-	line = line.sprintf (hsFormat,
-			     n+1, prevUser, prevLevel, prevScore, prevDate);
-	hsLine [n] = new QLabel (line, hs);
-	hsLine [n]->setFont (f);
-	mainLayout->addWidget (hsLine [n]);
+	QStringList data;
+	data << QString().setNum (n+1)
+	     << QString().fromUtf8 (prevUser)
+	     << QString().setNum (prevLevel)
+	     << QString().setNum (prevScore)
+	     << QString().fromUtf8 (prevDate);
+	QTreeWidgetItem * score = new QTreeWidgetItem (data);
+	score->setTextAlignment (0, Qt::AlignRight);	// Rank.
+	score->setTextAlignment (1, Qt::AlignLeft);	// Name.
+	score->setTextAlignment (2, Qt::AlignRight);	// Level.
+	score->setTextAlignment (3, Qt::AlignRight);	// Score.
+	score->setTextAlignment (4, Qt::AlignLeft);	// Date.
+	scores->addTopLevelItem (score);
+	if (n == 0) {
+	    scores->setCurrentItem (score);	// Highlight the top score.
+	}
 
 	delete prevUser;
 	delete prevDate;
 	n++;
     }
+
+    // Adjust the columns to fit the data.
+    scores->header()->setResizeMode (0, QHeaderView::ResizeToContents);
+    scores->header()->setResizeMode (1, QHeaderView::ResizeToContents);
+    scores->header()->setResizeMode (2, QHeaderView::ResizeToContents);
+    scores->header()->setResizeMode (3, QHeaderView::ResizeToContents);
+    scores->header()->setResizeMode (4, QHeaderView::ResizeToContents);
+    scores->header()->setMinimumSectionSize (-1);	// Font metrics size.
 
     QFrame * separator = new QFrame (hs);
     separator->setFrameStyle (QFrame::HLine + QFrame::Sunken);
@@ -1318,7 +1322,9 @@ void KGrGame::showHighScores()
     OK->		setShortcut (Qt::Key_Return);
     OK->		setMaximumWidth (100);
     hboxLayout1->addWidget (OK);
-    mainLayout->	addLayout (hboxLayout1);
+    mainLayout->	addLayout (hboxLayout1, 5);
+    int w =		(view->size().width()*4)/10;
+    hs->		setMinimumSize (w, w);
 
     QPoint		p = view->mapToGlobal (QPoint (0,0));
     hs->		move (p.x() + 50, p.y() + 50);
