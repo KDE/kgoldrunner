@@ -1,0 +1,9 @@
+[KDEGameTheme]
+Name=Nostalgia
+Description=A scalable theme for KGoldrunner that brings back that 8-bit look...
+Author=Luciano Montanaro
+Set=nostalgia/set.svg
+Actors=nostalgia/actors.svg
+DrawCanvasBorder=0
+BorderColor=#000000
+TextColor=#FFFFFF

@@ -15,8 +15,8 @@
    sodipodi:version="0.32"
    inkscape:version="0.45.1"
    version="1.0"
-   sodipodi:docbase="/home/mikelima/kde/src/KDE/kdegames/kgoldrunner/themes/stickman"
-   sodipodi:docname="set2.svg"
+   sodipodi:docbase="/home/mikelima/kde/src/KDE/kdegames/kgoldrunner/themes/nostalgia"
+   sodipodi:docname="set.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape">
   <defs
      id="defs4524" />
@@ -27,16 +27,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="167.09708"
-     inkscape:cy="232.24019"
+     inkscape:zoom="1"
+     inkscape:cx="112.69953"
+     inkscape:cy="183.04284"
      inkscape:current-layer="layer1"
      inkscape:document-units="px"
      showgrid="true"
-     inkscape:window-width="973"
-     inkscape:window-height="743"
-     inkscape:window-x="253"
-     inkscape:window-y="57" />
+     inkscape:window-width="1270"
+     inkscape:window-height="747"
+     inkscape:window-x="0"
+     inkscape:window-y="26"
+     showguides="false" />
   <metadata
      id="metadata4527">
     <rdf:RDF>
@@ -119,43 +120,24 @@
          sodipodi:type="arc" />
     </g>
     <g
-       id="hidden_ladder"
-       inkscape:label="#g15183">
-      <path
-         style="opacity:1;fill:#00001c;fill-opacity:1;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
-         d="M 79.90625,265 L 79.90625,324.96875 L 84.9375,325 L 90,325 L 90,320 L 84.9375,320 L 84.9375,310 L 90,310 L 90,305 L 84.9375,305 L 84.9375,295 L 90,295 L 90,290 L 84.9375,290 L 84.9375,280 L 90,280 L 90,275 L 84.9375,275 L 85.1875,265 L 79.90625,265 z M 130,265 L 125.0625,265.03125 L 124.90625,275 L 110.125,275 L 110.125,280 L 124.90625,280 L 124.90625,290 L 110.125,290 L 110.125,295 L 124.90625,295 L 124.90625,305 L 110.125,305 L 110.125,310 L 124.90625,310 L 124.90625,320 L 110.125,320 L 110.125,325 L 124.90625,325 L 130,324.96875 L 130,265 z "
-         id="path3174" />
-      <path
-         style="opacity:1;fill:#ebeced;fill-opacity:1;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
-         d="M 75,265 L 75,324.96875 L 80.03125,324.96875 L 80.03125,320 L 90,320 L 90,315 L 80.03125,315 L 80.03125,305 L 90,305 L 90,300 L 80.03125,300 L 80.03125,290 L 90,290 L 90,285 L 80.03125,285 L 80.03125,275 L 90,275 L 90,270 L 80.03125,270 L 80.03125,265 L 75,265 z M 120,265 L 120,270 L 110,270 L 110,275 L 120,275 L 120,285 L 110,285 L 110,290 L 120,290 L 120,300 L 110,300 L 110,305 L 120,305 L 120,315 L 110,315 L 110,320 L 120,320 L 120,324.96875 L 125.09375,324.96875 L 125.09375,265 L 120,265 z "
-         id="path15175" />
-      <rect
-         y="265"
-         x="70"
-         height="60"
-         width="60"
-         id="rect15177"
-         style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline" />
-    </g>
-    <g
        id="ladder"
-       inkscape:label="#g15179">
+       inkscape:label="#g4203">
       <path
-         id="path3171"
-         d="M 14.90625,265 L 14.90625,324.96875 L 19.9375,325 L 59.90625,325 L 65,324.96875 L 65,265 L 60.067862,265.03661 L 59.90625,275 L 19.9375,275 L 20.1875,265 L 14.90625,265 z M 19.9375,280 L 59.90625,280 L 59.90625,290 L 19.9375,290 L 19.9375,280 z M 19.9375,295 L 59.90625,295 L 59.90625,305 L 19.9375,305 L 19.9375,295 z M 19.9375,310 L 59.90625,310 L 59.90625,320 L 19.9375,320 L 19.9375,310 z "
-         style="opacity:1;fill:#00001c;fill-opacity:1;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
-         sodipodi:nodetypes="cccccccccccccccccccccccccc" />
+         id="path4187"
+         d="M 11.9375,265 L 11.9375,324.96875 L 12,324.96875 L 12,325 L 14.9375,325 L 17,325 L 17.9375,325 L 19.9375,325 L 22.9375,325 L 22.9375,324.96875 L 23,324.96875 L 23,322.9375 L 47,322.9375 L 47,324.96875 L 47.0625,324.96875 L 47.0625,325 L 50,325 L 52,325 L 53,325 L 54.9375,325 L 57.9375,325 L 57.9375,324.96875 L 58,324.96875 L 58,265 L 55,265 L 53.0625,265 L 51.9375,265 L 50.0625,265 L 47,265 L 47,267.0625 L 23,267.0625 L 23,265 L 20,265 L 18,265 L 16.9375,265 L 15,265 L 11.9375,265 z M 23.0625,278.03125 L 47,278.03125 L 47,282.09375 L 23.03125,282.03125 L 23.0625,278.03125 z M 23,292.96875 L 47,292.96875 L 47,297.03125 L 23,297.03125 L 23,292.96875 z M 47.0625,307.90625 L 47.0625,311.96875 L 23,311.96875 L 23,307.96875 L 47.0625,307.90625 z "
+         style="fill:#00001c;fill-opacity:1;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline" />
       <path
+         sodipodi:nodetypes="cccccccccccccccccccccccccccc"
          id="rect15154"
-         d="M 10,265 L 10,324.96875 L 15.03125,324.96875 L 15.03125,320 L 55,320 L 55,324.96875 L 60.09375,324.96875 L 60.09375,265 L 55,265 L 55,270 L 15.03125,270 L 15.03125,265 L 10,265 z M 15.03125,275 L 55,275 L 55,285 L 15.03125,285 L 15.03125,275 z M 15.03125,290 L 55,290 L 55,300 L 15.03125,300 L 15.03125,290 z M 15.03125,305 L 55,305 L 55,315 L 15.03125,315 L 15.03125,305 z "
-         style="opacity:1;fill:#ebeced;fill-opacity:1;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         d="M 15,265 L 15,324.96875 L 20.009885,324.96875 L 20.009885,320 L 50.057627,320 L 50.057627,324.96875 L 55,324.96875 L 55,265 L 50.057627,265 L 50.057627,270 L 20.009885,270 L 20.009885,265 L 15,265 z M 20.009885,275 L 50.057627,275 L 50.057627,285 L 20.009885,285 L 20.009885,275 z M 20.009885,290 L 50.057627,290 L 50.057627,300 L 20.009885,300 L 20.009885,290 z M 20.009885,305 L 50.057627,305 L 50.057627,315 L 20.009885,315 L 20.009885,305 z "
+         style="fill:#ebeced;fill-opacity:1;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
       <rect
          y="265"
          x="5"
          height="60"
          width="60"
          id="rect15173"
-         style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         style="fill:none;fill-opacity:1;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
     <g
        id="brick"
@@ -186,28 +168,28 @@
     </g>
     <g
        id="bar"
-       inkscape:label="#g3606">
+       inkscape:label="#g5204">
       <rect
-         y="210"
+         y="202"
          x="5"
-         height="5"
+         height="11"
          width="60"
          id="rect3309"
-         style="opacity:1;fill:#00001c;fill-opacity:1;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline" />
+         style="fill:#00001c;fill-opacity:1;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline" />
       <rect
          y="205"
          x="5"
          height="5"
          width="60"
          id="rect3602"
-         style="opacity:1;fill:#ebeced;fill-opacity:1;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         style="fill:#ebeced;fill-opacity:1;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
       <rect
          y="200"
          x="5"
          height="60"
          width="60"
          id="rect3604"
-         style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         style="fill:none;fill-opacity:1;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
     <g
        id="false_brick"
@@ -478,24 +460,42 @@
        inkscape:label="#rect4332" />
     <g
        id="empty"
-       transform="translate(0.125,1.9073486e-6)"
-       inkscape:label="#g3029">
+       inkscape:label="#g4178">
       <rect
          ry="0"
-         y="9.9999981"
-         x="9.875"
-         height="50"
-         width="50"
+         y="11"
+         x="11"
+         height="48"
+         width="48"
          id="rect6172"
-         style="opacity:1;fill:none;fill-opacity:1;stroke:#00001c;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         style="fill:none;fill-opacity:1;stroke:#00001c;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
       <rect
          ry="0"
-         y="10"
-         x="10"
-         height="50"
-         width="50"
+         y="11"
+         x="11"
+         height="48"
+         width="48"
          id="rect5201"
-         style="opacity:1;fill:none;fill-opacity:1;stroke:#ebeced;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         style="fill:none;fill-opacity:1;stroke:#ebeced;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <g
+       id="hidden_ladder"
+       inkscape:label="#g5199">
+      <path
+         id="path4212"
+         d="M 76.9375 265 L 76.9375 324.96875 L 77 324.96875 L 77 325 L 79.9375 325 L 82 325 L 82.9375 325 L 84.9375 325 L 87.9375 325 L 87.9375 324.96875 L 88 324.96875 L 88 322.9375 L 95 322.9375 L 95 311.96875 L 88 311.96875 L 88 307.96875 L 95 307.9375 L 95 297.03125 L 88 297.03125 L 88 292.96875 L 95 292.96875 L 95 282.0625 L 88.03125 282.03125 L 88.0625 278.03125 L 95 278.03125 L 95 267.0625 L 88 267.0625 L 88 265 L 85 265 L 83 265 L 81.9375 265 L 80 265 L 76.9375 265 z M 112 265 L 112 267.0625 L 105.1875 267.0625 L 105.1875 278.03125 L 112 278.03125 L 112 282.09375 L 105.1875 282.0625 L 105.1875 292.96875 L 112 292.96875 L 112 297.03125 L 105.1875 297.03125 L 105.1875 307.9375 L 112.0625 307.90625 L 112.0625 311.96875 L 105.1875 311.96875 L 105.1875 322.9375 L 112 322.9375 L 112 324.96875 L 112.0625 324.96875 L 112.0625 325 L 115 325 L 117 325 L 118 325 L 119.9375 325 L 122.9375 325 L 122.9375 324.96875 L 123 324.96875 L 123 265 L 120 265 L 118.0625 265 L 116.9375 265 L 115.0625 265 L 112 265 z "
+         style="fill:#00001c;fill-opacity:1;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline" />
+      <path
+         id="path4214"
+         d="M 80 265 L 80 324.96875 L 85 324.96875 L 85 320 L 92 320 L 92 315 L 85 315 L 85 305 L 92 305 L 92 300 L 85 300 L 85 290 L 92 290 L 92 285 L 85 285 L 85 275 L 92 275 L 92 270 L 85 270 L 85 265 L 80 265 z M 115.0625 265 L 115.0625 270 L 108.09375 270 L 108.09375 275 L 115.0625 275 L 115.0625 285 L 108.09375 285 L 108.09375 290 L 115.0625 290 L 115.0625 300 L 108.09375 300 L 108.09375 305 L 115.0625 305 L 115.0625 315 L 108.09375 315 L 108.09375 320 L 115.0625 320 L 115.0625 324.96875 L 120 324.96875 L 120 265 L 115.0625 265 z "
+         style="fill:#ebeced;fill-opacity:1;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <rect
+         y="265"
+         x="70"
+         height="60"
+         width="60"
+         id="rect4216"
+         style="fill:none;fill-opacity:1;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
   </g>
 </svg>

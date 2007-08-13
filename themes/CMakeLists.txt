@@ -20,5 +20,5 @@ install( FILES kgr_geek/set.svgz kgr_geek/actors.svgz
                DESTINATION ${DATA_INSTALL_DIR}/kgoldrunner/themes/kgr_geek )
 
 install( FILES nostalgia/set.svg nostalgia/actors.svg
-               DESTINATION ${DATA_INSTALL_DIR}/kgoldrunner/themes/stickman )
+               DESTINATION ${DATA_INSTALL_DIR}/kgoldrunner/themes/nostalgia )
 
