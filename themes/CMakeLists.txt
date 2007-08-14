@@ -11,6 +11,7 @@ install( FILES README
                apple_2.desktop
                midnight.desktop
                nostalgia.desktop
+               nostalgia-blues.desktop
                DESTINATION ${DATA_INSTALL_DIR}/kgoldrunner/themes )
 
 install( FILES default/set.svg default/actors.svg
@@ -19,6 +20,6 @@ install( FILES default/set.svg default/actors.svg
 install( FILES kgr_geek/set.svgz kgr_geek/actors.svgz
                DESTINATION ${DATA_INSTALL_DIR}/kgoldrunner/themes/kgr_geek )
 
-install( FILES nostalgia/set.svg nostalgia/actors.svg
+install( FILES nostalgia/blue-set.svg nostalgia/set.svg nostalgia/actors.svg
                DESTINATION ${DATA_INSTALL_DIR}/kgoldrunner/themes/nostalgia )
 
