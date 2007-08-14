@@ -987,6 +987,13 @@ void KGrGame::loadGame()		// Re-load game, score and level.
 
 void KGrGame::checkHighScore()
 {
+    // Don't keep high scores for tutorial games.
+    if (collection->prefix.left(4) == "tute")
+	return;
+
+    if (score <= 0)
+	return;
+
 #ifdef USE_KSCOREDIALOG
     KScoreDialog scoreDialog(
 	    KScoreDialog::Name | KScoreDialog::Level | 
@@ -1007,13 +1014,6 @@ void KGrGame::checkHighScore()
     qint32	prevScore = 0;
     QString	thisUser  = i18n("Unknown");
     int		highCount = 0;
-
-    // Don't keep high scores for tutorial games.
-    if (collection->prefix.left(4) == "tute")
-	return;
-
-    if (score <= 0)
-	return;
 
     // Look for user's high-score file or for a released high-score file.
     QFile high1 (userDataDir + "hi_" + collection->prefix + ".dat");
@@ -1197,13 +1197,6 @@ void KGrGame::checkHighScore()
 
 void KGrGame::showHighScores()
 {
-#ifdef USE_KSCOREDIALOG
-    KScoreDialog scoreDialog(
-	    KScoreDialog::Name | KScoreDialog::Level | 
-	    KScoreDialog::Date | KScoreDialog::Score, 
-	    view);
-    scoreDialog.exec();
-#else
     // Don't keep high scores for tutorial games.
     if (collection->prefix.left(4) == "tute") {
 	KGrMessage::information (view, i18n("Show High Scores"),
@@ -1211,6 +1204,13 @@ void KGrGame::showHighScores()
 	return;
     }
 
+#ifdef USE_KSCOREDIALOG
+    KScoreDialog scoreDialog(
+	    KScoreDialog::Name | KScoreDialog::Level | 
+	    KScoreDialog::Date | KScoreDialog::Score, 
+	    view);
+    scoreDialog.exec();
+#else
     qint16	prevLevel = 0;
     qint32	prevScore = 0;
     int		n = 0;
@@ -1292,14 +1292,16 @@ void KGrGame::showHighScores()
 	score->setTextAlignment (2, Qt::AlignRight);	// Level.
 	score->setTextAlignment (3, Qt::AlignRight);	// Score.
 	score->setTextAlignment (4, Qt::AlignLeft);	// Date.
-	scores->addTopLevelItem (score);
-	if (n == 0) {
-	    scores->setCurrentItem (score);	// Highlight the top score.
+	if (prevScore > 0) {			// Skip score 0 (bad file-data).
+	    scores->addTopLevelItem (score);	// Show score > 0.
+	    if (n == 0) {
+		scores->setCurrentItem (score);	// Highlight the highest score.
+	    }
+	    n++;
 	}
 
 	delete prevUser;
 	delete prevDate;
-	n++;
     }
 
     // Adjust the columns to fit the data.
