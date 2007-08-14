@@ -1288,8 +1288,9 @@ to <quote>brick</quote>.</para>
 single object in a square, or by holding the &LMB; down and dragging
 the mouse, to fill a line or area, such as a long ladder, a large
 block of bricks or a concrete floor. Painting stops wherever you
-release the mouse button. If you make a mistake, you can use the
-<guiicon>Empty space</guiicon> icon to erase it.</para>
+release the mouse button. If you make a mistake, you can use a &RMB; click to
+erase it, or you can select the <guiicon>Empty space</guiicon> icon and draw
+normally.</para>
 
 <para>The hero icon works differently, because there can be only one
 hero. When you paint the hero, he moves from his previous position to
@@ -1642,8 +1643,10 @@ children, Simon and Genevieve.</para>
 
 <para>&kgoldrunner; is written in C++, using &Linux; and the free-software
 version of the portable &Qt; object and &GUI; library.  The current version
-can be compiled and run either with &kde; 3 and &Qt; 3 or with &Qt; 3 alone.</para>
+can be compiled and run with &kde; 4 and &Qt; 4.</para>
 
+<!--- XXX The following paragraphs could be removed, or we may mention that the
+Qt3 version could be built kde-less -->
 <para>The &Qt;-only version of &kgoldrunner; is intended to be almost
 independent of &Linux; and the &kde; desktop.  That means it should be
 fairly easy to port to other operating systems, such as &Windows;
