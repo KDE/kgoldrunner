@@ -1,6 +1,6 @@
 // G022 T wad C
  i18n("Challenge");
- i18n("These tricky little levels were composed by Peter, Simon, Genevieve and their father Ian Wadham.  They use traditional playing rules.  Enjoy! .... ;-) ....");
+ i18n("These tricky little levels were composed by Peter, Simon, Genevieve and their father Ian Wadham.  They use traditional playing rules.  Enjoy!");
 // L001
 //  TTTTTTTTTTTTTTTTTTTTTTTTTTTZTTTTTTTTTTTTTTTTTTTTTTTTTTTZ                          EZ                          EH                          EH                          EH                          EH        HMF T           R  H        HXXXFXMMMMMMMMMMMMMM        HX                          HXMMXX                      HXMXXX                      HXNXXX                      HXNXXX                      HTT                                             XXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Easy Start");
@@ -30,7 +30,7 @@
 // L007
 //                              HMMMMMMMMMM  HMMMMMMM Z     HMNNNNNNREM  HMNN  NMMHMM   HMNMMMMMMMM  HMNMFFMEMH     HMNM         HMNMNNMNMH     HMNM         HMNMNNMNMH     HMNM         HMNMNNMNMH     HMNM         HMNMMMMNMHNNNNNHMNM         HMNNNNNMHHXXMMMHMNM         HMNMMMMMHNNNN  HMNM   MMMMMMHMNM   MHMMMHTHHMNM   MNNNNNHMNMH  MNM  MNHHMNM   MMNHMMFMNMH  MNM  MNHHMNMMMMMMNHMNNMNMH  MNMMMMNHHMNNNNNNNNHMNNMN H  ZZNNNNHNH FMMMMMMNH    MMHM  FMMMMMMXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Goldrunner Prophecy");
- i18n("Peter W. composed this in 1985.  Do you see the prophetic letters GR?  Spooky !!!\n"
+ i18n("Peter W. composed this in 1985.  Do you see the prophetic letters GR?  Spooky!\n"
  "\n"
  "When you collect the row of gold at bottom left, wait there and the first enemy will obligingly fall into the pit above you.\n"
  "\n"
@@ -47,7 +47,7 @@
  "Collect all the gold not in the trough, then release the enemies and lead them around over the tops of ladders, until they drop their gold.");
 // L009
 //  Z                 X   HT    Z           HMXXXX    HF    Z          HMN        HF    Z NN      HN   NNN NNNHFFTT Z MHN  NNNNMHMMMMMMMMM  N  HZ  MXH MMMMMHNNTTN M      HNZ N  H M HMHHMHN X    N   HNZ N   HMMMMHH HX X TTTH TTTHZ F   HM NMHH  M MH    H NFFZ N M HMFMMHH  E HH     H FFZ M   HTTTTH    H      NHTTTZF FM H N  HTTTTHXXFFXXM    Z NF  H NNM  HTT   NN  F    ZMMMMMH NFM   TTH   H      EZMMMNMHMMMM  HTTT   H X    NZN MF H   MH   RHMMMMMHFMMMMXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
- i18n("He's Got the Gold");
+ i18n("He Has The Gold");
  i18n("The right hand enemy gets trapped holding some gold.\n"
  "\n"
  "You can kill him and destroy the gold by digging to the left of the small ladder.  You may need to kill the other enemy and trap him in there too.");
@@ -77,7 +77,7 @@
  "Ignore the enemy.  Let him stay trapped.");
 // L014
 //   R E  E        HN  EE      Z MM M          HMTTTTTTTTTTZ   MEM         HMNT   H   TZ   M M         HMNNT  H  TNZ    M MMMMMMMM HMNNNT H TNNZ    N          HMNNNNTHTNNNZ M  MNNNNNN    HMTTTTTHTTTTZ  XXMMMMMMMMMM HMNNNNNHNNNNZ               HMNNNNNHNNNNZ    MMMMMMMMMM HMNNNNNHNNNNZ               HMNNNNNHNNNNZ                MNNNNNHNNNNZ    MMMMMMMMMMMMMMXMXXMMXMXM                                                        MMMMMMMMMMMMMM MMMMMMMMMMMMMXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
- i18n("Ride 'em Down");
+ i18n("Ride Them Down");
  i18n("Quickly get the first two enemies into the double pit to the left of the gold.  First get both of them into the little box, then release them left.\n"
  "\n"
  "Now fall onto them and collect the gold, then ride the third enemy down and use him to get across to the ladder.");
@@ -118,7 +118,7 @@
 // L020
 //  HTTTTTTTTTTTTTTTTTTRHTTTTTTTH      NN          MH       HFFFNNNNNNNNNNNNNNNMHMM MFFFHXXXXXXXXXXXXXXXXXXXH       H                   H M M FFH        HH  HH     H  MNMNNH       H   H       H   MFFFH      H   H        H  MNNNNH     M H   H  M    HM MXXXXH    MNH MMMMMHNM   H M     H     HXM    MXH   EH       H    HX  HMMH  XXXXXXXXH    H   HX HHMNNXHHHHHHHHH XH   H  HX H M NN XXXXXXXXX  XXXH HHMNH MNNNNNNNNNNNNNNXH NXHMMH MM XXXXXXXMHXXXHXXXHMM HXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Bertie Beetle");
- i18n("The top of this one is similar to the Head Case level (13).  Trap the enemy to the right near the top of the ladder.  Run down the ladder part way and get him to fall into the first of the pits.  You'll need to repeat this a few times.\n"
+ i18n("The top of this one is similar to the Head Case level (13).  Trap the enemy to the right near the top of the ladder.  Run down the ladder part way and get him to fall into the first of the pits.  You will need to repeat this a few times.\n"
  "\n"
  "Now you must get the enemy into the pit at the far bottom left, so that you can run over him as you get the gold from inside the beetle.\n"
  "\n"

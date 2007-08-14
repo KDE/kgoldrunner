@@ -2,17 +2,18 @@
  i18n("Initiation");
  i18n("These 100 levels make an excellent introductory game, as well as a good opportunity for experts to build up high scores.  They were composed by Peter Wadham and use traditional playing rules.\n"
  "\n"
- "The last few levels are very hard, but if you are looking for even more of a challenge, have a go at 'Vengeance of Peter W' .... ;-) ....");
+ "The last few levels are very hard, but if you are looking for even more of a challenge, have a go at 'Vengeance of Peter W' ...");
 // L001
 //                         TH   N TTTTTHH  TTTTT      T H   MMM   HTT      H     T  H        H  HMMM   H   TT   H           H      H  T     H           H      H TT     H           H      H T      H           H  M   HT       H           H               H           H               H           H               H           H          TTTTTH           H          H                H          H              R H XXX XEEEEEEEEEEEEEMMMMMMMMMMMMMMMMMMMMMMMMMMMMXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Don't Panic");
+ i18n("The cover of 'The Hitchhiker's Guide to the Galaxy' by Douglas Adams said so, in large friendly letters, so there is no need to panic.  The enemies are behind a wall and can not reach you.");
 // L002
 //  HTTTTTTTTTTTTTH     E       HNEN N NEN N NHX           XXMXMXMXMXMXMXMHXXXXXXXXXXXXXHTTTTTTTTTTTTTHTTTTTTTTTTTTTHNNNNNNNNNNNNNHNHTTTTTTTTTHNMMMMMMMMMMMMMMHNHNHTTTTTHNHNHTTTTTTTTTTTTTHNHNHNHTHNHNHNHN N N N N N NHNHNHNHNHNHNHNXMXMXMXMXMXMXMHNHNHNHNHNHNHNHTTTTTTTTTTTTTHNHNHNHNHNHNHNHNNNNNNNNNNNNNHNHNHNHNHNHNHNXMMMMMMMMMMMMMHMMMMMMMMMMMMXXTTTTTTTTTTTTTHTTTTTTTTTTTTXXXNNNNNNNNNNNNHNNNNNNNNNNRXXXXMMMMMMMMMMMMMMMMMMMMMMMMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Lust for Gold");
  i18n("When you kill the enemies you can trap them permanently in the pit at top right.");
 // L003
 //  TTTTTTTTTT TRTT  TTTTTTTTTTZ          X X  XH          Z   X            H          ZX X   X         H          Z X   X  X X    X           Z     X X   X    X          Z    F       F   HX         Z   X         X  H X        Z            X   H  X      XZ                H   X    X Z              F H    X XX  Z         F    X H     X  ZX         X X     H        Z X X X X X X TX  XH         ZZ  X   X   XM XX H          Z                H  E      NZXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
- i18n("Ladders?  Trust me !");
+ i18n("Ladders?  Trust me!");
 // L004
 //                 Z                            Z                          Z                            Z                         RZ                         ZXXZ                       Z    Z                     Z      Z                   Z        Z            HTTTTZ          ZTTTTH      H    H          H    H      HN N HEN N  N NEH N NH    HMXMXMXMXMXMFXMXMXMXMXMH   NHN                    NHN  HHH NN  NN     NN   NN HHH MXMXMXMXMXMXMXMXMXMXMXMXMXMXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Drop In and Say Hello");
@@ -24,7 +25,7 @@
  i18n("Check for Traps");
 // L007
 //      R            E         ZMMMMMMMMMHMMMMMM           ZMMNNNNNMMH                 ZMMMMMMMMMH         NNNN    Z         H    NXHXXMMMMMMMMZ         H    N H   NNN    Z         H    N HMMMMMMFFHEZ    NN   H    N HMMMMMMFFMMHHXMMMMMMMMMHHHHHH TTTTTTTTTHHTTTTTTTTTTTTTTTH TTTTTTTTTHH               H      N   HH               H      N   HH               H      N   HH               H      N   HH  NN   E       H     NNN  HMMMMMMMMMMMMMMMMMMMMMMMMMMMMXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
- i18n("Take It Easy !");
+ i18n("Take It Easy!");
 // L008
 //                Z    Z                      Z    Z                      Z    Z                      Z    Z                    TTH E  Z                  TT NHMMMMMMMM             TTNNNNHMMMMMMMMMFFFF        NNNNNNH     NE NNN     FFFMMMMMMMMHMMMMMFFFMHMFM      TTTTTTTTH         H             R   H         H             N   H         H             N   H         H             N   H         H             N   H         H   MMMMMMMMMMMMMNHEHMMMMMMMMMMMXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Fall on a Fortune");
@@ -132,7 +133,7 @@
  i18n("Cat's Eyes");
 // L043
 //  E                           MMTTTT  EE M  ZM  RTTTTTTTTTMMFFFXMFMMMMFMHMMMMMH         TTTHMN   M MH   NMH       HMTTTH MN  M MH    MH       HMTTTH  MN M MMMMFFMH       HMTTTH   MNM M   N MH       HMTTTH    FMMM     MH       HMTTTH    NMMM     MH       HMTTTH    NMMMMMMMMMH       HMTTTH    NMMMMMMMMMH       HMTTTH    NMMMMMMMMMH       HMNMMMHMNNNMMMMMMMMMH       HMM   HMXXXM MMMNNMMH       H     H            EHE      HMXMXMXMXMXMXMXMXMXMHMXMXMXMXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
- i18n("Keep 'em Coming");
+ i18n("Keep Them Coming");
 // L044
 //  HT   M  T   T HMMMMMMMMM  THH T   MM MMM MHTTTTENM   TEHHMHT  NMNMNF MH    MMM  T MHH HNT   F  F MHTT NM   TN MHH HM T   M   MH  MMM  T MMMHH HMN T   FN MH NM   T NM NHH HMFM T   MNMHMMM  T MMM MHH HNNM  T   FMH    TN MN NMHH H  MNE T  FMH   T MMMNMMMHH H  MMMMMT   H  T NM   M  HH HTH  N M TTTHTT MMM MMM EHH   H HM M NN H   M  NMT NMHHMMMMMMM MMMMMHMMMM MMM MMMHH     R   N   H     M  NMMNHHMMMMMMMMMMMMMHMMMMMM MMMN HH         N   H            HXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("The Funnel");
@@ -162,7 +163,7 @@
  i18n("Pitfalls");
 // L053
 //  NT TTTTTE       N          ZHFHN  TT HMMMMMMMM        MZMFMMH  T H       N MMMMMMMMZ TTT H T  HXXXXXXX   TTTTTTZH N NH T H       M  H       MMMH H TT H      M MHMMMMMMM   HXFMTTMMMMMMMMM MH      MHMNHMNMTTMNNNNNEMM MHNNNFMMMHMMMMFMM MMMMMMMMMMMMMMMMMMMH R  NMNTTTTTTTTTTTTTTTTTT  MMMMMHMH  E NNN     TT ENNH MMMMMHMMMMMMMMMMMM H NHMMMMFM N MH  TTTTTTTT  NHMMMMMMMFMMMMMMMH N    N HMMMMMMMMMMFMMM N MH  HE HMMMMMMMMMMMMMFMMMMMMMMMMMMMM              XXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
- i18n("Get IN There !!");
+ i18n("Get IN There!");
 // L054
 //  MNN  TTTTTTTTTTTTTTT   E  NMMMMMHNE   N   R    NHMMMMMMMMMMMMMMHN N     NHMMMM  NN MMMMMMMMMMMH    HMMMMMMMMMMMMMM  NNNN MMMMM HTTTTTTTTTT NMMMMMMMMMMMMMM N  N  N   NHMHTTTTTTTTTTTTT         HMMMMH     N N           HMMMMMMMH MMMMMMMMMH    HMMMMM NN MMH     MMMMMH MMMMMMMMMMMMMMMMMMMH  NMMMHNTTTTTTTTTTTTTT MMMMMMH MMMMHN       N     HMMMMMMMH   MMMMH     N     HMMMMMMMMMHE   MMMH         HMMM NNN MHMMH   MMMH E NN  HMMMMMMMMMMMMMMMHNNMMMMMMMMMMXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("A Steady Climb");
@@ -171,7 +172,7 @@
  i18n("Fall-through Lattice");
 // L056
 //   TTTTTTT        TTTTTTTTTTTTH  NN   MMMMMMM N   E NNN  HHMMMFMMMMMNNNMMMMMH  HMMMHNHH   N   MMMMMMMMMMMMMMMMMMMMHMMMFMMHTN TTNTTN     M TTRMH TTTT M H N N  MMMMMHM   HMMHM N  M HMMMMM MMMMMHM NNHMMHM    M H NN   MN NMHM   HMMHMMMFT THMMMMXMMMMMMHM   HMMHMNNF M   E         HM NNHMMHMMMFMMMMMMMMXMXMXMXMM   HMMH TTTT                T  HMMHMNNM MHTTTT MHMNTTT M NNHMMHMMMM MH    MNHNM   HM   HMMH EN EMHEN N XH  N  HMN EHMMMMMMMMMMMMMMM HMMMMMMMMMMMMXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
- i18n("Get me OUT of Here !!");
+ i18n("Get me OUT of Here!");
 // L057
 //  ZHRHHHEHNNNENNNHEHHHEHNNNENZZHNHNHNHHHHNHHHHNHNHNHHHHNHZZNNHNHNNNTHHHTNNNHNHNNNTHHHZZHHHNHHHHNNNNNHHHHNHHHHNNNNZZNNNNNNNHNHHHNHNNNNNNNHNHHHZZHHHNHHHHNHNHNHHHHNHHHHNHNHZZNTHNHTNNNHNHNNNTHNHTNNNHNHZZHNHNHNHHHHNHHHHNHNHNHHHHNHZZHNHHHNHNNNNNNNHNHHHNHNNNNHZZHNNNNNHHHHNHHHHNNNNNHHHHNHZZNNHHHNNNTHNHTNNNHHHNNNTHNHZZHHHNHHHHNHNHNHHHHNHHHHNHNHZZNNNNNNNHNHHHNHNNNNNNNHNHHHZZMMMMMMMMMMMMMMMMMMMMMMMMMMZZ M M M M M M M M M M M M MZZ M M M M M M M M M M M M MZXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Empty Cellar");
@@ -186,16 +187,16 @@
  i18n("Long Drop");
 // L061
 //  N          N      N   NNNNNNHZZ    Z   HZZZ ZZHZZ HMMMMHH  ZNNZ ZNNHTTTHNNHNNNH    HH  ZMH   HMH   HMMHMMMHNTTTHHNNZ H   H HZZZ   H   HHNNZEHHH  HZZZHNH Z    H     HH  H    H   HMH  Z NNH      H  H    H   H H   HMMH      H  HNNN HNN HNH   H  H      HNR MMMM MMM M      THNTNNNNNTN NNNNNNNNTT TZZZ   H MMHMH HHMMMMMMMM   Z   Z  H   H H H H      N   Z   Z  HZ  H HNHHNNNNNNNHN  Z   Z  H Z H H H HMMMMMMNHNNHNNNH  H  ZHNNNNH HHHHHHHMMM HHH NNHNNNHNHNHXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
- i18n("Party On !!!");
+ i18n("Party On!");
 // L062
 //  MM H MMM H MMM H MMMNHNMMMNHM H H M H H M H H MNHNHNMNHNMH M HMH M HMH M HMHNMNHNHNMHMMMMMHMMMMMHMMMMMHNMMMNHNMMNHNMNHNHNMNHNHNMNHNHNMNHNHNMMNHNHNMNHNHNMNHNHNMNHNHNMNHNMMNHNMMMNHNMMMNHNMMMNHNMMMNHMNHNHNMNHNHNMNHNHNMNHNHNMNHNNHNMNHNHNMNHNHNMNHNHNMNHNHNMHNMMMNHNMMMNHNMMMNHNMMMNHNMMNHNMNHNHNMNHNHNMNHNHNMNHNHNMMNHNHNMNHNHNMNHNHNMNHNHNMNHNMMNHNMMMNHNMMMNHNMMMNHNMMMNHMNHNHNMNHNHNMNHNHNMNHNHNMNHNNHNMNHNHNMNHNHNMNHNHNMNHNHNMHRMMMNHEMMMNHEMMMNHEMMMNHEMMXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Cross-stitch");
 // L063
 //  ZZZZZZZZZZZZH                 Z        ZTTT TTTTTTTTTTTT  Z         H  M        NNNN EZNNNN TTTTHTTFMFMFMFMFMMMMHMZMMMMFNN  H               HNZ    MMFNNH    R          HFZ      MMFHN  H           HNZ        MHFNN TTTTTTTTTTZHFZ         HMMFNN         ZHNZ         H  MMFN      NNZHFZ         H    MMH    MMMMHNZ MMMMMMMMH      H    FNNFHFMMXXXXXXXXXXXXXXXH     FNFHN   E             H      FFHFMMMMMMMHMMMMMMMHNH  E   TTHNMMMHNNNHMMMMMMMHNHMMMMMM  XXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
- i18n("Can't Get Up There");
+ i18n("Cannot Get Up There");
 // L064
 //  R               E       Z   HTTTTTTH    NE          Z   H      H    HH         Z   EH  N   HNNNNH H      NZ     H     HMMMMXXX     TNHTTNNN HHHHHHH            NH  HMMM H NNNNNNNNNNNNNNE  H  H     HMMMMMMMMMMMMMMMMHH    H    H  E             H      MMMHHMMMMMM         H          HHMNNNNMM       H           H MMMMMM M     H HTTTTTTTTTTH         M   H  HTNNNNNNNNNH          M H   HTMMFMMMMMMMNNN        H     T          MMMMMMMMMMMMMMMMMMMMMMMMMMMMXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
- i18n("They're Everywhere !!!");
+ i18n("They Are Everywhere!");
 // L065
 //  RTTTTTTTTTTTTTTTTTTTTTTTTTTTH   H   E   H    E    H  Z ZH N H N N N H N  NN N H Z Z HNMNHNM M MNH M  MMNMNH  Z ZHM MNM M M MNMNNNMNFMMH Z Z MN  F MNM   F MMM F   MH Z ZNHT   THT T   T  TT T  HZ Z HTNT THTNTNT THNNTHTTT H Z ZTHN THT T N THTTTH  NNTHZ Z NNHNNNHNHNHNNNH NHHNHN H Z ZNH HNHNHNH HNHNNNHNHHHNHZ Z H   H H H   H HHH H   HH Z ZTTNTTTNTNTNTTTNTTNNTNTTHZ Z TNTNTNTNTNTNTNTTTNTNNNTH Z ZNH HNHN NH HNHNNNHNHHENHZ Z MMMMMMMMMMMMMMMMMMMMMMMH Z ZXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Rooftops");
@@ -207,7 +208,7 @@
  i18n("Make Them Work for You");
 // L068
 //  ZZZZMTTHZZZZZZMMMMMZZZZZZZZZZZZZMNNHMMMMMMNNNNMNNNNNNNNZZZMMMFMHMMNNNEHMMMMMMMMMMMMHZMNNNNMHMMMMMMMMNNNNMHTTTTMHMMMMMMMHMMNNNNNNHMMMMHMNNNMHHNNNMNNHMMMMMMMMMMNNNHHMMMMHHMMHMMMHMNNNNNNNNHHHHHHHNNMHHNMHTTTHMMMMHMMMMHNNMMNHHNMHHNNMNNNHMZZMHTZZMNHNMNMNHHMHXXFXXMMHMNNMHNTZMNNHMHZFNHMHNNNMZNMHMFHH NNTMNHZMHTTMNMHMMMZMNMHMNNNHTTZMHNZMZNHNMMHNNNNNMNHMMMNMTZZMZHZMZMHNZMHMMMMHNNHMNNNMZZHMZZZMZMHNEMHNNNNMMMHMMMMMXXXMXXXMMMMMMMHMMMMNNNHNNNNNNNNNNNNNNNNNREHXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
- i18n("Get Going !!");
+ i18n("Get Going!");
 // L069
 //  R   M                     MZMMM M                     MZ  N MMMMMMMMMMMMMMMMMMMMMMMZHMXFXHTTTTTTTHENNNM NNNMNNNZH N EHMNMNMN HMMMHM HMHMHMHZHMXFXHMNMNMNMHTT H  HMHNHMHZH N EHMNMNMNMH NM MMMMMMM HZHMXFXHMNMNMNMH HHM  HHHHHHHZH N  HMNMNMNMH NHMM HMMMMMMZHMXFXHMNMNMNMH MHNNMHNNNNNNZH N  HMNMNMNMH MMMMM MMMMMMHHMXFXHMNMNMNMH   TNNMNNNNNNHH N  HMNMNMNMHFMMNHMMMMHMHM HMXFXHMFMFMMF M  HM  NMH H MHNNNNHNNNNNNNMNNNHMNNNMH HEE MMMM MMMMMMHNHMMMMMMMMMMMMMXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Three Chimneys");
@@ -243,7 +244,7 @@
  i18n("The Dotted Line");
 // L080
 //                              HE    H     H  R  H     H E H     H     H     H     H   H NTN H NTN H NTN H NTN H N  MMZMM MMZMM MMZMM MMZMM MMZ   H     H     H     H     HTN H NTN H NTN H NTN H NTN HZMM MMZMM MMZMM MMZMM MMZMM H     H     H     H     H   H NTN H NTN H NTN H NTN H NT MMZMM MMZMM MMZMM MMZMM MMZ   H     H     H     H     HTN H NTN H NTN H NTN H NTN H MMZMM MMZMM MMZMM MMZMM MM    Z     Z     Z     Z         Z     Z     Z     Z      XXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
- i18n("Don't Look Down (1)");
+ i18n("Do Not Look Down (1)");
 // L081
 //  R           X               XMXXXXMXXXXXXHTTTTTTTTTT   EXM    F     XH          MN EXXXMXXXXXMXXXHMMMMMMMMMM MMMX  F  X  F  XHMMMMMMMMM     XMXXXMXMXXXMXHMMMMMMMM      XF X FXF   FXHM MMMMM  F    XXMXMXXXXXMXXHM  MMM  MM    X F F   X F XHM   N   N     XMXXXXMMXMXXXHM             XM    FM F  XHM FMMMFF N    XXMXXMXXXXXMXHMMMMMFFXMX    X F  F     MXHMNNNNNNNEM    XXXXMXXMXMMXXHMMMMMMMMMM    X   M  F FF  H             NXXXXXXXXXXXXMHMMMMMMMMMM MMMXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Getting Started");
@@ -255,19 +256,19 @@
  i18n("Easy Middle");
 // L084
 //  E                           ZMMMMMMMMMMMMMMMMMMMMMMMMMMZZE    H     H  R  H     HEEZZ NTN H NTN H NTN H NTN H NZZMMZMM MMZMM MMZMM MMZMM MMZM  H     H     H     H     M N H NTN H NTN H NTN H NTN H MM MMZMM MMZMM MMZMM MMZMM       H     H     H     H     NTN H NTN H NTN H NTN H N  MMZMM MMZMM MMZMM MMZMM MMZ   H     H     H     H     H N H NTN H NTN H NTN H NTN H MMZMM MMZMM MMZMM MMZMM MMZ   Z     Z     Z     Z     Z   Z     Z     Z     Z     ZXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
- i18n("Don't Look Down (2)");
+ i18n("Do Not Look Down (2)");
 // L085
 //   HTTTTTTTT H   TTTTTTTTTTTTZH    TT   HHTHFM T      H  ZFFFMH M  HMHTHMHHEMMMMMMHTTZMMMMH  MFMHTTTMH   MMMMMH  Z   THE  MHHTTHMH T  TTTTT  Z TH T     HHT MMH THTTTT   ZH    TTT  H  HMHH HTTTT T  Z HT    HMTHTTHMHT H H  H   Z T H   HMMMMMM H THTTTTH   ZH TTH THE     TH T  TTTHT  Z HTTT     TTTH TTT H   H E Z TTT H   HT  T  H HTTTT H FZH T TH    TH  TTHT  HTTHTHFZHT HT    H  THTHT TTTTTH  NZ  T TH  H THTTTTTHTTTH T   ZRH H HM  TH H   H H H HFFHZZXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Which Way?");
 // L086
 //  E                           Z  N  ENTN     NTN   ENTE E ZMMMMMMMFMMMMMMMFMMMMMMFMMM Z  NN  RT  NN   T  NN  T    ZMMMMMMMFMMMMMMMFMMMMMMFMMM Z  NN   T  NN   T  NN  T    ZMMMMMMMFMMMMMMMFMMMMMMFMMM Z  NN   T  NN   T  NN  T    ZMMMMMMMFMMMMMMMFMMMMMMFMMM Z  NN   T  NN   T  NN  T    ZMMMMMMMFMMMMMMMFMMMMMMFMMM Z  NN   T  NN   T  NN  T    ZMMMMMMMFMMMMMMMFMMMMMMFMMM Z  NN   T  NN   T  NN  T    ZMMMMMMMFMMMMMMMFMMMMMMFMMM                             XXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
- i18n("Don't Look Down (3)");
+ i18n("Do Not Look Down (3)");
 // L087
 //             E     E        E NTTT  NNNN   TTTH NNN TTTTZ MMMNHMMMMMMFHN  H XXXX    H   NNH NN    MFF H NNN  HMMM MMMNH FHN     N H MMMH H   NN  NH NMHN    MMH    H MMMHMMMMNHMM MHN N   H    H    HM  NN     MH MMM H HHMM   HHNMMMN      H   N H H      H NN  NMMMMMXH   MMH MMH    MMHMMMNMMMMMMH N   H   H M    H  NNMMMMMMH MMM H   HM HM NHMMMNMMNMMMH   N HNHMM  H MMM   NMMNMMMMMMMMMMMM    H    MM   R  E        E     H    MMMFMMMMMMMMMMMMMMMMMMMHMMMMXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
- i18n("Drop ???");
+ i18n("Drop?");
 // L088
 //   NHHH   NHN  HNNNHTN     EEZ HNNNR NHNHN EHHH  HNNNNNNNZ  HHNN HHHHH  NH   NXXXXXXXZ NNNHN HNNNHN NH   N       Z HHH N HNNNHN NH   N       Z   NHN  HNNTN H    N       Z  NHNHNNHNH HNH    N       Z  HHHHHNHNH HNH    N       Z  H   HNHNH HNH    N       Z  H   HTTH   H     N       ZNN  NNN  NNN H     NNNTHTHTHHH  HHH NHHH H  H NHHHNHNHNHH H HNN HNN  H NHNHNN NHNHNHH H HH  NHHNNHNNHN HHN H H HHNHNHNN NNNHNHNNH NNNH N N NHHNNHHHNHHHNNNHHNNHHHNNHNHNHXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
- i18n("Help !!!");
+ i18n("Help!");
 // L089
 //   TTTT  NNHHHHHHHHHHHN  TTTT HE    NHHHHHHHHHHHHHHN    EHH    NHHHHNH HEH NHHHHN    HHTTTTHHH NHN N N HN HHHTTTTHH    HHH H NT   N H NHH    HH    HH    XTMM X    HH    HHTTTTHN     NMMN    NHHTTTTHHE    HN   MMMMMMT  NH    EHH      HN  MNMMNM  NH      HH       HNNMFMMMMNNH       HH       MMMMFMMMMMMM       HH      MMHHHHHNHHNHMM      HH      MMNHHNHHHHHNMM      HH       MMMMMMMMMMMM       HH         MMMMMMMMR        HXMXMXMXMXM MMMMMM MXMXMXMXMXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Yorick's Skull");
@@ -297,10 +298,10 @@
  NOTi18n("Das Boot");
  i18n("This level is named after the famous German submarine war film and dedicated to Marco Krüger of Berlin, the original author of KGoldrunner.\n"
  "\n"
- "Just one small hint .... if you stand on the right hand end of the boat you can get the enemy to fall towards you .... the rest is up to you !!!!");
+ "Just one small hint ... if you stand on the right hand end of the boat you can get the enemy to fall towards you ... the rest is up to you!");
 // L098
 //   T   T  T   T  T   T  T   TEH T T HH T T HH T T HH   T HH  T  HH  T  HH  T  HH  T  HH TNT HH TNT HH T N HH T   HHTEXNTHHTNX THHT NXTHHTXN  HH N X HH X N HHN XNNHHTNX NHH X   HH   X HHXN XXHH X  XHHNN  T NT   NHH X  TN T  N HHXX T NXNT  XHHN  T XN T X HH  T NX X T  HHX T N X NT  HH T  X NNN T HH T NX  NX T HHT  N  XXX NTHHTN X N X N THH N XNNN   X HH X   XN  X  HH XN XXXN N  HH    N X N N HH  X    X X T  T   X   X X HH          T ER T          HXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
- i18n("Quick !  RUN !!!");
+ i18n("Quick!  RUN!");
 // L099
 //                             Z          N    N        N  Z      TT  HM  FHMMMMMMMHZ MZNTTTTH  TTHM  FH       MMXXZH TTTTTTTN M  FMMMHHFMHM   ZHT T TNTTH M  F  N H  HMMMMMH THT HTTT M  FNTHFHFFHTTTT  TTH T    HM  FHTNFHF     THH TT  T  H M  NNTHFHF NH HTNH   H  TTTHM  FHTNFHF H T  HH    HTTTT M  FNTHFHF H  T HH      THTHM  FHTNFHF HT  THHN  TTH    M  FNTHFHF NTH   HT HTTTTNN M  FHTNFHF HTTTTN        HT MR FNTHFHT   TTTHMMMMMMMFHMH MM H  F   HMFFFFXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Surprise Ending");
