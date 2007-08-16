@@ -73,20 +73,12 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     mainLayout->setSpacing(spacing);
     mainLayout->setMargin(margin);
 
-    QHBoxLayout * hboxLayout = new QHBoxLayout();
-    hboxLayout->setSpacing(6);
-    hboxLayout->setMargin(0);
-
-    collnL    = new QLabel (i18n("List of games:"), dad);
-    hboxLayout->addWidget (collnL);
-
-    QSpacerItem * spacerItem = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-    hboxLayout->addItem(spacerItem);
-
-    mainLayout->addLayout(hboxLayout);
+    collnL    = new QLabel
+                (i18n("<html><b>Please select a game:</b></html>"), dad);
+    mainLayout->addWidget (collnL, 5);
 
     colln     = new QTreeWidget (dad);
-    mainLayout->addWidget (colln);
+    mainLayout->addWidget (colln, 50);
     colln->setColumnCount (4);
     colln->setHeaderLabels (QStringList() <<
                             i18n("Name of Game") <<
@@ -103,21 +95,19 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     QFont f = collnN->font();
     f.setBold (true);
     collnN->setFont (f);
-
     hboxLayout1->addWidget(collnN);
 
-    QSpacerItem * spacerItem1 = new QSpacerItem(21, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
+    QSpacerItem * spacerItem1 = new QSpacerItem
+			(21, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
     hboxLayout1->addItem(spacerItem1);
 
-    collnA = new QPushButton(i18n("More Info"), dad);
-    hboxLayout1->addWidget(collnA);
-
-    mainLayout->addLayout(hboxLayout1);
-
     collnD    = new QLabel ("", dad);		// Description of collection.
-    mainLayout->addWidget (collnD);
+    hboxLayout1->addWidget(collnD);
+    mainLayout->addLayout(hboxLayout1, 5);
 
+    collnAbout = new QTextEdit (dad);
+    collnAbout->setReadOnly (true);
+    mainLayout->addWidget (collnAbout, 25);
 
     QFrame * separator = new QFrame (dad);
     separator->setFrameShape(QFrame::HLine);
@@ -127,12 +117,13 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 	dad->	setWindowTitle (i18n("Select Game"));
 	QLabel * startMsg = new QLabel
 	    ("<b>" + i18n("Level 1 of the selected game is:") + "</b>", dad);
-	mainLayout->addWidget (startMsg);
+	mainLayout->addWidget (startMsg, 5);
     }
     else {
 	dad->	setWindowTitle (i18n("Select Game/Level"));
-	QLabel * selectLev = new QLabel (i18n("Select level:"), dad);
-	mainLayout->addWidget (selectLev);
+	QLabel * selectLev = new QLabel
+	    ("<b>" + i18n("Please select a level:") + "</b>", dad);
+	mainLayout->addWidget (selectLev, 5);
     }
 
     QGridLayout * grid = new QGridLayout;
@@ -147,6 +138,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 
     QWidget * numberPair = new QWidget(dad);
     QHBoxLayout *hboxLayout2 = new QHBoxLayout(numberPair);
+    hboxLayout2->setMargin (0);
     numberPair->setLayout(hboxLayout2);
     grid->addWidget (numberPair, 2, 1);
     numberL   = new QLabel (i18n("Level number:"), numberPair);
@@ -182,6 +174,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     // Base the geometry of the dialog box on the playing area.
     int cell = parent->width() / (FIELDWIDTH + 4);
     dad->	setMinimumSize ((FIELDWIDTH*cell/2), (FIELDHEIGHT-3)*cell);
+    qDebug() << "Computed the dialog box geometry";
 
     // Set the default for the level-number in the scrollbar.
     number->	setTracking (true);
@@ -255,7 +248,6 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     thumbNail->show();
 
     connect (colln,   SIGNAL (itemSelectionChanged()), this, SLOT (slColln()));
-    connect (collnA,  SIGNAL (clicked ()), this, SLOT (slAboutColln ()));
 
     connect (display, SIGNAL (textChanged (const QString &)),
 		this, SLOT (slUpdate (const QString &)));
@@ -280,6 +272,8 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     connect (OK,      SIGNAL (clicked ()), this,   SLOT (accept ()));
     connect (CANCEL,  SIGNAL (clicked ()), this,   SLOT (reject ()));
     connect (HELP,    SIGNAL (clicked ()), this,   SLOT (slotHelp ()));
+#else
+    connect (this,    SIGNAL (helpClicked()), this, SLOT (slotHelp ())); // IDW
 #endif
 }
 
@@ -296,31 +290,44 @@ void KGrSLDialog::slSetCollections (int cIndex)
     int i;
     int imax = collections.count();
 
-    // Set values in the combo box that holds collection names.
+    // Set values in the list box that holds details of available games.
+    // The list is displayed in order of skill then the kind of rules.
     colln->clear();
     slCollnIndex = -1;
 
-    for (i = 0; i < imax; i++) {
-	QStringList data;
-	data << collections.at(i)->name << 
-	    ((collections.at(i)->settings == 'K') ? 
-		i18nc("Rules", "KGoldrunner") :
-                i18nc("Rules", "Traditional")) <<
-	    QString().setNum (collections.at(i)->nLevels) <<
-	    ((collections.at(i)->skill == 'T') ? 
-		i18nc("Skill Level", "Tutorial") :
-	        ((collections.at(i)->skill == 'N') ? 
-		i18nc("Skill Level", "Normal") :
-		i18nc("Skill Level", "Championship")));
-	KGrGameListItem * thisGame = new KGrGameListItem (data, i);
-	colln->addTopLevelItem (thisGame);
+    QList<char> sortOrder1, sortOrder2;		// Crude, but effective.
+    sortOrder1 << 'N' << 'C' << 'T';
+    sortOrder2 << 'T' << 'K';
 
-	if (slCollnIndex < 0) {
-	    slCollnIndex = i;		// There is at least one collection.
-	}
-	if (i == cIndex) {
-	    // Mark the currently selected collection (or default 0).
-	    colln->setCurrentItem (thisGame);
+    foreach (char sortItem1, sortOrder1) {
+	foreach (char sortItem2, sortOrder2) {
+	    for (i = 0; i < imax; i++) {
+		if ((collections.at(i)->skill == sortItem1) &&
+		    (collections.at(i)->settings == sortItem2)) {
+		    QStringList data;
+		    data
+			<< collections.at(i)->name
+			<< ((collections.at(i)->settings == 'K') ? 
+			    i18nc("Rules", "KGoldrunner") :
+			    i18nc("Rules", "Traditional"))
+			<< QString().setNum (collections.at(i)->nLevels)
+			<< ((collections.at(i)->skill == 'T') ? 
+			    i18nc("Skill Level", "Tutorial") :
+			    ((collections.at(i)->skill == 'N') ? 
+			    i18nc("Skill Level", "Normal") :
+			    i18nc("Skill Level", "Championship")));
+		    KGrGameListItem * thisGame = new KGrGameListItem (data, i);
+		    colln->addTopLevelItem (thisGame);
+
+		    if (slCollnIndex < 0) {
+			slCollnIndex = i; // There is at least one collection.
+		    }
+		    if (i == cIndex) {
+			// Mark the currently selected collection (default 0).
+			colln->setCurrentItem (thisGame);
+		    }
+		}
+	    } // End "for" loop.
 	}
     }
 
@@ -331,19 +338,10 @@ void KGrSLDialog::slSetCollections (int cIndex)
     // Fetch and display information on the selected collection.
     slColln ();
 
-    // IDW Make the column for the game's name a bit wider.
-    // colln->show();
-    // QTreeWidgetItem * row = colln->currentItem();
-    // kDebug() << "Size hint for column 0:" << row->sizeHint (0);
-    // IDW row->setSizeHint (0, QSize (colln->width()/2, 30));
-    // row->setSizeHint (0, QSize (180, 20));
-    // kDebug() << "Size hint for column 0:" << row->sizeHint (0);
-    // QWidget * w = colln->itemWidget (row, 0);
-    // if (w) {
-    // int h = w->height();
-    // w->setMinimumSize (colln->width()/2, h);
-    // }
-    // else kDebug() << "The widget pointer is null.";
+    // Make the column for the game's name a bit wider.
+    colln->header()->setResizeMode (0, QHeaderView::ResizeToContents);
+    colln->header()->setResizeMode (1, QHeaderView::ResizeToContents);
+    colln->header()->setResizeMode (2, QHeaderView::ResizeToContents);
 }
 
 /******************************************************************************/
@@ -420,23 +418,14 @@ void KGrSLDialog::slColln ()
 	collnD->setText (levCnt + i18n(" levels, uses Traditional rules."));
 #endif
     collnN->setText (collections.at(n)->name);
-}
-
-void KGrSLDialog::slAboutColln ()
-{
-    // User clicked the "About" button ...
-    int		n = slCollnIndex;
-    QString	title = i18n("About \"%1\"", collections.at(n)->name);
-
-    if (collections.at(n)->about.length() > 0) {
-	// Convert game description to ASCII and UTF-8 codes, then translate it.
-	KGrMessage::wrapped (slParent, title,
-			i18n(collections.at(n)->about.toUtf8().constData()));
+    QString s;
+    if (collections.at(n)->about.isEmpty()) {
+	s = i18n("Sorry, there is no further information about this game.");
     }
     else {
-	KGrMessage::wrapped (slParent, title,
-	    i18n("Sorry, there is no further information about this game."));
-    }
+	s = (i18n(collections.at(n)->about.toUtf8().constData()));
+    } 
+    collnAbout->setText (s);
 }
 
 void KGrSLDialog::slShowLevel (int i)

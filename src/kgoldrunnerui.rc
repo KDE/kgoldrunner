@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<gui version="4" name="kgoldrunner" >
+<gui version="5" name="kgoldrunner" >
 <MenuBar>
     <Menu name="game" >
-        <Action append="new_merge"	name="play_any" />
-        <Action append="new_merge"	name="play_next" />
-        <Action append="new_merge"	name="tutorial" />
         <Action append="save_merge"	name="save_edits" />
         <Action append="misc_merge"	name="kill_hero" />
     </Menu>
     <Menu name="editor" > <text>&amp;Editor</text>
         <Action				name="create_level" />
         <Action				name="edit_any" />
-        <Action				name="edit_next" />
         <Separator/>
         <Action				name="save_edits" />
         <Action				name="move_level" />

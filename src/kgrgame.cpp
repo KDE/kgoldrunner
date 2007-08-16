@@ -522,6 +522,14 @@ int KGrGame::loadLevel (int levelNo)
 	view->setMousePos (startI, startJ);
     }
 
+    // If we are starting a new level, save it in the player's config file.
+    if (newLevel) { // IDW
+	KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
+	gameGroup.writeEntry ("GamePrefix", collection->prefix);
+	gameGroup.writeEntry ("Level_" + collection->prefix, level);
+	gameGroup.sync();		// Ensure that the entry goes to disk.
+    }
+
     // Connect play-mode slot to signal from "view".
     connect (view, SIGNAL(mouseClick(int)), SLOT(doDig(int)));
 
@@ -2461,10 +2469,28 @@ bool KGrGame::initCollections ()
 
     // DISABLED xxxxx  mapCollections();	// Check ".grl" file integrity.
 
-    // Set the default collection (first one in the SYSTEM "games.dat" file).
+    // Set the default collection of levels (first in the list) and the level.
     collnIndex = 0;
+    level = 1;
+
+    // Get the most recent collection and level that was played by this user.
+    // If he/she has never played before, set it to Tutorial, level 1.
+    KConfigGroup gameGroup (KGlobal::config(), "KDEGame"); // Get prev game.
+    QString prevGamePrefix = gameGroup.readEntry ("GamePrefix", "tute");
+    int prevLevel = gameGroup.readEntry ("Level_" + prevGamePrefix, 1);
+
+    // Use that collection and level, if it is among the current collections.
+    int n = 0;
+    foreach (collection, collections) {
+	if (collection->prefix == prevGamePrefix) {
+	    collnIndex = n;
+	    level = prevLevel;
+	    break;
+	}
+	n++;
+    }
     collection = collections.at (collnIndex);
-    level = 1;					// Default start is at level 1.
+    kDebug()<< "Config() Game and Level" << prevGamePrefix << prevLevel << collnIndex;
 
     return (true);
 }

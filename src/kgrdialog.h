@@ -29,7 +29,9 @@
 
 #include <QListWidget>
 #include <QTreeWidget>
+#include <QHeaderView>
 #include <QTreeWidgetItem>
+
 #include <QScrollBar>
 #include <QLineEdit>
 #include <QPushButton>
@@ -67,7 +69,6 @@ public:
 private slots:
     void slSetCollections (int cIndex);
     void slColln ();
-    void slAboutColln ();
     void slShowLevel (int i);
     void slUpdate (const QString & text);
     void slPaintLevel ();
@@ -88,6 +89,7 @@ private:
     QLabel *		collnN;
     QLabel *		collnD;
     QPushButton *	collnA;
+    QTextEdit *		collnAbout;
 
     QLabel *		numberL;
     QLineEdit *		display;

@@ -152,10 +152,7 @@ KGoldrunner::KGoldrunner()
     show();
 
     // Queue the call to the "Start Game" dialog: let KMainWindow show first.
-    QMetaObject::invokeMethod(game, "startLevelOne", Qt::QueuedConnection);
-
-    // Queue the resizing of KMainWindow.
-    // IDW QMetaObject::invokeMethod(this, "resizeMainWindow", Qt::QueuedConnection);
+    QMetaObject::invokeMethod(game, "startAnyLevel", Qt::QueuedConnection);
 }
 
 KGoldrunner::~KGoldrunner()
@@ -170,15 +167,15 @@ void KGoldrunner::setupActions()
 
     // New Game...
     // Load Saved Game...
-    // Play Any Level...
-    // Play Next Level...
-    // Tutorial
+    // IDW // Play Any Level...
+    // IDW // Play Next Level...
+    // IDW // Tutorial
     // --------------------------
 
     QAction * newAction =	KStandardGameAction::
 				gameNew (
 				game,
-				SLOT(startLevelOne()), this);
+				SLOT(startAnyLevel()), this);
     actionCollection()->addAction(newAction->objectName(), newAction);
     newAction->			setText (i18n("&New Game..."));
     QAction * loadGame =	KStandardGameAction::
@@ -187,13 +184,13 @@ void KGoldrunner::setupActions()
     actionCollection()->addAction(loadGame->objectName(), loadGame);
     loadGame->			setText (i18n("&Load Saved Game..."));
 
-    QAction* playAnyAct = actionCollection()->addAction("play_any");
-    playAnyAct->setText(i18n("&Play Any Level..."));
-    connect(playAnyAct, SIGNAL(triggered(bool)), game, SLOT(startAnyLevel()));
+    // IDW QAction* playAnyAct = actionCollection()->addAction("play_any");
+    // IDW playAnyAct->setText(i18n("&Play Any Level..."));
+    // IDW connect(playAnyAct, SIGNAL(triggered(bool)), game, SLOT(startAnyLevel()));
 
-    QAction* playNextAct = actionCollection()->addAction("play_next");
-    playNextAct->setText(i18n("Play &Next Level..."));
-    connect(playNextAct, SIGNAL(triggered(bool)), game, SLOT(startNextLevel()));
+    // IDW QAction* playNextAct = actionCollection()->addAction("play_next");
+    // IDW playNextAct->setText(i18n("Play &Next Level..."));
+    // IDW connect(playNextAct, SIGNAL(triggered(bool)), game, SLOT(startNextLevel()));
 
     // Save Game...
     // Save Edits... (extra copy)
@@ -243,7 +240,7 @@ void KGoldrunner::setupActions()
 
     // Create a Level
     // Edit Any Level...
-    // Edit Next Level...
+    // IDW // Edit Next Level...
     // --------------------------
 
     QAction* createAct = actionCollection()->addAction("create_level");
@@ -256,9 +253,9 @@ void KGoldrunner::setupActions()
     editAnyAct->setIcon(KIcon("document-open"));
     connect( editAnyAct, SIGNAL(triggered(bool)), game, SLOT(updateLevel()));
 
-    QAction* editNextAct = actionCollection()->addAction("edit_next");
-    editNextAct->setText(i18n("Edit &Next Level..."));
-    connect( editNextAct, SIGNAL(triggered(bool)), game, SLOT(updateNext()));
+    // IDW QAction* editNextAct = actionCollection()->addAction("edit_next");
+    // IDW editNextAct->setText(i18n("Edit &Next Level..."));
+    // IDW connect( editNextAct, SIGNAL(triggered(bool)), game, SLOT(updateNext()));
 
     // Save Edits...
     // Move Level...
