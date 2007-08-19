@@ -54,6 +54,11 @@ int main (int argc, char **argv)
     about.addCredit(ki18n("Eugene Trounev"),
 		      ki18n("Artwork for background of Geek City theme"), 
 		      "irs_me@hotmail.com");
+    about.addCredit(ki18n("Luciano Montanaro"),
+		      ki18n("Nostalgia themes, improvements to runners, "
+			    "multiple-backgrounds feature, fade-in/fade-out "
+			    "feature and several other ideas"), 
+		      "mikelima@gmail.com");
 
     KCmdLineArgs::init (argc, argv, &about);
 

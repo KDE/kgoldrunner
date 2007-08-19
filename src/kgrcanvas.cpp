@@ -17,11 +17,6 @@
 
 #include "kgrcanvas.h"
 
-#ifdef KGR_PORTABLE
-// If compiling for portability, redefine KDE's i18n.
-#define i18n tr
-#endif
-
 #include <QPixmap>
 #include <QList>
 #include <QLabel>

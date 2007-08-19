@@ -10,11 +10,6 @@
 
 #include "kgrdialog.h"
 
-#ifdef KGR_PORTABLE
-// If compiling for portability, redefine KDE's i18n.
-#define i18n tr
-#endif
-
 #include "kgrconsts.h"
 #include "kgrcanvas.h"
 #include "kgrgame.h"
@@ -183,6 +178,10 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     slSetCollections (defaultGame);
 
     // Vary the dialog according to the action.
+    QString s1 = i18nc("Default action at startup of game", "PLAY");
+    QString s2 = i18nc("Alternate action at startup of game", "Select Level");
+    QString s3 = i18nc("Alternate action at startup of game", "Use Menu");
+
     QString OKText = "";
     switch (slAction) {
     case SL_START:	// Must start at level 1, but can choose a collection.
@@ -401,7 +400,6 @@ void KGrSLDialog::slColln ()
 
     slShowLevel (number->value());
 
-#ifndef KGR_PORTABLE
     int levCnt = collections.at(n)->nLevels;
     if (collections.at(n)->settings == 'K')
 	collnD->setText (i18np("1 level, uses KGoldrunner rules.",
@@ -409,14 +407,6 @@ void KGrSLDialog::slColln ()
     else
 	collnD->setText (i18np("1 level, uses Traditional rules.",
 				"%1 levels, uses Traditional rules.", levCnt));
-#else
-    QString levCnt;
-    levCnt = levCnt.setNum (collections.at(n)->nLevels);
-    if (collections.at(n)->settings == 'K')
-	collnD->setText (levCnt + i18n(" levels, uses KGoldrunner rules."));
-    else
-	collnD->setText (levCnt + i18n(" levels, uses Traditional rules."));
-#endif
     collnN->setText (collections.at(n)->name);
     QString s;
     if (collections.at(n)->about.isEmpty()) {
@@ -527,8 +517,8 @@ void KGrSLDialog::slotHelp ()
 	    break;
 	}
 	s += i18n("\n\nClick on the list box to choose a game.  "
-	     "Below the list box you can see \"More Info\" about the "
-	     "selected game, how many levels there are and what "
+	     "Below the list box you can see more information about the "
+	     "selected game, including how many levels there are and what "
 	     "rules the enemies follow (see the Settings menu).\n\n"
 	     "You select "
 	     "a level number by typing it or using the scroll bar.  As "
@@ -734,13 +724,8 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
 	    ecPrefix->	setEnabled (false);
 	}
 	QString		s;
-#ifndef KGR_PORTABLE
 	nLevL->		setText (i18np("1 level", "%1 levels",
 					collections.at(defaultGame)->nLevels));
-#else
-	nLevL->		setText (i18n("%1 levels",
-				 collections.at(defaultGame)->nLevels));
-#endif
 	OKText = i18n("Save Changes");
     }
     else {					// Create a collection.
