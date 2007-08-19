@@ -130,13 +130,23 @@ ordinary bricks.</para>
 <sect2>
 <title>Starting the Game</title>
 
-<!--- xxxx IDW Depends on dialog box design .... -->
-<para>When the &kgoldrunner; window appears, click on the name of one
-of the games in the list displayed, then click on the <guibutton>Start
-Game</guibutton> button. Level 1 of the game you selected will appear
-and the mouse pointer will be over the hero. You start play by moving
-the mouse, clicking the mouse or pressing any key that can control the
-hero (&eg; <keycap>Space</keycap>), but avoid using
+<para>The first popup dialog box shows you the names, number and preview
+of the last game and level you loaded or, if you have not played before,
+the same information for Tutorial level 1.</para>
+
+<para>Click on the <guibutton>PLAY</guibutton> button to begin playing
+immediately. Otherwise you can click on the <guibutton>Quit</guibutton> button,
+the <guibutton>Select Level</guibutton> button or the
+<guibutton>Use Menu</guibutton> button. These will abort KGoldrunner, if
+you do not wish to play, show you a Select Level dialog, where you can choose
+a different game and level, or terminate the dialog, leaving you free to use
+the &kgoldrunner; menu.</para>
+
+<para>If you have chosen to play a game and level, it will then appear
+and the mouse pointer will be over the hero. In a tutorial game, there
+will be an explanatory message before each level begins. You start play
+by moving the mouse, clicking the mouse or pressing any key that can
+control the hero (&eg; <keycap>Space</keycap>), but avoid using
 <keycap>Q</keycap>, <keycap>S</keycap>, <keycap>P</keycap> or &Esc; at
 this stage. You start each level in the same way.</para>
 
