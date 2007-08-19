@@ -1,0 +1,9 @@
+[KDEGameTheme]
+Name=The treasure of Egypt
+Description=Help Matt Goldrunner escape the the traps of ancient Egypt.
+Author=Eugene Trounev
+Set=egypt/egypt_kgr.svg
+Actors=egypt/actors.svg
+DrawCanvasBorder=0
+BorderColor=#803f00
+TextColor=#FFFFFF

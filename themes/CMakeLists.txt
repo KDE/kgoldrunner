@@ -5,6 +5,7 @@
 ########### install files ###############
 
 install( FILES README
+	       egypt.desktop
                default.desktop
                kgr_geek.desktop
                kgoldrunner.desktop
@@ -23,3 +24,5 @@ install( FILES kgr_geek/set.svgz kgr_geek/actors.svgz
 install( FILES nostalgia/blue-set.svg nostalgia/set.svg nostalgia/actors.svg
                DESTINATION ${DATA_INSTALL_DIR}/kgoldrunner/themes/nostalgia )
 
+install( FILES egypt/egypt_kgr.svg egypt/actors.svg
+               DESTINATION ${DATA_INSTALL_DIR}/kgoldrunner/themes/egypt )
