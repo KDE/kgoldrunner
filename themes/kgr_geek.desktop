@@ -2,6 +2,7 @@
 Name=Geek City
 Name[es]=Ciudad griega
 Name[fa]=شهر Geek
+Name[ne]=गीक शहर
 Name[pt]=Cidade dos Cromos
 Name[pt_BR]=Cidade dos Cromos
 Name[sv]=Nördstaden
@@ -10,6 +11,7 @@ Description[el]=Ο ήρωας έχει παγιδευτεί μέσα σε ένα
 Description[es]=El héroe está atrapado dentro de una máquina.
 Description[fa]=قهرمان درون تله رایانه افتاد.
 Description[ja]=ヒーローがコンピュータの中に閉じ込められています。
+Description[ne]=नायक कम्प्युटरको भित्र थुनिएको छ ।
 Description[pt]=O herói está preso dentro de um computador.
 Description[pt_BR]=O herói está preso dentro de um computador.
 Description[sv]=Hjälten är fångad i en dator
