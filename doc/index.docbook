@@ -967,10 +967,21 @@ pin-sharp monitors.</para>
 
 <varlistentry>
 <term><menuchoice>
+<guimenu>Themes</guimenu><guimenuitem>The Treasure of Egypt</guimenuitem>
+</menuchoice></term>
+<listitem>
+<para>Matt Goldrunner finds himself in an Ancient Egyptian temple, being
+pursued by mummies who are determined to protect their ancestral jewels
+at all costs.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
 <guimenu>Themes</guimenu><guimenuitem>Geek City</guimenuitem>
 </menuchoice></term>
 <listitem>
-<para>The hero is trapped inside a computer. Will he escape
+<para>Our hero is trapped inside a computer. Will he escape
 when he finally reaches the last level?</para>
 </listitem>
 </varlistentry>
@@ -1580,9 +1591,9 @@ converted &kgoldrunner; to Qt 4 and KDE 4, and to the many graphics artists
 who contributed to the new SVG graphics and themes in the KDE 4 version:
 especially Mauricio Piacentini for the Default theme and the new runners,
 Johann Ollivier Lapeyre for the ladders and bars, Eugene Trounev for the
-Geek City theme and last but not least Luciano Montanaro for the Nostalgia
-themes, improvements to the runners, multiple backgrounds and several
-other ideas.</para>
+Geek City and Treasure of Egypt themes and, last but not least, Luciano
+Montanaro for the Nostalgia themes, improvements to the runners, multiple
+backgrounds and several other ideas.</para>
 
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
 &underFDL;
