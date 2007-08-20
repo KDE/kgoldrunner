@@ -16,7 +16,7 @@
    inkscape:version="0.45.1"
    version="1.0"
    sodipodi:docbase="/home/mikelima/kde/src/KDE/kdegames/kgoldrunner/themes/nostalgia"
-   sodipodi:docname="apple-set.svg"
+   sodipodi:docname="blue-set.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape">
   <defs
      id="defs4524" />
@@ -74,26 +74,6 @@
      inkscape:label="Canvas"
      inkscape:groupmode="layer"
      style="display:inline">
-    <g
-       id="concrete"
-       inkscape:label="#g2188">
-      <rect
-         inkscape:label="#rect2581"
-         y="70"
-         x="5"
-         height="60"
-         width="60"
-         id="brick_background"
-         style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-      <rect
-         y="70"
-         x="5"
-         height="55"
-         width="60"
-         id="concreteblock"
-         style="opacity:1;fill:#5f8fcb;fill-opacity:1;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         inkscape:label="#concrete" />
-    </g>
     <g
        id="gold"
        inkscape:label="#g9243"
@@ -461,13 +441,33 @@
          id="rect4216"
          style="fill:none;fill-opacity:1;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
-    <rect
-       style="opacity:0.5;fill:#f3dfc6;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect3337"
-       width="59.965435"
-       height="2.9451571"
-       x="5"
-       y="70.05484" />
+    <g
+       id="concrete"
+       inkscape:label="#g2188">
+      <rect
+         inkscape:label="#rect2581"
+         y="70"
+         x="5"
+         height="60"
+         width="60"
+         id="brick_background"
+         style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <rect
+         y="70"
+         x="5"
+         height="55"
+         width="60"
+         id="concreteblock"
+         style="opacity:1;fill:#5f8fcb;fill-opacity:1;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="#concrete" />
+      <rect
+         style="opacity:0.5;fill:#f3dfc6;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect3337"
+         width="59.965435"
+         height="2.9451571"
+         x="5"
+         y="70.05484" />
+    </g>
     <path
        style="opacity:0.5;fill:#f3dfc6;fill-opacity:1;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
        d="M 5 395 L 5 398 L 8 398 L 11.15625 398 C 10.408594 397.04136 9.7208362 396.04603 9.09375 395 L 5 395 z M 60.8125 395 C 55.637984 403.63901 46.182631 409.46633 35.3125 409.59375 C 31.322964 409.64051 27.500869 408.92288 24 407.5625 L 24 415 C 24 417.22205 25.386631 419.10207 27.3125 419.75 C 27.115075 419.20202 27 418.61911 27 418 L 27 410.5625 C 30.500869 411.92288 34.322964 412.64051 38.3125 412.59375 C 49.182631 412.46633 58.63798 406.63901 63.8125 398 L 65 398 L 65 395 L 60.8125 395 z M 15.25 402.3125 C 16.392569 403.61867 17.648038 404.8141 19 405.90625 L 19 405.0625 C 17.680866 404.24146 16.421947 403.32163 15.25 402.3125 z M 5 425 L 5 428 L 8 428 L 10 428 L 46.21875 428 C 46.73175 428 47.224583 428.09553 47.6875 428.25 C 47.013793 426.35377 45.278738 425 43.21875 425 L 5 425 z M 58.21875 425 C 55.334141 425.00001 53 427.21435 53 429.96875 L 53 445 C 53 447.1093 54.375893 448.89243 56.3125 449.625 C 56.125298 449.11016 56 448.57499 56 448 L 56 432.96875 C 56 430.21435 58.334141 428.00001 61.21875 428 L 65 428 L 65 425 L 58.21875 425 z "

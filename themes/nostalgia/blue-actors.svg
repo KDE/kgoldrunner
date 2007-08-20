@@ -15,7 +15,7 @@
    id="svg2160"
    sodipodi:version="0.32"
    inkscape:version="0.45.1"
-   sodipodi:docname="actors.svg"
+   sodipodi:docname="blue-actors.svg"
    sodipodi:docbase="/home/mikelima/kde/src/KDE/kdegames/kgoldrunner/themes/nostalgia"
    inkscape:output_extension="org.inkscape.output.svg.inkscape">
   <metadata
@@ -30,8 +30,8 @@
     </rdf:RDF>
   </metadata>
   <sodipodi:namedview
-     inkscape:window-height="588"
-     inkscape:window-width="792"
+     inkscape:window-height="728"
+     inkscape:window-width="854"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      guidetolerance="10.0"
@@ -41,12 +41,13 @@
      bordercolor="#666666"
      pagecolor="#ffffff"
      id="base"
-     inkscape:zoom="1.7819091"
-     inkscape:cx="128.24002"
-     inkscape:cy="1129.7229"
+     inkscape:zoom="0.44547728"
+     inkscape:cx="966.70039"
+     inkscape:cy="492.96804"
      inkscape:window-x="0"
      inkscape:window-y="26"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="g27706"
+     showgrid="true" />
   <defs
      id="defs2162" />
   <g
@@ -63,53 +64,52 @@
          style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="hero_cell" />
       <path
-         d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
-         transform="matrix(-1.0526307,0,0,1.2965761,276.49966,-337.24095)"
+         d="M 28.062056,9.6134501 C 27.242948,12.79973 28.943011,16.107984 31.861867,17.007731 C 34.780723,17.907479 37.816178,16.058962 38.646414,12.876112 C 39.476649,9.693263 37.788157,6.3779613 34.872467,5.4660801 C 31.956776,4.554199 28.914884,6.3900758 28.073533,9.5694487"
          style="opacity:1;fill:#d9ae7e;fill-opacity:1;stroke:#d9ae7e;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="hero_head" />
       <path
          d="M 34.131421,20.993347 L 34.308201,36.997487"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#0094d5;stroke-width:6.5999999;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="fill-rule:evenodd;stroke:#dadde0;stroke-width:6.5999999;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill:none"
          id="hero_torso" />
       <path
          d="M 33.491701,38.036287 L 30.866251,49.058867"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#0094d5;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill-rule:evenodd;stroke:#dadde0;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline;fill:none"
          id="hero_left_leg" />
       <path
          d="M 33.728321,20.993347 L 27.920241,26.500847"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#0094d5;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill-rule:evenodd;stroke:#dadde0;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline;fill:none"
          id="hero_left_arm" />
       <path
          d="M 30.892141,49.077597 L 31.131421,62.066257"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#0094d5;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill-rule:evenodd;stroke:#dadde0;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline;fill:none"
          id="hero_left_calf" />
       <path
          d="M 27.228041,27.100087 L 32.131421,34.578247"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#0094d5;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill-rule:evenodd;stroke:#dadde0;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline;fill:none"
          id="hero_left_forearm" />
       <path
          d="M 32.753091,62.033187 L 27.631071,62.037757"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#0094d5;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill-rule:evenodd;stroke:#dadde0;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline;fill:none"
          id="hero_left_foot" />
       <path
          d="M 34.845211,37.930657 L 37.840591,48.858517"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#0094d5;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill-rule:evenodd;stroke:#dadde0;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline;fill:none"
          id="hero_right_leg" />
       <path
          d="M 37.712451,49.004687 L 37.473171,61.993347"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#0094d5;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill-rule:evenodd;stroke:#dadde0;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline;fill:none"
          id="hero_right_calf" />
       <path
          d="M 40.464941,26.890837 L 35.561561,34.368997"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#0094d5;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill-rule:evenodd;stroke:#dadde0;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline;fill:none"
          id="hero_right_forearm" />
       <path
          d="M 36.568921,62.077597 L 41.689901,61.975507"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#0094d5;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill-rule:evenodd;stroke:#dadde0;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline;fill:none"
          id="hero_right_foot" />
       <path
          d="M 34.727381,20.993347 L 40.535461,26.500847"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#0094d5;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill-rule:evenodd;stroke:#dadde0;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline;fill:none"
          id="hero_right_arm" />
       <g
          id="hero_1">
@@ -134,8 +134,7 @@
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4.99999952;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
              id="use6337" />
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
-             transform="matrix(-1.0526307,0,0,1.2965761,286.644,-270.73429)"
+             d="M 39.276166,79.432419 C 39.239963,82.739598 41.726406,85.453559 44.833617,85.498395 C 47.940827,85.543231 50.495485,82.902011 50.543534,79.595003 C 50.591582,76.287996 48.114878,73.563965 45.007851,73.506522 C 41.900824,73.449078 39.336724,76.079913 39.276831,79.386702"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="use6339" />
           <path
@@ -202,7 +201,7 @@
              height="480"
              xlink:href="#hero_torso" />
           <use
-             transform="translate(68.57894,66.506658)"
+             transform="translate(69.85253,68.265183)"
              id="use4868"
              x="0"
              y="0"
@@ -360,7 +359,7 @@
              height="480"
              xlink:href="#hero_left_forearm" />
           <use
-             transform="translate(133.30442,66.506658)"
+             transform="translate(134.57801,68.265183)"
              style="display:inline"
              id="use4896"
              x="0"
@@ -608,7 +607,7 @@
              height="480"
              xlink:href="#hero_right_foot" />
           <use
-             transform="translate(197.97493,66.860211)"
+             transform="translate(199.24852,68.618736)"
              style="display:inline"
              id="use4920"
              x="0"
@@ -721,7 +720,7 @@
              height="480"
              xlink:href="#hero_torso" />
           <use
-             transform="translate(262.97493,68.517293)"
+             transform="translate(264.24852,70.275818)"
              style="display:inline"
              id="use4944"
              x="0"
@@ -886,7 +885,7 @@
              height="480"
              xlink:href="#hero_left_arm" />
           <use
-             transform="matrix(1,0,0,1.005663,67.195963,199.12034)"
+             transform="matrix(1,0,0,1.005663,68.469553,200.88882)"
              id="use11639"
              x="0"
              y="0"
@@ -1052,7 +1051,7 @@
              height="480"
              xlink:href="#hero_left_arm" />
           <use
-             transform="matrix(0.9564823,0.2917906,-0.2917906,0.9564823,138.56422,192.92463)"
+             transform="matrix(0.9564823,0.2917906,-0.2917906,0.9564823,139.26927,194.97825)"
              style="display:inline"
              id="use11689"
              x="0"
@@ -1228,7 +1227,7 @@
              height="480"
              xlink:href="#hero_left_arm" />
           <use
-             transform="matrix(0.9430208,0.3327342,-0.3327342,0.9430208,202.86988,193.16911)"
+             transform="matrix(0.9430208,0.3327342,-0.3327342,0.9430208,203.48578,195.2512)"
              style="display:inline"
              id="use11713"
              x="0"
@@ -1424,7 +1423,7 @@
              height="480"
              xlink:href="#hero_left_arm" />
           <use
-             transform="matrix(0.9766415,0.2148759,-0.2148759,0.9766415,262.89929,194.33628)"
+             transform="matrix(0.9766415,0.2148759,-0.2148759,0.9766415,263.76527,196.32739)"
              style="display:inline"
              id="use11737"
              x="0"
@@ -1564,7 +1563,7 @@
         <g
            id="g4278">
           <use
-             transform="matrix(0.9732994,-0.2295392,0.2295392,0.9732994,62.913959,333.69979)"
+             transform="matrix(0.9732994,-0.2295392,0.2295392,0.9732994,64.557194,335.11902)"
              style="opacity:1;color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
              id="use4528"
              x="0"
@@ -1740,7 +1739,7 @@
         <g
            id="g4428">
           <use
-             transform="matrix(0.8798331,-0.4752828,0.4752828,0.8798331,57.872046,405.57469)"
+             transform="matrix(0.8798331,-0.4752828,0.4752828,0.8798331,59.828389,406.51658)"
              style="display:inline"
              id="use4600"
              x="0"
@@ -1871,7 +1870,7 @@
            transform="matrix(-1,0,0,1,265,-3.414743e-6)"
            id="g4496">
           <use
-             transform="matrix(0.8798331,-0.4752828,0.4752828,0.8798331,57.872046,405.57469)"
+             transform="matrix(0.8798331,-0.4752828,0.4752828,0.8798331,59.828389,406.51658)"
              style="display:inline"
              id="use4498"
              x="0"
@@ -2076,7 +2075,7 @@
              height="480"
              xlink:href="#hero_right_arm" />
           <use
-             transform="matrix(1,0,0,1.005663,67.195963,199.12034)"
+             transform="matrix(1,0,0,1.005663,68.469553,200.88882)"
              id="use3091"
              x="0"
              y="0"
@@ -2210,7 +2209,7 @@
              height="480"
              xlink:href="#hero_right_arm" />
           <use
-             transform="matrix(0.9564823,0.2917906,-0.2917906,0.9564823,138.56422,192.92463)"
+             transform="matrix(0.9564823,0.2917906,-0.2917906,0.9564823,139.26927,194.97825)"
              style="display:inline"
              id="use3121"
              x="0"
@@ -2336,7 +2335,7 @@
                height="480"
                xlink:href="#hero_right_forearm" />
             <use
-               transform="matrix(0.9430208,0.3327342,-0.3327342,0.9430208,202.86988,193.16911)"
+               transform="matrix(0.9430208,0.3327342,-0.3327342,0.9430208,203.48578,195.2512)"
                style="display:inline"
                id="use3151"
                x="0"
@@ -2497,7 +2496,7 @@
              height="480"
              xlink:href="#hero_right_arm" />
           <use
-             transform="matrix(0.9766415,0.2148759,-0.2148759,0.9766415,262.89929,194.33628)"
+             transform="matrix(0.9766415,0.2148759,-0.2148759,0.9766415,263.76527,196.32739)"
              style="display:inline"
              id="use3185"
              x="0"
@@ -2645,7 +2644,7 @@
              height="480"
              xlink:href="#hero_torso" />
           <use
-             transform="translate(68.57894,66.506658)"
+             transform="translate(69.85253,68.265183)"
              id="use5664"
              x="0"
              y="0"
@@ -2805,7 +2804,7 @@
              height="480"
              xlink:href="#hero_left_forearm" />
           <use
-             transform="translate(133.30442,66.506658)"
+             transform="translate(134.57801,68.265183)"
              style="display:inline"
              id="use5718"
              x="0"
@@ -3055,7 +3054,7 @@
              height="480"
              xlink:href="#hero_right_foot" />
           <use
-             transform="translate(197.97493,66.860211)"
+             transform="translate(199.24852,68.618736)"
              style="display:inline"
              id="use5790"
              x="0"
@@ -3170,7 +3169,7 @@
              height="480"
              xlink:href="#hero_torso" />
           <use
-             transform="translate(262.97493,68.517293)"
+             transform="translate(264.24852,70.275818)"
              style="display:inline"
              id="use5832"
              x="0"
@@ -3369,7 +3368,7 @@
              height="480"
              xlink:href="#hero_left_arm" />
           <use
-             transform="matrix(1,0,0,1.005663,67.195963,199.12034)"
+             transform="matrix(1,0,0,1.005663,68.469553,200.88882)"
              id="use9368"
              x="0"
              y="0"
@@ -3537,7 +3536,7 @@
              height="480"
              xlink:href="#hero_left_arm" />
           <use
-             transform="matrix(0.9564823,0.2917906,-0.2917906,0.9564823,138.56422,192.92463)"
+             transform="matrix(0.9564823,0.2917906,-0.2917906,0.9564823,139.26927,194.97825)"
              style="display:inline"
              id="use9424"
              x="0"
@@ -3715,7 +3714,7 @@
              height="480"
              xlink:href="#hero_left_arm" />
           <use
-             transform="matrix(0.9430208,0.3327342,-0.3327342,0.9430208,202.86988,193.16911)"
+             transform="matrix(0.9430208,0.3327342,-0.3327342,0.9430208,203.48578,195.2512)"
              style="display:inline"
              id="use9480"
              x="0"
@@ -3912,7 +3911,7 @@
              height="480"
              xlink:href="#hero_left_arm" />
           <use
-             transform="matrix(0.9766415,0.2148759,-0.2148759,0.9766415,262.89929,194.33628)"
+             transform="matrix(0.9766415,0.2148759,-0.2148759,0.9766415,263.76527,196.32739)"
              style="display:inline"
              id="use9540"
              x="0"
@@ -4035,7 +4034,7 @@
              height="480"
              xlink:href="#hero_right_arm" />
           <use
-             transform="matrix(1,0,0,1.005663,67.195963,199.12034)"
+             transform="matrix(1,0,0,1.005663,68.469553,200.88882)"
              id="use9570"
              x="0"
              y="0"
@@ -4170,7 +4169,7 @@
              height="480"
              xlink:href="#hero_right_arm" />
           <use
-             transform="matrix(0.9564823,0.2917906,-0.2917906,0.9564823,138.56422,192.92463)"
+             transform="matrix(0.9564823,0.2917906,-0.2917906,0.9564823,139.26927,194.97825)"
              style="display:inline"
              id="use9604"
              x="0"
@@ -4297,7 +4296,7 @@
                height="480"
                xlink:href="#hero_right_forearm" />
             <use
-               transform="matrix(0.9430208,0.3327342,-0.3327342,0.9430208,202.86988,193.16911)"
+               transform="matrix(0.9430208,0.3327342,-0.3327342,0.9430208,203.48578,195.2512)"
                style="display:inline"
                id="use9636"
                x="0"
@@ -4460,7 +4459,7 @@
              height="480"
              xlink:href="#hero_right_arm" />
           <use
-             transform="matrix(0.9766415,0.2148759,-0.2148759,0.9766415,262.89929,194.33628)"
+             transform="matrix(0.9766415,0.2148759,-0.2148759,0.9766415,263.76527,196.32739)"
              style="display:inline"
              id="use9674"
              x="0"
@@ -4566,7 +4565,7 @@
              height="480"
              xlink:href="#hero_torso" />
           <use
-             transform="translate(523.57894,326.50666)"
+             transform="translate(524.85253,328.26518)"
              style="opacity:1;fill:#ffdc00"
              id="use4168"
              x="0"
@@ -4712,7 +4711,7 @@
              height="480"
              xlink:href="#hero_torso" />
           <use
-             transform="translate(523.57894,326.50666)"
+             transform="translate(524.85253,328.26518)"
              style="opacity:1;fill:#ffdc00"
              id="use4256"
              x="0"
@@ -4895,7 +4894,7 @@
              height="480"
              xlink:href="#hero_torso" />
           <use
-             transform="translate(523.57894,326.50666)"
+             transform="translate(524.85253,328.26518)"
              style="opacity:1;fill:#ffdc00"
              id="use4287"
              x="0"
@@ -5030,7 +5029,7 @@
              height="480"
              xlink:href="#hero_torso" />
           <use
-             transform="translate(523.57894,326.50666)"
+             transform="translate(524.85253,328.26518)"
              style="opacity:1;fill:#ffdc00"
              id="use5465"
              x="0"
@@ -5178,7 +5177,7 @@
              height="480"
              xlink:href="#hero_torso" />
           <use
-             transform="translate(523.57894,326.50666)"
+             transform="translate(524.85253,328.26518)"
              style="opacity:1;fill:#ffdc00"
              id="use5501"
              x="0"
@@ -5363,7 +5362,7 @@
              height="480"
              xlink:href="#hero_torso" />
           <use
-             transform="translate(523.57894,326.50666)"
+             transform="translate(524.85253,328.26518)"
              style="opacity:1;fill:#ffdc00"
              id="use5559"
              x="0"
@@ -5513,7 +5512,7 @@
         <g
            id="g13254">
           <use
-             transform="matrix(0.9732994,-0.2295392,0.2295392,0.9732994,62.913959,333.69979)"
+             transform="matrix(0.9732994,-0.2295392,0.2295392,0.9732994,64.557194,335.11902)"
              style="opacity:1;color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
              id="use13256"
              x="0"
@@ -5638,53 +5637,52 @@
          style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="enemy_cell" />
       <path
-         d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
-         transform="matrix(-1.0526307,0,0,1.2965761,276.49966,-337.24095)"
+         d="M 28.131818,12.9224 C 28.096797,16.23141 30.50216,18.946874 33.50805,18.991735 C 36.513938,19.036596 38.985294,16.393913 39.031776,13.085074 C 39.078257,9.7762351 36.682315,7.0506963 33.676603,6.9932211 C 30.670891,6.9357458 28.190403,9.5680374 28.132461,12.876657"
          style="opacity:1;fill:#d9ae7e;fill-opacity:1;stroke:#d9ae7e;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="enemy_head" />
       <path
          d="M 34.131421,20.993347 L 34.308201,36.997487"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#e72300;stroke-width:6.6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="fill-rule:evenodd;stroke:#f97e07;stroke-width:6.6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="enemy_torso" />
       <path
          d="M 33.491701,38.036287 L 30.866251,49.058867"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#e72300;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill:#dadde0;fill-rule:evenodd;stroke:#dadde0;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
          id="enemy_left_leg" />
       <path
          d="M 33.728321,20.993347 L 27.920241,26.500847"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#e72300;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill-rule:evenodd;stroke:#f97e07;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
          id="enemy_left_arm" />
       <path
          d="M 30.892141,49.077597 L 31.131421,62.066257"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#e72300;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill:#dadde0;fill-rule:evenodd;stroke:#dadde0;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
          id="enemy_left_calf" />
       <path
          d="M 27.228041,27.100087 L 32.131421,34.578247"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#e72300;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill-rule:evenodd;stroke:#f97e07;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
          id="enemy_left_forearm" />
       <path
          d="M 32.753091,62.033187 L 27.631071,62.037757"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#e72300;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill:#dadde0;fill-rule:evenodd;stroke:#dadde0;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
          id="enemy_left_foot" />
       <path
          d="M 34.845211,37.930657 L 37.840591,48.858517"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#e72300;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill:#dadde0;fill-rule:evenodd;stroke:#dadde0;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
          id="enemy_right_leg" />
       <path
          d="M 37.712451,49.004687 L 37.473171,61.993347"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#e72300;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill:#dadde0;fill-rule:evenodd;stroke:#dadde0;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
          id="enemy_right_calf" />
       <path
          d="M 40.464941,26.890837 L 35.561561,34.368997"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#e72300;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill-rule:evenodd;stroke:#f97e07;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
          id="enemy_right_forearm" />
       <path
          d="M 36.568921,62.077597 L 41.689901,61.975507"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#e72300;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill:#dadde0;fill-rule:evenodd;stroke:#dadde0;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
          id="enemy_right_foot" />
       <path
          d="M 34.727381,20.993347 L 40.535461,26.500847"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#e72300;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill-rule:evenodd;stroke:#f97e07;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
          id="enemy_right_arm" />
       <g
          id="enemy_1">
@@ -5777,7 +5775,7 @@
              height="480"
              xlink:href="#enemy_torso" />
           <use
-             transform="translate(68.57894,66.506658)"
+             transform="translate(69.578935,66.506658)"
              id="use21428"
              x="0"
              y="0"
@@ -5935,7 +5933,7 @@
              height="480"
              xlink:href="#enemy_left_forearm" />
           <use
-             transform="translate(133.30442,66.506658)"
+             transform="translate(134.30441,66.506658)"
              style="display:inline"
              id="use21481"
              x="0"
@@ -6183,7 +6181,7 @@
              height="480"
              xlink:href="#enemy_right_foot" />
           <use
-             transform="translate(197.97493,66.860211)"
+             transform="translate(198.97492,66.860211)"
              style="display:inline"
              id="use21552"
              x="0"
@@ -6296,7 +6294,7 @@
              height="480"
              xlink:href="#enemy_torso" />
           <use
-             transform="translate(262.97493,68.517293)"
+             transform="translate(263.97492,68.517293)"
              style="display:inline"
              id="use21593"
              x="0"
@@ -6461,7 +6459,7 @@
              height="480"
              xlink:href="#enemy_left_arm" />
           <use
-             transform="matrix(1,0,0,1.005663,67.195963,199.12034)"
+             transform="matrix(1,0,0,1.005663,68.195958,199.12034)"
              id="use21646"
              x="0"
              y="0"
@@ -6627,7 +6625,7 @@
              height="480"
              xlink:href="#enemy_left_arm" />
           <use
-             transform="matrix(0.9564823,0.2917906,-0.2917906,0.9564823,138.56422,192.92463)"
+             transform="matrix(0.9564823,0.2917906,-0.2917906,0.9564823,139.5207,193.21642)"
              style="display:inline"
              id="use21701"
              x="0"
@@ -6803,7 +6801,7 @@
              height="480"
              xlink:href="#enemy_left_arm" />
           <use
-             transform="matrix(0.9430208,0.3327342,-0.3327342,0.9430208,202.86988,193.16911)"
+             transform="matrix(0.9430208,0.3327342,-0.3327342,0.9430208,203.8129,193.50184)"
              style="display:inline"
              id="use21756"
              x="0"
@@ -6999,7 +6997,7 @@
              height="480"
              xlink:href="#enemy_left_arm" />
           <use
-             transform="matrix(0.9766415,0.2148759,-0.2148759,0.9766415,262.89929,194.33628)"
+             transform="matrix(0.9766415,0.2148759,-0.2148759,0.9766415,263.87593,194.55115)"
              style="display:inline"
              id="use21815"
              x="0"
@@ -7139,7 +7137,7 @@
         <g
            id="g21860">
           <use
-             transform="matrix(0.8798331,-0.4752828,0.4752828,0.8798331,57.872046,405.57469)"
+             transform="matrix(0.8798331,-0.4752828,0.4752828,0.8798331,58.751875,405.09941)"
              style="display:inline"
              id="use21862"
              x="0"
@@ -7318,7 +7316,7 @@
              transform="matrix(-1,0,0,1,265,0)"
              id="g4312">
             <use
-               transform="matrix(0.9732994,-0.2295392,0.2295392,0.9732994,62.913959,333.69979)"
+               transform="matrix(0.9732994,-0.2295392,0.2295392,0.9732994,63.887253,333.47025)"
                style="opacity:1;color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
                id="use4314"
                x="0"
@@ -7450,7 +7448,7 @@
            transform="matrix(-1,0,0,1,265,-3.414743e-6)"
            id="g21920">
           <use
-             transform="matrix(0.8798331,-0.4752828,0.4752828,0.8798331,57.872046,405.57469)"
+             transform="matrix(0.8798331,-0.4752828,0.4752828,0.8798331,58.751875,405.09941)"
              style="display:inline"
              id="use21922"
              x="0"
@@ -7655,7 +7653,7 @@
              height="480"
              xlink:href="#enemy_right_arm" />
           <use
-             transform="matrix(1,0,0,1.005663,67.195963,199.12034)"
+             transform="matrix(1,0,0,1.005663,68.195958,199.12034)"
              id="use21967"
              x="0"
              y="0"
@@ -7789,7 +7787,7 @@
              height="480"
              xlink:href="#enemy_right_arm" />
           <use
-             transform="matrix(0.9564823,0.2917906,-0.2917906,0.9564823,138.56422,192.92463)"
+             transform="matrix(0.9564823,0.2917906,-0.2917906,0.9564823,139.5207,193.21642)"
              style="display:inline"
              id="use22000"
              x="0"
@@ -7915,7 +7913,7 @@
                height="480"
                xlink:href="#enemy_right_forearm" />
             <use
-               transform="matrix(0.9430208,0.3327342,-0.3327342,0.9430208,202.86988,193.16911)"
+               transform="matrix(0.9430208,0.3327342,-0.3327342,0.9430208,203.8129,193.50184)"
                style="display:inline"
                id="use22031"
                x="0"
@@ -8076,7 +8074,7 @@
              height="480"
              xlink:href="#enemy_right_arm" />
           <use
-             transform="matrix(0.9766415,0.2148759,-0.2148759,0.9766415,262.89929,194.33628)"
+             transform="matrix(0.9766415,0.2148759,-0.2148759,0.9766415,263.87593,194.55115)"
              style="display:inline"
              id="use22068"
              x="0"
@@ -8224,7 +8222,7 @@
              height="480"
              xlink:href="#enemy_torso" />
           <use
-             transform="translate(68.57894,66.506658)"
+             transform="translate(69.578935,66.506658)"
              id="use22117"
              x="0"
              y="0"
@@ -8384,7 +8382,7 @@
              height="480"
              xlink:href="#enemy_left_forearm" />
           <use
-             transform="translate(133.30442,66.506658)"
+             transform="translate(134.30441,66.506658)"
              style="display:inline"
              id="use22170"
              x="0"
@@ -8634,7 +8632,7 @@
              height="480"
              xlink:href="#enemy_right_foot" />
           <use
-             transform="translate(197.97493,66.860211)"
+             transform="translate(198.97492,66.860211)"
              style="display:inline"
              id="use22241"
              x="0"
@@ -8749,7 +8747,7 @@
              height="480"
              xlink:href="#enemy_torso" />
           <use
-             transform="translate(262.97493,68.517293)"
+             transform="translate(263.97492,68.517293)"
              style="display:inline"
              id="use22282"
              x="0"
@@ -8948,7 +8946,7 @@
              height="480"
              xlink:href="#enemy_left_arm" />
           <use
-             transform="matrix(1,0,0,1.005663,67.195963,199.12034)"
+             transform="matrix(1,0,0,1.005663,68.195958,199.12034)"
              id="use22339"
              x="0"
              y="0"
@@ -9116,7 +9114,7 @@
              height="480"
              xlink:href="#enemy_left_arm" />
           <use
-             transform="matrix(0.9564823,0.2917906,-0.2917906,0.9564823,138.56422,192.92463)"
+             transform="matrix(0.9564823,0.2917906,-0.2917906,0.9564823,139.5207,193.21642)"
              style="display:inline"
              id="use22394"
              x="0"
@@ -9294,7 +9292,7 @@
              height="480"
              xlink:href="#enemy_left_arm" />
           <use
-             transform="matrix(0.9430208,0.3327342,-0.3327342,0.9430208,202.86988,193.16911)"
+             transform="matrix(0.9430208,0.3327342,-0.3327342,0.9430208,203.8129,193.50184)"
              style="display:inline"
              id="use22449"
              x="0"
@@ -9491,7 +9489,7 @@
              height="480"
              xlink:href="#enemy_left_arm" />
           <use
-             transform="matrix(0.9766415,0.2148759,-0.2148759,0.9766415,262.89929,194.33628)"
+             transform="matrix(0.9766415,0.2148759,-0.2148759,0.9766415,263.87593,194.55115)"
              style="display:inline"
              id="use22508"
              x="0"
@@ -9614,7 +9612,7 @@
              height="480"
              xlink:href="#enemy_right_arm" />
           <use
-             transform="matrix(1,0,0,1.005663,67.195963,199.12034)"
+             transform="matrix(1,0,0,1.005663,68.195958,199.12034)"
              id="use22537"
              x="0"
              y="0"
@@ -9749,7 +9747,7 @@
              height="480"
              xlink:href="#enemy_right_arm" />
           <use
-             transform="matrix(0.9564823,0.2917906,-0.2917906,0.9564823,138.56422,192.92463)"
+             transform="matrix(0.9564823,0.2917906,-0.2917906,0.9564823,139.5207,193.21642)"
              style="display:inline"
              id="use22570"
              x="0"
@@ -9876,7 +9874,7 @@
                height="480"
                xlink:href="#enemy_right_forearm" />
             <use
-               transform="matrix(0.9430208,0.3327342,-0.3327342,0.9430208,202.86988,193.16911)"
+               transform="matrix(0.9430208,0.3327342,-0.3327342,0.9430208,203.8129,193.50184)"
                style="display:inline"
                id="use22601"
                x="0"
@@ -10039,7 +10037,7 @@
              height="480"
              xlink:href="#enemy_right_arm" />
           <use
-             transform="matrix(0.9766415,0.2148759,-0.2148759,0.9766415,262.89929,194.33628)"
+             transform="matrix(0.9766415,0.2148759,-0.2148759,0.9766415,263.87593,194.55115)"
              style="display:inline"
              id="use22638"
              x="0"
@@ -10163,7 +10161,7 @@
            transform="matrix(-1,0,0,1,265,0)"
            id="g10179">
           <use
-             transform="matrix(0.9732994,-0.2295392,0.2295392,0.9732994,62.913959,333.69979)"
+             transform="matrix(0.9732994,-0.2295392,0.2295392,0.9732994,63.887253,333.47025)"
              style="opacity:1;color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
              id="use10181"
              x="0"
@@ -10279,7 +10277,8 @@
      id="g27402">
     <g
        style="opacity:1;display:inline"
-       id="g27706">
+       id="g27706"
+       transform="translate(-0.314651,-0.6349134)">
       <rect
          width="60"
          height="60"
@@ -10288,95 +10287,57 @@
          style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="gold_enemy_cell" />
       <path
-         d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
-         transform="matrix(-1.0526307,0,0,1.2965761,276.49966,-337.24095)"
+         d="M 28.728415,12.9224 C 28.693697,16.23141 31.078253,18.946874 34.05814,18.991735 C 37.038025,19.036596 39.488001,16.393913 39.534081,13.085074 C 39.58016,9.7762352 37.204945,7.0506965 34.225234,6.9932212 C 31.245523,6.9357459 28.786493,9.5680375 28.729053,12.876657"
          style="opacity:1;fill:#d9ae7e;fill-opacity:1;stroke:#d9ae7e;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="gold_enemy_head" />
       <path
          d="M 33.491701,38.036287 L 30.866251,49.058867"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#e72300;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill-rule:evenodd;stroke:#dadde0;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
          id="gold_enemy_left_leg" />
       <path
          d="M 33.728321,20.993347 L 27.920241,26.500847"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#e72300;stroke-width:4.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill:#f97e07;fill-rule:evenodd;stroke:#f97e07;stroke-width:4.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
          id="gold_enemy_left_arm" />
       <path
          d="M 30.892141,49.077597 L 31.131421,62.066257"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#e72300;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill-rule:evenodd;stroke:#dadde0;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
          id="gold_enemy_left_calf" />
       <path
-         d="M 27.228041,27.100087 L 32.131421,34.578247"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#e72300;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
-         id="gold_enemy_left_forearm" />
-      <path
          d="M 32.753091,62.033187 L 27.631071,62.037757"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#e72300;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill-rule:evenodd;stroke:#dadde0;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
          id="gold_enemy_left_foot" />
       <path
          d="M 34.845211,37.930657 L 37.840591,48.858517"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#e72300;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill:#ebeced;fill-rule:evenodd;stroke:#dadde0;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
          id="gold_enemy_right_leg" />
       <path
+         d="M 27.228041,27.100087 L 32.131421,34.578247"
+         style="fill:#f97e07;fill-rule:evenodd;stroke:#f97e07;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         id="gold_enemy_left_forearm" />
+      <path
          d="M 37.712451,49.004687 L 37.473171,61.993347"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#e72300;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill-rule:evenodd;stroke:#dadde0;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
          id="gold_enemy_right_calf" />
-      <g
-         id="gold_enemy_torso">
-        <path
-           d="M 34.131421,20.993347 L 34.308201,36.997487"
-           style="fill:#9b579f;fill-rule:evenodd;stroke:#e72300;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           id="gold_enemy_torso_orig" />
-        <path
-           d="M 19.956735,15.000301 L 19.956735,45.000302 L 24.956735,45.000302 C 24.987855,45.000714 25.019248,45.00131 25.050485,45.000302 C 28.086269,44.902387 30.523887,38.092212 30.487985,29.812802 L 30.487985,29.719052 C 30.429425,21.50907 27.963719,14.948771 24.956735,15.000301 L 24.925485,15.000301 L 19.956735,15.000301 z "
-           style="opacity:1;fill:#ffdc00;fill-opacity:1;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           id="rect5585" />
-        <path
-           d="M 20,14.999445 L 20,44.999446 L 25,44.999446 C 25.031121,44.999858 25.062514,45.000454 25.09375,44.999446 C 28.129535,44.901531 30.567152,38.091356 30.53125,29.811946 L 30.53125,29.718196 C 30.47269,21.508214 28.006984,14.947916 25,14.999445 L 24.96875,14.999445 L 20,14.999445 z "
-           style="opacity:0.5;fill:#200000;fill-opacity:1;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           id="path5883" />
-        <path
-           d="M -43.134441,41.312048 A 13.258252,16.351845 0 1 1 -43.136021,41.187383"
-           transform="matrix(0.4148355,0,0,0.9173264,43.893307,-8.0740138)"
-           style="fill:#ffdc00;fill-opacity:1;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           id="use3024" />
-      </g>
-      <g
-         transform="translate(3.6709829e-7,-8.562123e-4)"
-         id="gold_enemy_torso2">
-        <path
-           d="M 34.131421,20.993347 L 34.308201,36.997487"
-           style="fill:#9b579f;fill-rule:evenodd;stroke:#e72300;stroke-width:6.6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           id="path3249" />
-        <path
-           d="M 19.956735,15.000301 L 19.956735,45.000302 L 24.956735,45.000302 C 24.987855,45.000714 25.019248,45.00131 25.050485,45.000302 C 28.086269,44.902387 30.523887,38.092212 30.487985,29.812802 L 30.487985,29.719052 C 30.429425,21.50907 27.963719,14.948771 24.956735,15.000301 L 24.925485,15.000301 L 19.956735,15.000301 z "
-           style="opacity:1;fill:#ffdc00;fill-opacity:1;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           id="path3251" />
-        <path
-           d="M 20,14.999445 L 20,44.999446 L 25,44.999446 C 25.031121,44.999858 25.062514,45.000454 25.09375,44.999446 C 28.129535,44.901531 30.567152,38.091356 30.53125,29.811946 L 30.53125,29.718196 C 30.47269,21.508214 28.006984,14.947916 25,14.999445 L 24.96875,14.999445 L 20,14.999445 z "
-           style="opacity:0.5;fill:#ffdc00;fill-opacity:1;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           id="path3253" />
-        <path
-           d="M -43.134441,41.312048 A 13.258252,16.351845 0 1 1 -43.136021,41.187383"
-           transform="matrix(0.4148355,0,0,0.9173264,43.893307,-8.0740138)"
-           style="fill:#ffdc00;fill-opacity:1;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           id="path3255" />
-        <path
-           d="M -43.134441,41.312048 A 13.258252,16.351845 0 1 1 -43.136021,41.187383"
-           transform="matrix(0.4148355,0,0,0.9173264,43.893307,-8.0740138)"
-           style="opacity:0.5;fill:#200000;fill-opacity:1;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           id="path3257" />
-      </g>
       <path
          d="M 40.464941,26.890837 L 35.561561,34.368997"
-         style="fill-rule:evenodd;stroke:#e72300;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill:#f97e07;fill-rule:evenodd;stroke:#f97e07;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
          id="gold_enemy_right_forearm" />
       <path
          d="M 36.568921,62.077597 L 41.689901,61.975507"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#e72300;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill-rule:evenodd;stroke:#dadde0;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
          id="gold_enemy_right_foot" />
+      <g
+         transform="translate(3.6709829e-7,-8.562123e-4)"
+         id="gold_enemy_torso2"
+         style="stroke:#f97e07">
+        <path
+           d="M 34.131421,20.993347 L 34.308201,36.997487"
+           style="fill-rule:evenodd;stroke:#f97e07;stroke-width:6.5999999;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="path3249" />
+      </g>
       <path
          d="M 34.727381,20.993347 L 40.535461,26.500847"
-         style="fill:#9b579f;fill-rule:evenodd;stroke:#e72300;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+         style="fill:#f97e07;fill-rule:evenodd;stroke:#f97e07;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
          id="gold_enemy_right_arm" />
       <g
          id="gold_enemy_1">
@@ -10401,7 +10362,7 @@
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4.99999952;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
              id="path27738" />
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
+             d="M 234.99968,270.07031 C 235.0302,272.62101 232.93397,274.71419 230.31439,274.74877 C 227.69482,274.78335 225.54108,272.74627 225.50057,270.19571 C 225.46006,267.64514 227.54808,265.54419 230.1675,265.49989 C 232.78693,265.45559 234.94863,267.48465 234.99912,270.03505"
              transform="matrix(-1.0526307,0,0,1.2965761,286.644,-270.73429)"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="path27740" />
@@ -10460,16 +10421,17 @@
              width="640"
              height="480"
              xlink:href="#gold_enemy_left_forearm" />
-          <use
-             transform="matrix(0.9908025,0.1353161,-0.1353161,0.9908025,70.415573,61.581209)"
+          <g
              id="use27766"
-             x="0"
-             y="0"
-             width="640"
-             height="480"
-             xlink:href="#gold_enemy_torso" />
+             transform="matrix(0.9908025,0.1353161,-0.1353161,0.9908025,70.415573,61.581209)"
+             style="stroke:#f97e07">
+            <path
+               id="path4636"
+               style="fill-rule:evenodd;stroke:#f97e07;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="M 34.131421,20.993347 L 34.308201,36.997487" />
+          </g>
           <use
-             transform="translate(68.57894,66.506658)"
+             transform="translate(69.578985,66.506658)"
              id="use27768"
              x="0"
              y="0"
@@ -10557,7 +10519,7 @@
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
              id="path27791" />
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
+             d="M 234.99968,270.07031 C 235.0302,272.62101 232.93397,274.71419 230.31439,274.74877 C 227.69482,274.78335 225.54108,272.74627 225.50057,270.19571 C 225.46006,267.64514 227.54808,265.54419 230.1675,265.49989 C 232.78693,265.45559 234.94863,267.48465 234.99912,270.03505"
              transform="matrix(-1.0526307,0,0,1.2965761,393.01029,-270.73429)"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="path27793" />
@@ -10627,7 +10589,7 @@
              height="480"
              xlink:href="#gold_enemy_left_forearm" />
           <use
-             transform="translate(133.30442,66.506658)"
+             transform="translate(134.30447,66.506658)"
              style="display:inline"
              id="use27821"
              x="0"
@@ -10635,15 +10597,14 @@
              width="640"
              height="480"
              xlink:href="#gold_enemy_head" />
-          <use
-             transform="matrix(0.9908025,0.1353161,-0.1353161,0.9908025,134.8759,61.700345)"
-             style="display:inline"
+          <g
              id="use27823"
-             x="0"
-             y="0"
-             width="640"
-             height="480"
-             xlink:href="#gold_enemy_torso" />
+             transform="matrix(0.9908025,0.1353161,-0.1353161,0.9908025,134.8759,61.700345)">
+            <path
+               id="path4646"
+               style="fill:#9b579f;fill-rule:evenodd;stroke:#e72300;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="M 34.131421,20.993347 L 34.308201,36.997487" />
+          </g>
           <use
              transform="matrix(0.763579,-0.6457143,0.6457143,0.763579,113.84729,95.685069)"
              style="display:inline"
@@ -10741,7 +10702,7 @@
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4.99999952;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
              id="path27848" />
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
+             d="M 234.99968,270.07031 C 235.0302,272.62101 232.93397,274.71419 230.31439,274.74877 C 227.69482,274.78335 225.54108,272.74627 225.50057,270.19571 C 225.46006,267.64514 227.54808,265.54419 230.1675,265.49989 C 232.78693,265.45559 234.94863,267.48465 234.99912,270.03505"
              transform="matrix(-1.0526307,0,0,1.2965761,474.47459,-333.48359)"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="path27850" />
@@ -10802,15 +10763,14 @@
              width="640"
              height="480"
              xlink:href="#gold_enemy_left_forearm" />
-          <use
-             transform="matrix(0.9908025,0.1353161,-0.1353161,0.9908025,199.98834,61.934762)"
-             style="display:inline"
+          <g
              id="use27876"
-             x="0"
-             y="0"
-             width="640"
-             height="480"
-             xlink:href="#gold_enemy_torso" />
+             transform="matrix(0.9908025,0.1353161,-0.1353161,0.9908025,199.98834,61.934762)">
+            <path
+               id="path4656"
+               style="fill:#9b579f;fill-rule:evenodd;stroke:#e72300;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="M 34.131421,20.993347 L 34.308201,36.997487" />
+          </g>
           <use
              transform="matrix(0.2761594,-0.9611118,0.9611118,0.2761594,183.02284,125.22444)"
              style="display:inline"
@@ -10875,7 +10835,7 @@
              height="480"
              xlink:href="#gold_enemy_right_foot" />
           <use
-             transform="translate(197.97493,66.860211)"
+             transform="translate(198.97498,66.860211)"
              style="display:inline"
              id="use27892"
              x="0"
@@ -10917,7 +10877,7 @@
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4.99999952;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
              id="path27903" />
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
+             d="M 234.99968,270.07031 C 235.0302,272.62101 232.93397,274.71419 230.31439,274.74877 C 227.69482,274.78335 225.54108,272.74627 225.50057,270.19571 C 225.46006,267.64514 227.54808,265.54419 230.1675,265.49989 C 232.78693,265.45559 234.94863,267.48465 234.99912,270.03505"
              transform="matrix(-1.0526307,0,0,1.2965761,541.22459,-335.97366)"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="path27905" />
@@ -10979,7 +10939,7 @@
              height="480"
              xlink:href="#gold_enemy_left_forearm" />
           <use
-             transform="translate(262.97493,68.517293)"
+             transform="translate(263.97498,68.517293)"
              style="display:inline"
              id="use27931"
              x="0"
@@ -10987,15 +10947,15 @@
              width="640"
              height="480"
              xlink:href="#gold_enemy_head" />
-          <use
-             transform="matrix(0.9908025,0.1353161,-0.1353161,0.9908025,264.98834,63.591844)"
-             style="display:inline"
+          <g
              id="use27933"
-             x="0"
-             y="0"
-             width="640"
-             height="480"
-             xlink:href="#gold_enemy_torso" />
+             transform="matrix(0.9908025,0.1353161,-0.1353161,0.9908025,264.98834,63.591844)"
+             style="stroke:#f97e07">
+            <path
+               id="path4666"
+               style="fill:#9b579f;fill-rule:evenodd;stroke:#f97e07;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="M 34.131421,20.993347 L 34.308201,36.997487" />
+          </g>
           <use
              transform="matrix(0.5310377,-0.8473481,0.8473481,0.5310377,243.72342,113.35043)"
              style="display:inline"
@@ -11093,7 +11053,7 @@
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4.51272345;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
              id="path27958" />
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
+             d="M 234.99968,270.07031 C 235.0302,272.62101 232.93397,274.71419 230.31439,274.74877 C 227.69482,274.78335 225.54108,272.74627 225.50057,270.19571 C 225.46006,267.64514 227.54808,265.54419 230.1675,265.49989 C 232.78693,265.45559 234.94863,267.48465 234.99912,270.03505"
              transform="matrix(-1.0526307,0,0,1.3039186,347.96204,-204.87713)"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="path27960" />
@@ -11153,7 +11113,7 @@
              height="480"
              xlink:href="#gold_enemy_left_arm" />
           <use
-             transform="matrix(1,0,0,1.005663,67.195963,199.12034)"
+             transform="matrix(1,0,0,1.005663,68.196008,199.12034)"
              id="use27986"
              x="0"
              y="0"
@@ -11168,14 +11128,15 @@
              width="640"
              height="480"
              xlink:href="#gold_enemy_left_leg" />
-          <use
-             transform="matrix(0.9169061,0.4013633,-0.3991032,0.9220985,76.596147,186.41581)"
+          <g
              id="use27990"
-             x="0"
-             y="0"
-             width="640"
-             height="480"
-             xlink:href="#gold_enemy_torso" />
+             transform="matrix(0.9169061,0.4013633,-0.3991032,0.9220985,76.596147,186.41581)"
+             style="stroke:#f97e07">
+            <path
+               id="path4676"
+               style="fill:#9b579f;fill-rule:evenodd;stroke:#f97e07;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="M 34.131421,20.993347 L 34.308201,36.997487" />
+          </g>
           <use
              transform="matrix(0.9812528,0.1928914,-0.1931372,0.9869104,81.751529,185.71322)"
              id="use27992"
@@ -11257,7 +11218,7 @@
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4.49999952;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
              id="path28013" />
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
+             d="M 234.99968,270.07031 C 235.0302,272.62101 232.93397,274.71419 230.31439,274.74877 C 227.69482,274.78335 225.54108,272.74627 225.50057,270.19571 C 225.46006,267.64514 227.54808,265.54419 230.1675,265.49989 C 232.78693,265.45559 234.94863,267.48465 234.99912,270.03505"
              transform="matrix(-1.0068226,-0.3071477,-0.3783287,1.2401521,500.87599,14.539632)"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="path28015" />
@@ -11319,7 +11280,7 @@
              height="480"
              xlink:href="#gold_enemy_left_arm" />
           <use
-             transform="matrix(0.9564823,0.2917906,-0.2917906,0.9564823,138.56422,192.92463)"
+             transform="matrix(0.9564823,0.2917906,-0.2917906,0.9564823,139.52075,193.21643)"
              style="display:inline"
              id="use28041"
              x="0"
@@ -11336,15 +11297,15 @@
              width="640"
              height="480"
              xlink:href="#gold_enemy_left_leg" />
-          <use
-             transform="matrix(0.98886,0.1488494,-0.1488494,0.98886,135.16772,196.99761)"
-             style="display:inline"
+          <g
              id="use28045"
-             x="0"
-             y="0"
-             width="640"
-             height="480"
-             xlink:href="#gold_enemy_torso" />
+             transform="matrix(0.98886,0.1488494,-0.1488494,0.98886,135.16772,196.99761)"
+             style="stroke:#f97e07">
+            <path
+               id="path4686"
+               style="fill:#9b579f;fill-rule:evenodd;stroke:#f97e07;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="M 34.131421,20.993347 L 34.308201,36.997487" />
+          </g>
           <use
              transform="matrix(0.7180748,0.6959657,-0.6959657,0.7180748,184.85383,187.80069)"
              style="display:inline"
@@ -11433,7 +11394,7 @@
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
              id="path28068" />
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
+             d="M 234.99968,270.07031 C 235.0302,272.62101 232.93397,274.71419 230.31439,274.74877 C 227.69482,274.78335 225.54108,272.74627 225.50057,270.19571 C 225.46006,267.64514 227.54808,265.54419 230.1675,265.49989 C 232.78693,265.45559 234.94863,267.48465 234.99912,270.03505"
              transform="matrix(-0.9926526,-0.3502462,-0.4314152,1.2226982,573.82641,32.101243)"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="path28070" />
@@ -11495,7 +11456,7 @@
              height="480"
              xlink:href="#gold_enemy_left_arm" />
           <use
-             transform="matrix(0.9430208,0.3327342,-0.3327342,0.9430208,202.86988,193.16911)"
+             transform="matrix(0.9430208,0.3327342,-0.3327342,0.9430208,203.81294,193.50186)"
              style="display:inline"
              id="use28096"
              x="0"
@@ -11512,15 +11473,14 @@
              width="640"
              height="480"
              xlink:href="#gold_enemy_left_leg" />
-          <use
-             transform="matrix(0.9813398,-0.1922821,0.1922821,0.9813398,191.69894,209.57317)"
-             style="display:inline"
+          <g
              id="use28100"
-             x="0"
-             y="0"
-             width="640"
-             height="480"
-             xlink:href="#gold_enemy_torso" />
+             transform="matrix(0.9813398,-0.1922821,0.1922821,0.9813398,191.69894,209.57317)">
+            <path
+               id="path4696"
+               style="fill:#9b579f;fill-rule:evenodd;stroke:#f97e07;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="M 34.131421,20.993347 L 34.308201,36.997487" />
+          </g>
           <use
              transform="matrix(0.1234219,0.9923542,-0.9923542,0.1234219,279.7183,213.72508)"
              style="display:inline"
@@ -11618,7 +11578,7 @@
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
              id="path28127" />
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
+             d="M 234.99968,270.07031 C 235.0302,272.62101 232.93397,274.71419 230.31439,274.74877 C 227.69482,274.78335 225.54108,272.74627 225.50057,270.19571 C 225.46006,267.64514 227.54808,265.54419 230.1675,265.49989 C 232.78693,265.45559 234.94863,267.48465 234.99912,270.03505"
              transform="matrix(-1.0280428,-0.226185,-0.278603,1.26629,606.2505,-10.560294)"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="path28129" />
@@ -11663,15 +11623,15 @@
              width="640"
              height="480"
              xlink:href="#gold_enemy_left_leg" />
-          <use
-             transform="matrix(0.9909067,0.1345516,-0.1345516,0.9909067,261.81476,196.11206)"
-             style="display:inline"
+          <g
              id="use28149"
-             x="0"
-             y="0"
-             width="640"
-             height="480"
-             xlink:href="#gold_enemy_torso" />
+             transform="matrix(0.9909067,0.1345516,-0.1345516,0.9909067,261.81476,196.11206)"
+             style="stroke:#f97e07">
+            <path
+               id="path4706"
+               style="fill:#9b579f;fill-rule:evenodd;stroke:#f97e07;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="M 34.131421,20.993347 L 34.308201,36.997487" />
+          </g>
           <use
              transform="matrix(-0.6320672,-0.7749136,0.7749136,-0.6320672,297.43034,257.24763)"
              style="display:inline"
@@ -11691,7 +11651,7 @@
              height="480"
              xlink:href="#gold_enemy_left_arm" />
           <use
-             transform="matrix(0.9766415,0.2148759,-0.2148759,0.9766415,262.89929,194.33628)"
+             transform="matrix(0.9766415,0.2148759,-0.2148759,0.9766415,263.87598,194.55117)"
              style="display:inline"
              id="use28155"
              x="0"
@@ -11779,7 +11739,7 @@
            style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1"
            id="g28174">
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
+             d="M 234.99968,270.07031 C 235.0302,272.62101 232.93397,274.71419 230.31439,274.74877 C 227.69482,274.78335 225.54108,272.74627 225.50057,270.19571 C 225.46006,267.64514 227.54808,265.54419 230.1675,265.49989 C 232.78693,265.45559 234.94863,267.48465 234.99912,270.03505"
              transform="matrix(-0.9261393,0.5002973,0.6162403,1.1407706,140.86078,51.689617)"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="path28176" />
@@ -11831,7 +11791,7 @@
         <g
            id="g28200">
           <use
-             transform="matrix(0.8798331,-0.4752828,0.4752828,0.8798331,57.872046,405.57469)"
+             transform="matrix(0.8798331,-0.4752828,0.4752828,0.8798331,58.751919,405.09939)"
              style="display:inline"
              id="use28202"
              x="0"
@@ -11839,15 +11799,15 @@
              width="640"
              height="480"
              xlink:href="#gold_enemy_head" />
-          <use
-             transform="matrix(0.9654371,-0.2606363,0.2606363,0.9654371,58.510699,396.82855)"
-             style="display:inline"
+          <g
              id="use28204"
-             x="0"
-             y="0"
-             width="640"
-             height="480"
-             xlink:href="#gold_enemy_torso" />
+             transform="matrix(0.9654371,-0.2606363,0.2606363,0.9654371,58.510699,396.82855)"
+             style="stroke:#f97e07">
+            <path
+               id="path4716"
+               style="fill:#9b579f;fill-rule:evenodd;stroke:#f97e07;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="M 34.131421,20.993347 L 34.308201,36.997487" />
+          </g>
           <use
              transform="matrix(0.9654371,-0.2606363,0.2606363,0.9654371,56.771174,397.29816)"
              style="display:inline"
@@ -11980,7 +11940,7 @@
            transform="matrix(-1,0,0,1,265,-3.414743e-6)"
            id="g28238">
           <use
-             transform="matrix(0.8798331,-0.4752828,0.4752828,0.8798331,57.872046,405.57469)"
+             transform="matrix(0.8798331,-0.4752828,0.4752828,0.8798331,58.751919,405.09939)"
              style="display:inline"
              id="use28240"
              x="0"
@@ -12113,7 +12073,7 @@
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4.99999952;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
              id="path5425" />
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
+             d="M 234.99968,270.07031 C 235.0302,272.62101 232.93397,274.71419 230.31439,274.74877 C 227.69482,274.78335 225.54108,272.74627 225.50057,270.19571 C 225.46006,267.64514 227.54808,265.54419 230.1675,265.49989 C 232.78693,265.45559 234.94863,267.48465 234.99912,270.03505"
              transform="matrix(-1.0526307,0,0,1.2965761,286.644,-270.73429)"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="path5427" />
@@ -12172,6 +12132,15 @@
              width="640"
              height="480"
              xlink:href="#gold_enemy_left_arm" />
+          <g
+             id="use28299"
+             transform="matrix(0.9908025,0.1353161,-0.1353161,0.9908025,70.415573,61.581209)"
+             style="stroke:#f97e07">
+            <path
+               id="path4726"
+               style="fill:#9b579f;fill-rule:evenodd;stroke:#f97e07;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="M 34.131421,20.993347 L 34.308201,36.997487" />
+          </g>
           <use
              transform="matrix(0.8607386,-0.5090471,0.5090471,0.8607386,61.7203,85.255679)"
              id="use5451"
@@ -12181,7 +12150,7 @@
              height="480"
              xlink:href="#gold_enemy_left_forearm" />
           <use
-             transform="translate(68.57894,66.506658)"
+             transform="translate(69.578985,66.506658)"
              id="use28284"
              x="0"
              y="0"
@@ -12244,14 +12213,6 @@
              width="640"
              height="480"
              xlink:href="#gold_enemy_right_arm" />
-          <use
-             transform="matrix(0.9908025,0.1353161,-0.1353161,0.9908025,70.415573,61.581209)"
-             id="use28299"
-             x="0"
-             y="0"
-             width="640"
-             height="480"
-             xlink:href="#gold_enemy_torso" />
         </g>
       </g>
       <g
@@ -12270,7 +12231,7 @@
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
              id="path28305" />
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
+             d="M 234.99968,270.07031 C 235.0302,272.62101 232.93397,274.71419 230.31439,274.74877 C 227.69482,274.78335 225.54108,272.74627 225.50057,270.19571 C 225.46006,267.64514 227.54808,265.54419 230.1675,265.49989 C 232.78693,265.45559 234.94863,267.48465 234.99912,270.03505"
              transform="matrix(-1.0526307,0,0,1.2965761,393.01029,-270.73429)"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="path28307" />
@@ -12322,15 +12283,6 @@
         <g
            id="g5559">
           <use
-             transform="matrix(0.9908025,0.1353161,-0.1353161,0.9908025,134.8759,61.700345)"
-             style="display:inline"
-             id="use28327"
-             x="0"
-             y="0"
-             width="640"
-             height="480"
-             xlink:href="#gold_enemy_torso" />
-          <use
              transform="matrix(0.9808593,-0.1947176,0.1947176,0.9808593,128.74153,73.08482)"
              style="display:inline"
              id="use28329"
@@ -12349,7 +12301,7 @@
              height="480"
              xlink:href="#gold_enemy_left_forearm" />
           <use
-             transform="translate(133.30442,66.506658)"
+             transform="translate(134.30447,66.506658)"
              style="display:inline"
              id="use28333"
              x="0"
@@ -12357,6 +12309,15 @@
              width="640"
              height="480"
              xlink:href="#gold_enemy_head" />
+          <g
+             id="use28327"
+             transform="matrix(0.9908025,0.1353161,-0.1353161,0.9908025,134.8759,61.700345)"
+             style="stroke:#f97e07">
+            <path
+               id="path4736"
+               style="fill-rule:evenodd;stroke:#f97e07;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="M 34.131421,20.993347 L 34.308201,36.997487" />
+          </g>
           <use
              transform="matrix(0.763579,-0.6457143,0.6457143,0.763579,113.84729,95.685069)"
              style="display:inline"
@@ -12455,7 +12416,7 @@
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4.99999952;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
              id="path5369" />
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
+             d="M 234.99968,270.07031 C 235.0302,272.62101 232.93397,274.71419 230.31439,274.74877 C 227.69482,274.78335 225.54108,272.74627 225.50057,270.19571 C 225.46006,267.64514 227.54808,265.54419 230.1675,265.49989 C 232.78693,265.45559 234.94863,267.48465 234.99912,270.03505"
              transform="matrix(-1.0526307,0,0,1.2965761,474.47459,-333.48359)"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="path5371" />
@@ -12499,15 +12460,6 @@
         <g
            id="g5391">
           <use
-             transform="matrix(0.9908025,0.1353161,-0.1353161,0.9908025,199.98834,61.934762)"
-             style="display:inline"
-             id="use5397"
-             x="0"
-             y="0"
-             width="640"
-             height="480"
-             xlink:href="#gold_enemy_torso" />
-          <use
              transform="matrix(0.9866709,0.1627279,-0.1627279,0.9866709,200.68451,61.273584)"
              style="display:inline"
              id="use5393"
@@ -12525,6 +12477,15 @@
              width="640"
              height="480"
              xlink:href="#gold_enemy_left_forearm" />
+          <g
+             id="use5397"
+             transform="matrix(0.9908025,0.1353161,-0.1353161,0.9908025,199.98834,61.934762)"
+             style="stroke:#f97e07">
+            <path
+               id="path4746"
+               style="fill:#9b579f;fill-rule:evenodd;stroke:#f97e07;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="M 34.131421,20.993347 L 34.308201,36.997487" />
+          </g>
           <use
              transform="matrix(0.2761594,-0.9611118,0.9611118,0.2761594,183.02284,125.22444)"
              style="display:inline"
@@ -12589,7 +12550,7 @@
              height="480"
              xlink:href="#gold_enemy_right_foot" />
           <use
-             transform="translate(197.97493,66.860211)"
+             transform="translate(198.97498,66.860211)"
              style="display:inline"
              id="use5413"
              x="0"
@@ -12632,7 +12593,7 @@
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4.99999952;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
              id="path5481" />
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
+             d="M 234.99968,270.07031 C 235.0302,272.62101 232.93397,274.71419 230.31439,274.74877 C 227.69482,274.78335 225.54108,272.74627 225.50057,270.19571 C 225.46006,267.64514 227.54808,265.54419 230.1675,265.49989 C 232.78693,265.45559 234.94863,267.48465 234.99912,270.03505"
              transform="matrix(-1.0526307,0,0,1.2965761,541.22459,-335.97366)"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="path28381" />
@@ -12694,15 +12655,6 @@
              height="480"
              xlink:href="#gold_enemy_right_calf" />
           <use
-             transform="matrix(0.9908025,0.1353161,-0.1353161,0.9908025,264.98834,63.591844)"
-             style="display:inline"
-             id="use28395"
-             x="0"
-             y="0"
-             width="640"
-             height="480"
-             xlink:href="#gold_enemy_torso" />
-          <use
              transform="matrix(0.9491695,0.314765,-0.314765,0.9491695,270.12637,58.594843)"
              style="display:inline"
              id="use28397"
@@ -12729,8 +12681,17 @@
              width="640"
              height="480"
              xlink:href="#gold_enemy_left_forearm" />
+          <g
+             id="use28395"
+             transform="matrix(0.9908025,0.1353161,-0.1353161,0.9908025,264.98834,63.591844)"
+             style="stroke:#f97e07">
+            <path
+               id="path4756"
+               style="fill:#9b579f;fill-rule:evenodd;stroke:#f97e07;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="M 34.131421,20.993347 L 34.308201,36.997487" />
+          </g>
           <use
-             transform="translate(262.97493,68.517293)"
+             transform="translate(263.97498,68.517293)"
              style="display:inline"
              id="use28402"
              x="0"
@@ -12809,14 +12770,15 @@
            transform="translate(260,-0.5435343)"
            style="opacity:1"
            id="g28418">
-          <use
-             transform="matrix(0.9169061,0.4013633,-0.3991032,0.9220985,76.596147,186.41581)"
+          <g
              id="use28420"
-             x="0"
-             y="0"
-             width="640"
-             height="480"
-             xlink:href="#gold_enemy_torso" />
+             transform="matrix(0.9169061,0.4013633,-0.3991032,0.9220985,76.596147,186.41581)"
+             style="stroke:#f97e07">
+            <path
+               id="path4766"
+               style="fill-rule:evenodd;stroke:#f97e07;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="M 34.131421,20.993347 L 34.308201,36.997487" />
+          </g>
           <use
              transform="matrix(-0.9843547,-0.1771959,0.1761981,-0.9899291,114.10446,246.18099)"
              id="use28422"
@@ -12842,7 +12804,7 @@
              height="480"
              xlink:href="#gold_enemy_right_arm" />
           <use
-             transform="matrix(1,0,0,1.005663,67.195963,199.12034)"
+             transform="matrix(1,0,0,1.005663,68.196008,199.12034)"
              id="use28428"
              x="0"
              y="0"
@@ -12931,15 +12893,15 @@
            transform="translate(259.5,-4.3534329e-2)"
            style="opacity:1"
            id="g28449">
-          <use
-             transform="matrix(0.98886,0.1488494,-0.1488494,0.98886,135.16772,196.99761)"
-             style="display:inline"
+          <g
              id="use28451"
-             x="0"
-             y="0"
-             width="640"
-             height="480"
-             xlink:href="#gold_enemy_torso" />
+             transform="matrix(0.98886,0.1488494,-0.1488494,0.98886,135.16772,196.99761)"
+             style="stroke:#f97e07">
+            <path
+               id="path4776"
+               style="fill:#9b579f;fill-rule:evenodd;stroke:#f97e07;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="M 34.131421,20.993347 L 34.308201,36.997487" />
+          </g>
           <use
              transform="matrix(-0.7947303,-0.6069627,0.6069627,-0.7947303,163.9779,263.18593)"
              style="display:inline"
@@ -12977,7 +12939,7 @@
              height="480"
              xlink:href="#gold_enemy_right_arm" />
           <use
-             transform="matrix(0.9564823,0.2917906,-0.2917906,0.9564823,138.56422,192.92463)"
+             transform="matrix(0.9564823,0.2917906,-0.2917906,0.9564823,139.52075,193.21643)"
              style="display:inline"
              id="use28461"
              x="0"
@@ -13094,7 +13056,7 @@
                height="480"
                xlink:href="#gold_enemy_right_forearm" />
             <use
-               transform="matrix(0.9430208,0.3327342,-0.3327342,0.9430208,202.86988,193.16911)"
+               transform="matrix(0.9430208,0.3327342,-0.3327342,0.9430208,203.81294,193.50186)"
                style="display:inline"
                id="use28490"
                x="0"
@@ -13111,15 +13073,15 @@
                width="640"
                height="480"
                xlink:href="#gold_enemy_left_arm" />
-            <use
-               transform="matrix(0.9813398,-0.1922821,0.1922821,0.9813398,191.69894,209.57317)"
-               style="display:inline"
+            <g
                id="use28494"
-               x="0"
-               y="0"
-               width="640"
-               height="480"
-               xlink:href="#gold_enemy_torso" />
+               transform="matrix(0.9813398,-0.1922821,0.1922821,0.9813398,191.69894,209.57317)"
+               style="stroke:#f97e07">
+              <path
+                 id="path4786"
+                 style="fill:#9b579f;fill-rule:evenodd;stroke:#f97e07;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                 d="M 34.131421,20.993347 L 34.308201,36.997487" />
+            </g>
             <use
                transform="matrix(0.9248634,-0.3802992,0.3802992,0.9248634,187.67475,216.86821)"
                style="display:inline"
@@ -13246,7 +13208,7 @@
              height="480"
              xlink:href="#gold_enemy_right_arm" />
           <use
-             transform="matrix(0.9766415,0.2148759,-0.2148759,0.9766415,262.89929,194.33628)"
+             transform="matrix(0.9766415,0.2148759,-0.2148759,0.9766415,263.87598,194.55117)"
              style="display:inline"
              id="use28525"
              x="0"
@@ -13254,15 +13216,15 @@
              width="640"
              height="480"
              xlink:href="#gold_enemy_head" />
-          <use
-             transform="matrix(0.9909067,0.1345516,-0.1345516,0.9909067,261.81476,196.11206)"
-             style="display:inline"
+          <g
              id="use28527"
-             x="0"
-             y="0"
-             width="640"
-             height="480"
-             xlink:href="#gold_enemy_torso" />
+             transform="matrix(0.9909067,0.1345516,-0.1345516,0.9909067,261.81476,196.11206)"
+             style="stroke:#f97e07">
+            <path
+               id="path4796"
+               style="fill:#9b579f;fill-rule:evenodd;stroke:#f97e07;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="M 34.131421,20.993347 L 34.308201,36.997487" />
+          </g>
           <use
              transform="matrix(0.2187845,0.975773,-0.975773,0.2187845,331.16472,208.30373)"
              style="display:inline"
@@ -13335,7 +13297,7 @@
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4.99999952;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
              id="path28546" />
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
+             d="M 234.99968,270.07031 C 235.0302,272.62101 232.93397,274.71419 230.31439,274.74877 C 227.69482,274.78335 225.54108,272.74627 225.50057,270.19571 C 225.46006,267.64514 227.54808,265.54419 230.1675,265.49989 C 232.78693,265.45559 234.94863,267.48465 234.99912,270.03505"
              transform="matrix(-1.0526307,0,0,1.2965761,286.644,-270.73429)"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="path28548" />
@@ -13403,7 +13365,7 @@
              height="480"
              xlink:href="#gold_enemy_torso2" />
           <use
-             transform="translate(68.57894,66.506658)"
+             transform="translate(69.578985,66.506658)"
              id="use28576"
              x="0"
              y="0"
@@ -13493,7 +13455,7 @@
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
              id="path28599" />
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
+             d="M 234.99968,270.07031 C 235.0302,272.62101 232.93397,274.71419 230.31439,274.74877 C 227.69482,274.78335 225.54108,272.74627 225.50057,270.19571 C 225.46006,267.64514 227.54808,265.54419 230.1675,265.49989 C 232.78693,265.45559 234.94863,267.48465 234.99912,270.03505"
              transform="matrix(-1.0526307,0,0,1.2965761,393.01029,-270.73429)"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="path28601" />
@@ -13563,7 +13525,7 @@
              height="480"
              xlink:href="#gold_enemy_left_forearm" />
           <use
-             transform="translate(133.30442,66.506658)"
+             transform="translate(134.30447,66.506658)"
              style="display:inline"
              id="use28629"
              x="0"
@@ -13679,7 +13641,7 @@
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4.99999952;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
              id="path28656" />
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
+             d="M 234.99968,270.07031 C 235.0302,272.62101 232.93397,274.71419 230.31439,274.74877 C 227.69482,274.78335 225.54108,272.74627 225.50057,270.19571 C 225.46006,267.64514 227.54808,265.54419 230.1675,265.49989 C 232.78693,265.45559 234.94863,267.48465 234.99912,270.03505"
              transform="matrix(-1.0526307,0,0,1.2965761,474.47459,-333.48359)"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="path28658" />
@@ -13813,7 +13775,7 @@
              height="480"
              xlink:href="#gold_enemy_right_foot" />
           <use
-             transform="translate(197.97493,66.860211)"
+             transform="translate(198.97498,66.860211)"
              style="display:inline"
              id="use28700"
              x="0"
@@ -13857,7 +13819,7 @@
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4.99999952;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
              id="path28711" />
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
+             d="M 234.99968,270.07031 C 235.0302,272.62101 232.93397,274.71419 230.31439,274.74877 C 227.69482,274.78335 225.54108,272.74627 225.50057,270.19571 C 225.46006,267.64514 227.54808,265.54419 230.1675,265.49989 C 232.78693,265.45559 234.94863,267.48465 234.99912,270.03505"
              transform="matrix(-1.0526307,0,0,1.2965761,541.22459,-335.97366)"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="path28713" />
@@ -13928,7 +13890,7 @@
              height="480"
              xlink:href="#gold_enemy_torso2" />
           <use
-             transform="translate(262.97493,68.517293)"
+             transform="translate(263.97498,68.517293)"
              style="display:inline"
              id="use28741"
              x="0"
@@ -14035,7 +13997,7 @@
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4.99999952;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
              id="path5596" />
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
+             d="M 234.99968,270.07031 C 235.0302,272.62101 232.93397,274.71419 230.31439,274.74877 C 227.69482,274.78335 225.54108,272.74627 225.50057,270.19571 C 225.46006,267.64514 227.54808,265.54419 230.1675,265.49989 C 232.78693,265.45559 234.94863,267.48465 234.99912,270.03505"
              transform="matrix(-1.0526307,0,0,1.2965761,286.644,-270.73429)"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="path5598" />
@@ -14159,7 +14121,7 @@
              height="480"
              xlink:href="#gold_enemy_right_foot" />
           <use
-             transform="translate(68.57894,66.506658)"
+             transform="translate(69.578985,66.506658)"
              id="use5626"
              x="0"
              y="0"
@@ -14193,7 +14155,7 @@
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
              id="path5651" />
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
+             d="M 234.99968,270.07031 C 235.0302,272.62101 232.93397,274.71419 230.31439,274.74877 C 227.69482,274.78335 225.54108,272.74627 225.50057,270.19571 C 225.46006,267.64514 227.54808,265.54419 230.1675,265.49989 C 232.78693,265.45559 234.94863,267.48465 234.99912,270.03505"
              transform="matrix(-1.0526307,0,0,1.2965761,393.01029,-270.73429)"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="path5653" />
@@ -14254,7 +14216,7 @@
              height="480"
              xlink:href="#gold_enemy_torso2" />
           <use
-             transform="translate(133.30442,66.506658)"
+             transform="translate(134.30447,66.506658)"
              style="display:inline"
              id="use5681"
              x="0"
@@ -14379,7 +14341,7 @@
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4.99999952;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
              id="path5709" />
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
+             d="M 234.99968,270.07031 C 235.0302,272.62101 232.93397,274.71419 230.31439,274.74877 C 227.69482,274.78335 225.54108,272.74627 225.50057,270.19571 C 225.46006,267.64514 227.54808,265.54419 230.1675,265.49989 C 232.78693,265.45559 234.94863,267.48465 234.99912,270.03505"
              transform="matrix(-1.0526307,0,0,1.2965761,474.47459,-333.48359)"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="path5711" />
@@ -14513,7 +14475,7 @@
              height="480"
              xlink:href="#gold_enemy_right_foot" />
           <use
-             transform="translate(197.97493,66.860211)"
+             transform="translate(198.97498,66.860211)"
              style="display:inline"
              id="use5753"
              x="0"
@@ -14557,7 +14519,7 @@
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4.99999952;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
              id="path5765" />
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
+             d="M 234.99968,270.07031 C 235.0302,272.62101 232.93397,274.71419 230.31439,274.74877 C 227.69482,274.78335 225.54108,272.74627 225.50057,270.19571 C 225.46006,267.64514 227.54808,265.54419 230.1675,265.49989 C 232.78693,265.45559 234.94863,267.48465 234.99912,270.03505"
              transform="matrix(-1.0526307,0,0,1.2965761,541.22459,-335.97366)"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="path5767" />
@@ -14646,7 +14608,7 @@
              height="480"
              xlink:href="#gold_enemy_left_forearm" />
           <use
-             transform="translate(262.97493,68.517293)"
+             transform="translate(263.97498,68.517293)"
              style="display:inline"
              id="use5795"
              x="0"
@@ -14735,7 +14697,7 @@
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4.51272345;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
              id="path28878" />
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
+             d="M 234.99968,270.07031 C 235.0302,272.62101 232.93397,274.71419 230.31439,274.74877 C 227.69482,274.78335 225.54108,272.74627 225.50057,270.19571 C 225.46006,267.64514 227.54808,265.54419 230.1675,265.49989 C 232.78693,265.45559 234.94863,267.48465 234.99912,270.03505"
              transform="matrix(-1.0526307,0,0,1.3039186,347.96204,-204.87713)"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="path28880" />
@@ -14795,7 +14757,7 @@
              height="480"
              xlink:href="#gold_enemy_left_arm" />
           <use
-             transform="matrix(1,0,0,1.005663,67.195963,199.12034)"
+             transform="matrix(1,0,0,1.005663,68.196008,199.12034)"
              id="use28906"
              x="0"
              y="0"
@@ -14901,7 +14863,7 @@
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4.49999952;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
              id="path28933" />
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
+             d="M 234.99968,270.07031 C 235.0302,272.62101 232.93397,274.71419 230.31439,274.74877 C 227.69482,274.78335 225.54108,272.74627 225.50057,270.19571 C 225.46006,267.64514 227.54808,265.54419 230.1675,265.49989 C 232.78693,265.45559 234.94863,267.48465 234.99912,270.03505"
              transform="matrix(-1.0068226,-0.3071477,-0.3783287,1.2401521,500.87599,14.539632)"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="path28935" />
@@ -14963,7 +14925,7 @@
              height="480"
              xlink:href="#gold_enemy_left_arm" />
           <use
-             transform="matrix(0.9564823,0.2917906,-0.2917906,0.9564823,138.56422,192.92463)"
+             transform="matrix(0.9564823,0.2917906,-0.2917906,0.9564823,139.52075,193.21643)"
              style="display:inline"
              id="use28961"
              x="0"
@@ -15079,7 +15041,7 @@
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
              id="path28988" />
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
+             d="M 234.99968,270.07031 C 235.0302,272.62101 232.93397,274.71419 230.31439,274.74877 C 227.69482,274.78335 225.54108,272.74627 225.50057,270.19571 C 225.46006,267.64514 227.54808,265.54419 230.1675,265.49989 C 232.78693,265.45559 234.94863,267.48465 234.99912,270.03505"
              transform="matrix(-0.9926526,-0.3502462,-0.4314152,1.2226982,573.82641,32.101243)"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="path28990" />
@@ -15141,7 +15103,7 @@
              height="480"
              xlink:href="#gold_enemy_left_arm" />
           <use
-             transform="matrix(0.9430208,0.3327342,-0.3327342,0.9430208,202.86988,193.16911)"
+             transform="matrix(0.9430208,0.3327342,-0.3327342,0.9430208,203.81294,193.50186)"
              style="display:inline"
              id="use29016"
              x="0"
@@ -15265,7 +15227,7 @@
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
              id="path29047" />
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
+             d="M 234.99968,270.07031 C 235.0302,272.62101 232.93397,274.71419 230.31439,274.74877 C 227.69482,274.78335 225.54108,272.74627 225.50057,270.19571 C 225.46006,267.64514 227.54808,265.54419 230.1675,265.49989 C 232.78693,265.45559 234.94863,267.48465 234.99912,270.03505"
              transform="matrix(-1.0280428,-0.226185,-0.278603,1.26629,606.2505,-10.560294)"
              style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="path29049" />
@@ -15338,7 +15300,7 @@
              height="480"
              xlink:href="#gold_enemy_left_arm" />
           <use
-             transform="matrix(0.9766415,0.2148759,-0.2148759,0.9766415,262.89929,194.33628)"
+             transform="matrix(0.9766415,0.2148759,-0.2148759,0.9766415,263.87598,194.55117)"
              style="display:inline"
              id="use29075"
              x="0"
@@ -15470,7 +15432,7 @@
              height="480"
              xlink:href="#gold_enemy_right_arm" />
           <use
-             transform="matrix(1,0,0,1.005663,67.195963,199.12034)"
+             transform="matrix(1,0,0,1.005663,68.196008,199.12034)"
              id="use29106"
              x="0"
              y="0"
@@ -15606,7 +15568,7 @@
              height="480"
              xlink:href="#gold_enemy_right_arm" />
           <use
-             transform="matrix(0.9564823,0.2917906,-0.2917906,0.9564823,138.56422,192.92463)"
+             transform="matrix(0.9564823,0.2917906,-0.2917906,0.9564823,139.52075,193.21643)"
              style="display:inline"
              id="use29139"
              x="0"
@@ -15724,7 +15686,7 @@
                height="480"
                xlink:href="#gold_enemy_right_forearm" />
             <use
-               transform="matrix(0.9430208,0.3327342,-0.3327342,0.9430208,202.86988,193.16911)"
+               transform="matrix(0.9430208,0.3327342,-0.3327342,0.9430208,203.81294,193.50186)"
                style="display:inline"
                id="use29168"
                x="0"
@@ -15887,7 +15849,7 @@
              height="480"
              xlink:href="#gold_enemy_right_arm" />
           <use
-             transform="matrix(0.9766415,0.2148759,-0.2148759,0.9766415,262.89929,194.33628)"
+             transform="matrix(0.9766415,0.2148759,-0.2148759,0.9766415,263.87598,194.55117)"
              style="display:inline"
              id="use29205"
              x="0"
@@ -15958,7 +15920,7 @@
            style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1"
            id="g29220">
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
+             d="M 234.99968,270.07031 C 235.0302,272.62101 232.93397,274.71419 230.31439,274.74877 C 227.69482,274.78335 225.54108,272.74627 225.50057,270.19571 C 225.46006,267.64514 227.54808,265.54419 230.1675,265.49989 C 232.78693,265.45559 234.94863,267.48465 234.99912,270.03505"
              transform="matrix(1.0245248,0.24162,-0.297615,1.2619567,10.379105,-58.004135)"
              style="color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible"
              id="path29222" />
@@ -16011,7 +15973,7 @@
            transform="matrix(-1,0,0,1,265,0)"
            id="g29246">
           <use
-             transform="matrix(0.9732994,-0.2295392,0.2295392,0.9732994,62.913959,333.69979)"
+             transform="matrix(0.9732994,-0.2295392,0.2295392,0.9732994,63.887303,333.47024)"
              style="opacity:1;color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
              id="use29248"
              x="0"
@@ -16021,7 +15983,7 @@
              xlink:href="#gold_enemy_head" />
           <path
              d="M 99.94152,346.41575 L 100.1183,362.41989"
-             style="opacity:1;color:#000000;fill:#9b579f;fill-opacity:1;fill-rule:evenodd;stroke:#e72300;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible"
+             style="opacity:1;color:#000000;fill:#9b579f;fill-opacity:1;fill-rule:evenodd;stroke:#f97e07;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible"
              id="path5815" />
           <use
              transform="matrix(0.7614974,0.6481679,-0.6481679,0.7614974,96.650057,312.63017)"
@@ -16113,41 +16075,6 @@
              width="640"
              height="480"
              xlink:href="#gold_enemy_right_arm" />
-          <g
-             transform="translate(81.922645,322.94753)"
-             style="opacity:1;color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible"
-             id="g5831">
-            <g
-               transform="translate(4.0658638,-2.1213202)"
-               id="g5836">
-              <g
-                 style="fill:#ffdc00"
-                 id="g4333">
-                <rect
-                   width="5"
-                   height="30"
-                   x="13.597281"
-                   y="19.173794"
-                   style="fill:#ffdc00;fill-opacity:1;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                   id="rect5817" />
-                <path
-                   d="M -43.134441,41.312048 A 13.258252,16.351845 0 1 1 -43.136021,41.187383"
-                   transform="matrix(0.4148355,0,0,0.9173264,42.490586,-3.9002201)"
-                   style="fill:#ffdc00;fill-opacity:1;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                   id="path5819" />
-              </g>
-              <path
-                 d="M -43.134441,41.312048 A 13.258252,16.351845 0 1 1 -43.136021,41.187383"
-                 transform="matrix(0.4148355,0,0,0.9173264,37.490588,-3.9002199)"
-                 style="fill:#ffdc00;fill-opacity:1;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                 id="path5821" />
-              <path
-                 d="M -43.134441,41.312048 A 13.258252,16.351845 0 1 1 -43.136021,41.187383"
-                 transform="matrix(0.4148355,0,0,0.9173264,37.490588,-3.9002199)"
-                 style="opacity:0.5;fill:#200000;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                 id="path5333" />
-            </g>
-          </g>
         </g>
       </g>
       <g
@@ -16166,7 +16093,7 @@
            style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1"
            id="g3259">
           <path
-             d="M 234.99968,270.07031 A 4.75,4.625 0 1 1 234.99912,270.03505"
+             d="M 234.99968,270.07031 C 235.0302,272.62101 232.93397,274.71419 230.31439,274.74877 C 227.69482,274.78335 225.54108,272.74627 225.50057,270.19571 C 225.46006,267.64514 227.54808,265.54419 230.1675,265.49989 C 232.78693,265.45559 234.94863,267.48465 234.99912,270.03505"
              transform="matrix(1.0245248,0.24162,-0.297615,1.2619567,10.379105,-58.004135)"
              style="color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible"
              id="path3261" />
@@ -16219,7 +16146,7 @@
            transform="matrix(-1,0,0,1,265,0)"
            id="g3285">
           <use
-             transform="matrix(0.9732994,-0.2295392,0.2295392,0.9732994,62.913959,333.69979)"
+             transform="matrix(0.9732994,-0.2295392,0.2295392,0.9732994,63.887303,333.47024)"
              style="opacity:1;color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
              id="use3287"
              x="0"
@@ -16229,7 +16156,7 @@
              xlink:href="#gold_enemy_head" />
           <path
              d="M 99.94152,346.41575 L 100.1183,362.41989"
-             style="opacity:1;color:#000000;fill:#9b579f;fill-opacity:1;fill-rule:evenodd;stroke:#e72300;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible"
+             style="opacity:1;color:#000000;fill:#9b579f;fill-opacity:1;fill-rule:evenodd;stroke:#f97e07;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible"
              id="path3289" />
           <use
              transform="matrix(0.7614974,0.6481679,-0.6481679,0.7614974,96.650057,312.63017)"
@@ -16321,41 +16248,6 @@
              width="640"
              height="480"
              xlink:href="#gold_enemy_right_arm" />
-          <g
-             transform="translate(81.922645,322.94753)"
-             style="opacity:1;color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3.875;stroke-linecap:square;stroke-linejoin:bevel;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible"
-             id="g3311">
-            <g
-               transform="translate(4.0658638,-2.1213202)"
-               id="g3313">
-              <g
-                 style="fill:#ffdc00"
-                 id="g3315">
-                <rect
-                   width="5"
-                   height="30"
-                   x="13.597281"
-                   y="19.173794"
-                   style="fill:#ffdc00;fill-opacity:1;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                   id="rect3317" />
-                <path
-                   d="M -43.134441,41.312048 A 13.258252,16.351845 0 1 1 -43.136021,41.187383"
-                   transform="matrix(0.4148355,0,0,0.9173264,42.490586,-3.9002201)"
-                   style="fill:#ffdc00;fill-opacity:1;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                   id="path3319" />
-              </g>
-              <path
-                 d="M -43.134441,41.312048 A 13.258252,16.351845 0 1 1 -43.136021,41.187383"
-                 transform="matrix(0.4148355,0,0,0.9173264,37.490588,-3.9002199)"
-                 style="fill:#ffdc00;fill-opacity:1;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                 id="path3321" />
-              <path
-                 d="M -43.134441,41.312048 A 13.258252,16.351845 0 1 1 -43.136021,41.187383"
-                 transform="matrix(0.4148355,0,0,0.9173264,37.490588,-3.9002199)"
-                 style="opacity:0.5;fill:#200000;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                 id="path3323" />
-            </g>
-          </g>
         </g>
       </g>
     </g>
