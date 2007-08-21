@@ -74,7 +74,7 @@ public:
 
 	QPixmap getPixmap (char type);
 
-	void changeTheme (const QString & themeFilepath);
+	bool changeTheme (const QString & themeFilepath);
 	/**
 	 * setLevel is meant as a way to communicate that new graphics can
 	 * be used if multiple sets are available in the theme.

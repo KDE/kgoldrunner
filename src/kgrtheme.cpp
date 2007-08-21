@@ -40,31 +40,16 @@ KGrTheme::KGrTheme(const QString &systemDataDir) :
 {
 }
 
-void KGrTheme::load(const QString& themeFilepath)
+bool KGrTheme::load(const QString& themeFilepath)
 {
     kDebug() << "New Theme -" << themeFilepath;
     if (!m_themeFilepath.isEmpty() && (themeFilepath == m_themeFilepath)) {
 	kDebug() << "NO CHANGE OF THEME ...";
-	return;					// No change of theme.
+	return true;					// No change of theme.
     }
 
     KConfig theme (themeFilepath, KConfig::OnlyLocal);	// Read graphics config.
     KConfigGroup group = theme.group ("KDEGameTheme");
-
-    // Check if the theme asks us to draw our border, and set the specified
-    // color
-    themeDrawBorder = group.readEntry ("DrawCanvasBorder", 0);
-    if (themeDrawBorder) {
-      QString themeBorderColor = group.readEntry ("BorderColor", "");
-      if (!themeBorderColor.isEmpty()) {
-        m_borderColor.setNamedColor(themeBorderColor);
-      }
-    }
-    // If specified, also set the title color
-    QString themeTextColor = group.readEntry ("TextColor", "");
-    if (!themeTextColor.isEmpty()) {
-      m_textColor.setNamedColor(themeTextColor);
-    }
 
     QString f = group.readEntry ("Set", "");
     if (f.endsWith (".svg") || f.endsWith (".svgz")) {
@@ -98,14 +83,21 @@ void KGrTheme::load(const QString& themeFilepath)
 	    runnerGraphics = SVG;
 	}
     } else {
-	// Load a XPM theme (KGoldrunner 2 and KDE 3).
-	int colorIndex = group.readEntry ("ColorIndex", 0);
-	changeColors (& colourScheme [colorIndex * 12]);
-	tileGraphics = XPM;
-	backgroundGraphics = XPM;
-	runnerGraphics = XPM;
-        themeDrawBorder = 1;
-	numBackgrounds = 0;
+	return false;		// Not SVG: old XPM themes no longer supported.
+    }
+
+    // Check if the theme asks us to draw a border and set the specified color.
+    themeDrawBorder = group.readEntry ("DrawCanvasBorder", 0);
+    if (themeDrawBorder) {
+      QString themeBorderColor = group.readEntry ("BorderColor", "");
+      if (!themeBorderColor.isEmpty()) {
+        m_borderColor.setNamedColor(themeBorderColor);
+      }
+    }
+    // If specified, also set the title color.
+    QString themeTextColor = group.readEntry ("TextColor", "");
+    if (!themeTextColor.isEmpty()) {
+      m_textColor.setNamedColor(themeTextColor);
     }
 
     // Save the user's selected theme in KDE's config-group data for the game.
@@ -113,6 +105,7 @@ void KGrTheme::load(const QString& themeFilepath)
     gameGroup.writeEntry ("ThemeFilepath", themeFilepath);
     gameGroup.sync();			// Ensure that the entry goes to disk.
     m_themeFilepath = themeFilepath;
+    return true;
 }
 
 QImage KGrTheme::background(unsigned int width, unsigned int height, unsigned int variant)

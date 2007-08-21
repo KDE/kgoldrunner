@@ -586,8 +586,9 @@ void KGoldrunner::setupThemes ()
 	     (filepath.indexOf ("default") >= 0)) ||
 	    ((filepath == themeFilepaths.last()) &&
 	     (themeGroup->checkedAction() == 0))) {	// or last in the list,
-	    newTheme->setChecked (true);		// mark it as chosen and
-	    view->changeTheme (filepath);		// tell graphics init.
+	    if (view->changeTheme (filepath)) {		// tell graphics init.
+		newTheme->setChecked (true);		// and mark it as chosen
+	    }
 	}
 
 	connect (newTheme, SIGNAL(triggered (bool)), themeMapper, SLOT(map ()));
@@ -757,9 +758,15 @@ void KGoldrunner::stopStart()
 
 void KGoldrunner::changeTheme (const QString & themeFilepath)
 {
-    view->changeTheme (themeFilepath);
-    if (game->inEditMode()) {
-	setEditMenu (true);
+    if (view->changeTheme (themeFilepath)) {
+	if (game->inEditMode()) {
+	    setEditMenu (true);
+	}
+    }
+    else {
+	KGrMessage::information (this, i18n("Theme Not Loaded"),
+		i18n("Cannot load the theme you selected.  It is not "
+		     "in the required graphics format (SVG)."));
     }
 }
 

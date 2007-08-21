@@ -59,6 +59,9 @@ int main (int argc, char **argv)
 			    "multiple-backgrounds feature, fade-in/fade-out "
 			    "feature and several other ideas"), 
 		      "mikelima@gmail.com");
+    about.addCredit(ki18n("Eugene Trounev"),
+		      ki18n("Artwork for the Treasure of Egypt theme"), 
+		      "irs_me@hotmail.com");
 
     KCmdLineArgs::init (argc, argv, &about);
 

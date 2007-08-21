@@ -192,12 +192,15 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
 
 }
 
-void KGrCanvas::changeTheme (const QString & themeFilepath)
+bool KGrCanvas::changeTheme (const QString & themeFilepath)
 {
     kDebug()<< "New Theme -" << themeFilepath;
-    theme.load(themeFilepath);
-    const bool changePixmaps = true;
-    drawTheScene (changePixmaps);	// Not startup, so re-draw play-area.
+    bool success = theme.load(themeFilepath);
+    if (success) {
+	const bool changePixmaps = true;
+	drawTheScene (changePixmaps);	// Not startup, so re-draw play-area.
+    }
+    return success;
 }
 
 void KGrCanvas::resizeEvent (QResizeEvent * event )

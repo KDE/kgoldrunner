@@ -35,7 +35,7 @@ public:
     /** 
      * load a theme given the name of its .desktop file 
      */
-    void load(const QString & themeFilepath);
+    bool load(const QString & themeFilepath);
     
     QList<QPixmap> tiles(unsigned int size);
     

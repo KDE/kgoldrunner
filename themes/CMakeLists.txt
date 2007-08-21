@@ -8,9 +8,6 @@ install( FILES README
 	       egypt.desktop
                default.desktop
                kgr_geek.desktop
-               kgoldrunner.desktop
-               apple_2.desktop
-               midnight.desktop
                nostalgia.desktop
                nostalgia-blues.desktop
                DESTINATION ${DATA_INSTALL_DIR}/kgoldrunner/themes )

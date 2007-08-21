@@ -18,45 +18,39 @@ That line gets picked up and translated into various languages.  Some other
 standard (but optional) lines are Description=..., Author=..., AuthorEmail=...
 and VersionFormat=...
 
-XPM THEMES
-
-XPM themes are retained from KGoldrunner 2 (KDE 3) as "classic" or "nostalgia"
-items.  The required graphics are embedded in the program, together with an
-array of color-schemes.  The *.desktop file must contain a ColorIndex=n line,
-to indicate which color-scheme to use.  Example, theme-file "apple_2.desktop":
-
-    [KDEGameTheme]
-    Name=Apple II
-    Author=Ian Wadham
-    ColorIndex=1
-
 SVG THEMES
 
 SVG themes are the standard for KGoldrunner 3+ (KDE 4+).  The *.desktop file
-must contain a FileName=xxxx line to indicate where to find the SVG graphics.
-The filename must end in .svg or .svgz and the file must be in or relative to
-the same folder as the *.desktop file.  Example, theme-file "default.desktop":
+must contain a Set=xxxx line and an Actors=yyyy line, that contain the filenames
+in which to find the SVG graphics for the tiles and background (the set) and the
+runners (the actors).  The filenames must end in .svg or .svgz and the file must
+be in or relative to the same folder as the *.desktop file.  By convention, the
+files are always in a sub-folder named after the theme.  Example, theme-file
+"default.desktop":
 
     [KDEGameTheme]
     Name=KGoldRunner Default
-    Name[sv]=Standard Kgoldrunner
+    Name[el]=Προκαθορισμένο KGoldrunner
+    Name[es]=KGoldRunner predeterminado
     Description=A light and clean theme for KDE4
-    Description[sv]=Ett lätt och rent tema för KDE4
+    Description[el]=Ένα απλό και ελαφρύ θέμα για το KDE4
+    Description[es]=Un tema luminoso y limpio para KDE4
     Author=Mauricio Piacentini
-    FileName=kgr_default.svg
+    Set=default/set.svg
+    Actors=default/actors.svg
     DrawCanvasBorder=1
     BorderColor=#2C89A0
     TextColor=#FFFFFF
 
-Note that Name and Description have been translated (into Swedish).
-DrawCanvasBorder=1 says that a border is required around this theme, rather
-than the default behavior of letting the background fill the canvas (see
-below).  BorderColor and TextColor supply hex color codes for the border
-area and the text of the game and level titles.
+Note that Name and Description have been translated.  DrawCanvasBorder=1 says
+that a border is required around this theme, rather than the default behavior
+of letting the background fill the canvas (see below).  BorderColor and
+TextColor supply hex color codes for the border area and the text of the
+game and level titles.
 
 As SVG themes become more sophisticated, it is expected that other meta-data
 will be needed in the *.desktop files.  Such changes must be matched with
-code-changes by KGoldrunner's maintainers that will read the new meta-data
+code-changes, by KGoldrunner's maintainers, that will read the new meta-data
 and act on it.  Artists and maintainers need to work together on this.
 
 SVG ELEMENTS
@@ -89,7 +83,7 @@ always be 28 x 20 square elements.  The play-area has a thin black frame around
 it and a title-text above it.  The space around the play-area is a buffer-zone,
 to protect against mouse-action spilling over into the surrounding desktop.
 
-In alternative to a single background element, a series of background0,
+As an alternative to a single background element, a series named background0,
 background1, ... backgroundn can be provided. Each level will load a different
 background until the last background provided is reached, after which the first
 one is used again.
@@ -101,5 +95,5 @@ yet to be decided.
 The background should make arbitrary arrangements of smaller elements easily
 visible and recognisable to the game player, i.e. it must be playable in all
 levels of all games.  This should be tested by displaying several levels with
-a new theme before it is released (e.g. use the Game->Play Any Level dialog).
+a new theme before it is released (e.g. use the Game->New Game... dialog).
 
