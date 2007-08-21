@@ -58,7 +58,7 @@ int main (int argc, char **argv)
 		      ki18n("Nostalgia themes, improvements to runners, "
 			    "multiple-backgrounds feature, fade-in/fade-out "
 			    "feature and several other ideas"), 
-		      "mikelima@gmail.com");
+		      "mikelima@cirulla.net");
     about.addCredit(ki18n("Eugene Trounev"),
 		      ki18n("Artwork for the Treasure of Egypt theme"), 
 		      "irs_me@hotmail.com");
