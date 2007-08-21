@@ -1,0 +1,9 @@
+[KDEGameTheme]
+Name=Black on White
+Description=A MonochromeBlack on White theme for KGoldrunner
+Author=Luciano Montanaro
+Set=accessible/black-on-white-set.svg
+Actors=accessible/black-on-white-actors.svg
+DrawCanvasBorder=0
+BorderColor=#000000
+TextColor=#000000
