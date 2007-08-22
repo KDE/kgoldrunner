@@ -1,6 +1,12 @@
 [KDEGameTheme]
 Name=The Treasure of Egypt
+Name[pt]=O Tesouro do Egipto
+Name[pt_BR]=O Tesouro do Egipto
+Name[zh_TW]=埃及的寶藏
 Description=Help Matt Goldrunner escape the the traps of ancient Egypt.
+Description[pt]=Ajude o Matt Goldrunner a escapar das armadilhas do antigo Egipto.
+Description[pt_BR]=Ajude o Matt Goldrunner a escapar das armadilhas do antigo Egipto.
+Description[zh_TW]=協助 Goldrunner 逃離古埃及
 Author=Eugene Trounev
 Set=egypt/egypt_kgr.svg
 Actors=egypt/actors.svg
