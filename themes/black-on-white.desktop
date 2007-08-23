@@ -1,6 +1,13 @@
 [KDEGameTheme]
 Name=Black on White
+Name[ga]=Dubh ar Bhán
+Name[pt]=Preto Sobre Branco
+Name[pt_BR]=Preto Sobre Branco
+Name[zh_TW]=黑與白
 Description=A MonochromeBlack on White theme for KGoldrunner
+Description[pt]=Um Tema Monocromático a Preto-e-Branco para o KGoldrunner
+Description[pt_BR]=Um Tema Monocromático a Preto-e-Branco para o KGoldrunner
+Description[zh_TW]=KGoldrunner 黑白螢幕主題
 Author=Luciano Montanaro
 Set=accessible/black-on-white-set.svg
 Actors=accessible/black-on-white-actors.svg
