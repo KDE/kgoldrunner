@@ -10,20 +10,9 @@
 #ifndef KGRDIALOG_QT_H
 #define KGRDIALOG_QT_H
 
-// If portable version, use QDialog and QMessageBox.
-// If KDE version, use KDialog and KMessageBox.
-
-#ifdef KGR_PORTABLE
-#include <qdialog.h>
-#define KGR_DIALOG QDialog
-#include <qmessagebox.h>
-
-#else
-#include <klocale.h>
-#include <kdialog.h>
-#define KGR_DIALOG KDialog
-#include <kmessagebox.h>
-#endif
+#include <KLocale>
+#include <KDialog>
+#include <KMessageBox>
 
 #include <QLayout>
 
@@ -54,7 +43,7 @@ class KGrGameListItem;
 /*******************    DIALOG TO SELECT A GAME AND LEVEL   *******************/
 /******************************************************************************/
 
-class KGrSLDialog : public KGR_DIALOG	// KGR_PORTABLE sets QDialog/KDialog
+class KGrSLDialog : public KDialog
 {
 Q_OBJECT
 public:
@@ -97,19 +86,13 @@ private:
     QPushButton *	levelNH;
     QLabel *		slName;
     KGrThumbNail *	thumbNail;
-
-#ifdef KGR_PORTABLE
-    QPushButton *	OK;
-    QPushButton *	HELP;
-    QPushButton *	CANCEL;
-#endif
 };
 
 /*******************************************************************************
 *************** DIALOG BOX TO CREATE/EDIT A LEVEL NAME AND HINT ****************
 *******************************************************************************/
 
-class KGrNHDialog : public KGR_DIALOG	// KGR_PORTABLE sets QDialog/KDialog
+class KGrNHDialog : public KDialog
 {
 Q_OBJECT
 public:
@@ -129,7 +112,7 @@ private:
 ***************** DIALOG TO CREATE OR EDIT A GAME (COLLECTION) *****************
 *******************************************************************************/
 
-class KGrECDialog : public KGR_DIALOG	// KGR_PORTABLE sets QDialog/KDialog
+class KGrECDialog : public KDialog
 {
 Q_OBJECT
 public:
@@ -163,11 +146,6 @@ private:
 
     QLabel *		mleL;
     QTextEdit *		mle;
-
-#ifdef KGR_PORTABLE
-    QPushButton *	OK;
-    QPushButton *	CANCEL;
-#endif
 };
 
 /*******************************************************************************
@@ -177,7 +155,7 @@ private:
 #include <QFile>
 #include <qtextstream.h>
 
-class KGrLGDialog : public KGR_DIALOG	// KGR_PORTABLE sets QDialog/KDialog
+class KGrLGDialog : public KDialog
 {
 Q_OBJECT
 public:
@@ -200,10 +178,11 @@ private:
 class KGrMessage : public QDialog
 {
 public:
-    static void information (QWidget * parent, const QString &caption, const QString &text);
-    static int warning (QWidget * parent, const QString &caption, const QString &text,
-			const QString &label0, const QString &label1, const QString &label2 = "");
-    static void wrapped (QWidget * parent, const QString &caption, const QString &text);
+    static void information (QWidget * parent, const QString &caption,
+			    const QString &text);
+    static int warning (QWidget * parent, const QString &caption,
+			    const QString &text, const QString &label0,
+			    const QString &label1, const QString &label2 = "");
 };
 
 /*******************************************************************************

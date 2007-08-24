@@ -14,32 +14,21 @@
 #include "kgrcanvas.h"
 #include "kgrgame.h"
 
-#ifndef KGR_PORTABLE
-#include <kglobalsettings.h>
+#include <KGlobalSettings>
 #include <QTextStream>
 #include <QGridLayout>
-#include <QFrame>
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QSpacerItem>
-#endif
 
 /******************************************************************************/
 /*****************    DIALOG BOX TO SELECT A GAME AND LEVEL   *****************/
 /******************************************************************************/
 
-#ifdef KGR_PORTABLE
-KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
-			QList<KGrCollection *> & gamesList, KGrGame * theGame,
-			QWidget * parent)
-		: QDialog (parent, name, true,
-			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title)
-#else
 KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 			QList<KGrCollection *> & gamesList, KGrGame * theGame,
 			QWidget * parent)
 		: KDialog (parent)
-#endif
 {
     slAction     = action;
     defaultLevel = requestedLevel;
@@ -49,11 +38,6 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     collection   = collections.at(defaultGame);
     slParent     = parent;
 
-#ifdef KGR_PORTABLE
-    int margin		= 10;
-    int spacing		= 10;
-    QWidget * dad	= this;
-#else
     int margin		= marginHint(); 
     int spacing		= spacingHint(); 
     QWidget * dad	= new QWidget(this);
@@ -61,8 +45,6 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     setCaption(i18n("Select Game"));
     setButtons(KDialog::Ok | KDialog::Cancel | KDialog::Help);
     setDefaultButton(KDialog::Ok);
-
-#endif
 
     QVBoxLayout * mainLayout = new QVBoxLayout (dad);
     mainLayout->setSpacing(spacing);
@@ -154,18 +136,6 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     thumbNail->	setFixedWidth  ((FIELDWIDTH  * cellSize) + 2);
     thumbNail->	setFixedHeight ((FIELDHEIGHT * cellSize) + 2);
 
-#ifdef KGR_PORTABLE
-    QWidget * buttons = new QWidget(this);
-    QHBoxLayout *hboxLayout3 = new QHBoxLayout(buttons);
-    buttons->setLayout(hboxLayout3);
-    mainLayout->addWidget (buttons);
-    buttons->setSpacing (spacing);
-    // Buttons are for Qt-only portability.  NOT COMPILED in KDE environment.
-    HELP      = new QPushButton (i18n("Help"), buttons);
-    OK        = new QPushButton (i18n("&OK"), buttons);
-    CANCEL    = new QPushButton (i18n("&Cancel"), buttons);
-#endif
-
     // Base the geometry of the dialog box on the playing area.
     int cell = parent->width() / (FIELDWIDTH + 4);
     dad->	setMinimumSize ((FIELDWIDTH*cell/2), (FIELDHEIGHT-3)*cell);
@@ -224,11 +194,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     default:		break;			// Keep the default settings.
     }
     if (!OKText.isEmpty()) {
-#ifdef KGR_PORTABLE
-	OK->setText (OKText);
-#else
 	setButtonGuiItem( KDialog::Ok, KGuiItem(OKText));
-#endif
     }
 
     // Set value in the line-edit box.
@@ -266,14 +232,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     connect (colln, SIGNAL(itemSelectionChanged()), this, SLOT(slPaintLevel()));
     connect (number,  SIGNAL (sliderReleased()), this, SLOT (slPaintLevel()));
 
-#ifdef KGR_PORTABLE
-    // Set the exits from this dialog box.
-    connect (OK,      SIGNAL (clicked ()), this,   SLOT (accept ()));
-    connect (CANCEL,  SIGNAL (clicked ()), this,   SLOT (reject ()));
-    connect (HELP,    SIGNAL (clicked ()), this,   SLOT (slotHelp ()));
-#else
     connect (this,    SIGNAL (helpClicked()), this, SLOT (slotHelp ())); // IDW
-#endif
 }
 
 KGrSLDialog::~KGrSLDialog()
@@ -526,37 +485,24 @@ void KGrSLDialog::slotHelp ()
 	     "preview of your choice.");
     }
 
-    KGrMessage::wrapped (slParent, i18n("Help: Select Game & Level"), s);
+    KGrMessage::information (slParent, i18n("Help: Select Game & Level"), s);
 }
 
 /*******************************************************************************
 *************** DIALOG BOX TO CREATE/EDIT A LEVEL NAME AND HINT ****************
 *******************************************************************************/
 
-#ifdef KGR_PORTABLE
-KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
-			QWidget * parent)
-		: QDialog (parent, name, true,
-			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title)
-#else
 KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
 			QWidget * parent)
 		: KDialog (parent)
-#endif
 {
-#ifdef KGR_PORTABLE
-    int margin		= 10;
-    int spacing		= 10;
-    QWidget * dad	= this;
-#else
     setCaption(i18n("Edit Name & Hint"));
     setButtons(KDialog::Ok | KDialog::Cancel);
     setDefaultButton(KDialog::Ok);
     int margin		= marginHint();
     int spacing		= spacingHint();
     QWidget * dad	= new QWidget(this);
-	setMainWidget(dad);
-#endif
+    setMainWidget(dad);
 
     QVBoxLayout * mainLayout = new QVBoxLayout (dad);
     mainLayout->setSpacing(spacing);
@@ -575,19 +521,6 @@ KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
     mle->		setAcceptRichText (false);
     mainLayout->addWidget (mle);
 
-#ifdef KGR_PORTABLE
-    QWidget * buttons = new QWidget(dad);
-    QHBoxLayout *hboxLayout4 = new QHBoxLayout(buttons);
-    buttons->setLayout(hboxLayout4);
-    mainLayout->addWidget (buttons);
-    buttons->setSpacing (spacing);
-    // Buttons are for Qt-only portability.  NOT COMPILED in KDE environment.
-    QPushButton *	OK = new QPushButton (i18n("&OK"), buttons);
-    QPushButton *	CANCEL = new QPushButton (i18n("&Cancel"), buttons);
-
-    dad->		setCaption (i18n("Edit Name & Hint"));
-#endif
-
     // Base the geometry of the text box on the playing area.
     QPoint		p = parent->mapToGlobal (QPoint (0,0));
     int			c = parent->width() / (FIELDWIDTH + 4);
@@ -599,14 +532,6 @@ KGrNHDialog::KGrNHDialog(const QString & levelName, const QString & levelHint,
 
     nhName->		setText (levelName);
     mle->		setText (levelHint);
-
-#ifdef KGR_PORTABLE
-    // OK->		setAccel (Key_Return);	// No!  We need it in "mle" box.
-    CANCEL->		setAccel (Qt::Key_Escape);
-
-    connect (OK, SIGNAL (clicked ()), dad, SLOT (accept ()));
-    connect (CANCEL, SIGNAL (clicked ()), dad, SLOT (reject ()));
-#endif
 }
 
 KGrNHDialog::~KGrNHDialog()
@@ -617,27 +542,14 @@ KGrNHDialog::~KGrNHDialog()
 *************** DIALOG BOX TO CREATE OR EDIT A GAME (COLLECTION) ***************
 *******************************************************************************/
 
-#ifdef KGR_PORTABLE
-KGrECDialog::KGrECDialog (int action, int collnIndex,
-			QList<KGrCollection *> & gamesList,
-			QWidget * parent)
-		: QDialog (parent, name, true,
-			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title)
-#else
 KGrECDialog::KGrECDialog (int action, int collnIndex,
 			QList<KGrCollection *> & gamesList,
 			QWidget * parent)
 		: KDialog(parent)
-#endif
 {
     collections  = gamesList;
     defaultGame  = collnIndex;
 
-#ifdef KGR_PORTABLE
-    int margin		= 10;
-    int spacing		= 10;
-    QWidget * dad	= this;
-#else
     setCaption(i18n("Edit Game Info"));
     setButtons(KDialog::Ok | KDialog::Cancel);
     setDefaultButton(KDialog::Ok);
@@ -645,7 +557,6 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
     int spacing		= spacingHint();
     QWidget * dad	= new QWidget(this);
     setMainWidget(dad);
-#endif
 
     QVBoxLayout * mainLayout = new QVBoxLayout (dad);
     mainLayout->setSpacing(spacing);
@@ -690,23 +601,12 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
     mle->    setAcceptRichText (false);
     mainLayout->addWidget (mle);
 
-#ifdef KGR_PORTABLE
-    QWidget * buttons = new QWidget(dad);
-    QHBoxLayout *hboxLayout7 = new QHBoxLayout(buttons);
-    buttons->setLayout(hboxLayout7);
-    mainLayout->addWidget (buttons);
-    buttons->setSpacing (spacing);
-    // Buttons are for Qt-only portability.  NOT COMPILED in KDE environment.
-    OK       = new QPushButton (i18n("&OK"), buttons);
-    CANCEL   = new QPushButton (i18n("&Cancel"), buttons);
-
     QPoint p = parent->mapToGlobal (QPoint (0,0));
 
     // Base the geometry of the dialog box on the playing area.
     int cell = parent->width() / (FIELDWIDTH + 4);
     dad->	move (p.x()+2*cell, p.y()+2*cell);
     dad->	setMinimumSize ((FIELDWIDTH*cell/2), (FIELDHEIGHT-1)*cell);
-#endif
 
     if (action == SL_CR_GAME) {
 	     setCaption (i18n("Create Game"));
@@ -734,11 +634,7 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
 	nLevL->         setText (i18n("0 levels"));
 	OKText = i18n("Save New");
     }
-#ifdef KGR_PORTABLE
-    OK->setText (OKText);
-#else
     setButtonGuiItem( KDialog::Ok, KGuiItem(OKText));
-#endif
 
     if ((action == SL_CR_GAME) ||
 	(collections.at(defaultGame)->settings == 'T')) {
@@ -762,19 +658,6 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
 
     connect (ecKGrB,  SIGNAL (clicked ()), this, SLOT (ecSetKGr ()));
     connect (ecTradB, SIGNAL (clicked ()), this, SLOT (ecSetTrad ()));
-
-#ifdef KGR_PORTABLE
-    OK->		setGeometry (10,  145 + mle->height(), 100,  25);
-    // OK->		setAccel (Key_Return);	// No!  We need it in "mle" box.
-
-    CANCEL->		setGeometry (190,  145 + mle->height(), 100,  25);
-    CANCEL->		setAccel (Qt::Key_Escape);
-
-    dad->		resize (300, 175 + mle->height());
-
-    connect (OK,     SIGNAL (clicked ()),	this, SLOT (accept()));
-    connect (CANCEL, SIGNAL (clicked ()),	this, SLOT (reject()));
-#endif
 }
 
 KGrECDialog::~KGrECDialog()
@@ -798,24 +681,11 @@ void KGrECDialog::ecSetTrad () {ecSetRules ('T');}
 ***************  DIALOG TO SELECT A SAVED GAME TO BE RE-LOADED  ****************
 *******************************************************************************/
 
-#ifdef KGR_PORTABLE
-KGrLGDialog::KGrLGDialog (QFile * savedGames,
-			QList<KGrCollection *> & collections,
-			QWidget * parent)
-		: QDialog (parent, name, true,
-			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title)
-#else
 KGrLGDialog::KGrLGDialog (QFile * savedGames,
 			QList<KGrCollection *> & collections,
 			QWidget * parent)
 		: KDialog (parent)
-#endif
 {
-#ifdef KGR_PORTABLE
-    int margin		= 10;
-    int spacing		= 10;
-    QWidget * dad	= this;
-#else
     setCaption(i18n("Select Saved Game"));
     setButtons(KDialog::Ok | KDialog::Cancel);
     setDefaultButton(KDialog::Ok);
@@ -823,7 +693,6 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
     int spacing		= spacingHint();
     QWidget * dad	= new QWidget(this);
     setMainWidget(dad);
-#endif
 
     QVBoxLayout *	mainLayout = new QVBoxLayout (dad);
     mainLayout->setSpacing(spacing);
@@ -834,11 +703,7 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
 			"Day    Date     Time  "), dad);
 
     lgList   = new QListWidget (dad);
-#ifdef KGR_PORTABLE
-    QFont		f ("courier", 12);
-#else
     QFont		f = KGlobalSettings::fixedFont();	// KDE version.
-#endif
 			f.setFixedPitch (true);
     lgList->		setFont (f);
 			f.setBold (true);
@@ -847,29 +712,11 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
     mainLayout->	addWidget (lgHeader);
     mainLayout->	addWidget (lgList);
 
-#ifdef KGR_PORTABLE
-    QWidget *		buttons  = new QWidget(dad);
-    QHBoxLayout *hboxLayout8 = new QHBoxLayout(buttons);
-    buttons->setLayout(hboxLayout8);
-    buttons->		setSpacing (spacing);
-    // Buttons are for Qt-only portability.  NOT COMPILED in KDE environment.
-    QPushButton *	OK       = new QPushButton (i18n("&OK"), buttons);
-    QPushButton *	CANCEL   = new QPushButton (i18n("&Cancel"), buttons);
-    mainLayout->	addWidget (buttons);
-
-    dad->		setCaption (i18n("Select Saved Game"));
-
     // Base the geometry of the list box on the playing area.
     QPoint		p = parent->mapToGlobal (QPoint (0,0));
     int			c = parent->width() / (FIELDWIDTH + 4);
     dad->		move (p.x()+2*c, p.y()+2*c);
     lgList->		setMinimumHeight ((FIELDHEIGHT/2)*c);
-    OK->		setMaximumWidth (4*c);
-    CANCEL->		setMaximumWidth (4*c);
-
-    OK->		setAccel (Qt::Key_Return);
-    CANCEL->		setAccel (Qt::Key_Escape);
-#endif
 
 			lgHighlight  = -1;
 
@@ -900,11 +747,8 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
     lgList->	setItemSelected  (lgList->currentItem(), true);
 		lgHighlight = 0;
 
-    connect (lgList, SIGNAL ( itemClicked ( QListWidgetItem * )), this, SLOT (lgSelect (QListWidgetItem *)));
-#ifdef KGR_PORTABLE
-    connect (OK,     SIGNAL (clicked ()),        this, SLOT (accept ()));
-    connect (CANCEL, SIGNAL (clicked ()),        this, SLOT (reject ()));
-#endif
+    connect (lgList, SIGNAL ( itemClicked ( QListWidgetItem * )),
+		this, SLOT (lgSelect (QListWidgetItem *)));
 }
 
 void KGrLGDialog::lgSelect (QListWidgetItem * item)
@@ -916,31 +760,19 @@ void KGrLGDialog::lgSelect (QListWidgetItem * item)
 ***********************  CENTRALISED MESSAGE FUNCTIONS  ************************
 *******************************************************************************/
 
-void KGrMessage::information (QWidget * parent, const QString &caption, const QString &text)
+void KGrMessage::information (QWidget * parent,
+			const QString &caption, const QString &text)
 {
-#ifdef KGR_PORTABLE
-    // Force Qt to do word-wrapping (but it ignores "\n" line-breaks).
-    QMessageBox::information (parent, caption,
-				"<qt>" + text + "</qt>");
-#else
     // KDE does word-wrapping and will observe "\n" line-breaks.
     KMessageBox::information (parent, text, caption);
-#endif
 }
 
-int KGrMessage::warning (QWidget * parent, const QString &caption, const QString &text,
-			    const QString &label0, const QString &label1, const QString &label2)
+int KGrMessage::warning (QWidget * parent, const QString &caption,
+			const QString &text, const QString &label0,
+			const QString &label1, const QString &label2)
 {
-    int ans = 0;
-#ifdef KGR_PORTABLE
-    // Display a box with 2 or 3 buttons, depending on if label2 is empty or not.
-    // Force Qt to do word-wrapping (but it ignores "\n" line-breaks).
-    ans = QMessageBox::warning (parent, caption,
-				"<qt>" + text + "</qt>",
-				label0, label1, label2,
-				0, (label2.isEmpty()) ? 1 : 2);
-#else
     // KDE does word-wrapping and will observe "\n" line-breaks.
+    int ans = 0;
     if (label2.isEmpty()) {
 	// Display a box with 2 buttons.
 	ans = KMessageBox::questionYesNo (parent, text, caption,
@@ -956,63 +788,7 @@ int KGrMessage::warning (QWidget * parent, const QString &caption, const QString
 	else
 	    ans = (ans == KMessageBox::Yes) ? 0 : 1;
     }
-#endif
     return (ans);
-}
-
-/******************************************************************************/
-/**********************    WORD-WRAPPED MESSAGE BOX    ************************/
-/******************************************************************************/
-
-void KGrMessage::wrapped (QWidget * parent, const QString &title, const QString &contents)
-{
-#ifndef KGR_PORTABLE
-    KMessageBox::information (parent, contents, title);
-#else
-    QDialog *		mm = new QDialog (parent, "wrappedMessage", true,
-			Qt::WStyle_Customize | Qt::WStyle_NormalBorder | Qt::WStyle_Title);
-
-    int margin = 10;
-    int spacing = 10;
-    QVBoxLayout * mainLayout = new QVBoxLayout (mm);
-    mainLayout->setSpacing(spacing);
-    mainLayout->setMargin(margin);
-
-    // Make text background grey not white (i.e. same as widget background).
-    QPalette		pl = mm->palette();
-    pl.setColor (QPalette::Base, mm->paletteBackgroundColor());
-    mm->		setPalette (pl);
-
-   // Set up a widget to hold the wrapped text, using \n for paragraph breaks.
-    QTextEdit *		mle = new QTextEdit (mm);
-    mle->		setTextFormat (Qt::PlainText);
-    mainLayout->addWidget (mle);
-
-    // Button is for Qt-only portability.  NOT COMPILED in KDE environment.
-    QPushButton *	OK = new QPushButton (i18n("&OK"), mm);
-    mainLayout->addWidget (OK, Qt::AlignHCenter);
-
-    mm->		setCaption (title);
-
-    // Base the geometry of the text box on the playing area.
-    QPoint		p = parent->mapToGlobal (QPoint (0,0));
-    int			c = parent->width() / (FIELDWIDTH + 4);
-    mm->		move (p.x()+4*c, p.y()+4*c);
-    mle->		setMinimumSize ((FIELDWIDTH*c/2), (FIELDHEIGHT/2)*c);
-    OK->		setMaximumWidth (3*c);
-
-    mle->		setFrameStyle (QFrame::NoFrame);
-    mle->		setAlignment (Qt::AlignLeft);
-    mle->		setReadOnly (true);
-    mle->		setText (contents);
-
-    OK->		setAccel (Qt::Key_Return);
-    connect (OK, SIGNAL (clicked ()), mm, SLOT (accept ()));
-
-    mm->		exec ();
-
-    delete mm;
-#endif	// KGR_PORTABLE
 }
 
 /*******************************************************************************
