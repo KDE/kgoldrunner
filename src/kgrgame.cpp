@@ -2690,7 +2690,7 @@ bool KGrGame::saveCollections (Owner o)
 }
 
 /******************************************************************************/
-/**********************    WORD-WRAPPED MESSAGE BOX    ************************/
+/**********************    MESSAGE BOX WITH FREEZE    *************************/
 /******************************************************************************/
 
 void KGrGame::myMessage (QWidget * parent, const QString &title, const QString &contents)
@@ -2698,7 +2698,7 @@ void KGrGame::myMessage (QWidget * parent, const QString &title, const QString &
     // Halt the game while the message is displayed.
     setMessageFreeze (true);
 
-    KGrMessage::wrapped (parent, title, contents);
+    KGrMessage::information (parent, title, contents);
 
     // Unfreeze the game, but only if it was previously unfrozen.
     setMessageFreeze (false);
