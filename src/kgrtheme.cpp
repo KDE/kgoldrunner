@@ -164,7 +164,7 @@ QPixmap KGrTheme::svgTile (QImage & img, QPainter & q, const QString & name)
     
     if (svgSet.elementExists(name)) {
 	svgSet.render (&q, name);
-    } else if (svgSet.elementExists(name)) {
+    } else if (svgActors.elementExists(name)) {
 	svgActors.render(&q, name);
     } else {
 	// The theme does not contain the needed element.
