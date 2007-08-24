@@ -77,6 +77,7 @@ private:
     GraphicsType backgroundGraphics;
     GraphicsType runnerGraphics;
     int numBackgrounds;
+    bool hasPanelTiles;
 };
 
 #endif // KGRTHEME_H
