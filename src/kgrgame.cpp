@@ -61,6 +61,7 @@ KGrGame::KGrGame (KGrCanvas * theView,
     // Set the game-editor OFF, but available.
     editMode = false;
     paintEditObj = false;
+    paintAltObj = false;
     editObj  = BRICK;
     shouldSave = false;
 
@@ -210,7 +211,6 @@ void KGrGame::showHiddenLadders()
     for (j=1;j<29;j++)
       if (playfield[j][i]->whatIam()==HLADDER)
 	((KGrHladder *)playfield[j][i])->showLadder();
-  //view->updateCanvas();
   initSearchMatrix();
 }
 // 
@@ -364,6 +364,7 @@ void KGrGame::newGame (const int lev, const int gameIndex)
 
 	editMode = false;
 	paintEditObj = false;
+	paintAltObj = false;
 	editObj = BRICK;
 
 	view->setHeroVisible (true);
@@ -757,13 +758,11 @@ void KGrGame::readMousePos()
 	// Editing - check if we are in paint mode and have moved the mouse.
 	if (paintEditObj && ((i != oldI) || (j != oldJ))) {
 	    insertEditObj (i, j, editObj);
-	    //view->updateCanvas();
 	    oldI = i;
 	    oldJ = j;
 	}
 	if (paintAltObj && ((i != oldI) || (j != oldJ))) {
 	    insertEditObj (i, j, FREE);
-	    //view->updateCanvas();
 	    oldI = i;
 	    oldJ = j;
 	}
@@ -1515,7 +1514,6 @@ void KGrGame::createLevel()
     // Re-enable player input.
     loading = false;
 
-    //view->updateCanvas();				// Show the edit area.
     view->update();					// Show the level name.
 }
 
@@ -1729,7 +1727,6 @@ bool KGrGame::saveLevelFile()
     level = selectedLevel;
     emit showLevel (level);
     view->setTitle (getTitle());		// Display new title.
-    //view->updateCanvas();			// Show the edit area.
     return (true);
 }
 
@@ -1826,7 +1823,6 @@ void KGrGame::moveLevelFile ()
     level = toL;
     collection = collections.at(toC);
     view->setTitle (getTitle());	// Re-write title.
-    //view->updateCanvas();		// Re-display details of level.
     emit showLevel (level);
 }
 
@@ -2056,6 +2052,7 @@ void KGrGame::initEdit()
     }
 
     paintEditObj = false;
+    paintAltObj = false;
 
     // Set the default object and button.
     editObj = BRICK;
@@ -2080,7 +2077,6 @@ void KGrGame::initEdit()
     setBlankLevel(false);	// Fill playfield with Editable objects.
 
     view->setTitle (getTitle());// Show title of level.
-    //view->updateCanvas();	// Show the edit area.
 
     shouldSave = false;		// Used to flag editing of name or hint.
 }
@@ -2189,14 +2185,12 @@ void KGrGame::doEdit (int button)
     case Qt::LeftButton:
         paintEditObj = true;
         insertEditObj (i, j, editObj);
-	//view->updateCanvas();
         oldI = i;
         oldJ = j;
         break;
     case Qt::RightButton:
         paintAltObj = true;
         insertEditObj (i, j, FREE);
-	//view->updateCanvas();
         oldI = i;
         oldJ = j;
         break;
@@ -2219,14 +2213,12 @@ void KGrGame::endEdit (int button)
         paintEditObj = false;
         if ((i != oldI) || (j != oldJ)) {
 	    insertEditObj (i, j, editObj);
-	    //view->updateCanvas();
 	}
         break;
     case Qt::RightButton:
         paintAltObj = false;
         if ((i != oldI) || (j != oldJ)) {
 	    insertEditObj (i, j, FREE);
-	    //view->updateCanvas();
 	}
         break;
     default:

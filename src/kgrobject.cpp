@@ -115,7 +115,6 @@ void KGrBrick::dig (void)
   hole_counter = HOLETIME;
   iamA = HOLE;
   objectView->paintCell (xpos, ypos, BRICK, dig_counter);
-  //objectView->updateCanvas();
   timer->setSingleShot(true);
   timer->start ((DIGDELAY * NSPEED) / speed);
 }
@@ -161,7 +160,6 @@ void KGrBrick::timeDone ()
 
     // Brick pix:- 0 normal, 1-4 crumbling, 5 hole complete, 6-9 re-growing.
     objectView->paintCell (xpos, ypos, BRICK, dig_counter);
-    //objectView->updateCanvas();
 }
 
 void KGrBrick::useHole() {
