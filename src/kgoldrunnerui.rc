@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<gui version="5" name="kgoldrunner" >
+<gui version="6" name="kgoldrunner" >
 <MenuBar>
     <Menu name="game" >
         <Action append="save_merge"	name="save_edits" />
@@ -58,7 +58,7 @@
 </ToolBar>
 
 <ActionProperties>
-    <Action shortcut="P;Escape"		name="game_pause" />
+    <Action shortcut="P; Escape"		name="game_pause" />
     <Action shortcut="S"		name="game_save" />
     <Action shortcut="Ctrl+S"		name="save_edits" />
 
@@ -68,13 +68,13 @@
     <Action shortcut="Shift+M"		name="midnight" />
     <Action shortcut="Shift+K"		name="kde_kool" />
 
-    <Action shortcut="Up;I"		name="move_up" />
-    <Action shortcut="Right;L"		name="move_right" />
-    <Action shortcut="Down;K"		name="move_down" />
-    <Action shortcut="Left;J"		name="move_left" />
+    <Action shortcut="Up; I"		name="move_up" />
+    <Action shortcut="Right; L"		name="move_right" />
+    <Action shortcut="Down; K"		name="move_down" />
+    <Action shortcut="Left; J"		name="move_left" />
     <Action shortcut="Space"		name="stop" />
-    <Action shortcut="Z;U"		name="dig_left" />
-    <Action shortcut="C;O"		name="dig_right" />
+    <Action shortcut="Z; U"		name="dig_left" />
+    <Action shortcut="C; O"		name="dig_right" />
 
     <Action shortcut="+"		name="increase_speed" />
     <Action shortcut="-"		name="decrease_speed" />
