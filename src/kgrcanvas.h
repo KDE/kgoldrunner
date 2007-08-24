@@ -34,14 +34,7 @@
 #include <QTime> // IDW
 #include <QTimeLine>
 
-#define USE_THEMECLASS
-//#undef USE_THEMECLASS
-
-#ifndef USE_THEMECLASS
-#include <KSvgRenderer>
-#else
 #include "kgrtheme.h"
-#endif
 
 
 class KGrCanvas : public KGameCanvasWidget

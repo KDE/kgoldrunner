@@ -33,7 +33,7 @@ public:
     KGrTheme(const QString &systemDataDir);
 
     /** 
-     * load a theme given the name of its .desktop file 
+     * Load a theme given the name of its .desktop file.
      */
     bool load(const QString & themeFilepath);
     
@@ -44,10 +44,11 @@ public:
     QList<QPixmap> enemy(unsigned int size);
     
     /**
-     * prepares an image with the background variant \param variant with size
+     * Prepares an image with the background variant \param variant with size
      * \param width and \param height.
      */
-    QImage background(unsigned int width, unsigned int height, unsigned int variant);
+    QImage background(unsigned int width, unsigned int height,
+			unsigned int variant);
     
     bool isBorderRequired() const { return themeDrawBorder; }
     
@@ -58,6 +59,7 @@ public:
     QColor borderColor() { return m_borderColor; }
     
     QColor textColor() { return m_textColor; }
+
 private:
     KSvgRenderer svgSet;
     KSvgRenderer svgActors;
@@ -66,13 +68,11 @@ private:
     QString themeDataDir;
     QString m_themeFilepath;
     short themeDrawBorder;
-    void changeColors (const char * colours []);
-    void recolorObject (const char * object [], const char * colours []);
-    QList<QPixmap> xpmFrames (const QImage & image, int size, const int nFrames);
     QPixmap svgTile (QImage &image, QPainter &painter, const QString &name);
-    QList<QPixmap> svgFrames (const QString & elementPattern, unsigned int size, int nFrames);
+    QList<QPixmap> svgFrames (const QString & elementPattern,
+				unsigned int size, int nFrames);
 
-    enum GraphicsType { NONE, SVG, XPM, PNG };
+    enum GraphicsType { NONE, SVG, PNG };
     GraphicsType tileGraphics;
     GraphicsType backgroundGraphics;
     GraphicsType runnerGraphics;

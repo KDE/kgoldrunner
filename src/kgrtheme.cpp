@@ -1,4 +1,3 @@
-
 /***************************************************************************
                          kgrtheme.cpp  -  description
                              -------------------
@@ -21,14 +20,6 @@
 
 #include <KConfig>
 #include <QPainter>
-
-// Graphics files for moving figures and background.
-#include "hero.xpm"
-#include "enemy1.xpm"
-#include "enemy2.xpm"
-#include "kgraphics.h"
-
-static const int XPMSIZE = 16;
 
 KGrTheme::KGrTheme(const QString &systemDataDir) : 
 	themeDataDir(systemDataDir + "../theme/"),
@@ -108,7 +99,8 @@ bool KGrTheme::load(const QString& themeFilepath)
     return true;
 }
 
-QImage KGrTheme::background(unsigned int width, unsigned int height, unsigned int variant)
+QImage KGrTheme::background(unsigned int width, unsigned int height,
+				unsigned int variant)
 {
     if ((width != 0) && (height != 0) && 
 	    (backgroundGraphics == SVG) && numBackgrounds > 0) {
@@ -129,11 +121,11 @@ QImage KGrTheme::background(unsigned int width, unsigned int height, unsigned in
 
 QList<QPixmap> KGrTheme::hero(unsigned int size)
 {
+    QList<QPixmap> frames;
     if (runnerGraphics == SVG) {
-	return svgFrames("hero_%1", size, 36);
-    } else {
-	return xpmFrames(QImage(hero_xpm), size, 36);
+	frames << svgFrames("hero_%1", size, 36);
     }
+    return frames;
 }
 
 QList<QPixmap> KGrTheme::enemy(unsigned int size)
@@ -142,15 +134,12 @@ QList<QPixmap> KGrTheme::enemy(unsigned int size)
     if (runnerGraphics == SVG) {
 	frames << svgFrames("enemy_%1", size, 36);
 	frames << svgFrames("gold_enemy_%1", size, 36);
-    } else {
-	frames << xpmFrames(QImage(enemy1_xpm), size, 36);
-	frames << xpmFrames(QImage(enemy2_xpm), size, 36);
     }
     return frames;
 }
 
 QList<QPixmap> KGrTheme::svgFrames (const QString &elementPattern,
-		unsigned int size, int nFrames)
+					unsigned int size, int nFrames)
 {
     QImage img (size, size, QImage::Format_ARGB32_Premultiplied);
     QPainter q (&img);
@@ -165,18 +154,6 @@ QList<QPixmap> KGrTheme::svgFrames (const QString &elementPattern,
 	    kWarning() << "The needed element" << s << "is not in the theme.";
 	}
 	frames.append (QPixmap::fromImage (img));
-    }
-    return frames;
-}
-
-QList<QPixmap> KGrTheme::xpmFrames (const QImage & image,
-		int size, int nFrames)
-{
-    QPixmap   pm;
-    QList<QPixmap> frames;
-    for (int i = 0; i < nFrames; i++) {
-	pm = QPixmap::fromImage (image.copy (i * XPMSIZE, 0, XPMSIZE, XPMSIZE));
-	frames.append (pm.scaledToHeight (size, Qt::FastTransformation));
     }
     return frames;
 }
@@ -220,52 +197,8 @@ QList<QPixmap> KGrTheme::tiles(unsigned int size)
 	for (int i = 1; i <= 9; ++i) {
 	    list.append(svgTile(img, painter, brickPattern.arg(i)));
 	}
-    } else {
-	QImage bricks (bricks_xpm);
-	bricks = bricks.scaledToHeight(size);
-
-	list.append(QPixmap(hgbrick_xpm).scaledToHeight(size));
-	list.append(QPixmap(nugget_xpm).scaledToHeight(size));
-	list.append(QPixmap(pole_xpm).scaledToHeight(size));
-	list.append(QPixmap(ladder_xpm).scaledToHeight(size));
-	list.append(QPixmap(hladder_xpm).scaledToHeight(size));
-	list.append(QPixmap(edithero_xpm).scaledToHeight(size));
-	list.append(QPixmap(editenemy_xpm).scaledToHeight(size));
-	list.append(QPixmap(beton_xpm).scaledToHeight(size));
-	// Extract false-brick image.
-	list.append(QPixmap::fromImage(bricks.copy(2 * size, 0, size, size)));
-	// Make the brick-digging sprites (whole brick and blasted bricks).
-	for (int i = 0; i < 10; i++) {
-	    list.append(QPixmap::fromImage(bricks.copy(i * size, 0, size, size)));
-	}
     }
     return list;
-}
-
-void KGrTheme::changeColors (const char * colors [])
-{
-    // KGoldrunner 2 landscape, xpm-based.
-    recolorObject (hgbrick_xpm,   colors);
-    recolorObject (nugget_xpm,    colors);
-    recolorObject (pole_xpm,      colors);
-    recolorObject (ladder_xpm,    colors);
-    recolorObject (hladder_xpm,   colors);
-    recolorObject (edithero_xpm,  colors);
-    recolorObject (edithero_xpm,  colors);
-    recolorObject (editenemy_xpm, colors);
-    recolorObject (beton_xpm,     colors);
-    recolorObject (bricks_xpm,    colors);
-
-    m_borderColor = QColor (colors [1]);
-    m_textColor =   QColor (colors [2]);
-}
-
-void KGrTheme::recolorObject (const char * object [], const char * colors [])
-{
-    int i;
-    for (i = 0; i < 9; i++) {
-	object [i+1] = colors [i+3];
-    }
 }
 
 // vi: sw=4

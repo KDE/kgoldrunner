@@ -88,23 +88,17 @@ KGrCanvas::~KGrCanvas()
 
 void KGrCanvas::goToBlack()
 {
-	t.start(); // IDW
-	// IDW kDebug() << "Go to black ...";
 	drawSpotLight (0);
 }
 
 void KGrCanvas::fadeIn()
 {
-	t.start(); // IDW
-	// IDW kDebug() << t.elapsed() << "msec" << "Fading in ..."; // IDW
 	m_fadingTimeLine.setDirection(QTimeLine::Forward);
 	m_fadingTimeLine.start();
 }
 
 void KGrCanvas::fadeOut()
 {
-	t.start(); // IDW
-	// IDW kDebug() << t.elapsed() << "msec" << "Fading out ..."; // IDW
 	m_fadingTimeLine.setDirection(QTimeLine::Backward);
 	m_fadingTimeLine.start();
 }
@@ -217,7 +211,6 @@ void KGrCanvas::resizeEvent (QResizeEvent * event )
     double w = (double) event->size().width()  / (nCellsW + border);
     double h = (double) event->size().height() / (nCellsH + border);
     int cellSize = (w < h) ? (int) (w + 0.05) : (int) (h + 0.05);
-    // IDW cellSize = cellSize - (cellSize % 4);	// Set a multiple of 4.
 
     imgW = cellSize;
     imgH = cellSize;
@@ -451,7 +444,7 @@ void KGrCanvas::setLevel(unsigned int l)
 void KGrCanvas::loadBackground()
 {
     kDebug() << "loadBackground called";
-    bool fillCanvas = !theme.isBorderRequired();	// Background must fill canvas?
+    bool fillCanvas = !theme.isBorderRequired(); // Background must fill canvas?
     int w = fillCanvas ? (this->width())  : (nCellsW * imgW);
     int h = fillCanvas ? (this->height()) : (nCellsH * imgH);
     if (theme.isWithBackground()) {
@@ -468,11 +461,6 @@ void KGrCanvas::loadBackground()
 
 void KGrCanvas::makeTiles (bool changePixmaps)
 {
-    // Make an empty background image.
-    //bool fillCanvas = !theme.isBorderRequired();	// Background must fill canvas?
-    //int w = fillCanvas ? (this->width())  : (nCellsW * imgW);
-    //int h = fillCanvas ? (this->height()) : (nCellsH * imgH);
-    // QImage background = theme.background(w, h, 0);
     loadBackground();
 
     if (changePixmaps) {
@@ -480,12 +468,6 @@ void KGrCanvas::makeTiles (bool changePixmaps)
 
 	*tileset << theme.tiles(imgH);
     }
-
-    //if (theme.isWithBackground()) {
-//	playfield->setBackground (true, 
-//			&background, 
-//			theme.isBorderRequired() ? topLeft : QPoint(0, 0));
-//    }
 
     // Now set our tileset in the scene.
     playfield->setTiles (tileset, topLeft, nCellsW, nCellsH, imgW, imgH);
@@ -542,7 +524,6 @@ void KGrCanvas::drawSpotLight(qreal value)
 {
     static int count = 0;
     if (value > 0.99) {
-	// IDW kDebug() << t.elapsed() << "msec" << "Hide spotlight, value:" << value; // IDW
 	count = 0;
 	// Hide the spotlight animation -- all scene visible
 	m_spotLight->hide();
@@ -635,7 +616,6 @@ void KGrCanvas::drawSpotLight(qreal value)
     }
 
     m_spotLight->setPicture(picture);
-    // IDW kDebug() << t.elapsed() << "msec" << "Spotlight frame count: " << count << ", value:" << value; // IDW
 }
 
 KGameCanvasRectangle * KGrCanvas::drawRectangle (int x, int y, int w, int h)
