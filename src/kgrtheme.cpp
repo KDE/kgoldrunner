@@ -27,7 +27,8 @@ KGrTheme::KGrTheme(const QString &systemDataDir) :
 	tileGraphics(NONE),
 	backgroundGraphics(NONE),
 	runnerGraphics(NONE),
-	numBackgrounds(0)
+	numBackgrounds(0),
+	hasPanelTiles(false)
 {
 }
 
@@ -61,6 +62,11 @@ bool KGrTheme::load(const QString& themeFilepath)
 		if (svgSet.elementExists("background")) {
 		    numBackgrounds = 1;
 		}
+	    }
+	    if (svgSet.elementExists("panel_1")) {
+		hasPanelTiles = true;
+	    } else {
+		hasPanelTiles = false;
 	    }
 	}
 	f = group.readEntry ("Actors", "default/actors.svg");
@@ -142,13 +148,15 @@ QList<QPixmap> KGrTheme::svgFrames (const QString &elementPattern,
 					unsigned int size, int nFrames)
 {
     QImage img (size, size, QImage::Format_ARGB32_Premultiplied);
+    QRectF bounds = img.rect();
+    bounds.adjust(-0.5, -0.5, 0.5, 0.5);
     QPainter q (&img);
     QList<QPixmap> frames;
     for (int i = 1; i <= nFrames; i++) {
 	QString s = elementPattern.arg(i);	// e.g. "hero_1", "hero_2", etc.
 	img.fill (0);
 	    if (svgActors.elementExists(s)) {
-	    svgActors.render (&q, s);
+	    svgActors.render (&q, s, bounds);
 	}else {
 	    // The theme does not contain the needed element.
 	    kWarning() << "The needed element" << s << "is not in the theme.";
@@ -163,9 +171,15 @@ QPixmap KGrTheme::svgTile (QImage & img, QPainter & q, const QString & name)
     img.fill (0);
     
     if (svgSet.elementExists(name)) {
-	svgSet.render (&q, name);
+	//QRectF bounds = svgSet.boundsOnElement(name);
+	QRectF bounds = img.rect();
+	bounds.adjust(-0.5, -0.5, 0.5, 0.5);
+	kDebug() << "bounds =" << bounds;
+	svgSet.render (&q, name, bounds);
     } else if (svgActors.elementExists(name)) {
-	svgActors.render(&q, name);
+	QRectF bounds = img.rect();
+	bounds.adjust(-0.5, -0.5, 0.5, 0.5);
+	svgActors.render(&q, name, bounds);
     } else {
 	// The theme does not contain the needed element.
 	kWarning() << "The needed element" << name << "is not in the theme.";
