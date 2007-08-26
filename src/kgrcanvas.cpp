@@ -35,16 +35,16 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
 			  m_fadingTimeLine(1000, this),
 			  theme(systemDataDir)
 {
-    resizeCount = 0;		// IDW
+    resizeCount = 0;		// Do not render or paint until resize is done.
 
-    kDebug() << "Called KGrCanvas::KGrCanvas ..." << this->size();
+    qDebug() << "Called KGrCanvas::KGrCanvas ..." << this->size();
     m = new QCursor ();		// For handling the mouse.
 
     scaleStep = STEP;		// Initial scale is 1:1.
     baseScale = scaleStep;
     baseFontSize = fontInfo().pointSize() + 2;
     scaleStep = (int) ((scale * STEP) + 0.05);
-    kDebug() << "Scale" << scale << "Scaled Step" << scaleStep;
+    qDebug() << "Scale" << scale << "Scaled Step" << scaleStep;
 
     nCellsW = FIELDWIDTH;
     nCellsH = FIELDHEIGHT;
@@ -56,7 +56,7 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
     // Create an empty list of enemy sprites.
     enemySprites = new QList<KGrSprite *> ();
 
-    kDebug() << "Calling initView() ...";
+    qDebug() << "Calling initView() ...";
     initView();			// Set up the graphics, etc.
 
     // Initialise the KGoldrunner grid.
@@ -68,11 +68,15 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
 
     title = 0;
     level = 0;
-    setMinimumSize(FIELDWIDTH + 4, FIELDHEIGHT + 4);
+
+    // Set minimum size to 12x12 pixels per tile.
+    setMinimumSize((FIELDWIDTH + 4) * 12, (FIELDHEIGHT + 4) * 12);
+
     m_spotLight = new KGameCanvasPicture(this);
     m_fadingTimeLine.setCurveShape(QTimeLine::LinearCurve);
     m_fadingTimeLine.setUpdateInterval( 80 );
-    connect(&m_fadingTimeLine, SIGNAL(valueChanged(qreal)), this, SLOT(drawSpotLight(qreal)));
+    connect(&m_fadingTimeLine, SIGNAL(valueChanged(qreal)),
+		this, SLOT(drawSpotLight(qreal)));
 }
 
 KGrCanvas::~KGrCanvas()
@@ -113,7 +117,7 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
     // has changed and the bg must fill it (! themeDrawBorder).
 
     double scale = (double) imgW / (double) bgw;
-    kDebug() << "Called KGrCanvas::drawTheScene() - Images:" << imgW<<"x"<<imgH;
+    qDebug() << "Called KGrCanvas::drawTheScene() - Images:" << imgW<<"x"<<imgH;
     if (imgW == 0) {
         return;
     }
@@ -188,9 +192,9 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
 
 bool KGrCanvas::changeTheme (const QString & themeFilepath)
 {
-    kDebug()<< "New Theme -" << themeFilepath;
+    qDebug()<< "New Theme -" << themeFilepath;
     bool success = theme.load(themeFilepath);
-    if (success) {
+    if (success && (resizeCount > 0)) {	// If startup, do not render or paint.
 	const bool changePixmaps = true;
 	drawTheScene (changePixmaps);	// Not startup, so re-draw play-area.
     }
@@ -199,13 +203,16 @@ bool KGrCanvas::changeTheme (const QString & themeFilepath)
 
 void KGrCanvas::resizeEvent (QResizeEvent * event )
 {
-    resizeCount++;			// IDW
-    kDebug()<< "KGrCanvas::resizeEvent:" << resizeCount << event->size();
-    kDebug() << "Resize pending?" << QWidget::testAttribute (Qt::WA_PendingResizeEvent);
+    resizeCount++;
+    qDebug()<< "KGrCanvas::resizeEvent:" << resizeCount << event->size();
+    qDebug() << "Resize pending?" << QWidget::testAttribute (Qt::WA_PendingResizeEvent);
     // To reduce overheads, re-render only when no later resize is scheduled.
     if (QWidget::testAttribute (Qt::WA_PendingResizeEvent))  {
 	return;
     }
+
+    // When we get here for the first time, the initial SVG theme has been
+    // loaded, but, to save overheads, it has not been rendered or painted.
 
     t.start(); // IDW
     double w = (double) event->size().width()  / (nCellsW + border);

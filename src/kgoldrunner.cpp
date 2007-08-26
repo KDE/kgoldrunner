@@ -101,7 +101,7 @@ KGoldrunner::KGoldrunner()
 	return;				// If no game files, abort.
     }
 
-    kDebug() << "Calling view->setBaseScale() ...";
+    qDebug() << "Calling view->setBaseScale() ...";
     view->setBaseScale();		// Set scale for level-titles font.
 
     hero = game->getHero();		// Get a pointer to the hero.
@@ -561,7 +561,7 @@ void KGoldrunner::setupThemes ()
 
     KConfigGroup gameGroup (KGlobal::config(), "KDEGame"); // Get prev theme.
     QString currentThemeFilepath = gameGroup.readEntry ("ThemeFilepath", "");
-    kDebug()<< "Config() Theme" << currentThemeFilepath;
+    qDebug()<< "Config() Theme" << currentThemeFilepath;
 
     QSignalMapper * themeMapper = new QSignalMapper (this);
     connect (themeMapper, SIGNAL (mapped (const QString &)),
@@ -606,12 +606,6 @@ void KGoldrunner::setupThemes ()
 
 void KGoldrunner::initStatusBar()
 {
-    // QString s = statusBar()->fontInfo().family();	// Set bold font.
-    // int i = statusBar()->fontInfo().pointSize();
-    // statusBar()->setFont (QFont (s, i, QFont::Bold));
-
-    statusBar()->setSizeGripEnabled (true);
-
     statusBar()->insertPermanentItem ("", ID_LIVES);
     statusBar()->insertPermanentItem ("", ID_SCORE);
     statusBar()->insertPermanentItem ("", ID_LEVEL);
@@ -812,7 +806,7 @@ void KGoldrunner::setKGrRules()
 
 void KGoldrunner::resizeMainWindow()
 {
-    kDebug() << "KGoldrunner::resizeMainWindow() called ...";
+    qDebug() << "KGoldrunner::resizeMainWindow() called ...";
     return; // IDW
 
     // Get the area of our view, menubar and statusBar, and add the editToolbar (if visible)
@@ -853,7 +847,7 @@ void KGoldrunner::saveProperties(KConfigGroup & /* config - unused */)
     // config file.  Anything you write here will be available
     // later when this app is restored.
 
-    kDebug() << "I am in KGoldrunner::saveProperties.";
+    qDebug() << "I am in KGoldrunner::saveProperties.";
 }
 
 void KGoldrunner::readProperties(const KConfigGroup & /* config - unused */)
@@ -863,7 +857,7 @@ void KGoldrunner::readProperties(const KConfigGroup & /* config - unused */)
     // the app is being restored.  Read in here whatever you wrote
     // in 'saveProperties'
 
-    kDebug() << "I am in KGoldrunner::readProperties.";
+    qDebug() << "I am in KGoldrunner::readProperties.";
 }
 
 // void KGoldrunner::optionsShowToolbar()
@@ -1151,7 +1145,7 @@ void KGoldrunner::defaultEditObj()
 
 QSize KGoldrunner::sizeHint() const
 {
-    kDebug() << "KGoldrunner::sizeHint() called ... 640x600";
+    qDebug() << "KGoldrunner::sizeHint() called ... 640x600";
     return QSize (640, 600);
 }
 

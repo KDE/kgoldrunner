@@ -142,7 +142,7 @@ private:
 	// IDW - Temporary ... should use a more general playfield (grid) idea.
 	int tileNo [FIELDWIDTH] [FIELDHEIGHT];
 
-	int resizeCount;		// IDW - Temporary, for kDebug() logs.
+	int resizeCount;		// =0 until the main window has resized.
 	QTime t; // IDW
 	unsigned int level;
 };
