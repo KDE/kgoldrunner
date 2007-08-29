@@ -22,7 +22,9 @@
 #include <QTreeWidgetItem>
 
 #include <QScrollBar>
+// IDW #include <QSlider>
 #include <QLineEdit>
+#include <QSpinBox>
 #include <QPushButton>
 #include <QButtonGroup>
 #include <QRadioButton>
@@ -81,8 +83,9 @@ private:
     QTextEdit *		collnAbout;
 
     QLabel *		numberL;
-    QLineEdit *		display;
+    QSpinBox *		display;
     QScrollBar *	number;
+    // IDW QSlider *		number;
     QPushButton *	levelNH;
     QLabel *		slName;
     KGrThumbNail *	thumbNail;

@@ -106,20 +106,25 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     QGridLayout * grid = new QGridLayout;
     mainLayout->addLayout (grid);
 
-    number    = new QScrollBar (Qt::Horizontal, dad);
+    number    = new QScrollBar (Qt::Vertical, dad); // IDW
+    // IDW number    = new QSlider (Qt::Vertical, dad);
     number->setRange(1, 150);
+    // IDW number->setRange(0, 150); // IDW 0 is kludge for QSlider tick layout.
     number->setSingleStep(1);
     number->setPageStep(10);
     number->setValue(1);
-    grid->addWidget (number, 1, 1);
+    // IDW number->setTickPosition (QSlider::TicksRight);
+    // IDW number->setTickInterval (number->pageStep());
+    grid->addWidget (number, 1, 5, 4, 1);
 
     QWidget * numberPair = new QWidget(dad);
     QHBoxLayout *hboxLayout2 = new QHBoxLayout(numberPair);
     hboxLayout2->setMargin (0);
     numberPair->setLayout(hboxLayout2);
-    grid->addWidget (numberPair, 2, 1);
+    grid->addWidget (numberPair, 1, 1, 1, 3);
     numberL   = new QLabel (i18n("Level number:"), numberPair);
-    display   = new QLineEdit (numberPair);
+    display   = new QSpinBox (numberPair);
+    display->setRange(1, 150);
     hboxLayout2->addWidget (numberL);
     hboxLayout2->addWidget (display);
 
@@ -127,19 +132,19 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     mainLayout->addWidget (levelNH);
 
     slName    = new QLabel ("", dad);
-    grid->addWidget (slName, 3, 1);
+    grid->addWidget (slName, 2, 1, 1, 4);
     thumbNail = new KGrThumbNail (dad);
-    grid->addWidget (thumbNail, 1, 2, 3, 1);
+    grid->addWidget (thumbNail, 1, 6, 4, 5);
 
     // Set thumbnail cell size to about 1/5 of game cell size.
     int cellSize = parent->width() / (5 * (FIELDWIDTH + 4));
+    cellSize = (cellSize < 4) ? 4 : cellSize;
     thumbNail->	setFixedWidth  ((FIELDWIDTH  * cellSize) + 2);
     thumbNail->	setFixedHeight ((FIELDHEIGHT * cellSize) + 2);
 
     // Base the geometry of the dialog box on the playing area.
     int cell = parent->width() / (FIELDWIDTH + 4);
     dad->	setMinimumSize ((FIELDWIDTH*cell/2), (FIELDHEIGHT-3)*cell);
-    qDebug() << "Computed the dialog box geometry";
 
     // Set the default for the level-number in the scrollbar.
     number->	setTracking (true);
@@ -203,7 +208,6 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     if (display->isEnabled()) {
 	display->setFocus();			// Set the keyboard input on.
 	display->selectAll();
-	display->setCursorPosition (0);
     }
 
     // Paint a thumbnail sketch of the level.
@@ -214,7 +218,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 
     connect (colln,   SIGNAL (itemSelectionChanged()), this, SLOT (slColln()));
 
-    connect (display, SIGNAL (textChanged (const QString &)),
+    connect (display, SIGNAL (valueChanged (const QString &)),
 		this, SLOT (slUpdate (const QString &)));
 
     connect (number,  SIGNAL (valueChanged(int)), this, SLOT(slShowLevel(int)));
@@ -232,7 +236,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     connect (colln, SIGNAL(itemSelectionChanged()), this, SLOT(slPaintLevel()));
     connect (number,  SIGNAL (sliderReleased()), this, SLOT (slPaintLevel()));
 
-    connect (this,    SIGNAL (helpClicked()), this, SLOT (slotHelp ())); // IDW
+    connect (this,    SIGNAL (helpClicked()), this, SLOT (slotHelp ()));
 }
 
 KGrSLDialog::~KGrSLDialog()
@@ -322,10 +326,14 @@ void KGrSLDialog::slColln ()
 			(colln->selectedItems().first()))->id();
     int n = slCollnIndex;				// Collection selected.
     int N = defaultGame;				// Current collection.
-    if (collections.at(n)->nLevels > 0)
+    if (collections.at(n)->nLevels > 0) {
 	number->setMaximum (collections.at(n)->nLevels);
-    else
+	display->setMaximum (collections.at(n)->nLevels);
+    }
+    else {
 	number->setMaximum (1);			// Avoid range errors.
+	display->setMaximum (1);
+    }
 
     // Set a default level number for the selected collection.
     switch (slAction) {
@@ -349,6 +357,7 @@ void KGrSLDialog::slColln ()
 	else {
 	    // Saving new/edited level or relocating a level: use "nLevels + 1".
 	    number->setMaximum (collections.at(n)->nLevels + 1);
+	    display->setMaximum (collections.at(n)->nLevels + 1);
 	    number->setValue (number->maximum());
 	}
 	break;
@@ -380,10 +389,12 @@ void KGrSLDialog::slColln ()
 void KGrSLDialog::slShowLevel (int i)
 {
     // Display the level number as the slider is moved.
-    QString tmp;
-    tmp.setNum(i);
-    tmp = tmp.rightJustified(3,'0');
-    display->setText(tmp);
+    // IDW // QSlider has minimum = zero: that gets the tick-marks laid out OK.
+    // IDW if (i <= 0) {
+	// IDW i = 1;
+	// IDW number->setValue(i);		// Force the level to be >= 1.
+    // IDW }
+    display->setValue(i);
 }
 
 void KGrSLDialog::slUpdate (const QString & text)
