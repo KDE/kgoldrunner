@@ -174,7 +174,7 @@ QPixmap KGrTheme::svgTile (QImage & img, QPainter & q, const QString & name)
 	//QRectF bounds = svgSet.boundsOnElement(name);
 	QRectF bounds = img.rect();
 	bounds.adjust(-0.5, -0.5, 0.5, 0.5);
-	kDebug() << "bounds =" << bounds;
+	// IDW kDebug() << "bounds =" << bounds;
 	svgSet.render (&q, name, bounds);
     } else if (svgActors.elementExists(name)) {
 	QRectF bounds = img.rect();
