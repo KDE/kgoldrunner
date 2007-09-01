@@ -260,7 +260,7 @@ void KGrCanvas::paintCell (int x, int y, char type, int offset)
 
 void KGrCanvas::setBaseScale ()
 {
-    // Synchronise the desktop font size with the initial canvas scale.
+    // Synchronize the desktop font size with the initial canvas scale.
     baseScale = scaleStep;
     QString t = "";
     if (title) {

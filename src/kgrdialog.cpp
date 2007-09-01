@@ -768,7 +768,7 @@ void KGrLGDialog::lgSelect (QListWidgetItem * item)
 }
 
 /*******************************************************************************
-***********************  CENTRALISED MESSAGE FUNCTIONS  ************************
+***********************  CENTRALIZED MESSAGE FUNCTIONS  ************************
 *******************************************************************************/
 
 void KGrMessage::information (QWidget * parent,

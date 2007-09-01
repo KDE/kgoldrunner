@@ -1538,7 +1538,7 @@ void KGrGame::updateLevel()
     if (owner == SYSTEM) {
 	KGrMessage::information (view, i18n("Edit Level"),
 	    i18n("It is OK to edit a system level, but you MUST save "
-	    "the level in one of your own games. You're not just "
+	    "the level in one of your own games. You are not just "
 	    "taking a peek at the hidden ladders "
 	    "and fall-through bricks, are you? :-)"));
     }
