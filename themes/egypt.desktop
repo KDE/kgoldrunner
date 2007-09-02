@@ -1,5 +1,6 @@
 [KDEGameTheme]
 Name=The Treasure of Egypt
+Name[es]=El tesoro de Egipto
 Name[it]=Il tesoro d'Egitto
 Name[ja]=エジプトの財宝
 Name[pt]=O Tesouro do Egipto
@@ -7,6 +8,7 @@ Name[pt_BR]=O Tesouro do Egipto
 Name[sv]=Den egyptiska skatten
 Name[zh_TW]=埃及的寶藏
 Description=Help Matt Goldrunner escape the the traps of ancient Egypt.
+Description[es]=Ayude a Matt Goldrunner a escapar de las trampas del antiguo Egipto.
 Description[it]=Aiuta Matt Goldrunner e fuggire dalle trappole dell'antico Egitto.
 Description[pt]=Ajude o Matt Goldrunner a escapar das armadilhas do antigo Egipto.
 Description[pt_BR]=Ajude o Matt Goldrunner a escapar das armadilhas do antigo Egipto.
