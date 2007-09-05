@@ -1,5 +1,6 @@
 [KDEGameTheme]
 Name=Black on White
+Name[el]=Μαύρο με λευκό
 Name[es]=Negro sobre blanco
 Name[ga]=Dubh ar Bhán
 Name[it]=Bianco e Nero
@@ -9,6 +10,7 @@ Name[pt_BR]=Preto Sobre Branco
 Name[sv]=Svartvitt
 Name[zh_TW]=黑與白
 Description=A monochrome, black on white theme for KGoldrunner
+Description[el]=Ένα μονόχρωμο, μαύρο σε λευκό θέμα για το KGoldrunner
 Description[es]=Un tema en blanco y negro para KGoldrunner
 Description[it]=Un tema monocromatico, nero su bianco per KGoldrunner
 Description[pt]=Um tema monocromático, a preto-e-branco, para o KGoldrunner
