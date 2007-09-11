@@ -16,7 +16,7 @@ set(kgoldrunner_SRCS
 
 kde4_add_executable(kgoldrunner ${kgoldrunner_SRCS})
 
-target_link_libraries(kgoldrunner  ${KDE4_KDEUI_LIBS} kdegames ${KDE4_KDEPRINT_LIBS} )
+target_link_libraries(kgoldrunner ${KDE4_KDEUI_LIBS} kdegames )
 
 install(TARGETS kgoldrunner  DESTINATION ${BIN_INSTALL_DIR} )
 
@@ -26,7 +26,7 @@ install(TARGETS kgoldrunner  DESTINATION ${BIN_INSTALL_DIR} )
 install( FILES KGoldrunner.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
 install( FILES kgoldrunnerui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kgoldrunner )
 
-kde4_install_icons( ${ICON_INSTALL_DIR}   )
+kde4_install_icons( ${ICON_INSTALL_DIR} )
 
 
 
