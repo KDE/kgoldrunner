@@ -149,8 +149,8 @@ QList<QPixmap> KGrTheme::svgFrames (const QString &elementPattern,
 {
     QImage img (size, size, QImage::Format_ARGB32_Premultiplied);
     QRectF bounds = img.rect();
-    bounds.adjust(-0.5, -0.5, 0.5, 0.5);
     QPainter q (&img);
+    bounds.adjust(-0.5, -0.5, 0.5, 0.5);
     QList<QPixmap> frames;
     for (int i = 1; i <= nFrames; i++) {
 	QString s = elementPattern.arg(i);	// e.g. "hero_1", "hero_2", etc.
@@ -170,15 +170,11 @@ QPixmap KGrTheme::svgTile (QImage & img, QPainter & q, const QString & name)
 {
     img.fill (0);
     
+    QRectF bounds = img.rect();
+    bounds.adjust(-0.5, -0.5, 0.5, 0.5);
     if (svgSet.elementExists(name)) {
-	//QRectF bounds = svgSet.boundsOnElement(name);
-	QRectF bounds = img.rect();
-	bounds.adjust(-0.5, -0.5, 0.5, 0.5);
-	// IDW kDebug() << "bounds =" << bounds;
 	svgSet.render (&q, name, bounds);
     } else if (svgActors.elementExists(name)) {
-	QRectF bounds = img.rect();
-	bounds.adjust(-0.5, -0.5, 0.5, 0.5);
 	svgActors.render(&q, name, bounds);
     } else {
 	// The theme does not contain the needed element.
