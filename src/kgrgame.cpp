@@ -24,6 +24,7 @@
 
 #include <kpushbutton.h>
 #include <KStandardGuiItem>
+#include <kdebug.h>
 
 // Do NOT change KGoldrunner over to KScoreDialog until we have found a way
 // to preserve high-score data pre-existing from the KGr high-score methods.

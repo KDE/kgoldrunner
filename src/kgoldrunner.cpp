@@ -30,6 +30,8 @@
 #include <kconfig.h>
 #include <kconfiggroup.h>
 
+#include <kdebug.h>
+
 #include <ktoolbar.h>
 #include <kmenubar.h>
 

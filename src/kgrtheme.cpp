@@ -19,6 +19,9 @@
 #include "kgrtheme.h"
 
 #include <KConfig>
+#include <KConfigGroup>
+#include <KGlobal>
+#include <KDebug>
 #include <QPainter>
 
 KGrTheme::KGrTheme(const QString &systemDataDir) : 
