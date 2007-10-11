@@ -32,5 +32,5 @@ Author=Eugene Trounev
 Set=egypt/egypt_kgr.svg
 Actors=egypt/actors.svg
 DrawCanvasBorder=0
-BorderColor=#803f00
+BorderColor=#343131
 TextColor=#FFFFFF
