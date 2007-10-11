@@ -88,12 +88,14 @@ bool KGrTheme::load(const QString& themeFilepath)
 
     // Check if the theme asks us to draw a border and set the specified color.
     themeDrawBorder = group.readEntry ("DrawCanvasBorder", 0);
-    if (themeDrawBorder) {
-      QString themeBorderColor = group.readEntry ("BorderColor", "");
-      if (!themeBorderColor.isEmpty()) {
+
+    // The border color (default black) is also used as the view's background
+    // color, to soften the ugly look of empty rectangles during repainting.
+    QString themeBorderColor = group.readEntry ("BorderColor", "#000000");
+    if (!themeBorderColor.isEmpty()) {
         m_borderColor.setNamedColor(themeBorderColor);
-      }
     }
+
     // If specified, also set the title color.
     QString themeTextColor = group.readEntry ("TextColor", "");
     if (!themeTextColor.isEmpty()) {

@@ -40,6 +40,10 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
     qDebug() << "Called KGrCanvas::KGrCanvas ..." << this->size();
     m = new QCursor ();		// For handling the mouse.
 
+    // The default background is black.  It appears during partial repaints.
+    setPalette(QPalette(Qt::black));
+    setAutoFillBackground(true);
+
     scaleStep = STEP;		// Initial scale is 1:1.
     baseScale = scaleStep;
     baseFontSize = fontInfo().pointSize() + 2;
@@ -109,6 +113,7 @@ void KGrCanvas::fadeOut()
 
 void KGrCanvas::drawTheScene (bool changePixmaps)
 {
+    qDebug() << t.restart() << "msec.  Start KGrCanvas::drawTheScene";
     // The pixmaps for tiles and sprites have to be re-loaded
     // if and only if the theme or the cell size has changed.
 
@@ -166,7 +171,7 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
 
     if (enemySprites) {
 	for (int i = 0; i < enemySprites->size(); ++i) {
-	    kDebug() << "accessing enemySprite" << i;
+	    // kDebug() << "accessing enemySprite" << i;
     	    KGrSprite * thisenemy = enemySprites->at(i);
 	    if (thisenemy) {
 		spriteframe = thisenemy->currentFrame();
@@ -179,6 +184,7 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
 	    }
 	}
     }
+    qDebug() << t.restart() << "msec.  Finish KGrCanvas::drawTheScene";
 
     // Recreate the border.
     makeBorder ();
@@ -187,13 +193,18 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
     QString t = title->text();
     makeTitle ();
     setTitle (t);
-
 }
 
 bool KGrCanvas::changeTheme (const QString & themeFilepath)
 {
     qDebug()<< "New Theme -" << themeFilepath;
     bool success = theme.load(themeFilepath);
+    if (success) {
+	// Use the border color to fill empty rectangles during partial
+        // repaints and soften their contrast with the rest of the picture.
+	setPalette(QPalette(theme.borderColor()));
+	setAutoFillBackground(true);
+    }
     if (success && (resizeCount > 0)) {	// If startup, do not render or paint.
 	const bool changePixmaps = true;
 	drawTheScene (changePixmaps);	// Not startup, so re-draw play-area.
@@ -403,7 +414,7 @@ QPixmap KGrCanvas::getPixmap (char type)
     default:      tileNumber = freebg;  break;
     }
 
-    kDebug() << "accessing tile" << tileNumber;
+    // kDebug() << "accessing tile" << tileNumber;
     return tileset->at(tileNumber);
 }
 
