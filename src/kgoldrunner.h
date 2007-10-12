@@ -110,9 +110,6 @@ private slots:
     void setTradRules();
     void setKGrRules();
 
-    // Local slots to make playing area larger or smaller.
-    void resizeMainWindow();
-
     // Local slots for hero control keys.
     void goUp();
     void goR();

@@ -131,7 +131,6 @@ KGoldrunner::KGoldrunner()
 
     // Connect the game actions to the menu and toolbar displays.
     connect(game, SIGNAL (setEditMenu (bool)),	SLOT (setEditMenu (bool)));
-    connect(game, SIGNAL (setEditMenu (bool)),	SLOT (resizeMainWindow ()));
     connect(game, SIGNAL (markRuleType (char)), SLOT (markRuleType (char)));
     connect(game, SIGNAL (hintAvailable(bool)),	SLOT (adjustHintAction(bool)));
     connect(game, SIGNAL (defaultEditObj()),	SLOT (defaultEditObj()));
@@ -142,10 +141,10 @@ KGoldrunner::KGoldrunner()
     setAutoSaveSettings();
 
     // Explicitly hide the edit toolbar - we need it in edit mode only and we
-    // always start in play mode, even if the last session ended in edit mode
-    // and the config file says to show the edit toolbar.
+    // always start in play mode, even if the last session ended in edit mode.
+    // Besides, we cannot render it until after the initial resize event(s).
     toolBar("editToolbar")->hide();
-    toolBar("editToolbar")->setAllowedAreas(Qt::TopToolBarArea);
+    // IDW toolBar("editToolbar")->setAllowedAreas(Qt::TopToolBarArea);
 
     // Set mouse control of the hero as the default.
     game->setMouseMode (true);
@@ -169,9 +168,6 @@ void KGoldrunner::setupActions()
 
     // New Game...
     // Load Saved Game...
-    // IDW // Play Any Level...
-    // IDW // Play Next Level...
-    // IDW // Tutorial
     // --------------------------
 
     QAction * newAction =	KStandardGameAction::
@@ -185,14 +181,6 @@ void KGoldrunner::setupActions()
 				game, SLOT(loadGame()), this);
     actionCollection()->addAction(loadGame->objectName(), loadGame);
     loadGame->			setText (i18n("&Load Saved Game..."));
-
-    // IDW QAction* playAnyAct = actionCollection()->addAction("play_any");
-    // IDW playAnyAct->setText(i18n("&Play Any Level..."));
-    // IDW connect(playAnyAct, SIGNAL(triggered(bool)), game, SLOT(startAnyLevel()));
-
-    // IDW QAction* playNextAct = actionCollection()->addAction("play_next");
-    // IDW playNextAct->setText(i18n("Play &Next Level..."));
-    // IDW connect(playNextAct, SIGNAL(triggered(bool)), game, SLOT(startNextLevel()));
 
     // Save Game...
     // Save Edits... (extra copy)
@@ -228,6 +216,9 @@ void KGoldrunner::setupActions()
 
     killHero =	actionCollection()->addAction("kill_hero");
     killHero->setText (i18n("&Kill Hero"));
+    killHero->setToolTip (i18n("Kill hero"));
+    killHero->setWhatsThis (i18n("Kill the hero, in case he finds himself in "
+				"a situation from which he cannot escape"));
     killHero->setShortcut (Qt::Key_Q);
     connect( killHero, SIGNAL(triggered(bool)), game, SLOT(herosDead()));
 
@@ -241,23 +232,22 @@ void KGoldrunner::setupActions()
     /**************************************************************************/
 
     // Create a Level
-    // Edit Any Level...
-    // IDW // Edit Next Level...
+    // Edit a Level...
     // --------------------------
 
     QAction* createAct = actionCollection()->addAction("create_level");
     createAct->setText(i18n("&Create Level"));
     createAct->setIcon(KIcon("document-new"));
+    createAct->setToolTip(i18n("Create level"));
+    createAct->setWhatsThis(i18n("Create a completely new level"));
     connect( createAct, SIGNAL(triggered(bool)), game, SLOT(createLevel()));
 
     QAction* editAnyAct	= actionCollection()->addAction("edit_any");
-    editAnyAct->setText(i18n("&Edit Any Level..."));
+    editAnyAct->setText(i18n("&Edit Level..."));
     editAnyAct->setIcon(KIcon("document-open"));
+    editAnyAct->setToolTip(i18n("Edit level..."));
+    editAnyAct->setWhatsThis(i18n("Edit any level..."));
     connect( editAnyAct, SIGNAL(triggered(bool)), game, SLOT(updateLevel()));
-
-    // IDW QAction* editNextAct = actionCollection()->addAction("edit_next");
-    // IDW editNextAct->setText(i18n("Edit &Next Level..."));
-    // IDW connect( editNextAct, SIGNAL(triggered(bool)), game, SLOT(updateNext()));
 
     // Save Edits...
     // Move Level...
@@ -267,27 +257,39 @@ void KGoldrunner::setupActions()
     saveEdits =	actionCollection()->addAction("save_edits");
     saveEdits->setText(i18n("&Save Edits..."));
     saveEdits->setIcon(KIcon("document-save"));
+    saveEdits->setToolTip(i18n("Save edits..."));
+    saveEdits->setWhatsThis(i18n("Save your level after editing..."));
     connect( saveEdits, SIGNAL(triggered(bool)), game, SLOT(saveLevelFile()));
     saveEdits->setEnabled (false);			// Nothing to save, yet.
 
     QAction* moveLevel = actionCollection()->addAction("move_level");
     moveLevel->setText(i18n("&Move Level..."));
+    moveLevel->setToolTip(i18n("Move level..."));
+    moveLevel->setWhatsThis
+		(i18n("Change a level's number or move it to another game..."));
     connect( moveLevel, SIGNAL(triggered(bool)), game, SLOT(moveLevelFile()));
 
     QAction* deleteLevel = actionCollection()->addAction("delete_level");
     deleteLevel->setText(i18n("&Delete Level..."));
-    connect( deleteLevel, SIGNAL(triggered(bool)), game, SLOT(deleteLevelFile()));
+    deleteLevel->setToolTip(i18n("Delete level..."));
+    deleteLevel->setWhatsThis(i18n("Delete a level..."));
+    connect(deleteLevel,SIGNAL(triggered(bool)), game, SLOT(deleteLevelFile()));
 
     // Create a Game
     // Edit Game Info...
     // --------------------------
 
     QAction* createGame	= actionCollection()->addAction("create_game");
-    createGame->setText(i18n("Create Game..."));
+    createGame->setText(i18n("Create &Game..."));
+    createGame->setToolTip(i18n("Create game..."));
+    createGame->setWhatsThis(i18n("Create a completely new game..."));
     connect( createGame, SIGNAL(triggered(bool)), this, SLOT(createGame()));
 
     QAction* editGame =	actionCollection()->addAction("edit_game");
-    editGame->setText(i18n("Edit Game Info..."));
+    editGame->setText(i18n("Edit Game &Info..."));
+    editGame->setToolTip(i18n("Edit game info..."));
+    editGame->setWhatsThis
+		(i18n("Change the name, rules or description of a game..."));
     connect( editGame, SIGNAL(triggered(bool)), this, SLOT(editGameInfo()));
 
     /**************************************************************************/
@@ -307,12 +309,17 @@ void KGoldrunner::setupActions()
     // --------------------------
 
     setMouse = new KToggleAction(i18n("&Mouse Controls Hero"), this);
+    setMouse->setToolTip(i18n("Mouse controls hero"));
+    setMouse->setWhatsThis(i18n("Use the mouse to control the hero's moves"));
     actionCollection()->addAction("mouse_mode", setMouse);
     connect( setMouse, SIGNAL(triggered(bool)), this, SLOT(setMouseMode()));
 
     setKeyboard = new KToggleAction (i18n("&Keyboard Controls Hero"), this);
+    setKeyboard->setToolTip(i18n("Keyboard controls hero"));
+    setKeyboard->setWhatsThis
+			(i18n("Use the keyboard to control the hero's moves"));
     actionCollection()->addAction("keyboard_mode", setKeyboard);
-    connect( setKeyboard, SIGNAL(triggered(bool)), this, SLOT(setKeyBoardMode()));
+    connect(setKeyboard,SIGNAL(triggered(bool)), this, SLOT(setKeyBoardMode()));
 
     QActionGroup* controlGrp = new QActionGroup(this);
     controlGrp->addAction(setMouse);
@@ -330,28 +337,38 @@ void KGoldrunner::setupActions()
     KToggleAction * nSpeed =	new KToggleAction (
 				i18n("Normal Speed"),
 				this);
+    nSpeed->setToolTip(i18n("Normal speed"));
+    nSpeed->setWhatsThis(i18n("Set normal game speed (12 units)"));
     actionCollection()->addAction("normal_speed", nSpeed);
     connect( nSpeed, SIGNAL(triggered(bool)), this, SLOT(normalSpeed()));
 
     KToggleAction * bSpeed =	new KToggleAction (
 				i18n("Beginner Speed"),
 				this);
+    bSpeed->setToolTip(i18n("Beginner speed"));
+    bSpeed->setWhatsThis(i18n("Set beginners' game speed (6 units)"));
     actionCollection()->addAction("beginner_speed", bSpeed);
     connect( bSpeed, SIGNAL(triggered(bool)), this, SLOT(beginSpeed()));
 
     KToggleAction * cSpeed =	new KToggleAction (
 				i18n("Champion Speed"),
 				this);
+    cSpeed->setToolTip(i18n("Champion speed"));
+    cSpeed->setWhatsThis(i18n("Set champions' game speed (18 units)"));
     actionCollection()->addAction("champion_speed", cSpeed);
     connect( cSpeed, SIGNAL(triggered(bool)), this, SLOT(champSpeed()));
 
     QAction * iSpeed =	actionCollection()->addAction("increase_speed");
     iSpeed->setText(i18n("Increase Speed"));
+    iSpeed->setToolTip(i18n("Increase speed"));
+    iSpeed->setWhatsThis(i18n("Increase the game speed by one unit"));
     iSpeed->setShortcut( Qt::Key_Plus );
     connect( iSpeed, SIGNAL(triggered(bool)), this, SLOT(incSpeed()));
 
     QAction * dSpeed =	actionCollection()->addAction("decrease_speed");
     dSpeed->setText(i18n("Decrease Speed"));
+    dSpeed->setToolTip(i18n("Decrease speed"));
+    dSpeed->setWhatsThis(i18n("Decrease the game speed by one unit"));
     dSpeed->setShortcut( Qt::Key_Minus );
     connect( dSpeed, SIGNAL(triggered(bool)), this, SLOT(decSpeed()));
 
@@ -368,12 +385,16 @@ void KGoldrunner::setupActions()
     tradRules =			new KToggleAction (
 				i18n("&Traditional Rules"),
 				this);
+    tradRules->setToolTip(i18n("Traditional rules"));
+    tradRules->setWhatsThis(i18n("Set Traditional rules for this game"));
     actionCollection()->addAction("trad_rules", tradRules);
     connect( tradRules, SIGNAL(triggered(bool)), this, SLOT(setTradRules()));
 
     kgrRules =			new KToggleAction (
 				i18n("K&Goldrunner Rules"),
 				this);
+    kgrRules->setToolTip(i18n("KGoldrunner rules"));
+    kgrRules->setWhatsThis(i18n("Set KGoldrunner rules for this game"));
     actionCollection()->addAction("kgr_rules", kgrRules);
     connect( kgrRules, SIGNAL(triggered(bool)), this, SLOT(setKGrRules()));
 
@@ -460,10 +481,15 @@ void KGoldrunner::setupActions()
     // Key_O, "dig_right"
     // Key_U, "dig_left"
 
-    KConfigGroup gameGroup (KGlobal::config(), "Debugging"); // Get prev theme.
-    bool addDebuggingShortcuts = gameGroup.readEntry ("DebuggingShortcuts", false);
-    if (!addDebuggingShortcuts) return;
-    // Authors' debugging aids.
+    // Authors' debugging aids, effective when Pause is hit.  Options include
+    // stepping through the animation, toggling a debug patch or log messages
+    // on or off during gameplay and printing the states of runners or tiles.
+
+    KConfigGroup gameGroup (KGlobal::config(), "Debugging");
+    bool addDebuggingShortcuts = gameGroup.readEntry
+			("DebuggingShortcuts", false);	// Get debug option.
+    if (! addDebuggingShortcuts)
+	 return;
 
     QAction* step = actionCollection()->addAction("do_step");
     step->setText(i18n("Step"));
@@ -477,10 +503,10 @@ void KGoldrunner::setupActions()
     connect( bugFix, SIGNAL(triggered(bool)), game, SLOT(bugFix()) );
     addAction(bugFix);
 
-    QAction* showPos = actionCollection()->addAction("step");
+    QAction* showPos = actionCollection()->addAction("show_positions");
     showPos->setText(i18n("Show Positions"));
     showPos->setShortcut( Qt::Key_D );
-    connect( showPos, SIGNAL(triggered(bool)), game, SLOT(showFigurePositions()) );
+    connect(showPos,SIGNAL(triggered(bool)), game, SLOT(showFigurePositions()));
     addAction(showPos);
 
     QAction* startLog = actionCollection()->addAction("logging");
@@ -804,25 +830,6 @@ void KGoldrunner::setKGrRules()
     KGrFigure::searchStrategy = MEDIUM;
 }
 
-// Local slots to make playing area larger or smaller.
-
-void KGoldrunner::resizeMainWindow()
-{
-    qDebug() << "KGoldrunner::resizeMainWindow() called ...";
-    return; // IDW
-
-    // Get the area of our view, menubar and statusBar, and add the editToolbar (if visible)
-    int newHeight = view->size().height() + statusBar()->height() + menuBar()->height();
-    if (!toolBar("editToolbar")->isHidden())
-	newHeight = newHeight + toolBar("editToolbar")->height();
-
-    // IDW setFixedSize (view->size().width(), newHeight);
-    resize (view->size().width(), newHeight);
-
-    //Maybe we need a layout manager here? Then we could possibly just use...
-    //resize(view->size());
-}
-
 // Local slots for hero control keys.
 
 void KGoldrunner::goUp()		{setKey (KB_UP);}
@@ -1057,47 +1064,73 @@ void KGoldrunner::setupEditToolbarActions()
     // editToolbar->setPalette (QPalette (QColor (150, 150, 230)));
 
     QAction* ktipAct = actionCollection()->addAction ("edit_hint");
-    ktipAct->setIcon (KIcon("ktip"));
+    ktipAct->setIcon (KIcon("games-hint"));
     ktipAct->setText (i18n("Edit Name/Hint"));
+    ktipAct->setToolTip (i18n("Edit level name or hint"));
+    ktipAct->setWhatsThis (i18n("Edit text for the name or hint of a level"));
     connect (ktipAct, SIGNAL(triggered(bool)), game, SLOT(editNameAndHint()));
 
-    KToggleAction* freebgAct = new KToggleAction (i18n("Empty space"), this);
+    KToggleAction* freebgAct = new KToggleAction (i18n("Erase"), this);
+    freebgAct->setToolTip (i18n("Erase"));
+    freebgAct->setWhatsThis (i18n("Erase objects by painting empty squares"));
     actionCollection()->addAction ("freebg", freebgAct);
     connect (freebgAct, SIGNAL(triggered(bool)), this, SLOT(freeSlot()));
 
     KToggleAction* edherobgAct = new KToggleAction (i18n("Hero"), this);
+    edherobgAct->setToolTip (i18n("Move hero"));
+    edherobgAct->setWhatsThis (i18n("Change the hero's starting position"));
     actionCollection()->addAction( "edherobg", edherobgAct );
     connect (edherobgAct, SIGNAL(triggered(bool)), this, SLOT(edheroSlot()));
 
     KToggleAction* edenemybgAct = new KToggleAction (i18n("Enemy"), this );
+    edenemybgAct->setToolTip (i18n("Paint enemies"));
+    edenemybgAct->setWhatsThis
+		(i18n("Paint enemies at their starting positions"));
     actionCollection()->addAction( "edenemybg", edenemybgAct );
     connect (edenemybgAct, SIGNAL(triggered(bool)), this, SLOT(edenemySlot()));
 
-    KToggleAction* brickbgAct = new KToggleAction (i18n("Brick (can dig)"), this);
+    KToggleAction* brickbgAct = new KToggleAction (i18n("Brick"), this);
+    brickbgAct->setToolTip (i18n("Paint bricks (can dig)"));
+    brickbgAct->setWhatsThis (i18n("Paint bricks (diggable objects)"));
     actionCollection()->addAction ("brickbg", brickbgAct);
     connect (brickbgAct, SIGNAL(triggered(bool)), this, SLOT(brickSlot()));
 
-    KToggleAction* betonbgAct = new KToggleAction (i18n("Concrete (cannot dig)"), this);
+    KToggleAction* betonbgAct = new KToggleAction (i18n("Concrete"), this);
+    betonbgAct->setToolTip (i18n("Paint concrete (cannot dig)"));
+    betonbgAct->setWhatsThis (i18n("Paint concrete objects (not diggable)"));
     actionCollection()->addAction ("betonbg", betonbgAct);
     connect (betonbgAct, SIGNAL(triggered(bool)), this, SLOT(betonSlot()));
 
-    KToggleAction* fbrickbgAct = new KToggleAction (i18n("Trap (can fall through)"), this);
+    KToggleAction* fbrickbgAct = new KToggleAction (i18n("Trap"), this);
+    fbrickbgAct->setToolTip
+		(i18n("Paint traps or false bricks (can fall through)"));
+    fbrickbgAct->setWhatsThis
+		(i18n("Paint traps or false bricks (can fall through)"));
     actionCollection()->addAction ("fbrickbg", fbrickbgAct);
     connect (fbrickbgAct, SIGNAL(triggered(bool)), this, SLOT(fbrickSlot()));
 
     KToggleAction* ladderbgAct = new KToggleAction (i18n("Ladder"), this);
+    ladderbgAct->setToolTip (i18n("Paint ladders"));
+    ladderbgAct->setWhatsThis (i18n("Paint ladders (ways to go up or down)"));
     actionCollection()->addAction ("ladderbg", ladderbgAct);
     connect (ladderbgAct, SIGNAL(triggered(bool)), this, SLOT(ladderSlot()));
 
-    KToggleAction* hladderbgAct = new KToggleAction (i18n("Hidden ladder"), this);
+    KToggleAction* hladderbgAct = new KToggleAction(i18n("Hidden Ladder"),this);
+    hladderbgAct->setToolTip (i18n("Paint hidden ladders"));
+    hladderbgAct->setWhatsThis
+	(i18n("Paint hidden ladders, which appear when all the gold is gone"));
     actionCollection()->addAction ("hladderbg", hladderbgAct);
     connect (hladderbgAct, SIGNAL(triggered(bool)), this, SLOT(hladderSlot()));
 
-    KToggleAction* polebgAct = new KToggleAction (i18n("Pole (or bar)"), this);
+    KToggleAction* polebgAct = new KToggleAction (i18n("Bar"), this);
+    polebgAct->setToolTip (i18n("Paint bars or poles"));
+    polebgAct->setWhatsThis (i18n("Paint bars or poles (can fall from these)"));
     actionCollection()->addAction ("polebg", polebgAct);
     connect (polebgAct, SIGNAL(triggered(bool)), this, SLOT(poleSlot()));
 
-    KToggleAction* nuggetbgAct = new KToggleAction (i18n("Gold nugget"), this);
+    KToggleAction* nuggetbgAct = new KToggleAction (i18n("Gold"), this);
+    nuggetbgAct->setToolTip (i18n("Paint gold (or other treasure)"));
+    nuggetbgAct->setWhatsThis (i18n("Paint gold pieces (or other treasure)"));
     actionCollection()->addAction ("nuggetbg", nuggetbgAct);
     connect (nuggetbgAct, SIGNAL(triggered(bool)), this, SLOT(nuggetSlot()));
 
