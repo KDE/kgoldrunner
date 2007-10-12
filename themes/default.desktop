@@ -35,6 +35,6 @@ Description[zh_TW]=簡單又乾淨的 KDE 主題
 Author=Mauricio Piacentini
 Set=default/set.svg
 Actors=default/actors.svg
-DrawCanvasBorder=1
+DrawCanvasBorder=0
 BorderColor=#2C89A0
 TextColor=#FFFFFF
