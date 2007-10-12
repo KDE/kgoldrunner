@@ -38,7 +38,7 @@
     </Menu>
 </MenuBar>
 
-<ToolBar name="editToolbar" hidden="true" newline="true"><text>Edit Toolbar</text>
+<ToolBar name="editToolbar" newline="true"><text>Edit Toolbar</text>
     <Action name="create_level" />
     <Action name="edit_any" />
     <Action name="save_edits" />
