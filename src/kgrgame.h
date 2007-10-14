@@ -41,6 +41,8 @@ Sets up games and levels in KGoldrunner and controls the play.
 @author Ian Wadham
 */
 
+class KDialog;
+
 class KGrObject;
 class KGrHero;
 class KGrEnemy;
@@ -55,6 +57,8 @@ public:
 
     bool initCollections();
     KGrHero * getHero();
+
+    void quickStartDialog();
 
     int getLevel();
 
@@ -79,7 +83,7 @@ public slots:
 
     void setMouseMode (bool on_off);	// Set mouse OR keyboard control.
     void startLevel (int startingAt, int requestedLevel);
-    void newGame (const int lev, const int gameIndex);
+    void newGame (const int lev = -1, const int gameIndex = -1);
     void startTutorial();		// Start tutorial game.
     void showHint();			// Show hint for current level.
 
@@ -107,6 +111,17 @@ signals:
 
     void markRuleType (char);		// Mark KGoldrunner/Traditional rules.
     void gameFreeze (bool);		// Do visual feedback in the GUI.
+
+    void quitGame ();			// Used for Quit option in Quick Start.
+
+private:
+    KDialog * qs;			// Pointer to Quick Start dialog box.
+
+private slots:
+    void quickStartPlay();
+    void quickStartNewGame();
+    void quickStartUseMenu();
+    void quickStartQuit();
 
 private slots:
     void finalBreath ();		// Hero is dead: re-start the level.

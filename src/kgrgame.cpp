@@ -102,6 +102,69 @@ KGrGame::~KGrGame()
 }
 
 /******************************************************************************/
+/**********************  QUICK-START DIALOG AND SLOTS  ************************/
+/******************************************************************************/
+
+void KGrGame::quickStartDialog()
+{
+    // Make sure the game will not start during the Quick Start dialog.
+    freeze();
+
+    qs = new KDialog (view);
+
+    qs->setModal (true);
+    qs->setCaption ("Quick Start");
+    qs->setButtons
+            (KDialog::Ok | KDialog::Cancel | KDialog::User1 | KDialog::User2);
+    // qs->setButtonsOrientation (Qt::Vertical);
+
+    qs->setButtonText (KDialog::Ok,
+            i18nc("Button text: start playing a game", "&PLAY"));
+    qs->setButtonText (KDialog::Cancel, i18n("&Quit"));
+    qs->setButtonText (KDialog::User1, i18n("&New Game..."));
+    qs->setButtonText (KDialog::User2, i18n("&Use Menu"));
+
+    // QWidget *widget = new QWidget( qs );
+    // qs->setMainWidget( widget );
+
+    connect (qs, SIGNAL (okClicked()),     this, SLOT (quickStartPlay()));
+    connect (qs, SIGNAL (user1Clicked()),  this, SLOT (quickStartNewGame()));
+    connect (qs, SIGNAL (user2Clicked()),  this, SLOT (quickStartUseMenu()));
+    connect (qs, SIGNAL (cancelClicked()), this, SLOT (quickStartQuit()));
+
+    qs->show();
+}
+
+void KGrGame::quickStartPlay()
+{
+    // If in mouse mode, not keyboard mode, put the mouse pointer on the hero.
+    if (mouseMode) {
+	view->setMousePos (startI, startJ);
+    }
+    unfreeze();
+}
+
+void KGrGame::quickStartNewGame()
+{
+    qs->accept();
+    unfreeze();
+    startAnyLevel();
+}
+
+void KGrGame::quickStartUseMenu()
+{
+    qs->accept();
+    myMessage (view, i18n("Game Paused"),
+            i18n("The game is halted. You will need to press the Pause key "
+                 "(default P or Esc) when you are ready to play."));
+}
+
+void KGrGame::quickStartQuit()
+{
+   emit quitGame();
+}
+
+/******************************************************************************/
 /*************************  GAME SELECTION PROCEDURES  ************************/
 /******************************************************************************/
 
@@ -372,8 +435,10 @@ void KGrGame::newGame (const int lev, const int gameIndex)
     }
 
     newLevel = true;
+if (lev >= 0) { // IDW
     level = lev;
     collnIndex = gameIndex;
+} // IDW
     collection = collections.at (collnIndex);
     owner = collection->owner;
 

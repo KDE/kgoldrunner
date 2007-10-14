@@ -40,6 +40,7 @@ class QAction;
 class KAction;
 class KToggleAction;
 class KToggleFullScreenAction;
+
 class KGrGame;
 class KGrCanvas;
 class KGrHero;

@@ -130,6 +130,7 @@ KGoldrunner::KGoldrunner()
     setupThemes();
 
     // Connect the game actions to the menu and toolbar displays.
+    connect(game, SIGNAL (quitGame()),	        SLOT (close()));
     connect(game, SIGNAL (setEditMenu (bool)),	SLOT (setEditMenu (bool)));
     connect(game, SIGNAL (markRuleType (char)), SLOT (markRuleType (char)));
     connect(game, SIGNAL (hintAvailable(bool)),	SLOT (adjustHintAction(bool)));
@@ -152,8 +153,12 @@ KGoldrunner::KGoldrunner()
     // Paint the main widget (title, menu, status bar, blank playfield).
     show();
 
-    // Queue the call to the "Start Game" dialog: let KMainWindow show first.
-    QMetaObject::invokeMethod(game, "startAnyLevel", Qt::QueuedConnection);
+    // Queue a call to the "New Game" method, with default parameters. This
+    // paints a config'd game and level, but only AFTER the main window shows.
+    QMetaObject::invokeMethod(game, "newGame", Qt::QueuedConnection);
+
+    // Show buttons to start the config'd game and level and other options.
+    game->quickStartDialog();
 }
 
 KGoldrunner::~KGoldrunner()
