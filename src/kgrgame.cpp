@@ -116,13 +116,32 @@ void KGrGame::quickStartDialog()
     qs->setCaption ("Quick Start");
     qs->setButtons
             (KDialog::Ok | KDialog::Cancel | KDialog::User1 | KDialog::User2);
+    qs->setButtonFocus (KDialog::Ok);
     // qs->setButtonsOrientation (Qt::Vertical);
 
     qs->setButtonText (KDialog::Ok,
             i18nc("Button text: start playing a game", "&PLAY"));
+    qs->setButtonToolTip (KDialog::Ok, i18n("Start playing this level"));
+    qs->setButtonWhatsThis (KDialog::Ok,
+            i18n("Set up to start playing the game and level being shown, "
+                 "as soon as you click, move the mouse or press a key"));
+
     qs->setButtonText (KDialog::Cancel, i18n("&Quit"));
+    qs->setButtonToolTip (KDialog::Cancel, i18n("Close KGoldrunner"));
+
     qs->setButtonText (KDialog::User1, i18n("&New Game..."));
+    qs->setButtonToolTip (KDialog::User1,
+            i18n("Start a different game or level"));
+    qs->setButtonWhatsThis (KDialog::User1,
+            i18n("Use the Select Game dialog box to choose a "
+                 "different game or level and start playing it"));
+
     qs->setButtonText (KDialog::User2, i18n("&Use Menu"));
+    qs->setButtonToolTip (KDialog::User2,
+            i18n("Use the menus to choose other actions"));
+    qs->setButtonWhatsThis (KDialog::User2,
+            i18n("Before playing, use the menus to choose other actions, "
+                 "such as loading a saved game or changing the theme"));
 
     // QWidget *widget = new QWidget( qs );
     // qs->setMainWidget( widget );
