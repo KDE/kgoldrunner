@@ -124,7 +124,8 @@ KGoldrunner::KGoldrunner()
     // and a status bar.
     initStatusBar();
 
-    setupGUI();
+    // Do NOT show/hide the statusbar in the GUI: we need it for game scores.
+    setupGUI (static_cast<StandardWindowOption> (Default & (~StatusBar)));
 
     // Find the theme-files and generate the Themes menu.
     setupThemes();
