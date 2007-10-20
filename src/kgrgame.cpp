@@ -24,6 +24,7 @@
 
 #include <kpushbutton.h>
 #include <KStandardGuiItem>
+#include <KApplication>
 #include <kdebug.h>
 
 // Do NOT change KGoldrunner over to KScoreDialog until we have found a way
@@ -112,13 +113,15 @@ void KGrGame::quickStartDialog()
 
     qs = new KDialog (view);
 
+    // Modal dialog, 4 buttons, vertically: the PLAY button has the focus.
     qs->setModal (true);
     qs->setCaption ("Quick Start");
     qs->setButtons
             (KDialog::Ok | KDialog::Cancel | KDialog::User1 | KDialog::User2);
     qs->setButtonFocus (KDialog::Ok);
-    // qs->setButtonsOrientation (Qt::Vertical);
+    qs->setButtonsOrientation (Qt::Vertical);
 
+    // Set up the PLAY button.
     qs->setButtonText (KDialog::Ok,
             i18nc("Button text: start playing a game", "&PLAY"));
     qs->setButtonToolTip (KDialog::Ok, i18n("Start playing this level"));
@@ -126,9 +129,11 @@ void KGrGame::quickStartDialog()
             i18n("Set up to start playing the game and level being shown, "
                  "as soon as you click, move the mouse or press a key"));
 
+    // Set up the Quit button.
     qs->setButtonText (KDialog::Cancel, i18n("&Quit"));
     qs->setButtonToolTip (KDialog::Cancel, i18n("Close KGoldrunner"));
 
+    // Set up the New Game button.
     qs->setButtonText (KDialog::User1, i18n("&New Game..."));
     qs->setButtonToolTip (KDialog::User1,
             i18n("Start a different game or level"));
@@ -136,6 +141,7 @@ void KGrGame::quickStartDialog()
             i18n("Use the Select Game dialog box to choose a "
                  "different game or level and start playing it"));
 
+    // Set up the Use Menu button.
     qs->setButtonText (KDialog::User2, i18n("&Use Menu"));
     qs->setButtonToolTip (KDialog::User2,
             i18n("Use the menus to choose other actions"));
@@ -143,8 +149,11 @@ void KGrGame::quickStartDialog()
             i18n("Before playing, use the menus to choose other actions, "
                  "such as loading a saved game or changing the theme"));
 
-    // QWidget *widget = new QWidget( qs );
-    // qs->setMainWidget( widget );
+    // Add the KGoldrunner application icon to the dialog box.
+    QLabel * logo = new QLabel();
+    qs->setMainWidget (logo);
+    logo->setPixmap (kapp->windowIcon().pixmap (240));
+    logo->setAlignment (Qt::AlignTop | Qt::AlignHCenter);
 
     connect (qs, SIGNAL (okClicked()),     this, SLOT (quickStartPlay()));
     connect (qs, SIGNAL (user1Clicked()),  this, SLOT (quickStartNewGame()));
