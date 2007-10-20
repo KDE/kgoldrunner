@@ -113,7 +113,9 @@ void KGrCanvas::fadeOut()
 
 void KGrCanvas::drawTheScene (bool changePixmaps)
 {
-    qDebug() << t.restart() << "msec.  Start KGrCanvas::drawTheScene";
+    t.restart();
+    qDebug() << 0 << "msec.  Start KGrCanvas::drawTheScene";
+
     // The pixmaps for tiles and sprites have to be re-loaded
     // if and only if the theme or the cell size has changed.
 
@@ -138,6 +140,7 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
 	    }
 	}
     }
+    qDebug() << t.restart() << "msec.  Tiles and background rendered.";
 
     /* ******************************************************************** */
     /* The pixmaps for hero and enemies are arranged in strips of 36: walk  */
@@ -154,6 +157,7 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
 	*heroFrames << theme.hero(imgH);
 	*enemyFrames << theme.enemy(imgH);
     }
+    qDebug() << t.restart() << "msec.  Hero and enemies rendered.";
 
     int spriteframe;
     QPoint spriteloc;
@@ -197,7 +201,8 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
 
 bool KGrCanvas::changeTheme (const QString & themeFilepath)
 {
-    qDebug()<< "New Theme -" << themeFilepath;
+    t.restart();
+    qDebug() << 0 << "msec.  New Theme -" << themeFilepath;
     bool success = theme.load(themeFilepath);
     if (success) {
 	// Use the border color to fill empty rectangles during partial
@@ -205,6 +210,7 @@ bool KGrCanvas::changeTheme (const QString & themeFilepath)
 	setPalette(QPalette(theme.borderColor()));
 	setAutoFillBackground(true);
     }
+    qDebug() << t.restart() << "msec.  Finish loading new theme.";
     if (success && (resizeCount > 0)) {	// If startup, do not render or paint.
 	const bool changePixmaps = true;
 	drawTheScene (changePixmaps);	// Not startup, so re-draw play-area.
