@@ -165,10 +165,7 @@ void KGrGame::quickStartDialog()
 
 void KGrGame::quickStartPlay()
 {
-    // If in mouse mode, not keyboard mode, put the mouse pointer on the hero.
-    if (mouseMode) {
-	view->setMousePos (startI, startJ);
-    }
+    showTutorialMessages (level);
     unfreeze();
 }
 
@@ -220,6 +217,7 @@ void KGrGame::startLevel (int startingAt, int requestedLevel)
     int selectedLevel = selectLevel (startingAt, requestedLevel);
     if (selectedLevel > 0) {	// If OK, start the selected game and level.
  	newGame (selectedLevel, selectedGame);
+	showTutorialMessages (level);
     } else {
       level = 0;
     }
@@ -264,6 +262,7 @@ void KGrGame::herosDead()
 	case 0:
 	    unfreeze();			// Offer accepted.
 	    newGame (level, collnIndex);
+	    showTutorialMessages (level);
 	    return;
 	    break;
 	case 1:
@@ -336,6 +335,7 @@ void KGrGame::goUpOneLevel()
     view->deleteEnemySprites();
     newLevel = true;
     loadLevel (level);
+    showTutorialMessages (level);
     newLevel = false;
 }
 
@@ -463,10 +463,14 @@ void KGrGame::newGame (const int lev, const int gameIndex)
     }
 
     newLevel = true;
-if (lev >= 0) { // IDW
-    level = lev;
-    collnIndex = gameIndex;
-} // IDW
+
+    // During startup, kgoldrunner.cpp makes a queued call to game->newGame and
+    // the default parameters are (-1, -1), so in that case we load the game and
+    // level already read from KConfig by initCollections(), for a quick start.
+    if (lev >= 0) {
+	level = lev;			// Not default, so use the parameters.
+	collnIndex = gameIndex;
+    }
     collection = collections.at (collnIndex);
     owner = collection->owner;
 
@@ -517,6 +521,7 @@ void KGrGame::startTutorial()
 	collnIndex = index;
 	level = 1;
 	newGame (level, collnIndex);
+	showTutorialMessages (level);
     }
     else {
 	KGrMessage::information (view, i18n("Start Tutorial"),
@@ -601,24 +606,13 @@ int KGrGame::loadLevel (int levelNo)
     // Re-draw the playfield frame, level title and figures.
     view->setTitle (getTitle());
 
-    // Check if this is a tutorial collection and not on the "ENDE" screen.
-    if ((collection->prefix.left(4) == "tute") && (levelNo != 0)) {
-	// At the start of a tutorial, put out an introduction.
-	if (levelNo == 1) {
-	    myMessage (view, collection->name,
-			i18n(collection->about.toUtf8().constData()));
-	}
-	// Put out an explanation of this level.
-	myMessage (view, getTitle(), levelHint);
-    }
-
     // If in mouse mode, not keyboard mode, put the mouse pointer on the hero.
     if (mouseMode) {
 	view->setMousePos (startI, startJ);
     }
 
     // If we are starting a new level, save it in the player's config file.
-    if (newLevel) { // IDW
+    if (newLevel) {
 	KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
 	gameGroup.writeEntry ("GamePrefix", collection->prefix);
 	gameGroup.writeEntry ("Level_" + collection->prefix, level);
@@ -632,6 +626,29 @@ int KGrGame::loadLevel (int levelNo)
     loading = false;
 
     return 1;
+}
+
+void KGrGame::showTutorialMessages (int levelNo)
+{
+    // Check if this is a tutorial collection and not on the "ENDE" screen.
+    if ((collection->prefix.left(4) == "tute") && (levelNo != 0)) {
+	// Halt the game during message displays and mouse pointer moves.
+	setMessageFreeze (true);
+
+	// At the start of a tutorial, put out an introduction.
+	if (levelNo == 1) {
+	    KGrMessage::information (view, collection->name,
+			i18n(collection->about.toUtf8().constData()));
+	}
+	// Put out an explanation of this level.
+	KGrMessage::information (view, getTitle(), levelHint);
+
+	// If in mouse mode, make sure the mouse pointer is back on the hero.
+	if (mouseMode) {
+	    view->setMousePos (startI, startJ);
+	}
+	setMessageFreeze (false);	// Let the level begin.
+    }
 }
 
 bool KGrGame::readLevelData (int levelNo, LevelData & d)
@@ -1062,6 +1079,7 @@ void KGrGame::loadGame()		// Re-load game, score and level.
 	    emit markRuleType (collection->settings);
 	    lev   = s.mid (28, 3).toInt();
 	    newGame (lev, collnIndex);		// Re-start the selected game.
+	    showTutorialMessages (level);
 	    lives = s.mid (32, 3).toLong();	// Update the lives.
 	    emit showLives (lives);
 	    score = s.mid (36, 7).toLong();	// Update the score.
@@ -1992,6 +2010,7 @@ void KGrGame::deleteLevelFile ()
 	view->deleteEnemySprites();
 	newLevel = true;;
 	loadLevel (level);
+	showTutorialMessages (level);
 	newLevel = false;
     }
     else {
@@ -2552,7 +2571,7 @@ bool KGrGame::initCollections ()
     loadCollections (USER);			// Load user collections list.
 						// If none, don't worry.
 
-    // DISABLED xxxxx  mapCollections();	// Check ".grl" file integrity.
+    // DISABLED by IDW  mapCollections();	// Check ".grl" file integrity.
 
     // Set the default collection of levels (first in the list) and the level.
     collnIndex = 0;

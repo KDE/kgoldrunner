@@ -136,6 +136,7 @@ private:
     void createObject (KGrObject *o, char picType, int x, int y);
     void setTimings ();
     void initSearchMatrix();
+    void showTutorialMessages (int levelNo);
 
     void checkHighScore();		// Check if high score for current game.
 
