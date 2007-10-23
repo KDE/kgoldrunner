@@ -43,7 +43,7 @@ bool KGrTheme::load(const QString& themeFilepath)
 	return true;					// No change of theme.
     }
 
-    KConfig theme (themeFilepath, KConfig::OnlyLocal);	// Read graphics config.
+    KConfig theme (themeFilepath, KConfig::SimpleConfig);	// Read graphics config.
     KConfigGroup group = theme.group ("KDEGameTheme");
 
     QString f = group.readEntry ("Set", "");

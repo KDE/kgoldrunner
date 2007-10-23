@@ -608,7 +608,7 @@ void KGoldrunner::setupThemes ()
     themeGroup->setExclusive (true);			// Exclusive toggles.
 
     foreach (QString filepath, themeFilepaths) {	// Read each theme-file.
-	KConfig theme (filepath, KConfig::OnlyLocal);	// Extract theme-name.
+	KConfig theme (filepath, KConfig::SimpleConfig);	// Extract theme-name.
 	KConfigGroup group = theme.group ("KDEGameTheme");	// Translated.
 	actionName = group.readEntry ("Name", i18n("Missing Name"));
 
