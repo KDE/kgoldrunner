@@ -630,10 +630,11 @@ int KGrGame::loadLevel (int levelNo)
 
 void KGrGame::showTutorialMessages (int levelNo)
 {
+    // Halt the game during message displays and mouse pointer moves.
+    setMessageFreeze (true);
+
     // Check if this is a tutorial collection and not on the "ENDE" screen.
     if ((collection->prefix.left(4) == "tute") && (levelNo != 0)) {
-	// Halt the game during message displays and mouse pointer moves.
-	setMessageFreeze (true);
 
 	// At the start of a tutorial, put out an introduction.
 	if (levelNo == 1) {
@@ -642,13 +643,13 @@ void KGrGame::showTutorialMessages (int levelNo)
 	}
 	// Put out an explanation of this level.
 	KGrMessage::information (view, getTitle(), levelHint);
-
-	// If in mouse mode, make sure the mouse pointer is back on the hero.
-	if (mouseMode) {
-	    view->setMousePos (startI, startJ);
-	}
-	setMessageFreeze (false);	// Let the level begin.
     }
+
+    // If in mouse mode, make sure the mouse pointer is back on the hero.
+    if (mouseMode) {
+	view->setMousePos (startI, startJ);
+    }
+    setMessageFreeze (false);	// Let the level begin.
 }
 
 bool KGrGame::readLevelData (int levelNo, LevelData & d)
