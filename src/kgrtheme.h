@@ -37,10 +37,19 @@ public:
      */
     bool load(const QString & themeFilepath);
     
+    /**
+     * Given the tile size \param size, returns the list of themed tiles.
+     */
     QList<QPixmap> tiles(unsigned int size);
     
+    /**
+     * Given the tile size \param size, returns the list of hero frames.
+     */
     QList<QPixmap> hero(unsigned int size);
     
+    /**
+     * Given the tile size \param size, returns the list of enemy frames.
+     */
     QList<QPixmap> enemy(unsigned int size);
     
     /**
@@ -52,12 +61,24 @@ public:
     
     bool isBorderRequired() const { return themeDrawBorder; }
     
+    /**
+     * Find out if the theme has a background picture.
+     */
     bool isWithBackground() const { return numBackgrounds > 0; }
 
+    /**
+     * Find out if the theme has a multiple background pictures.
+     */
     bool multipleBackgrounds() const { return numBackgrounds > 1; }
     
+    /**
+     * Obtain the theme defined border color.
+     */
     QColor borderColor() { return m_borderColor; }
     
+    /**
+     * Obtain the theme defined text color.
+     */
     QColor textColor() { return m_textColor; }
 
 private:
