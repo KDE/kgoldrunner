@@ -594,6 +594,9 @@ void KGoldrunner::setupThemes ()
 	("theme", "*.desktop", KStandardDirs::NoDuplicates); // Find files.
 
     KConfigGroup gameGroup (KGlobal::config(), "KDEGame"); // Get prev theme.
+    
+    // TODO change this to a ThemeName (or simply Theme) option. The theme
+    // should be searched in the themeFilepaths defined above.
     QString currentThemeFilepath = gameGroup.readEntry ("ThemeFilepath", "");
     qDebug()<< "Config() Theme" << currentThemeFilepath;
 
