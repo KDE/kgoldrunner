@@ -36,6 +36,7 @@ KGrPlayField::~KGrPlayField()
 
 void KGrPlayField::setTile (int x, int y, int tilenum)
 {
+    Q_ASSERT(m_tileset);
     // Update the sprite pixmap using our tileset cache.
     if ((m_background != 0) && (tilenum == 0)) {
 	m_tilesprites.at(y*m_numTilesH + x)->hide();
@@ -74,6 +75,7 @@ void KGrPlayField::setTiles (QList<QPixmap> * tileset, const QPoint & topLeft,
     m_numTilesH = h;
     m_numTilesV = v;
 
+    Q_ASSERT(tileset);
     // Clear previously cached tile data.
     while (!m_tilesprites.isEmpty())
             delete m_tilesprites.takeFirst();
