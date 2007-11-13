@@ -1,6 +1,5 @@
 <?xml version="1.0" ?>
-<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" 
-[
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
   <!ENTITY kgoldrunner "<application>KGoldrunner</application>">
   <!ENTITY kappname "&kgoldrunner;">
   <!ENTITY package "kdegames">
@@ -21,13 +20,7 @@
 <author>
 <firstname>Marco</firstname>
 <surname>Krüger</surname>
-</author>
-<author>
-<firstname>Anton</firstname>
-<surname>Brondz</surname>
-<affiliation>
-<address><email>dinolinux@gmail.com</email></address>
-</affiliation>
+
 </author>
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
@@ -55,86 +48,48 @@ next level.</para>
 </keywordset>
 </bookinfo>
 
-<chapter id="intro">
+<chapter id="playing-kgoldrunner">
+<title>Playing &kgoldrunner;</title>
+
+<sect1 id="introduction">
 <title>Introduction</title>
-<para>
-Game type: Strategy, Board
-Number of players: One
-</para>
 
-<para>
-&kgoldrunner; is an action game where the hero
+<para>&kgoldrunner; is an action game where the hero
 runs through a maze and dodges enemies.
-The player is supposed to run trough the maze and collect
-all the gold nuggets, then climb up into the next level.
-In addition, there are enemies who also are after the
-gold and they will kill the hero if they run into him/her.
-</para>
-</chapter>
+You must guide the hero with the mouse or keyboard and collect
+all the gold nuggets, then you can climb up into the next level.  Your
+enemies are also after the gold.  Worse still, they are after you!  They
+will kill you if they catch you!</para>
 
-<chapter id="howtoplay">
-<title>How To Play</title>
-<para>
-The objective in &kgoldrunner; is to collect the gold nuggets
-which are scattered around the game board without running
-into any enemies.
+<para>The problem is you have no weapon to kill
+<emphasis>them</emphasis>.  All you can do is run away, dig holes in
+the floor to trap them or lure them into some area where they cannot
+hurt you.  After a short time a trapped enemy climbs out of his hole,
+but if it closes before that, he will die and reappear somewhere else.
 </para>
 
-<para>
-When you start &kgoldrunner;, you are presented with a dialog
-where you can pick a levelset to play.
-If you have never played before, try the <quote>Tutorial</quote>
+<para>If you have never played before, try the <quote>Tutorial</quote>
 game, which teaches you the rules and basic skills.  Then try the
-<quote>Initiation</quote> game. Experts might enjoy the
+<quote>Initiation</quote> game.  Experts might enjoy the
 <quote>Challenge</quote> or <quote>Vengeance of Peter W</quote> games,
 but the <quote>Initiation</quote> game has 100 levels and some are
-very difficult. It's a good game for achieving a High Score. Most of
-these games use traditional rules, which are similar to
+very difficult.  It is a good game for achieving a High Score.</para>
+
+<para>All those games use Traditional rules, which are similar to
 those used on early home-computers, such as the Apple II or Commodore
-64. The <quote>&kgoldrunner;</quote> and <quote>State of Terror</quote>
+64.  The <quote>&kgoldrunner;</quote> and <quote>State of Terror</quote>
 games use &kgoldrunner; rules, in which the enemies run faster and have
-a more aggressive search strategy than in Traditional rules. When you've
-picked a game, click <guibutton>OK</guibutton> to begin playing.
-</para>
+a more aggressive search strategy than in Traditional rules.  See
+<link linkend="choice-of-rules">Choice of Rules</link> for details.</para>
 
-<para>
-When your chosen level starts, the mouse pointer will be over the hero. 
-In a tutorial game, there will be an explanatory message before each level begins. 
-You play by moving the mouse, clicking the mouse or pressing any key that can
-control the hero (&eg; <keycap>Space</keycap>), but avoid using
-<keycap>Q</keycap>, <keycap>S</keycap>, <keycap>P</keycap> or &Esc; at
-this stage.
-</para>
-
-<para>
-You have five lives at the start and gain a bonus life for each
-level completed.
-</para>
-
-<para>
-Move your mouse in the direction you want the hero to run. Always make
-sure you're not running into a trap or into the arms of your enemies.
-If you do, they will kill you and you loose a life. The problem is you
-have no weapon to kill <emphasis>them</emphasis>. All you can do is run
-away, dig holes in the floor to trap them or lure them into some area
-where they cannot hurt you. To dig a hole, click &RMB;. If you fall into
-a hole, you will fall trough the floor. An enemy will get stuck, but after
-a short time they will climb out of it, unless it closes before that. In
-that case the enemy will die and reappear somewhere else. If you fall
-into a hole at the lowest level, you will get trapped and die.
-</para>
-
-<para>
-When you have collected all the gold nuggets on the board, move to the
-top level and climb out of the game board. You will automatically proceed 
-to the next level.
-</para>
-
-<para>
-As you move to more advanced levels, you will find that
+<para>As you move to more advanced levels, you will find that
 &kgoldrunner; combines action, strategy, tactics and puzzle
-solving &mdash; all in one game.
-</para>
+solving &mdash; all in one game.  Good luck!</para>
+
+</sect1>
+
+<sect1 id="typical-game">
+<title>A Typical Game</title>
 
 <para>Below is a typical game in progress.  The hero is at
 level 4 in the Advanced Tutorial game.  The window's status bar shows
@@ -167,118 +122,6 @@ the floor.  This level also shows diggable bricks and undiggable
 concrete and has lots of traps (false bricks), which look just like
 ordinary bricks.</para>
 
-</chapter>
-
-<chapter id="rules_and_tips"><title>Game Rules, Strategies and Tips</title>
-
-<sect1 id="scoring">
-<title>Scoring</title>
-
-<itemizedlist>
-<listitem>
-<para>Start with 5 lives.</para>
-</listitem>
-<listitem>
-<para>Lose a life and repeat a level when the hero dies</para>
-</listitem>
-<listitem>
-<para>Gain a life when you complete a level</para>
-</listitem>
-<listitem>
-<para>75 points for trapping an enemy</para>
-</listitem>
-<listitem>
-<para>75 points for killing an enemy</para>
-</listitem>
-<listitem>
-<para>250 points for collecting gold</para>
-</listitem>
-<listitem>
-<para>1500 points for completing a level</para>
-</listitem>
-</itemizedlist>
-
-</sect1>
-
-<sect1 id="choice-of-rules">
-<title>Choice of Rules</title>
-
-<para>Most of the rules of &kgoldrunner; are covered in the section
-<link linkend="how-to-play">How to Play</link>, however there are two
-major rule settings that affect the style of play: known as
-<quote>Traditional</quote> and <quote>&kgoldrunner;</quote>. It is
-important to know which settings are in force when you are playing a
-game. Many <quote>Traditional</quote> levels are impossible with
-<quote>&kgoldrunner;</quote> settings. Most
-<quote>&kgoldrunner;</quote> levels are easier with
-<quote>Traditional</quote> settings, but the
-<quote>Traditional</quote> games are no pushover. To make life easier,
-&kgoldrunner; automatically chooses the correct settings for a game
-when you go into it, but you can can change them if you wish. </para>
-
-<para>The main difference between <quote>Traditional</quote> and
-<quote>&kgoldrunner;</quote> settings is the method by which the
-enemies choose a path to the hero.</para>
-
-<itemizedlist>
-<listitem>
-<para>In the <quote>Traditional</quote> search method, enemies look
-for vertical paths (ladders and falls) and they try to stay above the
-hero or at the same height. They go below him only as a last
-resort. The enemies make no attempt to chase the hero in the
-horizontal direction until they are at the same height and can find a
-horizontal path. This leads to situations where you can
-<quote>control</quote> enemies who are far away from you and make them
-work for you or at least keep out of your hair.</para>
-</listitem>
-<listitem>
-<para>The <quote>&kgoldrunner;</quote> method searches alternately for
-horizontal and vertical paths, which tends to keep the enemies over
-your side of the playing area and at about the same height (&ie; they
-are more aggressive and not so easy to manipulate). That leads to a
-more action-packed game, but with less opportunity for strategy and
-puzzle-solving. The <quote>State of Terror</quote> game, added in 2007,
-uses <quote>&kgoldrunner;</quote> rules and has plenty of puzzles to
-solve while you are on the run. That is why it is such a difficult game.</para>
-</listitem>
-</itemizedlist>
-
-<para>The other differences are listed below:</para>
-
-<itemizedlist>
-<listitem>
-<para>In <quote>&kgoldrunner;</quote> play the hero and enemies move
-at fixed speeds in every level and bricks always take the same time to
-close. In <quote>Traditional</quote> play the game speed depends on
-the number of enemies in a level. The more enemies, the slower they
-run. The hero also becomes slower, but not so noticeably.</para>
-</listitem>
-<listitem>
-<para>In <quote>Traditional</quote> play, enemies  always collect gold
-nuggets when they run into them. In <quote>&kgoldrunner;</quote> play
-it is a random choice. The enemies drop nuggets after a random time in
-both types of play.</para>
-</listitem>
-<listitem>
-<para>Enemies can run horizontally through holes in
-<quote>Traditional</quote> play but not in
-<quote>&kgoldrunner;</quote> play. The trick in several
-<quote>Traditional</quote> levels depends on releasing an enemy from
-behind a brick wall. When you dig away the bricks, he runs out through
-the hole. In some <quote>&kgoldrunner;</quote> levels, on the other
-hand, you must hide inside or behind a dug brick to escape an enemy.</para>
-</listitem>
-<listitem>
-<para>When enemies die in <quote>&kgoldrunner;</quote> play, they go
-back to where they started the level. In <quote>Traditional</quote>
-play, they reappear at a random place near the top of the playing
-area. This makes a big difference, especially in levels where you have
-to get enemies to fetch nuggets down for you, but also because the
-enemies keep falling down onto you as fast as you can kill
-them.</para>
-</listitem>
-</itemizedlist>
-
 </sect1>
 
 <sect1 id="how-to-play">
@@ -296,10 +139,20 @@ immediately. Otherwise you can click on the <guibutton>Quit</guibutton> button,
 the <guibutton>New Game</guibutton> button or the
 <guibutton>Use Menu</guibutton> button. The first will abort KGoldrunner, if
 you do not wish to play, the second will show you a
-<link linkend="configuration">Level Selection</link> dialog,
+<link linkend="level-selection-dialog">Level Selection</link> dialog,
 where you can choose a different game and level and the last will terminate
 the dialog, leaving you free to use the &kgoldrunner; menus.</para>
 
+<para>If you have chosen to play a game and level, it will then appear
+and the mouse pointer will be over the hero. In a tutorial game, there
+will be an explanatory message before each level begins. You start play
+by moving the mouse, clicking the mouse or pressing any key that can
+control the hero (&eg; <keycap>Space</keycap>), but avoid using
+<keycap>Q</keycap>, <keycap>S</keycap>, <keycap>P</keycap> or &Esc; at
+this stage. You start each level in the same way.</para>
+
+<para>You have five lives at the start and gain a bonus life for each
+level completed.</para>
 
 </sect2>
 
@@ -512,206 +365,231 @@ the <quote>&kgoldrunner; Hall of Fame</quote>.</para>
 </sect2>
 </sect1>
 
-<sect1 id="tips-overview">
-<title>Strategies and Tips</title>
-
-<para>This chapter presents some general tips and hints for playing
-&kgoldrunner;, as opposed to the specific hints you will find on the levels
-in tutorial and championship games (see <link linkend="move-menu"><menuchoice>
-<guimenu>Move</guimenu><guimenuitem>Hint</guimenuitem></menuchoice></link>).
-The hints are grouped as follows:</para>
-
-<itemizedlist>
-
-<listitem>
-<para><link linkend="hints-dealing-with-enemies">
-Dealing with Enemies</link></para>
-</listitem>
-
-<listitem>
-<para><link linkend="hints-digging-puzzles">
-Digging Puzzles</link></para>
-</listitem>
-
-<listitem>
-<para><link linkend="hints-tricks-with-gold">
-Tricks with Gold</link></para>
-</listitem>
-
-<listitem>
-<para><link linkend="hints-solving-difficult-levels">
-Solving Difficult Levels</link></para>
-</listitem>
-
-</itemizedlist>
-
-
-<sect2 id="hints-dealing-with-enemies">
-<title>Dealing with Enemies</title>
+<sect1 id="scoring">
+<title>Scoring</title>
 
 <itemizedlist>
 <listitem>
-<para>You can always trap a single oncoming enemy in one hole, get his
-gold and run on over him without killing him. It is often a good idea
-to dig behind you and delay him further, but that might kill him. In
-some levels it is not a good idea to kill enemies.</para>
+<para>Start with 5 lives.</para>
 </listitem>
 <listitem>
-<para>You can usually trap two oncoming enemies in two holes, get
-their gold and run on over them, but this is dangerous if the enemies
-are separated by two or three spaces. Sometimes two holes kill one of
-the enemies and the other escapes and sometimes both escape. In
-&kgoldrunner; rules it is easier to trap two enemies and run over them,
-because they stay in the holes for longer.</para>
+<para>Lose a life and repeat a level when the hero dies</para>
 </listitem>
 <listitem>
-<para>It is nearly always impossible to trap three oncoming enemies
-and run on over them. You will have to kill them, dig and drop through
-the floor or simply run away.</para>
+<para>Gain a life when you complete a level</para>
 </listitem>
 <listitem>
-<para>Try to get all the enemies running together in one group. That
-way you will not get surrounded and you can do such fun things as
-collect gold while they run along behind you.</para>
+<para>75 points for trapping an enemy</para>
 </listitem>
 <listitem>
-<para>Sometimes you can kill an enemy with two holes, but it often
-takes three to nine holes to kill one to five enemies.</para>
+<para>75 points for killing an enemy</para>
 </listitem>
 <listitem>
-<para>It is possible to kill an enemy with one hole if he is far
-enough away when you dig it.</para>
+<para>250 points for collecting gold</para>
 </listitem>
 <listitem>
-<para>In the <quote>Traditional</quote> game, you can trap an enemy
-permanently in a pit of brick or concrete. Stand near the edge of the
-pit on the opposite side to the enemy. As he approaches the pit, move
-down one square (to the level of the floor of the pit) and the enemy
-will usually run into the pit.</para>
-</listitem>
-<listitem>
-<para>In some levels in the <quote>Traditional</quote> game, you can
-force an enemy to climb a ladder ahead of you if you stand somewhere
-above the bottom of the ladder.</para>
-</listitem>
-<listitem>
-<para>In the <quote>&kgoldrunner;</quote> game, you can trap an enemy
-in a pit by getting him to fall from above you, then running sideways and
-digging out before he reaches you.</para>
-</listitem>
-<listitem>
-<para>In the <quote>&kgoldrunner;</quote> game, enemies cannot run through
-dug bricks, so you can sometimes use them as a barrier or hiding place.</para>
+<para>1500 points for completing a level</para>
 </listitem>
 </itemizedlist>
 
-</sect2>
-
-<sect2 id="hints-digging-puzzles">
-<title>Digging Puzzles</title>
-
-<itemizedlist>
-<listitem>
-<para>To dig through more than one layer of bricks, start by digging
-as many bricks as there are layers, jump in, dig one brick less and so
-on.</para>
-</listitem>
-<listitem>
-<para>If you dig next to a ladder or a succession of bars, you can dig
-down through any number of layers and up to five or six bricks
-horizontally. Just return to the ladder or bars after digging each
-layer, then move down one square, run out and dig the next
-layer.</para>
-</listitem>
-<listitem>
-<para>If a digging puzzle looks impossible, consider that there might
-be some false bricks in it. Maybe the bottom layer is false or maybe
-you can stand in a false brick and dig next to it.</para>
-</listitem>
-<listitem>
-<para>Think about the order in which you will collect the gold. If you
-pick the right order, the digging might be easier.</para>
-</listitem>
-<listitem>
-<para>Some levels require you to dig away a brick wall, run in,
-collect some gold and run out again before the bricks close up and
-trap you.</para>
-</listitem>
-<listitem>
-<para>It is possible to dig while falling through empty space, if you can
-get the timing right. You do not need to have an enemy to ride upon. This
-is a bug which has become a <quote>feature</quote> and is used extensively
-in the <quote>State of Terror</quote> game.</para>
-</listitem>
-</itemizedlist>
-
-</sect2>
-
-<sect2 id="hints-tricks-with-gold">
-<title>Tricks with Gold</title>
-
-<itemizedlist>
-<listitem>
-<para>If you cannot get to a piece of gold, think about getting an
-enemy to go there and get it. Even think about using an enemy's head
-as a bridge to get across a pit or precipice.</para>
-</listitem>
-<listitem>
-<para>In some levels there is a nugget that must be collected last of
-all, because you will need the hidden ladders to get away from that
-position.</para>
-</listitem>
-<listitem>
-<para>In some situations an enemy can be killed without giving up the
-gold he is carrying. The gold becomes a <quote>lost nugget</quote>.
-You score no points for making an enemy lose a nugget,
-but at least you can finish the level.</para>
-</listitem>
-<listitem>
-<para>If there is nowhere to dig, keep the enemies running over
-concrete and the tops of ladders and so make them release their gold
-at random.</para>
-</listitem>
-</itemizedlist>
-
-</sect2>
-
-<sect2 id="hints-solving-difficult-levels">
-<title>Solving Difficult Levels</title>
-
-<itemizedlist>
-<listitem>
-<para>Try changing the speed settings to Beginner or even lower.</para>
-</listitem>
-<listitem>
-<para>Use the Editor feature to <quote>peek</quote> at where the false
-bricks and hidden ladders are.</para>
-</listitem>
-<listitem>
-<para>Use the Editor feature to save the level in one of your own
-games, then you can edit it so that you do not always have to start at
-the beginning when you die. This allows you to develop the solution in
-easier stages.</para>
-</listitem>
-<listitem>
-<para>In digging puzzles, look for false bricks you can fall into and
-thus have one less brick to dig. Or consider using an enemy to go
-ahead of you, so that you can stand on his head and dig.</para>
-</listitem>
-<listitem>
-<para>Look for a theme or trick in the level, such as riding down on
-an enemy's head, trapping all the enemies in a pit, luring the enemies
-to a corner where they will stay and not chase you, luring the enemies
-into pits you must cross to get to some gold, getting the enemies to
-fetch gold for you or finding spots where you can stand and make an
-enemy move to where you want him.</para>
-</listitem>
-</itemizedlist>
-</sect2>
 </sect1>
 
+<sect1 id="choice-of-rules">
+<title>Choice of Rules</title>
+
+<para>Most of the rules of &kgoldrunner; are covered in the section
+<link linkend="how-to-play">How to Play</link>, however there are two
+major rule settings that affect the style of play: known as
+<quote>Traditional</quote> and <quote>&kgoldrunner;</quote>. It is
+important to know which settings are in force when you are playing a
+game. Many <quote>Traditional</quote> levels are impossible with
+<quote>&kgoldrunner;</quote> settings. Most
+<quote>&kgoldrunner;</quote> levels are easier with
+<quote>Traditional</quote> settings, but the
+<quote>Traditional</quote> games are no pushover. To make life easier,
+&kgoldrunner; automatically chooses the correct settings for a game
+when you go into it, but you can can change them if you wish. </para>
+
+<para>The main difference between <quote>Traditional</quote> and
+<quote>&kgoldrunner;</quote> settings is the method by which the
+enemies choose a path to the hero.</para>
+
+<itemizedlist>
+<listitem>
+<para>In the <quote>Traditional</quote> search method, enemies look
+for vertical paths (ladders and falls) and they try to stay above the
+hero or at the same height. They go below him only as a last
+resort. The enemies make no attempt to chase the hero in the
+horizontal direction until they are at the same height and can find a
+horizontal path. This leads to situations where you can
+<quote>control</quote> enemies who are far away from you and make them
+work for you or at least keep out of your hair.</para>
+</listitem>
+<listitem>
+<para>The <quote>&kgoldrunner;</quote> method searches alternately for
+horizontal and vertical paths, which tends to keep the enemies over
+your side of the playing area and at about the same height (&ie; they
+are more aggressive and not so easy to manipulate). That leads to a
+more action-packed game, but with less opportunity for strategy and
+puzzle-solving. The <quote>State of Terror</quote> game, added in 2007,
+uses <quote>&kgoldrunner;</quote> rules and has plenty of puzzles to
+solve while you are on the run. That is why it is such a difficult game.</para>
+</listitem>
+</itemizedlist>
+
+<para>The other differences are listed below:</para>
+
+<itemizedlist>
+<listitem>
+<para>In <quote>&kgoldrunner;</quote> play the hero and enemies move
+at fixed speeds in every level and bricks always take the same time to
+close. In <quote>Traditional</quote> play the game speed depends on
+the number of enemies in a level. The more enemies, the slower they
+run. The hero also becomes slower, but not so noticeably.</para>
+</listitem>
+<listitem>
+<para>In <quote>Traditional</quote> play, enemies  always collect gold
+nuggets when they run into them. In <quote>&kgoldrunner;</quote> play
+it is a random choice. The enemies drop nuggets after a random time in
+both types of play.</para>
+</listitem>
+<listitem>
+<para>Enemies can run horizontally through holes in
+<quote>Traditional</quote> play but not in
+<quote>&kgoldrunner;</quote> play. The trick in several
+<quote>Traditional</quote> levels depends on releasing an enemy from
+behind a brick wall. When you dig away the bricks, he runs out through
+the hole. In some <quote>&kgoldrunner;</quote> levels, on the other
+hand, you must hide inside or behind a dug brick to escape an enemy.</para>
+</listitem>
+<listitem>
+<para>When enemies die in <quote>&kgoldrunner;</quote> play, they go
+back to where they started the level. In <quote>Traditional</quote>
+play, they reappear at a random place near the top of the playing
+area. This makes a big difference, especially in levels where you have
+to get enemies to fetch nuggets down for you, but also because the
+enemies keep falling down onto you as fast as you can kill
+them.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
 </chapter>
 
+<chapter id="level-selection-dialog">
+<title>The Level Selection Dialog</title>
+
+<sect1 id="level-selection-dialog-box">
+<title>Using the Level Selection Dialog Box</title>
+
+<screenshot>
+<screeninfo>The Level Selection dialog</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="select.png" format="PNG" />
+</imageobject>
+<textobject>
+<phrase>The Level Selection dialog</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para>This box appears when you select the <guimenuitem>New Game</guimenuitem>
+action and also when you select items from the <guimenu>Editor</guimenu>
+menu. You use it to choose a game and a level to play, edit, save,
+move, re-number or delete. The main button at the bottom is the
+<guibutton>OK</guibutton> button. Its label changes according to what
+you are doing: in this case choosing a game and level to play.</para>
+
+<sect2 id="selecting-a-game">
+<title>Selecting a Game</title>
+
+<para>There are several <quote>System</quote> games that come with the
+&kgoldrunner; release and you can add your own games by using the editor.
+All these games appear in the list at the top of the dialog box, grouped by
+level of difficulty. The tutorial games appear last in the list and the
+games of normal skill appear first. To select one of the games, just
+click on its name.</para>
+
+<para>The list shows what rule settings apply to each game (see
+<link linkend="choice-of-rules">Choice of Rules</link>) and how many levels
+there are. When you select a game, a box lower down the screen shows
+you further information about that game.</para>
+
+</sect2>
+
+<sect2 id="selecting-a-level">
+<title>Selecting a Level</title>
+
+<para>You can choose to start a game at any level, but it is best to start
+at level 1 and work up, especially if you are going for a high score. In
+general, the higher numbered levels are more difficult.</para>
+
+<para>When you start the level selection dialog, the default level will
+be something reasonable, such as the last level you played or edited.
+You can select another level by using the spinbox arrows, by typing the
+level number into the spinbox or by moving the slider. The arrows at
+the ends of the slider increase or decrease the number by one. Also
+you can drag the slider with the left mouse button held down and change
+the level number rapidly. Or you can change the level number in steps of 10
+by clicking in the space above or below the slider handle.</para>
+
+<para>As the level number changes, a preview of the level appears in the
+small preview window and the level's name (if it has one) also appears.</para>
+
+</sect2>
+
+<sect2 id="completing-selection">
+<title>Completing your Selection</title>
+
+<para>When you have chosen a game and level, just click the main
+button at the bottom and proceed with your edit or play.</para>
+
+<para>Until you do that, nothing changes, so you can always click
+<guibutton>Cancel</guibutton> and go back to what you were doing
+earlier. Note that the game action is frozen while the dialog box
+is active, so you can continue playing where you left off if you
+choose <guibutton>Cancel</guibutton>.</para>
+
+</sect2>
+
+<sect2 id="saving-changes">
+<title>Saving Changes</title>
+
+<para>If you select an action on the <guimenu>Game</guimenu> or
+<guimenu>Editor</guimenu> menu and you were previously editing and had
+not saved your changes, you will get a message asking you to save,
+abandon or continue your work. Neither the new action nor its dialog will
+begin until you have made a decision about your previous work.</para>
+
+</sect2>
+
+<sect2 id="any-level">
+<title>Playing or Editing <quote>Any</quote> Level</title>
+
+<para>Note that the menus and dialog allow you to select and play or edit
+<quote>any</quote> level. If you start a game after level 1, that is
+OK, you will just not get such a high score. Dedicated players often
+prefer to play high-numbered levels for fun, rather than go for a high
+score, or they might like to <quote>train</quote> on higher levels
+before attempting a high score.</para>
+
+<para>If you select a System level for editing, that is OK too, but
+you must save it in one of your own games: not back in the System
+game. For example you might want to modify a very difficult level so that
+you do not go back to the start of the level every time you die.</para>
+
+<para>To see what this means, try the <quote>Challenge</quote> game,
+level 16, <quote>The Three Musketeers</quote>. That level has about
+ten difficult puzzles in it. When you have solved puzzle 1, you do not
+want to keep repeating it while you work on puzzle 2. The secret is to
+make an editable copy, then keep updating it and changing the hero's
+starting point, until you have solved all the puzzles. Then you can
+go back and attempt the real thing, from start to finish.</para>
+
+</sect2>
+</sect1>
+</chapter>
 
 <chapter id="menu-reference">
 <title>The Menu Reference</title>
@@ -813,7 +691,7 @@ to contribute, the current author's email address is in the
 </term>
 <listitem>
 <para>Shows the level selection dialog box (see
-<link linkend="configuration">
+<link linkend="level-selection-dialog-box">
 Using the Level Selection Dialog Box</link>), where you choose a game
 and a level within that game. At first it is easiest to start at level 1,
 because the levels are arranged approximately in order of difficulty.
@@ -962,13 +840,14 @@ and level number.</para>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Editor</guimenu><guimenuitem>Edit Level...</guimenuitem>
+<guimenu>Editor</guimenu><guimenuitem>Edit Any Level...</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
 <para>Shows the level selection dialog box, where
-you choose a game and level to edit. You can not choose a System games and
-level, but only your own games.</para>
+you choose a game and level to edit.  You can choose a System game and
+level, but you get a warning that you can only save the edited level
+in one of your own games.</para>
 </listitem>
 </varlistentry>
 
@@ -1133,25 +1012,6 @@ when he finally reaches the last level?</para>
 <title>The <guimenu>Settings</guimenu> Menu</title>
 
 <variablelist>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu><guimenuitem>Show Toolbar</guimenuitem>
-</menuchoice></term>
-<listitem>
-<para>Switches the toolbar visibility on and off.</para>
-</listitem>
-</varlistentry>
-<varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;&Shift;<keycap>F</keycap></keycombo></shortcut>
-<guimenu>Settings</guimenu><guimenuitem>Full Screen Mode</guimenuitem>
-</menuchoice></term>
-<listitem>
-<para>Switches the application window into the full view and back.</para>
-</listitem>
-</varlistentry>
 <varlistentry>
 <term><menuchoice>
 <guimenu>Settings</guimenu><guimenuitem>Mouse Controls Hero</guimenuitem>
@@ -1253,16 +1113,6 @@ shortcut keys for menu items.</para>
 </listitem>
 </varlistentry>
 
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu><guimenuitem>Configure Toolbars...</guimenuitem>
-</menuchoice></term>
-<listitem>
-<para>In the &kde; desktop this item allows you to change the toolbar
-configuration.</para>
-</listitem>
-</varlistentry>
-
 </variablelist>
 </sect1>
 
@@ -1272,118 +1122,6 @@ configuration.</para>
 <para>Contains the following standard &kde; Help Menu items:</para>
 
 &help.menu.documentation;
-
-</sect1>
-
-</chapter>
-
-
-<chapter id="configuration"><title>Game Configuration</title> <!-- do not change this! -->
-
-<screenshot>
-<screeninfo>The Level Selection dialog</screeninfo>
-<mediaobject>
-<imageobject>
-<imagedata fileref="select.png" format="PNG" />
-</imageobject>
-<textobject>
-<phrase>The Level Selection dialog</phrase>
-</textobject>
-</mediaobject>
-</screenshot>
-
-<para>This box appears when you select the <guimenuitem>New Game</guimenuitem>
-action and also when you select items from the <guimenu>Editor</guimenu>
-menu. You use it to choose a game and a level to play, edit, save,
-move, re-number or delete. The main button at the bottom is the
-<guibutton>OK</guibutton> button. Its label changes according to what
-you are doing: in this case choosing a game and level to play.</para>
-
-<sect1 id="selecting-a-game">
-<title>Selecting a Game</title>
-
-<para>There are several <quote>System</quote> games that come with the
-&kgoldrunner; release and you can add your own games by using the editor.
-All these games appear in the list at the top of the dialog box, grouped by
-level of difficulty. The tutorial games appear last in the list and the
-games of normal skill appear first. To select one of the games, just
-click on its name.</para>
-
-<para>The list shows what rule settings apply to each game (see
-<link linkend="choice-of-rules">Choice of Rules</link>) and how many levels
-there are. When you select a game, a box lower down the screen shows
-you further information about that game.</para>
-
-</sect1>
-
-<sect1 id="selecting-a-level">
-<title>Selecting a Level</title>
-
-<para>You can choose to start a game at any level, but it is best to start
-at level 1 and work up, especially if you are going for a high score. In
-general, the higher numbered levels are more difficult.</para>
-
-<para>When you start the level selection dialog, the default level will
-be something reasonable, such as the last level you played or edited.
-You can select another level by using the spinbox arrows, by typing the
-level number into the spinbox or by moving the slider. The arrows at
-the ends of the slider increase or decrease the number by one. Also
-you can drag the slider with the left mouse button held down and change
-the level number rapidly. Or you can change the level number in steps of 10
-by clicking in the space above or below the slider handle.</para>
-
-<para>As the level number changes, a preview of the level appears in the
-small preview window and the level's name (if it has one) also appears.</para>
-
-</sect1>
-
-<sect1 id="completing-selection">
-<title>Completing your Selection</title>
-
-<para>When you have chosen a game and level, just click the main
-button at the bottom and proceed with your edit or play.</para>
-
-<para>Until you do that, nothing changes, so you can always click
-<guibutton>Cancel</guibutton> and go back to what you were doing
-earlier. Note that the game action is frozen while the dialog box
-is active, so you can continue playing where you left off if you
-choose <guibutton>Cancel</guibutton>.</para>
-
-</sect1>
-
-<sect1 id="saving-changes">
-<title>Saving Changes</title>
-
-<para>If you select an action on the <guimenu>Game</guimenu> or
-<guimenu>Editor</guimenu> menu and you were previously editing and had
-not saved your changes, you will get a message asking you to save,
-abandon or continue your work. Neither the new action nor its dialog will
-begin until you have made a decision about your previous work.</para>
-
-</sect1>
-
-<sect1 id="any-level">
-<title>Playing or Editing <quote>Any</quote> Level</title>
-
-<para>Note that the menus and dialog allow you to select and play or edit
-<quote>any</quote> level. If you start a game after level 1, that is
-OK, you will just not get such a high score. Dedicated players often
-prefer to play high-numbered levels for fun, rather than go for a high
-score, or they might like to <quote>train</quote> on higher levels
-before attempting a high score.</para>
-
-<para>If you select a System level for editing, that is OK too, but
-you must save it in one of your own games: not back in the System
-game. For example you might want to modify a very difficult level so that
-you do not go back to the start of the level every time you die.</para>
-
-<para>To see what this means, try the <quote>Challenge</quote> game,
-level 16, <quote>The Three Musketeers</quote>. That level has about
-ten difficult puzzles in it. When you have solved puzzle 1, you do not
-want to keep repeating it while you work on puzzle 2. The secret is to
-make an editable copy, then keep updating it and changing the hero's
-starting point, until you have solved all the puzzles. Then you can
-go back and attempt the real thing, from start to finish.</para>
 
 </sect1>
 
@@ -1605,6 +1343,227 @@ levels are re-numbered so as to close the gap in the sequence. </para>
 
 </sect2>
 </sect1>
+
+</chapter>
+
+<chapter id="tips-tricks-and-hints">
+<title>Tips, Tricks and Hints</title>
+
+<sect1 id="tips-overview">
+<title>Overview</title>
+
+<para>This chapter presents some general tips and hints for playing
+&kgoldrunner;, as opposed to the specific hints you will find on the levels
+in tutorial and championship games (see <link linkend="move-menu"><menuchoice>
+<guimenu>Move</guimenu><guimenuitem>Hint</guimenuitem></menuchoice></link>).
+The hints are grouped as follows:</para>
+
+<itemizedlist>
+
+<listitem>
+<para><link linkend="hints-dealing-with-enemies">
+Dealing with Enemies</link></para>
+</listitem>
+
+<listitem>
+<para><link linkend="hints-digging-puzzles">
+Digging Puzzles</link></para>
+</listitem>
+
+<listitem>
+<para><link linkend="hints-tricks-with-gold">
+Tricks with Gold</link></para>
+</listitem>
+
+<listitem>
+<para><link linkend="hints-solving-difficult-levels">
+Solving Difficult Levels</link></para>
+</listitem>
+
+</itemizedlist>
+</sect1>
+
+<sect1 id="hints-dealing-with-enemies">
+<title>Dealing with Enemies</title>
+
+<itemizedlist>
+<listitem>
+<para>You can always trap a single oncoming enemy in one hole, get his
+gold and run on over him without killing him. It is often a good idea
+to dig behind you and delay him further, but that might kill him. In
+some levels it is not a good idea to kill enemies.</para>
+</listitem>
+<listitem>
+<para>You can usually trap two oncoming enemies in two holes, get
+their gold and run on over them, but this is dangerous if the enemies
+are separated by two or three spaces. Sometimes two holes kill one of
+the enemies and the other escapes and sometimes both escape. In
+&kgoldrunner; rules it is easier to trap two enemies and run over them,
+because they stay in the holes for longer.</para>
+</listitem>
+<listitem>
+<para>It is nearly always impossible to trap three oncoming enemies
+and run on over them. You will have to kill them, dig and drop through
+the floor or simply run away.</para>
+</listitem>
+<listitem>
+<para>Try to get all the enemies running together in one group. That
+way you will not get surrounded and you can do such fun things as
+collect gold while they run along behind you.</para>
+</listitem>
+<listitem>
+<para>Sometimes you can kill an enemy with two holes, but it often
+takes three to nine holes to kill one to five enemies.</para>
+</listitem>
+<listitem>
+<para>It is possible to kill an enemy with one hole if he is far
+enough away when you dig it.</para>
+</listitem>
+<listitem>
+<para>In the <quote>Traditional</quote> game, you can trap an enemy
+permanently in a pit of brick or concrete. Stand near the edge of the
+pit on the opposite side to the enemy. As he approaches the pit, move
+down one square (to the level of the floor of the pit) and the enemy
+will usually run into the pit.</para>
+</listitem>
+<listitem>
+<para>In some levels in the <quote>Traditional</quote> game, you can
+force an enemy to climb a ladder ahead of you if you stand somewhere
+above the bottom of the ladder.</para>
+</listitem>
+<listitem>
+<para>In the <quote>&kgoldrunner;</quote> game, you can trap an enemy
+in a pit by getting him to fall from above you, then running sideways and
+digging out before he reaches you.</para>
+</listitem>
+<listitem>
+<para>In the <quote>&kgoldrunner;</quote> game, enemies cannot run through
+dug bricks, so you can sometimes use them as a barrier or hiding place.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="hints-digging-puzzles">
+<title>Digging Puzzles</title>
+
+<itemizedlist>
+<listitem>
+<para>To dig through more than one layer of bricks, start by digging
+as many bricks as there are layers, jump in, dig one brick less and so
+on.</para>
+</listitem>
+<listitem>
+<para>If you dig next to a ladder or a succession of bars, you can dig
+down through any number of layers and up to five or six bricks
+horizontally. Just return to the ladder or bars after digging each
+layer, then move down one square, run out and dig the next
+layer.</para>
+</listitem>
+<listitem>
+<para>If a digging puzzle looks impossible, consider that there might
+be some false bricks in it. Maybe the bottom layer is false or maybe
+you can stand in a false brick and dig next to it.</para>
+</listitem>
+<listitem>
+<para>Think about the order in which you will collect the gold. If you
+pick the right order, the digging might be easier.</para>
+</listitem>
+<listitem>
+<para>Some levels require you to dig away a brick wall, run in,
+collect some gold and run out again before the bricks close up and
+trap you.</para>
+</listitem>
+<listitem>
+<para>It is possible to dig while falling through empty space, if you can
+get the timing right. You do not need to have an enemy to ride upon. This
+is a bug which has become a <quote>feature</quote> and is used extensively
+in the <quote>State of Terror</quote> game.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="hints-tricks-with-gold">
+<title>Tricks with Gold</title>
+
+<itemizedlist>
+<listitem>
+<para>If you cannot get to a piece of gold, think about getting an
+enemy to go there and get it. Even think about using an enemy's head
+as a bridge to get across a pit or precipice.</para>
+</listitem>
+<listitem>
+<para>In some levels there is a nugget that must be collected last of
+all, because you will need the hidden ladders to get away from that
+position.</para>
+</listitem>
+<listitem>
+<para>In some situations an enemy can be killed without giving up the
+gold he is carrying. The gold becomes a <quote>lost nugget</quote>.
+You score no points for making an enemy lose a nugget,
+but at least you can finish the level.</para>
+</listitem>
+<listitem>
+<para>If there is nowhere to dig, keep the enemies running over
+concrete and the tops of ladders and so make them release their gold
+at random.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="hints-solving-difficult-levels">
+<title>Solving Difficult Levels</title>
+
+<itemizedlist>
+<listitem>
+<para>Try changing the speed settings to Beginner or even lower.</para>
+</listitem>
+<listitem>
+<para>Use the Editor feature to <quote>peek</quote> at where the false
+bricks and hidden ladders are.</para>
+</listitem>
+<listitem>
+<para>Use the Editor feature to save the level in one of your own
+games, then you can edit it so that you do not always have to start at
+the beginning when you die. This allows you to develop the solution in
+easier stages.</para>
+</listitem>
+<listitem>
+<para>In digging puzzles, look for false bricks you can fall into and
+thus have one less brick to dig. Or consider using an enemy to go
+ahead of you, so that you can stand on his head and dig.</para>
+</listitem>
+<listitem>
+<para>Look for a theme or trick in the level, such as riding down on
+an enemy's head, trapping all the enemies in a pit, luring the enemies
+to a corner where they will stay and not chase you, luring the enemies
+into pits you must cross to get to some gold, getting the enemies to
+fetch gold for you or finding spots where you can stand and make an
+enemy move to where you want him.</para>
+</listitem>
+</itemizedlist>
+</sect1>
+
+<!-- This is the place for a FAQ section, if required.
+<sect1 id="hints-faq">
+<title>FAQ</title>
+
+<qandaset id="faq">
+
+<qandaentry>
+<question>
+<para>Question 1</para>
+</question>
+<answer>
+<para>The answer</para>
+</answer>
+</qandaentry>
+
+</qandaset>
+</sect1>
+-->
 
 </chapter>
 
