@@ -32,7 +32,7 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2007-08-19</date>
+<date>2007-11-15</date>
 <releaseinfo>3.0</releaseinfo>
 
 <abstract>
@@ -137,7 +137,7 @@ the same information for Tutorial level 1.</para>
 <para>Click on the <guibutton>PLAY</guibutton> button to begin playing
 immediately. Otherwise you can click on the <guibutton>Quit</guibutton> button,
 the <guibutton>New Game</guibutton> button or the
-<guibutton>Use Menu</guibutton> button. The first will abort KGoldrunner, if
+<guibutton>Use Menu</guibutton> button. The first will abort &kgoldrunner;, if
 you do not wish to play, the second will show you a
 <link linkend="level-selection-dialog">Level Selection</link> dialog,
 where you can choose a different game and level and the last will terminate
@@ -761,7 +761,7 @@ the <guiicon>disk</guiicon> icon on the Editor toolbar.</para>
 <varlistentry>
 <term><menuchoice><shortcut>
 <keycombo action="simul">&Ctrl;<keycap>H</keycap></keycombo></shortcut>
-<guimenu>Game</guimenu><guimenuitem>Show Highscores</guimenuitem>
+<guimenu>Game</guimenu><guimenuitem>Show High Scores...</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
@@ -805,7 +805,7 @@ are given an opportunity to save your work.</para>
 
 <variablelist>
 <varlistentry>
-<term><menuchoice>
+<term><menuchoice><shortcut><keycap>H</keycap></shortcut>
 <guimenu>Move</guimenu><guimenuitem>Hint</guimenuitem>
 </menuchoice>
 </term>
@@ -840,7 +840,7 @@ and level number.</para>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Editor</guimenu><guimenuitem>Edit Any Level...</guimenuitem>
+<guimenu>Editor</guimenu><guimenuitem>Edit Level...</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
@@ -1014,6 +1014,27 @@ when he finally reaches the last level?</para>
 <variablelist>
 <varlistentry>
 <term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Show Toolbar</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Toggle the Toolbar display</action> on and off.
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;&Shift;<keycap>F</keycap></keycombo>
+</shortcut>
+<guimenu>Settings</guimenu>
+<guimenuitem>Full Screen Mode</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Toggles the Full Screen mode</action> on and off.
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
 <guimenu>Settings</guimenu><guimenuitem>Mouse Controls Hero</guimenuitem>
 </menuchoice></term>
 <listitem>
@@ -1113,6 +1134,14 @@ shortcut keys for menu items.</para>
 </listitem>
 </varlistentry>
 
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure Toolbars...</guimenuitem>
+</menuchoice></term>
+<listitem><para>Display the standard &kde; toolbar configuration dialog.</para></listitem>
+</varlistentry>
+
 </variablelist>
 </sect1>
 
@@ -1190,7 +1219,7 @@ have no enemies or no bricks.</para>
 <sect2 id="editing-a-level">
 <title>Editing a Level</title>
 
-<para>Use <guimenuitem>Edit Any Level</guimenuitem> on the
+<para>Use <guimenuitem>Edit Level</guimenuitem> on the
 <guimenu>Editor</guimenu> menu to start editing an existing level or use
 <guimenuitem>Create Level</guimenuitem> to start editing a new level.</para>
 
@@ -1206,7 +1235,7 @@ it came from, but you can vary that.</para>
 
 <para>The picture below shows the menubar and the edit toolbar, which
 appears when you first choose <guimenuitem>Create Level</guimenuitem>
-or <guimenuitem>Edit Any Level</guimenuitem> from the
+or <guimenuitem>Edit Level</guimenuitem> from the
 <guimenu>Editor</guimenu> menu and so change from Play to Edit
 mode. It disappears when you go back to Play mode. Note also that, in
 Edit mode, false bricks and hidden ladders are made visible in the
@@ -1214,19 +1243,19 @@ playing area.</para>
 
 <para>The three icons on the left of the edit toolbar have the same
 actions as the menu options <guimenuitem>Create Level</guimenuitem>,
-<guimenuitem>Edit Any Level</guimenuitem> and <guimenuitem>Save
+<guimenuitem>Edit Level</guimenuitem> and <guimenuitem>Save
 Edits</guimenuitem>. The other eleven icons are for editing and
 painting objects in your level. </para>
 
 
 <para>From left to right the other eleven icons are <guiicon>Edit Name/Hint
-</guiicon> (light bulb), <guiicon>Empty space</guiicon> (background), 
+</guiicon> (light bulb), <guiicon>Erase</guiicon> (background), 
 <guiicon>Hero</guiicon>,
 <guiicon>Enemy</guiicon>, <guiicon>Brick</guiicon> (can dig),
-<guiicon>Concrete</guiicon> (cannot dig), <guiicon>False brick</guiicon> 
+<guiicon>Concrete</guiicon> (cannot dig), <guiicon>Trap</guiicon> 
 (also known as a trap or fall-through brick), <guiicon>Ladder</guiicon>,
-<guiicon>Hidden ladder</guiicon>, <guiicon>Pole</guiicon> (or bar) and
-<guiicon>Gold nugget</guiicon>. The graphics for these icons, except for the
+<guiicon>Hidden ladder</guiicon>, <guiicon>Bar</guiicon> (or poles) and
+<guiicon>Gold</guiicon>. The graphics for these icons, except for the
 light bulb, are copied from whatever theme you are using.</para>
 
 <screenshot>
@@ -1254,7 +1283,7 @@ single object in a square, or by holding the &LMB; down and dragging
 the mouse, to fill a line or area, such as a long ladder, a large
 block of bricks or a concrete floor. Painting stops wherever you
 release the mouse button. If you make a mistake, you can use a &RMB; click to
-erase it, or you can select the <guiicon>Empty space</guiicon> icon and draw
+erase it, or you can select the <guiicon>Erase</guiicon> icon and draw
 with that.</para>
 
 <para>The hero icon works differently, because there can be only one
@@ -1304,7 +1333,7 @@ name and hint. </para>
 or the equivalent keyboard shortcut. By default the game and level number are
 remembered and you can get straight into the level with just a few
 clicks. If you then want to edit some more, the same is true when you
-use <guimenuitem>Edit Any Level</guimenuitem> again. It is essential to test
+use <guimenuitem>Edit Level</guimenuitem> again. It is essential to test
 every level you compose, to make sure that it is possible to complete it
 and that it is not too easy.</para>
 
@@ -1607,8 +1636,8 @@ the "State of Terror" game, in 2007, the first Championship game
 to use &kgoldrunner; rules and one of the most difficult games ever.</para>
 
 <para>Special thanks are due to Mauricio Piacentini and Dmitry Suzdalev, who
-converted &kgoldrunner; to Qt 4 and KDE 4, and to the many graphics artists
-who contributed to the new SVG graphics and themes in the KDE 4 version:
+converted &kgoldrunner; to &Qt; 4 and &kde; 4, and to the many graphics artists
+who contributed to the new SVG graphics and themes in the &kde; 4 version:
 especially Mauricio Piacentini for the Default theme and the new runners,
 Johann Ollivier Lapeyre for the ladders and bars, Eugene Trounev for the
 Geek City and Treasure of Egypt themes and, last but not least, Luciano
