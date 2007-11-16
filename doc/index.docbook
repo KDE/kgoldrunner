@@ -53,6 +53,12 @@ next level.</para>
 
 <sect1 id="introduction">
 <title>Introduction</title>
+<para>
+Game type: Arcade, Strategy
+</para>
+<para>
+Number of players: One
+</para>
 
 <para>&kgoldrunner; is an action game where the hero
 runs through a maze and dodges enemies.
@@ -137,7 +143,7 @@ the same information for Tutorial level 1.</para>
 <para>Click on the <guibutton>PLAY</guibutton> button to begin playing
 immediately. Otherwise you can click on the <guibutton>Quit</guibutton> button,
 the <guibutton>New Game</guibutton> button or the
-<guibutton>Use Menu</guibutton> button. The first will abort &kgoldrunner;, if
+<guibutton>Use Menu</guibutton> button. The first will close &kgoldrunner;, if
 you do not wish to play, the second will show you a
 <link linkend="level-selection-dialog">Level Selection</link> dialog,
 where you can choose a different game and level and the last will terminate
@@ -257,8 +263,10 @@ an enemy or a pit down there, or good if there is some gold.</para>
 
 <para>Enemies move in very much the same way as the hero. The main
 difference is when they fall into a hole the hero has dug (see <link
-linkend="rules-of-digging">Rules of Digging</link> below). They will
-pick up gold either always or at random, depending on the game
+linkend="importance-of-digging">The Importance of Digging</link> below).
+</para>
+<para>
+They will pick up gold either always or at random, depending on the game
 settings, and will drop gold at random on brick, concrete or the top
 of a ladder. If an enemy is carrying the last piece of gold, you must
 get it away from him before you can finish the level.</para>
@@ -441,15 +449,15 @@ solve while you are on the run. That is why it is such a difficult game.</para>
 
 <itemizedlist>
 <listitem>
-<para>In <quote>&kgoldrunner;</quote> play the hero and enemies move
+<para>In <quote>&kgoldrunner;</quote> play, the hero and enemies move
 at fixed speeds in every level and bricks always take the same time to
-close. In <quote>Traditional</quote> play the game speed depends on
+close. In <quote>Traditional</quote> play, the game speed depends on
 the number of enemies in a level. The more enemies, the slower they
 run. The hero also becomes slower, but not so noticeably.</para>
 </listitem>
 <listitem>
 <para>In <quote>Traditional</quote> play, enemies  always collect gold
-nuggets when they run into them. In <quote>&kgoldrunner;</quote> play
+nuggets when they run into them. In <quote>&kgoldrunner;</quote> play,
 it is a random choice. The enemies drop nuggets after a random time in
 both types of play.</para>
 </listitem>
@@ -1233,7 +1241,7 @@ it came from, but you can vary that.</para>
 <sect2 id="painting-objects">
 <title>Painting Objects in a Level</title>
 
-<para>The picture below shows the menubar and the edit toolbar, which
+<para>The picture below shows the edit toolbar, which
 appears when you first choose <guimenuitem>Create Level</guimenuitem>
 or <guimenuitem>Edit Level</guimenuitem> from the
 <guimenu>Editor</guimenu> menu and so change from Play to Edit
@@ -1253,10 +1261,10 @@ painting objects in your level. </para>
 <guiicon>Hero</guiicon>,
 <guiicon>Enemy</guiicon>, <guiicon>Brick</guiicon> (can dig),
 <guiicon>Concrete</guiicon> (cannot dig), <guiicon>Trap</guiicon> 
-(also known as a trap or fall-through brick), <guiicon>Ladder</guiicon>,
-<guiicon>Hidden ladder</guiicon>, <guiicon>Bar</guiicon> (or poles) and
+(also known as a false brick or fall-through brick), <guiicon>Ladder</guiicon>,
+<guiicon>Hidden ladder</guiicon>, <guiicon>Bar</guiicon> (or pole) and
 <guiicon>Gold</guiicon>. The graphics for these icons, except for the
-light bulb, are copied from whatever theme you are using.</para>
+light bulb, are copied from whatever &kgoldrunner; theme you are using.</para>
 
 <screenshot>
 <screeninfo>Editing a level</screeninfo>
@@ -1628,11 +1636,15 @@ going into museums.</para>
 <para>Marco Krüger developed &kgoldrunner; as far as v0.3, out of
 nostalgia for the original Commodore 64 game.  Ian Wadham added
 several features and levels and created the current version.  Ian's
-elder son Peter composed the 100 levels in the "Initiation" game and
-the 20 tricky levels in "Vengeance of Peter W".  The other levels
+elder son Peter composed the 100 levels in the <quote>Initiation</quote>
+game and the 20 tricky levels in <quote>Vengeance of Peter W</quote>.
+The other levels
 were composed by Ian, Peter, Marco Krüger and friends and Ian's other
-children, Simon and Genevieve. Stuart Popejoy of New York contributed
-the "State of Terror" game, in 2007, the first Championship game
+children, Simon and Genevieve.
+</para>
+<para>
+Stuart Popejoy of New York contributed
+the <quote>State of Terror</quote> game, in 2007, the first Championship game
 to use &kgoldrunner; rules and one of the most difficult games ever.</para>
 
 <para>Special thanks are due to Mauricio Piacentini and Dmitry Suzdalev, who
