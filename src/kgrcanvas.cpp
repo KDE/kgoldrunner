@@ -588,25 +588,9 @@ void KGrCanvas::drawSpotLight(qreal value)
         QBrush blackbrush(QColor(0, 0, 0, 255));
 	// Draw a transparent circle over the scene.
 	p.setCompositionMode(QPainter::CompositionMode_SourceOver);
-#if 0
 	if (radius < wh) {
-	    qreal diameter = radius * 2.0;
-	    p.fillRect(QRectF(x, y, 1.0 + wh - radius, h), blackbrush);
-	    p.fillRect(QRectF(x + wh + radius, y, wh - radius, h), blackbrush);
-	    if (radius < h * 0.5) {
-		p.fillRect(QRectF(x + wh - radius, y, diameter, 0.5 * h - radius + 1.0), blackbrush);
-		p.fillRect(QRectF(x + wh - radius, y + h * 0.5 + radius, 2.0 * radius, 0.5 * h - radius), blackbrush);
-		p.fillRect(QRectF(x + wh - radius, y + h * 0.5 - radius, diameter, diameter), brush);
-	    } else {
-		p.fillRect(QRectF(x + wh - radius, y, 2.0 * radius, h), brush);
-	    }
-	} else {
-	    p.fillRect(QRectF(x, y, w, h), brush);
-	}
-#else
-	if (radius < wh) {
-	    // If the spotlight radius is smaller than half the scene width, draw
-	    // black rectangles to its sides, which is faster.
+	    // If the spotlight radius is smaller than half the scene width,
+	    // draw black rectangles to its sides, which is faster.
 	    qreal diameter = radius * 2.0;
 	    p.fillRect(QRectF(x, y, 1.0 + wh - radius, h), blackbrush);
 	    p.fillRect(QRectF(x + wh + radius, y, wh - radius, h), blackbrush);
@@ -636,7 +620,6 @@ void KGrCanvas::drawSpotLight(qreal value)
 		p.fillRect(QRectF(x + wh - innerDistance, y + hh + innerDistance, side, hh - innerDistance), brush);
 	    }
 	}
-#endif
     }
 
     m_spotLight->setPicture(picture);
