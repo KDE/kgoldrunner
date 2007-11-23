@@ -103,7 +103,7 @@ KGoldrunner::KGoldrunner()
 	return;				// If no game files, abort.
     }
 
-    qDebug() << "Calling view->setBaseScale() ...";
+    kDebug() << "Calling view->setBaseScale() ...";
     view->setBaseScale();		// Set scale for level-titles font.
 
     hero = game->getHero();		// Get a pointer to the hero.
@@ -598,7 +598,7 @@ void KGoldrunner::setupThemes ()
     // TODO change this to a ThemeName (or simply Theme) option. The theme
     // should be searched in the themeFilepaths defined above.
     QString currentThemeFilepath = gameGroup.readEntry ("ThemeFilepath", "");
-    qDebug()<< "Config() Theme" << currentThemeFilepath;
+    kDebug()<< "Config() Theme" << currentThemeFilepath;
 
     QSignalMapper * themeMapper = new QSignalMapper (this);
     connect (themeMapper, SIGNAL (mapped (const QString &)),
@@ -865,7 +865,7 @@ void KGoldrunner::saveProperties(KConfigGroup & /* config - unused */)
     // config file.  Anything you write here will be available
     // later when this app is restored.
 
-    qDebug() << "I am in KGoldrunner::saveProperties.";
+    kDebug() << "I am in KGoldrunner::saveProperties.";
 }
 
 void KGoldrunner::readProperties(const KConfigGroup & /* config - unused */)
@@ -875,7 +875,7 @@ void KGoldrunner::readProperties(const KConfigGroup & /* config - unused */)
     // the app is being restored.  Read in here whatever you wrote
     // in 'saveProperties'
 
-    qDebug() << "I am in KGoldrunner::readProperties.";
+    kDebug() << "I am in KGoldrunner::readProperties.";
 }
 
 // void KGoldrunner::optionsShowToolbar()
@@ -1189,7 +1189,7 @@ void KGoldrunner::defaultEditObj()
 
 QSize KGoldrunner::sizeHint() const
 {
-    qDebug() << "KGoldrunner::sizeHint() called ... 640x600";
+    kDebug() << "KGoldrunner::sizeHint() called ... 640x600";
     return QSize (640, 600);
 }
 

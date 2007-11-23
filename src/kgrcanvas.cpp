@@ -37,7 +37,7 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
 {
     resizeCount = 0;		// Do not render or paint until resize is done.
 
-    qDebug() << "Called KGrCanvas::KGrCanvas ..." << this->size();
+    kDebug() << "Called KGrCanvas::KGrCanvas ..." << this->size();
     m = new QCursor ();		// For handling the mouse.
 
     // The default background is black.  It appears during partial repaints.
@@ -48,7 +48,7 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
     baseScale = scaleStep;
     baseFontSize = fontInfo().pointSize() + 2;
     scaleStep = (int) ((scale * STEP) + 0.05);
-    qDebug() << "Scale" << scale << "Scaled Step" << scaleStep;
+    kDebug() << "Scale" << scale << "Scaled Step" << scaleStep;
 
     nCellsW = FIELDWIDTH;
     nCellsH = FIELDHEIGHT;
@@ -60,7 +60,7 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
     // Create an empty list of enemy sprites.
     enemySprites = new QList<KGrSprite *> ();
 
-    qDebug() << "Calling initView() ...";
+    kDebug() << "Calling initView() ...";
     initView();			// Set up the graphics, etc.
 
     // Initialise the KGoldrunner grid.
@@ -114,7 +114,7 @@ void KGrCanvas::fadeOut()
 void KGrCanvas::drawTheScene (bool changePixmaps)
 {
     t.restart();
-    qDebug() << 0 << "msec.  Start KGrCanvas::drawTheScene";
+    kDebug() << 0 << "msec.  Start KGrCanvas::drawTheScene";
 
     // The pixmaps for tiles and sprites have to be re-loaded
     // if and only if the theme or the cell size has changed.
@@ -124,7 +124,7 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
     // has changed and the bg must fill it (! themeDrawBorder).
 
     double scale = (double) imgW / (double) bgw;
-    qDebug() << "Called KGrCanvas::drawTheScene() - Images:" << imgW<<"x"<<imgH;
+    kDebug() << "Called KGrCanvas::drawTheScene() - Images:" << imgW<<"x"<<imgH;
     if (imgW == 0) {
         return;
     }
@@ -140,7 +140,7 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
 	    }
 	}
     }
-    qDebug() << t.restart() << "msec.  Tiles and background rendered.";
+    kDebug() << t.restart() << "msec.  Tiles and background rendered.";
 
     /* ******************************************************************** */
     /* The pixmaps for hero and enemies are arranged in strips of 36: walk  */
@@ -157,7 +157,7 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
 	*heroFrames << theme.hero(imgH);
 	*enemyFrames << theme.enemy(imgH);
     }
-    qDebug() << t.restart() << "msec.  Hero and enemies rendered.";
+    kDebug() << t.restart() << "msec.  Hero and enemies rendered.";
 
     int spriteframe;
     QPoint spriteloc;
@@ -188,7 +188,7 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
 	    }
 	}
     }
-    qDebug() << t.restart() << "msec.  Finish KGrCanvas::drawTheScene";
+    kDebug() << t.restart() << "msec.  Finish KGrCanvas::drawTheScene";
 
     // Recreate the border.
     makeBorder ();
@@ -202,7 +202,7 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
 bool KGrCanvas::changeTheme (const QString & themeFilepath)
 {
     t.restart();
-    qDebug() << 0 << "msec.  New Theme -" << themeFilepath;
+    kDebug() << 0 << "msec.  New Theme -" << themeFilepath;
     bool success = theme.load(themeFilepath);
     if (success) {
 	// Use the border color to fill empty rectangles during partial
@@ -210,7 +210,7 @@ bool KGrCanvas::changeTheme (const QString & themeFilepath)
 	setPalette(QPalette(theme.borderColor()));
 	setAutoFillBackground(true);
     }
-    qDebug() << t.restart() << "msec.  Finish loading new theme.";
+    kDebug() << t.restart() << "msec.  Finish loading new theme.";
     if (success && (resizeCount > 0)) {	// If startup, do not render or paint.
 	const bool changePixmaps = true;
 	drawTheScene (changePixmaps);	// Not startup, so re-draw play-area.
@@ -221,8 +221,8 @@ bool KGrCanvas::changeTheme (const QString & themeFilepath)
 void KGrCanvas::resizeEvent (QResizeEvent * event )
 {
     resizeCount++;
-    qDebug()<< "KGrCanvas::resizeEvent:" << resizeCount << event->size();
-    qDebug() << "Resize pending?" << QWidget::testAttribute (Qt::WA_PendingResizeEvent);
+    kDebug()<< "KGrCanvas::resizeEvent:" << resizeCount << event->size();
+    kDebug() << "Resize pending?" << QWidget::testAttribute (Qt::WA_PendingResizeEvent);
     // To reduce overheads, re-render only when no later resize is scheduled.
     if (QWidget::testAttribute (Qt::WA_PendingResizeEvent))  {
 	return;
