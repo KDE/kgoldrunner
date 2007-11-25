@@ -1,5 +1,6 @@
 [KDEGameTheme]
 Name=Geek City
+Name[ca]=Ciutat Freak
 Name[de]=Geek-Stadt
 Name[es]=Ciudad griega
 Name[fa]=شهر Geek
@@ -12,6 +13,7 @@ Name[sv]=Nördstaden
 Name[x-test]=xxGeek Cityxx
 Name[zh_CN]=奇客之城
 Description=The hero is trapped inside a computer.
+Description[ca]=L'heroi està atrapat dins un ordinador.
 Description[de]=Der Held ist im Inneren eines Computers gefangen.
 Description[el]=Ο ήρωας έχει παγιδευτεί μέσα σε έναν υπολογιστή.
 Description[es]=El héroe está atrapado dentro de una máquina.
