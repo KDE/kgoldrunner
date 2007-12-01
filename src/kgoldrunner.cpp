@@ -124,8 +124,12 @@ KGoldrunner::KGoldrunner()
     // and a status bar.
     initStatusBar();
 
-    // Do NOT show/hide the statusbar in the GUI: we need it for game scores.
-    setupGUI (static_cast<StandardWindowOption> (Default & (~StatusBar)));
+    // Do NOT have show/hide actions for the statusbar and toolbar in the GUI:
+    // we need the statusbar for game scores and the toolbar is relevant only
+    // when using the game editor and then it appears automatically.  Maybe 1%
+    // of players would use the game editor for 5% of their time.
+    setupGUI (static_cast<StandardWindowOption> (Default &
+			(~StatusBar) & (~ToolBar)));
 
     // Find the theme-files and generate the Themes menu.
     setupThemes();
