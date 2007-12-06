@@ -103,7 +103,7 @@ how many lives he has left and how many points he has scored.  It also
 shows that there is a hint available for this level (as there always
 is  in tutorial games) and that the action is stopped (while taking
 this snapshot), but can be continued by pressing <keycap>P</keycap> or
-<keycap>Esc</keycap>.</para>
+&Esc;.</para>
 
 <para>The hero started at the top left, dug a hole and dropped into a
 line of false bricks and gold where you can now see him falling.  The
@@ -943,6 +943,29 @@ is because the prefix is used in level-file names internally.</para>
 
 <varlistentry>
 <term><menuchoice>
+<guimenu>Themes</guimenu><guimenuitem>Black on White</guimenuitem>
+</menuchoice></term>
+<listitem>
+<para>This theme is stripped down to its barest graphical units and
+painted in black and white only.  It is intended to help players who
+may be visually impaired.  The author would appreciate email responses on
+how effective it is and what improvements in visibility could be made.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Themes</guimenu><guimenuitem>The Treasure of Egypt</guimenuitem>
+</menuchoice></term>
+<listitem>
+<para>Matt Goldrunner finds himself in an Ancient Egyptian temple, being
+pursued by mummies who are determined to protect their ancestral jewels
+at all costs.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
 <guimenu>Themes</guimenu><guimenuitem>&kgoldrunner; Default</guimenuitem>
 </menuchoice></term>
 <listitem>
@@ -953,13 +976,11 @@ red bricks and gray concrete.</para>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Themes</guimenu><guimenuitem>Black on White</guimenuitem>
+<guimenu>Themes</guimenu><guimenuitem>Geek City</guimenuitem>
 </menuchoice></term>
 <listitem>
-<para>This theme is stripped down to its barest graphical units and
-painted in black and white only.  It is intended to help players who
-may be visually impaired.  The author would appreciate email responses on
-how effective it is and what improvements in visibility could be made.</para>
+<para>Our hero is trapped inside a computer. Will he escape
+when he finally reaches the last level?</para>
 </listitem>
 </varlistentry>
 
@@ -991,27 +1012,6 @@ pin-sharp monitors.</para>
 </listitem>
 </varlistentry>
 
-<varlistentry>
-<term><menuchoice>
-<guimenu>Themes</guimenu><guimenuitem>The Treasure of Egypt</guimenuitem>
-</menuchoice></term>
-<listitem>
-<para>Matt Goldrunner finds himself in an Ancient Egyptian temple, being
-pursued by mummies who are determined to protect their ancestral jewels
-at all costs.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Themes</guimenu><guimenuitem>Geek City</guimenuitem>
-</menuchoice></term>
-<listitem>
-<para>Our hero is trapped inside a computer. Will he escape
-when he finally reaches the last level?</para>
-</listitem>
-</varlistentry>
-
 </variablelist>
 
 </sect1>
@@ -1020,15 +1020,6 @@ when he finally reaches the last level?</para>
 <title>The <guimenu>Settings</guimenu> Menu</title>
 
 <variablelist>
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu>
-<guimenuitem>Show Toolbar</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Toggle the Toolbar display</action> on and off.
-</para></listitem>
-</varlistentry>
-
 <varlistentry>
 <term><menuchoice>
 <shortcut>
@@ -1090,7 +1081,7 @@ when he finally reaches the last level?</para>
 
 <varlistentry>
 <term><menuchoice><shortcut><keycap>+</keycap></shortcut>
-<guimenu>Settings</guimenu><guimenuitem>Increase Speed	</guimenuitem>
+<guimenu>Settings</guimenu><guimenuitem>Increase Speed</guimenuitem>
 </menuchoice></term>
 <listitem>
 <para>Increases the game speed by one unit, up to a maximum of 24
@@ -1140,14 +1131,6 @@ as a shortcut.</para>
 assignments (&eg; for keyboard control of the hero) or to assign your own
 shortcut keys for menu items.</para>
 </listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu>
-<guimenuitem>Configure Toolbars...</guimenuitem>
-</menuchoice></term>
-<listitem><para>Display the standard &kde; toolbar configuration dialog.</para></listitem>
 </varlistentry>
 
 </variablelist>
