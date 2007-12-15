@@ -165,6 +165,9 @@ void KGrGame::quickStartDialog()
 
 void KGrGame::quickStartPlay()
 {
+    // KDialog calls QDialog::accept() after the OK slot, so must hide it
+    // now, to avoid interference with any tutorial messages there may be.
+    qs->hide();
     showTutorialMessages (level);
     unfreeze();
 }
