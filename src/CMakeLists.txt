@@ -14,6 +14,14 @@ set(kgoldrunner_SRCS
    main.cpp 
    kgrdialog.cpp )
 
+set(kgoldrunner_icons
+	hi16-app-kgoldrunner.png
+	hi32-app-kgoldrunner.png
+	hi48-app-kgoldrunner.png
+	hi64-app-kgoldrunner.png
+	hi128-app-kgoldrunner.png
+)
+kde4_add_win32_app_icon(kgoldrunner_SRCS ${kgoldrunner_icons})
 kde4_add_executable(kgoldrunner ${kgoldrunner_SRCS})
 
 target_link_libraries(kgoldrunner ${KDE4_KDEUI_LIBS} kdegames )
