@@ -14,11 +14,9 @@
 #include <KDialog>
 #include <KMessageBox>
 
-#include <QLayout>
 
 #include <QListWidget>
 #include <QTreeWidget>
-#include <QHeaderView>
 #include <QTreeWidgetItem>
 
 #include <QScrollBar>

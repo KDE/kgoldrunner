@@ -15,7 +15,6 @@
  ***************************************************************************/
 
 #include "kgrsprite.h"
-#include <QImage>
 
 KGrSprite::KGrSprite( KGameCanvasAbstract* canvas  )
     : KGameCanvasPixmap(canvas)

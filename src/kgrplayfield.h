@@ -20,10 +20,8 @@
 
 #include <kgamecanvas.h>
 
-#include <QObject>
 #include <QPixmap>
 #include <QList>
-#include <QPainter>
 
 /**
  * The KGrPlayField is a KGameCanvasGroup managing the graphical representation

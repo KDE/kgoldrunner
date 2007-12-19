@@ -45,6 +45,7 @@
 #include <QTreeWidget>
 #include <QHeaderView>
 #include <QTreeWidgetItem>
+#include <QDir>
 
 #endif
 

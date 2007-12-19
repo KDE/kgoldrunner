@@ -23,10 +23,6 @@
 #include <QObject>
 #include <QList>
 
-#include <QDir>
-#include <QFile>
-#include <QTextStream>
-#include <QDataStream>
 #include <QColor>
 #include <QPixmap>
 #include <QLabel>

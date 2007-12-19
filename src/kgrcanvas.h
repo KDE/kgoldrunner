@@ -27,7 +27,6 @@
 #include <qcursor.h>
 #include <QLabel>
 #include <QImage>
-#include <QPainter>
 #include <QPixmap>
 #include <QMouseEvent>
 #include <QList>

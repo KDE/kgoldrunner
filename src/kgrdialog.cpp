@@ -20,6 +20,7 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QSpacerItem>
+#include <QHeaderView>
 
 /******************************************************************************/
 /*****************    DIALOG BOX TO SELECT A GAME AND LEVEL   *****************/

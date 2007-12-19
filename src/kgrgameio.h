@@ -22,7 +22,6 @@
 #define _KGRGAMEIO_H_
 
 #include <QByteArray>
-#include <QDir>
 #include <QFile>
 
 #include "kgrconsts.h"

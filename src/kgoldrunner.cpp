@@ -19,9 +19,9 @@
 
 #include "kgoldrunner.h"
 
-#include <QPixmap>
-#include <QDesktopWidget>
 #include <QApplication>
+#include <QDesktopWidget>
+#include <QSignalMapper>
 
 #include <kglobal.h>
 #include <kstatusbar.h>

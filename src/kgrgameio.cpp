@@ -20,6 +20,7 @@
 
 #include "kgrgameio.h"
 #include <KDebug>
+#include <QDir>
 
 KGrGameIO::KGrGameIO ()
 {

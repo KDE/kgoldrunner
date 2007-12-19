@@ -21,12 +21,8 @@
 // Obsolete - #include <iostream.h>
 #include <iostream>
 
-#include <QImage>
 #include <QList>
-#include <QPainter>
-#include <QPixmap>
 #include <QTimer>
-#include <QWidget>
 #include <stdlib.h>			// For random-number generator.
 
 #include "kgrconsts.h"
