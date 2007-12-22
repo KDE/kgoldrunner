@@ -125,6 +125,7 @@ QImage KGrTheme::background(unsigned int width, unsigned int height,
 	    svgSet.render(&painter, backgroundName.arg(variant));
 	else if (svgSet.elementExists("background")) 
 	    svgSet.render(&painter, "background");
+	painter.end();
 	return background;
     }
     return QImage();
@@ -154,18 +155,20 @@ QList<QPixmap> KGrTheme::svgFrames (const QString &elementPattern,
 {
     QImage img (size, size, QImage::Format_ARGB32_Premultiplied);
     QRectF bounds = img.rect();
-    QPainter q (&img);
+    QPainter q;
     bounds.adjust(-0.5, -0.5, 0.5, 0.5);
     QList<QPixmap> frames;
     for (int i = 1; i <= nFrames; i++) {
 	QString s = elementPattern.arg(i);	// e.g. "hero_1", "hero_2", etc.
 	img.fill (0);
-	    if (svgActors.elementExists(s)) {
+	q.begin(&img);
+	if (svgActors.elementExists(s)) {
 	    svgActors.render (&q, s, bounds);
 	}else {
 	    // The theme does not contain the needed element.
 	    kWarning() << "The needed element" << s << "is not in the theme.";
 	}
+	q.end();
 	frames.append (QPixmap::fromImage (img));
     }
     return frames;
@@ -173,6 +176,7 @@ QList<QPixmap> KGrTheme::svgFrames (const QString &elementPattern,
 
 QPixmap KGrTheme::svgTile (QImage & img, QPainter & q, const QString & name)
 {
+    q.begin (&img);
     img.fill (0);
     
     QRectF bounds = img.rect();
@@ -185,6 +189,7 @@ QPixmap KGrTheme::svgTile (QImage & img, QPainter & q, const QString & name)
 	// The theme does not contain the needed element.
 	kWarning() << "The needed element" << name << "is not in the theme.";
     }
+    q.end();
     return QPixmap::fromImage (img);
 }
 
@@ -194,7 +199,7 @@ QList<QPixmap> KGrTheme::tiles(unsigned int size)
     if (tileGraphics == SVG) {
 	// Draw SVG versions of nugget, bar, ladder, concrete and brick.
 	QImage img (size, size, QImage::Format_ARGB32_Premultiplied);
-	QPainter painter (&img);
+	QPainter painter;
 
 	list.append(svgTile(img, painter, "empty"));
 	list.append(svgTile(img, painter, "gold"));
