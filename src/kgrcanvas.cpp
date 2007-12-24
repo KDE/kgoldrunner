@@ -622,6 +622,7 @@ void KGrCanvas::drawSpotLight(qreal value)
 	}
     }
 
+    p.end();
     m_spotLight->setPicture(picture);
 }
 
