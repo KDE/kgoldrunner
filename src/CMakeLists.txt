@@ -14,14 +14,8 @@ set(kgoldrunner_SRCS
    main.cpp 
    kgrdialog.cpp )
 
-set(kgoldrunner_icons
-	${CMAKE_CURRENT_SOURCE_DIR}/hi16-app-kgoldrunner.png
-	${CMAKE_CURRENT_SOURCE_DIR}/hi32-app-kgoldrunner.png
-	${CMAKE_CURRENT_SOURCE_DIR}/hi48-app-kgoldrunner.png
-	${CMAKE_CURRENT_SOURCE_DIR}/hi64-app-kgoldrunner.png
-	${CMAKE_CURRENT_SOURCE_DIR}/hi128-app-kgoldrunner.png
-)
-kde4_add_win32_app_icon(kgoldrunner_SRCS ${kgoldrunner_icons})
+
+kde4_add_app_icon(kgoldrunner_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-app-kgoldrunner.png")
 kde4_add_executable(kgoldrunner ${kgoldrunner_SRCS})
 
 target_link_libraries(kgoldrunner ${KDE4_KDEUI_LIBS} kdegames )
@@ -35,6 +29,7 @@ install( FILES KGoldrunner.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
 install( FILES kgoldrunnerui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kgoldrunner )
 
 kde4_install_icons( ${ICON_INSTALL_DIR} )
+
 
 
 
