@@ -42,7 +42,7 @@ IOStatus KGrGameIO::fetchGameListData
     }
 
     // Loop to read each file containing game-data.
-    foreach (const QString filename, files) {
+    foreach (const QString &filename, files) {
 	if (filename == "game_ende.txt") {
 	    continue;			// Skip the "ENDE" file.
 	}
