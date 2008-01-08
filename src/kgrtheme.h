@@ -56,7 +56,7 @@ public:
      * Prepares an image with the background variant \param variant with size
      * \param width and \param height.
      */
-    QImage background(unsigned int width, unsigned int height,
+    QPixmap background(unsigned int width, unsigned int height,
 			unsigned int variant);
     
     bool isBorderRequired() const { return themeDrawBorder; }

@@ -472,13 +472,13 @@ void KGrCanvas::loadBackground()
     int w = fillCanvas ? (this->width())  : (nCellsW * imgW);
     int h = fillCanvas ? (this->height()) : (nCellsH * imgH);
     if (theme.isWithBackground()) {
-	QImage background = theme.background(w, h, level);
+	QPixmap background = theme.background(w, h, level);
 	playfield->setBackground (true, 
-		&background, 
+		background, 
 		theme.isBorderRequired() ? topLeft : QPoint(0, 0));
     } else {
 	playfield->setBackground (true, 
-		NULL, 
+		QPixmap(), 
 		theme.isBorderRequired() ? topLeft : QPoint(0, 0));
     }
 }

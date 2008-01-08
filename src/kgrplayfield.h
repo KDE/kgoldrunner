@@ -37,7 +37,7 @@ public:
     void setTile (int x, int y, int tilenum);
     
     /** Set the background for the playground */
-    void setBackground (const bool create, const QImage * background,
+    void setBackground (const bool create, const QPixmap &background,
 				const QPoint & tl);
     
     /** 

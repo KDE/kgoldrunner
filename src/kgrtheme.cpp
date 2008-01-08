@@ -110,25 +110,50 @@ bool KGrTheme::load(const QString& themeFilepath)
     return true;
 }
 
-QImage KGrTheme::background(unsigned int width, unsigned int height,
+void renderBackground(QPainter &painter, QSvgRenderer &svgSet, int variant, int numBackgrounds)
+{
+    variant %= numBackgrounds;
+    QString backgroundName = "background%1";
+    kDebug() << "Trying to load background" << backgroundName.arg(variant);
+    if (svgSet.elementExists(backgroundName.arg(variant))) 
+	svgSet.render(&painter, backgroundName.arg(variant));
+    else if (svgSet.elementExists("background")) 
+	svgSet.render(&painter, "background");
+}
+
+QPixmap KGrTheme::background(unsigned int width, unsigned int height,
 				unsigned int variant)
 {
+    KConfigGroup group(KGlobal::config(), "Debugging");
+    bool usePixmap = (atoi(getenv("KGOLDRUNNER_USE_PIXMAPS")) > 0);
+    QTime t;
+    t.restart();
+    QPixmap pixmap;
+    //for (int i = 0; i < 5; i++) {
     if ((width != 0) && (height != 0) && 
 	    (backgroundGraphics == SVG) && numBackgrounds > 0) {
-	QImage background(width, height, QImage::Format_ARGB32_Premultiplied);
-	background.fill(0);
-	QPainter painter(&background);
-	variant %= numBackgrounds;
-	QString backgroundName = "background%1";
-	kDebug() << "Trying to load background" << backgroundName.arg(variant);
-	if (svgSet.elementExists(backgroundName.arg(variant))) 
-	    svgSet.render(&painter, backgroundName.arg(variant));
-	else if (svgSet.elementExists("background")) 
-	    svgSet.render(&painter, "background");
-	painter.end();
-	return background;
+	QPainter painter;
+	if (usePixmap) {
+	    qDebug() << "usePixmap";
+	    QPixmap backgroundPixmap(width, height);
+	    painter.begin(&backgroundPixmap);
+	    backgroundPixmap.fill(Qt::black);
+	    renderBackground(painter, svgSet, variant, numBackgrounds);
+	    painter.end();
+	    pixmap = backgroundPixmap;
+	} else {
+	    qDebug() << "do not usePixmap";
+	    QImage backgroundImage(width, height, QImage::Format_ARGB32_Premultiplied);
+	    backgroundImage.fill(0);
+	    painter.begin(&backgroundImage);
+	    renderBackground(painter, svgSet, variant, numBackgrounds);
+	    painter.end();
+	    pixmap = QPixmap::fromImage(backgroundImage);
+	}
     }
-    return QImage();
+    //}
+    qDebug() << "background took" << t.elapsed() << "ms to render";
+    return pixmap;
 }
 
 QList<QPixmap> KGrTheme::hero(unsigned int size)
@@ -150,39 +175,39 @@ QList<QPixmap> KGrTheme::enemy(unsigned int size)
     return frames;
 }
 
-QList<QPixmap> KGrTheme::svgFrames (const QString &elementPattern,
+QList<QPixmap> KGrTheme::svgFrames(const QString &elementPattern,
 					unsigned int size, int nFrames)
 {
-    QImage img (size, size, QImage::Format_ARGB32_Premultiplied);
+    QImage img(size, size, QImage::Format_ARGB32_Premultiplied);
     QRectF bounds = img.rect();
     QPainter q;
     bounds.adjust(-0.5, -0.5, 0.5, 0.5);
     QList<QPixmap> frames;
     for (int i = 1; i <= nFrames; i++) {
 	QString s = elementPattern.arg(i);	// e.g. "hero_1", "hero_2", etc.
-	img.fill (0);
+	img.fill(0);
 	q.begin(&img);
 	if (svgActors.elementExists(s)) {
-	    svgActors.render (&q, s, bounds);
+	    svgActors.render(&q, s, bounds);
 	}else {
 	    // The theme does not contain the needed element.
 	    kWarning() << "The needed element" << s << "is not in the theme.";
 	}
 	q.end();
-	frames.append (QPixmap::fromImage (img));
+	frames.append(QPixmap::fromImage(img));
     }
     return frames;
 }
 
-QPixmap KGrTheme::svgTile (QImage & img, QPainter & q, const QString & name)
+QPixmap KGrTheme::svgTile(QImage & img, QPainter & q, const QString & name)
 {
-    q.begin (&img);
-    img.fill (0);
+    q.begin(&img);
+    img.fill(0);
     
     QRectF bounds = img.rect();
     bounds.adjust(-0.5, -0.5, 0.5, 0.5);
     if (svgSet.elementExists(name)) {
-	svgSet.render (&q, name, bounds);
+	svgSet.render(&q, name, bounds);
     } else if (svgActors.elementExists(name)) {
 	svgActors.render(&q, name, bounds);
     } else {
@@ -190,7 +215,7 @@ QPixmap KGrTheme::svgTile (QImage & img, QPainter & q, const QString & name)
 	kWarning() << "The needed element" << name << "is not in the theme.";
     }
     q.end();
-    return QPixmap::fromImage (img);
+    return QPixmap::fromImage(img);
 }
 
 QList<QPixmap> KGrTheme::tiles(unsigned int size)
