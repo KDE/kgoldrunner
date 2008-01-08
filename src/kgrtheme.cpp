@@ -31,10 +31,12 @@ KGrTheme::KGrTheme(const QString &systemDataDir) :
 	backgroundGraphics(NONE),
 	runnerGraphics(NONE),
 	numBackgrounds(0),
-	hasPanelTiles(false)
+	hasPanelTiles(false),
+	useDirectPixmaps(false)
 {
     KConfigGroup group(KGlobal::config(), "Debugging");
-    useDirectPixmaps = (atoi(getenv("KGOLDRUNNER_USE_PIXMAPS")) > 0);
+    char *val = getenv("KGOLDRUNNER_USE_PIXMAPS");
+    if (val) useDirectPixmaps = (atoi(val) > 0);
 }
 
 bool KGrTheme::load(const QString& themeFilepath)
