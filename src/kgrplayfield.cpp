@@ -20,17 +20,16 @@
 #include <KDebug>
 
 KGrPlayField::KGrPlayField( KGameCanvasAbstract* canvas )
-    : KGameCanvasGroup(canvas)
+    : KGameCanvasGroup(canvas), m_tileset(0), m_background(0)
 {
-    m_background = 0;
     show();
 }
 
 KGrPlayField::~KGrPlayField()
 {
     // Clear all stored data.
-    while (!m_tilesprites.isEmpty())
-            delete m_tilesprites.takeFirst();
+    while (!m_tilesprites.isEmpty()) 
+	delete m_tilesprites.takeFirst();
     delete m_background;
 }
 
