@@ -99,6 +99,7 @@ private:
     GraphicsType runnerGraphics;
     int numBackgrounds;
     bool hasPanelTiles;
+    bool useDirectPixmaps;
 };
 
 #endif // KGRTHEME_H

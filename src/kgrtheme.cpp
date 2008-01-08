@@ -33,6 +33,8 @@ KGrTheme::KGrTheme(const QString &systemDataDir) :
 	numBackgrounds(0),
 	hasPanelTiles(false)
 {
+    KConfigGroup group(KGlobal::config(), "Debugging");
+    useDirectPixmaps = (atoi(getenv("KGOLDRUNNER_USE_PIXMAPS")) > 0);
 }
 
 bool KGrTheme::load(const QString& themeFilepath)
@@ -110,6 +112,7 @@ bool KGrTheme::load(const QString& themeFilepath)
     return true;
 }
 
+// Helper function 
 void renderBackground(QPainter &painter, QSvgRenderer &svgSet, int variant, int numBackgrounds)
 {
     variant %= numBackgrounds;
@@ -124,8 +127,6 @@ void renderBackground(QPainter &painter, QSvgRenderer &svgSet, int variant, int 
 QPixmap KGrTheme::background(unsigned int width, unsigned int height,
 				unsigned int variant)
 {
-    KConfigGroup group(KGlobal::config(), "Debugging");
-    bool usePixmap = (atoi(getenv("KGOLDRUNNER_USE_PIXMAPS")) > 0);
     QTime t;
     t.restart();
     QPixmap pixmap;
@@ -133,8 +134,7 @@ QPixmap KGrTheme::background(unsigned int width, unsigned int height,
     if ((width != 0) && (height != 0) && 
 	    (backgroundGraphics == SVG) && numBackgrounds > 0) {
 	QPainter painter;
-	if (usePixmap) {
-	    qDebug() << "usePixmap";
+	if (useDirectPixmaps) {
 	    QPixmap backgroundPixmap(width, height);
 	    painter.begin(&backgroundPixmap);
 	    backgroundPixmap.fill(Qt::black);
@@ -142,7 +142,6 @@ QPixmap KGrTheme::background(unsigned int width, unsigned int height,
 	    painter.end();
 	    pixmap = backgroundPixmap;
 	} else {
-	    qDebug() << "do not usePixmap";
 	    QImage backgroundImage(width, height, QImage::Format_ARGB32_Premultiplied);
 	    backgroundImage.fill(0);
 	    painter.begin(&backgroundImage);
@@ -178,24 +177,49 @@ QList<QPixmap> KGrTheme::enemy(unsigned int size)
 QList<QPixmap> KGrTheme::svgFrames(const QString &elementPattern,
 					unsigned int size, int nFrames)
 {
-    QImage img(size, size, QImage::Format_ARGB32_Premultiplied);
-    QRectF bounds = img.rect();
     QPainter q;
-    bounds.adjust(-0.5, -0.5, 0.5, 0.5);
     QList<QPixmap> frames;
-    for (int i = 1; i <= nFrames; i++) {
-	QString s = elementPattern.arg(i);	// e.g. "hero_1", "hero_2", etc.
-	img.fill(0);
-	q.begin(&img);
-	if (svgActors.elementExists(s)) {
-	    svgActors.render(&q, s, bounds);
-	}else {
-	    // The theme does not contain the needed element.
-	    kWarning() << "The needed element" << s << "is not in the theme.";
+    QRectF bounds(0, 0, size, size);
+    bounds.adjust(-0.5, -0.5, 0.5, 0.5);
+
+    QTime t;
+    t.restart();
+    //for (int j = 0; j < 10; j++) {
+
+    if (useDirectPixmaps) {
+	QPixmap pix(size, size);
+	for (int i = 1; i <= nFrames; i++) {
+	    QString s = elementPattern.arg(i);	// e.g. "hero_1", "hero_2", etc.
+	    pix.fill(QColor(0, 0, 0, 0));
+	    q.begin(&pix);
+	    if (svgActors.elementExists(s)) {
+		svgActors.render(&q, s, bounds);
+	    }else {
+		// The theme does not contain the needed element.
+		kWarning() << "The needed element" << s << "is not in the theme.";
+	    }
+	    q.end();
+	    frames.append(pix);
 	}
-	q.end();
-	frames.append(QPixmap::fromImage(img));
+
+    } else {
+	QImage img(size, size, QImage::Format_ARGB32_Premultiplied);
+	for (int i = 1; i <= nFrames; i++) {
+	    QString s = elementPattern.arg(i);	// e.g. "hero_1", "hero_2", etc.
+	    img.fill(0);
+	    q.begin(&img);
+	    if (svgActors.elementExists(s)) {
+		svgActors.render(&q, s, bounds);
+	    }else {
+		// The theme does not contain the needed element.
+		kWarning() << "The needed element" << s << "is not in the theme.";
+	    }
+	    q.end();
+	    frames.append(QPixmap::fromImage(img));
+	}
     }
+    //}
+    qDebug() << "rendering frames took " << t.elapsed() << "ms";
     return frames;
 }
 
