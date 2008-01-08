@@ -83,7 +83,7 @@ KGrGame::KGrGame (KGrCanvas * theView,
     connect (hero, SIGNAL (gotNugget(int)),   SLOT (incScore(int)));
     connect (hero, SIGNAL (caughtHero()),     SLOT (herosDead()));
     connect (hero, SIGNAL (haveAllNuggets()), SLOT (showHiddenLadders()));
-    connect (hero, SIGNAL (leaveLevel()),     SLOT (goUpOneLevel()));
+    connect (hero, SIGNAL (leaveLevel()),     SLOT (levelCompleted()));
 
     dyingTimer = new QTimer (this);
     connect (dyingTimer, SIGNAL (timeout()),  SLOT (finalBreath()));
@@ -308,9 +308,17 @@ void KGrGame::showHiddenLadders()
 	((KGrHladder *)playfield[j][i])->showLadder();
   initSearchMatrix();
 }
+
+void KGrGame::levelCompleted()
+{
+    connect(view, SIGNAL(fadeFinished()), this, SLOT(goUpOneLevel()));
+    view->fadeOut();
+}
+
 // 
 void KGrGame::goUpOneLevel()
 {
+    disconnect(view, SIGNAL(fadeFinished()), this, SLOT(goUpOneLevel()));
     lives++;			// Level completed: gain another life.
     emit showLives (lives);
     incScore (1500);

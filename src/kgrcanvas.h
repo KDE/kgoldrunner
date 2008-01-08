@@ -76,6 +76,7 @@ public:
 signals:
 	void mouseClick (int);
 	void mouseLetGo (int);
+	void fadeFinished();
 
 protected:
 	virtual void mousePressEvent ( QMouseEvent * mouseEvent );

@@ -78,9 +78,11 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
 
     m_spotLight = new KGameCanvasPicture(this);
     m_fadingTimeLine.setCurveShape(QTimeLine::LinearCurve);
-    m_fadingTimeLine.setUpdateInterval( 80 );
+    m_fadingTimeLine.setUpdateInterval(60);
     connect(&m_fadingTimeLine, SIGNAL(valueChanged(qreal)),
 		this, SLOT(drawSpotLight(qreal)));
+    connect(&m_fadingTimeLine, SIGNAL(finished()),
+		this, SIGNAL(fadeFinished()));
 }
 
 KGrCanvas::~KGrCanvas()
@@ -564,7 +566,8 @@ void KGrCanvas::drawSpotLight(qreal value)
     qreal y = qreal(topLeft.y());
     qreal dh = 0.5 * ::sqrt(w * w + h * h);
 
-    QPainter p(&picture);
+    QPainter p;
+    p.begin(&picture);
     if (value < 0.01) {
 	// Draw a solid black background if the circle would be too small/
 	p.fillRect(QRectF(x, y, w, h), QColor(0, 0, 0, 255));

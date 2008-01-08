@@ -88,7 +88,8 @@ public slots:
     void incScore(int);			// Update the score.
     void herosDead();			// Hero was caught or he quit (key Q).
     void showHiddenLadders();		// Show hidden ladders (nuggets gone).
-    void goUpOneLevel();		// Hero completed the level.
+    void levelCompleted();		// Hero completed the level.
+    void goUpOneLevel();		// Start next level.
     void loseNugget();			// Nugget destroyed (not collected).
     void heroAction (KBAction movement);// Move hero under keyboard control.
 
