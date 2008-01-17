@@ -85,6 +85,9 @@ protected:
     bool queryClose ();		// To save edits before closing.
 
 private slots:
+    // An extension of the constructor.  Gives us two scans of the event queue.
+    void KGoldrunner_2();
+
     // Slot to pause or restart the game.
     void stopStart();
 

@@ -55,6 +55,7 @@ public:
     KGrHero * getHero();
 
     void quickStartDialog();
+    void setInitialTheme (const QString & themeFilepath);
 
     int getLevel();
 
@@ -73,6 +74,8 @@ public:
     QString getDirectory (Owner o);
 
 public slots:
+    void initGame();			// Do the game object's first painting.
+
     void startLevelOne();		// Start any game from level 1.
     void startAnyLevel();		// Start any game from any level.
     void startNextLevel();		// Start next level of current game.
@@ -113,6 +116,7 @@ signals:
 
 private:
     KDialog * qs;			// Pointer to Quick Start dialog box.
+    QString initialThemeFilepath;
 
 private slots:
     void quickStartPlay();

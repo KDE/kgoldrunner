@@ -31,11 +31,12 @@
 KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
 			const QString & systemDataDir)
 			: KGameCanvasWidget (parent),
+			  firstSceneDrawn (false),
 			  topLeft (0, 0), bgw (4 * STEP), bgh (4 * STEP),
 			  m_fadingTimeLine(1000, this),
 			  theme(systemDataDir)
 {
-    resizeCount = 0;		// Do not render or paint until resize is done.
+    resizeCount = 0;		// IDW
 
     kDebug() << "Called KGrCanvas::KGrCanvas ..." << this->size();
     m = new QCursor ();		// For handling the mouse.
@@ -116,7 +117,7 @@ void KGrCanvas::fadeOut()
 void KGrCanvas::drawTheScene (bool changePixmaps)
 {
     t.restart();
-    kDebug() << 0 << "msec.  Start KGrCanvas::drawTheScene";
+    kDebug() << 0 << "msec.  Start drawTheScene";
 
     // The pixmaps for tiles and sprites have to be re-loaded
     // if and only if the theme or the cell size has changed.
@@ -126,7 +127,7 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
     // has changed and the bg must fill it (! themeDrawBorder).
 
     double scale = (double) imgW / (double) bgw;
-    kDebug() << "Called KGrCanvas::drawTheScene() - Images:" << imgW<<"x"<<imgH;
+    kDebug() << "Images:" << imgW<<"x"<<imgH;
     if (imgW == 0) {
         return;
     }
@@ -142,7 +143,7 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
 	    }
 	}
     }
-    kDebug() << t.restart() << "msec.  Tiles and background rendered.";
+    kDebug() << t.restart() << "msec.  Tiles + background done.";
 
     /* ******************************************************************** */
     /* The pixmaps for hero and enemies are arranged in strips of 36: walk  */
@@ -159,7 +160,7 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
 	*heroFrames << theme.hero(imgH);
 	*enemyFrames << theme.enemy(imgH);
     }
-    kDebug() << t.restart() << "msec.  Hero and enemies rendered.";
+    kDebug() << t.restart() << "msec.  Hero + enemies done.";
 
     int spriteframe;
     QPoint spriteloc;
@@ -190,7 +191,7 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
 	    }
 	}
     }
-    kDebug() << t.restart() << "msec.  Finish KGrCanvas::drawTheScene";
+    kDebug() << t.restart() << "msec.  Finished drawTheScene.";
 
     // Recreate the border.
     makeBorder ();
@@ -199,6 +200,10 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
     QString t = title->text();
     makeTitle ();
     setTitle (t);
+
+    // When the initial resizing, rendering and painting has been done,
+    // future resizes and re-rendering will be caused by end-user activity.
+    firstSceneDrawn = true;
 }
 
 bool KGrCanvas::changeTheme (const QString & themeFilepath)
@@ -206,16 +211,15 @@ bool KGrCanvas::changeTheme (const QString & themeFilepath)
     t.restart();
     kDebug() << 0 << "msec.  New Theme -" << themeFilepath;
     bool success = theme.load(themeFilepath);
+    kDebug() << t.restart() << "msec.  Finish loading new theme.";
     if (success) {
 	// Use the border color to fill empty rectangles during partial
         // repaints and soften their contrast with the rest of the picture.
 	setPalette(QPalette(theme.borderColor()));
 	setAutoFillBackground(true);
-    }
-    kDebug() << t.restart() << "msec.  Finish loading new theme.";
-    if (success && (resizeCount > 0)) {	// If startup, do not render or paint.
+
 	const bool changePixmaps = true;
-	drawTheScene (changePixmaps);	// Not startup, so re-draw play-area.
+	drawTheScene (changePixmaps);
     }
     return success;
 }
@@ -223,17 +227,10 @@ bool KGrCanvas::changeTheme (const QString & themeFilepath)
 void KGrCanvas::resizeEvent (QResizeEvent * event )
 {
     resizeCount++;
-    kDebug()<< "KGrCanvas::resizeEvent:" << resizeCount << event->size();
-    kDebug() << "Resize pending?" << QWidget::testAttribute (Qt::WA_PendingResizeEvent);
-    // To reduce overheads, re-render only when no later resize is scheduled.
-    if (QWidget::testAttribute (Qt::WA_PendingResizeEvent))  {
-	return;
-    }
+    kDebug()<< "RESIZE:" << resizeCount << event->size() <<
+      "Resize pending?" << QWidget::testAttribute (Qt::WA_PendingResizeEvent) <<
+      "Spontaneous?" << event->spontaneous();
 
-    // When we get here for the first time, the initial SVG theme has been
-    // loaded, but, to save overheads, it has not been rendered or painted.
-
-    t.start(); // IDW
     double w = (double) event->size().width()  / (nCellsW + border);
     double h = (double) event->size().height() / (nCellsH + border);
     int cellSize = (w < h) ? (int) (w + 0.05) : (int) (h + 0.05);
@@ -247,8 +244,14 @@ void KGrCanvas::resizeEvent (QResizeEvent * event )
     oldImgW = imgW;
     oldImgH = imgH;
 
-    drawTheScene (changePixmaps);
-    QWidget::resizeEvent (event);
+    // The first 1, 2 or 3 resize events are caused by KMainWindow and friends,
+    // so do not re-scale, render-SVG or re-draw until they are over.  After
+    // that, any resize events are caused by the end-user and we must re-scale,
+    // render-SVG and re-draw each time.
+    if (firstSceneDrawn) {
+        drawTheScene (changePixmaps);
+        QWidget::resizeEvent (event);
+    }
 }
 
 void KGrCanvas::paintCell (int x, int y, char type, int offset)

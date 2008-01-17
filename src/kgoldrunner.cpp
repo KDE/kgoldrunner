@@ -155,15 +155,30 @@ KGoldrunner::KGoldrunner()
     // Set mouse control of the hero as the default.
     game->setMouseMode (true);
 
-    // Paint the main widget (title, menu, status bar, blank playfield).
-    show();
-
-    // Queue a call to the "New Game" method, with default parameters. This
-    // paints a config'd game and level, but only AFTER the main window shows.
-    QMetaObject::invokeMethod(game, "newGame", Qt::QueuedConnection);
+    // Do NOT paint main widget yet (title, menu, status bar, blank playfield).
+    // Instead, queue a call to the "KGoldrunner_2" constructor extension.
+    QMetaObject::invokeMethod(this, "KGoldrunner_2", Qt::QueuedConnection);
+    kDebug() << "QMetaObject::invokeMethod(this, \"KGoldrunner_2\") done ... ";
 
     // Show buttons to start the config'd game and level and other options.
     game->quickStartDialog();
+    kDebug() << "game->quickStartDialog() done ... ";
+    kDebug() << "1st scan of event-queue ...";
+}
+
+void KGoldrunner::KGoldrunner_2()
+{
+    kDebug() << "Entered constructor extension ...";
+    // NOW paint the main widget (title, menu, status bar, blank playfield).
+    show();
+    kDebug() << "Main Window show() done here ...";
+
+    // Queue a call to the "initGame" method. This renders and paints the
+    // initial graphics, but only AFTER the initial main-window resize events
+    // have been seen and the final SVG scale is known.
+    QMetaObject::invokeMethod(game, "initGame", Qt::QueuedConnection);
+    kDebug() << "QMetaObject::invokeMethod(game, \"initGame\") done ... ";
+    kDebug() << "2nd scan of event-queue ...";
 }
 
 KGoldrunner::~KGoldrunner()
@@ -627,9 +642,8 @@ void KGoldrunner::setupThemes ()
 	     (filepath.indexOf ("default") >= 0)) ||
 	    ((filepath == themeFilepaths.last()) &&
 	     (themeGroup->checkedAction() == 0))) {	// or last in the list,
-	    if (view->changeTheme (filepath)) {		// tell graphics init.
-		newTheme->setChecked (true);		// and mark it as chosen
-	    }
+	    game->setInitialTheme (filepath);		// tell graphics init.
+	    newTheme->setChecked (true);		// and mark it as chosen
 	}
 
 	connect (newTheme, SIGNAL(triggered (bool)), themeMapper, SLOT(map ()));

@@ -103,6 +103,20 @@ KGrGame::~KGrGame()
 	delete collections.takeFirst();
 }
 
+void KGrGame::setInitialTheme (const QString & themeFilepath)
+{
+    initialThemeFilepath = themeFilepath;
+}
+
+void KGrGame::initGame()
+{
+    kDebug() << "Entered, draw the initial graphics now ...";
+    kDebug() << "Calling the first view->changeTheme() ...";
+    view->changeTheme (initialThemeFilepath);
+
+    newGame();
+}
+
 /******************************************************************************/
 /**********************  QUICK-START DIALOG AND SLOTS  ************************/
 /******************************************************************************/

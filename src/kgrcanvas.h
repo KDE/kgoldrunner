@@ -88,6 +88,8 @@ private slots:
 	void drawSpotLight(qreal value);
 
 private:
+        bool firstSceneDrawn;		// Set AFTER the initial resize events.
+
 	QCursor * m;			// Mouse cursor.
 	KGrPlayField * playfield;	// Array of tiles where runners can run.
 
