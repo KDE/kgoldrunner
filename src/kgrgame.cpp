@@ -111,10 +111,39 @@ void KGrGame::setInitialTheme (const QString & themeFilepath)
 void KGrGame::initGame()
 {
     kDebug() << "Entered, draw the initial graphics now ...";
+
+    // Get the most recent collection and level that was played by this user.
+    // If he/she has never played before, set it to Tutorial, level 1.
+    KConfigGroup gameGroup (KGlobal::config(), "KDEGame"); // Get prev game.
+    QString prevGamePrefix = gameGroup.readEntry ("GamePrefix", "tute");
+    int prevLevel = gameGroup.readEntry ("Level_" + prevGamePrefix, 1);
+    kDebug()<< "Config() Game and Level" << prevGamePrefix << prevLevel;
+
+    // Use that collection and level, if it is among the current collections.
+    int n = 0;
+    collnIndex = -1;
+    foreach (collection, collections) {
+	if (collection->prefix == prevGamePrefix) {
+	    collnIndex = n;
+	    level = prevLevel;
+	    break;
+	}
+	n++;
+    }
+
+    // If not found, set the first collection in the list and level 1.
+    if (collnIndex < 0) {
+	collnIndex = 0;
+	level = 1;
+    }
+
+    collection = collections.at (collnIndex);
+
     kDebug() << "Calling the first view->changeTheme() ...";
     view->changeTheme (initialThemeFilepath);
 
-    newGame();
+    emit markRuleType (collection->settings);
+    newGame (level, collnIndex);
 }
 
 /******************************************************************************/
@@ -490,13 +519,6 @@ void KGrGame::newGame (const int lev, const int gameIndex)
 
     newLevel = true;
 
-    // During startup, kgoldrunner.cpp makes a queued call to game->newGame and
-    // the default parameters are (-1, -1), so in that case we load the game and
-    // level already read from KConfig by initCollections(), for a quick start.
-    if (lev >= 0) {
-	level = lev;			// Not default, so use the parameters.
-	collnIndex = gameIndex;
-    }
     collection = collections.at (collnIndex);
     owner = collection->owner;
 
@@ -2599,29 +2621,6 @@ bool KGrGame::initCollections ()
 						// If none, don't worry.
 
     // DISABLED by IDW  mapCollections();	// Check ".grl" file integrity.
-
-    // Set the default collection of levels (first in the list) and the level.
-    collnIndex = 0;
-    level = 1;
-
-    // Get the most recent collection and level that was played by this user.
-    // If he/she has never played before, set it to Tutorial, level 1.
-    KConfigGroup gameGroup (KGlobal::config(), "KDEGame"); // Get prev game.
-    QString prevGamePrefix = gameGroup.readEntry ("GamePrefix", "tute");
-    int prevLevel = gameGroup.readEntry ("Level_" + prevGamePrefix, 1);
-
-    // Use that collection and level, if it is among the current collections.
-    int n = 0;
-    foreach (collection, collections) {
-	if (collection->prefix == prevGamePrefix) {
-	    collnIndex = n;
-	    level = prevLevel;
-	    break;
-	}
-	n++;
-    }
-    collection = collections.at (collnIndex);
-    kDebug()<< "Config() Game and Level" << prevGamePrefix << prevLevel << collnIndex;
 
     return (true);
 }

@@ -82,7 +82,7 @@ public slots:
 
     void setMouseMode (bool on_off);	// Set mouse OR keyboard control.
     void startLevel (int startingAt, int requestedLevel);
-    void newGame (const int lev = -1, const int gameIndex = -1);
+    void newGame (const int lev, const int gameIndex);
     void startTutorial();		// Start tutorial game.
     void showHint();			// Show hint for current level.
 
