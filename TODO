@@ -1,21 +1,94 @@
-KGoldrunner v2.0 - TODO
+KGoldrunner v3.1 - TODO (for KDE 4.1?)
+--------------------------------------
+
+Revised 21 Jan 2008
+
+
+Done in KDE 4.0 release
 -----------------------
 
-Some ideas for the future:-
+ 2. Option to repeat last level, with 5 new lives, after "Game Over".
+    Ian Comment: DONE.
 
-  1.  Port KGoldrunner to other O/S's, such as MS Windows and Mac.
-      Although KGoldrunner v2.0, as released with the KDE desktop, is
-      a KDE-based application and is not portable, KGoldrunner v2.0-qt,
-      as configured for Qt 3.x library and compiled with -DKGR_PORTABLE,
-      has very small dependence on the KDE desktop (i.e. locations of
-      directories only).  Because Qt 3 is intended to be portable to
-      MS Windows and Mac, so should KGoldrunner v2.0-qt be.  However Qt
-      development licences are NOT free on non-UNIX type O/S's.
+ 3. Clean up and speed up the themes we ship 
+    Ian Comment: Old KDE 3/2/1 themes have been dropped.  KGr now has 6
+    excellent SVG themes for KDE 4, including new Black-and-White and Egypt
+    themes. But Geek City especially needs work (Eugene?): DONE
 
-  2.  Add sounds for hero actions such as falling, collecting a nugget,
-      getting killed and completing a level.
+ 4. Update the documentation, hints and messages.
+    Ian Comment: Hints and game data DONE.  Doco and *.cpp messages DONE.
 
-  3.  Design and program extra game objects, such as movable bricks,
+ 5. Dialog facelifts.  Ian Comment: DONE.
+
+
+
+To do in post-KDE 4.0 releases:
+-------------------------------
+
+ 1. Removal of the "game over" dialog.
+    Luciano Comment: I wanted to use the gamepopup stuff for that instead,
+    but it's for QGraphicsView, I think, so we'll have to emulate it for the
+    GameCanvas.  I find the dialog to be irritating in the context.
+
+3a. Re-organization of resize, re-load, re-render and re-paint: DONE
+    Need to try using KPixmapCache to speed startup, after the first KGoldrunner
+    session and maybe also the maximize/full-screen/restore sequence.
+
+ 6. Fix the KScoreDialog in libkdegames so that it works well for KGoldrunner,
+    and write the conversion scripts for the old score files.
+    Ian Comment: Facelift of old KGr highscore dialog DONE, including
+    removing a redundant message box and having "-" as default player
+    name (for Mauricio ;-)).
+
+ 7. In-canvas game information (what's now in the status bar): score, level,
+    number of lives, with a nice font - large and readable ...
+    Ian Comment: Imo the status bar has become very vanilla in KDE 4 and not
+    as useful (for KGr) as it was in KDE 2-3.
+
+ 8. A startup screen, somewhat similar to the Konqueror Help->Introduction page,
+    with some common actions.  This would replace the Quick Start dialog and
+    fill the central widget during the time the main graphics is loading.
+
+ 9. New game-engine ... making possible ...
+
+10. More accurate pause/resume.
+
+11. Save and reload at any instant in a game.
+
+12. Record and replay games.
+
+13. Run demos ... especially at startup or as hints for difficult levels.
+
+14. Hot-new-stuff support for themes and game sets.
+
+15. Sounds.
+    Ian Comment: Our sound man (my son Peter) is ready.  He also composed many
+    of the levels in KGr when he was about 13.  The price of his work is a
+    copy of KGr working on Apple OS X ... a problem as yet unsolved.
+
+16. Registration of high-scores on the Internet, incl. country of origin.
+
+17. Use of recordings to authenticate Internet high scores.
+
+18. Integration of the Scavenger game (180 new levels) and its rule-set.  This
+    would also involve allowing different grid dimensions for different games,
+    as a feature of the new game engine.
+
+19. Better support for beginners, such as graphical cues for false bricks
+    and hidden ladders, extra messages with "don't tell me this again", etc.
+
+20. Animations for death of hero and digging (e.g. death ray from enemy
+    to hero and laser beam from hero to brick).
+
+21. Much more use of KConfig classes, e.g. to remember last game and level.
+    Ian Comment: Partly DONE in KDE 4.0.
+
+
+
+Some ideas for the future:
+--------------------------
+
+  A.  Design and program extra game objects, such as movable bricks,
       water, teleportation exits and aquatic enemies.
 
       Movable bricks would be pushed up or sideways or would fall into
@@ -33,12 +106,8 @@ Some ideas for the future:-
       Aquatic enemies would just make life more difficult for the hero
       in the water.  Maybe there could be amphibian enemies too.
 
-  4.  A full screen mode.
-
-  5.  Get rid of the blocking dialogs, at least the most annoying ones, like
-      the "Game over" dialog.
-
-  6.  Record and replay of played levels. This would be handy to offer a demo
-      mode also.
-
-  7.  Hot New Stuff support for levels and themes.
+  B.  Fancier graphics that are less grid-restricted, e.g. bricks that can
+      be scissored out of a large, non-repetitive "wall" section, and trim
+      that can be added to floor elements, ladders and empty space, to give
+      them a more natural look, such as grass, plants, small trees and
+      proper tops and bottoms for ladders.
