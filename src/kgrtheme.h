@@ -30,6 +30,10 @@
 class KGrTheme
 {
 public:
+    /**
+     * Default constructor.
+     * \param[in] systemDataDir The system data dir is used to calculate the theme data directory.
+     */
     KGrTheme(const QString &systemDataDir);
 
     /** 
@@ -38,27 +42,36 @@ public:
     bool load(const QString & themeFilepath);
     
     /**
-     * Given the tile size \param size, returns the list of themed tiles.
+     * Given the tile size, returns the list of themed tiles.
+     * \param[in] size The tile size
      */
     QList<QPixmap> tiles(unsigned int size);
     
     /**
-     * Given the tile size \param size, returns the list of hero frames.
+     * Given the tile size, returns the list of hero frames.
+     * \param[in] size The tile size
      */
     QList<QPixmap> hero(unsigned int size);
     
     /**
-     * Given the tile size \param size, returns the list of enemy frames.
+     * Given the tile size, returns the list of enemy frames.
+     * \param[in] size The tile size.
      */
     QList<QPixmap> enemy(unsigned int size);
     
     /**
-     * Prepares an image with the background variant \param variant with size
-     * \param width and \param height.
+     * Prepares an image with the background, given the desired width and height and background variant.
+     * \param[in] variant The background variant you wish to use.
+     * \param[in] width The desired width of the background.
+     * \param[in] height The desired height of the background.
      */
     QPixmap background(unsigned int width, unsigned int height,
 			unsigned int variant);
     
+    /**
+     * Is a border required for this theme?
+     * \returns true if a border is required for this theme.
+     */
     bool isBorderRequired() const { return themeDrawBorder; }
     
     /**

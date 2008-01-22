@@ -31,24 +31,30 @@ class KGrCanvas;
 class KGrObject;
 class KGrEnemy;
 
+/**
+ * Generic class for game figures (hero and enemies).
+ */
 class KGrFigure : public QObject
 {
   Q_OBJECT
 public:
+  /**
+   * Default constructor
+     */
   KGrFigure (int, int);
   virtual ~KGrFigure();
 
   // STATIC GLOBAL FLAGS.
-  static bool variableTiming;		// More enemies imply less speed.
-  static bool alwaysCollectNugget;	// Enemies always collect nuggets.
-  static bool runThruHole;		// Enemy can run L/R through dug hole.
-  static bool reappearAtTop;		// Enemies are reborn at top of screen.
-  static SearchStrategy searchStrategy;	// Low, medium or high difficulty.
+  static bool variableTiming;		///< More enemies imply less speed.
+  static bool alwaysCollectNugget;	///< Enemies always collect nuggets.
+  static bool runThruHole;		///< Enemy can run L/R through dug hole.
+  static bool reappearAtTop;		///< Enemies are reborn at top of screen.
+  static SearchStrategy searchStrategy;	///< Low, medium or high difficulty.
 
-  static Timing fixedTiming;		// Original set of 6 KGr timing values.
+  static Timing fixedTiming;		///< Original set of 6 KGr timing values.
 
-  static Timing varTiming [6];		// Optional 6 sets of timing values,
-					// dependent on number of enemies.
+  static Timing varTiming [6];		///< Optional 6 sets of timing values,
+					///< dependent on number of enemies.
   int getx();
   int gety();
   Status getStatus();
@@ -98,6 +104,9 @@ protected:
   bool fallFrozen;
 };
 
+/**
+ * Class to draw and control the hero (main player character)
+ */
 class KGrHero : public KGrFigure
 {
   Q_OBJECT
@@ -149,6 +158,9 @@ signals:
   void caughtHero();
 };
 
+/**
+ * Class to draw and control the enemies.
+ */
 class KGrEnemy : public KGrFigure
 {
   Q_OBJECT

@@ -30,7 +30,14 @@
 class KGrPlayField : public KGameCanvasGroup
 {
 public:
+    /**
+     * Constructor
+     */
     explicit KGrPlayField (KGameCanvasAbstract* canvas = NULL);
+
+    /**
+     * Destructor
+     */
     ~KGrPlayField();
 
     /** Set the tile at grid position (x, y) to be tilenum */
@@ -42,10 +49,12 @@ public:
     
     /** 
      * Set the tileset to use for the playfield and clear it to the background. 
-     * The origin relative to the canvas is passed in \param topLeft, the
-     * number of tiles the playground is composed of are passed in \param h and
-     * \param v, and \param tileWidth and \tileHeight contain the size of the
-     * single tile.
+     * \param[in] topLeft The origin relative to the canvas.
+     * \param[in] h Playground height, in number of tiles
+     * \param[in] v Playground width, in number of tiles
+     * \param[in] tilewidth The width of a single tile.
+     * \param[in] tileheight The height of a single tile.
+     * \param tileset List of tiles.
      **/
     void setTiles (QList<QPixmap> * tileset, const QPoint & topLeft,
 	const int h, const int v, const int tilewidth, const int tileheight);

@@ -66,6 +66,9 @@ public:
      */
     virtual ~KGoldrunner();
 
+    /**
+     * Used to indicate if the class initialised properly.
+     */
     bool startedOK() {return (startupOK);}
 
 protected:
@@ -82,7 +85,8 @@ protected:
      */
     void readProperties(const KConfigGroup &);
 
-    bool queryClose ();		// To save edits before closing.
+    /// To save edits before closing.
+    bool queryClose ();
 
 private slots:
     // An extension of the constructor.  Gives us two scans of the event queue.
