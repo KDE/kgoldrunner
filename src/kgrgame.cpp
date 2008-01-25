@@ -518,7 +518,8 @@ void KGrGame::newGame (const int lev, const int gameIndex)
     }
 
     newLevel = true;
-
+    level = lev;
+    collnIndex = gameIndex;
     collection = collections.at (collnIndex);
     owner = collection->owner;
 
