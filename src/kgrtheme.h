@@ -30,6 +30,20 @@
 class KGrTheme
 {
 public:
+    enum TileType {
+	HiddenLadderTile,
+	FalseBrickTile,
+	HeroTile,
+	EnemyTile,
+        EmptyTile,
+	GoldTile,
+	BarTile,
+	LadderTile,
+	ConcreteTile,
+	BrickTile,
+	BrickAnimationTile,
+	TileTypeCount
+    };
     /**
      * Default constructor.
      * \param[in] systemDataDir The system data dir is used to calculate the theme data directory.
@@ -60,9 +74,10 @@ public:
     QList<QPixmap> enemy (unsigned int size);
     
     /**
-     * Prepares an image with the background, given the desired
-     * width and height and background variant.
-     * \param[in] variant The background variant you wish to use.
+     * Prepares an image with the background, given the desired width and
+     * height and background variant.
+     * \param[in] variant The background variant you wish to use. Valid values
+     * are between 0 and backgroundCount().
      * \param[in] width The desired width of the background.
      * \param[in] height The desired height of the background.
      */
@@ -85,6 +100,14 @@ public:
      */
     bool multipleBackgrounds() const { return numBackgrounds > 1; }
     
+    /**
+     * Return the number of background variants in the theme.
+     */
+    int backgroundCount() { return numBackgrounds; }
+
+    int tileCount(TileType t) { return counts[t]; }
+    int firstTile(TileType t) { return offsets[t]; }
+
     /**
      * Obtain the theme defined border color.
      */
@@ -114,6 +137,9 @@ private:
     int numBackgrounds;
     bool hasPanelTiles;
     bool useDirectPixmaps;
+
+    int counts[TileTypeCount];
+    int offsets[TileTypeCount];
 };
 
 #endif // KGRTHEME_H

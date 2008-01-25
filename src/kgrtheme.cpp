@@ -261,16 +261,41 @@ QList<QPixmap> KGrTheme::tiles (unsigned int size)
         QImage img (size, size, QImage::Format_ARGB32_Premultiplied);
         QPainter painter;
 
-        list.append (svgTile (img, painter, "empty"));
-        list.append (svgTile (img, painter, "gold"));
-        list.append (svgTile (img, painter, "bar"));
-        list.append (svgTile (img, painter, "ladder"));
-        list.append (svgTile (img, painter, "hidden_ladder"));
-        list.append (svgTile (img, painter, "hero_1"));	// For use in edit mode.
-        list.append (svgTile (img, painter, "enemy_1"));// For use in edit mode.
-        list.append (svgTile (img, painter, "concrete"));
-        list.append (svgTile (img, painter, "false_brick"));
-        list.append (svgTile (img, painter, "brick"));
+	// Create a list of rendered tiles. The tiles must be appended in the
+	// same order they appear in the TileType enum.
+	// While creating the tiles, count the variants, and fill the offset and count tables.
+	
+	QVector< QString > tileNames;
+	tileNames << "hidden_ladder" << "false_brick" << "hero_1" << "enemy_1";
+	int i = 0;
+	// These tiles come never have variants
+	foreach (QString name, tileNames) {
+	    list.append(svgTile(img, painter, name));
+	    i++;
+	    offsets[i] = i;
+	    counts[i] = 1;
+	}
+
+	// These tiles can have variants
+	tileNames.clear();
+	tileNames << "empty" << "gold" << "bar" << "ladder" << "concrete" << "brick";
+	foreach (QString name, tileNames) {
+	    int tileCount = 0;
+	    QString tileNamePattern = name + "-%1";
+	    while (svgSet.elementExists(tileNamePattern.arg(0))) {
+		list.append(svgTile(img, painter, name));
+		tileCount++;
+	    }
+	    if (tileCount > 0) {
+		offsets[i] = offsets[i - 1] + counts[i - 1];
+		counts[i] = tileCount;
+	    } else {
+		list.append(svgTile(img, painter, name));
+		i++;
+		offsets[i] = i;
+		counts[i] = 1;
+	    } 
+	}
 
         // Add SVG versions of blasted bricks.
         QString brickPattern ("brick_%1");
