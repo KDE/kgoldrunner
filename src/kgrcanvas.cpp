@@ -65,10 +65,13 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
     initView();			// Set up the graphics, etc.
 
     // Initialise the KGoldrunner grid.
+    unsigned int seed = 42;
     for (int x = 0; x < FIELDWIDTH; x++) {
-        for (int y = 0; y < FIELDHEIGHT; y++) {
-            tileNo[x][y] = freebg;
-        }
+	for (int y = 0; y < FIELDHEIGHT; y++) {
+	    tileNo[x][y] = theme.firstTile (KGrTheme::EmptyTile);
+	    randomOffsets[x][y] = rand_r (&seed);
+	    kDebug() << tileNo[x][y];
+	}
     }
 
     title = 0;
@@ -134,14 +137,23 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
 
     // Draw the tiles and background in the playfield.
     if (playfield) {
-        makeTiles (changePixmaps);
+	loadBackground();
 
-        // Set each cell to same type of tile (i.e. tile-number) as before.
-        for (int x = 0; x < FIELDWIDTH; x++) {
-            for (int y = 0; y < FIELDHEIGHT; y++) {
-                playfield->setTile (x, y, tileNo[x][y]);
-            }
-        }
+	if (changePixmaps) {
+	    tileset->clear();
+
+	    *tileset << theme.tiles (imgH);
+	}
+
+	// Now set our tileset in the scene.
+	playfield->setTiles (tileset, topLeft, nCellsW, nCellsH, imgW, imgH);
+
+	// Set each cell to same type of tile (i.e. tile-number) as before.
+	for (int x = 0; x < FIELDWIDTH; x++) {
+	    for (int y = 0; y < FIELDHEIGHT; y++) {
+		playfield->setTile (x, y, tileNo[x][y]);
+	    }
+	}
     }
     kDebug() << t.restart() << "msec.  Tiles + background done.";
 
@@ -253,29 +265,57 @@ void KGrCanvas::resizeEvent (QResizeEvent * event)
         QWidget::resizeEvent (event);
     }
 }
-    
+
+KGrTheme::TileType KGrCanvas::tileForType(char type)
+{
+    switch (type) {
+    case NUGGET:
+	return KGrTheme::GoldTile;
+    case POLE:
+	return KGrTheme::BarTile;
+    case LADDER:
+	return KGrTheme::LadderTile;
+    case HLADDER:
+	return KGrTheme::HiddenLadderTile;
+    case HERO:
+	return KGrTheme::HeroTile;
+    case ENEMY:
+	return KGrTheme::EnemyTile;
+    case BETON:
+	return KGrTheme::ConcreteTile;
+    case BRICK:
+	return KGrTheme::BrickTile;
+    case FBRICK:
+	return KGrTheme::FalseBrickTile;
+    case FREE:
+    default:
+	return KGrTheme::EmptyTile;
+    }
+}
+
 void KGrCanvas::paintCell (int x, int y, char type, int offset)
 {
-    int tileNumber = 0;
-
-    switch (type) {
-    case FREE:    tileNumber = freebg; break;	// Free space.
-    case NUGGET:  tileNumber = nuggetbg; break;	// Nugget.
-    case POLE:    tileNumber = polebg; break;	// Pole or bar.
-    case LADDER:  tileNumber = ladderbg; break;	// Ladder.
-    case HLADDER: tileNumber = hladderbg; break;// Hidden ladder.
-    case HERO:    tileNumber = edherobg; break;	// Static hero (for editing).
-    case ENEMY:   tileNumber = edenemybg; break;// Static enemy (for editing).
-    case BETON:   tileNumber = betonbg;	 break;	// Concrete.
-    case BRICK:   tileNumber = brickbg;	 break;	// Solid brick.
-    case FBRICK:  tileNumber = fbrickbg; break;	// False brick.
-    default:      tileNumber = freebg;  break;
-    }
-
+    KGrTheme::TileType tileType = tileForType(type);
+    unsigned int tileNumber = theme.firstTile(tileType);
     // In KGrGame, the top-left visible cell is [1,1]: in KGrPlayfield [0,0].
     x--; y--;
-    tileNumber = tileNumber + offset;	// Offsets 1-9 are for digging sequence.
-    tileNo [x][y] = tileNumber;		// Save the tile-number for repaint.
+    // For Multiple block variant theming, the actual tile is chosen between
+    // the available tiles provided, by using x and y coordinates to produce a
+    // pseudorandom pattern.
+    // However, we cannot do that for the brick digging sequence, so this is a
+    // special case.
+    if (offset > 0) {
+	// Offsets 1-9 are for digging sequence.
+	tileNumber = theme.firstTile (KGrTheme::BrickAnimationTile) + offset - 1; 
+    } else {
+	int count = theme.tileCount(tileType);
+	if (count > 1) {
+	    tileNumber += (randomOffsets[x][y] % count);
+	    kDebug() << "tileNumber:" << tileNumber;
+	}
+    }
+
+    tileNo [x][y] = tileNumber;			// Save the tile-number for repaint.
 
     playfield->setTile (x, y, tileNumber);	// Paint with required pixmap.
 }
@@ -408,25 +448,7 @@ void KGrCanvas::deleteEnemySprites()
 
 QPixmap KGrCanvas::getPixmap (char type)
 {
-    int tileNumber;
-
-    // Get a pixmap from the tile-array for use on an edit-button.
-    switch (type) {
-    case FREE:    tileNumber = freebg; break;	// Free space.
-    case NUGGET:  tileNumber = nuggetbg; break;	// Nugget.
-    case POLE:    tileNumber = polebg; break;	// Pole or bar.
-    case LADDER:  tileNumber = ladderbg; break;	// Ladder.
-    case HLADDER: tileNumber = hladderbg; break;// Hidden ladder.
-    case HERO:    tileNumber = edherobg; break;	// Static hero (for editing).
-    case ENEMY:   tileNumber = edenemybg; break;// Static enemy (for editing).
-    case BETON:   tileNumber = betonbg;	 break;	// Concrete.
-    case BRICK:   tileNumber = brickbg;	 break;	// Solid brick.
-    case FBRICK:  tileNumber = fbrickbg; break;	// False brick.
-    default:      tileNumber = freebg;  break;
-    }
-
-    // kDebug() << "accessing tile" << tileNumber;
-    return tileset->at (tileNumber);
+    return tileset->at (theme.firstTile(tileForType(type)));
 }
 
 void KGrCanvas::initView()
@@ -487,21 +509,7 @@ void KGrCanvas::loadBackground()
     }
 }
 
-void KGrCanvas::makeTiles (bool changePixmaps)
-{
-    loadBackground();
-
-    if (changePixmaps) {
-        tileset->clear();
-
-        *tileset << theme.tiles (imgH);
-    }
-
-    // Now set our tileset in the scene.
-    playfield->setTiles (tileset, topLeft, nCellsW, nCellsH, imgW, imgH);
-}
-
-void KGrCanvas::makeBorder()
+void KGrCanvas::makeBorder ()
 {
     // Draw main part of border, in the order: top, bottom, left, right.
     // Allow some overlap to prevent slits appearing when resizing.
@@ -661,3 +669,4 @@ QSize KGrCanvas::sizeHint() const
 }
 
 #include "kgrcanvas.moc"
+// vi: set sw=4 :

@@ -31,11 +31,11 @@ class KGrTheme
 {
 public:
     enum TileType {
+        EmptyTile = 0,
 	HiddenLadderTile,
 	FalseBrickTile,
 	HeroTile,
 	EnemyTile,
-        EmptyTile,
 	GoldTile,
 	BarTile,
 	LadderTile,

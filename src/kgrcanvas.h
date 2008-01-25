@@ -128,9 +128,9 @@ private:
     void loadBackground();
 
     void drawTheScene (bool changePixmaps);
-    void makeTiles (bool changePixmaps);
     void makeBorder();
     void makeTitle();
+    KGrTheme::TileType tileForType(char type);
 
     QColor colour;
     KGameCanvasRectangle * drawRectangle (int x, int y, int w, int h);
@@ -143,9 +143,11 @@ private:
 
     // IDW - Temporary ... should use a more general playfield (grid) idea.
     int tileNo [FIELDWIDTH] [FIELDHEIGHT];
+    unsigned char randomOffsets [FIELDWIDTH] [FIELDHEIGHT];
 
     int resizeCount;			// =0 until the main window has resized.
     QTime t; // IDW
     unsigned int level;
 };
 #endif // KGRCANVAS_H
+// vi: set sw=4 :

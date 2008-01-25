@@ -36,8 +36,13 @@ KGrTheme::KGrTheme (const QString &systemDataDir) :
 {
     KConfigGroup group (KGlobal::config(), "Debugging");
     char *val = getenv ("KGOLDRUNNER_USE_PIXMAPS");
-    if (val)
-        useDirectPixmaps = (atoi (val) > 0);
+    if (val) useDirectPixmaps = (atoi(val) > 0);
+    
+    // Initialize theme lookup table
+    for (int i = 0; i < TileTypeCount; ++i) {
+	offsets[i] = i;
+	counts[i] = 1;
+    }
 }
 
 bool KGrTheme::load (const QString& themeFilepath)
@@ -128,8 +133,8 @@ void renderBackground (QPainter &painter, QSvgRenderer &svgSet, int variant, int
         svgSet.render (&painter, "background");
 }
 
-QPixmap KGrTheme::background (unsigned int width, unsigned int height,
-                                unsigned int variant)
+QPixmap KGrTheme::background (unsigned int width, unsigned int height, 
+                              unsigned int variant)
 {
     QTime t;
     t.restart();
@@ -181,7 +186,7 @@ QList<QPixmap> KGrTheme::enemy (unsigned int size)
 }
 
 QList<QPixmap> KGrTheme::svgFrames (const QString &elementPattern,
-                                        unsigned int size, int nFrames)
+                                    unsigned int size, int nFrames)
 {
     QPainter q;
     QList<QPixmap> frames;
@@ -266,42 +271,50 @@ QList<QPixmap> KGrTheme::tiles (unsigned int size)
 	// While creating the tiles, count the variants, and fill the offset and count tables.
 	
 	QVector< QString > tileNames;
-	tileNames << "hidden_ladder" << "false_brick" << "hero_1" << "enemy_1";
+	tileNames << "empty" << "hidden_ladder" << "false_brick" << "hero_1" << "enemy_1";
 	int i = 0;
 	// These tiles come never have variants
 	foreach (QString name, tileNames) {
-	    list.append(svgTile(img, painter, name));
-	    i++;
+	    list.append (svgTile (img, painter, name));
 	    offsets[i] = i;
 	    counts[i] = 1;
+	    i++;
 	}
 
 	// These tiles can have variants
 	tileNames.clear();
-	tileNames << "empty" << "gold" << "bar" << "ladder" << "concrete" << "brick";
+	tileNames << "gold" << "bar" << "ladder" << "concrete" << "brick";
 	foreach (QString name, tileNames) {
 	    int tileCount = 0;
 	    QString tileNamePattern = name + "-%1";
-	    while (svgSet.elementExists(tileNamePattern.arg(0))) {
-		list.append(svgTile(img, painter, name));
+	    while (svgSet.elementExists (tileNamePattern.arg (tileCount))) {
+		kDebug() << tileNamePattern.arg(tileCount);
+		list.append (svgTile (img, painter, tileNamePattern.arg(tileCount)));
 		tileCount++;
 	    }
 	    if (tileCount > 0) {
 		offsets[i] = offsets[i - 1] + counts[i - 1];
 		counts[i] = tileCount;
 	    } else {
-		list.append(svgTile(img, painter, name));
-		i++;
+		list.append (svgTile (img, painter, name));
 		offsets[i] = i;
 		counts[i] = 1;
 	    } 
+	    kDebug() << "offsets[" << i << "] is " << offsets[i]; 
+	    kDebug() << "counts[" << i << "] is " << counts[i]; 
+	    i++;
 	}
 
-        // Add SVG versions of blasted bricks.
-        QString brickPattern ("brick_%1");
-        for (int i = 1; i <= 9; ++i) {
-            list.append (svgTile (img, painter, brickPattern.arg (i)));
-        }
+	// Add SVG versions of blasted bricks.
+	QString brickPattern("brick_%1");
+	for (int j = 1; j <= 9; ++j) {
+	    list.append (svgTile (img, painter, brickPattern.arg(j)));
+	}
+	offsets[i] = offsets[i - 1] + counts[i - 1];
+	counts[i] = 9;
+	kDebug() << "offsets[" << i << "] is " << offsets[i]; 
+	kDebug() << "counts[" << i << "] is " << counts[i]; 
+	kDebug() << "list.count" << list.count(); 
     }
     return list;
 }
