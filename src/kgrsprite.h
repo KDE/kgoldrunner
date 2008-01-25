@@ -3,7 +3,7 @@
                              -------------------
     begin                : Fri Aug 04 2006
     Copyright 2006 Mauricio Piacentini <mauricio@tabuleiro.com>
- ***************************************************************************/
+***************************************************************************/
 
 /***************************************************************************
  *                                                                         *
@@ -26,12 +26,12 @@
 class KGrSprite : public KGameCanvasPixmap
 {
 public:
-    explicit KGrSprite ( KGameCanvasAbstract* canvas = NULL);
+    explicit KGrSprite (KGameCanvasAbstract* canvas = NULL);
     ~KGrSprite();
-    void move(double x, double y, int frame);
-    void setZ ( qreal z );
+    void move (double x, double y, int frame);
+    void setZ (qreal z);
     void addFrames (QList<QPixmap> * frames, const QPoint & topLeft,
-						const double scale);
+                                                const double scale);
     inline QPoint currentLoc() { return m_loc; }
     inline void clearFrames() { if (m_frames) m_frames->clear();}
     inline int currentFrame(){ return m_frame;}

@@ -4,7 +4,7 @@
     begin                : Wed Jan 23 2002
     Copyright 2002 Marco Krüger <grisuji@gmx.de>
     Copyright 2002 Ian Wadham <ianw2@optusnet.com.au>
- ***************************************************************************/
+***************************************************************************/
 
 /***************************************************************************
  *                                                                         *
@@ -28,80 +28,80 @@ class KGrCanvas;
 
 class KGrObject : public QObject
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  explicit KGrObject (char objType);
-  virtual ~KGrObject();
+    explicit KGrObject (char objType);
+    virtual ~KGrObject();
 
-  // STATIC GLOBAL FLAGS.
-  static bool frozen;		// Game play halted (use ESCAPE key).
-  static bool bugFixed;		// Dynamic bug fix turned on (key B, if halted).
-  static bool logging;		// Log printing turned on.
+    // STATIC GLOBAL FLAGS.
+    static bool frozen;		// Game play halted (use ESCAPE key).
+    static bool bugFixed;	// Dynamic bug fix turned on (key B, if halted).
+    static bool logging;	// Log printing turned on.
 
-  char whatIam();
-  int searchValue;
-  bool blocker; // Beton or Brick -> TRUE
-  void showState (int, int);
+    char whatIam();
+    int searchValue;
+    bool blocker; // Beton or Brick -> TRUE
+    void showState (int, int);
 
 protected:
-  KGrCanvas * objectView;
-  int xpos;
-  int ypos;
-  char iamA;
+    KGrCanvas * objectView;
+    int xpos;
+    int ypos;
+    char iamA;
 };
 
 class KGrEditable : public KGrObject
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  KGrEditable (char editType);
-  virtual ~KGrEditable ();
-  void setType (char);
+    KGrEditable (char editType);
+    virtual ~KGrEditable();
+    void setType (char);
 };
 
 class KGrFree : public KGrObject
 { Q_OBJECT
 public:
-  KGrFree (char objType, int i, int j, KGrCanvas * view);
-  virtual ~KGrFree();
-  void setNugget(bool);
+    KGrFree (char objType, int i, int j, KGrCanvas * view);
+    virtual ~KGrFree();
+    void setNugget (bool);
 
 protected:
-  char theRealMe;	// Set to FREE or HLADDER, even when "iamA == NUGGET".
+    char theRealMe;	// Set to FREE or HLADDER, even when "iamA == NUGGET".
 };
 
 class KGrBrick : public KGrObject
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  KGrBrick (char objType, int i, int j, KGrCanvas * view);
-  virtual ~KGrBrick();
-  void dig(void);
-  void useHole();
-  void unUseHole();
-  static int speed;	// Digging & repair speed (copy of KGrFigure::speed).
-  static int HOLETIME;	// Number of timing cycles for a hole to remain open.
-  void doStep();
-  void showState (int, int);
+    KGrBrick (char objType, int i, int j, KGrCanvas * view);
+    virtual ~KGrBrick();
+    void dig (void);
+    void useHole();
+    void unUseHole();
+    static int speed;	 // Digging & repair speed (copy of KGrFigure::speed).
+    static int HOLETIME; // Number of timing cycles for a hole to remain open.
+    void doStep();
+    void showState (int, int);
 
 protected slots:
-  void timeDone(void);
+    void timeDone (void);
 
 private:
-  int dig_counter;
-  int hole_counter;
-  bool holeFrozen;
-  QTimer *timer;
+    int dig_counter;
+    int hole_counter;
+    bool holeFrozen;
+    QTimer *timer;
 };
 
 class KGrHladder : public KGrFree
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  // BUG FIX - Ian W., 21/6/01 - must inherit "setNugget()" from "KGrFree".
-  KGrHladder (char objType, int i, int j, KGrCanvas * view);
-  virtual ~KGrHladder();
-  void showLadder();
+    // BUG FIX - Ian W., 21/6/01 - must inherit "setNugget()" from "KGrFree".
+    KGrHladder (char objType, int i, int j, KGrCanvas * view);
+    virtual ~KGrHladder();
+    void showLadder();
 };
 
 #endif // KGROBJECT_H

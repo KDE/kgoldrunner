@@ -4,7 +4,7 @@
     begin                : Wed Jan 23 2002
     Copyright 2002 Marco Krüger <grisuji@gmx.de>
     Copyright 2002 Ian Wadham <ianw2@optusnet.com.au>
- ***************************************************************************/
+***************************************************************************/
 
 /***************************************************************************
  *                                                                         *
@@ -38,114 +38,114 @@
 
 class KGrCanvas : public KGameCanvasWidget
 {
-	Q_OBJECT
+    Q_OBJECT
 public:
-	KGrCanvas (QWidget * parent, const double scale,
-				const QString & systemDataDir);
-	virtual ~KGrCanvas();
+    KGrCanvas (QWidget * parent, const double scale,
+                            const QString & systemDataDir);
+    virtual ~KGrCanvas();
 
-	QPoint getMousePos ();
-	void setMousePos (int, int);
+    QPoint getMousePos();
+    void setMousePos (int, int);
 
-	void setBaseScale ();
+    void setBaseScale();
 
-	void paintCell (int, int, char, int offset = 0);
-	void setTitle (const QString&);
+    void paintCell (int, int, char, int offset = 0);
+    void setTitle (const QString&);
 
-	void makeHeroSprite (int, int, int);
-	void setHeroVisible (bool);
-	void moveHero (int, int, int);
+    void makeHeroSprite (int, int, int);
+    void setHeroVisible (bool);
+    void moveHero (int, int, int);
 
-	void makeEnemySprite (int, int, int);
-	void moveEnemy (int, int, int, int, int);
-	void deleteEnemySprites();
+    void makeEnemySprite (int, int, int);
+    void moveEnemy (int, int, int, int, int);
+    void deleteEnemySprites();
 
-	void goToBlack();
-	void fadeIn();
-	void fadeOut();
+    void goToBlack();
+    void fadeIn();
+    void fadeOut();
 
-	QPixmap getPixmap (char type);
+    QPixmap getPixmap (char type);
 
-	bool changeTheme (const QString & themeFilepath);
-	/**
-	 * setLevel is meant as a way to communicate that new graphics can
-	 * be used if multiple sets are available in the theme.
-	 */
-	void setLevel(unsigned int level);
+    bool changeTheme (const QString & themeFilepath);
+    /**
+     * setLevel is meant as a way to communicate that new graphics can
+     * be used if multiple sets are available in the theme.
+     */
+    void setLevel (unsigned int level);
 
 signals:
-	void mouseClick (int);
-	void mouseLetGo (int);
-	void fadeFinished();
+    void mouseClick (int);
+    void mouseLetGo (int);
+    void fadeFinished();
 
 protected:
-	virtual void mousePressEvent ( QMouseEvent * mouseEvent );
-	virtual void mouseReleaseEvent ( QMouseEvent * mouseEvent );
-	virtual void resizeEvent (QResizeEvent * event);
-	virtual QSize sizeHint() const;
+    virtual void mousePressEvent (QMouseEvent * mouseEvent);
+    virtual void mouseReleaseEvent (QMouseEvent * mouseEvent);
+    virtual void resizeEvent (QResizeEvent * event);
+    virtual QSize sizeHint() const;
 
 private slots:
-	void drawSpotLight(qreal value);
+    void drawSpotLight (qreal value);
 
 private:
-        bool firstSceneDrawn;		// Set AFTER the initial resize events.
+    bool firstSceneDrawn;		// Set AFTER the initial resize events.
 
-	QCursor * m;			// Mouse cursor.
-	KGrPlayField * playfield;	// Array of tiles where runners can run.
+    QCursor * m;			// Mouse cursor.
+    KGrPlayField * playfield;		// Array of tiles where runners can run.
 
-	int scaleStep;			// Current scale-factor of canvas.
-	int baseScale;			// Starting scale-factor of canvas.
-	int baseFontSize;
+    int scaleStep;			// Current scale-factor of canvas.
+    int baseScale;			// Starting scale-factor of canvas.
+    int baseFontSize;
 
-	int nCellsW;			// Number of tiles horizontally.
-	int nCellsH;			// Number of tiles vertically.
-	int border;			// Number of tiles allowed for border.
-	int lineDivider;		// Fraction of a tile for inner border.
-	QPoint topLeft;			// Top left point of the tile array.
+    int nCellsW;			// Number of tiles horizontally.
+    int nCellsH;			// Number of tiles vertically.
+    int border;				// Number of tiles allowed for border.
+    int lineDivider;			// Fraction of a tile for inner border.
+    QPoint topLeft;			// Top left point of the tile array.
 
-	QLabel * title;			// Title and top part of border.
+    QLabel * title;			// Title and top part of border.
 
-	int freebg, nuggetbg, polebg, ladderbg, hladderbg;
-	int edherobg, edenemybg, betonbg, brickbg, fbrickbg;
-	int bgw, bgh;			// Size of KGoldrunner 2 tile QPixmap.
-	int imgW, imgH;			// Scaled size of KGr 3 tile QImage.
-	int oldImgW, oldImgH;
+    int freebg, nuggetbg, polebg, ladderbg, hladderbg;
+    int edherobg, edenemybg, betonbg, brickbg, fbrickbg;
+    int bgw, bgh;			// Size of KGoldrunner 2 tile QPixmap.
+    int imgW, imgH;			// Scaled size of KGr 3 tile QImage.
+    int oldImgW, oldImgH;
 
-	int goldEnemy;
+    int goldEnemy;
 
-	KGameCanvasPicture *m_spotLight;
-	QTimeLine m_fadingTimeLine;
+    KGameCanvasPicture *m_spotLight;
+    QTimeLine m_fadingTimeLine;
 
-	KGrSprite * heroSprite;
-	QList<KGrSprite *> * enemySprites;
-	QList<KGameCanvasRectangle *> borderRectangles;
+    KGrSprite * heroSprite;
+    QList<KGrSprite *> * enemySprites;
+    QList<KGameCanvasRectangle *> borderRectangles;
 
-	void initView();
+    void initView();
 
-	/**
-	 * Load background appropriate for current level
-	 */
-	void loadBackground();
+    /**
+     * Load background appropriate for current level
+     */
+    void loadBackground();
 
-	void drawTheScene (bool changePixmaps);
-	void makeTiles (bool changePixmaps);
-	void makeBorder();
-	void makeTitle();
+    void drawTheScene (bool changePixmaps);
+    void makeTiles (bool changePixmaps);
+    void makeBorder();
+    void makeTitle();
 
-	QColor colour;
-	KGameCanvasRectangle * drawRectangle (int x, int y, int w, int h);
+    QColor colour;
+    KGameCanvasRectangle * drawRectangle (int x, int y, int w, int h);
 
-	QList<QPixmap> * tileset;
+    QList<QPixmap> * tileset;
 
-	QList<QPixmap> * heroFrames;
-	QList<QPixmap> * enemyFrames;
-	KGrTheme theme;
+    QList<QPixmap> * heroFrames;
+    QList<QPixmap> * enemyFrames;
+    KGrTheme theme;
 
-	// IDW - Temporary ... should use a more general playfield (grid) idea.
-	int tileNo [FIELDWIDTH] [FIELDHEIGHT];
+    // IDW - Temporary ... should use a more general playfield (grid) idea.
+    int tileNo [FIELDWIDTH] [FIELDHEIGHT];
 
-	int resizeCount;		// =0 until the main window has resized.
-	QTime t; // IDW
-	unsigned int level;
+    int resizeCount;			// =0 until the main window has resized.
+    QTime t; // IDW
+    unsigned int level;
 };
 #endif // KGRCANVAS_H

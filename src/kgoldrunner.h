@@ -15,7 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
- */
+*/
 
 #ifndef _KGOLDRUNNER_H_
 #define _KGOLDRUNNER_H_
@@ -76,17 +76,17 @@ protected:
      * This function is called when it is time for the app to save its
      * properties for session management purposes.
      */
-    void saveProperties(KConfigGroup &);
+    void saveProperties (KConfigGroup &);
 
     /**
      * This function is called when this app is restored.  The KConfig
      * object points to the session management config file that was saved
      * with @ref saveProperties.
      */
-    void readProperties(const KConfigGroup &);
+    void readProperties (const KConfigGroup &);
 
     /// To save edits before closing.
-    bool queryClose ();
+    bool queryClose();
 
 private slots:
     // An extension of the constructor.  Gives us two scans of the event queue.
@@ -144,8 +144,8 @@ private slots:
     // void optionsPreferences();
     // void newToolbarConfig();
 
-    void changeStatusbar(const QString& text);
-    void changeCaption(const QString& text);
+    void changeStatusbar (const QString& text);
+    void changeCaption (const QString& text);
 
     void showLevel (int);		// Show the current level number.
     void showLives (long);		// Show how many lives are remaining.
@@ -156,7 +156,7 @@ private slots:
     void markRuleType (char ruleType);	// Check game's rule type in the menu.
     void setEditMenu (bool on_off);	// Enable/disable "Save Edits" action.
     void setEditIcon (const QString & actionName, const char iconType);
-    void viewFullScreen(bool activation);
+    void viewFullScreen (bool activation);
 
     QSize sizeHint() const;
 

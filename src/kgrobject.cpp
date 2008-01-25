@@ -1,9 +1,9 @@
 /***************************************************************************
-                        kgrobject.cpp  -  description
-                             -------------------
-    begin                : Wed Jan 23 2002
-    Copyright 2002 Marco Krüger <grisuji@gmx.de>
-    Copyright 2002 Ian Wadham <ianw2@optusnet.com.au>
+ *                      kgrobject.cpp  -  description                      *
+ *                           -------------------                           *
+ *  begin                : Wed Jan 23 2002                                 *
+ *  Copyright 2002 Marco Krüger <grisuji@gmx.de>                           *
+ *  Copyright 2002 Ian Wadham <ianw2@optusnet.com.au>                      *
  ***************************************************************************/
 
 /***************************************************************************
@@ -28,7 +28,7 @@ KGrObject::KGrObject (char objType)
     searchValue = 0;
     blocker = false;
     if ((objType == BRICK) || (objType == BETON) || (objType == FBRICK)) {
-	blocker = true;
+        blocker = true;
     }
     xpos = 0;
     ypos = 0;
@@ -39,19 +39,19 @@ bool KGrObject::frozen = false;	// Initialise game as running, not halted.
 bool KGrObject::bugFixed = false;// Initialise game with dynamic bug-fix OFF.
 bool KGrObject::logging = false;// Initialise game with log printing OFF.
 
-char KGrObject::whatIam ()
+char KGrObject::whatIam()
 {
-  return iamA;
+    return iamA;
 }
 
 void KGrObject::showState (int i, int j)
 {
-  printf("(%02d,%02d) - Object [%c] search %d", i, j, iamA, searchValue);
-  if (blocker) printf(" blocker");
-  printf("\n");
+    printf ("(%02d,%02d) - Object [%c] search %d", i, j, iamA, searchValue);
+    if (blocker) printf (" blocker");
+    printf ("\n");
 }
 
-KGrObject :: ~KGrObject ()
+KGrObject::~KGrObject()
 {
 }
 
@@ -64,99 +64,102 @@ void KGrEditable::setType (char editType)
     iamA = editType;
 }
 
-KGrEditable::~KGrEditable ()
+KGrEditable::~KGrEditable()
 {
 }
 
 KGrFree::KGrFree (char objType, int i, int j, KGrCanvas * view)
-				: KGrObject (objType)
+                                : KGrObject (objType)
 {
-  xpos		= i;
-  ypos		= j;
-  objectView	= view;
-  theRealMe	= FREE;		// Remember what we are, even "iamA == NUGGET".
+    xpos		= i;
+    ypos		= j;
+    objectView	= view;
+    theRealMe	= FREE;		// Remember what we are, even "iamA == NUGGET".
 }
 
-void KGrFree::setNugget(bool nug)
+void KGrFree::setNugget (bool nug)
 {
     // This code must work over a hidden ladder as well as a free cell.
     if (! nug) {
-	iamA = theRealMe;
-	objectView->paintCell (xpos, ypos, FREE);
+        iamA = theRealMe;
+        objectView->paintCell (xpos, ypos, FREE);
     }
     else {
-	iamA = NUGGET;
-	objectView->paintCell (xpos, ypos, NUGGET);
+        iamA = NUGGET;
+        objectView->paintCell (xpos, ypos, NUGGET);
     }
 }
 
-KGrFree :: ~KGrFree ()
+KGrFree::~KGrFree()
 {
 }
 
 /* +++++++++++++++ BRICK ++++++++++++++++ */
 
 KGrBrick::KGrBrick (char objType, int i, int j, KGrCanvas * view)
-				: KGrObject (objType)
+                                : KGrObject (objType)
 {
-  xpos		= i;
-  ypos		= j;
-  objectView	= view;
-  dig_counter = 0;
-  holeFrozen = false;
-  iamA = BRICK;
-  timer = new QTimer (this);
-  connect (timer, SIGNAL (timeout ()), SLOT (timeDone ()));
+    xpos		= i;
+    ypos		= j;
+    objectView	= view;
+    dig_counter = 0;
+    holeFrozen = false;
+    iamA = BRICK;
+    timer = new QTimer (this);
+    connect (timer, SIGNAL (timeout()), SLOT (timeDone()));
 }
 
 void KGrBrick::dig (void)
 {
-  dig_counter = 1;
-  hole_counter = HOLETIME;
-  iamA = HOLE;
-  objectView->paintCell (xpos, ypos, BRICK, dig_counter);
-  timer->setSingleShot(true);
-  timer->start ((DIGDELAY * NSPEED) / speed);
+    dig_counter = 1;
+    hole_counter = HOLETIME;
+    iamA = HOLE;
+    objectView->paintCell (xpos, ypos, BRICK, dig_counter);
+    timer->setSingleShot (true);
+    timer->start ((DIGDELAY * NSPEED) / speed);
 }
 
 void KGrBrick::doStep() {
     if (holeFrozen) {
-	holeFrozen = false;
-	timeDone();
+        holeFrozen = false;
+        timeDone();
     }
 }
 
 void KGrBrick::showState (int i, int j)
 {
     printf ("(%02d,%02d) - Brick  [%c] search %d dig-counter %d",
-	i, j, iamA, searchValue, dig_counter);
+        i, j, iamA, searchValue, dig_counter);
     if (blocker)
-	printf (" blocker");
+        printf (" blocker");
     printf ("\n");
 }
 
-void KGrBrick::timeDone ()
+void KGrBrick::timeDone()
 {
-    if (KGrObject::frozen) {holeFrozen = true; return;}
+    if (KGrObject::frozen) {
+        holeFrozen = true;
+        return;
+    }
 
     // When the hole is complete, we need a longer delay.
     if (dig_counter == 5) {
-	hole_counter--;
-	if (hole_counter > 0) {
-            timer->setSingleShot(true);
-	    timer->start ((DIGDELAY * NSPEED) / speed);
-	    return;
-	}
+        hole_counter--;
+        if (hole_counter > 0) {
+            timer->setSingleShot (true);
+            timer->start ((DIGDELAY * NSPEED) / speed);
+            return;
+        }
     }
     if (dig_counter < 9) {
-	dig_counter++;
-        timer->setSingleShot(true);
-	timer->start ((DIGDELAY * NSPEED) / speed);
-	if (dig_counter >= 8)
-	    iamA = BRICK;
+        dig_counter++;
+        timer->setSingleShot (true);
+        timer->start ((DIGDELAY * NSPEED) / speed);
+        if (dig_counter >= 8)
+            iamA = BRICK;
     }
     else
-	dig_counter = 0;
+        dig_counter = 0;
 
     // Brick pix:- 0 normal, 1-4 crumbling, 5 hole complete, 6-9 re-growing.
     objectView->paintCell (xpos, ypos, BRICK, dig_counter);
@@ -164,24 +167,24 @@ void KGrBrick::timeDone ()
 
 void KGrBrick::useHole() {
     if (iamA == HOLE)
-	iamA = USEDHOLE;
+        iamA = USEDHOLE;
 }
 
 void KGrBrick::unUseHole() {
     if (iamA == USEDHOLE)
-	iamA = HOLE;
+        iamA = HOLE;
 }
 
-KGrBrick :: ~KGrBrick ()
+KGrBrick::~KGrBrick()
 {
     delete timer;
 }
 
 KGrHladder::KGrHladder (char objType, int i, int j, KGrCanvas * view)
-			    : KGrFree (objType, i, j, view)
-  // Must inherit "setNugget()" from "KGrFree".
+                            : KGrFree (objType, i, j, view)
+    // Must inherit "setNugget()" from "KGrFree".
 {
-  theRealMe = HLADDER;		// But remember we are a hidden ladder ...
+    theRealMe = HLADDER;	// But remember we are a hidden ladder ...
 }
 
 void KGrHladder::showLadder()
@@ -190,7 +193,7 @@ void KGrHladder::showLadder()
     objectView->paintCell (xpos, ypos, LADDER);
 }
 
-KGrHladder :: ~KGrHladder ()
+KGrHladder::~KGrHladder()
 {
 }
 

@@ -4,7 +4,7 @@
     begin                : Fri Aug 04 2006
     Copyright 2006 Mauricio Piacentini <mauricio@tabuleiro.com>
     Copyright 2006 Dmitry Suzdalev <dimsuz@gmail.com>
- ***************************************************************************/
+***************************************************************************/
 
 /***************************************************************************
  *                                                                         *
@@ -45,7 +45,7 @@ public:
     
     /** Set the background for the playground */
     void setBackground (const bool create, const QPixmap &background,
-				const QPoint & tl);
+                                const QPoint & tl);
     
     /** 
      * Set the tileset to use for the playfield and clear it to the background. 
@@ -57,7 +57,7 @@ public:
      * \param tileset List of tiles.
      **/
     void setTiles (QList<QPixmap> * tileset, const QPoint & topLeft,
-	const int h, const int v, const int tilewidth, const int tileheight);
+        const int h, const int v, const int tilewidth, const int tileheight);
 
 private:
     QList<KGameCanvasPixmap *> m_tilesprites;

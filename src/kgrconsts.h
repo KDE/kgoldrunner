@@ -3,12 +3,12 @@
  *                           -------------------                           *
     Copyright 2003 Marco Krüger <grisuji@gmx.de>
     Copyright 2003 Ian Wadham <ianw2@optusnet.com.au>
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation; either version 2 of the License, or     *
- *   (at your option) any later version.                                   *
- ***************************************************************************/
+*                                                                         *
+*   This program is free software; you can redistribute it and/or modify  *
+*   it under the terms of the GNU General Public License as published by  *
+*   the Free Software Foundation; either version 2 of the License, or     *
+*   (at your option) any later version.                                   *
+***************************************************************************/
 
 #ifndef KGRCONSTS_H
 #define KGRCONSTS_H
@@ -66,22 +66,26 @@ const int graphicsCycle = 8;		// Animation frames per running cycle.
 
 const double DROPNUGGETDELAY = 70.0;	// Enemy holds gold for avg. 12.5 cells.
 
-enum Position		{RIGHTWALK1,RIGHTWALK2,RIGHTWALK3,RIGHTWALK4,RIGHTWALK5,RIGHTWALK6,RIGHTWALK7,RIGHTWALK8,
-			 LEFTWALK1,LEFTWALK2,LEFTWALK3,LEFTWALK4,LEFTWALK5,LEFTWALK6,LEFTWALK7,LEFTWALK8,
-			 RIGHTCLIMB1,RIGHTCLIMB2,RIGHTCLIMB3,RIGHTCLIMB4,RIGHTCLIMB5,RIGHTCLIMB6,RIGHTCLIMB7,RIGHTCLIMB8,
-			 LEFTCLIMB1,LEFTCLIMB2,LEFTCLIMB3,LEFTCLIMB4,LEFTCLIMB5,LEFTCLIMB6,LEFTCLIMB7,LEFTCLIMB8,
-			 CLIMB1,CLIMB2,
-			 FALL1,FALL2};
-enum Status		{STANDING,FALLING,WALKING,CLIMBING,CAPTIVE};
-enum Direction		{RIGHT,LEFT,UP,DOWN,STAND};
-enum SearchStrategy	{LOW,MEDIUM,HIGH};
+enum Position		{RIGHTWALK1,  RIGHTWALK2,  RIGHTWALK3,  RIGHTWALK4,
+			 RIGHTWALK5,  RIGHTWALK6,  RIGHTWALK7,  RIGHTWALK8,
+                         LEFTWALK1,   LEFTWALK2,   LEFTWALK3,   LEFTWALK4,
+			 LEFTWALK5,   LEFTWALK6,   LEFTWALK7,   LEFTWALK8,
+                         RIGHTCLIMB1, RIGHTCLIMB2, RIGHTCLIMB3, RIGHTCLIMB4,
+			 RIGHTCLIMB5, RIGHTCLIMB6, RIGHTCLIMB7, RIGHTCLIMB8,
+                         LEFTCLIMB1,  LEFTCLIMB2,  LEFTCLIMB3,  LEFTCLIMB4,
+			 LEFTCLIMB5,  LEFTCLIMB6,  LEFTCLIMB7,  LEFTCLIMB8,
+                         CLIMB1,      CLIMB2,
+                         FALL1,       FALL2};
+enum Status		{STANDING, FALLING, WALKING, CLIMBING, CAPTIVE};
+enum Direction		{RIGHT, LEFT, UP, DOWN, STAND};
+enum SearchStrategy	{LOW, MEDIUM, HIGH};
 
 // Keyboard action codes
 enum KBAction		{KB_UP, KB_DOWN, KB_LEFT, KB_RIGHT,
-			 KB_DIGLEFT, KB_DIGRIGHT, KB_STOP};
+                         KB_DIGLEFT, KB_DIGRIGHT, KB_STOP};
 
 // Action codes when selecting a level or game for play or editing.
 enum SelectAction	{SL_START, SL_ANY, SL_CREATE, SL_UPDATE, SL_SAVE,
-			 SL_MOVE, SL_DELETE, SL_CR_GAME, SL_UPD_GAME};
+                         SL_MOVE, SL_DELETE, SL_CR_GAME, SL_UPD_GAME};
 
 #endif // KGRCONSTS_H

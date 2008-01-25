@@ -84,24 +84,24 @@ public:
     /**
      * Default constructor.
      */
-    KGrGameIO ();
+    KGrGameIO();
 
     /**
      * Find and read data for games, into a list of GameData structures.
      */
     IOStatus fetchGameListData (const QString & dir,
-				QList<GameData *> & gameList);
+                                QList<GameData *> & gameList);
     /**
      * Find and read data for a level of a game, into a LevelData structure.
      */
     IOStatus fetchLevelData (const QString & dir, const QString & prefix,
-				const int level, LevelData & d);
+                                const int level, LevelData & d);
 
 private:
     QFile		openFile;
 
     QString		getFilePath (const QString & dir,
-				const QString & prefix, const int level);
+                                const QString & prefix, const int level);
     char		getALine (const bool kgr3, QByteArray & line);
     QByteArray		removeNewline (const QByteArray & line);
     GameData *		initGameData (const QString & filePath);

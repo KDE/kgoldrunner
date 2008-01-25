@@ -5,7 +5,7 @@
     Copyright 2002 Marco Krüger <grisuji@gmx.de>
     Copyright 2002 Ian Wadham <ianw2@optusnet.com.au>
     Copyright 2007 Luciano Montanaro <mikelima@cirulla.net>
- ***************************************************************************/
+***************************************************************************/
 
 /***************************************************************************
  *                                                                         *
@@ -34,39 +34,40 @@ public:
      * Default constructor.
      * \param[in] systemDataDir The system data dir is used to calculate the theme data directory.
      */
-    KGrTheme(const QString &systemDataDir);
+    KGrTheme (const QString &systemDataDir);
 
     /** 
      * Load a theme given the name of its .desktop file.
      */
-    bool load(const QString & themeFilepath);
+    bool load (const QString & themeFilepath);
     
     /**
      * Given the tile size, returns the list of themed tiles.
      * \param[in] size The tile size
      */
-    QList<QPixmap> tiles(unsigned int size);
+    QList<QPixmap> tiles (unsigned int size);
     
     /**
      * Given the tile size, returns the list of hero frames.
      * \param[in] size The tile size
      */
-    QList<QPixmap> hero(unsigned int size);
+    QList<QPixmap> hero (unsigned int size);
     
     /**
      * Given the tile size, returns the list of enemy frames.
      * \param[in] size The tile size.
      */
-    QList<QPixmap> enemy(unsigned int size);
+    QList<QPixmap> enemy (unsigned int size);
     
     /**
-     * Prepares an image with the background, given the desired width and height and background variant.
+     * Prepares an image with the background, given the desired
+     * width and height and background variant.
      * \param[in] variant The background variant you wish to use.
      * \param[in] width The desired width of the background.
      * \param[in] height The desired height of the background.
      */
-    QPixmap background(unsigned int width, unsigned int height,
-			unsigned int variant);
+    QPixmap background (unsigned int width, unsigned int height,
+                        unsigned int variant);
     
     /**
      * Is a border required for this theme?
@@ -104,7 +105,7 @@ private:
     short themeDrawBorder;
     QPixmap svgTile (QImage &image, QPainter &painter, const QString &name);
     QList<QPixmap> svgFrames (const QString & elementPattern,
-				unsigned int size, int nFrames);
+                                unsigned int size, int nFrames);
 
     enum GraphicsType { NONE, SVG, PNG };
     GraphicsType tileGraphics;

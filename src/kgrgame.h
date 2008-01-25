@@ -1,12 +1,12 @@
 /***************************************************************************
     Copyright 2003 Marco Krüger <grisuji@gmx.de>
     Copyright 2003 Ian Wadham <ianw2@optusnet.com.au>
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation; either version 2 of the License, or     *
- *   (at your option) any later version.                                   *
- ***************************************************************************/
+*                                                                         *
+*   This program is free software; you can redistribute it and/or modify  *
+*   it under the terms of the GNU General Public License as published by  *
+*   the Free Software Foundation; either version 2 of the License, or     *
+*   (at your option) any later version.                                   *
+***************************************************************************/
 #ifndef KGRGAME_H
 #define KGRGAME_H
 
@@ -48,7 +48,8 @@ class KGrGame : public QObject
 {
 Q_OBJECT
 public:
-    KGrGame (KGrCanvas * theView, const QString &theSystemDir, const QString &theUserDir);
+    KGrGame (KGrCanvas * theView, const QString &theSystemDir,
+                                  const QString &theUserDir);
     ~KGrGame();
 
     bool initCollections();
@@ -88,7 +89,7 @@ public slots:
 
     void showHighScores();		// Show high scores for current game.
 
-    void incScore(int);			// Update the score.
+    void incScore (int);			// Update the score.
     void herosDead();			// Hero was caught or he quit (key Q).
     void showHiddenLadders();		// Show hidden ladders (nuggets gone).
     void levelCompleted();		// Hero completed the level.
@@ -112,7 +113,7 @@ signals:
     void markRuleType (char);		// Mark KGoldrunner/Traditional rules.
     void gameFreeze (bool);		// Do visual feedback in the GUI.
 
-    void quitGame ();			// Used for Quit option in Quick Start.
+    void quitGame();			// Used for Quit option in Quick Start.
 
 private:
     KDialog * qs;			// Pointer to Quick Start dialog box.
@@ -125,8 +126,8 @@ private slots:
     void quickStartQuit();
 
 private slots:
-    void finalBreath ();		// Hero is dead: re-start the level.
-    void readMousePos ();		// Timed reading of mouse position.
+    void finalBreath();		// Hero is dead: re-start the level.
+    void readMousePos();		// Timed reading of mouse position.
     void doDig (int button);		// Dig when under mouse-button control.
 
 private:
@@ -135,7 +136,7 @@ private:
     bool readLevelData (int levelNo, LevelData & d);
     void changeObject (unsigned char kind, int i, int j);
     void createObject (KGrObject *o, char picType, int x, int y);
-    void setTimings ();
+    void setTimings();
     void initSearchMatrix();
     void showTutorialMessages (int levelNo);
 
@@ -252,8 +253,8 @@ private:
     QPixmap edherobg, edenemybg;
 
 private slots:
-    void doEdit(int);		// For mouse-click when in edit-mode.
-    void endEdit(int);		// For mouse-release when in edit-mode.
+    void doEdit (int);		// For mouse-click when in edit-mode.
+    void endEdit (int);		// For mouse-release when in edit-mode.
 
 /******************************************************************************/
 /********************   COLLECTION PROPERTIES AND METHODS   *******************/
@@ -295,7 +296,7 @@ public:
     static QColor poleColor;
 
 protected:
-    void paintEvent ( QPaintEvent * event );	// Draw a preview of a level.
+    void paintEvent (QPaintEvent * event);	// Draw a preview of a level.
 
 private:
     QByteArray levelName;
@@ -312,7 +313,7 @@ class KGrCollection
 {
 public:
     KGrCollection (Owner o, const QString & n, const QString & p,
-		   const char s, int nl, const QString & a, const char sk);
+                   const char s, int nl, const QString & a, const char sk);
     Owner	owner;		// Collection owner: "System" or "User".
     QString	name;		// Collection name.
     QString	prefix;		// Collection's filename prefix.

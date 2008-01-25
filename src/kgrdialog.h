@@ -1,12 +1,12 @@
 /***************************************************************************
     Copyright 2003 Marco Krüger <grisuji@gmx.de>
     Copyright 2003 Ian Wadham <ianw2@optusnet.com.au>
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation; either version 2 of the License, or     *
- *   (at your option) any later version.                                   *
- ***************************************************************************/
+*                                                                         *
+*   This program is free software; you can redistribute it and/or modify  *
+*   it under the terms of the GNU General Public License as published by  *
+*   the Free Software Foundation; either version 2 of the License, or     *
+*   (at your option) any later version.                                   *
+***************************************************************************/
 #ifndef KGRDIALOG_QT_H
 #define KGRDIALOG_QT_H
 
@@ -48,8 +48,8 @@ class KGrSLDialog : public KDialog
 Q_OBJECT
 public:
     KGrSLDialog (int action, int requestedLevel, int collnIndex,
-			QList<KGrCollection *> & gamesList, KGrGame * theGame,
-			QWidget * parent = 0);
+                        QList<KGrCollection *> & gamesList, KGrGame * theGame,
+                        QWidget * parent = 0);
     ~KGrSLDialog();
 
     int selectedLevel()	{return (number->value());}
@@ -57,11 +57,11 @@ public:
 
 private slots:
     void slSetCollections (int cIndex);
-    void slColln ();
+    void slColln();
     void slShowLevel (int i);
     void slUpdate (const QString & text);
-    void slPaintLevel ();
-    void slotHelp ();				// Will replace KDE slotHelp().
+    void slPaintLevel();
+    void slotHelp();				// Will replace KDE slotHelp().
 
 private:
     int			slAction;
@@ -98,11 +98,11 @@ class KGrNHDialog : public KDialog
 Q_OBJECT
 public:
     KGrNHDialog (const QString & levelName, const QString & levelHint,
-			QWidget * parent = 0);
+                        QWidget * parent = 0);
     ~KGrNHDialog();
 
     const QString	getName()	{return (nhName->text());}
-    const QString	getHint()	{return (mle->toPlainText ());}
+    const QString	getHint()	{return (mle->toPlainText());}
 
 private:
     QLineEdit *	nhName;
@@ -118,8 +118,8 @@ class KGrECDialog : public KDialog
 Q_OBJECT
 public:
     KGrECDialog (int action, int collnIndex,
-			QList<KGrCollection *> & gamesList,
-			QWidget *parent = 0);
+                        QList<KGrCollection *> & gamesList,
+                        QWidget *parent = 0);
     ~KGrECDialog();
 
     const QString	getName()	{return (ecName->text());}
@@ -161,7 +161,7 @@ class KGrLGDialog : public KDialog
 Q_OBJECT
 public:
     KGrLGDialog (QFile * savedGames, QList<KGrCollection *> & collections,
-			QWidget * parent);
+                        QWidget * parent);
     const QString getCurrentText() {return (lgList->currentItem()->text());}
 
 private slots:
@@ -180,10 +180,10 @@ class KGrMessage : public QDialog
 {
 public:
     static void information (QWidget * parent, const QString &caption,
-			    const QString &text);
+                            const QString &text);
     static int warning (QWidget * parent, const QString &caption,
-			    const QString &text, const QString &label0,
-			    const QString &label1, const QString &label2 = "");
+                            const QString &text, const QString &label0,
+                            const QString &label1, const QString &label2 = "");
 };
 
 /*******************************************************************************
@@ -194,7 +194,7 @@ class KGrGameListItem : public QTreeWidgetItem
 {
 public:
     KGrGameListItem (const QStringList & data, const int internalId = -1);
-    int id () const;
+    int id() const;
     void setId (const int internalId);
 private:
     int mInternalId;
