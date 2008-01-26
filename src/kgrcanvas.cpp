@@ -68,7 +68,7 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
     unsigned int seed = 42;
     for (int x = 0; x < FIELDWIDTH; x++) {
 	for (int y = 0; y < FIELDHEIGHT; y++) {
-	    tileNo[x][y] = theme.firstTile (KGrTheme::EmptyTile);
+	    tileNo[x][y] = KGrTheme::EmptyTile;
 	    randomOffsets[x][y] = rand_r (&seed);
 	    kDebug() << tileNo[x][y];
 	}
@@ -151,7 +151,7 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
 	// Set each cell to same type of tile (i.e. tile-number) as before.
 	for (int x = 0; x < FIELDWIDTH; x++) {
 	    for (int y = 0; y < FIELDHEIGHT; y++) {
-		playfield->setTile (x, y, tileNo[x][y]);
+		playfield->setTile (x, y, tileNumber(tileNo[x][y], x, y));
 	    }
 	}
     }
@@ -293,31 +293,55 @@ KGrTheme::TileType KGrCanvas::tileForType(char type)
     }
 }
 
-void KGrCanvas::paintCell (int x, int y, char type, int offset)
+int KGrCanvas::tileNumber (KGrTheme::TileType type, int x, int y)
 {
-    KGrTheme::TileType tileType = tileForType(type);
-    unsigned int tileNumber = theme.firstTile(tileType);
-    // In KGrGame, the top-left visible cell is [1,1]: in KGrPlayfield [0,0].
-    x--; y--;
     // For Multiple block variant theming, the actual tile is chosen between
     // the available tiles provided, by using x and y coordinates to produce a
     // pseudorandom pattern.
     // However, we cannot do that for the brick digging sequence, so this is a
     // special case.
-    if (offset > 0) {
+    const int offset = type - KGrTheme::BrickAnimation1Tile;
+    const int count = theme.tileCount (KGrTheme::BrickAnimation1Tile);
+
+    if (offset >= 0 && offset < count) {
 	// Offsets 1-9 are for digging sequence.
-	tileNumber = theme.firstTile (KGrTheme::BrickAnimationTile) + offset - 1; 
-    } else {
-	int count = theme.tileCount(tileType);
-	if (count > 1) {
-	    tileNumber += (randomOffsets[x][y] % count);
-	    kDebug() << "tileNumber:" << tileNumber;
+	return theme.firstTile (KGrTheme::BrickAnimation1Tile) + offset;
+    } 
+    else {
+	int number = theme.firstTile (type);
+	int c = theme.tileCount (type);
+	if (c > 1) {
+	    return number + (randomOffsets[x][y] % c);
+	} 
+	else {
+	    return theme.firstTile (type);
 	}
     }
+}
 
-    tileNo [x][y] = tileNumber;			// Save the tile-number for repaint.
+void KGrCanvas::paintCell (int x, int y, char type, int offset)
+{
+    KGrTheme::TileType tileType = tileForType (type);
+    // In KGrGame, the top-left visible cell is [1,1]: in KGrPlayfield [0,0].
+    x--; y--;
+    switch (offset) {
+    case 1: tileType = KGrTheme::BrickAnimation1Tile; break;
+    case 2: tileType = KGrTheme::BrickAnimation2Tile; break;
+    case 3: tileType = KGrTheme::BrickAnimation3Tile; break;
+    case 4: tileType = KGrTheme::BrickAnimation4Tile; break;
+    case 5: tileType = KGrTheme::BrickAnimation5Tile; break;
+    case 6: tileType = KGrTheme::BrickAnimation6Tile; break;
+    case 7: tileType = KGrTheme::BrickAnimation7Tile; break;
+    case 8: tileType = KGrTheme::BrickAnimation8Tile; break;
+    case 9: tileType = KGrTheme::BrickAnimation9Tile; break;
+    case 0:
+    default:
+	break;
+    }
 
-    playfield->setTile (x, y, tileNumber);	// Paint with required pixmap.
+    tileNo [x][y] = tileType;			// Save the tile-number for repaint.
+
+    playfield->setTile (x, y, tileNumber (tileType, x, y));	// Paint with required pixmap.
 }
 
 void KGrCanvas::setBaseScale()

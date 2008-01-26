@@ -131,6 +131,7 @@ private:
     void makeBorder();
     void makeTitle();
     KGrTheme::TileType tileForType(char type);
+    int tileNumber(KGrTheme::TileType type, int x, int y);
 
     QColor colour;
     KGameCanvasRectangle * drawRectangle (int x, int y, int w, int h);
@@ -142,7 +143,7 @@ private:
     KGrTheme theme;
 
     // IDW - Temporary ... should use a more general playfield (grid) idea.
-    int tileNo [FIELDWIDTH] [FIELDHEIGHT];
+    KGrTheme::TileType tileNo [FIELDWIDTH] [FIELDHEIGHT];
     unsigned char randomOffsets [FIELDWIDTH] [FIELDHEIGHT];
 
     int resizeCount;			// =0 until the main window has resized.

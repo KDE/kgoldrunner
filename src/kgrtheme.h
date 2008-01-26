@@ -41,7 +41,15 @@ public:
 	LadderTile,
 	ConcreteTile,
 	BrickTile,
-	BrickAnimationTile,
+	BrickAnimation1Tile,
+	BrickAnimation2Tile,
+	BrickAnimation3Tile,
+	BrickAnimation4Tile,
+	BrickAnimation5Tile,
+	BrickAnimation6Tile,
+	BrickAnimation7Tile,
+	BrickAnimation8Tile,
+	BrickAnimation9Tile,
 	TileTypeCount
     };
     /**
