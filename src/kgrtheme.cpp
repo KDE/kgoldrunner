@@ -297,11 +297,10 @@ QList<QPixmap> KGrTheme::tiles (unsigned int size)
 		counts[i] = tileCount;
 	    } else {
 		list.append (svgTile (img, painter, name));
+		i++;
 		offsets[i] = i;
 		counts[i] = 1;
 	    } 
-	    kDebug() << "offsets[" << i << "] is " << offsets[i]; 
-	    kDebug() << "counts[" << i << "] is " << counts[i]; 
 	    i++;
 	}
 
@@ -312,9 +311,6 @@ QList<QPixmap> KGrTheme::tiles (unsigned int size)
 	}
 	offsets[i] = offsets[i - 1] + counts[i - 1];
 	counts[i] = 9;
-	kDebug() << "offsets[" << i << "] is " << offsets[i]; 
-	kDebug() << "counts[" << i << "] is " << counts[i]; 
-	kDebug() << "list.count" << list.count(); 
     }
     return list;
 }
