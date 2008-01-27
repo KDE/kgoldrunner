@@ -99,16 +99,6 @@ public:
     bool isBorderRequired() const { return themeDrawBorder; }
     
     /**
-     * Find out if the theme has a background picture.
-     */
-    bool isWithBackground() const { return numBackgrounds > 0; }
-
-    /**
-     * Find out if the theme has a multiple background pictures.
-     */
-    bool multipleBackgrounds() const { return numBackgrounds > 1; }
-    
-    /**
      * Return the number of background variants in the theme.
      */
     int backgroundCount() { return numBackgrounds; }

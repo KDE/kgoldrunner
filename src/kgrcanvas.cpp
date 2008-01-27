@@ -510,7 +510,7 @@ void KGrCanvas::setLevel (unsigned int l)
 {
     if (l != level) {
         level= l;
-        if (theme.multipleBackgrounds()) {
+        if (theme.backgroundCount() > 1) {
             loadBackground();
         }
     }
@@ -522,7 +522,7 @@ void KGrCanvas::loadBackground()
     bool fillCanvas = !theme.isBorderRequired(); // Background must fill canvas?
     int w = fillCanvas ? (this->width())  : (nCellsW * imgW);
     int h = fillCanvas ? (this->height()) : (nCellsH * imgH);
-    if (theme.isWithBackground()) {
+    if (theme.backgroundCount() > 0) {
         QPixmap background = theme.background (w, h, level);
         playfield->setBackground (true, background, 
                 theme.isBorderRequired() ? topLeft : QPoint (0, 0));

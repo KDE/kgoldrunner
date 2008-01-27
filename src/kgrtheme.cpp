@@ -293,14 +293,12 @@ QList<QPixmap> KGrTheme::tiles (unsigned int size)
 		tileCount++;
 	    }
 	    if (tileCount > 0) {
-		offsets[i] = offsets[i - 1] + counts[i - 1];
 		counts[i] = tileCount;
 	    } else {
 		list.append (svgTile (img, painter, name));
-		i++;
-		offsets[i] = i;
 		counts[i] = 1;
 	    } 
+	    offsets[i] = offsets[i - 1] + counts[i - 1];
 	    i++;
 	}
 
