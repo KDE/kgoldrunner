@@ -70,7 +70,6 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
 	for (int y = 0; y < FIELDHEIGHT; y++) {
 	    tileNo[x][y] = KGrTheme::EmptyTile;
 	    randomOffsets[x][y] = rand_r (&seed);
-	    kDebug() << tileNo[x][y];
 	}
     }
 
@@ -548,36 +547,60 @@ void KGrCanvas::makeBorder ()
     int lw = imgW / lineDivider;		// Line width.
 
     while (!borderRectangles.isEmpty())
-            delete borderRectangles.takeFirst();
+	delete borderRectangles.takeFirst();
+    while (!borderElements.isEmpty())
+	delete borderElements.takeFirst();
 
-    KGameCanvasRectangle * nextRectangle;
-
-    // If SVG/PNG background, coloured border is specified in the theme
-    // properties, otherwise the background fills the canvas.
-    if (theme.isBorderRequired()) {
-        nextRectangle = drawRectangle (0, 0, cw, tlY - lw);
-        borderRectangles.append (nextRectangle);
-        nextRectangle = drawRectangle (0, tlY + ph + lw,
-                                                cw, ch - tlY - ph - lw);
-        borderRectangles.append (nextRectangle);
-        nextRectangle = drawRectangle (0, tlY - lw, tlX - lw, ph + 2*lw);
-        borderRectangles.append (nextRectangle);
-        nextRectangle = drawRectangle (tlX + pw + lw, tlY - lw,
-                                                cw - tlX -pw - lw, ph + 2*lw);
-        borderRectangles.append (nextRectangle);
+    // a fancy border can be specified in the SVG file; if that is unavailable,
+    // a simple border can be specified in the theme properties file.
+    QList< QPixmap > l = theme.frameTiles (imgW);
+    if (!l.isEmpty()) {
+	kDebug() << "drawing the border tiles...";
+	// Draw fancy border
+	
+	borderElements.append(makeBorderElement(l, tlX - imgW, tlY - imgW, 0));
+	borderElements.append(makeBorderElement(l, tlX + pw, tlY - imgW, 2));
+	borderElements.append(makeBorderElement(l, tlX - imgW, tlY + ph, 6));
+	borderElements.append(makeBorderElement(l, tlX + pw, tlY + ph, 8));
+	
+	for (int i = 0; i < nCellsW; i++) {
+	    borderElements.append(makeBorderElement(l, tlX + i * imgW, tlY - imgW, 1));
+	    borderElements.append(makeBorderElement(l, tlX + i * imgW, tlY + ph, 7));
+	}
+	for (int i = 0; i < nCellsH; i++) {
+	    borderElements.append(makeBorderElement(l, tlX - imgW, tlY + i * imgW, 3));
+	    borderElements.append(makeBorderElement(l, tlX + pw, tlY + i * imgW, 5));
+	}
     }
+    else {
+	kDebug() << "drawing the border rects...";
+	KGameCanvasRectangle * nextRectangle;
 
-    // Draw the inside edges of the border, in the same way.
-    colour = QColor (Qt::black);
+	if (theme.isBorderRequired()) {
+	    nextRectangle = drawRectangle (0, 0, cw, tlY - lw);
+	    borderRectangles.append (nextRectangle);
+	    nextRectangle = drawRectangle (0, tlY + ph + lw,
+						    cw, ch - tlY - ph - lw);
+	    borderRectangles.append (nextRectangle);
+	    nextRectangle = drawRectangle (0, tlY - lw, tlX - lw, ph + 2*lw);
+	    borderRectangles.append (nextRectangle);
+	    nextRectangle = drawRectangle (tlX + pw + lw, tlY - lw,
+						    cw - tlX -pw - lw, ph + 2*lw);
+	    borderRectangles.append (nextRectangle);
+	}
 
-    nextRectangle = drawRectangle (tlX - lw, tlY - lw, pw + 2*lw, lw);
-    borderRectangles.append (nextRectangle);
-    nextRectangle = drawRectangle (tlX - lw, ph + tlY, pw + 2*lw, lw);
-    borderRectangles.append (nextRectangle);
-    nextRectangle = drawRectangle (tlX - lw, tlY, lw, ph);
-    borderRectangles.append (nextRectangle);
-    nextRectangle = drawRectangle (tlX + pw, tlY, lw, ph);
-    borderRectangles.append (nextRectangle);
+	// Draw the inside edges of the border, in the same way.
+	colour = QColor (Qt::black);
+
+	nextRectangle = drawRectangle (tlX - lw, tlY - lw, pw + 2*lw, lw);
+	borderRectangles.append (nextRectangle);
+	nextRectangle = drawRectangle (tlX - lw, ph + tlY, pw + 2*lw, lw);
+	borderRectangles.append (nextRectangle);
+	nextRectangle = drawRectangle (tlX - lw, tlY, lw, ph);
+	borderRectangles.append (nextRectangle);
+	nextRectangle = drawRectangle (tlX + pw, tlY, lw, ph);
+	borderRectangles.append (nextRectangle);
+    }
 }
 
 void KGrCanvas::drawSpotLight (qreal value)
@@ -685,6 +708,16 @@ KGameCanvasRectangle * KGrCanvas::drawRectangle (int x, int y, int w, int h)
     r->moveTo (x, y);
     r->show();
     return (r);
+}
+
+KGameCanvasPixmap * KGrCanvas::makeBorderElement(QList< QPixmap >frameTiles, 
+                                                 int x, int y, int which)
+{
+    KGameCanvasPixmap *borderElement = new KGameCanvasPixmap (this);
+    borderElement->setPixmap (frameTiles.at (which));
+    borderElement->moveTo (x, y);
+    borderElement->show();
+    return borderElement;
 }
 
 QSize KGrCanvas::sizeHint() const

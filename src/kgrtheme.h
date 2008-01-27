@@ -93,6 +93,14 @@ public:
                         unsigned int variant);
     
     /**
+     * Given the tile size, returns the list of themed frame tiles.
+     * \param[in] size The tile size.
+     * An empty list is returned when the theme does not provide a themed frame
+     * area.
+     */
+    QList<QPixmap> frameTiles (unsigned int size);
+    
+    /**
      * Is a border required for this theme?
      * \returns true if a border is required for this theme.
      */
@@ -133,7 +141,6 @@ private:
     GraphicsType backgroundGraphics;
     GraphicsType runnerGraphics;
     int numBackgrounds;
-    bool hasPanelTiles;
     bool useDirectPixmaps;
 
     int counts[TileTypeCount];

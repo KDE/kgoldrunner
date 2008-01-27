@@ -119,6 +119,7 @@ private:
     KGrSprite * heroSprite;
     QList<KGrSprite *> * enemySprites;
     QList<KGameCanvasRectangle *> borderRectangles;
+    QList<KGameCanvasPixmap *> borderElements;
 
     void initView();
 
@@ -135,6 +136,8 @@ private:
 
     QColor colour;
     KGameCanvasRectangle * drawRectangle (int x, int y, int w, int h);
+
+    KGameCanvasPixmap * makeBorderElement (QList< QPixmap > frameTiles, int x, int y, int which);
 
     QList<QPixmap> * tileset;
 

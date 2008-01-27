@@ -31,7 +31,6 @@ KGrTheme::KGrTheme (const QString &systemDataDir) :
         backgroundGraphics (NONE),
         runnerGraphics (NONE),
         numBackgrounds (0),
-        hasPanelTiles (false),
         useDirectPixmaps (false)
 {
     KConfigGroup group (KGlobal::config(), "Debugging");
@@ -75,11 +74,6 @@ bool KGrTheme::load (const QString& themeFilepath)
                 if (svgSet.elementExists ("background")) {
                     numBackgrounds = 1;
                 }
-            }
-            if (svgSet.elementExists ("panel_1")) {
-                hasPanelTiles = true;
-            } else {
-                hasPanelTiles = false;
             }
         }
         f = group.readEntry ("Actors", "default/actors.svg");
@@ -313,4 +307,33 @@ QList<QPixmap> KGrTheme::tiles (unsigned int size)
     return list;
 }
 
-// vi: sw=4
+QList< QPixmap > KGrTheme::frameTiles (unsigned int size)
+{
+    QList< QPixmap > list;
+
+    QImage img (size, size, QImage::Format_ARGB32_Premultiplied);
+    QPainter painter;
+
+    QVector< QString > tileNames;
+    tileNames << "frame-topleft" << "frame-top" << "frame-topright" << 
+	         "frame-left" << "frame-fill" << "frame-right" <<
+	         "frame-bottomleft" << "frame-bottom" << "frame-bottomright";
+
+    foreach (QString name, tileNames) {
+	if (svgSet.elementExists (name)) {
+            list.append (svgTile (img, painter, name));
+            kDebug() << name << "found";
+        }
+        else {
+            list.clear();
+            kDebug() << name << "NOT found, exiting";
+            break;
+        }
+    }
+
+    kDebug() << "frameTiles() tiles:" << list.size();
+
+    return list;
+}
+
+// vi: sw=4 et
