@@ -607,7 +607,7 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
     QPoint p = parent->mapToGlobal (QPoint (0,0));
 
     // Base the geometry of the dialog box on the playing area.
-    int cell = parent->width() / (FIELDWIDTH + 4);
+    int cell = qMin(parent->height() / (FIELDHEIGHT + 4), parent->width() / FIELDWIDTH + 4);
     dad->	move (p.x()+2*cell, p.y()+2*cell);
     dad->	setMinimumSize ((FIELDWIDTH*cell/2), (FIELDHEIGHT-1)*cell);
 
