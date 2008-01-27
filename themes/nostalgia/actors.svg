@@ -4866,6 +4866,14 @@
          style="opacity:1;display:inline"
          transform="translate(390,325)" />
       <use
+         xlink:href="#g4369"
+         height="480"
+         width="640"
+         y="0"
+         x="0"
+         id="use5352"
+         transform="translate(130,-3.922795e-7)" />
+      <use
          xlink:href="#use5352"
          height="480"
          width="640"
@@ -5011,14 +5019,6 @@
          id="use4246"
          style="opacity:1;display:inline"
          transform="translate(455,325)" />
-      <use
-         xlink:href="#g4369"
-         height="480"
-         width="640"
-         y="0"
-         x="0"
-         id="use5352"
-         transform="translate(130,-3.922795e-7)" />
       <g
          id="g4248"
          style="opacity:1;fill:#ffdc00;display:inline"

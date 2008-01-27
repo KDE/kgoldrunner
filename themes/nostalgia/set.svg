@@ -27,15 +27,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.99999999"
-     inkscape:cx="300.06536"
-     inkscape:cy="259.05122"
+     inkscape:zoom="1.3896141"
+     inkscape:cx="270.36645"
+     inkscape:cy="412.02874"
      inkscape:current-layer="layer1"
      inkscape:document-units="px"
      showgrid="true"
      inkscape:window-width="1256"
-     inkscape:window-height="868"
-     inkscape:window-x="0"
+     inkscape:window-height="747"
+     inkscape:window-x="14"
      inkscape:window-y="26"
      showguides="false" />
   <metadata
@@ -624,5 +624,96 @@
          id="rect2384"
          style="fill:none;fill-opacity:1;stroke:none" />
     </g>
+    <g
+       id="frame-topleft"
+       inkscape:label="#g2381">
+      <path
+         id="rect2272"
+         d="M 135,5 L 195,5 L 195,65 L 135,65 L 135,5 z "
+         style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1" />
+      <path
+         id="path2367"
+         d="M 186 50.03125 C 182.70904 50.03158 180.03158 52.679008 180.03125 55.96875 L 180.03125 65 L 191.9375 65 L 191.9375 61.9375 L 195 61.9375 L 195 50.03125 L 186 50.03125 z "
+         style="fill:#1b2d83;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1" />
+      <path
+         id="path2359"
+         d="M 185.75 53.46875 C 184.44789 53.587682 183.46346 54.6617 183.46875 55.96875 L 183.46875 65 L 188.5 65 L 188.5 58.5 L 195 58.5 L 195 53.46875 L 186 53.46875 C 185.92363 53.465277 185.82635 53.465277 185.75 53.46875 z "
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1" />
+    </g>
+    <g
+       id="frame-top">
+      <path
+         style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1"
+         d="M 200,5 L 260,5 L 260,65 L 200,65 L 200,5 z "
+         id="path2389" />
+      <path
+         id="path2289"
+         d="M 200,50.03125 L 200,61.9375 L 260,61.9375 L 260,50.03125 L 200,50.03125 z "
+         style="fill:#1b2d83;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1" />
+      <path
+         id="path2387"
+         d="M 200,53.46875 L 200,58.5 L 260,58.5 L 260,53.46875 L 200,53.46875 z "
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1" />
+    </g>
+    <use
+       x="0"
+       y="0"
+       xlink:href="#frame-topleft"
+       id="frame-topright"
+       transform="matrix(0,1,-1,0,330,-130)"
+       width="640"
+       height="480" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#frame-top"
+       id="frame-left"
+       transform="matrix(0,-1,1,0,130,330)"
+       width="640"
+       height="480"
+       inkscape:label="#use2404" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#frame-top"
+       id="frame-right"
+       transform="matrix(0,1,-1,0,330,-130)"
+       width="640"
+       height="480"
+       inkscape:label="#use2400" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#frame-topleft"
+       id="frame-bottomleft"
+       transform="matrix(0,-1,1,0,130,330)"
+       width="640"
+       height="480" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#frame-top"
+       id="frame-bottom"
+       transform="matrix(-1,0,0,-1,460,200)"
+       width="640"
+       height="480"
+       inkscape:label="#use2402" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#frame-topleft"
+       id="frame-bottomright"
+       transform="matrix(-1,0,0,-1,460,200)"
+       width="640"
+       height="480" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#background"
+       id="frame-fill"
+       transform="translate(130,65)"
+       width="640"
+       height="480"
+       inkscape:label="" />
   </g>
 </svg>
