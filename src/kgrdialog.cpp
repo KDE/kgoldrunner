@@ -144,7 +144,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     thumbNail->	setFixedHeight ((FIELDHEIGHT * cellSize) + 2);
 
     // Base the geometry of the dialog box on the playing area.
-    int cell = parent->width() / (FIELDWIDTH + 4);
+    int cell = qMin(parent->height() / (FIELDHEIGHT + 4), parent->width() / FIELDWIDTH + 4);
     dad->	setMinimumSize ((FIELDWIDTH*cell/2), (FIELDHEIGHT-3)*cell);
 
     // Set the default for the level-number in the scrollbar.
