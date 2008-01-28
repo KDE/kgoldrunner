@@ -31,7 +31,8 @@ KGrTheme::KGrTheme (const QString &systemDataDir) :
         backgroundGraphics (NONE),
         runnerGraphics (NONE),
         numBackgrounds (0),
-        useDirectPixmaps (false)
+        useDirectPixmaps (false),
+        pixCache ("kgoldrunner-pixmap-cache")
 {
     KConfigGroup group (KGlobal::config(), "Debugging");
     char *val = getenv ("KGOLDRUNNER_USE_PIXMAPS");
@@ -42,6 +43,8 @@ KGrTheme::KGrTheme (const QString &systemDataDir) :
 	offsets[i] = i;
 	counts[i] = 1;
     }
+    
+    pixCache.setRemoveEntryStrategy(KPixmapCache::RemoveLeastRecentlyUsed);
 }
 
 bool KGrTheme::load (const QString& themeFilepath)
@@ -189,44 +192,62 @@ QList<QPixmap> KGrTheme::svgFrames (const QString &elementPattern,
 
     QTime t;
     t.restart();
-    //for (int j = 0; j < 10; j++) {
 
-    if (useDirectPixmaps) {
+    for (int i = 1; i <= nFrames; i++) 
+    {
+        // This is the pixmap we're loading:
         QPixmap pix (size, size);
-        for (int i = 1; i <= nFrames; i++) {
-            QString s = elementPattern.arg (i);	// e.g. "hero_1", "hero_2", etc.
-            pix.fill (QColor (0, 0, 0, 0));
-            q.begin (&pix);
-            if (svgActors.elementExists (s)) {
-                svgActors.render (&q, s, bounds);
+        // name of the image we're looking for e.g. "hero_1", "hero_2", etc.
+        QString s = elementPattern.arg (i);
+    
+        // First, is it in the pixmap cache?
+        // We need a string to store the pixmaps as. It must include the theme name,
+        // graphics name, and size:
+        QString strTagName = QString("%1|%2|%3").arg(m_themeFilepath).arg(s).arg(QString::number(size));
+        
+        kWarning() << "Tagname for this graphic is:" << strTagName;
+        
+        if (! pixCache.find (strTagName, pix))
+        {
+            kWarning() << "Element" << s << "not in cache, rendering from SVG";
+            // no, it's not int he cache. Render it from SVG:
+            // does it exist in the SVG set?
+            if (svgActors.elementExists (s))
+            {
+                // are we using pixmaps?
+                if (useDirectPixmaps)
+                {
+                    // yes - we're using pixmaps
+                    pix.fill(QColor (0, 0, 0, 0));
+                    q.begin (&pix);
+                    svgActors.render (&q, s, bounds);
+                    q.end();
+                }
+                else
+                {
+                    // no, we're using images
+                    QImage img (size, size, QImage::Format_ARGB32_Premultiplied);
+                    img.fill (0);
+                    q.begin (&img);
+                    svgActors.render (&q, s, bounds);
+                    q.end();
+                    pix = QPixmap::fromImage(img);
+                }
+                pixCache.insert(strTagName, pix);
             }
-            else {
-                // The theme does not contain the needed element.
-                kWarning() << "The needed element" << s << "is not in the theme.";
+            else
+            {
+                kWarning() << "The element" << s << "Wasn't found in the current theme!";
             }
-            q.end();
-            frames.append (pix);
         }
-
-    }
-    else {
-        QImage img (size, size, QImage::Format_ARGB32_Premultiplied);
-        for (int i = 1; i <= nFrames; i++) {
-            QString s = elementPattern.arg (i);	// e.g. "hero_1", "hero_2", etc.
-            img.fill (0);
-            q.begin (&img);
-            if (svgActors.elementExists (s)) {
-                svgActors.render (&q, s, bounds);
-            }
-            else {
-                // The theme does not contain the needed element.
-                kWarning() << "The needed element" << s << "is not in the theme.";
-            }
-            q.end();
-            frames.append (QPixmap::fromImage (img));
+        else
+        {
+            kWarning() << "Element" << s << "taken from pixmap Cache";
         }
+        // at this point we have a pixmap:
+        frames.append (pix);
     }
-    //}
+    
     qDebug() << "rendering frames took " << t.elapsed() << "ms";
     return frames;
 }

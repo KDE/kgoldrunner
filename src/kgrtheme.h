@@ -23,6 +23,7 @@
 #include <QColor>
 #include <QImage>
 #include <KSvgRenderer>
+#include <KPixmapCache>
 
 /**
  * KGrTheme handles KGoldrunner theme management.
@@ -145,6 +146,12 @@ private:
 
     int counts[TileTypeCount];
     int offsets[TileTypeCount];
+
+    // Thomi Richards - 25/01/2008
+    //
+    // Use a KPixmapCache to store rendered pixmaps in, so we don't need to
+    // render from SVG every time:
+    KPixmapCache pixCache;
 };
 
 #endif // KGRTHEME_H
