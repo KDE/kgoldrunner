@@ -205,8 +205,6 @@ QList<QPixmap> KGrTheme::svgFrames (const QString &elementPattern,
         // graphics name, and size:
         QString strTagName = QString("%1|%2|%3").arg(m_themeFilepath).arg(s).arg(QString::number(size));
         
-        kWarning() << "Tagname for this graphic is:" << strTagName;
-        
         if (! pixCache.find (strTagName, pix))
         {
             kWarning() << "Element" << s << "not in cache, rendering from SVG";
@@ -254,23 +252,38 @@ QList<QPixmap> KGrTheme::svgFrames (const QString &elementPattern,
 
 QPixmap KGrTheme::svgTile (QImage & img, QPainter & q, const QString & name)
 {
-    q.begin (&img);
-    img.fill (0);
+    // Thomi - 28/01/2008
+    // Use the pixmap cache to get SVG elements if they've already been rendered:
+    // Tag name:
+    QString strTagName = QString("%1|%2|%3").arg(m_themeFilepath).arg(name).arg(QString::number(img.size().width()));
+    QPixmap pix(img.rect().size());
+    pix.fill(QColor(0,0,0,0));
     
-    QRectF bounds = img.rect();
-    bounds.adjust (-0.5, -0.5, 0.5, 0.5);
-    if (svgSet.elementExists (name)) {
-        svgSet.render (&q, name, bounds);
+    if (!pixCache.find(strTagName, pix))
+    {
+        // kWarning() << "Element" << strTagName << "rendered from SVG";
+        QRectF bounds = img.rect();
+        bounds.adjust(-0.5, -0.5, 0.5, 0.5);
+        
+        q.begin(&pix);
+        if (svgSet.elementExists (name))
+        {
+            svgSet.render(&q, name, bounds);
+        }
+        else if (svgActors.elementExists(name))
+        {
+            svgActors.render (&q, name, bounds);
+        }
+        else
+        {
+            kWarning() << "The needed element" << name << "is not in the theme.";
+        }
+        q.end();
+        
+        pixCache.insert(strTagName, pix);
     }
-    else if (svgActors.elementExists (name)) {
-        svgActors.render (&q, name, bounds);
-    }
-    else {
-        // The theme does not contain the needed element.
-        kWarning() << "The needed element" << name << "is not in the theme.";
-    }
-    q.end();
-    return QPixmap::fromImage (img);
+    
+    return pix;
 }
 
 QList<QPixmap> KGrTheme::tiles (unsigned int size)
