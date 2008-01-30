@@ -1052,19 +1052,23 @@ void KGoldrunner::setKey (KBAction movement)
         // Halt the game while a message is displayed.
         game->setMessageFreeze (true);
 
-        switch (KGrMessage::warning (this, i18n ("Switch to Keyboard Mode"),
+        switch (KMessageBox::questionYesNo (this, 
                 i18n ("You have pressed a key that can be used to move the "
                 "Hero. Do you want to switch automatically to keyboard "
                 "control? Mouse control is easier to use in the long term "
                 "- like riding a bike rather than walking!"),
-                i18n ("Switch to &Keyboard Mode"),
-                i18n ("Stay in &Mouse Mode")))
+                i18n ("Switch to Keyboard Mode"),
+                KGuiItem (i18n ("Switch to &Keyboard Mode")),
+                KGuiItem (i18n ("Stay in &Mouse Mode")),
+                i18n ("Keyboard Mode")))
         {
-        case 0: game->setMouseMode (false);	// Set internal mouse mode OFF.
-                setMouse->setChecked (false);	// Adjust the Settings menu.
-                setKeyboard->setChecked (true);
-                break;
-        case 1: break;
+        case KMessageBox::Yes: 
+            game->setMouseMode (false);	// Set internal mouse mode OFF.
+            setMouse->setChecked (false);	// Adjust the Settings menu.
+            setKeyboard->setChecked (true);
+            break;
+        case KMessageBox::No: 
+            break;
         }
 
         // Unfreeze the game, but only if it was previously unfrozen.
