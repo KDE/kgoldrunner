@@ -32,7 +32,7 @@ To do in post-KDE 4.0 releases:
 
 3a. Re-organization of resize, re-load, re-render and re-paint: DONE
     Need to try using KPixmapCache to speed startup, after the first KGoldrunner
-    session and maybe also the maximize/full-screen/restore sequence.
+    session and maybe also the maximize/full-screen/restore sequence. IN PROGRESS
 
  6. Fix the KScoreDialog in libkdegames so that it works well for KGoldrunner,
     and write the conversion scripts for the old score files.
@@ -83,7 +83,8 @@ To do in post-KDE 4.0 releases:
 21. Much more use of KConfig classes, e.g. to remember last game and level.
     Ian Comment: Partly DONE in KDE 4.0.
 
-
+22. Improve the level editor: rect-fill with a tile type, cut-copy-paste of
+    tile blocks, undo-redo etc.
 
 Some ideas for the future:
 --------------------------
