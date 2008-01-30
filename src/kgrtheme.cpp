@@ -137,26 +137,40 @@ QPixmap KGrTheme::background (unsigned int width, unsigned int height,
     t.restart();
     QPixmap pixmap;
     //for (int i = 0; i < 5; i++) {
-    if ((width != 0) && (height != 0) && 
-        (backgroundGraphics == SVG) && numBackgrounds > 0) {
-        QPainter painter;
-        if (useDirectPixmaps) {
-            QPixmap backgroundPixmap (width, height);
-            painter.begin (&backgroundPixmap);
-            backgroundPixmap.fill (Qt::black);
-            renderBackground (painter, svgSet, variant, numBackgrounds);
-            painter.end();
-            pixmap = backgroundPixmap;
+    if ((width != 0) && (height != 0) && (backgroundGraphics == SVG) && numBackgrounds > 0) 
+    {
+        QString strTagName = QString("%1|background%2|%3x%4").arg(m_themeFilepath).arg(variant).arg(width).arg(height);
+        
+        if (!pixCache.find(strTagName, pixmap))
+        {
+//            kWarning() << "Element" << strTagName << "Not found in cache, redering from SVG";
+            
+            QPainter painter;
+            if (useDirectPixmaps) 
+            {
+                QPixmap backgroundPixmap (width, height);
+                painter.begin (&backgroundPixmap);
+                backgroundPixmap.fill (Qt::black);
+                renderBackground (painter, svgSet, variant, numBackgrounds);
+                painter.end();
+                pixmap = backgroundPixmap;
+            }
+            else 
+            {
+                QImage backgroundImage (width, height,
+                                        QImage::Format_ARGB32_Premultiplied);
+                backgroundImage.fill (0);
+                painter.begin (&backgroundImage);
+                renderBackground (painter, svgSet, variant, numBackgrounds);
+                painter.end();
+                pixmap = QPixmap::fromImage (backgroundImage);
+            }
+            pixCache.insert(strTagName, pixmap);
         }
-        else {
-            QImage backgroundImage (width, height,
-                                    QImage::Format_ARGB32_Premultiplied);
-            backgroundImage.fill (0);
-            painter.begin (&backgroundImage);
-            renderBackground (painter, svgSet, variant, numBackgrounds);
-            painter.end();
-            pixmap = QPixmap::fromImage (backgroundImage);
-        }
+//         else
+//         {
+//             kWarning() << "Element" << strTagName << "Taken from pixmap cache";
+//         }
     }
     //}
     qDebug() << "background took" << t.elapsed() << "ms to render";
