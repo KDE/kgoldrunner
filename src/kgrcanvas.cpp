@@ -16,6 +16,7 @@
  ***************************************************************************/
 
 #include "kgrcanvas.h"
+#include "klocale.h"
 
 #include <QPixmap>
 #include <QList>
@@ -407,14 +408,14 @@ void KGrCanvas::makeTitle()
 void KGrCanvas::updateScore (int score)
 {
     if (m_scoreText) 
-        m_scoreText->setText (QString (("Score: %1")).arg (score, 7, 10, QLatin1Char('0')));
+        m_scoreText->setText (ki18n ("Score: %1").subs (score, 7, 10, QLatin1Char('0')).toString());
 }
 
 void KGrCanvas::updateLives (int lives)
 {
     // TODO use hero frames to show the lives?
     if (m_livesText) 
-        m_livesText->setText (QString (("Lives: %1")).arg (lives, 3, 10, QLatin1Char('0')));
+        m_livesText->setText (ki18n ("Lives: %1").subs (lives, 3, 10, QLatin1Char('0')).toString());
 }
 
 void KGrCanvas::mousePressEvent (QMouseEvent * mouseEvent)
