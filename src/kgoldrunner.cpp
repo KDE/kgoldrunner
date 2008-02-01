@@ -696,6 +696,7 @@ void KGoldrunner::showLives (long newLives)
         tmp = tmp.rightJustified (3, '0');
     tmp.insert (0, i18n ("   Lives: "));
     tmp.append ("   ");
+    view->updateLives(newLives);
     statusBar()->changeItem (tmp, ID_LIVES);
 }
 
@@ -707,6 +708,7 @@ void KGoldrunner::showScore (long newScore)
         tmp = tmp.rightJustified (7, '0');
     tmp.insert (0, i18n ("   Score: "));
     tmp.append ("   ");
+    view->updateScore(newScore);
     statusBar()->changeItem (tmp, ID_SCORE);
 }
 

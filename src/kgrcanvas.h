@@ -63,6 +63,8 @@ public:
     void goToBlack();
     void fadeIn();
     void fadeOut();
+    void updateScore (int score);
+    void updateLives (int lives);
 
     QPixmap getPixmap (char type);
 
@@ -114,6 +116,9 @@ private:
     int goldEnemy;
 
     KGameCanvasPicture *m_spotLight;
+    KGameCanvasText *m_scoreText;
+    KGameCanvasText *m_livesText;
+
     QTimeLine m_fadingTimeLine;
 
     KGrSprite * heroSprite;
@@ -152,6 +157,10 @@ private:
     int resizeCount;			// =0 until the main window has resized.
     QTime t; // IDW
     unsigned int level;
+    
+    // Keep current score and lives 
+    int lives;
+    int score;
 };
 #endif // KGRCANVAS_H
 // vi: set sw=4 :

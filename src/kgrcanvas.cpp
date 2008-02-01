@@ -33,8 +33,11 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
                         : KGameCanvasWidget (parent),
                           firstSceneDrawn (false),
                           topLeft (0, 0), bgw (4 * STEP), bgh (4 * STEP),
+                          m_scoreText(0),
+                          m_livesText(0),
                           m_fadingTimeLine (1000, this),
                           theme (systemDataDir)
+
 {
     resizeCount = 0;		// IDW
 
@@ -78,6 +81,11 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
 
     // Set minimum size to 12x12 pixels per tile.
     setMinimumSize ((FIELDWIDTH + 4) * 12, (FIELDHEIGHT + 4) * 12);
+
+    m_scoreText = new KGameCanvasText ("", Qt::white, QFont(), 
+            KGameCanvasText::HLeft, KGameCanvasText::VTop, this);
+    m_livesText = new KGameCanvasText ("", Qt::white, QFont(), 
+            KGameCanvasText::HRight, KGameCanvasText::VTop, this);
 
     m_spotLight = new KGameCanvasPicture (this);
     m_fadingTimeLine.setCurveShape (QTimeLine::LinearCurve);
@@ -211,6 +219,21 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
     QString t = title->text();
     makeTitle();
     setTitle (t);
+
+    // Create and position the score and lives text areas
+    QFont f;
+    f.setPixelSize (imgH);
+    f.setWeight (QFont::Bold);
+    f.setStretch (QFont::Expanded);
+    m_scoreText->setFont (f);
+    m_scoreText->moveTo (topLeft + QPoint (0, (1 + imgH) * nCellsH));
+    m_scoreText->show();
+    m_scoreText->raise();
+
+    m_livesText->setFont (f);
+    m_livesText->moveTo (topLeft + QPoint (imgW * nCellsW, (1 + imgH) * nCellsH));
+    m_livesText->show();
+    m_livesText->raise();
 
     // When the initial resizing, rendering and painting has been done,
     // future resizes and re-rendering will be caused by end-user activity.
@@ -379,6 +402,19 @@ void KGrCanvas::makeTitle()
     title->setAttribute (Qt::WA_QuitOnClose, false); //Otherwise the close above might exit app
     title->raise();
     title->show();
+}
+
+void KGrCanvas::updateScore (int score)
+{
+    if (m_scoreText) 
+        m_scoreText->setText (QString (("Score: %1")).arg (score, 7, 10, QLatin1Char('0')));
+}
+
+void KGrCanvas::updateLives (int lives)
+{
+    // TODO use hero frames to show the lives?
+    if (m_livesText) 
+        m_livesText->setText (QString (("Lives: %1")).arg (lives, 3, 10, QLatin1Char('0')));
 }
 
 void KGrCanvas::mousePressEvent (QMouseEvent * mouseEvent)
@@ -726,4 +762,4 @@ QSize KGrCanvas::sizeHint() const
 }
 
 #include "kgrcanvas.moc"
-// vi: set sw=4 :
+// vi: set sw=4 et:
