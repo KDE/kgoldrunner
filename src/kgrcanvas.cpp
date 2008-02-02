@@ -227,11 +227,13 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
     f.setWeight (QFont::Bold);
     f.setStretch (QFont::Expanded);
     m_scoreText->setFont (f);
+    m_scoreText->setColor (theme.textColor());
     m_scoreText->moveTo (topLeft + QPoint (0, (1 + imgH) * nCellsH));
     m_scoreText->show();
     m_scoreText->raise();
 
     m_livesText->setFont (f);
+    m_livesText->setColor (theme.textColor());
     m_livesText->moveTo (topLeft + QPoint (imgW * nCellsW, (1 + imgH) * nCellsH));
     m_livesText->show();
     m_livesText->raise();
