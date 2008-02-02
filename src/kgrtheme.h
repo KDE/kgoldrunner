@@ -58,6 +58,11 @@ public:
      * \param[in] systemDataDir The system data dir is used to calculate the theme data directory.
      */
     KGrTheme (const QString &systemDataDir);
+    
+    /**
+     * Default dtor
+     */
+    ~KGrTheme();
 
     /** 
      * Load a theme given the name of its .desktop file.
@@ -126,23 +131,28 @@ public:
     QColor textColor() { return m_textColor; }
 
 private:
-    KSvgRenderer svgSet;
-    KSvgRenderer svgActors;
+    // Each KSvgRenderer loads a single .svg file.. multiple SVG files make a single theme.
+    KSvgRenderer svgSet;                //< Tiles in here
+    KSvgRenderer svgActors;             //< Everything else?
+    
     QColor m_borderColor, m_textColor;	// Border colours.
 
     QString themeDataDir;
     QString m_themeFilepath;
     short themeDrawBorder;
-    QPixmap svgTile (QImage &image, QPainter &painter, const QString &name);
+//     QPixmap svgTile (QImage &image, QPainter &painter, const QString &name);
     QList<QPixmap> svgFrames (const QString & elementPattern,
                                 unsigned int size, int nFrames);
+    
+    // Thomi - 31/01/2008
+    // This private method will load the given item from SVG, if it exists, and will automatically handle inserting
+    // and removing files from the pixmap cache.
+    QPixmap loadGraphic(const QSize &size, const QString &strName, KSvgRenderer &Svg, double boundsAdjust=0.5);
 
-    enum GraphicsType { NONE, SVG, PNG };
-    GraphicsType tileGraphics;
-    GraphicsType backgroundGraphics;
-    GraphicsType runnerGraphics;
+    // utility method - create the pixCache pointer below given a theme file path.
+    void createPixCache();
+    
     int numBackgrounds;
-    bool useDirectPixmaps;
 
     int counts[TileTypeCount];
     int offsets[TileTypeCount];
@@ -151,7 +161,7 @@ private:
     //
     // Use a KPixmapCache to store rendered pixmaps in, so we don't need to
     // render from SVG every time:
-    KPixmapCache pixCache;
+    KPixmapCache *pixCache;
 };
 
 #endif // KGRTHEME_H
