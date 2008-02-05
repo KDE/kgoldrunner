@@ -57,6 +57,6 @@ Description[zh_TW]=協助 Goldrunner 逃離古埃及
 Author=Eugene Trounev
 Set=egypt/egypt_kgr.svgz
 Actors=egypt/actors.svg
-DrawCanvasBorder=0
+DrawCanvasBorder=1
 BorderColor=#343131
 TextColor=#FFFFFF
