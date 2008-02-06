@@ -29,6 +29,23 @@
 
 #include <cmath>
 
+
+// Helper function: find how many tiles are needed to cover at least w pixels
+int numSections(int w, int sectionWidth)
+{
+    return 1 + w / sectionWidth; 
+}
+
+QString scoreText(int score) 
+{
+    return ki18n ("Score: ").toString() + QString::number(score).rightJustified(7, '0');
+}
+
+QString livesText(int lives) 
+{
+    return ki18n ("Lives: ").toString() + QString::number(lives).rightJustified(3, '0');
+}
+
 KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
                         const QString & systemDataDir)
                         : KGameCanvasWidget (parent),
@@ -36,6 +53,8 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
                           topLeft (0, 0), bgw (4 * STEP), bgh (4 * STEP),
                           m_scoreText(0),
                           m_livesText(0),
+                          m_scoreDisplay(0),
+                          m_livesDisplay(0),
                           m_fadingTimeLine (1000, this),
                           theme (systemDataDir)
 
@@ -223,18 +242,42 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
 
     // Create and position the score and lives text areas
     QFont f;
-    f.setPixelSize (imgH);
+    f.setPixelSize (imgH - 2);
     f.setWeight (QFont::Bold);
     f.setStretch (QFont::Expanded);
     m_scoreText->setFont (f);
     m_scoreText->setColor (theme.textColor());
-    m_scoreText->moveTo (topLeft + QPoint (0, (1 + imgH) * nCellsH));
-    m_scoreText->show();
-    m_scoreText->raise();
+    int vTextPos = (1 + imgH) * nCellsH + 1;
+    QPoint scorePos = topLeft + QPoint (imgW, vTextPos);
 
     m_livesText->setFont (f);
     m_livesText->setColor (theme.textColor());
-    m_livesText->moveTo (topLeft + QPoint (imgW * nCellsW, (1 + imgH) * nCellsH));
+    QPoint livesPos = topLeft + QPoint (imgW * (nCellsW - 1), vTextPos);
+    QList< QPixmap > display = theme.displayTiles (imgW);
+    delete m_scoreDisplay; m_scoreDisplay = 0;
+    delete m_livesDisplay; m_livesDisplay = 0;
+    // If the theme has display decoration support
+    if (!display.isEmpty()) {
+        QFontMetrics fm (f);
+        int w = fm.width (scoreText (0));
+        m_scoreDisplay = makeDisplay (display, w);
+        m_scoreDisplay->moveTo (scorePos + QPoint (-imgW, 0));
+        int sections = numSections (w, imgW);
+        // Adjust score position to center them in the display
+        int deltaW = (sections * imgW - w) / 2;
+        scorePos.rx() += deltaW;
+        w = fm.width(livesText(0));
+        m_livesDisplay = makeDisplay (display, w);
+        sections = numSections (w, imgW);
+        m_livesDisplay->moveTo (livesPos + QPoint (-(sections + 1) * imgW, 0));
+        // Adjust lives position to center them in the display
+        deltaW = (sections * imgW - w) / 2;
+        livesPos.rx() -= deltaW;
+    }
+    m_scoreText->moveTo (scorePos);
+    m_livesText->moveTo (livesPos);
+    m_scoreText->show();
+    m_scoreText->raise();
     m_livesText->show();
     m_livesText->raise();
 
@@ -410,14 +453,14 @@ void KGrCanvas::makeTitle()
 void KGrCanvas::updateScore (int score)
 {
     if (m_scoreText) 
-        m_scoreText->setText (ki18n ("Score: %1").subs (score, 7, 10, QLatin1Char('0')).toString());
+        m_scoreText->setText (scoreText(score));
 }
 
 void KGrCanvas::updateLives (int lives)
 {
     // TODO use hero frames to show the lives?
     if (m_livesText) 
-        m_livesText->setText (ki18n ("Lives: %1").subs (lives, 3, 10, QLatin1Char('0')).toString());
+        m_livesText->setText (livesText(lives));
 }
 
 void KGrCanvas::mousePressEvent (QMouseEvent * mouseEvent)
@@ -602,13 +645,13 @@ void KGrCanvas::makeBorder ()
 	borderElements.append(makeBorderElement(l, tlX - imgW, tlY + ph, 6));
 	borderElements.append(makeBorderElement(l, tlX + pw, tlY + ph, 8));
 	
-	for (int i = 0; i < nCellsW; i++) {
-	    borderElements.append(makeBorderElement(l, tlX + i * imgW, tlY - imgW, 1));
-	    borderElements.append(makeBorderElement(l, tlX + i * imgW, tlY + ph, 7));
+	for (int i = 0; i < nCellsW * imgW; i += imgW) {
+	    borderElements.append(makeBorderElement(l, tlX + i, tlY - imgW, 1));
+	    borderElements.append(makeBorderElement(l, tlX + i, tlY + ph, 7));
 	}
-	for (int i = 0; i < nCellsH; i++) {
-	    borderElements.append(makeBorderElement(l, tlX - imgW, tlY + i * imgW, 3));
-	    borderElements.append(makeBorderElement(l, tlX + pw, tlY + i * imgW, 5));
+	for (int i = 0; i < nCellsH * imgH; i += imgH) {
+	    borderElements.append(makeBorderElement(l, tlX - imgW, tlY + i, 3));
+	    borderElements.append(makeBorderElement(l, tlX + pw, tlY + i, 5));
 	}
     }
     else {
@@ -757,6 +800,27 @@ KGameCanvasPixmap * KGrCanvas::makeBorderElement(QList< QPixmap >frameTiles,
     borderElement->moveTo (x, y);
     borderElement->show();
     return borderElement;
+}
+
+KGameCanvasPixmap * KGrCanvas::makeDisplay (QList< QPixmap > tiles, int w)
+{
+    int sections = 1 + numSections(w, imgW); 
+    int width = (sections + 2) * imgW;
+    QPixmap pix (width, imgH);
+    pix.fill(QColor(0, 0, 0, 0));
+    QPainter p;
+    p.begin (&pix);
+    p.drawPixmap (0, 0, tiles.at(0));
+    for (int x = imgW; x < sections * imgW; x += imgW) {
+        p.drawPixmap (x, 0, tiles.at(1));
+    }
+    p.drawPixmap (sections * imgW, 0, tiles.at(2));
+    
+    p.end();
+    KGameCanvasPixmap *element = new KGameCanvasPixmap (this);
+    element->setPixmap (pix);
+    element->show();
+    return element;
 }
 
 QSize KGrCanvas::sizeHint() const

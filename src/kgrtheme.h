@@ -55,7 +55,8 @@ public:
     };
     /**
      * Default constructor.
-     * \param[in] systemDataDir The system data dir is used to calculate the theme data directory.
+     * \param[in] systemDataDir The system data dir is used to calculate the
+     * theme data directory.
      */
     KGrTheme (const QString &systemDataDir);
     
@@ -105,6 +106,15 @@ public:
      * area.
      */
     QList<QPixmap> frameTiles (unsigned int size);
+
+    /**
+     * Given the tile size, returns the list of themed display tiles
+     * (Frame/decoration around score/level).
+     * \param[in] size The tile size.
+     * An empty list is returned when the theme does not provide a themed
+     * display area.
+     */
+    QList<QPixmap> displayTiles (unsigned int size);
     
     /**
      * Is a border required for this theme?
@@ -131,7 +141,8 @@ public:
     QColor textColor() { return m_textColor; }
 
 private:
-    // Each KSvgRenderer loads a single .svg file.. multiple SVG files make a single theme.
+    // Each KSvgRenderer loads a single .svg file. multiple SVG files make a
+    // single theme.
     KSvgRenderer svgSet;                //< Tiles in here
     KSvgRenderer svgActors;             //< Everything else?
     
@@ -140,16 +151,19 @@ private:
     QString themeDataDir;
     QString m_themeFilepath;
     short themeDrawBorder;
-//     QPixmap svgTile (QImage &image, QPainter &painter, const QString &name);
-    QList<QPixmap> svgFrames (const QString & elementPattern,
+
+    QList< QPixmap > namedTiles (QList< QString > names, unsigned int size);
+    QList< QPixmap > svgFrames (const QString & elementPattern,
                                 unsigned int size, int nFrames);
     
     // Thomi - 31/01/2008
-    // This private method will load the given item from SVG, if it exists, and will automatically handle inserting
-    // and removing files from the pixmap cache.
+    // This private method will load the given item from SVG, if it exists, and
+    // will automatically handle inserting and removing files from the pixmap
+    // cache.
     QPixmap loadGraphic(const QSize &size, const QString &strName, KSvgRenderer &Svg, double boundsAdjust=0.5);
 
-    // utility method - create the pixCache pointer below given a theme file path.
+    // utility method - create the pixCache pointer below given a theme file
+    // path.
     void createPixCache();
     
     int numBackgrounds;

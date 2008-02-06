@@ -244,16 +244,12 @@ QList<QPixmap> KGrTheme::tiles (unsigned int size)
     return list;
 }
 
-QList< QPixmap > KGrTheme::frameTiles (unsigned int size)
+QList< QPixmap > KGrTheme::namedTiles (QList< QString > names, 
+                                       unsigned int size)
 {
     QList< QPixmap > list;
-    QVector< QString > tileNames;
     
-    tileNames << "frame-topleft" << "frame-top" << "frame-topright" << 
-	         "frame-left" << "frame-fill" << "frame-right" <<
-	         "frame-bottomleft" << "frame-bottom" << "frame-bottomright";
-
-    foreach (QString name, tileNames) {
+    foreach (QString name, names) {
 	if (svgSet.elementExists (name)) {
             list.append (loadGraphic(QSize(size, size), name, svgSet));
             kDebug() << name << "found";
@@ -265,9 +261,29 @@ QList< QPixmap > KGrTheme::frameTiles (unsigned int size)
         }
     }
 
-    kDebug() << "frameTiles() tiles:" << list.size();
+    kDebug() << "namedTiles() tiles:" << list.size();
 
     return list;
+}
+
+QList< QPixmap > KGrTheme::displayTiles (unsigned int size)
+{
+    QList< QString > tileNames;
+    
+    tileNames << "display-left" << "display-centre" << "display-right";
+
+    return namedTiles (tileNames, size);
+}
+
+QList< QPixmap > KGrTheme::frameTiles (unsigned int size)
+{
+    QList< QString > tileNames;
+    
+    tileNames << "frame-topleft" << "frame-top" << "frame-topright" << 
+	         "frame-left" << "frame-fill" << "frame-right" <<
+	         "frame-bottomleft" << "frame-bottom" << "frame-bottomright";
+
+    return namedTiles (tileNames, size);
 }
 
 QPixmap KGrTheme::loadGraphic(const QSize & size, const QString & strName, KSvgRenderer &Svg, double boundsAdjust)

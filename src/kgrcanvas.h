@@ -41,7 +41,7 @@ class KGrCanvas : public KGameCanvasWidget
     Q_OBJECT
 public:
     KGrCanvas (QWidget * parent, const double scale,
-                            const QString & systemDataDir);
+               const QString & systemDataDir);
     virtual ~KGrCanvas();
 
     QPoint getMousePos();
@@ -90,6 +90,26 @@ private slots:
     void drawSpotLight (qreal value);
 
 private:
+    void initView();
+
+    /**
+     * Load background appropriate for current level
+     */
+    void loadBackground();
+
+    void drawTheScene (bool changePixmaps);
+    void makeBorder();
+    void makeTitle();
+    KGrTheme::TileType tileForType(char type);
+    int tileNumber(KGrTheme::TileType type, int x, int y);
+
+    KGameCanvasRectangle * drawRectangle (int x, int y, int w, int h);
+
+    KGameCanvasPixmap * makeBorderElement (QList< QPixmap > frameTiles, 
+                                           int x, int y, int which);
+
+    KGameCanvasPixmap * makeDisplay (QList< QPixmap > tiles, int w);
+
     bool firstSceneDrawn;		// Set AFTER the initial resize events.
 
     QCursor * m;			// Mouse cursor.
@@ -118,6 +138,8 @@ private:
     KGameCanvasPicture *m_spotLight;
     KGameCanvasText *m_scoreText;
     KGameCanvasText *m_livesText;
+    KGameCanvasPixmap * m_scoreDisplay;
+    KGameCanvasPixmap * m_livesDisplay;
 
     QTimeLine m_fadingTimeLine;
 
@@ -125,24 +147,7 @@ private:
     QList<KGrSprite *> * enemySprites;
     QList<KGameCanvasRectangle *> borderRectangles;
     QList<KGameCanvasPixmap *> borderElements;
-
-    void initView();
-
-    /**
-     * Load background appropriate for current level
-     */
-    void loadBackground();
-
-    void drawTheScene (bool changePixmaps);
-    void makeBorder();
-    void makeTitle();
-    KGrTheme::TileType tileForType(char type);
-    int tileNumber(KGrTheme::TileType type, int x, int y);
-
     QColor colour;
-    KGameCanvasRectangle * drawRectangle (int x, int y, int w, int h);
-
-    KGameCanvasPixmap * makeBorderElement (QList< QPixmap > frameTiles, int x, int y, int which);
 
     QList<QPixmap> * tileset;
 
