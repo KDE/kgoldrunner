@@ -127,8 +127,6 @@ private:
 
     QLabel * title;			// Title and top part of border.
 
-    int freebg, nuggetbg, polebg, ladderbg, hladderbg;
-    int edherobg, edenemybg, betonbg, brickbg, fbrickbg;
     int bgw, bgh;			// Size of KGoldrunner 2 tile QPixmap.
     int imgW, imgH;			// Scaled size of KGr 3 tile QImage.
     int oldImgW, oldImgH;

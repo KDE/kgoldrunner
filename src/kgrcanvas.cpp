@@ -31,17 +31,17 @@
 
 
 // Helper function: find how many tiles are needed to cover at least w pixels
-int numSections(int w, int sectionWidth)
+static int numSections(int w, int sectionWidth)
 {
     return 1 + w / sectionWidth; 
 }
 
-QString scoreText(int score) 
+static QString scoreText(int score) 
 {
     return ki18n ("Score: ").toString() + QString::number(score).rightJustified(7, '0');
 }
 
-QString livesText(int lives) 
+static QString livesText(int lives) 
 {
     return ki18n ("Lives: ").toString() + QString::number(lives).rightJustified(3, '0');
 }
@@ -558,21 +558,6 @@ QPixmap KGrCanvas::getPixmap (char type)
 
 void KGrCanvas::initView()
 {
-    // Set up the pixmaps for the editable objects.
-    freebg	= 0;		// Free space.
-    nuggetbg	= 1;		// Nugget.
-    polebg	= 2;		// Pole or bar.
-    ladderbg	= 3;		// Ladder.
-    hladderbg	= 4;		// Hidden ladder.
-    edherobg	= 5;		// Static hero (for editing).
-    edenemybg	= 6;		// Static enemy (for editing).
-    betonbg	= 7;		// Concrete.
-    fbrickbg	= 8;		// False brick.
-
-    // The bricks have 10 pixmaps (showing various stages of digging).
-    brickbg	= 9;		// Solid brick - 1st pixmap.
-
-
     // Set default tile-size (if not played before or no KMainWindow settings).
     imgW = (bgw * scaleStep) / STEP;
     imgH = (bgh * scaleStep) / STEP;
