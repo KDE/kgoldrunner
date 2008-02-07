@@ -1,32 +1,36 @@
 THEMES IN KGOLDRUNNER
 
 For each pictorial theme in KGoldrunner there is a "*.desktop" file in the area
-kdegames/kgoldrunner/themes in the KDE SVN source-code repository, or in the area
-$HOME/.kde/share/apps/kgoldrunner/themes, the user's local data area.  If two
-*.desktop files have the same name, the one in the local area takes precedence.
+kdegames/kgoldrunner/themes in the KDE SVN source-code repository, or in the
+area $HOME/.kde/share/apps/kgoldrunner/themes, the user's local data area.  If
+two *.desktop files have the same name, the one in the local area takes
+precedence.
 
-Files in the SVN area are released and installed with KGoldrunner.  Files in the
-local area can be used for development and testing of themes or for holding
+Files in the SVN area are released and installed with KGoldrunner.  Files in
+the local area can be used for development and testing of themes or for holding
 downloaded and copied themes, whatever the method of transfer or copying.  One
 of the theme files is called "default.desktop".  That theme is used whenever
-the game runs for the first time for a particular user.  On subsequent occasions
-the last-used theme is loaded.
+the game runs for the first time for a particular user.  On subsequent
+occasions the last-used theme is loaded.
 
-Each *.desktop file must start with the "group" line, which says [KDEGameTheme].
-There must also be a line which gives the name of the theme (e.g. Name=Foo Bar).
-That line gets picked up and translated into various languages.  Some other
-standard (but optional) lines are Description=..., Author=..., AuthorEmail=...
-and VersionFormat=...
+Each *.desktop file must start with the "group" line, which says
+[KDEGameTheme].  There must also be a line which gives the name of the theme
+(e.g. Name=Foo Bar).  That line gets picked up and translated into various
+languages.  Some other standard (but optional) lines are 
+Description=...,
+Author=..., 
+AuthorEmail=...  and 
+VersionFormat=...
 
 SVG THEMES
 
 SVG themes are the standard for KGoldrunner 3+ (KDE 4+).  The *.desktop file
-must contain a Set=xxxx line and an Actors=yyyy line, that contain the filenames
-in which to find the SVG graphics for the tiles and background (the set) and the
-runners (the actors).  The filenames must end in .svg or .svgz and the file must
-be in or relative to the same folder as the *.desktop file.  By convention, the
-files are always in a sub-folder named after the theme.  Example, theme-file
-"default.desktop":
+must contain a Set=xxxx line and an Actors=yyyy line, that contain the
+filenames in which to find the SVG graphics for the tiles and background (the
+set) and the runners (the actors).  The filenames must end in .svg or .svgz and
+the file must be in or relative to the same folder as the *.desktop file.  By
+convention, the files are always in a sub-folder named after the theme.
+Example, theme-file "default.desktop":
 
     [KDEGameTheme]
     Name=KGoldRunner Default
@@ -78,22 +82,65 @@ so detail can be sketchy, as for an icon.  The elements are:
 The background element is not square like the others.  It will be displayed
 behind the other elements and scaled to a space equivalent to 32 x 24 smaller
 elements, at least.  It could be stretched further in either direction, at the
-user's whim, and will always fill the central widget.  The actual play-area will
-always be 28 x 20 square elements.  The play-area has a thin black frame around
-it and a title-text above it.  The space around the play-area is a buffer-zone,
-to protect against mouse-action spilling over into the surrounding desktop.
+user's whim, and will always fill the central widget.  The actual play-area
+will always be 28 x 20 square elements.  The play-area has a thin black frame
+around it and a title-text above it.  The space around the play-area is a
+buffer-zone, to protect against mouse-action spilling over into the surrounding
+desktop.
 
 As an alternative to a single background element, a series named background0,
 background1, ... backgroundn can be provided. Each level will load a different
 background until the last background provided is reached, after which the first
 one is used again.
 
-It is possible that the background and animation frames could be provided as PNG
-files, depending on the source (e.g. photograph or animation package).  That is
-yet to be decided.
+It is possible that the background and animation frames could be provided as
+PNG files, depending on the source (e.g. photograph or animation package).
+That is yet to be decided.
 
 The background should make arbitrary arrangements of smaller elements easily
 visible and recognisable to the game player, i.e. it must be playable in all
-levels of all games.  This should be tested by displaying several levels with
-a new theme before it is released (e.g. use the Game->New Game... dialog).
+levels of all games.  This should be tested by displaying several levels with a
+new theme before it is released (e.g. use the Game->New Game... dialog).
+
+KGoldrunner 3.1 allows more options to the graphics designer to customize the
+look of the game.  The themes from KGoldrunner 3.0 are so far compatible with
+kgoldrunner 3.1; it is possible to develop a theme for KDE 3.1 that is still
+compatible with the old version with the use of some care.
+
+New element for version 3.1 of KGoldrunner:
+A frame surrounding the border area can be specified as svg tiles now.
+
+The tiles have to be named:
+frame-topleft 
+frame-top
+frame-topright
+frame-left 
+frame-fill       (not actually used, but must be present.)
+frame-right
+frame-bottomleft
+frame-bottom
+frame-bottomright
+
+The frame-top, frame-bottom, frame-left and frame-right tiles are repeated
+along the border of the playing area to connecte the four corners.
+
+It is possible to give a border to the display areas for the score and lives,
+which are displayed now in the safe area at the bottom of the screen. To do so, the theme must include the following tiles:
+display-left
+display-centre
+display-right
+
+Finally, most tiles may have a few variants to make the playground less
+repetitive. These are the tiles that can have variants:
+bar
+ladder
+concrete
+brick
+
+The variants must be named bar-0, ..., bar-<N> brick-0, ..., brick-<N> as
+consecutive numbers.
+
+To make the theme work in KGoldrunner 3.0, a tile without the numbering suffix
+must be provided. This tile is not used by version 3.1 if numbered tiles are
+present.
 
