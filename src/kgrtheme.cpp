@@ -174,35 +174,18 @@ QList<QPixmap> KGrTheme::enemy (unsigned int size)
     return frames;
 }
 
-QList<QPixmap> KGrTheme::svgFrames (const QString &elementPattern,
-                                    unsigned int size, int nFrames)
-{
-    QList<QPixmap> frames;
-
-    QTime t;
-    t.restart();
-
-    for (int i = 1; i <= nFrames; i++) 
-    {
-        // This is the pixmap we're loading:
-        frames.append (loadGraphic(QSize(size, size), elementPattern.arg(i), svgActors));
-    }
-    
-    qDebug() << "rendering frames took " << t.elapsed() << "ms";
-    return frames;
-}
-
-
 QList<QPixmap> KGrTheme::tiles (unsigned int size)
 {
     QList<QPixmap> list;
 
     // Create a list of rendered tiles. The tiles must be appended in the
     // same order they appear in the TileType enum.
-    // While creating the tiles, count the variants, and fill the offset and count tables.
+    // While creating the tiles, count the variants, and fill the offset and
+    // count tables.
     
     QVector< QString > tileNames;
-    tileNames << "empty" << "hidden_ladder" << "false_brick" << "hero_1" << "enemy_1";
+    tileNames << "empty" << "hidden_ladder" << "false_brick" << 
+                 "hero_1" << "enemy_1";
     int i = 0;
     // These tiles come never have variants
     foreach (QString name, tileNames) {

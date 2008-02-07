@@ -153,8 +153,6 @@ private:
     short themeDrawBorder;
 
     QList< QPixmap > namedTiles (QList< QString > names, unsigned int size);
-    QList< QPixmap > svgFrames (const QString & elementPattern,
-                                unsigned int size, int nFrames);
     
     // Thomi - 31/01/2008
     // This private method will load the given item from SVG, if it exists, and
