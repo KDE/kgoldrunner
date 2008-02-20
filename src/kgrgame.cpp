@@ -15,7 +15,7 @@
 #include "kgrfigure.h"
 #include "kgrcanvas.h"
 #include "kgrdialog.h"
-#include "kgrsoundeffectmanager.h"
+#include "kgrsoundbank.h"
 
 // Obsolete - #include <iostream.h>
 #include <iostream>
@@ -80,7 +80,7 @@ KGrGame::KGrGame (KGrCanvas * theView,
     modalFreeze = false;
     messageFreeze = false;
 
-    effects = new KGrSoundEffectManager(2);
+    effects = new KGrSoundBank(2);
     fx[GoldSound] = effects->loadSound(KStandardDirs::locate("appdata", "themes/default/gold.wav"));
     fx[StepSound] = effects->loadSound(KStandardDirs::locate("appdata", "themes/default/step.wav"));
 

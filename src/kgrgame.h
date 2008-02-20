@@ -43,7 +43,7 @@ class KGrObject;
 class KGrHero;
 class KGrEnemy;
 class KGrCollection;
-class KGrSoundEffectManager;
+class KGrSoundBank;
 
 class KGrGame : public QObject
 {
@@ -195,7 +195,7 @@ private:
 /******************************************************************************/
 /*******************************  SOUND SUPPORT *******************************/
 /******************************************************************************/
-    KGrSoundEffectManager *effects;
+    KGrSoundBank *effects;
     enum { GoldSound, StepSound, LadderStepSound, LadderAppearanceSound };
     QVector< int >fx;
 
