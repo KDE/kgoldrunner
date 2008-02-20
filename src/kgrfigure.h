@@ -67,7 +67,8 @@ public:
     void eraseOldFigure();
 
 signals:
-    void stepDone();
+    void stepDone (bool hanging);
+    void falling (bool startStop);
 
 protected:
     // STATIC GLOBAL VARIABLES.

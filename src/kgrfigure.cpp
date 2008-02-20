@@ -155,6 +155,9 @@ bool KGrFigure::hangAtPole()
 void KGrFigure::walkUp (int WALKDELAY)
 {
     actualPixmap = (actualPixmap == CLIMB1) ? CLIMB2 : CLIMB1;
+    if (actualPixmap == CLIMB1) {
+        emit stepDone (true);
+    }
     if (walkCounter++ < gameCycle) {
         // Not end of 4-step cycle: move one step up, if possible.
         if (canWalkUp()) {
@@ -186,6 +189,9 @@ void KGrFigure::walkDown (int WALKDELAY, int FALLDELAY)
     }
     else {
         actualPixmap = (actualPixmap == CLIMB1) ? CLIMB2 : CLIMB1;
+	if (actualPixmap == CLIMB1) {
+            emit stepDone (true);
+	}
         if (walkCounter++ < gameCycle) {
             // Not end of 4-step cycle: move one step down, if possible.
             if (canWalkDown()) {
@@ -243,8 +249,9 @@ void KGrFigure::walkLeft (int WALKDELAY, int FALLDELAY)
             relx = 0;
             absx = x*16;
 
-	    if ((actualPixmap == 0) || (actualPixmap == 4)) {
-                emit stepDone();
+	    int frame = actualPixmap % graphicsCycle;
+	    if ((frame == 0) || (frame == 4)) {
+                emit stepDone(hangAtPole());
 	    }
             // If cannot stand or hang, start fall, else await next assignment.
             if (! (canStand() || hangAtPole()))
@@ -284,8 +291,9 @@ void KGrFigure::walkRight (int WALKDELAY, int FALLDELAY)
             // Always reset position, in case we are stuck partly into a brick.
             relx = 0;
             absx = x*16;
-	    if ((actualPixmap == 0) || (actualPixmap == 4)) {
-                emit stepDone();
+	    int frame = actualPixmap % graphicsCycle;
+	    if ((frame == 0) || (frame == 4)) {
+                emit stepDone(hangAtPole());
 	    }
 
             if (!(canStand()||hangAtPole())) // Cannot hold on: so fall.
@@ -301,6 +309,7 @@ void KGrFigure::walkRight (int WALKDELAY, int FALLDELAY)
 
 void KGrFigure::initFall (int apm, int FALLDELAY)
 {
+    emit falling (true);
     status = FALLING;
     actualPixmap = apm;
     walkCounter=1;
@@ -695,6 +704,9 @@ void KGrHero::fallTimeDone()
             fallTimer->start ((FALLDELAY * NSPEED) / speed);
         }
     }
+    if (status != FALLING) {
+        emit falling (false);
+    }
     if (isInEnemy() && (! standOnEnemy()))
         emit caughtHero();
 }
@@ -1069,6 +1081,7 @@ void KGrEnemy::fallTimeDone()
                 actualPixmap=(direction ==RIGHT)?RIGHTCLIMB1:LEFTCLIMB1;
         }
     }
+
     if (status == STANDING) {
         status = WALKING;
         walkCounter = 1;

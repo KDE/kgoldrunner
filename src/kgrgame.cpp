@@ -70,8 +70,6 @@ KGrGame::KGrGame (KGrCanvas * theView,
     hero = new KGrHero (view, 0, 0);	// The hero is born ... Yay !!!
     hero->setPlayfield (&playfield);
 
-    connect(hero, SIGNAL (stepDone()), this, SLOT (heroStep()));
-
     setBlankLevel (true);		// Fill the playfield with blank walls.
 
     enemy = NULL;
@@ -85,6 +83,12 @@ KGrGame::KGrGame (KGrCanvas * theView,
     effects = new KGrSoundBank(8);
     fx[GoldSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/gold.wav"));
     fx[StepSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/step.wav"));
+    fx[ClimbSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/climb.wav"));
+    fx[FallSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/falling.wav"));
+
+    connect(hero, SIGNAL (stepDone(bool)), this, SLOT (heroStep(bool)));
+    connect(hero, SIGNAL (falling(bool)), this, SLOT (heroFalling(bool)));
+
 #endif
 
     connect (hero, SIGNAL (gotNugget (int)),  SLOT (incScore (int)));
@@ -2619,9 +2623,26 @@ void KGrThumbNail::paintEvent (QPaintEvent * /* event (unused) */)
 /****************************  MISC SOUND HANDLING  ***************************/
 /******************************************************************************/
 
-void KGrGame::heroStep()
+void KGrGame::heroStep(bool climbing)
 {
-    effects->play(fx[StepSound]);
+    if (climbing) {
+	effects->play (fx[ClimbSound]);
+    }
+    else {
+	effects->play (fx[StepSound]);
+    }
+}
+
+void KGrGame::heroFalling(bool starting)
+{
+    static int token = -1;
+    if (starting) {
+	token = effects->play (fx[FallSound]);
+    }
+    else {
+	effects->stop (token);
+	token = -1;
+    }
 }
 
 /******************************************************************************/

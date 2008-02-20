@@ -103,10 +103,14 @@ void KGrSoundBank::stop (int token)
 
     // The sound with the associated token is not present, it either has
     // stopped or the caller is confused.
-    if (i > channels.count()) return;
+    if (i > channels.count()) {
+	kDebug() << "sound with token" << currentToken << "cannot be found";
+	return;
+    }
 
     channels[i]->stop();
     tokens[i] = -1;
+    kDebug() << "Stopping sound with token" << currentToken << "on channel" << i;
 }
 
 // vi: set sw=4 cino=\:0g0 :

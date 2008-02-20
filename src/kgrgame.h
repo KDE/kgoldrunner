@@ -101,7 +101,8 @@ public slots:
     void saveGame();			// Save game ID, score and level.
     void loadGame();			// Re-load game, score and level.
 
-    void heroStep();			// The hero has put a foot on the floor.
+    void heroStep(bool climbing);	// The hero has put a foot on the floor.
+    void heroFalling(bool startStop);	// The hero has started/stopped falling.
 signals:
     void showScore (long);		// For main window to show the score.
     void showLives (long);		// For main window to show lives left.
@@ -196,7 +197,7 @@ private:
 /*******************************  SOUND SUPPORT *******************************/
 /******************************************************************************/
     KGrSoundBank *effects;
-    enum { GoldSound, StepSound, LadderStepSound, LadderAppearanceSound };
+    enum { GoldSound, StepSound, ClimbSound, FallSound, LadderAppearanceSound };
     QVector< int >fx;
 
 /******************************************************************************/
