@@ -27,7 +27,11 @@ class KGrSoundEffectManager
 {
 public:
 
-    KGrSoundEffectManager();
+    /**
+     * Construct the KGrSoundEffectManager class.
+     * \param number - how many audio channels are required
+     */
+    KGrSoundEffectManager(int number);
     ~KGrSoundEffectManager();
 
     /**
@@ -58,11 +62,15 @@ public:
      */
     void stopAllSounds();
    
+private slots:
+    void finished();
+
 private:
     QVector< Phonon::MediaSource > soundSamples;
-    QMap <int, Phonon::MediaObject *> playingSounds;
+    QVector< Phonon::MediaObject * > channels;
+    QVector< int > tokens;
 
-    int playingToken;
+    int currentToken;
 };
 
 #endif // KGRSOUNDEFFECTS_H

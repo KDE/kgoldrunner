@@ -19,13 +19,14 @@
 
 #include "kgrsoundeffectmanager.h"
 
-KGrSoundEffectManager::KGrSoundEffectManager(int channelNumber) :
-    soundSamples(), playingSounds()
+KGrSoundEffectManager::KGrSoundEffectManager (int number) : 
+    soundSamples(), 
+    currentToken (0)
 {
-    for (int i = 0; i < channelNumber; i++) {
-	channels[i] = Phonon::createPlayer(Phonon::GameCategory);
+    for (int i = 0; i < number; i++) {
+	channels[i] = Phonon::createPlayer (Phonon::GameCategory);
+	tokens[i] = -1;
     }
-
 }
 
 KGrSoundEffectManager::~KGrSoundEffectManager()
@@ -36,15 +37,15 @@ KGrSoundEffectManager::~KGrSoundEffectManager()
 int KGrSoundEffectManager::loadSound (const QString &fileName)
 {
     soundSamples << fileName;
-    return soundSamples.count();
+    return soundSamples.count() - 1;
 }
 
 void KGrSoundEffectManager::stopAllSounds()
 {
-    foreach (Phonon::MediaObject *o, playingSounds) {
+    foreach (Phonon::MediaObject *o, channels) {
 	o->stop();
     }
-    playingSounds.clear();
+    channels.clear();
 }
 
 void KGrSoundEffectManager::reset()
@@ -53,6 +54,38 @@ void KGrSoundEffectManager::reset()
     soundSamples.clear();
 }
 
+int KGrSoundEffectManager::play(int effect, bool looping)
+{
+    // Find a free channel
+    int i;
+    foreach (i, tokens) {
+	if (tokens[i] == -1) break;
+    }
+    
+    // If no channel is found, return
+    if (i > channels.count()) return -1;
+
+    // Else play sound and return its token
+    channels[i]->setCurrentSource(soundSamples[effect]);
+    channels[i]->play();
+    tokens[i] = currentToken++;
+    return tokens[i];
+}
+
+void KGrSoundEffectManager::stop (int token)
+{
+    int i;
+    foreach (i, tokens) {
+	if (tokens[i] == token) break;
+    }
+
+    // The sound with the associated token is not present, it either has
+    // stopped or the caller is confused.
+    if (i > channels.count()) return;
+
+    channels[i]->stop();
+    tokens[i] = -1;
+}
 
 // vi: set sw=4 cino=\:0g0 :
 
