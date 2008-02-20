@@ -63,8 +63,9 @@ void KGrSoundEffectManager::reset()
 
 int KGrSoundEffectManager::play(int effect, bool looping)
 {
+    static int lastUsedChannel = 0;
     // Find a free channel
-    int i;
+    int i = (lastUsedChannel + 1) % tokens.count();
     while (i < tokens.count()) {
 	if (tokens[i] == -1) break;
 	i++;
@@ -76,8 +77,10 @@ int KGrSoundEffectManager::play(int effect, bool looping)
     // Else play sound and return its token
     channels[i]->setCurrentSource(soundSamples[effect]);
     channels[i]->play();
-    tokens[i] = currentToken++;
-    return tokens[i];
+    lastUsedChannel = i;
+    tokens[i] = ++currentToken;
+    kDebug() << "Playing sound" << soundSamples[effect].fileName() << "with token" << currentToken << "on channel" << i;
+    return currentToken;
 }
 
 void KGrSoundEffectManager::freeChannels()
@@ -85,6 +88,7 @@ void KGrSoundEffectManager::freeChannels()
     for (int i = 0; i < channels.count(); i++) {
 	if (channels[i]->state() == Phonon::StoppedState) {
 	    tokens[i] = -1;
+	    kDebug() << "Channel" << i << "is free";
 	}
     }
 }
