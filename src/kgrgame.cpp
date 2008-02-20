@@ -51,6 +51,7 @@
 
 #endif
 
+#define ENABLE_SOUND_SUPPORT
 /******************************************************************************/
 /***********************    KGOLDRUNNER GAME CLASS    *************************/
 /******************************************************************************/
@@ -81,7 +82,7 @@ KGrGame::KGrGame (KGrCanvas * theView,
     messageFreeze = false;
 
 #ifdef ENABLE_SOUND_SUPPORT
-    effects = new KGrSoundBank(1);
+    effects = new KGrSoundBank(4);
     fx[GoldSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/gold.wav"));
     fx[StepSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/step.wav"));
 #endif
