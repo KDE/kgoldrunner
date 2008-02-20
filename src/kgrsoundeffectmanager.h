@@ -23,8 +23,9 @@
 #include <Phonon/MediaObject>
 #include <Phonon/MediaSource>
 
-class KGrSoundEffectManager
+class KGrSoundEffectManager : public QObject
 {
+    Q_OBJECT
 public:
 
     /**
@@ -63,7 +64,7 @@ public:
     void stopAllSounds();
    
 private slots:
-    void finished();
+    void freeChannels();
 
 private:
     QVector< Phonon::MediaSource > soundSamples;

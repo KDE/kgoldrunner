@@ -18,24 +18,31 @@
 */
 
 #include "kgrsoundeffectmanager.h"
+#include <kdebug.h>
 
 KGrSoundEffectManager::KGrSoundEffectManager (int number) : 
+    QObject(),
     soundSamples(), 
     currentToken (0)
 {
     for (int i = 0; i < number; i++) {
-	channels[i] = Phonon::createPlayer (Phonon::GameCategory);
-	tokens[i] = -1;
+	channels << Phonon::createPlayer (Phonon::GameCategory);
+	tokens << -1;
+	connect(channels[i], SIGNAL(finished()), this, SLOT(freeChannels()));
     }
 }
 
 KGrSoundEffectManager::~KGrSoundEffectManager()
 {
-
+    for(int i = 0; i < channels.count(); i++) {
+	delete channels[i];
+	tokens[i] = -1;
+    }
 }
 
 int KGrSoundEffectManager::loadSound (const QString &fileName)
 {
+    kDebug() << "loading sound" << fileName;
     soundSamples << fileName;
     return soundSamples.count() - 1;
 }
@@ -58,12 +65,13 @@ int KGrSoundEffectManager::play(int effect, bool looping)
 {
     // Find a free channel
     int i;
-    foreach (i, tokens) {
+    while (i < tokens.count()) {
 	if (tokens[i] == -1) break;
+	i++;
     }
     
     // If no channel is found, return
-    if (i > channels.count()) return -1;
+    if (i >= channels.count()) return -1;
 
     // Else play sound and return its token
     channels[i]->setCurrentSource(soundSamples[effect]);
@@ -72,11 +80,21 @@ int KGrSoundEffectManager::play(int effect, bool looping)
     return tokens[i];
 }
 
+void KGrSoundEffectManager::freeChannels()
+{
+    for (int i = 0; i < channels.count(); i++) {
+	if (channels[i]->state() == Phonon::StoppedState) {
+	    tokens[i] = -1;
+	}
+    }
+}
+
 void KGrSoundEffectManager::stop (int token)
 {
     int i;
-    foreach (i, tokens) {
+    while (i < tokens.count()) {
 	if (tokens[i] == token) break;
+	i++;
     }
 
     // The sound with the associated token is not present, it either has
