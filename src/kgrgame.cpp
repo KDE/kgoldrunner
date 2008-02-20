@@ -69,7 +69,7 @@ KGrGame::KGrGame (KGrCanvas * theView,
     hero = new KGrHero (view, 0, 0);	// The hero is born ... Yay !!!
     hero->setPlayfield (&playfield);
 
-    connect(hero, SIGNAL(stepDone()), this, SLOT(heroStep()));
+    connect(hero, SIGNAL (stepDone()), this, SLOT (heroStep()));
 
     setBlankLevel (true);		// Fill the playfield with blank walls.
 
@@ -82,8 +82,8 @@ KGrGame::KGrGame (KGrCanvas * theView,
 
 #ifdef ENABLE_SOUND_SUPPORT
     effects = new KGrSoundBank(1);
-    fx[GoldSound] = effects->loadSound(KStandardDirs::locate("appdata", "themes/default/gold.wav"));
-    fx[StepSound] = effects->loadSound(KStandardDirs::locate("appdata", "themes/default/step.wav"));
+    fx[GoldSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/gold.wav"));
+    fx[StepSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/step.wav"));
 #endif
 
     connect (hero, SIGNAL (gotNugget (int)),  SLOT (incScore (int)));
