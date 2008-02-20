@@ -63,9 +63,10 @@ void KGrSoundEffectManager::reset()
 
 int KGrSoundEffectManager::play(int effect, bool looping)
 {
-    static int lastUsedChannel = 0;
+    static int firstFreeChannel = 0;
     // Find a free channel
-    int i = (lastUsedChannel + 1) % tokens.count();
+    int i = firstFreeChannel++;
+    firstFreeChannel %= channels.count();
     while (i < tokens.count()) {
 	if (tokens[i] == -1) break;
 	i++;
@@ -77,7 +78,6 @@ int KGrSoundEffectManager::play(int effect, bool looping)
     // Else play sound and return its token
     channels[i]->setCurrentSource(soundSamples[effect]);
     channels[i]->play();
-    lastUsedChannel = i;
     tokens[i] = ++currentToken;
     kDebug() << "Playing sound" << soundSamples[effect].fileName() << "with token" << currentToken << "on channel" << i;
     return currentToken;
