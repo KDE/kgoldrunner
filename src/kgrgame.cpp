@@ -82,7 +82,7 @@ KGrGame::KGrGame (KGrCanvas * theView,
     messageFreeze = false;
 
 #ifdef ENABLE_SOUND_SUPPORT
-    effects = new KGrSoundBank(4);
+    effects = new KGrSoundBank(8);
     fx[GoldSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/gold.wav"));
     fx[StepSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/step.wav"));
 #endif
@@ -2621,7 +2621,7 @@ void KGrThumbNail::paintEvent (QPaintEvent * /* event (unused) */)
 
 void KGrGame::heroStep()
 {
-    //effects->play(fx[StepSound]);
+    effects->play(fx[StepSound]);
 }
 
 /******************************************************************************/
