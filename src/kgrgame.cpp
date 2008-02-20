@@ -80,9 +80,11 @@ KGrGame::KGrGame (KGrCanvas * theView,
     modalFreeze = false;
     messageFreeze = false;
 
-    effects = new KGrSoundBank(2);
+#ifdef ENABLE_SOUND_SUPPORT
+    effects = new KGrSoundBank(1);
     fx[GoldSound] = effects->loadSound(KStandardDirs::locate("appdata", "themes/default/gold.wav"));
     fx[StepSound] = effects->loadSound(KStandardDirs::locate("appdata", "themes/default/step.wav"));
+#endif
 
     connect (hero, SIGNAL (gotNugget (int)),  SLOT (incScore (int)));
     connect (hero, SIGNAL (caughtHero()),     SLOT (herosDead()));
@@ -280,6 +282,8 @@ void KGrGame::startLevel (int startingAt, int requestedLevel)
 
 void KGrGame::incScore (int n)
 {
+#ifdef ENABLE_SOUND_SUPPORT
+    // I don't think this is the right place, but it's just for testing...
     switch (n) {
     case 250: 
 	effects->play (fx[GoldSound]);
@@ -287,6 +291,7 @@ void KGrGame::incScore (int n)
     default:
 	break;
     }
+#endif
     score = score + n;		// SCORING: trap enemy 75, kill enemy 75,
     emit showScore (score);	// collect gold 250, complete the level 1500.
 }
