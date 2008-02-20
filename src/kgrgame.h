@@ -43,6 +43,7 @@ class KGrObject;
 class KGrHero;
 class KGrEnemy;
 class KGrCollection;
+class KGrSoundEffectManager;
 
 class KGrGame : public QObject
 {
@@ -89,7 +90,7 @@ public slots:
 
     void showHighScores();		// Show high scores for current game.
 
-    void incScore (int);			// Update the score.
+    void incScore (int);		// Update the score.
     void herosDead();			// Hero was caught or he quit (key Q).
     void showHiddenLadders();		// Show hidden ladders (nuggets gone).
     void levelCompleted();		// Hero completed the level.
@@ -100,6 +101,7 @@ public slots:
     void saveGame();			// Save game ID, score and level.
     void loadGame();			// Re-load game, score and level.
 
+    void heroStep();			// The hero has put a foot on the floor.
 signals:
     void showScore (long);		// For main window to show the score.
     void showLives (long);		// For main window to show lives left.
@@ -189,6 +191,13 @@ private:
     QTimer *			dyingTimer;	// For pause when the hero dies.
 
     int				lgHighlight;	// Row selected in "loadGame()".
+
+/******************************************************************************/
+/*******************************  SOUND SUPPORT *******************************/
+/******************************************************************************/
+    KGrSoundEffectManager *effects;
+    enum { GoldSound, StepSound, LadderStepSound, LadderAppearanceSound };
+    QVector< int >fx;
 
 /******************************************************************************/
 /**************************  AUTHORS' DEBUGGING AIDS **************************/

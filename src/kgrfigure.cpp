@@ -243,6 +243,9 @@ void KGrFigure::walkLeft (int WALKDELAY, int FALLDELAY)
             relx = 0;
             absx = x*16;
 
+	    if ((actualPixmap == 0) || (actualPixmap == 4)) {
+                emit stepDone();
+	    }
             // If cannot stand or hang, start fall, else await next assignment.
             if (! (canStand() || hangAtPole()))
                 initFall (FALL1, FALLDELAY);
@@ -281,6 +284,9 @@ void KGrFigure::walkRight (int WALKDELAY, int FALLDELAY)
             // Always reset position, in case we are stuck partly into a brick.
             relx = 0;
             absx = x*16;
+	    if ((actualPixmap == 0) || (actualPixmap == 4)) {
+                emit stepDone();
+	    }
 
             if (!(canStand()||hangAtPole())) // Cannot hold on: so fall.
                 initFall (FALL2, FALLDELAY);

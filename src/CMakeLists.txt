@@ -7,6 +7,7 @@ set(kgoldrunner_SRCS
    kgoldrunner.cpp 
    kgrcanvas.cpp 
    kgrtheme.cpp 
+   kgrsoundbank.cpp 
    kgrfigure.cpp 
    kgrgame.cpp 
    kgrgameio.cpp 
@@ -18,7 +19,7 @@ set(kgoldrunner_SRCS
 kde4_add_app_icon(kgoldrunner_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-app-kgoldrunner.png")
 kde4_add_executable(kgoldrunner ${kgoldrunner_SRCS})
 
-target_link_libraries(kgoldrunner ${KDE4_KDEUI_LIBS} kdegames )
+target_link_libraries(kgoldrunner ${KDE4_KDEUI_LIBS} kdegames ${KDE4_PHONON_LIBS})
 
 install(TARGETS kgoldrunner  DESTINATION ${BIN_INSTALL_DIR} )
 

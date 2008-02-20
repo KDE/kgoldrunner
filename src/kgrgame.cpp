@@ -15,6 +15,7 @@
 #include "kgrfigure.h"
 #include "kgrcanvas.h"
 #include "kgrdialog.h"
+#include "kgrsoundeffectmanager.h"
 
 // Obsolete - #include <iostream.h>
 #include <iostream>
@@ -24,6 +25,7 @@
 
 #include <kpushbutton.h>
 #include <KStandardGuiItem>
+#include <KStandardDirs>
 #include <KApplication>
 #include <kdebug.h>
 
@@ -55,7 +57,7 @@
 
 KGrGame::KGrGame (KGrCanvas * theView, 
                 const QString &theSystemDir, const QString &theUserDir) : 
-        view (theView), systemDataDir (theSystemDir), userDataDir (theUserDir), level (0)
+        view (theView), systemDataDir (theSystemDir), userDataDir (theUserDir), level (0), fx (4)
 {
     // Set the game-editor OFF, but available.
     editMode = false;
@@ -67,6 +69,8 @@ KGrGame::KGrGame (KGrCanvas * theView,
     hero = new KGrHero (view, 0, 0);	// The hero is born ... Yay !!!
     hero->setPlayfield (&playfield);
 
+    connect(hero, SIGNAL(stepDone()), this, SLOT(heroStep()));
+
     setBlankLevel (true);		// Fill the playfield with blank walls.
 
     enemy = NULL;
@@ -76,7 +80,11 @@ KGrGame::KGrGame (KGrCanvas * theView,
     modalFreeze = false;
     messageFreeze = false;
 
-    connect (hero, SIGNAL (gotNugget (int)),   SLOT (incScore (int)));
+    effects = new KGrSoundEffectManager(2);
+    fx[GoldSound] = effects->loadSound(KStandardDirs::locate("appdata", "themes/default/gold.wav"));
+    fx[StepSound] = effects->loadSound(KStandardDirs::locate("appdata", "themes/default/step.wav"));
+
+    connect (hero, SIGNAL (gotNugget (int)),  SLOT (incScore (int)));
     connect (hero, SIGNAL (caughtHero()),     SLOT (herosDead()));
     connect (hero, SIGNAL (haveAllNuggets()), SLOT (showHiddenLadders()));
     connect (hero, SIGNAL (leaveLevel()),     SLOT (levelCompleted()));
@@ -272,6 +280,13 @@ void KGrGame::startLevel (int startingAt, int requestedLevel)
 
 void KGrGame::incScore (int n)
 {
+    switch (n) {
+    case 250: 
+	effects->play (fx[GoldSound]);
+	break;
+    default:
+	break;
+    }
     score = score + n;		// SCORING: trap enemy 75, kill enemy 75,
     emit showScore (score);	// collect gold 250, complete the level 1500.
 }
@@ -2592,6 +2607,15 @@ void KGrThumbNail::paintEvent (QPaintEvent * /* event (unused) */)
     pen.setColor (Qt::black); 
     p.setPen (pen);
     p.drawRect (rect().left(), rect().top(), rect().right(), rect().bottom());
+}
+
+/******************************************************************************/
+/****************************  MISC SOUND HANDLING  ***************************/
+/******************************************************************************/
+
+void KGrGame::heroStep()
+{
+    //effects->play(fx[StepSound]);
 }
 
 /******************************************************************************/

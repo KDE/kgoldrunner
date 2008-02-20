@@ -66,6 +66,9 @@ public:
     virtual void init (int,int);
     void eraseOldFigure();
 
+signals:
+    void stepDone();
+
 protected:
     // STATIC GLOBAL VARIABLES.
     static int herox;

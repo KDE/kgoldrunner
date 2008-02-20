@@ -13,12 +13,15 @@ install( FILES README
                nostalgia-blues.desktop
                DESTINATION ${DATA_INSTALL_DIR}/kgoldrunner/themes )
 
+install( FILES 
+	default/set.svg default/actors.svg
+	default/gold.ogg default/falling.ogg default/step.ogg default/climb.ogg
+	DESTINATION 
+	${DATA_INSTALL_DIR}/kgoldrunner/themes/default )
+
 install( FILES accessible/black-on-white-set.svg
                accessible/black-on-white-actors.svg
                DESTINATION ${DATA_INSTALL_DIR}/kgoldrunner/themes/accessible )
-
-install( FILES default/set.svg default/actors.svg
-               DESTINATION ${DATA_INSTALL_DIR}/kgoldrunner/themes/default )
 
 install( FILES kgr_geek/set.svgz kgr_geek/actors.svgz
                DESTINATION ${DATA_INSTALL_DIR}/kgoldrunner/themes/kgr_geek )
