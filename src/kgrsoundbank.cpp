@@ -28,7 +28,7 @@ KGrSoundBank::KGrSoundBank (int number) :
     for (int i = 0; i < number; i++) {
 	channels << Phonon::createPlayer (Phonon::GameCategory);
 	tokens << -1;
-	connect(channels[i], SIGNAL(finished()), this, SLOT(freeChannels()));
+	connect (channels[i], SIGNAL (finished()), this, SLOT (freeChannels()));
     }
 }
 
@@ -49,10 +49,10 @@ int KGrSoundBank::loadSound (const QString &fileName)
 
 void KGrSoundBank::stopAllSounds()
 {
-    foreach (Phonon::MediaObject *o, channels) {
-	o->stop();
+    for (int i = 0; i < channels.count(); i++) {
+	channels[i]->stop();
+	tokens[i] = -1;
     }
-    channels.clear();
 }
 
 void KGrSoundBank::reset()
@@ -61,8 +61,10 @@ void KGrSoundBank::reset()
     soundSamples.clear();
 }
 
-int KGrSoundBank::play(int effect, bool looping)
+int KGrSoundBank::play (int effect, bool looping)
 {
+    if (muted) return -1;
+
     static int firstFreeChannel = 0;
     // Find a free channel
     int i = firstFreeChannel++;
@@ -76,10 +78,11 @@ int KGrSoundBank::play(int effect, bool looping)
     if (i >= channels.count()) return -1;
 
     // Else play sound and return its token
-    channels[i]->setCurrentSource(soundSamples[effect]);
+    channels[i]->setCurrentSource (soundSamples[effect]);
     channels[i]->play();
     tokens[i] = ++currentToken;
-    kDebug() << "Playing sound" << soundSamples[effect].fileName() << "with token" << currentToken << "on channel" << i;
+    kDebug() << "Playing sound" << soundSamples[effect].fileName() << 
+	"with token" << currentToken << "on channel" << i;
     return currentToken;
 }
 
@@ -95,7 +98,9 @@ void KGrSoundBank::freeChannels()
 
 void KGrSoundBank::stop (int token)
 {
-    int i;
+    if (muted) return;
+
+    int i = 0;
     while (i < tokens.count()) {
 	if (tokens[i] == token) break;
 	i++;
@@ -103,7 +108,7 @@ void KGrSoundBank::stop (int token)
 
     // The sound with the associated token is not present, it either has
     // stopped or the caller is confused.
-    if (i > channels.count()) {
+    if (i >= channels.count()) {
 	kDebug() << "sound with token" << currentToken << "cannot be found";
 	return;
     }
@@ -111,6 +116,14 @@ void KGrSoundBank::stop (int token)
     channels[i]->stop();
     tokens[i] = -1;
     kDebug() << "Stopping sound with token" << currentToken << "on channel" << i;
+}
+
+void KGrSoundBank::setMuted (bool mute)
+{
+    muted = mute;
+    if (mute) {
+	stopAllSounds();
+    }
 }
 
 // vi: set sw=4 cino=\:0g0 :
