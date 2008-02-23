@@ -36,32 +36,38 @@ public:
     ~KGrSoundBank();
 
     /**
-     * play a sound effect. 
+     * Play a sound effect. 
      * This method returns a token that can be used to stop the sound if it is
      * still playing. Trying to stop a completed sound has no effect.
      */
     int play (int effect, bool looping = false);
 
     /**
-     * Stop playing the sound associated with the given token 
+     * Stop playing the sound associated with the given token.
      */
     void stop (int token);
 
     /** 
-     * load a sound sample.
-     * a token is returned to use to play back the sample.
+     * Load a sound sample.
+     * A token is returned to use to play back the sample.
      */
     int loadSound (const QString &fileName);
 
     /** 
-     * discard the loaded sound effects.
+     * Stop sound and discard the loaded sound effects.
      */
     void reset();
 
     /**
-     * Stop all sounds currently playing
+     * Stop all sounds currently playing.
      */
     void stopAllSounds();
+
+    /**
+     * Set volume for the sound effects.
+     * \param volume the playing volume. 0.0 means mute, 1.0 means full volume.
+     */
+    void setVolume (double volume)
    
 private slots:
     void freeChannels();
