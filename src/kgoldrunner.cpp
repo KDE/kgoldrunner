@@ -432,7 +432,14 @@ void KGoldrunner::setupActions()
                         (this, SLOT (viewFullScreen (bool)), this, this);
     actionCollection()->addAction (fullScreen->objectName(), fullScreen);
 
-    
+    setSounds = new KToggleAction (i18n ("&Play Sounds"), this);
+    setSounds->setToolTip (i18n ("Play sound effects"));
+    setSounds->setWhatsThis (i18n ("Play sound effects during the game"));
+    actionCollection()->addAction ("options_sounds", setSounds);
+    connect (setSounds, SIGNAL (triggered (bool)), game, SLOT (setPlaySounds (bool)));
+    KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
+    setSounds->setChecked (gameGroup.readEntry ("Sound", true));
+
     // Configure Shortcuts...
     // Configure Toolbars...
     // --------------------------
@@ -510,8 +517,8 @@ void KGoldrunner::setupActions()
     // stepping through the animation, toggling a debug patch or log messages
     // on or off during gameplay and printing the states of runners or tiles.
 
-    KConfigGroup gameGroup (KGlobal::config(), "Debugging");
-    bool addDebuggingShortcuts = gameGroup.readEntry
+    KConfigGroup debugGroup (KGlobal::config(), "Debugging");
+    bool addDebuggingShortcuts = debugGroup.readEntry
                         ("DebuggingShortcuts", false);	// Get debug option.
     if (! addDebuggingShortcuts)
         return;

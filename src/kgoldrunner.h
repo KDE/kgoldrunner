@@ -196,6 +196,8 @@ private:
     KToggleAction *	tradRules;	// Set Traditional rules.
     KToggleAction *	kgrRules;	// Set KGoldrunner rules.
 
+    KToggleAction *	setSounds;	// enable/disable sound effects.
+
     KGrHero *	hero;			// Pointer to the hero.
 
     // KToggleAction *	m_toolbarAction;

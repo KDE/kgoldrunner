@@ -452,6 +452,13 @@ void KGrGame::setMouseMode (bool on_off)
     mouseMode = on_off;		// Set Mouse OR keyboard control.
 }
 
+void KGrGame::setPlaySounds (bool on_off)
+{
+    KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
+    gameGroup.writeEntry ("Sound", on_off);
+    effects->setMuted (!on_off);
+}
+
 void KGrGame::freeze()
 {
     if ((! modalFreeze) && (! messageFreeze)) {

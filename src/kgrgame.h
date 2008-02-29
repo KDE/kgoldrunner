@@ -82,6 +82,8 @@ public slots:
     void startAnyLevel();		// Start any game from any level.
     void startNextLevel();		// Start next level of current game.
 
+    void setPlaySounds (bool on_off);	// Set sound enabled or disabled.
+
     void setMouseMode (bool on_off);	// Set mouse OR keyboard control.
     void startLevel (int startingAt, int requestedLevel);
     void newGame (const int lev, const int gameIndex);
