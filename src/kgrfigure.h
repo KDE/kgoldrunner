@@ -157,6 +157,7 @@ public slots:
 
 signals:
     void gotNugget (int);
+    void digs();
     void haveAllNuggets();
     void leaveLevel();
     void caughtHero();

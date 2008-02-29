@@ -58,7 +58,7 @@
 
 KGrGame::KGrGame (KGrCanvas * theView, 
                 const QString &theSystemDir, const QString &theUserDir) : 
-        view (theView), systemDataDir (theSystemDir), userDataDir (theUserDir), level (0), fx (4)
+        view (theView), systemDataDir (theSystemDir), userDataDir (theUserDir), level (0), fx (NumSounds)
 {
     // Set the game-editor OFF, but available.
     editMode = false;
@@ -85,9 +85,11 @@ KGrGame::KGrGame (KGrCanvas * theView,
     fx[StepSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/step.wav"));
     fx[ClimbSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/climb.wav"));
     fx[FallSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/falling.wav"));
+    fx[DigSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/dig.wav"));
 
-    connect(hero, SIGNAL (stepDone(bool)), this, SLOT (heroStep(bool)));
-    connect(hero, SIGNAL (falling(bool)), this, SLOT (heroFalling(bool)));
+    connect(hero, SIGNAL (stepDone (bool)), this, SLOT (heroStep (bool)));
+    connect(hero, SIGNAL (falling (bool)), this, SLOT (heroFalls (bool)));
+    connect(hero, SIGNAL (digs()), this, SLOT (heroDigs()));
 
 #endif
 
@@ -2623,7 +2625,12 @@ void KGrThumbNail::paintEvent (QPaintEvent * /* event (unused) */)
 /****************************  MISC SOUND HANDLING  ***************************/
 /******************************************************************************/
 
-void KGrGame::heroStep(bool climbing)
+void KGrGame::heroDigs()
+{
+    effects->play (fx[DigSound]);
+}
+
+void KGrGame::heroStep (bool climbing)
 {
     if (climbing) {
 	effects->play (fx[ClimbSound]);
@@ -2633,7 +2640,7 @@ void KGrGame::heroStep(bool climbing)
     }
 }
 
-void KGrGame::heroFalling(bool starting)
+void KGrGame::heroFalls (bool starting)
 {
     static int token = -1;
     if (starting) {

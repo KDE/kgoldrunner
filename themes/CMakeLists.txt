@@ -15,7 +15,7 @@ install( FILES README
 
 install( FILES 
 	default/set.svg default/actors.svg
-	default/gold.wav default/falling.wav default/step.wav default/climb.wav
+	default/gold.wav default/falling.wav default/step.wav default/climb.wav default/dig.wav
 	DESTINATION 
 	${DATA_INSTALL_DIR}/kgoldrunner/themes/default )
 

@@ -743,11 +743,13 @@ void KGrHero::digLeft()
         else if ((direction == RIGHT) && canWalkRight())
             i = 0;	// If walking right, dig at x and stop at x+1.
     }
-    if (((*playfield)[x-i][y+1]->whatIam() == BRICK)&&
-        (((*playfield)[x-i][y]->whatIam() == HLADDER)||
-         ((*playfield)[x-i][y]->whatIam() == FREE)||
-         ((*playfield)[x-i][y]->whatIam() == HOLE)))
-    ((KGrBrick*)(*playfield)[x-i][y+1])->dig();
+    int tileType = (*playfield)[x - i][y + 1]->whatIam();
+    int tile2Type = (*playfield)[x - i][y]->whatIam();
+    if ((tileType == BRICK) &&
+        ((tile2Type == HLADDER) || (tile2Type == FREE) || (tile2Type == HOLE))) {
+        ((KGrBrick*)(*playfield)[x-i][y+1])->dig();
+        emit digs();
+    }
 }
 
 void KGrHero::digRight()
@@ -762,11 +764,13 @@ void KGrHero::digRight()
         else if ((direction == RIGHT) && canWalkRight())
             i = 2;	// If walking right, dig at x+2 and stop at x+1.
     }
-    if (((*playfield)[x+i][y+1]->whatIam() == BRICK)&&
-        (((*playfield)[x+i][y]->whatIam() == HLADDER)||
-         ((*playfield)[x+i][y]->whatIam() == FREE)||
-         ((*playfield)[x+i][y]->whatIam() == HOLE)))
-    ((KGrBrick*)(*playfield)[x+i][y+1])->dig();
+    int tileType = (*playfield)[x + i][y + 1]->whatIam();
+    int tile2Type = (*playfield)[x + i][y]->whatIam();
+    if ((tileType == BRICK) &&
+        ((tile2Type == HLADDER) || (tile2Type == FREE) || (tile2Type == HOLE))) {
+        ((KGrBrick*)(*playfield)[x+i][y+1])->dig();
+        emit digs();
+    }
 }
 
 void KGrHero::setEnemyList (QList<KGrEnemy *> * e)
