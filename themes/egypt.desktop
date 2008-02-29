@@ -2,6 +2,7 @@
 Name=The Treasure of Egypt
 Name[be]=Скарб Егіпта
 Name[ca]=El tresor d'Egipte
+Name[da]=Egyptens skat
 Name[de]=Der Schatz von Ägypten
 Name[el]=Ο θησαυρός της Αιγύπτου
 Name[eo]=La trezoro de Egiptujo
@@ -30,6 +31,7 @@ Name[zh_CN]=埃及的宝藏
 Name[zh_TW]=埃及的寶藏
 Description=Help Matt Goldrunner escape the the traps of ancient Egypt.
 Description[ca]=Ajudeu en Matt Goldrunner a escapar de les trampes de l'antic Egipte.
+Description[da]=Hjælp Matt Goldrunner med at flygte fra fælderne i det gamle Egypten.
 Description[de]=Helfen Sie Matt Goldrunner bei der Flucht aus den Fallen des alten Ägypten.
 Description[el]=Βοηθήστε τον χρυσοθήρα Matt να γλυτώσει από τις παγίδες της αρχαίας Αιγύπτου.
 Description[es]=Ayude a Matt Goldrunner a escapar de las trampas del antiguo Egipto.
