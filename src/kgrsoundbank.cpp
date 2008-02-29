@@ -91,7 +91,7 @@ void KGrSoundBank::freeChannels()
     for (int i = 0; i < channels.count(); i++) {
 	if (channels[i]->state() == Phonon::StoppedState) {
 	    tokens[i] = -1;
-	    kDebug() << "Channel" << i << "is free";
+	    //kDebug() << "Channel" << i << "is free";
 	}
     }
 }
