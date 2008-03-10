@@ -582,10 +582,7 @@ void KGoldrunner::setupActions()
 
 void KGoldrunner::viewFullScreen(bool activation)
 {
-    if (activation) 
-	showFullScreen();
-    else
-	showNormal();
+    KToggleFullScreenAction::setFullScreen(this, activation);
 }
 
 void KGoldrunner::setupThemes ()
