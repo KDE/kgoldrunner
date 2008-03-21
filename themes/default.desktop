@@ -1,6 +1,7 @@
 [KDEGameTheme]
 Name=KGoldRunner Default
 Name[ca]=Predeterminat de KGoldrunner
+Name[da]=Standard for KGoldrunner
 Name[de]=KGoldrunner Standard
 Name[el]=Προκαθορισμένο KGoldrunner
 Name[eo]=Defaŭlto de KGoldRunner
@@ -31,6 +32,7 @@ Name[zh_CN]=KGoldrunner 默认
 Name[zh_TW]=KGoldRunner 預設
 Description=A light and clean theme for KDE4
 Description[ca]=Un tema net i lleuger per KDE
+Description[da]=Et let og rent tema til KDE4
 Description[de]=Ein leichtes, sauberes Design für KDE4
 Description[el]=Ένα απλό και ελαφρύ θέμα για το KDE4
 Description[eo]=Simpla kaj pura etoso por KDE4
