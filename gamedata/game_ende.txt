@@ -5,10 +5,10 @@
    may sometimes need to look at the corresponding game or level graphics
    to work out a good translation (e.g. Initiation 25, Mongolian Horde).
 
-   To see any level of any game, run KGoldrunner, cancel the startup
-   dialog and select menu Game->Play Any Level...  If you start to play
-   a level, you will probably need to stop the animation by pressing
-   the Pause key (default Esc or P).
+   To see any level of any game, run KGoldrunner, click on the New Game button
+   and select the game and level from the list.  If you start to play a level,
+   you will probably need to stop the animation by pressing the Pause key
+   (default Esc or P).
 
    The most urgent translations would be names and hints for the Tutorial
    games, then the game names and descriptions (as appearing in the main
@@ -16,8 +16,17 @@
    hints, which are intended for experienced players and champions.
 
    Messages marked as NOTi18n should deliberately be left untranslated. The
-   one below is never displayed and the "Das Boot" message in the Initiation
-   game is a foreign-language phrase (the name of a German movie).
+   one below is never displayed and others, from time to time, would be long
+   hint texts used by a small number of championship players, left untranslated
+   to economise on translation effort.
+
+   The "Das Boot" message in level 97 of the Initiation game is the name of
+   a German submarine warfare movie, left untranslated as a compliment to the
+   original author of KGoldrunner, who is German.  The movie is known as
+   "Das Boot" in many countries, including English-speaking countries.  If it
+   is known by some other name in your country, please include that in your
+   translation of the corresponding hint text.  See this Internet page:
+       http://akas.imdb.com/title/tt0082096/releaseinfo#akas
 */
  i18n("TRANSLATORS: Please see the notes in the translation comment.");
 

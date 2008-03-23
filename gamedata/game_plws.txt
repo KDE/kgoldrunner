@@ -296,7 +296,7 @@
 // L097
 //             TTTHN        TTT           TTTHHHN          H         TTTHHHHHN         H        TTTHHHFHHHN        H       TTTHHHFFFHHHN       H      TTTHHHNNFFFHHHN      H     TTTHHHNNNNFFFHHHN     H    TTTHHHNNNNNNFFFHHHN    H   TTTHHHNNNNNNNNFFFHHHN   H  TTTTTTTTTTTTTTTTFFFHHH   H TTTTTTTTTTTTTTTTTTFFFHH   HTTTTTTTTTTTTTTTTTTTTFFFH   HFFFFFFFFFFFFFFFFFFFFFFFF   H FFFFFFFFFFFFFFFFFFFFFF    H  FFFFFFFFFFFFFFFFFFFF     HNNNNNNNNNNNNNNNNNNNNNNNNNERHXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  NOTi18n("Das Boot");
- i18n("This level is named after the famous German submarine war film and dedicated to Marco Krüger of Berlin, the original author of KGoldrunner.\n"
+ i18n("This level is named after the famous German submarine war film 'Das Boot' and dedicated to Marco Krüger of Berlin, the original author of KGoldrunner.\n"
  "\n"
  "Just one small hint ... if you stand on the right hand end of the boat you can get the enemy to fall towards you ... the rest is up to you!");
 // L098

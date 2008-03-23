@@ -51,7 +51,8 @@
 
 #endif
 
-#define ENABLE_SOUND_SUPPORT
+// #define ENABLE_SOUND_SUPPORT
+
 /******************************************************************************/
 /***********************    KGOLDRUNNER GAME CLASS    *************************/
 /******************************************************************************/
@@ -904,20 +905,25 @@ QString KGrGame::getFilePath (Owner o, KGrCollection * colln, int lev)
 QString KGrGame::getTitle()
 {
     QString levelTitle;
+    QString levelNumber;
     if (level == 0) {
         // Generate a special title: end of game or creating a new level.
         if (! editMode)
-            levelTitle = "E N D --- F I N --- E N D E";
+            levelTitle = i18n ("T H E   E N D");
         else
             levelTitle = i18n ("New Level");
     }
     else {
         // Generate title string "Collection-name - NNN - Level-name".
-        levelTitle.setNum (level);
-        levelTitle = levelTitle.rightJustified (3,'0');
-        levelTitle = collection->name + " - " + levelTitle;
-        if (levelName.length() > 0) {
-            levelTitle = levelTitle + " - " + levelName;
+        levelNumber.setNum (level);
+        levelNumber = levelNumber.rightJustified (3,'0');
+        if (levelName.length() <= 0) {
+            levelTitle = i18nc ("Game name - level number.",
+                    "%1 - %2", collection->name, levelNumber);
+        }
+        else {
+            levelTitle = i18nc ("Game name - level number - level name.",
+                    "%1 - %2 - %3", collection->name, levelNumber, levelName);
         }
     }
     return (levelTitle);
