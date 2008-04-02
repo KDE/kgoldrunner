@@ -688,7 +688,7 @@ void KGrCanvas::drawSpotLight (qreal value)
     qreal h = qreal (nCellsH * imgW);
     qreal x = qreal (topLeft.x());
     qreal y = qreal (topLeft.y());
-    qreal dh = 0.5 * ::sqrt (w * w + h * h);
+    qreal dh = 0.5 * std::sqrt (w * w + h * h);
 
     QPainter p;
     p.begin (&picture);
@@ -699,7 +699,7 @@ void KGrCanvas::drawSpotLight (qreal value)
     else {
         static const qreal outerRatio = 1.00;
         static const qreal innerRatio = 0.85;
-        static const qreal sqrt1_2 = 0.5 * ::sqrt (2);
+        static const qreal sqrt1_2 = 0.5 * std::sqrt ((double)2.0);
         qreal wh = w * 0.5;
         qreal hh = h * 0.5;
         qreal radius = dh * value;
