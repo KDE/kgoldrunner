@@ -34,7 +34,8 @@ int main (int argc, char **argv)
     KAboutData about ("kgoldrunner", 0, ki18n ("KGoldrunner"),
                      version, ki18n (description),
                      KAboutData::License_GPL,
-                     ki18n ("(C) 2003 Ian Wadham and Marco Krüger"));
+                     ki18n ("(C) 2003 Ian Wadham and Marco Krüger"),
+                     KLocalizedString(), "http://games.kde.org/kgoldrunner" );
     about.addAuthor (ki18n ("Ian Wadham"), ki18n ("Current author"),
                             "ianw2@optusnet.com.au");
     about.addAuthor (ki18n ("Marco Krüger"), ki18n ("Original author"),
