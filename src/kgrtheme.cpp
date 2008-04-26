@@ -188,7 +188,7 @@ QList<QPixmap> KGrTheme::tiles (unsigned int size)
                  "hero_1" << "enemy_1";
     int i = 0;
     // These tiles come never have variants
-    foreach (QString name, tileNames) {
+    foreach (const QString &name, tileNames) {
         list.append (loadGraphic(QSize(size, size), name, svgSet));
         offsets[i] = i;
         counts[i] = 1;
@@ -198,7 +198,7 @@ QList<QPixmap> KGrTheme::tiles (unsigned int size)
     // These tiles can have variants
     tileNames.clear();
     tileNames << "gold" << "bar" << "ladder" << "concrete" << "brick";
-    foreach (QString name, tileNames) {
+    foreach (const QString &name, tileNames) {
         int tileCount = 0;
         QString tileNamePattern = name + "-%1";
         while (svgSet.elementExists (tileNamePattern.arg (tileCount))) {
@@ -232,7 +232,7 @@ QList< QPixmap > KGrTheme::namedTiles (QList< QString > names,
 {
     QList< QPixmap > list;
     
-    foreach (QString name, names) {
+    foreach (const QString &name, names) {
 	if (svgSet.elementExists (name)) {
             list.append (loadGraphic(QSize(size, size), name, svgSet));
             kDebug() << name << "found";
