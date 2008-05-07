@@ -1,4 +1,4 @@
 [KNewStuff2]
-ProvidersUrl=http://data.kstuff.org/cgi-bin/hotstuff-provider?site=kgoldrunner-dxs
+ProvidersUrl=http://newstuff.kde.org/cgi-bin/hotstuff-provider?site=kgoldrunner-dxs
 TargetDir=kgoldrunner/themes
 Uncompress=true
