@@ -21,7 +21,7 @@ kde4_add_executable(kgoldrunner ${kgoldrunner_SRCS})
 
 target_link_libraries(kgoldrunner ${KDE4_KDEUI_LIBS} kdegames ${KDE4_PHONON_LIBS})
 
-install(TARGETS kgoldrunner  DESTINATION ${BIN_INSTALL_DIR} )
+install(TARGETS kgoldrunner  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 
 ########### install files ###############
