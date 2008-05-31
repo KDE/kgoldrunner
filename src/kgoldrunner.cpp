@@ -438,7 +438,14 @@ void KGoldrunner::setupActions()
     actionCollection()->addAction ("options_sounds", setSounds);
     connect (setSounds, SIGNAL (triggered (bool)), game, SLOT (setPlaySounds (bool)));
     KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
-    setSounds->setChecked (gameGroup.readEntry ("Sound", true));
+#ifdef ENABLE_SOUND_SUPPORT
+    bool soundOnOff = gameGroup.readEntry ("Sound", true);
+    setSounds->setChecked (soundOnOff);
+    game->setPlaySounds (soundOnOff);	// KGrGame has created a sound player.
+#else
+    setSounds->setChecked (false);	// No support for sound in this version.
+    setSounds->setEnabled (false);
+#endif
 
     // Configure Shortcuts...
     // Configure Toolbars...

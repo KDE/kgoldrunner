@@ -51,7 +51,7 @@
 
 #endif
 
-// #define ENABLE_SOUND_SUPPORT
+// Moved this to kgrconsts.h, Ian W. 31 May 08 // #define ENABLE_SOUND_SUPPORT
 
 /******************************************************************************/
 /***********************    KGOLDRUNNER GAME CLASS    *************************/
@@ -457,7 +457,9 @@ void KGrGame::setPlaySounds (bool on_off)
 {
     KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
     gameGroup.writeEntry ("Sound", on_off);
+#ifdef ENABLE_SOUND_SUPPORT
     effects->setMuted (!on_off);
+#endif
 }
 
 void KGrGame::freeze()
