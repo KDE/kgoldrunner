@@ -439,7 +439,7 @@ void KGoldrunner::setupActions()
     actionCollection()->addAction ("options_sounds", setSounds);
     connect (setSounds, SIGNAL (triggered (bool)), game, SLOT (setPlaySounds (bool)));
     KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
-    bool soundOnOff = gameGroup.readEntry ("Sound", true);
+    bool soundOnOff = gameGroup.readEntry ("Sound", false);
     setSounds->setChecked (soundOnOff);
     game->setPlaySounds (soundOnOff);	// KGrGame has created a sound player.
 #endif

@@ -13,7 +13,7 @@
 #ifndef KGRCONSTS_H
 #define KGRCONSTS_H
 
-// #define ENABLE_SOUND_SUPPORT // Ian W. moved it here - 31 May 2008.
+#define ENABLE_SOUND_SUPPORT // Ian W. moved it here - 31 May 2008.
 
 enum Owner {SYSTEM, USER};
 
