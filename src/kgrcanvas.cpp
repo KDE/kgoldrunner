@@ -125,7 +125,9 @@ KGrCanvas::~KGrCanvas()
     delete heroFrames;
     delete enemyFrames;
     delete m_spotLight;
+    delete m;
 }
+
 
 void KGrCanvas::goToBlack()
 {
