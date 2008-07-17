@@ -128,3 +128,5 @@ void KGrSoundBank::setMuted (bool mute)
 
 // vi: set sw=4 cino=\:0g0 :
 
+
+#include "kgrsoundbank.moc"
