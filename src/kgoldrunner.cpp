@@ -1038,7 +1038,7 @@ bool KGoldrunner::getDirectories()
             // result = false;		// Don't abort if user area is missing.
         }
     }
-
+    delete dirs;
     return (result);
 }
 
