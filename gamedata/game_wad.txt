@@ -112,7 +112,7 @@
 // L019
 //                            Z TTT TTTTT TTTTT TTTTT TTTTZ TTTTTTTTTTTTTTTTTTTTTTTTHXZF                     HMMX ZF                     HXHXH                       HX NHT                HMMXXXX  H  T               HXHTTHXT HTT          R     HXNNH XH   TT         HMMXXXXNTN HXH H H          HXH TTNXNNH XHT H     N N   HX H NXNTN HXH H TH   HMMXXXXNTHTNNXNTH XH  H H   HXHTTTHXNH XXMX NHX HT T EE HXN MTH XH   NXFXFX H  H MMMXXXM HNNXHMHNHX X XH HT HXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Under the Stairs");
- i18n("Start by killing the enemies.  When they fall into the space at the right, move down and to the left to get them to drop further in and stop them getting the gold.  If they go more than one third of the way in, they will be premanently trapped.\n"
+ i18n("Start by killing the enemies.  When they fall into the space at the right, move down and to the left to get them to drop further in and stop them getting the gold.  If they go more than one third of the way in, they will be permanently trapped.\n"
  "\n"
  "Now tackle the three dig-and-run puzzles.  You may have to make several trips to empty an area.  Finally, collect the rightmost nugget.");
 // L020
