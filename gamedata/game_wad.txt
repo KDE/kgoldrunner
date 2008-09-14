@@ -129,7 +129,7 @@
 // L021
 //    Z                           Z                         NNZ                         HMX                         H N                         H H    NNNNN                H HNXXXXXXXXM MH            H  N    H   NMNH            HMHN  HT N M  NH              HN    H   M NH            HMEF  HMMMMH M H            HNMN  H   TH M H            HTTT  H HX   M H             T E    HMM MM H            H MN MHXHMFMM  H            HR MM H FM     H            XXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                    
  i18n("Short Circuit");
- i18n("Go anti-clockwise around the circuit and take an enemy with you, trapping him in the pits at bottom left. lower right and upper right.  Then you can run across the concrete and collect the gold up there.\n"
+ i18n("Go anti-clockwise around the circuit and take an enemy with you, trapping him in the pits at bottom left, lower right and upper right.  Then you can run across the concrete and collect the gold up there.\n"
  "\n"
  "Next, clear out all of the left side except for one nugget above a ladder.  To get this one, release the second enemy and take him all the way around the circuit.  Follow him up the long ladder, staying on it till he runs over to the left and falls.  Now go to the left end of the concrete as he circulates around the left side of the play area.  As he falls past your feet, run over to the small ladder and get the gold.\n"
  "\n"
