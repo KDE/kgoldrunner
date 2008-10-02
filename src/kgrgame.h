@@ -200,7 +200,18 @@ private:
 /*******************************  SOUND SUPPORT *******************************/
 /******************************************************************************/
     KGrSoundBank *effects;
-    enum { GoldSound, StepSound, ClimbSound, FallSound, DigSound, LadderAppearanceSound, NumSounds };
+    enum { 
+	    GoldSound, 
+	    StepSound, 
+	    ClimbSound, 
+	    FallSound, 
+	    DigSound, 
+	    LadderSound, 
+	    DeathSound, 
+	    CompletedSound, 
+	    VictorySound,
+	    GameOverSound,
+	    NumSounds };
     QVector< int > fx;
 
 /******************************************************************************/

@@ -87,6 +87,10 @@ KGrGame::KGrGame (KGrCanvas * theView,
     fx[ClimbSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/climb.wav"));
     fx[FallSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/falling.wav"));
     fx[DigSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/dig.wav"));
+    fx[LadderSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/ladder.wav"));
+    fx[CompletedSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/completed.wav"));
+    fx[DeathSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/death.wav"));
+    fx[GameOverSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/gameover.wav"));
 
     connect(hero, SIGNAL (stepDone (bool)), this, SLOT (heroStep (bool)));
     connect(hero, SIGNAL (falling (bool)), this, SLOT (heroFalls (bool)));
@@ -311,6 +315,7 @@ void KGrGame::herosDead()
 
     // Lose a life.
     if (--lives > 0) {
+	effects->play (fx[DeathSound]);
         // Still some life left, so PAUSE and then re-start the level.
         emit showLives (lives);
         KGrObject::frozen = true;	// Freeze the animation and let
@@ -320,6 +325,7 @@ void KGrGame::herosDead()
     }
     else {
         // Game over.
+	effects->play (fx[GameOverSound]);
         emit showLives (lives);
         freeze();
         QString gameOver = "<NOBR><B>" + i18n ("GAME OVER !!!") + "</B></NOBR>";
@@ -368,6 +374,8 @@ void KGrGame::finalBreath()
 
 void KGrGame::showHiddenLadders()
 {
+    effects->play (fx[LadderSound]);
+
     int i, j;
     for (i = 1; i < 21; i++)
         for (j = 1; j < 29; j++)
@@ -378,6 +386,7 @@ void KGrGame::showHiddenLadders()
         
 void KGrGame::levelCompleted()
 {
+    effects->play (fx[CompletedSound]);
     connect (view, SIGNAL (fadeFinished()), this, SLOT (goUpOneLevel()));
     view->fadeOut();
 }
