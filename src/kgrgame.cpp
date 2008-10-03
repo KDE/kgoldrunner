@@ -177,7 +177,7 @@ void KGrGame::quickStartDialog()
 
     // Modal dialog, 4 buttons, vertically: the PLAY button has the focus.
     qs->setModal (true);
-    qs->setCaption ("Quick Start");
+    qs->setCaption (i18n("Quick Start"));
     qs->setButtons
             (KDialog::Ok | KDialog::Cancel | KDialog::User1 | KDialog::User2);
     qs->setButtonFocus (KDialog::Ok);
