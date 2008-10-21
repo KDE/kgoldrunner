@@ -1,0 +1,113 @@
+// G017 T cnt C
+ i18n("Count");
+ i18n("This game is based on counting, from 0 to 16 (or 0 to 10 in hexadecimal).  The first level has no gold and no enemies: the problem is to find a way out and up to the next level.  After that, the number of enemies and pieces of gold increases by 1 at each level.  The name of each level corresponds to the number of enemies, the pieces of gold and the digits that appear in the layout.\n\nThese elegant and rather tricky Championship levels were composed by Steve Mann <smann at cgl uwaterloo ca>.");
+// L001
+//                              R H  TTTT MMMMM H T HHTHHHT   HH  H  XMMMMMMH T  HTH HTH      H MMMH  MMM TT   H HT  TTTTH  MM H T MMH HHH HHHT  T  T H MM H  HMMH H H    TH T  TH  MM HT HMMH H H  TTTH T  T H M  H  HMMH HHH H  T  T  TH  MM H THMMH     H T T TTTT H MM H  HMMH HHH HT HT       HMM H  HMMH        HHHHH  TTHMMH    MMHTT HHHH HTH H H TTMMM   MMMH   H  H HTH H H HHTMMFMFMM H H HTTHTHTHHH H HHTTMMMMMHTH H H  H TT   TH THTTTT HHT H H HHHH HTTHTTTTHHHTHHTTTTTTTH   T  HHTHHHTHHHHHTTHHHHHTH TH T HHTTTTHTHHTTHHHTHTTHHTHHTHHHHTTXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+ i18n("Zero");
+ i18n("The only challenge is getting inside the 0, which is the only path to the exit.\n"
+ "\n"
+ "Getting inside the 0 requires climbing to the top of the zigzag ladder, digging away five bricks on the left edge of the 0, racing back to the top of the zigzag ladder, over the pole, falling through your recently dug bricks and immediately moving right to get into the 0.  The timing is fairly tight.");
+// L002
+//  R                          Z TTTTTTTTTTTTTTTT          ZH                        M ZH              MF          ZH    T        MMF          ZH   TT       MMFF          ZH    T       FMMM          ZH    T        NMM          ZH    T         MM        H ZH   TTT        MM     ZZHH ZH              MM     Z  H ZH              MM     Z  H ZH              MM     Z  H ZH  E           MM     Z  HZZH              MM     Z     H     HHHHHXFFFMMFMMMZZ     HHHHHHH    MMMFMMMMMMZ      H                           H                          MXXXXXXXXXXXXXXXXXXXMXXXXXXXX
+ i18n("One");
+ i18n("Getting the gold requires multiple digs in the right places.  However, see the next paragraph.\n"
+ "\n"
+ "To get out, you have to get the enemy to go over the top of the 1 and fill the pit at the bottom.  There are three ways to do this.  The first and most sensible is to wait on the pole above the top right edge of the 1 until the enemy is almost upon you and then move to the right, digging to your right as you reach the bottom of the 1.\n"
+ "\n"
+ "The second way involves timing your digging for the gold (or where the gold was); moving onto the gold at the right time will cause the enemy to fall into the pit on the right of the 1.  The third way is to destroy the enemy and hope he reappears over the right side of the 1.");
+// L003
+//  R                           Z       TTTTTTTTTTTT      T Z              TTTTZ TZ Z  HZ    ZZZ  MFMMM    H  MHM  HZ        MMF  MM   HT H HT HZ TTTT   M     MM  Z       HZ    T         MM  Z       HZ    T         MM  ZZZZHHH HZ TTTT        MM         H HZ T          MMN       HHH HZ T        EMME        H   HZ TTTT     MM          HHHZHZZZ ZZ    MMN   M          H      Z  MX     X TTTTTTTTTH      Z  MMMMXXXXH      Z  H     Z   MMMFMMMMH      Z   FM  Z            H      Z   MFM ZZZ          H      Z   MMMMMMFM         H      Z MMXXXXXXXXXXXXXXXMXXXXXMXXXXXX
+ i18n("Two");
+ i18n("To get the leftmost gold drop down on it from above, stepping one square to either side as you fall.  Immediately dig the square that was just below the gold and step in.  The false floor will drop you to the bottom.");
+// L004
+//  R                             H             TTTTT T T T H H          E       M M M HH H        MMMXMMMM        HH H TTTT   MFMXXMMM       HHH H    T        MM        H H  H   T       MMN        H  H HTTTT      MM         HH  H     T      M          H    H    T   XNMMM         H    H TTTT   XXXXXMM       HHH  H              MM        H  HH              M    HHHMH   H              M      H     H       ME    MM    HHH      H      MM N MM       H      H       MMMMM    HMHHH      H                H           H        E      H   MMMXXXXXXXMXXXXXXMXXXXMXXXXXXXX
+ i18n("Three");
+ i18n("After getting all the gold, the only escape is up the highest ladder on the left, but it is not connected to anything.  To reach it, you will need to entice an enemy to follow you, then step across the enemy to reach the ladder.");
+// L005
+//  R                 E           Z Z       TTTTTT     M M  H Z Z             H   Z Z   H Z Z   ZZZZMFMM  H   ZMZM  H ZZZ       MNMM  H   ZZZZ  H   ZT T   MM MM  H     Z   HH  ZT T   MN MM  H     Z    HHTZTTT  MM  MM  H      HH H H    T  MNE MMN H      HH H  H   T  MMMFXMX H     H H HH  H         MM  H     H H H             MM  H    HH H HE            MM  H    H EH  H            MM  H    HHHHH H                H       H  H                HHHHHH  H HH                        H H  MMMM                  HMMH  M  M                 HXMMXXXXXXXXXXXMXMXXXMXMXXXXXXXX
+ i18n("Four");
+ i18n("At the start, you need to race to the floor to the right.  You will need to trap some enemies (with luck, you will get a piece of gold in the process), but you should easily be able to go up the ladders shaped like a 4, on the right. \n"
+ "\n"
+ "When getting the gold from the 4, wait until the enemies have reached the top of the ladders shaped like a 4.  This will allow you enough time to reach the ladders before the enemies cut you off.");
+// L006
+//  R                             Z          TTTT T T TT  E H Z       N    N M M M HHHHHH Z    ZZZMMMFMM       H    H Z TTT  ZMMMFMM   M M H    H Z T    ZMM           HHHH H Z TTT  ZMM               HHHZ   T  ZMM        TTTT   H HZ TTT  ZMMXM     EH  H   H HH     Z    MMN   HH   HHH   H    Z      MF   H         Z H  Z  N    MM   H        Z  HH    M    MM   H        ZE  Z    MMN MMM   H        ZMM Z     MFMMM    H        ZM    T    MMM     H        ZMM   Z            H      M Z M    Z   Z      HHH     MMZMM  E  Z  HMMH   H H   E MMXXXXMXXMXMXX  XXMXHXXXXMXXXX
+ i18n("Five");
+ i18n("In the beginning, climb down the first ladder set and wait on the lowest section of this ladder until the enemies have settled on their positions.  Then drop to the floor and aim for the big ladder at the the right with the fork at the bottom.  The fork is what enables you to get past the enemies above: wait at the floor level of the left rung (not below the floor level!) until the enemy on the long ladder drops next to you.  Then climb up and to the right to get up the big ladder.");
+// L007
+//  R  TT                        HH  TTTTTTTT    TTT M M M  H    H       Z  N   ZZZZZZZZH    H      EMMMM    M M M HHHHH H     MMM          E  ZH  H H    MM           HHZZZH  H H   MM           H     EHH  H  MM           H      Z    H  X            HHHH   H    H MN  E         H   H  HTTT H MM MMFMMM     HH HH  HT   H MMM     MMN    HHH   HTTT H M    N   MM       Z  HT T H MN  HHH   M        ZHHTTT H MM        M         ZH    H  MM E   NMM         ZH    H  MMMMMMMMM     ZZZ  HH    HTTTTTT          Z  MMMH                 E   Z  MMMXXXMXXXMXMXXXXXMXXXXMXXXMXXX
+ i18n("Six");
+ i18n("The first trick for this level is to time when you go through the bottom of the 6 with the enemy climbing up the ladder to the left of the 6.  Once you get on the ladder, the enemies will climb up the ladder away from you, so you just need to wait until there are no enemies low on the ladder before digging through the bottom of the 6.\n"
+ "\n"
+ "The second trick is figuring how to get all the enemies off the ladder on the left of the screen.  One way is to sit on top of the big 6 in the middle and wait for them to come over the poles.  Then drop to the floor and cross to the ladder.");
+// L008
+//  R     HT                       E H  N N N N NTT   M M M H    H  MFMFMFMFM  HM       H    H  MMMMMMMMM HH  M M M H    H  MM     MM H         H    H        NMM HH   E E       H        MMM  HZZHHHHH TTTT H      EMMMN  H      H    T H      MM     H     H    T  H     MM      H    HH   T   H     MM      H    H    T   H     MM  HTT HH   H     E ZH     MM  H  MMMMMZH     HH  H    MM  H      MZ       HH H    MM  H     M Z      Z HH HH      H    MM Z   M  Z      ZZ    H    M  Z  MM ZM            H   M   Z  MM ZM         E  H  EM   Z  MMXXXMXXMXXXMXXMXXMXXXMXXXXMXX
+ i18n("Seven");
+ i18n("The gold on top of the 7 is the main challenge.  In the beginning, climb to the left most square of the top of of the 7 and wait there until enemies fill the holes on top of the 7.");
+// L009
+//  R                          Z         TTT N TTTT   E    ZHM      H N MMME   HM M M MZH       H MMMMMMMN H       ZH   E   HMM     MM HM M M MZH       HM       MH        ZH TTTTT HM       M H       ZH T   T HM  E  N M H    HHHHH T   T HMMMMMMMMM H    H  HH TTTTT H  MXXXMN  H    HE HH T   T HEMMMMMMM  H    HHHHH T   T HMMNZT  MM H    H  HH TTTTTHHM  Z    M H   ZH  HH      ZMM  Z    MMH  Z HHHHHH ZZZZ MM  Z    MM  Z Z  Z  H Z  Z MMN Z  E MM ZZ Z  MM H ZZZZ  MMMZN MMM  Z  Z  MM H Z  Z   MMMMMM    MZZZ  MME  ZZZZ             M  Z  MMXXMXXMXXMXXMXXXMXXMXXMXXMXXX
+ i18n("Eight");
+// L010
+//  R                          Z       HHHTTTTTTT     E    ZHZZZZZZH HZZZ NE HM M M M MZH    E HHH NFMMM HZ ZZZ ZZZZH  TTT   H MF  MMH  M M M MZH T   T H NM    MH    ZZZZZZH T   T H MM    MH    Z  E  H T   T H MN   NMH    ZZHHH H TTTTT H MM ENMMH ZZZ  H H H     T H  MFMMMMH Z Z  HHH H     T H       MH ZZZ    H H T  T  H       MH   Z ZHHH H  TT   H       MH  Z Z     HH      H       MH Z  Z      H      H  E  NMMH    Z      HE     H HMN MMHH    Z   E  HH     H H MM  HM    ZMZMMM  HH    H HTTTTTHMMMMMMMZMMME  H    H    N Z        ZMMMXMXXMXMXXMXXMXXMXXMXXMXXMXXX
+ i18n("Nine");
+ i18n("In the beginning, drop as fast as you can to get to the floor.  Dig several pits on the bottom to delay the enemies from coming up the ladder.  Then grab the two pieces of gold off the left side of the 9 while there are no enemies around, digging to enter the 9 after grabbing the higher of these two pieces.\n"
+ "\n"
+ "To get the gold from the bottom of the 9, stand on the left enemy, dig left and move right.  The two enemies will start to move left, fall, and climb the ladder.  When the first one gets stuck where you just dug, jump in the lowest part of the 9 and dig to the left.  The next enemy will carry the gold down.  Grab it, dig to the right, drop down to the pole and escape as quickly as you can.");
+// L011
+//  R            E           Z E TT                TTT   Z  H TTTTTTZZZTTHH       H MZM H         N  H N NENN H  Z  H        MM  H MFMMMM H MZM H   E  NMMM EH MFXXMM H  Z  H      XXMM  H MFE MM H MZM H        MM  H MM  MM H  Z  H T TTT  MM  H MM  MM H MZM H T THT  MM  H MM  MM H EZ  H T T T  MM  HHMM  MM H MZM H T TTT  MM   HMM  MM HZZZ  H       NMMN  HMMNNMM H     HH     MMMMMM HMMFMMM H    E HH    MMMMMM HMMFMMM H   MM  ZH          H       H   MM  Z H ZTTTTTTTHTTTTTT H   MM  ZE H        Z      H    MM  ZM  H       ZE    H MZ  MMXXMXMXXMXXMXXMXXMXXMXMXMXMXX
+ i18n("Ten");
+// L012
+//  R                    E   E   ZZHHHHHHH EHHHH  EN M MHM MH  H E   NMM   H NMMHHHHHHHEH TH T   MMM   H MMM M MHM MHTTHTT     M   H   M   NH  NH T  T     M H H H M   MHM MH T  T     M HHHHH M    H   H T  T     M H H H M    H   H T  T     M   H   M    H   H          M   H   M    H   H N  N     M   H   M    H   H       N  MN  HE NM  E H   HHHHHHHHFMMMMMMHMMMMMMM H   H              H        HE  H              H        HM  HHHHHHHHHHHHHHHHHHHHHHHHHM NH         H       H     HMMMH       X H       H     HMMMH     E X H   X   H  XEH MMMXMXMXMXMXMXMXMXMXMXMXXMXFXXX
+ i18n("Eleven");
+ i18n("Get the piece of gold below the left side of the poles shaped like an 11 first, then grab the piece on the base of the left 1 of the central 11.  Now drop to the floor just to the left of the double high wall.  The enemies will drop into different sections.  You now want to do three things: get the gold in the left and center sections, take gold from the enemies to the right of you when on the floor and lure as many enemies as you can into the section to the left of the 11.\n"
+ "\n"
+ "The first two tasks are relatively easy: the last task can be accomplished in several ways.  If you run up the center ladder and move over the left, you can wait above the right hand side of the poles (possibly dropping onto the poles) and lure a few enemies at a time from the center section to the left section.  You can also pick up a piece of gold or two while doing this.\n"
+ "\n"
+ "Once you have all the gold (except the pieces to the right of the 11), run to the top right of the H of ladders in the middle.  This will cause all the enemies not in the far right section to move into the left section.");
+// L013
+//  R                      E    ZT E    E  TTTTTTTT T       H          E      EH E   E  H T TTT   N        H MHMHM  H T   T   M  MMMM  H   NHH  H T TTT   M     M  H MHMHM  H T T     M  E NM  H HHN    H T TTT   M  MMMM  H MHMHM  H     N   M  M     H   NHH  H         M  MN E  HZMHMHM  HHHHHHHH  M  MMMM HHH   Z          H          H H  N Z      EZZHHHHHHHHHHHHHH    EZ   N Z               H    MZ     Z HHHHHHHHHHMHHHHM   MZ    ZZ H                  MZM  ZZ  HHHHHHMHHHHHHH     MMM ZZMZ              H     MFMNZM Z NZM          H  E  MNMXMXMXMXMXXXMMMMXMXMXMXXMXXXX
+ i18n("Twelve");
+ i18n("This is a slow level with lots of waiting for enemies to move where you want them.\n"
+ "\n"
+ "At the start, fall onto the nearest enemy as it falls and move onto the right hand poles to get the piece of gold just below them.  Be sure to wait for an opening in the enemies below before dropping onto this gold piece. \n"
+ "\n"
+ "The grid of 12 boxes on the right is useful: if you are not on the top level, then the enemies climbing the ladder just left of the grid will not drop onto it.  You can use this to move them above the traps on the left, then drop to the floor to get them to fall into them.\n"
+ "\n"
+ "Another useful trick is to wait at the top of the ladder on the far left (where you start the level).  Any enemies far enough away will run over the top of the grid of boxes and drop into the trapped area on the right.  \n"
+ "\n"
+ "To get the gold on the leftmost floor area, you need to fill the second section of floor with enemies and dig out the squares that block the enemies in the leftmost region.  You may want to lose that gold (i.e. have the enemy carrying the gold enter a dug square and be destroyed there), although it is possible to get this piece of gold if you really want it.\n"
+ "\n"
+ "If you leave the leftmost suspended gold until last, then it is easy to escape to the top.  Alternatively, if you leave the gold inside the 2 for last, you should be able to escape without much difficultly.  Otherwise, the enemies trapped on the far left will cut off your escape route.");
+// L014
+//  R       TTT            TTE       N MMMH HMMMMMMMMMM  M M     ZMMEMH HM        M         ZMMM MH HMMMMMMMMHM  M M   EZMMMHMH HTT     MHM         Z  MHMHZ        MHM  MEMT TTTZ MHM H    E E MHM   Z T   TZ M M H  MMMMMMMHM  MHMT  TTZ M M H  M N    HM  NZNT   TZ M M H  MMMFMMMHM  MZMT TTTZ M M H        MHM   Z H   H  M M H        MHM  MZM H H   M M H        MHM   Z   H    M M HMMM EENEMHM   ZM   H  NMNMNHMNMMMMMMMHM ZZZ     H MMMMMHM   E    HMZNMZN     HMMMMMHMMMMMMMMMMMZMMMMHHHHHHHHHHHHHHHHH HHHHHHMMMM     E NEZ ZNZ Z M E  H MMMMXXMMMXMXMXMXMXMXMXMMXMXMXXXX
+ i18n("Thirteen");
+ i18n("In the beginning, wait on the top of the left (or better, right) branch of the leftmost ladders until the enemies in the middle climb to the middle of the center ladder.  Then drop to the horizontal ladder, move all the way to the right and drop to the floor, thus trapping several enemies.\n"
+ "\n"
+ "You have to release most of the enemies from where they are trapped, to get the gold from various places.  In particular, you have to release the enemies trapped on the left half of the floor to get at least one piece of gold.  \n"
+ "\n"
+ "Once you pick up the last piece of gold, the enemies will swarm the center ladder, so you will have to decide which piece of gold to pick up last.  A reasonable choice is the one held by the three enemies in the lowest leg of the 3, as is the one in the center arm of the 3.");
+// L015
+//  R TTTT TTTTTTTTTTTTT            E H  E    E Z      E    M MNM H  M MNM  Z      MHMNMM XXM H  M MMM  ZN     MHMMMM   M H  M   M  ZZ     MH  ME     H  E      EZ     EH   M MNM H  M MNM  MZMNM  MHMNMM XXM H  M MMM  MZMMM  MHMMMM  EM H  M   M  MZ  M  MH  ME     H          Z     EH   M MNM H      N   Z     MHMNMM XXM H   T T  T Z     MHMMMM   M H   T T  T       MH  ME     H   T T  T       EH   M MNM H   T TTTT       MHMNMM MMM H   T    T       MHMMMM   M H   T    T       MH  M      H                 H  E  ZX  H       N         H XZXMMXMXMXMMXMXMXMMMMXMXMXXXXX
+ i18n("Fourteen");
+ i18n("Four tricks: first, do not dig out the enemies trapped in the 4s on the left until towards the end (likewise if one gets trapped in the middle 4) - this leaves fewer enemies to deal with. \n"
+ "\n"
+ "Second, you will need to ride down on top of an enemy to get the trapped gold in the 4s on the left and the floating piece of gold in the center.\n"
+ "\n"
+ "Third, when you release the enemies on the 4s along the right (and possibly the two in the 4s on the left), you may find it easier to double dig and lose those pieces of gold.\n"
+ "\n"
+ "Finally, it is easiest to escape at the end if you leave until last a piece of gold in or near the floating 14 at middle right.  Then you can run up the ladder that appears there.");
+// L016
+//  R     EMM    H MMMMMMMME  N   E   MMM    H M       H  H H H  MM M E  H M  E    H  H H H     M HHHH M  HHHHHHHHHHH HTTTTTM N  H M  N    H  H H H     M    H MN      H  H H H     M    H MMMMMMMEHN HEH H  N  M    HTTTTTTTMXHHHHHH H     M    H      TTMH  H HNH     M E  H     E  MH  H H H     M HHHHHHHHHH  MHHHHHH H     M N  H E      MH  H H H     M    H M     NMHN H H H     M    H MM    MMHHHHHH H E  NMN  EH  MM  MM H  H H H MMMMMMMMMH   NMMM  H  H H H          H     E   HN HEHEH HHHHHHHHHHHHHHHHHHHHHHHH H H H HNH H  H H  H HH H H MXMXMXMXMXMXMMXMXMMXMXXMXMXM
+ i18n("Fifteen");
+ i18n("Two hints: if you wait on one of the left two ladders one rung below the piece of gold suspended between the two ladders, the enemies in the middle will jump into the base of the 5.  This should allow you to easily get the gold between the 1 and the 5.\n"
+ "\n"
+ "Second, if you wait on the base of the 1 to the right of the one, the enemies on the right of the two ladders to the left of the 1 will jump off the pole onto the other half of the base of the 1.  If you wait high up between the 1 and the 5, then jump to the base of the 1, while the enemies are falling toward the base of the 1 you will be able to rush up the ladder to the left of the 1 and get the gold to the left of the 1.");
+// L017
+//  R Z          Z E      Z   Z  HM  T TTT    ZM     EZE E EHHMN T T      MZ  TTTMHMHMHMHE F T TTT  HM  ZN   HHHHHHHHHMM T T T HMM   Z   M M MHM HMMHT TTTHMM Z   Z  HHHHHHHHHMNH    HMM  EZ   Z M M MHMH  F   N HM EZM Z   HHHHHHHHHHMMH   HMMMMM MM   HMHMHMHM HMNH   HH      MM  HE  H H HH FHH  MMH      MM H   Z HZHEMMH HMM  H  N   MMH   Z H HHMNH HM    H      MMH   ZH  H FH HMM    H     M H  NNNHHHMMH H MM    HT  MM HZ   NHHEMMH H EMMM  H MM N H HMMMMHHMEHHHH    MM EM    H HMMMMHHM H   HHH  MMMM    H HMMMMNHM  H  H  H NMM NZMEZNEMMMMMMXMMXMMXMMXMMXMMXMXMMMXXXXX
+ i18n("Sixteen");
+ i18n("The column to the left of the 1 requires a quick run down and back up, with careful dodging both ways to avoid the enemies.\n"
+ "\n"
+ "To get the gold in the middle of the 6, drop down on the top of the 'O' part of the 6, move right/dig left and immediately move left and dig left to delay the enemy who otherwise is likely to catch you.  However, you may wish to leave this piece of gold to the end so as not to free two additional enemies earlier; it is possible to get two enemies to retrap themselves in that section, though.\n"
+ "\n"
+ "To get the gold held by enemies in the bottom right, dig out the blocking square to their left, run up the ladder, dig off the right side of the 6, drop in, run left and dig off a square on the left side of the 6 and drop to the floor.  The timing is tight - only one or two enemies in the bottom right section will be able to move to the next section to the left.  You will still need to dig out the bottom of the 6 to get their gold, but that is straightforward albeit a bit hectic because of the enemies lingering to the left of the 6.\n"
+ "\n"
+ "Once you have gotten all the gold, you may find it easiest to exit by passing through the middle false floor on the 1 and exiting via the ladders on the left of the 1.");
