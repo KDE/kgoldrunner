@@ -48,6 +48,11 @@
 // L009
 //  R                          Z         TTT N TTTT   E    ZHM      H N MMME   HM M M MZH       H MMMMMMMN H       ZH   E   HMM     MM HM M M MZH       HM       MH        ZH TTTTT HM       M H       ZH T   T HM  E  N M H    HHHHH T   T HMMMMMMMMM H    H  HH TTTTT H  MXXXMN  H    HE HH T   T HEMMMMMMM  H    HHHHH T   T HMMNZT  MM H    H  HH TTTTTHHM  Z    M H   ZH  HH      ZMM  Z    MMH  Z HHHHHH ZZZZ MM  Z    MM  Z Z  Z  H Z  Z MMN Z  E MM ZZ Z  MM H ZZZZ  MMMZN MMM  Z  Z  MM H Z  Z   MMMMMM    MZZZ  MME  ZZZZ             M  Z  MMXXMXXMXXMXXMXXXMXXMXXMXXMXXX
  i18n("Eight");
+ i18n("With careful moves and timing, you can tempt two enemies over to the leftmost ladder and leave them there while you retrieve the five highest gold pieces.\n"
+ "\n"
+ "The three lowest pieces must be collected all in one pass, but you may need to force enemies towards the right of the 8 first, to avoid trouble when the ladders appear and you land on the floor.\n"
+ "\n"
+ "You can clear your final escape ladder by hitting the floor again, on the far right.");
 // L010
 //  R                          Z       HHHTTTTTTT     E    ZHZZZZZZH HZZZ NE HM M M M MZH    E HHH NFMMM HZ ZZZ ZZZZH  TTT   H MF  MMH  M M M MZH T   T H NM    MH    ZZZZZZH T   T H MM    MH    Z  E  H T   T H MN   NMH    ZZHHH H TTTTT H MM ENMMH ZZZ  H H H     T H  MFMMMMH Z Z  HHH H     T H       MH ZZZ    H H T  T  H       MH   Z ZHHH H  TT   H       MH  Z Z     HH      H       MH Z  Z      H      H  E  NMMH    Z      HE     H HMN MMHH    Z   E  HH     H H MM  HM    ZMZMMM  HH    H HTTTTTHMMMMMMMZMMME  H    H    N Z        ZMMMXMXXMXMXXMXXMXXMXXMXXMXXMXXX
  i18n("Nine");
@@ -57,6 +62,7 @@
 // L011
 //  R            E           Z E TT                TTT   Z  H TTTTTTZZZTTHH       H MZM H         N  H N NENN H  Z  H        MM  H MFMMMM H MZM H   E  NMMM EH MFXXMM H  Z  H      XXMM  H MFE MM H MZM H        MM  H MM  MM H  Z  H T TTT  MM  H MM  MM H MZM H T THT  MM  H MM  MM H EZ  H T T T  MM  HHMM  MM H MZM H T TTT  MM   HMM  MM HZZZ  H       NMMN  HMMNNMM H     HH     MMMMMM HMMFMMM H    E HH    MMMMMM HMMFMMM H   MM  ZH          H       H   MM  Z H ZTTTTTTTHTTTTTT H   MM  ZE H        Z      H    MM  ZM  H       ZE    H MZ  MMXXMXMXXMXXMXXMXXMXXMXMXMXMXX
  i18n("Ten");
+ i18n("You can trap several enemies in the pits at the bottom left and right, but they will get loose when the hidden ladders appear.  Dropping to the floor during your escape can help clear your path to the top right.");
 // L012
 //  R                    E   E   ZZHHHHHHH EHHHH  EN M MHM MH  H E   NMM   H NMMHHHHHHHEH TH T   MMM   H MMM M MHM MHTTHTT     M   H   M   NH  NH T  T     M H H H M   MHM MH T  T     M HHHHH M    H   H T  T     M H H H M    H   H T  T     M   H   M    H   H          M   H   M    H   H N  N     M   H   M    H   H       N  MN  HE NM  E H   HHHHHHHHFMMMMMMHMMMMMMM H   H              H        HE  H              H        HM  HHHHHHHHHHHHHHHHHHHHHHHHHM NH         H       H     HMMMH       X H       H     HMMMH     E X H   X   H  XEH MMMXMXMXMXMXMXMXMXMXMXMXXMXFXXX
  i18n("Eleven");
