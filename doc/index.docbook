@@ -769,7 +769,7 @@ the <guiicon>disk</guiicon> icon on the Editor toolbar.</para>
 <varlistentry>
 <term><menuchoice><shortcut>
 <keycombo action="simul">&Ctrl;<keycap>H</keycap></keycombo></shortcut>
-<guimenu>Game</guimenu><guimenuitem>Show High Scores...</guimenuitem>
+<guimenu>Game</guimenu><guimenuitem>Show High Scores</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
