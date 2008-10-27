@@ -184,7 +184,7 @@ private:
     QString		pauseKeys;	// Keystroke names to put in status bar.
 
     QAction *		hintAction;	// Display a hint, if available.
-    QAction *		killHero;	// Kill hero (disabled during edits).
+    KAction *		killHero;	// Kill hero (disabled during edits).
     QAction *		highScore;	// High scores (disabled during edits).
 
     QAction *		saveEdits;	// Save a level that has been edited.

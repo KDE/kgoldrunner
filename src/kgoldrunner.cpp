@@ -382,14 +382,14 @@ void KGoldrunner::setupActions()
     actionCollection()->addAction ("champion_speed", cSpeed);
     connect (cSpeed, SIGNAL (triggered (bool)), this, SLOT (champSpeed()));
 
-    QAction * iSpeed =	actionCollection()->addAction ("increase_speed");
+    KAction * iSpeed =	actionCollection()->addAction ("increase_speed");
     iSpeed->setText (i18n ("Increase Speed"));
     iSpeed->setToolTip (i18n ("Increase speed"));
     iSpeed->setWhatsThis (i18n ("Increase the game speed by one unit"));
     iSpeed->setShortcut (Qt::Key_Plus);
     connect (iSpeed, SIGNAL (triggered (bool)), this, SLOT (incSpeed()));
 
-    QAction * dSpeed =	actionCollection()->addAction ("decrease_speed");
+    KAction * dSpeed =	actionCollection()->addAction ("decrease_speed");
     dSpeed->setText (i18n ("Decrease Speed"));
     dSpeed->setToolTip (i18n ("Decrease speed"));
     dSpeed->setWhatsThis (i18n ("Decrease the game speed by one unit"));
@@ -461,37 +461,37 @@ void KGoldrunner::setupActions()
 
     // Two-handed KB controls and alternate one-handed controls for the hero.
 
-    QAction* moveUp = actionCollection()->addAction ("move_up");
+    KAction* moveUp = actionCollection()->addAction ("move_up");
     moveUp->setText (i18n ("Move Up"));
     moveUp->setShortcut (Qt::Key_Up);
     connect (moveUp, SIGNAL (triggered (bool)), this, SLOT (goUp()));
 
-    QAction* moveRight = actionCollection()->addAction ("move_right");
+    KAction* moveRight = actionCollection()->addAction ("move_right");
     moveRight->setText (i18n ("Move Right"));
     moveRight->setShortcut (Qt::Key_Right);
     connect (moveRight, SIGNAL (triggered (bool)), this, SLOT (goR()));
 
-    QAction* moveDown = actionCollection()->addAction ("move_down");
+    KAction* moveDown = actionCollection()->addAction ("move_down");
     moveDown->setText (i18n ("Move Down"));
     moveDown->setShortcut (Qt::Key_Down);
     connect (moveDown, SIGNAL (triggered (bool)), this, SLOT (goDown()));
 
-    QAction* moveLeft = actionCollection()->addAction ("move_left");
+    KAction* moveLeft = actionCollection()->addAction ("move_left");
     moveLeft->setText (i18n ("Move Left"));
     moveLeft->setShortcut (Qt::Key_Left);
     connect (moveLeft, SIGNAL (triggered (bool)), this, SLOT (goL()));
 
-    QAction* stop = actionCollection()->addAction ("stop");
+    KAction* stop = actionCollection()->addAction ("stop");
     stop->setText (i18n ("Stop"));
     stop->setShortcut (Qt::Key_Space);
     connect (stop, SIGNAL (triggered (bool)), this, SLOT (stop()));
 
-    QAction* digRight = actionCollection()->addAction ("dig_right");
+    KAction* digRight = actionCollection()->addAction ("dig_right");
     digRight->setText (i18n ("Dig Right"));
     digRight->setShortcut (Qt::Key_C);
     connect (digRight, SIGNAL (triggered (bool)), this, SLOT (digR()));
 
-    QAction* digLeft = actionCollection()->addAction ("dig_left");
+    KAction* digLeft = actionCollection()->addAction ("dig_left");
     digLeft->setText (i18n ("Dig Left"));
     digLeft->setShortcut (Qt::Key_Z);
     connect (digLeft, SIGNAL (triggered (bool)), this, SLOT (digL()));
@@ -527,79 +527,79 @@ void KGoldrunner::setupActions()
     if (! addDebuggingShortcuts)
         return;
 
-    QAction* step = actionCollection()->addAction ("do_step");
+    KAction* step = actionCollection()->addAction ("do_step");
     step->setText (i18n ("Step"));
     step->setShortcut (Qt::Key_Period);
     connect (step, SIGNAL (triggered (bool)), game, SLOT (doStep()));
     addAction (step);
 
-    QAction* bugFix = actionCollection()->addAction ("bug_fix");
+    KAction* bugFix = actionCollection()->addAction ("bug_fix");
     bugFix->setText (i18n ("Test Bug Fix"));
     bugFix->setShortcut (Qt::Key_B);
     connect (bugFix, SIGNAL (triggered (bool)), game, SLOT (bugFix()));
     addAction (bugFix);
 
-    QAction* showPos = actionCollection()->addAction ("show_positions");
+    KAction* showPos = actionCollection()->addAction ("show_positions");
     showPos->setText (i18n ("Show Positions"));
     showPos->setShortcut (Qt::Key_D);
     connect (showPos,SIGNAL (triggered (bool)), game, SLOT (showFigurePositions()));
     addAction (showPos);
 
-    QAction* startLog = actionCollection()->addAction ("logging");
+    KAction* startLog = actionCollection()->addAction ("logging");
     startLog->setText (i18n ("Start Logging"));
     startLog->setShortcut (Qt::Key_G);
     connect (startLog, SIGNAL (triggered (bool)), game, SLOT (startLogging()));
     addAction (startLog);
 
-    QAction* showHero = actionCollection()->addAction ("show_hero");
+    KAction* showHero = actionCollection()->addAction ("show_hero");
     showHero->setText (i18n ("Show Hero"));
     showHero->setShortcut (Qt::Key_R);		// H is for Hint now.
     connect (showHero, SIGNAL (triggered (bool)), game, SLOT (showHeroState()));
     addAction (showHero);
 
-    QAction* showObj = actionCollection()->addAction ("show_obj");
+    KAction* showObj = actionCollection()->addAction ("show_obj");
     showObj->setText (i18n ("Show Object"));
     showObj->setShortcut (Qt::Key_Question);
     connect (showObj, SIGNAL (triggered (bool)), game, SLOT (showObjectState()));
     addAction (showObj);
 
-    QAction* showEnemy0 = actionCollection()->addAction ("show_enemy_0");
+    KAction* showEnemy0 = actionCollection()->addAction ("show_enemy_0");
     showEnemy0->setText (i18n ("Show Enemy") + '0');
     showEnemy0->setShortcut (Qt::Key_0);
     connect (showEnemy0, SIGNAL (triggered (bool)), this, SLOT (showEnemy0()));
     addAction (showEnemy0);
 
-    QAction* showEnemy1 = actionCollection()->addAction ("show_enemy_1");
+    KAction* showEnemy1 = actionCollection()->addAction ("show_enemy_1");
     showEnemy1->setText (i18n ("Show Enemy") + '1');
     showEnemy1->setShortcut (Qt::Key_1);
     connect (showEnemy1, SIGNAL (triggered (bool)), this, SLOT (showEnemy1()));
     addAction (showEnemy1);
 
-    QAction* showEnemy2 = actionCollection()->addAction ("show_enemy_2");
+    KAction* showEnemy2 = actionCollection()->addAction ("show_enemy_2");
     showEnemy2->setText (i18n ("Show Enemy") + '2');
     showEnemy2->setShortcut (Qt::Key_2);
     connect (showEnemy2, SIGNAL (triggered (bool)), this, SLOT (showEnemy2()));
     addAction (showEnemy2);
 
-    QAction* showEnemy3 = actionCollection()->addAction ("show_enemy_3");
+    KAction* showEnemy3 = actionCollection()->addAction ("show_enemy_3");
     showEnemy3->setText (i18n ("Show Enemy") + '3');
     showEnemy3->setShortcut (Qt::Key_3);
     connect (showEnemy3, SIGNAL (triggered (bool)), this, SLOT (showEnemy3()));
     addAction (showEnemy3);
 
-    QAction* showEnemy4 = actionCollection()->addAction ("show_enemy_4");
+    KAction* showEnemy4 = actionCollection()->addAction ("show_enemy_4");
     showEnemy4->setText (i18n ("Show Enemy") + '4');
     showEnemy4->setShortcut (Qt::Key_4);
     connect (showEnemy4, SIGNAL (triggered (bool)), this, SLOT (showEnemy4()));
     addAction (showEnemy4);
 
-    QAction* showEnemy5 = actionCollection()->addAction ("show_enemy_5");
+    KAction* showEnemy5 = actionCollection()->addAction ("show_enemy_5");
     showEnemy5->setText (i18n ("Show Enemy") + '5');
     showEnemy5->setShortcut (Qt::Key_5);
     connect (showEnemy5, SIGNAL (triggered (bool)), this, SLOT (showEnemy5()));
     addAction (showEnemy5);
 
-    QAction* showEnemy6 = actionCollection()->addAction ("show_enemy_6");
+    KAction* showEnemy6 = actionCollection()->addAction ("show_enemy_6");
     showEnemy6->setText (i18n ("Show Enemy") + '6');
     showEnemy6->setShortcut (Qt::Key_6);
     connect (showEnemy6, SIGNAL (triggered (bool)), this, SLOT (showEnemy6()));
