@@ -593,7 +593,7 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
     mainLayout->addWidget (ecKGrB);
 
 
-    nLevL    = new QLabel (i18n ("0 levels"), dad);
+    nLevL    = new QLabel (i18np ("1 level", "%1 levels", 0), dad);
     mainLayout->addWidget (nLevL);
 
     mleL     = new QLabel (i18n ("About this game:"), dad);
