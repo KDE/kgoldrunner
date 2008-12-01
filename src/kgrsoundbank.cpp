@@ -28,13 +28,13 @@ KGrSoundBank::KGrSoundBank (int number) :
     for (int i = 0; i < number; i++) {
 	channels << Phonon::createPlayer (Phonon::GameCategory);
 	tokens << -1;
-	connect (channels[i], SIGNAL (finished()), this, SLOT (freeChannels()));
+	connect (channels[i], SIGNAL (finished()), SLOT (freeChannels()));
     }
 }
 
 KGrSoundBank::~KGrSoundBank()
 {
-    for(int i = 0; i < channels.count(); i++) {
+    for (int i = 0; i < channels.count(); i++) {
 	delete channels[i];
 	tokens[i] = -1;
     }
@@ -74,10 +74,14 @@ int KGrSoundBank::play (int effect, bool looping)
 	i++;
     }
     
-    // If no channel is found, return
-    if (i >= channels.count()) return -1;
+    // If no channel is found, free one allocated channel
+    if (i >= channels.count()) {
+	i = freeAChannel();
+	firstFreeChannel = i++;
+	firstFreeChannel %= channels.count();
+    }
 
-    // Else play sound and return its token
+    // Play sound and return its token
     channels[i]->setCurrentSource (soundSamples[effect]);
     channels[i]->play();
     tokens[i] = ++currentToken;
@@ -86,12 +90,56 @@ int KGrSoundBank::play (int effect, bool looping)
     return currentToken;
 }
 
+int KGrSoundBank::freeAChannel() {
+    freeChannels();
+    int best = -1;
+    
+    // Update channel status for all channels, so there may be no need to call
+    // this function everytime.
+    for (int i = 0; i < channels.count(); i++) {
+	if (channels[i]->state() == Phonon::StoppedState) {
+	    tokens[i] = -1;
+	    kDebug() << "Found free channel" << i;
+	    best = i;
+	}
+    }
+    if (best >= 0) {
+	return best;
+    }
+
+    // No stopped channels found, free one anyway, trying to find one that is
+    // almost finished.
+    qint64 currentRemainingTime = 100000;
+    for (int i = 0; i < channels.count(); i++) {
+	qint64 newRemainingTime = channels[i]->remainingTime();
+	if (newRemainingTime < currentRemainingTime) {
+	    currentRemainingTime = newRemainingTime;
+	    best = i;
+	    if (newRemainingTime <= 0)
+		kDebug() << "Channel" << i << "had" << newRemainingTime << "milliseconds to play!"; 
+		channels[i]->stop();
+		tokens[i] = -1;
+	}
+    }
+    kDebug() << "Best channel" << best << "had" << currentRemainingTime << "milliseconds to play yet"; 
+    channels[best]->stop();
+    tokens[best] = -1;
+    return best;
+
+}
+
 void KGrSoundBank::freeChannels()
 {
     for (int i = 0; i < channels.count(); i++) {
 	if (channels[i]->state() == Phonon::StoppedState) {
 	    tokens[i] = -1;
-	    //kDebug() << "Channel" << i << "is free";
+	    kDebug() << "Channel" << i << "is free";
+	} else if (channels[i]->state() == Phonon::ErrorState) {
+	    kDebug() << "Channel" << i << "is in error";
+	    disconnect (channels[i], SIGNAL (finished()), this, SLOT (freeChannels()));
+	    channels[i] = Phonon::createPlayer (Phonon::GameCategory);
+	    connect (channels[i], SIGNAL (finished()), SLOT (freeChannels()));
+	    tokens[i] = -1;
 	}
     }
 }

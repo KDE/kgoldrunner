@@ -79,6 +79,8 @@ public:
 
 private slots:
     void freeChannels();
+private:
+    int freeAChannel();
 
 private:
     QVector< Phonon::MediaSource > soundSamples;
