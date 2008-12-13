@@ -77,7 +77,7 @@ int KGrSoundBank::play (int effect, bool looping)
     // If no channel is found, free one allocated channel
     if (i >= channels.count()) {
 	i = freeAChannel();
-	firstFreeChannel = i++;
+	firstFreeChannel = i + 1;
 	firstFreeChannel %= channels.count();
     }
 
@@ -163,7 +163,7 @@ void KGrSoundBank::stop (int token)
 
     channels[i]->stop();
     tokens[i] = -1;
-    kDebug() << "Stopping sound with token" << currentToken << "on channel" << i;
+    kDebug() << "Stopping sound with token" << token << "on channel" << i;
 }
 
 void KGrSoundBank::setMuted (bool mute)

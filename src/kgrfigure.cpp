@@ -309,7 +309,7 @@ void KGrFigure::walkRight (int WALKDELAY, int FALLDELAY)
 
 void KGrFigure::initFall (int apm, int FALLDELAY)
 {
-    emit falling (true);
+    emit falling (true);		// Start the falling sound.
     status = FALLING;
     actualPixmap = apm;
     walkCounter=1;
@@ -554,6 +554,7 @@ void KGrHero::start()
 
     if (!(canStand()||hangAtPole())) {		// Hero must fall ...
         status = FALLING;
+	emit falling (true);			// Start the falling sound.
         fallTimeDone();
     }
     else {
@@ -705,7 +706,7 @@ void KGrHero::fallTimeDone()
         }
     }
     if (status != FALLING) {
-        emit falling (false);
+        emit falling (false);			// Stop the falling sound.
     }
     if (isInEnemy() && (! standOnEnemy()))
         emit caughtHero();
