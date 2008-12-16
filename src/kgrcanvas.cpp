@@ -121,10 +121,21 @@ KGrCanvas::~KGrCanvas()
     tileset->clear();
     heroFrames->clear();
     enemyFrames->clear();
+    deleteEnemySprites();
+    while (!borderRectangles.isEmpty())
+	delete borderRectangles.takeFirst();
+    while (!borderElements.isEmpty())
+	delete borderElements.takeFirst();
+
+    delete playfield;
     delete tileset;
     delete heroFrames;
     delete enemyFrames;
+    delete heroSprite;
+    delete enemySprites;
     delete m_spotLight;
+    delete m_scoreText;
+    delete m_livesText;
     delete m;
 }
 

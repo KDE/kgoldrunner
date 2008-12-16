@@ -59,6 +59,7 @@
 
 KGrGame::KGrGame (KGrCanvas * theView, 
                 const QString &theSystemDir, const QString &theUserDir) : 
+	QObject (theView),	// Make sure game is destroyed along with view.
         view (theView), systemDataDir (theSystemDir), userDataDir (theUserDir), level (0), fx (NumSounds)
 {
     // Set the game-editor OFF, but available.
@@ -69,6 +70,7 @@ KGrGame::KGrGame (KGrCanvas * theView,
     shouldSave = false;
 
     hero = new KGrHero (view, 0, 0);	// The hero is born ... Yay !!!
+    hero->setParent (this);		// Delete hero when KGrGame is deleted.
     hero->setPlayfield (&playfield);
 
     setBlankLevel (true);		// Fill the playfield with blank walls.
@@ -82,6 +84,8 @@ KGrGame::KGrGame (KGrCanvas * theView,
 
 #ifdef ENABLE_SOUND_SUPPORT
     effects = new KGrSoundBank(8);
+    effects->setParent (this);		// Delete at end of KGrGame.
+
     fx[GoldSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/gold.wav"));
     fx[StepSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/step.wav"));
     fx[ClimbSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/climb.wav"));
@@ -516,18 +520,25 @@ void KGrGame::setBlankLevel (bool playable)
                 playfield[i+1][j+1] = new KGrEditable (FREE);
                 view->paintCell (i+1, j+1, FREE);
             }
+	    playfield[i+1][j+1]->setParent (this); // Delete if KGrGame dies.
             editObjArray[i+1][j+1] = FREE;
         }
     for (int j = 0; j < 30; j++) {
         playfield[j][0] = new KGrObject (BETON);
+	playfield[j][0]->setParent (this);	// Delete at end of KGrGame.
         editObjArray[j][0] = BETON;
+
         playfield[j][21] = new KGrObject (BETON);
+	playfield[j][21]->setParent (this);	// Delete at end of KGrGame.
         editObjArray[j][21] = BETON;
     }
     for (int i = 0; i < 22; i++) {
         playfield[0][i] = new KGrObject (BETON);
+	playfield[0][i]->setParent (this);	// Delete at end of KGrGame.
         editObjArray[0][i] = BETON;
+
         playfield[29][i] = new KGrObject (BETON);
+	playfield[29][i]->setParent (this);	// Delete at end of KGrGame.
         editObjArray[29][i] = BETON;
     }
 }
@@ -787,6 +798,7 @@ void KGrGame::changeObject (unsigned char kind, int i, int j)
         if (newLevel) {
             // Starting a level for the first time.
             enemy = new KGrEnemy (view, i, j);
+	    enemy->setParent (this);	// Delete enemy when KGrGame is deleted.
             enemy->setPlayfield (&playfield);
             enemy->enemyId = enemyCount++;
             enemies.append (enemy);
@@ -810,6 +822,7 @@ void KGrGame::changeObject (unsigned char kind, int i, int j)
 void KGrGame::createObject (KGrObject *o, char picType, int x, int y)
 {
     playfield[x][y] = o;
+    o->setParent (this);		// Delete cell if KGrGame is deleted.
     view->paintCell (x, y, picType);		// Pic maybe not same as object.
 }
 
