@@ -86,6 +86,11 @@ To do in post-KDE 4.0 releases:
 22. Improve the level editor: rect-fill with a tile type, cut-copy-paste of
     tile blocks, undo-redo etc.
 
+23. Provide easy-to-use facilities for players to export/import/email, to each
+    other, games and levels they have composed (related to 14 above?).
+
+24. Add the Count game (17 levels), contributed by Steve Mann.  DONE in KDE 4.2.
+
 Some ideas for the future:
 --------------------------
 
