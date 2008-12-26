@@ -184,12 +184,22 @@ QList<QPixmap> KGrTheme::tiles (unsigned int size)
     // count tables.
     
     QVector< QString > tileNames;
-    tileNames << "empty" << "hidden_ladder" << "false_brick" << 
-                 "hero_1" << "enemy_1";
     int i = 0;
-    // These tiles come never have variants
+
+    // These tiles can never have variants
+    tileNames << "empty" << "hidden_ladder" << "false_brick";
     foreach (const QString &name, tileNames) {
         list.append (loadGraphic(QSize(size, size), name, svgSet));
+        offsets[i] = i;
+        counts[i] = 1;
+        i++;
+    }
+
+    // These tiles, used in the game-editor, come from the Actors SVG file
+    tileNames.clear();
+    tileNames << "hero_1" << "enemy_1";
+    foreach (const QString &name, tileNames) {
+        list.append (loadGraphic(QSize(size, size), name, svgActors));
         offsets[i] = i;
         counts[i] = 1;
         i++;
