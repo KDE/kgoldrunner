@@ -124,7 +124,7 @@ public:
 
     const QString	getName()	{return (ecName->text());}
     const QString	getPrefix()	{return (ecPrefix->text());}
-    const isTrad()	{return (ecTradB->isChecked());}
+    bool  isTrad()	{return (ecTradB->isChecked());}
     const QString	getAboutText()	{return (mle->toPlainText());}
 
 private slots:
