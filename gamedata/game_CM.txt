@@ -1,0 +1,159 @@
+// G020 T CM C
+ i18n("Curse of the Mummy");
+ i18n("Drawing on Western movie icons about mummies and Egypt, this set of levels is best run under the Treasure of Egypt theme.\n"
+ "\n"
+ "To polish your Egyptology, you will find factual tidbits related to each level in the hints, where the facts are drawn from Wikipedia rather than Hollywood.\n"
+ "\n"
+ "This Championship game was composed by Steve Mann <smann at cgl uwaterloo ca>, with a few Egyptian ideas and the Red Sea level contributed by Ian Wadham.");
+// L001
+//  R    E                           M     M       M    H       MXM E MXM N   MXM  HHHH MMMMMMMMMMMMMHMMMMMMMHMMMMMFXMMXMMMMMMMMMHXMXMMMMHMMN  FMMMMMMMMXMMM HMMMFMMMHE MMHMMMM TMMMMMMMHFMMMNMMMMXXH HMMMFM TMMMMMMHM  M MMMM  HMMMMMMMF TMMMMXH MHMT  MMHM   MMMMMMM TMMMMFMMHMFMFMMH MMHMMMMMMMF TMMMMMMHMFMMMMMMMMHMMMMMMMMM TMMMMMHMFXM     MHMMMMMMMMMF TTMMMHMFMMHMMMM HMMMMXMMMMMM  MM H  MMHXMMMMFMMMXXXMMMMMFF ENHN MMHM  MNXMMXXXXXMMMMFMMMMFMFMMH MHMMMMXXXXXXXMMMMMMMMMM  MMMMH N MMMMMMMMMMMMMMMMMMMH  MM MMHMMMMMMMMMMMMMXMMMMMFM   E  HMMMMMMMMMMMMMMMMMMMMMMXMMMMMM
+ i18n("The Giza Plateau");
+ i18n("The Giza Plateau on the outskirts of Cairo is the site of the Giza Necropolis, which consists of the Pyramid of Khufu (The Great pyramid), the Pyramid of Khafre, the Pyramid of Menkaure, along with the Great Sphinx and a number of other smaller edifices.\n"
+ "\n"
+ "As you make your way under the plateau, try to avoid killing the mummies: if too many reappear on the right, it becomes difficult to escape at the end.  To get started, you will need to use the technique of digging while falling.");
+// L002
+//  R                          Z                           ZH                          ZH                          ZH                          ZHTTTTTTTTTTTT              ZH                         TZH           MMMM           ZH          HMNNMZ          ZH          HMEEMZ          ZH       ZMMXMXXMXMMZ       ZH       ZX TT TT TXZ       ZH       ZMH NHNEHNMZ       ZH    ZMMMMMXXMXXMMMMMMZ    ZH    ZMM        TTTTMMZ    ZH    ZMM   EMNME   NMMZ    ZH  MMMFMMMMMMMMMMMMMMMMMM  ZH  MM      TTTTTTT   N MM  ZH       HM E  N   MH   MMEEZMMMMMMFMMMMMMMMMMMMMMMMMMMMM
+ i18n("The Pyramid of Djoser");
+ i18n("The Pyramid of Djoser (Zoser), or step pyramid (kbhw-ntrw in Egyptian) is an archeological remain in the Saqqara necropolis, Egypt, northwest of the city of Memphis.\n"
+ "\n"
+ "To complete this level, it is important to proceed in steps: first free the mummy on the left side of the second level (from the bottom), allowing it to drop into and fill the hidden pit on the ground level.\n"
+ "\n"
+ "Now enter the right side of the second level and move across the pole, over the mummy, and get the piece of treasure in the middle, being sure to dig out the brick to the left of the middle.\n"
+ "\n"
+ "The mummy on the third level is a bit problematic because it will take a piece of treasure and carry it.  You may get lucky and find that it abandons its treasure at some point, but you can also trap him in the one diggable brick on the right with careful timing.\n"
+ "\n"
+ "Finally, before getting the last piece of treasure, be sure to open the bottom right of the step pyramid to allow the mummies on the right to enter the pyramid - if there is more than one mummy on the bottom right before the escape ladder appears, you will be unable to reach the exit.");
+// L003
+//              Z                           Z                           Z                           Z                    R      Z            N      HHH     Z           HHH      H      Z            H      H       Z            H     H        Z            H    HHE     HHHHHH         H     HN     HHNNHH   E   EH      HHHHHHHHHHHHHHHHHH HH    M   HHHNNNNNNNNNNNNNHHH    MMXM  HHHHHHHHHHHHHHHHH    MMMMMXMMMMMMMMMMMMMMMMMMMXMXMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM                            
+ i18n("Pharaoh's Barge");
+ i18n("The Khufu ship is an intact full-size vessel from Ancient Egypt that was sealed into a pit in the Giza pyramid complex at the foot of the Great Pyramid of Giza around 2,500 BC. The ship was almost certainly built for Khufu (King Cheops).\n"
+ "\n"
+ "It is one of the oldest, largest, and best-preserved vessels from antiquity, and measures 43.6 m overall.  Despite its age, it could sail today if put into water.\n"
+ "\n"
+ "This is almost a simple level: good treasure and not too many mummies.  But your task is to wrest the treasure they carry.");
+// L004
+//  R                           Z                           Z                           Z                           ZTTTTTTTTTTTTT              H              ZZZZZZZZZZ   H             M         Z   H            MEX        Z   H           MEM X       Z   H          MEMHNMM      Z   H         MHX  HMHM     Z   H        MH M H MNHM    Z   H       MM HMM  M H M   Z   H      MEMH M HMM  HMM  Z   H     XHMM HMHHM F HH M Z   H    XMH MHT FHXN X HFMMZ   H   MHM HM THFHXM M HM NMZ  H  M HM HMHT FHM M HFMHM ZZEH MFMHXH X THFHH X HF HXZ XZHMNXHNXHNXH  NMHNXHNXNHXZN X
+ i18n("Pyramid Puzzles");
+ i18n("The Great Pyramid was the tallest man-made structure in the world for over 3,800 years.  Going up and down all the time must have been a chore for ancient Egyptians, much as you are likely to find it a chore going up and down this pyramid.\n"
+ "\n"
+ "To get the second treasure from the left, you have to use the brick that blocks the ladder at the bottom as a bridge to escape.\n"
+ "\n"
+ "To get the fourth treasure from the left, clear the three brick above and to the right of the left most mummy; if dug in the correct order, this will give you just enough time to grab the treasure and escape.\n"
+ "\n"
+ "Some of the mummies must be released to get some of the treasure.  However, get the first, second, and fourth treasures (from the left) before releasing any of the mummies.  Be careful not to kill any mummies; if they appear to the right of the pyramid, you will be unable to finish the level.  Also it is possible to release the mummies and trap them in one of the other chambers.");
+// L005
+//       Z                          Z Z                        Z   Z   TTTTTTTTTTTTTTTT HXXXXXXXXXXZ               HHHTTTTTT    Z            E H H          Z            M HHH          Z            M HH Z         Z            M HH EZ        Z            M HH MMZ   ZMMHZ          HMM HHTRXXXXXXNMMH    E   HMFF  HH      NMMMMMMMMMMMMMMMF   HH XXXXXXMMMMMMMMMMMMMMM    HH         NMM  MMMMM MM  T HH        HMM         MM HZZHH    EHXXX   XXX   MMM  H H H XXXXXXXXXXXXXXXX   XNH    XXXXXXXXXXXXXXXXXXXXXXXXXH  XXXXMMMMMMMMMMMMMMMMMMXXXXXXMMMMMMMMMMMMMMMMMMMMMMMMXXXX
+ i18n("Crocodile");
+ i18n("Crocodiles can live to be over 100 years of age, with the largest species reaching 4.85 meters in length.  Various species have been observed attacking and killing sharks.\n"
+ "\n"
+ "Sobek was the deification of crocodiles.  Egyptians who worked or travelled on the Nile hoped that if they prayed to Sobek, the crocodile god, he would protect them from being attacked by crocodiles.\n"
+ "\n"
+ "In this level, it isn't the crocodile you need to fear.  Still, a prayer to Sobek might help you escape the mummies while you gather the treasure.");
+// L006
+//  R       Z                   TTTTT   Z                           Z                           Z                           Z                           Z                           Z                           Z                           Z                           Z       TTTT                Z     MZ TTTH               Z    MNMH                   Z   M   MH   M              Z  M T   MH MNM          M TH M H     MH   M        MNM ZM  H TTTTTH ZZ M      M   MF   H N     M  Z M    M    M    H        MEZ  M HM  EHM   N H E  NXN  MH N FMMMMMMMMMMMMHMXMMMMMMMMHMMMM
+ i18n("Three Pyramids");
+ i18n("The Giza Necropolis has been a popular tourist destination since antiquity, and was popularized in Hellenistic times when the Great Pyramid was listed by Antipater of Sidon as one of the Seven Wonders of the World. Today it is the only one of those wonders still in existence.\n"
+ "\n"
+ "You may find it easiest to navigate this wonder if you get two mummies in the far right pyramid before going over there.");
+// L007
+//        HMMMMMMMMMMZMMMXMMMMMM     HMMMMMXMMMM  EMMMMMMMMM     HMMMMMMMMM HMNM   N   M   RZ       MM HMFM  HX MENM   HMXXZ  TH  MHM  HMMMMFMMM  HMMMMMHM MXHMHMMMHMMMMMMMM HMMMXMMHMNMMHMHMMMH      NM HMMMMMMHM MMHMHM MH  MHM  MHMMMMMMMHM MMHMHMFMMXMMHMMXMMMMMM    M MMEMHMMMMMFMHMFMMMMMM     M N NMH MMMMFXH    MMM  E  NM MMFMMH MMMNMFMMHFMMMMMMMMMM XMMFMMH MMFMMMMHMMMEMMMMMMM NMMFMMMH  Z    HMMM MMMMMMM MMXFN MMHX XMMXHMMM MM N    MXMMMXMMHM MMMMHMXM MM MFFMMM      MHM MMMMHMMME M MMMXXHX HMM MHM N MMHMMMM M    N HMHMMM  HMM M  HMMMM NMMMMM HMFMMMMMFMMMMMMFM
+ i18n("Tura Caves");
+ i18n("Tura was Egypt's primary quarry for limestone, and was used on the Great Pyramid of Khufu.  The mining of this limestone left behind caverns that were later used by the British Army as a secret depot during World War II, and which you can now explore.\n"
+ "\n"
+ "To the left of the bottom of the long shaft, there are two hidden pits.  Free the mummy to the right of the long shaft to fill one of them and free the mummy in the large chamber to fill the other.  Be sure to ride the first of the two mummies down to get the piece of treasure in the nook near the bottom of the shaft.  When leaving this nook, dig to your right several times to open up your escape route.\n"
+ "\n"
+ "Get all the treasure on the left of the board, then move to the right (make sure to dig free the mummy at the top so that you can get its treasure later).  The treasure on the right is easier to get than it looks: strategically placed false bricks make this the easy half of the level.");
+// L008
+//  R               Z                           Z                           Z                        MM Z                       M   Z                     ZMNHMMM                     ZNFH   MMN                 NXHFMXXH MM                 X H   MFH  F               X HMXX  FHMHNX             M HM  NFNFNXMH M           HMHMMHXX  MHMMMHMM          MNH  HM  M HNMNH MF        MNFMXXHM X HMHZFHMNFM      M HE   HM MH  MZFH H MM    MNX XXHMZ  MHMX ZFMMZH MF  M HMM  HXZXXMHXNMZ  MZMH FZM HFM HM NHM  HMNMHXHMHMMHMZ HMF HMMHMH HMMMNXH H HE HNMMMMMMMMMMMMMH    MMXMXMXXMM
+ i18n("Pyramid Crawl");
+ i18n("There are over 100 pyramids in Egypt, with the oldest being built around 2600 BC.\n"
+ "\n"
+ "In this pyramid level (built around AD 2008), avoid (by luring away or killing) getting the two mummies in the middle of the bottom section.");
+// L009
+//           R  E              H       E TTTTT             H     E  Z    E  ZZ   ZZZ   H        Z       ZEZZZZEZZZZH        Z       ZZZZZEEEEZZH        ZMMMMMM ZZZZZZZZZZZH       ZMM  MMM HZZZZEZZZZZH      Z M   MMMMHZZZEEEEZZZH     Z  MT  MMMMHZZZZZZZZZZH    Z  MM   MMMMHZZZZZZZZZZH    Z  MN   MMMMHZZZEZZZZZZH    Z  MM   MMM HZZEEEEZZZEH   ZZ   MMH MMM HZZZZZZZZZEH   ZZ    MH  MM HZZZZZZZZZZH    Z    MH  MMMMMMMMMMMMMZH    Z    MH    TTTTTTTTT MZH  HMMMMMMXMXMMH  N  ZMFMZMMH  HMTTTTTTTTTTHMMXMXMMMMZ MH  HMN    E    H         ZNMHMMMMMXMXXXXXXMMMXXXXXXXMMMMM
+ i18n("The Great Sphinx");
+ i18n("The Great Sphinx is a guardian of the Giza Plateau, where it faces the rising sun.  Standing 73 meters long and 20 meters high, it is the largest monolith statue in the world and is a mere 4500 years young.\n"
+ "\n"
+ "As you grab the treasure inside the sphinx, try to solve The Riddle of the Sphinx: how do you get past the horde of mummies on the right?");
+// L010
+//                                           Z                          Z Z                        Z N Z                      Z  H  Z                    Z NHHHE Z                  Z  HHMHM  Z                Z EHHHEH H  Z              Z  MHMH HMHHE Z            Z   H HH HH HM  Z          Z EMHHMHN MFM HH  Z        Z   HH HHH HHHH NHE Z      Z  MHH  HHH HHHHM  H  Z    Z  ZHHHM HHM HNH  H HHE Z  Z  ZHHHMH HHH MMH HMMHHM  Z   ZHHHHHHNHH  HNH HHHHHHHN Z  MHH HHMHH N HHH HMHHMHHM  RHHH MM  HHHEHMHHHHNHHHMHHHEHHHHHNHHHHMHHHNHHMHHHMHHHHHHHHMHHHHHHHHHHHHHHHHHHHHHHMHH
+ i18n("Ladder Pyramid");
+ i18n("Most accepted theories on the construction of the pyramids are based on the idea that it was built by moving huge stones from a quarry and dragging and lifting them into place. The disagreements center on the method by which the stones were conveyed and placed.  Regardless, there were likely many ladders involved in its construction, such as on this level.\n"
+ "\n"
+ "This level is mostly a run around.  Picking up the treasure while avoiding mummies isn't so hard - but getting treasure away from the mummies is a much harder task.  The three-wide stone platform is a useful killing field, although you'll have to run around a bit to get the mummies carrying treasure to line up properly.  Note also that the middle block of this platform is a fall-through block.\n"
+ "\n"
+ "And once you've gotten all the treasure, you'll need to cross over to the escape ladder.  One way to do this is to kill a mummy and cross over on its back when the mummy crosses from the escape ladder to the main pyramid.");
+// L011
+//  R        T    E                     H        T  TTTTTTT TTTTTTT H MMMMMMM Z        Z        H MXXXXXX Z     ZZZ         HMM     MMZ  HHH            HMM     MMZ  H H       HHH  HMFN    MM Z H H       H H  H F     M     H E      H H  H F TTT M   HHHHH       H   H NM   MN     H       HHHHHMMMFMMNFFFMMM  H         H  MMMMMMFFMMMMM  HT        H       MFF         HHH     HTTTTTTTMMMTTTTTT   H H     Z      ZMMM         H H     Z      ZMMM    NZ    H N   ZM      ZMMM    HM  HHHHH  ZMMM     ZMMM   HMMM   H  EZMMMMM    ZMMM  HMMMMM  H  ZMMMMMMM E ZMMMEZMMMMMMM H E
+ i18n("Ankh");
+ i18n("The Ankh was the Egyptian hieroglyphic symbol that read "life", and as a sun symbol, was almost always crafted in gold.\n"
+ "\n"
+ "To keep your life on this level, be careful of the false bricks in the main Ankh and figure out which of them are useful.");
+// L012
+//  R  E         Z         E                Z Z                        Z   Z                      Z     Z              E     Z       Z     E            Z    Z    Z                Z   EZMZE   Z              Z ZZ ZM MZ  Z Z       TTTTTTTTT ZM   MZTTTTTTTTTTTH   Z     M     M     Z    HH  Z     M       M     Z   HH Z     M HHH HHH M     Z  HH      M  H MMM H  M       HH     M   HMMNMMH   M      HH    M    HM E MH    M     HH  EM H   MMXXXMM   H ME   HH  M HMH     H     HMH M   HH M HMMMH   H H   HMMMH M  HHHHHMMMMMH H   H HMMMMMHHHHHMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+ i18n("Pharaoh's Tomb");
+ i18n("Researchers estimate that 2.3 million blocks were used to build the Great Pyramid, with an average weight of about 2.5 metric tons per block.\n"
+ "\n"
+ "The pyramid of this level was built from fewer than 100 blocks.  In the beginning, manuever to get inside the pyramid and then stand on one of the ladders on the second layer nearest the outer wall of the left side of the pyramid.  Wait for the mummies to group on the other side of the outer wall.  Then climb to the top of the ladders on the small pyramid and wait for the mummies to climb the tall ladder and drop off the pole.  Once the last one has dropped (or slightly before), run up the tall ladder, across the pole and dig to get back inside the big pyramid and to the tomb.\n"
+ "\n"
+ "Repeat this trick to exit after grabbing the lone piece of treasure, only this time you need to get out on the right side of the pyramid.");
+// L013
+//  TTTTT                Z      H    MR        M     TT     H    MM       MM      Z     H    MM   E   MM     Z      H    MMM     MMM      Z     H    MMM     MMM     Z      H    MMMMMMMMMMM      Z     H    M    M    M     Z      H    MHHHHMHHHHM      Z     H    M HXHMHXH M     Z      H    M    M    M      Z     H    MM  XXX  MM     Z      H     MM     MM       Z     H      MNNNNNM      HHHH    H       MMFMM       H  H    H       M   M      H    H   H       M N M     HH    HH  H N    MNN NNM    H      H  H   E  MNNNNNM NNH NNNNNN HEMMMMMMH MMMMM HMMMMMMMMMMMMM
+ i18n("Cat");
+ i18n("A revered, imporant animal to Egyptian society and religion, the cat was afforded the same mummification after death as humans were.\n"
+ "\n"
+ "When finishing this catty level, do not be fooled by the cat's tail that appears once you pick up the last treasure.  The only exit is on the left.  So you need to let the mummies bring you the treasure that is to the right of the cat's head, since you cannot pick up every piece and run back in time.\n"
+ "\n"
+ "To get the mummies to bring you the treasure, you must dig out the five bricks on the bottom and allow them to pass (or get trapped and killed). ");
+// L014
+//                                            Z                          Z Z                        Z   Z                      Z  R  Z                    Z   Z   Z                  Z   ZXZ   Z                Z   ZM MZ   Z              Z   ZM N MZ   Z            Z   ZM EM  MZ   Z          Z   ZM  HN   MZ   Z        Z   ZM EMMMMME MZ   Z      Z   ZM  H  N  H  MZ   Z    Z   ZM EMMMMMMMMME MZ   Z  Z   ZM  H    N    H  MZ   ZZ   ZM EMMMMMMMMMMMMME MZ   Z  ZM  H      N      H  MZ  Z EM EMMMMMMMMMMMMMMMMM  MZ  ZH  H        N            ZXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+ i18n("Pyramid Power");
+ i18n("Imhotep designed the Step Pyramid of Djoser to serve as a gigantic stairway by which the soul of the deceased pharaoh could ascend to the heavens.  Such was the importance of Imhotep's achievement that he was deified by later Egyptians.\n"
+ "\n"
+ "Before you can ascend to the top of this pyramid level, you must make your way to the bottom.  To get the top piece of treasure, move left off the apex, dig the next block and step onto the mummy below, continuing to move right (try placing your mouse pointer on the apex).\n"
+ "\n"
+ "After getting the last piece of treasure, exit to the right and run up and down the ladders.  The lower left is the only difficult part: just run under the mummies on the ladder above you and maneuver ... and hope!");
+// L015
+//  R                           Z                 E         HTTTTT        HMMMMMMMMH    H           HMMM    N MMH N HH        HMMM          MMM  H   MMMMMMM      E          H      N        MMMMMM     HH             MMHHHHH M    H            MM  HHNHH  M N H    MMMMMMMM    HHHHH   MM HH       N   MM E HHH  MM    H           N MMMMMMMMMN    H                MMMN       H               MMMMM       H              MM  MM      HH             MM   M       H     M      MM     M       H    MNMNE MM       M       HHMH  MMMMMM      N   N NMHEMMMMMH         HMMMMMMMMMMMM
+ i18n("Eye of Horus");
+ i18n("The Eye of Horus is an ancient Egyptian symbol of protection and royal power from deities.\n"
+ "\n"
+ "On this level, there is some protection inside the eye, but not much.  Repeated trips from the top to the bottom are required to get all the treasure.  Eventually, there will be two mummies on the bottom left.  To get by them, climb to the top of the short ladder four from the left, dig left, climb down and dig left again.  One of the mummies will fall in the lower pit.  Climb up the ladder.  The second mummy will climb the other ladder and fall in the top pit.  Move across the two trapped mummies and climb to the top.");
+// L016
+//   E MMMMMMMMMMMMMMMMMMMMMMMMMZMRTTTTTTTTTTTTTTTTTTTTTT  MH M TTTTTTTTTTTTTTTTTTTTTNF  H FNTTTTTTTTTTTTTTTTTTT M HZ H M TTTTTTTTTTTTTTTTTNF H Z  H FNTTTTTTTTTTTTTTT M H ZZ   H M TTTTTTTTTTTTTNF H  ZZ    H FNTTTTTTTTTTT M H   ZZ     H M TTTTTTTTTNF H    ZZ      H FNTTTTTTT M H     ZZ       H M TMMMT F H      ZZ E      H FNN   F H      EZ ZHZ      HNMNTNFNH      ZH   H Z E    H MNM H    E Z H   H  ZHZ    H M H    ZHZ  H   H   H Z E  HNH  E Z H   H   H   H  ZHZ  H  ZHZ  H   H   H   H   H Z E Z H   H   H   H   H   H  ZHZ  H   H   H   H   H   H   H   H   H   H 
+ i18n("Inverted Pyramid");
+ i18n("Probably not a traditional Egyptian design.\n"
+ "\n"
+ "You have to zig-zag back and forth along the poles to get all the treasure.  To get past the lone chase mummy, wait for him on one pole and just before he reaches you, drop to the pole below and move directly under him.\n"
+ "\n"
+ "Since the design is non-traditional, considering playing the level non-traditionally: the drop-and-move-under move is easier to do with the keyboard (easier, but still hard).  Once you get the last piece of treasure above the bricks inside the pyramid, pause the game and switch back to mouse mode.");
+// L017
+//  R                           Z               TTTTT       Z              H ME ZMZZZ   Z              H M  ZM   Z  Z              H MM ZMM   Z Z              H MMNZM M   ZZ              H MMMZM  M  ZHTTTTTTTTTTTTTTH MMMZM  M  ZH                MMMZM   M ZH              N MMMMM   M ZH    N      E    MMMMMNEM  ZH             XXXXMMMMXXX  ZH    MMMMMMMMMMHHHMMMMMMM  ZH     MMMMMMMMMMMFMMMMMMMM ZH        MMMMMMMMFMMMMMMMM ZH           MMMMMFMMMMMMMM ZH               MFMMMMMMMMM H               NFMMMMMMMMM HTTTTTTTTTTTTTTTTMMMMMMMMMMMZ E     E    E   MMMMMMMMMMM
+ i18n("Anubis");
+ i18n("Anubis, or Inpu, was an Egyptian god of the afterlife.\n"
+ "\n"
+ "To get the treasure between Anubis' ears, dig out the two columns to the left of the mummy and stand on top of the mummy.  Move left off the mummy while digging right.  The mummy should fall into the hole in the right most column.  Now dig out the left two columns until you connect to the ladder-eye.  Move down from the right most ladder of the eye and you will fall to the pole below.\n"
+ "\n"
+ "To get the treasure inside the right ear, dig out the higher of the two-block columns, falling onto the right two-block column.  Move to the left and dig the second two-block column.  Now move to the right and dig out the one-block column, freeing the mummy.  Move one more to the right and dig out three blocks so that you have a two block wide ledge to stand on.  Move left and dig out the square to your right.  Wait for the mummy to fall, get his treasure, and race up the ladder to confront five mummies blocking the exit.");
+// L018
+//  R                          Z TTTTTTTTTTTTTTTTTTTTTTTTTTZH                           H                  E        H          E                HH                           H                          HH                          H     E      Z              HH          ZNZ    TTTTTTTTT H         ZN NZ            HH        ZN N NZ           H        ZN N N NZ          HH      ZN N N N NZ          H     ZN N N N N NZ        HH    ZN N N N N N NZ       H    ZN N N N N N N NZ      HH  ZN N N N N N N N NZ      H ZN MMMMMMMHMMMMMMM NZ    MMMMMMMMMMMMMMMMMMMMMMMMMMMM
+ i18n("Pyramid of Treasure");
+ i18n("Nubia was a major source of gold in Egypt.  King Tushratta of the Mitanni claimed gold was "more plentiful than dirt" in Egypt.\n"
+ "\n"
+ "In this pyramid, treasure is even in the air!  Lots of treasure, only three mummies - it can't be that hard, can it?");
+// L019
+//  R                           TTTTTTTT  Z T   TTTTTT              ZMFMFMMM      H            H MNNNNNM   Z  H  Z        H  MNHHHNM  ZZZ H ZZZ      H  MMNHHHNMM     H         HX  MNNHHHNNM M   HZ        H   MNHHHHHNM  M  H Z       HH  MNHHHHHNM   M H  Z     H F  MNHHHHHNM  M  H   Z    HX   MNHHHHHNM M   H    Z  ZH    MNNHHHNNM     H    ZEZ H    M NHHHN M     H    Z Z H    MENHHHN M  T  H    Z Z H    MNNHHHNNM     HE   Z ZZH   NMNHHHHHNMN    HZ   Z Z H  NNMNNNNNNNMNN   HXHNEZNZ H NNNMMMMMMMMMNNN  HXH  ZMZMHNNNNNNNNNNNNNNNNN HXH  ZFXMNMMHNNNNNNNNNNNHMMNHXXXXX
+ i18n("Sarcophagus");
+ i18n("A sarcophagus is a funeral receptacle for a corpse, most commonly carved or cut from stone.  In Ancient Egypt, a sarcophagus formed the external layer of protection for a royal mummy, with several layers of coffins nested within, and was often carved out of alabaster.\n"
+ "\n"
+ "If you do not want this level to be your sarcophagus, get the piece of treasure under the left edge of the sarcophagus at the start - otherwise, there is no way to get it.");
+// L020
+//   Z  E    E        R         ZZZ        E             E  ZTZTT ZZZTZZTTTTTT TTTTTTZZT  ZZ  Z ZEZZ E         E ZZZE ZZZ   ZZ ZZ           ZZ Z E ZZ   ZZ ZZ E       E ZZ E   ZZ    E ZZZ         ZZZ     ZZ       ZZ       E ZZ E     ZZ    E ZZZE      ZZZ       ZZ      ZZZ       ZZZ       ZZ     E ZZ E N E ZZ         ZZ       ZZ     ZZ E        ZZ     E ZZ     ZZ          ZZ        Z     Z           ZZ        ZZ   ZZ            ZZ       ZZ   ZZ            ZZ        Z   Z              ZZ       ZZ ZZ              ZZ        Z Z        FFZFFFFZFFFFZFFFFFZFFFFFZFFF
+ i18n("The Parting of the Red Sea");
+ i18n("The Bible tells us that Moses parted the sea to escape the Pharaoh's men.  After you have looted the pyramids of his ancestors, it should come as no surprise that the Pharaoh has sent his men after you, too.\n"
+ "\n"
+ "Fortunately, the sea can be parted just by falling onto the last treasure.  To escape the Pharaoh's men is not so easy.  First, make your hero go down as far as he can, then wait for his moment.   Then move up the wall of water to the right, cross the pole to the middle and wait for the mummies to reach the top of the water before dropping down a second time.\n"
+ "\n"
+ "This time, immediately run up the wall of water to your left, crossing under the chasing mummies.  Await near the top left where the mummies to your right cannot get you.  Once the mummies to your left reach the top, drop to the sea bed a third time (even Moses did not have it this rough).  The trick to getting past the mummies on this last trip to the top is to pass under and to the left of them while they are falling as a column down one of the long ladder drops.\n"
+ "\n"
+ "Note: It is possible to move up the wall of water to your left initially, but it is much harder.");
