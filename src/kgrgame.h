@@ -270,12 +270,6 @@ private:
     bool reNumberLevels (int, int, int, int);
     bool ownerOK (Owner o);
 
-    // Pixmaps for repainting objects as they are edited.
-    QPixmap digpix[10];
-    QPixmap brickbg, fbrickbg;
-    QPixmap freebg, nuggetbg, polebg, betonbg, ladderbg, hladderbg;
-    QPixmap edherobg, edenemybg;
-
 private slots:
     void doEdit (int);		// For mouse-click when in edit-mode.
     void endEdit (int);		// For mouse-release when in edit-mode.
