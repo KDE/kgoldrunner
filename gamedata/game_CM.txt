@@ -86,7 +86,7 @@
 // L011
 //  R        T    E                     H        T  TTTTTTT TTTTTTT H MMMMMMM Z        Z        H MXXXXXX Z     ZZZ         HMM     MMZ  HHH            HMM     MMZ  H H       HHH  HMFN    MM Z H H       H H  H F     M     H E      H H  H F TTT M   HHHHH       H   H NM   MN     H       HHHHHMMMFMMNFFFMMM  H         H  MMMMMMFFMMMMM  HT        H       MFF         HHH     HTTTTTTTMMMTTTTTT   H H     Z      ZMMM         H H     Z      ZMMM    NZ    H N   ZM      ZMMM    HM  HHHHH  ZMMM     ZMMM   HMMM   H  EZMMMMM    ZMMM  HMMMMM  H  ZMMMMMMM E ZMMMEZMMMMMMM H E
  i18n("Ankh");
- i18n("The Ankh was the Egyptian hieroglyphic symbol that read "life", and as a sun symbol, was almost always crafted in gold.\n"
+ i18n("The Ankh was the Egyptian hieroglyphic symbol that read \"life\", and as a sun symbol, was almost always crafted in gold.\n"
  "\n"
  "To keep your life on this level, be careful of the false bricks in the main Ankh and figure out which of them are useful.");
 // L012
@@ -138,7 +138,7 @@
 // L018
 //  R                          Z TTTTTTTTTTTTTTTTTTTTTTTTTTZH                           H                  E        H          E                HH                           H                          HH                          H     E      Z              HH          ZNZ    TTTTTTTTT H         ZN NZ            HH        ZN N NZ           H        ZN N N NZ          HH      ZN N N N NZ          H     ZN N N N N NZ        HH    ZN N N N N N NZ       H    ZN N N N N N N NZ      HH  ZN N N N N N N N NZ      H ZN MMMMMMMHMMMMMMM NZ    MMMMMMMMMMMMMMMMMMMMMMMMMMMM
  i18n("Pyramid of Treasure");
- i18n("Nubia was a major source of gold in Egypt.  King Tushratta of the Mitanni claimed gold was "more plentiful than dirt" in Egypt.\n"
+ i18n("Nubia was a major source of gold in Egypt.  King Tushratta of the Mitanni claimed gold was \"more plentiful than dirt\" in Egypt.\n"
  "\n"
  "In this pyramid, treasure is even in the air!  Lots of treasure, only three mummies - it can't be that hard, can it?");
 // L019
