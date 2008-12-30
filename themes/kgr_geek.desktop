@@ -1,6 +1,14 @@
 [KDEGameTheme]
 Name=Geek City
+Name[gl]=Cidade de chapóns
+Name[pt]=Cidade dos Cromos
+Name[pt_BR]=Cidade dos Cromos
+Name[uk]=Місто диваків
 Description=The hero is trapped inside a computer.
+Description[gl]=O heroi está atrapado nun ordenador.
+Description[pt]=O herói está preso dentro de um computador.
+Description[pt_BR]=O herói está preso dentro de um computador.
+Description[uk]=Героя замкнено всередині комп’ютера.
 Author=Eugene Trounev and Mauricio Piacentini
 Set=kgr_geek/set.svgz
 Actors=kgr_geek/actors.svgz

@@ -1,6 +1,14 @@
 [KDEGameTheme]
 Name=KGoldRunner Default
+Name[gl]=Predeterminado de KGoldrunner
+Name[pt]=Predefinição do KGoldrunner
+Name[pt_BR]=Predefinição do KGoldrunner
+Name[uk]=Типова тема Золотошукача
 Description=A light and clean theme for KDE4
+Description[gl]=Un tema lixeiro e elegante para KDE 4
+Description[pt]=Um tema limpo e leve para o KDE4
+Description[pt_BR]=Um tema limpo e leve para o KDE4
+Description[uk]=Легка і чиста тема для KDE4
 Author=Mauricio Piacentini
 Set=default/set.svg
 Actors=default/actors.svg

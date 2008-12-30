@@ -1,6 +1,12 @@
 [KDEGameTheme]
 Name=Nostalgia Blues
+Name[gl]=Blues da morriña
+Name[uk]=Напад ностальгії
 Description=A theme for KGoldrunner that brings back that 8-bit look... now in blue!
+Description[gl]=Un tema para KGoldrunner que lle dá un aspeito a 8-bis... agora en azul!
+Description[pt]=Um tema escalável para o KGoldrunner que traz de volta a aparência a 8 bits... agora em azul!
+Description[pt_BR]=Um tema escalável para o KGoldrunner que traz de volta a aparência a 8 bits... agora em azul!
+Description[uk]=Тема для Золотошукача, що повертає нас до 8-бітового вигляду... тепер синя!
 Author=Luciano Montanaro
 Set=nostalgia/blue-set.svg
 Actors=nostalgia/blue-actors.svg
