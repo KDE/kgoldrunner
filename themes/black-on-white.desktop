@@ -1,13 +1,18 @@
 [KDEGameTheme]
 Name=Black on White
 Name[gl]=Negro sobre branco
+Name[nds]=Swatt op Witt
 Name[pt]=Preto Sobre Branco
 Name[pt_BR]=Preto Sobre Branco
+Name[sv]=Svartvitt
 Name[uk]=Чорний на білому
 Description=A monochrome, black on white theme for KGoldrunner
 Description[gl]=Un tema monocromo, negro sobre branco, para KGoldrunner
+Description[km]=ម៉ូណូក្រូម​ ខ្មៅ​នៅ​លើ​ស្បែក​ពណ៌ស​សម្រាប់ KGoldrunner
+Description[nds]=En Swatt-op-Witt-Muster för KGoldrunner
 Description[pt]=Um tema monocromático, a preto-e-branco, para o KGoldrunner
 Description[pt_BR]=Um tema monocromático, a preto-e-branco, para o KGoldrunner
+Description[sv]=Ett enfärgat svartvitt tema för Kgoldrunner
 Description[uk]=Монохромна чорно-біла тема для Золотошукача
 Author=Luciano Montanaro
 Set=accessible/black-on-white-set.svg

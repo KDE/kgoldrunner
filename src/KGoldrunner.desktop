@@ -1,11 +1,14 @@
 # KDE Config File
 [Desktop Entry]
 Name=KGoldrunner
+Name[sv]=Kgoldrunner
 Name[uk]=Золотошукач
 GenericName=Hunt Gold, Dodge Enemies and Solve Puzzles
 GenericName[gl]=Coller ouro, escapar dos inimigos e resolver quebracabezas
+GenericName[nds]=Gold jagen, Feenden verdummdüveln un Radels lösen
 GenericName[pt]=Faça uma Caça ao Ouro, Fuja dos Inimigos e Resolva 'Puzzles'
 GenericName[pt_BR]=Faça uma Caça ao Ouro, Fuja dos Inimigos e Resolva 'Puzzles'
+GenericName[sv]=Leta guld, undvik fiender och lös problem
 GenericName[uk]=Шукайте золото, уникайте ворогів і розгадуйте загадки
 Type=Application
 Exec=kgoldrunner
@@ -13,8 +16,11 @@ Icon=kgoldrunner
 X-DocPath=kgoldrunner/index.html
 Comment=A game of action and puzzle-solving
 Comment[gl]=Un xogo de acción e quebracabezas
+Comment[km]=ល្បែង​របស់​សកម្មភាព​ និង​ការ​ដោះស្រាយ​
+Comment[nds]=En Speel üm Akschoon un dat Lösen vun Radels
 Comment[pt]=Um jogo de acção e resolução de quebra-cabeças
 Comment[pt_BR]=Um jogo de acção e resolução de quebra-cabeças
+Comment[sv]=Ett spel med action och problemlösning
 Comment[uk]=Вирішення головоломок на ходу
 Terminal=false
 Categories=Qt;KDE;Game;ArcadeGame;
