@@ -48,7 +48,7 @@
  "\n"
  "Sobek was the deification of crocodiles.  Egyptians who worked or travelled on the Nile hoped that if they prayed to Sobek, the crocodile god, he would protect them from being attacked by crocodiles.\n"
  "\n"
- "In this level, it isn't the crocodile you need to fear.  Still, a prayer to Sobek might help you escape the mummies while you gather the treasure.");
+ "In this level, it is not the crocodile you need to fear.  Still, a prayer to Sobek might help you escape the mummies while you gather the treasure.");
 // L006
 //  R       Z                   TTTTT   Z                           Z                           Z                           Z                           Z                           Z                           Z                           Z                           Z       TTTT                Z     MZ TTTH               Z    MNMH                   Z   M   MH   M              Z  M T   MH MNM          M TH M H     MH   M        MNM ZM  H TTTTTH ZZ M      M   MF   H N     M  Z M    M    M    H        MEZ  M HM  EHM   N H E  NXN  MH N FMMMMMMMMMMMMHMXMMMMMMMMHMMMM
  i18n("Three Pyramids");
@@ -56,13 +56,13 @@
  "\n"
  "You may find it easiest to navigate this wonder if you get two mummies in the far right pyramid before going over there.");
 // L007
-//        HMMMMMMMMMMZMMMXMMMMMM     HMMMMMXMMMM  EMMMMMMMMM     HMMMMMMMMM HMNM   N   M   RZ       MM HMFM  HX MENM   HMXXZ  TH  MHM  HMMMMFMMM  HMMMMMHM MXHMHMMMHMMMMMMMM HMMMXMMHMNMMHMHMMMH      NM HMMMMMMHM MMHMHM MH  MHM  MHMMMMMMMHM MMHMHMFMMXMMHMMXMMMMMM    M MMEMHMMMMMFMHMFMMMMMM     M N NMH MMMMFXH    MMM  E  NM MMFMMH MMMNMFMMHFMMMMMMMMMM XMMFMMH MMFMMMMHMMMEMMMMMMM NMMFMMMH  Z    HMMM MMMMMMM MMXFN MMHX XMMXHMMM MM N    MXMMMXMMHM MMMMHMXM MM MFFMMM      MHM MMMMHMMME M MMMXXHX HMM MHM N MMHMMMM M    N HMHMMM  HMM M  HMMMM NMMMMM HMFMMMMMFMMMMMMFM
+//        HMMMMMMMMMMZMMMXMMMMMM     HMMMMMXMMMM  EMMMMMMMMM     HMMMMMMMMM HMNM   N   M   RZ       MM HMFM  HX MENM   HMXXZ  TH  MHM  HMMMMFMMM  HMMMMMHM MXHMHMMMHMMMMMMMM HMMMXMMHMNMMHMHMMMH      NM HMMMMMMHM MMHMHM MH  MHM  MHMMMMMMMHM MMHMHMFMMXMMHMMXMMMMMM    M MMEMHMMMMMFMHMFMMMMMM     M N NMH MMMMFXH    MMM  E  NM MMFMMH MMMNMFMMHFMMMMMMMMMM XMMFMMH MMFMMMMHMMMEMMMMMMM NMMFMMMH       HMMM MMMMMMM MMXFN MMHX XMMXHMMM MM N    MXMMMXMMHM MMMMHMXM MM MFFMMM      MHT HMMMHMMME M MMMXXHX HMM MHX HN MHMMMM M    N HMHMMM  HMMM M HMMMM NMMMMM HMFMMMMMFMMMMMMFM
  i18n("Tura Caves");
  i18n("Tura was Egypt's primary quarry for limestone, and was used on the Great Pyramid of Khufu.  The mining of this limestone left behind caverns that were later used by the British Army as a secret depot during World War II, and which you can now explore.\n"
  "\n"
  "To the left of the bottom of the long shaft, there are two hidden pits.  Free the mummy to the right of the long shaft to fill one of them and free the mummy in the large chamber to fill the other.  Be sure to ride the first of the two mummies down to get the piece of treasure in the nook near the bottom of the shaft.  When leaving this nook, dig to your right several times to open up your escape route.\n"
  "\n"
- "Get all the treasure on the left of the board, then move to the right (make sure to dig free the mummy at the top so that you can get its treasure later).  The treasure on the right is easier to get than it looks: strategically placed false bricks make this the easy half of the level.");
+ "Get all the treasure on the left of the board, then move to the right.  Make sure to dig free the mummy at the top so that you can get its treasure later.  You will also need its help to escape back to the left at the end of the level.  The treasure on the right is easier to get than it looks: strategically placed false bricks make this the easy half of the level.  Note: If you feel like some variety, you can do all of the right first and then the left.");
 // L008
 //  R               Z                           Z                           Z                        MM Z                       M   Z                     ZMNHMMM                     ZNFH   MMN                 NXHFMXXH MM                 X H   MFH  F               X HMXX  FHMHNX             M HM  NFNFNXMH M           HMHMMHXX  MHMMMHMM          MNH  HM  M HNMNH MF        MNFMXXHM X HMHZFHMNFM      M HE   HM MH  MZFH H MM    MNX XXHMZ  MHMX ZFMMZH MF  M HMM  HXZXXMHXNMZ  MZMH FZM HFM HM NHM  HMNMHXHMHMMHMZ HMF HMMHMH HMMMNXH H HE HNMMMMMMMMMMMMMH    MMXMXMXXMM
  i18n("Pyramid Crawl");
@@ -80,7 +80,7 @@
  i18n("Ladder Pyramid");
  i18n("Most accepted theories on the construction of the pyramids are based on the idea that it was built by moving huge stones from a quarry and dragging and lifting them into place. The disagreements center on the method by which the stones were conveyed and placed.  Regardless, there were likely many ladders involved in its construction, such as on this level.\n"
  "\n"
- "This level is mostly a run around.  Picking up the treasure while avoiding mummies isn't so hard - but getting treasure away from the mummies is a much harder task.  The three-wide stone platform is a useful killing field, although you'll have to run around a bit to get the mummies carrying treasure to line up properly.  Note also that the middle block of this platform is a fall-through block.\n"
+ "This level is mostly a run around.  Picking up the treasure while avoiding mummies is not so hard - but getting treasure away from the mummies is a much harder task.  The three-wide stone platform is a useful killing field, although you'll have to run around a bit to get the mummies carrying treasure to line up properly.  Note also that the middle block of this platform is a fall-through block.\n"
  "\n"
  "And once you've gotten all the treasure, you'll need to cross over to the escape ladder.  One way to do this is to kill a mummy and cross over on its back when the mummy crosses from the escape ladder to the main pyramid.");
 // L011
