@@ -17,24 +17,32 @@
 
 enum Owner {SYSTEM, USER};
 
-const char FREE    = ' ';
-const char ENEMY   = 'E';
-const char HERO    = 'R';
-const char BETON   = 'X';
-const char BRICK   = 'M';
-const char FBRICK  = 'F';
-const char HLADDER = 'Z';
-const char LADDER  = 'H';
-const char NUGGET  = 'N';
-const char POLE    = 'T';
-const char HOLE    = 'O';
-const char USEDHOLE= 'U';
+const char FREE      = ' ';
+const char ENEMY     = 'E';
+const char HENEMY    = 'a'; // NEW - 2/1/09
+const char HERO      = 'R';
+const char BETON     = 'X'; // OBSOLESCENT - 2/1/09
+const char CONCRETE  = 'X';
+const char BRICK     = 'M';
+const char FBRICK    = 'F';
+const char HLADDER   = 'Z';
+const char LADDER    = 'H';
+const char NUGGET    = 'N';
+const char FLASHING  = 'b'; // NEW - 2/1/09
+const char POLE      = 'T'; // OBSOLESCENT - 2/1/09
+const char BAR       = 'T';
+const char HOLE      = 'O';
+const char USEDHOLE  = 'U';
+
+const char EDIT_HINT = '1';
+const char EDIT_TEST = '2';
 
 const char CANWALKLEFT  = 0x1;
 const char CANWALKRIGHT = 0x2;
 const char CANWALKUP    = 0x4;
 const char CANWALKDOWN  = 0x8;
 const char VISITED      = 0x10;
+const char ENTERABLE    = 0x20; // NEW - 2/1/09
 
 const char FIELDWIDTH   = 28;
 const char FIELDHEIGHT  = 20;
@@ -79,7 +87,8 @@ enum Position		{RIGHTWALK1,  RIGHTWALK2,  RIGHTWALK3,  RIGHTWALK4,
                          CLIMB1,      CLIMB2,
                          FALL1,       FALL2};
 enum Status		{STANDING, FALLING, WALKING, CLIMBING, CAPTIVE};
-enum Direction		{RIGHT, LEFT, UP, DOWN, STAND};
+enum Direction		{RIGHT = 0x1, LEFT = 0x2, UP = 0x4, DOWN = 0x8,
+                         STAND = 0x10};
 enum SearchStrategy	{LOW, MEDIUM, HIGH};
 
 // Keyboard action codes

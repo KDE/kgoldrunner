@@ -27,7 +27,8 @@ KGrGameIO::KGrGameIO()
 }
 
 IOStatus KGrGameIO::fetchGameListData
-        (const QString & dir, QList<GameData *> & gameList)
+        (const QString & dir, QList<KGrGameData *> & gameList,
+                              QString & filePath)
 {
     QDir directory (dir);
     QStringList pattern;
@@ -47,11 +48,12 @@ IOStatus KGrGameIO::fetchGameListData
             continue;			// Skip the "ENDE" file.
         }
 
-        GameData * g = initGameData (dir + filename);
+        filePath = dir + filename;
+        KGrGameData * g = initGameData();
         gameList.append (g);
-        // kDebug()<< "GAME PATH:" << g->filePath;
+        // kDebug()<< "GAME PATH:" << filePath;
 
-        openFile.setFileName (g->filePath);
+        openFile.setFileName (filePath);
 
         // Check that the game-file exists.
         if (! openFile.exists()) {
@@ -126,7 +128,8 @@ IOStatus KGrGameIO::fetchGameListData
             // kDebug() << "Info about: [" + g->about + "]";
 
             if ((! kgr3Format) && (c != '\0')) {
-                g = initGameData (dir + filename);
+                filePath = dir + filename;
+                g = initGameData();
                 gameList.append (g);
             }
         } // END: game-data loop
@@ -140,16 +143,18 @@ IOStatus KGrGameIO::fetchGameListData
 
 IOStatus KGrGameIO::fetchLevelData
         (const QString & dir, const QString & prefix,
-                const int level, LevelData & d)
+                const int level, KGrLevelData & d, QString & filePath)
 {
-    d.filePath = getFilePath (dir, prefix, level);
+    filePath = getFilePath (dir, prefix, level);
     d.level  = level;		// Level number.
+    d.width  = FIELDWIDTH;	// Default width of layout grid (28 cells).
+    d.height = FIELDHEIGHT;	// Default height of layout grid (20 cells).
     d.layout = "";		// Codes for the level layout (mandatory).
     d.name   = "";		// Level name (optional).
     d.hint   = "";		// Level hint (optional).
 
-    // kDebug()<< "LEVEL PATH:" << d.filePath;
-    openFile.setFileName (d.filePath);
+    // kDebug()<< "LEVEL PATH:" << filePath;
+    openFile.setFileName (filePath);
 
     // Check that the level-file exists.
     if (! openFile.exists()) {
@@ -166,7 +171,7 @@ IOStatus KGrGameIO::fetchLevelData
     IOStatus result = UnexpectedEOF;
 
     // Determine whether the file is in KGoldrunner v3 or v2 format.
-    bool kgr3Format = (d.filePath.endsWith (".txt"));
+    bool kgr3Format = (filePath.endsWith (".txt"));
 
     if (kgr3Format) {
         // In KGr 3 format, if a line starts with 'L', check the number.
@@ -298,15 +303,16 @@ QByteArray KGrGameIO::removeNewline (const QByteArray & line)
     }
 }
 
-GameData * KGrGameIO::initGameData (const QString & filePath)
+KGrGameData * KGrGameIO::initGameData()
 {
-    GameData * g = new GameData;
-    g->filePath = filePath;
+    KGrGameData * g = new KGrGameData;
     g->owner    = USER;	// Owner of the game: "System" or "User".
     g->nLevels  = 0;	// Number of levels in the game.
     g->rules    = 'T';	// Game's rules: KGoldrunner or Traditional.
     g->prefix   = "";	// Game's filename prefix.
     g->skill    = 'N';	// Game's skill: Tutorial, Normal or Champion.
+    g->width    = FIELDWIDTH;	// Default width of layout grid (28 cells).
+    g->height   = FIELDHEIGHT;	// Default height of layout grid (20 cells).
     g->name     = "";	// Name of the game.
     g->about    = "";	// Optional text about the game.
     return (g);

@@ -27,15 +27,47 @@
 static const char description[] =
     I18N_NOOP ("KGoldrunner is a game of action and puzzle solving");
 
-static const char version[] = "3.0";
+static const char version[] = "4.0";
+
+static bool gameDataOK();
+static void addCredits (KAboutData & about);
 
 int main (int argc, char **argv)
 {
+    // Check data integrity and find base directories.
+    if (! gameDataOK()) {
+ 	// Error message;
+ 	return 2;
+    }
+
     KAboutData about ("kgoldrunner", 0, ki18n ("KGoldrunner"),
                      version, ki18n (description),
                      KAboutData::License_GPL,
                      ki18n ("(C) 2003 Ian Wadham and Marco Krüger"),
                      KLocalizedString(), "http://games.kde.org/kgoldrunner" );
+    addCredits (about);
+
+    KCmdLineArgs::init (argc, argv, &about);
+
+    KApplication app;
+    // See if we are starting with session management.
+    if (app.isSessionRestored()) {
+        // New RESTORE (KGrController);
+        RESTORE (KGoldrunner);
+    }
+    else {
+        // New KGrController * controller = new KGrController();
+        // New KGrView *       view       = new KGrView (controller);
+        // New KGrGame *       game       = new KGrGame (view);
+	// New controller->makeConnections (game, view);
+        KGoldrunner * controller = new KGoldrunner();
+        controller->show();
+    }
+    return app.exec();
+}
+
+void addCredits (KAboutData & about)
+{
     about.addAuthor (ki18n ("Ian Wadham"), ki18n ("Current author"),
                             "ianw2@optusnet.com.au");
     about.addAuthor (ki18n ("Marco Krüger"), ki18n ("Original author"),
@@ -63,20 +95,9 @@ int main (int argc, char **argv)
     about.addCredit (ki18n ("Eugene Trounev"),
                      ki18n ("Artwork for the Treasure of Egypt theme"), 
                             "irs_me@hotmail.com");
+}
 
-    KCmdLineArgs::init (argc, argv, &about);
-
-    KApplication app;
-    // See if we are starting with session management.
-    if (app.isSessionRestored()) {
-        RESTORE (KGoldrunner);
-        return app.exec();
-    }
-    else {
-        KGoldrunner * widget = new KGoldrunner;
-        if (widget->startedOK()) {
-            widget->show();
-            return app.exec();
-        }
-    }
+bool gameDataOK()
+{
+    return true;
 }

@@ -402,6 +402,7 @@ int KGrCanvas::tileNumber (KGrTheme::TileType type, int x, int y)
 
 void KGrCanvas::paintCell (int x, int y, char type, int offset)
 {
+    // IDW kDebug() << "recv paintCell (" << x << y << type << offset << ");";
     KGrTheme::TileType tileType = tileForType (type);
     // In KGrGame, the top-left visible cell is [1,1]: in KGrPlayfield [0,0].
     x--; y--;
@@ -505,6 +506,88 @@ void KGrCanvas::setMousePos (int i, int j)
     m->setPos (mapToGlobal (QPoint (
                                 topLeft.x() + i * imgW + imgW / 2,
                                 topLeft.y() + j * imgH + imgH / 2)));
+}
+
+void KGrCanvas::setSpriteType (const int id, const char type)
+{
+    kDebug() << "id" << id << "sprite type" << type;
+    // TODO - Improve and extend this code.
+    if ((type == HERO) && (id == 0)) {
+        if (! heroSprite) {
+            kDebug() << "Call makeHeroSprite (1, 1, RIGHTWALK1);";
+            makeHeroSprite (1, 1, RIGHTWALK1);
+        }
+    }
+}
+
+void KGrCanvas::startAnimation (const int id, const int row, const int col,
+                                const int time,
+                                const Direction dirn, const AnimationType type)
+{
+    // TODO - Save last direction somehow, to use in facing and centering code.
+    // TODO - Put most of this in helper code, based on theme parameters.
+    // TODO - Use a QList of animation parameters: one entry per id.
+    int frame;
+    int nFrames = 8;
+    int dx = 0;
+    int dy = 0;
+    int dt = time / 4;
+
+    switch (dirn) {
+    case RIGHT:
+        dx    = +1;
+        frame = (type == RUN) ? RIGHTWALK1 : RIGHTCLIMB1;
+        break;
+    case LEFT:
+        dx    = -1;
+        frame = (type == RUN) ? LEFTWALK1  : LEFTCLIMB1;
+        break;
+    case DOWN:
+        dy = +1;
+        if (type == FALL) {
+            nFrames = 1;
+            // TODO - Work out which way to face the runner.
+            frame   = FALL1;
+        }
+        else {
+            nFrames = 2;
+            frame   = CLIMB1;
+        }
+        break;
+    case UP:
+        dy = -1;
+        nFrames = 2;
+        frame   = CLIMB1;
+        break;
+    case STAND:
+        nFrames = 0; 
+        // TODO - Work out which way to face the runner.
+        frame = (type == RUN) ? RIGHTWALK1 : RIGHTCLIMB1;
+        break;
+    }
+    // TODO - runAnimation (int id, int row, int col, int frame,
+                  // int nFrames, int dx, int dy, int dt);
+    // TODO - Remove the following code.
+    if (id == 0) {
+        moveHero (row * bgw, col * bgh, frame);
+    }
+}
+
+void KGrCanvas::resynchAnimation (const int id, const int row, const int col,
+                                  const bool stop)
+{
+    // TODO - Write this code.
+}
+
+void KGrCanvas::deleteAnimation (const int id)
+{
+    // TODO - Improve and extend this code.
+    if (id == 0) {
+        if (heroSprite) {
+            delete heroSprite;
+            heroSprite = 0;
+        }
+    }
 }
 
 void KGrCanvas::makeHeroSprite (int i, int j, int startFrame)

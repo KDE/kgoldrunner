@@ -22,6 +22,8 @@
 #include <QApplication>
 #include <QDesktopWidget>
 #include <QSignalMapper>
+#include <QShortcut>
+#include <QKeySequence>
 
 #include <kglobal.h>
 #include <kstatusbar.h>
@@ -47,7 +49,7 @@
 #include <KAboutData>
 
 #include "kgrobject.h"
-#include "kgrfigure.h"
+// #include "kgrfigure.h"
 #include "kgrcanvas.h"
 #include "kgrdialog.h"
 #include "kgrgame.h"
@@ -105,7 +107,7 @@ KGoldrunner::KGoldrunner()
     kDebug() << "Calling view->setBaseScale() ...";
     view->setBaseScale();		// Set scale for level-titles font.
 
-    hero = game->getHero();		// Get a pointer to the hero.
+    // OBSOLESCENT - 9/1/09 hero = game->getHero();		// Get a pointer to the hero.
 
 /******************************************************************************/
 /*************************  SET UP THE USER INTERFACE  ************************/
@@ -121,17 +123,20 @@ KGoldrunner::KGoldrunner()
     setupActions();
 
     // and a status bar.
-    initStatusBar();
+    // IDW initStatusBar();
 
     // Do NOT have show/hide actions for the statusbar and toolbar in the GUI:
     // we need the statusbar for game scores and the toolbar is relevant only
     // when using the game editor and then it appears automatically.  Maybe 1%
-    // of players would use the game editor for 5% of their time.
+    // of players would use the game editor for 5% of their time.  Also we are
+    // our own action to configure shortcut keys, so disable the KXmlGui one.
     setupGUI (static_cast<StandardWindowOption> (Default &
-                        (~StatusBar) & (~ToolBar)));
+                        (~StatusBar) & (~ToolBar) & (~Keys))); // IDW
 
     // Find the theme-files and generate the Themes menu.
     setupThemes();
+
+    initStatusBar(); // IDW
 
     // Connect the game actions to the menu and toolbar displays.
     connect (game, SIGNAL (quitGame()),	        SLOT (close()));
@@ -226,17 +231,25 @@ void KGoldrunner::setupActions()
     // KAction * myPause: to get KAction::shortcut() not QAction::shortcut().
     myPause = KStandardGameAction::pause (this, SLOT (stopStart()), this);
     actionCollection()->addAction (myPause->objectName(), myPause);
-    KShortcut pauseShortcut = myPause->shortcut();
-    pauseShortcut.setAlternate (Qt::Key_Escape);	// Add "Esc" shortcut.
-    myPause->setShortcut (pauseShortcut);
+    // IDW KShortcut pauseShortcut = myPause->shortcut();
+    // IDW QShortcut pauseShortcut = myPause->shortcut();
+    // IDW pauseShortcut.setAlternate (Qt::Key_Escape);	// Add "Esc" shortcut.
+    // IDW myPause->setShortcut (pauseShortcut);
 
     highScore = KStandardGameAction::highscores
                                 (game, SLOT (showHighScores()), this);
     actionCollection()->addAction (highScore->objectName(), highScore);
 
-    hintAction = KStandardGameAction::hint
-                                (game, SLOT (showHint()), this);
+    // Old hintAction = KStandardGameAction::hint
+                                // Old (game, SLOT (showHint()), this);
+    QSignalMapper * gameMapper = new QSignalMapper (this); // New
+    connect (gameMapper, SIGNAL (mapped (int)), // New
+                game, SLOT (gameActions (int))); // New
+
+    hintAction = KStandardGameAction::hint // New
+                                (gameMapper, SLOT (map()), this); // New
     actionCollection()->addAction (hintAction->objectName(), hintAction);
+    gameMapper->setMapping (hintAction, HINT); // New
 
     killHero =	actionCollection()->addAction ("kill_hero");
     killHero->setText (i18n ("&Kill Hero"));
@@ -244,7 +257,9 @@ void KGoldrunner::setupActions()
     killHero->setWhatsThis (i18n ("Kill the hero, in case he finds himself in "
                                 "a situation from which he cannot escape"));
     killHero->setShortcut (Qt::Key_Q);
-    connect (killHero, SIGNAL (triggered (bool)), game, SLOT (herosDead()));
+    // Old connect (killHero, SIGNAL (triggered (bool)), game, SLOT (herosDead()));
+    connect (killHero, SIGNAL (triggered (bool)), gameMapper, SLOT (map())); // New NEEDED
+    gameMapper->setMapping (killHero, KILL_HERO); // New
 
     // Quit
     // --------------------------
@@ -681,7 +696,7 @@ void KGoldrunner::initStatusBar()
     adjustHintAction (false);
 
     // Set the PAUSE/RESUME key-names into the status bar message.
-    pauseKeys = myPause->shortcut().toString();
+    pauseKeys = myPause->shortcut().toString(QKeySequence::NativeText);
     pauseKeys = pauseKeys.replace (';', "\" " + i18n ("or") + " \"");
     gameFreeze (false);
 
@@ -831,8 +846,8 @@ void KGoldrunner::changeTheme (const QString & themeFilepath)
 
 // Local slots to create or edit game information.
 
-void KGoldrunner::createGame()		{game->editCollection (SL_CR_GAME);}
-void KGoldrunner::editGameInfo()	{game->editCollection (SL_UPD_GAME);}
+void KGoldrunner::createGame()		{}// Force compile IDW game->editCollection (SL_CR_GAME);}
+void KGoldrunner::editGameInfo()	{}// Force compile IDW game->editCollection (SL_UPD_GAME);}
 
 // Local slots to set mouse or keyboard control of the hero.
 
@@ -841,30 +856,30 @@ void KGoldrunner::setKeyBoardMode()	{game->setMouseMode (false);}
 
 // Local slots to set game speed.
 
-void KGoldrunner::normalSpeed()		{hero->setSpeed (NSPEED);}
-void KGoldrunner::beginSpeed()		{hero->setSpeed (BEGINSPEED);}
-void KGoldrunner::champSpeed()		{hero->setSpeed (CHAMPSPEED);}
-void KGoldrunner::incSpeed()		{hero->setSpeed (+1);}
-void KGoldrunner::decSpeed()		{hero->setSpeed (-1);}
+void KGoldrunner::normalSpeed()		{} // hero->setSpeed (NSPEED);}
+void KGoldrunner::beginSpeed()		{} // hero->setSpeed (BEGINSPEED);}
+void KGoldrunner::champSpeed()		{} // hero->setSpeed (CHAMPSPEED);}
+void KGoldrunner::incSpeed()		{} // hero->setSpeed (+1);}
+void KGoldrunner::decSpeed()		{} // hero->setSpeed (-1);}
 
 // Slots to set Traditional or KGoldrunner rules.
 
 void KGoldrunner::setTradRules()
 {
-    KGrFigure::variableTiming = true;
-    KGrFigure::alwaysCollectNugget = true;
-    KGrFigure::runThruHole = true;
-    KGrFigure::reappearAtTop = true;
-    KGrFigure::searchStrategy = LOW;
+    // KGrFigure::variableTiming = true;
+    // KGrFigure::alwaysCollectNugget = true;
+    // KGrFigure::runThruHole = true;
+    // KGrFigure::reappearAtTop = true;
+    // KGrFigure::searchStrategy = LOW;
 }
 
 void KGoldrunner::setKGrRules()
 {
-    KGrFigure::variableTiming = false;
-    KGrFigure::alwaysCollectNugget = false;
-    KGrFigure::runThruHole = false;
-    KGrFigure::reappearAtTop = false;
-    KGrFigure::searchStrategy = MEDIUM;
+    // KGrFigure::variableTiming = false;
+    // KGrFigure::alwaysCollectNugget = false;
+    // KGrFigure::runThruHole = false;
+    // KGrFigure::reappearAtTop = false;
+    // KGrFigure::searchStrategy = MEDIUM;
 }
 
 // Local slots for hero control keys.
@@ -928,10 +943,16 @@ void KGoldrunner::readProperties (const KConfigGroup & /* config - unused */)
 
 void KGoldrunner::optionsConfigureKeys()
 {
-    KShortcutsDialog::configure (actionCollection());
+    kDebug() << "Configure keys ...";
+    // First run the standard KDE dialog for shortcut key settings.
+    KShortcutsDialog::configure (actionCollection(),
+	KShortcutsEditor::LetterShortcutsAllowed,	// Single letters OK.
+	this,						// Parent widget.
+	true);						// saveSettings value.
 
-    // Update the PAUSE/RESUME message in the status bar.
-    pauseKeys = myPause->shortcut().toString();
+    // Now update the PAUSE/RESUME message in the status bar.
+    kDebug() << "Update Pause/Resume message ...";
+    pauseKeys = myPause->shortcut().toString(QKeySequence::NativeText);
     pauseKeys = pauseKeys.replace (';', "\" " + i18n ("or") + " \"");
     gameFreeze (KGrObject::frozen);	// Refresh the status bar text.
 }
@@ -1048,8 +1069,8 @@ bool KGoldrunner::getDirectories()
 bool KGoldrunner::queryClose()
 {
     // Last chance to save: user has clicked "X" widget or menu-Quit.
-    bool cannotContinue = true;
-    game->saveOK (cannotContinue);
+    // Force compile IDW bool cannotContinue = true;
+    // Force compile IDW game->saveOK (cannotContinue);
     return (true);
 }
 
@@ -1090,7 +1111,7 @@ void KGoldrunner::setKey (KBAction movement)
 
     if (game->getLevel() != 0)
     {
-        if (! hero->started)			// Start when first movement
+        // OBSOLESCENT - 9/1/09 if (! hero->started)	// Start when first movement
             game->startPlaying();			// key is pressed ...
         game->heroAction (movement);
     }
@@ -1102,95 +1123,107 @@ void KGoldrunner::setKey (KBAction movement)
 
 void KGoldrunner::setupEditToolbarActions()
 {
-    // Choose a colour that enhances visibility of the KGoldrunner pixmaps.
-    // editToolbar->setPalette (QPalette (QColor (150, 150, 230)));
+    QSignalMapper * editToolbarMapper = new QSignalMapper (this); // New
+    connect (editToolbarMapper, SIGNAL (mapped (int)), // New
+                game, SLOT (editToolbarActions (int))); // New
 
-    QAction* ktipAct = actionCollection()->addAction ("edit_hint");
-    ktipAct->setIcon (KIcon ("games-hint"));
-    ktipAct->setText (i18n ("Edit Name/Hint"));
-    ktipAct->setToolTip (i18n ("Edit level name or hint"));
-    ktipAct->setWhatsThis (i18n ("Edit text for the name or hint of a level"));
-    connect (ktipAct, SIGNAL(triggered (bool)), game, SLOT(editNameAndHint()));
+    QAction* tip = actionCollection()->addAction ("edit_hint");
+    tip->setIcon (KIcon ("games-hint"));
+    tip->setText (i18n ("Edit Name/Hint"));
+    tip->setToolTip (i18n ("Edit level name or hint"));
+    tip->setWhatsThis (i18n ("Edit text for the name or hint of a level"));
+    connect (tip, SIGNAL (triggered (bool)), editToolbarMapper, SLOT (map()));
+    editToolbarMapper->setMapping (tip, EDIT_HINT);
 
-    KToggleAction* freebgAct = new KToggleAction (i18n ("Erase"), this);
-    freebgAct->setToolTip (i18n ("Erase"));
-    freebgAct->setWhatsThis (i18n ("Erase objects by painting empty squares"));
-    actionCollection()->addAction ("freebg", freebgAct);
-    connect (freebgAct, SIGNAL (triggered (bool)), this, SLOT (freeSlot()));
+    KToggleAction* free = new KToggleAction (i18n ("Erase"), this);
+    free->setToolTip (i18n ("Erase"));
+    free->setWhatsThis (i18n ("Erase objects by painting empty squares"));
+    actionCollection()->addAction ("freebg", free);
+    connect (free, SIGNAL (triggered (bool)), editToolbarMapper, SLOT (map()));
+    editToolbarMapper->setMapping (free, FREE);
 
-    KToggleAction* edherobgAct = new KToggleAction (i18n ("Hero"), this);
-    edherobgAct->setToolTip (i18n ("Move hero"));
-    edherobgAct->setWhatsThis (i18n ("Change the hero's starting position"));
-    actionCollection()->addAction ("edherobg", edherobgAct);
-    connect (edherobgAct, SIGNAL (triggered (bool)), this, SLOT (edheroSlot()));
+    KToggleAction* edhero = new KToggleAction (i18n ("Hero"), this);
+    edhero->setToolTip (i18n ("Move hero"));
+    edhero->setWhatsThis (i18n ("Change the hero's starting position"));
+    actionCollection()->addAction ("edherobg", edhero);
+    connect (edhero, SIGNAL(triggered (bool)), editToolbarMapper, SLOT(map()));
+    editToolbarMapper->setMapping (edhero, HERO);
 
-    KToggleAction* edenemybgAct = new KToggleAction (i18n ("Enemy"), this);
-    edenemybgAct->setToolTip (i18n ("Paint enemies"));
-    edenemybgAct->setWhatsThis
+    KToggleAction* edenemy = new KToggleAction (i18n ("Enemy"), this);
+    edenemy->setToolTip (i18n ("Paint enemies"));
+    edenemy->setWhatsThis
                 (i18n ("Paint enemies at their starting positions"));
-    actionCollection()->addAction ("edenemybg", edenemybgAct);
-    connect (edenemybgAct, SIGNAL(triggered (bool)), this, SLOT(edenemySlot()));
+    actionCollection()->addAction ("edenemybg", edenemy);
+    connect (edenemy, SIGNAL(triggered (bool)), editToolbarMapper,SLOT(map()));
+    editToolbarMapper->setMapping (edenemy, ENEMY);
 
-    KToggleAction* brickbgAct = new KToggleAction (i18n ("Brick"), this);
-    brickbgAct->setToolTip (i18n ("Paint bricks (can dig)"));
-    brickbgAct->setWhatsThis (i18n ("Paint bricks (diggable objects)"));
-    actionCollection()->addAction ("brickbg", brickbgAct);
-    connect (brickbgAct, SIGNAL (triggered (bool)), this, SLOT (brickSlot()));
+    KToggleAction* brick = new KToggleAction (i18n ("Brick"), this);
+    brick->setToolTip (i18n ("Paint bricks (can dig)"));
+    brick->setWhatsThis (i18n ("Paint bricks (diggable objects)"));
+    actionCollection()->addAction ("brickbg", brick);
+    connect (brick, SIGNAL(triggered (bool)), editToolbarMapper, SLOT(map()));
+    editToolbarMapper->setMapping (brick, BRICK);
 
-    KToggleAction* betonbgAct = new KToggleAction (i18n ("Concrete"), this);
-    betonbgAct->setToolTip (i18n ("Paint concrete (cannot dig)"));
-    betonbgAct->setWhatsThis (i18n ("Paint concrete objects (not diggable)"));
-    actionCollection()->addAction ("betonbg", betonbgAct);
-    connect (betonbgAct, SIGNAL (triggered (bool)), this, SLOT (betonSlot()));
+    KToggleAction* beton = new KToggleAction (i18n ("Concrete"), this);
+    beton->setToolTip (i18n ("Paint concrete (cannot dig)"));
+    beton->setWhatsThis (i18n ("Paint concrete objects (not diggable)"));
+    actionCollection()->addAction ("betonbg", beton);
+    connect (beton, SIGNAL(triggered (bool)), editToolbarMapper, SLOT(map()));
+    editToolbarMapper->setMapping (beton, BETON);
 
-    KToggleAction* fbrickbgAct = new KToggleAction (i18n ("Trap"), this);
-    fbrickbgAct->setToolTip
+    KToggleAction* fbrick = new KToggleAction (i18n ("Trap"), this);
+    fbrick->setToolTip
                 (i18n ("Paint traps or false bricks (can fall through)"));
-    fbrickbgAct->setWhatsThis
+    fbrick->setWhatsThis
                 (i18n ("Paint traps or false bricks (can fall through)"));
-    actionCollection()->addAction ("fbrickbg", fbrickbgAct);
-    connect (fbrickbgAct, SIGNAL (triggered (bool)), this, SLOT (fbrickSlot()));
+    actionCollection()->addAction ("fbrickbg", fbrick);
+    connect (fbrick, SIGNAL(triggered (bool)), editToolbarMapper, SLOT(map()));
+    editToolbarMapper->setMapping (fbrick, FBRICK);
 
-    KToggleAction* ladderbgAct = new KToggleAction (i18n ("Ladder"), this);
-    ladderbgAct->setToolTip (i18n ("Paint ladders"));
-    ladderbgAct->setWhatsThis (i18n ("Paint ladders (ways to go up or down)"));
-    actionCollection()->addAction ("ladderbg", ladderbgAct);
-    connect (ladderbgAct, SIGNAL (triggered (bool)), this, SLOT (ladderSlot()));
+    KToggleAction* ladder = new KToggleAction (i18n ("Ladder"), this);
+    ladder->setToolTip (i18n ("Paint ladders"));
+    ladder->setWhatsThis (i18n ("Paint ladders (ways to go up or down)"));
+    actionCollection()->addAction ("ladderbg", ladder);
+    connect (ladder, SIGNAL(triggered (bool)), editToolbarMapper, SLOT(map()));
+    editToolbarMapper->setMapping (ladder, LADDER);
 
-    KToggleAction* hladderbgAct = new KToggleAction(i18n("Hidden Ladder"),this);
-    hladderbgAct->setToolTip (i18n ("Paint hidden ladders"));
-    hladderbgAct->setWhatsThis
+    KToggleAction* hladder = new KToggleAction(i18n("Hidden Ladder"),this);
+    hladder->setToolTip (i18n ("Paint hidden ladders"));
+    hladder->setWhatsThis
         (i18n ("Paint hidden ladders, which appear when all the gold is gone"));
-    actionCollection()->addAction ("hladderbg", hladderbgAct);
-    connect (hladderbgAct, SIGNAL(triggered (bool)), this, SLOT(hladderSlot()));
+    actionCollection()->addAction ("hladderbg", hladder);
+    connect (hladder, SIGNAL(triggered (bool)), editToolbarMapper, SLOT(map()));
+    editToolbarMapper->setMapping (hladder, HLADDER);
 
-    KToggleAction* polebgAct = new KToggleAction (i18n ("Bar"), this);
-    polebgAct->setToolTip (i18n ("Paint bars or poles"));
-    polebgAct->setWhatsThis (i18n("Paint bars or poles (can fall from these)"));
-    actionCollection()->addAction ("polebg", polebgAct);
-    connect (polebgAct, SIGNAL (triggered (bool)), this, SLOT (poleSlot()));
+    KToggleAction* pole = new KToggleAction (i18n ("Bar"), this);
+    pole->setToolTip (i18n ("Paint bars or poles"));
+    pole->setWhatsThis (i18n("Paint bars or poles (can fall from these)"));
+    actionCollection()->addAction ("polebg", pole);
+    connect (pole, SIGNAL(triggered (bool)), editToolbarMapper, SLOT(map()));
+    editToolbarMapper->setMapping (pole, POLE);
 
-    KToggleAction* nuggetbgAct = new KToggleAction (i18n ("Gold"), this);
-    nuggetbgAct->setToolTip (i18n ("Paint gold (or other treasure)"));
-    nuggetbgAct->setWhatsThis (i18n ("Paint gold pieces (or other treasure)"));
-    actionCollection()->addAction ("nuggetbg", nuggetbgAct);
-    connect (nuggetbgAct, SIGNAL (triggered (bool)), this, SLOT (nuggetSlot()));
+    KToggleAction* nugget = new KToggleAction (i18n ("Gold"), this);
+    nugget->setToolTip (i18n ("Paint gold (or other treasure)"));
+    nugget->setWhatsThis (i18n ("Paint gold pieces (or other treasure)"));
+    actionCollection()->addAction ("nuggetbg", nugget);
+    connect (nugget, SIGNAL(triggered (bool)), editToolbarMapper, SLOT(map()));
+    editToolbarMapper->setMapping (nugget, NUGGET);
 
     QActionGroup* editButtons = new QActionGroup (this);
     editButtons->setExclusive (true);
-    editButtons->addAction (freebgAct);
-    editButtons->addAction (edherobgAct);
-    editButtons->addAction (edenemybgAct);
-    editButtons->addAction (brickbgAct);
-    editButtons->addAction (betonbgAct);
-    editButtons->addAction (fbrickbgAct);
-    editButtons->addAction (ladderbgAct);
-    editButtons->addAction (hladderbgAct);
-    editButtons->addAction (polebgAct);
-    editButtons->addAction (nuggetbgAct);
+    editButtons->addAction (free);
+    editButtons->addAction (edhero);
+    editButtons->addAction (edenemy);
+    editButtons->addAction (brick);
+    editButtons->addAction (beton);
+    editButtons->addAction (fbrick);
+    editButtons->addAction (ladder);
+    editButtons->addAction (hladder);
+    editButtons->addAction (pole);
+    editButtons->addAction (nugget);
 
-    brickbgAct->setChecked (true);
-    m_defaultEditAct = brickbgAct;
+    brick->setChecked (true);
+    m_defaultEditAct = brick;
 }
 
 /******************************************************************************/
@@ -1198,25 +1231,25 @@ void KGoldrunner::setupEditToolbarActions()
 /******************************************************************************/
 
 void KGoldrunner::freeSlot()
-                { game->setEditObj (FREE);     }
+                {} // Force compile IDW game->setEditObj (FREE);     }
 void KGoldrunner::edheroSlot()
-                { game->setEditObj (HERO);     }
+                {} // Force compile IDW game->setEditObj (HERO);     }
 void KGoldrunner::edenemySlot()
-                { game->setEditObj (ENEMY);    }
+                {} // Force compile IDW game->setEditObj (ENEMY);    }
 void KGoldrunner::brickSlot()
-                { game->setEditObj (BRICK);    }
+                {} // Force compile IDW game->setEditObj (BRICK);    }
 void KGoldrunner::betonSlot()
-                { game->setEditObj (BETON);    }
+                {} // Force compile IDW game->setEditObj (BETON);    }
 void KGoldrunner::fbrickSlot()
-                { game->setEditObj (FBRICK);   }
+                {} // Force compile IDW game->setEditObj (FBRICK);   }
 void KGoldrunner::ladderSlot()
-                { game->setEditObj (LADDER);   }
+                {} // Force compile IDW game->setEditObj (LADDER);   }
 void KGoldrunner::hladderSlot()
-                { game->setEditObj (HLADDER);  }
+                {} // Force compile IDW game->setEditObj (HLADDER);  }
 void KGoldrunner::poleSlot()
-                { game->setEditObj (POLE);     }
+                {} // Force compile IDW game->setEditObj (POLE);     }
 void KGoldrunner::nuggetSlot()
-                { game->setEditObj (NUGGET);   }
+                {} // Force compile IDW game->setEditObj (NUGGET);   }
 void KGoldrunner::defaultEditObj()
                 { m_defaultEditAct->setChecked (true); }
 

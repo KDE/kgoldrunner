@@ -22,7 +22,8 @@
 
 #include "kgrplayfield.h"
 #include "kgrsprite.h"
-#include "kgrconsts.h"
+#include "kgrconsts.h" // OBSOLESCENT - 11/1/09
+#include "kgrglobals.h"
 
 #include <qcursor.h>
 #include <QLabel>
@@ -49,14 +50,11 @@ public:
 
     void setBaseScale();
 
-    void paintCell (int, int, char, int offset = 0);
     void setTitle (const QString&);
 
-    void makeHeroSprite (int, int, int);
     void setHeroVisible (bool);
-    void moveHero (int, int, int);
+    void moveHero (int x, int y, int frame);
 
-    void makeEnemySprite (int, int, int);
     void moveEnemy (int, int, int, int, int);
     void deleteEnemySprites();
 
@@ -74,6 +72,23 @@ public:
      * be used if multiple sets are available in the theme.
      */
     void setLevel (unsigned int level);
+
+public slots:
+    void paintCell        (const int row, const int col, const char type,
+                           const int offset = 0);
+    void setSpriteType    (const int id, const char type);
+    void startAnimation   (const int id, const int row, const int col,
+                           const int time,
+                           const Direction dirn, const AnimationType type);
+    void resynchAnimation (const int id, const int row, const int col,
+                           const bool stop);
+    void deleteAnimation  (const int id);
+
+    void makeHeroSprite (int, int, int);
+    void makeEnemySprite (int, int, int);
+
+    inline void jumpHero (int i, int j, int frame) // OBSOLESCENT? - 9/1/09
+                         { moveHero (i * bgw, j * bgh, frame); }
 
 signals:
     void mouseClick (int);

@@ -28,6 +28,9 @@
 #include <QLabel>
 #include <QFrame>
 
+#include "kgrconsts.h"	// OBSOLESCENT - 30/12/08
+#include "kgrglobals.h"
+
 #include "kgrgameio.h"
 #include "kgrcanvas.h"
 
@@ -40,10 +43,12 @@ Sets up games and levels in KGoldrunner and controls the play.
 class KDialog;
 
 class KGrObject;
-class KGrHero;
+// OBSOLESCENT - 9/1/09 class KGrHero;
 class KGrEnemy;
 class KGrCollection;
 class KGrSoundBank;
+class KGrEditor;
+class KGrLevelPlayer;
 
 class KGrGame : public QObject
 {
@@ -54,7 +59,7 @@ public:
     ~KGrGame();
 
     bool initCollections();
-    KGrHero * getHero();
+    // OBSOLESCENT - 9/1/09 KGrHero * getHero();
 
     void quickStartDialog();
     void setInitialTheme (const QString & themeFilepath);
@@ -76,6 +81,9 @@ public:
     QString getDirectory (Owner o);
 
 public slots:
+    void gameActions (int action);
+    void editToolbarActions (int action);
+
     void initGame();			// Do the game object's first painting.
 
     void startLevelOne();		// Start any game from level 1.
@@ -139,7 +147,7 @@ private slots:
 private:
     void setBlankLevel (bool playable);
     int  loadLevel (int levelNo);
-    bool readLevelData (int levelNo, LevelData & d);
+    bool readLevelData (int levelNo, KGrLevelData & d);
     void changeObject (unsigned char kind, int i, int j);
     void createObject (KGrObject *o, char picType, int x, int y);
     void setTimings();
@@ -160,6 +168,8 @@ private:
 /******************************************************************************/
 
 private:
+    KGrLevelPlayer *            levelPlayer;	// Where the level is played.
+
     KGrCanvas *			view;		// Where the game is displayed.
     QString			systemDataDir;	// System games are stored here.
     QString			userDataDir;	// User games are stored here.
@@ -176,7 +186,7 @@ private:
     long			score;		// Current score.
     long			startScore;	// Score at start of level.
 
-    KGrHero *			hero;		// The HERO figure !!  Yay !!!
+    // OBSOLESCENT - 9/1/09 KGrHero *			hero;		// The HERO figure !!  Yay !!!
     int				startI, startJ;	// The hero's starting position.
 
     QList<KGrEnemy *>		enemies;	// The list of enemies.
@@ -232,23 +242,25 @@ public slots:
 /******************************************************************************/
 
 public slots:			// Slots connected to the Menu and Edit Toolbar.
-    void createLevel();		// Set up a blank level-display for edit.
-    void updateLevel();         // Update an existing level.
-    void updateNext();          // Update the current level + 1.
-    void editNameAndHint();	// Run a dialog to edit the level name and hint.
-    bool saveLevelFile();	// Save the edited level in a text file (.grl).
-    void moveLevelFile();	// Move level to another collection or number.
-    void deleteLevelFile();	// Delete a level file.
+    // Force compile IDW void createLevel();		// Set up a blank level-display for edit.
+    // Force compile IDW void updateLevel();         // Update an existing level.
+    // Force compile IDW void updateNext();          // Update the current level + 1.
+    // Force compile IDW void editNameAndHint();	// Run a dialog to edit the level name and hint.
+    // Force compile IDW bool saveLevelFile();	// Save the edited level in a text file (.grl).
+    // Force compile IDW void moveLevelFile();	// Move level to another collection or number.
+    // Force compile IDW void deleteLevelFile();	// Delete a level file.
 
-    void editCollection (int action);
+    // Force compile IDW void editCollection (int action);
 
-    void setLevel (int lev);	// Set level to be edited.
+    // Force compile IDW void setLevel (int lev);	// Set level to be edited.
 
     void freeze();		// Stop the gameplay action.
     void unfreeze();		// Restart the gameplay action.
     void setMessageFreeze (bool);
 
 private:
+    KGrEditor * editor;		// The level-editor object.
+
     bool mouseMode;		// Flag to set up keyboard OR mouse control.
     bool editMode;		// Flag to change keyboard and mouse functions.
     char editObj;		// Type of object to be painted by the mouse.
@@ -276,9 +288,9 @@ private:
     QPixmap freebg, nuggetbg, polebg, betonbg, ladderbg, hladderbg;
     QPixmap edherobg, edenemybg;
 
-private slots:
-    void doEdit (int);		// For mouse-click when in edit-mode.
-    void endEdit (int);		// For mouse-release when in edit-mode.
+// Force compile IDW private slots:
+    // Force compile IDW void doEdit (int);		// For mouse-click when in edit-mode.
+    // Force compile IDW void endEdit (int);		// For mouse-release when in edit-mode.
 
 /******************************************************************************/
 /********************   COLLECTION PROPERTIES AND METHODS   *******************/
@@ -287,6 +299,8 @@ private slots:
 private:
 
 // Note that a collection of KGoldrunner levels is the same thing as a "game".
+    QList<KGrGameData *>        gameList;
+    // OBSOLESCENT - 9/1/09
     QList<KGrCollection *>	collections;	// List of ALL collections.
 
     KGrCollection *		collection;	// Collection currently in use.

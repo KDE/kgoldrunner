@@ -369,7 +369,8 @@ void KGrHero::startWalk()
             }
             break;
         case RIGHT:
-            if (hangAtPole()) 
+            // IDW - if (hangAtPole()) // Wrong! Need to climb if pole is to R.
+            if ((*playfield)[x+1][y]->whatIam() == POLE)
                 actualPixmap = (alternateStepGraphics)? RIGHTCLIMB5:RIGHTCLIMB1;
             else 
                 actualPixmap = (alternateStepGraphics)? RIGHTWALK5 : RIGHTWALK1;
@@ -395,7 +396,8 @@ void KGrHero::startWalk()
             }
             break;
         case LEFT:
-            if (hangAtPole())
+            // IDW - if (hangAtPole()) // Wrong! Need to climb if pole is to L.
+            if ((*playfield)[x-1][y]->whatIam() == POLE)
                 actualPixmap = (alternateStepGraphics)? LEFTCLIMB5 : LEFTCLIMB1;
             else
                 actualPixmap = (alternateStepGraphics)? LEFTWALK5 : LEFTWALK1;
@@ -611,7 +613,7 @@ void KGrHero::walkTimeDone()
     }
     if (status != STANDING) {
         switch (direction) {
-        case UP:		walkUp (WALKDELAY); break;
+        case UP:	walkUp (WALKDELAY); break;
         case DOWN:	walkDown (WALKDELAY, FALLDELAY); break;
         case RIGHT:	walkRight (WALKDELAY, FALLDELAY); break;
         case LEFT:	walkLeft (WALKDELAY, FALLDELAY); break;
@@ -1189,7 +1191,8 @@ void KGrEnemy::startWalk()
     case UP:
         break;
     case RIGHT:
-        if (hangAtPole())
+        // IDW - if (hangAtPole()) // Wrong! Need to climb if pole is to R.
+        if ((*playfield)[x+1][y]->whatIam() == POLE)
             actualPixmap = (alternateStepGraphics) ? RIGHTCLIMB5 : RIGHTCLIMB1;
         else
             actualPixmap = (alternateStepGraphics) ? RIGHTWALK5 : RIGHTWALK1;
@@ -1197,7 +1200,8 @@ void KGrEnemy::startWalk()
     case DOWN:
         break;
     case LEFT:
-        if (hangAtPole())
+        // IDW - if (hangAtPole()) // Wrong! Need to climb if pole is to L.
+        if ((*playfield)[x-1][y]->whatIam() == POLE)
             actualPixmap = (alternateStepGraphics) ? LEFTCLIMB5 : LEFTCLIMB1;
         else
             actualPixmap = (alternateStepGraphics) ? LEFTWALK5 : LEFTWALK1;
