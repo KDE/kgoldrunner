@@ -23,6 +23,7 @@
 #include "kgrconsts.h" // OBSOLESCENT - 1/1/09
 #include "kgrglobals.h"
 
+class KGrLevelPlayer;
 class KGrLevelGrid;
 class KGrRuleBook;
 
@@ -30,33 +31,46 @@ class KGrRunner : public QObject
 {
     Q_OBJECT
 public:
-    KGrRunner (KGrLevelGrid * pGrid, int i, int j, KGrRuleBook  * pRules);
+    KGrRunner (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
+               int i, int j, KGrRuleBook  * pRules);
     virtual ~KGrRunner();
 
-    void getLocation (int & row, int & col);
+    // void getLocation (int & row, int & col); TODO - Remove this.
 
 protected:
-    KGrLevelGrid * grid;
-    KGrRuleBook * rules;
-    int  gridX;
-    int  gridY;
-    int  pointsPerCell;
-    bool turnAnywhere;
+    KGrLevelPlayer * levelPlayer;
+    KGrLevelGrid *   grid;
+    KGrRuleBook *    rules;
 
-    virtual void getRules();
+    int              gridI;
+    int              gridJ;
+    Vector2D         vector;
+    int              pointCtr;
+
+    int              pointsPerCell;
+    bool             turnAnywhere;
+
+    virtual void     getRules();
+    // virtual void     setDirection (Direction dirn); // TODO = 0; Enemy's setDirection() is defined as?
+
+    Direction        currDirection;
+    AnimationType    currAnimation;
 
 private:
 };
 
 
-class KGrNewHero : public KGrRunner
+class KGrHero : public KGrRunner
 {
     Q_OBJECT
 public:
-    KGrNewHero (KGrLevelGrid * pGrid, int i, int j, KGrRuleBook  * pRules);
-    ~KGrNewHero();
+    KGrHero (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
+                int i, int j, KGrRuleBook  * pRules);
+    ~KGrHero();
 
-    void run (Direction dirn);
+    // void setDirection (Direction dirn);
+
+    void run();
 
 // signals:
     // void moveHero (int i, int j, int frame); // OBSOLESCENT? - 9/1/09
@@ -70,12 +84,13 @@ private:
 };
 
 
-class KGrNewEnemy : public KGrRunner
+class KGrEnemy : public KGrRunner
 {
     Q_OBJECT
 public:
-    KGrNewEnemy (KGrLevelGrid * pGrid, int i, int j, int id, KGrRuleBook  * pRules);
-    ~KGrNewEnemy();
+    KGrEnemy (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
+                 int i, int j, int id, KGrRuleBook  * pRules);
+    ~KGrEnemy();
 
 signals:
     void startAnimation   (const int id, const int row, const int col,

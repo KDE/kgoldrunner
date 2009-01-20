@@ -54,6 +54,9 @@
 #include "kgrdialog.h"
 #include "kgrgame.h"
 
+// Shorthand for references to actions.
+#define ACTION(x)   (actionCollection()->action(x))
+
 KGoldrunner::KGoldrunner()
 {
 /******************************************************************************/
@@ -96,7 +99,7 @@ KGoldrunner::KGoldrunner()
         scale = 1.75;			// Scale 1.75:1.
     }
     view = new KGrCanvas (this, scale, systemDataDir);
-    game = new KGrGame (view, systemDataDir, userDataDir);
+    game = new KGrGame   (view, systemDataDir, userDataDir);
 
     // Initialise the collections of levels (i.e. the list of games).
     if (! game->initCollections()) {
@@ -145,6 +148,11 @@ KGoldrunner::KGoldrunner()
     connect (game, SIGNAL (hintAvailable (bool)),	SLOT (adjustHintAction (bool)));
     connect (game, SIGNAL (defaultEditObj()),	SLOT (defaultEditObj()));
 
+    connect (game, SIGNAL (setAvail  (const char *, const bool)),
+                   SLOT   (setAvail  (const char *, const bool)));
+    connect (game, SIGNAL (setToggle (const char *, const bool)),
+                   SLOT   (setToggle (const char *, const bool)));
+
     // Apply the saved mainwindow settings, if any, and ask the mainwindow
     // to automatically save settings if changed: window size, toolbar
     // position, icon size, etc.
@@ -187,6 +195,7 @@ void KGoldrunner::KGoldrunner_2()
 
 KGoldrunner::~KGoldrunner()
 {
+    delete kbMapper;
 }
 
 void KGoldrunner::setupActions()
@@ -476,51 +485,16 @@ void KGoldrunner::setupActions()
 
     // Two-handed KB controls and alternate one-handed controls for the hero.
 
-    KAction* moveUp = actionCollection()->addAction ("move_up");
-    moveUp->setText (i18n ("Move Up"));
-    moveUp->setShortcut (Qt::Key_Up);
-    connect (moveUp, SIGNAL (triggered (bool)), this, SLOT (goUp()));
+    kbMapper = new QSignalMapper (this);
+    connect (kbMapper, SIGNAL (mapped (int)), game, SLOT(kbControl (int)));
 
-    KAction* moveRight = actionCollection()->addAction ("move_right");
-    moveRight->setText (i18n ("Move Right"));
-    moveRight->setShortcut (Qt::Key_Right);
-    connect (moveRight, SIGNAL (triggered (bool)), this, SLOT (goR()));
-
-    KAction* moveDown = actionCollection()->addAction ("move_down");
-    moveDown->setText (i18n ("Move Down"));
-    moveDown->setShortcut (Qt::Key_Down);
-    connect (moveDown, SIGNAL (triggered (bool)), this, SLOT (goDown()));
-
-    KAction* moveLeft = actionCollection()->addAction ("move_left");
-    moveLeft->setText (i18n ("Move Left"));
-    moveLeft->setShortcut (Qt::Key_Left);
-    connect (moveLeft, SIGNAL (triggered (bool)), this, SLOT (goL()));
-
-    KAction* stop = actionCollection()->addAction ("stop");
-    stop->setText (i18n ("Stop"));
-    stop->setShortcut (Qt::Key_Space);
-    connect (stop, SIGNAL (triggered (bool)), this, SLOT (stop()));
-
-    KAction* digRight = actionCollection()->addAction ("dig_right");
-    digRight->setText (i18n ("Dig Right"));
-    digRight->setShortcut (Qt::Key_C);
-    connect (digRight, SIGNAL (triggered (bool)), this, SLOT (digR()));
-
-    KAction* digLeft = actionCollection()->addAction ("dig_left");
-    digLeft->setText (i18n ("Dig Left"));
-    digLeft->setShortcut (Qt::Key_Z);
-    connect (digLeft, SIGNAL (triggered (bool)), this, SLOT (digL()));
-
-    // Plug actions into the gui, or accelerators will not work (KDE4)
-    addAction (moveUp);
-    addAction (moveDown);
-    addAction (moveLeft);
-    addAction (moveRight);
-    addAction (digLeft);
-    addAction (digRight);
-    addAction (stop);
-
-    setupEditToolbarActions();			// Uses pixmaps from "view".
+    kbControl ("stop",       i18n ("Stop"),       Qt::Key_Space, STAND);
+    kbControl ("move_right", i18n ("Move Right"), Qt::Key_Right, RIGHT);
+    kbControl ("move_left",  i18n ("Move Left"),  Qt::Key_Left,  LEFT);
+    kbControl ("move_up",    i18n ("Move Up"),    Qt::Key_Up,    UP);
+    kbControl ("move_down",  i18n ("Move Down"),  Qt::Key_Down,  DOWN);
+    kbControl ("dig_right",  i18n ("Dig Right"),  Qt::Key_C,     DIG_RIGHT);
+    kbControl ("dig_left",   i18n ("Dig Left"),   Qt::Key_Z,     DIG_LEFT);
 
     // Alternate one-handed controls.  Set up in "kgoldrunnerui.rc".
 
@@ -531,6 +505,8 @@ void KGoldrunner::setupActions()
     // Key_Space, "stop" (as above)
     // Key_O, "dig_right"
     // Key_U, "dig_left"
+
+    setupEditToolbarActions();			// Uses pixmaps from "view".
 
     // Authors' debugging aids, effective when Pause is hit.  Options include
     // stepping through the animation, toggling a debug patch or log messages
@@ -619,6 +595,20 @@ void KGoldrunner::setupActions()
     showEnemy6->setShortcut (Qt::Key_6);
     connect (showEnemy6, SIGNAL (triggered (bool)), this, SLOT (showEnemy6()));
     addAction (showEnemy6);
+}
+
+void KGoldrunner::kbControl (const QString & name, const QString & text,
+                             const QKeySequence & shortcut, const int dirn)
+{
+    // Create an action for keyboard control of KGoldrunner and connect it to
+    // slot game->kbControl(int), via kbMapper and mapping-code = direction.
+
+    KAction * a = actionCollection()->addAction (name);
+    a->setText (text);
+    a->setShortcut (shortcut);
+    connect (a, SIGNAL (triggered (bool)), kbMapper, SLOT (map()));
+    kbMapper->setMapping (a, dirn);
+    addAction (a);
 }
 
 void KGoldrunner::viewFullScreen (bool activation)
@@ -768,6 +758,17 @@ void KGoldrunner::adjustHintAction (bool hintAvailable)
     }
 }
 
+void KGoldrunner::setToggle (const char * actionName, const bool onOff)
+{
+    ((KToggleAction *) ACTION (actionName))->setChecked (onOff);
+}
+
+
+void KGoldrunner::setAvail (const char * actionName, const bool onOff)
+{
+    ((KAction *) ACTION (actionName))->setEnabled (onOff);
+}
+
 void KGoldrunner::markRuleType (char ruleType)
 {
     if (ruleType == 'T')
@@ -822,7 +823,7 @@ void KGoldrunner::setEditIcon (const QString & actionName, const char iconType)
 
 void KGoldrunner::stopStart()
 {
-    if (! (KGrObject::frozen)) {
+    if (! (game->isFrozen())) {
         game->freeze();
     }
     else {
@@ -881,16 +882,6 @@ void KGoldrunner::setKGrRules()
     // KGrFigure::reappearAtTop = false;
     // KGrFigure::searchStrategy = MEDIUM;
 }
-
-// Local slots for hero control keys.
-
-void KGoldrunner::goUp()		{setKey (KB_UP);}
-void KGoldrunner::goR()			{setKey (KB_RIGHT);}
-void KGoldrunner::goDown()		{setKey (KB_DOWN);}
-void KGoldrunner::goL()			{setKey (KB_LEFT);}
-void KGoldrunner::stop()		{setKey (KB_STOP);}
-void KGoldrunner::digR()		{setKey (KB_DIGRIGHT);}
-void KGoldrunner::digL()		{setKey (KB_DIGLEFT);}
 
 // Local slots for authors' debugging aids.
 
@@ -954,7 +945,7 @@ void KGoldrunner::optionsConfigureKeys()
     kDebug() << "Update Pause/Resume message ...";
     pauseKeys = myPause->shortcut().toString(QKeySequence::NativeText);
     pauseKeys = pauseKeys.replace (';', "\" " + i18n ("or") + " \"");
-    gameFreeze (KGrObject::frozen);	// Refresh the status bar text.
+    gameFreeze (game->isFrozen());	// Refresh the status bar text.
 }
 
 // void KGoldrunner::optionsConfigureToolbars()
@@ -1072,49 +1063,6 @@ bool KGoldrunner::queryClose()
     // Force compile IDW bool cannotContinue = true;
     // Force compile IDW game->saveOK (cannotContinue);
     return (true);
-}
-
-void KGoldrunner::setKey (KBAction movement)
-{
-    if (game->inEditMode()) return;
-
-    // Using keyboard control can automatically disable mouse control.
-    if (game->inMouseMode()) {
-        // Halt the game while a message is displayed.
-        game->setMessageFreeze (true);
-
-        switch (KMessageBox::questionYesNo (this, 
-                i18n ("You have pressed a key that can be used to move the "
-                "Hero. Do you want to switch automatically to keyboard "
-                "control? Mouse control is easier to use in the long term "
-                "- like riding a bike rather than walking!"),
-                i18n ("Switch to Keyboard Mode"),
-                KGuiItem (i18n ("Switch to &Keyboard Mode")),
-                KGuiItem (i18n ("Stay in &Mouse Mode")),
-                i18n ("Keyboard Mode")))
-        {
-        case KMessageBox::Yes: 
-            game->setMouseMode (false);	// Set internal mouse mode OFF.
-            setMouse->setChecked (false);	// Adjust the Settings menu.
-            setKeyboard->setChecked (true);
-            break;
-        case KMessageBox::No: 
-            break;
-        }
-
-        // Unfreeze the game, but only if it was previously unfrozen.
-        game->setMessageFreeze (false);
-
-        if (game->inMouseMode())
-            return;                    		// Stay in Mouse Mode.
-    }
-
-    if (game->getLevel() != 0)
-    {
-        // OBSOLESCENT - 9/1/09 if (! hero->started)	// Start when first movement
-            game->startPlaying();			// key is pressed ...
-        game->heroAction (movement);
-    }
 }
 
 /******************************************************************************/

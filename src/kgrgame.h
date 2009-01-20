@@ -43,8 +43,8 @@ Sets up games and levels in KGoldrunner and controls the play.
 class KDialog;
 
 class KGrObject;
-// OBSOLESCENT - 9/1/09 class KGrHero;
-class KGrEnemy;
+// OBSOLESCENT - 09/1/09 class KGrHero;
+// OBSOLESCENT - 18/1/09 class KGrEnemy;
 class KGrCollection;
 class KGrSoundBank;
 class KGrEditor;
@@ -54,8 +54,8 @@ class KGrGame : public QObject
 {
 Q_OBJECT
 public:
-    KGrGame (KGrCanvas * theView, const QString &theSystemDir,
-                                  const QString &theUserDir);
+    KGrGame (KGrCanvas * theView,
+             const QString & theSystemDir, const QString & theUserDir);
     ~KGrGame();
 
     bool initCollections();
@@ -80,7 +80,11 @@ public:
 
     QString getDirectory (Owner o);
 
+    inline bool isFrozen() { return gameFrozen; }
+
 public slots:
+    void kbControl (int dirn); // xxxxxxxxxxxxxx
+
     void gameActions (int action);
     void editToolbarActions (int action);
 
@@ -128,6 +132,10 @@ signals:
     void gameFreeze (bool);		// Do visual feedback in the GUI.
 
     void quitGame();			// Used for Quit option in Quick Start.
+
+    // Used to set/clear toggle actions and enable/disable actions.
+    void setToggle (const char * actionName, const bool onOff);
+    void setAvail  (const char * actionName, const bool onOff);
 
 private:
     KDialog * qs;			// Pointer to Quick Start dialog box.
@@ -186,20 +194,24 @@ private:
     long			score;		// Current score.
     long			startScore;	// Score at start of level.
 
-    // OBSOLESCENT - 9/1/09 KGrHero *			hero;		// The HERO figure !!  Yay !!!
+    // OBSOLESCENT - 09/1/09 KGrHero *			hero;		// The HERO figure !!  Yay !!!
     int				startI, startJ;	// The hero's starting position.
 
-    QList<KGrEnemy *>		enemies;	// The list of enemies.
-    int				enemyCount;	// How many enemies.
-    KGrEnemy *			enemy;		// One of the enemies.
+    // OBSOLESCENT - 18/1/09 QList<KGrEnemy *>		enemies;	// The list of enemies.
+    // OBSOLESCENT - 18/1/09 int				enemyCount;	// How many enemies.
+    // OBSOLESCENT - 18/1/09 KGrEnemy *			enemy;		// One of the enemies.
 
     int				nuggets;	// How many gold nuggets.
 
     bool			newLevel;	// Next level will be a new one.
     bool			loading;	// Stop input until it's loaded.
 
+    bool			gameFrozen;	// Game stopped.
     bool			modalFreeze;	// Stop game during dialog.
     bool			messageFreeze;	// Stop game during message.
+
+    bool                        gameLogging;	// Do logging printout (debug).
+    bool                        bugFixed;	// Apply bug fix code (debug).
 
     QTimer *			mouseSampler;	// Timer for mouse tracking.
     QTimer *			dyingTimer;	// For pause when the hero dies.

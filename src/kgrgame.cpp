@@ -12,8 +12,8 @@
 
 #include "kgrconsts.h"
 #include "kgrobject.h"
-// #include "kgrfigure.h" // OBSOLESCENT - 9/1/09
-#include "kgrrunner.h"
+// #include "kgrfigure.h" // OBSOLESCENT - 09/1/09
+// #include "kgrrunner.h" // OBSOLESCENT - 18/1/09
 #include "kgrcanvas.h"
 #include "kgrdialog.h"
 #include "kgrsoundbank.h"
@@ -56,14 +56,12 @@
 
 #include "kgrrulebook.h"
 
-// Moved this to kgrconsts.h, Ian W. 31 May 08 // #define ENABLE_SOUND_SUPPORT
-
 /******************************************************************************/
 /***********************    KGOLDRUNNER GAME CLASS    *************************/
 /******************************************************************************/
 
 KGrGame::KGrGame (KGrCanvas * theView, 
-                const QString &theSystemDir, const QString &theUserDir)
+                  const QString & theSystemDir, const QString & theUserDir)
         : 
 	QObject (theView),	// Make sure game is destroyed when view closes.
         view (theView),
@@ -87,12 +85,16 @@ KGrGame::KGrGame (KGrCanvas * theView,
 
     setBlankLevel (true);		// Fill the playfield with blank walls.
 
-    enemy = NULL;
+    // OBSOLESCENT - 18/1/09 enemy = NULL;
     newLevel = true;			// Next level will be a new one.
     loading  = true;			// Stop input until it is loaded.
 
+    gameFrozen = true;
     modalFreeze = false;
     messageFreeze = false;
+
+    gameLogging = false;
+    bugFixed = false;
 
 #ifdef ENABLE_SOUND_SUPPORT
     effects = new KGrSoundBank(8);
@@ -383,7 +385,7 @@ void KGrGame::herosDead()
 	effects->play (fx[DeathSound]);
         // Still some life left, so PAUSE and then re-start the level.
         emit showLives (lives);
-        KGrObject::frozen = true;	// Freeze the animation and let
+        gameFrozen = true;	// Freeze the animation and let
         dyingTimer->setSingleShot (true);
         dyingTimer->start (1500);	// the player see what happened.
         view->fadeOut();
@@ -412,7 +414,7 @@ void KGrGame::herosDead()
         }
 
         // Game completely over: display the "ENDE" screen.
-        enemyCount = 0;
+        // OBSOLESCENT - 18/1/09 enemyCount = 0;
         //todo enemies.clear();	// Stop the enemies catching the hero again ...
         // while (!enemies.isEmpty())
                 // delete enemies.takeFirst(); // OBSOLETE - 9/1/09
@@ -431,10 +433,10 @@ void KGrGame::finalBreath()
     // Fix bug 95202:	Avoid re-starting if the player selected
     //			edit mode before the 1.5 seconds were up.
     if (! editMode) {
-        enemyCount = 0;		// Hero is dead: re-start the level.
+        // OBSOLESCENT - 18/1/09 enemyCount = 0;		// Hero is dead: re-start the level.
         loadLevel (level);
     }
-    KGrObject::frozen = false;	// Unfreeze the game, but don't move yet.
+    gameFrozen = false;	// Unfreeze the game, but don't move yet.
 }
 
 void KGrGame::showHiddenLadders()
@@ -444,8 +446,9 @@ void KGrGame::showHiddenLadders()
     int i, j;
     for (i = 1; i < 21; i++)
         for (j = 1; j < 29; j++)
-            if (playfield[j][i]->whatIam() == HLADDER)
-                ((KGrHladder *)playfield[j][i])->showLadder();
+        ; // OBSOLESCENT - 20/1/09 Need to compile after kgrobject.cpp removed.
+            // if (playfield[j][i]->whatIam() == HLADDER)
+                // ((KGrHladder *)playfield[j][i])->showLadder();
     initSearchMatrix();
 }
         
@@ -480,7 +483,7 @@ void KGrGame::goUpOneLevel()
         emit showLevel (level);
     }
 
-    enemyCount = 0;
+    // OBSOLESCENT - 18/1/09 enemyCount = 0;
     //enemies.clear();
     // while (!enemies.isEmpty()) // OBSOLETE - 9/1/09
         // delete enemies.takeFirst();
@@ -503,9 +506,9 @@ void KGrGame::loseNugget()
     // return (hero);		// Return a pointer to the hero.
 // }
 
-int KGrGame::getLevel()		// Return the current game-level.
+void KGrGame::setMouseMode (bool on_off)
 {
-    return (level);
+    mouseMode = on_off;		// Set mouse mode on or off.
 }
 
 bool KGrGame::inMouseMode()
@@ -523,11 +526,6 @@ bool KGrGame::isLoading()
     return (loading);		// Return true if a level is being loaded.
 }
 
-void KGrGame::setMouseMode (bool on_off)
-{
-    mouseMode = on_off;		// Set Mouse OR keyboard control.
-}
-
 void KGrGame::setPlaySounds (bool on_off)
 {
     KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
@@ -542,7 +540,7 @@ void KGrGame::freeze()
     if ((! modalFreeze) && (! messageFreeze)) {
         emit gameFreeze (true);	// Do visual feedback in the GUI.
     }
-    KGrObject::frozen = true;	// Halt the game, by blocking all timer events.
+    gameFrozen = true;	// Halt the game, by blocking all timer events.
 }
 
 void KGrGame::unfreeze()
@@ -550,7 +548,7 @@ void KGrGame::unfreeze()
     if ((! modalFreeze) && (! messageFreeze)) {
         emit gameFreeze (false);// Do visual feedback in the GUI.
     }
-    KGrObject::frozen = false;	// Restart the game.  Because frozen == false,
+    gameFrozen = false;	// Restart the game.  Because frozen == false,
     restart();			// the game goes on running after the next step.
 }
 
@@ -558,7 +556,7 @@ void KGrGame::setMessageFreeze (bool on_off)
 {
     if (on_off) {		// Freeze the game action during a message.
         messageFreeze = false;
-        if (! KGrObject::frozen) {
+        if (! gameFrozen) {
             messageFreeze = true;
             freeze();
         }
@@ -573,33 +571,36 @@ void KGrGame::setMessageFreeze (bool on_off)
 
 void KGrGame::setBlankLevel (bool playable)
 {
+    // OBSOLESCENT - 20/1/09 KGrLevelGrid replaces playfield[][].
+    return; // Don't reference playfield[][].
+
     for (int j = 0; j < 20; j++)
         for (int i = 0; i < 28; i++) {
             if (playable) {
-                playfield[i+1][j+1] = new KGrFree (FREE, i+1, j+1, view);
+                // playfield[i+1][j+1] = new KGrFree (FREE, i+1, j+1, view);
             }
             else {
-                playfield[i+1][j+1] = new KGrEditable (FREE);
+                // playfield[i+1][j+1] = new KGrEditable (FREE);
                 view->paintCell (i+1, j+1, FREE);
             }
 	    playfield[i+1][j+1]->setParent (this); // Delete if KGrGame dies.
             editObjArray[i+1][j+1] = FREE;
         }
     for (int j = 0; j < 30; j++) {
-        playfield[j][0] = new KGrObject (BETON);
+        // playfield[j][0] = new KGrObject (BETON);
 	playfield[j][0]->setParent (this);	// Delete at end of KGrGame.
         editObjArray[j][0] = BETON;
 
-        playfield[j][21] = new KGrObject (BETON);
+        // playfield[j][21] = new KGrObject (BETON);
 	playfield[j][21]->setParent (this);	// Delete at end of KGrGame.
         editObjArray[j][21] = BETON;
     }
     for (int i = 0; i < 22; i++) {
-        playfield[0][i] = new KGrObject (BETON);
+        // playfield[0][i] = new KGrObject (BETON);
 	playfield[0][i]->setParent (this);	// Delete at end of KGrGame.
         editObjArray[0][i] = BETON;
 
-        playfield[29][i] = new KGrObject (BETON);
+        // playfield[29][i] = new KGrObject (BETON);
 	playfield[29][i]->setParent (this);	// Delete at end of KGrGame.
         editObjArray[29][i] = BETON;
     }
@@ -637,7 +638,7 @@ void KGrGame::newGame (const int lev, const int gameIndex)
     emit showScore (score);
     emit showLevel (level);
 
-    enemyCount = 0;
+    // OBSOLESCENT - 18/1/09 enemyCount = 0;
 
     //enemies.clear();
     // OBSOLESCENT - 9/1/09 while (!enemies.isEmpty())
@@ -713,7 +714,7 @@ int KGrGame::loadLevel (int levelNo)
     view->setLevel (levelNo);		// Switch and render background if reqd.
     view->fadeIn();			// Then run the fade-in animation.
     nuggets = 0;
-    enemyCount=0;
+    // OBSOLESCENT - 18/1/09 enemyCount=0;
     startScore = score;			// The score we will save, if asked.
 
     // TESTING
@@ -740,28 +741,7 @@ int KGrGame::loadLevel (int levelNo)
 
     levelPlayer = new KGrLevelPlayer (this, testGame, testData); // TESTING
 
-    connect (levelPlayer, SIGNAL (paintCell (int, int, char, int)),
-             view,        SLOT   (paintCell (int, int, char, int)));
-    connect (levelPlayer, SIGNAL (setSpriteType (int, char)),
-             view,        SLOT   (setSpriteType (int, char)));
-    // connect (levelPlayer, SIGNAL (makeEnemySprite (int, int, int)), // OBSOLESCENT - 11/1/09
-             // view,        SLOT   (makeEnemySprite (int, int, int)));
-
-    levelPlayer->init ();
-
-    KGrNewHero * newHero = levelPlayer->getHero();
-    connect (newHero,  SIGNAL (startAnimation (int, int, int, int,
-                                               Direction, AnimationType)),
-                 view, SLOT   (startAnimation (int, int, int, int,
-                                               Direction, AnimationType)));
-
-    QList<KGrNewEnemy *> enemyList = levelPlayer->getEnemies();
-    foreach (KGrNewEnemy * en, enemyList) {
-        connect (en,   SIGNAL (startAnimation (int, int, int, int,
-                                               Direction, AnimationType)),
-                 view, SLOT   (startAnimation (int, int, int, int,
-                                               Direction, AnimationType)));
-    }
+    levelPlayer->init (view);
 
     // OBSOLESCENT - 9/1/09
     int i, j;
@@ -789,11 +769,11 @@ int KGrGame::loadLevel (int levelNo)
 
     if (newLevel) {
         // OBSOLESCENT - 9/1/09 hero->setEnemyList (&enemies);
-        QListIterator<KGrEnemy *> i (enemies);
-        while (i.hasNext()) {
+        // QListIterator<KGrEnemy *> i (enemies);
+        // while (i.hasNext()) {
             // OBSOLESCENT - 9/1/09 KGrEnemy * enemy = i.next();
             // OBSOLESCENT - 9/1/09 enemy->setEnemyList (&enemies);
-        }
+        // }
     }
 
     // OBSOLESCENT - 9/1/09 hero->setNuggets (nuggets);
@@ -891,24 +871,25 @@ bool KGrGame::readLevelData (int levelNo, KGrLevelData & d)
 
 void KGrGame::changeObject (unsigned char kind, int i, int j)
 {
+    // OBSOLESCENT - 20/1/09 Done in KGrLevelGrid now.
     delete playfield[i][j];
     switch (kind) {
-    case FREE:    createObject (new KGrFree (FREE,i,j,view),FREE,i,j);break;
-    case LADDER:  createObject (new KGrObject (LADDER),LADDER,i,j);break;
-    case HLADDER: createObject (new KGrHladder (HLADDER,i,j,view),FREE,i,j);break;
-    case BRICK:   createObject (new KGrBrick (BRICK,i,j,view),BRICK,i,j);break;
-    case BETON:   createObject (new KGrObject (BETON),BETON,i,j);break;
-    case FBRICK:  createObject (new KGrObject (FBRICK),BRICK,i,j);break;
-    case POLE:    createObject (new KGrObject (POLE),POLE,i,j);break;
-    case NUGGET:  createObject (new KGrFree (NUGGET,i,j,view),NUGGET,i,j);
+    case FREE:    break; // createObject (new KGrFree (FREE,i,j,view),FREE,i,j);break;
+    case LADDER:  break; // createObject (new KGrObject (LADDER),LADDER,i,j);break;
+    case HLADDER: break; // createObject (new KGrHladder (HLADDER,i,j,view),FREE,i,j);break;
+    case BRICK:   break; // createObject (new KGrBrick (BRICK,i,j,view),BRICK,i,j);break;
+    case BETON:   break; // createObject (new KGrObject (BETON),BETON,i,j);break;
+    case FBRICK:  break; // createObject (new KGrObject (FBRICK),BRICK,i,j);break;
+    case POLE:    break; // createObject (new KGrObject (POLE),POLE,i,j);break;
+    case NUGGET:  break; // createObject (new KGrFree (NUGGET,i,j,view),NUGGET,i,j);
                                   nuggets++;break;
-    case HERO:    createObject (new KGrFree (FREE,i,j,view),FREE,i,j);
+    case HERO:    // createObject (new KGrFree (FREE,i,j,view),FREE,i,j);
         // OBSOLESCENT - 9/1/09 hero->init (i,j);
         startI = i; startJ = j;
         // OBSOLESCENT - 9/1/09 hero->started = false;
         // OBSOLESCENT - 9/1/09 hero->showFigure();
         break;
-    case ENEMY:   createObject (new KGrFree (FREE,i,j,view),FREE,i,j);
+    case ENEMY:   // createObject (new KGrFree (FREE,i,j,view),FREE,i,j);
         if (newLevel) {
             // OBSOLESCENT - 9/1/09
             // // Starting a level for the first time.
@@ -930,7 +911,7 @@ void KGrGame::changeObject (unsigned char kind, int i, int j)
         }
         // enemy->showFigure();
         break;
-    default :  createObject (new KGrBrick (BRICK,i,j,view),BRICK,i,j);break;
+    default :  break; // createObject (new KGrBrick (BRICK,i,j,view),BRICK,i,j);break;
     }
 }
 
@@ -967,43 +948,44 @@ void KGrGame::setTimings()
 
 void KGrGame::initSearchMatrix()
 {
-    // Called at start of level and also when hidden ladders appear.
-    int i, j;
-
-    for (i = 1; i < 21; i++) {
-        for (j = 1; j < 29; j++) {
-            // If on ladder, can walk L, R, U or D.
-            if (playfield[j][i]->whatIam() == LADDER)
-                playfield[j][i]->searchValue = CANWALKLEFT + CANWALKRIGHT +
-                                              CANWALKUP + CANWALKDOWN;
-            else
-                // If on solid ground, can walk L or R.
-                if ((playfield[j][i+1]->whatIam() == BRICK) ||
-                    (playfield[j][i+1]->whatIam() == HOLE) ||
-                    (playfield[j][i+1]->whatIam() == USEDHOLE) ||
-                    (playfield[j][i+1]->whatIam() == BETON))
-                    playfield[j][i]->searchValue = CANWALKLEFT + CANWALKRIGHT;
-                else
-                    // If on pole or top of ladder, can walk L, R or D.
-                    if ((playfield[j][i]->whatIam() == POLE) ||
-                        (playfield[j][i+1]->whatIam() == LADDER))
-                        playfield[j][i]->searchValue = CANWALKLEFT +
-                                              CANWALKRIGHT + CANWALKDOWN;
-                    else
-                        // Otherwise, gravity takes over ...
-                        playfield[j][i]->searchValue = CANWALKDOWN;
-      
-            // Clear corresponding bits if there are solids to L, R, U or D.
-            if (playfield[j][i-1]->blocker)
-                playfield[j][i]->searchValue &= ~CANWALKUP;
-            if (playfield[j-1][i]->blocker)
-                playfield[j][i]->searchValue &= ~CANWALKLEFT;
-            if (playfield[j+1][i]->blocker)
-                playfield[j][i]->searchValue &= ~CANWALKRIGHT;
-            if (playfield[j][i+1]->blocker)
-                playfield[j][i]->searchValue &= ~CANWALKDOWN;
-        }
-    }
+    // OBSOLESCENT - 20/1/09 Should be replaced by KGrLevelGrid object.
+    // // Called at start of level and also when hidden ladders appear.
+    // int i, j;
+// 
+    // for (i = 1; i < 21; i++) {
+        // for (j = 1; j < 29; j++) {
+            // // If on ladder, can walk L, R, U or D.
+            // if (playfield[j][i]->whatIam() == LADDER)
+                // playfield[j][i]->searchValue = CANWALKLEFT + CANWALKRIGHT +
+                                              // CANWALKUP + CANWALKDOWN;
+            // else
+                // // If on solid ground, can walk L or R.
+                // if ((playfield[j][i+1]->whatIam() == BRICK) ||
+                    // (playfield[j][i+1]->whatIam() == HOLE) ||
+                    // (playfield[j][i+1]->whatIam() == USEDHOLE) ||
+                    // (playfield[j][i+1]->whatIam() == BETON))
+                    // playfield[j][i]->searchValue = CANWALKLEFT + CANWALKRIGHT;
+                // else
+                    // // If on pole or top of ladder, can walk L, R or D.
+                    // if ((playfield[j][i]->whatIam() == POLE) ||
+                        // (playfield[j][i+1]->whatIam() == LADDER))
+                        // playfield[j][i]->searchValue = CANWALKLEFT +
+                                              // CANWALKRIGHT + CANWALKDOWN;
+                    // else
+                        // // Otherwise, gravity takes over ...
+                        // playfield[j][i]->searchValue = CANWALKDOWN;
+     //  
+            // // Clear corresponding bits if there are solids to L, R, U or D.
+            // if (playfield[j][i-1]->blocker)
+                // playfield[j][i]->searchValue &= ~CANWALKUP;
+            // if (playfield[j-1][i]->blocker)
+                // playfield[j][i]->searchValue &= ~CANWALKLEFT;
+            // if (playfield[j+1][i]->blocker)
+                // playfield[j][i]->searchValue &= ~CANWALKRIGHT;
+            // if (playfield[j][i+1]->blocker)
+                // playfield[j][i]->searchValue &= ~CANWALKDOWN;
+        // }
+    // }
 }
         
 void KGrGame::startPlaying() {
@@ -1080,7 +1062,11 @@ void KGrGame::readMousePos()
     if (loading) return;
 
     // If game control is currently by keyboard, ignore the mouse.
-    if ((! mouseMode) && (! editMode)) return;
+    if ((! mouseMode) && (! editMode)) {
+        if (gameFrozen) return;	// If game is stopped, do nothing.
+        levelPlayer->tick();
+        return;
+    }
 
     p = view->getMousePos();
     i = p.x(); j = p.y();
@@ -1102,18 +1088,15 @@ void KGrGame::readMousePos()
     }
     else {
         // Playing - if  the level has started, control the hero.
-        if (KGrObject::frozen) return;	// If game is stopped, do nothing.
+        if (gameFrozen) return;	// If game is stopped, do nothing.
 
-        // OBSOLESCENT - 7/1/09 hero->setDirection (i, j);
-
-        // Start playing when the mouse moves off the hero.
-        // OBSOLESCENT - 7/1/09 if ((! hero->started) && ((i != startI) || (j != startJ))) {
-            // OBSOLESCENT - 7/1/09 startPlaying();
-        // OBSOLESCENT - 7/1/09 }
         if (levelPlayer) { // OBSOLESCENT - 7/1/09 - Should be sure it exists.
-            levelPlayer->setDirection (i, j);
+            levelPlayer->setTarget (i, j);
         }
     }
+
+    if (gameFrozen) return;	// If game is stopped, do nothing.
+    levelPlayer->tick();
 }
 
 void KGrGame::doDig (int button) {
@@ -1123,7 +1106,7 @@ void KGrGame::doDig (int button) {
     if (! mouseMode) return;
 
     // If loading a level for play or editing, ignore mouse-button input.
-    if ((! loading) && (! KGrObject::frozen)) {
+    if ((! loading) && (! gameFrozen)) {
         // OBSOLESCENT - 7/1/09 }
         // if (! hero->started) {
             // startPlaying();	// If first player-input, start playing.
@@ -1134,6 +1117,54 @@ void KGrGame::doDig (int button) {
         case Qt::RightButton:	break; // hero->digRight(); break;
         default:		break;
         }
+    }
+}
+
+void KGrGame::kbControl (int dirn)
+{
+    kDebug() << "Keystroke setting direction" << dirn;
+    if (editMode) return;
+
+    // Using keyboard control can automatically disable mouse control.
+    if (mouseMode) {
+        // Halt the game while a message is displayed.
+        setMessageFreeze (true);
+
+        switch (KMessageBox::questionYesNo (view, 
+                i18n ("You have pressed a key that can be used to move the "
+                "Hero. Do you want to switch automatically to keyboard "
+                "control? Mouse control is easier to use in the long term "
+                "- like riding a bike rather than walking!"),
+                i18n ("Switch to Keyboard Mode"),
+                KGuiItem (i18n ("Switch to &Keyboard Mode")),
+                KGuiItem (i18n ("Stay in &Mouse Mode")),
+                i18n ("Keyboard Mode")))
+        {
+        case KMessageBox::Yes: 
+            mouseMode = false;				// Set mouse mode OFF.
+            // TODO - Connect these signals in kgoldrunner.cpp somewhere.
+            emit setToggle ("mouse_mode", false);	// Adjust Settings menu.
+            emit setToggle ("keyboard_mode", true);
+            break;
+        case KMessageBox::No: 
+            break;
+        }
+
+        // Unfreeze the game, but only if it was previously unfrozen.
+        setMessageFreeze (false);
+
+        if (mouseMode)
+            return;                    		// Stay in Mouse Mode.
+    }
+
+    // if (level != 0)
+    // {
+        // OBSOLESCENT - 9/1/09 if (! hero->started)	// Start when first movement
+        // startPlaying();			// key is pressed ...
+        // TODO - Pass direction to the hero heroAction (movement);
+    // }
+    if (levelPlayer) {
+        levelPlayer->setDirection ((Direction) dirn);
     }
 }
 
@@ -1269,7 +1300,7 @@ void KGrGame::loadGame()		// Re-load game, score and level.
 
     // Halt the game during the loadGame() dialog.
     modalFreeze = false;
-    if (!KGrObject::frozen) {
+    if (!gameFrozen) {
         modalFreeze = true;
         freeze();
     }
@@ -1692,7 +1723,7 @@ void KGrGame::showHighScores()
 
 void KGrGame::doStep()
 {
-    if (KGrObject::frozen) {	// The game must have been halted.
+    if (gameFrozen) {	// The game must have been halted.
         restart();		// Do one step and halt again.
     }
 }
@@ -1700,14 +1731,14 @@ void KGrGame::doStep()
 void KGrGame::restart()
 {
     bool temp;
-    int i,j;
+    // int i,j;
 
     if (editMode)		// Can't move figures when in Edit Mode.
         return;
 
-    temp = KGrObject::frozen;
+    temp = gameFrozen;
 
-    KGrObject::frozen = false;	// Temporarily restart the game, by re-running
+    gameFrozen = false;	// Temporarily restart the game, by re-running
                                 // any timer events that have been blocked.
 
     // OBSOLESCENT - 7/1/09
@@ -1721,22 +1752,23 @@ void KGrGame::restart()
         // enemy->doStep();	// change the "current()" of the "enemies" list.
     // }
 
-    for (i = 1; i <= 28; i++)
-        for (j = 1; j <= 20; j++) {
-            if ((playfield[i][j]->whatIam() == HOLE) ||
-                (playfield[i][j]->whatIam() == USEDHOLE) ||
-                (playfield[i][j]->whatIam() == BRICK))
-                ((KGrBrick *)playfield[i][j])->doStep();
-        }
+    // OBSOLESCENT - 20/1/09 Need to compile after kgrobject.cpp removed.
+    // for (i = 1; i <= 28; i++)
+        // for (j = 1; j <= 20; j++) {
+            // if ((playfield[i][j]->whatIam() == HOLE) ||
+                // (playfield[i][j]->whatIam() == USEDHOLE) ||
+                // (playfield[i][j]->whatIam() == BRICK))
+                // ((KGrBrick *)playfield[i][j])->doStep();
+        // }
 
-    KGrObject::frozen = temp;	// If frozen was true, halt again, which gives a
+    gameFrozen = temp;	// If frozen was true, halt again, which gives a
                                 // single-step effect, otherwise go on running.
 }
 
 void KGrGame::showFigurePositions()
 {
     // OBSOLESCENT - 7/1/09
-    if (KGrObject::frozen) {
+    if (gameFrozen) {
         // hero->showState ('p');
         // QListIterator<KGrEnemy *> i (enemies);
         // while (i.hasNext()) {
@@ -1749,7 +1781,7 @@ void KGrGame::showFigurePositions()
 void KGrGame::showHeroState()
 {
     // OBSOLESCENT - 7/1/09
-    if (KGrObject::frozen) {
+    if (gameFrozen) {
         // hero->showState ('s');
     }
 }
@@ -1757,7 +1789,7 @@ void KGrGame::showHeroState()
 void KGrGame::showEnemyState (int /* enemyId */)
 {
     // OBSOLESCENT - 7/1/09
-    if (KGrObject::frozen) {
+    if (gameFrozen) {
         // QListIterator<KGrEnemy *> i (enemies);
         // while (i.hasNext()) {
                 // KGrEnemy * enemy = i.next();
@@ -1772,35 +1804,36 @@ void KGrGame::showObjectState()
     int i, j;
     KGrObject * myObject;
 
-    if (KGrObject::frozen) {
+    if (gameFrozen) {
         p = view->getMousePos();
         i = p.x(); j = p.y();
         myObject = playfield[i][j];
-        switch (myObject->whatIam()) {
-            case BRICK:
-            case HOLE:
-            case USEDHOLE:
-                ((KGrBrick *)myObject)->showState (i, j); break;
-            default: myObject->showState (i, j); break;
-        }
+        // OBSOLESCENT - 20/1/09 Need to compile after kgrobject.cpp removed.
+        // switch (myObject->whatIam()) {
+            // case BRICK:
+            // case HOLE:
+            // case USEDHOLE:
+                // ((KGrBrick *)myObject)->showState (i, j); break;
+            // default: myObject->showState (i, j); break;
+        // }
     }
 }
 
 void KGrGame::bugFix()
 {
-    if (KGrObject::frozen) {		// Toggle a bug fix on/off dynamically.
-        KGrObject::bugFixed = (KGrObject::bugFixed) ? false : true;
-        printf ("%s", (KGrObject::bugFixed) ? "\n" : "");
-        printf (">>> Bug fix is %s\n", (KGrObject::bugFixed) ? "ON" : "OFF\n");
+    if (gameFrozen) {		// Toggle a bug fix on/off dynamically.
+        bugFixed = (bugFixed) ? false : true;
+        printf ("%s", (bugFixed) ? "\n" : "");
+        printf (">>> Bug fix is %s\n", (bugFixed) ? "ON" : "OFF\n");
     }
 }
 
 void KGrGame::startLogging()
 {
-    if (KGrObject::frozen) {		// Toggle logging on/off dynamically.
-        KGrObject::logging = (KGrObject::logging) ? false : true;
-        printf ("%s", (KGrObject::logging) ? "\n" : "");
-        printf (">>> Logging is %s\n", (KGrObject::logging) ? "ON" : "OFF\n");
+    if (gameFrozen) {		// Toggle logging on/off dynamically.
+        gameLogging = (gameLogging) ? false : true;
+        printf ("%s", (gameLogging) ? "\n" : "");
+        printf (">>> Logging is %s\n", (gameLogging) ? "ON" : "OFF\n");
     }
 }
 
@@ -1814,7 +1847,7 @@ int KGrGame::selectLevel (int action, int requestedLevel)
 
     // Halt the game during the dialog.
     modalFreeze = false;
-    if (! KGrObject::frozen) {
+    if (! gameFrozen) {
         modalFreeze = true;
         freeze();
     }

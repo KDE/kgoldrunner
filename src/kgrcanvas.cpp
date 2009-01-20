@@ -508,15 +508,25 @@ void KGrCanvas::setMousePos (int i, int j)
                                 topLeft.y() + j * imgH + imgH / 2)));
 }
 
-void KGrCanvas::setSpriteType (const int id, const char type)
+void KGrCanvas::animate ()
+{
+    heroSprite->animate();
+}
+
+void KGrCanvas::setSpriteType (const int id, const char type, int row, int col)
 {
     kDebug() << "id" << id << "sprite type" << type;
+
     // TODO - Improve and extend this code.
     if ((type == HERO) && (id == 0)) {
         if (! heroSprite) {
-            kDebug() << "Call makeHeroSprite (1, 1, RIGHTWALK1);";
-            makeHeroSprite (1, 1, RIGHTWALK1);
+            kDebug() << "Call makeHeroSprite (row, col, FALL1);" << row << col;
+            makeHeroSprite (row, col, FALL1);
         }
+    }
+    if (type == ENEMY) {
+        kDebug() << "Call makeEnemySprite (row, col, FALL1);" << row << col;
+        makeEnemySprite (row, col, FALL1);
     }
 }
 
@@ -536,18 +546,18 @@ void KGrCanvas::startAnimation (const int id, const int row, const int col,
     switch (dirn) {
     case RIGHT:
         dx    = +1;
-        frame = (type == RUN) ? RIGHTWALK1 : RIGHTCLIMB1;
+        frame = (type == RUN_R) ? RIGHTWALK1 : RIGHTCLIMB1;
         break;
     case LEFT:
         dx    = -1;
-        frame = (type == RUN) ? LEFTWALK1  : LEFTCLIMB1;
+        frame = (type == RUN_L) ? LEFTWALK1  : LEFTCLIMB1;
         break;
     case DOWN:
         dy = +1;
-        if (type == FALL) {
+        if ((type == FALL_R) || (type == FALL_L)) {
             nFrames = 1;
             // TODO - Work out which way to face the runner.
-            frame   = FALL1;
+            frame   = (type == FALL_R) ? FALL2 : FALL1;
         }
         else {
             nFrames = 2;
@@ -562,14 +572,18 @@ void KGrCanvas::startAnimation (const int id, const int row, const int col,
     case STAND:
         nFrames = 0; 
         // TODO - Work out which way to face the runner.
-        frame = (type == RUN) ? RIGHTWALK1 : RIGHTCLIMB1;
+        frame = FALL1; // (type == RUN) ? RIGHTWALK1 : RIGHTCLIMB1;
+        break;
+    default:
         break;
     }
+    kDebug() << "row col dirn dx dy frame" << row << col << dirn << dx << dy << frame;
     // TODO - runAnimation (int id, int row, int col, int frame,
                   // int nFrames, int dx, int dy, int dt);
     // TODO - Remove the following code.
     if (id == 0) {
-        moveHero (row * bgw, col * bgh, frame);
+        heroSprite->setAnimation ((row - 1) * bgw, (col - 1) * bgh, frame,
+                                  nFrames, dx, dy, dt);
     }
 }
 

@@ -22,6 +22,10 @@
 
 #include <stdio.h>
 
+// TODO - Remove compilation kludge (2 lines).
+#define speed 60
+#define HOLETIME 140
+
 KGrObject::KGrObject (char objType)
 {
     iamA = objType;

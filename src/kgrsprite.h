@@ -37,6 +37,9 @@ public:
     inline int currentFrame(){ return m_frame;}
     inline void setScale (double scale){ m_scale=scale;}
     inline double scale(){ return m_scale;}
+    void setAnimation (int x, int y, int startFrame, int nFrames,
+                       int dx, int dy, int dt);
+    void animate();
 
 private:
     QList<QPixmap> * m_frames;
@@ -45,6 +48,16 @@ private:
     QPoint m_loc;		// Location relative to top-left of playfield.
     int m_tlX;			// X co-ordinate of top-left.
     int m_tlY;			// Y co-ordinate of top-left.
+
+    bool m_stationary;
+    int  m_x;
+    int  m_y;
+    int  m_startFrame;
+    int  m_nFrames;
+    int  m_frameCtr;
+    int  m_dx;
+    int  m_dy;
+    int  m_dt;
 };
 
 #endif // KGRSPRITE_H

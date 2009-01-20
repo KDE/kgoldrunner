@@ -36,6 +36,7 @@ const int L_LEVEL       = 15;
 #include "kgrconsts.h"
 
 class QAction;
+class QSignalMapper;
 class KAction;
 class KToggleAction;
 class KToggleFullScreenAction;
@@ -70,6 +71,10 @@ public:
      * Used to indicate if the class initialised properly.
      */
     bool startedOK() {return (startupOK);}
+
+public slots:
+    void setToggle      (const char * actionName, const bool onOff);
+    void setAvail       (const char * actionName, const bool onOff);
 
 protected:
     /**
@@ -117,17 +122,6 @@ private slots:
     void setTradRules();
     void setKGrRules();
 
-    // Local slots for hero control keys.
-    void goUp();
-    void goR();
-    void goDown();
-    void goL();
-    void stop();
-    void digR();
-    void digL();
-
-    void setKey (KBAction movement);
-
     // Local slots for authors' debugging aids.
     void showEnemy0();
     void showEnemy1();
@@ -166,6 +160,10 @@ private:
     void setupEditToolbarActions();
     void setupThemes();
 
+    QSignalMapper * kbMapper;
+    void kbControl (const QString & name, const QString & text,
+                    const QKeySequence & shortcut, const int dirn);
+
 private:
     bool startupOK;
 
@@ -199,13 +197,14 @@ private:
 
     KToggleAction *	setSounds;	// enable/disable sound effects.
 
-    KGrHero *	hero;			// Pointer to the hero.
+    // OBSOLESCENT - 18/1/09 KGrHero *	hero;			// Pointer to the hero.
 
     // KToggleAction *	m_toolbarAction;
     // KToggleAction *	m_statusbarAction;
 
     KToolBar *		editToolbar;	// Toolbar for creating/editing levels.
     KToggleAction *     m_defaultEditAct;
+
 private slots:
     void freeSlot();			// Set editObj to Free Space.
     void edheroSlot();			// Set editObj to Hero.

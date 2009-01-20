@@ -18,18 +18,28 @@
 #include <KDebug>
 
 #include "kgrrunner.h"
+#include "kgrlevelplayer.h"
 #include "kgrlevelgrid.h"
 #include "kgrrulebook.h"
 
-KGrRunner::KGrRunner (KGrLevelGrid * pGrid, int i, int j, KGrRuleBook * pRules)
+KGrRunner::KGrRunner (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
+                      int i, int j, KGrRuleBook * pRules)
     :
-    QObject (pGrid),	// Destroy hero/enemy when the level-grid is destroyed.
-    grid    (pGrid),
-    rules   (pRules)
+    QObject     (pLevelPlayer),	// Destroy runner when level is destroyed.
+    levelPlayer (pLevelPlayer),
+    grid        (pGrid),
+    rules       (pRules),
+    gridI       (i),
+    gridJ       (j),
+
+    currDirection (STAND),
+    currAnimation (FALL_L)
 {
+    vector[X] = 0;
+    vector[Y] = 0;
+
     getRules();
-    gridX = i * pointsPerCell;
-    gridY = j * pointsPerCell;
+    pointCtr = 0;
 }
 
 KGrRunner::~KGrRunner()
@@ -43,69 +53,105 @@ void KGrRunner::getRules()
     kDebug() << "pointsPerCell" << pointsPerCell << "turnAnywhere" << turnAnywhere;
 }
 
-void KGrRunner::getLocation (int & row, int & col)
-{
-    row = gridX / pointsPerCell;
-    col = gridY / pointsPerCell;
-}
+// void KGrRunner::getLocation (int & row, int & col) TODO - Remove this.
+// {
+    // if (pointCtr < pointsPerCell) {
+        // row = gridI;
+        // col = gridJ;
+    // }
+    // else {
+        // row = gridI + vector [X];
+        // col = gridJ + vector [Y];
+    // }
+// }
 
 
-KGrNewHero::KGrNewHero (KGrLevelGrid * pGrid, int i, int j, KGrRuleBook * pRules)
+KGrHero::KGrHero (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
+                  int i, int j, KGrRuleBook * pRules)
     :
-    KGrRunner (pGrid, i, j, pRules)
+    KGrRunner (pLevelPlayer, pGrid, i, j, pRules)
 {
     kDebug() << "THE HERO IS BORN at" << i << j;
-    emit startAnimation (0, gridX / pointsPerCell, gridY / pointsPerCell,
-                         0, STAND, FALL);
 }
 
-KGrNewHero::~KGrNewHero()
+KGrHero::~KGrHero()
 {
 }
 
-void KGrNewHero::run (Direction dirn)
+// void KGrHero::setDirection (Direction dirn) TODO - Remove this.
+// {
+    // nextDirection = dirn;
+// }
+
+void KGrHero::run()
 {
-    char OK = grid->heroMoves (gridX / pointsPerCell, gridY / pointsPerCell);
-    if (! (OK & dirn)) {
-        dirn = (OK & STAND) ? STAND : DOWN;
+    if (pointCtr < pointsPerCell) {
+        pointCtr++;
+        return;
+    }
+    // TODO - Use nextDirection here, and set currDirection (at end?).
+    // TODO - Get KGrLevelPlayer to call setDirection, based on mouse position.
+    pointCtr = 0;
+    gridI    = gridI + vector [X];
+    gridJ    = gridJ + vector [Y];
+
+    Direction dirn = levelPlayer->getDirection (gridI, gridJ);
+
+    Flags OK  = grid->heroMoves (gridI, gridJ);
+    char cell = grid->cellType  (gridI, gridJ);
+    bool canStand = OK & dFlag [STAND];
+    kDebug() << "Direction" << dirn << "Flags" << OK << "at" << gridI << gridJ;
+
+    AnimationType anim = aType [dirn];
+    if (OK & dFlag [dirn]) {
+        if ((dirn == DOWN) && (! canStand)) {
+            anim = (currDirection == RIGHT) ? FALL_R : FALL_L;
+        }
+    }
+    else if (canStand) {
+        dirn = STAND;
+    }
+    else {
+        dirn = DOWN;
+        anim = (currDirection == RIGHT) ? FALL_R : FALL_L;
     }
 
-    AnimationType anim = FALL;
-    switch (dirn) {
-    case DOWN:
-        gridY++;
-        anim = CLIMB;
-        break;
-    case UP:
-        gridY--;
-        anim = CLIMB;
-        break;
-    case RIGHT:
-        gridX++;
-        anim = RUN;
-        break;
-    case LEFT:
-        gridX--;
-        anim = RUN;
-        break;
-    case STAND:
-        break;
+    if (dirn == STAND) {
+        anim = currAnimation;
     }
-    emit startAnimation (0, gridX / pointsPerCell, gridY / pointsPerCell,
-                         0, dirn, anim);
+
+    if (((anim == RUN_R) || (anim == RUN_L)) && (cell == POLE)) {
+        anim = (dirn == RIGHT) ? CLIMB_R : CLIMB_L;
+    }
+
+    if ((dirn == currDirection) && (anim == currAnimation)) {
+        // TODO - If dirn == STAND, no animation, else emit resynchAnimation().
+        if (dirn == STAND) {
+            return;
+        }
+    }
+
+    vector [X] = movement [dirn][X];
+    vector [Y] = movement [dirn][Y];
+
+    kDebug() << "New direction" << dirn << vector [X] << vector [Y] << gridI << gridJ;
+    kDebug() << "Sprite" << 0 << "Animate" << gridI << gridJ << "time" << 0 << "dirn" << dirn << "anim" << anim;
+
+    emit startAnimation (0, gridI, gridJ, 0, dirn, anim);
+    currAnimation = anim;
+    currDirection = dirn;
 }
 
 
-KGrNewEnemy::KGrNewEnemy (KGrLevelGrid * pGrid, int i, int j, int id, KGrRuleBook * pRules)
+KGrEnemy::KGrEnemy (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
+                    int i, int j, int id, KGrRuleBook * pRules)
     :
-    KGrRunner (pGrid, i, j, pRules)
+    KGrRunner (pLevelPlayer, pGrid, i, j, pRules)
 {
     kDebug() << "ENEMY" << id << "IS BORN at" << i << j;
-    emit startAnimation (id + 1, gridX / pointsPerCell, gridY / pointsPerCell,
-                         0, STAND, FALL);
 }
 
-KGrNewEnemy::~KGrNewEnemy()
+KGrEnemy::~KGrEnemy()
 {
 }
 

@@ -17,6 +17,7 @@
 
 #include <KDebug>
 
+#include "kgrcanvas.h"
 #include "kgrlevelplayer.h"
 #include "kgrrulebook.h"
 #include "kgrlevelgrid.h"
@@ -32,20 +33,23 @@ KGrLevelPlayer::KGrLevelPlayer (QObject      * parent,
     grid        (new KGrLevelGrid (this, theLevelData)),
     hero        (0),
     nuggets     (0),
+    pointer     (true),
     started     (false),
-    lastI       (1),
-    lastJ       (1)
+    targetI     (1),
+    targetJ     (1),
+    direction   (STAND)
 {
 }
 
 KGrLevelPlayer::~KGrLevelPlayer()
 {
+    // TODO - Do we need this delete?
     // while (! enemies.isEmpty()) {
         // delete enemies.takeFirst();
     // }
 }
 
-void KGrLevelPlayer::init ()
+void KGrLevelPlayer::init (KGrCanvas * view)
 {
     // Set the rules of this game.
     switch (gameData->rules) {
@@ -60,6 +64,13 @@ void KGrLevelPlayer::init ()
         break;
     }
     rules->printRules();
+
+    // Connect to code that paints grid cells and start-positions of sprites.
+    connect (this, SIGNAL (animation()), view, SLOT (animate()));
+    connect (this, SIGNAL (paintCell (int, int, char, int)),
+             view, SLOT   (paintCell (int, int, char, int)));
+    connect (this, SIGNAL (setSpriteType (int, char, int, int)),
+             view, SLOT   (setSpriteType (int, char, int, int)));
 
     // Show the layout of this level in the view (KGrCanvas).
     int wall = ConcreteWall;
@@ -77,23 +88,26 @@ void KGrLevelPlayer::init ()
                 nuggets++;
             }
 
-            // Either, create a hero and paint him on the background.
+            // Either, create a hero and paint him on the background ...
             if (type == HERO) {
                 emit paintCell (i, j, FREE, 0);
+
                 if (hero == 0) {
-                    lastI = i;
-                    lastJ = j;
-                    emit setSpriteType (0, HERO);
-                    hero = new KGrNewHero (grid, i, j, rules);
+                    targetI = i;
+                    targetJ = j;
+                    emit setSpriteType (0, HERO, i, j);
+                    hero = new KGrHero (this, grid, i, j, rules);
                 }
             }
 
-            // Or, create an enemy and paint him on the background.
+            // Or, create an enemy and paint him on the background ...
             else if (type == ENEMY) {
                 emit paintCell (i, j, FREE, 0);
+
+                KGrEnemy * enemy;
                 int id = enemies.count();
-                emit setSpriteType (id + 1, ENEMY);
-                enemy = new KGrNewEnemy (grid, i, j, id, rules);
+                emit setSpriteType (id + 1, ENEMY, i, j);
+                enemy = new KGrEnemy (this, grid, i, j, id, rules);
                 enemies.append (enemy);
             }
 
@@ -103,50 +117,85 @@ void KGrLevelPlayer::init ()
             }
         }
     }
+
+    // Connect the new hero and enemies (if any) to the animation code.
+    connect (hero, SIGNAL (startAnimation (int, int, int, int,
+                                           Direction, AnimationType)),
+             view, SLOT   (startAnimation (int, int, int, int,
+                                           Direction, AnimationType)));
+    foreach (KGrEnemy * enemy, enemies) {
+        connect (enemy, SIGNAL (startAnimation (int, int, int, int,
+                                                Direction, AnimationType)),
+                 view,  SLOT   (startAnimation (int, int, int, int,
+                                                Direction, AnimationType)));
+    }
 }
 
-KGrNewHero * KGrLevelPlayer::getHero() const
+void KGrLevelPlayer::setTarget (int pointerI, int pointerJ)
 {
-    return hero;
-}
-
-QList<KGrNewEnemy *> KGrLevelPlayer::getEnemies() const
-{
-    return enemies;
-}
-
-void KGrLevelPlayer::setDirection (int i, int j)
-{
-    if ((i == lastI) && (j == lastJ)) {
+    // Mouse or other pointer device controls the hero.
+    if ((! started) && (pointerI == targetI) && (pointerJ == targetJ)) {
         return;
     }
+    pointer = true;
+    targetI = pointerI;
+    targetJ = pointerJ;
+    if (! started) {
+        started = true;
+    }
+}
+
+void KGrLevelPlayer::setDirection (Direction dirn)
+{
+    // Keystrokes or other actions control the hero.
+    pointer = false;
     started = true;
-    lastI = i;
-    lastJ = j;
+    direction = dirn;
+}
 
-    int heroI;
-    int heroJ;
-    hero->getLocation (heroI, heroJ);
-    int di = lastI - heroI;
-    int dj = lastJ - heroJ;
-    Direction nextDir;
+Direction KGrLevelPlayer::getDirection (int heroI, int heroJ)
+{
+    if (pointer) {
+        // If using a pointer device, calculate the hero's next direction,
+        // starting from last pointer position and hero's current position.
 
-    if ((dj > 0) && (grid->heroMoves (heroI, heroJ) & DOWN)) {
-        nextDir = DOWN;
+        int di = targetI - heroI;
+        int dj = targetJ - heroJ;
+
+        // kDebug() << "di" << di << "dj" << dj;
+
+        if ((dj > 0) && (grid->heroMoves (heroI, heroJ) & dFlag [DOWN])) {
+            // kDebug() << "Go down";
+            direction = DOWN;
+        }
+        else if ((dj < 0) && (grid->heroMoves (heroI, heroJ) & dFlag [UP])) {
+            // kDebug() << "Go up";
+            direction = UP;
+        }
+        else if (di > 0) {
+            // kDebug() << "Go right";
+            direction = RIGHT;
+        }
+        else if (di < 0) {
+            // kDebug() << "Go left";
+            direction = LEFT;
+        }
+        else {		// Note: di is zero, but dj is not necessarily zero.
+            // kDebug() << "Stand";
+            direction = STAND;
+        }
     }
-    else if ((dj < 0) && (grid->heroMoves (heroI, heroJ) & UP)) {
-        nextDir = UP;
+
+    kDebug() << "Hero at" << heroI << heroJ << "mouse at" << targetI << targetJ << "Direction" << direction;
+    return direction;
+}
+
+void KGrLevelPlayer::tick()
+{
+    if (started) {
+        hero->run();
+        emit animation();
     }
-    else if (di > 0) {
-        nextDir = RIGHT;
-    }
-    else if (di < 0) {
-        nextDir = LEFT;
-    }
-    else if (di == 0) {
-        nextDir = STAND;
-    }
-    hero->run (nextDir);
 }
 
 #include "kgrlevelplayer.moc"

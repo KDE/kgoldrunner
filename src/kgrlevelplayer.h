@@ -26,8 +26,9 @@
 
 class KGrLevelGrid;
 class KGrRuleBook;
-class KGrNewHero;
-class KGrNewEnemy;
+class KGrCanvas;
+class KGrHero;
+class KGrEnemy;
 
 class KGrLevelPlayer : public QObject
 {
@@ -37,17 +38,18 @@ public:
                                       KGrLevelData * theLevelData);
     ~KGrLevelPlayer();
 
-    void init ();
-    KGrNewHero * getHero() const;
-    QList<KGrNewEnemy *> getEnemies() const;
+    void init (KGrCanvas * view);
 
-    void setDirection (int i, int j);
+    void setTarget         (int pointerI, int pointerJ);
+    void setDirection      (Direction dirn);
+    Direction getDirection (int heroI, int heroJ);
+
+    void tick              ();
 
 signals:
+    void animation();
     void paintCell (int i, int j, char tileType, int diggingStage = 0);
-    void setSpriteType (int id, char spriteType);
-    // void makeHeroSprite (int i, int j, int frame); // OBSOLESCENT - 11/1/09
-    // void makeEnemySprite (int i, int j, int frame); // OBSOLESCENT - 11/1/09
+    void setSpriteType (int id, char spriteType, int row, int col);
 
 private:
     KGrGameData  *       gameData;
@@ -55,15 +57,16 @@ private:
 
     KGrLevelGrid *       grid;
     KGrRuleBook *        rules;
-    KGrNewHero *         hero;
-    QList<KGrNewEnemy *> enemies;
-    KGrNewEnemy *        enemy;
+    KGrHero *            hero;
+    QList<KGrEnemy *>    enemies;
 
     int                  nuggets;
 
+    bool                 pointer;
     bool                 started;
-    int                  lastI;
-    int                  lastJ;
+    int                  targetI;
+    int                  targetJ;
+    Direction            direction;
 };
 
 #endif // KGRLEVELPLAYER_H

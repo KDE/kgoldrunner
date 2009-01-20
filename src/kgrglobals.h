@@ -37,6 +37,40 @@ enum GameAction {HINT, KILL_HERO};
 
 const int  ConcreteWall = 1;
 
-enum AnimationType {RUN, CLIMB, FALL, OPEN_BRICK, CLOSE_BRICK};
+typedef char    DirectionFlag;
+typedef char    AccessFlag;
+typedef char    Flags;
+
+enum Axis       {X, Y, nAxes};
+typedef int     Vector2D [nAxes];
+
+// enum Direction  {STAND, RIGHT, LEFT, UP, DOWN, nDirections};
+enum Digging    {DIG_RIGHT = nDirections, DIG_LEFT};
+
+const DirectionFlag dFlag [nDirections] = {
+                0x10,		// Can stand.
+                0x1,		// Can go right.
+                0x2,		// Can go left.
+                0x4,		// Can go up.
+                0x8};		// Can go down.
+
+const AccessFlag ENTERABLE = 0x20;
+
+const int movement [nDirections][nAxes] = {
+                { 0,  0},	// Standing still.
+                {+1,  0},	// Movement right.
+                {-1,  0},	// Movement left.
+                { 0, -1},	// Movement up.
+                { 0, +1}};	// Movement down.
+
+enum AnimationType {
+                RUN_R,      RUN_L,
+                CLIMB_R,    CLIMB_L,
+                CLIMB_U,    CLIMB_D,
+                FALL_R,     FALL_L,
+                OPEN_BRICK, CLOSE_BRICK};
+
+const AnimationType aType [nDirections] = {
+                FALL_L, RUN_R, RUN_L, CLIMB_U, CLIMB_D};
 
 #endif // KGRGLOBALS_H

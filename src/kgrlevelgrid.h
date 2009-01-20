@@ -36,11 +36,11 @@ public:
         return layout [i + j * width];
     }
 
-    inline char heroMoves  (int i, int j) {
+    inline Flags heroMoves  (int i, int j) {
         return heroAccess [i + j * width];
     }
 
-    inline char enemyMoves (int i, int j) {
+    inline Flags enemyMoves (int i, int j) {
         return enemyAccess [i + j * width];
     }
 
@@ -57,14 +57,14 @@ private:
     int width;
     int height;
 
-    QVector<char> layout;
-    QVector<char> heroAccess;
-    QVector<char> enemyAccess;
-    QVector<char> cellStates;
+    QVector<char>  layout;
+    QVector<Flags> heroAccess;
+    QVector<Flags> enemyAccess;
+    QVector<char>  cellStates;
 
-    QList<int>    hiddenLadders;
-    QList<int>    hiddenEnemies;
-    QList<int>    flashingGold;
+    QList<int>     hiddenLadders;
+    QList<int>     hiddenEnemies;
+    QList<int>     flashingGold;
 };
 
 #endif // KGRLEVELGRID_H

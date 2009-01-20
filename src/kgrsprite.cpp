@@ -17,9 +17,20 @@
 #include "kgrsprite.h"
 
 KGrSprite::KGrSprite (KGameCanvasAbstract* canvas)
-    : KGameCanvasPixmap (canvas)
+    :
+    KGameCanvasPixmap (canvas),
+
+    m_stationary      (true),	// Animation is OFF at first.
+    m_x               (0),
+    m_y               (0),
+    m_startFrame      (0),
+    m_nFrames         (1),
+    m_frameCtr        (0),
+    m_dx              (0),
+    m_dy              (0),
+    m_dt              (0)
 {
-    m_frame = 0;
+    m_frame   = -1;		// Makes move() work OK if first frame is 0.
     m_loc.setX (-1);		// Makes move() work OK if first (x,y) is (0,0).
 }
 
@@ -53,4 +64,33 @@ void KGrSprite::setZ (qreal /* z (unused) */)
 {
     // Hero and enemy sprites are above other elements.
     raise();
+}
+
+void KGrSprite::setAnimation (int x, int y, int startFrame, int nFrames,
+                              int dx, int dy, int dt)
+{
+    m_stationary = false;	// Animation is ON now.
+    m_x          = x;
+    m_y          = y;
+    m_startFrame = startFrame;
+    m_nFrames    = nFrames;
+    m_frameCtr   = 0;
+    m_dx         = dx;
+    m_dy         = dy;
+    m_dt         = dt;
+}
+
+void KGrSprite::animate()
+{
+    if (m_stationary) {
+        return;
+    }
+    if (m_frameCtr >= m_nFrames) {
+        m_frameCtr = 0;
+    }
+    move (m_x, m_y, m_startFrame + m_frameCtr);
+    m_frameCtr++;
+    int STEP = 4;
+    m_x = m_x + STEP * m_dx;
+    m_y = m_y + STEP * m_dy;
 }

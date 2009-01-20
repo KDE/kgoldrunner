@@ -13,7 +13,7 @@
 #ifndef KGRCONSTS_H
 #define KGRCONSTS_H
 
-#define ENABLE_SOUND_SUPPORT // Ian W. moved it here - 31 May 2008.
+// #define ENABLE_SOUND_SUPPORT // Ian W. moved it here - 31 May 2008.
 
 enum Owner {SYSTEM, USER};
 
@@ -42,7 +42,6 @@ const char CANWALKRIGHT = 0x2;
 const char CANWALKUP    = 0x4;
 const char CANWALKDOWN  = 0x8;
 const char VISITED      = 0x10;
-const char ENTERABLE    = 0x20; // NEW - 2/1/09
 
 const char FIELDWIDTH   = 28;
 const char FIELDHEIGHT  = 20;
@@ -87,8 +86,11 @@ enum Position		{RIGHTWALK1,  RIGHTWALK2,  RIGHTWALK3,  RIGHTWALK4,
                          CLIMB1,      CLIMB2,
                          FALL1,       FALL2};
 enum Status		{STANDING, FALLING, WALKING, CLIMBING, CAPTIVE};
-enum Direction		{RIGHT = 0x1, LEFT = 0x2, UP = 0x4, DOWN = 0x8,
-                         STAND = 0x10};
+
+// TODO - Should be in kgrglobals.h .....
+enum Direction  {STAND, RIGHT, LEFT, UP, DOWN, nDirections};
+// enum Direction		{RIGHT = 0x1, LEFT = 0x2, UP = 0x4, DOWN = 0x8,
+                         // STAND = 0x10}; // OBSOLESCENT - 13/1/09
 enum SearchStrategy	{LOW, MEDIUM, HIGH};
 
 // Keyboard action codes

@@ -431,6 +431,7 @@ void KGrHero::setKey (Direction key)
     case LEFT:	mousex = 0; mousey = y; break;
     case RIGHT:	mousex = FIELDWIDTH + 1; mousey = y; break;
     case STAND:	stopped = true;  mousex = x; mousey = y; break;
+    default: break;
     }
 }
 

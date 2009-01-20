@@ -74,9 +74,10 @@ public:
     void setLevel (unsigned int level);
 
 public slots:
+    void animate          ();
     void paintCell        (const int row, const int col, const char type,
                            const int offset = 0);
-    void setSpriteType    (const int id, const char type);
+    void setSpriteType    (const int id, const char type, int row, int col);
     void startAnimation   (const int id, const int row, const int col,
                            const int time,
                            const Direction dirn, const AnimationType type);
