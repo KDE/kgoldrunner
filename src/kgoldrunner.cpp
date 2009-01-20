@@ -48,7 +48,7 @@
 #include <KCmdLineArgs>
 #include <KAboutData>
 
-#include "kgrobject.h"
+// #include "kgrobject.h"
 // #include "kgrfigure.h"
 #include "kgrcanvas.h"
 #include "kgrdialog.h"

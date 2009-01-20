@@ -11,7 +11,7 @@
 #include "kgrgame.h"
 
 #include "kgrconsts.h"
-#include "kgrobject.h"
+// #include "kgrobject.h"
 // #include "kgrfigure.h" // OBSOLESCENT - 09/1/09
 // #include "kgrrunner.h" // OBSOLESCENT - 18/1/09
 #include "kgrcanvas.h"
@@ -583,25 +583,25 @@ void KGrGame::setBlankLevel (bool playable)
                 // playfield[i+1][j+1] = new KGrEditable (FREE);
                 view->paintCell (i+1, j+1, FREE);
             }
-	    playfield[i+1][j+1]->setParent (this); // Delete if KGrGame dies.
+	    // playfield[i+1][j+1]->setParent (this); // Delete if KGrGame dies.
             editObjArray[i+1][j+1] = FREE;
         }
     for (int j = 0; j < 30; j++) {
         // playfield[j][0] = new KGrObject (BETON);
-	playfield[j][0]->setParent (this);	// Delete at end of KGrGame.
+	// playfield[j][0]->setParent (this);	// Delete at end of KGrGame.
         editObjArray[j][0] = BETON;
 
         // playfield[j][21] = new KGrObject (BETON);
-	playfield[j][21]->setParent (this);	// Delete at end of KGrGame.
+	// playfield[j][21]->setParent (this);	// Delete at end of KGrGame.
         editObjArray[j][21] = BETON;
     }
     for (int i = 0; i < 22; i++) {
         // playfield[0][i] = new KGrObject (BETON);
-	playfield[0][i]->setParent (this);	// Delete at end of KGrGame.
+	// playfield[0][i]->setParent (this);	// Delete at end of KGrGame.
         editObjArray[0][i] = BETON;
 
         // playfield[29][i] = new KGrObject (BETON);
-	playfield[29][i]->setParent (this);	// Delete at end of KGrGame.
+	// playfield[29][i]->setParent (this);	// Delete at end of KGrGame.
         editObjArray[29][i] = BETON;
     }
 }
@@ -872,7 +872,7 @@ bool KGrGame::readLevelData (int levelNo, KGrLevelData & d)
 void KGrGame::changeObject (unsigned char kind, int i, int j)
 {
     // OBSOLESCENT - 20/1/09 Done in KGrLevelGrid now.
-    delete playfield[i][j];
+    // delete playfield[i][j];
     switch (kind) {
     case FREE:    break; // createObject (new KGrFree (FREE,i,j,view),FREE,i,j);break;
     case LADDER:  break; // createObject (new KGrObject (LADDER),LADDER,i,j);break;
@@ -915,12 +915,12 @@ void KGrGame::changeObject (unsigned char kind, int i, int j)
     }
 }
 
-void KGrGame::createObject (KGrObject *o, char picType, int x, int y)
-{
-    playfield[x][y] = o;
-    o->setParent (this);		// Delete cell if KGrGame is deleted.
-    view->paintCell (x, y, picType);		// Pic maybe not same as object.
-}
+// OBSOLESCENT - 20/1/09 void KGrGame::createObject (KGrObject *o, char picType, int x, int y)
+// {
+    // playfield[x][y] = o;
+    // o->setParent (this);		// Delete cell if KGrGame is deleted.
+    // view->paintCell (x, y, picType);		// Pic maybe not same as object.
+// }
 
 void KGrGame::setTimings()
 {
@@ -1802,13 +1802,13 @@ void KGrGame::showObjectState()
 {
     QPoint p;
     int i, j;
-    KGrObject * myObject;
+    // OBSOLESCENT - 20/1/09 KGrObject * myObject;
 
     if (gameFrozen) {
         p = view->getMousePos();
         i = p.x(); j = p.y();
-        myObject = playfield[i][j];
         // OBSOLESCENT - 20/1/09 Need to compile after kgrobject.cpp removed.
+        // myObject = playfield[i][j];
         // switch (myObject->whatIam()) {
             // case BRICK:
             // case HOLE:

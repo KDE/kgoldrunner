@@ -27,6 +27,7 @@
 #include <QPixmap>
 #include <QLabel>
 #include <QFrame>
+#include <QTimer>
 
 #include "kgrconsts.h"	// OBSOLESCENT - 30/12/08
 #include "kgrglobals.h"
@@ -157,7 +158,7 @@ private:
     int  loadLevel (int levelNo);
     bool readLevelData (int levelNo, KGrLevelData & d);
     void changeObject (unsigned char kind, int i, int j);
-    void createObject (KGrObject *o, char picType, int x, int y);
+    // OBSOLESCENT - 20/1/09 void createObject (KGrObject *o, char picType, int x, int y);
     void setTimings();
     void initSearchMatrix();
     void showTutorialMessages (int levelNo);
