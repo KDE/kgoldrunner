@@ -44,7 +44,7 @@
 // L008
 //  R     HT                       E H  N N N N NTT   M M M H    H  MFMFMFMFM  HM       H    H  MMMMMMMMM HH  M M M H    H  MM     MM H         H    H        NMM HH   E E       H        MMM  HZZHHHHH TTTT H      EMMMN  H      H    T H      MM     H     H    T  H     MM      H    HH   T   H     MM      H    H    T   H     MM  HTT HH   H     E ZH     MM  H  MMMMMZH     HH  H    MM  H      MZ       HH H    MM  H     M Z      Z HH HH      H    MM Z   M  Z      ZZ    H    M  Z  MM ZM            H   M   Z  MM ZM         E  H  EM   Z  MMXXXMXXMXXXMXXMXXMXXXMXXXXMXX
  i18n("Seven");
- i18n("The gold on top of the 7 is the main challenge.  In the beginning, climb to the left most square of the top of of the 7 and wait there until enemies fill the holes on top of the 7.");
+ i18n("The gold on top of the 7 is the main challenge.  In the beginning, climb to the left most square of the top of the 7 and wait there until enemies fill the holes on top of the 7.");
 // L009
 //  R                          Z         TTT N TTTT   E    ZHM      H N MMME   HM M M MZH       H MMMMMMMN H       ZH   E   HMM     MM HM M M MZH       HM       MH        ZH TTTTT HM       M H       ZH T   T HM  E  N M H    HHHHH T   T HMMMMMMMMM H    H  HH TTTTT H  MXXXMN  H    HE HH T   T HEMMMMMMM  H    HHHHH T   T HMMNZT  MM H    H  HH TTTTTHHM  Z    M H   ZH  HH      ZMM  Z    MMH  Z HHHHHH ZZZZ MM  Z    MM  Z Z  Z  H Z  Z MMN Z  E MM ZZ Z  MM H ZZZZ  MMMZN MMM  Z  Z  MM H Z  Z   MMMMMM    MZZZ  MME  ZZZZ             M  Z  MMXXMXXMXXMXXMXXXMXXMXXMXXMXXX
  i18n("Eight");
