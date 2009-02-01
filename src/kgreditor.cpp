@@ -532,7 +532,7 @@ void KGrEditor::editCollection (int action)
             }
 
             bool duplicatePrefix = false;
-            KGrCollection * c;
+            // TODO - Use KGrGameData. // KGrCollection * c;
             // Force compile IDW int imax = collections.count();
             // Force compile IDW for (int i = 0; i < imax; i++) {
                 // Force compile IDW c = collections.at (i);
@@ -744,6 +744,81 @@ void KGrEditor::setLevel (int lev)
 {
     level = lev;
     return;
+}
+
+// TODO - Used only in KGrEditor.
+// bool KGrGame::ownerOK (Owner o)
+// {
+    // // Check that this owner has at least one set of game data.
+    // bool OK = false;
+// 
+    // foreach (KGrGameData * d, gameList) {
+        // if (d->owner == o) {
+            // OK = true;
+            // break;
+        // }
+    // }
+// 
+    // return (OK);
+// }
+
+bool KGrEditor::saveGameData (Owner o)
+{
+    QString	filePath;
+
+    if (o != USER) {
+        KGrMessage::information (view, i18n ("Save Game Info"),
+            i18n ("You can only modify user games."));
+        return false;
+    }
+
+    // TODO - Editor needs directory paths. filePath = userDataDir + "games.dat";
+
+    QFile c (filePath);
+
+    // Open the output file.
+    if (! c.open (QIODevice::WriteOnly)) {
+        KGrMessage::information (view, i18n ("Save Game Info"),
+                i18n ("Cannot open file '%1' for output.", filePath));
+        return (false);
+    }
+
+    // Save the game-data objects.
+    QString		line;
+    int			i, len;
+    char		ch;
+
+    // TODO - Editor needs the game-list.
+    // foreach (KGrGameData * gData, gameList) {
+        // if (gData->owner == o) {
+            // line.sprintf ("%03d %c %s %s\n", gData->nLevels, gData->rules,
+                                // gData->prefix.myStr(),
+                                // gData->name.constData());
+            // len = line.length();
+            // for (i = 0; i < len; i++)
+                        // c.putChar (line.toUtf8()[i]);
+
+            // len = gData->about.length();
+            // if (len > 0) {
+                // QByteArray aboutC = gData->about;
+                // len = aboutC.length();		// Might be longer now.
+                // for (i = 0; i < len; i++) {
+                    // ch = aboutC[i];
+                    // if (ch != '\n') {
+                        // c.putChar (ch);		// Copy the character.
+                    // }
+                    // else {
+                        // c.putChar ('\\');	// Change newline to \ and n.
+                        // c.putChar ('n');
+                    // }
+                // }
+                // c.putChar ('\n');		// Add a real newline.
+            // }
+        // }
+    // }
+
+    c.close();
+    return (true);
 }
 
 /******************************************************************************/

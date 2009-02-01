@@ -44,6 +44,7 @@ public:
     int  reappearRow() const         { return mReappearRow;         }
     int  pointsPerCell() const       { return mPointsPerCell;       }
     bool turnAnywhere() const        { return mTurnAnywhere;        }
+    bool enemiesShowGold() const     { return mEnemiesShowGold;     }
 
     virtual Direction findBestWay (const QPoint & enemyPosition,
                                    const QPoint & heroPosition,
@@ -57,6 +58,7 @@ protected:
     int  mReappearRow;		///< Row where enemies reappear.
     int  mPointsPerCell;	///< Number of points in each grid-cell.
     bool mTurnAnywhere;		///< Can change direction anywhere in grid-cell.
+    bool mEnemiesShowGold;	///< Enemies show when they are carrying gold.
 
     void getHeroTimes  (int & runTime, int & fallTime);
     void getEnemyTimes (int & runTime, int & fallTime, int & trapTime);

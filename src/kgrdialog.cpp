@@ -10,7 +10,8 @@
 
 #include "kgrdialog.h"
 
-#include "kgrconsts.h"
+#include "kgrconsts.h" // OBSOLESCENT - 30/1/09
+#include "kgrglobals.h"
 #include "kgrcanvas.h"
 #include "kgrgame.h"
 
@@ -26,17 +27,17 @@
 /*****************    DIALOG BOX TO SELECT A GAME AND LEVEL   *****************/
 /******************************************************************************/
 
-KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
-                        QList<KGrCollection *> & gamesList, KGrGame * theGame,
+KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int gameIndex,
+                        QList<KGrGameData *> & gameList, KGrGame * theGame,
                         QWidget * parent)
                 : KDialog (parent)
 {
     slAction     = action;
     defaultLevel = requestedLevel;
-    defaultGame  = collnIndex;
-    collections  = gamesList;
-    game         = theGame;
-    collection   = collections.at (defaultGame);
+    defaultGame  = gameIndex;
+    myGameList   = gameList;
+    gameControl  = theGame;
+    // selectedGame = myGameList.at (defaultGame); // OBSOLESCENT? - 31/1/09
     slParent     = parent;
 
     int margin		= marginHint(); 
@@ -69,7 +70,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     hboxLayout1->setSpacing (6);
     hboxLayout1->setMargin (0);
 
-    collnN    = new QLabel ("", dad);	// Name of selected collection.
+    collnN    = new QLabel ("", dad);	// Name of selected game.
     QFont f = collnN->font();
     f.setBold (true);
     collnN->setFont (f);
@@ -79,7 +80,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
                         (21, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
     hboxLayout1->addItem (spacerItem1);
 
-    collnD    = new QLabel ("", dad);		// Description of collection.
+    collnD    = new QLabel ("", dad);		// Description of game.
     hboxLayout1->addWidget (collnD);
     mainLayout->addLayout (hboxLayout1, 5);
 
@@ -156,7 +157,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
 
     QString OKText = "";
     switch (slAction) {
-    case SL_START:	// Must start at level 1, but can choose a collection.
+    case SL_START:	// Must start at level 1, but can choose a game.
                         OKText = i18n ("Start Game");
                         number->setValue (1);
                         number->setEnabled (false);
@@ -165,25 +166,25 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
                         numberL->hide();
                         display->hide();
                         break;
-    case SL_ANY:	// Can start playing at any level in any collection.
+    case SL_ANY:	// Can start playing at any level in any game.
                         OKText = i18n ("Play Level");
                         break;
-    case SL_UPDATE:	// Can use any level in any collection as edit input.
+    case SL_UPDATE:	// Can use any level in any game as edit input.
                         OKText = i18n ("Edit Level");
                         break;
-    case SL_CREATE:	// Can save a new level only in a USER collection.
+    case SL_CREATE:	// Can save a new level only in a USER game.
                         OKText = i18n ("Save New");
                         break;
-    case SL_SAVE:	// Can save an edited level only in a USER collection.
+    case SL_SAVE:	// Can save an edited level only in a USER game.
                         OKText = i18n ("Save Change");
                         break;
-    case SL_DELETE:	// Can delete a level only in a USER collection.
+    case SL_DELETE:	// Can delete a level only in a USER game.
                         OKText = i18n ("Delete Level");
                         break;
-    case SL_MOVE:	// Can move a level only into a USER collection.
+    case SL_MOVE:	// Can move a level only into a USER game.
                         OKText = i18n ("Move To...");
                         break;
-    case SL_UPD_GAME:	// Can only edit USER collection details.
+    case SL_UPD_GAME:	// Can only edit USER game details.
                         OKText = i18n ("Edit Game Info");
                         number->setValue (1);
                         number->setEnabled (false);
@@ -223,7 +224,8 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int collnIndex,
     // Only enable name and hint dialog here if saving a new or edited level.
     // At other times the name and hint have not been loaded or initialised yet.
     if ((slAction == SL_CREATE) || (slAction == SL_SAVE)) {
-        connect (levelNH,  SIGNAL (clicked()), game, SLOT (editNameAndHint()));
+        connect (levelNH,     SIGNAL (clicked()),
+                 gameControl, SLOT   (editNameAndHint()));
     }
     else {
         levelNH->setEnabled (false);
@@ -247,7 +249,7 @@ KGrSLDialog::~KGrSLDialog()
 void KGrSLDialog::slSetCollections (int cIndex)
 {
     int i;
-    int imax = collections.count();
+    int imax = myGameList.count();
 
     // Set values in the list box that holds details of available games.
     // The list is displayed in order of skill then the kind of rules.
@@ -261,28 +263,28 @@ void KGrSLDialog::slSetCollections (int cIndex)
     foreach (char sortItem1, sortOrder1) {
         foreach (char sortItem2, sortOrder2) {
             for (i = 0; i < imax; i++) {
-                if ((collections.at (i)->skill == sortItem1) &&
-                    (collections.at (i)->settings == sortItem2)) {
+                if ((myGameList.at (i)->skill == sortItem1) &&
+                    (myGameList.at (i)->rules == sortItem2)) {
                     QStringList data;
                     data
-                        << collections.at (i)->name
-                        << ((collections.at (i)->settings == 'K') ? 
+                        << myGameList.at (i)->name
+                        << ((myGameList.at (i)->rules == 'K') ? 
                             i18nc ("Rules", "KGoldrunner") :
                             i18nc ("Rules", "Traditional"))
-                        << QString().setNum (collections.at (i)->nLevels)
-                        << ((collections.at (i)->skill == 'T') ? 
+                        << QString().setNum (myGameList.at (i)->nLevels)
+                        << ((myGameList.at (i)->skill == 'T') ? 
                             i18nc ("Skill Level", "Tutorial") :
-                            ((collections.at (i)->skill == 'N') ? 
+                            ((myGameList.at (i)->skill == 'N') ? 
                             i18nc ("Skill Level", "Normal") :
                             i18nc ("Skill Level", "Championship")));
                     KGrGameListItem * thisGame = new KGrGameListItem (data, i);
                     colln->addTopLevelItem (thisGame);
 
                     if (slCollnIndex < 0) {
-                        slCollnIndex = i; // There is at least one collection.
+                        slCollnIndex = i; // There is at least one game.
                     }
                     if (i == cIndex) {
-                        // Mark the currently selected collection (default 0).
+                        // Mark the currently selected game (default 0).
                         colln->setCurrentItem (thisGame);
                     }
                 }
@@ -291,10 +293,10 @@ void KGrSLDialog::slSetCollections (int cIndex)
     }
 
     if (slCollnIndex < 0) {
-        return;				// There are no collections (unlikely).
+        return;				// The game-list is empty (unlikely).
     }
 
-    // Fetch and display information on the selected collection.
+    // Fetch and display information on the selected game.
     slColln();
 
     // Make the column for the game's name a bit wider.
@@ -321,24 +323,24 @@ void KGrSLDialog::slColln()
 
     slCollnIndex = (dynamic_cast<KGrGameListItem *>
                         (colln->selectedItems().first()))->id();
-    int n = slCollnIndex;				// Collection selected.
-    int N = defaultGame;				// Current collection.
-    if (collections.at (n)->nLevels > 0) {
-        number->setMaximum (collections.at (n)->nLevels);
-        display->setMaximum (collections.at (n)->nLevels);
+    int n = slCollnIndex;				// Game selected.
+    int N = defaultGame;				// Current game.
+    if (myGameList.at (n)->nLevels > 0) {
+        number->setMaximum (myGameList.at (n)->nLevels);
+        display->setMaximum (myGameList.at (n)->nLevels);
     }
     else {
         number->setMaximum (1);			// Avoid range errors.
         display->setMaximum (1);
     }
 
-    // Set a default level number for the selected collection.
+    // Set a default level number for the selected game.
     switch (slAction) {
     case SL_ANY:
     case SL_UPDATE:
     case SL_DELETE:
     case SL_UPD_GAME:
-        // If selecting the current collection, use the current level number.
+        // If selecting the current game, use the current level number.
         if (n == N)
             number->setValue (defaultLevel);
         else
@@ -348,13 +350,13 @@ void KGrSLDialog::slColln()
     case SL_SAVE:
     case SL_MOVE:
         if ((n == N) && (slAction != SL_CREATE)) {
-            // Saving/moving level in current collection: use current number.
+            // Saving/moving level in current game: use current number.
             number->setValue (defaultLevel);
         }
         else {
             // Saving new/edited level or relocating a level: use "nLevels + 1".
-            number->setMaximum (collections.at (n)->nLevels + 1);
-            display->setMaximum (collections.at (n)->nLevels + 1);
+            number->setMaximum (myGameList.at (n)->nLevels + 1);
+            display->setMaximum (myGameList.at (n)->nLevels + 1);
             number->setValue (number->maximum());
         }
         break;
@@ -365,20 +367,20 @@ void KGrSLDialog::slColln()
 
     slShowLevel (number->value());
 
-    int levCnt = collections.at (n)->nLevels;
-    if (collections.at (n)->settings == 'K')
+    int levCnt = myGameList.at (n)->nLevels;
+    if (myGameList.at (n)->rules == 'K')
         collnD->setText (i18np ("1 level, uses KGoldrunner rules.",
                                 "%1 levels, uses KGoldrunner rules.", levCnt));
     else
         collnD->setText (i18np ("1 level, uses Traditional rules.",
                                 "%1 levels, uses Traditional rules.", levCnt));
-    collnN->setText (collections.at (n)->name);
+    collnN->setText (myGameList.at (n)->name);
     QString s;
-    if (collections.at (n)->about.isEmpty()) {
+    if (myGameList.at (n)->about.isEmpty()) {
         s = i18n ("Sorry, there is no further information about this game.");
     }
     else {
-        s = (i18n (collections.at (n)->about.toUtf8().constData()));
+        s = (i18n (myGameList.at (n)->about.constData()));
     } 
     collnAbout->setText (s);
 }
@@ -409,11 +411,11 @@ void KGrSLDialog::slPaintLevel()
     // Repaint the thumbnail sketch of the level whenever the level changes.
     int n = slCollnIndex;
     if (n < 0) {
-        return;					// Owner has no collections.
+        return;					// Owner has no games.
     }
     // Fetch level-data and save layout, name and label in the thumbnail.
-    QString	dir = game->getDirectory (collections.at (n)->owner);
-    thumbNail->setLevelData (dir, collections.at (n)->prefix,
+    QString	dir = gameControl->getDirectory (myGameList.at (n)->owner);
+    thumbNail->setLevelData (dir, myGameList.at (n)->prefix,
                                 number->value(), slName);
     thumbNail->repaint();			// Will call "paintEvent (e)".
 }
@@ -545,13 +547,13 @@ KGrNHDialog::~KGrNHDialog()
 *************** DIALOG BOX TO CREATE OR EDIT A GAME (COLLECTION) ***************
 *******************************************************************************/
 
-KGrECDialog::KGrECDialog (int action, int collnIndex,
-                        QList<KGrCollection *> & gamesList,
+KGrECDialog::KGrECDialog (int action, int gameIndex,
+                        QList<KGrGameData *> & gamesList,
                         QWidget * parent)
                 : KDialog (parent)
 {
-    collections  = gamesList;
-    defaultGame  = collnIndex;
+    myGameList  = gamesList;
+    defaultGame  = gameIndex;
 
     setCaption (i18n ("Edit Game Info"));
     setButtons (KDialog::Ok | KDialog::Cancel);
@@ -619,19 +621,19 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
     }
 
     QString OKText = "";
-    if (action == SL_UPD_GAME) {		// Edit existing collection.
-        ecName->	setText (collections.at (defaultGame)->name);
-        ecPrefix->	setText (collections.at (defaultGame)->prefix);
-        if (collections.at (defaultGame)->nLevels > 0) {
-            // Collection already has some levels, so cannot change the prefix.
+    if (action == SL_UPD_GAME) {		// Edit existing game.
+        ecName->	setText (myGameList.at (defaultGame)->name);
+        ecPrefix->	setText (myGameList.at (defaultGame)->prefix);
+        if (myGameList.at (defaultGame)->nLevels > 0) {
+            // Game already has some levels, so cannot change the prefix.
             ecPrefix->	setEnabled (false);
         }
         QString		s;
         nLevL->		setText (i18np ("1 level", "%1 levels",
-                                        collections.at (defaultGame)->nLevels));
+                                        myGameList.at (defaultGame)->nLevels));
         OKText = i18n ("Save Changes");
     }
-    else {					// Create a collection.
+    else {					// Create a game.
         ecName->        setText ("");
         ecPrefix->      setText ("");
         nLevL->         setText (i18n ("0 levels"));
@@ -640,20 +642,20 @@ KGrECDialog::KGrECDialog (int action, int collnIndex,
     setButtonGuiItem (KDialog::Ok, KGuiItem (OKText));
 
     if ((action == SL_CR_GAME) ||
-        (collections.at (defaultGame)->settings == 'T')) {
-        ecSetRules ('T');			// Traditional settings.
+        (myGameList.at (defaultGame)->rules == 'T')) {
+        ecSetRules ('T');			// Traditional rules.
     }
     else {
-        ecSetRules ('K');			// KGoldrunner settings.
+        ecSetRules ('K');			// KGoldrunner rules.
     }
 
     // Configure the edit box.
     mle->		setAlignment (Qt::AlignLeft);
 
     if ((action == SL_UPD_GAME) &&
-        (collections.at (defaultGame)->about.length() > 0)) {
+        (myGameList.at (defaultGame)->about.length() > 0)) {
         // Display and edit the game description in its original language.
-        mle->		setText (collections.at (defaultGame)->about);
+        mle->		setText (myGameList.at (defaultGame)->about);
     }
     else {
         mle->		setText ("");
@@ -667,11 +669,11 @@ KGrECDialog::~KGrECDialog()
 {
 }
 
-void KGrECDialog::ecSetRules (const char settings)
+void KGrECDialog::ecSetRules (const char rules)
 {
     ecKGrB->	setChecked (false);
     ecTradB->	setChecked (false);
-    if (settings == 'K')
+    if (rules == 'K')
         ecKGrB->	setChecked (true);
     else
         ecTradB->	setChecked (true);
@@ -685,8 +687,8 @@ void KGrECDialog::ecSetTrad() {ecSetRules ('T');}
 *******************************************************************************/
 
 KGrLGDialog::KGrLGDialog (QFile * savedGames,
-                        QList<KGrCollection *> & collections,
-                        QWidget * parent)
+                          QList<KGrGameData *> & gameList,
+                          QWidget * parent)
                 : KDialog (parent)
 {
     setCaption (i18n ("Select Saved Game"));
@@ -727,17 +729,17 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
     QString		s = "";
     QString		pr = "";
     int			i;
-    int			imax = collections.count();
+    int			imax = gameList.count();
 
     // Read the saved games into the list box.
     while (! gameText.endData()) {
         s = gameText.readLine();		// Read in one saved game.
         pr = s.left (s.indexOf (" ", 0,
-                        Qt::CaseInsensitive));	// Get the collection prefix.
-        for (i = 0; i < imax; i++) {		// Get the collection name.
-            if (collections.at (i)->prefix == pr) {
+                        Qt::CaseInsensitive));	// Get the game prefix.
+        for (i = 0; i < imax; i++) {		// Get the game name.
+            if (gameList.at (i)->prefix == pr) {
                 s = s.insert (0,
-                collections.at (i)->name.leftJustified (20, ' ', true) + ' ');
+                gameList.at (i)->name.leftJustified (20, ' ', true) + ' ');
                 break;
             }
         }

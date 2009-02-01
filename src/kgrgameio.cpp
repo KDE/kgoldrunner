@@ -27,7 +27,7 @@ KGrGameIO::KGrGameIO()
 }
 
 IOStatus KGrGameIO::fetchGameListData
-        (const QString & dir, QList<KGrGameData *> & gameList,
+        (const Owner o, const QString & dir, QList<KGrGameData *> & gameList,
                               QString & filePath)
 {
     QDir directory (dir);
@@ -49,7 +49,7 @@ IOStatus KGrGameIO::fetchGameListData
         }
 
         filePath = dir + filename;
-        KGrGameData * g = initGameData();
+        KGrGameData * g = initGameData (o);
         gameList.append (g);
         // kDebug()<< "GAME PATH:" << filePath;
 
@@ -129,7 +129,7 @@ IOStatus KGrGameIO::fetchGameListData
 
             if ((! kgr3Format) && (c != '\0')) {
                 filePath = dir + filename;
-                g = initGameData();
+                g = initGameData (o);
                 gameList.append (g);
             }
         } // END: game-data loop
@@ -303,10 +303,10 @@ QByteArray KGrGameIO::removeNewline (const QByteArray & line)
     }
 }
 
-KGrGameData * KGrGameIO::initGameData()
+KGrGameData * KGrGameIO::initGameData (Owner o)
 {
     KGrGameData * g = new KGrGameData;
-    g->owner    = USER;	// Owner of the game: "System" or "User".
+    g->owner    = o;	// Owner of the game: "System" or "User".
     g->nLevels  = 0;	// Number of levels in the game.
     g->rules    = 'T';	// Game's rules: KGoldrunner or Traditional.
     g->prefix   = "";	// Game's filename prefix.

@@ -73,4 +73,8 @@ enum AnimationType {
 const AnimationType aType [nDirections] = {
                 FALL_L, RUN_R, RUN_L, CLIMB_U, CLIMB_D};
 
+enum DebugCodes {
+                DO_STEP, BUG_FIX, LOGGING, S_POSNS, S_HERO, S_OBJ,
+                ENEMY_0, ENEMY_1, ENEMY_2, ENEMY_3, ENEMY_4, ENEMY_5, ENEMY_6};
+
 #endif // KGRGLOBALS_H

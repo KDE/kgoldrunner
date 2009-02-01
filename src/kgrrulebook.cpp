@@ -47,6 +47,7 @@ KGrTraditionalRules::KGrTraditionalRules (QObject * parent)
     mReappearRow         = 2;		///< Row where enemies reappear.
     mPointsPerCell       = 4;		///< Number of points in each grid-cell.
     mTurnAnywhere        = false;	///< Change direction only at next cell.
+    mEnemiesShowGold     = true;	///< Show enemies carrying gold.
 
     Timing t = {40, 58, 78, 88, 170, 23};
     times = t;
@@ -91,6 +92,7 @@ KGrKGoldrunnerRules::KGrKGoldrunnerRules (QObject * parent)
     mReappearRow         = -1;		///< Row where enemies reappear (N/A).
     mPointsPerCell       = 4;		///< Number of points in each grid-cell.
     mTurnAnywhere        = false;	///< Change direction only at next cell.
+    mEnemiesShowGold     = true;	///< Show enemies carrying gold.
 
     Timing t = {45, 50, 55, 100, 500, 40};
     times = t;
@@ -119,6 +121,7 @@ KGrScavengerRules::KGrScavengerRules (QObject * parent)
     mReappearRow         = 1;		///< Row where enemies reappear.
     mPointsPerCell       = 12;		///< Number of points in each grid-cell.
     mTurnAnywhere        = true;	///< Change direction anywhere in cell.
+    mEnemiesShowGold     = false;	///< Conceal enemies carrying gold.
 
     Timing t = {45, 50, 55, 100, 500, 40};
     times = t;

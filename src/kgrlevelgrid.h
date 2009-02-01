@@ -48,6 +48,13 @@ public:
         return cellStates [i + j * width];
     }
 
+public slots:
+    inline void gotGold (const int,	// Don't care which spriteID did it.
+        const int i, const int j, const bool runnerHasGold)
+    {
+        layout [i + j * width] = (runnerHasGold) ? FREE : NUGGET;
+    }
+
 private:
     inline int index (int i, int j) {
         return (i + j * width);

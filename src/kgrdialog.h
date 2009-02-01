@@ -35,7 +35,7 @@
 */
 
 class KGrGame;
-class KGrCollection;
+class KGrGameData;
 class KGrThumbNail;
 class KGrGameListItem;
 
@@ -48,7 +48,7 @@ class KGrSLDialog : public KDialog
 Q_OBJECT
 public:
     KGrSLDialog (int action, int requestedLevel, int collnIndex,
-                        QList<KGrCollection *> & gamesList, KGrGame * theGame,
+                        QList<KGrGameData *> & gameList, KGrGame * theGame,
                         QWidget * parent = 0);
     ~KGrSLDialog();
 
@@ -65,12 +65,12 @@ private slots:
 
 private:
     int			slAction;
-    QList<KGrCollection *> collections;	// List of games.
+    QList<KGrGameData *> myGameList;	// List of games.
     int			defaultLevel;
     int			defaultGame;
     int			slCollnIndex;
-    KGrGame *		game;
-    KGrCollection *	collection;
+    KGrGame *		gameControl;
+    // KGrGameData *	selectedGame; // OBSOLESCENT? - 32/1/09
     QWidget *		slParent;
 
     QLabel *		collnL;
@@ -118,7 +118,7 @@ class KGrECDialog : public KDialog
 Q_OBJECT
 public:
     KGrECDialog (int action, int collnIndex,
-                        QList<KGrCollection *> & gamesList,
+                        QList<KGrGameData *> & gameList,
                         QWidget *parent = 0);
     ~KGrECDialog();
 
@@ -128,12 +128,12 @@ public:
     const QString	getAboutText()	{return (mle->toPlainText());}
 
 private slots:
-    void ecSetRules (const char settings);
+    void ecSetRules (const char rules);
     void ecSetKGr();	// Radio button slots.
     void ecSetTrad();
 
 private:
-    QList<KGrCollection *> collections;	// List of existing games.
+    QList<KGrGameData *> myGameList;	// List of existing games.
     int			defaultGame;
 
     QLabel *		nameL;
@@ -160,7 +160,7 @@ class KGrLGDialog : public KDialog
 {
 Q_OBJECT
 public:
-    KGrLGDialog (QFile * savedGames, QList<KGrCollection *> & collections,
+    KGrLGDialog (QFile * savedGames, QList<KGrGameData *> & gameList,
                         QWidget * parent);
     const QString getCurrentText() {return (lgList->currentItem()->text());}
 

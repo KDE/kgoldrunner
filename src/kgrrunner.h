@@ -32,10 +32,12 @@ class KGrRunner : public QObject
     Q_OBJECT
 public:
     KGrRunner (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
-               int i, int j, KGrRuleBook  * pRules);
+               int i, int j, int pSpriteId, KGrRuleBook  * pRules);
     virtual ~KGrRunner();
 
-    // void getLocation (int & row, int & col); TODO - Remove this.
+signals:
+    void gotGold (const int spriteId, const int i, const int j,
+                  const bool hasGold);
 
 protected:
     KGrLevelPlayer * levelPlayer;
@@ -44,6 +46,7 @@ protected:
 
     int              gridI;
     int              gridJ;
+    int              spriteId;
     Vector2D         vector;
     int              pointCtr;
 
@@ -65,18 +68,17 @@ class KGrHero : public KGrRunner
     Q_OBJECT
 public:
     KGrHero (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
-                int i, int j, KGrRuleBook  * pRules);
+                int i, int j, int pSpriteId, KGrRuleBook  * pRules);
     ~KGrHero();
 
     // void setDirection (Direction dirn);
 
     void run();
 
-// signals:
-    // void moveHero (int i, int j, int frame); // OBSOLESCENT? - 9/1/09
+    void showState (char option);
 
 signals:
-    void startAnimation   (const int id, const int row, const int col,
+    void startAnimation   (const int spriteId, const int i, const int j,
                            const int time,
                            const Direction dirn, const AnimationType type);
 
@@ -89,11 +91,13 @@ class KGrEnemy : public KGrRunner
     Q_OBJECT
 public:
     KGrEnemy (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
-                 int i, int j, int id, KGrRuleBook  * pRules);
+                 int i, int j, int pSpriteId, KGrRuleBook  * pRules);
     ~KGrEnemy();
 
+    void showState (char option);
+
 signals:
-    void startAnimation   (const int id, const int row, const int col,
+    void startAnimation   (const int spriteId, const int i, const int j,
                            const int time,
                            const Direction dirn, const AnimationType type);
 

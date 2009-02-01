@@ -122,15 +122,6 @@ private slots:
     void setTradRules();
     void setKGrRules();
 
-    // Local slots for authors' debugging aids.
-    void showEnemy0();
-    void showEnemy1();
-    void showEnemy2();
-    void showEnemy3();
-    void showEnemy4();
-    void showEnemy5();
-    void showEnemy6();
-
     // void optionsShowToolbar();
     // void optionsShowStatusbar();
     void optionsConfigureKeys();
@@ -160,9 +151,12 @@ private:
     void setupEditToolbarActions();
     void setupThemes();
 
-    QSignalMapper * kbMapper;
-    void kbControl (const QString & name, const QString & text,
-                    const QKeySequence & shortcut, const int dirn);
+    QSignalMapper * kbMapper;		// Keyboard game-control mapper.
+    QSignalMapper * dbgMapper;		// Debugging-key mapper.
+    QSignalMapper * tempMapper;		// Temporary pointer.
+
+    void keyControl (const QString & name, const QString & text,
+                     const QKeySequence & shortcut, const int code);
 
 private:
     bool startupOK;

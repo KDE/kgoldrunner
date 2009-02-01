@@ -34,11 +34,13 @@ KGrLevelPlayer::KGrLevelPlayer (QObject      * parent,
     hero        (0),
     nuggets     (0),
     pointer     (true),
-    started     (false),
+    playState   (NotReady),
     targetI     (1),
     targetJ     (1),
     direction   (STAND)
 {
+    gameLogging = false;
+    bugFixed = false;
 }
 
 KGrLevelPlayer::~KGrLevelPlayer()
@@ -51,6 +53,9 @@ KGrLevelPlayer::~KGrLevelPlayer()
 
 void KGrLevelPlayer::init (KGrCanvas * view)
 {
+    // TODO - Should not really remember the view: needed for setMousePos.
+    mView = view;
+
     // Set the rules of this game.
     switch (gameData->rules) {
     case TraditionalRules:
@@ -65,12 +70,14 @@ void KGrLevelPlayer::init (KGrCanvas * view)
     }
     rules->printRules();
 
+    view->setGoldEnemiesRule (rules->enemiesShowGold());
+
     // Connect to code that paints grid cells and start-positions of sprites.
     connect (this, SIGNAL (animation()), view, SLOT (animate()));
     connect (this, SIGNAL (paintCell (int, int, char, int)),
              view, SLOT   (paintCell (int, int, char, int)));
-    connect (this, SIGNAL (setSpriteType (int, char, int, int)),
-             view, SLOT   (setSpriteType (int, char, int, int)));
+    connect (this, SIGNAL (makeSprite (char, int, int)),
+             view, SLOT   (makeSprite (char, int, int)));
 
     // Show the layout of this level in the view (KGrCanvas).
     int wall = ConcreteWall;
@@ -88,6 +95,7 @@ void KGrLevelPlayer::init (KGrCanvas * view)
                 nuggets++;
             }
 
+// TODO - Do hero in pass 1 and enemies in pass 2, to ensure the hero has id 0.
             // Either, create a hero and paint him on the background ...
             if (type == HERO) {
                 emit paintCell (i, j, FREE, 0);
@@ -95,8 +103,10 @@ void KGrLevelPlayer::init (KGrCanvas * view)
                 if (hero == 0) {
                     targetI = i;
                     targetJ = j;
-                    emit setSpriteType (0, HERO, i, j);
-                    hero = new KGrHero (this, grid, i, j, rules);
+                    int id = emit makeSprite (HERO, i, j);
+                    hero = new KGrHero (this, grid, i, j, id, rules);
+                    // TODO - Iff mouse mode, setMousePos();
+                    view->setMousePos (targetI, targetJ);	// ??????????
                 }
             }
 
@@ -105,8 +115,7 @@ void KGrLevelPlayer::init (KGrCanvas * view)
                 emit paintCell (i, j, FREE, 0);
 
                 KGrEnemy * enemy;
-                int id = enemies.count();
-                emit setSpriteType (id + 1, ENEMY, i, j);
+                int id = emit makeSprite (ENEMY, i, j);
                 enemy = new KGrEnemy (this, grid, i, j, id, rules);
                 enemies.append (enemy);
             }
@@ -117,6 +126,14 @@ void KGrLevelPlayer::init (KGrCanvas * view)
             }
         }
     }
+
+    // Connect the hero's efforts to the scoring, graphics and level-management.
+    connect (hero, SIGNAL (gotGold (int, int, int, bool)),
+             this, SLOT   (heroGotGold (int, int, int, bool)));
+    connect (hero, SIGNAL (gotGold (int, int, int, bool)),
+             grid, SLOT   (gotGold (int, int, int, bool)));
+    connect (hero, SIGNAL (gotGold (int, int, int, bool)),
+             view, SLOT   (gotGold (int, int, int, bool)));
 
     // Connect the new hero and enemies (if any) to the animation code.
     connect (hero, SIGNAL (startAnimation (int, int, int, int,
@@ -131,17 +148,37 @@ void KGrLevelPlayer::init (KGrCanvas * view)
     }
 }
 
+void KGrLevelPlayer::prepareToPlay()
+{
+    // TODO - Should this be a signal?
+    kDebug() << "Set mouse to:" << targetI << targetJ;
+    mView->setMousePos (targetI, targetJ);
+    playState = Ready;
+}
+
 void KGrLevelPlayer::setTarget (int pointerI, int pointerJ)
 {
-    // Mouse or other pointer device controls the hero.
-    if ((! started) && (pointerI == targetI) && (pointerJ == targetJ)) {
-        return;
-    }
-    pointer = true;
-    targetI = pointerI;
-    targetJ = pointerJ;
-    if (! started) {
-        started = true;
+    // Mouse or other pointer device is controlling the hero.
+    switch (playState) {
+    case NotReady:
+        // Ignore the pointer until KGrLevelPlayer ready to start.
+        break;
+    case Ready:
+        // Wait until the human player is ready to start playing.
+        if ((pointerI == targetI) && (pointerJ == targetJ)) {
+            // The pointer is still over the hero: do not start playing yet.
+            break;
+        }
+        else {
+            // The pointer moved: fall into "case Playing:" and start playing.
+            playState = Playing;
+        }
+    case Playing:
+        // The human player is playing now.
+        pointer = true;
+        targetI = pointerI;
+        targetJ = pointerJ;
+        break;
     }
 }
 
@@ -149,7 +186,6 @@ void KGrLevelPlayer::setDirection (Direction dirn)
 {
     // Keystrokes or other actions control the hero.
     pointer = false;
-    started = true;
     direction = dirn;
 }
 
@@ -192,10 +228,140 @@ Direction KGrLevelPlayer::getDirection (int heroI, int heroJ)
 
 void KGrLevelPlayer::tick()
 {
-    if (started) {
+    if (playState == Playing) {
         hero->run();
         emit animation();
     }
 }
+
+void KGrLevelPlayer::heroGotGold (const int,	// Don't care about spriteID
+                                  const int, const int,	// and location, and
+                                  const bool)	// the hero NEVER drops gold.
+{
+    kDebug() << "Collected gold";
+    if (--nuggets <= 0) {
+        kDebug() << "ALL GOLD COLLECTED";
+    }
+}
+
+/******************************************************************************/
+/**************************  AUTHORS' DEBUGGING AIDS **************************/
+/******************************************************************************/
+
+void KGrLevelPlayer::dbgControl (int code)
+{
+    switch (code) {
+    case DO_STEP:
+        tick();				// Do one timer step only.
+        break;
+    case BUG_FIX:
+        bugFix();			// Turn a bug fix on/off dynamically.
+        break;
+    case LOGGING:
+        startLogging();			// Turn logging on/off.
+        break;
+    case S_POSNS:
+        showFigurePositions();		// Show everybody's co-ordinates.
+        break;
+    case S_HERO:
+        hero->showState ('s');		// Show hero's co-ordinates and state.
+        break;
+    case S_OBJ:
+        showObjectState();		// Show an object's state.
+        break;
+    default:
+        showEnemyState (code - ENEMY_0); // Show enemy co-ords and state.
+        break;
+    }
+}
+
+// OBSOLESCENT - 21/1/09 Can do this just by calling tick().
+void KGrLevelPlayer::restart()
+{
+    // bool temp;
+    // int i,j;
+
+    // if (editMode)		// Can't move figures when in Edit Mode.
+        // return;
+
+    // temp = gameFrozen;
+
+    // gameFrozen = false;	// Temporarily restart the game, by re-running
+                                // any timer events that have been blocked.
+
+    // OBSOLESCENT - 7/1/09
+    // readMousePos();		// Set hero's direction.
+    // hero->doStep();		// Move the hero one step.
+
+    // OBSOLESCENT - 7/1/09
+    // j = enemies.count();	// Move each enemy one step.
+    // for (i = 0; i < j; i++) {
+        // enemy = enemies.at (i);	// Need to use an index because called methods
+        // enemy->doStep();	// change the "current()" of the "enemies" list.
+    // }
+
+    // OBSOLESCENT - 20/1/09 Need to compile after kgrobject.cpp removed.
+    // for (i = 1; i <= 28; i++)
+        // for (j = 1; j <= 20; j++) {
+            // if ((playfield[i][j]->whatIam() == HOLE) ||
+                // (playfield[i][j]->whatIam() == USEDHOLE) ||
+                // (playfield[i][j]->whatIam() == BRICK))
+                // ((KGrBrick *)playfield[i][j])->doStep();
+        // }
+
+    // gameFrozen = temp;	// If frozen was true, halt again, which gives a
+                                // single-step effect, otherwise go on running.
+}
+
+void KGrLevelPlayer::bugFix()
+{
+    // Toggle a bug fix on/off dynamically.
+    bugFixed = (bugFixed) ? false : true;
+    printf ("%s", (bugFixed) ? "\n" : "");
+    printf (">>> Bug fix is %s\n", (bugFixed) ? "ON" : "OFF\n");
+}
+
+void KGrLevelPlayer::startLogging()
+{
+    // Toggle logging on/off dynamically.
+    gameLogging = (gameLogging) ? false : true;
+    printf ("%s", (gameLogging) ? "\n" : "");
+    printf (">>> Logging is %s\n", (gameLogging) ? "ON" : "OFF\n");
+}
+
+void KGrLevelPlayer::showFigurePositions()
+{
+    hero->showState ('p');
+    foreach (KGrEnemy * enemy, enemies) {
+        enemy->showState ('p');
+    }
+}
+
+void KGrLevelPlayer::showObjectState()
+{
+    int i, j;
+    // OBSOLESCENT - 20/1/09 KGrObject * myObject;
+
+    // p = view->getMousePos(); Need to get mouse position somehow. DONE.
+    i = targetI;
+    j = targetJ;
+    // OBSOLESCENT - 20/1/09 Need to compile after kgrobject.cpp removed.
+    // myObject = playfield[i][j];
+    // switch (myObject->whatIam()) {
+        // case BRICK:
+        // case HOLE:
+        // case USEDHOLE:
+            // ((KGrBrick *)myObject)->showState (i, j); break;
+        // default: myObject->showState (i, j); break;
+    // }
+}
+
+void KGrLevelPlayer::showEnemyState (int enemyId)
+{
+    if (enemyId < enemies.count()) {
+        enemies.at(enemyId)->showState ('s');
+    }
+}
+
 
 #include "kgrlevelplayer.moc"

@@ -39,6 +39,7 @@ public:
     ~KGrLevelPlayer();
 
     void init (KGrCanvas * view);
+    void prepareToPlay();
 
     void setTarget         (int pointerI, int pointerJ);
     void setDirection      (Direction dirn);
@@ -46,12 +47,22 @@ public:
 
     void tick              ();
 
+    void dbgControl (int code);		// Authors' debugging aids.
+
 signals:
     void animation();
     void paintCell (int i, int j, char tileType, int diggingStage = 0);
-    void setSpriteType (int id, char spriteType, int row, int col);
+    int  makeSprite (char spriteType, int i, int j);
+
+private slots:
+    void heroGotGold (const int,	// Don't care which spriteID,
+                      const int, const int,	// nor the location, and
+                      const bool);	// the hero never drops gold.
 
 private:
+    // TODO - Eliminate mView ...
+    KGrCanvas *          mView;
+
     KGrGameData  *       gameData;
     KGrLevelData *       levelData;
 
@@ -63,10 +74,30 @@ private:
     int                  nuggets;
 
     bool                 pointer;
-    bool                 started;
-    int                  targetI;
+
+    enum                 PlayState {NotReady, Ready, Playing};
+    PlayState            playState;
+
+    int                  targetI;	// Where the mouse is pointing.
     int                  targetJ;
-    Direction            direction;
+
+    Direction            direction;	// Next direction for the hero to take.
+
+// OBSOLESCENT - 21/1/09 Can do this just by calling tick().
+    void restart();		// Kickstart the game action.
+
+/******************************************************************************/
+/**************************  AUTHORS' DEBUGGING AIDS **************************/
+/******************************************************************************/
+
+    bool gameLogging;		// If true, do logging printout (debug).
+    bool bugFixed;		// If true, enable bug fix code (debug).
+
+    void bugFix();		// Turn a bug fix on/off dynamically.
+    void startLogging();	// Turn logging on/off.
+    void showFigurePositions();	// Show everybody's co-ordinates.
+    void showObjectState();	// Show an object's state.
+    void showEnemyState (int);	// Show enemy's co-ordinates and state.
 };
 
 #endif // KGRLEVELPLAYER_H

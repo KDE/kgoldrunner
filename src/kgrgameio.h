@@ -69,7 +69,7 @@ public:
     /**
      * Find and read data for games, into a list of KGrGameData structures.
      */
-    IOStatus fetchGameListData (const QString & dir,
+    IOStatus fetchGameListData (Owner o, const QString & dir,
                                 QList<KGrGameData *> & gameList,
                                 QString & filePath);
     /**
@@ -86,7 +86,7 @@ private:
                                 const QString & prefix, const int level);
     char		getALine (const bool kgr3, QByteArray & line);
     QByteArray		removeNewline (const QByteArray & line);
-    KGrGameData *	initGameData();
+    KGrGameData *	initGameData (Owner o);
 };
 
 #endif // _KGRGAMEIO_H_

@@ -53,10 +53,8 @@ public:
     void setTitle (const QString&);
 
     void setHeroVisible (bool);
-    void moveHero (int x, int y, int frame);
 
     void moveEnemy (int, int, int, int, int);
-    void deleteEnemySprites();
 
     void goToBlack();
     void fadeIn();
@@ -73,23 +71,23 @@ public:
      */
     void setLevel (unsigned int level);
 
+    inline void setGoldEnemiesRule (bool showIt) { enemiesShowGold = showIt;}
+
 public slots:
     void animate          ();
-    void paintCell        (const int row, const int col, const char type,
+    void paintCell        (const int i, const int j, const char type,
                            const int offset = 0);
-    void setSpriteType    (const int id, const char type, int row, int col);
-    void startAnimation   (const int id, const int row, const int col,
+
+    int  makeSprite       (const char type, int i, int j);
+    void startAnimation   (const int id, const int i, const int j,
                            const int time,
                            const Direction dirn, const AnimationType type);
-    void resynchAnimation (const int id, const int row, const int col,
+    void resynchAnimation (const int id, const int i, const int j,
                            const bool stop);
-    void deleteAnimation  (const int id);
-
-    void makeHeroSprite (int, int, int);
-    void makeEnemySprite (int, int, int);
-
-    inline void jumpHero (int i, int j, int frame) // OBSOLESCENT? - 9/1/09
-                         { moveHero (i * bgw, j * bgh, frame); }
+    void gotGold          (const int spriteID, const int i, const int j,
+                           const bool spriteHasGold);
+    void deleteSprite     (const int id);
+    void deleteAllSprites ();
 
 signals:
     void mouseClick (int);
@@ -157,8 +155,9 @@ private:
 
     QTimeLine m_fadingTimeLine;
 
-    KGrSprite * heroSprite;
-    QList<KGrSprite *> * enemySprites;
+    int emptySprites;
+    QList<KGrSprite *> * sprites;
+
     QList<KGameCanvasRectangle *> borderRectangles;
     QList<KGameCanvasPixmap *> borderElements;
     QColor colour;
@@ -180,6 +179,8 @@ private:
     // Keep current score and lives 
     int lives;
     int score;
+
+    bool enemiesShowGold;		// Show or conceal if enemies have gold.
 };
 #endif // KGRCANVAS_H
 // vi: set sw=4 :

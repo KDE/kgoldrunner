@@ -48,8 +48,6 @@
 #include <KCmdLineArgs>
 #include <KAboutData>
 
-// #include "kgrobject.h"
-// #include "kgrfigure.h"
 #include "kgrcanvas.h"
 #include "kgrdialog.h"
 #include "kgrgame.h"
@@ -101,8 +99,8 @@ KGoldrunner::KGoldrunner()
     view = new KGrCanvas (this, scale, systemDataDir);
     game = new KGrGame   (view, systemDataDir, userDataDir);
 
-    // Initialise the collections of levels (i.e. the list of games).
-    if (! game->initCollections()) {
+    // Initialise the lists of games (i.e. collections of levels).
+    if (! game->initGameLists()) {
         startupOK = false;
         return;				// If no game files, abort.
     }
@@ -110,16 +108,14 @@ KGoldrunner::KGoldrunner()
     kDebug() << "Calling view->setBaseScale() ...";
     view->setBaseScale();		// Set scale for level-titles font.
 
-    // OBSOLESCENT - 9/1/09 hero = game->getHero();		// Get a pointer to the hero.
-
 /******************************************************************************/
 /*************************  SET UP THE USER INTERFACE  ************************/
 /******************************************************************************/
 
-    // Get catalog for translation
+    // Get catalog for translation.
     KGlobal::locale()->insertCatalog ("libkdegames");
 
-    // Tell the KMainWindow that this is the main widget
+    // Tell the KMainWindow that the KGrCanvas object is the main widget.
     setCentralWidget (view);
 
     // Set up our actions (menu, toolbar and keystrokes) ...
@@ -195,7 +191,6 @@ void KGoldrunner::KGoldrunner_2()
 
 KGoldrunner::~KGoldrunner()
 {
-    delete kbMapper;
 }
 
 void KGoldrunner::setupActions()
@@ -487,14 +482,15 @@ void KGoldrunner::setupActions()
 
     kbMapper = new QSignalMapper (this);
     connect (kbMapper, SIGNAL (mapped (int)), game, SLOT(kbControl (int)));
+    tempMapper = kbMapper;		// Save a parameter in keyControl().
 
-    kbControl ("stop",       i18n ("Stop"),       Qt::Key_Space, STAND);
-    kbControl ("move_right", i18n ("Move Right"), Qt::Key_Right, RIGHT);
-    kbControl ("move_left",  i18n ("Move Left"),  Qt::Key_Left,  LEFT);
-    kbControl ("move_up",    i18n ("Move Up"),    Qt::Key_Up,    UP);
-    kbControl ("move_down",  i18n ("Move Down"),  Qt::Key_Down,  DOWN);
-    kbControl ("dig_right",  i18n ("Dig Right"),  Qt::Key_C,     DIG_RIGHT);
-    kbControl ("dig_left",   i18n ("Dig Left"),   Qt::Key_Z,     DIG_LEFT);
+    keyControl ("stop",       i18n ("Stop"),       Qt::Key_Space, STAND);
+    keyControl ("move_right", i18n ("Move Right"), Qt::Key_Right, RIGHT);
+    keyControl ("move_left",  i18n ("Move Left"),  Qt::Key_Left,  LEFT);
+    keyControl ("move_up",    i18n ("Move Up"),    Qt::Key_Up,    UP);
+    keyControl ("move_down",  i18n ("Move Down"),  Qt::Key_Down,  DOWN);
+    keyControl ("dig_right",  i18n ("Dig Right"),  Qt::Key_C,     DIG_RIGHT);
+    keyControl ("dig_left",   i18n ("Dig Left"),   Qt::Key_Z,     DIG_LEFT);
 
     // Alternate one-handed controls.  Set up in "kgoldrunnerui.rc".
 
@@ -506,7 +502,7 @@ void KGoldrunner::setupActions()
     // Key_O, "dig_right"
     // Key_U, "dig_left"
 
-    setupEditToolbarActions();			// Uses pixmaps from "view".
+    setupEditToolbarActions();		// Uses pixmaps from "view".
 
     // Authors' debugging aids, effective when Pause is hit.  Options include
     // stepping through the animation, toggling a debug patch or log messages
@@ -518,96 +514,36 @@ void KGoldrunner::setupActions()
     if (! addDebuggingShortcuts)
         return;
 
-    KAction* step = actionCollection()->addAction ("do_step");
-    step->setText (i18n ("Step"));
-    step->setShortcut (Qt::Key_Period);
-    connect (step, SIGNAL (triggered (bool)), game, SLOT (doStep()));
-    addAction (step);
+    dbgMapper = new QSignalMapper (this);
+    connect (dbgMapper, SIGNAL (mapped (int)), game, SLOT(dbgControl (int)));
+    tempMapper = dbgMapper;		// Saves a parameter in keyControl().
 
-    KAction* bugFix = actionCollection()->addAction ("bug_fix");
-    bugFix->setText (i18n ("Test Bug Fix"));
-    bugFix->setShortcut (Qt::Key_B);
-    connect (bugFix, SIGNAL (triggered (bool)), game, SLOT (bugFix()));
-    addAction (bugFix);
+    keyControl ("do_step",      i18n ("Do a Step"), Qt::Key_Period, DO_STEP);
+    keyControl ("bug_fix",      i18n ("Test Bug Fix"), Qt::Key_B, BUG_FIX);
+    keyControl ("show_positions", i18n ("Show Positions"), Qt::Key_D, S_POSNS);
+    keyControl ("logging",      i18n ("Start Logging"), Qt::Key_G, LOGGING);
+    keyControl ("show_hero",    i18n ("Show Hero"), Qt::Key_R, S_HERO);
+    keyControl ("show_obj",     i18n ("Show Object"), Qt::Key_Question, S_OBJ);
 
-    KAction* showPos = actionCollection()->addAction ("show_positions");
-    showPos->setText (i18n ("Show Positions"));
-    showPos->setShortcut (Qt::Key_D);
-    connect (showPos,SIGNAL (triggered (bool)), game, SLOT (showFigurePositions()));
-    addAction (showPos);
-
-    KAction* startLog = actionCollection()->addAction ("logging");
-    startLog->setText (i18n ("Start Logging"));
-    startLog->setShortcut (Qt::Key_G);
-    connect (startLog, SIGNAL (triggered (bool)), game, SLOT (startLogging()));
-    addAction (startLog);
-
-    KAction* showHero = actionCollection()->addAction ("show_hero");
-    showHero->setText (i18n ("Show Hero"));
-    showHero->setShortcut (Qt::Key_R);		// H is for Hint now.
-    connect (showHero, SIGNAL (triggered (bool)), game, SLOT (showHeroState()));
-    addAction (showHero);
-
-    KAction* showObj = actionCollection()->addAction ("show_obj");
-    showObj->setText (i18n ("Show Object"));
-    showObj->setShortcut (Qt::Key_Question);
-    connect (showObj, SIGNAL (triggered (bool)), game, SLOT (showObjectState()));
-    addAction (showObj);
-
-    KAction* showEnemy0 = actionCollection()->addAction ("show_enemy_0");
-    showEnemy0->setText (i18n ("Show Enemy") + '0');
-    showEnemy0->setShortcut (Qt::Key_0);
-    connect (showEnemy0, SIGNAL (triggered (bool)), this, SLOT (showEnemy0()));
-    addAction (showEnemy0);
-
-    KAction* showEnemy1 = actionCollection()->addAction ("show_enemy_1");
-    showEnemy1->setText (i18n ("Show Enemy") + '1');
-    showEnemy1->setShortcut (Qt::Key_1);
-    connect (showEnemy1, SIGNAL (triggered (bool)), this, SLOT (showEnemy1()));
-    addAction (showEnemy1);
-
-    KAction* showEnemy2 = actionCollection()->addAction ("show_enemy_2");
-    showEnemy2->setText (i18n ("Show Enemy") + '2');
-    showEnemy2->setShortcut (Qt::Key_2);
-    connect (showEnemy2, SIGNAL (triggered (bool)), this, SLOT (showEnemy2()));
-    addAction (showEnemy2);
-
-    KAction* showEnemy3 = actionCollection()->addAction ("show_enemy_3");
-    showEnemy3->setText (i18n ("Show Enemy") + '3');
-    showEnemy3->setShortcut (Qt::Key_3);
-    connect (showEnemy3, SIGNAL (triggered (bool)), this, SLOT (showEnemy3()));
-    addAction (showEnemy3);
-
-    KAction* showEnemy4 = actionCollection()->addAction ("show_enemy_4");
-    showEnemy4->setText (i18n ("Show Enemy") + '4');
-    showEnemy4->setShortcut (Qt::Key_4);
-    connect (showEnemy4, SIGNAL (triggered (bool)), this, SLOT (showEnemy4()));
-    addAction (showEnemy4);
-
-    KAction* showEnemy5 = actionCollection()->addAction ("show_enemy_5");
-    showEnemy5->setText (i18n ("Show Enemy") + '5');
-    showEnemy5->setShortcut (Qt::Key_5);
-    connect (showEnemy5, SIGNAL (triggered (bool)), this, SLOT (showEnemy5()));
-    addAction (showEnemy5);
-
-    KAction* showEnemy6 = actionCollection()->addAction ("show_enemy_6");
-    showEnemy6->setText (i18n ("Show Enemy") + '6');
-    showEnemy6->setShortcut (Qt::Key_6);
-    connect (showEnemy6, SIGNAL (triggered (bool)), this, SLOT (showEnemy6()));
-    addAction (showEnemy6);
+    keyControl ("show_enemy_0", i18n ("Show Enemy") + '0', Qt::Key_0, ENEMY_0);
+    keyControl ("show_enemy_1", i18n ("Show Enemy") + '1', Qt::Key_1, ENEMY_1);
+    keyControl ("show_enemy_2", i18n ("Show Enemy") + '2', Qt::Key_2, ENEMY_2);
+    keyControl ("show_enemy_3", i18n ("Show Enemy") + '3', Qt::Key_3, ENEMY_3);
+    keyControl ("show_enemy_4", i18n ("Show Enemy") + '4', Qt::Key_4, ENEMY_4);
+    keyControl ("show_enemy_5", i18n ("Show Enemy") + '5', Qt::Key_5, ENEMY_5);
+    keyControl ("show_enemy_6", i18n ("Show Enemy") + '6', Qt::Key_6, ENEMY_6);
 }
 
-void KGoldrunner::kbControl (const QString & name, const QString & text,
-                             const QKeySequence & shortcut, const int dirn)
+void KGoldrunner::keyControl (const QString & name, const QString & text,
+                              const QKeySequence & shortcut, const int code)
 {
     // Create an action for keyboard control of KGoldrunner and connect it to
-    // slot game->kbControl(int), via kbMapper and mapping-code = direction.
-
+    // a game-> slot, via a QSignalMapper and a mapping-code (e.g. direction).
     KAction * a = actionCollection()->addAction (name);
     a->setText (text);
     a->setShortcut (shortcut);
-    connect (a, SIGNAL (triggered (bool)), kbMapper, SLOT (map()));
-    kbMapper->setMapping (a, dirn);
+    connect (a, SIGNAL (triggered (bool)), tempMapper, SLOT (map()));
+    tempMapper->setMapping (a, code);
     addAction (a);
 }
 
@@ -882,16 +818,6 @@ void KGoldrunner::setKGrRules()
     // KGrFigure::reappearAtTop = false;
     // KGrFigure::searchStrategy = MEDIUM;
 }
-
-// Local slots for authors' debugging aids.
-
-void KGoldrunner::showEnemy0()		{game->showEnemyState (0);}
-void KGoldrunner::showEnemy1()		{game->showEnemyState (1);}
-void KGoldrunner::showEnemy2()		{game->showEnemyState (2);}
-void KGoldrunner::showEnemy3()		{game->showEnemyState (3);}
-void KGoldrunner::showEnemy4()		{game->showEnemyState (4);}
-void KGoldrunner::showEnemy5()		{game->showEnemyState (5);}
-void KGoldrunner::showEnemy6()		{game->showEnemyState (6);}
 
 void KGoldrunner::saveProperties (KConfigGroup & /* config - unused */)
 {

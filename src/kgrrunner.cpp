@@ -23,7 +23,7 @@
 #include "kgrrulebook.h"
 
 KGrRunner::KGrRunner (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
-                      int i, int j, KGrRuleBook * pRules)
+                      int i, int j, int pSpriteId, KGrRuleBook * pRules)
     :
     QObject     (pLevelPlayer),	// Destroy runner when level is destroyed.
     levelPlayer (pLevelPlayer),
@@ -31,6 +31,7 @@ KGrRunner::KGrRunner (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
     rules       (pRules),
     gridI       (i),
     gridJ       (j),
+    spriteId    (pSpriteId),
 
     currDirection (STAND),
     currAnimation (FALL_L)
@@ -53,35 +54,17 @@ void KGrRunner::getRules()
     kDebug() << "pointsPerCell" << pointsPerCell << "turnAnywhere" << turnAnywhere;
 }
 
-// void KGrRunner::getLocation (int & row, int & col) TODO - Remove this.
-// {
-    // if (pointCtr < pointsPerCell) {
-        // row = gridI;
-        // col = gridJ;
-    // }
-    // else {
-        // row = gridI + vector [X];
-        // col = gridJ + vector [Y];
-    // }
-// }
-
-
 KGrHero::KGrHero (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
-                  int i, int j, KGrRuleBook * pRules)
+                  int i, int j, int pSpriteId, KGrRuleBook * pRules)
     :
-    KGrRunner (pLevelPlayer, pGrid, i, j, pRules)
+    KGrRunner (pLevelPlayer, pGrid, i, j, pSpriteId, pRules)
 {
-    kDebug() << "THE HERO IS BORN at" << i << j;
+    kDebug() << "THE HERO IS BORN at" << i << j << "sprite ID" << pSpriteId;
 }
 
 KGrHero::~KGrHero()
 {
 }
-
-// void KGrHero::setDirection (Direction dirn) TODO - Remove this.
-// {
-    // nextDirection = dirn;
-// }
 
 void KGrHero::run()
 {
@@ -95,10 +78,14 @@ void KGrHero::run()
     gridI    = gridI + vector [X];
     gridJ    = gridJ + vector [Y];
 
+    char cell = grid->cellType  (gridI, gridJ);
+    if (cell == NUGGET) {
+        emit gotGold (spriteId, gridI, gridJ, true);
+    }
+
     Direction dirn = levelPlayer->getDirection (gridI, gridJ);
 
     Flags OK  = grid->heroMoves (gridI, gridJ);
-    char cell = grid->cellType  (gridI, gridJ);
     bool canStand = OK & dFlag [STAND];
     kDebug() << "Direction" << dirn << "Flags" << OK << "at" << gridI << gridJ;
 
@@ -135,24 +122,68 @@ void KGrHero::run()
     vector [Y] = movement [dirn][Y];
 
     kDebug() << "New direction" << dirn << vector [X] << vector [Y] << gridI << gridJ;
-    kDebug() << "Sprite" << 0 << "Animate" << gridI << gridJ << "time" << 0 << "dirn" << dirn << "anim" << anim;
+    kDebug() << "Sprite" << spriteId << "Animate" << gridI << gridJ << "time" << 0 << "dirn" << dirn << "anim" << anim;
 
-    emit startAnimation (0, gridI, gridJ, 0, dirn, anim);
+    emit startAnimation (spriteId, gridI, gridJ, 0, dirn, anim);
     currAnimation = anim;
     currDirection = dirn;
 }
 
+void KGrHero::showState (char option)
+{
+    printf ("(%02d,%02d) - Hero      ", gridI, gridJ);
+    switch (option) {
+        case 'p': printf ("\n"); break;
+        case 's': printf (" STATE\n");
+            // TODO - Print the hero's state.
+            // printf (" nuggets %02d status %d walk-ctr %d ",
+                          // nuggets, status, walkCounter);
+            // printf ("dirn %d next dirn %d\n", direction, nextDir);
+            // printf ("                     rel (%02d,%02d) abs (%03d,%03d)",
+                        // relx, rely, absx, absy);
+            // printf (" pix %02d", actualPixmap);
+            // printf (" mem %d %d %d %d", mem_x, mem_y, mem_relx, mem_rely);
+            // if (walkFrozen) printf (" wBlock");
+            // if (fallFrozen) printf (" fBlock");
+            // printf ("\n");
+            break;
+    }
+}
+
 
 KGrEnemy::KGrEnemy (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
-                    int i, int j, int id, KGrRuleBook * pRules)
+                    int i, int j, int pSpriteId, KGrRuleBook * pRules)
     :
-    KGrRunner (pLevelPlayer, pGrid, i, j, pRules)
+    KGrRunner (pLevelPlayer, pGrid, i, j, pSpriteId, pRules)
 {
-    kDebug() << "ENEMY" << id << "IS BORN at" << i << j;
+    kDebug() << "ENEMY" << pSpriteId << "IS BORN at" << i << j;
 }
 
 KGrEnemy::~KGrEnemy()
 {
+}
+
+void KGrEnemy::showState (char option)
+{
+    printf ("(%02d,%02d) - Enemy  [%d]", gridI, gridJ, spriteId);
+    switch (option) {
+        case 'p': printf ("\n"); break;
+        case 's': printf (" STATE\n");
+            // TODO - Print the enemy's state.
+            // printf (" nuggets %02d status %d walk-ctr %d ",
+                          // nuggets, status, walkCounter);
+            // printf ("dirn %d search %d capt-ctr %d\n",
+                        // direction, searchStatus, captiveCounter);
+            // printf ("                     rel (%02d,%02d) abs (%03d,%03d)",
+                        // relx, rely, absx, absy);
+            // printf (" pix %02d", actualPixmap);
+            // printf (" mem %d %d %d %d", mem_x, mem_y, mem_relx, mem_rely);
+            // if (walkFrozen) printf (" wBlock");
+            // if (fallFrozen) printf (" fBlock");
+            // if (captiveFrozen) printf (" cBlock");
+            // printf ("\n");
+            break;
+    }
 }
 
 #include "kgrrunner.moc"

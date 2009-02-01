@@ -16,7 +16,7 @@
 #include "kgrcanvas.h"
 #include "kgrdialog.h"	// OBSOLESCENT - 30/12/08, need KGrMessage and a subset of dialogs for the editor.
 
-class KGrCollection;	// OBSOLESCENT - 30/12/08
+// class KGrCollection;	// OBSOLESCENT - 30/12/08
 
 /**
  * This class is the game-editor for KGoldrunner.
@@ -80,7 +80,8 @@ private:
     QString      levelHint;	// Level hint during editing (optional).
 
 private:
-    QString getFilePath  (Owner o, KGrCollection * colln, int lev);
+    // TODO - Change KGrCollection to KGrGameData.
+    // QString getFilePath  (Owner o, KGrCollection * colln, int lev);
     void loadEditLevel (int);	// Load and display an existing level for edit.
     void initEdit();
     void deleteLevel();
@@ -90,6 +91,7 @@ private:
     void showEditLevel();
     bool reNumberLevels (int, int, int, int);
     bool ownerOK (Owner o);
+    bool saveGameData (Owner o);
 
     int  level; // OBSOLESCENT - 31/12/08
     bool loading; // OBSOLESCENT - 31/12/08

@@ -16,10 +16,12 @@
 
 #include "kgrsprite.h"
 
-KGrSprite::KGrSprite (KGameCanvasAbstract* canvas)
+KGrSprite::KGrSprite (KGameCanvasAbstract* canvas, const char type)
     :
     KGameCanvasPixmap (canvas),
 
+    m_frameOffset     (0),	// No offset at first (e.g. carrying no gold).
+    m_type            (type),
     m_stationary      (true),	// Animation is OFF at first.
     m_x               (0),
     m_y               (0),
@@ -49,8 +51,9 @@ void KGrSprite::addFrames (QList<QPixmap> * frames, const QPoint & topLeft,
 
 void KGrSprite::move (double x, double y, int frame)
 {
-    if (m_frame!=frame) {
-        m_frame = frame;
+    int adjustedFrame = frame + m_frameOffset;	// e.g. Enemy carrying gold.
+    if (m_frame != adjustedFrame) {
+        m_frame = adjustedFrame;
         setPixmap (m_frames->at (m_frame));
     }
     if ((m_loc.x() != x) || (m_loc.y() != y)) {
