@@ -107,9 +107,10 @@ private slots:
     void createGame();
     void editGameInfo();
 
-    // Local slots to set mouse/keyboard control of the hero.
+    // Local slots to set mouse/keyboard or laptop-hybrid control of the hero.
     void setMouseMode();
     void setKeyBoardMode();
+    void setLaptopMode();
 
     // Local slots to set game speed.
     void normalSpeed();
@@ -185,6 +186,7 @@ private:
     KToggleFullScreenAction *fullScreen; // Show Full Screen Mode on menu.
     KToggleAction *	setMouse;	// Show mouse/keyboard mode on menu.
     KToggleAction *	setKeyboard;	// Show mouse/keyboard mode on menu.
+    KToggleAction *	setLaptop;	// Show mouse/keyboard mode on menu.
 
     KToggleAction *	tradRules;	// Set Traditional rules.
     KToggleAction *	kgrRules;	// Set KGoldrunner rules.

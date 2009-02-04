@@ -6,6 +6,9 @@ const char TraditionalRules = 'T';
 const char KGoldrunnerRules = 'K';
 const char ScavengerRules   = 'S';
 
+/// Modes for controlling the hero in KGoldrunner.
+enum Control {MOUSE, KEYBOARD, LAPTOP};
+
 /// KGrGameData structure: contains attributes of a KGoldrunner game.
 class KGrGameData
 {
@@ -44,8 +47,8 @@ typedef char    Flags;
 enum Axis       {X, Y, nAxes};
 typedef int     Vector2D [nAxes];
 
-// enum Direction  {STAND, RIGHT, LEFT, UP, DOWN, nDirections};
-enum Digging    {DIG_RIGHT = nDirections, DIG_LEFT};
+enum Direction  {STAND, RIGHT, LEFT, UP, DOWN, nDirections,
+                 DIG_RIGHT = nDirections, DIG_LEFT};
 
 const DirectionFlag dFlag [nDirections] = {
                 0x10,		// Can stand.

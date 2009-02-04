@@ -38,26 +38,30 @@ public:
                                       KGrLevelData * theLevelData);
     ~KGrLevelPlayer();
 
-    void init (KGrCanvas * view);
+    void init (KGrCanvas * view, const Control mode);
     void prepareToPlay();
 
+    inline void setControlMode (const Control mode) { controlMode = mode; }
+
     void setTarget         (int pointerI, int pointerJ);
-    void setDirection      (Direction dirn);
+    void setDirectionByKey (Direction dirn);
     Direction getDirection (int heroI, int heroJ);
 
     void tick              ();
+    void runnerGotGold     (const int  spriteID, const int i, const int j,
+                            const bool hasGold);
 
-    void dbgControl (int code);		// Authors' debugging aids.
+    void dbgControl        (int code);	// Authors' debugging aids.
 
 signals:
-    void animation();
-    void paintCell (int i, int j, char tileType, int diggingStage = 0);
+    void animation  ();
+    void paintCell  (int i, int j, char tileType, int diggingStage = 0);
     int  makeSprite (char spriteType, int i, int j);
+    void gotGold    (const int  spriteID, const int i, const int j,
+                     const bool hasGold);
 
 private slots:
-    void heroGotGold (const int,	// Don't care which spriteID,
-                      const int, const int,	// nor the location, and
-                      const bool);	// the hero never drops gold.
+    void doDig      (int button);	// Dig using mouse-buttons.
 
 private:
     // TODO - Eliminate mView ...
@@ -69,11 +73,12 @@ private:
     KGrLevelGrid *       grid;
     KGrRuleBook *        rules;
     KGrHero *            hero;
+    int                  heroID;
     QList<KGrEnemy *>    enemies;
 
-    int                  nuggets;
+    Control              controlMode;
 
-    bool                 pointer;
+    int                  nuggets;
 
     enum                 PlayState {NotReady, Ready, Playing};
     PlayState            playState;
@@ -85,6 +90,8 @@ private:
 
 // OBSOLESCENT - 21/1/09 Can do this just by calling tick().
     void restart();		// Kickstart the game action.
+
+    void startDigging (Direction diggingDirection);
 
 /******************************************************************************/
 /**************************  AUTHORS' DEBUGGING AIDS **************************/

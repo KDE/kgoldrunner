@@ -92,7 +92,9 @@ public slots:
 
     void setPlaySounds (bool on_off);	// Set sound enabled or disabled.
 
-    void setMouseMode (bool on_off);	// Set mouse OR keyboard control.
+    // Set mouse, keyboard or laptop-hybrid control of the hero.
+    void setControlMode (const Control mode);
+
     void startLevel (int startingAt, int requestedLevel);
     void newGame (const int lev, const int gameIndex);
     void startTutorial();		// Start tutorial game.
@@ -145,9 +147,8 @@ private slots:
     void quickStartQuit();
 
 private slots:
-    void finalBreath();		// Hero is dead: re-start the level.
+    void finalBreath();			// Hero is dead: re-start the level.
     void readMousePos();		// Timed reading of mouse position.
-    void doDig (int button);		// Dig when under mouse-button control.
 
 private:
     void setBlankLevel (bool playable);
@@ -244,7 +245,8 @@ public slots:			// Slots connected to the Menu and Edit Toolbar.
 private:
     KGrEditor * editor;		// The level-editor object.
 
-    bool mouseMode;		// Flag to set up keyboard OR mouse control.
+    Control controlMode;	// How to control the hero (e.g. K/B or mouse).
+
     bool editMode;		// Flag to change keyboard and mouse functions.
     char editObj;		// Type of object to be painted by the mouse.
     bool paintEditObj;		// Sets painting on/off (toggled by clicking).

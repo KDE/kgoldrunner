@@ -20,7 +20,7 @@
 
 KGrLevelGrid::KGrLevelGrid (QObject * parent, KGrLevelData * theLevelData)
     :
-    QObject (parent)
+    QObject     (parent)
 {
     // Put a concrete wall all round the layout: left, right, top and bottom.
     // This saves ever having to test for being at the edge of the layout.
@@ -68,8 +68,6 @@ KGrLevelGrid::KGrLevelGrid (QObject * parent, KGrLevelData * theLevelData)
         inRow  = inRow  + inWidth;
         outRow = outRow + width;
     }
-
-    calculateAccess();
 }
 
 KGrLevelGrid::~KGrLevelGrid()
@@ -77,103 +75,153 @@ KGrLevelGrid::~KGrLevelGrid()
 }
 
 // Inline functions (see kgrlevelgrid.h).
-//     char cellType   (int i, int j)
-//     char heroMoves  (int i, int j)
-//     char enemyMoves (int i, int j)
-//     char cellState  (int i, int j)
+//     char cellType
+//     char heroMoves
+//     char enemyMoves
+//     char cellState
+//     void gotGold
 
-void KGrLevelGrid::calculateAccess()
+void KGrLevelGrid::calculateAccess (bool pRunThruHole)
 {
+    runThruHole = pRunThruHole;		// Save a copy of the runThruHole rule.
+
     char here;
+    bool canEnter;
+
+    // Calculate which cells can be entered (N.B. USEDHOLE is a trapped enemy).
     for (int j = 1; j < height - 1; j++) {
         for (int i = 1; i < width - 1; i++) {
-            here  = cellType (i, j);
-            if ((here != BRICK) && (here != CONCRETE) && (here != FBRICK)) {
-                heroAccess  [index (i, j)] = ENTERABLE;
-                enemyAccess [index (i, j)] = ENTERABLE;
-            }
+            here      = cellType (i, j);
+            canEnter  = (here != BRICK)  && (here != CONCRETE) &&
+                        (here != FBRICK) && (here != USEDHOLE);
+            heroAccess  [index (i, j)] = canEnter ? ENTERABLE : 0;
+            enemyAccess [index (i, j)] = canEnter ? ENTERABLE : 0;
         }
     }
 
-    Flags below;
+    // Calculate the access *from* each cell to its neighbours.
+    for (int j = 1; j < height - 1; j++) {
+        for (int i = 1; i < width - 1; i++) {
+            calculateCellAccess (i, j);
+        }
+    }
+}
+
+void KGrLevelGrid::changeCellAt (const int i, const int j, const char type)
+{
+    int  position          = index (i, j);
+    bool canEnter          = (type != BRICK) && (type != CONCRETE) &&
+                             (type != FBRICK) && (type != USEDHOLE);
+    layout      [position] = type;
+    heroAccess  [position] = canEnter ? ENTERABLE : 0;
+    enemyAccess [position] = canEnter ? ENTERABLE : 0;
+
+    calculateCellAccess (i, j);		// Recalculate access *from* this cell
+					// and access *to* it
+    calculateCellAccess (i, j - 1);	// from above,
+    calculateCellAccess (i - 1, j);	// from left,
+    calculateCellAccess (i + 1, j);	// from right,
+    calculateCellAccess (i, j + 1);	// and from below.
+}
+
+void KGrLevelGrid::calculateCellAccess (const int i, const int j)
+{
     Flags access = 0;
+    char  here   = cellType (i, j);
+    char  below  = cellType (i, j + 1);
 
-    for (int j = 1; j < height - 1; j++) {
-        for (int i = 1; i < width - 1; i++) {
-            here   = cellType (i, j);
-            below  = cellType (i, j + 1);
+    access = heroMoves (i, j) & ENTERABLE;
+    fprintf (stderr, "[%02d,%02d] %c access %02x below %c\n",
+	     i, j, here, access, below);
 
-            access = heroMoves (i, j);
-
-            // Cannot enter brick or concrete: can enter false brick from above.
-            if (! (access & ENTERABLE) && (here != FBRICK)) {
-                access = 0;
-            }
-            // If can stand or hang on anything, allow down, left and right.
-            else if ((below == BRICK) || (below == CONCRETE) ||
-                (below == LADDER) || (here == LADDER) || (here == POLE)) {
-                access |= (dFlag [STAND] | dFlag [DOWN] |
-                           dFlag [LEFT] |  dFlag [RIGHT]);
-            }
-            // If cannot stand or hang, can only go down (space or false brick).
-            else {
-                access |= dFlag [DOWN];
-            }
-            // Can only go up if there is a ladder here.
-            if (here == LADDER) {
-                access |= dFlag [UP];
-            }
-
-            int enter = (access & ENTERABLE)         ? 1 : 0;
-            int stand = (access & dFlag [STAND])     ? 1 : 0;
-            int u     = (access & dFlag [UP])        ? 1 : 0;
-            int d     = (access & dFlag [DOWN])      ? 1 : 0;
-            int l     = (access & dFlag [LEFT])      ? 1 : 0;
-            int r     = (access & dFlag [RIGHT])     ? 1 : 0;
-            if ((i == 14) && (j == 20)) 
-            fprintf (stderr, "[%02d,%02d] %c %02x E %d S %d U %d D %d L %d R %d ***\n",
-                     i, j, here, access, enter, stand, u, d, l, r);
-
-            // Mask out directions that are blocked above, below, L or R.
-            if (! (heroMoves (i, j - 1) & ENTERABLE)) {
-                access = ~dFlag [UP] & access;		// Cannot go up.
-            }
-            if (! (heroMoves (i - 1, j) & ENTERABLE)) {
-                access = ~dFlag [LEFT] & access;	// Cannot go left.
-            }
-            if (! (heroMoves (i + 1, j) & ENTERABLE)) {
-                access = ~dFlag [RIGHT] & access;	// Cannot go right.
-            }
-            if (! (heroMoves (i, j + 1) & ENTERABLE)) {
-                if (below != FBRICK) {
-                    access = ~dFlag [DOWN] & access;	// Cannot go down.
-                }
-            }
-
-            enter = (access & ENTERABLE)         ? 1 : 0;
-            stand = (access & dFlag [STAND])     ? 1 : 0;
-            u     = (access & dFlag [UP])        ? 1 : 0;
-            d     = (access & dFlag [DOWN])      ? 1 : 0;
-            l     = (access & dFlag [LEFT])      ? 1 : 0;
-            r     = (access & dFlag [RIGHT])     ? 1 : 0;
-            if ((i == 14) && (j == 20)) 
-            fprintf (stderr, "[%02d,%02d] %c %02x E %d S %d U %d D %d L %d R %d ***\n",
-                     i, j, here, access, enter, stand, u, d, l, r);
-            heroAccess [index (i, j)]  |= access;
-            access = heroAccess [index (i, j)];
-            enter = (access & ENTERABLE)         ? 1 : 0;
-            stand = (access & dFlag [STAND])     ? 1 : 0;
-            u     = (access & dFlag [UP])        ? 1 : 0;
-            d     = (access & dFlag [DOWN])      ? 1 : 0;
-            l     = (access & dFlag [LEFT])      ? 1 : 0;
-            r     = (access & dFlag [RIGHT])     ? 1 : 0;
-            fprintf (stderr, "[%02d,%02d] %c %02x E %d S %d U %d D %d L %d R %d\n",
-                     i, j, here, access, enter, stand, u, d, l, r);
-            
-            // Enemy access is the same as the hero's when no bricks are open.
-            enemyAccess [index (i, j)] = heroAccess [index (i, j)];
-        }
+    // Cannot enter brick or concrete: can enter false brick from above.
+    if (! (access & ENTERABLE) && (here != FBRICK)) {
+	access = 0;
     }
+    // If can stand or hang on anything, allow down, left and right.
+    else if ((below == BRICK) || (below == CONCRETE) || (below == USEDHOLE) ||
+	(below == LADDER) || (here == LADDER) || (here == POLE)) {
+        fprintf (stderr, "Can stand\n");
+	access |= (dFlag [STAND] | dFlag [DOWN] |
+		   dFlag [LEFT]  | dFlag [RIGHT]);
+    }
+    // If cannot stand or hang, can only go down (space or false brick).
+    else {
+        fprintf (stderr, "Cannot stand\n");
+	access |= dFlag [DOWN];
+    }
+    // Can only go up if there is a ladder here.
+    if (here == LADDER) {
+	access |= dFlag [UP];
+    }
+
+    int enter = (access & ENTERABLE)         ? 1 : 0;
+    int stand = (access & dFlag [STAND])     ? 1 : 0;
+    int u     = (access & dFlag [UP])        ? 1 : 0;
+    int d     = (access & dFlag [DOWN])      ? 1 : 0;
+    int l     = (access & dFlag [LEFT])      ? 1 : 0;
+    int r     = (access & dFlag [RIGHT])     ? 1 : 0;
+    if (below == HOLE)
+    fprintf (stderr, "[%02d,%02d] %c %02x E %d S %d U %d D %d L %d R %d ***\n",
+	     i, j, here, access, enter, stand, u, d, l, r);
+
+    // Mask out directions that are blocked above, below, L or R.
+    if (! (heroMoves (i, j - 1) & ENTERABLE)) {
+	access = ~dFlag [UP] & access;		// Cannot go up.
+    }
+    if (! (heroMoves (i - 1, j) & ENTERABLE)) {
+	access = ~dFlag [LEFT] & access;	// Cannot go left.
+    }
+    if (! (heroMoves (i + 1, j) & ENTERABLE)) {
+	access = ~dFlag [RIGHT] & access;	// Cannot go right.
+    }
+    if (! (heroMoves (i, j + 1) & ENTERABLE)) {
+	if (below != FBRICK) {
+	    access = ~dFlag [DOWN] & access;	// Cannot go down.
+	}
+    }
+
+    enter = (access & ENTERABLE)         ? 1 : 0;
+    stand = (access & dFlag [STAND])     ? 1 : 0;
+    u     = (access & dFlag [UP])        ? 1 : 0;
+    d     = (access & dFlag [DOWN])      ? 1 : 0;
+    l     = (access & dFlag [LEFT])      ? 1 : 0;
+    r     = (access & dFlag [RIGHT])     ? 1 : 0;
+    if (below == HOLE)
+    fprintf (stderr, "[%02d,%02d] %c %02x E %d S %d U %d D %d L %d R %d ***\n",
+	     i, j, here, access, enter, stand, u, d, l, r);
+    heroAccess [index (i, j)]  = access;
+    enter = (access & ENTERABLE)         ? 1 : 0;
+    stand = (access & dFlag [STAND])     ? 1 : 0;
+    u     = (access & dFlag [UP])        ? 1 : 0;
+    d     = (access & dFlag [DOWN])      ? 1 : 0;
+    l     = (access & dFlag [LEFT])      ? 1 : 0;
+    r     = (access & dFlag [RIGHT])     ? 1 : 0;
+    fprintf (stderr, "[%02d,%02d] %c %02x E %d S %d U %d D %d L %d R %d\n",
+	     i, j, here, access, enter, stand, u, d, l, r);
+    
+    // Enemy access is the same as the hero's when no holes are open.
+    enemyAccess [index (i, j)] = heroAccess [index (i, j)];
+
+    if (here == USEDHOLE) {
+        enemyAccess [index (i, j)] = UP;	// Can only climb out of hole.
+    }
+    if (! runThruHole) {			// Check the rule.
+        char mask;
+        mask = (cellType (i - 1, j) == HOLE) ? dFlag [LEFT] : 0;
+        mask = (cellType (i + 1, j) == HOLE) ? (dFlag [RIGHT] | mask) : mask;
+        enemyAccess [index (i, j)] &= ~mask;	// Block access to holes at L/R.
+    }
+    heroAccess [index (i, j)]  |= access;
+    access = heroAccess [index (i, j)];
+    enter = (access & ENTERABLE)         ? 1 : 0;
+    stand = (access & dFlag [STAND])     ? 1 : 0;
+    u     = (access & dFlag [UP])        ? 1 : 0;
+    d     = (access & dFlag [DOWN])      ? 1 : 0;
+    l     = (access & dFlag [LEFT])      ? 1 : 0;
+    r     = (access & dFlag [RIGHT])     ? 1 : 0;
+    fprintf (stderr, "[%02d,%02d] %c %02x E %d S %d U %d D %d L %d R %d Enem\n",
+	     i, j, here, access, enter, stand, u, d, l, r);
 }
 
 #include "kgrlevelgrid.moc"

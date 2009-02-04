@@ -46,6 +46,14 @@ public:
     bool turnAnywhere() const        { return mTurnAnywhere;        }
     bool enemiesShowGold() const     { return mEnemiesShowGold;     }
 
+    inline void getHeroTimes  (int & runTime, int & fallTime) {
+                runTime = times.hwalk; fallTime = times.hfall; }
+    inline void getEnemyTimes (int & runTime, int & fallTime, int & trapTime) {
+                runTime = times.ewalk; fallTime = times.efall;
+                trapTime = times.ecaptive; }
+    inline void getDigTimes   (int & digTime, int & digCounter) {
+                digTime = 200; digCounter = times.hole; }
+
     virtual Direction findBestWay (const QPoint & enemyPosition,
                                    const QPoint & heroPosition,
                                    const KGrLevelGrid & grid) = 0;
@@ -59,9 +67,6 @@ protected:
     int  mPointsPerCell;	///< Number of points in each grid-cell.
     bool mTurnAnywhere;		///< Can change direction anywhere in grid-cell.
     bool mEnemiesShowGold;	///< Enemies show when they are carrying gold.
-
-    void getHeroTimes  (int & runTime, int & fallTime);
-    void getEnemyTimes (int & runTime, int & fallTime, int & trapTime);
 
     Timing times;
 };

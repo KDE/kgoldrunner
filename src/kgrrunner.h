@@ -36,8 +36,9 @@ public:
     virtual ~KGrRunner();
 
 signals:
-    void gotGold (const int spriteId, const int i, const int j,
-                  const bool hasGold);
+    void startAnimation   (const int spriteId, const int i, const int j,
+                           const int time,
+                           const Direction dirn, const AnimationType type);
 
 protected:
     KGrLevelPlayer * levelPlayer;
@@ -71,16 +72,11 @@ public:
                 int i, int j, int pSpriteId, KGrRuleBook  * pRules);
     ~KGrHero();
 
-    // void setDirection (Direction dirn);
-
     void run();
 
-    void showState (char option);
+    bool dig (const Direction dirn, int & digI, int & digJ);
 
-signals:
-    void startAnimation   (const int spriteId, const int i, const int j,
-                           const int time,
-                           const Direction dirn, const AnimationType type);
+    void showState (char option);
 
 private:
 };
@@ -95,11 +91,6 @@ public:
     ~KGrEnemy();
 
     void showState (char option);
-
-signals:
-    void startAnimation   (const int spriteId, const int i, const int j,
-                           const int time,
-                           const Direction dirn, const AnimationType type);
 
 private:
 };

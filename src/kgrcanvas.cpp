@@ -474,6 +474,7 @@ void KGrCanvas::updateLives (int lives)
 
 void KGrCanvas::mousePressEvent (QMouseEvent * mouseEvent)
 {
+    kDebug() << "Button" << mouseEvent->button();
     emit mouseClick (mouseEvent->button());
 }
 

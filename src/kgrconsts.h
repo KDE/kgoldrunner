@@ -87,10 +87,6 @@ enum Position		{RIGHTWALK1,  RIGHTWALK2,  RIGHTWALK3,  RIGHTWALK4,
                          FALL1,       FALL2};
 enum Status		{STANDING, FALLING, WALKING, CLIMBING, CAPTIVE};
 
-// TODO - Should be in kgrglobals.h .....
-enum Direction  {STAND, RIGHT, LEFT, UP, DOWN, nDirections};
-// enum Direction		{RIGHT = 0x1, LEFT = 0x2, UP = 0x4, DOWN = 0x8,
-                         // STAND = 0x10}; // OBSOLESCENT - 13/1/09
 enum SearchStrategy	{LOW, MEDIUM, HIGH};
 
 // Keyboard action codes

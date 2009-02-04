@@ -434,8 +434,11 @@ void KGrGame::finalBreath()
     // Fix bug 95202:	Avoid re-starting if the player selected
     //			edit mode before the 1.5 seconds were up.
     if (! editMode) {
-        // OBSOLESCENT - 18/1/09 enemyCount = 0;		// Hero is dead: re-start the level.
+        // OBSOLESCENT - 18/1/09 enemyCount = 0;	// Hero is dead: re-start the level.
         loadLevel (level);
+        if (levelPlayer) {
+            levelPlayer->prepareToPlay();
+        }
     }
     gameFrozen = false;	// Unfreeze the game, but don't move yet.
 }
@@ -504,14 +507,17 @@ void KGrGame::loseNugget()
     // return (hero);		// Return a pointer to the hero.
 // }
 
-void KGrGame::setMouseMode (bool on_off)
+void KGrGame::setControlMode (const Control mode)
 {
-    mouseMode = on_off;		// Set mouse mode on or off.
+    controlMode = mode;
+    if (levelPlayer) {
+        levelPlayer->setControlMode (mode);
+    }
 }
 
 bool KGrGame::inMouseMode()
 {
-    return (mouseMode);		// Return true if game is under mouse control.
+    return (controlMode == MOUSE);
 }
 
 bool KGrGame::inEditMode()
@@ -718,7 +724,7 @@ int KGrGame::loadLevel (int levelNo)
 
     levelPlayer = new KGrLevelPlayer (this, testGame, &levelData); // TESTING
 
-    levelPlayer->init (view);
+    levelPlayer->init (view, controlMode);
 
     // If there is a name, translate the UTF-8 coded QByteArray right now.
     levelName = (levelData.name.size() > 0) ?
@@ -731,9 +737,10 @@ int KGrGame::loadLevel (int levelNo)
     // If there is a hint, translate it right now.
     levelHint = (len > 0) ? i18n ((const char *) levelData.hint) : "";
 
+    // TODO - Handle editor connections inside the editor.
     // Disconnect edit-mode slots from signals from "view".
-    disconnect (view, SIGNAL (mouseClick (int)), 0, 0);
-    disconnect (view, SIGNAL (mouseLetGo (int)), 0, 0);
+    // disconnect (view, SIGNAL (mouseClick (int)), 0, 0);
+    // disconnect (view, SIGNAL (mouseLetGo (int)), 0, 0);
 
     // if (newLevel) {
         // OBSOLESCENT - 9/1/09 hero->setEnemyList (&enemies);
@@ -758,12 +765,6 @@ int KGrGame::loadLevel (int levelNo)
     // Re-draw the playfield frame, level title and figures.
     view->setTitle (getTitle());
 
-    // If in mouse mode, not keyboard mode, put the mouse pointer on the hero.
-    if (mouseMode) {
-        // TODO - How do we know where the hero is?  Do this in levelPlayer?
-        // view->setMousePos (startI, startJ); // OBSOLESCENT - 30/1/09
-    }
-
     // If we are starting a new level, save it in the player's config file.
     if (newLevel) {
         KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
@@ -771,9 +772,6 @@ int KGrGame::loadLevel (int levelNo)
         gameGroup.writeEntry ("Level_" + gameData->prefix, level);
         gameGroup.sync();		// Ensure that the entry goes to disk.
     }
-
-    // Connect play-mode slot to signal from "view".
-    connect (view, SIGNAL (mouseClick (int)), SLOT (doDig (int)));
 
     // Re-enable player input.
     loading = false;
@@ -800,11 +798,6 @@ void KGrGame::showTutorialMessages (int levelNo)
 
     if (levelPlayer) {
         levelPlayer->prepareToPlay();
-    }
-    // If in mouse mode, make sure the mouse pointer is back on the hero.
-    if (mouseMode) {
-        // TODO - How do we know where the hero is?  Do this in levelPlayer?
-        // view->setMousePos (startI, startJ);	// OBSOLESCENT - 30/1/09
     }
     setMessageFreeze (false);	// Let the level begin.
 }
@@ -990,7 +983,7 @@ void KGrGame::readMousePos()
     if (loading) return;
 
     // If game control is currently by keyboard, ignore the mouse.
-    if ((! mouseMode) && (! editMode) && (! gameFrozen)) {
+    if ((controlMode == KEYBOARD) && (! editMode) && (! gameFrozen)) {
         levelPlayer->tick ();
         return;
     }
@@ -1028,41 +1021,22 @@ void KGrGame::readMousePos()
     }
 }
 
-void KGrGame::doDig (int button) {
-
-    // If game control is currently by keyboard, ignore the mouse.
-    if (editMode) return;
-    if (! mouseMode) return;
-
-    // If loading a level for play or editing, ignore mouse-button input.
-    if ((! loading) && (! gameFrozen)) {
-        // OBSOLESCENT - 7/1/09 }
-        // if (! hero->started) {
-            // startPlaying();	// If first player-input, start playing.
-        // }
-        switch (button) {
-        // OBSOLESCENT - 7/1/09
-        case Qt::LeftButton:	break; // hero->digLeft(); break;
-        case Qt::RightButton:	break; // hero->digRight(); break;
-        default:		break;
-        }
-    }
-}
-
 void KGrGame::kbControl (int dirn)
 {
     kDebug() << "Keystroke setting direction" << dirn;
     if (editMode) return;
 
     // Using keyboard control can automatically disable mouse control.
-    if (mouseMode) {
+    if ((controlMode == MOUSE) ||
+        ((controlMode == LAPTOP) && (dirn != DIG_RIGHT) && (dirn != DIG_LEFT)))
+        {
         // Halt the game while a message is displayed.
         setMessageFreeze (true);
 
         switch (KMessageBox::questionYesNo (view, 
-                i18n ("You have pressed a key that can be used to move the "
+                i18n ("You have pressed a key that can be used to control the "
                 "Hero. Do you want to switch automatically to keyboard "
-                "control? Mouse control is easier to use in the long term "
+                "control? Pointer control is easier to use in the long term "
                 "- like riding a bike rather than walking!"),
                 i18n ("Switch to Keyboard Mode"),
                 KGuiItem (i18n ("Switch to &Keyboard Mode")),
@@ -1070,10 +1044,9 @@ void KGrGame::kbControl (int dirn)
                 i18n ("Keyboard Mode")))
         {
         case KMessageBox::Yes: 
-            mouseMode = false;				// Set mouse mode OFF.
+            controlMode = KEYBOARD;
             // TODO - Connect these signals in kgoldrunner.cpp somewhere.
-            emit setToggle ("mouse_mode", false);	// Adjust Settings menu.
-            emit setToggle ("keyboard_mode", true);
+            emit setToggle ("keyboard_mode", true);	// Adjust Settings menu.
             break;
         case KMessageBox::No: 
             break;
@@ -1082,19 +1055,15 @@ void KGrGame::kbControl (int dirn)
         // Unfreeze the game, but only if it was previously unfrozen.
         setMessageFreeze (false);
 
-        if (mouseMode)
-            return;                    		// Stay in Mouse Mode.
+        if (controlMode != KEYBOARD) {
+            return;                    		// Stay in Mouse or Laptop Mode.
+        }
     }
 
-    // if (level != 0)
-    // {
-        // OBSOLESCENT - 9/1/09 if (! hero->started)	// Start when first movement
-        // startPlaying();			// key is pressed ...
-        // TODO - Pass direction to the hero heroAction (movement);
-    // }
     // Accept keystroke to set next direction, even when the game is frozen.
+    // TODO - But what if it is a DIG key?
     if (levelPlayer) {
-        levelPlayer->setDirection ((Direction) dirn);
+        levelPlayer->setDirectionByKey ((Direction) dirn);
     }
 }
 

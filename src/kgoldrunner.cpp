@@ -161,7 +161,7 @@ KGoldrunner::KGoldrunner()
     // IDW toolBar ("editToolbar")->setAllowedAreas (Qt::TopToolBarArea);
 
     // Set mouse control of the hero as the default.
-    game->setMouseMode (true);
+    game->setControlMode (MOUSE);
 
     // Do NOT paint main widget yet (title, menu, status bar, blank playfield).
     // Instead, queue a call to the "KGoldrunner_2" constructor extension.
@@ -349,6 +349,7 @@ void KGoldrunner::setupActions()
 
     // Mouse Controls Hero
     // Keyboard Controls Hero
+    // Laptop Hybrid
     // --------------------------
 
     setMouse = new KToggleAction (i18n ("&Mouse Controls Hero"), this);
@@ -364,9 +365,16 @@ void KGoldrunner::setupActions()
     actionCollection()->addAction ("keyboard_mode", setKeyboard);
     connect (setKeyboard,SIGNAL (triggered (bool)), this, SLOT (setKeyBoardMode()));
 
+    setLaptop = new KToggleAction (i18n ("&Hybrid Control (Laptop)"), this);
+    setLaptop->setToolTip (i18n ("Pointer controls hero: dig using keyboard"));
+    setLaptop->setWhatsThis (i18n ("Use the the laptop's pointer device to control the hero's moves and the keyboard for digging left and right"));
+    actionCollection()->addAction ("laptop_mode", setLaptop);
+    connect (setLaptop, SIGNAL (triggered (bool)), this, SLOT(setLaptopMode()));
+
     QActionGroup* controlGrp = new QActionGroup (this);
     controlGrp->addAction (setMouse);
     controlGrp->addAction (setKeyboard);
+    controlGrp->addAction (setLaptop);
     controlGrp->setExclusive (true);
     setMouse->setChecked (true);
 
@@ -788,8 +796,9 @@ void KGoldrunner::editGameInfo()	{}// Force compile IDW game->editCollection (SL
 
 // Local slots to set mouse or keyboard control of the hero.
 
-void KGoldrunner::setMouseMode()	{game->setMouseMode (true);}
-void KGoldrunner::setKeyBoardMode()	{game->setMouseMode (false);}
+void KGoldrunner::setMouseMode()	{game->setControlMode (MOUSE);}
+void KGoldrunner::setKeyBoardMode()	{game->setControlMode (KEYBOARD);}
+void KGoldrunner::setLaptopMode()	{game->setControlMode (LAPTOP);}
 
 // Local slots to set game speed.
 

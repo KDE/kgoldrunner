@@ -68,19 +68,25 @@ KGrHero::~KGrHero()
 
 void KGrHero::run()
 {
+    // TODO - Count one extra tick when turning to L or R from another dirn.
     if (pointCtr < pointsPerCell) {
         pointCtr++;
         return;
     }
+
+    // TODO - Die if a brick has closed over us.
+
+    // TODO - If on top row and all nuggets gone, plus Scav cond, go up a level.
+
     // TODO - Use nextDirection here, and set currDirection (at end?).
-    // TODO - Get KGrLevelPlayer to call setDirection, based on mouse position.
+
     pointCtr = 0;
     gridI    = gridI + vector [X];
     gridJ    = gridJ + vector [Y];
 
     char cell = grid->cellType  (gridI, gridJ);
     if (cell == NUGGET) {
-        emit gotGold (spriteId, gridI, gridJ, true);
+        levelPlayer->runnerGotGold (spriteId, gridI, gridJ, true);
     }
 
     Direction dirn = levelPlayer->getDirection (gridI, gridJ);
@@ -107,6 +113,8 @@ void KGrHero::run()
         anim = currAnimation;
     }
 
+    // TODO - Check for collision with an enemy somewhere around here.
+
     if (((anim == RUN_R) || (anim == RUN_L)) && (cell == POLE)) {
         anim = (dirn == RIGHT) ? CLIMB_R : CLIMB_L;
     }
@@ -127,6 +135,40 @@ void KGrHero::run()
     emit startAnimation (spriteId, gridI, gridJ, 0, dirn, anim);
     currAnimation = anim;
     currDirection = dirn;
+}
+
+bool KGrHero::dig (const Direction diggingDirection, int & i, int & j)
+{
+    QString text = (diggingDirection == DIG_LEFT) ? "LEFT" : "RIGHT";
+    kDebug() << "Start digging" << text;
+
+    Flags moves = grid->heroMoves (gridI, gridJ);
+    bool result = false;
+
+    // If currDirection is UP, DOWN or STAND, dig next cell left or right.
+    int relativeI = (diggingDirection == DIG_LEFT) ? -1 : +1;
+
+    if ((currDirection == LEFT) && (moves & dFlag [LEFT])) {
+        // Running LEFT, so stop at -1: dig LEFT at -2 or dig RIGHT right here.
+        relativeI = (diggingDirection == DIG_LEFT) ? -2 : 0;
+    }
+    else if ((currDirection == RIGHT) && (moves & dFlag [RIGHT])) {
+        // Running RIGHT, so stop at +1: dig LEFT right here or dig RIGHT at -2.
+        relativeI = (diggingDirection == DIG_LEFT) ? 0 : +2;
+    }
+
+    // The place to dig must be clear and there must be a brick under it.
+    char aboveBrick = grid->cellType  (gridI + relativeI, gridJ);
+    if ((grid->cellType  (gridI + relativeI, gridJ + 1) == BRICK) &&
+        ((aboveBrick == FREE) || (aboveBrick == HOLE))) {
+
+        // You can dig under an enemy, empty space or hidden ladder, but not a
+        // trapped enemy, ladder, gold, bar, brick, concrete or false brick.
+        i = gridI + relativeI;
+        j = gridJ + 1;
+        result = true;
+    }
+    return result;	// Tell the levelPlayer whether & where to open a hole.
 }
 
 void KGrHero::showState (char option)

@@ -32,8 +32,8 @@ KGrLevelPlayer::KGrLevelPlayer (QObject      * parent,
     levelData   (theLevelData),
     grid        (new KGrLevelGrid (this, theLevelData)),
     hero        (0),
+    controlMode (MOUSE),
     nuggets     (0),
-    pointer     (true),
     playState   (NotReady),
     targetI     (1),
     targetJ     (1),
@@ -51,8 +51,10 @@ KGrLevelPlayer::~KGrLevelPlayer()
     // }
 }
 
-void KGrLevelPlayer::init (KGrCanvas * view)
+void KGrLevelPlayer::init (KGrCanvas * view, const Control mode)
 {
+    controlMode = mode;
+
     // TODO - Should not really remember the view: needed for setMousePos.
     mView = view;
 
@@ -71,6 +73,7 @@ void KGrLevelPlayer::init (KGrCanvas * view)
     rules->printRules();
 
     view->setGoldEnemiesRule (rules->enemiesShowGold());
+    grid->calculateAccess    (rules->runThruHole());
 
     // Connect to code that paints grid cells and start-positions of sprites.
     connect (this, SIGNAL (animation()), view, SLOT (animate()));
@@ -103,8 +106,8 @@ void KGrLevelPlayer::init (KGrCanvas * view)
                 if (hero == 0) {
                     targetI = i;
                     targetJ = j;
-                    int id = emit makeSprite (HERO, i, j);
-                    hero = new KGrHero (this, grid, i, j, id, rules);
+                    heroID  = emit makeSprite (HERO, i, j);
+                    hero    = new KGrHero (this, grid, i, j, heroID, rules);
                     // TODO - Iff mouse mode, setMousePos();
                     view->setMousePos (targetI, targetJ);	// ??????????
                 }
@@ -127,13 +130,18 @@ void KGrLevelPlayer::init (KGrCanvas * view)
         }
     }
 
-    // Connect the hero's efforts to the scoring, graphics and level-management.
-    connect (hero, SIGNAL (gotGold (int, int, int, bool)),
-             this, SLOT   (heroGotGold (int, int, int, bool)));
-    connect (hero, SIGNAL (gotGold (int, int, int, bool)),
-             grid, SLOT   (gotGold (int, int, int, bool)));
-    connect (hero, SIGNAL (gotGold (int, int, int, bool)),
+    // Connect the hero's and ememies' efforts to the graphics.
+    connect (this, SIGNAL (gotGold (int, int, int, bool)),
              view, SLOT   (gotGold (int, int, int, bool)));
+
+    // Connect mouse-clicks from KGrCanvas to digging slot.
+    // TODO - Think about levelPlayer managing all the dug bricks.
+    // TODO - We need hero to decide where and when to dig.
+    connect (view, SIGNAL (mouseClick (int)), SLOT (doDig (int)));
+
+    // Let the hero create and delete sprites for animating dug bricks.
+    connect (hero, SIGNAL (makeSprite (char, int, int)),
+             view, SLOT   (makeSprite (char, int, int)));
 
     // Connect the new hero and enemies (if any) to the animation code.
     connect (hero, SIGNAL (startAnimation (int, int, int, int,
@@ -148,6 +156,16 @@ void KGrLevelPlayer::init (KGrCanvas * view)
     }
 }
 
+void KGrLevelPlayer::startDigging (Direction diggingDirection) {
+    int digI = 1;
+    int digJ = 1;
+    if (hero->dig (diggingDirection, digI, digJ)) {
+        // The hero CAN dig as requested: the chosen brick is at (digI, digJ).
+        grid->changeCellAt (digI, digJ, HOLE);
+        emit paintCell (digI, digJ, FREE, 0);
+    }
+}
+
 void KGrLevelPlayer::prepareToPlay()
 {
     // TODO - Should this be a signal?
@@ -158,10 +176,10 @@ void KGrLevelPlayer::prepareToPlay()
 
 void KGrLevelPlayer::setTarget (int pointerI, int pointerJ)
 {
-    // Mouse or other pointer device is controlling the hero.
+    // Mouse or other pointer device (eg. laptop touchpad) controls the hero.
     switch (playState) {
     case NotReady:
-        // Ignore the pointer until KGrLevelPlayer ready to start.
+        // Ignore the pointer until KGrLevelPlayer is ready to start.
         break;
     case Ready:
         // Wait until the human player is ready to start playing.
@@ -175,23 +193,55 @@ void KGrLevelPlayer::setTarget (int pointerI, int pointerJ)
         }
     case Playing:
         // The human player is playing now.
-        pointer = true;
         targetI = pointerI;
         targetJ = pointerJ;
         break;
     }
 }
 
-void KGrLevelPlayer::setDirection (Direction dirn)
+void KGrLevelPlayer::doDig (int button)
 {
-    // Keystrokes or other actions control the hero.
-    pointer = false;
-    direction = dirn;
+    // If not ready or game control is not by mouse, ignore mouse-clicks.
+    if ((playState == NotReady) || (controlMode != MOUSE)) {
+        return;
+    }
+
+    // TODO - Work this in with game-freezes.
+    playState = Playing;
+    switch (button) {
+    case Qt::LeftButton:
+        startDigging (DIG_LEFT);
+        break;
+    case Qt::RightButton:
+        startDigging (DIG_RIGHT);
+        break;
+    default:
+        break;
+    }
+}
+
+void KGrLevelPlayer::setDirectionByKey (Direction dirn)
+{
+    // Keystrokes control the hero.
+    if ((playState == NotReady) || (controlMode == MOUSE)) {
+        return;
+    }
+
+    if ((dirn == DIG_LEFT) || (dirn == DIG_RIGHT)) {
+	// Control mode is KEYBOARD or LAPTOP (hybrid: pointer + dig-keys).
+        playState = Playing;
+        direction = STAND;
+        startDigging (dirn);
+    }
+    else if (controlMode == KEYBOARD) {
+        playState = Playing;
+        direction = dirn;
+    }
 }
 
 Direction KGrLevelPlayer::getDirection (int heroI, int heroJ)
 {
-    if (pointer) {
+    if ((controlMode == MOUSE) || (controlMode == LAPTOP)) {
         // If using a pointer device, calculate the hero's next direction,
         // starting from last pointer position and hero's current position.
 
@@ -234,13 +284,19 @@ void KGrLevelPlayer::tick()
     }
 }
 
-void KGrLevelPlayer::heroGotGold (const int,	// Don't care about spriteID
-                                  const int, const int,	// and location, and
-                                  const bool)	// the hero NEVER drops gold.
+void KGrLevelPlayer::runnerGotGold (const int  spriteID,
+                                    const int  i, const int j,
+                                    const bool hasGold)
 {
-    kDebug() << "Collected gold";
-    if (--nuggets <= 0) {
-        kDebug() << "ALL GOLD COLLECTED";
+    grid->gotGold (i, j, hasGold);		// Record pickup/drop on grid.
+    emit  gotGold (spriteID, i, j, hasGold);	// Erase/show gold on screen.
+
+    // If hero got gold, score, maybe show hidden ladders, maybe end the level.
+    if (spriteID == heroID) {
+        kDebug() << "Collected gold";
+        if (--nuggets <= 0) {
+            kDebug() << "ALL GOLD COLLECTED";
+        }
     }
 }
 

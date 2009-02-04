@@ -32,7 +32,7 @@ public:
     KGrLevelGrid (QObject * parent, KGrLevelData * theLevelData);
     ~KGrLevelGrid();
 
-    inline char cellType   (int i, int j) {
+    inline char cellType    (int i, int j) {
         return layout [i + j * width];
     }
 
@@ -44,25 +44,29 @@ public:
         return enemyAccess [i + j * width];
     }
 
-    inline char cellState  (int i, int j) {
+    inline char cellState   (int i, int j) {
         return cellStates [i + j * width];
     }
 
-public slots:
-    inline void gotGold (const int,	// Don't care which spriteID did it.
-        const int i, const int j, const bool runnerHasGold)
-    {
+    inline void gotGold (const int i, const int j, const bool runnerHasGold) {
         layout [i + j * width] = (runnerHasGold) ? FREE : NUGGET;
     }
+
+    void calculateAccess (bool pRunThruHole);
+
+    void changeCellAt (const int i, const int j, const char type);
 
 private:
     inline int index (int i, int j) {
         return (i + j * width);
     }
-    void calculateAccess();
 
-    int width;
-    int height;
+    void calculateCellAccess (const int i, const int j);
+
+    int  width;
+    int  height;
+
+    bool runThruHole;		// Rule: Whether enemies run L/R through a hole.
 
     QVector<char>  layout;
     QVector<Flags> heroAccess;
