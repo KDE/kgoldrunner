@@ -80,4 +80,6 @@ enum DebugCodes {
                 DO_STEP, BUG_FIX, LOGGING, S_POSNS, S_HERO, S_OBJ,
                 ENEMY_0, ENEMY_1, ENEMY_2, ENEMY_3, ENEMY_4, ENEMY_5, ENEMY_6};
 
+const int TickTime = 20;
+
 #endif // KGRGLOBALS_H

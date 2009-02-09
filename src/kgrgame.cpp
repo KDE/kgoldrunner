@@ -545,6 +545,9 @@ void KGrGame::freeze()
         emit gameFreeze (true);	// Do visual feedback in the GUI.
     }
     gameFrozen = true;	// Halt the game, by blocking all timer events.
+    if (levelPlayer) {
+        levelPlayer->pause (true);
+    }
 }
 
 void KGrGame::unfreeze()
@@ -553,6 +556,9 @@ void KGrGame::unfreeze()
         emit gameFreeze (false);// Do visual feedback in the GUI.
     }
     gameFrozen = false;		// Restart the game after the next tick().
+    if (levelPlayer) {
+        levelPlayer->pause (false);
+    }
 }
 
 void KGrGame::setMessageFreeze (bool on_off)
@@ -984,7 +990,7 @@ void KGrGame::readMousePos()
 
     // If game control is currently by keyboard, ignore the mouse.
     if ((controlMode == KEYBOARD) && (! editMode) && (! gameFrozen)) {
-        levelPlayer->tick ();
+        // TODO - Have internal clock in levelplayer. levelPlayer->tick ();
         return;
     }
 
@@ -1017,7 +1023,7 @@ void KGrGame::readMousePos()
     }
 
     if (! gameFrozen) {		// If game is stopped, do nothing.
-        levelPlayer->tick();
+        // TODO - Have internal clock in levelplayer. levelPlayer->tick();
     }
 }
 

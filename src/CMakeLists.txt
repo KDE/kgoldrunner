@@ -8,15 +8,14 @@ set(kgoldrunner_SRCS
    kgrcanvas.cpp 
    kgrtheme.cpp 
    kgrsoundbank.cpp 
-#   kgrfigure.cpp 
    kgrgame.cpp 
    kgrlevelplayer.cpp
    kgrlevelgrid.cpp
    kgrrunner.cpp
    kgrrulebook.cpp
    kgrgameio.cpp 
+   kgrtimer.cpp
    kgreditor.cpp
-#   kgrobject.cpp 
    main.cpp 
    kgrdialog.cpp )
 

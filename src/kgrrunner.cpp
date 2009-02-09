@@ -34,7 +34,9 @@ KGrRunner::KGrRunner (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
     spriteId    (pSpriteId),
 
     currDirection (STAND),
-    currAnimation (FALL_L)
+    currAnimation (FALL_L),
+
+    timeLeft  (TickTime)
 {
     vector[X] = 0;
     vector[Y] = 0;
@@ -60,6 +62,9 @@ KGrHero::KGrHero (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
     KGrRunner (pLevelPlayer, pGrid, i, j, pSpriteId, pRules)
 {
     kDebug() << "THE HERO IS BORN at" << i << j << "sprite ID" << pSpriteId;
+    rules->getHeroTimes (runTime, fallTime);
+    kDebug() << "Hero run time" << runTime << "fall time" << fallTime;
+    interval = runTime;
 }
 
 KGrHero::~KGrHero()
@@ -68,9 +73,17 @@ KGrHero::~KGrHero()
 
 void KGrHero::run()
 {
+    timeLeft -= TickTime;
+    if (timeLeft >= TickTime) {
+        kDebug() << "1: Hero interval is:" << interval << "time left:" << timeLeft;
+        return;
+    }
+
+    pointCtr++;
     // TODO - Count one extra tick when turning to L or R from another dirn.
     if (pointCtr < pointsPerCell) {
-        pointCtr++;
+        kDebug() << "2: Hero interval is:" << interval << "time left:" << timeLeft;
+        timeLeft += interval;
         return;
     }
 
@@ -90,6 +103,7 @@ void KGrHero::run()
     }
 
     Direction dirn = levelPlayer->getDirection (gridI, gridJ);
+    interval = runTime;
 
     Flags OK  = grid->heroMoves (gridI, gridJ);
     bool canStand = OK & dFlag [STAND];
@@ -99,6 +113,7 @@ void KGrHero::run()
     if (OK & dFlag [dirn]) {
         if ((dirn == DOWN) && (! canStand)) {
             anim = (currDirection == RIGHT) ? FALL_R : FALL_L;
+            interval = fallTime;
         }
     }
     else if (canStand) {
@@ -107,11 +122,16 @@ void KGrHero::run()
     else {
         dirn = DOWN;
         anim = (currDirection == RIGHT) ? FALL_R : FALL_L;
+        interval = fallTime;
     }
 
     if (dirn == STAND) {
         anim = currAnimation;
     }
+    interval = 1 * interval; // TODO - Do *proper* speed variation.
+
+    timeLeft += interval;
+    kDebug() << "3: Hero interval is:" << interval << "time left:" << timeLeft;
 
     // TODO - Check for collision with an enemy somewhere around here.
 
@@ -130,9 +150,10 @@ void KGrHero::run()
     vector [Y] = movement [dirn][Y];
 
     kDebug() << "New direction" << dirn << vector [X] << vector [Y] << gridI << gridJ;
-    kDebug() << "Sprite" << spriteId << "Animate" << gridI << gridJ << "time" << 0 << "dirn" << dirn << "anim" << anim;
+    kDebug() << "Sprite" << spriteId << "Animate" << gridI << gridJ << "time" << interval * pointsPerCell << "dirn" << dirn << "anim" << anim;
 
-    emit startAnimation (spriteId, gridI, gridJ, 0, dirn, anim);
+    emit startAnimation (spriteId, gridI, gridJ, interval * pointsPerCell,
+                         dirn, anim);
     currAnimation = anim;
     currDirection = dirn;
 }

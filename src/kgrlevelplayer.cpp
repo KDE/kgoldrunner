@@ -17,11 +17,14 @@
 
 #include <KDebug>
 
+#include <QTimer>
+
 #include "kgrcanvas.h"
 #include "kgrlevelplayer.h"
 #include "kgrrulebook.h"
 #include "kgrlevelgrid.h"
 #include "kgrrunner.h"
+#include "kgrtimer.h"
 
 KGrLevelPlayer::KGrLevelPlayer (QObject      * parent,
                                 KGrGameData  * theGameData,
@@ -37,7 +40,8 @@ KGrLevelPlayer::KGrLevelPlayer (QObject      * parent,
     playState   (NotReady),
     targetI     (1),
     targetJ     (1),
-    direction   (STAND)
+    direction   (STAND),
+    timer       (0)
 {
     gameLogging = false;
     bugFixed = false;
@@ -76,7 +80,6 @@ void KGrLevelPlayer::init (KGrCanvas * view, const Control mode)
     grid->calculateAccess    (rules->runThruHole());
 
     // Connect to code that paints grid cells and start-positions of sprites.
-    connect (this, SIGNAL (animation()), view, SLOT (animate()));
     connect (this, SIGNAL (paintCell (int, int, char, int)),
              view, SLOT   (paintCell (int, int, char, int)));
     connect (this, SIGNAL (makeSprite (char, int, int)),
@@ -135,8 +138,6 @@ void KGrLevelPlayer::init (KGrCanvas * view, const Control mode)
              view, SLOT   (gotGold (int, int, int, bool)));
 
     // Connect mouse-clicks from KGrCanvas to digging slot.
-    // TODO - Think about levelPlayer managing all the dug bricks.
-    // TODO - We need hero to decide where and when to dig.
     connect (view, SIGNAL (mouseClick (int)), SLOT (doDig (int)));
 
     // Let the hero create and delete sprites for animating dug bricks.
@@ -154,15 +155,41 @@ void KGrLevelPlayer::init (KGrCanvas * view, const Control mode)
                  view,  SLOT   (startAnimation (int, int, int, int,
                                                 Direction, AnimationType)));
     }
+
+    // Connect the level player to the animation code (for use with dug bricks).
+    connect (this, SIGNAL (startAnimation (int, int, int, int,
+                                           Direction, AnimationType)),
+             view, SLOT   (startAnimation (int, int, int, int,
+                                           Direction, AnimationType)));
+
+    // Connect and start the timer.  The tick() slot emits signal animation(),
+    // so there is just one time-source for the model and the view.
+
+    timer = new KGrTimer (this, TickTime);	// TickTime def in kgrglobals.h.
+    connect (timer, SIGNAL (tick(bool)),  this, SLOT (tick(bool)));
+    connect (this,  SIGNAL (animation()), view, SLOT (animate()));
+    // timer->start (TickTime);	// Interval = TickTime, defined in kgrglobals.h.
 }
 
 void KGrLevelPlayer::startDigging (Direction diggingDirection) {
+    // TODO - Think about levelPlayer managing all the dug bricks.
     int digI = 1;
     int digJ = 1;
+    // We need the hero to decide if he CAN dig and if so, where.
     if (hero->dig (diggingDirection, digI, digJ)) {
-        // The hero CAN dig as requested: the chosen brick is at (digI, digJ).
+        // The hero can dig as requested: the chosen brick is at (digI, digJ).
         grid->changeCellAt (digI, digJ, HOLE);
+
+        // Delete the brick-image so that animations are visible in all themes.
         emit paintCell (digI, digJ, FREE, 0);
+
+        // Start the brick-opening animation.
+        int id = emit makeSprite (BRICK, digI, digJ);
+        emit startAnimation (id, digI, digJ, 1000, STAND, OPEN_BRICK);
+
+        // TODO - Need to keep a list of digging in progress.
+        // TODO - Maybe a list of integer counters of the 200 msec intervals?
+        // TODO - And what about the sprite ID and (digI, digJ)?
     }
 }
 
@@ -272,14 +299,15 @@ Direction KGrLevelPlayer::getDirection (int heroI, int heroJ)
         }
     }
 
-    kDebug() << "Hero at" << heroI << heroJ << "mouse at" << targetI << targetJ << "Direction" << direction;
+    // kDebug() << "Hero at" << heroI << heroJ << "mouse at" << targetI << targetJ << "Direction" << direction;
     return direction;
 }
 
-void KGrLevelPlayer::tick()
+void KGrLevelPlayer::tick (bool missed)
 {
     if (playState == Playing) {
         hero->run();
+        if (missed) kDebug() << "TIMER SIGNAL MISSED ...";
         emit animation();
     }
 }
@@ -300,6 +328,16 @@ void KGrLevelPlayer::runnerGotGold (const int  spriteID,
     }
 }
 
+void KGrLevelPlayer::pause (bool stop)
+{
+    if (stop) {
+        timer->pause();
+    }
+    else {
+        timer->resume();
+    }
+}
+
 /******************************************************************************/
 /**************************  AUTHORS' DEBUGGING AIDS **************************/
 /******************************************************************************/
@@ -308,7 +346,8 @@ void KGrLevelPlayer::dbgControl (int code)
 {
     switch (code) {
     case DO_STEP:
-        tick();				// Do one timer step only.
+        // tick (false);			// Do one timer step only.
+        timer->step();
         break;
     case BUG_FIX:
         bugFix();			// Turn a bug fix on/off dynamically.

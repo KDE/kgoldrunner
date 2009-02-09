@@ -24,6 +24,9 @@
 #include "kgrconsts.h" // OBSOLESCENT - 1/1/09
 #include "kgrglobals.h"
 
+// class QTimer;
+class KGrTimer;
+
 class KGrLevelGrid;
 class KGrRuleBook;
 class KGrCanvas;
@@ -47,21 +50,25 @@ public:
     void setDirectionByKey (Direction dirn);
     Direction getDirection (int heroI, int heroJ);
 
-    void tick              ();
     void runnerGotGold     (const int  spriteID, const int i, const int j,
                             const bool hasGold);
 
+    void pause             (bool stop);
     void dbgControl        (int code);	// Authors' debugging aids.
 
 signals:
-    void animation  ();
-    void paintCell  (int i, int j, char tileType, int diggingStage = 0);
-    int  makeSprite (char spriteType, int i, int j);
-    void gotGold    (const int  spriteID, const int i, const int j,
-                     const bool hasGold);
+    void animation      ();
+    void paintCell      (int i, int j, char tileType, int diggingStage = 0);
+    int  makeSprite     (char spriteType, int i, int j);
+    void startAnimation (const int spriteId, const int i, const int j,
+                         const int time,
+                         const Direction dirn, const AnimationType type);
+    void gotGold        (const int  spriteID, const int i, const int j,
+                         const bool hasGold);
 
 private slots:
-    void doDig      (int button);	// Dig using mouse-buttons.
+    void tick           (bool missed);
+    void doDig          (int button);	// Dig using mouse-buttons.
 
 private:
     // TODO - Eliminate mView ...
@@ -87,6 +94,7 @@ private:
     int                  targetJ;
 
     Direction            direction;	// Next direction for the hero to take.
+    KGrTimer *           timer;		// The time-standard for the level.
 
 // OBSOLESCENT - 21/1/09 Can do this just by calling tick().
     void restart();		// Kickstart the game action.

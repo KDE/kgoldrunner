@@ -60,6 +60,12 @@ protected:
     Direction        currDirection;
     AnimationType    currAnimation;
 
+    int              interval;		// The runner's current time interval.
+    int              timeLeft;		// Time till the runner's next action.
+
+    int              runTime;		// The time interval for running.
+    int              fallTime;		// The time interval for falling.
+
 private:
 };
 
