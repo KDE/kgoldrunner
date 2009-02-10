@@ -22,6 +22,8 @@
 #include <QApplication>
 #include <QDesktopWidget>
 #include <QSignalMapper>
+#include <QShortcut>
+#include <QKeySequence>
 
 #include <kglobal.h>
 #include <kstatusbar.h>
@@ -121,17 +123,20 @@ KGoldrunner::KGoldrunner()
     setupActions();
 
     // and a status bar.
-    initStatusBar();
+    // IDW initStatusBar();
 
     // Do NOT have show/hide actions for the statusbar and toolbar in the GUI:
     // we need the statusbar for game scores and the toolbar is relevant only
     // when using the game editor and then it appears automatically.  Maybe 1%
-    // of players would use the game editor for 5% of their time.
+    // of players would use the game editor for 5% of their time.  Also we are
+    // our own action to configure shortcut keys, so disable the KXmlGui one.
     setupGUI (static_cast<StandardWindowOption> (Default &
-                        (~StatusBar) & (~ToolBar)));
+                        (~StatusBar) & (~ToolBar) & (~Keys))); // IDW
 
     // Find the theme-files and generate the Themes menu.
     setupThemes();
+
+    initStatusBar(); // IDW
 
     // Connect the game actions to the menu and toolbar displays.
     connect (game, SIGNAL (quitGame()),	        SLOT (close()));
@@ -226,9 +231,10 @@ void KGoldrunner::setupActions()
     // KAction * myPause: to get KAction::shortcut() not QAction::shortcut().
     myPause = KStandardGameAction::pause (this, SLOT (stopStart()), this);
     actionCollection()->addAction (myPause->objectName(), myPause);
-    KShortcut pauseShortcut = myPause->shortcut();
-    pauseShortcut.setAlternate (Qt::Key_Escape);	// Add "Esc" shortcut.
-    myPause->setShortcut (pauseShortcut);
+    // IDW KShortcut pauseShortcut = myPause->shortcut();
+    // IDW QShortcut pauseShortcut = myPause->shortcut();
+    // IDW pauseShortcut.setAlternate (Qt::Key_Escape);	// Add "Esc" shortcut.
+    // IDW myPause->setShortcut (pauseShortcut);
 
     highScore = KStandardGameAction::highscores
                                 (game, SLOT (showHighScores()), this);
@@ -681,7 +687,7 @@ void KGoldrunner::initStatusBar()
     adjustHintAction (false);
 
     // Set the PAUSE/RESUME key-names into the status bar message.
-    pauseKeys = myPause->shortcut().toString();
+    pauseKeys = myPause->shortcut().toString(QKeySequence::NativeText);
     pauseKeys = pauseKeys.replace (';', "\" " + i18n ("or") + " \"");
     gameFreeze (false);
 
@@ -928,10 +934,16 @@ void KGoldrunner::readProperties (const KConfigGroup & /* config - unused */)
 
 void KGoldrunner::optionsConfigureKeys()
 {
-    KShortcutsDialog::configure (actionCollection());
+    kDebug() << "Configure keys ...";
+    // First run the standard KDE dialog for shortcut key settings.
+    KShortcutsDialog::configure (actionCollection(),
+	KShortcutsEditor::LetterShortcutsAllowed,	// Single letters OK.
+	this,						// Parent widget.
+	true);						// saveSettings value.
 
-    // Update the PAUSE/RESUME message in the status bar.
-    pauseKeys = myPause->shortcut().toString();
+    // Now update the PAUSE/RESUME message in the status bar.
+    kDebug() << "Update Pause/Resume message ...";
+    pauseKeys = myPause->shortcut().toString(QKeySequence::NativeText);
     pauseKeys = pauseKeys.replace (';', "\" " + i18n ("or") + " \"");
     gameFreeze (KGrObject::frozen);	// Refresh the status bar text.
 }
