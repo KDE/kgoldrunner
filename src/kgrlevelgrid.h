@@ -44,10 +44,6 @@ public:
         return enemyAccess [i + j * width];
     }
 
-    inline char cellState   (int i, int j) {
-        return cellStates [i + j * width];
-    }
-
     inline void gotGold (const int i, const int j, const bool runnerHasGold) {
         layout [i + j * width] = (runnerHasGold) ? FREE : NUGGET;
     }
@@ -55,6 +51,11 @@ public:
     void calculateAccess (bool pRunThruHole);
 
     void changeCellAt (const int i, const int j, const char type);
+
+    void placeHiddenLadders();
+
+signals:
+    void showHiddenLadders (const QList<int> & ladders, const int width);
 
 private:
     inline int index (int i, int j) {
@@ -71,7 +72,6 @@ private:
     QVector<char>  layout;
     QVector<Flags> heroAccess;
     QVector<Flags> enemyAccess;
-    QVector<char>  cellStates;
 
     QList<int>     hiddenLadders;
     QList<int>     hiddenEnemies;

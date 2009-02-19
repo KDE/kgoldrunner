@@ -26,43 +26,27 @@ class KGrTimer : public QObject
 {
     Q_OBJECT
 public:
-    KGrTimer (QObject * parent, int pTick);
+    KGrTimer (QObject * parent, int pTick = 20, float pScale = 1.0);
     ~KGrTimer();
-
-    void start  (int id, int interval, int signalNum = 1, float scale = 1.0);
-    void stop   (int id, int signalNum = 1);
-    void remove (int id, int signalNum = 1);
 
     void pause();
     void resume();
     void step();
 
 signals:
-    void tick (bool missed = false);
-    void signal_1 (int id, int error = 0, bool missed = false);
-    void signal_2 (int id, int error = 0, bool missed = false);
+    void tick (bool missed, int pScaledTime);
 
 private slots:
     void internalSlot();
 
 private:
-    void emitSignals (int expectedTime, int timeOnClock);
-
     QTime    t;
     QTimer * ticker;
     int      tickTime;
+    int      scaledTime;
     int      tickCount;
     int      halfTick;
     int      expectedTime;
-
-    typedef  struct {
-        int  id;
-        int  signalNum;
-        bool active;
-        int  finishTime;
-        int  interval;
-    } Timer;
-    QList <Timer *> timers;
 };
 
 #endif // KGRTIMER_H

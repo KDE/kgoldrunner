@@ -82,4 +82,7 @@ enum DebugCodes {
 
 const int TickTime = 20;
 
+enum HeroStatus {
+                WON_LEVEL, CAUGHT_IN_BRICK, NO_ACTION, STATIONARY, MOVING};
+
 #endif // KGRGLOBALS_H

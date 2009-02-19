@@ -37,7 +37,6 @@ KGrLevelGrid::KGrLevelGrid (QObject * parent, KGrLevelData * theLevelData)
     // Initialise the flags for each cell.
     heroAccess.fill  (0, size);
     enemyAccess.fill (0, size);
-    cellStates.fill  (0, size);
 
     // Copy the cells of the layout, but enclosed within the concrete wall.
     int inRow  = 0;
@@ -75,11 +74,11 @@ KGrLevelGrid::~KGrLevelGrid()
 }
 
 // Inline functions (see kgrlevelgrid.h).
-//     char cellType
-//     char heroMoves
-//     char enemyMoves
-//     char cellState
-//     void gotGold
+//     char cellType   (int i, int j)
+//     char heroMoves  (int i, int j)
+//     char enemyMoves (int i, int j)
+//     void gotGold    (const int i, const int j, const bool runnerHasGold)
+//     int  index      (int i, int j)
 
 void KGrLevelGrid::calculateAccess (bool pRunThruHole)
 {
@@ -131,23 +130,23 @@ void KGrLevelGrid::calculateCellAccess (const int i, const int j)
     char  below  = cellType (i, j + 1);
 
     access = heroMoves (i, j) & ENTERABLE;
-    fprintf (stderr, "[%02d,%02d] %c access %02x below %c\n",
-	     i, j, here, access, below);
+    // fprintf (stderr, "[%02d,%02d] %c access %02x below %c\n",
+	     // i, j, here, access, below);
 
-    // Cannot enter brick or concrete: can enter false brick from above.
+    // Cannot enter brick, concrete or used hole: can drop into a false brick.
     if (! (access & ENTERABLE) && (here != FBRICK)) {
 	access = 0;
     }
     // If can stand or hang on anything, allow down, left and right.
     else if ((below == BRICK) || (below == CONCRETE) || (below == USEDHOLE) ||
 	(below == LADDER) || (here == LADDER) || (here == POLE)) {
-        fprintf (stderr, "Can stand\n");
+        // fprintf (stderr, "Can stand\n");
 	access |= (dFlag [STAND] | dFlag [DOWN] |
 		   dFlag [LEFT]  | dFlag [RIGHT]);
     }
     // If cannot stand or hang, can only go down (space or false brick).
     else {
-        fprintf (stderr, "Cannot stand\n");
+        // fprintf (stderr, "Cannot stand\n");
 	access |= dFlag [DOWN];
     }
     // Can only go up if there is a ladder here.
@@ -161,24 +160,27 @@ void KGrLevelGrid::calculateCellAccess (const int i, const int j)
     int d     = (access & dFlag [DOWN])      ? 1 : 0;
     int l     = (access & dFlag [LEFT])      ? 1 : 0;
     int r     = (access & dFlag [RIGHT])     ? 1 : 0;
-    if (below == HOLE)
-    fprintf (stderr, "[%02d,%02d] %c %02x E %d S %d U %d D %d L %d R %d ***\n",
-	     i, j, here, access, enter, stand, u, d, l, r);
+    // if (below == HOLE)
+    // fprintf (stderr, "[%02d,%02d] %c %02x E %d S %d U %d D %d L %d R %d ***\n",
+	     // i, j, here, access, enter, stand, u, d, l, r);
 
-    // Mask out directions that are blocked above, below, L or R.
-    if (! (heroMoves (i, j - 1) & ENTERABLE)) {
-	access = ~dFlag [UP] & access;		// Cannot go up.
-    }
-    if (! (heroMoves (i - 1, j) & ENTERABLE)) {
-	access = ~dFlag [LEFT] & access;	// Cannot go left.
-    }
-    if (! (heroMoves (i + 1, j) & ENTERABLE)) {
-	access = ~dFlag [RIGHT] & access;	// Cannot go right.
-    }
-    if (! (heroMoves (i, j + 1) & ENTERABLE)) {
-	if (below != FBRICK) {
-	    access = ~dFlag [DOWN] & access;	// Cannot go down.
-	}
+    // Mask out directions that are blocked above, below, L or R, but not for
+    // concrete/brick at edge of grid (or elsewhere) to avoid indexing errors.
+    if (access != 0) {
+        if (! (heroMoves (i, j - 1) & ENTERABLE)) {
+            access = ~dFlag [UP] & access;		// Cannot go up.
+        }
+        if (! (heroMoves (i - 1, j) & ENTERABLE)) {
+            access = ~dFlag [LEFT] & access;		// Cannot go left.
+        }
+        if (! (heroMoves (i + 1, j) & ENTERABLE)) {
+            access = ~dFlag [RIGHT] & access;		// Cannot go right.
+        }
+        if (! (heroMoves (i, j + 1) & ENTERABLE)) {
+            if (below != FBRICK) {
+                access = ~dFlag [DOWN] & access;	// Cannot go down.
+            }
+        }
     }
 
     enter = (access & ENTERABLE)         ? 1 : 0;
@@ -187,9 +189,9 @@ void KGrLevelGrid::calculateCellAccess (const int i, const int j)
     d     = (access & dFlag [DOWN])      ? 1 : 0;
     l     = (access & dFlag [LEFT])      ? 1 : 0;
     r     = (access & dFlag [RIGHT])     ? 1 : 0;
-    if (below == HOLE)
-    fprintf (stderr, "[%02d,%02d] %c %02x E %d S %d U %d D %d L %d R %d ***\n",
-	     i, j, here, access, enter, stand, u, d, l, r);
+    // if (below == HOLE)
+    // fprintf (stderr, "[%02d,%02d] %c %02x E %d S %d U %d D %d L %d R %d ***\n",
+	     // i, j, here, access, enter, stand, u, d, l, r);
     heroAccess [index (i, j)]  = access;
     enter = (access & ENTERABLE)         ? 1 : 0;
     stand = (access & dFlag [STAND])     ? 1 : 0;
@@ -197,8 +199,8 @@ void KGrLevelGrid::calculateCellAccess (const int i, const int j)
     d     = (access & dFlag [DOWN])      ? 1 : 0;
     l     = (access & dFlag [LEFT])      ? 1 : 0;
     r     = (access & dFlag [RIGHT])     ? 1 : 0;
-    fprintf (stderr, "[%02d,%02d] %c %02x E %d S %d U %d D %d L %d R %d\n",
-	     i, j, here, access, enter, stand, u, d, l, r);
+    // fprintf (stderr, "[%02d,%02d] %c %02x E %d S %d U %d D %d L %d R %d\n",
+	     // i, j, here, access, enter, stand, u, d, l, r);
     
     // Enemy access is the same as the hero's when no holes are open.
     enemyAccess [index (i, j)] = heroAccess [index (i, j)];
@@ -206,22 +208,38 @@ void KGrLevelGrid::calculateCellAccess (const int i, const int j)
     if (here == USEDHOLE) {
         enemyAccess [index (i, j)] = UP;	// Can only climb out of hole.
     }
-    if (! runThruHole) {			// Check the rule.
+    else if (! runThruHole) {			// Check the rule.
         char mask;
         mask = (cellType (i - 1, j) == HOLE) ? dFlag [LEFT] : 0;
         mask = (cellType (i + 1, j) == HOLE) ? (dFlag [RIGHT] | mask) : mask;
         enemyAccess [index (i, j)] &= ~mask;	// Block access to holes at L/R.
     }
-    heroAccess [index (i, j)]  |= access;
-    access = heroAccess [index (i, j)];
+    // TODO - Remove the debugging code below.
+    access = enemyAccess [index (i, j)];
     enter = (access & ENTERABLE)         ? 1 : 0;
     stand = (access & dFlag [STAND])     ? 1 : 0;
     u     = (access & dFlag [UP])        ? 1 : 0;
     d     = (access & dFlag [DOWN])      ? 1 : 0;
     l     = (access & dFlag [LEFT])      ? 1 : 0;
     r     = (access & dFlag [RIGHT])     ? 1 : 0;
-    fprintf (stderr, "[%02d,%02d] %c %02x E %d S %d U %d D %d L %d R %d Enem\n",
-	     i, j, here, access, enter, stand, u, d, l, r);
+    // fprintf (stderr, "[%02d,%02d] %c %02x E %d S %d U %d D %d L %d R %d Enem\n",
+	     // i, j, here, access, enter, stand, u, d, l, r);
+}
+
+void KGrLevelGrid::placeHiddenLadders()
+{
+    int offset, i, j;
+    fprintf (stderr, "KGrLevelGrid::placeHiddenLadders() %02d width %02d\n",
+                     hiddenLadders.count(), width);
+
+    foreach (offset, hiddenLadders) {
+        i = offset % width;
+        j = offset / width;
+        changeCellAt (i, j, LADDER);
+        fprintf (stderr, "Show ladder at %04d [%02d,%02d]\n", offset, i, j);
+    }
+    emit showHiddenLadders (hiddenLadders, width);
+    hiddenLadders.clear();
 }
 
 #include "kgrlevelgrid.moc"

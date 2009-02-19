@@ -15,14 +15,17 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ****************************************************************************/
 
+#include <KDebug>
+
 #include "kgrtimer.h"
 
-KGrTimer::KGrTimer (QObject * parent, int pTickTime = 20)
+KGrTimer::KGrTimer (QObject * parent, int pTickTime, float pScale)
     :
     QObject      (parent),
     t            (QTime()),
     ticker       (new QTimer (parent)),
     tickTime     (pTickTime),
+    scaledTime   ((pScale * tickTime) + 0.5),
     tickCount    (0),
     halfTick     (pTickTime / 2),
     expectedTime (0)
@@ -35,62 +38,10 @@ KGrTimer::KGrTimer (QObject * parent, int pTickTime = 20)
 KGrTimer::~KGrTimer()
 {
     ticker->stop();
-    // TODO - Delete the list-contents.
-}
-
-void KGrTimer::start (int id, int interval, int signalNum, float scale)
-{
-    // TODO - Implement "scale" option for speeding up or slowing down the game.
-    int found = -1;
-    int n     = -1;
-    Timer * timer;
-
-    foreach (timer, timers) {
-        n++;
-        if ((timer->id == id) && (timer->signalNum == signalNum)) {
-            found = n;
-        }
-        else if ((timer->id < 0) && (found < 0)) {
-            found = n;
-        }
-    }
-
-    if (found < 0) {
-        timers.append (new Timer);
-        found = timers.count() - 1;
-    }
-
-    timer = timers.at (found);
-    timer->id         = id;
-    timer->signalNum  = signalNum;
-    timer->active     = true;
-    timer->finishTime = t.elapsed() + interval;
-    timer->interval   = interval;
-}
-
-void KGrTimer::stop (int id, int signalNum)
-{
-    foreach (Timer * timer, timers) {
-        if ((timer->id == id) && (timer->signalNum == signalNum)) {
-            timer->active = false;
-        }
-    }
-}
-
-void KGrTimer::remove (int id, int signalNum)
-{
-    foreach (Timer * timer, timers) {
-        if ((timer->id == id) && (timer->signalNum == signalNum)) {
-            timer->id = -1;
-        }
-    }
 }
 
 void KGrTimer::pause()
 {
-    // TODO - If midway between two ticks, allow for that.
-    // TODO - Maybe set a "pausing" flag and do the pause in internalSlot().
-    // TODO - Maybe forget this, if we are not going to use emitSignals().
     ticker->stop();
 }
 
@@ -105,8 +56,7 @@ void KGrTimer::step()
 {
     tickCount++;
     expectedTime = expectedTime + tickTime;
-    emit tick (false);
-    emitSignals (expectedTime, expectedTime);
+    emit tick (false, scaledTime);
 }
 
 void KGrTimer::internalSlot()
@@ -121,33 +71,11 @@ void KGrTimer::internalSlot()
     while (timeOnClock > (expectedTime + halfTick)) {
         tickCount++;
         expectedTime = expectedTime + tickTime;
-        emit tick (timeOnClock >= (expectedTime + tickTime));
-        emitSignals (expectedTime, timeOnClock);
+        bool missed = (timeOnClock >= (expectedTime + tickTime));
+        if (missed) kDebug() << "MISSED" << timeOnClock << tickCount
+                             << (expectedTime + tickTime);
+        emit tick ((timeOnClock >= (expectedTime + tickTime)), scaledTime);
     }
-}
-
-void KGrTimer::emitSignals (int internalTime, int timeOnClock)
-{
-    int testTime = internalTime + halfTick;
-    foreach (Timer * timer, timers) {
-        if ((timer->id >= 0) && (timer->active)) {
-            while (testTime > timer->finishTime) {
-                timer->finishTime += timer->interval;
-                int  error  = timeOnClock - timer->finishTime;
-                bool missed = (error > timer->interval);
-                switch (timer->signalNum) {
-                case 1:
-                    emit signal_1 (timer->id, error, missed);
-                    break;
-                case 2:
-                    emit signal_2 (timer->id, error, missed);
-                    break;
-                default:
-                    break;
-                }
-            } // while
-        } // if active
-    } // foreach
 }
 
 #include "kgrtimer.moc"

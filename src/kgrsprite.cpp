@@ -75,10 +75,11 @@ void KGrSprite::setZ (qreal /* z (unused) */)
     raise();
 }
 
-void KGrSprite::setAnimation (int x, int y, int startFrame, int nFrames,
-                              int dx, int dy, int dt, int nFrameChanges)
+void KGrSprite::setAnimation (bool repeating, int x, int y, int startFrame,
+                        int nFrames, int dx, int dy, int dt, int nFrameChanges)
 {
     m_stationary    = false;	// Animation is ON now.
+    m_repeating     = repeating;
     m_x             = x;
     m_y             = y;
     m_startFrame    = startFrame;
@@ -92,25 +93,29 @@ void KGrSprite::setAnimation (int x, int y, int startFrame, int nFrames,
     m_dy            = (double) dy / m_ticks;
     m_frameTicks    = (double) m_ticks / nFrameChanges;
     m_frameChange   = 0.0;
-    kDebug() << "m_ticks" << m_ticks << "dx,dy,dt" << dx << dy << dt << "m_dx,m_dy" << m_dx << m_dy << "m_frameTicks" << m_frameTicks;
+    // kDebug() << "m_ticks" << m_ticks << "dx,dy,dt" << dx << dy << dt << "m_dx,m_dy" << m_dx << m_dy << "m_frameTicks" << m_frameTicks;
 }
 
-void KGrSprite::animate()
+void KGrSprite::animate (bool missed)
 {
     if (m_stationary) {
         return;
     }
     if (m_frameCtr >= m_nFrames) {
         m_frameCtr = 0;
-        // TODO - This should be done via a "one-off" parameter in setAnimation.
-        if (m_type == 'M') {
-            m_stationary = true;	// BRICK stops after one set of frames.
+        if (! m_repeating) {
+            m_stationary = true;	// Stop after one set of frames.
             return;
         }
     }
-    kDebug() << m_frameCtr << "=" << m_x << m_y << "frame" << m_startFrame + m_frameCtr << m_frameChange;
-    move (m_x, m_y, m_startFrame + m_frameCtr);
+    // kDebug() << m_frameCtr << "=" << m_x << m_y << "frame" << m_startFrame + m_frameCtr << m_frameChange;
 
+    // If the clock is running slow, skip an animation step.
+    if (! missed) {
+        move (m_x, m_y, m_startFrame + m_frameCtr);
+    }
+
+    // Calculate the next animation step.
     m_frameChange = m_frameChange + 1.0;
     if (m_frameChange + 0.001 > m_frameTicks) {
         m_frameChange = m_frameChange - m_frameTicks;

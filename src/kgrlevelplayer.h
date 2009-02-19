@@ -21,6 +21,8 @@
 #include <QObject>
 #include <QList>
 
+#include <QTime> // IDW testing
+
 #include "kgrconsts.h" // OBSOLESCENT - 1/1/09
 #include "kgrglobals.h"
 
@@ -57,17 +59,18 @@ public:
     void dbgControl        (int code);	// Authors' debugging aids.
 
 signals:
-    void animation      ();
+    void animation      (bool missed);
     void paintCell      (int i, int j, char tileType, int diggingStage = 0);
     int  makeSprite     (char spriteType, int i, int j);
-    void startAnimation (const int spriteId, const int i, const int j,
-                         const int time,
+    void startAnimation (const int spriteId, const bool repeating,
+                         const int i, const int j, const int time,
                          const Direction dirn, const AnimationType type);
+    void deleteSprite   (const int spriteId);
     void gotGold        (const int  spriteID, const int i, const int j,
                          const bool hasGold);
 
 private slots:
-    void tick           (bool missed);
+    void tick           (bool missed, int scaledTime);
     void doDig          (int button);	// Dig using mouse-buttons.
 
 private:
@@ -100,6 +103,24 @@ private:
     void restart();		// Kickstart the game action.
 
     void startDigging (Direction diggingDirection);
+    void processDugBricks (const int scaledTime);
+
+    int  digCycleTime;			// Milliseconds per dig-timing cycle.
+    int  digCycleCount;			// Number of cycles hole is fully open.
+    int  digOpeningCycles;		// Cycles for brick-opening animation.
+    int  digClosingCycles;		// Cycles for brick-closing animation.
+    int  digKillingTime;		// Cycle when enemy/hero gets killed.
+
+    typedef struct {
+        int  id;
+        int  cycleTimeLeft;
+        int  digI;
+        int  digJ;
+        int  countdown;
+        int  startTime; // IDW testing
+    } DugBrick;
+
+    QList <DugBrick *> dugBricks;
 
 /******************************************************************************/
 /**************************  AUTHORS' DEBUGGING AIDS **************************/
@@ -113,6 +134,8 @@ private:
     void showFigurePositions();	// Show everybody's co-ordinates.
     void showObjectState();	// Show an object's state.
     void showEnemyState (int);	// Show enemy's co-ordinates and state.
+
+    QTime t; // IDW testing
 };
 
 #endif // KGRLEVELPLAYER_H

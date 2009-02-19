@@ -38,6 +38,7 @@ public:
 
     virtual void printRules() const = 0;
 
+    bool variableTiming() const      { return mVariableTiming;      }
     bool alwaysCollectNugget() const { return mAlwaysCollectNugget; }
     bool runThruHole() const         { return mRunThruHole;         }
     bool reappearAtTop() const       { return mReappearAtTop;       }
@@ -45,6 +46,8 @@ public:
     int  pointsPerCell() const       { return mPointsPerCell;       }
     bool turnAnywhere() const        { return mTurnAnywhere;        }
     bool enemiesShowGold() const     { return mEnemiesShowGold;     }
+
+    void        setTiming     (const int enemyCount = 0);
 
     inline void getHeroTimes  (int & runTime, int & fallTime) {
                 runTime = times.hwalk; fallTime = times.hfall; }
@@ -86,9 +89,6 @@ public:
     Direction findBestWay (const QPoint & enemyPosition,
                            const QPoint & heroPosition,
                            const KGrLevelGrid & grid);
-
-private:
-    void setTiming     (const int enemyCount = 0);
 };
 
 

@@ -59,7 +59,9 @@ void KGrRunner::getRules()
 KGrHero::KGrHero (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
                   int i, int j, int pSpriteId, KGrRuleBook * pRules)
     :
-    KGrRunner (pLevelPlayer, pGrid, i, j, pSpriteId, pRules)
+    KGrRunner (pLevelPlayer, pGrid, i, j, pSpriteId, pRules),
+    nuggets (1000) // TODO - This won't work in the Count, Zero level.
+    // Implement KGrRunner::setNuggets (int n); and nuggets as a runner value.
 {
     kDebug() << "THE HERO IS BORN at" << i << j << "sprite ID" << pSpriteId;
     rules->getHeroTimes (runTime, fallTime);
@@ -71,25 +73,31 @@ KGrHero::~KGrHero()
 {
 }
 
-void KGrHero::run()
+HeroStatus KGrHero::run (const int scaledTime)
 {
-    timeLeft -= TickTime;
-    if (timeLeft >= TickTime) {
-        kDebug() << "1: Hero interval is:" << interval << "time left:" << timeLeft;
-        return;
+    timeLeft -= scaledTime;
+    if (timeLeft >= scaledTime) {
+        // kDebug() << "1: Hero interval is:" << interval << "time left:" << timeLeft;
+        return NO_ACTION;
     }
 
     pointCtr++;
     // TODO - Count one extra tick when turning to L or R from another dirn.
     if (pointCtr < pointsPerCell) {
-        kDebug() << "2: Hero interval is:" << interval << "time left:" << timeLeft;
+        // kDebug() << "2: Hero interval is:" << interval << "time left:" << timeLeft;
         timeLeft += interval;
-        return;
+        return NO_ACTION;
     }
 
     // TODO - Die if a brick has closed over us.
+    if (grid->cellType  (gridI, gridJ) == BRICK) {
+        return CAUGHT_IN_BRICK;
+    }
 
     // TODO - If on top row and all nuggets gone, plus Scav cond, go up a level.
+    if ((gridJ == 1) && (nuggets <= 0)) {
+        return WON_LEVEL;
+    }
 
     // TODO - Use nextDirection here, and set currDirection (at end?).
 
@@ -99,7 +107,7 @@ void KGrHero::run()
 
     char cell = grid->cellType  (gridI, gridJ);
     if (cell == NUGGET) {
-        levelPlayer->runnerGotGold (spriteId, gridI, gridJ, true);
+        nuggets = levelPlayer->runnerGotGold (spriteId, gridI, gridJ, true);
     }
 
     Direction dirn = levelPlayer->getDirection (gridI, gridJ);
@@ -107,7 +115,7 @@ void KGrHero::run()
 
     Flags OK  = grid->heroMoves (gridI, gridJ);
     bool canStand = OK & dFlag [STAND];
-    kDebug() << "Direction" << dirn << "Flags" << OK << "at" << gridI << gridJ;
+    // kDebug() << "Direction" << dirn << "Flags" << OK << "at" << gridI << gridJ;
 
     AnimationType anim = aType [dirn];
     if (OK & dFlag [dirn]) {
@@ -131,7 +139,7 @@ void KGrHero::run()
     interval = 1 * interval; // TODO - Do *proper* speed variation.
 
     timeLeft += interval;
-    kDebug() << "3: Hero interval is:" << interval << "time left:" << timeLeft;
+    // kDebug() << "3: Hero interval is:" << interval << "time left:" << timeLeft;
 
     // TODO - Check for collision with an enemy somewhere around here.
 
@@ -142,20 +150,22 @@ void KGrHero::run()
     if ((dirn == currDirection) && (anim == currAnimation)) {
         // TODO - If dirn == STAND, no animation, else emit resynchAnimation().
         if (dirn == STAND) {
-            return;
+            return STATIONARY;
         }
     }
 
     vector [X] = movement [dirn][X];
     vector [Y] = movement [dirn][Y];
 
-    kDebug() << "New direction" << dirn << vector [X] << vector [Y] << gridI << gridJ;
-    kDebug() << "Sprite" << spriteId << "Animate" << gridI << gridJ << "time" << interval * pointsPerCell << "dirn" << dirn << "anim" << anim;
+    // kDebug() << "New direction" << dirn << vector [X] << vector [Y] << gridI << gridJ;
+    // kDebug() << "Sprite" << spriteId << "Animate" << gridI << gridJ << "time" << interval * pointsPerCell << "dirn" << dirn << "anim" << anim;
 
-    emit startAnimation (spriteId, gridI, gridJ, interval * pointsPerCell,
-                         dirn, anim);
+    // Start the running animation (repeating).
+    emit startAnimation (spriteId, true, gridI, gridJ,
+                         interval * pointsPerCell, dirn, anim);
     currAnimation = anim;
     currDirection = dirn;
+    return MOVING;
 }
 
 bool KGrHero::dig (const Direction diggingDirection, int & i, int & j)
@@ -180,6 +190,7 @@ bool KGrHero::dig (const Direction diggingDirection, int & i, int & j)
 
     // The place to dig must be clear and there must be a brick under it.
     char aboveBrick = grid->cellType  (gridI + relativeI, gridJ);
+    kDebug() << "aboveBrick =" << aboveBrick;
     if ((grid->cellType  (gridI + relativeI, gridJ + 1) == BRICK) &&
         ((aboveBrick == FREE) || (aboveBrick == HOLE))) {
 

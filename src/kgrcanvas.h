@@ -74,20 +74,21 @@ public:
     inline void setGoldEnemiesRule (bool showIt) { enemiesShowGold = showIt;}
 
 public slots:
-    void animate          ();
-    void paintCell        (const int i, const int j, const char type,
-                           const int offset = 0);
+    void animate           (bool missed);
+    void paintCell         (const int i, const int j, const char type,
+                            const int offset = 0);
 
-    int  makeSprite       (const char type, int i, int j);
-    void startAnimation   (const int id, const int i, const int j,
-                           const int time,
-                           const Direction dirn, const AnimationType type);
-    void resynchAnimation (const int id, const int i, const int j,
-                           const bool stop);
-    void gotGold          (const int spriteID, const int i, const int j,
-                           const bool spriteHasGold);
-    void deleteSprite     (const int id);
-    void deleteAllSprites ();
+    int  makeSprite        (const char type, int i, int j);
+    void startAnimation    (const int id, const bool repeating,
+                            const int i, const int j, const int time,
+                            const Direction dirn, const AnimationType type);
+    void resynchAnimation  (const int id, const int i, const int j,
+                            const bool stop);
+    void gotGold           (const int spriteID, const int i, const int j,
+                            const bool spriteHasGold);
+    void showHiddenLadders (const QList<int> & ladders, const int width);
+    void deleteSprite      (const int id);
+    void deleteAllSprites  ();
 
 signals:
     void mouseClick (int);

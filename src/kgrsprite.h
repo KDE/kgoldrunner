@@ -43,9 +43,9 @@ public:
     inline double scale(){ return m_scale;}
     inline void setFrameOffset (int offset) { m_frameOffset = offset;}
 
-    void setAnimation (int x, int y, int startFrame, int nFrames,
-                       int dx, int dy, int dt, int nFrameChanges);
-    void animate();
+    void setAnimation (bool repeating, int x, int y, int startFrame,
+                int nFrames, int dx, int dy, int dt, int nFrameChanges);
+    void animate (bool missed);
 
 private:
     QList<QPixmap> * m_frames;
@@ -60,6 +60,7 @@ private:
     char   m_type;
     char   m_tickTime;
     bool   m_stationary;
+    bool   m_repeating;
     double m_x;
     double m_y;
     int    m_startFrame;

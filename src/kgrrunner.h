@@ -36,8 +36,8 @@ public:
     virtual ~KGrRunner();
 
 signals:
-    void startAnimation   (const int spriteId, const int i, const int j,
-                           const int time,
+    void startAnimation   (const int spriteId, const bool repeating,
+                           const int i, const int j, const int time,
                            const Direction dirn, const AnimationType type);
 
 protected:
@@ -78,13 +78,14 @@ public:
                 int i, int j, int pSpriteId, KGrRuleBook  * pRules);
     ~KGrHero();
 
-    void run();
+    HeroStatus run (const int scaledTime);
 
     bool dig (const Direction dirn, int & digI, int & digJ);
 
     void showState (char option);
 
 private:
+    int  nuggets;			// Number of gold pieces remaining.
 };
 
 

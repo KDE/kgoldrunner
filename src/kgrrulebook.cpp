@@ -34,6 +34,25 @@ KGrRuleBook::~KGrRuleBook()
 {
 }
 
+void KGrRuleBook::setTiming (const int enemyCount)
+{
+    int choice;
+    Timing varTiming[6] = {
+                          {40, 58, 78, 88, 170, 23},      // No enemies.
+                          {50, 68, 78, 88, 170, 32},      // 1 enemy.
+                          {57, 67, 114, 128, 270, 37},    // 2 enemies.
+                          {60, 70, 134, 136, 330, 40},    // 3 enemies.
+                          {63, 76, 165, 150, 400, 46},    // 4 enemies.
+                          {70, 80, 189, 165, 460, 51}     // >4 enemies.
+                          };
+    if (mVariableTiming) {
+        choice = (enemyCount < 0) ? 0 : enemyCount;
+        choice = (enemyCount > 5) ? 5 : enemyCount;
+        times  = varTiming [enemyCount];
+    }
+}
+
+
 // Initialise the static flags for the rules.
 
 KGrTraditionalRules::KGrTraditionalRules (QObject * parent)
@@ -63,23 +82,6 @@ Direction KGrTraditionalRules::findBestWay (const QPoint & enemyPosition,
 {
     return RIGHT;
 }
-
-void KGrTraditionalRules::setTiming (const int enemyCount)
-{
-    int choice;
-    Timing varTiming[6] = {
-                          {40, 58, 78, 88, 170, 23},      // No enemies.
-                          {50, 68, 78, 88, 170, 32},      // 1 enemy.
-                          {57, 67, 114, 128, 270, 37},    // 2 enemies.
-                          {60, 70, 134, 136, 330, 40},    // 3 enemies.
-                          {63, 76, 165, 150, 400, 46},    // 4 enemies.
-                          {70, 80, 189, 165, 460, 51}     // >4 enemies.
-                          };
-    choice = (enemyCount < 0) ? 0 : enemyCount;
-    choice = (enemyCount > 5) ? 5 : enemyCount;
-    times  = varTiming [enemyCount];
-}
-
 
 KGrKGoldrunnerRules::KGrKGoldrunnerRules (QObject * parent)
     :

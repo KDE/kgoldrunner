@@ -507,11 +507,13 @@ void KGrCanvas::setMousePos (int i, int j)
                                 topLeft.y() + j * imgH + imgH / 2)));
 }
 
-void KGrCanvas::animate ()
+void KGrCanvas::animate (bool missed)
 {
     foreach (KGrSprite * sprite, (* sprites)) {
-        if (sprite->spriteType() != ENEMY) {
-            sprite->animate();		// Animate the hero and dug bricks.
+        if (sprite != 0) {
+            if (sprite->spriteType() != ENEMY) {
+                sprite->animate (missed); // Animate the hero and dug bricks.
+            }
         }
     }
 }
@@ -550,6 +552,8 @@ int KGrCanvas::makeSprite (const char type, int i, int j)
         sprite->addFrames (tileset, topLeft, scale);
         frame1 = KGrTheme::BrickTile;
         z = 1;
+        // Erase the brick-image so that animations are visible in all themes.
+        paintCell (i, j, FREE, 0);
         break;
     default:
         break;
@@ -560,12 +564,13 @@ int KGrCanvas::makeSprite (const char type, int i, int j)
     sprite->setZ (z);
     sprite->show();
 
-    kDebug() << "Sprite ID" << spriteId << "sprite type" << type;
+    kDebug() << "Sprite ID" << spriteId << "sprite type" << type
+             << "at" << i << j;
     return spriteId;
 }
 
-void KGrCanvas::startAnimation (const int id, const int i, const int j,
-                                const int time,
+void KGrCanvas::startAnimation (const int id, const bool repeating,
+                                const int i, const int j, const int time,
                                 const Direction dirn, const AnimationType type)
 {
     // TODO - Save last direction somehow, to use in facing and centering code.
@@ -627,8 +632,8 @@ void KGrCanvas::startAnimation (const int id, const int i, const int j,
     }
     kDebug() << "id" << id << "data" << i << j << dx * bgw << dy * bgw << frame << time;
     // TODO - Generalise nFrameChanges = 4, also the tick time = 20 new sprite.
-    sprites->at(id)->setAnimation ((i - 1) * bgw, (j - 1) * bgh, frame,
-                            nFrames, dx * bgw, dy * bgh, time, nFrameChanges);
+    sprites->at(id)->setAnimation (repeating, (i - 1) * bgw, (j - 1) * bgh,
+                    frame, nFrames, dx * bgw, dy * bgh, time, nFrameChanges);
 }
 
 void KGrCanvas::resynchAnimation (const int id, const int i, const int j,
@@ -649,11 +654,30 @@ void KGrCanvas::gotGold (const int spriteID, const int i, const int j,
     }
 }
 
-void KGrCanvas::deleteSprite (const int spriteId)
+void KGrCanvas::showHiddenLadders (const QList<int> & ladders, const int width)
 {
-    delete sprites->at(spriteId);
-    (* sprites)[spriteId] = 0;
+    int offset, i, j;
+    foreach (offset, ladders) {
+        i = offset % width;
+        j = offset / width;
+        paintCell (i, j, LADDER);
+    }
+}
+
+void KGrCanvas::deleteSprite (const int spriteID)
+{
+    QPoint loc   = sprites->at(spriteID)->currentLoc();
+    bool   brick = (sprites->at(spriteID)->spriteType() == BRICK);
+
+    delete sprites->at(spriteID);
+    (* sprites)[spriteID] = 0;
     emptySprites++;
+
+    if (brick) {
+        // Dug-brick sprite erased: restore the tile that was at that location.
+        paintCell ((loc.x()/bgw) + 1, (loc.y()/bgh) + 1, BRICK, 0);
+    }
+    kDebug() << "Sprite ID" << spriteID << "emptySprites" << emptySprites;
 }
 
 void KGrCanvas::deleteAllSprites()

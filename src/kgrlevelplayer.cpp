@@ -18,6 +18,7 @@
 #include <KDebug>
 
 #include <QTimer>
+#include <QList>
 
 #include "kgrcanvas.h"
 #include "kgrlevelplayer.h"
@@ -30,19 +31,25 @@ KGrLevelPlayer::KGrLevelPlayer (QObject      * parent,
                                 KGrGameData  * theGameData,
                                 KGrLevelData * theLevelData)
     :
-    QObject     (parent),
-    gameData    (theGameData),
-    levelData   (theLevelData),
-    grid        (new KGrLevelGrid (this, theLevelData)),
-    hero        (0),
-    controlMode (MOUSE),
-    nuggets     (0),
-    playState   (NotReady),
-    targetI     (1),
-    targetJ     (1),
-    direction   (STAND),
-    timer       (0)
+    QObject          (parent),
+    gameData         (theGameData),
+    levelData        (theLevelData),
+    grid             (new KGrLevelGrid (this, theLevelData)),
+    hero             (0),
+    controlMode      (MOUSE),
+    nuggets          (0),
+    playState        (NotReady),
+    targetI          (1),
+    targetJ          (1),
+    direction        (STAND),
+    timer            (0),
+    digCycleTime     (200),	// Milliseconds per dig-timing cycle (default).
+    digCycleCount    (40),	// Cycles while hole is fully open (default).
+    digOpeningCycles (5),	// Cycles for brick-opening animation.
+    digClosingCycles (4),	// Cycles for brick-closing animation.
+    digKillingTime   (2)	// Cycle at which enemy/hero gets killed.
 {
+    t.start(); // IDW
     gameLogging = false;
     bugFixed = false;
 }
@@ -105,6 +112,7 @@ void KGrLevelPlayer::init (KGrCanvas * view, const Control mode)
             // Either, create a hero and paint him on the background ...
             if (type == HERO) {
                 emit paintCell (i, j, FREE, 0);
+                grid->changeCellAt (i, j, FREE);	// Hero becomes sprite.
 
                 if (hero == 0) {
                     targetI = i;
@@ -119,6 +127,7 @@ void KGrLevelPlayer::init (KGrCanvas * view, const Control mode)
             // Or, create an enemy and paint him on the background ...
             else if (type == ENEMY) {
                 emit paintCell (i, j, FREE, 0);
+                grid->changeCellAt (i, j, FREE);	// Enemy becomes sprite.
 
                 KGrEnemy * enemy;
                 int id = emit makeSprite (ENEMY, i, j);
@@ -133,63 +142,123 @@ void KGrLevelPlayer::init (KGrCanvas * view, const Control mode)
         }
     }
 
-    // Connect the hero's and ememies' efforts to the graphics.
+    if (rules->variableTiming()) {
+        // Game-speed depends on number of enemies (as in Traditional rules).
+        rules->setTiming (enemies.count());
+    }
+
+    rules->getDigTimes (digCycleTime, digCycleCount);
+
+    // Connect the hero's and enemies' efforts to the graphics.
     connect (this, SIGNAL (gotGold (int, int, int, bool)),
              view, SLOT   (gotGold (int, int, int, bool)));
 
     // Connect mouse-clicks from KGrCanvas to digging slot.
     connect (view, SIGNAL (mouseClick (int)), SLOT (doDig (int)));
 
-    // Let the hero create and delete sprites for animating dug bricks.
-    connect (hero, SIGNAL (makeSprite (char, int, int)),
-             view, SLOT   (makeSprite (char, int, int)));
-
     // Connect the new hero and enemies (if any) to the animation code.
-    connect (hero, SIGNAL (startAnimation (int, int, int, int,
+    connect (hero, SIGNAL (startAnimation (int, bool, int, int, int,
                                            Direction, AnimationType)),
-             view, SLOT   (startAnimation (int, int, int, int,
+             view, SLOT   (startAnimation (int, bool, int, int, int,
                                            Direction, AnimationType)));
     foreach (KGrEnemy * enemy, enemies) {
-        connect (enemy, SIGNAL (startAnimation (int, int, int, int,
+        connect (enemy, SIGNAL (startAnimation (int, bool, int, int, int,
                                                 Direction, AnimationType)),
-                 view,  SLOT   (startAnimation (int, int, int, int,
+                 view,  SLOT   (startAnimation (int, bool, int, int, int,
                                                 Direction, AnimationType)));
     }
 
     // Connect the level player to the animation code (for use with dug bricks).
-    connect (this, SIGNAL (startAnimation (int, int, int, int,
+    connect (this, SIGNAL (startAnimation (int, bool, int, int, int,
                                            Direction, AnimationType)),
-             view, SLOT   (startAnimation (int, int, int, int,
+             view, SLOT   (startAnimation (int, bool, int, int, int,
                                            Direction, AnimationType)));
+    connect (this, SIGNAL (deleteSprite (int)),
+             view, SLOT   (deleteSprite (int)));
+
+    // Connect the grid to the view, to show hidden ladders when the time comes.
+    connect (grid, SIGNAL (showHiddenLadders (const QList<int> &, const int)),
+             view, SLOT   (showHiddenLadders (const QList<int> &, const int)));
 
     // Connect and start the timer.  The tick() slot emits signal animation(),
     // so there is just one time-source for the model and the view.
 
     timer = new KGrTimer (this, TickTime);	// TickTime def in kgrglobals.h.
-    connect (timer, SIGNAL (tick(bool)),  this, SLOT (tick(bool)));
-    connect (this,  SIGNAL (animation()), view, SLOT (animate()));
+
+    connect (timer, SIGNAL (tick (bool, int)), this, SLOT (tick (bool, int)));
+    connect (this,  SIGNAL (animation (bool)), view, SLOT (animate (bool)));
     // timer->start (TickTime);	// Interval = TickTime, defined in kgrglobals.h.
 }
 
-void KGrLevelPlayer::startDigging (Direction diggingDirection) {
-    // TODO - Think about levelPlayer managing all the dug bricks.
+void KGrLevelPlayer::startDigging (Direction diggingDirection)
+{
     int digI = 1;
     int digJ = 1;
+
     // We need the hero to decide if he CAN dig and if so, where.
     if (hero->dig (diggingDirection, digI, digJ)) {
         // The hero can dig as requested: the chosen brick is at (digI, digJ).
         grid->changeCellAt (digI, digJ, HOLE);
 
         // Delete the brick-image so that animations are visible in all themes.
-        emit paintCell (digI, digJ, FREE, 0);
+        // TODO - Remove. emit paintCell (digI, digJ, FREE, 0);
 
-        // Start the brick-opening animation.
+        // Start the brick-opening animation (non-repeating).
         int id = emit makeSprite (BRICK, digI, digJ);
-        emit startAnimation (id, digI, digJ, 1000, STAND, OPEN_BRICK);
+        emit startAnimation (id, false, digI, digJ,
+                        (digOpeningCycles * digCycleTime), STAND, OPEN_BRICK);
 
-        // TODO - Need to keep a list of digging in progress.
-        // TODO - Maybe a list of integer counters of the 200 msec intervals?
-        // TODO - And what about the sprite ID and (digI, digJ)?
+        DugBrick * thisBrick = new DugBrick;
+        DugBrick   brick     = {id, digCycleTime, digI, digJ,
+                    (digCycleCount + digOpeningCycles + digClosingCycles - 1),
+                    t.elapsed()}; // IDW test
+        (* thisBrick)        = brick;
+        dugBricks.append (thisBrick);
+        // kDebug() << "DIG" << thisBrick->id << thisBrick->countdown
+                 // << "time" << (t.elapsed() - thisBrick->startTime);
+    }
+}
+
+void KGrLevelPlayer::processDugBricks (const int scaledTime)
+{
+    DugBrick * dugBrick;
+    QMutableListIterator<DugBrick *> iterator (dugBricks);
+
+    while (iterator.hasNext()) {
+        dugBrick = iterator.next();
+        dugBrick->cycleTimeLeft -= scaledTime;
+        if (dugBrick->cycleTimeLeft < scaledTime) {
+            int id = dugBrick->id; // IDW testing
+            dugBrick->cycleTimeLeft += digCycleTime;
+            if (--dugBrick->countdown == digClosingCycles) {
+                // Start the brick-closing animation (non-repeating).
+                // kDebug() << "Brick" << dugBrick->digI << dugBrick->digJ <<
+                            // "count" << dugBrick->countdown;
+                emit startAnimation (dugBrick->id, false,
+                                     dugBrick->digI, dugBrick->digJ,
+                                     (digClosingCycles * digCycleTime),
+                                     STAND, CLOSE_BRICK);
+            }
+            if (dugBrick->countdown == digKillingTime) {
+                // kDebug() << "Brick" << dugBrick->digI << dugBrick->digJ <<
+                            // "count" << dugBrick->countdown;
+                // Close the hole and maybe capture the hero or an enemy.
+                grid->changeCellAt (dugBrick->digI, dugBrick->digJ, BRICK);
+            }
+            if (dugBrick->countdown <= 0) {
+                kDebug() << "DIG" << id << dugBrick->countdown
+                         << "time" << (t.elapsed() - dugBrick->startTime);
+                // Dispose of the dug brick and remove it from the list.
+                emit deleteSprite (dugBrick->id);
+                // TODO - Remove. emit paintCell (dugBrick->digI, dugBrick->digJ, BRICK);
+                delete dugBrick;
+                iterator.remove();
+            }
+            // TODO - Hero gets hidden by dug-brick in the Egyptian theme.
+            // TODO - Why do we get so many MISSED ticks when we dig?
+            // TODO - Hero falls through floor when caught in a closing brick.
+            // TODO - Implement speed-variation as a parameter of tick().
+        }
     }
 }
 
@@ -303,13 +372,19 @@ Direction KGrLevelPlayer::getDirection (int heroI, int heroJ)
     return direction;
 }
 
-void KGrLevelPlayer::tick (bool missed)
+void KGrLevelPlayer::tick (bool missed, int scaledTime)
 {
-    if (playState == Playing) {
-        hero->run();
-        if (missed) kDebug() << "TIMER SIGNAL MISSED ...";
-        emit animation();
+    if (playState != Playing) {
+        return;
     }
+
+    if (dugBricks.count() > 0) {
+        processDugBricks (scaledTime);
+    }
+
+    HeroStatus status = hero->run (scaledTime);
+
+    emit animation (missed);
 }
 
 void KGrLevelPlayer::runnerGotGold (const int  spriteID,
@@ -324,6 +399,7 @@ void KGrLevelPlayer::runnerGotGold (const int  spriteID,
         kDebug() << "Collected gold";
         if (--nuggets <= 0) {
             kDebug() << "ALL GOLD COLLECTED";
+            grid->placeHiddenLadders();
         }
     }
 }
