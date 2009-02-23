@@ -376,6 +376,23 @@ void KGrGame::incScore (int n)
     emit showScore (score);	// collect gold 250, complete the level 1500.
 }
 
+void KGrGame::endLevel (const int result)
+{
+    if (levelPlayer) {
+        // Delete the level-player, hero, enemies, grid, rule-book, etc.
+        // Delete sprites in KGrCanvas later, so they stay visible for a while.
+        delete levelPlayer;
+        levelPlayer = 0;
+    }
+
+    if (result == WON_LEVEL) {
+        levelCompleted();
+    }
+    else if (result == DEAD) {
+        herosDead();
+    }
+}
+
 void KGrGame::herosDead()
 {
     if ((level < 1) || (lives <= 0))
@@ -383,7 +400,9 @@ void KGrGame::herosDead()
 
     // Lose a life.
     if (--lives > 0) {
+#ifdef ENABLE_SOUND_SUPPORT
 	effects->play (fx[DeathSound]);
+#endif
         // Still some life left, so PAUSE and then re-start the level.
         emit showLives (lives);
         gameFrozen = true;	// Freeze the animation and let
@@ -393,7 +412,9 @@ void KGrGame::herosDead()
     }
     else {
         // Game over.
+#ifdef ENABLE_SOUND_SUPPORT
 	effects->play (fx[GameOverSound]);
+#endif
         emit showLives (lives);
         freeze();
         QString gameOver = "<NOBR><B>" + i18n ("GAME OVER !!!") + "</B></NOBR>";
@@ -458,7 +479,9 @@ void KGrGame::showHiddenLadders()
         
 void KGrGame::levelCompleted()
 {
+#ifdef ENABLE_SOUND_SUPPORT
     effects->play (fx[CompletedSound]);
+#endif
     connect (view, SIGNAL (fadeFinished()), this, SLOT (goUpOneLevel()));
     view->fadeOut();
 }
@@ -721,6 +744,10 @@ int KGrGame::loadLevel (int levelNo)
         return 0;
     }
 
+    // Clean up any sprites remaining from a previous level.  This is done late,
+    // so that the end-state of the sprites will be visible for a short while.
+    view->deleteAllSprites();
+
     view->setLevel (levelNo);		// Switch and render background if reqd.
     view->fadeIn();			// Then run the fade-in animation.
     startScore = score;			// The score we will save, if asked.
@@ -778,6 +805,11 @@ int KGrGame::loadLevel (int levelNo)
         gameGroup.writeEntry ("Level_" + gameData->prefix, level);
         gameGroup.sync();		// Ensure that the entry goes to disk.
     }
+
+    // Use a queued connection here, to ensure that levelPlayer has finished
+    // executing when control goes to the endLevel (const int heroStatus) slot.
+    connect (levelPlayer, SIGNAL (endLevel (const int)),
+             this,        SLOT   (endLevel (const int)), Qt::QueuedConnection);
 
     // Re-enable player input.
     loading = false;

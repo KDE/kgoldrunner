@@ -1,5 +1,5 @@
 /****************************************************************************
- *    Copyright 2009  Ian Wadham <ianwau@gmail.com>                         *
+ *    Copyright 2009  Ian Wadham <iandw.au@gmail.com>                         *
  *                                                                          *
  *    This program is free software; you can redistribute it and/or         *
  *    modify it under the terms of the GNU General Public License as        *
@@ -15,6 +15,7 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ****************************************************************************/
 
+#include "kgrlevelgrid.h"
 #include "kgrrulebook.h"
 
 KGrRuleBook::KGrRuleBook (QObject * parent)
@@ -48,12 +49,12 @@ void KGrRuleBook::setTiming (const int enemyCount)
     if (mVariableTiming) {
         choice = (enemyCount < 0) ? 0 : enemyCount;
         choice = (enemyCount > 5) ? 5 : enemyCount;
-        times  = varTiming [enemyCount];
+        times  = varTiming [choice];
     }
 }
 
 
-// Initialise the static flags for the rules.
+// Initialise the flags for the rules.
 
 KGrTraditionalRules::KGrTraditionalRules (QObject * parent)
     :
@@ -76,12 +77,387 @@ KGrTraditionalRules::~KGrTraditionalRules()
 {
 }
 
-Direction KGrTraditionalRules::findBestWay (const QPoint & enemyPosition,
-                                            const QPoint & heroPosition,
-                                            const KGrLevelGrid & grid)
+Direction KGrTraditionalRules::findBestWay (const int eI, const int eJ,
+                                            const int hI, const int hJ,
+                                            KGrLevelGrid * pGrid)
+// TODO - Should be const ...               const KGrLevelGrid * pGrid)
 {
-    return RIGHT;
+    grid = pGrid;
+    if (grid->cellType (eI, eJ) == USEDHOLE) {	// Could not get out of hole
+        return UP;				// (e.g. brick above is closed):
+    }						// but keep trying.
+
+    // TODO - Add !standOnEnemy() && as a condition here.
+    // TODO - And maybe !((*playfield)[x][y+1]->whatIam() == HOLE)) not just out of hole,
+    bool canStand = (grid->enemyMoves (eI, eJ) & dFlag [STAND]);
+    if (! canStand) {
+        return DOWN;
+    }
+
+    // Traditional search strategy.
+    Direction dirn = STAND;
+    if (eJ == hJ) {
+        dirn = getHero (eI, eJ, hI);		// Hero on same row.
+        if (dirn != STAND) {
+            return dirn;			// Can go towards him.
+        }
+    }
+
+    if (eJ >= hJ) {				// Hero above or on same row.
+        dirn = searchUp (eI, eJ, hJ);		// Find a way that leads up.
+    }
+    else {					// Hero below enemy.
+        dirn = searchDown (eI, eJ, hJ);		// Find way that leads down.
+        if (dirn == STAND) {
+            dirn = searchUp (eI, eJ, hJ);	// No go: try going up first.
+        }
+    }
+
+    if (dirn == STAND) {			// When all else fails, look for
+        dirn = searchDown (eI, eJ, eJ - 1);	// a way below the hero.
+    }
+
+    return dirn;
 }
+
+Direction KGrTraditionalRules::searchUp (int ew, int eh, int hh)
+{
+    int i, ilen, ipos, j, jlen, jpos, deltah, rungs;
+
+    deltah = eh - hh;			// Get distance up to hero's level.
+
+    // Search for the best ladder right here or on the left.
+    i = ew; ilen = 0; ipos = -1;
+    while (i >= 1) {
+        rungs = distanceUp (i, eh, deltah);
+        if (rungs > ilen) {
+            ilen = rungs;		// This the best yet.
+            ipos = i;
+        }
+        if (searchOK (-1, i, eh))
+            i--;			// Look further to the left.
+        else
+            i = -1;			// Cannot go any further to the left.
+    }
+
+    // Search for the best ladder on the right.
+    j = ew; jlen = 0; jpos = -1;
+    while (j < FIELDWIDTH) {
+        if (searchOK (+1, j, eh)) {
+            j++;			// Look further to the right.
+            rungs = distanceUp (j, eh, deltah);
+            if (rungs > jlen) {
+                jlen = rungs;		// This the best yet.
+                jpos = j;
+            }
+        }
+        else
+            j = FIELDWIDTH+1;		// Cannot go any further to the right.
+    }
+
+    if ((ilen == 0) && (jlen == 0))	// No ladder found.
+        return STAND;
+
+    // Choose a ladder to go to.
+    if (ilen != jlen) {			// If the ladders are not the same
+                                        // length, choose the longer one.
+        if (ilen > jlen) {
+            if (ipos == ew)		// If already on the best ladder, go up.
+                return UP;
+            else
+                return LEFT;
+        }
+        else
+            return RIGHT;
+    }
+    else {				// Both ladders are the same length.
+
+        if (ipos == ew)			// If already on the best ladder, go up.
+            return UP;
+        else if (ilen == deltah) {	// If both reach the hero's level,
+            if ((ew - ipos) <= (jpos - ew)) // choose the closest.
+                return LEFT;
+            else
+                return RIGHT;
+        }
+        else return LEFT;		// Else choose the left ladder.
+    }
+}
+
+Direction KGrTraditionalRules::searchDown (int ew, int eh, int hh)
+{
+    int i, ilen, ipos, j, jlen, jpos, deltah, rungs, path;
+
+    deltah = hh - eh;			// Get distance down to hero's level.
+
+    // Search for the best way down, right here or on the left.
+    ilen = 0; ipos = -1;
+    i = (willNotFall (ew, eh)) ? ew : -1;
+    rungs = distanceDown (ew, eh, deltah);
+    if (rungs > 0) {
+        ilen = rungs; ipos = ew;
+    }
+
+    while (i >= 1) {
+        rungs = distanceDown (i - 1, eh, deltah);
+        if (((rungs > 0) && (ilen == 0)) ||
+            ((deltah > 0) && (rungs > ilen)) ||
+            ((deltah <= 0) && (rungs < ilen) && (rungs != 0))) {
+            ilen = rungs;		// This the best way yet.
+            ipos = i - 1;
+        }
+        if (searchOK (-1, i, eh))
+            i--;			// Look further to the left.
+        else
+            i = -1;			// Cannot go any further to the left.
+    }
+
+    // Search for the best way down, on the right.
+    j = ew; jlen = 0; jpos = -1;
+    while (j < FIELDWIDTH) {
+        rungs = distanceDown (j + 1, eh, deltah);
+        if (((rungs > 0) && (jlen == 0)) ||
+            ((deltah > 0) && (rungs > jlen)) ||
+            ((deltah <= 0) && (rungs < jlen) && (rungs != 0))) {
+            jlen = rungs;		// This the best way yet.
+            jpos = j + 1;
+        }
+        if (searchOK (+1, j, eh)) {
+            j++;			// Look further to the right.
+        }
+        else
+            j = FIELDWIDTH+1;		// Cannot go any further to the right.
+    }
+
+    if ((ilen == 0) && (jlen == 0))	// Found no way down.
+        return STAND;
+
+    // Choose a way down to follow.
+    if (ilen == 0)
+        path = jpos;
+    else if (jlen == 0)
+        path = ipos;
+    else if (ilen != jlen) {		// If the ways down are not same length,
+                                        // choose closest to hero's level.
+        if (deltah > 0) {
+            if (jlen > ilen)
+                path = jpos;
+            else
+                path = ipos;
+        }
+        else {
+            if (jlen > ilen)
+                path = ipos;
+            else
+                path = jpos;
+        }
+    }
+    else {				// Both ways down are the same length.
+        if ((deltah > 0) &&		// If both reach the hero's level,
+            (ilen == deltah)) {		// choose the closest.
+            if ((ew - ipos) <= (jpos - ew))
+                path = ipos;
+            else
+                path = jpos;
+        }
+        else
+            path = ipos;		// Else, go left or down.
+    }
+
+    if (path == ew)
+        return DOWN;
+    else if (path < ew)
+        return LEFT;
+    else
+        return RIGHT;
+}
+
+Direction KGrTraditionalRules::getHero (int eI, int eJ, int hI)
+{
+    int i, inc, returnValue;
+
+    inc = (eI > hI) ? -1 : +1;
+    i = eI;
+    while (i != hI) {
+        returnValue = canWalkLR (inc, i, eJ);
+        if (returnValue > 0)
+            i = i + inc;		// Can run further towards the hero.
+        else if (returnValue < 0)
+            break;			// Will run into a wall regardless.
+        else
+            return STAND;		// Won't run over a hole.
+    }
+
+    if (i < eI)		return LEFT;
+    else if (i > eI)	return RIGHT;
+    else		return STAND;
+}
+
+int KGrTraditionalRules::distanceUp (int x, int y, int deltah)
+{
+    int rungs = 0;
+
+    // If there is a ladder at (x,y), return its length, else return zero.
+    while (grid->cellType (x, y - rungs) == LADDER) {
+        rungs++;
+        if (rungs >= deltah) {		// To hero's level is enough.
+            break;
+        }
+    }
+    return rungs;
+}
+
+int KGrTraditionalRules::distanceDown (int x, int y, int deltah)
+{
+    // When deltah > 0, we want an exit sideways at the hero's level or above.
+    // When deltah <= 0, we can go down any distance (as a last resort).
+
+    int rungs = -1;
+    int exitRung = 0;
+    bool canGoThru = true;
+    char objType;
+
+    // If there is a way down at (x,y), return its length, else return zero.
+    // Because rungs == -1, we first check that level y is not blocked here.
+    while (canGoThru) {
+        objType = grid->cellType (x, y + rungs + 1);
+        switch (objType) {
+        case BRICK:
+        case BETON:
+        case HOLE:			// Enemy cannot go DOWN through a hole.
+        case USEDHOLE:
+            if ((deltah > 0) && (rungs <= deltah))
+                exitRung = rungs;
+            if ((objType == HOLE) && (rungs < 0))
+                rungs = 0;		// Enemy can go SIDEWAYS through a hole.
+            else
+                canGoThru = false;	// Cannot go through here.
+            break;
+        case LADDER:
+        case POLE:			// Can go through or stop.
+            rungs++;			// Add to path length.
+            if ((deltah > 0) && (rungs >= 0)) {
+                // If at or above hero's level, check for an exit from ladder.
+                if ((rungs - 1) <= deltah) {
+                    // Maybe can stand on top of ladder and exit L or R.
+                    if ((objType == LADDER) && (searchOK (-1, x, y+rungs-1) ||
+                                                searchOK (+1, x, y+rungs-1)))
+                        exitRung = rungs - 1;
+                    // Maybe can exit L or R from ladder body or pole.
+                    if ((rungs <= deltah) && (searchOK (-1, x, y+rungs) ||
+                                              searchOK (+1, x, y+rungs)))
+                        exitRung = rungs;
+                }
+                else
+                    canGoThru = false;	// Should stop at hero's level.
+            }
+            break;
+        default:
+            rungs++;			// Can go through.  Add to path length.
+            break;
+        }
+    }
+    if (rungs == 1) {
+        // TODO - Check for another enemy in this space, maybe in KGrRunner.
+        // TODO - Maybe the presence of another enemy below could be a bool
+        // TODO - parameter for findBestWay() ...  NO, that won't work, we
+        // TODO - need to know if there is an enemy ANYWHERE under a LR path.
+        // QListIterator<KGrEnemy *> i (*enemies);
+        // while (i.hasNext()) {
+            // KGrEnemy * enemy = i.next();
+            // if ((x*16==enemy->getx()) && (y*16+16==enemy->gety()))
+                // rungs = 0;		// Pit is blocked.  Find another way.
+        // }
+    }
+    if (rungs <= 0)
+        return 0;			// There is no way down.
+    else if (deltah > 0)
+        return exitRung;		// We want to take an exit, if any.
+    else
+        return rungs;			// We can go down all the way.
+}
+
+bool KGrTraditionalRules::searchOK (int direction, int x, int y)
+{
+    // Check whether it is OK to search left or right.
+    if (canWalkLR (direction, x, y) > 0) {
+        // Can go into that cell, but check for a fall.
+        if (willNotFall (x+direction, y))
+            return true;
+    }
+    return false;			// Cannot go into and through that cell.
+}
+
+int KGrTraditionalRules::canWalkLR (int direction, int x, int y)
+{
+    if (willNotFall (x, y)) {
+        switch (grid->cellType (x+direction, y)) {
+        case BETON:
+        case BRICK:
+        case USEDHOLE:
+            return -1;		// Will be halted in current cell.
+            break;
+        default:
+            // NB. FREE, LADDER, HLADDER, NUGGET and POLE are OK of course,
+            //     but enemies can also walk left/right through a HOLE and
+            //     THINK they can walk left/right through a FBRICK.
+
+            return +1;		// Can walk into next cell.
+            break;
+        }
+    }
+    else
+        return 0;			// Will fall before getting there.
+}
+
+bool KGrTraditionalRules::willNotFall (int x, int y)
+{
+    // TODO - Remove ... int c, cmax;
+    // TODO - Remove ... KGrEnemy *enemy;
+
+    // Check the ceiling.
+    switch (grid->cellType (x, y)) {
+    case LADDER:
+    case POLE:
+        return true; break;		// OK, can hang on ladder or pole.
+    default:
+        break;
+    }
+
+    // Check the floor.
+    switch (grid->cellType (x, y+1)) {
+
+    // Cases where the enemy knows he will fall.
+    case FREE:
+    case HLADDER:
+    case FBRICK:
+
+    // N.B. The enemy THINKS he can run over a NUGGET, a buried POLE or a HOLE.
+    // The last of these cases allows the hero to trap the enemy, of course.
+
+    // Note that there are several Traditional levels that require an enemy to
+    // be trapped permanently in a pit containing a nugget, as he runs towards
+    // you.  It is also possible to use a buried POLE in the same way.
+
+        // TODO - Check for another enemy down below, maybe in KGrRunner.
+        // TODO - Maybe the presence of another enemy below could be a bool
+        // TODO - parameter for findBestWay() ...  NO, that won't work, we
+        // TODO - need to know if there is an enemy ANYWHERE under a LR path.
+        // cmax = enemies->count();
+        // for (c = 0; c < cmax; c++) {
+            // enemy = enemies->at (c);
+            // if ((enemy->getx()==16*x) && (enemy->gety()==16*(y+1)))
+                // return true;		// Standing on a friend.
+        // }
+        return false;			// Will fall: there is no floor.
+        break;
+
+    default:
+        return true;			// OK, will not fall.
+        break;
+    }
+}
+
 
 KGrKGoldrunnerRules::KGrKGoldrunnerRules (QObject * parent)
     :
@@ -104,10 +480,13 @@ KGrKGoldrunnerRules::~KGrKGoldrunnerRules()
 {
 }
 
-Direction KGrKGoldrunnerRules::findBestWay (const QPoint & enemyPosition,
-                                            const QPoint & heroPosition,
-                                            const KGrLevelGrid & grid)
+Direction KGrKGoldrunnerRules::findBestWay (const int eI, const int eJ,
+                                            const int hI, const int hJ,
+                                            KGrLevelGrid * pGrid)
+// TODO - Should be const ...               const KGrLevelGrid * pGrid)
 {
+    kDebug() << eI << eJ << hI << hJ;
+    grid = pGrid;
     return RIGHT;
 }
 
@@ -133,10 +512,13 @@ KGrScavengerRules::~KGrScavengerRules()
 {
 }
 
-Direction KGrScavengerRules::findBestWay   (const QPoint & enemyPosition,
-                                            const QPoint & heroPosition,
-                                            const KGrLevelGrid & grid)
+Direction KGrScavengerRules::findBestWay   (const int eI, const int eJ,
+                                            const int hI, const int hJ,
+                                            KGrLevelGrid * pGrid)
+// TODO - Should be const ...               const KGrLevelGrid * pGrid)
 {
+    kDebug() << eI << eJ << hI << hJ;
+    grid = pGrid;
     return RIGHT;
 }
 

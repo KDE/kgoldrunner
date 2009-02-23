@@ -498,22 +498,18 @@ QPoint KGrCanvas::getMousePos()
     return (QPoint (i, j));
 }
 
-void KGrCanvas::setMousePos (int i, int j)
+void KGrCanvas::setMousePos (const int i, const int j)
 {
     // In KGoldrunner, the top-left visible cell is [1,1]: in KGrSprite [0,0].
-    i--; j--;
-    m->setPos (mapToGlobal (QPoint (
-                                topLeft.x() + i * imgW + imgW / 2,
-                                topLeft.y() + j * imgH + imgH / 2)));
+    m->setPos (mapToGlobal (QPoint (topLeft.x() + (i - 1) * imgW + imgW / 2,
+                                    topLeft.y() + (j - 1) * imgH + imgH / 2)));
 }
 
 void KGrCanvas::animate (bool missed)
 {
     foreach (KGrSprite * sprite, (* sprites)) {
         if (sprite != 0) {
-            if (sprite->spriteType() != ENEMY) {
-                sprite->animate (missed); // Animate the hero and dug bricks.
-            }
+            sprite->animate (missed);
         }
     }
 }

@@ -1,5 +1,5 @@
 /****************************************************************************
- *    Copyright 2009  Ian Wadham <ianwau@gmail.com>                         *
+ *    Copyright 2009  Ian Wadham <iandw.au@gmail.com>                         *
  *                                                                          *
  *    This program is free software; you can redistribute it and/or         *
  *    modify it under the terms of the GNU General Public License as        *
@@ -35,10 +35,14 @@ public:
                int i, int j, int pSpriteId, KGrRuleBook  * pRules);
     virtual ~KGrRunner();
 
+    inline int whereAreYou (int & i, int & j, int & point) {
+                            i = gridI; j = gridJ; point = pointCtr;
+                            return pointsPerCell; }
+
 signals:
-    void startAnimation   (const int spriteId, const bool repeating,
-                           const int i, const int j, const int time,
-                           const Direction dirn, const AnimationType type);
+    void startAnimation    (const int spriteId, const bool repeating,
+                            const int i, const int j, const int time,
+                            const Direction dirn, const AnimationType type);
 
 protected:
     KGrLevelPlayer * levelPlayer;
@@ -54,19 +58,13 @@ protected:
     int              pointsPerCell;
     bool             turnAnywhere;
 
-    virtual void     getRules();
-    // virtual void     setDirection (Direction dirn); // TODO = 0; Enemy's setDirection() is defined as?
+    void             getRules();
 
     Direction        currDirection;
     AnimationType    currAnimation;
 
     int              interval;		// The runner's current time interval.
     int              timeLeft;		// Time till the runner's next action.
-
-    int              runTime;		// The time interval for running.
-    int              fallTime;		// The time interval for falling.
-
-private:
 };
 
 
@@ -85,7 +83,10 @@ public:
     void showState (char option);
 
 private:
-    int  nuggets;			// Number of gold pieces remaining.
+    int              nuggets;		// Number of gold pieces remaining.
+
+    static int       runTime;		// The time interval for running.
+    static int       fallTime;		// The time interval for falling.
 };
 
 
@@ -97,9 +98,17 @@ public:
                  int i, int j, int pSpriteId, KGrRuleBook  * pRules);
     ~KGrEnemy();
 
+    void run (const int scaledTime);
+
     void showState (char option);
 
 private:
+    int              nuggets;		// Number of gold pieces an enemy holds.
+
+    static int       runTime;		// The time interval for running.
+    static int       fallTime;		// The time interval for falling.
+    static int       trapTime;		// Time interval for which an enemy can
+					// stay trapped in a brick.
 };
 
 #endif // KGRRUNNER_H

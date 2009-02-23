@@ -1,5 +1,5 @@
 /****************************************************************************
- *    Copyright 2009  Ian Wadham <ianwau@gmail.com>                         *
+ *    Copyright 2009  Ian Wadham <iandw.au@gmail.com>                         *
  *                                                                          *
  *    This program is free software; you can redistribute it and/or         *
  *    modify it under the terms of the GNU General Public License as        *
@@ -20,7 +20,6 @@
 
 #include <QObject>
 #include <QList>
-#include <QPoint>
 
 #include <KDebug>
 
@@ -57,9 +56,10 @@ public:
     inline void getDigTimes   (int & digTime, int & digCounter) {
                 digTime = 200; digCounter = times.hole; }
 
-    virtual Direction findBestWay (const QPoint & enemyPosition,
-                                   const QPoint & heroPosition,
-                                   const KGrLevelGrid & grid) = 0;
+    virtual Direction findBestWay (const int eI, const int eJ,
+                                   const int hI, const int hJ,
+                                   KGrLevelGrid * pGrid) = 0;
+// TODO - Make const ...           const KGrLevelGrid * pGrid) = 0;
 
 protected:
     bool mVariableTiming;	///< More enemies imply less speed.
@@ -72,6 +72,7 @@ protected:
     bool mEnemiesShowGold;	///< Enemies show when they are carrying gold.
 
     Timing times;
+    KGrLevelGrid * grid;
 };
 
 
@@ -86,9 +87,21 @@ public:
                                  mVariableTiming << mAlwaysCollectNugget <<
                                  mRunThruHole << mReappearAtTop; }
 
-    Direction findBestWay (const QPoint & enemyPosition,
-                           const QPoint & heroPosition,
-                           const KGrLevelGrid & grid);
+    Direction findBestWay  (const int eI, const int eJ,
+                            const int hI, const int hJ,
+                            KGrLevelGrid * pGrid);
+// TODO - Make const ...    const KGrLevelGrid * pGrid);
+
+private:
+    Direction searchUp     (int eI, int eJ, int hJ);
+    Direction searchDown   (int eI, int eJ, int hJ);
+    Direction getHero      (int eI, int eJ, int hI);
+
+    int       distanceUp   (int x,  int y,  int deltah);
+    int       distanceDown (int x,  int y,  int deltah);
+    bool      searchOK     (int direction,  int x, int y);
+    int       canWalkLR    (int direction,  int x, int y);
+    bool      willNotFall  (int x,  int y);
 };
 
 
@@ -103,9 +116,10 @@ public:
                                  mVariableTiming << mAlwaysCollectNugget <<
                                  mRunThruHole << mReappearAtTop; }
 
-    Direction findBestWay (const QPoint & enemyPosition,
-                           const QPoint & heroPosition,
-                           const KGrLevelGrid & grid);
+    Direction findBestWay (const int eI, const int eJ,
+                           const int hI, const int hJ,
+                           KGrLevelGrid * pGrid);
+// TODO - Make const ...    const KGrLevelGrid * pGrid);
 };
 
 
@@ -120,9 +134,10 @@ public:
                                  mVariableTiming << mAlwaysCollectNugget <<
                                  mRunThruHole << mReappearAtTop; }
 
-    Direction findBestWay (const QPoint & enemyPosition,
-                           const QPoint & heroPosition,
-                           const KGrLevelGrid & grid);
+    Direction findBestWay (const int eI, const int eJ,
+                           const int hI, const int hJ,
+                           KGrLevelGrid * pGrid);
+// TODO - Make const ...    const KGrLevelGrid * pGrid);
 };
 
 #endif // KGRRULEBOOK_H

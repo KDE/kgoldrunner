@@ -1,5 +1,5 @@
 /****************************************************************************
- *    Copyright 2009  Ian Wadham <ianwau@gmail.com>                         *
+ *    Copyright 2009  Ian Wadham <iandw.au@gmail.com>                         *
  *                                                                          *
  *    This program is free software; you can redistribute it and/or         *
  *    modify it under the terms of the GNU General Public License as        *
@@ -39,26 +39,29 @@ class KGrLevelPlayer : public QObject
 {
     Q_OBJECT
 public:
-    KGrLevelPlayer (QObject * parent, KGrGameData  * theGameData,
-                                      KGrLevelData * theLevelData);
+    KGrLevelPlayer              (QObject * parent, KGrGameData  * theGameData,
+                                                   KGrLevelData * theLevelData);
     ~KGrLevelPlayer();
 
-    void init (KGrCanvas * view, const Control mode);
-    void prepareToPlay();
+    void init                   (KGrCanvas * view, const Control mode);
+    void prepareToPlay          ();
 
-    inline void setControlMode (const Control mode) { controlMode = mode; }
+    inline void setControlMode  (const Control mode) { controlMode = mode; }
 
-    void setTarget         (int pointerI, int pointerJ);
-    void setDirectionByKey (Direction dirn);
-    Direction getDirection (int heroI, int heroJ);
+    void setTarget              (int pointerI, int pointerJ);
+    void setDirectionByKey      (Direction dirn);
+    Direction getDirection      (int heroI, int heroJ);
+    Direction getEnemyDirection (int enemyI, int enemyJ);
 
-    void runnerGotGold     (const int  spriteID, const int i, const int j,
-                            const bool hasGold);
+    int  runnerGotGold          (const int  spriteID, const int i, const int j,
+                                 const bool hasGold);
 
-    void pause             (bool stop);
-    void dbgControl        (int code);	// Authors' debugging aids.
+    void pause                  (bool stop);
+    void dbgControl             (int code);	// Authors' debugging aids.
 
 signals:
+    void endLevel       (const int result);
+    void setMousePos    (const int i, const int j);
     void animation      (bool missed);
     void paintCell      (int i, int j, char tileType, int diggingStage = 0);
     int  makeSprite     (char spriteType, int i, int j);

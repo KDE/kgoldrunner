@@ -1,5 +1,5 @@
 /****************************************************************************
- *    Copyright 2009  Ian Wadham <ianwau@gmail.com>                         *
+ *    Copyright 2009  Ian Wadham <iandw.au@gmail.com>                         *
  *                                                                          *
  *    This program is free software; you can redistribute it and/or         *
  *    modify it under the terms of the GNU General Public License as        *
@@ -56,6 +56,7 @@ void KGrRunner::getRules()
     kDebug() << "pointsPerCell" << pointsPerCell << "turnAnywhere" << turnAnywhere;
 }
 
+
 KGrHero::KGrHero (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
                   int i, int j, int pSpriteId, KGrRuleBook * pRules)
     :
@@ -73,12 +74,16 @@ KGrHero::~KGrHero()
 {
 }
 
+// These statics will be set to their proper values in the constructor.
+int KGrHero::runTime  = 0;
+int KGrHero::fallTime = 0;
+
 HeroStatus KGrHero::run (const int scaledTime)
 {
     timeLeft -= scaledTime;
     if (timeLeft >= scaledTime) {
         // kDebug() << "1: Hero interval is:" << interval << "time left:" << timeLeft;
-        return NO_ACTION;
+        return NORMAL;
     }
 
     pointCtr++;
@@ -86,12 +91,12 @@ HeroStatus KGrHero::run (const int scaledTime)
     if (pointCtr < pointsPerCell) {
         // kDebug() << "2: Hero interval is:" << interval << "time left:" << timeLeft;
         timeLeft += interval;
-        return NO_ACTION;
+        return NORMAL;
     }
 
-    // TODO - Die if a brick has closed over us.
+    // Die if a brick has closed over us.
     if (grid->cellType  (gridI, gridJ) == BRICK) {
-        return CAUGHT_IN_BRICK;
+        return DEAD;
     }
 
     // TODO - If on top row and all nuggets gone, plus Scav cond, go up a level.
@@ -136,7 +141,6 @@ HeroStatus KGrHero::run (const int scaledTime)
     if (dirn == STAND) {
         anim = currAnimation;
     }
-    interval = 1 * interval; // TODO - Do *proper* speed variation.
 
     timeLeft += interval;
     // kDebug() << "3: Hero interval is:" << interval << "time left:" << timeLeft;
@@ -150,7 +154,7 @@ HeroStatus KGrHero::run (const int scaledTime)
     if ((dirn == currDirection) && (anim == currAnimation)) {
         // TODO - If dirn == STAND, no animation, else emit resynchAnimation().
         if (dirn == STAND) {
-            return STATIONARY;
+            return NORMAL;
         }
     }
 
@@ -165,7 +169,7 @@ HeroStatus KGrHero::run (const int scaledTime)
                          interval * pointsPerCell, dirn, anim);
     currAnimation = anim;
     currDirection = dirn;
-    return MOVING;
+    return NORMAL;
 }
 
 bool KGrHero::dig (const Direction diggingDirection, int & i, int & j)
@@ -228,13 +232,119 @@ void KGrHero::showState (char option)
 KGrEnemy::KGrEnemy (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
                     int i, int j, int pSpriteId, KGrRuleBook * pRules)
     :
-    KGrRunner (pLevelPlayer, pGrid, i, j, pSpriteId, pRules)
+    KGrRunner (pLevelPlayer, pGrid, i, j, pSpriteId, pRules),
+    nuggets   (0)
 {
     kDebug() << "ENEMY" << pSpriteId << "IS BORN at" << i << j;
+    rules->getEnemyTimes (runTime, fallTime, trapTime);
+    kDebug() << "Enemy run time " << runTime << "fall time" << fallTime;
+    kDebug() << "Enemy trap time" << trapTime;
+    interval = runTime;
 }
 
 KGrEnemy::~KGrEnemy()
 {
+}
+
+// These statics will be set to their proper values in the constructor.
+int KGrEnemy::runTime  = 0;
+int KGrEnemy::fallTime = 0;
+int KGrEnemy::trapTime = 0;
+
+void KGrEnemy::run (const int scaledTime)
+{
+    timeLeft -= scaledTime;
+    if (timeLeft >= scaledTime) {
+        // kDebug() << "1: Hero interval is:" << interval << "time left:" << timeLeft;
+        return;
+    }
+
+    pointCtr++;
+    // TODO - Count one extra tick when turning to L or R from another dirn.
+    if (pointCtr < pointsPerCell) {
+        // kDebug() << "2: Hero interval is:" << interval << "time left:" << timeLeft;
+        timeLeft += interval;
+        return;
+    }
+
+    // TODO - If falling and the next cell is a hole, drop or lose nugget.
+    // TODO - Set the hole to USEDHOLE.
+    // TODO - Die and reappear if a brick has closed over us.
+    if (grid->cellType  (gridI, gridJ) == BRICK) {
+        return;
+    }
+
+    // TODO - Use nextDirection here, and set currDirection (at end?).
+
+    pointCtr = 0;
+    gridI    = gridI + vector [X];
+    gridJ    = gridJ + vector [Y];
+
+    char cell = grid->cellType  (gridI, gridJ);
+    // TODO - Apply enemy's rules for picking up or dropping gold in new cell.
+    // TODO - if (cell == NUGGET) {
+        // TODO - nuggets = levelPlayer->runnerGotGold (spriteId, gridI, gridJ, true);
+    // TODO - }
+
+    // TODO - If arrived in USEDHOLE (as "reserved" above), start trapTime.
+
+    // TODO - Call rules->findBestWay(), but where is the hero?
+    Direction dirn = levelPlayer->getEnemyDirection (gridI, gridJ);
+    interval = runTime;
+
+    Flags OK  = grid->enemyMoves (gridI, gridJ);
+    bool canStand = OK & dFlag [STAND];
+    kDebug() << "Enemy" << spriteId << "Direction" << dirn <<
+                "Flags" << OK << "at" << gridI << gridJ;
+
+    AnimationType anim = aType [dirn];
+    if (OK & dFlag [dirn]) {
+        if ((dirn == DOWN) && (! canStand)) {
+            anim = (currDirection == RIGHT) ? FALL_R : FALL_L;
+            interval = fallTime;
+        }
+    }
+    else if (canStand) {
+        dirn = STAND;
+    }
+    else {
+        dirn = DOWN;
+        anim = (currDirection == RIGHT) ? FALL_R : FALL_L;
+        interval = fallTime;
+    }
+
+    if (dirn == STAND) {
+        anim = currAnimation;
+    }
+
+    timeLeft += interval;
+    // kDebug() << "3: Hero interval is:" << interval << "time left:" << timeLeft;
+
+    // TODO - Check for collision with an enemy somewhere around here.
+
+    if (((anim == RUN_R) || (anim == RUN_L)) && (cell == POLE)) {
+        anim = (dirn == RIGHT) ? CLIMB_R : CLIMB_L;
+    }
+
+    if ((dirn == currDirection) && (anim == currAnimation)) {
+        // TODO - If dirn == STAND, no animation, else emit resynchAnimation().
+        if (dirn == STAND) {
+            return;
+        }
+    }
+
+    vector [X] = movement [dirn][X];
+    vector [Y] = movement [dirn][Y];
+
+    // kDebug() << "New direction" << dirn << vector [X] << vector [Y] << gridI << gridJ;
+    // kDebug() << "Sprite" << spriteId << "Animate" << gridI << gridJ << "time" << interval * pointsPerCell << "dirn" << dirn << "anim" << anim;
+
+    // Start the running animation (repeating).
+    emit startAnimation (spriteId, true, gridI, gridJ,
+                         interval * pointsPerCell, dirn, anim);
+    currAnimation = anim;
+    currDirection = dirn;
+    return;
 }
 
 void KGrEnemy::showState (char option)

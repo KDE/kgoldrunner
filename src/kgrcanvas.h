@@ -46,7 +46,6 @@ public:
     virtual ~KGrCanvas();
 
     QPoint getMousePos();
-    void setMousePos (int, int);
 
     void setBaseScale();
 
@@ -74,6 +73,7 @@ public:
     inline void setGoldEnemiesRule (bool showIt) { enemiesShowGold = showIt;}
 
 public slots:
+    void setMousePos       (const int, const int);
     void animate           (bool missed);
     void paintCell         (const int i, const int j, const char type,
                             const int offset = 0);

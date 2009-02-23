@@ -1,5 +1,5 @@
 /****************************************************************************
- *    Copyright 2009  Ian Wadham <ianwau@gmail.com>                         *
+ *    Copyright 2009  Ian Wadham <iandw.au@gmail.com>                         *
  *                                                                          *
  *    This program is free software; you can redistribute it and/or         *
  *    modify it under the terms of the GNU General Public License as        *
@@ -56,6 +56,10 @@ KGrLevelPlayer::KGrLevelPlayer (QObject      * parent,
 
 KGrLevelPlayer::~KGrLevelPlayer()
 {
+    while (! dugBricks.isEmpty()) {
+        delete dugBricks.takeFirst();
+    }
+
     // TODO - Do we need this delete?
     // while (! enemies.isEmpty()) {
         // delete enemies.takeFirst();
@@ -92,8 +96,13 @@ void KGrLevelPlayer::init (KGrCanvas * view, const Control mode)
     connect (this, SIGNAL (makeSprite (char, int, int)),
              view, SLOT   (makeSprite (char, int, int)));
 
+    // Connect to the mouse-positioning code in the graphics.
+    connect (this, SIGNAL (setMousePos (const int, const int)),
+             view, SLOT   (setMousePos (const int, const int)));
+
     // Show the layout of this level in the view (KGrCanvas).
     int wall = ConcreteWall;
+    int enemyCount = 0;
     for (int j = wall ; j < levelData->height + wall; j++) {
         for (int i = wall; i < levelData->width + wall; i++) {
             char type = grid->cellType (i, j);
@@ -108,31 +117,15 @@ void KGrLevelPlayer::init (KGrCanvas * view, const Control mode)
                 nuggets++;
             }
 
-// TODO - Do hero in pass 1 and enemies in pass 2, to ensure the hero has id 0.
-            // Either, create a hero and paint him on the background ...
+            // If the hero is here, leave the tile empty.
             if (type == HERO) {
                 emit paintCell (i, j, FREE, 0);
-                grid->changeCellAt (i, j, FREE);	// Hero becomes sprite.
-
-                if (hero == 0) {
-                    targetI = i;
-                    targetJ = j;
-                    heroID  = emit makeSprite (HERO, i, j);
-                    hero    = new KGrHero (this, grid, i, j, heroID, rules);
-                    // TODO - Iff mouse mode, setMousePos();
-                    view->setMousePos (targetI, targetJ);	// ??????????
-                }
             }
 
-            // Or, create an enemy and paint him on the background ...
+            // If an enemy is here, count him and leave the tile empty.
             else if (type == ENEMY) {
+                enemyCount++;
                 emit paintCell (i, j, FREE, 0);
-                grid->changeCellAt (i, j, FREE);	// Enemy becomes sprite.
-
-                KGrEnemy * enemy;
-                int id = emit makeSprite (ENEMY, i, j);
-                enemy = new KGrEnemy (this, grid, i, j, id, rules);
-                enemies.append (enemy);
             }
 
             // Or, just paint this tile.
@@ -142,12 +135,42 @@ void KGrLevelPlayer::init (KGrCanvas * view, const Control mode)
         }
     }
 
-    if (rules->variableTiming()) {
-        // Game-speed depends on number of enemies (as in Traditional rules).
-        rules->setTiming (enemies.count());
+    // Set the timing rules, maybe based on the number of enemies.
+    rules->setTiming (enemyCount);
+    rules->getDigTimes (digCycleTime, digCycleCount);
+
+// TODO - Do hero in pass 1 and enemies in pass 2, to ensure the hero has id 0.
+    // Create the hero (always sprite 0), with the proper timing.
+    for (int j = wall ; j < levelData->height + wall; j++) {
+        for (int i = wall; i < levelData->width + wall; i++) {
+            char type = grid->cellType (i, j);
+            if (type == HERO) {
+                if (hero == 0) {
+                    targetI = i;
+                    targetJ = j;
+                    heroID  = emit makeSprite (HERO, i, j);
+                    hero    = new KGrHero (this, grid, i, j, heroID, rules);
+                    // TODO - Iff mouse mode, setMousePos();
+                    emit setMousePos (targetI, targetJ);
+                    grid->changeCellAt (i, j, FREE);	// Hero now a sprite.
+                }
+            }
+        }
     }
 
-    rules->getDigTimes (digCycleTime, digCycleCount);
+    // Create the enemies (sprites 1-n), with the proper timing.
+    for (int j = wall ; j < levelData->height + wall; j++) {
+        for (int i = wall; i < levelData->width + wall; i++) {
+            char type = grid->cellType (i, j);
+            if (type == ENEMY) {
+                KGrEnemy * enemy;
+                int id = emit makeSprite (ENEMY, i, j);
+                enemy = new KGrEnemy (this, grid, i, j, id, rules);
+                enemies.append (enemy);
+                grid->changeCellAt (i, j, FREE);	// Enemy now a sprite.
+            }
+        }
+    }
 
     // Connect the hero's and enemies' efforts to the graphics.
     connect (this, SIGNAL (gotGold (int, int, int, bool)),
@@ -266,7 +289,7 @@ void KGrLevelPlayer::prepareToPlay()
 {
     // TODO - Should this be a signal?
     kDebug() << "Set mouse to:" << targetI << targetJ;
-    mView->setMousePos (targetI, targetJ);
+    emit setMousePos (targetI, targetJ);
     playState = Ready;
 }
 
@@ -372,6 +395,14 @@ Direction KGrLevelPlayer::getDirection (int heroI, int heroJ)
     return direction;
 }
 
+Direction KGrLevelPlayer::getEnemyDirection (int enemyI, int enemyJ)
+{
+    int heroI, heroJ, point, pointsPerCell;
+
+    pointsPerCell = hero->whereAreYou (heroI, heroJ, point);
+    return rules->findBestWay (enemyI, enemyJ, heroI, heroJ, grid);
+}
+
 void KGrLevelPlayer::tick (bool missed, int scaledTime)
 {
     if (playState != Playing) {
@@ -383,11 +414,23 @@ void KGrLevelPlayer::tick (bool missed, int scaledTime)
     }
 
     HeroStatus status = hero->run (scaledTime);
+    if ((status == WON_LEVEL) || (status == DEAD)) {
+        timer->pause();
+        // TODO ? If caught in a brick, brick-closing animation is unfinished.
+        // Queued connection ensures KGrGame slot runs AFTER return from here.
+        emit endLevel (status);
+        kDebug() << "END OF LEVEL";
+        return;
+    }
+
+    foreach (KGrEnemy * enemy, enemies) {
+        enemy->run (scaledTime);
+    }
 
     emit animation (missed);
 }
 
-void KGrLevelPlayer::runnerGotGold (const int  spriteID,
+int KGrLevelPlayer::runnerGotGold (const int  spriteID,
                                     const int  i, const int j,
                                     const bool hasGold)
 {
@@ -402,6 +445,7 @@ void KGrLevelPlayer::runnerGotGold (const int  spriteID,
             grid->placeHiddenLadders();
         }
     }
+    return nuggets;
 }
 
 void KGrLevelPlayer::pause (bool stop)

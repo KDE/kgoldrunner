@@ -103,6 +103,7 @@ public slots:
     void showHighScores();		// Show high scores for current game.
 
     void incScore (int);		// Update the score.
+    void endLevel (const int result);	// Hero completed the level or he died.
     void herosDead();			// Hero was caught or he quit (key Q).
     void showHiddenLadders();		// Show hidden ladders (nuggets gone).
     void levelCompleted();		// Hero completed the level.
