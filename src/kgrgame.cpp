@@ -753,11 +753,11 @@ int KGrGame::loadLevel (int levelNo)
     startScore = score;			// The score we will save, if asked.
 
     kDebug() << "Prefix" << gameData->prefix << "index" << gameIndex << "of" << gameList.count();
-    KGrGameData * testGame = gameList.at (gameIndex);
 
-    levelPlayer = new KGrLevelPlayer (this, testGame, &levelData); // TESTING
+    levelPlayer = new KGrLevelPlayer (this);
 
-    levelPlayer->init (view, controlMode);
+    char rulesCode = gameList.at(gameIndex)->rules;
+    levelPlayer->init (view, controlMode, rulesCode, &levelData);
 
     // If there is a name, translate the UTF-8 coded QByteArray right now.
     levelName = (levelData.name.size() > 0) ?
@@ -1660,7 +1660,7 @@ void KGrGame::showHighScores()
 
 void KGrGame::dbgControl (int code)
 {
-    kDebug() << "Debug code =" << code;
+    // kDebug() << "Debug code =" << code;
     if (levelPlayer && gameFrozen) {
         levelPlayer->dbgControl (code);
     }

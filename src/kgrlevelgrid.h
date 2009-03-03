@@ -29,7 +29,7 @@ class KGrLevelGrid : public QObject
 {
     Q_OBJECT
 public:
-    KGrLevelGrid (QObject * parent, KGrLevelData * theLevelData);
+    KGrLevelGrid (QObject * parent, const KGrLevelData * theLevelData);
     ~KGrLevelGrid();
 
     inline char cellType    (int i, int j) {

@@ -18,7 +18,7 @@
 #include <stdio.h> // OBSOLESCENT - 6/1/09 - Used for testing.
 #include "kgrlevelgrid.h"
 
-KGrLevelGrid::KGrLevelGrid (QObject * parent, KGrLevelData * theLevelData)
+KGrLevelGrid::KGrLevelGrid (QObject * parent, const KGrLevelData * theLevelData)
     :
     QObject     (parent)
 {
@@ -127,6 +127,11 @@ void KGrLevelGrid::calculateCellAccess (const int i, const int j)
 {
     Flags access = 0;
     char  here   = cellType (i, j);
+    // TODO - Maybe we can just RETURN if this cell is CONCRETE.  Always works?
+    if (here == CONCRETE) {
+        // If edge-cell or other CONCRETE, no calculation (avoid index errors).
+        return;
+    }
     char  below  = cellType (i, j + 1);
 
     access = heroMoves (i, j) & ENTERABLE;
@@ -144,10 +149,11 @@ void KGrLevelGrid::calculateCellAccess (const int i, const int j)
 	access |= (dFlag [STAND] | dFlag [DOWN] |
 		   dFlag [LEFT]  | dFlag [RIGHT]);
     }
-    // If cannot stand or hang, can only go down (space or false brick).
+    // If cannot stand or hang, can go down (space or false brick) or
+    // maybe left or right (when standing on an enemy).
     else {
         // fprintf (stderr, "Cannot stand\n");
-	access |= dFlag [DOWN];
+	access |= (dFlag [DOWN] | dFlag [LEFT]  | dFlag [RIGHT]);
     }
     // Can only go up if there is a ladder here.
     if (here == LADDER) {

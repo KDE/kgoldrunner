@@ -15,6 +15,8 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ****************************************************************************/
 
+#include <stdio.h>
+#include <stdlib.h>
 #include <KDebug>
 
 #include <QTimer>
@@ -27,14 +29,9 @@
 #include "kgrrunner.h"
 #include "kgrtimer.h"
 
-KGrLevelPlayer::KGrLevelPlayer (QObject      * parent,
-                                KGrGameData  * theGameData,
-                                KGrLevelData * theLevelData)
+KGrLevelPlayer::KGrLevelPlayer (QObject * parent)
     :
     QObject          (parent),
-    gameData         (theGameData),
-    levelData        (theLevelData),
-    grid             (new KGrLevelGrid (this, theLevelData)),
     hero             (0),
     controlMode      (MOUSE),
     nuggets          (0),
@@ -66,15 +63,22 @@ KGrLevelPlayer::~KGrLevelPlayer()
     // }
 }
 
-void KGrLevelPlayer::init (KGrCanvas * view, const Control mode)
+void KGrLevelPlayer::init (KGrCanvas * view, const Control mode,
+                           const char rulesCode, const KGrLevelData * levelData)
 {
-    controlMode = mode;
-
     // TODO - Should not really remember the view: needed for setMousePos.
     mView = view;
 
+    grid            = new KGrLevelGrid (this, levelData);
+
+    controlMode     = mode;
+    levelWidth      = levelData->width;
+    levelHeight     = levelData->height;
+    reappearIndex   = levelWidth;
+    reappearPos.fill (1, levelWidth);
+
     // Set the rules of this game.
-    switch (gameData->rules) {
+    switch (rulesCode) {
     case TraditionalRules:
         rules = new KGrTraditionalRules (this);
         break;
@@ -103,8 +107,8 @@ void KGrLevelPlayer::init (KGrCanvas * view, const Control mode)
     // Show the layout of this level in the view (KGrCanvas).
     int wall = ConcreteWall;
     int enemyCount = 0;
-    for (int j = wall ; j < levelData->height + wall; j++) {
-        for (int i = wall; i < levelData->width + wall; i++) {
+    for (int j = wall ; j < levelHeight + wall; j++) {
+        for (int i = wall; i < levelWidth + wall; i++) {
             char type = grid->cellType (i, j);
 
             // Hide false bricks.
@@ -141,15 +145,15 @@ void KGrLevelPlayer::init (KGrCanvas * view, const Control mode)
 
 // TODO - Do hero in pass 1 and enemies in pass 2, to ensure the hero has id 0.
     // Create the hero (always sprite 0), with the proper timing.
-    for (int j = wall ; j < levelData->height + wall; j++) {
-        for (int i = wall; i < levelData->width + wall; i++) {
+    for (int j = wall ; j < levelHeight + wall; j++) {
+        for (int i = wall; i < levelWidth + wall; i++) {
             char type = grid->cellType (i, j);
             if (type == HERO) {
                 if (hero == 0) {
                     targetI = i;
                     targetJ = j;
-                    heroID  = emit makeSprite (HERO, i, j);
-                    hero    = new KGrHero (this, grid, i, j, heroID, rules);
+                    heroId  = emit makeSprite (HERO, i, j);
+                    hero    = new KGrHero (this, grid, i, j, heroId, rules);
                     // TODO - Iff mouse mode, setMousePos();
                     emit setMousePos (targetI, targetJ);
                     grid->changeCellAt (i, j, FREE);	// Hero now a sprite.
@@ -159,8 +163,8 @@ void KGrLevelPlayer::init (KGrCanvas * view, const Control mode)
     }
 
     // Create the enemies (sprites 1-n), with the proper timing.
-    for (int j = wall ; j < levelData->height + wall; j++) {
-        for (int i = wall; i < levelData->width + wall; i++) {
+    for (int j = wall ; j < levelHeight + wall; j++) {
+        for (int i = wall; i < levelWidth + wall; i++) {
             char type = grid->cellType (i, j);
             if (type == ENEMY) {
                 KGrEnemy * enemy;
@@ -397,10 +401,53 @@ Direction KGrLevelPlayer::getDirection (int heroI, int heroJ)
 
 Direction KGrLevelPlayer::getEnemyDirection (int enemyI, int enemyJ)
 {
-    int heroI, heroJ, point, pointsPerCell;
+    int heroX, heroY, pointsPerCell;
 
-    pointsPerCell = hero->whereAreYou (heroI, heroJ, point);
-    return rules->findBestWay (enemyI, enemyJ, heroI, heroJ, grid);
+    pointsPerCell = hero->whereAreYou (heroX, heroY);
+    return rules->findBestWay (enemyI, enemyJ,
+                               heroX / pointsPerCell, heroY / pointsPerCell,
+                               grid);
+}
+
+bool KGrLevelPlayer::heroCaught (const int heroX, const int heroY)
+{
+    if (enemies.count() == 0) {
+        return false;
+    }
+    int enemyX, enemyY, ppc1;
+    foreach (KGrEnemy * enemy, enemies) {
+        ppc1 = enemy->whereAreYou (enemyX, enemyY) - 1;
+        if (((heroX < enemyX) ? ((heroX + ppc1) >= enemyX) :
+                                 (heroX <= (enemyX + ppc1))) &&
+            ((heroY < enemyY) ? ((heroY + ppc1) >= enemyY) :
+                                 (heroY <= (enemyY + ppc1)))) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool KGrLevelPlayer::standOnEnemy (const int spriteId, const int x, const int y)
+{
+    int minEnemies = (spriteId == heroId) ? 1 : 2;
+    if (enemies.count() < minEnemies) {
+        return false;
+    }
+    int enemyX, enemyY, ppc;
+    foreach (KGrEnemy * enemy, enemies) {
+        ppc = enemy->whereAreYou (enemyX, enemyY);
+        if (((enemyY == (y + ppc)) || (enemyY == (y + ppc - 1))) &&
+            (enemyX >  (x - ppc)) && (enemyX <  (x + ppc))) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool KGrLevelPlayer::bumpingFriend (const int id, const int x, const int y)
+{
+    // TODO - Write this.
+    return false;
 }
 
 void KGrLevelPlayer::tick (bool missed, int scaledTime)
@@ -430,18 +477,22 @@ void KGrLevelPlayer::tick (bool missed, int scaledTime)
     emit animation (missed);
 }
 
-int KGrLevelPlayer::runnerGotGold (const int  spriteID,
+int KGrLevelPlayer::runnerGotGold (const int  spriteId,
                                     const int  i, const int j,
                                     const bool hasGold)
 {
+    if (hasGold) {
+        kDebug() << "GOLD COLLECTED BY" << spriteId << "AT" << i << j;
+    }
+    else {
+        kDebug() << "GOLD DROPPED BY" << spriteId << "AT" << i << j;
+    }
     grid->gotGold (i, j, hasGold);		// Record pickup/drop on grid.
-    emit  gotGold (spriteID, i, j, hasGold);	// Erase/show gold on screen.
+    emit  gotGold (spriteId, i, j, hasGold);	// Erase/show gold on screen.
 
     // If hero got gold, score, maybe show hidden ladders, maybe end the level.
-    if (spriteID == heroID) {
-        kDebug() << "Collected gold";
+    if (spriteId == heroId) {
         if (--nuggets <= 0) {
-            kDebug() << "ALL GOLD COLLECTED";
             grid->placeHiddenLadders();
         }
     }
@@ -456,6 +507,82 @@ void KGrLevelPlayer::pause (bool stop)
     else {
         timer->resume();
     }
+}
+
+void KGrLevelPlayer::makeReappearanceSequence()
+{
+    // The idea is to make each possible x co-ord come up once per levelWidth
+    // reappearances of enemies.  This is not truly random, but it reduces the
+    // tedium in levels where you must keep killing enemies until a particular
+    // x or range of x comes up (e.g. if they have to collect gold for you).
+
+    // First put the positions in ascending sequence.
+    for (int k = 0; k < levelWidth; k++) {
+        reappearPos [k] = k + 1;
+    }
+    kDebug() << "Width" << levelWidth << "Non-randoms" << reappearPos;
+
+    int z;
+    int left = levelWidth;
+    int temp;
+
+    // Shuffle the x co-ords of reappearance positions, for x = 1 to levelWidth.
+    for (int k = 0; k < levelWidth; k++) {
+        // Pick a random element from those that are left.
+        z = (int)((left * (float) rand()) / RAND_MAX);
+        // Exchange its value with the last of the ones left.
+        temp = reappearPos [z];
+        reappearPos [z] = reappearPos [left - 1];
+        reappearPos [left - 1] = temp;
+        left--;
+    }
+    kDebug() << "Randoms" << reappearPos;
+    reappearIndex = 0;
+}
+
+void KGrLevelPlayer::enemyReappear (int & gridI, int & gridJ)
+{
+    bool looking = true;
+    int  i, j, k;
+
+    // Follow Traditional or Scavenger rules: enemies reappear at top.
+    j = rules->reappearRow();
+
+    // Randomly look for a free spot in the row.  Limit the number of tries.
+    for (k = 1; ((k <= 3) && looking); k++) {
+        if (reappearIndex >= levelWidth) {
+            makeReappearanceSequence();	// Get next array of random i.
+        }
+        i = reappearPos [reappearIndex++];
+        switch (grid->cellType (i, j)) {
+        case FREE:
+        case HLADDER:
+            looking = false;
+            break;
+        default:
+            break;
+        }
+    }
+
+    // If unsuccessful, choose the first free spot in the rows below.
+    while ((j < levelHeight) && looking) {
+        j++;
+        i = 0;
+        while ((i < levelWidth) && looking) {
+            i++;
+            switch (grid->cellType (i, j)) {
+            case FREE:
+            case HLADDER:
+                looking = false;
+                break;
+            default:
+                break;
+            }
+        }
+    }
+    kDebug() << "Reappear at" << i << j;
+    gridI = i;
+    gridJ = j;
 }
 
 /******************************************************************************/
@@ -554,21 +681,34 @@ void KGrLevelPlayer::showFigurePositions()
 
 void KGrLevelPlayer::showObjectState()
 {
-    int i, j;
-    // OBSOLESCENT - 20/1/09 KGrObject * myObject;
+    int   i       = targetI;
+    int   j       = targetJ;
+    char  here    = grid->cellType (i, j);
+    Flags access  = grid->heroMoves (i, j);
 
-    // p = view->getMousePos(); Need to get mouse position somehow. DONE.
-    i = targetI;
-    j = targetJ;
-    // OBSOLESCENT - 20/1/09 Need to compile after kgrobject.cpp removed.
-    // myObject = playfield[i][j];
-    // switch (myObject->whatIam()) {
-        // case BRICK:
-        // case HOLE:
-        // case USEDHOLE:
-            // ((KGrBrick *)myObject)->showState (i, j); break;
-        // default: myObject->showState (i, j); break;
-    // }
+    int enter     = (access & ENTERABLE)         ? 1 : 0;
+    int stand     = (access & dFlag [STAND])     ? 1 : 0;
+    int u         = (access & dFlag [UP])        ? 1 : 0;
+    int d         = (access & dFlag [DOWN])      ? 1 : 0;
+    int l         = (access & dFlag [LEFT])      ? 1 : 0;
+    int r         = (access & dFlag [RIGHT])     ? 1 : 0;
+    fprintf (stderr,
+             "[%02d,%02d] [%c] %02x E %d S %d U %d D %d L %d R %d\n",
+	     i, j, here, access, enter, stand, u, d, l, r);
+
+    Flags eAccess = grid->enemyMoves (i, j);
+    if (eAccess != access) {
+        access    = eAccess;
+        enter     = (access & ENTERABLE)         ? 1 : 0;
+        stand     = (access & dFlag [STAND])     ? 1 : 0;
+        u         = (access & dFlag [UP])        ? 1 : 0;
+        d         = (access & dFlag [DOWN])      ? 1 : 0;
+        l         = (access & dFlag [LEFT])      ? 1 : 0;
+        r         = (access & dFlag [RIGHT])     ? 1 : 0;
+        fprintf (stderr,
+             "[%02d,%02d] [%c] %02x E %d S %d U %d D %d L %d R %d Enemy\n",
+	     i, j, here, access, enter, stand, u, d, l, r);
+    }
 }
 
 void KGrLevelPlayer::showEnemyState (int enemyId)

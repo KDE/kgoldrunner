@@ -39,11 +39,13 @@ class KGrLevelPlayer : public QObject
 {
     Q_OBJECT
 public:
-    KGrLevelPlayer              (QObject * parent, KGrGameData  * theGameData,
-                                                   KGrLevelData * theLevelData);
+    KGrLevelPlayer              (QObject * parent);
     ~KGrLevelPlayer();
+    void init                   (KGrCanvas *          view,
+                                 const Control        mode,
+                                 const char           rulesCode,
+                                 const KGrLevelData * levelData);
 
-    void init                   (KGrCanvas * view, const Control mode);
     void prepareToPlay          ();
 
     inline void setControlMode  (const Control mode) { controlMode = mode; }
@@ -53,8 +55,13 @@ public:
     Direction getDirection      (int heroI, int heroJ);
     Direction getEnemyDirection (int enemyI, int enemyJ);
 
-    int  runnerGotGold          (const int  spriteID, const int i, const int j,
+    int  runnerGotGold          (const int  spriteId, const int i, const int j,
                                  const bool hasGold);
+    bool heroCaught             (const int heroX, const int heroY);
+    bool standOnEnemy           (const int spriteId, const int x, const int y);
+    bool bumpingFriend          (const int spriteId, const int x, const int y);
+
+    void enemyReappear          (int & gridI, int & gridJ);
 
     void pause                  (bool stop);
     void dbgControl             (int code);	// Authors' debugging aids.
@@ -69,7 +76,7 @@ signals:
                          const int i, const int j, const int time,
                          const Direction dirn, const AnimationType type);
     void deleteSprite   (const int spriteId);
-    void gotGold        (const int  spriteID, const int i, const int j,
+    void gotGold        (const int  spriteId, const int i, const int j,
                          const bool hasGold);
 
 private slots:
@@ -80,16 +87,15 @@ private:
     // TODO - Eliminate mView ...
     KGrCanvas *          mView;
 
-    KGrGameData  *       gameData;
-    KGrLevelData *       levelData;
-
     KGrLevelGrid *       grid;
     KGrRuleBook *        rules;
     KGrHero *            hero;
-    int                  heroID;
+    int                  heroId;
     QList<KGrEnemy *>    enemies;
 
     Control              controlMode;
+    int                  levelWidth;
+    int                  levelHeight;
 
     int                  nuggets;
 
@@ -124,6 +130,11 @@ private:
     } DugBrick;
 
     QList <DugBrick *> dugBricks;
+
+    int          reappearIndex;
+    QVector<int> reappearPos;
+    // TODO - Remove. int reappearPos[100];
+    void         makeReappearanceSequence();
 
 /******************************************************************************/
 /**************************  AUTHORS' DEBUGGING AIDS **************************/

@@ -638,15 +638,15 @@ void KGrCanvas::resynchAnimation (const int id, const int i, const int j,
     // TODO - Write this code.
 }
 
-void KGrCanvas::gotGold (const int spriteID, const int i, const int j,
+void KGrCanvas::gotGold (const int spriteId, const int i, const int j,
                          const bool spriteHasGold)
 {
     // Hide collected gold or show dropped gold.
     paintCell (i, j, (spriteHasGold) ? FREE : NUGGET);
 
     // If the rules allow, show if an enemy sprite is carrying some gold.
-    if (enemiesShowGold && (sprites->at(spriteID)->spriteType() == ENEMY)) {
-        sprites->at(spriteID)->setFrameOffset (spriteHasGold ? goldEnemy : 0);
+    if (enemiesShowGold && (sprites->at(spriteId)->spriteType() == ENEMY)) {
+        sprites->at(spriteId)->setFrameOffset (spriteHasGold ? goldEnemy : 0);
     }
 }
 
@@ -660,20 +660,20 @@ void KGrCanvas::showHiddenLadders (const QList<int> & ladders, const int width)
     }
 }
 
-void KGrCanvas::deleteSprite (const int spriteID)
+void KGrCanvas::deleteSprite (const int spriteId)
 {
-    QPoint loc   = sprites->at(spriteID)->currentLoc();
-    bool   brick = (sprites->at(spriteID)->spriteType() == BRICK);
+    QPoint loc   = sprites->at(spriteId)->currentLoc();
+    bool   brick = (sprites->at(spriteId)->spriteType() == BRICK);
 
-    delete sprites->at(spriteID);
-    (* sprites)[spriteID] = 0;
+    delete sprites->at(spriteId);
+    (* sprites)[spriteId] = 0;
     emptySprites++;
 
     if (brick) {
         // Dug-brick sprite erased: restore the tile that was at that location.
         paintCell ((loc.x()/bgw) + 1, (loc.y()/bgh) + 1, BRICK, 0);
     }
-    kDebug() << "Sprite ID" << spriteID << "emptySprites" << emptySprites;
+    kDebug() << "Sprite ID" << spriteId << "emptySprites" << emptySprites;
 }
 
 void KGrCanvas::deleteAllSprites()

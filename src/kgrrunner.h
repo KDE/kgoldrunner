@@ -35,9 +35,8 @@ public:
                int i, int j, int pSpriteId, KGrRuleBook  * pRules);
     virtual ~KGrRunner();
 
-    inline int whereAreYou (int & i, int & j, int & point) {
-                            i = gridI; j = gridJ; point = pointCtr;
-                            return pointsPerCell; }
+    inline int whereAreYou (int & x, int & y) {
+                            x = gridX; y = gridY; return pointsPerCell; }
 
 signals:
     void startAnimation    (const int spriteId, const bool repeating,
@@ -49,16 +48,20 @@ protected:
     KGrLevelGrid *   grid;
     KGrRuleBook *    rules;
 
+    int              spriteId;
+    int              gridX;
+    int              gridY;
+    int              pointCtr;
+
     int              gridI;
     int              gridJ;
-    int              spriteId;
     Vector2D         vector;
-    int              pointCtr;
 
     int              pointsPerCell;
     bool             turnAnywhere;
 
     void             getRules();
+    bool             notTimeYet (const int scaledTime);
 
     Direction        currDirection;
     AnimationType    currAnimation;
@@ -104,11 +107,17 @@ public:
 
 private:
     int              nuggets;		// Number of gold pieces an enemy holds.
+    int              birthI;		// Enemy's starting position (used in
+    int              birthJ;		// KGoldrunner rules for re-birth).
 
     static int       runTime;		// The time interval for running.
     static int       fallTime;		// The time interval for falling.
     static int       trapTime;		// Time interval for which an enemy can
 					// stay trapped in a brick.
+
+    void             dropGold();
+    void             checkForGold();
+    void             dieAndReappear();
 };
 
 #endif // KGRRUNNER_H

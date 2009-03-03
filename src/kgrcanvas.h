@@ -84,7 +84,7 @@ public slots:
                             const Direction dirn, const AnimationType type);
     void resynchAnimation  (const int id, const int i, const int j,
                             const bool stop);
-    void gotGold           (const int spriteID, const int i, const int j,
+    void gotGold           (const int spriteId, const int i, const int j,
                             const bool spriteHasGold);
     void showHiddenLadders (const QList<int> & ladders, const int width);
     void deleteSprite      (const int id);
