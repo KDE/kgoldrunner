@@ -48,6 +48,14 @@ public:
         layout [i + j * width] = (runnerHasGold) ? FREE : NUGGET;
     }
 
+    inline int enemyOccupied (int i, int j) {
+        return enemyHere [i + j * width];
+    }
+
+    inline void setEnemyOccupied (int i, int j, const int spriteId) {
+        enemyHere [i + j * width] = spriteId;
+    }
+
     void calculateAccess (bool pRunThruHole);
 
     void changeCellAt (const int i, const int j, const char type);
@@ -72,6 +80,7 @@ private:
     QVector<char>  layout;
     QVector<Flags> heroAccess;
     QVector<Flags> enemyAccess;
+    QVector<int>   enemyHere;
 
     QList<int>     hiddenLadders;
     QList<int>     hiddenEnemies;

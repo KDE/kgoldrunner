@@ -477,7 +477,7 @@ void KGrCanvas::updateLives (int lives)
 
 void KGrCanvas::mousePressEvent (QMouseEvent * mouseEvent)
 {
-    kDebug() << "Button" << mouseEvent->button();
+    // kDebug() << "Button" << mouseEvent->button();
     emit mouseClick (mouseEvent->button());
 }
 
@@ -560,8 +560,8 @@ int KGrCanvas::makeSprite (const char type, int i, int j)
     sprite->setZ (z);
     sprite->show();
 
-    kDebug() << "Sprite ID" << spriteId << "sprite type" << type
-             << "at" << i << j;
+    // kDebug() << "Sprite ID" << spriteId << "sprite type" << type
+             // << "at" << i << j;
     return spriteId;
 }
 
@@ -626,7 +626,7 @@ void KGrCanvas::startAnimation (const int id, const bool repeating,
     default:
         break;
     }
-    kDebug() << "id" << id << "data" << i << j << dx * bgw << dy * bgw << frame << time;
+    // kDebug() << "id" << id << "data" << i << j << dx * bgw << dy * bgw << frame << time;
     // TODO - Generalise nFrameChanges = 4, also the tick time = 20 new sprite.
     sprites->at(id)->setAnimation (repeating, (i - 1) * bgw, (j - 1) * bgh,
                     frame, nFrames, dx * bgw, dy * bgh, time, nFrameChanges);
@@ -673,7 +673,7 @@ void KGrCanvas::deleteSprite (const int spriteId)
         // Dug-brick sprite erased: restore the tile that was at that location.
         paintCell ((loc.x()/bgw) + 1, (loc.y()/bgh) + 1, BRICK, 0);
     }
-    kDebug() << "Sprite ID" << spriteId << "emptySprites" << emptySprites;
+    // kDebug() << "Sprite ID" << spriteId << "emptySprites" << emptySprites;
 }
 
 void KGrCanvas::deleteAllSprites()

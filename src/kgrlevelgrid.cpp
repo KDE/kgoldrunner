@@ -37,6 +37,7 @@ KGrLevelGrid::KGrLevelGrid (QObject * parent, const KGrLevelData * theLevelData)
     // Initialise the flags for each cell.
     heroAccess.fill  (0, size);
     enemyAccess.fill (0, size);
+    enemyHere.fill   (-1, size);
 
     // Copy the cells of the layout, but enclosed within the concrete wall.
     int inRow  = 0;

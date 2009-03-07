@@ -36,7 +36,7 @@ public:
     QByteArray	hint;		///< Level hint (optional).
 };
 
-enum GameAction {HINT, KILL_HERO};
+enum  GameAction {HINT, KILL_HERO};
 
 const int  ConcreteWall = 1;
 
@@ -44,10 +44,7 @@ typedef char    DirectionFlag;
 typedef char    AccessFlag;
 typedef char    Flags;
 
-enum Axis       {X, Y, nAxes};
-typedef int     Vector2D [nAxes];
-
-enum Direction  {STAND, RIGHT, LEFT, UP, DOWN, nDirections,
+enum  Direction  {STAND, RIGHT, LEFT, UP, DOWN, nDirections,
                  DIG_RIGHT = nDirections, DIG_LEFT};
 
 const DirectionFlag dFlag [nDirections] = {
@@ -58,6 +55,8 @@ const DirectionFlag dFlag [nDirections] = {
                 0x8};		// Can go down.
 
 const AccessFlag ENTERABLE = 0x20;
+
+enum  Axis {X, Y, nAxes};
 
 const int movement [nDirections][nAxes] = {
                 { 0,  0},	// Standing still.
@@ -76,13 +75,13 @@ enum AnimationType {
 const AnimationType aType [nDirections] = {
                 FALL_L, RUN_R, RUN_L, CLIMB_U, CLIMB_D};
 
-enum DebugCodes {
+enum  DebugCodes {
                 DO_STEP, BUG_FIX, LOGGING, S_POSNS, S_HERO, S_OBJ,
                 ENEMY_0, ENEMY_1, ENEMY_2, ENEMY_3, ENEMY_4, ENEMY_5, ENEMY_6};
 
 const int TickTime = 20;
 
-enum HeroStatus {
+enum  HeroStatus {
                 NORMAL, WON_LEVEL, DEAD};
 
 #endif // KGRGLOBALS_H

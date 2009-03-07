@@ -142,6 +142,10 @@ KGrGame::~KGrGame()
         // delete collections.takeFirst();
 }
 
+// Flags to control author's debugging aids.
+bool KGrGame::bugFix  = false;	// Start game with dynamic bug-fix OFF.
+bool KGrGame::logging = false;	// Start game with dynamic logging OFF.
+
 void KGrGame::gameActions (int action)
 {
     switch (action) {

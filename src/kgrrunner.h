@@ -49,14 +49,15 @@ protected:
     KGrRuleBook *    rules;
 
     int              spriteId;
-    int              gridX;
-    int              gridY;
-    int              pointCtr;
 
     int              gridI;
     int              gridJ;
-    Vector2D         vector;
+    int              gridX;
+    int              gridY;
+    int              deltaX;
+    int              deltaY;
 
+    int              pointCtr;
     int              pointsPerCell;
     bool             turnAnywhere;
 
@@ -105,10 +106,13 @@ public:
 
     void showState (char option);
 
+    inline Direction direction() { return (currDirection); }
+
 private:
     int              nuggets;		// Number of gold pieces an enemy holds.
     int              birthI;		// Enemy's starting position (used in
     int              birthJ;		// KGoldrunner rules for re-birth).
+    int              prevInCell;	// ID of previous enemy in cell or -1.
 
     static int       runTime;		// The time interval for running.
     static int       fallTime;		// The time interval for falling.

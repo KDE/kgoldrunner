@@ -22,6 +22,9 @@
 #include <QTimer>
 #include <QList>
 
+// Include kgrgame.h only to access flags KGrGame::bugFix and KGrGame::logging.
+#include "kgrgame.h"
+
 #include "kgrcanvas.h"
 #include "kgrlevelplayer.h"
 #include "kgrrulebook.h"
@@ -47,8 +50,6 @@ KGrLevelPlayer::KGrLevelPlayer (QObject * parent)
     digKillingTime   (2)	// Cycle at which enemy/hero gets killed.
 {
     t.start(); // IDW
-    gameLogging = false;
-    bugFixed = false;
 }
 
 KGrLevelPlayer::~KGrLevelPlayer()
@@ -66,15 +67,14 @@ KGrLevelPlayer::~KGrLevelPlayer()
 void KGrLevelPlayer::init (KGrCanvas * view, const Control mode,
                            const char rulesCode, const KGrLevelData * levelData)
 {
-    // TODO - Should not really remember the view: needed for setMousePos.
-    mView = view;
-
+    // Create the internal model of the level-layout.
     grid            = new KGrLevelGrid (this, levelData);
 
-    controlMode     = mode;
+    controlMode     = mode;		// Set mouse/keyboard/laptop control.
     levelWidth      = levelData->width;
     levelHeight     = levelData->height;
-    reappearIndex   = levelWidth;
+
+    reappearIndex   = levelWidth;	// Initialise the enemy-rebirth code.
     reappearPos.fill (1, levelWidth);
 
     // Set the rules of this game.
@@ -89,9 +89,11 @@ void KGrLevelPlayer::init (KGrCanvas * view, const Control mode,
         rules = new KGrScavengerRules (this);
         break;
     }
-    rules->printRules();
+    // TODO - Remove. rules->printRules();
 
     view->setGoldEnemiesRule (rules->enemiesShowGold());
+
+    // Determine the access for hero and enemies to and from each grid-cell.
     grid->calculateAccess    (rules->runThruHole());
 
     // Connect to code that paints grid cells and start-positions of sprites.
@@ -143,7 +145,6 @@ void KGrLevelPlayer::init (KGrCanvas * view, const Control mode,
     rules->setTiming (enemyCount);
     rules->getDigTimes (digCycleTime, digCycleCount);
 
-// TODO - Do hero in pass 1 and enemies in pass 2, to ensure the hero has id 0.
     // Create the hero (always sprite 0), with the proper timing.
     for (int j = wall ; j < levelHeight + wall; j++) {
         for (int i = wall; i < levelWidth + wall; i++) {
@@ -172,6 +173,7 @@ void KGrLevelPlayer::init (KGrCanvas * view, const Control mode,
                 enemy = new KGrEnemy (this, grid, i, j, id, rules);
                 enemies.append (enemy);
                 grid->changeCellAt (i, j, FREE);	// Enemy now a sprite.
+                grid->setEnemyOccupied (i, j, id);
             }
         }
     }
@@ -183,7 +185,7 @@ void KGrLevelPlayer::init (KGrCanvas * view, const Control mode,
     // Connect mouse-clicks from KGrCanvas to digging slot.
     connect (view, SIGNAL (mouseClick (int)), SLOT (doDig (int)));
 
-    // Connect the new hero and enemies (if any) to the animation code.
+    // Connect the hero and enemies (if any) to the animation code.
     connect (hero, SIGNAL (startAnimation (int, bool, int, int, int,
                                            Direction, AnimationType)),
              view, SLOT   (startAnimation (int, bool, int, int, int,
@@ -214,7 +216,6 @@ void KGrLevelPlayer::init (KGrCanvas * view, const Control mode,
 
     connect (timer, SIGNAL (tick (bool, int)), this, SLOT (tick (bool, int)));
     connect (this,  SIGNAL (animation (bool)), view, SLOT (animate (bool)));
-    // timer->start (TickTime);	// Interval = TickTime, defined in kgrglobals.h.
 }
 
 void KGrLevelPlayer::startDigging (Direction diggingDirection)
@@ -255,7 +256,6 @@ void KGrLevelPlayer::processDugBricks (const int scaledTime)
         dugBrick = iterator.next();
         dugBrick->cycleTimeLeft -= scaledTime;
         if (dugBrick->cycleTimeLeft < scaledTime) {
-            int id = dugBrick->id; // IDW testing
             dugBrick->cycleTimeLeft += digCycleTime;
             if (--dugBrick->countdown == digClosingCycles) {
                 // Start the brick-closing animation (non-repeating).
@@ -273,8 +273,8 @@ void KGrLevelPlayer::processDugBricks (const int scaledTime)
                 grid->changeCellAt (dugBrick->digI, dugBrick->digJ, BRICK);
             }
             if (dugBrick->countdown <= 0) {
-                kDebug() << "DIG" << id << dugBrick->countdown
-                         << "time" << (t.elapsed() - dugBrick->startTime);
+                // kDebug() << "DIG" << dugBrick->id << dugBrick->countdown
+                         // << "time" << (t.elapsed() - dugBrick->startTime);
                 // Dispose of the dug brick and remove it from the list.
                 emit deleteSprite (dugBrick->id);
                 // TODO - Remove. emit paintCell (dugBrick->digI, dugBrick->digJ, BRICK);
@@ -444,9 +444,66 @@ bool KGrLevelPlayer::standOnEnemy (const int spriteId, const int x, const int y)
     return false;
 }
 
-bool KGrLevelPlayer::bumpingFriend (const int id, const int x, const int y)
+bool KGrLevelPlayer::bumpingFriend (const int spriteId, const Direction dirn,
+                                    const int gridI,  const int gridJ)
 {
     // TODO - Write this.
+    // if (spriteId != grid->enemyOccupied (gridI, gridJ)) {
+        // kDebug() << spriteId << "CANNOT MOVE FROM" << gridI << gridJ
+                 // << grid->enemyOccupied (gridI, gridJ) << "MUST GO FIRST";
+        // return true;
+    // }
+
+    int dI = 0;
+    int dJ = 0;
+    switch (dirn) {
+    case LEFT:
+         dI = -1;
+         break;
+    case RIGHT:
+         dI = +1;
+         break;
+    case UP:
+         dJ = -1;
+         break;
+    case DOWN:
+         dJ = +1;
+         break;
+    default:
+         break;
+    }
+
+    int otherEnemy;
+    if (dI != 0) {
+        otherEnemy = grid->enemyOccupied (gridI + dI, gridJ);
+        kDebug() << otherEnemy << "at" << (gridI + dI) << gridJ
+                 << "dirn" << ((otherEnemy > 0) ?
+                               (enemies.at (otherEnemy - 1)->direction()) : 0)
+                 << "me" << spriteId << "dirn" << dirn;
+        if (otherEnemy > 0) {
+            if (enemies.at (otherEnemy - 1)->direction() != dirn) {
+                kDebug() << spriteId << "wants" << dirn << ":" << otherEnemy
+                         << "at" << (gridI + dI) << gridJ << "wants"
+                         << (enemies.at (otherEnemy - 1)->direction());
+                return true;
+            }
+        }
+    }
+    if (dJ != 0) {
+        otherEnemy = grid->enemyOccupied (gridI, gridJ + dJ);
+        kDebug() << otherEnemy << "at" << gridI << (gridJ + dJ)
+                 << "dirn" << ((otherEnemy > 0) ?
+                               (enemies.at (otherEnemy - 1)->direction()) : 0)
+                 << "me" << spriteId << "dirn" << dirn;
+        if (otherEnemy > 0) {
+            if (enemies.at (otherEnemy - 1)->direction() != dirn) {
+                kDebug() << spriteId << "wants" << dirn << ":" << otherEnemy
+                         << "at" << gridI << (gridJ + dJ) << "wants"
+                         << (enemies.at (otherEnemy - 1)->direction());
+                return true;
+            }
+        }
+    }
     return false;
 }
 
@@ -520,13 +577,12 @@ void KGrLevelPlayer::makeReappearanceSequence()
     for (int k = 0; k < levelWidth; k++) {
         reappearPos [k] = k + 1;
     }
-    kDebug() << "Width" << levelWidth << "Non-randoms" << reappearPos;
 
     int z;
     int left = levelWidth;
     int temp;
 
-    // Shuffle the x co-ords of reappearance positions, for x = 1 to levelWidth.
+    // Shuffle the co-ordinates of reappearance positions (1 to levelWidth).
     for (int k = 0; k < levelWidth; k++) {
         // Pick a random element from those that are left.
         z = (int)((left * (float) rand()) / RAND_MAX);
@@ -593,8 +649,7 @@ void KGrLevelPlayer::dbgControl (int code)
 {
     switch (code) {
     case DO_STEP:
-        // tick (false);			// Do one timer step only.
-        timer->step();
+        timer->step();			// Do one timer step only.
         break;
     case BUG_FIX:
         bugFix();			// Turn a bug fix on/off dynamically.
@@ -658,17 +713,17 @@ void KGrLevelPlayer::restart()
 void KGrLevelPlayer::bugFix()
 {
     // Toggle a bug fix on/off dynamically.
-    bugFixed = (bugFixed) ? false : true;
-    printf ("%s", (bugFixed) ? "\n" : "");
-    printf (">>> Bug fix is %s\n", (bugFixed) ? "ON" : "OFF\n");
+    KGrGame::bugFix = (KGrGame::bugFix) ? false : true;
+    printf ("%s", (KGrGame::bugFix) ? "\n" : "");
+    printf (">>> Bug fix is %s\n", (KGrGame::bugFix) ? "ON" : "OFF\n");
 }
 
 void KGrLevelPlayer::startLogging()
 {
     // Toggle logging on/off dynamically.
-    gameLogging = (gameLogging) ? false : true;
-    printf ("%s", (gameLogging) ? "\n" : "");
-    printf (">>> Logging is %s\n", (gameLogging) ? "ON" : "OFF\n");
+    KGrGame::logging = (KGrGame::logging) ? false : true;
+    printf ("%s", (KGrGame::logging) ? "\n" : "");
+    printf (">>> Logging is %s\n", (KGrGame::logging) ? "ON" : "OFF\n");
 }
 
 void KGrLevelPlayer::showFigurePositions()
@@ -685,6 +740,7 @@ void KGrLevelPlayer::showObjectState()
     int   j       = targetJ;
     char  here    = grid->cellType (i, j);
     Flags access  = grid->heroMoves (i, j);
+    int   enemyId = grid->enemyOccupied (i, j);
 
     int enter     = (access & ENTERABLE)         ? 1 : 0;
     int stand     = (access & dFlag [STAND])     ? 1 : 0;
@@ -693,8 +749,8 @@ void KGrLevelPlayer::showObjectState()
     int l         = (access & dFlag [LEFT])      ? 1 : 0;
     int r         = (access & dFlag [RIGHT])     ? 1 : 0;
     fprintf (stderr,
-             "[%02d,%02d] [%c] %02x E %d S %d U %d D %d L %d R %d\n",
-	     i, j, here, access, enter, stand, u, d, l, r);
+             "[%02d,%02d] [%c] %02x E %d S %d U %d D %d L %d R %d occ %02d\n",
+	     i, j, here, access, enter, stand, u, d, l, r, enemyId);
 
     Flags eAccess = grid->enemyMoves (i, j);
     if (eAccess != access) {

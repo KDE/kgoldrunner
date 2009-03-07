@@ -78,6 +78,10 @@ public:
 
     inline bool isFrozen() { return gameFrozen; }
 
+    // Flags to control author's debugging aids.
+    static bool bugFix;
+    static bool logging;
+
 public slots:
     void kbControl (int dirn); // xxxxxxxxxxxxxx
 
