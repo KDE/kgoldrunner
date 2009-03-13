@@ -1,3 +1,5 @@
+#include "kgrdebug.h"
+
 /****************************************************************************
  *    Copyright 2009  Ian Wadham <iandw.au@gmail.com>                         *
  *                                                                          *
@@ -89,10 +91,14 @@ Direction KGrTraditionalRules::findBestWay (const int eI, const int eJ,
 
     // TODO - Add !standOnEnemy() && as a condition here.
     // TODO - And maybe !((*playfield)[x][y+1]->whatIam() == HOLE)) not just out of hole,
-    bool canStand = (grid->enemyMoves (eI, eJ) & dFlag [STAND]);
+    bool canStand = (grid->enemyMoves (eI, eJ) & dFlag [STAND]) ||
+                    (grid->enemyOccupied (eI, eJ + 1) > 0);
     if (! canStand) {
+        dbk2 << "can stand" << (grid->enemyMoves (eI, eJ) & dFlag [STAND])
+                 << "occ-below" << grid->enemyOccupied (eI, eJ + 1);
         return DOWN;
     }
+    dbk2 << "not DOWN yet";
 
     // Traditional search strategy.
     Direction dirn = STAND;
@@ -108,6 +114,7 @@ Direction KGrTraditionalRules::findBestWay (const int eI, const int eJ,
     }
     else {					// Hero below enemy.
         dirn = searchDown (eI, eJ, hJ);		// Find way that leads down.
+        dbk2 << "searchDown1" << eI << eJ << hJ << "ret" << dirn;
         if (dirn == STAND) {
             dirn = searchUp (eI, eJ, hJ);	// No go: try going up first.
         }
@@ -115,6 +122,7 @@ Direction KGrTraditionalRules::findBestWay (const int eI, const int eJ,
 
     if (dirn == STAND) {			// When all else fails, look for
         dirn = searchDown (eI, eJ, eJ - 1);	// a way below the hero.
+        dbk2 << "searchDown2" << eI << eJ << (eJ - 1) << "ret" << dirn;
     }
 
     return dirn;
@@ -368,6 +376,11 @@ int KGrTraditionalRules::distanceDown (int x, int y, int deltah)
             // if ((x*16==enemy->getx()) && (y*16+16==enemy->gety()))
                 // rungs = 0;		// Pit is blocked.  Find another way.
         // }
+        if (grid->enemyOccupied (x, y + 1) > 0) {
+            dbk2 << "Pit block =" << grid->enemyOccupied (x, y + 1)
+                     << "at" << x << (y + 1);
+            rungs = 0;		// Pit is blocked.  Find another way.
+        }
     }
     if (rungs <= 0)
         return 0;			// There is no way down.
@@ -425,7 +438,7 @@ bool KGrTraditionalRules::willNotFall (int x, int y)
     }
 
     // Check the floor.
-    switch (grid->cellType (x, y+1)) {
+    switch (grid->cellType (x, y + 1)) {
 
     // Cases where the enemy knows he will fall.
     case FREE:
@@ -443,6 +456,11 @@ bool KGrTraditionalRules::willNotFall (int x, int y)
         // TODO - Maybe the presence of another enemy below could be a bool
         // TODO - parameter for findBestWay() ...  NO, that won't work, we
         // TODO - need to know if there is an enemy ANYWHERE under a LR path.
+        if (grid->enemyOccupied (x, y + 1) > 0) {
+            dbk2 << "Occupied =" << grid->enemyOccupied (x, y + 1)
+                     << "at" << x << (y + 1);
+            return true;
+        }
         // cmax = enemies->count();
         // for (c = 0; c < cmax; c++) {
             // enemy = enemies->at (c);
@@ -485,7 +503,7 @@ Direction KGrKGoldrunnerRules::findBestWay (const int eI, const int eJ,
                                             KGrLevelGrid * pGrid)
 // TODO - Should be const ...               const KGrLevelGrid * pGrid)
 {
-    kDebug() << eI << eJ << hI << hJ;
+    dbk2 << eI << eJ << hI << hJ;
     grid = pGrid;
     return RIGHT;
 }
@@ -517,7 +535,7 @@ Direction KGrScavengerRules::findBestWay   (const int eI, const int eJ,
                                             KGrLevelGrid * pGrid)
 // TODO - Should be const ...               const KGrLevelGrid * pGrid)
 {
-    kDebug() << eI << eJ << hI << hJ;
+    dbk2 << eI << eJ << hI << hJ;
     grid = pGrid;
     return RIGHT;
 }

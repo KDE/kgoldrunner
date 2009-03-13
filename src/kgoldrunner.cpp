@@ -74,9 +74,9 @@ KGoldrunner::KGoldrunner()
     }
 
     // This message is to help diagnose distribution or installation problems.
-    printf
-    ("The games data and handbook should be in the following locations:\n");
-    printf ("System games: %s\nUser data:    %s\nHandbook:     %s\n",
+    fprintf (stderr,
+        "The games data and handbook should be in the following locations:\n");
+    fprintf (stderr, "System games: %s\nUser data:    %s\nHandbook:     %s\n",
         systemDataDir.myStr(), userDataDir.myStr(), systemHTMLDir.myStr());
 
 /******************************************************************************/
@@ -531,7 +531,7 @@ void KGoldrunner::setupActions()
     keyControl ("show_positions", i18n ("Show Positions"), Qt::Key_D, S_POSNS);
     keyControl ("logging",      i18n ("Start Logging"), Qt::Key_G, LOGGING);
     keyControl ("show_hero",    i18n ("Show Hero"), Qt::Key_R, S_HERO);
-    keyControl ("show_obj",     i18n ("Show Object"), Qt::Key_Question, S_OBJ);
+    keyControl ("show_obj",     i18n ("Show Object"), Qt::Key_Slash, S_OBJ);
 
     keyControl ("show_enemy_0", i18n ("Show Enemy") + '0', Qt::Key_0, ENEMY_0);
     keyControl ("show_enemy_1", i18n ("Show Enemy") + '1', Qt::Key_1, ENEMY_1);

@@ -1,3 +1,5 @@
+#include "kgrdebug.h"
+
 /****************************************************************************
  *    Copyright 2009  Ian Wadham <iandw.au@gmail.com>                         *
  *                                                                          *
@@ -155,6 +157,7 @@ void KGrLevelPlayer::init (KGrCanvas * view, const Control mode,
                     targetJ = j;
                     heroId  = emit makeSprite (HERO, i, j);
                     hero    = new KGrHero (this, grid, i, j, heroId, rules);
+                    hero->setNuggets (nuggets);
                     // TODO - Iff mouse mode, setMousePos();
                     emit setMousePos (targetI, targetJ);
                     grid->changeCellAt (i, j, FREE);	// Hero now a sprite.
@@ -179,8 +182,8 @@ void KGrLevelPlayer::init (KGrCanvas * view, const Control mode,
     }
 
     // Connect the hero's and enemies' efforts to the graphics.
-    connect (this, SIGNAL (gotGold (int, int, int, bool)),
-             view, SLOT   (gotGold (int, int, int, bool)));
+    connect (this, SIGNAL (gotGold (int, int, int, bool, bool)),
+             view, SLOT   (gotGold (int, int, int, bool, bool)));
 
     // Connect mouse-clicks from KGrCanvas to digging slot.
     connect (view, SIGNAL (mouseClick (int)), SLOT (doDig (int)));
@@ -283,7 +286,6 @@ void KGrLevelPlayer::processDugBricks (const int scaledTime)
             }
             // TODO - Hero gets hidden by dug-brick in the Egyptian theme.
             // TODO - Why do we get so many MISSED ticks when we dig?
-            // TODO - Hero falls through floor when caught in a closing brick.
             // TODO - Implement speed-variation as a parameter of tick().
         }
     }
@@ -414,13 +416,13 @@ bool KGrLevelPlayer::heroCaught (const int heroX, const int heroY)
     if (enemies.count() == 0) {
         return false;
     }
-    int enemyX, enemyY, ppc1;
+    int enemyX, enemyY, pointsPerCell_1;
     foreach (KGrEnemy * enemy, enemies) {
-        ppc1 = enemy->whereAreYou (enemyX, enemyY) - 1;
-        if (((heroX < enemyX) ? ((heroX + ppc1) >= enemyX) :
-                                 (heroX <= (enemyX + ppc1))) &&
-            ((heroY < enemyY) ? ((heroY + ppc1) >= enemyY) :
-                                 (heroY <= (enemyY + ppc1)))) {
+        pointsPerCell_1 = enemy->whereAreYou (enemyX, enemyY) - 1;
+        if (((heroX < enemyX) ? ((heroX + pointsPerCell_1) >= enemyX) :
+                                 (heroX <= (enemyX + pointsPerCell_1))) &&
+            ((heroY < enemyY) ? ((heroY + pointsPerCell_1) >= enemyY) :
+                                 (heroY <= (enemyY + pointsPerCell_1)))) {
             return true;
         }
     }
@@ -433,11 +435,13 @@ bool KGrLevelPlayer::standOnEnemy (const int spriteId, const int x, const int y)
     if (enemies.count() < minEnemies) {
         return false;
     }
-    int enemyX, enemyY, ppc;
+    int enemyX, enemyY, pointsPerCell;
     foreach (KGrEnemy * enemy, enemies) {
-        ppc = enemy->whereAreYou (enemyX, enemyY);
-        if (((enemyY == (y + ppc)) || (enemyY == (y + ppc - 1))) &&
-            (enemyX >  (x - ppc)) && (enemyX <  (x + ppc))) {
+        pointsPerCell = enemy->whereAreYou (enemyX, enemyY);
+        if (((enemyY == (y + pointsPerCell)) ||
+             (enemyY == (y + pointsPerCell - 1))) &&
+            (enemyX > (x - pointsPerCell)) &&
+            (enemyX < (x + pointsPerCell))) {
             return true;
         }
     }
@@ -447,13 +451,6 @@ bool KGrLevelPlayer::standOnEnemy (const int spriteId, const int x, const int y)
 bool KGrLevelPlayer::bumpingFriend (const int spriteId, const Direction dirn,
                                     const int gridI,  const int gridJ)
 {
-    // TODO - Write this.
-    // if (spriteId != grid->enemyOccupied (gridI, gridJ)) {
-        // kDebug() << spriteId << "CANNOT MOVE FROM" << gridI << gridJ
-                 // << grid->enemyOccupied (gridI, gridJ) << "MUST GO FIRST";
-        // return true;
-    // }
-
     int dI = 0;
     int dJ = 0;
     switch (dirn) {
@@ -476,11 +473,11 @@ bool KGrLevelPlayer::bumpingFriend (const int spriteId, const Direction dirn,
     int otherEnemy;
     if (dI != 0) {
         otherEnemy = grid->enemyOccupied (gridI + dI, gridJ);
-        kDebug() << otherEnemy << "at" << (gridI + dI) << gridJ
-                 << "dirn" << ((otherEnemy > 0) ?
-                               (enemies.at (otherEnemy - 1)->direction()) : 0)
-                 << "me" << spriteId << "dirn" << dirn;
         if (otherEnemy > 0) {
+            kDebug() << otherEnemy << "at" << (gridI + dI) << gridJ
+                     << "dirn" << ((otherEnemy > 0) ?
+                               (enemies.at (otherEnemy - 1)->direction()) : 0)
+                     << "me" << spriteId << "dirn" << dirn;
             if (enemies.at (otherEnemy - 1)->direction() != dirn) {
                 kDebug() << spriteId << "wants" << dirn << ":" << otherEnemy
                          << "at" << (gridI + dI) << gridJ << "wants"
@@ -491,11 +488,11 @@ bool KGrLevelPlayer::bumpingFriend (const int spriteId, const Direction dirn,
     }
     if (dJ != 0) {
         otherEnemy = grid->enemyOccupied (gridI, gridJ + dJ);
-        kDebug() << otherEnemy << "at" << gridI << (gridJ + dJ)
-                 << "dirn" << ((otherEnemy > 0) ?
-                               (enemies.at (otherEnemy - 1)->direction()) : 0)
-                 << "me" << spriteId << "dirn" << dirn;
         if (otherEnemy > 0) {
+            kDebug() << otherEnemy << "at" << gridI << (gridJ + dJ)
+                     << "dirn" << ((otherEnemy > 0) ?
+                               (enemies.at (otherEnemy - 1)->direction()) : 0)
+                     << "me" << spriteId << "dirn" << dirn;
             if (enemies.at (otherEnemy - 1)->direction() != dirn) {
                 kDebug() << spriteId << "wants" << dirn << ":" << otherEnemy
                          << "at" << gridI << (gridJ + dJ) << "wants"
@@ -505,6 +502,26 @@ bool KGrLevelPlayer::bumpingFriend (const int spriteId, const Direction dirn,
         }
     }
     return false;
+}
+
+void KGrLevelPlayer::unstackEnemy (const int spriteId,
+                                   const int gridI, const int gridJ,
+                                   const int prevEnemy)
+{
+    dbe "KGrLevelPlayer::unstackEnemy (%02d at [%02d,%02d] prevEnemy %02d)\n",
+        spriteId, gridI, gridJ, prevEnemy);
+    int nextId = grid->enemyOccupied (gridI, gridJ);
+    int prevId;
+    while (nextId > 0) {
+        prevId = enemies.at (nextId - 1)->getPrevInCell();
+        dbe "Next %02d prev %02d\n", nextId, prevId);
+        if (prevId == spriteId) {
+            dbe "    SET IDs - id %02d prev %02d\n", nextId, prevEnemy);
+            enemies.at (nextId - 1)->setPrevInCell (prevEnemy);
+            // break;
+        }
+        nextId = prevId;
+    }
 }
 
 void KGrLevelPlayer::tick (bool missed, int scaledTime)
@@ -535,23 +552,31 @@ void KGrLevelPlayer::tick (bool missed, int scaledTime)
 }
 
 int KGrLevelPlayer::runnerGotGold (const int  spriteId,
-                                    const int  i, const int j,
-                                    const bool hasGold)
+                                   const int  i, const int j,
+                                   const bool hasGold, const bool lost)
 {
     if (hasGold) {
         kDebug() << "GOLD COLLECTED BY" << spriteId << "AT" << i << j;
     }
+    else if (lost) {
+        kDebug() << "GOLD LOST BY" << spriteId << "AT" << i << j;
+    }
     else {
         kDebug() << "GOLD DROPPED BY" << spriteId << "AT" << i << j;
     }
-    grid->gotGold (i, j, hasGold);		// Record pickup/drop on grid.
-    emit  gotGold (spriteId, i, j, hasGold);	// Erase/show gold on screen.
+    if (! lost) {
+        grid->gotGold (i, j, hasGold);		// Record pickup/drop on grid.
+    }
+    emit gotGold (spriteId, i, j, hasGold, lost); // Erase/show gold on screen.
 
     // If hero got gold, score, maybe show hidden ladders, maybe end the level.
-    if (spriteId == heroId) {
+    if ((spriteId == heroId) || lost) {
         if (--nuggets <= 0) {
-            grid->placeHiddenLadders();
+            grid->placeHiddenLadders();		// All gold picked up or lost.
         }
+    }
+    if (lost) {
+        hero->setNuggets (nuggets);		// Update hero re lost gold.
     }
     return nuggets;
 }
@@ -714,16 +739,16 @@ void KGrLevelPlayer::bugFix()
 {
     // Toggle a bug fix on/off dynamically.
     KGrGame::bugFix = (KGrGame::bugFix) ? false : true;
-    printf ("%s", (KGrGame::bugFix) ? "\n" : "");
-    printf (">>> Bug fix is %s\n", (KGrGame::bugFix) ? "ON" : "OFF\n");
+    fprintf (stderr, "%s", (KGrGame::bugFix) ? "\n" : "");
+    fprintf (stderr, ">> Bug fix is %s\n", (KGrGame::bugFix) ? "ON" : "OFF\n");
 }
 
 void KGrLevelPlayer::startLogging()
 {
     // Toggle logging on/off dynamically.
     KGrGame::logging = (KGrGame::logging) ? false : true;
-    printf ("%s", (KGrGame::logging) ? "\n" : "");
-    printf (">>> Logging is %s\n", (KGrGame::logging) ? "ON" : "OFF\n");
+    fprintf (stderr, "%s", (KGrGame::logging) ? "\n" : "");
+    fprintf (stderr, ">> Logging is %s\n", (KGrGame::logging) ? "ON" : "OFF\n");
 }
 
 void KGrLevelPlayer::showFigurePositions()

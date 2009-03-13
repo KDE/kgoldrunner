@@ -639,12 +639,14 @@ void KGrCanvas::resynchAnimation (const int id, const int i, const int j,
 }
 
 void KGrCanvas::gotGold (const int spriteId, const int i, const int j,
-                         const bool spriteHasGold)
+                         const bool spriteHasGold, const bool lost)
 {
-    // Hide collected gold or show dropped gold.
-    paintCell (i, j, (spriteHasGold) ? FREE : NUGGET);
+    // Hide collected gold or show dropped gold, but not if the gold was lost.
+    if (! lost) {
+        paintCell (i, j, (spriteHasGold) ? FREE : NUGGET);
+    }
 
-    // If the rules allow, show if an enemy sprite is carrying some gold.
+    // If the rules allow, show whether or not an enemy sprite is carrying gold.
     if (enemiesShowGold && (sprites->at(spriteId)->spriteType() == ENEMY)) {
         sprites->at(spriteId)->setFrameOffset (spriteHasGold ? goldEnemy : 0);
     }

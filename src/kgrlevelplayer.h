@@ -160,7 +160,7 @@ public:
      * @return          The number of pieces of gold remaining in this level.
      */
     int  runnerGotGold          (const int  spriteId, const int i, const int j,
-                                 const bool hasGold);
+                                 const bool hasGold, const bool lost = false);
 
     /**
      * Helper function to determine whether the hero has collided with an enemy
@@ -200,6 +200,17 @@ public:
     bool bumpingFriend          (const int spriteId, const Direction dirn,
                                  const int gridI,    const int gridJ);
 
+    /**
+     * Helper function to remove an enemy from among several stacked in a cell.
+     *
+     * @param spriteId  The identifier of the enemy.
+     * @param gridI     The column-position of the enemy.
+     * @param gridJ     The row-position of the enemy.
+     * @param prevEnemy The previously stacked enemy in the same cell (or -1).
+     */
+    void unstackEnemy           (const int spriteId,
+                                 const int gridI, const int gridJ,
+                                 const int prevEnemy);
     /**
      * Helper function to determine where an enemy should reappear after being
      * trapped in a brick.  This applies with Traditional and Scavenger rules
@@ -249,7 +260,7 @@ signals:
                          const Direction dirn, const AnimationType type);
     void deleteSprite   (const int spriteId);
     void gotGold        (const int  spriteId, const int i, const int j,
-                         const bool hasGold);
+                         const bool hasGold, const bool lost);
 
 private slots:
     void tick           (bool missed, int scaledTime);
