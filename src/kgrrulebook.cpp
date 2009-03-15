@@ -22,7 +22,7 @@
 
 KGrRuleBook::KGrRuleBook (QObject * parent)
     :
-    QObject (parent),
+    QObject              (parent),
     mVariableTiming      (true),
     mAlwaysCollectNugget (true),
     mRunThruHole         (true),
@@ -62,6 +62,8 @@ KGrTraditionalRules::KGrTraditionalRules (QObject * parent)
     :
     KGrRuleBook (parent)
 {
+    mRules               = TraditionalRules;
+
     mVariableTiming      = true;	///< More enemies imply less speed.
     mAlwaysCollectNugget = true;	///< Enemies always collect nuggets.
     mRunThruHole         = true;	///< Enemy can run L/R through dug hole.
@@ -81,7 +83,8 @@ KGrTraditionalRules::~KGrTraditionalRules()
 
 Direction KGrTraditionalRules::findBestWay (const int eI, const int eJ,
                                             const int hI, const int hJ,
-                                            KGrLevelGrid * pGrid)
+                                            KGrLevelGrid * pGrid,
+                                            bool /* leftRightSearch unused */)
 // TODO - Should be const ...               const KGrLevelGrid * pGrid)
 {
     grid = pGrid;
@@ -479,8 +482,10 @@ bool KGrTraditionalRules::willNotFall (int x, int y)
 
 KGrKGoldrunnerRules::KGrKGoldrunnerRules (QObject * parent)
     :
-    KGrRuleBook (parent)
+    KGrRuleBook     (parent)
 {
+    mRules               = KGoldrunnerRules;
+
     mVariableTiming      = false;	///< Speed same for any no. of enemies.
     mAlwaysCollectNugget = false;	///< Enemies sometimes collect nuggets.
     mRunThruHole         = false;	///< Enemy cannot run through dug hole.
@@ -500,12 +505,171 @@ KGrKGoldrunnerRules::~KGrKGoldrunnerRules()
 
 Direction KGrKGoldrunnerRules::findBestWay (const int eI, const int eJ,
                                             const int hI, const int hJ,
-                                            KGrLevelGrid * pGrid)
+                                            KGrLevelGrid * pGrid,
+                                            bool leftRightSearch)
 // TODO - Should be const ...               const KGrLevelGrid * pGrid)
 {
     dbk2 << eI << eJ << hI << hJ;
     grid = pGrid;
-    return RIGHT;
+
+    if (grid->cellType (eI, eJ) == USEDHOLE) {	// Could not get out of hole
+        return UP;				// (e.g. brick above is closed):
+    }						// but keep trying.
+
+    // TODO - Add !standOnEnemy() && as a condition here.
+    // TODO - And maybe !((*playfield)[x][y+1]->whatIam() == HOLE)) not just out of hole,
+    bool canStand = (grid->enemyMoves (eI, eJ) & dFlag [STAND]) ||
+                    (grid->enemyOccupied (eI, eJ + 1) > 0);
+    if (! canStand) {
+        dbk2 << "can stand" << (grid->enemyMoves (eI, eJ) & dFlag [STAND])
+                 << "occ-below" << grid->enemyOccupied (eI, eJ + 1);
+        return DOWN;
+    }
+
+    // KGoldrunner search strategy.
+    if (leftRightSearch) {
+        if (eI > hI) {
+            return findWayLeft  (eI, eJ);
+        }
+        if (eI < hI) {
+            return findWayRight (eI, eJ);
+        }
+    }
+    else {
+        if (eJ > hJ) {
+            return findWayUp    (eI, eJ);
+        }
+        if (eJ < hJ) {
+            return findWayDown  (eI, eJ);
+        }
+    }
+
+    return STAND;
+}
+
+Direction KGrKGoldrunnerRules::findWayUp (const int eI, const int eJ)
+{
+    int i, k;
+    i = k = eI;
+    if (grid->enemyMoves (eI, eJ) & dFlag [UP]) {
+        return UP;			// Go up from current position.
+    }
+    else {
+        while ((i >= 0) || (k <= FIELDWIDTH)) {
+            if (i >= 0) {
+                if (grid->enemyMoves (i, eJ) & dFlag [UP]) {
+                    return LEFT;	// Go left, then up later.
+                }
+                else if (! (grid->enemyMoves (i--, eJ) & dFlag [LEFT])) {
+                    i = -1;
+                }
+            }
+            if (k <= FIELDWIDTH) {
+                if (grid->enemyMoves (k, eJ) & dFlag [UP]) {
+                    return RIGHT;	// Go right, then up later.
+                }
+                else if (!(grid->enemyMoves (k++, eJ) & dFlag [RIGHT])) {
+                    k = FIELDWIDTH + 1;
+                }
+            }
+        }
+    }
+    // BUG FIX - Ian W., 30/4/01 - Don't leave an enemy standing in mid air.
+    if (false) // TODO - Was supposed to be canStand() - maybe redundant now -
+               //        canStand() returned (firmGround || standOnEnemy()).
+        return DOWN;
+    else
+        return STAND;
+}
+
+Direction KGrKGoldrunnerRules::findWayDown (const int eI, const int eJ)
+{
+    int i, k;
+    i = k = eI;
+    if (grid->enemyMoves (eI, eJ) & dFlag [DOWN]) {
+        return DOWN;			// Go down from current position.
+    }
+    else {
+        while ((i >= 0) || (k <= FIELDWIDTH)) {
+            if (i >= 0) {
+                if (grid->enemyMoves (i, eJ) & dFlag [DOWN]) {
+                    return LEFT;	// Go left, then down later.
+                }
+                else if (! (grid->enemyMoves (i--, eJ) & dFlag [LEFT])) {
+                    i = -1;
+                }
+            }
+            if (k <= FIELDWIDTH) {
+                if (grid->enemyMoves (k, eJ) & dFlag [DOWN]) {
+                    return RIGHT;	// Go right, then down later.
+                }
+                else if (! (grid->enemyMoves (k++, eJ) & dFlag [RIGHT])) {
+                    k = FIELDWIDTH + 1;
+                }
+            }
+        }
+    }
+    return STAND;			// Cannot go down.
+}
+
+Direction KGrKGoldrunnerRules::findWayLeft (const int eI, const int eJ)
+{
+    int i, k;
+    i = k = eJ;
+    if (grid->enemyMoves (eI, eJ) & dFlag [LEFT]) {
+        return LEFT;			// Go left from current position.
+    }
+    else {
+        while ((i >= 0) || (k <= FIELDHEIGHT)) {
+            if (i >= 0) {
+                if (grid->enemyMoves (eI, i) & dFlag [LEFT]) {
+                    return UP;		// Go up, then left later.
+                }
+                else if (! (grid->enemyMoves (eI, i--) & dFlag [UP])) {
+                    i = -1;
+                }
+            }
+            if (k <= FIELDHEIGHT) {
+                if (grid->enemyMoves (eI, k) & dFlag [LEFT]) {
+                    return DOWN;	// Go down, then left later.
+                }
+                else if (! (grid->enemyMoves (eI, k++) & dFlag [DOWN])) {
+                    k = FIELDHEIGHT + 1;
+                }
+            }
+        }
+    }
+    return STAND;			// Cannot go left.
+}
+
+Direction KGrKGoldrunnerRules::findWayRight (const int eI, const int eJ)
+{
+    int i, k;
+    i = k = eJ;
+    if (grid->enemyMoves (eI, eJ) & dFlag [RIGHT]) {
+        return RIGHT;			// Go right from current position.
+    }
+    else {
+        while ((i >= 0) || (k <= FIELDHEIGHT)) {
+            if (i >= 0) {
+                if (grid->enemyMoves (eI, i) & dFlag [RIGHT]) {
+                    return UP;		// Go up, then right later.
+                }
+                else if (!(grid->enemyMoves (eI, i--) & dFlag [UP])) {
+                    i = -1;
+                }
+            }
+            if (k <= FIELDHEIGHT) {
+                if (grid->enemyMoves (eI, k) & dFlag [RIGHT]) {
+                    return DOWN;	// Go down, then right later.
+                }
+                else if (! (grid->enemyMoves (eI, k++) & dFlag [DOWN])) {
+                    k = FIELDHEIGHT + 1;
+                }
+            }
+        }
+    }
+    return STAND;			// Cannot go right.
 }
 
 
@@ -513,6 +677,8 @@ KGrScavengerRules::KGrScavengerRules (QObject * parent)
     :
     KGrRuleBook (parent)
 {
+    mRules               = ScavengerRules;
+
     mVariableTiming      = false;	///< Speed same for any no. of enemies.
     mAlwaysCollectNugget = true;	///< Enemies always collect nuggets.
     mRunThruHole         = true;	///< Enemy can run L/R through dug hole.
@@ -532,7 +698,8 @@ KGrScavengerRules::~KGrScavengerRules()
 
 Direction KGrScavengerRules::findBestWay   (const int eI, const int eJ,
                                             const int hI, const int hJ,
-                                            KGrLevelGrid * pGrid)
+                                            KGrLevelGrid * pGrid,
+                                            bool /* leftRightSearch unused */)
 // TODO - Should be const ...               const KGrLevelGrid * pGrid)
 {
     dbk2 << eI << eJ << hI << hJ;

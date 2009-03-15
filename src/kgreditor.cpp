@@ -828,10 +828,10 @@ bool KGrEditor::saveGameData (Owner o)
 void KGrEditor::doEdit (int button)
 {
     // Mouse button down: start making changes.
-    QPoint p;
+    QPoint p (1, 1); // TODO - Fix mouse usage.
     int i, j;
 
-    p = view->getMousePos();
+    // p = view->getMousePos();
     i = p.x(); j = p.y();
 
     switch (button) {
@@ -855,10 +855,10 @@ void KGrEditor::doEdit (int button)
 void KGrEditor::endEdit (int button)
 {
     // Mouse button released: finish making changes.
-    QPoint p;
+    QPoint p (1, 1); // TODO - Fix mouse usage.
     int i, j;
 
-    p = view->getMousePos();
+    // p = view->getMousePos();
     i = p.x(); j = p.y();
 
     switch (button) {

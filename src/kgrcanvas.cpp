@@ -486,16 +486,17 @@ void KGrCanvas::mouseReleaseEvent (QMouseEvent * mouseEvent)
     emit mouseLetGo (mouseEvent->button());
 }
 
-QPoint KGrCanvas::getMousePos()
+void KGrCanvas::getMousePos (int & i, int & j)
+// QPoint KGrCanvas::getMousePos()
 {
-    int i, j;
+    // int i, j;
     QPoint p = mapFromGlobal (m->pos());
 
     // In KGoldrunner, the top-left visible cell is [1,1]: in KGrSprite [0,0].
     i = ((p.x() - topLeft.x()) / imgW) + 1;
     j = ((p.y() - topLeft.y()) / imgH) + 1;
-
-    return (QPoint (i, j));
+//
+    // return (QPoint (i, j));
 }
 
 void KGrCanvas::setMousePos (const int i, const int j)

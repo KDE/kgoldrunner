@@ -105,6 +105,8 @@ void KGrLevelPlayer::init (KGrCanvas * view, const Control mode,
              view, SLOT   (makeSprite (char, int, int)));
 
     // Connect to the mouse-positioning code in the graphics.
+    connect (this, SIGNAL (getMousePos (int &, int &)),
+             view, SLOT   (getMousePos (int &, int &)));
     connect (this, SIGNAL (setMousePos (const int, const int)),
              view, SLOT   (setMousePos (const int, const int)));
 
@@ -401,14 +403,15 @@ Direction KGrLevelPlayer::getDirection (int heroI, int heroJ)
     return direction;
 }
 
-Direction KGrLevelPlayer::getEnemyDirection (int enemyI, int enemyJ)
+Direction KGrLevelPlayer::getEnemyDirection (int  enemyI, int enemyJ,
+                                             bool leftRightSearch)
 {
     int heroX, heroY, pointsPerCell;
 
     pointsPerCell = hero->whereAreYou (heroX, heroY);
     return rules->findBestWay (enemyI, enemyJ,
                                heroX / pointsPerCell, heroY / pointsPerCell,
-                               grid);
+                               grid, leftRightSearch);
 }
 
 bool KGrLevelPlayer::heroCaught (const int heroX, const int heroY)
@@ -526,6 +529,10 @@ void KGrLevelPlayer::unstackEnemy (const int spriteId,
 
 void KGrLevelPlayer::tick (bool missed, int scaledTime)
 {
+    int i, j;
+    emit getMousePos (i, j);
+    setTarget (i, j);
+
     if (playState != Playing) {
         return;
     }
@@ -700,39 +707,6 @@ void KGrLevelPlayer::dbgControl (int code)
 // OBSOLESCENT - 21/1/09 Can do this just by calling tick().
 void KGrLevelPlayer::restart()
 {
-    // bool temp;
-    // int i,j;
-
-    // if (editMode)		// Can't move figures when in Edit Mode.
-        // return;
-
-    // temp = gameFrozen;
-
-    // gameFrozen = false;	// Temporarily restart the game, by re-running
-                                // any timer events that have been blocked.
-
-    // OBSOLESCENT - 7/1/09
-    // readMousePos();		// Set hero's direction.
-    // hero->doStep();		// Move the hero one step.
-
-    // OBSOLESCENT - 7/1/09
-    // j = enemies.count();	// Move each enemy one step.
-    // for (i = 0; i < j; i++) {
-        // enemy = enemies.at (i);	// Need to use an index because called methods
-        // enemy->doStep();	// change the "current()" of the "enemies" list.
-    // }
-
-    // OBSOLESCENT - 20/1/09 Need to compile after kgrobject.cpp removed.
-    // for (i = 1; i <= 28; i++)
-        // for (j = 1; j <= 20; j++) {
-            // if ((playfield[i][j]->whatIam() == HOLE) ||
-                // (playfield[i][j]->whatIam() == USEDHOLE) ||
-                // (playfield[i][j]->whatIam() == BRICK))
-                // ((KGrBrick *)playfield[i][j])->doStep();
-        // }
-
-    // gameFrozen = temp;	// If frozen was true, halt again, which gives a
-                                // single-step effect, otherwise go on running.
 }
 
 void KGrLevelPlayer::bugFix()

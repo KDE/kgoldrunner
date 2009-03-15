@@ -62,8 +62,6 @@ public:
 
     int  getLevel();
 
-    void startPlaying();
-
     bool inMouseMode();			// True if the game is in mouse mode.
     bool inEditMode();			// True if the game is in editor mode.
     bool isLoading();			// True if a level is being loaded.
@@ -112,8 +110,6 @@ public slots:
     void showHiddenLadders();		// Show hidden ladders (nuggets gone).
     void levelCompleted();		// Hero completed the level.
     void goUpOneLevel();		// Start next level.
-    void loseNugget();			// Nugget destroyed (not collected).
-    void heroAction (KBAction movement);// Move hero under keyboard control.
 
     void saveGame();			// Save game ID, score and level.
     void loadGame();			// Re-load game, score and level.
@@ -153,13 +149,10 @@ private slots:
 
 private slots:
     void finalBreath();			// Hero is dead: re-start the level.
-    void readMousePos();		// Timed reading of mouse position.
 
 private:
-    void setBlankLevel (bool playable);
     int  loadLevel (int levelNo);
     bool readLevelData (int levelNo, KGrLevelData & d);
-    void setTimings();
     void initSearchMatrix();
     void showTutorialMessages (int levelNo);
 
@@ -200,7 +193,6 @@ private:
     bool			modalFreeze;	// Stop game during dialog.
     bool			messageFreeze;	// Stop game during message.
 
-    QTimer *			mouseSampler;	// Timer for mouse tracking.
     QTimer *			dyingTimer;	// For pause when the hero dies.
 
     int				lgHighlight;	// Row selected in "loadGame()".

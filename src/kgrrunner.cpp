@@ -42,7 +42,8 @@ KGrRunner::KGrRunner (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
     currDirection (STAND),
     currAnimation (FALL_L),
 
-    timeLeft  (TickTime)
+    timeLeft  (TickTime),
+    leftRightSearch (true)
 {
     getRules();
 
@@ -259,9 +260,9 @@ KGrEnemy::KGrEnemy (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
     prevInCell (-1)
 {
     kDebug() << "ENEMY" << pSpriteId << "IS BORN at" << i << j;
-    rules->getEnemyTimes (runTime, fallTime, trapTime);
+    rulesType = rules->getEnemyTimes (runTime, fallTime, trapTime);
     kDebug() << "Enemy run time " << runTime << "fall time" << fallTime;
-    kDebug() << "Enemy trap time" << trapTime;
+    kDebug() << "Enemy trap time" << trapTime << "Rules type" << rulesType;
     interval = runTime;
 }
 
@@ -318,7 +319,8 @@ void KGrEnemy::run (const int scaledTime)
 
     // Find the next direction that could lead to the hero.
     fprintf (stderr, "\n");
-    Direction nextDirection = levelPlayer->getEnemyDirection (gridI, gridJ);
+    Direction nextDirection = levelPlayer->getEnemyDirection
+                                           (gridI, gridJ, leftRightSearch);
     dbk << spriteId << "at" << gridI << gridJ << "===>" << nextDirection;
     Flags     OK            = grid->enemyMoves (gridI, gridJ);
 
@@ -377,6 +379,13 @@ void KGrEnemy::run (const int scaledTime)
     if (levelPlayer->bumpingFriend (spriteId, nextDirection, gridI, gridJ)) {
         nextDirection = STAND;			// Wait for one timer interval.
         pointCtr = pointsPerCell - 1;		// Try again after the interval.
+    }
+
+    if ((rulesType == KGoldrunnerRules) && (nextDirection == STAND) &&
+        (cellType != USEDHOLE)) {
+        // In KGoldrunner rules, if unable to move, switch the search direction.
+        leftRightSearch = (leftRightSearch) ? false : true;
+        pointCtr = pointsPerCell - 1; // TODO - Improve & stress-test KGr rules.
     }
 
     if (((nextAnimation == RUN_R) || (nextAnimation == RUN_L)) &&

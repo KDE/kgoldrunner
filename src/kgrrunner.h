@@ -110,6 +110,8 @@ protected:
 
     int              interval;		// The runner's current time interval.
     int              timeLeft;		// Time till the runner's next action.
+
+    bool             leftRightSearch;	// KGoldrunner-rules enemy search-mode.
 };
 
 
@@ -266,6 +268,8 @@ public:
     void             showState (char option);
 
 private:
+    char             rulesType;		// Rules type and enemy search method.
+
     int              nuggets;		// Number of gold pieces an enemy holds.
     int              birthI;		// Enemy's starting position (used in
     int              birthJ;		// KGoldrunner rules for re-birth).

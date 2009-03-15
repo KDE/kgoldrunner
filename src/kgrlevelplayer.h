@@ -140,11 +140,12 @@ public:
      *
      * @param enemyI    The column-number where the enemy is now (>=1).
      * @param enemyJ    The row-number where the enemy is now (>=1).
+     * @param leftRightSearch The search-direction (for KGoldrunner rules only).
      *
      * @return          The required direction (values defined by enum Direction
      *                  in file kgrglobals.h).
      */
-    Direction getEnemyDirection (int enemyI, int enemyJ);
+    Direction getEnemyDirection (int enemyI, int enemyJ, bool leftRightSearch);
 
     /**
      * Helper function for an enemy to pick up or drop gold or the hero to
@@ -251,6 +252,7 @@ public:
 
 signals:
     void endLevel       (const int result);
+    void getMousePos    (int & i, int & j);
     void setMousePos    (const int i, const int j);
     void animation      (bool missed);
     void paintCell      (int i, int j, char tileType, int diggingStage = 0);

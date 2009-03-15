@@ -50,18 +50,24 @@ public:
 
     inline void getHeroTimes  (int & runTime, int & fallTime) {
                 runTime = times.hwalk; fallTime = times.hfall; }
-    inline void getEnemyTimes (int & runTime, int & fallTime, int & trapTime) {
+
+    inline char getEnemyTimes (int & runTime, int & fallTime, int & trapTime) {
                 runTime = times.ewalk; fallTime = times.efall;
-                trapTime = times.ecaptive; }
+                trapTime = times.ecaptive;
+                return mRules; }
+
     inline void getDigTimes   (int & digTime, int & digCounter) {
                 digTime = 200; digCounter = times.hole; }
 
     virtual Direction findBestWay (const int eI, const int eJ,
                                    const int hI, const int hJ,
-                                   KGrLevelGrid * pGrid) = 0;
+                                   KGrLevelGrid * pGrid,
+                                   bool leftRightSearch = true) = 0;
 // TODO - Make const ...           const KGrLevelGrid * pGrid) = 0;
 
 protected:
+    char mRules;		///< The type of rules and enemy search method.
+
     bool mVariableTiming;	///< More enemies imply less speed.
     bool mAlwaysCollectNugget;	///< Enemies always collect nuggets.
     bool mRunThruHole;		///< Enemy can run L/R through dug hole.
@@ -89,7 +95,8 @@ public:
 
     Direction findBestWay  (const int eI, const int eJ,
                             const int hI, const int hJ,
-                            KGrLevelGrid * pGrid);
+                            KGrLevelGrid * pGrid,
+                            bool leftRightSearch = true);
 // TODO - Make const ...    const KGrLevelGrid * pGrid);
 
 private:
@@ -116,10 +123,17 @@ public:
                                  mVariableTiming << mAlwaysCollectNugget <<
                                  mRunThruHole << mReappearAtTop; }
 
-    Direction findBestWay (const int eI, const int eJ,
-                           const int hI, const int hJ,
-                           KGrLevelGrid * pGrid);
+    Direction findBestWay  (const int eI, const int eJ,
+                            const int hI, const int hJ,
+                            KGrLevelGrid * pGrid,
+                            bool leftRightSearch = true);
 // TODO - Make const ...    const KGrLevelGrid * pGrid);
+
+private:
+    Direction findWayUp    (const int eI, const int eJ);
+    Direction findWayDown  (const int eI, const int eJ);
+    Direction findWayLeft  (const int eI, const int eJ);
+    Direction findWayRight (const int eI, const int eJ);
 };
 
 
@@ -136,7 +150,8 @@ public:
 
     Direction findBestWay (const int eI, const int eJ,
                            const int hI, const int hJ,
-                           KGrLevelGrid * pGrid);
+                           KGrLevelGrid * pGrid,
+                           bool leftRightSearch = true);
 // TODO - Make const ...    const KGrLevelGrid * pGrid);
 };
 

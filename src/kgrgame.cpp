@@ -10,17 +10,13 @@
 
 #include "kgrgame.h"
 
-#include "kgrconsts.h"
-// #include "kgrobject.h"
-// #include "kgrfigure.h" // OBSOLESCENT - 09/1/09
-// #include "kgrrunner.h" // OBSOLESCENT - 18/1/09
+#include "kgrconsts.h" // OBSOLESCENT - 14/3/09
 #include "kgrcanvas.h"
 #include "kgrdialog.h"
 #include "kgrsoundbank.h"
 #include "kgreditor.h"
-#include "kgrlevelplayer.h" // TESTING - 1/1/09
+#include "kgrlevelplayer.h"
 
-// Obsolete - #include <iostream.h>
 #include <iostream>
 #include <stdlib.h>
 #include <ctype.h>
@@ -84,8 +80,6 @@ KGrGame::KGrGame (KGrCanvas * theView,
     // hero->setParent (this);		// Delete hero when KGrGame is deleted.
     // hero->setPlayfield (&playfield);
 
-    setBlankLevel (true);		// Fill the playfield with blank walls.
-
     // OBSOLESCENT - 18/1/09 enemy = NULL;
     newLevel = true;			// Next level will be a new one.
     loading  = true;			// Stop input until it is loaded.
@@ -115,19 +109,8 @@ KGrGame::KGrGame (KGrCanvas * theView,
 
 #endif
 
-    // REPLACE - 9/1/09  Hero's game connections.
-    // connect (hero, SIGNAL (gotNugget (int)),  SLOT (incScore (int)));
-    // connect (hero, SIGNAL (caughtHero()),     SLOT (herosDead()));
-    // connect (hero, SIGNAL (haveAllNuggets()), SLOT (showHiddenLadders()));
-    // connect (hero, SIGNAL (leaveLevel()),     SLOT (levelCompleted()));
-
     dyingTimer = new QTimer (this);
     connect (dyingTimer, SIGNAL (timeout()),  SLOT (finalBreath()));
-
-    // Get the mouse position every 40 msec.  It is used to steer the hero.
-    mouseSampler = new QTimer (this);
-    connect (mouseSampler, SIGNAL (timeout()), SLOT (readMousePos()));
-    mouseSampler->start (40);
 
     srand (time (0)); 			// Initialise random number generator.
 }
@@ -155,7 +138,7 @@ void KGrGame::gameActions (int action)
 	break;
     case KILL_HERO:
 	kDebug() << "KILL_HERO signal:" << action;
-	herosDead();
+        endLevel (DEAD);
 	break;
     default:
 	break;
@@ -388,6 +371,9 @@ void KGrGame::endLevel (const int result)
         delete levelPlayer;
         levelPlayer = 0;
     }
+    else {
+        return;			// Not playing a level.
+    }
 
     if (result == WON_LEVEL) {
         levelCompleted();
@@ -399,8 +385,9 @@ void KGrGame::endLevel (const int result)
 
 void KGrGame::herosDead()
 {
-    if ((level < 1) || (lives <= 0))
+    if ((level < 1) || (lives <= 0)) {
         return;			// Game over: we are in the "ENDE" screen.
+    }
 
     // Lose a life.
     if (--lives > 0) {
@@ -440,12 +427,9 @@ void KGrGame::herosDead()
         }
 
         // Game completely over: display the "ENDE" screen.
-        // OBSOLESCENT - 18/1/09 enemyCount = 0;
-        //todo enemies.clear();	// Stop the enemies catching the hero again ...
-        // while (!enemies.isEmpty())
-                // delete enemies.takeFirst(); // OBSOLETE - 9/1/09
-
-        // OBSOLESCENT - 29/1/09 view->deleteEnemySprites();
+        // TODO - The "ENDE" screen is displayed but it is frozen.
+        // TODO - If we restart the game on the "ENDE" screen then use the New
+        //        Game dialog, the new level comes up but animation is haywire.
         unfreeze();		//    ... NOW we can unfreeze.
         newLevel = true;
         level = 0;
@@ -459,7 +443,6 @@ void KGrGame::finalBreath()
     // Fix bug 95202:	Avoid re-starting if the player selected
     //			edit mode before the 1.5 seconds were up.
     if (! editMode) {
-        // OBSOLESCENT - 18/1/09 enemyCount = 0;	// Hero is dead: re-start the level.
         loadLevel (level);
         if (levelPlayer) {
             levelPlayer->prepareToPlay();
@@ -470,14 +453,9 @@ void KGrGame::finalBreath()
 
 void KGrGame::showHiddenLadders()
 {
+    // TODO - Move this line to KGrLevelPlayer.
     effects->play (fx[LadderSound]);
-
-    int i, j;
-    for (i = 1; i < 21; i++)
-        for (j = 1; j < 29; j++)
-        ; // OBSOLESCENT - 20/1/09 Need to compile after kgrobject.cpp removed.
-            // if (playfield[j][i]->whatIam() == HLADDER)
-                // ((KGrHladder *)playfield[j][i])->showLadder();
+    // TODO - Remove initSearchMatrix();
     initSearchMatrix();
 }
         
@@ -490,7 +468,6 @@ void KGrGame::levelCompleted()
     view->fadeOut();
 }
 
-// 
 void KGrGame::goUpOneLevel()
 {
     disconnect (view, SIGNAL (fadeFinished()), this, SLOT (goUpOneLevel()));
@@ -514,25 +491,11 @@ void KGrGame::goUpOneLevel()
         emit showLevel (level);
     }
 
-    // TODO - Need to delete old level, sprites and graphics.
-    // OBSOLESCENT - 29/1/09 view->deleteEnemySprites();
-
     newLevel = true;
     loadLevel (level);
     showTutorialMessages (level);
     newLevel = false;
 }
-
-void KGrGame::loseNugget()
-{
-    // OBSOLESCENT - 9/1/09 hero->loseNugget();		// Enemy trapped/dead and holding a nugget.
-}
-
-// OBSOLESCENT - 9/1/09
-// KGrHero * KGrGame::getHero()
-// {
-    // return (hero);		// Return a pointer to the hero.
-// }
 
 void KGrGame::setControlMode (const Control mode)
 {
@@ -605,43 +568,6 @@ void KGrGame::setMessageFreeze (bool on_off)
     }
 }
 
-void KGrGame::setBlankLevel (bool playable)
-{
-    // OBSOLESCENT - 20/1/09 KGrLevelGrid replaces playfield[][].
-    return; // Don't reference playfield[][].
-
-    for (int j = 0; j < 20; j++)
-        for (int i = 0; i < 28; i++) {
-            if (playable) {
-                // playfield[i+1][j+1] = new KGrFree (FREE, i+1, j+1, view);
-            }
-            else {
-                // playfield[i+1][j+1] = new KGrEditable (FREE);
-                view->paintCell (i+1, j+1, FREE);
-            }
-	    // playfield[i+1][j+1]->setParent (this); // Delete if KGrGame dies.
-            // editObjArray[i+1][j+1] = FREE;
-        }
-    for (int j = 0; j < 30; j++) {
-        // playfield[j][0] = new KGrObject (BETON);
-	// playfield[j][0]->setParent (this);	// Delete at end of KGrGame.
-        // editObjArray[j][0] = BETON;
-
-        // playfield[j][21] = new KGrObject (BETON);
-	// playfield[j][21]->setParent (this);	// Delete at end of KGrGame.
-        // editObjArray[j][21] = BETON;
-    }
-    for (int i = 0; i < 22; i++) {
-        // playfield[0][i] = new KGrObject (BETON);
-	// playfield[0][i]->setParent (this);	// Delete at end of KGrGame.
-        // editObjArray[0][i] = BETON;
-
-        // playfield[29][i] = new KGrObject (BETON);
-	// playfield[29][i]->setParent (this);	// Delete at end of KGrGame.
-        // editObjArray[29][i] = BETON;
-    }
-}
-    
 void KGrGame::newGame (const int lev, const int newGameIndex)
 {
     // Ignore player input from keyboard or mouse while the screen is set up.
@@ -673,14 +599,6 @@ void KGrGame::newGame (const int lev, const int newGameIndex)
     emit showLives (lives);
     emit showScore (score);
     emit showLevel (level);
-
-    // OBSOLESCENT - 18/1/09 enemyCount = 0;
-
-    //enemies.clear();
-    // OBSOLESCENT - 9/1/09 while (!enemies.isEmpty())
-        // OBSOLESCENT - 9/1/09 delete enemies.takeFirst();
-
-    // OBSOLESCENT - 29/1/09 view->deleteEnemySprites();
 
     newLevel = true;;
     loadLevel (level);
@@ -756,7 +674,8 @@ int KGrGame::loadLevel (int levelNo)
     view->fadeIn();			// Then run the fade-in animation.
     startScore = score;			// The score we will save, if asked.
 
-    kDebug() << "Prefix" << gameData->prefix << "index" << gameIndex << "of" << gameList.count();
+    kDebug() << "Prefix" << gameData->prefix << "index" << gameIndex
+             << "of" << gameList.count();
 
     levelPlayer = new KGrLevelPlayer (this);
 
@@ -778,23 +697,6 @@ int KGrGame::loadLevel (int levelNo)
     // Disconnect edit-mode slots from signals from "view".
     // disconnect (view, SIGNAL (mouseClick (int)), 0, 0);
     // disconnect (view, SIGNAL (mouseLetGo (int)), 0, 0);
-
-    // if (newLevel) {
-        // OBSOLESCENT - 9/1/09 hero->setEnemyList (&enemies);
-        // QListIterator<KGrEnemy *> i (enemies);
-        // while (i.hasNext()) {
-            // OBSOLESCENT - 9/1/09 KGrEnemy * enemy = i.next();
-            // OBSOLESCENT - 9/1/09 enemy->setEnemyList (&enemies);
-        // }
-    // }
-
-    setTimings();
-
-    // Make a new sequence of all possible x co-ordinates for enemy rebirth.
-    // OBSOLESCENT - 9/1/09
-    // if (KGrFigure::reappearAtTop && (enemies.count() > 0)) {
-        // KGrEnemy::makeReappearanceSequence();
-    // }
 
     // Set direction-flags to use during enemy searches.
     initSearchMatrix();
@@ -878,33 +780,8 @@ bool KGrGame::readLevelData (int levelNo, KGrLevelData & d)
 }
 
     // TODO - Connect these somewhere else in the code, e.g. in KGrLevelPlayer.
-    // connect (enemy, SIGNAL (lostNugget()), SLOT (loseNugget()));
     // connect (enemy, SIGNAL (trapped (int)), SLOT (incScore (int)));
     // connect (enemy, SIGNAL (killed (int)),  SLOT (incScore (int)));
-
-void KGrGame::setTimings()
-{
-    // OBSOLESCENT - 9/1/09
-    // Timing *	timing;
-    // int		c = -1;
-
-    // OBSOLESCENT - 9/1/09
-    // if (KGrFigure::variableTiming) {
-        // c = enemies.count();			// Timing based on enemy count.
-        // c = (c > 5) ? 5 : c;
-        // timing = &(KGrFigure::varTiming[c]);
-    // }
-    // else {
-        // timing = &(KGrFigure::fixedTiming);	// Fixed timing.
-    // }
-
-    // KGrHero::WALKDELAY		= timing->hwalk;
-    // KGrHero::FALLDELAY		= timing->hfall;
-    // KGrEnemy::WALKDELAY		= timing->ewalk;
-    // KGrEnemy::FALLDELAY		= timing->efall;
-    // KGrEnemy::CAPTIVEDELAY	= timing->ecaptive;
-    // KGrBrick::HOLETIME		= timing->hole;
-}
 
 void KGrGame::initSearchMatrix()
 {
@@ -945,18 +822,6 @@ void KGrGame::initSearchMatrix()
             // if (playfield[j][i+1]->blocker)
                 // playfield[j][i]->searchValue &= ~CANWALKDOWN;
         // }
-    // }
-}
-        
-void KGrGame::startPlaying() {
-    // OBSOLESCENT - 9/1/09
-    // if (! hero->started) {
-        // // Start the enemies and the hero.
-        // for (--enemyCount; enemyCount>=0; --enemyCount) {
-            // enemy=enemies.at (enemyCount);
-            // enemy->startSearching();
-        // }
-        // hero->start();
     // }
 }
 
@@ -1016,52 +881,52 @@ QString KGrGame::getTitle()
     return (levelTitle);
 }
 
-void KGrGame::readMousePos()
-{
-    QPoint p;
-    int i, j;
+// void KGrGame::readMousePos()
+// {
+    // QPoint p;
+    // int i, j;
 
     // If loading a level for play or editing, ignore mouse-position input.
-    if (loading) return;
+    // if (loading) return;
 
     // If game control is currently by keyboard, ignore the mouse.
-    if ((controlMode == KEYBOARD) && (! editMode) && (! gameFrozen)) {
-        // TODO - Have internal clock in levelplayer. levelPlayer->tick ();
-        return;
-    }
+    // if ((controlMode == KEYBOARD) && (! editMode) && (! gameFrozen)) {
+        // // TODO - Have internal clock in levelplayer. levelPlayer->tick ();
+        // return;
+    // }
 
-    p = view->getMousePos();
-    i = p.x(); j = p.y();
+    // p = view->getMousePos();
+    // i = p.x(); j = p.y();
 
-    if (editMode) {
-        // Editing - check if we are in paint mode and have moved the mouse.
-        if (paintEditObj && ((i != oldI) || (j != oldJ))) {
-            // Force compile IDW insertEditObj (i, j, editObj);
-            oldI = i;
-            oldJ = j;
-        }
-        if (paintAltObj && ((i != oldI) || (j != oldJ))) {
-            // Force compile IDW insertEditObj (i, j, FREE);
-            oldI = i;
-            oldJ = j;
-        }
-        // Highlight the cursor position
+    // if (editMode) {
+        // // Editing - check if we are in paint mode and have moved the mouse.
+        // if (paintEditObj && ((i != oldI) || (j != oldJ))) {
+            // // Force compile IDW insertEditObj (i, j, editObj);
+            // oldI = i;
+            // oldJ = j;
+        // }
+        // if (paintAltObj && ((i != oldI) || (j != oldJ))) {
+            // // Force compile IDW insertEditObj (i, j, FREE);
+            // oldI = i;
+            // oldJ = j;
+        // }
+        // // Highlight the cursor position
 	
-    }
-    else {
-        // Playing - if  the level has started, control the hero.
-        // Track the mouse, even when the game is frozen.
-        // if (gameFrozen) return;	// If game is stopped, do nothing.
+    // }
+    // else {
+        // // Playing - if  the level has started, control the hero.
+        // // Track the mouse, even when the game is frozen.
+        // // if (gameFrozen) return;	// If game is stopped, do nothing.
 
-        if (levelPlayer) { // OBSOLESCENT - 7/1/09 - Should be sure it exists.
-            levelPlayer->setTarget (i, j);
-        }
-    }
+        // if (levelPlayer) { // OBSOLESCENT - 7/1/09 - Should be sure it exists.
+            // levelPlayer->setTarget (i, j);
+        // }
+    // }
 
-    if (! gameFrozen) {		// If game is stopped, do nothing.
-        // TODO - Have internal clock in levelplayer. levelPlayer->tick();
-    }
-}
+    // if (! gameFrozen) {		// If game is stopped, do nothing.
+        // // TODO - Have internal clock in levelplayer. levelPlayer->tick();
+    // }
+// }
 
 void KGrGame::kbControl (int dirn)
 {
@@ -1109,20 +974,6 @@ void KGrGame::kbControl (int dirn)
     }
 }
 
-void KGrGame::heroAction (KBAction movement)
-{
-    // OBSOLESCENT - 7/1/09
-    switch (movement) {
-    case KB_UP:		break; // hero->setKey (UP); break;
-    case KB_DOWN:	break; // hero->setKey (DOWN); break;
-    case KB_LEFT:	break; // hero->setKey (LEFT); break;
-    case KB_RIGHT:	break; // hero->setKey (RIGHT); break;
-    case KB_STOP:	break; // hero->setKey (STAND); break;
-    case KB_DIGLEFT:	break; // hero->setKey (STAND); hero->digLeft(); break;
-    case KB_DIGRIGHT:	break; // hero->setKey (STAND); hero->digRight(); break;
-    }
-}
-
 /******************************************************************************/
 /**************************  SAVE AND RE-LOAD GAMES  **************************/
 /******************************************************************************/
@@ -1135,6 +986,7 @@ void KGrGame::saveGame()		// Save game ID, score and level.
         i18n ("&Save Edits...")));
         return;
     }
+    // TODO - Smart save ...
     // OBSOLESCENT - 7/1/09
     // if (hero->started) {myMessage (view, i18n ("Save Game"),
         // i18n ("Please note: for reasons of simplicity, your saved game "
@@ -1974,20 +1826,6 @@ void KGrGame::myMessage (QWidget * parent, const QString &title, const QString &
     // Unfreeze the game, but only if it was previously unfrozen.
     setMessageFreeze (false);
 }
-
-
-// OBSOLESCENT - 31/1/09. Replaced by KGrGameData.
-/******************************************************************************/
-/***********************    COLLECTION DATA CLASS    **************************/
-/******************************************************************************/
-// 
-// KGrCollection::KGrCollection (Owner o, const QString & n, const QString & p,
-               // const char s, int nl, const QString & a, const char sk = 'N')
-// {
-    // // Holds information about a collection of KGoldrunner levels (i.e. a game).
-    // owner = o; name = n; prefix = p; settings = s; nLevels = nl;
-    // about = a; skill = sk;
-// }
 
 #include "kgrgame.moc"
 // vi: set sw=4 :
