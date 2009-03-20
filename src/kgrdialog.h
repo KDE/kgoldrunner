@@ -47,8 +47,9 @@ class KGrSLDialog : public KDialog
 {
 Q_OBJECT
 public:
+    // TODO - Re-implement parameter 5 some other way.
     KGrSLDialog (int action, int requestedLevel, int collnIndex,
-                        QList<KGrGameData *> & gameList, KGrGame * theGame,
+                        QList<KGrGameData *> & gameList, /* KGrGame * theGame,*/
                         QWidget * parent = 0);
     ~KGrSLDialog();
 
@@ -69,7 +70,8 @@ private:
     int			defaultLevel;
     int			defaultGame;
     int			slCollnIndex;
-    KGrGame *		gameControl;
+    // TODO - Re-implement parameter 5 some other way.
+    // KGrGame *		gameControl;
     // KGrGameData *	selectedGame; // OBSOLESCENT? - 32/1/09
     QWidget *		slParent;
 

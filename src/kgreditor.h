@@ -18,6 +18,8 @@
 
 // class KGrCollection;	// OBSOLESCENT - 30/12/08
 
+class QTimer;
+
 /**
  * This class is the game-editor for KGoldrunner.
  *
@@ -30,26 +32,21 @@ class KGrEditor : public QObject
     Q_OBJECT
 public:
     KGrEditor (KGrCanvas * theView, const QString &theSystemDir,
-                                  const QString &theUserDir);
-    // Force compile IDW ~KGrEditor();
+                                    const QString &theUserDir,
+                                    QList<KGrGameData *> & pGameList);
+    ~KGrEditor();
 
     bool saveOK (bool exiting);	// Check if edits were saved.
 
-/******************************************************************************/
-/********************  GAME EDITOR PROPERTIES AND METHODS  ********************/
-/******************************************************************************/
-
-public slots:			// Slots connected to the Menu and Edit Toolbar.
-    void createLevel();		// Set up a blank level-display for edit.
-    void updateLevel();         // Update an existing level.
-    void updateNext();          // Update the current level + 1.
-    void editNameAndHint();	// Run a dialog to edit the level name and hint.
+    void createLevel (int pGameIndex);	// Set up a blank level-display for edit.
+    void updateLevel (int pGameIndex, int level);	// Update an existing level.
     bool saveLevelFile();	// Save the edited level in a text file (.grl).
-    void moveLevelFile();	// Move level to another collection or number.
-    void deleteLevelFile();	// Delete a level file.
+    void moveLevelFile (int pGameIndex, int level);	// Move level to another collection or number.
+    void deleteLevelFile (int pGameIndex, int level);	// Delete a level file.
 
-    void editCollection (int action);
+    void editGame (int pGameIndex);	// Create a game or edit game inormation.
 
+    void editNameAndHint();	// Run a dialog to edit the level name and hint.
     void setLevel (int lev);	// Set level to be edited.
     void setEditObj (char newEditObj);	// Set object for editor to paint.
 
@@ -57,8 +54,12 @@ public slots:			// Slots connected to the Menu and Edit Toolbar.
     // Force compile IDW void unfreeze();		// Restart the gameplay action.
     // Force compile IDW void setMessageFreeze (bool);
 
+signals:
+    void getMousePos    (int & i, int & j);
+
 private:
     KGrCanvas * view;		// The canvas on which the editor paints.
+    QList<KGrGameData *> gameList;
 
     bool mouseMode;		// Flag to set up keyboard OR mouse control.
     bool editMode;		// Flag to change keyboard and mouse functions.
@@ -73,6 +74,9 @@ private:
     // The data for the game (collection of levels) being composed or edited.
     KGrGameData  gameData;
 
+    KGrGameData * gamePtr;
+    int           gameIndex;
+
     // The data, including the layout, for the level being composed or edited.
     KGrLevelData levelData;
     KGrLevelData savedLevelData;
@@ -82,9 +86,9 @@ private:
 private:
     // TODO - Change KGrCollection to KGrGameData.
     // QString getFilePath  (Owner o, KGrCollection * colln, int lev);
+    int  selectLevel (int action, int requestedLevel, int requestedGame);
     void loadEditLevel (int);	// Load and display an existing level for edit.
     void initEdit();
-    void deleteLevel();
     void insertEditObj (int, int, char object);
     char editableCell (int i, int j);
     void setEditableCell (int, int, char);
@@ -95,11 +99,12 @@ private:
 
     int  level; // OBSOLESCENT - 31/12/08
     bool loading; // OBSOLESCENT - 31/12/08
+    QTimer *     timer;		// The time-signal for the game-editor.
 
 private slots:
-    void doEdit (int);		// For mouse-click when in edit-mode.
+    void doEdit  (int);		// For mouse-click when in edit-mode.
+    void tick    ();
     void endEdit (int);		// For mouse-release when in edit-mode.
-
 };
 
 #endif // _KGREDITOR_H_

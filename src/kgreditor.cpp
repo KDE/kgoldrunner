@@ -1,52 +1,73 @@
-/***************************************************************************
- *    Copyright 2009 Ian Wadham <ianw2@optusnet.com.au>                    *
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation; either version 2 of the License, or     *
- *   (at your option) any later version.                                   *
- ***************************************************************************/
+/****************************************************************************
+ *    Copyright 2009  Ian Wadham <iandw.au@gmail.com>                       *
+ *                                                                          *
+ *    This program is free software; you can redistribute it and/or         *
+ *    modify it under the terms of the GNU General Public License as        *
+ *    published by the Free Software Foundation; either version 2 of        *
+ *    the License, or (at your option) any later version.                   *
+ *                                                                          *
+ *    This program is distributed in the hope that it will be useful,       *
+ *    but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *    GNU General Public License for more details.                          *
+ *                                                                          *
+ *    You should have received a copy of the GNU General Public License     *
+ *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
+ ****************************************************************************/
 
 #include <KLocale>
+#include <KDebug>
+#include <QTimer>
 
 #include "kgreditor.h"
+#include "kgrdialog.h"
 
-KGrEditor::KGrEditor (KGrCanvas * theView, const QString & /* theSystemDir */,
-                                           const QString & /* theUserDir */)
+KGrEditor::KGrEditor (KGrCanvas * theView,
+                      const QString & /* theSystemDir */,
+                      const QString & /* theUserDir */,
+                      QList<KGrGameData *> & pGameList)
     :
+    // TODO - Parent should be the KGrGame object?
     QObject          (theView),		// Destroy Editor if view closes.
-    view             (theView)
+    view             (theView),
+    gameList         (pGameList)
 {
-    gameData.width   = FIELDWIDTH;
+    gameData.width   = FIELDWIDTH;	// Default values for a brand new game.
     gameData.height  = FIELDHEIGHT;
     levelData.width  = FIELDWIDTH;
     levelData.height = FIELDHEIGHT;
+
+    // Connect and start the timer.
+    timer = new QTimer (this);
+    connect (timer, SIGNAL (timeout ()), this, SLOT (tick ()));
+    timer->start (TickTime);		// TickTime def in kgrglobals.h.
 }
 
-/******************************************************************************/
-/************  GAME EDITOR FUNCTIONS ACTIVATED BY MENU OR TOOLBAR  ************/
-/******************************************************************************/
+KGrEditor::~KGrEditor()
+{
+}
 
 void KGrEditor::setEditObj (char newEditObj)
 {
     editObj = newEditObj;
 }
 
-void KGrEditor::createLevel()
+void KGrEditor::createLevel (int pGameIndex)
 {
     int	i, j;
+    gameIndex = pGameIndex;
 
     if (! saveOK (false)) {				// Check unsaved work.
         return;
     }
 
-    // Force compile IDW if (! ownerOK (USER)) {
+    if (! ownerOK (USER)) {
         KGrMessage::information (view, i18n ("Create Level"),
                 i18n ("You cannot create and save a level "
                 "until you have created a game to hold "
                 "it. Try menu item \"Create Game\"."));
-        // Force compile IDW return;
-    // Force compile IDW }
+        return;
+    }
 
     // Ignore player input from keyboard or mouse while the screen is set up.
     loading = true;
@@ -69,11 +90,14 @@ void KGrEditor::createLevel()
 
     editObj = BRICK;
 
-    showEditLevel();
-
     savedLevelData.layout = levelData.layout;		// Copy for "saveOK()".
     savedLevelData.name   = levelData.name;
     savedLevelData.hint   = levelData.hint;
+
+    // Connect edit-mode slots to signals from "view".
+    connect (view, SIGNAL (mouseClick (int)), SLOT (doEdit (int)));
+    connect (view, SIGNAL (mouseLetGo (int)), SLOT (endEdit (int)));
+    connect (this, SIGNAL (getMousePos (int &, int &)), view, SLOT (getMousePos (int &, int &)));
 
     // Re-enable player input.
     loading = false;
@@ -81,43 +105,36 @@ void KGrEditor::createLevel()
     view->update();					// Show the level name.
 }
 
-void KGrEditor::updateLevel()
+void KGrEditor::updateLevel (int pGameIndex, int level)
 {
     if (! saveOK (false)) {				// Check unsaved work.
         return;
     }
+    gameIndex = pGameIndex;
 
-    // Force compile IDW if (! ownerOK (USER)) {
+    if (! ownerOK (USER)) {
         KGrMessage::information (view, i18n ("Edit Level"),
             i18n ("You cannot edit and save a level until you "
             "have created a game and a level. Try menu item \"Create Game\"."));
-        // Force compile IDW return;
-    // Force compile IDW }
+        return;
+    }
 
     if (level < 0)
         level = 0;
-    // Force compile IDW int lev = selectLevel (SL_UPDATE, level);
-    // Force compile IDW if (lev == 0)
-        // Force compile IDW return;
+    int lev = selectLevel (SL_UPDATE, level, gameIndex);
+    kDebug() << "Selected" << gamePtr->name << "level" << lev;
+    if (lev == 0)
+        return;
 
-    // Force compile IDW if (owner == SYSTEM) {
-        // Force compile IDW KGrMessage::information (view, i18n ("Edit Level"),
-            // Force compile IDW i18n ("It is OK to edit a system level, but you MUST save "
-            // Force compile IDW "the level in one of your own games. You are not just "
-            // Force compile IDW "taking a peek at the hidden ladders "
-            // Force compile IDW "and fall-through bricks, are you? :-)"));
-    // Force compile IDW }
+    if (gameList.at(gameIndex)->owner == SYSTEM) {
+        KGrMessage::information (view, i18n ("Edit Level"),
+            i18n ("It is OK to edit a system level, but you MUST save "
+            "the level in one of your own games. You are not just "
+            "taking a peek at the hidden ladders "
+            "and fall-through bricks, are you? :-)"));
+    }
 
     // Force compile IDW loadEditLevel (lev);
-}
-
-void KGrEditor::updateNext()
-{
-    if (! saveOK (false)) {				// Check unsaved work.
-        return;
-    }
-    level++;
-    updateLevel();
 }
 
 void KGrEditor::loadEditLevel (int lev)
@@ -296,7 +313,7 @@ bool KGrEditor::saveLevelFile()
     return (true);
 }
 
-void KGrEditor::moveLevelFile()
+void KGrEditor::moveLevelFile (int pGameIndex, int level)
 {
     if (level <= 0) {
         KGrMessage::information (view, i18n ("Move Level"),
@@ -305,6 +322,7 @@ void KGrEditor::moveLevelFile()
                      i18n ("Game"), i18n ("Editor")));
         return;
     }
+    gameIndex = pGameIndex;
 
     int action = SL_MOVE;
 
@@ -392,10 +410,11 @@ void KGrEditor::moveLevelFile()
     // Force compile IDW emit showLevel (level);
 }
 
-void KGrEditor::deleteLevelFile()
+void KGrEditor::deleteLevelFile (int pGameIndex, int level)
 {
     int action = SL_DELETE;
     int lev = level;
+    gameIndex = pGameIndex;
 
     // Force compile IDW if (! ownerOK (USER)) {
         KGrMessage::information (view, i18n ("Delete Level"),
@@ -468,18 +487,20 @@ void KGrEditor::deleteLevelFile()
         // Force compile IDW newLevel = false;
     }
     else {
-        createLevel();				// No levels left in collection.
+        createLevel (gameIndex);	// No levels left in collection.
     }
     // Force compile IDW emit showLevel (level);
 }
 
-void KGrEditor::editCollection (int action)
+void KGrEditor::editGame (int pGameIndex)
 {
     int lev = level;
     int n = -1;
+    int action = (pGameIndex < 0) ? SL_CR_GAME : SL_UPD_GAME;
+    gameIndex = pGameIndex;
 
     // If editing, choose a collection.
-    if (action == SL_UPD_GAME) {
+    if (gameIndex >= 0) {
         // Force compile IDW lev = selectLevel (SL_UPD_GAME, level);
         if (lev == 0)
             return;
@@ -574,8 +595,90 @@ void KGrEditor::editCollection (int action)
 }
 
 /******************************************************************************/
+/**********************    LEVEL SELECTION DIALOG BOX    **********************/
+/******************************************************************************/
+
+int KGrEditor::selectLevel (int action, int requestedLevel, int requestedGame)
+{
+    int selectedLevel = 0;		// 0 = no selection (Cancel) or invalid.
+    int selectedGame  = requestedGame;
+
+    // Prevent editing during the dialog.
+    // modalFreeze = false;
+    // if (! gameFrozen) {
+        // modalFreeze = true;
+        // freeze();
+    // }
+
+    // Create and run a modal dialog box to select a game and level.
+    // TODO - Avoid using KGrGame * as parameter 5.
+    KGrSLDialog * sl = new KGrSLDialog (action, requestedLevel, requestedGame,
+                                        gameList, /* this, */ view);
+    while (sl->exec() == QDialog::Accepted) {
+        selectedGame = sl->selectedGame();
+        selectedLevel = 0;	// In case the selection is invalid.
+        if (gameList.at (selectedGame)->owner == SYSTEM) {
+            switch (action) {
+            case SL_CREATE:	// Can save only in a USER collection.
+            case SL_SAVE:
+            case SL_MOVE:
+                KGrMessage::information (view, i18n ("Select Level"),
+                        i18n ("Sorry, you can only save or move "
+                        "into one of your own games."));
+                continue;			// Re-run the dialog box.
+                break;
+            case SL_DELETE:	// Can delete only in a USER collection.
+                KGrMessage::information (view, i18n ("Select Level"),
+                        i18n ("Sorry, you can only delete a level "
+                        "from one of your own games."));
+                continue;			// Re-run the dialog box.
+                break;
+            case SL_UPD_GAME:	// Can edit info only in a USER collection.
+                KGrMessage::information (view, i18n ("Edit Game Info"),
+                        i18n ("Sorry, you can only edit the game "
+                        "information on your own games."));
+                continue;			// Re-run the dialog box.
+                break;
+            default:
+                break;
+            }
+        }
+
+        selectedLevel = sl->selectedLevel();
+        if ((selectedLevel > gameList.at (selectedGame)->nLevels) &&
+            (action != SL_CREATE) && (action != SL_SAVE) &&
+            (action != SL_MOVE) && (action != SL_UPD_GAME)) {
+            KGrMessage::information (view, i18n ("Select Level"),
+                i18n ("There is no level %1 in \"%2\", "
+                "so you cannot play or edit it.",
+                 selectedLevel,
+                 gameList.at (selectedGame)->name.constData()));
+            selectedLevel = 0;			// Set an invalid selection.
+            continue;				// Re-run the dialog box.
+        }
+
+        // If "OK", set the results.
+        gamePtr = gameList.at (selectedGame);
+        gameIndex = selectedGame;
+        // Set default rules for selected game.
+        // TODO - Declare this signal ... emit markRuleType (gamePtr->rules);
+        break;
+    }
+
+    // Unfreeze the game, but only if it was previously unfrozen.
+    // if (modalFreeze) {
+        // unfreeze();
+        // modalFreeze = false;
+    // }
+
+    delete sl;
+    return (selectedLevel);			// 0 = canceled or invalid.
+}
+
+/******************************************************************************/
 /*********************  SUPPORTING GAME EDITOR FUNCTIONS  *********************/
 /******************************************************************************/
+
 bool KGrEditor::saveOK (bool exiting)
 {
     int		i, j;
@@ -613,18 +716,8 @@ bool KGrEditor::saveOK (bool exiting)
 
 void KGrEditor::initEdit()
 {
-    if (! editMode) {
-
-        editMode = true;
-        // Force compile IDW emit setEditMenu (true);	// Enable edit menu items and toolbar.
-
-        // We were previously in play mode: stop the hero running or falling.
-        // Force compile IDW hero->init (1, 1);
-        view->setHeroVisible (false);
-    }
-
     paintEditObj = false;
-    paintAltObj = false;
+    paintAltObj  = false;
 
     // Set the default object and button.
     editObj = BRICK;
@@ -633,36 +726,20 @@ void KGrEditor::initEdit()
     oldI = 0;
     oldJ = 0;
     heroCount = 0;
-    // Force compile IDW enemyCount = 0;
-    //enemies.clear();
-    // Force compile IDW while (!enemies.isEmpty())
-        // Force compile IDW delete enemies.takeFirst();
-
-    // Force compile IDW view->deleteEnemySprites();
-    // Force compile IDW nuggets = 0;
 
     // Force compile IDW emit showLevel (level);
     // Force compile IDW emit showLives (0);
     // Force compile IDW emit showScore (0);
 
-    deleteLevel();
-    // Force compile IDW setBlankLevel (false);	// Fill playfield with Editable objects.
-
-    // Force compile IDW view->setTitle (getTitle());// Show title of level.
+    // TODO - This works for createLevel only.
+    view->setTitle (i18n ("New Level"));// Show title of level.
 
     shouldSave = false;		// Used to flag editing of name or hint.
 }
 
-void KGrEditor::deleteLevel()
-{
-    int i,j;
-    // Force compile IDW for (i = 1; i <= FIELDHEIGHT; i++)
-    // Force compile IDW for (j = 1; j <= FIELDWIDTH; j++)
-        // Force compile IDW delete playfield[j][i];
-}
-
 void KGrEditor::insertEditObj (int i, int j, char obj)
 {
+    kDebug() << i << j << obj;
     if ((i < 1) || (j < 1) || (i > levelData.width) || (j > levelData.height)) {
         return;		// Do nothing: mouse pointer is out of playfield.
     }
@@ -692,12 +769,12 @@ void KGrEditor::insertEditObj (int i, int j, char obj)
 
 char KGrEditor::editableCell (int i, int j)
 {
-    return (levelData.layout [(i-1) + (j-1) * levelData.width]);
+    return (levelData.layout [(i - 1) + (j - 1) * levelData.width]);
 }
 
 void KGrEditor::setEditableCell (int i, int j, char type)
 {
-    levelData.layout [(i-1) + (j-1) * levelData.width] = type;
+    levelData.layout [(i - 1) + (j - 1) * levelData.width] = type;
     view->paintCell (i, j, type);
 }
 
@@ -746,21 +823,20 @@ void KGrEditor::setLevel (int lev)
     return;
 }
 
-// TODO - Used only in KGrEditor.
-// bool KGrGame::ownerOK (Owner o)
-// {
-    // // Check that this owner has at least one set of game data.
-    // bool OK = false;
-// 
-    // foreach (KGrGameData * d, gameList) {
-        // if (d->owner == o) {
-            // OK = true;
-            // break;
-        // }
-    // }
-// 
-    // return (OK);
-// }
+bool KGrEditor::ownerOK (Owner o)
+{
+    // Check that this owner has at least one set of game data.
+    bool OK = false;
+
+    foreach (KGrGameData * d, gameList) {
+        if (d->owner == o) {
+            OK = true;
+            break;
+        }
+    }
+
+    return (OK);
+}
 
 bool KGrEditor::saveGameData (Owner o)
 {
@@ -828,11 +904,9 @@ bool KGrEditor::saveGameData (Owner o)
 void KGrEditor::doEdit (int button)
 {
     // Mouse button down: start making changes.
-    QPoint p (1, 1); // TODO - Fix mouse usage.
     int i, j;
-
-    // p = view->getMousePos();
-    i = p.x(); j = p.y();
+    emit getMousePos (i, j);
+    kDebug() << "Button" << button << "at" << i << j;
 
     switch (button) {
     case Qt::LeftButton:
@@ -852,14 +926,29 @@ void KGrEditor::doEdit (int button)
     }
 }
 
+void KGrEditor::tick()
+{
+    // Check if a mouse-button is down: left = paint, right = erase.
+    if (paintEditObj || paintAltObj) {
+
+        int i, j;
+        emit getMousePos (i, j);
+
+        // Check if the mouse has moved.
+        if ((i != oldI) || (j != oldJ)) {
+            // If so, paint or erase a cell.
+            insertEditObj (i, j, (paintEditObj) ? editObj : FREE);
+            oldI = i;
+            oldJ = j;
+        }
+    }
+}
+
 void KGrEditor::endEdit (int button)
 {
     // Mouse button released: finish making changes.
-    QPoint p (1, 1); // TODO - Fix mouse usage.
     int i, j;
-
-    // p = view->getMousePos();
-    i = p.x(); j = p.y();
+    emit getMousePos (i, j);
 
     switch (button) {
     case Qt::LeftButton:

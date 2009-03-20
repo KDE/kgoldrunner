@@ -37,6 +37,8 @@ public:
 };
 
 enum  GameAction {HINT, KILL_HERO};
+enum  EditAction {CREATE_LEVEL, EDIT_ANY, SAVE_EDITS, MOVE_LEVEL, DELETE_LEVEL,
+                  CREATE_GAME,  EDIT_GAME};
 
 const int  ConcreteWall = 1;
 

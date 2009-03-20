@@ -84,6 +84,7 @@ public slots:
     void kbControl (int dirn); // xxxxxxxxxxxxxx
 
     void gameActions (int action);
+    void editActions (int action);
     void editToolbarActions (int action);
 
     void initGame();			// Do the game object's first painting.
@@ -153,7 +154,6 @@ private slots:
 private:
     int  loadLevel (int levelNo);
     bool readLevelData (int levelNo, KGrLevelData & d);
-    void initSearchMatrix();
     void showTutorialMessages (int levelNo);
 
     void checkHighScore();		// Check if high score for current game.

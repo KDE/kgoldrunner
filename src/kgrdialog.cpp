@@ -27,8 +27,9 @@
 /*****************    DIALOG BOX TO SELECT A GAME AND LEVEL   *****************/
 /******************************************************************************/
 
+// TODO - Eliminate parameter 5 and implement refs to it some other way.
 KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int gameIndex,
-                        QList<KGrGameData *> & gameList, KGrGame * theGame,
+                        QList<KGrGameData *> & gameList, /* KGrGame * theGame,*/
                         QWidget * parent)
                 : KDialog (parent)
 {
@@ -36,7 +37,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int gameIndex,
     defaultLevel = requestedLevel;
     defaultGame  = gameIndex;
     myGameList   = gameList;
-    gameControl  = theGame;
+    // TODO - Remove ref to KGrGame * ... gameControl  = theGame;
     // selectedGame = myGameList.at (defaultGame); // OBSOLESCENT? - 31/1/09
     slParent     = parent;
 
@@ -224,8 +225,9 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int gameIndex,
     // Only enable name and hint dialog here if saving a new or edited level.
     // At other times the name and hint have not been loaded or initialised yet.
     if ((slAction == SL_CREATE) || (slAction == SL_SAVE)) {
-        connect (levelNH,     SIGNAL (clicked()),
-                 gameControl, SLOT   (editNameAndHint()));
+        // TODO - Have to re-implement connection to editNameAndHint().
+        // connect (levelNH,     SIGNAL (clicked()),
+                 // gameControl, SLOT   (editNameAndHint()));
     }
     else {
         levelNH->setEnabled (false);
@@ -414,10 +416,12 @@ void KGrSLDialog::slPaintLevel()
         return;					// Owner has no games.
     }
     // Fetch level-data and save layout, name and label in the thumbnail.
-    QString	dir = gameControl->getDirectory (myGameList.at (n)->owner);
-    thumbNail->setLevelData (dir, myGameList.at (n)->prefix,
-                                number->value(), slName);
-    thumbNail->repaint();			// Will call "paintEvent (e)".
+    // TODO - Revive the thumbnail display.
+    // TODO - Have to find some other way of getting the directory's filepath.
+    // QString	dir = gameControl->getDirectory (myGameList.at (n)->owner);
+    // thumbNail->setLevelData (dir, myGameList.at (n)->prefix,
+                                // number->value(), slName);
+    // thumbNail->repaint();			// Will call "paintEvent (e)".
 }
 
 void KGrSLDialog::slotHelp()

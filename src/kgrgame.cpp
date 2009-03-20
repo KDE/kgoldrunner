@@ -145,6 +145,54 @@ void KGrGame::gameActions (int action)
     }
 }
 
+void KGrGame::editActions (int action)
+{
+    if (! editor) {
+        // If there is a level being played, kill it, with no win/lose result.
+        if (levelPlayer) {
+            endLevel (NORMAL);
+            view->deleteAllSprites();
+        }
+        // If there is no editor running, start one.
+        emit setEditMenu (true);	// Enable edit menu items and toolbar.
+        emit defaultEditObj();		// Set default edit-toolbar button.
+        editor = new KGrEditor (view, systemDataDir, userDataDir, gameList);
+    }
+
+    switch (action) {
+    case CREATE_LEVEL:
+	kDebug() << "CREATE_LEVEL signal:" << action;
+	editor->createLevel (gameIndex);
+	break;
+    case EDIT_ANY:
+	kDebug() << "EDIT_ANY signal:" << action;
+	editor->updateLevel (gameIndex, level);
+	break;
+    case SAVE_EDITS:
+	kDebug() << "SAVE_EDITS signal:" << action;
+	editor->saveLevelFile ();
+	break;
+    case MOVE_LEVEL:
+	kDebug() << "MOVE_LEVEL signal:" << action;
+	editor->moveLevelFile (gameIndex, level);
+	break;
+    case DELETE_LEVEL:
+	kDebug() << "DELETE_LEVEL signal:" << action;
+	editor->deleteLevelFile (gameIndex, level);
+	break;
+    case CREATE_GAME:
+	kDebug() << "CREATE_GAME signal:" << action;
+	editor->editGame (-1);
+	break;
+    case EDIT_GAME:
+	kDebug() << "EDIT_GAME signal:" << action;
+	editor->editGame (gameIndex);
+	break;
+    default:
+	break;
+    }
+}
+
 void KGrGame::editToolbarActions (int action)
 {
     // If game-editor is inactive or action-code is not recognised, do nothing.
@@ -153,11 +201,12 @@ void KGrGame::editToolbarActions (int action)
         case EDIT_HINT:
             // Edit the level-name or hint.
 	    kDebug() << "EDIT_HINT signal:" << action;
+            editor->editNameAndHint();
 	    break;
         case FREE:
         case ENEMY:
         case HERO:
-        case BETON:
+        case CONCRETE:
         case BRICK:
         case FBRICK:
         case HLADDER:
@@ -455,8 +504,6 @@ void KGrGame::showHiddenLadders()
 {
     // TODO - Move this line to KGrLevelPlayer.
     effects->play (fx[LadderSound]);
-    // TODO - Remove initSearchMatrix();
-    initSearchMatrix();
 }
         
 void KGrGame::levelCompleted()
@@ -698,9 +745,6 @@ int KGrGame::loadLevel (int levelNo)
     // disconnect (view, SIGNAL (mouseClick (int)), 0, 0);
     // disconnect (view, SIGNAL (mouseLetGo (int)), 0, 0);
 
-    // Set direction-flags to use during enemy searches.
-    initSearchMatrix();
-
     // Re-draw the playfield frame, level title and figures.
     view->setTitle (getTitle());
 
@@ -782,48 +826,6 @@ bool KGrGame::readLevelData (int levelNo, KGrLevelData & d)
     // TODO - Connect these somewhere else in the code, e.g. in KGrLevelPlayer.
     // connect (enemy, SIGNAL (trapped (int)), SLOT (incScore (int)));
     // connect (enemy, SIGNAL (killed (int)),  SLOT (incScore (int)));
-
-void KGrGame::initSearchMatrix()
-{
-    // OBSOLESCENT - 20/1/09 Should be replaced by KGrLevelGrid object.
-    // // Called at start of level and also when hidden ladders appear.
-    // int i, j;
-// 
-    // for (i = 1; i < 21; i++) {
-        // for (j = 1; j < 29; j++) {
-            // // If on ladder, can walk L, R, U or D.
-            // if (playfield[j][i]->whatIam() == LADDER)
-                // playfield[j][i]->searchValue = CANWALKLEFT + CANWALKRIGHT +
-                                              // CANWALKUP + CANWALKDOWN;
-            // else
-                // // If on solid ground, can walk L or R.
-                // if ((playfield[j][i+1]->whatIam() == BRICK) ||
-                    // (playfield[j][i+1]->whatIam() == HOLE) ||
-                    // (playfield[j][i+1]->whatIam() == USEDHOLE) ||
-                    // (playfield[j][i+1]->whatIam() == BETON))
-                    // playfield[j][i]->searchValue = CANWALKLEFT + CANWALKRIGHT;
-                // else
-                    // // If on pole or top of ladder, can walk L, R or D.
-                    // if ((playfield[j][i]->whatIam() == POLE) ||
-                        // (playfield[j][i+1]->whatIam() == LADDER))
-                        // playfield[j][i]->searchValue = CANWALKLEFT +
-                                              // CANWALKRIGHT + CANWALKDOWN;
-                    // else
-                        // // Otherwise, gravity takes over ...
-                        // playfield[j][i]->searchValue = CANWALKDOWN;
-     //  
-            // // Clear corresponding bits if there are solids to L, R, U or D.
-            // if (playfield[j][i-1]->blocker)
-                // playfield[j][i]->searchValue &= ~CANWALKUP;
-            // if (playfield[j-1][i]->blocker)
-                // playfield[j][i]->searchValue &= ~CANWALKLEFT;
-            // if (playfield[j+1][i]->blocker)
-                // playfield[j][i]->searchValue &= ~CANWALKRIGHT;
-            // if (playfield[j][i+1]->blocker)
-                // playfield[j][i]->searchValue &= ~CANWALKDOWN;
-        // }
-    // }
-}
 
 QString KGrGame::getDirectory (Owner o)
 {
@@ -1538,8 +1540,10 @@ int KGrGame::selectLevel (int action, int requestedLevel)
     }
 
     // Create and run a modal dialog box to select a game and level.
+    // TODO - Avoid using KGrGame * as parameter 5.
     KGrSLDialog * sl = new KGrSLDialog (action, requestedLevel, gameIndex,
-                                        gameList, this, view);
+                                        gameList, /* this, */ view);
+    // TODO - Strip out editor-related validation, etc.  It's in KGrEditor now.
     while (sl->exec() == QDialog::Accepted) {
         selectedGame = sl->selectedGame();
         selectedLevel = 0;	// In case the selection is invalid.

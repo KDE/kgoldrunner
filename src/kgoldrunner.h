@@ -151,11 +151,15 @@ private:
     void initStatusBar();
     void setupEditToolbarActions();
     void setupThemes();
-
+ 
+    QSignalMapper * editMapper;		// Editior-actions mapper.
     QSignalMapper * kbMapper;		// Keyboard game-control mapper.
     QSignalMapper * dbgMapper;		// Debugging-key mapper.
     QSignalMapper * tempMapper;		// Temporary pointer.
 
+    QAction * editAction (const QString & name, const int code,
+                          const QString & text, const QString & toolTip,
+                          const QString & whatsThis);
     void keyControl (const QString & name, const QString & text,
                      const QKeySequence & shortcut, const int code);
 

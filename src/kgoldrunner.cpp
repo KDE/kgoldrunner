@@ -255,6 +255,11 @@ void KGoldrunner::setupActions()
     actionCollection()->addAction (hintAction->objectName(), hintAction);
     gameMapper->setMapping (hintAction, HINT); // New
 
+//  killHero = gameAction ("kill_hero", gameMapper, KILL_HERO,
+//                         i18n ("&Kill Hero"), i18n ("Kill Hero"),
+//                         i18n ("Kill the hero, in case he finds himself in "
+//                               "a situation from which he cannot escape"),
+//                         Qt::Key_Q);
     killHero =	actionCollection()->addAction ("kill_hero");
     killHero->setText (i18n ("&Kill Hero"));
     killHero->setToolTip (i18n ("Kill hero"));
@@ -274,66 +279,63 @@ void KGoldrunner::setupActions()
     /***************************   GAME EDITOR MENU  **************************/
     /**************************************************************************/
 
+    editMapper = new QSignalMapper (this);
+    connect (editMapper, SIGNAL (mapped (int)), game, SLOT (editActions (int)));
+    tempMapper = editMapper;
+
     // Create a Level
     // Edit a Level...
     // --------------------------
 
-    QAction* createAct = actionCollection()->addAction ("create_level");
-    createAct->setText (i18n ("&Create Level"));
-    createAct->setIcon (KIcon ("document-new"));
-    createAct->setToolTip (i18n ("Create level"));
-    createAct->setWhatsThis (i18n ("Create a completely new level"));
-    connect (createAct, SIGNAL (triggered (bool)), game, SLOT (createLevel()));
+    QAction * ed = editAction ("create_level", CREATE_LEVEL,
+                               i18n ("&Create Level"),
+                               i18n ("Create level"),
+                               i18n ("Create a completely new level"));
+    ed->setIcon (KIcon ("document-new"));
 
-    QAction* editAnyAct	= actionCollection()->addAction ("edit_any");
-    editAnyAct->setText (i18n ("&Edit Level..."));
-    editAnyAct->setIcon (KIcon ("document-open"));
-    editAnyAct->setToolTip (i18n ("Edit level..."));
-    editAnyAct->setWhatsThis (i18n ("Edit any level..."));
-    connect (editAnyAct, SIGNAL (triggered (bool)), game, SLOT (updateLevel()));
+    ed           = editAction ("edit_any", EDIT_ANY,
+                               i18n ("&Edit Level..."),
+                               i18n ("Edit level..."),
+                               i18n ("Edit any level..."));
+    ed->setIcon (KIcon ("document-open"));
 
     // Save Edits...
     // Move Level...
     // Delete Level...
     // --------------------------
 
-    saveEdits =	actionCollection()->addAction ("save_edits");
-    saveEdits->setText (i18n ("&Save Edits..."));
+    saveEdits    = editAction ("save_edits", SAVE_EDITS,
+                               i18n ("&Save Edits..."),
+                               i18n ("Save edits..."),
+                               i18n ("Save your level after editing..."));
     saveEdits->setIcon (KIcon ("document-save"));
-    saveEdits->setToolTip (i18n ("Save edits..."));
-    saveEdits->setWhatsThis (i18n ("Save your level after editing..."));
-    connect (saveEdits, SIGNAL (triggered (bool)), game, SLOT (saveLevelFile()));
-    saveEdits->setEnabled (false);			// Nothing to save, yet.
+    saveEdits->setEnabled (false);		// Nothing to save, yet.
 
-    QAction* moveLevel = actionCollection()->addAction ("move_level");
-    moveLevel->setText (i18n ("&Move Level..."));
-    moveLevel->setToolTip (i18n ("Move level..."));
-    moveLevel->setWhatsThis
-                (i18n ("Change a level's number or move it to another game..."));
-    connect (moveLevel, SIGNAL (triggered (bool)), game, SLOT (moveLevelFile()));
+    ed           = editAction ("move_level", MOVE_LEVEL,
+                               i18n ("&Move Level..."),
+                               i18n ("Move level..."),
+                               i18n ("Change a level's number or move "
+                                     "it to another game..."));
 
-    QAction* deleteLevel = actionCollection()->addAction ("delete_level");
-    deleteLevel->setText (i18n ("&Delete Level..."));
-    deleteLevel->setToolTip (i18n ("Delete level..."));
-    deleteLevel->setWhatsThis (i18n ("Delete a level..."));
-    connect (deleteLevel,SIGNAL (triggered (bool)), game, SLOT (deleteLevelFile()));
+    ed           = editAction ("delete_level", DELETE_LEVEL,
+                               i18n ("&Delete Level..."),
+                               i18n ("Delete level..."),
+                               i18n ("Delete a level..."));
 
     // Create a Game
     // Edit Game Info...
     // --------------------------
 
-    QAction* createGame	= actionCollection()->addAction ("create_game");
-    createGame->setText (i18n ("Create &Game..."));
-    createGame->setToolTip (i18n ("Create game..."));
-    createGame->setWhatsThis (i18n ("Create a completely new game..."));
-    connect (createGame, SIGNAL (triggered (bool)), this, SLOT (createGame()));
+    ed           = editAction ("create_game", CREATE_GAME,
+                               i18n ("Create &Game..."),
+                               i18n ("Create game..."),
+                               i18n ("Create a completely new game..."));
 
-    QAction* editGame =	actionCollection()->addAction ("edit_game");
-    editGame->setText (i18n ("Edit Game &Info..."));
-    editGame->setToolTip (i18n ("Edit game info..."));
-    editGame->setWhatsThis
-                (i18n ("Change the name, rules or description of a game..."));
-    connect (editGame, SIGNAL (triggered (bool)), this, SLOT (editGameInfo()));
+    ed           = editAction ("edit_game", EDIT_GAME,
+                               i18n ("Edit Game &Info..."),
+                               i18n ("Edit game info..."),
+                               i18n ("Change the name, rules or description "
+                                     "of a game..."));
 
     /**************************************************************************/
     /*****************************   THEMES MENU  *****************************/
@@ -540,6 +542,23 @@ void KGoldrunner::setupActions()
     keyControl ("show_enemy_4", i18n ("Show Enemy") + '4', Qt::Key_4, ENEMY_4);
     keyControl ("show_enemy_5", i18n ("Show Enemy") + '5', Qt::Key_5, ENEMY_5);
     keyControl ("show_enemy_6", i18n ("Show Enemy") + '6', Qt::Key_6, ENEMY_6);
+}
+
+QAction * KGoldrunner::editAction (const QString & name,
+                                   const int       code,
+                                   const QString & text,
+                                   const QString & toolTip,
+                                   const QString & whatsThis)
+{
+    // Create an action for editing a KGoldrunner level and connect it to
+    // a game-> slot, via a QSignalMapper and a mapping-code.
+    QAction * ed = actionCollection()->addAction (name);
+    ed->setText (text);
+    ed->setToolTip (toolTip);
+    ed->setWhatsThis (whatsThis);
+    connect (ed, SIGNAL (triggered (bool)), tempMapper, SLOT (map()));
+    tempMapper->setMapping (ed, code);
+    return ed;
 }
 
 void KGoldrunner::keyControl (const QString & name, const QString & text,
