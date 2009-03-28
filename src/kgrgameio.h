@@ -78,6 +78,7 @@ public:
     IOStatus fetchLevelData    (const QString & dir, const QString & prefix,
                                 const int level, KGrLevelData & d,
                                 QString & filePath);
+    static bool safeRename (const QString & oldName, const QString & newName);
 
 private:
     QFile		openFile;

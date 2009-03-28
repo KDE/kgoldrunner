@@ -36,18 +36,17 @@ public:
                                     QList<KGrGameData *> & pGameList);
     ~KGrEditor();
 
-    bool saveOK (bool exiting);	// Check if edits were saved.
+    bool saveOK ();			// Check if edits were saved.
 
     void createLevel (int pGameIndex);	// Set up a blank level-display for edit.
     void updateLevel (int pGameIndex, int level);	// Update an existing level.
     bool saveLevelFile();	// Save the edited level in a text file (.grl).
-    void moveLevelFile (int pGameIndex, int level);	// Move level to another collection or number.
+    void moveLevelFile (int pGameIndex, int level);	// Move level to another game or level number.
     void deleteLevelFile (int pGameIndex, int level);	// Delete a level file.
 
     void editGame (int pGameIndex);	// Create a game or edit game inormation.
 
     void editNameAndHint();	// Run a dialog to edit the level name and hint.
-    void setLevel (int lev);	// Set level to be edited.
     void setEditObj (char newEditObj);	// Set object for editor to paint.
 
     // Force compile IDW void freeze();		// Stop the gameplay action.
@@ -56,9 +55,12 @@ public:
 
 signals:
     void getMousePos    (int & i, int & j);
+    void showLevel      (int level);
 
 private:
     KGrCanvas * view;		// The canvas on which the editor paints.
+    QString     systemDataDir;
+    QString     userDataDir;
     QList<KGrGameData *> gameList;
 
     bool mouseMode;		// Flag to set up keyboard OR mouse control.
@@ -71,11 +73,8 @@ private:
     int  heroCount;		// Can enter at most one hero.
     bool shouldSave;		// True if name or hint was edited.
 
-    // The data for the game (collection of levels) being composed or edited.
-    KGrGameData  gameData;
-
-    KGrGameData * gamePtr;
-    int           gameIndex;
+    // The list-index of the game (collection of levels) being composed/edited.
+    int          gameIndex;
 
     // The data, including the layout, for the level being composed or edited.
     KGrLevelData levelData;
@@ -84,11 +83,10 @@ private:
     QString      levelHint;	// Level hint during editing (optional).
 
 private:
-    // TODO - Change KGrCollection to KGrGameData.
-    // QString getFilePath  (Owner o, KGrCollection * colln, int lev);
-    int  selectLevel (int action, int requestedLevel, int requestedGame);
+    int  selectLevel (int action, int requestedLevel, int & requestedGame);
     void loadEditLevel (int);	// Load and display an existing level for edit.
     void initEdit();
+    bool readLevelData (int levelNo, KGrLevelData & d);
     void insertEditObj (int, int, char object);
     char editableCell (int i, int j);
     void setEditableCell (int, int, char);
@@ -97,9 +95,12 @@ private:
     bool ownerOK (Owner o);
     bool saveGameData (Owner o);
 
-    int  level; // OBSOLESCENT - 31/12/08
-    bool loading; // OBSOLESCENT - 31/12/08
+    QString getTitle();
+    QString getLevelFilePath (KGrGameData * gameData, int lev);
+
     QTimer *     timer;		// The time-signal for the game-editor.
+
+    bool mouseDisabled;
 
 private slots:
     void doEdit  (int);		// For mouse-click when in edit-mode.

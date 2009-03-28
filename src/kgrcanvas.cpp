@@ -691,12 +691,6 @@ void KGrCanvas::deleteAllSprites()
     emptySprites = 0;
 }
 
-void KGrCanvas::setHeroVisible (bool newState)
-{
-    // TODO - Check whether this function is needed by KGrGame now.
-    // heroSprite->setVisible (newState);	// Show or hide the hero.
-}
-
 void KGrCanvas::moveEnemy (int id, int x, int y, int frame, int nuggets)
 {
     if (nuggets != 0) {				// If enemy is carrying gold,

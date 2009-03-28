@@ -808,11 +808,6 @@ void KGoldrunner::changeTheme (const QString & themeFilepath)
     }
 }
 
-// Local slots to create or edit game information.
-
-void KGoldrunner::createGame()		{}// Force compile IDW game->editCollection (SL_CR_GAME);}
-void KGoldrunner::editGameInfo()	{}// Force compile IDW game->editCollection (SL_UPD_GAME);}
-
 // Local slots to set mouse or keyboard control of the hero.
 
 void KGoldrunner::setMouseMode()	{game->setControlMode (MOUSE);}
@@ -1008,15 +1003,16 @@ bool KGoldrunner::getDirectories()
     return (result);
 }
 
-// This method is invoked when top-level window is closed, whether by selecting
+// This method is invoked when the main window is closed, whether by selecting
 // "Quit" from the menu or by clicking the "X" at the top right of the window.
+
+// If we return true, game-edits were saved or abandoned or there was no editing
+// in progress, so the main window will close.  If we return false, the user has
+// asked to go on editing, so the main window stays open.
 
 bool KGoldrunner::queryClose()
 {
-    // Last chance to save: user has clicked "X" widget or menu-Quit.
-    // Force compile IDW bool cannotContinue = true;
-    // Force compile IDW game->saveOK (cannotContinue);
-    return (true);
+    return (game->saveOK());
 }
 
 /******************************************************************************/
@@ -1127,33 +1123,6 @@ void KGoldrunner::setupEditToolbarActions()
     brick->setChecked (true);
     m_defaultEditAct = brick;
 }
-
-/******************************************************************************/
-/*********************   EDIT-BUTTON SLOTS   **********************************/
-/******************************************************************************/
-
-void KGoldrunner::freeSlot()
-                {} // Force compile IDW game->setEditObj (FREE);     }
-void KGoldrunner::edheroSlot()
-                {} // Force compile IDW game->setEditObj (HERO);     }
-void KGoldrunner::edenemySlot()
-                {} // Force compile IDW game->setEditObj (ENEMY);    }
-void KGoldrunner::brickSlot()
-                {} // Force compile IDW game->setEditObj (BRICK);    }
-void KGoldrunner::betonSlot()
-                {} // Force compile IDW game->setEditObj (BETON);    }
-void KGoldrunner::fbrickSlot()
-                {} // Force compile IDW game->setEditObj (FBRICK);   }
-void KGoldrunner::ladderSlot()
-                {} // Force compile IDW game->setEditObj (LADDER);   }
-void KGoldrunner::hladderSlot()
-                {} // Force compile IDW game->setEditObj (HLADDER);  }
-void KGoldrunner::poleSlot()
-                {} // Force compile IDW game->setEditObj (POLE);     }
-void KGoldrunner::nuggetSlot()
-                {} // Force compile IDW game->setEditObj (NUGGET);   }
-void KGoldrunner::defaultEditObj()
-                { m_defaultEditAct->setChecked (true); }
 
 QSize KGoldrunner::sizeHint() const
 {

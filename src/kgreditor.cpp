@@ -18,29 +18,40 @@
 #include <KLocale>
 #include <KDebug>
 #include <QTimer>
+#include <ctype.h>
 
 #include "kgreditor.h"
+#include "kgrselector.h"
 #include "kgrdialog.h"
+#include "kgrgameio.h"
 
 KGrEditor::KGrEditor (KGrCanvas * theView,
-                      const QString & /* theSystemDir */,
-                      const QString & /* theUserDir */,
+                      const QString & theSystemDir,
+                      const QString & theUserDir,
                       QList<KGrGameData *> & pGameList)
     :
-    // TODO - Parent should be the KGrGame object?
     QObject          (theView),		// Destroy Editor if view closes.
     view             (theView),
-    gameList         (pGameList)
+    systemDataDir    (theSystemDir),
+    userDataDir      (theUserDir),
+    gameList         (pGameList),
+    editObj          (BRICK),
+    shouldSave       (false),
+    mouseDisabled    (true)
 {
-    gameData.width   = FIELDWIDTH;	// Default values for a brand new game.
-    gameData.height  = FIELDHEIGHT;
-    levelData.width  = FIELDWIDTH;
+    levelData.width  = FIELDWIDTH;	// Default values for a brand new game.
     levelData.height = FIELDHEIGHT;
 
     // Connect and start the timer.
     timer = new QTimer (this);
     connect (timer, SIGNAL (timeout ()), this, SLOT (tick ()));
     timer->start (TickTime);		// TickTime def in kgrglobals.h.
+
+    // Connect edit-mode slots to signals from "view".
+    connect (view, SIGNAL (mouseClick (int)), SLOT (doEdit (int)));
+    connect (view, SIGNAL (mouseLetGo (int)), SLOT (endEdit (int)));
+    connect (this, SIGNAL (getMousePos (int &, int &)),
+             view, SLOT   (getMousePos (int &, int &)));
 }
 
 KGrEditor::~KGrEditor()
@@ -54,10 +65,7 @@ void KGrEditor::setEditObj (char newEditObj)
 
 void KGrEditor::createLevel (int pGameIndex)
 {
-    int	i, j;
-    gameIndex = pGameIndex;
-
-    if (! saveOK (false)) {				// Check unsaved work.
+    if (! saveOK ()) {				// Check unsaved work.
         return;
     }
 
@@ -69,8 +77,12 @@ void KGrEditor::createLevel (int pGameIndex)
         return;
     }
 
-    // Ignore player input from keyboard or mouse while the screen is set up.
-    loading = true;
+    int	i, j;
+    gameIndex = pGameIndex;
+    editLevel = 0;
+
+    // Ignore player input from the mouse while the screen is set up.
+    mouseDisabled = true;
 
     levelData.level = 0;
     levelData.name  = "";
@@ -88,29 +100,22 @@ void KGrEditor::createLevel (int pGameIndex)
     // Add a hero.
     insertEditObj (1, 1, HERO);
 
-    editObj = BRICK;
-
     savedLevelData.layout = levelData.layout;		// Copy for "saveOK()".
     savedLevelData.name   = levelData.name;
     savedLevelData.hint   = levelData.hint;
 
-    // Connect edit-mode slots to signals from "view".
-    connect (view, SIGNAL (mouseClick (int)), SLOT (doEdit (int)));
-    connect (view, SIGNAL (mouseLetGo (int)), SLOT (endEdit (int)));
-    connect (this, SIGNAL (getMousePos (int &, int &)), view, SLOT (getMousePos (int &, int &)));
+    view->update();					// Show the level name.
 
     // Re-enable player input.
-    loading = false;
-
-    view->update();					// Show the level name.
+    mouseDisabled = false;
 }
 
 void KGrEditor::updateLevel (int pGameIndex, int level)
 {
-    if (! saveOK (false)) {				// Check unsaved work.
+
+    if (! saveOK ()) {				// Check unsaved work.
         return;
     }
-    gameIndex = pGameIndex;
 
     if (! ownerOK (USER)) {
         KGrMessage::information (view, i18n ("Edit Level"),
@@ -119,12 +124,20 @@ void KGrEditor::updateLevel (int pGameIndex, int level)
         return;
     }
 
+    gameIndex = pGameIndex;
+
+    // Ignore player input from the mouse while the screen is set up.
+    mouseDisabled = true;
+
     if (level < 0)
         level = 0;
-    int lev = selectLevel (SL_UPDATE, level, gameIndex);
-    kDebug() << "Selected" << gamePtr->name << "level" << lev;
-    if (lev == 0)
+    int selectedLevel = selectLevel (SL_UPDATE, level, gameIndex);
+    kDebug() << "Selected" << gameList.at(gameIndex)->name
+             << "level" << selectedLevel;
+    if (selectedLevel == 0) {
+        mouseDisabled = false;
         return;
+    }
 
     if (gameList.at(gameIndex)->owner == SYSTEM) {
         KGrMessage::information (view, i18n ("Edit Level"),
@@ -134,30 +147,29 @@ void KGrEditor::updateLevel (int pGameIndex, int level)
             "and fall-through bricks, are you? :-)"));
     }
 
-    // Force compile IDW loadEditLevel (lev);
+    loadEditLevel (selectedLevel);
+    mouseDisabled = false;
 }
 
 void KGrEditor::loadEditLevel (int lev)
 {
-    // Ignore player input from keyboard or mouse while the screen is set up.
-    loading = true;
-
     // Read the level data.
     KGrLevelData d;
-    // Force compile IDW if (! readLevelData (lev, d)) {
-        // Force compile IDW loading = false;
-        // Force compile IDW return;
-    // Force compile IDW }
+    if (! readLevelData (lev, d)) {
+        return;
+    }
 
-    level = lev;
+    editLevel = lev;
     initEdit();
 
-    int i, j;
+    int  i, j;
+    char obj;
+
     // Load the level.
     for (i = 1; i <= levelData.width;  i++) {
 	for (j = 1; j <= levelData.height; j++) {
-            editObj = d.layout [(j-1) * d.width + (i-1)];
-            insertEditObj (i, j, editObj);
+            obj = d.layout [(j-1) * d.width + (i-1)];
+            insertEditObj (i, j, obj);
 	}
     }
     savedLevelData.layout = d.layout;		// Copy for "saveOK()".
@@ -169,20 +181,46 @@ void KGrEditor::loadEditLevel (int lev)
     levelHint = (d.hint.size() > 0) ?
                 QString::fromUtf8 ((const char *) d.hint) : "";
 
-    editObj = BRICK;				// Reset default object.
+    view->setTitle (getTitle());		// Show the level name.
+}
 
-    // Force compile IDW view->setTitle (getTitle());		// Show the level name.
-    showEditLevel();				// Reconnect signals.
+// TODO - Does this code really need to be duplicated in KGrGame and KGrEditor?
+bool KGrEditor::readLevelData (int levelNo, KGrLevelData & d)
+{
+    KGrGameIO io;
+    // If system game or ENDE screen, choose system dir, else choose user dir.
+    const QString dir = ((gameList.at(gameIndex)->owner == SYSTEM) ||
+                         (levelNo == 0)) ? systemDataDir : userDataDir;
+    kDebug() << "Owner" << gameList.at(gameIndex)->owner << "dir" << dir
+             << "Level" << gameList.at(gameIndex)->prefix << levelNo;
+    QString filePath;
+    IOStatus stat = io.fetchLevelData (dir, gameList.at(gameIndex)->prefix,
+                                       levelNo, d, filePath);
 
-    // Re-enable player input.
-    loading = false;
+    switch (stat) {
+    case NotFound:
+        KGrMessage::information (view, i18n ("Read Level Data"),
+            i18n ("Cannot find file '%1'.", filePath));
+        break;
+    case NoRead:
+    case NoWrite:
+        KGrMessage::information (view, i18n ("Read Level Data"),
+            i18n ("Cannot open file '%1' for read-only.", filePath));
+        break;
+    case UnexpectedEOF:
+        KGrMessage::information (view, i18n ("Read Level Data"),
+            i18n ("Reached end of file '%1' without finding level data.",
+            filePath));
+        break;
+    case OK:
+        break;
+    }
+
+    return (stat == OK);
 }
 
 void KGrEditor::editNameAndHint()
 {
-    if (! editMode)
-        return;
-
     // Run a dialog box to create/edit the level name and hint.
     KGrNHDialog * nh = new KGrNHDialog (levelName, levelHint, view);
 
@@ -199,21 +237,14 @@ bool KGrEditor::saveLevelFile()
 {
     bool isNew;
     int action;
-    int selectedLevel = level;
 
     int i, j;
     QString filePath;
 
-    if (! editMode) {
-        KGrMessage::information (view, i18n ("Save Level"),
-                i18n ("Inappropriate action: you are not editing a level."));
-        return (false);
-    }
+    // Save the current game index.
+    int N = gameIndex;
 
-    // Save the current collection index.
-    // Force compile IDW int N = collnIndex;
-
-    if (selectedLevel == 0) {
+    if (editLevel == 0) {
         // New level: choose a number.
         action = SL_CREATE;
     }
@@ -222,41 +253,42 @@ bool KGrEditor::saveLevelFile()
         action = SL_SAVE;
     }
 
-    // Pop up dialog box, which could change the collection or level or both.
-    // Force compile IDW selectedLevel = selectLevel (action, selectedLevel);
-    if (selectedLevel == 0)
+    // Pop up dialog box, which could change the game or level or both.
+    int selectedLevel = selectLevel (action, editLevel, gameIndex);
+    if (selectedLevel == 0) {
         return (false);
+    }
 
-    // Get the new collection (if changed).
-    // Force compile IDW int n = collnIndex;
+    // Get the new game (if changed).
+    int n = gameIndex;
 
     // Set the name of the output file.
-    // Force compile IDW filePath = getFilePath (owner, collection, selectedLevel);
+    filePath = getLevelFilePath (gameList.at(n), selectedLevel);
     QFile levelFile (filePath);
 
-    // Force compile IDW if ((action == SL_SAVE) && (n == N) && (selectedLevel == level)) {
+    if ((action == SL_SAVE) && (n == N) && (selectedLevel == editLevel)) {
         // This is a normal edit: the old file is to be re-written.
-        // Force compile IDW isNew = false;
-    // Force compile IDW }
-    // Force compile IDW else {
+        isNew = false;
+    }
+    else {
         isNew = true;
-        // Check if the file is to be inserted in or appended to the collection.
+        // Check if the file is to be inserted in or appended to the game.
         if (levelFile.exists()) {
             switch (KGrMessage::warning (view, i18n ("Save Level"),
                         i18n ("Do you want to insert a level and "
                         "move existing levels up by one?"),
                         i18n ("&Insert Level"), i18n ("&Cancel"))) {
 
-            case 0:	// Force compile IDW if (! reNumberLevels (n, selectedLevel,
-                                            // Force compile IDW collections.at (n)->nLevels, +1)) {
-                            // Force compile IDW return (false);
-                        // Force compile IDW }
+            case 0:	if (! reNumberLevels (n, selectedLevel,
+                                            gameList.at (n)->nLevels, +1)) {
+                            return (false);
+                        }
                         break;
             case 1:	return (false);
                         break;
             }
         }
-    // Force compile IDW }
+    }
 
     // Open the output file.
     if (! levelFile.open (QIODevice::WriteOnly)) {
@@ -303,13 +335,13 @@ bool KGrEditor::saveLevelFile()
     shouldSave = false;
 
     if (isNew) {
-        // Force compile IDW collections.at (n)->nLevels++;
-        // Force compile IDW saveCollections (owner);
+        gameList.at (n)->nLevels++;
+        saveGameData (USER);
     }
 
-    level = selectedLevel;
-    // Force compile IDW emit showLevel (level);
-    // Force compile IDW view->setTitle (getTitle());		// Display new title.
+    editLevel = selectedLevel;
+    emit showLevel (editLevel);
+    view->setTitle (getTitle());		// Display new title.
     return (true);
 }
 
@@ -326,119 +358,118 @@ void KGrEditor::moveLevelFile (int pGameIndex, int level)
 
     int action = SL_MOVE;
 
-    // Force compile IDW int fromC = collnIndex;
+    int fromC = gameIndex;
     int fromL = level;
-    // Force compile IDW int toC   = fromC;
+    int toC   = fromC;
     int toL   = fromL;
 
-    // Force compile IDW if (! ownerOK (USER)) {
+    if (! ownerOK (USER)) {
         KGrMessage::information (view, i18n ("Move Level"),
                 i18n ("You cannot move a level until you "
                 "have created a game and at least two levels. Try "
                 "menu item \"Create Game\"."));
-        // Force compile IDW return;
-    // Force compile IDW }
+        return;
+    }
 
-    // Force compile IDW if (collections.at (fromC)->owner != USER) {
+    if (gameList.at (fromC)->owner != USER) {
         KGrMessage::information (view, i18n ("Move Level"),
                 i18n ("Sorry, you cannot move a system level."));
-        // Force compile IDW return;
-    // Force compile IDW }
+        return;
+    }
 
-    // Pop up dialog box to get the collection and level number to move to.
-    // Force compile IDW while ((toC == fromC) && (toL == fromL)) {
-        // Force compile IDW toL = selectLevel (action, toL);
+    // Pop up dialog box to get the game and level number to move to.
+    while ((toC == fromC) && (toL == fromL)) {
+        toL = selectLevel (action, toL, gameIndex);
         if (toL == 0)
             return;
 
-        // Force compile IDW toC = collnIndex;
+        toC = gameIndex;
 
-        // Force compile IDW if ((toC == fromC) && (toL == fromL)) {
+        if ((toC == fromC) && (toL == fromL)) {
             KGrMessage::information (view, i18n ("Move Level"),
                     i18n ("You must change the level or the game or both."));
-        // Force compile IDW }
-    // Force compile IDW }
+        }
+    }
 
     QString filePath1;
     QString filePath2;
 
     // Save the "fromN" file under a temporary name.
-    // Force compile IDW filePath1 = getFilePath (USER, collections.at (fromC), fromL);
+    filePath1 = getLevelFilePath (gameList.at (fromC), fromL);
     filePath2 = filePath1;
     filePath2 = filePath2.append (".tmp");
-    // Force compile IDW if (! safeRename (filePath1, filePath2))
-        // Force compile IDW return;
+    if (! KGrGameIO::safeRename (filePath1, filePath2))
+        return;
 
-    // Force compile IDW if (toC == fromC) {					// Same collection.
+    if (toC == fromC) {					// Same game.
         if (toL < fromL) {				// Decrease level.
             // Move "toL" to "fromL - 1" up by 1.
-            // Force compile IDW if (! reNumberLevels (toC, toL, fromL-1, +1)) {
-                // Force compile IDW return;
-            // Force compile IDW }
+            if (! reNumberLevels (toC, toL, fromL-1, +1)) {
+                return;
+            }
         }
         else {						// Increase level.
             // Move "fromL + 1" to "toL" down by 1.
-            // Force compile IDW if (! reNumberLevels (toC, fromL+1, toL, -1)) {
-                // Force compile IDW return;
-            // Force compile IDW }
+            if (! reNumberLevels (toC, fromL+1, toL, -1)) {
+                return;
+            }
         }
-    // Force compile IDW }
-    // Force compile IDW else {						// Different collection.
+    }
+    else {						// Different game.
         // In "fromC", move "fromL + 1" to "nLevels" down and update "nLevels".
-        // Force compile IDW if (! reNumberLevels (fromC, fromL + 1,
-                                    // Force compile IDW collections.at (fromC)->nLevels, -1)) {
-            // Force compile IDW return;
-        // Force compile IDW }
-        // Force compile IDW collections.at (fromC)->nLevels--;
+        if (! reNumberLevels (fromC, fromL + 1,
+                                    gameList.at (fromC)->nLevels, -1)) {
+            return;
+        }
+        gameList.at (fromC)->nLevels--;
 
         // In "toC", move "toL + 1" to "nLevels" up and update "nLevels".
-        // Force compile IDW if (! reNumberLevels (toC, toL, collections.at (toC)->nLevels, +1)) {
-            // Force compile IDW return;
-        // Force compile IDW }
-        // Force compile IDW collections.at (toC)->nLevels++;
+        if (! reNumberLevels (toC, toL, gameList.at (toC)->nLevels, +1)) {
+            return;
+        }
+        gameList.at (toC)->nLevels++;
 
-        // Force compile IDW saveCollections (USER);
-    // Force compile IDW }
+        saveGameData (USER);
+    }
 
     // Rename the saved "fromL" file to become "toL".
-    // Force compile IDW filePath1 = getFilePath (USER, collections.at (toC), toL);
-    // Force compile IDW safeRename (filePath2, filePath1); // IDW
+    filePath1 = getLevelFilePath (gameList.at (toC), toL);
+    KGrGameIO::safeRename (filePath2, filePath1); // IDW
 
-    level = toL;
-    // Force compile IDW collection = collections.at (toC);
-    // Force compile IDW view->setTitle (getTitle());	// Re-write title.
-    // Force compile IDW emit showLevel (level);
+    editLevel = toL;
+    emit showLevel (editLevel);
+    view->setTitle (getTitle());	// Re-write title.
 }
 
 void KGrEditor::deleteLevelFile (int pGameIndex, int level)
 {
     int action = SL_DELETE;
-    int lev = level;
     gameIndex = pGameIndex;
 
-    // Force compile IDW if (! ownerOK (USER)) {
+    if (! ownerOK (USER)) {
         KGrMessage::information (view, i18n ("Delete Level"),
                 i18n ("You cannot delete a level until you "
                 "have created a game and a level. Try "
                 "menu item \"Create Game\"."));
-        // Force compile IDW return;
-    // Force compile IDW }
-
-    // Pop up dialog box to get the collection and level number.
-    // Force compile IDW lev = selectLevel (action, level);
-    if (lev == 0)
         return;
+    }
+
+    // Pop up dialog box to get the game and level number.
+    int selectedLevel = selectLevel (action, level, gameIndex);
+    if (selectedLevel == 0) {
+        return;
+    }
 
     QString filePath;
 
     // Set the name of the file to be deleted.
-    // Force compile IDW int n = collnIndex;
-    // Force compile IDW filePath = getFilePath (USER, collections.at (n), lev);
+    int n = gameIndex;
+    filePath = getLevelFilePath (gameList.at (n), selectedLevel);
     QFile levelFile (filePath);
 
-    // Delete the file for the selected collection and level.
+    // Delete the file for the selected game and level.
     if (levelFile.exists()) {
-        // Force compile IDW if (lev < collections.at (n)->nLevels) {
+        if (selectedLevel < gameList.at (n)->nLevels) {
             switch (KGrMessage::warning (view, i18n ("Delete Level"),
                                 i18n ("Do you want to delete a level and "
                                 "move higher levels down by one?"),
@@ -447,13 +478,14 @@ void KGrEditor::deleteLevelFile (int pGameIndex, int level)
             case 1:	return; break;
             }
             levelFile.remove();
-            // Force compile IDW if (! reNumberLevels (n, lev + 1, collections.at(n)->nLevels, -1)) {
-                // Force compile IDW return;
-            // Force compile IDW }
-        // Force compile IDW }
-        // Force compile IDW else {
+            if (! reNumberLevels (n, selectedLevel + 1,
+                                  gameList.at(n)->nLevels, -1)) {
+                return;
+            }
+        }
+        else {
             levelFile.remove();
-        // Force compile IDW }
+        }
     }
     else {
         KGrMessage::information (view, i18n ("Delete Level"),
@@ -461,256 +493,193 @@ void KGrEditor::deleteLevelFile (int pGameIndex, int level)
         return;
     }
 
-    // Force compile IDW collections.at (n)->nLevels--;
-    // Force compile IDW saveCollections (USER);
-    // Force compile IDW if (lev <= collections.at (n)->nLevels) {
-        // Force compile IDW level = lev;
-    // Force compile IDW }
-    // Force compile IDW else {
-        // Force compile IDW level = collections.at (n)->nLevels;
-    // Force compile IDW }
-
-    // Repaint the screen with the level that now has the selected number.
-    if (editMode && (level > 0)) {
-        loadEditLevel (level);			// Load level in edit mode.
-    }
-    else if (level > 0) {
-        // Force compile IDW enemyCount = 0;				// Load level in play mode.
-        //enemies.clear();
-        // Force compile IDW while (!enemies.isEmpty())
-            // Force compile IDW delete enemies.takeFirst();
-
-        // Force compile IDW view->deleteEnemySprites();
-        // Force compile IDW newLevel = true;;
-        // Force compile IDW loadLevel (level);
-        // Force compile IDW showTutorialMessages (level);
-        // Force compile IDW newLevel = false;
+    gameList.at (n)->nLevels--;
+    saveGameData (USER);
+    if (selectedLevel <= gameList.at (n)->nLevels) {
+        editLevel = selectedLevel;
     }
     else {
-        createLevel (gameIndex);	// No levels left in collection.
+        editLevel = gameList.at (n)->nLevels;
     }
-    // Force compile IDW emit showLevel (level);
+
+    // Repaint the screen with the level that now has the selected number.
+    if (level > 0) {
+        loadEditLevel (editLevel);	// Load level in edit mode.
+    }
+    else {
+        createLevel (gameIndex);	// No levels left in game.
+    }
+    emit showLevel (editLevel);
 }
 
 void KGrEditor::editGame (int pGameIndex)
 {
-    int lev = level;
     int n = -1;
     int action = (pGameIndex < 0) ? SL_CR_GAME : SL_UPD_GAME;
     gameIndex = pGameIndex;
 
-    // If editing, choose a collection.
+    // If editing, choose a game.
     if (gameIndex >= 0) {
-        // Force compile IDW lev = selectLevel (SL_UPD_GAME, level);
-        if (lev == 0)
+        int selectedLevel = selectLevel (SL_UPD_GAME, editLevel, gameIndex);
+        if (selectedLevel == 0) {
             return;
-        level = lev;
-        // Force compile IDW n = collnIndex;
+        }
+        editLevel = selectedLevel;
+        n = gameIndex;
     }
 
-    // Force compile IDW KGrECDialog * ec = new KGrECDialog (action, n, collections, view);
+    KGrECDialog * ec = new KGrECDialog (action, n, gameList, view);
 
-    // Force compile IDW while (ec->exec() == QDialog::Accepted) {	// Loop until valid.
+    while (ec->exec() == QDialog::Accepted) {	// Loop until valid.
 
-        // Validate the collection details.
-        // Force compile IDW QString ecName = ec->getName();
-        // Force compile IDW int len = ecName.length();
-        // Force compile IDW if (len == 0) {
+        // Validate the game details.
+        QString ecName = ec->getName();
+        int len = ecName.length();
+        if (len == 0) {
             KGrMessage::information (view, i18n ("Save Game Info"),
                 i18n ("You must enter a name for the game."));
-            // Force compile IDW continue;
-        // Force compile IDW }
+            continue;
+        }
 
-        // Force compile IDW QString ecPrefix = ec->getPrefix();
-        // Force compile IDW if ((action == SL_CR_GAME) || (collections.at (n)->nLevels <= 0)) {
+        QString ecPrefix = ec->getPrefix();
+        if ((action == SL_CR_GAME) || (gameList.at (n)->nLevels <= 0)) {
             // The filename prefix could have been entered, so validate it.
-            // Force compile IDW len = ecPrefix.length();
-            int len = 0; // Force compile IDW
+            len = ecPrefix.length();
 	    if (len == 0) {
                 KGrMessage::information (view, i18n ("Save Game Info"),
                     i18n ("You must enter a filename prefix for the game."));
-                // Force compile IDW continue;
+                continue;
             }
             if (len > 5) {
                 KGrMessage::information (view, i18n ("Save Game Info"),
                     i18n ("The filename prefix should not "
                     "be more than 5 characters."));
-                // Force compile IDW continue;
+                continue;
             }
 
             bool allAlpha = true;
             for (int i = 0; i < len; i++) {
-                // Force compile IDW if (! isalpha (ecPrefix.myChar (i))) {
+                if (! isalpha (ecPrefix.at (i).toLatin1())) {
                     allAlpha = false;
                     break;
-                // Force compile IDW }
+                }
             }
             if (! allAlpha) {
                 KGrMessage::information (view, i18n ("Save Game Info"),
                     i18n ("The filename prefix should be "
                     "all alphabetic characters."));
-                // Force compile IDW continue;
+                continue;
             }
 
             bool duplicatePrefix = false;
-            // TODO - Use KGrGameData. // KGrCollection * c;
-            // Force compile IDW int imax = collections.count();
-            // Force compile IDW for (int i = 0; i < imax; i++) {
-                // Force compile IDW c = collections.at (i);
-                // Force compile IDW if ((c->prefix == ecPrefix) && (i != n)) {
+            KGrGameData * c;
+            int imax = gameList.count();
+            for (int i = 0; i < imax; i++) {
+                c = gameList.at (i);
+                if ((c->prefix == ecPrefix) && (i != n)) {
                     duplicatePrefix = true;
-                    // Force compile IDW break;
-                // Force compile IDW }
-            // Force compile IDW }
+                    break;
+                }
+            }
 
             if (duplicatePrefix) {
-                // Force compile IDW KGrMessage::information (view, i18n ("Save Game Info"),
-                    // Force compile IDW i18n ("The filename prefix '%1' is already in use.",
-                     // Force compile IDW ecPrefix));
-                // Force compile IDW continue;
+                KGrMessage::information (view, i18n ("Save Game Info"),
+                    i18n ("The filename prefix '%1' is already in use.",
+                    ecPrefix));
+                continue;
             }
-        // Force compile IDW }
+        }
 
-        // Save the collection details.
-        char settings = 'K';
-        // Force compile IDW if (ec->isTrad()) {
-            // Force compile IDW settings = 'T';
-        // Force compile IDW }
+        // Save the game details.
+        char rules = 'K';
+        if (ec->isTrad()) {
+            rules = 'T';
+        }
+
+        KGrGameData * gameData = 0;
         if (action == SL_CR_GAME) {
-            // Force compile IDW collections.append (new KGrCollection (USER,
-                // Force compile IDW ecName, ecPrefix, settings, 0, ec->getAboutText(), 'N'));
+            // Create empty game data and add it to the list.
+            gameData = new KGrGameData();
+            gameList.append (gameData);
+
+            // Set the initial values for a new game.
+            gameData->owner   = USER;
+            gameData->nLevels = 0;
+            gameData->skill   = 'N';
+            gameData->width   = FIELDWIDTH;
+            gameData->height  = FIELDHEIGHT;
         }
         else {
-            // Force compile IDW collection->name		= ecName;
-            // Force compile IDW collection->prefix		= ecPrefix;
-            // Force compile IDW collection->settings	= settings;
-            // Force compile IDW collection->about		= ec->getAboutText();
+            // Point to existing game data.
+            gameData = gameList.at (gameIndex);
         }
 
-        // Force compile IDW saveCollections (USER);
-        // Force compile IDW break;				// All done now.
-    // Force compile IDW }
+        // Create or update the editable values.
+        gameData->rules       = rules;
+        gameData->prefix      = ecPrefix;
+        gameData->name        = ecName.toUtf8();
+        gameData->about       = ec->getAboutText().toUtf8();
 
-    // Force compile IDW delete ec;
+        saveGameData (USER);
+        break;				// All done now.
+    }
+
+    delete ec;
 }
 
 /******************************************************************************/
-/**********************    LEVEL SELECTION DIALOG BOX    **********************/
+/************************    LEVEL SELECTION DIALOG    ************************/
 /******************************************************************************/
 
-int KGrEditor::selectLevel (int action, int requestedLevel, int requestedGame)
+int KGrEditor::selectLevel (int action, int requestedLevel, int & requestedGame)
 {
     int selectedLevel = 0;		// 0 = no selection (Cancel) or invalid.
     int selectedGame  = requestedGame;
 
-    // Prevent editing during the dialog.
-    // modalFreeze = false;
-    // if (! gameFrozen) {
-        // modalFreeze = true;
-        // freeze();
-    // }
-
     // Create and run a modal dialog box to select a game and level.
-    // TODO - Avoid using KGrGame * as parameter 5.
     KGrSLDialog * sl = new KGrSLDialog (action, requestedLevel, requestedGame,
-                                        gameList, /* this, */ view);
-    while (sl->exec() == QDialog::Accepted) {
-        selectedGame = sl->selectedGame();
-        selectedLevel = 0;	// In case the selection is invalid.
-        if (gameList.at (selectedGame)->owner == SYSTEM) {
-            switch (action) {
-            case SL_CREATE:	// Can save only in a USER collection.
-            case SL_SAVE:
-            case SL_MOVE:
-                KGrMessage::information (view, i18n ("Select Level"),
-                        i18n ("Sorry, you can only save or move "
-                        "into one of your own games."));
-                continue;			// Re-run the dialog box.
-                break;
-            case SL_DELETE:	// Can delete only in a USER collection.
-                KGrMessage::information (view, i18n ("Select Level"),
-                        i18n ("Sorry, you can only delete a level "
-                        "from one of your own games."));
-                continue;			// Re-run the dialog box.
-                break;
-            case SL_UPD_GAME:	// Can edit info only in a USER collection.
-                KGrMessage::information (view, i18n ("Edit Game Info"),
-                        i18n ("Sorry, you can only edit the game "
-                        "information on your own games."));
-                continue;			// Re-run the dialog box.
-                break;
-            default:
-                break;
-            }
-        }
-
-        selectedLevel = sl->selectedLevel();
-        if ((selectedLevel > gameList.at (selectedGame)->nLevels) &&
-            (action != SL_CREATE) && (action != SL_SAVE) &&
-            (action != SL_MOVE) && (action != SL_UPD_GAME)) {
-            KGrMessage::information (view, i18n ("Select Level"),
-                i18n ("There is no level %1 in \"%2\", "
-                "so you cannot play or edit it.",
-                 selectedLevel,
-                 gameList.at (selectedGame)->name.constData()));
-            selectedLevel = 0;			// Set an invalid selection.
-            continue;				// Re-run the dialog box.
-        }
-
-        // If "OK", set the results.
-        gamePtr = gameList.at (selectedGame);
-        gameIndex = selectedGame;
-        // Set default rules for selected game.
-        // TODO - Declare this signal ... emit markRuleType (gamePtr->rules);
-        break;
-    }
-
-    // Unfreeze the game, but only if it was previously unfrozen.
-    // if (modalFreeze) {
-        // unfreeze();
-        // modalFreeze = false;
-    // }
-
+                                        gameList, systemDataDir, userDataDir,
+                                        view);
+    bool selected = sl->selectLevel (selectedGame, selectedLevel);
     delete sl;
-    return (selectedLevel);			// 0 = canceled or invalid.
+
+    if (selected) {
+        requestedGame = selectedGame;
+        return (selectedLevel);
+    }
+    else {
+        return (0);			// 0 = cancelled or invalid.
+    }
 }
 
 /******************************************************************************/
 /*********************  SUPPORTING GAME EDITOR FUNCTIONS  *********************/
 /******************************************************************************/
 
-bool KGrEditor::saveOK (bool exiting)
+bool KGrEditor::saveOK ()
 {
-    int		i, j;
-    bool	result;
-    QString	option2 = i18n ("&Go on editing");
+    bool result = true;
 
-    result = true;
-
-    if (editMode) {
-        if (exiting) {					// If window is closing,
-            option2 = "";				// can't go on editing.
-        }
-        if ((shouldSave) || (levelData.layout != savedLevelData.layout)) {
-            // If shouldSave == true, level name or hint was edited.
-            switch (KGrMessage::warning (view, i18n ("Editor"),
-                        i18n ("You have not saved your work. Do "
-                        "you want to save it now?"),
-                        i18n ("&Save"), i18n ("&Do Not Save"), option2))
-            {
-            case 0:
-                result = saveLevelFile();	// Save and continue.
-                break;
-            case 1:
-                shouldSave = false;		// Continue: don't save.
-                break;
-            case 2:
-                result = false;			// Go back to editing.
-                break;
-            }
-            return (result);
+    if ((shouldSave) || (levelData.layout != savedLevelData.layout)) {
+        // If shouldSave == true, level name or hint was edited.
+        switch (KGrMessage::warning (view, i18n ("Editor"),
+                    i18n ("You have not saved your work. Do "
+                    "you want to save it now?"),
+                    i18n ("&Save"), i18n ("&Do Not Save"),
+                    i18n ("&Go on editing")))
+        {
+        case 0:
+            result = saveLevelFile();		// Save and continue.
+            break;
+        case 1:
+            shouldSave = false;			// Continue: don't save.
+            break;
+        case 2:
+            result = false;			// Go back to editing.
+            break;
         }
     }
+
     return (result);
 }
 
@@ -721,18 +690,13 @@ void KGrEditor::initEdit()
 
     // Set the default object and button.
     editObj = BRICK;
-    // Force compile IDW emit defaultEditObj();	// Set default edit-toolbar button.
 
     oldI = 0;
     oldJ = 0;
     heroCount = 0;
 
-    // Force compile IDW emit showLevel (level);
-    // Force compile IDW emit showLives (0);
-    // Force compile IDW emit showScore (0);
-
-    // TODO - This works for createLevel only.
-    view->setTitle (i18n ("New Level"));// Show title of level.
+    emit showLevel (editLevel);
+    view->setTitle (getTitle());	// Show title of level.
 
     shouldSave = false;		// Used to flag editing of name or hint.
 }
@@ -806,21 +770,15 @@ bool KGrEditor::reNumberLevels (int cIndex, int first, int last, int inc)
     }
 
     while (i != n) {
-        // Force compile IDW file1 = getFilePath (USER, collections.at (cIndex), i);
-        // Force compile IDW file2 = getFilePath (USER, collections.at (cIndex), i - step);
-        // Force compile IDW if (! safeRename (file1, file2)) {
-            // Force compile IDW return (false);
-        // Force compile IDW }
+        file1 = getLevelFilePath (gameList.at (cIndex), i);
+        file2 = getLevelFilePath (gameList.at (cIndex), i - step);
+        if (! KGrGameIO::safeRename (file1, file2)) {
+            return (false);
+        }
         i = i + step;
     }
 
     return (true);
-}
-
-void KGrEditor::setLevel (int lev)
-{
-    level = lev;
-    return;
 }
 
 bool KGrEditor::ownerOK (Owner o)
@@ -845,10 +803,10 @@ bool KGrEditor::saveGameData (Owner o)
     if (o != USER) {
         KGrMessage::information (view, i18n ("Save Game Info"),
             i18n ("You can only modify user games."));
-        return false;
+        return (false);
     }
 
-    // TODO - Editor needs directory paths. filePath = userDataDir + "games.dat";
+    filePath = userDataDir + "games.dat";
 
     QFile c (filePath);
 
@@ -860,41 +818,84 @@ bool KGrEditor::saveGameData (Owner o)
     }
 
     // Save the game-data objects.
-    QString		line;
+    QString             line;
+    QByteArray          lineC;
     int			i, len;
     char		ch;
 
-    // TODO - Editor needs the game-list.
-    // foreach (KGrGameData * gData, gameList) {
-        // if (gData->owner == o) {
-            // line.sprintf ("%03d %c %s %s\n", gData->nLevels, gData->rules,
-                                // gData->prefix.myStr(),
-                                // gData->name.constData());
-            // len = line.length();
-            // for (i = 0; i < len; i++)
-                        // c.putChar (line.toUtf8()[i]);
+    foreach (KGrGameData * gData, gameList) {
+        if (gData->owner == o) {
+            line.sprintf ("%03d %c %s %s\n", gData->nLevels, gData->rules,
+                                gData->prefix.toLatin1().constData(),
+                                gData->name.constData());
+            lineC = line.toUtf8();
+            len = lineC.length();
+            for (i = 0; i < len; i++) {
+                c.putChar (lineC.at (i));
+            }
 
-            // len = gData->about.length();
-            // if (len > 0) {
-                // QByteArray aboutC = gData->about;
-                // len = aboutC.length();		// Might be longer now.
-                // for (i = 0; i < len; i++) {
-                    // ch = aboutC[i];
-                    // if (ch != '\n') {
-                        // c.putChar (ch);		// Copy the character.
-                    // }
-                    // else {
-                        // c.putChar ('\\');	// Change newline to \ and n.
-                        // c.putChar ('n');
-                    // }
-                // }
-                // c.putChar ('\n');		// Add a real newline.
-            // }
-        // }
-    // }
+            len = gData->about.length();
+            if (len > 0) {
+                QByteArray aboutC = gData->about;
+                len = aboutC.length();		// Might be longer now.
+                for (i = 0; i < len; i++) {
+                    ch = aboutC[i];
+                    if (ch != '\n') {
+                        c.putChar (ch);		// Copy the character.
+                    }
+                    else {
+                        c.putChar ('\\');	// Change newline to \ and n.
+                        c.putChar ('n');
+                    }
+                }
+                c.putChar ('\n');		// Add a real newline.
+            }
+        }
+    }
 
     c.close();
     return (true);
+}
+
+QString KGrEditor::getTitle()
+{
+    if (editLevel <= 0) {
+        // Generate a special title for a new level.
+        return (i18n ("New Level"));
+    }
+
+    // Set title string to "Game-name - NNN" or "Game-name - NNN - Level-name".
+    KGrGameData * gameData = gameList.at(gameIndex);
+    QString levelNumber;
+    levelNumber.setNum (editLevel);
+    levelNumber = levelNumber.rightJustified (3,'0');
+
+    // TODO - Make sure gameData->name.constData() results in Unicode display
+    //        and not some weird UTF8 character stuff.
+    QString levelTitle = (levelName.length() <= 0)
+                    ?
+                    i18nc ("Game name - level number.",
+                           "%1 - %2",
+                           gameData->name.constData(), levelNumber)
+                    :
+                    i18nc ("Game name - level number - level name.",
+                           "%1 - %2 - %3",
+                           gameData->name.constData(), levelNumber, levelName);
+    return (levelTitle);
+}
+
+QString KGrEditor::getLevelFilePath (KGrGameData * gameData, int lev)
+{
+    QString filePath;
+
+    filePath.setNum (lev);			// Convert integer -> QString.
+    filePath = filePath.rightJustified (3,'0'); // Add 0-2 zeros at left.
+    filePath.append (".grl");			// Add KGoldrunner level-suffix.
+    filePath.prepend (gameData->prefix);	// Add the game's file-prefix.
+
+    filePath.prepend (userDataDir + "levels/");	// Add user's directory path.
+
+    return (filePath);
 }
 
 /******************************************************************************/
@@ -903,6 +904,10 @@ bool KGrEditor::saveGameData (Owner o)
 
 void KGrEditor::doEdit (int button)
 {
+    if (mouseDisabled) {
+        return;
+    }
+
     // Mouse button down: start making changes.
     int i, j;
     emit getMousePos (i, j);
@@ -928,6 +933,10 @@ void KGrEditor::doEdit (int button)
 
 void KGrEditor::tick()
 {
+    if (mouseDisabled) {
+        return;
+    }
+
     // Check if a mouse-button is down: left = paint, right = erase.
     if (paintEditObj || paintAltObj) {
 
@@ -946,6 +955,10 @@ void KGrEditor::tick()
 
 void KGrEditor::endEdit (int button)
 {
+    if (mouseDisabled) {
+        return;
+    }
+
     // Mouse button released: finish making changes.
     int i, j;
     emit getMousePos (i, j);

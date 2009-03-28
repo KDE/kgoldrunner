@@ -9,6 +9,20 @@ const char ScavengerRules   = 'S';
 /// Modes for controlling the hero in KGoldrunner.
 enum Control {MOUSE, KEYBOARD, LAPTOP};
 
+class QWidget;
+class QString;
+
+/// Centralised message functions: implementations in kgrdialog.cpp.
+class KGrMessage
+{
+public:
+    static void information (QWidget * parent, const QString &caption,
+                            const QString &text);
+    static int warning (QWidget * parent, const QString &caption,
+                            const QString &text, const QString &label0,
+                            const QString &label1, const QString &label2 = "");
+};
+
 /// KGrGameData structure: contains attributes of a KGoldrunner game.
 class KGrGameData
 {

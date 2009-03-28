@@ -14,11 +14,9 @@
 //
 // "myStr" converts a QString object to a C language "char*" character string.
 // "myChar" extracts a C language character (type "char") from a QString object.
-// "endData" checks for an end-of-file condition.
 //
 #define myStr		toLatin1().constData
 #define myChar(i)	at((i)).toLatin1()
-#define endData		atEnd
 
 #include <QObject>
 #include <QList>
@@ -66,7 +64,7 @@ public:
     bool inEditMode();			// True if the game is in editor mode.
     bool isLoading();			// True if a level is being loaded.
 
-    bool saveOK (bool exiting);		// Check if edits were saved.
+    bool saveOK();			// Check if edits were saved.
 
     QString	getTitle();		// Collection - Level NNN, Name.
 
@@ -81,7 +79,7 @@ public:
     static bool logging;
 
 public slots:
-    void kbControl (int dirn); // xxxxxxxxxxxxxx
+    void kbControl (int dirn);
 
     void gameActions (int action);
     void editActions (int action);
@@ -158,10 +156,7 @@ private:
 
     void checkHighScore();		// Check if high score for current game.
 
-    int  selectLevel (int action, int requestedLevel);
     int  selectedGame;
-
-    bool safeRename (const QString & oldName, const QString & newName);
 
 /******************************************************************************/
 /**************************  PLAYFIELD AND GAME DATA  *************************/
@@ -173,10 +168,6 @@ private:
     KGrCanvas *			view;		// Where the game is displayed.
     QString			systemDataDir;	// System games are stored here.
     QString			userDataDir;	// User games are stored here.
-
-    // OBSOLESCENT - 31/1/09 KGrObject *		playfield[30][22];	// Array of playfield objects.
-    // OBSOLESCENT - 31/1/09 char		editObjArray[30][22];	// Character-code equivalent.
-    // OBSOLESCENT - 31/1/09 char		lastSaveArray[30][22];	// Copy for use in "saveOK()".
 
     int				level;		// Current play/edit level.
     QString			levelName;	// Level name (optional).
@@ -216,24 +207,7 @@ private:
     QVector< int > fx;
 
 public slots:
-    void dbgControl (int code);		// Authors' debugging aids.
-
-/******************************************************************************/
-/********************  GAME EDITOR PROPERTIES AND METHODS  ********************/
-/******************************************************************************/
-
-public slots:			// Slots connected to the Menu and Edit Toolbar.
-    // Force compile IDW void createLevel();		// Set up a blank level-display for edit.
-    // Force compile IDW void updateLevel();         // Update an existing level.
-    // Force compile IDW void updateNext();          // Update the current level + 1.
-    // Force compile IDW void editNameAndHint();	// Run a dialog to edit the level name and hint.
-    // Force compile IDW bool saveLevelFile();	// Save the edited level in a text file (.grl).
-    // Force compile IDW void moveLevelFile();	// Move level to another collection or number.
-    // Force compile IDW void deleteLevelFile();	// Delete a level file.
-
-    // Force compile IDW void editCollection (int action);
-
-    // Force compile IDW void setLevel (int lev);	// Set level to be edited.
+    void dbgControl (int code);	// Authors' debugging aids.
 
     void freeze();		// Stop the gameplay action.
     void unfreeze();		// Restart the gameplay action.
@@ -243,15 +217,6 @@ private:
     KGrEditor * editor;		// The level-editor object.
 
     Control controlMode;	// How to control the hero (e.g. K/B or mouse).
-
-    bool editMode;		// Flag to change keyboard and mouse functions.
-    char editObj;		// Type of object to be painted by the mouse.
-    bool paintEditObj;		// Sets painting on/off (toggled by clicking).
-    bool paintAltObj;		// Sets painting for the alternate object on/off
-    int  oldI, oldJ;		// Last mouse position painted.
-    int  editLevel;		// Level to be edited (= 0 for new level).
-    int  heroCount;		// Can enter at most one hero.
-    bool shouldSave;		// True if name or hint was edited.
 
 /******************************************************************************/
 /***********************   GAME PROPERTIES AND METHODS   **********************/
@@ -270,30 +235,6 @@ private:
 /******************************************************************************/
 
     void myMessage (QWidget * parent, const QString &title, const QString &contents);
-};
-
-/******************************************************************************/
-/**********************    CLASS TO DISPLAY THUMBNAIL   ***********************/
-/******************************************************************************/
-
-class KGrThumbNail : public QFrame
-{
-public:
-    explicit KGrThumbNail (QWidget *parent = 0, const char *name = 0);
-    void setLevelData (const QString& dir, const QString& prefix, int level, QLabel * sln);
-
-    static QColor backgroundColor;
-    static QColor brickColor;
-    static QColor ladderColor;
-    static QColor poleColor;
-
-protected:
-    void paintEvent (QPaintEvent * event);	// Draw a preview of a level.
-
-private:
-    QByteArray levelName;
-    QByteArray levelLayout;
-    QLabel *   lName;				// Place to write level-name.
 };
 
 #endif

@@ -103,10 +103,6 @@ private slots:
     // Slot to change the graphics theme.
     void changeTheme (const QString & themeFilepath);
 
-    // Local slots to create or edit game information.
-    void createGame();
-    void editGameInfo();
-
     // Local slots to set mouse/keyboard or laptop-hybrid control of the hero.
     void setMouseMode();
     void setKeyBoardMode();
@@ -204,19 +200,6 @@ private:
 
     KToolBar *		editToolbar;	// Toolbar for creating/editing levels.
     KToggleAction *     m_defaultEditAct;
-
-private slots:
-    void freeSlot();			// Set editObj to Free Space.
-    void edheroSlot();			// Set editObj to Hero.
-    void edenemySlot();			// Set editObj to Enemy.
-    void brickSlot();			// Set editObj to Brick.
-    void betonSlot();			// Set editObj to Concrete.
-    void fbrickSlot();			// Set editObj to Fall-through Brick.
-    void ladderSlot();			// Set editObj to Ladder.
-    void hladderSlot();			// Set editObj to Hidden Ladder.
-    void poleSlot();			// Set editObj to Pole (or Bar).
-    void nuggetSlot();			// Set editObj to Gold Nugget.
-    void defaultEditObj();		// Set editObj to default (brick).
 };
 
 #endif // _KGOLDRUNNER_H_

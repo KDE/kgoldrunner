@@ -49,8 +49,6 @@ public:
 
     void setTitle (const QString&);
 
-    void setHeroVisible (bool);
-
     void moveEnemy (int, int, int, int, int);
 
     void goToBlack();

@@ -34,62 +34,7 @@
 @author Ian Wadham and Marco Krüger
 */
 
-class KGrGame;
 class KGrGameData;
-class KGrThumbNail;
-class KGrGameListItem;
-
-/******************************************************************************/
-/*******************    DIALOG TO SELECT A GAME AND LEVEL   *******************/
-/******************************************************************************/
-
-class KGrSLDialog : public KDialog
-{
-Q_OBJECT
-public:
-    // TODO - Re-implement parameter 5 some other way.
-    KGrSLDialog (int action, int requestedLevel, int collnIndex,
-                        QList<KGrGameData *> & gameList, /* KGrGame * theGame,*/
-                        QWidget * parent = 0);
-    ~KGrSLDialog();
-
-    int selectedLevel()	{return (number->value());}
-    int selectedGame()	{return (slCollnIndex);}
-
-private slots:
-    void slSetCollections (int cIndex);
-    void slColln();
-    void slShowLevel (int i);
-    void slUpdate (const QString & text);
-    void slPaintLevel();
-    void slotHelp();				// Will replace KDE slotHelp().
-
-private:
-    int			slAction;
-    QList<KGrGameData *> myGameList;	// List of games.
-    int			defaultLevel;
-    int			defaultGame;
-    int			slCollnIndex;
-    // TODO - Re-implement parameter 5 some other way.
-    // KGrGame *		gameControl;
-    // KGrGameData *	selectedGame; // OBSOLESCENT? - 32/1/09
-    QWidget *		slParent;
-
-    QLabel *		collnL;
-    QTreeWidget *	colln;
-    QLabel *		collnN;
-    QLabel *		collnD;
-    QPushButton *	collnA;
-    QTextEdit *		collnAbout;
-
-    QLabel *		numberL;
-    QSpinBox *		display;
-    QScrollBar *	number;
-    // IDW QSlider *		number;
-    QPushButton *	levelNH;
-    QLabel *		slName;
-    KGrThumbNail *	thumbNail;
-};
 
 /*******************************************************************************
 *************** DIALOG BOX TO CREATE/EDIT A LEVEL NAME AND HINT ****************
@@ -172,34 +117,6 @@ private slots:
 private:
     QListWidget * lgList;
     int lgHighlight;
-};
-
-/*******************************************************************************
-******************  PORTABLE MESSAGE FUNCTIONS (Qt Version)  *******************
-*******************************************************************************/
-
-class KGrMessage : public QDialog
-{
-public:
-    static void information (QWidget * parent, const QString &caption,
-                            const QString &text);
-    static int warning (QWidget * parent, const QString &caption,
-                            const QString &text, const QString &label0,
-                            const QString &label1, const QString &label2 = "");
-};
-
-/*******************************************************************************
-*************************  ITEM FOR THE LIST OF GAMES  *************************
-*******************************************************************************/
-
-class KGrGameListItem : public QTreeWidgetItem
-{
-public:
-    KGrGameListItem (const QStringList & data, const int internalId = -1);
-    int id() const;
-    void setId (const int internalId);
-private:
-    int mInternalId;
 };
 
 #endif

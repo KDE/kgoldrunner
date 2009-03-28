@@ -17,6 +17,7 @@ set(kgoldrunner_SRCS
    kgrtimer.cpp
    kgreditor.cpp
    main.cpp 
+   kgrselector.cpp
    kgrdialog.cpp )
 
 
