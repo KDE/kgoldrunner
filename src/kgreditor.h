@@ -37,8 +37,6 @@ class QTimer;
  * are displayed on the screen by the KGrCanvas (view) object.
  *
  * @short Game-editor class
- * @author $AUTHOR <$EMAIL>
- * @version $APP_VERSION
  */
 class KGrEditor : public QObject
 {
