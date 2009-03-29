@@ -170,7 +170,7 @@ HeroStatus KGrHero::run (const int scaledTime)
     }
 
     if (((nextAnimation == RUN_R) || (nextAnimation == RUN_L)) &&
-        (cell == POLE)) {
+        (cell == BAR)) {
         nextAnimation = (nextDirection == RIGHT) ? CLIMB_R : CLIMB_L;
     }
 
@@ -389,7 +389,7 @@ void KGrEnemy::run (const int scaledTime)
     }
 
     if (((nextAnimation == RUN_R) || (nextAnimation == RUN_L)) &&
-        (cellType == POLE)) {
+        (cellType == BAR)) {
         nextAnimation = (nextDirection == RIGHT) ? CLIMB_R : CLIMB_L;
     }
 

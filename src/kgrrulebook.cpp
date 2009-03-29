@@ -334,7 +334,7 @@ int KGrTraditionalRules::distanceDown (int x, int y, int deltah)
         objType = grid->cellType (x, y + rungs + 1);
         switch (objType) {
         case BRICK:
-        case BETON:
+        case CONCRETE:
         case HOLE:			// Enemy cannot go DOWN through a hole.
         case USEDHOLE:
             if ((deltah > 0) && (rungs <= deltah))
@@ -345,7 +345,7 @@ int KGrTraditionalRules::distanceDown (int x, int y, int deltah)
                 canGoThru = false;	// Cannot go through here.
             break;
         case LADDER:
-        case POLE:			// Can go through or stop.
+        case BAR:			// Can go through or stop.
             rungs++;			// Add to path length.
             if ((deltah > 0) && (rungs >= 0)) {
                 // If at or above hero's level, check for an exit from ladder.
@@ -408,13 +408,13 @@ int KGrTraditionalRules::canWalkLR (int direction, int x, int y)
 {
     if (willNotFall (x, y)) {
         switch (grid->cellType (x+direction, y)) {
-        case BETON:
+        case CONCRETE:
         case BRICK:
         case USEDHOLE:
             return -1;		// Will be halted in current cell.
             break;
         default:
-            // NB. FREE, LADDER, HLADDER, NUGGET and POLE are OK of course,
+            // NB. FREE, LADDER, HLADDER, NUGGET and BAR are OK of course,
             //     but enemies can also walk left/right through a HOLE and
             //     THINK they can walk left/right through a FBRICK.
 
@@ -434,7 +434,7 @@ bool KGrTraditionalRules::willNotFall (int x, int y)
     // Check the ceiling.
     switch (grid->cellType (x, y)) {
     case LADDER:
-    case POLE:
+    case BAR:
         return true; break;		// OK, can hang on ladder or pole.
     default:
         break;
@@ -448,12 +448,12 @@ bool KGrTraditionalRules::willNotFall (int x, int y)
     case HLADDER:
     case FBRICK:
 
-    // N.B. The enemy THINKS he can run over a NUGGET, a buried POLE or a HOLE.
+    // N.B. The enemy THINKS he can run over a NUGGET, a buried BAR or a HOLE.
     // The last of these cases allows the hero to trap the enemy, of course.
 
     // Note that there are several Traditional levels that require an enemy to
     // be trapped permanently in a pit containing a nugget, as he runs towards
-    // you.  It is also possible to use a buried POLE in the same way.
+    // you.  It is also possible to use a buried BAR in the same way.
 
         // TODO - Check for another enemy down below, maybe in KGrRunner.
         // TODO - Maybe the presence of another enemy below could be a bool

@@ -22,7 +22,6 @@
 
 #include "kgrplayfield.h"
 #include "kgrsprite.h"
-#include "kgrconsts.h" // OBSOLESCENT - 11/1/09
 #include "kgrglobals.h"
 
 #include <qcursor.h>

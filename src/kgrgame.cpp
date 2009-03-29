@@ -10,12 +10,13 @@
 
 #include "kgrgame.h"
 
-#include "kgrconsts.h" // OBSOLESCENT - 14/3/09
+#include "kgrglobals.h"
 #include "kgrcanvas.h"
 #include "kgrselector.h"
 #include "kgrsoundbank.h"
 #include "kgreditor.h"
 #include "kgrlevelplayer.h"
+#include "kgrdialog.h"
 
 #include <iostream>
 #include <stdlib.h>
@@ -186,6 +187,22 @@ void KGrGame::editActions (int action)
     default:
 	break;
     }
+
+    int game = gameIndex, lev = level;
+    editor->getGameAndLevel (game, lev);
+    kDebug() << "Game used" << gameList.at(gameIndex)->name << "level" << level;
+    kDebug() << "Editor used" << gameList.at(game)->name << "level" << lev;
+    if (((game != gameIndex) || (lev != level)) && (lev != 0)) {
+        gameIndex = game;
+        level     = lev;
+        gameData  = gameList.at (gameIndex);
+        kDebug() << "Saving to KConfigGroup";
+
+        KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
+        gameGroup.writeEntry ("GamePrefix", gameData->prefix);
+        gameGroup.writeEntry ("Level_" + gameData->prefix, level);
+        gameGroup.sync();		// Ensure that the entry goes to disk.
+    }
 }
 
 void KGrGame::editToolbarActions (int action)
@@ -207,7 +224,7 @@ void KGrGame::editToolbarActions (int action)
         case HLADDER:
         case LADDER:
         case NUGGET:
-        case POLE:
+        case BAR:
             // Set the next object to be painted in the level-layout.
 	    editor->setEditObj (action);
 	    break;
@@ -374,9 +391,11 @@ void KGrGame::startNextLevel()
 
 void KGrGame::startLevel (int startingAt, int requestedLevel)
 {
+    kDebug() << "Game" << gameList.at(gameIndex)->name << "level" << requestedLevel;
     if (! saveOK()) {		// Check for unsaved edits.
         return;
     }
+    kDebug() << "Game" << gameList.at(gameIndex)->name << "level" << requestedLevel;
     // Use dialog box to select game and level: startingAt = ID_FIRST or ID_ANY.
     // int selectedLevel = selectLevel (startingAt, requestedLevel);
     int selectedLevel = requestedLevel;

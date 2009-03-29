@@ -24,7 +24,6 @@
 #include <QByteArray>
 #include <QFile>
 
-#include "kgrconsts.h" // OBSOLESCENT - 9/1/09
 #include "kgrglobals.h"
 
 /// Return values from I/O operations.

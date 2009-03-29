@@ -145,7 +145,7 @@ void KGrLevelGrid::calculateCellAccess (const int i, const int j)
     }
     // If can stand or hang on anything, allow down, left and right.
     else if ((below == BRICK) || (below == CONCRETE) || (below == USEDHOLE) ||
-	(below == LADDER) || (here == LADDER) || (here == POLE)) {
+	(below == LADDER) || (here == LADDER) || (here == BAR)) {
         // fprintf (stderr, "Can stand\n");
 	access |= (dFlag [STAND] | dFlag [DOWN] |
 		   dFlag [LEFT]  | dFlag [RIGHT]);

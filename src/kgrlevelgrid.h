@@ -22,7 +22,6 @@
 #include <QVector>
 #include <QList>
 
-#include "kgrconsts.h" // OBSOLESCENT - 1/1/09
 #include "kgrglobals.h"
 
 class KGrLevelGrid : public QObject

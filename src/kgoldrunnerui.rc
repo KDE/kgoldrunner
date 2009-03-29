@@ -52,7 +52,7 @@
     <Action name="edherobg" />
     <Action name="edenemybg" />
     <Action name="brickbg" />
-    <Action name="betonbg" />
+    <Action name="concretebg" />
     <Action name="fbrickbg" />
     <Action name="ladderbg" />
     <Action name="hladderbg" />

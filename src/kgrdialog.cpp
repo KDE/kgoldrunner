@@ -10,7 +10,6 @@
 
 #include "kgrdialog.h"
 
-#include "kgrconsts.h" // OBSOLESCENT - 30/1/09
 #include "kgrglobals.h"
 #include "kgrcanvas.h"
 

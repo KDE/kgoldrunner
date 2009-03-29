@@ -15,15 +15,17 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ****************************************************************************/
 
-#include <KLocale>
-#include <KDebug>
-#include <QTimer>
-#include <ctype.h>
-
+// TODO - Use the header-order KGoldrunner-Qt-KDE in other .cpp files.
 #include "kgreditor.h"
+#include "kgrcanvas.h"
 #include "kgrselector.h"
 #include "kgrdialog.h"
 #include "kgrgameio.h"
+
+#include <ctype.h>
+#include <QTimer>
+
+#include <KDebug>
 
 KGrEditor::KGrEditor (KGrCanvas * theView,
                       const QString & theSystemDir,

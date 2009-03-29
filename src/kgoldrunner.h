@@ -33,7 +33,7 @@ const int L_LEVEL       = 15;
 
 #include <kxmlguiwindow.h>
 #include <kstandarddirs.h>
-#include "kgrconsts.h"
+#include "kgrglobals.h"
 
 class QAction;
 class QSignalMapper;

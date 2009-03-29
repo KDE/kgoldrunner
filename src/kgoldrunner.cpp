@@ -758,8 +758,8 @@ void KGoldrunner::setEditMenu (bool on_off)
         setEditIcon ("fbrickbg",  FBRICK);
         setEditIcon ("freebg",    FREE);
         setEditIcon ("nuggetbg",  NUGGET);
-        setEditIcon ("polebg",    POLE);
-        setEditIcon ("betonbg",   BETON);
+        setEditIcon ("polebg",    BAR);
+        setEditIcon ("concretebg", CONCRETE);
         setEditIcon ("ladderbg",  LADDER);
         setEditIcon ("hladderbg", HLADDER);
         setEditIcon ("edherobg",  HERO);
@@ -1062,12 +1062,12 @@ void KGoldrunner::setupEditToolbarActions()
     connect (brick, SIGNAL(triggered (bool)), editToolbarMapper, SLOT(map()));
     editToolbarMapper->setMapping (brick, BRICK);
 
-    KToggleAction* beton = new KToggleAction (i18n ("Concrete"), this);
-    beton->setToolTip (i18n ("Paint concrete (cannot dig)"));
-    beton->setWhatsThis (i18n ("Paint concrete objects (not diggable)"));
-    actionCollection()->addAction ("betonbg", beton);
-    connect (beton, SIGNAL(triggered (bool)), editToolbarMapper, SLOT(map()));
-    editToolbarMapper->setMapping (beton, BETON);
+    KToggleAction* concrete = new KToggleAction (i18n ("Concrete"), this);
+    concrete->setToolTip (i18n ("Paint concrete (cannot dig)"));
+    concrete->setWhatsThis (i18n ("Paint concrete objects (not diggable)"));
+    actionCollection()->addAction ("concretebg", concrete);
+    connect (concrete, SIGNAL(triggered(bool)), editToolbarMapper, SLOT(map()));
+    editToolbarMapper->setMapping (concrete, CONCRETE);
 
     KToggleAction* fbrick = new KToggleAction (i18n ("Trap"), this);
     fbrick->setToolTip
@@ -1098,7 +1098,7 @@ void KGoldrunner::setupEditToolbarActions()
     pole->setWhatsThis (i18n("Paint bars or poles (can fall from these)"));
     actionCollection()->addAction ("polebg", pole);
     connect (pole, SIGNAL(triggered (bool)), editToolbarMapper, SLOT(map()));
-    editToolbarMapper->setMapping (pole, POLE);
+    editToolbarMapper->setMapping (pole, BAR);
 
     KToggleAction* nugget = new KToggleAction (i18n ("Gold"), this);
     nugget->setToolTip (i18n ("Paint gold (or other treasure)"));
@@ -1113,7 +1113,7 @@ void KGoldrunner::setupEditToolbarActions()
     editButtons->addAction (edhero);
     editButtons->addAction (edenemy);
     editButtons->addAction (brick);
-    editButtons->addAction (beton);
+    editButtons->addAction (concrete);
     editButtons->addAction (fbrick);
     editButtons->addAction (ladder);
     editButtons->addAction (hladder);

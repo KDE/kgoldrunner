@@ -1,5 +1,101 @@
+/****************************************************************************
+ *    Copyright 2003  Marco Krüger <grisuji@gmx.de>                         *
+ *    Copyright 2003  Ian Wadham <ianw2@optusnet.com.au>                    *
+ *    Copyright 2009  Ian Wadham <iandw.au@gmail.com>                       *
+ *                                                                          *
+ *    This program is free software; you can redistribute it and/or         *
+ *    modify it under the terms of the GNU General Public License as        *
+ *    published by the Free Software Foundation; either version 2 of        *
+ *    the License, or (at your option) any later version.                   *
+ *                                                                          *
+ *    This program is distributed in the hope that it will be useful,       *
+ *    but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *    GNU General Public License for more details.                          *
+ *                                                                          *
+ *    You should have received a copy of the GNU General Public License     *
+ *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
+ ****************************************************************************/
+
 #ifndef KGRGLOBALS_H
 #define KGRGLOBALS_H
+
+#include <QByteArray>
+#include <QString>
+
+// #define ENABLE_SOUND_SUPPORT // Ian W. moved it here - 31 May 2008.
+
+enum Owner {SYSTEM, USER};
+
+const char FREE      = ' ';
+const char ENEMY     = 'E';
+const char HENEMY    = 'a'; // NEW - 2/1/09
+const char HERO      = 'R';
+const char CONCRETE  = 'X';
+const char BRICK     = 'M';
+const char FBRICK    = 'F';
+const char HLADDER   = 'Z';
+const char LADDER    = 'H';
+const char NUGGET    = 'N';
+const char FLASHING  = 'b'; // NEW - 2/1/09
+const char BAR       = 'T';
+const char HOLE      = 'O';
+const char USEDHOLE  = 'U';
+
+const char EDIT_HINT = '1';
+const char EDIT_TEST = '2';
+
+const char FIELDWIDTH   = 28;
+const char FIELDHEIGHT  = 20;
+
+/* Action times ... */
+#define	NSPEED		12
+#define	MAXSPEED	NSPEED * 2
+#define	MINSPEED	NSPEED / 4
+
+#define	BEGINSPEED	NSPEED / 2
+#define	NOVICESPEED	(3 * NSPEED) / 4
+#define	CHAMPSPEED	(3 * NSPEED) / 2
+
+// TODO - Probably belongs in kgrrulebook.h.  That is the only place it is used.
+typedef struct {
+    int hwalk;
+    int hfall;
+    int ewalk;
+    int efall;
+    int ecaptive;
+    int hole;
+} Timing;
+
+const int DIGDELAY = 200;
+
+const int STEP = 4;
+const int gameCycle = 4;		// Animation frames per playfield tile.
+const int graphicsCycle = 8;		// Animation frames per running cycle.
+
+const double DROPNUGGETDELAY = 70.0;	// Enemy holds gold for avg. 12.5 cells.
+
+enum Position		{RIGHTWALK1,  RIGHTWALK2,  RIGHTWALK3,  RIGHTWALK4,
+			 RIGHTWALK5,  RIGHTWALK6,  RIGHTWALK7,  RIGHTWALK8,
+                         LEFTWALK1,   LEFTWALK2,   LEFTWALK3,   LEFTWALK4,
+			 LEFTWALK5,   LEFTWALK6,   LEFTWALK7,   LEFTWALK8,
+                         RIGHTCLIMB1, RIGHTCLIMB2, RIGHTCLIMB3, RIGHTCLIMB4,
+			 RIGHTCLIMB5, RIGHTCLIMB6, RIGHTCLIMB7, RIGHTCLIMB8,
+                         LEFTCLIMB1,  LEFTCLIMB2,  LEFTCLIMB3,  LEFTCLIMB4,
+			 LEFTCLIMB5,  LEFTCLIMB6,  LEFTCLIMB7,  LEFTCLIMB8,
+                         CLIMB1,      CLIMB2,
+                         FALL1,       FALL2};
+
+// TODO - Is this enum still needed?
+enum Status		{STANDING, FALLING, WALKING, CLIMBING, CAPTIVE};
+
+// Keyboard action codes
+enum KBAction		{KB_UP, KB_DOWN, KB_LEFT, KB_RIGHT,
+                         KB_DIGLEFT, KB_DIGRIGHT, KB_STOP};
+
+// Action codes when selecting a level or game for play or editing.
+enum SelectAction	{SL_START, SL_ANY, SL_CREATE, SL_UPDATE, SL_SAVE,
+                         SL_MOVE, SL_DELETE, SL_CR_GAME, SL_UPD_GAME};
 
 /// Codes for the rules of the selected game and level.
 const char TraditionalRules = 'T';
@@ -9,18 +105,17 @@ const char ScavengerRules   = 'S';
 /// Modes for controlling the hero in KGoldrunner.
 enum Control {MOUSE, KEYBOARD, LAPTOP};
 
-class QWidget;
-class QString;
-
 /// Centralised message functions: implementations in kgrdialog.cpp.
+class QWidget;
 class KGrMessage
 {
 public:
-    static void information (QWidget * parent, const QString &caption,
-                            const QString &text);
-    static int warning (QWidget * parent, const QString &caption,
-                            const QString &text, const QString &label0,
-                            const QString &label1, const QString &label2 = "");
+    static void information (QWidget * parent, const QString & caption,
+                             const QString & text);
+    static int  warning     (QWidget * parent, const QString & caption,
+                             const QString & text, const QString & label0,
+                             const QString & label1,
+                             const QString & label2 = "");
 };
 
 /// KGrGameData structure: contains attributes of a KGoldrunner game.

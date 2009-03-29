@@ -350,7 +350,7 @@ KGrTheme::TileType KGrCanvas::tileForType(char type)
     switch (type) {
     case NUGGET:
 	return KGrTheme::GoldTile;
-    case POLE:
+    case BAR:
 	return KGrTheme::BarTile;
     case LADDER:
 	return KGrTheme::LadderTile;
@@ -360,7 +360,7 @@ KGrTheme::TileType KGrCanvas::tileForType(char type)
 	return KGrTheme::HeroTile;
     case ENEMY:
 	return KGrTheme::EnemyTile;
-    case BETON:
+    case CONCRETE:
 	return KGrTheme::ConcreteTile;
     case BRICK:
 	return KGrTheme::BrickTile;

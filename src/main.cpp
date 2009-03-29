@@ -21,7 +21,6 @@
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
 #include <klocale.h>
-#include "kgrconsts.h"
 #include "kgoldrunner.h"
 
 static const char description[] =

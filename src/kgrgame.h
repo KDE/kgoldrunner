@@ -27,7 +27,6 @@
 #include <QFrame>
 #include <QTimer>
 
-#include "kgrconsts.h"	// OBSOLESCENT - 30/12/08
 #include "kgrglobals.h"
 
 #include "kgrgameio.h"

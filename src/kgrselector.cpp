@@ -10,7 +10,6 @@
 
 #include "kgrselector.h"
 
-#include "kgrconsts.h" // OBSOLESCENT - 30/1/09
 #include "kgrglobals.h"
 #include "kgrcanvas.h"
 #include "kgrgameio.h"
@@ -668,11 +667,11 @@ void KGrThumbNail::paintEvent (QPaintEvent * /* event (unused) */)
         case BRICK:
         case FBRICK:
             pen.setColor (brickColor); p.setPen (pen); break;
-        case BETON:
+        case CONCRETE:
             pen.setColor (concreteColor); p.setPen (pen); break;
         case LADDER:
             pen.setColor (ladderColor); p.setPen (pen); break;
-        case POLE:
+        case BAR:
             pen.setColor (poleColor); p.setPen (pen); break;
         case HERO:
             pen.setColor (heroColor); p.setPen (pen); break;
@@ -685,7 +684,7 @@ void KGrThumbNail::paintEvent (QPaintEvent * /* event (unused) */)
 
         // Draw n x n pixels as n lines of length n.
         p.drawLine (i*n+fw, j*n+fw, i*n+(n-1)+fw, j*n+fw);
-        if (obj == POLE) {
+        if (obj == BAR) {
             // For a pole, only the top line is drawn in white.
             pen.setColor (backgroundColor);
             p.setPen (pen);
