@@ -1,55 +1,47 @@
 KGoldrunner v3.1 - TODO (for KDE 4.1?)
 --------------------------------------
 
-Revised 21 Jan 2008
+Revised 30 Mar 2009
 
 
 Done in KDE 4.0 release
 -----------------------
 
  2. Option to repeat last level, with 5 new lives, after "Game Over".
-    Ian Comment: DONE.
 
  3. Clean up and speed up the themes we ship 
     Ian Comment: Old KDE 3/2/1 themes have been dropped.  KGr now has 6
     excellent SVG themes for KDE 4, including new Black-and-White and Egypt
-    themes. But Geek City especially needs work (Eugene?): DONE
+    themes. But Geek City especially needs work.
 
  4. Update the documentation, hints and messages.
-    Ian Comment: Hints and game data DONE.  Doco and *.cpp messages DONE.
 
- 5. Dialog facelifts.  Ian Comment: DONE.
+ 5. Dialog facelifts.
 
+Done in KDE 4.1 and 4.2 releases
+--------------------------------
 
-
-To do in post-KDE 4.0 releases:
--------------------------------
-
- 1. Removal of the "game over" dialog.
-    Luciano Comment: I wanted to use the gamepopup stuff for that instead,
-    but it's for QGraphicsView, I think, so we'll have to emulate it for the
-    GameCanvas.  I find the dialog to be irritating in the context.
-
-3a. Re-organization of resize, re-load, re-render and re-paint: DONE
-    Need to try using KPixmapCache to speed startup, after the first KGoldrunner
-    session and maybe also the maximize/full-screen/restore sequence. IN PROGRESS
-
- 6. Fix the KScoreDialog in libkdegames so that it works well for KGoldrunner,
-    and write the conversion scripts for the old score files.
-    Ian Comment: Facelift of old KGr highscore dialog DONE, including
-    removing a redundant message box and having "-" as default player
-    name (for Mauricio ;-)).
+3a. Re-organization of resize, re-load, re-render and re-paint.
+    Use KPixmapCache to speed startup, after the first KGoldrunner session.
 
  7. In-canvas game information (what's now in the status bar): score, level,
     number of lives, with a nice font - large and readable ...
     Ian Comment: Imo the status bar has become very vanilla in KDE 4 and not
-    as useful (for KGr) as it was in KDE 2-3.
+    as useful (for KGr) as it was in KDE 2-3. Partly DONE.
 
- 8. A startup screen, somewhat similar to the Konqueror Help->Introduction page,
-    with some common actions.  This would replace the Quick Start dialog and
-    fill the central widget during the time the main graphics is loading.
+15. Sounds.  DONE, but sound-quality and simultaneous play not hot (in Phonon).
 
- 9. New game-engine ... making possible ...
+24. Add the Count game (17 levels), contributed by Steve Mann.
+
+Done in KDE 4.3 release
+-----------------------
+
+25. Add Curse of the Mummy game (20 levels), contributed by Steve Mann.
+
+Proposed for KDE 4.3 release
+----------------------------
+
+ 9. Major rewrite, mainly of the game-engine and editor ... making possible ...
 
 10. More accurate pause/resume.
 
@@ -61,21 +53,34 @@ To do in post-KDE 4.0 releases:
 
 14. Hot-new-stuff support for themes and game sets.
 
-15. Sounds.
-    Ian Comment: Our sound man (my son Peter) is ready.  He also composed many
-    of the levels in KGr when he was about 13.  The price of his work is a
-    copy of KGr working on Apple OS X ... a problem as yet unsolved.
-
-16. Registration of high-scores on the Internet, incl. country of origin.
-
-17. Use of recordings to authenticate Internet high scores.
-
 18. Integration of the Scavenger game (180 new levels) and its rule-set.  This
     would also involve allowing different grid dimensions for different games,
     as a feature of the new game engine.
 
 19. Better support for beginners, such as graphical cues for false bricks
     and hidden ladders, extra messages with "don't tell me this again", etc.
+
+To do in post-KDE 4.3 releases:
+-------------------------------
+
+ 1. Removal of the "game over" dialog.
+    Luciano Comment: I wanted to use the gamepopup stuff for that instead,
+    but it's for QGraphicsView, I think, so we'll have to emulate it for the
+    GameCanvas.  I find the dialog to be irritating in the context.
+
+ 6. Fix the KScoreDialog in libkdegames so that it works well for KGoldrunner,
+    and write the conversion scripts for the old score files.
+    Ian Comment: Facelift of old KGr highscore dialog DONE, including
+    removing a redundant message box and having "-" as default player
+    name (for Mauricio ;-)).
+
+ 8. A startup screen, somewhat similar to the Konqueror Help->Introduction page,
+    with some common actions.  This would replace the Quick Start dialog and
+    fill the central widget during the time the main graphics is loading.
+
+16. Registration of high-scores on the Internet, incl. country of origin.
+
+17. Use of recordings to authenticate Internet high scores.
 
 20. Animations for death of hero and digging (e.g. death ray from enemy
     to hero and laser beam from hero to brick).
@@ -88,8 +93,6 @@ To do in post-KDE 4.0 releases:
 
 23. Provide easy-to-use facilities for players to export/import/email, to each
     other, games and levels they have composed (related to 14 above?).
-
-24. Add the Count game (17 levels), contributed by Steve Mann.  DONE in KDE 4.2.
 
 Some ideas for the future:
 --------------------------
