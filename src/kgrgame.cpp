@@ -71,6 +71,7 @@ KGrGame::KGrGame (KGrCanvas * theView,
 {
     newLevel = true;			// Next level will be a new one.
     loading  = true;			// Stop input until it is loaded.
+    settings (NORMAL_SPEED);
 
     gameFrozen = true;
     modalFreeze = false;
@@ -116,6 +117,31 @@ bool KGrGame::logging = false;	// Start game with dynamic logging OFF.
 void KGrGame::gameActions (int action)
 {
     switch (action) {
+    case NEW:
+	kDebug() << "NEW signal:" << action;
+        startAnyLevel();
+        break;
+    case LOAD:
+	kDebug() << "LOAD signal:" << action;
+        loadGame();
+        break;
+    case SAVE_GAME:
+	kDebug() << "SAVE_GAME signal:" << action;
+        saveGame();
+        break;
+    case PAUSE:
+	kDebug() << "PAUSE signal:" << action;
+        if (! gameFrozen) {
+            freeze();
+        }
+        else {
+            unfreeze();
+        }
+        break;
+    case HIGH_SCORE:
+	kDebug() << "HIGH_SCORE signal:" << action;
+        showHighScores();
+        break;
     case HINT:
 	kDebug() << "HINT signal:" << action;
 	showHint();
@@ -229,8 +255,34 @@ void KGrGame::editToolbarActions (int action)
 	    editor->setEditObj (action);
 	    break;
         default:
-	    break;
+            break;
         }
+    }
+}
+
+void KGrGame::settings (int action)
+{
+    switch (action) {
+    case PLAY_SOUNDS:
+	kDebug() << "PLAY_SOUNDS signal:" << action;
+        toggleSoundsOnOff();
+        break;
+    case MOUSE:
+    case KEYBOARD:
+    case LAPTOP:
+	kDebug() << "Control-mode signal:" << action;
+        setControlMode (action);
+        break;
+    case NORMAL_SPEED:
+    case BEGINNER_SPEED:
+    case CHAMPION_SPEED:
+    case INC_SPEED:
+    case DEC_SPEED:
+	kDebug() << "Speed-setting signal:" << action;
+        setTimeScale (action);
+        break;
+    default:
+        break;
     }
 }
 
@@ -275,7 +327,6 @@ void KGrGame::initGame()
     kDebug() << "Calling the first view->changeTheme() ...";
     view->changeTheme (initialThemeFilepath);
 
-    emit markRuleType (gameData->rules);
     newGame (level, gameIndex);
 }
 
@@ -584,11 +635,39 @@ void KGrGame::goUpOneLevel()
     newLevel = false;
 }
 
-void KGrGame::setControlMode (const Control mode)
+void KGrGame::setControlMode (const int mode)
 {
     controlMode = mode;
     if (levelPlayer) {
         levelPlayer->setControlMode (mode);
+    }
+}
+
+void KGrGame::setTimeScale (const int action)
+{
+    switch (action) {
+    case NORMAL_SPEED:
+        timeScale = 10;
+        break;
+    case BEGINNER_SPEED:
+        timeScale = 5;
+        break;
+    case CHAMPION_SPEED:
+        timeScale = 15;
+        break;
+    case INC_SPEED:
+        timeScale = (timeScale < 20) ? timeScale + 1 : 20;
+        break;
+    case DEC_SPEED:
+        timeScale = (timeScale > 2)  ? timeScale - 1 : 2;
+        break;
+    default:
+        break;
+    }
+
+    if (levelPlayer) {
+        kDebug() << "setTimeScale" << (timeScale * 0.1);
+        levelPlayer->setTimeScale (timeScale * 0.1);
     }
 }
 
@@ -607,12 +686,14 @@ bool KGrGame::isLoading()
     return (loading);		// Return true if a level is being loaded.
 }
 
-void KGrGame::setPlaySounds (bool on_off)
+void KGrGame::toggleSoundsOnOff()
 {
     KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
-    gameGroup.writeEntry ("Sound", on_off);
+    bool soundOnOff = gameGroup.readEntry ("Sound", false);
+    soundOnOff = (! soundOnOff);
+    gameGroup.writeEntry ("Sound", soundOnOff);
 #ifdef ENABLE_SOUND_SUPPORT
-    effects->setMuted (!on_off);
+    effects->setMuted (! soundOnOff);
 #endif
 }
 
@@ -710,7 +791,6 @@ void KGrGame::startTutorial()
         // Start the tutorial.
         gameData = gameList.at (index);
         owner = gameData->owner;
-        emit markRuleType (gameData->rules);
         gameIndex = index;
         level = 1;
         newGame (level, gameIndex);
@@ -764,6 +844,8 @@ int KGrGame::loadLevel (int levelNo)
 
     char rulesCode = gameList.at(gameIndex)->rules;
     levelPlayer->init (view, controlMode, rulesCode, &levelData);
+    kDebug() << "setTimeScale" << (timeScale * 0.1);
+    levelPlayer->setTimeScale (timeScale * 0.1);
 
     // If there is a name, translate the UTF-8 coded QByteArray right now.
     levelName = (levelData.name.size() > 0) ?
@@ -1072,7 +1154,6 @@ void KGrGame::loadGame()		// Re-load game, score and level.
         }
         if (found) {
             // Set the rules for the selected game.
-            emit markRuleType (gameData->rules);
             lev   = s.mid (28, 3).toInt();
             newGame (lev, gameIndex);		// Re-start the selected game.
             showTutorialMessages (level);

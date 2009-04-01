@@ -50,8 +50,6 @@ class KGrHero;
  * menus, toolbars, and status bars.
  *
  * @short Main window class
- * @author $AUTHOR <$EMAIL>
- * @version $APP_VERSION
  */
 class KGoldrunner : public KXmlGuiWindow
 {
@@ -97,37 +95,10 @@ private slots:
     // An extension of the constructor.  Gives us two scans of the event queue.
     void KGoldrunner_2();
 
-    // Slot to pause or restart the game.
-    void stopStart();
-
     // Slot to change the graphics theme.
     void changeTheme (const QString & themeFilepath);
 
-    // Local slots to set mouse/keyboard or laptop-hybrid control of the hero.
-    void setMouseMode();
-    void setKeyBoardMode();
-    void setLaptopMode();
-
-    // Local slots to set game speed.
-    void normalSpeed();
-    void beginSpeed();
-    void champSpeed();
-    void incSpeed();
-    void decSpeed();
-
-    // Slots to set Traditional or KGoldrunner rules.
-    void setTradRules();
-    void setKGrRules();
-
-    // void optionsShowToolbar();
-    // void optionsShowStatusbar();
     void optionsConfigureKeys();
-    // void optionsConfigureToolbars();
-    // void optionsPreferences();
-    // void newToolbarConfig();
-
-    void changeStatusbar (const QString& text);
-    void changeCaption (const QString& text);
 
     void showLevel (int);		// Show the current level number.
     void showLives (long);		// Show how many lives are remaining.
@@ -135,7 +106,6 @@ private slots:
     void gameFreeze (bool);		// Status feedback on freeze/unfreeze.
 
     void adjustHintAction (bool);	// Enable/disable "Hint" action.
-    void markRuleType (char ruleType);	// Check game's rule type in the menu.
     void setEditMenu (bool on_off);	// Enable/disable "Save Edits" action.
     void setEditIcon (const QString & actionName, const char iconType);
     void viewFullScreen (bool activation);
@@ -148,22 +118,35 @@ private:
     void setupEditToolbarActions();
     void setupThemes();
  
-    QSignalMapper * editMapper;		// Editior-actions mapper.
-    QSignalMapper * kbMapper;		// Keyboard game-control mapper.
-    QSignalMapper * dbgMapper;		// Debugging-key mapper.
     QSignalMapper * tempMapper;		// Temporary pointer.
+
+    QAction * gameAction (const QString & name, const int code,
+                          const QString & text, const QString & toolTip,
+                          const QString & whatsThis, const QKeySequence & key);
 
     QAction * editAction (const QString & name, const int code,
                           const QString & text, const QString & toolTip,
                           const QString & whatsThis);
-    void keyControl (const QString & name, const QString & text,
-                     const QKeySequence & shortcut, const int code);
 
-private:
+    KToggleAction * settingAction (const QString & name,
+                                   const int       code,
+                                   const QString & text,
+                                   const QString & toolTip,
+                                   const QString & whatsThis);
+
+    KToggleAction * editToolbarAction
+                         (const QString & name, const char code,
+                          const QString & shortText, const QString & text,
+                          const QString & toolTip, const QString & whatsThis);
+
+    void keyControl      (const QString & name, const QString & text,
+                          const QKeySequence & shortcut, const int code);
+
     bool startupOK;
 
     KGrCanvas *	view;
     KGrGame *	game;
+    bool        frozen;
 
     bool getDirectories();		// Get directory paths, as below.
     QString systemHTMLDir;		// Where the manual is stored.
@@ -173,33 +156,17 @@ private:
     QAction *		saveGame;	// Save game, level, lives and score.
 
     // A KAction is needed here, to get access to KShortcut::setAlternate().
-    // IDW KAction *		myPause;	// Pause or resume the game.
+    // TODO - KAction *		myPause;	// Pause or resume the game.
     QAction *		myPause;	// Pause or resume the game.
     QString		pauseKeys;	// Keystroke names to put in status bar.
 
     QAction *		hintAction;	// Display a hint, if available.
-    KAction *		killHero;	// Kill hero (disabled during edits).
+    QAction *		killHero;	// Kill hero (disabled during edits).
     QAction *		highScore;	// High scores (disabled during edits).
 
     QAction *		saveEdits;	// Save a level that has been edited.
 
-    KToggleFullScreenAction *fullScreen; // Show Full Screen Mode on menu.
-    KToggleAction *	setMouse;	// Show mouse/keyboard mode on menu.
-    KToggleAction *	setKeyboard;	// Show mouse/keyboard mode on menu.
-    KToggleAction *	setLaptop;	// Show mouse/keyboard mode on menu.
-
-    KToggleAction *	tradRules;	// Set Traditional rules.
-    KToggleAction *	kgrRules;	// Set KGoldrunner rules.
-
-    KToggleAction *	setSounds;	// enable/disable sound effects.
-
-    // OBSOLESCENT - 18/1/09 KGrHero *	hero;			// Pointer to the hero.
-
-    // KToggleAction *	m_toolbarAction;
-    // KToggleAction *	m_statusbarAction;
-
     KToolBar *		editToolbar;	// Toolbar for creating/editing levels.
-    KToggleAction *     m_defaultEditAct;
 };
 
 #endif // _KGOLDRUNNER_H_

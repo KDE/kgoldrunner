@@ -71,8 +71,6 @@ public:
 
     QString getDirectory (Owner o);
 
-    inline bool isFrozen() { return gameFrozen; }
-
     // Flags to control author's debugging aids.
     static bool bugFix;
     static bool logging;
@@ -83,6 +81,7 @@ public slots:
     void gameActions (int action);
     void editActions (int action);
     void editToolbarActions (int action);
+    void settings (int action);
 
     void initGame();			// Do the game object's first painting.
 
@@ -90,10 +89,11 @@ public slots:
     void startAnyLevel();		// Start any game from any level.
     void startNextLevel();		// Start next level of current game.
 
-    void setPlaySounds (bool on_off);	// Set sound enabled or disabled.
+    void toggleSoundsOnOff();		// Set sound enabled or disabled.
 
     // Set mouse, keyboard or laptop-hybrid control of the hero.
-    void setControlMode (const Control mode);
+    void setControlMode (const int mode);
+    void setTimeScale (const int action);
 
     void startLevel (int startingAt, int requestedLevel);
     void newGame (const int lev, const int gameIndex);
@@ -126,7 +126,6 @@ signals:
     void setEditMenu (bool);		// Enable/Disable edit menu items.
     void defaultEditObj();		// Set default edit-toolbar button.
 
-    void markRuleType (char);		// Mark KGoldrunner/Traditional rules.
     void gameFreeze (bool);		// Do visual feedback in the GUI.
 
     void quitGame();			// Used for Quit option in Quick Start.
@@ -167,6 +166,7 @@ private:
     KGrCanvas *			view;		// Where the game is displayed.
     QString			systemDataDir;	// System games are stored here.
     QString			userDataDir;	// User games are stored here.
+    int                         timeScale;	// The speed of the game (2-20).
 
     int				level;		// Current play/edit level.
     QString			levelName;	// Level name (optional).
@@ -215,7 +215,7 @@ public slots:
 private:
     KGrEditor * editor;		// The level-editor object.
 
-    Control controlMode;	// How to control the hero (e.g. K/B or mouse).
+    int controlMode;		// How to control the hero (e.g. K/B or mouse).
 
 /******************************************************************************/
 /***********************   GAME PROPERTIES AND METHODS   **********************/

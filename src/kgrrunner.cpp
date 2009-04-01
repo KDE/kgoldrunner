@@ -186,7 +186,7 @@ HeroStatus KGrHero::run (const int scaledTime)
 
     // Start the running animation (repeating).
     emit startAnimation (spriteId, true, gridI, gridJ,
-                         interval * pointsPerCell,
+                         (interval * pointsPerCell * TickTime) / scaledTime,
                          nextDirection, nextAnimation);
     currAnimation = nextAnimation;
     currDirection = nextDirection;
@@ -427,7 +427,7 @@ void KGrEnemy::run (const int scaledTime)
 
     // Start the running animation (repeating).
     emit startAnimation (spriteId, true, gridI, gridJ,
-                         interval * pointsPerCell,
+                         (interval * pointsPerCell * TickTime) / scaledTime,
                          nextDirection, nextAnimation);
     currAnimation = nextAnimation;
     currDirection = nextDirection;

@@ -113,7 +113,6 @@ bool KGrSLDialog::selectLevel (int & selectedGame, int & selectedLevel)
         // owner = gameData->owner;
         // gameIndex = selectedGame;
         // Set default rules for selected game.
-        // TODO - emit markRuleType (gameData->rules);
         break;
     }
 

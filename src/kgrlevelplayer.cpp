@@ -32,7 +32,6 @@
 #include "kgrrulebook.h"
 #include "kgrlevelgrid.h"
 #include "kgrrunner.h"
-#include "kgrtimer.h"
 
 KGrLevelPlayer::KGrLevelPlayer (QObject * parent)
     :
@@ -66,7 +65,7 @@ KGrLevelPlayer::~KGrLevelPlayer()
     // }
 }
 
-void KGrLevelPlayer::init (KGrCanvas * view, const Control mode,
+void KGrLevelPlayer::init (KGrCanvas * view, const int mode,
                            const char rulesCode, const KGrLevelData * levelData)
 {
     // Create the internal model of the level-layout.

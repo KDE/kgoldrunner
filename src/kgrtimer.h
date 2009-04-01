@@ -32,6 +32,8 @@ public:
     void pause();
     void resume();
     void step();
+    inline void setScale (const float pScale)
+                         { scaledTime = (pScale * tickTime) + 0.5; }
 
 signals:
     void tick (bool missed, int pScaledTime);

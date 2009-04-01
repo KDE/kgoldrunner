@@ -48,15 +48,6 @@ const char EDIT_TEST = '2';
 const char FIELDWIDTH   = 28;
 const char FIELDHEIGHT  = 20;
 
-/* Action times ... */
-#define	NSPEED		12
-#define	MAXSPEED	NSPEED * 2
-#define	MINSPEED	NSPEED / 4
-
-#define	BEGINSPEED	NSPEED / 2
-#define	NOVICESPEED	(3 * NSPEED) / 4
-#define	CHAMPSPEED	(3 * NSPEED) / 2
-
 // TODO - Probably belongs in kgrrulebook.h.  That is the only place it is used.
 typedef struct {
     int hwalk;
@@ -102,9 +93,6 @@ const char TraditionalRules = 'T';
 const char KGoldrunnerRules = 'K';
 const char ScavengerRules   = 'S';
 
-/// Modes for controlling the hero in KGoldrunner.
-enum Control {MOUSE, KEYBOARD, LAPTOP};
-
 /// Centralised message functions: implementations in kgrdialog.cpp.
 class QWidget;
 class KGrMessage
@@ -145,9 +133,16 @@ public:
     QByteArray	hint;		///< Level hint (optional).
 };
 
-enum  GameAction {HINT, KILL_HERO};
-enum  EditAction {CREATE_LEVEL, EDIT_ANY, SAVE_EDITS, MOVE_LEVEL, DELETE_LEVEL,
-                  CREATE_GAME,  EDIT_GAME};
+enum GameAction    {NEW, LOAD, SAVE_GAME, PAUSE, HIGH_SCORE, HINT, KILL_HERO};
+
+enum EditAction    {CREATE_LEVEL, EDIT_ANY, SAVE_EDITS, MOVE_LEVEL,
+                    DELETE_LEVEL, CREATE_GAME,  EDIT_GAME};
+
+enum Setting       {PLAY_SOUNDS,			// Sound effects on/off.
+                    MOUSE, KEYBOARD, LAPTOP,		// Game-control modes.
+                    NORMAL_SPEED, BEGINNER_SPEED,	// Preset game-speeds.
+                    CHAMPION_SPEED,
+                    INC_SPEED, DEC_SPEED};		// Adjustments of speed.
 
 const int  ConcreteWall = 1;
 

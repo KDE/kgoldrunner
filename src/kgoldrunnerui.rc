@@ -32,9 +32,6 @@
         <Action append="save_merge"	name="champion_speed" />
         <Action append="save_merge"	name="increase_speed" />
         <Action append="save_merge"	name="decrease_speed" />
-        <Separator append="save_merge" />
-        <Action append="save_merge"	name="trad_rules" />
-        <Action append="save_merge"	name="kgr_rules" />
     </Menu>
     <Menu name="help" >
         <Action				name="tutorial" />

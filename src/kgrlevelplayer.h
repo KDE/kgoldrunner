@@ -24,9 +24,7 @@
 #include <QTime> // IDW testing
 
 #include "kgrglobals.h"
-
-// class QTimer;
-class KGrTimer;
+#include "kgrtimer.h"
 
 class KGrLevelGrid;
 class KGrRuleBook;
@@ -87,7 +85,7 @@ public:
      *                  starting positions of hero, enemies and gold.
      */
     void init                   (KGrCanvas *          view,
-                                 const Control        mode,
+                                 const int            mode,
                                  const char           rulesCode,
                                  const KGrLevelData * levelData);
 
@@ -103,7 +101,7 @@ public:
      * @param mode      The new input-mode to use to control the hero: mouse, 
      *                  keyboard or hybrid touchpad and keyboard mode.
      */
-    inline void setControlMode  (const Control mode) { controlMode = mode; }
+    inline void setControlMode  (const int mode) { controlMode = mode; }
 
     /**
      * Set a point for the hero to aim at when using mouse or touchpad control.
@@ -229,6 +227,15 @@ public:
     void pause                  (bool stop);
 
     /**
+     * Sets the overall speed of gameplay.
+     *
+     * @param timeScale Value 1.0 is for normal speed.  Range is 0.2 to 2.0.
+     *                  0.5 is for beginner speed: 1.5 for champion speed.
+     */
+    inline void setTimeScale    (const float timeScale)
+                                { timer->setScale (timeScale); }
+
+    /**
      * Implement author's debugging aids, which are activated only if the level
      * is paused and the KConfig file contains group Debugging with setting
      * DebuggingShortcuts=true.  The main actions are to do timer steps one at
@@ -274,7 +281,7 @@ private:
     int                  heroId;
     QList<KGrEnemy *>    enemies;
 
-    Control              controlMode;
+    int                  controlMode;
     int                  levelWidth;
     int                  levelHeight;
 
