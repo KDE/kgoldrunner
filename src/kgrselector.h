@@ -37,6 +37,7 @@
 class KGrGameData;
 class KGrThumbNail;
 class KGrGameListItem;
+class KGrGameIO;
 
 /******************************************************************************/
 /*******************    DIALOG TO SELECT A GAME AND LEVEL   *******************/
@@ -124,9 +125,10 @@ protected:
     void paintEvent (QPaintEvent * event);	// Draw a preview of a level.
 
 private:
-    QByteArray levelName;
-    QByteArray levelLayout;
-    QLabel *   lName;				// Place to write level-name.
+    KGrGameIO * io;
+    QByteArray  levelName;
+    QByteArray  levelLayout;
+    QLabel *    lName;				// Place to write level-name.
 };
 
 #endif

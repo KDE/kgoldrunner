@@ -24,6 +24,7 @@
 #include <QObject>
 
 class KGrCanvas;
+class KGrGameIO;
 class QTimer;
 
 /**
@@ -170,6 +171,7 @@ signals:
 
 private:
     KGrCanvas * view;		// The canvas on which the editor paints.
+    KGrGameIO * io;		// I/O object for reading level-data.
     QString     systemDataDir;
     QString     userDataDir;
     QList<KGrGameData *> gameList;
@@ -211,7 +213,6 @@ private:
 
     void loadEditLevel (int);	// Load and display an existing level for edit.
     void initEdit();
-    bool readLevelData (int levelNo, KGrLevelData & d);
     void insertEditObj (int, int, char object);
     char editableCell (int i, int j);
     void setEditableCell (int, int, char);

@@ -10,24 +10,24 @@
 
 #include "kgrgame.h"
 
-#include "kgrglobals.h"
 #include "kgrcanvas.h"
 #include "kgrselector.h"
 #include "kgrsoundbank.h"
 #include "kgreditor.h"
 #include "kgrlevelplayer.h"
 #include "kgrdialog.h"
+#include "kgrgameio.h"
 
 #include <iostream>
 #include <stdlib.h>
 // #include <ctype.h>
 #include <time.h>
 
-#include <kpushbutton.h>
+#include <KPushButton>
 #include <KStandardGuiItem>
 #include <KStandardDirs>
 #include <KApplication>
-#include <kdebug.h>
+#include <KDebug>
 
 // Do NOT change KGoldrunner over to KScoreDialog until we have found a way
 // to preserve high-score data pre-existing from the KGr high-score methods.
@@ -51,8 +51,6 @@
 
 #endif
 
-#include "kgrrulebook.h"
-
 /******************************************************************************/
 /***********************    KGOLDRUNNER GAME CLASS    *************************/
 /******************************************************************************/
@@ -66,6 +64,7 @@ KGrGame::KGrGame (KGrCanvas * theView,
         systemDataDir (theSystemDir),
         userDataDir (theUserDir),
         level (0),
+        programFreeze (false),
         fx (NumSounds),
         editor (0)
 {
@@ -74,29 +73,10 @@ KGrGame::KGrGame (KGrCanvas * theView,
     settings (NORMAL_SPEED);
 
     gameFrozen = true;
-    modalFreeze = false;
-    messageFreeze = false;
+    // modalFreeze = false;
+    // messageFreeze = false;
 
-#ifdef ENABLE_SOUND_SUPPORT
-    effects = new KGrSoundBank(8);
-    effects->setParent (this);		// Delete at end of KGrGame.
-
-    fx[GoldSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/gold.wav"));
-    fx[StepSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/step.wav"));
-    fx[ClimbSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/climb.wav"));
-    fx[FallSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/falling.wav"));
-    fx[DigSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/dig.wav"));
-    fx[LadderSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/ladder.wav"));
-    fx[CompletedSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/completed.wav"));
-    fx[DeathSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/death.wav"));
-    fx[GameOverSound] = effects->loadSound (KStandardDirs::locate ("appdata", "themes/default/gameover.wav"));
-
-    // REPLACE - 9/1/09  Hero's sound connections.
-    // connect(hero, SIGNAL (stepDone (bool)), this, SLOT (heroStep (bool)));
-    // connect(hero, SIGNAL (falling (bool)), this, SLOT (heroFalls (bool)));
-    // connect(hero, SIGNAL (digs()), this, SLOT (heroDigs()));
-
-#endif
+    loadSounds();
 
     dyingTimer = new QTimer (this);
     connect (dyingTimer, SIGNAL (timeout()),  SLOT (finalBreath()));
@@ -111,43 +91,31 @@ KGrGame::~KGrGame()
 }
 
 // Flags to control author's debugging aids.
-bool KGrGame::bugFix  = false;	// Start game with dynamic bug-fix OFF.
-bool KGrGame::logging = false;	// Start game with dynamic logging OFF.
+bool KGrGame::bugFix  = false;		// Start game with dynamic bug-fix OFF.
+bool KGrGame::logging = false;		// Start game with dynamic logging OFF.
 
 void KGrGame::gameActions (int action)
 {
     switch (action) {
     case NEW:
-	kDebug() << "NEW signal:" << action;
         startAnyLevel();
         break;
     case LOAD:
-	kDebug() << "LOAD signal:" << action;
         loadGame();
         break;
     case SAVE_GAME:
-	kDebug() << "SAVE_GAME signal:" << action;
         saveGame();
         break;
     case PAUSE:
-	kDebug() << "PAUSE signal:" << action;
-        if (! gameFrozen) {
-            freeze();
-        }
-        else {
-            unfreeze();
-        }
+        pause (true, (! gameFrozen));
         break;
     case HIGH_SCORE:
-	kDebug() << "HIGH_SCORE signal:" << action;
         showHighScores();
         break;
     case HINT:
-	kDebug() << "HINT signal:" << action;
 	showHint();
 	break;
     case KILL_HERO:
-	kDebug() << "KILL_HERO signal:" << action;
         endLevel (DEAD);
 	break;
     default:
@@ -183,31 +151,24 @@ void KGrGame::editActions (int action)
 
     switch (action) {
     case CREATE_LEVEL:
-	kDebug() << "CREATE_LEVEL signal:" << action;
 	editor->createLevel (gameIndex);
 	break;
     case EDIT_ANY:
-	kDebug() << "EDIT_ANY signal:" << action;
 	editor->updateLevel (gameIndex, level);
 	break;
     case SAVE_EDITS:
-	kDebug() << "SAVE_EDITS signal:" << action;
 	editor->saveLevelFile ();
 	break;
     case MOVE_LEVEL:
-	kDebug() << "MOVE_LEVEL signal:" << action;
 	editor->moveLevelFile (gameIndex, level);
 	break;
     case DELETE_LEVEL:
-	kDebug() << "DELETE_LEVEL signal:" << action;
 	editor->deleteLevelFile (gameIndex, level);
 	break;
     case CREATE_GAME:
-	kDebug() << "CREATE_GAME signal:" << action;
 	editor->editGame (-1);
 	break;
     case EDIT_GAME:
-	kDebug() << "EDIT_GAME signal:" << action;
 	editor->editGame (gameIndex);
 	break;
     default:
@@ -238,7 +199,6 @@ void KGrGame::editToolbarActions (int action)
         switch (action) {
         case EDIT_HINT:
             // Edit the level-name or hint.
-	    kDebug() << "EDIT_HINT signal:" << action;
             editor->editNameAndHint();
 	    break;
         case FREE:
@@ -264,13 +224,11 @@ void KGrGame::settings (int action)
 {
     switch (action) {
     case PLAY_SOUNDS:
-	kDebug() << "PLAY_SOUNDS signal:" << action;
         toggleSoundsOnOff();
         break;
     case MOUSE:
     case KEYBOARD:
     case LAPTOP:
-	kDebug() << "Control-mode signal:" << action;
         setControlMode (action);
         break;
     case NORMAL_SPEED:
@@ -278,7 +236,6 @@ void KGrGame::settings (int action)
     case CHAMPION_SPEED:
     case INC_SPEED:
     case DEC_SPEED:
-	kDebug() << "Speed-setting signal:" << action;
         setTimeScale (action);
         break;
     default:
@@ -337,7 +294,7 @@ void KGrGame::initGame()
 void KGrGame::quickStartDialog()
 {
     // Make sure the game will not start during the Quick Start dialog.
-    freeze();
+    pause (false, true);
 
     qs = new KDialog (view);
 
@@ -397,23 +354,27 @@ void KGrGame::quickStartPlay()
     // now, to avoid interference with any tutorial messages there may be.
     qs->hide();
     showTutorialMessages (level);	// Level has already been loaded.
-    kDebug() << "gameFrozen?" << gameFrozen;
-    unfreeze();
+    pause (false, false);
 }
 
 void KGrGame::quickStartNewGame()
 {
     qs->accept();
-    unfreeze();
+    pause (false, false);
     startAnyLevel();
+    // TODO - If Cancelled, need somehow to do "showTutorialMessages()".
 }
 
 void KGrGame::quickStartUseMenu()
 {
     qs->accept();
+    // TODO - myMessage() has pause() functions and pause (false, true) is on.
     myMessage (view, i18n ("Game Paused"),
             i18n ("The game is halted. You will need to press the Pause key "
                  "(default P or Esc) when you are ready to play."));
+    pause (false, false);
+    // TODO - This is not working.  The game stays frozen.  prepareToPlay()?
+    pause (true, true);
 }
 
 void KGrGame::quickStartQuit()
@@ -452,11 +413,12 @@ void KGrGame::startLevel (int startingAt, int requestedLevel)
     int selectedLevel = requestedLevel;
 
     // Halt the game during the dialog.
-    modalFreeze = false;
-    if (! gameFrozen) {
-        modalFreeze = true;
-        freeze();
-    }
+    pause (false, true);
+    // modalFreeze = false;
+    // if (! gameFrozen) {
+        // modalFreeze = true;
+        // freeze();
+    // }
 
     // Run the game and level selection dialog.
     KGrSLDialog * sl = new KGrSLDialog (startingAt, requestedLevel, gameIndex,
@@ -465,11 +427,17 @@ void KGrGame::startLevel (int startingAt, int requestedLevel)
     bool selected = sl->selectLevel (selectedGame, selectedLevel);
     delete sl;
 
+    kDebug() << "QS - After dialog - programFreeze" << programFreeze;
+    kDebug() << "selected" << selected << "gameFrozen" << gameFrozen;
+    kDebug() << "selectedGame" << selectedGame
+             << "prefix" << gameList.at(selectedGame)->prefix
+             << "selectedLevel" << selectedLevel;
     // Unfreeze the game, but only if it was previously unfrozen.
-    if (modalFreeze) {
-        unfreeze();
-        modalFreeze = false;
-    }
+    pause (false, false);
+    // if (modalFreeze) {
+        // unfreeze();
+        // modalFreeze = false;
+    // }
 
     if (selected) {		// If OK, start the selected game and level.
         newGame (selectedLevel, selectedGame);
@@ -479,7 +447,12 @@ void KGrGame::startLevel (int startingAt, int requestedLevel)
         // TODO - At startup, choose New Game, but don't select a game.
         // TODO - Then the user's previous game, from Config, becomes FROZEN.
         // TODO - No amount of hitting Esc or P can UNFREEZE it ...
-        level = requestedLevel; // IDW = 0;
+        kDebug() << "QS - NEW GAME - CANCEL - programFreeze" << programFreeze;
+        kDebug() << "gameFrozen" << gameFrozen << "levelPlayer" << levelPlayer;
+        level = requestedLevel;
+        // TODO - SOLUTION ...
+        // TODO - We need, somehow, to do "showTutorialMessages (level);" and
+        //        so do "prepareToPlay()", but ONLY in the quickStart case.
     }
 }
 
@@ -503,17 +476,22 @@ void KGrGame::incScore (int n)
     emit showScore (score);	// collect gold 250, complete the level 1500.
 }
 
+void KGrGame::showHiddenLadders()
+{
+    // TODO - Move this line to KGrLevelPlayer.
+    effects->play (fx[LadderSound]);
+}
+        
 void KGrGame::endLevel (const int result)
 {
-    if (levelPlayer) {
-        // Delete the level-player, hero, enemies, grid, rule-book, etc.
-        // Delete sprites in KGrCanvas later, so they stay visible for a while.
-        delete levelPlayer;
-        levelPlayer = 0;
-    }
-    else {
+    if (! levelPlayer) {
         return;			// Not playing a level.
     }
+
+    // Delete the level-player, hero, enemies, grid, rule-book, etc.
+    // Delete sprites in the view later: they should stay visible for a while.
+    delete levelPlayer;
+    levelPlayer = 0;
 
     if (result == WON_LEVEL) {
         levelCompleted();
@@ -536,6 +514,7 @@ void KGrGame::herosDead()
 #endif
         // Still some life left, so PAUSE and then re-start the level.
         emit showLives (lives);
+        // TODO - Should use a program freeze (pause (bool, bool)).
         gameFrozen = true;	// Freeze the animation and let
         dyingTimer->setSingleShot (true);
         dyingTimer->start (1500);	// the player see what happened.
@@ -547,7 +526,7 @@ void KGrGame::herosDead()
 	effects->play (fx[GameOverSound]);
 #endif
         emit showLives (lives);
-        freeze();
+        pause (false, true);
         QString gameOver = "<NOBR><B>" + i18n ("GAME OVER !!!") + "</B></NOBR>";
         KGrMessage::information (view, gameData->name, gameOver);
         checkHighScore();	// Check if there is a high score for this game.
@@ -557,7 +536,7 @@ void KGrGame::herosDead()
                             i18n ("Would you like to try this level again?"),
                             i18n ("&Try Again"), i18n ("&Finish"))) {
         case 0:
-            unfreeze();			// Offer accepted.
+            pause (false, false);	// Offer accepted.
             newGame (level, gameIndex);
             showTutorialMessages (level);
             return;
@@ -570,10 +549,10 @@ void KGrGame::herosDead()
         // TODO - The "ENDE" screen is displayed but it is frozen.
         // TODO - If we restart the game on the "ENDE" screen then use the New
         //        Game dialog, the new level comes up but animation is haywire.
-        unfreeze();		//    ... NOW we can unfreeze.
+        pause (false, false);		// ... NOW we can unfreeze.
         newLevel = true;
         level = 0;
-        loadLevel (level);	// Display the "ENDE" screen.
+        loadLevel (level);		// Display the "ENDE" screen.
         newLevel = false;
     }
 }
@@ -588,15 +567,10 @@ void KGrGame::finalBreath()
             levelPlayer->prepareToPlay();
         }
     }
+    // TODO - Should use a program freeze (pause (bool, bool)).
     gameFrozen = false;	// Unfreeze the game, but don't move yet.
 }
 
-void KGrGame::showHiddenLadders()
-{
-    // TODO - Move this line to KGrLevelPlayer.
-    effects->play (fx[LadderSound]);
-}
-        
 void KGrGame::levelCompleted()
 {
 #ifdef ENABLE_SOUND_SUPPORT
@@ -614,14 +588,14 @@ void KGrGame::goUpOneLevel()
     incScore (1500);
 
     if (level >= gameData->nLevels) {
-        freeze();
+        pause (false, true);
         KGrMessage::information (view, gameData->name,
             i18n ("<b>CONGRATULATIONS !!!!</b>"
             "<p>You have conquered the last level in the "
             "<b>\"%1\"</b> game !!</p>", gameData->name.constData()));
         checkHighScore();	// Check if there is a high score for this game.
 
-        unfreeze();
+        pause (false, false);
         level = 0;		// Game completed: display the "ENDE" screen.
     }
     else {
@@ -665,9 +639,10 @@ void KGrGame::setTimeScale (const int action)
         break;
     }
 
+    fTimeScale = (timeScale * 0.1);
     if (levelPlayer) {
-        kDebug() << "setTimeScale" << (timeScale * 0.1);
-        levelPlayer->setTimeScale (timeScale * 0.1);
+        kDebug() << "setTimeScale" << (fTimeScale);
+        levelPlayer->setTimeScale (fTimeScale);
     }
 }
 
@@ -697,44 +672,83 @@ void KGrGame::toggleSoundsOnOff()
 #endif
 }
 
-void KGrGame::freeze()
+void KGrGame::pause (const bool userAction, const bool on_off)
 {
-    if ((! modalFreeze) && (! messageFreeze)) {
-        emit gameFreeze (true);	// Do visual feedback in the GUI.
+    kDebug() << "PAUSE: userAction" << userAction << "on_off" << on_off;
+    kDebug() << "gameFrozen" << gameFrozen << "programFreeze" << programFreeze;
+    if (! userAction) {
+        // The program needs to freeze the game during a message, dialog, etc.
+        if (on_off) {
+            programFreeze = false;
+            if (gameFrozen) {
+                kDebug() << "The user has already frozen the game.";
+                return;			// The user has already frozen the game.
+            }
+        }
+        else if (! programFreeze) {
+            kDebug() << "The user will keep the game frozen.";
+            return;			// The user will keep the game frozen.
+        }
+        // The program will succeed in freezing or unfreezing the game.
+        programFreeze = on_off;
     }
-    gameFrozen = true;	// Halt the game, by blocking all timer events.
+    else if (programFreeze) {
+        // If the user breaks through a program freeze somehow, take no action.
+        kDebug() << "THE USER HAS BROKEN THROUGH SOMEHOW.";
+        return;
+    }
+    else {
+        // The user is freezing or unfreezing the game.  Do visual feedback.
+        emit gameFreeze (on_off);
+    }
+
+    gameFrozen = on_off;
     if (levelPlayer) {
-        levelPlayer->pause (true);
+        levelPlayer->pause (on_off);
     }
+    kDebug() << "RESULT: gameFrozen" << gameFrozen
+             << "programFreeze" << programFreeze;
 }
 
-void KGrGame::unfreeze()
-{
-    if ((! modalFreeze) && (! messageFreeze)) {
-        emit gameFreeze (false);// Do visual feedback in the GUI.
-    }
-    gameFrozen = false;		// Restart the game after the next tick().
-    if (levelPlayer) {
-        levelPlayer->pause (false);
-    }
-}
+// TODO - Remove these functions: superseded by pause (bool, bool).
+// void KGrGame::freeze()
+// {
+    // if ((! modalFreeze) && (! messageFreeze)) {
+        // emit gameFreeze (true);	// Do visual feedback in the GUI.
+    // }
+    // gameFrozen = true;		// Halt the game, by blocking all timer events.
+    // if (levelPlayer) {
+        // levelPlayer->pause (true);
+    // }
+// }
 
-void KGrGame::setMessageFreeze (bool on_off)
-{
-    if (on_off) {		// Freeze the game action during a message.
-        messageFreeze = false;
-        if (! gameFrozen) {
-            messageFreeze = true;
-            freeze();
-        }
-    }
-    else {			// Unfreeze the game action after a message.
-        if (messageFreeze) {
-            unfreeze();
-            messageFreeze = false;
-        }
-    }
-}
+// void KGrGame::unfreeze()
+// {
+    // if ((! modalFreeze) && (! messageFreeze)) {
+        // emit gameFreeze (false);// Do visual feedback in the GUI.
+    // }
+    // gameFrozen = false;		// Restart the game after the next tick().
+    // if (levelPlayer) {
+        // levelPlayer->pause (false);
+    // }
+// }
+
+// void KGrGame::setMessageFreeze (bool on_off)
+// {
+    // if (on_off) {		// Freeze the game action during a message.
+        // messageFreeze = false;
+        // if (! gameFrozen) {
+            // messageFreeze = true;
+            // freeze();
+        // }
+    // }
+    // else {			// Unfreeze the game action after a message.
+        // if (messageFreeze) {
+            // unfreeze();
+            // messageFreeze = false;
+        // }
+    // }
+// }
 
 void KGrGame::newGame (const int lev, const int newGameIndex)
 {
@@ -817,21 +831,35 @@ void KGrGame::showHint()
                         i18n ("Sorry, there is no hint for this level."));
 }
 
+// TODO - Maybe call this playLevel (level, game, flavour) and pair
+//        it with endLevel (status).
 int KGrGame::loadLevel (int levelNo)
 {
+    // TODO - Need to kill a level that is already playing, e.g. if we do
+    //        New Game... in the middle of a level.
     // Ignore player input from keyboard or mouse while the screen is set up.
     loading = true;
 
-    // Read the level data.
-    KGrLevelData levelData;
-    if (! readLevelData (levelNo, levelData)) {
-        loading = false;
-        return 0;
+    // If there is a level being played, kill it, with no win/lose result.
+    if (levelPlayer) {
+        endLevel (NORMAL);
     }
 
     // Clean up any sprites remaining from a previous level.  This is done late,
     // so that the end-state of the sprites will be visible for a short while.
     view->deleteAllSprites();
+
+    KGrLevelData levelData;
+    KGrGameIO    io (view);
+
+    // If system game or ENDE screen, choose system dir, else choose user dir.
+    const QString dir = ((owner == SYSTEM) || (levelNo == 0)) ?
+                                        systemDataDir : userDataDir;
+    // Read the level data.
+    if (! io.readLevelData (dir, gameData, levelNo, levelData)) {
+        loading = false;
+        return 0;
+    }
 
     view->setLevel (levelNo);		// Switch and render background if reqd.
     view->fadeIn();			// Then run the fade-in animation.
@@ -840,12 +868,14 @@ int KGrGame::loadLevel (int levelNo)
     kDebug() << "Prefix" << gameData->prefix << "index" << gameIndex
              << "of" << gameList.count();
 
+    // TODO - Does KGrLevelPlayer know whether to start in frozen or unfrozen
+    //        state?  And how about starting in Ready state in some cases?
     levelPlayer = new KGrLevelPlayer (this);
 
     char rulesCode = gameList.at(gameIndex)->rules;
     levelPlayer->init (view, controlMode, rulesCode, &levelData);
-    kDebug() << "setTimeScale" << (timeScale * 0.1);
-    levelPlayer->setTimeScale (timeScale * 0.1);
+    kDebug() << "setTimeScale" << (fTimeScale);
+    levelPlayer->setTimeScale (fTimeScale);
 
     // If there is a name, translate the UTF-8 coded QByteArray right now.
     levelName = (levelData.name.size() > 0) ?
@@ -888,7 +918,8 @@ int KGrGame::loadLevel (int levelNo)
 void KGrGame::showTutorialMessages (int levelNo)
 {
     // Halt the game during message displays and mouse pointer moves.
-    setMessageFreeze (true);
+    pause (false, true);
+    // setMessageFreeze (true);
 
     // Check if this is a tutorial collection and not on the "ENDE" screen.
     if ((gameData->prefix.left (4) == "tute") && (levelNo != 0)) {
@@ -905,40 +936,8 @@ void KGrGame::showTutorialMessages (int levelNo)
     if (levelPlayer) {
         levelPlayer->prepareToPlay();
     }
-    setMessageFreeze (false);	// Let the level begin.
-}
-
-bool KGrGame::readLevelData (int levelNo, KGrLevelData & d)
-{
-    KGrGameIO io;
-    // If system game or ENDE screen, choose system dir, else choose user dir.
-    const QString dir = ((owner == SYSTEM) || (levelNo == 0)) ?
-                                        systemDataDir : userDataDir;
-    kDebug() << "Owner" << owner << "dir" << dir << "Level" << gameData->prefix << levelNo;
-    QString filePath;
-    IOStatus stat = io.fetchLevelData (dir, gameData->prefix, levelNo,
-                                       d, filePath);
-
-    switch (stat) {
-    case NotFound:
-        KGrMessage::information (view, i18n ("Read Level Data"),
-            i18n ("Cannot find file '%1'.", filePath));
-        break;
-    case NoRead:
-    case NoWrite:
-        KGrMessage::information (view, i18n ("Read Level Data"),
-            i18n ("Cannot open file '%1' for read-only.", filePath));
-        break;
-    case UnexpectedEOF:
-        KGrMessage::information (view, i18n ("Read Level Data"),
-            i18n ("Reached end of file '%1' without finding level data.",
-            filePath));
-        break;
-    case OK:
-        break;
-    }
-
-    return (stat == OK);
+    pause (false, false);		// Let the level begin.
+    // setMessageFreeze (false);	// Let the level begin.
 }
 
     // TODO - Connect these somewhere else in the code, e.g. in KGrLevelPlayer.
@@ -986,7 +985,8 @@ void KGrGame::kbControl (int dirn)
         ((controlMode == LAPTOP) && (dirn != DIG_RIGHT) && (dirn != DIG_LEFT)))
         {
         // Halt the game while a message is displayed.
-        setMessageFreeze (true);
+        pause (false, true);
+        // setMessageFreeze (true);
 
         switch (KMessageBox::questionYesNo (view, 
                 i18n ("You have pressed a key that can be used to control the "
@@ -1008,7 +1008,8 @@ void KGrGame::kbControl (int dirn)
         }
 
         // Unfreeze the game, but only if it was previously unfrozen.
-        setMessageFreeze (false);
+        pause (false, false);
+        // setMessageFreeze (false);
 
         if (controlMode != KEYBOARD) {
             return;                    		// Stay in Mouse or Laptop Mode.
@@ -1119,11 +1120,12 @@ void KGrGame::loadGame()		// Re-load game, score and level.
     }
 
     // Halt the game during the loadGame() dialog.
-    modalFreeze = false;
-    if (!gameFrozen) {
-        modalFreeze = true;
-        freeze();
-    }
+    pause (false, true);
+    // modalFreeze = false;
+    // if (!gameFrozen) {
+        // modalFreeze = true;
+        // freeze();
+    // }
 
     QString s;
 
@@ -1169,10 +1171,11 @@ void KGrGame::loadGame()		// Re-load game, score and level.
     }
 
     // Unfreeze the game, but only if it was previously unfrozen.
-    if (modalFreeze) {
-        unfreeze();
-        modalFreeze = false;
-    }
+    pause (false, false);
+    // if (modalFreeze) {
+        // unfreeze();
+        // modalFreeze = false;
+    // }
 
     delete lg;
 }
@@ -1602,7 +1605,7 @@ bool KGrGame::initGameLists()
 
 bool KGrGame::loadGameData (Owner o)
 {
-    KGrGameIO io;
+    KGrGameIO io (view);
     QList<KGrGameData *> gList;
     QString filePath;
     IOStatus status = io.fetchGameListData
@@ -1637,19 +1640,53 @@ bool KGrGame::loadGameData (Owner o)
     return (result);
 }
 
+void KGrGame::loadSounds()
+{
+#ifdef ENABLE_SOUND_SUPPORT
+    effects = new KGrSoundBank(8);
+    effects->setParent (this);		// Delete at end of KGrGame.
+
+    fx[GoldSound]      = effects->loadSound (KStandardDirs::locate ("appdata",
+                         "themes/default/gold.wav"));
+    fx[StepSound]      = effects->loadSound (KStandardDirs::locate ("appdata",
+                         "themes/default/step.wav"));
+    fx[ClimbSound]     = effects->loadSound (KStandardDirs::locate ("appdata",
+                         "themes/default/climb.wav"));
+    fx[FallSound]      = effects->loadSound (KStandardDirs::locate ("appdata",
+                         "themes/default/falling.wav"));
+    fx[DigSound]       = effects->loadSound (KStandardDirs::locate ("appdata",
+                         "themes/default/dig.wav"));
+    fx[LadderSound]    = effects->loadSound (KStandardDirs::locate ("appdata",
+                         "themes/default/ladder.wav"));
+    fx[CompletedSound] = effects->loadSound (KStandardDirs::locate ("appdata",
+                         "themes/default/completed.wav"));
+    fx[DeathSound]     = effects->loadSound (KStandardDirs::locate ("appdata",
+                         "themes/default/death.wav"));
+    fx[GameOverSound]  = effects->loadSound (KStandardDirs::locate ("appdata",
+                         "themes/default/gameover.wav"));
+
+    // REPLACE - 9/1/09  Hero's sound connections.
+    // connect(hero, SIGNAL (stepDone (bool)), this, SLOT (heroStep (bool)));
+    // connect(hero, SIGNAL (falling (bool)), this, SLOT (heroFalls (bool)));
+    // connect(hero, SIGNAL (digs()), this, SLOT (heroDigs()));
+#endif
+}
+
 /******************************************************************************/
 /**********************    MESSAGE BOX WITH FREEZE    *************************/
 /******************************************************************************/
 
 void KGrGame::myMessage (QWidget * parent, const QString &title, const QString &contents)
 {
-    // Halt the game while the message is displayed.
-    setMessageFreeze (true);
+    // Halt the game while the message is displayed, if not already halted.
+    pause (false, true);
+    // setMessageFreeze (true);
 
     KGrMessage::information (parent, title, contents);
 
     // Unfreeze the game, but only if it was previously unfrozen.
-    setMessageFreeze (false);
+    pause (false, false);
+    // setMessageFreeze (false);
 }
 
 #include "kgrgame.moc"

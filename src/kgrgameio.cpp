@@ -19,10 +19,14 @@
 
 
 #include "kgrgameio.h"
+
+#include <KLocale>
 #include <KDebug>
 #include <QDir>
 
-KGrGameIO::KGrGameIO()
+KGrGameIO::KGrGameIO (QWidget * pView)
+    :
+    view        (pView)
 {
 }
 
@@ -139,6 +143,36 @@ IOStatus KGrGameIO::fetchGameListData
     } // END: filename loop
 
     return (OK);
+}
+
+bool KGrGameIO::readLevelData (const QString & dir,
+                               const KGrGameData * gameData,
+                               const int levelNo, KGrLevelData & d)
+{
+    kDebug() << "dir" << dir << "Level" << gameData->prefix << levelNo;
+    QString filePath;
+    IOStatus stat = fetchLevelData
+                        (dir, gameData->prefix, levelNo, d, filePath);
+    switch (stat) {
+    case NotFound:
+        KGrMessage::information (view, i18n ("Read Level Data"),
+            i18n ("Cannot find file '%1'.", filePath));
+        break;
+    case NoRead:
+    case NoWrite:
+        KGrMessage::information (view, i18n ("Read Level Data"),
+            i18n ("Cannot open file '%1' for read-only.", filePath));
+        break;
+    case UnexpectedEOF:
+        KGrMessage::information (view, i18n ("Read Level Data"),
+            i18n ("Reached end of file '%1' without finding level data.",
+            filePath));
+        break;
+    case OK:
+        break;
+    }
+
+    return (stat == OK);
 }
 
 IOStatus KGrGameIO::fetchLevelData

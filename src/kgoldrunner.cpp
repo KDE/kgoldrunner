@@ -177,6 +177,7 @@ void KGoldrunner::KGoldrunner_2()
 {
     kDebug() << "Entered constructor extension ...";
     // NOW paint the main widget (title, menu, status bar, blank playfield).
+    // TODO - Necessary? It has just been done in main.cpp ... show();
     show();
     kDebug() << "Main Window show() done here ...";
 
@@ -418,13 +419,13 @@ void KGoldrunner::setupActions()
                                   i18n ("Set champions' game speed (18 units)")
                                   );
 
-    QAction * iSpeed            = gameAction ("increase_speed", INC_SPEED,
+    a                           = gameAction ("increase_speed", INC_SPEED,
                                   i18n ("Increase Speed"),
                                   i18n ("Increase speed"),
                                   i18n ("Increase the game speed by one unit"),
                                   Qt::Key_Plus);
 
-    QAction * dSpeed            = gameAction ("decrease_speed", DEC_SPEED,
+    a                           = gameAction ("decrease_speed", DEC_SPEED,
                                   i18n ("Decrease Speed"),
                                   i18n ("Decrease speed"),
                                   i18n ("Decrease the game speed by one unit"),

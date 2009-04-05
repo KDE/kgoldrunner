@@ -20,6 +20,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <KDebug>
+#include <KMessageBox>	// TODO - Remove.
 
 #include <QTimer>
 #include <QList>
@@ -53,11 +54,15 @@ KGrLevelPlayer::KGrLevelPlayer (QObject * parent)
     t.start(); // IDW
 }
 
+int KGrLevelPlayer::playerCount = 0;
+
 KGrLevelPlayer::~KGrLevelPlayer()
 {
     while (! dugBricks.isEmpty()) {
         delete dugBricks.takeFirst();
     }
+    kDebug() << "LEVEL PLAYER BEING DELETED.";
+    playerCount--;
 
     // TODO - Do we need this delete?
     // while (! enemies.isEmpty()) {
@@ -68,6 +73,11 @@ KGrLevelPlayer::~KGrLevelPlayer()
 void KGrLevelPlayer::init (KGrCanvas * view, const int mode,
                            const char rulesCode, const KGrLevelData * levelData)
 {
+    playerCount++;
+    if (playerCount > 1) {
+        KMessageBox::information (view, QString("ERROR: KGrLevelPlayer Count = %1").arg(playerCount), "KGrLevelPlayer");
+    }
+
     // Create the internal model of the level-layout.
     grid            = new KGrLevelGrid (this, levelData);
 
@@ -300,6 +310,16 @@ void KGrLevelPlayer::prepareToPlay()
     playState = Ready;
 }
 
+void KGrLevelPlayer::pause (bool stop)
+{
+    if (stop) {
+        timer->pause();
+    }
+    else {
+        timer->resume();
+    }
+}
+
 void KGrLevelPlayer::setTarget (int pointerI, int pointerJ)
 {
     // Mouse or other pointer device (eg. laptop touchpad) controls the hero.
@@ -332,7 +352,6 @@ void KGrLevelPlayer::doDig (int button)
         return;
     }
 
-    // TODO - Work this in with game-freezes.
     playState = Playing;
     switch (button) {
     case Qt::LeftButton:
@@ -587,16 +606,6 @@ int KGrLevelPlayer::runnerGotGold (const int  spriteId,
     return nuggets;
 }
 
-void KGrLevelPlayer::pause (bool stop)
-{
-    if (stop) {
-        timer->pause();
-    }
-    else {
-        timer->resume();
-    }
-}
-
 void KGrLevelPlayer::makeReappearanceSequence()
 {
     // The idea is to make each possible x co-ord come up once per levelWidth
@@ -701,11 +710,6 @@ void KGrLevelPlayer::dbgControl (int code)
         showEnemyState (code - ENEMY_0); // Show enemy co-ords and state.
         break;
     }
-}
-
-// OBSOLESCENT - 21/1/09 Can do this just by calling tick().
-void KGrLevelPlayer::restart()
-{
 }
 
 void KGrLevelPlayer::bugFix()

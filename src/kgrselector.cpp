@@ -47,24 +47,12 @@ KGrSLDialog::~KGrSLDialog()
 {
 }
 
-// TODO - Insert the selectLevel() procedure here.
 bool KGrSLDialog::selectLevel (int & selectedGame, int & selectedLevel)
 {
+    selectedGame  = defaultGame;
     selectedLevel = 0;		// 0 = no selection (Cancel) or invalid.
 
-    // TODO - Put this in KGrGame?
-    // Halt the game during the dialog.
-    // modalFreeze = false;
-    // if (! gameFrozen) {
-        // modalFreeze = true;
-        // freeze();
-    // }
-
     // Create and run a modal dialog box to select a game and level.
-    // TODO - Avoid using KGrGame * as parameter 5.
-    // KGrSLDialog * sl = new KGrSLDialog (action, requestedLevel, gameIndex,
-                                        // gameList, /* this, */ view);
-    // TODO - Strip out editor-related validation, etc.  It's in KGrEditor now.
     while (exec() == QDialog::Accepted) {
         selectedGame = slGameIndex;
         selectedLevel = 0;	// In case the selection is invalid.
@@ -107,23 +95,9 @@ bool KGrSLDialog::selectLevel (int & selectedGame, int & selectedLevel)
             selectedLevel = 0;			// Set an invalid selection.
             continue;				// Re-run the dialog box.
         }
-
-        // If "OK", set the results.
-        // gameData = gameList.at (selectedGame);
-        // owner = gameData->owner;
-        // gameIndex = selectedGame;
-        // Set default rules for selected game.
-        break;
+        break;					// Accepted and valid.
     }
-
-    // TODO - Put this in KGrGame?
-    // Unfreeze the game, but only if it was previously unfrozen.
-    // if (modalFreeze) {
-        // unfreeze();
-        // modalFreeze = false;
-    // }
-
-    return (selectedLevel > 0);			// 0 = canceled or invalid.
+    return (selectedLevel > 0);			// 0 = cancelled or invalid.
 }
 
 void KGrSLDialog::setupWidgets()
@@ -601,7 +575,8 @@ void KGrGameListItem::setId (const int internalId)
 
 KGrThumbNail::KGrThumbNail (QWidget * parent)
     :
-    QFrame (parent)
+    QFrame (parent),
+    io     (new KGrGameIO (parent))
 {
     // Let the parent do all the work.  We need a class here so that
     // QFrame::paintEvent (QPaintEvent *) can be re-implemented and
@@ -611,11 +586,10 @@ KGrThumbNail::KGrThumbNail (QWidget * parent)
 void KGrThumbNail::setLevelData (const QString & dir, const QString& prefix,
                                  int level, QLabel * sln)
 {
-    KGrGameIO io;
     KGrLevelData d;
     QString filePath;
 
-    IOStatus stat = io.fetchLevelData (dir, prefix, level, d, filePath);
+    IOStatus stat = io->fetchLevelData (dir, prefix, level, d, filePath);
     if (stat == OK) {
         // Keep a safe copy of the layout.  Translate and display the name.
         levelLayout = d.layout;

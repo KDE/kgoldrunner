@@ -21,10 +21,10 @@
 #ifndef _KGRGAMEIO_H_
 #define _KGRGAMEIO_H_
 
-#include <QByteArray>
-#include <QFile>
-
 #include "kgrglobals.h"
+
+#include <QWidget>
+#include <QFile>
 
 /// Return values from I/O operations.
 enum IOStatus {OK, NotFound, NoRead, NoWrite, UnexpectedEOF};
@@ -55,15 +55,16 @@ enum IOStatus {OK, NotFound, NoRead, NoWrite, UnexpectedEOF};
  *
  * @short   KGoldrunner Game-File IO
  */
-
 class KGrGameIO : public QObject
 {
     Q_OBJECT
 public:
     /**
      * Default constructor.
+     *
+     * @param pView    The view or widget used as a parent for error messages.
      */
-    KGrGameIO();
+    KGrGameIO (QWidget * pView);
 
     /**
      * Find and read data for games, into a list of KGrGameData structures.
@@ -71,15 +72,29 @@ public:
     IOStatus fetchGameListData (Owner o, const QString & dir,
                                 QList<KGrGameData *> & gameList,
                                 QString & filePath);
+
+    /**
+     * Find and read data for a level of a game.  Can display error messages.
+     */
+    bool readLevelData (const QString & dir, const KGrGameData * gameData,
+                        const int levelNo, KGrLevelData & d);
+
     /**
      * Find and read data for a level of a game, into a KGrLevelData structure.
+     * Returns an OK or error status, but does not display error messages.
      */
     IOStatus fetchLevelData    (const QString & dir, const QString & prefix,
                                 const int level, KGrLevelData & d,
                                 QString & filePath);
+
+    /*
+     * Rename a file, first removing any existing file that has the target name.
+     */
     static bool safeRename (const QString & oldName, const QString & newName);
 
 private:
+    QWidget *           view;
+
     QFile		openFile;
 
     QString		getFilePath (const QString & dir,

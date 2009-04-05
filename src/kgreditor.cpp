@@ -34,6 +34,7 @@ KGrEditor::KGrEditor (KGrCanvas * theView,
     :
     QObject          (theView),		// Destroy Editor if view closes.
     view             (theView),
+    io               (new KGrGameIO (view)),
     systemDataDir    (theSystemDir),
     userDataDir      (theUserDir),
     gameList         (pGameList),
@@ -155,10 +156,14 @@ void KGrEditor::updateLevel (int pGameIndex, int level)
 
 void KGrEditor::loadEditLevel (int lev)
 {
-    // Read the level data.
     KGrLevelData d;
-    if (! readLevelData (lev, d)) {
-        return;
+
+    // If system game or ENDE screen, choose system dir, else choose user dir.
+    const QString dir = ((gameList.at(gameIndex)->owner == SYSTEM) ||
+                         (lev == 0)) ? systemDataDir : userDataDir;
+    // Read the level data.
+    if (! io->readLevelData (dir, gameList.at(gameIndex), lev, d)) {
+        return;		// If I/O failed, no load.
     }
 
     editLevel = lev;
@@ -184,41 +189,6 @@ void KGrEditor::loadEditLevel (int lev)
                 QString::fromUtf8 ((const char *) d.hint) : "";
 
     view->setTitle (getTitle());		// Show the level name.
-}
-
-// TODO - Does this code really need to be duplicated in KGrGame and KGrEditor?
-bool KGrEditor::readLevelData (int levelNo, KGrLevelData & d)
-{
-    KGrGameIO io;
-    // If system game or ENDE screen, choose system dir, else choose user dir.
-    const QString dir = ((gameList.at(gameIndex)->owner == SYSTEM) ||
-                         (levelNo == 0)) ? systemDataDir : userDataDir;
-    kDebug() << "Owner" << gameList.at(gameIndex)->owner << "dir" << dir
-             << "Level" << gameList.at(gameIndex)->prefix << levelNo;
-    QString filePath;
-    IOStatus stat = io.fetchLevelData (dir, gameList.at(gameIndex)->prefix,
-                                       levelNo, d, filePath);
-
-    switch (stat) {
-    case NotFound:
-        KGrMessage::information (view, i18n ("Read Level Data"),
-            i18n ("Cannot find file '%1'.", filePath));
-        break;
-    case NoRead:
-    case NoWrite:
-        KGrMessage::information (view, i18n ("Read Level Data"),
-            i18n ("Cannot open file '%1' for read-only.", filePath));
-        break;
-    case UnexpectedEOF:
-        KGrMessage::information (view, i18n ("Read Level Data"),
-            i18n ("Reached end of file '%1' without finding level data.",
-            filePath));
-        break;
-    case OK:
-        break;
-    }
-
-    return (stat == OK);
 }
 
 void KGrEditor::editNameAndHint()

@@ -103,7 +103,7 @@ private slots:
     void showLevel (int);		// Show the current level number.
     void showLives (long);		// Show how many lives are remaining.
     void showScore (long);		// Show the player's score.
-    void gameFreeze (bool);		// Status feedback on freeze/unfreeze.
+    void gameFreeze (bool);		// Status feedback on Pause state.
 
     void adjustHintAction (bool);	// Enable/disable "Hint" action.
     void setEditMenu (bool on_off);	// Enable/disable "Save Edits" action.

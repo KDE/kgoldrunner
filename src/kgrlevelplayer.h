@@ -90,18 +90,34 @@ public:
                                  const KGrLevelData * levelData);
 
     /**
-     * Indicate that setup is complete.  The human player can start playing
+     * Indicate that setup is complete and the human player can start playing
      * at any time, by moving the pointer device or pressing a key.
      */
     void prepareToPlay          ();
 
     /**
-     * Allow the input-mode to change during play.
+     * Pause or resume the gameplay in this level.
+     *
+     * @param stop      If true, pause: if false, resume.
+     */
+    void pause                  (bool stop);
+
+    /**
+     * Change the input-mode during play.
      *
      * @param mode      The new input-mode to use to control the hero: mouse, 
      *                  keyboard or hybrid touchpad and keyboard mode.
      */
     inline void setControlMode  (const int mode) { controlMode = mode; }
+
+    /**
+     * Set the overall speed of gameplay.
+     *
+     * @param timeScale Value 1.0 is for normal speed.  Range is 0.2 to 2.0.
+     *                  0.5 is for beginner speed: 1.5 for champion speed.
+     */
+    inline void setTimeScale    (const float timeScale)
+                                { timer->setScale (timeScale); }
 
     /**
      * Set a point for the hero to aim at when using mouse or touchpad control.
@@ -220,22 +236,6 @@ public:
     void enemyReappear          (int & gridI, int & gridJ);
 
     /**
-     * Pauses or resumes the gameplay in this level.
-     *
-     * @param stop      If true, pause: if false, resume.
-     */
-    void pause                  (bool stop);
-
-    /**
-     * Sets the overall speed of gameplay.
-     *
-     * @param timeScale Value 1.0 is for normal speed.  Range is 0.2 to 2.0.
-     *                  0.5 is for beginner speed: 1.5 for champion speed.
-     */
-    inline void setTimeScale    (const float timeScale)
-                                { timer->setScale (timeScale); }
-
-    /**
      * Implement author's debugging aids, which are activated only if the level
      * is paused and the KConfig file contains group Debugging with setting
      * DebuggingShortcuts=true.  The main actions are to do timer steps one at
@@ -296,9 +296,6 @@ private:
     Direction            direction;	// Next direction for the hero to take.
     KGrTimer *           timer;		// The time-standard for the level.
 
-// OBSOLESCENT - 21/1/09 Can do this just by calling tick().
-    void restart();		// Kickstart the game action.
-
     void startDigging (Direction diggingDirection);
     void processDugBricks (const int scaledTime);
 
@@ -326,6 +323,8 @@ private:
 /******************************************************************************/
 /**************************  AUTHORS' DEBUGGING AIDS **************************/
 /******************************************************************************/
+
+    static int playerCount;
 
     void bugFix();		// Turn a bug fix on/off dynamically.
     void startLogging();	// Turn logging on/off.

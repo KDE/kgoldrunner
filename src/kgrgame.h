@@ -18,31 +18,23 @@
 #define myStr		toLatin1().constData
 #define myChar(i)	at((i)).toLatin1()
 
-#include <QObject>
-#include <QList>
-
-#include <QColor>
-#include <QPixmap>
-#include <QLabel>
-#include <QFrame>
-#include <QTimer>
-
 #include "kgrglobals.h"
 
-#include "kgrgameio.h"
-#include "kgrcanvas.h"
+#include <QObject>
+#include <QList>
+#include <QVector>
 
 /**
-Sets up games and levels in KGoldrunner and controls the play.
-
-@author Ian Wadham
-*/
-
+ * Sets up games and levels in KGoldrunner and controls the play.
+ *
+ * @short   KGoldrunner Game Controller.
+ */
+class KGrCanvas;
 class KDialog;
-
 class KGrSoundBank;
 class KGrEditor;
 class KGrLevelPlayer;
+class QTimer;
 
 class KGrGame : public QObject
 {
@@ -76,18 +68,21 @@ public:
     static bool logging;
 
 public slots:
-    void kbControl (int dirn);
+    void initGame();			// Do the game object's first painting.
 
     void gameActions (int action);
     void editActions (int action);
     void editToolbarActions (int action);
     void settings (int action);
 
-    void initGame();			// Do the game object's first painting.
+    void kbControl (int dirn);
 
+    // TODO - Only startAnyLevel() is used (from NewGame...).
     void startLevelOne();		// Start any game from level 1.
     void startAnyLevel();		// Start any game from any level.
     void startNextLevel();		// Start next level of current game.
+    // TODO - startLevel should NOT be a public slot.
+    void startLevel (int startingAt, int requestedLevel);
 
     void toggleSoundsOnOff();		// Set sound enabled or disabled.
 
@@ -95,7 +90,6 @@ public slots:
     void setControlMode (const int mode);
     void setTimeScale (const int action);
 
-    void startLevel (int startingAt, int requestedLevel);
     void newGame (const int lev, const int gameIndex);
     void startTutorial();		// Start tutorial game.
     void showHint();			// Show hint for current level.
@@ -103,9 +97,14 @@ public slots:
     void showHighScores();		// Show high scores for current game.
 
     void incScore (int);		// Update the score.
+    void showHiddenLadders();		// Show hidden ladders (nuggets gone).
     void endLevel (const int result);	// Hero completed the level or he died.
     void herosDead();			// Hero was caught or he quit (key Q).
-    void showHiddenLadders();		// Show hidden ladders (nuggets gone).
+
+private slots:
+    void finalBreath();			// Hero is dead: re-start the level.
+
+public slots:
     void levelCompleted();		// Hero completed the level.
     void goUpOneLevel();		// Start next level.
 
@@ -117,6 +116,7 @@ public slots:
     void heroDigs();			// The hero is digging.
 
 signals:
+    // These signals go to the GUI in most cases.
     void showScore (long);		// For main window to show the score.
     void showLives (long);		// For main window to show lives left.
     void showLevel (int);		// For main window to show the level.
@@ -144,12 +144,10 @@ private slots:
     void quickStartUseMenu();
     void quickStartQuit();
 
-private slots:
-    void finalBreath();			// Hero is dead: re-start the level.
-
 private:
+// TODO - Maybe call this playLevel (level, game, flavour) and pair
+//        it with endLevel (status).
     int  loadLevel (int levelNo);
-    bool readLevelData (int levelNo, KGrLevelData & d);
     void showTutorialMessages (int levelNo);
 
     void checkHighScore();		// Check if high score for current game.
@@ -160,13 +158,18 @@ private:
 /**************************  PLAYFIELD AND GAME DATA  *************************/
 /******************************************************************************/
 
-private:
     KGrLevelPlayer *            levelPlayer;	// Where the level is played.
 
     KGrCanvas *			view;		// Where the game is displayed.
     QString			systemDataDir;	// System games are stored here.
     QString			userDataDir;	// User games are stored here.
     int                         timeScale;	// The speed of the game (2-20).
+    float                       fTimeScale;	// Speed as a float (0.2-2.0).
+
+    QList<KGrGameData *>        gameList;	// A list of available games.
+    KGrGameData *		gameData;	// Data for the current game.
+    int				gameIndex;	// The index in the game-list.
+    Owner			owner;		// The game's owner.
 
     int				level;		// Current play/edit level.
     QString			levelName;	// Level name (optional).
@@ -180,8 +183,9 @@ private:
     bool			loading;	// Stop input until it's loaded.
 
     bool			gameFrozen;	// Game stopped.
-    bool			modalFreeze;	// Stop game during dialog.
-    bool			messageFreeze;	// Stop game during message.
+    // bool			modalFreeze;	// Stop game during dialog.
+    // bool			messageFreeze;	// Stop game during message.
+    bool			programFreeze;	// Stop game during dialog, etc.
 
     QTimer *			dyingTimer;	// For pause when the hero dies.
 
@@ -190,7 +194,7 @@ private:
 /******************************************************************************/
 /*******************************  SOUND SUPPORT *******************************/
 /******************************************************************************/
-    KGrSoundBank *effects;
+    KGrSoundBank * effects;
     enum { 
 	    GoldSound, 
 	    StepSound, 
@@ -203,14 +207,15 @@ private:
 	    VictorySound,
 	    GameOverSound,
 	    NumSounds };
-    QVector< int > fx;
+    QVector<int> fx;
 
 public slots:
     void dbgControl (int code);	// Authors' debugging aids.
 
-    void freeze();		// Stop the gameplay action.
-    void unfreeze();		// Restart the gameplay action.
-    void setMessageFreeze (bool);
+    void pause (const bool userAction, const bool on_off);
+    // void freeze();		// Stop the gameplay action.
+    // void unfreeze();		// Restart the gameplay action.
+    // void setMessageFreeze (bool);
 
 private:
     KGrEditor * editor;		// The level-editor object.
@@ -221,13 +226,8 @@ private:
 /***********************   GAME PROPERTIES AND METHODS   **********************/
 /******************************************************************************/
 
-private:
-    QList<KGrGameData *>        gameList;	// A list of available games.
-    KGrGameData *		gameData;	// Data for the current game.
-    int				gameIndex;	// The index in the game-list.
-    Owner			owner;		// The game's owner.
-
     bool loadGameData (Owner);
+    void loadSounds();
 
 /******************************************************************************/
 /**********************    WORD-WRAPPED MESSAGE BOX    ************************/
@@ -236,4 +236,4 @@ private:
     void myMessage (QWidget * parent, const QString &title, const QString &contents);
 };
 
-#endif
+#endif // KGRGAME_H
