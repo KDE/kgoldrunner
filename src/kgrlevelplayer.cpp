@@ -495,12 +495,12 @@ bool KGrLevelPlayer::bumpingFriend (const int spriteId, const Direction dirn,
     if (dI != 0) {
         otherEnemy = grid->enemyOccupied (gridI + dI, gridJ);
         if (otherEnemy > 0) {
-            kDebug() << otherEnemy << "at" << (gridI + dI) << gridJ
+            dbk3 << otherEnemy << "at" << (gridI + dI) << gridJ
                      << "dirn" << ((otherEnemy > 0) ?
                                (enemies.at (otherEnemy - 1)->direction()) : 0)
                      << "me" << spriteId << "dirn" << dirn;
             if (enemies.at (otherEnemy - 1)->direction() != dirn) {
-                kDebug() << spriteId << "wants" << dirn << ":" << otherEnemy
+                dbk3 << spriteId << "wants" << dirn << ":" << otherEnemy
                          << "at" << (gridI + dI) << gridJ << "wants"
                          << (enemies.at (otherEnemy - 1)->direction());
                 return true;
@@ -510,12 +510,12 @@ bool KGrLevelPlayer::bumpingFriend (const int spriteId, const Direction dirn,
     if (dJ != 0) {
         otherEnemy = grid->enemyOccupied (gridI, gridJ + dJ);
         if (otherEnemy > 0) {
-            kDebug() << otherEnemy << "at" << gridI << (gridJ + dJ)
+            dbk3 << otherEnemy << "at" << gridI << (gridJ + dJ)
                      << "dirn" << ((otherEnemy > 0) ?
                                (enemies.at (otherEnemy - 1)->direction()) : 0)
                      << "me" << spriteId << "dirn" << dirn;
             if (enemies.at (otherEnemy - 1)->direction() != dirn) {
-                kDebug() << spriteId << "wants" << dirn << ":" << otherEnemy
+                dbk3 << spriteId << "wants" << dirn << ":" << otherEnemy
                          << "at" << gridI << (gridJ + dJ) << "wants"
                          << (enemies.at (otherEnemy - 1)->direction());
                 return true;
@@ -529,15 +529,15 @@ void KGrLevelPlayer::unstackEnemy (const int spriteId,
                                    const int gridI, const int gridJ,
                                    const int prevEnemy)
 {
-    dbe "KGrLevelPlayer::unstackEnemy (%02d at [%02d,%02d] prevEnemy %02d)\n",
+    dbe2 "KGrLevelPlayer::unstackEnemy (%02d at [%02d,%02d] prevEnemy %02d)\n",
         spriteId, gridI, gridJ, prevEnemy);
     int nextId = grid->enemyOccupied (gridI, gridJ);
     int prevId;
     while (nextId > 0) {
         prevId = enemies.at (nextId - 1)->getPrevInCell();
-        dbe "Next %02d prev %02d\n", nextId, prevId);
+        dbe2 "Next %02d prev %02d\n", nextId, prevId);
         if (prevId == spriteId) {
-            dbe "    SET IDs - id %02d prev %02d\n", nextId, prevEnemy);
+            dbe2 "    SET IDs - id %02d prev %02d\n", nextId, prevEnemy);
             enemies.at (nextId - 1)->setPrevInCell (prevEnemy);
             // break;
         }
@@ -581,13 +581,13 @@ int KGrLevelPlayer::runnerGotGold (const int  spriteId,
                                    const bool hasGold, const bool lost)
 {
     if (hasGold) {
-        kDebug() << "GOLD COLLECTED BY" << spriteId << "AT" << i << j;
+        dbk3 << "GOLD COLLECTED BY" << spriteId << "AT" << i << j;
     }
     else if (lost) {
-        kDebug() << "GOLD LOST BY" << spriteId << "AT" << i << j;
+        dbk3 << "GOLD LOST BY" << spriteId << "AT" << i << j;
     }
     else {
-        kDebug() << "GOLD DROPPED BY" << spriteId << "AT" << i << j;
+        dbk3 << "GOLD DROPPED BY" << spriteId << "AT" << i << j;
     }
     if (! lost) {
         grid->gotGold (i, j, hasGold);		// Record pickup/drop on grid.

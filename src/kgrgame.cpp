@@ -51,6 +51,10 @@
 
 #endif
 
+#define UserPause       true
+#define ProgramPause    false
+#define NewLevel        true
+
 /******************************************************************************/
 /***********************    KGOLDRUNNER GAME CLASS    *************************/
 /******************************************************************************/
@@ -68,8 +72,6 @@ KGrGame::KGrGame (KGrCanvas * theView,
         fx (NumSounds),
         editor (0)
 {
-    newLevel = true;			// Next level will be a new one.
-    loading  = true;			// Stop input until it is loaded.
     settings (NORMAL_SPEED);
 
     gameFrozen = true;
@@ -107,7 +109,7 @@ void KGrGame::gameActions (int action)
         saveGame();
         break;
     case PAUSE:
-        pause (true, (! gameFrozen));
+        freeze (UserPause, (! gameFrozen));
         break;
     case HIGH_SCORE:
         showHighScores();
@@ -294,7 +296,7 @@ void KGrGame::initGame()
 void KGrGame::quickStartDialog()
 {
     // Make sure the game will not start during the Quick Start dialog.
-    pause (false, true);
+    freeze (ProgramPause, true);
 
     qs = new KDialog (view);
 
@@ -354,13 +356,13 @@ void KGrGame::quickStartPlay()
     // now, to avoid interference with any tutorial messages there may be.
     qs->hide();
     showTutorialMessages (level);	// Level has already been loaded.
-    pause (false, false);
+    freeze (ProgramPause, false);
 }
 
 void KGrGame::quickStartNewGame()
 {
     qs->accept();
-    pause (false, false);
+    freeze (ProgramPause, false);
     startAnyLevel();
     // TODO - If Cancelled, need somehow to do "showTutorialMessages()".
 }
@@ -372,9 +374,12 @@ void KGrGame::quickStartUseMenu()
     myMessage (view, i18n ("Game Paused"),
             i18n ("The game is halted. You will need to press the Pause key "
                  "(default P or Esc) when you are ready to play."));
-    pause (false, false);
+    freeze (ProgramPause, false);
     // TODO - This is not working.  The game stays frozen.  prepareToPlay()?
-    pause (true, true);
+    freeze (UserPause, true);
+    // if (levelPlayer) {
+        // levelPlayer->prepareToPlay();
+    // }
 }
 
 void KGrGame::quickStartQuit()
@@ -413,12 +418,7 @@ void KGrGame::startLevel (int startingAt, int requestedLevel)
     int selectedLevel = requestedLevel;
 
     // Halt the game during the dialog.
-    pause (false, true);
-    // modalFreeze = false;
-    // if (! gameFrozen) {
-        // modalFreeze = true;
-        // freeze();
-    // }
+    freeze (ProgramPause, true);
 
     // Run the game and level selection dialog.
     KGrSLDialog * sl = new KGrSLDialog (startingAt, requestedLevel, gameIndex,
@@ -433,11 +433,7 @@ void KGrGame::startLevel (int startingAt, int requestedLevel)
              << "prefix" << gameList.at(selectedGame)->prefix
              << "selectedLevel" << selectedLevel;
     // Unfreeze the game, but only if it was previously unfrozen.
-    pause (false, false);
-    // if (modalFreeze) {
-        // unfreeze();
-        // modalFreeze = false;
-    // }
+    freeze (ProgramPause, false);
 
     if (selected) {		// If OK, start the selected game and level.
         newGame (selectedLevel, selectedGame);
@@ -514,7 +510,7 @@ void KGrGame::herosDead()
 #endif
         // Still some life left, so PAUSE and then re-start the level.
         emit showLives (lives);
-        // TODO - Should use a program freeze (pause (bool, bool)).
+        // TODO - Should use a program freeze (freeze (ProgramPause, bool)).
         gameFrozen = true;	// Freeze the animation and let
         dyingTimer->setSingleShot (true);
         dyingTimer->start (1500);	// the player see what happened.
@@ -526,34 +522,30 @@ void KGrGame::herosDead()
 	effects->play (fx[GameOverSound]);
 #endif
         emit showLives (lives);
-        pause (false, true);
-        QString gameOver = "<NOBR><B>" + i18n ("GAME OVER !!!") + "</B></NOBR>";
-        KGrMessage::information (view, gameData->name, gameOver);
+        freeze (ProgramPause, true);
         checkHighScore();	// Check if there is a high score for this game.
 
         // Offer the player a chance to start this level again with 5 new lives.
-        switch (KGrMessage::warning (view, i18n ("Retry Level?"),
-                            i18n ("Would you like to try this level again?"),
+        QString gameOver = i18n ("<NOBR><B>GAME OVER !!!</B></NOBR><P>"
+                                 "Would you like to try this level again?</P>");
+        switch (KGrMessage::warning (view, i18n ("Game Over"), gameOver,
                             i18n ("&Try Again"), i18n ("&Finish"))) {
         case 0:
-            pause (false, false);	// Offer accepted.
+            freeze (ProgramPause, false);		// Offer accepted.
             newGame (level, gameIndex);
             showTutorialMessages (level);
             return;
             break;
         case 1:
-            break;			// Offer rejected.
+            break;				// Offer rejected.
         }
 
-        // Game completely over: display the "ENDE" screen.
-        // TODO - The "ENDE" screen is displayed but it is frozen.
-        // TODO - If we restart the game on the "ENDE" screen then use the New
-        //        Game dialog, the new level comes up but animation is haywire.
-        pause (false, false);		// ... NOW we can unfreeze.
-        newLevel = true;
+        // Game completely over.
+        freeze (ProgramPause, false);		// Unfreeze.
         level = 0;
-        loadLevel (level);		// Display the "ENDE" screen.
-        newLevel = false;
+        if (loadLevel (level, (! NewLevel))) {	// Display the "ENDE" screen.
+            levelPlayer->prepareToPlay();	// Activate the animation.
+        }
     }
 }
 
@@ -562,12 +554,11 @@ void KGrGame::finalBreath()
     // Fix bug 95202:	Avoid re-starting if the player selected
     //			edit mode before the 1.5 seconds were up.
     if (! editor) {
-        loadLevel (level);
-        if (levelPlayer) {
+        if (loadLevel (level, (! NewLevel))) {
             levelPlayer->prepareToPlay();
         }
     }
-    // TODO - Should use a program freeze (pause (bool, bool)).
+    // TODO - Should use a program freeze (freeze (ProgramPause, bool)).
     gameFrozen = false;	// Unfreeze the game, but don't move yet.
 }
 
@@ -588,14 +579,14 @@ void KGrGame::goUpOneLevel()
     incScore (1500);
 
     if (level >= gameData->nLevels) {
-        pause (false, true);
+        freeze (ProgramPause, true);
         KGrMessage::information (view, gameData->name,
             i18n ("<b>CONGRATULATIONS !!!!</b>"
             "<p>You have conquered the last level in the "
             "<b>\"%1\"</b> game !!</p>", gameData->name.constData()));
         checkHighScore();	// Check if there is a high score for this game.
 
-        pause (false, false);
+        freeze (ProgramPause, false);
         level = 0;		// Game completed: display the "ENDE" screen.
     }
     else {
@@ -603,10 +594,9 @@ void KGrGame::goUpOneLevel()
         emit showLevel (level);
     }
 
-    newLevel = true;
-    loadLevel (level);
-    showTutorialMessages (level);
-    newLevel = false;
+    if (loadLevel (level, NewLevel)) {
+        showTutorialMessages (level);
+    }
 }
 
 void KGrGame::setControlMode (const int mode)
@@ -656,11 +646,6 @@ bool KGrGame::inEditMode()
     return (editor != 0);	// Return true if the game-editor is active.
 }
 
-bool KGrGame::isLoading()
-{
-    return (loading);		// Return true if a level is being loaded.
-}
-
 void KGrGame::toggleSoundsOnOff()
 {
     KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
@@ -672,7 +657,7 @@ void KGrGame::toggleSoundsOnOff()
 #endif
 }
 
-void KGrGame::pause (const bool userAction, const bool on_off)
+void KGrGame::freeze (const bool userAction, const bool on_off)
 {
     kDebug() << "PAUSE: userAction" << userAction << "on_off" << on_off;
     kDebug() << "gameFrozen" << gameFrozen << "programFreeze" << programFreeze;
@@ -710,51 +695,8 @@ void KGrGame::pause (const bool userAction, const bool on_off)
              << "programFreeze" << programFreeze;
 }
 
-// TODO - Remove these functions: superseded by pause (bool, bool).
-// void KGrGame::freeze()
-// {
-    // if ((! modalFreeze) && (! messageFreeze)) {
-        // emit gameFreeze (true);	// Do visual feedback in the GUI.
-    // }
-    // gameFrozen = true;		// Halt the game, by blocking all timer events.
-    // if (levelPlayer) {
-        // levelPlayer->pause (true);
-    // }
-// }
-
-// void KGrGame::unfreeze()
-// {
-    // if ((! modalFreeze) && (! messageFreeze)) {
-        // emit gameFreeze (false);// Do visual feedback in the GUI.
-    // }
-    // gameFrozen = false;		// Restart the game after the next tick().
-    // if (levelPlayer) {
-        // levelPlayer->pause (false);
-    // }
-// }
-
-// void KGrGame::setMessageFreeze (bool on_off)
-// {
-    // if (on_off) {		// Freeze the game action during a message.
-        // messageFreeze = false;
-        // if (! gameFrozen) {
-            // messageFreeze = true;
-            // freeze();
-        // }
-    // }
-    // else {			// Unfreeze the game action after a message.
-        // if (messageFreeze) {
-            // unfreeze();
-            // messageFreeze = false;
-        // }
-    // }
-// }
-
 void KGrGame::newGame (const int lev, const int newGameIndex)
 {
-    // Ignore player input from keyboard or mouse while the screen is set up.
-    loading = true;		// "loadLevel (level)" will reset it.
-
     view->goToBlack();
     if (editor) {
         emit setEditMenu (false);	// Disable edit menu items and toolbar.
@@ -762,8 +704,6 @@ void KGrGame::newGame (const int lev, const int newGameIndex)
         delete editor;
         editor = 0;
     }
-
-    newLevel = true;
 
     level     = lev;
     gameIndex = newGameIndex;
@@ -778,9 +718,7 @@ void KGrGame::newGame (const int lev, const int newGameIndex)
     emit showScore (score);
     emit showLevel (level);
 
-    newLevel = true;;
-    loadLevel (level);
-    newLevel = false;
+    loadLevel (level, NewLevel);
 }
 
 void KGrGame::startTutorial()
@@ -833,13 +771,8 @@ void KGrGame::showHint()
 
 // TODO - Maybe call this playLevel (level, game, flavour) and pair
 //        it with endLevel (status).
-int KGrGame::loadLevel (int levelNo)
+bool KGrGame::loadLevel (const int levelNo, const bool newLevel)
 {
-    // TODO - Need to kill a level that is already playing, e.g. if we do
-    //        New Game... in the middle of a level.
-    // Ignore player input from keyboard or mouse while the screen is set up.
-    loading = true;
-
     // If there is a level being played, kill it, with no win/lose result.
     if (levelPlayer) {
         endLevel (NORMAL);
@@ -857,8 +790,7 @@ int KGrGame::loadLevel (int levelNo)
                                         systemDataDir : userDataDir;
     // Read the level data.
     if (! io.readLevelData (dir, gameData, levelNo, levelData)) {
-        loading = false;
-        return 0;
+        return false;
     }
 
     view->setLevel (levelNo);		// Switch and render background if reqd.
@@ -888,11 +820,6 @@ int KGrGame::loadLevel (int levelNo)
     // If there is a hint, translate it right now.
     levelHint = (len > 0) ? i18n ((const char *) levelData.hint) : "";
 
-    // TODO - Handle editor connections inside the editor.
-    // Disconnect edit-mode slots from signals from "view".
-    // disconnect (view, SIGNAL (mouseClick (int)), 0, 0);
-    // disconnect (view, SIGNAL (mouseLetGo (int)), 0, 0);
-
     // Re-draw the playfield frame, level title and figures.
     view->setTitle (getTitle());
 
@@ -908,18 +835,13 @@ int KGrGame::loadLevel (int levelNo)
     // executing when control goes to the endLevel (const int heroStatus) slot.
     connect (levelPlayer, SIGNAL (endLevel (const int)),
              this,        SLOT   (endLevel (const int)), Qt::QueuedConnection);
-
-    // Re-enable player input.
-    loading = false;
-
-    return 1;
+    return true;
 }
 
 void KGrGame::showTutorialMessages (int levelNo)
 {
     // Halt the game during message displays and mouse pointer moves.
-    pause (false, true);
-    // setMessageFreeze (true);
+    freeze (ProgramPause, true);
 
     // Check if this is a tutorial collection and not on the "ENDE" screen.
     if ((gameData->prefix.left (4) == "tute") && (levelNo != 0)) {
@@ -936,8 +858,7 @@ void KGrGame::showTutorialMessages (int levelNo)
     if (levelPlayer) {
         levelPlayer->prepareToPlay();
     }
-    pause (false, false);		// Let the level begin.
-    // setMessageFreeze (false);	// Let the level begin.
+    freeze (ProgramPause, false);		// Let the level begin.
 }
 
     // TODO - Connect these somewhere else in the code, e.g. in KGrLevelPlayer.
@@ -985,8 +906,7 @@ void KGrGame::kbControl (int dirn)
         ((controlMode == LAPTOP) && (dirn != DIG_RIGHT) && (dirn != DIG_LEFT)))
         {
         // Halt the game while a message is displayed.
-        pause (false, true);
-        // setMessageFreeze (true);
+        freeze (ProgramPause, true);
 
         switch (KMessageBox::questionYesNo (view, 
                 i18n ("You have pressed a key that can be used to control the "
@@ -1008,8 +928,7 @@ void KGrGame::kbControl (int dirn)
         }
 
         // Unfreeze the game, but only if it was previously unfrozen.
-        pause (false, false);
-        // setMessageFreeze (false);
+        freeze (ProgramPause, false);
 
         if (controlMode != KEYBOARD) {
             return;                    		// Stay in Mouse or Laptop Mode.
@@ -1120,12 +1039,7 @@ void KGrGame::loadGame()		// Re-load game, score and level.
     }
 
     // Halt the game during the loadGame() dialog.
-    pause (false, true);
-    // modalFreeze = false;
-    // if (!gameFrozen) {
-        // modalFreeze = true;
-        // freeze();
-    // }
+    freeze (ProgramPause, true);
 
     QString s;
 
@@ -1171,11 +1085,7 @@ void KGrGame::loadGame()		// Re-load game, score and level.
     }
 
     // Unfreeze the game, but only if it was previously unfrozen.
-    pause (false, false);
-    // if (modalFreeze) {
-        // unfreeze();
-        // modalFreeze = false;
-    // }
+    freeze (ProgramPause, false);
 
     delete lg;
 }
@@ -1679,14 +1589,12 @@ void KGrGame::loadSounds()
 void KGrGame::myMessage (QWidget * parent, const QString &title, const QString &contents)
 {
     // Halt the game while the message is displayed, if not already halted.
-    pause (false, true);
-    // setMessageFreeze (true);
+    freeze (ProgramPause, true);
 
     KGrMessage::information (parent, title, contents);
 
     // Unfreeze the game, but only if it was previously unfrozen.
-    pause (false, false);
-    // setMessageFreeze (false);
+    freeze (ProgramPause, false);
 }
 
 #include "kgrgame.moc"

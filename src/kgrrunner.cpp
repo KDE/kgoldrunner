@@ -297,7 +297,7 @@ void KGrEnemy::run (const int scaledTime)
     else if ((pointCtr == 1) && (currDirection == DOWN) &&
         (grid->cellType (gridI, gridJ + 1) == HOLE)) {
         // Enemy is starting to fall into a hole.
-        kDebug() << spriteId
+        dbk3 << spriteId
                  << "Falling into hole at:" << gridI << (gridJ + 1);
         grid->changeCellAt (gridI, gridJ + 1, USEDHOLE);
         dropGold();
@@ -318,10 +318,10 @@ void KGrEnemy::run (const int scaledTime)
     checkForGold();
 
     // Find the next direction that could lead to the hero.
-    fprintf (stderr, "\n");
+    dbe3 "\n");
     Direction nextDirection = levelPlayer->getEnemyDirection
                                            (gridI, gridJ, leftRightSearch);
-    dbk << spriteId << "at" << gridI << gridJ << "===>" << nextDirection;
+    dbk3 << spriteId << "at" << gridI << gridJ << "===>" << nextDirection;
     Flags     OK            = grid->enemyMoves (gridI, gridJ);
 
     // If the enemy just left a hole, change it to empty.  Must execute this
@@ -329,7 +329,7 @@ void KGrEnemy::run (const int scaledTime)
     // enemy will just fall back into the hole again.
     if ((currDirection == UP) &&
         (grid->cellType  (gridI, gridJ + 1) == USEDHOLE)) {
-        kDebug() << spriteId << "Hole emptied at" << gridI << (gridJ + 1);
+        dbk3 << spriteId << "Hole emptied at" << gridI << (gridJ + 1);
         if (grid->enemyOccupied (gridI, gridJ + 1) < 0) // IDW TODO needed?
         grid->changeCellAt (gridI, gridJ + 1, HOLE);
     }
@@ -339,7 +339,7 @@ void KGrEnemy::run (const int scaledTime)
 
     AnimationType nextAnimation = aType [nextDirection];
     bool onEnemy  = levelPlayer->standOnEnemy (spriteId, gridX, gridY);
-    if (onEnemy) kDebug() << spriteId << "STANDING ON ENEMY - dirn"
+    if (onEnemy) dbk3 << spriteId << "STANDING ON ENEMY - dirn"
                           << nextDirection;
     // TODO - Do a better, smoother job of falling while standing on enemy.
     // TODO - Especially, do not do a climb-down action.
@@ -354,12 +354,12 @@ void KGrEnemy::run (const int scaledTime)
             // TODO - Check that the trap time is the same as in KGr 3.0.
             // TODO - Ugly 7.  Ugly arithmetic too.  270 * 7 / 4 = 472.5.
             interval = (trapTime * 7) / pointsPerCell;
-            kDebug() << spriteId << "Arrived in USEDHOLE at" << gridI << gridJ;
+            dbk3 << spriteId << "Arrived in USEDHOLE at" << gridI << gridJ;
         }
         else {
             nextDirection = UP;
             nextAnimation = CLIMB_U;
-            kDebug() << spriteId << "Leaving USEDHOLE at" << gridI << gridJ;
+            dbk3 << spriteId << "Leaving USEDHOLE at" << gridI << gridJ;
         }
     }
     else if (! canStand) {
@@ -475,12 +475,12 @@ void KGrEnemy::dieAndReappear()
 
     if (rules->reappearAtTop()) {
         // Traditional or Scavenger rules.
-        kDebug() << spriteId << "REAPPEAR AT TOP";
+        dbk3 << spriteId << "REAPPEAR AT TOP";
         levelPlayer->enemyReappear (gridI, gridJ);
     }
     else {
         // KGoldrunner rules.
-        kDebug() << spriteId << "REAPPEAR AT BIRTHPLACE";
+        dbk3 << spriteId << "REAPPEAR AT BIRTHPLACE";
         gridI = birthI;
         gridJ = birthJ;
     }
@@ -499,7 +499,7 @@ void KGrEnemy::reserveCell (const int i, const int j)
     // Push down a previous enemy or -1 if the cell was empty.
     prevInCell = grid->enemyOccupied (i, j);
     grid->setEnemyOccupied (i, j, spriteId);
-    dbe "%02d Entering [%02d,%02d] pushes %02d\n", spriteId, i, j, prevInCell);
+    dbe3 "%02d Entering [%02d,%02d] pushes %02d\n", spriteId, i, j, prevInCell);
 }
 
 void KGrEnemy::releaseCell (const int i, const int j)
@@ -511,7 +511,7 @@ void KGrEnemy::releaseCell (const int i, const int j)
     else {
         levelPlayer->unstackEnemy (spriteId, i, j, prevInCell);
     }
-    dbe "%02d Leaves [%02d,%02d] to %02d\n", spriteId, i, j, prevInCell);
+    dbe3 "%02d Leaves [%02d,%02d] to %02d\n", spriteId, i, j, prevInCell);
 }
 
 void KGrEnemy::showState (char option)

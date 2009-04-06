@@ -1,3 +1,5 @@
+#include "kgrdebug.h"
+
 /****************************************************************************
  *    Copyright 2009  Ian Wadham <iandw.au@gmail.com>                         *
  *                                                                          *
@@ -236,14 +238,14 @@ void KGrLevelGrid::calculateCellAccess (const int i, const int j)
 void KGrLevelGrid::placeHiddenLadders()
 {
     int offset, i, j;
-    fprintf (stderr, "KGrLevelGrid::placeHiddenLadders() %02d width %02d\n",
+    dbe3 "KGrLevelGrid::placeHiddenLadders() %02d width %02d\n",
                      hiddenLadders.count(), width);
 
     foreach (offset, hiddenLadders) {
         i = offset % width;
         j = offset / width;
         changeCellAt (i, j, LADDER);
-        fprintf (stderr, "Show ladder at %04d [%02d,%02d]\n", offset, i, j);
+        dbe3 "Show ladder at %04d [%02d,%02d]\n", offset, i, j);
     }
     emit showHiddenLadders (hiddenLadders, width);
     hiddenLadders.clear();

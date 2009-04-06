@@ -53,7 +53,6 @@ public:
 
     bool inMouseMode();			// True if the game is in mouse mode.
     bool inEditMode();			// True if the game is in editor mode.
-    bool isLoading();			// True if a level is being loaded.
 
     bool saveOK();			// Check if edits were saved.
 
@@ -77,7 +76,7 @@ public slots:
 
     void kbControl (int dirn);
 
-    // TODO - Only startAnyLevel() is used (from NewGame...).
+    // TODO - Only startAnyLevel() is used (from newGame...).
     void startLevelOne();		// Start any game from level 1.
     void startAnyLevel();		// Start any game from any level.
     void startNextLevel();		// Start next level of current game.
@@ -147,7 +146,7 @@ private slots:
 private:
 // TODO - Maybe call this playLevel (level, game, flavour) and pair
 //        it with endLevel (status).
-    int  loadLevel (int levelNo);
+    bool loadLevel (const int levelNo, const bool newLevel);
     void showTutorialMessages (int levelNo);
 
     void checkHighScore();		// Check if high score for current game.
@@ -179,12 +178,7 @@ private:
     long			score;		// Current score.
     long			startScore;	// Score at start of level.
 
-    bool			newLevel;	// Next level will be a new one.
-    bool			loading;	// Stop input until it's loaded.
-
     bool			gameFrozen;	// Game stopped.
-    // bool			modalFreeze;	// Stop game during dialog.
-    // bool			messageFreeze;	// Stop game during message.
     bool			programFreeze;	// Stop game during dialog, etc.
 
     QTimer *			dyingTimer;	// For pause when the hero dies.
@@ -212,10 +206,7 @@ private:
 public slots:
     void dbgControl (int code);	// Authors' debugging aids.
 
-    void pause (const bool userAction, const bool on_off);
-    // void freeze();		// Stop the gameplay action.
-    // void unfreeze();		// Restart the gameplay action.
-    // void setMessageFreeze (bool);
+    void freeze (const bool userAction, const bool on_off);
 
 private:
     KGrEditor * editor;		// The level-editor object.
