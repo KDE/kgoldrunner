@@ -56,8 +56,8 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
                           m_scoreDisplay(0),
                           m_livesDisplay(0),
                           m_fadingTimeLine (1000, this),
+                          emptySprites (0),
                           theme (systemDataDir)
-
 {
     resizeCount = 0;		// IDW
 
@@ -79,10 +79,8 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
     border = 4;			// Make border at least tiles wide all around.
     lineDivider = 8;		// Make lines of inner border 1/8 tile wide.
 
-    heroSprite = 0;
-
-    // Create an empty list of enemy sprites.
-    enemySprites = new QList<KGrSprite *>();
+    // Create an empty list of sprites.
+    sprites = new QList<KGrSprite *>();
 
     kDebug() << "Calling initView() ...";
     initView();			// Set up the graphics, etc.
@@ -121,7 +119,8 @@ KGrCanvas::~KGrCanvas()
     tileset->clear();
     heroFrames->clear();
     enemyFrames->clear();
-    deleteEnemySprites();
+    deleteAllSprites();
+
     while (!borderRectangles.isEmpty())
 	delete borderRectangles.takeFirst();
     while (!borderElements.isEmpty())
@@ -131,8 +130,7 @@ KGrCanvas::~KGrCanvas()
     delete tileset;
     delete heroFrames;
     delete enemyFrames;
-    delete heroSprite;
-    delete enemySprites;
+    delete sprites;
     delete m_spotLight;
     delete m_scoreText;
     delete m_livesText;
@@ -214,32 +212,32 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
     }
     kDebug() << t.restart() << "msec.  Hero + enemies done.";
 
-    int spriteframe;
+    int    spriteframe;
     QPoint spriteloc;
+    char   spritetype;
 
-    // Draw the hero.
-    if (heroSprite) {
-        spriteframe = heroSprite->currentFrame();
-        spriteloc = heroSprite->currentLoc();
-        heroSprite->addFrames (heroFrames, topLeft, scale);
+    if (sprites) {
+        foreach (KGrSprite * sprite, (* sprites)) {
+            if (sprite) {
+                spriteframe = sprite->currentFrame();
+                spriteloc   = sprite->currentLoc();
+                spritetype  = sprite->spriteType();
 
-        // Force a re-draw of both pixmap and position.
-        heroSprite->move (0, 0, (spriteframe > 0) ? 0 : 1);
-        heroSprite->move (spriteloc.x(), spriteloc.y(), spriteframe);
-    }
-
-    if (enemySprites) {
-        for (int i = 0; i < enemySprites->size(); ++i) {
-            // kDebug() << "accessing enemySprite" << i;
-            KGrSprite * thisenemy = enemySprites->at (i);
-            if (thisenemy) {
-                spriteframe = thisenemy->currentFrame();
-                spriteloc = thisenemy->currentLoc();
-                thisenemy->addFrames (enemyFrames, topLeft, scale);
+                switch (spritetype) {
+                case HERO:
+                    sprite->addFrames (heroFrames,  topLeft, scale);
+                    break;
+                case ENEMY:
+                    sprite->addFrames (enemyFrames, topLeft, scale);
+                    break;
+                case BRICK:
+                    sprite->addFrames (tileset, topLeft, scale);
+                    break;
+                }
 
                 // Force re-draw of both pixmap and position.
-                thisenemy->move (0, 0, (spriteframe > 0) ? 0 : 1);
-                thisenemy->move (spriteloc.x(), spriteloc.y(), spriteframe);
+                sprite->move (0, 0, (spriteframe > 0) ? 0 : 1);
+                sprite->move (spriteloc.x(), spriteloc.y(), spriteframe);
             }
         }
     }
@@ -352,7 +350,7 @@ KGrTheme::TileType KGrCanvas::tileForType(char type)
     switch (type) {
     case NUGGET:
 	return KGrTheme::GoldTile;
-    case POLE:
+    case BAR:
 	return KGrTheme::BarTile;
     case LADDER:
 	return KGrTheme::LadderTile;
@@ -362,7 +360,7 @@ KGrTheme::TileType KGrCanvas::tileForType(char type)
 	return KGrTheme::HeroTile;
     case ENEMY:
 	return KGrTheme::EnemyTile;
-    case BETON:
+    case CONCRETE:
 	return KGrTheme::ConcreteTile;
     case BRICK:
 	return KGrTheme::BrickTile;
@@ -402,6 +400,7 @@ int KGrCanvas::tileNumber (KGrTheme::TileType type, int x, int y)
 
 void KGrCanvas::paintCell (int x, int y, char type, int offset)
 {
+    // IDW kDebug() << "recv paintCell (" << x << y << type << offset << ");";
     KGrTheme::TileType tileType = tileForType (type);
     // In KGrGame, the top-left visible cell is [1,1]: in KGrPlayfield [0,0].
     x--; y--;
@@ -478,6 +477,7 @@ void KGrCanvas::updateLives (int lives)
 
 void KGrCanvas::mousePressEvent (QMouseEvent * mouseEvent)
 {
+    // kDebug() << "Button" << mouseEvent->button();
     emit mouseClick (mouseEvent->button());
 }
 
@@ -486,65 +486,209 @@ void KGrCanvas::mouseReleaseEvent (QMouseEvent * mouseEvent)
     emit mouseLetGo (mouseEvent->button());
 }
 
-QPoint KGrCanvas::getMousePos()
+void KGrCanvas::getMousePos (int & i, int & j)
+// QPoint KGrCanvas::getMousePos()
 {
-    int i, j;
+    // int i, j;
     QPoint p = mapFromGlobal (m->pos());
 
     // In KGoldrunner, the top-left visible cell is [1,1]: in KGrSprite [0,0].
     i = ((p.x() - topLeft.x()) / imgW) + 1;
     j = ((p.y() - topLeft.y()) / imgH) + 1;
-
-    return (QPoint (i, j));
+//
+    // return (QPoint (i, j));
 }
 
-void KGrCanvas::setMousePos (int i, int j)
+void KGrCanvas::setMousePos (const int i, const int j)
 {
     // In KGoldrunner, the top-left visible cell is [1,1]: in KGrSprite [0,0].
-    i--; j--;
-    m->setPos (mapToGlobal (QPoint (
-                                topLeft.x() + i * imgW + imgW / 2,
-                                topLeft.y() + j * imgH + imgH / 2)));
+    m->setPos (mapToGlobal (QPoint (topLeft.x() + (i - 1) * imgW + imgW / 2,
+                                    topLeft.y() + (j - 1) * imgH + imgH / 2)));
 }
 
-void KGrCanvas::makeHeroSprite (int i, int j, int startFrame)
+void KGrCanvas::animate (bool missed)
 {
-    heroSprite = new KGrSprite (this);
+    foreach (KGrSprite * sprite, (* sprites)) {
+        if (sprite != 0) {
+            sprite->animate (missed);
+        }
+    }
+}
 
+int KGrCanvas::makeSprite (const char type, int i, int j)
+{
+    int spriteId;
+    KGrSprite * sprite = new KGrSprite (this, type, TickTime);
+
+    if ((emptySprites > 0) && ((spriteId = sprites->lastIndexOf (0)) >= 0)) {
+        // Re-use a slot previously occupied by a transient member of the list.
+        (* sprites) [spriteId] = sprite;
+        emptySprites--;
+    }
+    else {
+        // Otherwise, add to the end of the list.
+        spriteId = sprites->count();
+        sprites->append (sprite);
+        emptySprites = 0;
+    }
+
+    int z        = 0;
+    int frame1   = FALL1;
     double scale = (double) imgW / (double) bgw;
-    heroSprite->addFrames (heroFrames, topLeft, scale);
+
+    switch (type) {
+    case HERO:
+        sprite->addFrames (heroFrames, topLeft, scale);
+        z = 1;
+        break;
+    case ENEMY:
+        sprite->addFrames (enemyFrames, topLeft, scale);
+        z = 2;
+        break;
+    case BRICK:
+        sprite->addFrames (tileset, topLeft, scale);
+        frame1 = KGrTheme::BrickTile;
+        z = 1;
+        // Erase the brick-image so that animations are visible in all themes.
+        paintCell (i, j, FREE, 0);
+        break;
+    default:
+        break;
+    }
 
     // In KGoldrunner, the top-left visible cell is [1,1]: in KGrSprite [0,0].
-    i--; j--;
-    heroSprite->move (i * bgw, j * bgh, startFrame);
-    heroSprite->setZ (1);
-    heroSprite->setVisible (true);
+    sprite->move ((i - 1) * bgw, (j - 1) * bgh, frame1);
+    sprite->setZ (z);
+    sprite->show();
+
+    // kDebug() << "Sprite ID" << spriteId << "sprite type" << type
+             // << "at" << i << j;
+    return spriteId;
 }
 
-void KGrCanvas::setHeroVisible (bool newState)
+void KGrCanvas::startAnimation (const int id, const bool repeating,
+                                const int i, const int j, const int time,
+                                const Direction dirn, const AnimationType type)
 {
-    heroSprite->setVisible (newState);		// Show or hide the hero.
+    // TODO - Save last direction somehow, to use in facing and centering code.
+    // TODO - Put most of this in helper code, based on theme parameters.
+    // TODO - Use a QList of animation parameters: one entry per id.
+    // TODO - Need to select plain or gold-carrying enemy frames somehow.
+    int frame;
+    int nFrames = 8;
+    int nFrameChanges = 4;
+    int dx = 0;
+    int dy = 0;
+
+    switch (dirn) {
+    case RIGHT:
+        dx    = +1;
+        frame = (type == RUN_R) ? RIGHTWALK1 : RIGHTCLIMB1;
+        break;
+    case LEFT:
+        dx    = -1;
+        frame = (type == RUN_L) ? LEFTWALK1  : LEFTCLIMB1;
+        break;
+    case DOWN:
+        dy = +1;
+        if ((type == FALL_R) || (type == FALL_L)) {
+            nFrames = 1;
+            // TODO - Work out which way to face the runner.
+            frame   = (type == FALL_R) ? FALL2 : FALL1;
+        }
+        else {
+            nFrames = 2;
+            frame   = CLIMB1;
+        }
+        break;
+    case UP:
+        dy = -1;
+        nFrames = 2;
+        frame   = CLIMB1;
+        break;
+    case STAND:
+        switch (type) {
+        case OPEN_BRICK:
+            nFrames = 5;
+            frame = tileNumber (KGrTheme::BrickAnimation1Tile, i, j);
+            break;
+        case CLOSE_BRICK:
+            nFrames = 4;
+            frame = tileNumber (KGrTheme::BrickAnimation6Tile, i, j);
+            break;
+        default:
+            // Show a standing hero or enemy.
+            nFrames = 0; 
+            // TODO - Work out which way to face the runner.
+            frame = FALL1; // (type == RUN) ? RIGHTWALK1 : RIGHTCLIMB1;
+            break;
+        }
+        break;
+    default:
+        break;
+    }
+    // kDebug() << "id" << id << "data" << i << j << dx * bgw << dy * bgw << frame << time;
+    // TODO - Generalise nFrameChanges = 4, also the tick time = 20 new sprite.
+    sprites->at(id)->setAnimation (repeating, (i - 1) * bgw, (j - 1) * bgh,
+                    frame, nFrames, dx * bgw, dy * bgh, time, nFrameChanges);
 }
 
-void KGrCanvas::makeEnemySprite (int i, int j, int startFrame)
+void KGrCanvas::resynchAnimation (const int id, const int i, const int j,
+                                  const bool stop)
 {
-    KGrSprite * enemySprite = new KGrSprite (this);
-
-    double scale = (double) imgW / (double) bgw;
-    enemySprite->addFrames (enemyFrames, topLeft, scale);
-    enemySprites->append (enemySprite);
-
-    // In KGoldrunner, the top-left visible cell is [1,1]: in KGrSprite [0,0].
-    i--; j--;
-    enemySprite->move (i * bgw, j * bgh, startFrame);
-    enemySprite->setZ (2);
-    enemySprite->show();
+    // TODO - Write this code.
 }
 
-void KGrCanvas::moveHero (int x, int y, int frame)
+void KGrCanvas::gotGold (const int spriteId, const int i, const int j,
+                         const bool spriteHasGold, const bool lost)
 {
-    // In KGoldrunner, the top-left visible cell is [1,1]: in KGrSprite [0,0].
-    heroSprite->move (x - bgw, y - bgh, frame);
+    // Hide collected gold or show dropped gold, but not if the gold was lost.
+    if (! lost) {
+        paintCell (i, j, (spriteHasGold) ? FREE : NUGGET);
+    }
+
+    // If the rules allow, show whether or not an enemy sprite is carrying gold.
+    if (enemiesShowGold && (sprites->at(spriteId)->spriteType() == ENEMY)) {
+        sprites->at(spriteId)->setFrameOffset (spriteHasGold ? goldEnemy : 0);
+    }
+}
+
+void KGrCanvas::showHiddenLadders (const QList<int> & ladders, const int width)
+{
+    int offset, i, j;
+    foreach (offset, ladders) {
+        i = offset % width;
+        j = offset / width;
+        paintCell (i, j, LADDER);
+    }
+}
+
+void KGrCanvas::deleteSprite (const int spriteId)
+{
+    QPoint loc   = sprites->at(spriteId)->currentLoc();
+    bool   brick = (sprites->at(spriteId)->spriteType() == BRICK);
+
+    delete sprites->at(spriteId);
+    (* sprites)[spriteId] = 0;
+    emptySprites++;
+
+    if (brick) {
+        // Dug-brick sprite erased: restore the tile that was at that location.
+        paintCell ((loc.x()/bgw) + 1, (loc.y()/bgh) + 1, BRICK, 0);
+    }
+    // kDebug() << "Sprite ID" << spriteId << "emptySprites" << emptySprites;
+}
+
+void KGrCanvas::deleteAllSprites()
+{
+    KGrSprite * sprite = 0;
+    while (! sprites->isEmpty()) {
+        sprite = sprites->takeFirst();
+        if (sprite != 0) {
+            delete sprite;
+        }
+    }
+    emptySprites = 0;
 }
 
 void KGrCanvas::moveEnemy (int id, int x, int y, int frame, int nuggets)
@@ -555,13 +699,7 @@ void KGrCanvas::moveEnemy (int id, int x, int y, int frame, int nuggets)
 
     // In KGoldrunner, the top-left visible cell is [1,1]: in KGrSprite [0,0].
     // kDebug() << "accessing enemySprite" << id;
-    enemySprites->at (id)->move (x - bgw, y - bgh, frame);
-}
-
-void KGrCanvas::deleteEnemySprites()
-{
-    while (!enemySprites->isEmpty())
-        delete enemySprites->takeFirst();
+    // OBSOLESCENT - 28/1/09 enemySprites->at (id)->move (x - bgw, y - bgh, frame);
 }
 
 QPixmap KGrCanvas::getPixmap (char type)

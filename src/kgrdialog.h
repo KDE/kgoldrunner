@@ -34,60 +34,7 @@
 @author Ian Wadham and Marco Krüger
 */
 
-class KGrGame;
-class KGrCollection;
-class KGrThumbNail;
-class KGrGameListItem;
-
-/******************************************************************************/
-/*******************    DIALOG TO SELECT A GAME AND LEVEL   *******************/
-/******************************************************************************/
-
-class KGrSLDialog : public KDialog
-{
-Q_OBJECT
-public:
-    KGrSLDialog (int action, int requestedLevel, int collnIndex,
-                        QList<KGrCollection *> & gamesList, KGrGame * theGame,
-                        QWidget * parent = 0);
-    ~KGrSLDialog();
-
-    int selectedLevel()	{return (number->value());}
-    int selectedGame()	{return (slCollnIndex);}
-
-private slots:
-    void slSetCollections (int cIndex);
-    void slColln();
-    void slShowLevel (int i);
-    void slUpdate (const QString & text);
-    void slPaintLevel();
-    void slotHelp();				// Will replace KDE slotHelp().
-
-private:
-    int			slAction;
-    QList<KGrCollection *> collections;	// List of games.
-    int			defaultLevel;
-    int			defaultGame;
-    int			slCollnIndex;
-    KGrGame *		game;
-    KGrCollection *	collection;
-    QWidget *		slParent;
-
-    QLabel *		collnL;
-    QTreeWidget *	colln;
-    QLabel *		collnN;
-    QLabel *		collnD;
-    QPushButton *	collnA;
-    QTextEdit *		collnAbout;
-
-    QLabel *		numberL;
-    QSpinBox *		display;
-    QScrollBar *	number;
-    // IDW QSlider *		number;
-    QPushButton *	levelNH;
-    QLabel *		slName;
-    KGrThumbNail *	thumbNail;
-};
+class KGrGameData;
 
 /*******************************************************************************
 *************** DIALOG BOX TO CREATE/EDIT A LEVEL NAME AND HINT ****************
@@ -118,7 +65,7 @@ class KGrECDialog : public KDialog
 Q_OBJECT
 public:
     KGrECDialog (int action, int collnIndex,
-                        QList<KGrCollection *> & gamesList,
+                        QList<KGrGameData *> & gameList,
                         QWidget *parent = 0);
     ~KGrECDialog();
 
@@ -128,12 +75,12 @@ public:
     const QString	getAboutText()	{return (mle->toPlainText());}
 
 private slots:
-    void ecSetRules (const char settings);
+    void ecSetRules (const char rules);
     void ecSetKGr();	// Radio button slots.
     void ecSetTrad();
 
 private:
-    QList<KGrCollection *> collections;	// List of existing games.
+    QList<KGrGameData *> myGameList;	// List of existing games.
     int			defaultGame;
 
     QLabel *		nameL;
@@ -160,7 +107,7 @@ class KGrLGDialog : public KDialog
 {
 Q_OBJECT
 public:
-    KGrLGDialog (QFile * savedGames, QList<KGrCollection *> & collections,
+    KGrLGDialog (QFile * savedGames, QList<KGrGameData *> & gameList,
                         QWidget * parent);
     const QString getCurrentText() {return (lgList->currentItem()->text());}
 
@@ -170,34 +117,6 @@ private slots:
 private:
     QListWidget * lgList;
     int lgHighlight;
-};
-
-/*******************************************************************************
-******************  PORTABLE MESSAGE FUNCTIONS (Qt Version)  *******************
-*******************************************************************************/
-
-class KGrMessage : public QDialog
-{
-public:
-    static void information (QWidget * parent, const QString &caption,
-                            const QString &text);
-    static int warning (QWidget * parent, const QString &caption,
-                            const QString &text, const QString &label0,
-                            const QString &label1, const QString &label2 = "");
-};
-
-/*******************************************************************************
-*************************  ITEM FOR THE LIST OF GAMES  *************************
-*******************************************************************************/
-
-class KGrGameListItem : public QTreeWidgetItem
-{
-public:
-    KGrGameListItem (const QStringList & data, const int internalId = -1);
-    int id() const;
-    void setId (const int internalId);
-private:
-    int mInternalId;
 };
 
 #endif

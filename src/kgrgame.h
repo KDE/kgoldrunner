@@ -14,60 +14,47 @@
 //
 // "myStr" converts a QString object to a C language "char*" character string.
 // "myChar" extracts a C language character (type "char") from a QString object.
-// "endData" checks for an end-of-file condition.
 //
 #define myStr		toLatin1().constData
 #define myChar(i)	at((i)).toLatin1()
-#define endData		atEnd
+
+#include "kgrglobals.h"
 
 #include <QObject>
 #include <QList>
-
-#include <QColor>
-#include <QPixmap>
-#include <QLabel>
-#include <QFrame>
-
-#include "kgrgameio.h"
-#include "kgrcanvas.h"
+#include <QVector>
 
 /**
-Sets up games and levels in KGoldrunner and controls the play.
-
-@author Ian Wadham
-*/
-
+ * Sets up games and levels in KGoldrunner and controls the play.
+ *
+ * @short   KGoldrunner Game Controller.
+ */
+class KGrCanvas;
 class KDialog;
-
-class KGrObject;
-class KGrHero;
-class KGrEnemy;
-class KGrCollection;
 class KGrSoundBank;
+class KGrEditor;
+class KGrLevelPlayer;
+class QTimer;
 
 class KGrGame : public QObject
 {
 Q_OBJECT
 public:
-    KGrGame (KGrCanvas * theView, const QString &theSystemDir,
-                                  const QString &theUserDir);
+    KGrGame (KGrCanvas * theView,
+             const QString & theSystemDir, const QString & theUserDir);
     ~KGrGame();
 
-    bool initCollections();
-    KGrHero * getHero();
+    bool initGameLists();
 
     void quickStartDialog();
     void setInitialTheme (const QString & themeFilepath);
 
-    int getLevel();
-
-    void startPlaying();
+    int  getLevel();
 
     bool inMouseMode();			// True if the game is in mouse mode.
     bool inEditMode();			// True if the game is in editor mode.
-    bool isLoading();			// True if a level is being loaded.
 
-    bool saveOK (bool exiting);		// Check if edits were saved.
+    bool saveOK();			// Check if edits were saved.
 
     QString	getTitle();		// Collection - Level NNN, Name.
 
@@ -75,17 +62,33 @@ public:
 
     QString getDirectory (Owner o);
 
+    // Flags to control author's debugging aids.
+    static bool bugFix;
+    static bool logging;
+
 public slots:
     void initGame();			// Do the game object's first painting.
 
+    void gameActions (int action);
+    void editActions (int action);
+    void editToolbarActions (int action);
+    void settings (int action);
+
+    void kbControl (int dirn);
+
+    // TODO - Only startAnyLevel() is used (from newGame...).
     void startLevelOne();		// Start any game from level 1.
     void startAnyLevel();		// Start any game from any level.
     void startNextLevel();		// Start next level of current game.
-
-    void setPlaySounds (bool on_off);	// Set sound enabled or disabled.
-
-    void setMouseMode (bool on_off);	// Set mouse OR keyboard control.
+    // TODO - startLevel should NOT be a public slot.
     void startLevel (int startingAt, int requestedLevel);
+
+    void toggleSoundsOnOff();		// Set sound enabled or disabled.
+
+    // Set mouse, keyboard or laptop-hybrid control of the hero.
+    void setControlMode (const int mode);
+    void setTimeScale (const int action);
+
     void newGame (const int lev, const int gameIndex);
     void startTutorial();		// Start tutorial game.
     void showHint();			// Show hint for current level.
@@ -93,12 +96,16 @@ public slots:
     void showHighScores();		// Show high scores for current game.
 
     void incScore (int);		// Update the score.
-    void herosDead();			// Hero was caught or he quit (key Q).
     void showHiddenLadders();		// Show hidden ladders (nuggets gone).
+    void endLevel (const int result);	// Hero completed the level or he died.
+    void herosDead();			// Hero was caught or he quit (key Q).
+
+private slots:
+    void finalBreath();			// Hero is dead: re-start the level.
+
+public slots:
     void levelCompleted();		// Hero completed the level.
     void goUpOneLevel();		// Start next level.
-    void loseNugget();			// Nugget destroyed (not collected).
-    void heroAction (KBAction movement);// Move hero under keyboard control.
 
     void saveGame();			// Save game ID, score and level.
     void loadGame();			// Re-load game, score and level.
@@ -106,7 +113,9 @@ public slots:
     void heroStep (bool climbing);	// The hero has put a foot on the floor.
     void heroFalls (bool startStop);	// The hero has started/stopped falling.
     void heroDigs();			// The hero is digging.
+
 signals:
+    // These signals go to the GUI in most cases.
     void showScore (long);		// For main window to show the score.
     void showLives (long);		// For main window to show lives left.
     void showLevel (int);		// For main window to show the level.
@@ -116,10 +125,13 @@ signals:
     void setEditMenu (bool);		// Enable/Disable edit menu items.
     void defaultEditObj();		// Set default edit-toolbar button.
 
-    void markRuleType (char);		// Mark KGoldrunner/Traditional rules.
     void gameFreeze (bool);		// Do visual feedback in the GUI.
 
     void quitGame();			// Used for Quit option in Quick Start.
+
+    // Used to set/clear toggle actions and enable/disable actions.
+    void setToggle (const char * actionName, const bool onOff);
+    void setAvail  (const char * actionName, const bool onOff);
 
 private:
     KDialog * qs;			// Pointer to Quick Start dialog box.
@@ -131,42 +143,32 @@ private slots:
     void quickStartUseMenu();
     void quickStartQuit();
 
-private slots:
-    void finalBreath();		// Hero is dead: re-start the level.
-    void readMousePos();		// Timed reading of mouse position.
-    void doDig (int button);		// Dig when under mouse-button control.
-
 private:
-    void setBlankLevel (bool playable);
-    int  loadLevel (int levelNo);
-    bool readLevelData (int levelNo, LevelData & d);
-    void changeObject (unsigned char kind, int i, int j);
-    void createObject (KGrObject *o, char picType, int x, int y);
-    void setTimings();
-    void initSearchMatrix();
+// TODO - Maybe call this playLevel (level, game, flavour) and pair
+//        it with endLevel (status).
+    bool loadLevel (const int levelNo, const bool newLevel);
     void showTutorialMessages (int levelNo);
 
     void checkHighScore();		// Check if high score for current game.
 
-    int  selectLevel (int action, int requestedLevel);
     int  selectedGame;
-
-    void restart();			// Kickstart the game action.
-
-    bool safeRename (const QString & oldName, const QString & newName);
 
 /******************************************************************************/
 /**************************  PLAYFIELD AND GAME DATA  *************************/
 /******************************************************************************/
 
-private:
+    KGrLevelPlayer *            levelPlayer;	// Where the level is played.
+
     KGrCanvas *			view;		// Where the game is displayed.
     QString			systemDataDir;	// System games are stored here.
     QString			userDataDir;	// User games are stored here.
+    int                         timeScale;	// The speed of the game (2-20).
+    float                       fTimeScale;	// Speed as a float (0.2-2.0).
 
-    KGrObject *		playfield[30][22];	// Array of playfield objects.
-    char		editObjArray[30][22];	// Character-code equivalent.
-    char		lastSaveArray[30][22];	// Copy for use in "saveOK()".
+    QList<KGrGameData *>        gameList;	// A list of available games.
+    KGrGameData *		gameData;	// Data for the current game.
+    int				gameIndex;	// The index in the game-list.
+    Owner			owner;		// The game's owner.
 
     int				level;		// Current play/edit level.
     QString			levelName;	// Level name (optional).
@@ -176,22 +178,9 @@ private:
     long			score;		// Current score.
     long			startScore;	// Score at start of level.
 
-    KGrHero *			hero;		// The HERO figure !!  Yay !!!
-    int				startI, startJ;	// The hero's starting position.
+    bool			gameFrozen;	// Game stopped.
+    bool			programFreeze;	// Stop game during dialog, etc.
 
-    QList<KGrEnemy *>		enemies;	// The list of enemies.
-    int				enemyCount;	// How many enemies.
-    KGrEnemy *			enemy;		// One of the enemies.
-
-    int				nuggets;	// How many gold nuggets.
-
-    bool			newLevel;	// Next level will be a new one.
-    bool			loading;	// Stop input until it's loaded.
-
-    bool			modalFreeze;	// Stop game during dialog.
-    bool			messageFreeze;	// Stop game during message.
-
-    QTimer *			mouseSampler;	// Timer for mouse tracking.
     QTimer *			dyingTimer;	// For pause when the hero dies.
 
     int				lgHighlight;	// Row selected in "loadGame()".
@@ -199,7 +188,7 @@ private:
 /******************************************************************************/
 /*******************************  SOUND SUPPORT *******************************/
 /******************************************************************************/
-    KGrSoundBank *effects;
+    KGrSoundBank * effects;
     enum { 
 	    GoldSound, 
 	    StepSound, 
@@ -212,84 +201,24 @@ private:
 	    VictorySound,
 	    GameOverSound,
 	    NumSounds };
-    QVector< int > fx;
-
-/******************************************************************************/
-/**************************  AUTHORS' DEBUGGING AIDS **************************/
-/******************************************************************************/
+    QVector<int> fx;
 
 public slots:
-    void doStep();		// Do one animation step.
-    void showFigurePositions();	// Show everybody's co-ordinates.
-    void showHeroState();	// Show hero's co-ordinates and state.
-    void showEnemyState (int);	// Show enemy's co-ordinates and state.
-    void showObjectState();	// Show an object's state.
-    void bugFix();		// Turn a bug fix on/off dynamically.
-    void startLogging();	// Turn logging on/off.
+    void dbgControl (int code);	// Authors' debugging aids.
 
-/******************************************************************************/
-/********************  GAME EDITOR PROPERTIES AND METHODS  ********************/
-/******************************************************************************/
-
-public slots:			// Slots connected to the Menu and Edit Toolbar.
-    void createLevel();		// Set up a blank level-display for edit.
-    void updateLevel();         // Update an existing level.
-    void updateNext();          // Update the current level + 1.
-    void editNameAndHint();	// Run a dialog to edit the level name and hint.
-    bool saveLevelFile();	// Save the edited level in a text file (.grl).
-    void moveLevelFile();	// Move level to another collection or number.
-    void deleteLevelFile();	// Delete a level file.
-
-    void editCollection (int action);
-
-    void setLevel (int lev);	// Set level to be edited.
-
-    void freeze();		// Stop the gameplay action.
-    void unfreeze();		// Restart the gameplay action.
-    void setMessageFreeze (bool);
+    void freeze (const bool userAction, const bool on_off);
 
 private:
-    bool mouseMode;		// Flag to set up keyboard OR mouse control.
-    bool editMode;		// Flag to change keyboard and mouse functions.
-    char editObj;		// Type of object to be painted by the mouse.
-    bool paintEditObj;		// Sets painting on/off (toggled by clicking).
-    bool paintAltObj;		// Sets painting for the alternate object on/off
-    int  oldI, oldJ;		// Last mouse position painted.
-    int  editLevel;		// Level to be edited (= 0 for new level).
-    int  heroCount;		// Can enter at most one hero.
-    bool shouldSave;		// True if name or hint was edited.
+    KGrEditor * editor;		// The level-editor object.
 
-private:
-    QString getFilePath  (Owner o, KGrCollection * colln, int lev);
-    void loadEditLevel (int);	// Load and display an existing level for edit.
-    void initEdit();
-    void deleteLevel();
-    void insertEditObj (int, int, char object);
-    void setEditableCell (int, int, char);
-    void showEditLevel();
-    bool reNumberLevels (int, int, int, int);
-    bool ownerOK (Owner o);
-
-private slots:
-    void doEdit (int);		// For mouse-click when in edit-mode.
-    void endEdit (int);		// For mouse-release when in edit-mode.
+    int controlMode;		// How to control the hero (e.g. K/B or mouse).
 
 /******************************************************************************/
-/********************   COLLECTION PROPERTIES AND METHODS   *******************/
+/***********************   GAME PROPERTIES AND METHODS   **********************/
 /******************************************************************************/
 
-private:
-
-// Note that a collection of KGoldrunner levels is the same thing as a "game".
-    QList<KGrCollection *>	collections;	// List of ALL collections.
-
-    KGrCollection *		collection;	// Collection currently in use.
-    Owner			owner;		// Collection owner.
-    int				collnIndex;	// Index in collections list.
-
-    void mapCollections();
-    bool loadCollections (Owner);
-    bool saveCollections (Owner);
+    bool loadGameData (Owner);
+    void loadSounds();
 
 /******************************************************************************/
 /**********************    WORD-WRAPPED MESSAGE BOX    ************************/
@@ -298,47 +227,4 @@ private:
     void myMessage (QWidget * parent, const QString &title, const QString &contents);
 };
 
-/******************************************************************************/
-/**********************    CLASS TO DISPLAY THUMBNAIL   ***********************/
-/******************************************************************************/
-
-class KGrThumbNail : public QFrame
-{
-public:
-    explicit KGrThumbNail (QWidget *parent = 0, const char *name = 0);
-    void setLevelData (const QString& dir, const QString& prefix, int level, QLabel * sln);
-
-    static QColor backgroundColor;
-    static QColor brickColor;
-    static QColor ladderColor;
-    static QColor poleColor;
-
-protected:
-    void paintEvent (QPaintEvent * event);	// Draw a preview of a level.
-
-private:
-    QByteArray levelName;
-    QByteArray levelLayout;
-    QLabel *   lName;				// Place to write level-name.
-};
-
-/******************************************************************************/
-/***********************    COLLECTION DATA CLASS    **************************/
-/******************************************************************************/
-
-// Note that a collection of KGoldrunner levels is the same thing as a "game".
-class KGrCollection
-{
-public:
-    KGrCollection (Owner o, const QString & n, const QString & p,
-                   const char s, int nl, const QString & a, const char sk);
-    Owner	owner;		// Collection owner: "System" or "User".
-    QString	name;		// Collection name.
-    QString	prefix;		// Collection's filename prefix.
-    char	settings;	// Collection rules: KGoldrunner or Traditional.
-    int		nLevels;	// Number of levels in the collection.
-    QString	about;		// Optional text about the collection.
-    char	skill;		// Skill level: Tutorial, Normal or Champion.
-};
-
-#endif
+#endif // KGRGAME_H

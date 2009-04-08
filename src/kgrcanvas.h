@@ -22,7 +22,7 @@
 
 #include "kgrplayfield.h"
 #include "kgrsprite.h"
-#include "kgrconsts.h"
+#include "kgrglobals.h"
 
 #include <qcursor.h>
 #include <QLabel>
@@ -44,21 +44,11 @@ public:
                const QString & systemDataDir);
     virtual ~KGrCanvas();
 
-    QPoint getMousePos();
-    void setMousePos (int, int);
-
     void setBaseScale();
 
-    void paintCell (int, int, char, int offset = 0);
     void setTitle (const QString&);
 
-    void makeHeroSprite (int, int, int);
-    void setHeroVisible (bool);
-    void moveHero (int, int, int);
-
-    void makeEnemySprite (int, int, int);
     void moveEnemy (int, int, int, int, int);
-    void deleteEnemySprites();
 
     void goToBlack();
     void fadeIn();
@@ -74,6 +64,27 @@ public:
      * be used if multiple sets are available in the theme.
      */
     void setLevel (unsigned int level);
+
+    inline void setGoldEnemiesRule (bool showIt) { enemiesShowGold = showIt;}
+
+public slots:
+    void getMousePos       (int & i, int & j);
+    void setMousePos       (const int, const int);
+    void animate           (bool missed);
+    void paintCell         (const int i, const int j, const char type,
+                            const int offset = 0);
+
+    int  makeSprite        (const char type, int i, int j);
+    void startAnimation    (const int id, const bool repeating,
+                            const int i, const int j, const int time,
+                            const Direction dirn, const AnimationType type);
+    void resynchAnimation  (const int id, const int i, const int j,
+                            const bool stop);
+    void gotGold           (const int spriteId, const int i, const int j,
+                            const bool spriteHasGold, const bool lost = false);
+    void showHiddenLadders (const QList<int> & ladders, const int width);
+    void deleteSprite      (const int id);
+    void deleteAllSprites  ();
 
 signals:
     void mouseClick (int);
@@ -141,8 +152,9 @@ private:
 
     QTimeLine m_fadingTimeLine;
 
-    KGrSprite * heroSprite;
-    QList<KGrSprite *> * enemySprites;
+    int emptySprites;
+    QList<KGrSprite *> * sprites;
+
     QList<KGameCanvasRectangle *> borderRectangles;
     QList<KGameCanvasPixmap *> borderElements;
     QColor colour;
@@ -164,6 +176,8 @@ private:
     // Keep current score and lives 
     int lives;
     int score;
+
+    bool enemiesShowGold;		// Show or conceal if enemies have gold.
 };
 #endif // KGRCANVAS_H
 // vi: set sw=4 :

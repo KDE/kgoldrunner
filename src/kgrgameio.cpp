@@ -19,15 +19,20 @@
 
 
 #include "kgrgameio.h"
+
+#include <KLocale>
 #include <KDebug>
 #include <QDir>
 
-KGrGameIO::KGrGameIO()
+KGrGameIO::KGrGameIO (QWidget * pView)
+    :
+    view        (pView)
 {
 }
 
 IOStatus KGrGameIO::fetchGameListData
-        (const QString & dir, QList<GameData *> & gameList)
+        (const Owner o, const QString & dir, QList<KGrGameData *> & gameList,
+                              QString & filePath)
 {
     QDir directory (dir);
     QStringList pattern;
@@ -47,11 +52,12 @@ IOStatus KGrGameIO::fetchGameListData
             continue;			// Skip the "ENDE" file.
         }
 
-        GameData * g = initGameData (dir + filename);
+        filePath = dir + filename;
+        KGrGameData * g = initGameData (o);
         gameList.append (g);
-        // kDebug()<< "GAME PATH:" << g->filePath;
+        // kDebug()<< "GAME PATH:" << filePath;
 
-        openFile.setFileName (g->filePath);
+        openFile.setFileName (filePath);
 
         // Check that the game-file exists.
         if (! openFile.exists()) {
@@ -126,7 +132,8 @@ IOStatus KGrGameIO::fetchGameListData
             // kDebug() << "Info about: [" + g->about + "]";
 
             if ((! kgr3Format) && (c != '\0')) {
-                g = initGameData (dir + filename);
+                filePath = dir + filename;
+                g = initGameData (o);
                 gameList.append (g);
             }
         } // END: game-data loop
@@ -138,18 +145,50 @@ IOStatus KGrGameIO::fetchGameListData
     return (OK);
 }
 
+bool KGrGameIO::readLevelData (const QString & dir,
+                               const KGrGameData * gameData,
+                               const int levelNo, KGrLevelData & d)
+{
+    kDebug() << "dir" << dir << "Level" << gameData->prefix << levelNo;
+    QString filePath;
+    IOStatus stat = fetchLevelData
+                        (dir, gameData->prefix, levelNo, d, filePath);
+    switch (stat) {
+    case NotFound:
+        KGrMessage::information (view, i18n ("Read Level Data"),
+            i18n ("Cannot find file '%1'.", filePath));
+        break;
+    case NoRead:
+    case NoWrite:
+        KGrMessage::information (view, i18n ("Read Level Data"),
+            i18n ("Cannot open file '%1' for read-only.", filePath));
+        break;
+    case UnexpectedEOF:
+        KGrMessage::information (view, i18n ("Read Level Data"),
+            i18n ("Reached end of file '%1' without finding level data.",
+            filePath));
+        break;
+    case OK:
+        break;
+    }
+
+    return (stat == OK);
+}
+
 IOStatus KGrGameIO::fetchLevelData
         (const QString & dir, const QString & prefix,
-                const int level, LevelData & d)
+                const int level, KGrLevelData & d, QString & filePath)
 {
-    d.filePath = getFilePath (dir, prefix, level);
+    filePath = getFilePath (dir, prefix, level);
     d.level  = level;		// Level number.
+    d.width  = FIELDWIDTH;	// Default width of layout grid (28 cells).
+    d.height = FIELDHEIGHT;	// Default height of layout grid (20 cells).
     d.layout = "";		// Codes for the level layout (mandatory).
     d.name   = "";		// Level name (optional).
     d.hint   = "";		// Level hint (optional).
 
-    // kDebug()<< "LEVEL PATH:" << d.filePath;
-    openFile.setFileName (d.filePath);
+    // kDebug()<< "LEVEL PATH:" << filePath;
+    openFile.setFileName (filePath);
 
     // Check that the level-file exists.
     if (! openFile.exists()) {
@@ -166,7 +205,7 @@ IOStatus KGrGameIO::fetchLevelData
     IOStatus result = UnexpectedEOF;
 
     // Determine whether the file is in KGoldrunner v3 or v2 format.
-    bool kgr3Format = (d.filePath.endsWith (".txt"));
+    bool kgr3Format = (filePath.endsWith (".txt"));
 
     if (kgr3Format) {
         // In KGr 3 format, if a line starts with 'L', check the number.
@@ -298,18 +337,44 @@ QByteArray KGrGameIO::removeNewline (const QByteArray & line)
     }
 }
 
-GameData * KGrGameIO::initGameData (const QString & filePath)
+KGrGameData * KGrGameIO::initGameData (Owner o)
 {
-    GameData * g = new GameData;
-    g->filePath = filePath;
-    g->owner    = USER;	// Owner of the game: "System" or "User".
+    KGrGameData * g = new KGrGameData;
+    g->owner    = o;	// Owner of the game: "System" or "User".
     g->nLevels  = 0;	// Number of levels in the game.
     g->rules    = 'T';	// Game's rules: KGoldrunner or Traditional.
     g->prefix   = "";	// Game's filename prefix.
     g->skill    = 'N';	// Game's skill: Tutorial, Normal or Champion.
+    g->width    = FIELDWIDTH;	// Default width of layout grid (28 cells).
+    g->height   = FIELDHEIGHT;	// Default height of layout grid (20 cells).
     g->name     = "";	// Name of the game.
     g->about    = "";	// Optional text about the game.
     return (g);
+}
+
+bool KGrGameIO::safeRename (const QString & oldName, const QString & newName)
+{
+    QFile newFile (newName);
+    if (newFile.exists()) {
+        // On some file systems we cannot rename if a file with the new name
+        // already exists.  We must delete the existing file, otherwise the
+        // upcoming QFile::rename will fail, according to Qt4 docs.  This
+        // seems to be true with reiserfs at least.
+        if (! newFile.remove()) {
+            // TODO - Implement access to "view" and "i18n".
+            // KGrMessage::information (view, i18n ("Rename File"),
+                // i18n ("Cannot delete previous version of file '%1'.", newName));
+            return false;
+        }
+    }
+    QFile oldFile (oldName);
+    if (! oldFile.rename (newName)) {
+        // TODO - Implement access to "view" and "i18n".
+        // KGrMessage::information (view, i18n ("Rename File"),
+            // i18n ("Cannot rename file '%1' to '%2'.", oldName, newName));
+        return false;
+    }
+    return true;
 }
 
 #include "kgrgameio.moc"
