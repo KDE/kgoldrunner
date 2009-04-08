@@ -67,6 +67,13 @@ public:
 
 signals:
     /**
+     * Requests the KGoldrunner game to add to the human player's score.
+     *
+     * @param n            The amount to add to the score.
+     */
+    void incScore          (const int n);
+
+    /**
      * Requests the view-object to display an animation of a runner at a
      * particular cell, cancelling and superseding any current animation.
      *

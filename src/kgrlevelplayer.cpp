@@ -37,6 +37,7 @@
 KGrLevelPlayer::KGrLevelPlayer (QObject * parent)
     :
     QObject          (parent),
+    game             (parent),
     hero             (0),
     controlMode      (MOUSE),
     nuggets          (0),
@@ -209,6 +210,14 @@ void KGrLevelPlayer::init (KGrCanvas * view, const int mode,
                                                 Direction, AnimationType)),
                  view,  SLOT   (startAnimation (int, bool, int, int, int,
                                                 Direction, AnimationType)));
+    }
+
+    // Connect the scoring.
+    connect (hero, SIGNAL (incScore (const int)),
+             game, SLOT   (incScore (const int)));
+    foreach (KGrEnemy * enemy, enemies) {
+        connect (enemy, SIGNAL (incScore (const int)),
+                 game,  SLOT   (incScore (const int)));
     }
 
     // Connect the level player to the animation code (for use with dug bricks).

@@ -456,7 +456,7 @@ void KGrGame::startLevel (int startingAt, int requestedLevel)
 /************************  MAIN GAME EVENT PROCEDURES  ************************/
 /******************************************************************************/
 
-void KGrGame::incScore (int n)
+void KGrGame::incScore (const int n)
 {
 #ifdef ENABLE_SOUND_SUPPORT
     // I don't think this is the right place, but it's just for testing...

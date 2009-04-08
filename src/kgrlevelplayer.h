@@ -275,6 +275,7 @@ private slots:
     void doDig          (int button);	// Dig using mouse-buttons.
 
 private:
+    QObject *            game;
     KGrLevelGrid *       grid;
     KGrRuleBook *        rules;
     KGrHero *            hero;

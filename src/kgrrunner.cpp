@@ -135,6 +135,7 @@ HeroStatus KGrHero::run (const int scaledTime)
     char cell = grid->cellType  (gridI, gridJ);
     if (cell == NUGGET) {
         nuggets = levelPlayer->runnerGotGold (spriteId, gridI, gridJ, true);
+        emit incScore (250);		// Add to the human player's score.
     }
 
     Direction nextDirection = levelPlayer->getDirection (gridI, gridJ);
@@ -289,6 +290,7 @@ void KGrEnemy::run (const int scaledTime)
         // TODO - What if >1 enemy has occupied a cell somehow?
         // TODO - Effect on CPU time of more frequent BRICK checks ...
         releaseCell (gridI + deltaX, gridJ + deltaY);
+        emit incScore (75);		// Add to the human player's score.
         dieAndReappear();		// Move to a new (gridI, gridJ).
         reserveCell (gridI, gridJ);
         // No return: treat situation as EndCell.
@@ -301,6 +303,7 @@ void KGrEnemy::run (const int scaledTime)
                  << "Falling into hole at:" << gridI << (gridJ + 1);
         grid->changeCellAt (gridI, gridJ + 1, USEDHOLE);
         dropGold();
+        emit incScore (75);		// Add to the human player's score.
         return;
     }
 
