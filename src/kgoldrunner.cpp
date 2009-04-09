@@ -381,11 +381,11 @@ void KGoldrunner::setupActions()
 
     KToggleAction * setLaptop   = settingAction ("laptop_mode", LAPTOP,
                                   i18n ("&Hybrid Control (Laptop)"),
-                                  i18n ("Pointer controls hero: dig "
-                                        "using keyboard"),
+                                  i18n ("Pointer controls hero; dig "
+                                        "using keyboard."),
                                   i18n ("Use the the laptop's pointer device "
-                                        "to control the hero's moves and the "
-                                        "keyboard for digging left and right"));
+                                        "to control the hero's moves, and use the "
+                                        "keyboard to dig left and right."));
 
     QActionGroup* controlGrp = new QActionGroup (this);
     controlGrp->addAction (setMouse);
