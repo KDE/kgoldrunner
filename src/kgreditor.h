@@ -49,11 +49,12 @@ public:
      * @param theView      The canvas on which the editor paints the layout.
      *                     Also the object that owns the editor and will destroy
      *                     it if the KGoldrunner application is terminated.
-     * @param theSystemDir The directory-path where system (released) game and
-     *                     level data are stored.  This data is read-only, but
-     *                     can be copied, edited and saved in the user's area.
+     * @param theSystemDir The directory-path where the games and levels
+     *                     released with KGoldrunner are stored.  This data is
+     *                     read-only, but can be copied, edited and saved in
+     *                     the user's area.
      * @param theUserDir   The directory-path where the user's composed or
-     *                     edited game and level data are stored.
+     *                     edited games and levels are stored.
      * @param pGameList    The current list of system and user game-data.  The
      *                     user can add a game to the list and add levels to
      *                     that game or any other game in the user's area.
@@ -85,7 +86,7 @@ public:
 
     /**
      * Load and display an existing level, ready for editing.  This can be a
-     * system (released) level, but the changes must be saved in the user's area.
+     * released level, but the changes must be saved in the user's area.
      *
      * @param pGameIndex   The list-index of the game that contains the level
      *                     to be edited: verified by a dialog and may change.
