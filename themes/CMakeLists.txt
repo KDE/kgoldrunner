@@ -31,7 +31,7 @@ install( FILES nostalgia/blue-set.svg nostalgia/blue-actors.svg
                nostalgia/set.svg nostalgia/actors.svg
                DESTINATION ${DATA_INSTALL_DIR}/kgoldrunner/themes/nostalgia )
 
-install( FILES egypt/egypt_kgr.svgz egypt/actors.svg
+install( FILES egypt/egypt_kgr.svgz egypt/actors.svgz
                DESTINATION ${DATA_INSTALL_DIR}/kgoldrunner/themes/egypt )
 
 install( FILES kgoldrunner.knsrc  DESTINATION  ${CONFIG_INSTALL_DIR} )
