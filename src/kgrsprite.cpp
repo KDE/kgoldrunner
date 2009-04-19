@@ -57,7 +57,11 @@ void KGrSprite::addFrames (QList<QPixmap> * frames, const QPoint & topLeft,
 
 void KGrSprite::move (double x, double y, int frame)
 {
-    int adjustedFrame = frame + m_frameOffset;	// e.g. Enemy carrying gold.
+    // Adjust the frame-number if the sprite is an enemy carrying gold and the
+    // caller is not already using an adjusted frame number.  The value of
+    // m_frameOffset is either 0 or the number of the first gold-carrying frame.
+
+    int adjustedFrame = (frame < m_frameOffset) ? frame + m_frameOffset : frame;
     if (m_frame != adjustedFrame) {
         m_frame = adjustedFrame;
         setPixmap (m_frames->at (m_frame));

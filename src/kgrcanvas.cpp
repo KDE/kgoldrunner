@@ -236,7 +236,7 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
                 }
 
                 // Force re-draw of both pixmap and position.
-                sprite->move (0, 0, (spriteframe > 0) ? 0 : 1);
+                sprite->move (0, 0, (spriteframe > 0) ? (spriteframe - 1) : 1);
                 sprite->move (spriteloc.x(), spriteloc.y(), spriteframe);
             }
         }
