@@ -146,13 +146,13 @@ IOStatus KGrGameIO::fetchGameListData
 }
 
 bool KGrGameIO::readLevelData (const QString & dir,
-                               const KGrGameData * gameData,
+                               const QString & prefix,
                                const int levelNo, KGrLevelData & d)
 {
-    kDebug() << "dir" << dir << "Level" << gameData->prefix << levelNo;
+    kDebug() << "dir" << dir << "Level" << prefix << levelNo;
     QString filePath;
     IOStatus stat = fetchLevelData
-                        (dir, gameData->prefix, levelNo, d, filePath);
+                        (dir, prefix, levelNo, d, filePath);
     switch (stat) {
     case NotFound:
         KGrMessage::information (view, i18n ("Read Level Data"),

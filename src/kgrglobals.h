@@ -45,8 +45,8 @@ const char USEDHOLE  = 'U';
 const char EDIT_HINT = '1';
 const char EDIT_TEST = '2';
 
-const char FIELDWIDTH   = 28;
-const char FIELDHEIGHT  = 20;
+const int  FIELDWIDTH   = 28;
+const int  FIELDHEIGHT  = 20;
 
 // TODO - Probably belongs in kgrrulebook.h.  That is the only place it is used.
 typedef struct {
@@ -131,6 +131,22 @@ public:
     QByteArray	layout;		///< Codes for the level layout (mandatory).
     QByteArray	name;		///< Level name (optional).
     QByteArray	hint;		///< Level hint (optional).
+};
+
+/// KGrRecording structure: contains a record of play in a KGoldrunner level.
+class KGrRecording
+{
+public:
+    // TODO - Use same header data (including date/time) as Save Game does.
+    Owner          owner;	///< Original owner, at time of recording.
+    char           rules;	///< Rules that applied then.
+    QString        prefix;	///< Game's filename prefix.
+    QByteArray     gameName;	///< Name of the game.
+    KGrLevelData   levelData;	///< The level data, at time of recording.
+    long           lives;	///< Number of lives at start of level.
+    long           score;	///< Score at start of level.
+    QByteArray     content;	///< The encoded recording of play.
+    QByteArray     draws;	///< The random numbers used during play.
 };
 
 enum GameAction    {NEW, LOAD, SAVE_GAME, PAUSE, HIGH_SCORE, HINT, KILL_HERO};

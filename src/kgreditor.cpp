@@ -162,7 +162,7 @@ void KGrEditor::loadEditLevel (int lev)
     const QString dir = ((gameList.at(gameIndex)->owner == SYSTEM) ||
                          (lev == 0)) ? systemDataDir : userDataDir;
     // Read the level data.
-    if (! io->readLevelData (dir, gameList.at(gameIndex), lev, d)) {
+    if (! io->readLevelData (dir, gameList.at(gameIndex)->prefix, lev, d)) {
         return;		// If I/O failed, no load.
     }
 

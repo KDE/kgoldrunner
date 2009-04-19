@@ -76,7 +76,7 @@ public:
     /**
      * Find and read data for a level of a game.  Can display error messages.
      */
-    bool readLevelData (const QString & dir, const KGrGameData * gameData,
+    bool readLevelData (const QString & dir, const QString & prefix,
                         const int levelNo, KGrLevelData & d);
 
     /**

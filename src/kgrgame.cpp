@@ -23,6 +23,7 @@
 // #include <ctype.h>
 #include <time.h>
 
+#include <KRandomSequence>
 #include <KPushButton>
 #include <KStandardGuiItem>
 #include <KStandardDirs>
@@ -64,6 +65,8 @@ KGrGame::KGrGame (KGrCanvas * theView,
         : 
 	QObject (theView),	// Make sure game is destroyed when view closes.
         levelPlayer (0),
+        recording (0),
+        playback (false),
         view (theView),
         systemDataDir (theSystemDir),
         userDataDir (theUserDir),
@@ -74,22 +77,23 @@ KGrGame::KGrGame (KGrCanvas * theView,
 {
     settings (NORMAL_SPEED);
 
-    gameFrozen = true;
-    // modalFreeze = false;
-    // messageFreeze = false;
+    gameFrozen = false;
 
     loadSounds();
 
     dyingTimer = new QTimer (this);
     connect (dyingTimer, SIGNAL (timeout()),  SLOT (finalBreath()));
 
-    srand (time (0)); 			// Initialise random number generator.
+    // Initialise random number generator.
+    randomGen = new KRandomSequence (time (0));
+    kDebug() << "RANDOM NUMBER GENERATOR INITIALISED";
 }
 
 KGrGame::~KGrGame()
 {
     while (! gameList.isEmpty())
         delete gameList.takeFirst();
+    delete randomGen;
 }
 
 // Flags to control author's debugging aids.
@@ -295,7 +299,7 @@ void KGrGame::initGame()
 
 void KGrGame::quickStartDialog()
 {
-    // Make sure the game will not start during the Quick Start dialog.
+    // Make sure the game does not start during the Quick Start dialog.
     freeze (ProgramPause, true);
 
     qs = new KDialog (view);
@@ -355,8 +359,8 @@ void KGrGame::quickStartPlay()
     // KDialog calls QDialog::accept() after the OK slot, so must hide it
     // now, to avoid interference with any tutorial messages there may be.
     qs->hide();
-    showTutorialMessages (level);	// Level has already been loaded.
     freeze (ProgramPause, false);
+    showTutorialMessages (level);	// Level has already been loaded.
 }
 
 void KGrGame::quickStartNewGame()
@@ -370,16 +374,18 @@ void KGrGame::quickStartNewGame()
 void KGrGame::quickStartUseMenu()
 {
     qs->accept();
-    // TODO - myMessage() has pause() functions and pause (false, true) is on.
-    myMessage (view, i18n ("Game Paused"),
-            i18n ("The game is halted. You will need to press the Pause key "
-                 "(default P or Esc) when you are ready to play."));
     freeze (ProgramPause, false);
-    // TODO - This is not working.  The game stays frozen.  prepareToPlay()?
     freeze (UserPause, true);
-    // if (levelPlayer) {
-        // levelPlayer->prepareToPlay();
-    // }
+    KGrMessage::information (view, i18n ("Game Paused"),
+            i18n ("The game is halted. You will need to press the Pause key "
+                  "(default P or Esc) when you are ready to play."));
+
+    // TODO - This WAS not working.  The game stayed frozen.  prepareToPlay()?
+    // TODO - Works, but what if there is no levelPlayer yet?  Can that happen?
+    // TODO - What about showTutorialMessages() in this case?
+    if (levelPlayer) {
+        levelPlayer->prepareToPlay();
+    }
 }
 
 void KGrGame::quickStartQuit()
@@ -485,9 +491,12 @@ void KGrGame::endLevel (const int result)
     }
 
     // Delete the level-player, hero, enemies, grid, rule-book, etc.
-    // Delete sprites in the view later: they should stay visible for a while.
+    // Delete sprites in the view later: the user may need to see them briefly.
     delete levelPlayer;
     levelPlayer = 0;
+    if (! playback) {
+        saveRecording();
+    }
 
     if (result == WON_LEVEL) {
         levelCompleted();
@@ -542,8 +551,8 @@ void KGrGame::herosDead()
 
         // Game completely over.
         freeze (ProgramPause, false);		// Unfreeze.
-        level = 0;
-        if (loadLevel (level, (! NewLevel))) {	// Display the "ENDE" screen.
+        level = 0;				// Display the "ENDE" screen.
+        if (playLevel ("ende", level, (! NewLevel))) {
             levelPlayer->prepareToPlay();	// Activate the animation.
         }
     }
@@ -554,7 +563,7 @@ void KGrGame::finalBreath()
     // Fix bug 95202:	Avoid re-starting if the player selected
     //			edit mode before the 1.5 seconds were up.
     if (! editor) {
-        if (loadLevel (level, (! NewLevel))) {
+        if (playLevel (gameData->prefix, level, (! NewLevel))) {
             levelPlayer->prepareToPlay();
         }
     }
@@ -594,7 +603,7 @@ void KGrGame::goUpOneLevel()
         emit showLevel (level);
     }
 
-    if (loadLevel (level, NewLevel)) {
+    if (playLevel (gameData->prefix, level, NewLevel)) {
         showTutorialMessages (level);
     }
 }
@@ -659,19 +668,31 @@ void KGrGame::toggleSoundsOnOff()
 
 void KGrGame::freeze (const bool userAction, const bool on_off)
 {
-    kDebug() << "PAUSE: userAction" << userAction << "on_off" << on_off;
+    QString type = userAction ? "UserAction" : "ProgramAction";
+    kDebug() << "PAUSE:" << type << on_off;
     kDebug() << "gameFrozen" << gameFrozen << "programFreeze" << programFreeze;
+
     if (! userAction) {
         // The program needs to freeze the game during a message, dialog, etc.
         if (on_off) {
-            programFreeze = false;
             if (gameFrozen) {
-                kDebug() << "The user has already frozen the game.";
-                return;			// The user has already frozen the game.
+                if (programFreeze) {
+                    kDebug() << "P: The program has already frozen the game.";
+                }
+                else {
+                    kDebug() << "P: The user has already frozen the game.";
+                }
+                return;			// The game is already frozen.
             }
+            programFreeze = false;
         }
         else if (! programFreeze) {
-            kDebug() << "The user will keep the game frozen.";
+            if (gameFrozen) {
+                kDebug() << "P: The user will keep the game frozen.";
+            }
+            else {
+                kDebug() << "P: The game is NOT frozen.";
+            }
             return;			// The user will keep the game frozen.
         }
         // The program will succeed in freezing or unfreezing the game.
@@ -679,7 +700,7 @@ void KGrGame::freeze (const bool userAction, const bool on_off)
     }
     else if (programFreeze) {
         // If the user breaks through a program freeze somehow, take no action.
-        kDebug() << "THE USER HAS BROKEN THROUGH SOMEHOW.";
+        kDebug() << "U: THE USER HAS BROKEN THROUGH SOMEHOW.";
         return;
     }
     else {
@@ -718,7 +739,7 @@ void KGrGame::newGame (const int lev, const int newGameIndex)
     emit showScore (score);
     emit showLevel (level);
 
-    loadLevel (level, NewLevel);
+    playLevel (gameData->prefix, level, NewLevel);
 }
 
 void KGrGame::startTutorial()
@@ -771,7 +792,8 @@ void KGrGame::showHint()
 
 // TODO - Maybe call this playLevel (level, game, flavour) and pair
 //        it with endLevel (status).
-bool KGrGame::loadLevel (const int levelNo, const bool newLevel)
+bool KGrGame::playLevel (const QString & prefix, const int levelNo,
+                         const bool newLevel)
 {
     // If there is a level being played, kill it, with no win/lose result.
     if (levelPlayer) {
@@ -779,55 +801,58 @@ bool KGrGame::loadLevel (const int levelNo, const bool newLevel)
     }
 
     // Clean up any sprites remaining from a previous level.  This is done late,
-    // so that the end-state of the sprites will be visible for a short while.
+    // so that the player has a little time to observe how the level ended.
     view->deleteAllSprites();
 
-    KGrLevelData levelData;
-    KGrGameIO    io (view);
+    initRecording();
+    if (playback) {
+        kDebug() << "loadRecording" << prefix << levelNo;
+        loadRecording (prefix, levelNo);
+    }
+    else {
+        KGrGameIO    io (view);
 
-    // If system game or ENDE screen, choose system dir, else choose user dir.
-    const QString dir = ((owner == SYSTEM) || (levelNo == 0)) ?
+        // If system game or ENDE, choose system dir, else choose user dir.
+        const QString dir = ((owner == SYSTEM) || (levelNo == 0)) ?
                                         systemDataDir : userDataDir;
-    // Read the level data.
-    if (! io.readLevelData (dir, gameData, levelNo, levelData)) {
-        return false;
+        // Read the level data.
+        if (! io.readLevelData (dir, prefix, levelNo, recording->levelData)) {
+            return false;
+        }
     }
 
     view->setLevel (levelNo);		// Switch and render background if reqd.
     view->fadeIn();			// Then run the fade-in animation.
     startScore = score;			// The score we will save, if asked.
 
-    kDebug() << "Prefix" << gameData->prefix << "index" << gameIndex
-             << "of" << gameList.count();
-
     // TODO - Does KGrLevelPlayer know whether to start in frozen or unfrozen
     //        state?  And how about starting in Ready state in some cases?
-    levelPlayer = new KGrLevelPlayer (this);
+    levelPlayer = new KGrLevelPlayer (this, randomGen);
 
-    char rulesCode = gameList.at(gameIndex)->rules;
-    levelPlayer->init (view, controlMode, rulesCode, &levelData);
+    levelPlayer->init (view, controlMode, recording, playback);
     kDebug() << "setTimeScale" << (fTimeScale);
     levelPlayer->setTimeScale (fTimeScale);
 
     // If there is a name, translate the UTF-8 coded QByteArray right now.
-    levelName = (levelData.name.size() > 0) ?
-                      i18n ((const char *) levelData.name) : "";
+    levelName = (recording->levelData.name.size() > 0) ?
+                      i18n ((const char *) recording->levelData.name) : "";
 
     // Indicate on the menus whether there is a hint for this level.
-    int len = levelData.hint.length();
+    int len = recording->levelData.hint.length();
     emit hintAvailable (len > 0);
 
     // If there is a hint, translate it right now.
-    levelHint = (len > 0) ? i18n ((const char *) levelData.hint) : "";
+    levelHint = (len > 0) ? i18n((const char *) recording->levelData.hint) : "";
 
     // Re-draw the playfield frame, level title and figures.
     view->setTitle (getTitle());
 
     // If we are starting a new level, save it in the player's config file.
     if (newLevel) {
+        // TODO - Do we need "level = levelNo" here?
         KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
-        gameGroup.writeEntry ("GamePrefix", gameData->prefix);
-        gameGroup.writeEntry ("Level_" + gameData->prefix, level);
+        gameGroup.writeEntry ("GamePrefix", prefix);
+        gameGroup.writeEntry ("Level_" + prefix, level);
         gameGroup.sync();		// Ensure that the entry goes to disk.
     }
 
@@ -1548,6 +1573,123 @@ bool KGrGame::loadGameData (Owner o)
     }
 
     return (result);
+}
+
+void KGrGame::initRecording()
+{
+    // Initialise the recording.
+    if (recording) {
+        delete recording;
+    }
+    recording = new KGrRecording;
+    recording->content.fill (0, 4000);
+    recording->draws.fill   (0, 400);
+    recording->owner        = gameData->owner;
+    recording->rules        = gameData->rules;
+    recording->prefix       = gameData->prefix;
+    recording->gameName     = gameData->name;
+    recording->lives        = lives;
+    recording->score        = score;
+    recording->content [0]  = 0xff;
+}
+
+void KGrGame::saveRecording()
+{
+    QString filename = userDataDir + "rec_" + gameData->prefix + ".txt";
+    QString groupName;				// Group name is "prefixNNN".
+    groupName.setNum (level);			// File has one group per level.
+    groupName = groupName.rightJustified (3,'0'); // Groups in numerical order.
+    groupName.prepend (gameData->prefix);
+    kDebug() << filename << groupName;
+
+    KConfig config (filename, KConfig::SimpleConfig);
+    KConfigGroup configGroup = config.group (groupName);
+    configGroup.writeEntry ("Owner",    (int) recording->owner);
+    configGroup.writeEntry ("Rules",    (int) recording->rules);
+    configGroup.writeEntry ("Prefix",   recording->prefix);
+    configGroup.writeEntry ("GameName", recording->gameName);
+    configGroup.writeEntry ("Level",    recording->levelData.level);
+    configGroup.writeEntry ("Width",    recording->levelData.width);
+    configGroup.writeEntry ("Height",   recording->levelData.height);
+    configGroup.writeEntry ("Layout",   recording->levelData.layout);
+    configGroup.writeEntry ("Name",     recording->levelData.name);
+    configGroup.writeEntry ("Hint",     recording->levelData.hint);
+    configGroup.writeEntry ("Lives",    (int) recording->lives);
+    configGroup.writeEntry ("Score",    (int) recording->score);
+
+    QList<int> bytes;
+    int ch = 0;
+    int n  = recording->content.size();
+    for (int i = 0; i < n; i++) {
+        ch = (uchar)(recording->content.at(i));
+        bytes.append (ch);
+        if (ch == 0)
+            break;
+    }
+    configGroup.writeEntry ("Content", bytes);
+
+    bytes.clear();
+    ch = 0;
+    n = recording->draws.size();
+    for (int i = 0; i < n; i++) {
+        ch = (uchar)(recording->draws.at(i));
+        bytes.append (ch);
+        if (ch == 0)
+            break;
+    }
+    configGroup.writeEntry ("Draws", bytes);
+
+    configGroup.sync();
+}
+
+void KGrGame::loadRecording (const QString & prefix, const int levelNo)
+{
+    kDebug() << prefix << levelNo;
+    QString filename = userDataDir + "rec_" + prefix + ".txt";
+    QString groupName;				// Group name is "prefixNNN".
+    groupName.setNum (level);			// File has one group per level.
+    groupName = groupName.rightJustified (3,'0'); // Groups in numerical order.
+    groupName.prepend (gameData->prefix);
+    kDebug() << filename << groupName;
+
+    KConfig config (filename, KConfig::SimpleConfig);
+    KConfigGroup configGroup    = config.group (groupName);
+
+    QByteArray blank ("");
+    recording->owner            = (Owner)(configGroup.readEntry
+                                                        ("Owner", (int)(USER)));
+    recording->rules            = configGroup.readEntry ("Rules", (int)('T'));
+    recording->prefix           = configGroup.readEntry ("Prefix", "");
+    recording->gameName         = configGroup.readEntry ("GameName", blank);
+    recording->levelData.level  = configGroup.readEntry ("Level",  1);
+    recording->levelData.width  = configGroup.readEntry ("Width",  FIELDWIDTH);
+    recording->levelData.height = configGroup.readEntry ("Height", FIELDHEIGHT);
+    recording->levelData.layout = configGroup.readEntry ("Layout", blank);
+    recording->levelData.name   = configGroup.readEntry ("Name",   blank);
+    recording->levelData.hint   = configGroup.readEntry ("Hint",   blank);
+    recording->lives            = configGroup.readEntry ("Lives",  5);
+    recording->score            = configGroup.readEntry ("Score",  0);
+
+    QList<int> bytes = configGroup.readEntry ("Content", QList<int>());
+    int n  = bytes.count();
+    recording->content.fill (0, n + 1);
+    for (int i = 0; i < n; i++) {
+        recording->content [i] = bytes.at (i);
+    }
+
+    bytes.clear();
+    bytes = configGroup.readEntry ("Draws", QList<int>());
+    n  = bytes.count();
+    recording->draws.fill (0, n + 1);
+    for (int i = 0; i < n; i++) {
+        recording->draws [i] = bytes.at (i);
+    }
+
+    // Set up and display the starting score and lives.
+    lives = recording->lives;
+    emit showLives (lives);
+    score = recording->score;
+    emit showScore (score);
 }
 
 void KGrGame::loadSounds()

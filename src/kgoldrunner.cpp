@@ -711,6 +711,7 @@ void KGoldrunner::showLevel (int newLevelNo)
 
 void KGoldrunner::gameFreeze (bool on_off)
 {
+    myPause->setChecked (on_off);
     frozen = on_off;	// Remember the state (for the configure-keys case).
     if (on_off)
         statusBar()->changeItem

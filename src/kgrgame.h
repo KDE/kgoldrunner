@@ -34,6 +34,7 @@ class KDialog;
 class KGrSoundBank;
 class KGrEditor;
 class KGrLevelPlayer;
+class KRandomSequence;
 class QTimer;
 
 class KGrGame : public QObject
@@ -144,9 +145,8 @@ private slots:
     void quickStartQuit();
 
 private:
-// TODO - Maybe call this playLevel (level, game, flavour) and pair
-//        it with endLevel (status).
-    bool loadLevel (const int levelNo, const bool newLevel);
+    bool playLevel (const QString & prefix, const int levelNo,
+                    const bool newLevel);
     void showTutorialMessages (int levelNo);
 
     void checkHighScore();		// Check if high score for current game.
@@ -157,7 +157,10 @@ private:
 /**************************  PLAYFIELD AND GAME DATA  *************************/
 /******************************************************************************/
 
+    KRandomSequence *           randomGen;	// Random number generator.
     KGrLevelPlayer *            levelPlayer;	// Where the level is played.
+    KGrRecording *              recording;	// A recording of the play.
+    bool                        playback;	// Play back or record?
 
     KGrCanvas *			view;		// Where the game is displayed.
     QString			systemDataDir;	// System games are stored here.
@@ -217,8 +220,11 @@ private:
 /***********************   GAME PROPERTIES AND METHODS   **********************/
 /******************************************************************************/
 
-    bool loadGameData (Owner);
-    void loadSounds();
+    bool loadGameData  (Owner);
+    void initRecording ();
+    void saveRecording ();
+    void loadRecording (const QString & prefix, const int levelNo);
+    void loadSounds    ();
 
 /******************************************************************************/
 /**********************    WORD-WRAPPED MESSAGE BOX    ************************/

@@ -20,6 +20,7 @@
 
 #include <QObject>
 #include <QList>
+#include <QVarLengthArray>
 
 #include <QTime> // IDW testing
 
@@ -32,27 +33,33 @@ class KGrCanvas;
 class KGrHero;
 class KGrEnemy;
 
+class KRandomSequence;
+
 /**
  * This class constructs and plays a single level of a KGoldrunner game.  A
  * KGrLevelPlayer object is created as each level begins and is destroyed as
  * the level finishes, whether the human player wins the level or loses it.
+ * Each level is either recorded as it is played or played back from an earlier
+ * recording by emulating the same inputs as were used previously.
  *
  * The KGrLevelPlayer object in turn creates all the objects needed to play
  * the level, such as a hero, enemies, a play-area grid and a rule-book, which
  * are all derived from data in a KGrLevelData structure.  After the level and
  * all its objects are set up, most of the work is done by the private slot
- * tick(), including a signal to update the graphics animation.  Tick() is
+ * tick(), including signals to update the graphics animation.  Tick() is
  * activated periodically by time-signals from the KGrTimer object, which also
  * handles the standard Pause action and variations in the overall speed of
  * KGoldrunner, from Beginner to Champion.  KGrLevelPlayer is controlled by
  * inputs from the mouse, keyboard or touchpad, which in turn control the
  * movement of the hero and the digging of bricks.  The enemies are controlled
  * by algorithms in the polymorphic KGrRuleBook object.  Each set of rules has
- * its own distinct algorithm.
+ * its own distinct algorithm.  In playback mode, the inputs are emulated.
  *
  * KGrLevelPlayer and friends are the internal model and game-engine of
  * KGoldrunner and they communicate with the view, KGrCanvas and friends,
  * solely via signals that indicate what is moving and what has to be painted.
+ *
+ * @short Class to play, record and play back a level of a game
  */
 
 class KGrLevelPlayer : public QObject
@@ -62,32 +69,46 @@ public:
     /**
      * The constructor of KGrLevelPlayer.
      *
-     * @param parent The object that owns the level-player and will destroy it
-     *               if the KGoldrunner application is terminated during play.
+     * @param parent     The object that owns the level-player and will destroy
+     *                   it if the KGoldrunner application is terminated during
+     *                   play.
+     * @param pRandomGen A shared source of random numbers for all enemies.
      */
-    KGrLevelPlayer              (QObject * parent);
+    KGrLevelPlayer             (QObject * parent, KRandomSequence * pRandomGen);
     ~KGrLevelPlayer();
 
     /**
      * The main initialisation of KGrLevelPlayer.  This method establishes the
      * playing rules to be used, creates the internal playing-grid, creates the
-     * hero and enemies and connects the various signals and slots together.
-     * This is the only place where KGrLevelPlayer references the view directly.
-     * All other references are via signals and slots.
+     * hero and enemies and connects the various signals and slots together.  It
+     * also initialises the recording or playback of moves made by the hero and
+     * enemies.  Note that this is the only place where KGrLevelPlayer uses the
+     * view directly.  All other references are via signals and slots.
      *
-     * @param view      Points to the KGrCanvas object, which provides graphics.
-     * @param mode      The input-mode used to control the hero: mouse, keyboard
-     *                  or hybrid touchpad and keyboard mode (for laptops).
-     * @param rulesCode The variant of the rules to be followed: Traditional,
-     *                  KGoldrunner or Scavenger.
-     * @param levelData Points to a data-object that contains all the data for
-     *                  the level, including the layout of the maze and the
-     *                  starting positions of hero, enemies and gold.
+     *
+     * @param view       Points to the KGrCanvas object that provides graphics.
+     * @param mode       The input-mode used to control the hero: mouse,
+     *                   keyboard or hybrid touchpad and keyboard mode (for
+     *                   laptops).
+     * @param pRecording Points to a data-object that contains all the data for
+     *                   the level, including the layout of the maze and the
+     *                   starting positions of hero, enemies and gold, plus the
+     *                   variant of the rules to be followed: Traditional,
+     *                   KGoldrunner or Scavenger.  The level is either recorded
+     *                   as it is played or re-played from an earlier recording.
+     *                   If playing "live", the pRecording object has empty
+     *                   buffers into which the level player will store moves.
+     *                   If re-playing, the buffers contain hero's moves to be
+     *                   played back and random numbers for the enemies to
+     *                   re-use, so that all play can be faithfully reproduced,
+     *                   even if the random-number generator's code changes.
+     * @param pPlayback  If false, play "live" and record the play.  If true,
+     *                   play back a previously recorded level.
      */
     void init                   (KGrCanvas *          view,
                                  const int            mode,
-                                 const char           rulesCode,
-                                 const KGrLevelData * levelData);
+                                 KGrRecording *       pRecording,
+                                 const bool           pPlayback);
 
     /**
      * Indicate that setup is complete and the human player can start playing
@@ -236,6 +257,19 @@ public:
     void enemyReappear          (int & gridI, int & gridJ);
 
     /**
+     * Helper function to provide enemies with random numbers for reappearing
+     * and deciding whether to pick up or drop gold.  The random bytes
+     * generated are stored during recording and re-used during playback, so
+     * that play is completely reproducible, even if the library's random number
+     * generator behavior should vary across platforms or in future versions.
+     *
+     * @param limit     The upper limit for the number to be returned.
+     *
+     * @return          The random number, value >= 0 and < limit.
+     */
+    uchar randomByte            (const uchar limit);
+
+    /**
      * Implement author's debugging aids, which are activated only if the level
      * is paused and the KConfig file contains group Debugging with setting
      * DebuggingShortcuts=true.  The main actions are to do timer steps one at
@@ -276,6 +310,7 @@ private slots:
 
 private:
     QObject *            game;
+    KRandomSequence *    randomGen;
     KGrLevelGrid *       grid;
     KGrRuleBook *        rules;
     KGrHero *            hero;
@@ -290,6 +325,12 @@ private:
 
     enum                 PlayState {NotReady, Ready, Playing};
     PlayState            playState;
+
+    KGrRecording *       recording;
+    bool                 playback;
+    int                  recIndex;
+    int                  recCount;
+    int                  randIndex;
 
     int                  targetI;	// Where the mouse is pointing.
     int                  targetJ;
@@ -320,6 +361,7 @@ private:
     int          reappearIndex;
     QVector<int> reappearPos;
     void         makeReappearanceSequence();
+    bool         doRecordedMove();
 
 /******************************************************************************/
 /**************************  AUTHORS' DEBUGGING AIDS **************************/
@@ -333,7 +375,9 @@ private:
     void showObjectState();	// Show an object's state.
     void showEnemyState (int);	// Show enemy's co-ordinates and state.
 
+    /// TODO - Remove these ...
     QTime t; // IDW testing
+    int   T; // IDW testing
 };
 
 #endif // KGRLEVELPLAYER_H

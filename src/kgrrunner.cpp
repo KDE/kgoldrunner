@@ -18,7 +18,6 @@
  ****************************************************************************/
 
 #include <KDebug>
-#include <stdlib.h>		// For random-number generator.
 
 #include "kgrrunner.h"
 #include "kgrlevelplayer.h"
@@ -450,19 +449,29 @@ void KGrEnemy::dropGold()
 void KGrEnemy::checkForGold()
 {
     char cell = grid->cellType (gridI, gridJ);
-    if ((nuggets == 0) && (cell == NUGGET) &&
-        (rules->alwaysCollectNugget() || (rand()/(RAND_MAX + 1.0) >= 0.8))) {
-        // In KGoldrunner rules picking up gold is a random choice.
-        levelPlayer->runnerGotGold (spriteId, gridI, gridJ, true);
-        nuggets = 1;
+    uchar random;
+    if ((nuggets == 0) && (cell == NUGGET)) {
+        random = levelPlayer->randomByte ((uchar) 100);
+        dbk << "Random" << random << "at NUGGET" << gridI << gridJ;
+        if (rules->alwaysCollectNugget() || (random >= 80)) {
+            levelPlayer->runnerGotGold (spriteId, gridI, gridJ, true);
+            dbk << "Enemy" << spriteId << "at" << gridI << gridJ
+                << "COLLECTS gold";
+            nuggets = 1;
+        }
     }
-    else if ((nuggets > 0) && (cell == FREE) &&
-             (rand()/(RAND_MAX + 1.0) >= 0.9286)) {
+    else if ((nuggets > 0) && (cell == FREE)) {
         // Dropping gold is a random choice, but do not drop in thin air.
         char below = grid->cellType (gridI, gridJ + 1);
         if ((below != FREE) && (below != NUGGET)) {
-            levelPlayer->runnerGotGold (spriteId, gridI, gridJ, false);
-            nuggets = 0;
+            random = levelPlayer->randomByte ((uchar) 100);
+            dbk << "Random" << random << "for DROP " << gridI << gridJ;
+            if (random >= 93) {
+                levelPlayer->runnerGotGold (spriteId, gridI, gridJ, false);
+                dbk << "Enemy" << spriteId << "at" << gridI << gridJ
+                    <<"DROPS gold";
+                nuggets = 0;
+            }
         }
     }
 }
