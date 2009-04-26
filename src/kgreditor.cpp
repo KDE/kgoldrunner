@@ -38,7 +38,7 @@ KGrEditor::KGrEditor (KGrCanvas * theView,
     systemDataDir    (theSystemDir),
     userDataDir      (theUserDir),
     gameList         (pGameList),
-    editObj          (BRICK),
+    editObj          (BRICK),		// Default edit-object.
     shouldSave       (false),
     mouseDisabled    (true)
 {
@@ -838,9 +838,7 @@ QString KGrEditor::getTitle()
 
     // Set title string to "Game-name - NNN" or "Game-name - NNN - Level-name".
     KGrGameData * gameData = gameList.at(gameIndex);
-    QString levelNumber;
-    levelNumber.setNum (editLevel);
-    levelNumber = levelNumber.rightJustified (3,'0');
+    QString levelNumber = QString::number(editLevel).rightJustified(3,'0');
 
     // TODO - Make sure gameData->name.constData() results in Unicode display
     //        and not some weird UTF8 character stuff.
@@ -858,15 +856,8 @@ QString KGrEditor::getTitle()
 
 QString KGrEditor::getLevelFilePath (KGrGameData * gameData, int lev)
 {
-    QString filePath;
-
-    filePath.setNum (lev);			// Convert integer -> QString.
-    filePath = filePath.rightJustified (3,'0'); // Add 0-2 zeros at left.
-    filePath.append (".grl");			// Add KGoldrunner level-suffix.
-    filePath.prepend (gameData->prefix);	// Add the game's file-prefix.
-
-    filePath.prepend (userDataDir + "levels/");	// Add user's directory path.
-
+    QString filePath = userDataDir + "levels/" + gameData->prefix +
+                       QString::number(lev).rightJustified(3,'0') + ".grl";
     return (filePath);
 }
 

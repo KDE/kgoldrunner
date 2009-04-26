@@ -138,10 +138,9 @@ KGoldrunner::KGoldrunner()
     initStatusBar(); // IDW
 
     // Connect the game actions to the menu and toolbar displays.
-    connect (game, SIGNAL (quitGame()),	        SLOT (close()));
-    connect (game, SIGNAL (setEditMenu (bool)),	SLOT (setEditMenu (bool)));
-    connect (game, SIGNAL (hintAvailable (bool)),	SLOT (adjustHintAction (bool)));
-    connect (game, SIGNAL (defaultEditObj()),	SLOT (defaultEditObj()));
+    connect (game, SIGNAL (quitGame()),	         SLOT (close()));
+    connect (game, SIGNAL (setEditMenu (bool)),	 SLOT (setEditMenu (bool)));
+    connect (game, SIGNAL (hintAvailable(bool)), SLOT (adjustHintAction(bool)));
 
     connect (game, SIGNAL (setAvail  (const char *, const bool)),
                    SLOT   (setAvail  (const char *, const bool)));
@@ -160,7 +159,7 @@ KGoldrunner::KGoldrunner()
     // IDW toolBar ("editToolbar")->setAllowedAreas (Qt::TopToolBarArea);
 
     // Set mouse control of the hero as the default.
-    game->setControlMode (MOUSE);
+    game->settings (MOUSE);
 
     // Do NOT paint main widget yet (title, menu, status bar, blank playfield).
     // Instead, queue a call to the "KGoldrunner_2" constructor extension.
@@ -168,8 +167,8 @@ KGoldrunner::KGoldrunner()
     kDebug() << "QMetaObject::invokeMethod (this, \"KGoldrunner_2\") done ... ";
 
     // Show buttons to start the config'd game and level and other options.
-    game->quickStartDialog();
-    kDebug() << "game->quickStartDialog() done ... ";
+    // TODO - Remove. game->quickStartDialog();
+    // TODO - Remove. kDebug() << "game->quickStartDialog() done ... ";
     kDebug() << "1st scan of event-queue ...";
 }
 
@@ -251,6 +250,29 @@ void KGoldrunner::setupActions()
     hintAction = KStandardGameAction::hint (gameMapper, SLOT (map()), this);
     actionCollection()->addAction (hintAction->objectName(), hintAction);
     gameMapper->setMapping (hintAction, HINT);
+
+    a = KStandardGameAction::demo (gameMapper, SLOT (map()), this);
+    actionCollection()->addAction (a->objectName(), a);
+    gameMapper->setMapping (a, DEMO);
+
+    a = KStandardGameAction::solve (gameMapper, SLOT (map()), this);
+    actionCollection()->addAction (a->objectName(), a);
+    gameMapper->setMapping (a, SOLVE);
+    a->setToolTip (i18n ("Show how to win this level"));
+    a->setWhatsThis (i18n ("Play a recording of how to win this level, if "
+                           "there is one available"));
+
+    a        = gameAction ("instant_replay", INSTANT_REPLAY,
+                           i18n ("&Instant Replay"),
+                           i18n ("Instant replay"),
+                           i18n ("Show a recording of the latest level played"),
+                           QKeySequence());	// No key assigned.
+
+    a        = gameAction ("replay_any", REPLAY_ANY,
+                           i18n ("&Replay Any Level"),
+                           i18n ("Replay any level"),
+                           i18n ("Show a recording of any level played so far"),
+                           QKeySequence());	// No key assigned.
 
     killHero = gameAction ("kill_hero", KILL_HERO,
                            i18n ("&Kill Hero"),
@@ -341,6 +363,7 @@ void KGoldrunner::setupActions()
     /****************************   SETTINGS MENU  ****************************/
     /**************************************************************************/
 
+    KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
     QSignalMapper * settingMapper = new QSignalMapper (this);
     connect (settingMapper, SIGNAL (mapped (int)), game, SLOT (settings (int)));
     tempMapper = settingMapper;
@@ -357,10 +380,18 @@ void KGoldrunner::setupActions()
                                   i18n ("Play sound effects"),
                                   i18n ("Play sound effects during the game"));
 
-    KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
     bool soundOnOff = gameGroup.readEntry ("Sound", false);
     setSounds->setChecked (soundOnOff);
 #endif
+
+    // Demo at start on/off.
+    KToggleAction * setDemo     = settingAction ("options_demo", STARTUP_DEMO,
+                                  i18n ("&Demo At Start"),
+                                  i18n ("Run a demo when the game starts"),
+                                  i18n ("Run a demo when the game starts"));
+
+    bool demoOnOff = gameGroup.readEntry ("StartingDemo", true);
+    setDemo->setChecked (demoOnOff);
 
     // Mouse Controls Hero
     // Keyboard Controls Hero
@@ -384,8 +415,8 @@ void KGoldrunner::setupActions()
                                   i18n ("Pointer controls hero; dig "
                                         "using keyboard."),
                                   i18n ("Use the the laptop's pointer device "
-                                        "to control the hero's moves, and use the "
-                                        "keyboard to dig left and right."));
+                                        "to control the hero's moves, and use "
+                                        "the keyboard to dig left and right."));
 
     QActionGroup* controlGrp = new QActionGroup (this);
     controlGrp->addAction (setMouse);
@@ -494,7 +525,7 @@ void KGoldrunner::setupActions()
 
     keyControl ("do_step",      i18n ("Do a Step"), Qt::Key_Period, DO_STEP);
     keyControl ("bug_fix",      i18n ("Test Bug Fix"), Qt::Key_B, BUG_FIX);
-    keyControl ("show_positions", i18n ("Show Positions"), Qt::Key_D, S_POSNS);
+    keyControl ("show_positions", i18n ("Show Positions"), Qt::Key_W, S_POSNS);
     keyControl ("logging",      i18n ("Start Logging"), Qt::Key_G, LOGGING);
     keyControl ("show_hero",    i18n ("Show Hero"), Qt::Key_R, S_HERO);
     keyControl ("show_obj",     i18n ("Show Object"), Qt::Key_Slash, S_OBJ);
@@ -519,7 +550,12 @@ QAction * KGoldrunner::gameAction (const QString & name,
     ga->setText (text);
     ga->setToolTip (toolTip);
     ga->setWhatsThis (whatsThis);
-    ga->setShortcut (key);
+    if (! key.isEmpty()) {
+        // TODO - Shortcut for KAction "xxx" set with QShortcut::setShortcut()!
+        // TODO - See KAction documentation. [Runtime ERROR message]
+        // TODO - (xxx = kill_hero, increase_speed, decrease_speed)
+        ga->setShortcut (key);
+    }
     connect (ga, SIGNAL (triggered (bool)), tempMapper, SLOT (map()));
     tempMapper->setMapping (ga, code);
     return ga;
@@ -767,6 +803,7 @@ void KGoldrunner::setEditMenu (bool on_off)
         setEditIcon ("hladderbg", HLADDER);
         setEditIcon ("edherobg",  HERO);
         setEditIcon ("edenemybg", ENEMY);
+        setToggle   ("brickbg", true);		// Default edit-object is BRICK.
 
         toolBar ("editToolbar")->show();
     }

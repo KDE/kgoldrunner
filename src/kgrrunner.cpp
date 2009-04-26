@@ -463,6 +463,7 @@ void KGrEnemy::checkForGold()
     else if ((nuggets > 0) && (cell == FREE)) {
         // Dropping gold is a random choice, but do not drop in thin air.
         char below = grid->cellType (gridI, gridJ + 1);
+        // TODO - Do not drop above a BAR.  Affects recording of Initiation 10.
         if ((below != FREE) && (below != NUGGET)) {
             random = levelPlayer->randomByte ((uchar) 100);
             dbk << "Random" << random << "for DROP " << gridI << gridJ;

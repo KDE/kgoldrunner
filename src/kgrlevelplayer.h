@@ -303,6 +303,7 @@ signals:
     void deleteSprite   (const int spriteId);
     void gotGold        (const int  spriteId, const int i, const int j,
                          const bool hasGold, const bool lost);
+    void interruptDemo  ();
 
 private slots:
     void tick           (bool missed, int scaledTime);

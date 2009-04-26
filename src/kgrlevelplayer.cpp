@@ -423,8 +423,9 @@ void KGrLevelPlayer::doDig (int button)
 
     // Click to end demo/playback mode.
     if (playback) {
-         playback = false;
-         return;
+        playback = false;
+        emit interruptDemo();
+        return;
     }
 
     uchar recordByte = 0;
@@ -476,6 +477,8 @@ void KGrLevelPlayer::setDirectionByKey (Direction dirn)
     }
     if (playback) {			// Any key ends demo/playback mode.
         playback = false;
+        emit interruptDemo();
+        return;
     }
 
     if ((dirn == DIG_LEFT) || (dirn == DIG_RIGHT)) {
@@ -666,6 +669,7 @@ void KGrLevelPlayer::tick (bool missed, int scaledTime)
     else {				// Make a "live" move and record it.
         int i, j;
         emit getMousePos (i, j);
+        // TODO - This causes a CRASH if keyboard-mode set and mouse is at 1,1.
         setTarget (i, j);
     }
 

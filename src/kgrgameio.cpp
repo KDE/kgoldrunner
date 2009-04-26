@@ -263,9 +263,7 @@ QString KGrGameIO::getFilePath
         filePath = dir + "levels/level000.grl";
     }
     else {
-        QString num;
-        num.setNum (level);			// Convert INT -> QString.
-        num = num.rightJustified (3,'0');	// Add 0-2 zeros at left.
+        QString num = QString::number (level).rightJustified (3,'0');
         filePath = dir + "levels/" + prefix + num + ".grl";
     }
 

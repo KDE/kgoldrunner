@@ -47,21 +47,15 @@ public:
 
     bool initGameLists();
 
+    // TODO - Needs to be public?
     void quickStartDialog();
+
     void setInitialTheme (const QString & themeFilepath);
 
-    int  getLevel();
-
-    bool inMouseMode();			// True if the game is in mouse mode.
+    // TODO - Needed?
     bool inEditMode();			// True if the game is in editor mode.
 
     bool saveOK();			// Check if edits were saved.
-
-    QString	getTitle();		// Collection - Level NNN, Name.
-
-    void setEditObj (char newEditObj);	// Set object for editor to paint.
-
-    QString getDirectory (Owner o);
 
     // Flags to control author's debugging aids.
     static bool bugFix;
@@ -70,18 +64,20 @@ public:
 public slots:
     void initGame();			// Do the game object's first painting.
 
-    void gameActions (int action);
-    void editActions (int action);
-    void editToolbarActions (int action);
-    void settings (int action);
+    void gameActions        (const int action);
+    void editActions        (const int action);
+    void editToolbarActions (const int action);
+    void settings           (const int action);
 
-    void kbControl (int dirn);
+    void kbControl          (const int dirn);
 
+    void incScore           (const int n);	// Update the score.
+
+private:
     // TODO - Only startAnyLevel() is used (from newGame...).
     void startLevelOne();		// Start any game from level 1.
     void startAnyLevel();		// Start any game from any level.
     void startNextLevel();		// Start next level of current game.
-    // TODO - startLevel should NOT be a public slot.
     void startLevel (int startingAt, int requestedLevel);
 
     void toggleSoundsOnOff();		// Set sound enabled or disabled.
@@ -91,25 +87,38 @@ public slots:
     void setTimeScale (const int action);
 
     void newGame (const int lev, const int gameIndex);
+    bool startDemo (const Owner demoOwner, const QString & pPrefix,
+                                           const int levelNo);
+    void finishDemo();
+
+private slots:
+    void interruptDemo();
+
+private:
     void startTutorial();		// Start tutorial game.
     void showHint();			// Show hint for current level.
 
+    QString	getTitle();		// Collection - Level NNN, Name.
+
     void showHighScores();		// Show high scores for current game.
 
-    void incScore (const int);		// Update the score.
+    void freeze (const bool userAction, const bool on_off);
+
+    QString getDirectory (Owner o);
+
     void showHiddenLadders();		// Show hidden ladders (nuggets gone).
-    void endLevel (const int result);	// Hero completed the level or he died.
+
     void herosDead();			// Hero was caught or he quit (key Q).
-
-private slots:
-    void finalBreath();			// Hero is dead: re-start the level.
-
-public slots:
     void levelCompleted();		// Hero completed the level.
-    void goUpOneLevel();		// Start next level.
 
     void saveGame();			// Save game ID, score and level.
     void loadGame();			// Re-load game, score and level.
+
+private slots:
+    void endLevel (const int result);	// Hero completed the level or he died.
+
+    void finalBreath();			// Hero is dead: re-start the level.
+    void goUpOneLevel();		// Start next level.
 
     void heroStep (bool climbing);	// The hero has put a foot on the floor.
     void heroFalls (bool startStop);	// The hero has started/stopped falling.
@@ -124,7 +133,6 @@ signals:
     void hintAvailable (bool);		// For main window to adjust menu text.
 
     void setEditMenu (bool);		// Enable/Disable edit menu items.
-    void defaultEditObj();		// Set default edit-toolbar button.
 
     void gameFreeze (bool);		// Do visual feedback in the GUI.
 
@@ -161,6 +169,7 @@ private:
     KGrLevelPlayer *            levelPlayer;	// Where the level is played.
     KGrRecording *              recording;	// A recording of the play.
     bool                        playback;	// Play back or record?
+    bool                        startupDemo;	// Startup demo running?
 
     KGrCanvas *			view;		// Where the game is displayed.
     QString			systemDataDir;	// System games are stored here.
@@ -169,13 +178,16 @@ private:
     float                       fTimeScale;	// Speed as a float (0.2-2.0).
 
     QList<KGrGameData *>        gameList;	// A list of available games.
-    KGrGameData *		gameData;	// Data for the current game.
     int				gameIndex;	// The index in the game-list.
     Owner			owner;		// The game's owner.
 
-    int				level;		// Current play/edit level.
+    QString                     prefix;		// Prefix for game or demo file.
+    int				level;		// Current play/edit/demo level.
+    int                         levelMax;	// Last level no in game/demo.
+    int                         gameLevel;	// Copy of play/edit level no.
     QString			levelName;	// Level name (optional).
     QString			levelHint;	// Level hint (optional).
+    QString                     demoPrefix;	// File-prefix for demo levels.
 
     long			lives;		// Lives remaining.
     long			score;		// Current score.
@@ -207,9 +219,7 @@ private:
     QVector<int> fx;
 
 public slots:
-    void dbgControl (int code);	// Authors' debugging aids.
-
-    void freeze (const bool userAction, const bool on_off);
+    void dbgControl (const int code);	// Authors' debugging aids.
 
 private:
     KGrEditor * editor;		// The level-editor object.
@@ -223,7 +233,8 @@ private:
     bool loadGameData  (Owner);
     void initRecording ();
     void saveRecording ();
-    void loadRecording (const QString & prefix, const int levelNo);
+    void loadRecording (const QString & dir, const QString & prefix,
+                                             const int levelNo);
     void loadSounds    ();
 
 /******************************************************************************/

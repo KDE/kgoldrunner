@@ -149,12 +149,14 @@ public:
     QByteArray     draws;	///< The random numbers used during play.
 };
 
-enum GameAction    {NEW, LOAD, SAVE_GAME, PAUSE, HIGH_SCORE, HINT, KILL_HERO};
+enum GameAction    {NEW, LOAD, SAVE_GAME, PAUSE, HIGH_SCORE, KILL_HERO,
+                    HINT, DEMO, SOLVE, INSTANT_REPLAY, REPLAY_ANY};
 
 enum EditAction    {CREATE_LEVEL, EDIT_ANY, SAVE_EDITS, MOVE_LEVEL,
                     DELETE_LEVEL, CREATE_GAME,  EDIT_GAME};
 
 enum Setting       {PLAY_SOUNDS,			// Sound effects on/off.
+                    STARTUP_DEMO,			// Starting demo on/off.
                     MOUSE, KEYBOARD, LAPTOP,		// Game-control modes.
                     NORMAL_SPEED, BEGINNER_SPEED,	// Preset game-speeds.
                     CHAMPION_SPEED,
