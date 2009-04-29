@@ -260,18 +260,18 @@ void KGoldrunner::setupActions()
     gameMapper->setMapping (a, SOLVE);
     a->setToolTip (i18n ("Show how to win this level"));
     a->setWhatsThis (i18n ("Play a recording of how to win this level, if "
-                           "there is one available"));
+                           "there is one available."));
 
     a        = gameAction ("instant_replay", INSTANT_REPLAY,
                            i18n ("&Instant Replay"),
                            i18n ("Instant replay"),
-                           i18n ("Show a recording of the latest level played"),
+                           i18n ("Show a recording of the latest level played."),
                            QKeySequence());	// No key assigned.
 
     a        = gameAction ("replay_any", REPLAY_ANY,
                            i18n ("&Replay Any Level"),
                            i18n ("Replay any level"),
-                           i18n ("Show a recording of any level played so far"),
+                           i18n ("Show a recording of any level played so far."),
                            QKeySequence());	// No key assigned.
 
     killHero = gameAction ("kill_hero", KILL_HERO,
@@ -387,8 +387,8 @@ void KGoldrunner::setupActions()
     // Demo at start on/off.
     KToggleAction * setDemo     = settingAction ("options_demo", STARTUP_DEMO,
                                   i18n ("&Demo At Start"),
-                                  i18n ("Run a demo when the game starts"),
-                                  i18n ("Run a demo when the game starts"));
+                                  i18n ("Run a demo when the game starts."),
+                                  i18n ("Run a demo when the game starts."));
 
     bool demoOnOff = gameGroup.readEntry ("StartingDemo", true);
     setDemo->setChecked (demoOnOff);
