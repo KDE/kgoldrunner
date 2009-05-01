@@ -295,10 +295,11 @@ void KGrLGDialog::lgSelect (QListWidgetItem * item)
 *******************************************************************************/
 
 void KGrMessage::information (QWidget * parent,
-                        const QString &caption, const QString &text)
+                        const QString & caption, const QString & text,
+                        const QString & dontShowAgain)
 {
     // KDE does word-wrapping and will observe "\n" line-breaks.
-    KMessageBox::information (parent, text, caption);
+    KMessageBox::information (parent, text, caption, dontShowAgain);
 }
 
 int KGrMessage::warning (QWidget * parent, const QString &caption,

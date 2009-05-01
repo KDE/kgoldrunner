@@ -211,6 +211,13 @@ void KGoldrunner::setupActions()
     gameMapper->setMapping (a, NEW);
     a->setText (i18n ("&New Game..."));
 
+    a        = gameAction ("next_level", NEXT_LEVEL,
+                           i18n ("Pla&y Next Level"),
+                           i18n ("Play next level."),
+                           i18n ("Try the next level in the game "
+                                 "you are playing."),
+                           Qt::Key_Y);
+
     a =	KStandardGameAction::load (gameMapper, SLOT(map()), this);
     actionCollection()->addAction (a->objectName(), a);
     gameMapper->setMapping (a, LOAD);
@@ -258,27 +265,39 @@ void KGoldrunner::setupActions()
     a = KStandardGameAction::solve (gameMapper, SLOT (map()), this);
     actionCollection()->addAction (a->objectName(), a);
     gameMapper->setMapping (a, SOLVE);
-    a->setToolTip (i18n ("Show how to win this level"));
+    a->setText      (i18n ("&Show A Solution"));
+    a->setToolTip   (i18n ("Show how to win this level."));
     a->setWhatsThis (i18n ("Play a recording of how to win this level, if "
                            "there is one available."));
 
     a        = gameAction ("instant_replay", INSTANT_REPLAY,
                            i18n ("&Instant Replay"),
-                           i18n ("Instant replay"),
-                           i18n ("Show a recording of the latest level played."),
-                           QKeySequence());	// No key assigned.
+                           i18n ("Instant replay."),
+                           i18n ("Show a recording of the level "
+                                 "you are currently playing."),
+                           Qt::Key_R);
+
+    a        = gameAction ("replay_last", REPLAY_LAST,
+                           i18n ("Replay &Last Level"),
+                           i18n ("Replay last level."),
+                           i18n ("Show a recording of the last level you "
+                                 "played and finished, regardless of whether "
+                                 "you won or lost."),
+                           Qt::Key_A);
 
     a        = gameAction ("replay_any", REPLAY_ANY,
                            i18n ("&Replay Any Level"),
-                           i18n ("Replay any level"),
+                           i18n ("Replay any level."),
+                           i18n ("Show a recording of any level you have "
+                                 "played so far."),
                            i18n ("Show a recording of any level played so far."),
                            QKeySequence());	// No key assigned.
 
     killHero = gameAction ("kill_hero", KILL_HERO,
                            i18n ("&Kill Hero"),
-                           i18n ("Kill Hero"),
+                           i18n ("Kill Hero."),
                            i18n ("Kill the hero, in case he finds himself in "
-                                 "a situation from which he cannot escape"),
+                                 "a situation from which he cannot escape."),
                            Qt::Key_Q);
 
     // Quit
@@ -300,8 +319,8 @@ void KGoldrunner::setupActions()
 
     QAction * ed = editAction ("create_level", CREATE_LEVEL,
                                i18n ("&Create Level"),
-                               i18n ("Create level"),
-                               i18n ("Create a completely new level"));
+                               i18n ("Create level."),
+                               i18n ("Create a completely new level."));
     ed->setIcon (KIcon ("document-new"));
     ed->setIconText (i18n ("Create"));
 
@@ -377,8 +396,8 @@ void KGoldrunner::setupActions()
 #ifdef ENABLE_SOUND_SUPPORT
     KToggleAction * setSounds   = settingAction ("options_sounds", PLAY_SOUNDS,
                                   i18n ("&Play Sounds"),
-                                  i18n ("Play sound effects"),
-                                  i18n ("Play sound effects during the game"));
+                                  i18n ("Play sound effects."),
+                                  i18n ("Play sound effects during the game."));
 
     bool soundOnOff = gameGroup.readEntry ("Sound", false);
     setSounds->setChecked (soundOnOff);
@@ -400,15 +419,15 @@ void KGoldrunner::setupActions()
 
     KToggleAction * setMouse    = settingAction ("mouse_mode", MOUSE,
                                   i18n ("&Mouse Controls Hero"),
-                                  i18n ("Mouse controls hero"),
+                                  i18n ("Mouse controls hero."),
                                   i18n ("Use the mouse to control "
-                                        "the hero's moves"));
+                                        "the hero's moves."));
 
     KToggleAction * setKeyboard = settingAction ("keyboard_mode", KEYBOARD,
                                   i18n ("&Keyboard Controls Hero"),
-                                  i18n ("Keyboard controls hero"),
+                                  i18n ("Keyboard controls hero."),
                                   i18n ("Use the keyboard to control "
-                                        "the hero's moves"));
+                                        "the hero's moves."));
 
     KToggleAction * setLaptop   = settingAction ("laptop_mode", LAPTOP,
                                   i18n ("&Hybrid Control (Laptop)"),
@@ -434,32 +453,32 @@ void KGoldrunner::setupActions()
 
     KToggleAction * nSpeed      = settingAction ("normal_speed", NORMAL_SPEED,
                                   i18n ("Normal Speed"),
-                                  i18n ("Set normal speed"),
-                                  i18n ("Set normal game speed (12 units)"));
+                                  i18n ("Set normal speed."),
+                                  i18n ("Set normal game speed (12 units)."));
 
     KToggleAction * bSpeed      = settingAction ("beginner_speed",
                                   BEGINNER_SPEED,
                                   i18n ("Beginner Speed"),
-                                  i18n ("Set beginners' speed"),
-                                  i18n ("Set beginners' game speed (6 units)"));
+                                  i18n ("Set beginners' speed."),
+                                  i18n ("Set beginners' game speed (6 units)."));
 
     KToggleAction * cSpeed      = settingAction ("champion_speed",
                                   CHAMPION_SPEED,
                                   i18n ("Champion Speed"),
-                                  i18n ("Set champions' speed"),
-                                  i18n ("Set champions' game speed (18 units)")
+                                  i18n ("Set champions' speed."),
+                                  i18n ("Set champions' game speed (18 units).")
                                   );
 
     a                           = gameAction ("increase_speed", INC_SPEED,
                                   i18n ("Increase Speed"),
-                                  i18n ("Increase speed"),
-                                  i18n ("Increase the game speed by one unit"),
+                                  i18n ("Increase speed."),
+                                  i18n ("Increase the game speed by one unit."),
                                   Qt::Key_Plus);
 
     a                           = gameAction ("decrease_speed", DEC_SPEED,
                                   i18n ("Decrease Speed"),
-                                  i18n ("Decrease speed"),
-                                  i18n ("Decrease the game speed by one unit"),
+                                  i18n ("Decrease speed."),
+                                  i18n ("Decrease the game speed by one unit."),
                                   Qt::Key_Minus);
 
     QActionGroup* speedGrp = new QActionGroup (this);
@@ -527,7 +546,7 @@ void KGoldrunner::setupActions()
     keyControl ("bug_fix",      i18n ("Test Bug Fix"), Qt::Key_B, BUG_FIX);
     keyControl ("show_positions", i18n ("Show Positions"), Qt::Key_W, S_POSNS);
     keyControl ("logging",      i18n ("Start Logging"), Qt::Key_G, LOGGING);
-    keyControl ("show_hero",    i18n ("Show Hero"), Qt::Key_R, S_HERO);
+    keyControl ("show_hero",    i18n ("Show Hero"), Qt::Key_E, S_HERO);
     keyControl ("show_obj",     i18n ("Show Object"), Qt::Key_Slash, S_OBJ);
 
     keyControl ("show_enemy_0", i18n ("Show Enemy") + '0', Qt::Key_0, ENEMY_0);

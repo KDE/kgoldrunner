@@ -1,49 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gui name="kgoldrunner"
-     version="10"
+     version="12"
      xmlns="http://www.kde.org/standards/kxmlgui/1.0"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.kde.org/standards/kxmlgui/1.0
                          http://www.kde.org/standards/kxmlgui/1.0/kxmlgui.xsd">
 <MenuBar>
     <Menu name="game" >
-        <Action append="save_merge"	name="save_edits" />
-        <Action append="misc_merge"	name="kill_hero" />
+        <Action append="new_merge"      name="next_level" />
+        <Action append="save_merge"     name="save_edits" />
+        <Action append="misc_merge"     name="kill_hero" />
     </Menu>
     <Menu name="move" >
         <Action append="save_merge"     name="instant_replay" />
+        <Action append="save_merge"     name="replay_last" />
         <Action append="save_merge"     name="replay_any" />
     </Menu>
     <Menu name="editor" > <text>&amp;Editor</text>
-        <Action				name="create_level" />
-        <Action				name="edit_any" />
+        <Action                         name="create_level" />
+        <Action                         name="edit_any" />
         <Separator/>
-        <Action				name="save_edits" />
-        <Action				name="move_level" />
-        <Action				name="delete_level" />
+        <Action                         name="save_edits" />
+        <Action                         name="move_level" />
+        <Action                         name="delete_level" />
         <Separator/>
-        <Action				name="create_game" />
-        <Action				name="edit_game" />
+        <Action                         name="create_game" />
+        <Action                         name="edit_game" />
     </Menu>
     <Menu name="themes" > <text>&amp;Themes</text>
-        <ActionList			name="theme_list" />
+        <ActionList                     name="theme_list" />
     </Menu>
     <Menu name="settings" >
-        <Action append="save_merge"	name="options_sounds" />
-        <Action append="save_merge"	name="options_demo" />
+        <Action append="save_merge"     name="options_sounds" />
+        <Action append="save_merge"     name="options_demo" />
         <Separator append="save_merge" />
-        <Action append="save_merge"	name="mouse_mode" />
-        <Action append="save_merge"	name="keyboard_mode" />
-        <Action append="save_merge"	name="laptop_mode" />
+        <Action append="save_merge"     name="mouse_mode" />
+        <Action append="save_merge"     name="keyboard_mode" />
+        <Action append="save_merge"     name="laptop_mode" />
         <Separator append="save_merge" />
-        <Action append="save_merge"	name="normal_speed" />
-        <Action append="save_merge"	name="beginner_speed" />
-        <Action append="save_merge"	name="champion_speed" />
-        <Action append="save_merge"	name="increase_speed" />
-        <Action append="save_merge"	name="decrease_speed" />
-    </Menu>
-    <Menu name="help" >
-        <Action				name="tutorial" />
+        <Action append="save_merge"     name="normal_speed" />
+        <Action append="save_merge"     name="beginner_speed" />
+        <Action append="save_merge"     name="champion_speed" />
+        <Action append="save_merge"     name="increase_speed" />
+        <Action append="save_merge"     name="decrease_speed" />
     </Menu>
 </MenuBar>
 
@@ -67,19 +66,19 @@
 </ToolBar>
 
 <ActionProperties>
-    <Action shortcut="P; Escape"	name="game_pause" />
-    <Action shortcut="S"		name="game_save" />
-    <Action shortcut="Ctrl+S"		name="save_edits" />
+    <Action shortcut="P; Escape"        name="game_pause" />
+    <Action shortcut="S"                name="game_save" />
+    <Action shortcut="Ctrl+S"           name="save_edits" />
 
-    <Action shortcut="Up; I"		name="move_up" />
-    <Action shortcut="Right; L"		name="move_right" />
-    <Action shortcut="Down; K"		name="move_down" />
-    <Action shortcut="Left; J"		name="move_left" />
-    <Action shortcut="Space"		name="stop" />
-    <Action shortcut="Z; U"		name="dig_left" />
-    <Action shortcut="C; O"		name="dig_right" />
+    <Action shortcut="Up; I"            name="move_up" />
+    <Action shortcut="Right; L"         name="move_right" />
+    <Action shortcut="Down; K"          name="move_down" />
+    <Action shortcut="Left; J"          name="move_left" />
+    <Action shortcut="Space"            name="stop" />
+    <Action shortcut="Z; U"             name="dig_left" />
+    <Action shortcut="C; O"             name="dig_right" />
 
-    <Action shortcut="+"		name="increase_speed" />
-    <Action shortcut="-"		name="decrease_speed" />
+    <Action shortcut="+"                name="increase_speed" />
+    <Action shortcut="-"                name="decrease_speed" />
 </ActionProperties>
 </gui>

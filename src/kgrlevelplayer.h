@@ -363,6 +363,7 @@ private:
     QVector<int> reappearPos;
     void         makeReappearanceSequence();
     bool         doRecordedMove();
+    void         interruptPlayback();
 
 /******************************************************************************/
 /**************************  AUTHORS' DEBUGGING AIDS **************************/

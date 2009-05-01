@@ -58,7 +58,10 @@ void KGrRunner::getRules()
 {
     pointsPerCell = rules->pointsPerCell();
     turnAnywhere  = rules->turnAnywhere();
-    kDebug() << "pointsPerCell" << pointsPerCell << "turnAnywhere" << turnAnywhere;
+    if (spriteId < 1) {
+        kDebug() << "pointsPerCell" << pointsPerCell
+                 << "turnAnywhere" << turnAnywhere;
+    }
 }
 
 Situation KGrRunner::situation (const int scaledTime)
@@ -259,11 +262,13 @@ KGrEnemy::KGrEnemy (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
     birthJ     (j),
     prevInCell (-1)
 {
-    kDebug() << "ENEMY" << pSpriteId << "IS BORN at" << i << j;
     rulesType = rules->getEnemyTimes (runTime, fallTime, trapTime);
-    kDebug() << "Enemy run time " << runTime << "fall time" << fallTime;
-    kDebug() << "Enemy trap time" << trapTime << "Rules type" << rulesType;
-    interval = runTime;
+    interval  = runTime;
+    kDebug() << "ENEMY" << pSpriteId << "IS BORN at" << i << j;
+    if (pSpriteId < 2) {
+        kDebug() << "Enemy run time " << runTime << "fall time" << fallTime;
+        kDebug() << "Enemy trap time" << trapTime << "Rules type" << rulesType;
+    }
 }
 
 KGrEnemy::~KGrEnemy()
@@ -317,7 +322,9 @@ void KGrEnemy::run (const int scaledTime)
     gridJ = gridY / pointsPerCell;
 
     // Try to pick up or drop gold in the new cell.
-    checkForGold();
+    if (currDirection != STAND) {
+        checkForGold();
+    }
 
     // Find the next direction that could lead to the hero.
     dbe3 "\n");
@@ -452,10 +459,10 @@ void KGrEnemy::checkForGold()
     uchar random;
     if ((nuggets == 0) && (cell == NUGGET)) {
         random = levelPlayer->randomByte ((uchar) 100);
-        dbk << "Random" << random << "at NUGGET" << gridI << gridJ;
+        dbk3 << "Random" << random << "at NUGGET" << gridI << gridJ;
         if (rules->alwaysCollectNugget() || (random >= 80)) {
             levelPlayer->runnerGotGold (spriteId, gridI, gridJ, true);
-            dbk << "Enemy" << spriteId << "at" << gridI << gridJ
+            dbk3 << "Enemy" << spriteId << "at" << gridI << gridJ
                 << "COLLECTS gold";
             nuggets = 1;
         }
@@ -466,10 +473,10 @@ void KGrEnemy::checkForGold()
         // TODO - Do not drop above a BAR.  Affects recording of Initiation 10.
         if ((below != FREE) && (below != NUGGET)) {
             random = levelPlayer->randomByte ((uchar) 100);
-            dbk << "Random" << random << "for DROP " << gridI << gridJ;
+            dbk3 << "Random" << random << "for DROP " << gridI << gridJ;
             if (random >= 93) {
                 levelPlayer->runnerGotGold (spriteId, gridI, gridJ, false);
-                dbk << "Enemy" << spriteId << "at" << gridI << gridJ
+                dbk3 << "Enemy" << spriteId << "at" << gridI << gridJ
                     <<"DROPS gold";
                 nuggets = 0;
             }

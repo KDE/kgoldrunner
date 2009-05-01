@@ -74,11 +74,7 @@ public slots:
     void incScore           (const int n);	// Update the score.
 
 private:
-    // TODO - Only startAnyLevel() is used (from newGame...).
-    void startLevelOne();		// Start any game from level 1.
-    void startAnyLevel();		// Start any game from any level.
-    void startNextLevel();		// Start next level of current game.
-    void startLevel (int startingAt, int requestedLevel);
+    void selectLevel (const SelectAction action, const int requestedLevel);
 
     void toggleSoundsOnOff();		// Set sound enabled or disabled.
 
@@ -95,7 +91,9 @@ private slots:
     void interruptDemo();
 
 private:
-    void startTutorial();		// Start tutorial game.
+    void startInstantReplay();
+    void replayLastLevel();
+
     void showHint();			// Show hint for current level.
 
     QString	getTitle();		// Collection - Level NNN, Name.
@@ -155,6 +153,7 @@ private slots:
 private:
     bool playLevel (const QString & prefix, const int levelNo,
                     const bool newLevel);
+    void setupLevelPlayer();
     void showTutorialMessages (int levelNo);
 
     void checkHighScore();		// Check if high score for current game.
@@ -169,6 +168,7 @@ private:
     KGrLevelPlayer *            levelPlayer;	// Where the level is played.
     KGrRecording *              recording;	// A recording of the play.
     bool                        playback;	// Play back or record?
+    GameAction                  demoType;	// The type of replay or demo.
     bool                        startupDemo;	// Startup demo running?
 
     KGrCanvas *			view;		// Where the game is displayed.

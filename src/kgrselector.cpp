@@ -227,6 +227,12 @@ void KGrSLDialog::setupWidgets()
     case SL_ANY:	// Can start playing at any level in any game.
                         OKText = i18n ("Play Level");
                         break;
+    case SL_REPLAY:	// Can ask to see a replay of any level in any game.
+                        OKText = i18n ("Replay Level");
+                        break;
+    case SL_SOLVE:	// Can ask to see a solution of any level in any game.
+                        OKText = i18n ("Show Solution");
+                        break;
     case SL_UPDATE:	// Can use any level in any game as edit input.
                         OKText = i18n ("Edit Level");
                         break;
@@ -306,8 +312,8 @@ void KGrSLDialog::slSetGames (int cIndex)
     int i;
     int imax = myGameList.count();
 
-    // Set values in the list box that holds details of available games.
-    // The list is displayed in order of skill then the kind of rules.
+    // Set values in the table that holds details of available games.
+    // The table is displayed in order of skill then the kind of rules.
     games->clear();
     slGameIndex = -1;
 
@@ -392,6 +398,8 @@ void KGrSLDialog::slGame()
     // Set a default level number for the selected game.
     switch (slAction) {
     case SL_ANY:
+    case SL_REPLAY:
+    case SL_SOLVE:
     case SL_UPDATE:
     case SL_DELETE:
     case SL_UPD_GAME:
@@ -399,6 +407,7 @@ void KGrSLDialog::slGame()
         if (n == N)
             number->setValue (defaultLevel);
         else
+            // TODO - Use the last level played in that game (from KConfig).
             number->setValue (1);			// Else use level 1.
         break;
     case SL_CREATE:
@@ -485,10 +494,8 @@ void KGrSLDialog::slotHelp()
 
     if (slAction == SL_START) {
         s += i18n ("\n\nIf this is your first time in KGoldrunner, select the "
-            "tutorial game or click \"Cancel\" and click that item in "
-            "the Game or Help menu. The tutorial game gives you hints "
-            "as you go.\n\n"
-            "Otherwise, just click on the name of a game (in the list box), "
+            "tutorial game, which gives you hints as you go.\n\n"
+            "Otherwise, just click on the name of a game in the table, "
             "then, to start at level 001, click on the main button at the "
             "bottom. Play begins when you move the mouse or press a key.");
    }
@@ -497,9 +504,10 @@ void KGrSLDialog::slotHelp()
         case SL_UPDATE:
             s += i18n ("\n\nYou can select System levels for editing (or "
                 "copying), but you must save the result in a game you have "
-                "created. Use the mouse as a paintbrush and the editor "
-                "toolbar buttons as a palette. Use the 'Empty Space' button "
-                "to erase.");
+                "created.  Use the left mouse-button as a paintbrush and the "
+                "editor toolbar buttons as a palette.  Use the 'Erase' button "
+                "or the right mouse-button to erase.  You can drag the mouse "
+                "with a button held down and paint or erase multiple squares.");
             break;
         case SL_CREATE:
             s += i18n("\n\nYou can add a name and hint to your new level here, "
@@ -523,8 +531,8 @@ void KGrSLDialog::slotHelp()
         case SL_MOVE:
             s += i18n ("\n\nTo move (re-number) a level, you must first select "
                 "it by using \"Edit Any Level...\", then you can use "
-                "\"Move Level...\" to assign it a new number or even a different "
-                "game. Other levels are automatically re-numbered as "
+                "\"Move Level...\" to move it to a new number or even a "
+                "different game. Other levels are automatically re-numbered as "
                 "required. You can only move levels within your own games.");
             break;
         case SL_UPD_GAME:
@@ -535,13 +543,14 @@ void KGrSLDialog::slotHelp()
         default:
             break;
         }
-        s += i18n ("\n\nClick on the list box to choose a game.  "
-            "Below the list box you can see more information about the "
-            "selected game, including how many levels there are and what "
-            "rules the enemies follow (see the Settings menu).\n\n"
+        s += i18n ("\n\nClick on the table to choose a game.  "
+            "In the table and below it you can see more information about the "
+            "selected game, including how many levels there are, how difficult "
+            "the game is and what "
+            "rules the enemies follow (see the KGoldrunner Handbook).\n\n"
             "You select "
-            "a level number by typing it or using the scroll bar.  As "
-            "you vary the game or level, the thumbnail area shows a "
+            "a level number by typing it or using the spin box or scroll bar.  "
+            "As you vary the game or level, the thumbnail area shows a "
             "preview of your choice.");
    }
 

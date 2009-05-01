@@ -84,9 +84,10 @@ enum Status		{STANDING, FALLING, WALKING, CLIMBING, CAPTIVE};
 enum KBAction		{KB_UP, KB_DOWN, KB_LEFT, KB_RIGHT,
                          KB_DIGLEFT, KB_DIGRIGHT, KB_STOP};
 
-// Action codes when selecting a level or game for play or editing.
+// Action codes when selecting a level or game for play, editing or replay.
 enum SelectAction	{SL_START, SL_ANY, SL_CREATE, SL_UPDATE, SL_SAVE,
-                         SL_MOVE, SL_DELETE, SL_CR_GAME, SL_UPD_GAME};
+                         SL_MOVE, SL_DELETE, SL_CR_GAME, SL_UPD_GAME,
+                         SL_REPLAY, SL_SOLVE};
 
 /// Codes for the rules of the selected game and level.
 const char TraditionalRules = 'T';
@@ -99,7 +100,8 @@ class KGrMessage
 {
 public:
     static void information (QWidget * parent, const QString & caption,
-                             const QString & text);
+                             const QString & text,
+                             const QString & dontShowAgain = QString());
     static int  warning     (QWidget * parent, const QString & caption,
                              const QString & text, const QString & label0,
                              const QString & label1,
@@ -149,8 +151,9 @@ public:
     QByteArray     draws;	///< The random numbers used during play.
 };
 
-enum GameAction    {NEW, LOAD, SAVE_GAME, PAUSE, HIGH_SCORE, KILL_HERO,
-                    HINT, DEMO, SOLVE, INSTANT_REPLAY, REPLAY_ANY};
+enum GameAction    {NEW, NEXT_LEVEL, LOAD, SAVE_GAME, PAUSE, HIGH_SCORE,
+                    KILL_HERO, HINT,
+                    DEMO, SOLVE, INSTANT_REPLAY, REPLAY_LAST, REPLAY_ANY};
 
 enum EditAction    {CREATE_LEVEL, EDIT_ANY, SAVE_EDITS, MOVE_LEVEL,
                     DELETE_LEVEL, CREATE_GAME,  EDIT_GAME};
