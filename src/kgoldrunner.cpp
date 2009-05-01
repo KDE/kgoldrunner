@@ -290,7 +290,6 @@ void KGoldrunner::setupActions()
                            i18n ("Replay any level."),
                            i18n ("Show a recording of any level you have "
                                  "played so far."),
-                           i18n ("Show a recording of any level played so far."),
                            QKeySequence());	// No key assigned.
 
     killHero = gameAction ("kill_hero", KILL_HERO,
