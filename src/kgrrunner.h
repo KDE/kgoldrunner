@@ -47,9 +47,11 @@ public:
      * @param j            The starting row-number (>=1).
      * @param pSpriteId    The sprite ID of the runner, as used in animation.
      * @param pRules       The rules that apply to this game and level.
+     * @param startDelay   The starting-time advantage enemies give to the hero.
      */
     KGrRunner (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
-               int i, int j, int pSpriteId, KGrRuleBook  * pRules);
+               int i, int j, const int pSpriteId,
+               KGrRuleBook  * pRules, const int startDelay);
     virtual ~KGrRunner();
 
     /**

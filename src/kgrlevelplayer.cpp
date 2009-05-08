@@ -56,6 +56,8 @@ KGrLevelPlayer::KGrLevelPlayer (QObject * parent, KRandomSequence * pRandomGen)
     digKillingTime   (2)	// Cycle at which enemy/hero gets killed.
 {
     t.start(); // IDW
+
+    dbgLevel = 0;
 }
 
 int KGrLevelPlayer::playerCount = 0;
@@ -71,20 +73,20 @@ KGrLevelPlayer::~KGrLevelPlayer()
     int ch = 0;
     for (int i = 0; i <= (recIndex + 1); i ++) {
         ch = (uchar)(recording->content.at(i));
-        dbe2 "%03d ", ch);
+        dbe1 "%03d ", ch);
         if (ch == 0)
             break;
     }
-    dbe2 "\n%d bytes\n", recIndex + 1);
+    dbe1 "\n%d bytes\n", recIndex + 1);
     int j = 0;
     while (j < recording->draws.size()) {
         ch = (uchar)(recording->draws.at(j));
-        dbe2 "%03d ", ch);
+        dbe1 "%03d ", ch);
         if (ch == 0)
             break;
         j++;
     }
-    dbe2 "\n%d bytes\n", j);
+    dbe1 "\n%d bytes\n", j);
 
     // TODO - Do we need this delete?
     // while (! enemies.isEmpty()) {
@@ -394,7 +396,7 @@ void KGrLevelPlayer::setTarget (int pointerI, int pointerJ)
         // The human player is playing now.
         if (! playback) {
         if ((pointerI == targetI) && (pointerJ == targetJ) && (recCount < 255)){
-            dbe3 "T %04d recIndex %03d REC: codes %d %d %d\n",
+            dbe2 "T %04d recIndex %03d REC: codes %d %d %d\n",
                  T, recIndex - 2, (uchar)(recording->content.at (recIndex-2)),
                                   (uchar)(recording->content.at (recIndex-1)),
                                   (uchar)(recording->content.at (recIndex)));
@@ -402,7 +404,7 @@ void KGrLevelPlayer::setTarget (int pointerI, int pointerJ)
             recording->content [recIndex] = (uchar) recCount;
         }
         else {
-            dbe3 "T %04d recIndex %03d REC: codes %d %d %d\n",
+            dbe2 "T %04d recIndex %03d REC: codes %d %d %d\n",
                  T, recIndex - 2, (uchar)(recording->content.at (recIndex-2)),
                                   (uchar)(recording->content.at (recIndex-1)),
                                   (uchar)(recording->content.at (recIndex)));
@@ -412,7 +414,7 @@ void KGrLevelPlayer::setTarget (int pointerI, int pointerJ)
             recording->content [recIndex]     = (uchar) 1;
             recording->content [recIndex + 1] = (uchar) 0xff;
             recCount = 1;
-            dbe3 "T %04d recIndex %03d REC: codes %d %d %d - NEW TARGET\n",
+            dbe2 "T %04d recIndex %03d REC: codes %d %d %d - NEW TARGET\n",
                  T, recIndex - 2, pointerI, pointerJ,
                                   (uchar)(recording->content.at (recIndex)));
         }
@@ -456,7 +458,7 @@ void KGrLevelPlayer::doDig (int button)
             // If not the hero's first move, interrupt the previous mouse-move.
             recording->content [recIndex] =
                 recording->content [recIndex] - 1;
-            dbe3 "T %04d recIndex %03d REC: codes %d %d %d\n",
+            dbe2 "T %04d recIndex %03d REC: codes %d %d %d\n",
                  T, recIndex - 2,
                 (uchar)(recording->content.at (recIndex-2)),
                 (uchar)(recording->content.at (recIndex-1)),
@@ -464,7 +466,7 @@ void KGrLevelPlayer::doDig (int button)
             recIndex++;
         }
         // Record the digging code.
-        dbe3 "T %04d recIndex %03d REC: dig code %d\n",
+        dbe2 "T %04d recIndex %03d REC: dig code %d\n",
              T, recIndex, recordByte);
         recording->content [recIndex++]   = recordByte;
 
@@ -507,7 +509,7 @@ void KGrLevelPlayer::setDirectionByKey (Direction dirn)
 Direction KGrLevelPlayer::getDirection (int heroI, int heroJ)
 {
     int index = (playback) ? recIndex : recIndex - 2;
-    dbe3 "T %04d recIndex %03d hero at [%02d, %02d] aiming at [%02d, %02d]\n",
+    dbe2 "T %04d recIndex %03d hero at [%02d, %02d] aiming at [%02d, %02d]\n",
          T, index, heroI, heroJ, targetI, targetJ);
     if ((controlMode == MOUSE) || (controlMode == LAPTOP)) {
         // If using a pointer device, calculate the hero's next direction,
@@ -673,7 +675,11 @@ void KGrLevelPlayer::tick (bool missed, int scaledTime)
     if (playback) {			// Replay a recorded move.
         if (! doRecordedMove()) {
             playback = false;
-            emit interruptDemo();
+            // TODO - How to handle this case properly. emit interruptDemo();
+            //        We want to continue the demo if it is the startup demo.
+            //        We also want to continue to next level after a demo level
+            //        that signals endLevel (DEAD) or even endLevel (NORMAL).
+            emit endLevel (WON_LEVEL);
             dbk << "END_OF_RECORDING - emit interruptDemo();";
             return;			// End of recording.
         }
@@ -696,6 +702,7 @@ void KGrLevelPlayer::tick (bool missed, int scaledTime)
 
     HeroStatus status = hero->run (scaledTime);
     if ((status == WON_LEVEL) || (status == DEAD)) {
+        // TODO - Can this unsolicited timer pause cause problems in KGrGame?
         timer->pause();
         // TODO ? If caught in a brick, brick-closing animation is unfinished.
         // Queued connection ensures KGrGame slot runs AFTER return from here.
@@ -716,13 +723,13 @@ int KGrLevelPlayer::runnerGotGold (const int  spriteId,
                                    const bool hasGold, const bool lost)
 {
     if (hasGold) {
-        dbk3 << "GOLD COLLECTED BY" << spriteId << "AT" << i << j;
+        dbk2 << "GOLD COLLECTED BY" << spriteId << "AT" << i << j;
     }
     else if (lost) {
-        dbk3 << "GOLD LOST BY" << spriteId << "AT" << i << j;
+        dbk2 << "GOLD LOST BY" << spriteId << "AT" << i << j;
     }
     else {
-        dbk3 << "GOLD DROPPED BY" << spriteId << "AT" << i << j;
+        dbk2 << "GOLD DROPPED BY" << spriteId << "AT" << i << j;
     }
     if (! lost) {
         grid->gotGold (i, j, hasGold);		// Record pickup/drop on grid.
@@ -767,7 +774,7 @@ void KGrLevelPlayer::makeReappearanceSequence()
         reappearPos [left - 1] = temp;
         left--;
     }
-    dbk3 << "Randoms" << reappearPos;
+    dbk2 << "Randoms" << reappearPos;
     reappearIndex = 0;
 }
 
@@ -811,7 +818,7 @@ void KGrLevelPlayer::enemyReappear (int & gridI, int & gridJ)
             }
         }
     }
-    dbk3 << "Reappear at" << i << j;
+    dbk2 << "Reappear at" << i << j;
     gridI = i;
     gridJ = j;
 }
@@ -821,10 +828,13 @@ uchar KGrLevelPlayer::randomByte (const uchar limit)
     if (! playback) {
         uchar value = randomGen->getLong ((unsigned long) limit);
         // A zero-byte terminates recording->draws, so add 1 when recording ...
+        dbe2 "Draw %03d, index %04d, limit %02d\n", value, randIndex, limit);
         recording->draws [randIndex++] = value + 1;
         return value;
     }
     else {
+        dbe2 "Draw %03d, index %04d, limit %02d\n",
+             (recording->draws.at (randIndex) - 1), randIndex, limit);
         // and subtract 1 when replaying.
         return ((uchar) recording->draws.at (randIndex++) - 1);
     }
@@ -837,6 +847,8 @@ bool KGrLevelPlayer::doRecordedMove()
     while (true) {
         // Check for end of recording.
         if ((code == 0xff) || (code == 0)) {
+            dbe2 "T %04d recIndex %03d PLAY - END of recording\n",
+                 T, recIndex);
             return false;
         }
         // Check for a key press or mouse button click.
@@ -844,7 +856,7 @@ bool KGrLevelPlayer::doRecordedMove()
             playState = Playing;
             code = code - 0x80;
             if ((code == DIG_LEFT) || (code == DIG_RIGHT)) {
-                dbe3 "T %04d recIndex %03d PLAY dig code %d\n",
+                dbe2 "T %04d recIndex %03d PLAY dig code %d\n",
                      T, recIndex, code);
                 startDigging ((Direction)(code));
             }
@@ -862,7 +874,7 @@ bool KGrLevelPlayer::doRecordedMove()
                 // targetI = code;
                 // targetJ = (uchar)(recording->content [recIndex + 1]);
                 recCount = (uchar)(recording->content [recIndex + 2]);
-                dbe3 "T %04d recIndex %03d PLAY codes %d %d %d - NEW TARGET\n",
+                dbe2 "T %04d recIndex %03d PLAY codes %d %d %d - NEW TARGET\n",
                      T, recIndex, i, j, recCount);
                      // T, recIndex, targetI, targetJ, recCount);
 
@@ -871,12 +883,12 @@ bool KGrLevelPlayer::doRecordedMove()
                 // emit setMousePos (i, j);
             }
             else {
-                dbe3 "T %04d recIndex %03d PLAY codes %d %d %d\n",
+                dbe2 "T %04d recIndex %03d PLAY codes %d %d %d\n",
                      T, recIndex, targetI, targetJ, recCount);
             }
             if (--recCount <= 0) {
                 recIndex = recIndex + 3;
-                dbe3 "T %04d recIndex %03d PLAY - next index\n",
+                dbe2 "T %04d recIndex %03d PLAY - next index\n",
                      T, recIndex);
             }
             break;

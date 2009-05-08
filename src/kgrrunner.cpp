@@ -25,7 +25,8 @@
 #include "kgrrulebook.h"
 
 KGrRunner::KGrRunner (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
-                      int i, int j, int pSpriteId, KGrRuleBook * pRules)
+                      int i, int j, const int pSpriteId,
+                      KGrRuleBook * pRules, const int startDelay)
     :
     QObject     (pLevelPlayer),	// Destroy runner when level is destroyed.
     levelPlayer (pLevelPlayer),
@@ -41,13 +42,26 @@ KGrRunner::KGrRunner (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
     currDirection (STAND),
     currAnimation (FALL_L),
 
-    timeLeft  (TickTime),
+    // The start delay is zero for the hero and 50 msec for the enemies.  This
+    // gives the hero about one grid-point advantage.  Without this lead, some
+    // levels become impossible, notably Challenge, 4, "Quick Off The Mark" and
+    // Curse of the Mummy, 20, "The Parting of the Red Sea".
+    timeLeft  (TickTime + startDelay),
+
     leftRightSearch (true)
 {
     getRules();
 
-    gridX = i * pointsPerCell;
-    gridY = j * pointsPerCell;
+    gridX    = i * pointsPerCell;
+    gridY    = j * pointsPerCell;
+
+    // As soon as the initial timeLeft has expired (i.e. at the first tick in
+    // the hero's case and after a short delay in the enemies' case), the
+    // pointCtr will reach its maximum, the EndCell situation will occur and
+    // each runner will look for a new direction and head that way if he can.
+    pointCtr = pointsPerCell - 1;
+
+    dbgLevel = 0;
 }
 
 KGrRunner::~KGrRunner()
@@ -68,10 +82,14 @@ Situation KGrRunner::situation (const int scaledTime)
 {
     timeLeft -= scaledTime;
     if (timeLeft >= scaledTime) {
+        dbe3 "%d sprite %02d scaled %02d timeLeft %03d - Not Time Yet\n",
+             pointCtr, spriteId, scaledTime, timeLeft);
         return NotTimeYet;
     }
 
     if (grid->cellType  (gridI, gridJ) == BRICK) {
+        dbe2 "%d sprite %02d scaled %02d timeLeft %03d - Caught in brick\n",
+             pointCtr, spriteId, scaledTime, timeLeft);
         return CaughtInBrick;
     }
 
@@ -82,9 +100,13 @@ Situation KGrRunner::situation (const int scaledTime)
     // TODO - Count one extra tick when turning to L or R from another dirn.
     if (pointCtr < pointsPerCell) {
         timeLeft += interval;
+        dbe2 "%d sprite %02d scaled %02d timeLeft %03d - Mid Cell\n",
+             pointCtr, spriteId, scaledTime, timeLeft);
         return MidCell;
     }
 
+    dbe2 "%d sprite %02d scaled %02d timeLeft %03d - END Cell\n",
+         pointCtr, spriteId, scaledTime, timeLeft);
     return EndCell;
 }
 
@@ -92,7 +114,7 @@ Situation KGrRunner::situation (const int scaledTime)
 KGrHero::KGrHero (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
                   int i, int j, int pSpriteId, KGrRuleBook * pRules)
     :
-    KGrRunner (pLevelPlayer, pGrid, i, j, pSpriteId, pRules),
+    KGrRunner (pLevelPlayer, pGrid, i, j, pSpriteId, pRules, 0),
     nuggets (0)		// KGrLevelPlayer object will call hero->setNuggets().
 {
     kDebug() << "THE HERO IS BORN at" << i << j << "sprite ID" << pSpriteId;
@@ -126,6 +148,11 @@ HeroStatus KGrHero::run (const int scaledTime)
         return WON_LEVEL;
     }
 
+    // TODO - Do we need to do this on every grid-point?
+    bool  standingOnEnemy  = levelPlayer->standOnEnemy (spriteId, gridX, gridY);
+    if ((! standingOnEnemy) && levelPlayer->heroCaught (gridX, gridY)) {
+        return DEAD;
+    }
     if (s == MidCell) {
         return NORMAL;
     }
@@ -167,6 +194,9 @@ HeroStatus KGrHero::run (const int scaledTime)
     }
 
     timeLeft += interval;
+
+    dbe2 "%d sprite %02d [%02d,%02d] timeLeft %03d currDir %d nextDir %d\n",
+      pointCtr, spriteId, gridI, gridJ, timeLeft, currDirection, nextDirection);
 
     if ((! onEnemy) && levelPlayer->heroCaught (gridX, gridY)) {
         return DEAD;
@@ -256,7 +286,7 @@ void KGrHero::showState (char option)
 KGrEnemy::KGrEnemy (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
                     int i, int j, int pSpriteId, KGrRuleBook * pRules)
     :
-    KGrRunner  (pLevelPlayer, pGrid, i, j, pSpriteId, pRules),
+    KGrRunner  (pLevelPlayer, pGrid, i, j, pSpriteId, pRules, 50),
     nuggets    (0),
     birthI     (i),
     birthJ     (j),
@@ -405,6 +435,9 @@ void KGrEnemy::run (const int scaledTime)
     timeLeft += interval;
     deltaX = movement [nextDirection][X];
     deltaY = movement [nextDirection][Y];
+
+    dbe2 "%d sprite %02d [%02d,%02d] timeLeft %03d currDir %d nextDir %d\n",
+      pointCtr, spriteId, gridI, gridJ, timeLeft, currDirection, nextDirection);
 
     // If moving, occupy the next cell in the enemy's path and release this one.
     if (nextDirection != STAND) {
