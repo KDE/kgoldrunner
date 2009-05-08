@@ -343,6 +343,10 @@ void KGrGame::initGame()
     kDebug() << "Calling the first view->changeTheme() ...";
     view->changeTheme (initialThemeFilepath);
 
+    // TODO - Remove the next 2 lines.  They temporarily disable the main demo.
+    playback = false;
+    emit setAvail ("move_demo", false);
+
     if (playback && (startDemo (SYSTEM, demoPrefix, 1))) {
         // TODO - Start demo at a random level?
         startupDemo = true;		// Demo is starting.
