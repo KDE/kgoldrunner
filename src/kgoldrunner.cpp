@@ -805,6 +805,8 @@ void KGoldrunner::setEditMenu (bool on_off)
     hintAction->setEnabled (! on_off);
     killHero->setEnabled   (! on_off);
     highScore->setEnabled  (! on_off);
+    setAvail ("instant_replay", (! on_off));
+    setAvail ("game_pause",     (! on_off));
 
     if (on_off){
         // Set the editToolbar icons to the current tile-size.

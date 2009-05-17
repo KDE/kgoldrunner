@@ -87,7 +87,7 @@ enum KBAction		{KB_UP, KB_DOWN, KB_LEFT, KB_RIGHT,
 // Action codes when selecting a level or game for play, editing or replay.
 enum SelectAction	{SL_START, SL_ANY, SL_CREATE, SL_UPDATE, SL_SAVE,
                          SL_MOVE, SL_DELETE, SL_CR_GAME, SL_UPD_GAME,
-                         SL_REPLAY, SL_SOLVE};
+                         SL_REPLAY, SL_SOLVE, SL_NONE};
 
 /// Codes for the rules of the selected game and level.
 const char TraditionalRules = 'T';
@@ -147,9 +147,22 @@ public:
     KGrLevelData   levelData;	///< The level data, at time of recording.
     long           lives;	///< Number of lives at start of level.
     long           score;	///< Score at start of level.
+    int            speed;	///< Speed of game during recording (normal=10).
+    int            controlMode;	///< Control mode during recording (mouse, etc).
     QByteArray     content;	///< The encoded recording of play.
     QByteArray     draws;	///< The random numbers used during play.
 };
+
+// Offsets used to encode keystrokes, control modes and speeds in a recording.
+// Allow space for 16 direction and digging codes, 16 control modes, 16 special
+// actions and 30 speeds.  We actually have (as at May 2009) 8 direction and
+// digging codes, control modes from 2 to 4, one special action (code 7) and
+// speeds ranging from 2 to 20.
+#define DIRECTION_CODE 0x80
+#define MODE_CODE      0x90
+#define ACTION_CODE    0xa0
+#define SPEED_CODE     0xe0
+#define END_CODE       0xff
 
 enum GameAction    {NEW, NEXT_LEVEL, LOAD, SAVE_GAME, PAUSE, HIGH_SCORE,
                     KILL_HERO, HINT,
@@ -171,8 +184,8 @@ typedef char    DirectionFlag;
 typedef char    AccessFlag;
 typedef char    Flags;
 
-enum  Direction  {STAND, RIGHT, LEFT, UP, DOWN, nDirections,
-                 DIG_RIGHT = nDirections, DIG_LEFT};
+enum  Direction    {STAND, RIGHT, LEFT, UP, DOWN, nDirections,
+                    DIG_RIGHT = nDirections, DIG_LEFT, NO_DIRECTION};
 
 const DirectionFlag dFlag [nDirections] = {
                 0x10,		// Can stand.

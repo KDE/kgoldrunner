@@ -47,7 +47,8 @@ KGrLevelPlayer::KGrLevelPlayer (QObject * parent, KRandomSequence * pRandomGen)
     playback         (false),
     targetI          (1),
     targetJ          (1),
-    direction        (STAND),
+    direction        (NO_DIRECTION),
+    newDirection     (NO_DIRECTION),
     timer            (0),
     digCycleTime     (200),	// Milliseconds per dig-timing cycle (default).
     digCycleCount    (40),	// Cycles while hole is fully open (default).
@@ -135,12 +136,6 @@ void KGrLevelPlayer::init (KGrCanvas * view, const int mode,
     recCount  = 0;
     randIndex = 0;
     T         = 0;
-    if (! playback) {
-        dbk << "Play is being RECORDED.";
-    }
-    else {
-        dbk << "Play is being REPRODUCED.";
-    }
 
     view->setGoldEnemiesRule (rules->enemiesShowGold());
 
@@ -278,6 +273,14 @@ void KGrLevelPlayer::init (KGrCanvas * view, const int mode,
 
     connect (timer, SIGNAL (tick (bool, int)), this, SLOT (tick (bool, int)));
     connect (this,  SIGNAL (animation (bool)), view, SLOT (animate (bool)));
+
+    if (! playback) {
+        dbk << "Play is being RECORDED.";
+        recordInitialWaitTime (NO_DIRECTION, 1500);
+    }
+    else {
+        dbk << "Play is being REPRODUCED.";
+    }
 }
 
 void KGrLevelPlayer::startDigging (Direction diggingDirection)
@@ -384,19 +387,13 @@ void KGrLevelPlayer::setTarget (int pointerI, int pointerJ)
         // The pointer moved: fall into "case Playing:" and start playing.
         else if (! playback) {
             T = 0;
-            // Allow a pause for viewing when playback starts.
-            recording->content [recIndex++]   = (uchar) targetI;
-            recording->content [recIndex++]   = (uchar) targetJ;
-            recording->content [recIndex]     = (uchar) 75;
-            recording->content [recIndex + 1] = (uchar) 0xff;
-            recCount = 75;
         }
         playState = Playing;
     case Playing:
         // The human player is playing now.
         if (! playback) {
         if ((pointerI == targetI) && (pointerJ == targetJ) && (recCount < 255)){
-            dbe2 "T %04d recIndex %03d REC: codes %d %d %d\n",
+            dbe2 "T %04d recIndex %03d REC: codes %d %d %d - recCount++\n",
                  T, recIndex - 2, (uchar)(recording->content.at (recIndex-2)),
                                   (uchar)(recording->content.at (recIndex-1)),
                                   (uchar)(recording->content.at (recIndex)));
@@ -404,16 +401,16 @@ void KGrLevelPlayer::setTarget (int pointerI, int pointerJ)
             recording->content [recIndex] = (uchar) recCount;
         }
         else {
-            dbe2 "T %04d recIndex %03d REC: codes %d %d %d\n",
+            dbe2 "T %04d recIndex %03d REC: codes %d %d %d - new or > 255\n",
                  T, recIndex - 2, (uchar)(recording->content.at (recIndex-2)),
                                   (uchar)(recording->content.at (recIndex-1)),
                                   (uchar)(recording->content.at (recIndex)));
             recIndex++;
+            recCount = 1;
             recording->content [recIndex++]   = (uchar) pointerI;
             recording->content [recIndex++]   = (uchar) pointerJ;
-            recording->content [recIndex]     = (uchar) 1;
-            recording->content [recIndex + 1] = (uchar) 0xff;
-            recCount = 1;
+            recording->content [recIndex]     = (uchar) recCount;
+            recording->content [recIndex + 1] = (uchar) END_CODE;
             dbe2 "T %04d recIndex %03d REC: codes %d %d %d - NEW TARGET\n",
                  T, recIndex - 2, pointerI, pointerJ,
                                   (uchar)(recording->content.at (recIndex)));
@@ -442,11 +439,11 @@ void KGrLevelPlayer::doDig (int button)
     playState = Playing;
     switch (button) {
     case Qt::LeftButton:
-        recordByte = 0x80 + DIG_LEFT;
+        recordByte = DIRECTION_CODE + DIG_LEFT;
         startDigging (DIG_LEFT);
         break;
     case Qt::RightButton:
-        recordByte = 0x80 + DIG_RIGHT;
+        recordByte = DIRECTION_CODE + DIG_RIGHT;
         startDigging (DIG_RIGHT);
         break;
     default:
@@ -454,64 +451,48 @@ void KGrLevelPlayer::doDig (int button)
     }
     if (recordByte != 0) {
         // Record a digging action.
-        if (recIndex >= 2) {
-            // If not the hero's first move, interrupt the previous mouse-move.
-            recording->content [recIndex] =
-                recording->content [recIndex] - 1;
-            dbe2 "T %04d recIndex %03d REC: codes %d %d %d\n",
-                 T, recIndex - 2,
-                (uchar)(recording->content.at (recIndex-2)),
-                (uchar)(recording->content.at (recIndex-1)),
-                (uchar)(recording->content.at (recIndex)));
-            recIndex++;
-        }
-        // Record the digging code.
-        dbe2 "T %04d recIndex %03d REC: dig code %d\n",
-             T, recIndex, recordByte);
-        recording->content [recIndex++]   = recordByte;
-
-        // Continue recording the previous mouse-move.
-        recording->content [recIndex++]   = targetI;
-        recording->content [recIndex++]   = targetJ;
-        recording->content [recIndex]     = 1;
-        recording->content [recIndex + 1] = 0xff;
-        recCount = 1;
+        recordDigAction (recordByte);
     }
 }
 
 void KGrLevelPlayer::setDirectionByKey (Direction dirn)
 {
-    // Any key ends playback mode.
-    if (playback) {
-        interruptPlayback();
-        return;
-    }
-
-    // Keystrokes control the hero.
-    if ((playState == NotReady) || (controlMode == MOUSE)) {
+    // Keystrokes control the hero.  KGrGame should avoid calling this during
+    // playback, but better to be safe ...
+    if (playback || (playState == NotReady) || (controlMode == MOUSE)) {
         return;
     }
 
     if ((dirn == DIG_LEFT) || (dirn == DIG_RIGHT)) {
 	// Control mode is KEYBOARD or LAPTOP (hybrid: pointer + dig-keys).
-        playState = Playing;
-        T = 0;
-        direction = STAND;
+        if (playState == Ready) {
+            playState = Playing;
+            T = 0;
+        }
+        if (controlMode == KEYBOARD) {
+            newDirection = STAND;	// Stop a keyboard move when digging.
+        }
         startDigging (dirn);
+        recordDigAction ((uchar) (DIRECTION_CODE + dirn));
     }
     else if (controlMode == KEYBOARD) {
-        playState = Playing;
-        T = 0;
-        direction = dirn;
+        if (playState == Ready) {
+            playState = Playing;
+            T = 0;
+        }
+        if (dirn != direction) {
+            // Start recording and acting on the new direction at the next tick.
+            newDirection = dirn;
+        }
     }
 }
 
 Direction KGrLevelPlayer::getDirection (int heroI, int heroJ)
 {
-    int index = (playback) ? recIndex : recIndex - 2;
-    dbe2 "T %04d recIndex %03d hero at [%02d, %02d] aiming at [%02d, %02d]\n",
-         T, index, heroI, heroJ, targetI, targetJ);
     if ((controlMode == MOUSE) || (controlMode == LAPTOP)) {
+        int index = (playback) ? recIndex : recIndex - 2;
+        dbe2 "T %04d recIndex %03d hero at [%02d, %02d] aiming at [%02d, %02d]\n",
+             T, index, heroI, heroJ, targetI, targetJ);
         // If using a pointer device, calculate the hero's next direction,
         // starting from last pointer position and hero's current position.
 
@@ -541,9 +522,117 @@ Direction KGrLevelPlayer::getDirection (int heroI, int heroJ)
             direction = STAND;
         }
     }
+    else if (controlMode == KEYBOARD) {
+        dbe2 "T %04d recIndex %03d hero at [%02d, %02d] direction %d\n",
+             T, recIndex - 1, heroI, heroJ, direction);
+    }
 
-    // kDebug() << "Hero at" << heroI << heroJ << "mouse at" << targetI << targetJ << "Direction" << direction;
     return direction;
+}
+
+void KGrLevelPlayer::recordInitialWaitTime (const Direction dirn, const int ms)
+{
+    // Allow a pause for viewing when playback starts.
+    recCount = ms / TickTime;			// Convert milliseconds-->ticks.
+    if (controlMode == KEYBOARD) {
+        // int code = DIRECTION_CODE + dirn;
+        recording->content [recIndex++]   = (uchar) (DIRECTION_CODE + dirn);
+        recording->content [recIndex]     = (uchar) recCount;
+        recording->content [recIndex + 1] = (uchar) END_CODE;
+    }
+    else {
+        recording->content [recIndex++]   = (uchar) targetI;
+        recording->content [recIndex++]   = (uchar) targetJ;
+        recording->content [recIndex]     = (uchar) recCount;
+        recording->content [recIndex + 1] = (uchar) END_CODE;
+    }
+}
+
+void KGrLevelPlayer::recordDigAction (const uchar code)
+{
+    if (recIndex >= 3) {
+        // If not the hero's first move, interrupt any previous pointer-move.
+        if ((controlMode == MOUSE) || (controlMode == LAPTOP)) {
+            recording->content [recIndex] =
+                recording->content [recIndex] - 1;
+            dbe2 "T %04d recIndex %03d REC: codes %d %d %d - adjust for dig\n",
+                 T, recIndex - 2,
+                (uchar)(recording->content.at (recIndex-2)),
+                (uchar)(recording->content.at (recIndex-1)),
+                (uchar)(recording->content.at (recIndex)));
+        }
+    }
+
+    // Record the digging action.
+    recIndex++;
+    dbe2 "T %04d recIndex %03d REC: dig code %d\n", T, recIndex, code);
+    recording->content [recIndex]   = code;
+    recording->content [recIndex + 1] = END_CODE;
+
+    if ((controlMode == MOUSE) || (controlMode == LAPTOP)) {
+        // Continue recording the previous pointer-move.
+        recIndex++;
+        recCount = 1;
+        recording->content [recIndex++]   = targetI;
+        recording->content [recIndex++]   = targetJ;
+        recording->content [recIndex]     = (uchar) recCount;
+        recording->content [recIndex + 1] = END_CODE;
+        dbe2 "T %04d recIndex %03d REC: codes %d %d %d - after dig\n",
+             T, recIndex - 2,
+            (uchar)(recording->content.at (recIndex-2)),
+            (uchar)(recording->content.at (recIndex-1)),
+            (uchar)(recording->content.at (recIndex)));
+    }
+    else if ((controlMode == KEYBOARD) && (direction == STAND)) {
+        // If already standing, continue standing after next tick.
+        dbe2 "T %04d recIndex %03d REC: continue standing\n", T, recIndex);
+        newDirection = STAND;
+        direction    = NO_DIRECTION;
+    }
+}
+
+void KGrLevelPlayer::recordKeystrokes()
+{
+    if (newDirection != direction) {
+        direction = newDirection;
+
+        // Record a change in direction.
+        int code = DIRECTION_CODE + direction;
+        recIndex++;
+        recCount = 1;
+        recording->content [recIndex++]   = (uchar) code;
+        recording->content [recIndex]     = (uchar) recCount;
+        recording->content [recIndex + 1] = (uchar) END_CODE;
+        dbe2 "T %04d recIndex %03d REC: codes %d %d %d - NEW DIRECTION\n",
+             T, recIndex - 1, direction, code,
+                              (uchar)(recording->content.at (recIndex)));
+    }
+    else if (recIndex < 1) {
+        // No keystroke recorded yet.
+        return;
+    }
+    else if (direction == NO_DIRECTION) {
+        // Initial wait-time is fixed: do not extend it.
+        return;
+    }
+    else if (recCount < 255) {
+        dbe2 "T %04d recIndex %03d REC: codes   %d %d\n",
+             T, recIndex - 1, (uchar)(recording->content.at (recIndex-1)),
+                              (uchar)(recording->content.at (recIndex)));
+        recCount++;
+        recording->content [recIndex] = (uchar) recCount;
+    }
+    else {
+        dbe2 "T %04d recIndex %03d REC: codes   %d %d\n",
+             T, recIndex - 1, (uchar)(recording->content.at (recIndex-1)),
+                              (uchar)(recording->content.at (recIndex)));
+        int code = (uchar)(recording->content.at (recIndex-1));
+        recIndex++;
+        recCount = 1;
+        recording->content [recIndex++]   = (uchar) code;
+        recording->content [recIndex]     = (uchar) recCount;
+        recording->content [recIndex + 1] = (uchar) END_CODE;
+    }
 }
 
 Direction KGrLevelPlayer::getEnemyDirection (int  enemyI, int enemyJ,
@@ -679,16 +768,18 @@ void KGrLevelPlayer::tick (bool missed, int scaledTime)
             //        We want to continue the demo if it is the startup demo.
             //        We also want to continue to next level after a demo level
             //        that signals endLevel (DEAD) or even endLevel (NORMAL).
-            emit endLevel (WON_LEVEL);
-            dbk << "END_OF_RECORDING - emit interruptDemo();";
+            dbk << "END_OF_RECORDING - or KILL_HERO ACTION.";
             return;			// End of recording.
         }
     }
-    else {				// Make a "live" move and record it.
-        int i, j;
+    else if ((controlMode == MOUSE) || (controlMode == LAPTOP)) {
+        int i, j;			// Make and record a live pointer-move.
         emit getMousePos (i, j);
-        // TODO - This causes a CRASH if keyboard-mode set and mouse is at 1,1.
         setTarget (i, j);
+    }
+    else if (controlMode == KEYBOARD) {
+        // TODO - This will count TWO on the first tick after the keystroke.
+        recordKeystrokes();
     }
 
     if (playState != Playing) {
@@ -846,27 +937,15 @@ bool KGrLevelPlayer::doRecordedMove()
     uchar code = recording->content [recIndex];
     while (true) {
         // Check for end of recording.
-        if ((code == 0xff) || (code == 0)) {
+        if ((code == END_CODE) || (code == 0)) {
             dbe2 "T %04d recIndex %03d PLAY - END of recording\n",
                  T, recIndex);
+            emit endLevel (NORMAL);
             return false;
         }
-        // Check for a key press or mouse button click.
-        if (code >= 0x80) {
-            playState = Playing;
-            code = code - 0x80;
-            if ((code == DIG_LEFT) || (code == DIG_RIGHT)) {
-                dbe2 "T %04d recIndex %03d PLAY dig code %d\n",
-                     T, recIndex, code);
-                startDigging ((Direction)(code));
-            }
-            recIndex++;
-            code = recording->content [recIndex];
-            recCount = 0;
-            continue;
-        }
+
         // Simulate recorded mouse movement.
-        else {
+        if (code < DIRECTION_CODE) {
             // playState = Playing;
             if (recCount <= 0) {
                 i = code;
@@ -893,6 +972,73 @@ bool KGrLevelPlayer::doRecordedMove()
             }
             break;
         }
+
+        // Simulate a key press or mouse button click.
+        else if (code < MODE_CODE) {
+            code = code - DIRECTION_CODE;
+            if (code != direction) {
+                playState = Playing;
+            }
+            if ((code == DIG_LEFT) || (code == DIG_RIGHT)) {
+                dbe2 "T %04d recIndex %03d PLAY dig code %d\n",
+                     T, recIndex, code);
+                startDigging ((Direction) (code));
+                recIndex++;
+                code = recording->content [recIndex];
+                recCount = 0;
+                continue;
+            }
+            else {
+                if (recCount <= 0) {
+                    recCount = (uchar)(recording->content [recIndex + 1]);
+                    dbe2 "T %04d recIndex %03d PLAY codes %d %d - KEY PRESS\n",
+                         T, recIndex, code, recCount);
+                    direction = ((Direction) (code));
+                }
+                else {
+                    dbe2 "T %04d recIndex %03d PLAY codes %d %d mode %d\n",
+                         T, recIndex, code, recCount, controlMode);
+                }
+                if (--recCount <= 0) {
+                    recIndex = recIndex + 2;
+                    dbe2 "T %04d recIndex %03d PLAY - next index\n",
+                         T, recIndex);
+                }
+            }
+            break;
+        }
+
+        // Replay a change of control-mode.
+        else if (code < ACTION_CODE) {
+            dbe2 "T %04d recIndex %03d PLAY control-mode code %d\n",
+                 T, recIndex, code);
+            setControlMode (code - MODE_CODE);
+            recIndex++;
+            code = recording->content [recIndex];
+            recCount = 0;
+            continue;
+        }
+
+        // Replay an action, such as KILL_HERO.
+        else if (code < SPEED_CODE) {
+            if (code == (ACTION_CODE + KILL_HERO)) {
+                dbe2 "T %04d recIndex %03d PLAY kill-hero code %d\n",
+                     T, recIndex, code);
+                emit endLevel (DEAD);
+                return false;
+            }
+        }
+
+        // Replay a change of speed.
+        else {
+            dbe2 "T %04d recIndex %03d PLAY speed-change code %d\n",
+                 T, recIndex, code);
+            setTimeScale ((code - SPEED_CODE) * 0.1);
+            recIndex++;
+            code = recording->content [recIndex];
+            recCount = 0;
+            continue;
+        }
     }
     return true;
 }
@@ -901,15 +1047,18 @@ void KGrLevelPlayer::interruptPlayback()
 {
     // Check if still replaying the wait-time before the first move.
     if (playState != Playing) {
+        // TODO - Should this do playback = false and emit interruptDemo()?
+        //        Or should we ignore the user and make him try again?
         return;
     }
 
     uchar code = recording->content [recIndex];
     // Check for end-of-recording already reached.
-    if ((code == 0xff) || (code == 0)) {
+    if ((code == END_CODE) || (code == 0)) {
         return;
     }
 
+// Start debug stuff.
     dbk2 << "recIndex" << recIndex << "recCount" << recCount
         << "randIndex" << randIndex;
     int ch = 0;
@@ -931,18 +1080,25 @@ void KGrLevelPlayer::interruptPlayback()
         i++;
     }
     dbe2 "\n%d bytes\n", i - 1);
+// End debug stuff.
 
-    if (code >= 0x80) {
-        // TODO - Need code here to tie off keystroke-move counter and step on.
-    }
-    else if (recCount > 0) {
-        // Set mouse-move counter to show how many ticks have been replayed.
-        uchar byte = (uchar)(recording->content [recIndex + 2]);
-        recording->content [recIndex + 2] = (uchar) (byte - recCount);
-        recIndex = recIndex + 2;	// Record here if same mouse position.
+    if (recCount > 0) {
+        if ((code >= DIRECTION_CODE) && (code < (DIRECTION_CODE + nDirections)))
+        {
+            // Set keyboard counter to show how many ticks have been replayed.
+            recCount = (uchar)(recording->content [recIndex + 1]) - recCount;
+            recording->content [recIndex + 1] = (uchar) (recCount);
+            recIndex = recIndex + 1;	// Count here if same key after pause.
+        }
+        else if (code < DIRECTION_CODE) {
+            // Set mouse-move counter to show how many ticks have been replayed.
+            recCount = (uchar)(recording->content [recIndex + 2]) - recCount;
+            recording->content [recIndex + 2] = (uchar) (recCount);
+            recIndex = recIndex + 2;	// Count here if mouse in same position.
+        }
     }
 
-    recording->content [recIndex + 1] = 0xff;
+    recording->content [recIndex + 1] = END_CODE;
     for (int i = (recIndex + 2); i < recording->content.size(); i++) {
         recording->content [i] = 0;
     }
@@ -950,6 +1106,7 @@ void KGrLevelPlayer::interruptPlayback()
         recording->draws [i] = 0;
     }
 
+// Start debug stuff.
     dbk2 << "recIndex" << recIndex << "recCount" << recCount
         << "randIndex" << randIndex;
     i  = 0;
@@ -970,6 +1127,7 @@ void KGrLevelPlayer::interruptPlayback()
         i++;
     }
     dbe2 "\n%d bytes\n", i - 1);
+// End debug stuff.
 
     playback = false;
     emit interruptDemo();

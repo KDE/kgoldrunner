@@ -168,14 +168,14 @@ HeroStatus KGrHero::run (const int scaledTime)
     }
 
     Direction nextDirection = levelPlayer->getDirection (gridI, gridJ);
+    if ((nextDirection >= nDirections) || (nextDirection < 0)) {
+        nextDirection = STAND;		// Make sure indices stay within range.
+    }
     interval = runTime;
 
     Flags OK       = grid->heroMoves (gridI, gridJ);
     bool  onEnemy  = levelPlayer->standOnEnemy (spriteId, gridX, gridY);
     bool  canStand = (OK & dFlag [STAND]) || (OK == 0) || onEnemy;
-    // kDebug() << "Direction" << nextDirection << "Flags" << OK
-             // << "at" << gridI << gridJ
-             // << "on Enemy" << onEnemy;
     // TODO - Do a better, smoother job of falling while standing on enemy.
     // TODO - Interface fall start and end with sound.
 

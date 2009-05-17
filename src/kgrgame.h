@@ -74,7 +74,10 @@ public slots:
     void incScore           (const int n);	// Update the score.
 
 private:
-    void selectLevel (const SelectAction action, const int requestedLevel);
+    bool modeSwitch (const int action,
+                     int & selectedGame, int & selectedLevel);
+    bool selectGame (const SelectAction slAction,
+                     int & selectedGame, int & selectedLevel);
 
     void toggleSoundsOnOff();		// Set sound enabled or disabled.
 
@@ -82,9 +85,12 @@ private:
     void setControlMode (const int mode);
     void setTimeScale (const int action);
 
-    void newGame (const int lev, const int gameIndex);
+    void newGame   (const int lev, const int gameIndex);
+    void runReplay (const int action,
+                    const int selectedGame, const int selectedLevel);
     bool startDemo (const Owner demoOwner, const QString & pPrefix,
                                            const int levelNo);
+    void runNextDemoLevel();
     void finishDemo();
 
 private slots:
@@ -109,8 +115,16 @@ private:
     void herosDead();			// Hero was caught or he quit (key Q).
     void levelCompleted();		// Hero completed the level.
 
-    void saveGame();			// Save game ID, score and level.
-    void loadGame();			// Re-load game, score and level.
+    // Save game ID, score and level.
+    void saveGame();
+
+    // Select a saved game, score and level.
+    bool selectSavedGame (int & selectedGame, int & selectedLevel);
+
+    // Load and run a saved game, score and level.
+    void loadGame (const int index, const int lev);
+
+    QString loadedData;
 
 private slots:
     void endLevel (const int result);	// Hero completed the level or he died.
@@ -151,8 +165,8 @@ private slots:
     void quickStartQuit();
 
 private:
-    bool playLevel (const QString & prefix, const int levelNo,
-                    const bool newLevel);
+    bool playLevel (const Owner fileOwner, const QString & prefix,
+                    const int levelNo, const bool newLevel);
     void setupLevelPlayer();
     void showTutorialMessages (int levelNo);
 
@@ -168,8 +182,6 @@ private:
     KGrLevelPlayer *            levelPlayer;	// Where the level is played.
     KGrRecording *              recording;	// A recording of the play.
     bool                        playback;	// Play back or record?
-    GameAction                  demoType;	// The type of replay or demo.
-    bool                        startupDemo;	// Startup demo running?
 
     KGrCanvas *			view;		// Where the game is displayed.
     QString			systemDataDir;	// System games are stored here.
@@ -184,10 +196,17 @@ private:
     QString                     prefix;		// Prefix for game or demo file.
     int				level;		// Current play/edit/demo level.
     int                         levelMax;	// Last level no in game/demo.
-    int                         gameLevel;	// Copy of play/edit level no.
     QString			levelName;	// Level name (optional).
     QString			levelHint;	// Level hint (optional).
-    QString                     demoPrefix;	// File-prefix for demo levels.
+
+    QString                     mainDemoName;	// File-prefix for Main Demo.
+    GameAction                  demoType;	// The type of replay or demo.
+    bool                        startupDemo;	// Startup demo running?
+
+    Owner                       playbackOwner;	// Owner for current demo-file.
+    QString                     playbackPrefix;	// File-prefix for current demo.
+    int                         playbackIndex;	// Record-index for curr demo.
+    int                         playbackMax;	// Max index for current demo.
 
     long			lives;		// Lives remaining.
     long			score;		// Current score.

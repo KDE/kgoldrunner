@@ -1,3 +1,5 @@
+#include "kgrdebug.h"
+
 /****************************************************************************
  *    Copyright 2009  Ian Wadham <iandw.au@gmail.com>                       *
  *                                                                          *
@@ -66,10 +68,10 @@ void KGrEditor::setEditObj (char newEditObj)
     editObj = newEditObj;
 }
 
-void KGrEditor::createLevel (int pGameIndex)
+bool KGrEditor::createLevel (int pGameIndex)
 {
     if (! saveOK ()) {				// Check unsaved work.
-        return;
+        return false;
     }
 
     if (! ownerOK (USER)) {
@@ -77,7 +79,7 @@ void KGrEditor::createLevel (int pGameIndex)
                 i18n ("You cannot create and save a level "
                 "until you have created a game to hold "
                 "it. Try menu item \"Create Game\"."));
-        return;
+        return false;
     }
 
     int	i, j;
@@ -111,20 +113,21 @@ void KGrEditor::createLevel (int pGameIndex)
 
     // Re-enable player input.
     mouseDisabled = false;
+    return true;
 }
 
-void KGrEditor::updateLevel (int pGameIndex, int level)
+bool KGrEditor::updateLevel (int pGameIndex, int level)
 {
 
     if (! saveOK ()) {				// Check unsaved work.
-        return;
+        return false;
     }
 
     if (! ownerOK (USER)) {
         KGrMessage::information (view, i18n ("Edit Level"),
             i18n ("You cannot edit and save a level until you "
             "have created a game and a level. Try menu item \"Create Game\"."));
-        return;
+        return false;
     }
 
     gameIndex = pGameIndex;
@@ -139,7 +142,7 @@ void KGrEditor::updateLevel (int pGameIndex, int level)
              << "level" << selectedLevel;
     if (selectedLevel == 0) {
         mouseDisabled = false;
-        return;
+        return false;
     }
 
     if (gameList.at(gameIndex)->owner == SYSTEM) {
@@ -152,12 +155,14 @@ void KGrEditor::updateLevel (int pGameIndex, int level)
 
     loadEditLevel (selectedLevel);
     mouseDisabled = false;
+    return true;
 }
 
 void KGrEditor::loadEditLevel (int lev)
 {
     KGrLevelData d;
 
+    kDebug() << "gameIndex" << gameIndex;
     // If system game or ENDE screen, choose system dir, else choose user dir.
     const QString dir = ((gameList.at(gameIndex)->owner == SYSTEM) ||
                          (lev == 0)) ? systemDataDir : userDataDir;
@@ -228,7 +233,7 @@ bool KGrEditor::saveLevelFile()
     // Pop up dialog box, which could change the game or level or both.
     int selectedLevel = selectLevel (action, editLevel, gameIndex);
     if (selectedLevel == 0) {
-        return (false);
+        return false;
     }
 
     // Get the new game (if changed).
@@ -253,10 +258,10 @@ bool KGrEditor::saveLevelFile()
 
             case 0:	if (! reNumberLevels (n, selectedLevel,
                                             gameList.at (n)->nLevels, +1)) {
-                            return (false);
+                            return false;
                         }
                         break;
-            case 1:	return (false);
+            case 1:	return false;
                         break;
             }
         }
@@ -266,7 +271,7 @@ bool KGrEditor::saveLevelFile()
     if (! levelFile.open (QIODevice::WriteOnly)) {
         KGrMessage::information (view, i18n ("Save Level"),
                 i18n ("Cannot open file '%1' for output.", filePath));
-        return (false);
+        return false;
     }
 
     // Save the level - row by row.
@@ -314,17 +319,17 @@ bool KGrEditor::saveLevelFile()
     editLevel = selectedLevel;
     emit showLevel (editLevel);
     view->setTitle (getTitle());		// Display new title.
-    return (true);
+    return true;
 }
 
-void KGrEditor::moveLevelFile (int pGameIndex, int level)
+bool KGrEditor::moveLevelFile (int pGameIndex, int level)
 {
     if (level <= 0) {
         KGrMessage::information (view, i18n ("Move Level"),
                 i18n ("You must first load a level to be moved. Use "
                      "the \"%1\" or \"%2\" menu.",
                      i18n ("Game"), i18n ("Editor")));
-        return;
+        return false;
     }
     gameIndex = pGameIndex;
 
@@ -340,20 +345,21 @@ void KGrEditor::moveLevelFile (int pGameIndex, int level)
                 i18n ("You cannot move a level until you "
                 "have created a game and at least two levels. Try "
                 "menu item \"Create Game\"."));
-        return;
+        return false;
     }
 
     if (gameList.at (fromC)->owner != USER) {
         KGrMessage::information (view, i18n ("Move Level"),
                 i18n ("Sorry, you cannot move a system level."));
-        return;
+        return false;
     }
 
     // Pop up dialog box to get the game and level number to move to.
     while ((toC == fromC) && (toL == fromL)) {
         toL = selectLevel (action, toL, gameIndex);
-        if (toL == 0)
-            return;
+        if (toL == 0) {
+            return false;
+        }
 
         toC = gameIndex;
 
@@ -370,20 +376,21 @@ void KGrEditor::moveLevelFile (int pGameIndex, int level)
     filePath1 = getLevelFilePath (gameList.at (fromC), fromL);
     filePath2 = filePath1;
     filePath2 = filePath2.append (".tmp");
-    if (! KGrGameIO::safeRename (filePath1, filePath2))
-        return;
+    if (! KGrGameIO::safeRename (filePath1, filePath2)) {
+        return false;
+    }
 
     if (toC == fromC) {					// Same game.
         if (toL < fromL) {				// Decrease level.
             // Move "toL" to "fromL - 1" up by 1.
             if (! reNumberLevels (toC, toL, fromL-1, +1)) {
-                return;
+                return false;
             }
         }
         else {						// Increase level.
             // Move "fromL + 1" to "toL" down by 1.
             if (! reNumberLevels (toC, fromL+1, toL, -1)) {
-                return;
+                return false;
             }
         }
     }
@@ -391,13 +398,13 @@ void KGrEditor::moveLevelFile (int pGameIndex, int level)
         // In "fromC", move "fromL + 1" to "nLevels" down and update "nLevels".
         if (! reNumberLevels (fromC, fromL + 1,
                                     gameList.at (fromC)->nLevels, -1)) {
-            return;
+            return false;
         }
         gameList.at (fromC)->nLevels--;
 
         // In "toC", move "toL + 1" to "nLevels" up and update "nLevels".
         if (! reNumberLevels (toC, toL, gameList.at (toC)->nLevels, +1)) {
-            return;
+            return false;
         }
         gameList.at (toC)->nLevels++;
 
@@ -411,10 +418,12 @@ void KGrEditor::moveLevelFile (int pGameIndex, int level)
     editLevel = toL;
     emit showLevel (editLevel);
     view->setTitle (getTitle());	// Re-write title.
+    return true;
 }
 
-void KGrEditor::deleteLevelFile (int pGameIndex, int level)
+bool KGrEditor::deleteLevelFile (int pGameIndex, int level)
 {
+    // TODO - Coukd we delete a system level?  There appears to be no check.
     int action = SL_DELETE;
     gameIndex = pGameIndex;
 
@@ -423,13 +432,13 @@ void KGrEditor::deleteLevelFile (int pGameIndex, int level)
                 i18n ("You cannot delete a level until you "
                 "have created a game and a level. Try "
                 "menu item \"Create Game\"."));
-        return;
+        return false;
     }
 
     // Pop up dialog box to get the game and level number.
     int selectedLevel = selectLevel (action, level, gameIndex);
     if (selectedLevel == 0) {
-        return;
+        return false;
     }
 
     QString filePath;
@@ -447,12 +456,12 @@ void KGrEditor::deleteLevelFile (int pGameIndex, int level)
                                 "move higher levels down by one?"),
                                 i18n ("&Delete Level"), i18n ("&Cancel"))) {
             case 0:	break;
-            case 1:	return; break;
+            case 1:	return false; break;
             }
             levelFile.remove();
             if (! reNumberLevels (n, selectedLevel + 1,
                                   gameList.at(n)->nLevels, -1)) {
-                return;
+                return false;
             }
         }
         else {
@@ -462,7 +471,7 @@ void KGrEditor::deleteLevelFile (int pGameIndex, int level)
     else {
         KGrMessage::information (view, i18n ("Delete Level"),
                 i18n ("Cannot find file '%1' to be deleted.", filePath));
-        return;
+        return false;
     }
 
     gameList.at (n)->nLevels--;
@@ -482,9 +491,10 @@ void KGrEditor::deleteLevelFile (int pGameIndex, int level)
         createLevel (gameIndex);	// No levels left in game.
     }
     emit showLevel (editLevel);
+    return true;
 }
 
-void KGrEditor::editGame (int pGameIndex)
+bool KGrEditor::editGame (int pGameIndex)
 {
     int n = -1;
     int action = (pGameIndex < 0) ? SL_CR_GAME : SL_UPD_GAME;
@@ -494,7 +504,7 @@ void KGrEditor::editGame (int pGameIndex)
     if (gameIndex >= 0) {
         int selectedLevel = selectLevel (SL_UPD_GAME, editLevel, gameIndex);
         if (selectedLevel == 0) {
-            return;
+            return false;
         }
         editLevel = selectedLevel;
         n = gameIndex;
@@ -597,6 +607,7 @@ void KGrEditor::editGame (int pGameIndex)
     }
 
     delete ec;
+    return true;
 }
 
 /******************************************************************************/
@@ -641,13 +652,13 @@ bool KGrEditor::saveOK ()
                     i18n ("&Go on editing")))
         {
         case 0:
-            result = saveLevelFile();		// Save and continue.
+            result = saveLevelFile();	// Save, do next action: or more edits.
             break;
         case 1:
-            shouldSave = false;			// Continue: don't save.
+            shouldSave = false;		// Do not save, but do next action.
             break;
         case 2:
-            result = false;			// Go back to editing.
+            result = false;		// Go back to editing.
             break;
         }
     }
@@ -675,7 +686,7 @@ void KGrEditor::initEdit()
 
 void KGrEditor::insertEditObj (int i, int j, char obj)
 {
-    kDebug() << i << j << obj;
+    dbk2 << i << j << obj;
     if ((i < 1) || (j < 1) || (i > levelData.width) || (j > levelData.height)) {
         return;		// Do nothing: mouse pointer is out of playfield.
     }

@@ -81,8 +81,10 @@ public:
      *
      * @param pGameIndex   The list-index of the game which will contain the new
      *                     level: assumed for now, but can change at save time.
+     *
+     * @return             If false, the action failed or was cancelled.
      */
-    void createLevel (int pGameIndex);
+    bool createLevel (int pGameIndex);
 
     /**
      * Load and display an existing level, ready for editing.  This can be a
@@ -92,8 +94,10 @@ public:
      *                     to be edited: verified by a dialog and may change.
      * @param pLevel       The number of the level to be edited: verified by a
      *                     dialog and may change.
+     *
+     * @return             If false, the action failed or was cancelled.
      */
-    void updateLevel (int pGameIndex, int pLevel);
+    bool updateLevel (int pGameIndex, int pLevel);
 
     /**
      * Save an edited level in a text file (*.grl) in the user's area.  The
@@ -116,8 +120,10 @@ public:
      * @param pLevel       The number of the level to be moved: a dialog selects
      *                     the number to move to.  Other numbers may be changed,
      *                     to preserve the sequential numbering of levels.
+     *
+     * @return             If false, the action failed or was cancelled.
      */
-    void moveLevelFile (int pGameIndex, int pLevel);
+    bool moveLevelFile (int pGameIndex, int pLevel);
 
     /**
      * Delete a level from a game.
@@ -126,8 +132,10 @@ public:
      *                     to be deleted: verified by a dialog and may change.
      * @param pLevel       The number of the level to be deleted: verified by a
      *                     dialog and may change.
+     *
+     * @return             If false, the action failed or was cancelled.
      */
-    void deleteLevelFile (int pGameIndex, int pLevel);
+    bool deleteLevelFile (int pGameIndex, int pLevel);
 
     /**
      * Create a new game (a collection point for levels) or load the details
@@ -136,8 +144,10 @@ public:
      * @param pGameIndex   The list-index of the game to be created or edited:
      *                     0 = create, >0 = edit (verified by a dialog and may
      *                     change).
+     *
+     * @return             If false, the action failed or was cancelled.
      */
-    void editGame (int pGameIndex);
+    bool editGame (int pGameIndex);
 
     /**
      * Run a dialog in which the name and hint of a level can be edited.

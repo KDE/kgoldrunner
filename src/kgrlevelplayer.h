@@ -124,6 +124,13 @@ public:
     void pause                  (bool stop);
 
     /**
+     * Stop playback of a recorded level and adjust the content of the recording
+     * so that the user can continue playing and recording from that point, if
+     * required, as in the Instant Replay or Replay Last Level actions.
+     */
+    void interruptPlayback();
+
+    /**
      * Change the input-mode during play.
      *
      * @param mode      The new input-mode to use to control the hero: mouse, 
@@ -336,7 +343,8 @@ private:
     int                  targetI;	// Where the mouse is pointing.
     int                  targetJ;
 
-    Direction            direction;	// Next direction for the hero to take.
+    Direction            direction;	// Direction for the hero to take.
+    Direction            newDirection;	// Next direction for the hero to take.
     KGrTimer *           timer;		// The time-standard for the level.
 
     void startDigging (Direction diggingDirection);
@@ -363,7 +371,9 @@ private:
     QVector<int> reappearPos;
     void         makeReappearanceSequence();
     bool         doRecordedMove();
-    void         interruptPlayback();
+    void         recordInitialWaitTime (const Direction dirn, const int ms);
+    void         recordDigAction (const uchar code);
+    void         recordKeystrokes();
 
 /******************************************************************************/
 /**************************  AUTHORS' DEBUGGING AIDS **************************/
