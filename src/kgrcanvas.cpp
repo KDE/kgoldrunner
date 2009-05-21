@@ -574,7 +574,7 @@ void KGrCanvas::startAnimation (const int id, const bool repeating,
     // TODO - Put most of this in helper code, based on theme parameters.
     // TODO - Use a QList of animation parameters: one entry per id.
     // TODO - Need to select plain or gold-carrying enemy frames somehow.
-    int frame;
+    int frame = 0;
     int nFrames = 8;
     int nFrameChanges = 4;
     int dx = 0;
