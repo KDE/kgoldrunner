@@ -15,7 +15,7 @@
 <author>
 <firstname>Ian</firstname>
 <surname>Wadham</surname>
-<affiliation><address><email>ianw@netspace.net.au</email></address></affiliation>
+<affiliation><address><email>ianw2 at optusnet com au</email></address></affiliation>
 </author>
 <author>
 <firstname>Marco</firstname>
@@ -26,14 +26,14 @@
 </authorgroup>
 
 <copyright>
-<year>2003</year>
-<holder>Ian Wadham</holder><holder>Marco Krüger</holder>
+<year>2009</year>
+<holder>Ian Wadham</holder>
 </copyright>
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2007-11-15</date>
-<releaseinfo>3.0</releaseinfo>
+<date>2009-05-22</date>
+<releaseinfo>4.3</releaseinfo>
 
 <abstract>
 <para>
@@ -136,7 +136,18 @@ ordinary bricks.</para>
 <sect2>
 <title>Starting the Game</title>
 
-<para>The first popup dialog box shows you the names, number and preview
+<para>The game begins by showing you a recorded demonstration of play. You
+can terminate this by clicking on the playing area with the mouse, pressing
+the spacebar or selecting a menu item or shortcut (such as <menuchoice>
+<guimenu>Game</guimenu><guimenuitem>New Game...</guimenuitem></menuchoice>).
+You can skip this demonstration in future by using menu item <menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Demo At Start</guimenuitem>
+</menuchoice>. You can also see it again at any time by using menu item
+<menuchoice><guimenu>Move</guimenu><guimenuitem>Demo</guimenuitem></menuchoice>.
+</para>
+
+<para>If you skipped the demo or used the mouse or spacebar to end it, a
+quick-start popup dialog box shows you the names, number and a preview
 of the last game and level you loaded or, if you have not played before,
 the same information for Tutorial level 1.</para>
 
@@ -150,9 +161,9 @@ where you can choose a different game and level and the last will terminate
 the dialog, leaving you free to use the &kgoldrunner; menus.</para>
 
 <para>If you have chosen to play a game and level, it will then appear
-and the mouse pointer will be over the hero. In a tutorial game, there
-will be an explanatory message before each level begins. You start play
-by moving the mouse, clicking the mouse or pressing any key that can
+and the pointer will be over the hero. In a tutorial game, an
+explanatory message appears before each level begins. You start play
+by moving the pointer, clicking the mouse or pressing any key that can
 control the hero (&eg; <keycap>Space</keycap>), but avoid using
 <keycap>Q</keycap>, <keycap>S</keycap>, <keycap>P</keycap> or &Esc; at
 this stage. You start each level in the same way.</para>
@@ -167,12 +178,16 @@ level completed.</para>
 
 <para>By default you control the hero with the mouse, but you
 can also control him with the keyboard (<link
-linkend="keyboard-control">see below</link>). He moves towards
-wherever you place the mouse pointer. He cannot move as fast as you
-can move the mouse pointer, but he will try hard to catch up. If the mouse
+linkend="keyboard-control">see below</link>) or, on a laptop, by using a mix
+of the keyboard for digging and the touchpad or other pointer device to
+guide the hero.</para>
+
+<para>The hero moves towards wherever you place the pointer. He
+cannot move as fast as you
+can move the pointer, but he will try hard to catch up. If the
 pointer is above or below his level, he will always go up or down when
 there is a ladder available or a place to fall into. Otherwise he will
-move horizontally until he is below the mouse pointer, above it or right
+move horizontally until he is below the pointer, above it or right
 at it. You can make him follow simple paths (like &mdash; | L or U), but
 be careful not to get too many twists and turns ahead of him.</para>
 
@@ -180,7 +195,7 @@ be careful not to get too many twists and turns ahead of him.</para>
 bars and up or down over ladders. If you are on an empty square or a
 gold nugget and there is no brick, concrete, ladder or bar to hold you
 up, gravity takes over and you fall. You can also fall by moving down
-from a bar or the bottom of a ladder, so keep the mouse pointer up
+from a bar or the bottom of a ladder, so keep the pointer up
 there if you want to hold on.</para>
 
 </sect2>
@@ -211,8 +226,8 @@ menu.</para>
 <keycap>K</keycap>, <keycap>L</keycap> or arrows) start the hero
 moving up, down, left or right. He continues moving in that direction,
 if he can, until you press another movement key or
-<keycap>Space</keycap> to stop. In mouse mode, he stops automatically
-when he gets to the mouse pointer.</para>
+<keycap>Space</keycap> to stop. In mouse or laptop mode, he stops
+automatically when he gets to the pointer.</para>
 
 <para>A word of warning: using the keyboard is much harder, in the
 long run, than using the mouse. Think of the mouse as a
@@ -227,12 +242,12 @@ joystick.</para>
 (the default is either <keycap>P</keycap> or &Esc;). You can resume
 by pressing the Pause key again. There is also a
 <guimenuitem>Pause</guimenuitem> option in the <guimenu>Game</guimenu>
-menu, but the problem is to get the mouse pointer up there without moving
+menu, but the problem is to get the pointer up there without moving
 the hero and getting into trouble.</para>
 
 <tip><para>When you want to use the &kgoldrunner; menu or do
 some work in another window, always press a Pause key and stop the
-game. Otherwise the hero will go on following the mouse pointer and
+game. Otherwise the hero will go on following the pointer and
 might get into trouble.</para></tip>
 
 </sect2>
@@ -244,7 +259,10 @@ might get into trouble.</para></tip>
 falling onto it. When there is none left, you must move to the top of
 the playing area to get to the next level. Often, as you collect the
 last piece of gold, hidden ladders will appear and you can use them to
-climb to the top. </para>
+climb to the top. Sometimes there are no hidden ladders. Also, very
+rarely, the hidden ladders could be a decoy that leads the wrong way. If
+the level has no gold, there will be no hidden ladders and you just have
+to work out how to get to the top of the playing area.</para>
 
 </sect2>
 
@@ -369,6 +387,33 @@ able to run through a hole.</para>
 your last life is gone. Either way, if you have achieved one of the
 ten highest scores for that game, you can record your achievement in
 the <quote>&kgoldrunner; Hall of Fame</quote>.</para>
+
+</sect2>
+
+<sect2 id="recordings-replays-and-solutions">
+<title>Recordings, Replays and Solutions</title>
+
+<para>All levels in games are recorded as you play, so you can replay any level
+you have previously played. Also, some levels have recorded solutions, which
+may help you work out how to win them. Just use the <guimenu>Move</guimenu>
+menu, items <guimenuitem>Show A Solution</guimenuitem>,
+<guimenuitem>Instant Replay</guimenuitem>,
+<guimenuitem>Replay Last Level</guimenuitem> and
+<guimenuitem>Replay Any Level</guimenuitem>. The
+solutions and replays can be interrupted at any time by clicking with
+the mouse on the playing area, pressing the spacebar or selecting a menu
+item or shortcut (such as <menuchoice><guimenu>Game</guimenu>
+<guimenuitem>New Game...</guimenuitem></menuchoice>).</para>
+
+<para><guimenuitem>Instant Replay</guimenuitem> and
+<guimenuitem>Replay Last Level</guimenuitem> let you continue playing
+after an interruption. So if things are not going well, you can use
+<guimenuitem>Instant Replay</guimenuitem>, interrupt the replay and
+then try another approach. Or if the hero died already, you can use
+<guimenuitem>Replay Last Level</guimenuitem>
+in the same way.  These features can help you build up a solution to a
+difficult level in stages, but using them will invalidate any high score
+you might be working on.</para>
 
 </sect2>
 </sect1>
@@ -622,7 +667,9 @@ scores (if available). The <guimenu>Game</guimenu> Menu also contains the
 <listitem>
 <para>This menu contains an option to get a hint (if there is one).
 Championship and Tutorial games have hints on every level. Other games
-rarely have hints.</para>
+rarely have hints. It also contains options to replay recordings of
+play, as when running demonstrations, showing examples of solutions and
+replaying your own efforts.</para>
 </listitem>
 </varlistentry>
 
@@ -659,15 +706,14 @@ for details.</para>
 <term><link
 linkend="settings-menu"><guimenu>Settings</guimenu></link></term>
 <listitem>
-<para>This menu has three groups of &kgoldrunner; settings: the choice of mouse
-or keyboard control, the choices of game-speed and the choice of
-<quote>&kgoldrunner;</quote> or <quote>Traditional</quote> playing rules
-(see <link linkend="choice-of-rules">Choice of Rules</link>).
-The current selections are checked. The settings are automatically
+<para>This menu has several groups of &kgoldrunner; settings, including the
+choice of mouse, keyboard or hybrid (laptop) control and the choices of
+game-speed. The current selections are checked. The settings are automatically
 selected when you start playing, but you can use this menu to vary them
 if you wish.</para>
-<para>On the &kde; desktop version of &kgoldrunner;, there is also an
-option to re-assign keyboard shortcuts and hero-control keys. </para>
+
+<para>There is also an option to re-assign keyboard shortcuts and
+hero-control keys.</para>
 </listitem>
 </varlistentry>
 
@@ -811,6 +857,12 @@ are given an opportunity to save your work.</para>
 <sect1 id="move-menu">
 <title>The <guimenu>Move</guimenu> Menu</title>
 
+<tip><para>All the demo and replay moves will replay previously recorded
+levels. All can be interrupted and stopped by clicking on the playing area
+with the mouse, pressing the spacebar or selecting a menu item or shortcut
+(such as <menuchoice><guimenu>Game</guimenu>
+<guimenuitem>New Game...</guimenuitem></menuchoice>).</para></tip>
+
 <variablelist>
 <varlistentry>
 <term><menuchoice><shortcut><keycap>H</keycap></shortcut>
@@ -822,6 +874,68 @@ are given an opportunity to save your work.</para>
 By convention, Championship and Tutorial games have hints on every level.
 Other games rarely have hints. The status bar shows whether a hint is
 available or not.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice><shortcut><keycap>D</keycap></shortcut>
+<guimenu>Move</guimenu><guimenuitem>Demo</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>Plays a demonstration of play in a few recorded levels. These are
+the same as in the startup demo.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Move</guimenu><guimenuitem>Show A Solution...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>Replays a recorded solution of a level, if there is a solution on
+file in the released game-data.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice><shortcut><keycap>R</keycap></shortcut>
+<guimenu>Move</guimenu><guimenuitem>Instant Replay</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>Stops play in the current level and replays the recorded version from
+the beginning. If you interrupt the replay, you can continue playing from
+that point and try another approach. You can use this feature to build up
+a winning sequence of moves in stages, but that will invalidate any high
+score you might be working on.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice><shortcut><keycap>A</keycap></shortcut>
+<guimenu>Move</guimenu><guimenuitem>Replay Last Level</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>Replays the recorded version of the last level you played, from
+the beginning (e.g. if you lost the level). If you interrupt the
+replay, you can continue playing from that point and try another
+approach. You can use this feature to build up a winning sequence of moves
+in stages, but that will invalidate any high score you might be working
+on.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Move</guimenu><guimenuitem>Replay Any Level</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>Replays the recorded version of any level you have previously played.
+</para>
 </listitem>
 </varlistentry>
 
@@ -1034,6 +1148,25 @@ pin-sharp monitors.</para>
 
 <varlistentry>
 <term><menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Play Sounds</guimenuitem>
+</menuchoice></term>
+<listitem>
+<para>Toggles the sounds on and off.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Demo At Start</guimenuitem>
+</menuchoice></term>
+<listitem>
+<para>Toggles the startup demo on and off
+(see <link linkend="how-to-play">Starting the Game</link>).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
 <guimenu>Settings</guimenu><guimenuitem>Mouse Controls Hero</guimenuitem>
 </menuchoice></term>
 <listitem>
@@ -1054,10 +1187,21 @@ pin-sharp monitors.</para>
 
 <varlistentry>
 <term><menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Hybrid Control (Laptop)</guimenuitem>
+</menuchoice></term>
+<listitem>
+<para>Sets hybrid control of the hero, for laptops, where the touchpad or
+other pointer device is used to guide the hero and the dig keys, on the
+keyboard, are used for digging left and right.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
 <guimenu>Settings</guimenu><guimenuitem>Normal Speed</guimenuitem>
 </menuchoice></term>
 <listitem>
-<para>Sets normal game speed (12 units).</para>
+<para>Sets normal game speed (10 units).</para>
 </listitem>
 </varlistentry>
 
@@ -1066,7 +1210,7 @@ pin-sharp monitors.</para>
 <guimenu>Settings</guimenu><guimenuitem>Beginner Speed</guimenuitem>
 </menuchoice></term>
 <listitem>
-<para>Sets beginner game speed (6 units, half of normal speed).</para>
+<para>Sets beginner game speed (5 units, half of normal speed).</para>
 </listitem>
 </varlistentry>
 
@@ -1075,7 +1219,7 @@ pin-sharp monitors.</para>
 <guimenu>Settings</guimenu><guimenuitem>Champion Speed</guimenuitem>
 </menuchoice></term>
 <listitem>
-<para>Sets champion game speed (18 units, 1.5 times normal speed).</para>
+<para>Sets champion game speed (15 units, 1.5 times normal speed).</para>
 </listitem>
 </varlistentry>
 
@@ -1084,7 +1228,7 @@ pin-sharp monitors.</para>
 <guimenu>Settings</guimenu><guimenuitem>Increase Speed</guimenuitem>
 </menuchoice></term>
 <listitem>
-<para>Increases the game speed by one unit, up to a maximum of 24
+<para>Increases the game speed by one unit, up to a maximum of 20
 units (twice normal speed).  You can use the <keycap>+</keycap> key
 as a shortcut.</para>
 </listitem>
@@ -1096,29 +1240,9 @@ as a shortcut.</para>
 <guimenu>Settings</guimenu><guimenuitem>Decrease Speed</guimenuitem>
 </menuchoice></term>
 <listitem>
-<para>Decreases the game speed by one unit, down to a minimum of 3
-units (a quarter of normal speed).  You can use the <keycap>-</keycap> key
+<para>Decreases the game speed by one unit, down to a minimum of 2
+units (a fifth of normal speed).  You can use the <keycap>-</keycap> key
 as a shortcut.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu><guimenuitem>Traditional Rules</guimenuitem>
-</menuchoice></term>
-<listitem>
-<para>Sets Traditional playing rules
-(see <link linkend="choice-of-rules">Choice of Rules</link>).</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu><guimenuitem>&kgoldrunner; Rules</guimenuitem>
-</menuchoice></term>
-<listitem>
-<para>Sets &kgoldrunner; playing rules
-(see <link linkend="choice-of-rules">Choice of Rules</link>).</para>
 </listitem>
 </varlistentry>
 
@@ -1196,10 +1320,13 @@ else if you prefer and you do not have to use the whole 28x20
 area. Lots of interesting levels use smaller areas. </para>
 
 <para>The minimum requirement for a level to be playable is to have a
-hero, a gold nugget he can get to and a visible or hidden ladder
-leading to the top of the playing area. You do not have to have
-enemies, bars or even bricks. There are many challenging levels that
-have no enemies or no bricks.</para>
+hero who is standing on something at the top of the playing area, but
+that is a trivial case. More realistically, you could have a maze to
+solve and some visible ladders leading to the top of the playing
+area, but no gold. You do not have to have enemies, gold, bars, hidden
+ladders or even bricks. There are many challenging levels that have no
+enemies or no bricks, however most levels have at least one gold and
+some hidden ladders that appear when the last gold is collected.</para>
 
 </sect2>
 </sect1>
@@ -1239,14 +1366,14 @@ Edits</guimenuitem>. The other eleven icons are for editing and
 painting objects in your level. </para>
 
 
-<para>From left to right the other eleven icons are <guiicon>Edit Name/Hint
+<para>From left to right the other eleven icons are <guiicon>Name/Hint
 </guiicon> (light bulb), <guiicon>Erase</guiicon> (background), 
 <guiicon>Hero</guiicon>,
 <guiicon>Enemy</guiicon>, <guiicon>Brick</guiicon> (can dig),
 <guiicon>Concrete</guiicon> (cannot dig), <guiicon>Trap</guiicon> 
 (also known as a false brick or fall-through brick), <guiicon>Ladder</guiicon>,
-<guiicon>Hidden ladder</guiicon>, <guiicon>Bar</guiicon> (or pole) and
-<guiicon>Gold</guiicon>. The graphics for these icons, except for the
+<guiicon>H Ladder</guiicon> (hidden ladder), <guiicon>Bar</guiicon> (or pole)
+and <guiicon>Gold</guiicon>. The graphics for these icons, except for the
 light bulb, are copied from whatever &kgoldrunner; theme you are using.</para>
 
 <screenshot>
@@ -1259,7 +1386,7 @@ light bulb, are copied from whatever &kgoldrunner; theme you are using.</para>
 </mediaobject>
 </screenshot>
 
-<para>The <guiicon>Edit Name/Hint</guiicon> icon pops up a dialog in which
+<para>The <guiicon>Name/Hint</guiicon> icon pops up a dialog in which
 you can create or edit your level's name and hint. Both are optional,
 but they are essential for tutorial levels and it is usual to provide
 them with very difficult levels, such as in Championship games (see the
@@ -1273,7 +1400,7 @@ to <quote>brick</quote>.</para>
 single object in a square, or by holding the &LMB; down and dragging
 the mouse, to fill a line or area, such as a long ladder, a large
 block of bricks or a concrete floor. Painting stops wherever you
-release the mouse button. If you make a mistake, you can use a &RMB; click to
+release the mouse button. If you make a mistake, you can use the &RMB; to
 erase it, or you can select the <guiicon>Erase</guiicon> icon and draw
 with that.</para>
 
