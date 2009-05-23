@@ -156,8 +156,7 @@ private:
     QAction *		saveGame;	// Save game, level, lives and score.
 
     // A KAction is needed here, to get access to KShortcut::setAlternate().
-    // TODO - KAction *		myPause;	// Pause or resume the game.
-    QAction *		myPause;	// Pause or resume the game.
+    KAction *		myPause;	// Pause or resume the game.
     QString		pauseKeys;	// Keystroke names to put in status bar.
 
     QAction *		hintAction;	// Display a hint, if available.
