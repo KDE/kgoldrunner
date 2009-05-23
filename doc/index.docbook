@@ -77,7 +77,8 @@ but if it closes before that, he will die and reappear somewhere else.
 <para>If you have never played before, try the <quote>Tutorial</quote>
 game, which teaches you the rules and basic skills.  Then try the
 <quote>Initiation</quote> game.  Experts might enjoy the
-<quote>Challenge</quote> or <quote>Vengeance of Peter W</quote> games,
+<quote>Challenge</quote>, <quote>Vengeance of Peter W</quote>,
+<quote>Count</quote> or <quote>Curse of the Mummy</quote> games,
 but the <quote>Initiation</quote> game has 100 levels and some are
 very difficult.  It is a good game for achieving a High Score.</para>
 
@@ -136,7 +137,7 @@ ordinary bricks.</para>
 <sect2>
 <title>Starting the Game</title>
 
-<para>The game begins by showing you a recorded demonstration of play. You
+<para>&kgoldrunner; begins by showing you a recorded demonstration of play. You
 can terminate this by clicking on the playing area with the mouse, pressing
 the spacebar or selecting a menu item or shortcut (such as <menuchoice>
 <guimenu>Game</guimenu><guimenuitem>New Game...</guimenuitem></menuchoice>).
@@ -396,7 +397,7 @@ the <quote>&kgoldrunner; Hall of Fame</quote>.</para>
 <para>All levels in games are recorded as you play, so you can replay any level
 you have previously played. Also, some levels have recorded solutions, which
 may help you work out how to win them. Just use the <guimenu>Move</guimenu>
-menu, items <guimenuitem>Show A Solution</guimenuitem>,
+menu and items <guimenuitem>Show A Solution</guimenuitem>,
 <guimenuitem>Instant Replay</guimenuitem>,
 <guimenuitem>Replay Last Level</guimenuitem> and
 <guimenuitem>Replay Any Level</guimenuitem>. The
@@ -408,8 +409,8 @@ item or shortcut (such as <menuchoice><guimenu>Game</guimenu>
 <para><guimenuitem>Instant Replay</guimenuitem> and
 <guimenuitem>Replay Last Level</guimenuitem> let you continue playing
 after an interruption. So if things are not going well, you can use
-<guimenuitem>Instant Replay</guimenuitem>, interrupt the replay and
-then try another approach. Or if the hero died already, you can use
+<guimenuitem>Instant Replay</guimenuitem>, interrupt the replay at some point
+and then try another approach. Or if the hero died already, you can use
 <guimenuitem>Replay Last Level</guimenuitem>
 in the same way.  These features can help you build up a solution to a
 difficult level in stages, but using them will invalidate any high score
@@ -455,13 +456,10 @@ you might be working on.</para>
 major rule settings that affect the style of play: known as
 <quote>Traditional</quote> and <quote>&kgoldrunner;</quote>. It is
 important to know which settings are in force when you are playing a
-game. Many <quote>Traditional</quote> levels are impossible with
-<quote>&kgoldrunner;</quote> settings. Most
-<quote>&kgoldrunner;</quote> levels are easier with
-<quote>Traditional</quote> settings, but the
-<quote>Traditional</quote> games are no pushover. To make life easier,
-&kgoldrunner; automatically chooses the correct settings for a game
-when you go into it, but you can can change them if you wish. </para>
+game. &kgoldrunner; automatically chooses the correct settings for
+a game when you play one of its levels and the rules for each game are
+shown in the <link linkend="level-selection-dialog">Level Selection</link>
+dialog box.</para>
 
 <para>The main difference between <quote>Traditional</quote> and
 <quote>&kgoldrunner;</quote> settings is the method by which the
@@ -470,7 +468,7 @@ enemies choose a path to the hero.</para>
 <itemizedlist>
 <listitem>
 <para>In the <quote>Traditional</quote> search method, enemies look
-for vertical paths (ladders and falls) and they try to stay above the
+for vertical paths (ladders and falls) and they try to stay higher than the
 hero or at the same height. They go below him only as a last
 resort. The enemies make no attempt to chase the hero in the
 horizontal direction until they are at the same height and can find a
@@ -484,7 +482,7 @@ horizontal and vertical paths, which tends to keep the enemies over
 your side of the playing area and at about the same height (&ie; they
 are more aggressive and not so easy to manipulate). That leads to a
 more action-packed game, but with less opportunity for strategy and
-puzzle-solving. The <quote>State of Terror</quote> game, added in 2007,
+puzzle-solving. However the <quote>State of Terror</quote> game, added in 2007,
 uses <quote>&kgoldrunner;</quote> rules and has plenty of puzzles to
 solve while you are on the run. That is why it is such a difficult game.</para>
 </listitem>
@@ -549,7 +547,8 @@ them.</para>
 
 <para>This box appears when you select the <guimenuitem>New Game</guimenuitem>
 action and also when you select items from the <guimenu>Editor</guimenu>
-menu. You use it to choose a game and a level to play, edit, save,
+menu or replays from the <guimenu>Move</guimenu> menu. You use it to choose
+a game and a level to play, replay, edit, save,
 move, re-number or delete. The main button at the bottom is the
 <guibutton>OK</guibutton> button. Its label changes according to what
 you are doing: in this case choosing a game and level to play.</para>
@@ -596,7 +595,7 @@ small preview window and the level's name (if it has one) also appears.</para>
 <title>Completing your Selection</title>
 
 <para>When you have chosen a game and level, just click the main
-button at the bottom and proceed with your edit or play.</para>
+button at the bottom and proceed with your edit, play or replay.</para>
 
 <para>Until you do that, nothing changes, so you can always click
 <guibutton>Cancel</guibutton> and go back to what you were doing
@@ -609,8 +608,9 @@ choose <guibutton>Cancel</guibutton>.</para>
 <sect2 id="saving-changes">
 <title>Saving Changes</title>
 
-<para>If you select an action on the <guimenu>Game</guimenu> or
-<guimenu>Editor</guimenu> menu and you were previously editing and had
+<para>If you select an action on the <guimenu>Game</guimenu>,
+<guimenu>Editor</guimenu> or <guimenu>Move</guimenu> menu and you were
+previously editing and had
 not saved your changes, you will get a message asking you to save,
 abandon or continue your work. Neither the new action nor its dialog will
 begin until you have made a decision about your previous work.</para>
@@ -769,6 +769,18 @@ that level, with the lives and score you saved.</para>
 </varlistentry>
 
 <varlistentry>
+<term><menuchoice><shortcut><keycap>Y</keycap></shortcut>
+<guimenu>Game</guimenu><guimenuitem>Play Next Level</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>Loads the next level in the current game, ready to play and without
+any further dialog. You can use this to browse quickly through the levels
+of a game.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
 <term><menuchoice><shortcut><keycap>S</keycap></shortcut>
 <guimenu>Game</guimenu><guimenuitem>Save Game...</guimenuitem>
 </menuchoice>
@@ -920,7 +932,7 @@ score you might be working on.</para>
 </term>
 <listitem>
 <para>Replays the recorded version of the last level you played, from
-the beginning (e.g. if you lost the level). If you interrupt the
+the beginning (&eg; if you lost the level). If you interrupt the
 replay, you can continue playing from that point and try another
 approach. You can use this feature to build up a winning sequence of moves
 in stages, but that will invalidate any high score you might be working
@@ -1298,6 +1310,7 @@ files, high score files and saved games. You can use your initials as
 a prefix provided they are not the same as a &kgoldrunner; prefix. So
 far, the prefixes <quote>level</quote>, <quote>plws</quote>,
 <quote>wad</quote>, <quote>plwv</quote>, <quote>sot</quote>,
+<quote>cnt</quote>, <quote>CM</quote>,
 <quote>tute</quote> and <quote>tutea</quote> have been used.</para>
 
 <para>The four-letter <quote>tute</quote> prefix is reserved for
@@ -1325,7 +1338,8 @@ that is a trivial case. More realistically, you could have a maze to
 solve and some visible ladders leading to the top of the playing
 area, but no gold. You do not have to have enemies, gold, bars, hidden
 ladders or even bricks. There are many challenging levels that have no
-enemies or no bricks, however most levels have at least one gold and
+enemies or no bricks, however most levels have at least one gold, some
+enemies and
 some hidden ladders that appear when the last gold is collected.</para>
 
 </sect2>
@@ -1625,7 +1639,8 @@ trap you.</para>
 <para>It is possible to dig while falling through empty space, if you can
 get the timing right. You do not need to have an enemy to ride upon. This
 is a bug which has become a <quote>feature</quote> and is used extensively
-in the <quote>State of Terror</quote> game.</para>
+in the <quote>State of Terror</quote>, <quote>Count</quote> and
+<quote>Curse of the Mummy</quote> games.</para>
 </listitem>
 </itemizedlist>
 
@@ -1689,6 +1704,23 @@ to a corner where they will stay and not chase you, luring the enemies
 into pits you must cross to get to some gold, getting the enemies to
 fetch gold for you or finding spots where you can stand and make an
 enemy move to where you want him.</para>
+</listitem>
+<listitem>
+<para>Use <menuchoice><guimenu>Move</guimenu>
+<guimenuitem>Show A Solution...</guimenuitem></menuchoice> to check if
+there is a recorded solution to the level. This will show you some ways
+to handle difficulties in the level, but not necessarily the best
+ways. There are often many ways to win a level and each time you play
+it there are small differences in timing, etc. So you probably will not
+be able to copy the recorded solution exactly.</para>
+</listitem>
+<listitem>
+<para>Use <menuchoice><guimenu>Move</guimenu>
+<guimenuitem>Instant Replay</guimenuitem></menuchoice> or
+<menuchoice><guimenu>Move</guimenu>
+<guimenuitem>Replay Last Level</guimenuitem></menuchoice> to replay a
+level to a point just before you had trouble, then interrupt the
+replay and try some other approach.</para>
 </listitem>
 </itemizedlist>
 </sect1>
@@ -1757,15 +1789,24 @@ Stuart Popejoy of New York contributed
 the <quote>State of Terror</quote> game, in 2007, the first Championship game
 to use &kgoldrunner; rules and one of the most difficult games ever.</para>
 
-<para>Special thanks are due to Mauricio Piacentini and Dmitry Suzdalev, who
-converted &kgoldrunner; to &Qt; 4 and &kde; 4, and to the many graphics artists
-who contributed to the new SVG graphics and themes in the &kde; 4 version:
-especially Mauricio Piacentini for the Default theme and the new runners,
-Johann Ollivier Lapeyre for the ladders and bars, Eugene Trounev for the
-Geek City and Treasure of Egypt themes and, last but not least, Luciano
-Montanaro for the two Nostalgia themes, the Black on White accessibility theme,
-improvements to the runners, multiple
-backgrounds and several other ideas.</para>
+<para>Steve Mann of Waterloo in Canada contributed the <quote>Count</quote>
+game in 2008 and the <quote>Curse of the Mummy</quote> game in 2008. Both
+use Traditional rules and both have interesting themes running through them,
+as well as being quite difficult.</para>
+
+<para>Peter Wadham composed the sound effects in 2008 and Luciano Montanaro
+incorporated the sounds into the KGoldrunner program.</para>
+
+<para>Special thanks are due to Mauricio Piacentini and Dmitry Suzdalev,
+who converted &kgoldrunner; to &Qt; 4 and &kde; 4, and to the many graphics
+artists who contributed to the new SVG graphics and themes in the &kde; 4
+version: especially Mauricio Piacentini for the <quote>Default</quote> theme
+and the new runners, Johann Ollivier Lapeyre for the ladders and bars,
+Eugene Trounev for the <quote>Geek City</quote> and
+<quote>Treasure of Egypt</quote> themes and, last but not least,
+Luciano Montanaro for the two <quote>Nostalgia</quote> themes, the
+<quote>Black on White</quote> accessibility theme, improvements to the
+runners, multiple backgrounds and several other ideas.</para>
 
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
 &underFDL;
