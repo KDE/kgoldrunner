@@ -117,7 +117,7 @@ private:
     void initStatusBar();
     void setupEditToolbarActions();
     void setupThemes();
- 
+
     QSignalMapper * tempMapper;		// Temporary pointer.
 
     QAction * gameAction (const QString & name, const int code,
@@ -157,7 +157,6 @@ private:
 
     // A KAction is needed here, to get access to KShortcut::setAlternate().
     KAction *		myPause;	// Pause or resume the game.
-    QString		pauseKeys;	// Keystroke names to put in status bar.
 
     QAction *		hintAction;	// Display a hint, if available.
     QAction *		killHero;	// Kill hero (disabled during edits).

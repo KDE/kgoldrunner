@@ -640,7 +640,7 @@ void KGoldrunner::setupThemes()
         ("theme", "*.desktop", KStandardDirs::NoDuplicates); // Find files.
 
     KConfigGroup gameGroup (KGlobal::config(), "KDEGame"); // Get prev theme.
-    
+
     // TODO change this to a ThemeName (or simply Theme) option. The theme
     // should be searched in the themeFilepaths defined above.
     QString currentThemeFilepath = gameGroup.readEntry ("ThemeFilepath", "");
@@ -699,9 +699,6 @@ void KGoldrunner::initStatusBar()
     showLevel (0);
     adjustHintAction (false);
 
-    // Set the PAUSE/RESUME key-names into the status bar message.
-    pauseKeys = myPause->shortcut().toString(QKeySequence::NativeText);
-    pauseKeys = pauseKeys.replace ("; ", "\" " + i18n ("or") + " \"");
     gameFreeze (false);
 
     statusBar()->setItemFixed (ID_LIVES, -1);		// Fix current sizes.
@@ -754,12 +751,27 @@ void KGoldrunner::gameFreeze (bool on_off)
 {
     myPause->setChecked (on_off);
     frozen = on_off;	// Remember the state (for the configure-keys case).
-    if (on_off)
-        statusBar()->changeItem
-                    (i18n ("Press \"%1\" to RESUME", pauseKeys), ID_MSG);
-    else
-        statusBar()->changeItem
-                    (i18n ("Press \"%1\" to PAUSE", pauseKeys), ID_MSG);
+    QStringList pauseKeys;
+    foreach (const QKeySequence &s, myPause->shortcut().toList()) {
+        pauseKeys.append(s.toString(QKeySequence::NativeText));
+    }
+    if (on_off) {
+        if (pauseKeys.size() == 0) {
+            statusBar()->changeItem ("The game is paused", ID_MSG);
+        } else if (pauseKeys.size() == 1) {
+            statusBar()->changeItem (i18n ("Press \"%1\" to RESUME", pauseKeys.at(0)), ID_MSG);
+        } else {
+            statusBar()->changeItem (i18n ("Press \"%1\" or \"%2\" to RESUME", pauseKeys.at(0), pauseKeys.at(1)), ID_MSG);
+        }
+    } else {
+        if (pauseKeys.size() == 0) {
+            statusBar()->changeItem ("", ID_MSG);
+        } else if (pauseKeys.size() == 1) {
+            statusBar()->changeItem (i18n ("Press \"%1\" to PAUSE", pauseKeys.at(0)), ID_MSG);
+        } else {
+            statusBar()->changeItem (i18n ("Press \"%1\" or \"%2\" to PAUSE", pauseKeys.at(0), pauseKeys.at(1)), ID_MSG);
+        }
+    }
 }
 
 void KGoldrunner::adjustHintAction (bool hintAvailable)
@@ -870,9 +882,6 @@ void KGoldrunner::optionsConfigureKeys()
 	this,						// Parent widget.
 	true);						// saveSettings value.
 
-    // Now update the PAUSE/RESUME message in the status bar.
-    pauseKeys = myPause->shortcut().toString(QKeySequence::NativeText);
-    pauseKeys = pauseKeys.replace ("; ", "\" " + i18n ("or") + " \"");
     gameFreeze (frozen);		// Refresh the status bar text.
 }
 
