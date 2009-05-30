@@ -32,18 +32,11 @@ class KGrTheme
 {
 public:
     enum TileType {
-        EmptyTile = 0,
+        EmptyTile = 0,			// The empty tile must be tile 0.
 	HiddenLadderTile,
 	FalseBrickTile,
-	HeroTile,
-	EnemyTile,
-	GoldTile,
-	BarTile,
-	LadderTile,
-	ConcreteTile,
-	BrickTile,
-	BrickAnimation1Tile,
-	BrickAnimation2Tile,
+	BrickAnimation1Tile,		// The dug-brick tiles must come
+	BrickAnimation2Tile,		// before any tiles that have variants.
 	BrickAnimation3Tile,
 	BrickAnimation4Tile,
 	BrickAnimation5Tile,
@@ -51,8 +44,16 @@ public:
 	BrickAnimation7Tile,
 	BrickAnimation8Tile,
 	BrickAnimation9Tile,
+	HeroTile,			// These two tiles are used in editing.
+	EnemyTile,
+	GoldTile,			// These five tiles can have variants.
+	BarTile,
+	LadderTile,
+	ConcreteTile,
+	BrickTile,
 	TileTypeCount
     };
+
     /**
      * Default constructor.
      * \param[in] systemDataDir The system data dir is used to calculate the

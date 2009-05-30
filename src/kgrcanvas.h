@@ -35,6 +35,16 @@
 
 #include "kgrtheme.h"
 
+enum StartFrame     {RIGHTWALK1,  RIGHTWALK2,  RIGHTWALK3,  RIGHTWALK4,
+                     RIGHTWALK5,  RIGHTWALK6,  RIGHTWALK7,  RIGHTWALK8,
+                     LEFTWALK1,   LEFTWALK2,   LEFTWALK3,   LEFTWALK4,
+                     LEFTWALK5,   LEFTWALK6,   LEFTWALK7,   LEFTWALK8,
+                     RIGHTCLIMB1, RIGHTCLIMB2, RIGHTCLIMB3, RIGHTCLIMB4,
+                     RIGHTCLIMB5, RIGHTCLIMB6, RIGHTCLIMB7, RIGHTCLIMB8,
+                     LEFTCLIMB1,  LEFTCLIMB2,  LEFTCLIMB3,  LEFTCLIMB4,
+                     LEFTCLIMB5,  LEFTCLIMB6,  LEFTCLIMB7,  LEFTCLIMB8,
+                     CLIMB1,      CLIMB2,
+                     FALL1,       FALL2};
 
 class KGrCanvas : public KGameCanvasWidget
 {
@@ -47,8 +57,6 @@ public:
     void setBaseScale();
 
     void setTitle (const QString&);
-
-    void moveEnemy (int, int, int, int, int);
 
     void goToBlack();
     void fadeIn();
@@ -78,8 +86,9 @@ public slots:
     void startAnimation    (const int id, const bool repeating,
                             const int i, const int j, const int time,
                             const Direction dirn, const AnimationType type);
-    void resynchAnimation  (const int id, const int i, const int j,
-                            const bool stop);
+    // TODO - Implement this method, if it is really needed.
+    // void resynchAnimation  (const int id, const int i, const int j,
+                            // const bool stop);
     void gotGold           (const int spriteId, const int i, const int j,
                             const bool spriteHasGold, const bool lost = false);
     void showHiddenLadders (const QList<int> & ladders, const int width);
@@ -178,6 +187,7 @@ private:
     int score;
 
     bool enemiesShowGold;		// Show or conceal if enemies have gold.
+    int  heroId;			// The hero's sprite ID.
 };
 #endif // KGRCANVAS_H
 // vi: set sw=4 :

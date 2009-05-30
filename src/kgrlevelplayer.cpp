@@ -58,7 +58,7 @@ KGrLevelPlayer::KGrLevelPlayer (QObject * parent, KRandomSequence * pRandomGen)
 {
     t.start(); // IDW
 
-    dbgLevel = 0;
+    dbgLevel = 2;
 }
 
 int KGrLevelPlayer::playerCount = 0;
@@ -656,7 +656,9 @@ bool KGrLevelPlayer::heroCaught (const int heroX, const int heroY)
         pointsPerCell_1 = enemy->whereAreYou (enemyX, enemyY) - 1;
         if (((heroX < enemyX) ? ((heroX + pointsPerCell_1) >= enemyX) :
                                  (heroX <= (enemyX + pointsPerCell_1))) &&
-            ((heroY < enemyY) ? ((heroY + pointsPerCell_1) >= enemyY) :
+            // TODO - Remove? ((heroY < enemyY) ?
+            //                ((heroY + pointsPerCell_1) >= enemyY) :
+            ((heroY < enemyY) ? ((heroY + pointsPerCell_1) > enemyY) :
                                  (heroY <= (enemyY + pointsPerCell_1)))) {
             return true;
         }
@@ -1154,7 +1156,7 @@ void KGrLevelPlayer::dbgControl (int code)
         showFigurePositions();		// Show everybody's co-ordinates.
         break;
     case S_HERO:
-        hero->showState ('s');		// Show hero's co-ordinates and state.
+        hero->showState();		// Show hero's co-ordinates and state.
         break;
     case S_OBJ:
         showObjectState();		// Show an object's state.
@@ -1183,9 +1185,9 @@ void KGrLevelPlayer::startLogging()
 
 void KGrLevelPlayer::showFigurePositions()
 {
-    hero->showState ('p');
+    hero->showState();
     foreach (KGrEnemy * enemy, enemies) {
-        enemy->showState ('p');
+        enemy->showState();
     }
 }
 
@@ -1225,7 +1227,7 @@ void KGrLevelPlayer::showObjectState()
 void KGrLevelPlayer::showEnemyState (int enemyId)
 {
     if (enemyId < enemies.count()) {
-        enemies.at(enemyId)->showState ('s');
+        enemies.at(enemyId)->showState();
     }
 }
 

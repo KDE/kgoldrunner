@@ -41,12 +41,12 @@ void KGrRuleBook::setTiming (const int enemyCount)
 {
     int choice;
     Timing varTiming[6] = {
-                          {40, 58, 78, 88, 170, 23},      // No enemies.
-                          {50, 68, 78, 88, 170, 32},      // 1 enemy.
-                          {57, 67, 114, 128, 270, 37},    // 2 enemies.
-                          {60, 70, 134, 136, 330, 40},    // 3 enemies.
-                          {63, 76, 165, 150, 400, 46},    // 4 enemies.
-                          {70, 80, 189, 165, 460, 51}     // >4 enemies.
+                          {40, 58, 78, 88, 340, 23},      // No enemies.
+                          {50, 68, 78, 88, 340, 32},      // 1 enemy.
+                          {57, 67, 114, 128, 540, 37},    // 2 enemies.
+                          {60, 70, 134, 136, 660, 40},    // 3 enemies.
+                          {63, 76, 165, 150, 800, 46},    // 4 enemies.
+                          {70, 80, 189, 165, 920, 51}     // >4 enemies.
                           };
     if (mVariableTiming) {
         choice = (enemyCount < 0) ? 0 : enemyCount;
@@ -73,7 +73,7 @@ KGrTraditionalRules::KGrTraditionalRules (QObject * parent)
     mTurnAnywhere        = false;	///< Change direction only at next cell.
     mEnemiesShowGold     = true;	///< Show enemies carrying gold.
 
-    Timing t = {40, 58, 78, 88, 170, 23};
+    Timing t = {40, 58, 78, 88, 340, 23};
     times = t;
 }
 
@@ -495,7 +495,7 @@ KGrKGoldrunnerRules::KGrKGoldrunnerRules (QObject * parent)
     mTurnAnywhere        = false;	///< Change direction only at next cell.
     mEnemiesShowGold     = true;	///< Show enemies carrying gold.
 
-    Timing t = {45, 50, 55, 100, 500, 40};
+    Timing t = {45, 50, 55, 100, 1000, 40};
     times = t;
 }
 
@@ -688,7 +688,7 @@ KGrScavengerRules::KGrScavengerRules (QObject * parent)
     mTurnAnywhere        = true;	///< Change direction anywhere in cell.
     mEnemiesShowGold     = false;	///< Conceal enemies carrying gold.
 
-    Timing t = {45, 50, 55, 100, 500, 40};
+    Timing t = {45, 50, 55, 100, 1000, 40};
     times = t;
 }
 

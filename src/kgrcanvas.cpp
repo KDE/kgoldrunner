@@ -29,6 +29,11 @@
 
 #include <cmath>
 
+const StartFrame animationStartFrames [nAnimationTypes] = {
+                 RIGHTWALK1, LEFTWALK1, RIGHTCLIMB1, LEFTCLIMB1,
+                 CLIMB1, CLIMB1, FALL1, FALL2,
+                 (StartFrame) 0,	// Calculate OPEN_BRICK frame later.
+                 (StartFrame) 0};	// Calculate CLOSE_BRICK frame later.
 
 // Helper function: find how many tiles are needed to cover at least w pixels
 static int numSections(int w, int sectionWidth)
@@ -57,7 +62,8 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
                           m_livesDisplay(0),
                           m_fadingTimeLine (1000, this),
                           emptySprites (0),
-                          theme (systemDataDir)
+                          theme (systemDataDir),
+                          heroId (0)
 {
     resizeCount = 0;		// IDW
 
@@ -532,23 +538,26 @@ int KGrCanvas::makeSprite (const char type, int i, int j)
         emptySprites = 0;
     }
 
-    int z        = 0;
     int frame1   = FALL1;
     double scale = (double) imgW / (double) bgw;
 
     switch (type) {
     case HERO:
+        heroId = spriteId;
         sprite->addFrames (heroFrames, topLeft, scale);
-        z = 1;
+        sprite->setZ (1);
         break;
     case ENEMY:
         sprite->addFrames (enemyFrames, topLeft, scale);
-        z = 2;
+        sprite->setZ (2);
         break;
     case BRICK:
         sprite->addFrames (tileset, topLeft, scale);
-        frame1 = KGrTheme::BrickTile;
-        z = 1;
+        frame1 = KGrTheme::BrickAnimation1Tile;
+
+        // The hero and enemies must be painted in front of dug bricks.
+        sprite->stackUnder (sprites->at (heroId));
+
         // Erase the brick-image so that animations are visible in all themes.
         paintCell (i, j, FREE, 0);
         break;
@@ -558,7 +567,6 @@ int KGrCanvas::makeSprite (const char type, int i, int j)
 
     // In KGoldrunner, the top-left visible cell is [1,1]: in KGrSprite [0,0].
     sprite->move ((i - 1) * bgw, (j - 1) * bgh, frame1);
-    sprite->setZ (z);
     sprite->show();
 
     // kDebug() << "Sprite ID" << spriteId << "sprite type" << type
@@ -570,11 +578,8 @@ void KGrCanvas::startAnimation (const int id, const bool repeating,
                                 const int i, const int j, const int time,
                                 const Direction dirn, const AnimationType type)
 {
-    // TODO - Save last direction somehow, to use in facing and centering code.
     // TODO - Put most of this in helper code, based on theme parameters.
-    // TODO - Use a QList of animation parameters: one entry per id.
-    // TODO - Need to select plain or gold-carrying enemy frames somehow.
-    int frame = 0;
+    int frame = animationStartFrames [type];
     int nFrames = 8;
     int nFrameChanges = 4;
     int dx = 0;
@@ -583,28 +588,22 @@ void KGrCanvas::startAnimation (const int id, const bool repeating,
     switch (dirn) {
     case RIGHT:
         dx    = +1;
-        frame = (type == RUN_R) ? RIGHTWALK1 : RIGHTCLIMB1;
         break;
     case LEFT:
         dx    = -1;
-        frame = (type == RUN_L) ? LEFTWALK1  : LEFTCLIMB1;
         break;
     case DOWN:
         dy = +1;
         if ((type == FALL_R) || (type == FALL_L)) {
             nFrames = 1;
-            // TODO - Work out which way to face the runner.
-            frame   = (type == FALL_R) ? FALL2 : FALL1;
         }
         else {
             nFrames = 2;
-            frame   = CLIMB1;
         }
         break;
     case UP:
         dy = -1;
         nFrames = 2;
-        frame   = CLIMB1;
         break;
     case STAND:
         switch (type) {
@@ -617,27 +616,25 @@ void KGrCanvas::startAnimation (const int id, const bool repeating,
             frame = tileNumber (KGrTheme::BrickAnimation6Tile, i, j);
             break;
         default:
-            // Show a standing hero or enemy.
+            // Show a standing hero or enemy, using the previous StartFrame.
             nFrames = 0; 
-            // TODO - Work out which way to face the runner.
-            frame = FALL1; // (type == RUN) ? RIGHTWALK1 : RIGHTCLIMB1;
             break;
         }
         break;
     default:
         break;
     }
-    // kDebug() << "id" << id << "data" << i << j << dx * bgw << dy * bgw << frame << time;
+
     // TODO - Generalise nFrameChanges = 4, also the tick time = 20 new sprite.
     sprites->at(id)->setAnimation (repeating, (i - 1) * bgw, (j - 1) * bgh,
                     frame, nFrames, dx * bgw, dy * bgh, time, nFrameChanges);
 }
 
-void KGrCanvas::resynchAnimation (const int id, const int i, const int j,
-                                  const bool stop)
-{
-    // TODO - Write this code.
-}
+// void KGrCanvas::resynchAnimation (const int id, const int i, const int j,
+                                  // const bool stop)
+// {
+    // TODO - Write this code, if it is really needed.
+// }
 
 void KGrCanvas::gotGold (const int spriteId, const int i, const int j,
                          const bool spriteHasGold, const bool lost)
@@ -689,17 +686,6 @@ void KGrCanvas::deleteAllSprites()
         }
     }
     emptySprites = 0;
-}
-
-void KGrCanvas::moveEnemy (int id, int x, int y, int frame, int nuggets)
-{
-    if (nuggets != 0) {				// If enemy is carrying gold,
-        frame = frame + goldEnemy;		// show him with gold outline.
-    }
-
-    // In KGoldrunner, the top-left visible cell is [1,1]: in KGrSprite [0,0].
-    // kDebug() << "accessing enemySprite" << id;
-    // OBSOLESCENT - 28/1/09 enemySprites->at (id)->move (x - bgw, y - bgh, frame);
 }
 
 QPixmap KGrCanvas::getPixmap (char type)

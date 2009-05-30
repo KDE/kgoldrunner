@@ -47,12 +47,14 @@ public:
 
     void        setTiming     (const int enemyCount = 0);
 
-    inline void getHeroTimes  (int & runTime, int & fallTime) {
-                runTime = times.hwalk; fallTime = times.hfall; }
+    inline void getHeroTimes  (int & runTime,       int & fallTime,
+                               int & enemyFallTime, int & trapTime) {
+                runTime       = times.hwalk; fallTime = times.hfall;
+                enemyFallTime = times.efall; trapTime = times.ecaptive; }
 
     inline char getEnemyTimes (int & runTime, int & fallTime, int & trapTime) {
-                runTime = times.ewalk; fallTime = times.efall;
-                trapTime = times.ecaptive;
+                runTime       = times.ewalk; fallTime = times.efall;
+                trapTime      = times.ecaptive;
                 return mRules; }
 
     inline void getDigTimes   (int & digTime, int & digCounter) {

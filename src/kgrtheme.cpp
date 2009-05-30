@@ -178,10 +178,14 @@ QList<QPixmap> KGrTheme::tiles (unsigned int size)
 {
     QList<QPixmap> list;
 
-    // Create a list of rendered tiles. The tiles must be appended in the
-    // same order they appear in the TileType enum.
-    // While creating the tiles, count the variants, and fill the offset and
-    // count tables.
+    // Create a list of rendered tiles. The tiles must be appended in the same
+    // order as they appear in the TileType enum. The empty tile must be first
+    // (tile 0) and the dug bricks must appear before any tiles that can have
+    // several variants, to avoid a crash when digging bricks then changing
+    // to a theme that has different numbers of variants.
+
+    // While creating the tiles, count the variants and fill the offset[]
+    // and count[] tables.
     
     QVector< QString > tileNames;
     int i = 0;
@@ -195,6 +199,16 @@ QList<QPixmap> KGrTheme::tiles (unsigned int size)
         i++;
     }
 
+    // Add SVG versions of dug bricks.
+    QString brickPattern("brick_%1");
+    for (int j = 1; j <= 9; ++j) {
+        list.append (loadGraphic (QSize(size,size),
+                     brickPattern.arg(j), svgSet));
+        offsets[i] = i;
+        counts[i] = 1;
+        i++;
+    }
+    
     // These tiles, used in the game-editor, come from the Actors SVG file
     tileNames.clear();
     tileNames << "hero_1" << "enemy_1";
@@ -212,8 +226,8 @@ QList<QPixmap> KGrTheme::tiles (unsigned int size)
         int tileCount = 0;
         QString tileNamePattern = name + "-%1";
         while (svgSet.elementExists (tileNamePattern.arg (tileCount))) {
-            kDebug() << tileNamePattern.arg(tileCount);
-            list.append (loadGraphic( QSize(size, size), tileNamePattern.arg(tileCount), svgSet));
+            list.append (loadGraphic( QSize(size, size),
+                         tileNamePattern.arg(tileCount), svgSet));
             tileCount++;
         }
         if (tileCount > 0) {
@@ -226,14 +240,6 @@ QList<QPixmap> KGrTheme::tiles (unsigned int size)
         i++;
     }
 
-    // Add SVG versions of blasted bricks.
-    QString brickPattern("brick_%1");
-    for (int j = 1; j <= 9; ++j) {
-        list.append (loadGraphic(QSize(size, size), brickPattern.arg(j), svgSet));
-    }
-    offsets[i] = offsets[i - 1] + counts[i - 1];
-    counts[i] = 9;
-    
     return list;
 }
 

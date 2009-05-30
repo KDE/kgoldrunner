@@ -38,6 +38,7 @@ KGrRunner::KGrRunner (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
     deltaX      (0),
     deltaY      (0),
     pointCtr    (0),
+    falling     (false),
 
     currDirection (STAND),
     currAnimation (FALL_L),
@@ -110,6 +111,92 @@ Situation KGrRunner::situation (const int scaledTime)
     return EndCell;
 }
 
+char KGrRunner::nextCell()
+{
+    pointCtr = 0;
+    gridI    = gridX / pointsPerCell;
+    gridJ    = gridY / pointsPerCell;
+    return     grid->cellType  (gridI, gridJ);
+}
+
+bool KGrRunner::setNextMovement (const char spriteType, const char cellType,
+                                 Direction & dir,
+                                 AnimationType & anim, int & interval)
+{
+    bool fallingState = false;
+
+    Flags OK = 0;
+    if (spriteType == HERO) {
+        dir = levelPlayer->getDirection (gridI, gridJ);
+        OK  = grid->heroMoves (gridI, gridJ);
+    }
+    else {
+        dir = levelPlayer->getEnemyDirection (gridI, gridJ, leftRightSearch);
+        OK  = grid->enemyMoves (gridI, gridJ);
+    }
+    if ((dir >= nDirections) || (dir < 0)) {
+        dir = STAND;		// Make sure indices stay within range.
+    }
+
+    if (dir == STAND) {
+        anim = currAnimation;
+    }
+    else {
+        anim = aType [dir];
+    }
+    if (((anim == RUN_R) || (anim == RUN_L)) && (cellType == BAR)) {
+        anim = (dir == RIGHT) ? CLIMB_R : CLIMB_L;
+    }
+
+    interval = runTime;
+
+    bool onEnemy  = levelPlayer->standOnEnemy (spriteId, gridX, gridY);
+    if (onEnemy) dbk3 << spriteId << "STANDING ON ENEMY - dirn"
+                          << dir;
+    // TODO - Do a better, smoother job of falling while standing on enemy.
+    // TODO - Especially, do not do a climb-down action.
+    bool canStand = (OK & dFlag [STAND]) || (OK == 0) || onEnemy;
+    if ((dir == DOWN) && (cellType == BAR)) {
+        canStand = false;
+    }
+
+
+    // TODO - Check that the trap time is the same as in KGr 3.0.
+    // TODO - We seem to be early getting into/out of the hole, but
+    //        the captive time is now OK.  Total t down by ~100 in 4400.
+    if ((spriteType == ENEMY) && (cellType == USEDHOLE)) {
+        // The enemy is in a hole.
+        if (currDirection == DOWN) {
+            // The enemy is at the bottom of the hole: start the captive-timer.
+            dir = STAND;
+            anim = currAnimation;
+            interval = trapTime;
+            dbe1 "T %05d id %02d Captive at [%02d,%02d]\n",
+                 t.elapsed(), spriteId, gridI, gridJ);
+        }
+        else {
+            // The enemy can start climbing out after a cycle of captive-times.
+            dir = UP;
+            anim = CLIMB_U;
+            dbe1 "T %05d id %02d Start climb out at [%02d,%02d]\n",
+                 t.elapsed(), spriteId, gridI, gridJ);
+        }
+    }
+    else if (! canStand) {
+        fallingState = true;
+        dir  = DOWN;
+        anim = (falling) ? currAnimation :
+                        ((currDirection == RIGHT) ? FALL_R : FALL_L);
+        interval = fallTime;
+    }
+    else if (! (OK & dFlag [dir])) {
+        // Sprite cannot move, but the animation shows the desired direction.
+        dir = STAND;
+    }
+
+    return fallingState;
+}
+
 
 KGrHero::KGrHero (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
                   int i, int j, int pSpriteId, KGrRuleBook * pRules)
@@ -118,7 +205,7 @@ KGrHero::KGrHero (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
     nuggets (0)		// KGrLevelPlayer object will call hero->setNuggets().
 {
     kDebug() << "THE HERO IS BORN at" << i << j << "sprite ID" << pSpriteId;
-    rules->getHeroTimes (runTime, fallTime);
+    rules->getHeroTimes (runTime, fallTime, enemyFallTime, trapTime);
     kDebug() << "Hero run time" << runTime << "fall time" << fallTime;
     interval = runTime;
 }
@@ -126,10 +213,6 @@ KGrHero::KGrHero (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
 KGrHero::~KGrHero()
 {
 }
-
-// These statics will be set to their proper values in the constructor.
-int KGrHero::runTime  = 0;
-int KGrHero::fallTime = 0;
 
 HeroStatus KGrHero::run (const int scaledTime)
 {
@@ -144,68 +227,40 @@ HeroStatus KGrHero::run (const int scaledTime)
     }
 
     // TODO - If on top row and all nuggets gone, plus Scav cond, go up a level.
+    // TODO - Must be standing, NOT about to fall. Maybe can go AFTER setNextM.
     if ((gridJ == 1) && (nuggets <= 0)) {
         return WON_LEVEL;
     }
 
     // TODO - Do we need to do this on every grid-point?
-    bool  standingOnEnemy  = levelPlayer->standOnEnemy (spriteId, gridX, gridY);
-    if ((! standingOnEnemy) && levelPlayer->heroCaught (gridX, gridY)) {
+    if (levelPlayer->heroCaught (gridX, gridY)) {
         return DEAD;
     }
     if (s == MidCell) {
         return NORMAL;
     }
 
-    pointCtr = 0;
-    gridI    = gridX / pointsPerCell;
-    gridJ    = gridY / pointsPerCell;
+    // Continue to the next cell.
+    char cellType = nextCell();
 
-    char cell = grid->cellType  (gridI, gridJ);
-    if (cell == NUGGET) {
+    if (cellType == NUGGET) {
         nuggets = levelPlayer->runnerGotGold (spriteId, gridI, gridJ, true);
         emit incScore (250);		// Add to the human player's score.
     }
 
-    Direction nextDirection = levelPlayer->getDirection (gridI, gridJ);
-    if ((nextDirection >= nDirections) || (nextDirection < 0)) {
-        nextDirection = STAND;		// Make sure indices stay within range.
+    Direction nextDirection;
+    AnimationType nextAnimation;
+    bool newFallingState = setNextMovement (HERO, cellType, nextDirection,
+                                            nextAnimation, interval);
+    if (newFallingState != falling) {
+        // emit soundSignal (FALLING, newFallingState);	// Start/stop falling.
+        falling = newFallingState;
     }
-    interval = runTime;
-
-    Flags OK       = grid->heroMoves (gridI, gridJ);
-    bool  onEnemy  = levelPlayer->standOnEnemy (spriteId, gridX, gridY);
-    bool  canStand = (OK & dFlag [STAND]) || (OK == 0) || onEnemy;
-    // TODO - Do a better, smoother job of falling while standing on enemy.
-    // TODO - Interface fall start and end with sound.
-
-    AnimationType nextAnimation = aType [nextDirection];
-    if (! canStand) {
-        nextDirection = DOWN;
-        nextAnimation = (currDirection == RIGHT) ? FALL_R : FALL_L;
-        interval = fallTime;
-    }
-    else if (! (OK & dFlag [nextDirection])) {
-        nextDirection = STAND;
-    }
-
-    if (nextDirection == STAND) {
-        nextAnimation = currAnimation;
-    }
-
     timeLeft += interval;
-
-    dbe2 "%d sprite %02d [%02d,%02d] timeLeft %03d currDir %d nextDir %d\n",
-      pointCtr, spriteId, gridI, gridJ, timeLeft, currDirection, nextDirection);
-
-    if ((! onEnemy) && levelPlayer->heroCaught (gridX, gridY)) {
-        return DEAD;
-    }
-
-    if (((nextAnimation == RUN_R) || (nextAnimation == RUN_L)) &&
-        (cell == BAR)) {
-        nextAnimation = (nextDirection == RIGHT) ? CLIMB_R : CLIMB_L;
-    }
+    dbe2 "%d sprite %02d [%02d,%02d] timeLeft %03d currDir %d nextDir %d "
+            "currAnim %d nextAnim %d\n",
+      pointCtr, spriteId, gridI, gridJ, timeLeft, currDirection, nextDirection,
+      currAnimation, nextAnimation);
 
     if ((nextDirection == currDirection) && (nextAnimation == currAnimation)) {
         // TODO - If dirn == STAND, no animation, else emit resynchAnimation().
@@ -261,25 +316,13 @@ bool KGrHero::dig (const Direction diggingDirection, int & i, int & j)
     return result;	// Tell the levelPlayer whether & where to open a hole.
 }
 
-void KGrHero::showState (char option)
+void KGrHero::showState()
 {
-    fprintf (stderr, "(%02d,%02d) - Hero      ", gridI, gridJ);
-    switch (option) {
-        case 'p': fprintf (stderr, "\n"); break;
-        case 's': fprintf (stderr, " STATE\n");
-            // TODO - Print the hero's state.
-            // fprintf (stderr, " nuggets %02d status %d walk-ctr %d ",
-                          // nuggets, status, walkCounter);
-            // fprintf (stderr, "dirn %d next dirn %d\n", direction, nextDir);
-            // fprintf (stderr, "                     rel (%02d,%02d) abs (%03d,%03d)",
-                        // relx, rely, absx, absy);
-            // fprintf (stderr, " pix %02d", actualPixmap);
-            // fprintf (stderr, " mem %d %d %d %d", mem_x, mem_y, mem_relx, mem_rely);
-            // if (walkFrozen) fprintf (stderr, " wBlock");
-            // if (fallFrozen) fprintf (stderr, " fBlock");
-            // fprintf (stderr, "\n");
-            break;
-    }
+    fprintf (stderr, "(%02d,%02d) - Hero   [%02d]", gridI, gridJ, spriteId);
+    fprintf (stderr, " gold %02d dirn %d ctr %d",
+                  nuggets, currDirection, pointCtr);
+    fprintf (stderr, " gridX %3d gridY %3d anim %d\n",
+                 gridX, gridY, currAnimation);
 }
 
 
@@ -292,23 +335,20 @@ KGrEnemy::KGrEnemy (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
     birthJ     (j),
     prevInCell (-1)
 {
-    rulesType = rules->getEnemyTimes (runTime, fallTime, trapTime);
-    interval  = runTime;
+    rulesType     = rules->getEnemyTimes (runTime, fallTime, trapTime);
+    enemyFallTime = fallTime;
+    interval      = runTime;
     kDebug() << "ENEMY" << pSpriteId << "IS BORN at" << i << j;
     if (pSpriteId < 2) {
         kDebug() << "Enemy run time " << runTime << "fall time" << fallTime;
         kDebug() << "Enemy trap time" << trapTime << "Rules type" << rulesType;
     }
+    t.start(); // IDW
 }
 
 KGrEnemy::~KGrEnemy()
 {
 }
-
-// These statics will be set to their proper values in the constructor.
-int KGrEnemy::runTime  = 0;
-int KGrEnemy::fallTime = 0;
-int KGrEnemy::trapTime = 0;
 
 void KGrEnemy::run (const int scaledTime)
 {
@@ -324,7 +364,9 @@ void KGrEnemy::run (const int scaledTime)
         // TODO - What if >1 enemy has occupied a cell somehow?
         // TODO - Effect on CPU time of more frequent BRICK checks ...
         releaseCell (gridI + deltaX, gridJ + deltaY);
-        emit incScore (75);		// Add to the human player's score.
+        emit incScore (75);		// Killed: add to the player's score.
+        dbe1 "T %05d id %02d Died in brick at [%02d,%02d]\n",
+             t.elapsed(), spriteId, gridI, gridJ);
         dieAndReappear();		// Move to a new (gridI, gridJ).
         reserveCell (gridI, gridJ);
         // No return: treat situation as EndCell.
@@ -333,35 +375,37 @@ void KGrEnemy::run (const int scaledTime)
     else if ((pointCtr == 1) && (currDirection == DOWN) &&
         (grid->cellType (gridI, gridJ + 1) == HOLE)) {
         // Enemy is starting to fall into a hole.
-        dbk3 << spriteId
-                 << "Falling into hole at:" << gridI << (gridJ + 1);
+        dbe1 "T %05d id %02d Mark hole [%02d,%02d] as used\n",
+             t.elapsed(), spriteId, gridI, gridJ+1);
         grid->changeCellAt (gridI, gridJ + 1, USEDHOLE);
         dropGold();
-        emit incScore (75);		// Add to the human player's score.
+        emit incScore (75);		// Trapped: add to the player's score.
         return;
     }
 
     // Wait till end of cell.
     else if (s == MidCell) {
+        if (grid->cellType (gridI, gridJ) == USEDHOLE) {
+            dbe1 "T %05d id %02d Stay captive at [%02d,%02d] count %d\n",
+                 t.elapsed(), spriteId, gridI, gridJ, pointCtr);
+        }
         return;
     }
 
     // Continue to the next cell.
-    pointCtr = 0;
-    gridI = gridX / pointsPerCell;
-    gridJ = gridY / pointsPerCell;
+    char cellType = nextCell();
 
     // Try to pick up or drop gold in the new cell.
     if (currDirection != STAND) {
         checkForGold();
     }
 
-    // Find the next direction that could lead to the hero.
+    // Find the next move that could lead to the hero.
+    Direction nextDirection;
+    AnimationType nextAnimation;
+    bool fallingState = setNextMovement (ENEMY, cellType, nextDirection,
+                                         nextAnimation, interval);
     dbe3 "\n");
-    Direction nextDirection = levelPlayer->getEnemyDirection
-                                           (gridI, gridJ, leftRightSearch);
-    dbk3 << spriteId << "at" << gridI << gridJ << "===>" << nextDirection;
-    Flags     OK            = grid->enemyMoves (gridI, gridJ);
 
     // If the enemy just left a hole, change it to empty.  Must execute this
     // code AFTER finding the next direction and valid moves, otherwise the
@@ -369,49 +413,22 @@ void KGrEnemy::run (const int scaledTime)
     if ((currDirection == UP) &&
         (grid->cellType  (gridI, gridJ + 1) == USEDHOLE)) {
         dbk3 << spriteId << "Hole emptied at" << gridI << (gridJ + 1);
-        if (grid->enemyOccupied (gridI, gridJ + 1) < 0) // IDW TODO needed?
-        grid->changeCellAt (gridI, gridJ + 1, HOLE);
-    }
-
-    // kDebug() << "Enemy" << spriteId << "Direction" << nextDirection
-             // << "Flags" << OK << "at" << gridI << gridJ;
-
-    AnimationType nextAnimation = aType [nextDirection];
-    bool onEnemy  = levelPlayer->standOnEnemy (spriteId, gridX, gridY);
-    if (onEnemy) dbk3 << spriteId << "STANDING ON ENEMY - dirn"
-                          << nextDirection;
-    // TODO - Do a better, smoother job of falling while standing on enemy.
-    // TODO - Especially, do not do a climb-down action.
-    bool canStand = (OK & dFlag [STAND]) || (OK == 0) || onEnemy;
-    char cellType = grid->cellType (gridI, gridJ);
-    interval      = runTime;
-
-    // If arrived in USEDHOLE (as "reserved" above), start trapTime.
-    if (cellType == USEDHOLE) {
-        if (currDirection == DOWN) {
-            nextDirection = STAND;
-            // TODO - Check that the trap time is the same as in KGr 3.0.
-            // TODO - Ugly 7.  Ugly arithmetic too.  270 * 7 / 4 = 472.5.
-            interval = (trapTime * 7) / pointsPerCell;
-            dbk3 << spriteId << "Arrived in USEDHOLE at" << gridI << gridJ;
-        }
-        else {
-            nextDirection = UP;
-            nextAnimation = CLIMB_U;
-            dbk3 << spriteId << "Leaving USEDHOLE at" << gridI << gridJ;
+        if (grid->enemyOccupied (gridI, gridJ + 1) < 0) { // IDW TODO needed?
+            grid->changeCellAt (gridI, gridJ + 1, HOLE);
         }
     }
-    else if (! canStand) {
-        nextDirection = DOWN;
-        nextAnimation = (currDirection == RIGHT) ? FALL_R : FALL_L;
-        interval = fallTime;
-    }
-    else if (! (OK & dFlag [nextDirection])) {
-        nextDirection = STAND;
-    }
 
-    if (nextDirection == STAND) {
-        nextAnimation = currAnimation;
+    dbe2 "%d sprite %02d [%02d,%02d] timeLeft %03d currDir %d nextDir %d "
+            "currAnim %d nextAnim %d\n",
+      pointCtr, spriteId, gridI, gridJ, timeLeft,
+      currDirection, nextDirection, currAnimation, nextAnimation);
+
+    if (fallingState != falling) {
+        falling = fallingState;
+        if (falling) {
+            t.restart();
+            dbe1 "T %05d id %02d Start falling\n", t.elapsed(), spriteId);
+        }
     }
 
     // Check for a possible collision with another enemy.
@@ -427,17 +444,9 @@ void KGrEnemy::run (const int scaledTime)
         pointCtr = pointsPerCell - 1; // TODO - Improve & stress-test KGr rules.
     }
 
-    if (((nextAnimation == RUN_R) || (nextAnimation == RUN_L)) &&
-        (cellType == BAR)) {
-        nextAnimation = (nextDirection == RIGHT) ? CLIMB_R : CLIMB_L;
-    }
-
     timeLeft += interval;
     deltaX = movement [nextDirection][X];
     deltaY = movement [nextDirection][Y];
-
-    dbe2 "%d sprite %02d [%02d,%02d] timeLeft %03d currDir %d nextDir %d\n",
-      pointCtr, spriteId, gridI, gridJ, timeLeft, currDirection, nextDirection);
 
     // If moving, occupy the next cell in the enemy's path and release this one.
     if (nextDirection != STAND) {
@@ -491,11 +500,15 @@ void KGrEnemy::checkForGold()
     char cell = grid->cellType (gridI, gridJ);
     uchar random;
     if ((nuggets == 0) && (cell == NUGGET)) {
-        random = levelPlayer->randomByte ((uchar) 100);
-        dbk3 << "Random" << random << "at NUGGET" << gridI << gridJ;
-        if (rules->alwaysCollectNugget() || (random >= 80)) {
+        bool collect = rules->alwaysCollectNugget();
+        if (! collect) {
+            random = levelPlayer->randomByte ((uchar) 100);
+            dbk3 << "Random" << random << "at NUGGET" << gridI << gridJ;
+            collect = (random >= 80);
+        }
+        if (collect) {
             levelPlayer->runnerGotGold (spriteId, gridI, gridJ, true);
-            dbk3 << "Enemy" << spriteId << "at" << gridI << gridJ
+            dbk1 << "Enemy" << spriteId << "at" << gridI << gridJ
                 << "COLLECTS gold";
             nuggets = 1;
         }
@@ -503,13 +516,12 @@ void KGrEnemy::checkForGold()
     else if ((nuggets > 0) && (cell == FREE)) {
         // Dropping gold is a random choice, but do not drop in thin air.
         char below = grid->cellType (gridI, gridJ + 1);
-        // TODO - Do not drop above a BAR.  Affects recording of Initiation 10.
-        if ((below != FREE) && (below != NUGGET)) {
+        if ((below != FREE) && (below != NUGGET) && (below != BAR)) {
             random = levelPlayer->randomByte ((uchar) 100);
             dbk3 << "Random" << random << "for DROP " << gridI << gridJ;
             if (random >= 93) {
                 levelPlayer->runnerGotGold (spriteId, gridI, gridJ, false);
-                dbk3 << "Enemy" << spriteId << "at" << gridI << gridJ
+                dbk1 << "Enemy" << spriteId << "at" << gridI << gridJ
                     <<"DROPS gold";
                 nuggets = 0;
             }
@@ -524,7 +536,6 @@ void KGrEnemy::dieAndReappear()
         nuggets = 0;			// Set lost-flag in runnerGotGold().
         levelPlayer->runnerGotGold (spriteId, gridI, gridJ, false, true);
     }
-    // TODO - emit killed (75);		// Killed an enemy: score 75.
 
     if (rules->reappearAtTop()) {
         // Traditional or Scavenger rules.
@@ -567,19 +578,13 @@ void KGrEnemy::releaseCell (const int i, const int j)
     dbe3 "%02d Leaves [%02d,%02d] to %02d\n", spriteId, i, j, prevInCell);
 }
 
-void KGrEnemy::showState (char option)
+void KGrEnemy::showState()
 {
     fprintf (stderr, "(%02d,%02d) - Enemy  [%02d]", gridI, gridJ, spriteId);
-    switch (option) {
-    // TODO - Remove the 'p'/'s' parameter here and in all calls.
-    case 'p':
-    case 's':
-        fprintf (stderr, " gold %02d dirn %d ctr %d",
-                      nuggets, currDirection, pointCtr);
-        fprintf (stderr, " gridX %3d gridY %3d anim %d prev %02d\n",
-                     gridX, gridY, currAnimation, prevInCell);
-        break;
-    }
+    fprintf (stderr, " gold %02d dirn %d ctr %d",
+                  nuggets, currDirection, pointCtr);
+    fprintf (stderr, " gridX %3d gridY %3d anim %d prev %02d\n",
+                 gridX, gridY, currAnimation, prevInCell);
 }
 
 #include "kgrrunner.moc"

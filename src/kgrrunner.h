@@ -19,6 +19,7 @@
 #define KGRRUNNER_H
 
 #include <QObject>
+#include <QTime> // IDW
 
 #include "kgrglobals.h"
 
@@ -112,14 +113,28 @@ protected:
     void             getRules();
 
     Situation        situation (const int scaledTime);
+    char             nextCell();
+    bool             setNextMovement (const char spriteType,
+                                      const char cellType,
+                                      Direction & dir,
+                                      AnimationType & anim, int & interval);
 
+    bool             falling;
     Direction        currDirection;
     AnimationType    currAnimation;
+
+    int              runTime;		// Time interval for hero/enemy running.
+    int              fallTime;		// Time interval for hero/enemy falling.
+    int              enemyFallTime;	// Time interval for enemy falling.
+    int              trapTime;		// Time interval for which an enemy can
+					// stay trapped in a brick.
 
     int              interval;		// The runner's current time interval.
     int              timeLeft;		// Time till the runner's next action.
 
     bool             leftRightSearch;	// KGoldrunner-rules enemy search-mode.
+
+    QTime            t; // IDW
 };
 
 
@@ -194,13 +209,10 @@ public:
     /**
      * Implements the author's debugging aid that shows the hero's state.
      */
-    void             showState (char option);
+    void             showState();
 
 private:
     int              nuggets;		// Number of gold pieces remaining.
-
-    static int       runTime;		// The time interval for running.
-    static int       fallTime;		// The time interval for falling.
 };
 
 
@@ -275,7 +287,7 @@ public:
     /**
      * Implements the author's debugging aid that shows the enemy's state.
      */
-    void             showState (char option);
+    void             showState();
 
 private:
     char             rulesType;		// Rules type and enemy search method.
@@ -284,11 +296,6 @@ private:
     int              birthI;		// Enemy's starting position (used in
     int              birthJ;		// KGoldrunner rules for re-birth).
     int              prevInCell;	// ID of previous enemy in cell or -1.
-
-    static int       runTime;		// The time interval for running.
-    static int       fallTime;		// The time interval for falling.
-    static int       trapTime;		// Time interval for which an enemy can
-					// stay trapped in a brick.
 
     void             dropGold();
     void             checkForGold();

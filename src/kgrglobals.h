@@ -66,20 +66,6 @@ const int graphicsCycle = 8;		// Animation frames per running cycle.
 
 const double DROPNUGGETDELAY = 70.0;	// Enemy holds gold for avg. 12.5 cells.
 
-enum Position		{RIGHTWALK1,  RIGHTWALK2,  RIGHTWALK3,  RIGHTWALK4,
-			 RIGHTWALK5,  RIGHTWALK6,  RIGHTWALK7,  RIGHTWALK8,
-                         LEFTWALK1,   LEFTWALK2,   LEFTWALK3,   LEFTWALK4,
-			 LEFTWALK5,   LEFTWALK6,   LEFTWALK7,   LEFTWALK8,
-                         RIGHTCLIMB1, RIGHTCLIMB2, RIGHTCLIMB3, RIGHTCLIMB4,
-			 RIGHTCLIMB5, RIGHTCLIMB6, RIGHTCLIMB7, RIGHTCLIMB8,
-                         LEFTCLIMB1,  LEFTCLIMB2,  LEFTCLIMB3,  LEFTCLIMB4,
-			 LEFTCLIMB5,  LEFTCLIMB6,  LEFTCLIMB7,  LEFTCLIMB8,
-                         CLIMB1,      CLIMB2,
-                         FALL1,       FALL2};
-
-// TODO - Is this enum still needed?
-enum Status		{STANDING, FALLING, WALKING, CLIMBING, CAPTIVE};
-
 // Keyboard action codes
 enum KBAction		{KB_UP, KB_DOWN, KB_LEFT, KB_RIGHT,
                          KB_DIGLEFT, KB_DIGRIGHT, KB_STOP};
@@ -180,6 +166,7 @@ enum Setting       {PLAY_SOUNDS,			// Sound effects on/off.
 
 const int  ConcreteWall = 1;
 
+// TODO - Should these be uchar?
 typedef char    DirectionFlag;
 typedef char    AccessFlag;
 typedef char    Flags;
@@ -210,7 +197,7 @@ enum AnimationType {
                 CLIMB_R,    CLIMB_L,
                 CLIMB_U,    CLIMB_D,
                 FALL_R,     FALL_L,
-                OPEN_BRICK, CLOSE_BRICK};
+                OPEN_BRICK, CLOSE_BRICK, nAnimationTypes};
 
 const AnimationType aType [nDirections] = {
                 FALL_L, RUN_R, RUN_L, CLIMB_U, CLIMB_D};
