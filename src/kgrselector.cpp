@@ -15,6 +15,8 @@
 #include "kgrgameio.h"
 
 #include <KGlobalSettings>
+#include <KConfigGroup>
+
 #include <QTextStream>
 #include <QGridLayout>
 #include <QLabel>
@@ -170,7 +172,7 @@ void KGrSLDialog::setupWidgets()
     QGridLayout * grid = new QGridLayout;
     mainLayout->addLayout (grid);
 
-    number    = new QScrollBar (Qt::Vertical, dad); // IDW
+    number    = new QScrollBar (Qt::Vertical, dad);
     number->setRange (1, 150);
     number->setSingleStep (1);
     number->setPageStep (10);
@@ -288,9 +290,9 @@ void KGrSLDialog::setupWidgets()
     // Only enable name and hint dialog here if saving a new or edited level.
     // At other times the name and hint have not been loaded or initialised yet.
     if ((slAction == SL_CREATE) || (slAction == SL_SAVE)) {
-        // TODO - Have to re-implement connection to editNameAndHint().
-        // connect (levelNH,     SIGNAL (clicked()),
-                 // gameControl, SLOT   (editNameAndHint()));
+        // Signal editNameAndHint() relays the click to a KGrEditor connection.
+        connect (levelNH, SIGNAL (clicked()),
+                 this,    SIGNAL (editNameAndHint()));
     }
     else {
         levelNH->setEnabled (false);
@@ -395,6 +397,9 @@ void KGrSLDialog::slGame()
         display->setMaximum (1);
     }
 
+    KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
+    int lev = 1;
+
     // Set a default level number for the selected game.
     switch (slAction) {
     case SL_ANY:
@@ -404,11 +409,14 @@ void KGrSLDialog::slGame()
     case SL_DELETE:
     case SL_UPD_GAME:
         // If selecting the current game, use the current level number.
-        if (n == N)
+        if (n == N) {
             number->setValue (defaultLevel);
-        else
-            // TODO - Use the last level played in that game (from KConfig).
-            number->setValue (1);			// Else use level 1.
+        }
+        // Else use the last level played in the selected game (from KConfig).
+        else {
+            lev = gameGroup.readEntry ("Level_" + myGameList.at (n)->prefix, 1);
+            number->setValue (lev);			// Else use level 1.
+        }
         break;
     case SL_CREATE:
     case SL_SAVE:

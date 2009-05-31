@@ -149,11 +149,13 @@ public:
      */
     bool editGame (int pGameIndex);
 
+public slots:
     /**
      * Run a dialog in which the name and hint of a level can be edited.
      */
     void editNameAndHint();
 
+public:
     /**
      * Set the next object for the editor to paint, e.g. brick, enemy, ladder.
      *

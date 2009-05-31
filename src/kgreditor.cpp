@@ -623,6 +623,7 @@ int KGrEditor::selectLevel (int action, int requestedLevel, int & requestedGame)
     KGrSLDialog * sl = new KGrSLDialog (action, requestedLevel, requestedGame,
                                         gameList, systemDataDir, userDataDir,
                                         view);
+    connect (sl, SIGNAL (editNameAndHint()), this, SLOT (editNameAndHint()));
     bool selected = sl->selectLevel (selectedGame, selectedLevel);
     delete sl;
 

@@ -55,6 +55,9 @@ public:
 
     bool selectLevel (int & selectedGame, int & selectedLevel);
 
+signals:
+    void editNameAndHint();
+
 private slots:
     void slSetGames (int cIndex);
     void slGame();

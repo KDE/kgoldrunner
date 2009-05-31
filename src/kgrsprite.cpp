@@ -23,8 +23,9 @@ KGrSprite::KGrSprite (KGameCanvasAbstract * canvas, const char type,
     :
     KGameCanvasPixmap (canvas),
 
+    m_frame           (-1),	// Make move() change pixmap if first frame = 0.
     m_frameOffset     (0),	// No offset at first (e.g. carrying no gold).
-    m_loc             (-1, -1),
+    m_loc             (-1, -1),	// Make move() change pos if first pos = (0,0).
     m_type            (type),
     m_tickTime        (tickTime),
     m_stationary      (true),	// Animation is OFF at first.
@@ -37,9 +38,6 @@ KGrSprite::KGrSprite (KGameCanvasAbstract * canvas, const char type,
     m_dy              (0),
     m_dt              (0)
 {
-    // TODO - Can we use m_frame (-1), m_frameOffset (0), m_loc (-1, -1), above?
-    m_frame   = -1;		// Makes move() work OK if first frame is 0.
-    m_loc.setX (-1);		// Makes move() work OK if first (x,y) is (0,0).
 }
 
 KGrSprite::~KGrSprite()

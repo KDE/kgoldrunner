@@ -242,7 +242,8 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
                 }
 
                 // Force re-draw of both pixmap and position.
-                sprite->move (0, 0, (spriteframe > 0) ? (spriteframe - 1) : 1);
+                sprite->move ((spriteloc.x() > 0) ? 0 : 1, 0,
+                              (spriteframe > 0) ? (spriteframe - 1) : 1);
                 sprite->move (spriteloc.x(), spriteloc.y(), spriteframe);
             }
         }
@@ -544,7 +545,7 @@ int KGrCanvas::makeSprite (const char type, int i, int j)
         emptySprites = 0;
     }
 
-    int frame1   = FALL1;
+    int frame1   = animationStartFrames [FALL_L];
     double scale = (double) imgW / (double) bgw;
 
     switch (type) {
