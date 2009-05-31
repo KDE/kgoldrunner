@@ -1271,13 +1271,6 @@ void KGrGame::saveGame()		// Save game ID, score and level.
         return;				//  Avoid saving in playback mode.
     }
     // TODO - Smart save ...
-    // TODO - How to tell if the hero has started moving?
-    // if (hero->started) {
-        myMessage (view, i18n ("Save Game"),
-            i18n ("Please note: for reasons of simplicity, your saved game "
-            "position and score will be as they were at the start of this "
-            "level, not as they are now."));
-    // }
 
     QDate today = QDate::currentDate();
     QTime now =   QTime::currentTime();
@@ -1325,7 +1318,10 @@ void KGrGame::saveGame()		// Save game ID, score and level.
     if (KGrGameIO::safeRename (userDataDir+"savegame.tmp",
                                userDataDir+"savegame.dat")) {
         KGrMessage::information (view, i18n ("Save Game"),
-                                i18n ("Your game has been saved."));
+            i18n ("Please note: for reasons of simplicity, your saved game "
+            "position and score will be as they were at the start of this "
+            "level, not as they are now."));
+            // TODO - Needed in smart save. i18n ("Your game has been saved."));
     }
     else {
         KGrMessage::information (view, i18n ("Save Game"),

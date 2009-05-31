@@ -259,12 +259,14 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
 
     // Create and position the score and lives text areas
     QFont f;
-    f.setPixelSize (imgH - 2);
+    f.setPixelSize ((imgH * 2) / 3);		// Set font 2/3 of cell height.
     f.setWeight (QFont::Bold);
     f.setStretch (QFont::Expanded);
     m_scoreText->setFont (f);
     m_scoreText->setColor (theme.textColor());
-    int vTextPos = (1 + imgH) * nCellsH + 1;
+
+    // Center the text in the second cell below the play area (below border).
+    int vTextPos = (nCellsH + 1) * imgH + (imgH / 6);
     QPoint scorePos = topLeft + QPoint (imgW, vTextPos);
 
     m_livesText->setFont (f);
@@ -449,20 +451,24 @@ void KGrCanvas::setTitle (const QString &newTitle)
 
 void KGrCanvas::makeTitle()
 {
+    // TODO - Used to use baseScale, baseFontSize and scaleStep: obsolete now?
     if (title != 0)
         title->close();			// Close and delete previous title.
 
+    QFont f (fontInfo().family(), 12, QFont::Bold);
+    f.setPixelSize ((imgH * 2) / 3);	// Set font 2/3 of cell height.
     title = new QLabel ("", this);
+
+    // Use the top half of the space above the play area (above the border).
     int lw = imgW / lineDivider;	// Line width (as used in makeBorder()).
-    title->resize (width(), topLeft.y() - lw);
+    title->resize (width(), (topLeft.y() - lw) / 2);
     title->move (0, 0);
     QPalette palette;
     palette.setColor (title->backgroundRole(), theme.borderColor());
     palette.setColor (title->foregroundRole(), theme.textColor());
     title->setPalette (palette);
-    title->setFont (QFont (fontInfo().family(),
-                 (baseFontSize * scaleStep) / baseScale, QFont::Bold));
-    title->setAlignment (Qt::AlignCenter);
+    title->setFont (f);
+    title->setAlignment (Qt::AlignBottom | Qt::AlignHCenter);
     title->setAttribute (Qt::WA_QuitOnClose, false); //Otherwise the close above might exit app
     title->raise();
     title->show();
