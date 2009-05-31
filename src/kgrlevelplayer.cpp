@@ -58,7 +58,7 @@ KGrLevelPlayer::KGrLevelPlayer (QObject * parent, KRandomSequence * pRandomGen)
 {
     t.start(); // IDW
 
-    dbgLevel = 2;
+    dbgLevel = 0;
 }
 
 int KGrLevelPlayer::playerCount = 0;
