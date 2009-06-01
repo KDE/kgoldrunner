@@ -134,7 +134,6 @@ void KGrLevelGrid::calculateCellAccess (const int i, const int j)
 {
     Flags access = 0;
     char  here   = cellType (i, j);
-    // TODO - Maybe we can just RETURN if this cell is CONCRETE.  Always works?
     if (here == CONCRETE) {
         // If edge-cell or other CONCRETE, no calculation (avoid index errors).
         return;
@@ -167,16 +166,6 @@ void KGrLevelGrid::calculateCellAccess (const int i, const int j)
 	access |= dFlag [UP];
     }
 
-    int enter = (access & ENTERABLE)         ? 1 : 0;
-    int stand = (access & dFlag [STAND])     ? 1 : 0;
-    int u     = (access & dFlag [UP])        ? 1 : 0;
-    int d     = (access & dFlag [DOWN])      ? 1 : 0;
-    int l     = (access & dFlag [LEFT])      ? 1 : 0;
-    int r     = (access & dFlag [RIGHT])     ? 1 : 0;
-    // if (below == HOLE)
-    // fprintf (stderr, "[%02d,%02d] %c %02x E %d S %d U %d D %d L %d R %d ***\n",
-	     // i, j, here, access, enter, stand, u, d, l, r);
-
     // Mask out directions that are blocked above, below, L or R, but not for
     // concrete/brick at edge of grid (or elsewhere) to avoid indexing errors.
     if (access != 0) {
@@ -196,24 +185,7 @@ void KGrLevelGrid::calculateCellAccess (const int i, const int j)
         }
     }
 
-    enter = (access & ENTERABLE)         ? 1 : 0;
-    stand = (access & dFlag [STAND])     ? 1 : 0;
-    u     = (access & dFlag [UP])        ? 1 : 0;
-    d     = (access & dFlag [DOWN])      ? 1 : 0;
-    l     = (access & dFlag [LEFT])      ? 1 : 0;
-    r     = (access & dFlag [RIGHT])     ? 1 : 0;
-    // if (below == HOLE)
-    // fprintf (stderr, "[%02d,%02d] %c %02x E %d S %d U %d D %d L %d R %d ***\n",
-	     // i, j, here, access, enter, stand, u, d, l, r);
     heroAccess [index (i, j)]  = access;
-    enter = (access & ENTERABLE)         ? 1 : 0;
-    stand = (access & dFlag [STAND])     ? 1 : 0;
-    u     = (access & dFlag [UP])        ? 1 : 0;
-    d     = (access & dFlag [DOWN])      ? 1 : 0;
-    l     = (access & dFlag [LEFT])      ? 1 : 0;
-    r     = (access & dFlag [RIGHT])     ? 1 : 0;
-    // fprintf (stderr, "[%02d,%02d] %c %02x E %d S %d U %d D %d L %d R %d\n",
-	     // i, j, here, access, enter, stand, u, d, l, r);
     
     // Enemy access is the same as the hero's when no holes are open.
     enemyAccess [index (i, j)] = heroAccess [index (i, j)];
@@ -227,16 +199,6 @@ void KGrLevelGrid::calculateCellAccess (const int i, const int j)
         mask = (cellType (i + 1, j) == HOLE) ? (dFlag [RIGHT] | mask) : mask;
         enemyAccess [index (i, j)] &= ~mask;	// Block access to holes at L/R.
     }
-    // TODO - Remove the debugging code below.
-    access = enemyAccess [index (i, j)];
-    enter = (access & ENTERABLE)         ? 1 : 0;
-    stand = (access & dFlag [STAND])     ? 1 : 0;
-    u     = (access & dFlag [UP])        ? 1 : 0;
-    d     = (access & dFlag [DOWN])      ? 1 : 0;
-    l     = (access & dFlag [LEFT])      ? 1 : 0;
-    r     = (access & dFlag [RIGHT])     ? 1 : 0;
-    // fprintf (stderr, "[%02d,%02d] %c %02x E %d S %d U %d D %d L %d R %d Enem\n",
-	     // i, j, here, access, enter, stand, u, d, l, r);
 }
 
 void KGrLevelGrid::placeHiddenLadders()

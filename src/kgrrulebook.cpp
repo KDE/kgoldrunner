@@ -85,7 +85,6 @@ Direction KGrTraditionalRules::findBestWay (const int eI, const int eJ,
                                             const int hI, const int hJ,
                                             KGrLevelGrid * pGrid,
                                             bool /* leftRightSearch unused */)
-// TODO - Should be const ...               const KGrLevelGrid * pGrid)
 {
     grid = pGrid;
     if (grid->cellType (eI, eJ) == USEDHOLE) {	// Could not get out of hole
@@ -507,7 +506,6 @@ Direction KGrKGoldrunnerRules::findBestWay (const int eI, const int eJ,
                                             const int hI, const int hJ,
                                             KGrLevelGrid * pGrid,
                                             bool leftRightSearch)
-// TODO - Should be const ...               const KGrLevelGrid * pGrid)
 {
     dbk2 << eI << eJ << hI << hJ;
     grid = pGrid;
@@ -700,7 +698,6 @@ Direction KGrScavengerRules::findBestWay   (const int eI, const int eJ,
                                             const int hI, const int hJ,
                                             KGrLevelGrid * pGrid,
                                             bool /* leftRightSearch unused */)
-// TODO - Should be const ...               const KGrLevelGrid * pGrid)
 {
     dbk2 << eI << eJ << hI << hJ;
     grid = pGrid;

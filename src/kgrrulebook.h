@@ -64,7 +64,6 @@ public:
                                    const int hI, const int hJ,
                                    KGrLevelGrid * pGrid,
                                    bool leftRightSearch = true) = 0;
-// TODO - Make const ...           const KGrLevelGrid * pGrid) = 0;
 
 protected:
     char mRules;		///< The type of rules and enemy search method.
@@ -98,7 +97,6 @@ public:
                             const int hI, const int hJ,
                             KGrLevelGrid * pGrid,
                             bool leftRightSearch = true);
-// TODO - Make const ...    const KGrLevelGrid * pGrid);
 
 private:
     Direction searchUp     (int eI, int eJ, int hJ);
@@ -128,7 +126,6 @@ public:
                             const int hI, const int hJ,
                             KGrLevelGrid * pGrid,
                             bool leftRightSearch = true);
-// TODO - Make const ...    const KGrLevelGrid * pGrid);
 
 private:
     Direction findWayUp    (const int eI, const int eJ);
@@ -153,7 +150,6 @@ public:
                            const int hI, const int hJ,
                            KGrLevelGrid * pGrid,
                            bool leftRightSearch = true);
-// TODO - Make const ...    const KGrLevelGrid * pGrid);
 };
 
 #endif // KGRRULEBOOK_H
