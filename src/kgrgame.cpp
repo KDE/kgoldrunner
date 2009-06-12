@@ -102,9 +102,16 @@ KGrGame::KGrGame (KGrCanvas * theView,
 
 KGrGame::~KGrGame()
 {
-    while (! gameList.isEmpty())
+    while (! gameList.isEmpty()) {
         delete gameList.takeFirst();
+    }
     delete randomGen;
+    if (levelPlayer) {
+        delete levelPlayer;
+    }
+    if (recording) {
+        delete recording;
+    }
 }
 
 // Flags to control author's debugging aids.
@@ -301,8 +308,7 @@ void KGrGame::editActions (const int action)
 
     int game = gameIndex, lev = level;
     editor->getGameAndLevel (game, lev);
-    kDebug() << "Game used" << gameList.at(gameIndex)->name << "level" << level;
-    kDebug() << "Editor used" << gameList.at(game)->name << "level" << lev;
+
     if (((game != gameIndex) || (lev != level)) && (lev != 0)) {
         gameIndex = game;
         prefix    = gameList.at (gameIndex)->prefix;
@@ -1009,6 +1015,7 @@ void KGrGame::goUpOneLevel()
 
         freeze (ProgramPause, false);
         level = 0;		// Game completed: display the "ENDE" screen.
+        // TODO - Do NOT go on and save game-prefix and level 0 in KConfig.
     }
     else {
         level++;		// Go up one level.
@@ -1315,7 +1322,7 @@ void KGrGame::saveGame()		// Save game ID, score and level.
 
     file2.close();
 
-    if (KGrGameIO::safeRename (userDataDir+"savegame.tmp",
+    if (KGrGameIO::safeRename (view, userDataDir+"savegame.tmp",
                                userDataDir+"savegame.dat")) {
         KGrMessage::information (view, i18n ("Save Game"),
             i18n ("Please note: for reasons of simplicity, your saved game "
@@ -1607,7 +1614,7 @@ void KGrGame::checkHighScore()
 
     high2.close();
 
-    if (KGrGameIO::safeRename (high2.fileName(),
+    if (KGrGameIO::safeRename (view, high2.fileName(),
                 userDataDir + "hi_" + prefix + ".dat")) {
         // Remove a redundant popup message.
         // KGrMessage::information (view, i18n ("Save High Score"),

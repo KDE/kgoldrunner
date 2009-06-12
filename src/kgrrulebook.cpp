@@ -91,8 +91,6 @@ Direction KGrTraditionalRules::findBestWay (const int eI, const int eJ,
         return UP;				// (e.g. brick above is closed):
     }						// but keep trying.
 
-    // TODO - Add !standOnEnemy() && as a condition here.
-    // TODO - And maybe !((*playfield)[x][y+1]->whatIam() == HOLE)) not just out of hole,
     bool canStand = (grid->enemyMoves (eI, eJ) & dFlag [STAND]) ||
                     (grid->enemyOccupied (eI, eJ + 1) > 0);
     if (! canStand) {
@@ -368,16 +366,6 @@ int KGrTraditionalRules::distanceDown (int x, int y, int deltah)
         }
     }
     if (rungs == 1) {
-        // TODO - Check for another enemy in this space, maybe in KGrRunner.
-        // TODO - Maybe the presence of another enemy below could be a bool
-        // TODO - parameter for findBestWay() ...  NO, that won't work, we
-        // TODO - need to know if there is an enemy ANYWHERE under a LR path.
-        // QListIterator<KGrEnemy *> i (*enemies);
-        // while (i.hasNext()) {
-            // KGrEnemy * enemy = i.next();
-            // if ((x*16==enemy->getx()) && (y*16+16==enemy->gety()))
-                // rungs = 0;		// Pit is blocked.  Find another way.
-        // }
         if (grid->enemyOccupied (x, y + 1) > 0) {
             dbk2 << "Pit block =" << grid->enemyOccupied (x, y + 1)
                      << "at" << x << (y + 1);
@@ -427,9 +415,6 @@ int KGrTraditionalRules::canWalkLR (int direction, int x, int y)
 
 bool KGrTraditionalRules::willNotFall (int x, int y)
 {
-    // TODO - Remove ... int c, cmax;
-    // TODO - Remove ... KGrEnemy *enemy;
-
     // Check the ceiling.
     switch (grid->cellType (x, y)) {
     case LADDER:
@@ -443,32 +428,20 @@ bool KGrTraditionalRules::willNotFall (int x, int y)
     switch (grid->cellType (x, y + 1)) {
 
     // Cases where the enemy knows he will fall.
-    case FREE:
-    case HLADDER:
-    case FBRICK:
-
     // N.B. The enemy THINKS he can run over a NUGGET, a buried BAR or a HOLE.
     // The last of these cases allows the hero to trap the enemy, of course.
 
     // Note that there are several Traditional levels that require an enemy to
     // be trapped permanently in a pit containing a nugget, as he runs towards
     // you.  It is also possible to use a buried BAR in the same way.
-
-        // TODO - Check for another enemy down below, maybe in KGrRunner.
-        // TODO - Maybe the presence of another enemy below could be a bool
-        // TODO - parameter for findBestWay() ...  NO, that won't work, we
-        // TODO - need to know if there is an enemy ANYWHERE under a LR path.
+    case FREE:
+    case HLADDER:
+    case FBRICK:
         if (grid->enemyOccupied (x, y + 1) > 0) {
             dbk2 << "Occupied =" << grid->enemyOccupied (x, y + 1)
                      << "at" << x << (y + 1);
             return true;
         }
-        // cmax = enemies->count();
-        // for (c = 0; c < cmax; c++) {
-            // enemy = enemies->at (c);
-            // if ((enemy->getx()==16*x) && (enemy->gety()==16*(y+1)))
-                // return true;		// Standing on a friend.
-        // }
         return false;			// Will fall: there is no floor.
         break;
 
@@ -514,8 +487,6 @@ Direction KGrKGoldrunnerRules::findBestWay (const int eI, const int eJ,
         return UP;				// (e.g. brick above is closed):
     }						// but keep trying.
 
-    // TODO - Add !standOnEnemy() && as a condition here.
-    // TODO - And maybe !((*playfield)[x][y+1]->whatIam() == HOLE)) not just out of hole,
     bool canStand = (grid->enemyMoves (eI, eJ) & dFlag [STAND]) ||
                     (grid->enemyOccupied (eI, eJ + 1) > 0);
     if (! canStand) {
@@ -549,6 +520,11 @@ Direction KGrKGoldrunnerRules::findWayUp (const int eI, const int eJ)
 {
     int i, k;
     i = k = eI;
+
+    // Must be able to stand AND move through cells when looking left or right.
+    Flags leftOK  = (dFlag [LEFT] | dFlag [STAND]);
+    Flags rightOK = (dFlag [RIGHT] | dFlag [STAND]);
+
     if (grid->enemyMoves (eI, eJ) & dFlag [UP]) {
         return UP;			// Go up from current position.
     }
@@ -558,7 +534,7 @@ Direction KGrKGoldrunnerRules::findWayUp (const int eI, const int eJ)
                 if (grid->enemyMoves (i, eJ) & dFlag [UP]) {
                     return LEFT;	// Go left, then up later.
                 }
-                else if (! (grid->enemyMoves (i--, eJ) & dFlag [LEFT])) {
+                else if ((grid->enemyMoves (i--, eJ) & leftOK) != leftOK) {
                     i = -1;
                 }
             }
@@ -566,24 +542,21 @@ Direction KGrKGoldrunnerRules::findWayUp (const int eI, const int eJ)
                 if (grid->enemyMoves (k, eJ) & dFlag [UP]) {
                     return RIGHT;	// Go right, then up later.
                 }
-                else if (!(grid->enemyMoves (k++, eJ) & dFlag [RIGHT])) {
+                else if ((grid->enemyMoves (k++, eJ) & rightOK) != rightOK) {
                     k = FIELDWIDTH + 1;
                 }
             }
         }
     }
-    // BUG FIX - Ian W., 30/4/01 - Don't leave an enemy standing in mid air.
-    if (false) // TODO - Was supposed to be canStand() - maybe redundant now -
-               //        canStand() returned (firmGround || standOnEnemy()).
-        return DOWN;
-    else
-        return STAND;
+    return STAND;
 }
 
 Direction KGrKGoldrunnerRules::findWayDown (const int eI, const int eJ)
 {
     int i, k;
     i = k = eI;
+
+    // In this search, no need to test for STAND.  Fall and ladder are both OK.
     if (grid->enemyMoves (eI, eJ) & dFlag [DOWN]) {
         return DOWN;			// Go down from current position.
     }
@@ -614,13 +587,17 @@ Direction KGrKGoldrunnerRules::findWayLeft (const int eI, const int eJ)
 {
     int i, k;
     i = k = eJ;
-    if (grid->enemyMoves (eI, eJ) & dFlag [LEFT]) {
+
+    // Must be able to stand and move through cells when checking move-left.
+    Flags leftOK = (dFlag [LEFT] | dFlag [STAND]);
+
+    if ((grid->enemyMoves (eI, eJ) & leftOK) == leftOK) {
         return LEFT;			// Go left from current position.
     }
     else {
         while ((i >= 0) || (k <= FIELDHEIGHT)) {
             if (i >= 0) {
-                if (grid->enemyMoves (eI, i) & dFlag [LEFT]) {
+                if ((grid->enemyMoves (eI, i) & leftOK) == leftOK) {
                     return UP;		// Go up, then left later.
                 }
                 else if (! (grid->enemyMoves (eI, i--) & dFlag [UP])) {
@@ -628,7 +605,7 @@ Direction KGrKGoldrunnerRules::findWayLeft (const int eI, const int eJ)
                 }
             }
             if (k <= FIELDHEIGHT) {
-                if (grid->enemyMoves (eI, k) & dFlag [LEFT]) {
+                if ((grid->enemyMoves (eI, k) & leftOK) == leftOK) {
                     return DOWN;	// Go down, then left later.
                 }
                 else if (! (grid->enemyMoves (eI, k++) & dFlag [DOWN])) {
@@ -644,13 +621,17 @@ Direction KGrKGoldrunnerRules::findWayRight (const int eI, const int eJ)
 {
     int i, k;
     i = k = eJ;
-    if (grid->enemyMoves (eI, eJ) & dFlag [RIGHT]) {
+
+    // Must be able to stand and move through cells when checking move-right.
+    Flags rightOK = (dFlag [RIGHT] | dFlag [STAND]);
+
+    if ((grid->enemyMoves (eI, eJ) & rightOK) == rightOK) {
         return RIGHT;			// Go right from current position.
     }
     else {
         while ((i >= 0) || (k <= FIELDHEIGHT)) {
             if (i >= 0) {
-                if (grid->enemyMoves (eI, i) & dFlag [RIGHT]) {
+                if ((grid->enemyMoves (eI, i) & rightOK) == rightOK) {
                     return UP;		// Go up, then right later.
                 }
                 else if (!(grid->enemyMoves (eI, i--) & dFlag [UP])) {
@@ -658,7 +639,7 @@ Direction KGrKGoldrunnerRules::findWayRight (const int eI, const int eJ)
                 }
             }
             if (k <= FIELDHEIGHT) {
-                if (grid->enemyMoves (eI, k) & dFlag [RIGHT]) {
+                if ((grid->enemyMoves (eI, k) & rightOK) == rightOK) {
                     return DOWN;	// Go down, then right later.
                 }
                 else if (! (grid->enemyMoves (eI, k++) & dFlag [DOWN])) {

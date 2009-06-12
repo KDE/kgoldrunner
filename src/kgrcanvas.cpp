@@ -76,7 +76,7 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
 
     scaleStep = STEP;		// Initial scale is 1:1.
     baseScale = scaleStep;
-    baseFontSize = fontInfo().pointSize() + 2;
+    // IDW baseFontSize = fontInfo().pointSize() + 2;
     scaleStep = (int) ((scale * STEP) + 0.05);
     kDebug() << "Scale" << scale << "Scaled Step" << scaleStep;
 
@@ -680,7 +680,6 @@ void KGrCanvas::deleteSprite (const int spriteId)
         // Dug-brick sprite erased: restore the tile that was at that location.
         paintCell ((loc.x()/bgw) + 1, (loc.y()/bgh) + 1, BRICK, 0);
     }
-    // kDebug() << "Sprite ID" << spriteId << "emptySprites" << emptySprites;
 }
 
 void KGrCanvas::deleteAllSprites()

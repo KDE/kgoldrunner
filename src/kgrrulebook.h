@@ -34,8 +34,6 @@ public:
     KGrRuleBook (QObject * parent);
     virtual ~KGrRuleBook();
 
-    virtual void printRules() const = 0;
-
     bool variableTiming() const      { return mVariableTiming;      }
     bool alwaysCollectNugget() const { return mAlwaysCollectNugget; }
     bool runThruHole() const         { return mRunThruHole;         }
@@ -66,6 +64,15 @@ public:
                                    bool leftRightSearch = true) = 0;
 
 protected:
+    typedef struct {
+        int hwalk;
+        int hfall;
+        int ewalk;
+        int efall;
+        int ecaptive;
+        int hole;
+    } Timing;
+
     char mRules;		///< The type of rules and enemy search method.
 
     bool mVariableTiming;	///< More enemies imply less speed.
@@ -88,10 +95,6 @@ class KGrTraditionalRules : public KGrRuleBook
 public:
     KGrTraditionalRules (QObject * parent);
     ~KGrTraditionalRules();
-
-    void printRules() const { kDebug() << "Traditional rules." <<
-                                 mVariableTiming << mAlwaysCollectNugget <<
-                                 mRunThruHole << mReappearAtTop; }
 
     Direction findBestWay  (const int eI, const int eJ,
                             const int hI, const int hJ,
@@ -118,10 +121,6 @@ public:
     KGrKGoldrunnerRules (QObject * parent);
     ~KGrKGoldrunnerRules();
 
-    void printRules() const { kDebug() << "KGoldrunner rules." <<
-                                 mVariableTiming << mAlwaysCollectNugget <<
-                                 mRunThruHole << mReappearAtTop; }
-
     Direction findBestWay  (const int eI, const int eJ,
                             const int hI, const int hJ,
                             KGrLevelGrid * pGrid,
@@ -141,10 +140,6 @@ class KGrScavengerRules : public KGrRuleBook
 public:
     KGrScavengerRules (QObject * parent);
     ~KGrScavengerRules();
-
-    void printRules() const { kDebug() << "Scavenger rules." <<
-                                 mVariableTiming << mAlwaysCollectNugget <<
-                                 mRunThruHole << mReappearAtTop; }
 
     Direction findBestWay (const int eI, const int eJ,
                            const int hI, const int hJ,

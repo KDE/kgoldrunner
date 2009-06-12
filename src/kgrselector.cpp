@@ -600,6 +600,11 @@ KGrThumbNail::KGrThumbNail (QWidget * parent)
     // the thumbnail can be automatically re-painted when required.
 }
 
+KGrThumbNail::~KGrThumbNail()
+{
+    delete io;
+}
+
 void KGrThumbNail::setLevelData (const QString & dir, const QString& prefix,
                                  int level, QLabel * sln)
 {

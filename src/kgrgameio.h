@@ -90,7 +90,8 @@ public:
     /*
      * Rename a file, first removing any existing file that has the target name.
      */
-    static bool safeRename (const QString & oldName, const QString & newName);
+    static bool safeRename (QWidget * theView, const QString & oldName,
+                            const QString & newName);
 
 private:
     QWidget *           view;

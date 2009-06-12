@@ -285,6 +285,11 @@ public:
                                     prevInCell = prevEnemy; }
 
     /**
+     * Returns true if the enemy is falling.
+     */
+    inline bool      isFalling() { return falling; }
+
+    /**
      * Implements the author's debugging aid that shows the enemy's state.
      */
     void             showState();

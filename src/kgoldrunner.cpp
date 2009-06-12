@@ -168,10 +168,6 @@ KGoldrunner::KGoldrunner()
 void KGoldrunner::KGoldrunner_2()
 {
     kDebug() << "Entered constructor extension ...";
-    // NOW paint the main widget (title, menu, status bar, blank playfield).
-    // TODO - Necessary? It has just been done in main.cpp ... show();
-    show();
-    kDebug() << "Main Window show() done here ...";
 
     // Queue a call to the "initGame" method. This renders and paints the
     // initial graphics, but only AFTER the initial main-window resize events
@@ -199,7 +195,7 @@ void KGoldrunner::setupActions()
     // Load Saved Game...
     // --------------------------
 
-    QAction * a = KStandardGameAction::gameNew (gameMapper, SLOT(map()), this);
+    KAction * a = KStandardGameAction::gameNew (gameMapper, SLOT(map()), this);
     actionCollection()->addAction (a->objectName(), a);
     gameMapper->setMapping (a, NEW);
     a->setText (i18n ("&New Game..."));
@@ -307,7 +303,7 @@ void KGoldrunner::setupActions()
     // Edit a Level...
     // --------------------------
 
-    QAction * ed = editAction ("create_level", CREATE_LEVEL,
+    KAction * ed = editAction ("create_level", CREATE_LEVEL,
                                i18n ("&Create Level"),
                                i18n ("Create level."),
                                i18n ("Create a completely new level."));
@@ -544,21 +540,18 @@ void KGoldrunner::setupActions()
     keyControl ("show_enemy_6", i18n ("Show Enemy") + '6', Qt::Key_6, ENEMY_6);
 }
 
-QAction * KGoldrunner::gameAction (const QString & name,
+KAction * KGoldrunner::gameAction (const QString & name,
                                    const int       code,
                                    const QString & text,
                                    const QString & toolTip,
                                    const QString & whatsThis,
                                    const QKeySequence & key)
 {
-    QAction * ga = actionCollection()->addAction (name);
+    KAction * ga = actionCollection()->addAction (name);
     ga->setText (text);
     ga->setToolTip (toolTip);
     ga->setWhatsThis (whatsThis);
     if (! key.isEmpty()) {
-        // TODO - Shortcut for KAction "xxx" set with QShortcut::setShortcut()!
-        // TODO - See KAction documentation. [Runtime ERROR message]
-        // TODO - (xxx = kill_hero, increase_speed, decrease_speed)
         ga->setShortcut (key);
     }
     connect (ga, SIGNAL (triggered (bool)), tempMapper, SLOT (map()));
@@ -566,13 +559,13 @@ QAction * KGoldrunner::gameAction (const QString & name,
     return ga;
 }
 
-QAction * KGoldrunner::editAction (const QString & name,
+KAction * KGoldrunner::editAction (const QString & name,
                                    const int       code,
                                    const QString & text,
                                    const QString & toolTip,
                                    const QString & whatsThis)
 {
-    QAction * ed = actionCollection()->addAction (name);
+    KAction * ed = actionCollection()->addAction (name);
     ed->setText (text);
     ed->setToolTip (toolTip);
     ed->setWhatsThis (whatsThis);
@@ -641,8 +634,6 @@ void KGoldrunner::setupThemes()
 
     KConfigGroup gameGroup (KGlobal::config(), "KDEGame"); // Get prev theme.
 
-    // TODO change this to a ThemeName (or simply Theme) option. The theme
-    // should be searched in the themeFilepaths defined above.
     QString currentThemeFilepath = gameGroup.readEntry ("ThemeFilepath", "");
     kDebug()<< "Config() Theme" << currentThemeFilepath;
 
@@ -977,7 +968,7 @@ void KGoldrunner::setupEditToolbarActions()
              game, SLOT (editToolbarActions (int)));
     tempMapper = editToolbarMapper;
 
-    QAction * ed = editAction ("edit_hint", EDIT_HINT,
+    KAction * ed = editAction ("edit_hint", EDIT_HINT,
                                i18n ("Edit Name/Hint"),
                                i18n ("Edit level name or hint"),
                                i18n ("Edit text for the name or hint "

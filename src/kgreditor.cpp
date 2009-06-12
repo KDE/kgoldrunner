@@ -376,7 +376,7 @@ bool KGrEditor::moveLevelFile (int pGameIndex, int level)
     filePath1 = getLevelFilePath (gameList.at (fromC), fromL);
     filePath2 = filePath1;
     filePath2 = filePath2.append (".tmp");
-    if (! KGrGameIO::safeRename (filePath1, filePath2)) {
+    if (! KGrGameIO::safeRename (view, filePath1, filePath2)) {
         return false;
     }
 
@@ -413,7 +413,7 @@ bool KGrEditor::moveLevelFile (int pGameIndex, int level)
 
     // Rename the saved "fromL" file to become "toL".
     filePath1 = getLevelFilePath (gameList.at (toC), toL);
-    KGrGameIO::safeRename (filePath2, filePath1); // IDW
+    KGrGameIO::safeRename (view, filePath2, filePath1);
 
     editLevel = toL;
     emit showLevel (editLevel);
@@ -423,7 +423,6 @@ bool KGrEditor::moveLevelFile (int pGameIndex, int level)
 
 bool KGrEditor::deleteLevelFile (int pGameIndex, int level)
 {
-    // TODO - Coukd we delete a system level?  There appears to be no check.
     int action = SL_DELETE;
     gameIndex = pGameIndex;
 
@@ -510,6 +509,7 @@ bool KGrEditor::editGame (int pGameIndex)
         n = gameIndex;
     }
 
+    bool result = false;
     KGrECDialog * ec = new KGrECDialog (action, n, gameList, view);
 
     while (ec->exec() == QDialog::Accepted) {	// Loop until valid.
@@ -580,9 +580,11 @@ bool KGrEditor::editGame (int pGameIndex)
 
         KGrGameData * gameData = 0;
         if (action == SL_CR_GAME) {
-            // Create empty game data and add it to the list.
+            // Create empty game data and add it to the main list in KGrGame.
             gameData = new KGrGameData();
             gameList.append (gameData);
+            gameIndex = gameList.count() - 1;
+            editLevel = 1;
 
             // Set the initial values for a new game.
             gameData->owner   = USER;
@@ -603,11 +605,12 @@ bool KGrEditor::editGame (int pGameIndex)
         gameData->about       = ec->getAboutText().toUtf8();
 
         saveGameData (USER);
+        result = true;			// Successful create/edit.
         break;				// All done now.
     }
 
     delete ec;
-    return true;
+    return result;
 }
 
 /******************************************************************************/
@@ -756,7 +759,7 @@ bool KGrEditor::reNumberLevels (int cIndex, int first, int last, int inc)
     while (i != n) {
         file1 = getLevelFilePath (gameList.at (cIndex), i);
         file2 = getLevelFilePath (gameList.at (cIndex), i - step);
-        if (! KGrGameIO::safeRename (file1, file2)) {
+        if (! KGrGameIO::safeRename (view, file1, file2)) {
             return (false);
         }
         i = i + step;

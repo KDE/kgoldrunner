@@ -71,6 +71,8 @@ KGrLevelPlayer::~KGrLevelPlayer()
     kDebug() << "LEVEL PLAYER BEING DELETED.";
     playerCount--;
 
+// TODO - Remove this debugging code.
+if (recording) {
     int ch = 0;
     for (int i = 0; i <= (recIndex + 1); i ++) {
         ch = (uchar)(recording->content.at(i));
@@ -88,6 +90,7 @@ KGrLevelPlayer::~KGrLevelPlayer()
         j++;
     }
     dbe1 "\n%d bytes\n", j);
+}
 
     // TODO - Do we need this delete?
     // while (! enemies.isEmpty()) {
@@ -98,6 +101,7 @@ KGrLevelPlayer::~KGrLevelPlayer()
 void KGrLevelPlayer::init (KGrCanvas * view, const int mode,
                            KGrRecording * pRecording, const bool pPlayback)
 {
+    // TODO - Remove?
     playerCount++;
     if (playerCount > 1) {
         KMessageBox::information (view,
@@ -130,7 +134,6 @@ void KGrLevelPlayer::init (KGrCanvas * view, const int mode,
         rules = new KGrScavengerRules (this);
         break;
     }
-    // TODO - Remove. rules->printRules();
 
     recIndex  = 0;
     recCount  = 0;
@@ -293,9 +296,6 @@ void KGrLevelPlayer::startDigging (Direction diggingDirection)
         // The hero can dig as requested: the chosen brick is at (digI, digJ).
         grid->changeCellAt (digI, digJ, HOLE);
 
-        // Delete the brick-image so that animations are visible in all themes.
-        // TODO - Remove. emit paintCell (digI, digJ, FREE, 0);
-
         // Start the brick-opening animation (non-repeating).
         int id = emit makeSprite (BRICK, digI, digJ);
         emit startAnimation (id, false, digI, digJ,
@@ -342,20 +342,16 @@ void KGrLevelPlayer::processDugBricks (const int scaledTime)
                          // << "time" << (t.elapsed() - dugBrick->startTime);
                 // Dispose of the dug brick and remove it from the list.
                 emit deleteSprite (dugBrick->id);
-                // TODO - Remove. emit paintCell (dugBrick->digI, dugBrick->digJ, BRICK);
                 delete dugBrick;
                 iterator.remove();
             }
-            // TODO - Hero gets hidden by dug-brick in the Egyptian theme.
             // TODO - Why do we get so many MISSED ticks when we dig?
-            // TODO - Implement speed-variation as a parameter of tick().
         }
     }
 }
 
 void KGrLevelPlayer::prepareToPlay()
 {
-    // TODO - Should this be a signal?
     kDebug() << "Set mouse to:" << targetI << targetJ;
     emit setMousePos (targetI, targetJ);
     playState = Ready;
@@ -656,21 +652,22 @@ bool KGrLevelPlayer::heroCaught (const int heroX, const int heroY)
         pointsPerCell_1 = enemy->whereAreYou (enemyX, enemyY) - 1;
         if (((heroX < enemyX) ? ((heroX + pointsPerCell_1) >= enemyX) :
                                  (heroX <= (enemyX + pointsPerCell_1))) &&
-            // TODO - Remove? ((heroY < enemyY) ?
-            //                ((heroY + pointsPerCell_1) >= enemyY) :
             ((heroY < enemyY) ? ((heroY + pointsPerCell_1) > enemyY) :
                                  (heroY <= (enemyY + pointsPerCell_1)))) {
+            dbk << "Caught by";
+            enemy->showState();
             return true;
         }
     }
     return false;
 }
 
-bool KGrLevelPlayer::standOnEnemy (const int spriteId, const int x, const int y)
+KGrEnemy * KGrLevelPlayer::standOnEnemy (const int spriteId,
+                                         const int x, const int y)
 {
     int minEnemies = (spriteId == heroId) ? 1 : 2;
     if (enemies.count() < minEnemies) {
-        return false;
+        return 0;
     }
     int enemyX, enemyY, pointsPerCell;
     foreach (KGrEnemy * enemy, enemies) {
@@ -679,10 +676,10 @@ bool KGrLevelPlayer::standOnEnemy (const int spriteId, const int x, const int y)
              (enemyY == (y + pointsPerCell - 1))) &&
             (enemyX > (x - pointsPerCell)) &&
             (enemyX < (x + pointsPerCell))) {
-            return true;
+            return enemy;
         }
     }
-    return false;
+    return 0;
 }
 
 bool KGrLevelPlayer::bumpingFriend (const int spriteId, const Direction dirn,
@@ -770,6 +767,9 @@ void KGrLevelPlayer::tick (bool missed, int scaledTime)
             //        We want to continue the demo if it is the startup demo.
             //        We also want to continue to next level after a demo level
             //        that signals endLevel (DEAD) or even endLevel (NORMAL).
+            // TODO - Playback case is handled in endLevel (DEAD) now, but we
+            //        still could run out of recorded moves or get a KILL_HERO
+            //        action, then what?  Replay of KILL_HERO fails to finish.
             dbk << "END_OF_RECORDING - or KILL_HERO ACTION.";
             return;			// End of recording.
         }
@@ -797,7 +797,6 @@ void KGrLevelPlayer::tick (bool missed, int scaledTime)
     if ((status == WON_LEVEL) || (status == DEAD)) {
         // TODO - Can this unsolicited timer pause cause problems in KGrGame?
         timer->pause();
-        // TODO ? If caught in a brick, brick-closing animation is unfinished.
         // Queued connection ensures KGrGame slot runs AFTER return from here.
         emit endLevel (status);
         kDebug() << "END OF LEVEL";

@@ -71,10 +71,6 @@ void KGrTimer::internalSlot()
     while (timeOnClock > (expectedTime + halfTick)) {
         tickCount++;
         expectedTime = expectedTime + tickTime;
-        // TODO - Investigate missed ticks.  Is the calculation correct?
-        // bool missed = (timeOnClock >= (expectedTime + tickTime));
-        // if (missed) kDebug() << "MISSED" << timeOnClock << tickCount
-                             // << (expectedTime + tickTime);
         emit tick ((timeOnClock >= (expectedTime + tickTime)), scaledTime);
     }
 }

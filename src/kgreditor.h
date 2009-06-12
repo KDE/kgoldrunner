@@ -187,7 +187,9 @@ private:
     KGrGameIO * io;		// I/O object for reading level-data.
     QString     systemDataDir;
     QString     userDataDir;
-    QList<KGrGameData *> gameList;
+
+    // Will REFERENCE the main list in KGrGame, allowing KGrEditor to add games.
+    QList<KGrGameData *> & gameList;
 
     bool mouseMode;		// Flag to set up keyboard OR mouse control.
     bool editMode;		// Flag to change keyboard and mouse functions.

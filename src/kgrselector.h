@@ -116,6 +116,8 @@ class KGrThumbNail : public QFrame
 {
 public:
     explicit KGrThumbNail (QWidget *parent = 0);
+    ~KGrThumbNail();
+
     void setLevelData (const QString& dir, const QString& prefix,
                        int level, QLabel * sln);
 

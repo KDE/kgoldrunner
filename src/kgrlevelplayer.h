@@ -223,9 +223,9 @@ public:
      * @param x         The X grid-position of the sprite (within a cell).
      * @param y         The Y grid-position of the sprite (within a cell).
      *
-     * @return          True if the hero or enemy is standing on an enemy.
+     * @return          Pointer to the enemy the sprite is standing on - or 0.
      */
-    bool standOnEnemy           (const int spriteId, const int x, const int y);
+    KGrEnemy * standOnEnemy     (const int spriteId, const int x, const int y);
 
     /**
      * Helper function to determine whether an enemy is colliding with another

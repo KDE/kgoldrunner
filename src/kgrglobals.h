@@ -48,16 +48,6 @@ const char EDIT_TEST = '2';
 const int  FIELDWIDTH   = 28;
 const int  FIELDHEIGHT  = 20;
 
-// TODO - Probably belongs in kgrrulebook.h.  That is the only place it is used.
-typedef struct {
-    int hwalk;
-    int hfall;
-    int ewalk;
-    int efall;
-    int ecaptive;
-    int hole;
-} Timing;
-
 const int DIGDELAY = 200;
 
 const int STEP = 4;
@@ -166,7 +156,6 @@ enum Setting       {PLAY_SOUNDS,			// Sound effects on/off.
 
 const int  ConcreteWall = 1;
 
-// TODO - Should these be uchar?
 typedef char    DirectionFlag;
 typedef char    AccessFlag;
 typedef char    Flags;
