@@ -71,6 +71,7 @@ IOStatus KGrGameIO::fetchGameListData
 
         char c;
         QByteArray textLine;
+        QByteArray gameName;
 
         // Find the first line of game-data.
         c = getALine (kgr3Format, textLine);
@@ -102,7 +103,8 @@ IOStatus KGrGameIO::fetchGameListData
                 g->skill = fields.at (3).at (0);
                 c = getALine (kgr3Format, textLine);
                 if (c == ' ') {
-                    g->name = removeNewline (textLine);
+                    gameName = removeNewline (textLine);
+                    g->name  = i18n (gameName.constData());
                 }
             }
             else {
@@ -112,7 +114,8 @@ IOStatus KGrGameIO::fetchGameListData
                 n = textLine.indexOf (' ', n) + 1;
                 n = textLine.indexOf (' ', n) + 1;
                 n = textLine.indexOf (' ', n) + 1;
-                g->name = removeNewline (textLine.right (textLine.size() - n));
+                gameName = removeNewline (textLine.right (textLine.size() - n));
+                g->name  = i18n (gameName.constData());
             }
             // kDebug() << "Skill:" << g->skill << "Name:" << g->name;
 
@@ -345,8 +348,8 @@ KGrGameData * KGrGameIO::initGameData (Owner o)
     g->skill    = 'N';	// Game's skill: Tutorial, Normal or Champion.
     g->width    = FIELDWIDTH;	// Default width of layout grid (28 cells).
     g->height   = FIELDHEIGHT;	// Default height of layout grid (20 cells).
-    g->name     = "";	// Name of the game.
-    g->about    = "";	// Optional text about the game.
+    g->name     = "";	// Name of the game (translated, if System game).
+    g->about    = "";	// Optional text about the game (untranslated).
     return (g);
 }
 

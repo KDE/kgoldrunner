@@ -20,16 +20,16 @@
 #include <stdio.h> // OBSOLESCENT - 6/1/09 - Used for testing.
 #include "kgrlevelgrid.h"
 
-KGrLevelGrid::KGrLevelGrid (QObject * parent, const KGrLevelData & theLevelData)
+KGrLevelGrid::KGrLevelGrid (QObject * parent, const KGrRecording * theLevelData)
     :
     QObject     (parent)
 {
     // Put a concrete wall all round the layout: left, right, top and bottom.
     // This saves ever having to test for being at the edge of the layout.
-    int inWidth      = theLevelData.width;
+    int inWidth      = theLevelData->width;
     width            = inWidth + ConcreteWall * 2;
 
-    int inHeight     = theLevelData.height;
+    int inHeight     = theLevelData->height;
     height           = inHeight + ConcreteWall * 2;
 
     int size         = width * height;
@@ -47,7 +47,7 @@ KGrLevelGrid::KGrLevelGrid (QObject * parent, const KGrLevelData & theLevelData)
 
     for (int j = 0; j < inHeight; j++) {
         for (int i = 0; i < inWidth; i++) {
-            char type = theLevelData.layout [inRow + i];
+            char type = theLevelData->layout [inRow + i];
             switch (type) {
             case HLADDER:
                 // Change hidden ladders to FREE, but keep a list of them.

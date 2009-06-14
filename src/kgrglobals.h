@@ -88,39 +88,44 @@ public:
 class KGrGameData
 {
 public:
-    Owner	owner;		///< Owner of the game: "System" or "User".
+    Owner       owner;		///< Owner of the game: "System" or "User".
     int         nLevels;	///< Number of levels in the game.
     char        rules;		///< Game's rules: KGoldrunner or Traditional.
     QString     prefix;		///< Game's filename prefix.
     char        skill;		///< Game's skill: Tutorial, Normal or Champion.
     int         width;		///< Width of grid, in cells.
     int         height;		///< Height of grid, in cells.
-    QByteArray  name;		///< Name of the game.
-    QByteArray  about;		///< Optional info about the game.
+    QString     name;		///< Name of game (translated, if System game).
+    QByteArray  about;		///< Optional info about game (untranslated).
 };
 
 /// KGrLevelData structure: contains attributes of a KGoldrunner level.
 class KGrLevelData
 {
 public:
-    int		level;		///< Level number.
+    int         level;		///< Level number.
     int         width;		///< Width of grid, in cells.
     int         height;		///< Height of grid, in cells.
-    QByteArray	layout;		///< Codes for the level layout (mandatory).
-    QByteArray	name;		///< Level name (optional).
-    QByteArray	hint;		///< Level hint (optional).
+    QByteArray  layout;		///< Codes for the level layout (mandatory).
+    QByteArray  name;		///< Level name (optional).
+    QByteArray  hint;		///< Level hint (optional).
 };
 
 /// KGrRecording structure: contains a record of play in a KGoldrunner level.
 class KGrRecording
 {
 public:
-    // TODO - Use same header data (including date/time) as Save Game does.
+    QString        dateTime;    ///< Date+time of recording (UTC in ISO format).
     Owner          owner;	///< Original owner, at time of recording.
-    char           rules;	///< Rules that applied then.
+    char           rules;	///< Rules that applied at time of recording.
     QString        prefix;	///< Game's filename prefix.
-    QByteArray     gameName;	///< Name of the game.
-    KGrLevelData   levelData;	///< The level data, at time of recording.
+    QString        gameName;	///< Name of the game (translated at rec time).
+    int            level;	///< Level number (at time of recording).
+    int            width;	///< Width of grid, in cells (at rec time).
+    int            height;	///< Height of grid, in cells (at rec time).
+    QByteArray     layout;	///< Codes for the level layout (at rec time).
+    QString        levelName;	///< Name of the level (translated at rec time).
+    QString        hint;	///< Hint (translated at recording time).
     long           lives;	///< Number of lives at start of level.
     long           score;	///< Score at start of level.
     int            speed;	///< Speed of game during recording (normal=10).

@@ -93,7 +93,7 @@ bool KGrSLDialog::selectLevel (int & selectedGame, int & selectedLevel)
                 i18n ("There is no level %1 in \"%2\", "
                 "so you cannot play or edit it.",
                  selectedLevel,
-                 myGameList.at (selectedGame)->name.constData()));
+                 myGameList.at (selectedGame)->name));
             selectedLevel = 0;			// Set an invalid selection.
             continue;				// Re-run the dialog box.
         }

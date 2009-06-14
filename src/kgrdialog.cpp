@@ -183,10 +183,11 @@ KGrECDialog::KGrECDialog (int action, int gameIndex,
     if ((action == SL_UPD_GAME) &&
         (myGameList.at (defaultGame)->about.length() > 0)) {
         // Display and edit the game description in its original language.
-        mle->		setText (myGameList.at (defaultGame)->about);
+        mle->setPlainText (QString::fromUtf8
+                           (myGameList.at (defaultGame)->about.constData()));
     }
     else {
-        mle->		setText ("");
+        mle->setPlainText ("");
     }
 
     connect (ecKGrB,  SIGNAL (clicked()), this, SLOT (ecSetKGr()));

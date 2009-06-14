@@ -113,11 +113,11 @@ void KGrLevelPlayer::init (KGrCanvas * view, const int mode,
     playback  = pPlayback;
 
     // Create the internal model of the level-layout.
-    grid            = new KGrLevelGrid (this, recording->levelData);
+    grid            = new KGrLevelGrid (this, recording);
 
     controlMode     = mode;		// Set mouse/keyboard/laptop control.
-    levelWidth      = recording->levelData.width;
-    levelHeight     = recording->levelData.height;
+    levelWidth      = recording->width;
+    levelHeight     = recording->height;
 
     reappearIndex   = levelWidth;	// Initialise the enemy-rebirth code.
     reappearPos.fill (1, levelWidth);

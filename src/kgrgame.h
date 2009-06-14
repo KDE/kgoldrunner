@@ -249,12 +249,13 @@ private:
 /***********************   GAME PROPERTIES AND METHODS   **********************/
 /******************************************************************************/
 
-    bool loadGameData  (Owner);
-    void initRecording ();
-    void saveRecording ();
-    void loadRecording (const QString & dir, const QString & prefix,
-                                             const int levelNo);
-    void loadSounds    ();
+    bool loadGameData      (Owner);
+    bool initRecordingData (const Owner fileOwner, const QString & prefix,
+                                                   const int levelNo);
+    void saveRecording();
+    bool loadRecording     (const QString & dir,   const QString & prefix,
+                                                   const int levelNo);
+    void loadSounds();
 
 /******************************************************************************/
 /**********************    WORD-WRAPPED MESSAGE BOX    ************************/

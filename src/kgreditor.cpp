@@ -601,7 +601,7 @@ bool KGrEditor::editGame (int pGameIndex)
         // Create or update the editable values.
         gameData->rules       = rules;
         gameData->prefix      = ecPrefix;
-        gameData->name        = ecName.toUtf8();
+        gameData->name        = ecName;
         gameData->about       = ec->getAboutText().toUtf8();
 
         saveGameData (USER);
@@ -812,9 +812,11 @@ bool KGrEditor::saveGameData (Owner o)
 
     foreach (KGrGameData * gData, gameList) {
         if (gData->owner == o) {
-            line.sprintf ("%03d %c %s %s\n", gData->nLevels, gData->rules,
-                                gData->prefix.toLatin1().constData(),
-                                gData->name.constData());
+            line = QString ("%1 %2 %3 %4\n")
+                            .arg (gData->nLevels, 3, 10, QChar('0')) // int 00n
+                            .arg (gData->rules)                      // char
+                            .arg (gData->prefix)                     // QString
+                            .arg (gData->name);                      // QString
             lineC = line.toUtf8();
             len = lineC.length();
             for (i = 0; i < len; i++) {
@@ -855,17 +857,15 @@ QString KGrEditor::getTitle()
     KGrGameData * gameData = gameList.at(gameIndex);
     QString levelNumber = QString::number(editLevel).rightJustified(3,'0');
 
-    // TODO - Make sure gameData->name.constData() results in Unicode display
-    //        and not some weird UTF8 character stuff.
     QString levelTitle = (levelName.length() <= 0)
                     ?
                     i18nc ("Game name - level number.",
                            "%1 - %2",
-                           gameData->name.constData(), levelNumber)
+                           gameData->name, levelNumber)
                     :
                     i18nc ("Game name - level number - level name.",
                            "%1 - %2 - %3",
-                           gameData->name.constData(), levelNumber, levelName);
+                           gameData->name, levelNumber, levelName);
     return (levelTitle);
 }
 

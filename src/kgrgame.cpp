@@ -33,6 +33,7 @@
 #include <KDebug>
 
 #include <QStringList>
+#include <QDateTime>
 
 // TODO - Can we change over to KScoreDialog?
 
@@ -792,21 +793,9 @@ bool KGrGame::playLevel (const Owner fileOwner, const QString & prefix,
     // so that the player has a little time to observe how the level ended.
     view->deleteAllSprites();
 
-    // If system game or ENDE, choose system dir, else choose user dir.
-    const QString dir = ((fileOwner == SYSTEM) || (levelNo == 0)) ?
-                        systemDataDir : userDataDir;
-    initRecording();
-    if (playback) {
-        kDebug() << "loadRecording" << dir << prefix << levelNo;
-        loadRecording (dir, prefix, levelNo);
-    }
-    else {
-        KGrGameIO    io (view);
-
-        // Read the level data.
-        if (! io.readLevelData (dir, prefix, levelNo, recording->levelData)) {
-            return false;
-        }
+    // Set up to record or play back: load either level-data or recording-data.
+    if (! initRecordingData (fileOwner, prefix, levelNo)) {
+        return false;
     }
 
     view->setLevel (levelNo);		// Switch and render background if reqd.
@@ -817,16 +806,11 @@ bool KGrGame::playLevel (const Owner fileOwner, const QString & prefix,
     //        state?  And how about starting in Ready state in some cases?
     setupLevelPlayer();
 
-    // If there is a name, translate the UTF-8 coded QByteArray right now.
-    levelName = (recording->levelData.name.size() > 0) ?
-                      i18n ((const char *) recording->levelData.name) : "";
+    levelName = recording->levelName;
+    levelHint = recording->hint;
 
     // Indicate on the menus whether there is a hint for this level.
-    int len = recording->levelData.hint.length();
-    emit hintAvailable (len > 0);
-
-    // If there is a hint, translate it right now.
-    levelHint = (len > 0) ? i18n((const char *) recording->levelData.hint) : "";
+    emit hintAvailable (levelHint.length() > 0);
 
     // Re-draw the playfield frame, level title and figures.
     view->setTitle (getTitle());
@@ -1010,7 +994,7 @@ void KGrGame::goUpOneLevel()
         KGrMessage::information (view, gameData->name,
             i18n ("<b>CONGRATULATIONS !!!!</b>"
             "<p>You have conquered the last level in the "
-            "<b>\"%1\"</b> game !!</p>", gameData->name.constData()));
+            "<b>\"%1\"</b> game !!</p>", gameData->name));
         checkHighScore();	// Check if there is a high score for this game.
 
         freeze (ProgramPause, false);
@@ -1181,7 +1165,7 @@ QString KGrGame::getDirectory (Owner o)
 
 QString KGrGame::getTitle()
 {
-    int lev = (playback) ? recording->levelData.level : level;
+    int lev = (playback) ? recording->level : level;
     KGrGameData * gameData = gameList.at (gameIndex);
     if (lev == 0) {
         // Generate a special title for end of game.
@@ -1190,10 +1174,8 @@ QString KGrGame::getTitle()
 
     // Set title string to "Game-name - NNN" or "Game-name - NNN - Level-name".
     QString gameName = (playback) ? recording->gameName : gameData->name;
-    QString levelNumber = QString::number(level).rightJustified(3,'0');
+    QString levelNumber = QString::number(lev).rightJustified(3,'0');
 
-    // TODO - Make sure gameData->name.constData() results in Unicode display
-    //        and not some weird UTF8 character stuff.
     QString levelTitle = (levelName.length() <= 0)
                     ?
                     i18nc ("Game name - level number.",
@@ -1201,8 +1183,6 @@ QString KGrGame::getTitle()
                     :
                     i18nc ("Game name - level number - level name.",
                            "%1 - %2 - %3", gameName, levelNumber, levelName);
-    // TODO - This is where playback needs to get data from inside KGrRecording.
-    // TODO - ... or not, as the case may be.
     return (levelTitle);
 }
 
@@ -1659,7 +1639,7 @@ void KGrGame::showHighScores()
         if (! high1.exists()) {
             KGrMessage::information (view, i18n ("Show High Scores"),
                 i18n("Sorry, there are no high scores for the \"%1\" game yet.",
-                         gameList.at (gameIndex)->name.constData()));
+                         gameList.at (gameIndex)->name));
             return;
         }
     }
@@ -1684,7 +1664,7 @@ void KGrGame::showHighScores()
     QLabel *		hsHeader = new QLabel (i18n (
                             "<center><h2>KGoldrunner Hall of Fame</h2></center>"
                             "<center><h3>\"%1\" Game</h3></center>",
-                            gameList.at (gameIndex)->name.constData()),
+                            gameList.at (gameIndex)->name),
                             hs);
     mainLayout->addWidget (hsHeader, 10);
 
@@ -1878,7 +1858,8 @@ bool KGrGame::loadGameData (Owner o)
     return (result);
 }
 
-void KGrGame::initRecording()
+bool KGrGame::initRecordingData (const Owner fileOwner, const QString & prefix,
+                                 const int levelNo)
 {
     // Initialise the recording.
     if (recording) {
@@ -1888,16 +1869,54 @@ void KGrGame::initRecording()
     recording->content.fill (0, 4000);
     recording->draws.fill   (0, 400);
 
-    KGrGameData * gameData  = gameList.at (gameIndex);
-    recording->owner        = gameData->owner;
-    recording->rules        = gameData->rules;
-    recording->prefix       = gameData->prefix;
-    recording->gameName     = gameData->name;
-    recording->lives        = lives;
-    recording->score        = score;
-    recording->speed        = timeScale;
-    recording->controlMode  = controlMode;
-    recording->content [0]  = 0xff;
+    // If system game or ENDE, choose system dir, else choose user dir.
+    const QString dir = ((fileOwner == SYSTEM) || (levelNo == 0)) ?
+                        systemDataDir : userDataDir;
+    if (playback) {
+        kDebug() << "loadRecording" << dir << prefix << levelNo;
+        if (! loadRecording (dir, prefix, levelNo)) {
+            return false;
+        }
+    }
+    else {
+        KGrGameIO    io (view);
+        KGrLevelData levelData;
+
+        // Read the level data.
+        kDebug() << "io.readLevelData" << dir << prefix << levelNo;
+        if (! io.readLevelData (dir, prefix, levelNo, levelData)) {
+            return false;
+        }
+
+        recording->dateTime    = QDateTime::currentDateTime()
+                                              .toUTC()
+                                              .toString (Qt::ISODate);
+        kDebug() << "Recording at" << recording->dateTime;
+
+        KGrGameData * gameData = gameList.at (gameIndex);
+        recording->owner       = gameData->owner;
+        recording->rules       = gameData->rules;
+        recording->prefix      = gameData->prefix;
+        recording->gameName    = gameData->name;
+
+        recording->level       = levelNo;
+        recording->width       = levelData.width;
+        recording->height      = levelData.height;
+        recording->layout      = levelData.layout;
+
+        // If there is a name or hint, translate the UTF-8 code right now.
+        recording->levelName   = (levelData.name.size() > 0) ?
+                                 i18n (levelData.name.constData()) : "";
+        recording->hint        = (levelData.hint.size() > 0) ?
+                                 i18n (levelData.hint.constData()) : "";
+
+        recording->lives       = lives;
+        recording->score       = score;
+        recording->speed       = timeScale;
+        recording->controlMode = controlMode;
+        recording->content [0] = 0xff;
+    }
+    return true;
 }
 
 void KGrGame::saveRecording()
@@ -1908,16 +1927,17 @@ void KGrGame::saveRecording()
 
     KConfig config (filename, KConfig::SimpleConfig);
     KConfigGroup configGroup = config.group (groupName);
+    configGroup.writeEntry ("DateTime", recording->dateTime);
     configGroup.writeEntry ("Owner",    (int) recording->owner);
     configGroup.writeEntry ("Rules",    (int) recording->rules);
     configGroup.writeEntry ("Prefix",   recording->prefix);
     configGroup.writeEntry ("GameName", recording->gameName);
-    configGroup.writeEntry ("Level",    recording->levelData.level);
-    configGroup.writeEntry ("Width",    recording->levelData.width);
-    configGroup.writeEntry ("Height",   recording->levelData.height);
-    configGroup.writeEntry ("Layout",   recording->levelData.layout);
-    configGroup.writeEntry ("Name",     recording->levelData.name);
-    configGroup.writeEntry ("Hint",     recording->levelData.hint);
+    configGroup.writeEntry ("Level",    recording->level);
+    configGroup.writeEntry ("Width",    recording->width);
+    configGroup.writeEntry ("Height",   recording->height);
+    configGroup.writeEntry ("Layout",   recording->layout);
+    configGroup.writeEntry ("Name",     recording->levelName);
+    configGroup.writeEntry ("Hint",     recording->hint);
     configGroup.writeEntry ("Lives",    (int) recording->lives);
     configGroup.writeEntry ("Score",    (int) recording->score);
     configGroup.writeEntry ("Speed",    (int) recording->speed);
@@ -1954,7 +1974,7 @@ void KGrGame::saveRecording()
     gameGroup.sync();			// Ensure that the entry goes to disk.
 }
 
-void KGrGame::loadRecording (const QString & dir, const QString & prefix,
+bool KGrGame::loadRecording (const QString & dir, const QString & prefix,
                                                   const int levelNo)
 {
     kDebug() << prefix << levelNo;
@@ -1963,26 +1983,25 @@ void KGrGame::loadRecording (const QString & dir, const QString & prefix,
     kDebug() << filename << groupName;
 
     KConfig config (filename, KConfig::SimpleConfig);
-    KConfigGroup configGroup    = config.group (groupName);
-    // KConfigGroup configGroup    = config.group ("fred");
-    if (! configGroup.isValid()) {
-        // TODO - This does not work as a test of whether the group exists.
-        kDebug() << "Group:" << "fred" << "is INVALID";
-        return;
+    if (! config.hasGroup (groupName)) {
+        kDebug() << "Group" << groupName << "NOT FOUND";
+        return false;
     }
 
+    KConfigGroup configGroup    = config.group (groupName);
     QByteArray blank ("");
+    recording->dateTime         = configGroup.readEntry ("DateTime", "");
     recording->owner            = (Owner)(configGroup.readEntry
                                                         ("Owner", (int)(USER)));
     recording->rules            = configGroup.readEntry ("Rules", (int)('T'));
     recording->prefix           = configGroup.readEntry ("Prefix", "");
     recording->gameName         = configGroup.readEntry ("GameName", blank);
-    recording->levelData.level  = configGroup.readEntry ("Level",  1);
-    recording->levelData.width  = configGroup.readEntry ("Width",  FIELDWIDTH);
-    recording->levelData.height = configGroup.readEntry ("Height", FIELDHEIGHT);
-    recording->levelData.layout = configGroup.readEntry ("Layout", blank);
-    recording->levelData.name   = configGroup.readEntry ("Name",   blank);
-    recording->levelData.hint   = configGroup.readEntry ("Hint",   blank);
+    recording->level            = configGroup.readEntry ("Level",  1);
+    recording->width            = configGroup.readEntry ("Width",  FIELDWIDTH);
+    recording->height           = configGroup.readEntry ("Height", FIELDHEIGHT);
+    recording->layout           = configGroup.readEntry ("Layout", blank);
+    recording->levelName        = configGroup.readEntry ("Name",   blank);
+    recording->hint             = configGroup.readEntry ("Hint",   blank);
     recording->lives            = configGroup.readEntry ("Lives",  5);
     recording->score            = configGroup.readEntry ("Score",  0);
     recording->speed            = configGroup.readEntry ("Speed",  10);
@@ -2015,6 +2034,7 @@ void KGrGame::loadRecording (const QString & dir, const QString & prefix,
     emit showLives (lives);
     score = recording->score;
     emit showScore (score);
+    return true;
 }
 
 void KGrGame::loadSounds()
