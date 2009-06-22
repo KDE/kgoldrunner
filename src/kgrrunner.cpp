@@ -17,12 +17,12 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ****************************************************************************/
 
-#include <KDebug>
-
 #include "kgrrunner.h"
-#include "kgrlevelplayer.h"
 #include "kgrlevelgrid.h"
 #include "kgrrulebook.h"
+#include "kgrlevelplayer.h"
+
+#include <KDebug>
 
 KGrRunner::KGrRunner (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
                       int i, int j, const int pSpriteId,

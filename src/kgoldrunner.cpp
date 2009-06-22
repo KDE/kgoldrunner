@@ -28,6 +28,7 @@
 #include <kglobal.h>
 #include <kstatusbar.h>
 #include <kshortcutsdialog.h>
+#include <KStandardDirs>
 
 #include <kconfig.h>
 #include <kconfiggroup.h>
@@ -49,7 +50,6 @@
 #include <KAboutData>
 
 #include "kgrcanvas.h"
-#include "kgrdialog.h"
 #include "kgrgame.h"
 
 // Shorthand for references to actions.
@@ -800,6 +800,7 @@ void KGoldrunner::setEditMenu (bool on_off)
 
     if (on_off){
         // Set the editToolbar icons to the current tile-size.
+        kDebug() << "ToolBar icon size:" << view->getPixmap (BRICK).size();
         toolBar ("editToolbar")->setIconSize (view->getPixmap (BRICK).size());
 
         // Set the editToolbar icons up with pixmaps of the current theme.

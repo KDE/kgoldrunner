@@ -31,9 +31,9 @@ const int L_LIVES       = 15;		// Lengths of fields.
 const int L_SCORE       = 17;
 const int L_LEVEL       = 15;
 
-#include <kxmlguiwindow.h>
-#include <kstandarddirs.h>
 #include "kgrglobals.h"
+
+#include <KXmlGuiWindow>
 
 class QSignalMapper;
 class KAction;

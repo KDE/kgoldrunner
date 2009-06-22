@@ -17,7 +17,6 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ****************************************************************************/
 
-// TODO - Use the header-order KGoldrunner-Qt-KDE in other .cpp files.
 #include "kgreditor.h"
 #include "kgrcanvas.h"
 #include "kgrselector.h"

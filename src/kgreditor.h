@@ -18,7 +18,6 @@
 #ifndef _KGREDITOR_H_
 #define _KGREDITOR_H_
 
-// TODO - Use fwd decls and header-order KGoldrunner-Qt-KDE in other .h files.
 #include "kgrglobals.h"
 
 #include <QObject>

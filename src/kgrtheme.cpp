@@ -18,12 +18,14 @@
 
 #include "kgrtheme.h"
 
+#include <QPainter>
+#include <QFileInfo>
+
 #include <KConfig>
 #include <KConfigGroup>
 #include <KGlobal>
+#include <KPixmapCache>
 #include <KDebug>
-#include <QPainter>
-#include <QFileInfo>
 
 KGrTheme::KGrTheme (const QString &systemDataDir) : 
         themeDataDir (systemDataDir + "../theme/"),

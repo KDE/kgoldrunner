@@ -10,13 +10,11 @@
 #ifndef KGRGAME_H
 #define KGRGAME_H
 
-// Macros to smooth out the differences between Qt 1 and Qt 2 classes.
+// Macro to smooth out the differences between Qt 1 and Qt 2 classes.
 //
 // "myStr" converts a QString object to a C language "char*" character string.
-// "myChar" extracts a C language character (type "char") from a QString object.
 //
 #define myStr		toLatin1().constData
-#define myChar(i)	at((i)).toLatin1()
 
 #include "kgrglobals.h"
 
@@ -47,12 +45,8 @@ public:
 
     bool initGameLists();
 
-    // TODO - Needs to be public?
-    void quickStartDialog();
-
     void setInitialTheme (const QString & themeFilepath);
 
-    // TODO - Needed?
     bool inEditMode();			// True if the game is in editor mode.
 
     bool saveOK();			// Check if edits were saved.
@@ -74,6 +68,8 @@ public slots:
     void incScore           (const int n);	// Update the score.
 
 private:
+    void quickStartDialog();
+
     bool modeSwitch (const int action,
                      int & selectedGame, int & selectedLevel);
     bool selectGame (const SelectAction slAction,
@@ -129,7 +125,8 @@ private:
 private slots:
     void endLevel (const int result);	// Hero completed the level or he died.
 
-    void finalBreath();			// Hero is dead: re-start the level.
+    void finalBreath();			// Hero is dead: end the death-scene.
+    void repeatLevel();			// Hero is dead: repeat the level.
     void goUpOneLevel();		// Start next level.
 
     void heroStep (bool climbing);	// The hero has put a foot on the floor.
@@ -169,6 +166,7 @@ private:
                     const int levelNo, const bool newLevel);
     void setupLevelPlayer();
     void showTutorialMessages (int levelNo);
+    void setPlayback (const bool onOff);
 
     void checkHighScore();		// Check if high score for current game.
 
@@ -187,7 +185,6 @@ private:
     QString			systemDataDir;	// System games are stored here.
     QString			userDataDir;	// User games are stored here.
     int                         timeScale;	// The speed of the game (2-20).
-    float                       fTimeScale;	// Speed as a float (0.2-2.0).
 
     QList<KGrGameData *>        gameList;	// A list of available games.
     int				gameIndex;	// The index in the game-list.

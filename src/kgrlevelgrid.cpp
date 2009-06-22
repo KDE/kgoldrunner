@@ -1,5 +1,3 @@
-#include "kgrdebug.h"
-
 /****************************************************************************
  *    Copyright 2009  Ian Wadham <iandw.au@gmail.com>                         *
  *                                                                          *
@@ -17,7 +15,6 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ****************************************************************************/
 
-#include <stdio.h> // OBSOLESCENT - 6/1/09 - Used for testing.
 #include "kgrlevelgrid.h"
 
 KGrLevelGrid::KGrLevelGrid (QObject * parent, const KGrRecording * theLevelData)
@@ -141,8 +138,6 @@ void KGrLevelGrid::calculateCellAccess (const int i, const int j)
     char  below  = cellType (i, j + 1);
 
     access = heroMoves (i, j) & ENTERABLE;
-    // fprintf (stderr, "[%02d,%02d] %c access %02x below %c\n",
-	     // i, j, here, access, below);
 
     // Cannot enter brick, concrete or used hole: can drop into a false brick.
     if (! (access & ENTERABLE) && (here != FBRICK)) {
@@ -151,14 +146,12 @@ void KGrLevelGrid::calculateCellAccess (const int i, const int j)
     // If can stand or hang on anything, allow down, left and right.
     else if ((below == BRICK) || (below == CONCRETE) || (below == USEDHOLE) ||
 	(below == LADDER) || (here == LADDER) || (here == BAR)) {
-        // fprintf (stderr, "Can stand\n");
 	access |= (dFlag [STAND] | dFlag [DOWN] |
 		   dFlag [LEFT]  | dFlag [RIGHT]);
     }
     // If cannot stand or hang, can go down (space or false brick) or
     // maybe left or right (when standing on an enemy).
     else {
-        // fprintf (stderr, "Cannot stand\n");
 	access |= (dFlag [DOWN] | dFlag [LEFT]  | dFlag [RIGHT]);
     }
     // Can only go up if there is a ladder here.
@@ -204,14 +197,11 @@ void KGrLevelGrid::calculateCellAccess (const int i, const int j)
 void KGrLevelGrid::placeHiddenLadders()
 {
     int offset, i, j;
-    dbe3 "KGrLevelGrid::placeHiddenLadders() %02d width %02d\n",
-                     hiddenLadders.count(), width);
 
     foreach (offset, hiddenLadders) {
         i = offset % width;
         j = offset / width;
         changeCellAt (i, j, LADDER);
-        dbe3 "Show ladder at %04d [%02d,%02d]\n", offset, i, j);
     }
     emit showHiddenLadders (hiddenLadders, width);
     hiddenLadders.clear();

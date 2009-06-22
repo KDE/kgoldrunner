@@ -18,7 +18,8 @@
 */
 
 #include "kgrsoundbank.h"
-#include <kdebug.h>
+
+#include <KDebug>
 
 KGrSoundBank::KGrSoundBank (int number) : 
     QObject(),

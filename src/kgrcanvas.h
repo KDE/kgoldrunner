@@ -18,22 +18,23 @@
 #ifndef KGRCANVAS_H
 #define KGRCANVAS_H
 
-#include <kgamecanvas.h>
-
-#include "kgrplayfield.h"
-#include "kgrsprite.h"
 #include "kgrglobals.h"
 
-#include <qcursor.h>
-#include <QLabel>
-#include <QImage>
+#include "kgrtheme.h"
+
 #include <QPixmap>
-#include <QMouseEvent>
 #include <QList>
 #include <QTime> // IDW
 #include <QTimeLine>
 
-#include "kgrtheme.h"
+#include <kgamecanvas.h>
+
+class KGrSprite;
+class KGrPlayField;
+
+class QCursor;
+class QLabel;
+class QMouseEvent;
 
 enum StartFrame     {RIGHTWALK1,  RIGHTWALK2,  RIGHTWALK3,  RIGHTWALK4,
                      RIGHTWALK5,  RIGHTWALK6,  RIGHTWALK7,  RIGHTWALK8,
@@ -86,7 +87,7 @@ public slots:
     void startAnimation    (const int id, const bool repeating,
                             const int i, const int j, const int time,
                             const Direction dirn, const AnimationType type);
-    // TODO - Implement this method, if it is really needed.
+    // Implement this method only if it is really needed.
     // void resynchAnimation  (const int id, const int i, const int j,
                             // const bool stop);
     void gotGold           (const int spriteId, const int i, const int j,

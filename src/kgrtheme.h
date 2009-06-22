@@ -21,9 +21,10 @@
 
 #include <QString>
 #include <QColor>
-#include <QImage>
+
 #include <KSvgRenderer>
-#include <KPixmapCache>
+
+class KPixmapCache;
 
 /**
  * KGrTheme handles KGoldrunner theme management.

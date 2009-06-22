@@ -18,15 +18,15 @@
 #ifndef KGRLEVELPLAYER_H
 #define KGRLEVELPLAYER_H
 
+#include "kgrglobals.h"
+
 #include <QObject>
 #include <QList>
 #include <QVarLengthArray>
 
 #include <QTime> // IDW testing
 
-#include "kgrglobals.h"
-#include "kgrtimer.h"
-
+class KGrTimer;
 class KGrLevelGrid;
 class KGrRuleBook;
 class KGrCanvas;
@@ -104,11 +104,13 @@ public:
      *                   even if the random-number generator's code changes.
      * @param pPlayback  If false, play "live" and record the play.  If true,
      *                   play back a previously recorded level.
+     * @param gameFrozen If true, go into pause-mode when the level starts.
      */
     void init                   (KGrCanvas *          view,
                                  const int            mode,
                                  KGrRecording *       pRecording,
-                                 const bool           pPlayback);
+                                 const bool           pPlayback,
+                                 const bool           gameFrozen);
 
     /**
      * Indicate that setup is complete and the human player can start playing
@@ -131,21 +133,25 @@ public:
     void interruptPlayback();
 
     /**
+     * If not in playback mode, add a code to the recording and kill the hero.
+     */
+    void killHero();
+
+    /**
      * Change the input-mode during play.
      *
      * @param mode      The new input-mode to use to control the hero: mouse, 
      *                  keyboard or hybrid touchpad and keyboard mode.
      */
-    inline void setControlMode  (const int mode) { controlMode = mode; }
+    void setControlMode  (const int mode);
 
     /**
      * Set the overall speed of gameplay.
      *
-     * @param timeScale Value 1.0 is for normal speed.  Range is 0.2 to 2.0.
-     *                  0.5 is for beginner speed: 1.5 for champion speed.
+     * @param timeScale Value 10 is for normal speed.  Range is 2 to 20.
+     *                  5 is for beginner speed: 15 for champion speed.
      */
-    inline void setTimeScale    (const float timeScale)
-                                { timer->setScale (timeScale); }
+    void setTimeScale    (const int timeScale);
 
     /**
      * Set a point for the hero to aim at when using mouse or touchpad control.

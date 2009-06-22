@@ -20,9 +20,11 @@
 
 #include "kgrgameio.h"
 
+#include <QWidget>
+#include <QDir>
+
 #include <KLocale>
 #include <KDebug>
-#include <QDir>
 
 KGrGameIO::KGrGameIO (QWidget * pView)
     :

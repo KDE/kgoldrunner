@@ -14,9 +14,9 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <KDebug>
-
 #include "kgrsprite.h"
+
+#include <KDebug>
 
 KGrSprite::KGrSprite (KGameCanvasAbstract * canvas, const char type,
                       const int tickTime)

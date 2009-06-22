@@ -10,25 +10,18 @@
 #ifndef KGRDIALOG_QT_H
 #define KGRDIALOG_QT_H
 
+#include <QListWidget>
+#include <QRadioButton>
+#include <QLineEdit>
+#include <QTextEdit>
+#include <QList>
+
 #include <KLocale>
 #include <KDialog>
 #include <KMessageBox>
 
-
-#include <QListWidget>
-#include <QTreeWidget>
-#include <QTreeWidgetItem>
-
-#include <QScrollBar>
-// IDW #include <QSlider>
-#include <QLineEdit>
-#include <QSpinBox>
-#include <QPushButton>
-#include <QButtonGroup>
-#include <QRadioButton>
-#include <QList>
-#include <QLabel>
-#include <QTextEdit>
+class QButtonGroup;
+class QLabel;
 
 /**
 @author Ian Wadham and Marco Krüger
@@ -100,8 +93,7 @@ private:
 ***************  DIALOG TO SELECT A SAVED GAME TO BE RE-LOADED  ****************
 *******************************************************************************/
 
-#include <QFile>
-#include <qtextstream.h>
+class QFile;
 
 class KGrLGDialog : public KDialog
 {

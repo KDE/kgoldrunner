@@ -137,7 +137,7 @@ public:
 // Offsets used to encode keystrokes, control modes and speeds in a recording.
 // Allow space for 16 direction and digging codes, 16 control modes, 16 special
 // actions and 30 speeds.  We actually have (as at May 2009) 8 direction and
-// digging codes, control modes from 2 to 4, one special action (code 7) and
+// digging codes, control modes from 2 to 4, one special action (code 6) and
 // speeds ranging from 2 to 20.
 #define DIRECTION_CODE 0x80
 #define MODE_CODE      0x90
@@ -203,6 +203,6 @@ enum  DebugCodes {
 const int TickTime = 20;
 
 enum  HeroStatus {
-                NORMAL, WON_LEVEL, DEAD};
+                NORMAL, WON_LEVEL, DEAD, UNEXPECTED_END};
 
 #endif // KGRGLOBALS_H

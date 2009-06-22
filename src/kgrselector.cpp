@@ -8,21 +8,29 @@
 *   (at your option) any later version.                                   *
 ***************************************************************************/
 
+#include "kgrglobals.h"
+
 #include "kgrselector.h"
 
-#include "kgrglobals.h"
-#include "kgrcanvas.h"
 #include "kgrgameio.h"
-
-#include <KGlobalSettings>
-#include <KConfigGroup>
 
 #include <QTextStream>
 #include <QGridLayout>
-#include <QLabel>
 #include <QVBoxLayout>
 #include <QSpacerItem>
 #include <QHeaderView>
+#include <QScrollBar>
+#include <QSpinBox>
+#include <QPushButton>
+#include <QButtonGroup>
+#include <QRadioButton>
+#include <QLabel>
+#include <QTextEdit>
+
+#include <QPainter>
+
+#include <KGlobalSettings>
+#include <KConfigGroup>
 
 /******************************************************************************/
 /*****************    DIALOG BOX TO SELECT A GAME AND LEVEL   *****************/

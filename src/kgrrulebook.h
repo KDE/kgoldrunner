@@ -18,12 +18,12 @@
 #ifndef KGRRULEBOOK_H
 #define KGRRULEBOOK_H
 
+#include "kgrglobals.h"
+
 #include <QObject>
 #include <QList>
 
 #include <KDebug>
-
-#include "kgrglobals.h"
 
 class KGrLevelGrid;
 

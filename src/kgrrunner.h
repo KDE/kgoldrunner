@@ -18,10 +18,10 @@
 #ifndef KGRRUNNER_H
 #define KGRRUNNER_H
 
+#include "kgrglobals.h"
+
 #include <QObject>
 #include <QTime> // IDW
-
-#include "kgrglobals.h"
 
 class KGrLevelPlayer;
 class KGrLevelGrid;

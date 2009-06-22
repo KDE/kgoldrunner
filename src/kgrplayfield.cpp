@@ -17,6 +17,7 @@
  ***************************************************************************/
 
 #include "kgrplayfield.h"
+
 #include <KDebug>
 
 KGrPlayField::KGrPlayField (KGameCanvasAbstract* canvas)

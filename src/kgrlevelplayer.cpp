@@ -19,20 +19,20 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <KDebug>
-#include <KMessageBox>	// TODO - Remove.
-#include <KRandomSequence>
-
-#include <QTimer>
 
 // Include kgrgame.h only to access flags KGrGame::bugFix and KGrGame::logging.
 #include "kgrgame.h"
 
+#include "kgrtimer.h"
 #include "kgrcanvas.h"
 #include "kgrlevelplayer.h"
 #include "kgrrulebook.h"
 #include "kgrlevelgrid.h"
 #include "kgrrunner.h"
+
+#include <KDebug>
+#include <KMessageBox>	// TODO - Remove.
+#include <KRandomSequence>
 
 KGrLevelPlayer::KGrLevelPlayer (QObject * parent, KRandomSequence * pRandomGen)
     :
@@ -92,14 +92,11 @@ if (recording) {
     dbe1 "\n%d bytes\n", j);
 }
 
-    // TODO - Do we need this delete?
-    // while (! enemies.isEmpty()) {
-        // delete enemies.takeFirst();
-    // }
 }
 
 void KGrLevelPlayer::init (KGrCanvas * view, const int mode,
-                           KGrRecording * pRecording, const bool pPlayback)
+                           KGrRecording * pRecording, const bool pPlayback,
+                           const bool gameFrozen)
 {
     // TODO - Remove?
     playerCount++;
@@ -207,8 +204,9 @@ void KGrLevelPlayer::init (KGrCanvas * view, const int mode,
                     heroId  = emit makeSprite (HERO, i, j);
                     hero    = new KGrHero (this, grid, i, j, heroId, rules);
                     hero->setNuggets (nuggets);
-                    // TODO - Iff mouse mode, setMousePos();
-                    emit setMousePos (targetI, targetJ);
+                    if ((controlMode == MOUSE) || (controlMode == LAPTOP)) {
+                        emit setMousePos (targetI, targetJ);
+                    }
                     grid->changeCellAt (i, j, FREE);	// Hero now a sprite.
                 }
             }
@@ -273,6 +271,9 @@ void KGrLevelPlayer::init (KGrCanvas * view, const int mode,
     // so there is just one time-source for the model and the view.
 
     timer = new KGrTimer (this, TickTime);	// TickTime def in kgrglobals.h.
+    if (gameFrozen) {
+        timer->pause();				// Pause is ON as level starts.
+    }
 
     connect (timer, SIGNAL (tick (bool, int)), this, SLOT (tick (bool, int)));
     connect (this,  SIGNAL (animation (bool)), view, SLOT (animate (bool)));
@@ -345,7 +346,6 @@ void KGrLevelPlayer::processDugBricks (const int scaledTime)
                 delete dugBrick;
                 iterator.remove();
             }
-            // TODO - Why do we get so many MISSED ticks when we dig?
         }
     }
 }
@@ -353,7 +353,9 @@ void KGrLevelPlayer::processDugBricks (const int scaledTime)
 void KGrLevelPlayer::prepareToPlay()
 {
     kDebug() << "Set mouse to:" << targetI << targetJ;
-    emit setMousePos (targetI, targetJ);
+    if ((controlMode == MOUSE) || (controlMode == LAPTOP)) {
+        emit setMousePos (targetI, targetJ);
+    }
     playState = Ready;
 }
 
@@ -388,19 +390,16 @@ void KGrLevelPlayer::setTarget (int pointerI, int pointerJ)
     case Playing:
         // The human player is playing now.
         if (! playback) {
-        if ((pointerI == targetI) && (pointerJ == targetJ) && (recCount < 255)){
+        if ((pointerI == targetI) && (pointerJ == targetJ) &&
+            (recCount < 255) && (recCount > 0)) { // IDW test.
+            recCount++;
+            recording->content [recIndex] = (uchar) recCount;
             dbe2 "T %04d recIndex %03d REC: codes %d %d %d - recCount++\n",
                  T, recIndex - 2, (uchar)(recording->content.at (recIndex-2)),
                                   (uchar)(recording->content.at (recIndex-1)),
                                   (uchar)(recording->content.at (recIndex)));
-            recCount++;
-            recording->content [recIndex] = (uchar) recCount;
         }
         else {
-            dbe2 "T %04d recIndex %03d REC: codes %d %d %d - new or > 255\n",
-                 T, recIndex - 2, (uchar)(recording->content.at (recIndex-2)),
-                                  (uchar)(recording->content.at (recIndex-1)),
-                                  (uchar)(recording->content.at (recIndex)));
             recIndex++;
             recCount = 1;
             recording->content [recIndex++]   = (uchar) pointerI;
@@ -561,9 +560,9 @@ void KGrLevelPlayer::recordDigAction (const uchar code)
 
     // Record the digging action.
     recIndex++;
-    dbe2 "T %04d recIndex %03d REC: dig code %d\n", T, recIndex, code);
     recording->content [recIndex]   = code;
     recording->content [recIndex + 1] = END_CODE;
+    dbe2 "T %04d recIndex %03d REC: dig code %d\n", T, recIndex, code);
 
     if ((controlMode == MOUSE) || (controlMode == LAPTOP)) {
         // Continue recording the previous pointer-move.
@@ -581,9 +580,9 @@ void KGrLevelPlayer::recordDigAction (const uchar code)
     }
     else if ((controlMode == KEYBOARD) && (direction == STAND)) {
         // If already standing, continue standing after next tick.
-        dbe2 "T %04d recIndex %03d REC: continue standing\n", T, recIndex);
         newDirection = STAND;
         direction    = NO_DIRECTION;
+        dbe2 "T %04d recIndex %03d REC: continue standing\n", T, recIndex);
     }
 }
 
@@ -611,23 +610,23 @@ void KGrLevelPlayer::recordKeystrokes()
         // Initial wait-time is fixed: do not extend it.
         return;
     }
-    else if (recCount < 255) {
-        dbe2 "T %04d recIndex %03d REC: codes   %d %d\n",
-             T, recIndex - 1, (uchar)(recording->content.at (recIndex-1)),
-                              (uchar)(recording->content.at (recIndex)));
+    else if ((recCount < 255) && (recCount > 0)) { // IDW test
         recCount++;
         recording->content [recIndex] = (uchar) recCount;
-    }
-    else {
-        dbe2 "T %04d recIndex %03d REC: codes   %d %d\n",
+        dbe2 "T %04d recIndex %03d REC: codes   %d %d - recCount++\n",
              T, recIndex - 1, (uchar)(recording->content.at (recIndex-1)),
                               (uchar)(recording->content.at (recIndex)));
-        int code = (uchar)(recording->content.at (recIndex-1));
+    }
+    else {
+        int code = DIRECTION_CODE + direction;
         recIndex++;
         recCount = 1;
         recording->content [recIndex++]   = (uchar) code;
         recording->content [recIndex]     = (uchar) recCount;
         recording->content [recIndex + 1] = (uchar) END_CODE;
+        dbe2 "T %04d recIndex %03d REC: codes   %d %d - continued\n",
+             T, recIndex - 1, (uchar)(recording->content.at (recIndex-1)),
+                              (uchar)(recording->content.at (recIndex)));
     }
 }
 
@@ -763,14 +762,8 @@ void KGrLevelPlayer::tick (bool missed, int scaledTime)
     if (playback) {			// Replay a recorded move.
         if (! doRecordedMove()) {
             playback = false;
-            // TODO - How to handle this case properly. emit interruptDemo();
-            //        We want to continue the demo if it is the startup demo.
-            //        We also want to continue to next level after a demo level
-            //        that signals endLevel (DEAD) or even endLevel (NORMAL).
-            // TODO - Playback case is handled in endLevel (DEAD) now, but we
-            //        still could run out of recorded moves or get a KILL_HERO
-            //        action, then what?  Replay of KILL_HERO fails to finish.
-            dbk << "END_OF_RECORDING - or KILL_HERO ACTION.";
+            // TODO - Should we emit interruptDemo() in UNEXPECTED_END case?
+            dbk << "Unexpected END_OF_RECORDING - or KILL_HERO ACTION.";
             return;			// End of recording.
         }
     }
@@ -780,7 +773,6 @@ void KGrLevelPlayer::tick (bool missed, int scaledTime)
         setTarget (i, j);
     }
     else if (controlMode == KEYBOARD) {
-        // TODO - This will count TWO on the first tick after the keystroke.
         recordKeystrokes();
     }
 
@@ -795,8 +787,10 @@ void KGrLevelPlayer::tick (bool missed, int scaledTime)
 
     HeroStatus status = hero->run (scaledTime);
     if ((status == WON_LEVEL) || (status == DEAD)) {
-        // TODO - Can this unsolicited timer pause cause problems in KGrGame?
+        // Unsolicited timer-pause halts animation immediately, regardless of
+        // user-selected state. It's OK: KGrGame deletes KGrLevelPlayer v. soon.
         timer->pause();
+
         // Queued connection ensures KGrGame slot runs AFTER return from here.
         emit endLevel (status);
         kDebug() << "END OF LEVEL";
@@ -941,7 +935,7 @@ bool KGrLevelPlayer::doRecordedMove()
         if ((code == END_CODE) || (code == 0)) {
             dbe2 "T %04d recIndex %03d PLAY - END of recording\n",
                  T, recIndex);
-            emit endLevel (NORMAL);
+            emit endLevel (UNEXPECTED_END);
             return false;
         }
 
@@ -959,8 +953,6 @@ bool KGrLevelPlayer::doRecordedMove()
                      // T, recIndex, targetI, targetJ, recCount);
 
                 setTarget (i, j);
-                // TODO - Jerky. Config it? Smooth it?
-                // emit setMousePos (i, j);
             }
             else {
                 dbe2 "T %04d recIndex %03d PLAY codes %d %d %d\n",
@@ -1034,7 +1026,7 @@ bool KGrLevelPlayer::doRecordedMove()
         else {
             dbe2 "T %04d recIndex %03d PLAY speed-change code %d\n",
                  T, recIndex, code);
-            setTimeScale ((code - SPEED_CODE) * 0.1);
+            setTimeScale (code - SPEED_CODE);
             recIndex++;
             code = recording->content [recIndex];
             recCount = 0;
@@ -1048,8 +1040,6 @@ void KGrLevelPlayer::interruptPlayback()
 {
     // Check if still replaying the wait-time before the first move.
     if (playState != Playing) {
-        // TODO - Should this do playback = false and emit interruptDemo()?
-        //        Or should we ignore the user and make him try again?
         return;
     }
 
@@ -1133,6 +1123,55 @@ void KGrLevelPlayer::interruptPlayback()
     playback = false;
     emit interruptDemo();
     dbk << "INTERRUPT - emit interruptDemo();";
+}
+
+void KGrLevelPlayer::killHero()
+{
+    if (! playback) {
+        // Record that KILL_HERO is how the level ended.
+        int code = ACTION_CODE + KILL_HERO;
+        recIndex++;
+        recCount = 0;
+        recording->content [recIndex]     = (uchar) code;
+        recording->content [recIndex + 1] = (uchar) END_CODE;
+        dbe2 "T %04d recIndex %03d REC: code %d - KILL HERO\n",
+             T, recIndex, code);
+
+        emit endLevel (DEAD);
+        kDebug() << "END OF LEVEL";
+    }
+}
+
+void KGrLevelPlayer::setControlMode  (const int mode)
+{
+    controlMode = mode;
+
+    if (! playback) {
+        // Record the change of mode.
+        int code = MODE_CODE + mode;
+        recIndex++;
+        recCount = 0;
+        recording->content [recIndex]     = (uchar) code;
+        recording->content [recIndex + 1] = (uchar) END_CODE;
+        dbe2 "T %04d recIndex %03d REC: code %d - MODE CHANGE\n",
+             T, recIndex, code);
+    }
+}
+
+void KGrLevelPlayer::setTimeScale  (const int timeScale)
+{
+    timer->setScale ((float) (timeScale * 0.1));
+
+    if (! playback) {
+        // Record the change of speed.
+        int code = SPEED_CODE + timeScale;
+        recIndex++;
+        recCount = 0;
+        recording->content [recIndex]     = (uchar) code;
+        recording->content [recIndex + 1] = (uchar) END_CODE;
+        dbe2 "T %04d recIndex %03d REC: code %d - SPEED CHANGE\n",
+             T, recIndex, code);
+    }
 }
 
 /******************************************************************************/

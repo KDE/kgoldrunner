@@ -23,8 +23,9 @@
 
 #include "kgrglobals.h"
 
-#include <QWidget>
 #include <QFile>
+
+class QWidget;
 
 /// Return values from I/O operations.
 enum IOStatus {OK, NotFound, NoRead, NoWrite, UnexpectedEOF};
@@ -55,6 +56,7 @@ enum IOStatus {OK, NotFound, NoRead, NoWrite, UnexpectedEOF};
  *
  * @short   KGoldrunner Game-File IO
  */
+
 class KGrGameIO : public QObject
 {
     Q_OBJECT

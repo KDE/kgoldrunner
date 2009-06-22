@@ -18,11 +18,11 @@
 #ifndef KGRLEVELGRID_H
 #define KGRLEVELGRID_H
 
+#include "kgrglobals.h"
+
 #include <QObject>
 #include <QVector>
 #include <QList>
-
-#include "kgrglobals.h"
 
 class KGrLevelGrid : public QObject
 {

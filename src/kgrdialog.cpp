@@ -11,15 +11,14 @@
 #include "kgrdialog.h"
 
 #include "kgrglobals.h"
-#include "kgrcanvas.h"
+
+#include <QFile>
+#include <QTextStream>
+#include <QVBoxLayout>
+#include <QLabel>
+#include <QButtonGroup>
 
 #include <KGlobalSettings>
-#include <QTextStream>
-#include <QGridLayout>
-#include <QLabel>
-#include <QVBoxLayout>
-#include <QSpacerItem>
-#include <QHeaderView>
 
 /*******************************************************************************
 *************** DIALOG BOX TO CREATE/EDIT A LEVEL NAME AND HINT ****************

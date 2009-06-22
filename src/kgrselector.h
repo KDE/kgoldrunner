@@ -10,25 +10,14 @@
 #ifndef KGRSELECTOR_H
 #define KGRSELECTOR_H
 
-#include <KLocale>
-#include <KDialog>
-#include <KMessageBox>
-
-
-#include <QListWidget>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 
-#include <QScrollBar>
-// IDW #include <QSlider>
-#include <QLineEdit>
-#include <QSpinBox>
-#include <QPushButton>
-#include <QButtonGroup>
-#include <QRadioButton>
 #include <QList>
-#include <QLabel>
-#include <QTextEdit>
+
+#include <KLocale>
+#include <KDialog>
+#include <KMessageBox>
 
 /**
 @author Ian Wadham and Marco Krüger
@@ -38,6 +27,13 @@ class KGrGameData;
 class KGrThumbNail;
 class KGrGameListItem;
 class KGrGameIO;
+class QScrollBar;
+class QSpinBox;
+class QPushButton;
+class QButtonGroup;
+class QRadioButton;
+class QLabel;
+class QTextEdit;
 
 /******************************************************************************/
 /*******************    DIALOG TO SELECT A GAME AND LEVEL   *******************/
@@ -82,13 +78,11 @@ private:
     QTreeWidget *	games;
     QLabel *		gameN;
     QLabel *		gameD;
-    QPushButton *	gameA;
     QTextEdit *		gameAbout;
 
     QLabel *		numberL;
     QSpinBox *		display;
     QScrollBar *	number;
-    // IDW QSlider *		number;
     QPushButton *	levelNH;
     QLabel *		slName;
     KGrThumbNail *	thumbNail;

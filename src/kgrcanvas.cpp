@@ -16,16 +16,16 @@
  ***************************************************************************/
 
 #include "kgrcanvas.h"
-#include "klocale.h"
+#include "kgrplayfield.h"
+#include "kgrsprite.h"
 
-#include <QPixmap>
-#include <QList>
 #include <QLabel>
+#include <QCursor>
 #include <QMouseEvent>
 
 #include <KDebug>
-
 #include <KConfig>
+#include <KLocale>
 
 #include <cmath>
 
@@ -640,7 +640,7 @@ void KGrCanvas::startAnimation (const int id, const bool repeating,
 // void KGrCanvas::resynchAnimation (const int id, const int i, const int j,
                                   // const bool stop)
 // {
-    // TODO - Write this code, if it is really needed.
+    // Write this code only if it is really needed.
 // }
 
 void KGrCanvas::gotGold (const int spriteId, const int i, const int j,
