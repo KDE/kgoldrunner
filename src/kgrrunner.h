@@ -211,6 +211,8 @@ public:
      */
     void             showState();
 
+signals:
+    void             soundSignal (const int n, const bool onOff = true);
 private:
     int              nuggets;		// Number of gold pieces remaining.
 };

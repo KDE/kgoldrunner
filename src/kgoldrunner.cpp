@@ -380,13 +380,11 @@ void KGoldrunner::setupActions()
 
     // Sound effects on/off
 #ifdef ENABLE_SOUND_SUPPORT
-    KToggleAction * setSounds   = settingAction ("options_sounds", PLAY_SOUNDS,
+                                  settingAction ("options_sounds", PLAY_SOUNDS,
                                   i18n ("&Play Sounds"),
                                   i18n ("Play sound effects."),
                                   i18n ("Play sound effects during the game."));
-
-    bool soundOnOff = gameGroup.readEntry ("Sound", false);
-    setSounds->setChecked (soundOnOff);
+    // Sounds and Checked state are further initialised in game->initGame().
 #endif
 
     // Demo at start on/off.

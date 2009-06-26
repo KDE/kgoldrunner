@@ -82,6 +82,7 @@ KGrGame::KGrGame (KGrCanvas * theView,
         demoType      (DEMO),
         startupDemo   (false),
         programFreeze (false),
+        effects       (0),
         fx            (NumSounds),
         editor        (0)
 {
@@ -90,8 +91,6 @@ KGrGame::KGrGame (KGrCanvas * theView,
     settings (NORMAL_SPEED);
 
     gameFrozen = false;
-
-    loadSounds();
 
     dyingTimer = new QTimer (this);
     connect (dyingTimer, SIGNAL (timeout()),  SLOT (finalBreath()));
@@ -421,6 +420,15 @@ void KGrGame::initGame()
         }
         n++;
     }
+
+    // Set up sounds, if required in config.
+    bool soundOnOff = gameGroup.readEntry ("Sound", false);
+    kDebug() << "Sound" << soundOnOff;
+    if (soundOnOff) {
+        loadSounds();
+        effects->setMuted (false);
+    }
+    emit setToggle ("options_sounds", soundOnOff);
 
     dbk1 << "Owner" << gameList.at (gameIndex)->owner
              << gameList.at (gameIndex)->name << level;
@@ -831,26 +839,30 @@ void KGrGame::setupLevelPlayer()
 
 void KGrGame::incScore (const int n)
 {
-#ifdef ENABLE_SOUND_SUPPORT
-    // I don't think this is the right place, but it's just for testing...
-    switch (n) {
-    case 250: 
-	effects->play (fx[GoldSound]);
-	break;
-    default:
-	break;
-    }
-#endif
     score = score + n;		// SCORING: trap enemy 75, kill enemy 75,
     emit showScore (score);	// collect gold 250, complete the level 1500.
 }
 
-void KGrGame::showHiddenLadders()
+void KGrGame::playSound (const int n, const bool onOff)
 {
-    // TODO - Move this line to KGrLevelPlayer.
-    effects->play (fx[LadderSound]);
+#ifdef ENABLE_SOUND_SUPPORT
+    if (! effects) {
+        return;			// Sound is off and not yet loaded.
+    }
+    static int fallToken = -1;
+    if (onOff) {
+	int token = effects->play (fx [n]);
+        if (n == FallSound) {
+            fallToken = token;
+        }
+    }
+    else {
+	effects->stop (fallToken);
+	fallToken = -1;
+    }
+#endif
 }
-        
+
 void KGrGame::endLevel (const int result)
 {
     dbk << "Return to KGrGame, result:" << result;
@@ -898,24 +910,23 @@ void KGrGame::herosDead()
 
     // Lose a life.
     if ((--lives > 0) || playback) {
-#ifdef ENABLE_SOUND_SUPPORT
-	effects->play (fx[DeathSound]);
-#endif
         // Demo mode or still some life left.
         emit showLives (lives);
 
         // Freeze the animation and let the player see what happened.
         freeze (ProgramPause, true);
+        playSound (DeathSound);
+
         dyingTimer->setSingleShot (true);
         dyingTimer->start (1000);
     }
     else {
         // Game over.
-#ifdef ENABLE_SOUND_SUPPORT
-	effects->play (fx[GameOverSound]);
-#endif
         emit showLives (lives);
+
         freeze (ProgramPause, true);
+        playSound (GameOverSound);
+
         checkHighScore();	// Check if there is a high score for this game.
 
         // Offer the player a chance to start this level again with 5 new lives.
@@ -968,9 +979,8 @@ void KGrGame::repeatLevel()
 
 void KGrGame::levelCompleted()
 {
-#ifdef ENABLE_SOUND_SUPPORT
-    effects->play (fx[CompletedSound]);
-#endif
+    playSound (CompletedSound);
+
     dbk << "Connecting fadeFinished()";
     connect (view, SIGNAL (fadeFinished()), this, SLOT (goUpOneLevel()));
     dbk << "Calling view->fadeOut()";
@@ -992,6 +1002,8 @@ void KGrGame::goUpOneLevel()
     if (level >= levelMax) {
         KGrGameData * gameData = gameList.at (gameIndex);
         freeze (ProgramPause, true);
+        playSound (VictorySound);
+
         KGrMessage::information (view, gameData->name,
             i18n ("<b>CONGRATULATIONS !!!!</b>"
             "<p>You have conquered the last level in the "
@@ -1061,6 +1073,9 @@ void KGrGame::toggleSoundsOnOff()
     soundOnOff = (! soundOnOff);
     gameGroup.writeEntry ("Sound", soundOnOff);
 #ifdef ENABLE_SOUND_SUPPORT
+    if (soundOnOff && (effects == 0)) {
+        loadSounds();
+    }
     effects->setMuted (! soundOnOff);
 #endif
 }
@@ -1780,37 +1795,6 @@ void KGrGame::dbgControl (const int code)
     }
 }
 
-/******************************************************************************/
-/****************************  MISC SOUND HANDLING  ***************************/
-/******************************************************************************/
-
-void KGrGame::heroDigs()
-{
-    effects->play (fx[DigSound]);
-}
-
-void KGrGame::heroStep (bool climbing)
-{
-    if (climbing) {
-	effects->play (fx[ClimbSound]);
-    }
-    else {
-	effects->play (fx[StepSound]);
-    }
-}
-
-void KGrGame::heroFalls (bool starting)
-{
-    static int token = -1;
-    if (starting) {
-	token = effects->play (fx[FallSound]);
-    }
-    else {
-	effects->stop (token);
-	token = -1;
-    }
-}
-
 bool KGrGame::initGameLists()
 {
     // Initialise the lists of games (i.e. collections of levels).
@@ -2091,11 +2075,6 @@ void KGrGame::loadSounds()
                          "themes/default/death.wav"));
     fx[GameOverSound]  = effects->loadSound (KStandardDirs::locate ("appdata",
                          "themes/default/gameover.wav"));
-
-    // REPLACE - 9/1/09  Hero's sound connections.
-    // connect(hero, SIGNAL (stepDone (bool)), this, SLOT (heroStep (bool)));
-    // connect(hero, SIGNAL (falling (bool)), this, SLOT (heroFalls (bool)));
-    // connect(hero, SIGNAL (digs()), this, SLOT (heroDigs()));
 #endif
 }
 

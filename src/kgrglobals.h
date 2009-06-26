@@ -23,7 +23,7 @@
 #include <QByteArray>
 #include <QString>
 
-// #define ENABLE_SOUND_SUPPORT // Ian W. moved it here - 31 May 2008.
+#define ENABLE_SOUND_SUPPORT // Ian W. moved it here - 31 May 2008.
 
 enum Owner {SYSTEM, USER};
 
@@ -48,13 +48,9 @@ const char EDIT_TEST = '2';
 const int  FIELDWIDTH   = 28;
 const int  FIELDHEIGHT  = 20;
 
-const int DIGDELAY = 200;
-
 const int STEP = 4;
 const int gameCycle = 4;		// Animation frames per playfield tile.
 const int graphicsCycle = 8;		// Animation frames per running cycle.
-
-const double DROPNUGGETDELAY = 70.0;	// Enemy holds gold for avg. 12.5 cells.
 
 // Keyboard action codes
 enum KBAction		{KB_UP, KB_DOWN, KB_LEFT, KB_RIGHT,
@@ -69,6 +65,10 @@ enum SelectAction	{SL_START, SL_ANY, SL_CREATE, SL_UPDATE, SL_SAVE,
 const char TraditionalRules = 'T';
 const char KGoldrunnerRules = 'K';
 const char ScavengerRules   = 'S';
+
+// Codes and array indices for the sounds of the game.
+enum {GoldSound, StepSound, ClimbSound, FallSound, DigSound, LadderSound, 
+      DeathSound, CompletedSound, VictorySound, GameOverSound, NumSounds};
 
 /// Centralised message functions: implementations in kgrdialog.cpp.
 class QWidget;
