@@ -67,6 +67,9 @@ public slots:
 
     void incScore           (const int n);	// Update the score.
 
+    // Play or stop sound.  Default is play: only FallSound can be stopped.
+    void playSound          (const int n, const bool onOff = true);
+
 private:
     void quickStartDialog();
 
@@ -106,8 +109,6 @@ private:
 
     QString getDirectory (Owner o);
 
-    void showHiddenLadders();		// Show hidden ladders (nuggets gone).
-
     void herosDead();			// Hero was caught or he quit (key Q).
     void levelCompleted();		// Hero completed the level.
 
@@ -128,10 +129,6 @@ private slots:
     void finalBreath();			// Hero is dead: end the death-scene.
     void repeatLevel();			// Hero is dead: repeat the level.
     void goUpOneLevel();		// Start next level.
-
-    void heroStep (bool climbing);	// The hero has put a foot on the floor.
-    void heroFalls (bool startStop);	// The hero has started/stopped falling.
-    void heroDigs();			// The hero is digging.
 
 signals:
     // These signals go to the GUI in most cases.
@@ -220,18 +217,6 @@ private:
 /*******************************  SOUND SUPPORT *******************************/
 /******************************************************************************/
     KGrSoundBank * effects;
-    enum { 
-	    GoldSound, 
-	    StepSound, 
-	    ClimbSound, 
-	    FallSound, 
-	    DigSound, 
-	    LadderSound, 
-	    DeathSound, 
-	    CompletedSound, 
-	    VictorySound,
-	    GameOverSound,
-	    NumSounds };
     QVector<int> fx;
 
 public slots:

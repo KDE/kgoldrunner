@@ -245,12 +245,24 @@ HeroStatus KGrHero::run (const int scaledTime)
         return NORMAL;
     }
 
+    if ((currDirection != STAND) && (! falling)) {
+        int step = ((currAnimation == RUN_R) || (currAnimation == RUN_L)) ?
+                    StepSound : ClimbSound;
+        emit soundSignal (step);
+    }
+
     // Continue to the next cell.
     char cellType = nextCell();
 
     if (cellType == NUGGET) {
         nuggets = levelPlayer->runnerGotGold (spriteId, gridI, gridJ, true);
         emit incScore (250);		// Add to the human player's score.
+        if (nuggets > 0) {
+            emit soundSignal (GoldSound);
+        }
+        else {
+            emit soundSignal (LadderSound);
+        }
     }
 
     Direction nextDirection;
@@ -258,7 +270,7 @@ HeroStatus KGrHero::run (const int scaledTime)
     bool newFallingState = setNextMovement (HERO, cellType, nextDirection,
                                             nextAnimation, interval);
     if (newFallingState != falling) {
-        // emit soundSignal (FALLING, newFallingState);	// Start/stop falling.
+        emit soundSignal (FallSound, newFallingState);	// Start/stop falling.
         falling = newFallingState;
     }
     timeLeft += interval;
@@ -317,6 +329,10 @@ bool KGrHero::dig (const Direction diggingDirection, int & i, int & j)
         j = gridJ + 1;
         result = true;
     }
+    if (true) {
+        emit soundSignal (DigSound);
+    }
+
     return result;	// Tell the levelPlayer whether & where to open a hole.
 }
 

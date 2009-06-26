@@ -255,6 +255,10 @@ void KGrLevelPlayer::init (KGrCanvas * view, const int mode,
                  game,  SLOT   (incScore (const int)));
     }
 
+    // Connect the sounds.
+    connect (hero, SIGNAL (soundSignal (const int, const bool)),
+             game, SLOT   (playSound   (const int, const bool)));
+
     // Connect the level player to the animation code (for use with dug bricks).
     connect (this, SIGNAL (startAnimation (int, bool, int, int, int,
                                            Direction, AnimationType)),
