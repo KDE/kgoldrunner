@@ -20,7 +20,6 @@
 #include <QSpacerItem>
 #include <QHeaderView>
 #include <QScrollBar>
-#include <QSpinBox>
 #include <QPushButton>
 #include <QButtonGroup>
 #include <QRadioButton>
@@ -31,6 +30,7 @@
 
 #include <KGlobalSettings>
 #include <KConfigGroup>
+#include <KIntNumInput>
 
 /******************************************************************************/
 /*****************    DIALOG BOX TO SELECT A GAME AND LEVEL   *****************/
@@ -193,7 +193,7 @@ void KGrSLDialog::setupWidgets()
     numberPair->setLayout (hboxLayout2);
     grid->addWidget (numberPair, 1, 1, 1, 3);
     numberL   = new QLabel (i18n ("Level number:"), numberPair);
-    display   = new QSpinBox (numberPair);
+    display   = new KIntSpinBox (numberPair);
     display->setRange (1, 150);
     hboxLayout2->addWidget (numberL);
     hboxLayout2->addWidget (display);
