@@ -2075,6 +2075,8 @@ void KGrGame::loadSounds()
                          "themes/default/death.wav"));
     fx[GameOverSound]  = effects->loadSound (KStandardDirs::locate ("appdata",
                          "themes/default/gameover.wav"));
+    fx[VictorySound]   = effects->loadSound (KStandardDirs::locate ("appdata",
+                         "themes/default/victory.wav"));
 #endif
 }
 
