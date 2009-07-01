@@ -27,8 +27,8 @@ class KGrGameData;
 class KGrThumbNail;
 class KGrGameListItem;
 class KGrGameIO;
+class KIntSpinBox;
 class QScrollBar;
-class QSpinBox;
 class QPushButton;
 class QButtonGroup;
 class QRadioButton;
@@ -81,7 +81,7 @@ private:
     QTextEdit *		gameAbout;
 
     QLabel *		numberL;
-    QSpinBox *		display;
+    KIntSpinBox *	display;
     QScrollBar *	number;
     QPushButton *	levelNH;
     QLabel *		slName;

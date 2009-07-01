@@ -329,7 +329,7 @@ bool KGrHero::dig (const Direction diggingDirection, int & i, int & j)
         j = gridJ + 1;
         result = true;
     }
-    if (true) {
+    if (result) {
         emit soundSignal (DigSound);
     }
 
