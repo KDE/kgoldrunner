@@ -241,14 +241,19 @@ HeroStatus KGrHero::run (const int scaledTime)
     if (levelPlayer->heroCaught (gridX, gridY)) {
         return DEAD;
     }
-    if (s == MidCell) {
-        return NORMAL;
-    }
 
-    if ((currDirection != STAND) && (! falling)) {
+    // Emit StepSound once per cell or ClimbSound twice per cell.
+    if (((s == EndCell) || (pointCtr == (pointsPerCell/2))) &&
+        (currDirection != STAND) && (! falling)) {
         int step = ((currAnimation == RUN_R) || (currAnimation == RUN_L)) ?
                     StepSound : ClimbSound;
-        emit soundSignal (step);
+        if ((s == EndCell) || (step == ClimbSound)) {
+            emit soundSignal (step);
+        }
+    }
+
+    if (s == MidCell) {
+        return NORMAL;
     }
 
     // Continue to the next cell.

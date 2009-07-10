@@ -86,8 +86,8 @@ int KGrSoundBank::play (int effect, bool looping)
     channels[i]->setCurrentSource (soundSamples[effect]);
     channels[i]->play();
     tokens[i] = ++currentToken;
-    kDebug() << "Playing sound" << soundSamples[effect].fileName() << 
-	"with token" << currentToken << "on channel" << i;
+    // kDebug() << "Playing sound" << soundSamples[effect].fileName() << 
+	// "with token" << currentToken << "on channel" << i;
     return currentToken;
 }
 
@@ -100,7 +100,7 @@ int KGrSoundBank::freeAChannel() {
     for (int i = 0; i < channels.count(); i++) {
 	if (channels[i]->state() == Phonon::StoppedState) {
 	    tokens[i] = -1;
-	    kDebug() << "Found free channel" << i;
+	    // kDebug() << "Found free channel" << i;
 	    best = i;
 	}
     }
@@ -134,7 +134,7 @@ void KGrSoundBank::freeChannels()
     for (int i = 0; i < channels.count(); i++) {
 	if (channels[i]->state() == Phonon::StoppedState) {
 	    tokens[i] = -1;
-	    kDebug() << "Channel" << i << "is free";
+	    // kDebug() << "Channel" << i << "is free";
 	} else if (channels[i]->state() == Phonon::ErrorState) {
 	    kDebug() << "Channel" << i << "is in error";
 	    disconnect (channels[i], SIGNAL (finished()), this, SLOT (freeChannels()));
@@ -164,7 +164,7 @@ void KGrSoundBank::stop (int token)
 
     channels[i]->stop();
     tokens[i] = -1;
-    kDebug() << "Stopping sound with token" << token << "on channel" << i;
+    // kDebug() << "Stopping sound with token" << token << "on channel" << i;
 }
 
 void KGrSoundBank::setMuted (bool mute)

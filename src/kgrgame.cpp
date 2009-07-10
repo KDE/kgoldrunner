@@ -2057,26 +2057,29 @@ void KGrGame::loadSounds()
     effects = new KGrSoundBank(8);
     effects->setParent (this);		// Delete at end of KGrGame.
 
+    // StepSound and ClimbSound play better as .wav and the files are slightly
+    // shorter than the corresponding .ogg files.  All other sounds play well
+    // and play better concurrently as .ogg (with KDE 4.3 and Qt 4.5.1).
     fx[GoldSound]      = effects->loadSound (KStandardDirs::locate ("appdata",
-                         "themes/default/gold.wav"));
+                         "themes/default/gold.ogg"));
     fx[StepSound]      = effects->loadSound (KStandardDirs::locate ("appdata",
                          "themes/default/step.wav"));
     fx[ClimbSound]     = effects->loadSound (KStandardDirs::locate ("appdata",
                          "themes/default/climb.wav"));
     fx[FallSound]      = effects->loadSound (KStandardDirs::locate ("appdata",
-                         "themes/default/falling.wav"));
+                         "themes/default/falling.ogg"));
     fx[DigSound]       = effects->loadSound (KStandardDirs::locate ("appdata",
-                         "themes/default/dig.wav"));
+                         "themes/default/dig.ogg"));
     fx[LadderSound]    = effects->loadSound (KStandardDirs::locate ("appdata",
-                         "themes/default/ladder.wav"));
+                         "themes/default/ladder.ogg"));
     fx[CompletedSound] = effects->loadSound (KStandardDirs::locate ("appdata",
-                         "themes/default/completed.wav"));
+                         "themes/default/completed.ogg"));
     fx[DeathSound]     = effects->loadSound (KStandardDirs::locate ("appdata",
-                         "themes/default/death.wav"));
+                         "themes/default/death.ogg"));
     fx[GameOverSound]  = effects->loadSound (KStandardDirs::locate ("appdata",
-                         "themes/default/gameover.wav"));
+                         "themes/default/gameover.ogg"));
     fx[VictorySound]   = effects->loadSound (KStandardDirs::locate ("appdata",
-                         "themes/default/victory.wav"));
+                         "themes/default/victory.ogg"));
 #endif
 }
 
