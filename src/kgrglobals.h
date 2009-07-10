@@ -1,6 +1,6 @@
 /****************************************************************************
  *    Copyright 2003  Marco Krüger <grisuji@gmx.de>                         *
- *    Copyright 2003  Ian Wadham <ianw2@optusnet.com.au>                    *
+ *    Copyright 2003  Ian Wadham <iandw.au@gmail.com>                       *
  *    Copyright 2009  Ian Wadham <iandw.au@gmail.com>                       *
  *                                                                          *
  *    This program is free software; you can redistribute it and/or         *
