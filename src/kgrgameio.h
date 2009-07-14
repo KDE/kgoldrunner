@@ -69,7 +69,7 @@ public:
     /**
      * Find and read data for games, into a list of KGrGameData structures.
      */
-    IOStatus fetchGameListData (Owner o, const QString & dir,
+    IOStatus fetchGameListData (const Owner o, const QString & dir,
                                 QList<KGrGameData *> & gameList,
                                 QString & filePath);
 

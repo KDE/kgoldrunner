@@ -413,12 +413,12 @@ int KGrCanvas::tileNumber (KGrTheme::TileType type, int x, int y)
     }
 }
 
-void KGrCanvas::paintCell (int x, int y, char type, int offset)
+void KGrCanvas::paintCell (const int i, const int j, const char type, const int offset)
 {
     // IDW kDebug() << "recv paintCell (" << x << y << type << offset << ");";
     KGrTheme::TileType tileType = tileForType (type);
     // In KGrGame, the top-left visible cell is [1,1]: in KGrPlayfield [0,0].
-    x--; y--;
+    int x = i - 1, y = j - 1; // IDW x--; y--;
     switch (offset) {
     case 1: tileType = KGrTheme::BrickAnimation1Tile; break;
     case 2: tileType = KGrTheme::BrickAnimation2Tile; break;
