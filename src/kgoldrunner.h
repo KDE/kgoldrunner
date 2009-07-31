@@ -38,11 +38,9 @@ const int L_LEVEL       = 15;
 class QSignalMapper;
 class KAction;
 class KToggleAction;
-class KToggleFullScreenAction;
 
 class KGrGame;
 class KGrCanvas;
-class KGrHero;
 
 /**
  * This class serves as the main window for KGoldrunner.  It handles the

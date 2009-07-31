@@ -40,8 +40,6 @@ class KGrGameIO;
 class KIntSpinBox;
 class QScrollBar;
 class QPushButton;
-class QButtonGroup;
-class QRadioButton;
 class QLabel;
 class QTextEdit;
 
