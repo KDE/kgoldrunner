@@ -283,11 +283,8 @@ void KGrLevelPlayer::init (KGrCanvas * view, const int mode,
     connect (this,  SIGNAL (animation (bool)), view, SLOT (animate (bool)));
 
     if (! playback) {
-        dbk << "Play is being RECORDED.";
-        recordInitialWaitTime (NO_DIRECTION, 1500);
-    }
-    else {
-        dbk << "Play is being REPRODUCED.";
+        // Allow some time to view the level before starting a replay.
+        recordInitialWaitTime (1500);		// 1500 msec or 1.5 sec.
     }
 }
 
@@ -387,33 +384,14 @@ void KGrLevelPlayer::setTarget (int pointerI, int pointerJ)
             break;
         }
         // The pointer moved: fall into "case Playing:" and start playing.
-        else if (! playback) {
+        else if (! playback) { // TODO - Remove debugging code (3 lines).
             T = 0;
         }
         playState = Playing;
     case Playing:
         // The human player is playing now.
         if (! playback) {
-        if ((pointerI == targetI) && (pointerJ == targetJ) &&
-            (recCount < 255) && (recCount > 0)) { // IDW test.
-            recCount++;
-            recording->content [recIndex] = (uchar) recCount;
-            dbe2 "T %04d recIndex %03d REC: codes %d %d %d - recCount++\n",
-                 T, recIndex - 2, (uchar)(recording->content.at (recIndex-2)),
-                                  (uchar)(recording->content.at (recIndex-1)),
-                                  (uchar)(recording->content.at (recIndex)));
-        }
-        else {
-            recIndex++;
-            recCount = 1;
-            recording->content [recIndex++]   = (uchar) pointerI;
-            recording->content [recIndex++]   = (uchar) pointerJ;
-            recording->content [recIndex]     = (uchar) recCount;
-            recording->content [recIndex + 1] = (uchar) END_CODE;
-            dbe2 "T %04d recIndex %03d REC: codes %d %d %d - NEW TARGET\n",
-                 T, recIndex - 2, pointerI, pointerJ,
-                                  (uchar)(recording->content.at (recIndex)));
-        }
+            record (3, pointerI, pointerJ);
         }
         targetI = pointerI;
         targetJ = pointerJ;
@@ -449,8 +427,8 @@ void KGrLevelPlayer::doDig (int button)
         break;
     }
     if (recordByte != 0) {
-        // Record a digging action.
-        recordDigAction (recordByte);
+        // Record the digging action.
+        record (1, recordByte);
     }
 }
 
@@ -472,7 +450,7 @@ void KGrLevelPlayer::setDirectionByKey (Direction dirn)
             newDirection = STAND;	// Stop a keyboard move when digging.
         }
         startDigging (dirn);
-        recordDigAction ((uchar) (DIRECTION_CODE + dirn));
+        record (1, (uchar) (DIRECTION_CODE + dirn));
     }
     else if (controlMode == KEYBOARD) {
         if (playState == Ready) {
@@ -529,13 +507,13 @@ Direction KGrLevelPlayer::getDirection (int heroI, int heroJ)
     return direction;
 }
 
-void KGrLevelPlayer::recordInitialWaitTime (const Direction dirn, const int ms)
+void KGrLevelPlayer::recordInitialWaitTime (const int ms)
 {
     // Allow a pause for viewing when playback starts.
     recCount = ms / TickTime;			// Convert milliseconds-->ticks.
     if (controlMode == KEYBOARD) {
-        // int code = DIRECTION_CODE + dirn;
-        recording->content [recIndex++]   = (uchar) (DIRECTION_CODE + dirn);
+        recording->content [recIndex++]   = (uchar) (DIRECTION_CODE +
+                                                     NO_DIRECTION);
         recording->content [recIndex]     = (uchar) recCount;
         recording->content [recIndex + 1] = (uchar) END_CODE;
     }
@@ -547,91 +525,77 @@ void KGrLevelPlayer::recordInitialWaitTime (const Direction dirn, const int ms)
     }
 }
 
-void KGrLevelPlayer::recordDigAction (const uchar code)
+void KGrLevelPlayer::record (const int bytes, const int n1, const int n2)
 {
-    if (recIndex >= 3) {
-        // If not the hero's first move, interrupt any previous pointer-move.
-        if ((controlMode == MOUSE) || (controlMode == LAPTOP)) {
-            recording->content [recIndex] =
-                recording->content [recIndex] - 1;
-            dbe2 "T %04d recIndex %03d REC: codes %d %d %d - adjust for dig\n",
-                 T, recIndex - 2,
-                (uchar)(recording->content.at (recIndex-2)),
-                (uchar)(recording->content.at (recIndex-1)),
-                (uchar)(recording->content.at (recIndex)));
+    if (playback) {
+        return;
+    }
+
+    // Check for repetition of a previous direction-key or pointer posn. (I, J).
+    if (recIndex > 2)
+    dbe3 "recCount %d bytes %d n1 %d n2 %d [recIndex-1] %d [recIndex-2] %d\n",
+        recCount, bytes, n1, n2, (uchar) recording->content.at (recIndex - 1),
+        (uchar) recording->content.at (recIndex - 2));
+    if ((recCount > 0) && (bytes > 1) && (recCount < (END_CODE - 1)) &&
+        (((bytes == 2) && (n1 == (uchar) recording->content [recIndex - 1])) ||
+         ((bytes == 3) && (n1 == (uchar) recording->content [recIndex - 2]) &&
+                          (n2 == (uchar) recording->content [recIndex - 1]))
+        )) {
+        // Count repetitions, up to a maximum of (END_CODE - 1) = 254.
+        recording->content [recIndex]       = (uchar) (++recCount);
+        if (bytes == 2) {
+            dbe2 "T %04d recIndex %03d REC: codes --- %3d %3d - recCount++\n",
+                 T, recIndex - 1, (uchar)(recording->content.at (recIndex-1)),
+                                  (uchar)(recording->content.at (recIndex)));
         }
-    }
-
-    // Record the digging action.
-    recIndex++;
-    recording->content [recIndex]   = code;
-    recording->content [recIndex + 1] = END_CODE;
-    dbe2 "T %04d recIndex %03d REC: dig code %d\n", T, recIndex, code);
-
-    if ((controlMode == MOUSE) || (controlMode == LAPTOP)) {
-        // Continue recording the previous pointer-move.
-        recIndex++;
-        recCount = 1;
-        recording->content [recIndex++]   = targetI;
-        recording->content [recIndex++]   = targetJ;
-        recording->content [recIndex]     = (uchar) recCount;
-        recording->content [recIndex + 1] = END_CODE;
-        dbe2 "T %04d recIndex %03d REC: codes %d %d %d - after dig\n",
-             T, recIndex - 2,
-            (uchar)(recording->content.at (recIndex-2)),
-            (uchar)(recording->content.at (recIndex-1)),
-            (uchar)(recording->content.at (recIndex)));
-    }
-    else if ((controlMode == KEYBOARD) && (direction == STAND)) {
-        // If already standing, continue standing after next tick.
-        newDirection = STAND;
-        direction    = NO_DIRECTION;
-        dbe2 "T %04d recIndex %03d REC: continue standing\n", T, recIndex);
-    }
-}
-
-void KGrLevelPlayer::recordKeystrokes()
-{
-    if (newDirection != direction) {
-        direction = newDirection;
-
-        // Record a change in direction.
-        int code = DIRECTION_CODE + direction;
-        recIndex++;
-        recCount = 1;
-        recording->content [recIndex++]   = (uchar) code;
-        recording->content [recIndex]     = (uchar) recCount;
-        recording->content [recIndex + 1] = (uchar) END_CODE;
-        dbe2 "T %04d recIndex %03d REC: codes %d %d %d - NEW DIRECTION\n",
-             T, recIndex - 1, direction, code,
-                              (uchar)(recording->content.at (recIndex)));
-    }
-    else if (recIndex < 1) {
-        // No keystroke recorded yet.
+        else if (bytes == 3) {
+            dbe2 "T %04d recIndex %03d REC: codes %3d %3d %3d - recCount++\n",
+                 T, recIndex - 2, (uchar)(recording->content.at (recIndex-2)),
+                                  (uchar)(recording->content.at (recIndex-1)),
+                                  (uchar)(recording->content.at (recIndex)));
+        }
         return;
     }
-    else if (direction == NO_DIRECTION) {
-        // Initial wait-time is fixed: do not extend it.
-        return;
+
+    // Record a single code or the first byte of a new doublet or triplet.
+    recCount = 0;
+    recording->content [++recIndex]         = (uchar) n1;
+
+    if (bytes == 3) {
+        // Record another byte for a triplet (i.e. the pointer's J position).
+        recording->content [++recIndex] = (uchar) n2;
     }
-    else if ((recCount < 255) && (recCount > 0)) { // IDW test
-        recCount++;
-        recording->content [recIndex] = (uchar) recCount;
-        dbe2 "T %04d recIndex %03d REC: codes   %d %d - recCount++\n",
-             T, recIndex - 1, (uchar)(recording->content.at (recIndex-1)),
-                              (uchar)(recording->content.at (recIndex)));
-    }
-    else {
-        int code = DIRECTION_CODE + direction;
-        recIndex++;
+
+    if (bytes > 1) {
+        // Record a repetition-count of 1 for a new doublet or triplet.
         recCount = 1;
-        recording->content [recIndex++]   = (uchar) code;
-        recording->content [recIndex]     = (uchar) recCount;
-        recording->content [recIndex + 1] = (uchar) END_CODE;
-        dbe2 "T %04d recIndex %03d REC: codes   %d %d - continued\n",
-             T, recIndex - 1, (uchar)(recording->content.at (recIndex-1)),
-                              (uchar)(recording->content.at (recIndex)));
+        recording->content [++recIndex]     = (uchar) recCount;
     }
+
+    switch (bytes) {
+    case 1:
+        dbe2 "T %04d recIndex %03d REC: singleton %3d %x\n",
+             T, recIndex, n1, n1);
+        break;
+    case 2:
+        dbe2 "T %04d recIndex %03d REC: codes %3d %3d %3d - NEW DIRECTION\n",
+             T, recIndex - 1, direction,
+                              (uchar)(recording->content.at (recIndex-1)),
+                              (uchar)(recording->content.at (recIndex)));
+        break;
+    case 3:
+        dbe2 "T %04d recIndex %03d REC: codes %3d %3d %3d - NEW TARGET\n",
+             T, recIndex - 2, (uchar)(recording->content.at (recIndex-2)),
+                              (uchar)(recording->content.at (recIndex-1)),
+                              (uchar)(recording->content.at (recIndex)));
+        break;
+    default:
+        break;
+    }
+
+    // Add the end-of-recording code (= 255).
+    recording->content [recIndex + 1] = (uchar) END_CODE;
+    return;
 }
 
 Direction KGrLevelPlayer::getEnemyDirection (int  enemyI, int enemyJ,
@@ -777,7 +741,13 @@ void KGrLevelPlayer::tick (bool missed, int scaledTime)
         setTarget (i, j);
     }
     else if (controlMode == KEYBOARD) {
-        recordKeystrokes();
+        if (newDirection != direction) {
+            direction = newDirection;
+        }
+        // Record the direction, but do not extend the initial wait-time.
+        if (direction != NO_DIRECTION) {
+            record (2, DIRECTION_CODE + direction);
+        }
     }
 
     if (playState != Playing) {
@@ -1133,13 +1103,7 @@ void KGrLevelPlayer::killHero()
 {
     if (! playback) {
         // Record that KILL_HERO is how the level ended.
-        int code = ACTION_CODE + KILL_HERO;
-        recIndex++;
-        recCount = 0;
-        recording->content [recIndex]     = (uchar) code;
-        recording->content [recIndex + 1] = (uchar) END_CODE;
-        dbe2 "T %04d recIndex %03d REC: code %d - KILL HERO\n",
-             T, recIndex, code);
+        record (1, ACTION_CODE + KILL_HERO);
 
         emit endLevel (DEAD);
         kDebug() << "END OF LEVEL";
@@ -1152,13 +1116,7 @@ void KGrLevelPlayer::setControlMode  (const int mode)
 
     if (! playback) {
         // Record the change of mode.
-        int code = MODE_CODE + mode;
-        recIndex++;
-        recCount = 0;
-        recording->content [recIndex]     = (uchar) code;
-        recording->content [recIndex + 1] = (uchar) END_CODE;
-        dbe2 "T %04d recIndex %03d REC: code %d - MODE CHANGE\n",
-             T, recIndex, code);
+        record (1, MODE_CODE + mode);
     }
 }
 
@@ -1167,14 +1125,7 @@ void KGrLevelPlayer::setTimeScale  (const int timeScale)
     timer->setScale ((float) (timeScale * 0.1));
 
     if (! playback) {
-        // Record the change of speed.
-        int code = SPEED_CODE + timeScale;
-        recIndex++;
-        recCount = 0;
-        recording->content [recIndex]     = (uchar) code;
-        recording->content [recIndex + 1] = (uchar) END_CODE;
-        dbe2 "T %04d recIndex %03d REC: code %d - SPEED CHANGE\n",
-             T, recIndex, code);
+        record (1, SPEED_CODE + timeScale);
     }
 }
 

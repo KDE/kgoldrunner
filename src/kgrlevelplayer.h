@@ -377,9 +377,8 @@ private:
     QVector<int> reappearPos;
     void         makeReappearanceSequence();
     bool         doRecordedMove();
-    void         recordInitialWaitTime (const Direction dirn, const int ms);
-    void         recordDigAction (const uchar code);
-    void         recordKeystrokes();
+    void         recordInitialWaitTime (const int ms);
+    void         record (const int bytes, const int n1, const int n2 = 0);
 
 /******************************************************************************/
 /**************************  AUTHORS' DEBUGGING AIDS **************************/
