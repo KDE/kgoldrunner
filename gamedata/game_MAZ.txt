@@ -1,0 +1,189 @@
+// G037 T MAZ C
+ i18n("Mazes");
+ i18n("Mazes, mazes, mazes.  Some with enemies, some without.  While occasionally you will need to kill an enemy, as a general rule it is best not to kill them, because they reappear at the top and block your exit.\n"
+ "\n"
+ "Another great set of Championship levels from Steve Mann <smann at cgl uwaterloo ca>.  The levels are named after dwarfs in myths and stories, beginning with the seven from Disney's version of Snow White.");
+// L001
+//  MMMMMMMMMMMMMHMMMMMMMMMMMMMM           M H           N M HHHHHHHHH M HHHHHHHHHHHHH M H       H M   Z E X H XE ZM H XXXXX H XXXXXXXXX H XXXXM H     M H         M H     M HHHHH M HHHHHHHHH M HHHHH M   X H M       X H M H   H MXXXX H XXXXXXXXX H X H X H M     H M       M H M H M H M HHHHH M HHHHH M H M H M H M H     M H   H M H M H M H M H XXXXX H X H X H X H X H M H M N M H M H   H M HNM H M H M H M H M HHHHH M HHM H M H M H M H M       M   M H M H X H X H XXXXXXXXXXXXX H XRH M H   H               H MHH M HHHHHHHHHHHHHHHHHHHHH M   M                       X
+ i18n("Dopey");
+ i18n("Fairly simple, just avoid falling off the ladders.  There are several ways to get past the two enemies at the end.  One of the quickest is to wait on a tall vertical ladder, just below the second highest horizontal ladder, until the path to the exit is clear.");
+// L002
+//    M        M                 NM        M    T          ZH   HMXXMH M HXH MMMMMMMMMMMH   HX  XH M HMH       M    HT  HMH MH M HMH  T    M    H MXMMH MH M HMMMX HMH M HXHH X   H M H H M XM HMH   HMHH M   H M H H MX M HMH   HMHH MMMMH MXMXMXMMMMXMMMXXXMMHH MXNMHT     T   M        MHH M XFH     H    M  E     MHH MMMMH XMMMH MMMM HMMMXH MHH     H M   H MX M H   MH MHHT    H M   H X NM H   MH MHH MMMMMMMXXXMXMMMMMMMH MH MHH M     M     M      H MH  H  M     M     M      H MH  HMMM HMH M HMH M HXXXXMXXMMMH    HMH   HMH   HM         HR   HMH   HMH   HMN        H
+ i18n("Sleepy");
+ i18n("A lot of backtracking, but nothing too difficult here.");
+// L003
+//  MMMMMMMMMMMMMMMMMMMMMMMMMMMHN      M M              NM HXXXMMMHMHMXMHMXXMHMMFHMMXMHM   M  H H  XHX    H FH X  HNMFH MMHMMMMMHMMFXXXMXXXMHMMFMFMH  H   HMHM F M      HX  MXMFXXMXXXHMHMHFHMHMHMXXMMHF  NX      H H HFH HMHX   NHNMXXXHXXXXMMXMXMFMXMMHMHXXFMF    H    X     M   MHMH     XXXXMMHMHMHMHMMMHMMMHMHMMMHF      HMHMHMH T H T HMH  MH MMHMHMHMHMHMMX XMM FHMHMMMMFRMHMHMHXH H TMXN X XH H   N HMMMHMMMHMMXM HMHM MHMHFHMXFH   HM MHMTNTMNMHM MHMNXHXHNHMMMHMHMHFMXMXFFHMMMMXXMHMHFHM MH HMH H H   HM     M MH HMHMMMHMMMHMHMMMHMMMHMHMXMHF MH   H  M M M  H   HMH   H 
+ i18n("Doc");
+ i18n("A few tricks to figure out how to get the gold, but nothing too hard.");
+// L004
+//  R  M M M M M M M M M M M M MMHMHMHMHMHMHMHMHMHMHMHMHMNM HHHH HHHHH MHH HHH HHHHHHHHMMHMNMHMHMHMHMHMHMHMHMHM MHMHHHHMHMHMHHHMHHHMHMHMHMHMHH MMHMHMHMHMHMHMHMHMHMHMHMHMHMNHHHH HHM HHMNHHMHHNHHHHHHHHMMHMHMHMHMHMHMHMHMHMHMHMHMHMHNHHMHHHMHHHMHMHMHHHMHMHMHHHMMHMHMHMHMHMHMHM MHMHMHMHMHMHHHHMHHHMHH HHHHMHHHHHH MHHHMMHMHMHMHMHMHMHMHM MHMHMHMHM HMHMHHHMHMHMHHHMHMHMHHHMHMHMMHMHMHMHMHMHMHMHMHMHMHMHMHMHHHHH HHMHHNMHHHH HHMHHHH HHMMHMHMHMHMHMHMHMHMHMHM MNMHMHHHHMHMHMHHHMHMHMHHHMHMHMHHHMMHMHMHMHMHMHMHMHMHMHMHMHMHMHNHHMNHHHHHHH HHHHHHH HHHHH MM MHMHMHM MHMHMHM MHMHMHMHMH
+ i18n("Grumpy");
+ i18n("Visually confusing, but otherwise a simple maze.");
+// L005
+//  R  M  M  H M   HM   M H M     ZM      NM                HXXMHXXXXXXXXXXHXHXXXXXXXXXHHHHHH HH   M   HMH  HH  M  H   FXXM H  M   HMXXXMH  MHXX   MN M HH MXXXXM   MH  MHTH   M HM   HH    HE   H  M  HXXXMXHMXXXXXXXXXXXXXXXXHMXXH T M HHH   HHT  NM  XN HM  HH HH HMMXXXMHXFHM   HXXMM  HH MMXMM   NMH MMMHXXH   M  HH     M  HXHH H XH NMH  ME HMXXXXHMXXHMHMXXXMHXXMHXXMXXHN M  HMEMHHHM   MHTNMHM HH H HM  HM M HM    MHM MHMHMH HH M  HM M HHH   HH FMH HMH HXHMHXMMHMXMFMXXXMMXXMNMHMXXM HMH  MHTTHMN   H   M MHM N  HMH  MH  HMXXXXMH  M MHM  H H H   HFFH      H  M  H   H
+ i18n("Sneezy");
+ i18n("Mostly straightforward, the only trick here is how to draw off the enemies so as to get past them.  In the beginning, try to lure the top two enemies into the top-center pit.  This gives you enough time to slip past them.  The enemy on the bottom is relatively easy to avoid (twice).  To get past the top two enemies on your way back, lure the first one deep into the maze until you find a way back past him, then lure the second one to the section with the pole near the top.");
+// L006
+//  MMMMMMMMMMMMMMMMMMMMMMMMMMZMN  MMMNM      T  M     MN ZMZMHMMMHMHMXXXX XHMHXHXHMXMHM MH  MH HM   MNMH HMHMH  MHM MHXHM MFMHXHMFMMM MHMMMHMHM MHMHMNM MHMH    MNMH  MH HM MHMHMXXXMHMMMMXHMMMMMHMMXHM XHMHM   MH    MH     HMNMHMMMHMHMHXHMMMMMHMMXXXXXMM MHM  HMH HMH     HMN     NM  HMHXMMMXMMMXXXXXFMFMHMXXXMHXMMHM    N        MXMHM    HMNMHMHMMMXMNMMMMMMMMMHMHXXXMMHMHMH    MNM        HMH  M  HMHMMMMMHMMMHMMMXXXXHMMMHMHM MH    MH  MH  M   MH   HMHM M XXXHXMX MMMHM MHMMMMMMMHM M  NMH  MT  MHMNMH  MFXN HM MMMMMMMHM XHMHMMMMMHMMMMMHM MR     HX MH H     H     HMNM
+ i18n("Bashful");
+ i18n("To reach the two pieces of gold stacked one above the other, you have to drop through a trap below one of the ladders above that section.\n"
+ "\n"
+ "Leave the piece of gold at the upper left until the very last.");
+// L007
+//   MMMMMMMMMMMMMMMMMMMMMMMMMMMHMEHHH MNMEHHHNMNMNM H MNM RHMHMHMHMHMHMMMHMHMHMHMHMHMHMHMHMHMHHHMHHNMHMHMHMHMHEHMH HMHMHMMMHMHMMMHMHMHMHMHMHMMHHHHMHHHMHMHHHMHMHHHHHMHMHH HHMHMMMHMHMHMMMHMHMMMHMHMHMHMHMHH MHMHMHHNMHMHMEHHMHHHMH HMHMHMHMMMHMMMHMHMHMMMMMHMMHHMHMHMHH MHHHHHHHMHHHHHMHH HHMHMHMMMHMHMMMHMMMHMHMHMHMHMHMHMHHHMHMHMNMHMHHHMHMHHHMH HMHMMMHMHMHMHMHMHMHMHMHMHMMHHHHMHHHMHHHMHMHMHMHMHMHMHH HHMHMHMMMHMHMHMHMHM MHMHMHMH HMHMHMHHHMHMHMHMHMHMHMHMHMH HM HHMHMMMHMHMHMHMHMHMHMHMMHHMHMHMHHHMHMHHHMHHHMHMHEHMHHHMHMHMHMMMHMMMMMHMHMHMHMHMHMHNHMH H NMH  N  HMH HMHMH H 
+ i18n("Happy");
+ i18n("There are two tricks to this level.  First, if you want gold that is high, move low to draw the enemies down, then move up to get the gold - and vice-versa.  Second, at times you will need to use the ladder trick: if you are on a vertical ladder with an enemy above you, sometimes the enemy will run away from you.");
+// L008
+//   R  MN                  NM   H   XHH    E     M  HHHX    MH   MMHH  HHH    XH MM      H     MMXH MH     MH      H H        MH MHXH   MH     MZMXH       H  MMH     HXH   M  MH      H    MH   HM MH      MHHXH  H     MHHHM   H       MM MH H H    MXM    H    MN     MHMZMN          H     XH  H  M M XHH        H      MH M       MMH       H       HX          MH     HX    HHHHME          MH   HM   XH MMM              H HM      H    HHXHTTTT HHHHHXM        XHHHM       XHMMMM                       HH       N                   HXHTTTTHX                             
+ i18n("Glorfindel");
+ i18n("To get the piece of gold at mid-left, you will need to lure the enemy across the pole and run across him as he gets to the end of the pole.  The same trick will be needed to get back, unless he follows you back across the pole; then you will need to find another place to dodge past him.");
+// L009
+//  RHHHMHHHHHMHHHHHHHHHHHMHHHHEMHMHMHMHMHMHMHMHMHMHMHMHMHMHHHHHMHHHHHHHHHHHMHHNHHMHHHHHMHMHMHMHMHMHMHMHMHMHMHMHMHMHHHHHMHHHHHMHHHHHHHHHHHHHHHHHMHMHMHMHMMMMMMMMMMMMMMMHMMMHHHHHHHHHHHMHHHHHHHHHHEMHHHHHMHMHMHMHMHMHMHMHMHMHMHMHMHMHHHHHMHHHHHMHHHHHHHHHHHMHHNHHMNMHMHMHMEMHMHMHMHMNMHMHMHMHHHHHHHHHHHMHHHHHHHHHHHMHHHHHMMMMMMMMMMMHMMMHMMMMMMMMMMMHHHHHMHHHHHMHHHHHMHHHHHHHHHHHMEMHMHMHMHMHMHMHMHMHMHMHMHMHHHHHHHHHHHMHHHHHMHHHHHMHHHHHMHMHMHMHMHMHMHMHMHMHMHMHMHMHHHHHMHHHHHHHHHHHHHHHHHMHHHHHMMMHMHMMMHMMMMMMMMMMMMMMMMMMNHHHMHHHHHHHHHHHHHHEHHHHHHHNMHMHMHMHMHFHFHFHMHMHFHFHMHMH
+ i18n("Hreidmar");
+ i18n("Be careful not to let the enemies get the gold - it is hard to get it away from them!  Otherwise, by moving into the middle section, you can get most of the enemies to move up and to the right.  This allows you to get the gold on the bottom level.  Some of the bricks on the bottom level are traps.  When an enemy gets close, you can drop into the trap, step to the side and move over the enemy.  But it is better to maneuver the enemies so that they stay away from the bottom section while you are down there getting the gold.");
+// L010
+//       MXXM        MH         N    MXXM   E    MH     T   MMMH MMMM HXMMXH MMXMXMX HMH   H      HM   H M     M HMH   H      HM   H M     MNHMH HMMXXXXXXMM HMMXM HM  MXMMH HXN       M HM    HM      H HM H T    M HM    HM      H HMXMX HMH M HM HMMMM HMMMMH H   M HMH M H  HMXXM HMXXMH H   M HMNHM H  HMXXM HMXXMH HXH M HMXMMXMXXMMMMM HMMMMM HMH M HH  M        M H   MX HMH M   H M        M H   MX HMH MXXMH M HMMMMH MMMMH MM HMH    XH M H   XH M   H MNNHMH    MH M H   MH M   H MHXMMMMMH MH MXFXH MH M HMMMMH      H MH     H MH   H    HR     H MH   E H MH   H  E H
+ i18n("Ori");
+ i18n("A straightforward maze: the false brick underneath the ladder near the bottom center may prove useful.");
+// L011
+//   MMMMMM   MM MMMMMMMMM   MMMN HMN Z   ZMZ  M MN  Z      MMHMMMMMHMMMMMHMHMMMMMHMHMHM  HM    HM    H HM    HMHMHEMMHMHMHMHMHMMMMMMMHMMMMMMMMM  HMNMNMHHH    M MHXN       HMHMXXXXM MMHMMMHMHMMFHMMMHMHMH      MNMH NMHMH NXHM MH MMHMMMMMHMHMHXMMHMHFMMHMHXMH  HM    H HMH   HMH   H HMNHMMMMHMXXMXMMMMMMHMMMMMHXMMXM MH HM   M      H     H     HMHMMMHMHMHMHMMMMMHMMMMMMMMMH H   HMHMHMHMN   H H H  M NMMHMMMMMHMHMMMXXXMMMHMHMMMHMN H EM EHMHMN       HMHM  H MMHMMMHMHMHMXXXXXXXMHMHMHMMMN HMNMHMH HMNM     MHMH H   MMHMHMHMMMHMHMHMHMMMHMHMMMHMN H HMH NXH H HMHM  HMH EMHR
+ i18n("Nori");
+ i18n("The hardest part is when two enemies get in the center of the maze and you need to pass them.  Try to move down and to their left, lure one down, trap it and then go up to trap the other.  Otherwise, clever digging should deal with them.");
+// L012
+//  R MMMMMMMMMMMMMMMMMMMMMMMMMMHMMHHHEHHHHHHMMHHHEHHHHHHHHNHMMHMMHMMFMMFMMHMMHMMFMMFMMHHMMHMMHMMFMMFMMHMMHMMFMMFMMHHHHHMMHMMEHHHHHHMMHHHHHHEMMHHMMFMMHMMHMMFMMMMMMMMFMMHMMFHMMFMMHMMHMMFMMMMMMMMFMMHMMFHMMHMMHMMHMMHMMHHHHHHHMMHHHHHMMHMMHMMHMMHMMHMMFMMHMMFMMHHMMHMMHMMHMMHMMHMMFMMHMMFMMHHMMHMMHMMHMMHMMHMMHHHHHHHMMHHMMHMMHMMHMMHMMHMMMMMMMMHMMHHMMHMMHMMHMMHMMHMMMMMMMMHMMHHHHHMMHHHHHHHMMHHHHHHHMMHHHHMMMHMMMMMMMMMMMFMMMMMHMMFMMHMMMHMMMMMMMMMMMFMMMMMHMMFMMHHHHHMMHHHHHHHMMHHHHHHHMMHHHHMMMMMMHMMFMMHMMHMMMMMMMMHMMFMMMMMMHMMFMMHMMHMMMMMMMMHMMFNHHHHHHMMHHHHHHHMMHHHHHHHHHN
+ i18n("Dori");
+ i18n("The only trick to this level is using the hidden passages and enticing the enemies to use them.");
+// L013
+//   M   M  M  M  M     X  MZ  X   T  TTM         T  TTMZE   HX HX HM HXXXMHEX HX  MXMXH HM HM HM H M MXX  HM  TM  HNHM HM HM H   X    HM      HXMM HM HMXMXH M HXXMM HXMMXH  M HM HM   HMMH M  M HMXXMHN   HM HMN EH MH MN   HMXXMH HMMMM HMXMXH MH MXXXXMMMMMH HMFMM HE MMHNMH M       MMH HMMMMFXHEMMHMMH M        MH HX  MMMMHMMMMMH M HMMMMH MH HM  TTTTHMM FMH M HX   H MHMHM   E  HMMM MH   HM   H MH HMMHFXXMMXMFMMMXXXMM HXMXMH HM HM  M  M  TTMTT   HMN MH HM HM     M H       EHM HMH HMMHM HMH M HXXXXXXXXMMMHMH HM H  HMH   HMM    M    H HRHM H  HMH   HMN       HMHMH
+ i18n("Bombur");
+ i18n("There are several ways to get past an enemy who is in the ladder-trap loop.  One is to wait next to the trap and when the enemy is half-way up the ladder, step into the trap and move immediately to the left and down.  However, at the start, you might get three enemies in the ladder-trap loop.  Avoid this.  One of the three can break out of the loop, but the other two remain trapped, leaving you no way to get past them.");
+// L014
+//  R M  N              H       XHM H    E HHHHHH   M    N   H XHHHHH HMMMMMH      M  H  H  MMMMMXHH   MH       XH   MH       MMH   MXH      H   MH         MH    MH   H H    MH         MH    MH  M H     MXHHHHHH   MH    MH  XHHH      MMMMMHX  MXH  MH   MMH N         H    MH   MH    H  H  M E  HM  H  MH   MH   H XH     HHM  NM   MH    H  H  HH   XMM        MH    H  H H MH H    H    TTTTHN  HH H H  H H    M  XH     X   HEH HN H H        MHH   M   H H  X H H         MMH    H  X   M H H HXHTTTTTTNH    M  M     H HHMMM      X          M    X           M          
+ i18n("Luthien");
+ i18n("After dodging the first enemy you come to, try not to jump off and grab the floating piece of gold in the center too soon.  If you do, the enemy you just dodged will drop to the lower level, grab a piece of gold and head for the floor where you can not get the gold away from him.");
+// L015
+//  ZMMMMMMMMMMMMMMMMMMMMMMMMM MZM   E           M         MHMHXXXXXXXHMMMHXXMHMMMHMXXXMHMH  M   MH  MHM  HM  HM   MHMMXHMHMHMMMHMHMHMMMHMMMHMHMH EMHMHMHM  HMHMH  MH E HMHMHMMMHMHMHMXXMMHMMMHMMXXMMMHMH  MHMHMH  M EHM  HM   X  H ZMHMHMHMMXHMHXMMHXMMHMHMHXMZZMHMHMH  MH HM  HM  HMHMHMMNZMHMHMMXHMMMZMHXMMHXMMHMHM ZZFH HM MH  MZMHM  HMNMHMH MF MMMMMHMMXHMMMHMMMHMHMHMMHHM   X  H  MHM  HM  HMH H  XHMMMHMMMHXHMHMHMMMHMHMMXMXMMHME H   HMHMH H   HMHM   M MH HXMXXXMMHMMXMXMXMMHMHMHMMMHM M     MNM   M ME HMHFHM MHMFMHMMMHMFMHMHMMMXXMMHMHMMMHMR HME H   HMH       HMH   HM
+ i18n("Bofur");
+ i18n("If you have two or more enemies between you and where you want to go, you may find the diggable columns useful.  Dig two layers, wait one from the top to trap the first enemy and then move to the top to trap the second enemy.");
+// L016
+//  MN  M      N           NM M MMMHMHXXXXXXXXXXXHMHMXXXMHMMMH HMH  M     M  HMHX   MH  MHMMMMMHMHMHMHMHMMMHMHXHMMFHMHMNMNMHMNMHMHMH  MNMHMH   HMHMFMHMHMMMHMHMMMHXX HMMXXXHMH  MH H   HMNMNMH  MHMN   HMHMXMHMMXXXMMMMMMMMHMHMFXHXMMHX  HX            HMH  MH  MHMHMFMHMMXXXXXXXMMHMMMHMMM MHMHMNMH  M N M NXNHMNMH  M MHMHFXMMXHMHX MHMXXMMHMHXHM MHMHX   MHMHM MH  T  H HMHMNMHMHMHM MHMHMFMHFF HXMXHMHMMMH HMHM  HMHM MHH MHMN HMH  MMXMMHMXXFMHM  MMXFHMHMMMMMHM    HX    HMTMH NFHMHM M  HMHXXXMMHMHXMM MHFMMHMMXHXEMHRHMN   HMHN    H   HMN HMNMHMMMMMMMMMMMFMMFMMMMMM HMM HM
+ i18n("Bifur");
+ i18n("Lots of gold, only one enemy and he is trapped!  It should be a cake walk!\n"
+ "\n"
+ "The first part just involves digging (at most) to collect the gold.  But then there is no obvious way to get the gold on the bottom and on the left.  Look for a trap under the bottom of a ladder to get to it.  The only other trick is to get all the other gold and leave the enemy and its piece of gold to the last.  And watch out - since there is only one enemy, it is pretty fast!");
+// L017
+//   MMMMMMMMMMMMMMMMMMMMMMMMM M      T      M            ZMMXMXHX XMXMXHMHXXXXXXXXXX  M    HM MX XMH HM        MZ NHXMXHM M M MMMMMHXMXXMXHMXMMHM  HMX    MXMXMH     MHH XFHXXMMMXMMMH   E MMMMMHMMMHHFH  M M MFMHXMXM   NX H   MHMHXHM MHXMMHMTNTM XXMHMMMMMHMHMH   HMN H    XZM  HM    HM HMXXMHMXMMXXXHMMMHMMXHXXXHMMH MNXH  X  NMH   H  MHM  HNNXHMHMMXMMHMMMMXXMMMFMHMMMMM  HMH    MHMXM   MXMNMH   HMHMMMMMHMHMHM MHXHMMMMMMXXXHMH  E  HMHEH NMHMH         H MXXXXXMXMXM HMHMMXXMXXXXXMHXR    M     M MHM   X    NXHMHMMMHMHMMMHMMMHM MHMHMHM MHMHMNEH HME H   HMNMHEHMH   H 
+ i18n("Gloin");
+ i18n("The pit in the upper right is tricky.  To leave the maze, you need an enemy in the pit.  But you would rather not have him there before you have taken the gold out.  And if two enemies get in the pit before you get the gold, forget it.");
+// L018
+//  R  M M M M M M M M M M M M MMHMHMHMHMHMHMNMHMHMHMHMHMHMHHHHHHHHHHH HHH MHHHHHHH HH MMHMHMHMHMHMHMHM MHM FHNTMHMHHFHMHMHMHHHMHMHMHMHM MHMHHHMMHMHMNMHMHMHMHMHMHFHMHMHMHMHHHHMHH MHHHMNHH HHHMHHHHHHHMMHMHMHMHMHMHMHFHMHMHMHMHMHHNHH MHHHFHH MHMHMHFHMHHHMHM FMHMHMHMHMHMHMHMHMHMHMHMHMHM HHHHHHHMHHHH HHHHHH NHHHHHHMMHMHMHMHMHMHMHM MHM MHMHMHMHHHHMHMHMHMHMHHNMHHHMHMHMHHHMMHMHMNMHMHMHMHMHMHMHMHM MHMHNHHMHHHHHHHHHHH HHHHHHHHHHHMMHMHMHMHMHMHMHM MHMHMHMNMHMHHMHMHNHMHMHMHMHMHMHMHMHHHHHMMNMHMHMHMHMHMHMHMHMNMHMHMHMHHHHHHHHMHHHH HHHHH HHHHHHHHMMHM M FH HMHMHMHMHM MHMHMHM 
+ i18n("Oin");
+ i18n("Look for false floors to get to places that are otherwise inaccessible.  You have to dig to find a couple of them.");
+// L019
+//   RMMMMMMMMMMMMMMMMMMMMMMMMMM Z MN  MN    M   MN         HMHMXXHMXXHXHMHXXMXXXXXXHMXXHXH  MH   HMH H   E     HMN MMHMXMMXXXFMMXHMXXXXXMXXHMMH  HX      NM  HX     XN H  HXMHMHMHXXXMMHXMMHXXXHMXXMXXM  H HMH     H   HMN HM M MN XMMMHMHXXXXMHMXXHMXXMMHMHMMH X  HMH    XHX  H     H HM HHNXMMMHMMMHMHMHXMMHXXMHMHMMHH  X  H  XHMHMH NXH NXHXH  HHXMMHMMMHMMMHMMXXMMXXMMMHMMMH  MHXN HM  H       EM  H   HMHMMMXXMMXXXMXXHMXMXMXMMXMHHXH     H   EMN HXNX  NXE MHHMXMXXHMXMXXXMXXMMHMHXXMMXMHH  X  HM X E M M  HMH  MN MHMXHMXMHMHMHMHMHMHMMMHXXNMXXHN HM  H H HXH H H   H  H   H
+ i18n("Kili");
+ i18n("Get the gold in the middle and on the top before getting the gold on the bottom or lower left.  That way, if you have to kill an enemy (the one at the left is just asking for it) then they only block your way to the exit rather than make it impossible to gather the remaining gold.");
+// L020
+//   MMM MMMMM MMMMM MMMMM MMMM    MN  M   M    N  X   N M ZHMHMMMHMHFMMHMXXXFHMXMFMHMHMHXH   HMHM  HX  NFH    XHMHMHMHXXMFMHMMMMMHFMMMXXMXMHMHMHM  NM  HX    HF     F  H HMHMTFMMHMMMHMMMMMHMMMNMMMMMFXH NM  HX MH     H  M M    NMHTFMHMXMHMMMHMFMMMHMMMMMHFMMH   HX  H   HMFM  H    MH  MHXXXMMMMHMHMMZFMHMMMMMXMMMHMH       HXHX ZFMHM   X  M HNFXXXXXXFMMHMHMMMHMHM MMMXMMX    N  F XHMH NMHMHMNMNN    HXXMXXXFMXHMHFFMHMHMMMFFXMHMH  F   M  HMHF  H HM   N XHMMXXMHMFMHFHMHMXXMXXMHMFMHMHMR   HX MNFHMHM     MHM XHMHMHMXXMM MFFHMHMHMMMHMHXHMHMHM X        HMH HM  H HMH H H 
+ i18n("Fili");
+ i18n("Lots of false bricks to trap you, or give you access to different parts of the maze.  Test below the ladders and other places.\n"
+ "\n"
+ "The four high trap in the middle is a show stopper: you can only get back past it once you have gathered all the gold.  So stay out of the lower right until you have cleared the rest of the gold.  Then drop through the trap below the top right ladder - there is no other way to get the piece of gold below it.  Once you are down here, there is no getting back to the top right until you have cleared all the gold.  After getting the piece of gold at center right, dig down to get the left of the two adjacent pieces.  The escape from the lower right comes when all the gold is gathered and a small section of ladder appears in the center.");
+// L021
+//  NMMMMMMMMMMMMMMMMMMMMMMMMMMMHMHHHHHHHHHHHHHMHHHMHHHHHHHRHMFMMMMMMMFMMMHMMMHMHMMMFMFMHMHMHHHHHMHHHMHHHHHHHHHMHMHHHMFMFMMMHMMMMMFMMMMMMMMMFMMFHMHMHMHMHMHHHMHHHMHHHHHHHMHHHMMMFMHMHMFMHMFMMMFMMMMMFMFMHMHHHMHHHHHMHMHMHHHMHHHMHMHHHMFMMMMMMMMMHMMMFMFMHMHMHMFMHMHHHHHMHHHMHMHHHMHHHMHHHMHHHMFMMMFMHMFMHMFMFMHMMMMMFMMFHMHHHMHHHMHMHMHMHHHHHHHMHHHHHMMMFMFMMMFMHMFMMMFMMMHMFMMMHMHHHHHMHHHMHMHHHMHMHHHMHHHHHMFMFMMMFMFMHMMMFMMMHMMMMMFMHMHHHMHHHMHMHHHMHHHMHHHHHMHHHMMMFMFMMMFMMMHMFMFMFMHMFMFMHMHHHMHMHHHHHHHMHMHMHMHMHMHHHMMMMMFMHMMMMMMMMMFMMMHMMMMFHNHHHHHMHHHHHHHHHHHHHMHHHHHH
+ i18n("Dwalin");
+ i18n("A maze, but you can not see the path out.  You have to use the false floors.  Trial and error is your only hope - try mapping it on paper if you are having trouble.");
+// L022
+//  RMH MH MH MH M EMH HH HH MHNH MH MH MH MH HH MH MH MHXMHMH HH MH MH HHXMH MH MH M  HNMH MH HH MH MH MH HH MH HH H MH MH MH HX MH MH MH MHXMHHH MH MX MHXMH HH MH MH MH MHMH MH MH M  MH MH HH MH MH H MX MH MH HHNMH MHXMH MXNMHMH M  MH MH MH MH M  MH HH H MH HH MH MH MH MH HH MH MH H HH MH HH MH MH MHXMH MHHMHMH MH MH MH HX MH MH MH MX M MH MH MX MH MHNHX MH HH MHNH MH MH MHNMX MH MH MHXMH HHHH MH MH HH MH MH HH MH HH MHMH MH MH MX HH MH MX MH MH H MH HX MZXMH MH HX MH MH MHMH MH MH MH MH MHXMH MH MH M HH MH HHHHH MH M  H  MH HHNHNMH MHHMZ MHNMH HH MHNMH MH
+ i18n("Durin");
+ i18n("This diagonal maze is not too hard, except there is the occasional pit to get trapped in and that lone enemy is fast.  Try to lure the enemy down and into one of the pits.  Then the rest is almost a cake walk.");
+// L023
+//                   M  M           E E   E  E   MH M T      HMXXMXXXXXXXXMH M HMH XXXH  HX    TTT TTTTH M H  HX  H  HM   H   H    H M H  HM  H  HMXXMXXXH HXXMXMMXMXH M HMX HTTTT  XHTHTTX     MH M HN  H E  H MH H  M  H  MHEM H  XMXXXMH MMXMH M HMH MMXMXXMH  TTTXH M NXH T HXH       XH H   MH MH MH E HMH       MH HMH MH MH MMXXXMMMXXXXXH MH HXHTTH MH       M      H MH HMH  H MH E     M      H MH HMMXXMXM HXXXXH M HXXXXXXMH HTT M    H   MH M HXTTTTTTH H   M T  H   MH M HM      HXMMH MH XXMXH MMFM HM HXXMH    H MH    XH TTTT H  HX  H N  H MH   NMH    EH H HMR H 
+ i18n("Dain");
+ i18n("There are too many enemies to fight up on the top level (there are not many bricks there for a reason).  Instead, wait on the level below and let them come to you.  Dig to escape and get the gold at bottom left.\n"
+ "\n"
+ "On the way back, stand on the top level and use the same trick to draw the enemies up there.  Dig a brick leading down and head for the exit.\n"
+ "\n"
+ "The only tricky parts come when two enemies end up in the lower left, in the center (on your way back) or at the upper right.  Except for the last case, you should be able to complete the level without intentionally trapping any enemies, but some may inadvertently fall into your two pits.");
+// L024
+//      N       N       N       HMMMMFFMHMFFMMMHMMMMMMMMHMMHHXXXXXXXHXXXXXXHXXXXXXXXHXXHH   N   H   N  H        H  HHMMMMMMMMMMMMMMMFFMHMMMMMFMHHXXXXXXXXXXXXXXXXXXHXXXXXXXHH   N           N  H  N    HMMFMMMMHMMFMHMMMMMMMFFMHMFMHXXXXXXXHXXXXHXXXXXXXXXXHXXXH     N H N  H N   N  N H N HHMMHMMFMMMMHMFMMHMFMHMFMHMMMHXXHXXXXXXXHXXXXHXXXHXXXHXXXH  H N     H N  H N H N H   HMFMMMMMHMMMMMFMHMMFMMMFMMMHHXXXXXXXHXXXXXXXHXXXXXXXXXXHH  N    H N   N H     N    HMMMMFFMHMFMMHMMMMMMHMFMMHMMMXXXXXXXHXXXXHXXXXXXHXXXXHXXXR      H    H N    H  N H N MMMMMMMMMMFMMMMMMMFMMMMMMMMM
+ i18n("Duergar ");
+ i18n("A maze without walls or enemies - how hard can it be?  But the traps act as walls, and the enemies would just fill the traps, so perhaps this is another one where you will want to draw a map.  Note that you can probe for traps by digging, but that can lead to a rather slow game while you wait for the bricks you dig to refill.");
+// L025
+//   MMMMMMMMMMMMM MMMMMMMMMMM MZ      M     M M N     M   MMMMMHFHM XHX MHM MMMHMHMHMHM    HMHM  HMT H    MHMHMHMHNHMMMMMHMXMHM MMXXMHMHMHMHMXFH    MH  XHM X   XHEHMHMH  FHXMHX MMHMHM MHMHMMXMXHMMMHFHM HM N HMHM MHMH    MH EMHFHMH MH T MHM MH MXMMHMFMHMHFZNXHMFH XEHM  M  M  HM  H HFHMMH FMH XH X  X MHMMMXXMMHFH  XHMMMH MH XN  MH     XMXNMMHMHM NMH MH X MMMMHMMFMMMF  HMHMH  MH MH   M EHM      HMMMHMMHTHMH MXXMMHMMMHMMMHMHMRMHE X HEMH   TMH   H  MHMHM MMMHMHMHMMXXX MMMMMMMMMHMH  M  HM XHM   M       M  HMMMXMHXMMH HMHMHMXXMXXMHMHMHMN   HMN HMH HMH       H HM M
+ i18n("Balin");
+ i18n("To get through the center, you will have to clear it of enemies, but there is only one diggable brick.  Use it to drop through, race to the right and go up to the row above the dug brick.  There is just enough time to entice the enemy into the closing hole.  Repeat as necessary.\n"
+ "\n"
+ "To leave the maze, you need to find a way through the long diagonal barrier of ladders.  Beneath one of them is a false floor to use for your escape route.");
+// L026
+//  R H H T HMEHHTHTHTH HM HH HMMHMHFHMHM HHMZFZMZMHTHHTMH H X MHXHHTXHM X M X MZXZM XHMM MHM MHMTH M M M MNM MNHHHHHMH HMHH FTH M HNMHH MTHTMHF H H HEHM FTHHH   M H H T HTHXHMHXHM XHMHX MHXHH X MNXZMHHMNMNMNM MTHTM HTMNH H M MNHM H HHH MHH MTH MHHHM H MHHH MTH M H MHMNMH  MTMNM H MHHX FHXHH XHZHX MHX M XTMHXHHHHFHHNMHMNMHM M HTM HHM H NHHMHHTMTHHHHHHM HTM H MHH FTHH M M M M MZM HTM MHMNFH  MHHXHM X M X M XHM X H XHMHXHHHHM HHT M MNM H MNM HTH HTMHHM HTMHTHMHHHM HHMHH MTHHMEHH HTM MTH M H HTM MTH MZM HH X MNX MHX HHXZMNXNMHX M XHMMHM H H H H M M H H H H H H 
+ i18n("Gimli");
+ i18n("The enemies are paper tigers, although you need a trick to get past the first one.  Stand on top of the ladder to the left of the false brick.  When the enemy moves over the ladder to the right of the false brick, move down your ladder, enticing the enemy to move down into the false brick.  Quickly move up and over the enemy's head.\n"
+ "\n"
+ "Otherwise, it is just a matter of maneuvering the enemies to a place where you can trap them or pass by them.  The only real problem occurs if an enemy grabs a piece of gold and gets stuck somewhere and you can not dig him out.  Oh, well, sometimes you lose.\n"
+ "\n"
+ "To get out of the center section, search for the double trap on the left.");
+// L027
+//   MN M H   H HM  H MM  HHHM NR XHHMH MNMMH HHMH NXHMFH HTMHMMH THHMH  HMM HXHMH  MHMFMH  MH MH  HXM  XHMM HMZMH E HMH MH MHXM  HHHM  HHMM HXZMHMMHNMHMM  MHMFH HHMM  MHMMMH  MZMH   H H  MHMM  HH H   H HMM H HXMH XZMM NXH MH FHXTMH  XHXH EMZMM   HMMH MZMHMM H H MH MHMM   HXM  MH MNH NXZXMH MZMHM  HXM  HH MH M HHMM  MH M H HXM  HHMMH MHMFHME HHHMH XHXM  HHMM   HMHM H XHMMH MHMM  HHMM  XHHM HMHHHMHM MHM   MHMF  HHMMH HHMMHM H  MHMHMH H  XH M  MHMH  H XZMHMHMH MHHXZMHH MHHM HXHHHMM HMH MH MZMM  MHMHH HHMMHM  HHMMH  H MN  HMH HMHMM NH HHMH  MHMMH XHMF  HHMHE HH
+ i18n("Brokkr");
+ i18n("Leave the piece of gold just down and to your right until last.  To get back to this section of the maze, you will need to dig through the wall a bit further down and to the right.  The easiest way to handle most of the enemies is to lure them along until they fall into a pit.  But beware, the pits fill with ladders once you have all the gold, allowing the trapped enemies to escape.");
+// L028
+//  MM MMMMMMMMMMMMMMMMMMMMMMMM      T       M   T E       ZHMHXZEXMXMXMHMHM ZXNMMMMHXXFHMH XX Z    HMH XXNX    HM FHMMH MHFXXXXMMMHHMHMHMMXMNHFH NXHMHXN    MNXH HMH  M  HFMXXMHMHMMMHMHMHMMMHMMMHMHMMFM   HMH HMHXHMH NMHMNXHMHMNFEHXXMMMMHMHMHMHMMMHMHMHMHMHFHMN     H HMHMH  EH HMHMHMHFHM MXXXMXXMMHMMXXXMMMMHMHMHFHMEM   XN   H        MHMH HFHMMMHMHMMMMMMXXXXXXF MHMMMHFH   HMH    M      NX  HM  HFMMMMMMMMMMHMHMMMHMXMXXMMHMMFR  M     MHMH  MHX  E   HXNFHXHMHMMMHMHMMMHMHMHMMMMMMMHFHMHMHM  HMH  MHMHMH  MN   HMHMHMHMHMMMMMHMHMMMMMHMMMHF MH HEHMH   E HMH     H   HMHM
+ i18n("Thrain");
+ i18n("Mostly straightforward, but beware of a couple of one-way gates, in particular in the section at the top, right of center.  Be sure to clear out all the gold before freeing the trapped enemy at top right, who has a piece of gold.  You will also need to use the false floor on the far right at the top.");
+// L029
+//   MMMMMMMMMMMMMMMMMMMMMMMMMMMZ     E               NM   MMXMXMXMXMXMXMXMXMXMXMHMM MHMN             NM     H M MHMXXXXXXXXXXXMH M  HMH MHMMXHM      E     HM  HMNMHMH TMHMHMXXXXXXXXXXM  HMH MHMMH  HMHM      T     HM  H H NM MHMHMHMXXXM X HMXMM HMMHXXMHXHMHMH    X  H    M H MHMN HMHMHMMXXMHM HXXXMHMXMHMHMMMFMHMH     HMHXN   H  MHMHMNXNMHMMXXMXXMHHMXXXXMMHMHMH T  MHM      H HMM    XHMHMHX XHMHMHMXXXXMXMMHMHMHMXMHMMMMMHMHMHX       MHMHXH   HE   MHMHMHMHMXXXMHMHMHMMXXXMXXXXMHMHMHMHXN   HMHMNM     E    HMHMHMHMXXXXMXHMMMHMXXXXXXXXMMHMHRH    E  H  MH           HM
+ i18n("Thorin");
+ i18n("In the beginning, rush to the top of the pyramid-like structure, dig off the top, go down and get two pieces of gold.  Then lure the enemies into the area under the pyramid and move down and to the left.  This can cause an enemy to be trapped and others to move into areas where they are harmless.  If any enemies follow you, escape to the bottom left, collecting some gold on the way.\n"
+ "\n"
+ "To get the piece of gold in the upper left, you first have to lure the one enemy out of that section.  After collecting the gold, you may find yourself threatened by enemies to your right.  If so, go to the lowest level of the section that you can reach without digging.  The enemies will go into a side corridor, giving you enough time to run up over the bar and reach the top of the pyramid just ahead of them.\n"
+ "\n"
+ "The rest is just hard work.");
+// L030
+//  XHR X   X   X   X   X   X   NMHH  T  MN  TTT  E   TT MN H XH   HTHXHT   HHXHTT  HHXH H MH   HM M   H M M    HM HXH HXH HX   X HHX   X  HX H  H H M H HTT H M   H HHM   HH  HH XHTH  HHX TTH  HXHH H  HH  H MZ   HM H    HM M H  X EHX H XH HX H XTTTX   X HE HHM H H MZM H   FZMHTH  H HH X N H N X H    HX T  H HXH H M H H M MH    M F    HMHHXH  XH HX   XH  X H X HHXHHH HT  MHM TTTTH H H H HHMHHHHH  T  X H TTTTXHH    HXHHHHH H  TM H     M MH   HMNFHHHHXH  X H XH HX   XZ HXH HXHHH H F  HE MHM TTTTH MHHHHHHHHH X H H   XH  N  ZXH H  H XHH  F H HHMNMH    H MH    HNM
+ i18n("Telchar");
+ i18n("False floors are the key to this level.  The way into a section is often not the way out.  Many of the enemies will get trapped if you move low enough.  Save the middle bottom gold for last: you can not get out of this section until a hidden ladder appears.");
+// L031
+//  M MMMMMMMZMMMMMMMZMMM MMMMMMZZNMZ   Z    ZNM  HZ       MMHMMMMMMMHMMMMMMMHMMMHMMNZZMMHMMMMMMMHMNMMMZMHMNMHMFMMMMXHXXXMMXXHXXXMXXXHZFXHXFXMMMMHMMMMMMMHMMM MMMHM MHMMMMMMZH    M  HM Z    H M H   Z   MMMMMFMHMMFMMMMMFMFMFMMMHMMXHFXXXXXHXXXMMMXMMXXXXMXXHXMMMMMMMMMHMMMMMMMMMMMMMMMMHMNZ Z   NMH  MN  M  E ZZ M H ZMHMMMMFMMHMMM MHMMHMMMZM MHFXHXXMMXXXHMNMZ MXMHXMMMXXMHMMHMMMMMMMHMNM MMMMHMMMMMMMHMZHNMNNNM HNM  NM  HMNNNMZ HZMHMMMMMMMHMMMZMMMHMMMMMMMHMMXHXXXMMXXHXXM XXXHXMXMMMMHHMMHMZMMMMMHM MZMMMHMMNMMNNMHMMHMMMMMMMHMMM MMMHMMMM MM HMRH M Z Z H X Z Z H XN Z ZH X
+ i18n("Dvergar");
+ i18n("When you collect the gold at top left, you may have trouble leaving the section.  The obvious way out (at the foot of the ladder) does not work because of a false brick.  Instead, you need to plan ahead when you dig into this section.  Dig out the piece of wall that blocks your exit to the right, then quickly go up and grab the gold, then back down and out through the missing wall before it reappears.  There is a false brick here, so be sure to dig as you fall into it.\n"
+ "\n"
+ "After getting the last piece of gold, you can exit through the center, where a new piece of ladder allows you to dig and re-enter the left of the maze.");
+// L032
+//  R M H M HTH T H MTHHTHT HTH   MHM MNM MH HMHH MMHM HM MHHTHHM M M  MHM  MN H THM H MM MMTNM HTHHHM  M  MH M HMHH THH THHM MMZHHTHT HMHTHM HMH MMH MMH MNZMMNMEHM MNM HM MH  MHH MZ HMH  MZM H   HHTHNMH  MMHTHZM MH MH  M HHMM MH MHT MM MHTH M  MZHHHMM  HNMH MEH HT MNMH TH HMM HTE MHNMHHHMHM HH MMH MHHTTHM HH MHHHM HMNHMMZN MZ MMZ M  MMH MM M MHZMNM HHTTH N H TH  H NHTHTHMHTHMZMMZ MH HMH MH MH M M MNMZM HTHZTHMZM MH M MHHTHMHTHMH TM MH M ZM  H MTHHM M MHF  H  T MZTHHT ZMHH MM HM THM HMHTHTTH MM H M MH H M H M HM MZMZHMHT TMHT  MHM  HM  HM   H HH  ZMZ  HM  H 
+ i18n("Thingol");
+ i18n("There is one piece of gold that must be grabbed at the start.\n"
+ "\n"
+ "When you go to the lower part of the maze, the enemies will go down and stay there.  This makes it easy to get the gold up high, but it becomes hard to collect the gold in the lower left.  Try to get one or two pieces on your first trip down.\n"
+ "\n"
+ "By moving up and down on the bottom right ladder you can persuade the enemies to group on the left or right.  Grouping them to the left makes it easy to get the piece of gold just down and to the right of center.  Getting one enemy on the left and two on the right gives you a chance to get the remaining gold on the lower left, but consider getting it last after grouping all three enemies on the right, because you will then have more choice of ladders when dodging enemies on your way to the top.");
+// L033
+//  RHHHMHHHHHMHHHHHMHHHHHMHHHHEMHMEMHMHMHMHMHMHMHMHMHMHMHMHHHHHMHHHHHHHHHHHHHHNHHHHHHHHMHMHMHMHMHMHMHMHMHMHMHMHMNMHHHHHMHHHHHMHHHHHMHHHHHMHHHHHMFMMMMMMMMMMMHMMMMMMMMMMMMMMHHHHMHHHHHMHHHHHMHHHHEMHHHHHMHMHMHMHMHMHMHMHMHMHMHMHMHMHHHHHHHHHHHMHHHHHHHHHHHHHHNHHMNMHMHMHMEMHMHMHMHMNMHMHMHMHHHHHMHHHHHMHHHHHMHHHHHMHHHHHMMMMMMMFMMMMMMMMMMMMMMMMMHMMHHHHMHHHHHMHHHHHMHHHHHMHHHHHMEMHMHMHMHMHMHMHMHMHMHMHMHMHHHHHMHHHHHMHHHHHHHHHHHHHHN MMHMHMHMHMHMHMHMHMHMHMHMHM THHHHHMHHHHHMHHHHHMHHHHHMHHFMHMHMMMMMFMMMMMHMMMMMMMMMFMMMHNHHHHHHHHHHHHHHHMHHNHEHHHHHHMHMHMHMHMHMHMHMHMHMHFHFHMHMH
+ i18n("Dvalin");
+ i18n("There are two problems.  First, in the early part you want to get the enemy just to the right of middle trapped in the bottom of that section.  This requires getting the gold on the left and passing through the trap doors at the right time, as well as racing to get the gold on the bottom left.  The gold on the bottom right is no big trick: just a small amount of timing and passing through the traps.\n"
+ "\n"
+ "The second problem is that at least one enemy will pick up a piece of gold.  Getting him to let go of that piece of gold is tough.  You need to lure that enemy into the top right section or the section down and to the left of that.  Draw the enemy to the ladder with a gap above it, in the middle of the section.  Wait two over to either side of this vacant square, leaving a brick between you and the vacant square.  The enemy will move up and down the ladder, in and out of the vacant square.  Eventually he will drop the gold on top of the ladder, at which point you have to move down to prevent him from moving back up the ladder and retaking the gold.  The timing is tight - good luck!  Alternatively, you can run around and trust to luck - the enemy will drop the piece of gold eventually!");
+// L034
+//  RM  M  M  M M   HH H  HH M    HH MH HH MNHMHMMH MHMMH HHMHMMH MHFMH MHMF  MHHM  MHMFMF NMH HFNMHMM  HHMHH HHHM  H HH MH MHMHM HHMF HMHMMHEMNMHMMH MHMF HHHMMHNMHMMH HH MMM NMHMM  MHMM NM MM  MHMMH H HHMHM  HMM  HHMHM HH M  HHFH M HMHMM  HHMM HMH MH HH MFMH HHM H HHMH  HHMMH MHMMH  NMHMMHHMHMM  HHMMH HHMM  HH HMM  M MM  MHMMHNFH MH HHMMHM   HMM  HHMHH MH MH MHMHM H HHMHM HHMH MMH MH MHMHMHHHMHMMHHMH M  HHMMH FH HMHMHMZMM HFHMMH MHMM NMHMMF MHMM Z  HHFM  MHMF  HHMHH MHMHM HHMHMH  HH HM MH M HMHHM HMHMMMH MHHFFH MHM H HHMFHHHHMH NNH HMF  FHMM  MHMF  MHMF ZMH
+ i18n("Thrain");
+ i18n("Lots of false floors to use and avoid.");
+// L035
+//   HHHHHNM  HEHHHHHHHNM HHH HNHMMH MM  HMHHMMMMMMXMHMMMHMHHHMMH HHHMMHMHHHHHH MHH MHM MHMNMHMMMNMHHHMMMMMHMMMHMHMM HMH M  MHHMHMMNHHMHM HHMHH HMNMH HHHHH MMHHMMMHMHMMMMMHHMHHHHMHMHMH MFHM HHMHMNM  HH HMMM HMHHMHMMHMHMMMHMHMHMHMHMMH HM HM HNMHMHHHHHMHMHMH FHNMHMHHHM HMMHMMMMMMHHMHMHHNMHHHMHMMHHM HH M  M HMHHMNFMMHMM HMMHMMHHMH HHEHH MH MRF HM HMNHH  HMHMHHMHMHHHMH HMHHHH MHHMHHMMHNMM MNHMM MHHMMMMHMMMMMMMM MH  H XHNM  HHMN MH MH M  HH M HMHHMHMHHHHMHHHHHM  HHHMMHHHMMMH M HMHHMMMMMMMMHMMMMNHMMMH MHMH MH H  M  M HMN H HMHNHHHHMHMNHHMH H  H HM HMHHNMH MH HHEMH
+ i18n("Rumpelstiltskin");
+ i18n("The main trick for this level is luring the enemies so that you can get around them, or in one case, so that you can walk over an enemy to collect a piece of gold.  The luring is not so hard, but the distances you have to lure them are long.  Maneuvering the enemy so that you can walk over him to get the piece of gold has timing that is a bit tight, but not too bad.\n"
+ "\n"
+ "When you reach the section above your starting point, there are two ways out: one is a false brick under the short ladder.  But if you dig the other square and drop down, there is a a path through a false floor that avoids retracing all the early part of the maze.");
+// L036
+//  R  MHM M MHM MHM MHM M MHM MMHMHMHMHMHMHMHMHMHMHMHMHMHMHHHHH HHHHH HHH HHHHHHHEHHHHMMHMHMHMHMHMHMHMHMHMHMHMHMHMH MHMHMHMHMHMHHHMHMHMHMHMHHHMMNMHMHMHMHMHMHMHMHMHMHMHMHMHHHHHHHH HHHM HHHHHNMHHHNHHHMM MHMHMHMHMHMHMHMHFHMHMTMHMHHMHMHMHMHHHMHHHMHMHMHHHFHHHMMHMHMHMHMHMHMHMHMHMHMHMHMHMHH HHHHHM HHMHHNM HHHHHHMHH MMHMHMHFHMHMHMHMHMHMHMHMHMHMHNHHMHHHFHHHMHMHMHHHMHM MHHHMMHMHMH TMHMHMHMHMHMHMHMHMHMHHHHMHHHMHHHMHHHHHHHM HHHHHHMMHMHMHMHMHMHMHMHMHMHMHMHMHM HMHMHHHMHHHM HHMHMHMHHHM MHMMHMHMHMHMHMHMHMHMHMHMHMHMHMHHNHHHHHMHHHHHHHMHHNHHHHHHH MMHMHMZMHMZMHMZMHMZMZMHMZMHMN
+ i18n("Thror");
+ i18n("The two gold in the lower left are cut off from the rest of the maze.  On the right of this section, there is an empty square where you can dig a brick.  To visit the isolated section, dig out the brick and move left and down through a false brick.  You have to race to get one piece of gold and return through another false brick, just in time to cross the dug brick before it closes.\n"
+ "\n"
+ "The enemy is a bit of a pain.  Try luring him to the bottom of the maze, dropping to the floor where you have a ladder to climb back up, but with the enemy above a square without a ladder, thus trapping him.");
+// L037
+//  M MMMM MM MMNMMMMMM MMMMM MM  Z T     NMH    MZ TTTTT  MHT M THM H M H MHHMMNTTM H MN HMH HMH  M  H  HXMH   MXHMFHXXXHXMXXXXXHXXFHNFXXHM XHMHH M H M TT TH MNZXF THM  HMFHHMH HMM  M  HMH MFH  NX HMEFHXH HMNMHMH NMH MFH  XEH MN HXXHXXX XM MXXXHXFXXHXXXXM MHM H M H MXX M H F TH TT MXHHMH  H TH       HFH     HM  HMHEHMHZ M  HMH HFH TM H MFHXMXXXMXXXMXXXMXXXM XZFHXXM H M    TTTF H M H MH HFHT MH     HM   MH H  H   H FM HMH HMHMHXHENMH  MH HM  HM H MXXXXXX HXXXX H XXXXXXXXXHXXX HH ZHH  HH   H H H  TZMHT MH ZM H M H M H MHTHTH M   HMRH ME HFH HXE HX   H HMFEHNX
+ i18n("Durin");
+ i18n("The maze is sparser and harder.  The enemies are trickier.  The traps are more wicked.  The maze changes.  May you walk through interesting mazes.\n"
+ "\n"
+ "To get the last few gold pieces, you have to enter a section of maze at the left and lower left that is walled off from the rest.  This section is shaped like a large letter 'L'.  Dig two bricks on the right edge of the L (at left of center) and jump in - there is a false brick that lets you through.\n"
+ "\n"
+ "After you have gathered all the gold, the maze changes.  You have to drop down to somewhere near the beginning and make your way back through.  At the upper right the exit seems to be blocked.  Dig down two bricks and fall for a while, then you will find the way out.");
