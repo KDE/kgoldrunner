@@ -73,6 +73,9 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
 {
     resizeCount = 0;		// IDW
 
+    // Workaround for bug 197686 (lost Esc shortcut after hovering over menu).
+    setFocusPolicy (Qt::WheelFocus);
+
     kDebug() << "Called KGrCanvas::KGrCanvas ..." << this->size();
     m = new QCursor();		// For handling the mouse.
 
