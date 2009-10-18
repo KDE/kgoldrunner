@@ -36,20 +36,27 @@ Done in KDE 4.1 and 4.2 releases
 Done in KDE 4.3 release
 -----------------------
 
-25. Add Curse of the Mummy game (20 levels), contributed by Steve Mann.
-
-Proposed for KDE 4.3 release
-----------------------------
-
  9. Major rewrite, mainly of the game-engine and editor ... making possible ...
 
 10. More accurate pause/resume.
 
-11. Save and reload at any instant in a game.
-
 12. Record and replay games.
 
 13. Run demos ... especially at startup or as hints for difficult levels.
+
+25. Add Curse of the Mummy game (20 levels), contributed by Steve Mann.
+
+Done in KDE 4.4 release
+-----------------------
+
+26. Add Mazes game (37 levels), contributed by Steve Mann.
+
+27. Improve performance of graphics loading, rendering and cacheing.
+
+Proposed for KDE 4.5 release
+----------------------------
+
+11. Save and reload at any instant in a game.
 
 14. Hot-new-stuff support for themes and game sets.
 
@@ -60,7 +67,7 @@ Proposed for KDE 4.3 release
 19. Better support for beginners, such as graphical cues for false bricks
     and hidden ladders, extra messages with "don't tell me this again", etc.
 
-To do in post-KDE 4.3 releases:
+To do in post-KDE 4.4 releases:
 -------------------------------
 
  1. Removal of the "game over" dialog.
