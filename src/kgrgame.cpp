@@ -53,6 +53,7 @@
 #ifdef USE_KSCOREDIALOG
 #include <KScoreDialog>
 #include <QDate>
+#include <QLabel>
 #else
 
 #include <QByteArray>
@@ -1447,7 +1448,7 @@ void KGrGame::checkHighScore()
             KScoreDialog::Name | KScoreDialog::Level | 
             KScoreDialog::Date | KScoreDialog::Score, 
             view);
-    scoreDialog.setConfigGroup (gameData->prefix);
+    scoreDialog.setConfigGroup (prefix);
     KScoreDialog::FieldInfo scoreInfo;
     scoreInfo[KScoreDialog::Level].setNum (level);
     scoreInfo[KScoreDialog::Score].setNum (score);
