@@ -57,13 +57,11 @@ public:
 
     /**
      * Default constructor.
-     * \param[in] systemDataDir The system data dir is used to calculate the
-     * theme data directory.
      */
-    KGrTheme (const QString &systemDataDir);
+    KGrTheme();
     
     /**
-     * Default dtor
+     * Default destructor
      */
     ~KGrTheme();
 
@@ -127,7 +125,8 @@ public:
     /**
      * Return the number of background variants in the theme.
      */
-    int backgroundCount() { return numBackgrounds; }
+    int backgroundCount()
+            { return ((numBackgrounds <= 0) ? 1 : numBackgrounds); }
 
     int tileCount(TileType t) { return counts[t]; }
     int firstTile(TileType t) { return offsets[t]; }
@@ -143,8 +142,10 @@ public:
     QColor textColor() { return m_textColor; }
 
 private:
-    // Each KSvgRenderer loads a single .svg file. multiple SVG files make a
-    // single theme.
+    // Each KSvgRenderer loads a single .svg file.  Multiple SVG files make
+    // up a single theme.
+    enum SvgSource {Set, Actors};
+    bool svgLoaded;
     KSvgRenderer svgSet;                //< Tiles in here
     KSvgRenderer svgActors;             //< Everything else?
     
@@ -152,19 +153,23 @@ private:
 
     QString themeDataDir;
     QString m_themeFilepath;
+    QString themeName;
+    QString svgSetFilepath;
+    QString svgActorsFilepath;
+
     short themeDrawBorder;
 
-    QList< QPixmap > namedTiles (QList< QString > names, unsigned int size);
+    QList<QPixmap> namedTiles (QStringList names, unsigned int size);
     
     // Thomi - 31/01/2008
     // This private method will load the given item from SVG, if it exists, and
     // will automatically handle inserting and removing files from the pixmap
     // cache.
-    QPixmap loadGraphic(const QSize &size, const QString &strName, KSvgRenderer &Svg, double boundsAdjust=0.5);
+    bool loadPixmap (const QSize & size, const QString & strName, QPixmap & pix,
+                     SvgSource source, double boundsAdjust = 0.5);
 
-    // utility method - create the pixCache pointer below given a theme file
-    // path.
-    void createPixCache();
+    bool createPixCache();		// Create pixmap cache for one theme.
+    bool loadSvg();			// Load SVG files for one theme.
     
     int numBackgrounds;
 

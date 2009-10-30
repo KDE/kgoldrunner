@@ -1,3 +1,6 @@
+#include "kgrdebug.h"
+#include <stdio.h>
+
 /****************************************************************************
  *    Copyright 2007  Luciano Montanaro <mikelima@cirulla.net>              *
  *    Copyright 2009  Ian Wadham <iandw.au@gmail.com>                       *
@@ -27,12 +30,17 @@
 #include <KPixmapCache>
 #include <KDebug>
 
-KGrTheme::KGrTheme (const QString &systemDataDir) : 
-        themeDataDir (systemDataDir + "../theme/"),
+KGrTheme::KGrTheme()
+        : 
+        svgLoaded (false),
         m_themeFilepath (""), 
+        svgSetFilepath (""),
+        svgActorsFilepath (""),
         numBackgrounds (0),
-        pixCache (NULL)
+        pixCache (0)
 {
+    dbgLevel = 0;
+
     KConfigGroup group (KGlobal::config(), "Debugging");
     
     // Initialize theme lookup table
@@ -45,7 +53,8 @@ KGrTheme::KGrTheme (const QString &systemDataDir) :
 KGrTheme::~ KGrTheme()
 {
     delete pixCache;
-    pixCache = NULL;
+    pixCache = 0;
+    kDebug() << "Theme and pixmap cache DELETED.";
 }
 
 
@@ -56,45 +65,9 @@ bool KGrTheme::load (const QString& themeFilepath)
         kDebug() << "NO CHANGE OF THEME ...";
         return true;					// No change of theme.
     }
-    
-    KConfig theme (themeFilepath, KConfig::SimpleConfig);	// Read graphics config.
-    KConfigGroup group = theme.group ("KDEGameTheme");
 
-    QString f = group.readEntry ("Set", "");
-    if (f.endsWith (".svg") || f.endsWith (".svgz")) {
-        // Load a SVG theme (KGoldrunner 3+ and KDE 4+).
-        QString path = themeFilepath.left (themeFilepath.lastIndexOf ("/") + 1) + f;
-        if (! path.isEmpty()) {
-            svgSet.load (path);
-            
-            // The theme may have multiple backgrounds, called
-            // background0...backgroundN or just one background, called
-            // background0 or simply background.
-            QString backgroundPattern ("background%1");
-            numBackgrounds = 0;
-            while (svgSet.elementExists (backgroundPattern.arg (numBackgrounds))) {
-                ++numBackgrounds;
-            }
-            if (numBackgrounds == 0) {
-                if (svgSet.elementExists ("background")) {
-                    numBackgrounds = 1;
-                }
-            }
-        }
-        
-        f = group.readEntry ("Actors", "default/actors.svg");
-        if (f.endsWith (".svg") || f.endsWith (".svgz")) 
-        {
-            QString path = themeFilepath.left (themeFilepath.lastIndexOf ("/") + 1) + f;
-            if (!path.isEmpty()) 
-            {
-                svgActors.load (path);
-            }
-        }
-    }
-    else {
-        return false;		// Not SVG: old XPM themes no longer supported.
-    }
+    KConfig theme (themeFilepath, KConfig::SimpleConfig);
+    KConfigGroup group = theme.group ("KDEGameTheme");	// Get graphics config.
 
     // Check if the theme asks us to draw a border and set the specified color.
     themeDrawBorder = group.readEntry ("DrawCanvasBorder", 0);
@@ -112,14 +85,42 @@ bool KGrTheme::load (const QString& themeFilepath)
         m_textColor.setNamedColor (themeTextColor);
     }
 
+    kDebug() << "Border" << themeDrawBorder << "Color" << themeBorderColor;
+
+    m_themeFilepath   = themeFilepath;
+
+    int filePos       = themeFilepath.lastIndexOf ("/") + 1;
+    QString dirName   = themeFilepath.left (filePos);
+    themeName         = themeFilepath.mid (filePos);
+    themeName         = themeName.left (themeName.indexOf ("."));
+
+    QString filepath  = group.readEntry ("Set", "");
+    svgSetFilepath    = dirName + filepath;
+
+    filepath          = group.readEntry ("Actors", "default/actors.svg");
+    svgActorsFilepath = dirName + filepath;
+
+    // Force the cache to reload SVG when it cannot find a pixmap in the cache.
+    svgLoaded = false;
+
+    // If theme NEVER loaded or cache outdated, load SVG (we need tile-counts).
+    KConfigGroup themeGroup (KGlobal::config(), "Theme_" + themeName);
+    bool loadedBefore = themeGroup.readEntry ("LoadedBefore", false);
+    bool cacheOK = createPixCache();
+    if (! (loadedBefore && cacheOK)) {
+        kDebug() << "Calling loadSvg(), cacheOK:" << cacheOK
+                 << "loadedBefore:" << loadedBefore;
+        if (! (loadSvg())) {
+            return false;
+        }
+    }
+    numBackgrounds = themeGroup.readEntry ("numBackgrounds", -1);
+
     // Save the user's selected theme in KDE's config-group data for the game.
     KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
     gameGroup.writeEntry ("ThemeFilepath", themeFilepath);
     gameGroup.sync();			// Ensure that the entry goes to disk.
-    m_themeFilepath = themeFilepath;
-    
-    createPixCache();
-    
+
     return true;
 }
 
@@ -127,25 +128,23 @@ bool KGrTheme::load (const QString& themeFilepath)
 QPixmap KGrTheme::background (unsigned int width, unsigned int height, 
                               unsigned int variant)
 {
-    variant %= numBackgrounds;
     QTime t;
     t.restart();
     QPixmap pixmap;
-    //for (int i = 0; i < 5; i++) {
-    if ((width != 0) && (height != 0) && (numBackgrounds > 0))
-    {
-        if (svgSet.elementExists(QString("background%1").arg(variant)))
-        {
-            pixmap = loadGraphic(QSize(width, height), QString("background%1").arg(variant),svgSet);
+    if ((width != 0) && (height != 0)) {
+        if (numBackgrounds <= 0) {	// No variants, maybe not even a b/g.
+            loadPixmap (QSize (width, height),
+                        QString ("background"), pixmap, Set);
+            dbe1 "loadPixmap: \"background\" %dx%d\n", width, height);
         }
-        else if (svgSet.elementExists("background"))
-        {
-            pixmap = loadGraphic(QSize(width, height), "background",svgSet);
+        else {
+            variant %= numBackgrounds;	// Cycle through the variants of b/g.
+            loadPixmap (QSize (width, height),
+                          QString ("background%1").arg (variant), pixmap, Set);
+            dbe1 "loadPixmap: \"background%d\" %dx%d\n", variant, width, height);
         }
-
     }
-    //}
-    qDebug() << "background took" << t.elapsed() << "ms to render";
+    qDebug() << "Background took" << t.elapsed() << "ms to render";
     return pixmap;
 }
 
@@ -153,9 +152,11 @@ QList<QPixmap> KGrTheme::hero (unsigned int size)
 {
     QList<QPixmap> frames;
 
-    for (int i = 1; i <= 36; i++)
-    {
-        frames << loadGraphic(QSize(size, size), QString("hero_%1").arg(i), svgActors);
+    for (int i = 1; i <= 36; i++) {
+        QPixmap pix;
+        loadPixmap (QSize (size, size), QString ("hero_%1").arg (i), pix,
+                    Actors);
+        frames << pix;
     }
 
     return frames;
@@ -164,13 +165,18 @@ QList<QPixmap> KGrTheme::hero (unsigned int size)
 QList<QPixmap> KGrTheme::enemy (unsigned int size)
 {
     QList<QPixmap> frames;
-    for (int i = 1; i <= 36; i++)
-    {
-        frames << loadGraphic(QSize(size, size), QString("enemy_%1").arg(i), svgActors);
+
+    for (int i = 1; i <= 36; i++) {
+        QPixmap pix;
+        loadPixmap (QSize (size, size), QString ("enemy_%1").arg (i), pix,
+                    Actors);
+        frames << pix;
     }
-    for (int i = 1; i <= 36; i++)
-    {
-        frames << loadGraphic(QSize(size, size), QString("gold_enemy_%1").arg(i), svgActors);
+    for (int i = 1; i <= 36; i++) {
+        QPixmap pix;
+        loadPixmap (QSize (size, size), QString ("gold_enemy_%1").arg (i), pix,
+                    Actors);
+        frames << pix;
     }
 
     return frames;
@@ -195,7 +201,9 @@ QList<QPixmap> KGrTheme::tiles (unsigned int size)
     // These tiles can never have variants
     tileNames << "empty" << "hidden_ladder" << "false_brick";
     foreach (const QString &name, tileNames) {
-        list.append (loadGraphic(QSize(size, size), name, svgSet));
+        QPixmap pix;
+        loadPixmap (QSize (size, size), name, pix, Set);
+        list.append (pix);
         offsets[i] = i;
         counts[i] = 1;
         i++;
@@ -204,8 +212,9 @@ QList<QPixmap> KGrTheme::tiles (unsigned int size)
     // Add SVG versions of dug bricks.
     QString brickPattern("brick_%1");
     for (int j = 1; j <= 9; ++j) {
-        list.append (loadGraphic (QSize(size,size),
-                     brickPattern.arg(j), svgSet));
+        QPixmap pix;
+        loadPixmap (QSize (size, size), brickPattern.arg (j), pix, Set);
+        list.append (pix);
         offsets[i] = i;
         counts[i] = 1;
         i++;
@@ -215,45 +224,51 @@ QList<QPixmap> KGrTheme::tiles (unsigned int size)
     tileNames.clear();
     tileNames << "hero_1" << "enemy_1";
     foreach (const QString &name, tileNames) {
-        list.append (loadGraphic(QSize(size, size), name, svgActors));
+        QPixmap pix;
+        loadPixmap (QSize (size, size), name, pix, Actors);
+        list.append (pix);
         offsets[i] = i;
         counts[i] = 1;
         i++;
     }
 
     // These tiles can have variants
+    KConfigGroup themeGroup (KGlobal::config(), "Theme_" + themeName);
     tileNames.clear();
     tileNames << "gold" << "bar" << "ladder" << "concrete" << "brick";
-    foreach (const QString &name, tileNames) {
-        int tileCount = 0;
-        QString tileNamePattern = name + "-%1";
-        while (svgSet.elementExists (tileNamePattern.arg (tileCount))) {
-            list.append (loadGraphic( QSize(size, size),
-                         tileNamePattern.arg(tileCount), svgSet));
-            tileCount++;
+    foreach (const QString & name, tileNames) {
+        int tileCount = themeGroup.readEntry (name + "Types", -1);
+        kDebug() << name << "tileCount" << tileCount;
+        QString pattern = name + "-%1";
+        QPixmap pix;
+        if (tileCount <= 0) {		// No variants, maybe not even a tile.
+            loadPixmap (QSize (size, size), name, pix, Set);
+            list.append (pix);
+            tileCount = 1;
         }
-        if (tileCount > 0) {
-            counts[i] = tileCount;
-        } else {
-            list.append (loadGraphic(QSize(size, size), name, svgSet));
-            counts[i] = 1;
-        } 
+        else {				// Load variants 0 to (tileCount -1).
+            for (int v = 0; v < tileCount; v++) {
+                loadPixmap (QSize (size, size), pattern.arg (v), pix, Set);
+                list.append (pix);
+            }
+        }
+        counts[i]  = tileCount;
         offsets[i] = offsets[i - 1] + counts[i - 1];
         i++;
     }
 
+    kDebug() << "Total tiles:" << list.size();
     return list;
 }
 
-QList< QPixmap > KGrTheme::namedTiles (QList< QString > names, 
-                                       unsigned int size)
+QList< QPixmap > KGrTheme::namedTiles (QStringList names, unsigned int size)
 {
     QList< QPixmap > list;
+    QPixmap pix;
     
     foreach (const QString &name, names) {
-	if (svgSet.elementExists (name)) {
-            list.append (loadGraphic(QSize(size, size), name, svgSet));
-            kDebug() << name << "found";
+        if (loadPixmap (QSize (size, size), name, pix, Set)) {
+            list.append (pix);
         }
         else {
             list.clear();
@@ -269,81 +284,209 @@ QList< QPixmap > KGrTheme::namedTiles (QList< QString > names,
 
 QList< QPixmap > KGrTheme::displayTiles (unsigned int size)
 {
-    QList< QString > tileNames;
-    
-    tileNames << "display-left" << "display-centre" << "display-right";
+    QStringList tileNames;
+    KConfigGroup themeGroup (KGlobal::config(), "Theme_" + themeName);
+    tileNames = themeGroup.readEntry ("DisplayTiles", QStringList());
 
     return namedTiles (tileNames, size);
 }
 
 QList< QPixmap > KGrTheme::frameTiles (unsigned int size)
 {
-    QList< QString > tileNames;
-    
-    tileNames << "frame-topleft" << "frame-top" << "frame-topright" << 
-	         "frame-left" << "frame-fill" << "frame-right" <<
-	         "frame-bottomleft" << "frame-bottom" << "frame-bottomright";
+    QStringList tileNames;
+    KConfigGroup themeGroup (KGlobal::config(), "Theme_" + themeName);
+    tileNames = themeGroup.readEntry ("BorderTiles", QStringList());
 
     return namedTiles (tileNames, size);
 }
 
-QPixmap KGrTheme::loadGraphic(const QSize & size, const QString & strName, KSvgRenderer &Svg, double boundsAdjust)
+bool KGrTheme::loadSvg()
 {
-    if (! pixCache)
-    {
-        kWarning() << "Cannot load graphics until pixmap cache object has been created!";
-        return QPixmap();
+    QTime t;
+    t.restart();
+    // Load a SVG theme.
+    if (svgSetFilepath.isEmpty() || svgActorsFilepath.isEmpty()) {
+        return false;
     }
-    QPixmap pix(size);
-    
-    // create tag name:
-    QString strTagName = QString("%1|%2|%3x%4").arg(m_themeFilepath).arg(strName).arg(size.width()).arg(size.height());
-    
-    if (! pixCache->find(strTagName, pix))
-    {
-//        kWarning() << "Element" << strName << "Not in cache, rendering from SVG";
-        if (! Svg.elementExists(strName))
-        {
-            kWarning() << "Element" << strName << "Not found in SVG document - unable to load!";
-            return pix;
+    if (! (svgSetFilepath.endsWith (".svg") ||
+           svgSetFilepath.endsWith (".svgz"))) {
+        return false;
+    }
+    if (! (svgActorsFilepath.endsWith (".svg") ||
+           svgActorsFilepath.endsWith (".svgz"))) {
+        return false;
+    }
+
+    svgActors.load (svgActorsFilepath);
+
+    svgSet.load (svgSetFilepath);
+
+    // Use local KConfig to record the tiles and backgrounds this theme has.
+    KConfigGroup themeGroup (KGlobal::config(), "Theme_" + themeName);
+
+    // The theme may have multiple backgrounds, called "background0" to
+    // "backgroundN" or just one background, called "background0" or
+    // simply "background".
+
+    QString bgPattern ("background%1");
+    numBackgrounds = 0;
+    while (svgSet.elementExists (bgPattern.arg (numBackgrounds))) {
+        ++numBackgrounds;
+    }
+    if (numBackgrounds == 0) {
+        if (! (svgSet.elementExists ("background"))) {
+            numBackgrounds = -1;	// There is no background at all.
         }
-        else
-        {
-            pix.fill(QColor(0,0,0,0));
+    }
+    // Save the number of backgrounds, for use in fast loading from the cache.
+    themeGroup.writeEntry ("numBackgrounds", numBackgrounds);
+
+    // Some tiles can have variants called "name-0" to "name-N" or they may have
+    // just one version named "name".
+    QStringList tileNames;
+    tileNames << "gold" << "bar" << "ladder" << "concrete" << "brick";
+    foreach (const QString & name, tileNames) {
+        int tileCount = 0;
+        QString tileNamePattern = name + "-%1";
+        while (svgSet.elementExists (tileNamePattern.arg (tileCount))) {
+            tileCount++;
+        }
+        if (tileCount == 0) {
+            if (! (svgSet.elementExists (name))) {
+                tileCount = -1;
+            }
+        }
+        // Save the number of types, for use in fast loading from the cache.
+        themeGroup.writeEntry (name + "Types", tileCount);
+    }
+
+    QStringList tilesFound;
+    tileNames.clear();
+    tileNames << "frame-topleft" << "frame-top" << "frame-topright" << 
+	         "frame-left" << "frame-fill" << "frame-right" <<
+	         "frame-bottomleft" << "frame-bottom" << "frame-bottomright";
+    foreach (const QString & name, tileNames) {
+	if (svgSet.elementExists (name)) {
+            tilesFound.append (name);
+        }
+    }
+    // Saves looking for missing tiles in the cache and then redoing loadSvg().
+    themeGroup.writeEntry ("BorderTiles", tilesFound);
+
+    tilesFound.clear();
+    tileNames.clear();
+    tileNames << "display-left" << "display-centre" << "display-right";
+    foreach (const QString & name, tileNames) {
+	if (svgSet.elementExists (name)) {
+            tilesFound.append (name);
+        }
+    }
+    // Saves looking for missing tiles in the cache and then redoing loadSvg().
+    themeGroup.writeEntry ("DisplayTiles", tilesFound);
+
+    svgLoaded = true;
+    themeGroup.writeEntry ("LoadedBefore", true);
+    themeGroup.sync();			// Ensure that the entries go to disk.
+    qDebug() << "SVG took" << t.elapsed() << "ms to load";
+    return true;
+}
+
+bool KGrTheme::loadPixmap (const QSize & size, const QString & strName,
+                           QPixmap & pix, SvgSource source, double boundsAdjust)
+{
+    if (! pixCache) {
+        kWarning() << "Cannot load pixmaps until the pixmap cache object has been created!";
+        pix = QPixmap();
+        return false;
+    }
+
+    // Calculate the key for this pixmap in the cache.
+    QString key = QString("%1|%2|%3x%4")
+                          .arg (m_themeFilepath).arg (strName)
+                          .arg (size.width()).arg (size.height());
+    
+    if (! pixCache->find (key, pix)) {
+        // kWarning() << "Element" << strName
+                   // << "Not in cache, rendering from SVG";
+
+        // If theme not loaded, go and load it.
+        if (! svgLoaded) {
+            kDebug() << "Calling loadSvg(), theme:" << themeName
+                     << "key" << key;
+            if (! (loadSvg())) {
+                return false;
+            }
+        }
+
+        // If required pixmap not in cache at right size, render and cache it.
+        bool exists = false;
+        if (source == Set) {
+            exists = svgSet.elementExists (strName);
+        }
+        else if (source == Actors) {
+            exists = svgActors.elementExists (strName);
+        }
+        if (! exists) {
+            kWarning() << "Element" << strName
+                       << "Not found in SVG document - unable to load!";
+            return false;
+        }
+        else {
+            pix = QPixmap (size);
+            pix.fill (QColor (0, 0, 0, 0));
             QPainter p;
             p.begin(&pix);
-            QRectF bounds(0,0, size.width(), size.height());
-            bounds.adjust(-boundsAdjust, -boundsAdjust, boundsAdjust, boundsAdjust);
-            Svg.render(&p, strName, bounds);
+            QRectF bounds (0, 0, size.width(), size.height());
+            bounds.adjust (-boundsAdjust, -boundsAdjust,
+                           +boundsAdjust, +boundsAdjust);
+            if (source == Set) {
+                svgSet.render (&p, strName, bounds);
+            }
+            else if (source == Actors) {
+                svgActors.render (&p, strName, bounds);
+            }
             p.end();
-            pixCache->insert(strTagName, pix);
+            pixCache->insert (key, pix);
+            dbe1 "Set cache %s, %s size %dx%d\n", themeName.toUtf8().constData(),
+                strName.toUtf8().constData(), size.width(), size.height());
         }
-        
     }
-    return pix;
+    return true;
 }
 
-void KGrTheme::createPixCache()
+bool KGrTheme::createPixCache()
 {
     delete pixCache;
-    pixCache = NULL;
-    
-    QString strCacheName = m_themeFilepath.mid(m_themeFilepath.lastIndexOf('/') + 1);
-    strCacheName = strCacheName.left(strCacheName.indexOf('.'));
-    kWarning() << strCacheName;
-    
-    pixCache = new KPixmapCache(QString("kgoldrunner-pixmap-cache-") + strCacheName);
-    pixCache->setRemoveEntryStrategy(KPixmapCache::RemoveLeastRecentlyUsed);
-    pixCache->setCacheLimit(1024 * 3);  // set cache size to 3 MB PER THEME
-    
-    // Check the file modification time of the theme. If it is newer than the pixmap cache
-    // timestamp then we invalidate the entire cache for this theme only.
-    QFileInfo fi(m_themeFilepath);
-    if (fi.lastModified().toTime_t() != pixCache->timestamp())
-    {
-        kWarning() << "Pixmap cache for theme '" << strCacheName << "' is outdated; invalidating cache.";
-        pixCache->discard();
-        pixCache->setTimestamp(fi.lastModified().toTime_t());
-    }
-}
+    pixCache = 0;
 
+    kDebug() << "Create cache:"
+             << (QString("kgoldrunner-pixmap-cache-") + themeName);
+    pixCache = new KPixmapCache
+                    (QString("kgoldrunner-pixmap-cache-") + themeName);
+    pixCache->setRemoveEntryStrategy (KPixmapCache::RemoveLeastRecentlyUsed);
+    pixCache->setCacheLimit (1024 * 3);  // Set cache size to 3 MB per theme.
+    
+    // Check the file modification times of the theme's SVG files.  If the most
+    // recent does not agree with the pixmap cache's timestamp, invalidate the
+    // entire cache (for this theme only), thus forcing load and render of SVG.
+
+    QFileInfo fInfo   (svgSetFilepath);
+    uint setTime    = fInfo.lastModified().toTime_t();
+    fInfo.setFile     (svgActorsFilepath);
+    uint actorsTime = fInfo.lastModified().toTime_t();
+
+    uint lastChange = (setTime > actorsTime) ? setTime : actorsTime;
+    dbe1 "Timestamps for Set %d, Actors %d,\n"
+        "       Last Change %d,  Cache %d\n",
+        setTime, actorsTime, lastChange, pixCache->timestamp());
+    if (lastChange != pixCache->timestamp()) {
+        kWarning() << "Pixmap cache for theme '" << themeName
+                   << "' is outdated; invalidating cache.";
+        kDebug() << "Theme:" << themeName
+                 << "files:" << svgSetFilepath << svgActorsFilepath;
+        pixCache->discard();
+        pixCache->setTimestamp (lastChange);
+        return false;
+    }
+    return true;
+}

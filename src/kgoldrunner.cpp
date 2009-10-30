@@ -56,6 +56,8 @@
 #define ACTION(x)   (actionCollection()->action(x))
 
 KGoldrunner::KGoldrunner()
+    :
+    KXmlGuiWindow (0)
 {
 /******************************************************************************/
 /*************  FIND WHERE THE GAMES DATA AND HANDBOOK SHOULD BE  *************/
@@ -96,7 +98,7 @@ KGoldrunner::KGoldrunner()
     if ((dw > 1024) && (dh > 768))  {			// More than 1024x768.
         scale = 1.75;			// Scale 1.75:1.
     }
-    view = new KGrCanvas (this, scale, systemDataDir);
+    view = new KGrCanvas (this, scale);
     game = new KGrGame   (view, systemDataDir, userDataDir);
 
     // Initialise the lists of games (i.e. collections of levels).

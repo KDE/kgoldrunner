@@ -57,9 +57,9 @@ static QString livesText(int lives)
     return ki18n ("Lives: ").toString() + QString::number(lives).rightJustified(3, '0');
 }
 
-KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
-                        const QString & systemDataDir)
-                        : KGameCanvasWidget (parent),
+KGrCanvas::KGrCanvas (QWidget * parent, const double scale)
+                          :
+                          KGameCanvasWidget (parent),
                           firstSceneDrawn (false),
                           topLeft (0, 0), bgw (4 * STEP), bgh (4 * STEP),
                           m_scoreText(0),
@@ -68,7 +68,7 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale,
                           m_livesDisplay(0),
                           m_fadingTimeLine (1000, this),
                           emptySprites (0),
-                          theme (systemDataDir),
+                          theme(),
                           heroId (0)
 {
     resizeCount = 0;		// IDW
@@ -190,7 +190,7 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
 
     // Draw the tiles and background in the playfield.
     if (playfield) {
-	loadBackground();
+	loadBackground (-1);		// Load/render/cache all backgrounds.
 
 	if (changePixmaps) {
 	    tileset->clear();
@@ -418,10 +418,9 @@ int KGrCanvas::tileNumber (KGrTheme::TileType type, int x, int y)
 
 void KGrCanvas::paintCell (const int i, const int j, const char type, const int offset)
 {
-    // IDW kDebug() << "recv paintCell (" << x << y << type << offset << ");";
     KGrTheme::TileType tileType = tileForType (type);
     // In KGrGame, the top-left visible cell is [1,1]: in KGrPlayfield [0,0].
-    int x = i - 1, y = j - 1; // IDW x--; y--;
+    int x = i - 1, y = j - 1;
     switch (offset) {
     case 1: tileType = KGrTheme::BrickAnimation1Tile; break;
     case 2: tileType = KGrTheme::BrickAnimation2Tile; break;
@@ -724,24 +723,35 @@ void KGrCanvas::initView()
     goldEnemy = 36;			// Offset of gold-carrying frames.
 }
 
-void KGrCanvas::setLevel (unsigned int l)
+void KGrCanvas::setLevel (unsigned int lev)
 {
-    if (l != level) {
-        level= l;
+    if (lev != level) {
+        level = lev;
         if (theme.backgroundCount() > 1) {
-            loadBackground();
+            loadBackground (lev);	// Load (uncache) background for level.
         }
     }
 }
 
-void KGrCanvas::loadBackground()
+void KGrCanvas::loadBackground (const int lev)
 {
-    kDebug() << "loadBackground called";
+    kDebug() << "Parameter" << lev << "level" << level;
     bool fillCanvas = !theme.isBorderRequired(); // Background must fill canvas?
     int w = fillCanvas ? (this->width())  : (nCellsW * imgW);
     int h = fillCanvas ? (this->height()) : (nCellsH * imgH);
+    QPixmap background;
     if (theme.backgroundCount() > 0) {
-        QPixmap background = theme.background (w, h, level);
+        if (lev < 0) {
+            // When initially loading a theme, make sure other backgrounds are
+            // loaded, rendered and cached, to save SVG reloads in later runs,
+            // e.g. if player quits before changing to a new level.
+            for (int i = 1; i <= theme.backgroundCount(); i++) {
+                background = theme.background (w, h, i);
+            }
+        }
+        // When initially loading a theme, use "background0" or "background",
+        // but normally use the background calculated for the current level.
+        background = theme.background (w, h, level <= 0 ? 0 : level);
         playfield->setBackground (true, background, 
                 theme.isBorderRequired() ? topLeft : QPoint (0, 0));
     }

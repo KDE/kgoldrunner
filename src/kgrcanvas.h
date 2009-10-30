@@ -57,8 +57,7 @@ class KGrCanvas : public KGameCanvasWidget
 {
     Q_OBJECT
 public:
-    KGrCanvas (QWidget * parent, const double scale,
-               const QString & systemDataDir);
+    KGrCanvas (QWidget * parent, const double scale);
     virtual ~KGrCanvas();
 
     void setBaseScale();
@@ -120,9 +119,11 @@ private:
     void initView();
 
     /**
-     * Load background appropriate for current level
+     * Load a background appropriate for the current level or, when initially
+     * loading * a theme (lev = -1), load all backgrounds, so that they  are all
+     * cached after the first SVG load, thus avoiding SVG reloads on later runs.
      */
-    void loadBackground();
+    void loadBackground (const int lev);
 
     void drawTheScene (bool changePixmaps);
     void makeBorder();
