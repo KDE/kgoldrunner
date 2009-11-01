@@ -69,7 +69,7 @@ int main (int argc, char **argv)
 void addCredits (KAboutData & about)
 {
     about.addAuthor (ki18n ("Ian Wadham"), ki18n ("Current author"),
-                            "ianw2@optusnet.com.au");
+                            "iandw.au@gmail.com");
     about.addAuthor (ki18n ("Marco Krüger"), ki18n ("Original author"),
                             "grisuji@gmx.de");
     about.addCredit (ki18n ("Mauricio Piacentini"),
