@@ -67,6 +67,9 @@ Proposed for KDE 4.5 release
 19. Better support for beginners, such as graphical cues for false bricks
     and hidden ladders, extra messages with "don't tell me this again", etc.
 
+28. In keyboard mode, have an option to stop when a direction key is released.
+    This should probably be a new mode: Keyboard Arcade v. Keyboard Precision?
+
 To do in post-KDE 4.4 releases:
 -------------------------------
 
