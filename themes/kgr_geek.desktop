@@ -2,6 +2,7 @@
 Name=Geek City
 Name[be]=Горад гікаў
 Name[ca]=Ciutat Freak
+Name[ca@valencia]=Ciutat Freak
 Name[cs]=Řecké město
 Name[da]=Geek City
 Name[de]=Computer-Stadt
@@ -41,6 +42,7 @@ Name[zh_CN]=奇客之城
 Name[zh_TW]=Geek City
 Description=The hero is trapped inside a computer.
 Description[ca]=L'heroi està atrapat dins un ordinador.
+Description[ca@valencia]=L'heroi està atrapat dins un ordinador.
 Description[da]=Helten er fanget inden i en computer.
 Description[de]=Der Held ist im Inneren eines Computers gefangen.
 Description[el]=Ο ήρωας έχει παγιδευτεί μέσα σε έναν υπολογιστή.
