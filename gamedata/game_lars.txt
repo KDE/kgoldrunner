@@ -1,0 +1,85 @@
+// G020 T lars C
+ i18n("Demolition");
+ i18n("Twenty levels that require a bit of thinking and a bit of timing.\n"
+ "\n"
+ "Created by Lars Luthman <lars luthman at gmail com>.");
+// L001
+//                             HRMMMMMMMMMMMMMMMMMMMMMMMMMMH                           H                      EEEE HHTTTH   H   H   H   H EEEE HH   H   H   H   H   H EEEE HH   H   H   H   H   H NNNN HH   H   H   H   H   H      HH   H   H   H   H   H      HH   H   H   HTTTHTTTH      HH   H   H   H   H   H      HH   H   H   H   H   H      HH   HTTTHTTTH   H   H      HH   H   H   H   H   H      HH   H   H   H   H   H      HH   H   H   H   H   H      HHTTTHTTTHTTTHTTTHTTTH      HH   H   H   H   H   H      HH   H   H   H   H   H      HH   H   H   H   H   H      H
+ i18n("Ups And Downs");
+ i18n("The trick is to get past all the enemies and on to the highest ladder, then make them follow you up in small groups. Once they are up on the bricks you can kill them and take their gold.");
+// L002
+//  MMMMMMMMMMMMMMMHMMMMMMMMM   MR MM    MMMMMMHMMMMMMMMM   MMMMMHMMMM    MHM M     M MHMMMMMHMEEMHMMMMHM          HM MMMHMMMMHME MHM MMMHMMM  HMMMMMHMMMMHMMMMHM    H     HMM MMHMMMMHM MMHM MMMHMMM  HMM MMHMMMMHM MMHM  N H N   HMM MMHMMNMHMNMMHM MMMHMMM  HMM MMHMMMMHM MMHM  N H N   HMMMMMHMMMMHM MMHM MMMHMMM  HM MMMHMMMMHMMMMHMMM  H     HM  MMHMMMMHME MHMMMN H NM  HMMMMMHMMMMHMMMMZNHMMMHMMMH HMMMMMHMM  HMMMMMMH       H HMMNMMHMMMMMMMMMMMH       H HMMMMMHMMMMMMMMMN H       H HMMMMMHMMMMMMMMMMM  N   N H HMMMMMHMMMMMMMMMMMHMMMMMMMH HMM   HMMMMMNNNNNNHNNNNNNNNNH
+ i18n("Dig, Baby, Dig!");
+ i18n("This should be fairly easy. No hint!");
+// L003
+//     XXXXXXXXXXXXXXXXXXXXXXXXH   XXXXXXXXXXXXXXXXXXXXXXXXH   XXXXXXXXXXXXXXXXXXXXXXXXH                           HXX XXXXXXX        E  N     HHX             MMMMMMMHMM  HHXHXXXXXX             H   EHHXH      XH   N  HMMMMHMMMMHHXXXXXXXHXH   M  H    H    HHX      HXHMMMM  H    H  N HHXHXXXXXXXH      H MMMMMMM HHXH      XH    N H     N   HHXXXXXXXHXH MMHMMMMHMMMMMMHMHXNNN   HXH   H    H     RH HXXXXXXXXXH   HN   H      H H         H  MMMM  H      H MMMMMHMMMMMXH    HMHMH    H      H     XH    H H H    H   NN H    EXH    H MMM  N H MMMMMMMMMMMXH   NH     MMMMM
+ i18n("Fetch!");
+ i18n("Make your enemies fetch the gold pieces you cannot reach yourself.");
+// L004
+//                             E           MMMMMMMMMMMMMMHM MMMMMMM                  H ER N        N       N     H    MH   N   M      HM  N  H E   H   M          H  HM  H     H            N H  H  NH     H            M H  H HMH   N H              H NH H     M H        N  N  H MH H       H       HM HMH H    H       H       H  H H H    HN      H       H  H H H    HM      H       H  H H H            HN      H NH HNH            HMH     H MH HMH              H    NH                     H   HMH       N N   N       H   H        HMHMH  M       H   H        H H H     
+ i18n("Acrophobia");
+ i18n("To get that last piece of gold, kill an enemy and have him fetch it.");
+// L005
+//  R            H              EEEEEEEE     H N            N N N  N     HMMMH                       H   H N                 MMHMH   HMMMH                 H H       H                 H HMMMMMMMMMH               H H         H               H H         H           N   H H         H               H H         H               H H         H               H H N       H             HMMMMMMMMH    H        N    H        H    H             H        H    H             H        H    H N           H        H    MMMM         MM        H                           H         
+ i18n("Panic!");
+ i18n("Sometimes you can make the enemies run towards or away from you by moving one step up or down a ladder.");
+// L006
+//  R                                      NZZZZZZZZZZZZZZZZZZZZZZZZZZ MMMMMMHZZZZZZNZZZZZZZZZZZZN M  E MHTHMMMMMMMZZZZZZZZZZMXXXXXXXHZHZZZZZZZZZZZZZZZNZM E    MHZHMMMMMMMZZZZZZZZMXXXXXXXXXHZHZEZZZZZZZZZZZNZM   E    MHZMMMMMMMMHZZZZZMHXXXXXXXXXXHZZZZZZZZZHZZZZZMZZZZZZNNNNMHZZZZZZZZZHZZZZZMMMMMMZMMMMMHZZZZZZZZZHZZZZZNZZZZMZMZZZZHZZZZZZZZZHZZZZZNZZZZMZMZMMMMZZZZZZZZZHZZZZZNZZZZMMMZZZNZZZZZZZZZZHZZZZZNZZZZZZZZMMMZZZZZZZHMMMZZZZZNZZZZZZZZZNZZZZNZZZHZZZZZZZZNZHMMMMMMMMZHMMMMHZHZZNZZZZZNZHZZZZZZNZZHZZZZHZHMMMMMMHMMMMZZZZZZMZZHMMHMHZHZZZNEMHMENMZZZZZZZZZHZZHZHZHZZZ
+ i18n("Landfill");
+ i18n("You can walk on top of trapped enemies.");
+// L007
+//  REEEE N   N    TTTTTT             MMHMMMMMM                   M H    MEMH     HMMM        MMMHMMMMXMH     H           M  H  N MMH  N  H           MNNH    MMH  MM H     TTTT  M  HMMMHMMH   N MMMMMH    N M      HMMH          H   M  MHMMMMMMMMH          H      MH N  N MMH          H  M   MH      MMH        N H      MH      MMH       HMMM M  N MMMMMH  MMH       H N       M N  H  MMH     N HMMMM     MN   H  MMHMMH HMMH         MMMHMMMMMMH NH H  H    TTTT MN H  N  MHMMM MMMH   N     MMMMMMMMMMH                    N      H          NMMMMMH HMMH     H      HMMMM
+ i18n("Inwards And Upwards");
+ i18n("You only get one chance to grab those first three pieces of gold.");
+// L008
+//  R   E  M                   HXMMMX XM         E         H XMM XMX       ZMHMMMXMZZHZHXMMMXM M Z   ZMHMH    M  H HMXM  X XZNMMMM HMHM M M  H HMMMMXM MZMMXMM HMH X MM  H HMXMXMXMXZMMMMM HMH MNMM  H H   MX XMZMXMMM HMHMMMMM  H HMXMXMXMXZMMMMM HMHMMMMM  HZH M      ZMMNTM HMHMMMMM  H H MNHM   ZMMM   HMHMMMMM  H H M HM   ZM  HM HMH    EEXH H M HM   ZMHMMNMHMH XZ XXXH H M HMEEEHMH  M   H XXXX  H H M HMXXXXMMMHM   H       HZH M HMTTTT   HM   H       H H M HM   ZMMMHM   HMMMMMMMH HNM HM   ZM       H         H   HM   ZM       H         HMMMMMXXXXMMMMMMMMMMMMMMMMMMM
+ i18n("Vertical");
+ i18n("If you dig a hole quickly and jump into it, the enemy will jump into the concrete hole to the right.");
+// L009
+//  Z                           Z                           ZMMMMMZ                     ZMMMMMMMMMMMMMMMMMMMMMMMMMMZZ ZZZZZZZZZZZZZZZZZZZZZZZZZZZ        Z   R             ZZ ZZZZZZZZZZZZZZZZZZZZZZZZZZZ Z                         Z ZZZZZZZZZZZZZZZZZZZZZZZ   Z                       Z   Z ZZZZZZZZZZZZZZZZZZZZZZZ   Z Z                         Z ZZZZZZZZZZZ  ZZZZZZZZZZ   Z           ZMMZ        Z   Z           ZMMZ        Z   Z           ZMMZ     N  Z   Z           ZMMZ     MMMH   Z           ZMMZ        H   ZN           MM         H  NZEEEEEEEEEEEEMMEEEEEEEEMH   
+ i18n("The Divide");
+ i18n("You can kill one enemy by digging away one of the bottom bricks in the divider and making him go in there.");
+// L010
+//  RH M    H M                 H M    H M         TN      H M    H X         H H      HMNM  H M      E   H H    ZMHMEM H M    HXXMXMMHZXMMMXHMHMMMH M    H      EHZX ENXHMH N  H    HZ       HZXXMMXHMH  HMNM  H Z  N    HZ XMMXMMHHM MEM H  Z XXX   HMHXMMX  H   MMMH   Z E     H HX  X  H    N H   Z    N  H HX     H      H   Z   MMM H HMMMMMMH   HMMM N ZN      H H N    Z  HZ   ZMMMM   N  HMMMM    Z H Z   Z       M  H N      ZH  Z   Z          HMM      Z   Z   Z     MMHMMH        Z   Z   Z       H  H        Z   Z   Z   ZMMMMMXMZ       Z   Z   ZE  Z  E    ZE      Z
+ i18n("Do Not Fall Down");
+ i18n("The way up to the escape route on the right is tricky. How do you get past that last enemy? Timing is everything!");
+// L011
+//           MM   N          MMREMHMMMMMMMMMMMMMMHMMMMMMMMM EMHM N M    MMMMMHMNNMMMNMM EMHM H M         HMMMM MMMM EMHM H  MN  N    H   M MMMM  MH  H  MMMMM    HMMH  MMMME MH  H   MMM  HMH MMHN MMMM  MH    M MMM  HMNM  HM MMMM  MH   M   M   HMM   H        MMH MN  M MMMHM N M  MHMMM  M HM    M   MH  M M  M MNM  M HM    M   MH  M     M MM  M HM    MNNNMH  M     M  M  M HMM    MMMMH  M     M MM  M H  MNM    MHMMM    MM MM  M H  MMM     H       M MMM  M H      N   H       MNMMM  MHMMMMMMMMMMMMMMMMMMMMMMMM   HTTTTTTTTTTTHTTTTTTTTTTTT   H           H             
+ i18n("The Box (1)");
+ i18n("This level is fairly straightforward. There are some places where you can trap enemies if you do not like all of them running around.");
+// L012
+//               Z              MMMMMMM MH   Z       MMMMMMMNX     NMH   Z       M      HH MH H MH   Z       M  N N X H H X MH   Z       M MMHMMH X H H MH   Z       M   H    HHXM HMH   Z    HMMM MMHMM H  H HXMHMMHZ    HM     H NHXMHEMHHM   HZ    HMMMMMXM MHH XE X M   HRH   H      XM X HHH H M HMHXHMHMMMMMMMMMMMH    H  M HM N MHM E  E  E M MH HX HM HM X MHMMMMMMMMMMM  XHXH XM HM N MHM E  E  E M HHHH  HM HM X MHMMMMMMMMMMM X H    M HM N MHM E  E  E MNHHXH  NM HM X MHMMMMMMMMMMMMMMMMMMMM HM N MHM E  E  E M          HM X MHMMMMMMMMMMMMMMMMMMMMMHMMMMMHM E  E  E M
+ i18n("Crowd Control");
+ i18n("Remember 'Landfill'?");
+// L013
+//                               ZTTTTTTT                   RH      XMX    T T     T  H  H      XNX   H M XXXXX M H  H      X X   H MMEM MEMM H  H      X X   HNMNMNMNMNM H  H      X X   H MMMMMMMMM H  H      X X   H TTTTTTN   H  H      X X   H    MM H   H  H      X XN  H  MM   H   H  HTTTTTT NX   HMMN    H   H  H      XMX   H       H   H  H      X X   H       H   H  H      X X   H       H   H  H      X X   H   TTT H   H  H      X X   H  H    H   H  HTTTTTT  X   H  H    H  NH  H      XMX   H  H   XZ  XZ  H      XNX   ZX H    Z   Z  H          E Z  HE   Z  EZ 
+ i18n("One Way Up");
+ i18n("This one is easy. No hint!");
+// L014
+//     R                       H                           H                           H                           H        N      N           H HMEMH HM MMMMHM          MH HMMMH HMMM   HNMNM MMMMMHMH HMNMH        HMMMMMM    HMH HMMMH                   HMH HMEMH        XXXXXXXXXXXHMH HMMMH                   HMH HMNMH      HMMMMNMNMNMH HMH HMMMHMMMMMMMMMMMMMMMMMH HMH HMEMH                   HMH HMMMHMMMMMMMMMMMMMMMMMMMMMH HMNMHXXXXXXXXXXXXXXXXXXXXXH HMMMH                     H H               HMMMM MMM H MMMM            HMMMMMMMM H                 H       M H
+ i18n("Use Your Enemy");
+ i18n("Use yourself as bait.");
+// L015
+//                             H XX              XN N N N NH X MH            XXXXXXXXXXH X XHHHHXEXEXEXH   R E E E H X XH  HXHXHXHXHHHHHHHHHHH H X XH   XXXXXXXXH          H X XHHHHHHHHHHHHH          H X X                       H X XXXXXXXXXXX             H X           X             H XXXXXXXXXXX X             H X           X             H X XXXXXXXXXXX             H X XN    X   X             H X XXHXX XHX X             H X XNHNX XHX X             H X XXHXX XHX X             H X   HNX  HX N             H XXXXXXXXXXXXX             H                           H
+ i18n("Race To The Bottom");
+ i18n("Unless you can stop all the enemies from reaching the bottom before you, you are dead.");
+// L016
+//   N                           MH HMMMMHMMMMXMMMMMMXMMMMH  MH H  N  M               H NMMXH HMX M               H MNM H H X XXXXX           H NMM H H   MMMMM           H MNX H H M    N            H NM  H MHX MMMMM           HR    H MH  M N   N M  E    HM    H MMMHMHM  MM XXHXXXXXXX   NH      HM   N   H       MMMMH      HM  MMM  H         N H      HM    N          MMM H      H   MMM M MH      N  H    XMMMH N   MMMMMMMH MM  HMMM X   H MMM  N     H N   H    XMMMH  N  MMM    H M   H    X   H MMM MEM    H     H    XMMMH     MMM    H N   HMMMMXNMNH     MNM    H 
+ i18n("No-Brainer");
+ i18n("You need to walk on an enemy's head to get that gold piece in the middle.");
+// L017
+//  H                           HMMMMXMMMMMMMH      R       HNM N      M  XXXXXXXXHXMMMHH M MMH HMMM M   EEEEXHMNMNHH M   H H EM XXXXXXXXXHMMMMHHNMMMMMXMXMM       XNXHMXMMHH M MX N           XHXHMNMXHH MM MHXXM XXXXXXXHXHXHMMMMHHNMM MH  N XX     HXHXHMMNMHH MXMMH XX XX     HXHXHMMMMHH MN MH X   X     HXHXHMMMMHHNMMMM  XXXXX      XHXH    HH MMMX             XHXH    HH M MM             XHXHME MHHNM MM             XHXHMMMMHH MMNM             XHXHTTTTHH M  M             XHXMMMMMMHN NNM             XHX      HMMMMM             XHX      Z                   H       
+ i18n("Depth");
+ i18n("Get some enemies into the concrete pit so that you can go across it. Then push them one step further down before you dig and grab the gold.");
+// L018
+//  MMMMMMMMMMMMMMMMMMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMMHMMMMM          N           HM NEMMMHMMMMMMMMMMMMMMMMMMMMMHMHMNMHM N M   M E M N M    HMHMMMHMHMHMHMHMHMHM MHMHMMMMMHMNMHMHMHEHMHMHMH  MHMHM E MHMMMHMHMMMMMHMHMMMMMHMHMHMHMHMH HMHM    HMHM   EHMHMHMHMHMHMMMHMHMMMMMHMHMMMMMHMHMHMHMHMEMHMH  N  HMHM  E HMHMHMHMHMMMHMMMMMMMMMHMHMMMMMHMHMHMHMNMH E      MHMH N  MHMHMHMHMMMMMMMMMMMHMHMMMMMHMHMHMHMHM N M     EHMHM    HMHMHMHMHM M MHMMMMMMMHMHMMMMMHMHMHMHM  EMHM    E HMHM    HMHNHMHMMMMMHMHMMMMMMMHMHMMMMMMMMMH    NHMH   N   HMH       RMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+ i18n("Density");
+ i18n("Avoid killing enemies. That will make the last bit much easier.");
+// L019
+//            E   N    N                  MMMMMMMMMMMMMH                 R         H                 MM        H               MMNM     N EH             MM    M HMMMMMHMH         MMN     M H       H       MM E  N    MH       H     MM   HMMMMMH MH       H     MN   H     H  M   N   H N    M   H     HN M       HMM    M   H N   MMH M      H       M  MMMMH  NH M      H       M      H MMM NMHMMMMH        M     H     MMH             H     H   MM  H             HM    HEMM    H             HM    MM      H       N     HEMNMM        H       MMMMMMMMMMN      HMMMMMH  E 
+ i18n("The Box (2)");
+ i18n("This one is easy. No hint!");
+// L020
+//                            XH                          XH                          XH                       HXMXH                       HXNXH         HXXZXZXXH  HMMMX XH         HX HXH XH  HM     HXXMXXXH  HXMXXXMXH  HMMMX XM X X  H  HX XXX XH  HMMMXMXM X X  HXXXX  X  XXXXH   X X  X X  HTTTHXMXMXHTTTH   X X MX XM H   HX X XH   H  NX X M N M H   HX X XH   H MMMMM MXMXM H   HX X XH   H  N     X X  H    X X X    H  MMM   X X  H    X X X    H   N    X X  H    X X X    H   M    XMX  H    X X X    H             H    X X X    H       R     H      X      HE E E E
+ i18n("Concrete Towers");
+ i18n("No hint!");
