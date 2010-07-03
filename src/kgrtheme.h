@@ -22,7 +22,7 @@
 #include <QString>
 #include <QColor>
 
-#include <KSvgRenderer>
+#include <QSvgRenderer>
 
 class KPixmapCache;
 
@@ -142,12 +142,12 @@ public:
     QColor textColor() { return m_textColor; }
 
 private:
-    // Each KSvgRenderer loads a single .svg file.  Multiple SVG files make
+    // Each QSvgRenderer loads a single .svg file.  Multiple SVG files make
     // up a single theme.
     enum SvgSource {Set, Actors};
     bool svgLoaded;
-    KSvgRenderer svgSet;                //< Tiles in here
-    KSvgRenderer svgActors;             //< Everything else?
+    QSvgRenderer svgSet;                //< Tiles in here
+    QSvgRenderer svgActors;             //< Everything else?
     
     QColor m_borderColor, m_textColor;	// Border colours.
 
