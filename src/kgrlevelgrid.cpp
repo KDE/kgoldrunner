@@ -196,11 +196,9 @@ void KGrLevelGrid::calculateCellAccess (const int i, const int j)
 
 void KGrLevelGrid::placeHiddenLadders()
 {
-    int offset, i, j;
-
-    foreach (offset, hiddenLadders) {
-        i = offset % width;
-        j = offset / width;
+    foreach (int offset, hiddenLadders) {
+        int i = offset % width;
+        int j = offset / width;
         changeCellAt (i, j, LADDER);
     }
     emit showHiddenLadders (hiddenLadders, width);

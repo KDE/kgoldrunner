@@ -667,10 +667,9 @@ void KGrCanvas::gotGold (const int spriteId, const int i, const int j,
 
 void KGrCanvas::showHiddenLadders (const QList<int> & ladders, const int width)
 {
-    int offset, i, j;
-    foreach (offset, ladders) {
-        i = offset % width;
-        j = offset / width;
+    foreach (int offset, ladders) {
+        int i = offset % width;
+        int j = offset / width;
         paintCell (i, j, LADDER);
     }
 }
