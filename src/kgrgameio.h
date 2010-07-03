@@ -16,8 +16,8 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ****************************************************************************/
 
-#ifndef _KGRGAMEIO_H_
-#define _KGRGAMEIO_H_
+#ifndef KGRGAMEIO_H
+#define KGRGAMEIO_H
 
 #include "kgrglobals.h"
 
@@ -105,4 +105,4 @@ private:
     KGrGameData *	initGameData (Owner o);
 };
 
-#endif // _KGRGAMEIO_H_
+#endif // KGRGAMEIO_H

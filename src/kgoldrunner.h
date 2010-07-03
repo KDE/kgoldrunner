@@ -17,8 +17,8 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ****************************************************************************/
 
-#ifndef _KGOLDRUNNER_H_
-#define _KGOLDRUNNER_H_
+#ifndef KGOLDRUNNER_H
+#define KGOLDRUNNER_H
 
 // Status bar
 const int ID_LIVES      = 0;            // Field IDs in KDE status bar.
@@ -164,4 +164,4 @@ private:
     KToolBar *		editToolbar;	// Toolbar for creating/editing levels.
 };
 
-#endif // _KGOLDRUNNER_H_
+#endif // KGOLDRUNNER_H

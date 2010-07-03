@@ -52,8 +52,6 @@
 
 #ifdef USE_KSCOREDIALOG
 #include <KScoreDialog>
-#include <QDate>
-#include <QLabel>
 #else
 
 #include <QByteArray>

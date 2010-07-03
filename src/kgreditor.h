@@ -15,8 +15,8 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ****************************************************************************/
 
-#ifndef _KGREDITOR_H_
-#define _KGREDITOR_H_
+#ifndef KGREDITOR_H
+#define KGREDITOR_H
 
 #include "kgrglobals.h"
 
@@ -266,4 +266,4 @@ private slots:
     void endEdit (int button);
 };
 
-#endif // _KGREDITOR_H_
+#endif // KGREDITOR_H
