@@ -1563,7 +1563,7 @@ void KGrGame::checkHighScore()
     hsn->exec();
     thisUser = hsnUser->text();
     if (thisUser.length() <= 0)
-        thisUser = "-";
+        thisUser = QChar('-');
     delete hsn;
 
     QDate today = QDate::currentDate();
