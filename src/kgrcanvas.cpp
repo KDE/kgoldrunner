@@ -136,10 +136,8 @@ KGrCanvas::~KGrCanvas()
     enemyFrames->clear();
     deleteAllSprites();
 
-    while (!borderRectangles.isEmpty())
-	delete borderRectangles.takeFirst();
-    while (!borderElements.isEmpty())
-	delete borderElements.takeFirst();
+    qDeleteAll(borderRectangles);
+    qDeleteAll(borderElements);
 
     delete playfield;
     delete tileset;
@@ -691,13 +689,8 @@ void KGrCanvas::deleteSprite (const int spriteId)
 
 void KGrCanvas::deleteAllSprites()
 {
-    KGrSprite * sprite = 0;
-    while (! sprites->isEmpty()) {
-        sprite = sprites->takeFirst();
-        if (sprite != 0) {
-            delete sprite;
-        }
-    }
+    qDeleteAll(*sprites);
+    sprites->clear();
     emptySprites = 0;
 }
 
@@ -774,10 +767,10 @@ void KGrCanvas::makeBorder ()
     int tlY = topLeft.y();
     int lw = imgW / lineDivider;		// Line width.
 
-    while (!borderRectangles.isEmpty())
-	delete borderRectangles.takeFirst();
-    while (!borderElements.isEmpty())
-	delete borderElements.takeFirst();
+    qDeleteAll(borderRectangles);
+    borderRectangles.clear();
+    qDeleteAll(borderElements);
+    borderElements.clear();
 
     // a fancy border can be specified in the SVG file; if that is unavailable,
     // a simple border can be specified in the theme properties file.

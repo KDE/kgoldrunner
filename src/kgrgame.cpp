@@ -110,16 +110,10 @@ KGrGame::KGrGame (KGrCanvas * theView,
 
 KGrGame::~KGrGame()
 {
-    while (! gameList.isEmpty()) {
-        delete gameList.takeFirst();
-    }
+    qDeleteAll(gameList);
     delete randomGen;
-    if (levelPlayer) {
-        delete levelPlayer;
-    }
-    if (recording) {
-        delete recording;
-    }
+    delete levelPlayer;
+    delete recording;
 }
 
 // Flags to control author's debugging aids.

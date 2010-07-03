@@ -65,9 +65,8 @@ int KGrLevelPlayer::playerCount = 0;
 
 KGrLevelPlayer::~KGrLevelPlayer()
 {
-    while (! dugBricks.isEmpty()) {
-        delete dugBricks.takeFirst();
-    }
+    qDeleteAll(dugBricks);
+    dugBricks.clear(); //TODO: necessary?
     kDebug() << "LEVEL PLAYER BEING DELETED.";
     playerCount--;
 

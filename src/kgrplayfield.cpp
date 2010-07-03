@@ -29,8 +29,7 @@ KGrPlayField::KGrPlayField (KGameCanvasAbstract* canvas)
 KGrPlayField::~KGrPlayField()
 {
     // Clear all stored data.
-    while (!m_tilesprites.isEmpty()) 
-        delete m_tilesprites.takeFirst();
+    qDeleteAll(m_tilesprites);
     delete m_background;
 }
 
@@ -77,8 +76,8 @@ void KGrPlayField::setTiles (QList<QPixmap> * tileset, const QPoint & topLeft,
 
     Q_ASSERT (tileset);
     // Clear previously cached tile data.
-    while (! m_tilesprites.isEmpty())
-        delete m_tilesprites.takeFirst();
+    qDeleteAll(m_tilesprites);
+    m_tilesprites.clear();
 
     // Now store our tileset as a list of Pixmaps, one for each tile.
     m_tileset = tileset;
