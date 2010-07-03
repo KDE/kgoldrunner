@@ -340,7 +340,7 @@ void KGrCanvas::resizeEvent (QResizeEvent * event)
     
     double w = (double) event->size().width()  / (nCellsW + border);
     double h = (double) event->size().height() / (nCellsH + border);
-    int cellSize = (w < h) ? (int) (w + 0.05) : (int) (h + 0.05);
+    int cellSize = (int) (qMin(w, h) + 0.05);
 
     imgW = cellSize;
     imgH = cellSize;

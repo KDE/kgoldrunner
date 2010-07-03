@@ -475,7 +475,7 @@ bool KGrTheme::createPixCache()
     fInfo.setFile     (svgActorsFilepath);
     uint actorsTime = fInfo.lastModified().toTime_t();
 
-    uint lastChange = (setTime > actorsTime) ? setTime : actorsTime;
+    uint lastChange = qMax(setTime, actorsTime);
     dbe1 "Timestamps for Set %d, Actors %d,\n"
         "       Last Change %d,  Cache %d\n",
         setTime, actorsTime, lastChange, pixCache->timestamp());
