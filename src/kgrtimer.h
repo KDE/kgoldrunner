@@ -26,7 +26,7 @@ class KGrTimer : public QObject
 {
     Q_OBJECT
 public:
-    KGrTimer (QObject * parent, int pTick = 20, float pScale = 1.0);
+    explicit KGrTimer (QObject * parent, int pTick = 20, float pScale = 1.0);
     ~KGrTimer();
 
     void pause();

@@ -103,7 +103,7 @@ private:
 class KGrGameListItem : public QTreeWidgetItem
 {
 public:
-    KGrGameListItem (const QStringList & data, const int internalId = -1);
+    explicit KGrGameListItem (const QStringList & data, const int internalId = -1);
     int id() const;
     void setId (const int internalId);
 private:
