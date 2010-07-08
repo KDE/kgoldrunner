@@ -440,31 +440,34 @@ void KGoldrunner::setupActions()
     KToggleAction * nSpeed      = settingAction ("normal_speed", NORMAL_SPEED,
                                   i18n ("Normal Speed"),
                                   i18n ("Set normal speed."),
-                                  i18n ("Set normal game speed (12 units)."));
+                                  i18n ("Set normal game speed."));
 
     KToggleAction * bSpeed      = settingAction ("beginner_speed",
                                   BEGINNER_SPEED,
                                   i18n ("Beginner Speed"),
                                   i18n ("Set beginners' speed."),
-                                  i18n ("Set beginners' game speed (6 units)."));
+                                  i18n ("Set beginners' game speed "
+                                        "(0.5 times normal)."));
 
     KToggleAction * cSpeed      = settingAction ("champion_speed",
                                   CHAMPION_SPEED,
                                   i18n ("Champion Speed"),
                                   i18n ("Set champions' speed."),
-                                  i18n ("Set champions' game speed (18 units).")
-                                  );
+                                  i18n ("Set champions' game speed "
+                                        "(1.5 times normal)."));
 
     a                           = gameAction ("increase_speed", INC_SPEED,
                                   i18n ("Increase Speed"),
                                   i18n ("Increase speed."),
-                                  i18n ("Increase the game speed by one unit."),
+                                  i18n ("Increase the game speed by 0.1 "
+                                        "(maximum is 2.0 times normal)."),
                                   Qt::Key_Plus);
 
     a                           = gameAction ("decrease_speed", DEC_SPEED,
                                   i18n ("Decrease Speed"),
                                   i18n ("Decrease speed."),
-                                  i18n ("Decrease the game speed by one unit."),
+                                  i18n ("Decrease the game speed by 0.1 "
+                                        "(minimum is 0.2 times normal)."),
                                   Qt::Key_Minus);
 
     QActionGroup* speedGrp = new QActionGroup (this);
