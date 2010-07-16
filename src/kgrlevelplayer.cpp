@@ -41,6 +41,7 @@ KGrLevelPlayer::KGrLevelPlayer (QObject * parent, KRandomSequence * pRandomGen)
     randomGen        (pRandomGen),
     hero             (0),
     controlMode      (MOUSE),
+    holdKeyOption    (CLICK_KEY),
     nuggets          (0),
     playState        (NotReady),
     recording        (0),
@@ -54,11 +55,13 @@ KGrLevelPlayer::KGrLevelPlayer (QObject * parent, KRandomSequence * pRandomGen)
     digCycleCount    (40),	// Cycles while hole is fully open (default).
     digOpeningCycles (5),	// Cycles for brick-opening animation.
     digClosingCycles (4),	// Cycles for brick-closing animation.
-    digKillingTime   (2)	// Cycle at which enemy/hero gets killed.
+    digKillingTime   (2),	// Cycle at which enemy/hero gets killed.
+    dX               (0),	// X motion for KEYBOARD + HOLD_KEY option.
+    dY               (0)	// Y motion for KEYBOARD + HOLD_KEY option.
 {
     t.start(); // IDW
 
-    dbgLevel = 0;
+    dbgLevel = 2;
 }
 
 int KGrLevelPlayer::playerCount = 0;
@@ -93,8 +96,9 @@ if (recording) {
 
 }
 
-void KGrLevelPlayer::init (KGrCanvas * view, const int mode,
-                           KGrRecording * pRecording, const bool pPlayback,
+void KGrLevelPlayer::init (KGrCanvas * view,
+                           KGrRecording * pRecording,
+                           const bool pPlayback,
                            const bool gameFrozen)
 {
     // TODO - Remove?
@@ -111,7 +115,12 @@ void KGrLevelPlayer::init (KGrCanvas * view, const int mode,
     // Create the internal model of the level-layout.
     grid            = new KGrLevelGrid (this, recording);
 
-    controlMode     = mode;		// Set mouse/keyboard/laptop control.
+    // Set mouse/keyboard/laptop control and click/hold option for keyboard.
+    controlMode     = recording->controlMode;
+    holdKeyOption   = recording->keyOption;
+
+    dX              = 0;		// X motion for KEYBOARD + HOLD_KEY.
+    dY              = 0;		// Y motion for KEYBOARD + HOLD_KEY.
     levelWidth      = recording->width;
     levelHeight     = recording->height;
 
@@ -431,7 +440,9 @@ void KGrLevelPlayer::doDig (int button)
     }
 }
 
-void KGrLevelPlayer::setDirectionByKey (Direction dirn)
+void KGrLevelPlayer::setDirectionByKey (const Direction dirn,
+                                        const bool pressed)
+                     
 {
     // Keystrokes control the hero.  KGrGame should avoid calling this during
     // playback, but better to be safe ...
@@ -446,6 +457,7 @@ void KGrLevelPlayer::setDirectionByKey (Direction dirn)
             T = 0;
         }
         if (controlMode == KEYBOARD) {
+// IDW What happens here if keyboard option is HOLD_KEY?  What *should* happen?
             newDirection = STAND;	// Stop a keyboard move when digging.
         }
         startDigging (dirn);
@@ -456,9 +468,15 @@ void KGrLevelPlayer::setDirectionByKey (Direction dirn)
             playState = Playing;
             T = 0;
         }
-        if (dirn != direction) {
-            // Start recording and acting on the new direction at the next tick.
+        // Start recording and acting on the new direction at the next tick.
+        if ((holdKeyOption == CLICK_KEY) && pressed && (dirn != direction)) {
             newDirection = dirn;
+        }
+        else if (holdKeyOption == HOLD_KEY) {
+            int sign = pressed ? +1 : -1;
+            dX = dX + sign * movement [dirn][X];
+            dY = dY + sign * movement [dirn][Y];
+            kDebug() << "dX" << dX << "dY" << dY; // IDW
         }
     }
 }
@@ -469,41 +487,54 @@ Direction KGrLevelPlayer::getDirection (int heroI, int heroJ)
         int index = (playback) ? recIndex : recIndex - 2;
         dbe2 "T %04d recIndex %03d hero at [%02d, %02d] aiming at [%02d, %02d]\n",
              T, index, heroI, heroJ, targetI, targetJ);
+
         // If using a pointer device, calculate the hero's next direction,
         // starting from last pointer position and hero's current position.
 
-        int di = targetI - heroI;
-        int dj = targetJ - heroJ;
-
-        // kDebug() << "di" << di << "dj" << dj;
-
-        if ((dj > 0) && (grid->heroMoves (heroI, heroJ) & dFlag [DOWN])) {
-            // kDebug() << "Go down";
-            direction = DOWN;
-        }
-        else if ((dj < 0) && (grid->heroMoves (heroI, heroJ) & dFlag [UP])) {
-            // kDebug() << "Go up";
-            direction = UP;
-        }
-        else if (di > 0) {
-            // kDebug() << "Go right";
-            direction = RIGHT;
-        }
-        else if (di < 0) {
-            // kDebug() << "Go left";
-            direction = LEFT;
-        }
-        else {		// Note: di is zero, but dj is not necessarily zero.
-            // kDebug() << "Stand";
-            direction = STAND;
-        }
+        direction = setDirectionByDelta (targetI - heroI, targetJ - heroJ,
+                                         heroI, heroJ);
     }
-    else if (controlMode == KEYBOARD) {
-        dbe2 "T %04d recIndex %03d hero at [%02d, %02d] direction %d\n",
-             T, recIndex - 1, heroI, heroJ, direction);
+    else if ((controlMode == KEYBOARD) && (holdKeyOption == HOLD_KEY)) {
+
+        // If using the hold/release key option, resolve diagonal directions
+        // (if there are multi-key holds) into either horizontal or vertical.
+
+        direction = setDirectionByDelta (dX, dY, heroI, heroJ);
+        /* dbe2 IDW*/ dbe "T %04d recIndex %03d delta [%02d, %02d] "
+             "hero at [%02d, %02d] direction %d\n",
+             T, recIndex - 1, dX, dY, heroI, heroJ, direction);
     }
 
     return direction;
+}
+
+Direction KGrLevelPlayer::setDirectionByDelta (const int di, const int dj,
+                                               const int heroI, const int heroJ)
+{
+    Direction dirn = STAND;
+    kDebug() << "di" << di << "dj" << dj;
+
+    if ((dj > 0) && (grid->heroMoves (heroI, heroJ) & dFlag [DOWN])) {
+        // kDebug() << "Go down";
+        dirn = DOWN;
+    }
+    else if ((dj < 0) && (grid->heroMoves (heroI, heroJ) & dFlag [UP])) {
+        // kDebug() << "Go up";
+        dirn = UP;
+    }
+    else if (di > 0) {
+        // kDebug() << "Go right";
+        dirn = RIGHT;
+    }
+    else if (di < 0) {
+        // kDebug() << "Go left";
+        dirn = LEFT;
+    }
+    else {		// Note: di is zero, but dj is not necessarily zero.
+        // kDebug() << "Stand";
+        dirn = STAND;
+    }
+    return dirn;
 }
 
 void KGrLevelPlayer::recordInitialWaitTime (const int ms)
@@ -740,11 +771,24 @@ void KGrLevelPlayer::tick (bool missed, int scaledTime)
         setTarget (i, j);
     }
     else if (controlMode == KEYBOARD) {
-        if (newDirection != direction) {
-            direction = newDirection;
+        if (holdKeyOption == CLICK_KEY) {
+            if (newDirection != direction) {
+                direction = newDirection;
+            }
+        }
+        // If keyboard with holdKey option, record one of nine directions.
+        else if (holdKeyOption == HOLD_KEY) {
+            const Direction d [9] = {UP_LEFT,   UP,    UP_RIGHT,
+                                     LEFT,      STAND, RIGHT,
+                                     DOWN_LEFT, DOWN,  DOWN_RIGHT};
+            direction = d [(3 * (dY + 1)) + (dX + 1)];
         }
         // Record the direction, but do not extend the initial wait-time.
-        if (direction != NO_DIRECTION) {
+        if ((direction != NO_DIRECTION) && (playState == Playing)) { // IDW
+// IDW Need a better condition here. (playState == Playing) was to stop
+// IDW the HOLD_KEY option recording a whole lot of STAND directions before
+// IDW the first key is pressed. (direction != NO_DIRECTION) is previous code.
+            kDebug() << "Record playState" << playState << "dirn" << direction;
             record (2, DIRECTION_CODE + direction);
         }
     }
@@ -960,6 +1004,8 @@ bool KGrLevelPlayer::doRecordedMove()
                     dbe2 "T %04d recIndex %03d PLAY codes %d %d - KEY PRESS\n",
                          T, recIndex, code, recCount);
                     direction = ((Direction) (code));
+                    dX = movement [direction][X];
+                    dY = movement [direction][Y];
                 }
                 else {
                     dbe2 "T %04d recIndex %03d PLAY codes %d %d mode %d\n",
@@ -975,10 +1021,21 @@ bool KGrLevelPlayer::doRecordedMove()
         }
 
         // Replay a change of control-mode.
-        else if (code < ACTION_CODE) {
+        else if (code < KEY_OPT_CODE) {
             dbe2 "T %04d recIndex %03d PLAY control-mode code %d\n",
                  T, recIndex, code);
             setControlMode (code - MODE_CODE);
+            recIndex++;
+            code = recording->content [recIndex];
+            recCount = 0;
+            continue;
+        }
+
+        // Replay a change of keyboard click/hold option.
+        else if (code < ACTION_CODE) {
+            dbe2 "T %04d recIndex %03d PLAY key-option code %d\n",
+                 T, recIndex, code);
+            setHoldKeyOption (code - KEY_OPT_CODE + CLICK_KEY);
             recIndex++;
             code = recording->content [recIndex];
             recCount = 0;
@@ -1116,6 +1173,16 @@ void KGrLevelPlayer::setControlMode  (const int mode)
     if (! playback) {
         // Record the change of mode.
         record (1, MODE_CODE + mode);
+    }
+}
+
+void KGrLevelPlayer::setHoldKeyOption  (const int option)
+{
+    holdKeyOption = option;
+
+    if (! playback) {
+        // Record the change of keyboard click/hold option.
+        record (1, KEY_OPT_CODE + option - CLICK_KEY);
     }
 }
 

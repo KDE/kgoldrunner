@@ -96,8 +96,6 @@ KGrGame::KGrGame (KGrCanvas * theView,
 {
     dbgLevel = 0;
 
-    settings (NORMAL_SPEED);
-
     gameFrozen = false;
 
     dyingTimer = new QTimer (this);
@@ -358,7 +356,7 @@ void KGrGame::editToolbarActions (const int action)
 
 void KGrGame::settings (const int action)
 {
-    // TODO - Bad   - Configure Keys does not pause a demo.
+    // TODO - Bad   - Configure Keys does not pause a demo. IDW
     KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
     bool onOff = false;
     switch (action) {
@@ -369,23 +367,36 @@ void KGrGame::settings (const int action)
         // Toggle the startup demo to be on or off.
         onOff = (! gameGroup.readEntry ("StartingDemo", true));
         gameGroup.writeEntry ("StartingDemo", onOff);
-        gameGroup.sync();
         break;
     case MOUSE:
     case KEYBOARD:
     case LAPTOP:
         setControlMode (action);
+        gameGroup.writeEntry ("ControlMode", action);
+        break;
+    case CLICK_KEY:
+    case HOLD_KEY:
+        if (controlMode == KEYBOARD) {
+            setHoldKeyOption (action);
+            gameGroup.writeEntry ("HoldKeyOption", action);
+        }
         break;
     case NORMAL_SPEED:
     case BEGINNER_SPEED:
     case CHAMPION_SPEED:
+        setTimeScale (action);
+        gameGroup.writeEntry ("SpeedLevel", action);
+        gameGroup.writeEntry ("ActualSpeed", timeScale);
+        break;
     case INC_SPEED:
     case DEC_SPEED:
         setTimeScale (action);
+        gameGroup.writeEntry ("ActualSpeed", timeScale);
         break;
     default:
         break;
     }
+    gameGroup.sync();
 }
 
 void KGrGame::setInitialTheme (const QString & themeFilepath)
@@ -402,7 +413,6 @@ void KGrGame::initGame()
     KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
     QString prevGamePrefix = gameGroup.readEntry ("GamePrefix", "tute");
     int prevLevel          = gameGroup.readEntry ("Level_" + prevGamePrefix, 1);
-    setPlayback            ( gameGroup.readEntry ("StartingDemo", true));
 
     kDebug()<< "Config() Game and Level" << prevGamePrefix << prevLevel;
 
@@ -423,6 +433,23 @@ void KGrGame::initGame()
         n++;
     }
 
+    // Set control-mode, hold-key option (for when K/B is used) and game-speed.
+    settings (gameGroup.readEntry ("ControlMode", (int) MOUSE));
+    emit setToggle (((controlMode == MOUSE) ?    "mouse_mode" :
+                    ((controlMode == KEYBOARD) ? "keyboard_mode" :
+                                                 "laptop_mode")), true);
+
+    holdKeyOption = gameGroup.readEntry ("HoldKeyOption", (int) CLICK_KEY);
+    emit setToggle (((holdKeyOption == CLICK_KEY) ? "click_key" :
+                                                    "hold_key"), true);
+
+    int speedLevel = gameGroup.readEntry ("SpeedLevel", (int) NORMAL_SPEED);
+    settings (speedLevel);
+    emit setToggle ((speedLevel == NORMAL_SPEED) ?    "normal_speed" :
+                    ((speedLevel == BEGINNER_SPEED) ? "beginner_speed" :
+                                                      "champion_speed"), true);
+    timeScale = gameGroup.readEntry ("ActualSpeed", 10);
+
     // Set up sounds, if required in config.
     bool soundOnOff = gameGroup.readEntry ("Sound", false);
     kDebug() << "Sound" << soundOnOff;
@@ -438,6 +465,7 @@ void KGrGame::initGame()
     kDebug() << "Calling the first view->changeTheme() ...";
     view->changeTheme (initialThemeFilepath);
 
+    setPlayback            ( gameGroup.readEntry ("StartingDemo", true));
     if (playback && (startDemo (SYSTEM, mainDemoName, 1))) {
         startupDemo = true;		// Demo is starting.
         demoType    = DEMO;
@@ -447,6 +475,7 @@ void KGrGame::initGame()
         newGame (level, gameIndex);
         quickStartDialog();
     }
+    emit setToggle ("options_demo", startupDemo);
 }
 
 bool KGrGame::startDemo (const Owner demoOwner, const QString & pPrefix,
@@ -825,8 +854,7 @@ void KGrGame::setupLevelPlayer()
 {
     levelPlayer = new KGrLevelPlayer (this, randomGen);
 
-    levelPlayer->init (view, recording->controlMode, recording,
-                       playback, gameFrozen);
+    levelPlayer->init (view, recording, playback, gameFrozen);
     levelPlayer->setTimeScale (recording->speed);
 
     // Use queued connections here, to ensure that levelPlayer has finished
@@ -1027,10 +1055,24 @@ void KGrGame::goUpOneLevel()
 
 void KGrGame::setControlMode (const int mode)
 {
+    // Enable/disable keyboard-mode options.
+    bool enableDisable = (mode == KEYBOARD);
+    emit setAvail ("click_key", enableDisable);
+    emit setAvail ("hold_key",  enableDisable);
+
     controlMode = mode;
     if (levelPlayer && (! playback)) {
         // Change control during play, but not during a demo or replay.
         levelPlayer->setControlMode (mode);
+    }
+}
+
+void KGrGame::setHoldKeyOption (const int option)
+{
+    holdKeyOption = option;
+    if (levelPlayer && (! playback)) {
+        // Change key-option during play, but not during a demo or replay.
+        levelPlayer->setHoldKeyOption (option);
     }
 }
 
@@ -1179,6 +1221,9 @@ void KGrGame::setPlayback (const bool onOff)
         emit setAvail  ("keyboard_mode",   enableDisable);
         emit setAvail  ("laptop_mode",     enableDisable);
 
+        emit setAvail  ("click_key",       enableDisable);
+        emit setAvail  ("hold_key",        enableDisable);
+
         emit setAvail  ("normal_speed",    enableDisable);
         emit setAvail  ("beginner_speed",  enableDisable);
         emit setAvail  ("champion_speed",  enableDisable);
@@ -1216,9 +1261,10 @@ QString KGrGame::getTitle()
     return (levelTitle);
 }
 
-void KGrGame::kbControl (const int dirn)
+void KGrGame::kbControl (const int dirn, const bool pressed)
 {
-    dbk2 << "Keystroke setting direction" << dirn;
+    dbk2 << "Keystroke setting direction" << dirn << "pressed" << pressed;
+
     if (editor) {
         return;
     }
@@ -1228,8 +1274,8 @@ void KGrGame::kbControl (const int dirn)
     }
 
     // Using keyboard control can automatically disable mouse control.
-    if ((controlMode == MOUSE) ||
-        ((controlMode == LAPTOP) && (dirn != DIG_RIGHT) && (dirn != DIG_LEFT)))
+    if (pressed && ((controlMode == MOUSE) ||
+        ((controlMode == LAPTOP) && (dirn != DIG_RIGHT) && (dirn != DIG_LEFT))))
         {
         // Halt the game while a message is displayed.
         freeze (ProgramPause, true);
@@ -1245,10 +1291,7 @@ void KGrGame::kbControl (const int dirn)
                 i18n ("Keyboard Mode")))
         {
         case KMessageBox::Yes: 
-            controlMode = KEYBOARD;
-            if (levelPlayer && (! playback)) {
-                levelPlayer->setControlMode (controlMode);
-            }
+            settings (KEYBOARD);
             emit setToggle ("keyboard_mode", true);	// Adjust Settings menu.
             break;
         case KMessageBox::No: 
@@ -1265,7 +1308,7 @@ void KGrGame::kbControl (const int dirn)
 
     // Accept keystroke to set next direction, even when the game is frozen.
     if (levelPlayer) {
-        levelPlayer->setDirectionByKey ((Direction) dirn);
+        levelPlayer->setDirectionByKey ((Direction) dirn, pressed);
     }
 }
 
@@ -1908,6 +1951,7 @@ bool KGrGame::initRecordingData (const Owner fileOwner, const QString & prefix,
         recording->score       = score;
         recording->speed       = timeScale;
         recording->controlMode = controlMode;
+        recording->keyOption   = holdKeyOption;
         recording->content [0] = 0xff;
     }
     return true;
@@ -1936,6 +1980,7 @@ void KGrGame::saveRecording()
     configGroup.writeEntry ("Score",    (int) recording->score);
     configGroup.writeEntry ("Speed",    (int) recording->speed);
     configGroup.writeEntry ("Mode",     (int) recording->controlMode);
+    configGroup.writeEntry ("KeyOption", (int)recording->keyOption);
 
     QList<int> bytes;
     int ch = 0;
@@ -2000,6 +2045,8 @@ bool KGrGame::loadRecording (const QString & dir, const QString & prefix,
     recording->score            = configGroup.readEntry ("Score",  0);
     recording->speed            = configGroup.readEntry ("Speed",  10);
     recording->controlMode      = configGroup.readEntry ("Mode",   (int)MOUSE);
+    recording->keyOption        = configGroup.readEntry ("KeyOption",
+                                                                (int)CLICK_KEY);
 
     // If demoType is DEMO or SOLVE, get the TRANSLATED gameName, levelName and
     // hint from current data (other recordings have been translated already).

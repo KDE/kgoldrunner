@@ -72,6 +72,13 @@ public slots:
     void setAvail       (const char * actionName, const bool onOff);
 
 protected:
+    void keyPressEvent (QKeyEvent * event);
+    void keyReleaseEvent (QKeyEvent * event);
+
+private:
+    bool identifyMoveAction (QKeyEvent * event, bool pressed);
+
+protected:
     /**
      * This function is called when it is time for the app to save its
      * properties for session management purposes.
@@ -137,7 +144,8 @@ private:
                           const QString & toolTip, const QString & whatsThis);
 
     void keyControl      (const QString & name, const QString & text,
-                          const QKeySequence & shortcut, const int code);
+                          const QKeySequence & shortcut, const int code,
+                          const bool mover = false);
 
     bool startupOK;
 

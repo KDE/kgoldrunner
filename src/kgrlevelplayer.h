@@ -90,6 +90,8 @@ public:
      * @param mode       The input-mode used to control the hero: mouse,
      *                   keyboard or hybrid touchpad and keyboard mode (for
      *                   laptops).
+     * @param keyOption  The option to use when in keyboard mode (i.e. CLICK_KEY
+     *                   or HOLD_KEY).
      * @param pRecording Points to a data-object that contains all the data for
      *                   the level, including the layout of the maze and the
      *                   starting positions of hero, enemies and gold, plus the
@@ -107,7 +109,6 @@ public:
      * @param gameFrozen If true, go into pause-mode when the level starts.
      */
     void init                   (KGrCanvas *          view,
-                                 const int            mode,
                                  KGrRecording *       pRecording,
                                  const bool           pPlayback,
                                  const bool           gameFrozen);
@@ -146,6 +147,17 @@ public:
     void setControlMode  (const int mode);
 
     /**
+     * Change the keyboard click/hold option during play.
+     *
+     * @param option    The new option for keyboard operation: either CLICK_KEY
+     *                  to start running non-stop when a direction key is
+     *                  clicked or HOLD_KEY to start when a key is pressed and
+     *                  stop when it is released, with simultaneous key-holding
+     *                  allowed.
+     */
+    void setHoldKeyOption  (const int option);
+
+    /**
      * Set the overall speed of gameplay.
      *
      * @param timeScale Value 10 is for normal speed.  Range is 2 to 20.
@@ -166,8 +178,9 @@ public:
      *
      * @param dirn      The required direction (values defined by enum Direction
      *                  in file kgrglobals.h).
+     * @param pressed   Tells whether the direction-key was pressed or released.
      */
-    void setDirectionByKey      (Direction dirn);
+    void setDirectionByKey      (const Direction dirn, const bool pressed);
 
     /**
      * Helper function for the hero to find his next direction when using mouse
@@ -332,6 +345,7 @@ private:
     QList<KGrEnemy *>    enemies;
 
     int                  controlMode;
+    int                  holdKeyOption;
     int                  levelWidth;
     int                  levelHeight;
 
@@ -349,6 +363,8 @@ private:
     int                  targetI;	// Where the mouse is pointing.
     int                  targetJ;
 
+    Direction setDirectionByDelta (const int di, const int dj,
+                                   const int heroI, const int heroJ);
     Direction            direction;	// Direction for the hero to take.
     Direction            newDirection;	// Next direction for the hero to take.
     KGrTimer *           timer;		// The time-standard for the level.
@@ -361,6 +377,9 @@ private:
     int  digOpeningCycles;		// Cycles for brick-opening animation.
     int  digClosingCycles;		// Cycles for brick-closing animation.
     int  digKillingTime;		// Cycle when enemy/hero gets killed.
+
+    int                  dX;		// X motion for KEYBOARD + HOLD_KEY.
+    int                  dY;		// Y motion for KEYBOARD + HOLD_KEY.
 
     typedef struct {
         int  id;

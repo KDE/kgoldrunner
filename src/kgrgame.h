@@ -73,7 +73,7 @@ public slots:
     void editToolbarActions (const int action);
     void settings           (const int action);
 
-    void kbControl          (const int dirn);
+    void kbControl          (const int dirn, const bool pressed = true);
 
     void incScore           (const int n);	// Update the score.
 
@@ -92,6 +92,7 @@ private:
 
     // Set mouse, keyboard or laptop-hybrid control of the hero.
     void setControlMode (const int mode);
+    void setHoldKeyOption (const int option);
     void setTimeScale (const int action);
 
     void newGame   (const int lev, const int gameIndex);
@@ -236,6 +237,7 @@ private:
     KGrEditor * editor;		// The level-editor object.
 
     int controlMode;		// How to control the hero (e.g. K/B or mouse).
+    int holdKeyOption;		// Whether K/B control is by holding or clicking keys.
 
 /******************************************************************************/
 /***********************   GAME PROPERTIES AND METHODS   **********************/

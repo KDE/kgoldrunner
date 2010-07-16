@@ -130,17 +130,21 @@ public:
     long           score;	///< Score at start of level.
     int            speed;	///< Speed of game during recording (normal=10).
     int            controlMode;	///< Control mode during recording (mouse, etc).
+    int            keyOption;  	///< Click/hold option for keyboard mode.
     QByteArray     content;	///< The encoded recording of play.
     QByteArray     draws;	///< The random numbers used during play.
 };
 
 // Offsets used to encode keystrokes, control modes and speeds in a recording.
-// Allow space for 16 direction and digging codes, 16 control modes, 16 special
-// actions and 30 speeds.  We actually have (as at May 2009) 8 direction and
-// digging codes, control modes from 2 to 4, one special action (code 6) and
-// speeds ranging from 2 to 20.
+// Allow space for 16 direction and digging codes, 12 control modes, 4 keyboard
+// click/hold option codes, 16 special actions and 30 speeds.  We actually have
+// (as at July 2010) 12 direction and digging codes, control modes from 2 to 4,
+// two keyboard options, one special action (code 6) and speeds ranging from
+// 2 to 20.
+
 #define DIRECTION_CODE 0x80
 #define MODE_CODE      0x90
+#define KEY_OPT_CODE   0x9c
 #define ACTION_CODE    0xa0
 #define SPEED_CODE     0xe0
 #define END_CODE       0xff
@@ -155,6 +159,7 @@ enum EditAction    {CREATE_LEVEL, EDIT_ANY, SAVE_EDITS, MOVE_LEVEL,
 enum Setting       {PLAY_SOUNDS,			// Sound effects on/off.
                     STARTUP_DEMO,			// Starting demo on/off.
                     MOUSE, KEYBOARD, LAPTOP,		// Game-control modes.
+                    CLICK_KEY, HOLD_KEY, 		// Key-control method.
                     NORMAL_SPEED, BEGINNER_SPEED,	// Preset game-speeds.
                     CHAMPION_SPEED,
                     INC_SPEED, DEC_SPEED};		// Adjustments of speed.
@@ -166,7 +171,8 @@ typedef char    AccessFlag;
 typedef char    Flags;
 
 enum  Direction    {STAND, RIGHT, LEFT, UP, DOWN, nDirections,
-                    DIG_RIGHT = nDirections, DIG_LEFT, NO_DIRECTION};
+                    DIG_RIGHT = nDirections, DIG_LEFT, NO_DIRECTION,
+                    UP_LEFT, DOWN_LEFT, UP_RIGHT, DOWN_RIGHT, EndDirection};
 
 const DirectionFlag dFlag [nDirections] = {
                 0x10,		// Can stand.
@@ -179,12 +185,19 @@ const AccessFlag ENTERABLE = 0x20;
 
 enum  Axis {X, Y, nAxes};
 
-const int movement [nDirections][nAxes] = {
+const int movement [EndDirection][nAxes] = {
                 { 0,  0},	// Standing still.
                 {+1,  0},	// Movement right.
                 {-1,  0},	// Movement left.
                 { 0, -1},	// Movement up.
-                { 0, +1}};	// Movement down.
+                { 0, +1},	// Movement down.
+                { 0,  0},	// Dig right (placeholder).
+                { 0,  0},	// Dig left (placeholder).
+                { 0,  0},	// No direction (placeholder).
+                {-1, -1},	// Up and left (with hold-key option).
+                {-1, +1},	// Down and left (with hold-key option).
+                {+1, -1},	// Up and right (with hold-key option).
+                {+1, +1}};	// Down and right (with hold-key option).
 
 enum AnimationType {
                 RUN_R,      RUN_L,

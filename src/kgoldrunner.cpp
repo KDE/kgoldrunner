@@ -24,6 +24,7 @@
 #include <QSignalMapper>
 #include <QShortcut>
 #include <QKeySequence>
+#include <QKeyEvent>
 
 #include <kglobal.h>
 #include <kstatusbar.h>
@@ -156,9 +157,6 @@ KGoldrunner::KGoldrunner()
     // always start in play mode, even if the last session ended in edit mode.
     // Besides, we cannot render it until after the initial resize event (s).
     toolBar ("editToolbar")->hide();
-
-    // Set mouse control of the hero as the default.
-    game->settings (MOUSE);
 
     // Do NOT paint main widget yet (title, menu, status bar, blank playfield).
     // Instead, queue a call to the "KGoldrunner_2" constructor extension.
@@ -380,23 +378,19 @@ void KGoldrunner::setupActions()
                         (this, SLOT (viewFullScreen (bool)), this, this);
     actionCollection()->addAction (fullScreen->objectName(), fullScreen);
 
-    // Sound effects on/off
 #ifdef ENABLE_SOUND_SUPPORT
+    // Sound effects on/off
                                   settingAction ("options_sounds", PLAY_SOUNDS,
                                   i18n ("&Play Sounds"),
                                   i18n ("Play sound effects."),
                                   i18n ("Play sound effects during the game."));
-    // Sounds and Checked state are further initialised in game->initGame().
 #endif
 
     // Demo at start on/off.
-    KToggleAction * setDemo     = settingAction ("options_demo", STARTUP_DEMO,
+                                  settingAction ("options_demo", STARTUP_DEMO,
                                   i18n ("&Demo At Start"),
                                   i18n ("Run a demo when the game starts."),
                                   i18n ("Run a demo when the game starts."));
-
-    bool demoOnOff = gameGroup.readEntry ("StartingDemo", true);
-    setDemo->setChecked (demoOnOff);
 
     // Mouse Controls Hero
     // Keyboard Controls Hero
@@ -416,7 +410,7 @@ void KGoldrunner::setupActions()
                                         "the hero's moves."));
 
     KToggleAction * setLaptop   = settingAction ("laptop_mode", LAPTOP,
-                                  i18n ("&Hybrid Control (Laptop)"),
+                                  i18n ("Hybrid Control (&Laptop)"),
                                   i18n ("Pointer controls hero; dig "
                                         "using keyboard."),
                                   i18n ("Use the laptop's pointer device "
@@ -428,7 +422,30 @@ void KGoldrunner::setupActions()
     controlGrp->addAction (setKeyboard);
     controlGrp->addAction (setLaptop);
     controlGrp->setExclusive (true);
-    setMouse->setChecked (true);
+
+    // Options within keyboard mode.
+    // Click key to begin moving and continue moving indefinitely.
+    // Click and hold key to begin moving: release key to stop.
+
+    KToggleAction * clickKey    = settingAction ("click_key", CLICK_KEY,
+                                  i18n ("&Click Key To Move"),
+                                  i18n ("Click Key To Move."),
+                                  i18n ("In keyboard mode, click a "
+                                        "direction-key to start moving "
+                                        "and keep on going until you "
+                                        "click another key."));
+
+    KToggleAction * holdKey     = settingAction ("hold_key", HOLD_KEY,
+                                  i18n ("&Hold Key To Move"),
+                                  i18n ("Hold Key To Move."),
+                                  i18n ("In keyboard mode, hold down a "
+                                        "direction-key to move "
+                                        "and release it to stop."));
+
+    QActionGroup * keyGrp = new QActionGroup (this);
+    keyGrp->addAction (clickKey);
+    keyGrp->addAction (holdKey);
+    keyGrp->setExclusive (true);
 
     // Normal Speed
     // Beginner Speed
@@ -474,7 +491,7 @@ void KGoldrunner::setupActions()
     speedGrp->addAction (nSpeed);
     speedGrp->addAction (bSpeed);
     speedGrp->addAction (cSpeed);
-    nSpeed->setChecked (true);
+    speedGrp->setExclusive (true);
 
     // Configure Shortcuts...
     // --------------------------
@@ -493,11 +510,18 @@ void KGoldrunner::setupActions()
     connect (kbMapper, SIGNAL (mapped (int)), game, SLOT(kbControl (int)));
     tempMapper = kbMapper;
 
+    // The actions for the movement keys are created but disabled.  This lets
+    // keyPressEvent() come through, instead of a signal, while still allowing
+    // Settings->Configure Keys to change the key mappings.  The keyPressEvent()
+    // call is needed so that the key can be identified and matched to the
+    // corresponding keyReleaseEvent() call and make the hold-key option
+    // work correctly when two keys are held down simultaneously.
+
     keyControl ("stop",       i18n ("Stop"),       Qt::Key_Space, STAND);
-    keyControl ("move_right", i18n ("Move Right"), Qt::Key_Right, RIGHT);
-    keyControl ("move_left",  i18n ("Move Left"),  Qt::Key_Left,  LEFT);
-    keyControl ("move_up",    i18n ("Move Up"),    Qt::Key_Up,    UP);
-    keyControl ("move_down",  i18n ("Move Down"),  Qt::Key_Down,  DOWN);
+    keyControl ("move_right", i18n ("Move Right"), Qt::Key_Right, RIGHT, true);
+    keyControl ("move_left",  i18n ("Move Left"),  Qt::Key_Left,  LEFT,  true);
+    keyControl ("move_up",    i18n ("Move Up"),    Qt::Key_Up,    UP,    true);
+    keyControl ("move_down",  i18n ("Move Down"),  Qt::Key_Down,  DOWN,  true);
     keyControl ("dig_right",  i18n ("Dig Right"),  Qt::Key_C,     DIG_RIGHT);
     keyControl ("dig_left",   i18n ("Dig Left"),   Qt::Key_Z,     DIG_LEFT);
 
@@ -611,14 +635,71 @@ KToggleAction * KGoldrunner::editToolbarAction (const QString & name,
 }
 
 void KGoldrunner::keyControl (const QString & name, const QString & text,
-                              const QKeySequence & shortcut, const int code)
+                              const QKeySequence & shortcut, const int code,
+                              const bool mover)
 {
     KAction * a = actionCollection()->addAction (name);
     a->setText (text);
     a->setShortcut (shortcut);
+
+    // If this is a move-key, let keyPressEvent() through, instead of signal.
+    if (mover) {
+        a->setEnabled (false);
+    }
+    else {
+        a->setAutoRepeat (false);	// Else, prevent QAction signal repeat.
+    }
+
     connect (a, SIGNAL (triggered (bool)), tempMapper, SLOT (map()));
     tempMapper->setMapping (a, code);
     addAction (a);
+}
+
+void KGoldrunner::keyPressEvent (QKeyEvent * event)
+{
+    // For movement keys, all presses and releases are processed, thus allowing
+    // the hold-key option to work correctly when two keys are held down.
+
+    if (! identifyMoveAction (event, true)) {
+        QWidget::keyPressEvent (event);
+    }
+}
+
+void KGoldrunner::keyReleaseEvent (QKeyEvent * event)
+{
+    if (! identifyMoveAction (event, false)) {
+        QWidget::keyReleaseEvent (event);
+    }
+}
+
+bool KGoldrunner::identifyMoveAction (QKeyEvent * event, bool pressed)
+{
+    bool result = false;
+    if (! event->isAutoRepeat()) {
+        QKeySequence keystroke (event->key() + event->modifiers());
+        result = true;
+
+        if ((ACTION ("move_left"))->shortcuts().contains(keystroke)) {
+            kDebug() << "move_left" << "pressed" << pressed; // IDW
+            game->kbControl (LEFT, pressed);
+        }
+        else if ((ACTION ("move_right"))->shortcuts().contains(keystroke)) {
+            kDebug() << "move_right" << "pressed" << pressed; // IDW
+            game->kbControl (RIGHT, pressed);
+        }
+        else if ((ACTION ("move_up"))->shortcuts().contains(keystroke)) {
+            kDebug() << "move_up" << "pressed" << pressed; // IDW
+            game->kbControl (UP, pressed);
+        }
+        else if ((ACTION ("move_down"))->shortcuts().contains(keystroke)) {
+            kDebug() << "move_down" << "pressed" << pressed; // IDW
+            game->kbControl (DOWN, pressed);
+        }
+        else {
+            result = false;
+        }
+    }
+    return result;
 }
 
 void KGoldrunner::viewFullScreen (bool activation)
