@@ -680,19 +680,15 @@ bool KGoldrunner::identifyMoveAction (QKeyEvent * event, bool pressed)
         result = true;
 
         if ((ACTION ("move_left"))->shortcuts().contains(keystroke)) {
-            kDebug() << "move_left" << "pressed" << pressed; // IDW
             game->kbControl (LEFT, pressed);
         }
         else if ((ACTION ("move_right"))->shortcuts().contains(keystroke)) {
-            kDebug() << "move_right" << "pressed" << pressed; // IDW
             game->kbControl (RIGHT, pressed);
         }
         else if ((ACTION ("move_up"))->shortcuts().contains(keystroke)) {
-            kDebug() << "move_up" << "pressed" << pressed; // IDW
             game->kbControl (UP, pressed);
         }
         else if ((ACTION ("move_down"))->shortcuts().contains(keystroke)) {
-            kDebug() << "move_down" << "pressed" << pressed; // IDW
             game->kbControl (DOWN, pressed);
         }
         else {

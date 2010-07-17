@@ -61,7 +61,7 @@ KGrLevelPlayer::KGrLevelPlayer (QObject * parent, KRandomSequence * pRandomGen)
 {
     t.start(); // IDW
 
-    dbgLevel = 2;
+    dbgLevel = 0;
 }
 
 int KGrLevelPlayer::playerCount = 0;
@@ -317,8 +317,6 @@ void KGrLevelPlayer::startDigging (Direction diggingDirection)
                     t.elapsed()}; // IDW test
         (* thisBrick)        = brick;
         dugBricks.append (thisBrick);
-        // kDebug() << "DIG" << thisBrick->id << thisBrick->countdown
-                 // << "time" << (t.elapsed() - thisBrick->startTime);
     }
 }
 
@@ -334,22 +332,16 @@ void KGrLevelPlayer::processDugBricks (const int scaledTime)
             dugBrick->cycleTimeLeft += digCycleTime;
             if (--dugBrick->countdown == digClosingCycles) {
                 // Start the brick-closing animation (non-repeating).
-                // kDebug() << "Brick" << dugBrick->digI << dugBrick->digJ <<
-                            // "count" << dugBrick->countdown;
                 emit startAnimation (dugBrick->id, false,
                                      dugBrick->digI, dugBrick->digJ,
                                      (digClosingCycles * digCycleTime),
                                      STAND, CLOSE_BRICK);
             }
             if (dugBrick->countdown == digKillingTime) {
-                // kDebug() << "Brick" << dugBrick->digI << dugBrick->digJ <<
-                            // "count" << dugBrick->countdown;
                 // Close the hole and maybe capture the hero or an enemy.
                 grid->changeCellAt (dugBrick->digI, dugBrick->digJ, BRICK);
             }
             if (dugBrick->countdown <= 0) {
-                // kDebug() << "DIG" << dugBrick->id << dugBrick->countdown
-                         // << "time" << (t.elapsed() - dugBrick->startTime);
                 // Dispose of the dug brick and remove it from the list.
                 emit deleteSprite (dugBrick->id);
                 delete dugBrick;
@@ -361,7 +353,6 @@ void KGrLevelPlayer::processDugBricks (const int scaledTime)
 
 void KGrLevelPlayer::prepareToPlay()
 {
-    kDebug() << "Set mouse to:" << targetI << targetJ;
     if ((controlMode == MOUSE) || (controlMode == LAPTOP)) {
         emit setMousePos (targetI, targetJ);
     }
@@ -476,7 +467,6 @@ void KGrLevelPlayer::setDirectionByKey (const Direction dirn,
             int sign = pressed ? +1 : -1;
             dX = dX + sign * movement [dirn][X];
             dY = dY + sign * movement [dirn][Y];
-            kDebug() << "dX" << dX << "dY" << dY; // IDW
         }
     }
 }
@@ -500,7 +490,7 @@ Direction KGrLevelPlayer::getDirection (int heroI, int heroJ)
         // (if there are multi-key holds) into either horizontal or vertical.
 
         direction = setDirectionByDelta (dX, dY, heroI, heroJ);
-        /* dbe2 IDW*/ dbe "T %04d recIndex %03d delta [%02d, %02d] "
+        dbe2 "T %04d recIndex %03d delta [%02d, %02d] "
              "hero at [%02d, %02d] direction %d\n",
              T, recIndex - 1, dX, dY, heroI, heroJ, direction);
     }
@@ -512,26 +502,20 @@ Direction KGrLevelPlayer::setDirectionByDelta (const int di, const int dj,
                                                const int heroI, const int heroJ)
 {
     Direction dirn = STAND;
-    kDebug() << "di" << di << "dj" << dj;
 
     if ((dj > 0) && (grid->heroMoves (heroI, heroJ) & dFlag [DOWN])) {
-        // kDebug() << "Go down";
         dirn = DOWN;
     }
     else if ((dj < 0) && (grid->heroMoves (heroI, heroJ) & dFlag [UP])) {
-        // kDebug() << "Go up";
         dirn = UP;
     }
     else if (di > 0) {
-        // kDebug() << "Go right";
         dirn = RIGHT;
     }
     else if (di < 0) {
-        // kDebug() << "Go left";
         dirn = LEFT;
     }
     else {		// Note: di is zero, but dj is not necessarily zero.
-        // kDebug() << "Stand";
         dirn = STAND;
     }
     return dirn;
@@ -788,7 +772,6 @@ void KGrLevelPlayer::tick (bool missed, int scaledTime)
 // IDW Need a better condition here. (playState == Playing) was to stop
 // IDW the HOLD_KEY option recording a whole lot of STAND directions before
 // IDW the first key is pressed. (direction != NO_DIRECTION) is previous code.
-            kDebug() << "Record playState" << playState << "dirn" << direction;
             record (2, DIRECTION_CODE + direction);
         }
     }
