@@ -20,12 +20,6 @@
 #ifndef KGRGAME_H
 #define KGRGAME_H
 
-// Macro to smooth out the differences between Qt 1 and Qt 2 classes.
-//
-// "myStr" converts a QString object to a C language "char*" character string.
-//
-#define myStr		toLatin1().constData
-
 #include "kgrglobals.h"
 
 #include <QObject>

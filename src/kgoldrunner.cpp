@@ -80,7 +80,7 @@ KGoldrunner::KGoldrunner()
     fprintf (stderr,
         "The games data and handbook should be in the following locations:\n");
     fprintf (stderr, "System games: %s\nUser data:    %s\nHandbook:     %s\n",
-        systemDataDir.myStr(), userDataDir.myStr(), systemHTMLDir.myStr());
+        qPrintable(systemDataDir), qPrintable(userDataDir), qPrintable(systemHTMLDir));
 
 /******************************************************************************/
 /************************  SET PLAYFIELD AND GAME DATA  ***********************/

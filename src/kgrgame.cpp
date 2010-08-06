@@ -1336,8 +1336,8 @@ void KGrGame::saveGame()		// Save game ID, score and level.
     day = today.shortDayName (today.dayOfWeek());
     saved = saved.sprintf
                 ("%-6s %03d %03ld %7ld    %s %04d-%02d-%02d %02d:%02d\n",
-                prefix.myStr(), level, lives, startScore,
-                day.myStr(),
+                qPrintable(prefix), level, lives, startScore,
+                qPrintable(day),
                 today.year(), today.month(), today.day(),
                 now.hour(), now.minute());
 
@@ -1606,7 +1606,7 @@ void KGrGame::checkHighScore()
     QString day = today.shortDayName (today.dayOfWeek());
     hsDate = hsDate.sprintf
                 ("%s %04d-%02d-%02d",
-                day.myStr(),
+                qPrintable(day),
                 today.year(), today.month(), today.day());
 
     s2.setDevice (&high2);
@@ -1629,7 +1629,7 @@ void KGrGame::checkHighScore()
                 s2 << thisUser.toUtf8().constData();
                 s2 << (qint16) level;
                 s2 << (qint32) score;
-                s2 << hsDate.myStr();
+                s2 << qPrintable(hsDate);
                 scoreRecorded = true;
             }
             if (highCount < 10) {
@@ -1648,7 +1648,7 @@ void KGrGame::checkHighScore()
             s2 << thisUser.toUtf8().constData();
             s2 << (qint16) level;
             s2 << (qint32) score;
-            s2 << hsDate.myStr();
+            s2 << qPrintable(hsDate);
         }
         high1.close();
     }
@@ -1658,7 +1658,7 @@ void KGrGame::checkHighScore()
         s2 << thisUser.toUtf8().constData();
         s2 << (qint16) level;
         s2 << (qint32) score;
-        s2 << hsDate.myStr();
+        s2 << qPrintable(hsDate);
     }
 
     high2.close();
