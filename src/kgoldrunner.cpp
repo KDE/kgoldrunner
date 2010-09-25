@@ -985,7 +985,7 @@ bool KGoldrunner::getDirectories()
         KGrMessage::information (this, i18n ("Get Folders"),
                 i18n ("Cannot find documentation sub-folder 'en/%1/' "
                 "in area '%2' of the KDE folder ($KDEDIRS).",
-                myDir, dirs->resourceDirs ("html").join (":")));
+                myDir, dirs->resourceDirs ("html").join ( QLatin1String( ":" ))));
         // result = false;		// Don't abort if the doc is missing.
     }
     else
@@ -997,7 +997,7 @@ bool KGoldrunner::getDirectories()
         KGrMessage::information (this, i18n ("Get Folders"),
         i18n ("Cannot find system games sub-folder '%1/system/' "
         "in area '%2' of the KDE folder ($KDEDIRS).",
-         myDir, dirs->resourceDirs ("data").join (":")));
+         myDir, dirs->resourceDirs ("data").join ( QLatin1String( ":" ))));
         result = false;			// ABORT if the games data is missing.
     }
     else
@@ -1010,7 +1010,7 @@ bool KGoldrunner::getDirectories()
         KGrMessage::information (this, i18n ("Get Folders"),
         i18n ("Cannot find or create user games sub-folder '%1/user/' "
         "in area '%2' of the KDE user area ($KDEHOME).",
-         myDir, dirs->resourceDirs ("data").join (":")));
+         myDir, dirs->resourceDirs ("data").join ( QLatin1String( ":" ))));
         // result = false;		// Don't abort if user area is missing.
     }
     else {
