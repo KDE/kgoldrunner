@@ -64,7 +64,7 @@ KGoldrunner::KGoldrunner()
 /*************  FIND WHERE THE GAMES DATA AND HANDBOOK SHOULD BE  *************/
 /******************************************************************************/
 
-    setObjectName ("KGoldrunner");
+    setObjectName ( QLatin1String("KGoldrunner" ));
 
     // Avoid "saveOK()" check if an error-exit occurs during the file checks.
     startupOK = true;
@@ -116,7 +116,7 @@ KGoldrunner::KGoldrunner()
 /******************************************************************************/
 
     // Get catalog for translation.
-    KGlobal::locale()->insertCatalog ("libkdegames");
+    KGlobal::locale()->insertCatalog ( QLatin1String( "libkdegames" ));
 
     // Tell the KMainWindow that the KGrCanvas object is the main widget.
     setCentralWidget (view);
@@ -307,14 +307,14 @@ void KGoldrunner::setupActions()
                                i18n ("&Create Level"),
                                i18n ("Create level."),
                                i18n ("Create a completely new level."));
-    ed->setIcon (KIcon ("document-new"));
+    ed->setIcon (KIcon ( QLatin1String( "document-new" )));
     ed->setIconText (i18n ("Create"));
 
     ed           = editAction ("edit_any", EDIT_ANY,
                                i18n ("&Edit Level..."),
                                i18n ("Edit level..."),
                                i18n ("Edit any level..."));
-    ed->setIcon (KIcon ("document-open"));
+    ed->setIcon (KIcon ( QLatin1String( "document-open" )));
     ed->setIconText (i18n ("Edit"));
 
     // Save Edits...
@@ -326,7 +326,7 @@ void KGoldrunner::setupActions()
                                i18n ("&Save Edits..."),
                                i18n ("Save edits..."),
                                i18n ("Save your level after editing..."));
-    saveEdits->setIcon (KIcon ("document-save"));
+    saveEdits->setIcon (KIcon ( QLatin1String( "document-save" )));
     saveEdits->setIconText (i18n ("Save"));
     saveEdits->setEnabled (false);		// Nothing to save, yet.
 
@@ -1054,7 +1054,7 @@ void KGoldrunner::setupEditToolbarActions()
                                i18n ("Edit level name or hint"),
                                i18n ("Edit text for the name or hint "
                                      "of a level"));
-    ed->setIcon (KIcon ("games-hint"));
+    ed->setIcon (KIcon ( QLatin1String( "games-hint" )));
     ed->setIconText (i18n ("Name/Hint"));
 
     KToggleAction * free    = editToolbarAction ("freebg", FREE,
