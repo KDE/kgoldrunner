@@ -31,7 +31,7 @@ install(TARGETS kgoldrunner  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 ########### install files ###############
 
-install( FILES KGoldrunner.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
+install( PROGRAMS KGoldrunner.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
 install( FILES kgoldrunnerui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kgoldrunner )
 
 kde4_install_icons( ${ICON_INSTALL_DIR} )
