@@ -1,6 +1,7 @@
 # KDE Config File
 [Desktop Entry]
 Name=KGoldrunner
+Name[ast]=KGoldrunner
 Name[be]=Залатая ліхаманка
 Name[bn]=কে-গোল্ডরানার
 Name[br]=KGoldrunner
@@ -62,6 +63,7 @@ Name[x-test]=xxKGoldrunnerxx
 Name[zh_CN]=KGoldrunner
 Name[zh_TW]=KGoldrunner 撿金塊
 GenericName=Hunt Gold, Dodge Enemies and Solve Puzzles
+GenericName[ast]=Gueta d'oru, esquivar enemigos y resolver frañetiestes
 GenericName[ca]=Cerca l'or, esquiva els enemics i resol trencaclosques
 GenericName[ca@valencia]=Cerca l'or, esquiva els enemics i resol trencaclosques
 GenericName[da]=Jagt guld, undgå fjender og løs opgaver
@@ -104,6 +106,7 @@ Exec=kgoldrunner
 Icon=kgoldrunner
 X-DocPath=kgoldrunner/index.html
 Comment=A game of action and puzzle-solving
+Comment[ast]=Un xuegu d'aición y resolución de frañetiestes
 Comment[be]=Актыўная гульня з галаваломкамі
 Comment[bn]=ধাঁধাঁ ও অ্যাকশন মেশানো এক দারুণ খেলা
 Comment[ca]=Un joc d'acció i solució de trencaclosques
