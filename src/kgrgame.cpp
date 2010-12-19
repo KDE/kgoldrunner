@@ -450,6 +450,7 @@ void KGrGame::initGame()
                                                       "champion_speed"), true);
     timeScale = gameGroup.readEntry ("ActualSpeed", 10);
 
+#ifdef ENABLE_SOUND_SUPPORT
     // Set up sounds, if required in config.
     bool soundOnOff = gameGroup.readEntry ("Sound", false);
     kDebug() << "Sound" << soundOnOff;
@@ -458,6 +459,7 @@ void KGrGame::initGame()
         effects->setMuted (false);
     }
     emit setToggle ("options_sounds", soundOnOff);
+#endif
 
     dbk1 << "Owner" << gameList.at (gameIndex)->owner
              << gameList.at (gameIndex)->name << level;

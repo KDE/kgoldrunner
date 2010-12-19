@@ -23,7 +23,7 @@
 #include <QByteArray>
 #include <QString>
 
-#define ENABLE_SOUND_SUPPORT // Ian W. moved it here - 31 May 2008.
+// #define ENABLE_SOUND_SUPPORT // Ian W. disabled sound - 19 Dec 2010.
 
 enum Owner {SYSTEM, USER};
 
