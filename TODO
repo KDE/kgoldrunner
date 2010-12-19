@@ -53,8 +53,23 @@ Done in KDE 4.4 release
 
 27. Improve performance of graphics loading, rendering and cacheing.
 
-Proposed for KDE 4.5 release
-----------------------------
+Done in KDE 4.5 release
+-----------------------
+
+30. Add Demolition game (20 levels), contributed by Lars Luthman.
+
+Done in KDE 4.6 release
+-----------------------
+
+21. Much more use of KConfig classes, e.g. to remember last game and level.
+    Partly DONE in KDE 4.0.  In KDE 4.6, added save/restore of control-mode
+    keyboard-mode option and game-speed settings.  All done now.
+
+28. In keyboard mode, have an option to stop when a direction key is released.
+    This should probably be a new mode: Keyboard Arcade v. Keyboard Precision?
+
+Proposed for later KDE releases
+-------------------------------
 
 11. Save and reload at any instant in a game.
 
@@ -67,8 +82,7 @@ Proposed for KDE 4.5 release
 19. Better support for beginners, such as graphical cues for false bricks
     and hidden ladders, extra messages with "don't tell me this again", etc.
 
-28. In keyboard mode, have an option to stop when a direction key is released.
-    This should probably be a new mode: Keyboard Arcade v. Keyboard Precision?
+29. Add "solutions" files.  Maybe via hot-new-stuff?
 
 To do in post-KDE 4.4 releases:
 -------------------------------
@@ -94,9 +108,6 @@ To do in post-KDE 4.4 releases:
 
 20. Animations for death of hero and digging (e.g. death ray from enemy
     to hero and laser beam from hero to brick).
-
-21. Much more use of KConfig classes, e.g. to remember last game and level.
-    Ian Comment: Partly DONE in KDE 4.0.
 
 22. Improve the level editor: rect-fill with a tile type, cut-copy-paste of
     tile blocks, undo-redo etc.
