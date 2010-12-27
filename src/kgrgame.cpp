@@ -781,6 +781,9 @@ void KGrGame::runReplay (const int action,
 
 void KGrGame::newGame (const int lev, const int newGameIndex)
 {
+#ifdef ENABLE_SOUND_SUPPORT
+    effects->stopAllSounds();
+#endif
     view->goToBlack();
 
     KGrGameData * gameData = gameList.at (newGameIndex);
