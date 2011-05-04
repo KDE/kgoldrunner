@@ -782,7 +782,9 @@ void KGrGame::runReplay (const int action,
 void KGrGame::newGame (const int lev, const int newGameIndex)
 {
 #ifdef ENABLE_SOUND_SUPPORT
-    effects->stopAllSounds();
+    if (effects) {			// If sounds have been loaded, kill
+        effects->stopAllSounds();	// all sounds from a previous level.
+    }
 #endif
     view->goToBlack();
 
