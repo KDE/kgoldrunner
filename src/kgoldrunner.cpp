@@ -384,6 +384,11 @@ void KGoldrunner::setupActions()
                                   i18n ("&Play Sounds"),
                                   i18n ("Play sound effects."),
                                   i18n ("Play sound effects during the game."));
+
+                                  settingAction ("options_steps", PLAY_STEPS,
+                                  i18n ("Play &Footstep Sounds"),
+                                  i18n ("Make sounds of player's footsteps."),
+                                  i18n ("Make sounds of player's footsteps."));
 #endif
 
     // Demo at start on/off.
