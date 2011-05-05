@@ -69,6 +69,8 @@ public:
     void fadeOut();
     void updateScore (int score);
     void updateLives (int lives);
+    void makeReplayMessage();
+    void showReplayMessage (bool onOff);
 
     QPixmap getPixmap (char type);
 
@@ -146,6 +148,8 @@ private:
     int scaleStep;			// Current scale-factor of canvas.
     int baseScale;			// Starting scale-factor of canvas.
     int baseFontSize;
+
+    QLabel * m_replayText;		// Message for demos and replays.
 
     int nCellsW;			// Number of tiles horizontally.
     int nCellsH;			// Number of tiles vertically.

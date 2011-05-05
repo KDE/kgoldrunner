@@ -61,6 +61,7 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale)
                           :
                           KGameCanvasWidget (parent),
                           firstSceneDrawn (false),
+                          m_replayText(0),
                           topLeft (0, 0), bgw (4 * STEP), bgh (4 * STEP),
                           m_scoreText(0),
                           m_livesText(0),
@@ -264,6 +265,9 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
     QString t = title->text();
     makeTitle();
     setTitle (t);
+
+    // Do the same for the replay message.
+    makeReplayMessage();
 
     // Create and position the score and lives text areas
     QFont f;
@@ -492,6 +496,47 @@ void KGrCanvas::updateLives (int lives)
     // TODO use hero frames to show the lives?
     if (m_livesText) 
         m_livesText->setText (livesText(lives));
+}
+
+void KGrCanvas::makeReplayMessage()
+{
+    bool wasVisible = false;
+    if (m_replayText != 0) {
+        wasVisible = m_replayText->isVisible();
+        m_replayText->close();		// Close and delete previous message.
+    }
+
+    QFont f (fontInfo().family(), 12, QFont::Bold);
+    f.setPixelSize ((imgH * 3) / 5);	// Set font 60% of cell height.
+    m_replayText = new QLabel (i18n("Click anywhere to begin live play"), this);
+
+    // Use the lower half of the space above the play area (above the border).
+    int lw = imgW / lineDivider;	// Line width (as used in makeBorder()).
+    m_replayText->resize (width(), (topLeft.y() - lw) / 2);
+    m_replayText->move (0, (topLeft.y() - lw) / 2);
+    QPalette palette;
+    palette.setColor (m_replayText->backgroundRole(), theme.borderColor());
+    palette.setColor (m_replayText->foregroundRole(), theme.textColor());
+    m_replayText->setPalette (palette);
+    m_replayText->setFont (f);
+    // m_replayText->setAlignment (Qt::AlignBottom | Qt::AlignHCenter);
+    m_replayText->setAlignment (Qt::AlignVCenter | Qt::AlignHCenter);
+    m_replayText->setAttribute (Qt::WA_QuitOnClose, false); //Otherwise the close above might exit app
+    if (wasVisible) {
+        m_replayText->raise();
+        m_replayText->show();
+    }
+}
+
+void KGrCanvas::showReplayMessage (bool onOff)
+{
+    if (onOff) {
+        m_replayText->raise();
+        m_replayText->show();
+    }
+    else {
+        m_replayText->hide();
+    }
 }
 
 void KGrCanvas::mousePressEvent (QMouseEvent * mouseEvent)

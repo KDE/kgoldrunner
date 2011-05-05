@@ -1237,6 +1237,7 @@ void KGrGame::setPlayback (const bool onOff)
         emit setAvail  ("increase_speed",  enableDisable);
         emit setAvail  ("decrease_speed",  enableDisable);
     }
+    view->showReplayMessage (onOff);
     playback = onOff;
 }
 
