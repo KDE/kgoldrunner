@@ -157,13 +157,13 @@ enum EditAction    {CREATE_LEVEL, EDIT_ANY, SAVE_EDITS, MOVE_LEVEL,
                     DELETE_LEVEL, CREATE_GAME,  EDIT_GAME};
 
 enum Setting       {PLAY_SOUNDS,			// Sound effects on/off.
-                    PLAY_STEPS,				// Footsteps on/off.
                     STARTUP_DEMO,			// Starting demo on/off.
                     MOUSE, KEYBOARD, LAPTOP,		// Game-control modes.
                     CLICK_KEY, HOLD_KEY, 		// Key-control method.
                     NORMAL_SPEED, BEGINNER_SPEED,	// Preset game-speeds.
                     CHAMPION_SPEED,
-                    INC_SPEED, DEC_SPEED};		// Adjustments of speed.
+                    INC_SPEED, DEC_SPEED,		// Adjustments of speed.
+                    PLAY_STEPS};			// Footsteps on/off.
 
 const int  ConcreteWall = 1;
 
