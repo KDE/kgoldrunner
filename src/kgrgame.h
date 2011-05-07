@@ -82,7 +82,7 @@ private:
     bool selectGame (const SelectAction slAction,
                      int & selectedGame, int & selectedLevel);
 
-    void toggleSoundsOnOff();		// Set sound enabled or disabled.
+    void toggleSoundsOnOff (const int action);	// Enable or disable sounds.
 
     // Set mouse, keyboard or laptop-hybrid control of the hero.
     void setControlMode (const int mode);
@@ -223,6 +223,8 @@ private:
 /******************************************************************************/
     KGrSoundBank * effects;
     QVector<int> fx;
+    bool soundOn;
+    bool stepsOn;
 
 public slots:
     void dbgControl (const int code);	// Authors' debugging aids.

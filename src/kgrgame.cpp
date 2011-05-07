@@ -92,6 +92,8 @@ KGrGame::KGrGame (KGrCanvas * theView,
         programFreeze (false),
         effects       (0),
         fx            (NumSounds),
+        soundOn       (false),
+        stepsOn       (false),
         editor        (0)
 {
     dbgLevel = 0;
@@ -361,7 +363,8 @@ void KGrGame::settings (const int action)
     bool onOff = false;
     switch (action) {
     case PLAY_SOUNDS:
-        toggleSoundsOnOff();
+    case PLAY_STEPS:
+        toggleSoundsOnOff (action);
         break;
     case STARTUP_DEMO:
         // Toggle the startup demo to be on or off.
@@ -452,13 +455,17 @@ void KGrGame::initGame()
 
 #ifdef ENABLE_SOUND_SUPPORT
     // Set up sounds, if required in config.
-    bool soundOnOff = gameGroup.readEntry ("Sound", false);
-    kDebug() << "Sound" << soundOnOff;
-    if (soundOnOff) {
+    soundOn = gameGroup.readEntry ("Sound", false);
+    kDebug() << "Sound" << soundOn;
+    if (soundOn) {
         loadSounds();
         effects->setMuted (false);
     }
-    emit setToggle ("options_sounds", soundOnOff);
+    emit setToggle ("options_sounds", soundOn);
+
+    stepsOn = gameGroup.readEntry ("StepSounds", false);
+    kDebug() << "StepSounds" << stepsOn;
+    emit setToggle ("options_steps", stepsOn);
 #endif
 
     dbk1 << "Owner" << gameList.at (gameIndex)->owner
@@ -888,7 +895,10 @@ void KGrGame::playSound (const int n, const bool onOff)
     }
     static int fallToken = -1;
     if (onOff) {
-	int token = effects->play (fx [n]);
+	int token = -1;
+        if (stepsOn || ((n != StepSound) && (n != ClimbSound))) {
+            token = effects->play (fx [n]);
+        }
         if (n == FallSound) {
             fallToken = token;
         }
@@ -1117,17 +1127,26 @@ bool KGrGame::inEditMode()
     return (editor != 0);	// Return true if the game-editor is active.
 }
 
-void KGrGame::toggleSoundsOnOff()
+void KGrGame::toggleSoundsOnOff (const int action)
 {
+    const char * setting = (action == PLAY_SOUNDS) ? "Sound" : "StepSounds";
     KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
-    bool soundOnOff = gameGroup.readEntry ("Sound", false);
+    bool soundOnOff = gameGroup.readEntry (setting, false);
     soundOnOff = (! soundOnOff);
-    gameGroup.writeEntry ("Sound", soundOnOff);
-#ifdef ENABLE_SOUND_SUPPORT
-    if (soundOnOff && (effects == 0)) {
-        loadSounds();
+    gameGroup.writeEntry (setting, soundOnOff);
+    if (action == PLAY_SOUNDS) {
+        soundOn = soundOnOff;
     }
-    effects->setMuted (! soundOnOff);
+    else {
+        stepsOn = soundOnOff;
+    }
+#ifdef ENABLE_SOUND_SUPPORT
+    if (action == PLAY_SOUNDS) {
+        if (soundOn && (effects == 0)) {
+            loadSounds();	// Sounds were not loaded when the game started.
+        }
+        effects->setMuted (! soundOn);
+    }
 #endif
 }
 
