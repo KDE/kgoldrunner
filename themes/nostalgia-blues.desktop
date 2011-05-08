@@ -1,6 +1,7 @@
 [KDEGameTheme]
 Name=Nostalgia Blues
 Name[ast]=Señaldá n'azul
+Name[bs]=Nostalgija bluz
 Name[ca]=Nostàlgia blau
 Name[ca@valencia]=Nostàlgia blau
 Name[da]=Nostalgia Blues
@@ -45,6 +46,7 @@ Name[zh_CN]=怀旧之蓝
 Name[zh_TW]=Nostalgia Blues
 Description=A theme for KGoldrunner that brings back that 8-bit look... now in blue!
 Description[ast]=Un tema pa KGoldrunner pa remembrar los aspeutos con 8 bit... ¡agora n'azul!
+Description[bs]=Tema za KTragač zlata koja vraća 8-bitni izgled... sada u plavoj boji!
 Description[ca]=Un tema per KGoldrunner que us porta l'aparença clàssica dels 8-bits... ara en blau!
 Description[ca@valencia]=Un tema per KGoldrunner que vos porta l'aparença clàssica dels 8-bits... ara en blau!
 Description[da]=Et tema til KGoldrunner som bringer 8-bit-udseendet tilbage... nu i blåt!

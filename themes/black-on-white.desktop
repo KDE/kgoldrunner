@@ -1,6 +1,7 @@
 [KDEGameTheme]
 Name=Black on White
 Name[ast]=Negru sobre blancu
+Name[bs]=Crno na bijelom
 Name[ca]=Negre sobre blanc
 Name[ca@valencia]=Negre sobre blanc
 Name[da]=Sort på hvid
@@ -49,6 +50,7 @@ Name[zh_CN]=黑白
 Name[zh_TW]=黑與白
 Description=A monochrome, black on white theme for KGoldrunner
 Description[ast]=Un tema en blancu y negru pa KGoldrunner
+Description[bs]=Monohromatka, crno na bijelom tema za KTragač zlata
 Description[ca]=Un tema monocrom (negra sobre blanc) per KGoldrunner
 Description[ca@valencia]=Un tema monocrom (negra sobre blanc) per KGoldrunner
 Description[da]=Et monokromt, sort på hvid-tema til KGoldrunner
