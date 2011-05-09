@@ -1,4 +1,23 @@
 project(kgoldrunner)
+
+macro_optional_find_package(OpenAL QUIET)
+macro_log_feature(OPENAL_FOUND "OpenAL" "OpenAL (Open Audio Library) is a free software cross-platform audio API." "http://connect.creativelabs.com/openal" FALSE "" "Granatier uses OpenAL for sound output if available. If OpenAL is not found, Phonon is used instead.")
+
+set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules")
+macro_optional_find_package(SndFile )
+macro_log_feature(SNDFILE_FOUND "SndFile" "libsndfile is a C library written by Erik de Castro Lopo for reading and writing audio files." "http://www.mega-nerd.com/libsndfile/" FALSE "" "SndFile is needed to decode the sound files.")
+
+# KGoldrunner sound requires access to the OpenAL and SndFile libraries.  If
+# they are not available, sound is permanently disabled. The use of Phonon, as
+# an alternative, does not give good results and is deprecated (9 May 2011).
+if(OPENAL_FOUND AND SNDFILE_FOUND)
+    include_directories(${OPENAL_INCLUDE_DIR} ${SNDFILE_INCLUDE_DIRS})
+    include_directories(src/TagaroAudio)
+    set(KGOLDRUNNER_OPENAL TRUE)
+    ADD_DEFINITIONS(-DKGOLDRUNNER_USE_OPENAL)
+    ADD_DEFINITIONS(-DENABLE_SOUND_SUPPORT)
+endif(OPENAL_FOUND AND SNDFILE_FOUND)
+
 add_subdirectory( src ) 
 add_subdirectory( gamedata ) 
 add_subdirectory( themes ) 

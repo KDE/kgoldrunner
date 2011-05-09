@@ -23,7 +23,13 @@
 
 #include "kgrcanvas.h"
 #include "kgrselector.h"
-#include "kgrsoundbank.h"
+
+#ifdef KGOLDRUNNER_USE_OPENAL
+    #include "kgrsounds.h"
+#else
+    #include "kgrsoundbank.h"
+#endif
+
 #include "kgreditor.h"
 #include "kgrlevelplayer.h"
 #include "kgrdialog.h"
@@ -2130,32 +2136,33 @@ bool KGrGame::loadRecording (const QString & dir, const QString & prefix,
 void KGrGame::loadSounds()
 {
 #ifdef ENABLE_SOUND_SUPPORT
-    effects = new KGrSoundBank(8);
+#ifdef KGOLDRUNNER_USE_OPENAL
+    effects = new KGrSounds();
+#else
+    effects = new KGrSoundBank (8);
+#endif
     effects->setParent (this);		// Delete at end of KGrGame.
 
-    // StepSound and ClimbSound play better as .wav and the files are slightly
-    // shorter than the corresponding .ogg files.  All other sounds play well
-    // and play better concurrently as .ogg (with KDE 4.3 and Qt 4.5.1).
     fx[GoldSound]      = effects->loadSound (KStandardDirs::locate ("appdata",
-                         "themes/default/gold.ogg"));
+                         "themes/default/gold.wav"));
     fx[StepSound]      = effects->loadSound (KStandardDirs::locate ("appdata",
                          "themes/default/step.wav"));
     fx[ClimbSound]     = effects->loadSound (KStandardDirs::locate ("appdata",
                          "themes/default/climb.wav"));
     fx[FallSound]      = effects->loadSound (KStandardDirs::locate ("appdata",
-                         "themes/default/falling.ogg"));
+                         "themes/default/falling.wav"));
     fx[DigSound]       = effects->loadSound (KStandardDirs::locate ("appdata",
-                         "themes/default/dig.ogg"));
+                         "themes/default/dig.wav"));
     fx[LadderSound]    = effects->loadSound (KStandardDirs::locate ("appdata",
-                         "themes/default/ladder.ogg"));
+                         "themes/default/ladder.wav"));
     fx[CompletedSound] = effects->loadSound (KStandardDirs::locate ("appdata",
-                         "themes/default/completed.ogg"));
+                         "themes/default/completed.wav"));
     fx[DeathSound]     = effects->loadSound (KStandardDirs::locate ("appdata",
-                         "themes/default/death.ogg"));
+                         "themes/default/death.wav"));
     fx[GameOverSound]  = effects->loadSound (KStandardDirs::locate ("appdata",
-                         "themes/default/gameover.ogg"));
+                         "themes/default/gameover.wav"));
     fx[VictorySound]   = effects->loadSound (KStandardDirs::locate ("appdata",
-                         "themes/default/victory.ogg"));
+                         "themes/default/victory.wav"));
 #endif
 }
 

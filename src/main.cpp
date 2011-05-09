@@ -17,6 +17,7 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ****************************************************************************/
 
+#include <QDebug>
 #include <kapplication.h>
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
@@ -50,6 +51,9 @@ int main (int argc, char **argv)
     KCmdLineArgs::init (argc, argv, &about);
 
     KApplication app;
+#ifndef KGOLDRUNNER_USE_OPENAL
+    qWarning() << "KGoldrunner needs to use OpenAL and SndFile for sound.  Without those libraries, sound is permanently turned off.  The use of Phonon does not give good results and is deprecated.";
+#endif
     // See if we are starting with session management.
     if (app.isSessionRestored()) {
         // New RESTORE (KGrController);

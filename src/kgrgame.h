@@ -33,7 +33,13 @@
  */
 class KGrCanvas;
 class KDialog;
-class KGrSoundBank;
+
+#ifdef KGOLDRUNNER_USE_OPENAL
+    class KGrSounds;
+#else
+    class KGrSoundBank;
+#endif
+
 class KGrEditor;
 class KGrLevelPlayer;
 class KRandomSequence;
@@ -221,7 +227,11 @@ private:
 /******************************************************************************/
 /*******************************  SOUND SUPPORT *******************************/
 /******************************************************************************/
+#ifdef KGOLDRUNNER_USE_OPENAL
+    KGrSounds * effects;
+#else
     KGrSoundBank * effects;
+#endif
     QVector<int> fx;
     bool soundOn;
     bool stepsOn;

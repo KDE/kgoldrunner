@@ -23,8 +23,6 @@
 #include <QByteArray>
 #include <QString>
 
-// #define ENABLE_SOUND_SUPPORT // Ian W. disabled sound - 19 Dec 2010.
-
 enum Owner {SYSTEM, USER};
 
 const char FREE      = ' ';
