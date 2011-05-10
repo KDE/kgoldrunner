@@ -9,7 +9,7 @@ macro_log_feature(SNDFILE_FOUND "SndFile" "libsndfile is a C library written by 
 
 # KGoldrunner sound requires access to the OpenAL and SndFile libraries.  If
 # they are not available, sound is permanently disabled. The use of Phonon, as
-# an alternative, does not give good results and is deprecated (9 May 2011).
+# an alternative, does not give good results and is deprecated (2011-5-9).
 if(OPENAL_FOUND AND SNDFILE_FOUND)
     include_directories(${OPENAL_INCLUDE_DIR} ${SNDFILE_INCLUDE_DIRS})
     include_directories(src/TagaroAudio)

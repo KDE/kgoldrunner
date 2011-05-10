@@ -24,10 +24,12 @@
 #include "kgrcanvas.h"
 #include "kgrselector.h"
 
-#ifdef KGOLDRUNNER_USE_OPENAL
+#ifdef ENABLE_SOUND_SUPPORT
+    #ifdef KGOLDRUNNER_USE_OPENAL
     #include "kgrsounds.h"
-#else
+    #else
     #include "kgrsoundbank.h"
+    #endif
 #endif
 
 #include "kgreditor.h"
@@ -2136,11 +2138,11 @@ bool KGrGame::loadRecording (const QString & dir, const QString & prefix,
 void KGrGame::loadSounds()
 {
 #ifdef ENABLE_SOUND_SUPPORT
-#ifdef KGOLDRUNNER_USE_OPENAL
+    #ifdef KGOLDRUNNER_USE_OPENAL
     effects = new KGrSounds();
-#else
+    #else
     effects = new KGrSoundBank (8);
-#endif
+    #endif
     effects->setParent (this);		// Delete at end of KGrGame.
 
     fx[GoldSound]      = effects->loadSound (KStandardDirs::locate ("appdata",
