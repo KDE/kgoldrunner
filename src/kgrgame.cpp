@@ -796,11 +796,6 @@ void KGrGame::runReplay (const int action,
 
 void KGrGame::newGame (const int lev, const int newGameIndex)
 {
-#ifdef ENABLE_SOUND_SUPPORT
-    if (effects) {			// If sounds have been loaded, kill
-        effects->stopAllSounds();	// all sounds from a previous level.
-    }
-#endif
     view->goToBlack();
 
     KGrGameData * gameData = gameList.at (newGameIndex);
@@ -911,7 +906,8 @@ void KGrGame::playSound (const int n, const bool onOff)
             fallToken = token;
         }
     }
-    else {
+    // Only the falling sound can get individually turned off.
+    else if ((n == FallSound) && (fallToken >= 0)) {
 	effects->stop (fallToken);
 	fallToken = -1;
     }
@@ -921,6 +917,13 @@ void KGrGame::playSound (const int n, const bool onOff)
 void KGrGame::endLevel (const int result)
 {
     dbk << "Return to KGrGame, result:" << result;
+
+#ifdef ENABLE_SOUND_SUPPORT
+    if (effects) {			// If sounds have been loaded, cut off
+        effects->stopAllSounds();	// all sounds that are in progress.
+    }
+#endif
+
     if (! levelPlayer) {
         return;			// Not playing a level.
     }
