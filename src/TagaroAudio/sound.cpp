@@ -50,7 +50,7 @@ Tagaro::Sound::Sound(const QString& file, QObject* parent)
 	}
 	const int channelCount = handle.channels();
 	const int sampleCount = channelCount * handle.frames();
-	const int sampleRate = handle.samplerate() / 1.5;
+	const int sampleRate = handle.samplerate();
 	//load data from sound file
 	QVector<ALshort> samples(sampleCount);
 	if (handle.read(samples.data(), sampleCount) < sampleCount)
@@ -184,7 +184,7 @@ Tagaro::PlaybackEvent::PlaybackEvent(Tagaro::Sound* sound, const QPointF& pos)
 	m_valid = true;
 	//connect to sound (buffer)
 	alSource3f(m_source, AL_POSITION, pos.x(), pos.y(), 0);
-	alSourcef(m_source, AL_PITCH, 1.5); //TODO: debug
+	alSourcef(m_source, AL_PITCH, 1.0);
 	alSourcef(m_source, AL_GAIN, sound->volume());
 	alSourcei(m_source, AL_BUFFER, sound->d->m_buffer);
 	const Tagaro::Sound::PlaybackType type = sound->playbackType();
