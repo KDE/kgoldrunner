@@ -417,6 +417,14 @@ void KGrGame::setInitialTheme (const QString & themeFilepath)
 
 void KGrGame::initGame()
 {
+#ifndef ENABLE_SOUND_SUPPORT
+    KGrMessage::information (view, i18n ("No Sound"),
+        i18n ("Warning: This copy of KGoldrunner has no sound.\n"
+              "\n"
+              "This is because no development versions of the OpenAL and "
+              "SndFile libraries were present when it was compiled and built."),
+              "WarningNoSound");
+#endif
     kDebug() << "Entered, draw the initial graphics now ...";
 
     // Get the most recent collection and level that was played by this user.
