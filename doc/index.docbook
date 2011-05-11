@@ -26,14 +26,14 @@
 </authorgroup>
 
 <copyright>
-<year>2009</year>
+<year>2011</year>
 <holder>Ian Wadham</holder>
 </copyright>
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2009-05-22</date>
-<releaseinfo>4.3</releaseinfo>
+<date>2011-05-11</date>
+<releaseinfo>4.7</releaseinfo>
 
 <abstract>
 <para>
@@ -1164,6 +1164,15 @@ pin-sharp monitors.</para>
 </menuchoice></term>
 <listitem>
 <para>Toggles the sounds on and off.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Play Footstep Sounds</guimenuitem>
+</menuchoice></term>
+<listitem>
+<para>Toggles the sounds of footsteps on and off.</para>
 </listitem>
 </varlistentry>
 
