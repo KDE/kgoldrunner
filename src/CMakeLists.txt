@@ -26,7 +26,7 @@ if(KGOLDRUNNER_OPENAL)
         TagaroAudio/audioscene.cpp
         TagaroAudio/sound.cpp )
 else(KGOLDRUNNER_OPENAL)
-#    KGoldrunner sound is supported only with OpenAL, else silent (2011-5-9).
+#    KGoldrunner sound is supported only with OpenAL, else silent (2011-05-09).
 #    set(kgoldrunner_SRCS
 #        ${kgoldrunner_SRCS}
 #        kgrsoundbank.cpp )
@@ -39,7 +39,7 @@ if(KGOLDRUNNER_OPENAL)
     target_link_libraries(kgoldrunner ${KDE4_KDEUI_LIBS} kdegames
                                       ${OPENAL_LIBRARY} ${SNDFILE_LIBRARIES} )
 else(KGOLDRUNNER_OPENAL)
-#    KGoldrunner sound is supported only with OpenAL, else silent (2011-5-9).
+#    KGoldrunner sound is supported only with OpenAL, else silent (2011-05-09).
 #    target_link_libraries(kgoldrunner ${KDE4_KDEUI_LIBS} kdegames
 #                                      ${KDE4_PHONON_LIBS})
     target_link_libraries(kgoldrunner ${KDE4_KDEUI_LIBS} kdegames)
