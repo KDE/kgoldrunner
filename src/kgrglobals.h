@@ -23,6 +23,8 @@
 #include <QByteArray>
 #include <QString>
 
+#define ENABLE_SOUND_SUPPORT
+
 enum Owner {SYSTEM, USER};
 
 const char FREE      = ' ';
