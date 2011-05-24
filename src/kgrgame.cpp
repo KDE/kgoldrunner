@@ -1946,9 +1946,7 @@ bool KGrGame::initRecordingData (const Owner fileOwner, const QString & prefix,
                                  const int levelNo)
 {
     // Initialise the recording.
-    if (recording) {
-        delete recording;
-    }
+    delete recording;
     recording = new KGrRecording;
     recording->content.fill (0, 4000);
     recording->draws.fill   (0, 400);
