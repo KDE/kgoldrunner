@@ -21,6 +21,7 @@
 
 #include <QObject>
 #include <QVector>
+#include <QTime>
 
 #include "TagaroAudio/sound.h"
 
@@ -54,6 +55,11 @@ public:
     int loadSound (const QString &fileName);
 
     /** 
+     * Set up a sound to have its latest start-time recorded.
+     */
+    void setTimedSound (int i);
+
+    /** 
      * Stop sound and discard the loaded sound effects.
      */
     void reset();
@@ -77,9 +83,17 @@ public:
    
     void setMuted (bool mute);
 
+    /**
+     * Change the volume of one type of sound (e.g. footstep) by a given factor.
+     * \param volume 0.0 for mute, > 1.0 to increase, < 1.0 to decrease.
+     */
+    void setVolume (int effect, qreal volume);
+
 private:
     QVector<Tagaro::Sound *> sounds;
-    bool muted;
+    QVector<int>             startTime;	// Start times of timed sounds, else 0.
+    bool                     muted;
+    QTime                    t;
 };
 
 #endif // KGRSOUNDS_H

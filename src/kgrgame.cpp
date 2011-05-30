@@ -1175,6 +1175,12 @@ void KGrGame::freeze (const bool userAction, const bool on_off)
     kDebug() << "PAUSE:" << type << on_off;
     kDebug() << "gameFrozen" << gameFrozen << "programFreeze" << programFreeze;
 
+#ifdef ENABLE_SOUND_SUPPORT
+    if (on_off && effects) {		// If pausing and sounds are loaded, cut
+        effects->stopAllSounds();	// off all sounds that are in progress.
+    }
+#endif
+
     if (! userAction) {
         // The program needs to freeze the game during a message, dialog, etc.
         if (on_off) {
@@ -2147,6 +2153,7 @@ bool KGrGame::loadRecording (const QString & dir, const QString & prefix,
 void KGrGame::loadSounds()
 {
 #ifdef ENABLE_SOUND_SUPPORT
+    const qreal volumes [NumSounds] = {0.6, 0.3, 0.3, 0.6, 0.6, 1.8, 1.0, 1.0, 1.0, 1.0};
     #ifdef KGOLDRUNNER_USE_OPENAL
     effects = new KGrSounds();
     #else
@@ -2174,6 +2181,17 @@ void KGrGame::loadSounds()
                          "themes/default/gameover.wav"));
     fx[VictorySound]   = effects->loadSound (KStandardDirs::locate ("appdata",
                          "themes/default/victory.wav"));
+    #ifdef KGOLDRUNNER_USE_OPENAL
+    // Gold and dig sounds are timed and are allowed to play for at least one
+    // second, so that rapid sequences of those sounds are heard as overlapping.
+    effects->setTimedSound (fx[GoldSound]);
+    effects->setTimedSound (fx[DigSound]);
+
+    // Adjust the relative volumes of sounds to improve the overall balance.
+    for (int i = 0; i < NumSounds; i++) {
+        effects->setVolume (fx [i], volumes [i]);
+    }
+    #endif
 #endif
 }
 

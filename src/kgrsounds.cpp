@@ -19,12 +19,12 @@
 #include "kgrsounds.h"
 
 #include <KDebug>
-#include <stdio.h>
 
 KGrSounds::KGrSounds() : 
     QObject(),
     sounds()
 {
+    t.start();
 }
 
 KGrSounds::~KGrSounds()
@@ -35,7 +35,13 @@ int KGrSounds::loadSound (const QString &fileName)
 {
     kDebug() << "Loading sound" << fileName;
     sounds << (new Tagaro::Sound (fileName));
+    startTime << 0;
     return sounds.count() - 1;
+}
+
+void KGrSounds::setTimedSound (int i)
+{
+    startTime[i] = 1;
 }
 
 void KGrSounds::stopAllSounds()
@@ -55,9 +61,23 @@ int KGrSounds::play (int effect)
 {
     if (muted) return -1;
 
-    sounds[effect]->stop();	// Delete previous OpenAL/Tagaro instances.
+    // Delete all previously playing instances of this sound, but allow gold and
+    // dig sounds to play for > 1 sec, so that rapid sequences of digging or
+    // gold collection will have properly overlapping sounds.
+
+    int  started    = startTime[effect];
+    bool timedSound = (started != 0);
+    int  current    = timedSound ? t.elapsed() : 0;
+
+    if ((! timedSound) || ((current - started) > 1000)) {
+        sounds[effect]->stop();
+    }
 
     sounds[effect]->start();
+
+    if (timedSound) {
+        startTime[effect] = current;
+    }
     return effect;
 }
 
@@ -74,6 +94,11 @@ void KGrSounds::setMuted (bool mute)
     if (mute) {
 	stopAllSounds();
     }
+}
+
+void KGrSounds::setVolume (int effect, qreal volume)
+{
+    sounds[effect]->setVolume (volume);
 }
 
 #include "kgrsounds.moc"
