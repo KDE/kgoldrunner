@@ -151,16 +151,16 @@ void KGrLevelPlayer::init (KGrCanvas * view,
     grid->calculateAccess    (rules->runThruHole());
 
     // Connect to code that paints grid cells and start-positions of sprites.
-    connect (this, SIGNAL (paintCell (int, int, char, int)),
-             view, SLOT   (paintCell (int, int, char, int)));
-    connect (this, SIGNAL (makeSprite (char, int, int)),
-             view, SLOT   (makeSprite (char, int, int)));
+    connect (this, SIGNAL (paintCell(int,int,char,int)),
+             view, SLOT   (paintCell(int,int,char,int)));
+    connect (this, SIGNAL (makeSprite(char,int,int)),
+             view, SLOT   (makeSprite(char,int,int)));
 
     // Connect to the mouse-positioning code in the graphics.
-    connect (this, SIGNAL (getMousePos (int &, int &)),
-             view, SLOT   (getMousePos (int &, int &)));
-    connect (this, SIGNAL (setMousePos (const int, const int)),
-             view, SLOT   (setMousePos (const int, const int)));
+    connect (this, SIGNAL (getMousePos(int&,int&)),
+             view, SLOT   (getMousePos(int&,int&)));
+    connect (this, SIGNAL (setMousePos(int,int)),
+             view, SLOT   (setMousePos(int,int)));
 
     // Show the layout of this level in the view (KGrCanvas).
     int wall = ConcreteWall;
@@ -237,11 +237,11 @@ void KGrLevelPlayer::init (KGrCanvas * view,
     }
 
     // Connect the hero's and enemies' efforts to the graphics.
-    connect (this, SIGNAL (gotGold (int, int, int, bool, bool)),
-             view, SLOT   (gotGold (int, int, int, bool, bool)));
+    connect (this, SIGNAL (gotGold(int,int,int,bool,bool)),
+             view, SLOT   (gotGold(int,int,int,bool,bool)));
 
     // Connect mouse-clicks from KGrCanvas to digging slot.
-    connect (view, SIGNAL (mouseClick (int)), SLOT (doDig (int)));
+    connect (view, SIGNAL (mouseClick(int)), SLOT (doDig(int)));
 
     // Connect the hero and enemies (if any) to the animation code.
     connect (hero, SIGNAL (startAnimation (int, bool, int, int, int,
@@ -256,28 +256,28 @@ void KGrLevelPlayer::init (KGrCanvas * view,
     }
 
     // Connect the scoring.
-    connect (hero, SIGNAL (incScore (const int)),
-             game, SLOT   (incScore (const int)));
+    connect (hero, SIGNAL (incScore(int)),
+             game, SLOT   (incScore(int)));
     foreach (KGrEnemy * enemy, enemies) {
-        connect (enemy, SIGNAL (incScore (const int)),
-                 game,  SLOT   (incScore (const int)));
+        connect (enemy, SIGNAL (incScore(int)),
+                 game,  SLOT   (incScore(int)));
     }
 
     // Connect the sounds.
-    connect (hero, SIGNAL (soundSignal (const int, const bool)),
-             game, SLOT   (playSound   (const int, const bool)));
+    connect (hero, SIGNAL (soundSignal(int,bool)),
+             game, SLOT   (playSound(int,bool)));
 
     // Connect the level player to the animation code (for use with dug bricks).
     connect (this, SIGNAL (startAnimation (int, bool, int, int, int,
                                            Direction, AnimationType)),
              view, SLOT   (startAnimation (int, bool, int, int, int,
                                            Direction, AnimationType)));
-    connect (this, SIGNAL (deleteSprite (int)),
-             view, SLOT   (deleteSprite (int)));
+    connect (this, SIGNAL (deleteSprite(int)),
+             view, SLOT   (deleteSprite(int)));
 
     // Connect the grid to the view, to show hidden ladders when the time comes.
-    connect (grid, SIGNAL (showHiddenLadders (const QList<int> &, const int)),
-             view, SLOT   (showHiddenLadders (const QList<int> &, const int)));
+    connect (grid, SIGNAL (showHiddenLadders(QList<int>,int)),
+             view, SLOT   (showHiddenLadders(QList<int>,int)));
 
     // Connect and start the timer.  The tick() slot emits signal animation(),
     // so there is just one time-source for the model and the view.
@@ -287,8 +287,8 @@ void KGrLevelPlayer::init (KGrCanvas * view,
         timer->pause();				// Pause is ON as level starts.
     }
 
-    connect (timer, SIGNAL (tick (bool, int)), this, SLOT (tick (bool, int)));
-    connect (this,  SIGNAL (animation (bool)), view, SLOT (animate (bool)));
+    connect (timer, SIGNAL (tick(bool,int)), this, SLOT (tick(bool,int)));
+    connect (this,  SIGNAL (animation(bool)), view, SLOT (animate(bool)));
 
     if (! playback) {
         // Allow some time to view the level before starting a replay.

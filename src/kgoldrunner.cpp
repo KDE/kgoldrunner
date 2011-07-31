@@ -140,13 +140,13 @@ KGoldrunner::KGoldrunner()
 
     // Connect the game actions to the menu and toolbar displays.
     connect (game, SIGNAL (quitGame()),	         SLOT (close()));
-    connect (game, SIGNAL (setEditMenu (bool)),	 SLOT (setEditMenu (bool)));
+    connect (game, SIGNAL (setEditMenu(bool)),	 SLOT (setEditMenu(bool)));
     connect (game, SIGNAL (hintAvailable(bool)), SLOT (adjustHintAction(bool)));
 
-    connect (game, SIGNAL (setAvail  (const char *, const bool)),
-                   SLOT   (setAvail  (const char *, const bool)));
-    connect (game, SIGNAL (setToggle (const char *, const bool)),
-                   SLOT   (setToggle (const char *, const bool)));
+    connect (game, SIGNAL (setAvail(const char*,bool)),
+                   SLOT   (setAvail(const char*,bool)));
+    connect (game, SIGNAL (setToggle(const char*,bool)),
+                   SLOT   (setToggle(const char*,bool)));
 
     // Apply the saved mainwindow settings, if any, and ask the mainwindow
     // to automatically save settings if changed: window size, toolbar
@@ -188,7 +188,7 @@ void KGoldrunner::setupActions()
     /**************************************************************************/
 
     QSignalMapper * gameMapper = new QSignalMapper (this);
-    connect (gameMapper, SIGNAL (mapped (int)), game, SLOT (gameActions (int)));
+    connect (gameMapper, SIGNAL (mapped(int)), game, SLOT (gameActions(int)));
     tempMapper = gameMapper;
 
     // New Game...
@@ -296,7 +296,7 @@ void KGoldrunner::setupActions()
     /**************************************************************************/
 
     QSignalMapper * editMapper = new QSignalMapper (this);
-    connect (editMapper, SIGNAL (mapped (int)), game, SLOT (editActions (int)));
+    connect (editMapper, SIGNAL (mapped(int)), game, SLOT (editActions(int)));
     tempMapper = editMapper;
 
     // Create a Level
@@ -370,12 +370,12 @@ void KGoldrunner::setupActions()
 
     KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
     QSignalMapper * settingMapper = new QSignalMapper (this);
-    connect (settingMapper, SIGNAL (mapped (int)), game, SLOT (settings (int)));
+    connect (settingMapper, SIGNAL (mapped(int)), game, SLOT (settings(int)));
     tempMapper = settingMapper;
 
     // Show/Exit Full Screen Mode
     KToggleFullScreenAction * fullScreen = KStandardAction::fullScreen
-                        (this, SLOT (viewFullScreen (bool)), this, this);
+                        (this, SLOT (viewFullScreen(bool)), this, this);
     actionCollection()->addAction (fullScreen->objectName(), fullScreen);
 
 #ifdef ENABLE_SOUND_SUPPORT
@@ -512,7 +512,7 @@ void KGoldrunner::setupActions()
     // Two-handed KB controls and alternate one-handed controls for the hero.
 
     QSignalMapper * kbMapper = new QSignalMapper (this);
-    connect (kbMapper, SIGNAL (mapped (int)), game, SLOT(kbControl (int)));
+    connect (kbMapper, SIGNAL (mapped(int)), game, SLOT(kbControl(int)));
     tempMapper = kbMapper;
 
     // The actions for the movement keys are created but disabled.  This lets
@@ -553,7 +553,7 @@ void KGoldrunner::setupActions()
         return;
 
     QSignalMapper * dbgMapper = new QSignalMapper (this);
-    connect (dbgMapper, SIGNAL (mapped (int)), game, SLOT(dbgControl (int)));
+    connect (dbgMapper, SIGNAL (mapped(int)), game, SLOT(dbgControl(int)));
     tempMapper = dbgMapper;
 
     keyControl ("do_step",      i18n ("Do a Step"), Qt::Key_Period, DO_STEP);
@@ -586,7 +586,7 @@ KAction * KGoldrunner::gameAction (const QString & name,
     if (! key.isEmpty()) {
         ga->setShortcut (key);
     }
-    connect (ga, SIGNAL (triggered (bool)), tempMapper, SLOT (map()));
+    connect (ga, SIGNAL (triggered(bool)), tempMapper, SLOT (map()));
     tempMapper->setMapping (ga, code);
     return ga;
 }
@@ -601,7 +601,7 @@ KAction * KGoldrunner::editAction (const QString & name,
     ed->setText (text);
     ed->setToolTip (toolTip);
     ed->setWhatsThis (whatsThis);
-    connect (ed, SIGNAL (triggered (bool)), tempMapper, SLOT (map()));
+    connect (ed, SIGNAL (triggered(bool)), tempMapper, SLOT (map()));
     tempMapper->setMapping (ed, code);
     return ed;
 }
@@ -616,7 +616,7 @@ KToggleAction * KGoldrunner::settingAction (const QString & name,
     actionCollection()->addAction (name, s);
     s->setToolTip (toolTip);
     s->setWhatsThis (whatsThis);
-    connect (s, SIGNAL (triggered (bool)), tempMapper, SLOT (map()));
+    connect (s, SIGNAL (triggered(bool)), tempMapper, SLOT (map()));
     tempMapper->setMapping (s, code);
     return s;
 }
@@ -634,7 +634,7 @@ KToggleAction * KGoldrunner::editToolbarAction (const QString & name,
     ed->setIconText (shortText);
     ed->setToolTip (toolTip);
     ed->setWhatsThis (whatsThis);
-    connect (ed, SIGNAL (triggered (bool)), tempMapper, SLOT (map()));
+    connect (ed, SIGNAL (triggered(bool)), tempMapper, SLOT (map()));
     tempMapper->setMapping (ed, mapCode);
     return ed;
 }
@@ -655,7 +655,7 @@ void KGoldrunner::keyControl (const QString & name, const QString & text,
         a->setAutoRepeat (false);	// Else, prevent QAction signal repeat.
     }
 
-    connect (a, SIGNAL (triggered (bool)), tempMapper, SLOT (map()));
+    connect (a, SIGNAL (triggered(bool)), tempMapper, SLOT (map()));
     tempMapper->setMapping (a, code);
     addAction (a);
 }
@@ -723,8 +723,8 @@ void KGoldrunner::setupThemes()
     kDebug()<< "Config() Theme" << currentThemeFilepath;
 
     QSignalMapper * themeMapper = new QSignalMapper (this);
-    connect (themeMapper, SIGNAL (mapped (const QString &)),
-                this, SLOT (changeTheme (const QString &)));
+    connect (themeMapper, SIGNAL (mapped(QString)),
+                this, SLOT (changeTheme(QString)));
 
     KToggleAction * newTheme;				// Action for a theme.
     QString actionName;					// Name of the theme.
@@ -749,7 +749,7 @@ void KGoldrunner::setupThemes()
             newTheme->setChecked (true);		// and mark it as chosen
         }
 
-        connect (newTheme, SIGNAL(triggered (bool)), themeMapper, SLOT(map()));
+        connect (newTheme, SIGNAL(triggered(bool)), themeMapper, SLOT(map()));
         themeMapper->setMapping (newTheme, filepath);	// Add path to signal.
         themeList.append (newTheme);			// Theme --> menu list.
     }
@@ -782,10 +782,10 @@ void KGoldrunner::initStatusBar()
     statusBar()->setItemFixed (ID_LEVEL, -1);
     statusBar()->setItemFixed (ID_HINTAVL, -1);
 
-    connect (game, SIGNAL (showLives (long)),	SLOT (showLives (long)));
-    connect (game, SIGNAL (showScore (long)),	SLOT (showScore (long)));
-    connect (game, SIGNAL (showLevel (int)),	SLOT (showLevel (int)));
-    connect (game, SIGNAL (gameFreeze (bool)),	SLOT (gameFreeze (bool)));
+    connect (game, SIGNAL (showLives(long)),	SLOT (showLives(long)));
+    connect (game, SIGNAL (showScore(long)),	SLOT (showScore(long)));
+    connect (game, SIGNAL (showLevel(int)),	SLOT (showLevel(int)));
+    connect (game, SIGNAL (gameFreeze(bool)),	SLOT (gameFreeze(bool)));
 }
 
 void KGoldrunner::showLives (long newLives)
@@ -1050,8 +1050,8 @@ bool KGoldrunner::queryClose()
 void KGoldrunner::setupEditToolbarActions()
 {
     QSignalMapper * editToolbarMapper = new QSignalMapper (this);
-    connect (editToolbarMapper, SIGNAL (mapped (int)),
-             game, SLOT (editToolbarActions (int)));
+    connect (editToolbarMapper, SIGNAL (mapped(int)),
+             game, SLOT (editToolbarActions(int)));
     tempMapper = editToolbarMapper;
 
     KAction * ed = editAction ("edit_hint", EDIT_HINT,

@@ -265,8 +265,8 @@ void KGrGame::editActions (const int action)
         emit setEditMenu (true);	// Enable edit menu items and toolbar.
 
         // Pass the editor's showLevel signal on to the KGoldrunner GUI object.
-        connect (editor, SIGNAL (showLevel (int)),
-                 this,   SIGNAL (showLevel (int)));
+        connect (editor, SIGNAL (showLevel(int)),
+                 this,   SIGNAL (showLevel(int)));
     }
 
     switch (action) {
@@ -884,8 +884,8 @@ void KGrGame::setupLevelPlayer()
 
     // Use queued connections here, to ensure that levelPlayer has finished
     // executing and can be deleted when control goes to the relevant slot.
-    connect (levelPlayer, SIGNAL (endLevel (const int)),
-             this,        SLOT   (endLevel (const int)), Qt::QueuedConnection);
+    connect (levelPlayer, SIGNAL (endLevel(int)),
+             this,        SLOT   (endLevel(int)), Qt::QueuedConnection);
     if (playback) {
         connect (levelPlayer, SIGNAL (interruptDemo()),
                  this,        SLOT   (interruptDemo()),  Qt::QueuedConnection);

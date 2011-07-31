@@ -290,8 +290,8 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
     lgList->	setItemSelected  (lgList->currentItem(), true);
                 lgHighlight = 0;
 
-    connect (lgList, SIGNAL (itemClicked (QListWidgetItem *)),
-                this, SLOT (lgSelect (QListWidgetItem *)));
+    connect (lgList, SIGNAL (itemClicked(QListWidgetItem*)),
+                this, SLOT (lgSelect(QListWidgetItem*)));
 }
 
 void KGrLGDialog::lgSelect (QListWidgetItem * item)

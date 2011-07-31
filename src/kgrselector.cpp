@@ -299,10 +299,10 @@ void KGrSLDialog::setupWidgets()
 
     connect (games,   SIGNAL (itemSelectionChanged()), this, SLOT (slGame()));
 
-    connect (display, SIGNAL (valueChanged (const QString &)),
-                this, SLOT (slUpdate (const QString &)));
+    connect (display, SIGNAL (valueChanged(QString)),
+                this, SLOT (slUpdate(QString)));
 
-    connect (number, SIGNAL(valueChanged (int)), this, SLOT(slShowLevel (int)));
+    connect (number, SIGNAL(valueChanged(int)), this, SLOT(slShowLevel(int)));
 
     // Only enable name and hint dialog here if saving a new or edited level.
     // At other times the name and hint have not been loaded or initialised yet.

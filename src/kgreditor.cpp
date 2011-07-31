@@ -48,14 +48,14 @@ KGrEditor::KGrEditor (KGrCanvas * theView,
 
     // Connect and start the timer.
     timer = new QTimer (this);
-    connect (timer, SIGNAL (timeout ()), this, SLOT (tick ()));
+    connect (timer, SIGNAL (timeout()), this, SLOT (tick()));
     timer->start (TickTime);		// TickTime def in kgrglobals.h.
 
     // Connect edit-mode slots to signals from "view".
-    connect (view, SIGNAL (mouseClick (int)), SLOT (doEdit (int)));
-    connect (view, SIGNAL (mouseLetGo (int)), SLOT (endEdit (int)));
-    connect (this, SIGNAL (getMousePos (int &, int &)),
-             view, SLOT   (getMousePos (int &, int &)));
+    connect (view, SIGNAL (mouseClick(int)), SLOT (doEdit(int)));
+    connect (view, SIGNAL (mouseLetGo(int)), SLOT (endEdit(int)));
+    connect (this, SIGNAL (getMousePos(int&,int&)),
+             view, SLOT   (getMousePos(int&,int&)));
 }
 
 KGrEditor::~KGrEditor()
@@ -731,12 +731,12 @@ void KGrEditor::setEditableCell (int i, int j, char type)
 void KGrEditor::showEditLevel()
 {
     // Disconnect play-mode slots from signals from "view".
-    disconnect (view, SIGNAL (mouseClick (int)), 0, 0);
-    disconnect (view, SIGNAL (mouseLetGo (int)), 0, 0);
+    disconnect (view, SIGNAL (mouseClick(int)), 0, 0);
+    disconnect (view, SIGNAL (mouseLetGo(int)), 0, 0);
 
     // Connect edit-mode slots to signals from "view".
-    connect (view, SIGNAL (mouseClick (int)), SLOT (doEdit (int)));
-    connect (view, SIGNAL (mouseLetGo (int)), SLOT (endEdit (int)));
+    connect (view, SIGNAL (mouseClick(int)), SLOT (doEdit(int)));
+    connect (view, SIGNAL (mouseLetGo(int)), SLOT (endEdit(int)));
 }
 
 bool KGrEditor::reNumberLevels (int cIndex, int first, int last, int inc)

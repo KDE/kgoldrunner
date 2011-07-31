@@ -124,8 +124,8 @@ KGrCanvas::KGrCanvas (QWidget * parent, const double scale)
     m_spotLight = new KGameCanvasPicture (this);
     m_fadingTimeLine.setCurveShape (QTimeLine::LinearCurve);
     m_fadingTimeLine.setUpdateInterval (60);
-    connect (&m_fadingTimeLine, SIGNAL (valueChanged (qreal)),
-                this, SLOT (drawSpotLight (qreal)));
+    connect (&m_fadingTimeLine, SIGNAL (valueChanged(qreal)),
+                this, SLOT (drawSpotLight(qreal)));
     connect (&m_fadingTimeLine, SIGNAL (finished()),
                 this, SIGNAL (fadeFinished()));
 }
