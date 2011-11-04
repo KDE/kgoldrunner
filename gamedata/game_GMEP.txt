@@ -1,0 +1,109 @@
+// G016 K GMEP C
+ i18n("Jail Break");
+ i18n("Arrested for stealing and for robbing and trapping your enemies several times, you are held in prison.\n"
+ "\n"
+ "But the police are ruthless here and if you try to break out they will not lose any sleep over killing you...  So be careful and most important of all: be quick --- or be dead!\n"
+ "\n"
+ "These Championship levels use the quick and quirky KGoldrunner Rules and are composed by Gabriel Miltschitzky [gabriel dot miltschitzky at freenet de]");
+// L001
+//  HX                          HX   R                      HX M H                      HXMEM XXXXH FXHTTTTXHXEEEEMHHXHMNXHHHXXH X   E XHXXXXXMHHHHX XH HHX HXXXXXXXH   T MH   X HH  H X        XXXX XXH E XEEE   MHX    HHHHHH   XHXXXXXXXXXXHHX    HX    X MXH   HHHHHHH X   H H M MHXHMHH XX   E    X  H  HHMHMHXHM     XXXXXXXXX  H    XHXHXHX  EX MM  H XHH  H    XHXHXHX  XX XX H HXH   H    XHXHXHX   E   XH HXH  HH T  XHXHXHXX EEEEM H HXH  HX  XMEHXHXHEX XXXX  H HXH  HXEHXHXXXHXXXX     HHH HHH  HXXXXHHHHHH                FH               E  E  E   E    E E         
+ i18n("Don't Panic!");
+ i18n("As the name of the level says, there is absolutely no need to panic.\n"
+ "\n"
+ "It is very easy to escape from this prison, because the guards themselves are trapped and cannot touch you...");
+// L002
+//    Z                          Z    R         EE        Z Z                        Z  Z Z HHHHHHHHHHHHHHHHH   Z     Z HFFFFFFFFFFFFFFFH  Z     Z  HX             XH  Z      Z HXFFFFFFFFFFFFFXH   Z   ZZ  HXFFNFFFFFNFXFFXH    Z    Z HXFFFFFFFFFFFFNXH  ZZ    Z  HXFFFFNXFFFFFFFXH Z     Z   HXFFNFFFFFFFNFFXH  Z    Z Z HXFFFFFFFFFXFFFXH   Z    Z  HXFFFFFNFFFFFFFXH    Z    Z HXFFFFXFFFFFFFFXH     Z ZZ  HXHHHHHHHHHHHHHXH    Z   Z  HFFFFFFFFFFFFFFFH   Z     Z HHHHHHHHHHHHHHHHH  Z      Z                 Z Z        Z                 Z                                  
+ i18n("Robbery");
+ i18n("Being free again you need some money from somewhere.\n"
+ "\n"
+ "The trick is to tie up your enemies. If you can make each one fall onto a concrete block, that might help. On the other hand, you can just run a lot...");
+// L003
+//     HXMM H XEXXEX H MMXH N      HXMM H XXXXXX H MMXH H      HXMMMH        HMMMXH H      HXMMMH        HMMMXH H      HXMMMH XXXXXX HMMMXH H      HXMMMHXH   EHXHMMMXH H      HXMMMHXHXXXXHXHMMMXH H  H   HXM MHXHXRHXHXHM MXH   XH   HXMMMHXHXMMXHXHMMMXH H XH   HXMMXHXH    HXHMMMXH H XH   HX  XHHMMMMMMHHX  XH H XH   HXMMX H      H XMMXH H XH   HXMMXXXXXXXXXXXXMMXH H XH  EHX   XXXXXXXXXX   XHEH XH   HX                XH H XH  MHXXXXXXXMMMMXXXXXXXHMH XH                        H XHXXXXXXXXXXXXMMXXXXXXXXXXXXXH                           H                           H
+ i18n("Use the Guards");
+ i18n("They may be ruthless, but they are predictable.\n"
+ "\n"
+ "When you reach the ladders on the right, wait for one guard to jump, then walk over his head to fetch the gold.");
+// L004
+//  REX    XHX                 ZX X    XHX                 ZM  MMM XHX                 ZM F   HHHX           HHHHH ZM MMMM XHX           H    NZM MMMM XHX           H     ZM     HHHX     HHH   H     ZM MFFM XHX    HH HH  HH    ZM MMMM XHX HHHH   HH  H    ZM      XHXH           HH  NZM M   HHHXH HH         H   ZM MFXM XHXHXHHH        HH  ZM MXFM XHXHHHXHHH       H  ZM M    XHXXX XXXH       H  ZM M    XHX   HHXH       H  ZM M    XH XHH XXHH      H  ZM M    XH HH   XXH      H  ZM MXXXXXH HXX  HHH NN  NH  ZM M       H    H   XX HX  NZ       EEE                 Z
+ i18n("Falling Enemies (1) - Finding A Way");
+ i18n("Make use of your enemies by walking over their heads.\n"
+ "\n"
+ "If there is more than one gap to cross, first make the enemies walk right, then start walking on their heads.");
+// L005
+//          ZZZRMMMMZZZZ                Z EENN MEEEZ                ZEEEMNMMEEEZ                ZZZZM M ZZZZ                   Z MNMZ                      ZXXXXZ                      Z    Z                      ZMXNMZ                      ZMMMNZ                      ZMXXMZ                      ZXX MZ                      Z   XZ                      ZMNM Z                      ZMMNMZ                      Z MM Z                      ZMMMMZ                      ZXXXXZ                      ZNNNNZ                      ZXXXXZ            XXXXXXXX  Z    Z  XXXXXXXXX
+ i18n("Falling Enemies (2) - Digging");
+ i18n("Start the level with a click. The rest should be self-explanatory...");
+// L006
+//    EEEEEEEEEEEEEEEEEEEEEEEEE Z                           Z            ZZZZZ          ZZ  ZZ ZZZZ ZZ   ZZZ  ZZZ    ZZZZZZZ  ZZZ    Z ZZZ  Z      Z                     Z   ZZ  ZZ  Z ZZZZZZ  Z   Z     Z  ZZZZZ ZZZ  ZZ  ZZ ZZZZZ  ZZZ Z  ZZ  Z  Z ZZZZZZ ZZZ   Z  Z   ZZZZZZZZ Z   ZZ Z ZX                          ZX                          ZX                          ZX                          ZX                          ZX                          ZX                          ZX                          HXN                        RHXXMMMMMMMMMMMMMMMMMMMMMMMMMM
+ i18n("Falling Enemies (3) - Hidden Ladders");
+ i18n("This time they are more intelligent and are falling on you from above.\n"
+ "\n"
+ "First, dig all the bricks on the way to the gold.\n"
+ "\n"
+ "After that, run back to the middle and wait for the reborn enemies to fall. You will have to trap the leaders while you wait for the others. On the way up, keep an eye out for more reborn enemies.");
+// L007
+//    XXXXXXXXXX                     R   EEXHHHHHHHHHHHHHHH   XXXXXXXXXXH                    E    EXHMMMMMMMMMMMMFMN  XXXXXXXXXXHM      MNNN  MN          HHHM      MMMM  MN         H   M   MMMM  MFFMN        H MMMMMMM   M  MMMMN       H M      MNNNMM  M MM      H M       MMMMMMMM   MMFM    H MNNNNNEM  M M  M MMMFF     H MMMMMMM  M  M FM MMFMFM    H M   MMFMMMMMMM  MMMMFM     HM  MM M     M MMMMMMFM    H MMMM  M E  MM   MMMMFM   H M MM   MMMMMMMM  MMMMFM  H M  MMM  M  M    MNMMMMFM H M MZM M   MZ MFZNMNMMMMFM HM  MZ   ME M  E MZMEMMMMMFMH MMMMMMMMMMMMMMMMMMMM
+ i18n("Imprisoned Guards");
+ i18n("It is easy enough to break into the main structure, but to collect all the gold and get out again, you will need to walk on an enemy's head.");
+// L008
+//     ZZZZZZZZ           ZZ                 ZZZ ZZZZZH H   Z ZZZZZZZZZZ       ZHHH  Z  ZZZ ZZZ   ZZHHHHHHHH  ZZHZ  ZZ Z   ZZ Z HZ  Z ZZZZZ HZZZZZ Z    Z ZZH ZZZ  ZZ  HHZ ZZZZZ ZZ Z  ZHZZ     ZZZHZZZZZZZ ZZZZZZZ  HZZZZZZZZHZZZZ Z ZZ   Z Z  HZ ZZHHHZH  ZZZZ Z Z   ZZZZH   ZHZZZZZZZZZZZZZZ        H H HH   ZZ    ZZZZZZZZZZZZZ HZH Z ZZZZZZZZZZZZZZXZZZZZ HZMZH  ZZZZZXZEZEZZEZX Z Z HZMMMZH  ZZ  XZEZZZEEZX ZZZHZXMNMXZH ZZZ XZEEZZZZZX ZZHZMMMMMMMZH ZZ XZEEZEEZZX ZHZZZZZZZZZZZHZZZXZZZZZEEZX HZZZZZZZZZZZZZH ZXZZEEZEEZXHZZZZZRZZZZZZZZZHZXZEEEXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+ i18n("Forbidden Gold");
+ i18n("You escaped them very nicely in the last few levels.\n"
+ "\n"
+ "Now you are free again and may do whatever you please. Everything except stealing the gold again, needless to say...");
+// L009
+//  H      H   MMMMMMM           H        HMMMMMMM      R   H  H  H   HMMMMMMM      H   H H  M H H MMMMMMMMMMMMMFMMMH HH MH H HMMM TTMMFFFFMMMMMH HH M H H MMMM HMMMMMMMMMMM T H M  H HM  M HHHMMMMMMFMM HH  M H H MMMX MMHHHHHMMMMFHMMMFMHMMMMMMMM  MMMMMHHH MFHM HMMM  HHMMMMHMHHHMMHHMHMFH MHMMMMFFHM MMFHMHFHMHM  MMHMFHMMMMFFHMMMM F MHFMHHMHFMHFMHMMMMFFHMMFMMHMHMHMHMHHFMHFMHM  MFFHMM MHHHMHHHMHMHFHMMMHMMHMFFHMMMMMHMHM FHHHHFMMMMHMMHMFFHMMM HMHHHMHMHFHFHM MH MMMMMHMMMMFHMHMHMHMHMFMMMMMMMMFMMHHHMMMMMMMMMMMMMMM            HTH                                         
+ i18n("Dig Your Way Out");
+ i18n("No guards and you are still asking for help?\n"
+ "\n"
+ "Well, you can get it.\n"
+ "\n"
+ "Dig the bricks next to the bar. When you fall, quickly find a way back to the bar so that you can cross over into the niche. Of course you can only succeed if you know the way and do not hesitate. There is not much time to spare...");
+// L010
+//  XXXHXXXHXXXXXXHXXXXXXXHXXHXXHHHH   H      H       H  H  H  HHHHHH  MMMM   H    HHHH H   HHH    MERM    HHHHH  HH H  HH E   MMMM   HHHHHHH  H   HH    MMM MMMM H   H HH H  H HHHHHHMMMNMMM H HH H H HHHHH HH HHM MM MM  HH E HH H  HHHHHHHMXMMMF M  H  HHHH H    HHH  MMM MMMM  HHHH  HH  HHHHHHH MMMMMMMXHHH HHH  H  H    HHHHM MM MMH  HH  H H  H E  HHHMMMMMMMM H  H   HH HHHHHHHHH  MMFMMM  HHH   H  H HHHHH HFXMMMMM  E HHHHHH   HHH    HFMMXMMFX HH    HH   HHHH E HFM MMMMM H      HHH H HHHHH FMF MH M  H HHHHHHH H   HH MFMMM HM   H   H   H HHHHHHHHMMMMMMMMMHHH HHHHHH
+ i18n("An Unpleasant Cellmate");
+ i18n("Click to start the level and he will be trapped before he can do you any harm.");
+// L011
+//  H                      N    H    N               HHXHXH HMFMMFMHHHHHHHHHHHHHHHXEH XHHM E  M               XXXXXHHMMMMMM           N        HHHH      N HHHMMMMFMHHHX  XH      HXHXH   M   EMH HXEHXH      HXHXH   MMMMMMH HXXMXH      HXHXH           HHHNHH     HX HEX     N    R   H      NHXXXXX     XXXXXH      HMMMMMH     N   X HEXH      HM E MH     X XHXXHXXH      HMMMMMH     XHX  XHXHH      H HHHHH     XHX  XHXH       H     N     XHX  XHXH       HHHHHHX EXHX HEX XHXHHHHHHHH      XXXX XXXXX XFX       HHHHHHHHHHHHHHHHHHHHHHHHHHHHH                   NH       
+ i18n("Awaiting Enemies");
+ i18n("They will not do anything to you if you stay where you are. They just want to protect their gold.");
+// L012
+//  MMMMMMMMMMMMMMMMMMMMMMMMMMMH              MMMMMMH    MMHHH            MMMMMMHMMFM  HH                  MHMMFHMMHH HHHHHHHHXXXXE  XHMHMMFHHMHH         X HXXXXXHMHNMFMHMHH  E    XHX HXNHHHHMHMMMMH HXXXXXXXXXHX HXXFFFFMHMHNMHFMXXXXXX   HXMHHXFFFFMHMHMHHFMXXXXXXHXXXXHXHXFFFFMHMHFMHHMXX   XH    HXHXFFF MHMHFMMHHNNMRHXH  MEHXHXFFFFMHMHFMMMHHXXXXXXXXXXXXHXFFF MHMHFHHMHHXHHHHHHHH  XHXFFMMMHMHFHMMHHXHEEHEHXHXMXHX FMFMHMHHH MHHXHEEHEHXHXNXHXMFMMMHMMHHMMHHXXXXXXXXHXFXHXMFMMMHMMHMHMHHHHHHHHHHHX HHX     HMHHMHMH       HHHXXXXXMFMNNHMHMMHHH              XMMMMMMMMMMMMM
+ i18n("Too Many Guards");
+ i18n("This level is difficult, but definitely not impossible.\n"
+ "\n"
+ "Get rid of the first group of guards by leading them to the bottom. Here is how. Go to the lowest ladders and stay on the rightmost low ladder for an instant, then quickly go back left so that only one enemy is following you. Wait on the leftmost low ladder until he also reaches the lowest ladders, then quickly climb up and to the left. He will jump to the ground. Repeat this trick with all the guards at this location.\n"
+ "\n"
+ "The next guard should be easy to pass, but the ones after that...\n"
+ "\n"
+ "When you climb the ladder next to the concrete, the guard will start running to the leftmost ladder and back. Find the right moment to ride across on his head. Then the guard in the concrete pit can carry you over to the right if you walk carefully on his head.\n"
+ "\n"
+ "The last section involves some digging.\n"
+ "\n"
+ "First fall through the tunnel of false bricks on the left, not forgetting to take the gold as you pass by. Then climb up the long ladder. The third brick over to the right is a trap. Fall into it, then dig right and five times left as you fall. Continue on down. Dig the lower of two bricks that have spaces above them, climb up the rightmost ladders to the first brick you dug (hoping it has not closed by now), then head right and on up to the exit.");
+// L013
+//                             Z    N XR   N  X  E E       Z HHHHHHHHHHHHHHXHHHHHHH    Z HHXXHHHXHHHXHHHHHHXHHH    Z HHHNHHHHHHHHHHXHNHHHNH    Z HHXHHXHHNXHHHHHHHXHHHH    Z NHHHHHHXHHHHXHHHHHHNHH    Z HHHHHHHHHHHHHHHXHHHHHH    Z  ZZZZZZZZZZZZZZZ          Z ZZZZZZZZZZZZZZZZ  ZZZZ Z  Z ZZZZZZZZZZZZZZZZ  Z Z Z Z Z ZZZZZZZZZZZZZZZZ  ZZ Z Z  Z  ZZZZZZZZZZZZZZZ  ZZZ Z Z Z   ZZZZZZZZZZZZZZ  ZZZZ Z  Z  EZZZZZZZ EE EEZ  ZZZ ZZ  Z XZXEEZEZXZX ZEEZ XZZZZZ   Z XZEEZXXZEZ XZE EZXEEZX    Z XXXXXXXXXXXXXXXXXXXXXX    Z                          TZ                            
+ i18n("Caught In The Heights");
+ i18n("As soon as you move down they will chase you till you are dead. So you are advised to plan an exact route before you start your escape attempt.");
+// L014
+//  H                           HNNNNNNNN                   HHHHHHHHH                   XXXXXXXX  H                H        XH                 HX TT    XH           XNNNT HEM  H H X H          XXXX  HX   H H X  H     HHHHH   H HEM  H H X H    HH    H   H HX   H H XH        XH X   H HEM  H H XHMXFXXXXXX HX   H HX   H H  XH  XHHHXH HX   H HEM  H H   XXXXHXHXHXHX   H HX   H H   HHHHHXHHHXHX   H HEM  H H   H  X     XHX   H HX   H H   H  XXXXXXXH    H HEM  H H   H        XXXXXXXXXXN  H H   H       X        REM  H H   H        M HTTTTTXX   H H   H       XH      EX
+ i18n("Teamwork (1) - The Liberation");
+ i18n("You need the first enemy to help you break out.\n"
+ "\n"
+ "The gold on the left just needs a bit of timing.\n"
+ "\n"
+ "As you go up and over to the right, make sure your team mate does not fall into the concrete pit. To collect the three gold pieces on the right, try to keep him on the left hand ladder, so that you can jump over his head to the gold.\n"
+ "\n"
+ "When you go up and left, there is a ladder standing on a concrete column. Walk over your friend's head to reach it and stay above him. The first brick to the left of you is a trap. Walk on his head so that he falls into the trap and not you. But then you must liberate him again if you want to reach the highest ladders.\n"
+ "\n"
+ "Better be nice to your team mate: you will probably have to get along with him for the next couple of levels...");
+// L015
+//  ZXE                         ZXXXXXXXXXXXXXXXXXX         Z       NNNNNNNNNNN XXXXXXXHZZZZZZH XXXXXXXXXXX      MXH      H NNNNNNNNNNN      MXH      H XXXXXXXXXXX      MXH      H NNNNNNNNNNN      MXH      H XXXXXXXXXXX      MXH      H N                MXH      H MN               MXH      H NM               MXH      H MN               MXH      H NM               MXH      H MN               MXH      H MM               MXH      H M                MXH      H                  MXH      H                  MXH      H                  MXH      H                  MRH
+ i18n("Teamwork (2) - Diving Platforms");
+ i18n("Start running immediately or you are doomed!");
+// L016
+//  R EX Z    H         H       X X       H   H HH        H       Z Z H           H H     N  T      H  HHHH  H        X  ZZ   H H        H    H           H H  H   H        N     TZ  H H          HHH  X         H    HN      H HH        Z   HHHHHH     H  HH   N  ZZZ   Z    HHHHHH   HH   MN    T  ZZ       HH   NH   NM  Z    ZZZ     N     H    M    ZZ  ZZZZZZZZHZHHH               ZZZZZZZZZZZZZH   N          ZZZZZZZZZZZZZZHH X          ZZZZZZZZZZZZZZHH   NNNNNNNTNNNNNNTNNNNNNNNHH TTTTTTTTTTTTTTTTTTTTTTTTTTH                                                         
+ i18n("Teamwork (3) - The Final Escape");
+ i18n("This is the last level where you are working with your friend. I think he has helped you enough to deserve being liberated.\n"
+ "\n"
+ "Sorry, I cannot help you further. There is nothing more to the level than sleight of hand.");

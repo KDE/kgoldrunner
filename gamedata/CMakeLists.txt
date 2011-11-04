@@ -7,6 +7,7 @@
 install( FILES game_CM.txt
                game_cnt.txt
                game_ende.txt
+               game_GMEP.txt
                game_GMGR.txt
                game_kgr.txt
                game_lars.txt
