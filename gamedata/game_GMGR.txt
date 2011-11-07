@@ -30,9 +30,9 @@
  i18n("A Hectic Enemy");
  i18n("You do not have to be quick. You just have to know how to avoid the enemy.\n"
  "\n"
- "By jumping down to the lower level you can make your enemy run up and down on one ladder as you fall. As soon as you reach the lower level the enemy will follow you, but you will have time to collect some gold.\n"
+ "By jumping down to the lower level you can make your enemy run up and down on one ladder as you fall. As soon as you reach the lower level the enemy will follow, but you will have time to collect some gold or get past him and move over to another section.\n"
  "\n"
- "Two important notes: do not let the enemy fall onto the middle row of ladders and collect the gold down there last of all.");
+ "Two important notes: do not let the enemy fall onto the middle row of ladders and leave the gold down there till last.");
 // L006
 //  R                              Z EEEEEEEE         T     H   XZZZZZZZZXZ ZZZ ZT ZTZT  H  XXXXXXXXXXZ Z  Z       Z  H   ZZ Z   ZZ Z T    ZTZTZ Z HH   Z ZZZ  ZZ     ZT     Z   H          Z  EEE  Z  T  Z   H  T      H       ZTT    Z   HH T  TTH HXZZZX    Z    Z    Z TH Z  ZXXXXX TZTZ   Z Z    ZZHZ  ZH   T Z       Z Z          Z H H   Z      Z  ZZ   ZZ   Z  H  H  Z    ZZ    ZZZ  Z Z      H Z    ZZ           Z       HH     Z            ZZ        H    Z            ZZZZZ      H  ZZ              ZZZZZZZZ  H                    ZZ  ZZZZNEEEEEEEEEEEEEEEEEEEEEEEEEEEZ
  i18n("Don't Wake Them Up");
@@ -46,7 +46,7 @@
  i18n("On The Brink");
  i18n("To wait or not to wait? Well, just try...\n"
  "\n"
- "You will have to dig yourself an escape route before collecting the gold inside the structure at the bottom right.");
+ "Before entering any of the structures on the right, make sure you have an escape route.");
 // L008
 //  Z       EXXEEEXXE          ZZ       EXXEEEXXE          ZZ        XXEEEXX           ZZ        XXEEEXX           ZZ        XX   XX           ZZ        XX   XX           ZZ        MM RHMM           ZZ        MMHHNMM           ZZ        MMNNHMM           ZZ        MMNHNMM           ZZ        MMHNHMM           ZZ        MMNHNMM           ZZ        MMNHNMM           ZZ        MMNNHMM           ZZ        MMHHHMM           ZZ        MMNNNMM           ZZ        MMHHNMM           ZZ        MMHNHMM           ZZ        MHNHNHM           ZZ         HNNNH            Z
  i18n("Dropping Enemies");
@@ -118,7 +118,7 @@
 // L018
 //  EX                        X  XMMMMMMMMMMHHHHHMMMMXXXMMXR XMMMMMNMNMMHMMMMMMMM  M  X  XMMMMMMMMMMHM   XXMM MHMHX  XMNMNMMNMNMHM     MM  MMHX  XMMMFMMMMMMHM     MM MMMHX  XN         HMM  XXMM NMMHX  XMXMFMMFMMMHMNMHXNMM  MMHXE XMMMMMMMMMMHMNMHXNMM  MMHX  XMMFXMMMMMMHMM HXNMM  NMHX  X        XXHMZZZZMMM  NMHX  X N   ZZ XXHMMMMMMFM  MMHX  XFMHXXMM XXH   NMMMM  XXHX  XMMHNMMMXXXHMFFMM   HXXXHX  XMMHMMMMXHHHXXXXX   HHHHHX  XMMHMMMMXH               X  XM HMM   H               X  XXHXXXXXXXXXXXXXXXXXXXXXXX  TTHTTTTTTTHTTTTTTTTTTTTTTT    H       H                
  i18n("Get In And Up");
- i18n("Fall and then move left to the first ladder. Go down and wait for the enemy on the left to run towards you. When he has nearly reached you, run up, go left and then enter the building. Take the two pieces of gold and dig yourself through.");
+ i18n("After you reach the first ladder, go down and wait for the enemies to run towards you. When they are nearly upon you, run up, go left and enter the building. Take the two pieces of gold and dig yourself through.");
 // L019
 //   M        EE             RMH M                        MH MZZZZZZZZZZZZZZZZZZZZZNZZMH MFFMMMMMMMMMMMMMMMMMMMXMMMH                          XHHXXMH       M MHM MHM MZZZXHHXXXH       M MHM MHM M MM HHXXXXXXXXXXXMXXXMXXXMXXXXXXHHXXXXXXXXXXXXXXXXXXXXXXXXXXHHHHMHMHMHHHHHHHHHHHHHHHHHHXHM FHHHMHMHMHM MHM M M F MHXHHMHMHMHHHMHHHMHMHFHMHMHMHHXHFHMHM MHFHMHFHMHMHMHMHMHMHXHHMHMHMHHHFHHHMHMHMHHHMHFHHXHFHHHHHMHMHMHMHMHHHFHM FHMHXHHMHFHFHHHMHHHM FHFHHHMHHHHXHHHM MHHHM MHM MHM MHMHMHMHXHMHHMHMHMHM MHMHMHMHMHHHHHHXH MMMMMMMMMMMMFMMMMMMMMMMMMXH                           H
  i18n("No Way Out");

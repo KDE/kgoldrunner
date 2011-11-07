@@ -68,19 +68,15 @@
  i18n("Awaiting Enemies");
  i18n("They will not do anything to you if you stay where you are. They just want to protect their gold.");
 // L012
-//  MMMMMMMMMMMMMMMMMMMMMMMMMMMH              MMMMMMH    MMHHH            MMMMMMHMMFM  HH                  MHMMFHMMHH HHHHHHHHXXXXE  XHMHMMFHHMHH         X HXXXXXHMHNMFMHMHH  E    XHX HXNHHHHMHMMMMH HXXXXXXXXXHX HXXFFFFMHMHNMHFMXXXXXX   HXMHHXFFFFMHMHMHHFMXXXXXXHXXXXHXHXFFFFMHMHFMHHMXX   XH    HXHXFFF MHMHFMMHHNNMRHXH  MEHXHXFFFFMHMHFMMMHHXXXXXXXXXXXXHXFFF MHMHFHHMHHXHHHHHHHH  XHXFFMMMHMHFHMMHHXHEEHEHXHXMXHX FMFMHMHHH MHHXHEEHEHXHXNXHXMFMMMHMMHHMMHHXXXXXXXXHXFXHXMFMMMHMMHMHMHHHHHHHHHHHX HHX     HMHHMHMH       HHHXXXXXMFMNNHMHMMHHH              XMMMMMMMMMMMMM
+//  MMMMMMMMMMMMMMMMMMMMMMMMMMMH              MMMMMMH    MMHHH            MMMMMMHMMFM  HH                  MHMMFHMMHH HHHHHHHHXXXXMFMMHMHMMFHHMHH         X HXXMFXHMHNMFMHMHH  E    XHX HXNHHHHMHMMMMH HXXXXXXXXXHX HXXFFFFMHMHNMHFMXXXXXX   HXMHHXFFFFMHMHMHHFMXXXXXXHXXXXHXHXFFFFMHMHFMHHMXX   XH    HXHXFFFEMHMHFMMHHNNMRHXH  MEHXHXFFFFMHMHFMMMHHXXXXXXXXXXXXHXFFF MHMHFHHMHHXHHHHHHHH  XHXFFMMMHMHFHMMHHXHEEHEHXHXMXHX FMFMHMHHH MHHXHEEHEHXHXNXHXMFMMMHMMHHMMHHXXXXXXXXHXFXHXMFMMMHMMHMHMHHHHHHHHHHHX HHX     HMHHMHMH       HHHXXXXXMFMNNHMHMMHHH              XMMMMMMMMMMMMM
  i18n("Too Many Guards");
  i18n("This level is difficult, but definitely not impossible.\n"
  "\n"
  "Get rid of the first group of guards by leading them to the bottom. Here is how. Go to the lowest ladders and stay on the rightmost low ladder for an instant, then quickly go back left so that only one enemy is following you. Wait on the leftmost low ladder until he also reaches the lowest ladders, then quickly climb up and to the left. He will jump to the ground. Repeat this trick with all the guards at this location.\n"
  "\n"
- "The next guard should be easy to pass, but the ones after that...\n"
+ "The next guard should be easy to pass, but after that you will have some work to do... When you climb the ladder next to the concrete, the guard will start running to the leftmost ladder and back. You must find the right moment to ride across on his head.\n"
  "\n"
- "When you climb the ladder next to the concrete, the guard will start running to the leftmost ladder and back. Find the right moment to ride across on his head. Then the guard in the concrete pit can carry you over to the right if you walk carefully on his head.\n"
- "\n"
- "The last section involves some digging.\n"
- "\n"
- "First fall through the tunnel of false bricks on the left, not forgetting to take the gold as you pass by. Then climb up the long ladder. The third brick over to the right is a trap. Fall into it, then dig right and five times left as you fall. Continue on down. Dig the lower of two bricks that have spaces above them, climb up the rightmost ladders to the first brick you dug (hoping it has not closed by now), then head right and on up to the exit.");
+ "The last section involves some digging. First fall through the tunnel of false bricks on the left, not forgetting to take the gold as you pass by. Then climb up the long ladder. The third brick over to the right is a trap. Fall into it, then dig right and five times left as you fall. Continue on down. Dig the lower of two bricks that have spaces above them, climb up the rightmost ladders to the first brick you dug (hoping it has not closed by now), then head right and on up to the exit.");
 // L013
 //                             Z    N XR   N  X  E E       Z HHHHHHHHHHHHHHXHHHHHHH    Z HHXXHHHXHHHXHHHHHHXHHH    Z HHHNHHHHHHHHHHXHNHHHNH    Z HHXHHXHHNXHHHHHHHXHHHH    Z NHHHHHHXHHHHXHHHHHHNHH    Z HHHHHHHHHHHHHHHXHHHHHH    Z  ZZZZZZZZZZZZZZZ          Z ZZZZZZZZZZZZZZZZ  ZZZZ Z  Z ZZZZZZZZZZZZZZZZ  Z Z Z Z Z ZZZZZZZZZZZZZZZZ  ZZ Z Z  Z  ZZZZZZZZZZZZZZZ  ZZZ Z Z Z   ZZZZZZZZZZZZZZ  ZZZZ Z  Z  EZZZZZZZ EE EEZ  ZZZ ZZ  Z XZXEEZEZXZX ZEEZ XZZZZZ   Z XZEEZXXZEZ XZE EZXEEZX    Z XXXXXXXXXXXXXXXXXXXXXX    Z                          TZ                            
  i18n("Caught In The Heights");
