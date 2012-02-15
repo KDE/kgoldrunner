@@ -23,7 +23,7 @@
 #include <QVector>
 #include <QTime>
 
-#include "TagaroAudio/sound.h"
+#include <kgsound.h>
 
 class KGrSounds : public QObject
 {
@@ -90,10 +90,10 @@ public:
     void setVolume (int effect, qreal volume);
 
 private:
-    QVector<Tagaro::Sound *> sounds;
-    QVector<int>             startTime;	// Start times of timed sounds, else 0.
-    bool                     muted;
-    QTime                    t;
+    QVector<KgSound *> sounds;
+    QVector<int>       startTime;	// Start times of timed sounds, else 0.
+    bool               muted;
+    QTime              t;
 };
 
 #endif // KGRSOUNDS_H

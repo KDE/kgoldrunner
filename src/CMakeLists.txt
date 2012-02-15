@@ -17,33 +17,13 @@ set(kgoldrunner_SRCS
    kgreditor.cpp
    main.cpp 
    kgrselector.cpp
+   kgrsounds.cpp 
    kgrdialog.cpp )
-
-if(KGOLDRUNNER_OPENAL)
-    set(kgoldrunner_SRCS
-        ${kgoldrunner_SRCS}
-        kgrsounds.cpp 
-        TagaroAudio/audioscene.cpp
-        TagaroAudio/sound.cpp )
-else(KGOLDRUNNER_OPENAL)
-#    KGoldrunner sound is supported only with OpenAL, else silent (2011-05-09).
-#    set(kgoldrunner_SRCS
-#        ${kgoldrunner_SRCS}
-#        kgrsoundbank.cpp )
-endif(KGOLDRUNNER_OPENAL)
 
 kde4_add_app_icon(kgoldrunner_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-app-kgoldrunner.png")
 kde4_add_executable(kgoldrunner ${kgoldrunner_SRCS})
 
-if(KGOLDRUNNER_OPENAL)
-    target_link_libraries(kgoldrunner ${KDE4_KDEUI_LIBS} kdegames
-                                      ${OPENAL_LIBRARY} ${SNDFILE_LIBRARIES} )
-else(KGOLDRUNNER_OPENAL)
-#    KGoldrunner sound is supported only with OpenAL, else silent (2011-05-09).
-#    target_link_libraries(kgoldrunner ${KDE4_KDEUI_LIBS} kdegames
-#                                      ${KDE4_PHONON_LIBS})
-    target_link_libraries(kgoldrunner ${KDE4_KDEUI_LIBS} kdegames)
-endif(KGOLDRUNNER_OPENAL)
+target_link_libraries(kgoldrunner ${KDE4_KDEUI_LIBS} kdegames )
 
 install(TARGETS kgoldrunner  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 

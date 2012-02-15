@@ -34,13 +34,7 @@
 class KGrCanvas;
 class KDialog;
 
-#ifdef ENABLE_SOUND_SUPPORT
-    #ifdef KGOLDRUNNER_USE_OPENAL
-    class KGrSounds;
-    #else
-    class KGrSoundBank;
-    #endif
-#endif
+class KGrSounds;
 
 class KGrEditor;
 class KGrLevelPlayer;
@@ -229,15 +223,7 @@ private:
 /******************************************************************************/
 /*******************************  SOUND SUPPORT *******************************/
 /******************************************************************************/
-#ifdef ENABLE_SOUND_SUPPORT
-    #ifdef KGOLDRUNNER_USE_OPENAL
     KGrSounds * effects;
-    #else
-    KGrSoundBank * effects;
-    #endif
-#else
-    int * effects;		// Dummy, for compilation with no sound-support.
-#endif
     QVector<int> fx;
     bool soundOn;
     bool stepsOn;

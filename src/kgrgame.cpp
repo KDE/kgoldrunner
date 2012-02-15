@@ -24,13 +24,7 @@
 #include "kgrcanvas.h"
 #include "kgrselector.h"
 
-#ifdef ENABLE_SOUND_SUPPORT
-    #ifdef KGOLDRUNNER_USE_OPENAL
-    #include "kgrsounds.h"
-    #else
-    #include "kgrsoundbank.h"
-    #endif
-#endif
+#include "kgrsounds.h"
 
 #include "kgreditor.h"
 #include "kgrlevelplayer.h"
@@ -51,6 +45,9 @@
 #include <KStandardDirs>
 #include <KApplication>
 #include <KDebug>
+#include <kgaudioscene.h>
+
+#define HAS_SOUNDS (KgAudioScene::capabilities() & KgAudioScene::SupportsLowLatencyPlayback)
 
 // TODO - Can we change over to KScoreDialog?
 
@@ -417,14 +414,15 @@ void KGrGame::setInitialTheme (const QString & themeFilepath)
 
 void KGrGame::initGame()
 {
-#ifndef ENABLE_SOUND_SUPPORT
-    KGrMessage::information (view, i18n ("No Sound"),
-        i18n ("Warning: This copy of KGoldrunner has no sound.\n"
-              "\n"
-              "This is because no development versions of the OpenAL and "
-              "SndFile libraries were present when it was compiled and built."),
-              "WarningNoSound");
-#endif
+    if (!HAS_SOUNDS)
+    {
+        KGrMessage::information (view, i18n ("No Sound"),
+            i18n ("Warning: This copy of KGoldrunner has no sound.\n"
+                  "\n"
+                  "This is because no development versions of the OpenAL and "
+                  "SndFile libraries were present when it was compiled and built."),
+                  "WarningNoSound");
+    }
     kDebug() << "Entered, draw the initial graphics now ...";
 
     // Get the most recent collection and level that was played by this user.
@@ -469,20 +467,21 @@ void KGrGame::initGame()
                                                       "champion_speed"), true);
     timeScale = gameGroup.readEntry ("ActualSpeed", 10);
 
-#ifdef ENABLE_SOUND_SUPPORT
-    // Set up sounds, if required in config.
-    soundOn = gameGroup.readEntry ("Sound", false);
-    kDebug() << "Sound" << soundOn;
-    if (soundOn) {
-        loadSounds();
-        effects->setMuted (false);
-    }
-    emit setToggle ("options_sounds", soundOn);
+    if (HAS_SOUNDS)
+    {
+        // Set up sounds, if required in config.
+        soundOn = gameGroup.readEntry ("Sound", false);
+        kDebug() << "Sound" << soundOn;
+        if (soundOn) {
+            loadSounds();
+            effects->setMuted (false);
+        }
+        emit setToggle ("options_sounds", soundOn);
 
-    stepsOn = gameGroup.readEntry ("StepSounds", false);
-    kDebug() << "StepSounds" << stepsOn;
-    emit setToggle ("options_steps", stepsOn);
-#endif
+        stepsOn = gameGroup.readEntry ("StepSounds", false);
+        kDebug() << "StepSounds" << stepsOn;
+        emit setToggle ("options_steps", stepsOn);
+    }
 
     dbk1 << "Owner" << gameList.at (gameIndex)->owner
              << gameList.at (gameIndex)->name << level;
@@ -900,37 +899,36 @@ void KGrGame::incScore (const int n)
 
 void KGrGame::playSound (const int n, const bool onOff)
 {
-#ifdef ENABLE_SOUND_SUPPORT
-    if (! effects) {
-        return;			// Sound is off and not yet loaded.
-    }
-    static int fallToken = -1;
-    if (onOff) {
-	int token = -1;
-        if (stepsOn || ((n != StepSound) && (n != ClimbSound))) {
-            token = effects->play (fx [n]);
+    if (HAS_SOUNDS)
+    {
+        if (! effects) {
+            return;            // Sound is off and not yet loaded.
         }
-        if (n == FallSound) {
-            fallToken = token;
+        static int fallToken = -1;
+        if (onOff) {
+        int token = -1;
+            if (stepsOn || ((n != StepSound) && (n != ClimbSound))) {
+                token = effects->play (fx [n]);
+            }
+            if (n == FallSound) {
+                fallToken = token;
+            }
+        }
+        // Only the falling sound can get individually turned off.
+        else if ((n == FallSound) && (fallToken >= 0)) {
+        effects->stop (fallToken);
+        fallToken = -1;
         }
     }
-    // Only the falling sound can get individually turned off.
-    else if ((n == FallSound) && (fallToken >= 0)) {
-	effects->stop (fallToken);
-	fallToken = -1;
-    }
-#endif
 }
 
 void KGrGame::endLevel (const int result)
 {
     dbk << "Return to KGrGame, result:" << result;
 
-#ifdef ENABLE_SOUND_SUPPORT
-    if (effects) {			// If sounds have been loaded, cut off
+    if (HAS_SOUNDS && effects) {	// If sounds have been loaded, cut off
         effects->stopAllSounds();	// all sounds that are in progress.
     }
-#endif
 
     if (! levelPlayer) {
         return;			// Not playing a level.
@@ -1159,14 +1157,12 @@ void KGrGame::toggleSoundsOnOff (const int action)
     else {
         stepsOn = soundOnOff;
     }
-#ifdef ENABLE_SOUND_SUPPORT
-    if (action == PLAY_SOUNDS) {
+    if (HAS_SOUNDS && action == PLAY_SOUNDS) {
         if (soundOn && (effects == 0)) {
             loadSounds();	// Sounds were not loaded when the game started.
         }
         effects->setMuted (! soundOn);
     }
-#endif
 }
 
 void KGrGame::freeze (const bool userAction, const bool on_off)
@@ -1175,11 +1171,9 @@ void KGrGame::freeze (const bool userAction, const bool on_off)
     kDebug() << "PAUSE:" << type << on_off;
     kDebug() << "gameFrozen" << gameFrozen << "programFreeze" << programFreeze;
 
-#ifdef ENABLE_SOUND_SUPPORT
-    if (on_off && effects) {		// If pausing and sounds are loaded, cut
+    if (HAS_SOUNDS && on_off && effects) {		// If pausing and sounds are loaded, cut
         effects->stopAllSounds();	// off all sounds that are in progress.
     }
-#endif
 
     if (! userAction) {
         // The program needs to freeze the game during a message, dialog, etc.
@@ -2152,47 +2146,43 @@ bool KGrGame::loadRecording (const QString & dir, const QString & prefix,
 
 void KGrGame::loadSounds()
 {
-#ifdef ENABLE_SOUND_SUPPORT
-    const qreal volumes [NumSounds] = {0.6, 0.3, 0.3, 0.6, 0.6, 1.8, 1.0, 1.0, 1.0, 1.0};
-    #ifdef KGOLDRUNNER_USE_OPENAL
-    effects = new KGrSounds();
-    #else
-    effects = new KGrSoundBank (8);
-    #endif
-    effects->setParent (this);		// Delete at end of KGrGame.
+    if (HAS_SOUNDS)
+    {
+        const qreal volumes [NumSounds] = {0.6, 0.3, 0.3, 0.6, 0.6, 1.8, 1.0, 1.0, 1.0, 1.0};
+        effects = new KGrSounds();
+        effects->setParent (this);        // Delete at end of KGrGame.
 
-    fx[GoldSound]      = effects->loadSound (KStandardDirs::locate ("appdata",
-                         "themes/default/gold.wav"));
-    fx[StepSound]      = effects->loadSound (KStandardDirs::locate ("appdata",
-                         "themes/default/step.wav"));
-    fx[ClimbSound]     = effects->loadSound (KStandardDirs::locate ("appdata",
-                         "themes/default/climb.wav"));
-    fx[FallSound]      = effects->loadSound (KStandardDirs::locate ("appdata",
-                         "themes/default/falling.wav"));
-    fx[DigSound]       = effects->loadSound (KStandardDirs::locate ("appdata",
-                         "themes/default/dig.wav"));
-    fx[LadderSound]    = effects->loadSound (KStandardDirs::locate ("appdata",
-                         "themes/default/ladder.wav"));
-    fx[CompletedSound] = effects->loadSound (KStandardDirs::locate ("appdata",
-                         "themes/default/completed.wav"));
-    fx[DeathSound]     = effects->loadSound (KStandardDirs::locate ("appdata",
-                         "themes/default/death.wav"));
-    fx[GameOverSound]  = effects->loadSound (KStandardDirs::locate ("appdata",
-                         "themes/default/gameover.wav"));
-    fx[VictorySound]   = effects->loadSound (KStandardDirs::locate ("appdata",
-                         "themes/default/victory.wav"));
-    #ifdef KGOLDRUNNER_USE_OPENAL
-    // Gold and dig sounds are timed and are allowed to play for at least one
-    // second, so that rapid sequences of those sounds are heard as overlapping.
-    effects->setTimedSound (fx[GoldSound]);
-    effects->setTimedSound (fx[DigSound]);
+        fx[GoldSound]      = effects->loadSound (KStandardDirs::locate ("appdata",
+                             "themes/default/gold.wav"));
+        fx[StepSound]      = effects->loadSound (KStandardDirs::locate ("appdata",
+                             "themes/default/step.wav"));
+        fx[ClimbSound]     = effects->loadSound (KStandardDirs::locate ("appdata",
+                             "themes/default/climb.wav"));
+        fx[FallSound]      = effects->loadSound (KStandardDirs::locate ("appdata",
+                             "themes/default/falling.wav"));
+        fx[DigSound]       = effects->loadSound (KStandardDirs::locate ("appdata",
+                             "themes/default/dig.wav"));
+        fx[LadderSound]    = effects->loadSound (KStandardDirs::locate ("appdata",
+                             "themes/default/ladder.wav"));
+        fx[CompletedSound] = effects->loadSound (KStandardDirs::locate ("appdata",
+                             "themes/default/completed.wav"));
+        fx[DeathSound]     = effects->loadSound (KStandardDirs::locate ("appdata",
+                             "themes/default/death.wav"));
+        fx[GameOverSound]  = effects->loadSound (KStandardDirs::locate ("appdata",
+                             "themes/default/gameover.wav"));
+        fx[VictorySound]   = effects->loadSound (KStandardDirs::locate ("appdata",
+                             "themes/default/victory.wav"));
 
-    // Adjust the relative volumes of sounds to improve the overall balance.
-    for (int i = 0; i < NumSounds; i++) {
-        effects->setVolume (fx [i], volumes [i]);
+        // Gold and dig sounds are timed and are allowed to play for at least one
+        // second, so that rapid sequences of those sounds are heard as overlapping.
+        effects->setTimedSound (fx[GoldSound]);
+        effects->setTimedSound (fx[DigSound]);
+
+        // Adjust the relative volumes of sounds to improve the overall balance.
+        for (int i = 0; i < NumSounds; i++) {
+            effects->setVolume (fx [i], volumes [i]);
+        }
     }
-    #endif
-#endif
 }
 
 /******************************************************************************/

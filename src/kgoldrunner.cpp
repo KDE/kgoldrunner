@@ -49,6 +49,7 @@
 #include <KMenu>
 #include <KCmdLineArgs>
 #include <KAboutData>
+#include <kgaudioscene.h>
 
 #include "kgrcanvas.h"
 #include "kgrgame.h"
@@ -378,7 +379,8 @@ void KGoldrunner::setupActions()
                         (this, SLOT (viewFullScreen(bool)), this, this);
     actionCollection()->addAction (fullScreen->objectName(), fullScreen);
 
-#ifdef ENABLE_SOUND_SUPPORT
+    if (KgAudioScene::capabilities() & KgAudioScene::SupportsLowLatencyPlayback)
+    {
     // Sound effects on/off
                                   settingAction ("options_sounds", PLAY_SOUNDS,
                                   i18n ("&Play Sounds"),
@@ -389,7 +391,7 @@ void KGoldrunner::setupActions()
                                   i18n ("Play &Footstep Sounds"),
                                   i18n ("Make sounds of player's footsteps."),
                                   i18n ("Make sounds of player's footsteps."));
-#endif
+    }
 
     // Demo at start on/off.
                                   settingAction ("options_demo", STARTUP_DEMO,
