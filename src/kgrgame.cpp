@@ -92,6 +92,7 @@ KGrGame::KGrGame (KGrCanvas * theView,
         userDataDir   (theUserDir),
         level         (0),
         mainDemoName  ("demo"),
+        // mainDemoName  ("CM"), // IDW test.
         demoType      (DEMO),
         startupDemo   (false),
         programFreeze (false),
@@ -111,6 +112,7 @@ KGrGame::KGrGame (KGrCanvas * theView,
     // Initialise random number generator.
     randomGen = new KRandomSequence (time (0));
     kDebug() << "RANDOM NUMBER GENERATOR INITIALISED";
+    kDebug() << "SOUND CAPABILITIES" << (int) KgAudioScene::capabilities() << "HAS_SOUNDS" << /* KgAudioScene::capabilities.testFlag(KgAudioScene::SupportsLowLatencyPlayback) << */ HAS_SOUNDS;
 }
 
 KGrGame::~KGrGame()
@@ -1224,8 +1226,21 @@ void KGrGame::showHint()
     // Put out a hint for this level.
     QString caption = i18n ("Hint");
 
-    if (levelHint.length() > 0)
-        myMessage (view, caption, levelHint);
+    if (levelHint.length() > 0) {
+	freeze (ProgramPause, true);
+	// TODO - IDW. Check if a solution exists BEFORE showing the extra button.
+	switch (KGrMessage::warning (view, caption, levelHint,
+			    i18n ("&OK"), i18n ("&Show A Solution"))) {
+	case 0:
+	    freeze (ProgramPause, false);	// No replay requested.
+	    break;
+	case 1:
+	    freeze (ProgramPause, false);	// Replay a solution.
+	    // This deletes current KGrLevelPlayer and play, but no life is lost.
+            runReplay (SOLVE, gameIndex, level);
+	    break;
+	}
+    }
     else
         myMessage (view, caption,
                         i18n ("Sorry, there is no hint for this level."));
