@@ -15,13 +15,9 @@ install( FILES README
 
 install( FILES 
 	default/set.svg default/actors.svg
-#	Files in .ogg format are temporarily replaced by files in .wav format.
-#	default/gold.ogg default/falling.ogg default/step.wav default/climb.wav
-#	default/dig.ogg default/ladder.ogg default/completed.ogg
-#	default/death.ogg default/gameover.ogg default/victory.ogg
-	default/gold.wav default/falling.wav default/step.wav default/climb.wav
-	default/dig.wav default/ladder.wav default/completed.wav
-	default/death.wav default/gameover.wav default/victory.wav
+ 	default/gold.ogg default/falling.ogg default/step.wav default/climb.wav
+ 	default/dig.ogg default/ladder.ogg default/completed.ogg
+ 	default/death.ogg default/gameover.ogg default/victory.ogg
 	DESTINATION 
 	${DATA_INSTALL_DIR}/kgoldrunner/themes/default )
 

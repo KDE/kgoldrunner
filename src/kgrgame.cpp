@@ -2168,25 +2168,25 @@ void KGrGame::loadSounds()
         effects->setParent (this);        // Delete at end of KGrGame.
 
         fx[GoldSound]      = effects->loadSound (KStandardDirs::locate ("appdata",
-                             "themes/default/gold.wav"));
+                             "themes/default/gold.ogg"));
         fx[StepSound]      = effects->loadSound (KStandardDirs::locate ("appdata",
                              "themes/default/step.wav"));
         fx[ClimbSound]     = effects->loadSound (KStandardDirs::locate ("appdata",
                              "themes/default/climb.wav"));
         fx[FallSound]      = effects->loadSound (KStandardDirs::locate ("appdata",
-                             "themes/default/falling.wav"));
+                             "themes/default/falling.ogg"));
         fx[DigSound]       = effects->loadSound (KStandardDirs::locate ("appdata",
-                             "themes/default/dig.wav"));
+                             "themes/default/dig.ogg"));
         fx[LadderSound]    = effects->loadSound (KStandardDirs::locate ("appdata",
-                             "themes/default/ladder.wav"));
+                             "themes/default/ladder.ogg"));
         fx[CompletedSound] = effects->loadSound (KStandardDirs::locate ("appdata",
-                             "themes/default/completed.wav"));
+                             "themes/default/completed.ogg"));
         fx[DeathSound]     = effects->loadSound (KStandardDirs::locate ("appdata",
-                             "themes/default/death.wav"));
+                             "themes/default/death.ogg"));
         fx[GameOverSound]  = effects->loadSound (KStandardDirs::locate ("appdata",
-                             "themes/default/gameover.wav"));
+                             "themes/default/gameover.ogg"));
         fx[VictorySound]   = effects->loadSound (KStandardDirs::locate ("appdata",
-                             "themes/default/victory.wav"));
+                             "themes/default/victory.ogg"));
 
         // Gold and dig sounds are timed and are allowed to play for at least one
         // second, so that rapid sequences of those sounds are heard as overlapping.
