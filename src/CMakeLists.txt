@@ -1,6 +1,11 @@
 
 ########### next target ###############
 
+if (OPENAL_FOUND AND SNDFILE_FOUND AND SNDFILE_WORKS)
+   # Compile and link KgSound and KGrSound. Can load and play .ogg with OpenAL.
+   ADD_DEFINITIONS(-DOPENAL_AND_OGG_SOUNDS)
+endif (OPENAL_FOUND AND SNDFILE_FOUND AND SNDFILE_WORKS)
+
 set(kgoldrunner_SRCS 
    kgrplayfield.cpp 
    kgrsprite.cpp 

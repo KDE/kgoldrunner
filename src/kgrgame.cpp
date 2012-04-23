@@ -24,7 +24,11 @@
 #include "kgrcanvas.h"
 #include "kgrselector.h"
 
-#include "kgrsounds.h"
+// KGoldrunner loads and plays .ogg files and requires OpenAL + SndFile > v0.21.
+// Fallback to Phonon by the KgSound library does not give good results.
+#ifdef OPENAL_AND_OGG_SOUNDS
+    #include "kgrsounds.h"
+#endif
 
 #include "kgreditor.h"
 #include "kgrlevelplayer.h"
@@ -45,9 +49,6 @@
 #include <KStandardDirs>
 #include <KApplication>
 #include <KDebug>
-#include <kgaudioscene.h>
-
-#define HAS_SOUNDS (KgAudioScene::capabilities() & KgAudioScene::SupportsLowLatencyPlayback)
 
 // TODO - Can we change over to KScoreDialog?
 
@@ -112,7 +113,6 @@ KGrGame::KGrGame (KGrCanvas * theView,
     // Initialise random number generator.
     randomGen = new KRandomSequence (time (0));
     kDebug() << "RANDOM NUMBER GENERATOR INITIALISED";
-    kDebug() << "SOUND CAPABILITIES" << (int) KgAudioScene::capabilities() << "HAS_SOUNDS" << /* KgAudioScene::capabilities.testFlag(KgAudioScene::SupportsLowLatencyPlayback) << */ HAS_SOUNDS;
 }
 
 KGrGame::~KGrGame()
@@ -416,15 +416,14 @@ void KGrGame::setInitialTheme (const QString & themeFilepath)
 
 void KGrGame::initGame()
 {
-    if (!HAS_SOUNDS)
-    {
+#ifndef OPENAL_AND_OGG_SOUNDS
         KGrMessage::information (view, i18n ("No Sound"),
             i18n ("Warning: This copy of KGoldrunner has no sound.\n"
                   "\n"
                   "This is because no development versions of the OpenAL and "
                   "SndFile libraries were present when it was compiled and built."),
                   "WarningNoSound");
-    }
+#endif
     kDebug() << "Entered, draw the initial graphics now ...";
 
     // Get the most recent collection and level that was played by this user.
@@ -469,8 +468,7 @@ void KGrGame::initGame()
                                                       "champion_speed"), true);
     timeScale = gameGroup.readEntry ("ActualSpeed", 10);
 
-    if (HAS_SOUNDS)
-    {
+#ifdef OPENAL_AND_OGG_SOUNDS
         // Set up sounds, if required in config.
         soundOn = gameGroup.readEntry ("Sound", false);
         kDebug() << "Sound" << soundOn;
@@ -483,7 +481,7 @@ void KGrGame::initGame()
         stepsOn = gameGroup.readEntry ("StepSounds", false);
         kDebug() << "StepSounds" << stepsOn;
         emit setToggle ("options_steps", stepsOn);
-    }
+#endif
 
     dbk1 << "Owner" << gameList.at (gameIndex)->owner
              << gameList.at (gameIndex)->name << level;
@@ -901,8 +899,7 @@ void KGrGame::incScore (const int n)
 
 void KGrGame::playSound (const int n, const bool onOff)
 {
-    if (HAS_SOUNDS)
-    {
+#ifdef OPENAL_AND_OGG_SOUNDS
         if (! effects) {
             return;            // Sound is off and not yet loaded.
         }
@@ -921,16 +918,18 @@ void KGrGame::playSound (const int n, const bool onOff)
         effects->stop (fallToken);
         fallToken = -1;
         }
-    }
+#endif
 }
 
 void KGrGame::endLevel (const int result)
 {
     dbk << "Return to KGrGame, result:" << result;
 
-    if (HAS_SOUNDS && effects) {	// If sounds have been loaded, cut off
+#ifdef OPENAL_AND_OGG_SOUNDS
+    if (effects) {			// If sounds have been loaded, cut off
         effects->stopAllSounds();	// all sounds that are in progress.
     }
+#endif
 
     if (! levelPlayer) {
         return;			// Not playing a level.
@@ -1159,12 +1158,15 @@ void KGrGame::toggleSoundsOnOff (const int action)
     else {
         stepsOn = soundOnOff;
     }
-    if (HAS_SOUNDS && action == PLAY_SOUNDS) {
+
+#ifdef OPENAL_AND_OGG_SOUNDS
+    if (action == PLAY_SOUNDS) {
         if (soundOn && (effects == 0)) {
             loadSounds();	// Sounds were not loaded when the game started.
         }
         effects->setMuted (! soundOn);
     }
+#endif
 }
 
 void KGrGame::freeze (const bool userAction, const bool on_off)
@@ -1173,9 +1175,11 @@ void KGrGame::freeze (const bool userAction, const bool on_off)
     kDebug() << "PAUSE:" << type << on_off;
     kDebug() << "gameFrozen" << gameFrozen << "programFreeze" << programFreeze;
 
-    if (HAS_SOUNDS && on_off && effects) {		// If pausing and sounds are loaded, cut
+#ifdef OPENAL_AND_OGG_SOUNDS
+    if (on_off && effects) {		// If pausing and sounds are loaded, cut
         effects->stopAllSounds();	// off all sounds that are in progress.
     }
+#endif
 
     if (! userAction) {
         // The program needs to freeze the game during a message, dialog, etc.
@@ -2161,8 +2165,7 @@ bool KGrGame::loadRecording (const QString & dir, const QString & prefix,
 
 void KGrGame::loadSounds()
 {
-    if (HAS_SOUNDS)
-    {
+#ifdef OPENAL_AND_OGG_SOUNDS
         const qreal volumes [NumSounds] = {0.6, 0.3, 0.3, 0.6, 0.6, 1.8, 1.0, 1.0, 1.0, 1.0};
         effects = new KGrSounds();
         effects->setParent (this);        // Delete at end of KGrGame.
@@ -2197,7 +2200,7 @@ void KGrGame::loadSounds()
         for (int i = 0; i < NumSounds; i++) {
             effects->setVolume (fx [i], volumes [i]);
         }
-    }
+#endif
 }
 
 /******************************************************************************/
