@@ -19,7 +19,8 @@
 #ifndef KGRPLAYFIELD_H
 #define KGRPLAYFIELD_H
 
-#include <kgamecanvas.h>
+#define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
+#include <libkdegamesprivate/kgamecanvas.h>
 
 #include <QPixmap>
 #include <QList>

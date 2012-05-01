@@ -33,7 +33,8 @@
 #include <QTime> // IDW
 #include <QTimeLine>
 
-#include <kgamecanvas.h>
+#define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
+#include <libkdegamesprivate/kgamecanvas.h>
 
 class KGrSprite;
 class KGrPlayField;
