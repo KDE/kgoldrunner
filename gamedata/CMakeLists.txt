@@ -9,6 +9,7 @@ install( FILES game_CM.txt
                game_ende.txt
                game_GMEP.txt
                game_GMGR.txt
+	       game_GRII.txt
                game_kgr.txt
                game_lars.txt
                game_MAZ.txt
@@ -23,5 +24,7 @@ install( FILES game_CM.txt
                hi_plwv.dat
                hi_wad.dat
                rec_demo.txt
+               rec_GMGR.txt
+	       rec_GRII.txt
    DESTINATION ${DATA_INSTALL_DIR}/kgoldrunner/system )
 

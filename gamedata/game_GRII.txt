@@ -1,0 +1,191 @@
+// G020 T GRII C
+ i18n("Gold Rush II");
+ i18n("These 20 levels have even harder challenges, more complicated puzzles and tighter timings than the first Gold Rush. They are not for the faint hearted. Have fun!\n"
+ "\n"
+ "Created by Gabriel Miltschitzky [gabriel dot miltschitzky at googlemail dot com], who also provided the recorded solutions.\n"
+ "\n"
+ "It is best to play the first Gold Rush levels before attempting Gold Rush II, because you will need many techniques that are easier to learn there. None of the levels in Gold Rush and Gold Rush II are impossible. If in doubt, use menu item 'Move->Show A Solution' to watch solutions provided by the author.");
+// L001
+//                                           ZZZZZZZZZZZZZ                            ZZ             ZZZZ      Z Z Z             Z  ZZ    Z  Z               Z    ZZZZ ZZZZ              Z       ZZZZZZ               Z   ZZZZ Z ZZZH             ZZZ  ZZZ ZZZZHH        ZZZZZZRZZ    ZZZZ HH        Z     E ZZZ Z   Z HH  ZZZZZZZ    EEE   Z    ZZHH Z          EEEEE   Z     HH Z Z       EEEEEEE   Z    HH    Z     EEEEEEEEE   Z   HH  Z Z    EEEEEEEEEEE   Z  HH ZN     EEEEEEEEEEEEE   Z HH       EEEEEEEEEEEEEEE   ZHH      EEEEEEEEEEEEEEEEE   HH     EEEEEEEEEEEEEEEEEEE  H
+ i18n("A Big Start");
+ i18n("Wait an instant before you head left. Then it will be easier to reach the gold by walking on the enemies' heads.\n"
+ "\n"
+ "Step quickly onto the ladders when they appear. You will now have to cross two gaps, with the help of an enemy, before you can reach the highest ladders.\n"
+ "\n"
+ "How you manage that depends on how many enemies are following you when you step onto the first ladder. In the best case there are two, so you can walk back over them to cross the first gap, then pause briefly while they form a bridge over the next gap.\n"
+ "\n"
+ "Your escape further upwards depends on your speed and dexterity.");
+// L002
+//    XXXXXX     MMMMMMZ      XR       XHXXX MX   MZ   NNNX HX HHHHXHXHH MXHM  Z   NHNXEHXNXXXHXHXH  NXHM MZ  HXXXX HXN   HXHXH  MXH  MZ H XEM  HXN   HXHXH  MXHM MZH  XXNM HXN   HXHXH  M HXHXZ   XNNX HXN   HXHXH  XXXXHXH   XNMM HXNNNNHXHXH  XNHNHXH   XMM  HXTTTTHXHXH  XHNHNXH   XEEX HX     XHXHMTXHNNNXH HNXXXX HX      HX X XNHNNXH NHX    HXHXXM  HX   XXXXXXH HNXMMX HXHXNM  HX         H NHXNMX HXHXNM  HXXXXXXXXXXH HNXMNX HXHXXM  HXXNNN    XH NHXNMX HXH     HXXHNHMNMHXH HNX    HXXXXXXXXXXHXXXXXHXXXXXXXXX HNNNNNNNNNNH     H          H                           
+ i18n("Teamwork");
+ i18n("The gold on the right hand side is just a question of speed and dexterity. So is the gold on the lower levels. \n"
+ "\n"
+ "To reach the gold above the bar on the left, walk on your enemy's head as he moves along the bar.\n"
+ "\n"
+ "The gold in the middle needs more thought. When the enemy is climbing the long ladder at center-left, jump to the right and dig the brick left of the bar. Go upstairs and wait for the enemy, then ride on his head, take the gold, dig three bricks and enter the central structure.\n"
+ "\n"
+ "Wait for the enemy to come up the ladder when you emerge on the right. As he moves up and down on the top rungs, choose the right moment to walk over his head and reach the gold at the top right. The rest is easy.");
+// L003
+//   R     MMMMMMMMMMMMMMMMMMMM MMM MMMH TT              MMHMMMEMMMHMMMMFMHMMMMMMHMFM  HMMM MMMHM MFFMHHMMMMMHMMMFMHMEM MNMHMFMMFFMHM    HMMMFMHMMM MMMHMFMMMMMHMHMMFMMMMFMHMMM MMMHMFM    HMHMFMFMMMMMHMMM MMMH FMHMFMHMHMMMMMMMMFMMNM MEMMHFMHHMMHMHMMHHHHHMMMMMM MMMMHFMMHMMHMHMMFMMMHHHMMMM MMMMHF MHMMHMH      MMHHMMM MMM HFM H  HMMMMMFHMMMMHNEM MNMHMMMMMMFMM   MMHMMHHHMMM MMMH         HMMMMHMMHMMMMM MMMMFMMMHMMMMMFM  HMMHHHMMM M   MMMMHMMMMMMMHMMMMMMHMMM MFMH    H     MMH  FMMHHMMM MFMHMFMMHMFFMH MMMHFMMHMMMM MFMHMMMMMMMMMHM   HF  HMMMM M MH         HMMFFMMMMMM
+ i18n("Watch Out For Traps");
+ i18n("Use the four enemies to fill up the false bricks you will find on your way up the ladders.");
+// L004
+//  EEHHEEHHEEHHEEHHEEHHEEHHEEHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHMMHMHMHMMFMMHMHMMHMMMHMMHFMMHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHMHHHHHMHHHHHMHHHHHMHHHHHHHHHHHHHHHHHHMHHHHHMMMHHHHHHHHHHHHMMHHHHMMMHHHMMNMHHHHMMHMMMHHHMMMHHMNHHMHHHHNMHMMNNHNMMHHHNNMHMHHMHHHHHHMHHMMHHHHNMMHHHHMHHHHHHHHMHMHHHHMHHHHHHMMHHHHHHHHHHMHHHHMHHHMMHHHHHHHHMHHHMMHHMNMHHMNMMHHMHHHHHHHHHMHHNMMHHHHHHMHHMMHHHHMHHHHHMMMHHNMHHHMHHHMHHHHHHHHMHHHMHHHMHHMHHMNMHHHMMMHHHMHMMHHMHMHHMHHHHHHHMHHHHHHHMNHHMMHMHNMHMHHHHHHHHMMMMMHHMHHHHHHHFHMHHHHHHHHMHHMNHHMHMHHMFMHHHMMHHHHHHHMHHHMMHHMHMHHHNMHHHHHHHHHRHMNHHHHHHFHHHH
+ i18n("Easy Prey");
+ i18n("This is not very difficult. The main thing is to prevent any enemy getting a piece of gold. This is easier than it seems if you collect the easily accessible pieces first.\n"
+ "\n"
+ "Trying to group the enemies will help. If you are on the other side of a barrier you can group them by moving up and down.\n"
+ "\n"
+ "Furthermore some of the bricks are traps, so you can sometimes take a short cut. But you should not count on it. ");
+// L005
+//  MRXMMMMMXMMXMMMXMMXMMMMXMMXM H M  EM N  E E  T  MT M   HMZT HMH HMH H  HMZMHX HTMTMHN NM   HM HH M H MNHMMXHTM H M  M M XH  T MH  HM MMTHTMHH   T M M HMNTXZMHFTZ MXTHFHF HMZM  HH  M  M XM MHM FTFHNMHHMN H  M   M   MF ZHF FFHMNMH M HM E MHM M  Z ZMHM FHHHHHH XHHMHMXH NHHNF ZHFHMFHH M MHM HM   HMH HM  ZT   FHZ                H M Z Z  FHHFFFFFFHFFFFFFHFFFFFFHFFFFMHZ                       Z  ZZ ZZM M M X M M X M X M M FZ FEZ M M M M M M MTM M M M ZM MZX MMMMXMMMMMMMMMMMM MEMZ M ZZZMZZZZZZZZZZZZZZZMMZM MX M M MZ      Z      ZMZM M EMEM MMZ   NNNZNNN   ZMMEM X
+ i18n("The Gold Mine");
+ i18n("Of course the gold at the bottom needs to be taken last.\n"
+ "\n"
+ "It may be useful to lead some of the enemies into pits as you collect the higher pieces of gold, but do not forget to release them before you go for the last gold.\n"
+ "\n"
+ "As for the gold at the bottom, think where the escape route could be before you start digging down to the gold, because you will not have time to reflect when you are inside the big pit...");
+// L006
+//  M E MMMMMMMMMMMMMMMMMMMMMMMMMMHMHHMMMHHHHHMHEMHHHHHHHHHRNHHMMHHHMHMHHF HMMHMMMMMMMMHHHHHMMMHMHHMHMMHMHHMHHHHMMHMMHMHHMMHMMHMHMFHMHMMHMMHMMHMMHMHMMHNMHHMHHFHMHHHHMMHHHHHMHHHHMHMHHMMMMMHMMMMMMMMMMMHMMMMHMMMHHMMNMMHHHHMHHHMEHHHMHHHHHHMMHHMHHHMMMHMHMHHHMMFNMMHMMHHMMHMHMHMMMHMHMFMMHHFHHMHHNMHHHHHMHHMHHHMHMFMMFHFMHHMHHHMHMHMHHMHHMMMHMF MFHFEHHHHMHNHHMHHMMHM EMHMFMNFHFMHMFMMHHMHMHMMMHMMHMHHFFHFMMMHHFHHMMMHNHMMMHMMHMMMMFMMMNMMHMFHHHHMMMMMMHMMHHHHHHHHHHHHHMFMMMHMMMMMMHHMHMMMM MMMMHMMMFMEMHMMMMMMMMFHMMMMMMMMMHHHHFMHMH MMMMMMMMMMMMMMMMMMMMMHHHHMHMNNNNNNNNNNNNNNNNNN
+ i18n("Entangled");
+ i18n("Dodge the first enemy among the ladders on the right.\n"
+ "\n"
+ "Now you come to a place where there are several shafts of false bricks leading down. Fall through the leftmost shaft and dig the brick to the right while falling. The enemy needs to be one ladder away from you and has to jump down immediately after you. Climb up, fall through the rightmost shaft and head for the single piece of gold. Escape through the traps beneath the dug brick. Timing is very tight.\n"
+ "\n"
+ "Be quick enough to reach the ladder on the left before the second enemy blocks your path, then step down to the same height as the pit to the right. The enemy will pass above you and fall into the pit. Take the gold on the right, dig the bricks on the left, lure the third enemy into a false brick and step over his head to escape upward.\n"
+ "\n"
+ "Get into the left-hand section by digging a brick near the top. You can dodge the next enemy by falling through a trap that leads back to the right-hand section, making him follow you.\n"
+ "\n"
+ "To reach the gold at the bottom, lure the enemies away, search for false bricks leading down, dig the brick on the end of the line and take those pieces fast.");
+// L007
+//  HX                          HX                          HXMXXXXXXXXXXXXXMH        XHHX            HMMH  N     XHHX      ZM MXMHXMH ZXHXXXZXHHXFFMMMMHM MMMHMMH ZXHX ZZXHHXMMMMMMHM MMMHXMH ZXHX Z XHHXN   MMHM MH HMMH ZXHX Z XHHXM MMMHMMMMH Z MH ZXHX Z XHHXMMMMMHMMMFMMMMMH ZXHX Z XHHXMMMMMMMMMMMFMMMHM XHX Z XHHXMXMXMMMMMMMFMMMHM XHX ZTXHHXMMXMMM  MMMFMMMHM XHXMXZXHHXMXMXMMMM     NNHM XH  XZXHHXM MMMMMM  HXXXXXXXXXXXXXXHHXXMMMM MM  HX             HH       MM  HXHXXXXXXXXXXXXXX XMXXXXXXH HXHNNNNNNNNNNNNRXMX       H HXH            EXXX       H  XH            E
+ i18n("Three Friends");
+ i18n("You will need both enemies to help you finish the level. When you get to the gold on the column of concrete, wait on the edge. Make sure that your first helper will follow you when you jump down. Take the gold to your left, then go up and quickly dig the bricks on the left of the ladder until you can move further left, followed by the enemy. Step over his head to reach the next ladder and go up again.\n"
+ "\n"
+ "Jump into the pit and dig on both sides equally. As the enemy moves towards you through the dug bricks, trap him so that you can dig two more columns of bricks on the left. When he runs out of the dug brick, go left, stand next to the pit and dig to your right to trap him again. Go one step down the nearest ladder and make him jump into the pit. Now take the gold and get out!\n"
+ "\n"
+ "As you go back to the right, you will need to find a shaft of false bricks which is hidden under a diggable brick. When you get back, make the second enemy follow you down to the lowest level. Leave him there, but use him to get back to the ladders leading upwards.\n"
+ "\n"
+ "Go to the pit and ladder at center-left and open up a shaft two bricks wide all the way down to the concrete near where the enemy is standing. When he follows you left, trap him, go right to the ladder and wait for him to run towards the pit. You need to start your escape to the left when he is just starting to fall into the pit, to avoid being killed when the bricks close.");
+// L008
+//  HHMHMHMHMHMHMHMHMHMHMHMHMHMHHMHMHMHMHMHMHMHMHMHMHMRMHMEMHHHHMHHHHHHHHHMHMHMHMHHHHHHHHMHMHMHMHMHMHMHMHMHMHMHMHMHMMHHHMHHHMHMHHHMHNHHHHHHHMHMHHMHMHMHMHMHMHMHMHMHMHMHMHMHMMHHHMHHHHHMHHHMHHHMHMHHHHHHHHMHMHMHMHMHMHMHMHMHMHMHMHMHMMHHHMHMHHHMHHHMHHHHHHHMHMHHHHMHMHMNMHMHMHMHMHMHMHMHHHMHMHHHHMHHHHHMHHHMHMHMHHHMHHHHHHMHMHMHMHMHMHMHMHMHMHMHHHMHMHHMHHHHHMHMHHHMNMHMHMHMHMHMHHMHMHMHMHMHMHMHHHHHHHMHHHMHMHHHHMHMHMHMHHHMHMHMHMHMHMHMHHMHMHMHMHMHMHMHMHMHHHHHHHMHMMHHHHHHHMHHHHHMHMHMHMHMHMHMHHMHMHMHMHMHMHHHHHHHHHMHMHMHMMHMHMHHHHHHHMHMHMHMHMHMHMHMHHMHMHMHMHMHMHMHMHMHMHMHMHMHM
+ i18n("Let Me Out!");
+ i18n("It is no use looking for traps: there are none!\n"
+ "\n"
+ "When taking the first gold run down quickly so that the enemy does not follow you but goes by another route. Go down nearly as far as you can, so that the enemy will move to a position where you can get past him. You need to be very, very quick!");
+// L009
+//   XXXXXXXXXXXXXXXXXXXXXXXXXXXZ                        TTXXXXXXXXXXXXXXXXXXXXXXXZZXXZXX        T            XX  ZXXHXX     MH     Z         ZXXH X TTHMNFHT TZ          ZXXH X    ZMH  HT          Z XXH X          TH         Z XXH XXX H HT TH           Z XXH         H    X       Z  XXH      H      H X     Z   XXH N  XXXXXXXXX HX    ZZ   XXH H  X    EEE MHX   Z     XXH H  XHXXXXXXM HXZZZ      XXH    XHTMTMTMM HX         XXMXXFMXHTTMTMTM HX         XXMMMMMXHTMTMTMM HX         XXXXXXXXHTTMTMTM HX         X   RNNNHTMTMTTM HX         XXMMMXXX TTTTTTMMHXXXXXXXXX X
+ i18n("Let Them Live");
+ i18n("With a bit of dexterity, it is possible to pass three trapped enemies. Killing is not an option, because you will need two of the three enemies, so be careful not to dig too early, otherwise the enemies will reappear near the concrete pit at the top right and you will have to restart the level.\n"
+ "\n"
+ "The next two pieces of gold can only be reached with the help of two enemies. You have free choice which piece you take first, but my personal suggestion is to take the higher piece last. A popup ladder will make it easier for you to continue your way up.\n"
+ "\n"
+ "The last enemy is very likely to have been in the concrete pit, because he got killed by the refilling bricks. He is a bit difficult to pass. The easiest way is to wait on the highest ladder until the enemy goes back to the concrete pit. Then you just have time to reach a short ladder before two big ladders. Wait there until he jumps down, then you can quickly climb up and escape.\n"
+ "\n"
+ "If you managed to let all three enemies survive, then you are lucky...");
+// L010
+//               ZT    R EEEEE  EEEEEEEEEE  Z      EEEEEEE  XXXXXXXXXXXXTZ XXXXXXXXXXXXX            ZT             Z          NMTZ             Z           MZT             Z          T TZ             Z           TZT             Z            TZ             Z              H            Z            HH             Z            HNH            Z            NHN            Z            HNH            Z            NHN            Z TTTTTTTTTT NHHZTTTTTTTTTTTZ            HNN            Z            NHN            Z            NNH            Z            NHN            Z
+ i18n("Jump And Run!");
+ i18n("Jump to the left from the highest bar on the right. Do not wait too long: no more than two enemies should be below the highest bar on the left when you jump down. \n"
+ "\n"
+ "Step over the heads of the falling enemies next to you and dig the higher brick. Cross over the brick and take the gold. Wait on the middle bar until the first ladder is free of enemies. Do not jump to that ladder too early or too late.\n"
+ "\n"
+ "If you got that far, start collecting the gold quickly, overtaking the enemies and staying just below them.");
+// L011
+//          HR                          HMMMMMMMMMMMMMMMMMMM        HMHMHMHMHFHFHMHMHMHM        HMFHMHMHMMMMMHMHMHFMMMMMMMMMHMHFHMHHMHHHMHHMHMHMM MNMNMMHMMHMHHMNHMHNMHHMHMMMMNMNFNMHMHFHHMNHM FHNMMHMHFMNMNMNMMHMMHMMNHM T MHNHHHFMMMNMNFNMHMHMNNHM  MH MNNHHHMM MNMNMMHMMNNHM  MNFH MNMHHMMM M M MHMHMHMHM  MH MMFHMHMM      MHMMHHHFHM   MHHHMHHMMMMMMMMMHMHMHMHMHM MHFHMHMHMM      MHMMHHHHHFHMHFHMHMHHMMMMMMMMMHMHMHMHMHMHMHMHMHMHMMNMHNNHMHMMHMHMHMHMHFHMHMHHMMNMNNHNMHMHMHHHHHHHHHHHHHHHMMNMNHNNMHMMMMMMMFMMMMMMMMMMMMNNHNNHMH                   MMMMMMMMHMMMMMMMMMMMMMMMNMNM
+ i18n("The Lone Golddigger");
+ i18n("It is best to collect the gold at the upper left by working from right to left. You have to dig the column of bricks next to the ladder to get out again, so when you take the leftmost gold there will only be enough time to escape if you dig diagonally and take a short cut. The bricks you dig must first be cleared of gold.\n"
+ "\n"
+ "In the lower left section the leftmost gold is tricky. Dig the column of bricks until there are only five bricks left. Wait until the bricks above refill and dig the next brick just when the brick above reappears. Now dig the whole column of bricks, but leave the sixth brick from the bottom. Then you can run in, dig and fall on the gold at the left.\n"
+ "\n"
+ "The gold at the bottom requires speed. Dig all the bricks, take all the gold and get back. At the last brick you need to dig both sides at the same time.\n"
+ "\n"
+ "The gold inside the big box needs a bit of thinking --- and you have to be fast too...");
+// L012
+//  EEEEEEEEEEEEEEEEEEEEEEEEEEEEZ     Z                  ZZZZ  X   Z    R        XZ X ZZZZZZX Z     X   X  X  XZ XZZF XZX  ZX    XXF X  ZZZZ  XX XZZ  ZX ZXX      XZZX X     Z  XZX ZX  FZX   ZZ ZF  X X ZXTZ  TZ   ZMZXXXZX ZZX    FZ   XX X F X Z    T XZZF F  XZ      M X  XZX X X XZ       ZX   X    X Z M   XZZXZX F ZX  X  X XX  XZ    Z X Z X  Z    X      X Z X ZZ XZX    Z X   F X     XZ XZX  ZZZ XZF  X   X X X X  ZZZ X X Z  Z X  FZX   F     ZF   Z Z Z XZ  X Z    X X  ZX X XZZZXZXZZ X XZF X XX  ZXZZZM XZX M Z     X   M    Z   Z   M      XZ            Z  Z   N   
+ i18n("Left Or Right?");
+ i18n("Move left, then immediately right. Continue down until you fall into a false brick with two concrete blocks beneath it. Wait there until no enemy is moving, then head right.\n"
+ "\n"
+ "When you reach the bottom, take the gold and run to the nearest ladders leading upward. Continue up for a while, but return to the bottom to the left of your enemies and head for the leftmost ladders, which will lead to the upper right corner.\n"
+ "\n"
+ "Passing the two enemies will need some skill. Move up and down until both enemies go up and one comes left to catch you. Walk over his head and escape upward before the other one gets you.");
+// L013
+//  Z        M     M      H  M   Z      M M   MMM NNMMHZ  M Z    Z M   H M MMNNMMMHM H M Z  Z H M  HM H MMFMMMXHH M   TZ MZ  M H M H XMXMM H M Z Z  M Z XHM H M H MMM H MZXZZ  MRX XNH X H M H M H M  XZEZM H XNHT  X H M HHH M   XZZM H XNHN H  X H M H MNM  XZM H XNHNH  HT XEH M MHTNM XZNM   XNHN    HNX H MHNNHMM ZHHMH  XNH   HNX H MXNNNHM MZNHNMHH XNH HNX H MEXNNHNM ZMHNNMM H X   X H MHHXNNTHMZT NHNMNM H X X H M  HXNHTNM  ZHTNMHHMH  X H XN H XNNNHMNZ NTHMNH MH  H MHX H XHNHNMZT HTNMH NNMHH M HM  HXNHNHM  ZNNHM EHHNMNMMMHMH  XMFXFXFFFMMMMMMMMMMFNNHNM H X  X X   
+ i18n("Treasures of Gold");
+ i18n("Start by collecting the gold over on the left. Then take the gold in the next section to the right. To escape from there, step over the enemy's head as he climbs out of a dug brick.\n"
+ "\n"
+ "Dodge the free enemy, climb up to the highest gold and take the first three pieces, making sure you have cleared an escape route. Then lure the free enemy up and into the false brick in this section and take the last piece of gold. At one point on the way up you have to let him come really close...\n"
+ "\n"
+ "The remaining sections need some thinking and tight timing, but should not be too hard.\n"
+ "\n"
+ "Take the rightmost gold last. There is very little time to get back up when the hidden ladders appear.\n"
+ "\n"
+ "Make sure the leftmost enemy does not leave his niche. You need him to help you reach the hidden escape ladders as he climbs across the bar at top left.");
+// L014
+//   HHH  HH     HHHXR      EXX  H    XH H    XHXX      HXX  H  XX H HHHH  HXXTTTTTTTXX  H  N  H TTTT  HXXTTTTTTT N  H  X  H       HXX       XX  H     H    T  HXX       TTT H     H       HXX       X   H     H  N    HXX       X   H     H       HXX       N   H     H       HXX       X   HTT   H       HXX       X         H       HXX       X         H  T    HXX       X         H       HXX       X         H       HXX       N         H    N  HXX       X         H       HXX       X          H   T  HXX       X          HTTTT  H                          XH            
+ i18n("Never Reaching The Bottom");
+ i18n("On the bars, dodge the enemy by dropping to the lower bar just before he reaches you and then go below him and to the right. Take the gold and fall to the next bar. Wait for the right moment to do that. The enemy must fall near the column of concrete.\n"
+ "\n"
+ "When you reach the middle, make him fall between the two pieces of gold. Hang on each bar, then walk over him to take the gold.\n"
+ "\n"
+ "To reach the last piece of gold, use the trick of making the enemy run up ahead of you when you are below him on a ladder. Push him up and over onto the concrete. As he falls off it, walk over his head and take the gold.");
+// L015
+//  RNNNNNXNNNNNNNNNNNNNNNNNNNNNXXXXXNXFMMMMMMMMMMMMMMMMMMMHE NNNNX N    NX  TTT   T HTHHFXXXXX HXETXHX H     HTHT  HXNNNN  HXHEXHX TH   H T  H HXHXEM MHXXXXHXHT T   TTTH  HXHXHMNMHXHHHHX  H   H    THHXHXXX MHX XXXX HT  H  HTTH HXH X  MHX    H   HT  H T  THX HXH MHX   HX  H  H  H HTHHXH XH MHX  H X TTHT   TT HTHX HXH MHX H  X H  T  HTTHTTHXH XH MHXE   X  HT   TH   HH  HXH MHXH   X HT   H   HTHXXXXXH MHXH   X  TH   H TH  HHHHHH MHXH   X TH T H  H  HH      MHXH   X  TH  H HT H H      MHXH   X H     H   H HHHHH  XHXH   XH       H  H     HH XHXH   X   T  H  T  H
+ i18n("Getting Past The Enemy");
+ i18n("The first enemy needs very careful timing: you have to jump into the trap just before he does, then go left and run down the ladder.\n"
+ "\n"
+ "The second enemy is very tricky indeed. Walk over his head, then dig the upper left brick and all of the bricks to your right as you fall. Now persuade the enemy to fall by standing at the bottom. Then run up the ladders and run over him to the right, just before the bricks close.\n"
+ "\n"
+ "The two enemies in the next pit should be no trouble.
+ "\n"
+ "Passing the last enemy is a delicate operation. You have to know exactly when to drop. It is shortly after he has reached the highest point of the ladder and is moving down.");
+// L016
+//  EMMMMMMMMMMMMMMMMMMMMMMMMMMMHMM  HHMMEEEEHHHHHHHMHHHHHHHHMMMMMHMHHHHHHMMMMMHMHFMMMMHHMMMMMHMHMMMMMMHHHHHM FMMMMHHMMMMMHMHMMMMMMHMMMMMHFMMMMHHMHMMMHMHMMMMMMHMHHHHHFMMMMHHMHMMMHMHMHHHHMHMHMMMMMHHHHHHMHMHHHMHMHFFFMHMHMMEMMHMMMMHMHMHMMMHMHFMFMHMHMHHHHHMMMMHMHMHMHHHMHFMMHHMHMHFMMHMMMMHMHMHMHMMMHFHHHMMHMHMMMHMMMMHHHMHMHMMHHMMMHMMHMHMMHHMMMMMMMMHMHMMHMMMMHHHHMHHMHMMMMMMHHHHMHMMHHHHMFMMMMMHMHMEMMMMHMMMMHMMMMMHMFMNNNNHMHHHHHMMHMMMMHHHHHMHMFMHHHHHMMMMMHMMHHHHHHMMMHMHMFMMMMMMMMMMMHMMHMMMMHMMMHMHMFMMMMMMHHMMMHMMHEEEMHHHHHMHHHNMMRHHHHHHHHMMMMMMMFFFFFMMMFMMMMMMFFMMMMM
+ i18n("Narrow Paths");
+ i18n("Await the first enemy at the bottom. The two larger ladders give you a chance to pass him. Move up the rightmost ladder to the same height as those two ladders. Then the enemy will go up them and will not cause you any further trouble.\n"
+ "\n"
+ "The enemy guarding the gold can be passed at the leftmost of three bricks, which is a false brick. Wait until he climbs up the ladder, then quickly fall through the trap and go for the gold. To get back past him, use a trick similar to the one you used on the first enemy.\n"
+ "\n"
+ "When you climb up again make sure that only one of the next four enemies is going right. At the rightmost ladder, only go up one step and wait until the next enemy is just below the gap in the ladders. If you wait there, the previous enemy will not follow you. Now climb up and left and fall through a column of false bricks next to the enemy you want to pass.\n"
+ "\n"
+ "Quickly descend the ladders and let yourself fall through the false bricks down low on the left. Wait until the two enemies start falling, then quickly run up the ladders before the next enemy can block the exit.\n"
+ "\n"
+ "The leftmost column of bricks is again where you can fall through. Wait until the next enemy has climbed up enough to let you push him up the ladder ahead of you. Now lure the other two enemies into some traps that are next to the column of false bricks.\n"
+ "\n"
+ "Go back down to the bottom where you were, take the gold and make the enemy follow you through. As he starts falling, run up again and escape. Dodge the next three enemies on the lowest level, where there is enough space to get past them.\n"
+ "\n"
+ "Now make sure that the last enemy lingers on the right-hand ladder when you dig through to him. He is only enemy in this level who can be trapped by digging. Have fun!");
+// L017
+//  EMMMMMMMMMMMMMMMMMMMMMMMMMMMHHHMMMMMMMMMNNTNM TTNNNHMMHEMMHHHHHHHHHMMMMHMMFMMMMHM HMMMMMMMMMMMHMMMMHMMM  MMHMMHMHHHMMMMHHHHMMMMHMFTM MMHMMHMHMMM HHHHMHF EMHMMMM MMHMMHMHHHMMMMMMMHFMMMHMM FFTMHMMHMMMHMHMHHHMHMMMMHMMMMMMHHMMHMMMHMMMHMHMHMMMMHMMTNNMMHMMHMMHHMHHHMHHHMN MHMMFMMMNHMMHMMHMMHMMMMMMMMMMHMEMMM MH MHMMHHHHMHHHMNNMFMHMHMMMMFMMMHMMHMMMMHMHMMMMMMHMHMMFMFM NHRMHMHHHHMHMMFFMMHMHMMMMFMFMMMMHMHMMMMHMMMMMMHMHMMMMFMMMMMMHMHMHHHHMFMMMMH     MFMMMMMMHMHMHMMMMHHHMMM MMHMMMMMMMMMHMHMHMHHHHMHMMMFMMHMMMMMMMMMHHHMHMHMMMMHHHMMMMHMMMMMMMMMMMMMHHHMMMMMHHMMMMHMMMMMMMM
+ i18n("The Breakout");
+ i18n("Getting past the first enemy needs careful timing. When you climb up the ladder you can make him pace up and down on the top two steps. At the right moment, you can sneak in and dig the bricks left of the ladder.\n"
+ "\n"
+ "The way to the next enemy is a dig-timing puzzle. Getting the two pieces of gold in the middle of the bricks is rather complicated and very hard, even when you know the way, so do not give up if it seems impossible. In the worst case you might have to take a peek at the bricks with the game editor or even replay the solution.\n"
+ "\n"
+ "When you reach the section with the second enemy, you need to lure him into the pit. The brick in the pit is a trap, so you have to be fast enough to step over his head and move left before he falls into the trap. Timing is very important.\n"
+ "\n"
+ "To get past the third enemy, just dig.\n"
+ "\n"
+ "Lure the last enemy down to the two rightmost ladders at the bottom. There you can dodge him if you are fast enough.");
+// L018
+//  MMMMMMMMMMMMMMMMMMMMMMMMMMMZ            TTTTTT M TTTTTMZMMXH    M HHMF MMFHMMF R HMZ MMMMMHZFHHM FMM FHMMFHMMMMZF MMMMHMFHHHMFM MMHMMFHM HMZN   MMHMF  HMFMMNMH MFH MHMZF M MMHMF  HM MMNMH M HTMHMZXXXXXXXMM   HHMMMMFMMTTTTHMZ                          MZMZMZMZMZMZMZMZXZXZXZXZXZXZMZZMZMZMZMZMZMFMZMZMZMZMZMZMMZZZZZMZMZMZFZMZZZZZZZZZZZZZMZZMZMZZZZZFZMZMZM MZF M FZZMZZZF MZMZMZMZZZZZMZM MZMZMZMZZM MZFZZZZZMZMZF MZMZMZMZZMZZZFFMZMZMZMZZZMZMZMZM FZMZMZZMZFZMZMZMZMZMZMZMZMZMZMZZMZMZMZZZZZZZZZZZMZMZMZFZMZMZMZMMMMMMMMMMMMMMMMMMMFMMMMMMMZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+ i18n("Digging Hassle");
+ i18n("To get out of the first section, jump through the tunnel of traps below the highest bar and dig the column of bricks to your left. You will never be fast enough to get back to the bar in time, because there is one brick that slows you down. You can save time by digging it first. However, the timing is still tight.\n"
+ "\n"
+ "In the second section, climb up to the bar and move to the column of false bricks above the rightmost of the short ladders. Fall into the tunnel and dig on both sides at once, but leave the lowest brick. Now go back, fall into the traps at the right and dig until you reach the pieces of gold. Then escape to the ladders on the left.\n"
+ "\n"
+ "Climb up and dig the top brick to your left. Fall through the false bricks under it, not forgetting to dig three more bricks to your left. Now you will need good timing to get the gold and proceed to the lower level. Dig all of the two columns of bricks to your left, except the two lowest. As the bricks begin to refill, dig all the remaining bricks, run up the ladders, dig the highest of the bricks on the right and get the gold. After that dig your way down to the lower part of this level.\n"
+ "\n"
+ "The way to the bottom and across to the tall ladder at the right is very tricky. The landmarks are two cross-shapes of five bricks each. Fall into the lower left cross and dig its highest brick, then quickly go up and dig the brick to the left of the second cross. There are three traps to fall through before you return to the brick you dug first. Enter it and fall through the two traps that are beneath it.\n"
+ "\n"
+ "Now you can head right and find a way to the bottom over there.");
+// L019
+//  RNNNNNNNNNNNNNNNXZ         ZE               XZNNNNNNNNNZXXXXXXXXXXXXXXX XHXXXXXXXXXHNNNNNNNNNNNNNNN XH TTN NTT H                XH         H XXXXXXXXXXXXXXXXHXXXXXXXXXH NNNNNNNNNNNNNNNXH TTN NTT H                XH         HXXXXXXXXXXXXXXX XHXXXXXXXXXHNNNNNNNNNNNNNNN XH TTN NTT H                XH         H XXXXXXXXXXXXXXXXHXXXXXXXXXH NNNNNNNNNNNNNNNXH NN H NN H                XH    H    HXXXXXXXXXXXXXXX XHXXXXHXXXXHNNNNNNNNNNNNNNN XH NN H NN H                XH    H    H XXXXXXXXXXXXXXXXHXXXXXXXXXH NNNNNNNNNNNNNNNNH  H N H  H                 H  H   H  H
+ i18n("Synchronised Running 2");
+ i18n("This level is named after the original "Synchronised Running" in the "Challenge" game.\n"
+ "\n"
+ "Admittedly, it is very difficult to keep to the same speed as the enemy as you walk on his head, but it is definitely not impossible. If you want a real challenge, try it in keyboard mode. That will make things a little more demanding...");
+// L020
+//  Z                           Z        EEE   EEE          Z       EZZZE EZZZE         Z      EZ  ZZEZZ  ZE        Z       Z   ZZZ   ZZZZZ     Z      EZ    Z    ZE   Z    Z       EZ       ZE     Z   Z        EZ  R  ZE       Z  Z         EZ   ZE         Z Z          EZ ZE           ZZ    Z Z    E EZZ  Z Z ZZZ ZZZZZ Z ZZZZZ N Z Z  Z  Z   ZZZ  ZZ ZZ      ZZZ  Z  ZZ  ZZZZZZ Z ZZZ    Z Z  Z  Z   ZZZ   ZZ Z      ZZZ  Z  ZZZ ZZZ   ZZ Z                  ZZZZZZZZ ZZZZ ZZZZZZZZZZZZZZZ                                                                                    
+ i18n("The Heartbreaker");
+ i18n("No hint!");
