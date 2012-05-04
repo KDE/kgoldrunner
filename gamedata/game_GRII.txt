@@ -182,7 +182,7 @@
 // L019
 //  RNNNNNNNNNNNNNNNXZ         ZE               XZNNNNNNNNNZXXXXXXXXXXXXXXX XHXXXXXXXXXHNNNNNNNNNNNNNNN XH TTN NTT H                XH         H XXXXXXXXXXXXXXXXHXXXXXXXXXH NNNNNNNNNNNNNNNXH TTN NTT H                XH         HXXXXXXXXXXXXXXX XHXXXXXXXXXHNNNNNNNNNNNNNNN XH TTN NTT H                XH         H XXXXXXXXXXXXXXXXHXXXXXXXXXH NNNNNNNNNNNNNNNXH NN H NN H                XH    H    HXXXXXXXXXXXXXXX XHXXXXHXXXXHNNNNNNNNNNNNNNN XH NN H NN H                XH    H    H XXXXXXXXXXXXXXXXHXXXXXXXXXH NNNNNNNNNNNNNNNNH  H N H  H                 H  H   H  H
  i18n("Synchronised Running 2");
- i18n("This level is named after the original "Synchronised Running" in the "Challenge" game.\n"
+ i18n("This level is named after the original 'Synchronised Running' in the 'Challenge' game.\n"
  "\n"
  "Admittedly, it is very difficult to keep to the same speed as the enemy as you walk on his head, but it is definitely not impossible. If you want a real challenge, try it in keyboard mode. That will make things a little more demanding...");
 // L020
