@@ -136,7 +136,7 @@
  "\n"
  "The second enemy is very tricky indeed. Walk over his head, then dig the upper left brick and all of the bricks to your right as you fall. Now persuade the enemy to fall by standing at the bottom. Then run up the ladders and run over him to the right, just before the bricks close.\n"
  "\n"
- "The two enemies in the next pit should be no trouble.
+ "The two enemies in the next pit should be no trouble."
  "\n"
  "Passing the last enemy is a delicate operation. You have to know exactly when to drop. It is shortly after he has reached the highest point of the ladder and is moving down.");
 // L016
