@@ -36,7 +36,7 @@
  "\n"
  "Trying to group the enemies will help. If you are on the other side of a barrier you can group them by moving up and down.\n"
  "\n"
- "Furthermore some of the bricks are traps, so you can sometimes take a short cut. But you should not count on it. ");
+ "Furthermore some of the bricks are traps, so you can sometimes take a short cut. But you should not count on it.");
 // L005
 //  MRXMMMMMXMMXMMMXMMXMMMMXMMXM H M  EM N  E E  T  MT M   HMZT HMH HMH H  HMZMHX HTMTMHN NM   HM HH M H MNHMMXHTM H M  M M XH  T MH  HM MMTHTMHH   T M M HMNTXZMHFTZ MXTHFHF HMZM  HH  M  M XM MHM FTFHNMHHMN H  M   M   MF ZHF FFHMNMH M HM E MHM M  Z ZMHM FHHHHHH XHHMHMXH NHHNF ZHFHMFHH M MHM HM   HMH HM  ZT   FHZ                H M Z Z  FHHFFFFFFHFFFFFFHFFFFFFHFFFFMHZ                       Z  ZZ ZZM M M X M M X M X M M FZ FEZ M M M M M M MTM M M M ZM MZX MMMMXMMMMMMMMMMMM MEMZ M ZZZMZZZZZZZZZZZZZZZMMZM MX M M MZ      Z      ZMZM M EMEM MMZ   NNNZNNN   ZMMEM X
  i18n("The Gold Mine");
@@ -136,7 +136,7 @@
  "\n"
  "The second enemy is very tricky indeed. Walk over his head, then dig the upper left brick and all of the bricks to your right as you fall. Now persuade the enemy to fall by standing at the bottom. Then run up the ladders and run over him to the right, just before the bricks close.\n"
  "\n"
- "The two enemies in the next pit should be no trouble."
+ "The two enemies in the next pit should be no trouble.\n"
  "\n"
  "Passing the last enemy is a delicate operation. You have to know exactly when to drop. It is shortly after he has reached the highest point of the ladder and is moving down.");
 // L016
