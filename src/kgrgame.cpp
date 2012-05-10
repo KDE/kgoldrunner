@@ -26,7 +26,8 @@
 
 // KGoldrunner loads and plays .ogg files and requires OpenAL + SndFile > v0.21.
 // Fallback to Phonon by the KgSound library does not give good results.
-#ifdef OPENAL_AND_OGG_SOUNDS
+#include <libkdegames_capabilities.h>
+#ifdef KGAUDIO_BACKEND_OPENAL
     #include "kgrsounds.h"
 #endif
 
@@ -416,7 +417,7 @@ void KGrGame::setInitialTheme (const QString & themeFilepath)
 
 void KGrGame::initGame()
 {
-#ifndef OPENAL_AND_OGG_SOUNDS
+#ifndef KGAUDIO_BACKEND_OPENAL
         KGrMessage::information (view, i18n ("No Sound"),
             i18n ("Warning: This copy of KGoldrunner has no sound.\n"
                   "\n"
@@ -468,7 +469,7 @@ void KGrGame::initGame()
                                                       "champion_speed"), true);
     timeScale = gameGroup.readEntry ("ActualSpeed", 10);
 
-#ifdef OPENAL_AND_OGG_SOUNDS
+#ifdef KGAUDIO_BACKEND_OPENAL
         // Set up sounds, if required in config.
         soundOn = gameGroup.readEntry ("Sound", false);
         kDebug() << "Sound" << soundOn;
@@ -899,7 +900,7 @@ void KGrGame::incScore (const int n)
 
 void KGrGame::playSound (const int n, const bool onOff)
 {
-#ifdef OPENAL_AND_OGG_SOUNDS
+#ifdef KGAUDIO_BACKEND_OPENAL
         if (! effects) {
             return;            // Sound is off and not yet loaded.
         }
@@ -925,7 +926,7 @@ void KGrGame::endLevel (const int result)
 {
     dbk << "Return to KGrGame, result:" << result;
 
-#ifdef OPENAL_AND_OGG_SOUNDS
+#ifdef KGAUDIO_BACKEND_OPENAL
     if (effects) {			// If sounds have been loaded, cut off
         effects->stopAllSounds();	// all sounds that are in progress.
     }
@@ -1159,7 +1160,7 @@ void KGrGame::toggleSoundsOnOff (const int action)
         stepsOn = soundOnOff;
     }
 
-#ifdef OPENAL_AND_OGG_SOUNDS
+#ifdef KGAUDIO_BACKEND_OPENAL
     if (action == PLAY_SOUNDS) {
         if (soundOn && (effects == 0)) {
             loadSounds();	// Sounds were not loaded when the game started.
@@ -1175,7 +1176,7 @@ void KGrGame::freeze (const bool userAction, const bool on_off)
     kDebug() << "PAUSE:" << type << on_off;
     kDebug() << "gameFrozen" << gameFrozen << "programFreeze" << programFreeze;
 
-#ifdef OPENAL_AND_OGG_SOUNDS
+#ifdef KGAUDIO_BACKEND_OPENAL
     if (on_off && effects) {		// If pausing and sounds are loaded, cut
         effects->stopAllSounds();	// off all sounds that are in progress.
     }
@@ -2165,7 +2166,7 @@ bool KGrGame::loadRecording (const QString & dir, const QString & prefix,
 
 void KGrGame::loadSounds()
 {
-#ifdef OPENAL_AND_OGG_SOUNDS
+#ifdef KGAUDIO_BACKEND_OPENAL
         const qreal volumes [NumSounds] = {0.6, 0.3, 0.3, 0.6, 0.6, 1.8, 1.0, 1.0, 1.0, 1.0};
         effects = new KGrSounds();
         effects->setParent (this);        // Delete at end of KGrGame.

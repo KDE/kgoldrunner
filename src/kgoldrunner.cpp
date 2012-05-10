@@ -50,6 +50,8 @@
 #include <KCmdLineArgs>
 #include <KAboutData>
 
+#include <libkdegames_capabilities.h> //defines KGAUDIO_BACKEND_OPENAL (or not)
+
 #include "kgrcanvas.h"
 #include "kgrgame.h"
 
@@ -378,7 +380,7 @@ void KGoldrunner::setupActions()
                         (this, SLOT (viewFullScreen(bool)), this, this);
     actionCollection()->addAction (fullScreen->objectName(), fullScreen);
 
-#ifdef OPENAL_AND_OGG_SOUNDS
+#ifdef KGAUDIO_BACKEND_OPENAL
     // Sound effects on/off
                                   settingAction ("options_sounds", PLAY_SOUNDS,
                                   i18n ("&Play Sounds"),
