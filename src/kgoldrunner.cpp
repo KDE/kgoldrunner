@@ -50,7 +50,7 @@
 #include <KCmdLineArgs>
 #include <KAboutData>
 
-//#include <libkdegames_capabilities.h> //defines KGAUDIO_BACKEND_OPENAL (or not)
+#include <libkdegames_capabilities.h> //defines KGAUDIO_BACKEND_OPENAL (or not)
 
 #include "kgrcanvas.h"
 #include "kgrgame.h"
