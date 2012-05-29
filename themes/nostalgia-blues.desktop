@@ -1,4 +1,4 @@
-[KDEGameTheme]
+[KGameTheme]
 Name=Nostalgia Blues
 Name[ast]=Señaldá n'azul
 Name[bs]=Nostalgija bluz
@@ -98,3 +98,4 @@ Actors=nostalgia/blue-actors.svg
 DrawCanvasBorder=0
 BorderColor=#000019
 TextColor=#FFFFFF
+Preview=nostalgia/nostalgia-blues.png

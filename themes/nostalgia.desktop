@@ -1,4 +1,4 @@
-[KDEGameTheme]
+[KGameTheme]
 Name=Nostalgia
 Name[ast]=Señaldá
 Name[bs]=Nostalgija
@@ -103,3 +103,4 @@ Actors=nostalgia/actors.svg
 DrawCanvasBorder=0
 BorderColor=#000000
 TextColor=#FFFFFF
+Preview=nostalgia/nostalgia.png

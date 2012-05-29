@@ -1,4 +1,4 @@
-[KDEGameTheme]
+[KGameTheme]
 Name=KGoldRunner Default
 Name[ast]=KGoldRunner predetermináu
 Name[bs]=KGoldRunner podrazumijevano
@@ -105,3 +105,4 @@ Actors=default/actors.svg
 DrawCanvasBorder=0
 BorderColor=#2C89A0
 TextColor=#FFFFFF
+Preview=default/default.png

@@ -1,4 +1,4 @@
-[KDEGameTheme]
+[KGameTheme]
 Name=Black on White
 Name[ast]=Negru sobre blancu
 Name[bs]=Crno na bijelom
@@ -103,3 +103,4 @@ Actors=accessible/black-on-white-actors.svg
 DrawCanvasBorder=0
 BorderColor=#FFFFFF
 TextColor=#000000
+Preview=accessible/black-on-white.png
