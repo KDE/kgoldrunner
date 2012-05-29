@@ -7,6 +7,8 @@ set(kgoldrunner_SRCS
    kgoldrunner.cpp 
    kgrcanvas.cpp 
    kgrtheme.cpp 
+   kgrthemetypes.cpp
+   kgrrenderer.cpp
    kgrgame.cpp 
    kgrlevelplayer.cpp
    kgrlevelgrid.cpp
