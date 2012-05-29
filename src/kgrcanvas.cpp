@@ -418,29 +418,16 @@ int KGrCanvas::tileNumber (KGrTheme::TileType type, int x, int y)
     }
 }
 
-void KGrCanvas::paintCell (const int i, const int j, const char type, const int offset)
+void KGrCanvas::paintCell (const int i, const int j, const char type)
 {
     KGrTheme::TileType tileType = tileForType (type);
+
     // In KGrGame, the top-left visible cell is [1,1]: in KGrPlayfield [0,0].
     int x = i - 1, y = j - 1;
-    switch (offset) {
-    case 1: tileType = KGrTheme::BrickAnimation1Tile; break;
-    case 2: tileType = KGrTheme::BrickAnimation2Tile; break;
-    case 3: tileType = KGrTheme::BrickAnimation3Tile; break;
-    case 4: tileType = KGrTheme::BrickAnimation4Tile; break;
-    case 5: tileType = KGrTheme::BrickAnimation5Tile; break;
-    case 6: tileType = KGrTheme::BrickAnimation6Tile; break;
-    case 7: tileType = KGrTheme::BrickAnimation7Tile; break;
-    case 8: tileType = KGrTheme::BrickAnimation8Tile; break;
-    case 9: tileType = KGrTheme::BrickAnimation9Tile; break;
-    case 0:
-    default:
-	break;
-    }
+    tileNo [x][y] = tileType;		// Save the tile-number for repaint.
 
-    tileNo [x][y] = tileType;			// Save the tile-number for repaint.
-
-    playfield->setTile (x, y, tileNumber (tileType, x, y));	// Paint with required pixmap.
+    // Paint with required pixmap.
+    playfield->setTile (x, y, tileNumber (tileType, x, y));
 }
 
 void KGrCanvas::setBaseScale()
@@ -617,7 +604,7 @@ int KGrCanvas::makeSprite (const char type, int i, int j)
         sprite->stackUnder (sprites->at (heroId));
 
         // Erase the brick-image so that animations are visible in all themes.
-        paintCell (i, j, FREE, 0);
+        paintCell (i, j, FREE);
         break;
     default:
         break;
@@ -728,7 +715,7 @@ void KGrCanvas::deleteSprite (const int spriteId)
 
     if (brick) {
         // Dug-brick sprite erased: restore the tile that was at that location.
-        paintCell ((loc.x()/bgw) + 1, (loc.y()/bgh) + 1, BRICK, 0);
+        paintCell ((loc.x()/bgw) + 1, (loc.y()/bgh) + 1, BRICK);
     }
 }
 

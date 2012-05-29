@@ -88,8 +88,7 @@ public slots:
     void getMousePos       (int & i, int & j);
     void setMousePos       (const int, const int);
     void animate           (bool missed);
-    void paintCell         (const int i, const int j, const char type,
-                            const int offset = 0);
+    void paintCell         (const int i, const int j, const char type);
 
     int  makeSprite        (const char type, int i, int j);
     void startAnimation    (const int id, const bool repeating,

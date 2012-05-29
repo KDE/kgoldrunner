@@ -151,8 +151,8 @@ void KGrLevelPlayer::init (KGrCanvas * view,
     grid->calculateAccess    (rules->runThruHole());
 
     // Connect to code that paints grid cells and start-positions of sprites.
-    connect (this, SIGNAL (paintCell(int,int,char,int)),
-             view, SLOT   (paintCell(int,int,char,int)));
+    connect (this, SIGNAL (paintCell(int,int,char)),
+             view, SLOT   (paintCell(int,int,char)));
     connect (this, SIGNAL (makeSprite(char,int,int)),
              view, SLOT   (makeSprite(char,int,int)));
 
@@ -181,18 +181,18 @@ void KGrLevelPlayer::init (KGrCanvas * view,
 
             // If the hero is here, leave the tile empty.
             if (type == HERO) {
-                emit paintCell (i, j, FREE, 0);
+                emit paintCell (i, j, FREE);
             }
 
             // If an enemy is here, count him and leave the tile empty.
             else if (type == ENEMY) {
                 enemyCount++;
-                emit paintCell (i, j, FREE, 0);
+                emit paintCell (i, j, FREE);
             }
 
             // Or, just paint this tile.
             else {
-                emit paintCell (i, j, type, 0);
+                emit paintCell (i, j, type);
             }
         }
     }
