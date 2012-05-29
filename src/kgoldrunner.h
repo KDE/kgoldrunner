@@ -41,6 +41,7 @@ class KToggleAction;
 
 class KGrGame;
 class KGrCanvas;
+class KGrRenderer;
 
 /**
  * This class serves as the main window for KGoldrunner.  It handles the
@@ -149,9 +150,10 @@ private:
 
     bool startupOK;
 
-    KGrCanvas *	view;
-    KGrGame *	game;
-    bool        frozen;
+    KGrCanvas *          view;
+    KGrGame *            game;
+    KGrRenderer *        m_renderer;
+    bool                 frozen;
 
     bool getDirectories();		// Get directory paths, as below.
     QString systemHTMLDir;		// Where the manual is stored.

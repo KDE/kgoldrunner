@@ -18,6 +18,7 @@
  ****************************************************************************/
 
 #include "kgoldrunner.h"
+#include "kgrrenderer.h" // IDW test
 
 #include <QApplication>
 #include <QDesktopWidget>
@@ -122,6 +123,7 @@ KGoldrunner::KGoldrunner()
 
     // Tell the KMainWindow that the KGrCanvas object is the main widget.
     setCentralWidget (view);
+    m_renderer = new KGrRenderer (view); // IDW test.
 
     // Set up our actions (menu, toolbar and keystrokes) ...
     setupActions();
@@ -362,9 +364,12 @@ void KGoldrunner::setupActions()
     /*****************************   THEMES MENU  *****************************/
     /**************************************************************************/
 
-    // The Themes menu is obtained AFTER calling setupGUI(), by locating an
-    // open-ended list of theme-files and plugging the translated text-names of
-    // the themes in place of ActionList <name="theme_list" /> in the ui.rc file.
+    QAction * themes = actionCollection()->addAction ("select_theme");
+    themes->setText      (i18n ("Change &Theme..."));
+    themes->setToolTip   (i18n ("Change the graphics theme..."));
+    themes->setWhatsThis (i18n ("Alter the visual appearance of the runners "
+                                "and background scene..."));
+    connect (themes, SIGNAL(triggered(bool)), m_renderer, SLOT(selectTheme()));
 
     /**************************************************************************/
     /****************************   SETTINGS MENU  ****************************/
@@ -736,7 +741,7 @@ void KGoldrunner::setupThemes()
 
     foreach (const QString &filepath, themeFilepaths) {	// Read each theme-file.
         KConfig theme (filepath, KConfig::SimpleConfig);// Extract theme-name.
-        KConfigGroup group = theme.group ("KDEGameTheme");	// Translated.
+        KConfigGroup group = theme.group ("KGameTheme");	// Translated.
         actionName = group.readEntry ("Name", i18n ("Missing Name"));
 
         newTheme = new KToggleAction (actionName, this);
