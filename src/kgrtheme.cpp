@@ -67,7 +67,7 @@ bool KGrTheme::load (const QString& themeFilepath)
     }
 
     KConfig theme (themeFilepath, KConfig::SimpleConfig);
-    KConfigGroup group = theme.group ("KDEGameTheme");	// Get graphics config.
+    KConfigGroup group = theme.group ("KGameTheme");	// Get graphics config.
 
     // Check if the theme asks us to draw a border and set the specified color.
     themeDrawBorder = group.readEntry ("DrawCanvasBorder", 0);
@@ -110,6 +110,7 @@ bool KGrTheme::load (const QString& themeFilepath)
     if (! (loadedBefore && cacheOK)) {
         kDebug() << "Calling loadSvg(), cacheOK:" << cacheOK
                  << "loadedBefore:" << loadedBefore;
+	kDebug() << "SVG files" << svgSetFilepath << svgActorsFilepath;
         if (! (loadSvg())) {
             return false;
         }
