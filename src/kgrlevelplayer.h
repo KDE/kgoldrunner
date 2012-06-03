@@ -36,6 +36,8 @@ class KGrEnemy;
 class KRandomSequence;
 
 /**
+ * @short Class to play, record and play back a level of a game
+ *
  * This class constructs and plays a single level of a KGoldrunner game.  A
  * KGrLevelPlayer object is created as each level begins and is destroyed as
  * the level finishes, whether the human player wins the level or loses it.
@@ -58,8 +60,6 @@ class KRandomSequence;
  * KGrLevelPlayer and friends are the internal model and game-engine of
  * KGoldrunner and they communicate with the view, KGrCanvas and friends,
  * solely via signals that indicate what is moving and what has to be painted.
- *
- * @short Class to play, record and play back a level of a game
  */
 
 class KGrLevelPlayer : public QObject
