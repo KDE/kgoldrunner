@@ -18,42 +18,122 @@
 #ifndef KGRRENDERER_H
 #define KGRRENDERER_H
 
+#include <QObject>
+#include <QString>
+#include <KGameRenderer>
+
 class KgThemeProvider;
 class KgThemeSelector;
-class KGameRenderer;
-class QWidget;
 
+/* @short A class to assist theme-handling and rendering in KGoldrunner.
+ *
+ * KGoldrunner has two SVG files for each theme: one to hold the Actors (hero
+ * and enemies) and one to hold the Set (bricks, ladders, background, etc.).
+ *
+ * The files are marked with the keywords "Actors" and "Set" in each theme's
+ * .desktop file, rather than the usual "Filename" keyword. There are two
+ * KgThemeProvider objects and two KGameRenderer objects, each with its own
+ * set of SVG files and KgTheme objects.
+ *
+ * There is one KgThemeSelector object, which selects the "Set" theme and uses
+ * the "Set" KgThemeProvider. Its currentThemeChanged signal is connected to a
+ * currentThemeChanged slot in KGrRenderer, which finds the KgTheme for the
+ * corresponding "Actors" theme and SVG file.
+ *
+ * KGoldrunner also has several different usages of the KGameRenderer concepts
+ * of "frameSuffix" and "frameBaseIndex". For animation frames (hero, enemies
+ * and dug bricks), it always has frameSuffix = "_%1" and frameBaseIndex = 1, so
+ * animation will be handled normally by KGameRenderer. 
+ *
+ * Depending on the theme and the artist's choices, backgrounds and tiles can
+ * have one or more variants, to add variety to the look of brick walls, etc.
+ * The suffixes used can be "-%1" or just "%1" and the frameBaseIndex = 0, or
+ * there can be just one variant, with no suffix. The keyTable structure and the
+ * getPixmapKey() and getBackgroundKey() methods of KGrRenderer provide ways to
+ * go from KGoldrunner's internal tile-types to SVG element names that can be
+ * used as pixmap keys in KGameRenderer.
+ */
 class KGrRenderer : public QObject
 {
     Q_OBJECT
 public:
-    KGrRenderer (QWidget * view);
+    KGrRenderer (QObject * parent);
     virtual ~KGrRenderer();
 
+    /*
+     * Get a pointer to the KGameRenderer for "Set" graphics (bricks, etc.).
+     */
+    KGameRenderer * getSetRenderer()    { return m_setRenderer; }
+
+    /*
+     * Get a pointer to the KGameRenderer for "Actors" graphics (hero, etc.).
+     */
+    KGameRenderer * getActorsRenderer() { return m_actorsRenderer; }
+
+    /*
+     * Get the SVG element name for a KGoldrunner tile type. If the theme has
+     * more than one tile of that type (e.g. BRICK), make a random selection.
+     *
+     * @param picType The internal KGoldrunner type of a tile or background.
+     */
     QString getPixmapKey (const char picType);
 
+    /*
+     * Get the SVG element name for a KGoldrunner background. If the theme has
+     * more than one background, cycle though the choices as the KGoldrunner
+     * game's level changes.
+     *
+     * @param level   The current level in a KGoldrunner game.
+     */
+    QString getBackgroundKey (const int level);
+
 public slots:
+    /*
+     * Show the theme-selector dialog. When the theme changes, KGrRenderer uses
+     * a signal and slot to keep the "Set" and "Actors" parts of the theme and
+     * SVG files in synch.
+     */
     void selectTheme();
 
+private slots:
+     // Keep the "Set" and "Actors" parts of a KGoldrunner theme in synch as
+     // the theme-selection changes.
+    void currentThemeChanged(const KgTheme * currentSetTheme);
+
 private:
-    enum PicSrc {Actors, Set};
+    enum   PicSrc     {Actors, Set};
+
+    // Structure of table-row to specify a tile or pixmap type in a theme.
     struct PixmapSpec {
-        const char    picType;
-	const PicSrc  picSource;
-	const char *  picKey;
-	const char *  frameSuffix;
-	const int     frameBaseIndex;
-	      int     frameCount;
+        const char    picType;		// KGoldrunner's internal type.
+	const PicSrc  picSource;	// Actors or Set?
+	const char *  picKey;		// Prefix of SVG element name.
+	const char *  frameSuffix;	// Format of suffix or "" if none.
+	const int     frameBaseIndex;	// Lowest value of suffix or -1 if none.
+	      int     frameCount;	// Number of variants available.
+					// -2 = not yet counted, -1 = element
+					// not found, 0 = only one variant with
+					// no suffix, >0 = number of variants.
     };
 
-    static PixmapSpec keyTable [];
+    KgThemeProvider * m_setProvider;	// Provider for Set themes.
+    KgThemeProvider * m_actorsProvider;	// Provider for Actors themes.
 
+    KgThemeSelector * m_themeSelector;	// Selector (dialog) for themes.
+
+    KGameRenderer   * m_setRenderer;	// Renderer for Set SVG files.
+    KGameRenderer   * m_actorsRenderer;	// Renderer for Actors SVG files.
+
+    static PixmapSpec keyTable [];	// Table of tile/background specs.
+
+    // Set the frame counts to -2 at startup and when the theme changes.
     void              initPixmapKeys();
-    KgThemeProvider * m_setProvider;
-    KgThemeProvider * m_actorsProvider;
-    KgThemeSelector * m_themeSelector;
-    KGameRenderer   * m_setRenderer;
-    KGameRenderer   * m_actorsRenderer;
+
+    // Find a tile type or background in the table of tiles and backgrounds.
+    int               findKeyTableIndex (const char picType);
+
+    // Count the number of variants of a tile or background.
+    int               countFrames (const int index);
 };
 
 #endif // KGRRENDERER_H
