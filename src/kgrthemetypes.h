@@ -20,6 +20,9 @@
 
 #include <KgTheme>
 
+/**
+ * Class to locate KGoldrunner's "Actors" SVG files: derived from KgTheme.
+ */
 class KGrActorsTheme : public KgTheme
 {
     Q_OBJECT
@@ -27,9 +30,18 @@ public:
     Q_INVOKABLE KGrActorsTheme(const QByteArray &identifier, QObject *parent=0);
     virtual ~KGrActorsTheme();
 
+    /*
+     * Re-defined from KgTheme. Finds a SVG file with config name "Actors".
+     *
+     * @param path    The full path of the theme's .desktop file.
+     */
     bool readFromDesktopFile(const QString& path);
 };
 
+
+/**
+ * Class to locate KGoldrunner's "Set" SVG files: derived from KgTheme.
+ */
 class KGrSetTheme : public KgTheme
 {
     Q_OBJECT
@@ -37,6 +49,11 @@ public:
     Q_INVOKABLE KGrSetTheme(const QByteArray &identifier, QObject *parent=0);
     virtual ~KGrSetTheme();
 
+    /*
+     * Re-defined from KgTheme. Finds a SVG file with config name "Set".
+     *
+     * @param path    The full path of the theme's .desktop file.
+     */
     bool readFromDesktopFile(const QString& path);
 };
 
