@@ -30,7 +30,7 @@
 
 #include <QPixmap>
 #include <QList>
-#include <QTime> // IDW
+#include <QTime> // For IDW testing and performance monitoring.
 #include <QTimeLine>
 
 #define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
@@ -88,15 +88,38 @@ public slots:
     void getMousePos       (int & i, int & j);
     void setMousePos       (const int, const int);
     void animate           (bool missed);
+
+    /**
+     * Requests the view to display a particular type of tile at a particular
+     * cell, or make it empty and show the background (tileType = FREE). Used
+     * when loading level-layouts and also to make gold disappear/appear, hidden
+     * ladders appear or cells to be painted by the game editor.  If there was
+     * something in the cell already, tileType = FREE acts as an erase function.
+     *
+     * @param i            The column-number of the cell to paint.
+     * @param i            The row-number of the cell to paint.
+     * @param tileType     The type of tile to paint (gold, brick, ladder, etc).
+     */
     void paintCell         (const int i, const int j, const char type);
 
     int  makeSprite        (const char type, int i, int j);
+
+    /**
+     * Requests the view to display an animation of a runner or dug brick at a
+     * particular cell, cancelling and superseding any current animation.
+     *
+     * @param spriteId     The ID of the sprite (dug brick).
+     * @param repeating    If true, repeat the animation (false for dug brick).
+     * @param i            The column-number of the cell.
+     * @param j            The row-number of the cell.
+     * @param time         The time in which to traverse one cell.
+     * @param dirn         The direction of motion (always STAND for dug brick).
+     * @param type         The type of animation (run, climb, open/close brick).
+     */
     void startAnimation    (const int id, const bool repeating,
                             const int i, const int j, const int time,
                             const Direction dirn, const AnimationType type);
-    // Implement this method only if it is really needed.
-    // void resynchAnimation  (const int id, const int i, const int j,
-                            // const bool stop);
+
     void gotGold           (const int spriteId, const int i, const int j,
                             const bool spriteHasGold, const bool lost = false);
     void showHiddenLadders (const QList<int> & ladders, const int width);
