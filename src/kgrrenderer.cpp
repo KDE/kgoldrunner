@@ -25,6 +25,7 @@
 
 #include <QDebug>
 #include <QString>
+#include <QGraphicsScene>
 
 #include "kgrglobals.h"
 #include "kgrthemetypes.h"
@@ -32,9 +33,10 @@
 
 #include <cmath>
 
-KGrRenderer::KGrRenderer (QObject * parent)
+KGrRenderer::KGrRenderer (QGraphicsScene * scene)
     :
-    QObject (parent)
+    QObject (scene),
+    m_scene (scene)
 {
     qDebug() << "KGrRenderer called";
 
@@ -96,9 +98,25 @@ void KGrRenderer::currentThemeChanged (const KgTheme* currentSetTheme)
 	    m_actorsProvider->setCurrentTheme (actorsTheme);
 	    qDebug() << "actorsTheme" << actorsTheme->customData("Set")
                      << actorsTheme->customData("Actors");
-	    return;
+	    break;
 	}
     }
+
+    // Save the KGoldrunner attributes of the current theme.
+    QString s     = currentSetTheme->customData("DrawCanvasBorder", "0");
+    m_hasBorder   = (s == QString ("1"));
+    qDebug() << "THEME HAS BORDER?" << s << m_hasBorder;
+    s             = currentSetTheme->customData("BorderColor", "#000000");
+    m_borderColor = QColor (s);
+    qDebug() << "SET BORDER COLOR" << s << m_borderColor;
+    s             = currentSetTheme->customData("TextColor", "#FFFFFF");
+    m_textColor   = QColor (s);
+    qDebug() << "SET TEXT COLOR" << s << m_textColor;
+
+    // Fill the scene (and view) with the new background color.  Do this even if
+    // the background has no border, to avoid ugly white rectangles appearing
+    // if rendering and painting is momentarily a bit slow.
+    m_scene->setBackgroundBrush (m_borderColor);
 }
 
 void KGrRenderer::selectTheme()

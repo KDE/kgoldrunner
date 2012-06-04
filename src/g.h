@@ -18,19 +18,23 @@
 // These are rough QGraphicsScene and QGraphicsView classes for testing the
 // KGrRenderer class, but they illustrate points about KGoldrunner graphics.
 //
-// 1. The scene has examples of every type of SVG element used in KGr.
-// 2. There is a brick marking each corner of the level-layout.
-// 3. There is an empty border, at least two bricks wide, around the layout.
-// 4. The border usually holds the scores and titles and acts as a buffer zone
-//    for mouse moves.
-// 5. The rectangle around the level-layout and border is there for testing
-//    purposes only and is not part of KGoldrunner.
-// 6. Again, purely for testing purposes, the sprites at the top left change
-//    their animation frames as the view is resized.
-// 7. The border and its contents have not been drawn.
-// 8. Some borders (e.g. Egypt) contain border tiles (not drawn here).
-// 9. Some (e.g. Default) contain display-tiles for scores (not drawn here).
-//
+// 1.  The scene has examples of every type of SVG element used in KGr.
+// 2.  There is a brick marking each corner of the level-layout.
+// 3.  There is an empty border, at least two bricks wide, around the layout.
+// 4.  The border usually holds the scores and titles and acts as a buffer zone
+//     for mouse moves.
+// 5.  The rectangle around the level-layout and border is there for testing
+//     purposes only and is not part of KGoldrunner.
+// 6.  Again, purely for testing purposes, the sprites at the top left change
+//     their animation frames as the view is resized.
+// 7.  The border and its contents have not been drawn.
+// 8.  Some borders (e.g. Egypt) contain border tiles (not drawn here).
+// 9.  Some (e.g. Default) contain display-tiles for scores (not drawn here).
+// 10. The central grid has internal tile-coordinates running from (0, 0) to
+//     (29, 21).  Row 0, row 29, column 0 and column 29 are usually empty, but
+//     can contain border-tiles (as in the Egyptian theme).  The KGoldrunner
+//     level-layouts use tile-coordinates running from (1, 1) to (28, 20).
+
 #ifndef G_H
 #define G_H
 

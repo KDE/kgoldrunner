@@ -22,6 +22,7 @@
 #include <QString>
 #include <KGameRenderer>
 
+class QGraphicsScene;
 class KgThemeProvider;
 class KgThemeSelector;
 
@@ -57,7 +58,7 @@ class KGrRenderer : public QObject
 {
     Q_OBJECT
 public:
-    KGrRenderer (QObject * parent);
+    KGrRenderer (QGraphicsScene * scene);
     virtual ~KGrRenderer();
 
     /*
@@ -116,10 +117,17 @@ private:
 					// no suffix, >0 = number of variants.
     };
 
+    QGraphicsScene  * m_scene;		// The scene to be rendered.
+
     KgThemeProvider * m_setProvider;	// Provider for Set themes.
     KgThemeProvider * m_actorsProvider;	// Provider for Actors themes.
 
     KgThemeSelector * m_themeSelector;	// Selector (dialog) for themes.
+
+    bool              m_hasBorder;	// Whether the theme has a border or the
+					// background pixmap fills the view.
+    QColor            m_borderColor;	// The color of the theme's border.
+    QColor            m_textColor;	// The color of the theme's text.
 
     KGameRenderer   * m_setRenderer;	// Renderer for Set SVG files.
     KGameRenderer   * m_actorsRenderer;	// Renderer for Actors SVG files.
