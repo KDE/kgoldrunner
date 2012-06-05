@@ -123,7 +123,9 @@ KGoldrunner::KGoldrunner()
 
     // Tell the KMainWindow that the KGrCanvas object is the main widget.
     setCentralWidget (view);
-    // m_renderer = new KGrRenderer (view); // IDW test.
+
+    m_scene = new QGraphicsScene (this); //IDW test.
+    m_renderer = new KGrRenderer (m_scene); // IDW test.
 
     // Set up our actions (menu, toolbar and keystrokes) ...
     setupActions();

@@ -35,6 +35,8 @@ const int L_LEVEL       = 15;
 
 #include <KXmlGuiWindow>
 
+#include <QGraphicsScene> // IDW test.
+
 class QSignalMapper;
 class KAction;
 class KToggleAction;
@@ -77,6 +79,8 @@ protected:
     void keyReleaseEvent (QKeyEvent * event);
 
 private:
+    QGraphicsScene * m_scene; // IDW test.
+
     bool identifyMoveAction (QKeyEvent * event, bool pressed);
 
 protected:
