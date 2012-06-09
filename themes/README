@@ -64,6 +64,7 @@ role in the KGoldrunner game.  Each element should be set in a perfectly square
 space.  It will typically be displayed in about 24x24 to 36x36 pixels (7-10mm),
 so detail can be sketchy, as for an icon.  The elements are:
 
+    empty           An empty square: used in the game-editor.
     gold            Any kind of prize or reward, not necessarily a gold piece.
     hero_n          A set of frames for the running hero (e.g. n = 1 to 36).
     enemy_n         An equivalent set of frames for the enemies.
