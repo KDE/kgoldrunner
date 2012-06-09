@@ -540,6 +540,18 @@ void KGrCanvas::mouseReleaseEvent (QMouseEvent * mouseEvent)
 void KGrCanvas::getMousePos (int & i, int & j)
 {
     QPoint p = mapFromGlobal (m->pos());
+    int x = p.x();
+    int y = p.y();
+    if (! isActiveWindow()) {
+        i = -2;		// The window lacks keyboard focus or is minimized.
+        j = -2;
+        return;
+    }
+    else if ((x < 0) || (y < 0) || (x >= width()) || (y >= height())) {
+        i = -1;		// The pointer is outside the KGoldrunner viewport.
+        j = -1;
+        return;
+    }
 
     // In KGoldrunner, the top-left visible cell is [1,1].
     i = ((p.x() - topLeft.x()) / imgW) + 1;

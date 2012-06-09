@@ -741,6 +741,15 @@ void KGrLevelPlayer::unstackEnemy (const int spriteId,
 
 void KGrLevelPlayer::tick (bool missed, int scaledTime)
 {
+    int i, j;
+    emit getMousePos (i, j);
+    if (i == -2) {
+        return;		// The KGoldrunner window is inactive.
+    }
+    if ((i == -1) && (playback || (controlMode != KEYBOARD))) {
+        return;		// The pointer is outside the KGoldrunner viewport.
+    }
+
     if (playback) {			// Replay a recorded move.
         if (! doRecordedMove()) {
             playback = false;
@@ -750,9 +759,7 @@ void KGrLevelPlayer::tick (bool missed, int scaledTime)
         }
     }
     else if ((controlMode == MOUSE) || (controlMode == LAPTOP)) {
-        int i, j;			// Make and record a live pointer-move.
-        emit getMousePos (i, j);
-        setTarget (i, j);
+        setTarget (i, j);		// Make and record a live pointer-move.
     }
     else if (controlMode == KEYBOARD) {
         if (holdKeyOption == CLICK_KEY) {
