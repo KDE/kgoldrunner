@@ -150,11 +150,11 @@ void GS::redrawScene (QSize size)
 void GS::loadTestItems()
 {
     m_tiles.fill (0, m_tilesWide * m_tilesHigh);
+    qDebug() << "Tile count" << m_tiles.count() << "width" << m_tilesWide
+	     << "height" << m_tilesHigh;
 
     int index = 0;
     while (test[index].type != FREE) {
-	qDebug() << "Tile" << index << test[index].type << "at" <<
-	    test[index].i << test[index].j;
 	paintCell (test[index].i, test[index].j, test[index].type);
 	index++;
     }
@@ -196,8 +196,6 @@ void GS::redrawTestItems (const int tileSize)
 		}
 		m_tiles.at(t)->setPos (m_gridTopLeft.x() + i * tileSize,
 			               m_gridTopLeft.y() + j * tileSize);
-		qDebug() << "Tile" << m_tiles.at(t)->pixmap().size() <<
-                            "at" << m_tiles.at(t)->pos();
 	    }
 	}
     }
@@ -225,26 +223,14 @@ void GS::redrawTestItems (const int tileSize)
 
 void GS::paintCell (const int i, const int j, const char type)
 {
-    int offset = i * m_tilesHigh + j;
-    qDebug() << "Offset" << offset << "i,j" << i << j;
-    if (m_tiles.at(offset) != 0) {
-	// TODO: Delete this tile?  Replace it with another type?
+    int index = i * m_tilesHigh + j;
+    KGameRenderedItem * t = m_renderer->getTileItem (type, m_tiles.at(index));
+    m_tiles[index] = t;
+    if (t) {		// t = 0 if tile was deleted (type FREE).
+        t->setRenderSize (QSize (m_tileSize, m_tileSize));
+        t->setPos (m_gridTopLeft.x() + i * m_tileSize,
+                   m_gridTopLeft.y() + j * m_tileSize);
     }
-    QString pixmapKey = m_renderer->getPixmapKey (type);
-    if ((type == HERO) || (type == ENEMY)) {
-	// Stationary pixmaps from the Actors file, used only by the editor.
-	m_tiles[offset] = new KGameRenderedItem (m_renderActors, pixmapKey);
-    }
-    else {
-	// Pixmaps from the Set file, used in level-layouts and in the editor.
-	m_tiles[offset] = new KGameRenderedItem (m_renderSet, pixmapKey);
-    }
-    addItem (m_tiles.at(offset));
-    m_tiles.at(offset)->setRenderSize (QSize (m_tileSize, m_tileSize));
-    m_tiles.at(offset)->setPos (m_gridTopLeft.x() + i * m_tileSize,
-                                m_gridTopLeft.y() + j * m_tileSize);
-    qDebug() << "Tile" << type << "i,j" << i << j << "size" << m_tileSize <<
-                "at" << m_tiles.at(offset)->pos();
 }
 
 // Minimal QGraphicsView code.

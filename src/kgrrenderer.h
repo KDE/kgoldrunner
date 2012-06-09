@@ -25,6 +25,7 @@
 class QGraphicsScene;
 class KgThemeProvider;
 class KgThemeSelector;
+class KGameRenderedItem;
 
 /* @short A class to assist theme-handling and rendering in KGoldrunner.
  *
@@ -72,12 +73,24 @@ public:
     KGameRenderer * getActorsRenderer() { return m_actorsRenderer; }
 
     /*
+     * Create the QGraphicsScene item for a tile of a particular type (e.g. bar,
+     * gold, concrete, etc.) at a place in the on-screen KGoldrunner grid.
+     *
+     * @param picType     The internal KGoldrunner type of the required tile. If
+     *                    FREE, just delete the previous tile (if any).
+     * @param currentTile The pre-existing tile that is to be replaced or
+     *                    deleted, or zero if the place is empty.
+     */
+    KGameRenderedItem * getTileItem (const char picType,
+                                     KGameRenderedItem * currentTile);
+
+    /*
      * Get the SVG element name for a KGoldrunner tile type. If the theme has
      * more than one tile of that type (e.g. BRICK), make a random selection.
      *
      * @param picType The internal KGoldrunner type of a tile or background.
      */
-    QString getPixmapKey (const char picType);
+    QString getPixmapKey (const char picType, const int index);
 
     /*
      * Get the SVG element name for a KGoldrunner background. If the theme has
