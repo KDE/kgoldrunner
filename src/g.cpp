@@ -25,6 +25,7 @@
 
 #include <QDebug>
 
+// This is a list of tile-types and co-ordinates to be to be used in this test
 struct Tile {const int i; const int j; const char type; };
 static const Tile test[] = {
     {1, 1, BRICK},	// One brick at each corner of the level-layout.
@@ -81,22 +82,25 @@ static const Tile test[] = {
 GS::GS (QObject * parent)
     :
     QGraphicsScene (parent),
-    m_tilesWide    (FIELDWIDTH + 2),
-    m_tilesHigh    (FIELDHEIGHT + 2),
+    // Allow FIELDWIDTH * FIELDHEIGHT tiles for the KGoldruner level-layouts,
+    // plus 2 more tile widths all around for text areas, frame and spillover
+    // for mouse actions (to avoid accidental clicks affecting the desktop).
+    m_tilesWide    (FIELDWIDTH  + 2 * 2),
+    m_tilesHigh    (FIELDHEIGHT + 2 * 2),
     m_tileSize     (10)
 {
     m_renderer     = new KGrRenderer (dynamic_cast<QGraphicsScene *>(this));
+
+    // NOTE: We should be able to remove m_renderSet and m_renderActors from
+    // this class, by adding methods such as getSpriteItem(...) to KGrRenderer.
     m_renderSet    = m_renderer->getSetRenderer();
     m_renderActors = m_renderer->getActorsRenderer();
 
-    // IDW test.  View is always >= m_grid, leaving >=2 tile widths of border.
-    m_grid = new QGraphicsRectItem(0, 0, (m_tilesWide + 2) * m_tileSize,
-                                         (m_tilesHigh + 2) * m_tileSize);
+    // View is always >= m_grid, leaving >=2 tile widths of border.  m_grid is
+    // just for testing, to show the boundaries of the KGoldrunner display area.
+    m_grid = new QGraphicsRectItem(-1, -1, m_tilesWide, m_tilesHigh);
     m_grid->setPen (QPen (Qt::white));
     addItem (m_grid);
-    for (int lev = 10; lev <= 13; lev++) {	// Test getBackgroundKey().
-	qDebug() << "Background" << lev << m_renderer->getBackgroundKey(lev);
-    }
 }
 
 GS::~GS()
@@ -105,44 +109,42 @@ GS::~GS()
 
 void GS::redrawScene (QSize size)
 {
-    // Centre the tile grid in the scene.
-    int tileSize = qMin (size.width()/(m_tilesWide + 2),
-                         size.height()/(m_tilesHigh + 2));
-    qDebug() << "View size" << size << "tile size" << tileSize
-             << size.width() << "/" << m_tilesWide + 2
-             << "=" << size.width()/(m_tilesWide + 2) << "|"
-             << size.height() << "/" << m_tilesHigh + 2
-             << "=" << size.height()/(m_tilesHigh + 2);
+    // Calculate what size of tile will fit in the view.
+    int tileSize = qMin (size.width()/m_tilesWide, size.height()/m_tilesHigh);
+    //qDebug() << "View size" << size << "tile size" << tileSize;
 
-    setSceneRect (0, 0, size.width(), size.height());
-    m_gridTopLeft = QPoint ((size.width()  - m_tilesWide * tileSize)/2,
-                            (size.height() - m_tilesHigh * tileSize)/2);
-    qDebug() << "Top left is" << m_gridTopLeft;
-    m_grid->setRect ((size.width()  - (m_tilesWide + 2) * tileSize)/2,
-                     (size.height() - (m_tilesHigh + 2) * tileSize)/2,
-                     (m_tilesWide + 2) * tileSize, (m_tilesHigh + 2) * tileSize);
+    qreal unusedX = (size.width()  - m_tilesWide * tileSize)/2.0;
+    qreal unusedY = (size.height() - m_tilesHigh * tileSize)/2.0;
+    unusedX = unusedX / tileSize;	// Fraction of a tile at L and R.
+    unusedY = unusedY / tileSize;	// Fraction of a tile at T and B.
+    setSceneRect (-1.0 - unusedX, -1.0 - unusedY,
+                  m_tilesWide + 2.0 * unusedX, m_tilesHigh + 2.0 * unusedY);
+    //qDebug() << "UNUSED" << unusedX << unusedY << "SCENE RECT" << sceneRect();
 
-    // NOTE: The background picture can be the same size as the level-layout, as
-    // in this example (Egypt theme), OR the same size as the entire viewport.
+    // NOTE: The background picture can be the same size as the level-layout (as
+    // in the Egypt theme) OR it can be the same size as the entire viewport.
     if (m_tiles.count() == 0) {
+	// In this example the background is fitted into the level-layout.
 	QString pixmapKey = m_renderer->getBackgroundKey (1); // Test level 1.
 	m_background = new KGameRenderedItem (m_renderSet, pixmapKey);
 	addItem (m_background);
 	qDebug() << "BACKGROUND pixmap key" << pixmapKey;
     }
     if (tileSize != m_tileSize) {
-	m_background->setRenderSize (QSize ((m_tilesWide - 2) * tileSize,
-                                            (m_tilesHigh - 2) * tileSize));
+	m_background->setRenderSize (QSize ((m_tilesWide - 4) * tileSize,
+                                            (m_tilesHigh - 4) * tileSize));
+	m_background->setScale (1.0 / tileSize);
     }
-    m_background->setPos (m_gridTopLeft.x() + tileSize,
-			  m_gridTopLeft.y() + tileSize);
+    m_background->setPos (1, 1);
 
+    // Initially, when the grid is empty, add some tiles (for testing only).
     if (m_tiles.count() == 0) {
 	m_tileSize = tileSize;
 	loadTestItems();
 	return;
     }
 
+    // Redraw the scene with the new view-size.
     redrawTestItems (tileSize);
     m_tileSize = tileSize;
 }
@@ -160,64 +162,54 @@ void GS::loadTestItems()
     }
     m_hero   = new KGameRenderedItem (m_renderActors, "hero");
     addItem (m_hero);
-    m_hero->setRenderSize (QSize (m_tileSize, m_tileSize));
-    m_hero->setPos (m_gridTopLeft.x() + 8 * m_tileSize,
-			    m_gridTopLeft.y() + 3 * m_tileSize);
+    setTileSize (m_hero, m_tileSize);
+    m_hero->setPos (8, 3);
     m_hero->setFrame (22);
+
     m_enemy1 = new KGameRenderedItem (m_renderActors, "enemy");
     addItem (m_enemy1);
-    m_enemy1->setRenderSize (QSize (m_tileSize, m_tileSize));
-    m_enemy1->setPos (m_gridTopLeft.x() + 8 * m_tileSize,
-			    m_gridTopLeft.y() + 4 * m_tileSize);
+    setTileSize (m_enemy1, m_tileSize);
+    m_enemy1->setPos (8, 4);
     m_enemy1->setFrame (22);
+
     m_enemy2 = new KGameRenderedItem (m_renderActors, "gold_enemy");
     addItem (m_enemy2);
-    m_enemy2->setRenderSize (QSize (m_tileSize, m_tileSize));
-    m_enemy2->setPos (m_gridTopLeft.x() + 8 * m_tileSize,
-			    m_gridTopLeft.y() + 5 * m_tileSize);
+    setTileSize (m_enemy2, m_tileSize);
+    m_enemy2->setPos (8, 5);
     m_enemy2->setFrame (22);
+
     m_brick = new KGameRenderedItem (m_renderSet, "brick");
     addItem (m_brick);
-    m_brick->setRenderSize (QSize (m_tileSize, m_tileSize));
-    m_brick->setPos (m_gridTopLeft.x() + 8 * m_tileSize,
-			    m_gridTopLeft.y() + 6 * m_tileSize);
+    setTileSize (m_brick, m_tileSize);
+    m_brick->setPos (8, 6);
     m_brick->setFrame (1);
+    qDebug() << "GS::loadTestItems() DONE";
 }
 
 void GS::redrawTestItems (const int tileSize)
 {
-    // Re-size and re-position tiles.
-    for (int i = 0; i < m_tilesWide; i++) {
-	for (int j = 0; j < m_tilesHigh; j++) {
-	    int t = i * m_tilesHigh + j;
-	    if (m_tiles.at(t) != 0) {
-		if (tileSize != m_tileSize) {
-		    m_tiles.at(t)->setRenderSize (QSize (tileSize, tileSize));
-		}
-		m_tiles.at(t)->setPos (m_gridTopLeft.x() + i * tileSize,
-			               m_gridTopLeft.y() + j * tileSize);
-	    }
-	}
+    if (tileSize != m_tileSize) {
+        // Re-size tiles.
+        for (int i = 0; i < m_tilesWide; i++) {
+            for (int j = 0; j < m_tilesHigh; j++) {
+                int index = i * m_tilesHigh + j;
+                if (m_tiles.at(index) != 0) {
+                    setTileSize (m_tiles.at(index), tileSize);
+                }
+            }
+        }
+
+        // Re-size sprites.
+        setTileSize (m_hero,   tileSize);
+        setTileSize (m_enemy1, tileSize);
+        setTileSize (m_enemy2, tileSize);
+        setTileSize (m_brick,  tileSize);
     }
 
-    // Re-size, re-position and test-animate sprites.
-    if (tileSize != m_tileSize) {
-	m_hero->setRenderSize   (QSize (tileSize, tileSize));
-	m_enemy1->setRenderSize (QSize (tileSize, tileSize));
-	m_enemy2->setRenderSize (QSize (tileSize, tileSize));
-	m_brick->setRenderSize  (QSize (tileSize, tileSize));
-    }
-    m_hero->setPos (m_gridTopLeft.x() + 8 * tileSize,
-                                m_gridTopLeft.y() + 3 * tileSize);
+    // Test-animate sprites.
     m_hero->setFrame (m_hero->frame() + 1);
-    m_enemy1->setPos (m_gridTopLeft.x() + 8 * tileSize,
-                                m_gridTopLeft.y() + 4 * tileSize);
     m_enemy1->setFrame (m_enemy1->frame() + 1);
-    m_enemy2->setPos (m_gridTopLeft.x() + 8 * tileSize,
-                                m_gridTopLeft.y() + 5 * tileSize);
     m_enemy2->setFrame (m_enemy2->frame() + 1);
-    m_brick->setPos (m_gridTopLeft.x() + 8 * tileSize,
-                                m_gridTopLeft.y() + 6 * tileSize);
     m_brick->setFrame (m_brick->frame() + 1);
 }
 
@@ -227,10 +219,15 @@ void GS::paintCell (const int i, const int j, const char type)
     KGameRenderedItem * t = m_renderer->getTileItem (type, m_tiles.at(index));
     m_tiles[index] = t;
     if (t) {		// t = 0 if tile was deleted (type FREE).
-        t->setRenderSize (QSize (m_tileSize, m_tileSize));
-        t->setPos (m_gridTopLeft.x() + i * m_tileSize,
-                   m_gridTopLeft.y() + j * m_tileSize);
+        setTileSize (t, m_tileSize);
+	t->setPos (i, j);
     }
+}
+
+void GS::setTileSize (KGameRenderedItem * tile, const int tileSize)
+{
+    tile->setRenderSize (QSize (tileSize, tileSize));
+    tile->setScale (1.0 / tileSize);
 }
 
 // Minimal QGraphicsView code.
@@ -244,6 +241,15 @@ GV::GV (QWidget * parent)
 
 GV::~GV()
 {
+}
+
+void GV::resizeEvent(QResizeEvent* event)
+{
+    if (scene() != 0) {
+        m_scene->redrawScene (event->size());
+        fitInView(scene()->sceneRect(), Qt::KeepAspectRatio);
+    }
+    QGraphicsView::resizeEvent(event);
 }
 
 #include "g.moc"

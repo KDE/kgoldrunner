@@ -15,7 +15,7 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ****************************************************************************/
 
-// These are rough QGraphicsScene and QGraphicsView classes for testing the
+// These are very rough QGraphicsScene and QGraphicsView classes for testing the
 // KGrRenderer class, but they illustrate points about KGoldrunner graphics.
 //
 // 1.  The scene has examples of every type of SVG element used in KGr.
@@ -30,10 +30,39 @@
 // 7.  The border and its contents have not been drawn.
 // 8.  Some borders (e.g. Egypt) contain border tiles (not drawn here).
 // 9.  Some (e.g. Default) contain display-tiles for scores (not drawn here).
-// 10. The central grid has internal tile-coordinates running from (0, 0) to
-//     (29, 21).  Row 0, row 29, column 0 and column 29 are usually empty, but
-//     can contain border-tiles (as in the Egyptian theme).  The KGoldrunner
-//     level-layouts use tile-coordinates running from (1, 1) to (28, 20).
+
+// NOTE:
+// The following is API doco that can go in the KGrScene's kgrscene.h file.
+
+/**
+ * @class KGrScene  kgrscene.h
+ * @short The QGraphicsScene that represents KGoldrunner on the screen.
+ *
+ * In the KGoldrunner scene, the KGoldrunner level-layouts use tile-coordinates
+ * that run from (1, 1) to (28, 20). To simplify programming, these are exactly
+ * the same as the cell co-ordinates used in the game-engine (or model).
+ *
+ * The central grid has internal coordinates running from (-1, -1) to (30, 22),
+ * making 32x24 spaces. The empty space around the level-layout (2 cells wide
+ * all around) is designed to absorb over-enthusiastic mouse actions, which
+ * could otherwise cause accidents on other windows or the surrounding desktop.
+ *
+ * Rows -1, 0, 29 and 30 usually contain titles and scores, which could have
+ * fractional co-ordinates. Row 0, row 21, column 0 and column 29 can also
+ * contain border-tiles (as in the Egyptian theme).
+ *
+ * The hero and enemies (sprites) will have fractional co-ordinates as they move
+ * from one cell to another. Other graphics items (tiles) always have whole
+ * number co-ordinates (e.g. bricks, ladders and concrete). Empty spaces have
+ * no graphic item and the background shows through them.
+ *
+ * The width and height of the view will rarely be an exact number of tiles, so
+ * there will be unused strips outside the 32x24 tile spaces. The sceneRect() is
+ * set larger than 24 tiles by 32 tiles to allow for this and its top left
+ * corner has negative fractional co-ordinates that are calculated but never
+ * actually used. Their purpose is to ensure that (1, 1) is always the top left
+ * corner of the KGoldrunner level layout, whatever the size/shape of the view.
+ */
 
 #ifndef G_H
 #define G_H
@@ -71,7 +100,6 @@ private:
 
     QVector<KGameRenderedItem *> m_tiles;
 
-    QPoint              m_gridTopLeft;
     QGraphicsRectItem * m_grid;
 
     KGameRenderedItem * m_background;
@@ -83,6 +111,8 @@ private:
 
     void loadTestItems();
     void redrawTestItems (const int tileSize);
+
+    void setTileSize (KGameRenderedItem * tile, const int tileSize);
 };
 
 
@@ -93,20 +123,9 @@ class GV : public QGraphicsView
 public:
     GV(QWidget * parent = 0);
     ~GV();
-    /* void setGridSize() {
-        if (scene() != 0) {
-            fitInView(scene()->sceneRect(), Qt::KeepAspectRatio);
-        }
-    }; */
 
 protected:
-    void resizeEvent(QResizeEvent* event) {
-        if (scene() != 0) {
-	    m_scene->redrawScene (event->size());
-            // fitInView(scene()->sceneRect(), Qt::KeepAspectRatio);
-        }
-        QGraphicsView::resizeEvent(event);
-    };
+    void resizeEvent(QResizeEvent* event);
 
     GS * m_scene;
 };
