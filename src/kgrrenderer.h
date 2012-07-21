@@ -22,7 +22,7 @@
 #include <QString>
 #include <KGameRenderer>
 
-class QGraphicsScene;
+class KGrScene;
 class KgThemeProvider;
 class KgThemeSelector;
 class KGameRenderedItem;
@@ -59,7 +59,7 @@ class KGrRenderer : public QObject
 {
     Q_OBJECT
 public:
-    KGrRenderer (QGraphicsScene * scene);
+    KGrRenderer (KGrScene * scene);
     virtual ~KGrRenderer();
 
     /*
@@ -85,22 +85,22 @@ public:
                                      KGameRenderedItem * currentTile);
 
     /*
-     * Get the SVG element name for a KGoldrunner tile type. If the theme has
-     * more than one tile of that type (e.g. BRICK), make a random selection.
+     * Create the QGraphicsScene item for the background corresponding to the
+     * current level.
      *
-     * @param picType The internal KGoldrunner type of a tile or background.
+     * @param level             The current level in a KGoldrunner game.
+     * @param currentBackground The pre-existing background that is to be
+     *                          replaced, or zero if theres'no background yet.
      */
-    QString getPixmapKey (const char picType, const int index);
+    KGameRenderedItem * getBackground (const int level,
+                                       KGameRenderedItem * currentBackground);
 
-    /*
-     * Get the SVG element name for a KGoldrunner background. If the theme has
-     * more than one background, cycle though the choices as the KGoldrunner
-     * game's level changes.
-     *
-     * @param level   The current level in a KGoldrunner game.
-     */
-    QString getBackgroundKey (const int level);
+    bool    hasBorder()     const { return m_hasBorder; }
+    QColor  borderColor()   const { return m_borderColor; }
+    QColor  textColor()     const { return m_textColor; }
 
+    // TODO: Describe this method.
+    QList <KGameRenderedItem * > borderTiles() const;
 public slots:
     /*
      * Show the theme-selector dialog. When the theme changes, KGrRenderer uses
@@ -130,7 +130,7 @@ private:
 					// no suffix, >0 = number of variants.
     };
 
-    QGraphicsScene  * m_scene;		// The scene to be rendered.
+    KGrScene        * m_scene;		// The scene to be rendered.
 
     KgThemeProvider * m_setProvider;	// Provider for Set themes.
     KgThemeProvider * m_actorsProvider;	// Provider for Actors themes.
@@ -155,6 +155,23 @@ private:
 
     // Count the number of variants of a tile or background.
     int               countFrames (const int index);
+
+    /*
+     * Get the SVG element name for a KGoldrunner tile type. If the theme has
+     * more than one tile of that type (e.g. BRICK), make a random selection.
+     *
+     * @param picType The internal KGoldrunner type of a tile or background.
+     */
+    QString getPixmapKey (const char picType, const int index);
+
+    /*
+     * Get the SVG element name for a KGoldrunner background. If the theme has
+     * more than one background, cycle though the choices as the KGoldrunner
+     * game's level changes.
+     *
+     * @param level   The current level in a KGoldrunner game.
+     */
+    QString getBackgroundKey (const int level);
 };
 
 #endif // KGRRENDERER_H

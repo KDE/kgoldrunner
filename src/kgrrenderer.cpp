@@ -26,21 +26,19 @@
 
 #include <QDebug>
 #include <QString>
-#include <QGraphicsScene>
 
 #include "kgrglobals.h"
 #include "kgrthemetypes.h"
 #include "kgrrenderer.h"
+#include "kgrscene.h"
 
 #include <cmath>
 
-KGrRenderer::KGrRenderer (QGraphicsScene * scene)
+KGrRenderer::KGrRenderer (KGrScene * scene)
     :
     QObject (scene),
     m_scene (scene)
 {
-    qDebug() << "KGrRenderer called";
-
     // Set up two theme providers: for the Set and the Actors.
     m_setProvider     = new KgThemeProvider("Theme", this);	// Save config.
     m_actorsProvider  = new KgThemeProvider("",      this);	// Do not save.
@@ -76,6 +74,9 @@ KGrRenderer::KGrRenderer (QGraphicsScene * scene)
     connect (m_setProvider, SIGNAL(currentThemeChanged(const KgTheme*)),
              this,            SLOT(currentThemeChanged(const KgTheme*)));
 
+    connect (m_setProvider, SIGNAL(currentThemeChanged(const KgTheme *)),
+             m_scene,         SLOT(currentThemeChanged(const KgTheme *)));
+
     // Match the starting SVG theme for the Actors to the one for the Set.
     currentThemeChanged (m_setProvider->currentTheme());
 }
@@ -87,11 +88,13 @@ KGrRenderer::~KGrRenderer()
 
 void KGrRenderer::currentThemeChanged (const KgTheme* currentSetTheme)
 {
+    qDebug() << "KGrRenderer::currentThemeChanged()";
+
     // Start of game or change of theme: initialise the counts of pixmap keys.
     initPixmapKeys();
 
     // Make the Actors theme (hero, etc.) match the Set theme (bricks, etc.).
-    qDebug() << "KGrRenderer::currentThemeChanged()" << currentSetTheme->name();
+    // qDebug() << "KGrRenderer::currentThemeChanged()" << currentSetTheme->name();
     foreach (const KgTheme * actorsTheme, m_actorsProvider->themes()) {
 	if (actorsTheme->customData("Set") ==
             currentSetTheme->customData("Set")) {
@@ -107,11 +110,6 @@ void KGrRenderer::currentThemeChanged (const KgTheme* currentSetTheme)
     m_borderColor = QColor (s);
     s             = currentSetTheme->customData("TextColor", "#FFFFFF");
     m_textColor   = QColor (s);
-
-    // Fill the scene (and view) with the new background color.  Do this even if
-    // the background has no border, to avoid ugly white rectangles appearing
-    // if rendering and painting is momentarily a bit slow.
-    m_scene->setBackgroundBrush (m_borderColor);
 }
 
 void KGrRenderer::selectTheme()
@@ -167,6 +165,52 @@ KGameRenderedItem * KGrRenderer::getTileItem
     return tile;
 }
 
+KGameRenderedItem * KGrRenderer::getBackground
+                    (const int level, KGameRenderedItem * currentBackground)
+{
+    if (currentBackground) {
+        m_scene->removeItem (currentBackground);
+        delete currentBackground;
+    }
+
+    QString key = getBackgroundKey (level);
+    KGameRenderedItem * background = new KGameRenderedItem (m_setRenderer, key);
+
+    return background;
+}
+
+QList <KGameRenderedItem *> KGrRenderer::borderTiles() const
+{
+    qDebug() << "KGrRenderer::borderTiles()";
+    qDebug() << "m_setRenderer:" << m_setRenderer;
+
+    QList <KGameRenderedItem *> list;
+
+    // Corners.
+    list.append (new KGameRenderedItem (m_setRenderer, "frame-topleft"));
+    list.append (new KGameRenderedItem (m_setRenderer, "frame-topright"));
+    list.append (new KGameRenderedItem (m_setRenderer, "frame-bottomleft"));
+    list.append (new KGameRenderedItem (m_setRenderer, "frame-bottomright"));
+
+    // Upper side. 
+    for (int i = 0; i < FIELDWIDTH; i++)
+        list.append (new KGameRenderedItem (m_setRenderer, "frame-top"));
+
+    // Lower side.
+    for (int i = 0; i < FIELDWIDTH; i++)
+        list.append (new KGameRenderedItem (m_setRenderer, "frame-bottom"));
+
+    // Left side.
+    for (int i = 0; i < FIELDHEIGHT; i++)
+        list.append (new KGameRenderedItem (m_setRenderer, "frame-left"));
+
+    // Right side.
+    for (int i = 0; i < FIELDHEIGHT; i++)
+        list.append (new KGameRenderedItem (m_setRenderer, "frame-right"));
+
+    return list;
+}
+
 QString KGrRenderer::getPixmapKey (const char picType, const int index)
 {
     QString pixmapKey = "";
@@ -198,6 +242,8 @@ QString KGrRenderer::getBackgroundKey (const int level)
 	    pixmapKey = pixmapKey.arg (level % frameCount);
 	}
     }
+
+    qDebug() << "BACKGROUND pixmap key" << pixmapKey;
     return pixmapKey;
 }
 

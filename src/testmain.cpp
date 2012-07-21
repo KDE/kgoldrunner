@@ -27,7 +27,7 @@
 #include <QMainWindow>
 #include <QGraphicsView>
 
-#include "g.h"
+#include "kgrview.h"
 
 static const char description[] =
     I18N_NOOP ("KGoldrunner is a game of action and puzzle solving");
@@ -46,7 +46,7 @@ int main (int argc, char **argv)
 
     KApplication app;
     QMainWindow * window = new QMainWindow();
-    GV * view = new GV (window);
+    KGrView * view = new KGrView (window);
     view->setMinimumSize (512, 384);
     window->setCentralWidget (view);
 

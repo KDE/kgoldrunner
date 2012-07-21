@@ -35,8 +35,6 @@ const int L_LEVEL       = 15;
 
 #include <KXmlGuiWindow>
 
-#include <QGraphicsScene> // IDW test.
-
 class QSignalMapper;
 class KAction;
 class KToggleAction;
@@ -44,6 +42,7 @@ class KToggleAction;
 class KGrGame;
 class KGrCanvas;
 class KGrRenderer;
+class KGrScene; // RNY test.
 
 /**
  * This class serves as the main window for KGoldrunner.  It handles the
@@ -79,7 +78,7 @@ protected:
     void keyReleaseEvent (QKeyEvent * event);
 
 private:
-    QGraphicsScene * m_scene; // IDW test.
+    KGrScene * m_scene; // IDW test.
 
     bool identifyMoveAction (QKeyEvent * event, bool pressed);
 

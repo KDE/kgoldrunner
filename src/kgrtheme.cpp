@@ -21,6 +21,7 @@
 
 #include "kgrtheme.h"
 
+#include <QDebug>
 #include <QPainter>
 #include <QFileInfo>
 
@@ -266,9 +267,10 @@ QList< QPixmap > KGrTheme::namedTiles (QStringList names, unsigned int size)
 {
     QList< QPixmap > list;
     QPixmap pix;
-    
+
     foreach (const QString &name, names) {
         if (loadPixmap (QSize (size, size), name, pix, Set)) {
+            qDebug() << name;
             list.append (pix);
         }
         else {
@@ -296,6 +298,7 @@ QList< QPixmap > KGrTheme::frameTiles (unsigned int size)
 {
     QStringList tileNames;
     KConfigGroup themeGroup (KGlobal::config(), "Theme_" + themeName);
+    qDebug() << themeName;
     tileNames = themeGroup.readEntry ("BorderTiles", QStringList());
 
     return namedTiles (tileNames, size);

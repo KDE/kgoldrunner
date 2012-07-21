@@ -822,18 +822,26 @@ void KGrCanvas::makeBorder ()
     if (!l.isEmpty()) {
 	kDebug() << "drawing the border tiles...";
 	// Draw fancy border
-	
+
+        // Top left corner.
 	borderElements.append(makeBorderElement(l, tlX - imgW, tlY - imgW, 0));
+        // Top right corner.
 	borderElements.append(makeBorderElement(l, tlX + pw, tlY - imgW, 2));
+        // Bottom left corner.
 	borderElements.append(makeBorderElement(l, tlX - imgW, tlY + ph, 6));
+        // Bottom right corner.
 	borderElements.append(makeBorderElement(l, tlX + pw, tlY + ph, 8));
-	
+
 	for (int i = 0; i < nCellsW * imgW; i += imgW) {
+            // Top borderline.
 	    borderElements.append(makeBorderElement(l, tlX + i, tlY - imgW, 1));
+            // Bottom borderline.
 	    borderElements.append(makeBorderElement(l, tlX + i, tlY + ph, 7));
 	}
 	for (int i = 0; i < nCellsH * imgH; i += imgH) {
+            // Left borderline.
 	    borderElements.append(makeBorderElement(l, tlX - imgW, tlY + i, 3));
+            // Right borderline.
 	    borderElements.append(makeBorderElement(l, tlX + pw, tlY + i, 5));
 	}
     }

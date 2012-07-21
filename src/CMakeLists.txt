@@ -2,6 +2,7 @@
 ########### next target ###############
 
 set(kgoldrunner_SRCS 
+   kgrscene.cpp
    kgrplayfield.cpp 
    kgrsprite.cpp 
    kgoldrunner.cpp 
@@ -37,7 +38,8 @@ kde4_install_icons( ${ICON_INSTALL_DIR} )
 ########### next target ###############
 
 set(kgrtest_SRCS # NOTE: This target (kgrtest) is for testing purposes only.
-   g.cpp
+   kgrscene.cpp
+   kgrview.cpp
    kgrthemetypes.cpp
    kgrrenderer.cpp
    testmain.cpp 

@@ -17,6 +17,7 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ****************************************************************************/
 
+#include "kgrscene.h"
 #include "kgoldrunner.h"
 #include "kgrrenderer.h" // IDW test
 
@@ -36,6 +37,7 @@
 #include <kconfiggroup.h>
 
 #include <kdebug.h>
+#include <QDebug>
 
 #include <ktoolbar.h>
 #include <kmenubar.h>
@@ -124,7 +126,7 @@ KGoldrunner::KGoldrunner()
     // Tell the KMainWindow that the KGrCanvas object is the main widget.
     setCentralWidget (view);
 
-    m_scene = new QGraphicsScene (this); //IDW test.
+    m_scene = new KGrScene; //IDW test.
     m_renderer = new KGrRenderer (m_scene); // IDW test.
 
     // Set up our actions (menu, toolbar and keystrokes) ...
@@ -185,6 +187,7 @@ void KGoldrunner::KGoldrunner_2()
 
 KGoldrunner::~KGoldrunner()
 {
+    delete m_scene;
 }
 
 void KGoldrunner::setupActions()

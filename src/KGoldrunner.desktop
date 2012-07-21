@@ -1,3 +1,4 @@
+#!/usr/bin/env xdg-open
 # KDE Config File
 [Desktop Entry]
 Name=KGoldrunner
