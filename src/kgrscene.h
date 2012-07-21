@@ -62,9 +62,21 @@ public:
     KGrScene (QObject * parent = 0);
     ~KGrScene ();
 
+    /*
+     * Resize the scene and its contents depending on the size of its primary
+     * viewport.
+     */
     void            redrawScene ();
+
+    /*
+     * Requests the KGameRenderedItem's which make up the fancy border around
+     * the background and set their position accordingly.
+     */
     void            drawBorder();
 
+    /*
+     * Get a pointer to scene's renderer.
+     */
     KGrRenderer *   renderer () const { return m_renderer; }
 public slots:
     void currentThemeChanged(const KgTheme *);
@@ -73,15 +85,14 @@ private:
     void setTileSize (KGameRenderedItem * tile, const int tileSize);
 
     KGrRenderer         *   m_renderer;
-    KGameRenderer       *   m_renderSet;
     KGameRenderedItem   *   m_background;
 
     int                     m_tilesWide;
     int                     m_tilesHigh;
     int                     m_tileSize;
 
-    QVector<KGameRenderedItem *> m_tiles;
-    QList< KGameRenderedItem * > borderElements;
+    QVector<KGameRenderedItem *> m_tiles;        // The items of the scenario.
+    QList< KGameRenderedItem * > borderElements; // The items of the border.
 };
 
 #endif // KGRSCENE_H

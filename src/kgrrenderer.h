@@ -95,11 +95,28 @@ public:
     KGameRenderedItem * getBackground (const int level,
                                        KGameRenderedItem * currentBackground);
 
+    /*
+     * Returns true case the current theme has a border around its background
+     * and false otherwise.
+     */
     bool    hasBorder()     const { return m_hasBorder; }
+
+    /*
+     * Get the color of the scene's background brush requested for the current
+     * theme.
+     */
     QColor  borderColor()   const { return m_borderColor; }
+
+    /*
+     * Get the color of the on-screen text which appears in certain game stages
+     * (the demo stage for instance) and in the score box.
+     */
     QColor  textColor()     const { return m_textColor; }
 
-    // TODO: Describe this method.
+    /*
+     * Get a list containing all the KGameRenderedItem's which make up the
+     * theme's border.
+     */
     QList <KGameRenderedItem * > borderTiles() const;
 public slots:
     /*
