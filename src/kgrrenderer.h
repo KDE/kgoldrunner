@@ -1,5 +1,6 @@
 /****************************************************************************
- *    Copyright 2012  Ian Wadham <iandw.au@gmail.com>                       *
+ *    Copyright 2012 Ian Wadham  <iandw.au@gmail.com>                       *
+ *    Copyright 2012 Roney Gomes <roney477@gmail.com>                       *
  *                                                                          *
  *    This program is free software; you can redistribute it and/or         *
  *    modify it under the terms of the GNU General Public License as        *
@@ -96,28 +97,32 @@ public:
                                        KGameRenderedItem * currentBackground);
 
     /*
+     * Create the QGraphicsScene item for a border tile.
+     *
+     * @param spriteKey     The name of the sprite which will be rendered. 
+     * @param currentItem   The pre-existing item that is to be replaced, or
+     *                      zero if the previous theme had no border.
+     */
+    KGameRenderedItem * getBorderItem (QString spriteKey,
+                                       KGameRenderedItem * currentItem);
+    /*
      * Returns true case the current theme has a border around its background
      * and false otherwise.
      */
-    bool    hasBorder()     const { return m_hasBorder; }
+    bool hasBorder() const;
 
     /*
      * Get the color of the scene's background brush requested for the current
      * theme.
      */
-    QColor  borderColor()   const { return m_borderColor; }
+    QColor borderColor() const;
 
     /*
      * Get the color of the on-screen text which appears in certain game stages
      * (the demo stage for instance) and in the score box.
      */
-    QColor  textColor()     const { return m_textColor; }
+    QColor textColor() const;
 
-    /*
-     * Get a list containing all the KGameRenderedItem's which make up the
-     * theme's border.
-     */
-    QList <KGameRenderedItem * > borderTiles() const;
 public slots:
     /*
      * Show the theme-selector dialog. When the theme changes, KGrRenderer uses
@@ -154,24 +159,22 @@ private:
 
     KgThemeSelector * m_themeSelector;	// Selector (dialog) for themes.
 
-    bool              m_hasBorder;	// Whether the theme has a border or the
-					// background pixmap fills the view.
-    QColor            m_borderColor;	// The color of the theme's border.
-    QColor            m_textColor;	// The color of the theme's text.
-
     KGameRenderer   * m_setRenderer;	// Renderer for Set SVG files.
     KGameRenderer   * m_actorsRenderer;	// Renderer for Actors SVG files.
 
     static PixmapSpec keyTable [];	// Table of tile/background specs.
 
     // Set the frame counts to -2 at startup and when the theme changes.
-    void              initPixmapKeys();
+    void initPixmapKeys();
+
+    // Make the Actors theme (hero, etc.) match the Set theme (bricks, etc.).
+    void matchThemes (const KgTheme * currentSetTheme);
 
     // Find a tile type or background in the table of tiles and backgrounds.
-    int               findKeyTableIndex (const char picType);
+    int findKeyTableIndex (const char picType);
 
     // Count the number of variants of a tile or background.
-    int               countFrames (const int index);
+    int countFrames (const int index);
 
     /*
      * Get the SVG element name for a KGoldrunner tile type. If the theme has
@@ -186,7 +189,7 @@ private:
      * more than one background, cycle though the choices as the KGoldrunner
      * game's level changes.
      *
-     * @param level   The current level in a KGoldrunner game.
+     * @param level The current level in a KGoldrunner game.
      */
     QString getBackgroundKey (const int level);
 };

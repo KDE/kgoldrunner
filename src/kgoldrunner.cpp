@@ -187,7 +187,6 @@ void KGoldrunner::KGoldrunner_2()
 
 KGoldrunner::~KGoldrunner()
 {
-    delete m_scene;
 }
 
 void KGoldrunner::setupActions()

@@ -74,11 +74,8 @@ KGrRenderer::KGrRenderer (KGrScene * scene)
     connect (m_setProvider, SIGNAL(currentThemeChanged(const KgTheme*)),
              this,            SLOT(currentThemeChanged(const KgTheme*)));
 
-    connect (m_setProvider, SIGNAL(currentThemeChanged(const KgTheme *)),
-             m_scene,         SLOT(currentThemeChanged(const KgTheme *)));
-
     // Match the starting SVG theme for the Actors to the one for the Set.
-    currentThemeChanged (m_setProvider->currentTheme());
+    matchThemes (m_setProvider->currentTheme());
 }
 
 KGrRenderer::~KGrRenderer()
@@ -86,15 +83,11 @@ KGrRenderer::~KGrRenderer()
     delete m_themeSelector;
 }
 
-void KGrRenderer::currentThemeChanged (const KgTheme* currentSetTheme)
+void KGrRenderer::matchThemes (const KgTheme * currentSetTheme)
 {
-    qDebug() << "KGrRenderer::currentThemeChanged()";
-
     // Start of game or change of theme: initialise the counts of pixmap keys.
     initPixmapKeys();
 
-    // Make the Actors theme (hero, etc.) match the Set theme (bricks, etc.).
-    // qDebug() << "KGrRenderer::currentThemeChanged()" << currentSetTheme->name();
     foreach (const KgTheme * actorsTheme, m_actorsProvider->themes()) {
 	if (actorsTheme->customData("Set") ==
             currentSetTheme->customData("Set")) {
@@ -102,14 +95,14 @@ void KGrRenderer::currentThemeChanged (const KgTheme* currentSetTheme)
 	    break;
 	}
     }
+}
 
-    // Save the KGoldrunner attributes of the current theme.
-    QString s     = currentSetTheme->customData("DrawCanvasBorder", "0");
-    m_hasBorder   = (s == QString ("1"));
-    s             = currentSetTheme->customData("BorderColor", "#000000");
-    m_borderColor = QColor (s);
-    s             = currentSetTheme->customData("TextColor", "#FFFFFF");
-    m_textColor   = QColor (s);
+void KGrRenderer::currentThemeChanged (const KgTheme* currentSetTheme)
+{
+    qDebug() << "KGrRenderer::currentThemeChanged()" << currentSetTheme->name();
+
+    matchThemes (currentSetTheme);
+    m_scene->changeTheme();
 }
 
 void KGrRenderer::selectTheme()
@@ -175,40 +168,48 @@ KGameRenderedItem * KGrRenderer::getBackground
 
     QString key = getBackgroundKey (level);
     KGameRenderedItem * background = new KGameRenderedItem (m_setRenderer, key);
+    m_scene->addItem (background);
 
     return background;
 }
 
-QList <KGameRenderedItem *> KGrRenderer::borderTiles() const
+KGameRenderedItem * KGrRenderer::getBorderItem
+                    (QString spriteKey, KGameRenderedItem * currentItem)
 {
-    qDebug() << "KGrRenderer::borderTiles()";
-    qDebug() << "m_setRenderer:" << m_setRenderer;
+    if (currentItem) {
+        m_scene->removeItem (currentItem);
+        delete currentItem;
+    }
 
-    QList <KGameRenderedItem *> list;
+    if (!hasBorder()) {
+        return 0;
+    }
 
-    // Corners.
-    list.append (new KGameRenderedItem (m_setRenderer, "frame-topleft"));
-    list.append (new KGameRenderedItem (m_setRenderer, "frame-topright"));
-    list.append (new KGameRenderedItem (m_setRenderer, "frame-bottomleft"));
-    list.append (new KGameRenderedItem (m_setRenderer, "frame-bottomright"));
+    KGameRenderedItem * item = new KGameRenderedItem (m_setRenderer, spriteKey);
+    m_scene->addItem (item);
+    return item;
+}
 
-    // Upper side. 
-    for (int i = 0; i < FIELDWIDTH; i++)
-        list.append (new KGameRenderedItem (m_setRenderer, "frame-top"));
+bool KGrRenderer::hasBorder() const
+{
+    QString s = m_setRenderer->theme()->customData("DrawCanvasBorder", "0");
 
-    // Lower side.
-    for (int i = 0; i < FIELDWIDTH; i++)
-        list.append (new KGameRenderedItem (m_setRenderer, "frame-bottom"));
+    if (s == "1")
+        return true;
+    else
+        return false;
+}
 
-    // Left side.
-    for (int i = 0; i < FIELDHEIGHT; i++)
-        list.append (new KGameRenderedItem (m_setRenderer, "frame-left"));
+QColor KGrRenderer::borderColor() const
+{
+    QString s = m_setRenderer->theme()->customData("BorderColor", "#000000");
+    return QColor (s);
+}
 
-    // Right side.
-    for (int i = 0; i < FIELDHEIGHT; i++)
-        list.append (new KGameRenderedItem (m_setRenderer, "frame-right"));
-
-    return list;
+QColor KGrRenderer::textColor() const
+{
+    QString s = m_setRenderer->theme()->customData("TextColor", "#FFFFFF");
+    return QColor (s);
 }
 
 QString KGrRenderer::getPixmapKey (const char picType, const int index)

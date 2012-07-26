@@ -1,5 +1,5 @@
 /****************************************************************************
- *    Copyright 2012  Ian Wadham <iandw.au@gmail.com>                       *
+ *    Copyright 2012 Roney Gomes <roney477@gmail.com>                       *
  *                                                                          *
  *    This program is free software; you can redistribute it and/or         *
  *    modify it under the terms of the GNU General Public License as        *
@@ -36,14 +36,11 @@ KGrScene::KGrScene (QObject * parent)
     m_background    (0),
     m_tilesWide     (FIELDWIDTH  + 2 * 2),
     m_tilesHigh     (FIELDHEIGHT + 2 * 2),
-    m_tileSize      (10)
+    m_tileSize      (10),
+    m_themeChanged  (true)
 {
     m_renderer      = new KGrRenderer (this);
-
-    setBackgroundBrush (m_renderer->borderColor());
-
-    if (m_renderer->hasBorder())
-        drawBorder();
+    m_tiles.fill (0, m_tilesWide * m_tilesHigh);
 }
 
 KGrScene::~KGrScene()
@@ -52,44 +49,54 @@ KGrScene::~KGrScene()
 
 void KGrScene::redrawScene ()
 {
-    // Calculate what size of tile will fit in the view.
-    QSize size = views().at(0)->size();
-    int tileSize = qMin (size.width()/m_tilesWide, size.height()/m_tilesHigh);
+    if (m_sizeChanged) {
+        // Calculate what size of tile will fit in the view.
+        QSize size      = views().at(0)->size();
+        int tileSize    = qMin (size.width()  / m_tilesWide,
+                                size.height() / m_tilesHigh);
 
-    qreal unusedX = (size.width()  - m_tilesWide * tileSize)/2.0;
-    qreal unusedY = (size.height() - m_tilesHigh * tileSize)/2.0;
-    unusedX = unusedX / tileSize;	// Fraction of a tile at L and R.
-    unusedY = unusedY / tileSize;	// Fraction of a tile at T and B.
-    setSceneRect (-1.0 - unusedX, -1.0 - unusedY,
-                  m_tilesWide + 2.0 * unusedX, m_tilesHigh + 2.0 * unusedY);
+        qreal unusedX   = (size.width()  - m_tilesWide * tileSize)/2.0;
+        qreal unusedY   = (size.height() - m_tilesHigh * tileSize)/2.0;
 
-    loadBackground(1); // Test level 1.
+        unusedX         = unusedX / tileSize; // Fraction of a tile at L and R.
+        unusedY         = unusedY / tileSize; // Fraction of a tile at T and B.
 
-    // Checks wether the background and all the other visual elements need to be
-    // resized.
-    if (tileSize != m_tileSize) {
-	m_background->setRenderSize (QSize ((m_tilesWide - 4) * tileSize,
-                                            (m_tilesHigh - 4) * tileSize));
-	m_background->setScale (1.0 / tileSize);
+        setSceneRect (-1.0 - unusedX, -1.0 - unusedY,
+                      m_tilesWide + 2.0 * unusedX, m_tilesHigh + 2.0 * unusedY);
 
-        if (!borderElements.isEmpty()) {
-            foreach (KGameRenderedItem * item, borderElements)
-                setTileSize (item, tileSize);
+        foreach (KGameRenderedItem * tile, m_tiles) {
+            if (tile) {
+                setTileSize (tile, tileSize);
+            }
         }
+
+        m_sizeChanged   = false;
+        m_tileSize      = tileSize;
     }
 
-    m_background->setPos (1, 1);
+    // NOTE: This is for testing only. As long as the scene is not connected to
+    // the game engine loadBackground() will behave this way. 
+    loadBackground (1);
+
+    if (m_themeChanged) {
+        // Fill the scene (and view) with the new background color.  Do this
+        // even if the background has no border, to avoid ugly white rectangles
+        // appearing if rendering and painting is momentarily a bit slow.
+        setBackgroundBrush (m_renderer->borderColor());
+        drawBorder();
+        m_themeChanged = false;
+    }
 }
 
-void KGrScene::currentThemeChanged (const KgTheme *)
+void KGrScene::changeTheme()
 {
-    if (m_renderer->hasBorder())
-        drawBorder();
+    m_themeChanged = true;
+    redrawScene();
+}
 
-    // Fill the scene (and view) with the new background color.  Do this even if
-    // the background has no border, to avoid ugly white rectangles appearing
-    // if rendering and painting is momentarily a bit slow.
-    setBackgroundBrush (m_renderer->borderColor());
+void KGrScene::changeSize()
+{
+    m_sizeChanged = true;
     redrawScene();
 }
 
@@ -97,11 +104,13 @@ void KGrScene::loadBackground (const int level)
 {
     // NOTE: The background picture can be the same size as the level-layout (as
     // in the Egypt theme) OR it can be the same size as the entire viewport.
-    if (m_tiles.count() == 0) {
-	// In this example the background is fitted into the level-layout.
-	m_background = m_renderer->getBackground (level, m_background);
-        addItem(m_background);
-    }
+    // In this example the background is fitted into the level-layout.
+    m_background = m_renderer->getBackground (level, m_background);
+
+    m_background->setRenderSize (QSize ((m_tilesWide - 4) * m_tileSize,
+                                        (m_tilesHigh - 4) * m_tileSize));
+    m_background->setPos    (1, 1);
+    m_background->setScale  (1.0 / m_tileSize);
 }
 
 void KGrScene::setTileSize (KGameRenderedItem * tile, const int tileSize)
@@ -110,77 +119,42 @@ void KGrScene::setTileSize (KGameRenderedItem * tile, const int tileSize)
     tile->setScale (1.0 / tileSize);
 }
 
+void KGrScene::setBorderTile (const QString spriteKey, const int x, const int y)
+{
+    int index               = x * m_tilesHigh + y;
+    KGameRenderedItem * t   = m_renderer->getBorderItem (spriteKey,
+                                                         m_tiles.at(index));
+    m_tiles[index]          = t;
+
+    if (t) {
+        setTileSize (t, m_tileSize);
+        t->setPos (x, y);
+    }
+}
+
 void KGrScene::drawBorder()
 {
-    foreach (KGameRenderedItem * item, borderElements) {
-        removeItem (item);
-        delete item;
-    }
+    // Corners.
+    setBorderTile ("frame-topleft", 0, 0);
+    setBorderTile ("frame-topright", FIELDWIDTH + 1, 0);
+    setBorderTile ("frame-bottomleft", 0, FIELDHEIGHT + 1);
+    setBorderTile ("frame-bottomright", FIELDWIDTH + 1, FIELDHEIGHT + 1);
 
-    borderElements.clear();
-    borderElements = m_renderer->borderTiles();
+    // Upper side.
+    for (int i = 1; i <= FIELDWIDTH; i++)
+        setBorderTile ("frame-top", i, 0);
 
-    KGameRenderedItem * item;
+    // Lower side.
+    for (int i = 1; i <= FIELDWIDTH; i++)
+        setBorderTile ("frame-bottom", i, FIELDHEIGHT + 1);
 
-    // Top-left corner.
-    item = borderElements.at(0);
-    addItem (item);
-    item->setPos(0, 0);
+    // Left side.
+    for (int i = 1; i <= FIELDHEIGHT; i++)
+        setBorderTile ("frame-left", 0, i);
 
-    // Top-right corner.
-    item = borderElements.at(1);
-    addItem (item);
-    item->setPos(FIELDWIDTH + 1, 0);
-
-    // Bottom-left corner.
-    item = borderElements.at(2);
-    addItem (item);
-    item->setPos(0, FIELDHEIGHT + 1);
-
-    // Bottom-right corner.
-    item = borderElements.at(3);
-    addItem (item);
-    item->setPos(FIELDWIDTH + 1, FIELDHEIGHT + 1);
-
-    // Defines either the x or y coordinate of a border tile. In each loop its
-    // value follows the sequence {1, 2, 3, ...}.
-    int pos;
-
-    // Adds the top side tiles to the scene.
-    for (int i = TOP_BORDER_BEGIN; i <= TOP_BORDER_END; i++) {
-        item    = borderElements.at(i);
-        pos     = (i - TOP_BORDER_BEGIN) + 1;
-
-        addItem (item);
-        item->setPos (pos, 0);
-    }
-
-    // Adds the bottom side tiles to the scene.
-    for (int i = BOTTOM_BORDER_BEGIN; i <= BOTTOM_BORDER_END; i++) {
-        item    = borderElements.at(i);
-        pos     = (i - BOTTOM_BORDER_BEGIN) + 1;
-
-        addItem (item);
-        item->setPos (pos, FIELDHEIGHT + 1);
-    }
-
-    // Adds the left side tiles to the scene.
-    for (int i = LEFT_BORDER_BEGIN; i <= LEFT_BORDER_END; i++) {
-        item    = borderElements.at(i);
-        pos     = (i - LEFT_BORDER_BEGIN) + 1;
-
-        addItem (item);
-        item->setPos (0, pos);
-    }
-
-    // Adds the right side tiles to the scene.
-    for (int i = RIGHT_BORDER_BEGIN; i <= RIGHT_BORDER_END; i++) {
-        item    = borderElements.at(i);
-        pos     = (i - RIGHT_BORDER_BEGIN) + 1;
-
-        addItem (item);
-        item->setPos (FIELDWIDTH + 1, pos);
-    }
+    // Right side.
+    for (int i = 1; i <= FIELDHEIGHT; i++)
+        setBorderTile ("frame-right", FIELDWIDTH + 1, i);
 }
 
 #include "kgrscene.moc"

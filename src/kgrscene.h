@@ -1,5 +1,5 @@
 /****************************************************************************
- *    Copyright 2012  Ian Wadham <iandw.au@gmail.com>                       *
+ *    Copyright 2012 Roney Gomes <roney477@gmail.com>                       *
  *                                                                          *
  *    This program is free software; you can redistribute it and/or         *
  *    modify it under the terms of the GNU General Public License as        *
@@ -63,26 +63,56 @@ public:
     ~KGrScene ();
 
     /*
-     * Resize the scene and its contents depending on the size of its primary
-     * viewport.
+     * Redraw the scene whenever the current theme has changed.
      */
-    void            redrawScene ();
+    void changeTheme    ();
 
     /*
-     * Requests the KGameRenderedItem's which make up the fancy border around
-     * the background and set their position accordingly.
+     * Redraw the scene whenever the scene is resized.
      */
-    void            drawBorder();
+    void changeSize     ();
 
     /*
-     * Get a pointer to scene's renderer.
+     * Get a pointer to the scene's renderer.
      */
-    KGrRenderer *   renderer () const { return m_renderer; }
-public slots:
-    void currentThemeChanged(const KgTheme *);
+    KGrRenderer * renderer () const { return m_renderer; }
 private:
+    /*
+     * Actions performed whenever the viewport is resized or a different theme
+     * is loaded.
+     */
+    void redrawScene    ();
+
+    /*
+     * Load and set the size and position of the KGameRenderedItem's which make
+     * up the border layout.
+     */
+    void drawBorder     ();
+
+    /*
+     * Load and set the size and position of the background image for the
+     * current level.
+     *
+     * @param level The current level.
+     */
     void loadBackground (const int level);
-    void setTileSize (KGameRenderedItem * tile, const int tileSize);
+
+    /*
+     * Add a new element, with coordinates x and y, to the border-layout.
+     *
+     * @param spriteKey The sprite key of the requested item.
+     * @param x         The item's x coordinate.
+     * @param y         The item's y coordinate.
+     */
+    void setBorderTile  (const QString spriteKey, const int x, const int y);
+
+    /*
+     * Resize a game's visual element.
+     *
+     * @param tile      The element to be resized.
+     * @param tileSize  The new size.
+     */
+    void setTileSize    (KGameRenderedItem * tile, const int tileSize);
 
     KGrRenderer         *   m_renderer;
     KGameRenderedItem   *   m_background;
@@ -91,8 +121,12 @@ private:
     int                     m_tilesHigh;
     int                     m_tileSize;
 
-    QVector<KGameRenderedItem *> m_tiles;        // The items of the scenario.
-    QList< KGameRenderedItem * > borderElements; // The items of the border.
+    bool                    m_sizeChanged;
+    bool                    m_themeChanged;
+
+    // The visible elements of the scenario (tiles and borders), excluding the
+    // background picture.
+    QVector <KGameRenderedItem *> m_tiles;
 };
 
 #endif // KGRSCENE_H
