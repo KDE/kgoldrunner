@@ -21,7 +21,8 @@
 
 #include "kgrgame.h"
 
-#include "kgrcanvas.h"
+#include "kgrview.h"
+#include "kgrscene.h"
 #include "kgrselector.h"
 
 // KGoldrunner loads and plays .ogg files and requires OpenAL + SndFile > v0.21.
@@ -31,7 +32,7 @@
     #include "kgrsounds.h"
 #endif
 
-#include "kgreditor.h"
+// #include "kgreditor.h"
 #include "kgrlevelplayer.h"
 #include "kgrdialog.h"
 #include "kgrgameio.h"
@@ -82,9 +83,9 @@
 /***********************    KGOLDRUNNER GAME CLASS    *************************/
 /******************************************************************************/
 
-KGrGame::KGrGame (KGrCanvas * theView, 
+KGrGame::KGrGame (KGrView * theView,
                   const QString & theSystemDir, const QString & theUserDir)
-        : 
+        :
 	QObject       (theView),	// Game is destroyed if view closes.
         levelPlayer   (0),
         recording     (0),
@@ -101,8 +102,8 @@ KGrGame::KGrGame (KGrCanvas * theView,
         effects       (0),
         fx            (NumSounds),
         soundOn       (false),
-        stepsOn       (false),
-        editor        (0)
+        stepsOn       (false)
+        // editor        (0)
 {
     dbgLevel = 0;
 
@@ -246,7 +247,7 @@ void KGrGame::gameActions (const int action)
     }
 }
 
-void KGrGame::editActions (const int action)
+/*  void KGrGame::editActions (const int action)
 {
     bool editOK    = true;
     bool newEditor = (editor) ? false : true;
@@ -301,7 +302,7 @@ void KGrGame::editActions (const int action)
             setPlayback (false);
             if (levelPlayer) {
                 endLevel (NORMAL);
-                view->deleteAllSprites();
+                // view->deleteAllSprites();
             }
 
             emit showLives (0);
@@ -334,9 +335,9 @@ void KGrGame::editActions (const int action)
         gameGroup.writeEntry ("Level_" + prefix, level);
         gameGroup.sync();		// Ensure that the entry goes to disk.
     }
-}
+} */
 
-void KGrGame::editToolbarActions (const int action)
+/* void KGrGame::editToolbarActions (const int action)
 {
     // If game-editor is inactive or action-code is not recognised, do nothing.
     if (editor) {
@@ -362,7 +363,7 @@ void KGrGame::editToolbarActions (const int action)
             break;
         }
     }
-}
+} */
 
 void KGrGame::settings (const int action)
 {
@@ -488,7 +489,7 @@ void KGrGame::initGame()
              << gameList.at (gameIndex)->name << level;
 
     kDebug() << "Calling the first view->changeTheme() ...";
-    view->changeTheme (initialThemeFilepath);
+    // view->changeTheme (initialThemeFilepath);
 
     setPlayback            ( gameGroup.readEntry ("StartingDemo", true));
     if (playback && (startDemo (SYSTEM, mainDemoName, 1))) {
@@ -604,7 +605,7 @@ void KGrGame::startInstantReplay()
     // Terminate current play.
     delete levelPlayer;
     levelPlayer = 0;
-    view->deleteAllSprites();
+    // view->deleteAllSprites();
 
     // Redisplay the starting score and lives.
     lives = recording->lives;
@@ -804,7 +805,7 @@ void KGrGame::runReplay (const int action,
 
 void KGrGame::newGame (const int lev, const int newGameIndex)
 {
-    view->goToBlack();
+    // view->goToBlack();
 
     KGrGameData * gameData = gameList.at (newGameIndex);
     level     = lev;
@@ -828,11 +829,11 @@ bool KGrGame::playLevel (const Owner fileOwner, const QString & prefix,
                          const int levelNo, const bool newLevel)
 {
     // If the game-editor is active, terminate it.
-    if (editor) {
+    /*  if (editor) {
         emit setEditMenu (false);	// Disable edit menu items and toolbar.
         delete editor;
         editor = 0;
-    }
+    } */
 
     // If there is a level being played, kill it, with no win/lose result.
     if (levelPlayer) {
@@ -841,15 +842,15 @@ bool KGrGame::playLevel (const Owner fileOwner, const QString & prefix,
 
     // Clean up any sprites remaining from a previous level.  This is done late,
     // so that the player has a little time to observe how the level ended.
-    view->deleteAllSprites();
+    // view->deleteAllSprites();
 
     // Set up to record or play back: load either level-data or recording-data.
     if (! initRecordingData (fileOwner, prefix, levelNo)) {
         return false;
     }
 
-    view->setLevel (levelNo);		// Switch and render background if reqd.
-    view->fadeIn();			// Then run the fade-in animation.
+    // view->setLevel (levelNo);		// Switch and render background if reqd.
+    // view->fadeIn();			// Then run the fade-in animation.
     startScore = score;			// The score we will save, if asked.
 
     // Create a level player, initialised and ready for play or replay to start.
@@ -862,7 +863,7 @@ bool KGrGame::playLevel (const Owner fileOwner, const QString & prefix,
     emit hintAvailable (levelHint.length() > 0);
 
     // Re-draw the playfield frame, level title and figures.
-    view->setTitle (getTitle());
+    // view->setTitle (getTitle());
 
     // If we are starting a new level, save it in the player's config file.
     if (newLevel && (level != 0)) {	// But do not save the "ENDE" level.
@@ -1022,24 +1023,24 @@ void KGrGame::herosDead()
 void KGrGame::finalBreath()
 {
     dbk << "Connecting fadeFinished()";
-    connect (view, SIGNAL (fadeFinished()), this, SLOT (repeatLevel()));
+    // connect (view, SIGNAL (fadeFinished()), this, SLOT (repeatLevel()));
     dbk << "Calling view->fadeOut()";
-    view->fadeOut();
+    // view->fadeOut();
 }
 
 void KGrGame::repeatLevel()
 {
-    disconnect (view, SIGNAL (fadeFinished()), this, SLOT (repeatLevel()));
+    // disconnect (view, SIGNAL (fadeFinished()), this, SLOT (repeatLevel()));
 
     // Avoid re-starting if the player selected edit before the time was up.
-    if (! editor) {
+    // if (! editor) {
         if (playback) {
             runNextDemoLevel();
         }
         else if (playLevel (owner, prefix, level, (! NewLevel))) {
             levelPlayer->prepareToPlay();
         }
-    }
+    // }
     freeze (ProgramPause, false);	// Unfreeze, but don't move yet.
 }
 
@@ -1048,14 +1049,14 @@ void KGrGame::levelCompleted()
     playSound (CompletedSound);
 
     dbk << "Connecting fadeFinished()";
-    connect (view, SIGNAL (fadeFinished()), this, SLOT (goUpOneLevel()));
+    // connect (view, SIGNAL (fadeFinished()), this, SLOT (goUpOneLevel()));
     dbk << "Calling view->fadeOut()";
-    view->fadeOut();
+    // view->fadeOut();
 }
 
 void KGrGame::goUpOneLevel()
 {
-    disconnect (view, SIGNAL (fadeFinished()), this, SLOT (goUpOneLevel()));
+    // disconnect (view, SIGNAL (fadeFinished()), this, SLOT (goUpOneLevel()));
 
     lives++;			// Level completed: gain another life.
     emit showLives (lives);
@@ -1141,10 +1142,10 @@ void KGrGame::setTimeScale (const int action)
     }
 }
 
-bool KGrGame::inEditMode()
+/*  bool KGrGame::inEditMode()
 {
     return (editor != 0);	// Return true if the game-editor is active.
-}
+} */
 
 void KGrGame::toggleSoundsOnOff (const int action)
 {
@@ -1295,7 +1296,7 @@ void KGrGame::setPlayback (const bool onOff)
         emit setAvail  ("increase_speed",  enableDisable);
         emit setAvail  ("decrease_speed",  enableDisable);
     }
-    view->showReplayMessage (onOff);
+    // view->showReplayMessage (onOff);
     playback = onOff;
 }
 
@@ -1331,9 +1332,9 @@ void KGrGame::kbControl (const int dirn, const bool pressed)
 {
     dbk2 << "Keystroke setting direction" << dirn << "pressed" << pressed;
 
-    if (editor) {
+    /*  if (editor) {
         return;
-    }
+    } */
     if (playback) {
         levelPlayer->interruptPlayback();	// Will emit interruptDemo().
         return;
@@ -1384,13 +1385,13 @@ void KGrGame::kbControl (const int dirn, const bool pressed)
 
 void KGrGame::saveGame()		// Save game ID, score and level.
 {
-    if (editor) {
+    /*  if (editor) {
         myMessage (view, i18n ("Save Game"),
         i18n ("Sorry, you cannot save your game play while you are editing. "
         "Please try menu item \"%1\".",
         i18n ("&Save Edits...")));
         return;
-    }
+    } */
     if (playback) {
         return;				//  Avoid saving in playback mode.
     }
@@ -1526,7 +1527,7 @@ void KGrGame::loadGame (const int game, const int lev)
 
 bool KGrGame::saveOK()
 {
-    return (editor ? (editor->saveOK()) : true);
+    return true; // (editor ? (editor->saveOK()) : true);
 }
 
 /******************************************************************************/
@@ -1651,8 +1652,8 @@ void KGrGame::checkHighScore()
 
     hsn->		setWindowTitle (i18n ("Save High Score"));
 
-    QPoint		p = view->mapToGlobal (QPoint (0,0));
-    hsn->		move (p.x() + 50, p.y() + 50);
+    // QPoint		p = view->mapToGlobal (QPoint (0,0));
+    // hsn->		move (p.x() + 50, p.y() + 50);
 
     OK->		setShortcut (Qt::Key_Return);
     hsnUser->		setFocus();		// Set the keyboard input on.
@@ -1876,11 +1877,11 @@ void KGrGame::showHighScores()
     OK->		setMaximumWidth (100);
     hboxLayout1->addWidget (OK);
     mainLayout->	addLayout (hboxLayout1, 5);
-    int w =		(view->size().width()*4)/10;
-    hs->		setMinimumSize (w, w);
+    // int w =		(view->size().width()*4)/10;
+    // hs->		setMinimumSize (w, w);
 
-    QPoint		p = view->mapToGlobal (QPoint (0,0));
-    hs->		move (p.x() + 50, p.y() + 50);
+    // QPoint		p = view->mapToGlobal (QPoint (0,0));
+    // hs->		move (p.x() + 50, p.y() + 50);
 
     // Start up the dialog box.
     connect		(OK, SIGNAL (clicked()), hs, SLOT (accept()));

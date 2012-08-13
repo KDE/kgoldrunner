@@ -21,18 +21,18 @@
 #include <QResizeEvent>
 #include <QGraphicsView>
 
-#include "kgrscene.h"
+class KGrScene;
 
 class KGrView : public QGraphicsView
 {
-    Q_OBJECT
 public:
-    KGrView (QWidget * parent = 0);
-    ~KGrView ();
+    KGrView     (QWidget * parent);
+    ~KGrView    ();
 
+    KGrScene * gameScene () const { return m_scene; }
 protected:
-    virtual void keyReleaseEvent    (QKeyEvent * event);
-    virtual void resizeEvent        (QResizeEvent * event);
+    virtual void resizeEvent        (QResizeEvent   *);
+    virtual void keyReleaseEvent    (QKeyEvent      * event);
 
 private:
     KGrScene * m_scene;

@@ -29,7 +29,7 @@
 class KGrTimer;
 class KGrLevelGrid;
 class KGrRuleBook;
-class KGrCanvas;
+class KGrView;
 class KGrHero;
 class KGrEnemy;
 
@@ -108,7 +108,7 @@ public:
      *                   play back a previously recorded level.
      * @param gameFrozen If true, go into pause-mode when the level starts.
      */
-    void init                   (KGrCanvas *          view,
+    void init                   (KGrView *            view,
                                  KGrRecording *       pRecording,
                                  const bool           pPlayback,
                                  const bool           gameFrozen);

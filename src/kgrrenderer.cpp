@@ -212,6 +212,18 @@ QColor KGrRenderer::textColor() const
     return QColor (s);
 }
 
+QPixmap KGrRenderer::getPixmap (const char picType)
+{
+    // Get the pixmap key and use one of the two renderers to create the tile.
+    int index   = findKeyTableIndex (picType);
+    QString key = getPixmapKey      (picType, index);
+
+    if (keyTable[index].picSource == Set)
+        return m_setRenderer->spritePixmap (key, m_scene->tileSize ());
+    else
+        return m_actorsRenderer->spritePixmap (key, m_scene->tileSize ());
+}
+
 QString KGrRenderer::getPixmapKey (const char picType, const int index)
 {
     QString pixmapKey = "";

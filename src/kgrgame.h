@@ -31,12 +31,13 @@
  *
  * @short   KGoldrunner Game Controller.
  */
-class KGrCanvas;
+class KGrView;
+class KGrScene;
 class KDialog;
 
 class KGrSounds;
 
-class KGrEditor;
+// class KGrEditor;
 class KGrLevelPlayer;
 class KRandomSequence;
 class QTimer;
@@ -45,7 +46,7 @@ class KGrGame : public QObject
 {
 Q_OBJECT
 public:
-    KGrGame (KGrCanvas * theView,
+    KGrGame (KGrView * theView,
              const QString & theSystemDir, const QString & theUserDir);
     ~KGrGame();
 
@@ -53,7 +54,7 @@ public:
 
     void setInitialTheme (const QString & themeFilepath);
 
-    bool inEditMode();			// True if the game is in editor mode.
+    // bool inEditMode();			// True if the game is in editor mode.
 
     bool saveOK();			// Check if edits were saved.
 
@@ -65,8 +66,8 @@ public slots:
     void initGame();			// Do the game object's first painting.
 
     void gameActions        (const int action);
-    void editActions        (const int action);
-    void editToolbarActions (const int action);
+    // void editActions        (const int action);
+    // void editToolbarActions (const int action);
     void settings           (const int action);
 
     void kbControl          (const int dirn, const bool pressed = true);
@@ -145,7 +146,7 @@ signals:
 
     void hintAvailable (bool);		// For main window to adjust menu text.
 
-    void setEditMenu (bool);		// Enable/Disable edit menu items.
+    // void setEditMenu (bool);		// Enable/Disable edit menu items.
 
     void gameFreeze (bool);		// Do visual feedback in the GUI.
 
@@ -185,7 +186,9 @@ private:
     KGrRecording *              recording;	// A recording of the play.
     bool                        playback;	// Play back or record?
 
-    KGrCanvas *			view;		// Where the game is displayed.
+    KGrView     *		view;		// Where the game is displayed.
+    KGrScene    *               scene;          // Where the graphics are.
+
     QString			systemDataDir;	// System games are stored here.
     QString			userDataDir;	// User games are stored here.
     int                         timeScale;	// The speed of the game (2-20).
@@ -232,7 +235,7 @@ public slots:
     void dbgControl (const int code);	// Authors' debugging aids.
 
 private:
-    KGrEditor * editor;		// The level-editor object.
+    // KGrEditor * editor;		// The level-editor object.
 
     int controlMode;		// How to control the hero (e.g. K/B or mouse).
     int holdKeyOption;		// Whether K/B control is by holding or clicking keys.

@@ -48,6 +48,8 @@
 #define KGRSCENE_H
 
 #include <QGraphicsScene>
+#include <QGraphicsTextItem>
+#include <QGraphicsPixmapItem>
 
 #include <KgTheme>
 #include <KGameRenderedItem>
@@ -59,23 +61,33 @@ class KGrScene : public QGraphicsScene
 {
     Q_OBJECT
 public:
-    KGrScene (QObject * parent = 0);
-    ~KGrScene ();
+    KGrScene                (QObject * parent);
+    ~KGrScene               ();
 
     /*
      * Redraw the scene whenever the current theme has changed.
      */
-    void changeTheme    ();
+    void changeTheme        ();
 
     /*
      * Redraw the scene whenever the scene is resized.
      */
-    void changeSize     ();
+    void changeSize         ();
+
+    /*
+     * Get the current size of the squared region occupied by a single visual
+     * element (characters, ladders, bricks etc.).
+     */
+    QSize tileSize          () const { return QSize (m_tileSize, m_tileSize); }
 
     /*
      * Get a pointer to the scene's renderer.
      */
-    KGrRenderer * renderer () const { return m_renderer; }
+    KGrRenderer * renderer  () const { return m_renderer; }
+
+public slots:
+    void paintCell          (const int i, const int j, const char type);
+
 private:
     /*
      * Actions performed whenever the viewport is resized or a different theme
@@ -116,6 +128,12 @@ private:
 
     KGrRenderer         *   m_renderer;
     KGameRenderedItem   *   m_background;
+
+    QGraphicsTextItem   *   m_scoreText;
+    QGraphicsTextItem   *   m_livesText;
+
+    QGraphicsPixmapItem *   m_scoreDisplay;
+    QGraphicsPixmapItem *   m_livesDisplay;
 
     int                     m_tilesWide;
     int                     m_tilesHigh;

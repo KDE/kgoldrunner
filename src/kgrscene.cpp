@@ -34,13 +34,17 @@ KGrScene::KGrScene (QObject * parent)
     // plus 2 more tile widths all around for text areas, frame and spillover
     // for mouse actions (to avoid accidental clicks affecting the desktop).
     m_background    (0),
+    m_scoreText     (0),
+    m_livesText     (0),
+    m_scoreDisplay  (0),
+    m_livesDisplay  (0),
     m_tilesWide     (FIELDWIDTH  + 2 * 2),
     m_tilesHigh     (FIELDHEIGHT + 2 * 2),
     m_tileSize      (10),
     m_themeChanged  (true)
 {
-    m_renderer      = new KGrRenderer (this);
-    m_tiles.fill (0, m_tilesWide * m_tilesHigh);
+    m_tiles.fill    (0, m_tilesWide * m_tilesHigh);
+    m_renderer  = new KGrRenderer (this);
 }
 
 KGrScene::~KGrScene()
@@ -110,6 +114,8 @@ void KGrScene::loadBackground (const int level)
     m_background->setRenderSize (QSize ((m_tilesWide - 4) * m_tileSize,
                                         (m_tilesHigh - 4) * m_tileSize));
     m_background->setPos    (1, 1);
+    // Keep the background behind the level layout.
+    m_background->setZValue (-1);
     m_background->setScale  (1.0 / m_tileSize);
 }
 
@@ -155,6 +161,18 @@ void KGrScene::drawBorder()
     // Right side.
     for (int i = 1; i <= FIELDHEIGHT; i++)
         setBorderTile ("frame-right", FIELDWIDTH + 1, i);
+}
+
+void KGrScene::paintCell (const int i, const int j, const char type)
+{
+    int index               = i * m_tilesHigh + j;
+    KGameRenderedItem * t   = m_renderer->getTileItem (type, m_tiles.at(index));
+    m_tiles[index]          = t;
+
+    if (t) {
+        setTileSize (t, m_tileSize);
+        t->setPos   (i, j);
+    }
 }
 
 #include "kgrscene.moc"

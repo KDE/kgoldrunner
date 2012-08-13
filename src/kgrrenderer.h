@@ -109,21 +109,27 @@ public:
      * Returns true case the current theme has a border around its background
      * and false otherwise.
      */
-    bool hasBorder() const;
+    bool hasBorder      () const;
 
     /*
      * Get the color of the scene's background brush requested for the current
      * theme.
      */
-    QColor borderColor() const;
+    QColor borderColor  () const;
 
     /*
      * Get the color of the on-screen text which appears in certain game stages
      * (the demo stage for instance) and in the score box.
      */
-    QColor textColor() const;
+    QColor textColor    () const;
 
-public slots:
+    /*
+     * Get a pixmap of a particular tile type (e.g. brick, ladder, gold etc.) 
+     *
+     * @param picType The internal KGoldRunner type of the required tile.
+     */
+    QPixmap getPixmap   (const char picType);
+
     /*
      * Show the theme-selector dialog. When the theme changes, KGrRenderer uses
      * a signal and slot to keep the "Set" and "Actors" parts of the theme and

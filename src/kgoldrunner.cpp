@@ -17,9 +17,7 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ****************************************************************************/
 
-#include "kgrscene.h"
 #include "kgoldrunner.h"
-#include "kgrrenderer.h" // IDW test
 
 #include <QApplication>
 #include <QDesktopWidget>
@@ -55,8 +53,10 @@
 
 #include <libkdegames_capabilities.h> //defines KGAUDIO_BACKEND_OPENAL (or not)
 
-#include "kgrcanvas.h"
 #include "kgrgame.h"
+#include "kgrview.h"
+#include "kgrscene.h"
+#include "kgrrenderer.h"
 
 // Shorthand for references to actions.
 #define ACTION(x)   (actionCollection()->action(x))
@@ -92,29 +92,27 @@ KGoldrunner::KGoldrunner()
 /******************************************************************************/
 
     // Base the size of playing-area and widgets on the monitor resolution.
-    int dw = QApplication::desktop()->width();
+    // int dw = QApplication::desktop()->width();
 
     // Need to consider the height, for widescreen displays (eg. 1280x768).
-    int dh = QApplication::desktop()->height();
+    // int dh = QApplication::desktop()->height();
 
-    double scale = 1.0;
+    /*  double scale = 1.0;
     if ((dw > 800) && (dh > 600)) {			// More than 800x600.
         scale = 1.25;			// Scale 1.25:1.
     }
     if ((dw > 1024) && (dh > 768))  {			// More than 1024x768.
         scale = 1.75;			// Scale 1.75:1.
-    }
-    view = new KGrCanvas (this, scale);
-    game = new KGrGame   (view, systemDataDir, userDataDir);
+    } */
+
+    view = new KGrView (this);
+    game = new KGrGame (view, systemDataDir, userDataDir);
 
     // Initialise the lists of games (i.e. collections of levels).
     if (! game->initGameLists()) {
         startupOK = false;
         return;				// If no game files, abort.
     }
-
-    kDebug() << "Calling view->setBaseScale() ...";
-    view->setBaseScale();		// Set scale for level-titles font.
 
 /******************************************************************************/
 /*************************  SET UP THE USER INTERFACE  ************************/
@@ -126,8 +124,8 @@ KGoldrunner::KGoldrunner()
     // Tell the KMainWindow that the KGrCanvas object is the main widget.
     setCentralWidget (view);
 
-    m_scene = new KGrScene; //IDW test.
-    m_renderer = new KGrRenderer (m_scene); // IDW test.
+    scene       = view->gameScene ();
+    renderer    = scene->renderer ();
 
     // Set up our actions (menu, toolbar and keystrokes) ...
     setupActions();
@@ -140,15 +138,12 @@ KGoldrunner::KGoldrunner()
     setupGUI (static_cast<StandardWindowOption> (Default &
                         (~StatusBar) & (~ToolBar) & (~Keys)));
 
-    // Find the theme-files and generate the Themes menu.
-    setupThemes();
-
     // Set up a status bar (after setupGUI(), to show USER's choice of keys).
     initStatusBar();
 
     // Connect the game actions to the menu and toolbar displays.
     connect (game, SIGNAL (quitGame()),	         SLOT (close()));
-    connect (game, SIGNAL (setEditMenu(bool)),	 SLOT (setEditMenu(bool)));
+    // connect (game, SIGNAL (setEditMenu(bool)),	 SLOT (setEditMenu(bool)));
     connect (game, SIGNAL (hintAvailable(bool)), SLOT (adjustHintAction(bool)));
 
     connect (game, SIGNAL (setAvail(const char*,bool)),
@@ -304,7 +299,7 @@ void KGoldrunner::setupActions()
     /**************************************************************************/
 
     QSignalMapper * editMapper = new QSignalMapper (this);
-    connect (editMapper, SIGNAL (mapped(int)), game, SLOT (editActions(int)));
+    // connect (editMapper, SIGNAL (mapped(int)), game, SLOT (editActions(int)));
     tempMapper = editMapper;
 
     // Create a Level
@@ -373,7 +368,7 @@ void KGoldrunner::setupActions()
     themes->setToolTip   (i18n ("Change the graphics theme..."));
     themes->setWhatsThis (i18n ("Alter the visual appearance of the runners "
                                 "and background scene..."));
-    connect (themes, SIGNAL(triggered(bool)), m_renderer, SLOT(selectTheme()));
+    connect (themes, SIGNAL (triggered (bool)), this, SLOT (changeTheme ()));
 
     /**************************************************************************/
     /****************************   SETTINGS MENU  ****************************/
@@ -551,7 +546,7 @@ void KGoldrunner::setupActions()
     // Key_O, "dig_right"
     // Key_U, "dig_left"
 
-    setupEditToolbarActions();		// Uses pixmaps from "view".
+    // setupEditToolbarActions();		// Uses pixmaps from "view".
 
     // Authors' debugging aids, effective when Pause is hit.  Options include
     // stepping through the animation, toggling a debug patch or log messages
@@ -719,56 +714,6 @@ void KGoldrunner::viewFullScreen (bool activation)
     KToggleFullScreenAction::setFullScreen (this, activation);
 }
 
-void KGoldrunner::setupThemes()
-{
-    // Look for themes in files "---/share/apps/kgoldrunner/themes/*.desktop".
-    KGlobal::dirs()->addResourceType ("theme", "data",
-        QString (KCmdLineArgs::aboutData()->appName()) + QString ("/themes/"));
-
-    QStringList themeFilepaths = KGlobal::dirs()->findAllResources
-        ("theme", "*.desktop", KStandardDirs::NoDuplicates); // Find files.
-
-    KConfigGroup gameGroup (KGlobal::config(), "KDEGame"); // Get prev theme.
-
-    QString currentThemeFilepath = gameGroup.readEntry ("ThemeFilepath", "");
-    kDebug()<< "Config() Theme" << currentThemeFilepath;
-
-    QSignalMapper * themeMapper = new QSignalMapper (this);
-    connect (themeMapper, SIGNAL (mapped(QString)),
-                this, SLOT (changeTheme(QString)));
-
-    KToggleAction * newTheme;				// Action for a theme.
-    QString actionName;					// Name of the theme.
-    QList<QAction *> themeList;				// Themes for menu.
-    QActionGroup * themeGroup = new QActionGroup (this);
-    themeGroup->setExclusive (true);			// Exclusive toggles.
-
-    foreach (const QString &filepath, themeFilepaths) {	// Read each theme-file.
-        KConfig theme (filepath, KConfig::SimpleConfig);// Extract theme-name.
-        KConfigGroup group = theme.group ("KGameTheme");	// Translated.
-        actionName = group.readEntry ("Name", i18n ("Missing Name"));
-
-        newTheme = new KToggleAction (actionName, this);
-        themeGroup->addAction (newTheme);		// Add to toggle-group.
-
-        if ((currentThemeFilepath == filepath) ||	// If theme prev chosen
-            ((currentThemeFilepath.isEmpty()) &&	// or it is the default
-             (filepath.indexOf ("default") >= 0)) ||
-            ((filepath == themeFilepaths.last()) &&
-             (themeGroup->checkedAction() == 0))) {	// or last in the list,
-            game->setInitialTheme (filepath);		// tell graphics init.
-            newTheme->setChecked (true);		// and mark it as chosen
-        }
-
-        connect (newTheme, SIGNAL(triggered(bool)), themeMapper, SLOT(map()));
-        themeMapper->setMapping (newTheme, filepath);	// Add path to signal.
-        themeList.append (newTheme);			// Theme --> menu list.
-    }
-
-    unplugActionList ("theme_list");
-    plugActionList   ("theme_list", themeList);		// Insert list in menu.
-}
-
 /******************************************************************************/
 /**********************  SLOTS FOR STATUS BAR UPDATES  ************************/
 /******************************************************************************/
@@ -807,7 +752,7 @@ void KGoldrunner::showLives (long newLives)
         tmp = tmp.rightJustified (3, '0');
     tmp.insert (0, i18n ("   Lives: "));
     tmp.append ("   ");
-    view->updateLives(newLives);
+    // view->updateLives(newLives);
     statusBar()->changeItem (tmp, ID_LIVES);
 }
 
@@ -819,7 +764,7 @@ void KGoldrunner::showScore (long newScore)
         tmp = tmp.rightJustified (7, '0');
     tmp.insert (0, i18n ("   Score: "));
     tmp.append ("   ");
-    view->updateScore(newScore);
+    // view->updateScore(newScore);
     statusBar()->changeItem (tmp, ID_SCORE);
 }
 
@@ -883,7 +828,7 @@ void KGoldrunner::setAvail (const char * actionName, const bool onOff)
     ((KAction *) ACTION (actionName))->setEnabled (onOff);
 }
 
-void KGoldrunner::setEditMenu (bool on_off)
+/*  void KGoldrunner::setEditMenu (bool on_off)
 {
     saveEdits->setEnabled  (on_off);
 
@@ -896,8 +841,8 @@ void KGoldrunner::setEditMenu (bool on_off)
 
     if (on_off){
         // Set the editToolbar icons to the current tile-size.
-        kDebug() << "ToolBar icon size:" << view->getPixmap (BRICK).size();
-        toolBar ("editToolbar")->setIconSize (view->getPixmap (BRICK).size());
+        kDebug() << "ToolBar icon size:" << scene->tileSize ();
+        toolBar ("editToolbar")->setIconSize (scene->tileSize ());
 
         // Set the editToolbar icons up with pixmaps of the current theme.
         setEditIcon ("brickbg",   BRICK);
@@ -917,30 +862,25 @@ void KGoldrunner::setEditMenu (bool on_off)
     else {
         toolBar ("editToolbar")->hide();
     }
-}
+} */
 
-void KGoldrunner::setEditIcon (const QString & actionName, const char iconType)
+/*  void KGoldrunner::setEditIcon (const QString & actionName, const char iconType)
 {
     ((KToggleAction *) (actionCollection()->action (actionName)))->
-                setIcon (KIcon (view->getPixmap (iconType)));
-}
+                setIcon (KIcon (renderer->getPixmap (iconType)));
+} */
 
 /******************************************************************************/
 /*******************   SLOTS FOR MENU AND KEYBOARD ACTIONS  *******************/
 /******************************************************************************/
 
-void KGoldrunner::changeTheme (const QString & themeFilepath)
+void KGoldrunner::changeTheme ()
 {
-    if (view->changeTheme (themeFilepath)) {
-        if (game->inEditMode()) {
-            setEditMenu (true);
-        }
-    }
-    else {
-        KGrMessage::information (this, i18n ("Theme Not Loaded"),
-                i18n ("Cannot load the theme you selected.  It is not "
-                     "in the required graphics format (SVG)."));
-    }
+    renderer->selectTheme ();
+
+    /*  if (game->inEditMode()) {
+        setEditMenu (true);
+    } */
 }
 
 void KGoldrunner::saveProperties (KConfigGroup & /* config - unused */)
@@ -1058,7 +998,7 @@ bool KGoldrunner::queryClose()
 /**********************  MAKE A TOOLBAR FOR THE EDITOR   **********************/
 /******************************************************************************/
 
-void KGoldrunner::setupEditToolbarActions()
+/* void KGoldrunner::setupEditToolbarActions()
 {
     QSignalMapper * editToolbarMapper = new QSignalMapper (this);
     connect (editToolbarMapper, SIGNAL (mapped(int)),
@@ -1142,7 +1082,7 @@ void KGoldrunner::setupEditToolbarActions()
     editButtons->addAction (nugget);
 
     brick->setChecked (true);
-}
+} */
 
 QSize KGoldrunner::sizeHint() const
 {

@@ -40,9 +40,9 @@ class KAction;
 class KToggleAction;
 
 class KGrGame;
-class KGrCanvas;
+class KGrView;
+class KGrScene;
 class KGrRenderer;
-class KGrScene; // RNY test.
 
 /**
  * This class serves as the main window for KGoldrunner.  It handles the
@@ -78,8 +78,6 @@ protected:
     void keyReleaseEvent (QKeyEvent * event);
 
 private:
-    KGrScene * m_scene; // IDW test.
-
     bool identifyMoveAction (QKeyEvent * event, bool pressed);
 
 protected:
@@ -104,7 +102,7 @@ private slots:
     void KGoldrunner_2();
 
     // Slot to change the graphics theme.
-    void changeTheme (const QString & themeFilepath);
+    void changeTheme ();
 
     void optionsConfigureKeys();
 
@@ -114,8 +112,8 @@ private slots:
     void gameFreeze (bool);		// Status feedback on Pause state.
 
     void adjustHintAction (bool);	// Enable/disable "Hint" action.
-    void setEditMenu (bool on_off);	// Enable/disable "Save Edits" action.
-    void setEditIcon (const QString & actionName, const char iconType);
+    // void setEditMenu (bool on_off);	// Enable/disable "Save Edits" action.
+    // void setEditIcon (const QString & actionName, const char iconType);
     void viewFullScreen (bool activation);
 
     QSize sizeHint() const;
@@ -123,8 +121,7 @@ private slots:
 private:
     void setupActions();
     void initStatusBar();
-    void setupEditToolbarActions();
-    void setupThemes();
+    // void setupEditToolbarActions();
 
     QSignalMapper * tempMapper;		// Temporary pointer.
 
@@ -153,12 +150,14 @@ private:
 
     bool startupOK;
 
-    KGrCanvas *          view;
-    KGrGame *            game;
-    KGrRenderer *        m_renderer;
-    bool                 frozen;
+    KGrGame     *   game;
+    KGrView     *   view;
+    KGrScene    *   scene;
+    KGrRenderer *   renderer;
 
+    bool frozen;
     bool getDirectories();		// Get directory paths, as below.
+
     QString systemHTMLDir;		// Where the manual is stored.
     QString systemDataDir;		// Where the system levels are stored.
     QString userDataDir;		// Where the user levels are stored.

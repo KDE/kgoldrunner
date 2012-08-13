@@ -27,9 +27,6 @@
         <Action                         name="create_game" />
         <Action                         name="edit_game" />
     </Menu>
-    <Menu name="themes" > <text>&amp;Themes</text>
-        <ActionList                     name="theme_list" />
-    </Menu>
     <Menu name="settings" >
         <Action append="save_merge"     name="select_theme" />
         <Action append="save_merge"     name="options_sounds" />

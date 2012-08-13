@@ -16,16 +16,17 @@
  ****************************************************************************/
 
 #include "kgrview.h"
+#include "kgrscene.h"
 #include "kgrrenderer.h"
 
 #include <QDebug>
 
-KGrView::KGrView (QWidget * parent)
+KGrView::KGrView    (QWidget * parent)
     :
     QGraphicsView   (parent),
     m_scene         (new KGrScene (parent))
 {
-    setScene (m_scene);
+    setScene        (m_scene);
 }
 
 KGrView::~KGrView ()
@@ -38,7 +39,7 @@ void KGrView::keyReleaseEvent (QKeyEvent * event)
         m_scene->renderer()->selectTheme();
 }
 
-void KGrView::resizeEvent (QResizeEvent * event)
+void KGrView::resizeEvent (QResizeEvent *)
 {
     if (scene() != 0) {
         m_scene->changeSize ();

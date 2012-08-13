@@ -26,6 +26,7 @@
 #include "kgrsprite.h"
 
 #include <QLabel>
+#include <QDebug>
 #include <QCursor>
 #include <QMouseEvent>
 
@@ -304,6 +305,9 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
         // Adjust lives position to center them in the display
         deltaW = (sections * imgW - w) / 2;
         livesPos.rx() -= deltaW;
+
+        qDebug() << "Score position:" << m_scoreDisplay->pos();
+        qDebug() << "Lives position:" << m_livesDisplay->pos();
     }
     m_scoreText->moveTo (scorePos);
     m_livesText->moveTo (livesPos);
@@ -995,7 +999,7 @@ KGameCanvasPixmap * KGrCanvas::makeBorderElement(QList< QPixmap >frameTiles,
 
 KGameCanvasPixmap * KGrCanvas::makeDisplay (QList< QPixmap > tiles, int w)
 {
-    int sections = 1 + numSections(w, imgW); 
+    int sections = 1 + numSections(w, imgW);
     int width = (sections + 2) * imgW;
     QPixmap pix (width, imgH);
     pix.fill(QColor(0, 0, 0, 0));
@@ -1006,7 +1010,7 @@ KGameCanvasPixmap * KGrCanvas::makeDisplay (QList< QPixmap > tiles, int w)
         p.drawPixmap (x, 0, tiles.at(1));
     }
     p.drawPixmap (sections * imgW, 0, tiles.at(2));
-    
+
     p.end();
     KGameCanvasPixmap *element = new KGameCanvasPixmap (this);
     element->setPixmap (pix);

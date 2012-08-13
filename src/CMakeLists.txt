@@ -2,6 +2,7 @@
 ########### next target ###############
 
 set(kgoldrunner_SRCS 
+   kgrview.cpp
    kgrscene.cpp
    kgrplayfield.cpp 
    kgrsprite.cpp 
