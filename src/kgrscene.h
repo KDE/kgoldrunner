@@ -54,6 +54,7 @@
 #include <KgTheme>
 #include <KGameRenderedItem>
 
+class KGrView;
 class KGrRenderer;
 class KGameRenderer;
 
@@ -61,7 +62,7 @@ class KGrScene : public QGraphicsScene
 {
     Q_OBJECT
 public:
-    KGrScene                (QObject * parent);
+    KGrScene                (KGrView * view);
     ~KGrScene               ();
 
     /*
@@ -126,6 +127,7 @@ private:
      */
     void setTileSize    (KGameRenderedItem * tile, const int tileSize);
 
+    KGrView             *   m_view;
     KGrRenderer         *   m_renderer;
     KGameRenderedItem   *   m_background;
 
@@ -145,6 +147,8 @@ private:
     // The visible elements of the scenario (tiles and borders), excluding the
     // background picture.
     QVector <KGameRenderedItem *> m_tiles;
+    // The type of each tile stored in m_tiles.
+    QByteArray m_tileTypes;
 };
 
 #endif // KGRSCENE_H

@@ -17,6 +17,7 @@
 
 #include "kgrview.h"
 #include "kgrscene.h"
+#include "kgrglobals.h"
 #include "kgrrenderer.h"
 
 #include <QDebug>
@@ -24,19 +25,35 @@
 KGrView::KGrView    (QWidget * parent)
     :
     QGraphicsView   (parent),
-    m_scene         (new KGrScene (parent))
+    m_mouse         (new QCursor    ()),
+    m_scene         (new KGrScene   (this))
 {
     setScene        (m_scene);
 }
 
 KGrView::~KGrView ()
 {
+    delete m_mouse;
 }
 
-void KGrView::keyReleaseEvent (QKeyEvent * event)
+void KGrView::getMousePos (int & i, int & j)
 {
-    if (event->key() == Qt::Key_T)
-        m_scene->renderer()->selectTheme();
+    QPointF pos =  mapToScene (mapFromGlobal (m_mouse->pos()));
+
+    if (i < 1 || i > FIELDWIDTH || j < 1 || j > FIELDHEIGHT) {
+        i = -1;
+        j = -1;
+        return;
+    }
+
+    i = pos.x();
+    j = pos.y();
+}
+
+void KGrView::setMousePos (const int i, const int j)
+{
+    QPoint pos = mapToGlobal (mapFromScene (i, j));
+    m_mouse->setPos(pos);
 }
 
 void KGrView::resizeEvent (QResizeEvent *)

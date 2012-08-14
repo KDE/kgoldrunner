@@ -216,7 +216,7 @@ private:
     int resizeCount;			// =0 until the main window has resized.
     QTime t; // IDW
     unsigned int level;
-    
+
     // Keep current score and lives 
     int lives;
     int score;

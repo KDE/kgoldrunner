@@ -152,16 +152,17 @@ void KGrLevelPlayer::init (KGrView * view,
     grid->calculateAccess    (rules->runThruHole());
 
     // Connect to code that paints grid cells and start-positions of sprites.
-    connect (this,              SIGNAL (paintCell(int,int,char)),
-             view->gameScene(),   SLOT (paintCell(int,int,char)));
+    connect (this,              SIGNAL  (paintCell(int,int,char)),
+             view->gameScene(), SLOT    (paintCell(int,int,char)));
     /* connect (this, SIGNAL (makeSprite(char,int,int)),
-             view, SLOT   (makeSprite(char,int,int)));
+             view, SLOT   (makeSprite(char,int,int))); */
 
     // Connect to the mouse-positioning code in the graphics.
     connect (this, SIGNAL (getMousePos(int&,int&)),
              view, SLOT   (getMousePos(int&,int&)));
+
     connect (this, SIGNAL (setMousePos(int,int)),
-             view, SLOT   (setMousePos(int,int))); */
+             view, SLOT   (setMousePos(int,int)));
 
     // Show the layout of this level in the view (KGrCanvas).
     int wall = ConcreteWall;
@@ -744,11 +745,9 @@ void KGrLevelPlayer::tick (bool missed, int scaledTime)
 {
     int i, j;
     emit getMousePos (i, j);
-    if (i == -2) {
-        return;		// The KGoldrunner window is inactive.
-    }
+
     if ((i == -1) && (playback || (controlMode != KEYBOARD))) {
-        return;		// The pointer is outside the KGoldrunner viewport.
+        return;		// The pointer is outside the level layout.
     }
 
     if (playback) {			// Replay a recorded move.

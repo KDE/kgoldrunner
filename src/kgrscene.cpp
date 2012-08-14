@@ -16,34 +16,37 @@
  ****************************************************************************/
 
 #include <QDebug>
-#include <QGraphicsView>
 #include <kdebug.h>
 
 #include <KGlobal>
 #include <KConfig>
 #include <KConfigGroup>
 
+#include "kgrview.h"
 #include "kgrscene.h"
 #include "kgrglobals.h"
 #include "kgrrenderer.h"
 
-KGrScene::KGrScene (QObject * parent)
+KGrScene::KGrScene      (KGrView * view)
     :
-    QGraphicsScene (parent),
+    QGraphicsScene      (view),
     // Allow FIELDWIDTH * FIELDHEIGHT tiles for the KGoldruner level-layouts,
     // plus 2 more tile widths all around for text areas, frame and spillover
     // for mouse actions (to avoid accidental clicks affecting the desktop).
-    m_background    (0),
-    m_scoreText     (0),
-    m_livesText     (0),
-    m_scoreDisplay  (0),
-    m_livesDisplay  (0),
-    m_tilesWide     (FIELDWIDTH  + 2 * 2),
-    m_tilesHigh     (FIELDHEIGHT + 2 * 2),
-    m_tileSize      (10),
-    m_themeChanged  (true)
+    m_view              (view),
+    m_background        (0),
+    m_scoreText         (0),
+    m_livesText         (0),
+    m_scoreDisplay      (0),
+    m_livesDisplay      (0),
+    m_tilesWide         (FIELDWIDTH  + 2 * 2),
+    m_tilesHigh         (FIELDHEIGHT + 2 * 2),
+    m_tileSize          (10),
+    m_themeChanged      (true)
 {
-    m_tiles.fill    (0, m_tilesWide * m_tilesHigh);
+    m_tiles.fill        (0,     m_tilesWide * m_tilesHigh);
+    m_tileTypes.fill    (FREE,  m_tilesWide * m_tilesHigh);
+
     m_renderer  = new KGrRenderer (this);
 }
 
@@ -55,7 +58,7 @@ void KGrScene::redrawScene ()
 {
     if (m_sizeChanged) {
         // Calculate what size of tile will fit in the view.
-        QSize size      = views().at(0)->size();
+        QSize size      = m_view->size();
         int tileSize    = qMin (size.width()  / m_tilesWide,
                                 size.height() / m_tilesHigh);
 
@@ -88,6 +91,15 @@ void KGrScene::redrawScene ()
         // appearing if rendering and painting is momentarily a bit slow.
         setBackgroundBrush (m_renderer->borderColor());
         drawBorder();
+
+        // Redraw the all the tiles, except for borders and tiles of type FREE.
+        for (int i = 1; i <= FIELDWIDTH; i++) {
+            for (int j = 1; j <= FIELDHEIGHT; j++) {
+                int index = i * m_tilesHigh + j;
+                paintCell (i, j, m_tileTypes[index]);
+            }
+        }
+
         m_themeChanged = false;
     }
 }
@@ -168,6 +180,7 @@ void KGrScene::paintCell (const int i, const int j, const char type)
     int index               = i * m_tilesHigh + j;
     KGameRenderedItem * t   = m_renderer->getTileItem (type, m_tiles.at(index));
     m_tiles[index]          = t;
+    m_tileTypes[index]      = type;
 
     if (t) {
         setTileSize (t, m_tileSize);
