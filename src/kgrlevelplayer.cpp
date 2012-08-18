@@ -154,8 +154,9 @@ void KGrLevelPlayer::init (KGrView * view,
     // Connect to code that paints grid cells and start-positions of sprites.
     connect (this,              SIGNAL  (paintCell(int,int,char)),
              view->gameScene(), SLOT    (paintCell(int,int,char)));
-    /* connect (this, SIGNAL (makeSprite(char,int,int)),
-             view, SLOT   (makeSprite(char,int,int))); */
+
+    connect (this,              SIGNAL  (makeSprite(char,int,int)),
+             view->gameScene(), SLOT    (makeSprite(char,int,int)));
 
     // Connect to the mouse-positioning code in the graphics.
     connect (this, SIGNAL (getMousePos(int&,int&)),
@@ -240,13 +241,13 @@ void KGrLevelPlayer::init (KGrView * view,
 
     // Connect the hero's and enemies' efforts to the graphics.
     /*  connect (this, SIGNAL (gotGold(int,int,int,bool,bool)),
-             view, SLOT   (gotGold(int,int,int,bool,bool)));
+             view, SLOT   (gotGold(int,int,int,bool,bool))); */
 
     // Connect mouse-clicks from KGrCanvas to digging slot.
     connect (view, SIGNAL (mouseClick(int)), SLOT (doDig(int)));
 
     // Connect the hero and enemies (if any) to the animation code.
-    connect (hero, SIGNAL (startAnimation (int, bool, int, int, int,
+    /*  connect (hero, SIGNAL (startAnimation (int, bool, int, int, int,
                                            Direction, AnimationType)),
              view, SLOT   (startAnimation (int, bool, int, int, int,
                                            Direction, AnimationType)));
@@ -745,7 +746,9 @@ void KGrLevelPlayer::tick (bool missed, int scaledTime)
 {
     int i, j;
     emit getMousePos (i, j);
-
+    if (i == -2) {
+        return;         // The KGoldRunner window is inactive.
+    }
     if ((i == -1) && (playback || (controlMode != KEYBOARD))) {
         return;		// The pointer is outside the level layout.
     }

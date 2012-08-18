@@ -87,6 +87,7 @@ public:
     KGrRenderer * renderer  () const { return m_renderer; }
 
 public slots:
+    int  makeSprite         (const char type, int i, int j);
     void paintCell          (const int i, const int j, const char type);
 
 private:

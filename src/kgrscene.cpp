@@ -188,4 +188,53 @@ void KGrScene::paintCell (const int i, const int j, const char type)
     }
 }
 
+int KGrScene::makeSprite (const char type, int i, int j)
+{
+    int id;
+    int index = i * m_tilesHigh + j;
+
+    KGameRenderedItem * sprite = 0;
+
+    if (m_tiles.at(index) == 0) {
+        // Occupy the slot corresponding to the given coordinates case it's
+        // free.
+        id = index;
+    }
+    else if (m_tiles.lastIndexOf(0) >= 0) {
+        // Otherwise, occupy the last empty slot.
+        id = m_tiles.lastIndexOf(0);
+    }
+    else {
+        // Case the list is completely occupied, add one free slot to it.
+        id = m_tiles.size();
+
+        m_tiles.reserve     (id + 1);
+        m_tileTypes.reserve (id + 1);
+    }
+
+    sprite          = m_renderer->getTileItem (type, m_tiles.at(id));
+    m_tiles[id]     = sprite;
+    m_tileTypes[id] = type;
+
+    setTileSize     (sprite, m_tileSize);
+    sprite->setPos  (i, j);
+
+    // TODO: Set the starting frame of the sprite.
+    switch (type) {
+    case HERO:
+        sprite->setZValue (1);
+        break;
+    case ENEMY:
+        sprite->setZValue (2);
+        break;
+    case BRICK:
+        paintCell (i, j, FREE);
+        break;
+    default:
+        break;
+    }
+
+    return id;
+}
+
 #include "kgrscene.moc"

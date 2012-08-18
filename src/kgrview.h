@@ -19,6 +19,7 @@
 #define KGRVIEW_H
 
 #include <QCursor>
+#include <QMouseEvent>
 #include <QResizeEvent>
 #include <QGraphicsView>
 
@@ -45,8 +46,14 @@ public slots:
     void getMousePos (int & i, int & j);
     void setMousePos (const int i, const int j);
 
+signals:
+    void mouseClick (int);
+    void mouseLetGo (int);
+
 protected:
-    virtual void resizeEvent (QResizeEvent   *);
+    virtual void resizeEvent        (QResizeEvent   *);
+    virtual void mousePressEvent    (QMouseEvent * mouseEvent);
+    virtual void mouseReleaseEvent  (QMouseEvent * mouseEvent);
 
 private:
     QCursor     * m_mouse;
