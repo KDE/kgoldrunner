@@ -19,46 +19,35 @@
 #ifndef KGRSPRITE_H
 #define KGRSPRITE_H
 
-#define USE_UNSTABLE_LIBKDEGAMESPRIVATE_API
-#include <libkdegamesprivate/kgamecanvas.h>
-
 #include <QPixmap>
 #include <QList>
 
+#include <KGameRenderedItem>
 
-class KGrSprite : public KGameCanvasPixmap
+class KGrRenderer;
+
+class KGrSprite
 {
 public:
-    explicit KGrSprite
-              (KGameCanvasAbstract* canvas = NULL, const char type = ' ',
-               const int tickTime = 20);
+    explicit KGrSprite (KGrRenderer *   renderer,
+                        const char      type        = ' ',
+                        const int       tickTime    = 20);
     ~KGrSprite();
 
-    void move (double x, double y, int frame);
-    void setZ (qreal z);
-    void addFrames (QList<QPixmap> * frames, const QPoint & topLeft,
-                                                const double scale);
-    inline char spriteType() { return m_type;}
-    inline QPoint currentLoc() { return m_loc; }
-    inline void clearFrames() { if (m_frames) m_frames->clear();}
-    inline int currentFrame(){ return m_frame;}
-    inline void setScale (double scale){ m_scale=scale;}
-    inline double scale(){ return m_scale;}
-    inline void setFrameOffset (int offset) { m_frameOffset = offset;}
+    inline char     spriteType      ()              { return m_type; }
+    inline QPointF  currentLoc      ()              { return m_item->pos(); }
+    inline int      currentFrame    ()              { return m_item->frame(); }
+    inline void     setZ            (qreal z)       { m_item->setZValue(z); }
+    inline void     setFrameOffset  (int offset)    { m_frameOffset = offset; }
 
-    void setAnimation (bool repeating, int x, int y, int startFrame,
-                int nFrames, int dx, int dy, int dt, int nFrameChanges);
-    void animate (bool missed);
+    void move           (double x, double y, int frame);
+    void animate        (bool missed);
+    void setAnimation   (bool repeating, int x, int y, int startFrame,
+                         int nFrames, int dx, int dy, int dt,
+                         int nFrameChanges);
 
 private:
-    QList<QPixmap> * m_frames;
-    double m_scale;
-    int    m_frame;
     int    m_frameOffset;	// For extra animation frames (e.g. gold enemy).
-
-    QPoint m_loc;		// Location relative to top-left of playfield.
-    int    m_tlX;		// X co-ordinate of top-left.
-    int    m_tlY;		// Y co-ordinate of top-left.
 
     char   m_type;
     char   m_tickTime;
@@ -76,6 +65,9 @@ private:
     int    m_ticks;
     double m_frameTicks;
     double m_frameChange;
+
+    KGrRenderer         * m_renderer;
+    KGameRenderedItem   * m_item;
 };
 
 #endif // KGRSPRITE_H

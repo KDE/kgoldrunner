@@ -234,19 +234,19 @@ void KGrCanvas::drawTheScene (bool changePixmaps)
     if (sprites) {
         foreach (KGrSprite * sprite, (* sprites)) {
             if (sprite) {
-                spriteframe = sprite->currentFrame();
-                spriteloc   = sprite->currentLoc();
+                // spriteframe = sprite->currentFrame();
+                // spriteloc   = sprite->currentLoc();
                 spritetype  = sprite->spriteType();
 
                 switch (spritetype) {
                 case HERO:
-                    sprite->addFrames (heroFrames,  topLeft, scale);
+                    // sprite->addFrames (heroFrames,  topLeft, scale);
                     break;
                 case ENEMY:
-                    sprite->addFrames (enemyFrames, topLeft, scale);
+                    // sprite->addFrames (enemyFrames, topLeft, scale);
                     break;
                 case BRICK:
-                    sprite->addFrames (tileset, topLeft, scale);
+                    // sprite->addFrames (tileset, topLeft, scale);
                     break;
                 }
 
@@ -585,17 +585,17 @@ void KGrCanvas::animate (bool missed)
 int KGrCanvas::makeSprite (const char type, int i, int j)
 {
     int spriteId;
-    KGrSprite * sprite = new KGrSprite (this, type, TickTime);
+    // KGrSprite * sprite = new KGrSprite (this, type, TickTime);
 
     if ((emptySprites > 0) && ((spriteId = sprites->lastIndexOf (0)) >= 0)) {
         // Re-use a slot previously occupied by a transient member of the list.
-        (* sprites) [spriteId] = sprite;
+        // (* sprites) [spriteId] = sprite;
         emptySprites--;
     }
     else {
         // Otherwise, add to the end of the list.
         spriteId = sprites->count();
-        sprites->append (sprite);
+        // sprites->append (sprite);
         emptySprites = 0;
     }
 
@@ -605,19 +605,19 @@ int KGrCanvas::makeSprite (const char type, int i, int j)
     switch (type) {
     case HERO:
         heroId = spriteId;
-        sprite->addFrames (heroFrames, topLeft, scale);
-        sprite->setZ (1);
+        // sprite->addFrames (heroFrames, topLeft, scale);
+        // sprite->setZ (1);
         break;
     case ENEMY:
-        sprite->addFrames (enemyFrames, topLeft, scale);
-        sprite->setZ (2);
+        // sprite->addFrames (enemyFrames, topLeft, scale);
+        // sprite->setZ (2);
         break;
     case BRICK:
-        sprite->addFrames (tileset, topLeft, scale);
+        // sprite->addFrames (tileset, topLeft, scale);
         frame1 = KGrTheme::BrickAnimation1Tile;
 
         // The hero and enemies must be painted in front of dug bricks.
-        sprite->stackUnder (sprites->at (heroId));
+        // sprite->stackUnder (sprites->at (heroId));
 
         // Erase the brick-image so that animations are visible in all themes.
         paintCell (i, j, FREE);
@@ -627,8 +627,8 @@ int KGrCanvas::makeSprite (const char type, int i, int j)
     }
 
     // In KGoldrunner, the top-left visible cell is [1,1]: in KGrSprite [0,0].
-    sprite->move ((i - 1) * bgw, (j - 1) * bgh, frame1);
-    sprite->show();
+    // sprite->move ((i - 1) * bgw, (j - 1) * bgh, frame1);
+    // sprite->show();
 
     // kDebug() << "Sprite ID" << spriteId << "sprite type" << type
              // << "at" << i << j;
@@ -722,7 +722,7 @@ void KGrCanvas::showHiddenLadders (const QList<int> & ladders, const int width)
 
 void KGrCanvas::deleteSprite (const int spriteId)
 {
-    QPoint loc   = sprites->at(spriteId)->currentLoc();
+    // QPoint loc   = sprites->at(spriteId)->currentLoc();
     bool   brick = (sprites->at(spriteId)->spriteType() == BRICK);
 
     delete sprites->at(spriteId);
@@ -731,7 +731,7 @@ void KGrCanvas::deleteSprite (const int spriteId)
 
     if (brick) {
         // Dug-brick sprite erased: restore the tile that was at that location.
-        paintCell ((loc.x()/bgw) + 1, (loc.y()/bgh) + 1, BRICK);
+        // paintCell ((loc.x()/bgw) + 1, (loc.y()/bgh) + 1, BRICK);
     }
 }
 

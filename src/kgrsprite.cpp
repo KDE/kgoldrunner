@@ -17,17 +17,14 @@
  ****************************************************************************/
 
 #include "kgrsprite.h"
+#include "kgrrenderer.h"
 
 #include <KDebug>
 
-KGrSprite::KGrSprite (KGameCanvasAbstract * canvas, const char type,
+KGrSprite::KGrSprite (KGrRenderer * renderer, const char type,
                       const int tickTime)
     :
-    KGameCanvasPixmap (canvas),
-
-    m_frame           (-1),	// Make move() change pixmap if first frame = 0.
     m_frameOffset     (0),	// No offset at first (e.g. carrying no gold).
-    m_loc             (-1, -1),	// Make move() change pos if first pos = (0,0).
     m_type            (type),
     m_tickTime        (tickTime),
     m_stationary      (true),	// Animation is OFF at first.
@@ -38,21 +35,14 @@ KGrSprite::KGrSprite (KGameCanvasAbstract * canvas, const char type,
     m_frameCtr        (0),
     m_dx              (0),
     m_dy              (0),
-    m_dt              (0)
+    m_dt              (0),
+    m_renderer        (renderer)
 {
+    m_item = m_renderer->getTileItem (type, 0);
 }
 
 KGrSprite::~KGrSprite()
 {
-}
-
-void KGrSprite::addFrames (QList<QPixmap> * frames, const QPoint & topLeft,
-                                const double scale)
-{
-    m_frames = frames;
-    m_scale = scale;
-    m_tlX = topLeft.x();
-    m_tlY = topLeft.y();
 }
 
 void KGrSprite::move (double x, double y, int frame)
@@ -62,21 +52,14 @@ void KGrSprite::move (double x, double y, int frame)
     // m_frameOffset is either 0 or the number of the first gold-carrying frame.
 
     int adjustedFrame = (frame < m_frameOffset) ? frame + m_frameOffset : frame;
-    if (m_frame != adjustedFrame) {
-        m_frame = adjustedFrame;
-        setPixmap (m_frames->at (m_frame));
-    }
-    if ((m_loc.x() != x) || (m_loc.y() != y)) {
-        m_loc.setX ((int)x);
-        m_loc.setY ((int)y);
-        moveTo ((int)(x * m_scale) + m_tlX, (int)(y * m_scale) + m_tlY);
-    }
-}
 
-void KGrSprite::setZ (qreal /* z (unused) */)
-{
-    // Hero and enemy sprites are above other elements.
-    raise();
+    if (m_item->frame() != adjustedFrame) {
+        m_item->setFrame(adjustedFrame);
+    }
+
+    if ((m_item->x() != x) || (m_item->y() != y)) {
+        m_item->setPos(x, y);
+    }
 }
 
 void KGrSprite::setAnimation (bool repeating, int x, int y, int startFrame,

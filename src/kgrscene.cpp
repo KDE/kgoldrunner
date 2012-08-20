@@ -24,8 +24,14 @@
 
 #include "kgrview.h"
 #include "kgrscene.h"
-#include "kgrglobals.h"
+#include "kgrsprite.h"
 #include "kgrrenderer.h"
+
+const StartFrame animationStartFrames [nAnimationTypes] = {
+                 RIGHTWALK1,    LEFTWALK1,  RIGHTCLIMB1,    LEFTCLIMB1,
+                 CLIMB1,        CLIMB1,     FALL1,          FALL2,
+                 (StartFrame) 0,	// Calculate OPEN_BRICK frame later.
+                 (StartFrame) 0};	// Calculate CLOSE_BRICK frame later.
 
 KGrScene::KGrScene      (KGrView * view)
     :
@@ -39,6 +45,7 @@ KGrScene::KGrScene      (KGrView * view)
     m_livesText         (0),
     m_scoreDisplay      (0),
     m_livesDisplay      (0),
+    m_heroId            (0),
     m_tilesWide         (FIELDWIDTH  + 2 * 2),
     m_tilesHigh         (FIELDHEIGHT + 2 * 2),
     m_tileSize          (10),
@@ -190,51 +197,142 @@ void KGrScene::paintCell (const int i, const int j, const char type)
 
 int KGrScene::makeSprite (const char type, int i, int j)
 {
-    int id;
-    int index = i * m_tilesHigh + j;
+    int spriteId;
+    KGrSprite * sprite = new KGrSprite (m_renderer, type, TickTime);
 
-    KGameRenderedItem * sprite = 0;
-
-    if (m_tiles.at(index) == 0) {
-        // Occupy the slot corresponding to the given coordinates case it's
-        // free.
-        id = index;
-    }
-    else if (m_tiles.lastIndexOf(0) >= 0) {
-        // Otherwise, occupy the last empty slot.
-        id = m_tiles.lastIndexOf(0);
+    if (m_sprites.count(0) > 0 &&
+        ((spriteId = m_sprites.lastIndexOf (0)) >= 0)) {
+        // Re-use a slot previously occupied by a transient member of the list.
+        m_sprites[spriteId] = sprite;
     }
     else {
-        // Case the list is completely occupied, add one free slot to it.
-        id = m_tiles.size();
-
-        m_tiles.reserve     (id + 1);
-        m_tileTypes.reserve (id + 1);
+        // Otherwise, add to the end of the list.
+        spriteId = m_sprites.count();
+        m_sprites.append (sprite);
     }
 
-    sprite          = m_renderer->getTileItem (type, m_tiles.at(id));
-    m_tiles[id]     = sprite;
-    m_tileTypes[id] = type;
+    int frame1 = animationStartFrames [FALL_L];
 
-    setTileSize     (sprite, m_tileSize);
-    sprite->setPos  (i, j);
-
-    // TODO: Set the starting frame of the sprite.
     switch (type) {
     case HERO:
-        sprite->setZValue (1);
+        m_heroId = spriteId;
+        sprite->setZ (1);
         break;
     case ENEMY:
-        sprite->setZValue (2);
+        sprite->setZ (2);
         break;
     case BRICK:
+        /*
+         * TODO: Create a better way to set the starting frame for dug bricks,
+         * perhaps creating constants in kgrscene.h or improving the StarFrame
+         * enum and the animationStartFrames array.
+         */
+        frame1 = 1;
+
+        // The hero and enemies must be painted in front of dug bricks.
+        // sprite->stackUnder (sprites->at (heroId));
+
+        // Erase the brick-image so that animations are visible in all themes.
         paintCell (i, j, FREE);
         break;
     default:
         break;
     }
 
-    return id;
+    // In KGoldrunner, the top-left visible cell is [1,1]: in KGrSprite [0,0].
+    sprite->move (i, j, frame1);
+    // sprite->show();
+
+    // kDebug() << "Sprite ID" << spriteId << "sprite type" << type
+             // << "at" << i << j;
+    return spriteId;
+}
+
+void KGrScene::animate (bool missed)
+{
+    foreach (KGrSprite * sprite, m_sprites) {
+        if (sprite != 0) {
+            sprite->animate (missed);
+        }
+    }
+}
+
+void KGrScene::startAnimation (const int id, const bool repeating,
+                                const int i, const int j, const int time,
+                                const Direction dirn, const AnimationType type)
+{
+    // TODO - Put most of this in helper code, based on theme parameters.
+    int dx              = 0;
+    int dy              = 0;
+    int frame           = animationStartFrames [type];
+    int nFrames         = 8;
+    int nFrameChanges   = 4;
+
+    switch (dirn) {
+    case RIGHT:
+        dx    = +1;
+        break;
+    case LEFT:
+        dx    = -1;
+        break;
+    case DOWN:
+        dy = +1;
+        if ((type == FALL_R) || (type == FALL_L)) {
+            nFrames = 1;
+        }
+        else {
+            nFrames = 2;
+        }
+        break;
+    case UP:
+        dy = -1;
+        nFrames = 2;
+        break;
+    case STAND:
+        switch (type) {
+        case OPEN_BRICK:
+            nFrames = 5;
+            // See TODO defined in line 226.
+            frame   = 1;
+            break;
+        case CLOSE_BRICK:
+            nFrames = 4;
+            // See TODO defined in line 226.
+            frame   = 6;
+            break;
+        default:
+            // Show a standing hero or enemy, using the previous StartFrame.
+            nFrames = 0;
+            break;
+        }
+        break;
+    default:
+        break;
+    }
+
+    // TODO - Generalise nFrameChanges = 4, also the tick time = 20 new sprite.
+    m_sprites.at(id)->setAnimation (repeating, i, j, frame, nFrames, dx, dy,
+                                    time, nFrameChanges);
+}
+
+void KGrScene::deleteSprite (const int spriteId)
+{
+    QPointF loc     = m_sprites.at(spriteId)->currentLoc();
+    bool   brick    = (m_sprites.at(spriteId)->spriteType() == BRICK);
+
+    delete m_sprites.at(spriteId);
+    m_sprites [spriteId] = 0;
+
+    if (brick) {
+        // Dug-brick sprite erased: restore the tile that was at that location.
+        paintCell (loc.x(), loc.y(), BRICK);
+    }
+}
+
+void KGrScene::deleteAllSprites()
+{
+    qDeleteAll(m_sprites);
+    m_sprites.clear();
 }
 
 #include "kgrscene.moc"

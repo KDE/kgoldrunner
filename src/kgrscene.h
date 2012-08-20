@@ -54,9 +54,23 @@
 #include <KgTheme>
 #include <KGameRenderedItem>
 
+#include "kgrglobals.h"
+
 class KGrView;
+class KGrSprite;
 class KGrRenderer;
 class KGameRenderer;
+
+enum StartFrame     {RIGHTWALK1,  RIGHTWALK2,  RIGHTWALK3,  RIGHTWALK4,
+                     RIGHTWALK5,  RIGHTWALK6,  RIGHTWALK7,  RIGHTWALK8,
+                     LEFTWALK1,   LEFTWALK2,   LEFTWALK3,   LEFTWALK4,
+                     LEFTWALK5,   LEFTWALK6,   LEFTWALK7,   LEFTWALK8,
+                     RIGHTCLIMB1, RIGHTCLIMB2, RIGHTCLIMB3, RIGHTCLIMB4,
+                     RIGHTCLIMB5, RIGHTCLIMB6, RIGHTCLIMB7, RIGHTCLIMB8,
+                     LEFTCLIMB1,  LEFTCLIMB2,  LEFTCLIMB3,  LEFTCLIMB4,
+                     LEFTCLIMB5,  LEFTCLIMB6,  LEFTCLIMB7,  LEFTCLIMB8,
+                     CLIMB1,      CLIMB2,
+                     FALL1,       FALL2};
 
 class KGrScene : public QGraphicsScene
 {
@@ -88,8 +102,39 @@ public:
 
 public slots:
     int  makeSprite         (const char type, int i, int j);
+
+    void animate            (bool missed);
+    void deleteSprite       (const int id);
+    void deleteAllSprites   ();
+
+    /**
+     * Requests the view to display a particular type of tile at a particular
+     * cell, or make it empty and show the background (tileType = FREE). Used
+     * when loading level-layouts and also to make gold disappear/appear, hidden
+     * ladders appear or cells to be painted by the game editor.  If there was
+     * something in the cell already, tileType = FREE acts as an erase function.
+     *
+     * @param i            The column-number of the cell to paint.
+     * @param i            The row-number of the cell to paint.
+     * @param tileType     The type of tile to paint (gold, brick, ladder, etc).
+     */
     void paintCell          (const int i, const int j, const char type);
 
+    /**
+     * Requests the view to display an animation of a runner or dug brick at a
+     * particular cell, cancelling and superseding any current animation.
+     *
+     * @param spriteId     The ID of the sprite (dug brick).
+     * @param repeating    If true, repeat the animation (false for dug brick).
+     * @param i            The column-number of the cell.
+     * @param j            The row-number of the cell.
+     * @param time         The time in which to traverse one cell.
+     * @param dirn         The direction of motion (always STAND for dug brick).
+     * @param type         The type of animation (run, climb, open/close brick).
+     */
+    void startAnimation    (const int id, const bool repeating,
+                            const int i, const int j, const int time,
+                            const Direction dirn, const AnimationType type);
 private:
     /*
      * Actions performed whenever the viewport is resized or a different theme
@@ -138,6 +183,7 @@ private:
     QGraphicsPixmapItem *   m_scoreDisplay;
     QGraphicsPixmapItem *   m_livesDisplay;
 
+    int                     m_heroId;
     int                     m_tilesWide;
     int                     m_tilesHigh;
     int                     m_tileSize;
@@ -145,9 +191,13 @@ private:
     bool                    m_sizeChanged;
     bool                    m_themeChanged;
 
+    // The animated sprites for dug bricks, hero and enemies.
+    QList <KGrSprite *> m_sprites;
+
     // The visible elements of the scenario (tiles and borders), excluding the
-    // background picture.
+    // background picture and the animated sprites.
     QVector <KGameRenderedItem *> m_tiles;
+
     // The type of each tile stored in m_tiles.
     QByteArray m_tileTypes;
 };

@@ -247,16 +247,17 @@ void KGrLevelPlayer::init (KGrView * view,
     connect (view, SIGNAL (mouseClick(int)), SLOT (doDig(int)));
 
     // Connect the hero and enemies (if any) to the animation code.
-    /*  connect (hero, SIGNAL (startAnimation (int, bool, int, int, int,
-                                           Direction, AnimationType)),
-             view, SLOT   (startAnimation (int, bool, int, int, int,
-                                           Direction, AnimationType)));
+    connect (hero,              SIGNAL  (startAnimation (int, bool, int, int,
+                                         int, Direction, AnimationType)),
+             view->gameScene(), SLOT    (startAnimation (int, bool, int, int,
+                                         int, Direction, AnimationType)));
+
     foreach (KGrEnemy * enemy, enemies) {
-        connect (enemy, SIGNAL (startAnimation (int, bool, int, int, int,
-                                                Direction, AnimationType)),
-                 view,  SLOT   (startAnimation (int, bool, int, int, int,
-                                                Direction, AnimationType)));
-    } */
+        connect (enemy,             SIGNAL (startAnimation (int, bool, int, int,
+                                            int, Direction, AnimationType)),
+                 view->gameScene(), SLOT   (startAnimation (int, bool, int, int,
+                                            int, Direction, AnimationType)));
+    }
 
     // Connect the scoring.
     connect (hero, SIGNAL (incScore(int)),
@@ -271,15 +272,16 @@ void KGrLevelPlayer::init (KGrView * view,
              game, SLOT   (playSound(int,bool)));
 
     // Connect the level player to the animation code (for use with dug bricks).
-    /*  connect (this, SIGNAL (startAnimation (int, bool, int, int, int,
-                                           Direction, AnimationType)),
-             view, SLOT   (startAnimation (int, bool, int, int, int,
-                                           Direction, AnimationType)));
-    connect (this, SIGNAL (deleteSprite(int)),
-             view, SLOT   (deleteSprite(int)));
+    connect (this,              SIGNAL (startAnimation (int, bool, int, int,
+                                        int, Direction, AnimationType)),
+             view->gameScene(), SLOT   (startAnimation (int, bool, int, int,
+                                        int, Direction, AnimationType)));
+
+    connect (this,              SIGNAL (deleteSprite(int)),
+             view->gameScene(), SLOT   (deleteSprite(int)));
 
     // Connect the grid to the view, to show hidden ladders when the time comes.
-    connect (grid, SIGNAL (showHiddenLadders(QList<int>,int)),
+    /*  connect (grid, SIGNAL (showHiddenLadders(QList<int>,int)),
              view, SLOT   (showHiddenLadders(QList<int>,int))); */
 
     // Connect and start the timer.  The tick() slot emits signal animation(),
@@ -291,7 +293,8 @@ void KGrLevelPlayer::init (KGrView * view,
     }
 
     connect (timer, SIGNAL (tick(bool,int)), this, SLOT (tick(bool,int)));
-    // connect (this,  SIGNAL (animation(bool)), view, SLOT (animate(bool)));
+    connect (this,              SIGNAL  (animation(bool)),
+             view->gameScene(), SLOT    (animate(bool)));
 
     if (! playback) {
         // Allow some time to view the level before starting a replay.
