@@ -16,15 +16,17 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ****************************************************************************/
 
+// #include "kgrglobals.h" // IDW test.
 #include "kgrsprite.h"
 #include "kgrrenderer.h"
 
 #include <KDebug>
 
-KGrSprite::KGrSprite (KGrRenderer * renderer, const char type,
-                      const int tickTime)
+KGrSprite::KGrSprite (KGameRenderer * renderer, QString & key,
+                      const char type, const int tickTime)
     :
-    m_frameOffset     (0),	// No offset at first (e.g. carrying no gold).
+    KGameRenderedItem (renderer, key),
+
     m_type            (type),
     m_tickTime        (tickTime),
     m_stationary      (true),	// Animation is OFF at first.
@@ -35,10 +37,8 @@ KGrSprite::KGrSprite (KGrRenderer * renderer, const char type,
     m_frameCtr        (0),
     m_dx              (0),
     m_dy              (0),
-    m_dt              (0),
-    m_renderer        (renderer)
+    m_dt              (0)
 {
-    m_item = m_renderer->getTileItem (type, 0);
 }
 
 KGrSprite::~KGrSprite()
@@ -47,19 +47,9 @@ KGrSprite::~KGrSprite()
 
 void KGrSprite::move (double x, double y, int frame)
 {
-    // Adjust the frame-number if the sprite is an enemy carrying gold and the
-    // caller is not already using an adjusted frame number.  The value of
-    // m_frameOffset is either 0 or the number of the first gold-carrying frame.
-
-    int adjustedFrame = (frame < m_frameOffset) ? frame + m_frameOffset : frame;
-
-    if (m_item->frame() != adjustedFrame) {
-        m_item->setFrame(adjustedFrame);
-    }
-
-    if ((m_item->x() != x) || (m_item->y() != y)) {
-        m_item->setPos(x, y);
-    }
+    setFrame (frame);		// Set the frame in KGameRenderedItem.
+    setPos (x, y);		// Set the position in the scene.
+    return;
 }
 
 void KGrSprite::setAnimation (bool repeating, int x, int y, int startFrame,

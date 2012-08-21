@@ -707,7 +707,7 @@ void KGrCanvas::gotGold (const int spriteId, const int i, const int j,
 
     // If the rules allow, show whether or not an enemy sprite is carrying gold.
     if (enemiesShowGold && (sprites->at(spriteId)->spriteType() == ENEMY)) {
-        sprites->at(spriteId)->setFrameOffset (spriteHasGold ? goldEnemy : 0);
+        //sprites->at(spriteId)->setFrameOffset (spriteHasGold ? goldEnemy : 0);
     }
 }
 

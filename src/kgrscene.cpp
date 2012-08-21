@@ -83,6 +83,9 @@ void KGrScene::redrawScene ()
                 setTileSize (tile, tileSize);
             }
         }
+        foreach (KGrSprite * sprite, m_sprites) {
+            setTileSize (sprite, tileSize);
+        }
 
         m_sizeChanged   = false;
         m_tileSize      = tileSize;
@@ -198,7 +201,7 @@ void KGrScene::paintCell (const int i, const int j, const char type)
 int KGrScene::makeSprite (const char type, int i, int j)
 {
     int spriteId;
-    KGrSprite * sprite = new KGrSprite (m_renderer, type, TickTime);
+    KGrSprite * sprite = m_renderer->getSpriteItem (type, TickTime);
 
     if (m_sprites.count(0) > 0 &&
         ((spriteId = m_sprites.lastIndexOf (0)) >= 0)) {
@@ -230,7 +233,7 @@ int KGrScene::makeSprite (const char type, int i, int j)
         frame1 = 1;
 
         // The hero and enemies must be painted in front of dug bricks.
-        // sprite->stackUnder (sprites->at (heroId));
+        sprite->setZ (0);
 
         // Erase the brick-image so that animations are visible in all themes.
         paintCell (i, j, FREE);
@@ -239,12 +242,8 @@ int KGrScene::makeSprite (const char type, int i, int j)
         break;
     }
 
-    // In KGoldrunner, the top-left visible cell is [1,1]: in KGrSprite [0,0].
     sprite->move (i, j, frame1);
-    // sprite->show();
 
-    // kDebug() << "Sprite ID" << spriteId << "sprite type" << type
-             // << "at" << i << j;
     return spriteId;
 }
 
@@ -313,6 +312,30 @@ void KGrScene::startAnimation (const int id, const bool repeating,
     // TODO - Generalise nFrameChanges = 4, also the tick time = 20 new sprite.
     m_sprites.at(id)->setAnimation (repeating, i, j, frame, nFrames, dx, dy,
                                     time, nFrameChanges);
+}
+
+void KGrScene::gotGold (const int spriteId, const int i, const int j,
+                        const bool spriteHasGold, const bool lost)
+{
+    // Hide collected gold or show dropped gold, but not if the gold was lost.
+    if (! lost) {
+        paintCell (i, j, (spriteHasGold) ? FREE : NUGGET);
+    }
+
+    // If the rules allow, show whether or not an enemy sprite is carrying gold.
+    if (enemiesShowGold && (m_sprites.at(spriteId)->spriteType() == ENEMY)) {
+        m_sprites.at(spriteId)->setSpriteKey (spriteHasGold ? "gold_enemy"
+                                                            : "enemy");
+    }
+}
+
+void KGrScene::showHiddenLadders (const QList<int> & ladders, const int width)
+{
+    foreach (int offset, ladders) {
+        int i = offset % width;
+        int j = offset / width;
+        paintCell (i, j, LADDER);
+    }
 }
 
 void KGrScene::deleteSprite (const int spriteId)

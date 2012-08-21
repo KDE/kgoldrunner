@@ -26,19 +26,17 @@
 
 class KGrRenderer;
 
-class KGrSprite
+class KGrSprite : public KGameRenderedItem
 {
 public:
-    explicit KGrSprite (KGrRenderer *   renderer,
-                        const char      type        = ' ',
-                        const int       tickTime    = 20);
+    explicit KGrSprite (KGameRenderer * renderer, QString & key,
+                        const char type, const int tickTime = 20);
     ~KGrSprite();
 
     inline char     spriteType      ()              { return m_type; }
-    inline QPointF  currentLoc      ()              { return m_item->pos(); }
-    inline int      currentFrame    ()              { return m_item->frame(); }
-    inline void     setZ            (qreal z)       { m_item->setZValue(z); }
-    inline void     setFrameOffset  (int offset)    { m_frameOffset = offset; }
+    inline QPointF  currentLoc      ()              { return pos(); }
+    inline int      currentFrame    ()              { return frame(); }
+    inline void     setZ            (qreal z)       { setZValue(z); }
 
     void move           (double x, double y, int frame);
     void animate        (bool missed);
@@ -47,8 +45,6 @@ public:
                          int nFrameChanges);
 
 private:
-    int    m_frameOffset;	// For extra animation frames (e.g. gold enemy).
-
     char   m_type;
     char   m_tickTime;
     bool   m_stationary;
@@ -65,9 +61,6 @@ private:
     int    m_ticks;
     double m_frameTicks;
     double m_frameChange;
-
-    KGrRenderer         * m_renderer;
-    KGameRenderedItem   * m_item;
 };
 
 #endif // KGRSPRITE_H

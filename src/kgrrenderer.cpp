@@ -158,6 +158,21 @@ KGameRenderedItem * KGrRenderer::getTileItem
     return tile;
 }
 
+KGrSprite * KGrRenderer::getSpriteItem (const char picType, const int tickTime)
+{
+    int index = findKeyTableIndex (picType);
+    if (index < 0) {
+        return 0;	// Missing type, so no KGrSprite item.
+    }
+    QString key = (picType == HERO) ? "hero" :
+                  ((picType == ENEMY) ? "enemy" : "brick");
+    KGrSprite * sprite = new KGrSprite ((keyTable[index].picSource == Set) ?
+                                        m_setRenderer : m_actorsRenderer,
+                                        key, picType, tickTime);
+    m_scene->addItem (sprite);
+    return sprite;
+}
+
 KGameRenderedItem * KGrRenderer::getBackground
                     (const int level, KGameRenderedItem * currentBackground)
 {
@@ -194,7 +209,7 @@ bool KGrRenderer::hasBorder() const
 {
     QString s = m_setRenderer->theme()->customData("DrawCanvasBorder", "0");
 
-    if (s == "1")
+    if (s == QString ("1"))
         return true;
     else
         return false;

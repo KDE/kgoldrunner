@@ -100,10 +100,15 @@ public:
      */
     KGrRenderer * renderer  () const { return m_renderer; }
 
+    inline void setGoldEnemiesRule (bool showIt) { enemiesShowGold = showIt; }
+
 public slots:
     int  makeSprite         (const char type, int i, int j);
 
     void animate            (bool missed);
+    void gotGold            (const int spriteId, const int i, const int j,
+                             const bool spriteHasGold, const bool lost = false);
+    void showHiddenLadders  (const QList<int> & ladders, const int width);
     void deleteSprite       (const int id);
     void deleteAllSprites   ();
 
@@ -200,6 +205,8 @@ private:
 
     // The type of each tile stored in m_tiles.
     QByteArray m_tileTypes;
+
+    bool enemiesShowGold;		// Show or conceal if enemies have gold.
 };
 
 #endif // KGRSCENE_H

@@ -146,7 +146,7 @@ void KGrLevelPlayer::init (KGrView * view,
     randIndex = 0;
     T         = 0;
 
-    // view->setGoldEnemiesRule (rules->enemiesShowGold());
+    view->gameScene()->setGoldEnemiesRule (rules->enemiesShowGold());
 
     // Determine the access for hero and enemies to and from each grid-cell.
     grid->calculateAccess    (rules->runThruHole());
@@ -240,8 +240,8 @@ void KGrLevelPlayer::init (KGrView * view,
     }
 
     // Connect the hero's and enemies' efforts to the graphics.
-    /*  connect (this, SIGNAL (gotGold(int,int,int,bool,bool)),
-             view, SLOT   (gotGold(int,int,int,bool,bool))); */
+    connect (this, SIGNAL (gotGold(int,int,int,bool,bool)),
+             view->gameScene(), SLOT (gotGold(int,int,int,bool,bool)));
 
     // Connect mouse-clicks from KGrCanvas to digging slot.
     connect (view, SIGNAL (mouseClick(int)), SLOT (doDig(int)));
@@ -281,8 +281,8 @@ void KGrLevelPlayer::init (KGrView * view,
              view->gameScene(), SLOT   (deleteSprite(int)));
 
     // Connect the grid to the view, to show hidden ladders when the time comes.
-    /*  connect (grid, SIGNAL (showHiddenLadders(QList<int>,int)),
-             view, SLOT   (showHiddenLadders(QList<int>,int))); */
+    connect (grid, SIGNAL (showHiddenLadders(QList<int>,int)),
+             view->gameScene(), SLOT (showHiddenLadders(QList<int>,int)));
 
     // Connect and start the timer.  The tick() slot emits signal animation(),
     // so there is just one time-source for the model and the view.

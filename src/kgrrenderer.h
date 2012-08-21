@@ -23,6 +23,8 @@
 #include <QString>
 #include <KGameRenderer>
 
+#include "kgrsprite.h"
+
 class KGrScene;
 class KgThemeProvider;
 class KgThemeSelector;
@@ -105,6 +107,12 @@ public:
      */
     KGameRenderedItem * getBorderItem (QString spriteKey,
                                        KGameRenderedItem * currentItem);
+
+    /*
+     * TODO - Document this.
+     */
+    KGrSprite * getSpriteItem (const char picType, const int tickTime);
+
     /*
      * Returns true case the current theme has a border around its background
      * and false otherwise.
