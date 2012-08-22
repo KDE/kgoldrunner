@@ -61,6 +61,9 @@ private:
     int    m_ticks;
     double m_frameTicks;
     double m_frameChange;
+    double m_oldX;
+    double m_oldY;
+    int    m_oldFrame;
 };
 
 #endif // KGRSPRITE_H

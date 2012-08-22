@@ -37,7 +37,10 @@ KGrSprite::KGrSprite (KGameRenderer * renderer, QString & key,
     m_frameCtr        (0),
     m_dx              (0),
     m_dy              (0),
-    m_dt              (0)
+    m_dt              (0),
+    m_oldX            (-1),
+    m_oldY            (-1),
+    m_oldFrame        (-1)
 {
 }
 
@@ -47,8 +50,15 @@ KGrSprite::~KGrSprite()
 
 void KGrSprite::move (double x, double y, int frame)
 {
-    setFrame (frame);		// Set the frame in KGameRenderedItem.
-    setPos (x, y);		// Set the position in the scene.
+    if (frame != m_oldFrame) {
+        setFrame (frame);	// Set the frame in KGameRenderedItem.
+        m_oldFrame = frame;
+    }
+    if ((x != m_oldX) || (y != m_oldY)) {
+        setPos (x, y);		// Set the position in the scene.
+        m_oldX = x;
+        m_oldY = y;
+    }
     return;
 }
 

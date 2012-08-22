@@ -242,6 +242,7 @@ int KGrScene::makeSprite (const char type, int i, int j)
         break;
     }
 
+    setTileSize (sprite, m_tileSize);
     sprite->move (i, j, frame1);
 
     return spriteId;

@@ -51,7 +51,7 @@ void KGrView::getMousePos (int & i, int & j)
     }
 
     // The pointer is outside the level layout.
-    if (i < 1 || i > FIELDWIDTH || j < 1 || j > FIELDHEIGHT) {
+    if (i < -1 || i > FIELDWIDTH + 2 || j < -1 || j > FIELDHEIGHT + 2) {
         i = -1;
         j = -1;
         return;

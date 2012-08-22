@@ -91,6 +91,7 @@ KGrGame::KGrGame (KGrView * theView,
         recording     (0),
         playback      (false),
         view          (theView),
+	scene         (view->gameScene()),
         systemDataDir (theSystemDir),
         userDataDir   (theUserDir),
         level         (0),
@@ -302,7 +303,7 @@ void KGrGame::gameActions (const int action)
             setPlayback (false);
             if (levelPlayer) {
                 endLevel (NORMAL);
-                // view->deleteAllSprites();
+                scene->deleteAllSprites();
             }
 
             emit showLives (0);
@@ -605,7 +606,7 @@ void KGrGame::startInstantReplay()
     // Terminate current play.
     delete levelPlayer;
     levelPlayer = 0;
-    // view->deleteAllSprites();
+    scene->deleteAllSprites();
 
     // Redisplay the starting score and lives.
     lives = recording->lives;
@@ -842,14 +843,14 @@ bool KGrGame::playLevel (const Owner fileOwner, const QString & prefix,
 
     // Clean up any sprites remaining from a previous level.  This is done late,
     // so that the player has a little time to observe how the level ended.
-    // view->deleteAllSprites();
+    scene->deleteAllSprites();
 
     // Set up to record or play back: load either level-data or recording-data.
     if (! initRecordingData (fileOwner, prefix, levelNo)) {
         return false;
     }
 
-    // view->setLevel (levelNo);		// Switch and render background if reqd.
+    // scene->setLevel (levelNo);		// Switch and render background if reqd.
     // view->fadeIn();			// Then run the fade-in animation.
     startScore = score;			// The score we will save, if asked.
 
@@ -863,7 +864,7 @@ bool KGrGame::playLevel (const Owner fileOwner, const QString & prefix,
     emit hintAvailable (levelHint.length() > 0);
 
     // Re-draw the playfield frame, level title and figures.
-    // view->setTitle (getTitle());
+    // scene->setTitle (getTitle());
 
     // If we are starting a new level, save it in the player's config file.
     if (newLevel && (level != 0)) {	// But do not save the "ENDE" level.
@@ -1052,6 +1053,7 @@ void KGrGame::levelCompleted()
     // connect (view, SIGNAL (fadeFinished()), this, SLOT (goUpOneLevel()));
     dbk << "Calling view->fadeOut()";
     // view->fadeOut();
+    goUpOneLevel(); // IDW test. Omit the fadeout-fadein sequence for now.
 }
 
 void KGrGame::goUpOneLevel()
@@ -1296,7 +1298,7 @@ void KGrGame::setPlayback (const bool onOff)
         emit setAvail  ("increase_speed",  enableDisable);
         emit setAvail  ("decrease_speed",  enableDisable);
     }
-    // view->showReplayMessage (onOff);
+    // scene->showReplayMessage (onOff);
     playback = onOff;
 }
 
