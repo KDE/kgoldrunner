@@ -169,7 +169,7 @@ KGrSprite * KGrRenderer::getSpriteItem (const char picType, const int tickTime)
     KGrSprite * sprite = new KGrSprite ((keyTable[index].picSource == Set) ?
                                         m_setRenderer : m_actorsRenderer,
                                         key, picType, tickTime);
-    m_scene->addItem (sprite);
+    // We cannot add the sprite to the scene yet: it needs a frame and size.
     return sprite;
 }
 

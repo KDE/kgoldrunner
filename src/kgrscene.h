@@ -61,7 +61,7 @@ class KGrSprite;
 class KGrRenderer;
 class KGameRenderer;
 
-enum StartFrame     {RIGHTWALK1,  RIGHTWALK2,  RIGHTWALK3,  RIGHTWALK4,
+enum StartFrame     {RIGHTWALK1 = 1,  RIGHTWALK2,  RIGHTWALK3,  RIGHTWALK4,
                      RIGHTWALK5,  RIGHTWALK6,  RIGHTWALK7,  RIGHTWALK8,
                      LEFTWALK1,   LEFTWALK2,   LEFTWALK3,   LEFTWALK4,
                      LEFTWALK5,   LEFTWALK6,   LEFTWALK7,   LEFTWALK8,
@@ -70,7 +70,10 @@ enum StartFrame     {RIGHTWALK1,  RIGHTWALK2,  RIGHTWALK3,  RIGHTWALK4,
                      LEFTCLIMB1,  LEFTCLIMB2,  LEFTCLIMB3,  LEFTCLIMB4,
                      LEFTCLIMB5,  LEFTCLIMB6,  LEFTCLIMB7,  LEFTCLIMB8,
                      CLIMB1,      CLIMB2,
-                     FALL1,       FALL2};
+                     FALL1,       FALL2,
+                     DIGBRICK1 = 1, DIGBRICK2, DIGBRICK3, DIGBRICK4,
+                     DIGBRICK5,
+                     DIGBRICK6, DIGBRICK7, DIGBRICK8, DIGBRICK9};
 
 class KGrScene : public QGraphicsScene
 {

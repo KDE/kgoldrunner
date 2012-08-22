@@ -30,8 +30,8 @@
 const StartFrame animationStartFrames [nAnimationTypes] = {
                  RIGHTWALK1,    LEFTWALK1,  RIGHTCLIMB1,    LEFTCLIMB1,
                  CLIMB1,        CLIMB1,     FALL1,          FALL2,
-                 (StartFrame) 0,	// Calculate OPEN_BRICK frame later.
-                 (StartFrame) 0};	// Calculate CLOSE_BRICK frame later.
+                 DIGBRICK1,	// Start frame for OPEN_BRICK.
+                 DIGBRICK6};	// Start frame for CLOSE_BRICK.
 
 KGrScene::KGrScene      (KGrView * view)
     :
@@ -225,12 +225,7 @@ int KGrScene::makeSprite (const char type, int i, int j)
         sprite->setZ (2);
         break;
     case BRICK:
-        /*
-         * TODO: Create a better way to set the starting frame for dug bricks,
-         * perhaps creating constants in kgrscene.h or improving the StarFrame
-         * enum and the animationStartFrames array.
-         */
-        frame1 = 1;
+        frame1 = animationStartFrames [OPEN_BRICK];
 
         // The hero and enemies must be painted in front of dug bricks.
         sprite->setZ (0);
@@ -242,9 +237,10 @@ int KGrScene::makeSprite (const char type, int i, int j)
         break;
     }
 
+    sprite->setFrame (frame1);
     setTileSize (sprite, m_tileSize);
+    addItem (sprite);		// The sprite can be correctly rendered now.
     sprite->move (i, j, frame1);
-
     return spriteId;
 }
 
@@ -292,17 +288,13 @@ void KGrScene::startAnimation (const int id, const bool repeating,
         switch (type) {
         case OPEN_BRICK:
             nFrames = 5;
-            // See TODO defined in line 226.
-            frame   = 1;
             break;
         case CLOSE_BRICK:
             nFrames = 4;
-            // See TODO defined in line 226.
-            frame   = 6;
             break;
         default:
             // Show a standing hero or enemy, using the previous StartFrame.
-            nFrames = 0;
+            nFrames = 0; 
             break;
         }
         break;
