@@ -4,11 +4,8 @@
 set(kgoldrunner_SRCS 
    kgrview.cpp
    kgrscene.cpp
-   kgrplayfield.cpp 
    kgrsprite.cpp
    kgoldrunner.cpp 
-   kgrcanvas.cpp 
-   kgrtheme.cpp 
    kgrthemetypes.cpp
    kgrrenderer.cpp
    kgrgame.cpp 

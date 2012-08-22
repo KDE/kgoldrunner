@@ -22,7 +22,8 @@
 
 #include <QObject>
 
-class KGrCanvas;
+class KGrView;
+class KGrScene;
 class KGrGameIO;
 class QTimer;
 
@@ -34,7 +35,7 @@ class QTimer;
  * and using mouse-clicks and drags to show where those objects are required.
  * As this happens, the corresponding character-codes are stored directly in
  * the QByteArray of layout-data and the corresponding visual objects (tiles)
- * are displayed on the screen by the KGrCanvas (view) object.
+ * are displayed on the screen by the KGrScene and KGrView objects.
  *
  * @short Game-editor class
  */
@@ -58,9 +59,9 @@ public:
      *                     user can add a game to the list and add levels to
      *                     that game or any other game in the user's area.
      */
-    KGrEditor (KGrCanvas * theView, const QString &theSystemDir,
-                                    const QString &theUserDir,
-                                    QList<KGrGameData *> & pGameList);
+    KGrEditor (KGrView * theView, const QString &theSystemDir,
+                                  const QString &theUserDir,
+                                  QList<KGrGameData *> & pGameList);
     ~KGrEditor();
 
     /**
@@ -182,7 +183,8 @@ signals:
     void showLevel      (int level);
 
 private:
-    KGrCanvas * view;		// The canvas on which the editor paints.
+    KGrView   * view;		// The canvas on which the editor paints.
+    KGrScene  * scene;
     KGrGameIO * io;		// I/O object for reading level-data.
     QString     systemDataDir;
     QString     userDataDir;
