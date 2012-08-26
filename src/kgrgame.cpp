@@ -1027,6 +1027,7 @@ void KGrGame::finalBreath()
     // connect (view, SIGNAL (fadeFinished()), this, SLOT (repeatLevel()));
     dbk << "Calling view->fadeOut()";
     // view->fadeOut();
+    repeatLevel(); // IDW test. Omit the fadeout-fadein sequence for now.
 }
 
 void KGrGame::repeatLevel()
