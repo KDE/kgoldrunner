@@ -51,9 +51,10 @@ signals:
     void mouseLetGo (int);
 
 protected:
-    virtual void resizeEvent        (QResizeEvent   *);
-    virtual void mousePressEvent    (QMouseEvent * mouseEvent);
-    virtual void mouseReleaseEvent  (QMouseEvent * mouseEvent);
+    virtual void resizeEvent           (QResizeEvent   *);
+    virtual void mousePressEvent       (QMouseEvent * mouseEvent);
+    virtual void mouseDoubleClickEvent (QMouseEvent * mouseEvent);
+    virtual void mouseReleaseEvent     (QMouseEvent * mouseEvent);
 
 private:
     QCursor     * m_mouse;

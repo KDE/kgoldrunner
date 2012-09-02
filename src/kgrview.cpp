@@ -83,6 +83,11 @@ void KGrView::mousePressEvent (QMouseEvent * mouseEvent)
     emit mouseClick (mouseEvent->button());
 }
 
+void KGrView::mouseDoubleClickEvent (QMouseEvent * mouseEvent)
+{
+    emit mouseClick (mouseEvent->button());
+}
+
 void KGrView::mouseReleaseEvent (QMouseEvent * mouseEvent)
 {
     emit mouseLetGo (mouseEvent->button());
