@@ -143,6 +143,10 @@ public slots:
     void startAnimation    (const int id, const bool repeating,
                             const int i, const int j, const int time,
                             const Direction dirn, const AnimationType type);
+
+    void setMousePos (const int i, const int j);
+    void getMousePos (int & i, int & j);
+
 private:
     /*
      * Actions performed whenever the viewport is resized or a different theme
@@ -179,7 +183,8 @@ private:
      * @param tile      The element to be resized.
      * @param tileSize  The new size.
      */
-    void setTileSize    (KGameRenderedItem * tile, const int tileSize);
+    void setTile        (KGameRenderedItem * tile, const int tileSize,
+                         const int i, const int j);
 
     KGrView             *   m_view;
     KGrRenderer         *   m_renderer;
@@ -210,6 +215,11 @@ private:
     QByteArray m_tileTypes;
 
     bool enemiesShowGold;		// Show or conceal if enemies have gold.
+
+    int m_topLeftX;
+    int m_topLeftY;
+
+    QCursor * m_mouse;
 };
 
 #endif // KGRSCENE_H

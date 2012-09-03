@@ -49,8 +49,13 @@ KGrScene::KGrScene      (KGrView * view)
     m_tilesWide         (FIELDWIDTH  + 2 * 2),
     m_tilesHigh         (FIELDHEIGHT + 2 * 2),
     m_tileSize          (10),
-    m_themeChanged      (true)
+    m_themeChanged      (true),
+    m_topLeftX          (0),
+    m_topLeftY          (0),
+    m_mouse             (new QCursor())
 {
+    setItemIndexMethod(NoIndex);
+
     m_tiles.fill        (0,     m_tilesWide * m_tilesHigh);
     m_tileTypes.fill    (FREE,  m_tilesWide * m_tilesHigh);
 
@@ -59,6 +64,7 @@ KGrScene::KGrScene      (KGrView * view)
 
 KGrScene::~KGrScene()
 {
+    delete m_mouse;
 }
 
 void KGrScene::redrawScene ()
@@ -68,23 +74,19 @@ void KGrScene::redrawScene ()
         QSize size      = m_view->size();
         int tileSize    = qMin (size.width()  / m_tilesWide,
                                 size.height() / m_tilesHigh);
+        m_topLeftX   = (size.width()  - m_tilesWide * tileSize)/2.0;
+        m_topLeftY   = (size.height() - m_tilesHigh * tileSize)/2.0;
+        setSceneRect   (0, 0, size.width(), size.height());
 
-        qreal unusedX   = (size.width()  - m_tilesWide * tileSize)/2.0;
-        qreal unusedY   = (size.height() - m_tilesHigh * tileSize)/2.0;
-
-        unusedX         = unusedX / tileSize; // Fraction of a tile at L and R.
-        unusedY         = unusedY / tileSize; // Fraction of a tile at T and B.
-
-        setSceneRect (-1.0 - unusedX, -1.0 - unusedY,
-                      m_tilesWide + 2.0 * unusedX, m_tilesHigh + 2.0 * unusedY);
-
+	int index = 0;
         foreach (KGameRenderedItem * tile, m_tiles) {
             if (tile) {
-                setTileSize (tile, tileSize);
+                setTile (tile, tileSize, index/m_tilesHigh, index%m_tilesHigh);
             }
+            index++;
         }
         foreach (KGrSprite * sprite, m_sprites) {
-            setTileSize (sprite, tileSize);
+	    sprite->changeCoordinateSystem (m_topLeftX, m_topLeftY, tileSize);
         }
 
         m_sizeChanged   = false;
@@ -135,16 +137,17 @@ void KGrScene::loadBackground (const int level)
 
     m_background->setRenderSize (QSize ((m_tilesWide - 4) * m_tileSize,
                                         (m_tilesHigh - 4) * m_tileSize));
-    m_background->setPos    (1, 1);
+    m_background->setPos    (m_topLeftX + 2 * m_tileSize,
+                             m_topLeftY + 2 * m_tileSize);
     // Keep the background behind the level layout.
     m_background->setZValue (-1);
-    m_background->setScale  (1.0 / m_tileSize);
 }
 
-void KGrScene::setTileSize (KGameRenderedItem * tile, const int tileSize)
+void KGrScene::setTile (KGameRenderedItem * tile, const int tileSize,
+                        const int i, const int j)
 {
     tile->setRenderSize (QSize (tileSize, tileSize));
-    tile->setScale (1.0 / tileSize);
+    tile->setPos (m_topLeftX + (i+1) * tileSize, m_topLeftY + (j+1) * tileSize);
 }
 
 void KGrScene::setBorderTile (const QString spriteKey, const int x, const int y)
@@ -155,8 +158,7 @@ void KGrScene::setBorderTile (const QString spriteKey, const int x, const int y)
     m_tiles[index]          = t;
 
     if (t) {
-        setTileSize (t, m_tileSize);
-        t->setPos (x, y);
+        setTile (t, m_tileSize, x, y);
     }
 }
 
@@ -193,8 +195,7 @@ void KGrScene::paintCell (const int i, const int j, const char type)
     m_tileTypes[index]      = type;
 
     if (t) {
-        setTileSize (t, m_tileSize);
-        t->setPos   (i, j);
+        setTile (t, m_tileSize, i, j);
     }
 }
 
@@ -238,7 +239,7 @@ int KGrScene::makeSprite (const char type, int i, int j)
     }
 
     sprite->setFrame (frame1);
-    setTileSize (sprite, m_tileSize);
+    sprite->setCoordinateSystem (m_topLeftX, m_topLeftY, m_tileSize);
     addItem (sprite);		// The sprite can be correctly rendered now.
     sprite->move (i, j, frame1);
     return spriteId;
@@ -349,6 +350,33 @@ void KGrScene::deleteAllSprites()
 {
     qDeleteAll(m_sprites);
     m_sprites.clear();
+}
+
+void KGrScene::setMousePos (const int i, const int j)
+{
+    m_mouse->setPos (m_view->mapToGlobal (QPoint (
+                     m_topLeftX + (i + 1) * m_tileSize + m_tileSize/2,
+                     m_topLeftY + (j + 1) * m_tileSize + m_tileSize/2)));
+}
+
+void KGrScene::getMousePos (int & i, int & j)
+{
+    QPoint pos = m_view->mapFromGlobal (m_mouse->pos());
+    i = pos.x();
+    j = pos.y();
+    if (! m_view->isActiveWindow()) {
+        i = -2;
+	j = -2;
+	return;
+    }
+    // IDW TODO - Check for being outside scene. Use saved m_width and m_height.
+
+    i = (i - m_topLeftX)/m_tileSize - 1;
+    j = (j - m_topLeftY)/m_tileSize - 1;
+
+    // Make sure i and j are within the KGoldrunner playing area.
+    i = (i < 1) ? 1 : ((i > FIELDWIDTH)  ? FIELDWIDTH  : i);
+    j = (j < 1) ? 1 : ((j > FIELDHEIGHT) ? FIELDHEIGHT : j);
 }
 
 #include "kgrscene.moc"

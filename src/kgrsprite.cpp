@@ -16,7 +16,6 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ****************************************************************************/
 
-// #include "kgrglobals.h" // IDW test.
 #include "kgrsprite.h"
 #include "kgrrenderer.h"
 
@@ -40,7 +39,10 @@ KGrSprite::KGrSprite (KGameRenderer * renderer, QString & key,
     m_dt              (0),
     m_oldX            (-1),
     m_oldY            (-1),
-    m_oldFrame        (-1)
+    m_oldFrame        (-1),
+    m_topLeftX        (0),
+    m_topLeftY        (0),
+    m_tileSize        (1)
 {
 }
 
@@ -51,11 +53,14 @@ KGrSprite::~KGrSprite()
 void KGrSprite::move (double x, double y, int frame)
 {
     if (frame != m_oldFrame) {
-        setFrame (frame);	// Set the frame in KGameRenderedItem.
+        // Change the animation frame in KGameRenderedItem.
+        setFrame (frame);
         m_oldFrame = frame;
     }
     if ((x != m_oldX) || (y != m_oldY)) {
-        setPos (x, y);		// Set the position in the scene.
+        // Change the position in scene (and view) coordinates.
+        setPos (m_topLeftX + (x + 1) * m_tileSize,
+                m_topLeftY + (y + 1) * m_tileSize);
         m_oldX = x;
         m_oldY = y;
     }
@@ -80,7 +85,7 @@ void KGrSprite::setAnimation (bool repeating, int x, int y, int startFrame,
     m_dy            = (double) dy / m_ticks;
     m_frameTicks    = (double) m_ticks / nFrameChanges;
     m_frameChange   = 0.0;
-    // kDebug() << "m_ticks" << m_ticks << "dx,dy,dt" << dx << dy << dt << "m_dx,m_dy" << m_dx << m_dy << "m_frameTicks" << m_frameTicks;
+    // kDebug() << "m_ticks" << m_ticks << "dx,dy,dt" << dx << dy << dt << "m_dx,m_dy" << m_dx << m_dy << "m_frameTicks" << m_frameTicks << "nFrames" << nFrames << "nFrameChanges" << nFrameChanges;
 }
 
 void KGrSprite::animate (bool missed)
@@ -95,7 +100,7 @@ void KGrSprite::animate (bool missed)
             return;
         }
     }
-    // kDebug() << m_frameCtr << "=" << m_x << m_y << "frame" << m_startFrame + m_frameCtr << m_frameChange;
+    // kDebug() << missed << m_frameCtr << "=" << m_x << m_y << "frame" << m_startFrame + m_frameCtr << m_frameChange;
 
     // If the clock is running slow, skip an animation step.
     if (! missed) {
@@ -110,4 +115,24 @@ void KGrSprite::animate (bool missed)
     }
     m_x = m_x + m_dx;
     m_y = m_y + m_dy;
+}
+
+void KGrSprite::setCoordinateSystem (int topLeftX, int topLeftY, int tileSize)
+{
+    if (tileSize != m_tileSize) {
+        setRenderSize (QSize (tileSize, tileSize));
+    }
+    m_tileSize = tileSize;
+    m_topLeftX = topLeftX;
+    m_topLeftY = topLeftY;
+}
+
+void KGrSprite::changeCoordinateSystem(int topLeftX, int topLeftY, int tileSize)
+{
+    setCoordinateSystem (topLeftX, topLeftY, tileSize);
+
+    double x = m_oldX;
+    double y = m_oldY;
+    m_oldX = m_oldY = -1;	// Make it look like a change of position,
+    move (x, y, m_oldFrame);	// to force a recalculation of view coords.
 }

@@ -160,10 +160,10 @@ void KGrLevelPlayer::init (KGrView * view,
 
     // Connect to the mouse-positioning code in the graphics.
     connect (this, SIGNAL (getMousePos(int&,int&)),
-             view, SLOT   (getMousePos(int&,int&)));
+             view->gameScene(), SLOT   (getMousePos(int&,int&)));
 
     connect (this, SIGNAL (setMousePos(int,int)),
-             view, SLOT   (setMousePos(int,int)));
+             view->gameScene(), SLOT   (setMousePos(int,int)));
 
     // Show the layout of this level in the view (KGrCanvas).
     int wall = ConcreteWall;

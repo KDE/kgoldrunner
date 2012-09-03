@@ -33,16 +33,18 @@ public:
                         const char type, const int tickTime = 20);
     ~KGrSprite();
 
-    inline char     spriteType      ()              { return m_type; }
-    inline QPointF  currentLoc      ()              { return pos(); }
-    inline int      currentFrame    ()              { return frame(); }
-    inline void     setZ            (qreal z)       { setZValue(z); }
+    inline char     spriteType      ()        { return m_type; }
+    inline QPointF  currentLoc      ()        { return QPointF (m_x, m_y); }
+    inline int      currentFrame    ()        { return frame(); }
+    inline void     setZ            (qreal z) { setZValue(z); }
 
     void move           (double x, double y, int frame);
     void animate        (bool missed);
     void setAnimation   (bool repeating, int x, int y, int startFrame,
                          int nFrames, int dx, int dy, int dt,
                          int nFrameChanges);
+    void setCoordinateSystem    (int topLeftX, int topLeftY, int tileSize);
+    void changeCoordinateSystem (int topLeftX, int topLeftY, int tileSize);
 
 private:
     char   m_type;
@@ -64,6 +66,10 @@ private:
     double m_oldX;
     double m_oldY;
     int    m_oldFrame;
+
+    int    m_topLeftX;
+    int    m_topLeftY;
+    int    m_tileSize;
 };
 
 #endif // KGRSPRITE_H
