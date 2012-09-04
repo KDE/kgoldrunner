@@ -850,7 +850,7 @@ bool KGrGame::playLevel (const Owner fileOwner, const QString & prefix,
         return false;
     }
 
-    // scene->setLevel (levelNo);		// Switch and render background if reqd.
+    scene->setLevel (levelNo);		// Switch and render background if reqd.
     // view->fadeIn();			// Then run the fade-in animation.
     startScore = score;			// The score we will save, if asked.
 
@@ -864,7 +864,7 @@ bool KGrGame::playLevel (const Owner fileOwner, const QString & prefix,
     emit hintAvailable (levelHint.length() > 0);
 
     // Re-draw the playfield frame, level title and figures.
-    // scene->setTitle (getTitle());
+    scene->setTitle (getTitle());
 
     // If we are starting a new level, save it in the player's config file.
     if (newLevel && (level != 0)) {	// But do not save the "ENDE" level.

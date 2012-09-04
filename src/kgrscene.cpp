@@ -22,6 +22,8 @@
 #include <KConfig>
 #include <KConfigGroup>
 
+#include <QFont>
+
 #include "kgrview.h"
 #include "kgrscene.h"
 #include "kgrsprite.h"
@@ -41,6 +43,8 @@ KGrScene::KGrScene      (KGrView * view)
     // for mouse actions (to avoid accidental clicks affecting the desktop).
     m_view              (view),
     m_background        (0),
+    m_level             (1),
+    m_title             (0),
     m_scoreText         (0),
     m_livesText         (0),
     m_scoreDisplay      (0),
@@ -60,6 +64,12 @@ KGrScene::KGrScene      (KGrView * view)
     m_tileTypes.fill    (FREE,  m_tilesWide * m_tilesHigh);
 
     m_renderer  = new KGrRenderer (this);
+
+    m_frame = addRect (0, 0, 100, 100);		// Create placeholder for frame.
+    m_frame->setVisible (false);
+
+    m_title = new QGraphicsSimpleTextItem();
+    addItem (m_title);
 }
 
 KGrScene::~KGrScene()
@@ -78,7 +88,7 @@ void KGrScene::redrawScene ()
         m_topLeftY   = (size.height() - m_tilesHigh * tileSize)/2.0;
         setSceneRect   (0, 0, size.width(), size.height());
 
-	int index = 0;
+        int index = 0;
         foreach (KGameRenderedItem * tile, m_tiles) {
             if (tile) {
                 setTile (tile, tileSize, index/m_tilesHigh, index%m_tilesHigh);
@@ -86,25 +96,39 @@ void KGrScene::redrawScene ()
             index++;
         }
         foreach (KGrSprite * sprite, m_sprites) {
-	    sprite->changeCoordinateSystem (m_topLeftX, m_topLeftY, tileSize);
+            sprite->changeCoordinateSystem (m_topLeftX, m_topLeftY, tileSize);
         }
 
-        m_sizeChanged   = false;
-        m_tileSize      = tileSize;
+        m_tileSize = tileSize;
+        m_sizeChanged = false;
     }
 
-    // NOTE: This is for testing only. As long as the scene is not connected to
-    // the game engine loadBackground() will behave this way. 
-    loadBackground (1);
+    // Re-draw text, background and frame if scene size or theme changes.
+    setTextFont (m_title, 0.6);
+    setTitle (m_title->text());
+
+    // Resize and draw different backgrounds, depending on the level and theme.
+    loadBackground (m_level);
+
+    if (m_renderer->hasBorder()) {
+        // There are border tiles in the theme, so do not draw a frame.
+        m_frame->setVisible (false);
+    }
+    else {
+        // There are no border tiles, so draw a frame around the board.
+        setFrame();
+    }
 
     if (m_themeChanged) {
         // Fill the scene (and view) with the new background color.  Do this
         // even if the background has no border, to avoid ugly white rectangles
         // appearing if rendering and painting is momentarily a bit slow.
         setBackgroundBrush (m_renderer->borderColor());
+
+	// Erase border tiles (if any) and draw new ones, if new theme has them.
         drawBorder();
 
-        // Redraw the all the tiles, except for borders and tiles of type FREE.
+        // Redraw all the tiles, except for borders and tiles of type FREE.
         for (int i = 1; i <= FIELDWIDTH; i++) {
             for (int j = 1; j <= FIELDHEIGHT; j++) {
                 int index = i * m_tilesHigh + j;
@@ -126,6 +150,22 @@ void KGrScene::changeSize()
 {
     m_sizeChanged = true;
     redrawScene();
+}
+
+void KGrScene::setTitle (const QString & newTitle)
+{
+    if (! m_title) return;
+
+    m_title->setText (newTitle);
+    QRectF r = m_title->boundingRect();
+    m_title->setPos ((sceneRect().width() - r.width())/2,
+                      m_topLeftY + (m_tileSize - r.height())/2);
+}
+
+void KGrScene::setLevel (unsigned int level)
+{
+    m_level = level;
+    loadBackground (level);	// Load background for level.
 }
 
 void KGrScene::loadBackground (const int level)
@@ -185,6 +225,22 @@ void KGrScene::drawBorder()
     // Right side.
     for (int i = 1; i <= FIELDHEIGHT; i++)
         setBorderTile ("frame-right", FIELDWIDTH + 1, i);
+}
+
+void KGrScene::setFrame()
+{
+    int w = 0.05 * m_tileSize + 0.5;
+    w = w < 1 ? 1 : w;
+    m_frame->setRect (
+	m_topLeftX + (2 * m_tileSize) - (3 * w),
+	m_topLeftY + (2 * m_tileSize) - (3 * w),
+	FIELDWIDTH  * m_tileSize + 6 * w,
+	FIELDHEIGHT * m_tileSize + 6 * w);
+    kDebug() << "FRAME WIDTH" << w << "tile size" << m_tileSize << "rectangle" << m_frame->rect();
+    QPen pen = QPen (m_renderer->textColor());
+    pen.setWidth (w);
+    m_frame->setPen (pen);
+    m_frame->setVisible (true);
 }
 
 void KGrScene::paintCell (const int i, const int j, const char type)
@@ -377,6 +433,16 @@ void KGrScene::getMousePos (int & i, int & j)
     // Make sure i and j are within the KGoldrunner playing area.
     i = (i < 1) ? 1 : ((i > FIELDWIDTH)  ? FIELDWIDTH  : i);
     j = (j < 1) ? 1 : ((j > FIELDHEIGHT) ? FIELDHEIGHT : j);
+}
+
+void KGrScene::setTextFont (QGraphicsSimpleTextItem * t, double fontFraction)
+{
+    QFont f;
+    f.setPixelSize ((int) (m_tileSize * fontFraction + 0.5));
+    f.setWeight (QFont::Bold);
+    f.setStretch (QFont::Expanded);
+    t->setBrush (m_renderer->textColor());
+    t->setFont (f);
 }
 
 #include "kgrscene.moc"

@@ -92,6 +92,20 @@ public:
      */
     void changeSize         ();
 
+    /**
+     * Set the current level number.  It is used to select a background.
+     *
+     * @param level         The current level number.
+     */
+    void setLevel (unsigned int level);
+
+    /**
+     * Set the text for the title of the current level.
+     *
+     * @param newTitle      The title of the current level.
+     */
+    void setTitle (const QString & newTitle);
+
     /*
      * Get the current size of the squared region occupied by a single visual
      * element (characters, ladders, bricks etc.).
@@ -161,6 +175,11 @@ private:
     void drawBorder     ();
 
     /*
+     * Draw a frame around the playing area when there are no border tiles.
+     */
+    void setFrame       ();
+
+    /*
      * Load and set the size and position of the background image for the
      * current level.
      *
@@ -189,9 +208,14 @@ private:
     KGrView             *   m_view;
     KGrRenderer         *   m_renderer;
     KGameRenderedItem   *   m_background;
+    int                     m_level;
 
-    QGraphicsTextItem   *   m_scoreText;
-    QGraphicsTextItem   *   m_livesText;
+    QGraphicsRectItem   *   m_frame;
+
+    // Text items. 
+    QGraphicsSimpleTextItem * m_title;
+    QGraphicsSimpleTextItem * m_scoreText;
+    QGraphicsSimpleTextItem * m_livesText;
 
     QGraphicsPixmapItem *   m_scoreDisplay;
     QGraphicsPixmapItem *   m_livesDisplay;
@@ -220,6 +244,8 @@ private:
     int m_topLeftY;
 
     QCursor * m_mouse;
+
+    void setTextFont (QGraphicsSimpleTextItem * t, double fontFraction);
 };
 
 #endif // KGRSCENE_H
