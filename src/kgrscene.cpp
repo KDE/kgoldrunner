@@ -111,7 +111,10 @@ void KGrScene::redrawScene ()
             index++;
         }
         foreach (KGrSprite * sprite, m_sprites) {
-            sprite->changeCoordinateSystem (m_topLeftX, m_topLeftY, tileSize);
+	    if (sprite) {
+                sprite->changeCoordinateSystem
+                        (m_topLeftX, m_topLeftY, tileSize);
+            }
         }
 
         m_tileSize = tileSize;
