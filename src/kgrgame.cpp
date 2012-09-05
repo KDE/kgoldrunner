@@ -267,6 +267,7 @@ void KGrGame::gameActions (const int action)
         emit setEditMenu (true);	// Enable edit menu items and toolbar.
 
         // Pass the editor's showLevel signal on to the KGoldrunner GUI object.
+	// IDW TODO - DELETE this signal.
         connect (editor, SIGNAL (showLevel(int)),
                  this,   SIGNAL (showLevel(int)));
     }
@@ -821,7 +822,7 @@ void KGrGame::newGame (const int lev, const int newGameIndex)
 
     emit showLives (lives);
     emit showScore (score);
-    emit showLevel (level);
+    // IDW TODO - DELETE this signal. emit showLevel (level);
 
     playLevel (owner, prefix, level, NewLevel);
 }
@@ -1085,7 +1086,7 @@ void KGrGame::goUpOneLevel()
     }
     else {
         level++;		// Go up one level.
-        emit showLevel (level);
+        // IDW test. DELETE this signal. emit showLevel (level);
     }
 
     if (playLevel (owner, prefix, level, NewLevel)) {

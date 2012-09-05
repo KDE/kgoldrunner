@@ -318,7 +318,7 @@ bool KGrEditor::saveLevelFile()
     }
 
     editLevel = selectedLevel;
-    emit showLevel (editLevel);
+    // IDW TODO - DELETE this signal. emit showLevel (editLevel);
     // scene->setTitle (getTitle());		// Display new title.
     return true;
 }
@@ -417,7 +417,7 @@ bool KGrEditor::moveLevelFile (int pGameIndex, int level)
     KGrGameIO::safeRename (view, filePath2, filePath1);
 
     editLevel = toL;
-    emit showLevel (editLevel);
+    // IDW TODO - DELETE this signal. emit showLevel (editLevel);
     // scene->setTitle (getTitle());	// Re-write title.
     return true;
 }
@@ -490,7 +490,7 @@ bool KGrEditor::deleteLevelFile (int pGameIndex, int level)
     else {
         createLevel (gameIndex);	// No levels left in game.
     }
-    emit showLevel (editLevel);
+    // IDW TODO - DELETE this signal. emit showLevel (editLevel);
     return true;
 }
 
@@ -683,7 +683,7 @@ void KGrEditor::initEdit()
     oldJ = 0;
     heroCount = 0;
 
-    emit showLevel (editLevel);
+    // IDW TODO - DELETE this signal. emit showLevel (editLevel);
     // scene->setTitle (getTitle());	// Show title of level.
 
     shouldSave = false;		// Used to flag editing of name or hint.

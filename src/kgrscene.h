@@ -82,13 +82,13 @@ public:
     KGrScene                (KGrView * view);
     ~KGrScene               ();
 
-    /*
+    /**
      * Redraw the scene whenever the current theme has changed.
      */
     void changeTheme        ();
 
-    /*
-     * Redraw the scene whenever the scene is resized.
+    /**
+     * Redraw the scene whenever the view widget is resized.
      */
     void changeSize         ();
 
@@ -106,13 +106,17 @@ public:
      */
     void setTitle (const QString & newTitle);
 
-    /*
+    void setHasHintText (const QString & msg);
+
+    void setPauseResumeText (const QString & msg);
+
+    /**
      * Get the current size of the squared region occupied by a single visual
      * element (characters, ladders, bricks etc.).
      */
     QSize tileSize          () const { return QSize (m_tileSize, m_tileSize); }
 
-    /*
+    /**
      * Get a pointer to the scene's renderer.
      */
     KGrRenderer * renderer  () const { return m_renderer; }
@@ -120,6 +124,10 @@ public:
     inline void setGoldEnemiesRule (bool showIt) { enemiesShowGold = showIt; }
 
 public slots:
+    void showLives          (long lives);
+
+    void showScore          (long score);
+
     int  makeSprite         (const char type, int i, int j);
 
     void animate            (bool missed);
@@ -214,8 +222,10 @@ private:
 
     // Text items. 
     QGraphicsSimpleTextItem * m_title;
-    QGraphicsSimpleTextItem * m_scoreText;
     QGraphicsSimpleTextItem * m_livesText;
+    QGraphicsSimpleTextItem * m_scoreText;
+    QGraphicsSimpleTextItem * m_hasHintText;
+    QGraphicsSimpleTextItem * m_pauseResumeText;
 
     QGraphicsPixmapItem *   m_scoreDisplay;
     QGraphicsPixmapItem *   m_livesDisplay;
@@ -246,6 +256,7 @@ private:
     QCursor * m_mouse;
 
     void setTextFont (QGraphicsSimpleTextItem * t, double fontFraction);
+    void placeTextItems();
 };
 
 #endif // KGRSCENE_H

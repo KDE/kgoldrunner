@@ -21,6 +21,7 @@
 #include <KGlobal>
 #include <KConfig>
 #include <KConfigGroup>
+#include <KLocalizedString>
 
 #include <QFont>
 
@@ -45,8 +46,10 @@ KGrScene::KGrScene      (KGrView * view)
     m_background        (0),
     m_level             (1),
     m_title             (0),
-    m_scoreText         (0),
     m_livesText         (0),
+    m_scoreText         (0),
+    m_hasHintText       (0),
+    m_pauseResumeText   (0),
     m_scoreDisplay      (0),
     m_livesDisplay      (0),
     m_heroId            (0),
@@ -70,6 +73,18 @@ KGrScene::KGrScene      (KGrView * view)
 
     m_title = new QGraphicsSimpleTextItem();
     addItem (m_title);
+
+    m_livesText = new QGraphicsSimpleTextItem();
+    addItem (m_livesText);
+
+    m_scoreText = new QGraphicsSimpleTextItem();
+    addItem (m_scoreText);
+
+    m_hasHintText = new QGraphicsSimpleTextItem();
+    addItem (m_hasHintText);
+
+    m_pauseResumeText = new QGraphicsSimpleTextItem();
+    addItem (m_pauseResumeText);
 }
 
 KGrScene::~KGrScene()
@@ -103,9 +118,12 @@ void KGrScene::redrawScene ()
         m_sizeChanged = false;
     }
 
-    // Re-draw text, background and frame if scene size or theme changes.
+    // Re-draw text, background and frame if either scene-size or theme changes.
+
+    // Resize and draw texts for title, score, lives, hasHint and pauseResume.
     setTextFont (m_title, 0.6);
     setTitle (m_title->text());
+    placeTextItems();
 
     // Resize and draw different backgrounds, depending on the level and theme.
     loadBackground (m_level);
@@ -157,9 +175,71 @@ void KGrScene::setTitle (const QString & newTitle)
     if (! m_title) return;
 
     m_title->setText (newTitle);
-    QRectF r = m_title->boundingRect();
+    QRectF r = m_title->boundingRect();		// Centre the title.
     m_title->setPos ((sceneRect().width() - r.width())/2,
                       m_topLeftY + (m_tileSize - r.height())/2);
+}
+
+void KGrScene::placeTextItems()
+{
+    setTextFont (m_livesText, 0.5);
+    setTextFont (m_scoreText, 0.5);
+    setTextFont (m_hasHintText, 0.5);
+    setTextFont (m_pauseResumeText, 0.5);
+
+    qreal totalWidth = 0.0;
+    QRectF r = m_livesText->boundingRect();
+    qreal x = m_topLeftX + 2 * m_tileSize;
+    qreal y = sceneRect().height() - m_topLeftY - (m_tileSize + r.height())/2;
+
+    m_livesText->setPos (x, y);
+    totalWidth += r.width();
+
+    r = m_scoreText->boundingRect();
+    m_scoreText->setPos (x + totalWidth, y);
+    totalWidth += r.width();
+
+    r = m_hasHintText->boundingRect();
+    m_hasHintText->setPos (x + totalWidth, y);
+    totalWidth += r.width();
+
+    r = m_pauseResumeText->boundingRect();
+    m_pauseResumeText->setPos (x + totalWidth, y);
+    totalWidth += r.width();
+
+    qreal spacing = ((m_tilesWide - 4) * m_tileSize - totalWidth) / 3.0;
+    if (spacing < 0.0)
+        return;
+
+    m_scoreText->moveBy (spacing, 0.0);
+    m_hasHintText->moveBy (2.0 * spacing, 0.0);
+    m_pauseResumeText->moveBy (3.0 * spacing, 0.0);
+}
+
+void KGrScene::showLives (long lives)
+{
+    if (m_livesText)
+        m_livesText->setText (i18n("Lives: %1", QString::number(lives)
+                                                .rightJustified(3, '0')));
+}
+
+void KGrScene::showScore (long score)
+{
+    if (m_scoreText)
+        m_scoreText->setText (i18n("Score: %1", QString::number(score)
+                                                .rightJustified(7, '0')));
+}
+
+void KGrScene::setHasHintText (const QString & msg)
+{
+    if (m_hasHintText)
+        m_hasHintText->setText (msg);
+}
+
+void KGrScene::setPauseResumeText (const QString & msg)
+{
+    if (m_pauseResumeText)
+        m_pauseResumeText->setText (msg);
 }
 
 void KGrScene::setLevel (unsigned int level)

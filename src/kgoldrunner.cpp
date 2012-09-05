@@ -722,25 +722,27 @@ void KGoldrunner::initStatusBar()
 {
     statusBar()->insertPermanentItem ("", ID_LIVES);
     statusBar()->insertPermanentItem ("", ID_SCORE);
-    statusBar()->insertPermanentItem ("", ID_LEVEL);
+    // IDW test. statusBar()->insertPermanentItem ("", ID_LEVEL);
     statusBar()->insertPermanentItem ("", ID_HINTAVL);
     statusBar()->insertPermanentItem ("", ID_MSG, 1);
 
     showLives (5);					// Start with 5 lives.
     showScore (0);
-    showLevel (0);
+    // IDW test. showLevel (0);
     adjustHintAction (false);
 
     gameFreeze (false);
 
     statusBar()->setItemFixed (ID_LIVES, -1);		// Fix current sizes.
     statusBar()->setItemFixed (ID_SCORE, -1);
-    statusBar()->setItemFixed (ID_LEVEL, -1);
+    // IDW test. statusBar()->setItemFixed (ID_LEVEL, -1);
     statusBar()->setItemFixed (ID_HINTAVL, -1);
 
     connect (game, SIGNAL (showLives(long)),	SLOT (showLives(long)));
     connect (game, SIGNAL (showScore(long)),	SLOT (showScore(long)));
-    connect (game, SIGNAL (showLevel(int)),	SLOT (showLevel(int)));
+    connect (game, SIGNAL (showLives(long)),	scene, SLOT (showLives(long)));
+    connect (game, SIGNAL (showScore(long)),	scene, SLOT (showScore(long)));
+    // IDW test. connect (game, SIGNAL (showLevel(int)),	SLOT (showLevel(int)));
     connect (game, SIGNAL (gameFreeze(bool)),	SLOT (gameFreeze(bool)));
 }
 
@@ -776,7 +778,7 @@ void KGoldrunner::showLevel (int newLevelNo)
         tmp = tmp.rightJustified (3, '0');
     tmp.insert (0, i18n ("   Level: "));
     tmp.append ("   ");
-    statusBar()->changeItem (tmp, ID_LEVEL);
+    // IDW test. statusBar()->changeItem (tmp, ID_LEVEL);
 }
 
 void KGoldrunner::gameFreeze (bool on_off)
@@ -787,35 +789,38 @@ void KGoldrunner::gameFreeze (bool on_off)
     foreach (const QKeySequence &s, myPause->shortcut().toList()) {
         pauseKeys.append(s.toString(QKeySequence::NativeText));
     }
+    QString msg;
     if (on_off) {
         if (pauseKeys.size() == 0) {
-            statusBar()->changeItem ("The game is paused", ID_MSG);
+            msg = i18n("The game is paused");
         } else if (pauseKeys.size() == 1) {
-            statusBar()->changeItem (i18n ("Press \"%1\" to RESUME", pauseKeys.at(0)), ID_MSG);
+            msg = i18n("Press \"%1\" to RESUME", pauseKeys.at(0));
         } else {
-            statusBar()->changeItem (i18n ("Press \"%1\" or \"%2\" to RESUME", pauseKeys.at(0), pauseKeys.at(1)), ID_MSG);
+            msg = i18n("Press \"%1\" or \"%2\" to RESUME", pauseKeys.at(0),
+                                                           pauseKeys.at(1));
         }
     } else {
         if (pauseKeys.size() == 0) {
-            statusBar()->changeItem ("", ID_MSG);
+            msg = "";
         } else if (pauseKeys.size() == 1) {
-            statusBar()->changeItem (i18n ("Press \"%1\" to PAUSE", pauseKeys.at(0)), ID_MSG);
+            msg = i18n("Press \"%1\" to PAUSE", pauseKeys.at(0));
         } else {
-            statusBar()->changeItem (i18n ("Press \"%1\" or \"%2\" to PAUSE", pauseKeys.at(0), pauseKeys.at(1)), ID_MSG);
+            msg = i18n("Press \"%1\" or \"%2\" to PAUSE", pauseKeys.at(0),
+                                                          pauseKeys.at(1));
         }
     }
+    statusBar()->changeItem (msg, ID_MSG);
+    scene->setPauseResumeText (msg);
 }
 
 void KGoldrunner::adjustHintAction (bool hintAvailable)
 {
     hintAction->setEnabled (hintAvailable);
 
-    if (hintAvailable) {
-        statusBar()->changeItem (i18n ("   Has hint   "), ID_HINTAVL);
-    }
-    else {
-        statusBar()->changeItem (i18n ("   No hint   "), ID_HINTAVL);
-    }
+    QString msg;
+    msg = hintAvailable ? i18n("Has hint") : i18n("No hint");
+    statusBar()->changeItem (msg, ID_HINTAVL);
+    scene->setHasHintText (msg);
 }
 
 void KGoldrunner::setToggle (const char * actionName, const bool onOff)
