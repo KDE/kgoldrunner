@@ -20,17 +20,6 @@
 #ifndef KGOLDRUNNER_H
 #define KGOLDRUNNER_H
 
-// Status bar
-const int ID_LIVES      = 0;            // Field IDs in KDE status bar.
-const int ID_SCORE      = 1;
-const int ID_LEVEL      = 2;
-const int ID_HINTAVL    = 3;
-const int ID_MSG        = 4;
-
-const int L_LIVES       = 15;		// Lengths of fields.
-const int L_SCORE       = 17;
-const int L_LEVEL       = 15;
-
 #include "kgrglobals.h"
 
 #include <KXmlGuiWindow>
@@ -45,8 +34,8 @@ class KGrScene;
 class KGrRenderer;
 
 /**
- * This class serves as the main window for KGoldrunner.  It handles the
- * menus, toolbars, and status bars.
+ * This class serves as the main window for KGoldrunner.  It handles the menu,
+ * toolbar and keystroke actions and sets up the game, scene and view.
  *
  * @short Main window class
  */
@@ -106,9 +95,6 @@ private slots:
 
     void optionsConfigureKeys();
 
-    void showLevel (int);		// Show the current level number.
-    void showLives (long);		// Show how many lives are remaining.
-    void showScore (long);		// Show the player's score.
     void gameFreeze (bool);		// Status feedback on Pause state.
 
     void adjustHintAction (bool);	// Enable/disable "Hint" action.
@@ -120,7 +106,6 @@ private slots:
 
 private:
     void setupActions();
-    void initStatusBar();
     // void setupEditToolbarActions();
 
     QSignalMapper * tempMapper;		// Temporary pointer.

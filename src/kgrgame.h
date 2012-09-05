@@ -142,7 +142,6 @@ signals:
     // These signals go to the GUI in most cases.
     void showScore (long);		// For main window to show the score.
     void showLives (long);		// For main window to show lives left.
-    void showLevel (int);		// For main window to show the level.
 
     void hintAvailable (bool);		// For main window to adjust menu text.
 

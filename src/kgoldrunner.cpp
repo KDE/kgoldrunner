@@ -27,7 +27,6 @@
 #include <QKeyEvent>
 
 #include <kglobal.h>
-#include <kstatusbar.h>
 #include <kshortcutsdialog.h>
 #include <KStandardDirs>
 
@@ -130,21 +129,25 @@ KGoldrunner::KGoldrunner()
     // Set up our actions (menu, toolbar and keystrokes) ...
     setupActions();
 
-    // Do NOT have show/hide actions for the statusbar and toolbar in the GUI:
-    // we need the statusbar for game scores and the toolbar is relevant only
+    // Do NOT put show/hide actions for the statusbar and toolbar in the GUI.
+    // We do not have a statusbar any more and the toolbar is relevant only
     // when using the game editor and then it appears automatically.  Maybe 1%
     // of players would use the game editor for 5% of their time.  Also we have
     // our own action to configure shortcut keys, so disable the KXmlGui one.
     setupGUI (static_cast<StandardWindowOption> (Default &
                         (~StatusBar) & (~ToolBar) & (~Keys)));
 
-    // Set up a status bar (after setupGUI(), to show USER's choice of keys).
-    initStatusBar();
+    // Initialize text items in the scene, before the first resize.
+    adjustHintAction (false);
+    gameFreeze (false);
 
     // Connect the game actions to the menu and toolbar displays.
     connect (game, SIGNAL (quitGame()),	         SLOT (close()));
     // connect (game, SIGNAL (setEditMenu(bool)),	 SLOT (setEditMenu(bool)));
+    connect (game, SIGNAL (showLives(long)), scene, SLOT (showLives(long)));
+    connect (game, SIGNAL (showScore(long)), scene, SLOT (showScore(long)));
     connect (game, SIGNAL (hintAvailable(bool)), SLOT (adjustHintAction(bool)));
+    connect (game, SIGNAL (gameFreeze(bool)), SLOT (gameFreeze(bool)));
 
     connect (game, SIGNAL (setAvail(const char*,bool)),
                    SLOT   (setAvail(const char*,bool)));
@@ -161,7 +164,7 @@ KGoldrunner::KGoldrunner()
     // Besides, we cannot render it until after the initial resize event (s).
     toolBar ("editToolbar")->hide();
 
-    // Do NOT paint main widget yet (title, menu, status bar, blank playfield).
+    // Do NOT paint main widget yet (title bar, menu, blank playfield).
     // Instead, queue a call to the "KGoldrunner_2" constructor extension.
     QMetaObject::invokeMethod (this, "KGoldrunner_2", Qt::QueuedConnection);
     kDebug() << "QMetaObject::invokeMethod (this, \"KGoldrunner_2\") done ... ";
@@ -714,73 +717,6 @@ void KGoldrunner::viewFullScreen (bool activation)
     KToggleFullScreenAction::setFullScreen (this, activation);
 }
 
-/******************************************************************************/
-/**********************  SLOTS FOR STATUS BAR UPDATES  ************************/
-/******************************************************************************/
-
-void KGoldrunner::initStatusBar()
-{
-    statusBar()->insertPermanentItem ("", ID_LIVES);
-    statusBar()->insertPermanentItem ("", ID_SCORE);
-    // IDW test. statusBar()->insertPermanentItem ("", ID_LEVEL);
-    statusBar()->insertPermanentItem ("", ID_HINTAVL);
-    statusBar()->insertPermanentItem ("", ID_MSG, 1);
-
-    showLives (5);					// Start with 5 lives.
-    showScore (0);
-    // IDW test. showLevel (0);
-    adjustHintAction (false);
-
-    gameFreeze (false);
-
-    statusBar()->setItemFixed (ID_LIVES, -1);		// Fix current sizes.
-    statusBar()->setItemFixed (ID_SCORE, -1);
-    // IDW test. statusBar()->setItemFixed (ID_LEVEL, -1);
-    statusBar()->setItemFixed (ID_HINTAVL, -1);
-
-    connect (game, SIGNAL (showLives(long)),	SLOT (showLives(long)));
-    connect (game, SIGNAL (showScore(long)),	SLOT (showScore(long)));
-    connect (game, SIGNAL (showLives(long)),	scene, SLOT (showLives(long)));
-    connect (game, SIGNAL (showScore(long)),	scene, SLOT (showScore(long)));
-    // IDW test. connect (game, SIGNAL (showLevel(int)),	SLOT (showLevel(int)));
-    connect (game, SIGNAL (gameFreeze(bool)),	SLOT (gameFreeze(bool)));
-}
-
-void KGoldrunner::showLives (long newLives)
-{
-    QString tmp;
-    tmp.setNum (newLives);
-    if (newLives < 100)
-        tmp = tmp.rightJustified (3, '0');
-    tmp.insert (0, i18n ("   Lives: "));
-    tmp.append ("   ");
-    // view->updateLives(newLives);
-    statusBar()->changeItem (tmp, ID_LIVES);
-}
-
-void KGoldrunner::showScore (long newScore)
-{
-    QString tmp;
-    tmp.setNum (newScore);
-    if (newScore < 1000000)
-        tmp = tmp.rightJustified (7, '0');
-    tmp.insert (0, i18n ("   Score: "));
-    tmp.append ("   ");
-    // view->updateScore(newScore);
-    statusBar()->changeItem (tmp, ID_SCORE);
-}
-
-void KGoldrunner::showLevel (int newLevelNo)
-{
-    QString tmp;
-    tmp.setNum (newLevelNo);
-    if (newLevelNo < 100)
-        tmp = tmp.rightJustified (3, '0');
-    tmp.insert (0, i18n ("   Level: "));
-    tmp.append ("   ");
-    // IDW test. statusBar()->changeItem (tmp, ID_LEVEL);
-}
-
 void KGoldrunner::gameFreeze (bool on_off)
 {
     myPause->setChecked (on_off);
@@ -809,7 +745,6 @@ void KGoldrunner::gameFreeze (bool on_off)
                                                           pauseKeys.at(1));
         }
     }
-    statusBar()->changeItem (msg, ID_MSG);
     scene->setPauseResumeText (msg);
 }
 
@@ -819,7 +754,6 @@ void KGoldrunner::adjustHintAction (bool hintAvailable)
 
     QString msg;
     msg = hintAvailable ? i18n("Has hint") : i18n("No hint");
-    statusBar()->changeItem (msg, ID_HINTAVL);
     scene->setHasHintText (msg);
 }
 
@@ -915,7 +849,7 @@ void KGoldrunner::optionsConfigureKeys()
 	this,						// Parent widget.
 	true);						// saveSettings value.
 
-    gameFreeze (frozen);		// Refresh the status bar text.
+    gameFreeze (frozen);		// Update the pause/resume text.
 }
 
 bool KGoldrunner::getDirectories()

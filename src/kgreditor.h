@@ -175,13 +175,6 @@ signals:
      */
     void getMousePos    (int & i, int & j);
 
-    /**
-     * Pass the number of the level being edited to the GUI.
-     *
-     * @param level        The level-number.
-     */
-    void showLevel      (int level);
-
 private:
     KGrView   * view;		// The canvas on which the editor paints.
     KGrScene  * scene;
