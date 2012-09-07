@@ -98,15 +98,15 @@ private slots:
     void gameFreeze (bool);		// Status feedback on Pause state.
 
     void adjustHintAction (bool);	// Enable/disable "Hint" action.
-    // void setEditMenu (bool on_off);	// Enable/disable "Save Edits" action.
-    // void setEditIcon (const QString & actionName, const char iconType);
+    void setEditMenu (bool on_off);	// Enable/disable "Save Edits" action.
+    void setEditIcon (const QString & actionName, const char iconType);
     void viewFullScreen (bool activation);
 
     QSize sizeHint() const;
 
 private:
     void setupActions();
-    // void setupEditToolbarActions();
+    void setupEditToolbarActions();
 
     QSignalMapper * tempMapper;		// Temporary pointer.
 

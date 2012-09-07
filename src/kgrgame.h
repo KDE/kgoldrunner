@@ -37,7 +37,7 @@ class KDialog;
 
 class KGrSounds;
 
-// class KGrEditor;
+class KGrEditor;
 class KGrLevelPlayer;
 class KRandomSequence;
 class QTimer;
@@ -54,7 +54,7 @@ public:
 
     void setInitialTheme (const QString & themeFilepath);
 
-    // bool inEditMode();			// True if the game is in editor mode.
+    bool inEditMode();			// True if the game is in editor mode.
 
     bool saveOK();			// Check if edits were saved.
 
@@ -66,8 +66,8 @@ public slots:
     void initGame();			// Do the game object's first painting.
 
     void gameActions        (const int action);
-    // void editActions        (const int action);
-    // void editToolbarActions (const int action);
+    void editActions        (const int action);
+    void editToolbarActions (const int action);
     void settings           (const int action);
 
     void kbControl          (const int dirn, const bool pressed = true);
@@ -145,7 +145,7 @@ signals:
 
     void hintAvailable (bool);		// For main window to adjust menu text.
 
-    // void setEditMenu (bool);		// Enable/Disable edit menu items.
+    void setEditMenu (bool);		// Enable/Disable edit menu items.
 
     void gameFreeze (bool);		// Do visual feedback in the GUI.
 
@@ -234,7 +234,7 @@ public slots:
     void dbgControl (const int code);	// Authors' debugging aids.
 
 private:
-    // KGrEditor * editor;		// The level-editor object.
+    KGrEditor * editor;		// The level-editor object.
 
     int controlMode;		// How to control the hero (e.g. K/B or mouse).
     int holdKeyOption;		// Whether K/B control is by holding or clicking keys.

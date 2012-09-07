@@ -54,10 +54,10 @@ KGrEditor::KGrEditor (KGrView * theView,
     timer->start (TickTime);		// TickTime def in kgrglobals.h.
 
     // Connect edit-mode slots to signals from "view".
-    connect (view, SIGNAL (mouseClick(int)), SLOT (doEdit(int)));
-    connect (view, SIGNAL (mouseLetGo(int)), SLOT (endEdit(int)));
-    connect (this, SIGNAL (getMousePos(int&,int&)),
-             view, SLOT   (getMousePos(int&,int&)));
+    connect (view,  SIGNAL (mouseClick(int)), SLOT (doEdit(int)));
+    connect (view,  SIGNAL (mouseLetGo(int)), SLOT (endEdit(int)));
+    connect (this,  SIGNAL (getMousePos(int&,int&)),
+             scene, SLOT   (getMousePos(int&,int&)));
 }
 
 KGrEditor::~KGrEditor()

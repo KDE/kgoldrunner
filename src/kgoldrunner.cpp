@@ -143,7 +143,7 @@ KGoldrunner::KGoldrunner()
 
     // Connect the game actions to the menu and toolbar displays.
     connect (game, SIGNAL (quitGame()),	         SLOT (close()));
-    // connect (game, SIGNAL (setEditMenu(bool)),	 SLOT (setEditMenu(bool)));
+    connect (game, SIGNAL (setEditMenu(bool)),	 SLOT (setEditMenu(bool)));
     connect (game, SIGNAL (showLives(long)), scene, SLOT (showLives(long)));
     connect (game, SIGNAL (showScore(long)), scene, SLOT (showScore(long)));
     connect (game, SIGNAL (hintAvailable(bool)), SLOT (adjustHintAction(bool)));
@@ -302,7 +302,7 @@ void KGoldrunner::setupActions()
     /**************************************************************************/
 
     QSignalMapper * editMapper = new QSignalMapper (this);
-    // connect (editMapper, SIGNAL (mapped(int)), game, SLOT (editActions(int)));
+    connect (editMapper, SIGNAL (mapped(int)), game, SLOT (editActions(int)));
     tempMapper = editMapper;
 
     // Create a Level
@@ -549,7 +549,7 @@ void KGoldrunner::setupActions()
     // Key_O, "dig_right"
     // Key_U, "dig_left"
 
-    // setupEditToolbarActions();		// Uses pixmaps from "view".
+    setupEditToolbarActions();		// Uses pixmaps from "view".
 
     // Authors' debugging aids, effective when Pause is hit.  Options include
     // stepping through the animation, toggling a debug patch or log messages
@@ -767,7 +767,7 @@ void KGoldrunner::setAvail (const char * actionName, const bool onOff)
     ((KAction *) ACTION (actionName))->setEnabled (onOff);
 }
 
-/*  void KGoldrunner::setEditMenu (bool on_off)
+void KGoldrunner::setEditMenu (bool on_off)
 {
     saveEdits->setEnabled  (on_off);
 
@@ -801,13 +801,13 @@ void KGoldrunner::setAvail (const char * actionName, const bool onOff)
     else {
         toolBar ("editToolbar")->hide();
     }
-} */
+}
 
-/*  void KGoldrunner::setEditIcon (const QString & actionName, const char iconType)
+void KGoldrunner::setEditIcon (const QString & actionName, const char iconType)
 {
     ((KToggleAction *) (actionCollection()->action (actionName)))->
                 setIcon (KIcon (renderer->getPixmap (iconType)));
-} */
+}
 
 /******************************************************************************/
 /*******************   SLOTS FOR MENU AND KEYBOARD ACTIONS  *******************/
@@ -817,9 +817,9 @@ void KGoldrunner::changeTheme ()
 {
     renderer->selectTheme ();
 
-    /*  if (game->inEditMode()) {
+    if (game->inEditMode()) {
         setEditMenu (true);
-    } */
+    }
 }
 
 void KGoldrunner::saveProperties (KConfigGroup & /* config - unused */)
@@ -937,7 +937,7 @@ bool KGoldrunner::queryClose()
 /**********************  MAKE A TOOLBAR FOR THE EDITOR   **********************/
 /******************************************************************************/
 
-/* void KGoldrunner::setupEditToolbarActions()
+void KGoldrunner::setupEditToolbarActions()
 {
     QSignalMapper * editToolbarMapper = new QSignalMapper (this);
     connect (editToolbarMapper, SIGNAL (mapped(int)),
@@ -1021,7 +1021,7 @@ bool KGoldrunner::queryClose()
     editButtons->addAction (nugget);
 
     brick->setChecked (true);
-} */
+}
 
 QSize KGoldrunner::sizeHint() const
 {
