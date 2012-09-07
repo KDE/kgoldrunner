@@ -194,7 +194,7 @@ void KGrEditor::loadEditLevel (int lev)
     levelHint = (d.hint.size() > 0) ?
                 QString::fromUtf8 ((const char *) d.hint) : "";
 
-    // scene->setTitle (getTitle());		// Show the level name.
+    scene->setTitle (getTitle());		// Show the level name.
 }
 
 void KGrEditor::editNameAndHint()
@@ -318,7 +318,7 @@ bool KGrEditor::saveLevelFile()
     }
 
     editLevel = selectedLevel;
-    // scene->setTitle (getTitle());		// Display new title.
+    scene->setTitle (getTitle());		// Display new title.
     return true;
 }
 
@@ -416,7 +416,7 @@ bool KGrEditor::moveLevelFile (int pGameIndex, int level)
     KGrGameIO::safeRename (view, filePath2, filePath1);
 
     editLevel = toL;
-    // scene->setTitle (getTitle());	// Re-write title.
+    scene->setTitle (getTitle());	// Re-write title.
     return true;
 }
 
@@ -680,7 +680,7 @@ void KGrEditor::initEdit()
     oldJ = 0;
     heroCount = 0;
 
-    // scene->setTitle (getTitle());	// Show title of level.
+    scene->setTitle (getTitle());	// Show title of level.
 
     shouldSave = false;		// Used to flag editing of name or hint.
 }
