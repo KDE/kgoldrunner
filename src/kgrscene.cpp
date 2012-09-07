@@ -18,9 +18,6 @@
 #include <QDebug>
 #include <kdebug.h>
 
-#include <KGlobal>
-#include <KConfig>
-#include <KConfigGroup>
 #include <KLocalizedString>
 
 #include <QFont>

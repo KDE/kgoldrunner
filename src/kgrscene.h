@@ -48,11 +48,6 @@
 #define KGRSCENE_H
 
 #include <QGraphicsScene>
-#include <QGraphicsTextItem>
-#include <QTimeLine>
-
-#include <KgTheme>
-#include <KGameRenderedItem>
 
 #include "kgrglobals.h"
 
@@ -60,6 +55,7 @@ class KGrView;
 class KGrSprite;
 class KGrRenderer;
 class KGameRenderer;
+class KGameRenderedItem;
 class QTimeLine;
 
 enum StartFrame     {RIGHTWALK1 = 1,  RIGHTWALK2,  RIGHTWALK3,  RIGHTWALK4,
