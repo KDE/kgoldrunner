@@ -24,6 +24,7 @@
 #include <KLocalizedString>
 
 #include <QFont>
+#include <QTimeLine>
 
 #include "kgrview.h"
 #include "kgrscene.h"
@@ -50,8 +51,6 @@ KGrScene::KGrScene      (KGrView * view)
     m_scoreText         (0),
     m_hasHintText       (0),
     m_pauseResumeText   (0),
-    m_scoreDisplay      (0),
-    m_livesDisplay      (0),
     m_heroId            (0),
     m_tilesWide         (FIELDWIDTH  + 2 * 2),
     m_tilesHigh         (FIELDHEIGHT + 2 * 2),
@@ -59,7 +58,8 @@ KGrScene::KGrScene      (KGrView * view)
     m_themeChanged      (true),
     m_topLeftX          (0),
     m_topLeftY          (0),
-    m_mouse             (new QCursor())
+    m_mouse             (new QCursor()),
+    m_fadingTimeLine    (new QTimeLine (1000, this))
 {
     setItemIndexMethod(NoIndex);
 
@@ -70,6 +70,9 @@ KGrScene::KGrScene      (KGrView * view)
 
     m_frame = addRect (0, 0, 100, 100);		// Create placeholder for frame.
     m_frame->setVisible (false);
+
+    m_spotlight = addRect (0, 0, 100, 100);	// Create placeholder for spot.
+    m_spotlight->setVisible (false);
 
     m_title = new QGraphicsSimpleTextItem();
     addItem (m_title);
@@ -85,11 +88,19 @@ KGrScene::KGrScene      (KGrView * view)
 
     m_pauseResumeText = new QGraphicsSimpleTextItem();
     addItem (m_pauseResumeText);
+
+    m_fadingTimeLine->setCurveShape (QTimeLine::EaseOutCurve);
+    m_fadingTimeLine->setUpdateInterval (50);
+    connect (m_fadingTimeLine, SIGNAL (valueChanged(qreal)),
+                this, SLOT (drawSpotlight(qreal)));
+    connect (m_fadingTimeLine, SIGNAL (finished()),
+                this, SIGNAL (fadeFinished()));
 }
 
 KGrScene::~KGrScene()
 {
     delete m_mouse;
+    delete m_fadingTimeLine;
 }
 
 void KGrScene::redrawScene ()
@@ -102,6 +113,24 @@ void KGrScene::redrawScene ()
         m_topLeftX   = (size.width()  - m_tilesWide * tileSize)/2.0;
         m_topLeftY   = (size.height() - m_tilesHigh * tileSize)/2.0;
         setSceneRect   (0, 0, size.width(), size.height());
+
+        // Make the fade-out/fade-in rectangle cover the playing area.
+        m_spotlight->setRect (m_topLeftX + 2 * tileSize - 1,
+                              m_topLeftY + 2 * tileSize - 1,
+                              (m_tilesWide - 4) * tileSize + 2,
+                              (m_tilesHigh - 4) * tileSize + 2);
+        m_maxRadius = (5 * m_spotlight->rect().width() + 4) / 8;
+        m_spotlight->setPen (Qt::NoPen);
+        m_spotlight->setZValue (10);
+        m_spotlight->setVisible (false);
+
+        // Set up the gradient to draw the spotlight (black with a hole in it).
+        QPointF center        (width() * 0.5, height() * 0.5);
+        m_gradient.setCenter  (center);
+        m_gradient.setFocalPoint (center);
+        m_gradient.setRadius  (m_maxRadius);
+        m_gradient.setColorAt (1.00, QColor (0, 0, 0, 255));
+        m_gradient.setColorAt (0.85, QColor (0, 0, 0, 0));
 
         int index = 0;
         foreach (KGameRenderedItem * tile, m_tiles) {
@@ -243,6 +272,37 @@ void KGrScene::setPauseResumeText (const QString & msg)
 {
     if (m_pauseResumeText)
         m_pauseResumeText->setText (msg);
+}
+
+void KGrScene::goToBlack()
+{
+        drawSpotlight (0);
+}
+
+void KGrScene::fadeIn (bool inOut)
+{
+    // For fade-in,  inOut = true,  circle opens,  from 0.0 to 1.0.
+    // For fade-out, inOut = false, circle closes, from 1.0 to 0.0.
+    m_fadingTimeLine->setDirection (inOut ? QTimeLine::Forward
+                                         : QTimeLine::Backward);
+    m_fadingTimeLine->start();
+}
+
+void KGrScene::drawSpotlight (qreal ratio)
+{
+    if (ratio > 0.99) {
+	m_spotlight->setVisible (false);	// End of the close-open cycle.
+	return;
+    }
+    else if (ratio <= 0.01) {
+	m_spotlight->setBrush (Qt::black);
+    }
+    else {
+        m_gradient.setRadius (ratio * m_maxRadius);
+        m_spotlight->setBrush (QBrush (m_gradient));
+    }
+
+    m_spotlight->setVisible (true);
 }
 
 void KGrScene::setLevel (unsigned int level)

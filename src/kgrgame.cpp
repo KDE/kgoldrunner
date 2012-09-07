@@ -485,9 +485,6 @@ void KGrGame::initGame()
     dbk1 << "Owner" << gameList.at (gameIndex)->owner
              << gameList.at (gameIndex)->name << level;
 
-    kDebug() << "Calling the first view->changeTheme() ...";
-    // view->changeTheme (initialThemeFilepath);
-
     setPlayback            ( gameGroup.readEntry ("StartingDemo", true));
     if (playback && (startDemo (SYSTEM, mainDemoName, 1))) {
         startupDemo = true;		// Demo is starting.
@@ -802,7 +799,7 @@ void KGrGame::runReplay (const int action,
 
 void KGrGame::newGame (const int lev, const int newGameIndex)
 {
-    // view->goToBlack();
+    scene->goToBlack();
 
     KGrGameData * gameData = gameList.at (newGameIndex);
     level     = lev;
@@ -846,7 +843,7 @@ bool KGrGame::playLevel (const Owner fileOwner, const QString & prefix,
     }
 
     scene->setLevel (levelNo);		// Switch and render background if reqd.
-    // view->fadeIn();			// Then run the fade-in animation.
+    scene->fadeIn (true);		// Then run the fade-in animation.
     startScore = score;			// The score we will save, if asked.
 
     // Create a level player, initialised and ready for play or replay to start.
@@ -1019,15 +1016,15 @@ void KGrGame::herosDead()
 void KGrGame::finalBreath()
 {
     dbk << "Connecting fadeFinished()";
-    // connect (view, SIGNAL (fadeFinished()), this, SLOT (repeatLevel()));
-    dbk << "Calling view->fadeOut()";
-    // view->fadeOut();
-    repeatLevel(); // IDW test. Omit the fadeout-fadein sequence for now.
+    connect (scene, SIGNAL (fadeFinished()), this, SLOT (repeatLevel()));
+    dbk << "Calling scene->fadeOut()";
+    scene->fadeIn (false);
 }
 
 void KGrGame::repeatLevel()
 {
-    // disconnect (view, SIGNAL (fadeFinished()), this, SLOT (repeatLevel()));
+    disconnect (scene, SIGNAL (fadeFinished()), this, SLOT (repeatLevel()));
+    scene->goToBlack();
 
     // Avoid re-starting if the player selected edit before the time was up.
     // if (! editor) {
@@ -1046,15 +1043,15 @@ void KGrGame::levelCompleted()
     playSound (CompletedSound);
 
     dbk << "Connecting fadeFinished()";
-    // connect (view, SIGNAL (fadeFinished()), this, SLOT (goUpOneLevel()));
-    dbk << "Calling view->fadeOut()";
-    // view->fadeOut();
-    goUpOneLevel(); // IDW test. Omit the fadeout-fadein sequence for now.
+    connect (scene, SIGNAL (fadeFinished()), this, SLOT (goUpOneLevel()));
+    dbk << "Calling scene->fadeOut()";
+    scene->fadeIn (false);
 }
 
 void KGrGame::goUpOneLevel()
 {
-    // disconnect (view, SIGNAL (fadeFinished()), this, SLOT (goUpOneLevel()));
+    disconnect (scene, SIGNAL (fadeFinished()), this, SLOT (goUpOneLevel()));
+    scene->goToBlack();
 
     lives++;			// Level completed: gain another life.
     emit showLives (lives);

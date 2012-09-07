@@ -49,7 +49,7 @@
 
 #include <QGraphicsScene>
 #include <QGraphicsTextItem>
-#include <QGraphicsPixmapItem>
+#include <QTimeLine>
 
 #include <KgTheme>
 #include <KGameRenderedItem>
@@ -60,6 +60,7 @@ class KGrView;
 class KGrSprite;
 class KGrRenderer;
 class KGameRenderer;
+class QTimeLine;
 
 enum StartFrame     {RIGHTWALK1 = 1,  RIGHTWALK2,  RIGHTWALK3,  RIGHTWALK4,
                      RIGHTWALK5,  RIGHTWALK6,  RIGHTWALK7,  RIGHTWALK8,
@@ -109,6 +110,9 @@ public:
     void setHasHintText (const QString & msg);
 
     void setPauseResumeText (const QString & msg);
+
+    void goToBlack();
+    void fadeIn (bool inOut);
 
     /**
      * Get the current size of the squared region occupied by a single visual
@@ -169,6 +173,9 @@ public slots:
     void setMousePos (const int i, const int j);
     void getMousePos (int & i, int & j);
 
+signals:
+    void fadeFinished();
+
 private:
     /*
      * Actions performed whenever the viewport is resized or a different theme
@@ -227,9 +234,6 @@ private:
     QGraphicsSimpleTextItem * m_hasHintText;
     QGraphicsSimpleTextItem * m_pauseResumeText;
 
-    QGraphicsPixmapItem *   m_scoreDisplay;
-    QGraphicsPixmapItem *   m_livesDisplay;
-
     int                     m_heroId;
     int                     m_tilesWide;
     int                     m_tilesHigh;
@@ -257,6 +261,14 @@ private:
 
     void setTextFont (QGraphicsSimpleTextItem * t, double fontFraction);
     void placeTextItems();
+
+    QGraphicsRectItem * m_spotlight;		// Fade-out/fade-in item.
+    QTimeLine *         m_fadingTimeLine;	// Timing for fade-out/fade-in.
+    QRadialGradient     m_gradient;		// Black with circular hole.
+    qreal               m_maxRadius;
+
+private slots:
+    void drawSpotlight (qreal ratio);		// Animate m_spotlight.
 };
 
 #endif // KGRSCENE_H
