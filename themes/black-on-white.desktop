@@ -1,6 +1,10 @@
 [KDEGameTheme]
 Name=Black on White
+Name[uk]=Чорне на білому
+Name[x-test]=xxBlack on Whitexx
 Description=A monochrome, black on white theme for KGoldrunner
+Description[uk]=Монохромна чорно-біла тема для Золотошукача
+Description[x-test]=xxA monochrome, black on white theme for KGoldrunnerxx
 Author=Luciano Montanaro
 Set=accessible/black-on-white-set.svg
 Actors=accessible/black-on-white-actors.svg

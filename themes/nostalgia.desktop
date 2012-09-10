@@ -1,6 +1,10 @@
 [KDEGameTheme]
 Name=Nostalgia
+Name[uk]=Ностальгія
+Name[x-test]=xxNostalgiaxx
 Description=A scalable theme for KGoldrunner that brings back that 8-bit look...
+Description[uk]=Тема з можливістю зміни масштабу для Золотошукача, яка повертає нас до 8-бітового вигляду...
+Description[x-test]=xxA scalable theme for KGoldrunner that brings back that 8-bit look...xx
 Author=Luciano Montanaro
 Set=nostalgia/set.svg
 Actors=nostalgia/actors.svg

@@ -1,12 +1,18 @@
 # KDE Config File
 [Desktop Entry]
 Name=KGoldrunner
+Name[uk]=Золотошукач
+Name[x-test]=xxKGoldrunnerxx
 GenericName=Hunt Gold, Dodge Enemies and Solve Puzzles
+GenericName[uk]=Шукайте золото, уникайте ворогів і розгадуйте загадки
+GenericName[x-test]=xxHunt Gold, Dodge Enemies and Solve Puzzlesxx
 Type=Application
 Exec=kgoldrunner
 Icon=kgoldrunner
 X-DocPath=kgoldrunner/index.html
 Comment=A game of action and puzzle-solving
+Comment[uk]=Вирішення головоломок на ходу
+Comment[x-test]=xxA game of action and puzzle-solvingxx
 Terminal=false
 Categories=Qt;KDE;Game;ArcadeGame;
 X-DBUS-StartupType=Multi

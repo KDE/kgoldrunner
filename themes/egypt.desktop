@@ -1,6 +1,10 @@
 [KDEGameTheme]
 Name=The Treasure of Egypt
+Name[uk]=Скарби Єгипту
+Name[x-test]=xxThe Treasure of Egyptxx
 Description=Help Matt Goldrunner escape the traps of ancient Egypt.
+Description[uk]=Допоможіть Метту Ґолдраннеру уникнути пасток давнього Єгипту.
+Description[x-test]=xxHelp Matt Goldrunner escape the traps of ancient Egypt.xx
 Author=Eugene Trounev
 Set=egypt/egypt_kgr.svgz
 Actors=egypt/actors.svgz

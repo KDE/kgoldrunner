@@ -1,6 +1,10 @@
 [KDEGameTheme]
 Name=Geek City
+Name[uk]=Місто диваків
+Name[x-test]=xxGeek Cityxx
 Description=The hero is trapped inside a computer.
+Description[uk]=Героя замкнено всередині комп’ютера.
+Description[x-test]=xxThe hero is trapped inside a computer.xx
 Author=Eugene Trounev and Mauricio Piacentini
 Set=kgr_geek/set.svgz
 Actors=kgr_geek/actors.svgz
