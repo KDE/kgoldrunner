@@ -91,20 +91,17 @@ KGoldrunner::KGoldrunner()
 /******************************************************************************/
 
     // Base the size of playing-area and widgets on the monitor resolution.
-    // int dw = QApplication::desktop()->width();
+    int dw = QApplication::desktop()->width();
 
     // Need to consider the height, for widescreen displays (eg. 1280x768).
-    // int dh = QApplication::desktop()->height();
+    int dh = QApplication::desktop()->height();
 
-    /*  double scale = 1.0;
-    if ((dw > 800) && (dh > 600)) {			// More than 800x600.
-        scale = 1.25;			// Scale 1.25:1.
-    }
-    if ((dw > 1024) && (dh > 768))  {			// More than 1024x768.
-        scale = 1.75;			// Scale 1.75:1.
-    } */
+    dw = qMin ((4 * dh + 1) / 3, dw);	// KGoldrunner aspect ratio is 4:3.
+    dh = (3 * dw + 2) / 4;
 
     view = new KGrView (this);
+    view->setMinimumSize ((dw + 1) / 2, (dh + 1) / 2);
+
     game = new KGrGame (view, systemDataDir, userDataDir);
 
     // Initialise the lists of games (i.e. collections of levels).
@@ -1023,7 +1020,6 @@ void KGoldrunner::setupEditToolbarActions()
 
 QSize KGoldrunner::sizeHint() const
 {
-    kDebug() << "KGoldrunner::sizeHint() called ... 640x600";
     return QSize (640, 600);
 }
 
