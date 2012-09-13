@@ -363,9 +363,10 @@ void KGoldrunner::setupActions()
                                      "of a game..."));
 
     /**************************************************************************/
-    /*****************************   THEMES MENU  *****************************/
+    /****************************   SETTINGS MENU  ****************************/
     /**************************************************************************/
 
+    // Theme settings are handled by this class and KGrRenderer.
     QAction * themes = actionCollection()->addAction ("select_theme");
     themes->setText      (i18n ("Change &Theme..."));
     themes->setToolTip   (i18n ("Change the graphics theme..."));
@@ -373,19 +374,16 @@ void KGoldrunner::setupActions()
                                 "and background scene..."));
     connect (themes, SIGNAL (triggered (bool)), this, SLOT (changeTheme ()));
 
-    /**************************************************************************/
-    /****************************   SETTINGS MENU  ****************************/
-    /**************************************************************************/
-
-    KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
-    QSignalMapper * settingMapper = new QSignalMapper (this);
-    connect (settingMapper, SIGNAL (mapped(int)), game, SLOT (settings(int)));
-    tempMapper = settingMapper;
-
     // Show/Exit Full Screen Mode
     KToggleFullScreenAction * fullScreen = KStandardAction::fullScreen
                         (this, SLOT (viewFullScreen(bool)), this, this);
     actionCollection()->addAction (fullScreen->objectName(), fullScreen);
+
+    // Other settings are handled by KGrGame.
+    KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
+    QSignalMapper * settingMapper = new QSignalMapper (this);
+    connect (settingMapper, SIGNAL (mapped(int)), game, SLOT (settings(int)));
+    tempMapper = settingMapper;
 
 #ifdef KGAUDIO_BACKEND_OPENAL
     // Sound effects on/off
@@ -549,7 +547,7 @@ void KGoldrunner::setupActions()
     // Key_O, "dig_right"
     // Key_U, "dig_left"
 
-    setupEditToolbarActions();		// Uses pixmaps from "view".
+    setupEditToolbarActions();		// Uses pixmaps from "renderer".
 
     // Authors' debugging aids, effective when Pause is hit.  Options include
     // stepping through the animation, toggling a debug patch or log messages

@@ -135,10 +135,11 @@ private:
 
     bool startupOK;
 
-    KGrGame     *   game;
-    KGrView     *   view;
-    KGrScene    *   scene;
-    KGrRenderer *   renderer;
+    KGrGame     *   game;		// Overall control of the gameplay.
+
+    KGrView     *   view;		// Central widget.
+    KGrScene    *   scene;		// Sets text for game-status messages.
+    KGrRenderer *   renderer;		// Changes themes and gets icon pixmaps.
 
     bool frozen;
     bool getDirectories();		// Get directory paths, as below.
