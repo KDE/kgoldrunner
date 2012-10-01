@@ -318,6 +318,7 @@ bool KGrEditor::saveLevelFile()
     }
 
     editLevel = selectedLevel;
+    scene->setLevel (editLevel);		// Choose a background picture.
     scene->setTitle (getTitle());		// Display new title.
     return true;
 }
@@ -416,7 +417,8 @@ bool KGrEditor::moveLevelFile (int pGameIndex, int level)
     KGrGameIO::safeRename (view, filePath2, filePath1);
 
     editLevel = toL;
-    scene->setTitle (getTitle());	// Re-write title.
+    scene->setLevel (editLevel);		// Choose a background picture.
+    scene->setTitle (getTitle());		// Re-write title.
     return true;
 }
 
@@ -680,6 +682,7 @@ void KGrEditor::initEdit()
     oldJ = 0;
     heroCount = 0;
 
+    scene->setLevel (editLevel);	// Choose a background picture.
     scene->setTitle (getTitle());	// Show title of level.
 
     shouldSave = false;		// Used to flag editing of name or hint.
