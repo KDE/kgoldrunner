@@ -52,6 +52,7 @@ KGrScene::KGrScene      (KGrView * view)
     m_tilesWide         (FIELDWIDTH  + 2 * 2),
     m_tilesHigh         (FIELDHEIGHT + 2 * 2),
     m_tileSize          (10),
+    m_toolbarTileSize   (10),
     m_themeChanged      (true),
     m_topLeftX          (0),
     m_topLeftY          (0),
@@ -102,6 +103,7 @@ KGrScene::~KGrScene()
 
 void KGrScene::redrawScene ()
 {
+    bool redrawToolbar = false;
     if (m_sizeChanged) {
         // Calculate what size of tile will fit in the view.
         QSize size      = m_view->size();
@@ -137,12 +139,21 @@ void KGrScene::redrawScene ()
             index++;
         }
         foreach (KGrSprite * sprite, m_sprites) {
-	    if (sprite) {
+            if (sprite) {
                 sprite->changeCoordinateSystem
                         (m_topLeftX, m_topLeftY, tileSize);
             }
         }
 
+        if (m_tileSize != tileSize) {
+            // Do not expand the toolbar (in edit mode) until there is room for
+            // it.  This avoids a nasty expand-contract-expand-contract loop.
+            m_toolbarTileSize = ((tileSize > m_tileSize) && (m_topLeftY == 0)) ?
+                                  m_tileSize : tileSize;
+        }
+        // When conditions are right, redraw editing icons, if in edit mode.
+        redrawToolbar = ((m_toolbarTileSize != m_tileSize) &&
+                         (m_topLeftY > 0)) ? true : false;
         m_tileSize = tileSize;
         m_sizeChanged = false;
     }
@@ -183,7 +194,14 @@ void KGrScene::redrawScene ()
             }
         }
 
+        // Redraw editing icons if theme changes when in edit mode.
+        redrawToolbar = true;
         m_themeChanged = false;
+    }
+
+    if (redrawToolbar) {
+        m_toolbarTileSize = m_tileSize;	// If game is in edit mode, KGoldrunner
+        emit redrawEditToolbar();	// object redraws the editToolbar.
     }
 }
 
@@ -304,6 +322,9 @@ void KGrScene::drawSpotlight (qreal ratio)
 
 void KGrScene::setLevel (unsigned int level)
 {
+    if (level == m_level) {
+        return;
+    }
     m_level = level;
     loadBackground (level);	// Load background for level.
 }

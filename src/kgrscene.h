@@ -171,6 +171,7 @@ public slots:
 
 signals:
     void fadeFinished();
+    void redrawEditToolbar();
 
 private:
     /*
@@ -234,6 +235,7 @@ private:
     int                     m_tilesWide;
     int                     m_tilesHigh;
     int                     m_tileSize;
+    int                     m_toolbarTileSize;
 
     bool                    m_sizeChanged;
     bool                    m_themeChanged;

@@ -151,6 +151,8 @@ KGoldrunner::KGoldrunner()
     connect (game, SIGNAL (setToggle(const char*,bool)),
                    SLOT   (setToggle(const char*,bool)));
 
+    connect (scene, SIGNAL (redrawEditToolbar()), SLOT (redrawEditToolbar()));
+
     // Apply the saved mainwindow settings, if any, and ask the mainwindow
     // to automatically save settings if changed: window size, toolbar
     // position, icon size, etc.
@@ -377,7 +379,6 @@ void KGoldrunner::setupActions()
     actionCollection()->addAction (fullScreen->objectName(), fullScreen);
 
     // Other settings are handled by KGrGame.
-    KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
     QSignalMapper * settingMapper = new QSignalMapper (this);
     connect (settingMapper, SIGNAL (mapped(int)), game, SLOT (settings(int)));
     tempMapper = settingMapper;
@@ -811,7 +812,11 @@ void KGoldrunner::setEditIcon (const QString & actionName, const char iconType)
 void KGoldrunner::changeTheme ()
 {
     renderer->selectTheme ();
+}
 
+void KGoldrunner::redrawEditToolbar ()
+{
+    // Signalled by the scene after the theme or tile size has changed.
     if (game->inEditMode()) {
         setEditMenu (true);
     }
