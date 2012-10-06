@@ -134,7 +134,9 @@ KGoldrunner::KGoldrunner()
     setupGUI (static_cast<StandardWindowOption> (Default &
                         (~StatusBar) & (~ToolBar) & (~Keys)));
 
-    // Initialize text items in the scene, before the first resize.
+    // Initialize text-item lengths in the scene, before the first resize.
+    scene->showLives (0);
+    scene->showScore (0);
     adjustHintAction (false);
     gameFreeze (false);
 
