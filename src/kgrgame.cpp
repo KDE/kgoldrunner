@@ -496,7 +496,12 @@ void KGrGame::initGame()
         quickStartDialog();
     }
     emit setToggle ("options_demo", startupDemo);
-}
+
+    // Allow a short break, to display the graphics, then use the demo delay-time
+    // or the reaction-time to the quick-start dialog to do some more rendering.
+    QTimer::singleShot (10, scene, SLOT(preRenderSprites()));
+
+} // End KGrGame::initGame()
 
 bool KGrGame::startDemo (const Owner demoOwner, const QString & pPrefix,
                                                 const int levelNo)

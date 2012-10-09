@@ -103,6 +103,7 @@ KGrScene::~KGrScene()
 
 void KGrScene::redrawScene ()
 {
+    qDebug() << "REDRAW: m_sizeChanged" << m_sizeChanged << "m_themeChanged" << m_themeChanged;
     bool redrawToolbar = false;
     if (m_sizeChanged) {
         // Calculate what size of tile will fit in the view.
@@ -112,6 +113,7 @@ void KGrScene::redrawScene ()
         m_topLeftX   = (size.width()  - m_tilesWide * tileSize)/2.0;
         m_topLeftY   = (size.height() - m_tilesHigh * tileSize)/2.0;
         setSceneRect   (0, 0, size.width(), size.height());
+	qDebug() << "SIZE" << size << "TL" << m_topLeftX << m_topLeftY << "TILE" << tileSize << "was" << m_tileSize << m_toolbarTileSize;
 
         // Make the fade-out/fade-in rectangle cover the playing area.
         m_spotlight->setRect (m_topLeftX + 2 * tileSize - 1,
@@ -174,7 +176,7 @@ void KGrScene::redrawScene ()
     }
     else {
         // There are no border tiles, so draw a frame around the board.
-        setFrame();
+        drawFrame();
     }
 
     if (m_themeChanged) {
@@ -388,7 +390,7 @@ void KGrScene::drawBorder()
         setBorderTile ("frame-right", FIELDWIDTH + 1, i);
 }
 
-void KGrScene::setFrame()
+void KGrScene::drawFrame()
 {
     int w = 0.05 * m_tileSize + 0.5;
     w = w < 1 ? 1 : w;
@@ -567,6 +569,24 @@ void KGrScene::deleteAllSprites()
 {
     qDeleteAll(m_sprites);
     m_sprites.clear();
+}
+
+void KGrScene::preRenderSprites()
+{
+    char type[2] = {HERO, ENEMY};
+    for (int t = 0; t < 2; t++) {
+        KGrSprite * sprite = m_renderer->getSpriteItem (type[t], TickTime);
+        sprite->setFrame (1);
+        sprite->setRenderSize (QSize (m_tileSize, m_tileSize));
+        int count = sprite->frameCount();
+
+        // Pre-render all frames of the hero and an enemy, to avoid hiccups in
+        // animation during the first few seconds of KGoldrunner execution.
+        for (int n = 1; n <= count; n++) {
+            sprite->setFrame (n);
+        }
+        delete sprite;
+    }
 }
 
 void KGrScene::setMousePos (const int i, const int j)

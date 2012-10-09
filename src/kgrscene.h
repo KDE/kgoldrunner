@@ -166,6 +166,13 @@ public slots:
                             const int i, const int j, const int time,
                             const Direction dirn, const AnimationType type);
 
+    /**
+     * Just as the game starts, ensure that all frames of the "hero" and "enemy"
+     * sprites have been rendered. This is to avoid hiccups in animation in the
+     * first few seconds of play or demo.
+     */
+    void preRenderSprites();
+
     void setMousePos (const int i, const int j);
     void getMousePos (int & i, int & j);
 
@@ -189,7 +196,7 @@ private:
     /*
      * Draw a frame around the playing area when there are no border tiles.
      */
-    void setFrame       ();
+    void drawFrame       ();
 
     /*
      * Load and set the size and position of the background image for the
