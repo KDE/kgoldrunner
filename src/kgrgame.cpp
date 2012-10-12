@@ -116,6 +116,8 @@ KGrGame::KGrGame (KGrView * theView,
     // Initialise random number generator.
     randomGen = new KRandomSequence (time (0));
     kDebug() << "RANDOM NUMBER GENERATOR INITIALISED";
+
+    scene->setReplayMessage (i18n("Click anywhere to begin live play"));
 }
 
 KGrGame::~KGrGame()
@@ -485,7 +487,7 @@ void KGrGame::initGame()
     dbk1 << "Owner" << gameList.at (gameIndex)->owner
              << gameList.at (gameIndex)->name << level;
 
-    setPlayback            ( gameGroup.readEntry ("StartingDemo", true));
+    setPlayback (gameGroup.readEntry ("StartingDemo", true));
     if (playback && (startDemo (SYSTEM, mainDemoName, 1))) {
         startupDemo = true;		// Demo is starting.
         demoType    = DEMO;
@@ -1295,7 +1297,7 @@ void KGrGame::setPlayback (const bool onOff)
         emit setAvail  ("increase_speed",  enableDisable);
         emit setAvail  ("decrease_speed",  enableDisable);
     }
-    // scene->showReplayMessage (onOff);
+    scene->showReplayMessage (onOff);
     playback = onOff;
 }
 

@@ -103,6 +103,10 @@ public:
      */
     void setTitle (const QString & newTitle);
 
+    void setReplayMessage (const QString & msg);
+
+    void showReplayMessage (bool onOff);
+
     void setHasHintText (const QString & msg);
 
     void setPauseResumeText (const QString & msg);
@@ -233,6 +237,7 @@ private:
 
     // Text items. 
     QGraphicsSimpleTextItem * m_title;
+    QGraphicsSimpleTextItem * m_replayMessage;
     QGraphicsSimpleTextItem * m_livesText;
     QGraphicsSimpleTextItem * m_scoreText;
     QGraphicsSimpleTextItem * m_hasHintText;

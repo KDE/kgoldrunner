@@ -44,6 +44,7 @@ KGrScene::KGrScene      (KGrView * view)
     m_background        (0),
     m_level             (1),
     m_title             (0),
+    m_replayMessage     (0),
     m_livesText         (0),
     m_scoreText         (0),
     m_hasHintText       (0),
@@ -74,6 +75,9 @@ KGrScene::KGrScene      (KGrView * view)
 
     m_title = new QGraphicsSimpleTextItem();
     addItem (m_title);
+
+    m_replayMessage = new QGraphicsSimpleTextItem();
+    addItem (m_replayMessage);
 
     m_livesText = new QGraphicsSimpleTextItem();
     addItem (m_livesText);
@@ -229,15 +233,31 @@ void KGrScene::setTitle (const QString & newTitle)
                       m_topLeftY + (m_tileSize - r.height())/2);
 }
 
+void KGrScene::setReplayMessage (const QString & msg)
+{
+    m_replayMessage->setText (msg);
+}
+
+void KGrScene::showReplayMessage (bool onOff)
+{
+    m_replayMessage->setVisible (onOff);
+}
+
 void KGrScene::placeTextItems()
 {
+    setTextFont (m_replayMessage, 0.5);
     setTextFont (m_livesText, 0.5);
     setTextFont (m_scoreText, 0.5);
     setTextFont (m_hasHintText, 0.5);
     setTextFont (m_pauseResumeText, 0.5);
 
+    QRectF r = m_replayMessage->boundingRect();
+    m_replayMessage->setPos ((sceneRect().width() - r.width())/2,
+                              m_topLeftY + 1.4 * m_tileSize - 0.5 * r.height());
+    m_replayMessage->setZValue (10);
+
     qreal totalWidth = 0.0;
-    QRectF r = m_livesText->boundingRect();
+    r = m_livesText->boundingRect();
     qreal x = m_topLeftX + 2 * m_tileSize;
     qreal y = sceneRect().height() - m_topLeftY - (m_tileSize + r.height())/2;
 
