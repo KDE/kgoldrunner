@@ -78,6 +78,7 @@ KGrScene::KGrScene      (KGrView * view)
 
     m_replayMessage = new QGraphicsSimpleTextItem();
     addItem (m_replayMessage);
+    m_replayMessage->setVisible (false);	// Visible only in demo/replay.
 
     m_livesText = new QGraphicsSimpleTextItem();
     addItem (m_livesText);
