@@ -1,4 +1,4 @@
-[KDEGameTheme]
+[KGameTheme]
 Name=Nostalgia
 Name[ast]=Señaldá
 Name[bs]=Nostalgija
@@ -101,6 +101,7 @@ Description[zh_TW]=KGoldrunner 可調整的主題，就像是八位元時代的�
 Author=Luciano Montanaro
 Set=nostalgia/set.svg
 Actors=nostalgia/actors.svg
-DrawCanvasBorder=0
+DrawCanvasBorder=1
 BorderColor=#000000
 TextColor=#FFFFFF
+Preview=nostalgia/nostalgia.png

@@ -1,4 +1,4 @@
-[KDEGameTheme]
+[KGameTheme]
 Name=KGoldRunner Default
 Name[ast]=KGoldRunner predetermináu
 Name[bs]=KGoldRunner podrazumijevano
@@ -104,6 +104,7 @@ Description[zh_TW]=簡單又乾淨的 KDE 主題
 Author=Mauricio Piacentini
 Set=default/set.svg
 Actors=default/actors.svg
-DrawCanvasBorder=0
+DrawCanvasBorder=1
 BorderColor=#2C89A0
 TextColor=#FFFFFF
+Preview=default/default.png

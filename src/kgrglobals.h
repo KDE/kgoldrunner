@@ -40,6 +40,8 @@ const char BAR       = 'T';
 const char HOLE      = 'O';
 const char USEDHOLE  = 'U';
 
+const char BACKDROP  = '0';
+
 const char EDIT_HINT = '1';
 const char EDIT_TEST = '2';
 

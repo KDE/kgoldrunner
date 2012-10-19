@@ -31,7 +31,8 @@
  *
  * @short   KGoldrunner Game Controller.
  */
-class KGrCanvas;
+class KGrView;
+class KGrScene;
 class KDialog;
 
 class KGrSounds;
@@ -45,7 +46,7 @@ class KGrGame : public QObject
 {
 Q_OBJECT
 public:
-    KGrGame (KGrCanvas * theView,
+    KGrGame (KGrView * theView,
              const QString & theSystemDir, const QString & theUserDir);
     ~KGrGame();
 
@@ -141,7 +142,6 @@ signals:
     // These signals go to the GUI in most cases.
     void showScore (long);		// For main window to show the score.
     void showLives (long);		// For main window to show lives left.
-    void showLevel (int);		// For main window to show the level.
 
     void hintAvailable (bool);		// For main window to adjust menu text.
 
@@ -185,7 +185,9 @@ private:
     KGrRecording *              recording;	// A recording of the play.
     bool                        playback;	// Play back or record?
 
-    KGrCanvas *			view;		// Where the game is displayed.
+    KGrView     *		view;		// Where the game is displayed.
+    KGrScene    *               scene;          // Where the graphics are.
+
     QString			systemDataDir;	// System games are stored here.
     QString			userDataDir;	// User games are stored here.
     int                         timeScale;	// The speed of the game (2-20).

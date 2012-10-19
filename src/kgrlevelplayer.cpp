@@ -22,9 +22,10 @@
 
 // Include kgrgame.h only to access flags KGrGame::bugFix and KGrGame::logging.
 #include "kgrgame.h"
+#include "kgrscene.h"
 
 #include "kgrtimer.h"
-#include "kgrcanvas.h"
+#include "kgrview.h"
 #include "kgrlevelplayer.h"
 #include "kgrrulebook.h"
 #include "kgrlevelgrid.h"
@@ -96,7 +97,7 @@ if (recording) {
 
 }
 
-void KGrLevelPlayer::init (KGrCanvas * view,
+void KGrLevelPlayer::init (KGrView * view,
                            KGrRecording * pRecording,
                            const bool pPlayback,
                            const bool gameFrozen)
@@ -145,22 +146,24 @@ void KGrLevelPlayer::init (KGrCanvas * view,
     randIndex = 0;
     T         = 0;
 
-    view->setGoldEnemiesRule (rules->enemiesShowGold());
+    view->gameScene()->setGoldEnemiesRule (rules->enemiesShowGold());
 
     // Determine the access for hero and enemies to and from each grid-cell.
     grid->calculateAccess    (rules->runThruHole());
 
     // Connect to code that paints grid cells and start-positions of sprites.
-    connect (this, SIGNAL (paintCell(int,int,char,int)),
-             view, SLOT   (paintCell(int,int,char,int)));
-    connect (this, SIGNAL (makeSprite(char,int,int)),
-             view, SLOT   (makeSprite(char,int,int)));
+    connect (this,              SIGNAL  (paintCell(int,int,char)),
+             view->gameScene(), SLOT    (paintCell(int,int,char)));
+
+    connect (this,              SIGNAL  (makeSprite(char,int,int)),
+             view->gameScene(), SLOT    (makeSprite(char,int,int)));
 
     // Connect to the mouse-positioning code in the graphics.
     connect (this, SIGNAL (getMousePos(int&,int&)),
-             view, SLOT   (getMousePos(int&,int&)));
+             view->gameScene(), SLOT   (getMousePos(int&,int&)));
+
     connect (this, SIGNAL (setMousePos(int,int)),
-             view, SLOT   (setMousePos(int,int)));
+             view->gameScene(), SLOT   (setMousePos(int,int)));
 
     // Show the layout of this level in the view (KGrCanvas).
     int wall = ConcreteWall;
@@ -181,18 +184,18 @@ void KGrLevelPlayer::init (KGrCanvas * view,
 
             // If the hero is here, leave the tile empty.
             if (type == HERO) {
-                emit paintCell (i, j, FREE, 0);
+                emit paintCell (i, j, FREE);
             }
 
             // If an enemy is here, count him and leave the tile empty.
             else if (type == ENEMY) {
                 enemyCount++;
-                emit paintCell (i, j, FREE, 0);
+                emit paintCell (i, j, FREE);
             }
 
             // Or, just paint this tile.
             else {
-                emit paintCell (i, j, type, 0);
+                emit paintCell (i, j, type);
             }
         }
     }
@@ -238,21 +241,22 @@ void KGrLevelPlayer::init (KGrCanvas * view,
 
     // Connect the hero's and enemies' efforts to the graphics.
     connect (this, SIGNAL (gotGold(int,int,int,bool,bool)),
-             view, SLOT   (gotGold(int,int,int,bool,bool)));
+             view->gameScene(), SLOT (gotGold(int,int,int,bool,bool)));
 
     // Connect mouse-clicks from KGrCanvas to digging slot.
     connect (view, SIGNAL (mouseClick(int)), SLOT (doDig(int)));
 
     // Connect the hero and enemies (if any) to the animation code.
-    connect (hero, SIGNAL (startAnimation (int, bool, int, int, int,
-                                           Direction, AnimationType)),
-             view, SLOT   (startAnimation (int, bool, int, int, int,
-                                           Direction, AnimationType)));
+    connect (hero,              SIGNAL  (startAnimation (int, bool, int, int,
+                                         int, Direction, AnimationType)),
+             view->gameScene(), SLOT    (startAnimation (int, bool, int, int,
+                                         int, Direction, AnimationType)));
+
     foreach (KGrEnemy * enemy, enemies) {
-        connect (enemy, SIGNAL (startAnimation (int, bool, int, int, int,
-                                                Direction, AnimationType)),
-                 view,  SLOT   (startAnimation (int, bool, int, int, int,
-                                                Direction, AnimationType)));
+        connect (enemy,             SIGNAL (startAnimation (int, bool, int, int,
+                                            int, Direction, AnimationType)),
+                 view->gameScene(), SLOT   (startAnimation (int, bool, int, int,
+                                            int, Direction, AnimationType)));
     }
 
     // Connect the scoring.
@@ -268,16 +272,17 @@ void KGrLevelPlayer::init (KGrCanvas * view,
              game, SLOT   (playSound(int,bool)));
 
     // Connect the level player to the animation code (for use with dug bricks).
-    connect (this, SIGNAL (startAnimation (int, bool, int, int, int,
-                                           Direction, AnimationType)),
-             view, SLOT   (startAnimation (int, bool, int, int, int,
-                                           Direction, AnimationType)));
-    connect (this, SIGNAL (deleteSprite(int)),
-             view, SLOT   (deleteSprite(int)));
+    connect (this,              SIGNAL (startAnimation (int, bool, int, int,
+                                        int, Direction, AnimationType)),
+             view->gameScene(), SLOT   (startAnimation (int, bool, int, int,
+                                        int, Direction, AnimationType)));
+
+    connect (this,              SIGNAL (deleteSprite(int)),
+             view->gameScene(), SLOT   (deleteSprite(int)));
 
     // Connect the grid to the view, to show hidden ladders when the time comes.
     connect (grid, SIGNAL (showHiddenLadders(QList<int>,int)),
-             view, SLOT   (showHiddenLadders(QList<int>,int)));
+             view->gameScene(), SLOT (showHiddenLadders(QList<int>,int)));
 
     // Connect and start the timer.  The tick() slot emits signal animation(),
     // so there is just one time-source for the model and the view.
@@ -288,7 +293,8 @@ void KGrLevelPlayer::init (KGrCanvas * view,
     }
 
     connect (timer, SIGNAL (tick(bool,int)), this, SLOT (tick(bool,int)));
-    connect (this,  SIGNAL (animation(bool)), view, SLOT (animate(bool)));
+    connect (this,              SIGNAL  (animation(bool)),
+             view->gameScene(), SLOT    (animate(bool)));
 
     if (! playback) {
         // Allow some time to view the level before starting a replay.
@@ -741,6 +747,15 @@ void KGrLevelPlayer::unstackEnemy (const int spriteId,
 
 void KGrLevelPlayer::tick (bool missed, int scaledTime)
 {
+    int i, j;
+    emit getMousePos (i, j);
+    if (i == -2) {
+        return;         // The KGoldRunner window is inactive.
+    }
+    if ((i == -1) && (playback || (controlMode != KEYBOARD))) {
+        return;		// The pointer is outside the level layout.
+    }
+
     if (playback) {			// Replay a recorded move.
         if (! doRecordedMove()) {
             playback = false;
@@ -750,9 +765,7 @@ void KGrLevelPlayer::tick (bool missed, int scaledTime)
         }
     }
     else if ((controlMode == MOUSE) || (controlMode == LAPTOP)) {
-        int i, j;			// Make and record a live pointer-move.
-        emit getMousePos (i, j);
-        setTarget (i, j);
+        setTarget (i, j);		// Make and record a live pointer-move.
     }
     else if (controlMode == KEYBOARD) {
         if (holdKeyOption == CLICK_KEY) {

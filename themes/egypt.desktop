@@ -1,4 +1,4 @@
-[KDEGameTheme]
+[KGameTheme]
 Name=The Treasure of Egypt
 Name[ast]=El tesoru d'Exiptu
 Name[be]=Скарб Егіпта
@@ -100,3 +100,4 @@ Actors=egypt/actors.svgz
 DrawCanvasBorder=1
 BorderColor=#343131
 TextColor=#FFFFFF
+Preview=egypt/egypt.png

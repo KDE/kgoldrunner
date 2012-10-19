@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gui name="kgoldrunner"
-     version="14"
+     version="16"
      xmlns="http://www.kde.org/standards/kxmlgui/1.0"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.kde.org/standards/kxmlgui/1.0
@@ -27,10 +27,8 @@
         <Action                         name="create_game" />
         <Action                         name="edit_game" />
     </Menu>
-    <Menu name="themes" > <text>&amp;Themes</text>
-        <ActionList                     name="theme_list" />
-    </Menu>
     <Menu name="settings" >
+        <Action append="save_merge"     name="select_theme" />
         <Action append="save_merge"     name="options_sounds" />
         <Action append="save_merge"     name="options_steps" />
         <Action append="save_merge"     name="options_demo" />

@@ -29,13 +29,15 @@
 class KGrTimer;
 class KGrLevelGrid;
 class KGrRuleBook;
-class KGrCanvas;
+class KGrView;
 class KGrHero;
 class KGrEnemy;
 
 class KRandomSequence;
 
 /**
+ * @short Class to play, record and play back a level of a game
+ *
  * This class constructs and plays a single level of a KGoldrunner game.  A
  * KGrLevelPlayer object is created as each level begins and is destroyed as
  * the level finishes, whether the human player wins the level or loses it.
@@ -58,8 +60,6 @@ class KRandomSequence;
  * KGrLevelPlayer and friends are the internal model and game-engine of
  * KGoldrunner and they communicate with the view, KGrCanvas and friends,
  * solely via signals that indicate what is moving and what has to be painted.
- *
- * @short Class to play, record and play back a level of a game
  */
 
 class KGrLevelPlayer : public QObject
@@ -108,7 +108,7 @@ public:
      *                   play back a previously recorded level.
      * @param gameFrozen If true, go into pause-mode when the level starts.
      */
-    void init                   (KGrCanvas *          view,
+    void init                   (KGrView *            view,
                                  KGrRecording *       pRecording,
                                  const bool           pPlayback,
                                  const bool           gameFrozen);
@@ -320,19 +320,76 @@ signals:
     void endLevel       (const int result);
     void getMousePos    (int & i, int & j);
     void setMousePos    (const int i, const int j);
+
+    /**
+     * Requests the view to update animated sprites. Each sprite moves as
+     * decided by the parameters of its last startAnimation() signal.
+     *
+     * @param missed       If true, moves and frame changes occur normally, but
+     *                     they are not displayed on the screen. This is to
+     *                     allow the graphics to catch up if Qt has missed one
+     *                     or more time signals.
+     */
     void animation      (bool missed);
-    void paintCell      (int i, int j, char tileType, int diggingStage = 0);
+
+    /**
+     * Requests the view to display a particular type of tile at a particular
+     * cell, or make it empty and show the background (tileType = FREE). Used
+     * when loading level-layouts.
+     *
+     * @param i            The column-number of the cell to paint.
+     * @param i            The row-number of the cell to paint.
+     * @param tileType     The type of tile to paint (gold, brick, ladder, etc).
+     */
+    void paintCell      (int i, int j, char tileType);
+
     int  makeSprite     (char spriteType, int i, int j);
+
+    /**
+     * Requests the view to display an animation of a dug brick at a
+     * particular cell, cancelling and superseding any current animation.
+     *
+     * @param spriteId     The ID of the sprite (dug brick).
+     * @param repeating    If true, repeat the animation (false for dug brick).
+     * @param i            The column-number of the cell to dig.
+     * @param j            The row-number of the cell to dig.
+     * @param time         The time in which to traverse one cell.
+     * @param dirn         The direction of motion, always STAND.
+     * @param type         The type of animation (open or close the brick).
+     */
     void startAnimation (const int spriteId, const bool repeating,
                          const int i, const int j, const int time,
                          const Direction dirn, const AnimationType type);
+
     void deleteSprite   (const int spriteId);
     void gotGold        (const int  spriteId, const int i, const int j,
                          const bool hasGold, const bool lost);
     void interruptDemo  ();
 
 private slots:
+    /**
+     * This slot powers the whole game. KGrLevelPlayer connects it to KGrTimer's
+     * tick() signal. In this slot, KGrLevelPlayer EITHER plays back a recorded
+     * tick OR checks the mouse/trackpad/keyboard for user-input, then processes
+     * dug bricks, moves the hero, moves the enemies and finally emits the
+     * animation() signal, which causes the view to update the screen.
+     *
+     * @param missed       If true, the QTimer has missed one or more ticks, due
+     *                     to overheads elsewhere in Qt or the O/S. The game
+     *                     catches up on the missed signal(s) and the graphics
+     *                     view avoids painting any sprites until the catchup
+     *                     is complete, thus saving further overheads. The
+     *                     sprites may "jump" a little when this happens, but
+     *                     at least the game stays on-time in wall-clock time.
+     * @param pScaledTime  The number of milliseconds per tick. Usually this is
+     *                     tickTime (= 20 msec), but it is less when the game is
+     *                     slowed down or more when it is speeded up. If the
+     *                     scaled time is 10 (beginner speed), the game will
+     *                     take 2 ticks of 20 msec (i.e. 40 msec) to do what it
+     *                     normally does in 20 msec.
+     */
     void tick           (bool missed, int scaledTime);
+
     void doDig          (int button);	// Dig using mouse-buttons.
 
 private:

@@ -17,17 +17,15 @@
  ****************************************************************************/
 
 #include "kgrsprite.h"
+#include "kgrrenderer.h"
 
 #include <KDebug>
 
-KGrSprite::KGrSprite (KGameCanvasAbstract * canvas, const char type,
-                      const int tickTime)
+KGrSprite::KGrSprite (KGameRenderer * renderer, QString & key,
+                      const char type, const int tickTime)
     :
-    KGameCanvasPixmap (canvas),
+    KGameRenderedItem (renderer, key),
 
-    m_frame           (-1),	// Make move() change pixmap if first frame = 0.
-    m_frameOffset     (0),	// No offset at first (e.g. carrying no gold).
-    m_loc             (-1, -1),	// Make move() change pos if first pos = (0,0).
     m_type            (type),
     m_tickTime        (tickTime),
     m_stationary      (true),	// Animation is OFF at first.
@@ -38,7 +36,13 @@ KGrSprite::KGrSprite (KGameCanvasAbstract * canvas, const char type,
     m_frameCtr        (0),
     m_dx              (0),
     m_dy              (0),
-    m_dt              (0)
+    m_dt              (0),
+    m_oldX            (-1),
+    m_oldY            (-1),
+    m_oldFrame        (-1),
+    m_topLeftX        (0),
+    m_topLeftY        (0),
+    m_tileSize        (1)
 {
 }
 
@@ -46,37 +50,21 @@ KGrSprite::~KGrSprite()
 {
 }
 
-void KGrSprite::addFrames (QList<QPixmap> * frames, const QPoint & topLeft,
-                                const double scale)
-{
-    m_frames = frames;
-    m_scale = scale;
-    m_tlX = topLeft.x();
-    m_tlY = topLeft.y();
-}
-
 void KGrSprite::move (double x, double y, int frame)
 {
-    // Adjust the frame-number if the sprite is an enemy carrying gold and the
-    // caller is not already using an adjusted frame number.  The value of
-    // m_frameOffset is either 0 or the number of the first gold-carrying frame.
-
-    int adjustedFrame = (frame < m_frameOffset) ? frame + m_frameOffset : frame;
-    if (m_frame != adjustedFrame) {
-        m_frame = adjustedFrame;
-        setPixmap (m_frames->at (m_frame));
+    if (frame != m_oldFrame) {
+        // Change the animation frame in KGameRenderedItem.
+        setFrame (frame);
+        m_oldFrame = frame;
     }
-    if ((m_loc.x() != x) || (m_loc.y() != y)) {
-        m_loc.setX ((int)x);
-        m_loc.setY ((int)y);
-        moveTo ((int)(x * m_scale) + m_tlX, (int)(y * m_scale) + m_tlY);
+    if ((x != m_oldX) || (y != m_oldY)) {
+        // Change the position in scene (and view) coordinates.
+        setPos (m_topLeftX + (x + 1) * m_tileSize,
+                m_topLeftY + (y + 1) * m_tileSize);
+        m_oldX = x;
+        m_oldY = y;
     }
-}
-
-void KGrSprite::setZ (qreal /* z (unused) */)
-{
-    // Hero and enemy sprites are above other elements.
-    raise();
+    return;
 }
 
 void KGrSprite::setAnimation (bool repeating, int x, int y, int startFrame,
@@ -97,7 +85,7 @@ void KGrSprite::setAnimation (bool repeating, int x, int y, int startFrame,
     m_dy            = (double) dy / m_ticks;
     m_frameTicks    = (double) m_ticks / nFrameChanges;
     m_frameChange   = 0.0;
-    // kDebug() << "m_ticks" << m_ticks << "dx,dy,dt" << dx << dy << dt << "m_dx,m_dy" << m_dx << m_dy << "m_frameTicks" << m_frameTicks;
+    // kDebug() << "m_ticks" << m_ticks << "dx,dy,dt" << dx << dy << dt << "m_dx,m_dy" << m_dx << m_dy << "m_frameTicks" << m_frameTicks << "nFrames" << nFrames << "nFrameChanges" << nFrameChanges;
 }
 
 void KGrSprite::animate (bool missed)
@@ -112,7 +100,7 @@ void KGrSprite::animate (bool missed)
             return;
         }
     }
-    // kDebug() << m_frameCtr << "=" << m_x << m_y << "frame" << m_startFrame + m_frameCtr << m_frameChange;
+    // kDebug() << missed << m_frameCtr << "=" << m_x << m_y << "frame" << m_startFrame + m_frameCtr << m_frameChange;
 
     // If the clock is running slow, skip an animation step.
     if (! missed) {
@@ -127,4 +115,24 @@ void KGrSprite::animate (bool missed)
     }
     m_x = m_x + m_dx;
     m_y = m_y + m_dy;
+}
+
+void KGrSprite::setCoordinateSystem (int topLeftX, int topLeftY, int tileSize)
+{
+    if (tileSize != m_tileSize) {
+        setRenderSize (QSize (tileSize, tileSize));
+    }
+    m_tileSize = tileSize;
+    m_topLeftX = topLeftX;
+    m_topLeftY = topLeftY;
+}
+
+void KGrSprite::changeCoordinateSystem(int topLeftX, int topLeftY, int tileSize)
+{
+    setCoordinateSystem (topLeftX, topLeftY, tileSize);
+
+    double x = m_oldX;
+    double y = m_oldY;
+    m_oldX = m_oldY = -1;	// Make it look like a change of position,
+    move (x, y, m_oldFrame);	// to force a recalculation of view coords.
 }

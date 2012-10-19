@@ -18,7 +18,8 @@
  ****************************************************************************/
 
 #include "kgreditor.h"
-#include "kgrcanvas.h"
+#include "kgrscene.h"
+#include "kgrview.h"
 #include "kgrselector.h"
 #include "kgrdialog.h"
 #include "kgrgameio.h"
@@ -28,13 +29,14 @@
 
 #include <KDebug>
 
-KGrEditor::KGrEditor (KGrCanvas * theView,
+KGrEditor::KGrEditor (KGrView * theView,
                       const QString & theSystemDir,
                       const QString & theUserDir,
                       QList<KGrGameData *> & pGameList)
     :
     QObject          (theView),		// Destroy Editor if view closes.
     view             (theView),
+    scene            (view->gameScene()),
     io               (new KGrGameIO (view)),
     systemDataDir    (theSystemDir),
     userDataDir      (theUserDir),
@@ -52,10 +54,10 @@ KGrEditor::KGrEditor (KGrCanvas * theView,
     timer->start (TickTime);		// TickTime def in kgrglobals.h.
 
     // Connect edit-mode slots to signals from "view".
-    connect (view, SIGNAL (mouseClick(int)), SLOT (doEdit(int)));
-    connect (view, SIGNAL (mouseLetGo(int)), SLOT (endEdit(int)));
-    connect (this, SIGNAL (getMousePos(int&,int&)),
-             view, SLOT   (getMousePos(int&,int&)));
+    connect (view,  SIGNAL (mouseClick(int)), SLOT (doEdit(int)));
+    connect (view,  SIGNAL (mouseLetGo(int)), SLOT (endEdit(int)));
+    connect (this,  SIGNAL (getMousePos(int&,int&)),
+             scene, SLOT   (getMousePos(int&,int&)));
 }
 
 KGrEditor::~KGrEditor()
@@ -192,7 +194,7 @@ void KGrEditor::loadEditLevel (int lev)
     levelHint = (d.hint.size() > 0) ?
                 QString::fromUtf8 ((const char *) d.hint) : "";
 
-    view->setTitle (getTitle());		// Show the level name.
+    scene->setTitle (getTitle());		// Show the level name.
 }
 
 void KGrEditor::editNameAndHint()
@@ -316,8 +318,8 @@ bool KGrEditor::saveLevelFile()
     }
 
     editLevel = selectedLevel;
-    emit showLevel (editLevel);
-    view->setTitle (getTitle());		// Display new title.
+    scene->setLevel (editLevel);		// Choose a background picture.
+    scene->setTitle (getTitle());		// Display new title.
     return true;
 }
 
@@ -415,8 +417,8 @@ bool KGrEditor::moveLevelFile (int pGameIndex, int level)
     KGrGameIO::safeRename (view, filePath2, filePath1);
 
     editLevel = toL;
-    emit showLevel (editLevel);
-    view->setTitle (getTitle());	// Re-write title.
+    scene->setLevel (editLevel);		// Choose a background picture.
+    scene->setTitle (getTitle());		// Re-write title.
     return true;
 }
 
@@ -488,7 +490,6 @@ bool KGrEditor::deleteLevelFile (int pGameIndex, int level)
     else {
         createLevel (gameIndex);	// No levels left in game.
     }
-    emit showLevel (editLevel);
     return true;
 }
 
@@ -681,8 +682,8 @@ void KGrEditor::initEdit()
     oldJ = 0;
     heroCount = 0;
 
-    emit showLevel (editLevel);
-    view->setTitle (getTitle());	// Show title of level.
+    scene->setLevel (editLevel);	// Choose a background picture.
+    scene->setTitle (getTitle());	// Show title of level.
 
     shouldSave = false;		// Used to flag editing of name or hint.
 }
@@ -725,7 +726,7 @@ char KGrEditor::editableCell (int i, int j)
 void KGrEditor::setEditableCell (int i, int j, char type)
 {
     levelData.layout [(i - 1) + (j - 1) * levelData.width] = type;
-    view->paintCell (i, j, type);
+    scene->paintCell (i, j, type);
 }
 
 void KGrEditor::showEditLevel()

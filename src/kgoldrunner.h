@@ -20,17 +20,6 @@
 #ifndef KGOLDRUNNER_H
 #define KGOLDRUNNER_H
 
-// Status bar
-const int ID_LIVES      = 0;            // Field IDs in KDE status bar.
-const int ID_SCORE      = 1;
-const int ID_LEVEL      = 2;
-const int ID_HINTAVL    = 3;
-const int ID_MSG        = 4;
-
-const int L_LIVES       = 15;		// Lengths of fields.
-const int L_SCORE       = 17;
-const int L_LEVEL       = 15;
-
 #include "kgrglobals.h"
 
 #include <KXmlGuiWindow>
@@ -40,11 +29,13 @@ class KAction;
 class KToggleAction;
 
 class KGrGame;
-class KGrCanvas;
+class KGrView;
+class KGrScene;
+class KGrRenderer;
 
 /**
- * This class serves as the main window for KGoldrunner.  It handles the
- * menus, toolbars, and status bars.
+ * This class serves as the main window for KGoldrunner.  It handles the menu,
+ * toolbar and keystroke actions and sets up the game, scene and view.
  *
  * @short Main window class
  */
@@ -70,6 +61,7 @@ public:
 public slots:
     void setToggle      (const char * actionName, const bool onOff);
     void setAvail       (const char * actionName, const bool onOff);
+    void redrawEditToolbar();
 
 protected:
     void keyPressEvent (QKeyEvent * event);
@@ -100,13 +92,10 @@ private slots:
     void KGoldrunner_2();
 
     // Slot to change the graphics theme.
-    void changeTheme (const QString & themeFilepath);
+    void changeTheme ();
 
     void optionsConfigureKeys();
 
-    void showLevel (int);		// Show the current level number.
-    void showLives (long);		// Show how many lives are remaining.
-    void showScore (long);		// Show the player's score.
     void gameFreeze (bool);		// Status feedback on Pause state.
 
     void adjustHintAction (bool);	// Enable/disable "Hint" action.
@@ -118,9 +107,7 @@ private slots:
 
 private:
     void setupActions();
-    void initStatusBar();
     void setupEditToolbarActions();
-    void setupThemes();
 
     QSignalMapper * tempMapper;		// Temporary pointer.
 
@@ -149,11 +136,15 @@ private:
 
     bool startupOK;
 
-    KGrCanvas *	view;
-    KGrGame *	game;
-    bool        frozen;
+    KGrGame     *   game;		// Overall control of the gameplay.
 
+    KGrView     *   view;		// Central widget.
+    KGrScene    *   scene;		// Sets text for game-status messages.
+    KGrRenderer *   renderer;		// Changes themes and gets icon pixmaps.
+
+    bool frozen;
     bool getDirectories();		// Get directory paths, as below.
+
     QString systemHTMLDir;		// Where the manual is stored.
     QString systemDataDir;		// Where the system levels are stored.
     QString userDataDir;		// Where the user levels are stored.
