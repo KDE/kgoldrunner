@@ -26,6 +26,8 @@ kde4_add_executable(kgoldrunner ${kgoldrunner_SRCS})
 
 target_link_libraries(kgoldrunner ${KDE4_KDEUI_LIBS} kdegames kdegamesprivate)
 
+install(TARGETS kgoldrunner  ${INSTALL_TARGETS_DEFAULT_ARGS} )
+
 ########### install files ###############
 
 install( PROGRAMS KGoldrunner.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
