@@ -32,8 +32,8 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2011-05-11</date>
-<releaseinfo>4.7</releaseinfo>
+<date>2012-10-20</date>
+<releaseinfo>4.10</releaseinfo>
 
 <abstract>
 <para>
@@ -99,7 +99,7 @@ solving &mdash; all in one game.  Good luck!</para>
 <title>A Typical Game</title>
 
 <para>Below is a typical game in progress.  The hero is at
-level 4 in the Advanced Tutorial game.  The window's status bar shows
+level 4 in the Advanced Tutorial game.  The window's lower part shows
 how many lives he has left and how many points he has scored.  It also
 shows that there is a hint available for this level (as there always
 is  in tutorial games) and that the action is stopped (while taking
@@ -884,7 +884,7 @@ with the mouse, pressing the spacebar or selecting a menu item or shortcut
 <listitem>
 <para>Shows a popup hint, if there is one for the level being played.
 By convention, Championship and Tutorial games have hints on every level.
-Other games rarely have hints. The status bar shows whether a hint is
+Other games rarely have hints. The lower part of the &kgoldrunner; window shows whether a hint is
 available or not.</para>
 </listitem>
 </varlistentry>
