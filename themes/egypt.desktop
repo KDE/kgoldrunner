@@ -2,6 +2,7 @@
 Name=The Treasure of Egypt
 Name[ast]=El tesoru d'Exiptu
 Name[be]=Скарб Егіпта
+Name[bs]=Blaga Egipta
 Name[ca]=El Tresor d'Egipte
 Name[ca@valencia]=El Tresor d'Egipte
 Name[da]=Egyptens skat
@@ -51,6 +52,7 @@ Name[zh_CN]=埃及的宝藏
 Name[zh_TW]=埃及的寶藏
 Description=Help Matt Goldrunner escape the traps of ancient Egypt.
 Description[ast]=Écha-y un gabitu a Matt Goldrunner a escapar de les trampes del antiguu Exiptu.
+Description[bs]=Pomozi Mattu tragaču zlata da pobjegne od drevnih Egipatskih zamki.
 Description[ca]=Ajuda en Matt Goldrunner a escapar de les trampes de l'antic Egipte.
 Description[ca@valencia]=Ajuda en Matt Goldrunner a escapar de les trampes de l'antic Egipte.
 Description[da]=Hjælp Matt Goldrunner med at flygte fra fælderne i det gamle Egypten.
