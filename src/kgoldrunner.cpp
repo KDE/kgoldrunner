@@ -373,7 +373,7 @@ void KGoldrunner::setupActions()
     themes->setToolTip   (i18n ("Change the graphics theme..."));
     themes->setWhatsThis (i18n ("Alter the visual appearance of the runners "
                                 "and background scene..."));
-    connect (themes, SIGNAL (triggered (bool)), this, SLOT (changeTheme ()));
+    connect (themes, SIGNAL (triggered(bool)), this, SLOT (changeTheme()));
 
     // Show/Exit Full Screen Mode
     KToggleFullScreenAction * fullScreen = KStandardAction::fullScreen
