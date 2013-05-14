@@ -32,8 +32,8 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2012-10-20</date>
-<releaseinfo>4.10</releaseinfo>
+<date>2013-05-14</date>
+<releaseinfo>4.10 (&kde; 4.11)</releaseinfo>
 
 <abstract>
 <para>
@@ -691,23 +691,10 @@ create and edit &kgoldrunner; levels.</para> </listitem>
 
 <varlistentry>
 <term><link
-linkend="themes-menu"><guimenu>Themes</guimenu></link></term>
-<listitem>
-<para>This menu offers you a choice of background themes or
-<quote>worlds</quote> in which to play. You can change the theme at
-any time, even as the game is playing. For those who are artistically
-inclined, it is possible to compose new themes, including graphics
-or sound or both and add them to &kgoldrunner;. Just contact the author
-for details.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><link
 linkend="settings-menu"><guimenu>Settings</guimenu></link></term>
 <listitem>
 <para>This menu has several groups of &kgoldrunner; settings, including the
-choice of mouse, keyboard or hybrid (laptop) control and the choices of
+choice of mouse, keyboard or hybrid (laptop) control and the choices of themes and 
 game-speed. The current selections are checked. The settings are automatically
 selected when you start playing, but you can use this menu to vary them
 if you wish.</para>
@@ -734,7 +721,7 @@ to contribute, the current author's email address is in the
 </sect1>
 
 <sect1 id="game-menu">
-<title>The <guimenu>Game</guimenu> Menu</title>
+<title>The Game Menu</title>
 
 <variablelist>
 <varlistentry>
@@ -867,7 +854,7 @@ are given an opportunity to save your work.</para>
 </sect1>
 
 <sect1 id="move-menu">
-<title>The <guimenu>Move</guimenu> Menu</title>
+<title>The Move Menu</title>
 
 <tip><para>All the demo and replay moves will replay previously recorded
 levels. All can be interrupted and stopped by clicking on the playing area
@@ -956,7 +943,7 @@ on.</para>
 </sect1>
 
 <sect1 id="editor-menu">
-<title>The <guimenu>Editor</guimenu> Menu</title>
+<title>The Editor Menu</title>
 
 <variablelist>
 <varlistentry>
@@ -1062,88 +1049,8 @@ is because the prefix is used in level-file names internally.</para>
 
 </sect1>
 
-<sect1 id="themes-menu">
-<title>The <guimenu>Themes</guimenu> Menu</title>
-
-<variablelist>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Themes</guimenu><guimenuitem>Black on White</guimenuitem>
-</menuchoice></term>
-<listitem>
-<para>This theme is stripped down to its barest graphical units and
-painted in black and white only.  It is intended to help players who
-may be visually impaired.  The author would appreciate email responses on
-how effective it is and what improvements in visibility could be made.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Themes</guimenu><guimenuitem>The Treasure of Egypt</guimenuitem>
-</menuchoice></term>
-<listitem>
-<para>Matt Goldrunner finds himself in an Ancient Egyptian temple, being
-pursued by mummies who are determined to protect their ancestral jewels
-at all costs.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Themes</guimenu><guimenuitem>&kgoldrunner; Default</guimenuitem>
-</menuchoice></term>
-<listitem>
-<para>Gives you the default &kgoldrunner; theme, with
-red bricks and gray concrete.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Themes</guimenu><guimenuitem>Geek City</guimenuitem>
-</menuchoice></term>
-<listitem>
-<para>Our hero is trapped inside a computer. Will he escape
-when he finally reaches the last level?</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Themes</guimenu><guimenuitem>Nostalgia</guimenuitem>
-</menuchoice></term>
-<listitem>
-<para>Recalls the days of the original Apple II and Commodore 64 game, as it
-was when you plugged your machine into your TV set &mdash; otherwise you had
-a monochrome monitor. For those who do not remember such heroic days, this
-is not an exact reproduction, but it gives you a general idea. For example
-the hero was all white back then, but today he is blue.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Themes</guimenu><guimenuitem>Nostalgia Blues</guimenuitem>
-</menuchoice></term>
-<listitem>
-<para>Recalls the Apple II game, where the bricks and concrete were a
-nice blue color, the hero was white, the enemies had white pants and
-orange (flesh-tint) tops and the gold was white boxes with orange
-panels.  The whole effect was fuzzier (a sort of hardware
-anti-aliasing), which made the bricks look almost
-three-dimensional &mdash; difficult to recreate on today's
-pin-sharp monitors.</para>
-</listitem>
-</varlistentry>
-
-</variablelist>
-
-</sect1>
-
 <sect1 id="settings-menu">
-<title>The <guimenu>Settings</guimenu> Menu</title>
+<title>The Settings Menu</title>
 
 <variablelist>
 <varlistentry>
@@ -1156,6 +1063,82 @@ pin-sharp monitors.</para>
 </menuchoice></term>
 <listitem><para><action>Toggles the Full Screen mode</action> on and off.
 </para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu><guisubmenu>Change Theme</guisubmenu>
+</menuchoice></term>
+<listitem>
+<para>This submenu offers you a choice of background themes or
+<quote>worlds</quote> in which to play. You can change the theme at
+any time, even as the game is playing. For those who are artistically
+inclined, it is possible to compose new themes, including graphics
+or sound or both and add them to &kgoldrunner;. Just contact the author
+for details.</para>
+<variablelist>
+
+<varlistentry>
+<term><guimenuitem>Black on White</guimenuitem></term>
+<listitem>
+<para>This theme is stripped down to its barest graphical units and
+painted in black and white only.  It is intended to help players who
+may be visually impaired.  The author would appreciate email responses on
+how effective it is and what improvements in visibility could be made.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guimenuitem>The Treasure of Egypt</guimenuitem></term>
+<listitem>
+<para>Matt Goldrunner finds himself in an Ancient Egyptian temple, being
+pursued by mummies who are determined to protect their ancestral jewels
+at all costs.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guimenuitem>&kgoldrunner; Default</guimenuitem></term>
+<listitem>
+<para>Gives you the default &kgoldrunner; theme, with
+red bricks and gray concrete.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guimenuitem>Geek City</guimenuitem></term>
+<listitem>
+<para>Our hero is trapped inside a computer. Will he escape
+when he finally reaches the last level?</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guimenuitem>Nostalgia</guimenuitem></term>
+<listitem>
+<para>Recalls the days of the original Apple II and Commodore 64 game, as it
+was when you plugged your machine into your TV set &mdash; otherwise you had
+a monochrome monitor. For those who do not remember such heroic days, this
+is not an exact reproduction, but it gives you a general idea. For example
+the hero was all white back then, but today he is blue.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guimenuitem>Nostalgia Blues</guimenuitem></term>
+<listitem>
+<para>Recalls the Apple II game, where the bricks and concrete were a
+nice blue color, the hero was white, the enemies had white pants and
+orange (flesh-tint) tops and the gold was white boxes with orange
+panels.  The whole effect was fuzzier (a sort of hardware
+anti-aliasing), which made the bricks look almost
+three-dimensional &mdash; difficult to recreate on today's
+pin-sharp monitors.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</listitem>
 </varlistentry>
 
 <varlistentry>
@@ -1214,6 +1197,26 @@ pin-sharp monitors.</para>
 <para>Sets hybrid control of the hero, for laptops, where the touchpad or
 other pointer device is used to guide the hero and the dig keys, on the
 keyboard, are used for digging left and right.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Click Key To Move</guimenuitem>
+</menuchoice></term>
+<listitem>
+<para>In keyboard mode, click a direction-key to start moving 
+and keep on going until you click another key.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Hold Key To Move </guimenuitem>
+</menuchoice></term>
+<listitem>
+<para>In keyboard mode, hold down a direction-key to move 
+and release it to stop.</para>
 </listitem>
 </varlistentry>
 
@@ -1282,7 +1285,7 @@ shortcut keys for menu items.</para>
 </sect1>
 
 <sect1 id="help-menu">
-<title>The <guimenu>Help</guimenu> Menu</title>
+<title>The Help Menu</title>
 
 <para>Contains the following standard &kde; Help Menu items:</para>
 
