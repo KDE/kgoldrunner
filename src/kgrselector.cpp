@@ -37,6 +37,9 @@
 
 #include <QPainter>
 
+#include <QApplication>
+#include <QDesktopWidget>
+
 #include <KGlobalSettings>
 #include <KConfigGroup>
 #include <KIntNumInput>
@@ -224,6 +227,13 @@ void KGrSLDialog::setupWidgets()
     // Base the geometry of the dialog box on the playing area.
     int cell =  slParent->width() / (FIELDWIDTH + 4);
     dad->	setMinimumSize ((FIELDWIDTH*cell/2), (FIELDHEIGHT-3)*cell);
+
+    // Avoid spilling into the Taskbar or Apple Dock area if they get too close.
+    // Otherwise allow the dialog to choose its size and then be resizeable.
+    const QRect avail = QApplication::desktop()->availableGeometry(this);
+    if ((avail.height() - slParent->height()) <= 120) {
+        dad->setFixedHeight (slParent->height() - 120);	// Keep 120 for buttons.
+    }
 
     // Set the default for the level-number in the scrollbar.
     number->	setTracking (true);
