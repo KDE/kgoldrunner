@@ -26,6 +26,7 @@
 #include <QKeySequence>
 #include <QKeyEvent>
 
+#include <KShortcut>
 #include <kglobal.h>
 #include <kshortcutsdialog.h>
 #include <KStandardDirs>
@@ -39,7 +40,7 @@
 #include <ktoolbar.h>
 #include <kmenubar.h>
 
-#include <kaction.h>
+#include <QAction>
 #include <kactioncollection.h>
 #include <ktoggleaction.h>
 #include <ktogglefullscreenaction.h>
@@ -202,7 +203,7 @@ void KGoldrunner::setupActions()
     // Load Saved Game...
     // --------------------------
 
-    KAction * a = KStandardGameAction::gameNew (gameMapper, SLOT(map()), this);
+    QAction * a = KStandardGameAction::gameNew (gameMapper, SLOT(map()), this);
     actionCollection()->addAction (a->objectName(), a);
     gameMapper->setMapping (a, NEW);
     a->setText (i18n ("&New Game..."));
@@ -238,12 +239,12 @@ void KGoldrunner::setupActions()
     myPause = KStandardGameAction::pause (gameMapper, SLOT(map()), this);
     actionCollection()->addAction (myPause->objectName(), myPause);
     gameMapper->setMapping (myPause, PAUSE);
-
-    // KAction * myPause gets KAction::shortcut(), returning 1 OR 2 shortcuts.
+#if 0 //QT5
+    // QAction * myPause gets QAction::shortcut(), returning 1 OR 2 shortcuts.
     KShortcut pauseShortcut = myPause->shortcut();
     pauseShortcut.setAlternate (Qt::Key_Escape);	// Add "Esc" shortcut.
     myPause->setShortcut (pauseShortcut);
-
+#endif
     highScore = KStandardGameAction::highscores (gameMapper, SLOT(map()), this);
     actionCollection()->addAction (highScore->objectName(), highScore);
     gameMapper->setMapping (highScore, HIGH_SCORE);
@@ -310,7 +311,7 @@ void KGoldrunner::setupActions()
     // Edit a Level...
     // --------------------------
 
-    KAction * ed = editAction ("create_level", CREATE_LEVEL,
+    QAction * ed = editAction ("create_level", CREATE_LEVEL,
                                i18n ("&Create Level"),
                                i18n ("Create level."),
                                i18n ("Create a completely new level."));
@@ -579,14 +580,14 @@ void KGoldrunner::setupActions()
     keyControl ("show_enemy_6", i18n ("Show Enemy") + '6', Qt::Key_6, ENEMY_6);
 }
 
-KAction * KGoldrunner::gameAction (const QString & name,
+QAction * KGoldrunner::gameAction (const QString & name,
                                    const int       code,
                                    const QString & text,
                                    const QString & toolTip,
                                    const QString & whatsThis,
                                    const QKeySequence & key)
 {
-    KAction * ga = actionCollection()->addAction (name);
+    QAction * ga = actionCollection()->addAction (name);
     ga->setText (text);
     ga->setToolTip (toolTip);
     ga->setWhatsThis (whatsThis);
@@ -598,13 +599,13 @@ KAction * KGoldrunner::gameAction (const QString & name,
     return ga;
 }
 
-KAction * KGoldrunner::editAction (const QString & name,
+QAction * KGoldrunner::editAction (const QString & name,
                                    const int       code,
                                    const QString & text,
                                    const QString & toolTip,
                                    const QString & whatsThis)
 {
-    KAction * ed = actionCollection()->addAction (name);
+    QAction * ed = actionCollection()->addAction (name);
     ed->setText (text);
     ed->setToolTip (toolTip);
     ed->setWhatsThis (whatsThis);
@@ -650,7 +651,7 @@ void KGoldrunner::keyControl (const QString & name, const QString & text,
                               const QKeySequence & shortcut, const int code,
                               const bool mover)
 {
-    KAction * a = actionCollection()->addAction (name);
+    QAction * a = actionCollection()->addAction (name);
     a->setText (text);
     a->setShortcut (shortcut);
 
@@ -720,9 +721,11 @@ void KGoldrunner::gameFreeze (bool on_off)
     myPause->setChecked (on_off);
     frozen = on_off;	// Remember the state (for the configure-keys case).
     QStringList pauseKeys;
+#if 0 //QT5
     foreach (const QKeySequence &s, myPause->shortcut().toList()) {
         pauseKeys.append(s.toString(QKeySequence::NativeText));
     }
+#endif
     QString msg;
     if (on_off) {
         if (pauseKeys.size() == 0) {
@@ -762,7 +765,7 @@ void KGoldrunner::setToggle (const char * actionName, const bool onOff)
 
 void KGoldrunner::setAvail (const char * actionName, const bool onOff)
 {
-    ((KAction *) ACTION (actionName))->setEnabled (onOff);
+    ((QAction *) ACTION (actionName))->setEnabled (onOff);
 }
 
 void KGoldrunner::setEditMenu (bool on_off)
@@ -946,7 +949,7 @@ void KGoldrunner::setupEditToolbarActions()
              game, SLOT (editToolbarActions(int)));
     tempMapper = editToolbarMapper;
 
-    KAction * ed = editAction ("edit_hint", EDIT_HINT,
+    QAction * ed = editAction ("edit_hint", EDIT_HINT,
                                i18n ("Edit Name/Hint"),
                                i18n ("Edit level name or hint"),
                                i18n ("Edit text for the name or hint "

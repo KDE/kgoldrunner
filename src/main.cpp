@@ -19,7 +19,7 @@
 
 #include <QDebug>
 #include <kapplication.h>
-#include <kaboutdata.h>
+#include <K4AboutData>
 #include <kcmdlineargs.h>
 #include <klocale.h>
 #include "kgoldrunner.h"
@@ -31,7 +31,7 @@ static const char description[] =
 static const char version[] = "4.10";
 
 static bool gameDataOK();
-static void addCredits (KAboutData & about);
+static void addCredits (K4AboutData & about);
 
 int main (int argc, char **argv)
 {
@@ -41,9 +41,9 @@ int main (int argc, char **argv)
  	return 2;
     }
 
-    KAboutData about ("kgoldrunner", 0, ki18n ("KGoldrunner"),
+    K4AboutData about ("kgoldrunner", 0, ki18n ("KGoldrunner"),
                      version, ki18n (description),
-                     KAboutData::License_GPL,
+                     K4AboutData::License_GPL,
                      ki18n ("(C) 2003 Ian Wadham and Marco Krüger"),
                      KLocalizedString(), "http://games.kde.org/kgoldrunner" );
     addCredits (about);
@@ -67,7 +67,7 @@ int main (int argc, char **argv)
     return app.exec();
 }
 
-void addCredits (KAboutData & about)
+void addCredits (K4AboutData & about)
 {
     about.addAuthor (ki18n ("Ian Wadham"), ki18n ("Current author"),
                             "iandw.au@gmail.com");

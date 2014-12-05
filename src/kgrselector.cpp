@@ -39,7 +39,7 @@
 
 #include <QApplication>
 #include <QDesktopWidget>
-
+#include <KGlobal>
 #include <KGlobalSettings>
 #include <KConfigGroup>
 #include <KIntNumInput>

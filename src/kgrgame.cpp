@@ -24,7 +24,7 @@
 #include "kgrview.h"
 #include "kgrscene.h"
 #include "kgrselector.h"
-
+#include <KGlobal>
 // KGoldrunner loads and plays .ogg files and requires OpenAL + SndFile > v0.21.
 // Fallback to Phonon by the KgSound library does not give good results.
 #include <libkdegames_capabilities.h>
