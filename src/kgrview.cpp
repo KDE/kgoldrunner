@@ -57,4 +57,4 @@ void KGrView::mouseReleaseEvent (QMouseEvent * mouseEvent)
     emit mouseLetGo (mouseEvent->button());
 }
 
-#include "kgrview.moc"
+

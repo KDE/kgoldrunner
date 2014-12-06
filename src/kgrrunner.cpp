@@ -616,4 +616,4 @@ void KGrEnemy::showState()
                  gridX, gridY, currAnimation, interval, prevInCell);
 }
 
-#include "kgrrunner.moc"
+

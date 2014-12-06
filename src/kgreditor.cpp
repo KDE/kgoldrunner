@@ -959,4 +959,4 @@ void KGrEditor::endEdit (int button)
     }
 }
 
-#include "kgreditor.moc"
+

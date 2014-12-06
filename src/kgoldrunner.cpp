@@ -34,7 +34,7 @@
 #include <kconfig.h>
 #include <kconfiggroup.h>
 
-#include <kdebug.h>
+#include <QDebug>
 #include <QDebug>
 
 #include <ktoolbar.h>
@@ -169,20 +169,20 @@ KGoldrunner::KGoldrunner()
     // Do NOT paint main widget yet (title bar, menu, blank playfield).
     // Instead, queue a call to the "KGoldrunner_2" constructor extension.
     QMetaObject::invokeMethod (this, "KGoldrunner_2", Qt::QueuedConnection);
-    kDebug() << "QMetaObject::invokeMethod (this, \"KGoldrunner_2\") done ... ";
-    kDebug() << "1st scan of event-queue ...";
+    //qDebug() << "QMetaObject::invokeMethod (this, \"KGoldrunner_2\") done ... ";
+    //qDebug() << "1st scan of event-queue ...";
 }
 
 void KGoldrunner::KGoldrunner_2()
 {
-    kDebug() << "Entered constructor extension ...";
+    //qDebug() << "Entered constructor extension ...";
 
     // Queue a call to the "initGame" method. This renders and paints the
     // initial graphics, but only AFTER the initial main-window resize events
     // have been seen and the final SVG scale is known.
     QMetaObject::invokeMethod (game, "initGame", Qt::QueuedConnection);
-    kDebug() << "QMetaObject::invokeMethod (game, \"initGame\") done ... ";
-    kDebug() << "2nd scan of event-queue ...";
+    //qDebug() << "QMetaObject::invokeMethod (game, \"initGame\") done ... ";
+    //qDebug() << "2nd scan of event-queue ...";
 }
 
 KGoldrunner::~KGoldrunner()
@@ -781,7 +781,7 @@ void KGoldrunner::setEditMenu (bool on_off)
 
     if (on_off){
         // Set the editToolbar icons to the current tile-size.
-        kDebug() << "ToolBar icon size:" << scene->tileSize ();
+        //qDebug() << "ToolBar icon size:" << scene->tileSize ();
         toolBar ("editToolbar")->setIconSize (scene->tileSize ());
 
         // Set the editToolbar icons up with pixmaps of the current theme.
@@ -833,7 +833,7 @@ void KGoldrunner::saveProperties (KConfigGroup & /* config - unused */)
     // config file.  Anything you write here will be available
     // later when this app is restored.
 
-    kDebug() << "I am in KGoldrunner::saveProperties.";
+    //qDebug() << "I am in KGoldrunner::saveProperties.";
 }
 
 void KGoldrunner::readProperties (const KConfigGroup & /* config - unused */)
@@ -843,7 +843,7 @@ void KGoldrunner::readProperties (const KConfigGroup & /* config - unused */)
     // the app is being restored.  Read in here whatever you wrote
     // in 'saveProperties'
 
-    kDebug() << "I am in KGoldrunner::readProperties.";
+    //qDebug() << "I am in KGoldrunner::readProperties.";
 }
 
 void KGoldrunner::optionsConfigureKeys()
@@ -1033,4 +1033,4 @@ QSize KGoldrunner::sizeHint() const
     return QSize (640, 600);
 }
 
-#include "kgoldrunner.moc"
+

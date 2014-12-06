@@ -16,7 +16,7 @@
  ****************************************************************************/
 
 #include <QDebug>
-#include <kdebug.h>
+#include <QDebug>
 
 #include <KLocalizedString>
 
@@ -420,7 +420,7 @@ void KGrScene::drawFrame()
 	m_topLeftY + (2 * m_tileSize) - (3 * w),
 	FIELDWIDTH  * m_tileSize + 6 * w,
 	FIELDHEIGHT * m_tileSize + 6 * w);
-    kDebug() << "FRAME WIDTH" << w << "tile size" << m_tileSize << "rectangle" << m_frame->rect();
+    //qDebug() << "FRAME WIDTH" << w << "tile size" << m_tileSize << "rectangle" << m_frame->rect();
     QPen pen = QPen (m_renderer->textColor());
     pen.setWidth (w);
     m_frame->setPen (pen);
@@ -647,4 +647,4 @@ void KGrScene::setTextFont (QGraphicsSimpleTextItem * t, double fontFraction)
     t->setFont (f);
 }
 
-#include "kgrscene.moc"
+

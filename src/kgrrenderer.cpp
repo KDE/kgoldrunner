@@ -327,4 +327,4 @@ int KGrRenderer::countFrames (const int index)
     return count;
 }
 
-#include "kgrrenderer.moc"
+

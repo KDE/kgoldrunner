@@ -18,7 +18,7 @@
 
 #include "kgrsounds.h"
 
-#include <KDebug>
+#include <QDebug>
 
 KGrSounds::KGrSounds() : 
     QObject(),
@@ -33,7 +33,7 @@ KGrSounds::~KGrSounds()
 
 int KGrSounds::loadSound (const QString &fileName)
 {
-    kDebug() << "Loading sound" << fileName;
+    //qDebug() << "Loading sound" << fileName;
     sounds << (new KgSound (fileName));
     startTime << 0;
     return sounds.count() - 1;
@@ -101,4 +101,4 @@ void KGrSounds::setVolume (int effect, qreal volume)
     sounds[effect]->setVolume (volume);
 }
 
-#include "kgrsounds.moc"
+

@@ -19,7 +19,7 @@
 #define KGRDEBUG_H
 
 static int dbgLevel = 0;	// Local to file where kgrdebug.h is included.
-
+#include <KDebug>
 #define dbk  kDebug()
 #define dbk1 if(dbgLevel>=1)kDebug()
 #define dbk2 if(dbgLevel>=2)kDebug()
