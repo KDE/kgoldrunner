@@ -30,7 +30,7 @@ install(TARGETS kgoldrunner  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 ########### install files ###############
 
-install( PROGRAMS KGoldrunner.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
+install( PROGRAMS org.kde.KGoldrunner.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
 install( FILES kgoldrunnerui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/kgoldrunner )
 
 ecm_install_icons( ICONS hi128-apps-kgoldrunner.png  hi16-apps-kgoldrunner.png  hi22-apps-kgoldrunner.png  hi32-apps-kgoldrunner.png  hi48-apps-kgoldrunner.png  hi64-apps-kgoldrunner.png DESTINATION ${ICON_INSTALL_DIR} )
