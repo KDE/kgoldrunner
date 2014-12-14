@@ -28,6 +28,7 @@
 #include <QButtonGroup>
 
 #include <KGlobalSettings>
+#include <QFontDatabase>
 
 /*******************************************************************************
 *************** DIALOG BOX TO CREATE/EDIT A LEVEL NAME AND HINT ****************
@@ -245,7 +246,7 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
                         "Day    Date     Time  "), dad);
 
     lgList   = new QListWidget (dad);
-    QFont		f = KGlobalSettings::fixedFont();	// KDE version.
+    QFont		f = QFontDatabase::systemFont(QFontDatabase::FixedFont);	// KDE version.
                         f.setFixedPitch (true);
     lgList->		setFont (f);
                         f.setBold (true);

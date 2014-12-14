@@ -46,7 +46,7 @@
 #include <QDateTime>
 
 #include <KRandomSequence>
-#include <KPushButton>
+#include <QPushButton>
 #include <KStandardGuiItem>
 #include <KStandardDirs>
 #include <KApplication>
@@ -72,6 +72,7 @@
 #include <QHeaderView>
 #include <QTreeWidgetItem>
 #include <QDir>
+#include <KGuiItem>
 
 #endif
 
@@ -329,7 +330,7 @@ void KGrGame::editActions (const int action)
         level     = lev;
 
         kDebug() << "Saving to KConfigGroup";
-        KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
+        KConfigGroup gameGroup (KSharedConfig::openConfig(), "KDEGame");
         gameGroup.writeEntry ("GamePrefix", prefix);
         gameGroup.writeEntry ("Level_" + prefix, level);
         gameGroup.sync();		// Ensure that the entry goes to disk.
@@ -367,7 +368,7 @@ void KGrGame::editToolbarActions (const int action)
 void KGrGame::settings (const int action)
 {
     // TODO - Bad   - Configure Keys does not pause a demo. IDW
-    KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
+    KConfigGroup gameGroup (KSharedConfig::openConfig(), "KDEGame");
     bool onOff = false;
     switch (action) {
     case PLAY_SOUNDS:
@@ -429,7 +430,7 @@ void KGrGame::initGame()
 
     // Get the most recent collection and level that was played by this user.
     // If he/she has never played before, set it to Tutorial, level 1.
-    KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
+    KConfigGroup gameGroup (KSharedConfig::openConfig(), "KDEGame");
     QString prevGamePrefix = gameGroup.readEntry ("GamePrefix", "tute");
     int prevLevel          = gameGroup.readEntry ("Level_" + prevGamePrefix, 1);
 
@@ -623,7 +624,7 @@ void KGrGame::startInstantReplay()
 void KGrGame::replayLastLevel()
 {
     // Replay the last game and level completed by the player.
-    KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
+    KConfigGroup gameGroup (KSharedConfig::openConfig(), "KDEGame");
     QString lastPrefix = gameGroup.readEntry ("LastGamePrefix", "");
     int lastLevel      = gameGroup.readEntry ("LastLevel",      -1);
 
@@ -867,7 +868,7 @@ bool KGrGame::playLevel (const Owner fileOwner, const QString & prefix,
 
     // If we are starting a new level, save it in the player's config file.
     if (newLevel && (level != 0)) {	// But do not save the "ENDE" level.
-        KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
+        KConfigGroup gameGroup (KSharedConfig::openConfig(), "KDEGame");
         gameGroup.writeEntry ("GamePrefix", prefix);
         gameGroup.writeEntry ("Level_" + prefix, level);
         gameGroup.sync();		// Ensure that the entry goes to disk.
@@ -1151,7 +1152,7 @@ bool KGrGame::inEditMode()
 void KGrGame::toggleSoundsOnOff (const int action)
 {
     const char * setting = (action == PLAY_SOUNDS) ? "Sound" : "StepSounds";
-    KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
+    KConfigGroup gameGroup (KSharedConfig::openConfig(), "KDEGame");
     bool soundOnOff = gameGroup.readEntry (setting, false);
     soundOnOff = (! soundOnOff);
     gameGroup.writeEntry (setting, soundOnOff);
@@ -1645,7 +1646,8 @@ void KGrGame::checkHighScore()
                         "in the KGoldrunner Hall of Fame.</html>"),
                         hsn);
     QLineEdit *		hsnUser = new QLineEdit (hsn);
-    QPushButton *	OK = new KPushButton (KStandardGuiItem::ok(), hsn);
+    QPushButton *	OK = new QPushButton(hsn);
+    KGuiItem::assign(OK,KStandardGuiItem::ok());
 
     mainLayout->	addWidget (hsnMessage);
     mainLayout->	addWidget (hsnUser);
@@ -1873,7 +1875,8 @@ void KGrGame::showHighScores()
     QSpacerItem * spacerItem = new QSpacerItem (40, 20, QSizePolicy::Expanding,
                                                 QSizePolicy::Minimum);
     hboxLayout1->addItem (spacerItem);
-    QPushButton *	OK = new KPushButton (KStandardGuiItem::close(), hs);
+    QPushButton *	OK = new QPushButton(hs);
+    KGuiItem::assign(OK,KStandardGuiItem::close());
     OK->		setShortcut (Qt::Key_Return);
     OK->		setMaximumWidth (100);
     hboxLayout1->addWidget (OK);
@@ -2073,7 +2076,7 @@ void KGrGame::saveRecording()
     configGroup.sync();			// Ensure that the entry goes to disk.
 
     // Save the game and level, for use in the REPLAY_LAST action.
-    KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
+    KConfigGroup gameGroup (KSharedConfig::openConfig(), "KDEGame");
     gameGroup.writeEntry ("LastGamePrefix", prefix);
     gameGroup.writeEntry ("LastLevel",      level);
     gameGroup.sync();			// Ensure that the entry goes to disk.

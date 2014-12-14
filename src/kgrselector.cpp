@@ -424,7 +424,7 @@ void KGrSLDialog::slGame()
         display->setMaximum (1);
     }
 
-    KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
+    KConfigGroup gameGroup (KSharedConfig::openConfig(), "KDEGame");
     int lev = 1;
 
     // Set a default level number for the selected game.
