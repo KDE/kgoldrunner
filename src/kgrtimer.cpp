@@ -30,7 +30,7 @@ KGrTimer::KGrTimer (QObject * parent, int pTickTime, float pScale)
     expectedTime (0)
 {
     setScale (pScale);
-    connect (ticker, SIGNAL (timeout()), this, SLOT (internalSlot()));
+    connect(ticker, &QTimer::timeout, this, &KGrTimer::internalSlot);
     ticker->start (tickTime);
     t.start();
 }

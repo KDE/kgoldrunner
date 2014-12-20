@@ -112,7 +112,7 @@ KGrGame::KGrGame (KGrView * theView,
     gameFrozen = false;
 
     dyingTimer = new QTimer (this);
-    connect (dyingTimer, SIGNAL (timeout()),  SLOT (finalBreath()));
+    connect(dyingTimer, &QTimer::timeout, this, &KGrGame::finalBreath);
 
     // Initialise random number generator.
     randomGen = new KRandomSequence (time (0));
@@ -699,10 +699,10 @@ void KGrGame::quickStartDialog()
     logo->setPixmap (kapp->windowIcon().pixmap (240));
     logo->setAlignment (Qt::AlignTop | Qt::AlignHCenter);
 
-    connect (qs, SIGNAL (okClicked()),     this, SLOT (quickStartPlay()));
-    connect (qs, SIGNAL (user1Clicked()),  this, SLOT (quickStartNewGame()));
-    connect (qs, SIGNAL (user2Clicked()),  this, SLOT (quickStartUseMenu()));
-    connect (qs, SIGNAL (cancelClicked()), this, SLOT (quickStartQuit()));
+    connect(qs, &KDialog::okClicked, this, &KGrGame::quickStartPlay);
+    connect(qs, &KDialog::user1Clicked, this, &KGrGame::quickStartNewGame);
+    connect(qs, &KDialog::user2Clicked, this, &KGrGame::quickStartUseMenu);
+    connect(qs, &KDialog::cancelClicked, this, &KGrGame::quickStartQuit);
 
     qs->show();
 }
@@ -886,11 +886,9 @@ void KGrGame::setupLevelPlayer()
 
     // Use queued connections here, to ensure that levelPlayer has finished
     // executing and can be deleted when control goes to the relevant slot.
-    connect (levelPlayer, SIGNAL (endLevel(int)),
-             this,        SLOT   (endLevel(int)), Qt::QueuedConnection);
+    connect(levelPlayer, &KGrLevelPlayer::endLevel, this, &KGrGame::endLevel, Qt::QueuedConnection);
     if (playback) {
-        connect (levelPlayer, SIGNAL (interruptDemo()),
-                 this,        SLOT   (interruptDemo()),  Qt::QueuedConnection);
+        connect(levelPlayer, &KGrLevelPlayer::interruptDemo, this, &KGrGame::interruptDemo,  Qt::QueuedConnection);
     }
 }
 
@@ -1024,14 +1022,14 @@ void KGrGame::herosDead()
 void KGrGame::finalBreath()
 {
     dbk << "Connecting fadeFinished()";
-    connect (scene, SIGNAL (fadeFinished()), this, SLOT (repeatLevel()));
+    connect(scene, &KGrScene::fadeFinished, this, &KGrGame::repeatLevel);
     dbk << "Calling scene->fadeOut()";
     scene->fadeIn (false);
 }
 
 void KGrGame::repeatLevel()
 {
-    disconnect (scene, SIGNAL (fadeFinished()), this, SLOT (repeatLevel()));
+    disconnect(scene, &KGrScene::fadeFinished, this, &KGrGame::repeatLevel);
     scene->goToBlack();
 
     // Avoid re-starting if the player selected edit before the time was up.
@@ -1051,14 +1049,14 @@ void KGrGame::levelCompleted()
     playSound (CompletedSound);
 
     dbk << "Connecting fadeFinished()";
-    connect (scene, SIGNAL (fadeFinished()), this, SLOT (goUpOneLevel()));
+    connect(scene, &KGrScene::fadeFinished, this, &KGrGame::goUpOneLevel);
     dbk << "Calling scene->fadeOut()";
     scene->fadeIn (false);
 }
 
 void KGrGame::goUpOneLevel()
 {
-    disconnect (scene, SIGNAL (fadeFinished()), this, SLOT (goUpOneLevel()));
+    disconnect(scene, &KGrScene::fadeFinished, this, &KGrGame::goUpOneLevel);
     scene->goToBlack();
 
     lives++;			// Level completed: gain another life.
@@ -1661,8 +1659,8 @@ void KGrGame::checkHighScore()
     OK->		setShortcut (Qt::Key_Return);
     hsnUser->		setFocus();		// Set the keyboard input on.
 
-    connect	(hsnUser, SIGNAL (returnPressed()), hsn, SLOT (accept()));
-    connect	(OK,      SIGNAL (clicked()),       hsn, SLOT (accept()));
+    connect(hsnUser, &QLineEdit::returnPressed, hsn, &QDialog::accept);
+    connect(OK, &QPushButton::clicked, hsn, &QDialog::accept);
 
     // Run the dialog to get the player's name.  Use "-" if nothing is entered.
     hsn->exec();
@@ -1888,7 +1886,7 @@ void KGrGame::showHighScores()
     // hs->		move (p.x() + 50, p.y() + 50);
 
     // Start up the dialog box.
-    connect		(OK, SIGNAL (clicked()), hs, SLOT (accept()));
+    connect(OK, &QPushButton::clicked, hs, &QDialog::accept);
     hs->		exec();
 
     delete hs;

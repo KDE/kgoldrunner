@@ -71,8 +71,7 @@ KGrRenderer::KGrRenderer (KGrScene * scene)
     m_actorsRenderer->setFrameBaseIndex (1);
 
     // Match the Actors SVG theme to the Set theme, whenever the theme changes.
-    connect (m_setProvider, SIGNAL(currentThemeChanged(const KgTheme*)),
-             this,            SLOT(currentThemeChanged(const KgTheme*)));
+    connect(m_setProvider, &KgThemeProvider::currentThemeChanged, this, &KGrRenderer::currentThemeChanged);
 
     // Match the starting SVG theme for the Actors to the one for the Set.
     matchThemes (m_setProvider->currentTheme());

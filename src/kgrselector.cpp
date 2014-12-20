@@ -307,29 +307,27 @@ void KGrSLDialog::setupWidgets()
     slPaintLevel();
     thumbNail->show();
 
-    connect (games,   SIGNAL (itemSelectionChanged()), this, SLOT (slGame()));
+    connect(games, &QTreeWidget::itemSelectionChanged, this, &KGrSLDialog::slGame);
 
-    connect (display, SIGNAL (valueChanged(QString)),
-                this, SLOT (slUpdate(QString)));
+    connect(display, static_cast<void (KIntSpinBox::*)(const QString &)>(&KIntSpinBox::valueChanged), this, &KGrSLDialog::slUpdate);
 
-    connect (number, SIGNAL(valueChanged(int)), this, SLOT(slShowLevel(int)));
+    connect(number, &QScrollBar::valueChanged, this, &KGrSLDialog::slShowLevel);
 
     // Only enable name and hint dialog here if saving a new or edited level.
     // At other times the name and hint have not been loaded or initialised yet.
     if ((slAction == SL_CREATE) || (slAction == SL_SAVE)) {
         // Signal editNameAndHint() relays the click to a KGrEditor connection.
-        connect (levelNH, SIGNAL (clicked()),
-                 this,    SIGNAL (editNameAndHint()));
+        connect(levelNH, &QPushButton::clicked, this, &KGrSLDialog::editNameAndHint);
     }
     else {
         levelNH->setEnabled (false);
         levelNH->hide();
     }
 
-    connect (games, SIGNAL(itemSelectionChanged()), this, SLOT(slPaintLevel()));
-    connect (number,  SIGNAL (sliderReleased()), this, SLOT (slPaintLevel()));
+    connect(games, &QTreeWidget::itemSelectionChanged, this, &KGrSLDialog::slPaintLevel);
+    connect(number, &QScrollBar::sliderReleased, this, &KGrSLDialog::slPaintLevel);
 
-    connect (this,    SIGNAL (helpClicked()), this, SLOT (slotHelp()));
+    connect(this, &KGrSLDialog::helpClicked, this, &KGrSLDialog::slotHelp);
 }
 
 /******************************************************************************/

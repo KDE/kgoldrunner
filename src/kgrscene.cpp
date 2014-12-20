@@ -94,10 +94,8 @@ KGrScene::KGrScene      (KGrView * view)
 
     m_fadingTimeLine->setCurveShape (QTimeLine::EaseOutCurve);
     m_fadingTimeLine->setUpdateInterval (50);
-    connect (m_fadingTimeLine, SIGNAL (valueChanged(qreal)),
-                this, SLOT (drawSpotlight(qreal)));
-    connect (m_fadingTimeLine, SIGNAL (finished()),
-                this, SIGNAL (fadeFinished()));
+    connect(m_fadingTimeLine, &QTimeLine::valueChanged, this, &KGrScene::drawSpotlight);
+    connect(m_fadingTimeLine, &QTimeLine::finished, this, &KGrScene::fadeFinished);
 }
 
 KGrScene::~KGrScene()

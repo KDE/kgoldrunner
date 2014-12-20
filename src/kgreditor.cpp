@@ -50,14 +50,13 @@ KGrEditor::KGrEditor (KGrView * theView,
 
     // Connect and start the timer.
     timer = new QTimer (this);
-    connect (timer, SIGNAL (timeout()), this, SLOT (tick()));
+    connect(timer, &QTimer::timeout, this, &KGrEditor::tick);
     timer->start (TickTime);		// TickTime def in kgrglobals.h.
 
     // Connect edit-mode slots to signals from "view".
-    connect (view,  SIGNAL (mouseClick(int)), SLOT (doEdit(int)));
-    connect (view,  SIGNAL (mouseLetGo(int)), SLOT (endEdit(int)));
-    connect (this,  SIGNAL (getMousePos(int&,int&)),
-             scene, SLOT   (getMousePos(int&,int&)));
+    connect(view, &KGrView::mouseClick, this, &KGrEditor::doEdit);
+    connect(view, &KGrView::mouseLetGo, this, &KGrEditor::endEdit);
+    connect(this, &KGrEditor::getMousePos, scene, &KGrScene::getMousePos);
 }
 
 KGrEditor::~KGrEditor()
@@ -626,7 +625,7 @@ int KGrEditor::selectLevel (int action, int requestedLevel, int & requestedGame)
     KGrSLDialog * sl = new KGrSLDialog (action, requestedLevel, requestedGame,
                                         gameList, systemDataDir, userDataDir,
                                         view);
-    connect (sl, SIGNAL (editNameAndHint()), this, SLOT (editNameAndHint()));
+    connect(sl, &KGrSLDialog::editNameAndHint, this, &KGrEditor::editNameAndHint);
     bool selected = sl->selectLevel (selectedGame, selectedLevel);
     delete sl;
 
@@ -736,8 +735,8 @@ void KGrEditor::showEditLevel()
     disconnect (view, SIGNAL (mouseLetGo(int)), 0, 0);
 
     // Connect edit-mode slots to signals from "view".
-    connect (view, SIGNAL (mouseClick(int)), SLOT (doEdit(int)));
-    connect (view, SIGNAL (mouseLetGo(int)), SLOT (endEdit(int)));
+    connect(view, &KGrView::mouseClick, this, &KGrEditor::doEdit);
+    connect(view, &KGrView::mouseLetGo, this, &KGrEditor::endEdit);
 }
 
 bool KGrEditor::reNumberLevels (int cIndex, int first, int last, int inc)

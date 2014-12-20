@@ -199,8 +199,8 @@ KGrECDialog::KGrECDialog (int action, int gameIndex,
         mle->setPlainText ("");
     }
 
-    connect (ecKGrB,  SIGNAL (clicked()), this, SLOT (ecSetKGr()));
-    connect (ecTradB, SIGNAL (clicked()), this, SLOT (ecSetTrad()));
+    connect(ecKGrB, &QRadioButton::clicked, this, &KGrECDialog::ecSetKGr);
+    connect(ecTradB, &QRadioButton::clicked, this, &KGrECDialog::ecSetTrad);
 }
 
 KGrECDialog::~KGrECDialog()
@@ -291,8 +291,7 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
     lgList->	setItemSelected  (lgList->currentItem(), true);
                 lgHighlight = 0;
 
-    connect (lgList, SIGNAL (itemClicked(QListWidgetItem*)),
-                this, SLOT (lgSelect(QListWidgetItem*)));
+    connect(lgList, &QListWidget::itemClicked, this, &KGrLGDialog::lgSelect);
 }
 
 void KGrLGDialog::lgSelect (QListWidgetItem * item)
