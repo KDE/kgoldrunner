@@ -35,7 +35,6 @@ include(KDEInstallDirs)
 include(KDECompilerSettings)
 include(KDECMakeSettings)
 
-add_definitions(${QT_DEFINITIONS})
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 add_definitions(-DTRANSLATION_DOMAIN="kgoldrunner")
 
@@ -43,3 +42,5 @@ add_subdirectory( src )
 add_subdirectory( gamedata ) 
 add_subdirectory( themes ) 
 add_subdirectory( doc )
+
+feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
