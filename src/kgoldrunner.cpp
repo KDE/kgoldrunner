@@ -225,7 +225,7 @@ void KGoldrunner::setupActions()
     actionCollection()->addAction (saveGame->objectName(), saveGame);
     gameMapper->setMapping (saveGame, SAVE_GAME);
     saveGame->setText (i18n ("&Save Game..."));
-    saveGame->setShortcut (Qt::Key_S); // Alternate key.
+    actionCollection()->setDefaultShortcut(saveGame, Qt::Key_S); // Alternate key.
 
     // Pause
     // Show High Scores
@@ -589,7 +589,7 @@ QAction * KGoldrunner::gameAction (const QString & name,
     ga->setToolTip (toolTip);
     ga->setWhatsThis (whatsThis);
     if (! key.isEmpty()) {
-        ga->setShortcut (key);
+        actionCollection()->setDefaultShortcut(ga, key);
     }
     connect (ga, SIGNAL (triggered(bool)), tempMapper, SLOT (map()));
     tempMapper->setMapping (ga, code);
@@ -650,7 +650,7 @@ void KGoldrunner::keyControl (const QString & name, const QString & text,
 {
     QAction * a = actionCollection()->addAction (name);
     a->setText (text);
-    a->setShortcut (shortcut);
+    actionCollection()->setDefaultShortcut(a, shortcut);
 
     // If this is a move-key, let keyPressEvent() through, instead of signal.
     if (mover) {
