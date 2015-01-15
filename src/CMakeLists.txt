@@ -24,7 +24,7 @@ set(kgoldrunner_SRCS
 kde4_add_app_icon(kgoldrunner_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-apps-kgoldrunner.png")
 add_executable(kgoldrunner ${kgoldrunner_SRCS})
 
-target_link_libraries(kgoldrunner  KF5KDEGames KF5KDEGamesPrivate KF5::KDELibs4Support)
+target_link_libraries(kgoldrunner  KF5KDEGames KF5KDEGamesPrivate KF5::KDELibs4Support KF5::DBusAddons)
 
 install(TARGETS kgoldrunner  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 

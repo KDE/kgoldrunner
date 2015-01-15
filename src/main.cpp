@@ -26,6 +26,7 @@
 #include <KLocalizedString>
 #include <QCommandLineParser>
 #include "kgoldrunner.h"
+#include <KDBusService>
 
 static const char description[] =
     I18N_NOOP ("KGoldrunner is a game of action and puzzle solving");
@@ -43,6 +44,7 @@ int main (int argc, char **argv)
  	// Error message;
  	return 2;
     }
+    QApplication app(argc, argv);
 
     KAboutData about ("kgoldrunner", i18n ("KGoldrunner"),
                      version, i18n (description),
@@ -51,7 +53,6 @@ int main (int argc, char **argv)
                       "http://games.kde.org/kgoldrunner" );
     addCredits (about);
 
-    QApplication app(argc, argv);
     QCommandLineParser parser;
     KAboutData::setApplicationData(about);
     parser.addVersionOption();
@@ -59,7 +60,7 @@ int main (int argc, char **argv)
     about.setupCommandLine(&parser);
     parser.process(app);
     about.processCommandLine(&parser);
-
+    KDBusService service;
     // See if we are starting with session management.
     if (app.isSessionRestored()) {
         // New RESTORE (KGrController);
