@@ -21,7 +21,7 @@
 #include <QWidget>
 #include <QDir>
 
-#include <KLocale>
+#include <KLocalizedString>
 #include <QDebug>
 
 KGrGameIO::KGrGameIO (QWidget * pView)
