@@ -22,7 +22,7 @@
 #include "kgrrulebook.h"
 #include "kgrlevelplayer.h"
 
-#include <KDebug>
+#include "kgoldrunner_debug.h"
 
 KGrRunner::KGrRunner (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
                       int i, int j, const int pSpriteId,
@@ -74,7 +74,7 @@ void KGrRunner::getRules()
     pointsPerCell = rules->pointsPerCell();
     turnAnywhere  = rules->turnAnywhere();
     if (spriteId < 1) {
-        kDebug() << "pointsPerCell" << pointsPerCell
+        qCDebug(KGOLDRUNNER_LOG) << "pointsPerCell" << pointsPerCell
                  << "turnAnywhere" << turnAnywhere;
     }
 }
@@ -201,9 +201,9 @@ KGrHero::KGrHero (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
     KGrRunner (pLevelPlayer, pGrid, i, j, pSpriteId, pRules, 0),
     nuggets (0)		// KGrLevelPlayer object will call hero->setNuggets().
 {
-    kDebug() << "THE HERO IS BORN at" << i << j << "sprite ID" << pSpriteId;
+    qCDebug(KGOLDRUNNER_LOG) << "THE HERO IS BORN at" << i << j << "sprite ID" << pSpriteId;
     rules->getHeroTimes (runTime, fallTime, enemyFallTime, trapTime);
-    kDebug() << "Hero run time" << runTime << "fall time" << fallTime;
+    qCDebug(KGOLDRUNNER_LOG) << "Hero run time" << runTime << "fall time" << fallTime;
     interval = runTime;
 }
 
@@ -305,7 +305,7 @@ HeroStatus KGrHero::run (const int scaledTime)
 bool KGrHero::dig (const Direction diggingDirection, int & i, int & j)
 {
     QString text = (diggingDirection == DIG_LEFT) ? "LEFT" : "RIGHT";
-    // kDebug() << "Start digging" << text;
+    // qCDebug(KGOLDRUNNER_LOG) << "Start digging" << text;
 
     Flags moves = grid->heroMoves (gridI, gridJ);
     bool result = false;
@@ -324,7 +324,7 @@ bool KGrHero::dig (const Direction diggingDirection, int & i, int & j)
 
     // The place to dig must be clear and there must be a brick under it.
     char aboveBrick = grid->cellType  (gridI + relativeI, gridJ);
-    // kDebug() << "aboveBrick =" << aboveBrick;
+    // qCDebug(KGOLDRUNNER_LOG) << "aboveBrick =" << aboveBrick;
     if ((grid->cellType  (gridI + relativeI, gridJ + 1) == BRICK) &&
         ((aboveBrick == FREE) || (aboveBrick == HOLE))) {
 
@@ -363,10 +363,10 @@ KGrEnemy::KGrEnemy (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
     rulesType     = rules->getEnemyTimes (runTime, fallTime, trapTime);
     enemyFallTime = fallTime;
     interval      = runTime;
-    kDebug() << "ENEMY" << pSpriteId << "IS BORN at" << i << j;
+    qCDebug(KGOLDRUNNER_LOG) << "ENEMY" << pSpriteId << "IS BORN at" << i << j;
     if (pSpriteId < 2) {
-        kDebug() << "Enemy run time " << runTime << "fall time" << fallTime;
-        kDebug() << "Enemy trap time" << trapTime << "Rules type" << rulesType;
+        qCDebug(KGOLDRUNNER_LOG) << "Enemy run time " << runTime << "fall time" << fallTime;
+        qCDebug(KGOLDRUNNER_LOG) << "Enemy trap time" << trapTime << "Rules type" << rulesType;
     }
     t.start(); // IDW
 }

@@ -22,7 +22,7 @@
 #include <QDir>
 
 #include <KLocalizedString>
-#include <QDebug>
+#include "kgoldrunner_debug.h"
 
 KGrGameIO::KGrGameIO (QWidget * pView)
     :
@@ -55,7 +55,7 @@ IOStatus KGrGameIO::fetchGameListData
         filePath = dir + filename;
         KGrGameData * g = initGameData (o);
         gameList.append (g);
-        // //qDebug()<< "GAME PATH:" << filePath;
+        // //qCDebug(KGOLDRUNNER_LOG)<< "GAME PATH:" << filePath;
 
         openFile.setFileName (filePath);
 
@@ -95,7 +95,7 @@ IOStatus KGrGameIO::fetchGameListData
             g->nLevels = fields.at (0).toInt();
             g->rules   = fields.at (1).at (0);
             g->prefix  = fields.at (2);
-            // //qDebug() << "Levels:" << g->nLevels << "Rules:" << g->rules <<
+            // //qCDebug(KGOLDRUNNER_LOG) << "Levels:" << g->nLevels << "Rules:" << g->rules <<
                 // "Prefix:" << g->prefix;
 
             if (kgr3Format) {
@@ -117,7 +117,7 @@ IOStatus KGrGameIO::fetchGameListData
                 gameName = removeNewline (textLine.right (textLine.size() - n));
                 g->name  = i18n (gameName.constData());
             }
-            // //qDebug() << "Skill:" << g->skill << "Name:" << g->name;
+            // //qCDebug(KGOLDRUNNER_LOG) << "Skill:" << g->skill << "Name:" << g->name;
 
             // Loop to accumulate lines of about-data.  If kgr3Format, exit on
             // EOF or 'L' line.  If not kgr3Format, exit on EOF or numeric line.
@@ -132,7 +132,7 @@ IOStatus KGrGameIO::fetchGameListData
                 g->about.append (textLine);
             }
             g->about = removeNewline (g->about);	// Remove final '\n'.
-            // //qDebug() << "Info about: [" + g->about + "]";
+            // //qCDebug(KGOLDRUNNER_LOG) << "Info about: [" + g->about + "]";
 
             if ((! kgr3Format) && (c != '\0')) {
                 filePath = dir + filename;
@@ -152,7 +152,7 @@ bool KGrGameIO::readLevelData (const QString & dir,
                                const QString & prefix,
                                const int levelNo, KGrLevelData & d)
 {
-    //qDebug() << "dir" << dir << "Level" << prefix << levelNo;
+    //qCDebug(KGOLDRUNNER_LOG) << "dir" << dir << "Level" << prefix << levelNo;
     QString filePath;
     IOStatus stat = fetchLevelData
                         (dir, prefix, levelNo, d, filePath);
@@ -190,7 +190,7 @@ IOStatus KGrGameIO::fetchLevelData
     d.name   = "";		// Level name (optional).
     d.hint   = "";		// Level hint (optional).
 
-    // //qDebug()<< "LEVEL PATH:" << filePath;
+    // //qCDebug(KGOLDRUNNER_LOG)<< "LEVEL PATH:" << filePath;
     openFile.setFileName (filePath);
 
     // Check that the level-file exists.
@@ -240,9 +240,9 @@ IOStatus KGrGameIO::fetchLevelData
         }
     }
 
-    // //qDebug() << "Level:" << level << "Layout length:" << d.layout.size();
-    // //qDebug() << "Name:" << "[" + d.name + "]";
-    // //qDebug() << "Hint:" << "[" + d.hint + "]";
+    // //qCDebug(KGOLDRUNNER_LOG) << "Level:" << level << "Layout length:" << d.layout.size();
+    // //qCDebug(KGOLDRUNNER_LOG) << "Name:" << "[" + d.name + "]";
+    // //qCDebug(KGOLDRUNNER_LOG) << "Hint:" << "[" + d.hint + "]";
 
     openFile.close();
     return (result);
@@ -284,7 +284,7 @@ char KGrGameIO::getALine (const bool kgr3, QByteArray & line)
         }
     }
 
-    // //qDebug() << "Raw line:" << line;
+    // //qCDebug(KGOLDRUNNER_LOG) << "Raw line:" << line;
     if (line.size() <= 0) {
         // Return a '\0' byte if end-of-file.
         return ('\0');
@@ -293,7 +293,7 @@ char KGrGameIO::getALine (const bool kgr3, QByteArray & line)
         // In KGr 3 format, strip off leading and trailing syntax.
         if (line.startsWith ("// ")) {
             line = line.right (line.size() - 3);
-            // //qDebug() << "Stripped comment is:" << line;
+            // //qCDebug(KGOLDRUNNER_LOG) << "Stripped comment is:" << line;
         }
         else {
             if (line.startsWith (" i18n(\"")) {
@@ -314,7 +314,7 @@ char KGrGameIO::getALine (const bool kgr3, QByteArray & line)
             else if (line.endsWith ("\"\n")) {
                 line = line.left (line.size() - 2);
             }
-            // //qDebug() << "Stripped syntax is:" << line;
+            // //qCDebug(KGOLDRUNNER_LOG) << "Stripped syntax is:" << line;
         }
         // In Kgr 3 format, return the first byte if not end-of-file.
         c = line.at (0);

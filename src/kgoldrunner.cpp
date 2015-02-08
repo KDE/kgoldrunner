@@ -34,8 +34,8 @@
 #include <kconfig.h>
 #include <kconfiggroup.h>
 
-#include <QDebug>
-#include <QDebug>
+#include "kgoldrunner_debug.h"
+#include "kgoldrunner_debug.h"
 
 #include <ktoolbar.h>
 #include <kmenubar.h>
@@ -166,20 +166,20 @@ KGoldrunner::KGoldrunner()
     // Do NOT paint main widget yet (title bar, menu, blank playfield).
     // Instead, queue a call to the "KGoldrunner_2" constructor extension.
     QMetaObject::invokeMethod (this, "KGoldrunner_2", Qt::QueuedConnection);
-    //qDebug() << "QMetaObject::invokeMethod (this, \"KGoldrunner_2\") done ... ";
-    //qDebug() << "1st scan of event-queue ...";
+    //qCDebug(KGOLDRUNNER_LOG) << "QMetaObject::invokeMethod (this, \"KGoldrunner_2\") done ... ";
+    //qCDebug(KGOLDRUNNER_LOG) << "1st scan of event-queue ...";
 }
 
 void KGoldrunner::KGoldrunner_2()
 {
-    //qDebug() << "Entered constructor extension ...";
+    //qCDebug(KGOLDRUNNER_LOG) << "Entered constructor extension ...";
 
     // Queue a call to the "initGame" method. This renders and paints the
     // initial graphics, but only AFTER the initial main-window resize events
     // have been seen and the final SVG scale is known.
     QMetaObject::invokeMethod (game, "initGame", Qt::QueuedConnection);
-    //qDebug() << "QMetaObject::invokeMethod (game, \"initGame\") done ... ";
-    //qDebug() << "2nd scan of event-queue ...";
+    //qCDebug(KGOLDRUNNER_LOG) << "QMetaObject::invokeMethod (game, \"initGame\") done ... ";
+    //qCDebug(KGOLDRUNNER_LOG) << "2nd scan of event-queue ...";
 }
 
 KGoldrunner::~KGoldrunner()
@@ -778,7 +778,7 @@ void KGoldrunner::setEditMenu (bool on_off)
 
     if (on_off){
         // Set the editToolbar icons to the current tile-size.
-        //qDebug() << "ToolBar icon size:" << scene->tileSize ();
+        //qCDebug(KGOLDRUNNER_LOG) << "ToolBar icon size:" << scene->tileSize ();
         toolBar ("editToolbar")->setIconSize (scene->tileSize ());
 
         // Set the editToolbar icons up with pixmaps of the current theme.
@@ -830,7 +830,7 @@ void KGoldrunner::saveProperties (KConfigGroup & /* config - unused */)
     // config file.  Anything you write here will be available
     // later when this app is restored.
 
-    //qDebug() << "I am in KGoldrunner::saveProperties.";
+    //qCDebug(KGOLDRUNNER_LOG) << "I am in KGoldrunner::saveProperties.";
 }
 
 void KGoldrunner::readProperties (const KConfigGroup & /* config - unused */)
@@ -840,7 +840,7 @@ void KGoldrunner::readProperties (const KConfigGroup & /* config - unused */)
     // the app is being restored.  Read in here whatever you wrote
     // in 'saveProperties'
 
-    //qDebug() << "I am in KGoldrunner::readProperties.";
+    //qCDebug(KGOLDRUNNER_LOG) << "I am in KGoldrunner::readProperties.";
 }
 
 void KGoldrunner::optionsConfigureKeys()

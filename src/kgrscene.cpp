@@ -15,8 +15,8 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ****************************************************************************/
 
-#include <QDebug>
-#include <QDebug>
+#include "kgoldrunner_debug.h"
+#include "kgoldrunner_debug.h"
 
 #include <KLocalizedString>
 
@@ -106,7 +106,7 @@ KGrScene::~KGrScene()
 
 void KGrScene::redrawScene ()
 {
-    qDebug() << "REDRAW: m_sizeChanged" << m_sizeChanged << "m_themeChanged" << m_themeChanged;
+    qCDebug(KGOLDRUNNER_LOG) << "REDRAW: m_sizeChanged" << m_sizeChanged << "m_themeChanged" << m_themeChanged;
     bool redrawToolbar = false;
     if (m_sizeChanged) {
         // Calculate what size of tile will fit in the view.
@@ -116,7 +116,7 @@ void KGrScene::redrawScene ()
         m_topLeftX   = (size.width()  - m_tilesWide * tileSize)/2.0;
         m_topLeftY   = (size.height() - m_tilesHigh * tileSize)/2.0;
         setSceneRect   (0, 0, size.width(), size.height());
-	qDebug() << "SIZE" << size << "TL" << m_topLeftX << m_topLeftY << "TILE" << tileSize << "was" << m_tileSize << m_toolbarTileSize;
+	qCDebug(KGOLDRUNNER_LOG) << "SIZE" << size << "TL" << m_topLeftX << m_topLeftY << "TILE" << tileSize << "was" << m_tileSize << m_toolbarTileSize;
 
         // Make the fade-out/fade-in rectangle cover the playing area.
         m_spotlight->setRect (m_topLeftX + 2 * tileSize - 1,
@@ -418,7 +418,7 @@ void KGrScene::drawFrame()
 	m_topLeftY + (2 * m_tileSize) - (3 * w),
 	FIELDWIDTH  * m_tileSize + 6 * w,
 	FIELDHEIGHT * m_tileSize + 6 * w);
-    //qDebug() << "FRAME WIDTH" << w << "tile size" << m_tileSize << "rectangle" << m_frame->rect();
+    //qCDebug(KGOLDRUNNER_LOG) << "FRAME WIDTH" << w << "tile size" << m_tileSize << "rectangle" << m_frame->rect();
     QPen pen = QPen (m_renderer->textColor());
     pen.setWidth (w);
     m_frame->setPen (pen);

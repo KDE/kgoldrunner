@@ -18,7 +18,7 @@
 
 #include "kgrsounds.h"
 
-#include <QDebug>
+#include "kgoldrunner_debug.h"
 
 KGrSounds::KGrSounds() : 
     QObject(),
@@ -33,7 +33,7 @@ KGrSounds::~KGrSounds()
 
 int KGrSounds::loadSound (const QString &fileName)
 {
-    //qDebug() << "Loading sound" << fileName;
+    //qCDebug(KGOLDRUNNER_LOG) << "Loading sound" << fileName;
     sounds << (new KgSound (fileName));
     startTime << 0;
     return sounds.count() - 1;

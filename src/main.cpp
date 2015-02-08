@@ -17,7 +17,7 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ****************************************************************************/
 
-#include <QDebug>
+#include "kgoldrunner_debug.h"
 
 #include <KAboutData>
 

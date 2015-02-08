@@ -23,7 +23,7 @@
 #include <QObject>
 #include <QList>
 
-#include <KDebug>
+#include "kgoldrunner_debug.h"
 
 class KGrLevelGrid;
 

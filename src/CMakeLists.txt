@@ -1,7 +1,8 @@
 
 ########### next target ###############
 
-set(kgoldrunner_SRCS 
+set(kgoldrunner_SRCS
+   kgoldrunner_debug.cpp 
    kgrview.cpp
    kgrscene.cpp
    kgrsprite.cpp

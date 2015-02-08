@@ -50,7 +50,7 @@
 #include <KStandardGuiItem>
 #include <KStandardDirs>
 #include <KApplication>
-#include <KDebug>
+#include "kgoldrunner_debug.h"
 
 // TODO - Can we change over to KScoreDialog?
 
@@ -116,7 +116,7 @@ KGrGame::KGrGame (KGrView * theView,
 
     // Initialise random number generator.
     randomGen = new KRandomSequence (time (0));
-    kDebug() << "RANDOM NUMBER GENERATOR INITIALISED";
+    qCDebug(KGOLDRUNNER_LOG) << "RANDOM NUMBER GENERATOR INITIALISED";
 
     scene->setReplayMessage (i18n("Click anywhere to begin live play"));
 }
@@ -197,7 +197,7 @@ void KGrGame::gameActions (const int action)
             return;
         }
         level++;
-        kDebug() << "Game" << gameList.at(gameIndex)->name << "level" << level;
+        qCDebug(KGOLDRUNNER_LOG) << "Game" << gameList.at(gameIndex)->name << "level" << level;
         newGame (level, gameIndex);
         showTutorialMessages (level);
         break;
@@ -329,7 +329,7 @@ void KGrGame::editActions (const int action)
         prefix    = gameList.at (gameIndex)->prefix;
         level     = lev;
 
-        kDebug() << "Saving to KConfigGroup";
+        qCDebug(KGOLDRUNNER_LOG) << "Saving to KConfigGroup";
         KConfigGroup gameGroup (KSharedConfig::openConfig(), "KDEGame");
         gameGroup.writeEntry ("GamePrefix", prefix);
         gameGroup.writeEntry ("Level_" + prefix, level);
@@ -426,7 +426,7 @@ void KGrGame::initGame()
                   "SndFile libraries were present when it was compiled and built."),
                   "WarningNoSound");
 #endif
-    kDebug() << "Entered, draw the initial graphics now ...";
+    qCDebug(KGOLDRUNNER_LOG) << "Entered, draw the initial graphics now ...";
 
     // Get the most recent collection and level that was played by this user.
     // If he/she has never played before, set it to Tutorial, level 1.
@@ -434,7 +434,7 @@ void KGrGame::initGame()
     QString prevGamePrefix = gameGroup.readEntry ("GamePrefix", "tute");
     int prevLevel          = gameGroup.readEntry ("Level_" + prevGamePrefix, 1);
 
-    kDebug()<< "Config() Game and Level" << prevGamePrefix << prevLevel;
+    qCDebug(KGOLDRUNNER_LOG)<< "Config() Game and Level" << prevGamePrefix << prevLevel;
 
     // Use that game and level, if it is among the current games.
     // Otherwise, use the first game in the list and level 1.
@@ -473,7 +473,7 @@ void KGrGame::initGame()
 #ifdef KGAUDIO_BACKEND_OPENAL
         // Set up sounds, if required in config.
         soundOn = gameGroup.readEntry ("Sound", false);
-        kDebug() << "Sound" << soundOn;
+        qCDebug(KGOLDRUNNER_LOG) << "Sound" << soundOn;
         if (soundOn) {
             loadSounds();
             effects->setMuted (false);
@@ -481,7 +481,7 @@ void KGrGame::initGame()
         emit setToggle ("options_sounds", soundOn);
 
         stepsOn = gameGroup.readEntry ("StepSounds", false);
-        kDebug() << "StepSounds" << stepsOn;
+        qCDebug(KGOLDRUNNER_LOG) << "StepSounds" << stepsOn;
         emit setToggle ("options_steps", stepsOn);
 #endif
 
@@ -522,7 +522,7 @@ bool KGrGame::startDemo (const Owner demoOwner, const QString & pPrefix,
     dbk1 << "DEMO looking for" << s << "found at" << index;
     if (index <= 0) {
         setPlayback (false);
-        kDebug() << "DEMO not found in" << filepath << s << pPrefix << levelNo;
+        qCDebug(KGOLDRUNNER_LOG) << "DEMO not found in" << filepath << s << pPrefix << levelNo;
         return false;
     }
 
@@ -538,12 +538,12 @@ bool KGrGame::startDemo (const Owner demoOwner, const QString & pPrefix,
         if (levelPlayer) {
             levelPlayer->prepareToPlay();
         }
-        kDebug() << "DEMO started ..." << filepath << pPrefix << levelNo;
+        qCDebug(KGOLDRUNNER_LOG) << "DEMO started ..." << filepath << pPrefix << levelNo;
         return true;
     }
     else {
         setPlayback (false);
-        kDebug() << "DEMO failed ..." << filepath << pPrefix << levelNo;
+        qCDebug(KGOLDRUNNER_LOG) << "DEMO failed ..." << filepath << pPrefix << levelNo;
         return false;         
     }
 }
@@ -559,7 +559,7 @@ void KGrGame::runNextDemoLevel()
             if (levelPlayer) {
                 levelPlayer->prepareToPlay();
             }
-            kDebug() << "DEMO continued ..." << playbackPrefix << playbackIndex;
+            qCDebug(KGOLDRUNNER_LOG) << "DEMO continued ..." << playbackPrefix << playbackIndex;
             return;
         }
     }
@@ -583,7 +583,7 @@ void KGrGame::finishDemo()
 
 void KGrGame::interruptDemo()
 {
-    kDebug() << "DEMO interrupted ...";
+    qCDebug(KGOLDRUNNER_LOG) << "DEMO interrupted ...";
     if ((demoType == INSTANT_REPLAY) || (demoType == REPLAY_LAST)) {
         setPlayback (false);
         levelMax = gameList.at (gameIndex)->nLevels;
@@ -765,9 +765,9 @@ bool KGrGame::selectGame (const SelectAction slAction,
     bool selected = sl->selectLevel (selectedGame, selectedLevel);
     delete sl;
 
-    kDebug() << "After dialog - programFreeze" << programFreeze;
-    kDebug() << "selected" << selected << "gameFrozen" << gameFrozen;
-    kDebug() << "selectedGame" << selectedGame
+    qCDebug(KGOLDRUNNER_LOG) << "After dialog - programFreeze" << programFreeze;
+    qCDebug(KGOLDRUNNER_LOG) << "selected" << selected << "gameFrozen" << gameFrozen;
+    qCDebug(KGOLDRUNNER_LOG) << "selectedGame" << selectedGame
              << "prefix" << gameList.at(selectedGame)->prefix
              << "selectedLevel" << selectedLevel;
     // Unfreeze the game, but only if it was previously unfrozen.
@@ -1137,7 +1137,7 @@ void KGrGame::setTimeScale (const int action)
 
     if (levelPlayer && (! playback)) {
         // Change speed during play, but not during a demo or replay.
-        kDebug() << "setTimeScale" << (timeScale);
+        qCDebug(KGOLDRUNNER_LOG) << "setTimeScale" << (timeScale);
         levelPlayer->setTimeScale (timeScale);
     }
 }
@@ -1174,8 +1174,8 @@ void KGrGame::toggleSoundsOnOff (const int action)
 void KGrGame::freeze (const bool userAction, const bool on_off)
 {
     QString type = userAction ? "UserAction" : "ProgramAction";
-    kDebug() << "PAUSE:" << type << on_off;
-    kDebug() << "gameFrozen" << gameFrozen << "programFreeze" << programFreeze;
+    qCDebug(KGOLDRUNNER_LOG) << "PAUSE:" << type << on_off;
+    qCDebug(KGOLDRUNNER_LOG) << "gameFrozen" << gameFrozen << "programFreeze" << programFreeze;
 
 #ifdef KGAUDIO_BACKEND_OPENAL
     if (on_off && effects) {		// If pausing and sounds are loaded, cut
@@ -1188,10 +1188,10 @@ void KGrGame::freeze (const bool userAction, const bool on_off)
         if (on_off) {
             if (gameFrozen) {
                 if (programFreeze) {
-                    kDebug() << "P: The program has already frozen the game.";
+                    qCDebug(KGOLDRUNNER_LOG) << "P: The program has already frozen the game.";
                 }
                 else {
-                    kDebug() << "P: The user has already frozen the game.";
+                    qCDebug(KGOLDRUNNER_LOG) << "P: The user has already frozen the game.";
                 }
                 return;			// The game is already frozen.
             }
@@ -1199,10 +1199,10 @@ void KGrGame::freeze (const bool userAction, const bool on_off)
         }
         else if (! programFreeze) {
             if (gameFrozen) {
-                kDebug() << "P: The user will keep the game frozen.";
+                qCDebug(KGOLDRUNNER_LOG) << "P: The user will keep the game frozen.";
             }
             else {
-                kDebug() << "P: The game is NOT frozen.";
+                qCDebug(KGOLDRUNNER_LOG) << "P: The game is NOT frozen.";
             }
             return;			// The user will keep the game frozen.
         }
@@ -1211,7 +1211,7 @@ void KGrGame::freeze (const bool userAction, const bool on_off)
     }
     else if (programFreeze) {
         // If the user breaks through a program freeze somehow, take no action.
-        kDebug() << "U: THE USER HAS BROKEN THROUGH SOMEHOW.";
+        qCDebug(KGOLDRUNNER_LOG) << "U: THE USER HAS BROKEN THROUGH SOMEHOW.";
         return;
     }
     else {
@@ -1223,7 +1223,7 @@ void KGrGame::freeze (const bool userAction, const bool on_off)
     if (levelPlayer) {
         levelPlayer->pause (on_off);
     }
-    kDebug() << "RESULT: gameFrozen" << gameFrozen
+    qCDebug(KGOLDRUNNER_LOG) << "RESULT: gameFrozen" << gameFrozen
              << "programFreeze" << programFreeze;
 }
 
@@ -1903,7 +1903,7 @@ void KGrGame::dbgControl (const int code)
         levelPlayer->interruptPlayback();	// Will emit interruptDemo().
         return;
     }
-    // kDebug() << "Debug code =" << code;
+    // qCDebug(KGOLDRUNNER_LOG) << "Debug code =" << code;
     if (levelPlayer && gameFrozen) {
         levelPlayer->dbgControl (code);
     }
@@ -1978,7 +1978,7 @@ bool KGrGame::initRecordingData (const Owner fileOwner, const QString & prefix,
     const QString dir = ((fileOwner == SYSTEM) || (levelNo == 0)) ?
                         systemDataDir : userDataDir;
     if (playback) {
-        kDebug() << "loadRecording" << dir << prefix << levelNo;
+        qCDebug(KGOLDRUNNER_LOG) << "loadRecording" << dir << prefix << levelNo;
         if (! loadRecording (dir, prefix, levelNo)) {
             return false;
         }
@@ -1995,7 +1995,7 @@ bool KGrGame::initRecordingData (const Owner fileOwner, const QString & prefix,
         recording->dateTime    = QDateTime::currentDateTime()
                                               .toUTC()
                                               .toString (Qt::ISODate);
-        kDebug() << "Recording at" << recording->dateTime;
+        qCDebug(KGOLDRUNNER_LOG) << "Recording at" << recording->dateTime;
 
         KGrGameData * gameData = gameList.at (gameIndex);
         recording->owner       = gameData->owner;
@@ -2028,7 +2028,7 @@ void KGrGame::saveRecording()
 {
     QString filename = userDataDir + "rec_" + prefix + ".txt";
     QString groupName = prefix + QString::number(level).rightJustified(3,'0');
-    kDebug() << filename << groupName;
+    qCDebug(KGOLDRUNNER_LOG) << filename << groupName;
 
     KConfig config (filename, KConfig::SimpleConfig);
     KConfigGroup configGroup = config.group (groupName);
@@ -2083,14 +2083,14 @@ void KGrGame::saveRecording()
 bool KGrGame::loadRecording (const QString & dir, const QString & prefix,
                                                   const int levelNo)
 {
-    kDebug() << prefix << levelNo;
+    qCDebug(KGOLDRUNNER_LOG) << prefix << levelNo;
     QString filename  = dir + "rec_" + prefix + ".txt";
     QString groupName = prefix + QString::number(levelNo).rightJustified(3,'0');
-    kDebug() << filename << groupName;
+    qCDebug(KGOLDRUNNER_LOG) << filename << groupName;
 
     KConfig config (filename, KConfig::SimpleConfig);
     if (! config.hasGroup (groupName)) {
-        kDebug() << "Group" << groupName << "NOT FOUND";
+        qCDebug(KGOLDRUNNER_LOG) << "Group" << groupName << "NOT FOUND";
         return false;
     }
 

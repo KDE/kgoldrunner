@@ -31,7 +31,7 @@
 #include "kgrlevelgrid.h"
 #include "kgrrunner.h"
 
-#include <QDebug>
+#include "kgoldrunner_debug.h"
 #include <KMessageBox>	// TODO - Remove.
 #include <KRandomSequence>
 
@@ -71,7 +71,7 @@ KGrLevelPlayer::~KGrLevelPlayer()
 {
     qDeleteAll(dugBricks);
     dugBricks.clear(); //TODO: necessary?
-    //qDebug() << "LEVEL PLAYER BEING DELETED.";
+    //qCDebug(KGOLDRUNNER_LOG) << "LEVEL PLAYER BEING DELETED.";
     playerCount--;
 
 // TODO - Remove this debugging code.
@@ -806,7 +806,7 @@ void KGrLevelPlayer::tick (bool missed, int scaledTime)
 
         // Queued connection ensures KGrGame slot runs AFTER return from here.
         emit endLevel (status);
-        //qDebug() << "END OF LEVEL";
+        //qCDebug(KGOLDRUNNER_LOG) << "END OF LEVEL";
         return;
     }
 
@@ -1158,7 +1158,7 @@ void KGrLevelPlayer::killHero()
         record (1, ACTION_CODE + KILL_HERO);
 
         emit endLevel (DEAD);
-        //qDebug() << "END OF LEVEL";
+        //qCDebug(KGOLDRUNNER_LOG) << "END OF LEVEL";
     }
 }
 

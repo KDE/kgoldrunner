@@ -17,7 +17,7 @@
 
 #include "kgrtimer.h"
 
-#include <QDebug>
+#include "kgoldrunner_debug.h"
 
 KGrTimer::KGrTimer (QObject * parent, int pTickTime, float pScale)
     :
