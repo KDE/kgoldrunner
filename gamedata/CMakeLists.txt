@@ -26,5 +26,5 @@ install( FILES game_CM.txt
                rec_demo.txt
                rec_GMGR.txt
 	       rec_GRII.txt
-   DESTINATION ${DATA_INSTALL_DIR}/kgoldrunner/system )
+   DESTINATION ${KDE_INSTALL_DATADIR}/kgoldrunner/system )
 
