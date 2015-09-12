@@ -73,10 +73,10 @@ void KGrRunner::getRules()
 {
     pointsPerCell = rules->pointsPerCell();
     turnAnywhere  = rules->turnAnywhere();
-    if (spriteId < 1) {
-        kDebug() << "pointsPerCell" << pointsPerCell
-                 << "turnAnywhere" << turnAnywhere;
-    }
+    // if (spriteId < 1) {
+        // kDebug() << "pointsPerCell" << pointsPerCell
+                 // << "turnAnywhere" << turnAnywhere;
+    // }
 }
 
 Situation KGrRunner::situation (const int scaledTime)
@@ -201,9 +201,9 @@ KGrHero::KGrHero (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
     KGrRunner (pLevelPlayer, pGrid, i, j, pSpriteId, pRules, 0),
     nuggets (0)		// KGrLevelPlayer object will call hero->setNuggets().
 {
-    kDebug() << "THE HERO IS BORN at" << i << j << "sprite ID" << pSpriteId;
+    // kDebug() << "THE HERO IS BORN at" << i << j << "sprite ID" << pSpriteId;
     rules->getHeroTimes (runTime, fallTime, enemyFallTime, trapTime);
-    kDebug() << "Hero run time" << runTime << "fall time" << fallTime;
+    // kDebug() << "Hero run time" << runTime << "fall time" << fallTime;
     interval = runTime;
 }
 
@@ -363,11 +363,11 @@ KGrEnemy::KGrEnemy (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
     rulesType     = rules->getEnemyTimes (runTime, fallTime, trapTime);
     enemyFallTime = fallTime;
     interval      = runTime;
-    kDebug() << "ENEMY" << pSpriteId << "IS BORN at" << i << j;
-    if (pSpriteId < 2) {
-        kDebug() << "Enemy run time " << runTime << "fall time" << fallTime;
-        kDebug() << "Enemy trap time" << trapTime << "Rules type" << rulesType;
-    }
+    // kDebug() << "ENEMY" << pSpriteId << "IS BORN at" << i << j;
+    // if (pSpriteId < 2) {
+        // kDebug() << "Enemy run time " << runTime << "fall time" << fallTime;
+        // kDebug() << "Enemy trap time" << trapTime << "Rules type" << rulesType;
+    // }
     t.start(); // IDW
 }
 

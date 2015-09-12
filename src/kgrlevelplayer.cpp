@@ -71,7 +71,7 @@ KGrLevelPlayer::~KGrLevelPlayer()
 {
     qDeleteAll(dugBricks);
     dugBricks.clear(); //TODO: necessary?
-    kDebug() << "LEVEL PLAYER BEING DELETED.";
+    // kDebug() << "LEVEL PLAYER BEING DELETED.";
     playerCount--;
 
 // TODO - Remove this debugging code.
@@ -641,8 +641,8 @@ bool KGrLevelPlayer::heroCaught (const int heroX, const int heroY)
                                  (heroX <= (enemyX + pointsPerCell_1))) &&
             ((heroY < enemyY) ? ((heroY + pointsPerCell_1) > enemyY) :
                                  (heroY <= (enemyY + pointsPerCell_1)))) {
-            dbk << "Caught by";
-            enemy->showState();
+            // dbk << "Caught by";
+            // enemy->showState();
             return true;
         }
     }
@@ -806,7 +806,7 @@ void KGrLevelPlayer::tick (bool missed, int scaledTime)
 
         // Queued connection ensures KGrGame slot runs AFTER return from here.
         emit endLevel (status);
-        kDebug() << "END OF LEVEL";
+        // kDebug() << "END OF LEVEL";
         return;
     }
 
@@ -1148,7 +1148,7 @@ void KGrLevelPlayer::interruptPlayback()
 
     playback = false;
     emit interruptDemo();
-    dbk << "INTERRUPT - emit interruptDemo();";
+    // dbk << "INTERRUPT - emit interruptDemo();";
 }
 
 void KGrLevelPlayer::killHero()
@@ -1158,7 +1158,7 @@ void KGrLevelPlayer::killHero()
         record (1, ACTION_CODE + KILL_HERO);
 
         emit endLevel (DEAD);
-        kDebug() << "END OF LEVEL";
+        // kDebug() << "END OF LEVEL";
     }
 }
 

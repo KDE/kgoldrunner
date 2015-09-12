@@ -115,7 +115,7 @@ KGrGame::KGrGame (KGrView * theView,
 
     // Initialise random number generator.
     randomGen = new KRandomSequence (time (0));
-    kDebug() << "RANDOM NUMBER GENERATOR INITIALISED";
+    // kDebug() << "RANDOM NUMBER GENERATOR INITIALISED";
 
     scene->setReplayMessage (i18n("Click anywhere to begin live play"));
 }
@@ -196,7 +196,7 @@ void KGrGame::gameActions (const int action)
             return;
         }
         level++;
-        kDebug() << "Game" << gameList.at(gameIndex)->name << "level" << level;
+        // kDebug() << "Game" << gameList.at(gameIndex)->name << "level" << level;
         newGame (level, gameIndex);
         showTutorialMessages (level);
         break;
@@ -255,7 +255,7 @@ void KGrGame::editActions (const int action)
     bool editOK    = true;
     bool newEditor = (editor) ? false : true;
     int  editLevel = level;
-    dbk << "Level" << level << prefix << gameIndex;
+    // dbk << "Level" << level << prefix << gameIndex;
     if (newEditor) {
         if (action == SAVE_EDITS) {
             KGrMessage::information (view, i18n ("Save Level"),
@@ -328,7 +328,7 @@ void KGrGame::editActions (const int action)
         prefix    = gameList.at (gameIndex)->prefix;
         level     = lev;
 
-        kDebug() << "Saving to KConfigGroup";
+        // kDebug() << "Saving to KConfigGroup";
         KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
         gameGroup.writeEntry ("GamePrefix", prefix);
         gameGroup.writeEntry ("Level_" + prefix, level);
@@ -425,7 +425,7 @@ void KGrGame::initGame()
                   "SndFile libraries were present when it was compiled and built."),
                   "WarningNoSound");
 #endif
-    kDebug() << "Entered, draw the initial graphics now ...";
+    // kDebug() << "Entered, draw the initial graphics now ...";
 
     // Get the most recent collection and level that was played by this user.
     // If he/she has never played before, set it to Tutorial, level 1.
@@ -433,7 +433,7 @@ void KGrGame::initGame()
     QString prevGamePrefix = gameGroup.readEntry ("GamePrefix", "tute");
     int prevLevel          = gameGroup.readEntry ("Level_" + prevGamePrefix, 1);
 
-    kDebug()<< "Config() Game and Level" << prevGamePrefix << prevLevel;
+    // kDebug()<< "Config() Game and Level" << prevGamePrefix << prevLevel;
 
     // Use that game and level, if it is among the current games.
     // Otherwise, use the first game in the list and level 1.
@@ -472,7 +472,7 @@ void KGrGame::initGame()
 #ifdef KGAUDIO_BACKEND_OPENAL
         // Set up sounds, if required in config.
         soundOn = gameGroup.readEntry ("Sound", false);
-        kDebug() << "Sound" << soundOn;
+        // kDebug() << "Sound" << soundOn;
         if (soundOn) {
             loadSounds();
             effects->setMuted (false);
@@ -480,7 +480,7 @@ void KGrGame::initGame()
         emit setToggle ("options_sounds", soundOn);
 
         stepsOn = gameGroup.readEntry ("StepSounds", false);
-        kDebug() << "StepSounds" << stepsOn;
+        // kDebug() << "StepSounds" << stepsOn;
         emit setToggle ("options_steps", stepsOn);
 #endif
 
@@ -549,8 +549,8 @@ bool KGrGame::startDemo (const Owner demoOwner, const QString & pPrefix,
 
 void KGrGame::runNextDemoLevel()
 {
-    dbk << "index" << playbackIndex << "max" << playbackMax << playbackPrefix
-        << "owner" << playbackOwner;
+    // dbk << "index" << playbackIndex << "max" << playbackMax << playbackPrefix
+        // << "owner" << playbackOwner;
     if (playbackIndex < playbackMax) {
         playbackIndex++;
         if (playLevel (playbackOwner, playbackPrefix,
@@ -600,7 +600,7 @@ void KGrGame::interruptDemo()
 
 void KGrGame::startInstantReplay()
 {
-    dbk << "Start INSTANT_REPLAY";
+    // dbk << "Start INSTANT_REPLAY";
     demoType = INSTANT_REPLAY;
 
     // Terminate current play.
@@ -764,11 +764,11 @@ bool KGrGame::selectGame (const SelectAction slAction,
     bool selected = sl->selectLevel (selectedGame, selectedLevel);
     delete sl;
 
-    kDebug() << "After dialog - programFreeze" << programFreeze;
-    kDebug() << "selected" << selected << "gameFrozen" << gameFrozen;
-    kDebug() << "selectedGame" << selectedGame
-             << "prefix" << gameList.at(selectedGame)->prefix
-             << "selectedLevel" << selectedLevel;
+    // kDebug() << "After dialog - programFreeze" << programFreeze;
+    // kDebug() << "selected" << selected << "gameFrozen" << gameFrozen;
+    // kDebug() << "selectedGame" << selectedGame
+             // << "prefix" << gameList.at(selectedGame)->prefix
+             // << "selectedLevel" << selectedLevel;
     // Unfreeze the game, but only if it was previously unfrozen.
     freeze (ProgramPause, false);
     return selected;
@@ -925,7 +925,7 @@ void KGrGame::playSound (const int n, const bool onOff)
 
 void KGrGame::endLevel (const int result)
 {
-    dbk << "Return to KGrGame, result:" << result;
+    // dbk << "Return to KGrGame, result:" << result;
 
 #ifdef KGAUDIO_BACKEND_OPENAL
     if (effects) {			// If sounds have been loaded, cut off
@@ -947,7 +947,7 @@ void KGrGame::endLevel (const int result)
         return;
     }
 
-    dbk << "delete levelPlayer";
+    // dbk << "delete levelPlayer";
     // Delete the level-player, hero, enemies, grid, rule-book, etc.
     // Delete sprites in the view later: the user may need to see them briefly.
     delete levelPlayer;
@@ -955,16 +955,16 @@ void KGrGame::endLevel (const int result)
 
     // If the player finished the level (won or lost), save the recording.
     if ((! playback) && ((result == WON_LEVEL) || (result == DEAD))) {
-        dbk << "saveRecording()";
+        // dbk << "saveRecording()";
         saveRecording();
     }
 
     if (result == WON_LEVEL) {
-        dbk << "Won level";
+        // dbk << "Won level";
         levelCompleted();
     }
     else if (result == DEAD) {
-        dbk << "Lost level";
+        // dbk << "Lost level";
         herosDead();
     }
 }
@@ -1022,9 +1022,9 @@ void KGrGame::herosDead()
 
 void KGrGame::finalBreath()
 {
-    dbk << "Connecting fadeFinished()";
+    // dbk << "Connecting fadeFinished()";
     connect (scene, SIGNAL (fadeFinished()), this, SLOT (repeatLevel()));
-    dbk << "Calling scene->fadeOut()";
+    // dbk << "Calling scene->fadeOut()";
     scene->fadeIn (false);
 }
 
@@ -1049,9 +1049,9 @@ void KGrGame::levelCompleted()
 {
     playSound (CompletedSound);
 
-    dbk << "Connecting fadeFinished()";
+    // dbk << "Connecting fadeFinished()";
     connect (scene, SIGNAL (fadeFinished()), this, SLOT (goUpOneLevel()));
-    dbk << "Calling scene->fadeOut()";
+    // dbk << "Calling scene->fadeOut()";
     scene->fadeIn (false);
 }
 
@@ -1138,7 +1138,7 @@ void KGrGame::setTimeScale (const int action)
 
     if (levelPlayer && (! playback)) {
         // Change speed during play, but not during a demo or replay.
-        kDebug() << "setTimeScale" << (timeScale);
+        // kDebug() << "setTimeScale" << (timeScale);
         levelPlayer->setTimeScale (timeScale);
     }
 }
@@ -1175,8 +1175,8 @@ void KGrGame::toggleSoundsOnOff (const int action)
 void KGrGame::freeze (const bool userAction, const bool on_off)
 {
     QString type = userAction ? "UserAction" : "ProgramAction";
-    kDebug() << "PAUSE:" << type << on_off;
-    kDebug() << "gameFrozen" << gameFrozen << "programFreeze" << programFreeze;
+    // kDebug() << "PAUSE:" << type << on_off;
+    // kDebug() << "gameFrozen" << gameFrozen << "programFreeze" << programFreeze;
 
 #ifdef KGAUDIO_BACKEND_OPENAL
     if (on_off && effects) {		// If pausing and sounds are loaded, cut
@@ -1188,23 +1188,23 @@ void KGrGame::freeze (const bool userAction, const bool on_off)
         // The program needs to freeze the game during a message, dialog, etc.
         if (on_off) {
             if (gameFrozen) {
-                if (programFreeze) {
-                    kDebug() << "P: The program has already frozen the game.";
-                }
-                else {
-                    kDebug() << "P: The user has already frozen the game.";
-                }
+                // if (programFreeze) {
+                    // kDebug() << "P: The program has already frozen the game.";
+                // }
+                // else {
+                    // kDebug() << "P: The user has already frozen the game.";
+                // }
                 return;			// The game is already frozen.
             }
             programFreeze = false;
         }
         else if (! programFreeze) {
-            if (gameFrozen) {
-                kDebug() << "P: The user will keep the game frozen.";
-            }
-            else {
-                kDebug() << "P: The game is NOT frozen.";
-            }
+            // if (gameFrozen) {
+                // kDebug() << "P: The user will keep the game frozen.";
+            // }
+            // else {
+                // kDebug() << "P: The game is NOT frozen.";
+            // }
             return;			// The user will keep the game frozen.
         }
         // The program will succeed in freezing or unfreezing the game.
@@ -1224,8 +1224,8 @@ void KGrGame::freeze (const bool userAction, const bool on_off)
     if (levelPlayer) {
         levelPlayer->pause (on_off);
     }
-    kDebug() << "RESULT: gameFrozen" << gameFrozen
-             << "programFreeze" << programFreeze;
+    // kDebug() << "RESULT: gameFrozen" << gameFrozen
+             // << "programFreeze" << programFreeze;
 }
 
 void KGrGame::showHint()
@@ -1994,7 +1994,7 @@ bool KGrGame::initRecordingData (const Owner fileOwner, const QString & prefix,
         recording->dateTime    = QDateTime::currentDateTime()
                                               .toUTC()
                                               .toString (Qt::ISODate);
-        kDebug() << "Recording at" << recording->dateTime;
+        // kDebug() << "Recording at" << recording->dateTime;
 
         KGrGameData * gameData = gameList.at (gameIndex);
         recording->owner       = gameData->owner;
@@ -2027,7 +2027,7 @@ void KGrGame::saveRecording()
 {
     QString filename = userDataDir + "rec_" + prefix + ".txt";
     QString groupName = prefix + QString::number(level).rightJustified(3,'0');
-    kDebug() << filename << groupName;
+    // kDebug() << filename << groupName;
 
     KConfig config (filename, KConfig::SimpleConfig);
     KConfigGroup configGroup = config.group (groupName);
@@ -2082,10 +2082,10 @@ void KGrGame::saveRecording()
 bool KGrGame::loadRecording (const QString & dir, const QString & prefix,
                                                   const int levelNo)
 {
-    kDebug() << prefix << levelNo;
+    // kDebug() << prefix << levelNo;
     QString filename  = dir + "rec_" + prefix + ".txt";
     QString groupName = prefix + QString::number(levelNo).rightJustified(3,'0');
-    kDebug() << filename << groupName;
+    // kDebug() << filename << groupName;
 
     KConfig config (filename, KConfig::SimpleConfig);
     if (! config.hasGroup (groupName)) {
