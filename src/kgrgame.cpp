@@ -151,6 +151,9 @@ bool KGrGame::modeSwitch (const int action,
     case SOLVE:
         slAction = SL_SOLVE;
         break;
+    case SAVE_SOLUTION:
+	slAction = SL_SAVE_SOLUTION;
+	break;
     case REPLAY_ANY:
         slAction = SL_REPLAY;
         break;
@@ -181,6 +184,7 @@ void KGrGame::gameActions (const int action)
 {
     int selectedGame  = gameIndex;
     int selectedLevel = level;
+    // For some actions, modeSwitch() calls the game and level selection dialog.
     if (! modeSwitch (action, selectedGame, selectedLevel)) {
         return;	
     }
@@ -234,6 +238,9 @@ void KGrGame::gameActions (const int action)
     case SOLVE:
         runReplay (SOLVE, selectedGame, selectedLevel);
 	break;
+    case SAVE_SOLUTION:
+	saveSolution (gameList.at (selectedGame)->prefix, selectedLevel);
+        break;
     case INSTANT_REPLAY:
         if (levelPlayer) {
             startInstantReplay();
@@ -505,12 +512,48 @@ void KGrGame::initGame()
 
 } // End KGrGame::initGame()
 
+bool KGrGame::getRecordingName (const QString & dir, const QString & pPrefix,
+                                QString & filename)
+{
+    QString recFile = dir + "rec_" + pPrefix + ".txt";
+    QFileInfo fileInfo (recFile);
+    bool recOK = fileInfo.exists() && fileInfo.isReadable();
+    filename = QString ("");
+
+    if (demoType == SOLVE) {
+	// Look for a solution-file name in User or System area.
+	QString solFile = dir + "sol_" + pPrefix + ".txt";
+	fileInfo.setFile (solFile);
+	bool solOK = fileInfo.exists() && fileInfo.isReadable();
+	if (solOK) {
+	    filename = solFile;	// Accept sol_* in User or System area.
+	    return true;
+	}
+	else if (recOK && (dir == systemDataDir)) {
+	    filename = recFile;	// Accept rec_* (old name) in System area only.
+	    return true;
+	}
+    }
+    else if (recOK) {
+	filename = recFile;	// Accept rec_* name for demo or recording.
+	return true;
+    }
+    // File not found or not readable.
+    return false;
+}
+
 bool KGrGame::startDemo (const Owner demoOwner, const QString & pPrefix,
                                                 const int levelNo)
 {
     // Find the relevant file and the list of levels it contains.
     QString     dir      = (demoOwner == SYSTEM) ? systemDataDir : userDataDir;
-    QString     filepath = dir + "rec_" + pPrefix + ".txt";
+    QString     filepath;
+    if (! getRecordingName (dir, pPrefix, filepath)) {
+	kDebug() << "No file found by getRecordingName() for" << dir << pPrefix;
+	return false;
+    }
+    dbk1 << "Owner" << demoOwner << "type" << demoType
+         << pPrefix << levelNo << "filepath" << filepath;
     KConfig     config (filepath, KConfig::SimpleConfig);
     QStringList demoList = config.groupList();
     dbk1 << "DEMO LIST" << demoList.count() << demoList;
@@ -780,7 +823,10 @@ void KGrGame::runReplay (const int action,
     if (action == SOLVE) {
         setPlayback (true);
         demoType = SOLVE;
-        if (! startDemo
+        if (startDemo		// Has the user saved a solution to this level?
+            (USER, gameList.at (selectedGame)->prefix, selectedLevel)) {
+	}
+	else if (! startDemo	// If not, look for a released solution.
             (SYSTEM, gameList.at (selectedGame)->prefix, selectedLevel)) {
             KGrMessage::information (view, i18n ("Show A Solution"),
                 i18n ("Sorry, although all levels of KGoldrunner can be "
@@ -845,7 +891,7 @@ bool KGrGame::playLevel (const Owner fileOwner, const QString & prefix,
     scene->deleteAllSprites();
 
     // Set up to record or play back: load either level-data or recording-data.
-    if (! initRecordingData (fileOwner, prefix, levelNo)) {
+    if (! initRecordingData (fileOwner, prefix, levelNo, playback)) {
         return false;
     }
 
@@ -955,8 +1001,8 @@ void KGrGame::endLevel (const int result)
 
     // If the player finished the level (won or lost), save the recording.
     if ((! playback) && ((result == WON_LEVEL) || (result == DEAD))) {
-        // dbk << "saveRecording()";
-        saveRecording();
+        // dbk << "saveRecording (QString ("rec_"))";
+        saveRecording (QString ("rec_"));
     }
 
     if (result == WON_LEVEL) {
@@ -1964,8 +2010,27 @@ bool KGrGame::loadGameData (Owner o)
     return (result);
 }
 
+void KGrGame::saveSolution (const QString & prefix, const int levelNo)
+{
+    demoType = REPLAY_ANY;		// Must load a "rec_" file, not "sol_".
+
+    // Proceed as if we are going to replay the selected level.
+    if (initRecordingData (USER, prefix, levelNo, true)) {
+	// But instead just save the recording data on a solution file.
+	saveRecording (QString ("sol_"));
+	KGrMessage::information (view, i18n ("Save A Solution"),
+            i18n ("Your solution to level %1 has been saved on file %2",
+                  levelNo, userDataDir + "sol_" + prefix + ".txt"));
+    }
+    else {
+	KGrMessage::information (view, i18n ("Save A Solution"),
+	    i18n ("Sorry, you do not seem to have played and recorded "
+		  "the selected level before."), "Show_noRecording");
+    }
+}
+
 bool KGrGame::initRecordingData (const Owner fileOwner, const QString & prefix,
-                                 const int levelNo)
+                                 const int levelNo, const bool pPlayback)
 {
     // Initialise the recording.
     delete recording;
@@ -1976,7 +2041,7 @@ bool KGrGame::initRecordingData (const Owner fileOwner, const QString & prefix,
     // If system game or ENDE, choose system dir, else choose user dir.
     const QString dir = ((fileOwner == SYSTEM) || (levelNo == 0)) ?
                         systemDataDir : userDataDir;
-    if (playback) {
+    if (pPlayback) {
         kDebug() << "loadRecording" << dir << prefix << levelNo;
         if (! loadRecording (dir, prefix, levelNo)) {
             return false;
@@ -2023,10 +2088,11 @@ bool KGrGame::initRecordingData (const Owner fileOwner, const QString & prefix,
     return true;
 }
 
-void KGrGame::saveRecording()
+void KGrGame::saveRecording (const QString & filetype)
 {
-    QString filename = userDataDir + "rec_" + prefix + ".txt";
-    QString groupName = prefix + QString::number(level).rightJustified(3,'0');
+    QString filename = userDataDir + filetype + prefix + ".txt";
+    QString groupName = prefix +
+                        QString::number(recording->level).rightJustified(3,'0');
     // kDebug() << filename << groupName;
 
     KConfig config (filename, KConfig::SimpleConfig);
@@ -2083,7 +2149,11 @@ bool KGrGame::loadRecording (const QString & dir, const QString & prefix,
                                                   const int levelNo)
 {
     // kDebug() << prefix << levelNo;
-    QString filename  = dir + "rec_" + prefix + ".txt";
+    QString     filename;
+    if (! getRecordingName (dir, prefix, filename)) {
+	kDebug() << "No file found by getRecordingName() for" << dir << prefix;
+	return false;
+    }
     QString groupName = prefix + QString::number(levelNo).rightJustified(3,'0');
     // kDebug() << filename << groupName;
 
@@ -2132,7 +2202,9 @@ bool KGrGame::loadRecording (const QString & dir, const QString & prefix,
             KGrGameIO    io (view);
             KGrLevelData levelData;
 
-            if (io.readLevelData (dir, recording->prefix, recording->level,
+	    QString levelDir = (gameList.at (index)->owner == USER) ?
+                               userDataDir : systemDataDir;
+            if (io.readLevelData (levelDir, recording->prefix, recording->level,
                                   levelData)) {
                 // If there is a level name or hint, translate it.
                 recording->levelName   = (levelData.name.size() > 0) ?

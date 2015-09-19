@@ -220,7 +220,7 @@ void KGoldrunner::setupActions()
     a->setText (i18n ("&Load Saved Game..."));
 
     // Save Game...
-    // Save Edits... (extra copy)
+    // Save Solution...
     // --------------------------
 
     saveGame = KStandardGameAction::save (gameMapper, SLOT(map()), this);
@@ -228,6 +228,14 @@ void KGoldrunner::setupActions()
     gameMapper->setMapping (saveGame, SAVE_GAME);
     saveGame->setText (i18n ("&Save Game..."));
     saveGame->setShortcut (Qt::Key_S); // Alternate key.
+
+    a        = gameAction ("save_solution", SAVE_SOLUTION,
+                           i18n ("Save A Solution..."),
+                           i18n ("Save A Solution..."),
+                           i18n ("Save a solution for a level into a file "
+                                 "called 'sol_<prefix>.txt' in your user's "
+                                 "data directory..."),
+                           Qt::ShiftModifier + Qt::Key_S);
 
     // Pause
     // Show High Scores
