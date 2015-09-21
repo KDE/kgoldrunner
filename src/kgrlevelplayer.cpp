@@ -73,28 +73,6 @@ KGrLevelPlayer::~KGrLevelPlayer()
     dugBricks.clear(); //TODO: necessary?
     // kDebug() << "LEVEL PLAYER BEING DELETED.";
     playerCount--;
-
-// TODO - Remove this debugging code.
-if (recording) {
-    int ch = 0;
-    for (int i = 0; i <= (recIndex + 1); i ++) {
-        ch = (uchar)(recording->content.at(i));
-        dbe1 "%03d ", ch);
-        if (ch == 0)
-            break;
-    }
-    dbe1 "\n%d bytes\n", recIndex + 1);
-    int j = 0;
-    while (j < recording->draws.size()) {
-        ch = (uchar)(recording->draws.at(j));
-        dbe1 "%03d ", ch);
-        if (ch == 0)
-            break;
-        j++;
-    }
-    dbe1 "\n%d bytes\n", j);
-}
-
 }
 
 void KGrLevelPlayer::init (KGrView * view,
