@@ -229,12 +229,14 @@ void KGoldrunner::setupActions()
     saveGame->setText (i18n ("&Save Game..."));
     saveGame->setShortcut (Qt::Key_S); // Alternate key.
 
+    // The name of the solution-file is 'sol_<prefix>.txt', where <prefix> is
+    // the unique prefix belonging to the game involved (eg. plws, tute, etc.).
     a        = gameAction ("save_solution", SAVE_SOLUTION,
                            i18n ("Save A Solution..."),
                            i18n ("Save A Solution..."),
                            i18n ("Save a solution for a level into a file "
-                                 "called 'sol_<prefix>.txt' in your user's "
-                                 "data directory..."),
+                                 "called 'sol_&lt;prefix&gt;.txt' in your "
+				 "user's data directory..."),
                            Qt::ShiftModifier + Qt::Key_S);
 
     // Pause
