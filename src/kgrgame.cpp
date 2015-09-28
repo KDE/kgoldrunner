@@ -894,6 +894,13 @@ bool KGrGame::playLevel (const Owner fileOwner, const QString & prefix,
     if (! initRecordingData (fileOwner, prefix, levelNo, playback)) {
         return false;
     }
+    else if (playback) {
+        // Set up and display the starting score and lives.
+        lives = recording->lives;
+        emit showLives (lives);
+        score = recording->score;
+        emit showScore (score);
+    }
 
     scene->setLevel (levelNo);		// Switch and render background if reqd.
     scene->fadeIn (true);		// Then run the fade-in animation.
@@ -1003,6 +1010,12 @@ void KGrGame::endLevel (const int result)
     if ((! playback) && ((result == WON_LEVEL) || (result == DEAD))) {
         // dbk << "saveRecording (QString ("rec_"))";
         saveRecording (QString ("rec_"));
+
+        // Save the game and level, for use in the REPLAY_LAST action.
+        KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
+        gameGroup.writeEntry ("LastGamePrefix", prefix);
+        gameGroup.writeEntry ("LastLevel",      level);
+        gameGroup.sync();		// Ensure that the entry goes to disk.
     }
 
     if (result == WON_LEVEL) {
@@ -2012,6 +2025,9 @@ bool KGrGame::loadGameData (Owner o)
 
 void KGrGame::saveSolution (const QString & prefix, const int levelNo)
 {
+    // Save the game and level data that is currently displayed.
+    KGrRecording * prevRecording = recording;
+    recording = 0;
     demoType = REPLAY_ANY;		// Must load a "rec_" file, not "sol_".
 
     // Proceed as if we are going to replay the selected level.
@@ -2027,6 +2043,11 @@ void KGrGame::saveSolution (const QString & prefix, const int levelNo)
 	    i18n ("Sorry, you do not seem to have played and recorded "
 		  "the selected level before."), "Show_noRecording");
     }
+
+    // Restore the game and level data that is currently displayed.
+    recording = prevRecording;
+
+    // TODO - Factor KGrRecording into separate files, with methods, etc.
 }
 
 bool KGrGame::initRecordingData (const Owner fileOwner, const QString & prefix,
@@ -2042,7 +2063,6 @@ bool KGrGame::initRecordingData (const Owner fileOwner, const QString & prefix,
     const QString dir = ((fileOwner == SYSTEM) || (levelNo == 0)) ?
                         systemDataDir : userDataDir;
     if (pPlayback) {
-        kDebug() << "loadRecording" << dir << prefix << levelNo;
         if (! loadRecording (dir, prefix, levelNo)) {
             return false;
         }
@@ -2137,12 +2157,6 @@ void KGrGame::saveRecording (const QString & filetype)
     configGroup.writeEntry ("Draws", bytes);
 
     configGroup.sync();			// Ensure that the entry goes to disk.
-
-    // Save the game and level, for use in the REPLAY_LAST action.
-    KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
-    gameGroup.writeEntry ("LastGamePrefix", prefix);
-    gameGroup.writeEntry ("LastLevel",      level);
-    gameGroup.sync();			// Ensure that the entry goes to disk.
 }
 
 bool KGrGame::loadRecording (const QString & dir, const QString & prefix,
@@ -2155,7 +2169,7 @@ bool KGrGame::loadRecording (const QString & dir, const QString & prefix,
 	return false;
     }
     QString groupName = prefix + QString::number(levelNo).rightJustified(3,'0');
-    // kDebug() << filename << groupName;
+    kDebug() << "loadRecording" << filename << prefix << levelNo << groupName;
 
     KConfig config (filename, KConfig::SimpleConfig);
     if (! config.hasGroup (groupName)) {
@@ -2229,12 +2243,6 @@ bool KGrGame::loadRecording (const QString & dir, const QString & prefix,
     for (int i = 0; i < n; i++) {
         recording->draws [i] = bytes.at (i);
     }
-
-    // Set up and display the starting score and lives.
-    lives = recording->lives;
-    emit showLives (lives);
-    score = recording->score;
-    emit showScore (score);
     return true;
 }
 
