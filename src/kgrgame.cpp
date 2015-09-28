@@ -574,8 +574,8 @@ bool KGrGame::startDemo (const Owner demoOwner, const QString & pPrefix,
         playbackPrefix = pPrefix;
         playbackIndex  = levelNo;
 
-        // Play back all levels in Main Demo or just one level in other demos.
-        playbackMax    = (playbackPrefix == mainDemoName) ?
+        // Play back all levels in Main Demo or just one level in other replays.
+        playbackMax = ((demoType == DEMO) && (playbackPrefix == mainDemoName)) ?
                           demoList.count() : levelNo;
         if (levelPlayer) {
             levelPlayer->prepareToPlay();
