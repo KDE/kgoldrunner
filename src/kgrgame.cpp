@@ -1698,9 +1698,10 @@ void KGrGame::checkHighScore()
     mainLayout->setMargin (margin);
 
     QLabel *		hsnMessage  = new QLabel (
-                        i18n ("<html><b>Congratulations !!!</b><br>"
-                        "You have achieved a high score in this game.<br>"
-                        "Please enter your name so that it may be enshrined<br>"
+                        i18n ("<html><b>Congratulations !!!</b><br/>"
+                        "You have achieved a high score in this game.<br/>"
+                        "Please enter your name "
+                        "so that it may be enshrined<br/>"
                         "in the KGoldrunner Hall of Fame.</html>"),
                         hsn);
     QLineEdit *		hsnUser = new QLineEdit (hsn);
