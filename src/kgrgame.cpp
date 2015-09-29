@@ -2046,6 +2046,7 @@ void KGrGame::saveSolution (const QString & prefix, const int levelNo)
     }
 
     // Restore the game and level data that is currently displayed.
+    delete recording;
     recording = prevRecording;
 
     // TODO - Factor KGrRecording into separate files, with methods, etc.
