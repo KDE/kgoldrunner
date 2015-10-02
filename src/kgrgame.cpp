@@ -825,13 +825,16 @@ void KGrGame::runReplay (const int action,
         demoType = SOLVE;
         if (startDemo		// Has the user saved a solution to this level?
             (USER, gameList.at (selectedGame)->prefix, selectedLevel)) {
-	}
-	else if (! startDemo	// If not, look for a released solution.
-            (SYSTEM, gameList.at (selectedGame)->prefix, selectedLevel)) {
-            KGrMessage::information (view, i18n ("Show A Solution"),
-                i18n ("Sorry, although all levels of KGoldrunner can be "
-                      "solved, no solution has been recorded yet for the "
-                      "level you selected."), "Show_noSolutionRecorded");
+        }
+        else {			// If not, look for a released solution.
+            setPlayback (true);	// Set playback again (startDemo() cleared it).
+            if (! startDemo
+                (SYSTEM, gameList.at (selectedGame)->prefix, selectedLevel)) {
+                KGrMessage::information (view, i18n ("Show A Solution"),
+                    i18n ("Sorry, although all levels of KGoldrunner can be "
+                          "solved, no solution has been recorded yet for the "
+                          "level you selected."), "Show_noSolutionRecorded");
+            }
         }
     }
     else if (action == REPLAY_ANY) {
