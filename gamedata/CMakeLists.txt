@@ -26,5 +26,9 @@ install( FILES game_CM.txt
                rec_demo.txt
                rec_GMGR.txt
 	       rec_GRII.txt
+	       sol_kgr.txt
+	       sol_plws.txt
+	       sol_tute.txt
+	       sol_tutea.txt
    DESTINATION ${DATA_INSTALL_DIR}/kgoldrunner/system )
 
