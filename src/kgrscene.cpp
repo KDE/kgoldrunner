@@ -108,7 +108,7 @@ KGrScene::~KGrScene()
 
 void KGrScene::redrawScene ()
 {
-    qDebug() << "REDRAW: m_sizeChanged" << m_sizeChanged << "m_themeChanged" << m_themeChanged;
+    // qDebug() << "REDRAW: m_sizeChanged" << m_sizeChanged << "m_themeChanged" << m_themeChanged;
     bool redrawToolbar = false;
     if (m_sizeChanged) {
         // Calculate what size of tile will fit in the view.
@@ -118,7 +118,7 @@ void KGrScene::redrawScene ()
         m_topLeftX   = (size.width()  - m_tilesWide * tileSize)/2.0;
         m_topLeftY   = (size.height() - m_tilesHigh * tileSize)/2.0;
         setSceneRect   (0, 0, size.width(), size.height());
-	qDebug() << "SIZE" << size << "TL" << m_topLeftX << m_topLeftY << "TILE" << tileSize << "was" << m_tileSize << m_toolbarTileSize;
+	// qDebug() << "SIZE" << size << "TL" << m_topLeftX << m_topLeftY << "TILE" << tileSize << "was" << m_tileSize << m_toolbarTileSize;
 
         // Make the fade-out/fade-in rectangle cover the playing area.
         m_spotlight->setRect (m_topLeftX + 2 * tileSize - 1,

@@ -171,20 +171,20 @@ KGoldrunner::KGoldrunner()
     // Do NOT paint main widget yet (title bar, menu, blank playfield).
     // Instead, queue a call to the "KGoldrunner_2" constructor extension.
     QMetaObject::invokeMethod (this, "KGoldrunner_2", Qt::QueuedConnection);
-    kDebug() << "QMetaObject::invokeMethod (this, \"KGoldrunner_2\") done ... ";
-    kDebug() << "1st scan of event-queue ...";
+    // kDebug() << "QMetaObject::invokeMethod (this, \"KGoldrunner_2\") done ... ";
+    // kDebug() << "1st scan of event-queue ...";
 }
 
 void KGoldrunner::KGoldrunner_2()
 {
-    kDebug() << "Entered constructor extension ...";
+    // kDebug() << "Entered constructor extension ...";
 
     // Queue a call to the "initGame" method. This renders and paints the
     // initial graphics, but only AFTER the initial main-window resize events
     // have been seen and the final SVG scale is known.
     QMetaObject::invokeMethod (game, "initGame", Qt::QueuedConnection);
-    kDebug() << "QMetaObject::invokeMethod (game, \"initGame\") done ... ";
-    kDebug() << "2nd scan of event-queue ...";
+    // kDebug() << "QMetaObject::invokeMethod (game, \"initGame\") done ... ";
+    // kDebug() << "2nd scan of event-queue ...";
 }
 
 KGoldrunner::~KGoldrunner()
@@ -223,7 +223,7 @@ void KGoldrunner::setupActions()
     a->setText (i18n ("&Load Saved Game..."));
 
     // Save Game...
-    // Save Edits... (extra copy)
+    // Save Solution...
     // --------------------------
 
     saveGame = KStandardGameAction::save (gameMapper, SLOT(map()), this);
@@ -231,6 +231,16 @@ void KGoldrunner::setupActions()
     gameMapper->setMapping (saveGame, SAVE_GAME);
     saveGame->setText (i18n ("&Save Game..."));
     saveGame->setShortcut (Qt::Key_S); // Alternate key.
+
+    // The name of the solution-file is 'sol_<prefix>.txt', where <prefix> is
+    // the unique prefix belonging to the game involved (eg. plws, tute, etc.).
+    a        = gameAction ("save_solution", SAVE_SOLUTION,
+                           i18n ("Save A Solution..."),
+                           i18n ("Save A Solution..."),
+                           i18n ("Save a solution for a level into a file "
+                                 "called 'sol_&lt;prefix&gt;.txt' in your "
+				 "user's data directory..."),
+                           Qt::ShiftModifier + Qt::Key_S);
 
     // Pause
     // Show High Scores
@@ -802,7 +812,7 @@ void KGoldrunner::setEditMenu (bool on_off)
 
     if (on_off){
         // Set the editToolbar icons to the current tile-size.
-        kDebug() << "ToolBar icon size:" << scene->tileSize ();
+        // kDebug() << "ToolBar icon size:" << scene->tileSize ();
         toolBar ("editToolbar")->setIconSize (scene->tileSize ());
 
         // Set the editToolbar icons up with pixmaps of the current theme.
@@ -854,7 +864,7 @@ void KGoldrunner::saveProperties (KConfigGroup & /* config - unused */)
     // config file.  Anything you write here will be available
     // later when this app is restored.
 
-    kDebug() << "I am in KGoldrunner::saveProperties.";
+    // kDebug() << "I am in KGoldrunner::saveProperties.";
 }
 
 void KGoldrunner::readProperties (const KConfigGroup & /* config - unused */)
@@ -864,7 +874,7 @@ void KGoldrunner::readProperties (const KConfigGroup & /* config - unused */)
     // the app is being restored.  Read in here whatever you wrote
     // in 'saveProperties'
 
-    kDebug() << "I am in KGoldrunner::readProperties.";
+    // kDebug() << "I am in KGoldrunner::readProperties.";
 }
 
 void KGoldrunner::optionsConfigureKeys()

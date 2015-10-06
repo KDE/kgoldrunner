@@ -1,0 +1,133 @@
+[tute001]
+Content=135,75,234,132,156,129,221,131,24,129,34,131,121,255,0
+Draws=0
+GameName=Tutorial
+Height=20
+Hint=Hi!  Welcome to KGoldrunner!  The idea of the game is to pick up all the gold nuggets, then climb to the top of the playing area and move up to the next level.  A hidden ladder will appear as you collect the last nugget.\n\nThe hero, at the top left, is your deputy.  To collect the nuggets, just point the mouse where you want him to go.  At first gravity takes over and he falls ...
+KeyOption=5
+Layout=R                          Z                           Z  MM    MM      MM  MM     Z  MM    MM      MM  MM     Z  MM    MM      MM  MM     Z  MM    MM      MM  MM     Z  MM    MM  MM  MM  MM     Z  MMMMMMMM  MM  MM  MM     Z  MMMMMMMM      MM  MM     Z  MM    MM  MM  MM  MM     Z  MM    MM  MM  MM  MM     Z  MM    MM  MM  MM  MM     Z  MM    MM  MM             Z  MM    MM  MM  MM  MM     Z  MM    MM  MM  MM  MM   NNZ                        HMMM                        HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+Level=1
+Lives=5
+Mode=3
+Name=Hi!
+Owner=0
+Prefix=tute
+Rules=84
+Score=0
+Speed=10
+Width=28
+
+[tute002]
+Content=135,75,234,132,65,129,90,132,62,129,67,131,45,130,40,131,33,129,138,131,45,129,126,131,112,255,0
+Draws=0
+GameName=Tutorial
+Height=20
+Hint=This is an exercise in moving around.  Follow the track of gold nuggets until the ladder pops up at the right.  The hero can only follow the mouse along simple paths (like _ | L or U), so be careful not to get too far ahead of him.\n\nDANGER: Try not to fall off the ladder or bar into the concrete pit at the bottom right.  If you do get trapped there, the only way out is to kill the hero (press key Q for quit) and start the level again.
+KeyOption=5
+Layout=R                          ZN                          ZN                          ZN                          ZN                          ZN                          ZN                          ZN                          ZNNN   M                    ZMMMN  M                    ZMMMN  MNNNNNNNN  NN        ZMMMNN MHMMMMMMH  HM        ZMMMMHMMHMMMMMMH  H         ZMMMMH  HNNNNNMH  H TTTTNNNNZMMMMH  HMMMMHXH  H     XXXXXMMMMH       H HNNH         XMMMMH       H HXXH         XMMMMH       H    X         XMMMMHNNNNNNNH    X         XMMMMMMMMMMMMH    XXXXXXXXXXX
+Level=2
+Lives=5
+Mode=3
+Name=Navigation
+Owner=0
+Prefix=tute
+Rules=84
+Score=0
+Speed=10
+Width=28
+
+[tute003]
+Content=1,1,75,234,133,1,1,14,2,1,3,3,1,5,4,1,3,5,1,16,5,2,10,5,3,10,6,3,15,6,4,6,7,4,20,133,7,4,18,6,4,31,133,6,4,12,7,3,3,8,4,16,8,5,4,9,5,5,8,5,18,8,6,2,8,7,2,8,8,3,8,9,37,134,8,9,13,9,9,4,10,9,2,10,8,2,11,8,8,12,8,28,11,8,4,10,8,1,9,8,2,8,8,7,7,8,8,6,8,12,5,8,20,5,9,12,4,10,3,4,11,77,5,11,20,134,5,11,33,6,11,21,134,6,11,16,5,11,3,4,11,13,5,11,23,134,5,11,18,4,11,7,4,12,2,3,12,13,3,13,1,3,14,2,3,15,2,3,16,13,3,17,7,2,17,8,1,17,22,2,17,6,3,17,3,4,17,1,5,18,2,6,18,2,7,18,2,8,18,3,9,18,7,10,18,4,11,18,26,12,19,3,13,19,2,14,19,1,14,20,2,15,20,32,15,19,11,15,18,5,14,18,8,14,17,20,13,17,11,12,17,11,11,17,6,10,17,21,11,17,5,12,17,5,12,16,3,13,16,7,14,15,5,14,14,14,13,14,5,13,13,8,12,13,1,12,14,14,11,14,12,10,14,2,9,14,2,8,13,19,9,13,4,10,13,1,10,14,20,134,10,14,19,9,14,12,8,14,21,7,14,20,8,14,10,9,14,5,10,15,4,11,15,2,12,15,15,13,15,7,13,14,3,14,14,5,14,13,4,14,12,2,14,11,3,14,10,4,14,9,5,14,8,3,14,7,24,13,7,4,13,6,2,13,5,6,14,5,1,14,4,5,15,3,49,16,3,18,17,3,8,18,3,1,18,4,11,19,4,16,20,4,29,133,20,4,9,19,4,22,133,19,4,12,18,4,25,133,18,4,23,19,4,15,20,4,2,20,5,23,134,20,5,17,21,5,20,134,21,5,17,20,5,31,134,20,5,21,19,5,5,19,6,6,19,7,10,19,8,3,20,8,21,21,8,5,22,8,6,23,8,8,24,8,7,24,9,5,25,9,24,24,9,21,133,24,9,14,23,9,2,23,8,24,133,23,8,20,22,8,18,133,22,8,15,23,8,11,23,9,2,24,9,34,133,24,9,20,23,9,20,133,23,9,24,24,9,1,24,10,33,133,24,10,26,25,10,18,25,11,3,25,12,2,25,13,15,25,14,8,24,14,14,23,14,7,22,14,10,22,13,27,134,22,13,32,21,13,6,21,14,7,20,14,13,19,14,28,20,14,2,20,15,1,21,15,4,22,15,4,23,15,10,24,15,33,133,24,15,16,23,15,21,133,23,15,16,22,15,25,133,22,15,15,23,15,12,24,15,16,24,16,19,133,24,16,22,23,16,20,133,23,16,21,24,16,34,133,24,16,22,25,16,11,26,16,8,26,15,19,27,15,11,27,14,2,27,13,3,27,12,3,27,11,4,27,10,3,27,9,1,28,9,2,28,8,2,28,7,1,27,7,1,27,6,3,27,5,3,28,5,12,28,6,6,28,5,3,28,4,5,28,3,5,28,2,3,28,1,122,255,0
+DateTime=2015-10-01T01:55:23Z
+Draws=0
+GameName=Tutorial
+Height=20
+Hint=Now you have to dig to get the gold!  Just use the left and right mouse buttons to dig left or right of the hero's position.  The hero can then jump into and through the hole he has dug.  He can also dig several holes in a row and run sideways through the dug holes.  Be careful though.  After a while the holes close up and you can get trapped and killed.\n\nIn the third box down, you have to dig two holes, jump in and quickly dig one more, to get through two layers.  On the right, you have to dig three, then two then one to get through.  There are also two little puzzles to work out along the way.  Good luck!\n\nBy the way, you can dig through brick, but not concrete.
+KeyOption=6
+Layout=R                          ZMMMMMMMM                   ZM      M                   ZM NNNN M      TT           ZMMMMMMMMMMMMMH  XXMMMXXXXXXZ     M      MH  MMMMMMMMMMMZ     M      MH  XXMMMMMMMXXZ     M      MH  MM       MMZ     M NNNN MH  XXNNNNNNNXXZMMMMMMMMMMMMMH  MMXXXXMMMMMZM      MM    H  XXMMMMMMMXXZM      M     H  MMXXXXMMMMMZMMM NNMM     H  XX       XXZMMMMMMMMN    H  MMMM     MMZMMMMMMMMMXXXXH  XXNNMHNNNXXZM     NNN    H  MMMMMMMMMMMZM     MMM  NNH  XXMMMMMMMXXZMNNN     HMMMH  MMMMMMMMMMMZMMMMH    H NNH          NNNZMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+Level=3
+Lives=5
+Mode=2
+Name=Digging
+Owner=0
+Prefix=tute
+Rules=84
+Score=0
+Speed=10
+Width=28
+
+[tute004]
+Content=135,75,234,133,128,126,129,92,132,67,130,191,129,10,134,128,16,130,38,129,106,133,128,26,129,246,131,32,133,128,135,129,43,134,128,35,129,60,130,54,131,79,129,58,130,40,131,52,129,57,130,42,131,47,129,50,131,64,255,0
+Draws=20,27,25,13,9,3,9,13,9,5,12,11,10,7,7,10,6,9,9,2,6,2,4,4,2,2,2,1,0
+GameName=Tutorial
+Height=20
+Hint=Well, it has been nice and easy up to now, but the game would be no fun without enemies.  They are after the gold too: worse still they are after you!  You die if they catch you, but maybe you will have a few lives left and can start again.\n\nYou can handle enemies by running away, digging a hole or luring them into part of the playing area where they get stranded.\n\nIf an enemy falls into a hole, he gives up any gold he is carrying, then gets stuck in the hole for a time and climbs out.  If the hole closes while he is in it, he dies and reappears somewhere else on the screen.  You can deliberately kill enemies by digging several holes in a row.\n\nMore importantly, you can run over an enemy's head.  You should do that right at the start of this level.  Dig a hole, trap the enemy, wait for him to fall all the way in, then run over him, with the other enemy in hot pursuit ...\n\nIf you are feeling stressed, you can hit the Pause key at any time (default P or Esc) and take a break.  Hit it again when you wish to continue.
+KeyOption=5
+Layout=E                          ZMMMMH                      Z    H                      Z    H                      Z    HR   E                 ZMMMMMMMMMMMMMH          HMMM             H          H                H          H  N             H          HMMM            HH          H   N           H           H   MMMMMMMMMMMMH           H  N            H          HHMMM            H          HMMMMN           H          H    MMMMMMMMMMMMH          H         M      H          H         M      H          H   NE   EM  N   H NNNNN HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+Level=4
+Lives=5
+Mode=3
+Name=You Have ENEMIES!
+Owner=0
+Prefix=tute
+Rules=84
+Score=0
+Speed=10
+Width=28
+
+[tute005]
+Content=135,75,234,129,206,133,128,28,129,21,130,39,132,62,129,77,132,58,130,77,131,24,130,146,131,150,129,153,134,128,21,130,62,132,85,130,217,131,156,129,73,133,128,25,129,20,130,30,132,134,130,22,132,31,130,66,131,151,129,10,133,128,30,129,70,134,128,16,130,92,132,83,130,123,131,147,255,0
+Draws=0
+GameName=Tutorial
+Height=20
+Hint=You can move horizontally along bars (or poles), but if you move down you will let go and fall ...  Also, note that you can collect gold by falling onto it.
+KeyOption=5
+Layout=R                           HXMXXXXXXXMXXXXXXXMXXXXXXXXMH TT     TT TTTTT    TTTTTTTH TT    TT  TTTTTT   TTTTTTTH TT   TT   TT   TT  TT N   H TT  TT    TT   NTT TT N   H TT TT N   TT   NTT TT N   H TTTT      TT   NTT TT     H TTT N N   TT    TT TT     H TTT N     TT    TT TTTTT  H TTT N N   TT    TT TTTTTN H TTT       TT    TT TT   N H TTTT      TT    TT TT   N H TTNTT N   TT    TT TT   N H TTN TT    TT    TT TT     H TTN  TT   TT  NTT  TT     H TTN  NTT  TTTTTT   TTTTTTTH TT     TT TTTTT    TTTTTTTH                    NNNNNN HHHHHHHHHHHHHHHHHHHH MMMMMMM
+Level=5
+Lives=5
+Mode=3
+Name=Bars
+Owner=0
+Prefix=tute
+Rules=84
+Score=0
+Speed=10
+Width=28
+
+[tute006]
+Content=135,75,234,133,128,19,134,128,229,130,33,133,128,47,130,26,133,128,254,128,13,132,90,131,66,129,201,131,43,133,128,20,132,13,133,128,12,132,8,133,128,20,129,70,130,127,131,206,129,232,130,50,131,254,131,141,130,61,133,128,26,130,11,133,128,153,129,53,134,128,12,131,30,129,186,134,128,16,132,15,134,128,18,134,128,17,130,70,129,54,131,226,255,0
+Draws=9,12,21,9,5,7,20,6,8,11,12,3,4,2,6,3,12,7,1,5,1,5,3,1,2,2,2,1,0
+GameName=Tutorial
+Height=20
+Hint=Some of the bricks in this level are not what they seem.  If you walk onto them you fall through.  The enemies fall through them too.
+KeyOption=5
+Layout=\s                          Z            E   E          ZMMMMMMHMMMMMMMFMMMMMMMMMMMMZMMMMHHH      MNM           Z    H H      MNM           Z    H H      MFM           Z    H H      MNM           ZMMMHH H      MNM           Z   H  H      MFM           Z   H  H      MNM           Z   H  H      MNM           Z   H  H      MFM           Z E H  H                    ZMMFH  H      XXXXXXXXXXXXXXZHHHH  H                    ZH     H                    ZH     H                    ZH     H     HMXXXXXXXXXXXXMHH   R H     HMNNNMMMMMMNNNMHHMMMMFMMMMMMMMMMMMMMMMMMMMMM
+Level=6
+Lives=5
+Mode=3
+Name=False Bricks
+Owner=0
+Prefix=tute
+Rules=84
+Score=0
+Speed=10
+Width=28
+
+[tute007]
+Content=135,75,234,129,83,130,22,133,128,22,130,10,133,128,31,129,21,133,128,8,133,128,9,133,128,17,129,26,130,51,133,128,26,130,19,133,128,26,129,22,133,128,8,133,128,8,133,128,17,129,61,130,24,133,128,28,130,15,133,128,26,129,21,133,128,9,133,128,7,133,128,18,129,85,133,128,138,129,40,134,128,14,131,46,130,13,131,65,130,24,129,174,134,128,11,129,70,131,43,129,12,131,131,129,69,130,21,133,128,20,130,12,133,128,48,129,36,134,128,17,130,95,129,129,130,60,129,10,134,128,25,129,10,134,128,19,130,25,134,128,9,134,128,7,134,128,16,130,34,132,26,130,42,131,72,129,9,131,143,255,0
+Draws=0
+GameName=Tutorial
+Height=20
+Hint=This is just a nice easy level to finish up with.  Have fun with the other games in KGoldrunner.\n\nNote that there is a game Editor in which you and your friends can make up levels and challenge each other.  And if you like action, the KGoldrunner rules used in some of the games are fast and furious.  There is also a KGoldrunner Handbook in the Help Menu, which contains more detail than this Tutorial.\n\nIt has been a pleasure showing you around.  Bye!
+KeyOption=5
+Layout=ZRZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZNNNNNZZZZZZZZZZZZZZZNNNNNNZMMMMMMHHMMMZZZZZZMMMHMMMMMMMMMMMMMMHHMMMZZZZMMMZHMMMMMMMMMZZZMMMHZMMMZZMMMZZHMMZZZZZMMZZZZMMHZZMMMMMMZZZHMMZZZZZMMNNNMMMHZZZMFFMZZZZHMMNNNZZMMMMMMMNHZZZMZZMZZZZHMMMMMZZMMMMMMMNHZZZMMMMZZZZHMMMMMZZMMZZZMMMHZZZMFFMZZZZHMMZZZZZMMZZZZMMHZZZMZZMZZZZHMMZZZZZMMZZZZMMHZZZMMMMZZZZHMMZZZZZMMNNNMMMHZZZMZZMZZZZHMMNNNNNMMMMMMMZZHZZMMMMZZZHZMMMMMMMMMMMMMZZZHZZMFFMZZZHZMMMMMMMZZZZZZZZZHZZZZZZZZZHZZZZZZZZZZZZZZZZEHZZZZZZZZZHEZZZZZZZMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+Level=7
+Lives=5
+Mode=3
+Name=Bye ...
+Owner=0
+Prefix=tute
+Rules=84
+Score=0
+Speed=10
+Width=28

@@ -59,7 +59,7 @@ enum KBAction		{KB_UP, KB_DOWN, KB_LEFT, KB_RIGHT,
 // Action codes when selecting a level or game for play, editing or replay.
 enum SelectAction	{SL_START, SL_ANY, SL_CREATE, SL_UPDATE, SL_SAVE,
                          SL_MOVE, SL_DELETE, SL_CR_GAME, SL_UPD_GAME,
-                         SL_REPLAY, SL_SOLVE, SL_NONE};
+                         SL_REPLAY, SL_SOLVE, SL_SAVE_SOLUTION, SL_NONE};
 
 /// Codes for the rules of the selected game and level.
 const char TraditionalRules = 'T';
@@ -151,7 +151,8 @@ public:
 
 enum GameAction    {NEW, NEXT_LEVEL, LOAD, SAVE_GAME, PAUSE, HIGH_SCORE,
                     KILL_HERO, HINT,
-                    DEMO, SOLVE, INSTANT_REPLAY, REPLAY_LAST, REPLAY_ANY};
+                    DEMO, SOLVE, SAVE_SOLUTION,
+                    INSTANT_REPLAY, REPLAY_LAST, REPLAY_ANY};
 
 enum EditAction    {CREATE_LEVEL, EDIT_ANY, SAVE_EDITS, MOVE_LEVEL,
                     DELETE_LEVEL, CREATE_GAME,  EDIT_GAME};

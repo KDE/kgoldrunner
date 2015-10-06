@@ -99,7 +99,7 @@ void KGrRenderer::matchThemes (const KgTheme * currentSetTheme)
 
 void KGrRenderer::currentThemeChanged (const KgTheme* currentSetTheme)
 {
-    qDebug() << "KGrRenderer::currentThemeChanged()" << currentSetTheme->name();
+    // qDebug() << "KGrRenderer::currentThemeChanged()" << currentSetTheme->name();
 
     matchThemes (currentSetTheme);
     m_scene->changeTheme();
@@ -275,7 +275,7 @@ QString KGrRenderer::getBackgroundKey (const int level)
 	}
     }
 
-    qDebug() << "BACKGROUND pixmap key" << pixmapKey;
+    // qDebug() << "BACKGROUND pixmap key" << pixmapKey;
     return pixmapKey;
 }
 
