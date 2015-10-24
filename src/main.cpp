@@ -28,7 +28,7 @@ static const char description[] =
     I18N_NOOP ("KGoldrunner is a game of action and puzzle solving");
 
 // The intention is to keep the KGoldrunner version number in line with KDE.
-static const char version[] = "4.10";
+static const char version[] = "4.14";
 
 static bool gameDataOK();
 static void addCredits (KAboutData & about);
