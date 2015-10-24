@@ -15,11 +15,12 @@
 sed -e 's/\\n/\\\\n/g' games.dat | while read line
 do
     case "$line" in
-	0*|1*)	echo "Pass 1: $line"
+	0*|1*|2*)
+		echo "Pass 1: $line"
 		set -- $line				# Re-parse game-data.
 		prefix="$3"				# Get fixed ID of game.
 		game="game_$prefix.txt"			# Generate file name.
-		echo "// G$1 $2 $3" >"$game"		# Write game-data line.
+		echo "// G$1 $2 $3 N" >"$game"		# Write game-data line.
 		shift; shift; shift
 		echo " i18n(\"$*\");" >>$game		# Append name of game.
 		;;
@@ -32,7 +33,8 @@ done
 while read n rules prefix name
 do
     case $n in
-	0*|1*)	echo "Pass 2: $n $rules $prefix $name"
+	0*|1*|2*)
+		echo "Pass 2: $n $rules $prefix $name"
 		game="game_$prefix.txt"
 		i=1
 		while [ "$i" -le "$n" ]			# Loop thru all levels.
@@ -48,36 +50,19 @@ do
 		    fi
 
 		    echo "// L$lev" >>"$game"		# Append level-header.
-		    lev="levels/$prefix$lev.grl"	# Get level's file path.
-		    case "$prefix" in
-		    plws|tute*)
-			# Normal or tutorial games ...
-			# Append level-data with a leading comment, level-name
-			# with 'i18n("");' and hint (if any) with 'i18n("");'.
-			sed -e '
-				1s:^://  :
-				2,3s/^/ i18n("/
-				2s/$/");/
-				3,$s/$/\\n"/
-				4,$s/^/ "/
-				$s/\\n"/");/
-			' "$lev" >>"$game"
-			;;
-		    *)
-			# Championship games ...
-			# Append level-data with a leading comment, level-name
-			# with 'i18n("");' and hint with 'NOTi18n("");'.
-			sed -e '
-				1s:^://  :
-				2s/^/ i18n("/
-				2s/$/");/
-				3s/^/ NOTi18n("/
-				3,$s/$/\\n"/
-				4,$s/^/ "/
-				$s/\\n"/");/
-			' "$lev" >>"$game"
-			;;
-		    esac
+		    grl="levels/$prefix$lev.grl"	# Get level's file path.
+		    # Append level-data with a leading comment, level-name
+		    # with 'i18n("");' and hint with 'i18n("");'.
+		    sed -e '
+			    1s:^://  :
+			    2s/^/ i18n("/
+			    2s/$/");/
+			    3s/^/ i18n("/
+			    3,$s/$/\\n"/
+			    4,$s/^/ "/
+			    $s/\\n"/");/
+		    ' "$grl" >>"$game"
+		    echo '' i18n\(\"$prefix$lev.grl 15-08-24\"\)\; >>"$game"
 
 		    let "i = $i + 1"
 		done
