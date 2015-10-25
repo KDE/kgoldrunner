@@ -91,6 +91,7 @@ public:
     Owner       owner;		///< Owner of the game: "System" or "User".
     int         nLevels;	///< Number of levels in the game.
     char        rules;		///< Game's rules: KGoldrunner or Traditional.
+    bool        digWhileFalling;///< If all levels allow "dig while falling".
     QString     prefix;		///< Game's filename prefix.
     char        skill;		///< Game's skill: Tutorial, Normal or Champion.
     int         width;		///< Width of grid, in cells.
@@ -109,6 +110,7 @@ public:
     QByteArray  layout;		///< Codes for the level layout (mandatory).
     QByteArray  name;		///< Level name (optional).
     QByteArray  hint;		///< Level hint (optional).
+    bool        digWhileFalling;///< If this one level has "dig while falling".
 };
 
 /// KGrRecording structure: contains a record of play in a KGoldrunner level.
@@ -126,6 +128,7 @@ public:
     QByteArray     layout;	///< Codes for the level layout (at rec time).
     QString        levelName;	///< Name of the level (translated at rec time).
     QString        hint;	///< Hint (translated at recording time).
+    bool           digWhileFalling; ///< If this level has "dig while falling".
     long           lives;	///< Number of lives at start of level.
     long           score;	///< Score at start of level.
     int            speed;	///< Speed of game during recording (normal=10).

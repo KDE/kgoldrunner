@@ -2097,6 +2097,9 @@ bool KGrGame::initRecordingData (const Owner fileOwner, const QString & prefix,
         recording->height      = levelData.height;
         recording->layout      = levelData.layout;
 
+	// Record whether this level will allow the hero to dig while falling.
+	recording->digWhileFalling = levelData.digWhileFalling;
+
         // If there is a name or hint, translate the UTF-8 code right now.
         recording->levelName   = (levelData.name.size() > 0) ?
                                  i18n (levelData.name.constData()) : "";
@@ -2133,6 +2136,7 @@ void KGrGame::saveRecording (const QString & filetype)
     configGroup.writeEntry ("Layout",   recording->layout);
     configGroup.writeEntry ("Name",     recording->levelName);
     configGroup.writeEntry ("Hint",     recording->hint);
+    configGroup.writeEntry ("DigWhileFalling", recording->digWhileFalling);
     configGroup.writeEntry ("Lives",    (int) recording->lives);
     configGroup.writeEntry ("Score",    (int) recording->score);
     configGroup.writeEntry ("Speed",    (int) recording->speed);
@@ -2196,6 +2200,8 @@ bool KGrGame::loadRecording (const QString & dir, const QString & prefix,
     recording->layout           = configGroup.readEntry ("Layout", blank);
     recording->levelName        = configGroup.readEntry ("Name",   blank);
     recording->hint             = configGroup.readEntry ("Hint",   blank);
+    recording->digWhileFalling  = configGroup.readEntry ("DigWhileFalling",
+                                                             true);
     recording->lives            = configGroup.readEntry ("Lives",  5);
     recording->score            = configGroup.readEntry ("Score",  0);
     recording->speed            = configGroup.readEntry ("Speed",  10);
