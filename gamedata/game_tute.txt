@@ -1,4 +1,5 @@
 // G007 T tute T
+// .dwf false
  i18n("Tutorial");
  i18n("This tutorial is a collection of easy levels that teaches you the rules of KGoldrunner and helps you develop the skills you need to get started.  It uses the Traditional set of rules, similar to those used on early home-computers.  Each level has a brief explanation, then you play ...\n"
  "\n"

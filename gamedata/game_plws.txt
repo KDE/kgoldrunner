@@ -1,4 +1,5 @@
 // G100 T plws N
+// .dwf false
  i18n("Initiation");
  i18n("These 100 levels make an excellent introductory game, as well as a good opportunity for experts to build up high scores.  They were composed by Peter Wadham and use traditional playing rules.\n"
  "\n"

@@ -1,4 +1,5 @@
 // G022 T wad C
+// .dwf false
  i18n("Challenge");
  i18n("These tricky little levels were composed by Peter, Simon, Genevieve and their father Ian Wadham.  They use traditional playing rules.  Enjoy!");
 // L001

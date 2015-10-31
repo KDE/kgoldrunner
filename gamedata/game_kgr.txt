@@ -1,4 +1,5 @@
 // G018 K kgr N
+// .dwf false
  i18n("KGoldrunner");
  i18n("These levels were composed by Marco Krüger, the original author of the KGoldrunner program, and some of his friends and contributors.  They use KGoldrunner rules.  The enemies run fast and have an aggressive search strategy.  Enjoy!");
 // L001
