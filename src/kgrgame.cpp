@@ -2075,8 +2075,11 @@ bool KGrGame::initRecordingData (const Owner fileOwner, const QString & prefix,
     else {
         KGrGameIO    io (view);
         KGrLevelData levelData;
+        KGrGameData * gameData = gameList.at (gameIndex);
 
-        // Read the level data.
+        // Set digWhileFalling same as game, by default: read the level data.
+        // The dig-while-falling setting can be overridden for a single level.
+        levelData.digWhileFalling = gameData->digWhileFalling;
         if (! io.readLevelData (dir, prefix, levelNo, levelData)) {
             return false;
         }
@@ -2086,7 +2089,6 @@ bool KGrGame::initRecordingData (const Owner fileOwner, const QString & prefix,
                                               .toString (Qt::ISODate);
         // kDebug() << "Recording at" << recording->dateTime;
 
-        KGrGameData * gameData = gameList.at (gameIndex);
         recording->owner       = gameData->owner;
         recording->rules       = gameData->rules;
         recording->prefix      = gameData->prefix;
@@ -2097,8 +2099,8 @@ bool KGrGame::initRecordingData (const Owner fileOwner, const QString & prefix,
         recording->height      = levelData.height;
         recording->layout      = levelData.layout;
 
-	// Record whether this level will allow the hero to dig while falling.
-	recording->digWhileFalling = levelData.digWhileFalling;
+        // Record whether this level will allow the hero to dig while falling.
+        recording->digWhileFalling = levelData.digWhileFalling;
 
         // If there is a name or hint, translate the UTF-8 code right now.
         recording->levelName   = (levelData.name.size() > 0) ?
@@ -2211,6 +2213,8 @@ bool KGrGame::loadRecording (const QString & dir, const QString & prefix,
 
     // If demoType is DEMO or SOLVE, get the TRANSLATED gameName, levelName and
     // hint from current data (other recordings have been translated already).
+    // Also get the CURRENT setting of digWhileFalling for this game and level
+    // (in case the demo or solution file contains out-of-date settings).
     if ((demoType == DEMO) || (demoType == SOLVE)) {
         int index = -1;
         for (int i = 0; i < gameList.count(); i++) {	// Find the game.
@@ -2220,15 +2224,21 @@ bool KGrGame::loadRecording (const QString & dir, const QString & prefix,
             }
         }
         if (index >= 0) {
-            // Get the current translation of the name of the game.
+            // Get digWhileFalling flag and current translation of name of game.
+            recording->digWhileFalling = gameList.at (index)->digWhileFalling;
             recording->gameName = gameList.at (index)->name;
+            // kDebug() << "GAME" << gameList.at (index)->name << levelNo
+                     // << "set digWhileFalling to"
+                     // << gameList.at (index)->digWhileFalling;
 
             // Read the current level data.
             KGrGameIO    io (view);
             KGrLevelData levelData;
 
-	    QString levelDir = (gameList.at (index)->owner == USER) ?
+            QString levelDir = (gameList.at (index)->owner == USER) ?
                                userDataDir : systemDataDir;
+            // Set digWhileFalling same as game, by default.
+            levelData.digWhileFalling = gameList.at (index)->digWhileFalling;
             if (io.readLevelData (levelDir, recording->prefix, recording->level,
                                   levelData)) {
                 // If there is a level name or hint, translate it.
@@ -2236,6 +2246,10 @@ bool KGrGame::loadRecording (const QString & dir, const QString & prefix,
                                          i18n (levelData.name.constData()) : "";
                 recording->hint        = (levelData.hint.size() > 0) ?
                                          i18n (levelData.hint.constData()) : "";
+                recording->digWhileFalling = levelData.digWhileFalling;
+                // kDebug() << "LEVEL" << gameList.at (index)->name << levelNo
+                         // << "digWhileFalling is NOW"
+                         // << levelData.digWhileFalling;
             }
         }
     }

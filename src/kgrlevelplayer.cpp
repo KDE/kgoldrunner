@@ -193,6 +193,7 @@ void KGrLevelPlayer::init (KGrView * view,
                     heroId  = emit makeSprite (HERO, i, j);
                     hero    = new KGrHero (this, grid, i, j, heroId, rules);
                     hero->setNuggets (nuggets);
+                    hero->setDigWhileFalling (recording->digWhileFalling);
                     if ((controlMode == MOUSE) || (controlMode == LAPTOP)) {
                         emit setMousePos (targetI, targetJ);
                     }
