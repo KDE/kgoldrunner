@@ -112,26 +112,30 @@ IOStatus KGrGameIO::fetchGameListData
                 gameName = removeNewline (textLine.right (textLine.size() - n));
                 g->name  = i18n (gameName.constData());
             }
-            // kDebug() << "Skill:" << g->skill << "Name:" << g->name;
 
             // Check for further settings in this game.
+            // bool usedDwfOpt = false;		// For debug.
             while ((c = getALine (kgr3Format, textLine)) == '.') {
                 if (textLine.startsWith ("dwf ")) {
                     // Dig while falling is allowed in this game, or not.
                     g->digWhileFalling = textLine.endsWith (" false\n") ?
                                          false : true;
+                    // usedDwfOpt = true;		// For debug.
                 }
             }
 
             if (kgr3Format && (c == ' ')) {
                 gameName = removeNewline (textLine);
                 g->name  = i18n (gameName.constData());
+                c = getALine (kgr3Format, textLine);
             }
+            // qDebug() << "Dig while falling" << g->digWhileFalling
+                     // << "usedDwfOpt" << usedDwfOpt << "Game" << g->name;
+            // kDebug() << "Skill:" << g->skill << "Name:" << g->name;
 
             // Loop to accumulate lines of about-data.  If kgr3Format, exit on
             // EOF or 'L' line.  If not kgr3Format, exit on EOF or numeric line.
             while (c != '\0') {
-                c = getALine (kgr3Format, textLine);
                 if ((c == '\0') ||
                     (kgr3Format && (c == 'L')) ||
                     ((! kgr3Format) &&
@@ -139,6 +143,7 @@ IOStatus KGrGameIO::fetchGameListData
                     break;
                 }
                 g->about.append (textLine);
+                c = getALine (kgr3Format, textLine);
             }
             g->about = removeNewline (g->about);	// Remove final '\n'.
             // kDebug() << "Info about: [" + g->about + "]";
