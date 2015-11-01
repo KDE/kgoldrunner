@@ -26,6 +26,7 @@
 class KGrLevelPlayer;
 class KGrLevelGrid;
 class KGrRuleBook;
+class KGrEnemy;
 
 enum  Situation {NotTimeYet, CaughtInBrick, MidCell, EndCell};
 
@@ -120,6 +121,7 @@ protected:
                                       AnimationType & anim, int & interval);
 
     bool             falling;
+    KGrEnemy *       onEnemy;		// If standing or riding on an enemy.
     Direction        currDirection;
     AnimationType    currAnimation;
 
@@ -200,6 +202,12 @@ public:
     bool             dig (const Direction dirn, int & digI, int & digJ);
 
     /**
+     * Tells the hero whether dig while falling is allowed, or not.
+     */
+    inline void      setDigWhileFalling (const bool dwf)
+                                        { digWhileFalling = dwf; }
+
+    /**
      * Tells the hero how many gold nuggets are remaining.
      *
      * @param nGold        The number of gold nuggets remaining.
@@ -213,7 +221,10 @@ public:
 
 signals:
     void             soundSignal (const int n, const bool onOff = true);
+    void             invalidDig();	// Warning re dig while falling.
+
 private:
+    bool             digWhileFalling;	// If dig while falling is allowed.
     int              nuggets;		// Number of gold pieces remaining.
 };
 

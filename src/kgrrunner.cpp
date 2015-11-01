@@ -149,7 +149,10 @@ bool KGrRunner::setNextMovement (const char spriteType, const char cellType,
 
     interval = runTime;
 
-    KGrEnemy * onEnemy  = levelPlayer->standOnEnemy (spriteId, gridX, gridY);
+    // if (spriteType == HERO) {
+        // kDebug() << "Calling standOnEnemy() for" << gridX << gridY;
+    // }
+    onEnemy  = levelPlayer->standOnEnemy (spriteId, gridX, gridY);
     bool canStand = (OK & dFlag [STAND]) || (OK == 0) || onEnemy;
     if ((dir == DOWN) && (cellType == BAR)) {
         canStand = false;
@@ -199,7 +202,10 @@ KGrHero::KGrHero (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
                   int i, int j, int pSpriteId, KGrRuleBook * pRules)
     :
     KGrRunner (pLevelPlayer, pGrid, i, j, pSpriteId, pRules, 0),
-    nuggets (0)		// KGrLevelPlayer object will call hero->setNuggets().
+
+    // KGrLevelPlayer object will call setDigWhileFalling() and setNuggets().
+    digWhileFalling (true),
+    nuggets (0)
 {
     // kDebug() << "THE HERO IS BORN at" << i << j << "sprite ID" << pSpriteId;
     rules->getHeroTimes (runTime, fallTime, enemyFallTime, trapTime);
@@ -231,7 +237,9 @@ HeroStatus KGrHero::run (const int scaledTime)
 
     // Check if we have fallen onto an enemy.  If so, continue at enemy-speed.
     if (falling && (interval != enemyFallTime)) {
-        if (levelPlayer->standOnEnemy (spriteId, gridX, gridY)) {
+        // kDebug() << "Calling standOnEnemy() for" << gridX << gridY;
+	onEnemy = levelPlayer->standOnEnemy (spriteId, gridX, gridY);
+        if (onEnemy != 0) {
             interval = enemyFallTime;
             // If MidCell, hero-speed animation overshoots, but looks OK.
         }
@@ -333,6 +341,36 @@ bool KGrHero::dig (const Direction diggingDirection, int & i, int & j)
         i = gridI + relativeI;
         j = gridJ + 1;
         result = true;
+
+        // If dig-while-falling is not allowed, prevent attempts to use it.
+        // The boolean defaults to true but can be read from a setting for
+        // the game, the specific level or a recording. So it can be false.
+        if (! digWhileFalling) {
+	    // Work out where the hero WILL be standing when he digs. In the
+	    // second case, he will dig the brick that is now right under him.
+            int nextGridI = (relativeI != 0) ? (gridI + relativeI/2) :
+                        ((currDirection == LEFT) ? (gridI - 1) : (gridI + 1));
+            Flags OK = grid->heroMoves (nextGridI, gridJ);
+            bool canStand = (OK & dFlag [STAND]) || (OK == 0);
+            bool enemyUnder = (onEnemy != 0);
+            // Must be on solid ground or on an enemy (standing or riding down).
+            if ((! canStand) && (nextGridI != gridI)) {
+		// If cannot move to next cell and stand, is an enemy under it?
+                // kDebug() << "Calling standOnEnemy() at gridX" << gridX
+                         // << "for" << (nextGridI * pointsPerCell) << gridY;
+                enemyUnder = (levelPlayer->standOnEnemy (spriteId,
+                                        nextGridI * pointsPerCell, gridY) != 0);
+            }
+            if ((! canStand) && (! enemyUnder)) {
+                kDebug() << "INVALID DIG: hero at" << gridI << gridJ
+                         << "nextGridI" << nextGridI << "relI" << relativeI
+                         << "dirn" << currDirection << "brick at" << i << j
+                         << "heroMoves" << ((int) OK) << "canStand" << canStand
+                         << "enemyUnder" << enemyUnder;
+                emit invalidDig();	// Issue warning re dig while falling.
+                result = false;
+            }
+        }
     }
     if (result) {
         emit soundSignal (DigSound);
