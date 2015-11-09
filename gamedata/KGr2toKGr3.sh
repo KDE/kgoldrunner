@@ -62,7 +62,6 @@ do
 			    4,$s/^/ "/
 			    $s/\\n"/");/
 		    ' "$grl" >>"$game"
-		    echo '' i18n\(\"$prefix$lev.grl 15-08-24\"\)\; >>"$game"
 
 		    let "i = $i + 1"
 		done
