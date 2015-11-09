@@ -26,20 +26,21 @@
 </authorgroup>
 
 <copyright>
-<year>2011</year>
+<year>2015</year>
 <holder>Ian Wadham</holder>
 </copyright>
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2013-05-14</date>
-<releaseinfo>4.10 (&kde; 4.11)</releaseinfo>
+<date>2015-12-16</date>
+<releaseinfo>4.14 (&kde; Applications 15.12)</releaseinfo>
 
 <abstract>
 <para>
 &kgoldrunner;, a game of action and puzzle solving.  Run through
 the maze, dodge your enemies, collect all the gold and climb up to the
-next level.</para>
+next level. <emphasis>Note:</emphasis> The rules of digging have changed
+slightly in this version.</para>
 </abstract>
 
 <keywordset>
@@ -350,12 +351,16 @@ before you can complete the level.</para>
 <para>You click the <mousebutton>Left</mousebutton> or
 <mousebutton>Right</mousebutton> mouse button, to dig a hole to the
 left or right, or use the <keycap>Z</keycap>, <keycap>C</keycap>,
-<keycap>U</keycap> or <keycap>O</keycap> keys. Only bricks can be dug,
-not anything else. The hole will appear in the floor on one side or
-the other (&ie; below and to the left or right of the hero). You can
-be running, standing or falling when you dig. There must be an empty
-space or hole above the brick (&ie; no digging under a ladder, bar,
-gold, brick, concrete, false brick or enemy).</para>
+<keycap>U</keycap> or <keycap>O</keycap> keys.</para>
+
+<para>Only bricks can be dug, not anything else. The hole will appear
+in the floor on one side or the other (&ie; below and to the left or
+right of the hero). There must be an empty space or hole above the
+brick (&ie; no digging under a ladder, bar, gold, brick, concrete or
+false brick). You can be running, standing or riding down on a falling
+enemy when you dig. Digging while falling through thin air or false
+bricks is allowed in some games but not others. See
+<link linkend="dig-while-falling">Digging while Falling</link> below.</para>
 
 <para>The hero can move in any direction through dug holes, including
 falling right through a hole to escape an enemy. After a short time,
@@ -378,6 +383,28 @@ that follow <quote>Traditional</quote> rules depend on an enemy being
 able to run through a hole. Some levels that follow
 <quote>&kgoldrunner;</quote> rules depend on an enemy NOT being
 able to run through a hole.</para>
+
+</sect2>
+
+<sect2 id="dig-while-falling">
+<title>Digging while Falling</title>
+
+<para>In the original game on Apple II and Commodore 64, the hero had to be
+supported on something solid when digging: a ladder, concrete, a brick, a
+bar --- or an enemy's head. This rule was overlooked in KGoldrunner and one
+day the author's son discovered that you could dig while falling! He
+immediately composed a level to exploit this. Other game composers
+have now done the same. You have to dig while falling in recent
+games of Championship skill such as <quote>State of Terror</quote>,
+<quote>Curse of the Mummy</quote> and <quote>Gold Rush</quote>.</para>
+
+<para>On the other hand, digging while falling makes older games too easy.
+So, as of December 2015, it is forbidden in the <quote>Tutorial</quote>,
+<quote>Advanced Tutorial</quote>, <quote>Initiation</quote>,
+<quote>KGoldrunner</quote> and <quote>Challenge</quote> games. The
+<quote>Vengeance of Peter W</quote> game allows it in just one level
+and the new <quote>Beginner's Luck</quote> game, which is aimed at
+first time players, does not allow it.</para>
 
 </sect2>
 
