@@ -4,7 +4,7 @@
  "\n"
  "But the police are ruthless here and if you try to break out they will not lose any sleep over killing you...  So be careful and most important of all: be quick --- or be dead!\n"
  "\n"
- "These Championship levels use the quick and quirky KGoldrunner Rules and are composed by Gabriel Miltschitzky [gabriel dot miltschitzky at freenet de]");
+ "These Championship levels use the quick and quirky KGoldrunner Rules and are composed by Gabriel Miltschitzky [gabriel dot miltschitzky at freenet de]. You need to dig while falling sometimes.");
 // L001
 //  HX                          HX   R                      HX M H                      HXMEM XXXXH FXHTTTTXHXEEEEMHHXHMNXHHHXXH X   E XHXXXXXMHHHHX XH HHX HXXXXXXXH   T MH   X HH  H X        XXXX XXH E XEEE   MHX    HHHHHH   XHXXXXXXXXXXHHX    HX    X MXH   HHHHHHH X   H H M MHXHMHH XX   E    X  H  HHMHMHXHM     XXXXXXXXX  H    XHXHXHX  EX MM  H XHH  H    XHXHXHX  XX XX H HXH   H    XHXHXHX   E   XH HXH  HH T  XHXHXHXX EEEEM H HXH  HX  XMEHXHXHEX XXXX  H HXH  HXEHXHXXXHXXXX     HHH HHH  HXXXXHHHHHH                FH               E  E  E   E    E E         
  i18n("Don't Panic!");

@@ -1,6 +1,6 @@
 // G037 T MAZ C
  i18n("Mazes");
- i18n("Mazes, mazes, mazes.  Some with enemies, some without.  While occasionally you will need to kill an enemy, as a general rule it is best not to kill them, because they reappear at the top and block your exit.\n"
+ i18n("Mazes, mazes, mazes.  Some with enemies, some without.  While occasionally you will need to kill an enemy, as a general rule it is best not to kill them, because they reappear at the top and block your exit.  You also need to dig while falling sometimes.\n"
  "\n"
  "Another great set of Championship levels from Steve Mann <smann at cgl uwaterloo ca>.  The levels are named after dwarves in myths and stories (with a few named after elves), beginning with the seven dwarves from Disney's version of Snow White.");
 // L001

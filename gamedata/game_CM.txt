@@ -1,6 +1,6 @@
 // G020 T CM C
  i18n("Curse of the Mummy");
- i18n("Drawing on Western movie icons about mummies and Egypt, this set of levels is best run under the Treasure of Egypt theme.\n"
+ i18n("Drawing on Western movie icons about mummies and Egypt, this set of levels is best run under the Treasure of Egypt theme. You also need to dig while falling sometimes.\n"
  "\n"
  "To polish your Egyptology, you will find factual tidbits related to each level in the hints, where the facts are drawn from Wikipedia rather than Hollywood.\n"
  "\n"

@@ -21,6 +21,8 @@
  i18n("Digging");
  i18n("Now you have to dig to get the gold!  Just use the left and right mouse buttons to dig left or right of the hero's position.  The hero can then jump into and through the hole he has dug.  He can also dig several holes in a row and run sideways through the dug holes.  Be careful though.  After a while the holes close up and you can get trapped and killed.\n"
  "\n"
+ "When you dig, you must be supported by something solid, such as a ladder, concrete, a brick or a bar.  In some Championship games you are allowed to dig while falling, but not in this game.\n"
+ "\n"
  "In the third box down, you have to dig two holes, jump in and quickly dig one more, to get through two layers.  On the right, you have to dig three, then two then one to get through.  There are also two little puzzles to work out along the way.  Good luck!\n"
  "\n"
  "By the way, you can dig through brick, but not concrete.");

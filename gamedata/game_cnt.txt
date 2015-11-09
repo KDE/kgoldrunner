@@ -2,7 +2,7 @@
  i18n("Count");
  i18n("This game is based on counting, from 0 to 16 (or 0 to 10 in hexadecimal).  The first level has no gold and no enemies: the problem is to find a way out and up to the next level.  After that, the number of enemies and pieces of gold increases by 1 at each level.  The name of each level corresponds to the number of enemies, the pieces of gold and the digits that appear in the layout.\n"
  "\n"
- "These elegant and rather tricky Championship levels were composed by Steve Mann <smann at cgl uwaterloo ca>.");
+ "These elegant and rather tricky Championship levels were composed by Steve Mann <smann at cgl uwaterloo ca>. You need to dig while falling sometimes.");
 // L001
 //                              R H  TTTT MMMMM H T HHTHHHT   HH  H  XMMMMMMH T  HTH HTH      H MMMH  MMM TT   H HT  TTTTH  MM H T MMH HHH HHHT  T  T H MM H  HMMH H H    TH T  TH  MM HT HMMH H H  TTTH T  T H M  H  HMMH HHH H  T  T  TH  MM H THMMH     H T T TTTT H MM H  HMMH HHH HT HT       HMM H  HMMH        HHHHH  TTHMMH    MMHTT HHHH HTH H H TTMMM   MMMH   H  H HTH H H HHTMMFMFMM H H HTTHTHTHHH H HHTTMMMMMHTH H H  H TT   TH THTTTT HHT H H HHHH HTTHTTTTHHHTHHTTTTTTTH   T  HHTHHHTHHHHHTTHHHHHTH TH T HHTTTTHTHHTTHHHTHTTHHTHHTHHHHTTXXXXXXXXXXXXXXXXXXXXXXXXXXXX
  i18n("Zero");
