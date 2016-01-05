@@ -61,6 +61,9 @@ int main (int argc, char **argv)
     parser.process(app);
     about.processCommandLine(&parser);
     KDBusService service;
+
+    app.setWindowIcon(QIcon::fromTheme(QStringLiteral("kgoldrunner")));
+
     // See if we are starting with session management.
     if (app.isSessionRestored()) {
         // New RESTORE (KGrController);
