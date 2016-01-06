@@ -46,6 +46,8 @@ int main (int argc, char **argv)
     }
     QApplication app(argc, argv);
 
+    KLocalizedString::setApplicationDomain("kgoldrunner");
+
     KAboutData about ("kgoldrunner", i18n ("KGoldrunner"),
                      version, i18n (description),
                      KAboutLicense::GPL,
