@@ -20,6 +20,7 @@
 #include "kgoldrunner_debug.h"
 
 #include <KAboutData>
+#include <KCrash>
 
 #include <KLocalizedString>
 #include <QApplication>
@@ -57,6 +58,7 @@ int main (int argc, char **argv)
 
     QCommandLineParser parser;
     KAboutData::setApplicationData(about);
+    KCrash::initialize();
     parser.addVersionOption();
     parser.addHelpOption();
     about.setupCommandLine(&parser);

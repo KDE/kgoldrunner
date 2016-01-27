@@ -20,19 +20,35 @@ set(kgoldrunner_SRCS
    main.cpp 
    kgrselector.cpp
    kgrsounds.cpp 
-   kgrdialog.cpp )
+   kgrdialog.cpp
+)
 
 file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*-apps-kgoldrunner.png")
 ecm_add_app_icon(kgoldrunner_SRCS ICONS ${ICONS_SRCS})
 add_executable(kgoldrunner ${kgoldrunner_SRCS})
 
-target_link_libraries(kgoldrunner  KF5KDEGames KF5KDEGamesPrivate KF5::KDELibs4Support KF5::DBusAddons)
+target_link_libraries(kgoldrunner
+    KF5KDEGames
+    KF5KDEGamesPrivate
+    KF5::KDELibs4Support
+    KF5::DBusAddons
+    KF5::Crash
+)
 
 install(TARGETS kgoldrunner  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 
 ########### install files ###############
 
-install( PROGRAMS org.kde.KGoldrunner.desktop  DESTINATION  ${KDE_INSTALL_APPDIR} )
-install( FILES kgoldrunnerui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/kgoldrunner )
+install(PROGRAMS org.kde.KGoldrunner.desktop  DESTINATION  ${KDE_INSTALL_APPDIR})
+install(FILES kgoldrunnerui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/kgoldrunner)
 
-ecm_install_icons( ICONS 128-apps-kgoldrunner.png  16-apps-kgoldrunner.png  22-apps-kgoldrunner.png  32-apps-kgoldrunner.png  48-apps-kgoldrunner.png  64-apps-kgoldrunner.png DESTINATION ${KDE_INSTALL_ICONDIR} THEME hicolor )
+ecm_install_icons(ICONS
+    128-apps-kgoldrunner.png
+    16-apps-kgoldrunner.png
+    22-apps-kgoldrunner.png
+    32-apps-kgoldrunner.png
+    48-apps-kgoldrunner.png
+    64-apps-kgoldrunner.png
+    DESTINATION ${KDE_INSTALL_ICONDIR} THEME hicolor
+)
+
