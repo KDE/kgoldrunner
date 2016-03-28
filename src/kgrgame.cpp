@@ -39,7 +39,7 @@
 
 #include <iostream>
 #include <stdlib.h>
-#include <time.h>
+#include <ctime>
 
 #include <QStringList>
 #include <QTimer>
@@ -115,7 +115,7 @@ KGrGame::KGrGame (KGrView * theView,
     connect(dyingTimer, &QTimer::timeout, this, &KGrGame::finalBreath);
 
     // Initialise random number generator.
-    randomGen = new KRandomSequence (time (0));
+    randomGen = new KRandomSequence (std::time(nullptr));
     qCDebug(KGOLDRUNNER_LOG) << "RANDOM NUMBER GENERATOR INITIALISED";
 
     scene->setReplayMessage (i18n("Click anywhere to begin live play"));
