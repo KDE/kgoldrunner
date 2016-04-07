@@ -34,7 +34,7 @@ include_directories(BEFORE ${PHONON_INCLUDES})
 include(FeatureSummary)
 include(ECMInstallIcons)
 include(KDEInstallDirs)
-include(KDECompilerSettings)
+include(KDECompilerSettings NO_POLICY_SCOPE)
 include(KDECMakeSettings)
 include(ECMAddAppIcon)
 
