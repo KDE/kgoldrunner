@@ -33,6 +33,7 @@
 #include "kgrscene.h"
 
 #include <cmath>
+#include <stdlib.h>
 
 KGrRenderer::KGrRenderer (KGrScene * scene)
     :
@@ -150,7 +151,7 @@ KGameRenderedItem * KGrRenderer::getTileItem
     }
 
     // Get the pixmap key and use one of the two renderers to create the tile.
-    QString key = getPixmapKey (picType, index);
+    QString key = getPixmapKey (index);
     KGameRenderedItem * tile =
                 new KGameRenderedItem ((keyTable[index].picSource == Set) ?
                                        m_setRenderer : m_actorsRenderer, key);
@@ -235,7 +236,7 @@ QPixmap KGrRenderer::getPixmap (const char picType)
 {
     // Get the pixmap key and use one of the two renderers to create the tile.
     int index   = findKeyTableIndex (picType);
-    QString key = getPixmapKey      (picType, index);
+    QString key = getPixmapKey      (index);
 
     if (keyTable[index].picSource == Set)
         return m_setRenderer->spritePixmap (key, m_scene->tileSize ());
@@ -243,7 +244,7 @@ QPixmap KGrRenderer::getPixmap (const char picType)
         return m_actorsRenderer->spritePixmap (key, m_scene->tileSize ());
 }
 
-QString KGrRenderer::getPixmapKey (const char picType, const int index)
+QString KGrRenderer::getPixmapKey (const int index)
 {
     QString pixmapKey = "";
     // int index = findKeyTableIndex (picType);

@@ -46,11 +46,11 @@
 #include <QDateTime>
 
 #include <KRandomSequence>
-#include <KPushButton>
+#include <QPushButton>
 #include <KStandardGuiItem>
-#include <KStandardDirs>
-#include <KApplication>
-#include <KDebug>
+
+#include <QApplication>
+#include <QDebug>
 
 // TODO - Can we change over to KScoreDialog?
 
@@ -72,6 +72,9 @@
 #include <QHeaderView>
 #include <QTreeWidgetItem>
 #include <QDir>
+#include <KConfigGroup>
+#include <KSharedConfig>
+#include <KGuiItem>
 
 #endif
 
@@ -115,7 +118,7 @@ KGrGame::KGrGame (KGrView * theView,
 
     // Initialise random number generator.
     randomGen = new KRandomSequence (time (0));
-    // kDebug() << "RANDOM NUMBER GENERATOR INITIALISED";
+    // qDebug() << "RANDOM NUMBER GENERATOR INITIALISED";
 
     scene->setReplayMessage (i18n("Click anywhere to begin live play"));
 }
@@ -200,7 +203,7 @@ void KGrGame::gameActions (const int action)
             return;
         }
         level++;
-        // kDebug() << "Game" << gameList.at(gameIndex)->name << "level" << level;
+        // qDebug() << "Game" << gameList.at(gameIndex)->name << "level" << level;
         newGame (level, gameIndex);
         showTutorialMessages (level);
         break;
@@ -335,8 +338,8 @@ void KGrGame::editActions (const int action)
         prefix    = gameList.at (gameIndex)->prefix;
         level     = lev;
 
-        // kDebug() << "Saving to KConfigGroup";
-        KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
+        // qDebug() << "Saving to KConfigGroup";
+        KConfigGroup gameGroup (KSharedConfig::openConfig(), "KDEGame");
         gameGroup.writeEntry ("GamePrefix", prefix);
         gameGroup.writeEntry ("Level_" + prefix, level);
         gameGroup.sync();		// Ensure that the entry goes to disk.
@@ -374,7 +377,7 @@ void KGrGame::editToolbarActions (const int action)
 void KGrGame::settings (const int action)
 {
     // TODO - Bad   - Configure Keys does not pause a demo. IDW
-    KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
+    KConfigGroup gameGroup (KSharedConfig::openConfig(), "KDEGame");
     bool onOff = false;
     switch (action) {
     case PLAY_SOUNDS:
@@ -432,15 +435,15 @@ void KGrGame::initGame()
                   "SndFile libraries were present when it was compiled and built."),
                   "WarningNoSound");
 #endif
-    // kDebug() << "Entered, draw the initial graphics now ...";
+    // qDebug() << "Entered, draw the initial graphics now ...";
 
     // Get the most recent collection and level that was played by this user.
     // If he/she has never played before, set it to Tutorial, level 1.
-    KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
+    KConfigGroup gameGroup (KSharedConfig::openConfig(), "KDEGame");
     QString prevGamePrefix = gameGroup.readEntry ("GamePrefix", "tute");
     int prevLevel          = gameGroup.readEntry ("Level_" + prevGamePrefix, 1);
 
-    // kDebug()<< "Config() Game and Level" << prevGamePrefix << prevLevel;
+    // qDebug()<< "Config() Game and Level" << prevGamePrefix << prevLevel;
 
     // Use that game and level, if it is among the current games.
     // Otherwise, use the first game in the list and level 1.
@@ -479,7 +482,7 @@ void KGrGame::initGame()
 #ifdef KGAUDIO_BACKEND_OPENAL
         // Set up sounds, if required in config.
         soundOn = gameGroup.readEntry ("Sound", false);
-        // kDebug() << "Sound" << soundOn;
+        // qDebug() << "Sound" << soundOn;
         if (soundOn) {
             loadSounds();
             effects->setMuted (false);
@@ -487,7 +490,7 @@ void KGrGame::initGame()
         emit setToggle ("options_sounds", soundOn);
 
         stepsOn = gameGroup.readEntry ("StepSounds", false);
-        // kDebug() << "StepSounds" << stepsOn;
+        // qDebug() << "StepSounds" << stepsOn;
         emit setToggle ("options_steps", stepsOn);
 #endif
 
@@ -549,7 +552,7 @@ bool KGrGame::startDemo (const Owner demoOwner, const QString & pPrefix,
     QString     dir      = (demoOwner == SYSTEM) ? systemDataDir : userDataDir;
     QString     filepath;
     if (! getRecordingName (dir, pPrefix, filepath)) {
-	kDebug() << "No file found by getRecordingName() for" << dir << pPrefix;
+	qDebug() << "No file found by getRecordingName() for" << dir << pPrefix;
 	return false;
     }
     dbk1 << "Owner" << demoOwner << "type" << demoType
@@ -564,7 +567,7 @@ bool KGrGame::startDemo (const Owner demoOwner, const QString & pPrefix,
     dbk1 << "DEMO looking for" << s << "found at" << index;
     if (index <= 0) {
         setPlayback (false);
-        kDebug() << "DEMO not found in" << filepath << s << pPrefix << levelNo;
+        qDebug() << "DEMO not found in" << filepath << s << pPrefix << levelNo;
         return false;
     }
 
@@ -580,12 +583,12 @@ bool KGrGame::startDemo (const Owner demoOwner, const QString & pPrefix,
         if (levelPlayer) {
             levelPlayer->prepareToPlay();
         }
-        kDebug() << "DEMO started ..." << filepath << pPrefix << levelNo;
+        qDebug() << "DEMO started ..." << filepath << pPrefix << levelNo;
         return true;
     }
     else {
         setPlayback (false);
-        kDebug() << "DEMO failed ..." << filepath << pPrefix << levelNo;
+        qDebug() << "DEMO failed ..." << filepath << pPrefix << levelNo;
         return false;         
     }
 }
@@ -601,7 +604,7 @@ void KGrGame::runNextDemoLevel()
             if (levelPlayer) {
                 levelPlayer->prepareToPlay();
             }
-            kDebug() << "DEMO continued ..." << playbackPrefix << playbackIndex;
+            qDebug() << "DEMO continued ..." << playbackPrefix << playbackIndex;
             return;
         }
     }
@@ -625,7 +628,7 @@ void KGrGame::finishDemo()
 
 void KGrGame::interruptDemo()
 {
-    kDebug() << "DEMO interrupted ...";
+    qDebug() << "DEMO interrupted ...";
     if ((demoType == INSTANT_REPLAY) || (demoType == REPLAY_LAST)) {
         setPlayback (false);
         levelMax = gameList.at (gameIndex)->nLevels;
@@ -666,7 +669,7 @@ void KGrGame::startInstantReplay()
 void KGrGame::replayLastLevel()
 {
     // Replay the last game and level completed by the player.
-    KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
+    KConfigGroup gameGroup (KSharedConfig::openConfig(), "KDEGame");
     QString lastPrefix = gameGroup.readEntry ("LastGamePrefix", "");
     int lastLevel      = gameGroup.readEntry ("LastLevel",      -1);
 
@@ -697,61 +700,72 @@ void KGrGame::quickStartDialog()
     // Make sure the game does not start during the Quick Start dialog.
     freeze (ProgramPause, true);
 
-    qs = new KDialog (view);
+    qs = new QDialog (view);
 
     // Modal dialog, 4 buttons, vertically: the PLAY button has the focus.
     qs->setModal (true);
-    qs->setCaption (i18n("Quick Start"));
-    qs->setButtons
-            (KDialog::Ok | KDialog::Cancel | KDialog::User1 | KDialog::User2);
-    qs->setButtonFocus (KDialog::Ok);
-    qs->setButtonsOrientation (Qt::Vertical);
+    qs->setWindowTitle (i18n("Quick Start"));
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+
+    QPushButton *newGameButton = new QPushButton;
+    buttonBox->addButton(newGameButton, QDialogButtonBox::ActionRole);
+    QPushButton *useMenuButton = new QPushButton;
+    buttonBox->addButton(useMenuButton, QDialogButtonBox::ActionRole);
+
+    QHBoxLayout *leftIconRightButtonsLayout = new QHBoxLayout;
+    qs->setLayout(leftIconRightButtonsLayout);
+
+    QVBoxLayout *leftButtonLayout = new QVBoxLayout;
+    buttonBox->button(QDialogButtonBox::Ok)->setFocus();
+    leftButtonLayout->addWidget(buttonBox);
+    buttonBox->setOrientation (Qt::Vertical);
 
     // Set up the PLAY button.
-    qs->setButtonText (KDialog::Ok,
-            i18nc ("Button text: start playing a game", "&PLAY"));
-    qs->setButtonToolTip (KDialog::Ok, i18n ("Start playing this level"));
-    qs->setButtonWhatsThis (KDialog::Ok,
+    buttonBox->button (QDialogButtonBox::Ok)->setText(i18nc ("Button text: start playing a game", "&PLAY"));
+    buttonBox->button (QDialogButtonBox::Ok)->setToolTip(i18n ("Start playing this level"));
+    buttonBox->button (QDialogButtonBox::Ok)->setWhatsThis(
             i18n ("Set up to start playing the game and level being shown, "
                  "as soon as you click, move the mouse or press a key"));
 
     // Set up the Quit button.
-    qs->setButtonText (KDialog::Cancel, i18n ("&Quit"));
-    qs->setButtonToolTip (KDialog::Cancel, i18n ("Close KGoldrunner"));
+    buttonBox->button (QDialogButtonBox::Cancel)->setText(i18n ("&Quit"));
+    buttonBox->button (QDialogButtonBox::Cancel)->setToolTip(i18n ("Close KGoldrunner"));
 
     // Set up the New Game button.
-    qs->setButtonText (KDialog::User1, i18n ("&New Game..."));
-    qs->setButtonToolTip (KDialog::User1,
-            i18n ("Start a different game or level"));
-    qs->setButtonWhatsThis (KDialog::User1,
+    newGameButton->setText(i18n ("&New Game..."));
+    newGameButton->setToolTip (i18n ("Start a different game or level"));
+    newGameButton->setWhatsThis(
             i18n ("Use the Select Game dialog box to choose a "
                  "different game or level and start playing it"));
 
     // Set up the Use Menu button.
-    qs->setButtonText (KDialog::User2, i18n ("&Use Menu"));
-    qs->setButtonToolTip (KDialog::User2,
+    useMenuButton->setText(i18n ("&Use Menu"));
+    useMenuButton->setToolTip(
             i18n ("Use the menus to choose other actions"));
-    qs->setButtonWhatsThis (KDialog::User2,
+    useMenuButton->setWhatsThis(
             i18n ("Before playing, use the menus to choose other actions, "
                  "such as loading a saved game or changing the theme"));
 
     // Add the KGoldrunner application icon to the dialog box.
     QLabel * logo = new QLabel();
-    qs->setMainWidget (logo);
-    logo->setPixmap (kapp->windowIcon().pixmap (240));
-    logo->setAlignment (Qt::AlignTop | Qt::AlignHCenter);
+    QIcon test = QIcon::fromTheme("kgoldrunner");
+    logo->setPixmap(test.pixmap(240));
+    logo->setAlignment (Qt::AlignTop | Qt::AlignHCenter | Qt::AlignLeft);
 
-    connect (qs, SIGNAL (okClicked()),     this, SLOT (quickStartPlay()));
-    connect (qs, SIGNAL (user1Clicked()),  this, SLOT (quickStartNewGame()));
-    connect (qs, SIGNAL (user2Clicked()),  this, SLOT (quickStartUseMenu()));
-    connect (qs, SIGNAL (cancelClicked()), this, SLOT (quickStartQuit()));
+    leftIconRightButtonsLayout->addWidget(logo);
+    leftIconRightButtonsLayout->addLayout(leftButtonLayout);
+
+    connect(buttonBox, SIGNAL(accepted()), this, SLOT(quickStartPlay()));
+    connect(buttonBox, SIGNAL(rejected()), this, SLOT(quickStartQuit()));
+    connect(newGameButton, SIGNAL(clicked()),  this, SLOT (quickStartNewGame()));
+    connect(useMenuButton, SIGNAL(clicked()), this, SLOT (quickStartUseMenu()));
 
     qs->show();
 }
 
 void KGrGame::quickStartPlay()
 {
-    // KDialog calls QDialog::accept() after the OK slot, so must hide it
+    // QDialog calls QDialog::accept() after the OK slot, so must hide it
     // now, to avoid interference with any tutorial messages there may be.
     qs->hide();
     freeze (ProgramPause, false);
@@ -807,9 +821,9 @@ bool KGrGame::selectGame (const SelectAction slAction,
     bool selected = sl->selectLevel (selectedGame, selectedLevel);
     delete sl;
 
-    // kDebug() << "After dialog - programFreeze" << programFreeze;
-    // kDebug() << "selected" << selected << "gameFrozen" << gameFrozen;
-    // kDebug() << "selectedGame" << selectedGame
+    // qDebug() << "After dialog - programFreeze" << programFreeze;
+    // qDebug() << "selected" << selected << "gameFrozen" << gameFrozen;
+    // qDebug() << "selectedGame" << selectedGame
              // << "prefix" << gameList.at(selectedGame)->prefix
              // << "selectedLevel" << selectedLevel;
     // Unfreeze the game, but only if it was previously unfrozen.
@@ -923,7 +937,7 @@ bool KGrGame::playLevel (const Owner fileOwner, const QString & prefix,
 
     // If we are starting a new level, save it in the player's config file.
     if (newLevel && (level != 0)) {	// But do not save the "ENDE" level.
-        KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
+        KConfigGroup gameGroup (KSharedConfig::openConfig(), "KDEGame");
         gameGroup.writeEntry ("GamePrefix", prefix);
         gameGroup.writeEntry ("Level_" + prefix, level);
         gameGroup.sync();		// Ensure that the entry goes to disk.
@@ -1015,7 +1029,7 @@ void KGrGame::endLevel (const int result)
         saveRecording (QString ("rec_"));
 
         // Save the game and level, for use in the REPLAY_LAST action.
-        KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
+        KConfigGroup gameGroup (KSharedConfig::openConfig(), "KDEGame");
         gameGroup.writeEntry ("LastGamePrefix", prefix);
         gameGroup.writeEntry ("LastLevel",      level);
         gameGroup.sync();		// Ensure that the entry goes to disk.
@@ -1200,7 +1214,7 @@ void KGrGame::setTimeScale (const int action)
 
     if (levelPlayer && (! playback)) {
         // Change speed during play, but not during a demo or replay.
-        // kDebug() << "setTimeScale" << (timeScale);
+        // qDebug() << "setTimeScale" << (timeScale);
         levelPlayer->setTimeScale (timeScale);
     }
 }
@@ -1213,7 +1227,7 @@ bool KGrGame::inEditMode()
 void KGrGame::toggleSoundsOnOff (const int action)
 {
     const char * setting = (action == PLAY_SOUNDS) ? "Sound" : "StepSounds";
-    KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
+    KConfigGroup gameGroup (KSharedConfig::openConfig(), "KDEGame");
     bool soundOnOff = gameGroup.readEntry (setting, false);
     soundOnOff = (! soundOnOff);
     gameGroup.writeEntry (setting, soundOnOff);
@@ -1237,8 +1251,8 @@ void KGrGame::toggleSoundsOnOff (const int action)
 void KGrGame::freeze (const bool userAction, const bool on_off)
 {
     QString type = userAction ? "UserAction" : "ProgramAction";
-    // kDebug() << "PAUSE:" << type << on_off;
-    // kDebug() << "gameFrozen" << gameFrozen << "programFreeze" << programFreeze;
+    // qDebug() << "PAUSE:" << type << on_off;
+    // qDebug() << "gameFrozen" << gameFrozen << "programFreeze" << programFreeze;
 
 #ifdef KGAUDIO_BACKEND_OPENAL
     if (on_off && effects) {		// If pausing and sounds are loaded, cut
@@ -1251,10 +1265,10 @@ void KGrGame::freeze (const bool userAction, const bool on_off)
         if (on_off) {
             if (gameFrozen) {
                 // if (programFreeze) {
-                    // kDebug() << "P: The program has already frozen the game.";
+                    // qDebug() << "P: The program has already frozen the game.";
                 // }
                 // else {
-                    // kDebug() << "P: The user has already frozen the game.";
+                    // qDebug() << "P: The user has already frozen the game.";
                 // }
                 return;			// The game is already frozen.
             }
@@ -1262,10 +1276,10 @@ void KGrGame::freeze (const bool userAction, const bool on_off)
         }
         else if (! programFreeze) {
             // if (gameFrozen) {
-                // kDebug() << "P: The user will keep the game frozen.";
+                // qDebug() << "P: The user will keep the game frozen.";
             // }
             // else {
-                // kDebug() << "P: The game is NOT frozen.";
+                // qDebug() << "P: The game is NOT frozen.";
             // }
             return;			// The user will keep the game frozen.
         }
@@ -1274,7 +1288,7 @@ void KGrGame::freeze (const bool userAction, const bool on_off)
     }
     else if (programFreeze) {
         // If the user breaks through a program freeze somehow, take no action.
-        kDebug() << "U: THE USER HAS BROKEN THROUGH SOMEHOW.";
+        qDebug() << "U: THE USER HAS BROKEN THROUGH SOMEHOW.";
         return;
     }
     else {
@@ -1286,7 +1300,7 @@ void KGrGame::freeze (const bool userAction, const bool on_off)
     if (levelPlayer) {
         levelPlayer->pause (on_off);
     }
-    // kDebug() << "RESULT: gameFrozen" << gameFrozen
+    // qDebug() << "RESULT: gameFrozen" << gameFrozen
              // << "programFreeze" << programFreeze;
 }
 
@@ -1420,11 +1434,14 @@ void KGrGame::kbControl (const int dirn, const bool pressed)
                 KGuiItem (i18n ("Stay in &Mouse Mode")),
                 i18n ("Keyboard Mode")))
         {
-        case KMessageBox::Yes: 
+        case KMessageBox::Yes:
+        case KMessageBox::Ok:
+        case KMessageBox::Continue:
             settings (KEYBOARD);
             emit setToggle ("keyboard_mode", true);	// Adjust Settings menu.
             break;
-        case KMessageBox::No: 
+        case KMessageBox::No:
+        case KMessageBox::Cancel:
             break;
         }
 
@@ -1708,7 +1725,8 @@ void KGrGame::checkHighScore()
                         "in the KGoldrunner Hall of Fame.</html>"),
                         hsn);
     QLineEdit *		hsnUser = new QLineEdit (hsn);
-    QPushButton *	OK = new KPushButton (KStandardGuiItem::ok(), hsn);
+    QPushButton *	OK = new QPushButton(hsn);
+    KGuiItem::assign(OK,KStandardGuiItem::ok());
 
     mainLayout->	addWidget (hsnMessage);
     mainLayout->	addWidget (hsnUser);
@@ -1920,11 +1938,11 @@ void KGrGame::showHighScores()
     }
 
     // Adjust the columns to fit the data.
-    scores->header()->setResizeMode (0, QHeaderView::ResizeToContents);
-    scores->header()->setResizeMode (1, QHeaderView::ResizeToContents);
-    scores->header()->setResizeMode (2, QHeaderView::ResizeToContents);
-    scores->header()->setResizeMode (3, QHeaderView::ResizeToContents);
-    scores->header()->setResizeMode (4, QHeaderView::ResizeToContents);
+    scores->header()->setSectionResizeMode (0, QHeaderView::ResizeToContents);
+    scores->header()->setSectionResizeMode (1, QHeaderView::ResizeToContents);
+    scores->header()->setSectionResizeMode (2, QHeaderView::ResizeToContents);
+    scores->header()->setSectionResizeMode (3, QHeaderView::ResizeToContents);
+    scores->header()->setSectionResizeMode (4, QHeaderView::ResizeToContents);
     scores->header()->setMinimumSectionSize (-1);	// Font metrics size.
 
     QFrame * separator = new QFrame (hs);
@@ -1936,7 +1954,8 @@ void KGrGame::showHighScores()
     QSpacerItem * spacerItem = new QSpacerItem (40, 20, QSizePolicy::Expanding,
                                                 QSizePolicy::Minimum);
     hboxLayout1->addItem (spacerItem);
-    QPushButton *	OK = new KPushButton (KStandardGuiItem::close(), hs);
+    QPushButton *	OK = new QPushButton(hs);
+    KGuiItem::assign(OK,KStandardGuiItem::close());
     OK->		setShortcut (Qt::Key_Return);
     OK->		setMaximumWidth (100);
     hboxLayout1->addWidget (OK);
@@ -1965,7 +1984,7 @@ void KGrGame::dbgControl (const int code)
         levelPlayer->interruptPlayback();	// Will emit interruptDemo().
         return;
     }
-    // kDebug() << "Debug code =" << code;
+    // qDebug() << "Debug code =" << code;
     if (levelPlayer && gameFrozen) {
         levelPlayer->dbgControl (code);
     }
@@ -2087,7 +2106,7 @@ bool KGrGame::initRecordingData (const Owner fileOwner, const QString & prefix,
         recording->dateTime    = QDateTime::currentDateTime()
                                               .toUTC()
                                               .toString (Qt::ISODate);
-        // kDebug() << "Recording at" << recording->dateTime;
+        // qDebug() << "Recording at" << recording->dateTime;
 
         recording->owner       = gameData->owner;
         recording->rules       = gameData->rules;
@@ -2123,7 +2142,7 @@ void KGrGame::saveRecording (const QString & filetype)
     QString filename = userDataDir + filetype + prefix + ".txt";
     QString groupName = prefix +
                         QString::number(recording->level).rightJustified(3,'0');
-    // kDebug() << filename << groupName;
+    // qDebug() << filename << groupName;
 
     KConfig config (filename, KConfig::SimpleConfig);
     KConfigGroup configGroup = config.group (groupName);
@@ -2173,18 +2192,18 @@ void KGrGame::saveRecording (const QString & filetype)
 bool KGrGame::loadRecording (const QString & dir, const QString & prefix,
                                                   const int levelNo)
 {
-    // kDebug() << prefix << levelNo;
+    // qDebug() << prefix << levelNo;
     QString     filename;
     if (! getRecordingName (dir, prefix, filename)) {
-	kDebug() << "No file found by getRecordingName() for" << dir << prefix;
+	qDebug() << "No file found by getRecordingName() for" << dir << prefix;
 	return false;
     }
     QString groupName = prefix + QString::number(levelNo).rightJustified(3,'0');
-    kDebug() << "loadRecording" << filename << prefix << levelNo << groupName;
+    qDebug() << "loadRecording" << filename << prefix << levelNo << groupName;
 
     KConfig config (filename, KConfig::SimpleConfig);
     if (! config.hasGroup (groupName)) {
-        kDebug() << "Group" << groupName << "NOT FOUND";
+        qDebug() << "Group" << groupName << "NOT FOUND";
         return false;
     }
 
@@ -2227,7 +2246,7 @@ bool KGrGame::loadRecording (const QString & dir, const QString & prefix,
             // Get digWhileFalling flag and current translation of name of game.
             recording->digWhileFalling = gameList.at (index)->digWhileFalling;
             recording->gameName = gameList.at (index)->name;
-            // kDebug() << "GAME" << gameList.at (index)->name << levelNo
+            // qDebug() << "GAME" << gameList.at (index)->name << levelNo
                      // << "set digWhileFalling to"
                      // << gameList.at (index)->digWhileFalling;
 
@@ -2247,7 +2266,7 @@ bool KGrGame::loadRecording (const QString & dir, const QString & prefix,
                 recording->hint        = (levelData.hint.size() > 0) ?
                                          i18n (levelData.hint.constData()) : "";
                 recording->digWhileFalling = levelData.digWhileFalling;
-                // kDebug() << "LEVEL" << gameList.at (index)->name << levelNo
+                // qDebug() << "LEVEL" << gameList.at (index)->name << levelNo
                          // << "digWhileFalling is NOW"
                          // << levelData.digWhileFalling;
             }
@@ -2278,25 +2297,25 @@ void KGrGame::loadSounds()
         effects = new KGrSounds();
         effects->setParent (this);        // Delete at end of KGrGame.
 
-        fx[GoldSound]      = effects->loadSound (KStandardDirs::locate ("appdata",
+        fx[GoldSound]      = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
                              "themes/default/gold.ogg"));
-        fx[StepSound]      = effects->loadSound (KStandardDirs::locate ("appdata",
+        fx[StepSound]      = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation, 
                              "themes/default/step.wav"));
-        fx[ClimbSound]     = effects->loadSound (KStandardDirs::locate ("appdata",
+        fx[ClimbSound]     = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
                              "themes/default/climb.wav"));
-        fx[FallSound]      = effects->loadSound (KStandardDirs::locate ("appdata",
+        fx[FallSound]      = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
                              "themes/default/falling.ogg"));
-        fx[DigSound]       = effects->loadSound (KStandardDirs::locate ("appdata",
+        fx[DigSound]       = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
                              "themes/default/dig.ogg"));
-        fx[LadderSound]    = effects->loadSound (KStandardDirs::locate ("appdata",
+        fx[LadderSound]    = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
                              "themes/default/ladder.ogg"));
-        fx[CompletedSound] = effects->loadSound (KStandardDirs::locate ("appdata",
+        fx[CompletedSound] = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
                              "themes/default/completed.ogg"));
-        fx[DeathSound]     = effects->loadSound (KStandardDirs::locate ("appdata",
+        fx[DeathSound]     = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
                              "themes/default/death.ogg"));
-        fx[GameOverSound]  = effects->loadSound (KStandardDirs::locate ("appdata",
+        fx[GameOverSound]  = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
                              "themes/default/gameover.ogg"));
-        fx[VictorySound]   = effects->loadSound (KStandardDirs::locate ("appdata",
+        fx[VictorySound]   = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
                              "themes/default/victory.ogg"));
 
         // Gold and dig sounds are timed and are allowed to play for at least one

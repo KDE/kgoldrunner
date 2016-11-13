@@ -40,9 +40,13 @@
 #include <QApplication>
 #include <QDesktopWidget>
 
-#include <KGlobalSettings>
+#include <QFontDatabase>
 #include <KConfigGroup>
-#include <KIntNumInput>
+#include <QSpinBox>
+#include <QDialogButtonBox>
+#include <KSharedConfig>
+#include <QDialog>
+#include <QtWidgets/QtWidgets>
 
 /******************************************************************************/
 /*****************    DIALOG BOX TO SELECT A GAME AND LEVEL   *****************/
@@ -53,7 +57,7 @@ KGrSLDialog::KGrSLDialog (int action, int requestedLevel, int gameIndex,
                         const QString & pSystemDir, const QString & pUserDir,
                         QWidget * parent)
     :
-    KDialog       (parent),
+    QDialog       (parent),
     slAction      (action),
     myGameList    (gameList),
     defaultGame   (gameIndex),
@@ -124,24 +128,34 @@ bool KGrSLDialog::selectLevel (int & selectedGame, int & selectedLevel)
 
 void KGrSLDialog::setupWidgets()
 {
-    int margin		= marginHint(); 
-    int spacing		= spacingHint(); 
+    int margin		= 0;
+    int spacing		= 0;
     QWidget * dad	= new QWidget (this);
-    setMainWidget (dad);
-    setCaption (i18n ("Select Game"));
-    setButtons (KDialog::Ok | KDialog::Cancel | KDialog::Help);
-    setDefaultButton (KDialog::Ok);
+
+    QVBoxLayout *layout = new QVBoxLayout;
+    setLayout(layout);
+    layout->addWidget(dad);
+
+    setWindowTitle (i18n ("Select Game"));
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::Help);
+    QVBoxLayout *buttonLayout = new QVBoxLayout;
+    connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+    connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    buttonLayout->addWidget(buttonBox);
+    buttonBox->button(QDialogButtonBox::Ok)->setDefault(true);
+    layout->addWidget(buttonBox);
 
     QVBoxLayout * mainLayout = new QVBoxLayout (dad);
-    mainLayout->setSpacing (spacing);
-    mainLayout->setMargin (margin);
+	mainLayout->setSpacing (spacing);
+	mainLayout->setMargin (margin);
 
     gameL    = new QLabel
                 (i18n ("<html><b>Please select a game:</b></html>"), dad);
-    mainLayout->addWidget (gameL, 5);
+	mainLayout->addWidget (gameL, 5);
 
     games    = new QTreeWidget (dad);
-    mainLayout->addWidget (games, 50);
+	mainLayout->addWidget(games);
+	mainLayout->addWidget (games, 50);
     games->setColumnCount (4);
     games->setHeaderLabels (QStringList() <<
                             i18n ("Name of Game") <<
@@ -205,7 +219,7 @@ void KGrSLDialog::setupWidgets()
     numberPair->setLayout (hboxLayout2);
     grid->addWidget (numberPair, 1, 1, 1, 3);
     numberL   = new QLabel (i18n ("Level number:"), numberPair);
-    display   = new KIntSpinBox (numberPair);
+    display   = new QSpinBox (numberPair);
     display->setRange (1, 150);
     hboxLayout2->addWidget (numberL);
     hboxLayout2->addWidget (display);
@@ -293,7 +307,7 @@ void KGrSLDialog::setupWidgets()
     default:		break;			// Keep the default settings.
     }
     if (!OKText.isEmpty()) {
-        setButtonGuiItem (KDialog::Ok, KGuiItem (OKText));
+        KGuiItem::assign(levelNH, KGuiItem (OKText));
     }
 
     // Set value in the line-edit box.
@@ -332,7 +346,7 @@ void KGrSLDialog::setupWidgets()
     connect (games, SIGNAL(itemSelectionChanged()), this, SLOT(slPaintLevel()));
     connect (number,  SIGNAL (sliderReleased()), this, SLOT (slPaintLevel()));
 
-    connect (this,    SIGNAL (helpClicked()), this, SLOT (slotHelp()));
+    connect (buttonBox->button(QDialogButtonBox::Help), SIGNAL (clicked()), this, SLOT (slotHelp()));
 }
 
 /******************************************************************************/
@@ -393,9 +407,9 @@ void KGrSLDialog::slSetGames (int cIndex)
     slGame();
 
     // Make the column for the game's name a bit wider.
-    games->header()->setResizeMode (0, QHeaderView::ResizeToContents);
-    games->header()->setResizeMode (1, QHeaderView::ResizeToContents);
-    games->header()->setResizeMode (2, QHeaderView::ResizeToContents);
+    games->header()->setSectionResizeMode (0, QHeaderView::ResizeToContents);
+    games->header()->setSectionResizeMode (1, QHeaderView::ResizeToContents);
+    games->header()->setSectionResizeMode (2, QHeaderView::ResizeToContents);
 }
 
 /******************************************************************************/
@@ -427,7 +441,7 @@ void KGrSLDialog::slGame()
         display->setMaximum (1);
     }
 
-    KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
+    KConfigGroup gameGroup (KSharedConfig::openConfig(), "KDEGame");
     int lev = 1;
 
     // Set a default level number for the selected game.

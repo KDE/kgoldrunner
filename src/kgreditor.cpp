@@ -27,7 +27,7 @@
 #include <ctype.h>
 #include <QTimer>
 
-#include <KDebug>
+#include <QDebug>
 
 KGrEditor::KGrEditor (KGrView * theView,
                       const QString & theSystemDir,
@@ -139,7 +139,7 @@ bool KGrEditor::updateLevel (int pGameIndex, int level)
     if (level < 0)
         level = 0;
     int selectedLevel = selectLevel (SL_UPDATE, level, gameIndex);
-    kDebug() << "Selected" << gameList.at(gameIndex)->name
+    qDebug() << "Selected" << gameList.at(gameIndex)->name
              << "level" << selectedLevel;
     if (selectedLevel == 0) {
         mouseDisabled = false;
@@ -163,7 +163,7 @@ void KGrEditor::loadEditLevel (int lev)
 {
     KGrLevelData d;
 
-    kDebug() << "gameIndex" << gameIndex;
+    qDebug() << "gameIndex" << gameIndex;
     // If system game or ENDE screen, choose system dir, else choose user dir.
     const QString dir = ((gameList.at(gameIndex)->owner == SYSTEM) ||
                          (lev == 0)) ? systemDataDir : userDataDir;
@@ -889,7 +889,7 @@ void KGrEditor::doEdit (int button)
     // Mouse button down: start making changes.
     int i, j;
     emit getMousePos (i, j);
-    kDebug() << "Button" << button << "at" << i << j;
+    qDebug() << "Button" << button << "at" << i << j;
 
     switch (button) {
     case Qt::LeftButton:

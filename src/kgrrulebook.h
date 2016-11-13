@@ -23,7 +23,7 @@
 #include <QObject>
 #include <QList>
 
-#include <KDebug>
+#include <QDebug>
 
 class KGrLevelGrid;
 

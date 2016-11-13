@@ -18,12 +18,14 @@
 #ifndef KGRDEBUG_H
 #define KGRDEBUG_H
 
+#include <QDebug>
+
 static int dbgLevel = 0;	// Local to file where kgrdebug.h is included.
 
-#define dbk  kDebug()
-#define dbk1 if(dbgLevel>=1)kDebug()
-#define dbk2 if(dbgLevel>=2)kDebug()
-#define dbk3 if(dbgLevel>=3)kDebug()
+#define dbk  qDebug()
+#define dbk1 if(dbgLevel>=1)qDebug()
+#define dbk2 if(dbgLevel>=2)qDebug()
+#define dbk3 if(dbgLevel>=3)qDebug()
 
 #define dbo  printf(
 #define dbo1 if(dbgLevel>=1)printf(

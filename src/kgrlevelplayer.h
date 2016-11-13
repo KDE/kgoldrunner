@@ -300,7 +300,7 @@ public:
      * is paused and the KConfig file contains group Debugging with setting
      * DebuggingShortcuts=true.  The main actions are to do timer steps one at
      * a time, activate/deactivate a bug-fix or new-feature patch dynamically,
-     * activate/deactivate logging output from fprintf or kDebug() dynamically,
+     * activate/deactivate logging output from fprintf or qDebug() dynamically,
      * print the status of a cell pointed to by the mouse and print the status
      * of the hero or an enemy.  See the code in file kgoldrunner.cpp, at the
      * end of KGoldrunner::setupActions() for details of codes and keystrokes.
