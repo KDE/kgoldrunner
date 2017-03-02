@@ -33,7 +33,7 @@
  */
 class KGrView;
 class KGrScene;
-class KDialog;
+class QDialog;
 
 class KGrSounds;
 
@@ -158,7 +158,7 @@ signals:
     void setAvail  (const char * actionName, const bool onOff);
 
 private:
-    KDialog * qs;			// Pointer to Quick Start dialog box.
+    QDialog * qs;			// Pointer to Quick Start dialog box.
     QString initialThemeFilepath;
 
 private slots:

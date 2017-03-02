@@ -25,8 +25,8 @@
 #include <QTextEdit>
 #include <QList>
 
-#include <KLocale>
-#include <KDialog>
+#include <KLocalizedString>
+#include <QDialog>
 #include <KMessageBox>
 
 class QButtonGroup;
@@ -42,7 +42,7 @@ class KGrGameData;
 *************** DIALOG BOX TO CREATE/EDIT A LEVEL NAME AND HINT ****************
 *******************************************************************************/
 
-class KGrNHDialog : public KDialog
+class KGrNHDialog : public QDialog
 {
 Q_OBJECT
 public:
@@ -62,7 +62,7 @@ private:
 ***************** DIALOG TO CREATE OR EDIT A GAME (COLLECTION) *****************
 *******************************************************************************/
 
-class KGrECDialog : public KDialog
+class KGrECDialog : public QDialog
 {
 Q_OBJECT
 public:
@@ -104,7 +104,7 @@ private:
 
 class QFile;
 
-class KGrLGDialog : public KDialog
+class KGrLGDialog : public QDialog
 {
 Q_OBJECT
 public:

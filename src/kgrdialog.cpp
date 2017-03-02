@@ -27,7 +27,12 @@
 #include <QLabel>
 #include <QButtonGroup>
 
-#include <KGlobalSettings>
+#include <QFontDatabase>
+#include <KConfigGroup>
+#include <QDialogButtonBox>
+#include <QPushButton>
+#include <KLocalizedString>
+#include <QtWidgets/QGroupBox>
 
 /*******************************************************************************
 *************** DIALOG BOX TO CREATE/EDIT A LEVEL NAME AND HINT ****************
@@ -35,32 +40,48 @@
 
 KGrNHDialog::KGrNHDialog (const QString & levelName, const QString & levelHint,
                         QWidget * parent)
-                : KDialog (parent)
+                : QDialog (parent)
 {
-    setCaption (i18n ("Edit Name & Hint"));
-    setButtons (KDialog::Ok | KDialog::Cancel);
-    setDefaultButton (KDialog::Ok);
-    int margin		= marginHint();
-    int spacing		= spacingHint();
-    QWidget * dad	= new QWidget (this);
-    setMainWidget (dad);
+    setWindowTitle (i18n ("Edit Name & Hint"));
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+    QWidget *mainWidget = new QWidget(this);
+    QVBoxLayout *mainLayout = new QVBoxLayout;
+    setLayout(mainLayout);
+    mainLayout->addWidget(mainWidget);
+    QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
+    okButton->setDefault(true);
+    okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
+    connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+    connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
 
-    QVBoxLayout * mainLayout = new QVBoxLayout (dad);
-    mainLayout->setSpacing (spacing);
-    mainLayout->setMargin (margin);
+    buttonBox->button(QDialogButtonBox::Ok)->setDefault(true);
+    int margin		= 0;
+    int spacing		= 0;
+    QWidget * dad	= new QWidget (this);
+    mainLayout->addWidget(dad);
+
+    QVBoxLayout * mainLayout2 = new QVBoxLayout (dad);
+    mainLayout2->setSpacing (spacing);
+    mainLayout2->setMargin (margin);
 
     QLabel *		nameL  = new QLabel (i18n ("Name of level:"), dad);
-    mainLayout->addWidget (nameL);
+    mainLayout2->addWidget(nameL);
+    mainLayout2->addWidget (nameL);
                         nhName  = new QLineEdit (dad);
-    mainLayout->addWidget (nhName);
+                        mainLayout->addWidget(nhName);
+    mainLayout2->addWidget (nhName);
 
     QLabel *		mleL = new QLabel (i18n ("Hint for level:"), dad);
-    mainLayout->addWidget (mleL);
+    mainLayout2->addWidget(mleL);
+    mainLayout2->addWidget (mleL);
 
     // Set up a widget to hold the wrapped text, using \n for paragraph breaks.
                          mle = new QTextEdit (dad);
+                         mainLayout->addWidget(mle);
      mle->		setAcceptRichText (false);
-     mainLayout->addWidget (mle);
+    mainLayout2->addWidget (mle);
+    //PORTING SCRIPT: WARNING mainLayout->addWidget(buttonBox) must be last item in layout. Please move it.
+    mainLayout->addWidget(buttonBox);
 
     // Base the geometry of the text box on the playing area.
     QPoint		p = parent->mapToGlobal (QPoint (0,0));
@@ -86,22 +107,28 @@ KGrNHDialog::~KGrNHDialog()
 KGrECDialog::KGrECDialog (int action, int gameIndex,
                         QList<KGrGameData *> & gamesList,
                         QWidget * parent)
-                : KDialog (parent)
+                : QDialog (parent)
 {
     myGameList  = gamesList;
     defaultGame  = gameIndex;
 
-    setCaption (i18n ("Edit Game Info"));
-    setButtons (KDialog::Ok | KDialog::Cancel);
-    setDefaultButton (KDialog::Ok);
-    int margin		= marginHint();
-    int spacing		= spacingHint();
+    setWindowTitle (i18n ("Edit Game Info"));
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+
+    connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+    connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+
+    buttonBox->button(QDialogButtonBox::Ok)->setDefault(true);
+    buttonBox->button(QDialogButtonBox::Ok)->setShortcut(Qt::CTRL | Qt::Key_Return);
+
+    int margin		= 0;
+    int spacing		= 0;
     QWidget * dad	= new QWidget (this);
-    setMainWidget (dad);
 
     QVBoxLayout * mainLayout = new QVBoxLayout (dad);
     mainLayout->setSpacing (spacing);
     mainLayout->setMargin (margin);
+    setLayout(mainLayout);
 
     QHBoxLayout *hboxLayout5 = new QHBoxLayout();
     hboxLayout5->setSpacing (spacing);
@@ -141,6 +168,7 @@ KGrECDialog::KGrECDialog (int action, int gameIndex,
     mle	     = new QTextEdit (dad);
     mle->    setAcceptRichText (false);
     mainLayout->addWidget (mle);
+    mainLayout->addWidget(buttonBox);
 
     QPoint p = parent->mapToGlobal (QPoint (0,0));
 
@@ -150,10 +178,10 @@ KGrECDialog::KGrECDialog (int action, int gameIndex,
     dad->	setMinimumSize ((FIELDWIDTH*cell/2), (FIELDHEIGHT-1)*cell);
 
     if (action == SL_CR_GAME) {
-         setCaption (i18n ("Create Game"));
+         setWindowTitle (i18n ("Create Game"));
     }
     else {
-         setCaption (i18n ("Edit Game Info"));
+         setWindowTitle (i18n ("Edit Game Info"));
     }
 
     QString OKText = "";
@@ -175,7 +203,7 @@ KGrECDialog::KGrECDialog (int action, int gameIndex,
         nLevL->         setText (i18n ("0 levels"));
         OKText = i18n ("Save New");
     }
-    setButtonGuiItem (KDialog::Ok, KGuiItem (OKText));
+    KGuiItem::assign(buttonBox->button(QDialogButtonBox::Ok), KGuiItem (OKText));
 
     if ((action == SL_CR_GAME) ||
         (myGameList.at (defaultGame)->rules == 'T')) {
@@ -226,26 +254,33 @@ void KGrECDialog::ecSetTrad() {ecSetRules ('T');}
 KGrLGDialog::KGrLGDialog (QFile * savedGames,
                           QList<KGrGameData *> & gameList,
                           QWidget * parent)
-                : KDialog (parent)
+                : QDialog (parent)
 {
-    setCaption (i18n ("Select Saved Game"));
-    setButtons (KDialog::Ok | KDialog::Cancel);
-    setDefaultButton (KDialog::Ok);
-    int margin		= marginHint();
-    int spacing		= spacingHint();
-    QWidget * dad	= new QWidget (this);
-    setMainWidget (dad);
+    setWindowTitle (i18n ("Select Saved Game"));
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+    QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
+    okButton->setDefault(true);
+    okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
+    connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+    connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
 
+    buttonBox->button(QDialogButtonBox::Ok)->setDefault(true);
+    int margin		= 0;
+    int spacing		= 0;
+
+    QWidget * dad	= new QWidget (this);
     QVBoxLayout *	mainLayout = new QVBoxLayout (dad);
     mainLayout->setSpacing (spacing);
     mainLayout->setMargin (margin);
+    setLayout(mainLayout);
 
     QLabel *		lgHeader = new QLabel (
                         i18n ("Game                       Level/Lives/Score   "
                         "Day    Date     Time  "), dad);
 
     lgList   = new QListWidget (dad);
-    QFont		f = KGlobalSettings::fixedFont();	// KDE version.
+    mainLayout->addWidget(lgList);
+    QFont		f = QFontDatabase::systemFont(QFontDatabase::FixedFont);	// KDE version.
                         f.setFixedPitch (true);
     lgList->		setFont (f);
                         f.setBold (true);
@@ -253,6 +288,7 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
 
     mainLayout->	addWidget (lgHeader);
     mainLayout->	addWidget (lgList);
+    mainLayout->addWidget(buttonBox);
 
     // Base the geometry of the list box on the playing area.
     QPoint		p = parent->mapToGlobal (QPoint (0,0));

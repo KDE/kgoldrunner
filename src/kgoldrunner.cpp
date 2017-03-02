@@ -26,31 +26,30 @@
 #include <QKeySequence>
 #include <QKeyEvent>
 
-#include <kglobal.h>
 #include <kshortcutsdialog.h>
-#include <KStandardDirs>
+#include <KLocalizedString>
 
 #include <kconfig.h>
 #include <kconfiggroup.h>
 
-#include <kdebug.h>
 #include <QDebug>
 
 #include <ktoolbar.h>
-#include <kmenubar.h>
+#include <QMenuBar>
 
-#include <kaction.h>
+#include <QAction>
 #include <kactioncollection.h>
 #include <ktoggleaction.h>
 #include <ktogglefullscreenaction.h>
 #include <kstandardaction.h>
 #include <kstandardgameaction.h>
-#include <kicon.h>
-#include <KMenu>
-#include <KCmdLineArgs>
+#include <QMenu>
+#include <QCommandLineParser>
 #include <KAboutData>
 
 #include <libkdegames_capabilities.h> //defines KGAUDIO_BACKEND_OPENAL (or not)
+#include <KSharedConfig>
+#include <KIOCore/KIO/MkpathJob>
 
 #include "kgrgame.h"
 #include "kgrview.h"
@@ -115,7 +114,7 @@ KGoldrunner::KGoldrunner()
 /******************************************************************************/
 
     // Get catalog for translation.
-    KGlobal::locale()->insertCatalog ( QLatin1String( "libkdegames" ));
+    // KGlobal::locale()->insertCatalog ( QLatin1String( "libkdegames" ));
 
     // Tell the KMainWindow that the KGrView object is the main widget.
     setCentralWidget (view);
@@ -171,20 +170,20 @@ KGoldrunner::KGoldrunner()
     // Do NOT paint main widget yet (title bar, menu, blank playfield).
     // Instead, queue a call to the "KGoldrunner_2" constructor extension.
     QMetaObject::invokeMethod (this, "KGoldrunner_2", Qt::QueuedConnection);
-    // kDebug() << "QMetaObject::invokeMethod (this, \"KGoldrunner_2\") done ... ";
-    // kDebug() << "1st scan of event-queue ...";
+    // qDebug() << "QMetaObject::invokeMethod (this, \"KGoldrunner_2\") done ... ";
+    // qDebug() << "1st scan of event-queue ...";
 }
 
 void KGoldrunner::KGoldrunner_2()
 {
-    // kDebug() << "Entered constructor extension ...";
+    // qDebug() << "Entered constructor extension ...";
 
     // Queue a call to the "initGame" method. This renders and paints the
     // initial graphics, but only AFTER the initial main-window resize events
     // have been seen and the final SVG scale is known.
     QMetaObject::invokeMethod (game, "initGame", Qt::QueuedConnection);
-    // kDebug() << "QMetaObject::invokeMethod (game, \"initGame\") done ... ";
-    // kDebug() << "2nd scan of event-queue ...";
+    // qDebug() << "QMetaObject::invokeMethod (game, \"initGame\") done ... ";
+    // qDebug() << "2nd scan of event-queue ...";
 }
 
 KGoldrunner::~KGoldrunner()
@@ -205,7 +204,7 @@ void KGoldrunner::setupActions()
     // Load Saved Game...
     // --------------------------
 
-    KAction * a = KStandardGameAction::gameNew (gameMapper, SLOT(map()), this);
+    QAction * a = KStandardGameAction::gameNew (gameMapper, SLOT(map()), this);
     actionCollection()->addAction (a->objectName(), a);
     gameMapper->setMapping (a, NEW);
     a->setText (i18n ("&New Game..."));
@@ -252,9 +251,9 @@ void KGoldrunner::setupActions()
     actionCollection()->addAction (myPause->objectName(), myPause);
     gameMapper->setMapping (myPause, PAUSE);
 
-    // KAction * myPause gets KAction::shortcut(), returning 1 OR 2 shortcuts.
-    KShortcut pauseShortcut = myPause->shortcut();
-    pauseShortcut.setAlternate (Qt::Key_Escape);	// Add "Esc" shortcut.
+    // QAction * myPause gets QAction::shortcut(), returning 1 OR 2 shortcuts.
+    QKeySequence pauseShortcut = myPause->shortcut();
+    // pauseShortcut.setAlternate (Qt::Key_Escape);	// Add "Esc" shortcut.
     myPause->setShortcut (pauseShortcut);
 
     highScore = KStandardGameAction::highscores (gameMapper, SLOT(map()), this);
@@ -323,18 +322,18 @@ void KGoldrunner::setupActions()
     // Edit a Level...
     // --------------------------
 
-    KAction * ed = editAction ("create_level", CREATE_LEVEL,
+    QAction * ed = editAction ("create_level", CREATE_LEVEL,
                                i18n ("&Create Level"),
                                i18n ("Create level."),
                                i18n ("Create a completely new level."));
-    ed->setIcon (KIcon ( QLatin1String( "document-new" )));
+    ed->setIcon ( QIcon::fromTheme ( QLatin1String( "document-new" )));
     ed->setIconText (i18n ("Create"));
 
     ed           = editAction ("edit_any", EDIT_ANY,
                                i18n ("&Edit Level..."),
                                i18n ("Edit level..."),
                                i18n ("Edit any level..."));
-    ed->setIcon (KIcon ( QLatin1String( "document-open" )));
+    ed->setIcon ( QIcon::fromTheme ( QLatin1String( "document-open" )));
     ed->setIconText (i18n ("Edit"));
 
     // Save Edits...
@@ -346,7 +345,7 @@ void KGoldrunner::setupActions()
                                i18n ("&Save Edits..."),
                                i18n ("Save edits..."),
                                i18n ("Save your level after editing..."));
-    saveEdits->setIcon (KIcon ( QLatin1String( "document-save" )));
+    saveEdits->setIcon ( QIcon::fromTheme ( QLatin1String( "document-save" )));
     saveEdits->setIconText (i18n ("Save"));
     saveEdits->setEnabled (false);		// Nothing to save, yet.
 
@@ -566,7 +565,7 @@ void KGoldrunner::setupActions()
     // stepping through the animation, toggling a debug patch or log messages
     // on or off during gameplay and printing the states of runners or tiles.
 
-    KConfigGroup debugGroup (KGlobal::config(), "Debugging");
+    KConfigGroup debugGroup (KSharedConfig::openConfig(), "Debugging");
     bool addDebuggingShortcuts = debugGroup.readEntry
                         ("DebuggingShortcuts", false);	// Get debug option.
     if (! addDebuggingShortcuts)
@@ -592,14 +591,14 @@ void KGoldrunner::setupActions()
     keyControl ("show_enemy_6", i18n ("Show Enemy") + '6', Qt::Key_6, ENEMY_6);
 }
 
-KAction * KGoldrunner::gameAction (const QString & name,
+QAction * KGoldrunner::gameAction (const QString & name,
                                    const int       code,
                                    const QString & text,
                                    const QString & toolTip,
                                    const QString & whatsThis,
                                    const QKeySequence & key)
 {
-    KAction * ga = actionCollection()->addAction (name);
+    QAction * ga = actionCollection()->addAction (name);
     ga->setText (text);
     ga->setToolTip (toolTip);
     ga->setWhatsThis (whatsThis);
@@ -611,13 +610,13 @@ KAction * KGoldrunner::gameAction (const QString & name,
     return ga;
 }
 
-KAction * KGoldrunner::editAction (const QString & name,
+QAction * KGoldrunner::editAction (const QString & name,
                                    const int       code,
                                    const QString & text,
                                    const QString & toolTip,
                                    const QString & whatsThis)
 {
-    KAction * ed = actionCollection()->addAction (name);
+    QAction * ed = actionCollection()->addAction (name);
     ed->setText (text);
     ed->setToolTip (toolTip);
     ed->setWhatsThis (whatsThis);
@@ -663,7 +662,7 @@ void KGoldrunner::keyControl (const QString & name, const QString & text,
                               const QKeySequence & shortcut, const int code,
                               const bool mover)
 {
-    KAction * a = actionCollection()->addAction (name);
+    QAction * a = actionCollection()->addAction (name);
     a->setText (text);
     a->setShortcut (shortcut);
     a->setAutoRepeat (false);		// Avoid repeats of signals by QAction.
@@ -754,7 +753,7 @@ void KGoldrunner::gameFreeze (bool on_off)
     myPause->setChecked (on_off);
     frozen = on_off;	// Remember the state (for the configure-keys case).
     QStringList pauseKeys;
-    foreach (const QKeySequence &s, myPause->shortcut().toList()) {
+    foreach (const QKeySequence &s, myPause->shortcut().keyBindings(QKeySequence::StandardKey::Cancel)) {
         pauseKeys.append(s.toString(QKeySequence::NativeText));
     }
     QString msg;
@@ -796,7 +795,7 @@ void KGoldrunner::setToggle (const char * actionName, const bool onOff)
 
 void KGoldrunner::setAvail (const char * actionName, const bool onOff)
 {
-    ((KAction *) ACTION (actionName))->setEnabled (onOff);
+    ((QAction *) ACTION (actionName))->setEnabled (onOff);
 }
 
 void KGoldrunner::setEditMenu (bool on_off)
@@ -812,7 +811,7 @@ void KGoldrunner::setEditMenu (bool on_off)
 
     if (on_off){
         // Set the editToolbar icons to the current tile-size.
-        // kDebug() << "ToolBar icon size:" << scene->tileSize ();
+        // qDebug() << "ToolBar icon size:" << scene->tileSize ();
         toolBar ("editToolbar")->setIconSize (scene->tileSize ());
 
         // Set the editToolbar icons up with pixmaps of the current theme.
@@ -838,7 +837,7 @@ void KGoldrunner::setEditMenu (bool on_off)
 void KGoldrunner::setEditIcon (const QString & actionName, const char iconType)
 {
     ((KToggleAction *) (actionCollection()->action (actionName)))->
-                setIcon (KIcon (renderer->getPixmap (iconType)));
+                setIcon (QIcon(renderer->getPixmap (iconType)));
 }
 
 /******************************************************************************/
@@ -864,7 +863,7 @@ void KGoldrunner::saveProperties (KConfigGroup & /* config - unused */)
     // config file.  Anything you write here will be available
     // later when this app is restored.
 
-    // kDebug() << "I am in KGoldrunner::saveProperties.";
+    // qDebug() << "I am in KGoldrunner::saveProperties.";
 }
 
 void KGoldrunner::readProperties (const KConfigGroup & /* config - unused */)
@@ -874,7 +873,7 @@ void KGoldrunner::readProperties (const KConfigGroup & /* config - unused */)
     // the app is being restored.  Read in here whatever you wrote
     // in 'saveProperties'
 
-    // kDebug() << "I am in KGoldrunner::readProperties.";
+    // qDebug() << "I am in KGoldrunner::readProperties.";
 }
 
 void KGoldrunner::optionsConfigureKeys()
@@ -892,68 +891,39 @@ bool KGoldrunner::getDirectories()
 {
     bool result = true;
 
-    // WHERE THINGS ARE: In the KDE 3 environment (Release 3.1.1), application
-    // documentation and data files are in a directory structure given by
-    // $KDEDIRS (e.g. "/usr/local/kde" or "/opt/kde3/").  Application user data
-    // files are in a directory structure given by $KDEHOME ("$HOME/.kde").
-    // Within those two structures, the three sub-directories will typically be
-    // "share/doc/HTML/en/kgoldrunner/", "share/apps/kgoldrunner/system/" and
-    // "share/apps/kgoldrunner/user/".  Note that it is necessary to have
-    // an extra path level ("system" or "user") after "kgoldrunner", otherwise
-    // all the KGoldrunner files have similar path names (after "apps") and
-    // KDE always locates directories in $KDEHOME and never the released games.
-
-    // The directory strings are set by KDE at run time and might change in
-    // later releases, so use them with caution and only if something gets lost.
-
-    KStandardDirs * dirs = new KStandardDirs();
-
     QString myDir = "kgoldrunner";
+    QStringList genericDataLocations = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
+    QStringList appDataLocations = QStandardPaths::standardLocations(QStandardPaths::AppDataLocation);
 
     // Find the KGoldrunner Users' Guide, English version (en).
-    systemHTMLDir = dirs->findResourceDir ("html", "en/" + myDir + '/');
-    if (systemHTMLDir.length() <= 0) {
+    systemHTMLDir = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                           "doc/HTML/en/" + myDir + '/',
+                                           QStandardPaths::LocateDirectory);
+        if (systemHTMLDir.length() <= 0) {
         KGrMessage::information (this, i18n ("Get Folders"),
-                i18n ("Cannot find documentation sub-folder 'en/%1/' "
-                "in area '%2' of the KDE folder ($KDEDIRS).",
-                myDir, dirs->resourceDirs ("html").join ( QLatin1String( ":" ))));
+                i18n ("Cannot find documentation sub-folder 'doc/HTML/en/%1/' "
+                "in areas '%2'.",
+                myDir, genericDataLocations.join(";")));
         // result = false;		// Don't abort if the doc is missing.
     }
-    else
-        systemHTMLDir.append ("en/" + myDir + '/');
 
     // Find the system collections in a directory of the required KDE type.
-    systemDataDir = dirs->findResourceDir ("data", myDir + "/system/");
+    systemDataDir = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+                                           "system/",
+                                           QStandardPaths::LocateDirectory);
     if (systemDataDir.length() <= 0) {
         KGrMessage::information (this, i18n ("Get Folders"),
-        i18n ("Cannot find system games sub-folder '%1/system/' "
-        "in area '%2' of the KDE folder ($KDEDIRS).",
-         myDir, dirs->resourceDirs ("data").join ( QLatin1String( ":" ))));
+                i18n ("Cannot find system games sub-folder '/system/' "
+                "in areas '%1'.",
+                appDataLocations.join(";")));
         result = false;			// ABORT if the games data is missing.
     }
-    else
-        systemDataDir.append (myDir + "/system/");
 
     // Locate and optionally create directories for user collections and levels.
-    bool create = true;
-    userDataDir   = dirs->saveLocation ("data", myDir + "/user/", create);
-    if (userDataDir.length() <= 0) {
-        KGrMessage::information (this, i18n ("Get Folders"),
-        i18n ("Cannot find or create user games sub-folder '%1/user/' "
-        "in area '%2' of the KDE user area ($KDEHOME).",
-         myDir, dirs->resourceDirs ("data").join ( QLatin1String( ":" ))));
-        // result = false;		// Don't abort if user area is missing.
-    }
-    else {
-        create = dirs->makeDir (userDataDir + "levels/");
-        if (! create) {
-            KGrMessage::information (this, i18n ("Get Folders"),
-            i18n ("Cannot find or create 'levels/' folder in "
-            "sub-folder '%1/user/' in the KDE user area ($KDEHOME).", myDir));
-            // result = false;		// Don't abort if user area is missing.
-        }
-    }
-    delete dirs;
+    userDataDir   = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/";
+    QString levelDir = userDataDir + "levels";
+    KIO::mkpath(QUrl::fromUserInput(levelDir))->exec();
+
     return (result);
 }
 
@@ -980,12 +950,12 @@ void KGoldrunner::setupEditToolbarActions()
              game, SLOT (editToolbarActions(int)));
     tempMapper = editToolbarMapper;
 
-    KAction * ed = editAction ("edit_hint", EDIT_HINT,
+    QAction * ed = editAction ("edit_hint", EDIT_HINT,
                                i18n ("Edit Name/Hint"),
                                i18n ("Edit level name or hint"),
                                i18n ("Edit text for the name or hint "
                                      "of a level"));
-    ed->setIcon (KIcon ( QLatin1String( "games-hint" )));
+    ed->setIcon ( QIcon::fromTheme ( QLatin1String( "games-hint" )));
     ed->setIconText (i18n ("Name/Hint"));
 
     KToggleAction * free    = editToolbarAction ("freebg", FREE,

@@ -18,17 +18,17 @@
  ****************************************************************************/
 
 #include <QDebug>
-#include <kapplication.h>
-#include <kaboutdata.h>
-#include <kcmdlineargs.h>
-#include <klocale.h>
+#include <QApplication>
+#include <KAboutData>
+#include <QCommandLineParser>
+#include <KLocalizedString>
 #include "kgoldrunner.h"
 
 static const char description[] =
     I18N_NOOP ("KGoldrunner is a game of action and puzzle solving");
 
 // The intention is to keep the KGoldrunner version number in line with KDE.
-static const char version[] = "4.14";
+static const char version[] = "5.27.0";
 
 static bool gameDataOK();
 static void addCredits (KAboutData & about);
@@ -41,16 +41,23 @@ int main (int argc, char **argv)
  	return 2;
     }
 
-    KAboutData about ("kgoldrunner", 0, ki18n ("KGoldrunner"),
-                     version, ki18n (description),
-                     KAboutData::License_GPL,
-                     ki18n ("(C) 2003 Ian Wadham and Marco Krüger"),
-                     KLocalizedString(), "http://games.kde.org/kgoldrunner" );
+    QApplication app(argc, argv);
+
+    KAboutData about ("kgoldrunner", i18n ("KGoldrunner"),
+                     version, i18n (description),
+                     KAboutLicense::GPL,
+                     i18n ("(C) 2003 Ian Wadham and Marco Krüger"),
+                     "", "http://games.kde.org/kgoldrunner" );
     addCredits (about);
+    KAboutData::setApplicationData(about);
 
-    KCmdLineArgs::init (argc, argv, &about);
+    QCommandLineParser parser;
+    parser.addVersionOption();
+    parser.addHelpOption();
+    about.setupCommandLine(&parser);
+    parser.process(app);
+    about.processCommandLine(&parser);
 
-    KApplication app;
     // See if we are starting with session management.
     if (app.isSessionRestored()) {
         // New RESTORE (KGrController);
@@ -69,33 +76,36 @@ int main (int argc, char **argv)
 
 void addCredits (KAboutData & about)
 {
-    about.addAuthor (ki18n ("Ian Wadham"), ki18n ("Current author"),
+    about.addAuthor (i18n ("Ian Wadham"), i18n ("Current author"),
                             "iandw.au@gmail.com");
-    about.addAuthor (ki18n ("Marco Krüger"), ki18n ("Original author"),
+    about.addAuthor (i18n ("Marco Krüger"), i18n ("Original author"),
                             "grisuji@gmx.de");
-    about.addCredit (ki18n ("Mauricio Piacentini"),
-                     ki18n ("Port to KDE4, Qt4 and KGameCanvas classes"), 
+    about.addCredit (i18n ("Mauricio Piacentini"),
+                     i18n ("Port to KDE4, Qt4 and KGameCanvas classes"),
                             "mauricio@tabuleiro.com");
-    about.addCredit (ki18n ("Maurizio Monge"),
-                     ki18n ("KGameCanvas classes for KDE4"), 
+    about.addCredit (i18n ("Maurizio Monge"),
+                     i18n ("KGameCanvas classes for KDE4"),
                             "maurizio.monge@gmail.com");
-    about.addCredit (ki18n ("Mauricio Piacentini"),
-                     ki18n ("Artwork for runners and default theme"), 
+    about.addCredit (i18n ("Mauricio Piacentini"),
+                     i18n ("Artwork for runners and default theme"),
                             "mauricio@tabuleiro.com");
-    about.addCredit (ki18n ("Johann Ollivier Lapeyre"),
-                     ki18n ("Artwork for bars and ladders"), 
+    about.addCredit (i18n ("Johann Ollivier Lapeyre"),
+                     i18n ("Artwork for bars and ladders"),
                             "johann.ollivierlapeyre@gmail.com");
-    about.addCredit (ki18n ("Eugene Trounev"),
-                     ki18n ("Artwork for background of Geek City theme"), 
+    about.addCredit (i18n ("Eugene Trounev"),
+                     i18n ("Artwork for background of Geek City theme"),
                             "irs_me@hotmail.com");
-    about.addCredit (ki18n ("Luciano Montanaro"),
-                     ki18n ("Nostalgia themes, improvements to runners, "
+    about.addCredit (i18n ("Luciano Montanaro"),
+                     i18n ("Nostalgia themes, improvements to runners, "
                             "multiple-backgrounds feature, fade-in/fade-out "
                             "feature and several other ideas"), 
                             "mikelima@cirulla.net");
-    about.addCredit (ki18n ("Eugene Trounev"),
-                     ki18n ("Artwork for the Treasure of Egypt theme"), 
+    about.addCredit (i18n ("Eugene Trounev"),
+                     i18n ("Artwork for the Treasure of Egypt theme"),
                             "irs_me@hotmail.com");
+    about.addCredit (i18n ("Camillo Dell'mour"),
+                     i18n ("KF5 port"),
+                           "cdellmour@gmail.com");
 }
 
 bool gameDataOK()

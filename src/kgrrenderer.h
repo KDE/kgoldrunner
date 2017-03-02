@@ -196,7 +196,7 @@ private:
      *
      * @param picType The internal KGoldrunner type of a tile or background.
      */
-    QString getPixmapKey (const char picType, const int index);
+    QString getPixmapKey (const int index);
 
     /*
      * Get the SVG element name for a KGoldrunner background. If the theme has

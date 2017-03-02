@@ -25,7 +25,7 @@
 #include <KXmlGuiWindow>
 
 class QSignalMapper;
-class KAction;
+class QAction;
 class KToggleAction;
 
 class KGrGame;
@@ -112,11 +112,11 @@ private:
 
     QSignalMapper * tempMapper;		// Temporary pointer.
 
-    KAction * gameAction (const QString & name, const int code,
+    QAction * gameAction (const QString & name, const int code,
                           const QString & text, const QString & toolTip,
                           const QString & whatsThis, const QKeySequence & key);
 
-    KAction * editAction (const QString & name, const int code,
+    QAction * editAction (const QString & name, const int code,
                           const QString & text, const QString & toolTip,
                           const QString & whatsThis);
 
@@ -150,16 +150,16 @@ private:
     QString systemDataDir;		// Where the system levels are stored.
     QString userDataDir;		// Where the user levels are stored.
 
-    KAction *		saveGame;	// Save game, level, lives and score.
+    QAction *		saveGame;	// Save game, level, lives and score.
 
-    // A KAction is needed here, to get access to KShortcut::setAlternate().
-    KAction *		myPause;	// Pause or resume the game.
+    // A QAction is needed here, to get access to KShortcut::setAlternate().
+    QAction *		myPause;	// Pause or resume the game.
 
-    KAction *		hintAction;	// Display a hint, if available.
-    KAction *		killHero;	// Kill hero (disabled during edits).
-    KAction *		highScore;	// High scores (disabled during edits).
+    QAction *		hintAction;	// Display a hint, if available.
+    QAction *		killHero;	// Kill hero (disabled during edits).
+    QAction *		highScore;	// High scores (disabled during edits).
 
-    KAction *		saveEdits;	// Save a level that has been edited.
+    QAction *		saveEdits;	// Save a level that has been edited.
 
     KToolBar *		editToolbar;	// Toolbar for creating/editing levels.
 };
