@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component type="desktop-application">
+  <id>org.kde.kgoldrunner.desktop</id>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-2.0+</project_license>
+  <name>KGoldrunner</name>
+  <summary>Hunt Gold, Dodge Enemies and Solve Puzzles</summary>
+    <description>
+    <p>
+      KGoldrunner is an action game where the hero runs through a maze, climbs stairs, dig holes and
+      dodges enemies in order to collect all the gold nuggets and escape to the next level.
+      Your enemies are also after the gold. Worse still, they are after you!.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Themeable</li>
+      <li>Hundreds of levels</li>
+      <li>Level-editor</li>
+      <li>Two modes for the enemies: classical and KGoldrunner-mode, in KGoldrunner-mode they are
+          more intelligent, in the classical mode it is easier to fool them</li>
+      <li>Very very difficult levels</li>
+      <li>Keyboard or mouse control</li>
+      <li>Savable games</li>
+    </ul>
+  </description>
+  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kgoldrunner</url>
+  <url type="help">http://docs.kde.org/?application=kgoldrunner</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://kde.org/images/screenshots/kgoldrunner.png</image>
+    </screenshot>
+  </screenshots>
+  <project_group>KDE</project_group>
+  <provides>
+    <binary>kgoldrunner</binary>
+  </provides>
+</component>
