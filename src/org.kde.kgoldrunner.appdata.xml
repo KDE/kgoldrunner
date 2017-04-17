@@ -8,6 +8,8 @@
   <name xml:lang="ca-valencia">KGoldrunner</name>
   <name xml:lang="es">KGoldrunner</name>
   <name xml:lang="nl">KGoldrunner</name>
+  <name xml:lang="pt">KGoldrunner</name>
+  <name xml:lang="sk">KGoldrunner</name>
   <name xml:lang="sv">Kgoldrunner</name>
   <name xml:lang="uk">Золотошукач</name>
   <name xml:lang="x-test">xxKGoldrunnerxx</name>
@@ -16,6 +18,8 @@
   <summary xml:lang="ca-valencia">Busca l'or, esquiva els enemics i resol trencaclosques</summary>
   <summary xml:lang="es">Recoge oro, esquiva enemigos y resuelve rompecabezas</summary>
   <summary xml:lang="nl">Jaag op goud, versla vijanden en los puzzels op</summary>
+  <summary xml:lang="pt">Caçar o Ouro, Fugir dos Inimigos e Resolver 'Puzzles'</summary>
+  <summary xml:lang="sk">Hľadajte zlato, vyhnite sa nepriateľom a riešte puzzle</summary>
   <summary xml:lang="sv">Leta guld, undvik fiender och lös problem</summary>
   <summary xml:lang="uk">Шукайте золото, уникайте ворогів і розгадуйте загадки</summary>
   <summary xml:lang="x-test">xxHunt Gold, Dodge Enemies and Solve Puzzlesxx</summary>
@@ -29,6 +33,7 @@
     <p xml:lang="ca-valencia">El KGoldrunner és un joc d'acció a on l'heroi corre a través d'un laberint, puja escales, cava forats i esquiva enemics per tal de recollir totes les llavors d'or i escapar al nivell següent. Els enemics també van darrere l'or. Encara pitjor: van darrera teu!</p>
     <p xml:lang="es">KGoldrunner es un juego de acción en el que un héroe corre por un laberinto, sube escaleras, cava hoyos y esquiva enemigos para recoger todas las piezas de oro y escapar al siguiente nivel. Los enemigos también van a por el oro. Y, todavía peor, ¡van a por ti!</p>
     <p xml:lang="nl">KGoldrunner is een actiespel waar de held door een doolhof rent, ladders beklimt, gaten graaft en vijanden verslaat om alle goudklompjes te verzamelen en te ontsnappen naar het volgende level. Jouw vijanden zitten ook achter het goud aan. Nog erger, ze gaan ook achter jou aan!.</p>
+    <p xml:lang="pt">O KGoldrunner é um jogo de acção onde o herói corre por um labirinto, sobe escadas, escava buracos e foge dos inimigos para conseguir recolher todas as pepitas de ouro e escapar para o nível seguinte. Os seus inimigos também estão atrás do ouro. Pior ainda, estão atrás de si!.</p>
     <p xml:lang="sv">Kgoldrunner är ett äventyrsspel där hjälten springer genom en labyrint, klättrar på stegar, gräver hål och undviker fiender för att samla in alla guldklimpar och fly till nästa nivå. Fienderna är också ute efter guldet. Vad värre är, de är också är ute efter dig!</p>
     <p xml:lang="uk">«Золотошукач» — рухлива гра, де герой подорожує лабіринтом, видирається на стіни, копає ями та втікає від ворогів, збираючи при цьому золоті самородки і переходячи з рівня на рівень. Окрім вашого героя, за золотом полюють і вороги. Вони також не проти звести вашого героя з цього світу!</p>
     <p xml:lang="x-test">xxKGoldrunner is an action game where the hero runs through a maze, climbs stairs, dig holes and dodges enemies in order to collect all the gold nuggets and escape to the next level. Your enemies are also after the gold. Worse still, they are after you!.xx</p>
@@ -37,6 +42,8 @@
     <p xml:lang="ca-valencia">Característiques:</p>
     <p xml:lang="es">Funciones:</p>
     <p xml:lang="nl">Mogelijkheden:</p>
+    <p xml:lang="pt">Funcionalidades:</p>
+    <p xml:lang="sk">Funkcie:</p>
     <p xml:lang="sv">Funktioner:</p>
     <p xml:lang="uk">Можливості:</p>
     <p xml:lang="x-test">xxFeatures:xx</p>
@@ -46,6 +53,7 @@
       <li xml:lang="ca-valencia">Permet temes</li>
       <li xml:lang="es">Uso de temas</li>
       <li xml:lang="nl">Thema in te stellen</li>
+      <li xml:lang="pt">Suporte para temas</li>
       <li xml:lang="sv">Har teman</li>
       <li xml:lang="uk">Зміна тем</li>
       <li xml:lang="x-test">xxThemeablexx</li>
@@ -54,6 +62,7 @@
       <li xml:lang="ca-valencia">Centenars de nivells</li>
       <li xml:lang="es">Cientos de niveles</li>
       <li xml:lang="nl">Honderden levels</li>
+      <li xml:lang="pt">Centenas de níveis</li>
       <li xml:lang="sv">Hundratals nivåer</li>
       <li xml:lang="uk">Сотні рівнів</li>
       <li xml:lang="x-test">xxHundreds of levelsxx</li>
@@ -62,6 +71,8 @@
       <li xml:lang="ca-valencia">Editor de nivells</li>
       <li xml:lang="es">Editor de niveles</li>
       <li xml:lang="nl">Bewerker van levels</li>
+      <li xml:lang="pt">Editor de níveis</li>
+      <li xml:lang="sk">Editor úrovne</li>
       <li xml:lang="sv">Nivåeditor</li>
       <li xml:lang="uk">Редактор рівнів</li>
       <li xml:lang="x-test">xxLevel-editorxx</li>
@@ -71,6 +82,7 @@
       <li xml:lang="ca-valencia">Dos modes pels enemics: mode clàssic i mode KGoldrunner. En el mode KGoldrunner són més intel·ligents, en el mode clàssic és més fàcil que es tornen boigs</li>
       <li xml:lang="es">Dos modos para los enemigos: clásico y modo KGoldrunner. En el modo KGoldrunner son más inteligentes, mientras que en el modo clásico resulta más fácil engañarlos.</li>
       <li xml:lang="nl">Twee modi voor de vijanden: klassiek en modus KGoldrunner, in modus KGoldrunner zijn ze intelligenter, in de klassieke modus zijn ze gemakkelijker voor de gek te houden</li>
+      <li xml:lang="pt">Dois modos para os inimigos: modo clássico e do KGoldRunner. Neste último modo, eles são mais inteligentes, enquanto no modo clássico são mais fáceis de enganar</li>
       <li xml:lang="sv">Två typer av fiender: klassiska och Kgoldrunner-regler. Med Kgoldrunner-regler är de intelligentare, med klassiska regler är det enklare att lura dem.</li>
       <li xml:lang="uk">Два режими поведінки ворогів: класичний і режим «Золотошукача». У режимі «Золотошукача» вороги кмітливіші, їх не так просто обманути, як у класичному режимі.</li>
       <li xml:lang="x-test">xxTwo modes for the enemies: classical and KGoldrunner-mode, in KGoldrunner-mode they are more intelligent, in the classical mode it is easier to fool themxx</li>
@@ -79,6 +91,7 @@
       <li xml:lang="ca-valencia">Nivells molt molt difícils</li>
       <li xml:lang="es">Muchísimos niveles de dificultad</li>
       <li xml:lang="nl">Zeer zeer moeilijke levels</li>
+      <li xml:lang="pt">Níveis mesmo muito difíceis</li>
       <li xml:lang="sv">Mycket mycket svåra nivåer</li>
       <li xml:lang="uk">Дуже-дуже складні рівні</li>
       <li xml:lang="x-test">xxVery very difficult levelsxx</li>
@@ -87,6 +100,7 @@
       <li xml:lang="ca-valencia">Control amb el teclat o el ratolí</li>
       <li xml:lang="es">Control por teclado y por ratón</li>
       <li xml:lang="nl">Toetsenbord- en muisbesturing</li>
+      <li xml:lang="pt">Controlo pelo teclado ou rato</li>
       <li xml:lang="sv">Tangentbords- eller musstyrning</li>
       <li xml:lang="uk">Керування за допомогою клавіатури або миші</li>
       <li xml:lang="x-test">xxKeyboard or mouse controlxx</li>
@@ -95,6 +109,7 @@
       <li xml:lang="ca-valencia">Les partides es poden guardar</li>
       <li xml:lang="es">Los juegos se pueden guardar</li>
       <li xml:lang="nl">Spellen kunnen opgeslagen worden</li>
+      <li xml:lang="pt">Possibilidade de gravar jogos</li>
       <li xml:lang="sv">Spelen går att spara</li>
       <li xml:lang="uk">Можливість збереження гри</li>
       <li xml:lang="x-test">xxSavable gamesxx</li>
