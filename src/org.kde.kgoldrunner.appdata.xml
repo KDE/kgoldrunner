@@ -6,6 +6,7 @@
   <name>KGoldrunner</name>
   <name xml:lang="ca">KGoldrunner</name>
   <name xml:lang="ca-valencia">KGoldrunner</name>
+  <name xml:lang="cs">KGoldrunner</name>
   <name xml:lang="es">KGoldrunner</name>
   <name xml:lang="nl">KGoldrunner</name>
   <name xml:lang="pt">KGoldrunner</name>
@@ -40,6 +41,7 @@
     <p>Features:</p>
     <p xml:lang="ca">Característiques:</p>
     <p xml:lang="ca-valencia">Característiques:</p>
+    <p xml:lang="cs">Vlastnosti:</p>
     <p xml:lang="es">Funciones:</p>
     <p xml:lang="nl">Mogelijkheden:</p>
     <p xml:lang="pt">Funcionalidades:</p>
@@ -60,6 +62,7 @@
       <li>Hundreds of levels</li>
       <li xml:lang="ca">Centenars de nivells</li>
       <li xml:lang="ca-valencia">Centenars de nivells</li>
+      <li xml:lang="cs">Stovky úrovní</li>
       <li xml:lang="es">Cientos de niveles</li>
       <li xml:lang="nl">Honderden levels</li>
       <li xml:lang="pt">Centenas de níveis</li>
@@ -69,6 +72,7 @@
       <li>Level-editor</li>
       <li xml:lang="ca">Editor de nivells</li>
       <li xml:lang="ca-valencia">Editor de nivells</li>
+      <li xml:lang="cs">Editor úrovní</li>
       <li xml:lang="es">Editor de niveles</li>
       <li xml:lang="nl">Bewerker van levels</li>
       <li xml:lang="pt">Editor de níveis</li>
@@ -89,6 +93,7 @@
       <li>Very very difficult levels</li>
       <li xml:lang="ca">Nivells molt molt difícils</li>
       <li xml:lang="ca-valencia">Nivells molt molt difícils</li>
+      <li xml:lang="cs">Opravdu velmi obtížné úrovně</li>
       <li xml:lang="es">Muchísimos niveles de dificultad</li>
       <li xml:lang="nl">Zeer zeer moeilijke levels</li>
       <li xml:lang="pt">Níveis mesmo muito difíceis</li>
@@ -98,6 +103,7 @@
       <li>Keyboard or mouse control</li>
       <li xml:lang="ca">Control amb el teclat o el ratolí</li>
       <li xml:lang="ca-valencia">Control amb el teclat o el ratolí</li>
+      <li xml:lang="cs">Ovládání pomocí klávesnice nebo myši</li>
       <li xml:lang="es">Control por teclado y por ratón</li>
       <li xml:lang="nl">Toetsenbord- en muisbesturing</li>
       <li xml:lang="pt">Controlo pelo teclado ou rato</li>
@@ -107,6 +113,7 @@
       <li>Savable games</li>
       <li xml:lang="ca">Les partides es poden desar</li>
       <li xml:lang="ca-valencia">Les partides es poden guardar</li>
+      <li xml:lang="cs">Hry s možností uložení</li>
       <li xml:lang="es">Los juegos se pueden guardar</li>
       <li xml:lang="nl">Spellen kunnen opgeslagen worden</li>
       <li xml:lang="pt">Possibilidade de gravar jogos</li>
