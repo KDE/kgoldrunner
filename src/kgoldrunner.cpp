@@ -115,7 +115,7 @@ KGoldrunner::KGoldrunner()
 /*************************  SET UP THE USER INTERFACE  ************************/
 /******************************************************************************/
 
-    // Tell the KMainWindow that the KGrCanvas object is the main widget.
+    // Tell the KMainWindow that the KGrView object is the main widget.
     setCentralWidget (view);
 
     scene       = view->gameScene ();
@@ -162,6 +162,9 @@ KGoldrunner::KGoldrunner()
     // always start in play mode, even if the last session ended in edit mode.
     // Besides, we cannot render it until after the initial resize event (s).
     toolBar ("editToolbar")->hide();
+
+    // This is needed to make the arrow keys control the hero properly.
+    setUpKeyboardControl();
 
     // Do NOT paint main widget yet (title bar, menu, blank playfield).
     // Instead, queue a call to the "KGoldrunner_2" constructor extension.
@@ -218,7 +221,7 @@ void KGoldrunner::setupActions()
     a->setText (i18n ("&Load Saved Game..."));
 
     // Save Game...
-    // Save Edits... (extra copy)
+    // Save Solution...
     // --------------------------
 
     saveGame = KStandardGameAction::save (gameMapper, SLOT(map()), this);
@@ -226,6 +229,16 @@ void KGoldrunner::setupActions()
     gameMapper->setMapping (saveGame, SAVE_GAME);
     saveGame->setText (i18n ("&Save Game..."));
     actionCollection()->setDefaultShortcut(saveGame, Qt::Key_S); // Alternate key.
+
+    // The name of the solution-file is 'sol_<prefix>.txt', where <prefix> is
+    // the unique prefix belonging to the game involved (eg. plws, tute, etc.).
+    a        = gameAction ("save_solution", SAVE_SOLUTION,
+                           i18n ("Save A Solution..."),
+                           i18n ("Save A Solution..."),
+                           i18n ("Save a solution for a level into a file "
+                                 "called 'sol_&lt;prefix&gt;.txt' in your "
+				 "user's data directory..."),
+                           Qt::ShiftModifier + Qt::Key_S);
 
     // Pause
     // Show High Scores
@@ -651,18 +664,32 @@ void KGoldrunner::keyControl (const QString & name, const QString & text,
     QAction * a = actionCollection()->addAction (name);
     a->setText (text);
     actionCollection()->setDefaultShortcut(a, shortcut);
+    a->setAutoRepeat (false);		// Avoid repeats of signals by QAction.
 
     // If this is a move-key, let keyPressEvent() through, instead of signal.
     if (mover) {
         a->setEnabled (false);
-    }
-    else {
-        a->setAutoRepeat (false);	// Else, prevent QAction signal repeat.
+	addAction (a);
+	return;
     }
 
     connect (a, SIGNAL (triggered(bool)), tempMapper, SLOT (map()));
     tempMapper->setMapping (a, code);
     addAction (a);
+}
+
+void KGoldrunner::setUpKeyboardControl()
+{
+    // This is needed to ensure that the press and release of Up, Down, Left and
+    // Right keys (arrow-keys) are all received as required.
+    //
+    // If the KGoldrunner widget does not have the keyboard focus, arrow-keys
+    // provide only key-release events, which do not control the hero properly.
+    // Other keys provide both press and release events, regardless of focus.
+
+    this->setFocusPolicy (Qt::StrongFocus); // Tab or click gets the focus.
+    view->setFocusProxy (this);		    // So does a click on the play-area.
+    this->setFocus (Qt::OtherFocusReason);  // And we start by having the focus.
 }
 
 void KGoldrunner::keyPressEvent (QKeyEvent * event)
@@ -684,28 +711,35 @@ void KGoldrunner::keyReleaseEvent (QKeyEvent * event)
 
 bool KGoldrunner::identifyMoveAction (QKeyEvent * event, bool pressed)
 {
-    bool result = false;
-    if (! event->isAutoRepeat()) {
-        QKeySequence keystroke (event->key() + event->modifiers());
-        result = true;
-
-        if ((ACTION ("move_left"))->shortcuts().contains(keystroke)) {
-            game->kbControl (LEFT, pressed);
-        }
-        else if ((ACTION ("move_right"))->shortcuts().contains(keystroke)) {
-            game->kbControl (RIGHT, pressed);
-        }
-        else if ((ACTION ("move_up"))->shortcuts().contains(keystroke)) {
-            game->kbControl (UP, pressed);
-        }
-        else if ((ACTION ("move_down"))->shortcuts().contains(keystroke)) {
-            game->kbControl (DOWN, pressed);
-        }
-        else {
-            result = false;
-        }
+    if (event->isAutoRepeat()) {
+        return false;		// Use only the release and the initial press.
     }
-    return result;
+    Direction dirn = STAND;
+    // The arrow keys show the "Keypad" modifier as being set, even if the
+    // computer does NOT have a keypad (see Qt::KeypadModifier doco). It is
+    // OK to ignore the Keypad modifier (see the code for "qevent.cpp" at
+    // "bool QKeyEvent::matches(QKeySequence::StandardKey matchKey)"). The
+    // keys on the keypad usually have equivalents on the main keyboard.
+    QKeySequence keystroke (~(Qt::KeypadModifier) &
+                             (event->key() | event->modifiers()));
+    if ((ACTION ("move_left"))->shortcuts().contains(keystroke)) {
+        dirn = LEFT;
+    }
+    else if ((ACTION ("move_right"))->shortcuts().contains(keystroke)) {
+        dirn = RIGHT;
+    }
+    else if ((ACTION ("move_up"))->shortcuts().contains(keystroke)) {
+        dirn = UP;
+    }
+    else if ((ACTION ("move_down"))->shortcuts().contains(keystroke)) {
+        dirn = DOWN;
+    }
+    else {
+        return false;
+    }
+    // Use this event to control the hero, if KEYBOARD mode is selected.
+    game->kbControl (dirn, pressed);
+    return true;
 }
 
 void KGoldrunner::viewFullScreen (bool activation)

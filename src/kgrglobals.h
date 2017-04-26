@@ -59,7 +59,7 @@ enum KBAction		{KB_UP, KB_DOWN, KB_LEFT, KB_RIGHT,
 // Action codes when selecting a level or game for play, editing or replay.
 enum SelectAction	{SL_START, SL_ANY, SL_CREATE, SL_UPDATE, SL_SAVE,
                          SL_MOVE, SL_DELETE, SL_CR_GAME, SL_UPD_GAME,
-                         SL_REPLAY, SL_SOLVE, SL_NONE};
+                         SL_REPLAY, SL_SOLVE, SL_SAVE_SOLUTION, SL_NONE};
 
 /// Codes for the rules of the selected game and level.
 const char TraditionalRules = 'T';
@@ -91,6 +91,7 @@ public:
     Owner       owner;		///< Owner of the game: "System" or "User".
     int         nLevels;	///< Number of levels in the game.
     char        rules;		///< Game's rules: KGoldrunner or Traditional.
+    bool        digWhileFalling;///< If all levels allow "dig while falling".
     QString     prefix;		///< Game's filename prefix.
     char        skill;		///< Game's skill: Tutorial, Normal or Champion.
     int         width;		///< Width of grid, in cells.
@@ -109,6 +110,7 @@ public:
     QByteArray  layout;		///< Codes for the level layout (mandatory).
     QByteArray  name;		///< Level name (optional).
     QByteArray  hint;		///< Level hint (optional).
+    bool        digWhileFalling;///< If this one level has "dig while falling".
 };
 
 /// KGrRecording structure: contains a record of play in a KGoldrunner level.
@@ -126,6 +128,7 @@ public:
     QByteArray     layout;	///< Codes for the level layout (at rec time).
     QString        levelName;	///< Name of the level (translated at rec time).
     QString        hint;	///< Hint (translated at recording time).
+    bool           digWhileFalling; ///< If this level has "dig while falling".
     long           lives;	///< Number of lives at start of level.
     long           score;	///< Score at start of level.
     int            speed;	///< Speed of game during recording (normal=10).
@@ -151,7 +154,8 @@ public:
 
 enum GameAction    {NEW, NEXT_LEVEL, LOAD, SAVE_GAME, PAUSE, HIGH_SCORE,
                     KILL_HERO, HINT,
-                    DEMO, SOLVE, INSTANT_REPLAY, REPLAY_LAST, REPLAY_ANY};
+                    DEMO, SOLVE, SAVE_SOLUTION,
+                    INSTANT_REPLAY, REPLAY_LAST, REPLAY_ANY};
 
 enum EditAction    {CREATE_LEVEL, EDIT_ANY, SAVE_EDITS, MOVE_LEVEL,
                     DELETE_LEVEL, CREATE_GAME,  EDIT_GAME};

@@ -1,4 +1,5 @@
 // G005 T tutea T
+// .dwf false
  i18n("Advanced Tutorial");
  i18n("This tutorial is preparation for some of the things you might find in the middle levels of the 'Initiation' game.  Enjoy ...");
 // L001

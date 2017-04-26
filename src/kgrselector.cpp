@@ -262,6 +262,9 @@ void KGrSLDialog::setupWidgets()
     case SL_SOLVE:	// Can ask to see a solution of any level in any game.
                         OKText = i18n ("Show Solution");
                         break;
+    case SL_SAVE_SOLUTION: // Can ask to save a recording on a solution-file.
+                        OKText = i18n ("Save A Solution");
+                        break;
     case SL_UPDATE:	// Can use any level in any game as edit input.
                         OKText = i18n ("Edit Level");
                         break;
@@ -430,6 +433,7 @@ void KGrSLDialog::slGame()
     case SL_ANY:
     case SL_REPLAY:
     case SL_SOLVE:
+    case SL_SAVE_SOLUTION:
     case SL_UPDATE:
     case SL_DELETE:
     case SL_UPD_GAME:

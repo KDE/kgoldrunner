@@ -1,6 +1,6 @@
 // G020 T GRII C
  i18n("Gold Rush II");
- i18n("These 20 levels have even harder challenges, more complicated puzzles and tighter timings than the first Gold Rush. They are not for the faint hearted. Have fun!\n"
+ i18n("These 20 levels have even harder challenges, more complicated puzzles and tighter timings than the first Gold Rush. They are not for the faint hearted. As before, you need to dig while falling sometimes. Have fun!\n"
  "\n"
  "Created by Gabriel Miltschitzky [gabriel dot miltschitzky at googlemail dot com], who also provided the recorded solutions.\n"
  "\n"

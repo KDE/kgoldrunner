@@ -1,6 +1,6 @@
 // G015 K sot C
  i18n("State Of Terror");
- i18n("Just when you thought it was safe ... fifteen levels of pure terror, using those quirky-yet-fast KGoldrunner rules.\n"
+ i18n("Just when you thought it was safe ... fifteen levels of pure terror, using those quirky-yet-fast KGoldrunner rules. You frequently need to dig while falling.\n"
  "\n"
  "Composed by Stuart Popejoy - spopejoy@panix.com");
 // L001

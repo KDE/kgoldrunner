@@ -1,6 +1,6 @@
 // G020 T lars C
  i18n("Demolition");
- i18n("Twenty levels that require a bit of thinking and a bit of timing.\n"
+ i18n("Twenty levels that require a bit of thinking and a bit of timing. You need to dig while falling sometimes.\n"
  "\n"
  "Created by Lars Luthman <lars luthman at gmail com>.");
 // L001

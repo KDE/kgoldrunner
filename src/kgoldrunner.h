@@ -68,6 +68,7 @@ protected:
     void keyReleaseEvent (QKeyEvent * event);
 
 private:
+    void setUpKeyboardControl();
     bool identifyMoveAction (QKeyEvent * event, bool pressed);
 
 protected:

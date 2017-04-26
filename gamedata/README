@@ -1,0 +1,26 @@
+Data files for KGoldrunner games    6 Oct 2015
+----------------------------------------------
+
+File names are of the form <file type>_<game ID>.<suffix>, where the suffix is
+either "txt" for ASCII text or "dat" for binary data.  The game ID is an ASCII
+string or "prefix" that uniquely identifies a game and its levels, eg. "tute".
+
+The file types are:
+
+    game    A file containing data to define a game and all its levels.  It is
+            in the form of pseudo C++ code, so that its strings (names, hints
+            and descriptions) can be extracted for use by language translators.
+
+    hi      A binary file of target high-scores for a game.
+
+    sol     A recording of play of levels of a game, which can be replayed to
+            show the user solutions to levels.  The file is in KConfig format.
+
+    rec     Similar to "sol" type in purpose and format, but see below.
+
+File "rec_demo.txt" contains recordings of the levels in the KGoldrunner Demo.
+
+Files "rec_GMGR.txt" and "rec_GRII.txt" are solutions for the Gold Rush and Gold
+Rush II games.  The old "rec" file names, rather than "sol" names, are retained
+for backwards compatibility.
+

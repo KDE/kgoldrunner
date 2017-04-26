@@ -73,10 +73,10 @@ void KGrRunner::getRules()
 {
     pointsPerCell = rules->pointsPerCell();
     turnAnywhere  = rules->turnAnywhere();
-    if (spriteId < 1) {
-        qCDebug(KGOLDRUNNER_LOG) << "pointsPerCell" << pointsPerCell
-                 << "turnAnywhere" << turnAnywhere;
-    }
+    //if (spriteId < 1) {
+    //    qCDebug(KGOLDRUNNER_LOG) << "pointsPerCell" << pointsPerCell
+    //             << "turnAnywhere" << turnAnywhere;
+    //}
 }
 
 Situation KGrRunner::situation (const int scaledTime)
@@ -149,7 +149,10 @@ bool KGrRunner::setNextMovement (const char spriteType, const char cellType,
 
     interval = runTime;
 
-    KGrEnemy * onEnemy  = levelPlayer->standOnEnemy (spriteId, gridX, gridY);
+    // if (spriteType == HERO) {
+        // qCDebug(KGOLDRUNNER_LOG) << "Calling standOnEnemy() for" << gridX << gridY;
+    // }
+    onEnemy  = levelPlayer->standOnEnemy (spriteId, gridX, gridY);
     bool canStand = (OK & dFlag [STAND]) || (OK == 0) || onEnemy;
     if ((dir == DOWN) && (cellType == BAR)) {
         canStand = false;
@@ -199,11 +202,14 @@ KGrHero::KGrHero (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
                   int i, int j, int pSpriteId, KGrRuleBook * pRules)
     :
     KGrRunner (pLevelPlayer, pGrid, i, j, pSpriteId, pRules, 0),
-    nuggets (0)		// KGrLevelPlayer object will call hero->setNuggets().
+
+    // KGrLevelPlayer object will call setDigWhileFalling() and setNuggets().
+    digWhileFalling (true),
+    nuggets (0)
 {
-    qCDebug(KGOLDRUNNER_LOG) << "THE HERO IS BORN at" << i << j << "sprite ID" << pSpriteId;
+    //qCDebug(KGOLDRUNNER_LOG) << "THE HERO IS BORN at" << i << j << "sprite ID" << pSpriteId;
     rules->getHeroTimes (runTime, fallTime, enemyFallTime, trapTime);
-    qCDebug(KGOLDRUNNER_LOG) << "Hero run time" << runTime << "fall time" << fallTime;
+    //qCDebug(KGOLDRUNNER_LOG) << "Hero run time" << runTime << "fall time" << fallTime;
     interval = runTime;
 }
 
@@ -231,7 +237,9 @@ HeroStatus KGrHero::run (const int scaledTime)
 
     // Check if we have fallen onto an enemy.  If so, continue at enemy-speed.
     if (falling && (interval != enemyFallTime)) {
-        if (levelPlayer->standOnEnemy (spriteId, gridX, gridY)) {
+        // qCDebug(KGOLDRUNNER_LOG) << "Calling standOnEnemy() for" << gridX << gridY;
+	onEnemy = levelPlayer->standOnEnemy (spriteId, gridX, gridY);
+        if (onEnemy != 0) {
             interval = enemyFallTime;
             // If MidCell, hero-speed animation overshoots, but looks OK.
         }
@@ -333,6 +341,36 @@ bool KGrHero::dig (const Direction diggingDirection, int & i, int & j)
         i = gridI + relativeI;
         j = gridJ + 1;
         result = true;
+
+        // If dig-while-falling is not allowed, prevent attempts to use it.
+        // The boolean defaults to true but can be read from a setting for
+        // the game, the specific level or a recording. So it can be false.
+        if (! digWhileFalling) {
+	    // Work out where the hero WILL be standing when he digs. In the
+	    // second case, he will dig the brick that is now right under him.
+            int nextGridI = (relativeI != 0) ? (gridI + relativeI/2) :
+                        ((currDirection == LEFT) ? (gridI - 1) : (gridI + 1));
+            Flags OK = grid->heroMoves (nextGridI, gridJ);
+            bool canStand = (OK & dFlag [STAND]) || (OK == 0);
+            bool enemyUnder = (onEnemy != 0);
+            // Must be on solid ground or on an enemy (standing or riding down).
+            if ((! canStand) && (nextGridI != gridI)) {
+		// If cannot move to next cell and stand, is an enemy under it?
+                // qCDebug(KGOLDRUNNER_LOG) << "Calling standOnEnemy() at gridX" << gridX
+                         // << "for" << (nextGridI * pointsPerCell) << gridY;
+                enemyUnder = (levelPlayer->standOnEnemy (spriteId,
+                                        nextGridI * pointsPerCell, gridY) != 0);
+            }
+            if ((! canStand) && (! enemyUnder)) {
+                qCDebug(KGOLDRUNNER_LOG) << "INVALID DIG: hero at" << gridI << gridJ
+                         << "nextGridI" << nextGridI << "relI" << relativeI
+                         << "dirn" << currDirection << "brick at" << i << j
+                         << "heroMoves" << ((int) OK) << "canStand" << canStand
+                         << "enemyUnder" << enemyUnder;
+                emit invalidDig();	// Issue warning re dig while falling.
+                result = false;
+            }
+        }
     }
     if (result) {
         emit soundSignal (DigSound);
@@ -363,11 +401,11 @@ KGrEnemy::KGrEnemy (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
     rulesType     = rules->getEnemyTimes (runTime, fallTime, trapTime);
     enemyFallTime = fallTime;
     interval      = runTime;
-    qCDebug(KGOLDRUNNER_LOG) << "ENEMY" << pSpriteId << "IS BORN at" << i << j;
-    if (pSpriteId < 2) {
-        qCDebug(KGOLDRUNNER_LOG) << "Enemy run time " << runTime << "fall time" << fallTime;
-        qCDebug(KGOLDRUNNER_LOG) << "Enemy trap time" << trapTime << "Rules type" << rulesType;
-    }
+    //qCDebug(KGOLDRUNNER_LOG) << "ENEMY" << pSpriteId << "IS BORN at" << i << j;
+    //if (pSpriteId < 2) {
+    //    qCDebug(KGOLDRUNNER_LOG) << "Enemy run time " << runTime << "fall time" << fallTime;
+    //    qCDebug(KGOLDRUNNER_LOG) << "Enemy trap time" << trapTime << "Rules type" << rulesType;
+    //}
     t.start(); // IDW
 }
 

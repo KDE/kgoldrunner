@@ -99,13 +99,8 @@ IOStatus KGrGameIO::fetchGameListData
                 // "Prefix:" << g->prefix;
 
             if (kgr3Format) {
-                // KGr 3 Format: get skill, get game-name from next line.
+                // KGr 3 Format: get skill, get game-name from a later line.
                 g->skill = fields.at (3).at (0);
-                c = getALine (kgr3Format, textLine);
-                if (c == ' ') {
-                    gameName = removeNewline (textLine);
-                    g->name  = i18n (gameName.constData());
-                }
             }
             else {
                 // KGr 2 Format: get game-name from end of line 1.
@@ -117,12 +112,30 @@ IOStatus KGrGameIO::fetchGameListData
                 gameName = removeNewline (textLine.right (textLine.size() - n));
                 g->name  = i18n (gameName.constData());
             }
-            // //qCDebug(KGOLDRUNNER_LOG) << "Skill:" << g->skill << "Name:" << g->name;
+
+            // Check for further settings in this game.
+            // bool usedDwfOpt = false;		// For debug.
+            while ((c = getALine (kgr3Format, textLine)) == '.') {
+                if (textLine.startsWith ("dwf ")) {
+                    // Dig while falling is allowed in this game, or not.
+                    g->digWhileFalling = textLine.endsWith (" false\n") ?
+                                         false : true;
+                    // usedDwfOpt = true;		// For debug.
+                }
+            }
+
+            if (kgr3Format && (c == ' ')) {
+                gameName = removeNewline (textLine);
+                g->name  = i18n (gameName.constData());
+                c = getALine (kgr3Format, textLine);
+            }
+            //qCDebug(KGOLDRUNNER_LOG) << "Dig while falling" << g->digWhileFalling
+                     // << "usedDwfOpt" << usedDwfOpt << "Game" << g->name;
+            //qCDebug(KGOLDRUNNER_LOG) << "Skill:" << g->skill << "Name:" << g->name;
 
             // Loop to accumulate lines of about-data.  If kgr3Format, exit on
             // EOF or 'L' line.  If not kgr3Format, exit on EOF or numeric line.
             while (c != '\0') {
-                c = getALine (kgr3Format, textLine);
                 if ((c == '\0') ||
                     (kgr3Format && (c == 'L')) ||
                     ((! kgr3Format) &&
@@ -130,6 +143,7 @@ IOStatus KGrGameIO::fetchGameListData
                     break;
                 }
                 g->about.append (textLine);
+                c = getALine (kgr3Format, textLine);
             }
             g->about = removeNewline (g->about);	// Remove final '\n'.
             // //qCDebug(KGOLDRUNNER_LOG) << "Info about: [" + g->about + "]";
@@ -215,7 +229,7 @@ IOStatus KGrGameIO::fetchLevelData
         while ((c = getALine (kgr3Format, textLine)) != '\0') {
             if ((c == 'L') && (textLine.left (3).toInt() == level)) {
                 break;			// We have found the required level.
-            } 
+            }
         }
         if (c == '\0') {
             openFile.close();		// We reached end-of-file.
@@ -223,8 +237,16 @@ IOStatus KGrGameIO::fetchLevelData
         }
     }  
 
-    // Read in the character-codes for the level layout.
-    if ((c = getALine (kgr3Format, textLine)) == ' ') {
+    // Check for further settings in this level.
+    while ((c = getALine (kgr3Format, textLine)) == '.') {
+        if (textLine.startsWith ("dwf ")) {
+            // Dig while falling is allowed in this level, or not.
+            d.digWhileFalling = textLine.endsWith (" false\n") ? false : true;
+        }
+    }
+
+    // Get the character-codes for the level layout.
+    if (c  == ' ') {
         result = OK;
         d.layout = removeNewline (textLine);		// Remove '\n'.
 
@@ -319,12 +341,16 @@ char KGrGameIO::getALine (const bool kgr3, QByteArray & line)
         // In Kgr 3 format, return the first byte if not end-of-file.
         c = line.at (0);
         line = line.right (line.size() - 1);
-        return (c);
     }
     else {
         // In KGr 2 format, return a space if not end-of-file.
-        return (' ');
+        c = ' ';
+        if (line.startsWith (".")) {	// Line to set an option.
+            c = line.at (0);
+            line = line.right (line.size() - 1);
+        }
     }
+    return (c);
 }
 
 QByteArray KGrGameIO::removeNewline (const QByteArray & line)
@@ -344,6 +370,7 @@ KGrGameData * KGrGameIO::initGameData (Owner o)
     g->owner    = o;	// Owner of the game: "System" or "User".
     g->nLevels  = 0;	// Number of levels in the game.
     g->rules    = 'T';	// Game's rules: KGoldrunner or Traditional.
+    g->digWhileFalling = true;	// The default: allow "dig while falling".
     g->prefix   = "";	// Game's filename prefix.
     g->skill    = 'N';	// Game's skill: Tutorial, Normal or Champion.
     g->width    = FIELDWIDTH;	// Default width of layout grid (28 cells).

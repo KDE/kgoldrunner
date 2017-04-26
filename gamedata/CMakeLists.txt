@@ -4,9 +4,11 @@
 
 ########### install files ###############
 
-install( FILES game_CM.txt
+install( FILES game_blb.txt
+               game_CM.txt
                game_cnt.txt
                game_ende.txt
+               game_fd.txt
                game_GMEP.txt
                game_GMGR.txt
 	       game_GRII.txt
@@ -26,5 +28,11 @@ install( FILES game_CM.txt
                rec_demo.txt
                rec_GMGR.txt
 	       rec_GRII.txt
+               sol_blb.txt
+               sol_fd.txt
+	       sol_kgr.txt
+	       sol_plws.txt
+	       sol_tute.txt
+	       sol_tutea.txt
    DESTINATION ${KDE_INSTALL_DATADIR}/kgoldrunner/system )
 

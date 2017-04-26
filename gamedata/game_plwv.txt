@@ -1,8 +1,10 @@
 // G020 T plwv C
+// .dwf false
  i18n("Vengeance of Peter W");
  i18n("Gooood luck!\n"
  "Mwarrhh hwwarrrr haarrrr!");
 // L001
+// .dwf true
 //  R                          Z                           H                           H                           H                           H                           H                           H                MMMXH      H                MNHXH      H               XXXXXH      H                  HXH      H                  HTH      H     HMMHXMMM     H H      H     HM HX  X     H        H     HMNHX N M    H        H     HMXHXXXXM    H        HHHHHHHHHHHHHHHHHHHHHHHHHHHHHXXXXXHXXXXXXXXXXXXHXXXXXXXHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHXXXXXHXXXXXXXXXXXXHXXXXXXXHH
  i18n("Impossible?");
  i18n("No, it is not impossible.  There is a trick in how you dig the bricks next to the gold nuggets.");

@@ -95,6 +95,8 @@ private:
     void newGame   (const int lev, const int gameIndex);
     void runReplay (const int action,
                     const int selectedGame, const int selectedLevel);
+    bool getRecordingName (const QString & dir, const QString & pPrefix,
+                           QString & filename);
     bool startDemo (const Owner demoOwner, const QString & pPrefix,
                                            const int levelNo);
     void runNextDemoLevel();
@@ -244,9 +246,10 @@ private:
 /******************************************************************************/
 
     bool loadGameData      (Owner);
+    void saveSolution      (const QString & prefix, const int levelNo);
     bool initRecordingData (const Owner fileOwner, const QString & prefix,
-                                                   const int levelNo);
-    void saveRecording();
+                            const int levelNo, const bool pPlayback);
+    void saveRecording     (const QString & filetype); // Type "rec_" or "sol_".
     bool loadRecording     (const QString & dir,   const QString & prefix,
                                                    const int levelNo);
     void loadSounds();

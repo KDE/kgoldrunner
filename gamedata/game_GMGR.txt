@@ -1,6 +1,6 @@
 // G023 T GMGR C
  i18n("Gold Rush");
- i18n("Some little levels with Traditional rules which could take a while to solve.\n"
+ i18n("Some little levels with Traditional rules which could take a while to solve. You need to dig while falling sometimes.\n"
  "\n"
  "Created by Gabriel Miltschitzky [gabriel dot miltschitzky at freenet de]");
 // L001

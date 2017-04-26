@@ -73,28 +73,6 @@ KGrLevelPlayer::~KGrLevelPlayer()
     dugBricks.clear(); //TODO: necessary?
     //qCDebug(KGOLDRUNNER_LOG) << "LEVEL PLAYER BEING DELETED.";
     playerCount--;
-
-// TODO - Remove this debugging code.
-if (recording) {
-    int ch = 0;
-    for (int i = 0; i <= (recIndex + 1); i ++) {
-        ch = (uchar)(recording->content.at(i));
-        dbe1 "%03d ", ch);
-        if (ch == 0)
-            break;
-    }
-    dbe1 "\n%d bytes\n", recIndex + 1);
-    int j = 0;
-    while (j < recording->draws.size()) {
-        ch = (uchar)(recording->draws.at(j));
-        dbe1 "%03d ", ch);
-        if (ch == 0)
-            break;
-        j++;
-    }
-    dbe1 "\n%d bytes\n", j);
-}
-
 }
 
 void KGrLevelPlayer::init (KGrView * view,
@@ -215,6 +193,7 @@ void KGrLevelPlayer::init (KGrView * view,
                     heroId  = emit makeSprite (HERO, i, j);
                     hero    = new KGrHero (this, grid, i, j, heroId, rules);
                     hero->setNuggets (nuggets);
+                    hero->setDigWhileFalling (recording->digWhileFalling);
                     if ((controlMode == MOUSE) || (controlMode == LAPTOP)) {
                         emit setMousePos (targetI, targetJ);
                     }
@@ -641,8 +620,8 @@ bool KGrLevelPlayer::heroCaught (const int heroX, const int heroY)
                                  (heroX <= (enemyX + pointsPerCell_1))) &&
             ((heroY < enemyY) ? ((heroY + pointsPerCell_1) > enemyY) :
                                  (heroY <= (enemyY + pointsPerCell_1)))) {
-            dbk << "Caught by";
-            enemy->showState();
+            // dbk << "Caught by";
+            // enemy->showState();
             return true;
         }
     }
@@ -1148,7 +1127,7 @@ void KGrLevelPlayer::interruptPlayback()
 
     playback = false;
     emit interruptDemo();
-    dbk << "INTERRUPT - emit interruptDemo();";
+    // dbk << "INTERRUPT - emit interruptDemo();";
 }
 
 void KGrLevelPlayer::killHero()
