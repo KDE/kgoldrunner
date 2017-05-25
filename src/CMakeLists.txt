@@ -30,9 +30,11 @@ add_executable(kgoldrunner ${kgoldrunner_SRCS})
 target_link_libraries(kgoldrunner
     KF5KDEGames
     KF5KDEGamesPrivate
-    KF5::KDELibs4Support
+    KF5::ConfigWidgets
     KF5::DBusAddons
+    KF5::KIOCore
     KF5::Crash
+    KF5::XmlGui
 )
 
 install(TARGETS kgoldrunner  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )

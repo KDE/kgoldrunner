@@ -21,7 +21,6 @@
 #include "kgrlevelgrid.h"
 #include "kgrrulebook.h"
 #include "kgrlevelplayer.h"
-
 #include "kgoldrunner_debug.h"
 
 KGrRunner::KGrRunner (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,

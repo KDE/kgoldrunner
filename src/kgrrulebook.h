@@ -20,8 +20,8 @@
 
 #include "kgrglobals.h"
 
-#include <QObject>
 #include <QList>
+#include <QObject>
 
 #include "kgoldrunner_debug.h"
 

@@ -2,8 +2,7 @@
 
 /****************************************************************************
  *    Copyright 2003  Marco Krüger <grisuji@gmx.de>                         *
- *    Copyright 2003  Ian Wadham <iandw.au@gmail.com>                       *
- *    Copyright 2009  Ian Wadham <iandw.au@gmail.com>                       *
+ *    Copyright 2003,2009  Ian Wadham <iandw.au@gmail.com>                  *
  *                                                                          *
  *    This program is free software; you can redistribute it and/or         *
  *    modify it under the terms of the GNU General Public License as        *
@@ -24,7 +23,6 @@
 #include "kgrview.h"
 #include "kgrscene.h"
 #include "kgrselector.h"
-#include <KGlobal>
 // KGoldrunner loads and plays .ogg files and requires OpenAL + SndFile > v0.21.
 // Fallback to Phonon by the KgSound library does not give good results.
 #include <libkdegames_capabilities.h>
@@ -38,18 +36,31 @@
 #include "kgrgameio.h"
 
 #include <iostream>
-#include <stdlib.h>
+#include <cstdlib>
 #include <ctime>
 
-#include <QStringList>
-#include <QTimer>
+#include <QByteArray>
+#include <QDate>
 #include <QDateTime>
-
-#include <KRandomSequence>
+#include <QDir>
+#include <QLabel>
+#include <QHeaderView>
 #include <QPushButton>
+#include <QSpacerItem>
+#include <QStandardPaths>
+#include <QStringList>
+#include <QTextStream>
+#include <QTimer>
+#include <QTreeWidget>
+#include <QTreeWidgetItem>
+#include <QVBoxLayout>
+
+#include <KConfigGroup>
+#include <KGuiItem>
+#include <KRandomSequence>
+#include <KSharedConfig>
 #include <KStandardGuiItem>
-#include <KStandardDirs>
-#include <KApplication>
+
 #include "kgoldrunner_debug.h"
 
 // TODO - Can we change over to KScoreDialog?
@@ -61,18 +72,6 @@
 #ifdef USE_KSCOREDIALOG
 #include <KScoreDialog>
 #else
-
-#include <QByteArray>
-#include <QTextStream>
-#include <QLabel>
-#include <QVBoxLayout>
-#include <QDate>
-#include <QSpacerItem>
-#include <QTreeWidget>
-#include <QHeaderView>
-#include <QTreeWidgetItem>
-#include <QDir>
-#include <KGuiItem>
 
 #endif
 
@@ -698,54 +697,65 @@ void KGrGame::quickStartDialog()
     // Make sure the game does not start during the Quick Start dialog.
     freeze (ProgramPause, true);
 
-    qs = new KDialog (view);
+    qs = new QDialog (view);
 
     // Modal dialog, 4 buttons, vertically: the PLAY button has the focus.
-    qs->setModal (true);
-    qs->setCaption (i18n("Quick Start"));
-    qs->setButtons
-            (KDialog::Ok | KDialog::Cancel | KDialog::User1 | KDialog::User2);
-    qs->setButtonFocus (KDialog::Ok);
-    qs->setButtonsOrientation (Qt::Vertical);
+    qs->setWindowTitle (i18n("Quick Start"));
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+
+    QPushButton *newGameButton = new QPushButton;
+    buttonBox->addButton(newGameButton, QDialogButtonBox::ActionRole);
+    QPushButton *useMenuButton = new QPushButton;
+    buttonBox->addButton(useMenuButton, QDialogButtonBox::ActionRole);
+
+    QHBoxLayout *leftIconRightButtonsLayout = new QHBoxLayout;
+    qs->setLayout(leftIconRightButtonsLayout);
+
+    QVBoxLayout *leftButtonLayout = new QVBoxLayout;
+    buttonBox->button(QDialogButtonBox::Ok)->setFocus();
+    leftButtonLayout->addWidget(buttonBox);
+    buttonBox->setOrientation (Qt::Vertical);
 
     // Set up the PLAY button.
-    qs->setButtonText (KDialog::Ok,
-            i18nc ("Button text: start playing a game", "&PLAY"));
-    qs->setButtonToolTip (KDialog::Ok, i18n ("Start playing this level"));
-    qs->setButtonWhatsThis (KDialog::Ok,
+    buttonBox->button (QDialogButtonBox::Ok)->setText(i18nc ("Button text: start playing a game", "&PLAY"));
+    buttonBox->button (QDialogButtonBox::Ok)->setToolTip(i18n ("Start playing this level"));
+    buttonBox->button (QDialogButtonBox::Ok)->setWhatsThis(
             i18n ("Set up to start playing the game and level being shown, "
                  "as soon as you click, move the mouse or press a key"));
 
     // Set up the Quit button.
-    qs->setButtonText (KDialog::Cancel, i18n ("&Quit"));
-    qs->setButtonToolTip (KDialog::Cancel, i18n ("Close KGoldrunner"));
+    buttonBox->button (QDialogButtonBox::Cancel)->setText(i18n ("&Quit"));
+    buttonBox->button (QDialogButtonBox::Cancel)->setToolTip(i18n ("Close KGoldrunner"));
 
     // Set up the New Game button.
-    qs->setButtonText (KDialog::User1, i18n ("&New Game..."));
-    qs->setButtonToolTip (KDialog::User1,
-            i18n ("Start a different game or level"));
-    qs->setButtonWhatsThis (KDialog::User1,
+    newGameButton->setText(i18n ("&New Game..."));
+    newGameButton->setToolTip (i18n ("Start a different game or level"));
+    newGameButton->setWhatsThis(
             i18n ("Use the Select Game dialog box to choose a "
                  "different game or level and start playing it"));
 
     // Set up the Use Menu button.
-    qs->setButtonText (KDialog::User2, i18n ("&Use Menu"));
-    qs->setButtonToolTip (KDialog::User2,
+    useMenuButton->setText(i18n ("&Use Menu"));
+    useMenuButton->setToolTip(
             i18n ("Use the menus to choose other actions"));
-    qs->setButtonWhatsThis (KDialog::User2,
+    useMenuButton->setWhatsThis(
             i18n ("Before playing, use the menus to choose other actions, "
                  "such as loading a saved game or changing the theme"));
 
     // Add the KGoldrunner application icon to the dialog box.
     QLabel * logo = new QLabel();
-    qs->setMainWidget (logo);
-    logo->setPixmap (kapp->windowIcon().pixmap (240));
+    QIcon test = QIcon::fromTheme("kgoldrunner");
+    logo->setPixmap(test.pixmap(240));
     logo->setAlignment (Qt::AlignTop | Qt::AlignHCenter);
+    logo->setAlignment (Qt::AlignTop | Qt::AlignHCenter | Qt::AlignLeft);
 
-    connect(qs, &KDialog::okClicked, this, &KGrGame::quickStartPlay);
-    connect(qs, &KDialog::user1Clicked, this, &KGrGame::quickStartNewGame);
-    connect(qs, &KDialog::user2Clicked, this, &KGrGame::quickStartUseMenu);
-    connect(qs, &KDialog::cancelClicked, this, &KGrGame::quickStartQuit);
+    leftIconRightButtonsLayout->addWidget(logo);
+    leftIconRightButtonsLayout->addLayout(leftButtonLayout);
+
+    connect(buttonBox, &QDialogButtonBox::accepted, this, &KGrGame::quickStartPlay);
+    connect(buttonBox, &QDialogButtonBox::rejected, this, &KGrGame::quickStartNewGame);
+    connect(newGameButton, &QPushButton::clicked, this, &KGrGame::quickStartUseMenu);
+    connect(useMenuButton, &QPushButton::clicked, this, &KGrGame::quickStartQuit);
 
     qs->show();
 }
@@ -1419,11 +1429,14 @@ void KGrGame::kbControl (const int dirn, const bool pressed)
                 KGuiItem (i18n ("Stay in &Mouse Mode")),
                 i18n ("Keyboard Mode")))
         {
-        case KMessageBox::Yes: 
+        case KMessageBox::Yes:
+        case KMessageBox::Ok:
+        case KMessageBox::Continue:
             settings (KEYBOARD);
             emit setToggle ("keyboard_mode", true);	// Adjust Settings menu.
             break;
-        case KMessageBox::No: 
+        case KMessageBox::No:
+        case KMessageBox::Cancel:
             break;
         }
 
@@ -1920,11 +1933,11 @@ void KGrGame::showHighScores()
     }
 
     // Adjust the columns to fit the data.
-    scores->header()->setResizeMode (0, QHeaderView::ResizeToContents);
-    scores->header()->setResizeMode (1, QHeaderView::ResizeToContents);
-    scores->header()->setResizeMode (2, QHeaderView::ResizeToContents);
-    scores->header()->setResizeMode (3, QHeaderView::ResizeToContents);
-    scores->header()->setResizeMode (4, QHeaderView::ResizeToContents);
+    scores->header()->setSectionResizeMode (0, QHeaderView::ResizeToContents);
+    scores->header()->setSectionResizeMode (1, QHeaderView::ResizeToContents);
+    scores->header()->setSectionResizeMode (2, QHeaderView::ResizeToContents);
+    scores->header()->setSectionResizeMode (3, QHeaderView::ResizeToContents);
+    scores->header()->setSectionResizeMode (4, QHeaderView::ResizeToContents);
     scores->header()->setMinimumSectionSize (-1);	// Font metrics size.
 
     QFrame * separator = new QFrame (hs);
@@ -2279,25 +2292,25 @@ void KGrGame::loadSounds()
         effects = new KGrSounds();
         effects->setParent (this);        // Delete at end of KGrGame.
 
-        fx[GoldSound]      = effects->loadSound (KStandardDirs::locate ("appdata",
+        fx[GoldSound]      = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
                              "themes/default/gold.ogg"));
-        fx[StepSound]      = effects->loadSound (KStandardDirs::locate ("appdata",
+        fx[StepSound]      = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
                              "themes/default/step.wav"));
-        fx[ClimbSound]     = effects->loadSound (KStandardDirs::locate ("appdata",
+        fx[ClimbSound]     = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
                              "themes/default/climb.wav"));
-        fx[FallSound]      = effects->loadSound (KStandardDirs::locate ("appdata",
+        fx[FallSound]      = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
                              "themes/default/falling.ogg"));
-        fx[DigSound]       = effects->loadSound (KStandardDirs::locate ("appdata",
+        fx[DigSound]       = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
                              "themes/default/dig.ogg"));
-        fx[LadderSound]    = effects->loadSound (KStandardDirs::locate ("appdata",
+        fx[LadderSound]    = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
                              "themes/default/ladder.ogg"));
-        fx[CompletedSound] = effects->loadSound (KStandardDirs::locate ("appdata",
+        fx[CompletedSound] = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
                              "themes/default/completed.ogg"));
-        fx[DeathSound]     = effects->loadSound (KStandardDirs::locate ("appdata",
+        fx[DeathSound]     = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
                              "themes/default/death.ogg"));
-        fx[GameOverSound]  = effects->loadSound (KStandardDirs::locate ("appdata",
+        fx[GameOverSound]  = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
                              "themes/default/gameover.ogg"));
-        fx[VictorySound]   = effects->loadSound (KStandardDirs::locate ("appdata",
+        fx[VictorySound]   = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
                              "themes/default/victory.ogg"));
 
         // Gold and dig sounds are timed and are allowed to play for at least one

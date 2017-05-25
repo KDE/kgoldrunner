@@ -15,14 +15,12 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ****************************************************************************/
 
-#include "kgoldrunner_debug.h"
-#include "kgoldrunner_debug.h"
-
 #include <KLocalizedString>
 
 #include <QFont>
 #include <QTimeLine>
 
+#include "kgoldrunner_debug.h"
 #include "kgrview.h"
 #include "kgrscene.h"
 #include "kgrsprite.h"

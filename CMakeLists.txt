@@ -11,20 +11,13 @@ find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Widgets Qml Qui
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     CoreAddons
     Config
-    Crash
-    ItemModels
-    WidgetsAddons
-    WindowSystem
-    Config
-    DBusAddons
-    I18n
     ConfigWidgets
-    TextWidgets
-    XmlGui
+    Crash
+    DBusAddons
+    DocTools
+    I18n
     KIO
-    NotifyConfig
-    NewStuff
-    KDELibs4Support)
+    XmlGui)
 
 find_package(KF5KDEGames 4.9.0 REQUIRED)
 find_package(Phonon4Qt5 CONFIG REQUIRED)

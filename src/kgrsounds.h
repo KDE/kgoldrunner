@@ -23,7 +23,7 @@
 #include <QVector>
 #include <QTime>
 
-#include <kgsound.h>
+#include <KgSound>
 
 class KGrSounds : public QObject
 {

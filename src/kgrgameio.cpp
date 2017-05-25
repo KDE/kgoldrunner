@@ -17,12 +17,12 @@
  ****************************************************************************/
 
 #include "kgrgameio.h"
+#include "kgoldrunner_debug.h"
 
-#include <QWidget>
 #include <QDir>
+#include <QWidget>
 
 #include <KLocalizedString>
-#include "kgoldrunner_debug.h"
 
 KGrGameIO::KGrGameIO (QWidget * pView)
     :

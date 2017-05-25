@@ -19,37 +19,34 @@
 
 #include "kgoldrunner.h"
 
+#include <QAction>
 #include <QApplication>
+#include <QCommandLineParser>
 #include <QDesktopWidget>
+#include <QIcon>
+#include <QKeyEvent>
+#include <QKeySequence>
+#include <QMenuBar>
 #include <QSignalMapper>
 #include <QShortcut>
-#include <QKeySequence>
-#include <QKeyEvent>
 
-#include <KShortcut>
-#include <kglobal.h>
-#include <kshortcutsdialog.h>
-#include <KStandardDirs>
-
-#include <kconfig.h>
-#include <kconfiggroup.h>
-
-#include "kgoldrunner_debug.h"
-#include "kgoldrunner_debug.h"
-
-#include <ktoolbar.h>
-#include <kmenubar.h>
-
-#include <QAction>
-#include <kactioncollection.h>
-#include <ktoggleaction.h>
-#include <ktogglefullscreenaction.h>
-#include <kstandardaction.h>
-#include <kstandardgameaction.h>
-#include <QIcon>
-#include <KMenu>
-#include <KCmdLineArgs>
 #include <KAboutData>
+#include <KActionCollection>
+#include <KConfig>
+#include <KConfigGroup>
+#include <KIO/MkpathJob>
+#include <KLocalizedString>
+#include <KSharedConfig>
+#include <KShortcutsDialog>
+#include <KStandardAction>
+#include <KStandardGameAction>
+#include <KToggleAction>
+#include <KToggleFullScreenAction>
+#include <KToolBar>
+
+#include "kgoldrunner_debug.h"
+#include "kgoldrunner_debug.h"
+
 
 #include <libkdegames_capabilities.h> //defines KGAUDIO_BACKEND_OPENAL (or not)
 
@@ -249,12 +246,10 @@ void KGoldrunner::setupActions()
     myPause = KStandardGameAction::pause (gameMapper, SLOT(map()), this);
     actionCollection()->addAction (myPause->objectName(), myPause);
     gameMapper->setMapping (myPause, PAUSE);
-#if 0 //QT5
     // QAction * myPause gets QAction::shortcut(), returning 1 OR 2 shortcuts.
-    KShortcut pauseShortcut = myPause->shortcut();
-    pauseShortcut.setAlternate (Qt::Key_Escape);	// Add "Esc" shortcut.
+    QKeySequence pauseShortcut = myPause->shortcut();
     myPause->setShortcut (pauseShortcut);
-#endif
+
     highScore = KStandardGameAction::highscores (gameMapper, SLOT(map()), this);
     actionCollection()->addAction (highScore->objectName(), highScore);
     gameMapper->setMapping (highScore, HIGH_SCORE);
@@ -752,11 +747,12 @@ void KGoldrunner::gameFreeze (bool on_off)
     myPause->setChecked (on_off);
     frozen = on_off;	// Remember the state (for the configure-keys case).
     QStringList pauseKeys;
-#if 0 //QT5
-    foreach (const QKeySequence &s, myPause->shortcut().toList()) {
+
+    const auto keyBindings = myPause->shortcut().keyBindings(QKeySequence::StandardKey::Cancel);
+    for (const QKeySequence &s : keyBindings) {
         pauseKeys.append(s.toString(QKeySequence::NativeText));
     }
-#endif
+
     QString msg;
     if (on_off) {
         if (pauseKeys.size() == 0) {
@@ -892,68 +888,39 @@ bool KGoldrunner::getDirectories()
 {
     bool result = true;
 
-    // WHERE THINGS ARE: In the KDE 3 environment (Release 3.1.1), application
-    // documentation and data files are in a directory structure given by
-    // $KDEDIRS (e.g. "/usr/local/kde" or "/opt/kde3/").  Application user data
-    // files are in a directory structure given by $KDEHOME ("$HOME/.kde").
-    // Within those two structures, the three sub-directories will typically be
-    // "share/doc/HTML/en/kgoldrunner/", "share/apps/kgoldrunner/system/" and
-    // "share/apps/kgoldrunner/user/".  Note that it is necessary to have
-    // an extra path level ("system" or "user") after "kgoldrunner", otherwise
-    // all the KGoldrunner files have similar path names (after "apps") and
-    // KDE always locates directories in $KDEHOME and never the released games.
-
-    // The directory strings are set by KDE at run time and might change in
-    // later releases, so use them with caution and only if something gets lost.
-
-    KStandardDirs * dirs = new KStandardDirs();
-
     QString myDir = "kgoldrunner";
+    QStringList genericDataLocations = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
+    QStringList appDataLocations = QStandardPaths::standardLocations(QStandardPaths::AppDataLocation);
 
     // Find the KGoldrunner Users' Guide, English version (en).
-    systemHTMLDir = dirs->findResourceDir ("html", "en/" + myDir + '/');
+    systemHTMLDir = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                       "doc/HTML/en/" + myDir + '/',
+                                       QStandardPaths::LocateDirectory);
     if (systemHTMLDir.length() <= 0) {
         KGrMessage::information (this, i18n ("Get Folders"),
-                i18n ("Cannot find documentation sub-folder 'en/%1/' "
-                "in area '%2' of the KDE folder ($KDEDIRS).",
-                myDir, dirs->resourceDirs ("html").join ( QLatin1String( ":" ))));
+                i18n ("Cannot find documentation sub-folder 'doc/HTML/en/%1/' "
+                "in areas '%2'.", myDir, genericDataLocations.join(";")));
         // result = false;		// Don't abort if the doc is missing.
     }
     else
         systemHTMLDir.append ("en/" + myDir + '/');
 
     // Find the system collections in a directory of the required KDE type.
-    systemDataDir = dirs->findResourceDir ("data", myDir + "/system/");
+    systemDataDir = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+                                           "system/", QStandardPaths::LocateDirectory);
     if (systemDataDir.length() <= 0) {
         KGrMessage::information (this, i18n ("Get Folders"),
-        i18n ("Cannot find system games sub-folder '%1/system/' "
-        "in area '%2' of the KDE folder ($KDEDIRS).",
-         myDir, dirs->resourceDirs ("data").join ( QLatin1String( ":" ))));
+        i18n ("Cannot find system games sub-folder '/system/' "
+        "in areas '%1'.",
+        appDataLocations.join(";")));
         result = false;			// ABORT if the games data is missing.
     }
-    else
-        systemDataDir.append (myDir + "/system/");
 
     // Locate and optionally create directories for user collections and levels.
-    bool create = true;
-    userDataDir   = dirs->saveLocation ("data", myDir + "/user/", create);
-    if (userDataDir.length() <= 0) {
-        KGrMessage::information (this, i18n ("Get Folders"),
-        i18n ("Cannot find or create user games sub-folder '%1/user/' "
-        "in area '%2' of the KDE user area ($KDEHOME).",
-         myDir, dirs->resourceDirs ("data").join ( QLatin1String( ":" ))));
-        // result = false;		// Don't abort if user area is missing.
-    }
-    else {
-        create = dirs->makeDir (userDataDir + "levels/");
-        if (! create) {
-            KGrMessage::information (this, i18n ("Get Folders"),
-            i18n ("Cannot find or create 'levels/' folder in "
-            "sub-folder '%1/user/' in the KDE user area ($KDEHOME).", myDir));
-            // result = false;		// Don't abort if user area is missing.
-        }
-    }
-    delete dirs;
+    userDataDir   = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/";
+    QString levelDir = userDataDir + "levels";
+    KIO::mkpath(QUrl::fromUserInput(levelDir))->exec();
+
     return (result);
 }
 

@@ -231,7 +231,7 @@ private:
     KGrView             *   m_view;
     KGrRenderer         *   m_renderer;
     KGameRenderedItem   *   m_background;
-    int                     m_level;
+    unsigned int            m_level;
 
     QGraphicsRectItem   *   m_frame;
 

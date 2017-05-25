@@ -18,9 +18,9 @@
 #ifndef KGRVIEW_H
 #define KGRVIEW_H
 
+#include <QGraphicsView>
 #include <QMouseEvent>
 #include <QResizeEvent>
-#include <QGraphicsView>
 
 class KGrScene;
 

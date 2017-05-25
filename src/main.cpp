@@ -17,17 +17,16 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ****************************************************************************/
 
-#include "kgoldrunner_debug.h"
+#include <QApplication>
+#include <QCommandLineParser>
 
 #include <KAboutData>
 #include <KCrash>
-
-#include <KLocalizedString>
-#include <QApplication>
-#include <KLocalizedString>
-#include <QCommandLineParser>
-#include "kgoldrunner.h"
 #include <KDBusService>
+#include <KLocalizedString>
+
+#include "kgoldrunner_debug.h"
+#include "kgoldrunner.h"
 
 static const char description[] =
     I18N_NOOP ("KGoldrunner is a game of action and puzzle solving");
@@ -55,6 +54,7 @@ int main (int argc, char **argv)
                      i18n ("(C) 2003 Ian Wadham and Marco Krüger"),
                       "http://games.kde.org/kgoldrunner" );
     addCredits (about);
+    about.setOrganizationDomain("kde.org");
 
     QCommandLineParser parser;
     KAboutData::setApplicationData(about);

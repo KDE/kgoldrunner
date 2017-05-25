@@ -15,9 +15,9 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ****************************************************************************/
 
-#include <QString>
-#include <QFileInfo>
 #include <QDir>
+#include <QFileInfo>
+#include <QString>
 
 #include "kgrthemetypes.h"
 
