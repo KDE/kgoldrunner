@@ -1024,7 +1024,7 @@ void KGrGame::endLevel (const int result)
         saveRecording (QString ("rec_"));
 
         // Save the game and level, for use in the REPLAY_LAST action.
-        KConfigGroup gameGroup (KGlobal::config(), "KDEGame");
+        KConfigGroup gameGroup (KSharedConfig::openConfig (), "KDEGame");
         gameGroup.writeEntry ("LastGamePrefix", prefix);
         gameGroup.writeEntry ("LastLevel",      level);
         gameGroup.sync();		// Ensure that the entry goes to disk.
