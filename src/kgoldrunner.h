@@ -64,8 +64,8 @@ public slots:
     void redrawEditToolbar();
 
 protected:
-    void keyPressEvent (QKeyEvent * event);
-    void keyReleaseEvent (QKeyEvent * event);
+    void keyPressEvent (QKeyEvent * event) Q_DECL_OVERRIDE;
+    void keyReleaseEvent (QKeyEvent * event) Q_DECL_OVERRIDE;
 
 private:
     void setUpKeyboardControl();
@@ -76,17 +76,17 @@ protected:
      * This function is called when it is time for the app to save its
      * properties for session management purposes.
      */
-    void saveProperties (KConfigGroup &);
+    void saveProperties (KConfigGroup &) Q_DECL_OVERRIDE;
 
     /**
      * This function is called when this app is restored.  The KConfig
      * object points to the session management config file that was saved
      * with @ref saveProperties.
      */
-    void readProperties (const KConfigGroup &);
+    void readProperties (const KConfigGroup &) Q_DECL_OVERRIDE;
 
     /// To save edits before closing.
-    bool queryClose();
+    bool queryClose() Q_DECL_OVERRIDE;
 
 private slots:
     // An extension of the constructor.  Gives us two scans of the event queue.
@@ -104,7 +104,7 @@ private slots:
     void setEditIcon (const QString & actionName, const char iconType);
     void viewFullScreen (bool activation);
 
-    QSize sizeHint() const;
+    QSize sizeHint() const Q_DECL_OVERRIDE;
 
 private:
     void setupActions();

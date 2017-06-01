@@ -99,7 +99,7 @@ public:
     Direction findBestWay  (const int eI, const int eJ,
                             const int hI, const int hJ,
                             KGrLevelGrid * pGrid,
-                            bool leftRightSearch = true);
+                            bool leftRightSearch = true) Q_DECL_OVERRIDE;
 
 private:
     Direction searchUp     (int eI, int eJ, int hJ);
@@ -124,7 +124,7 @@ public:
     Direction findBestWay  (const int eI, const int eJ,
                             const int hI, const int hJ,
                             KGrLevelGrid * pGrid,
-                            bool leftRightSearch = true);
+                            bool leftRightSearch = true) Q_DECL_OVERRIDE;
 
 private:
     Direction findWayUp    (const int eI, const int eJ);
@@ -144,7 +144,7 @@ public:
     Direction findBestWay (const int eI, const int eJ,
                            const int hI, const int hJ,
                            KGrLevelGrid * pGrid,
-                           bool leftRightSearch = true);
+                           bool leftRightSearch = true) Q_DECL_OVERRIDE;
 };
 
 #endif // KGRRULEBOOK_H

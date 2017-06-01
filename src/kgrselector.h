@@ -24,7 +24,6 @@
 #include <QList>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
-
 #include <KLocalizedString>
 #include <KMessageBox>
 
@@ -128,7 +127,7 @@ public:
     static QColor poleColor;
 
 protected:
-    void paintEvent (QPaintEvent * event);	// Draw a preview of a level.
+    void paintEvent (QPaintEvent * event) Q_DECL_OVERRIDE;	// Draw a preview of a level.
 
 private:
     KGrGameIO * io;
