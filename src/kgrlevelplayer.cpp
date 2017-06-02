@@ -1,5 +1,3 @@
-#include "kgrdebug.h"
-
 /****************************************************************************
  *    Copyright 2009  Ian Wadham <iandw.au@gmail.com>                         *
  *                                                                          *
@@ -30,6 +28,7 @@
 #include "kgrrulebook.h"
 #include "kgrlevelgrid.h"
 #include "kgrrunner.h"
+#include "kgrdebug.h"
 
 #include "kgoldrunner_debug.h"
 #include <KMessageBox>	// TODO - Remove.
@@ -231,7 +230,7 @@ void KGrLevelPlayer::init (KGrView * view,
              view->gameScene(), SLOT    (startAnimation (int, bool, int, int,
                                          int, Direction, AnimationType)));
 
-    foreach (KGrEnemy * enemy, enemies) {
+    for (KGrEnemy * enemy : qAsConst(enemies)) {
         connect (enemy,             SIGNAL (startAnimation (int, bool, int, int,
                                             int, Direction, AnimationType)),
                  view->gameScene(), SLOT   (startAnimation (int, bool, int, int,
@@ -241,7 +240,7 @@ void KGrLevelPlayer::init (KGrView * view,
     // Connect the scoring.
     connect (hero, SIGNAL (incScore(int)),
              game, SLOT   (incScore(int)));
-    foreach (KGrEnemy * enemy, enemies) {
+    for (KGrEnemy * enemy : qAsConst(enemies)) {
         connect (enemy, SIGNAL (incScore(int)),
                  game,  SLOT   (incScore(int)));
     }
@@ -614,7 +613,7 @@ bool KGrLevelPlayer::heroCaught (const int heroX, const int heroY)
         return false;
     }
     int enemyX, enemyY, pointsPerCell_1;
-    foreach (KGrEnemy * enemy, enemies) {
+    for (KGrEnemy * enemy : qAsConst(enemies)) {
         pointsPerCell_1 = enemy->whereAreYou (enemyX, enemyY) - 1;
         if (((heroX < enemyX) ? ((heroX + pointsPerCell_1) >= enemyX) :
                                  (heroX <= (enemyX + pointsPerCell_1))) &&
@@ -636,7 +635,7 @@ KGrEnemy * KGrLevelPlayer::standOnEnemy (const int spriteId,
         return 0;
     }
     int enemyX, enemyY, pointsPerCell;
-    foreach (KGrEnemy * enemy, enemies) {
+    for (KGrEnemy * enemy : qAsConst(enemies)) {
         pointsPerCell = enemy->whereAreYou (enemyX, enemyY);
         if (((enemyY == (y + pointsPerCell)) ||
              (enemyY == (y + pointsPerCell - 1))) &&
@@ -789,7 +788,7 @@ void KGrLevelPlayer::tick (bool missed, int scaledTime)
         return;
     }
 
-    foreach (KGrEnemy * enemy, enemies) {
+    for (KGrEnemy * enemy : qAsConst(enemies)) {
         enemy->run (scaledTime);
     }
 
@@ -1220,7 +1219,7 @@ void KGrLevelPlayer::startLogging()
 void KGrLevelPlayer::showFigurePositions()
 {
     hero->showState();
-    foreach (KGrEnemy * enemy, enemies) {
+    for (KGrEnemy * enemy : qAsConst(enemies)) {
         enemy->showState();
     }
 }

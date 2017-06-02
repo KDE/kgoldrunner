@@ -87,7 +87,8 @@ void KGrRenderer::matchThemes (const KgTheme * currentSetTheme)
     // Start of game or change of theme: initialise the counts of pixmap keys.
     initPixmapKeys();
 
-    foreach (const KgTheme * actorsTheme, m_actorsProvider->themes()) {
+    const auto themes = m_actorsProvider->themes();
+    for (const KgTheme * actorsTheme : themes) {
 	if (actorsTheme->customData("Set") ==
             currentSetTheme->customData("Set")) {
 	    m_actorsProvider->setCurrentTheme (actorsTheme);

@@ -1,5 +1,3 @@
-#include "kgrdebug.h"
-
 /****************************************************************************
  *    Copyright 2009  Ian Wadham <iandw.au@gmail.com>                       *
  *                                                                          *
@@ -17,6 +15,7 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ****************************************************************************/
 
+#include "kgrdebug.h"
 #include "kgreditor.h"
 #include "kgrscene.h"
 #include "kgrview.h"
@@ -772,7 +771,7 @@ bool KGrEditor::ownerOK (Owner o)
     // Check that this owner has at least one set of game data.
     bool OK = false;
 
-    foreach (KGrGameData * d, gameList) {
+    for (KGrGameData * d : qAsConst(gameList)) {
         if (d->owner == o) {
             OK = true;
             break;
@@ -809,7 +808,7 @@ bool KGrEditor::saveGameData (Owner o)
     int			i, len;
     char		ch;
 
-    foreach (KGrGameData * gData, gameList) {
+    for (KGrGameData * gData : qAsConst(gameList)) {
         if (gData->owner == o) {
             line = QString ("%1 %2 %3 %4\n")
                             .arg (gData->nLevels, 3, 10, QChar('0')) // int 00n

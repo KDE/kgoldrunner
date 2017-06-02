@@ -135,13 +135,13 @@ void KGrScene::redrawScene ()
         m_gradient.setColorAt (0.85, QColor (0, 0, 0, 0));
 
         int index = 0;
-        foreach (KGameRenderedItem * tile, m_tiles) {
+        for (KGameRenderedItem * tile : qAsConst(m_tiles)) {
             if (tile) {
                 setTile (tile, tileSize, index/m_tilesHigh, index%m_tilesHigh);
             }
             index++;
         }
-        foreach (KGrSprite * sprite, m_sprites) {
+        for (KGrSprite * sprite : qAsConst(m_sprites)) {
             if (sprite) {
                 sprite->changeCoordinateSystem
                         (m_topLeftX, m_topLeftY, tileSize);
@@ -483,7 +483,7 @@ int KGrScene::makeSprite (const char type, int i, int j)
 
 void KGrScene::animate (bool missed)
 {
-    foreach (KGrSprite * sprite, m_sprites) {
+    for (KGrSprite * sprite : qAsConst(m_sprites)) {
         if (sprite != 0) {
             sprite->animate (missed);
         }
@@ -561,7 +561,7 @@ void KGrScene::gotGold (const int spriteId, const int i, const int j,
 
 void KGrScene::showHiddenLadders (const QList<int> & ladders, const int width)
 {
-    foreach (int offset, ladders) {
+    for (const int &offset : ladders) {
         int i = offset % width;
         int j = offset / width;
         paintCell (i, j, LADDER);

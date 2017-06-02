@@ -1,5 +1,3 @@
-#include "kgrdebug.h"
-
 /****************************************************************************
  *    Copyright 2003  Marco Krüger <grisuji@gmx.de>                         *
  *    Copyright 2003,2009  Ian Wadham <iandw.au@gmail.com>                  *
@@ -18,6 +16,7 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ****************************************************************************/
 
+#include "kgrdebug.h"
 #include "kgrgame.h"
 
 #include "kgrview.h"
@@ -448,7 +447,7 @@ void KGrGame::initGame()
     level     = 1;
     int n     = 0;
     dbk1 << gameIndex << level << "Search:" << prevGamePrefix << prevLevel;
-    foreach (KGrGameData * gameData, gameList) {
+    for (KGrGameData * gameData : qAsConst(gameList)) {
         dbk1 << "Trying:" << n << gameData->prefix;
         if (gameData->prefix == prevGamePrefix) {
             gameIndex = n;
