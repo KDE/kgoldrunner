@@ -35,7 +35,7 @@ public:
      *
      * @param path    The full path of the theme's .desktop file.
      */
-    bool readFromDesktopFile(const QString& path) Q_DECL_OVERRIDE;
+    bool readFromDesktopFile(const QString& path) override;
 };
 
 
@@ -54,7 +54,7 @@ public:
      *
      * @param path    The full path of the theme's .desktop file.
      */
-    bool readFromDesktopFile(const QString& path) Q_DECL_OVERRIDE;
+    bool readFromDesktopFile(const QString& path) override;
 };
 
 #endif // KGRTHEMETYPES_H

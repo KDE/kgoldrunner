@@ -41,10 +41,10 @@ signals:
     void mouseLetGo (int);
 
 protected:
-    void resizeEvent           (QResizeEvent   *) Q_DECL_OVERRIDE;
-    void mousePressEvent       (QMouseEvent * mouseEvent) Q_DECL_OVERRIDE;
-    void mouseDoubleClickEvent (QMouseEvent * mouseEvent) Q_DECL_OVERRIDE;
-    void mouseReleaseEvent     (QMouseEvent * mouseEvent) Q_DECL_OVERRIDE;
+    void resizeEvent           (QResizeEvent   *) override;
+    void mousePressEvent       (QMouseEvent * mouseEvent) override;
+    void mouseDoubleClickEvent (QMouseEvent * mouseEvent) override;
+    void mouseReleaseEvent     (QMouseEvent * mouseEvent) override;
 
 private:
     KGrScene    * m_scene;
