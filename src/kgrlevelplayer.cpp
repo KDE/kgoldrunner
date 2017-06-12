@@ -34,7 +34,7 @@
 #include <KMessageBox>	// TODO - Remove.
 #include <KRandomSequence>
 
-KGrLevelPlayer::KGrLevelPlayer (QObject * parent, KRandomSequence * pRandomGen)
+KGrLevelPlayer::KGrLevelPlayer (KGrGame * parent, KRandomSequence * pRandomGen)
     :
     QObject          (parent),
     game             (parent),
@@ -225,16 +225,13 @@ void KGrLevelPlayer::init (KGrView * view,
     }
 
     // Connect the scoring.
-    connect (hero, SIGNAL (incScore(int)),
-             game, SLOT   (incScore(int)));
+    connect (hero, &KGrHero::incScore, game, &KGrGame::incScore);
     for (KGrEnemy * enemy : qAsConst(enemies)) {
-        connect (enemy, SIGNAL (incScore(int)),
-                 game,  SLOT   (incScore(int)));
+        connect (enemy, &KGrEnemy::incScore, game, &KGrGame::incScore);
     }
 
     // Connect the sounds.
-    connect (hero, SIGNAL (soundSignal(int,bool)),
-             game, SLOT   (playSound(int,bool)));
+    connect (hero, &KGrHero::soundSignal, game, &KGrGame::playSound);
 
     // Connect the level player to the animation code (for use with dug bricks).
     connect (this, &KGrLevelPlayer::startAnimation, view->gameScene(), &KGrScene::startAnimation);

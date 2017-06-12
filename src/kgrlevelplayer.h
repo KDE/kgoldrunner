@@ -31,6 +31,7 @@ class KGrLevelGrid;
 class KGrRuleBook;
 class KGrView;
 class KGrHero;
+class KGrGame;
 class KGrEnemy;
 
 class KRandomSequence;
@@ -74,7 +75,7 @@ public:
      *                   play.
      * @param pRandomGen A shared source of random numbers for all enemies.
      */
-    KGrLevelPlayer             (QObject * parent, KRandomSequence * pRandomGen);
+    KGrLevelPlayer             (KGrGame * parent, KRandomSequence * pRandomGen);
     ~KGrLevelPlayer();
 
     /**
@@ -393,7 +394,7 @@ private slots:
     void doDig          (int button);	// Dig using mouse-buttons.
 
 private:
-    QObject *            game;
+    KGrGame *            game;
     KRandomSequence *    randomGen;
     KGrLevelGrid *       grid;
     KGrRuleBook *        rules;

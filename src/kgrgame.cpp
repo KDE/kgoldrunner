@@ -507,7 +507,7 @@ void KGrGame::initGame()
 
     // Allow a short break, to display the graphics, then use the demo delay-time
     // or the reaction-time to the quick-start dialog to do some more rendering.
-    QTimer::singleShot (10, scene, SLOT(preRenderSprites()));
+    QTimer::singleShot (10, scene, &KGrScene::preRenderSprites);
 
 } // End KGrGame::initGame()
 

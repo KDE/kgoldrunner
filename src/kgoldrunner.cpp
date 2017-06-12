@@ -523,7 +523,7 @@ void KGoldrunner::setupActions()
     // Two-handed KB controls and alternate one-handed controls for the hero.
 
     QSignalMapper * kbMapper = new QSignalMapper (this);
-    connect (kbMapper, SIGNAL (mapped(int)), game, SLOT(kbControl(int)));
+    connect (kbMapper, static_cast<void(QSignalMapper::*)(int)>(&QSignalMapper::mapped), [&](int dirn) { game->kbControl(dirn); } );
     tempMapper = kbMapper;
 
     // The actions for the movement keys are created but disabled.  This lets
