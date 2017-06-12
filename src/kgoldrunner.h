@@ -58,7 +58,6 @@ public:
      */
     bool startedOK() {return (startupOK);}
 
-public slots:
     void setToggle      (const char * actionName, const bool onOff);
     void setAvail       (const char * actionName, const bool onOff);
     void redrawEditToolbar();

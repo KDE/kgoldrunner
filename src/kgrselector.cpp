@@ -132,8 +132,8 @@ void KGrSLDialog::setupWidgets()
     setWindowTitle (i18n ("Select Game"));
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::Help);
     QVBoxLayout *buttonLayout = new QVBoxLayout;
-    connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    connect(buttonBox, &QDialogButtonBox::accepted, this, &KGrSLDialog::accept);
+    connect(buttonBox, &QDialogButtonBox::rejected, this, &KGrSLDialog::reject);
     buttonLayout->addWidget(buttonBox);
     buttonBox->button(QDialogButtonBox::Ok)->setDefault(true);
     layout->addWidget(buttonBox);
