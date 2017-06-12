@@ -225,7 +225,6 @@ private:
     void insertEditObj (int, int, char object);
     char editableCell (int i, int j);
     void setEditableCell (int, int, char);
-    void showEditLevel();
     bool reNumberLevels (int, int, int, int);
     bool ownerOK (Owner o);
     bool saveGameData (Owner o);

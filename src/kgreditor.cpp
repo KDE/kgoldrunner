@@ -727,17 +727,6 @@ void KGrEditor::setEditableCell (int i, int j, char type)
     scene->paintCell (i, j, type);
 }
 
-void KGrEditor::showEditLevel()
-{
-    // Disconnect play-mode slots from signals from "view".
-    disconnect (view, SIGNAL (mouseClick(int)), 0, 0);
-    disconnect (view, SIGNAL (mouseLetGo(int)), 0, 0);
-
-    // Connect edit-mode slots to signals from "view".
-    connect(view, &KGrView::mouseClick, this, &KGrEditor::doEdit);
-    connect(view, &KGrView::mouseLetGo, this, &KGrEditor::endEdit);
-}
-
 bool KGrEditor::reNumberLevels (int cIndex, int first, int last, int inc)
 {
     int i, n, step;
