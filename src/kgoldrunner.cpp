@@ -79,10 +79,9 @@ KGoldrunner::KGoldrunner()
     }
 
     // This message is to help diagnose distribution or installation problems.
-    fprintf (stderr,
-        "The games data should be in the following locations:\n");
-    fprintf (stderr, "System games: %s\nUser data:    %s\n",
-        qPrintable(systemDataDir), qPrintable(userDataDir));
+    qCDebug(KGOLDRUNNER_LOG, "The games data should be in the following locations:\n"
+            "System games: %s\nUser data:    %s",
+            qPrintable(systemDataDir), qPrintable(userDataDir));
 
 /******************************************************************************/
 /************************  SET PLAYFIELD AND GAME DATA  ***********************/
