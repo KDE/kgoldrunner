@@ -145,7 +145,6 @@ private:
     bool frozen;
     bool getDirectories();		// Get directory paths, as below.
 
-    QString systemHTMLDir;		// Where the manual is stored.
     QString systemDataDir;		// Where the system levels are stored.
     QString userDataDir;		// Where the user levels are stored.
 

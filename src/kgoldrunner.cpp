@@ -80,9 +80,9 @@ KGoldrunner::KGoldrunner()
 
     // This message is to help diagnose distribution or installation problems.
     fprintf (stderr,
-        "The games data and handbook should be in the following locations:\n");
-    fprintf (stderr, "System games: %s\nUser data:    %s\nHandbook:     %s\n",
-        qPrintable(systemDataDir), qPrintable(userDataDir), qPrintable(systemHTMLDir));
+        "The games data should be in the following locations:\n");
+    fprintf (stderr, "System games: %s\nUser data:    %s\n",
+        qPrintable(systemDataDir), qPrintable(userDataDir));
 
 /******************************************************************************/
 /************************  SET PLAYFIELD AND GAME DATA  ***********************/
@@ -889,19 +889,6 @@ bool KGoldrunner::getDirectories()
     QString myDir = "kgoldrunner";
     QStringList genericDataLocations = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
     QStringList appDataLocations = QStandardPaths::standardLocations(QStandardPaths::AppDataLocation);
-
-    // Find the KGoldrunner Users' Guide, English version (en).
-    systemHTMLDir = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                       "doc/HTML/en/" + myDir + '/',
-                                       QStandardPaths::LocateDirectory);
-    if (systemHTMLDir.length() <= 0) {
-        KGrMessage::information (this, i18n ("Get Folders"),
-                i18n ("Cannot find documentation sub-folder 'doc/HTML/en/%1/' "
-                "in areas '%2'.", myDir, genericDataLocations.join(";")));
-        // result = false;		// Don't abort if the doc is missing.
-    }
-    else
-        systemHTMLDir.append ("en/" + myDir + '/');
 
     // Find the system collections in a directory of the required KDE type.
     systemDataDir = QStandardPaths::locate(QStandardPaths::AppDataLocation,
