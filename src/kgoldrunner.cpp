@@ -244,8 +244,8 @@ void KGoldrunner::setupActions()
     actionCollection()->addAction (myPause->objectName(), myPause);
     gameMapper->setMapping (myPause, PAUSE);
     // QAction * myPause gets QAction::shortcut(), returning 1 OR 2 shortcuts.
-    QKeySequence pauseShortcut = myPause->shortcut();
-    myPause->setShortcut (pauseShortcut);
+    QList<QKeySequence> pauseShortcut = { myPause->shortcut(), Qt::Key_Escape };
+    myPause->setShortcuts (pauseShortcut);
 
     highScore = KStandardGameAction::highscores (gameMapper, SLOT(map()), this);
     actionCollection()->addAction (highScore->objectName(), highScore);
@@ -745,7 +745,7 @@ void KGoldrunner::gameFreeze (bool on_off)
     frozen = on_off;	// Remember the state (for the configure-keys case).
     QStringList pauseKeys;
 
-    const auto keyBindings = myPause->shortcut().keyBindings(QKeySequence::StandardKey::Cancel);
+    const auto keyBindings = myPause->shortcuts();
     for (const QKeySequence &s : keyBindings) {
         pauseKeys.append(s.toString(QKeySequence::NativeText));
     }
