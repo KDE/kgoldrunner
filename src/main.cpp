@@ -34,16 +34,10 @@ static const char description[] =
 // The intention is to keep the KGoldrunner version number in line with KDE.
 static const char version[] = "4.14";
 
-static bool gameDataOK();
 static void addCredits (KAboutData & about);
 
 int main (int argc, char **argv)
 {
-    // Check data integrity and find base directories.
-    if (! gameDataOK()) {
- 	// Error message;
- 	return 2;
-    }
     QApplication app(argc, argv);
 
     KLocalizedString::setApplicationDomain("kgoldrunner");
@@ -113,9 +107,4 @@ void addCredits (KAboutData & about)
     about.addCredit (i18n ("Eugene Trounev"),
                      i18n ("Artwork for the Treasure of Egypt theme"), 
                             "irs_me@hotmail.com");
-}
-
-bool gameDataOK()
-{
-    return true;
 }
