@@ -1406,7 +1406,7 @@ void KGrGame::kbControl (const int dirn, const bool pressed)
     if (editor) {
         return;
     }
-    if (playback) {
+    if (playback && levelPlayer) {
         levelPlayer->interruptPlayback();	// Will emit interruptDemo().
         return;
     }
