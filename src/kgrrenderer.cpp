@@ -24,9 +24,9 @@
 #include <KgThemeSelector>
 #include <KLocalizedString>
 
-#include <QDebug>
 #include <QString>
 
+#include "kgoldrunner_debug.h"
 #include "kgrglobals.h"
 #include "kgrthemetypes.h"
 #include "kgrrenderer.h"
@@ -71,8 +71,7 @@ KGrRenderer::KGrRenderer (KGrScene * scene)
     m_actorsRenderer->setFrameBaseIndex (1);
 
     // Match the Actors SVG theme to the Set theme, whenever the theme changes.
-    connect (m_setProvider, SIGNAL(currentThemeChanged(const KgTheme*)),
-             this,            SLOT(currentThemeChanged(const KgTheme*)));
+    connect(m_setProvider, &KgThemeProvider::currentThemeChanged, this, &KGrRenderer::currentThemeChanged);
 
     // Match the starting SVG theme for the Actors to the one for the Set.
     matchThemes (m_setProvider->currentTheme());
@@ -88,7 +87,8 @@ void KGrRenderer::matchThemes (const KgTheme * currentSetTheme)
     // Start of game or change of theme: initialise the counts of pixmap keys.
     initPixmapKeys();
 
-    foreach (const KgTheme * actorsTheme, m_actorsProvider->themes()) {
+    const auto themes = m_actorsProvider->themes();
+    for (const KgTheme * actorsTheme : themes) {
 	if (actorsTheme->customData("Set") ==
             currentSetTheme->customData("Set")) {
 	    m_actorsProvider->setCurrentTheme (actorsTheme);
@@ -99,7 +99,7 @@ void KGrRenderer::matchThemes (const KgTheme * currentSetTheme)
 
 void KGrRenderer::currentThemeChanged (const KgTheme* currentSetTheme)
 {
-    // qDebug() << "KGrRenderer::currentThemeChanged()" << currentSetTheme->name();
+    //qCDebug(KGOLDRUNNER_LOG) << "KGrRenderer::currentThemeChanged()" << currentSetTheme->name();
 
     matchThemes (currentSetTheme);
     m_scene->changeTheme();
@@ -150,7 +150,7 @@ KGameRenderedItem * KGrRenderer::getTileItem
     }
 
     // Get the pixmap key and use one of the two renderers to create the tile.
-    QString key = getPixmapKey (picType, index);
+    QString key = getPixmapKey (index);
     KGameRenderedItem * tile =
                 new KGameRenderedItem ((keyTable[index].picSource == Set) ?
                                        m_setRenderer : m_actorsRenderer, key);
@@ -235,7 +235,7 @@ QPixmap KGrRenderer::getPixmap (const char picType)
 {
     // Get the pixmap key and use one of the two renderers to create the tile.
     int index   = findKeyTableIndex (picType);
-    QString key = getPixmapKey      (picType, index);
+    QString key = getPixmapKey      (index);
 
     if (keyTable[index].picSource == Set)
         return m_setRenderer->spritePixmap (key, m_scene->tileSize ());
@@ -243,7 +243,7 @@ QPixmap KGrRenderer::getPixmap (const char picType)
         return m_actorsRenderer->spritePixmap (key, m_scene->tileSize ());
 }
 
-QString KGrRenderer::getPixmapKey (const char picType, const int index)
+QString KGrRenderer::getPixmapKey (const int index)
 {
     QString pixmapKey = "";
     // int index = findKeyTableIndex (picType);
@@ -275,7 +275,7 @@ QString KGrRenderer::getBackgroundKey (const int level)
 	}
     }
 
-    // qDebug() << "BACKGROUND pixmap key" << pixmapKey;
+    //qCDebug(KGOLDRUNNER_LOG) << "BACKGROUND pixmap key" << pixmapKey;
     return pixmapKey;
 }
 
@@ -327,4 +327,4 @@ int KGrRenderer::countFrames (const int index)
     return count;
 }
 
-#include "kgrrenderer.moc"
+

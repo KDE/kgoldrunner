@@ -19,36 +19,34 @@
 
 #include "kgoldrunner.h"
 
+#include <QAction>
 #include <QApplication>
+#include <QCommandLineParser>
 #include <QDesktopWidget>
+#include <QIcon>
+#include <QKeyEvent>
+#include <QKeySequence>
+#include <QMenuBar>
 #include <QSignalMapper>
 #include <QShortcut>
-#include <QKeySequence>
-#include <QKeyEvent>
 
-#include <kglobal.h>
-#include <kshortcutsdialog.h>
-#include <KStandardDirs>
-
-#include <kconfig.h>
-#include <kconfiggroup.h>
-
-#include <kdebug.h>
-#include <QDebug>
-
-#include <ktoolbar.h>
-#include <kmenubar.h>
-
-#include <kaction.h>
-#include <kactioncollection.h>
-#include <ktoggleaction.h>
-#include <ktogglefullscreenaction.h>
-#include <kstandardaction.h>
-#include <kstandardgameaction.h>
-#include <kicon.h>
-#include <KMenu>
-#include <KCmdLineArgs>
 #include <KAboutData>
+#include <KActionCollection>
+#include <KConfig>
+#include <KConfigGroup>
+#include <KIO/MkpathJob>
+#include <KLocalizedString>
+#include <KSharedConfig>
+#include <KShortcutsDialog>
+#include <KStandardAction>
+#include <KStandardGameAction>
+#include <KToggleAction>
+#include <KToggleFullScreenAction>
+#include <KToolBar>
+
+#include "kgoldrunner_debug.h"
+#include "kgoldrunner_debug.h"
+
 
 #include <libkdegames_capabilities.h> //defines KGAUDIO_BACKEND_OPENAL (or not)
 
@@ -81,10 +79,9 @@ KGoldrunner::KGoldrunner()
     }
 
     // This message is to help diagnose distribution or installation problems.
-    fprintf (stderr,
-        "The games data and handbook should be in the following locations:\n");
-    fprintf (stderr, "System games: %s\nUser data:    %s\nHandbook:     %s\n",
-        qPrintable(systemDataDir), qPrintable(userDataDir), qPrintable(systemHTMLDir));
+    qCDebug(KGOLDRUNNER_LOG, "The games data should be in the following locations:\n"
+            "System games: %s\nUser data:    %s",
+            qPrintable(systemDataDir), qPrintable(userDataDir));
 
 /******************************************************************************/
 /************************  SET PLAYFIELD AND GAME DATA  ***********************/
@@ -114,9 +111,6 @@ KGoldrunner::KGoldrunner()
 /*************************  SET UP THE USER INTERFACE  ************************/
 /******************************************************************************/
 
-    // Get catalog for translation.
-    KGlobal::locale()->insertCatalog ( QLatin1String( "libkdegames" ));
-
     // Tell the KMainWindow that the KGrView object is the main widget.
     setCentralWidget (view);
 
@@ -141,19 +135,17 @@ KGoldrunner::KGoldrunner()
     gameFreeze (false);
 
     // Connect the game actions to the menu and toolbar displays.
-    connect (game, SIGNAL (quitGame()),	         SLOT (close()));
-    connect (game, SIGNAL (setEditMenu(bool)),	 SLOT (setEditMenu(bool)));
-    connect (game, SIGNAL (showLives(long)), scene, SLOT (showLives(long)));
-    connect (game, SIGNAL (showScore(long)), scene, SLOT (showScore(long)));
-    connect (game, SIGNAL (hintAvailable(bool)), SLOT (adjustHintAction(bool)));
-    connect (game, SIGNAL (gameFreeze(bool)), SLOT (gameFreeze(bool)));
+    connect (game, &KGrGame::quitGame, this, &KGoldrunner::close);
+    connect (game, &KGrGame::setEditMenu, this, &KGoldrunner::setEditMenu);
+    connect (game, &KGrGame::showLives, scene, &KGrScene::showLives);
+    connect (game, &KGrGame::showScore, scene, &KGrScene::showScore);
+    connect (game, &KGrGame::hintAvailable, this, &KGoldrunner::adjustHintAction);
+    connect (game, &KGrGame::gameFreeze, this, &KGoldrunner::gameFreeze);
 
-    connect (game, SIGNAL (setAvail(const char*,bool)),
-                   SLOT   (setAvail(const char*,bool)));
-    connect (game, SIGNAL (setToggle(const char*,bool)),
-                   SLOT   (setToggle(const char*,bool)));
+    connect (game, &KGrGame::setAvail, this, &KGoldrunner::setAvail);
+    connect (game, &KGrGame::setToggle, this, &KGoldrunner::setToggle);
 
-    connect (scene, SIGNAL (redrawEditToolbar()), SLOT (redrawEditToolbar()));
+    connect (scene, &KGrScene::redrawEditToolbar, this, &KGoldrunner::redrawEditToolbar);
 
     // Apply the saved mainwindow settings, if any, and ask the mainwindow
     // to automatically save settings if changed: window size, toolbar
@@ -171,20 +163,20 @@ KGoldrunner::KGoldrunner()
     // Do NOT paint main widget yet (title bar, menu, blank playfield).
     // Instead, queue a call to the "KGoldrunner_2" constructor extension.
     QMetaObject::invokeMethod (this, "KGoldrunner_2", Qt::QueuedConnection);
-    // kDebug() << "QMetaObject::invokeMethod (this, \"KGoldrunner_2\") done ... ";
-    // kDebug() << "1st scan of event-queue ...";
+    //qCDebug(KGOLDRUNNER_LOG) << "QMetaObject::invokeMethod (this, \"KGoldrunner_2\") done ... ";
+    //qCDebug(KGOLDRUNNER_LOG) << "1st scan of event-queue ...";
 }
 
 void KGoldrunner::KGoldrunner_2()
 {
-    // kDebug() << "Entered constructor extension ...";
+    //qCDebug(KGOLDRUNNER_LOG) << "Entered constructor extension ...";
 
     // Queue a call to the "initGame" method. This renders and paints the
     // initial graphics, but only AFTER the initial main-window resize events
     // have been seen and the final SVG scale is known.
     QMetaObject::invokeMethod (game, "initGame", Qt::QueuedConnection);
-    // kDebug() << "QMetaObject::invokeMethod (game, \"initGame\") done ... ";
-    // kDebug() << "2nd scan of event-queue ...";
+    //qCDebug(KGOLDRUNNER_LOG) << "QMetaObject::invokeMethod (game, \"initGame\") done ... ";
+    //qCDebug(KGOLDRUNNER_LOG) << "2nd scan of event-queue ...";
 }
 
 KGoldrunner::~KGoldrunner()
@@ -198,14 +190,14 @@ void KGoldrunner::setupActions()
     /**************************************************************************/
 
     QSignalMapper * gameMapper = new QSignalMapper (this);
-    connect (gameMapper, SIGNAL (mapped(int)), game, SLOT (gameActions(int)));
+    connect (gameMapper, static_cast<void(QSignalMapper::*)(int)>(&QSignalMapper::mapped), game, &KGrGame::gameActions);
     tempMapper = gameMapper;
 
     // New Game...
     // Load Saved Game...
     // --------------------------
 
-    KAction * a = KStandardGameAction::gameNew (gameMapper, SLOT(map()), this);
+    QAction * a = KStandardGameAction::gameNew (gameMapper, SLOT(map()), this);
     actionCollection()->addAction (a->objectName(), a);
     gameMapper->setMapping (a, NEW);
     a->setText (i18n ("&New Game..."));
@@ -230,7 +222,7 @@ void KGoldrunner::setupActions()
     actionCollection()->addAction (saveGame->objectName(), saveGame);
     gameMapper->setMapping (saveGame, SAVE_GAME);
     saveGame->setText (i18n ("&Save Game..."));
-    saveGame->setShortcut (Qt::Key_S); // Alternate key.
+    actionCollection()->setDefaultShortcut(saveGame, Qt::Key_S); // Alternate key.
 
     // The name of the solution-file is 'sol_<prefix>.txt', where <prefix> is
     // the unique prefix belonging to the game involved (eg. plws, tute, etc.).
@@ -251,11 +243,9 @@ void KGoldrunner::setupActions()
     myPause = KStandardGameAction::pause (gameMapper, SLOT(map()), this);
     actionCollection()->addAction (myPause->objectName(), myPause);
     gameMapper->setMapping (myPause, PAUSE);
-
-    // KAction * myPause gets KAction::shortcut(), returning 1 OR 2 shortcuts.
-    KShortcut pauseShortcut = myPause->shortcut();
-    pauseShortcut.setAlternate (Qt::Key_Escape);	// Add "Esc" shortcut.
-    myPause->setShortcut (pauseShortcut);
+    // QAction * myPause gets QAction::shortcut(), returning 1 OR 2 shortcuts.
+    QList<QKeySequence> pauseShortcut = { myPause->shortcut(), Qt::Key_Escape };
+    myPause->setShortcuts (pauseShortcut);
 
     highScore = KStandardGameAction::highscores (gameMapper, SLOT(map()), this);
     actionCollection()->addAction (highScore->objectName(), highScore);
@@ -316,25 +306,25 @@ void KGoldrunner::setupActions()
     /**************************************************************************/
 
     QSignalMapper * editMapper = new QSignalMapper (this);
-    connect (editMapper, SIGNAL (mapped(int)), game, SLOT (editActions(int)));
+    connect (editMapper, static_cast<void(QSignalMapper::*)(int)>(&QSignalMapper::mapped), game, &KGrGame::editActions);
     tempMapper = editMapper;
 
     // Create a Level
     // Edit a Level...
     // --------------------------
 
-    KAction * ed = editAction ("create_level", CREATE_LEVEL,
+    QAction * ed = editAction ("create_level", CREATE_LEVEL,
                                i18n ("&Create Level"),
                                i18n ("Create level."),
                                i18n ("Create a completely new level."));
-    ed->setIcon (KIcon ( QLatin1String( "document-new" )));
+    ed->setIcon (QIcon::fromTheme( QLatin1String( "document-new" )));
     ed->setIconText (i18n ("Create"));
 
     ed           = editAction ("edit_any", EDIT_ANY,
                                i18n ("&Edit Level..."),
                                i18n ("Edit level..."),
                                i18n ("Edit any level..."));
-    ed->setIcon (KIcon ( QLatin1String( "document-open" )));
+    ed->setIcon (QIcon::fromTheme( QLatin1String( "document-open" )));
     ed->setIconText (i18n ("Edit"));
 
     // Save Edits...
@@ -346,7 +336,7 @@ void KGoldrunner::setupActions()
                                i18n ("&Save Edits..."),
                                i18n ("Save edits..."),
                                i18n ("Save your level after editing..."));
-    saveEdits->setIcon (KIcon ( QLatin1String( "document-save" )));
+    saveEdits->setIcon (QIcon::fromTheme( QLatin1String( "document-save" )));
     saveEdits->setIconText (i18n ("Save"));
     saveEdits->setEnabled (false);		// Nothing to save, yet.
 
@@ -386,16 +376,16 @@ void KGoldrunner::setupActions()
     themes->setToolTip   (i18n ("Change the graphics theme..."));
     themes->setWhatsThis (i18n ("Alter the visual appearance of the runners "
                                 "and background scene..."));
-    connect (themes, SIGNAL (triggered(bool)), this, SLOT (changeTheme()));
+    connect (themes, &QAction::triggered, this, &KGoldrunner::changeTheme);
 
     // Show/Exit Full Screen Mode
     KToggleFullScreenAction * fullScreen = KStandardAction::fullScreen
-                        (this, SLOT (viewFullScreen(bool)), this, this);
+                        (this, &KGoldrunner::viewFullScreen, this, this);
     actionCollection()->addAction (fullScreen->objectName(), fullScreen);
 
     // Other settings are handled by KGrGame.
     QSignalMapper * settingMapper = new QSignalMapper (this);
-    connect (settingMapper, SIGNAL (mapped(int)), game, SLOT (settings(int)));
+    connect (settingMapper, static_cast<void(QSignalMapper::*)(int)>(&QSignalMapper::mapped), game, &KGrGame::settings);
     tempMapper = settingMapper;
 
 #ifdef KGAUDIO_BACKEND_OPENAL
@@ -532,7 +522,7 @@ void KGoldrunner::setupActions()
     // Two-handed KB controls and alternate one-handed controls for the hero.
 
     QSignalMapper * kbMapper = new QSignalMapper (this);
-    connect (kbMapper, SIGNAL (mapped(int)), game, SLOT(kbControl(int)));
+    connect (kbMapper, static_cast<void(QSignalMapper::*)(int)>(&QSignalMapper::mapped), [&](int dirn) { game->kbControl(dirn); } );
     tempMapper = kbMapper;
 
     // The actions for the movement keys are created but disabled.  This lets
@@ -566,14 +556,14 @@ void KGoldrunner::setupActions()
     // stepping through the animation, toggling a debug patch or log messages
     // on or off during gameplay and printing the states of runners or tiles.
 
-    KConfigGroup debugGroup (KGlobal::config(), "Debugging");
+    KConfigGroup debugGroup (KSharedConfig::openConfig(), "Debugging");
     bool addDebuggingShortcuts = debugGroup.readEntry
                         ("DebuggingShortcuts", false);	// Get debug option.
     if (! addDebuggingShortcuts)
         return;
 
     QSignalMapper * dbgMapper = new QSignalMapper (this);
-    connect (dbgMapper, SIGNAL (mapped(int)), game, SLOT(dbgControl(int)));
+    connect (dbgMapper, static_cast<void(QSignalMapper::*)(int)>(&QSignalMapper::mapped), game, &KGrGame::dbgControl);
     tempMapper = dbgMapper;
 
     keyControl ("do_step",      i18n ("Do a Step"), Qt::Key_Period, DO_STEP);
@@ -592,36 +582,36 @@ void KGoldrunner::setupActions()
     keyControl ("show_enemy_6", i18n ("Show Enemy") + '6', Qt::Key_6, ENEMY_6);
 }
 
-KAction * KGoldrunner::gameAction (const QString & name,
+QAction * KGoldrunner::gameAction (const QString & name,
                                    const int       code,
                                    const QString & text,
                                    const QString & toolTip,
                                    const QString & whatsThis,
                                    const QKeySequence & key)
 {
-    KAction * ga = actionCollection()->addAction (name);
+    QAction * ga = actionCollection()->addAction (name);
     ga->setText (text);
     ga->setToolTip (toolTip);
     ga->setWhatsThis (whatsThis);
     if (! key.isEmpty()) {
-        ga->setShortcut (key);
+        actionCollection()->setDefaultShortcut(ga, key);
     }
-    connect (ga, SIGNAL (triggered(bool)), tempMapper, SLOT (map()));
+    connect (ga, &QAction::triggered, tempMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
     tempMapper->setMapping (ga, code);
     return ga;
 }
 
-KAction * KGoldrunner::editAction (const QString & name,
+QAction * KGoldrunner::editAction (const QString & name,
                                    const int       code,
                                    const QString & text,
                                    const QString & toolTip,
                                    const QString & whatsThis)
 {
-    KAction * ed = actionCollection()->addAction (name);
+    QAction * ed = actionCollection()->addAction (name);
     ed->setText (text);
     ed->setToolTip (toolTip);
     ed->setWhatsThis (whatsThis);
-    connect (ed, SIGNAL (triggered(bool)), tempMapper, SLOT (map()));
+    connect (ed, &QAction::triggered, tempMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
     tempMapper->setMapping (ed, code);
     return ed;
 }
@@ -636,7 +626,7 @@ KToggleAction * KGoldrunner::settingAction (const QString & name,
     actionCollection()->addAction (name, s);
     s->setToolTip (toolTip);
     s->setWhatsThis (whatsThis);
-    connect (s, SIGNAL (triggered(bool)), tempMapper, SLOT (map()));
+    connect (s, &QAction::triggered, tempMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
     tempMapper->setMapping (s, code);
     return s;
 }
@@ -654,7 +644,7 @@ KToggleAction * KGoldrunner::editToolbarAction (const QString & name,
     ed->setIconText (shortText);
     ed->setToolTip (toolTip);
     ed->setWhatsThis (whatsThis);
-    connect (ed, SIGNAL (triggered(bool)), tempMapper, SLOT (map()));
+    connect (ed, &QAction::triggered, tempMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
     tempMapper->setMapping (ed, mapCode);
     return ed;
 }
@@ -663,9 +653,9 @@ void KGoldrunner::keyControl (const QString & name, const QString & text,
                               const QKeySequence & shortcut, const int code,
                               const bool mover)
 {
-    KAction * a = actionCollection()->addAction (name);
+    QAction * a = actionCollection()->addAction (name);
     a->setText (text);
-    a->setShortcut (shortcut);
+    actionCollection()->setDefaultShortcut(a, shortcut);
     a->setAutoRepeat (false);		// Avoid repeats of signals by QAction.
 
     // If this is a move-key, let keyPressEvent() through, instead of signal.
@@ -675,7 +665,7 @@ void KGoldrunner::keyControl (const QString & name, const QString & text,
 	return;
     }
 
-    connect (a, SIGNAL (triggered(bool)), tempMapper, SLOT (map()));
+    connect (a, &QAction::triggered, tempMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
     tempMapper->setMapping (a, code);
     addAction (a);
 }
@@ -754,9 +744,12 @@ void KGoldrunner::gameFreeze (bool on_off)
     myPause->setChecked (on_off);
     frozen = on_off;	// Remember the state (for the configure-keys case).
     QStringList pauseKeys;
-    foreach (const QKeySequence &s, myPause->shortcut().toList()) {
+
+    const auto keyBindings = myPause->shortcuts();
+    for (const QKeySequence &s : keyBindings) {
         pauseKeys.append(s.toString(QKeySequence::NativeText));
     }
+
     QString msg;
     if (on_off) {
         if (pauseKeys.size() == 0) {
@@ -796,7 +789,7 @@ void KGoldrunner::setToggle (const char * actionName, const bool onOff)
 
 void KGoldrunner::setAvail (const char * actionName, const bool onOff)
 {
-    ((KAction *) ACTION (actionName))->setEnabled (onOff);
+    ((QAction *) ACTION (actionName))->setEnabled (onOff);
 }
 
 void KGoldrunner::setEditMenu (bool on_off)
@@ -812,7 +805,7 @@ void KGoldrunner::setEditMenu (bool on_off)
 
     if (on_off){
         // Set the editToolbar icons to the current tile-size.
-        // kDebug() << "ToolBar icon size:" << scene->tileSize ();
+        //qCDebug(KGOLDRUNNER_LOG) << "ToolBar icon size:" << scene->tileSize ();
         toolBar ("editToolbar")->setIconSize (scene->tileSize ());
 
         // Set the editToolbar icons up with pixmaps of the current theme.
@@ -838,7 +831,7 @@ void KGoldrunner::setEditMenu (bool on_off)
 void KGoldrunner::setEditIcon (const QString & actionName, const char iconType)
 {
     ((KToggleAction *) (actionCollection()->action (actionName)))->
-                setIcon (KIcon (renderer->getPixmap (iconType)));
+                setIcon (QIcon(renderer->getPixmap (iconType)));
 }
 
 /******************************************************************************/
@@ -864,7 +857,7 @@ void KGoldrunner::saveProperties (KConfigGroup & /* config - unused */)
     // config file.  Anything you write here will be available
     // later when this app is restored.
 
-    // kDebug() << "I am in KGoldrunner::saveProperties.";
+    //qCDebug(KGOLDRUNNER_LOG) << "I am in KGoldrunner::saveProperties.";
 }
 
 void KGoldrunner::readProperties (const KConfigGroup & /* config - unused */)
@@ -874,7 +867,7 @@ void KGoldrunner::readProperties (const KConfigGroup & /* config - unused */)
     // the app is being restored.  Read in here whatever you wrote
     // in 'saveProperties'
 
-    // kDebug() << "I am in KGoldrunner::readProperties.";
+    //qCDebug(KGOLDRUNNER_LOG) << "I am in KGoldrunner::readProperties.";
 }
 
 void KGoldrunner::optionsConfigureKeys()
@@ -892,68 +885,26 @@ bool KGoldrunner::getDirectories()
 {
     bool result = true;
 
-    // WHERE THINGS ARE: In the KDE 3 environment (Release 3.1.1), application
-    // documentation and data files are in a directory structure given by
-    // $KDEDIRS (e.g. "/usr/local/kde" or "/opt/kde3/").  Application user data
-    // files are in a directory structure given by $KDEHOME ("$HOME/.kde").
-    // Within those two structures, the three sub-directories will typically be
-    // "share/doc/HTML/en/kgoldrunner/", "share/apps/kgoldrunner/system/" and
-    // "share/apps/kgoldrunner/user/".  Note that it is necessary to have
-    // an extra path level ("system" or "user") after "kgoldrunner", otherwise
-    // all the KGoldrunner files have similar path names (after "apps") and
-    // KDE always locates directories in $KDEHOME and never the released games.
-
-    // The directory strings are set by KDE at run time and might change in
-    // later releases, so use them with caution and only if something gets lost.
-
-    KStandardDirs * dirs = new KStandardDirs();
-
     QString myDir = "kgoldrunner";
-
-    // Find the KGoldrunner Users' Guide, English version (en).
-    systemHTMLDir = dirs->findResourceDir ("html", "en/" + myDir + '/');
-    if (systemHTMLDir.length() <= 0) {
-        KGrMessage::information (this, i18n ("Get Folders"),
-                i18n ("Cannot find documentation sub-folder 'en/%1/' "
-                "in area '%2' of the KDE folder ($KDEDIRS).",
-                myDir, dirs->resourceDirs ("html").join ( QLatin1String( ":" ))));
-        // result = false;		// Don't abort if the doc is missing.
-    }
-    else
-        systemHTMLDir.append ("en/" + myDir + '/');
+    QStringList genericDataLocations = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
+    QStringList appDataLocations = QStandardPaths::standardLocations(QStandardPaths::AppDataLocation);
 
     // Find the system collections in a directory of the required KDE type.
-    systemDataDir = dirs->findResourceDir ("data", myDir + "/system/");
+    systemDataDir = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+                                           "system/", QStandardPaths::LocateDirectory);
     if (systemDataDir.length() <= 0) {
         KGrMessage::information (this, i18n ("Get Folders"),
-        i18n ("Cannot find system games sub-folder '%1/system/' "
-        "in area '%2' of the KDE folder ($KDEDIRS).",
-         myDir, dirs->resourceDirs ("data").join ( QLatin1String( ":" ))));
+        i18n ("Cannot find system games sub-folder '/system/' "
+        "in areas '%1'.",
+        appDataLocations.join(";")));
         result = false;			// ABORT if the games data is missing.
     }
-    else
-        systemDataDir.append (myDir + "/system/");
 
     // Locate and optionally create directories for user collections and levels.
-    bool create = true;
-    userDataDir   = dirs->saveLocation ("data", myDir + "/user/", create);
-    if (userDataDir.length() <= 0) {
-        KGrMessage::information (this, i18n ("Get Folders"),
-        i18n ("Cannot find or create user games sub-folder '%1/user/' "
-        "in area '%2' of the KDE user area ($KDEHOME).",
-         myDir, dirs->resourceDirs ("data").join ( QLatin1String( ":" ))));
-        // result = false;		// Don't abort if user area is missing.
-    }
-    else {
-        create = dirs->makeDir (userDataDir + "levels/");
-        if (! create) {
-            KGrMessage::information (this, i18n ("Get Folders"),
-            i18n ("Cannot find or create 'levels/' folder in "
-            "sub-folder '%1/user/' in the KDE user area ($KDEHOME).", myDir));
-            // result = false;		// Don't abort if user area is missing.
-        }
-    }
-    delete dirs;
+    userDataDir   = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/";
+    QString levelDir = userDataDir + "levels";
+    KIO::mkpath(QUrl::fromUserInput(levelDir))->exec();
+
     return (result);
 }
 
@@ -976,16 +927,15 @@ bool KGoldrunner::queryClose()
 void KGoldrunner::setupEditToolbarActions()
 {
     QSignalMapper * editToolbarMapper = new QSignalMapper (this);
-    connect (editToolbarMapper, SIGNAL (mapped(int)),
-             game, SLOT (editToolbarActions(int)));
+    connect (editToolbarMapper, static_cast<void(QSignalMapper::*)(int)>(&QSignalMapper::mapped), game, &KGrGame::editToolbarActions);
     tempMapper = editToolbarMapper;
 
-    KAction * ed = editAction ("edit_hint", EDIT_HINT,
+    QAction * ed = editAction ("edit_hint", EDIT_HINT,
                                i18n ("Edit Name/Hint"),
                                i18n ("Edit level name or hint"),
                                i18n ("Edit text for the name or hint "
                                      "of a level"));
-    ed->setIcon (KIcon ( QLatin1String( "games-hint" )));
+    ed->setIcon (QIcon::fromTheme( QLatin1String( "games-hint" )));
     ed->setIconText (i18n ("Name/Hint"));
 
     KToggleAction * free    = editToolbarAction ("freebg", FREE,
@@ -1064,4 +1014,4 @@ QSize KGoldrunner::sizeHint() const
     return QSize (640, 600);
 }
 
-#include "kgoldrunner.moc"
+

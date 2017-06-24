@@ -20,9 +20,9 @@
 
 #include "kgrglobals.h"
 
+#include <QList>
 #include <QObject>
 #include <QVector>
-#include <QList>
 
 class KGrLevelGrid : public QObject
 {

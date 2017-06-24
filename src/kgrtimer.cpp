@@ -17,7 +17,7 @@
 
 #include "kgrtimer.h"
 
-#include <KDebug>
+#include "kgoldrunner_debug.h"
 
 KGrTimer::KGrTimer (QObject * parent, int pTickTime, float pScale)
     :
@@ -30,7 +30,7 @@ KGrTimer::KGrTimer (QObject * parent, int pTickTime, float pScale)
     expectedTime (0)
 {
     setScale (pScale);
-    connect (ticker, SIGNAL (timeout()), this, SLOT (internalSlot()));
+    connect(ticker, &QTimer::timeout, this, &KGrTimer::internalSlot);
     ticker->start (tickTime);
     t.start();
 }
@@ -75,4 +75,4 @@ void KGrTimer::internalSlot()
     }
 }
 
-#include "kgrtimer.moc"
+

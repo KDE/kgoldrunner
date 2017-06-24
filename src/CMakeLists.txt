@@ -1,7 +1,8 @@
 
 ########### next target ###############
 
-set(kgoldrunner_SRCS 
+set(kgoldrunner_SRCS
+   kgoldrunner_debug.cpp 
    kgrview.cpp
    kgrscene.cpp
    kgrsprite.cpp
@@ -19,19 +20,38 @@ set(kgoldrunner_SRCS
    main.cpp 
    kgrselector.cpp
    kgrsounds.cpp 
-   kgrdialog.cpp )
+   kgrdialog.cpp
+)
 
-kde4_add_app_icon(kgoldrunner_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-app-kgoldrunner.png")
-kde4_add_executable(kgoldrunner ${kgoldrunner_SRCS})
+file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*-apps-kgoldrunner.png")
+ecm_add_app_icon(kgoldrunner_SRCS ICONS ${ICONS_SRCS})
+add_executable(kgoldrunner ${kgoldrunner_SRCS})
 
-target_link_libraries(kgoldrunner ${KDE4_KDEUI_LIBS} kdegames kdegamesprivate)
+target_link_libraries(kgoldrunner
+    KF5KDEGames
+    KF5KDEGamesPrivate
+    KF5::ConfigWidgets
+    KF5::DBusAddons
+    KF5::KIOCore
+    KF5::Crash
+    KF5::XmlGui
+)
 
-install(TARGETS kgoldrunner  ${INSTALL_TARGETS_DEFAULT_ARGS} )
+install(TARGETS kgoldrunner  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 
 ########### install files ###############
 
-install( PROGRAMS org.kde.kgoldrunner.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
-install( FILES kgoldrunnerui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kgoldrunner )
-install(FILES org.kde.kgoldrunner.appdata.xml DESTINATION ${SHARE_INSTALL_PREFIX}/metainfo/ )
+install(PROGRAMS org.kde.kgoldrunner.desktop  DESTINATION  ${KDE_INSTALL_APPDIR})
+install(FILES kgoldrunnerui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/kgoldrunner)
+install(FILES org.kde.kgoldrunner.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
-kde4_install_icons( ${ICON_INSTALL_DIR} )
+ecm_install_icons(ICONS
+    128-apps-kgoldrunner.png
+    16-apps-kgoldrunner.png
+    22-apps-kgoldrunner.png
+    32-apps-kgoldrunner.png
+    48-apps-kgoldrunner.png
+    64-apps-kgoldrunner.png
+    DESTINATION ${KDE_INSTALL_ICONDIR} THEME hicolor
+)
+

@@ -1,5 +1,3 @@
-#include "kgrdebug.h"
-
 /****************************************************************************
  *    Copyright 2009  Ian Wadham <iandw.au@gmail.com>                       *
  *                                                                          *
@@ -17,6 +15,7 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ****************************************************************************/
 
+#include "kgrdebug.h"
 #include "kgreditor.h"
 #include "kgrscene.h"
 #include "kgrview.h"
@@ -27,7 +26,7 @@
 #include <ctype.h>
 #include <QTimer>
 
-#include <KDebug>
+#include "kgoldrunner_debug.h"
 
 KGrEditor::KGrEditor (KGrView * theView,
                       const QString & theSystemDir,
@@ -50,14 +49,13 @@ KGrEditor::KGrEditor (KGrView * theView,
 
     // Connect and start the timer.
     timer = new QTimer (this);
-    connect (timer, SIGNAL (timeout()), this, SLOT (tick()));
+    connect(timer, &QTimer::timeout, this, &KGrEditor::tick);
     timer->start (TickTime);		// TickTime def in kgrglobals.h.
 
     // Connect edit-mode slots to signals from "view".
-    connect (view,  SIGNAL (mouseClick(int)), SLOT (doEdit(int)));
-    connect (view,  SIGNAL (mouseLetGo(int)), SLOT (endEdit(int)));
-    connect (this,  SIGNAL (getMousePos(int&,int&)),
-             scene, SLOT   (getMousePos(int&,int&)));
+    connect(view, &KGrView::mouseClick, this, &KGrEditor::doEdit);
+    connect(view, &KGrView::mouseLetGo, this, &KGrEditor::endEdit);
+    connect(this, &KGrEditor::getMousePos, scene, &KGrScene::getMousePos);
 }
 
 KGrEditor::~KGrEditor()
@@ -139,7 +137,7 @@ bool KGrEditor::updateLevel (int pGameIndex, int level)
     if (level < 0)
         level = 0;
     int selectedLevel = selectLevel (SL_UPDATE, level, gameIndex);
-    kDebug() << "Selected" << gameList.at(gameIndex)->name
+    qCDebug(KGOLDRUNNER_LOG) << "Selected" << gameList.at(gameIndex)->name
              << "level" << selectedLevel;
     if (selectedLevel == 0) {
         mouseDisabled = false;
@@ -163,7 +161,7 @@ void KGrEditor::loadEditLevel (int lev)
 {
     KGrLevelData d;
 
-    kDebug() << "gameIndex" << gameIndex;
+    qCDebug(KGOLDRUNNER_LOG) << "gameIndex" << gameIndex;
     // If system game or ENDE screen, choose system dir, else choose user dir.
     const QString dir = ((gameList.at(gameIndex)->owner == SYSTEM) ||
                          (lev == 0)) ? systemDataDir : userDataDir;
@@ -626,7 +624,7 @@ int KGrEditor::selectLevel (int action, int requestedLevel, int & requestedGame)
     KGrSLDialog * sl = new KGrSLDialog (action, requestedLevel, requestedGame,
                                         gameList, systemDataDir, userDataDir,
                                         view);
-    connect (sl, SIGNAL (editNameAndHint()), this, SLOT (editNameAndHint()));
+    connect(sl, &KGrSLDialog::editNameAndHint, this, &KGrEditor::editNameAndHint);
     bool selected = sl->selectLevel (selectedGame, selectedLevel);
     delete sl;
 
@@ -729,17 +727,6 @@ void KGrEditor::setEditableCell (int i, int j, char type)
     scene->paintCell (i, j, type);
 }
 
-void KGrEditor::showEditLevel()
-{
-    // Disconnect play-mode slots from signals from "view".
-    disconnect (view, SIGNAL (mouseClick(int)), 0, 0);
-    disconnect (view, SIGNAL (mouseLetGo(int)), 0, 0);
-
-    // Connect edit-mode slots to signals from "view".
-    connect (view, SIGNAL (mouseClick(int)), SLOT (doEdit(int)));
-    connect (view, SIGNAL (mouseLetGo(int)), SLOT (endEdit(int)));
-}
-
 bool KGrEditor::reNumberLevels (int cIndex, int first, int last, int inc)
 {
     int i, n, step;
@@ -773,7 +760,7 @@ bool KGrEditor::ownerOK (Owner o)
     // Check that this owner has at least one set of game data.
     bool OK = false;
 
-    foreach (KGrGameData * d, gameList) {
+    for (KGrGameData * d : qAsConst(gameList)) {
         if (d->owner == o) {
             OK = true;
             break;
@@ -810,7 +797,7 @@ bool KGrEditor::saveGameData (Owner o)
     int			i, len;
     char		ch;
 
-    foreach (KGrGameData * gData, gameList) {
+    for (KGrGameData * gData : qAsConst(gameList)) {
         if (gData->owner == o) {
             line = QString ("%1 %2 %3 %4\n")
                             .arg (gData->nLevels, 3, 10, QChar('0')) // int 00n
@@ -889,7 +876,7 @@ void KGrEditor::doEdit (int button)
     // Mouse button down: start making changes.
     int i, j;
     emit getMousePos (i, j);
-    kDebug() << "Button" << button << "at" << i << j;
+    qCDebug(KGOLDRUNNER_LOG) << "Button" << button << "at" << i << j;
 
     switch (button) {
     case Qt::LeftButton:
@@ -959,4 +946,4 @@ void KGrEditor::endEdit (int button)
     }
 }
 
-#include "kgreditor.moc"
+

@@ -1,5 +1,3 @@
-#include "kgrdebug.h"
-
 /****************************************************************************
  *    Copyright 2009  Ian Wadham <iandw.au@gmail.com>                         *
  *                                                                          *
@@ -17,8 +15,8 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ****************************************************************************/
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 
 // Include kgrgame.h only to access flags KGrGame::bugFix and KGrGame::logging.
 #include "kgrgame.h"
@@ -30,12 +28,13 @@
 #include "kgrrulebook.h"
 #include "kgrlevelgrid.h"
 #include "kgrrunner.h"
+#include "kgrdebug.h"
 
-#include <KDebug>
+#include "kgoldrunner_debug.h"
 #include <KMessageBox>	// TODO - Remove.
 #include <KRandomSequence>
 
-KGrLevelPlayer::KGrLevelPlayer (QObject * parent, KRandomSequence * pRandomGen)
+KGrLevelPlayer::KGrLevelPlayer (KGrGame * parent, KRandomSequence * pRandomGen)
     :
     QObject          (parent),
     game             (parent),
@@ -71,7 +70,7 @@ KGrLevelPlayer::~KGrLevelPlayer()
 {
     qDeleteAll(dugBricks);
     dugBricks.clear(); //TODO: necessary?
-    // kDebug() << "LEVEL PLAYER BEING DELETED.";
+    //qCDebug(KGOLDRUNNER_LOG) << "LEVEL PLAYER BEING DELETED.";
     playerCount--;
 }
 
@@ -130,18 +129,12 @@ void KGrLevelPlayer::init (KGrView * view,
     grid->calculateAccess    (rules->runThruHole());
 
     // Connect to code that paints grid cells and start-positions of sprites.
-    connect (this,              SIGNAL  (paintCell(int,int,char)),
-             view->gameScene(), SLOT    (paintCell(int,int,char)));
-
-    connect (this,              SIGNAL  (makeSprite(char,int,int)),
-             view->gameScene(), SLOT    (makeSprite(char,int,int)));
+    connect (this, &KGrLevelPlayer::paintCell, view->gameScene(), &KGrScene::paintCell);
+    connect (this, &KGrLevelPlayer::makeSprite, view->gameScene(), &KGrScene::makeSprite);
 
     // Connect to the mouse-positioning code in the graphics.
-    connect (this, SIGNAL (getMousePos(int&,int&)),
-             view->gameScene(), SLOT   (getMousePos(int&,int&)));
-
-    connect (this, SIGNAL (setMousePos(int,int)),
-             view->gameScene(), SLOT   (setMousePos(int,int)));
+    connect (this, &KGrLevelPlayer::getMousePos, view->gameScene(), &KGrScene::getMousePos);
+    connect (this, &KGrLevelPlayer::setMousePos, view->gameScene(), &KGrScene::setMousePos);
 
     // Show the layout of this level in the view (KGrCanvas).
     int wall = ConcreteWall;
@@ -219,49 +212,34 @@ void KGrLevelPlayer::init (KGrView * view,
     }
 
     // Connect the hero's and enemies' efforts to the graphics.
-    connect (this, SIGNAL (gotGold(int,int,int,bool,bool)),
-             view->gameScene(), SLOT (gotGold(int,int,int,bool,bool)));
+    connect (this, &KGrLevelPlayer::gotGold, view->gameScene(), &KGrScene::gotGold);
 
-    // Connect mouse-clicks from KGrCanvas to digging slot.
-    connect (view, SIGNAL (mouseClick(int)), SLOT (doDig(int)));
+    // Connect mouse-clicks from KGrView to digging slot.
+    connect (view, &KGrView::mouseClick, this, &KGrLevelPlayer::doDig);
 
     // Connect the hero and enemies (if any) to the animation code.
-    connect (hero,              SIGNAL  (startAnimation (int, bool, int, int,
-                                         int, Direction, AnimationType)),
-             view->gameScene(), SLOT    (startAnimation (int, bool, int, int,
-                                         int, Direction, AnimationType)));
+    connect (hero, &KGrHero::startAnimation, view->gameScene(), &KGrScene::startAnimation);
 
-    foreach (KGrEnemy * enemy, enemies) {
-        connect (enemy,             SIGNAL (startAnimation (int, bool, int, int,
-                                            int, Direction, AnimationType)),
-                 view->gameScene(), SLOT   (startAnimation (int, bool, int, int,
-                                            int, Direction, AnimationType)));
+    for (KGrEnemy * enemy : qAsConst(enemies)) {
+        connect (enemy, &KGrEnemy::startAnimation, view->gameScene(), &KGrScene::startAnimation);
     }
 
     // Connect the scoring.
-    connect (hero, SIGNAL (incScore(int)),
-             game, SLOT   (incScore(int)));
-    foreach (KGrEnemy * enemy, enemies) {
-        connect (enemy, SIGNAL (incScore(int)),
-                 game,  SLOT   (incScore(int)));
+    connect (hero, &KGrHero::incScore, game, &KGrGame::incScore);
+    for (KGrEnemy * enemy : qAsConst(enemies)) {
+        connect (enemy, &KGrEnemy::incScore, game, &KGrGame::incScore);
     }
 
     // Connect the sounds.
-    connect (hero, SIGNAL (soundSignal(int,bool)),
-             game, SLOT   (playSound(int,bool)));
+    connect (hero, &KGrHero::soundSignal, game, &KGrGame::playSound);
 
     // Connect the level player to the animation code (for use with dug bricks).
-    connect (this,              SIGNAL (startAnimation (int, bool, int, int,
-                                        int, Direction, AnimationType)),
-             view->gameScene(), SLOT   (startAnimation (int, bool, int, int,
-                                        int, Direction, AnimationType)));
+    connect (this, &KGrLevelPlayer::startAnimation, view->gameScene(), &KGrScene::startAnimation);
 
-    connect (this,              SIGNAL (deleteSprite(int)),
-             view->gameScene(), SLOT   (deleteSprite(int)));
+    connect (this, &KGrLevelPlayer::deleteSprite, view->gameScene(), &KGrScene::deleteSprite);
 
     // Connect the grid to the view, to show hidden ladders when the time comes.
-    connect (grid, SIGNAL (showHiddenLadders(QList<int>,int)),
-             view->gameScene(), SLOT (showHiddenLadders(QList<int>,int)));
+    connect (grid, &KGrLevelGrid::showHiddenLadders, view->gameScene(), &KGrScene::showHiddenLadders);
 
     // Connect and start the timer.  The tick() slot emits signal animation(),
     // so there is just one time-source for the model and the view.
@@ -271,9 +249,8 @@ void KGrLevelPlayer::init (KGrView * view,
         timer->pause();				// Pause is ON as level starts.
     }
 
-    connect (timer, SIGNAL (tick(bool,int)), this, SLOT (tick(bool,int)));
-    connect (this,              SIGNAL  (animation(bool)),
-             view->gameScene(), SLOT    (animate(bool)));
+    connect (timer, &KGrTimer::tick, this, &KGrLevelPlayer::tick);
+    connect (this, &KGrLevelPlayer::animation, view->gameScene(), &KGrScene::animate);
 
     if (! playback) {
         // Allow some time to view the level before starting a replay.
@@ -614,7 +591,7 @@ bool KGrLevelPlayer::heroCaught (const int heroX, const int heroY)
         return false;
     }
     int enemyX, enemyY, pointsPerCell_1;
-    foreach (KGrEnemy * enemy, enemies) {
+    for (KGrEnemy * enemy : qAsConst(enemies)) {
         pointsPerCell_1 = enemy->whereAreYou (enemyX, enemyY) - 1;
         if (((heroX < enemyX) ? ((heroX + pointsPerCell_1) >= enemyX) :
                                  (heroX <= (enemyX + pointsPerCell_1))) &&
@@ -636,7 +613,7 @@ KGrEnemy * KGrLevelPlayer::standOnEnemy (const int spriteId,
         return 0;
     }
     int enemyX, enemyY, pointsPerCell;
-    foreach (KGrEnemy * enemy, enemies) {
+    for (KGrEnemy * enemy : qAsConst(enemies)) {
         pointsPerCell = enemy->whereAreYou (enemyX, enemyY);
         if (((enemyY == (y + pointsPerCell)) ||
              (enemyY == (y + pointsPerCell - 1))) &&
@@ -785,11 +762,11 @@ void KGrLevelPlayer::tick (bool missed, int scaledTime)
 
         // Queued connection ensures KGrGame slot runs AFTER return from here.
         emit endLevel (status);
-        // kDebug() << "END OF LEVEL";
+        //qCDebug(KGOLDRUNNER_LOG) << "END OF LEVEL";
         return;
     }
 
-    foreach (KGrEnemy * enemy, enemies) {
+    for (KGrEnemy * enemy : qAsConst(enemies)) {
         enemy->run (scaledTime);
     }
 
@@ -1137,7 +1114,7 @@ void KGrLevelPlayer::killHero()
         record (1, ACTION_CODE + KILL_HERO);
 
         emit endLevel (DEAD);
-        // kDebug() << "END OF LEVEL";
+        //qCDebug(KGOLDRUNNER_LOG) << "END OF LEVEL";
     }
 }
 
@@ -1220,7 +1197,7 @@ void KGrLevelPlayer::startLogging()
 void KGrLevelPlayer::showFigurePositions()
 {
     hero->showState();
-    foreach (KGrEnemy * enemy, enemies) {
+    for (KGrEnemy * enemy : qAsConst(enemies)) {
         enemy->showState();
     }
 }
@@ -1266,4 +1243,4 @@ void KGrLevelPlayer::showEnemyState (int enemyId)
 }
 
 
-#include "kgrlevelplayer.moc"
+

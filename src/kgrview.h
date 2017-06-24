@@ -18,9 +18,9 @@
 #ifndef KGRVIEW_H
 #define KGRVIEW_H
 
+#include <QGraphicsView>
 #include <QMouseEvent>
 #include <QResizeEvent>
-#include <QGraphicsView>
 
 class KGrScene;
 
@@ -41,10 +41,10 @@ signals:
     void mouseLetGo (int);
 
 protected:
-    virtual void resizeEvent           (QResizeEvent   *);
-    virtual void mousePressEvent       (QMouseEvent * mouseEvent);
-    virtual void mouseDoubleClickEvent (QMouseEvent * mouseEvent);
-    virtual void mouseReleaseEvent     (QMouseEvent * mouseEvent);
+    void resizeEvent           (QResizeEvent   *) override;
+    void mousePressEvent       (QMouseEvent * mouseEvent) override;
+    void mouseDoubleClickEvent (QMouseEvent * mouseEvent) override;
+    void mouseReleaseEvent     (QMouseEvent * mouseEvent) override;
 
 private:
     KGrScene    * m_scene;

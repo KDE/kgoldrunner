@@ -25,7 +25,7 @@
 #include <KXmlGuiWindow>
 
 class QSignalMapper;
-class KAction;
+class QAction;
 class KToggleAction;
 
 class KGrGame;
@@ -58,14 +58,13 @@ public:
      */
     bool startedOK() {return (startupOK);}
 
-public slots:
     void setToggle      (const char * actionName, const bool onOff);
     void setAvail       (const char * actionName, const bool onOff);
     void redrawEditToolbar();
 
 protected:
-    void keyPressEvent (QKeyEvent * event);
-    void keyReleaseEvent (QKeyEvent * event);
+    void keyPressEvent (QKeyEvent * event) override;
+    void keyReleaseEvent (QKeyEvent * event) override;
 
 private:
     void setUpKeyboardControl();
@@ -76,17 +75,17 @@ protected:
      * This function is called when it is time for the app to save its
      * properties for session management purposes.
      */
-    void saveProperties (KConfigGroup &);
+    void saveProperties (KConfigGroup &) override;
 
     /**
      * This function is called when this app is restored.  The KConfig
      * object points to the session management config file that was saved
      * with @ref saveProperties.
      */
-    void readProperties (const KConfigGroup &);
+    void readProperties (const KConfigGroup &) override;
 
     /// To save edits before closing.
-    bool queryClose();
+    bool queryClose() override;
 
 private slots:
     // An extension of the constructor.  Gives us two scans of the event queue.
@@ -104,7 +103,7 @@ private slots:
     void setEditIcon (const QString & actionName, const char iconType);
     void viewFullScreen (bool activation);
 
-    QSize sizeHint() const;
+    QSize sizeHint() const override;
 
 private:
     void setupActions();
@@ -112,11 +111,11 @@ private:
 
     QSignalMapper * tempMapper;		// Temporary pointer.
 
-    KAction * gameAction (const QString & name, const int code,
+    QAction * gameAction (const QString & name, const int code,
                           const QString & text, const QString & toolTip,
                           const QString & whatsThis, const QKeySequence & key);
 
-    KAction * editAction (const QString & name, const int code,
+    QAction * editAction (const QString & name, const int code,
                           const QString & text, const QString & toolTip,
                           const QString & whatsThis);
 
@@ -146,20 +145,19 @@ private:
     bool frozen;
     bool getDirectories();		// Get directory paths, as below.
 
-    QString systemHTMLDir;		// Where the manual is stored.
     QString systemDataDir;		// Where the system levels are stored.
     QString userDataDir;		// Where the user levels are stored.
 
-    KAction *		saveGame;	// Save game, level, lives and score.
+    QAction *		saveGame;	// Save game, level, lives and score.
 
-    // A KAction is needed here, to get access to KShortcut::setAlternate().
-    KAction *		myPause;	// Pause or resume the game.
+    // A QAction is needed here, to get access to KShortcut::setAlternate().
+    QAction *		myPause;	// Pause or resume the game.
 
-    KAction *		hintAction;	// Display a hint, if available.
-    KAction *		killHero;	// Kill hero (disabled during edits).
-    KAction *		highScore;	// High scores (disabled during edits).
+    QAction *		hintAction;	// Display a hint, if available.
+    QAction *		killHero;	// Kill hero (disabled during edits).
+    QAction *		highScore;	// High scores (disabled during edits).
 
-    KAction *		saveEdits;	// Save a level that has been edited.
+    QAction *		saveEdits;	// Save a level that has been edited.
 
     KToolBar *		editToolbar;	// Toolbar for creating/editing levels.
 };

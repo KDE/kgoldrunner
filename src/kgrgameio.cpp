@@ -17,12 +17,12 @@
  ****************************************************************************/
 
 #include "kgrgameio.h"
+#include "kgoldrunner_debug.h"
 
-#include <QWidget>
 #include <QDir>
+#include <QWidget>
 
-#include <KLocale>
-#include <KDebug>
+#include <KLocalizedString>
 
 KGrGameIO::KGrGameIO (QWidget * pView)
     :
@@ -47,7 +47,7 @@ IOStatus KGrGameIO::fetchGameListData
     }
 
     // Loop to read each file containing game-data.
-    foreach (const QString &filename, files) {
+    for (const QString &filename : qAsConst(files)) {
         if (filename == "game_ende.txt") {
             continue;			// Skip the "ENDE" file.
         }
@@ -55,7 +55,7 @@ IOStatus KGrGameIO::fetchGameListData
         filePath = dir + filename;
         KGrGameData * g = initGameData (o);
         gameList.append (g);
-        // kDebug()<< "GAME PATH:" << filePath;
+        // //qCDebug(KGOLDRUNNER_LOG)<< "GAME PATH:" << filePath;
 
         openFile.setFileName (filePath);
 
@@ -95,7 +95,7 @@ IOStatus KGrGameIO::fetchGameListData
             g->nLevels = fields.at (0).toInt();
             g->rules   = fields.at (1).at (0);
             g->prefix  = fields.at (2);
-            // kDebug() << "Levels:" << g->nLevels << "Rules:" << g->rules <<
+            // //qCDebug(KGOLDRUNNER_LOG) << "Levels:" << g->nLevels << "Rules:" << g->rules <<
                 // "Prefix:" << g->prefix;
 
             if (kgr3Format) {
@@ -129,9 +129,9 @@ IOStatus KGrGameIO::fetchGameListData
                 g->name  = i18n (gameName.constData());
                 c = getALine (kgr3Format, textLine);
             }
-            // qDebug() << "Dig while falling" << g->digWhileFalling
+            //qCDebug(KGOLDRUNNER_LOG) << "Dig while falling" << g->digWhileFalling
                      // << "usedDwfOpt" << usedDwfOpt << "Game" << g->name;
-            // kDebug() << "Skill:" << g->skill << "Name:" << g->name;
+            //qCDebug(KGOLDRUNNER_LOG) << "Skill:" << g->skill << "Name:" << g->name;
 
             // Loop to accumulate lines of about-data.  If kgr3Format, exit on
             // EOF or 'L' line.  If not kgr3Format, exit on EOF or numeric line.
@@ -146,7 +146,7 @@ IOStatus KGrGameIO::fetchGameListData
                 c = getALine (kgr3Format, textLine);
             }
             g->about = removeNewline (g->about);	// Remove final '\n'.
-            // kDebug() << "Info about: [" + g->about + "]";
+            // //qCDebug(KGOLDRUNNER_LOG) << "Info about: [" + g->about + "]";
 
             if ((! kgr3Format) && (c != '\0')) {
                 filePath = dir + filename;
@@ -166,7 +166,7 @@ bool KGrGameIO::readLevelData (const QString & dir,
                                const QString & prefix,
                                const int levelNo, KGrLevelData & d)
 {
-    kDebug() << "dir" << dir << "Level" << prefix << levelNo;
+    //qCDebug(KGOLDRUNNER_LOG) << "dir" << dir << "Level" << prefix << levelNo;
     QString filePath;
     IOStatus stat = fetchLevelData
                         (dir, prefix, levelNo, d, filePath);
@@ -204,7 +204,7 @@ IOStatus KGrGameIO::fetchLevelData
     d.name   = "";		// Level name (optional).
     d.hint   = "";		// Level hint (optional).
 
-    // kDebug()<< "LEVEL PATH:" << filePath;
+    // //qCDebug(KGOLDRUNNER_LOG)<< "LEVEL PATH:" << filePath;
     openFile.setFileName (filePath);
 
     // Check that the level-file exists.
@@ -262,9 +262,9 @@ IOStatus KGrGameIO::fetchLevelData
         }
     }
 
-    // kDebug() << "Level:" << level << "Layout length:" << d.layout.size();
-    // kDebug() << "Name:" << "[" + d.name + "]";
-    // kDebug() << "Hint:" << "[" + d.hint + "]";
+    // //qCDebug(KGOLDRUNNER_LOG) << "Level:" << level << "Layout length:" << d.layout.size();
+    // //qCDebug(KGOLDRUNNER_LOG) << "Name:" << "[" + d.name + "]";
+    // //qCDebug(KGOLDRUNNER_LOG) << "Hint:" << "[" + d.hint + "]";
 
     openFile.close();
     return (result);
@@ -306,7 +306,7 @@ char KGrGameIO::getALine (const bool kgr3, QByteArray & line)
         }
     }
 
-    // kDebug() << "Raw line:" << line;
+    // //qCDebug(KGOLDRUNNER_LOG) << "Raw line:" << line;
     if (line.size() <= 0) {
         // Return a '\0' byte if end-of-file.
         return ('\0');
@@ -315,7 +315,7 @@ char KGrGameIO::getALine (const bool kgr3, QByteArray & line)
         // In KGr 3 format, strip off leading and trailing syntax.
         if (line.startsWith ("// ")) {
             line = line.right (line.size() - 3);
-            // kDebug() << "Stripped comment is:" << line;
+            // //qCDebug(KGOLDRUNNER_LOG) << "Stripped comment is:" << line;
         }
         else {
             if (line.startsWith (" i18n(\"")) {
@@ -336,7 +336,7 @@ char KGrGameIO::getALine (const bool kgr3, QByteArray & line)
             else if (line.endsWith ("\"\n")) {
                 line = line.left (line.size() - 2);
             }
-            // kDebug() << "Stripped syntax is:" << line;
+            // //qCDebug(KGOLDRUNNER_LOG) << "Stripped syntax is:" << line;
         }
         // In Kgr 3 format, return the first byte if not end-of-file.
         c = line.at (0);
@@ -404,4 +404,4 @@ bool KGrGameIO::safeRename (QWidget * theView, const QString & oldName,
     return true;
 }
 
-#include "kgrgameio.moc"
+

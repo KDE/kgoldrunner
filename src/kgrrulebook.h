@@ -20,10 +20,10 @@
 
 #include "kgrglobals.h"
 
-#include <QObject>
 #include <QList>
+#include <QObject>
 
-#include <KDebug>
+#include "kgoldrunner_debug.h"
 
 class KGrLevelGrid;
 
@@ -99,7 +99,7 @@ public:
     Direction findBestWay  (const int eI, const int eJ,
                             const int hI, const int hJ,
                             KGrLevelGrid * pGrid,
-                            bool leftRightSearch = true);
+                            bool leftRightSearch = true) override;
 
 private:
     Direction searchUp     (int eI, int eJ, int hJ);
@@ -124,7 +124,7 @@ public:
     Direction findBestWay  (const int eI, const int eJ,
                             const int hI, const int hJ,
                             KGrLevelGrid * pGrid,
-                            bool leftRightSearch = true);
+                            bool leftRightSearch = true) override;
 
 private:
     Direction findWayUp    (const int eI, const int eJ);
@@ -144,7 +144,7 @@ public:
     Direction findBestWay (const int eI, const int eJ,
                            const int hI, const int hJ,
                            KGrLevelGrid * pGrid,
-                           bool leftRightSearch = true);
+                           bool leftRightSearch = true) override;
 };
 
 #endif // KGRRULEBOOK_H

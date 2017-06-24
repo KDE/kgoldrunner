@@ -15,9 +15,9 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ****************************************************************************/
 
-#include <QString>
-#include <QFileInfo>
 #include <QDir>
+#include <QFileInfo>
+#include <QString>
 
 #include "kgrthemetypes.h"
 
@@ -76,4 +76,4 @@ bool KGrSetTheme::readFromDesktopFile(const QString& path)
     return true;
 }
 
-#include "kgrthemetypes.moc"
+

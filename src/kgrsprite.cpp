@@ -19,7 +19,7 @@
 #include "kgrsprite.h"
 #include "kgrrenderer.h"
 
-#include <KDebug>
+#include "kgoldrunner_debug.h"
 
 KGrSprite::KGrSprite (KGameRenderer * renderer, QString & key,
                       const char type, const int tickTime)
@@ -85,7 +85,7 @@ void KGrSprite::setAnimation (bool repeating, int x, int y, int startFrame,
     m_dy            = (double) dy / m_ticks;
     m_frameTicks    = (double) m_ticks / nFrameChanges;
     m_frameChange   = 0.0;
-    // kDebug() << "m_ticks" << m_ticks << "dx,dy,dt" << dx << dy << dt << "m_dx,m_dy" << m_dx << m_dy << "m_frameTicks" << m_frameTicks << "nFrames" << nFrames << "nFrameChanges" << nFrameChanges;
+    // //qCDebug(KGOLDRUNNER_LOG) << "m_ticks" << m_ticks << "dx,dy,dt" << dx << dy << dt << "m_dx,m_dy" << m_dx << m_dy << "m_frameTicks" << m_frameTicks << "nFrames" << nFrames << "nFrameChanges" << nFrameChanges;
 }
 
 void KGrSprite::animate (bool missed)
@@ -100,7 +100,7 @@ void KGrSprite::animate (bool missed)
             return;
         }
     }
-    // kDebug() << missed << m_frameCtr << "=" << m_x << m_y << "frame" << m_startFrame + m_frameCtr << m_frameChange;
+    // //qCDebug(KGOLDRUNNER_LOG) << missed << m_frameCtr << "=" << m_x << m_y << "frame" << m_startFrame + m_frameCtr << m_frameChange;
 
     // If the clock is running slow, skip an animation step.
     if (! missed) {

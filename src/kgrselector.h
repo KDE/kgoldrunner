@@ -20,13 +20,11 @@
 #ifndef KGRSELECTOR_H
 #define KGRSELECTOR_H
 
+#include <QDialog>
+#include <QList>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
-
-#include <QList>
-
-#include <KLocale>
-#include <KDialog>
+#include <KLocalizedString>
 #include <KMessageBox>
 
 /**
@@ -37,7 +35,7 @@ class KGrGameData;
 class KGrThumbNail;
 class KGrGameListItem;
 class KGrGameIO;
-class KIntSpinBox;
+class QSpinBox;
 class QScrollBar;
 class QPushButton;
 class QLabel;
@@ -47,7 +45,7 @@ class QTextEdit;
 /*******************    DIALOG TO SELECT A GAME AND LEVEL   *******************/
 /******************************************************************************/
 
-class KGrSLDialog : public KDialog
+class KGrSLDialog : public QDialog
 {
 Q_OBJECT
 public:
@@ -89,7 +87,7 @@ private:
     QTextEdit *		gameAbout;
 
     QLabel *		numberL;
-    KIntSpinBox *	display;
+    QSpinBox *		display;
     QScrollBar *	number;
     QPushButton *	levelNH;
     QLabel *		slName;
@@ -129,7 +127,7 @@ public:
     static QColor poleColor;
 
 protected:
-    void paintEvent (QPaintEvent * event);	// Draw a preview of a level.
+    void paintEvent (QPaintEvent * event) override;	// Draw a preview of a level.
 
 private:
     KGrGameIO * io;

@@ -11,7 +11,7 @@ install( FILES README
                kgr_geek.desktop
                nostalgia.desktop
                nostalgia-blues.desktop
-               DESTINATION ${DATA_INSTALL_DIR}/kgoldrunner/themes )
+               DESTINATION ${KDE_INSTALL_DATADIR}/kgoldrunner/themes )
 
 install( FILES 
 	default/set.svg default/actors.svg
@@ -20,26 +20,26 @@ install( FILES
  	default/dig.ogg default/ladder.ogg default/completed.ogg
  	default/death.ogg default/gameover.ogg default/victory.ogg
 	DESTINATION 
-	${DATA_INSTALL_DIR}/kgoldrunner/themes/default )
+	${KDE_INSTALL_DATADIR}/kgoldrunner/themes/default )
 
 install( FILES accessible/black-on-white-set.svg
                accessible/black-on-white-actors.svg
                accessible/black-on-white.png
-               DESTINATION ${DATA_INSTALL_DIR}/kgoldrunner/themes/accessible )
+               DESTINATION ${KDE_INSTALL_DATADIR}/kgoldrunner/themes/accessible )
 
 install( FILES kgr_geek/set.svgz kgr_geek/actors.svgz
                kgr_geek/kgr_geek.png
-               DESTINATION ${DATA_INSTALL_DIR}/kgoldrunner/themes/kgr_geek )
+               DESTINATION ${KDE_INSTALL_DATADIR}/kgoldrunner/themes/kgr_geek )
 
 install( FILES nostalgia/blue-set.svg nostalgia/blue-actors.svg 
                nostalgia/set.svg nostalgia/actors.svg
                nostalgia/nostalgia.png
                nostalgia/nostalgia-blues.png
-               DESTINATION ${DATA_INSTALL_DIR}/kgoldrunner/themes/nostalgia )
+               DESTINATION ${KDE_INSTALL_DATADIR}/kgoldrunner/themes/nostalgia )
 
 install( FILES egypt/egypt_kgr.svgz egypt/actors.svgz
                egypt/egypt.png
-               DESTINATION ${DATA_INSTALL_DIR}/kgoldrunner/themes/egypt )
+               DESTINATION ${KDE_INSTALL_DATADIR}/kgoldrunner/themes/egypt )
 
-install( FILES kgoldrunner.knsrc  DESTINATION  ${CONFIG_INSTALL_DIR} )
+install( FILES kgoldrunner.knsrc  DESTINATION  ${KDE_INSTALL_CONFDIR} )
 

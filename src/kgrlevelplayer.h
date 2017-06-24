@@ -20,8 +20,8 @@
 
 #include "kgrglobals.h"
 
-#include <QObject>
 #include <QList>
+#include <QObject>
 #include <QVarLengthArray>
 
 #include <QTime> // IDW testing
@@ -31,6 +31,7 @@ class KGrLevelGrid;
 class KGrRuleBook;
 class KGrView;
 class KGrHero;
+class KGrGame;
 class KGrEnemy;
 
 class KRandomSequence;
@@ -74,7 +75,7 @@ public:
      *                   play.
      * @param pRandomGen A shared source of random numbers for all enemies.
      */
-    KGrLevelPlayer             (QObject * parent, KRandomSequence * pRandomGen);
+    KGrLevelPlayer             (KGrGame * parent, KRandomSequence * pRandomGen);
     ~KGrLevelPlayer();
 
     /**
@@ -300,7 +301,7 @@ public:
      * is paused and the KConfig file contains group Debugging with setting
      * DebuggingShortcuts=true.  The main actions are to do timer steps one at
      * a time, activate/deactivate a bug-fix or new-feature patch dynamically,
-     * activate/deactivate logging output from fprintf or kDebug() dynamically,
+     * activate/deactivate logging output from fprintf or qCDebug(KGOLDRUNNER_LOG) dynamically,
      * print the status of a cell pointed to by the mouse and print the status
      * of the hero or an enemy.  See the code in file kgoldrunner.cpp, at the
      * end of KGoldrunner::setupActions() for details of codes and keystrokes.
@@ -393,7 +394,7 @@ private slots:
     void doDig          (int button);	// Dig using mouse-buttons.
 
 private:
-    QObject *            game;
+    KGrGame *            game;
     KRandomSequence *    randomGen;
     KGrLevelGrid *       grid;
     KGrRuleBook *        rules;

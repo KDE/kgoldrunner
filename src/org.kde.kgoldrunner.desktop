@@ -179,3 +179,4 @@ Comment[zh_TW]= 一個動作和解謎的遊戲
 Terminal=false
 Categories=Qt;KDE;Game;ArcadeGame;
 X-DBUS-StartupType=Multi
+X-DBUS-ServiceName=org.kde.kgoldrunner

@@ -15,14 +15,12 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ****************************************************************************/
 
-#include <QDebug>
-#include <kdebug.h>
-
 #include <KLocalizedString>
 
 #include <QFont>
 #include <QTimeLine>
 
+#include "kgoldrunner_debug.h"
 #include "kgrview.h"
 #include "kgrscene.h"
 #include "kgrsprite.h"
@@ -94,10 +92,8 @@ KGrScene::KGrScene      (KGrView * view)
 
     m_fadingTimeLine->setCurveShape (QTimeLine::EaseOutCurve);
     m_fadingTimeLine->setUpdateInterval (50);
-    connect (m_fadingTimeLine, SIGNAL (valueChanged(qreal)),
-                this, SLOT (drawSpotlight(qreal)));
-    connect (m_fadingTimeLine, SIGNAL (finished()),
-                this, SIGNAL (fadeFinished()));
+    connect(m_fadingTimeLine, &QTimeLine::valueChanged, this, &KGrScene::drawSpotlight);
+    connect(m_fadingTimeLine, &QTimeLine::finished, this, &KGrScene::fadeFinished);
 }
 
 KGrScene::~KGrScene()
@@ -108,7 +104,7 @@ KGrScene::~KGrScene()
 
 void KGrScene::redrawScene ()
 {
-    // qDebug() << "REDRAW: m_sizeChanged" << m_sizeChanged << "m_themeChanged" << m_themeChanged;
+    //qCDebug(KGOLDRUNNER_LOG) << "REDRAW: m_sizeChanged" << m_sizeChanged << "m_themeChanged" << m_themeChanged;
     bool redrawToolbar = false;
     if (m_sizeChanged) {
         // Calculate what size of tile will fit in the view.
@@ -118,7 +114,7 @@ void KGrScene::redrawScene ()
         m_topLeftX   = (size.width()  - m_tilesWide * tileSize)/2.0;
         m_topLeftY   = (size.height() - m_tilesHigh * tileSize)/2.0;
         setSceneRect   (0, 0, size.width(), size.height());
-	// qDebug() << "SIZE" << size << "TL" << m_topLeftX << m_topLeftY << "TILE" << tileSize << "was" << m_tileSize << m_toolbarTileSize;
+	//qCDebug(KGOLDRUNNER_LOG) << "SIZE" << size << "TL" << m_topLeftX << m_topLeftY << "TILE" << tileSize << "was" << m_tileSize << m_toolbarTileSize;
 
         // Make the fade-out/fade-in rectangle cover the playing area.
         m_spotlight->setRect (m_topLeftX + 2 * tileSize - 1,
@@ -139,13 +135,13 @@ void KGrScene::redrawScene ()
         m_gradient.setColorAt (0.85, QColor (0, 0, 0, 0));
 
         int index = 0;
-        foreach (KGameRenderedItem * tile, m_tiles) {
+        for (KGameRenderedItem * tile : qAsConst(m_tiles)) {
             if (tile) {
                 setTile (tile, tileSize, index/m_tilesHigh, index%m_tilesHigh);
             }
             index++;
         }
-        foreach (KGrSprite * sprite, m_sprites) {
+        for (KGrSprite * sprite : qAsConst(m_sprites)) {
             if (sprite) {
                 sprite->changeCoordinateSystem
                         (m_topLeftX, m_topLeftY, tileSize);
@@ -420,7 +416,7 @@ void KGrScene::drawFrame()
 	m_topLeftY + (2 * m_tileSize) - (3 * w),
 	FIELDWIDTH  * m_tileSize + 6 * w,
 	FIELDHEIGHT * m_tileSize + 6 * w);
-    kDebug() << "FRAME WIDTH" << w << "tile size" << m_tileSize << "rectangle" << m_frame->rect();
+    //qCDebug(KGOLDRUNNER_LOG) << "FRAME WIDTH" << w << "tile size" << m_tileSize << "rectangle" << m_frame->rect();
     QPen pen = QPen (m_renderer->textColor());
     pen.setWidth (w);
     m_frame->setPen (pen);
@@ -487,7 +483,7 @@ int KGrScene::makeSprite (const char type, int i, int j)
 
 void KGrScene::animate (bool missed)
 {
-    foreach (KGrSprite * sprite, m_sprites) {
+    for (KGrSprite * sprite : qAsConst(m_sprites)) {
         if (sprite != 0) {
             sprite->animate (missed);
         }
@@ -565,7 +561,7 @@ void KGrScene::gotGold (const int spriteId, const int i, const int j,
 
 void KGrScene::showHiddenLadders (const QList<int> & ladders, const int width)
 {
-    foreach (int offset, ladders) {
+    for (const int &offset : ladders) {
         int i = offset % width;
         int j = offset / width;
         paintCell (i, j, LADDER);
@@ -647,4 +643,4 @@ void KGrScene::setTextFont (QGraphicsSimpleTextItem * t, double fontFraction)
     t->setFont (f);
 }
 
-#include "kgrscene.moc"
+

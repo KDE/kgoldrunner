@@ -34,5 +34,5 @@ install( FILES game_blb.txt
 	       sol_plws.txt
 	       sol_tute.txt
 	       sol_tutea.txt
-   DESTINATION ${DATA_INSTALL_DIR}/kgoldrunner/system )
+   DESTINATION ${KDE_INSTALL_DATADIR}/kgoldrunner/system )
 

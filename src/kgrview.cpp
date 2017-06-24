@@ -20,7 +20,7 @@
 #include "kgrglobals.h"
 #include "kgrrenderer.h"
 
-#include <QDebug>
+#include "kgoldrunner_debug.h"
 
 KGrView::KGrView    (QWidget * parent)
     :
@@ -57,4 +57,4 @@ void KGrView::mouseReleaseEvent (QMouseEvent * mouseEvent)
     emit mouseLetGo (mouseEvent->button());
 }
 
-#include "kgrview.moc"
+
