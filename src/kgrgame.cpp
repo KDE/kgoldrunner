@@ -752,9 +752,9 @@ void KGrGame::quickStartDialog()
     leftIconRightButtonsLayout->addLayout(leftButtonLayout);
 
     connect(buttonBox, &QDialogButtonBox::accepted, this, &KGrGame::quickStartPlay);
-    connect(buttonBox, &QDialogButtonBox::rejected, this, &KGrGame::quickStartNewGame);
-    connect(newGameButton, &QPushButton::clicked, this, &KGrGame::quickStartUseMenu);
-    connect(useMenuButton, &QPushButton::clicked, this, &KGrGame::quickStartQuit);
+    connect(buttonBox, &QDialogButtonBox::rejected, this, &KGrGame::quickStartQuit);
+    connect(newGameButton, &QPushButton::clicked, this, &KGrGame::quickStartNewGame);
+    connect(useMenuButton, &QPushButton::clicked, this, &KGrGame::quickStartUseMenu);
 
     qs->show();
 }
