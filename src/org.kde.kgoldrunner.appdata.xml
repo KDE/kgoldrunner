@@ -51,6 +51,7 @@
     <p xml:lang="fr">KGoldrunner est un jeu d'action dans lequel le héros parcourt un labyrinthe, grimpe aux échelles, creuse des trous et évite les ennemis afin de collecter toutes les pépites d'or et de s'échapper vers le niveau suivant. Vos ennemis sont également à la recherche de l'or. Pire encore, ils sont à votre poursuite !</p>
     <p xml:lang="nl">KGoldrunner is een actiespel waar de held door een doolhof rent, ladders beklimt, gaten graaft en vijanden verslaat om alle goudklompjes te verzamelen en te ontsnappen naar het volgende level. Jouw vijanden zitten ook achter het goud aan. Nog erger, ze gaan ook achter jou aan!.</p>
     <p xml:lang="pt">O KGoldrunner é um jogo de acção onde o herói corre por um labirinto, sobe escadas, escava buracos e foge dos inimigos para conseguir recolher todas as pepitas de ouro e escapar para o nível seguinte. Os seus inimigos também estão atrás do ouro. Pior ainda, estão atrás de si!.</p>
+    <p xml:lang="sk">KGoldrunner je akčná hra, kde hrdina beží cez bludisko, chodí po schodoch, kope diery a vyhýba sa nepriateľom, aby nazbieral všetky zlat nugety a prešiel do ďalšej úrovne. Vaši nepriatelia idú tiež po zlate. Čo je horšie, idú aj po tebe!</p>
     <p xml:lang="sl">KGoldrunner je akcijska igra, v kateri junak teče skozi labirint, pleza po lestvah, koplje luknje in se izmika sovražnikom, pri tem pa poskuša pobrati vse zlate kepe in pobegniti v naslednjo stopnjo. Tudi vaši nasprotniki želijo zlato, še huje pa je to, da želijo tudi vašo smrt!</p>
     <p xml:lang="sr">К‑златобојац је акциона игра у којој јунак трчи кроз лавиринт, пење се уз степенице, копа рупе и избегава непријатеље како био се докопао свих златних груменова и побегао на наредни ниво. И ваши непријатељи јуре за златом, и, још горе, за вама!</p>
     <p xml:lang="sr-Latn">K‑zlatobojac je akciona igra u kojoj junak trči kroz lavirint, penje se uz stepenice, kopa rupe i izbegava neprijatelje kako bio se dokopao svih zlatnih grumenova i pobegao na naredni nivo. I vaši neprijatelji jure za zlatom, i, još gore, za vama!</p>
@@ -85,6 +86,7 @@
       <li xml:lang="fr">Thèmes</li>
       <li xml:lang="nl">Thema in te stellen</li>
       <li xml:lang="pt">Suporte para temas</li>
+      <li xml:lang="sk">Témovateľné</li>
       <li xml:lang="sl">Podpora temam</li>
       <li xml:lang="sr">Различите теме.</li>
       <li xml:lang="sr-Latn">Različite teme.</li>
@@ -101,6 +103,7 @@
       <li xml:lang="fr">Centaines de niveaux</li>
       <li xml:lang="nl">Honderden levels</li>
       <li xml:lang="pt">Centenas de níveis</li>
+      <li xml:lang="sk">Stovky úrovní</li>
       <li xml:lang="sl">Stotine stopenj</li>
       <li xml:lang="sr">Стотине нивоа.</li>
       <li xml:lang="sr-Latn">Stotine nivoa.</li>
@@ -134,6 +137,7 @@
       <li xml:lang="fr">Deux modes pour les ennemis : classique et KGoldrunner. En mode KGoldrunner, les ennemis sont plus intelligents, en mode classique il est plus facile de les tromper</li>
       <li xml:lang="nl">Twee modi voor de vijanden: klassiek en modus KGoldrunner, in modus KGoldrunner zijn ze intelligenter, in de klassieke modus zijn ze gemakkelijker voor de gek te houden</li>
       <li xml:lang="pt">Dois modos para os inimigos: modo clássico e do KGoldRunner. Neste último modo, eles são mais inteligentes, enquanto no modo clássico são mais fáceis de enganar</li>
+      <li xml:lang="sk">Dva modely pre nepriateľov: klasické a reťim KGoldRunner, v tomto režime sú inteligentnejší, v klasickom režime je ľahšie ich zmiasť.</li>
       <li xml:lang="sl">Dva načina za sovražnike: klasični in KGoldrunner. V slednjem so sovražniki pametnejši, v prvem pa jih je lažje preslepiti</li>
       <li xml:lang="sr">Два режима за непријатеље: класични и К‑златобојчев. У К‑златобојчевом режиму непријатељи су паметнији, у класичном их је лакше заварати.</li>
       <li xml:lang="sr-Latn">Dva režima za neprijatelje: klasični i K‑zlatobojčev. U K‑zlatobojčevom režimu neprijatelji su pametniji, u klasičnom ih je lakše zavarati.</li>
@@ -150,6 +154,7 @@
       <li xml:lang="fr">Niveaux très, très difficiles</li>
       <li xml:lang="nl">Zeer zeer moeilijke levels</li>
       <li xml:lang="pt">Níveis mesmo muito difíceis</li>
+      <li xml:lang="sk">Veľmi veľmi náročné úrovne</li>
       <li xml:lang="sl">Zelo zelo težke stopnje</li>
       <li xml:lang="sr">Врло, врло тешки нивои.</li>
       <li xml:lang="sr-Latn">Vrlo, vrlo teški nivoi.</li>
@@ -167,6 +172,7 @@
       <li xml:lang="fr">Contrôle au clavier ou à la souris</li>
       <li xml:lang="nl">Toetsenbord- en muisbesturing</li>
       <li xml:lang="pt">Controlo pelo teclado ou rato</li>
+      <li xml:lang="sk">Ovládanie klávesnicou alebo myšou</li>
       <li xml:lang="sl">Nadzor s tipkovnico ali miško</li>
       <li xml:lang="sr">Управљање тастатуром или мишем.</li>
       <li xml:lang="sr-Latn">Upravljanje tastaturom ili mišem.</li>
@@ -184,6 +190,7 @@
       <li xml:lang="fr">Parties enregistrables</li>
       <li xml:lang="nl">Spellen kunnen opgeslagen worden</li>
       <li xml:lang="pt">Possibilidade de gravar jogos</li>
+      <li xml:lang="sk">Uložiteľné hry</li>
       <li xml:lang="sl">Igre je mogoče shraniti</li>
       <li xml:lang="sr">Уписивање позиција.</li>
       <li xml:lang="sr-Latn">Upisivanje pozicija.</li>
