@@ -44,6 +44,7 @@
   <summary xml:lang="sr-ijekavian">Хватајте злато, избегавајте непријатеље и решавајте загонетке</summary>
   <summary xml:lang="sr-ijekavianlatin">Hvatajte zlato, izbegavajte neprijatelje i rešavajte zagonetke</summary>
   <summary xml:lang="sv">Leta guld, undvik fiender och lös problem</summary>
+  <summary xml:lang="tr">Altın Avla, Düşmanlarını Atlat ve Bulmacaları Çöz</summary>
   <summary xml:lang="uk">Шукайте золото, уникайте ворогів і розгадуйте загадки</summary>
   <summary xml:lang="x-test">xxHunt Gold, Dodge Enemies and Solve Puzzlesxx</summary>
   <description>
@@ -68,6 +69,7 @@
     <p xml:lang="sr-ijekavian">К‑златобојац је акциона игра у којој јунак трчи кроз лавиринт, пење се уз степенице, копа рупе и избегава непријатеље како био се докопао свих златних груменова и побегао на наредни ниво. И ваши непријатељи јуре за златом, и, још горе, за вама!</p>
     <p xml:lang="sr-ijekavianlatin">K‑zlatobojac je akciona igra u kojoj junak trči kroz lavirint, penje se uz stepenice, kopa rupe i izbegava neprijatelje kako bio se dokopao svih zlatnih grumenova i pobegao na naredni nivo. I vaši neprijatelji jure za zlatom, i, još gore, za vama!</p>
     <p xml:lang="sv">Kgoldrunner är ett äventyrsspel där hjälten springer genom en labyrint, klättrar på stegar, gräver hål och undviker fiender för att samla in alla guldklimpar och fly till nästa nivå. Fienderna är också ute efter guldet. Vad värre är, de är också är ute efter dig!</p>
+    <p xml:lang="tr">KGoldrunner, kahramanımızın labirentte dolaştığı, tüm altın külçelerini toplamak ve bir sonraki seviyeye çıkmak için merdiven tırmandığı, delik açmtığı ve düşman avı yaptığı bir kaçış aksiyon oyunudur. Düşmanların da altının peşinde. Daha da kötüsü, senin peşindeler!</p>
     <p xml:lang="uk">«Золотошукач» — рухлива гра, де герой подорожує лабіринтом, видирається на стіни, копає ями та втікає від ворогів, збираючи при цьому золоті самородки і переходячи з рівня на рівень. Окрім вашого героя, за золотом полюють і вороги. Вони також не проти звести вашого героя з цього світу!</p>
     <p xml:lang="x-test">xxKGoldrunner is an action game where the hero runs through a maze, climbs stairs, dig holes and dodges enemies in order to collect all the gold nuggets and escape to the next level. Your enemies are also after the gold. Worse still, they are after you!.xx</p>
     <p>Features:</p>
@@ -89,6 +91,7 @@
     <p xml:lang="sr-ijekavian">Могућности:</p>
     <p xml:lang="sr-ijekavianlatin">Mogućnosti:</p>
     <p xml:lang="sv">Funktioner:</p>
+    <p xml:lang="tr">Özellikler:</p>
     <p xml:lang="uk">Можливості:</p>
     <p xml:lang="x-test">xxFeatures:xx</p>
     <p xml:lang="zh-CN">功能：</p>
@@ -110,6 +113,7 @@
       <li xml:lang="sr-ijekavian">Различите теме.</li>
       <li xml:lang="sr-ijekavianlatin">Različite teme.</li>
       <li xml:lang="sv">Har teman</li>
+      <li xml:lang="tr">Temalaştırılabilir</li>
       <li xml:lang="uk">Зміна тем</li>
       <li xml:lang="x-test">xxThemeablexx</li>
       <li>Hundreds of levels</li>
@@ -130,6 +134,7 @@
       <li xml:lang="sr-ijekavian">Стотине нивоа.</li>
       <li xml:lang="sr-ijekavianlatin">Stotine nivoa.</li>
       <li xml:lang="sv">Hundratals nivåer</li>
+      <li xml:lang="tr">Yüzlerce seviye</li>
       <li xml:lang="uk">Сотні рівнів</li>
       <li xml:lang="x-test">xxHundreds of levelsxx</li>
       <li>Level-editor</li>
@@ -150,6 +155,7 @@
       <li xml:lang="sr-ijekavian">Уређивач нивоа.</li>
       <li xml:lang="sr-ijekavianlatin">Uređivač nivoa.</li>
       <li xml:lang="sv">Nivåeditor</li>
+      <li xml:lang="tr">Seviye düzenleyici</li>
       <li xml:lang="uk">Редактор рівнів</li>
       <li xml:lang="x-test">xxLevel-editorxx</li>
       <li>Two modes for the enemies: classical and KGoldrunner-mode, in KGoldrunner-mode they are
@@ -170,6 +176,7 @@
       <li xml:lang="sr-ijekavian">Два режима за непријатеље: класични и К‑златобојчев. У К‑златобојчевом режиму непријатељи су паметнији, у класичном их је лакше заварати.</li>
       <li xml:lang="sr-ijekavianlatin">Dva režima za neprijatelje: klasični i K‑zlatobojčev. U K‑zlatobojčevom režimu neprijatelji su pametniji, u klasičnom ih je lakše zavarati.</li>
       <li xml:lang="sv">Två typer av fiender: klassiska och Kgoldrunner-regler. Med Kgoldrunner-regler är de intelligentare, med klassiska regler är det enklare att lura dem.</li>
+      <li xml:lang="tr">Düşmanlar için iki kip: Klasik ve KGoldrunner modu, KGoldrunner modunda daha zeki, klasik modda onları kandırmak daha kolaydır</li>
       <li xml:lang="uk">Два режими поведінки ворогів: класичний і режим «Золотошукача». У режимі «Золотошукача» вороги кмітливіші, їх не так просто обманути, як у класичному режимі.</li>
       <li xml:lang="x-test">xxTwo modes for the enemies: classical and KGoldrunner-mode, in KGoldrunner-mode they are more intelligent, in the classical mode it is easier to fool themxx</li>
       <li>Very very difficult levels</li>
@@ -190,6 +197,7 @@
       <li xml:lang="sr-ijekavian">Врло, врло тешки нивои.</li>
       <li xml:lang="sr-ijekavianlatin">Vrlo, vrlo teški nivoi.</li>
       <li xml:lang="sv">Mycket mycket svåra nivåer</li>
+      <li xml:lang="tr">Aşırı zor seviyeler</li>
       <li xml:lang="uk">Дуже-дуже складні рівні</li>
       <li xml:lang="x-test">xxVery very difficult levelsxx</li>
       <li>Keyboard or mouse control</li>
@@ -211,6 +219,7 @@
       <li xml:lang="sr-ijekavian">Управљање тастатуром или мишем.</li>
       <li xml:lang="sr-ijekavianlatin">Upravljanje tastaturom ili mišem.</li>
       <li xml:lang="sv">Tangentbords- eller musstyrning</li>
+      <li xml:lang="tr">Klavye veya fare kontrolü</li>
       <li xml:lang="uk">Керування за допомогою клавіатури або миші</li>
       <li xml:lang="x-test">xxKeyboard or mouse controlxx</li>
       <li>Savable games</li>
@@ -232,6 +241,7 @@
       <li xml:lang="sr-ijekavian">Уписивање позиција.</li>
       <li xml:lang="sr-ijekavianlatin">Upisivanje pozicija.</li>
       <li xml:lang="sv">Spelen går att spara</li>
+      <li xml:lang="tr">Kaydedilebilir oyunlar</li>
       <li xml:lang="uk">Можливість збереження гри</li>
       <li xml:lang="x-test">xxSavable gamesxx</li>
     </ul>
