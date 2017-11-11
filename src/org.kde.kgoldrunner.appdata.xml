@@ -16,6 +16,7 @@
   <name xml:lang="nn">KGoldrunner</name>
   <name xml:lang="pl">KGoldrunner</name>
   <name xml:lang="pt">KGoldrunner</name>
+  <name xml:lang="ru">KGoldrunner</name>
   <name xml:lang="sk">KGoldrunner</name>
   <name xml:lang="sl">KGoldrunner</name>
   <name xml:lang="sr">К‑златобојац</name>
@@ -36,6 +37,7 @@
   <summary xml:lang="nn">Jakt etter gull, unngå fiendar og løys oppgåver</summary>
   <summary xml:lang="pl">Poluj na złoto, unikaj przeciwników i rozwiązuj zagadki</summary>
   <summary xml:lang="pt">Caçar o Ouro, Fugir dos Inimigos e Resolver 'Puzzles'</summary>
+  <summary xml:lang="ru">Золото, опасности и головоломки</summary>
   <summary xml:lang="sk">Hľadajte zlato, vyhnite sa nepriateľom a riešte puzzle</summary>
   <summary xml:lang="sl">Iščite zlato, izmikajte se sovražnikom in rešujte uganke</summary>
   <summary xml:lang="sr">Хватајте злато, избегавајте непријатеље и решавајте загонетке</summary>
@@ -81,6 +83,7 @@
     <p xml:lang="nn">Funksjonar:</p>
     <p xml:lang="pl">Możliwości:</p>
     <p xml:lang="pt">Funcionalidades:</p>
+    <p xml:lang="ru">Возможности:</p>
     <p xml:lang="sk">Funkcie:</p>
     <p xml:lang="sl">Zmožnosti:</p>
     <p xml:lang="sr">Могућности:</p>
