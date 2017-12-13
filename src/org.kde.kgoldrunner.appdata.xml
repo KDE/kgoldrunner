@@ -43,6 +43,7 @@
   <summary xml:lang="nn">Jakt etter gull, unngå fiendar og løys oppgåver</summary>
   <summary xml:lang="pl">Poluj na złoto, unikaj przeciwników i rozwiązuj zagadki</summary>
   <summary xml:lang="pt">Caçar o Ouro, Fugir dos Inimigos e Resolver 'Puzzles'</summary>
+  <summary xml:lang="pt-BR">Procure ouro, evite inimigos e resolva os problemas</summary>
   <summary xml:lang="ru">Золото, опасности и головоломки</summary>
   <summary xml:lang="sk">Hľadajte zlato, vyhnite sa nepriateľom a riešte puzzle</summary>
   <summary xml:lang="sl">Iščite zlato, izmikajte se sovražnikom in rešujte uganke</summary>
@@ -144,6 +145,7 @@
       <li xml:lang="nn">Fleire hundre brett</li>
       <li xml:lang="pl">Setki poziomów</li>
       <li xml:lang="pt">Centenas de níveis</li>
+      <li xml:lang="pt-BR">Centenas de níveis</li>
       <li xml:lang="sk">Stovky úrovní</li>
       <li xml:lang="sl">Stotine stopenj</li>
       <li xml:lang="sr">Стотине нивоа.</li>
@@ -167,6 +169,7 @@
       <li xml:lang="nn">Brettredigering</li>
       <li xml:lang="pl">Edytor poziomów</li>
       <li xml:lang="pt">Editor de níveis</li>
+      <li xml:lang="pt-BR">Editor de níveis</li>
       <li xml:lang="sk">Editor úrovne</li>
       <li xml:lang="sl">Urejevalnik stopenj</li>
       <li xml:lang="sr">Уређивач нивоа.</li>
