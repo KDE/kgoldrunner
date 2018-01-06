@@ -30,6 +30,7 @@
   <name xml:lang="tr">KGoldrunner</name>
   <name xml:lang="uk">Золотошукач</name>
   <name xml:lang="x-test">xxKGoldrunnerxx</name>
+  <name xml:lang="zh-CN">KGoldrunner</name>
   <summary>Hunt Gold, Dodge Enemies and Solve Puzzles</summary>
   <summary xml:lang="ca">Cerca l'or, esquiva els enemics i resol trencaclosques</summary>
   <summary xml:lang="ca-valencia">Busca l'or, esquiva els enemics i resol trencaclosques</summary>
@@ -54,6 +55,7 @@
   <summary xml:lang="tr">Altın Avla, Düşmanlarını Atlat ve Bulmacaları Çöz</summary>
   <summary xml:lang="uk">Шукайте золото, уникайте ворогів і розгадуйте загадки</summary>
   <summary xml:lang="x-test">xxHunt Gold, Dodge Enemies and Solve Puzzlesxx</summary>
+  <summary xml:lang="zh-CN">淘金，避敌，以及解谜</summary>
   <description>
     <p>
       KGoldrunner is an action game where the hero runs through a maze, climbs stairs, dig holes and
