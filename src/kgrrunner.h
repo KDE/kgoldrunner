@@ -54,7 +54,7 @@ public:
     KGrRunner (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
                int i, int j, const int pSpriteId,
                KGrRuleBook  * pRules, const int startDelay);
-    virtual ~KGrRunner();
+    ~KGrRunner() override;
 
     /**
      * Returns the exact position of a runner (in grid-points or cell

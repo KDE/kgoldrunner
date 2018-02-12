@@ -32,7 +32,7 @@ class KGrRuleBook : public QObject
     Q_OBJECT
 public:
     KGrRuleBook (QObject * parent);
-    virtual ~KGrRuleBook();
+    ~KGrRuleBook() override;
 
     bool variableTiming() const      { return mVariableTiming;      }
     bool alwaysCollectNugget() const { return mAlwaysCollectNugget; }

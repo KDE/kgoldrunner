@@ -28,7 +28,7 @@ class KGrActorsTheme : public KgTheme
     Q_OBJECT
 public:
     Q_INVOKABLE KGrActorsTheme(const QByteArray &identifier, QObject *parent=0);
-    virtual ~KGrActorsTheme();
+    ~KGrActorsTheme() override;
 
     /*
      * Re-defined from KgTheme. Finds a SVG file with config name "Actors".
@@ -47,7 +47,7 @@ class KGrSetTheme : public KgTheme
     Q_OBJECT
 public:
     Q_INVOKABLE KGrSetTheme(const QByteArray &identifier, QObject *parent=0);
-    virtual ~KGrSetTheme();
+    ~KGrSetTheme() override;
 
     /*
      * Re-defined from KgTheme. Finds a SVG file with config name "Set".

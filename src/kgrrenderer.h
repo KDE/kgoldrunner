@@ -63,7 +63,7 @@ class KGrRenderer : public QObject
     Q_OBJECT
 public:
     KGrRenderer (KGrScene * scene);
-    virtual ~KGrRenderer();
+    ~KGrRenderer() override;
 
     /*
      * Get a pointer to the KGameRenderer for "Set" graphics (bricks, etc.).

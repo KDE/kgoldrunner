@@ -51,7 +51,7 @@ public:
     /**
      * Default Destructor
      */
-    virtual ~KGoldrunner();
+    ~KGoldrunner() override;
 
     /**
      * Used to indicate if the class initialised properly.
