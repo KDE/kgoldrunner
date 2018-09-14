@@ -34,6 +34,7 @@ target_link_libraries(kgoldrunner
     KF5::DBusAddons
     KF5::KIOCore
     KF5::Crash
+    KF5::WidgetsAddons
     KF5::XmlGui
 )
 
