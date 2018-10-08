@@ -120,6 +120,7 @@
       <li>Themeable</li>
       <li xml:lang="ca">Permet temes</li>
       <li xml:lang="ca-valencia">Permet temes</li>
+      <li xml:lang="de">Verschiedene Designs</li>
       <li xml:lang="en-GB">Themeable</li>
       <li xml:lang="es">Uso de temas</li>
       <li xml:lang="fi">Teemoitettavissa</li>
@@ -146,6 +147,7 @@
       <li xml:lang="ca">Centenars de nivells</li>
       <li xml:lang="ca-valencia">Centenars de nivells</li>
       <li xml:lang="cs">Stovky úrovní</li>
+      <li xml:lang="de">Hunderte von Spielstufen</li>
       <li xml:lang="en-GB">Hundreds of levels</li>
       <li xml:lang="es">Cientos de niveles</li>
       <li xml:lang="fi">Satoja pelitasoja</li>
@@ -172,6 +174,7 @@
       <li xml:lang="ca">Editor de nivells</li>
       <li xml:lang="ca-valencia">Editor de nivells</li>
       <li xml:lang="cs">Editor úrovní</li>
+      <li xml:lang="de">Stufeneditor</li>
       <li xml:lang="en-GB">Level-editor</li>
       <li xml:lang="es">Editor de niveles</li>
       <li xml:lang="fi">Tasojen muokkaus</li>
@@ -223,6 +226,7 @@
       <li xml:lang="ca">Nivells molt molt difícils</li>
       <li xml:lang="ca-valencia">Nivells molt molt difícils</li>
       <li xml:lang="cs">Opravdu velmi obtížné úrovně</li>
+      <li xml:lang="de">Sehr schwierige Spielstufen</li>
       <li xml:lang="en-GB">Very very difficult levels</li>
       <li xml:lang="es">Muchísimos niveles de dificultad</li>
       <li xml:lang="fi">Hyvin hyvin vaikeita tasoja</li>
