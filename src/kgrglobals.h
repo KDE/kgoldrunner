@@ -70,7 +70,7 @@ const char ScavengerRules   = 'S';
 enum {GoldSound, StepSound, ClimbSound, FallSound, DigSound, LadderSound, 
       DeathSound, CompletedSound, VictorySound, GameOverSound, NumSounds};
 
-/// Centralised message functions: implementations in kgrdialog.cpp.
+/// Centralized message functions: implementations in kgrdialog.cpp.
 class QWidget;
 class KGrMessage
 {

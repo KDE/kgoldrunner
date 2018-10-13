@@ -208,7 +208,7 @@ private:
      * Run a dialog to select a game and level to be edited or saved.
      *
      * @param action         A code for the type of editing: affects validation
-     *                       and labelling in the dialog.
+     *                       and labeling in the dialog.
      * @param requestedLevel The current level, used as a default, but can be
      *                       changed by the user.
      * @param requestedGame  The current game, used as a default, but can be

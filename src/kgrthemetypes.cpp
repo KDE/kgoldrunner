@@ -50,7 +50,7 @@ bool KGrActorsTheme::readFromDesktopFile(const QString& path)
     if (!KgTheme::readFromDesktopFile(path))
         return false;
 
-    // Customised behaviour: interprete "Actors" key as "FileName" for SVG file.
+    // Customized behaviour: interprete "Actors" key as "FileName" for SVG file.
     setGraphicsPath (absolutePath (path, customData("Actors")));
     return true;
 }
@@ -71,7 +71,7 @@ bool KGrSetTheme::readFromDesktopFile(const QString& path)
     if (!KgTheme::readFromDesktopFile(path))
         return false;
 
-    // Customised behaviour: interprete "Set" key as "FileName" for SVG file.
+    // Customized behaviour: interprete "Set" key as "FileName" for SVG file.
     setGraphicsPath (absolutePath (path, customData("Set")));
     return true;
 }

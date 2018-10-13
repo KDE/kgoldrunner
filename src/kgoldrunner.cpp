@@ -45,7 +45,6 @@
 #include <KToolBar>
 
 #include "kgoldrunner_debug.h"
-#include "kgoldrunner_debug.h"
 
 
 #include <libkdegames_capabilities.h> //defines KGAUDIO_BACKEND_OPENAL (or not)
