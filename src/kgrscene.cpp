@@ -286,14 +286,14 @@ void KGrScene::showLives (long lives)
 {
     if (m_livesText)
         m_livesText->setText (i18n("Lives: %1", QString::number(lives)
-                                                .rightJustified(3, '0')));
+                                                .rightJustified(3, QLatin1Char('0'))));
 }
 
 void KGrScene::showScore (long score)
 {
     if (m_scoreText)
         m_scoreText->setText (i18n("Score: %1", QString::number(score)
-                                                .rightJustified(7, '0')));
+                                                .rightJustified(7, QLatin1Char('0'))));
 }
 
 void KGrScene::setHasHintText (const QString & msg)
@@ -385,26 +385,26 @@ void KGrScene::setBorderTile (const QString spriteKey, const int x, const int y)
 void KGrScene::drawBorder()
 {
     // Corners.
-    setBorderTile ("frame-topleft", 0, 0);
-    setBorderTile ("frame-topright", FIELDWIDTH + 1, 0);
-    setBorderTile ("frame-bottomleft", 0, FIELDHEIGHT + 1);
-    setBorderTile ("frame-bottomright", FIELDWIDTH + 1, FIELDHEIGHT + 1);
+    setBorderTile (QStringLiteral("frame-topleft"), 0, 0);
+    setBorderTile (QStringLiteral("frame-topright"), FIELDWIDTH + 1, 0);
+    setBorderTile (QStringLiteral("frame-bottomleft"), 0, FIELDHEIGHT + 1);
+    setBorderTile (QStringLiteral("frame-bottomright"), FIELDWIDTH + 1, FIELDHEIGHT + 1);
 
     // Upper side.
     for (int i = 1; i <= FIELDWIDTH; i++)
-        setBorderTile ("frame-top", i, 0);
+        setBorderTile (QStringLiteral("frame-top"), i, 0);
 
     // Lower side.
     for (int i = 1; i <= FIELDWIDTH; i++)
-        setBorderTile ("frame-bottom", i, FIELDHEIGHT + 1);
+        setBorderTile (QStringLiteral("frame-bottom"), i, FIELDHEIGHT + 1);
 
     // Left side.
     for (int i = 1; i <= FIELDHEIGHT; i++)
-        setBorderTile ("frame-left", 0, i);
+        setBorderTile (QStringLiteral("frame-left"), 0, i);
 
     // Right side.
     for (int i = 1; i <= FIELDHEIGHT; i++)
-        setBorderTile ("frame-right", FIELDWIDTH + 1, i);
+        setBorderTile (QStringLiteral("frame-right"), FIELDWIDTH + 1, i);
 }
 
 void KGrScene::drawFrame()
@@ -554,8 +554,8 @@ void KGrScene::gotGold (const int spriteId, const int i, const int j,
 
     // If the rules allow, show whether or not an enemy sprite is carrying gold.
     if (enemiesShowGold && (m_sprites.at(spriteId)->spriteType() == ENEMY)) {
-        m_sprites.at(spriteId)->setSpriteKey (spriteHasGold ? "gold_enemy"
-                                                            : "enemy");
+        m_sprites.at(spriteId)->setSpriteKey (spriteHasGold ? QStringLiteral("gold_enemy")
+                                                            : QStringLiteral("enemy"));
     }
 }
 

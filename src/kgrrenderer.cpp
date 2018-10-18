@@ -56,18 +56,18 @@ KGrRenderer::KGrRenderer (KGrScene * scene)
     // Set up a dialog for selecting themes.
     m_themeSelector  = new KgThemeSelector (m_setProvider,
                                             KgThemeSelector::DefaultBehavior,
-                                            0);	// No parent: modeless dialog.
+                                            nullptr);	// No parent: modeless dialog.
 
     // Set up the renderer for the Set, i.e. tiles and backgrounds.
     m_setRenderer    = new KGameRenderer (m_setProvider);
     m_setRenderer->setParent (this);
-    m_setRenderer->setFrameSuffix ("_%1");
+    m_setRenderer->setFrameSuffix (QStringLiteral("_%1"));
     m_setRenderer->setFrameBaseIndex (1);
 
     // Set up the renderer for the Actors, i.e. hero and enemies.
     m_actorsRenderer = new KGameRenderer (m_actorsProvider);
     m_actorsRenderer->setParent (this);
-    m_actorsRenderer->setFrameSuffix ("_%1");
+    m_actorsRenderer->setFrameSuffix (QStringLiteral("_%1"));
     m_actorsRenderer->setFrameBaseIndex (1);
 
     // Match the Actors SVG theme to the Set theme, whenever the theme changes.
@@ -89,8 +89,8 @@ void KGrRenderer::matchThemes (const KgTheme * currentSetTheme)
 
     const auto themes = m_actorsProvider->themes();
     for (const KgTheme * actorsTheme : themes) {
-	if (actorsTheme->customData("Set") ==
-            currentSetTheme->customData("Set")) {
+    if (actorsTheme->customData(QStringLiteral("Set")) ==
+            currentSetTheme->customData(QStringLiteral("Set"))) {
 	    m_actorsProvider->setCurrentTheme (actorsTheme);
 	    break;
 	}
@@ -146,7 +146,7 @@ KGameRenderedItem * KGrRenderer::getTileItem
 
     int index;
     if ((picType == FREE) || ((index = findKeyTableIndex (picType)) < 0)) {
-        return 0;	// Empty place or missing type, so no KGameRenderedItem.
+        return nullptr;	// Empty place or missing type, so no KGameRenderedItem.
     }
 
     // Get the pixmap key and use one of the two renderers to create the tile.
@@ -154,7 +154,7 @@ KGameRenderedItem * KGrRenderer::getTileItem
     KGameRenderedItem * tile =
                 new KGameRenderedItem ((keyTable[index].picSource == Set) ?
                                        m_setRenderer : m_actorsRenderer, key);
-    tile->setAcceptedMouseButtons (0);
+    tile->setAcceptedMouseButtons (nullptr);
     m_scene->addItem (tile);
     return tile;
 }
@@ -163,14 +163,14 @@ KGrSprite * KGrRenderer::getSpriteItem (const char picType, const int tickTime)
 {
     int index = findKeyTableIndex (picType);
     if (index < 0) {
-        return 0;	// Missing type, so no KGrSprite item.
+        return nullptr;	// Missing type, so no KGrSprite item.
     }
-    QString key = (picType == HERO) ? "hero" :
-                  ((picType == ENEMY) ? "enemy" : "brick");
+    QString key = (picType == HERO) ? QStringLiteral("hero") :
+                  ((picType == ENEMY) ? QStringLiteral("enemy") : QStringLiteral("brick"));
     KGrSprite * sprite = new KGrSprite ((keyTable[index].picSource == Set) ?
                                         m_setRenderer : m_actorsRenderer,
                                         key, picType, tickTime);
-    sprite->setAcceptedMouseButtons (0);
+    sprite->setAcceptedMouseButtons (nullptr);
     // We cannot add the sprite to the scene yet: it needs a frame and size.
     return sprite;
 }
@@ -185,7 +185,7 @@ KGameRenderedItem * KGrRenderer::getBackground
 
     QString key = getBackgroundKey (level);
     KGameRenderedItem * background = new KGameRenderedItem (m_setRenderer, key);
-    background->setAcceptedMouseButtons (0);
+    background->setAcceptedMouseButtons (nullptr);
     m_scene->addItem (background);
 
     return background;
@@ -200,20 +200,20 @@ KGameRenderedItem * KGrRenderer::getBorderItem
     }
 
     if (!hasBorder()) {
-        return 0;
+        return nullptr;
     }
 
     KGameRenderedItem * item = new KGameRenderedItem (m_setRenderer, spriteKey);
-    item->setAcceptedMouseButtons (0);
+    item->setAcceptedMouseButtons (nullptr);
     m_scene->addItem (item);
     return item;
 }
 
 bool KGrRenderer::hasBorder() const
 {
-    QString s = m_setRenderer->theme()->customData("DrawCanvasBorder", "0");
+    QString s = m_setRenderer->theme()->customData(QStringLiteral("DrawCanvasBorder"), QStringLiteral("0"));
 
-    if (s == QString ("1"))
+    if (s == QStringLiteral("1"))
         return true;
     else
         return false;
@@ -221,13 +221,13 @@ bool KGrRenderer::hasBorder() const
 
 QColor KGrRenderer::borderColor() const
 {
-    QString s = m_setRenderer->theme()->customData("BorderColor", "#000000");
+    QString s = m_setRenderer->theme()->customData(QStringLiteral("BorderColor"), QStringLiteral("#000000"));
     return QColor (s);
 }
 
 QColor KGrRenderer::textColor() const
 {
-    QString s = m_setRenderer->theme()->customData("TextColor", "#FFFFFF");
+    QString s = m_setRenderer->theme()->customData(QStringLiteral("TextColor"), QStringLiteral("#FFFFFF"));
     return QColor (s);
 }
 
@@ -245,15 +245,15 @@ QPixmap KGrRenderer::getPixmap (const char picType)
 
 QString KGrRenderer::getPixmapKey (const int index)
 {
-    QString pixmapKey = "";
+    QString pixmapKey;
     // int index = findKeyTableIndex (picType);
     int frameCount = (index < 0) ? -1 : keyTable[index].frameCount;
     if (frameCount > -1) {
-	pixmapKey = keyTable[index].picKey;	// No suffix.
+    pixmapKey = QLatin1String(keyTable[index].picKey);	// No suffix.
 	if (frameCount > 0) {
 	    // Pick a random frame number and add it as a suffix.
 	    // Note: We are not worried about having a good seed for this.
-	    pixmapKey = pixmapKey + QString(keyTable[index].frameSuffix);
+        pixmapKey = pixmapKey + QLatin1String(keyTable[index].frameSuffix);
 	    pixmapKey = pixmapKey.arg (keyTable[index].frameBaseIndex +
 				       (rand() % frameCount));
 	}
@@ -263,14 +263,14 @@ QString KGrRenderer::getPixmapKey (const int index)
 
 QString KGrRenderer::getBackgroundKey (const int level)
 {
-    QString pixmapKey = "";
+    QString pixmapKey;
     int index = findKeyTableIndex (BACKDROP);
     int frameCount = (index < 0) ? -1 : keyTable[index].frameCount;
     if (frameCount > -1) {
-	pixmapKey = keyTable[index].picKey;
+    pixmapKey = QLatin1String(keyTable[index].picKey);
 	if (frameCount > 0) {
 	    // Cycle through available backgrounds as the game-level increases.
-	    pixmapKey = pixmapKey + QString(keyTable[index].frameSuffix);
+        pixmapKey = pixmapKey + QLatin1String(keyTable[index].frameSuffix);
 	    pixmapKey = pixmapKey.arg (level % frameCount);
 	}
     }
@@ -304,11 +304,11 @@ int KGrRenderer::countFrames (const int index)
     int frame = keyTable[index].frameBaseIndex;
     KGameRenderer * r = (keyTable[index].picSource == Set) ? m_setRenderer :
                                                              m_actorsRenderer;
-    if (r->spriteExists (keyTable[index].picKey)) {
+    if (r->spriteExists (QLatin1String(keyTable[index].picKey))) {
         count++;
     }
 
-    if ((count == 0) && (QString(keyTable[index].picKey) != QString("brick"))) {
+    if ((count == 0) && (QLatin1String(keyTable[index].picKey) != QStringLiteral("brick"))) {
 	return count;
     }
 
@@ -317,8 +317,8 @@ int KGrRenderer::countFrames (const int index)
     }
 
     count = 0;
-    QString pixmapKey = QString(keyTable[index].picKey) +
-                        QString(keyTable[index].frameSuffix);
+    QString pixmapKey = QLatin1String(keyTable[index].picKey) +
+                        QLatin1String(keyTable[index].frameSuffix);
     while (r->spriteExists (pixmapKey.arg (frame))) {
 	count++;
 	frame++;

@@ -2,7 +2,6 @@
 ########### next target ###############
 
 set(kgoldrunner_SRCS
-   kgoldrunner_debug.cpp 
    kgrview.cpp
    kgrscene.cpp
    kgrsprite.cpp
@@ -22,6 +21,8 @@ set(kgoldrunner_SRCS
    kgrsounds.cpp 
    kgrdialog.cpp
 )
+
+ecm_qt_declare_logging_category(kgoldrunner_SRCS HEADER kgoldrunner_debug.h IDENTIFIER KGOLDRUNNER_LOG CATEGORY_NAME log_kgoldrunner)
 
 file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*-apps-kgoldrunner.png")
 ecm_add_app_icon(kgoldrunner_SRCS ICONS ${ICONS_SRCS})

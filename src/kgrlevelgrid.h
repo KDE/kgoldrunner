@@ -61,7 +61,7 @@ public:
 
     void placeHiddenLadders();
 
-signals:
+Q_SIGNALS:
     void showHiddenLadders (const QList<int> & ladders, const int width);
 
 private:

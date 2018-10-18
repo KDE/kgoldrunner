@@ -161,7 +161,7 @@ void KGrSLDialog::setupWidgets()
     hboxLayout1->setSpacing (6);
     hboxLayout1->setMargin (0);
 
-    gameN    = new QLabel ("", dad);	// Name of selected game.
+    gameN    = new QLabel (dad);	// Name of selected game.
     QFont f = gameN->font();
     f.setBold (true);
     gameN->setFont (f);
@@ -171,7 +171,7 @@ void KGrSLDialog::setupWidgets()
                         (21, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
     hboxLayout1->addItem (spacerItem1);
 
-    gameD    = new QLabel ("", dad);		// Description of game.
+    gameD    = new QLabel (dad);		// Description of game.
     hboxLayout1->addWidget (gameD);
     mainLayout->addLayout (hboxLayout1, 5);
 
@@ -186,13 +186,13 @@ void KGrSLDialog::setupWidgets()
     if ((slAction == SL_START) || (slAction == SL_UPD_GAME)) {
         dad->	setWindowTitle (i18n ("Select Game"));
         QLabel * startMsg = new QLabel
-            ("<b>" + i18n ("Level 1 of the selected game is:") + "</b>", dad);
+            (QStringLiteral("<b>") + i18n ("Level 1 of the selected game is:") + QStringLiteral("</b>"), dad);
         mainLayout->addWidget (startMsg, 5);
     }
     else {
         dad->	setWindowTitle (i18n ("Select Game/Level"));
         QLabel * selectLev = new QLabel
-            ("<b>" + i18n ("Please select a level:") + "</b>", dad);
+            (QStringLiteral("<b>") + i18n ("Please select a level:") + QStringLiteral("</b>"), dad);
         mainLayout->addWidget (selectLev, 5);
     }
 
@@ -220,7 +220,7 @@ void KGrSLDialog::setupWidgets()
     levelNH   = new QPushButton (i18n ("Edit Level Name && Hint"), dad);
     mainLayout->addWidget (levelNH);
 
-    slName    = new QLabel ("", dad);
+    slName    = new QLabel (dad);
     grid->addWidget (slName, 2, 1, 1, 4);
     thumbNail = new KGrThumbNail (dad);
     grid->addWidget (thumbNail, 1, 6, 4, 5);
@@ -249,7 +249,7 @@ void KGrSLDialog::setupWidgets()
     slSetGames (defaultGame);
 
     // Vary the dialog according to the action.
-    QString OKText = "";
+    QString OKText;
     switch (slAction) {
     case SL_START:	// Must start at level 1, but can choose a game.
                         OKText = i18n ("Start Game");
@@ -450,7 +450,7 @@ void KGrSLDialog::slGame()
         }
         // Else use the last level played in the selected game (from KConfig).
         else {
-            lev = gameGroup.readEntry ("Level_" + myGameList.at (n)->prefix, 1);
+            lev = gameGroup.readEntry (QStringLiteral("Level_") + myGameList.at (n)->prefix, 1);
             number->setValue (lev);			// Else use level 1.
         }
         break;
@@ -651,12 +651,12 @@ void KGrThumbNail::setLevelData (const QString & dir, const QString& prefix,
     if (stat == OK) {
         // Keep a safe copy of the layout.  Translate and display the name.
         levelLayout = d.layout;
-        sln->setText ((d.name.size() > 0) ? i18n ((const char *) d.name) : "");
+        sln->setText ((d.name.size() > 0) ? i18n (d.name.constData()) : QString());
     }
     else {
         // Level-data inaccessible or not found.
         levelLayout = "";
-        sln->setText ("");
+        sln->setText (QString());
     }
 }
 
@@ -677,7 +677,7 @@ void KGrThumbNail::paintEvent (QPaintEvent * /* event (unused) */)
     QColor heroColor =       QColor ("#00ff00"); // Green.
     QColor enemyColor =      QColor ("#0080ff"); // Bright blue.
     QColor gold;
-    gold.setNamedColor ("gold");		 // Gold.
+    gold.setNamedColor (QStringLiteral("gold"));		 // Gold.
 
     pen.setColor (backgroundColor);
     p.setPen (pen);

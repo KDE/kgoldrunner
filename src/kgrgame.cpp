@@ -94,7 +94,7 @@ KGrGame::KGrGame (KGrView * theView,
         systemDataDir (theSystemDir),
         userDataDir   (theUserDir),
         level         (0),
-        mainDemoName  ("demo"),
+        mainDemoName  (QLatin1String("demo")),
         // mainDemoName  ("CM"), // IDW test.
         demoType      (DEMO),
         startupDemo   (false),
@@ -336,8 +336,8 @@ void KGrGame::editActions (const int action)
 
         //qCDebug(KGOLDRUNNER_LOG) << "Saving to KConfigGroup";
         KConfigGroup gameGroup (KSharedConfig::openConfig(), "KDEGame");
-        gameGroup.writeEntry ("GamePrefix", prefix);
-        gameGroup.writeEntry ("Level_" + prefix, level);
+        gameGroup.writeEntry (QStringLiteral("GamePrefix"), prefix);
+        gameGroup.writeEntry (QStringLiteral("Level_") + prefix, level);
         gameGroup.sync();		// Ensure that the entry goes to disk.
     }
 }
@@ -437,7 +437,7 @@ void KGrGame::initGame()
     // If he/she has never played before, set it to Tutorial, level 1.
     KConfigGroup gameGroup (KSharedConfig::openConfig(), "KDEGame");
     QString prevGamePrefix = gameGroup.readEntry ("GamePrefix", "tute");
-    int prevLevel          = gameGroup.readEntry ("Level_" + prevGamePrefix, 1);
+    int prevLevel          = gameGroup.readEntry (QStringLiteral("Level_") + prevGamePrefix, 1);
 
     //qCDebug(KGOLDRUNNER_LOG)<< "Config() Game and Level" << prevGamePrefix << prevLevel;
 
@@ -514,14 +514,14 @@ void KGrGame::initGame()
 bool KGrGame::getRecordingName (const QString & dir, const QString & pPrefix,
                                 QString & filename)
 {
-    QString recFile = dir + "rec_" + pPrefix + ".txt";
+    QString recFile = dir + QStringLiteral("rec_") + pPrefix + QStringLiteral(".txt");
     QFileInfo fileInfo (recFile);
     bool recOK = fileInfo.exists() && fileInfo.isReadable();
-    filename = QString ("");
+    filename = QString ();
 
     if (demoType == SOLVE) {
 	// Look for a solution-file name in User or System area.
-	QString solFile = dir + "sol_" + pPrefix + ".txt";
+    QString solFile = dir + QStringLiteral("sol_") + pPrefix + QStringLiteral(".txt");
 	fileInfo.setFile (solFile);
 	bool solOK = fileInfo.exists() && fileInfo.isReadable();
 	if (solOK) {
@@ -558,7 +558,7 @@ bool KGrGame::startDemo (const Owner demoOwner, const QString & pPrefix,
     dbk1 << "DEMO LIST" << demoList.count() << demoList;
 
     // Find the required level (e.g. CM007) in the list available on the file.
-    QString s = pPrefix + QString::number(levelNo).rightJustified(3,'0');
+    QString s = pPrefix + QString::number(levelNo).rightJustified(3,QLatin1Char('0'));
     int index = demoList.indexOf (s) + 1;
     dbk1 << "DEMO looking for" << s << "found at" << index;
     if (index <= 0) {
@@ -633,7 +633,7 @@ void KGrGame::interruptDemo()
             i18n ("The replay has stopped and the game is pausing while you "
                   "prepare to go on playing. Please press the Pause key "
                   "(default P or Esc) when you are ready."),
-                  "Show_interruptDemo");
+                  QStringLiteral("Show_interruptDemo"));
     }
     else {
         finishDemo();		// Initial DEMO, main DEMO or SOLVE.
@@ -647,7 +647,7 @@ void KGrGame::startInstantReplay()
 
     // Terminate current play.
     delete levelPlayer;
-    levelPlayer = 0;
+    levelPlayer = nullptr;
     scene->deleteAllSprites();
 
     // Redisplay the starting score and lives.
@@ -743,7 +743,7 @@ void KGrGame::quickStartDialog()
 
     // Add the KGoldrunner application icon to the dialog box.
     QLabel * logo = new QLabel();
-    QIcon test = QIcon::fromTheme("kgoldrunner");
+    QIcon test = QIcon::fromTheme(QStringLiteral("kgoldrunner"));
     logo->setPixmap(test.pixmap(240));
     logo->setAlignment (Qt::AlignTop | Qt::AlignHCenter);
     logo->setAlignment (Qt::AlignTop | Qt::AlignHCenter | Qt::AlignLeft);
@@ -843,7 +843,7 @@ void KGrGame::runReplay (const int action,
                 KGrMessage::information (view, i18n ("Show A Solution"),
                     i18n ("Sorry, although all levels of KGoldrunner can be "
                           "solved, no solution has been recorded yet for the "
-                          "level you selected."), "Show_noSolutionRecorded");
+                          "level you selected."), QStringLiteral("Show_noSolutionRecorded"));
             }
         }
     }
@@ -854,7 +854,7 @@ void KGrGame::runReplay (const int action,
             (USER,  gameList.at (selectedGame)->prefix, selectedLevel)) {
             KGrMessage::information (view, i18n ("Replay Any Level"),
                 i18n ("Sorry, you do not seem to have played and recorded "
-                      "the selected level before."), "Show_noReplay");
+                      "the selected level before."), QStringLiteral("Show_noReplay"));
         }
     }
 }
@@ -891,7 +891,7 @@ bool KGrGame::playLevel (const Owner fileOwner, const QString & prefix,
     if (editor) {
         emit setEditMenu (false);	// Disable edit menu items and toolbar.
         delete editor;
-        editor = 0;
+        editor = nullptr;
     }
 
     // If there is a level being played, kill it, with no win/lose result.
@@ -935,7 +935,7 @@ bool KGrGame::playLevel (const Owner fileOwner, const QString & prefix,
     if (newLevel && (level != 0)) {	// But do not save the "ENDE" level.
         KConfigGroup gameGroup (KSharedConfig::openConfig(), "KDEGame");
         gameGroup.writeEntry ("GamePrefix", prefix);
-        gameGroup.writeEntry ("Level_" + prefix, level);
+        gameGroup.writeEntry (QStringLiteral("Level_") + prefix, level);
         gameGroup.sync();		// Ensure that the entry goes to disk.
     }
 
@@ -1015,12 +1015,12 @@ void KGrGame::endLevel (const int result)
     // Delete the level-player, hero, enemies, grid, rule-book, etc.
     // Delete sprites in the view later: the user may need to see them briefly.
     delete levelPlayer;
-    levelPlayer = 0;
+    levelPlayer = nullptr;
 
     // If the player finished the level (won or lost), save the recording.
     if ((! playback) && ((result == WON_LEVEL) || (result == DEAD))) {
         // dbk << "saveRecording (QString ("rec_"))";
-        saveRecording (QString ("rec_"));
+        saveRecording (QStringLiteral("rec_"));
 
         // Save the game and level, for use in the REPLAY_LAST action.
         KConfigGroup gameGroup (KSharedConfig::openConfig (), "KDEGame");
@@ -1084,7 +1084,7 @@ void KGrGame::herosDead()
         // Game completely over.
         freeze (ProgramPause, false);		// Unfreeze.
         level = 0;				// Display the "ENDE" screen.
-        if (playLevel (SYSTEM, "ende", level, (! NewLevel))) {
+        if (playLevel (SYSTEM, QStringLiteral("ende"), level, (! NewLevel))) {
             levelPlayer->prepareToPlay();	// Activate the animation.
         }
     }
@@ -1215,7 +1215,7 @@ void KGrGame::setTimeScale (const int action)
 
 bool KGrGame::inEditMode()
 {
-    return (editor != 0);	// Return true if the game-editor is active.
+    return (editor != nullptr);	// Return true if the game-editor is active.
 }
 
 void KGrGame::toggleSoundsOnOff (const int action)
@@ -1244,7 +1244,7 @@ void KGrGame::toggleSoundsOnOff (const int action)
 
 void KGrGame::freeze (const bool userAction, const bool on_off)
 {
-    QString type = userAction ? "UserAction" : "ProgramAction";
+    QString type = userAction ? QStringLiteral("UserAction") : QStringLiteral("ProgramAction");
     //qCDebug(KGOLDRUNNER_LOG) << "PAUSE:" << type << on_off;
     //qCDebug(KGOLDRUNNER_LOG) << "gameFrozen" << gameFrozen << "programFreeze" << programFreeze;
 
@@ -1329,7 +1329,7 @@ void KGrGame::showTutorialMessages (int levelNo)
     freeze (ProgramPause, true);
 
     // Check if this is a tutorial collection and not on the "ENDE" screen.
-    if ((prefix.left (4) == "tute") && (levelNo != 0)) {
+    if ((prefix.left (4) == QLatin1String("tute")) && (levelNo != 0)) {
 
         // At the start of a tutorial, put out an introduction.
         if (levelNo == 1) {
@@ -1387,7 +1387,7 @@ QString KGrGame::getTitle()
 
     // Set title string to "Game-name - NNN" or "Game-name - NNN - Level-name".
     QString gameName = (playback) ? recording->gameName : gameData->name;
-    QString levelNumber = QString::number(lev).rightJustified(3,'0');
+    QString levelNumber = QString::number(lev).rightJustified(3, QLatin1Char('0'));
 
     QString levelTitle = (levelName.length() <= 0)
                     ?
@@ -1482,13 +1482,13 @@ void KGrGame::saveGame()		// Save game ID, score and level.
                 today.year(), today.month(), today.day(),
                 now.hour(), now.minute());
 
-    QFile file1 (userDataDir + "savegame.dat");
-    QFile file2 (userDataDir + "savegame.tmp");
+    QFile file1 (userDataDir + QStringLiteral("savegame.dat"));
+    QFile file2 (userDataDir + QStringLiteral("savegame.tmp"));
 
     if (! file2.open (QIODevice::WriteOnly)) {
         KGrMessage::information (view, i18n ("Save Game"),
                 i18n ("Cannot open file '%1' for output.",
-                 userDataDir + "savegame.tmp"));
+                 userDataDir + QStringLiteral("savegame.tmp")));
         return;
     }
     QTextStream text2 (&file2);
@@ -1498,14 +1498,14 @@ void KGrGame::saveGame()		// Save game ID, score and level.
         if (! file1.open (QIODevice::ReadOnly)) {
             KGrMessage::information (view, i18n ("Save Game"),
                 i18n ("Cannot open file '%1' for read-only.",
-                 userDataDir + "savegame.dat"));
+                 userDataDir + QStringLiteral("savegame.dat")));
             return;
         }
 
         QTextStream text1 (&file1);
         int n = 30;			// Limit the file to the last 30 saves.
         while ((! text1.atEnd()) && (--n > 0)) {
-            saved = text1.readLine() + '\n';
+            saved = text1.readLine() + QLatin1Char('\n');
             text2 << saved;
         }
         file1.close();
@@ -1513,8 +1513,8 @@ void KGrGame::saveGame()		// Save game ID, score and level.
 
     file2.close();
 
-    if (KGrGameIO::safeRename (view, userDataDir+"savegame.tmp",
-                               userDataDir+"savegame.dat")) {
+    if (KGrGameIO::safeRename (view, userDataDir+QStringLiteral("savegame.tmp"),
+                               userDataDir+QStringLiteral("savegame.dat"))) {
         KGrMessage::information (view, i18n ("Save Game"),
             i18n ("Please note: for reasons of simplicity, your saved game "
             "position and score will be as they were at the start of this "
@@ -1531,7 +1531,7 @@ bool KGrGame::selectSavedGame (int & selectedGame, int & selectedLevel)
     selectedGame  = 0;
     selectedLevel = 1;
 
-    QFile savedGames (userDataDir + "savegame.dat");
+    QFile savedGames (userDataDir + QStringLiteral("savegame.dat"));
     if (! savedGames.exists()) {
         // Use myMessage() because it stops the game while the message appears.
         myMessage (view, i18n ("Load Game"),
@@ -1542,7 +1542,7 @@ bool KGrGame::selectSavedGame (int & selectedGame, int & selectedLevel)
     if (! savedGames.open (QIODevice::ReadOnly)) {
         myMessage (view, i18n ("Load Game"),
                          i18n ("Cannot open file '%1' for read-only.",
-                         userDataDir + "savegame.dat"));
+                         userDataDir + QStringLiteral("savegame.dat")));
         return false;
     }
 
@@ -1551,7 +1551,7 @@ bool KGrGame::selectSavedGame (int & selectedGame, int & selectedLevel)
 
     bool result = false;
 
-    loadedData = "";
+    loadedData = QString();
     KGrLGDialog * lg = new KGrLGDialog (&savedGames, gameList, view);
     if (lg->exec() == QDialog::Accepted) {
         loadedData = lg->getCurrentText();
@@ -1564,7 +1564,7 @@ bool KGrGame::selectSavedGame (int & selectedGame, int & selectedLevel)
     selectedLevel = 0;
     if (! loadedData.isEmpty()) {
         pr = loadedData.mid (21, 7);			// Get the game prefix.
-        pr = pr.left (pr.indexOf (" ", 0, Qt::CaseInsensitive));
+        pr = pr.left (pr.indexOf (QStringLiteral(" "), 0, Qt::CaseInsensitive));
 
         for (int i = 0; i < gameList.count(); i++) {	// Find the game.
             if (gameList.at (i)->prefix == pr) {
@@ -1611,7 +1611,7 @@ bool KGrGame::saveOK()
 void KGrGame::checkHighScore()
 {
     // Don't keep high scores for tutorial games.
-    if ((prefix.left (4) == "tute") || (playback)) {
+    if ((prefix.left (4) == QLatin1String("tute")) || (playback)) {
         return;
     }
 
@@ -1641,11 +1641,11 @@ void KGrGame::checkHighScore()
     int		highCount = 0;
 
     // Look for user's high-score file or for a released high-score file.
-    QFile high1 (userDataDir + "hi_" + prefix + ".dat");
+    QFile high1 (userDataDir + QStringLiteral("hi_") + prefix + QStringLiteral(".dat"));
     QDataStream s1;
 
     if (! high1.exists()) {
-        high1.setFileName (systemDataDir + "hi_" + prefix + ".dat");
+        high1.setFileName (systemDataDir + QStringLiteral("hi_") + prefix + QStringLiteral(".dat"));
         if (! high1.exists()) {
             prevHigh = false;
         }
@@ -1690,13 +1690,13 @@ void KGrGame::checkHighScore()
     /* If we have come this far, we have a new high score to record. */
     /* ************************************************************* */
 
-    QFile high2 (userDataDir + "hi_" + prefix + ".tmp");
+    QFile high2 (userDataDir + QStringLiteral("hi_") + prefix + QStringLiteral(".tmp"));
     QDataStream s2;
 
     if (! high2.open (QIODevice::WriteOnly)) {
         KGrMessage::information (view, i18n ("Check for High Score"),
                 i18n ("Cannot open file '%1' for output.",
-                 userDataDir + "hi_" + prefix + ".tmp"));
+                 userDataDir + QStringLiteral("hi_") + prefix + QStringLiteral(".tmp")));
         return;
     }
 
@@ -1741,7 +1741,7 @@ void KGrGame::checkHighScore()
     hsn->exec();
     thisUser = hsnUser->text();
     if (thisUser.length() <= 0)
-        thisUser = QChar('-');
+        thisUser = QLatin1Char('-');
     delete hsn;
 
     QDate today = QDate::currentDate();
@@ -1807,7 +1807,7 @@ void KGrGame::checkHighScore()
     high2.close();
 
     if (KGrGameIO::safeRename (view, high2.fileName(),
-                userDataDir + "hi_" + prefix + ".dat")) {
+                userDataDir + QStringLiteral("hi_") + prefix + QStringLiteral(".dat"))) {
         // Remove a redundant popup message.
         // KGrMessage::information (view, i18n ("Save High Score"),
                                 // i18n ("Your high score has been saved."));
@@ -1825,7 +1825,7 @@ void KGrGame::checkHighScore()
 void KGrGame::showHighScores()
 {
     // Don't keep high scores for tutorial games.
-    if (prefix.left (4) == "tute") {
+    if (prefix.left (4) == QLatin1String("tute")) {
         KGrMessage::information (view, i18n ("Show High Scores"),
                 i18n ("Sorry, we do not keep high scores for tutorial games."));
         return;
@@ -1843,11 +1843,11 @@ void KGrGame::showHighScores()
     int		n = 0;
 
     // Look for user's high-score file or for a released high-score file.
-    QFile high1 (userDataDir + "hi_" + prefix + ".dat");
+    QFile high1 (userDataDir + QStringLiteral("hi_") + prefix +QStringLiteral( ".dat"));
     QDataStream s1;
 
     if (! high1.exists()) {
-        high1.setFileName (systemDataDir + "hi_" + prefix + ".dat");
+        high1.setFileName (systemDataDir + QStringLiteral("hi_") + prefix + QStringLiteral(".dat"));
         if (! high1.exists()) {
             KGrMessage::information (view, i18n ("Show High Scores"),
                 i18n("Sorry, there are no high scores for the \"%1\" game yet.",
@@ -2050,15 +2050,15 @@ void KGrGame::saveSolution (const QString & prefix, const int levelNo)
     // Proceed as if we are going to replay the selected level.
     if (initRecordingData (USER, prefix, levelNo, true)) {
 	// But instead just save the recording data on a solution file.
-	saveRecording (QString ("sol_"));
+    saveRecording (QStringLiteral("sol_"));
 	KGrMessage::information (view, i18n ("Save A Solution"),
             i18n ("Your solution to level %1 has been saved on file %2",
-                  levelNo, userDataDir + "sol_" + prefix + ".txt"));
+                  levelNo, userDataDir + QStringLiteral("sol_") + prefix + QStringLiteral(".txt")));
     }
     else {
 	KGrMessage::information (view, i18n ("Save A Solution"),
 	    i18n ("Sorry, you do not seem to have played and recorded "
-		  "the selected level before."), "Show_noRecording");
+          "the selected level before."), QStringLiteral("Show_noRecording"));
     }
 
     // Restore the game and level data that is currently displayed.
@@ -2117,9 +2117,9 @@ bool KGrGame::initRecordingData (const Owner fileOwner, const QString & prefix,
 
         // If there is a name or hint, translate the UTF-8 code right now.
         recording->levelName   = (levelData.name.size() > 0) ?
-                                 i18n (levelData.name.constData()) : "";
+                                 i18n (levelData.name.constData()) : QString();
         recording->hint        = (levelData.hint.size() > 0) ?
-                                 i18n (levelData.hint.constData()) : "";
+                                 i18n (levelData.hint.constData()) : QString();
 
         recording->lives       = lives;
         recording->score       = score;
@@ -2133,9 +2133,9 @@ bool KGrGame::initRecordingData (const Owner fileOwner, const QString & prefix,
 
 void KGrGame::saveRecording (const QString & filetype)
 {
-    QString filename = userDataDir + filetype + prefix + ".txt";
+    QString filename = userDataDir + filetype + prefix + QStringLiteral(".txt");
     QString groupName = prefix +
-                        QString::number(recording->level).rightJustified(3,'0');
+                        QString::number(recording->level).rightJustified(3,QLatin1Char('0'));
     //qCDebug(KGOLDRUNNER_LOG) << filename << groupName;
 
     KConfig config (filename, KConfig::SimpleConfig);
@@ -2192,7 +2192,7 @@ bool KGrGame::loadRecording (const QString & dir, const QString & prefix,
 	qCDebug(KGOLDRUNNER_LOG) << "No file found by getRecordingName() for" << dir << prefix;
 	return false;
     }
-    QString groupName = prefix + QString::number(levelNo).rightJustified(3,'0');
+    QString groupName = prefix + QString::number(levelNo).rightJustified(3,QLatin1Char('0'));
     qCDebug(KGOLDRUNNER_LOG) << "loadRecording" << filename << prefix << levelNo << groupName;
 
     KConfig config (filename, KConfig::SimpleConfig);
@@ -2202,7 +2202,7 @@ bool KGrGame::loadRecording (const QString & dir, const QString & prefix,
     }
 
     KConfigGroup configGroup    = config.group (groupName);
-    QByteArray blank ("");
+    QString blank;
     recording->dateTime         = configGroup.readEntry ("DateTime", "");
     recording->owner            = (Owner)(configGroup.readEntry
                                                         ("Owner", (int)(USER)));
@@ -2212,7 +2212,7 @@ bool KGrGame::loadRecording (const QString & dir, const QString & prefix,
     recording->level            = configGroup.readEntry ("Level",  1);
     recording->width            = configGroup.readEntry ("Width",  FIELDWIDTH);
     recording->height           = configGroup.readEntry ("Height", FIELDHEIGHT);
-    recording->layout           = configGroup.readEntry ("Layout", blank);
+    recording->layout           = configGroup.readEntry ("Layout", QByteArray());
     recording->levelName        = configGroup.readEntry ("Name",   blank);
     recording->hint             = configGroup.readEntry ("Hint",   blank);
     recording->digWhileFalling  = configGroup.readEntry ("DigWhileFalling",
@@ -2256,9 +2256,9 @@ bool KGrGame::loadRecording (const QString & dir, const QString & prefix,
                                   levelData)) {
                 // If there is a level name or hint, translate it.
                 recording->levelName   = (levelData.name.size() > 0) ?
-                                         i18n (levelData.name.constData()) : "";
+                                         i18n (levelData.name.constData()) : QString();
                 recording->hint        = (levelData.hint.size() > 0) ?
-                                         i18n (levelData.hint.constData()) : "";
+                                         i18n (levelData.hint.constData()) : QString();
                 recording->digWhileFalling = levelData.digWhileFalling;
                 // qCDebug(KGOLDRUNNER_LOG) << "LEVEL" << gameList.at (index)->name << levelNo
                          // << "digWhileFalling is NOW"
@@ -2292,25 +2292,25 @@ void KGrGame::loadSounds()
         effects->setParent (this);        // Delete at end of KGrGame.
 
         fx[GoldSound]      = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
-                             "themes/default/gold.ogg"));
+                             QStringLiteral("themes/default/gold.ogg")));
         fx[StepSound]      = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
-                             "themes/default/step.wav"));
+                             QStringLiteral("themes/default/step.wav")));
         fx[ClimbSound]     = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
-                             "themes/default/climb.wav"));
+                             QStringLiteral("themes/default/climb.wav")));
         fx[FallSound]      = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
-                             "themes/default/falling.ogg"));
+                             QStringLiteral("themes/default/falling.ogg")));
         fx[DigSound]       = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
-                             "themes/default/dig.ogg"));
+                             QStringLiteral("themes/default/dig.ogg")));
         fx[LadderSound]    = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
-                             "themes/default/ladder.ogg"));
+                             QStringLiteral("themes/default/ladder.ogg")));
         fx[CompletedSound] = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
-                             "themes/default/completed.ogg"));
+                             QStringLiteral("themes/default/completed.ogg")));
         fx[DeathSound]     = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
-                             "themes/default/death.ogg"));
+                             QStringLiteral("themes/default/death.ogg")));
         fx[GameOverSound]  = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
-                             "themes/default/gameover.ogg"));
+                             QStringLiteral("themes/default/gameover.ogg")));
         fx[VictorySound]   = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
-                             "themes/default/victory.ogg"));
+                             QStringLiteral("themes/default/victory.ogg")));
 
         // Gold and dig sounds are timed and are allowed to play for at least one
         // second, so that rapid sequences of those sounds are heard as overlapping.

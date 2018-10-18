@@ -87,7 +87,7 @@ protected:
     /// To save edits before closing.
     bool queryClose() override;
 
-private slots:
+private Q_SLOTS:
     // An extension of the constructor.  Gives us two scans of the event queue.
     void KGoldrunner_2();
 

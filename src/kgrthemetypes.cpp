@@ -26,7 +26,7 @@ QString absolutePath (const QString & path, const QString & relativePath)
 {
     const QFileInfo file   (path);
     const QDir      dir    = file.dir();
-    QString         result = "";
+    QString         result;
     // Add the directory part of "path" to "relativePath".
     if (!relativePath.isEmpty() && QFileInfo(relativePath).isRelative()) {
         result = dir.absoluteFilePath(relativePath);
@@ -51,7 +51,7 @@ bool KGrActorsTheme::readFromDesktopFile(const QString& path)
         return false;
 
     // Customized behaviour: interprete "Actors" key as "FileName" for SVG file.
-    setGraphicsPath (absolutePath (path, customData("Actors")));
+    setGraphicsPath (absolutePath (path, customData(QStringLiteral("Actors"))));
     return true;
 }
 
@@ -72,7 +72,7 @@ bool KGrSetTheme::readFromDesktopFile(const QString& path)
         return false;
 
     // Customized behaviour: interprete "Set" key as "FileName" for SVG file.
-    setGraphicsPath (absolutePath (path, customData("Set")));
+    setGraphicsPath (absolutePath (path, customData(QStringLiteral("Set"))));
     return true;
 }
 

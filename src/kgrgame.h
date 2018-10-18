@@ -62,7 +62,7 @@ public:
     static bool bugFix;
     static bool logging;
 
-public slots:
+public Q_SLOTS:
     void initGame();			// Do the game object's first painting.
 
     void gameActions        (const int action);
@@ -102,7 +102,7 @@ private:
     void runNextDemoLevel();
     void finishDemo();
 
-private slots:
+private Q_SLOTS:
     void interruptDemo();
 
 private:
@@ -133,14 +133,14 @@ private:
 
     QString loadedData;
 
-private slots:
+private Q_SLOTS:
     void endLevel (const int result);	// Hero completed the level or he died.
 
     void finalBreath();			// Hero is dead: end the death-scene.
     void repeatLevel();			// Hero is dead: repeat the level.
     void goUpOneLevel();		// Start next level.
 
-signals:
+Q_SIGNALS:
     // These signals go to the GUI in most cases.
     void showScore (long);		// For main window to show the score.
     void showLives (long);		// For main window to show lives left.
@@ -161,7 +161,7 @@ private:
     QDialog * qs;			// Pointer to Quick Start dialog box.
     QString initialThemeFilepath;
 
-private slots:
+private Q_SLOTS:
     void quickStartPlay();
     void quickStartNewGame();
     void quickStartUseMenu();
@@ -232,7 +232,7 @@ private:
     bool soundOn;
     bool stepsOn;
 
-public slots:
+public Q_SLOTS:
     void dbgControl (const int code);	// Authors' debugging aids.
 
 private:

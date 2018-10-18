@@ -52,15 +52,15 @@ public:
     KGrSLDialog (int action, int requestedLevel, int gameIndex,
                  QList<KGrGameData *> & gameList,
                  const QString & pSystemDir, const QString & pUserDir,
-                 QWidget * parent = 0);
+                 QWidget * parent = nullptr);
     ~KGrSLDialog();
 
     bool selectLevel (int & selectedGame, int & selectedLevel);
 
-signals:
+Q_SIGNALS:
     void editNameAndHint();
 
-private slots:
+private Q_SLOTS:
     void slSetGames (int cIndex);
     void slGame();
     void slShowLevel (int i);
@@ -115,7 +115,7 @@ private:
 class KGrThumbNail : public QFrame
 {
 public:
-    explicit KGrThumbNail (QWidget *parent = 0);
+    explicit KGrThumbNail (QWidget *parent = nullptr);
     ~KGrThumbNail();
 
     void setLevelData (const QString& dir, const QString& prefix,

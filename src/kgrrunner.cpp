@@ -311,7 +311,7 @@ HeroStatus KGrHero::run (const int scaledTime)
 
 bool KGrHero::dig (const Direction diggingDirection, int & i, int & j)
 {
-    QString text = (diggingDirection == DIG_LEFT) ? "LEFT" : "RIGHT";
+    QString text = (diggingDirection == DIG_LEFT) ? QStringLiteral("LEFT") : QStringLiteral("RIGHT");
     // qCDebug(KGOLDRUNNER_LOG) << "Start digging" << text;
 
     Flags moves = grid->heroMoves (gridI, gridJ);

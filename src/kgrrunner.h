@@ -69,7 +69,7 @@ public:
     inline int whereAreYou (int & x, int & y) {
                             x = gridX; y = gridY; return pointsPerCell; }
 
-signals:
+Q_SIGNALS:
     /**
      * Requests the KGoldrunner game to add to the human player's score.
      *
@@ -219,7 +219,7 @@ public:
      */
     void             showState();
 
-signals:
+Q_SIGNALS:
     void             soundSignal (const int n, const bool onOff = true);
     void             invalidDig();	// Warning re dig while falling.
 

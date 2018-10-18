@@ -183,7 +183,7 @@ KGrECDialog::KGrECDialog (int action, int gameIndex,
          setWindowTitle (i18n ("Edit Game Info"));
     }
 
-    QString OKText = "";
+    QString OKText;
     if (action == SL_UPD_GAME) {		// Edit existing game.
         ecName->	setText (myGameList.at (defaultGame)->name);
         ecPrefix->	setText (myGameList.at (defaultGame)->prefix);
@@ -197,8 +197,8 @@ KGrECDialog::KGrECDialog (int action, int gameIndex,
         OKText = i18n ("Save Changes");
     }
     else {					// Create a game.
-        ecName->        setText ("");
-        ecPrefix->      setText ("");
+        ecName->        setText (QString());
+        ecPrefix->      setText (QString());
         nLevL->         setText (i18n ("0 levels"));
         OKText = i18n ("Save New");
     }
@@ -222,7 +222,7 @@ KGrECDialog::KGrECDialog (int action, int gameIndex,
                            (myGameList.at (defaultGame)->about.constData()));
     }
     else {
-        mle->setPlainText ("");
+        mle->setPlainText (QString());
     }
 
     connect(ecKGrB, &QRadioButton::clicked, this, &KGrECDialog::ecSetKGr);
@@ -298,20 +298,20 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
                         lgHighlight  = -1;
 
     QTextStream		gameText (savedGames);
-    QString		s = "";
-    QString		pr = "";
+    QString		s;
+    QString		pr;
     int			i;
     int			imax = gameList.count();
 
     // Read the saved games into the list box.
     while (! gameText.atEnd()) {
         s = gameText.readLine();		// Read in one saved game.
-        pr = s.left (s.indexOf (" ", 0,
+        pr = s.left (s.indexOf (QStringLiteral(" "), 0,
                         Qt::CaseInsensitive));	// Get the game prefix.
         for (i = 0; i < imax; i++) {		// Get the game name.
             if (gameList.at (i)->prefix == pr) {
                 s = s.insert (0,
-                gameList.at (i)->name.leftJustified (20, ' ', true) + ' ');
+                gameList.at (i)->name.leftJustified (20, QLatin1Char(' '), true) + QLatin1Char(' '));
                 break;
             }
         }

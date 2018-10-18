@@ -83,8 +83,8 @@ void KGrLevelPlayer::init (KGrView * view,
     playerCount++;
     if (playerCount > 1) {
         KMessageBox::information (view,
-                QString("ERROR: KGrLevelPlayer Count = %1").arg(playerCount),
-                "KGrLevelPlayer");
+                QStringLiteral("ERROR: KGrLevelPlayer Count = %1").arg(playerCount),
+                QStringLiteral("KGrLevelPlayer"));
     }
 
     recording = pRecording;

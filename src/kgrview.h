@@ -36,7 +36,7 @@ public:
      */
     KGrScene *  gameScene   () const { return m_scene; }
 
-signals:
+Q_SIGNALS:
     void mouseClick (int);
     void mouseLetGo (int);
 

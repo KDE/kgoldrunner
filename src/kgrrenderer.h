@@ -145,7 +145,7 @@ public:
      */
     void selectTheme();
 
-private slots:
+private Q_SLOTS:
      // Keep the "Set" and "Actors" parts of a KGoldrunner theme in synch as
      // the theme-selection changes.
     void currentThemeChanged(const KgTheme * currentSetTheme);

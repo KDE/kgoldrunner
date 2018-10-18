@@ -317,7 +317,7 @@ public:
      */
     void dbgControl             (int code);	// Authors' debugging aids.
 
-signals:
+Q_SIGNALS:
     void endLevel       (const int result);
     void getMousePos    (int & i, int & j);
     void setMousePos    (const int i, const int j);
@@ -367,7 +367,7 @@ signals:
                          const bool hasGold, const bool lost);
     void interruptDemo  ();
 
-private slots:
+private Q_SLOTS:
     /**
      * This slot powers the whole game. KGrLevelPlayer connects it to KGrTimer's
      * tick() signal. In this slot, KGrLevelPlayer EITHER plays back a recorded

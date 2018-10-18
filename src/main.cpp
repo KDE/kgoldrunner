@@ -41,11 +41,11 @@ int main (int argc, char **argv)
 
     KLocalizedString::setApplicationDomain("kgoldrunner");
 
-    KAboutData about ("kgoldrunner", i18n ("KGoldrunner"),
-                     version, i18n (description),
+    KAboutData about (QStringLiteral("kgoldrunner"), i18n ("KGoldrunner"),
+                     QLatin1String(version), i18n (description),
                      KAboutLicense::GPL,
                      i18n ("(C) 2003 Ian Wadham and Marco Krüger"),
-                      "http://games.kde.org/kgoldrunner" );
+                      QStringLiteral("http://games.kde.org/kgoldrunner") );
     addCredits (about);
     about.setOrganizationDomain("kde.org");
 
@@ -78,30 +78,30 @@ int main (int argc, char **argv)
 void addCredits (KAboutData & about)
 {
     about.addAuthor (i18n ("Ian Wadham"), i18n ("Current author"),
-                            "iandw.au@gmail.com");
+                            QStringLiteral("iandw.au@gmail.com"));
     about.addAuthor (i18n ("Marco Krüger"), i18n ("Original author"),
-                            "grisuji@gmx.de");
+                            QStringLiteral("grisuji@gmx.de"));
     about.addCredit (i18n ("Mauricio Piacentini"),
                      i18n ("Port to KDE4, Qt4 and KGameCanvas classes"), 
-                            "mauricio@tabuleiro.com");
+                            QStringLiteral("mauricio@tabuleiro.com"));
     about.addCredit (i18n ("Maurizio Monge"),
                      i18n ("KGameCanvas classes for KDE4"), 
-                            "maurizio.monge@gmail.com");
+                            QStringLiteral("maurizio.monge@gmail.com"));
     about.addCredit (i18n ("Mauricio Piacentini"),
                      i18n ("Artwork for runners and default theme"), 
-                            "mauricio@tabuleiro.com");
+                            QStringLiteral("mauricio@tabuleiro.com"));
     about.addCredit (i18n ("Johann Ollivier Lapeyre"),
                      i18n ("Artwork for bars and ladders"), 
-                            "johann.ollivierlapeyre@gmail.com");
+                            QStringLiteral("johann.ollivierlapeyre@gmail.com"));
     about.addCredit (i18n ("Eugene Trounev"),
                      i18n ("Artwork for background of Geek City theme"), 
-                            "irs_me@hotmail.com");
+                            QStringLiteral("irs_me@hotmail.com"));
     about.addCredit (i18n ("Luciano Montanaro"),
                      i18n ("Nostalgia themes, improvements to runners, "
                             "multiple-backgrounds feature, fade-in/fade-out "
                             "feature and several other ideas"), 
-                            "mikelima@cirulla.net");
+                            QStringLiteral("mikelima@cirulla.net"));
     about.addCredit (i18n ("Eugene Trounev"),
                      i18n ("Artwork for the Treasure of Egypt theme"), 
-                            "irs_me@hotmail.com");
+                            QStringLiteral("irs_me@hotmail.com"));
 }

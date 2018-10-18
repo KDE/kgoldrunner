@@ -35,7 +35,7 @@ public:
     inline void setScale (const float pScale)
                          { scaledTime = (pScale * tickTime) + 0.5; }
 
-signals:
+Q_SIGNALS:
     /**
      * This signal powers the whole game. KGrLevelPlayer connects it to its
      * tick() slot.
@@ -56,7 +56,7 @@ signals:
      */
     void tick (bool missed, int pScaledTime);
 
-private slots:
+private Q_SLOTS:
     void internalSlot();
 
 private:

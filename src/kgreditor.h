@@ -149,7 +149,7 @@ public:
      */
     bool editGame (int pGameIndex);
 
-public slots:
+public Q_SLOTS:
     /**
      * Run a dialog in which the name and hint of a level can be edited.
      */
@@ -166,7 +166,7 @@ public:
     inline void getGameAndLevel (int & game, int & lev) {
                                  game = gameIndex; lev = editLevel; }
 
-signals:
+Q_SIGNALS:
     /**
      * Get the next grid-position at which to paint an object in the layout.
      *
@@ -236,7 +236,7 @@ private:
 
     bool mouseDisabled;
 
-private slots:
+private Q_SLOTS:
     /**
      * Start painting or erasing cells on the layout.  Triggered by pressing
      * a mouse-button.

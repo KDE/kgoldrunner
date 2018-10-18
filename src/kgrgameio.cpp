@@ -36,19 +36,19 @@ IOStatus KGrGameIO::fetchGameListData
 {
     QDir directory (dir);
     QStringList pattern;
-    pattern << "game_*";
+    pattern << QStringLiteral("game_*");
     QStringList files = directory.entryList (pattern, QDir::Files, QDir::Name);
 
     // KGr 3 has a game's data and all its levels in one file.
     // KGr 2 has all game-data in "games.dat" and each level in a separate file.
     bool kgr3Format = (files.count() > 0);
     if (! kgr3Format) {
-        files << "games.dat";
+        files << QStringLiteral("games.dat");
     }
 
     // Loop to read each file containing game-data.
     for (const QString &filename : qAsConst(files)) {
-        if (filename == "game_ende.txt") {
+        if (filename == QLatin1String("game_ende.txt")) {
             continue;			// Skip the "ENDE" file.
         }
 
@@ -94,7 +94,7 @@ IOStatus KGrGameIO::fetchGameListData
             QList<QByteArray> fields = textLine.split (' ');
             g->nLevels = fields.at (0).toInt();
             g->rules   = fields.at (1).at (0);
-            g->prefix  = fields.at (2);
+            g->prefix  = QString::fromLatin1(fields.at (2));
             // //qCDebug(KGOLDRUNNER_LOG) << "Levels:" << g->nLevels << "Rules:" << g->rules <<
                 // "Prefix:" << g->prefix;
 
@@ -222,7 +222,7 @@ IOStatus KGrGameIO::fetchLevelData
     IOStatus result = UnexpectedEOF;
 
     // Determine whether the file is in KGoldrunner v3 or v2 format.
-    bool kgr3Format = (filePath.endsWith (".txt"));
+    bool kgr3Format = (filePath.endsWith (QLatin1String(".txt")));
 
     if (kgr3Format) {
         // In KGr 3 format, if a line starts with 'L', check the number.
@@ -273,8 +273,8 @@ IOStatus KGrGameIO::fetchLevelData
 QString KGrGameIO::getFilePath
         (const QString & dir, const QString & prefix, const int level)
 {
-    QString filePath = ((level == 0) ? "ende" : prefix);
-    filePath = dir + "game_" + filePath + ".txt";
+    QString filePath = ((level == 0) ? QStringLiteral("ende") : prefix);
+    filePath = dir + QStringLiteral("game_") + filePath + QStringLiteral(".txt");
     QFile test (filePath);
 
     // See if there is a game-file or "ENDE" screen in KGoldrunner 3 format.
@@ -285,11 +285,11 @@ QString KGrGameIO::getFilePath
     // If not, we are looking for a file in KGoldrunner 2 format.
     if (level == 0) {
         // End of game: show the "ENDE" screen.
-        filePath = dir + "levels/level000.grl";
+        filePath = dir + QStringLiteral("levels/level000.grl");
     }
     else {
-        QString num = QString::number (level).rightJustified (3,'0');
-        filePath = dir + "levels/" + prefix + num + ".grl";
+        QString num = QString::number (level).rightJustified (3, QLatin1Char('0'));
+        filePath = dir + QStringLiteral("levels/") + prefix + num + QStringLiteral(".grl");
     }
 
     return (filePath);
@@ -371,11 +371,11 @@ KGrGameData * KGrGameIO::initGameData (Owner o)
     g->nLevels  = 0;	// Number of levels in the game.
     g->rules    = 'T';	// Game's rules: KGoldrunner or Traditional.
     g->digWhileFalling = true;	// The default: allow "dig while falling".
-    g->prefix   = "";	// Game's filename prefix.
+    g->prefix   = QString();	// Game's filename prefix.
     g->skill    = 'N';	// Game's skill: Tutorial, Normal or Champion.
     g->width    = FIELDWIDTH;	// Default width of layout grid (28 cells).
     g->height   = FIELDHEIGHT;	// Default height of layout grid (20 cells).
-    g->name     = "";	// Name of the game (translated, if System game).
+    g->name     = QString();	// Name of the game (translated, if System game).
     g->about    = "";	// Optional text about the game (untranslated).
     return (g);
 }

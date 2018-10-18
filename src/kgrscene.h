@@ -127,7 +127,7 @@ public:
 
     inline void setGoldEnemiesRule (bool showIt) { enemiesShowGold = showIt; }
 
-public slots:
+public Q_SLOTS:
     void showLives          (long lives);
 
     void showScore          (long score);
@@ -180,7 +180,7 @@ public slots:
     void setMousePos (const int i, const int j);
     void getMousePos (int & i, int & j);
 
-signals:
+Q_SIGNALS:
     void fadeFinished();
     void redrawEditToolbar();
 
@@ -277,7 +277,7 @@ private:
     QRadialGradient     m_gradient;		// Black with circular hole.
     qreal               m_maxRadius;
 
-private slots:
+private Q_SLOTS:
     void drawSpotlight (qreal ratio);		// Animate m_spotlight.
 };
 

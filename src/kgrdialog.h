@@ -47,7 +47,7 @@ class KGrNHDialog : public QDialog
 Q_OBJECT
 public:
     KGrNHDialog (const QString & levelName, const QString & levelHint,
-                        QWidget * parent = 0);
+                        QWidget * parent = nullptr);
     ~KGrNHDialog();
 
     const QString	getName()	{return (nhName->text());}
@@ -68,7 +68,7 @@ Q_OBJECT
 public:
     KGrECDialog (int action, int collnIndex,
                         QList<KGrGameData *> & gameList,
-                        QWidget *parent = 0);
+                        QWidget *parent = nullptr);
     ~KGrECDialog();
 
     const QString	getName()	{return (ecName->text());}
@@ -76,7 +76,7 @@ public:
     bool  isTrad()	{return (ecTradB->isChecked());}
     const QString	getAboutText()	{return (mle->toPlainText());}
 
-private slots:
+private Q_SLOTS:
     void ecSetRules (const char rules);
     void ecSetKGr();	// Radio button slots.
     void ecSetTrad();
@@ -112,7 +112,7 @@ public:
                         QWidget * parent);
     const QString getCurrentText() {return (lgList->currentItem()->text());}
 
-private slots:
+private Q_SLOTS:
     void lgSelect (QListWidgetItem * item);
 
 private:

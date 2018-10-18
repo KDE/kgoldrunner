@@ -188,9 +188,9 @@ void KGrEditor::loadEditLevel (int lev)
     // Retain the original language of the name and hint when editing,
     // but convert non-ASCII, UTF-8 substrings to Unicode (eg. Ã¼ to ü).
     levelName = (d.name.size() > 0) ?
-                QString::fromUtf8 ((const char *) d.name) : "";
+                QString::fromUtf8 (d.name) : QString();
     levelHint = (d.hint.size() > 0) ?
-                QString::fromUtf8 ((const char *) d.hint) : "";
+                QString::fromUtf8 (d.hint) : QString();
 
     scene->setTitle (getTitle());		// Show the level name.
 }
@@ -374,7 +374,7 @@ bool KGrEditor::moveLevelFile (int pGameIndex, int level)
     // Save the "fromN" file under a temporary name.
     filePath1 = getLevelFilePath (gameList.at (fromC), fromL);
     filePath2 = filePath1;
-    filePath2 = filePath2.append (".tmp");
+    filePath2 = filePath2.append (QStringLiteral(".tmp"));
     if (! KGrGameIO::safeRename (view, filePath1, filePath2)) {
         return false;
     }
@@ -780,7 +780,7 @@ bool KGrEditor::saveGameData (Owner o)
         return (false);
     }
 
-    filePath = userDataDir + "games.dat";
+    filePath = userDataDir + QStringLiteral("games.dat");
 
     QFile c (filePath);
 
@@ -799,8 +799,8 @@ bool KGrEditor::saveGameData (Owner o)
 
     for (KGrGameData * gData : qAsConst(gameList)) {
         if (gData->owner == o) {
-            line = QString ("%1 %2 %3 %4\n")
-                            .arg (gData->nLevels, 3, 10, QChar('0')) // int 00n
+            line = QStringLiteral ("%1 %2 %3 %4\n")
+                            .arg (gData->nLevels, 3, 10, QLatin1Char('0')) // int 00n
                             .arg (gData->rules)                      // char
                             .arg (gData->prefix)                     // QString
                             .arg (gData->name);                      // QString
@@ -842,7 +842,7 @@ QString KGrEditor::getTitle()
 
     // Set title string to "Game-name - NNN" or "Game-name - NNN - Level-name".
     KGrGameData * gameData = gameList.at(gameIndex);
-    QString levelNumber = QString::number(editLevel).rightJustified(3,'0');
+    QString levelNumber = QString::number(editLevel).rightJustified(3, QLatin1Char('0'));
 
     QString levelTitle = (levelName.length() <= 0)
                     ?
@@ -858,8 +858,8 @@ QString KGrEditor::getTitle()
 
 QString KGrEditor::getLevelFilePath (KGrGameData * gameData, int lev)
 {
-    QString filePath = userDataDir + "levels/" + gameData->prefix +
-                       QString::number(lev).rightJustified(3,'0') + ".grl";
+    QString filePath = userDataDir + QStringLiteral("levels/") + gameData->prefix +
+                       QString::number(lev).rightJustified(3, QLatin1Char('0')) + QStringLiteral(".grl");
     return (filePath);
 }
 

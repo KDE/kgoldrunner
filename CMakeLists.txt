@@ -28,15 +28,16 @@ include_directories(BEFORE ${PHONON_INCLUDES})
 include(FeatureSummary)
 include(ECMInstallIcons)
 include(KDEInstallDirs)
-include(KDECompilerSettings NO_POLICY_SCOPE)
+include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(KDECMakeSettings)
 include(ECMAddAppIcon)
-
-add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
+include(ECMQtDeclareLoggingCategory)
 
 add_subdirectory(src)
 add_subdirectory(gamedata)
 add_subdirectory(themes)
 add_subdirectory(doc)
+
+install( FILES kgoldrunner.categories DESTINATION ${KDE_INSTALL_CONFDIR} )
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
