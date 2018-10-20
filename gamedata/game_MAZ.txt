@@ -172,7 +172,7 @@
  i18n("Rumpelstiltskin");
  i18n("The main trick for this level is luring the enemies so that you can get around them, or in one case, so that you can walk over an enemy to collect a piece of gold.  The luring is not so hard, but the distances you have to lure them are long.  Maneuvering the enemy so that you can walk over him to get the piece of gold has timing that is a bit tight, but not too bad.\n"
  "\n"
- "When you reach the section above your starting point, there are two ways out: one is a false brick under the short ladder.  But if you dig the other square and drop down, there is a a path through a false floor that avoids retracing all the early part of the maze.");
+ "When you reach the section above your starting point, there are two ways out: one is a false brick under the short ladder.  But if you dig the other square and drop down, there is a path through a false floor that avoids retracing all the early part of the maze.");
 // L036
 //  R  MHM M MHM MHM MHM M MHM MMHMHMHMHMHMHMHMHMHMHMHMHMHMHHHHH HHHHH HHH HHHHHHHEHHHHMMHMHMHMHMHMHMHMHMHMHMHMHMHMH MHMHMHMHMHMHHHMHMHMHMHMHHHMMNMHMHMHMHMHMHMHMHMHMHMHMHMHHHHHHHH HHHM HHHHHNMHHHNHHHMM MHMHMHMHMHMHMHMHFHMHMTMHMHHMHMHMHMHHHMHHHMHMHMHHHFHHHMMHMHMHMHMHMHMHMHMHMHMHMHMHMHH HHHHHM HHMHHNM HHHHHHMHH MMHMHMHFHMHMHMHMHMHMHMHMHMHMHNHHMHHHFHHHMHMHMHHHMHM MHHHMMHMHMH TMHMHMHMHMHMHMHMHMHMHHHHMHHHMHHHMHHHHHHHM HHHHHHMMHMHMHMHMHMHMHMHMHMHMHMHMHM HMHMHHHMHHHM HHMHMHMHHHM MHMMHMHMHMHMHMHMHMHMHMHMHMHMHMHHNHHHHHMHHHHHHHMHHNHHHHHHH MMHMHMZMHMZMHMZMHMZMZMHMZMHMN
  i18n("Thror");

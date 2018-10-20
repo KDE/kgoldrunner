@@ -76,7 +76,7 @@ class KGrScene : public QGraphicsScene
 {
     Q_OBJECT
 public:
-    KGrScene                (KGrView * view);
+    explicit KGrScene       (KGrView * view);
     ~KGrScene               ();
 
     /**

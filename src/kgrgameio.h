@@ -64,7 +64,7 @@ public:
      *
      * @param pView    The view or widget used as a parent for error messages.
      */
-    KGrGameIO (QWidget * pView);
+    explicit KGrGameIO (QWidget * pView);
 
     /**
      * Find and read data for games, into a list of KGrGameData structures.

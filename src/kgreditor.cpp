@@ -95,8 +95,8 @@ bool KGrEditor::createLevel (int pGameIndex)
 
     // Clear the playfield.
     levelData.layout.resize (levelData.width * levelData.height);
-    for (i = 1; i <= levelData.width; i++) {
-	for (j = 1; j <= levelData.height; j++) {
+    for (i = 1; i <= levelData.width; ++i) {
+	for (j = 1; j <= levelData.height; ++j) {
             insertEditObj (i, j, FREE);
         }
     }
@@ -177,8 +177,8 @@ void KGrEditor::loadEditLevel (int lev)
     char obj;
 
     // Load the level.
-    for (i = 1; i <= levelData.width;  i++) {
-	for (j = 1; j <= levelData.height; j++) {
+    for (i = 1; i <= levelData.width;  ++i) {
+	for (j = 1; j <= levelData.height; ++j) {
             obj = d.layout [(j-1) * d.width + (i-1)];
             insertEditObj (i, j, obj);
 	}
@@ -274,8 +274,8 @@ bool KGrEditor::saveLevelFile()
     }
 
     // Save the level - row by row.
-    for (j = 1; j <= levelData.height; j++) {
-        for (i = 1; i <= levelData.width; i++) {
+    for (j = 1; j <= levelData.height; ++j) {
+        for (i = 1; i <= levelData.width; ++i) {
             levelFile.putChar (editableCell (i, j));
         }
     }
@@ -286,7 +286,7 @@ bool KGrEditor::saveLevelFile()
     QByteArray levelNameC = levelName.toUtf8();
     int len1 = levelNameC.length();
     if (len1 > 0) {
-        for (i = 0; i < len1; i++)
+        for (i = 0; i < len1; ++i)
             levelFile.putChar (levelNameC[i]);
         levelFile.putChar ('\n');			// Add a newline.
     }
@@ -299,7 +299,7 @@ bool KGrEditor::saveLevelFile()
     if (len2 > 0) {
         if (len1 <= 0)
             levelFile.putChar ('\n');		// Leave blank line for name.
-        for (i = 0; i < len2; i++) {
+        for (i = 0; i < len2; ++i) {
             ch = levelHintC[i];
             levelFile.putChar (ch);		// Copy the character.
         }
@@ -806,7 +806,7 @@ bool KGrEditor::saveGameData (Owner o)
                             .arg (gData->name);                      // QString
             lineC = line.toUtf8();
             len = lineC.length();
-            for (i = 0; i < len; i++) {
+            for (i = 0; i < len; ++i) {
                 c.putChar (lineC.at (i));
             }
 
@@ -814,7 +814,7 @@ bool KGrEditor::saveGameData (Owner o)
             if (len > 0) {
                 QByteArray aboutC = gData->about;
                 len = aboutC.length();		// Might be longer now.
-                for (i = 0; i < len; i++) {
+                for (i = 0; i < len; ++i) {
                     ch = aboutC[i];
                     if (ch != '\n') {
                         c.putChar (ch);		// Copy the character.

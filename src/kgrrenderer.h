@@ -62,7 +62,7 @@ class KGrRenderer : public QObject
 {
     Q_OBJECT
 public:
-    KGrRenderer (KGrScene * scene);
+    explicit KGrRenderer (KGrScene * scene);
     ~KGrRenderer() override;
 
     /*
@@ -93,7 +93,7 @@ public:
      *
      * @param level             The current level in a KGoldrunner game.
      * @param currentBackground The pre-existing background that is to be
-     *                          replaced, or zero if theres'no background yet.
+     *                          replaced, or zero if there's no background yet.
      */
     KGameRenderedItem * getBackground (const int level,
                                        KGameRenderedItem * currentBackground);

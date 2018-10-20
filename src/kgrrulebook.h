@@ -31,7 +31,7 @@ class KGrRuleBook : public QObject
 {
     Q_OBJECT
 public:
-    KGrRuleBook (QObject * parent);
+    explicit KGrRuleBook (QObject * parent);
     ~KGrRuleBook() override;
 
     bool variableTiming() const      { return mVariableTiming;      }
@@ -93,7 +93,7 @@ class KGrTraditionalRules : public KGrRuleBook
 {
     Q_OBJECT
 public:
-    KGrTraditionalRules (QObject * parent);
+    explicit KGrTraditionalRules (QObject * parent);
     ~KGrTraditionalRules();
 
     Direction findBestWay  (const int eI, const int eJ,
@@ -118,7 +118,7 @@ class KGrKGoldrunnerRules : public KGrRuleBook
 {
     Q_OBJECT
 public:
-    KGrKGoldrunnerRules (QObject * parent);
+    explicit KGrKGoldrunnerRules (QObject * parent);
     ~KGrKGoldrunnerRules();
 
     Direction findBestWay  (const int eI, const int eJ,
@@ -138,7 +138,7 @@ class KGrScavengerRules : public KGrRuleBook
 {
     Q_OBJECT
 public:
-    KGrScavengerRules (QObject * parent);
+    explicit KGrScavengerRules (QObject * parent);
     ~KGrScavengerRules();
 
     Direction findBestWay (const int eI, const int eJ,

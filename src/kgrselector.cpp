@@ -360,7 +360,7 @@ void KGrSLDialog::slSetGames (int cIndex)
 
     for (char sortItem1 : qAsConst(sortOrder1)) {
         for (char sortItem2 : qAsConst(sortOrder2)) {
-            for (i = 0; i < imax; i++) {
+            for (i = 0; i < imax; ++i) {
                 if ((myGameList.at (i)->skill == sortItem1) &&
                     (myGameList.at (i)->rules == sortItem2)) {
                     QStringList data;
