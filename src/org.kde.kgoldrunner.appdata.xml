@@ -67,6 +67,7 @@
     </p>
     <p xml:lang="ca">El KGoldrunner és un joc d'acció a on l'heroi corre a través d'un laberint, puja escales, cava forats i esquiva enemics per tal de recollir totes les llavors d'or i escapar al nivell següent. Els enemics també van darrere l'or. Encara pitjor: van darrere teu!</p>
     <p xml:lang="ca-valencia">El KGoldrunner és un joc d'acció a on l'heroi corre a través d'un laberint, puja escales, cava forats i esquiva enemics per tal de recollir totes les llavors d'or i escapar al nivell següent. Els enemics també van darrere l'or. Encara pitjor: van darrere teu!</p>
+    <p xml:lang="de">KGoldrunner ist ein Action-Spiel, in dem der Held durch ein Labyrinth läuft, Leitern hochsteigt und Fallgruben gräbt und seine Feinde austrickst, um alle Goldklumpen einzusammeln und schließlich zur nächsten Ebene zu kommen. Die Feinde sind hinter dem Gold und dem Helden her. Wenn sie ihn fangen, wird er von ihnen getötet.</p>
     <p xml:lang="en-GB">KGoldrunner is an action game where the hero runs through a maze, climbs stairs, dig holes and dodges enemies in order to collect all the gold nuggets and escape to the next level. Your enemies are also after the gold. Worse still, they are after you!.</p>
     <p xml:lang="es">KGoldrunner es un juego de acción en el que un héroe corre por un laberinto, sube escaleras, cava hoyos y esquiva enemigos para recoger todas las piezas de oro y escapar al siguiente nivel. Los enemigos también van a por el oro. Y, todavía peor, ¡van a por ti!</p>
     <p xml:lang="fi">KGoldrunner on toimintapeli, missä sankari kulkee läpi sokkelon, nousee portaita, kaivaa kuoppia ja välttelee vihollisia kerätäkseen kultahippuja ja paetakseen seuraavalle tasolle. Myös vihollisesi himoitsevat kultaa – ne ovat perässäsi!</p>
@@ -201,6 +202,7 @@
           more intelligent, in the classical mode it is easier to fool them</li>
       <li xml:lang="ca">Dos modes pels enemics: mode clàssic i mode KGoldrunner. En el mode KGoldrunner són més intel·ligents, en el mode clàssic és més fàcil que es tornin boigs</li>
       <li xml:lang="ca-valencia">Dos modes pels enemics: mode clàssic i mode KGoldrunner. En el mode KGoldrunner són més intel·ligents, en el mode clàssic és més fàcil que es tornen boigs</li>
+      <li xml:lang="de">Zwei Modi für die Feinde: Klassisch und der KGoldrunner-Modus. Im KGoldrunner-Modus sind die Feinde intelligenter, im klassischen Modus können sie leichter ausgetrickst werden.</li>
       <li xml:lang="en-GB">Two modes for the enemies: classical and KGoldrunner-mode, in KGoldrunner-mode they are more intelligent, in the classical mode it is easier to fool them</li>
       <li xml:lang="es">Dos modos para los enemigos: clásico y modo KGoldrunner. En el modo KGoldrunner son más inteligentes, mientras que en el modo clásico resulta más fácil engañarlos.</li>
       <li xml:lang="fi">Kahdenlaisia vihollisia: perinteisiä ja KGoldrunner-tyyppisiä. Jälkimmäiset ovat älykkkäämpiä, perinteisiä on helpompi jallittaa</li>
