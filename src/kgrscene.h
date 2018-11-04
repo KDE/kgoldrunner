@@ -149,8 +149,8 @@ public Q_SLOTS:
      * something in the cell already, tileType = FREE acts as an erase function.
      *
      * @param i            The column-number of the cell to paint.
-     * @param i            The row-number of the cell to paint.
-     * @param tileType     The type of tile to paint (gold, brick, ladder, etc).
+     * @param j            The row-number of the cell to paint.
+     * @param type         The type of tile to paint (gold, brick, ladder, etc).
      */
     void paintCell          (const int i, const int j, const char type);
 
@@ -158,7 +158,7 @@ public Q_SLOTS:
      * Requests the view to display an animation of a runner or dug brick at a
      * particular cell, cancelling and superseding any current animation.
      *
-     * @param spriteId     The ID of the sprite (dug brick).
+     * @param id           The ID of the sprite (dug brick).
      * @param repeating    If true, repeat the animation (false for dug brick).
      * @param i            The column-number of the cell.
      * @param j            The row-number of the cell.

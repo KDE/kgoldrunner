@@ -88,11 +88,6 @@ public:
      *
      *
      * @param view       Points to the KGrCanvas object that provides graphics.
-     * @param mode       The input-mode used to control the hero: mouse,
-     *                   keyboard or hybrid touchpad and keyboard mode (for
-     *                   laptops).
-     * @param keyOption  The option to use when in keyboard mode (i.e. CLICK_KEY
-     *                   or HOLD_KEY).
      * @param pRecording Points to a data-object that contains all the data for
      *                   the level, including the layout of the maze and the
      *                   starting positions of hero, enemies and gold, plus the
@@ -218,6 +213,7 @@ public:
      * @param i         The column-number where the gold is (>=1).
      * @param j         The row-number where the gold is (>=1).
      * @param hasGold   True if gold was picked up: false if it was dropped.
+     * @param lost      True if gold is lost.
      *
      * @return          The number of pieces of gold remaining in this level.
      */
@@ -339,7 +335,7 @@ Q_SIGNALS:
      * when loading level-layouts.
      *
      * @param i            The column-number of the cell to paint.
-     * @param i            The row-number of the cell to paint.
+     * @param j            The row-number of the cell to paint.
      * @param tileType     The type of tile to paint (gold, brick, ladder, etc).
      */
     void paintCell      (int i, int j, char tileType);

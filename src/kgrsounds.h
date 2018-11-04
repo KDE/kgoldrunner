@@ -85,6 +85,7 @@ public:
 
     /**
      * Change the volume of one type of sound (e.g. footstep) by a given factor.
+     * \param effect the effect number.
      * \param volume 0.0 for mute, > 1.0 to increase, < 1.0 to decrease.
      */
     void setVolume (int effect, qreal volume);

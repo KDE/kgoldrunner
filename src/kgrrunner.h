@@ -253,8 +253,6 @@ public:
      * @param j            The starting row-number (>=1).
      * @param pSpriteId    The sprite ID of the enemy, as used in animation.
      * @param pRules       The rules that apply to this game and level.
-     * @param pRandomGen   Random number generator: used to decide when to pick
-     *                     up or drop gold.
      */
     KGrEnemy (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
                  int i, int j, int pSpriteId, KGrRuleBook  * pRules);
