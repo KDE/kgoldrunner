@@ -310,6 +310,7 @@
   <url type="help">http://docs.kde.org/?application=kgoldrunner</url>
   <screenshots>
     <screenshot type="default">
+      <caption>Playing KGoldrunner</caption>
       <image>https://kde.org/images/screenshots/kgoldrunner.png</image>
     </screenshot>
   </screenshots>
