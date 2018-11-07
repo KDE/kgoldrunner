@@ -308,6 +308,7 @@
   </description>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kgoldrunner</url>
   <url type="help">http://docs.kde.org/?application=kgoldrunner</url>
+  <url type="donation">https://www.kde.org/community/donations/?app=kgoldrunner&amp;source=appdata</url>
   <screenshots>
     <screenshot type="default">
       <caption>Playing KGoldrunner</caption>
