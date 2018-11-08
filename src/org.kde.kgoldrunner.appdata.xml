@@ -313,9 +313,12 @@
     <screenshot type="default">
       <caption>Playing KGoldrunner</caption>
       <caption xml:lang="ca">Jugant al KGoldrunner</caption>
+      <caption xml:lang="ca-valencia">Jugant al KGoldrunner</caption>
+      <caption xml:lang="es">Jugando KGoldrunner</caption>
       <caption xml:lang="gl">Xogando a KGoldrunner</caption>
       <caption xml:lang="nl">KGoldrunner spelen</caption>
       <caption xml:lang="pt">A jogar ao KGoldrunner</caption>
+      <caption xml:lang="pt-BR">Jogando o KGoldrunner</caption>
       <caption xml:lang="sv">Spela Kgoldrunner</caption>
       <caption xml:lang="uk">Гра у Золотошукача</caption>
       <caption xml:lang="x-test">xxPlaying KGoldrunnerxx</caption>
