@@ -88,6 +88,7 @@
     <p xml:lang="tr">KGoldrunner, kahramanımızın labirentte dolaştığı, tüm altın külçelerini toplamak ve bir sonraki seviyeye çıkmak için merdiven tırmandığı, delik açmtığı ve düşman avı yaptığı bir kaçış aksiyon oyunudur. Düşmanların da altının peşinde. Daha da kötüsü, senin peşindeler!</p>
     <p xml:lang="uk">«Золотошукач» — рухлива гра, де герой подорожує лабіринтом, видирається на стіни, копає ями та втікає від ворогів, збираючи при цьому золоті самородки і переходячи з рівня на рівень. Окрім вашого героя, за золотом полюють і вороги. Вони також не проти звести вашого героя з цього світу!</p>
     <p xml:lang="x-test">xxKGoldrunner is an action game where the hero runs through a maze, climbs stairs, dig holes and dodges enemies in order to collect all the gold nuggets and escape to the next level. Your enemies are also after the gold. Worse still, they are after you!.xx</p>
+    <p xml:lang="zh-CN">KGoldrunner 是一个动作游戏，主角穿过迷宫，爬楼梯，挖洞和躲闪敌人，以收集所有的金块并逃生到下一关。您的敌人也在追金。更糟的是，他们在追您！</p>
     <p>Features:</p>
     <p xml:lang="ca">Característiques:</p>
     <p xml:lang="ca-valencia">Característiques:</p>
@@ -223,6 +224,7 @@
       <li xml:lang="tr">Düşmanlar için iki kip: Klasik ve KGoldrunner modu, KGoldrunner modunda daha zeki, klasik modda onları kandırmak daha kolaydır</li>
       <li xml:lang="uk">Два режими поведінки ворогів: класичний і режим «Золотошукача». У режимі «Золотошукача» вороги кмітливіші, їх не так просто обманути, як у класичному режимі.</li>
       <li xml:lang="x-test">xxTwo modes for the enemies: classical and KGoldrunner-mode, in KGoldrunner-mode they are more intelligent, in the classical mode it is easier to fool themxx</li>
+      <li xml:lang="zh-CN">两种模式的敌人：经典模式和 KGoldrunner 模式，在 KGoldrunner 模式，他们更聪明，而在经典模式，则更容易愚弄他们</li>
       <li>Very very difficult levels</li>
       <li xml:lang="ca">Nivells molt molt difícils</li>
       <li xml:lang="ca-valencia">Nivells molt molt difícils</li>
