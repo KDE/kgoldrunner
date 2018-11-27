@@ -29,6 +29,7 @@ KGrSounds::KGrSounds() :
 
 KGrSounds::~KGrSounds()
 {
+    qDeleteAll(sounds);
 }
 
 int KGrSounds::loadSound (const QString &fileName)
