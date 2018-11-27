@@ -125,6 +125,9 @@ KGrGame::~KGrGame()
     delete randomGen;
     delete levelPlayer;
     delete recording;
+#ifdef KGAUDIO_BACKEND_OPENAL
+    delete effects;
+#endif
 }
 
 // Flags to control author's debugging aids.
