@@ -750,7 +750,7 @@ void KGrLevelPlayer::tick (bool missed, int scaledTime)
     }
     T++;
 
-    if (dugBricks.count() > 0) {
+    if (!dugBricks.isEmpty()) {
         processDugBricks (scaledTime);
     }
 
