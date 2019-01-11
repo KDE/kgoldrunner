@@ -105,7 +105,7 @@ public:
      * @param currentItem   The pre-existing item that is to be replaced, or
      *                      zero if the previous theme had no border.
      */
-    KGameRenderedItem * getBorderItem (QString spriteKey,
+    KGameRenderedItem * getBorderItem (const QString &spriteKey,
                                        KGameRenderedItem * currentItem);
 
     /*

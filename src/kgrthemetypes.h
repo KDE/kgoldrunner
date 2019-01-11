@@ -27,7 +27,7 @@ class KGrActorsTheme : public KgTheme
 {
     Q_OBJECT
 public:
-    Q_INVOKABLE KGrActorsTheme(const QByteArray &identifier, QObject *parent=0);
+    Q_INVOKABLE KGrActorsTheme(const QByteArray &identifier, QObject *parent=nullptr);
     ~KGrActorsTheme() override;
 
     /*
@@ -46,7 +46,7 @@ class KGrSetTheme : public KgTheme
 {
     Q_OBJECT
 public:
-    Q_INVOKABLE KGrSetTheme(const QByteArray &identifier, QObject *parent=0);
+    Q_INVOKABLE KGrSetTheme(const QByteArray &identifier, QObject *parent=nullptr);
     ~KGrSetTheme() override;
 
     /*

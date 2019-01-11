@@ -576,7 +576,7 @@ bool KGrEditor::editGame (int pGameIndex)
             rules = 'T';
         }
 
-        KGrGameData * gameData = 0;
+        KGrGameData * gameData = nullptr;
         if (action == SL_CR_GAME) {
             // Create empty game data and add it to the main list in KGrGame.
             gameData = new KGrGameData();

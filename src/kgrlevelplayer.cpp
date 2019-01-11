@@ -39,18 +39,18 @@ KGrLevelPlayer::KGrLevelPlayer (KGrGame * parent, KRandomSequence * pRandomGen)
     QObject          (parent),
     game             (parent),
     randomGen        (pRandomGen),
-    hero             (0),
+    hero             (nullptr),
     controlMode      (MOUSE),
     holdKeyOption    (CLICK_KEY),
     nuggets          (0),
     playState        (NotReady),
-    recording        (0),
+    recording        (nullptr),
     playback         (false),
     targetI          (1),
     targetJ          (1),
     direction        (NO_DIRECTION),
     newDirection     (NO_DIRECTION),
-    timer            (0),
+    timer            (nullptr),
     digCycleTime     (200),	// Milliseconds per dig-timing cycle (default).
     digCycleCount    (40),	// Cycles while hole is fully open (default).
     digOpeningCycles (5),	// Cycles for brick-opening animation.
@@ -180,7 +180,7 @@ void KGrLevelPlayer::init (KGrView * view,
         for (int i = wall; i < levelWidth + wall; i++) {
             char type = grid->cellType (i, j);
             if (type == HERO) {
-                if (hero == 0) {
+                if (hero == nullptr) {
                     targetI = i;
                     targetJ = j;
                     heroId  = emit makeSprite (HERO, i, j);
@@ -610,7 +610,7 @@ KGrEnemy * KGrLevelPlayer::standOnEnemy (const int spriteId,
 {
     int minEnemies = (spriteId == heroId) ? 1 : 2;
     if (enemies.count() < minEnemies) {
-        return 0;
+        return nullptr;
     }
     int enemyX, enemyY, pointsPerCell;
     for (KGrEnemy * enemy : qAsConst(enemies)) {
@@ -622,7 +622,7 @@ KGrEnemy * KGrLevelPlayer::standOnEnemy (const int spriteId,
             return enemy;
         }
     }
-    return 0;
+    return nullptr;
 }
 
 bool KGrLevelPlayer::bumpingFriend (const int spriteId, const Direction dirn,

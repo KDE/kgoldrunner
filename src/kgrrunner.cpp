@@ -238,7 +238,7 @@ HeroStatus KGrHero::run (const int scaledTime)
     if (falling && (interval != enemyFallTime)) {
         // qCDebug(KGOLDRUNNER_LOG) << "Calling standOnEnemy() for" << gridX << gridY;
 	onEnemy = levelPlayer->standOnEnemy (spriteId, gridX, gridY);
-        if (onEnemy != 0) {
+        if (onEnemy != nullptr) {
             interval = enemyFallTime;
             // If MidCell, hero-speed animation overshoots, but looks OK.
         }
@@ -351,14 +351,14 @@ bool KGrHero::dig (const Direction diggingDirection, int & i, int & j)
                         ((currDirection == LEFT) ? (gridI - 1) : (gridI + 1));
             Flags OK = grid->heroMoves (nextGridI, gridJ);
             bool canStand = (OK & dFlag [STAND]) || (OK == 0);
-            bool enemyUnder = (onEnemy != 0);
+            bool enemyUnder = (onEnemy != nullptr);
             // Must be on solid ground or on an enemy (standing or riding down).
             if ((! canStand) && (nextGridI != gridI)) {
 		// If cannot move to next cell and stand, is an enemy under it?
                 // qCDebug(KGOLDRUNNER_LOG) << "Calling standOnEnemy() at gridX" << gridX
                          // << "for" << (nextGridI * pointsPerCell) << gridY;
                 enemyUnder = (levelPlayer->standOnEnemy (spriteId,
-                                        nextGridI * pointsPerCell, gridY) != 0);
+                                        nextGridI * pointsPerCell, gridY) != nullptr);
             }
             if ((! canStand) && (! enemyUnder)) {
                 qCDebug(KGOLDRUNNER_LOG) << "INVALID DIG: hero at" << gridI << gridJ

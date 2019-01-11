@@ -36,7 +36,7 @@ KGrView::~KGrView ()
 
 void KGrView::resizeEvent (QResizeEvent *)
 {
-    if (scene() != 0) {
+    if (scene() != nullptr) {
         m_scene->changeSize ();
         fitInView (scene()->sceneRect(), Qt::KeepAspectRatio);
     }

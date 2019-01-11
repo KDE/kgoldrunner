@@ -45,13 +45,13 @@ KGrRenderer::KGrRenderer (KGrScene * scene)
 
     // Find SVG files for the Set, i.e. tiles and backgrounds.
     const QMetaObject * setThemeClass = & KGrSetTheme::staticMetaObject;
-    m_setProvider->discoverThemes ("appdata", QLatin1String ("themes"),
-                                   QLatin1String ("egypt"), setThemeClass);
+    m_setProvider->discoverThemes ("appdata", QStringLiteral ("themes"),
+                                   QStringLiteral ("egypt"), setThemeClass);
 
     // Find SVG files for the Actors, i.e. hero and enemies.
     const QMetaObject * actorsThemeClass = & KGrActorsTheme::staticMetaObject;
-    m_actorsProvider->discoverThemes ("appdata", QLatin1String ("themes"),
-                                   QLatin1String ("egypt"), actorsThemeClass);
+    m_actorsProvider->discoverThemes ("appdata", QStringLiteral ("themes"),
+                                   QStringLiteral ("egypt"), actorsThemeClass);
 
     // Set up a dialog for selecting themes.
     m_themeSelector  = new KgThemeSelector (m_setProvider,
@@ -192,7 +192,7 @@ KGameRenderedItem * KGrRenderer::getBackground
 }
 
 KGameRenderedItem * KGrRenderer::getBorderItem
-                    (QString spriteKey, KGameRenderedItem * currentItem)
+                    (const QString &spriteKey, KGameRenderedItem * currentItem)
 {
     if (currentItem) {
         m_scene->removeItem (currentItem);

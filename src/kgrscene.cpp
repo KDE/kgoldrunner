@@ -39,14 +39,14 @@ KGrScene::KGrScene      (KGrView * view)
     // plus 2 more tile widths all around for text areas, frame and spillover
     // for mouse actions (to avoid accidental clicks affecting the desktop).
     m_view              (view),
-    m_background        (0),
+    m_background        (nullptr),
     m_level             (1),
-    m_title             (0),
-    m_replayMessage     (0),
-    m_livesText         (0),
-    m_scoreText         (0),
-    m_hasHintText       (0),
-    m_pauseResumeText   (0),
+    m_title             (nullptr),
+    m_replayMessage     (nullptr),
+    m_livesText         (nullptr),
+    m_scoreText         (nullptr),
+    m_hasHintText       (nullptr),
+    m_pauseResumeText   (nullptr),
     m_heroId            (0),
     m_tilesWide         (FIELDWIDTH  + 2 * 2),
     m_tilesHigh         (FIELDHEIGHT + 2 * 2),
@@ -60,7 +60,7 @@ KGrScene::KGrScene      (KGrView * view)
 {
     setItemIndexMethod(NoIndex);
 
-    m_tiles.fill        (0,     m_tilesWide * m_tilesHigh);
+    m_tiles.fill        (nullptr,     m_tilesWide * m_tilesHigh);
     m_tileTypes.fill    (FREE,  m_tilesWide * m_tilesHigh);
 
     m_renderer  = new KGrRenderer (this);
@@ -370,7 +370,7 @@ void KGrScene::setTile (KGameRenderedItem * tile, const int tileSize,
     tile->setPos (m_topLeftX + (i+1) * tileSize, m_topLeftY + (j+1) * tileSize);
 }
 
-void KGrScene::setBorderTile (const QString spriteKey, const int x, const int y)
+void KGrScene::setBorderTile (const QString &spriteKey, const int x, const int y)
 {
     int index               = x * m_tilesHigh + y;
     KGameRenderedItem * t   = m_renderer->getBorderItem (spriteKey,
@@ -440,8 +440,8 @@ int KGrScene::makeSprite (const char type, int i, int j)
     int spriteId;
     KGrSprite * sprite = m_renderer->getSpriteItem (type, TickTime);
 
-    if (m_sprites.count(0) > 0 &&
-        ((spriteId = m_sprites.lastIndexOf (0)) >= 0)) {
+    if (m_sprites.count(nullptr) > 0 &&
+        ((spriteId = m_sprites.lastIndexOf (nullptr)) >= 0)) {
         // Re-use a slot previously occupied by a transient member of the list.
         m_sprites[spriteId] = sprite;
     }
@@ -484,7 +484,7 @@ int KGrScene::makeSprite (const char type, int i, int j)
 void KGrScene::animate (bool missed)
 {
     for (KGrSprite * sprite : qAsConst(m_sprites)) {
-        if (sprite != 0) {
+        if (sprite != nullptr) {
             sprite->animate (missed);
         }
     }
@@ -574,7 +574,7 @@ void KGrScene::deleteSprite (const int spriteId)
     bool   brick    = (m_sprites.at(spriteId)->spriteType() == BRICK);
 
     delete m_sprites.at(spriteId);
-    m_sprites [spriteId] = 0;
+    m_sprites [spriteId] = nullptr;
 
     if (brick) {
         // Dug-brick sprite erased: restore the tile that was at that location.

@@ -65,7 +65,7 @@ KGoldrunner::KGoldrunner()
 /*************  FIND WHERE THE GAMES DATA AND HANDBOOK SHOULD BE  *************/
 /******************************************************************************/
 
-    setObjectName ( QLatin1String("KGoldrunner" ));
+    setObjectName ( QStringLiteral("KGoldrunner" ));
 
     // Avoid "saveOK()" check if an error-exit occurs during the file checks.
     startupOK = true;
@@ -316,14 +316,14 @@ void KGoldrunner::setupActions()
                                i18n ("&Create Level"),
                                i18n ("Create level."),
                                i18n ("Create a completely new level."));
-    ed->setIcon (QIcon::fromTheme( QLatin1String( "document-new" )));
+    ed->setIcon (QIcon::fromTheme( QStringLiteral( "document-new" )));
     ed->setIconText (i18n ("Create"));
 
     ed           = editAction (QStringLiteral("edit_any"), EDIT_ANY,
                                i18n ("&Edit Level..."),
                                i18n ("Edit level..."),
                                i18n ("Edit any level..."));
-    ed->setIcon (QIcon::fromTheme( QLatin1String( "document-open" )));
+    ed->setIcon (QIcon::fromTheme( QStringLiteral( "document-open" )));
     ed->setIconText (i18n ("Edit"));
 
     // Save Edits...
@@ -335,7 +335,7 @@ void KGoldrunner::setupActions()
                                i18n ("&Save Edits..."),
                                i18n ("Save edits..."),
                                i18n ("Save your level after editing..."));
-    saveEdits->setIcon (QIcon::fromTheme( QLatin1String( "document-save" )));
+    saveEdits->setIcon (QIcon::fromTheme( QStringLiteral( "document-save" )));
     saveEdits->setIconText (i18n ("Save"));
     saveEdits->setEnabled (false);		// Nothing to save, yet.
 
@@ -935,7 +935,7 @@ void KGoldrunner::setupEditToolbarActions()
                                i18n ("Edit level name or hint"),
                                i18n ("Edit text for the name or hint "
                                      "of a level"));
-    ed->setIcon (QIcon::fromTheme( QLatin1String( "games-hint" )));
+    ed->setIcon (QIcon::fromTheme( QStringLiteral( "games-hint" )));
     ed->setIconText (i18n ("Name/Hint"));
 
     KToggleAction * free    = editToolbarAction (QStringLiteral("freebg"), FREE,

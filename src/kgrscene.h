@@ -217,7 +217,7 @@ private:
      * @param x         The item's x coordinate.
      * @param y         The item's y coordinate.
      */
-    void setBorderTile  (const QString spriteKey, const int x, const int y);
+    void setBorderTile  (const QString &spriteKey, const int x, const int y);
 
     /*
      * Resize a game's visual element.

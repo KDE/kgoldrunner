@@ -86,24 +86,24 @@ KGrGame::KGrGame (KGrView * theView,
                   const QString & theSystemDir, const QString & theUserDir)
         :
 	QObject       (theView),	// Game is destroyed if view closes.
-        levelPlayer   (0),
-        recording     (0),
+        levelPlayer   (nullptr),
+        recording     (nullptr),
         playback      (false),
         view          (theView),
 	scene         (view->gameScene()),
         systemDataDir (theSystemDir),
         userDataDir   (theUserDir),
         level         (0),
-        mainDemoName  (QLatin1String("demo")),
+        mainDemoName  (QStringLiteral("demo")),
         // mainDemoName  ("CM"), // IDW test.
         demoType      (DEMO),
         startupDemo   (false),
         programFreeze (false),
-        effects       (0),
+        effects       (nullptr),
         fx            (NumSounds),
         soundOn       (false),
         stepsOn       (false),
-        editor        (0)
+        editor        (nullptr)
 {
     dbgLevel = 0;
 
@@ -320,7 +320,7 @@ void KGrGame::editActions (const int action)
             // Edit failed or was cancelled, so close the editor.
             emit setEditMenu (false);	// Disable edit menu items and toolbar.
             delete editor;
-            editor = 0;
+            editor = nullptr;
         }
         freeze (ProgramPause, false);
     }
@@ -1237,7 +1237,7 @@ void KGrGame::toggleSoundsOnOff (const int action)
 
 #ifdef KGAUDIO_BACKEND_OPENAL
     if (action == PLAY_SOUNDS) {
-        if (soundOn && (effects == 0)) {
+        if (soundOn && (effects == nullptr)) {
             loadSounds();	// Sounds were not loaded when the game started.
         }
         effects->setMuted (! soundOn);
@@ -1577,7 +1577,7 @@ bool KGrGame::selectSavedGame (int & selectedGame, int & selectedLevel)
         }
         if (index >= 0) {
             selectedGame  = index;
-            selectedLevel = loadedData.mid (28, 3).toInt();
+            selectedLevel = loadedData.midRef (28, 3).toInt();
             result = true;
         }
         else {
@@ -1706,7 +1706,7 @@ void KGrGame::checkHighScore()
     // Dialog to ask the user to enter their name.
     QDialog *		hsn = new QDialog (view,
                         Qt::WindowTitleHint);
-    hsn->setObjectName ( QLatin1String("hsNameDialog" ));
+    hsn->setObjectName ( QStringLiteral("hsNameDialog" ));
 
     int margin = 10;
     int spacing = 10;
@@ -1868,7 +1868,7 @@ void KGrGame::showHighScores()
 
     QDialog *		hs = new QDialog (view,
                         Qt::WindowTitleHint);
-    hs->setObjectName ( QLatin1String("hsDialog" ));
+    hs->setObjectName ( QStringLiteral("hsDialog" ));
 
     int margin = 10;
     int spacing = 10;
@@ -2047,7 +2047,7 @@ void KGrGame::saveSolution (const QString & prefix, const int levelNo)
 {
     // Save the game and level data that is currently displayed.
     KGrRecording * prevRecording = recording;
-    recording = 0;
+    recording = nullptr;
     demoType = REPLAY_ANY;		// Must load a "rec_" file, not "sol_".
 
     // Proceed as if we are going to replay the selected level.
