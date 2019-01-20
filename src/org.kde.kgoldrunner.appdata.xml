@@ -32,6 +32,7 @@
   <name xml:lang="uk">Золотошукач</name>
   <name xml:lang="x-test">xxKGoldrunnerxx</name>
   <name xml:lang="zh-CN">KGoldrunner</name>
+  <name xml:lang="zh-TW">KGoldrunner</name>
   <summary>Hunt Gold, Dodge Enemies and Solve Puzzles</summary>
   <summary xml:lang="ca">Cerca l'or, esquiva els enemics i resol trencaclosques</summary>
   <summary xml:lang="ca-valencia">Cerca l'or, esquiva els enemics i resol trencaclosques</summary>
@@ -121,6 +122,7 @@
     <p xml:lang="uk">Можливості:</p>
     <p xml:lang="x-test">xxFeatures:xx</p>
     <p xml:lang="zh-CN">功能：</p>
+    <p xml:lang="zh-TW">功能：</p>
     <ul>
       <li>Themeable</li>
       <li xml:lang="ca">Permet temes</li>
@@ -343,6 +345,7 @@
       <caption xml:lang="uk">Гра у Золотошукача</caption>
       <caption xml:lang="x-test">xxPlaying KGoldrunnerxx</caption>
       <caption xml:lang="zh-CN">正在玩 KGoldrunner</caption>
+      <caption xml:lang="zh-TW">KGoldrunner 遊玩畫面</caption>
       <image>https://kde.org/images/screenshots/kgoldrunner.png</image>
     </screenshot>
   </screenshots>
