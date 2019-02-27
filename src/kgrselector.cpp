@@ -159,7 +159,7 @@ void KGrSLDialog::setupWidgets()
 
     QHBoxLayout * hboxLayout1 = new QHBoxLayout();
     hboxLayout1->setSpacing (6);
-    hboxLayout1->setMargin (0);
+    hboxLayout1->setContentsMargins(0, 0, 0, 0);
 
     gameN    = new QLabel (dad);	// Name of selected game.
     QFont f = gameN->font();
@@ -208,7 +208,7 @@ void KGrSLDialog::setupWidgets()
 
     QWidget * numberPair = new QWidget (dad);
     QHBoxLayout *hboxLayout2 = new QHBoxLayout (numberPair);
-    hboxLayout2->setMargin (0);
+    hboxLayout2->setContentsMargins(0, 0, 0, 0);
     numberPair->setLayout (hboxLayout2);
     grid->addWidget (numberPair, 1, 1, 1, 3);
     numberL   = new QLabel (i18n ("Level number:"), numberPair);
