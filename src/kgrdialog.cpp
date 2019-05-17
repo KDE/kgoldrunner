@@ -62,7 +62,7 @@ KGrNHDialog::KGrNHDialog (const QString & levelName, const QString & levelHint,
 
     QVBoxLayout * mainLayout2 = new QVBoxLayout (dad);
     mainLayout2->setSpacing (spacing);
-    mainLayout2->setMargin (margin);
+    mainLayout2->setContentsMargins(margin, margin, margin, margin);
 
     QLabel *    nameL  = new QLabel (i18n ("Name of level:"), dad);
     mainLayout2->addWidget(nameL);
@@ -126,7 +126,7 @@ KGrECDialog::KGrECDialog (int action, int gameIndex,
 
     QVBoxLayout * mainLayout = new QVBoxLayout (dad);
     mainLayout->setSpacing (spacing);
-    mainLayout->setMargin (margin);
+    mainLayout->setContentsMargins(margin, margin, margin, margin);
     setLayout(mainLayout);
 
     QHBoxLayout *hboxLayout5 = new QHBoxLayout();
@@ -270,7 +270,7 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
     QWidget * dad  = new QWidget (this);
     QVBoxLayout *	mainLayout = new QVBoxLayout (dad);
     mainLayout->setSpacing (spacing);
-    mainLayout->setMargin (margin);
+    mainLayout->setContentsMargins(margin, margin, margin, margin);
     setLayout(mainLayout);
 
     QLabel *		lgHeader = new QLabel (

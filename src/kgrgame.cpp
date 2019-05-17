@@ -1712,7 +1712,7 @@ void KGrGame::checkHighScore()
     int spacing = 10;
     QVBoxLayout *	mainLayout = new QVBoxLayout (hsn);
     mainLayout->setSpacing (spacing);
-    mainLayout->setMargin (margin);
+    mainLayout->setContentsMargins(margin, margin, margin, margin);
 
     QLabel *		hsnMessage  = new QLabel (
                         i18n ("<html><b>Congratulations !!!</b><br/>"
@@ -1874,7 +1874,7 @@ void KGrGame::showHighScores()
     int spacing = 10;
     QVBoxLayout *	mainLayout = new QVBoxLayout (hs);
     mainLayout->setSpacing (spacing);
-    mainLayout->setMargin (margin);
+    mainLayout->setContentsMargins(margin, margin, margin, margin);
 
     QLabel *		hsHeader = new QLabel (i18n (
                             "<center><h2>KGoldrunner Hall of Fame</h2></center>"

@@ -140,7 +140,7 @@ void KGrSLDialog::setupWidgets()
 
     QVBoxLayout * mainLayout = new QVBoxLayout (dad);
     mainLayout->setSpacing (spacing);
-    mainLayout->setMargin (margin);
+    mainLayout->setContentsMargins(margin, margin, margin, margin);
 
     gameL    = new QLabel
                 (i18n ("<html><b>Please select a game:</b></html>"), dad);
