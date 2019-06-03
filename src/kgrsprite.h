@@ -24,7 +24,6 @@
 
 #include <KGameRenderedItem>
 
-class KGrRenderer;
 
 class KGrSprite : public KGameRenderedItem
 {

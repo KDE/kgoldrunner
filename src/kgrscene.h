@@ -54,7 +54,6 @@
 class KGrView;
 class KGrSprite;
 class KGrRenderer;
-class KGameRenderer;
 class KGameRenderedItem;
 class QTimeLine;
 
