@@ -25,14 +25,14 @@
 #include <QDialogButtonBox>
 #include <QFile>
 #include <QFontDatabase>
-#include <QGroupBox>
 #include <QLabel>
 #include <QPushButton>
 #include <QTextStream>
 #include <QVBoxLayout>
 
-#include <KConfigGroup>
 #include <KLocalizedString>
+#include <KGuiItem>
+#include <KMessageBox>
 
 /*******************************************************************************
 *************** DIALOG BOX TO CREATE/EDIT A LEVEL NAME AND HINT ****************

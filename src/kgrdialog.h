@@ -26,8 +26,6 @@
 #include <QRadioButton>
 #include <QTextEdit>
 
-#include <KLocalizedString>
-#include <KMessageBox>
 
 class QButtonGroup;
 class QLabel;

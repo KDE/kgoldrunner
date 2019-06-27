@@ -22,7 +22,7 @@
 #include "kgrselector.h"
 #include "kgrdialog.h"
 #include "kgrgameio.h"
-
+#include <KLocalizedString>
 #include <ctype.h>
 #include <QTimer>
 

@@ -21,16 +21,13 @@
 
 #include <QAction>
 #include <QApplication>
-#include <QCommandLineParser>
 #include <QDesktopWidget>
 #include <QIcon>
 #include <QKeyEvent>
 #include <QKeySequence>
-#include <QMenuBar>
 #include <QSignalMapper>
 #include <QShortcut>
 
-#include <KAboutData>
 #include <KActionCollection>
 #include <KConfig>
 #include <KConfigGroup>

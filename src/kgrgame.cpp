@@ -41,7 +41,6 @@
 #include <QByteArray>
 #include <QDate>
 #include <QDateTime>
-#include <QDir>
 #include <QLabel>
 #include <QHeaderView>
 #include <QPushButton>
@@ -53,12 +52,15 @@
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include <QVBoxLayout>
+#include <QFileInfo>
 
 #include <KConfigGroup>
 #include <KGuiItem>
 #include <KRandomSequence>
 #include <KSharedConfig>
 #include <KStandardGuiItem>
+#include <KLocalizedString>
+#include <KMessageBox>
 
 #include "kgoldrunner_debug.h"
 

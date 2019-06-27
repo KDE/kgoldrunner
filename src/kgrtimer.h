@@ -18,7 +18,6 @@
 #ifndef KGRTIMER_H
 #define KGRTIMER_H
 
-#include <QList>
 #include <QTime>
 #include <QTimer>
 

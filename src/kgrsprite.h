@@ -19,8 +19,6 @@
 #ifndef KGRSPRITE_H
 #define KGRSPRITE_H
 
-#include <QPixmap>
-#include <QList>
 
 #include <KGameRenderedItem>
 

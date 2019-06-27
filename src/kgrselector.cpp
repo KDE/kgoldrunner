@@ -23,24 +23,22 @@
 #include "kgrgameio.h"
 
 #include <QApplication>
-#include <QButtonGroup>
 #include <QDesktopWidget>
 #include <QGridLayout>
 #include <QHeaderView>
 #include <QLabel>
 #include <QPainter>
 #include <QPushButton>
-#include <QRadioButton>
 #include <QScrollBar>
 #include <QSpacerItem>
 #include <QSpinBox>
 #include <QTextEdit>
-#include <QTextStream>
 #include <QVBoxLayout>
-
+#include <QDialogButtonBox>
+#include <KGuiItem>
 #include <KConfigGroup>
 #include <KSharedConfig>
-
+#include <KLocalizedString>
 /******************************************************************************/
 /*****************    DIALOG BOX TO SELECT A GAME AND LEVEL   *****************/
 /******************************************************************************/

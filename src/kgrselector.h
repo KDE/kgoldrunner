@@ -24,8 +24,6 @@
 #include <QList>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
-#include <KLocalizedString>
-#include <KMessageBox>
 
 /**
 @author Ian Wadham and Marco Krüger
