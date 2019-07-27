@@ -22,6 +22,8 @@ set(kgoldrunner_SRCS
    kgrdialog.cpp
 )
 
+ecm_setup_version(${KDE_APPLICATIONS_VERSION} VARIABLE_PREFIX KGOLDRUNNER VERSION_HEADER kgoldrunner_version.h)
+
 ecm_qt_declare_logging_category(kgoldrunner_SRCS HEADER kgoldrunner_debug.h IDENTIFIER KGOLDRUNNER_LOG CATEGORY_NAME log_kgoldrunner)
 
 file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*-apps-kgoldrunner.png")
