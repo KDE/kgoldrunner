@@ -24,7 +24,6 @@
 
 #include <KXmlGuiWindow>
 
-class QSignalMapper;
 class QAction;
 class KToggleAction;
 
@@ -109,8 +108,6 @@ private:
     void setupActions();
     void setupEditToolbarActions();
 
-    QSignalMapper * tempMapper;		// Temporary pointer.
-
     QAction * gameAction (const QString & name, const int code,
                           const QString & text, const QString & toolTip,
                           const QString & whatsThis, const QKeySequence & key);
@@ -131,6 +128,10 @@ private:
                           const QString & toolTip, const QString & whatsThis);
 
     void keyControl      (const QString & name, const QString & text,
+                          const QKeySequence & shortcut, const int code,
+                          const bool mover = false);
+
+    void keyControlDebug (const QString & name, const QString & text,
                           const QKeySequence & shortcut, const int code,
                           const bool mover = false);
 

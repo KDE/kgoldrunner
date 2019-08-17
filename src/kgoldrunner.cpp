@@ -25,7 +25,6 @@
 #include <QIcon>
 #include <QKeyEvent>
 #include <QKeySequence>
-#include <QSignalMapper>
 #include <QShortcut>
 
 #include <KActionCollection>
@@ -185,17 +184,13 @@ void KGoldrunner::setupActions()
     /******************************   GAME MENU  ******************************/
     /**************************************************************************/
 
-    QSignalMapper * gameMapper = new QSignalMapper (this);
-    connect (gameMapper, static_cast<void(QSignalMapper::*)(int)>(&QSignalMapper::mapped), game, &KGrGame::gameActions);
-    tempMapper = gameMapper;
-
     // New Game...
     // Load Saved Game...
     // --------------------------
 
-    QAction * a = KStandardGameAction::gameNew (gameMapper, SLOT(map()), this);
+    QAction * a = KStandardGameAction::gameNew (this, nullptr, nullptr);
     actionCollection()->addAction (a->objectName(), a);
-    gameMapper->setMapping (a, NEW);
+    connect (a, &QAction::triggered, this, [this] { game->gameActions(NEW); });
     a->setText (i18n ("&New Game..."));
 
     a        = gameAction (QStringLiteral("next_level"), NEXT_LEVEL,
@@ -205,18 +200,18 @@ void KGoldrunner::setupActions()
                                  "you are playing."),
                            Qt::Key_Y);
 
-    a =	KStandardGameAction::load (gameMapper, SLOT(map()), this);
+    a =	KStandardGameAction::load (this, nullptr, nullptr);
     actionCollection()->addAction (a->objectName(), a);
-    gameMapper->setMapping (a, LOAD);
+    connect (a, &QAction::triggered, this, [this] { game->gameActions(LOAD); });
     a->setText (i18n ("&Load Saved Game..."));
 
     // Save Game...
     // Save Solution...
     // --------------------------
 
-    saveGame = KStandardGameAction::save (gameMapper, SLOT(map()), this);
+    saveGame = KStandardGameAction::save (this, nullptr, nullptr);
     actionCollection()->addAction (saveGame->objectName(), saveGame);
-    gameMapper->setMapping (saveGame, SAVE_GAME);
+    connect (saveGame, &QAction::triggered, this, [this] { game->gameActions(SAVE_GAME); });
     saveGame->setText (i18n ("&Save Game..."));
     actionCollection()->setDefaultShortcut(saveGame, Qt::Key_S); // Alternate key.
 
@@ -236,28 +231,28 @@ void KGoldrunner::setupActions()
     // Kill the Hero
     // --------------------------
 
-    myPause = KStandardGameAction::pause (gameMapper, SLOT(map()), this);
+    myPause = KStandardGameAction::pause (this, nullptr, nullptr);
     actionCollection()->addAction (myPause->objectName(), myPause);
-    gameMapper->setMapping (myPause, PAUSE);
+    connect (myPause, &QAction::triggered, this, [this] { game->gameActions(PAUSE); });
     // QAction * myPause gets QAction::shortcut(), returning 1 OR 2 shortcuts.
     QList<QKeySequence> pauseShortcut = { myPause->shortcut(), Qt::Key_Escape };
     myPause->setShortcuts (pauseShortcut);
 
-    highScore = KStandardGameAction::highscores (gameMapper, SLOT(map()), this);
+    highScore = KStandardGameAction::highscores (this, nullptr, nullptr);
     actionCollection()->addAction (highScore->objectName(), highScore);
-    gameMapper->setMapping (highScore, HIGH_SCORE);
+    connect (highScore, &QAction::triggered, this, [this] { game->gameActions(HIGH_SCORE); });
 
-    hintAction = KStandardGameAction::hint (gameMapper, SLOT (map()), this);
+    hintAction = KStandardGameAction::hint (this, nullptr, nullptr);
     actionCollection()->addAction (hintAction->objectName(), hintAction);
-    gameMapper->setMapping (hintAction, HINT);
+    connect (hintAction, &QAction::triggered, this, [this] { game->gameActions(HINT); });
 
-    a = KStandardGameAction::demo (gameMapper, SLOT (map()), this);
+    a = KStandardGameAction::demo (this, nullptr, nullptr);
     actionCollection()->addAction (a->objectName(), a);
-    gameMapper->setMapping (a, DEMO);
+    connect (a, &QAction::triggered, this, [this] { game->gameActions(DEMO); });
 
-    a = KStandardGameAction::solve (gameMapper, SLOT (map()), this);
+    a = KStandardGameAction::solve (this, nullptr, nullptr);
     actionCollection()->addAction (a->objectName(), a);
-    gameMapper->setMapping (a, SOLVE);
+    connect (a, &QAction::triggered, this, [this] { game->gameActions(SOLVE); });
     a->setText      (i18n ("&Show A Solution"));
     a->setToolTip   (i18n ("Show how to win this level."));
     a->setWhatsThis (i18n ("Play a recording of how to win this level, if "
@@ -300,11 +295,6 @@ void KGoldrunner::setupActions()
     /**************************************************************************/
     /***************************   GAME EDITOR MENU  **************************/
     /**************************************************************************/
-
-    QSignalMapper * editMapper = new QSignalMapper (this);
-    connect (editMapper, static_cast<void(QSignalMapper::*)(int)>(&QSignalMapper::mapped), game, &KGrGame::editActions);
-    tempMapper = editMapper;
-
     // Create a Level
     // Edit a Level...
     // --------------------------
@@ -380,9 +370,6 @@ void KGoldrunner::setupActions()
     actionCollection()->addAction (fullScreen->objectName(), fullScreen);
 
     // Other settings are handled by KGrGame.
-    QSignalMapper * settingMapper = new QSignalMapper (this);
-    connect (settingMapper, static_cast<void(QSignalMapper::*)(int)>(&QSignalMapper::mapped), game, &KGrGame::settings);
-    tempMapper = settingMapper;
 
 #ifdef KGAUDIO_BACKEND_OPENAL
     // Sound effects on/off
@@ -517,10 +504,6 @@ void KGoldrunner::setupActions()
 
     // Two-handed KB controls and alternate one-handed controls for the hero.
 
-    QSignalMapper * kbMapper = new QSignalMapper (this);
-    connect (kbMapper, static_cast<void(QSignalMapper::*)(int)>(&QSignalMapper::mapped), [&](int dirn) { game->kbControl(dirn); } );
-    tempMapper = kbMapper;
-
     // The actions for the movement keys are created but disabled.  This lets
     // keyPressEvent() come through, instead of a signal, while still allowing
     // Settings->Configure Keys to change the key mappings.  The keyPressEvent()
@@ -558,24 +541,20 @@ void KGoldrunner::setupActions()
     if (! addDebuggingShortcuts)
         return;
 
-    QSignalMapper * dbgMapper = new QSignalMapper (this);
-    connect (dbgMapper, static_cast<void(QSignalMapper::*)(int)>(&QSignalMapper::mapped), game, &KGrGame::dbgControl);
-    tempMapper = dbgMapper;
+    keyControlDebug (QStringLiteral("do_step"),      i18n ("Do a Step"), Qt::Key_Period, DO_STEP);
+    keyControlDebug (QStringLiteral("bug_fix"),      i18n ("Test Bug Fix"), Qt::Key_B, BUG_FIX);
+    keyControlDebug (QStringLiteral("show_positions"), i18n ("Show Positions"), Qt::Key_W, S_POSNS);
+    keyControlDebug (QStringLiteral("logging"),      i18n ("Start Logging"), Qt::Key_G, LOGGING);
+    keyControlDebug (QStringLiteral("show_hero"),    i18n ("Show Hero"), Qt::Key_E, S_HERO);
+    keyControlDebug (QStringLiteral("show_obj"),     i18n ("Show Object"), Qt::Key_Slash, S_OBJ);
 
-    keyControl (QStringLiteral("do_step"),      i18n ("Do a Step"), Qt::Key_Period, DO_STEP);
-    keyControl (QStringLiteral("bug_fix"),      i18n ("Test Bug Fix"), Qt::Key_B, BUG_FIX);
-    keyControl (QStringLiteral("show_positions"), i18n ("Show Positions"), Qt::Key_W, S_POSNS);
-    keyControl (QStringLiteral("logging"),      i18n ("Start Logging"), Qt::Key_G, LOGGING);
-    keyControl (QStringLiteral("show_hero"),    i18n ("Show Hero"), Qt::Key_E, S_HERO);
-    keyControl (QStringLiteral("show_obj"),     i18n ("Show Object"), Qt::Key_Slash, S_OBJ);
-
-    keyControl (QStringLiteral("show_enemy_0"), i18n ("Show Enemy") + QLatin1Char('0'), Qt::Key_0, ENEMY_0);
-    keyControl (QStringLiteral("show_enemy_1"), i18n ("Show Enemy") + QLatin1Char('1'), Qt::Key_1, ENEMY_1);
-    keyControl (QStringLiteral("show_enemy_2"), i18n ("Show Enemy") + QLatin1Char('2'), Qt::Key_2, ENEMY_2);
-    keyControl (QStringLiteral("show_enemy_3"), i18n ("Show Enemy") + QLatin1Char('3'), Qt::Key_3, ENEMY_3);
-    keyControl (QStringLiteral("show_enemy_4"), i18n ("Show Enemy") + QLatin1Char('4'), Qt::Key_4, ENEMY_4);
-    keyControl (QStringLiteral("show_enemy_5"), i18n ("Show Enemy") + QLatin1Char('5'), Qt::Key_5, ENEMY_5);
-    keyControl (QStringLiteral("show_enemy_6"), i18n ("Show Enemy") + QLatin1Char('6'), Qt::Key_6, ENEMY_6);
+    keyControlDebug (QStringLiteral("show_enemy_0"), i18n ("Show Enemy") + QLatin1Char('0'), Qt::Key_0, ENEMY_0);
+    keyControlDebug (QStringLiteral("show_enemy_1"), i18n ("Show Enemy") + QLatin1Char('1'), Qt::Key_1, ENEMY_1);
+    keyControlDebug (QStringLiteral("show_enemy_2"), i18n ("Show Enemy") + QLatin1Char('2'), Qt::Key_2, ENEMY_2);
+    keyControlDebug (QStringLiteral("show_enemy_3"), i18n ("Show Enemy") + QLatin1Char('3'), Qt::Key_3, ENEMY_3);
+    keyControlDebug (QStringLiteral("show_enemy_4"), i18n ("Show Enemy") + QLatin1Char('4'), Qt::Key_4, ENEMY_4);
+    keyControlDebug (QStringLiteral("show_enemy_5"), i18n ("Show Enemy") + QLatin1Char('5'), Qt::Key_5, ENEMY_5);
+    keyControlDebug (QStringLiteral("show_enemy_6"), i18n ("Show Enemy") + QLatin1Char('6'), Qt::Key_6, ENEMY_6);
 }
 
 QAction * KGoldrunner::gameAction (const QString & name,
@@ -592,8 +571,7 @@ QAction * KGoldrunner::gameAction (const QString & name,
     if (! key.isEmpty()) {
         actionCollection()->setDefaultShortcut(ga, key);
     }
-    connect (ga, &QAction::triggered, tempMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
-    tempMapper->setMapping (ga, code);
+    connect (ga, &QAction::triggered, this, [this, code] { game->gameActions(code); });
     return ga;
 }
 
@@ -607,8 +585,7 @@ QAction * KGoldrunner::editAction (const QString & name,
     ed->setText (text);
     ed->setToolTip (toolTip);
     ed->setWhatsThis (whatsThis);
-    connect (ed, &QAction::triggered, tempMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
-    tempMapper->setMapping (ed, code);
+    connect (ed, &QAction::triggered, this, [this, code] { game->editActions(code); });
     return ed;
 }
 
@@ -622,8 +599,7 @@ KToggleAction * KGoldrunner::settingAction (const QString & name,
     actionCollection()->addAction (name, s);
     s->setToolTip (toolTip);
     s->setWhatsThis (whatsThis);
-    connect (s, &QAction::triggered, tempMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
-    tempMapper->setMapping (s, code);
+    connect (s, &QAction::triggered, this, [this, code] { game->settings(code); });
     return s;
 }
 
@@ -634,14 +610,12 @@ KToggleAction * KGoldrunner::editToolbarAction (const QString & name,
                                                 const QString & toolTip,
                                                 const QString & whatsThis)
 {
-    int mapCode = code;
     KToggleAction * ed = new KToggleAction (text, this);
     actionCollection()->addAction (name, ed);
     ed->setIconText (shortText);
     ed->setToolTip (toolTip);
     ed->setWhatsThis (whatsThis);
-    connect (ed, &QAction::triggered, tempMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
-    tempMapper->setMapping (ed, mapCode);
+    connect (ed, &QAction::triggered, this, [this, code] { game->editToolbarActions(code); });
     return ed;
 }
 
@@ -661,8 +635,27 @@ void KGoldrunner::keyControl (const QString & name, const QString & text,
 	return;
     }
 
-    connect (a, &QAction::triggered, tempMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
-    tempMapper->setMapping (a, code);
+    connect (a, &QAction::triggered, this, [this, code] { game->kbControl(code); });
+    addAction (a);
+}
+
+void KGoldrunner::keyControlDebug (const QString & name, const QString & text,
+                              const QKeySequence & shortcut, const int code,
+                              const bool mover)
+{
+    QAction * a = actionCollection()->addAction (name);
+    a->setText (text);
+    actionCollection()->setDefaultShortcut(a, shortcut);
+    a->setAutoRepeat (false);		// Avoid repeats of signals by QAction.
+
+    // If this is a move-key, let keyPressEvent() through, instead of signal.
+    if (mover) {
+        a->setEnabled (false);
+	addAction (a);
+	return;
+    }
+
+    connect (a, &QAction::triggered, this, [this, code] { game->dbgControl(code); });
     addAction (a);
 }
 
@@ -923,10 +916,6 @@ bool KGoldrunner::queryClose()
 
 void KGoldrunner::setupEditToolbarActions()
 {
-    QSignalMapper * editToolbarMapper = new QSignalMapper (this);
-    connect (editToolbarMapper, static_cast<void(QSignalMapper::*)(int)>(&QSignalMapper::mapped), game, &KGrGame::editToolbarActions);
-    tempMapper = editToolbarMapper;
-
     QAction * ed = editAction (QStringLiteral("edit_hint"), EDIT_HINT,
                                i18n ("Edit Name/Hint"),
                                i18n ("Edit level name or hint"),
