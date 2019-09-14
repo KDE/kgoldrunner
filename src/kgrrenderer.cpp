@@ -213,7 +213,7 @@ bool KGrRenderer::hasBorder() const
 {
     QString s = m_setRenderer->theme()->customData(QStringLiteral("DrawCanvasBorder"), QStringLiteral("0"));
 
-    if (s == QStringLiteral("1"))
+    if (s == QLatin1Char('1'))
         return true;
     else
         return false;
@@ -308,7 +308,7 @@ int KGrRenderer::countFrames (const int index)
         count++;
     }
 
-    if ((count == 0) && (QLatin1String(keyTable[index].picKey) != QStringLiteral("brick"))) {
+    if ((count == 0) && (QLatin1String(keyTable[index].picKey) != QLatin1String("brick"))) {
 	return count;
     }
 

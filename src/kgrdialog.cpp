@@ -306,11 +306,11 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
     // Read the saved games into the list box.
     while (! gameText.atEnd()) {
         s = gameText.readLine();		// Read in one saved game.
-        pr = s.left (s.indexOf (QStringLiteral(" "), 0,
+        pr = s.left (s.indexOf(QLatin1Char(' '), 0,
                         Qt::CaseInsensitive));	// Get the game prefix.
         for (i = 0; i < imax; ++i) {		// Get the game name.
             if (gameList.at (i)->prefix == pr) {
-                s = s.insert (0,
+                s.insert (0,
                 gameList.at (i)->name.leftJustified (20, QLatin1Char(' '), true) + QLatin1Char(' '));
                 break;
             }

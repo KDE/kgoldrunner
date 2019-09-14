@@ -442,7 +442,7 @@ void KGrGame::initGame()
     // If he/she has never played before, set it to Tutorial, level 1.
     KConfigGroup gameGroup (KSharedConfig::openConfig(), "KDEGame");
     QString prevGamePrefix = gameGroup.readEntry ("GamePrefix", "tute");
-    int prevLevel          = gameGroup.readEntry (QStringLiteral("Level_") + prevGamePrefix, 1);
+    int prevLevel          = gameGroup.readEntry (QLatin1String("Level_") + prevGamePrefix, 1);
 
     //qCDebug(KGOLDRUNNER_LOG)<< "Config() Game and Level" << prevGamePrefix << prevLevel;
 
@@ -519,14 +519,14 @@ void KGrGame::initGame()
 bool KGrGame::getRecordingName (const QString & dir, const QString & pPrefix,
                                 QString & filename)
 {
-    QString recFile = dir + QStringLiteral("rec_") + pPrefix + QStringLiteral(".txt");
+    QString recFile = dir + QLatin1String("rec_") + pPrefix + QLatin1String(".txt");
     QFileInfo fileInfo (recFile);
     bool recOK = fileInfo.exists() && fileInfo.isReadable();
     filename = QString ();
 
     if (demoType == SOLVE) {
 	// Look for a solution-file name in User or System area.
-    QString solFile = dir + QStringLiteral("sol_") + pPrefix + QStringLiteral(".txt");
+    QString solFile = dir + QLatin1String("sol_") + pPrefix + QLatin1String(".txt");
 	fileInfo.setFile (solFile);
 	bool solOK = fileInfo.exists() && fileInfo.isReadable();
 	if (solOK) {
@@ -1569,7 +1569,7 @@ bool KGrGame::selectSavedGame (int & selectedGame, int & selectedLevel)
     selectedLevel = 0;
     if (! loadedData.isEmpty()) {
         pr = loadedData.mid (21, 7);			// Get the game prefix.
-        pr = pr.left (pr.indexOf (QStringLiteral(" "), 0, Qt::CaseInsensitive));
+        pr = pr.left (pr.indexOf(QLatin1Char(' '), 0, Qt::CaseInsensitive));
 
         for (int i = 0; i < gameList.count(); i++) {	// Find the game.
             if (gameList.at (i)->prefix == pr) {

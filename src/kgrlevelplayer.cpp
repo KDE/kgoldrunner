@@ -587,7 +587,7 @@ Direction KGrLevelPlayer::getEnemyDirection (int  enemyI, int enemyJ,
 
 bool KGrLevelPlayer::heroCaught (const int heroX, const int heroY)
 {
-    if (enemies.count() == 0) {
+    if (enemies.isEmpty()) {
         return false;
     }
     int enemyX, enemyY, pointsPerCell_1;

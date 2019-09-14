@@ -448,7 +448,7 @@ void KGrSLDialog::slGame()
         }
         // Else use the last level played in the selected game (from KConfig).
         else {
-            lev = gameGroup.readEntry (QStringLiteral("Level_") + myGameList.at (n)->prefix, 1);
+            lev = gameGroup.readEntry (QLatin1String("Level_") + myGameList.at (n)->prefix, 1);
             number->setValue (lev);			// Else use level 1.
         }
         break;

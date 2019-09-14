@@ -374,7 +374,7 @@ bool KGrEditor::moveLevelFile (int pGameIndex, int level)
     // Save the "fromN" file under a temporary name.
     filePath1 = getLevelFilePath (gameList.at (fromC), fromL);
     filePath2 = filePath1;
-    filePath2 = filePath2.append (QStringLiteral(".tmp"));
+    filePath2.append (QStringLiteral(".tmp"));
     if (! KGrGameIO::safeRename (view, filePath1, filePath2)) {
         return false;
     }
@@ -858,7 +858,7 @@ QString KGrEditor::getTitle()
 
 QString KGrEditor::getLevelFilePath (KGrGameData * gameData, int lev)
 {
-    QString filePath = userDataDir + QStringLiteral("levels/") + gameData->prefix +
+    QString filePath = userDataDir + QLatin1String("levels/") + gameData->prefix +
                        QString::number(lev).rightJustified(3, QLatin1Char('0')) + QStringLiteral(".grl");
     return (filePath);
 }

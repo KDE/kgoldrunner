@@ -274,7 +274,7 @@ QString KGrGameIO::getFilePath
         (const QString & dir, const QString & prefix, const int level)
 {
     QString filePath = ((level == 0) ? QStringLiteral("ende") : prefix);
-    filePath = dir + QStringLiteral("game_") + filePath + QStringLiteral(".txt");
+    filePath = dir + QLatin1String("game_") + filePath + QLatin1String(".txt");
     QFile test (filePath);
 
     // See if there is a game-file or "ENDE" screen in KGoldrunner 3 format.
@@ -289,7 +289,7 @@ QString KGrGameIO::getFilePath
     }
     else {
         QString num = QString::number (level).rightJustified (3, QLatin1Char('0'));
-        filePath = dir + QStringLiteral("levels/") + prefix + num + QStringLiteral(".grl");
+        filePath = dir + QLatin1String("levels/") + prefix + num + QLatin1String(".grl");
     }
 
     return (filePath);
@@ -300,7 +300,7 @@ char KGrGameIO::getALine (const bool kgr3, QByteArray & line)
     char c;
     line = "";
     while (openFile.getChar (&c)) {
-        line = line.append (c);
+        line.append (c);
         if (c == '\n') {
             break;
         }
