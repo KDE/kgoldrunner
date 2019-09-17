@@ -21,7 +21,7 @@
 #include "kgrglobals.h"
 
 #include <QObject>
-#include <QTime> // IDW
+#include <QElapsedTimer> // IDW
 
 class KGrLevelPlayer;
 class KGrLevelGrid;
@@ -136,7 +136,7 @@ protected:
 
     bool             leftRightSearch;	// KGoldrunner-rules enemy search-mode.
 
-    QTime            t; // IDW
+    QElapsedTimer            t; // IDW
 };
 
 

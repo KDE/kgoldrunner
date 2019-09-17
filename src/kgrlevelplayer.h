@@ -24,7 +24,7 @@
 #include <QObject>
 #include <QVarLengthArray>
 
-#include <QTime> // IDW testing
+#include <QElapsedTimer> // IDW testing
 
 class KGrTimer;
 class KGrLevelGrid;
@@ -466,7 +466,7 @@ private:
     void showEnemyState (int);	// Show enemy's co-ordinates and state.
 
     /// TODO - Remove these ...
-    QTime t; // IDW testing
+    QElapsedTimer t; // IDW testing
     int   T; // IDW testing
 };
 

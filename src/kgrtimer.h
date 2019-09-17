@@ -18,7 +18,7 @@
 #ifndef KGRTIMER_H
 #define KGRTIMER_H
 
-#include <QTime>
+#include <QElapsedTimer>
 #include <QTimer>
 
 class KGrTimer : public QObject
@@ -59,7 +59,7 @@ private Q_SLOTS:
     void internalSlot();
 
 private:
-    QTime    t;
+    QElapsedTimer    t;
     QTimer * ticker;
     int      tickTime;
     int      scaledTime;

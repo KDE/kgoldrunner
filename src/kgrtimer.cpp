@@ -22,7 +22,6 @@
 KGrTimer::KGrTimer (QObject * parent, int pTickTime, float pScale)
     :
     QObject      (parent),
-    t            (QTime()),
     ticker       (new QTimer (parent)),
     tickTime     (pTickTime),
     tickCount    (0),

@@ -21,7 +21,7 @@
 
 #include <QObject>
 #include <QVector>
-#include <QTime>
+#include <QElapsedTimer>
 
 #include <KgSound>
 
@@ -94,7 +94,7 @@ private:
     QVector<KgSound *> sounds;
     QVector<int>       startTime;	// Start times of timed sounds, else 0.
     bool               muted;
-    QTime              t;
+    QElapsedTimer              t;
 };
 
 #endif // KGRSOUNDS_H
