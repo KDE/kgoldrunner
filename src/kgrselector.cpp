@@ -317,8 +317,11 @@ void KGrSLDialog::setupWidgets()
 
     connect(games, &QTreeWidget::itemSelectionChanged, this, &KGrSLDialog::slGame);
 
+#if QT_VERSION < QT_VERSION_CHECK(5, 14, 0)
     connect(display, static_cast<void (QSpinBox::*)(const QString &)>(&QSpinBox::valueChanged), this, &KGrSLDialog::slUpdate);
-
+#else
+    connect(display, &QSpinBox::textChanged, this, &KGrSLDialog::slUpdate);
+#endif
     connect(number, &QScrollBar::valueChanged, this, &KGrSLDialog::slShowLevel);
 
     // Only enable name and hint dialog here if saving a new or edited level.
