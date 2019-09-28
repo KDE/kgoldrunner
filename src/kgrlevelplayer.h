@@ -441,7 +441,7 @@ private:
         int  digI;
         int  digJ;
         int  countdown;
-        int  startTime; // IDW testing
+        qint64  startTime; // IDW testing
     } DugBrick;
 
     QList <DugBrick *> dugBricks;

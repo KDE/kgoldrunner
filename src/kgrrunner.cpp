@@ -168,14 +168,14 @@ bool KGrRunner::setNextMovement (const char spriteType, const char cellType,
             dir = STAND;
             anim = currAnimation;
             interval = trapTime;
-            dbe1 "T %05d id %02d Captive at [%02d,%02d]\n",
+            dbe1 "T %05lld id %02d Captive at [%02d,%02d]\n",
                  t.elapsed(), spriteId, gridI, gridJ);
         }
         else {
             // The enemy can start climbing out after a cycle of captive-times.
             dir = UP;
             anim = CLIMB_U;
-            dbe1 "T %05d id %02d Start climb out at [%02d,%02d]\n",
+            dbe1 "T %05lld id %02d Start climb out at [%02d,%02d]\n",
                  t.elapsed(), spriteId, gridI, gridJ);
         }
     }
@@ -423,7 +423,7 @@ void KGrEnemy::run (const int scaledTime)
     if (s == CaughtInBrick) {
         releaseCell (gridI + deltaX, gridJ + deltaY);
         emit incScore (75);		// Killed: add to the player's score.
-        dbe1 "T %05d id %02d Died in brick at [%02d,%02d]\n",
+        dbe1 "T %05lld id %02d Died in brick at [%02d,%02d]\n",
              t.elapsed(), spriteId, gridI, gridJ);
         dieAndReappear();		// Move to a new (gridI, gridJ).
         reserveCell (gridI, gridJ);
@@ -433,7 +433,7 @@ void KGrEnemy::run (const int scaledTime)
     else if ((pointCtr == 1) && (currDirection == DOWN) &&
         (grid->cellType (gridI, gridJ + 1) == HOLE)) {
         // Enemy is starting to fall into a hole.
-        dbe1 "T %05d id %02d Mark hole [%02d,%02d] as used\n",
+        dbe1 "T %05lld id %02d Mark hole [%02d,%02d] as used\n",
              t.elapsed(), spriteId, gridI, gridJ+1);
         grid->changeCellAt (gridI, gridJ + 1, USEDHOLE);
         dropGold();
@@ -444,7 +444,7 @@ void KGrEnemy::run (const int scaledTime)
     // Wait till end of cell.
     else if (s == MidCell) {
         if (grid->cellType (gridI, gridJ) == USEDHOLE) {
-            dbe1 "T %05d id %02d Stay captive at [%02d,%02d] count %d\n",
+            dbe1 "T %05lld id %02d Stay captive at [%02d,%02d] count %d\n",
                  t.elapsed(), spriteId, gridI, gridJ, pointCtr);
         }
         return;
@@ -486,7 +486,7 @@ void KGrEnemy::run (const int scaledTime)
         falling = fallingState;
         if (falling) {
             t.restart();
-            dbe1 "T %05d id %02d Start falling\n", t.elapsed(), spriteId);
+            dbe1 "T %05lld id %02d Start falling\n", t.elapsed(), spriteId);
         }
     }
 
