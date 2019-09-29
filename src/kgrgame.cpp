@@ -1480,7 +1480,7 @@ void KGrGame::saveGame()		// Save game ID, score and level.
     QString saved;
     QString day;
     day = QLocale().dayName(today.dayOfWeek(), QLocale::ShortFormat);
-    saved = saved.sprintf
+    saved = QString::asprintf
                 ("%-6s %03d %03ld %7ld    %s %04d-%02d-%02d %02d:%02d\n",
                 qPrintable(prefix), level, lives, startScore,
                 qPrintable(day),
@@ -1752,7 +1752,7 @@ void KGrGame::checkHighScore()
     QDate today = QDate::currentDate();
     QString hsDate;
     QString day = QLocale().dayName(today.dayOfWeek(), QLocale::ShortFormat);
-    hsDate = hsDate.sprintf
+    hsDate = QString::asprintf
                 ("%s %04d-%02d-%02d",
                 qPrintable(day),
                 today.year(), today.month(), today.day());
