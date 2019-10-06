@@ -62,6 +62,8 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 
+#include <chrono>
+
 #include "kgoldrunner_debug.h"
 
 // TODO - Can we change over to KScoreDialog?
@@ -115,7 +117,9 @@ KGrGame::KGrGame (KGrView * theView,
     connect(dyingTimer, &QTimer::timeout, this, &KGrGame::finalBreath);
 
     // Initialise random number generator.
-    randomGen = new KRandomSequence (std::time(nullptr));
+    const auto tse = std::chrono::system_clock::now().time_since_epoch();
+    const long int seed = std::chrono::duration_cast<std::chrono::seconds>(tse).count();
+    randomGen = new KRandomSequence (seed);
     //qCDebug(KGOLDRUNNER_LOG) << "RANDOM NUMBER GENERATOR INITIALISED";
 
     scene->setReplayMessage (i18n("Click anywhere to begin live play"));
