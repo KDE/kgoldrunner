@@ -61,7 +61,7 @@ int main (int argc, char **argv)
     // See if we are starting with session management.
     if (app.isSessionRestored()) {
         // New RESTORE (KGrController);
-        RESTORE (KGoldrunner);
+        kRestoreMainWindows<KGoldrunner>();
     }
     else {
         // New KGrController * controller = new KGrController();
