@@ -44,7 +44,7 @@ int main (int argc, char **argv)
                      QStringLiteral(KGOLDRUNNER_VERSION_STRING), i18n (description),
                      KAboutLicense::GPL,
                      i18n ("(C) 2003 Ian Wadham and Marco Krüger"),
-                      QStringLiteral("http://games.kde.org/kgoldrunner") );
+                      QStringLiteral("https://kde.org/applications/games/org.kde.kgoldrunner") );
     addCredits (about);
     about.setOrganizationDomain("kde.org");
 
