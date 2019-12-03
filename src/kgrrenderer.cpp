@@ -154,7 +154,7 @@ KGameRenderedItem * KGrRenderer::getTileItem
     KGameRenderedItem * tile =
                 new KGameRenderedItem ((keyTable[index].picSource == Set) ?
                                        m_setRenderer : m_actorsRenderer, key);
-    tile->setAcceptedMouseButtons (nullptr);
+    tile->setAcceptedMouseButtons (Qt::NoButton);
     m_scene->addItem (tile);
     return tile;
 }
@@ -170,7 +170,7 @@ KGrSprite * KGrRenderer::getSpriteItem (const char picType, const int tickTime)
     KGrSprite * sprite = new KGrSprite ((keyTable[index].picSource == Set) ?
                                         m_setRenderer : m_actorsRenderer,
                                         key, picType, tickTime);
-    sprite->setAcceptedMouseButtons (nullptr);
+    sprite->setAcceptedMouseButtons (Qt::NoButton);
     // We cannot add the sprite to the scene yet: it needs a frame and size.
     return sprite;
 }
@@ -185,7 +185,7 @@ KGameRenderedItem * KGrRenderer::getBackground
 
     QString key = getBackgroundKey (level);
     KGameRenderedItem * background = new KGameRenderedItem (m_setRenderer, key);
-    background->setAcceptedMouseButtons (nullptr);
+    background->setAcceptedMouseButtons (Qt::NoButton);
     m_scene->addItem (background);
 
     return background;
@@ -204,7 +204,7 @@ KGameRenderedItem * KGrRenderer::getBorderItem
     }
 
     KGameRenderedItem * item = new KGameRenderedItem (m_setRenderer, spriteKey);
-    item->setAcceptedMouseButtons (nullptr);
+    item->setAcceptedMouseButtons (Qt::NoButton);
     m_scene->addItem (item);
     return item;
 }
