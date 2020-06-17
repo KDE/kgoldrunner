@@ -32,7 +32,6 @@
   <name xml:lang="sv">Kgoldrunner</name>
   <name xml:lang="tr">KGoldrunner</name>
   <name xml:lang="uk">Золотошукач</name>
-  <name xml:lang="x-test">xxKGoldrunnerxx</name>
   <name xml:lang="zh-CN">KGoldrunner</name>
   <name xml:lang="zh-TW">KGoldrunner</name>
   <summary>Hunt Gold, Dodge Enemies and Solve Puzzles</summary>
@@ -63,7 +62,6 @@
   <summary xml:lang="sv">Leta guld, undvik fiender och lös problem</summary>
   <summary xml:lang="tr">Altın Avla, Düşmanlarını Atlat ve Bulmacaları Çöz</summary>
   <summary xml:lang="uk">Шукайте золото, уникайте ворогів і розгадуйте загадки</summary>
-  <summary xml:lang="x-test">xxHunt Gold, Dodge Enemies and Solve Puzzlesxx</summary>
   <summary xml:lang="zh-CN">淘金，避敌，以及解谜</summary>
   <description>
     <p>
@@ -97,7 +95,6 @@
     <p xml:lang="sv">Kgoldrunner är ett äventyrsspel där hjälten springer genom en labyrint, klättrar på stegar, gräver hål och undviker fiender för att samla in alla guldklimpar och fly till nästa nivå. Fienderna är också ute efter guldet. Vad värre är, de är också är ute efter dig!</p>
     <p xml:lang="tr">KGoldrunner, kahramanımızın labirentte dolaştığı, tüm altın külçelerini toplamak ve bir sonraki seviyeye çıkmak için merdiven tırmandığı, delik açmtığı ve düşman avı yaptığı bir kaçış aksiyon oyunudur. Düşmanların da altının peşinde. Daha da kötüsü, senin peşindeler!</p>
     <p xml:lang="uk">«Золотошукач» — рухлива гра, де герой подорожує лабіринтом, видирається на стіни, копає ями та втікає від ворогів, збираючи при цьому золоті самородки і переходячи з рівня на рівень. Окрім вашого героя, за золотом полюють і вороги. Вони також не проти звести вашого героя з цього світу!</p>
-    <p xml:lang="x-test">xxKGoldrunner is an action game where the hero runs through a maze, climbs stairs, dig holes and dodges enemies in order to collect all the gold nuggets and escape to the next level. Your enemies are also after the gold. Worse still, they are after you!.xx</p>
     <p xml:lang="zh-CN">KGoldrunner 是一个动作游戏，主角穿过迷宫，爬楼梯，挖洞和躲闪敌人，以收集所有的金块并逃生到下一关。您的敌人也在追金。更糟的是，他们在追您！</p>
     <p>Features:</p>
     <p xml:lang="ca">Característiques:</p>
@@ -128,7 +125,6 @@
     <p xml:lang="sv">Funktioner:</p>
     <p xml:lang="tr">Özellikler:</p>
     <p xml:lang="uk">Можливості:</p>
-    <p xml:lang="x-test">xxFeatures:xx</p>
     <p xml:lang="zh-CN">功能：</p>
     <p xml:lang="zh-TW">功能：</p>
     <ul>
@@ -159,7 +155,6 @@
       <li xml:lang="sv">Har teman</li>
       <li xml:lang="tr">Temalaştırılabilir</li>
       <li xml:lang="uk">Зміна тем</li>
-      <li xml:lang="x-test">xxThemeablexx</li>
       <li xml:lang="zh-CN">可主题化</li>
       <li>Hundreds of levels</li>
       <li xml:lang="ca">Centenars de nivells</li>
@@ -189,7 +184,6 @@
       <li xml:lang="sv">Hundratals nivåer</li>
       <li xml:lang="tr">Yüzlerce seviye</li>
       <li xml:lang="uk">Сотні рівнів</li>
-      <li xml:lang="x-test">xxHundreds of levelsxx</li>
       <li xml:lang="zh-CN">上百关卡</li>
       <li>Level-editor</li>
       <li xml:lang="ca">Editor de nivells</li>
@@ -219,7 +213,6 @@
       <li xml:lang="sv">Nivåeditor</li>
       <li xml:lang="tr">Seviye düzenleyici</li>
       <li xml:lang="uk">Редактор рівнів</li>
-      <li xml:lang="x-test">xxLevel-editorxx</li>
       <li xml:lang="zh-CN">关卡编辑器</li>
       <li>Two modes for the enemies: classical and KGoldrunner-mode, in KGoldrunner-mode they are
           more intelligent, in the classical mode it is easier to fool them</li>
@@ -249,7 +242,6 @@
       <li xml:lang="sv">Två typer av fiender: klassiska och Kgoldrunner-regler. Med Kgoldrunner-regler är de intelligentare, med klassiska regler är det enklare att lura dem.</li>
       <li xml:lang="tr">Düşmanlar için iki kip: Klasik ve KGoldrunner modu, KGoldrunner modunda daha zeki, klasik modda onları kandırmak daha kolaydır</li>
       <li xml:lang="uk">Два режими поведінки ворогів: класичний і режим «Золотошукача». У режимі «Золотошукача» вороги кмітливіші, їх не так просто обманути, як у класичному режимі.</li>
-      <li xml:lang="x-test">xxTwo modes for the enemies: classical and KGoldrunner-mode, in KGoldrunner-mode they are more intelligent, in the classical mode it is easier to fool themxx</li>
       <li xml:lang="zh-CN">两种模式的敌人：经典模式和 KGoldrunner 模式，在 KGoldrunner 模式，他们更聪明，而在经典模式，则更容易愚弄他们</li>
       <li>Very very difficult levels</li>
       <li xml:lang="ca">Nivells molt molt difícils</li>
@@ -279,7 +271,6 @@
       <li xml:lang="sv">Mycket mycket svåra nivåer</li>
       <li xml:lang="tr">Aşırı zor seviyeler</li>
       <li xml:lang="uk">Дуже-дуже складні рівні</li>
-      <li xml:lang="x-test">xxVery very difficult levelsxx</li>
       <li xml:lang="zh-CN">非常非常难的关卡</li>
       <li>Keyboard or mouse control</li>
       <li xml:lang="ca">Control amb el teclat o el ratolí</li>
@@ -309,7 +300,6 @@
       <li xml:lang="sv">Tangentbords- eller musstyrning</li>
       <li xml:lang="tr">Klavye veya fare kontrolü</li>
       <li xml:lang="uk">Керування за допомогою клавіатури або миші</li>
-      <li xml:lang="x-test">xxKeyboard or mouse controlxx</li>
       <li xml:lang="zh-CN">键盘或鼠标控制</li>
       <li>Savable games</li>
       <li xml:lang="ca">Les partides es poden desar</li>
@@ -339,7 +329,6 @@
       <li xml:lang="sv">Spelen går att spara</li>
       <li xml:lang="tr">Kaydedilebilir oyunlar</li>
       <li xml:lang="uk">Можливість збереження гри</li>
-      <li xml:lang="x-test">xxSavable gamesxx</li>
       <li xml:lang="zh-CN">可保存游戏</li>
     </ul>
   </description>
@@ -370,7 +359,6 @@
       <caption xml:lang="sl">Igra KGoldrunner</caption>
       <caption xml:lang="sv">Spela Kgoldrunner</caption>
       <caption xml:lang="uk">Гра у Золотошукача</caption>
-      <caption xml:lang="x-test">xxPlaying KGoldrunnerxx</caption>
       <caption xml:lang="zh-CN">正在玩 KGoldrunner</caption>
       <caption xml:lang="zh-TW">KGoldrunner 遊玩畫面</caption>
       <image>https://cdn.kde.org/screenshots/kgoldrunner/kgoldrunner.png</image>
