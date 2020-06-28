@@ -1853,36 +1853,6 @@ runners, multiple backgrounds and several other ideas.</para>
 
 </chapter>
 
-<appendix id="installation">
-<title>Installation</title>
-
-<sect1 id="how-to-obtain-kgoldrunner">
-<title>How to Obtain &kgoldrunner;</title>
-&install.intro.documentation;
-</sect1>
-
-<sect1 id="compilation-and-installation">
-<title>Compilation and Installation</title>
-&install.compile.documentation;
-</sect1>
-
-</appendix>
-
-<appendix id="porting-kgoldrunner">
-<title>Porting &kgoldrunner; to Other Platforms</title>
-
-<para>&kgoldrunner; is written in C++, using &Linux; and the free-software
-version of the portable &Qt; object and &GUI; library.  The current version
-can be compiled and run with &kde; 4 and &Qt; 4.</para>
-
-<para>&kgoldrunner; depends on the &kde; libraries (kdelibs and kdegames),
-which have been ported to other platforms, and it is possible to obtain
-Open Source editions of &Qt; 4 for other platforms, so in principle it
-should be possible to compile, build and run &kgoldrunner; on platforms
-other than &Linux;.</para>
-
-</appendix>
-
 </book>
 
 <!--
