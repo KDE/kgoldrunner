@@ -89,7 +89,7 @@
     <p xml:lang="pt">O KGoldrunner é um jogo de acção onde o herói corre por um labirinto, sobe escadas, escava buracos e foge dos inimigos para conseguir recolher todas as pepitas de ouro e escapar para o nível seguinte. Os seus inimigos também estão atrás do ouro. Pior ainda, estão atrás de si!.</p>
     <p xml:lang="pt-BR">KGoldrunner é um jogo de ação onde o herói corre por um labirinto, sobe escadas, escava buracos e foge dos inimigos para conseguir coletar todas as pepitas de ouro e escapar para o nível seguinte. Seus inimigos também estão atrás do ouro. Pior ainda, estão atrás de você!</p>
     <p xml:lang="sk">KGoldrunner je akčná hra, kde hrdina beží cez bludisko, chodí po schodoch, kope diery a vyhýba sa nepriateľom, aby nazbieral všetky zlat nugety a prešiel do ďalšej úrovne. Vaši nepriatelia idú tiež po zlate. Čo je horšie, idú aj po tebe!</p>
-    <p xml:lang="sl">KGoldrunner je akcijska igra, v kateri junak teče skozi labirint, pleza po lestvah, koplje luknje in se izmika sovražnikom, pri tem pa poskuša pobrati vse zlate kepe in pobegniti v naslednjo stopnjo. Tudi vaši nasprotniki želijo zlato, še huje pa je to, da želijo tudi vašo smrt!</p>
+    <p xml:lang="sl">KGoldrunner je akcijska igra, v kateri junak teče skozi labirint, pleza po lestvah, koplje luknje in se izmika sovražnikom, pri tem pa poskuša pobrati vse zlate kepe in pobegniti v naslednjo stopnjo. Tudi vaši nasprotniki želijo zlato. A še huje je to, da vam strežejo po življenju!.</p>
     <p xml:lang="sr">К‑златобојац је акциона игра у којој јунак трчи кроз лавиринт, пење се уз степенице, копа рупе и избегава непријатеље како био се докопао свих златних груменова и побегао на наредни ниво. И ваши непријатељи јуре за златом, и, још горе, за вама!</p>
     <p xml:lang="sr-Latn">K‑zlatobojac je akciona igra u kojoj junak trči kroz lavirint, penje se uz stepenice, kopa rupe i izbegava neprijatelje kako bio se dokopao svih zlatnih grumenova i pobegao na naredni nivo. I vaši neprijatelji jure za zlatom, i, još gore, za vama!</p>
     <p xml:lang="sr-ijekavian">К‑златобојац је акциона игра у којој јунак трчи кроз лавиринт, пење се уз степенице, копа рупе и избегава непријатеље како био се докопао свих златних груменова и побегао на наредни ниво. И ваши непријатељи јуре за златом, и, још горе, за вама!</p>
@@ -367,6 +367,7 @@
       <caption xml:lang="pt">A jogar ao KGoldrunner</caption>
       <caption xml:lang="pt-BR">Jogando o KGoldrunner</caption>
       <caption xml:lang="sk">Hranie KGoldrunner</caption>
+      <caption xml:lang="sl">Igra KGoldrunner</caption>
       <caption xml:lang="sv">Spela Kgoldrunner</caption>
       <caption xml:lang="uk">Гра у Золотошукача</caption>
       <caption xml:lang="x-test">xxPlaying KGoldrunnerxx</caption>
