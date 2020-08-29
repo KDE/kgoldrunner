@@ -41,5 +41,5 @@ install( FILES egypt/egypt_kgr.svgz egypt/actors.svgz
                egypt/egypt.png
                DESTINATION ${KDE_INSTALL_DATADIR}/kgoldrunner/themes/egypt )
 
-install( FILES kgoldrunner.knsrc  DESTINATION  ${KDE_INSTALL_CONFDIR} )
+install( FILES kgoldrunner.knsrc  DESTINATION  ${KDE_INSTALL_DATADIR}/knsrcfiles )
 
