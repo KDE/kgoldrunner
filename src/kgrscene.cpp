@@ -90,7 +90,7 @@ KGrScene::KGrScene      (KGrView * view)
     m_pauseResumeText = new QGraphicsSimpleTextItem();
     addItem (m_pauseResumeText);
 
-    m_fadingTimeLine->setCurveShape (QTimeLine::EaseOutCurve);
+    m_fadingTimeLine->setEasingCurve(QEasingCurve::OutCurve);
     m_fadingTimeLine->setUpdateInterval (50);
     connect(m_fadingTimeLine, &QTimeLine::valueChanged, this, &KGrScene::drawSpotlight);
     connect(m_fadingTimeLine, &QTimeLine::finished, this, &KGrScene::fadeFinished);
