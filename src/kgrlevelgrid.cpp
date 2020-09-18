@@ -201,7 +201,7 @@ void KGrLevelGrid::placeHiddenLadders()
         int j = offset / width;
         changeCellAt (i, j, LADDER);
     }
-    emit showHiddenLadders (hiddenLadders, width);
+    Q_EMIT showHiddenLadders (hiddenLadders, width);
     hiddenLadders.clear();
 }
 

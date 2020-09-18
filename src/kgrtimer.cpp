@@ -55,7 +55,7 @@ void KGrTimer::step()
 {
     tickCount++;
     expectedTime = expectedTime + tickTime;
-    emit tick (false, scaledTime);
+    Q_EMIT tick (false, scaledTime);
 }
 
 void KGrTimer::internalSlot()
@@ -70,7 +70,7 @@ void KGrTimer::internalSlot()
     while (timeOnClock > (expectedTime + halfTick)) {
         tickCount++;
         expectedTime = expectedTime + tickTime;
-        emit tick ((timeOnClock >= (expectedTime + tickTime)), scaledTime);
+        Q_EMIT tick ((timeOnClock >= (expectedTime + tickTime)), scaledTime);
     }
 }
 

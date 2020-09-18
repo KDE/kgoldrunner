@@ -255,7 +255,7 @@ HeroStatus KGrHero::run (const int scaledTime)
         int step = ((currAnimation == RUN_R) || (currAnimation == RUN_L)) ?
                     StepSound : ClimbSound;
         if ((s == EndCell) || (step == ClimbSound)) {
-            emit soundSignal (step);
+            Q_EMIT soundSignal (step);
         }
     }
 
@@ -268,12 +268,12 @@ HeroStatus KGrHero::run (const int scaledTime)
 
     if (cellType == NUGGET) {
         nuggets = levelPlayer->runnerGotGold (spriteId, gridI, gridJ, true);
-        emit incScore (250);		// Add to the human player's score.
+        Q_EMIT incScore (250);		// Add to the human player's score.
         if (nuggets > 0) {
-            emit soundSignal (GoldSound);
+            Q_EMIT soundSignal (GoldSound);
         }
         else {
-            emit soundSignal (LadderSound);
+            Q_EMIT soundSignal (LadderSound);
         }
     }
 
@@ -282,7 +282,7 @@ HeroStatus KGrHero::run (const int scaledTime)
     bool newFallingState = setNextMovement (HERO, cellType, nextDirection,
                                             nextAnimation, interval);
     if (newFallingState != falling) {
-        emit soundSignal (FallSound, newFallingState);	// Start/stop falling.
+        Q_EMIT soundSignal (FallSound, newFallingState);	// Start/stop falling.
         falling = newFallingState;
     }
     timeLeft += interval;
@@ -301,7 +301,7 @@ HeroStatus KGrHero::run (const int scaledTime)
     deltaY = movement [nextDirection][Y];
 
     // Start the running animation (repeating).
-    emit startAnimation (spriteId, true, gridI, gridJ,
+    Q_EMIT startAnimation (spriteId, true, gridI, gridJ,
                          (interval * pointsPerCell * TickTime) / scaledTime,
                          nextDirection, nextAnimation);
     currAnimation = nextAnimation;
@@ -366,13 +366,13 @@ bool KGrHero::dig (const Direction diggingDirection, int & i, int & j)
                          << "dirn" << currDirection << "brick at" << i << j
                          << "heroMoves" << ((int) OK) << "canStand" << canStand
                          << "enemyUnder" << enemyUnder;
-                emit invalidDig();	// Issue warning re dig while falling.
+                Q_EMIT invalidDig();	// Issue warning re dig while falling.
                 result = false;
             }
         }
     }
     if (result) {
-        emit soundSignal (DigSound);
+        Q_EMIT soundSignal (DigSound);
     }
 
     return result;	// Tell the levelPlayer whether & where to open a hole.
@@ -422,7 +422,7 @@ void KGrEnemy::run (const int scaledTime)
     // Die if a brick has closed over us.
     if (s == CaughtInBrick) {
         releaseCell (gridI + deltaX, gridJ + deltaY);
-        emit incScore (75);		// Killed: add to the player's score.
+        Q_EMIT incScore (75);		// Killed: add to the player's score.
         dbe1 "T %05lld id %02d Died in brick at [%02d,%02d]\n",
              t.elapsed(), spriteId, gridI, gridJ);
         dieAndReappear();		// Move to a new (gridI, gridJ).
@@ -437,7 +437,7 @@ void KGrEnemy::run (const int scaledTime)
              t.elapsed(), spriteId, gridI, gridJ+1);
         grid->changeCellAt (gridI, gridJ + 1, USEDHOLE);
         dropGold();
-        emit incScore (75);		// Trapped: add to the player's score.
+        Q_EMIT incScore (75);		// Trapped: add to the player's score.
         return;
     }
 
@@ -535,7 +535,7 @@ void KGrEnemy::run (const int scaledTime)
     }
 
     // Start the running animation (repeating).
-    emit startAnimation (spriteId, true, gridI, gridJ,
+    Q_EMIT startAnimation (spriteId, true, gridI, gridJ,
                          (interval * pointsPerCell * TickTime) / scaledTime,
                          nextDirection, nextAnimation);
     currAnimation = nextAnimation;

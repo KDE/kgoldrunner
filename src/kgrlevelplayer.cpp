@@ -156,18 +156,18 @@ void KGrLevelPlayer::init (KGrView * view,
 
             // If the hero is here, leave the tile empty.
             if (type == HERO) {
-                emit paintCell (i, j, FREE);
+                Q_EMIT paintCell (i, j, FREE);
             }
 
             // If an enemy is here, count him and leave the tile empty.
             else if (type == ENEMY) {
                 enemyCount++;
-                emit paintCell (i, j, FREE);
+                Q_EMIT paintCell (i, j, FREE);
             }
 
             // Or, just paint this tile.
             else {
-                emit paintCell (i, j, type);
+                Q_EMIT paintCell (i, j, type);
             }
         }
     }
@@ -184,12 +184,12 @@ void KGrLevelPlayer::init (KGrView * view,
                 if (hero == nullptr) {
                     targetI = i;
                     targetJ = j;
-                    heroId  = emit makeSprite (HERO, i, j);
+                    heroId  = Q_EMIT makeSprite (HERO, i, j);
                     hero    = new KGrHero (this, grid, i, j, heroId, rules);
                     hero->setNuggets (nuggets);
                     hero->setDigWhileFalling (recording->digWhileFalling);
                     if ((controlMode == MOUSE) || (controlMode == LAPTOP)) {
-                        emit setMousePos (targetI, targetJ);
+                        Q_EMIT setMousePos (targetI, targetJ);
                     }
                     grid->changeCellAt (i, j, FREE);	// Hero now a sprite.
                 }
@@ -203,7 +203,7 @@ void KGrLevelPlayer::init (KGrView * view,
             char type = grid->cellType (i, j);
             if (type == ENEMY) {
                 KGrEnemy * enemy;
-                int id = emit makeSprite (ENEMY, i, j);
+                int id = Q_EMIT makeSprite (ENEMY, i, j);
                 enemy = new KGrEnemy (this, grid, i, j, id, rules);
                 enemies.append (enemy);
                 grid->changeCellAt (i, j, FREE);	// Enemy now a sprite.
@@ -270,8 +270,8 @@ void KGrLevelPlayer::startDigging (Direction diggingDirection)
         grid->changeCellAt (digI, digJ, HOLE);
 
         // Start the brick-opening animation (non-repeating).
-        int id = emit makeSprite (BRICK, digI, digJ);
-        emit startAnimation (id, false, digI, digJ,
+        int id = Q_EMIT makeSprite (BRICK, digI, digJ);
+        Q_EMIT startAnimation (id, false, digI, digJ,
                         (digOpeningCycles * digCycleTime), STAND, OPEN_BRICK);
 
         DugBrick * thisBrick = new DugBrick;
@@ -295,7 +295,7 @@ void KGrLevelPlayer::processDugBricks (const int scaledTime)
             dugBrick->cycleTimeLeft += digCycleTime;
             if (--dugBrick->countdown == digClosingCycles) {
                 // Start the brick-closing animation (non-repeating).
-                emit startAnimation (dugBrick->id, false,
+                Q_EMIT startAnimation (dugBrick->id, false,
                                      dugBrick->digI, dugBrick->digJ,
                                      (digClosingCycles * digCycleTime),
                                      STAND, CLOSE_BRICK);
@@ -306,7 +306,7 @@ void KGrLevelPlayer::processDugBricks (const int scaledTime)
             }
             if (dugBrick->countdown <= 0) {
                 // Dispose of the dug brick and remove it from the list.
-                emit deleteSprite (dugBrick->id);
+                Q_EMIT deleteSprite (dugBrick->id);
                 delete dugBrick;
                 iterator.remove();
             }
@@ -317,7 +317,7 @@ void KGrLevelPlayer::processDugBricks (const int scaledTime)
 void KGrLevelPlayer::prepareToPlay()
 {
     if ((controlMode == MOUSE) || (controlMode == LAPTOP)) {
-        emit setMousePos (targetI, targetJ);
+        Q_EMIT setMousePos (targetI, targetJ);
     }
     playState = Ready;
 }
@@ -705,7 +705,7 @@ void KGrLevelPlayer::unstackEnemy (const int spriteId,
 void KGrLevelPlayer::tick (bool missed, int scaledTime)
 {
     int i, j;
-    emit getMousePos (i, j);
+    Q_EMIT getMousePos (i, j);
     if (i == -2) {
         return;         // The KGoldRunner window is inactive.
     }
@@ -762,7 +762,7 @@ void KGrLevelPlayer::tick (bool missed, int scaledTime)
         timer->pause();
 
         // Queued connection ensures KGrGame slot runs AFTER return from here.
-        emit endLevel (status);
+        Q_EMIT endLevel (status);
         //qCDebug(KGOLDRUNNER_LOG) << "END OF LEVEL";
         return;
     }
@@ -771,7 +771,7 @@ void KGrLevelPlayer::tick (bool missed, int scaledTime)
         enemy->run (scaledTime);
     }
 
-    emit animation (missed);
+    Q_EMIT animation (missed);
 }
 
 int KGrLevelPlayer::runnerGotGold (const int  spriteId,
@@ -790,7 +790,7 @@ int KGrLevelPlayer::runnerGotGold (const int  spriteId,
     if (! lost) {
         grid->gotGold (i, j, hasGold);		// Record pickup/drop on grid.
     }
-    emit gotGold (spriteId, i, j, hasGold, lost); // Erase/show gold on screen.
+    Q_EMIT gotGold (spriteId, i, j, hasGold, lost); // Erase/show gold on screen.
 
     // If hero got gold, score, maybe show hidden ladders, maybe end the level.
     if ((spriteId == heroId) || lost) {
@@ -905,7 +905,7 @@ bool KGrLevelPlayer::doRecordedMove()
         if ((code == END_CODE) || (code == 0)) {
             dbe2 "T %04d recIndex %03d PLAY - END of recording\n",
                  T, recIndex);
-            emit endLevel (UNEXPECTED_END);
+            Q_EMIT endLevel (UNEXPECTED_END);
             return false;
         }
 
@@ -1000,7 +1000,7 @@ bool KGrLevelPlayer::doRecordedMove()
             if (code == (ACTION_CODE + KILL_HERO)) {
                 dbe2 "T %04d recIndex %03d PLAY kill-hero code %d\n",
                      T, recIndex, code);
-                emit endLevel (DEAD);
+                Q_EMIT endLevel (DEAD);
                 return false;
             }
         }
@@ -1104,7 +1104,7 @@ void KGrLevelPlayer::interruptPlayback()
 // End debug stuff.
 
     playback = false;
-    emit interruptDemo();
+    Q_EMIT interruptDemo();
     // dbk << "INTERRUPT - emit interruptDemo();";
 }
 
@@ -1114,7 +1114,7 @@ void KGrLevelPlayer::killHero()
         // Record that KILL_HERO is how the level ended.
         record (1, ACTION_CODE + KILL_HERO);
 
-        emit endLevel (DEAD);
+        Q_EMIT endLevel (DEAD);
         //qCDebug(KGOLDRUNNER_LOG) << "END OF LEVEL";
     }
 }

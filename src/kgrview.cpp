@@ -44,17 +44,17 @@ void KGrView::resizeEvent (QResizeEvent *)
 
 void KGrView::mousePressEvent (QMouseEvent * mouseEvent)
 {
-    emit mouseClick (mouseEvent->button());
+    Q_EMIT mouseClick (mouseEvent->button());
 }
 
 void KGrView::mouseDoubleClickEvent (QMouseEvent * mouseEvent)
 {
-    emit mouseClick (mouseEvent->button());
+    Q_EMIT mouseClick (mouseEvent->button());
 }
 
 void KGrView::mouseReleaseEvent (QMouseEvent * mouseEvent)
 {
-    emit mouseLetGo (mouseEvent->button());
+    Q_EMIT mouseLetGo (mouseEvent->button());
 }
 
 

@@ -40,6 +40,10 @@ include(KDECMakeSettings)
 include(ECMAddAppIcon)
 include(ECMQtDeclareLoggingCategory)
 include(ECMSetupVersion)
+
+add_definitions(
+    -DQT_NO_KEYWORDS
+)
 if (${KF5Config_VERSION} STRGREATER "5.56.0")
         add_definitions(-DQT_NO_FOREACH)
         MESSAGE(STATUS "compile without foreach")

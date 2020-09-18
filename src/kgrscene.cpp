@@ -204,7 +204,7 @@ void KGrScene::redrawScene ()
 
     if (redrawToolbar) {
         m_toolbarTileSize = m_tileSize;	// If game is in edit mode, KGoldrunner
-        emit redrawEditToolbar();	// object redraws the editToolbar.
+        Q_EMIT redrawEditToolbar();	// object redraws the editToolbar.
     }
 }
 

@@ -875,7 +875,7 @@ void KGrEditor::doEdit (int button)
 
     // Mouse button down: start making changes.
     int i, j;
-    emit getMousePos (i, j);
+    Q_EMIT getMousePos (i, j);
     qCDebug(KGOLDRUNNER_LOG) << "Button" << button << "at" << i << j;
 
     switch (button) {
@@ -906,7 +906,7 @@ void KGrEditor::tick()
     if (paintEditObj || paintAltObj) {
 
         int i, j;
-        emit getMousePos (i, j);
+        Q_EMIT getMousePos (i, j);
 
         // Check if the mouse has moved.
         if ((i != oldI) || (j != oldJ)) {
@@ -926,7 +926,7 @@ void KGrEditor::endEdit (int button)
 
     // Mouse button released: finish making changes.
     int i, j;
-    emit getMousePos (i, j);
+    Q_EMIT getMousePos (i, j);
 
     switch (button) {
     case Qt::LeftButton:

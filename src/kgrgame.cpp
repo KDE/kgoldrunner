@@ -276,7 +276,7 @@ void KGrGame::editActions (const int action)
         // If there is no editor running, start one.
         freeze (ProgramPause, true);
         editor = new KGrEditor (view, systemDataDir, userDataDir, gameList);
-        emit setEditMenu (true);	// Enable edit menu items and toolbar.
+        Q_EMIT setEditMenu (true);	// Enable edit menu items and toolbar.
     }
 
     switch (action) {
@@ -314,12 +314,12 @@ void KGrGame::editActions (const int action)
                 scene->deleteAllSprites();
             }
 
-            emit showLives (0);
-            emit showScore (0);
+            Q_EMIT showLives (0);
+            Q_EMIT showScore (0);
         }
         else {
             // Edit failed or was cancelled, so close the editor.
-            emit setEditMenu (false);	// Disable edit menu items and toolbar.
+            Q_EMIT setEditMenu (false);	// Disable edit menu items and toolbar.
             delete editor;
             editor = nullptr;
         }
@@ -464,17 +464,17 @@ void KGrGame::initGame()
 
     // Set control-mode, hold-key option (for when K/B is used) and game-speed.
     settings (gameGroup.readEntry ("ControlMode", (int) MOUSE));
-    emit setToggle (((controlMode == MOUSE) ?    "mouse_mode" :
+    Q_EMIT setToggle (((controlMode == MOUSE) ?    "mouse_mode" :
                     ((controlMode == KEYBOARD) ? "keyboard_mode" :
                                                  "laptop_mode")), true);
 
     holdKeyOption = gameGroup.readEntry ("HoldKeyOption", (int) CLICK_KEY);
-    emit setToggle (((holdKeyOption == CLICK_KEY) ? "click_key" :
+    Q_EMIT setToggle (((holdKeyOption == CLICK_KEY) ? "click_key" :
                                                     "hold_key"), true);
 
     int speedLevel = gameGroup.readEntry ("SpeedLevel", (int) NORMAL_SPEED);
     settings (speedLevel);
-    emit setToggle ((speedLevel == NORMAL_SPEED) ?    "normal_speed" :
+    Q_EMIT setToggle ((speedLevel == NORMAL_SPEED) ?    "normal_speed" :
                     ((speedLevel == BEGINNER_SPEED) ? "beginner_speed" :
                                                       "champion_speed"), true);
     timeScale = gameGroup.readEntry ("ActualSpeed", 10);
@@ -487,11 +487,11 @@ void KGrGame::initGame()
             loadSounds();
             effects->setMuted (false);
         }
-        emit setToggle ("options_sounds", soundOn);
+        Q_EMIT setToggle ("options_sounds", soundOn);
 
         stepsOn = gameGroup.readEntry ("StepSounds", false);
         //qCDebug(KGOLDRUNNER_LOG) << "StepSounds" << stepsOn;
-        emit setToggle ("options_steps", stepsOn);
+        Q_EMIT setToggle ("options_steps", stepsOn);
 #endif
 
     dbk1 << "Owner" << gameList.at (gameIndex)->owner
@@ -507,7 +507,7 @@ void KGrGame::initGame()
         newGame (level, gameIndex);
         quickStartDialog();
     }
-    emit setToggle ("options_demo", startupDemo);
+    Q_EMIT setToggle ("options_demo", startupDemo);
 
     // Allow a short break, to display the graphics, then use the demo delay-time
     // or the reaction-time to the quick-start dialog to do some more rendering.
@@ -656,9 +656,9 @@ void KGrGame::startInstantReplay()
 
     // Redisplay the starting score and lives.
     lives = recording->lives;
-    emit showLives (lives);
+    Q_EMIT showLives (lives);
     score = recording->score;
-    emit showScore (score);
+    Q_EMIT showScore (score);
 
     // Restart the level in playback mode.
     setPlayback (true);
@@ -801,7 +801,7 @@ void KGrGame::quickStartUseMenu()
 
 void KGrGame::quickStartQuit()
 {
-    emit quitGame();
+    Q_EMIT quitGame();
 }
 
 /******************************************************************************/
@@ -882,8 +882,8 @@ void KGrGame::newGame (const int lev, const int newGameIndex)
     score = 0;
     startScore = 0;
 
-    emit showLives (lives);
-    emit showScore (score);
+    Q_EMIT showLives (lives);
+    Q_EMIT showScore (score);
 
     playLevel (owner, prefix, level, NewLevel);
 }
@@ -893,7 +893,7 @@ bool KGrGame::playLevel (const Owner fileOwner, const QString & prefix,
 {
     // If the game-editor is active, terminate it.
     if (editor) {
-        emit setEditMenu (false);	// Disable edit menu items and toolbar.
+        Q_EMIT setEditMenu (false);	// Disable edit menu items and toolbar.
         delete editor;
         editor = nullptr;
     }
@@ -914,9 +914,9 @@ bool KGrGame::playLevel (const Owner fileOwner, const QString & prefix,
     else if (playback) {
         // Set up and display the starting score and lives.
         lives = recording->lives;
-        emit showLives (lives);
+        Q_EMIT showLives (lives);
         score = recording->score;
-        emit showScore (score);
+        Q_EMIT showScore (score);
     }
 
     scene->setLevel (levelNo);		// Switch and render background if reqd.
@@ -930,7 +930,7 @@ bool KGrGame::playLevel (const Owner fileOwner, const QString & prefix,
     levelHint = recording->hint;
 
     // Indicate on the menus whether there is a hint for this level.
-    emit hintAvailable (levelHint.length() > 0);
+    Q_EMIT hintAvailable (levelHint.length() > 0);
 
     // Re-draw the playfield frame, level title and figures.
     scene->setTitle (getTitle());
@@ -964,7 +964,7 @@ void KGrGame::setupLevelPlayer()
 void KGrGame::incScore (const int n)
 {
     score = score + n;		// SCORING: trap enemy 75, kill enemy 75,
-    emit showScore (score);	// collect gold 250, complete the level 1500.
+    Q_EMIT showScore (score);	// collect gold 250, complete the level 1500.
 }
 
 void KGrGame::playSound (const int n, const bool onOff)
@@ -1052,7 +1052,7 @@ void KGrGame::herosDead()
     // Lose a life.
     if ((--lives > 0) || playback) {
         // Demo mode or still some life left.
-        emit showLives (lives);
+        Q_EMIT showLives (lives);
 
         // Freeze the animation and let the player see what happened.
         freeze (ProgramPause, true);
@@ -1063,7 +1063,7 @@ void KGrGame::herosDead()
     }
     else {
         // Game over.
-        emit showLives (lives);
+        Q_EMIT showLives (lives);
 
         freeze (ProgramPause, true);
         playSound (GameOverSound);
@@ -1135,7 +1135,7 @@ void KGrGame::goUpOneLevel()
     scene->goToBlack();
 
     lives++;			// Level completed: gain another life.
-    emit showLives (lives);
+    Q_EMIT showLives (lives);
     incScore (1500);
 
     if (playback) {
@@ -1169,8 +1169,8 @@ void KGrGame::setControlMode (const int mode)
 {
     // Enable/disable keyboard-mode options.
     bool enableDisable = (mode == KEYBOARD);
-    emit setAvail ("click_key", enableDisable);
-    emit setAvail ("hold_key",  enableDisable);
+    Q_EMIT setAvail ("click_key", enableDisable);
+    Q_EMIT setAvail ("hold_key",  enableDisable);
 
     controlMode = mode;
     if (levelPlayer && (! playback)) {
@@ -1291,7 +1291,7 @@ void KGrGame::freeze (const bool userAction, const bool on_off)
     }
     else {
         // The user is freezing or unfreezing the game.  Do visual feedback.
-        emit gameFreeze (on_off);
+        Q_EMIT gameFreeze (on_off);
     }
 
     gameFrozen = on_off;
@@ -1355,21 +1355,21 @@ void KGrGame::setPlayback (const bool onOff)
     if (playback != onOff) {
         // Disable high scores, kill hero and some settings during demo/replay.
         bool enableDisable = (! onOff);
-        emit setAvail  ("game_highscores", enableDisable);
-        emit setAvail  ("kill_hero",       enableDisable);
+        Q_EMIT setAvail  ("game_highscores", enableDisable);
+        Q_EMIT setAvail  ("kill_hero",       enableDisable);
 
-        emit setAvail  ("mouse_mode",      enableDisable);
-        emit setAvail  ("keyboard_mode",   enableDisable);
-        emit setAvail  ("laptop_mode",     enableDisable);
+        Q_EMIT setAvail  ("mouse_mode",      enableDisable);
+        Q_EMIT setAvail  ("keyboard_mode",   enableDisable);
+        Q_EMIT setAvail  ("laptop_mode",     enableDisable);
 
-        emit setAvail  ("click_key",       enableDisable);
-        emit setAvail  ("hold_key",        enableDisable);
+        Q_EMIT setAvail  ("click_key",       enableDisable);
+        Q_EMIT setAvail  ("hold_key",        enableDisable);
 
-        emit setAvail  ("normal_speed",    enableDisable);
-        emit setAvail  ("beginner_speed",  enableDisable);
-        emit setAvail  ("champion_speed",  enableDisable);
-        emit setAvail  ("increase_speed",  enableDisable);
-        emit setAvail  ("decrease_speed",  enableDisable);
+        Q_EMIT setAvail  ("normal_speed",    enableDisable);
+        Q_EMIT setAvail  ("beginner_speed",  enableDisable);
+        Q_EMIT setAvail  ("champion_speed",  enableDisable);
+        Q_EMIT setAvail  ("increase_speed",  enableDisable);
+        Q_EMIT setAvail  ("decrease_speed",  enableDisable);
     }
     scene->showReplayMessage (onOff);
     playback = onOff;
@@ -1436,7 +1436,7 @@ void KGrGame::kbControl (const int dirn, const bool pressed)
         case KMessageBox::Ok:
         case KMessageBox::Continue:
             settings (KEYBOARD);
-            emit setToggle ("keyboard_mode", true);	// Adjust Settings menu.
+            Q_EMIT setToggle ("keyboard_mode", true);	// Adjust Settings menu.
             break;
         case KMessageBox::No:
         case KMessageBox::Cancel:
@@ -1598,9 +1598,9 @@ void KGrGame::loadGame (const int game, const int lev)
     newGame (lev, game);			// Re-start the selected game.
     showTutorialMessages (level);
     lives = loadedData.mid (32, 3).toLong();	// Update the lives.
-    emit showLives (lives);
+    Q_EMIT showLives (lives);
     score = loadedData.mid (36, 7).toLong();	// Update the score.
-    emit showScore (score);
+    Q_EMIT showScore (score);
 }
 
 bool KGrGame::saveOK()
