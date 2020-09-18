@@ -44,7 +44,8 @@ int main (int argc, char **argv)
                      i18n("A game of action and puzzle solving"),
                      KAboutLicense::GPL,
                      i18n ("(C) 2003 Ian Wadham and Marco Krüger"),
-                      QStringLiteral("https://kde.org/applications/games/org.kde.kgoldrunner") );
+                     QString(),
+                     QStringLiteral("https://kde.org/applications/games/org.kde.kgoldrunner") );
     addCredits (about);
     about.setOrganizationDomain("kde.org");
 
