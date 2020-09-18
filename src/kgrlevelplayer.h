@@ -34,7 +34,7 @@ class KGrHero;
 class KGrGame;
 class KGrEnemy;
 
-class KRandomSequence;
+class QRandomGenerator;
 
 /**
  * @short Class to play, record and play back a level of a game
@@ -75,7 +75,7 @@ public:
      *                   play.
      * @param pRandomGen A shared source of random numbers for all enemies.
      */
-    KGrLevelPlayer             (KGrGame * parent, KRandomSequence * pRandomGen);
+    KGrLevelPlayer             (KGrGame * parent, QRandomGenerator * pRandomGen);
     ~KGrLevelPlayer();
 
     /**
@@ -391,7 +391,7 @@ private Q_SLOTS:
 
 private:
     KGrGame *            game;
-    KRandomSequence *    randomGen;
+    QRandomGenerator *   randomGen;
     KGrLevelGrid *       grid;
     KGrRuleBook *        rules;
     KGrHero *            hero;

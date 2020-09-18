@@ -36,7 +36,6 @@
 
 #include <iostream>
 #include <cstdlib>
-#include <ctime>
 
 #include <QByteArray>
 #include <QDate>
@@ -53,16 +52,14 @@
 #include <QTreeWidgetItem>
 #include <QVBoxLayout>
 #include <QFileInfo>
+#include <QRandomGenerator>
 
 #include <KConfigGroup>
 #include <KGuiItem>
-#include <KRandomSequence>
 #include <KSharedConfig>
 #include <KStandardGuiItem>
 #include <KLocalizedString>
 #include <KMessageBox>
-
-#include <chrono>
 
 #include "kgoldrunner_debug.h"
 
@@ -117,9 +114,7 @@ KGrGame::KGrGame (KGrView * theView,
     connect(dyingTimer, &QTimer::timeout, this, &KGrGame::finalBreath);
 
     // Initialise random number generator.
-    const auto tse = std::chrono::system_clock::now().time_since_epoch();
-    const long int seed = std::chrono::duration_cast<std::chrono::seconds>(tse).count();
-    randomGen = new KRandomSequence (seed);
+    randomGen = new QRandomGenerator (QRandomGenerator::global()->generate());
     //qCDebug(KGOLDRUNNER_LOG) << "RANDOM NUMBER GENERATOR INITIALISED";
 
     scene->setReplayMessage (i18n("Click anywhere to begin live play"));

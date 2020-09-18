@@ -39,7 +39,7 @@ class KGrSounds;
 
 class KGrEditor;
 class KGrLevelPlayer;
-class KRandomSequence;
+class QRandomGenerator;
 class QTimer;
 
 class KGrGame : public QObject
@@ -182,7 +182,7 @@ private:
 /**************************  PLAYFIELD AND GAME DATA  *************************/
 /******************************************************************************/
 
-    KRandomSequence *           randomGen;	// Random number generator.
+    QRandomGenerator *          randomGen;	// Random number generator.
     KGrLevelPlayer *            levelPlayer;	// Where the level is played.
     KGrRecording *              recording;	// A recording of the play.
     bool                        playback;	// Play back or record?

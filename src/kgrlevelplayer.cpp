@@ -18,6 +18,8 @@
 #include <cstdio>
 #include <cstdlib>
 
+#include <QRandomGenerator>
+
 // Include kgrgame.h only to access flags KGrGame::bugFix and KGrGame::logging.
 #include "kgrgame.h"
 #include "kgrscene.h"
@@ -32,9 +34,8 @@
 
 #include "kgoldrunner_debug.h"
 #include <KMessageBox>	// TODO - Remove.
-#include <KRandomSequence>
 
-KGrLevelPlayer::KGrLevelPlayer (KGrGame * parent, KRandomSequence * pRandomGen)
+KGrLevelPlayer::KGrLevelPlayer (KGrGame * parent, QRandomGenerator * pRandomGen)
     :
     QObject          (parent),
     game             (parent),
@@ -881,7 +882,7 @@ void KGrLevelPlayer::enemyReappear (int & gridI, int & gridJ)
 uchar KGrLevelPlayer::randomByte (const uchar limit)
 {
     if (! playback) {
-        uchar value = randomGen->getLong ((unsigned long) limit);
+        uchar value = randomGen->bounded(limit);
         // A zero-byte terminates recording->draws, so add 1 when recording ...
         dbe2 "Draw %03d, index %04d, limit %02d\n", value, randIndex, limit);
         recording->draws [randIndex++] = value + 1;
