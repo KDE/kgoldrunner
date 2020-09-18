@@ -29,9 +29,6 @@
 #include "kgoldrunner_version.h"
 #include "kgoldrunner.h"
 
-static const char description[] =
-    I18N_NOOP ("KGoldrunner is a game of action and puzzle solving");
-
 static void addCredits (KAboutData & about);
 
 int main (int argc, char **argv)
@@ -43,7 +40,8 @@ int main (int argc, char **argv)
     KLocalizedString::setApplicationDomain("kgoldrunner");
 
     KAboutData about (QStringLiteral("kgoldrunner"), i18n ("KGoldrunner"),
-                     QStringLiteral(KGOLDRUNNER_VERSION_STRING), i18n (description),
+                     QStringLiteral(KGOLDRUNNER_VERSION_STRING),
+                     i18n("A game of action and puzzle solving"),
                      KAboutLicense::GPL,
                      i18n ("(C) 2003 Ian Wadham and Marco Krüger"),
                       QStringLiteral("https://kde.org/applications/games/org.kde.kgoldrunner") );
