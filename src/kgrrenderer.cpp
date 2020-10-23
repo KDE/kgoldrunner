@@ -18,13 +18,11 @@
     // TODO - Border tiles, display tiles.
     // TODO - Add attributes to theme: HasBorderTiles, HasDisplayTiles.
 
-#include <KGameRenderer>
 #include <KGameRenderedItem>
 #include <KgThemeProvider>
 #include <KgThemeSelector>
 #include <KLocalizedString>
 
-#include <QString>
 
 #include "kgoldrunner_debug.h"
 #include "kgrglobals.h"
