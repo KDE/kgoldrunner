@@ -2295,25 +2295,25 @@ void KGrGame::loadSounds()
         effects = new KGrSounds();
         effects->setParent (this);        // Delete at end of KGrGame.
 
-        fx[GoldSound]      = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
+        fx[GoldSound]      = effects->loadSound (QStandardPaths::locate (QStandardPaths::AppDataLocation,
                              QStringLiteral("themes/default/gold.ogg")));
-        fx[StepSound]      = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
+        fx[StepSound]      = effects->loadSound (QStandardPaths::locate (QStandardPaths::AppDataLocation,
                              QStringLiteral("themes/default/step.wav")));
-        fx[ClimbSound]     = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
+        fx[ClimbSound]     = effects->loadSound (QStandardPaths::locate (QStandardPaths::AppDataLocation,
                              QStringLiteral("themes/default/climb.wav")));
-        fx[FallSound]      = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
+        fx[FallSound]      = effects->loadSound (QStandardPaths::locate (QStandardPaths::AppDataLocation,
                              QStringLiteral("themes/default/falling.ogg")));
-        fx[DigSound]       = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
+        fx[DigSound]       = effects->loadSound (QStandardPaths::locate (QStandardPaths::AppDataLocation,
                              QStringLiteral("themes/default/dig.ogg")));
-        fx[LadderSound]    = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
+        fx[LadderSound]    = effects->loadSound (QStandardPaths::locate (QStandardPaths::AppDataLocation,
                              QStringLiteral("themes/default/ladder.ogg")));
-        fx[CompletedSound] = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
+        fx[CompletedSound] = effects->loadSound (QStandardPaths::locate (QStandardPaths::AppDataLocation,
                              QStringLiteral("themes/default/completed.ogg")));
-        fx[DeathSound]     = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
+        fx[DeathSound]     = effects->loadSound (QStandardPaths::locate (QStandardPaths::AppDataLocation,
                              QStringLiteral("themes/default/death.ogg")));
-        fx[GameOverSound]  = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
+        fx[GameOverSound]  = effects->loadSound (QStandardPaths::locate (QStandardPaths::AppDataLocation,
                              QStringLiteral("themes/default/gameover.ogg")));
-        fx[VictorySound]   = effects->loadSound (QStandardPaths::locate (QStandardPaths::DataLocation,
+        fx[VictorySound]   = effects->loadSound (QStandardPaths::locate (QStandardPaths::AppDataLocation,
                              QStringLiteral("themes/default/victory.ogg")));
 
         // Gold and dig sounds are timed and are allowed to play for at least one
