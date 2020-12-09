@@ -223,7 +223,7 @@ void KGoldrunner::setupActions()
                            i18n ("Save a solution for a level into a file "
                                  "called 'sol_&lt;prefix&gt;.txt' in your "
 				 "user's data directory..."),
-                           Qt::ShiftModifier | Qt::Key_S);
+                           {Qt::ShiftModifier | Qt::Key_S});
 
     // Pause
     // Show High Scores
