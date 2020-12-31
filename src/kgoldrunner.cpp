@@ -279,7 +279,7 @@ void KGoldrunner::setupActions()
     // Quit
     // --------------------------
 
-    KStandardGameAction::quit (this, SLOT (close()), actionCollection());
+    KStandardGameAction::quit (this, &QWidget::close, actionCollection());
 
     /**************************************************************************/
     /***************************   GAME EDITOR MENU  **************************/
@@ -484,7 +484,7 @@ void KGoldrunner::setupActions()
     // --------------------------
 
     KStandardAction::keyBindings (
-                                this, SLOT (optionsConfigureKeys()),
+                                this, &KGoldrunner::optionsConfigureKeys,
                                 actionCollection());
 
     /**************************************************************************/
