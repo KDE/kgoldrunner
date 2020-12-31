@@ -29,6 +29,8 @@ ecm_qt_declare_logging_category(kgoldrunner_SRCS
     EXPORT KGOLDRUNNER
 )
 
+qt5_add_resources(kgoldrunner_SRCS kgoldrunner.qrc)
+
 file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*-apps-kgoldrunner.png")
 ecm_add_app_icon(kgoldrunner_SRCS ICONS ${ICONS_SRCS})
 add_executable(kgoldrunner ${kgoldrunner_SRCS})
@@ -47,7 +49,6 @@ target_link_libraries(kgoldrunner
 install(TARGETS kgoldrunner  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 
 install(PROGRAMS org.kde.kgoldrunner.desktop  DESTINATION  ${KDE_INSTALL_APPDIR})
-install(FILES kgoldrunnerui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/kgoldrunner)
 install(FILES org.kde.kgoldrunner.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 ecm_install_icons(ICONS
