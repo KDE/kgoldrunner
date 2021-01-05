@@ -58,18 +58,6 @@ public:
      */
     void stopAllSounds();
 
-    /**
-     * Set volume for the sound effects.
-     * \param volume the playing volume. 0.0 means mute, 1.0 means full volume.
-     */
-    void setEffectsVolume (double volume);
-   
-    /**
-     * Set volume for the background music.
-     * \param volume the playing volume. 0.0 means mute, 1.0 means full volume.
-     */
-    void setMusicVolume (double volume);
-   
     void setMuted (bool mute);
 
     /**
