@@ -30,11 +30,12 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
 
 find_package(KF5KDEGames 7.3.0 REQUIRED)
 
+include(KDEInstallDirs)
+include(KDECMakeSettings)
+include(KDECompilerSettings NO_POLICY_SCOPE)
+
 include(FeatureSummary)
 include(ECMInstallIcons)
-include(KDEInstallDirs)
-include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
-include(KDECMakeSettings)
 include(ECMAddAppIcon)
 include(ECMQtDeclareLoggingCategory)
 include(ECMSetupVersion)
@@ -42,8 +43,17 @@ include(ECMSetupVersion)
 add_definitions(
     -DQT_NO_KEYWORDS
     -DQT_NO_FOREACH
+    -DQT_NO_CAST_TO_ASCII
+    -DQT_NO_CAST_FROM_ASCII
+    -DQT_NO_URL_CAST_FROM_STRING
+    -DQT_NO_CAST_FROM_BYTEARRAY
+    -DQT_USE_QSTRINGBUILDER
+    -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT
+    -DQT_STRICT_ITERATORS
     -DQT_DISABLE_DEPRECATED_BEFORE=0x050A00
+    -DQT_DEPRECATED_WARNINGS_SINCE=0x060000
     -DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x053700
+    -DKF_DEPRECATED_WARNINGS_SINCE=0x060000
 )
 
 add_subdirectory(src)
