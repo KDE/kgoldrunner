@@ -17,6 +17,7 @@ set(kgoldrunner_SRCS
    kgrselector.cpp
    kgrsounds.cpp 
    kgrdialog.cpp
+   kgoldrunner.qrc
 )
 
 ecm_setup_version(${RELEASE_SERVICE_VERSION} VARIABLE_PREFIX KGOLDRUNNER VERSION_HEADER kgoldrunner_version.h)
@@ -28,8 +29,6 @@ ecm_qt_declare_logging_category(kgoldrunner_SRCS
     DESCRIPTION "KGoldrunner"
     EXPORT KGOLDRUNNER
 )
-
-qt5_add_resources(kgoldrunner_SRCS kgoldrunner.qrc)
 
 file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*-apps-kgoldrunner.png")
 ecm_add_app_icon(kgoldrunner_SRCS ICONS ${ICONS_SRCS})
