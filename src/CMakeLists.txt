@@ -1,28 +1,34 @@
-set(kgoldrunner_SRCS
-   kgrview.cpp
-   kgrscene.cpp
-   kgrsprite.cpp
-   kgoldrunner.cpp 
-   kgrthemetypes.cpp
-   kgrrenderer.cpp
-   kgrgame.cpp 
-   kgrlevelplayer.cpp
-   kgrlevelgrid.cpp
-   kgrrunner.cpp
-   kgrrulebook.cpp
-   kgrgameio.cpp 
-   kgrtimer.cpp
-   kgreditor.cpp
-   main.cpp 
-   kgrselector.cpp
-   kgrsounds.cpp 
-   kgrdialog.cpp
-   kgoldrunner.qrc
+ecm_setup_version(${RELEASE_SERVICE_VERSION}
+    VARIABLE_PREFIX KGOLDRUNNER
+    VERSION_HEADER kgoldrunner_version.h
 )
 
-ecm_setup_version(${RELEASE_SERVICE_VERSION} VARIABLE_PREFIX KGOLDRUNNER VERSION_HEADER kgoldrunner_version.h)
+add_executable(kgoldrunner)
 
-ecm_qt_declare_logging_category(kgoldrunner_SRCS
+target_sources(kgoldrunner PRIVATE
+    kgrview.cpp
+    kgrscene.cpp
+    kgrsprite.cpp
+    kgoldrunner.cpp
+    kgrthemetypes.cpp
+    kgrrenderer.cpp
+    kgrgame.cpp
+    kgrlevelplayer.cpp
+    kgrlevelgrid.cpp
+    kgrrunner.cpp
+    kgrrulebook.cpp
+    kgrgameio.cpp
+    kgrtimer.cpp
+    kgreditor.cpp
+    main.cpp
+    kgrselector.cpp
+    kgrsounds.cpp
+    kgrdialog.cpp
+
+    kgoldrunner.qrc
+)
+
+ecm_qt_declare_logging_category(kgoldrunner
     HEADER kgoldrunner_debug.h
     IDENTIFIER KGOLDRUNNER_LOG
     CATEGORY_NAME log_kgoldrunner
@@ -31,8 +37,7 @@ ecm_qt_declare_logging_category(kgoldrunner_SRCS
 )
 
 file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*-apps-kgoldrunner.png")
-ecm_add_app_icon(kgoldrunner_SRCS ICONS ${ICONS_SRCS})
-add_executable(kgoldrunner ${kgoldrunner_SRCS})
+ecm_add_app_icon(kgoldrunner ICONS ${ICONS_SRCS})
 
 target_link_libraries(kgoldrunner
     KF5KDEGames
