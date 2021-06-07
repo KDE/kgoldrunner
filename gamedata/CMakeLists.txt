@@ -12,6 +12,7 @@ install( FILES game_blb.txt
                game_GMEP.txt
                game_GMGR.txt
 	       game_GRII.txt
+               game_GotD.txt
                game_kgr.txt
                game_lars.txt
                game_MAZ.txt
@@ -28,6 +29,7 @@ install( FILES game_blb.txt
                rec_demo.txt
                rec_GMGR.txt
 	       rec_GRII.txt
+               sol_GotD.txt
                sol_blb.txt
                sol_fd.txt
 	       sol_kgr.txt
