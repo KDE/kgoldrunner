@@ -850,13 +850,14 @@ void KGoldrunner::readProperties (const KConfigGroup & /* config - unused */)
 
 void KGoldrunner::optionsConfigureKeys()
 {
-    // First run the standard KDE dialog for shortcut key settings.
-    KShortcutsDialog::configure (actionCollection(),
-	KShortcutsEditor::LetterShortcutsAllowed,	// Single letters OK.
-	this,						// Parent widget.
-	true);						// saveSettings value.
+    auto *dlg = new KShortcutsDialog(KShortcutsEditor::AllActions, KShortcutsEditor::LetterShortcutsAllowed, this);
+    dlg->addCollection(actionCollection());
+    dlg->setAttribute(Qt::WA_DeleteOnClose);
+    connect(dlg, &KShortcutsDialog::saved, this, [this]() {
+        gameFreeze(frozen);
+    });
 
-    gameFreeze (frozen);		// Update the pause/resume text.
+    dlg->configure(true /* save settings */);
 }
 
 bool KGoldrunner::getDirectories()
