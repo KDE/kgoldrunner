@@ -1,8 +1,5 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
-  <!ENTITY kgoldrunner "<application>KGoldrunner</application>">
-  <!ENTITY kappname "&kgoldrunner;">
-  <!ENTITY package "kdegames">
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % English "INCLUDE" > <!-- change language only here -->
 ]>
@@ -32,8 +29,8 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2015-12-16</date>
-<releaseinfo>4.14 (&kde; Applications 15.12)</releaseinfo>
+<date>2021-06-30</date>
+<releaseinfo>KDE Gear 21.04</releaseinfo>
 
 <abstract>
 <para>
@@ -45,6 +42,20 @@ slightly in this version.</para>
 
 <keywordset>
 <keyword>KDE</keyword>
+<keyword>kdegames</keyword>
+<keyword>game</keyword>
+<keyword>arcade</keyword>
+<keyword>strategy</keyword>
+<keyword>enemies</keyword>
+<keyword>brick</keyword>
+<keyword>bricks</keyword>
+<keyword>dig</keyword>
+<keyword>digging</keyword>
+<keyword>fall</keyword>
+<keyword>falls</keyword>
+<keyword>gold</keyword>
+<keyword>ladder</keyword>
+<keyword>ladders</keyword>
 <keyword>KGoldrunner</keyword>
 </keywordset>
 </bookinfo>
@@ -92,7 +103,7 @@ a more aggressive search strategy than in Traditional rules.  See
 
 <para>As you move to more advanced levels, you will find that
 &kgoldrunner; combines action, strategy, tactics and puzzle
-solving &mdash; all in one game.  Good luck!</para>
+solving &mdash; all in one game. Good luck!</para>
 
 </sect1>
 
@@ -140,22 +151,23 @@ ordinary bricks.</para>
 
 <para>&kgoldrunner; begins by showing you a recorded demonstration of play. You
 can terminate this by clicking on the playing area with the mouse, pressing
-the spacebar or selecting a menu item or shortcut (such as <menuchoice>
-<guimenu>Game</guimenu><guimenuitem>New Game...</guimenuitem></menuchoice>).
+the &Space; bar or selecting a menu item or shortcut (such as <menuchoice>
+<guimenu>Game</guimenu><guimenuitem>New Game...</guimenuitem></menuchoice> or
+<keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo>).
 You can skip this demonstration in future by using menu item <menuchoice>
 <guimenu>Settings</guimenu><guimenuitem>Demo At Start</guimenuitem>
 </menuchoice>. You can also see it again at any time by using menu item
 <menuchoice><guimenu>Move</guimenu><guimenuitem>Demo</guimenuitem></menuchoice>.
 </para>
 
-<para>If you skipped the demo or used the mouse or spacebar to end it, a
+<para>If you skipped the demo or used the mouse or &Space; bar to end it, a
 quick-start popup dialog box shows you the names, number and a preview
 of the last game and level you loaded or, if you have not played before,
 the same information for Tutorial level 1.</para>
 
 <para>Click on the <guibutton>PLAY</guibutton> button to begin playing
 immediately. Otherwise you can click on the <guibutton>Quit</guibutton> button,
-the <guibutton>New Game</guibutton> button or the
+the <guibutton>New Game...</guibutton> button or the
 <guibutton>Use Menu</guibutton> button. The first will close &kgoldrunner;, if
 you do not wish to play, the second will show you a
 <link linkend="level-selection-dialog">Level Selection</link> dialog,
@@ -166,7 +178,7 @@ the dialog, leaving you free to use the &kgoldrunner; menus.</para>
 and the pointer will be over the hero. In a tutorial game, an
 explanatory message appears before each level begins. You start play
 by moving the pointer, clicking the mouse or pressing any key that can
-control the hero (&eg; <keycap>Space</keycap>), but avoid using
+control the hero (&eg; &Space;), but avoid using
 <keycap>Q</keycap>, <keycap>S</keycap>, <keycap>P</keycap> or &Esc; at
 this stage. You start each level in the same way.</para>
 
@@ -213,22 +225,21 @@ honor of the original Apple II game), with the keys
 <keycap>O</keycap> for digging. You can play one-handed by using
 <keycap>U</keycap>, <keycap>I</keycap>, <keycap>O</keycap>,
 <keycap>J</keycap>, <keycap>K</keycap>, <keycap>L</keycap> and
-<keycap>Space</keycap> (on a <quote>QWERTY</quote> keyboard) or
-two-handed by using the arrow keys, <keycap>Space</keycap>,
+&Space; (on a <quote>QWERTY</quote> keyboard) or
+two-handed by using the arrow keys, &Space;,
 <keycap>Z</keycap> and <keycap>C</keycap>. You can also choose other
-keys, on the <guimenu>Settings</guimenu> menu, using the
-<guimenuitem>Configure Shortcuts</guimenuitem> item.</para>
+keys, on the <menuchoice><guimenu>Settings</guimenu>
+<guimenuitem>Configure Shortcuts...</guimenuitem></menuchoice> menu item.</para>
 
 <para>You enter keyboard mode by pressing one of the keys that can
-control the hero or by selecting <guimenuitem>Keyboard
-Controls Hero</guimenuitem> on the <guimenu>Settings</guimenu>
-menu.</para>
+control the hero or by selecting the <menuchoice><guimenu>Settings</guimenu>
+<guimenuitem>Keyboard Controls Hero</guimenuitem></menuchoice> menu item.</para>
 
 <para>The movement keys (<keycap>I</keycap>, <keycap>J</keycap>,
 <keycap>K</keycap>, <keycap>L</keycap> or arrows) start the hero
 moving up, down, left or right. He continues moving in that direction,
 if he can, until you press another movement key or
-<keycap>Space</keycap> to stop. In mouse or laptop mode, he stops
+&Space; to stop. In mouse or laptop mode, he stops
 automatically when he gets to the pointer.</para>
 
 <para>A word of warning: using the keyboard is much harder, in the
@@ -243,8 +254,8 @@ joystick.</para>
 <para>You can stop the game at any time by pressing a Pause key
 (the default is either <keycap>P</keycap> or &Esc;). You can resume
 by pressing the Pause key again. There is also a
-<guimenuitem>Pause</guimenuitem> option in the <guimenu>Game</guimenu>
-menu, but the problem is to get the pointer up there without moving
+<menuchoice><guimenu>Game</guimenu> <guimenuitem>Pause</guimenuitem></menuchoice>
+menu item, but the problem is to get the pointer up there without moving
 the hero and getting into trouble.</para>
 
 <tip><para>When you want to use the &kgoldrunner; menu or do
@@ -304,12 +315,11 @@ falling. Some advanced levels require such a move.</para>
 <para>As explained above, you can lose a level and a life by touching
 an enemy. You can also lose by getting caught in a dug brick when it
 closes. Otherwise you can commit suicide by pressing key
-<keycap>Q</keycap> or using the menu item
-<menuchoice><guimenu>Game</guimenu><guimenuitem>Kill
-Hero</guimenuitem></menuchoice>. Why would you want to do that? Well,
-sometimes you can get trapped in a place from which you cannot
-escape. You will stay imprisoned for ever unless you commit
-suicide!</para>
+<keycap>Q</keycap> or using the <menuchoice><guimenu>Game</guimenu>
+<guimenuitem>Kill Hero</guimenuitem></menuchoice> menu item. Why would
+you want to do that? Well, sometimes you can get trapped in a place from
+which you cannot escape. You will stay imprisoned for ever unless you
+commit suicide!</para>
 
 </sect2>
 
@@ -391,7 +401,7 @@ able to run through a hole.</para>
 
 <para>In the original game on Apple II and Commodore 64, the hero had to be
 supported on something solid when digging: a ladder, concrete, a brick, a
-bar --- or an enemy's head. This rule was overlooked in KGoldrunner and one
+bar --- or an enemy's head. This rule was overlooked in &kgoldrunner; and one
 day the author's son discovered that you could dig while falling! He
 immediately composed a level to exploit this. Other game composers
 have now done the same. You have to dig while falling in recent
@@ -401,7 +411,7 @@ games of Championship skill such as <quote>State of Terror</quote>,
 <para>On the other hand, digging while falling makes older games too easy.
 So, as of December 2015, it is forbidden in the <quote>Tutorial</quote>,
 <quote>Advanced Tutorial</quote>, <quote>Initiation</quote>,
-<quote>KGoldrunner</quote> and <quote>Challenge</quote> games. The
+<quote>&kgoldrunner;</quote> and <quote>Challenge</quote> games. The
 <quote>Vengeance of Peter W</quote> game allows it in just one level
 and the new <quote>Beginner's Luck</quote> game, which is aimed at
 first time players, does not allow it.</para>
@@ -424,14 +434,15 @@ the <quote>&kgoldrunner; Hall of Fame</quote>.</para>
 <para>All levels in games are recorded as you play, so you can replay any level
 you have previously played. Also, some levels have recorded solutions, which
 may help you work out how to win them. Just use the <guimenu>Move</guimenu>
-menu and items <guimenuitem>Show A Solution</guimenuitem>,
+menu and the <guimenuitem>Show a Solution</guimenuitem>,
 <guimenuitem>Instant Replay</guimenuitem>,
 <guimenuitem>Replay Last Level</guimenuitem> and
-<guimenuitem>Replay Any Level</guimenuitem>. The
+<guimenuitem>Replay Any Level</guimenuitem> options. The
 solutions and replays can be interrupted at any time by clicking with
-the mouse on the playing area, pressing the spacebar or selecting a menu
+the mouse on the playing area, pressing the &Space; bar or selecting a menu
 item or shortcut (such as <menuchoice><guimenu>Game</guimenu>
-<guimenuitem>New Game...</guimenuitem></menuchoice>).</para>
+<guimenuitem>New Game...</guimenuitem></menuchoice> or <keycombo
+action="simul">&Ctrl;<keycap>N</keycap></keycombo>).</para>
 
 <para><guimenuitem>Instant Replay</guimenuitem> and
 <guimenuitem>Replay Last Level</guimenuitem> let you continue playing
@@ -451,7 +462,7 @@ you might be working on.</para>
 
 <itemizedlist>
 <listitem>
-<para>Start with 5 lives.</para>
+<para>Start with 5 lives</para>
 </listitem>
 <listitem>
 <para>Lose a life and repeat a level when the hero dies</para>
@@ -572,10 +583,10 @@ them.</para>
 </mediaobject>
 </screenshot>
 
-<para>This box appears when you select the <guimenuitem>New Game</guimenuitem>
-action and also when you select items from the <guimenu>Editor</guimenu>
-menu or replays from the <guimenu>Move</guimenu> menu. You use it to choose
-a game and a level to play, replay, edit, save,
+<para>This dialog appears when you select the <guimenuitem>New Game...</guimenuitem>
+action and also when you select options from the <guimenu>Editor</guimenu>
+menu or any replay option from the <guimenu>Move</guimenu> menu. You use
+it to choose a game and a level to play, replay, edit, save,
 move, re-number or delete. The main button at the bottom is the
 <guibutton>OK</guibutton> button. Its label changes according to what
 you are doing: in this case choosing a game and level to play.</para>
@@ -609,7 +620,7 @@ be something reasonable, such as the last level you played or edited.
 You can select another level by using the spinbox arrows, by typing the
 level number into the spinbox or by moving the slider. The arrows at
 the ends of the slider increase or decrease the number by one. Also
-you can drag the slider with the left mouse button held down and change
+you can drag the slider with the &LMB; held down and change
 the level number rapidly. Or you can change the level number in steps of 10
 by clicking in the space above or below the slider handle.</para>
 
@@ -635,8 +646,8 @@ choose <guibutton>Cancel</guibutton>.</para>
 <sect2 id="saving-changes">
 <title>Saving Changes</title>
 
-<para>If you select an action on the <guimenu>Game</guimenu>,
-<guimenu>Editor</guimenu> or <guimenu>Move</guimenu> menu and you were
+<para>If you select an option on the <guimenu>Game</guimenu>,
+<guimenu>Editor</guimenu> or <guimenu>Move</guimenu> menus and you were
 previously editing and had
 not saved your changes, you will get a message asking you to save,
 abandon or continue your work. Neither the new action nor its dialog will
@@ -683,9 +694,9 @@ go back and attempt the real thing, from start to finish.</para>
 <listitem>
 <para>This menu contains options affecting game play, such as starting
 and finishing games, saving games, loading saved games and showing high
-scores (if available). The <guimenu>Game</guimenu> Menu also contains the
-<guimenuitem>Quit</guimenuitem> option, or you can quit by clicking the
-<guiicon>X</guiicon> at the top right of the &kgoldrunner; window.</para>
+scores (if available). Also contains the <guimenuitem>Quit</guimenuitem>
+option, or you can quit by clicking the <guiicon>X</guiicon> at the top
+right of the &kgoldrunner; window.</para>
 </listitem>
 </varlistentry>
 
@@ -697,6 +708,13 @@ Championship and Tutorial games have hints on every level. Other games
 rarely have hints. It also contains options to replay recordings of
 play, as when running demonstrations, showing examples of solutions and
 replaying your own efforts.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><link linkend="view-menu"><guimenu>View</guimenu></link></term>
+<listitem>
+<para>This menu contains an option to alternate the full screen mode.</para>
 </listitem>
 </varlistentry>
 
@@ -721,7 +739,7 @@ create and edit &kgoldrunner; levels.</para> </listitem>
 linkend="settings-menu"><guimenu>Settings</guimenu></link></term>
 <listitem>
 <para>This menu has several groups of &kgoldrunner; settings, including the
-choice of mouse, keyboard or hybrid (laptop) control and the choices of themes and 
+choice of mouse, keyboard or hybrid (laptop) control and the choices of themes and
 game-speed. The current selections are checked. The settings are automatically
 selected when you start playing, but you can use this menu to vary them
 if you wish.</para>
@@ -736,11 +754,11 @@ hero-control keys.</para>
 <listitem>
 <para>The <guimenu>Help</guimenu> menu contains access to the
 &kgoldrunner; Handbook (this document), <guimenuitem>About
-&kgoldrunner;</guimenuitem> and <guimenuitem>About &kde;</guimenuitem>.</para>
+&kgoldrunner;</guimenuitem> and <guimenuitem>About &kde;</guimenuitem> options.</para>
 <para>There is also an option to report a Bug or Wishlist item.</para>
 <para>If you would like to make a suggestion or you have some new levels
 to contribute, the current author's email address is in the
-<guimenuitem>About &kgoldrunner;</guimenuitem> menu item.</para>
+<guimenuitem>About &kgoldrunner;</guimenuitem> option.</para>
 </listitem>
 </varlistentry>
 </variablelist>
@@ -808,7 +826,7 @@ was at the start of the level.  You will receive a warning message about
 that.  Before using this option, you should press a Pause key
 (<keycap>P</keycap> or &Esc;), to freeze the game as you move the mouse,
 but it is much easier to use the <keycap>S</keycap> key as a
-short-cut.</para>
+shortcut.</para>
 </listitem>
 </varlistentry>
 
@@ -821,9 +839,21 @@ short-cut.</para>
 <listitem><para>This option is enabled only if you have been using
 the Game Editor.  It brings up the level selection dialog box and lets
 you choose a level number and game in which to save your work.  Its
-action is exactly the same as the <guimenuitem>Save Edits</guimenuitem>
-option on the <guimenu>Editor</guimenu> menu and
+action is exactly the same as the <menuchoice><guimenu>Editor</guimenu>
+<guimenuitem>Save Edits...</guimenuitem></menuchoice> menu item and
 the <guiicon>disk</guiicon> icon on the Editor toolbar.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice><shortcut>
+<keycombo action="simul">&Shift;<keycap>S</keycap></keycombo></shortcut>
+<guimenu>Game</guimenu><guimenuitem>Save a Solution...</guimenuitem>
+</menuchoice>
+</term>
+<listitem><para>Save a solution for a level into a file called
+<quote><filename>sol_<replaceable>prefix</replaceable>.txt</filename></quote>
+in your user's data directory.</para>
 </listitem>
 </varlistentry>
 
@@ -841,7 +871,7 @@ the <guiicon>disk</guiicon> icon on the Editor toolbar.</para>
 <varlistentry>
 <term><menuchoice><shortcut>
 <keycombo action="simul">&Ctrl;<keycap>H</keycap></keycombo></shortcut>
-<guimenu>Game</guimenu><guimenuitem>Show High Scores</guimenuitem>
+<guimenu>Game</guimenu><guimenuitem>Show High Scores...</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
@@ -885,9 +915,10 @@ are given an opportunity to save your work.</para>
 
 <tip><para>All the demo and replay moves will replay previously recorded
 levels. All can be interrupted and stopped by clicking on the playing area
-with the mouse, pressing the spacebar or selecting a menu item or shortcut
+with the mouse, pressing the &Space; bar or selecting a menu item or shortcut
 (such as <menuchoice><guimenu>Game</guimenu>
-<guimenuitem>New Game...</guimenuitem></menuchoice>).</para></tip>
+<guimenuitem>New Game...</guimenuitem></menuchoice> or <keycombo
+action="simul">&Ctrl;<keycap>N</keycap></keycombo>).</para></tip>
 
 <variablelist>
 <varlistentry>
@@ -916,7 +947,7 @@ the same as in the startup demo.</para>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Move</guimenu><guimenuitem>Show A Solution...</guimenuitem>
+<guimenu>Move</guimenu><guimenuitem>Show a Solution</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
@@ -969,6 +1000,26 @@ on.</para>
 
 </sect1>
 
+<sect1 id="view-menu">
+<title>The View Menu</title>
+
+<variablelist>
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;&Shift;<keycap>F</keycap></keycombo>
+</shortcut>
+<guimenu>View</guimenu>
+<guimenuitem>Full Screen Mode</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Toggles the Full Screen mode</action> on and off.
+</para></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
 <sect1 id="editor-menu">
 <title>The Editor Menu</title>
 
@@ -980,8 +1031,8 @@ on.</para>
 </term>
 <listitem>
 <para>Shows the Editor toolbar and a blank playing area
-on which you can draw a new level.  When done, use
-<guimenuitem>Save Edits</guimenuitem> to assign the new level to a game
+on which you can draw a new level.  When done, use the
+<guimenuitem>Save Edits...</guimenuitem> option to assign the new level to a game
 and level number.</para>
 </listitem>
 </varlistentry>
@@ -1009,7 +1060,7 @@ in one of your own games.</para>
 <para>Shows the level selection dialog box with
 appropriate default settings for saving a new or edited level.  You can
 change the game and level number and achieve a <quote>Save As...</quote>
-effect. This dialog box has a special button, <guibutton>Edit Level Name and
+effect. This dialog box has a special button, <guibutton>Edit Level Name or
 Hint</guibutton>, which shows a dialog box where you can add an optional
 name and hint to your level.</para>
 </listitem>
@@ -1082,18 +1133,6 @@ is because the prefix is used in level-file names internally.</para>
 <variablelist>
 <varlistentry>
 <term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;&Shift;<keycap>F</keycap></keycombo>
-</shortcut>
-<guimenu>Settings</guimenu>
-<guimenuitem>Full Screen Mode</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Toggles the Full Screen mode</action> on and off.
-</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
 <guimenu>Settings</guimenu><guisubmenu>Change Theme</guisubmenu>
 </menuchoice></term>
 <listitem>
@@ -1106,21 +1145,21 @@ for details.</para>
 <variablelist>
 
 <varlistentry>
+<term><guimenuitem>The Treasure of Egypt</guimenuitem></term>
+<listitem>
+<para>Matt Goldrunner finds himself in an Ancient Egyptian temple, being
+pursued by mummies who are determined to protect their ancestral jewels
+at all costs.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
 <term><guimenuitem>Black on White</guimenuitem></term>
 <listitem>
 <para>This theme is stripped down to its barest graphical units and
 painted in black and white only.  It is intended to help players who
 may be visually impaired.  The author would appreciate email responses on
 how effective it is and what improvements in visibility could be made.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><guimenuitem>The Treasure of Egypt</guimenuitem></term>
-<listitem>
-<para>Matt Goldrunner finds himself in an Ancient Egyptian temple, being
-pursued by mummies who are determined to protect their ancestral jewels
-at all costs.</para>
 </listitem>
 </varlistentry>
 
@@ -1141,17 +1180,6 @@ when he finally reaches the last level?</para>
 </varlistentry>
 
 <varlistentry>
-<term><guimenuitem>Nostalgia</guimenuitem></term>
-<listitem>
-<para>Recalls the days of the original Apple II and Commodore 64 game, as it
-was when you plugged your machine into your TV set &mdash; otherwise you had
-a monochrome monitor. For those who do not remember such heroic days, this
-is not an exact reproduction, but it gives you a general idea. For example
-the hero was all white back then, but today he is blue.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
 <term><guimenuitem>Nostalgia Blues</guimenuitem></term>
 <listitem>
 <para>Recalls the Apple II game, where the bricks and concrete were a
@@ -1161,6 +1189,17 @@ panels.  The whole effect was fuzzier (a sort of hardware
 anti-aliasing), which made the bricks look almost
 three-dimensional &mdash; difficult to recreate on today's
 pin-sharp monitors.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guimenuitem>Nostalgia</guimenuitem></term>
+<listitem>
+<para>Recalls the days of the original Apple II and Commodore 64 game, as it
+was when you plugged your machine into your TV set &mdash; otherwise you had
+a monochrome monitor. For those who do not remember such heroic days, this
+is not an exact reproduction, but it gives you a general idea. For example
+the hero was all white back then, but today he is blue.</para>
 </listitem>
 </varlistentry>
 
@@ -1232,7 +1271,7 @@ keyboard, are used for digging left and right.</para>
 <guimenu>Settings</guimenu><guimenuitem>Click Key To Move</guimenuitem>
 </menuchoice></term>
 <listitem>
-<para>In keyboard mode, click a direction-key to start moving 
+<para>In keyboard mode, click a direction-key to start moving
 and keep on going until you click another key.</para>
 </listitem>
 </varlistentry>
@@ -1242,7 +1281,7 @@ and keep on going until you click another key.</para>
 <guimenu>Settings</guimenu><guimenuitem>Hold Key To Move</guimenuitem>
 </menuchoice></term>
 <listitem>
-<para>In keyboard mode, hold down a direction-key to move 
+<para>In keyboard mode, hold down a direction-key to move
 and release it to stop.</para>
 </listitem>
 </varlistentry>
@@ -1314,9 +1353,12 @@ shortcut keys for menu items.</para>
 <sect1 id="help-menu">
 <title>The Help Menu</title>
 
-<para>Contains the following standard &kde; Help Menu items:</para>
-
-&help.menu.documentation;
+<para>
+Additionally &kgoldrunner; has the common &kde; <guimenu>Help</guimenu>
+menu items, for more information read the section about the
+<ulink url="help:/fundamentals/menus.html#menus-help">Help Menu</ulink>
+of the &kde; Fundamentals.
+</para>
 
 </sect1>
 
@@ -1332,9 +1374,9 @@ shortcut keys for menu items.</para>
 <title>Creating a Game</title>
 
 <para>Before you create or edit a &kgoldrunner; level, you must create
-a game in which to save it. Use <guimenuitem>Create Game</guimenuitem> 
-on the <guimenu>Editor</guimenu> menu. If you
-forget, you will be reminded. </para>
+a game in which to save it. Use the <menuchoice><guimenu>Editor</guimenu>
+<guimenuitem>Create Game...</guimenuitem></menuchoice> menu item. If you
+forget, you will be reminded.</para>
 
 <para>The most important decisions to make when creating a game are to
 choose the rules you are going to follow (<quote>Traditional</quote>
@@ -1357,19 +1399,19 @@ tutorial games, which show the hint on each level as you play it.
 If you compose your own Tutorial game you could use the
 prefix <quote>tutex</quote>, to make it run as a tutorial but not get
 its files confused with those of the basic Tutorial or Advanced Tutorial
-(prefixes <quote>tute</quote> and <quote>tutea</quote>). </para>
+(prefixes <quote>tute</quote> and <quote>tutea</quote>).</para>
 
 </sect2>
 
 <sect2 id="creating-a-level">
 <title>Creating a Level</title>
 
-<para>When you have a game set up, use <guimenuitem>Create
-Level</guimenuitem> on the <guimenu>Editor</guimenu> menu to start
+<para>When you have a game set up, use the <menuchoice><guimenu>Editor</guimenu>
+<guimenuitem>Create Level</guimenuitem></menuchoice> menu item to start
 creating a level. It provides you with a blank playing area of 28x20
 squares, with the hero at the top left. You can put the hero somewhere
 else if you prefer and you do not have to use the whole 28x20
-area. Lots of interesting levels use smaller areas. </para>
+area. Lots of interesting levels use smaller areas.</para>
 
 <para>The minimum requirement for a level to be playable is to have a
 hero who is standing on something at the top of the playing area, but
@@ -1390,9 +1432,11 @@ some hidden ladders that appear when the last gold is collected.</para>
 <sect2 id="editing-a-level">
 <title>Editing a Level</title>
 
-<para>Use <guimenuitem>Edit Level</guimenuitem> on the
-<guimenu>Editor</guimenu> menu to start editing an existing level or use
-<guimenuitem>Create Level</guimenuitem> to start editing a new level.</para>
+<para>Use the <menuchoice><guimenu>Editor</guimenu> <guimenuitem>Edit
+Level...</guimenuitem></menuchoice> menu item to start editing an
+existing level or use the <menuchoice><guimenu>Editor</guimenu>
+<guimenuitem>Create Level</guimenuitem></menuchoice> menu item to start
+editing a new level.</para>
 
 <para>If you choose
 a System level, you are warned that you will have to save it in one of
@@ -1406,28 +1450,28 @@ it came from, but you can vary that.</para>
 
 <para>The picture below shows the edit toolbar, which
 appears when you first choose <guimenuitem>Create Level</guimenuitem>
-or <guimenuitem>Edit Level</guimenuitem> from the
+or <guimenuitem>Edit Level...</guimenuitem> options from the
 <guimenu>Editor</guimenu> menu and so change from Play to Edit
 mode. It disappears when you go back to Play mode. Note also that, in
 Edit mode, false bricks and hidden ladders are made visible in the
 playing area.</para>
 
 <para>The three icons on the left of the edit toolbar have the same
-actions as the menu options <guimenuitem>Create Level</guimenuitem>,
-<guimenuitem>Edit Level</guimenuitem> and <guimenuitem>Save
-Edits</guimenuitem>. The other eleven icons are for editing and
-painting objects in your level. </para>
+actions as the <guimenuitem>Create Level</guimenuitem>,
+<guimenuitem>Edit Level...</guimenuitem> and <guimenuitem>Save
+Edits</guimenuitem> menu options. The other eleven icons are for editing and
+painting objects in your level.</para>
 
 
 <para>From left to right the other eleven icons are <guiicon>Name/Hint
-</guiicon> (light bulb), <guiicon>Erase</guiicon> (background), 
+</guiicon> (light bulb), <guiicon>Erase</guiicon> (background),
 <guiicon>Hero</guiicon>,
 <guiicon>Enemy</guiicon>, <guiicon>Brick</guiicon> (can dig),
-<guiicon>Concrete</guiicon> (cannot dig), <guiicon>Trap</guiicon> 
+<guiicon>Concrete</guiicon> (cannot dig), <guiicon>Trap</guiicon>
 (also known as a false brick or fall-through brick), <guiicon>Ladder</guiicon>,
 <guiicon>H Ladder</guiicon> (hidden ladder), <guiicon>Bar</guiicon> (or pole)
-and <guiicon>Gold</guiicon>. The graphics for these icons, except for the
-light bulb, are copied from whatever &kgoldrunner; theme you are using.</para>
+and <guiicon>Gold</guiicon>. The graphics for these icons are copied from whatever
+&kgoldrunner; theme you are using.</para>
 
 <screenshot>
 <screeninfo>Editing a level</screeninfo>
@@ -1467,10 +1511,11 @@ wherever you release the mouse button.</para>
 <title>Saving Your Work</title>
 
 <para>When you have finished painting, save your work using the
-<guiicon>disk</guiicon> icon or <guimenuitem>Save Edits</guimenuitem>
-in the <guimenu>Editor</guimenu> menu or <guimenuitem>Save Edits</guimenuitem>
-in the <guimenu>Game</guimenu> menu. You must
-always save into your own games, never into the System games.</para>
+<guiicon>disk</guiicon> icon or the <menuchoice><guimenu>Editor</guimenu>
+<guimenuitem>Save Edits...</guimenuitem></menuchoice> or
+<menuchoice><guimenu>Game</guimenu> <guimenuitem>Save Edits...</guimenuitem></menuchoice>
+menu items. You must always save into your own games, never into the
+System games.</para>
 
 <para>If you are creating a level, you use the Level Selection Dialog
 to assign it to a game and level number. You use the same dialog if
@@ -1484,29 +1529,30 @@ save it as a copy in one of your own games.</para>
 <sect2 id="adding-name-and-hint">
 <title>Adding a Level Name and Hint</title>
 
-<para>On the Save version of the Level Selection Dialog box is a
-button marked <guibutton>Edit Level Name &amp; Hint</guibutton>. You can use
+<para>On the Save version of the Level Selection dialog is a
+button marked <guibutton>Edit Level Name or Hint</guibutton>. You can use
 this to put the finishing touches on your level by adding a name and
 hint. Both are optional, but they are essential for tutorial levels
 and it is usual to provide them with very difficult levels, such as in
 Championship games (see the
 <quote>Vengeance of Peter W</quote> game). Of course you can also use
 the <guiicon>Edit Name/Hint</guiicon> icon, at any time, to add or edit a
-name and hint. </para>
+name and hint.</para>
 
 </sect2>
 
 <sect2 id="testing-a-level">
 <title>Testing a Level</title>
 
-<para>After saving an edited level, you can test it by using
-<guimenuitem>New Game</guimenuitem> in the <guimenu>Game</guimenu> menu
-or the equivalent keyboard shortcut. By default the game and level number are
-remembered and you can get straight into the level with just a few
-clicks. If you then want to edit some more, the same is true when you
-use <guimenuitem>Edit Level</guimenuitem> again. It is essential to test
-every level you compose, to make sure that it is possible to complete it
-and that it is not too easy.</para>
+<para>After saving an edited level, you can test it by using the
+<menuchoice><guimenu>Game</guimenu> <guimenuitem>New Game...</guimenuitem></menuchoice>
+menu item or the equivalent keyboard shortcut. By default the game and
+level number are remembered and you can get straight into the level with
+just a few clicks. If you then want to edit some more, the same is true
+when you use the <menuchoice><guimenu>Game</guimenu>
+<guimenuitem>Edit Level...</guimenuitem></menuchoice> menu item again.
+It is essential to test every level you compose, to make sure that it is
+possible to complete it and that it is not too easy.</para>
 
 </sect2>
 </sect1>
@@ -1537,9 +1583,9 @@ the gap) and levels 3 and above in game B are re-numbered up by one
 <sect2 id="deleting-a-level">
 <title>Deleting a Level</title>
 
-<para>You can use <guimenuitem>Delete Level</guimenuitem> on the
-<guimenu>Editor</guimenu> menu to remove an unwanted level. The other
-levels are re-numbered so as to close the gap in the sequence. </para>
+<para>You can use the <menuchoice><guimenu>Editor</guimenu> <guimenuitem>Delete
+Level...</guimenuitem></menuchoice> on the menu item to remove an unwanted level.
+The other levels are re-numbered so as to close the gap in the sequence.</para>
 
 </sect2>
 </sect1>
@@ -1555,8 +1601,8 @@ levels are re-numbered so as to close the gap in the sequence. </para>
 <para>This chapter presents some general tips and hints for playing
 &kgoldrunner;, as opposed to the specific hints you will find on the levels
 in tutorial and championship games (see <link linkend="move-menu"><menuchoice>
-<guimenu>Move</guimenu><guimenuitem>Hint</guimenuitem></menuchoice></link>).
-The hints are grouped as follows:</para>
+<guimenu>Move</guimenu><guimenuitem>Hint</guimenuitem></menuchoice></link> or
+<keycap>H</keycap>). The hints are grouped as follows:</para>
 
 <itemizedlist>
 
@@ -1745,12 +1791,12 @@ fetch gold for you or finding spots where you can stand and make an
 enemy move to where you want him.</para>
 </listitem>
 <listitem>
-<para>Use <menuchoice><guimenu>Move</guimenu>
-<guimenuitem>Show A Solution...</guimenuitem></menuchoice> to check if
+<para>Use the <menuchoice><guimenu>Move</guimenu>
+<guimenuitem>Show a Solution</guimenuitem></menuchoice> menu item to check if
 there is a recorded solution to the level. This will show you some ways
 to handle difficulties in the level, but not necessarily the best
 ways. There are often many ways to win a level and each time you play
-it there are small differences in timing, etc. So you probably will not
+it there are small differences in timing, &etc; So you probably will not
 be able to copy the recorded solution exactly.</para>
 </listitem>
 <listitem>
@@ -1800,10 +1846,10 @@ best-seller in its day and is one of the all-time great computer games.</para>
 
 <para>You can find out more about <trademark>Lode Runner</trademark> and
 the various versions that have come out since 1983, on the
-website <ulink url="http://entropymine.com/jason/lr">Jason's Lode Runner
-Archive</ulink> (http://entropymine.com/jason/lr/).
+website <ulink url="https://entropymine.com/jason/lr/">Jason's Lode Runner
+Archive</ulink> (https://entropymine.com/jason/lr/).
 That site also has the story of the game's original development, in the file
-<ulink url="http://entropymine.com/jason/lr/misc/ldhist.html">
+<ulink url="https://entropymine.com/jason/lr/misc/ldhist.html">
 misc/ldhist.html</ulink>. Wikipedia also has a very good article on
 <trademark>Lode Runner</trademark>, with interesting links to other
 sites.</para>
@@ -1834,12 +1880,12 @@ use Traditional rules and both have interesting themes running through them,
 as well as being quite difficult.</para>
 
 <para>Peter Wadham composed the sound effects in 2008 and Luciano Montanaro
-incorporated the sounds into the KGoldrunner program.</para>
+incorporated the sounds into the &kgoldrunner; program.</para>
 
-<para>Special thanks are due to Mauricio Piacentini and Dmitry Suzdalev,
+<para>Special thanks are due to &Mauricio.Piacentini; and Dmitry Suzdalev,
 who converted &kgoldrunner; to &Qt; 4 and &kde; 4, and to the many graphics
 artists who contributed to the new SVG graphics and themes in the &kde; 4
-version: especially Mauricio Piacentini for the <quote>Default</quote> theme
+version: especially &Mauricio.Piacentini; for the <quote>Default</quote> theme
 and the new runners, Johann Ollivier Lapeyre for the ladders and bars,
 Eugene Trounev for the <quote>Geek City</quote> and
 <quote>Treasure of Egypt</quote> themes and, last but not least,
