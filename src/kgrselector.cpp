@@ -116,7 +116,7 @@ void KGrSLDialog::setupWidgets()
     setLayout(layout);
     layout->addWidget(dad);
 
-    setWindowTitle (i18n ("Select Game"));
+    setWindowTitle (i18nc("@title:window", "Select Game"));
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::Help);
     QVBoxLayout *buttonLayout = new QVBoxLayout;
     connect(buttonBox, &QDialogButtonBox::accepted, this, &KGrSLDialog::accept);
@@ -171,13 +171,13 @@ void KGrSLDialog::setupWidgets()
     mainLayout->addWidget (separator);
 
     if ((slAction == SL_START) || (slAction == SL_UPD_GAME)) {
-        dad->	setWindowTitle (i18n ("Select Game"));
+        dad->	setWindowTitle (i18nc("@title:window", "Select Game"));
         QLabel * startMsg = new QLabel
             (QStringLiteral("<b>") + i18n ("Level 1 of the selected game is:") + QStringLiteral("</b>"), dad);
         mainLayout->addWidget (startMsg, 5);
     }
     else {
-        dad->	setWindowTitle (i18n ("Select Game/Level"));
+        dad->	setWindowTitle (i18nc("@title:window", "Select Game/Level"));
         QLabel * selectLev = new QLabel
             (QStringLiteral("<b>") + i18n ("Please select a level:") + QStringLiteral("</b>"), dad);
         mainLayout->addWidget (selectLev, 5);
@@ -204,7 +204,7 @@ void KGrSLDialog::setupWidgets()
     hboxLayout2->addWidget (numberL);
     hboxLayout2->addWidget (display);
 
-    levelNH   = new QPushButton (i18n ("Edit Level Name && Hint"), dad);
+    levelNH   = new QPushButton (i18n ("Edit Level Name o&r Hint"), dad);
     mainLayout->addWidget (levelNH);
 
     slName    = new QLabel (dad);

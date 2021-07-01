@@ -242,7 +242,7 @@ void KGoldrunner::setupActions()
     a = KStandardGameAction::solve (this, nullptr, nullptr);
     actionCollection()->addAction (a->objectName(), a);
     connect (a, &QAction::triggered, this, [this] { game->gameActions(SOLVE); });
-    a->setText      (i18n ("&Show A Solution"));
+    a->setText      (i18n ("&Show a Solution"));
     a->setToolTip   (i18n ("Show how to win this level."));
     a->setWhatsThis (i18n ("Play a recording of how to win this level, if "
                            "there is one available."));

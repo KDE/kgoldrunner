@@ -4,7 +4,7 @@
  "\n"
  "Created by Gabriel Miltschitzky [gabriel dot miltschitzky at googlemail dot com], who also provided the recorded solutions.\n"
  "\n"
- "It is best to play the first Gold Rush levels before attempting Gold Rush II, because you will need many techniques that are easier to learn there. None of the levels in Gold Rush and Gold Rush II are impossible. If in doubt, use menu item 'Move->Show A Solution' to watch solutions provided by the author.");
+ "It is best to play the first Gold Rush levels before attempting Gold Rush II, because you will need many techniques that are easier to learn there. None of the levels in Gold Rush and Gold Rush II are impossible. If in doubt, use menu item 'Move->Show a Solution' to watch solutions provided by the author.");
 // L001
 //                                           ZZZZZZZZZZZZZ                            ZZ             ZZZZ      Z Z Z             Z  ZZ    Z  Z               Z    ZZZZ ZZZZ              Z       ZZZZZZ               Z   ZZZZ Z ZZZH             ZZZ  ZZZ ZZZZHH        ZZZZZZRZZ    ZZZZ HH        Z     E ZZZ Z   Z HH  ZZZZZZZ    EEE   Z    ZZHH Z          EEEEE   Z     HH Z Z       EEEEEEE   Z    HH    Z     EEEEEEEEE   Z   HH  Z Z    EEEEEEEEEEE   Z  HH ZN     EEEEEEEEEEEEE   Z HH       EEEEEEEEEEEEEEE   ZHH      EEEEEEEEEEEEEEEEE   HH     EEEEEEEEEEEEEEEEEEE  H
  i18n("A Big Start");

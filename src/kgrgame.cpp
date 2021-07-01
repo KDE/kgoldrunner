@@ -692,7 +692,7 @@ void KGrGame::quickStartDialog()
     qs = new QDialog (view);
 
     // Modal dialog, 4 buttons, vertically: the PLAY button has the focus.
-    qs->setWindowTitle (i18n("Quick Start"));
+    qs->setWindowTitle (i18nc("@title:window", "Quick Start"));
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 
     QPushButton *newGameButton = new QPushButton;
@@ -833,7 +833,7 @@ void KGrGame::runReplay (const int action,
             setPlayback (true);	// Set playback again (startDemo() cleared it).
             if (! startDemo
                 (SYSTEM, gameList.at (selectedGame)->prefix, selectedLevel)) {
-                KGrMessage::information (view, i18n ("Show A Solution"),
+                KGrMessage::information (view, i18n ("Show a Solution"),
                     i18n ("Sorry, although all levels of KGoldrunner can be "
                           "solved, no solution has been recorded yet for the "
                           "level you selected."), QStringLiteral("Show_noSolutionRecorded"));
@@ -1300,7 +1300,7 @@ void KGrGame::showHint()
 	freeze (ProgramPause, true);
 	// TODO - IDW. Check if a solution exists BEFORE showing the extra button.
 	switch (KGrMessage::warning (view, caption, levelHint,
-			    i18n ("&OK"), i18n ("&Show A Solution"))) {
+			    i18n ("&OK"), i18n ("&Show a Solution"))) {
 	case 0:
 	    freeze (ProgramPause, false);	// No replay requested.
 	    break;
@@ -1719,7 +1719,7 @@ void KGrGame::checkHighScore()
     mainLayout->	addWidget (hsnUser);
     mainLayout->	addWidget (OK);
 
-    hsn->		setWindowTitle (i18n ("Save High Score"));
+    hsn->		setWindowTitle (i18nc("@title:window", "Save High Score"));
 
     // QPoint		p = view->mapToGlobal (QPoint (0,0));
     // hsn->		move (p.x() + 50, p.y() + 50);
@@ -1884,7 +1884,7 @@ void KGrGame::showHighScores()
                             i18n ("Date"));
     scores->setRootIsDecorated (false);
 
-    hs->		setWindowTitle (i18n ("High Scores"));
+    hs->		setWindowTitle (i18nc("@title:window", "High Scores"));
 
     // Read and display the users, levels and scores from the high score file.
     scores->clear();

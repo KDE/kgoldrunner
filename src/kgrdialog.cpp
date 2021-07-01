@@ -31,7 +31,7 @@ KGrNHDialog::KGrNHDialog (const QString & levelName, const QString & levelHint,
                         QWidget * parent)
                 : QDialog (parent)
 {
-    setWindowTitle (i18n ("Edit Name & Hint"));
+    setWindowTitle (i18nc("@title:window", "Edit Name or Hint"));
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
     QWidget *mainWidget = new QWidget(this);
     QVBoxLayout *mainLayout = new QVBoxLayout;
@@ -100,7 +100,7 @@ KGrECDialog::KGrECDialog (int action, int gameIndex,
     myGameList  = gamesList;
     defaultGame  = gameIndex;
 
-    setWindowTitle (i18n ("Edit Game Info"));
+    setWindowTitle (i18nc("@title:window", "Edit Game Info"));
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
 
     connect(buttonBox, &QDialogButtonBox::accepted, this, &KGrECDialog::accept);
@@ -166,10 +166,10 @@ KGrECDialog::KGrECDialog (int action, int gameIndex,
     dad->	setMinimumSize ((FIELDWIDTH*cell/2), (FIELDHEIGHT-1)*cell);
 
     if (action == SL_CR_GAME) {
-         setWindowTitle (i18n ("Create Game"));
+         setWindowTitle (i18nc("@title:window", "Create Game"));
     }
     else {
-         setWindowTitle (i18n ("Edit Game Info"));
+         setWindowTitle (i18nc("@title:window", "Edit Game Info"));
     }
 
     QString OKText;
@@ -244,7 +244,7 @@ KGrLGDialog::KGrLGDialog (QFile * savedGames,
                           QWidget * parent)
                 : QDialog (parent)
 {
-    setWindowTitle (i18n ("Select Saved Game"));
+    setWindowTitle (i18nc("@title:window", "Select Saved Game"));
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
