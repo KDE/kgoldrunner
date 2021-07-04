@@ -161,7 +161,7 @@ You can skip this demonstration in future by using menu item <menuchoice>
 </para>
 
 <para>If you skipped the demo or used the mouse or &Space; bar to end it, a
-quick-start popup dialog box shows you the names, number and a preview
+quick-start popup dialog shows you the names, number and a preview
 of the last game and level you loaded or, if you have not played before,
 the same information for Tutorial level 1.</para>
 
@@ -170,7 +170,7 @@ immediately. Otherwise you can click on the <guibutton>Quit</guibutton> button,
 the <guibutton>New Game...</guibutton> button or the
 <guibutton>Use Menu</guibutton> button. The first will close &kgoldrunner;, if
 you do not wish to play, the second will show you a
-<link linkend="level-selection-dialog">Level Selection</link> dialog,
+<link linkend="select-game-dialog">Select Game</link> dialog,
 where you can choose a different game and level and the last will terminate
 the dialog, leaving you free to use the &kgoldrunner; menus.</para>
 
@@ -496,8 +496,8 @@ major rule settings that affect the style of play: known as
 important to know which settings are in force when you are playing a
 game. &kgoldrunner; automatically chooses the correct settings for
 a game when you play one of its levels and the rules for each game are
-shown in the <link linkend="level-selection-dialog">Level Selection</link>
-dialog box.</para>
+shown in the <link linkend="select-game-dialog">Select Game</link>
+dialog.</para>
 
 <para>The main difference between <quote>Traditional</quote> and
 <quote>&kgoldrunner;</quote> settings is the method by which the
@@ -565,20 +565,19 @@ them.</para>
 </sect1>
 </chapter>
 
-<chapter id="level-selection-dialog">
-<title>The Level Selection Dialog</title>
+<chapter id="select-game-dialog">
+<title>The Select Game Dialog</title>
 
-<sect1 id="level-selection-dialog-box">
-<title>Using the Level Selection Dialog Box</title>
-
+<sect1 id="select-game-dialog-box">
+<title>Using the Select Game Dialog</title>
 <screenshot>
-<screeninfo>The Level Selection dialog</screeninfo>
+<screeninfo>The Select Game dialog</screeninfo>
 <mediaobject>
 <imageobject>
 <imagedata fileref="select.png" format="PNG" />
 </imageobject>
 <textobject>
-<phrase>The Level Selection dialog</phrase>
+<phrase>The Select Game dialog</phrase>
 </textobject>
 </mediaobject>
 </screenshot>
@@ -596,7 +595,7 @@ you are doing: in this case choosing a game and level to play.</para>
 
 <para>There are several <quote>System</quote> games that come with the
 &kgoldrunner; release and you can add your own games by using the editor.
-All these games appear in the list at the top of the dialog box, grouped by
+All these games appear in the list at the top of the dialog, grouped by
 level of difficulty. The tutorial games appear last in the list and the
 games of normal skill appear first. To select one of the games, just
 click on its name.</para>
@@ -615,7 +614,7 @@ you further information about that game.</para>
 at level 1 and work up, especially if you are going for a high score. In
 general, the higher numbered levels are more difficult.</para>
 
-<para>When you start the level selection dialog, the default level will
+<para>When you start the <guilabel>Select Game</guilabel> dialog, the default level will
 be something reasonable, such as the last level you played or edited.
 You can select another level by using the spinbox arrows, by typing the
 level number into the spinbox or by moving the slider. The arrows at
@@ -637,7 +636,7 @@ button at the bottom and proceed with your edit, play or replay.</para>
 
 <para>Until you do that, nothing changes, so you can always click
 <guibutton>Cancel</guibutton> and go back to what you were doing
-earlier. Note that the game action is frozen while the dialog box
+earlier. Note that the game action is frozen while the dialog
 is active, so you can continue playing where you left off if you
 choose <guibutton>Cancel</guibutton>.</para>
 
@@ -776,9 +775,9 @@ to contribute, the current author's email address is in the
 </menuchoice>
 </term>
 <listitem>
-<para>Shows the level selection dialog box (see
-<link linkend="level-selection-dialog-box">
-Using the Level Selection Dialog Box</link>), where you choose a game
+<para>Shows the <guilabel>Select Game</guilabel> dialog (see
+<link linkend="select-game-dialog-box">
+Using the Select Game Dialog</link>), where you choose a game
 and a level within that game. At first it is easiest to start at level 1,
 because the levels are arranged approximately in order of difficulty.
 Also it is best to start there if you are going for a high score.</para>
@@ -837,7 +836,7 @@ shortcut.</para>
 </menuchoice>
 </term>
 <listitem><para>This option is enabled only if you have been using
-the Game Editor.  It brings up the level selection dialog box and lets
+the Game Editor.  It brings up the <guilabel>Select Game</guilabel> dialog and lets
 you choose a level number and game in which to save your work.  Its
 action is exactly the same as the <menuchoice><guimenu>Editor</guimenu>
 <guimenuitem>Save Edits...</guimenuitem></menuchoice> menu item and
@@ -1043,7 +1042,7 @@ and level number.</para>
 </menuchoice>
 </term>
 <listitem>
-<para>Shows the level selection dialog box, where
+<para>Shows the <guilabel>Select Game</guilabel> dialog, where
 you choose a game and level to edit.  You can choose a System game and
 level, but you get a warning that you can only save the edited level
 in one of your own games.</para>
@@ -1057,11 +1056,11 @@ in one of your own games.</para>
 </menuchoice>
 </term>
 <listitem>
-<para>Shows the level selection dialog box with
+<para>Shows the <guilabel>Select Game</guilabel> dialog with
 appropriate default settings for saving a new or edited level.  You can
 change the game and level number and achieve a <quote>Save As...</quote>
-effect. This dialog box has a special button, <guibutton>Edit Level Name or
-Hint</guibutton>, which shows a dialog box where you can add an optional
+effect. This dialog has a special button, <guibutton>Edit Level Name or
+Hint</guibutton>, which shows a dialog where you can add an optional
 name and hint to your level.</para>
 </listitem>
 </varlistentry>
@@ -1073,9 +1072,9 @@ name and hint to your level.</para>
 </term>
 <listitem>
 <para>This is a two-part operation.  Before using <guimenuitem>Move
-Level</guimenuitem>, you must load a level to be moved by selecting it
-for play or edit.  The <guimenuitem>Move Level</guimenuitem> option
-then shows the level selection dialog box, where you choose a new place
+Level...</guimenuitem>, you must load a level to be moved by selecting it
+for play or edit. Then shows the <guilabel>Select Game</guilabel>
+dialog, where you choose a new place
 for the loaded level.  You can change both the game and the level
 number, to move a level to another game, or you can just change the level
 number to re-order levels within a game.  You cannot move a System
@@ -1089,7 +1088,7 @@ level.</para>
 </menuchoice>
 </term>
 <listitem>
-<para>Shows the level selection dialog box, where you choose a level
+<para>Shows the <guilabel>Select Game</guilabel> dialog, where you choose a level
 to delete.  You cannot delete a System level.</para>
 </listitem>
 </varlistentry>
@@ -1101,7 +1100,7 @@ to delete.  You cannot delete a System level.</para>
 </term>
 <listitem>
 <para>You need to use this option before you start
-creating your own &kgoldrunner; levels.  It shows a dialog box where you
+creating your own &kgoldrunner; levels.  It shows a dialog where you
 can enter the name of a new game, a 1-5 character prefix for
 level-file names, the default rules for your game
 (<quote>&kgoldrunner;</quote> or <quote>Traditional</quote>) and an
@@ -1115,9 +1114,9 @@ optional description or comment about the game.</para>
 </menuchoice>
 </term>
 <listitem>
-<para>Shows the level selection dialog box, where
+<para>Shows the <guilabel>Select Game</guilabel> dialog, where
 you choose a game to be edited, then shows the game information in a
-dialog box where you can edit the name, rules and description, but
+dialog where you can edit the name, rules and description, but
 not the file name prefix, in case you have saved some levels.  That
 is because the prefix is used in level-file names internally.</para>
 </listitem>
@@ -1459,7 +1458,7 @@ playing area.</para>
 <para>The three icons on the left of the edit toolbar have the same
 actions as the <guimenuitem>Create Level</guimenuitem>,
 <guimenuitem>Edit Level...</guimenuitem> and <guimenuitem>Save
-Edits</guimenuitem> menu options. The other eleven icons are for editing and
+Edits...</guimenuitem> menu options. The other eleven icons are for editing and
 painting objects in your level.</para>
 
 
@@ -1470,8 +1469,8 @@ painting objects in your level.</para>
 <guiicon>Concrete</guiicon> (cannot dig), <guiicon>Trap</guiicon>
 (also known as a false brick or fall-through brick), <guiicon>Ladder</guiicon>,
 <guiicon>H Ladder</guiicon> (hidden ladder), <guiicon>Bar</guiicon> (or pole)
-and <guiicon>Gold</guiicon>. The graphics for these icons are copied from whatever
-&kgoldrunner; theme you are using.</para>
+and <guiicon>Gold</guiicon>. The graphics for these icons, except for the
+light bulb, are copied from whatever &kgoldrunner; theme you are using.</para>
 
 <screenshot>
 <screeninfo>Editing a level</screeninfo>
@@ -1517,7 +1516,7 @@ wherever you release the mouse button.</para>
 menu items. You must always save into your own games, never into the
 System games.</para>
 
-<para>If you are creating a level, you use the Level Selection Dialog
+<para>If you are creating a level, you use the <guilabel>Select Game</guilabel> dialog
 to assign it to a game and level number. You use the same dialog if
 you have been editing a level, but the default is to save it where it
 came from. You can change the game and level, to get a <quote>Save as...</quote>
@@ -1529,7 +1528,7 @@ save it as a copy in one of your own games.</para>
 <sect2 id="adding-name-and-hint">
 <title>Adding a Level Name and Hint</title>
 
-<para>On the Save version of the Level Selection dialog is a
+<para>On the Save version of the <guilabel>Select Game</guilabel> dialog is a
 button marked <guibutton>Edit Level Name or Hint</guibutton>. You can use
 this to put the finishing touches on your level by adding a name and
 hint. Both are optional, but they are essential for tutorial levels
@@ -1568,7 +1567,7 @@ possible to complete it and that it is not too easy.</para>
 a game or to move a level from one game to another. <guimenuitem>Move
 Level</guimenuitem> is a two-part operation. You must first load a
 level by selecting it for editing or play, then when you use
-<guimenuitem>Move Level</guimenuitem>, the Level Selection Dialog box
+<guimenuitem>Move Level</guimenuitem>, the <guilabel>Select Game</guilabel> dialog
 appears and you can select the new level number and game (as
 required).</para>
 
