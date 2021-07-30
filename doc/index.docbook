@@ -1583,7 +1583,7 @@ the gap) and levels 3 and above in game B are re-numbered up by one
 <title>Deleting a Level</title>
 
 <para>You can use the <menuchoice><guimenu>Editor</guimenu> <guimenuitem>Delete
-Level...</guimenuitem></menuchoice> on the menu item to remove an unwanted level.
+Level...</guimenuitem></menuchoice> menu item to remove an unwanted level.
 The other levels are re-numbered so as to close the gap in the sequence.</para>
 
 </sect2>
