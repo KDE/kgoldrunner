@@ -749,7 +749,7 @@ bool KGrEditor::ownerOK (Owner o)
     // Check that this owner has at least one set of game data.
     bool OK = false;
 
-    for (KGrGameData * d : qAsConst(gameList)) {
+    for (KGrGameData * d : std::as_const(gameList)) {
         if (d->owner == o) {
             OK = true;
             break;
@@ -786,7 +786,7 @@ bool KGrEditor::saveGameData (Owner o)
     int			i, len;
     char		ch;
 
-    for (KGrGameData * gData : qAsConst(gameList)) {
+    for (KGrGameData * gData : std::as_const(gameList)) {
         if (gData->owner == o) {
             line = QStringLiteral ("%1 %2 %3 %4\n")
                             .arg (gData->nLevels, 3, 10, QLatin1Char('0')) // int 00n

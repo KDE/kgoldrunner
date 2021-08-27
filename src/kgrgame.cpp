@@ -440,7 +440,7 @@ void KGrGame::initGame()
     level     = 1;
     int n     = 0;
     dbk1 << gameIndex << level << "Search:" << prevGamePrefix << prevLevel;
-    for (KGrGameData * gameData : qAsConst(gameList)) {
+    for (KGrGameData * gameData : std::as_const(gameList)) {
         dbk1 << "Trying:" << n << gameData->prefix;
         if (gameData->prefix == prevGamePrefix) {
             gameIndex = n;

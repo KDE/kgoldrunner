@@ -185,7 +185,7 @@ void KGrLevelGrid::calculateCellAccess (const int i, const int j)
 
 void KGrLevelGrid::placeHiddenLadders()
 {
-    for (const int &offset : qAsConst(hiddenLadders)) {
+    for (const int &offset : std::as_const(hiddenLadders)) {
         int i = offset % width;
         int j = offset / width;
         changeCellAt (i, j, LADDER);

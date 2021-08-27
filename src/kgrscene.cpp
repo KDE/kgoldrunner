@@ -124,13 +124,13 @@ void KGrScene::redrawScene ()
         m_gradient.setColorAt (0.85, QColor (0, 0, 0, 0));
 
         int index = 0;
-        for (KGameRenderedItem * tile : qAsConst(m_tiles)) {
+        for (KGameRenderedItem * tile : std::as_const(m_tiles)) {
             if (tile) {
                 setTile (tile, tileSize, index/m_tilesHigh, index%m_tilesHigh);
             }
             index++;
         }
-        for (KGrSprite * sprite : qAsConst(m_sprites)) {
+        for (KGrSprite * sprite : std::as_const(m_sprites)) {
             if (sprite) {
                 sprite->changeCoordinateSystem
                         (m_topLeftX, m_topLeftY, tileSize);
@@ -472,7 +472,7 @@ int KGrScene::makeSprite (const char type, int i, int j)
 
 void KGrScene::animate (bool missed)
 {
-    for (KGrSprite * sprite : qAsConst(m_sprites)) {
+    for (KGrSprite * sprite : std::as_const(m_sprites)) {
         if (sprite != nullptr) {
             sprite->animate (missed);
         }

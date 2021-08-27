@@ -210,13 +210,13 @@ void KGrLevelPlayer::init (KGrView * view,
     // Connect the hero and enemies (if any) to the animation code.
     connect (hero, &KGrHero::startAnimation, view->gameScene(), &KGrScene::startAnimation);
 
-    for (KGrEnemy * enemy : qAsConst(enemies)) {
+    for (KGrEnemy * enemy : std::as_const(enemies)) {
         connect (enemy, &KGrEnemy::startAnimation, view->gameScene(), &KGrScene::startAnimation);
     }
 
     // Connect the scoring.
     connect (hero, &KGrHero::incScore, game, &KGrGame::incScore);
-    for (KGrEnemy * enemy : qAsConst(enemies)) {
+    for (KGrEnemy * enemy : std::as_const(enemies)) {
         connect (enemy, &KGrEnemy::incScore, game, &KGrGame::incScore);
     }
 
@@ -582,7 +582,7 @@ bool KGrLevelPlayer::heroCaught (const int heroX, const int heroY)
         return false;
     }
     int enemyX, enemyY, pointsPerCell_1;
-    for (KGrEnemy * enemy : qAsConst(enemies)) {
+    for (KGrEnemy * enemy : std::as_const(enemies)) {
         pointsPerCell_1 = enemy->whereAreYou (enemyX, enemyY) - 1;
         if (((heroX < enemyX) ? ((heroX + pointsPerCell_1) >= enemyX) :
                                  (heroX <= (enemyX + pointsPerCell_1))) &&
@@ -604,7 +604,7 @@ KGrEnemy * KGrLevelPlayer::standOnEnemy (const int spriteId,
         return nullptr;
     }
     int enemyX, enemyY, pointsPerCell;
-    for (KGrEnemy * enemy : qAsConst(enemies)) {
+    for (KGrEnemy * enemy : std::as_const(enemies)) {
         pointsPerCell = enemy->whereAreYou (enemyX, enemyY);
         if (((enemyY == (y + pointsPerCell)) ||
              (enemyY == (y + pointsPerCell - 1))) &&
@@ -757,7 +757,7 @@ void KGrLevelPlayer::tick (bool missed, int scaledTime)
         return;
     }
 
-    for (KGrEnemy * enemy : qAsConst(enemies)) {
+    for (KGrEnemy * enemy : std::as_const(enemies)) {
         enemy->run (scaledTime);
     }
 
@@ -1188,7 +1188,7 @@ void KGrLevelPlayer::startLogging()
 void KGrLevelPlayer::showFigurePositions()
 {
     hero->showState();
-    for (KGrEnemy * enemy : qAsConst(enemies)) {
+    for (KGrEnemy * enemy : std::as_const(enemies)) {
         enemy->showState();
     }
 }
