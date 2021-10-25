@@ -65,7 +65,7 @@ class KGrScene : public QGraphicsScene
     Q_OBJECT
 public:
     explicit KGrScene       (KGrView * view);
-    ~KGrScene               ();
+    ~KGrScene               () override;
 
     /**
      * Redraw the scene whenever the current theme has changed.

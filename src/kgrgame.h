@@ -37,7 +37,7 @@ Q_OBJECT
 public:
     KGrGame (KGrView * theView,
              const QString & theSystemDir, const QString & theUserDir);
-    ~KGrGame();
+    ~KGrGame() override;
 
     bool initGameLists();
 

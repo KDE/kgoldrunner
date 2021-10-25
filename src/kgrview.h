@@ -18,7 +18,7 @@ class KGrView : public QGraphicsView
     Q_OBJECT
 public:
     explicit KGrView (QWidget * parent);
-    ~KGrView         ();
+    ~KGrView         () override;
 
     /*
      * Get a pointer to the game scene.

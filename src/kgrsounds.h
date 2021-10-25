@@ -23,7 +23,7 @@ public:
      * Construct the KGrSounds class.
      */
     KGrSounds();
-    ~KGrSounds();
+    ~KGrSounds() override;
 
     /**
      * Play a sound effect. 

@@ -40,7 +40,7 @@ public:
                  QList<KGrGameData *> & gameList,
                  const QString & pSystemDir, const QString & pUserDir,
                  QWidget * parent = nullptr);
-    ~KGrSLDialog();
+    ~KGrSLDialog() override;
 
     bool selectLevel (int & selectedGame, int & selectedLevel);
 
@@ -103,7 +103,7 @@ class KGrThumbNail : public QFrame
 {
 public:
     explicit KGrThumbNail (QWidget *parent = nullptr);
-    ~KGrThumbNail();
+    ~KGrThumbNail() override;
 
     void setLevelData (const QString& dir, const QString& prefix,
                        int level, QLabel * sln);

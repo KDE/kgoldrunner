@@ -158,7 +158,7 @@ public:
      */
     KGrHero (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
                 int i, int j, int pSpriteId, KGrRuleBook  * pRules);
-    ~KGrHero();
+    ~KGrHero() override;
 
     /**
      * Makes the hero run, under control of a pointer or the keyboard and
@@ -245,7 +245,7 @@ public:
      */
     KGrEnemy (KGrLevelPlayer * pLevelPlayer, KGrLevelGrid * pGrid,
                  int i, int j, int pSpriteId, KGrRuleBook  * pRules);
-    ~KGrEnemy();
+    ~KGrEnemy() override;
 
     /**
      * Makes an enemy run, guided by the position of the hero and the layout of

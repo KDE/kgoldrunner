@@ -35,7 +35,7 @@ Q_OBJECT
 public:
     KGrNHDialog (const QString & levelName, const QString & levelHint,
                         QWidget * parent = nullptr);
-    ~KGrNHDialog();
+    ~KGrNHDialog() override;
 
     const QString	getName()	{return (nhName->text());}
     const QString	getHint()	{return (mle->toPlainText());}
@@ -56,7 +56,7 @@ public:
     KGrECDialog (int action, int collnIndex,
                         QList<KGrGameData *> & gameList,
                         QWidget *parent = nullptr);
-    ~KGrECDialog();
+    ~KGrECDialog() override;
 
     const QString	getName()	{return (ecName->text());}
     const QString	getPrefix()	{return (ecPrefix->text());}

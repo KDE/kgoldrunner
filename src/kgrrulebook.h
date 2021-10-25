@@ -82,7 +82,7 @@ class KGrTraditionalRules : public KGrRuleBook
     Q_OBJECT
 public:
     explicit KGrTraditionalRules (QObject * parent);
-    ~KGrTraditionalRules();
+    ~KGrTraditionalRules() override;
 
     Direction findBestWay  (const int eI, const int eJ,
                             const int hI, const int hJ,
@@ -107,7 +107,7 @@ class KGrKGoldrunnerRules : public KGrRuleBook
     Q_OBJECT
 public:
     explicit KGrKGoldrunnerRules (QObject * parent);
-    ~KGrKGoldrunnerRules();
+    ~KGrKGoldrunnerRules() override;
 
     Direction findBestWay  (const int eI, const int eJ,
                             const int hI, const int hJ,
@@ -127,7 +127,7 @@ class KGrScavengerRules : public KGrRuleBook
     Q_OBJECT
 public:
     explicit KGrScavengerRules (QObject * parent);
-    ~KGrScavengerRules();
+    ~KGrScavengerRules() override;
 
     Direction findBestWay (const int eI, const int eJ,
                            const int hI, const int hJ,

@@ -65,7 +65,7 @@ public:
      * @param pRandomGen A shared source of random numbers for all enemies.
      */
     KGrLevelPlayer             (KGrGame * parent, QRandomGenerator * pRandomGen);
-    ~KGrLevelPlayer();
+    ~KGrLevelPlayer() override;
 
     /**
      * The main initialisation of KGrLevelPlayer.  This method establishes the

@@ -17,7 +17,7 @@ class KGrSprite : public KGameRenderedItem
 public:
     explicit KGrSprite (KGameRenderer * renderer, QString & key,
                         const char type, const int tickTime = 20);
-    ~KGrSprite();
+    ~KGrSprite() override;
 
     inline char     spriteType      ()        { return m_type; }
     inline QPointF  currentLoc      ()        { return QPointF (m_x, m_y); }

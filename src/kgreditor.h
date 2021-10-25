@@ -51,7 +51,7 @@ public:
     KGrEditor (KGrView * theView, const QString &theSystemDir,
                                   const QString &theUserDir,
                                   QList<KGrGameData *> & pGameList);
-    ~KGrEditor();
+    ~KGrEditor() override;
 
     /**
      * Check if there are any unsaved edits and, if so, ask the user what to
