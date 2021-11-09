@@ -6,24 +6,44 @@ ecm_setup_version(${RELEASE_SERVICE_VERSION}
 add_executable(kgoldrunner)
 
 target_sources(kgoldrunner PRIVATE
-    kgrview.cpp
-    kgrscene.cpp
-    kgrsprite.cpp
     kgoldrunner.cpp
-    kgrthemetypes.cpp
-    kgrrenderer.cpp
-    kgrgame.cpp
-    kgrlevelplayer.cpp
-    kgrlevelgrid.cpp
-    kgrrunner.cpp
-    kgrrulebook.cpp
-    kgrgameio.cpp
-    kgrtimer.cpp
-    kgreditor.cpp
-    main.cpp
-    kgrselector.cpp
-    kgrsounds.cpp
+    kgoldrunner.h
+    kgrdebug.h
     kgrdialog.cpp
+    kgrdialog.h
+    kgreditor.cpp
+    kgreditor.h
+    kgrgame.cpp
+    kgrgame.h
+    kgrgameio.cpp
+    kgrgameio.h
+    kgrglobals.h
+    kgrlevelgrid.cpp
+    kgrlevelgrid.h
+    kgrlevelplayer.cpp
+    kgrlevelplayer.h
+    kgrrenderer.cpp
+    kgrrenderer.h
+    kgrrulebook.cpp
+    kgrrulebook.h
+    kgrrunner.cpp
+    kgrrunner.h
+    kgrscene.cpp
+    kgrscene.h
+    kgrselector.cpp
+    kgrselector.h
+    kgrsounds.cpp
+    kgrsounds.h
+    kgrsprite.cpp
+    kgrsprite.h
+    kgrthemetypes.cpp
+    kgrthemetypes.h
+    kgrtimer.cpp
+    kgrtimer.h
+    kgrview.cpp
+    kgrview.h
+    main.cpp
+
 
     kgoldrunner.qrc
 )
