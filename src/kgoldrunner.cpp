@@ -10,11 +10,12 @@
 
 #include <QAction>
 #include <QApplication>
-#include <QDesktopWidget>
 #include <QIcon>
 #include <QKeyEvent>
 #include <QKeySequence>
 #include <QShortcut>
+#include <QActionGroup>
+#include <QScreen>
 
 #include <KActionCollection>
 #include <KConfig>
@@ -71,11 +72,12 @@ KGoldrunner::KGoldrunner()
 /************************  SET PLAYFIELD AND GAME DATA  ***********************/
 /******************************************************************************/
 
+    const QSize maxSize = screen()->availableGeometry().size();
     // Base the size of playing-area and widgets on the monitor resolution.
-    int dw = QApplication::desktop()->width();
+    int dw = maxSize.width();
 
     // Need to consider the height, for widescreen displays (eg. 1280x768).
-    int dh = QApplication::desktop()->height();
+    int dh = maxSize.height();
 
     dw = qMin ((4 * dh + 1) / 3, dw);	// KGoldrunner aspect ratio is 4:3.
     dh = (3 * dw + 2) / 4;

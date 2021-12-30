@@ -12,9 +12,9 @@
 #include "kgrgameio.h"
 
 #include <QApplication>
-#include <QDesktopWidget>
 #include <QGridLayout>
 #include <QHeaderView>
+#include <QScreen>
 #include <QLabel>
 #include <QPainter>
 #include <QPushButton>
@@ -224,8 +224,8 @@ void KGrSLDialog::setupWidgets()
 
     // Avoid spilling into the Taskbar or Apple Dock area if they get too close.
     // Otherwise allow the dialog to choose its size and then be resizeable.
-    const QRect avail = QApplication::desktop()->availableGeometry(this);
-    if ((avail.height() - slParent->height()) <= 120) {
+    const QSize maxSize = screen()->availableGeometry().size();
+    if ((maxSize.height() - slParent->height()) <= 120) {
         dad->setFixedHeight (slParent->height() - 120);	// Keep 120 for buttons.
     }
 

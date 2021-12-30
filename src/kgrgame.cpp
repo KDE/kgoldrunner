@@ -1567,7 +1567,11 @@ bool KGrGame::selectSavedGame (int & selectedGame, int & selectedLevel)
         }
         if (index >= 0) {
             selectedGame  = index;
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
             selectedLevel = loadedData.midRef (28, 3).toInt();
+#else
+            selectedLevel = QStringView(loadedData).mid(28, 3).toInt();
+#endif
             result = true;
         }
         else {
