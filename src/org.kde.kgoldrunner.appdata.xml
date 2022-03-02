@@ -89,6 +89,7 @@
     <p xml:lang="pl">KGoldrunner jest grą akcji, w której bohater biega po labiryntach, wspina się po drabinach, kobie drziury i unika przeciwników po to, aby zebrać wszystkie samorodki złota i uciec do następnego poziomu. Twoi przeciwnicy też chcą złota, a co gorsza chcą także ciebie!.</p>
     <p xml:lang="pt">O KGoldrunner é um jogo de acção onde o herói corre por um labirinto, sobe escadas, escava buracos e foge dos inimigos para conseguir recolher todas as pepitas de ouro e escapar para o nível seguinte. Os seus inimigos também estão atrás do ouro. Pior ainda, estão atrás de si!.</p>
     <p xml:lang="pt-BR">KGoldrunner é um jogo de ação onde o herói corre por um labirinto, sobe escadas, escava buracos e foge dos inimigos para conseguir coletar todas as pepitas de ouro e escapar para o nível seguinte. Seus inimigos também estão atrás do ouro. Pior ainda, estão atrás de você!</p>
+    <p xml:lang="ru">KGoldrunner — аркадная игра, где герой путешествует по лабиринту, перемещается по лестницам, копает ямы и убегает от врагов, собирая при этом золотые самородки и переходя с уровня на уровень. Кроме героя, за золотом охотятся и враги. Они также не прочь вывести героя из игры!</p>
     <p xml:lang="sk">KGoldrunner je akčná hra, kde hrdina beží cez bludisko, chodí po schodoch, kope diery a vyhýba sa nepriateľom, aby nazbieral všetky zlat nugety a prešiel do ďalšej úrovne. Vaši nepriatelia idú tiež po zlate. Čo je horšie, idú aj po tebe!</p>
     <p xml:lang="sl">KGoldrunner je akcijska igra, v kateri junak teče skozi labirint, pleza po lestvah, koplje luknje in se izmika sovražnikom, pri tem pa poskuša pobrati vse zlate kepe in pobegniti v naslednjo stopnjo. Tudi vaši nasprotniki želijo zlato. A še huje je to, da vam strežejo po življenju!.</p>
     <p xml:lang="sr">К‑златобојац је акциона игра у којој јунак трчи кроз лавиринт, пење се уз степенице, копа рупе и избегава непријатеље како био се докопао свих златних груменова и побегао на наредни ниво. И ваши непријатељи јуре за златом, и, још горе, за вама!</p>
@@ -151,6 +152,7 @@
       <li xml:lang="pl">Można przystroić</li>
       <li xml:lang="pt">Suporte para temas</li>
       <li xml:lang="pt-BR">Suporte a temas</li>
+      <li xml:lang="ru">Смена тем</li>
       <li xml:lang="sk">Témovateľné</li>
       <li xml:lang="sl">Podpora temam</li>
       <li xml:lang="sr">Различите теме.</li>
@@ -181,6 +183,7 @@
       <li xml:lang="pl">Setki poziomów</li>
       <li xml:lang="pt">Centenas de níveis</li>
       <li xml:lang="pt-BR">Centenas de níveis</li>
+      <li xml:lang="ru">Сотни уровней</li>
       <li xml:lang="sk">Stovky úrovní</li>
       <li xml:lang="sl">Stotine stopenj</li>
       <li xml:lang="sr">Стотине нивоа.</li>
@@ -211,6 +214,7 @@
       <li xml:lang="pl">Edytor poziomów</li>
       <li xml:lang="pt">Editor de níveis</li>
       <li xml:lang="pt-BR">Editor de níveis</li>
+      <li xml:lang="ru">Редактор уровней</li>
       <li xml:lang="sk">Editor úrovne</li>
       <li xml:lang="sl">Urejevalnik stopenj</li>
       <li xml:lang="sr">Уређивач нивоа.</li>
@@ -241,6 +245,7 @@
       <li xml:lang="pl">Dwa tryby dla przeciwników: tryb klasyczny i KGoldrunner, w trybie KGoldrunner są oni bardziej inteligentni, w trybie klasycznym łatwiej jest ich wykiwać</li>
       <li xml:lang="pt">Dois modos para os inimigos: modo clássico e do KGoldRunner. Neste último modo, eles são mais inteligentes, enquanto no modo clássico são mais fáceis de enganar</li>
       <li xml:lang="pt-BR">Dois modos para os inimigos: Clássico e KGoldRunner. Neste último modo, eles são mais inteligentes, enquanto no modo clássico são mais fáceis de enganar</li>
+      <li xml:lang="ru">Два режима для противников: классический и режим KGoldrunner. В режиме KGoldrunner противники умнее, их не так просто обмануть, как в классическом режиме.</li>
       <li xml:lang="sk">Dva modely pre nepriateľov: klasické a reťim KGoldRunner, v tomto režime sú inteligentnejší, v klasickom režime je ľahšie ich zmiasť.</li>
       <li xml:lang="sl">Dva načina za sovražnike: klasični in KGoldrunner. V slednjem so sovražniki pametnejši, v prvem pa jih je lažje preslepiti</li>
       <li xml:lang="sr">Два режима за непријатеље: класични и К‑златобојчев. У К‑златобојчевом режиму непријатељи су паметнији, у класичном их је лакше заварати.</li>
@@ -271,6 +276,7 @@
       <li xml:lang="pl">Bardzo bardzo trudne poziomy</li>
       <li xml:lang="pt">Níveis mesmo muito difíceis</li>
       <li xml:lang="pt-BR">Níveis extremamente difíceis</li>
+      <li xml:lang="ru">Уровни очень высокой сложности</li>
       <li xml:lang="sk">Veľmi veľmi náročné úrovne</li>
       <li xml:lang="sl">Zelo zelo težke stopnje</li>
       <li xml:lang="sr">Врло, врло тешки нивои.</li>
@@ -301,6 +307,7 @@
       <li xml:lang="pl">Sterowanie myszą lub klawiaturą</li>
       <li xml:lang="pt">Controlo pelo teclado ou rato</li>
       <li xml:lang="pt-BR">Controle por teclado ou mouse</li>
+      <li xml:lang="ru">Управление с помощью клавиатуры или мыши</li>
       <li xml:lang="sk">Ovládanie klávesnicou alebo myšou</li>
       <li xml:lang="sl">Nadzor s tipkovnico ali miško</li>
       <li xml:lang="sr">Управљање тастатуром или мишем.</li>
@@ -331,6 +338,7 @@
       <li xml:lang="pl">Zapisywalne stany gry</li>
       <li xml:lang="pt">Possibilidade de gravar jogos</li>
       <li xml:lang="pt-BR">Possibilidade de salvar partidas</li>
+      <li xml:lang="ru">Возможность сохранения игр</li>
       <li xml:lang="sk">Uložiteľné hry</li>
       <li xml:lang="sl">Igre je mogoče shraniti</li>
       <li xml:lang="sr">Уписивање позиција.</li>
@@ -367,6 +375,7 @@
       <caption xml:lang="pl">Granie w KGoldrunner</caption>
       <caption xml:lang="pt">A jogar ao KGoldrunner</caption>
       <caption xml:lang="pt-BR">Jogando o KGoldrunner</caption>
+      <caption xml:lang="ru">Игра в KGoldrunner</caption>
       <caption xml:lang="sk">Hranie KGoldrunner</caption>
       <caption xml:lang="sl">Igra KGoldrunner</caption>
       <caption xml:lang="sv">Spela Kgoldrunner</caption>
