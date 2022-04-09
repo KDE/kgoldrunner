@@ -97,7 +97,7 @@
     <p xml:lang="sr-ijekavian">К‑златобојац је акциона игра у којој јунак трчи кроз лавиринт, пење се уз степенице, копа рупе и избегава непријатеље како био се докопао свих златних груменова и побегао на наредни ниво. И ваши непријатељи јуре за златом, и, још горе, за вама!</p>
     <p xml:lang="sr-ijekavianlatin">K‑zlatobojac je akciona igra u kojoj junak trči kroz lavirint, penje se uz stepenice, kopa rupe i izbegava neprijatelje kako bio se dokopao svih zlatnih grumenova i pobegao na naredni nivo. I vaši neprijatelji jure za zlatom, i, još gore, za vama!</p>
     <p xml:lang="sv">Kgoldrunner är ett äventyrsspel där hjälten springer genom en labyrint, klättrar på stegar, gräver hål och undviker fiender för att samla in alla guldklimpar och fly till nästa nivå. Fienderna är också ute efter guldet. Vad värre är, de är också är ute efter dig!</p>
-    <p xml:lang="tr">KGoldrunner, kahramanımızın labirentte dolaştığı, tüm altın külçelerini toplamak ve bir sonraki seviyeye çıkmak için merdiven tırmandığı, delik açmtığı ve düşman avı yaptığı bir kaçış aksiyon oyunudur. Düşmanların da altının peşinde. Daha da kötüsü, senin peşindeler!</p>
+    <p xml:lang="tr">KGoldrunner, kahramanımızın labirentte dolaştığı, tüm altın külçelerini toplamak ve bir sonraki düzeye çıkmak için merdiven tırmandığı, delik açtığı ve düşman avı yaptığı bir kaçış aksiyon oyunudur. Düşmanların da altının peşinde. Daha da kötüsü, senin peşindeler!</p>
     <p xml:lang="uk">«Золотошукач» — рухлива гра, де герой подорожує лабіринтом, видирається на стіни, копає ями та втікає від ворогів, збираючи при цьому золоті самородки і переходячи з рівня на рівень. Окрім вашого героя, за золотом полюють і вороги. Вони також не проти звести вашого героя з цього світу!</p>
     <p xml:lang="x-test">xxKGoldrunner is an action game where the hero runs through a maze, climbs stairs, dig holes and dodges enemies in order to collect all the gold nuggets and escape to the next level. Your enemies are also after the gold. Worse still, they are after you!.xx</p>
     <p xml:lang="zh-CN">KGoldrunner 是一个动作游戏，主角穿过迷宫，爬楼梯，挖洞和躲闪敌人，以收集所有的金块并逃生到下一关。您的敌人也在追金。更糟的是，他们在追您！</p>
@@ -191,7 +191,7 @@
       <li xml:lang="sr-ijekavian">Стотине нивоа.</li>
       <li xml:lang="sr-ijekavianlatin">Stotine nivoa.</li>
       <li xml:lang="sv">Hundratals nivåer</li>
-      <li xml:lang="tr">Yüzlerce seviye</li>
+      <li xml:lang="tr">Yüzlerce düzey</li>
       <li xml:lang="uk">Сотні рівнів</li>
       <li xml:lang="x-test">xxHundreds of levelsxx</li>
       <li xml:lang="zh-CN">上百关卡</li>
@@ -222,7 +222,7 @@
       <li xml:lang="sr-ijekavian">Уређивач нивоа.</li>
       <li xml:lang="sr-ijekavianlatin">Uređivač nivoa.</li>
       <li xml:lang="sv">Nivåeditor</li>
-      <li xml:lang="tr">Seviye düzenleyici</li>
+      <li xml:lang="tr">Düzey düzenleyici</li>
       <li xml:lang="uk">Редактор рівнів</li>
       <li xml:lang="x-test">xxLevel-editorxx</li>
       <li xml:lang="zh-CN">关卡编辑器</li>
@@ -284,7 +284,7 @@
       <li xml:lang="sr-ijekavian">Врло, врло тешки нивои.</li>
       <li xml:lang="sr-ijekavianlatin">Vrlo, vrlo teški nivoi.</li>
       <li xml:lang="sv">Mycket mycket svåra nivåer</li>
-      <li xml:lang="tr">Aşırı zor seviyeler</li>
+      <li xml:lang="tr">Aşırı zor düzeyler</li>
       <li xml:lang="uk">Дуже-дуже складні рівні</li>
       <li xml:lang="x-test">xxVery very difficult levelsxx</li>
       <li xml:lang="zh-CN">非常非常难的关卡</li>
@@ -315,7 +315,7 @@
       <li xml:lang="sr-ijekavian">Управљање тастатуром или мишем.</li>
       <li xml:lang="sr-ijekavianlatin">Upravljanje tastaturom ili mišem.</li>
       <li xml:lang="sv">Tangentbords- eller musstyrning</li>
-      <li xml:lang="tr">Klavye veya fare kontrolü</li>
+      <li xml:lang="tr">Klavye veya fare denetimi</li>
       <li xml:lang="uk">Керування за допомогою клавіатури або миші</li>
       <li xml:lang="x-test">xxKeyboard or mouse controlxx</li>
       <li xml:lang="zh-CN">键盘或鼠标控制</li>
