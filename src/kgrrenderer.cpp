@@ -7,9 +7,12 @@
     // TODO - Border tiles, display tiles.
     // TODO - Add attributes to theme: HasBorderTiles, HasDisplayTiles.
 
+// KDEGames
+#include <kdegames_version.h>
 #include <KGameRenderedItem>
 #include <KgThemeProvider>
 #include <KgThemeSelector>
+// KF
 #include <KLocalizedString>
 
 
@@ -32,12 +35,20 @@ KGrRenderer::KGrRenderer (KGrScene * scene)
 
     // Find SVG files for the Set, i.e. tiles and backgrounds.
     const QMetaObject * setThemeClass = & KGrSetTheme::staticMetaObject;
+#if KDEGAMES_VERSION >= QT_VERSION_CHECK(7, 4, 0)
+    m_setProvider->discoverThemes (QStringLiteral ("themes"),
+#else
     m_setProvider->discoverThemes ("appdata", QStringLiteral ("themes"),
+#endif
                                    QStringLiteral ("egypt"), setThemeClass);
 
     // Find SVG files for the Actors, i.e. hero and enemies.
     const QMetaObject * actorsThemeClass = & KGrActorsTheme::staticMetaObject;
+#if KDEGAMES_VERSION >= QT_VERSION_CHECK(7, 4, 0)
+    m_actorsProvider->discoverThemes (QStringLiteral ("themes"),
+#else
     m_actorsProvider->discoverThemes ("appdata", QStringLiteral ("themes"),
+#endif
                                    QStringLiteral ("egypt"), actorsThemeClass);
 
     // Set up a dialog for selecting themes.
