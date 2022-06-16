@@ -61,7 +61,6 @@ ecm_add_app_icon(kgoldrunner ICONS ${ICONS_SRCS})
 
 target_link_libraries(kgoldrunner
     KF5KDEGames
-    KF5KDEGamesPrivate
     KF5::ConfigWidgets
     KF5::DBusAddons
     KF5::KIOCore
