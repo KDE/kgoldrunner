@@ -352,6 +352,7 @@
       <li xml:lang="zh-CN">可保存游戏</li>
     </ul>
   </description>
+  <url type="homepage">https://apps.kde.org/de/kgoldrunner</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kgoldrunner</url>
   <url type="help">https://docs.kde.org/?application=kgoldrunner</url>
   <url type="donation">https://www.kde.org/community/donations/?app=kgoldrunner&amp;source=appdata</url>

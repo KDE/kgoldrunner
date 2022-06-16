@@ -36,7 +36,7 @@ int main (int argc, char **argv)
                      KAboutLicense::GPL,
                      i18n ("(C) 2003 Ian Wadham and Marco Krüger"),
                      QString(),
-                     QStringLiteral("https://kde.org/applications/games/org.kde.kgoldrunner") );
+                     QStringLiteral("https://apps.kde.org/de/kgoldrunner") );
     addCredits (about);
     about.setOrganizationDomain("kde.org");
 
