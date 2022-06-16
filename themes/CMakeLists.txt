@@ -1,45 +1,78 @@
+# SPDX-FileCopyrightText: 2022 Friedrich W. H. Kossebau <kossebau@kde.org>
+#
+# SPDX-License-Identifier: BSD-3-Clause
 
+set(KGOLDRUNNER_INSTALL_THEMESDIR "${KDE_INSTALL_DATADIR}/kgoldrunner/themes")
 
+function(install_theme id)
+    cmake_parse_arguments(ARG "" "" "FILES" ${ARGN})
+    install( FILES ${id}.desktop DESTINATION ${KGOLDRUNNER_INSTALL_THEMESDIR} )
 
+    foreach(_file ${ARG_FILES})
+        get_filename_component(_dir "${_file}" DIRECTORY)
+        get_filename_component(_extension "${_file}" EXT)
 
-########### install files ###############
+        if (_extension STREQUAL ".svg")
+            set(svgz "${CMAKE_CURRENT_BINARY_DIR}/${_file}z")
+            generate_svgz("${_file}" "${svgz}" "theme-${_dir}-")
+            set(_file "${svgz}")
+        endif()
+        install( FILES ${_file} DESTINATION ${KGOLDRUNNER_INSTALL_THEMESDIR}/${_dir} )
+    endforeach()
+endfunction()
 
-install( FILES README
-	       black-on-white.desktop
-	       egypt.desktop
-               default.desktop
-               kgr_geek.desktop
-               nostalgia.desktop
-               nostalgia-blues.desktop
-               DESTINATION ${KDE_INSTALL_DATADIR}/kgoldrunner/themes )
-
-install( FILES 
-	default/set.svg default/actors.svg
+install_theme(default
+    FILES
+        default/set.svg
+        default/actors.svg
         default/default.png
- 	default/gold.ogg default/falling.ogg default/step.wav default/climb.wav
- 	default/dig.ogg default/ladder.ogg default/completed.ogg
- 	default/death.ogg default/gameover.ogg default/victory.ogg
-	DESTINATION 
-	${KDE_INSTALL_DATADIR}/kgoldrunner/themes/default )
 
-install( FILES accessible/black-on-white-set.svg
-               accessible/black-on-white-actors.svg
-               accessible/black-on-white.png
-               DESTINATION ${KDE_INSTALL_DATADIR}/kgoldrunner/themes/accessible )
+        default/climb.wav
+        default/completed.ogg
+        default/death.ogg
+        default/dig.ogg
+        default/falling.ogg
+        default/gameover.ogg
+        default/gold.ogg
+        default/ladder.ogg
+        default/step.wav
+        default/victory.ogg
+)
 
-install( FILES kgr_geek/set.svgz kgr_geek/actors.svgz
-               kgr_geek/kgr_geek.png
-               DESTINATION ${KDE_INSTALL_DATADIR}/kgoldrunner/themes/kgr_geek )
+install_theme(black-on-white
+    FILES
+        accessible/black-on-white-set.svg
+        accessible/black-on-white-actors.svg
+        accessible/black-on-white.png
+)
 
-install( FILES nostalgia/blue-set.svg nostalgia/blue-actors.svg 
-               nostalgia/set.svg nostalgia/actors.svg
-               nostalgia/nostalgia.png
-               nostalgia/nostalgia-blues.png
-               DESTINATION ${KDE_INSTALL_DATADIR}/kgoldrunner/themes/nostalgia )
+install_theme(egypt
+    FILES
+        egypt/egypt_kgr.svgz
+        egypt/actors.svgz
+        egypt/egypt.png
+)
 
-install( FILES egypt/egypt_kgr.svgz egypt/actors.svgz
-               egypt/egypt.png
-               DESTINATION ${KDE_INSTALL_DATADIR}/kgoldrunner/themes/egypt )
+install_theme(kgr_geek
+    FILES
+        kgr_geek/set.svgz
+        kgr_geek/actors.svgz
+        kgr_geek/kgr_geek.png
+)
 
+install_theme(nostalgia
+    FILES
+        nostalgia/set.svg
+        nostalgia/actors.svg
+        nostalgia/nostalgia.png
+)
+
+install_theme(nostalgia-blues
+    FILES
+        nostalgia/blue-set.svg
+        nostalgia/blue-actors.svg
+        nostalgia/nostalgia-blues.png
+)
+
+install( FILES README DESTINATION ${KGOLDRUNNER_INSTALL_THEMESDIR})
 install( FILES kgoldrunner.knsrc  DESTINATION  ${KDE_INSTALL_DATADIR}/knsrcfiles )
-
