@@ -27,7 +27,6 @@ KGrRuleBook::~KGrRuleBook()
 
 void KGrRuleBook::setTiming (const int enemyCount)
 {
-    int choice;
     Timing varTiming[6] = {
                           {40, 58, 78, 88, 340, 23},      // No enemies.
                           {50, 68, 78, 88, 340, 32},      // 1 enemy.
@@ -37,8 +36,7 @@ void KGrRuleBook::setTiming (const int enemyCount)
                           {70, 80, 189, 165, 920, 51}     // >4 enemies.
                           };
     if (mVariableTiming) {
-        choice = (enemyCount < 0) ? 0 : enemyCount;
-        choice = (enemyCount > 5) ? 5 : enemyCount;
+        int choice = std::clamp(enemyCount, 0, 5);
         times  = varTiming [choice];
     }
 }
