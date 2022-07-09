@@ -339,24 +339,24 @@ int KGrMessage::warning (QWidget * parent, const QString &caption,
                         const QString &label1, const QString &label2)
 {
     // KDE does word-wrapping and will observe "\n" line-breaks.
-    int ans = 0;
+    int result = 0;
     if (label2.isEmpty()) {
         // Display a box with 2 buttons.
-        ans = KMessageBox::questionYesNo (parent, text, caption,
+        KMessageBox::ButtonCode ans = KMessageBox::questionYesNo (parent, text, caption,
                             KGuiItem (label0), KGuiItem (label1));
-        ans = (ans == KMessageBox::Yes) ? 0 : 1;
+        result = (ans == KMessageBox::Yes) ? 0 : 1;
     }
     else {
         // Display a box with 3 buttons.
-        ans = KMessageBox::questionYesNoCancel (parent, text, caption,
+        KMessageBox::ButtonCode ans = KMessageBox::questionYesNoCancel (parent, text, caption,
                             KGuiItem (label0), KGuiItem (label1),
                             KGuiItem (label2));
         if (ans == KMessageBox::Cancel)
-            ans = 2;
+            result = 2;
         else
-            ans = (ans == KMessageBox::Yes) ? 0 : 1;
+            result = (ans == KMessageBox::Yes) ? 0 : 1;
     }
-    return (ans);
+    return (result);
 }
 
 
