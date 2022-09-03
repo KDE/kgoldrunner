@@ -38,7 +38,6 @@ int main (int argc, char **argv)
                      QString(),
                      QStringLiteral("https://apps.kde.org/de/kgoldrunner") );
     addCredits (about);
-    about.setOrganizationDomain("kde.org");
 
     QCommandLineParser parser;
     KAboutData::setApplicationData(about);
