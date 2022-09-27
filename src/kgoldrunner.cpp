@@ -9,13 +9,12 @@
 #include "kgoldrunner.h"
 
 #include <QAction>
-#include <QApplication>
+#include <QActionGroup>
 #include <QIcon>
 #include <QKeyEvent>
 #include <QKeySequence>
-#include <QShortcut>
-#include <QActionGroup>
 #include <QScreen>
+#include <QShortcut>
 
 #include <KActionCollection>
 #include <KConfig>

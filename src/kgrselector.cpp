@@ -11,7 +11,6 @@
 
 #include "kgrgameio.h"
 
-#include <QApplication>
 #include <QGridLayout>
 #include <QHeaderView>
 #include <QScreen>
