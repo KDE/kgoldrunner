@@ -1,0 +1,2068 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY kgoldrunner "<application
+>KGoldrunner</application
+>">
+  <!ENTITY kappname "&kgoldrunner;">
+  <!ENTITY package "kdegames">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % French "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<book lang="&language;">
+
+<bookinfo>
+<title
+>Le manuel de &kgoldrunner;</title>
+<authorgroup>
+<author
+><firstname
+>Ian</firstname
+> <surname
+>Wadham</surname
+> <affiliation
+><address
+><email
+>ianw@netspace.net.au</email
+></address
+></affiliation>
+</author>
+<author
+><firstname
+>Marco</firstname
+> <surname
+>Krüger</surname
+> </author>
+&traducteurCedricPasteur; 
+</authorgroup>
+
+<copyright>
+<year
+>2003</year>
+<holder
+>Ian Wadham</holder
+><holder
+>Marco Krüger</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2007-11-15</date>
+<releaseinfo
+>3.0</releaseinfo>
+
+<abstract>
+<para
+>&kgoldrunner;, un jeu d'action et de résolution de puzzles. Courez à travers le labyrinthe, esquivez vos ennemis, ramassez tout l'or et passez au niveau suivant.</para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KGoldrunner</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="playing-kgoldrunner">
+<title
+>Jouer à &kgoldrunner;</title>
+
+<sect1 id="introduction">
+<title
+>Introduction</title>
+<para
+>Type de jeu, arcade, stratégie </para>
+<para
+>Nombre de joueur : un </para>
+
+<para
+>&kgoldrunner; est un jeu d'action où le héros court à travers un labyrinthe. Vous devez guider le héros avec la souris ou le clavier et ramasser toutes les pépites d'or, avant de pouvoir grimper au niveau suivant. Vos ennemis convoitent aussi l'or. Et encore pire, ils sont à votre recherche ! Ils vous tueront s'ils vous attrapent !</para>
+
+<para
+>Le problème est que vous n'avez aucune arme pour <emphasis
+>les</emphasis
+> tuer. Tout ce que vous pouvez faire c'est fuir, creuser des trous dans le sol pour les piéger ou les bloquer dans une certaine zone d'où ils ne pourront pas vous blesser. Après un court moment, un ennemi piégé sort de son trou, mais si celui-ci se ferme avant cela, il mourra et réapparaîtra à un autre endroit. </para>
+
+<para
+>Si vous n'avez jamais joué auparavant, essayez le jeu <quote
+>Tutoriel</quote
+>, qui vous apprend les règles et techniques de base. Essayez ensuite le jeu <quote
+>Initiation</quote
+>. Les experts pourront apprécier les jeux <quote
+>Challenge</quote
+> ou <quote
+>La vengeance de Peter W</quote
+>, mais le jeu <quote
+>Initiation</quote
+> contient 100 niveaux dont certains sont très difficiles. C'est un bon jeu pour réussir un meilleur score.</para>
+
+<para
+>Tous ces jeux utilisent les règles traditionnelles, lesquelles sont similaires à celles utilisées dans les ordinateurs personnels tels que l'Apple II ou le Commodore 64. Les jeux <quote
+>&kgoldrunner;</quote
+> et <quote
+>State of Terror</quote
+> utilisent les règles de &kgoldrunner; dans lesquelles les ennemis vont plus vite et ont une stratégie de recherche plus agressive que les règles traditionnelles. Se référer aux <link linkend="choice-of-rules"
+>Choix des règles</link
+> pour plus de détails.</para>
+
+<para
+>Au fur et à mesure que vous avancerez dans les niveaux, vous verrez que &kgoldrunner; combine action, stratégie, tactique et résolution de puzzle &mdash; le tout dans un seul jeu. Bonne chance !</para>
+
+</sect1>
+
+<sect1 id="typical-game">
+<title
+>Une partie typique</title>
+
+<para
+>Ci-dessous se trouve une partie typique en cours. Le héros est au niveau 4 du jeu <quote
+>Tutoriel Avancé</quote
+>. La barre d'état de la fenêtre montre combien de vies il lui reste et combien de points il a marqué. Elle montre aussi qu'il y a un conseil disponible pour ce niveau (comme c'est toujours le cas dans le jeu « Tutoriel » ) et que l'action est arrêtée (au moment de la capture d'écran), mais qu'elle peut reprendre en appuyant sur <keycap
+>P</keycap
+> ou &Echap;.</para>
+
+<para
+>Le héros a démarré en haut à gauche, a creusé un trou et est tombé à travers une ligne de fausses briques et d'or où vous pouvez le voir actuellement. L'ennemi au-dessus de lui va tomber dans le trou, puis en sortir et sera piégé ici jusqu'à la fin du niveau. Il pourrait causer des problèmes au héros plus tard, car c'est ici que se trouvent les échelles cachées qui apparaissent quand tout l'or a été ramassé. Le héros doit les utiliser pour passer au niveau suivant.</para>
+
+<screenshot>
+<screeninfo
+>Une partie typique de &kgoldrunner;</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="tute008.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Une partie typique de &kgoldrunner;</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>L'ennemi sur la droite tombe et porte de l'or. Le troisième ennemi va bientôt descendre une échelle pour attraper le héros. Celui-ci devra éviter les deux ennemis lorsqu'il atteindra le sol... Ce niveau montre aussi des briques que l'on peut creuser et du béton impossible à creuser, et contient en outre de nombreux pièges (des fausses briques), qui ressemblent comme deux gouttes d'eau à des briques ordinaires.</para>
+
+</sect1>
+
+<sect1 id="how-to-play">
+<title
+>Comment jouer</title>
+
+<sect2>
+<title
+>Commencer la partie</title>
+
+<para
+>La première boîte de dialogue vous montre les noms, numéro et aperçu de la dernière partie et niveau que vous avez chargé, ou si vous n'avez pas joué avant, la même information pour le tutoriel niveau 1.</para>
+
+<para
+>Cliquez sur le bouton <guibutton
+>JOUER</guibutton
+> pour démarrer une partie immédiatement. Sinon vous pouvez cliquer sur le bouton <guibutton
+>Quitter</guibutton
+>, le bouton <guibutton
+>Nouvelle partie</guibutton
+> ou le bouton <guibutton
+>Utiliser le menu</guibutton
+>. Le premier va fermer &kgoldrunner;, si vous ne souhaitez pas jouer, le deuxième affichera une boîte de dialogue de <link linkend="level-selection-dialog"
+>Sélection de niveaux</link
+>, où vous pouvez choisir un jeu et un niveau différent, et le dernier fermera la boîte de dialogue, vous laissant libre d'utiliser les menus de &kgoldrunner;.</para>
+
+<para
+>Si vous avez choisi de jouer une partie et un niveau, le pointeur de la souris sera fixé sur le héros. Dans un jeu Tutoriel, il y aura un message explicatif avant que chaque niveau ne commence. Vous commencez la partie en déplaçant la souris, en cliquant ou en appuyant sur n'importe quelle touche permettant de contrôler le héros (&pex; <keycap
+>Espace</keycap
+>), mais évitez d'utiliser <keycap
+>Q</keycap
+>, <keycap
+>S</keycap
+>, <keycap
+>P</keycap
+> ou &Echap; à ce stade. Vous commencez tous les niveaux de la même manière.</para>
+
+<para
+>Vous disposez de cinq vies et vous gagnez une vie bonus à chaque niveau terminé.</para>
+
+</sect2>
+
+<sect2 id="mouse-control">
+<title
+>Se déplacer</title>
+
+<para
+>Par défaut vous contrôlez le héros avec la souris, mais vous pouvez aussi le contrôler avec le clavier (<link linkend="keyboard-control"
+>voir ci-dessous</link
+>). Il se déplace en direction de l'emplacement du pointeur de la souris. Il ne peut pas se déplacer aussi vite que le pointeur, mais il essaiera le plus possible de le rattraper. Si le pointeur de souris se situe au-dessus ou en dessous de son niveau, il se déplacera toujours verticalement si une échelle est disponible ou s'il y a un trou. Sinon, il se déplacera horizontalement jusqu'à ce qu'il soit juste dessous, au-dessus ou sur le pointeur. Vous pouvez le faire suivre des chemins simples (comme &mdash; | L ou U), mais faites attention de ne faire trop de virages et de vrilles devant lui.</para>
+
+<para
+>Vous pouvez vous déplacer à gauche ou à droite sur les briques, le béton, les échelles et les barres, et en haut ou en bas sur les échelles. Si vous vous trouvez sur une case vide ou sur une pépite d'or et qu'il n'y a pas de brique, la gravité fait son effet et vous tombez. Vous pouvez aussi tomber en vous déplaçant vers le bas sur une barre ou en bas d'une échelle, donc gardez le pointeur de la souris en hauteur si vous voulez rester accroché.</para>
+
+</sect2>
+
+<sect2 id="keyboard-control">
+<title
+>Contrôler le héros avec le clavier</title>
+
+<para
+>Si vous préférez, vous pouvez utiliser les touches du clavier pour contrôler le héros. Les touches par défaut sont les flèches directionnelles et <keycap
+>I</keycap
+>, <keycap
+>J</keycap
+>, <keycap
+>K</keycap
+> et <keycap
+>L</keycap
+> (en l'honneur du jeu original de Apple II), avec les touches<keycap
+>Z</keycap
+> et <keycap
+>C</keycap
+> ou <keycap
+>U</keycap
+> et <keycap
+>O</keycap
+> pour creuser. Vous pouvez jouer qu'avec une seule main en utilisant <keycap
+>U</keycap
+>, <keycap
+>I</keycap
+>, <keycap
+>O</keycap
+>, <keycap
+>J</keycap
+>, <keycap
+>K</keycap
+>, <keycap
+>L</keycap
+> et <keycap
+>Espace</keycap
+> (sur un clavier <quote
+>QWERTY</quote
+>) ou avec les deux mains en utilisant les touches directionnelles, <keycap
+>Espace</keycap
+>, <keycap
+>Z</keycap
+> et <keycap
+>C</keycap
+>. Vous pouvez aussi choisir d'autres touches, dans le menu <guimenu
+>Configuration</guimenu
+>, en utilisant <guimenuitem
+>Configurer les raccourcis</guimenuitem
+>.</para>
+
+<para
+>Vous entrez dans le mode clavier en appuyant sur l'une des touches qui peut contrôler le héros ou en sélectionnant <guimenuitem
+>Le clavier contrôle le héros</guimenuitem
+> dans le menu <guimenu
+>Configuration</guimenu
+>.</para>
+
+<para
+>Les touches de mouvement (<keycap
+>I</keycap
+>, <keycap
+>J</keycap
+>, <keycap
+>K</keycap
+>, <keycap
+>L</keycap
+> ou les flèches) font se déplacer le héros vers le haut, le bas, la gauche ou la droite. Il continue de se déplacer dans cette direction, s'il le peut, jusqu'à ce que vous appuyiez sur une autre touche de mouvement ou <keycap
+>Barre d'espace</keycap
+> pour l'arrêter. Dans le mode souris, il s'arrête automatiquement lorsqu'il se situe sous le pointeur de la souris.</para>
+
+<para
+>Un petit avertissement : utiliser le clavier est bien plus difficile, sur la longueur, que d'utiliser la souris. Considérez la souris comme un joystick.</para>
+
+</sect2>
+
+<sect2 id="pausing">
+<title
+>Faire une pause</title>
+
+<para
+>Vous pouvez arrêter le jeu à tout moment en appuyant sur une touche de Pause (soit <keycap
+>P</keycap
+> ou &Echap;). Vous pouvez reprendre le jeu en appuyant à nouveau sur la touche pause. Il y a aussi une option <guimenuitem
+>Pause</guimenuitem
+> dans le menu <guimenu
+>Jeu</guimenu
+>, mais le problème est d'arriver à déplacer la souris jusque là-bas, sans que le héros ne se déplace et connaisse des ennuis.</para>
+
+<tip
+><para
+>Lorsque vous voulez utiliser le menu de &kgoldrunner; ou faire quelque chose dans une autre fenêtre, appuyez toujours sur une touche de Pause et arrêtez le jeu. Sinon le héros continuera à suivre le pointeur de la souris et pourrait avoir des ennuis.</para
+></tip>
+
+</sect2>
+
+<sect2 id="winning">
+<title
+>Remporter un niveau</title>
+
+<para
+>L'objectif du jeu est de collecter tout l'or, en se déplaçant ou en tombant sur lui. Lorsqu'il n'en reste plus, vous devez vous déplacer au sommet de l'aire de jeu pour passer au niveau suivant. Souvent, au moment où vous ramassez la dernière pépite, des échelles cachées apparaissent, que vous pouvez utiliser pour grimper au niveau suivant. </para>
+
+</sect2>
+
+<sect2 id="false-bricks">
+<title
+>Attention aux fausses briques</title>
+
+<para
+>Les fausse briques, aussi appelées pièges, sont une autre fonctionnalité cachée du jeu. Elles ressemblent à des briques ordinaires, mais si vous courez sur l'une d'elles, vous tombez. Cela peut être une mauvaise chose s'il y a un ennemi ou une fosse en dessous, ou une bonne chose s'il y a de l'or.</para>
+
+</sect2>
+
+<sect2 id="enemies">
+<title
+>Les ennemis</title>
+
+<para
+>Les ennemis se déplacent de la même manière que le héros. La différence principale est quand ils tombent dans les trous que le héros a creusé (se référer à <link linkend="importance-of-digging"
+>L'importance du creusement</link
+> ci dessous). </para>
+<para
+>Ils volent toujours l'or ou de manière aléatoire, cela dépend de la configuration du jeu, et amèneront l'or au hasard sur une brique, un bloc ou en haut d'une échelle. Si un ennemi emporte le dernier bloc d'or, vous devez le rattraper avant de pouvoir finir le niveau.</para>
+
+<para
+>Si un ennemi vous touche, ou qu'il vous tombe dessus, vous mourez et devez recommencer le niveau à zéro, s'il vous reste des vies. Cependant, il est possible de marcher ou de rester sur la tête d'un ennemi, et vous pouvez chevaucher un ennemi lors de sa chute. Certains niveaux avancés requièrent de tels mouvements.</para>
+
+</sect2>
+
+<sect2 id="losing-a-level">
+<title
+>Perdre un niveau</title>
+
+<para
+>Comme expliqué ci-dessus, vous pouvez perdre un niveau et une vie en touchant un ennemi. Vous pouvez aussi perdre en étant coincé par une brique se refermant. Sinon, vous pouvez vous suicider en appuyant sur <keycap
+>Q</keycap
+> ou en utilisant le menu <menuchoice
+><guimenu
+>Jeu</guimenu
+><guimenuitem
+>Tuer le héros</guimenuitem
+></menuchoice
+>. Pourquoi voudriez vous faire cela ? Eh bien, parfois vous vous retrouvez piégé dans un endroit dont vous ne pouvez vous échapper. Vous resterez prisonnier à jamais si vous ne vous suicidez pas.</para>
+
+</sect2>
+
+<sect2 id="importance-of-digging">
+<title
+>De l'importance de creuser</title>
+
+<para
+>Creuser est l'une des tactiques les plus puissantes dont vous disposiez. Pour creuser un trou dans une brique à votre gauche ou votre droite, appuyez simplement sur les boutons <mousebutton
+>Gauche</mousebutton
+> ou <mousebutton
+>Droit</mousebutton
+> de la souris, ou utilisez une des touches pour creuser (par défaut <keycap
+>Z</keycap
+>, <keycap
+>C</keycap
+>, <keycap
+>U</keycap
+>, <keycap
+>O</keycap
+>).</para>
+
+<para
+>Vous pouvez éviter un ennemi en creusant un trou, en attendant qu'il tombe dedans puis en courant rapidement sur sa tête. Par la même occasion, vous pouvez aussi ramasser l'or qu'il pouvait transporter. Habituellement, vous pouvez creuser deux trous pour capturer et courir sur deux ennemis proches l'un de l'autre, mais cela marche rarement si les ennemis sont séparés ou s'il y en a plus de deux.</para>
+
+<para
+>Vous pouvez tuer les ennemis en creusant suffisamment de trous sur leur passage. Il faut habituellement deux trous ou plus pour tuer un ennemi et jusqu'à huit ou plus pour en tuer quatre ou cinq. Lorsque des ennemis meurent, ils réapparaissent immédiatement, soit à l'endroit où ils ont commencé le niveau, soit près du sommet de l'aire de jeu, selon que le jeu suit les règles <quote
+>&kgoldrunner;</quote
+> ou <quote
+>traditionnelles</quote
+> et les réglages (cf <link linkend="choice-of-rules"
+>Choix des règles</link
+>).</para>
+
+<para
+>Dans certains niveaux, l'or n'est pas immédiatement accessible et vous devez creuser pour les avoir. Quelques uns de ces labyrinthes de fouille sont assez complexes et vous devez travailler par séquences de creusement, et ensuite les réaliser en un temps limité avant de pouvoir compléter le niveau.</para>
+
+</sect2>
+
+<sect2 id="rules-of-digging">
+<title
+>Les règles pour creuser</title>
+
+<para
+>Vous cliquez sur les boutons <mousebutton
+>Gauche</mousebutton
+> ou <mousebutton
+>Droit</mousebutton
+> de la souris pour creuser un trou à gauche ou à droite, ou en utilisant les touches <keycap
+>Z</keycap
+>, <keycap
+>C</keycap
+>, <keycap
+>U</keycap
+> ou <keycap
+>O</keycap
+>. Seules les briques peuvent être creusées, et rien d'autre. Le trou apparaîtra dans le sol d'un côté ou de l'autre (&cad; en bas à gauche ou à droite du héros). Vous pouvez courir, tomber ou être immobile lorsque vous creusez. Il doit y avoir un espace vide ou un trou au-dessus de la brique (&cad; impossible de creuser sous une échelle, une barre, de l'or, une brique, du béton, une fausse brique ou un ennemi).</para>
+
+<para
+>Le héros peut se déplacer dans toutes les directions à travers des trous creusés, ce qui inclut tomber dans un trou pour échapper à un ennemi. Après un court instant, les trous creusés se referment, donc vous devez les utiliser rapidement. Prévoyez où vous allez creuser à l'avance. Il n'y a pas de temps à perdre en réflexion dès lors que vous creusez.</para>
+
+<para
+>Les ennemis sont toujours capturés s'ils tombent dans un trou creusé, et grimperont toujours pour en sortir. Le temps qu'ils passent dans un trou est inférieur à la durée d'ouverture d'un trou, donc pour tuer des ennemis vous devez habituellement creuser plusieurs trous successifs. Les ennemis abandonnent toujours leur or lorsqu'ils tombent dans un trou, donc vous pouvez rapidement courir sur la tête de l'ennemi et ramasser l'or avant qu'il ne sorte du trou.</para>
+
+<para
+>Les ennemis ne tomberont jamais à travers un trou depuis le haut, mais selon les règles du jeu et la <guimenu
+>Configuration</guimenu
+> (se référer à <link linkend="choice-of-rules"
+>Choix des règles</link
+>), ils peuvent courir horizontalement dans un trou creusé et ne pas être capturé, et peuvent tomber d'ici, ou rejoindre un autre trou et en sortir. Plusieurs niveaux suivant les règles <quote
+>Traditionnelles</quote
+> dépendent du fait qu'un ennemi puisse courir dans un trou. Certains niveaux qui suivent les règles de <quote
+>&kgoldrunner;</quote
+> dépendent du fait qu'un ennemi ne peut pas courir dans le trou.</para>
+
+</sect2>
+
+<sect2 id="winning-and-losing-the-game">
+<title
+>Remporter et perdre le jeu</title>
+
+<para
+>Vous gagnez en remportant le dernier niveau du jeu. Vous perdez lorsque votre dernière vie est perdue. Quel que soit votre résultat, si vous avez réussi un des dix meilleurs scores de ce jeu, vous pouvez enregistrer votre résultat dans le <quote
+>Panthéon de &kgoldrunner;</quote
+>.</para>
+
+</sect2>
+</sect1>
+
+<sect1 id="scoring">
+<title
+>Score</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Départ avec 5 vies</para>
+</listitem>
+<listitem>
+<para
+>Une vie perdue et niveau à recommencer lorsque le héros meurt</para>
+</listitem>
+<listitem>
+<para
+>Une vie gagnée lorsqu'un niveau est terminé</para>
+</listitem>
+<listitem>
+<para
+>75 points pour avoir enfermé un ennemi</para>
+</listitem>
+<listitem>
+<para
+>75 points pour avoir tué un ennemi</para>
+</listitem>
+<listitem>
+<para
+>250 points pour avoir ramassé une pépite</para>
+</listitem>
+<listitem>
+<para
+>1500 points pour avoir terminé un niveau</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="choice-of-rules">
+<title
+>Choix des règles</title>
+
+<para
+>La plupart des règles de &kgoldrunner; sont couvertes dans la section <link linkend="how-to-play"
+>Comment jouer</link
+>, cependant il y a deux règles majeures qui affectent le style de jeu : appelées <quote
+>Traditionnelles</quote
+> et <quote
+>&kgoldrunner;</quote
+>. Il est important de savoir quelle configuration est utilisée lorsque vous jouez. Beaucoup des niveaux <quote
+>traditionnels</quote
+> sont impossible avec les règles de <quote
+>&kgoldrunner;</quote
+>. La plupart des niveaux de <quote
+>&kgoldrunner;</quote
+> sont plus simples avec les règles <quote
+>Traditionnelles</quote
+>, mais les jeux <quote
+>traditionnels</quote
+> ne sont pas faciles. Pour vous faciliter la vie, &kgoldrunner; choisit automatiquement les règles correctes lorsque vous commencez une partie, mais vous pouvez les modifier si vous le désirez. </para>
+
+<para
+>La principale différence entre les règles <quote
+>Traditionnelles</quote
+> et <quote
+>&kgoldrunner;</quote
+> est la méthode avec laquelle les ennemis choisissent leur chemin pour suivre le héros.</para>
+
+<itemizedlist>
+<listitem>
+<para
+>Dans la méthode <quote
+>Traditionnelle</quote
+> de recherche, les ennemis cherchent des chemins verticaux (échelles ou chutes) et ils essaient de rester au-dessus du héros ou à la même hauteur. Ils ne vont en dessous de lui qu'en dernier ressort. Les ennemis ne tentent pas de poursuivre le héros horizontalement avant d'être à la même hauteur que lui et d'avoir un chemin horizontal. Cela conduit à des situations où vous pouvez <quote
+>contrôler</quote
+> les ennemis éloignés et les faire travailler pour vous, ou au moins les conserver à distance.</para>
+</listitem>
+<listitem>
+<para
+>La méthode <quote
+>&kgoldrunner;</quote
+> cherche alternativement pour des chemins horizontaux et verticaux, ce qui tend à maintenir les ennemis de votre côté de l'aire de jeu et presque à la même hauteur (&cad; qu'ils sont plus agressifs et pas si facile à contrôler). Cela conduit à un jeu avec plus d'action, mais avec moins d'opportunités de stratégie et de résolution de puzzle. Le jeu <quote
+>State of Terror</quote
+> ajouté en 2007, utilise les règles de <quote
+>&kgoldrunner;</quote
+> et a un bon nombre de puzzles à résoudre pendant que vous courrez. C'est pourquoi c'est un jeu assez difficile.</para>
+</listitem>
+</itemizedlist>
+
+<para
+>Les autres différences sont regroupées ci-dessous :</para>
+
+<itemizedlist>
+<listitem>
+<para
+>Dans une partie <quote
+>&kgoldrunner;</quote
+>, les ennemis et le héros se déplacent toujours à la même vitesse et les briques mettent le même temps pour se refermer. Dans une partie <quote
+>Traditionnelle</quote
+>, la vitesse de jeu dépend du nombre d'ennemis dans un niveau. Plus il y a d'ennemis, plus ils vont lentement. Le héros devient aussi plus lent, mais de façon moins visible.</para>
+</listitem>
+<listitem>
+<para
+>Dans une partie <quote
+>Traditionnelle</quote
+>, les ennemis ramassent toujours les pépites d'or lorsqu'ils courent dessus. Dans une partie <quote
+>&kgoldrunner;</quote
+> cela se fait au hasard. Les ennemis lâchent les pépites après un temps aléatoire dans les deux cas.</para>
+</listitem>
+<listitem>
+<para
+>Les ennemis peuvent courir horizontalement à travers des trous dans une partie <quote
+>Traditionnelle</quote
+> mais pas dans une partie <quote
+>&kgoldrunner;</quote
+>. La difficulté dans plusieurs niveaux <quote
+>Traditionnels</quote
+> consiste à libérer un ennemi prisonnier derrière un mur de briques. Lorsque vous creusez dans les briques, il sort par le trou. Dans certains niveaux de <quote
+>&kgoldrunner;</quote
+>, vous devez vous cacher à l'intérieur ou devant une brique creusé pour échapper à l'ennemi.</para>
+</listitem>
+<listitem>
+<para
+>Lorsque des ennemis meurent dans une partie <quote
+>&kgoldrunner;</quote
+>, ils retournent à leur point de départ. Dans une partie <quote
+>Traditionnelle</quote
+>, ils réapparaissent à un endroit au hasard proche du sommet de l'aire de jeu. Cela fait une grande différence, spécialement dans les niveaux où les ennemis doivent amener l'or pour vous, mais aussi car les ennemis continuent de tomber aussi vite que vous les tuez.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+</chapter>
+
+<chapter id="level-selection-dialog">
+<title
+>La boîte de dialogue de choix du niveau</title>
+
+<sect1 id="level-selection-dialog-box">
+<title
+>Utilisation de la boîte de dialogue de choix de niveau</title>
+
+<screenshot>
+<screeninfo
+>La boîte de dialogue de choix du niveau</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="select.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>La boîte de dialogue de choix du niveau</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Cette boîte de dialogue apparaît lorsque vous choisissez <guimenuitem
+>Nouvelle partie</guimenuitem
+> et aussi quand vous sélectionnez <guimenu
+>Éditeur</guimenu
+>. Vous l'utilisez pour choisir un jeu et un niveau à jouer, éditer, enregistrer, déplacer ou supprimer. Le bouton principal en bas est le bouton <guibutton
+>Ok</guibutton
+>. Son texte varie en fonction de ce que vous faites : dans ce cas, choisir un niveau et un jeu à éditer.</para>
+
+<sect2 id="selecting-a-game">
+<title
+>Choix d'un jeu</title>
+
+<para
+>Il y a plusieurs jeux <quote
+>Systèmes</quote
+> qui sont fournis avec &kgoldrunner; et vous pouvez ajouter vos propres parties en utilisant l'éditeur. Toutes ces parties apparaissent dans la liste en haut de la boîte de dialogue, groupées par niveau de difficulté. Les parties « Tutoriel » apparaissent en dernier dans la liste et les parties de niveau normal apparaissent en premier. Pour sélectionner une de ces parties, cliquez simplement sur leurs noms.</para>
+
+<para
+>La liste vous montre quelles règles sont appliquées à chaque jeu (cf <link linkend="choice-of-rules"
+>Choix des règles</link
+>) et combien de niveaux il contient. Quand vous sélectionnez un jeu, une boîte de dialogue en bas de l'écran vous montre les informations complémentaires à propos du jeu.</para>
+
+</sect2>
+
+<sect2 id="selecting-a-level">
+<title
+>Choix d'un niveau</title>
+
+<para
+>Vous pouvez choisir de démarrer une partie à n'importe quel niveau, mais il est mieux de commencer avec le niveau 1 et d'être enthousiaste spécialement si vous recherchez le plus haut score. En général, les niveaux avec un numéro plus élevé sont les plus difficiles.</para>
+
+<para
+>Quand vous démarrez une boîte de dialogue de sélection du niveau, le niveau par défaut sera facile, comme le dernier niveau que vous avez joué ou édité. Vous pouvez sélectionner un autre niveau en utilisant les flèches rotatives, en saisissant le numéro de niveau à l'intérieur de la zone de numéros ou en coulissant les glissières. Les flèches à la fin des glissières augmentent ou diminuent le nombre par un. Vous pouvez aussi bouger une glissière avec le bouton gauche de la souris et modifier le numéro de niveau rapidement. Ou vous pouvez modifier le numéro de niveau sur 10 possibles en cliquant dans l'espace au-dessus ou en dessous de la glissière.</para>
+
+<para
+>Au fur et à mesure que le numéro de niveau change, un aperçu du niveau est affiché dans la petite fenêtre d'aperçu et le nom du niveau (s'il en a un) apparaît.</para>
+
+</sect2>
+
+<sect2 id="completing-selection">
+<title
+>Fin de la sélection</title>
+
+<para
+>Lorsque vous avez choisi un jeu et un niveau, cliquez simplement sur le bouton principal en bas pour finir et commencer à jouer ou éditer.</para>
+
+<para
+>Avant que vous ne fassiez cela, rien ne change, donc vous pouvez toujours appuyer sur <guibutton
+>Annuler</guibutton
+> et revenir à ce que vous faisiez auparavant. Remarquez que l'action est arrêtée pendant l'affichage de cette boîte de dialogue, donc vous pouvez reprendre la partie là où vous l'aviez arrêtée si vous choisissez <guibutton
+>Annuler</guibutton
+>.</para>
+
+</sect2>
+
+<sect2 id="saving-changes">
+<title
+>Enregistrement des modifications</title>
+
+<para
+>Si vous choisissez une action dans le menu <guimenu
+>Jeu</guimenu
+> ou <guimenu
+>Éditeur</guimenu
+> et que vous étiez précédemment en train d'éditer et que vos changements n'étaient pas enregistrés, vous aurez un message vous demandant si vous souhaitez enregistrer, abandonner ou continuer votre travail. La boîte de dialogue de choix du niveau n'apparaîtra pas tant que vous n'aurez pas pris de décision à propos de votre travail précédent.</para>
+
+</sect2>
+
+<sect2 id="any-level">
+<title
+>Jouer ou éditer <quote
+>n'importe quel</quote
+> niveau</title>
+
+<para
+>Notez que les menus vous permettent de choisir de jouer et éditer <quote
+>n'importe quel</quote
+> niveau. Si vous commencez un jeu après le niveau 1, ce n'est pas grave, vous aurez juste un score inférieur. Les joueurs expérimentés préfèrent parfois jouer les niveaux élevés pour s'amuser, plutôt que de rechercher un meilleur score, ou ils peuvent vouloir <quote
+>s'entraîner</quote
+> sur les niveaux élevés avant de tenter un meilleur score.</para>
+
+<para
+>Si vous choisissez un niveau Système pour l'éditer, c'est aussi possible, mais vous devrez l'enregistrer dans un de vos propres jeux, et pas dans le jeu Système. S'il s'agit d'un niveau très difficile, vous pouvez vouloir le modifier afin de ne pas revenir au départ de ce niveau à chaque fois que vous mourez.</para>
+
+<para
+>Pour voir ce que cela signifie, essayez le jeu <quote
+>Challenge</quote
+>, niveau 16, <quote
+>Les Trois Mousquetaires</quote
+>. Ce niveau contient environ 10 puzzles difficiles. Lorsque vous aurez résolu le puzzle 1, vous n'aurez pas envie de le répéter pendant que vous cherchez le puzzle 2. Le secret est de faire une copie éditable, et de la modifier en changeant le point de départ du héros, jusqu'à ce que vous ayez résolu toutes les énigmes. Puis vous pouvez essayer le niveau pour de vrai en recommençant pour le finir.</para>
+
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="menu-reference">
+<title
+>Référence du menu</title>
+
+<sect1 id="menu-overview">
+<title
+>Vue d'ensemble des menus</title>
+
+<variablelist>
+<varlistentry>
+<term
+><link linkend="game-menu"
+><guimenu
+>Jeu</guimenu
+></link
+></term>
+<listitem>
+<para
+>Ce menu contient les options affectant le jeu, comme commencer ou finir des jeux, enregistrer les parties, charger des parties enregistrées, voir les meilleurs scores, et obtenir un conseil (si disponible). Le menu <guimenu
+>Jeu</guimenu
+> contient aussi l'option <guimenuitem
+>Quitter</guimenuitem
+>. Vous pouvez aussi quitter en cliquant sur le <guiicon
+>X</guiicon
+> en haut à droite de la fenêtre de &kgoldrunner;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link linkend="move-menu"
+><guimenu
+>Déplacer</guimenu
+></link
+></term>
+<listitem>
+<para
+>Ce menu contient une option pour avoir un conseil (s'il y en a un). Les modes de jeu Championnat et Tutoriel ont des conseils à chaque niveau. Les autres modes de jeu ont rarement des conseils.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link
+linkend="editor-menu"
+><guimenu
+>Éditeur</guimenu
+></link
+></term>
+<listitem>
+<para
+>Ce menu contient tout ce qu'il vous faut pour créer vos propres jeux et niveaux et les maintenir, comme des éléments pour ordonner les niveaux ou les déplacer entre des jeux, ou supprimer ceux qui ne sont plus nécessaires. Lorsque vous réorganisez vos niveaux, les numéros des niveaux dans votre jeu restent consécutifs (pas de vide) et les niveaux sont automatiquement renumérotés.</para>
+<para
+>Lorsque vous utilisez l'éditeur de jeu, une barre d'outils avec des bulles d'aide apparaît sous la barre de menus. Reportez-vous à <link linkend="game-editor"
+>L'éditeur de jeu</link
+> pour plus de détails sur la création et l'édition de niveaux de &kgoldrunner;.</para
+> </listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link
+linkend="themes-menu"
+><guimenu
+>Thèmes</guimenu
+></link
+></term>
+<listitem>
+<para
+>Ce menu vous offre un choix de thèmes d'arrière plan ou <quote
+>mondes</quote
+> dans lesquels jouer. Vous pouvez modifier le thème à chaque instant, même si la partie est en cours. Pour ceux qui ont des aptitudes artistiques, il est possible de créer de nouveaux thèmes, incluant les graphismes ou les sons ou les deux et les ajouter à &kgoldrunner;. Contactez l'auteur pour plus de détails.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link
+linkend="settings-menu"
+><guimenu
+>Configuration</guimenu
+></link
+></term>
+<listitem>
+<para
+>Ce menu contient trois groupes de configuration de &kgoldrunner; : le choix du contrôle par la souris ou le clavier, la vitesse du jeu, le choix des règles de jeu <quote
+>&kgoldrunner;</quote
+> ou <quote
+>Traditionnelles</quote
+> (cf <link linkend="choice-of-rules"
+>Choix des règles</link
+>) et enfin les options pour augmenter ou diminuer la taille de l'aire de jeu. Les sélections actuelles sont vérifiées. La configuration est choisie automatiquement au démarrage, mais vous pouvez utiliser ce menu pour la modifier si vous le désirez.</para>
+<para
+>Dans le version &kde; de &kgoldrunner;, il y a aussi une option pour modifier les raccourcis clavier et les touches de contrôle du héros. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link linkend="help-menu"
+><guimenu
+>Aide</guimenu
+></link
+></term>
+<listitem>
+<para
+>Le menu <guimenu
+>Aide</guimenu
+> contient un accès au manuel de &kgoldrunner; (ce document), <guimenuitem
+>À propos de &kgoldrunner;</guimenuitem
+> et <guimenuitem
+>À propos de &kde;</guimenuitem
+>.</para>
+<para
+>Il y a aussi une option pour rapporter un bogue ou souhait.</para>
+<para
+>Si vous désirez faire une suggestion ou si vous avez de nouveaux niveaux à partager, l'adresse courriel de l'auteur actuel est disponible dans l'élément de menu <guimenuitem
+>À propos de &kgoldrunner;</guimenuitem
+>.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="game-menu">
+<title
+>Le menu <guimenu
+>Jeu</guimenu
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Jeu</guimenu
+><guimenuitem
+>Nouvelle partie...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Affiche la boîte de dialogue de sélection du niveau (se référer à <link linkend="level-selection-dialog-box"
+> Utilisation de la boîte de dialogue de sélection du niveau</link
+>), où vous choisissez une partie et un niveau. Le premier niveau, Niveau 1, est extrêmement simple, parce que chaque niveau progresse dans un ordre de difficulté. Il est donc mieux de démarrer ici si vous voulez un score élevé.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Jeu</guimenu
+><guimenuitem
+>Charger une partie...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Affiche une liste des parties précédemment enregistrées, triées par date avec la plus récente en premier. Chaque ligne liste les jeux, niveau, nombre de vies, score, jour de la semaine, date et heure. Si vous choisissez une ligne et cliquez sur le bouton <guibutton
+>Ok</guibutton
+>, le jeu commence au début de ce niveau, avec le nombre de vies et le score enregistrés.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>S</keycap
+></shortcut
+> <guimenu
+>Jeu</guimenu
+><guimenuitem
+>Enregistrer la partie...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Enregistre la partie actuelle, le niveau, les vies et le score. Cette option n'enregistrera que les points et la position au début du niveau actuel. Vous pouvez enregistrer en plein milieu d'un niveau, mais &kgoldrunner; enregistrera toujours la position (et le score) comme elle était au début du niveau. Vous recevrez un message d'avertissement à propos de cela. Avant d'utiliser cette option, vous devez appuyer sur une touche de Pause (<keycap
+>P</keycap
+> ou &Echap;) pour arrêter le jeu avant de déplacer la souris mais il est beaucoup plus facile d'utiliser la touche <keycap
+>S</keycap
+> comme raccourci.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Jeu</guimenu
+><guimenuitem
+>Enregistrer les modifications...</guimenuitem
+> </menuchoice>
+</term>
+<listitem
+><para
+>Cette option n'est activée que si vous êtes en train d'utiliser l'éditeur de jeu. Elle affiche la boîte de dialogue de choix du niveau et vous laisse choisir un numéro de niveau et un jeu dans lequel enregistrer votre travail. Son action est exactement la même que l'option <guimenuitem
+>Enregistrer les éditions</guimenuitem
+> dans le menu <guimenu
+>Éditeur</guimenu
+> et que l'icône <guiicon
+>disquette</guiicon
+> dans la barre d'outils de l'éditeur.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>P ou &Echap;</keycap
+></shortcut
+> <guimenu
+>Jeu</guimenu
+><guimenuitem
+>Pause</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Arrête ou reprend la partie.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Jeu</guimenu
+><guimenuitem
+>Afficher les meilleurs scores</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Affiche un tableau des dix meilleurs scores pour le jeu actuellement sélectionné. Chaque ligne montre le rang du joueur et son nom, le niveau atteint, le score réussi, la jour de la semaine et la date.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>Q</keycap
+></shortcut
+> <guimenu
+>Jeu</guimenu
+><guimenuitem
+>Tuer le héros</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Tue le héros lorsqu'il est dans une position dont il ne peut s'échapper.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Jeu</guimenu
+><guimenuitem
+>Quitter</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Termine &kgoldrunner; immédiatement. Si une partie est en cours, elle disparaîtra pour toujours (sauf si vous l'avez enregistrée) et il n'y a pas de vérification de meilleur score. Si vous éditiez un niveau, une dernière opportunité vous est donnée d'enregistrer votre travail.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+<sect1 id="move-menu">
+<title
+>Le menu <guimenu
+>Déplacer</guimenu
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>H</keycap
+></shortcut
+> <guimenu
+>Déplacer</guimenu
+><guimenuitem
+>Conseil</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Affiche un menu contextuel de Conseil, si il y en a un pour le niveau joué. Par convention, les modes Championnat et Tutoriel ont des conseils à chaque niveau. Les autres modes ont rarement des conseils. La barre d'état montre si un conseil est disponible ou non.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+<sect1 id="editor-menu">
+<title
+>Le menu <guimenu
+>Éditeur</guimenu
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Éditeur</guimenu
+><guimenuitem
+>Créer un niveau</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Affiche la barre d'outils de l'éditeur et une aire de jeu vide sur laquelle vous pouvez dessiner un nouveau niveau. Une fois terminé, <guimenuitem
+>Enregistrer les éditions</guimenuitem
+> pour assigner au nouveau niveau un jeu et un numéro de niveau.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Éditeur</guimenu
+><guimenuitem
+>Modifier le niveau...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Affiche la boîte de dialogue de choix du niveau, où vous pouvez choisir un jeu et un niveau à éditer. Vous pouvez choisir un jeu et un niveau Système, mais vous verrez un avertissement vous disant que vous ne pouvez enregistrer le niveau modifié que dans un de vos propres jeux.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Éditeur</guimenu
+><guimenuitem
+>Enregistrer les modifications...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Affiche la boîte de dialogue de choix du niveau avec les options par défaut appropriées pour enregistrer un niveau nouveau ou modifié. Vous pouvez changer le jeu et le numéro du niveau, et obtenir un effet <quote
+>Enregistrer sous...</quote
+>. Cette boîte de dialogue a un bouton spécial, <guibutton
+>Éditer les noms et conseils</guibutton
+>, qui affiche une boîte de dialogue où vous pouvez ajouter un nom et un conseil optionnel à votre niveau.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Éditeur</guimenu
+><guimenuitem
+>Déplacer un niveau...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Ceci est une opération en deux parties. Avant d'utiliser <guimenuitem
+>Déplacer un niveau...</guimenuitem
+>, vous devez charger un niveau à déplacer en le sélectionnant pour jouer ou l'éditer. L'option <guimenuitem
+>Déplacer un niveau...</guimenuitem
+> affiche ensuite la boîte de dialogue de choix du niveau, où vous pouvez choisir un nouvel emplacement pour le niveau chargé. Vous pouvez modifier à la fois le jeu et le numéro pour déplacer un niveau vers un autre jeu ou vous pouvez simplement modifier le numéro du niveau pour réorganiser les niveaux à l'intérieur d'un jeu. Vous ne pouvez pas déplacer un niveau Système.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Éditeur</guimenu
+><guimenuitem
+>Supprimer un niveau...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Affiche la boîte de dialogue de choix du niveau, où vous pouvez choisir un niveau à supprimer. Vous ne pouvez pas supprimer un niveau Système.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Éditeur</guimenu
+><guimenuitem
+>Créer un jeu...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Vous devez utiliser cette option avant de commencer la création de vos propres niveaux de &kgoldrunner;. Elle affiche une boîte de dialogue où vous pouvez saisir le nom du nouveau jeu, un préfixe de 1 à 5 lettres pour les noms des fichiers de niveaux, les règles par défaut pour votre jeu (<quote
+>&kgoldrunner;</quote
+> ou <quote
+>Traditionnelles</quote
+>) et une description ou un commentaire optionnel à propos du jeu.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Éditeur</guimenu
+><guimenuitem
+>Éditer la description du jeu...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Affiche la boîte de dialogue de choix du niveau, où vous pouvez choisir un jeu à éditer, puis affiche la description du jeu dans une boîte de dialogue où vous pouvez modifier le nom, règle et description, mais pas le préfixe de nom de fichier, dans le cas où vous avez quelques niveaux enregistrés. C'est ainsi car le préfixe est utilisé dans les noms des fichiers de niveaux à l'intérieur du programme.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+<sect1 id="themes-menu">
+<title
+>Le menu <guimenu
+>Thèmes</guimenu
+></title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Thèmes</guimenu
+><guimenuitem
+>Noir sur blanc</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Ce thème est épuré pour des graphismes dépouillés et affiché en noir et blanc seulement. Ceci est destiné à aider les joueurs qui ont une vision affaiblie. L'auteur apprécierait les retours par courriel à propos de l'efficacité et quelles améliorations dans la visibilité pourrait être faites.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Thèmes</guimenu
+><guimenuitem
+>Le trésor d'Égypte</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Matt Goldrunner se trouve lui-même dans un temple de l'Ancienne Égypte, poursuivit par des momies qui sont déterminées à protéger les joyaux ancestraux à tous prix.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Thèmes</guimenu
+><guimenuitem
+>&kgoldrunner; par défaut</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Utilise le thème par défaut &kgoldrunner;, avec des briques rouges et des bordures grises.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Thèmes</guimenu
+><guimenuitem
+>Ville des geeks</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Notre héros est lâché depuis une trappe à l'intérieur d'une pièce. S'échappera t-il quand il atteindra finalement le dernier niveau ?</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Thèmes</guimenu
+><guimenuitem
+>Nostalgie</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Cela rappelle l'époque du jeu original sur Apple II et Commodore 64, comme il était quand vous branchiez votre ordinateur sur votre télévision &mdash; En revanche vous aviez un écran monochrome. Pour ceux qui ne se rappelle pas ces jours héroïques, ce n'est pas une reproduction exacte, mais cela vous donne une idée générale. Par exemple, le héros était en noir et blanc, aujourd'hui il est rouge et bleu.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Thèmes</guimenu
+><guimenuitem
+>Bleu nostalgique</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>En réalité, le héros était blanc, les ennemis avaient un pantalon blanc et un haut orange (couleur de la peau), et l'or était des boîtes blanches avec des côtés oranges. Le tout formait un effet de flou (une sorte d'anti crénelage matériel), qui faisait que les briques semblaient en trois dimensions &mdash; ce qui est difficile à recréer sur les moniteurs actuels.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+<sect1 id="settings-menu">
+<title
+>Le menu <guimenu
+>Configuration</guimenu
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Maj;<keycap
+>F</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Configuration</guimenu
+> <guimenuitem
+>Mode plein écran</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Affiche ou cache le mode plein écran</action
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Configuration</guimenu
+><guimenuitem
+>La souris contrôle le héros</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Fixe le contrôle du héros par la souris (cf <link linkend="mouse-control"
+>Se déplacer</link
+>).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Configuration</guimenu
+><guimenuitem
+>Le clavier contrôle le héros</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Fixe le contrôle du héros par le clavier (cf <link linkend="keyboard-control"
+>Contrôler le héros avec le clavier</link
+>).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Configuration</guimenu
+><guimenuitem
+>Vitesse normale</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Fixe la vitesse de jeu normale (12 unités).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Configuration</guimenu
+><guimenuitem
+>Vitesse de débutant</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Fixe la vitesse de jeu de débutant (6 unités, la moitié de la vitesse normale).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Configuration</guimenu
+><guimenuitem
+>Vitesse de champion</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Fixe la vitesse de jeu de champion (18 unités, 1,5 fois la vitesse normale).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>+</keycap
+></shortcut
+> <guimenu
+>Configuration</guimenu
+><guimenuitem
+>Augmenter la vitesse</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Augmente la vitesse du jeu d'une unité, jusqu'au maximum de 24 unités (2 fois la vitesse normale). Vous pouvez utiliser la touche <keycap
+>+</keycap
+> comme raccourci.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>-</keycap
+></shortcut
+> <guimenu
+>Configuration</guimenu
+><guimenuitem
+>Diminuer la vitesse</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Diminue la vitesse du jeu d'une unité, jusqu'au minimum de 3 unités (un quart de la vitesse normale). Vous pouvez utiliser la touche <keycap
+>-</keycap
+> comme raccourci.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Configuration</guimenu
+><guimenuitem
+>Règles traditionnelles</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Fixe les règles de jeu Traditionnelles (cf <link linkend="choice-of-rules"
+>Choix des règles</link
+>).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Configuration</guimenu
+><guimenuitem
+>Règles de &kgoldrunner;</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Fixe les règles de jeu &kgoldrunner; (cf <link linkend="choice-of-rules"
+>Choix des règles</link
+>).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Configuration</guimenu
+><guimenuitem
+>Configurer les raccourcis clavier...</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Dans la version &kde; seulement, cet élément vous permet de modifier les affectations des touches du clavier (&pex; pour le contrôle du héros) ou d'affecter vos propres raccourcis pour des éléments du menu.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="help-menu">
+<title
+>Le menu <guimenu
+>Aide</guimenu
+></title>
+
+<para
+>Contient les éléments suivants dans le menu Aide de &kde; : </para>
+&help.menu.documentation; </sect1>
+
+</chapter>
+
+<chapter id="game-editor">
+<title
+>L'éditeur de jeu</title>
+
+<sect1 id="editor-start">
+<title
+>Premiers pas avec l'éditeur de jeu</title>
+
+<sect2 id="creating-a-game">
+<title
+>Création un jeu</title>
+
+<para
+>Avant de créer ou de modifier un niveau de &kgoldrunner;, vous devez créer un jeu dans lequel l'enregistrer. Utilisez <guimenuitem
+>Créer un jeu</guimenuitem
+> dans le menu <guimenu
+>Éditeur</guimenu
+>. Si vous l'oubliez, cela vous sera rappelé. </para>
+
+<para
+>Les décisions les plus importantes à prendre lors de la création d'un jeu sont le choix des règles à suivre (<quote
+>Traditionnelles</quote
+> ou <quote
+>&kgoldrunner;</quote
+>, se référer à <link linkend="choice-of-rules"
+>Choix des règles</link
+>) et celui d'un préfixe de nom de fichier unique de 1 à 5 caractères pour votre jeu et vos niveaux. Vous avez aussi besoin d'un nom et d'une description pour votre jeu, mais ceux-ci peuvent être facilement modifiés par la suite.</para>
+
+<para
+>Le préfixe est utilisé à l'intérieur de &kgoldrunner; pour identifier les fichiers de niveaux, de meilleurs scores et les parties enregistrées. Vous pouvez utiliser vos initiales comme préfixe, pourvu qu'elles ne soient pas identiques à un préfixe &kgoldrunner;. Jusqu'à maintenant, les préfixes <quote
+>level</quote
+>, <quote
+>plws</quote
+>, <quote
+>wad</quote
+>, <quote
+>plwv</quote
+>, <quote
+>tute</quote
+> et <quote
+>tutea</quote
+> sont utilisés.</para>
+
+<para
+>Le préfixe de 4 lettres <quote
+>tute</quote
+> est réservé pour les jeux tutoriels, qui affichent la description du jeu et des conseils pour chaque niveau. Si vous composez votre propre jeu tutoriel, vous pouvez utiliser le préfixe <quote
+>tutex</quote
+>, pour qu'il soit considéré comme un jeu tutoriel mais sans que ses fichiers entrent en conflit avec ceux du Tutoriel de base ou du Tutoriel avancé (préfixes <quote
+>tute</quote
+> et <quote
+>tutea</quote
+>). </para>
+
+</sect2>
+
+<sect2 id="creating-a-level">
+<title
+>Création d'un niveau</title>
+
+<para
+>Lorsque vous voulez créer un jeu, utilisez <guimenuitem
+>Créer un niveau</guimenuitem
+> du menu <guimenu
+>Éditeur</guimenu
+> pour commencer la création d'un niveau. Cela fournit une aire de jeu vide de 28x20 carrés, avec le héros en haut à gauche. Vous pouvez le déplacer à un autre endroit si vous préférez et vous n'avez pas à utiliser tout l'aire disponible. Beaucoup de niveaux très intéressants utilisent de petites surfaces. </para>
+
+<para
+>Le minimum requis pour qu'un niveau soit jouable est d'avoir un héros, une pépite d'or qu'il peut atteindre et une échelle visible ou cachée menant au sommet de l'aire de jeu. Vous n'avez pas besoin d'avoir d'ennemis, de barres ni même de briques. Il y a beaucoup de niveaux difficiles sans ennemis ou sans briques.</para>
+
+</sect2>
+</sect1>
+
+<sect1 id="editing-and-testing">
+<title
+>Éditer et tester</title>
+
+<sect2 id="editing-a-level">
+<title
+>Éditer un niveau</title>
+
+<para
+>Utilisez <guimenuitem
+>Éditer un niveau</guimenuitem
+> dans le menu <guimenu
+>Éditeur</guimenu
+> pour commencer l'édition d'un niveau existant ou utilisez <guimenuitem
+>Créer un niveau</guimenuitem
+> pour commencer l'édition d'un nouveau niveau.</para>
+
+<para
+>Si vous avez choisi un niveau Système, vous êtes averti que vous devrez l'enregistrer dans un de vos propres jeux. Sinon, le comportement par défaut est d'enregistrer le niveau où il était auparavant, mais vous pouvez modifier cela.</para>
+
+</sect2>
+
+<sect2 id="painting-objects">
+<title
+>Peindre des objets dans un niveau</title>
+
+<para
+>L'image ci-dessous montre la barre d'édition, qui apparaît lorsque vous choisissez <guimenuitem
+>Créer un niveau</guimenuitem
+> ou <guimenuitem
+>Éditer un niveau</guimenuitem
+> dans le menu <guimenu
+>Éditeur</guimenu
+> et donc passez du mode Jeu au mode Édition. Elle disparaît lorsque vous revenez dans le mode Jeu. Notez aussi qu'en mode Édition, les fausses briques et les échelles cachées sont visibles dans l'aire de jeu.</para>
+
+<para
+>Les trois icônes sur la gauche de la barre d'édition ont le même effet que les éléments de menu <guimenuitem
+>Créer un niveau</guimenuitem
+>, <guimenuitem
+>Éditer un niveau</guimenuitem
+> et <guimenuitem
+>Enregistrer les éditions</guimenuitem
+>. Les onze autres icônes servent à éditer et peindre des objets dans votre niveau. </para>
+
+
+<para
+>De gauche à droite, les onze autres icônes sont <guiicon
+>éditer les noms et conseils</guiicon
+> (ampoule), <guiicon
+>espace vide</guiicon
+> (fond), <guiicon
+>héros</guiicon
+>, <guiicon
+>ennemi</guiicon
+>, <guiicon
+>brique (où l'on peut creuser)</guiicon
+>, <guiicon
+>béton (où l'on ne peut pas creuser)</guiicon
+>, <guiicon
+>piège ou fausse brique (on peut tomber à travers)</guiicon
+>, <guiicon
+>échelle</guiicon
+>, <guiicon
+>échelle cachée</guiicon
+>, <guiicon
+>poutre ou barre</guiicon
+> et <guiicon
+>pépite d'or</guiicon
+>. Les graphismes pour ces icônes, excepté pour l'ampoule, sont copiés depuis le thème &kgoldrunner; que vous utilisez.</para>
+
+<screenshot>
+<screeninfo
+>Édition d'un niveau</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="editbar.png" format="PNG"/>
+</imageobject>
+<textobject
+><phrase
+>Édition d'un niveau</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>L'icône <guiicon
+>Modifier le nom / conseil</guiicon
+> affiche une boîte de dialogue dans laquelle vous pouvez créer ou modifier le nom et conseil du niveau. Tous deux sont optionnels, mais ils sont essentiels pour les niveaux tutoriels et il est habituel de les fournir pour les niveaux très difficiles comme les paries championnat (cf le jeu <quote
+>La vengeance de Peter W</quote
+>).</para>
+
+<para
+>Lorsque vous cliquez sur une des 10 autres icônes, la souris devient un <quote
+>pinceau</quote
+> qui peint cette icône. Initialement le pinceau peint une <quote
+>brique</quote
+>.</para>
+
+<para
+>Vous peignez soit en pointant et en cliquant avec le &BGS; pour placer un objet simple dans un carré, ou en maintenant le &BGS; et en déplaçant la souris pour remplir une ligne ou une zone, comme une longue échelle, un bloc de briques ou un sol en béton. La peinture s'arrête lorsque vous relâchez le bouton de la souris. Si vous faites une erreur, vous pouvez utiliser &BDS;, cliquer pour l'effacer, ou vous pouvez sélectionner l'icône <guiicon
+>Effacer</guiicon
+> et effacer avec.</para>
+
+<para
+>L'icône du héros fonctionne différemment, car il ne peut y avoir qu'un héros. Lorsque vous peignez le héros, il se déplace de sa position précédente vers celle où vous relâchez le bouton de la souris.</para>
+
+</sect2>
+
+<sect2 id="saving-your-work">
+<title
+>Enregistrer votre travail</title>
+
+<para
+>Lorsque vous avez fini de peindre, enregistrez votre travail en utilisant l'icône <guiicon
+>disquette</guiicon
+> ou <guimenuitem
+>Enregistrer les éditions</guimenuitem
+>dans le menu <guimenu
+>Éditeur</guimenu
+> ou <guimenuitem
+>Enregistrer les éditions</guimenuitem
+> dans le menu <guimenu
+>Jeu</guimenu
+>. Vous devez toujours enregistrer dans vos propres jeux, jamais dans les jeux Systèmes.</para>
+
+<para
+>Si vous créer un niveau, vous utilisez la boîte de dialogue de choix du niveau pour lui affecter un jeu et un numéro. Vous utilisez la même boîte de dialogue si vous éditiez un niveau, mais le comportement par défaut est de l'enregistrer là où il se trouvait auparavant. Vous pouvez changer le jeu et le niveau, pour obtenir un effet <quote
+>Enregistrer sous...</quote
+>. Si vous éditiez un niveau Système, vous devez l'enregistrer comme copie dans un de vos propres jeux.</para>
+
+</sect2>
+
+<sect2 id="adding-name-and-hint">
+<title
+>Ajouter un nom et un conseil au niveau</title>
+
+<para
+>Dans la version pour enregistrer de la boîte de dialogue de choix du niveau se trouve un bouton nommé <guibutton
+>Éditer le nom et conseil du niveau</guibutton
+>. Vous pouvez l'utiliser pour apporter la touche finale à votre niveau en ajoutant un nom et un conseil. Tous deux sont optionnels, mais ils sont essentiels pour les niveaux tutoriels et ils sont fournis habituellement pour les niveaux très difficiles comme les parties Championnat (voir <quote
+>La vengeance de Peter W</quote
+>). Bien sûr, vous pouvez aussi utiliser à tout moment l'icône <guiicon
+>Modifier le nom / conseil</guiicon
+>, pour ajouter ou modifier un nom et un conseil. </para>
+
+</sect2>
+
+<sect2 id="testing-a-level">
+<title
+>Tester un niveau</title>
+
+<para
+>Après avoir enregistré un niveau édité, vous pouvez le tester en utilisant <guimenuitem
+>Nouvelle partie...</guimenuitem
+> dans le menu <guimenu
+>Jeu</guimenu
+>. Par défaut, les numéros de niveau et le jeu sont mémorisés, et vous pouvez aller directement dans le niveau en quelques clics. Si vous voulez ensuite le modifier à nouveau, la même chose s'applique lorsque vous utilisez <guimenuitem
+>Éditer un niveau...</guimenuitem
+>. Il est essentiel de tester le niveau que vous créez pour être sur qu'il est possible de le terminer et qu'il n'est pas trop facile.</para>
+
+</sect2>
+</sect1>
+
+<sect1 id="reorganizing-games">
+<title
+>Réorganiser les jeux et niveaux</title>
+
+<sect2 id="moving-a-level">
+<title
+>Déplacer un niveau</title>
+
+<para
+>Vous pouvez utiliser <guimenuitem
+>Déplacer un niveau...</guimenuitem
+> dans le menu <guimenu
+>Éditeur</guimenu
+> pour renuméroter ou réorganiser les niveaux d'un jeu, ou pour déplacer un niveau d'un jeu à l'autre. <guimenuitem
+>Déplacer un niveau...</guimenuitem
+> est une opération en deux parties. Vous devez d'abord charger un niveau en le sélectionnant pour l'éditer ou le jouer, puis vous devez utiliser <guimenuitem
+>Déplacer un niveau...</guimenuitem
+>. La boîte de dialogue de choix du niveau apparaît alors et vous pouvez choisir le nouveau numéro du niveau et son nouveau jeu (si nécessaire).</para>
+
+<para
+>Le déplacement ne laisse pas de vide dans la séquence des numéros de niveaux dans un jeu. Par exemple, si vous déplacez le niveau 10 d'un jeu A vers le niveau 3 d'un jeu B, les niveaux 11 et supérieurs du jeu A seront renumérotés d'une unité en moins (pour fermer l'espace) et les niveaux 3 et supérieurs du jeu B seront renumérotés d'une unité en plus (pour faire de la place pour le nouveau venu).</para>
+
+</sect2>
+
+<sect2 id="deleting-a-level">
+<title
+>Supprimer un niveau</title>
+
+<para
+>Vous pouvez utiliser <guimenuitem
+>Supprimer un niveau...</guimenuitem
+> dans le menu <guimenu
+>Éditeur</guimenu
+> pour supprimer un niveau inutile. Les autres niveaux seront renumérotés afin de refermer le vide dans la séquence. </para>
+
+</sect2>
+</sect1>
+
+</chapter>
+
+<chapter id="tips-tricks-and-hints">
+<title
+>Astuces, trucs et conseils</title>
+
+<sect1 id="tips-overview">
+<title
+>Aperçu</title>
+
+<para
+>Ce chapitre présente des conseils généraux pour jouer à &kgoldrunner;, au contraire des conseils spécifiques que vous trouverez dans les niveaux des jeux tutoriels et championnat (cf <link linkend="move-menu"
+><menuchoice
+> <guimenu
+>Déplacer</guimenu
+><guimenuitem
+>Conseil</guimenuitem
+></menuchoice
+></link
+>). Les conseils sont regroupés ainsi :</para>
+
+<itemizedlist>
+
+<listitem>
+<para
+><link linkend="hints-dealing-with-enemies"
+>Gérer ses ennemis</link
+></para>
+</listitem>
+
+<listitem>
+<para
+><link linkend="hints-digging-puzzles"
+>Les problèmes de creusement</link
+></para>
+</listitem>
+
+<listitem>
+<para
+><link linkend="hints-tricks-with-gold"
+>Astuces avec l'or</link
+></para>
+</listitem>
+
+<listitem>
+<para
+><link linkend="hints-solving-difficult-levels"
+>Résoudre les niveaux difficiles</link
+></para>
+</listitem>
+
+</itemizedlist>
+</sect1>
+
+<sect1 id="hints-dealing-with-enemies">
+<title
+>Gérer ses ennemis</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Vous pouvez toujours piéger un unique ennemi dans un trou, prendre son or et courir sur lui sans le tuer. C'est souvent une bonne idée de creuser derrière soi pour le retarder un peu plus, mais cela pourrait le tuer. Dans certains niveaux, ce n'est pas une bonne idée de tuer les ennemis.</para>
+</listitem>
+<listitem>
+<para
+>Vous pouvez piéger deux ennemis dans deux trous, prendre leur or et courir sur eux, mais c'est dangereux s'ils sont séparés par deux ou trois espaces. Parfois, deux trous tuent un ennemi et l'autre s'en sort, et parfois les deux s'échappent. Dans les règles &kgoldrunner;, il est facile de piéger deux ennemis et leur courir dessus, parce qu'ils restent dans leur trou trop longtemps.</para>
+</listitem>
+<listitem>
+<para
+>Il est presque toujours impossible de piéger trois ennemis et de courir sur eux. Vous devrez les tuer, creuser et sauter à travers le sol ou simplement fuir.</para>
+</listitem>
+<listitem>
+<para
+>Essayez de maintenir les ennemis ensemble dans un groupe. De cette façon, vous ne serez pas entouré et vous pouvez faire des choses amusantes comme ramasser l'or alors qu'ils courent derrière vous.</para>
+</listitem>
+<listitem>
+<para
+>Parfois, vous pouvez tuer un ennemi avec deux trous, mais il faut le plus souvent de trois à neuf trous pour tuer de un à cinq ennemis.</para>
+</listitem>
+<listitem>
+<para
+>Il est possible de tuer un ennemi avec un seul trou s'il est assez éloigné lorsque vous le creusez.</para>
+</listitem>
+<listitem>
+<para
+>Dans le jeu <quote
+>Traditionnel</quote
+>, vous pouvez piéger un ennemi pour toujours dans une fosse en briques ou en béton. Restez près du bord de la fosse du côté opposé à l'ennemi. Lorsqu'il s'approche de la fosse, descendez d'une case (vers le niveau du sol de la fosse) et l'ennemi courra habituellement dans la fosse.</para>
+</listitem>
+<listitem>
+<para
+>Dans certains niveaux du jeu <quote
+>Traditionnel</quote
+>, vous pouvez forcer un ennemi à grimper sur une échelle devant vous si vous restez quelque part au-dessus du bas de l'échelle.</para>
+</listitem>
+<listitem>
+<para
+>Dans le jeu <quote
+>&kgoldrunner;</quote
+>, vous pouvez faire tomber un ennemi dans une cavité en le forçant à tomber au-dessus de vous, en courant latéralement et en le coinçant dans un trou avant qu'il ne vous rattrape.</para>
+</listitem>
+<listitem>
+<para
+>Dans le jeu <quote
+>&kgoldrunner;</quote
+>, les ennemis ne peuvent pas courir à travers les briques, donc vous pouvez de temps en temps les utiliser comme une barrière ou un endroit où vous cacher.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="hints-digging-puzzles">
+<title
+>Les problèmes de creusement</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Pour creuser à travers plus d'une couche de briques, commencez par creuser autant de briques qu'il y a de couches, sautez à l'intérieur, creusez une brique de moins et ainsi de suite.</para>
+</listitem>
+<listitem>
+<para
+>Si vous creusez près d'une échelle ou d'une succession de barres, vous pouvez creuser à travers un nombre quelconque de couches et jusqu'à cinq ou six briques horizontalement. Retournez simplement à l'échelle ou aux barres après avoir creusé chaque couche, et descendez d'une case, puis sortez et creusez la couche suivante.</para>
+</listitem>
+<listitem>
+<para
+>Si un puzzle de creusement semble impossible à résoudre, considérez qu'il peut y avoir quelques fausses briques à l'intérieur. Peut-être que la couche inférieure est fausse, ou peut-être que vous pouvez vous tenir dans une fausse brique et creuser à côté d'elle.</para>
+</listitem>
+<listitem>
+<para
+>Pensez à l'ordre dans lequel vous allez ramasser l'or. Si vous choisissez le bon ordre, le creusement sera sans doute plus simple.</para>
+</listitem>
+<listitem>
+<para
+>Certains niveaux requièrent que vous creusiez à travers un mur de briques, entriez et ramassiez l'or puis que vous sortiez avant que les briques ne se referment et vous piègent.</para>
+</listitem>
+<listitem>
+<para
+>Il est possible de creuser un trou pendant la chute dans un espace vide, si vous êtes dans un bon timing. Il n'est pas nécessaire d'avoir un ennemi qui vous poursuit. C'est un bogue qui est devenu une <quote
+>fonctionnalité</quote
+> et est énormément utilisé dans le jeu <quote
+>State of Terror</quote
+>.
+></para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="hints-tricks-with-gold">
+<title
+>Astuces avec l'or</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Si vous ne pouvez pas obtenir une pépite d'or, pensez à faire qu'un ennemi aille la chercher pour vous. Pensez même à utiliser la tête d'un ennemi comme un pont pour passer une fosse ou un précipice.</para>
+</listitem>
+<listitem>
+<para
+>Dans certains niveaux, il y a une pépite qui doit être ramassée en dernier, car vous aurez besoin de l'échelle cachée pour vous échapper de cette position.</para>
+</listitem>
+<listitem>
+<para
+>Dans certaines situations, un ennemi peut être tué sans abandonner l'or qu'il porte. Cette or devient alors une <quote
+>pépite perdue</quote
+>. Vous ne marquez pas de points en faisant perdre une pépite à un ennemi, mais au moins vous pouvez terminer le niveau.</para>
+</listitem>
+<listitem>
+<para
+>S'il est impossible de creuser, assurez-vous que les ennemis restent sur du béton ou en haut des échelles, et faites-les relâcher leur or au hasard.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="hints-solving-difficult-levels">
+<title
+>Résoudre les niveaux difficiles</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Essayez de changer la vitesse du jeu en débutant voire moins.</para>
+</listitem>
+<listitem>
+<para
+>Utilisez l'éditeur pour voir où se trouvent les fausses briques et les échelles cachées.</para>
+</listitem>
+<listitem>
+<para
+>Utilisez l'éditeur pour enregistrer le niveau dans un de vos propres jeux, puis éditez-le de telle sorte que vous n'ayez pas à recommencer au début à chaque fois que vous mourez. Cela vous permet de développer des solutions plus rapidement.</para>
+</listitem>
+<listitem>
+<para
+>Dans les problèmes de creusement, cherchez les fausses briques dans lesquelles vous pouvez tomber et ainsi avoir une brique de moins à creuser. Ou pensez à utiliser un ennemi pour aller devant vous, pour que vous puissiez rester sur sa tête et creuser.</para>
+</listitem>
+<listitem>
+<para
+>Cherchez un thème ou une astuce dans le niveau, comme chevaucher la tête d'un ennemi, enfermer tous les ennemis dans une fosse, attirer les ennemis dans un coin où ils resteront et ne vous poursuivront plus, attirer les ennemis dans des fosses que vous devez traverser pour ramasser de l'or, faire que les ennemis aillent chercher l'or pour vous, ou trouver des endroits où vous pouvez rester et diriger un ennemi là où vous voulez qu'il aille.</para>
+</listitem>
+</itemizedlist>
+</sect1>
+
+<!-- This is the place for a FAQ section, if required.
+<sect1 id="hints-faq">
+<title
+>FAQ</title>
+
+<qandaset id="faq">
+
+<qandaentry>
+<question>
+<para
+>Question 1</para>
+</question>
+<answer>
+<para
+>The answer</para>
+</answer>
+</qandaentry>
+
+</qandaset>
+</sect1>
+-->
+
+</chapter>
+
+<chapter id="credits-and-licenses">
+<title
+>Remerciements et licences</title>
+
+<para
+>&kgoldrunner; copyright 2003 Ian Wadham et Marco Krüger.</para>
+
+<para
+>&kgoldrunner; a été inspiré par un ancien jeu sur ordinateur appelé <trademark
+>Lode Runner</trademark
+> qui a été écrit aux États-Unis par <trademark class="copyright"
+>Doug Smith</trademark
+> et qui est sorti pour la première fois en 1983 par <trademark class="copyright"
+>Broderbund Software</trademark
+>. Il est apparu à l'origine dans les ordinateurs Apple II et Commodore 64, là où la famille Wadham et Marco Krüger devinrent accrocs. Il fut un best-seller à l'époque et reste un des plus grands jeux de l'histoire sur ordinateur.</para>
+
+<para
+>Vous pouvez trouver plus d'informations sur <trademark
+>Lode Runner</trademark
+> et les différentes versions sorties depuis 1983, sur le site web <ulink url="http://entropymine.com/jason/lr"
+>Jason's Lode Runner Archive</ulink
+> (http://entropymine.com/jason/lr/). Ce site contient aussi l'histoire du développement du jeu original, dans le fichier <ulink url="http://entropymine.com/jason/lr/misc/ldhist.html"
+> misc/ldhist.html</ulink
+>. Wikipédia a aussi un très bon article sur <trademark
+>Lode Runner</trademark
+>, avec d'intéressants liens vers d'autres sites.</para>
+
+<para
+>&kgoldrunner; est une tentative de conserver l'esprit du jeu original sur une plate-forme plus portable et qui durera plus que quelques années. Il est disponible comme logiciel libre sous forme de code source. Des copies de l'original sont impossibles à obtenir de nos jours, et les machines sur lesquelles il tournait sont désormais dans les musées.</para>
+
+<para
+>Marco Krüger a développé &kgoldrunner; jusqu'à la version 0.3, nostalgique du jeu Commodore 64 original. Ian Wadham a ajouté plusieurs fonctionnalités et niveaux, et a créé la version actuelle. Le fils aîné de Ian, Peter, a composé les 100 niveaux du jeu <quote
+>Initiation</quote
+> et les 20 niveaux difficiles du jeu <quote
+>La vengeance de Peter W</quote
+>. Les autres niveaux ont été composés par Ian, Peter, Marco Krüger et ses amis, et les autres enfants de Ian, Simon et Genevieve. </para>
+<para
+>Stuart Popejoy de New York a contribué au jeu <quote
+>State of Terror</quote
+>. En 2007, un premier championnat fût créé en utilisant les règles de &kgoldrunner; un des jeux les plus difficiles.</para>
+
+<para
+>Remerciements spéciaux pour Mauricio Piacentini et Dmitry Suzdalev, qui ont porté &kgoldrunner; vers &Qt; 4 et &kde; 4, et à tous les graphistes qui ont contribué aux nouveaux graphismes et thèmes SVG dans la version &kde; 4 : spécialement Mauricio Piacentini pour le thème par défaut et les nouveaux coureurs, Johann Ollivier Lapeyre pour les échelles et blocs, Eugene Trounev pour les thèmes Ville des geeks et Le trésor d'Égypte, et le dernier mais pas des moindres, Luciano Montanaro pour les deux thèmes Nostalgie, le thème d'accessibilité en Noir sur blanc, les améliorations des coureurs, les nombreux arrières plans et toutes les autres idées.</para>
+
+<para
+>Traduction française par &CedricPasteur;.</para
+> 
+&underFDL; &underGPL; </chapter>
+
+<appendix id="installation">
+<title
+>Installation</title>
+
+<sect1 id="how-to-obtain-kgoldrunner">
+<title
+>Comment obtenir &kgoldrunner;</title>
+&install.intro.documentation; </sect1>
+
+<sect1 id="compilation-and-installation">
+<title
+>Compilation et Installation</title>
+&install.compile.documentation; </sect1>
+
+</appendix>
+
+<appendix id="porting-kgoldrunner">
+<title
+>Porter &kgoldrunner; sur d'autres plates-formes</title>
+
+<para
+>&kgoldrunner; est écrit en C++, utilise &Linux; et la version libre de la bibliothèque portable d'objets et d'interface graphique &Qt;. La version actuelle peut être compilée et tourner avec &kde;4 et &Qt;4 ou avec seulement &Qt;4.</para>
+
+<para
+>&kgoldrunner; dépend des bibliothèques &kde; (kdelibs et kdegames), lesquelles ont été portées vers d'autres plate-formes, et il est possible d'obtenir les éditions open source de &Qt; 4 pour les autres plate-formes, cela devrait donc être possible de compiler, construire et lancer &kgoldrunner; sur d'autres plate-formes que &Linux;.</para>
+
+</appendix>
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-general-insert-case: lower
+End:
+-->

@@ -1,0 +1,2275 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY kgoldrunner "<application
+>KGoldrunner</application
+>">
+  <!ENTITY kappname "&kgoldrunner;">
+  <!ENTITY package "kdegames">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % German "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<book id="kgoldrunner" lang="&language;">
+
+<bookinfo>
+<title
+>Das Handbuch zu &kgoldrunner;</title>
+<authorgroup>
+<author
+><firstname
+>Ian</firstname
+> <surname
+>Wadham</surname
+> <affiliation
+><address
+><email
+>iandw.au@gmail.com</email
+></address
+></affiliation>
+</author>
+<author
+><firstname
+>Marco</firstname
+> <surname
+>Krüger</surname
+> </author>
+<othercredit role="translator"
+><firstname
+>Frank</firstname
+><surname
+>Schütte</surname
+><affiliation
+><address
+><email
+>F.Schuette@t-online.de</email
+></address
+></affiliation
+><contrib
+>Übersetzung</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Johannes</firstname
+><surname
+>Obermayr</surname
+><affiliation
+><address
+><email
+>johannesobermayr@gmx.de</email
+></address
+></affiliation
+><contrib
+>Überarbeitung der Übersetzung</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2015</year>
+<holder
+>Ian Wadham</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2015-12-16</date>
+<releaseinfo
+>4.14 (&kde; Anwendungen 15.12)</releaseinfo>
+
+<abstract>
+<para
+>&kgoldrunner; ist ein Action- und Rätselspiel. Es wird durch ein Labyrinth gelaufen, die Gegner ausgetrickst, Goldstücke eingesammelt und in die nächste Ebene geklettert. <emphasis
+>Hinweis:</emphasis
+> Die Regeln für das Graben wurden in dieser Version leicht verändert.</para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KGoldrunner</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="playing-kgoldrunner">
+<title
+>&kgoldrunner; spielen</title>
+
+<sect1 id="introduction">
+<title
+>Einführung</title>
+<para
+>Spielart: Arcade-Spiel, Strategiespiel </para>
+<para
+>Anzahl der Spieler: Einer </para>
+
+<para
+>&kgoldrunner; ist ein Action-Spiel, in dem der Held durch ein Labyrinth läuft und seine Feinde austrickst. Der Held wird mit der Maus oder Tastatur geführt, alle Goldklumpen müssen eingesammelt werden und schließlich wird zur nächsten Ebene geklettert. Die Feinde sind hinter dem Gold und dem Helden her. Wenn sie ihn fangen, wird er von ihnen getötet.</para>
+
+<para
+>Der Held hat keine Waffen, um <emphasis
+>sie</emphasis
+> zu töten. Er kann lediglich weglaufen, Fallgruben in den Boden graben oder sie in Sackgassen locken. Nach einiger Zeit klettert ein gefangener Feind aus einem Loch heraus. Schließt es sich vorher, so stirbt er und erscheint an einer beliebigen Stelle erneut. </para>
+
+<para
+>Falls das Spiel zum ersten Mal gespielt wird, sollte ein Blick in die „Einführung“ geworfen werden. Sie enthält die Regeln und grundlegenden Techniken. Das Spiel „Spielaufnahme“ sollte dann versucht werden. Für Experten ist die „Herausforderung“ und „Die Rache des Peter W.“ interessant, aber auch die „Spielaufnahme“ verfügt bereits über 100 Ebenen, von denen einige sehr schwierig sind und sich für einen Eintrag in der Bestenliste gut eignet.</para>
+
+<para
+>Diese Spiele befolgen herkömmliche Regeln, ähnlich denen der ersten Heim-Computer wie dem Apple II oder Commodore 64. Die Spiele „&kgoldrunner;“ und „Terrorstaat“ richten sich nach den &kgoldrunner;-Regeln. Das heißt, die Feinde laufen schneller und verhalten sich aggressiver. Weitere Informationen hierzu können dem Abschnitt <link linkend="choice-of-rules"
+>Wahl der Regeln</link
+> entnommen werden.</para>
+
+<para
+>Bei höheren Ebenen kombiniert &kgoldrunner; immer mehr Aspekte von Action, Strategie, Taktik und Rätsel - alles in einem Spiel. Viel Glück.</para>
+
+</sect1>
+
+<sect1 id="typical-game">
+<title
+>Ein typisches Spiel</title>
+
+<para
+>Unten wird ein typisches Spiel gezeigt. Der Held befindet sich in Ebene 4 der Einführung für Fortgeschrittene. Die Statusleiste zeigt die verbliebenen Leben sowie die erreichte Punktzahl. Sie zeigt weiterhin, dass in dieser Ebene ein Tipp verfügbar ist (wie bei jedem der Einführungsspiele) und dass das Spiel unterbrochen ist (für die Erstellung des Bildschirmfotos). Es kann durch Betätigen von <keycap
+>P</keycap
+> oder <keycap
+>Esc</keycap
+> fortgesetzt werden.</para>
+
+<para
+>Der Held hat links oben begonnen, grub dann ein Loch und fiel in eine Reihe falscher Steine und Gold (sein Fallen ist sogar noch zu sehen). Der Feind links oben wird in das Loch fallen, herausklettern und dann bis zum Ende der Ebene gefangen sein. Das könnte dem Helden ein Problem bereiten, da sich die versteckte Leiter zur nächsten Ebene dort befindet.</para>
+
+<screenshot>
+<screeninfo
+>Typisches &kgoldrunner;-Spiel</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="tute008.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Typisches &kgoldrunner;-Spiel</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Der Feind rechts fällt gerade und trägt Gold. Der dritte Feind klettert gerade eine Leiter herunter, um den Helden zu verfolgen. Wenn der Held den Boden erreicht, muss er diese beiden Feinde austricksen. Diese Ebene enthält sowohl Steine als auch undurchdringlichen Beton sowie viele Fallen (falsche Steine), die wie normale Steine aussehen.</para>
+
+</sect1>
+
+<sect1 id="how-to-play">
+<title
+>Spielregeln</title>
+
+<sect2>
+<title
+>Spielstart</title>
+
+<para
+>Beim Aufruf von &kgoldrunner; wird ein aufgenommenes Spiel beispielhaft vorgeführt. Das Beispiel kann mittels einem Mausklick im Spielfeld, Drücken der <keycap
+>Leertaste</keycap
+>, Auswahl im Menü oder dem entsprechenden Tastenkürzel beendet werden (genauso wie über das Menü <menuchoice
+><guimenu
+>Spiel</guimenu
+><guimenuitem
+>Neues Spiel ...</guimenuitem
+></menuchoice
+>). Das Beispiel kann über das Menü <menuchoice
+><guimenu
+>Einstellungen</guimenu
+><guimenuitem
+>Demomodus zu Beginn</guimenuitem
+></menuchoice
+> abgeschaltet werden. Ebenso kann es auch während des Spiels über das Menü <menuchoice
+><guimenu
+>Zug</guimenu
+><guimenuitem
+>Demomodus</guimenuitem
+></menuchoice
+> wiedergegeben werden. </para>
+
+<para
+>Sobald der Demomodus abgebrochen bzw. die Maus oder <keycap
+>Leertaste</keycap
+> zum Beenden verwendet wurde, erscheint ein Fenster mit dem Namen, der Nummer und einer Vorschau des zuletzt geladenen Spiels mit Ebene bzw. beim erstmaligen Spielen selbige Daten für die erste Ebene der „Einführung“.</para>
+
+<para
+>Durch Drücken auf den <guibutton
+>Spielen</guibutton
+>-Knopf wird sofort ein Spiel begonnen (oder es wird auf <guibutton
+>Beenden</guibutton
+> und danach auf <guibutton
+>Neues Spiel</guibutton
+> oder <guibutton
+>Menü verwenden</guibutton
+> gedrückt). Die erste Auswahl beendet &kgoldrunner; wieder, die zweite zeigt ein Fenster zur <link linkend="level-selection-dialog"
+>Ebenenauswahl</link
+>, in dem ein Spiel und eine Ebene ausgewählt werden können und der letzte Knopf schließt das Fenster, sodass ggf. das &kgoldrunner;-Menü verwendet werden kann.</para>
+
+<para
+>Wenn ein Spiel und eine Ebene ausgewählt wurde, wird dieses angezeigt und der Mauszeiger befindet sich anfangs über dem Helden. In einem „Einführungsspiel“ erscheint zuerst eine erklärende Nachricht. Das Spiel beginnt mit der ersten Mausbewegung oder einem Tastendruck (z. B. <keycap
+>Leertaste</keycap
+>). Die Tasten <keycap
+>Q</keycap
+>, <keycap
+>S</keycap
+>, <keycap
+>P</keycap
+> und <keycap
+>Esc</keycap
+> sollten an dieser Stelle nicht verwendet werden. Jede Ebene wird auf die gleiche Art gestartet.</para>
+
+<para
+>Der Held verfügt zunächst über fünf Leben. Für jede abgeschlossene Ebene kommt ein Leben dazu.</para>
+
+</sect2>
+
+<sect2 id="mouse-control">
+<title
+>Bewegung</title>
+
+<para
+>Standardmäßig wird der Held mit der Maus gesteuert. Er kann jedoch auch mit der <link linkend="keyboard-control"
+>Tastatur</link
+> oder auf einem Laptop mit einer Mischung aus der Tastatur (fürs Graben) und dem Touchpad (zur Steuerung) gesteuert werden.</para>
+
+<para
+>Der Held bewegt sich immer zur Position des Mauszeigers hin. Er bewegt sich meist nicht so schnell wie der Mauszeiger, aber er versucht immer ihn zu „fangen“ (mit gleichbleibender Geschwindigkeit). Wenn sich der Mauszeiger ober- oder unterhalb von ihm befindet, wird er die nächste Leiter verwenden oder in das nächste Loch fallen. Anderenfalls bewegt er sich horizontal bis er unter, über oder rechts vom Mauszeiger ist. Er kann dabei nur einfache Richtungsangaben befolgen und der Mauszeiger sollte daher nicht zu weit vorauseilen.</para>
+
+<para
+>Der Held kann sich nach rechts oder links über Stein, Beton, Leitern oder Stangen sowie abwärts und aufwärts über Leitern bewegen. Befindet sich der Held über einem leeren Feld ohne Stein, Beton, Leiter oder Balken, so folgt er den Regeln der Schwerkraft und fällt. Der Held fällt außerdem von einem Balken oder unten von einer Leiter, falls sich der Mauszeiger weiter unten befindet.</para>
+
+</sect2>
+
+<sect2 id="keyboard-control">
+<title
+>Tastatursteuerung</title>
+
+<para
+>Bei Bedarf kann der Held über die Tastatur gesteuert werden. Dazu sind standardmäßig die Pfeiltasten sowie <keycap
+>I</keycap
+>, <keycap
+>J</keycap
+>, <keycap
+>K</keycap
+> und <keycap
+>L</keycap
+> (zu Ehren des ursprünglichen Apple-II-Spiels) vorgesehen. Zum Graben werden <keycap
+>Z</keycap
+> und <keycap
+>C</keycap
+> oder <keycap
+>U</keycap
+> und <keycap
+>O</keycap
+> verwendet. Damit kann man entweder einhändig mit <keycap
+>U</keycap
+>, <keycap
+>I</keycap
+>, <keycap
+>O</keycap
+>, <keycap
+>J</keycap
+>, <keycap
+>K</keycap
+>, <keycap
+>L</keycap
+> und <keycap
+>Leertaste</keycap
+> spielen (auf einer <keycap
+>QWERTY</keycap
+>-Tastatur) oder zweihändig mit den Pfeiltasten, <keycap
+>Leertaste</keycap
+>, <keycap
+>Z</keycap
+> und <keycap
+>C</keycap
+>. Über das Menü <menuchoice
+><guimenu
+>Einstellungen</guimenu
+><guimenuitem
+>Kurzbefehle festlegen ...</guimenuitem
+></menuchoice
+> können auch andere Tasten ausgewählt werden.</para>
+
+<para
+>Die Tastatursteuerung wird mittels Druck auf eine der für &kgoldrunner; festgelegten Tasten oder über das Menü <menuchoice
+><guimenu
+>Einstellungen</guimenu
+><guimenuitem
+>Tastatursteuerung</guimenuitem
+></menuchoice
+> aktiviert.</para>
+
+<para
+>Die Bewegungstasten (<keycap
+>I</keycap
+>, <keycap
+>J</keycap
+>, <keycap
+>K</keycap
+>, <keycap
+>L</keycap
+> oder die Pfeiltasten) lassen den Helden mit einer Bewegung nach oben, unten, links oder rechts beginnen. Er bewegt sich in die einmal eingeschlagene Richtung bis eine andere Richtungstaste oder die <keycap
+>Leertaste</keycap
+> zum Anhalten betätigt wird. Bei der Maussteuerung oder gemischten Steuerung (Laptop) stoppt er automatisch, wenn er den Mauszeiger erreicht hat.</para>
+
+<para
+>Hinweis: Die Tastatursteuerung ist auf längere Sicht erheblich schwieriger. An die Ähnlichkeit zwischen Maus und Joystick sollte hierbei gedacht werden.</para>
+
+</sect2>
+
+<sect2 id="pausing">
+<title
+>Spielunterbrechung</title>
+
+<para
+>Das Spiel kann jederzeit mit der Pausetaste (Standard: <keycap
+>P</keycap
+> oder <keycap
+>Esc</keycap
+>) unterbrochen werden. Bei der nächsten Betätigung einer Pausetaste wird das unterbrochene Spiel fortgesetzt. Es gibt auch einen Menüpunkt (<menuchoice
+><guimenu
+>Spiel</guimenu
+><guimenuitem
+>Pause</guimenuitem
+></menuchoice
+>). Es ist allerdings schwierig, diesen Menüpunkt mit der Maus auszuwählen, ohne den Helden in Schwierigkeiten zu bringen.</para>
+
+<tip
+><para
+>Vor der Verwendung des Menüs von &kgoldrunner; oder einem Fensterwechsel sollte immer eine Pausentaste gedrückt und somit das Spiel unterbrochen werden. Anderenfalls folgt der Held dem Mauszeiger und gerät möglicherweise in Schwierigkeiten.</para
+></tip>
+
+</sect2>
+
+<sect2 id="winning">
+<title
+>Eine Ebene gewinnen</title>
+
+<para
+>Ziel des Spiels ist, alle Goldklumpen durch Hineinlaufen oder -fallen einzusammeln. Wenn der letzte Klumpen eingesammelt ist, muss der Held zum oberen Ende des Spielfeldes gelangen. Häufig erscheint nach dem letzten Klumpen Gold eine versteckte Leiter, die der Held hinaufklettern verwenden kann. Manchmal sind keine versteckten Leitern vorhanden oder stellen einen „Köder“ dar, um den Helden auf die falsche Fährte zu locken (aber nur sehr selten). Bei einer Ebene ohne Gold gibt es auch keine versteckten Leitern und es muss ein Weg gefunden werden, um ganz nach oben zu gelangen.</para>
+
+</sect2>
+
+<sect2 id="false-bricks">
+<title
+>Vorsicht vor falschen Steinen</title>
+
+<para
+>Falsche Steine, auch Fallgruben genannt, sind die zweite Form versteckter Objekte. Sie sehen wie normale Steine aus, der Held fällt aber beim Betreten hindurch. Das kann nachteilig sein, falls sich darunter ein Feind befindet, aber auch vorteilhaft, falls sich Gold darunter befindet.</para>
+
+</sect2>
+
+<sect2 id="enemies">
+<title
+>Feinde</title>
+
+<para
+>Die Feinde bewegen sich ähnlich wie der Held. Der Hauptunterschied wird erkennbar, wenn ein Feind in ein vom Helden gegrabenes Loch fällt (siehe <link linkend="importance-of-digging"
+>Regeln beim Graben</link
+> weiter unten).  </para>
+<para
+>Die Feinde sammeln zufällig Gold auf und lassen es irgendwo, abhängig von den Spieleinstellungen, wieder fallen. Das kann auf Stein, Beton oder oben auf einer Leiter sein. Wenn ein Feind das letzte Goldstück hat, muss der Held es ihm wegnehmen, bevor er die Ebene beenden kann.</para>
+
+<para
+>Falls ein Feind den Helden berührt, stirbt der Held und muss die Ebene neu beginnen, falls er noch ein Leben übrig hat. Es ist allerdings möglich, auf dem Kopf eines Feindes zu stehen, darüber hinweg zu laufen oder auf einem fallenden Feind zu „reiten“. Das ist in einigen fortgeschrittenen Ebenen notwendig.</para>
+
+</sect2>
+
+<sect2 id="losing-a-level">
+<title
+>Eine Ebene verlieren</title>
+
+<para
+>Durch die Berührung eines Feindes kann eine Ebene und ein Leben verloren werden. Außerdem besteht die Möglichkeit einem gegrabenen Loch eingesperrt zu werden, wenn es sich schließt. Mit der Taste <keycap
+>Q</keycap
+> oder dem Menüpunkt <menuchoice
+><guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Held töten</guimenuitem
+></menuchoice
+> begeht der Held Selbstmord. Wozu sollte das dienlich sein? Manchmal ist der Held in einem Bereich eingeschlossen, den er nicht verlassen kann und bleibt für immer gefangen oder tötet sich selbst.</para>
+
+</sect2>
+
+<sect2 id="importance-of-digging">
+<title
+>Das Wichtige beim Graben</title>
+
+<para
+>Eine der wichtigsten Spieltaktiken besteht im geschickten Graben von Löchern. Um ein Loch links oder rechts neben dem Helden zu graben, muss lediglich die linke oder rechte Maustaste oder alternativ eine der Grabungstasten (Standard: <keycap
+>Z</keycap
+>, <keycap
+>C</keycap
+>, <keycap
+>U</keycap
+>, <keycap
+>O</keycap
+>) betätigt werden.</para>
+
+<para
+>Ein Feind wird „ausgetrickst“, indem ein Loch gegraben und über den Kopf des hineingefallenen Feindes hinweg gelaufen wird. Gleichzeitig wird ihm dabei alles von ihm getragene Gold abgenommen. Wenn die Feinde dicht genug beieinander sind, können bis zu zwei Feinde in zwei Löchern gleichzeitig gefangen werden. Das funktioniert in der Regel nicht, wenn der Abstand der Feinde zu groß oder die Anzahl größer als zwei ist.</para>
+
+<para
+>Die Feinde können auch durch genügend Löcher auf ihrem Weg getötet werden. Normalerweise werden zwei oder mehr Löcher für das Töten eines Feindes und bis zu acht oder mehr Löcher für vier bis fünf Feinde benötigt. Die getöteten  Feinde erscheinen sofort wieder (entweder an ihrem Startplatz oder oben im Spielfeld). Das hängt davon ab, ob in den Einstellungen die „&kgoldrunner;“-Regeln oder „herkömmlichen“ Regeln gewählt wurden (siehe auch <link linkend="choice-of-rules"
+>Auswahl der Spielregeln</link
+>).</para>
+
+<para
+>In vielen Ebenen ist das Gold nicht auf Anhieb erreichbar und es muss ein Zugang gegraben werden. Einige dieser Grabungsebenen sind sehr komplex und die Grabungen müssen in einem limitierten Zeitraum durchgeführt werden, um die Ebene abschließen zu können.</para>
+
+</sect2>
+
+<sect2 id="rules-of-digging">
+<title
+>Regeln beim Graben</title>
+
+<para
+>Um ein Loch links oder rechts neben dem Helden zu graben, muss lediglich die <mousebutton
+>linke</mousebutton
+> oder <mousebutton
+>rechte</mousebutton
+> Maustaste oder alternativ eine der Grabungstasten (Standard: <keycap
+>Z</keycap
+>, <keycap
+>C</keycap
+>, <keycap
+>U</keycap
+>, <keycap
+>O</keycap
+>) betätigt werden.</para>
+
+<para
+>Sie können nur in Ziegeln graben. Das Loch erscheint im Boden auf einer Seite, &ie; unter oder links oder rechts vom Helden. Es muss sich ein leerer Bereich oder ein Loch über dem Ziegel befinden. Graben unter einer Leiter, einem Stab, unter Gold, unter Ziegeln, unter Beton und unter Fallen. Sie können beim Graben laufen, stehen, oder auf einem Feind sitzen. Das Grabens beim Fallen durch dünne Luft oder Fallen ist nur in einigen Spielen erlaubt. Siehe auch <link linkend="dig-while-falling"
+>Graben beim Fallen</link
+>.</para>
+
+<para
+>Der Held kann sich in beliebiger Richtung durch ein Loch bewegen, also auch hindurchfallen, um einem Feind zu entkommen. Nach kurzer Zeit füllt sich das Loch wieder, also muss man es zügig verwenden. Das Graben sollte vorher geplant worden sein, da für das Planen zwischendurch zu wenig Zeit zur Verfügung steht.</para>
+
+<para
+>Feinde sind in Löchern zunächst immer gefangen und klettern immer aufwärts, um zu entkommen. Ihre Verweilzeit im Loch ist kürzer als die „Lebensdauer“ eines Loches, daher benötigt man in der Regel mehrere Versuche, um einen Feind zu töten. Feinde lassen in einem Loch ihr Gold fallen, daher kann der Held schnell über deren Kopf laufen, um den Goldklumpen einzusammeln.</para>
+
+<para
+>Feinde fallen nie von oben durch ein gegrabenes Loch, können aber abhängig von den <guimenu
+>Einstellungen</guimenu
+> für die <link linkend="choice-of-rules"
+>Auswahl der Spielregeln</link
+> eventuell horizontal in ein gegrabenes Loch laufen und nicht gefangen werden, sondern von dort in ein weiteres Loch fallen oder aus dem Loch herauslaufen. In einigen Ebenen, die den herkömmlichen Regeln folgen, ist es notwendig, dass die Feinde durch ein Loch laufen können. In einigen Ebenen, die den „&kgoldrunner;“-Regeln folgen, ist es notwendig, dass Feinde genau dies NICHT können.</para>
+
+</sect2>
+
+<sect2 id="dig-while-falling">
+<title
+>Graben während des Fallens</title>
+
+<para
+>Im ursprünglichen Spiel auf Apple II und Commodore 64 musste der Held beim Graben auf einer festen Unterlage wie einer Leiter, Beton, einer Stange oder auf dem Kopf eines Feindes stehen. Diese Regel wurde in KGoldrunner übersehen und eines Tages entdeckte der Autor, das beim Fallen gegraben werden kann. Sie müssen in aktuellen Spielen für Fortgeschrittene wie <quote
+>Terrorstaat</quote
+>, <quote
+>Fluch der Mumie</quote
+> und <quote
+>Goldrausch</quote
+> beim Fallen graben.</para>
+
+<para
+>Andererseits macht das Graben beim Fallen ältere Spiele zu einfach. Daher ist es in den Spielen <quote
+>Einführung</quote
+>, <quote
+>Einführung für Fortgeschrittene</quote
+>, <quote
+>Spielaufnahme</quote
+>, <quote
+>KGoldrunner</quote
+> und <quote
+>Herausforderung</quote
+> nicht erlaubt. im Spiel <quote
+>Rache des Peter W</quote
+> ist es nur in einer Spielstufe zulässig, im neuen Spiel  <quote
+>Anfängerglück</quote
+> überhaupt nicht mehr.</para>
+
+</sect2>
+
+<sect2 id="winning-and-losing-the-game">
+<title
+>Das Spiel gewinnen oder verlieren</title>
+
+<para
+>Ein Spiel ist gewonnen, wenn die letzte Ebene abgeschlossen ist. Ein Spiel ist verloren, wenn der Held sein letztes Leben verloren hat. Falls eine der zehn höchsten Punktzahlen für dieses Spiel erreicht wurde, ist die Aufnahme in der <guimenuitem
+>Bestenliste</guimenuitem
+> von &kgoldrunner; vorgesehen.</para>
+
+</sect2>
+
+<sect2 id="recordings-replays-and-solutions">
+<title
+>Aufnahmen, Wiedergaben und Lösungen</title>
+
+<para
+>Alle Ebenen werden sofort aufgenommen und können deshalb sofort nach dem Spielen wiedergegeben werden. Manche Ebenen besitzen aufgenommene Lösungsmöglichkeiten, die dabei helfen sollen, die Ebene erfolgreich abzuschließen. Hierzu stehen im Menü <guimenu
+>Zug</guimenu
+> die Schaltflächen <guimenuitem
+>Eine Lösung wiedergeben</guimenuitem
+>, <guimenuitem
+>Sofortige Wiedergabe</guimenuitem
+>, <guimenuitem
+>Letzte Ebene wiedergeben</guimenuitem
+> und <guimenuitem
+>Beliebige Ebene wiedergeben</guimenuitem
+> zur Verfügung. Die Lösungen und Wiedergaben können jederzeit unterbrochen werden, indem mit der Maus auf das Spielfeld geklickt, die <keycap
+>Leertaste</keycap
+> gedrückt oder das Menü bzw. Tastenkürzel (z. B. <menuchoice
+><guimenu
+>Spiel</guimenu
+><guimenuitem
+>Neues Spiel ...</guimenuitem
+></menuchoice
+>) verwendet wird.</para>
+
+<para
+>Bei <guimenuitem
+>Sofortige Wiedergabe</guimenuitem
+> und <guimenuitem
+>Letzte Ebene wiedergeben</guimenuitem
+> kann das Spiel nach der Unterbrechung fortgesetzt werden. Sollte das Spiel nicht erfolgsversprechend verlaufen sein, kann <guimenuitem
+>Sofortige Wiedergabe</guimenuitem
+> verwendet, die Wiedergabe an einem bestimmten Punkt unterbrochen und eine andere Lösungsmethode versucht werden. Ist der Held bereits getötet worden, kann <guimenuitem
+>Letzte Ebene wiedergeben</guimenuitem
+> auf die gleiche Weise verwendet werden. Dies ermöglicht den stufenweisen Aufbau einer <emphasis
+>Lösung</emphasis
+> für eine schwierige Ebene (jedoch kann kein Eintrag in die Bestenliste mehr erfolgen).</para>
+
+</sect2>
+</sect1>
+
+<sect1 id="scoring">
+<title
+>Punktevergabe</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Das Spiel beginnt mit fünf Leben.</para>
+</listitem>
+<listitem>
+<para
+>Ein Leben wird verloren und die Ebene muss wiederholt werden, wenn der Held stirbt.</para>
+</listitem>
+<listitem>
+<para
+>Für den erfolgreichen Abschluss einer Ebene gibt es ein Leben dazu.</para>
+</listitem>
+<listitem>
+<para
+>75 Punkte gibt es für einen gefangenen Feind.</para>
+</listitem>
+<listitem>
+<para
+>75 Punkte gibt es für einen getöteten Feind.</para>
+</listitem>
+<listitem>
+<para
+>250 Punkte gibt es für eingesammeltes Gold.</para>
+</listitem>
+<listitem>
+<para
+>1500 Punkte gibt es für eine abgeschlossene Ebene.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="choice-of-rules">
+<title
+>Auswahl der Spielregeln</title>
+
+<para
+>Die meisten Regeln für &kgoldrunner; werden im Abschnitt <link linkend="how-to-play"
+>Spielregeln</link
+> erläutert. Es gibt darüber hinaus zwei wichtige Regeleinstellungen, die den Spielstil beeinflussen: die Varianten heißen <quote
+>herkömmliche</quote
+> und <quote
+>&kgoldrunner;</quote
+>-Regeln. Es ist wichtig zu wissen, welche der beiden Varianten aktiv ist. &kgoldrunner; wählt automatisch die entsprechende Einstellung des Spiels sobald eine Ebene davon gespielt wird und die jeweiligen Regeln sind im Fenster <link linkend="level-selection-dialog"
+>Ebenenauswahl</link
+> ersichtlich.</para>
+
+<para
+>Der Hauptunterschied zwischen „herkömmlichen“ und „&kgoldrunner;“-Regeln besteht in den Bewegungen der Feinde.</para>
+
+<itemizedlist>
+<listitem>
+<para
+>Bei der „herkömmlichen“ Suchmethode passen die Feinde auf vertikale Wege (Leitern und Abgründe) auf und versuchen oberhalb oder auf einer höheren Ebene als der Held zu bleiben. Unterhalb des Helden begeben sie sich nur ausnahmsweise. Erst wenn sie sich auf gleicher Höhe wie der Held befinden und es einen horizontalen Verbindungsweg gibt, jagen sie den Helden. Daher kann der Held durch geschickte Bewegungen die Bewegungen der Feinde „steuern“ und sie sich zumindest vom Leibe halten.</para>
+</listitem>
+<listitem>
+<para
+>Die „&kgoldrunner;“-Methode verwendet alternativ horizontale und vertikale Wege, daher befinden sich die Feinde meistens im gleichen Bereich des Spielfelds wie der Held und auf der gleichen Ebene (sie sind also aggressiver und nicht so leicht zu manipulieren). Damit ist das Spiel aktionsgeladener, aber die Strategie und das Rätsellösen kommen etwas zu kurz. Das 2007 hinzugefügte Spiel „Terrorstaat“ richtet sich nach „&kgoldrunner;“-Regeln und beinhaltet viele möglichst schnell zu lösende Rätsel. Darum ist es so ein schwieriges Spiel.</para>
+</listitem>
+</itemizedlist>
+
+<para
+>Weitere Unterschiede der beiden Varianten:</para>
+
+<itemizedlist>
+<listitem>
+<para
+>Im „&kgoldrunner;“-Spiel bewegen sich die Feinde und der Held in jeder Ebene immer gleich schnell und gegrabene Löcher bleiben die gleiche Zeitspanne offen. Beim „herkömmlichen“ Spiel hängt die Geschwindigkeit der Feinde von ihrer Anzahl ab. Je mehr Feinde, desto langsamer deren Bewegungen. Auch der Held bewegt sich (kaum merklich) langsamer.</para>
+</listitem>
+<listitem>
+<para
+>Im „herkömmlichen“ Spiel sammeln die Feinde jeden Goldklumpen ein, in den sie „rennen“. Im „&kgoldrunner;“-Spiel wird das Sammeln vom Zufall gesteuert. Das Ablegen des Goldes wird in beiden Varianten vom Zufall bestimmt.</para>
+</listitem>
+<listitem>
+<para
+>Feinde können sich nur im  „herkömmlichen“ Spiel horizontal durch Löcher bewegen. In mehreren Ebenen des „herkömmlichen“ Spiels basiert der entscheidende Trick darauf. Man lässt einen Feind frei, indem man an geeigneter Stelle die Steine entfernt. In einigen der „&kgoldrunner;“-Ebenen muss man sich jedoch in oder hinter gegrabenen Löchern verstecken, um einem Feind zu entkommen.</para>
+</listitem>
+<listitem>
+<para
+>Im „&kgoldrunner;“-Spiel erscheint ein gestorbener Feind an der Stelle, an der er sich beim Spielstart befand. Im „herkömmlichen“ Spiel erscheint er an einer beliebigen Stelle oben im Spielfeld wieder. Das ist ein großer Unterschied in Spielen, in denen man darauf angewiesen ist, dass Feinde bestimmte Goldklumpen einsammeln, aber auch in solchen, in denen die Feinde schneller auf den Helden herunterfallen als er sie töten kann.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+</chapter>
+
+<chapter id="level-selection-dialog">
+<title
+>Ebenenauswahl</title>
+
+<sect1 id="level-selection-dialog-box">
+<title
+>Ebenenauswahl verwenden</title>
+
+<screenshot>
+<screeninfo
+>Die Ebenenauswahl</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="select.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Die Ebenenauswahl</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Dieses Fenster erscheint nach Auswahl von <guimenuitem
+>Neues Spiel</guimenuitem
+> oder von Einträgen im Menü <guimenu
+>Editor</guimenu
+>. Hier kann ein Spiel zum Spielen, Bearbeiten, Speichern, Verschieben oder Entfernen ausgewählt werden. Der Hauptknopf ist <guibutton
+>OK</guibutton
+>. Seine Beschriftung hängt vom gewählten Menüeintrag ab. Im abgebildeten Fall wird eine Ebene eines Spiels zur Bearbeitung gewählt.</para>
+
+<sect2 id="selecting-a-game">
+<title
+>Ein Spiel auswählen</title>
+
+<para
+>Mehrere „systemweite“ Spiele werden bereits bei &kgoldrunner; mitgeliefert und weitere eigene Spiele können mit dem Editor erstellt und einfügt werden. Alle Spiele in dieser Liste werden in der Reihenfolge des Schwierigkeitsgrades angezeigt. Spiele mit einfachem Schwierigkeitsgrad stehen oben in der Liste und das Einführungsspiel als Letztes. Das jeweilige Spiel wird durch einen Klick auf dessen Namen ausgewählt</para>
+
+<para
+>Die Liste zeigt an, welche Regeln angewandt werden (siehe auch <link linkend="choice-of-rules"
+>Auswahl der Spielregeln</link
+>) und wie viele Ebenen es gibt. Bei Auswahl eines Spiels werden zusätzliche Informationen zum Spiel in einem Kasten weiter unten angezeigt.</para>
+
+</sect2>
+
+<sect2 id="selecting-a-level">
+<title
+>Auswahl einer Ebene</title>
+
+<para
+>Ein Spiel kann in einer beliebigen Ebene gestartet werden; es wird jedoch empfohlen, mit der Ebene 1 zu beginnen und sich hoch zu arbeiten - besonders, wenn eine hohe Punktzahl erreicht werden soll. Generell sind höhere Ebenen schwieriger. </para>
+
+<para
+>Beim Aufruf des Fensters zur Ebenenauswahl wird eine bereits gespielte oder bearbeitete Ebene als Voreinstellung angezeigt. Eine Ebene wird durch Verschieben des Schiebereglers oder durch Eintippen der gewünschten Nummer gewählt. Die Pfeile am Ende erhöhen bzw. verringern die Nummer um eins. Die Zahl kann schnell geändert werden, indem der Schieberegler mit gedrückter Maustaste bewegt wird. Durch Klicken ober- oder unterhalb des Einstellhebels wird die Nummer jeweils um zehn geändert.</para>
+
+<para
+>Beim Ändern der Nummer erscheint eine Vorschau der Ebene im Vorschaufenster und ebenfalls der Name der Ebene (falls vorhanden).</para>
+
+</sect2>
+
+<sect2 id="completing-selection">
+<title
+>Vervollständigen der Auswahl</title>
+
+<para
+>Nach der Auswahl eines Spiels und einer Ebene muss lediglich auf den Hauptknopf im unteren Teil des Fensters geklickt werden, um mit der Bearbeitung, dem Spielen oder der Wiedergabe zu beginnen.</para>
+
+<para
+>Bis dahin wird nichts geändert, so kann jederzeit durch <guibutton
+>Abbrechen</guibutton
+> wieder zum vorherigen Zustand zurückgekehrt werden. Solange der Dialog angezeigt wird, ist das laufende Spiel unterbrochen, sodass nach <guibutton
+>Abbrechen</guibutton
+> dort weitergemacht werden kann, wo aufgehört wurde.</para>
+
+</sect2>
+
+<sect2 id="saving-changes">
+<title
+>Änderungen speichern</title>
+
+<para
+>Falls eine Aktion aus dem Menü <guimenu
+>Spiel</guimenu
+>, <guimenu
+>Editor</guimenu
+> oder <guimenu
+>Zug</guimenu
+> gewählt wurde und eine Ebene mit ungespeicherten Änderungen vorliegt, erscheint ein Fenster mit den Wahlmöglichkeiten <guibutton
+>Speichern</guibutton
+>, <guibutton
+>Abbrechen</guibutton
+> und <guibutton
+>Weiterarbeiten</guibutton
+>. Weder die neue Aktion noch das zugehörige Fenster werden gestartet, bis eine Entscheidung über die bisherige Arbeit getroffen wurde.</para>
+
+</sect2>
+
+<sect2 id="any-level">
+<title
+>Eine <emphasis
+>beliebige</emphasis
+> Ebene spielen oder bearbeiten</title>
+
+<para
+>Zum Spielen oder Bearbeiten einer <emphasis
+>beliebigen</emphasis
+> Ebene gibt es einen eigenen Menüpunkt. Falls Sie ein Spiel nicht von Ebene 1 an starten, können Sie das tun, erhalten aber natürlich keine so große Gesamtpunktzahl. Viele Spieler spielen aber einzelne Ebenen aus Spaß, ohne Interesse an einer hohen Gesamtpunktzahl. Andere möchten vielleicht einige schwerere Ebenen <quote
+>trainieren</quote
+>, bevor sie eine hohe Punktzahl zu erreichen versuchen.</para>
+
+<para
+>Falls ein systemweites Spiel zur Bearbeitung ausgewählt wurde, ist das Speichern nur zu einem eigenen Spiel möglich (und nicht zu einem systemweiten). Beispielsweise kann eine schwierige Ebene so geändert werden, dass beim Tod des Helden nicht wieder am Anfang der Ebene begonnen werden muss.</para>
+
+<para
+>Zur Verdeutlichung hierzu dient die 16. Ebene („Die drei Musketiere“) aus dem Spiel „Herausforderung“. Diese Ebene hat ungefähr zehn schwierige Teile. Nachdem der erste Teil gelöst wurde, ist es nicht erwünscht diesen zu wiederholen, sobald man den zweiten Teil löst. Hierzu wird eine bearbeitbare Kopie erzeugt, diese aktualisiert und der Startpunkt des Helden bis zur vollständigen Lösung geändert. Danach kann die vollständige Lösung der Ebene versucht werden.</para>
+
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="menu-reference">
+<title
+>Die Menü-Referenz</title>
+
+<sect1 id="menu-overview">
+<title
+>Überblick über die Menüs</title>
+
+<variablelist>
+<varlistentry>
+<term
+><link linkend="game-menu"
+><guimenu
+>Spiel</guimenu
+></link
+></term>
+<listitem>
+<para
+>Dieses Menü enthält alle Optionen für das Spiel, wie Starten und Beenden von Spielen, Speichern von Spielen, Laden zuvor gespeicherter Spiele, Anzeige der Bestenlisten (falls vorhanden). Das Menü <guimenu
+>Spiel</guimenu
+> enthält außerdem den Menüpunkt <guimenuitem
+>Beenden</guimenuitem
+>. Das Spiel kann auch durch Klicken auf das Symbol <guiicon
+>X</guiicon
+> rechts oben im &kgoldrunner;-Fenster beendet werden.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link linkend="move-menu"
+><guimenu
+>Zug</guimenu
+></link
+></term>
+<listitem>
+<para
+>Dieses Menü beinhaltet die Möglichkeit zum Erhalten von Tipps (sofern welche verfügbar sind). Wettbewerbs- und Einführungsspiele enthalten in jeder Ebene Tipps. Bei anderen Spielen ist das selten der Fall. Ebenso besteht die Möglichkeit Aufnahmen von Spielen, Lösungsbeispiele und eigene Spiele wiederzugeben, </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link
+linkend="editor-menu"
+><guimenu
+>Editor</guimenu
+></link
+></term>
+<listitem>
+<para
+>In diesem Menü befinden sich alle Punkte, die zur Erstellung eigener Spiele und Ebenen notwendig sind. Außerdem können hier die eigenen Spiele verwaltet werden (und auch Ebenen verschoben und gelöscht werden). Beim Umsortieren der Ebenen werden die Nummern automatisch angepasst.</para>
+<para
+>Im Spieleditor erscheint automatisch eine grafische Werkzeugleiste mit Kurzinfos unter der Menüleiste. Weitere Informationen hierzu können dem Abschnitt <link linkend="game-editor"
+>Spieleditor</link
+> entnommen werden. </para
+> </listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link
+linkend="settings-menu"
+><guimenu
+>Einstellungen</guimenu
+></link
+></term>
+<listitem>
+<para
+>In diesem Menü gibt es mehrere Einstellungen für &kgoldrunner;. Beispielsweise zu nennen sind die Wahl der Steuerung des Helden über Maus, Tastatur oder gemischte Steuerung (Laptop) und die Auswahl von Designs und der Spielgeschwindigkeit. Die aktuelle Auswahl erkennt man an den Markierungen neben den Menüeinträgen. Es wird bei Spielbeginn eine Vorauswahl getroffen, die aber beliebig verändert werden kann.</para>
+
+<para
+>Ebenso können die Tastenkürzel und Steuerungstasten verändert werden.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link linkend="help-menu"
+><guimenu
+>Hilfe</guimenu
+></link
+></term>
+<listitem>
+<para
+>Im Menü <guimenu
+>Hilfe</guimenu
+> sind das <guimenuitem
+>Handbuch zu &kgoldrunner;</guimenuitem
+> (dieses Dokument), sowie die Menüeinträge <guimenuitem
+>Über &kgoldrunner;</guimenuitem
+> und <guimenuitem
+>Über &kde;</guimenuitem
+> enthalten.</para>
+<para
+>Es gibt außerdem einen Menüeintrag, um über Fehler und Wünsche zu berichten.</para>
+<para
+>Vorschläge oder neue Ebenen zu &kgoldrunner; sollten an die E-Mail-Adresse des Programmautors (siehe <guimenuitem
+>Über &kgoldrunner;</guimenuitem
+>) berichtet werden.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="game-menu">
+<title
+>Das Menü Spiel</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Spiel</guimenu
+><guimenuitem
+>Neues Spiel ...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Zeigt den Dialog zur Auswahl einer Ebene (<link linkend="level-selection-dialog-box"
+>Ebenenauswahl verwenden</link
+>), in dem ein Spiel und seine Ebene ausgewählt werden kann. Zuerst ist es am einfachsten, mit der ersten Ebene zu starten, da die Ebenen aufsteigend nach ihrem Schwierigkeitsgrad angeordnet sind. Bei der „Jagd“ nach einer möglichst hohen Punktzahl sollte immer dort begonnen werden.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Spiel</guimenu
+><guimenuitem
+>Spiel laden ...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Es erscheint ein Fenster mit einer Tabelle der zuvor gespeicherten Spiele (beginnend mit dem letzten). Zu jedem Spiel wird die aktuelle Ebene, die Anzahl der verbliebenen Leben, die Punktzahl, Tag der Woche, Datum und Zeit angezeigt. Eines dieser Spiele wird durch Klicken auf das Spiel und Betätigen von <guibutton
+>OK</guibutton
+> mit den angezeigten Daten gestartet.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycap
+>Y</keycap
+> </shortcut
+> <guimenu
+>Zug</guimenu
+> <guimenuitem
+>Nächste Ebene spielen</guimenuitem
+>  </menuchoice>
+</term>
+<listitem>
+<para
+>Die nächste Ebene des aktuellen Spiels wird geladen (sofort spielbar - ohne weitere Fenster). Es ist auch zum schnellen Durchsehen der Ebenen eines Spiels dienlich.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>S</keycap
+></shortcut
+> <guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Spiel speichern ...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Speichert den aktuellen Spielzustand mit Ebene, Leben und Punktzahl. Es wird immer die Punktzahl und Position zu Beginn einer Ebene gespeichert, auch wenn sich der Held zum Zeitpunkt des Speicherns bereits mitten in einer Ebene befindet. Das wird auch in einer Warnmeldung so mitgeteilt. Vor dem Speichern sollte zunächst das Spiel unterbrochen werden (<keycap
+>P</keycap
+> oder &Esc;), damit die Mausbewegung das Spiel nicht mehr beeinflusst. Die Verwendung des Tastenkürzels <keycap
+>S</keycap
+> ist noch einfacher.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Änderungen speichern ...</guimenuitem
+> </menuchoice>
+</term>
+<listitem
+><para
+>Dieser Menüpunkt ist erst verfügbar, wenn der Spieleditor verwendet wurde. Es erscheint das Auswahlfenster, in dem festgelegt werden kann, in welchem Spiel und in welcher Ebene die Arbeit gespeichert werden soll. Die gleiche Aktion ist auch unter dem Punkt <guimenuitem
+>Änderungen speichern ...</guimenuitem
+> im Menü <guimenu
+>Editor</guimenu
+> oder über das <guiicon
+>Disketten</guiicon
+>-Symbol in der Editor-Werkzeugleiste verfügbar.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>P oder &Esc;</keycap
+></shortcut
+> <guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Pause</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Zur Unterbrechung oder zum Fortsetzen eines Spiels.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Bestenliste anzeigen</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Zeigt eine Tabelle mit bis zu zehn der besten Spielergebnisse für das aktuelle Spiel. Jede Zeile zeigt den Spielernamen, die erreichte Ebene, die erreichte Punktzahl, sowie den Wochentag und das Datum.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>Q</keycap
+></shortcut
+> <guimenu
+>Spiel</guimenu
+><guimenuitem
+>Held töten</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Ermöglicht das Töten des Helden, wenn er sich in einer ausweglosen Situation befindet.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Beenden</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Beendet das Spiel &kgoldrunner; sofort. Falls ein Spiel läuft, ist es für immer verloren (falls es nicht vorher gespeichert worden ist) und die Punktzahl wird nicht in die Bestenliste eingetragen. Falls die Ebene verändert wurde, wird hier nochmals die Möglichkeit zum Speichern der Änderungen gegeben.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+<sect1 id="move-menu">
+<title
+>Das Menü Zug</title>
+
+<tip
+><para
+>Alle Beispiele und Wiedergaben zeigen zuvor aufgenommene Ebenen. Sie können durch Klicken mit der Maus auf die Spielfläche, Drücken der <keycap
+>Leertaste</keycap
+>, Verwendung des Menüs oder Tastenkürzels (z. B. <menuchoice
+><guimenu
+>Spiel</guimenu
+><guimenuitem
+>Neues Spiel</guimenuitem
+></menuchoice
+>) unterbrochen oder beendet werden.</para
+></tip>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycap
+>H</keycap
+> </shortcut
+> <guimenu
+>Zug</guimenu
+> <guimenuitem
+>Tipp</guimenuitem
+>  </menuchoice>
+</term>
+<listitem>
+<para
+>Zeigt ein Fenster mit einem Hinweis (falls für die Ebene vorhanden). Wettbewerbs- und Einführungs-Spiele haben einen Tipp für jede Ebene. Bei anderen Spielen ist das selten der Fall. In der Statusleiste wird angezeigt, ob ein Tipp verfügbar ist.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycap
+>D</keycap
+> </shortcut
+> <guimenu
+>Zug</guimenu
+> <guimenuitem
+>Demomodus</guimenuitem
+>  </menuchoice>
+</term>
+<listitem>
+<para
+>Startet ein paar aufgenommenen Spiele im Demomodus. Diese Beispiele werden auch bei Aufruf von &kgoldrunner; gezeigt.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Zug</guimenu
+><guimenuitem
+>Eine Lösung wiedergeben ...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Zeigt die aufgenommene Lösung einer Ebene (sofern in den Spieldaten vorhanden).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycap
+>R</keycap
+> </shortcut
+> <guimenu
+>Zug</guimenu
+> <guimenuitem
+>Sofortige Wiedergabe</guimenuitem
+>  </menuchoice>
+</term>
+<listitem>
+<para
+>Stoppt das Spielen der aktuellen Ebene und startet die Wiedergabe ab Beginn. Wird die Wiedergabe unterbrochen, so kann das Spiel fortgesetzt und eine andere Lösungsmethode probiert werden. Dies ermöglicht den stufenweisen Aufbau einer <emphasis
+>Siegesserie</emphasis
+> (jedoch kann kein Eintrag in die Bestenliste mehr erfolgen).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycap
+>A</keycap
+> </shortcut
+> <guimenu
+>Zug</guimenu
+> <guimenuitem
+>Letzte Ebene wiedergeben</guimenuitem
+>  </menuchoice>
+</term>
+<listitem>
+<para
+>Startet die Wiedergabe der Aufnahme der zuletzt gespielten Ebene (z. B. wenn der Held getötet wurde). Wird die Wiedergabe unterbrochen, so kann das Spiel fortgesetzt und eine andere Lösungsmethode probiert werden. Dies ermöglicht den stufenweisen Aufbau einer <emphasis
+>Siegesserie</emphasis
+> (jedoch kann kein Eintrag in die Bestenliste mehr erfolgen).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Zug</guimenu
+><guimenuitem
+>Beliebige Ebene wiedergeben</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Startet die Wiedergabe der Aufnahme einer beliebigen bereits gespielten Ebene. </para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+<sect1 id="editor-menu">
+<title
+>Das Menü Editor</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Ebene erstellen</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Zeigt die Editor-Werkzeugleiste sowie ein leeres Spielfeld zum Zeichnen einer neuen Ebene an. Ein abschließendes <guimenuitem
+>Änderungen speichern ...</guimenuitem
+> dient zum Zuordnen der Ebene zu einem Spiel und Vergabe einer Nummer für die Ebene.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Ebene bearbeiten ...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Zeigt das Fenster zur Auswahl eines Spiels sowie einer bestimmten Ebene zur Bearbeitung. Es kann auch eines der systemweite Spiele ausgewählt werden, jedoch können die Ergebnisse nur in einem eigenen Spiel gespeichert werden.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Editor</guimenu
+><guimenuitem
+>Änderungen speichern ...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Öffnet das Auswahlfenster für die Ebenen mit den geeigneten Werten als Voreinstellung. Das Spiel und die Nummer für die Ebene können geändert und der Effekt eines „Speichern unter ...“ erzielt werden. Mit dem Knopf <guibutton
+>Name &amp; Tipp für Ebene bearbeiten</guibutton
+>, öffnet sich ein weiteres Fenster zur Bearbeitung von Namen und Tipp.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Ebene verschieben ...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Diese Operation besteht aus zwei Teilen. Zunächst muss die zu verschiebende Ebene geladen werden. Dann wird der Menüeintrag <guimenuitem
+>Ebene verschieben ...</guimenuitem
+> verwendet. Es erscheint das Auswahlfenster, in dem eine neue Position für die geladene Ebene bestimmt wird. Dabei dürfen sowohl die Nummer für die Ebene als auch das Spiel geändert werden. Eine systemweite Ebene kann nicht geändert werden.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Ebene löschen ...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Zeigt das Auswahlfenster, in dem eine Ebene zum Löschen ausgewählt werden kann. Es kann keine systemweite Ebene gelöscht werden.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Spiel erstellen ...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Dieser Eintrag muss zuerst ausgewählt werden, bevor eigene Ebenen für &kgoldrunner; erstellt werden können. Im angezeigten Fenster kann ein Spielnamen mit 1-5 Buchstaben Länge als Präfix für die Ebenennamen festgelegt werden. Weiterhin können die Standardregeln („&kgoldrunner;“ oder „Herkömmlich“) festgelegt und eine Beschreibung sowie einen Kommentar zum Spiel eintragen werden.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Spielinfo bearbeiten ...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Zeigt das Ebenenauswahlfenster an, in dem ein Spiel zur Bearbeitung ausgewählt werden kann. Die zugehörigen Informationen werden in einem Fenster angezeigt und der Name, die Regeln sowie die Beschreibung können geändert werden. Der Präfix kann nicht geändert werden, da er in den Dateinamen der Ebenendateien verwendet wird.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+<sect1 id="settings-menu">
+<title
+>Das Menü Einstellungen</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>F</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Einstellungen</guimenu
+><guimenuitem
+>Vollbildmodus</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Schaltet den Vollbildmodus ein bzw. aus. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Einstellungen</guimenu
+><guimenuitem
+>Design ändern</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Dieses Untermenü ermöglicht die Auswahl eines Hintergrund-Designs oder der „Welten“, in denen gespielt werden kann. Das Design kann jederzeit geändert werden (sogar während dem Spielen). Für künstlerisch Bewanderte besteht auch die Möglichkeit, Designs mit Grafiken und Klängen selber zu erstellen und zu &kgoldrunner; hinzuzufügen. Für weitere Informationen sollte der Autor kontaktiert werden.</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Schwarz auf Weiß</guimenuitem
+></term>
+<listitem>
+<para
+>Dieses Design entbehrt jeglicher grafischer Elemente und ist ausschließlich schwarz-weiß. Dies soll Spielern entgegen kommen, die im Sehvermögen beeinträchtigt sind. Der Autor begrüßt E-Mails mit Rückmeldungen zur Effektivität und Verbesserungsvorschlägen.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Schatz von Ägypten</guimenuitem
+></term>
+<listitem>
+<para
+>Matt Goldrunner befindet sich in einem altertümlichen ägyptischen Tempel und wird von Mumien gejagt, die um jeden Preis die Juwelen ihrer Vorfahren beschützen.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Standard für &kgoldrunner;</guimenuitem
+></term>
+<listitem>
+<para
+>Die übliche &kgoldrunner;-Landschaft mit roten Ziegeln und grauem Beton.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Computer-Stadt</guimenuitem
+></term>
+<listitem>
+<para
+>Der Held ist in einem Computer gefangen. Kann er mit dem Erreichen der letzten Ebene entkommen?</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Nostalgie (rot)</guimenuitem
+></term>
+<listitem>
+<para
+>Erinnert an die Tage der originalen Apple-II- und Commodore-64-Spiele, als die Rechner noch an den Fernseher angeschlossen werden mussten - anderenfalls stand nur ein monochromer Monitor zur Verfügung. Für diejenigen, die sich an diese heroischen Zeiten nicht erinnern: das Design ist keine exakte Reproduktion, gibt aber eine gute Ahnung. Beispielsweise war der Held damals schwarz-weiß gehalten, während er heute blau ist.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Nostalgie (blau)</guimenuitem
+></term>
+<listitem>
+<para
+>Erinnert an das Apple-II-Spiel, in dem die Steine und der Beton eine schöne blaue Farbe hatten. Der Held war weiß und die Feinde hatten weiße Hosen und orangene Oberteile, das Gold bestand aus weißen Kästen mit orangenen Rändern. Das ganze Bild war wesentlich unschärfer (eine Art Hardware-Anti-Aliasing), was dem Bild einen gewissen 3D-Effekt verlieh - auf heutigen gestochen scharfen Monitoren nicht nachzubilden.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Einstellungen</guimenu
+><guimenuitem
+>Klänge wiedergeben</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Schaltet die Klänge des Spiels ein bzw. aus.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Einstellungen</guimenu
+><guimenuitem
+>Fußschritte als Klang wiedergeben</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Schaltet die Klänge für Fußschritte im Spiel ein bzw. aus.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Einstellungen</guimenu
+><guimenuitem
+>Demomodus zu Beginn</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Schaltet den Demomodus beim Aufruf von &kgoldrunner; ein bzw. aus (siehe <link linkend="how-to-play"
+>Spielstart</link
+>)</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Einstellungen</guimenu
+><guimenuitem
+>Maussteuerung</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Der Held wird nur mit der Maus gesteuert (siehe <link linkend="mouse-control"
+>Bewegungen</link
+>).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Einstellungen</guimenu
+><guimenuitem
+>Tastatursteuerung</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Der Held wird nur mit der Tastatur gesteuert (siehe auch <link linkend="keyboard-control"
+>Tastatursteuerung</link
+>).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Einstellungen</guimenu
+><guimenuitem
+>Gemischte Steuerung (Laptop)</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Der Held wird mit einer Mischung aus Maus und Tastatur gesteuert (für Laptops). Dabei wird das Touchpad zur Steuerung des Helden und die Tasten für das Graben verwendet.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Einstellungen</guimenu
+><guimenuitem
+>Fortwährende Bewegung</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Im Tastaturmodus muss eine Richtungstaste zum fortwährenden Bewegen nur einmalig betätigt werden und das Anhalten geschieht durch Drücken einer anderen Taste.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Einstellungen</guimenu
+><guimenuitem
+>Richtungstaste halten</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Im Tastaturmodus muss eine Richtungstaste zum Bewegen gedrückt gehalten und diese zum Anhalten wieder gelöst werden. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Einstellungen</guimenu
+><guimenuitem
+>Normalgeschwindigkeit</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Verwendet die normale Spielgeschwindigkeit (10 Einheiten).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Einstellungen</guimenu
+><guimenuitem
+>Anfängergeschwindigkeit</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Verwendet die Anfängergeschwindigkeit (5 Einheiten, also halbe Geschwindigkeit).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Einstellungen</guimenu
+><guimenuitem
+>Profigeschwindigkeit</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Verwendet die Profigeschwindigkeit (15 Einheiten, also 1,5-fache Geschwindigkeit).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>+</keycap
+></shortcut
+> <guimenu
+>Einstellungen</guimenu
+><guimenuitem
+>Geschwindigkeit erhöhen</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Erhöht die Geschwindigkeit um eine Einheit pro Tastendruck bis zu einem Maximalwert von 20 Einheiten (doppelte Geschwindigkeit). Als Kurzbefehl kann auch die Taste <keycap
+>+</keycap
+> verwendet werden.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>-</keycap
+></shortcut
+> <guimenu
+>Einstellungen</guimenu
+><guimenuitem
+>Geschwindigkeit verringern</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Verringert die Geschwindigkeit um eine Einheit. Das Minimum liegt bei 2 Einheiten (ein Fünftel der Normalgeschwindigkeit). Als Kurzbefehl kann auch die Taste <keycap
+>-</keycap
+> verwendet werden.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Einstellungen</guimenu
+> <guimenuitem
+>Kurzbefehle festlegen ...</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Dieser in der &kde;-Version enthaltene Eintrag ermöglicht die Änderung der Tastenzuordnungen (also &eg; der Tasten zur Steuerung des Helden) oder die Erstellung neuer Kurzbefehle für Menüeinträge.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="help-menu">
+<title
+>Das Menü Hilfe</title>
+
+<para
+>Folgende Standardeinträge des &kde;-Hilfemenüs sind enthalten:</para
+>&help.menu.documentation; </sect1>
+
+</chapter>
+
+<chapter id="game-editor">
+<title
+>Der Spiel-Editor</title>
+
+<sect1 id="editor-start">
+<title
+>Einführung zum Editor</title>
+
+<sect2 id="creating-a-game">
+<title
+>Erstellen eines Spiels</title>
+
+<para
+>Bevor eine Ebene von &kgoldrunner; verändert oder erstellt werden kann, muss ein Spiel erstellt werden, um darin die Ebenen zu speichern. Hierzu wird <menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Spiel erstellen ...</guimenuitem
+></menuchoice
+> verwendet. Ggf. wird man auch daran erinnert. </para>
+
+<para
+>Die wichtigsten Entscheidungen beim Erstellen eines Spiels sind die Auswahl der Regeln („herkömmlich“ oder „&kgoldrunner;“, siehe <link linkend="choice-of-rules"
+>Auswahl der Spielregeln</link
+>) und das Bestimmen eines Präfixes mit maximal 5 Buchstaben für das Spiel und die Ebenen. Der Name und die Beschreibung für das Spiel können auch später noch verändert werden.</para>
+
+<para
+>Da das Präfix von &kgoldrunner; intern zur Identifikation der Ebenendateien, Bestenlisten und für gespeicherte Spiele verwendet wird, kann dieses Präfix nicht mehr nachträglich geändert werden. So können &eg; die Initialen als Präfix verwendet werden, solange diese nicht zufällig mit einem &kgoldrunner;-Präfix übereinstimmen. Die systemweite Spiele belegen bisher die Präfixe <userinput
+>level</userinput
+>, <userinput
+>plws</userinput
+>, <userinput
+>wad</userinput
+>, <userinput
+>plwv</userinput
+>, <userinput
+>sot</userinput
+>, <userinput
+>cnt</userinput
+>, <userinput
+>CM</userinput
+>, <userinput
+>tute</userinput
+> und <userinput
+>tutea</userinput
+>.</para>
+
+<para
+>Das vierbuchstabige Präfix <userinput
+>tute</userinput
+> wird für das Einführungsspiel verwendet, das in jeder Ebene Tipps zum Spielen anzeigt. Falls ein weiteres Einführungsspiel erstellt werden soll, kann hierfür <userinput
+>tutex</userinput
+> als Präfix verwenden. So kann es als Einführung ausgeführt werden, ohne dass die Dateien mit der Einführung und der Einführung für Fortgeschrittene (die Präfixe <userinput
+>tute</userinput
+> bzw. <userinput
+>tutea</userinput
+>) vermischt werden. </para>
+
+</sect2>
+
+<sect2 id="creating-a-level">
+<title
+>Eine Ebene erstellen</title>
+
+<para
+>Nach der Erstellung eines Spiels kann über <menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Ebene erstellen</guimenuitem
+></menuchoice
+> eine neue Ebene erstellt werden. Zunächst besteht die Ebene aus einem Hintergrund im Format 28x20 Rechtecke mit dem Helden oben links. Seine Startposition kann an eine beliebige Stelle verlegt werden. Außerdem kann die Spielfeldgröße verringert werden. </para>
+
+<para
+>Die Mindestanforderung an eine Ebene ist ein Held, der sich zu Beginn normalerweise im oberen Bereich des Spielfeldes befindet. Realistischer wird es, wenn zusätzlich ein zu lösendes Labyrinth mit ein paar sichtbaren Leitern vorliegt. Das Vorhandensein von Gegnern, Gold, Stangen, versteckten Leitern, Stangen und Ziegeln ist nicht zwingend erforderlich. Es gibt viele herausfordernde Ebenen, in denen es keine Gegner oder Ziegel gibt, jedoch sind in den meisten Ebenen mindestens ein Gold, ein paar Gegner und einige versteckte Leitern (erscheinen erst nachdem das letzte Goldstück eingesammelt wurde) vorhanden.</para>
+
+</sect2>
+</sect1>
+
+<sect1 id="editing-and-testing">
+<title
+>Bearbeiten und Testen</title>
+
+<sect2 id="editing-a-level">
+<title
+>Bearbeiten einer Ebene</title>
+
+<para
+>Mit <menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Ebene bearbeiten ...</guimenuitem
+></menuchoice
+> (vorhandene Ebene)  oder <menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Ebene erstellen</guimenuitem
+></menuchoice
+> (neue Ebene) kann die Bearbeitung einer Ebene begonnen werden.</para>
+
+<para
+>Falls eine systemweite Ebene bearbeitet wird, erscheint eine Warnung, dass diese Ebene unter einem anderen Namen gespeichert werden muss. Ansonsten wird die Ebene unter ihrem bisherigen Namen gespeichert.</para>
+
+</sect2>
+
+<sect2 id="painting-objects">
+<title
+>Eine Ebene mit Objekten füllen</title>
+
+<para
+>Das Bild unten zeigt die Editorwerkzeugleiste. Diese erscheint bei Auswahl von <menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Ebene erstellen</guimenuitem
+></menuchoice
+> oder <menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Ebene bearbeiten ...</guimenuitem
+></menuchoice
+>, denn dadurch wird vom Spiel- in den Bearbeitungsmodus gewechselt. Bei Rückkehr in den Spielmodus wird die Werkzeugleiste ausgeblendet. Im Bearbeitungsmodus werden falsche Steine und versteckte Leitern im Spielfeld angezeigt.</para>
+
+<para
+>Die drei Symbole links in der Werkzeugleiste stehen für die gleichen Aktionen wie die Menübefehle <guimenuitem
+>Ebene erstellen</guimenuitem
+>, <guimenuitem
+>Ebene bearbeiten ...</guimenuitem
+> und <guimenuitem
+>Änderungen speichern ...</guimenuitem
+>. Die anderen elf Symbole dienen zum Zeichnen von Objekten und deren Bearbeitung. </para>
+
+
+<para
+>Von links nach rechts bedeuten die Symbole <guiicon
+>Name/Tipp</guiicon
+> (Lampe), <guiicon
+>Löschen</guiicon
+> (Hintergrund), <guiicon
+>Held</guiicon
+>, <guiicon
+>Gegner</guiicon
+>, <guiicon
+>Ziegel</guiicon
+> (lässt sich durchgraben), <guiicon
+>Beton</guiicon
+> (lässt sich nicht durchgraben),<guiicon
+>Falle</guiicon
+> (zum Durchfallen), <guiicon
+>Leiter</guiicon
+>, <guiicon
+>H-Leiter</guiicon
+> (versteckte Leiter), <guiicon
+>Stange</guiicon
+> und <guiicon
+>Goldbarren</guiicon
+>. Die Grafiken (ausgenommen der Lampe) werden aus dem verwendeten &kgoldrunner;-Design verwendet.</para>
+
+<screenshot>
+<screeninfo
+>Eine Ebene bearbeiten</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="editbar.png" format="PNG"/>
+</imageobject>
+<textobject
+><phrase
+>Eine Ebene bearbeiten</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+><guiicon
+>Name/Tipp</guiicon
+> zeigt ein Fenster an, in dem der Namen der Ebene und ein Tipp eingegeben werden kann. Beide sind optional, aber wichtig für Einführungsebenen. Bei sehr schwierigen Ebenen wie für Wettkämpfe ist es üblich, Tipps hinzuzufügen (siehe auch „Die Rache des Peter W.“).</para>
+
+<para
+>Wenn auf eines der weiteren 10 Symbole geklickt wird, verwandelt sich der Mauszeiger in einen „Pinsel“, der das entsprechende Symbol zeichnet. Anfangs zeichnet der Pinsel „Stein“.</para>
+
+<para
+>Die einzelnen Objekte werden durch einen Klick mit der linken Maustaste „gezeichnet“. Bleibt die linke Maustaste gedrückt, können Linien oder größere Bereiche „gezeichnet“ werden und dient u. a. zum „Zeichnen“ einer langen Leiter, eines Mauerstücks oder eines Betonboden. Sobald die Maustaste losgelassen wird, wird das Zeichnen beendet. Fehlerhafte Objekte können mit einem Klick der rechten Maustaste oder das Symbol <guiicon
+>Löschen</guiicon
+> gelöscht werden.</para>
+
+<para
+>Das Heldensymbol funktioniert etwas anders, da es nur eine Position des Helden geben kann. Daher wird beim Klicken der Held an die neue Position verschoben.</para>
+
+</sect2>
+
+<sect2 id="saving-your-work">
+<title
+>Das Sichern der Arbeitsergebnisse</title>
+
+<para
+>Nach Fertigstellung wird die Arbeit durch Klicken auf das <guiicon
+>Disketten</guiicon
+>-Symbol bzw. über das Menü durch Auswahl von <menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Änderungen speichern ...</guimenuitem
+></menuchoice
+> oder <menuchoice
+><guimenu
+>Spiel</guimenu
+><guimenuitem
+>Änderungen speichern ...</guimenuitem
+></menuchoice
+> gespeichert. Es können nur eigene Spiele gespeichert werden (keine systemweiten).</para>
+
+<para
+>Falls eine neue Ebene erstellt wurde, ist das Auswahlfenster zur Einordnung und Nummernzuweisung in einem Spiel vonnöten. Das gleiche Fenster dient auch dazu, eine veränderte Ebene an eine neue Position zu speichern. Dabei kann sowohl die Ebenennummer als auch der Spielname geändert werden. Der Effekt ist der gleiche wie bei anderen Programmen der Menüeintrag „Speichern unter ...“. Falls eine systemweite Ebene geändert wurde, muss sie in einem eigenen Spiel gespeichert werden.</para>
+
+</sect2>
+
+<sect2 id="adding-name-and-hint">
+<title
+>Einen Ebenennamen und einen Tipp hinzufügen</title>
+
+<para
+>Im Speichermodus der „Ebenenauswahl“ ist der zusätzlich der Knopf <guibutton
+>Name &amp; Tipp für Ebene bearbeiten</guibutton
+> vorhanden. Hier kann für die Ebene ein Name und ein Tipp hinzugefügt werden. In Einführungsebenen und bei sehr schwierigen Ebenen wie in Wettkämpfen ist es üblich, beides hinzuzufügen (siehe „Die Rache des Peter W.“). Dazu kann natürlich auch jederzeit das Symbol <guiicon
+>Name/Tipp bearbeiten</guiicon
+> verwendet werden. </para>
+
+</sect2>
+
+<sect2 id="testing-a-level">
+<title
+>Eine Ebene testen</title>
+
+<para
+>Nach dem Speichern kann eine Ebene getestet werden, indem <menuchoice
+><guimenu
+>Spiel</guimenu
+><guimenuitem
+>Neues Spiel ...</guimenuitem
+></menuchoice
+> ausgewählt oder der zugehörige Kurzbefehl verwendet wird. Die zuletzt bearbeitete Ebene ist vorgewählt. Falls danach daran eine Weiterarbeit stattfinden soll, gilt das eben Gesagte auch für <guimenuitem
+>Ebene bearbeiten ...</guimenuitem
+>. Wichtig ist es, jede erstellte Ebene zu testen, damit sie auch abgeschlossen werden kann und dabei nicht zu einfach ist.</para>
+
+</sect2>
+</sect1>
+
+<sect1 id="reorganizing-games">
+<title
+>Spiele und Ebenen umordnen</title>
+
+<sect2 id="moving-a-level">
+<title
+>Verschieben einer Ebene</title>
+
+<para
+>Der Menüeintrag <menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Ebene verschieben ...</guimenuitem
+></menuchoice
+> dient zum Umordnen der Ebenen innerhalb eines Spiels bzw. dem Verschieben einer Ebene von einem Spiel in ein anderes. Zunächst muss die Ebene zum Bearbeiten oder Spielen ausgewählt und dann <guimenuitem
+>Ebene verschieben ...</guimenuitem
+> im Menü ausgewählt werden. Es erscheint das Auswahlfenster, in dem das Ziel der Verschiebung markiert wird.</para>
+
+<para
+>Bei Verschiebungen entstehen keine Lücken in den Ebenennummern eines Spiels. Falls beispielsweise Ebene 10 aus Spiel A in Ebene 3 des Spiels B verschoben wird, werden die Ebenen ab 11 aufwärts neu nummeriert (um die Lücke zu schließen) und die Ebenen von 3 aufwärts des Spiels B werden um eine Nummer erhöht (um Platz für die neue Ebenen zu schaffen).</para>
+
+</sect2>
+
+<sect2 id="deleting-a-level">
+<title
+>Eine Ebene löschen</title>
+
+<para
+>Der Menüpunkt <menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Ebene löschen ...</guimenuitem
+></menuchoice
+> ist zum Löschen einer unerwünschten Ebene. Die anderen Ebenen werden dabei automatisch neu nummeriert, um die Lücke zu schließen. </para>
+
+</sect2>
+</sect1>
+
+</chapter>
+
+<chapter id="tips-tricks-and-hints">
+<title
+>Tipps, Tricks und Hinweise</title>
+
+<sect1 id="tips-overview">
+<title
+>Überblick</title>
+
+<para
+>In diesem Kapitel werden einige allgemeine Hinweise zum Spielen von &kgoldrunner; gegeben. Weitergehende spezielle Hinweise zu den Ebenen können den Einführungs- und Wettbewerbsspielen entnommen werden (siehe auch <link linkend="move-menu"
+><menuchoice
+><guimenu
+>Zug</guimenu
+><guimenuitem
+>Tipp</guimenuitem
+></menuchoice
+></link
+>). Die Hinweise sind folgendermaßen geordnet:</para>
+
+<itemizedlist>
+
+<listitem>
+<para
+><link linkend="hints-dealing-with-enemies"
+>Umgang mit Feinden</link
+></para>
+</listitem>
+
+<listitem>
+<para
+><link linkend="hints-digging-puzzles"
+>Graben</link
+></para>
+</listitem>
+
+<listitem>
+<para
+><link linkend="hints-tricks-with-gold"
+>Tricks mit Gold</link
+></para>
+</listitem>
+
+<listitem>
+<para
+><link linkend="hints-solving-difficult-levels"
+>Schwierige Ebenen meistern</link
+></para>
+</listitem>
+
+</itemizedlist>
+</sect1>
+
+<sect1 id="hints-dealing-with-enemies">
+<title
+>Umgang mit Feinden</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Ein einzelner Feind kann immer in einem Loch eingesperrt und durch Laufen über seinen Kopf ggf. sein Gold mitgenommen werden, ohne ihn zu töten. Häufig ist es außerdem sinnvoll, hinter dem Helden ein weiteres Loch zu graben, um den Feind aufzuhalten. Das kann ihn aber auch töten. In einigen Ebenen ist das Töten von Feinden nachteilig.</para>
+</listitem>
+<listitem>
+<para
+>Zwei Feinde können meistens in zwei benachbarten Löchern gefangen und durch Laufen über ihren Köpfen das Gold mitgenommen werden. Bei einem Abstand von zwei oder drei Plätzen kann das aber gefährlich werden, da zwei Löcher manchmal einen der Feinde töten, während der andere entkommen kann. Von Zeit zu Zeit entkommen sogar beide. Beim Spiel nach „&kgoldrunner;“-Regeln ist es einfacher, zwei Feinde zu fangen und über sie hinwegzulaufen, weil sie länger in den Löchern stecken bleiben.</para>
+</listitem>
+<listitem>
+<para
+>Es ist fast immer unmöglich mehr als zwei Feinde gleichzeitig einzusperren und über deren Köpfe zu laufen. Sie müssen getötet, ein Loch zum „Hindurchlaufen“ unter ihnen gegraben oder einfach weggelaufen werden.</para>
+</listitem>
+<listitem>
+<para
+>Es sollte versucht werden, die Feinde in einer Gruppe zusammenzuhalten. Auf diese Weise wird vermieden, eingekreist zu werden und das Gold kann Gold eingesammelt werden, während der Held verfolgt wird.</para>
+</listitem>
+<listitem>
+<para
+>Manchmal kann ein Feind mit zwei Löchern getötet werden, aber häufig sind drei bis neun Löcher notwendig, um einen von fünf Feinden zu töten.</para>
+</listitem>
+<listitem>
+<para
+>Es ist möglich, einen Feind mit nur einem Loch zu töten, wenn er beim Graben des Lochs weit genug entfernt ist.</para>
+</listitem>
+<listitem>
+<para
+>Im „herkömmlichen“ Spiel kann ein Feind dauerhaft in einer Grube aus Stein oder Beton festgehalten werden. Hierzu muss der Held auf der dem Feind gegenüberliegenden Seite der Grube sein und ein Rechteck nach unten bewegt werden, wenn sich der Feind nähert. Dadurch wird er meistens in die Falle gehen.</para>
+</listitem>
+<listitem>
+<para
+>In einigen „herkömmlichen“ Ebenen kann ein Feind dazu gebracht werden, vor dem Helden eine Leiter hinaufzuklettern, indem der Held irgendwo oberhalb des unteren Endes der Leiter steht.</para>
+</listitem>
+<listitem>
+<para
+>Im „&kgoldrunner;“-Spiel kann ein Feind in einer Baugrube eingefangen werden, indem er dazu gebracht wird, von oben auf den Helden herabzustürzen, dann zur Seite gelaufen und schnell genug eine Grube gegraben wird.</para>
+</listitem>
+<listitem>
+<para
+>Im „&kgoldrunner;“-Spiel können Feinde nicht durch Steinmauern laufen, sodass diese manchmal als Barriere oder Versteck verwendet werden können.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="hints-digging-puzzles">
+<title
+>Graben</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Um sich durch mehrere Steinschichten zu graben, muss oben mit einem Loch der Breite der Schichtenanzahl begonnen, dann hineingesprungen und ein Loch mit einer um Eins verringerten Breite gegraben werden (usw.).</para>
+</listitem>
+<listitem>
+<para
+>Falls neben einer Leiter oder einer Folge von Balken gegraben wird, kann durch beliebig viele Ebenen und fünf bis sechs Steine horizontal gegraben werden. Nach jeder gegrabenen Ebene wird zur Leiter oder zum Balken zurückgekehrt, ein Rechteck nach unten geklettert und die nächste Ebene gegraben.</para>
+</listitem>
+<listitem>
+<para
+>Falls ein Grabungsspiel unmöglich erscheint, sollte daran bedacht werden, dass einige Steine falsch sein könnten. Vielleicht ist die untere Ebene falsch oder es wird in einem falschen Stein gestanden und daneben kann gegraben werden.</para>
+</listitem>
+<listitem>
+<para
+>Die Reihenfolge des Goldeinsammelns sollte wohl bedacht sein. Die richtige Reihenfolge erleichtert häufig den Grabungsprozess.</para>
+</listitem>
+<listitem>
+<para
+>In einigen Ebenen ist es notwendig, ein Loch in eine Steinmauer zu graben, hineinzulaufen und einiges Gold einzusammeln, bevor die Mauer sich wieder schließt.</para>
+</listitem>
+<listitem>
+<para
+>Mit dem richtigen Zeitgefühl kann während des Fallens ein Loch gegraben werden. Dabei muss nicht auf einem Feind „geritten“ werden. Dies war ursprünglich ein Fehler, der zu einer Funktion wurde, die besonders in den Spielen „Terrorstaat“, „Zähler“ und „Fluch der Mumie“ häufig Verwendung findet.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="hints-tricks-with-gold">
+<title
+>Tricks mit Gold</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Falls ein Goldstück nicht erreicht werden kann, ist es manchmal möglich, einen Feind zum Sammeln zu bewegen und ihm das Gold hinterher wieder abzunehmen.</para>
+</listitem>
+<listitem>
+<para
+>In einige Ebenen gibt es ein bestimmtes Goldstück, das unbedingt als letztes eingesammelt werden muss, weil die versteckte Leiter benötigt wird, um diese Position wieder verlassen zu können.</para>
+</listitem>
+<listitem>
+<para
+>Manchmal kann ein Feind getötet werden, bevor er sein Gold wieder abgegeben hat. Damit ist das Gold „verloren“. Es gibt zwar keine Punkte für dieses Gold, aber die Ebene kann dennoch beendet werden.</para>
+</listitem>
+<listitem>
+<para
+>Falls es keine Stelle zum Graben gibt, müssen die Feinde immer wieder über Beton oder Leitern „geschickt“ werden, damit sie zufällig ihr Gold fallen lassen.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="hints-solving-difficult-levels">
+<title
+>Schwierige Ebenen</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Die Spielgeschwindigkeit sollte auf <guimenuitem
+>Anfängergeschwindigkeit</guimenuitem
+> oder noch weiter herab gesetzt werden.</para>
+</listitem>
+<listitem>
+<para
+>Der Editor sollte zum „Aufspüren“ von falschen Steinen und versteckten Leitern verwendet werden.</para>
+</listitem>
+<listitem>
+<para
+>Der Editor sollte verwendet werden, um die Ebenen in einem eigenen Spiel zu speichern. Die Ebene sollte dann abgeändert werden, dass nicht immer von Anfang an begonnen werden muss. Damit kann die Lösung in Etappen erarbeitet werden.</para>
+</listitem>
+<listitem>
+<para
+>Bei Grabungsebenen sollte nach falschen Steinen gesucht werden, in die man fallen kann, um eine Steinschicht weniger „bearbeiten“ zu müssen. Oder ein Feind geht voran, sodass man auf seinem Kopf stehend graben kann.</para>
+</listitem>
+<listitem>
+<para
+>Nach einem Muster oder einem Trick sollte gesucht werden, wie beispielsweise auf einem Feind „reiten“, alle Feinde in einer Grube fangen, die Feinde in eine Ecke des Spielfelds locken, in der sie bleiben, die Feinde in eine Grube locken, die überquert werden muss, um Gold einzusammeln, die Feinde zum Gold sammeln verwenden oder Standplätze finden und die Feinde dorthin locken, wo sie nützlich sind.</para>
+</listitem>
+<listitem>
+<para
+>Mit <menuchoice
+><guimenu
+>Zug</guimenu
+><guimenuitem
+>Eine Lösung wiedergeben ...</guimenuitem
+></menuchoice
+> sollte versucht werden, ob bereits eine aufgenommene Lösungsmöglichkeit für die Ebene vorliegt. Dies zeigt Möglichkeiten, wie Schwierigkeiten innerhalb der Ebene überwunden werden können (ist aber nicht immer die beste Möglichkeit). Meist gibt es mehrere Lösungsmöglichkeiten und bei jedem Spielen sind kleine Unterschiede (z. B. zeitliche). Damit können die gezeigten Lösungsmöglichkeiten nicht immer genau nachgespielt werden.</para>
+</listitem>
+<listitem>
+<para
+>Mit <menuchoice
+><guimenu
+>Zug</guimenu
+><guimenuitem
+>Sofortige Wiedergabe</guimenuitem
+></menuchoice
+> oder <menuchoice
+><guimenu
+>Zug</guimenu
+><guimenuitem
+>Letzte Ebene wiedergeben</guimenuitem
+></menuchoice
+> kann eine Ebene an einem Punkt fortgesetzt werden, zu dem noch keine Schwierigkeiten bestanden und ein anderer Versuch begonnen werden.</para>
+</listitem>
+</itemizedlist>
+</sect1>
+
+<!-- This is the place for a FAQ section, if required.
+<sect1 id="hints-faq">
+<title
+>FAQ</title>
+
+<qandaset id="faq">
+
+<qandaentry>
+<question>
+<para
+>Question 1</para>
+</question>
+<answer>
+<para
+>The answer</para>
+</answer>
+</qandaentry>
+
+</qandaset>
+</sect1>
+-->
+
+</chapter>
+
+<chapter id="credits-and-license">
+<title
+>Danksagungen und Lizenz</title>
+
+<para
+>&kgoldrunner; Copyright 2003 Ian Wadham und Marco Krüger.</para>
+
+<para
+>&kgoldrunner; ist einem frühen Computerspiel namens <trademark
+>Lode Runner</trademark
+> nachempfunden, das in den USA von <trademark class="copyright"
+>Doug Smith</trademark
+> programmiert und zuerst 1983 von <trademark class="copyright"
+>Broderbund Software</trademark
+> veröffentlicht worden ist. Es war ein Spiel für Apple-II- und Commodore-64-Computer. Dort wurde es von der Familie Wadham und Marco Krüger entdeckt. Es war damals ein großer Hit und ist immer noch eines der zeitlosen Computerspiele.</para>
+
+<para
+>Mehr über <trademark
+>Lode Runner</trademark
+> und dessen vielfältige Varianten seit 1983 kann der Internetseite <ulink url="http://entropymine.com/jason/lr"
+>Jason's Lode-Runner-Archiv</ulink
+> (http://entropymine.com/jason/lr/) entnommen werden. In der Datei <ulink url="http://entropymine.com/jason/lr/misc/ldhist.html"
+>misc/ldhist.html</ulink
+> wird außerdem die Geschichte der Originalentwicklung aufgeführt. In der Wikipedia gibt es auch einen ausgezeichneten Artikel zu <trademark
+>Lode Runner</trademark
+> mit weiteren Verknüpfungen zu anderen Seiten.</para>
+
+<para
+>In &kgoldrunner; soll der Geist des ursprünglichen Spiels auf einer portablen Plattform eingefangen werden und so mehr als ein paar Jahre überdauern. Der Quelltext ist frei verfügbar. Die Originalversion ist nicht mehr verfügbar und die passenden Rechner befinden sich inzwischen in Museen.</para>
+
+<para
+>Marco Krüger entwickelte &kgoldrunner; aus nostalgischen Gründen bis zur Version 0.3 (er kannte das Originalspiel für den Commodore 64). Ian Wadham fügte einige Funktionen und Ebenen hinzu und entwickelt die aktuelle Version. Peter, der ältere Sohn von Ian, erstellte die 100 Ebenen der „Einführung“ und die 20 trickreichen Ebenen von „Die Rache des Peter W.“. Die anderen Ebenen stammen von Ian und Peter Wadham, Marco Krüger und Freunden sowie Ians anderen Kindern, Simon und Genevieve. </para>
+<para
+>Stuart Popejoy aus New York erstellte 2007 das Spiel „Terrorstaat“, das erste Wettbewerbsspiel nach den „&kgoldrunner;“-Regeln und zudem eines der schwierigsten Spiele.</para>
+
+<para
+>Steve Mann aus Waterloo (Kanada) trug mit den Spielen „Zähler“ und „Fluch der Mumie“ im Jahr 2008 bei. Beide verwenden die traditionellen Regeln, bieten interessante Designs beim Spielen und sind ein wenig schwieriger.</para>
+
+<para
+>Peter Wadham erstellte die Klangeffekte im Jahr 2008 und Luciano Montanaro hat sie in &kgoldrunner; eingepflegt.</para>
+
+<para
+>Ein besonderer Dank gilt Mauricio Piacentini und Dimitry Suzdalev, die &kgoldrunner; auf &Qt;4 und &kde;4 portiert haben sowie den vielen Grafikdesignern, die zu den neuen SVG-Grafiken und Designs der &kde;4-Version beigetragen haben; besonders Mauricio Piacentini für das Design „Standard“ und den neuen Helden, Johann Ollivier Lapeyre für die Leitern und Stangen, Eugene Trounev für das Design „Computer-Stadt“ und „Schatz von Ägypten“ und zuletzt Luciano Montanaro für die Designs „Nostalgie“ (rot und blau) und „Schwarz auf Weiß“, Verbesserungen des Helden, verschiedene Hintergründe und weitere Ideen.</para>
+
+<para
+>Übersetzung: Frank Schütte <email
+>F.Schuette@t-online.de</email
+></para
+><para
+>Überarbeitung der Übersetzung: Johannes Obermayr <email
+>johannesobermayr@gmx.de</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-general-insert-case: lower
+End:
+-->

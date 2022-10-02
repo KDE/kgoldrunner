@@ -1,0 +1,2321 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY kgoldrunner "<application
+>KGoldrunner</application
+>">
+  <!ENTITY kappname "&kgoldrunner;">
+  <!ENTITY package "kdegames">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Galician  "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<book lang="&language;">
+
+<bookinfo>
+<title
+>Manual do &kgoldrunner;</title>
+<authorgroup>
+<author
+><firstname
+>Ian</firstname
+> <surname
+>Wadham</surname
+> <affiliation
+><address
+><email
+>iandw.au en gmail com</email
+></address
+></affiliation>
+</author>
+<author
+><firstname
+>Marco</firstname
+> <surname
+>Krüger</surname
+> </author>
+<othercredit role="translator"
+><firstname
+>Xosé</firstname
+><surname
+>Calvo</surname
+><affiliation
+><address
+><email
+></email
+></address
+></affiliation
+><contrib
+>Tradutor do proxecto Trasno</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2009</year>
+<holder
+>Ian Wadham</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2009-05-22</date>
+<releaseinfo
+>4.3</releaseinfo>
+
+<abstract>
+<para
+>&kgoldrunner;, un xogo e acción de resolución de quebracabezas. Corre polo labirinto, evita os teus inimigos, recolle todo o ouro e agacha até o seguinte nivel.</para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KGoldrunner</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="playing-kgoldrunner">
+<title
+>Xogar ao &kgoldrunner;</title>
+
+<sect1 id="introduction">
+<title
+>Introdución</title>
+<para
+>Tipo de xogo: Arcade, Estratexia </para>
+<para
+>Número de xogadores: Un </para>
+
+<para
+>O &kgoldrunner; é un xogo de acción no que o heroe corre por un labirinto e evita inimigos. Haino que guiar co rato ou o teclado e recoller todas as pebidas de ouro e entón pode agachar até o seguinte nivel. Os inimigos tamén procuran o ouro. Peor, van atrás de ti! Mataranche se che collen!</para>
+
+<para
+>O problema é que non tes arma para mata<emphasis
+>los</emphasis
+>. O único que podes facer é fuxir, cavar furados no chan para atrapalos ou atraelos cara unha zona na que non che podan facer mal. Despois dun pouco de tempo, un inimigo atrapado agacha para fóra do seu furado, pero se este se pecha antes diso, morre e reaparece noutro sitio. </para>
+
+<para
+>Se nunca antes xogaches, proba co xogo <quote
+>Titorial</quote
+>, que ensina as regras e as destrezas básicas. Despois proba co xogo <quote
+>Iniciación</quote
+>. Os expertos poden gustar dos xogos <quote
+>Reto</quote
+>, <quote
+>A vinganza de Peter W</quote
+>, <quote
+>Conta</quote
+> ou <quote
+>A maldición da Momia</quote
+>, mais o xogo <quote
+>Iniciación</quote
+> ten cen niveis e algúns son bastante difíciles. É un bo xogo para lograr unha puntuación alta.</para>
+
+<para
+>Todas eses partidas empregan regras tradicionais, semellantes ás daqueles computadores domésticos antigos, como o Apple II ou o Commodore 64. As partidas<quote
+>&kgoldrunner;</quote
+> e <quote
+>Estado de Terror</quote
+> empregan as regras do &kgoldrunner;, no que os inimigos corren máis rápido e teñen unha estratexia de busca máis agresiva que nas regras tradicionais. Consulta a <link linkend="choice-of-rules"
+>Escolla de regras</link
+> para máis detalles.</para>
+
+<para
+>Segundo te moves cara niveis máis avanzados, descubrirás que o &kgoldrunner; combina acción, estratexia, táctica e resolución de quebracabezas &mdash; todo nun xogo. Boa sorte!</para>
+
+</sect1>
+
+<sect1 id="typical-game">
+<title
+>Unha partida típica</title>
+
+<para
+>Abaixo aparece unha partida típica en progreso. O heroe está no nivel 4 do xogo titorial avanzado. A barra de estado da xanela mostra as vidas que lle restan e cantos puntos ten logrado. Tamén mostra que hai unha suxestión dispoñíbel para este nivel (como hai sempre nos titoriais) e que a acción está detida (mentres se capturaba a pantalla), mais que pode continuarse premendo <keycap
+>P</keycap
+> ou &Esc;.</para>
+
+<para
+>O heroe comezou na parte superior esquerda, cavou un furado e caeu nunha liña de falsos tixolos e ouro onde o podes ver caendo agora. O inimigo que ten por riba vai caer no furado, escalar para fóra e ficar atrapado alí até o fin do xogo. Nese caso poderíalle causar algúns problemas ao heroe porque é aí onde aparecen as escalas agochadas cando desaparece todo o ouro. O heroe tennas que empregar para ir aos seguinte nivel.</para>
+
+<screenshot>
+<screeninfo
+>Partida típica do &kgoldrunner;</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="tute008.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Partida típica do &kgoldrunner;</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>O inimigo da dereita está a caer e leva algo de ouro. O terceiro inimigo está a piques de baixar por unha escada para perseguir o heroe, que terá que evitar os dous inimigos cando chegue ao chan. Este nivel tamén mostra tixolos que se poden escavar e formigón que non se pode escavar e ten un mundo de trampas (tixolos falsos) que semellan tixolos normais.</para>
+
+</sect1>
+
+<sect1 id="how-to-play">
+<title
+>Como xogar</title>
+
+<sect2>
+<title
+>Comezo da partida</title>
+
+<para
+>O &kgoldrunner; comeza mostrando unha demostración gravada do xogo. Pódese terminar premendo a área de reprodución co rato, premendo a barra espazadora ou escollendo un elemento do menú ou un atallo (como <menuchoice
+> <guimenu
+>Partida</guimenu
+><guimenuitem
+>Partida nova...</guimenuitem
+></menuchoice
+>). Pódese saltar esta demostración no futuro empregando o elemento do menú <menuchoice
+><guimenu
+>Configuración</guimenu
+><guimenuitem
+>Demostración no inicio</guimenuitem
+></menuchoice
+>. Pódese tamén ver de novo en calquera momento empregando o elemento do menú <menuchoice
+><guimenu
+>Mover</guimenu
+><guimenuitem
+>Demostración</guimenuitem
+></menuchoice
+> </para>
+
+<para
+>Se saltaches a demostración ou empregaches o rato ou a barra espazadora para finalizala, aparece un diálogo de inicio rápido que mostra os nomes, números e unha vista previa da última partida e o nivel que cargases ou, se nunca antes xogaches, a mesma información para o nivel 1 do titorial.</para>
+
+<para
+>Preme o botón <guibutton
+>XOGAR</guibutton
+> para comezar a xogar inmediatamente. Tamén podes premer o botón <guibutton
+>Saír</guibutton
+>, o botón <guibutton
+>Nova partida</guibutton
+> ou o botón <guibutton
+>Usar o menú</guibutton
+>. O primeiro fecha o &kgoldrunner;. Se non desexas xogar, o segundo mostra un diálogo <link linkend="level-selection-dialog"
+>Selección do nivel</link
+>, no que se pode escoller un xogo e nivel diferentes, e o último remata o diálogo, deixándoche libre para empregar os menús do &kgoldrunner;.</para>
+
+<para
+>Se escolliches xogar unha partida e nivel, aparecen e o punteiro está sobre o heroe. Nun xogo titorial aparece unha mensaxe explicativa antes de que comece cada nivel. Comézase a xogar movendo o punteiro, premendo o rato ou premendo calquera tecla que poida controlar o heroe (&eg; <keycap
+>Espazo</keycap
+>), mais evita empregar <keycap
+>Q</keycap
+>, <keycap
+>S</keycap
+>, <keycap
+>P</keycap
+> ou &Esc; aínda. Todos os niveis comezan igual.</para>
+
+<para
+>Tes cinco vidas cando comeza o xogo e gañas unha vida extra por cada nivel completado.</para>
+
+</sect2>
+
+<sect2 id="mouse-control">
+<title
+>Moverse</title>
+
+<para
+>Por omisión, o heroe contrólase co rato, mais tamén se pode controlar co teclado (<link linkend="keyboard-control"
+>mira embaixo</link
+>) ou, nun portátil, mesturando o teclado para escavar e a área táctil ou outro dispositivo apuntador para guiar o heroe.</para>
+
+<para
+>O heroe móvese para onde se coloque o punteiro. Non se pode mover tan rápido como ti podes mover o punteiro, mais hase esforzar por chegar. Se o punteiro está por arriba ou por abaixo do seu nivel, tenta subir ou baixar cando teña unha escada dispoñíbel ou un lugar polo que caer. Se non, móvese horizontalmente até que estea por abaixo do punteiro, por arriba del ou xusto nel. Podes facer que siga rutas simples (como &mdash; | L ou U), mais tenta non facer moitos xiros e voltas por diante del.</para>
+
+<para
+>Pódeste mover á esquerda ou á dereita sobre os tixolos, o formigón, as escadas ou as barras e para arriba ou abaixo polas escadas. Se estás nun cadrado baleiro ou unha pebida de ouro e non hai tixolos, formigón, escadas ou barras ás que aferrarse, a gravidade entra en funcionamento e caes. Tamén podes caer baixando dunha barra ou do remate dunha escada, así que mantén aí o punteiro se te queres aferrar.</para>
+
+</sect2>
+
+<sect2 id="keyboard-control">
+<title
+>Control do teclado</title>
+
+<para
+>Se o prefires, podes empregar o teclado para controlar o heroe. As teclas por omisión son as de frecha e  <keycap
+>I</keycap
+>, <keycap
+>J</keycap
+>, <keycap
+>K</keycap
+> e <keycap
+>L</keycap
+> (na honra do xogo orixinal para o Apple II), coas teclas <keycap
+>Z</keycap
+> and <keycap
+>C</keycap
+> or <keycap
+>U</keycap
+> e <keycap
+>O</keycap
+> para escavar. Podes xogar cunha soa man empregando <keycap
+>U</keycap
+>, <keycap
+>I</keycap
+>, <keycap
+>O</keycap
+>, <keycap
+>J</keycap
+>, <keycap
+>K</keycap
+>, <keycap
+>L</keycap
+> e <keycap
+>Espazo</keycap
+> (nun teclado <quote
+>QWERTY</quote
+>) ou con dúas empregando as teclas das frechas, <keycap
+>Espazo</keycap
+>, <keycap
+>Z</keycap
+> e <keycap
+>C</keycap
+>. Tamén podes escoller outras teclas no menú <guimenu
+>Configuración</guimenu
+> empregando o elemento <guimenuitem
+>Configurar os atallos</guimenuitem
+>.</para>
+
+<para
+>Éntrase no modo de teclado premendo unha das teclas que poden controlar o heroe ou escollendo <guimenuitem
+>O teclado controla o heroe</guimenuitem
+> no menú <guimenu
+>Configuración</guimenu
+>.</para>
+
+<para
+>As teclas de movemento  (<keycap
+>I</keycap
+>, <keycap
+>J</keycap
+>, <keycap
+>K</keycap
+>, <keycap
+>L</keycap
+> ou as frechas) fan que o heroe comece as subir, baixar, ir á dereita ou á esquerda. Continúa a moverse nesa dirección, se pode, até que premas outra tecla de movemento ou <keycap
+>Espazo</keycap
+> para parar. No modo de rato ou de portátil, detense automaticamente cando chega ao punteiro.</para>
+
+<para
+>Unha palabra de advertencia: empregar o teclado é moito máis difícil, co tempo, que empregar o rato. Imaxina que o rato é un joystick.</para>
+
+</sect2>
+
+<sect2 id="pausing">
+<title
+>Acougar un pouco</title>
+
+<para
+>Podes deter a partida en calquera momento premendo a tecla Pausa (por omisión é <keycap
+>P</keycap
+> ou &Esc;). Pódela retomar premendo a tecla Pausa de novo. Tamén hai unha opción <guimenuitem
+>Pausa</guimenuitem
+> no menú <guimenu
+>Partida</guimenu
+>, mais o problema é chegar co punteiro sen mover o heroe e meterse en problemas.</para>
+
+<tip
+><para
+>Cando desexes empregar o menú do &kgoldrunner; ou facer un traballo noutra xanela, preme sempre unha tecla de pausa e detén o xogo. Se non, o heroe ha continuar a seguir o punteiro e poderíase meter en problemas.</para
+></tip>
+
+</sect2>
+
+<sect2 id="winning">
+<title
+>Gañar un nivel</title>
+
+<para
+>O obxectivo do xogo é recoller todo o ouro movéndose cara el ou caendo sobre el. Cando non fica nada hai que subir á parte superior da área de xogo para pasar ao seguinte nivel. Con frecuencia, cando se recolle a última peza de ouro aparecen escadas agochadas que se poden empregar para escalar até o cume. Ás veces non hai escadas agochadas. Tamén, rara vez, as escadas agochadas poderían ser enganos que conducen ao camiño errado. Se o nivel non ten ouro non hai escadas agochadas e simplemente hai que chegar ao cume da área de xogo.</para>
+
+</sect2>
+
+<sect2 id="false-bricks">
+<title
+>Tenta cos tixolos falsos</title>
+
+<para
+>Os tixolos falsos, tamén coñecidos como tixolos de caer ou trampas, son a outra característica oculta do xogo. Parecen tixolos normais, mais se corres sobre un del, caes. Isto pode ser malo se hai un inimigo ou un foxo alí ou bo se hai ouro.</para>
+
+</sect2>
+
+<sect2 id="enemies">
+<title
+>Inimigos</title>
+
+<para
+>Os inimigos móvense de maneira parecida ao heroe. A principal diferenza é cando caen nun furado escavado polo heroe (mira (<link linkend="importance-of-digging"
+>A importancia de cavar</link
+> abaixo). </para>
+<para
+>Recollen ouro ou sempre ou á toa, dependendo da configuración do xogo, e céibano á toa sobre tixolos, formigón ou o cumio dunha escada. Se un inimigo leva a última peza de ouro haise que apartar del antes de poder rematar o nivel.</para>
+
+<para
+>Se un inimigo che toca, morres e tes que comezar o nivel de novo (de che ficaren vidas). Porén, é posíbel camiñar ou quedar de pe sobre a testa dun inimigo e pódese ir nas</para>
+
+</sect2>
+
+<sect2 id="losing-a-level">
+<title
+>Perder un nivel</title>
+
+<para
+>Como se explicou antes, pódese perder un nivel e unha vida se se toca un inimigo. Tamén se pode perder se un fica atrapado nun tixolo escavado cando este se fecha. Por outra parte, un pódese suicidar premendo a tecla <keycap
+>Q</keycap
+> ou empregando o elemento do menú <menuchoice
+><guimenu
+>Partida</guimenu
+><guimenuitem
+>Matar o heroe</guimenuitem
+></menuchoice
+>. Por que querería un facer tal cousa? Pois porque ás veces un queda atrapado nun lugar do que non pode fuxir. Ficarías aprisionado para sempre a non ser que te suicidases!</para>
+
+</sect2>
+
+<sect2 id="importance-of-digging">
+<title
+>A importancia de cavar</title>
+
+<para
+>Cavar é unha das tácticas máis potentes das que dispós. Para cavar un furado nun tixolo á esquerda ou á dereita, preme o botón <mousebutton
+>Esquerdo</mousebutton
+> ou <mousebutton
+>Dereito</mousebutton
+> do rato ou emprega unha das teclas para cavar (por omisión <keycap
+>Z</keycap
+>, <keycap
+>C</keycap
+>, <keycap
+>U</keycap
+>, <keycap
+>O</keycap
+>).</para>
+
+<para
+>Pódese esquivar un inimigo que se che acerque cavando un furado, agardando a que caia nel e correndo entón moi rápido sobre a súa testa. Ao mesmo tempo pódese coller o ouro que levase. Normalmente pódense cavar dous furados para capturar e correr sobre dous inimigos que estean xuntos, aínda que isto rara vez funciona se os inimigos están separados ou se hai máis de dous.</para>
+
+<para
+>Pódense matar inimigos cavando suficientes furados no seu camiño. Normalmente leva dous ou máis furados cavar un inimigo e até oito ou máis para catro ou cinco inimigos. Cando morren, reaparecen inmediatamente, onde comezaron o nivel ou perto da parte superior da área de xogo, dependendo de se o xogo segue as regras e opcións do <quote
+>&kgoldrunner;</quote
+> ou as <quote
+>tradicionais</quote
+> (consulta <link linkend="choice-of-rules"
+>Escolla das regras</link
+>).</para>
+
+<para
+>Por último, en moitos niveis o ouro non é accesíbel inmediatamente e hai que cavar para chegar a el. Por tanto, estes quebracabezas de escavar son bastante complexos e hai que calcular unha secuencia de cavado e despois realizala nun tempo limitado antes de poder completar o nivel.</para>
+
+</sect2>
+
+<sect2 id="rules-of-digging">
+<title
+>As regras de cavado</title>
+
+<para
+>Prémese o botón <mousebutton
+>esquerdo</mousebutton
+> ou <mousebutton
+>dereito</mousebutton
+> do rato para cavar un furado á esquerda ou á dereita ou empréganse as teclas  <keycap
+>Z</keycap
+>, <keycap
+>C</keycap
+>, <keycap
+>U</keycap
+> ou <keycap
+>O</keycap
+>. Só se poden cavar os tixolos e nada máis. O furado aparece no chan a un lado ou a outro (&ie; por baixo e á esquerda ou á dereita do heroe). Podes estar a correr, de pé ou caendo mentres cavas. Ten que haber un espazo ou furado baleiro por riba do tixolo (&ie; non se pode cavar por baixo dunha escada, barra, ouro, tixolo, formigón, tixolo falso ou inimigo).</para>
+
+<para
+>O heroe pódese mover en calquera dirección polos furados cavados, incluído caer polo furado para escapar dun inimigo. Despois dun tempo breve, os furados escavados féchanse, polo que hai que os empregar moi rapidamente. Planea o que vaias cavar con antelación. Non hai tempo para parar e pensar mentres cavas.</para>
+
+<para
+>Os inimigos captúranse sempre se caen nun furado cavado e sempre SOBEN para fóra. O tempo que pasan no furado é menos que o tempo que este fica aberto, así que para matar inimigos normalmente hai que cavar varios furados un seguido do outro rapidamente. Os inimigos sempre soltan o ouro cando caen nun furado, polo que podes correr rapidamente sobre a testa do inimigo e apañar o ouro antes de que saia para fóra.</para>
+
+<para
+>Os inimigos nunca caen dun furado desde arriba mais, dependendo das regras do xogo e da <guimenu
+>Configuración</guimenu
+> (mira a <link linkend="choice-of-rules"
+>Escolla das regras</link
+>), poden correr horizontalmente para dentro dun furado escavado e non ser capturados e poden caer desde aí ou entrar e saír correndo dun furado. Varios dos niveis que seguen as regras <quote
+>tradicionais</quote
+> depende de que un inimigo sexa quen de correr a través dun furado. Algúns niveis que seguen as regras do <quote
+>&kgoldrunner;</quote
+> dependen de que un inimigo NON sexa quen de correr a través dun furado.</para>
+
+</sect2>
+
+<sect2 id="winning-and-losing-the-game">
+<title
+>Gañar e perder a partida</title>
+
+<para
+>Gáñase completando o derradeiro nivel do xogo. Pérdese cando desaparece a última vida. De calquera maneira, se obtiveches unha das dez maiores puntuacións dese xogo, podes gravar o teu logro no <quote
+>Galería da fama do &kgoldrunner;</quote
+>.</para>
+
+</sect2>
+
+<sect2 id="recordings-replays-and-solutions">
+<title
+>Gravacións, reproducións e solucións</title>
+
+<para
+>Todos os niveis dos xogos grávanse segundo vas xogando, polo que se pode xogar unha segunda vez calquera nivel que se xogase antes. Ademais, algúns niveis teñen solucións gravadas, que poden axudar a adiviñar como gañalos. Emprega o menú <guimenu
+>Mover</guimenu
+> e os elementos <guimenuitem
+>Mostrar unha solución</guimenuitem
+>, <guimenuitem
+>Reprodución instantánea</guimenuitem
+>, <guimenuitem
+>Reproducir o último nivel</guimenuitem
+> e <guimenuitem
+>Reproducir calquera nivel</guimenuitem
+>. As solucións e reproducións pódense interromper en calquera momento premendo co rato a área de xogo, premendo a barra espazadora ou escollendo un elemento do menú ou un atallo (como <menuchoice
+><guimenu
+>Partida</guimenu
+> <guimenuitem
+>Nova partida...</guimenuitem
+></menuchoice
+>).</para>
+
+<para
+><guimenuitem
+>Reprodución instantánea</guimenuitem
+> e <guimenuitem
+>Reproducir o último nivel</guimenuitem
+> permiten continuar a xogar despois dunha interrupción. Así que, se as cousas non van ben, podes empregar <guimenuitem
+>Reprodución instantánea</guimenuitem
+>, interromper a reprodución nalgún punto e despois tentar outro enfoque. Ou, se o heroe xa morreu, podes empregar <guimenuitem
+>Reproducir o último nivel</guimenuitem
+> do mesmo xeito. Estas funcionalidades pódenche axudar a construír unha solución para un nivel difícil en etapas, mais usalas invalida calquera puntuación alta na que esteas a traballar.</para>
+
+</sect2>
+</sect1>
+
+<sect1 id="scoring">
+<title
+>Puntuación</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Comezar con cinco vidas.</para>
+</listitem>
+<listitem>
+<para
+>Perder unha vida e repetir un nivel cando o heroe morre</para>
+</listitem>
+<listitem>
+<para
+>Gañar unha vida ao completar un nivel</para>
+</listitem>
+<listitem>
+<para
+>Setenta e cinco puntos por atrapar un inimigo</para>
+</listitem>
+<listitem>
+<para
+>Setenta e cinco puntos por matar un inimigo</para>
+</listitem>
+<listitem>
+<para
+>Douscentos cincuenta puntos por recoller ouro</para>
+</listitem>
+<listitem>
+<para
+>Mil quiñentos puntos por completar un nivel</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="choice-of-rules">
+<title
+>Escolla das regras</title>
+
+<para
+>A maioría das regras do &kgoldrunner; aparecen explicadas na sección <link linkend="how-to-play"
+>Como xogar</link
+>. Porén, hai dúas opcións principais das regras que afectan o estilo de xogo: coñécense  como <quote
+>tradicionais</quote
+> e <quote
+>&kgoldrunner;</quote
+>. É importante saber que opcións están en vigor cando se xoga un xogo. O &kgoldrunner; escolle automaticamente as opcións correctas do xogo cando xogas un dos seus niveis e as regras de cada nivel móstranse na caixa de diálogo <link linkend="level-selection-dialog"
+>Selección do nivel</link
+>.</para>
+
+<para
+>A diferenza principal entre as opcións <quote
+>tradicional</quote
+> e <quote
+>&kgoldrunner;</quote
+> é o método co que os inimigos escollen unha ruta até o heroe.</para>
+
+<itemizedlist>
+<listitem>
+<para
+>No método de busca <quote
+>tradicional</quote
+>, os inimigos buscan roteiros verticais (escadas e caídas) e tentan situarse máis alto que o heroe ou á mesma altura. Van máis abaixo que el só como último recurso. Os inimigos non intentan perseguir o heroe na dirección horizontal até que se atopan á mesma altura e poden atopar unha ruta horizontal. Isto conduce a situacións nas que ti podes <quote
+>controlar</quote
+> os inimigos que están moi lonxe de ti e facer que eles traballen para ti ou, cando menos, non che anden nas canelas.</para>
+</listitem>
+<listitem>
+<para
+>O método <quote
+>&kgoldrunner;</quote
+> busca alternativamente rutas horizontais e verticais, o que tende a manter os inimigos na túa parte da área de xogo e aproximadamente á mesma altura (&ie; son máis agresivos e non tan doados de manipular). Isto conduce a un xogo máis cheo de acción mais con menor oportunidade para a estratexia e a resolución de quebracabezas. Porén, o xogo <quote
+>Estado do Terror</quote
+>, engadido en 2007, emprega as regras do <quote
+>&kgoldrunner;</quote
+> e ten moitos quebracabezas que resolver mentres corres. É por iso que é un xogo tan difícil.</para>
+</listitem>
+</itemizedlist>
+
+<para
+>Eis o resto das diferenzas:</para>
+
+<itemizedlist>
+<listitem>
+<para
+>No xogo <quote
+>&kgoldrunner;</quote
+>, o heroe e os inimigos móvense a velocidades fixas en cada nivel e os tixolos sempre tardan o mesmo tempo en se fecharen. No xogo <quote
+>tradicional</quote
+>, a velocidade do xogo depende do número de inimigos do nivel. Candos máis inimigos, máis amodo corren. O heroe tamén vai máis amodo, mais non se nota tanto.</para>
+</listitem>
+<listitem>
+<para
+>No xogo <quote
+>tradicional</quote
+>, os inimigos sempre recollen as pebidas de ouro cando as atopan. No xogo <quote
+>&kgoldrunner;</quote
+>, é unha escolla á toa. Os inimigos soltan pebidas despois dun tempo aleatorio nos dous tipos de xogo.</para>
+</listitem>
+<listitem>
+<para
+>Os inimigos poden correr horizontalmente a través dos furados no xogo <quote
+>tradicional</quote
+> mais non no <quote
+>&kgoldrunner;</quote
+>. O truco en varios niveis <quote
+>tradicionais</quote
+> depende de soltar un inimigo desde detrás dun muro de tixolos. Cando se escavan os tixolos, el escapa a través do furado. Nalgúns niveis <quote
+>&kgoldrunner;</quote
+>, por outra parte, teste que agochar dentro ou detrás dun tixolo escavado para escapares dun inimigo.</para>
+</listitem>
+<listitem>
+<para
+>Cando os inimigos morren no xogo <quote
+>&kgoldrunner;</quote
+>, volven a onde estaban cando se iniciou o nivel. No xogo <quote
+>tradicional</quote
+>, reaparecen nun lugar á toa perto da parte superior da área de xogo. Isto supón unha diferenza grande, especialmente nos niveis nos que hai que facer que os inimigos che apañen as pebidas, mais tamén porque os inimigos che caen continuamente enriba tan rápido como os matas.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+</chapter>
+
+<chapter id="level-selection-dialog">
+<title
+>O diálogo de escolla de nivel</title>
+
+<sect1 id="level-selection-dialog-box">
+<title
+>Uso da caixa de diálogo de escolla de nivel</title>
+
+<screenshot>
+<screeninfo
+>O diálogo de escolla de nivel</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="select.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>O diálogo de escolla de nivel</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Esta caixa aparece cando se selecciona a acción <guimenuitem
+>Partida nova</guimenuitem
+> e tamén cando se escollen elementos do menú <guimenu
+>Editor</guimenu
+> ou se reproduce do menú <guimenu
+>Mover</guimenu
+>. Emprégase para escoller un xogo e nivel para xogar, reproducir, editar, gravar, mover, renumerar ou eliminar. O botón principal do fondo é o botón <guibutton
+>Aceptar</guibutton
+>. A súa etiqueta cambia de acordo co que se está a facer: neste caso, escollendo un xogo e nivel para xogar.</para>
+
+<sect2 id="selecting-a-game">
+<title
+>Escoller un xogo</title>
+
+<para
+>Hai varios xogos do <quote
+>Sistema</quote
+> que veñen xa co &kgoldrunner; e pódense engadir xogos propios empregando o editor. Todos estes xogos aparecen na lista da parte superior da caixa de diálogo, agrupados por nivel de dificultade. Os xogos titoriais aparecen ao final da lista e os xogos de destreza normal aparecen primeiros. Para escoller un dos xogos, simplemente preme o seu nome.</para>
+
+<para
+>A lista mostra a configuración de regras que se aplica a cada partida (consulta <link linkend="choice-of-rules"
+>Escolla das regras</link
+>) e cantos niveis ten. Cando se escolle un xogo, unha caixa máis abaixo na pantalla mostra máis información sobre ese xogo.</para>
+
+</sect2>
+
+<sect2 id="selecting-a-level">
+<title
+>Escoller un nivel</title>
+
+<para
+>Podes escoller comezar unha partida en calquera nivel, mais é mellor comezar no nivel 1 e ir subindo, especialmente se pretendes ter unha puntuación alta. En xeral, os niveis de números máis altos son máis difíciles.</para>
+
+<para
+>Cando abres o diálogo de escolla de nivel, o nivel por omisión é algo razoábel, como o último que xogaches ou editaches. Podes escoller un nivel empregando as frechas do selector, escribindo o número do nivel no selector ou movendo a barra desprazadora. As frechas dos extremos da barra desprazadora aumentan ou diminúen o número en pasos de 1. Tamén podes arrastrar a barra co botón esquerdo do rato premido e así o número de nivel cambia rápido. Ou podes cambiar o número de nivel en pasos de 10 premendo o espazo que hai por arriba ou por debaixo do manexador da barra.</para>
+
+<para
+>Segundo vai cambiando o número do nivel, aparece unha previsualización deste na xaneliña, así como o nome do nivel (de telo).</para>
+
+</sect2>
+
+<sect2 id="completing-selection">
+<title
+>Completar a escolla</title>
+
+<para
+>Cando teñas escollido un xogo e un nivel, simplemente preme o botón principal que hai no fondo e continúa coa edición, xogo ou reprodución.</para>
+
+<para
+>Até que o fagas, nada cambia, así que sempre podes premer <guibutton
+>Cancelar</guibutton
+> e recuar até o que estabas a facer. Lembra que a acción do xogo está conxelada mentres o diálogo estea activo, así que podes continuar xogando onde o deixaches se escolles <guibutton
+>Cancelar</guibutton
+>.</para>
+
+</sect2>
+
+<sect2 id="saving-changes">
+<title
+>Gravar os cambios</title>
+
+<para
+>Se escolles unha acción nos menús <guimenu
+>Partida</guimenu
+>, <guimenu
+>Editor</guimenu
+> ou <guimenu
+>Mover</guimenu
+> e antes estabas editando e non gravaches os cambios, aparece unha mensaxe que che pide que graves, abandones ou continúes co teu traballo. Nin a nova acción nin o seu diálogo comezan até que tomes unha decisión sobre o traballo previo.</para>
+
+</sect2>
+
+<sect2 id="any-level">
+<title
+>Xogar ou editar <quote
+>calquera</quote
+> nivel</title>
+
+<para
+>Observa que os menús e os diálogos permite escoller e xogar ou editar <quote
+>calquera</quote
+> nivel. Se comezas unha partida despois do nivel 1, está ben, simplemente non obterás unha puntuación tan alta. Os xogadores dedicados normalmente prefiren xogar niveis de números altos por diversión no canto de tentar unha puntuación alta, ou simplemente queren <quote
+>adestrar</quote
+> en niveis máis altos antes de tentar unha puntuación alta.</para>
+
+<para
+>Se escolles un nivel do sistema para modificalo, tamén está ben, pero telo que gravar nunha das túas partidas: non no xogo do sistema. Por exemplo, se queres modificar un nivel moi difícil para non ter que ir de volta ao principio do nivel cada vez que morras.</para>
+
+<para
+>Para ver o que significa isto, tenta o xogo <quote
+>Reto</quote
+>, nivel 16, <quote
+>Os Tres Mosqueteiros</quote
+>. Ese nivel ten uns dez quebracabezas difíciles. Cando resolvas o quebracabezas 1 non has querer seguilo repetindo mentres solucionas o quebracabezas 2. O segredo é crear unha copia editábel e mantela actualizada e cambiando o punto de inicio do heroe até ter resolvidos todos os quebracabezas. Entón podes recuar e tentar o verdadeiro, desde o principio até o final.</para>
+
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="menu-reference">
+<title
+>A referencia do menú</title>
+
+<sect1 id="menu-overview">
+<title
+>Vista xeral dos menús</title>
+
+<variablelist>
+<varlistentry>
+<term
+><link linkend="game-menu"
+><guimenu
+>Partida</guimenu
+></link
+></term>
+<listitem>
+<para
+>Este menú contén opcións que afectan o desenvolvemento do xogo, como rematar as partidas, gardalas, cargar partidas gardas e mostrar as puntuacións máis altas (de estaren dispoñíbeis). O menú <guimenu
+>Partida</guimenu
+> tamén contén a opción <guimenuitem
+>Saír</guimenuitem
+>, aínda que tamén se pode saír premendo o <guiicon
+>X</guiicon
+> que hai na parte superior dereita da xanela do &kgoldrunner;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link linkend="move-menu"
+><guimenu
+>Mover</guimenu
+></link
+></term>
+<listitem>
+<para
+>Este menú contén unha opción para obter unha axuda (de habela). Os xogos de campionato e titorial teñen axudas en todos os niveis. Outros xogos rara vez teñen axudas. Tamén contén opcións para reproducir gravacións de xogo, como cando se fan demostracións, se mostran exemplos de solucións ou se reproducen os propios esforzos.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link
+linkend="editor-menu"
+><guimenu
+>Editor</guimenu
+></link
+></term>
+<listitem>
+<para
+>Este menú ten todo o preciso para crear os teus propios xogos e niveis e mantelos, incluídas funcionalidades que axudan a reorganizar os niveis ou movelos entre xogos ou eliminalos cando non se precisen máis. Ao reorganizar os niveis, os números de nivel do xogo son consecutivos (non hai ocos) e os niveis renuméranse automaticamente.</para>
+<para
+>Cando se emprega o Editor de xogos, aparece unha barra de ferramentas gráfica con texto de axuda baixo a barra do menú. Consulta o <link linkend="game-editor"
+>Editor de partidas</link
+> para máis detalles sobre como crear e editar os niveis do &kgoldrunner;.</para
+> </listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link
+linkend="themes-menu"
+><guimenu
+>Temas</guimenu
+></link
+></term>
+<listitem>
+<para
+>Este menú ofrece unha escolla de temas de fondo ou <quote
+>mundos</quote
+> nos que xogar. Pódese cambiar de tema en calquera momento, mesmo mentres se xoga. Para quen teña inclinacións artísticas, é posíbel compor temas novos, incluídos os gráficos ou o son, ou os dous e engadilos ao &kgoldrunner;. Simplemente contacta co autor para máis detalles.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link
+linkend="settings-menu"
+><guimenu
+>Configuración</guimenu
+></link
+></term>
+<listitem>
+<para
+>Este menú ten varios grupos de opcións do &kgoldrunner;, incluída a escolla de rato, teclado ou control híbrido (portátiles) e as escollas de velocidade. As seleccións en vigor están marcadas. As opcións selecciónanse automaticamente cando se comeza a xogar, mais pode empregarse este menú para varialas se se quere.</para>
+
+<para
+>Tamén hai unha opción para reasignar os atallos do teclado e as teclas de control do heroe.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link linkend="help-menu"
+><guimenu
+>Axuda</guimenu
+></link
+></term>
+<listitem>
+<para
+>O menú <guimenu
+>Axuda</guimenu
+> contén acceso ao Manual do &kgoldrunner; (este documento), <guimenuitem
+>Acerca do &kgoldrunner;</guimenuitem
+> e <guimenuitem
+>Acerca de &kde;</guimenuitem
+>.</para>
+<para
+>Tamén hai unha opción para informar dun erro ou desexo.</para>
+<para
+>Se desexas facer unha suxestión ou tes niveis novos que queres aportar, o enderezo do autor actual está no elemento do menú <guimenuitem
+>Acerca do &kgoldrunner;</guimenuitem
+>.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="game-menu">
+<title
+>O menú <guimenu
+>Partida</guimenu
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+></keycap
+></keycombo
+></shortcut
+><guimenu
+>Partida</guimenu
+> <guimenuitem
+>Nova partida...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Mostra a caixa de diálogo de escolla de nivel (mira <link linkend="level-selection-dialog-box"
+>Uso da caixa de diálogo de escolla de nivel</link
+>), na que se escolle un xogo e un nivel dentro dese xogo. Ao principio é máis doado comezar no nivel 1 porque os niveis están organizados aproximadamente en orde de dificultade. Tamén é mellor comezar aí cando se pretende obter unha puntuación alta.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partida</guimenu
+> <guimenuitem
+>Cargar unha partida gardada...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Mostra unha táboa con partidas gardadas anteriormente, ordenadas coa máis recente primeiro. Cada liña mostra o xogo, nivel, número de vidas, puntuación, día da semana, data e hora. Se escolles unha liña e premes o botón <guibutton
+>Aceptar</guibutton
+>, a partida comeza no principio dese nivel, coas vidas e puntuación que gardaches.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>Y</keycap
+></shortcut
+> <guimenu
+>Partida</guimenu
+><guimenuitem
+>Xogar o nivel seguinte</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Carga o nivel seguinte do xogo actual, preparado para xogar e sen máis diálogos. Pódese empregar para examinar rapidamente os niveis dun xogo.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>S</keycap
+></shortcut
+> <guimenu
+>Partida</guimenu
+><guimenuitem
+>Gardar a partida...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Garda a partida, nivel, vidas e puntuación actuais. A opción só garda a posición e a puntuación tal e como estaban no inicio do nivel. Pódese gardar cando está mediado un nivel, mais o &kgoldrunner; aínda así garda a posición (e puntuación) que había no inicio do nivel. Recibirás unha mensaxe de aviso sobre isto. Antes de usar esta opción deberías premer unha tecla de pausa (<keycap
+>P</keycap
+> ou &Esc;) para conxelar a partida mentres moves o rato, mais é moito máis doado empregar a tecla <keycap
+>S</keycap
+> como atallo.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partida</guimenu
+> <guimenuitem
+>Gardar as edicions...</guimenuitem
+> </menuchoice>
+</term>
+<listitem
+><para
+>Esta opción está activada só se estiveches a utilizar o Editor de partidas. Mostra a caixa do diálogo de escolla de nivel e permite escoller un número de nivel e unha partida na que gravar o traballo. A súa acción é exactamente a mesma que a da opción <guimenuitem
+>Gardar as edicións</guimenuitem
+> do menú <guimenu
+>Editor</guimenu
+> e da icona <guiicon
+>disco</guiicon
+> da barra de ferramentas Editor.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>P or &Esc;</keycap
+></shortcut
+> <guimenu
+>Partida</guimenu
+><guimenuitem
+>Pausa</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Detén ou reinicia a acción do xogo.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partida</guimenu
+> <guimenuitem
+>Mostrar as mellores puntuacións</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Mostra unha táboa coas dez mellores puntuacións obtidas nese xogo. Cada liña mostra a posición de cada xogador, así como o seu nome, o nivel atinxido, a puntuación lograda, o día da semana e a data.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>Q</keycap
+></shortcut
+> <guimenu
+>Partida</guimenu
+><guimenuitem
+>Matar o heroe</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Mata o heroe cando está nunha posición da que non pode fuxir.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Partida</guimenu
+> <guimenuitem
+>Saír</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Termina o &kgoldrunner; inmediatamente. Se unha partida está en progreso, desaparece para sempre (a non ser que a acabases de gardar) e non se comproba se hai unha puntuación alta. Se estabas editando un nivel tes a oportunidade de gravar o traballo.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+<sect1 id="move-menu">
+<title
+>O menú <guimenu
+>Mover</guimenu
+></title>
+
+<tip
+><para
+>Todos os movementos de demostración e de reprodución reproducen os niveis gravados con anterioridade. Todos pódense interromper e deter premendo a área de xogo co rato, premendo a barra espazadora ou escollendo un elemento do menú ou un atallo (como <menuchoice
+><guimenu
+>Partida</guimenu
+> <guimenuitem
+>Nova partida...</guimenuitem
+></menuchoice
+>).</para
+></tip>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>H</keycap
+></shortcut
+> <guimenu
+>Mover</guimenu
+> <guimenuitem
+>Axuda</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Mostra unha axuda emerxente, de habela para o nivel que se está a xogar. Por convención, os xogos de campionato e de titorial teñen axudas en todos os niveis. Outros xogos rara vez teñen axudas. A barra de estado mostrar se existe ou non unha axuda.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>D</keycap
+></shortcut
+> <guimenu
+>Mover</guimenu
+><guimenuitem
+>Demostración</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Reproduce unha demostración do xogo en varios niveis gravados. Son os mesmo que na demostración do inicio.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Mover</guimenu
+><guimenuitem
+>Mostrar unha solución...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Reproduce unha solución gardada dun nivel, de haber unha solución nos datos de xogo publicados.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>R</keycap
+></shortcut
+> <guimenu
+>Mover</guimenu
+><guimenuitem
+>Reprodución instantánea</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Detén o xogo no nivel actual e reproduce a versión gravada desde o principio. Se interrompes a reprodución, podes continuar a xogar desde ese punto e tentar outro enfoque. Podes empregar esta funcionalidade para ir ensaiando unha secuencia gañadora de movementos en etapas, mais isto invalida calquera puntuación alta que pretendeses obter.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>A</keycap
+></shortcut
+> <guimenu
+>Mover</guimenu
+><guimenuitem
+>Reproducir o último nivel</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Reproduce a gravada desde o principio do último nivel que xogases, desde o principio (&eg; se perdiches o nivel). Se interrompes a reprodución, podes continuar a xogar desde ese punto e tentar outro enfoque. Podes empregar esta funcionalidade para ir ensaiando unha secuencia gañadora de movementos en etapas, mais isto invalida calquera puntuación alta que pretendeses obter.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Mover</guimenu
+><guimenuitem
+>Reproducir calquera nivel</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Reproduce a versión gravada de calquera nivel que xogases con anterioridade. </para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+<sect1 id="editor-menu">
+<title
+>O menú <guimenu
+>Editor</guimenu
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Crear un nivel</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Mostra a barra de ferramentas Editor e unha área de xogo en branco na que podes debuxar un nivel novo. Cando remates, emprega <guimenuitem
+>Gravar as edicións</guimenuitem
+> para asignarlle ao novo nivel un xogo e número de nivel.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Editar un nivel...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Mostra a caixa de diálogo de escolla de nivel, na que se pode escoller un xogo e nivel para editalo. Podes escoller un xogo e nivel do sistema, mais xa che avisa de que só podes gravar o nivel editado nun dos teus propios xogos.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Editor</guimenu
+><guimenuitem
+>Gardar as edicións...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Mostra a caixa de diálogo de escolla de nivel coas opcións por omisión axeitadas para gardar un nivel novo ou editado. Podes modificar o xogo e o número de nivel e obter un efecto <quote
+>Gardar como...</quote
+>. Esta caixa de diálogo ten un botón especial, <guibutton
+>Editar o nome do nivel e a axuda</guibutton
+>, que mostra unha caixa de diálogo na que se poden engadir un nome e unha axuda opcionais ao nivel.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Mover o nivel...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Esta é unha operación en dúas partes. Antes de empregar <guimenuitem
+>Mover o nivel</guimenuitem
+> hai que cargar un nivel que mover escolléndoo para xogar ou editar. A opción <guimenuitem
+>Mover o nivel</guimenuitem
+> mostra entón a caixa de diálogo de escolla de nivel, na que podes escoller un lugar novo para o nivel cargado. Podes cambiar tanto o xogo e o número de nivel, para mover un nivel a outro xogo, como simplemente cambiar o número de nivel para reorganizar os niveis dentro dunha partida. Non se pode mover un nivel do sistema.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Eliminar o nivel...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Mostra a caixa de diálogo de escolla de nivel, na que podes escoller un nivel para eliminar. Non se pode eliminar un nivel do sistema.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Crear unha partida...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Tes que empregar esta opción antes de comezares a crear os teus propios niveis do &kgoldrunner;. Mostra unha caixa de diálogo na que podes introducir o nome dunha partida nova, un prefixo de un a cinco caracteres para os nomes dos ficheiros de nivel, as regras predeterminadas da partida (<quote
+>&kgoldrunner;</quote
+> ou <quote
+>tradicional</quote
+>) e unha descrición ou comentario opcionais sobre a partida.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Editar a información da partida...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Mostra a caixa de diálogo de escolla de nivel, na que podes escoller unha partida para editala, e a seguir mostra a información da partida nunha caixa de diálogo na que podes modificar o nome, as regras e a descrición, mais non o prefixo do nome do ficheiro, no caso de que gravases algúns niveis. Isto débese a que o prefixo emprégase internamente nos nomes dos ficheiros de nivel.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+<sect1 id="themes-menu">
+<title
+>O menú <guimenu
+>Temas</guimenu
+></title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Temas</guimenu
+><guimenuitem
+>Negro sobre branco</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Este tema está espido até ás súas unidades gráficas mínimas e pintado en branco e negro só. Ten como destinatarios os xogadores con problemas visuais. O autor apreciaría recibir mensaxes por correo sobre a súa efectividade e as melloras de visibilidade que se puidesen incorporar.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Temas</guimenu
+><guimenuitem
+>O tesouro de Exipto</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Matt Goldrunner atópase nun templo do Antigo Exipto, perseguido por momias que teñen a intención de protexer as súas alfaias ancestrais a todo custo.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Temas</guimenu
+><guimenuitem
+>Predeterminado do &kgoldrunner;</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Contén o tema predeterminado do &kgoldrunner;, con tixolos vermellos e formigón gris.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Temas</guimenu
+><guimenuitem
+>Cidade cibernética</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>O noso heroe está atrapado nun computador. Escapará cando chegue ao derradeiro nivel?</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Themes</guimenu
+><guimenuitem
+>Morriña</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Lembra os días dos xogos orixinais para Apple II e Commodore 64, cando se enchufaba a máquina no televisor &mdash; ou se non había un monitor monocromo. Para quen non lembre aqueles días heroicos, esta non é unha reprodución exacta, mais dá unha boa idea. Por exemplo, o heroe era completamente branco daquela, aínda que hoxe sexa azul.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Themes</guimenu
+><guimenuitem
+>Blues da morriña</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Lembra o xogo para Apple II, no que os tixolos e o formigón eran dun agradábel azul, o heroe era branco, os inimigos levaban pantalóns brancos e camisas laranxa («carne») e o ouro eran caixas brancas con paneis laranxa. O efecto total era impreciso (unha especie de suavizado por hardware), que facía que os tixolos parecesen case tridimensionais &mdash; difícil de recrear nos monitores con tanta definición de hoxe en día.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+<sect1 id="settings-menu">
+<title
+>O <guimenu
+>menú</guimenu
+> Configuración</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>F</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Configuración</guimenu
+> <guimenuitem
+>Modo a pantalla completa</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Conmuta o modo a pantalla completa</action
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Configuración</guimenu
+> <guimenuitem
+>Reproducir os sons</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Activa/desactiva os sons.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Configuración</guimenu
+><guimenuitem
+>Demostración no inicio</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Activa/Desactiva a demostración do principio (consulta <link linkend="how-to-play"
+>Comezo da partida</link
+>).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Configuración</guimenu
+><guimenuitem
+>O rato controla o heroe</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Asígnalle o control do heroe ao rato (consulta <link linkend="mouse-control"
+>Moverse</link
+>).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Configuración</guimenu
+><guimenuitem
+>O teclado controla o heroe</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Asígnalle o control do heroe ao teclado (consulta <link linkend="keyboard-control"
+>Control do teclado</link
+>).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Configuración</guimenu
+><guimenuitem
+>Control híbrido (portátiles)</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Asígnalle un control híbrido ao heroe; para portátiles, nos que se emprega a área táctil ou outro dispositivo apuntador para guiar o heroe e as teclas de cavar, no teclado, empréganse para cavar a esquerda e a dereita.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Configuración</guimenu
+><guimenuitem
+>Velocidade normal
+></guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Axusta a velocidade normal da partida (10 unidades).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Configuración</guimenu
+><guimenuitem
+>Velocidade de principiante</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Axusta a velocidade de principiante da partida (5 unidades, a metade da velocidade normal).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Configuración</guimenu
+><guimenuitem
+>Velocidade de campión</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Axusta a velocidade de campión (15 unidades, 1,5 veces a velocidade normal).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>+</keycap
+></shortcut
+> <guimenu
+>Configuración</guimenu
+><guimenuitem
+>Aumentar a velocidade</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Acelera unha unidade e até un máximo de 20 unidades (o duplo da velocidade normal). Podes empregar a tecla <keycap
+>+</keycap
+> como atallo.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>-</keycap
+></shortcut
+> <guimenu
+>Configuración</guimenu
+><guimenuitem
+>Diminuír a velocidade</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Reduce a velocidade unha unidade e até un mínimo de 2 unidades (a quinta parte da velocidade normal). Podes empregar a tecla <keycap
+>-</keycap
+> como atallo.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Configuración</guimenu
+> <guimenuitem
+>Configurar os atallos de teclado...</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>No escritorio do &kde; este elemento permite modificar as asignacións do teclado (&eg; para o control do heroe co teclado) ou asignar os teus propios atallos para os elementos do menú.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="help-menu">
+<title
+>O <guimenu
+>menú</guimenu
+> Axuda</title>
+
+<para
+>Contén os elementos normais seguintes do menú de axuda do &kde;:</para>
+&help.menu.documentation; </sect1>
+
+</chapter>
+
+<chapter id="game-editor">
+<title
+>O editor de partidas</title>
+
+<sect1 id="editor-start">
+<title
+>Comezar co Editor</title>
+
+<sect2 id="creating-a-game">
+<title
+>Crear unha partida</title>
+
+<para
+>Antes de crear ou editar un nivel do &kgoldrunner; hai que crear unha partida na que gardalo. Emprega <guimenuitem
+>Crear unha partida</guimenuitem
+> no menú <guimenu
+>Editor</guimenu
+>. Se o esqueces, háseche lembrar. </para>
+
+<para
+>As decisións máis importantes que hai que facer ao crear unha partida son escoller as regras que se van seguir (<quote
+>tradicionais</quote
+> ou <quote
+>&kgoldrunner;</quote
+>, consulta <link linkend="choice-of-rules"
+>Escolla das regras</link
+>) e escoller un prefixo de nome de ficheiro de entre un e cinco caracteres para a partida e os niveis. Tamén precisas dun nome e unha descrición para a partida, aínda que estes pódense modificar facilmente máis tarde.</para>
+
+<para
+>O prefixo emprégao o &kgoldrunner; internamente para identificar os ficheiros de nivel, os ficheiros de puntuacións máis altas e as partidas gardadas. Podes empregar as túas inicias como prefixo, a non ser que coincidan coas dun prefixo do &kgoldrunner;. De momento, están empregados os prefixos <quote
+>level</quote
+>, <quote
+>plws</quote
+>, <quote
+>wad</quote
+>, <quote
+>plwv</quote
+>, <quote
+>sot</quote
+>, <quote
+>cnt</quote
+>, <quote
+>CM</quote
+>, <quote
+>tute</quote
+> e <quote
+>tutea</quote
+>.</para>
+
+<para
+>O prefixo de catro letras <quote
+>tute</quote
+> está reservado para as partidas titoriais, que mostran a axuda de cada nivel segundo se vai xogando. Se compós o teu propio titorial, podes empregar o prefixo <quote
+>tutex</quote
+> para que se execute como titorial mais que os seus ficheiros non se confundan cos do Titorial Básico ou o Titorial Avanzado (prefixos <quote
+>tute</quote
+> e <quote
+>tutea</quote
+>). </para>
+
+</sect2>
+
+<sect2 id="creating-a-level">
+<title
+>Crear un nivel</title>
+
+<para
+>Cando teñas unha partida preparada, emprega <guimenuitem
+>Crear un nivel</guimenuitem
+> no menú <guimenu
+>Editor</guimenu
+> para comezar a crear un nivel. Aparece unha área de xogo en branco de 28x20 cadrados co heroe na parte superior esquerda. Podes colocar o heroe noutro lugar se prefires e non tes que empregar a área de 28x20 completa. Existen moitos niveis interesantes que empregan áreas máis pequenas. </para>
+
+<para
+>O requisito mínimo para que un nivel se poida xogar é que teña un heroe que estea sobre algo na parte superior da área de xogo, mais iso é un caso trivial. O máis real é ter un labirinto que resolver e algunhas escadas visíbeis que leven á parte superior da área de xogo, mais nada de ouro. Non hai por que ter inimigos, ouro, barras, escadas agochadas ou mesmo tixolos. Existen moitos niveis que presentan certo desafío que non teñen nin inimigos nin tixolos; porén, a maioría dos niveis teñen cando menos algo de ouro, algúns inimigos e algunhas escadas agochadas que aparecen cando se recolle o derradeiro ouro.</para>
+
+</sect2>
+</sect1>
+
+<sect1 id="editing-and-testing">
+<title
+>Edición e probas</title>
+
+<sect2 id="editing-a-level">
+<title
+>Edición dun nivel</title>
+
+<para
+>Emprega <guimenuitem
+>Editar un nivel</guimenuitem
+> no menú <guimenu
+>Editor</guimenu
+> para comezar a editar un nivel ou emprega <guimenuitem
+>Crear un nivel</guimenuitem
+> para comezar a editar un nivel novo.</para>
+
+<para
+>Se escolles un nivel do sistema ten presente que o terás que gardar nunha das túas propias partidas. Se non, por omisión gárdase o nivel no sitio de onde viña, aínda que este comportamento pódese modificar.</para>
+
+</sect2>
+
+<sect2 id="painting-objects">
+<title
+>Pintar obxectos nun nivel</title>
+
+<para
+>A imaxe de abaixo mostra a barra de ferramentas de edición, que aparecen cando se escolle por primeira vez <guimenuitem
+>Crear un nivel</guimenuitem
+> ou <guimenuitem
+>Crear un nivel</guimenuitem
+> no menú <guimenu
+>Editor</guimenu
+> e, por tanto, cambia entre os modos xogar e editar.  Desaparece cando se volve ao modo de xogo. Fíxate tamén que no modo de edición os tixolos falsos e as escadas agochadas son visíbeis na área de xogo.</para>
+
+<para
+>As tres iconas da esquerda da barra de ferramentas de edición teñen as mesmas accións que as opcións de menú <guimenuitem
+>Crear un nivel</guimenuitem
+>, <guimenuitem
+>Editar un nivel</guimenuitem
+> e <guimenuitem
+>Gardar as edicións</guimenuitem
+>. As outras once iconas son para editar e pintar os obxectos do teu nivel. </para>
+
+
+<para
+>De esquerda a dereita as outras once iconas son <guiicon
+>Nome/Axuda</guiicon
+> (lámpada), <guiicon
+>Borrar</guiicon
+> (fondo), <guiicon
+>Heroe</guiicon
+>, <guiicon
+>Inimigo</guiicon
+>, <guiicon
+>Tixolo</guiicon
+> (pode escavar), <guiicon
+>Formigón</guiicon
+> (non se pode escavar), <guiicon
+>Trampa</guiicon
+> (que se coñece tamén como tixolo falso ou tixolo polo que se cae), <guiicon
+>Escada</guiicon
+>, <guiicon
+>Escada H</guiicon
+> (escada agochada), <guiicon
+>Barra</guiicon
+> (ou poste) e <guiicon
+>Ouro</guiicon
+>. Os gráficos destas iconas, excepto a da lámpada, están copiados do tema do &kgoldrunner; que esteas a empregar.</para>
+
+<screenshot>
+<screeninfo
+>Edición dun nivel</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="editbar.png" format="PNG"/>
+</imageobject>
+<textobject
+><phrase
+>Edición dun nivel</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>A icona <guiicon
+>Nome/Suxestión</guiicon
+> fai aparecer un diálogo no que se poden crear ou editar o nome e a axuda do nivel. Ambos os dous son opcionais, mais son esenciais para os niveis de titoriais e é habitual fornecelos para os niveis moi difíciles, como os xogos de campionato (consulta a partida <quote
+>A vinganza de Peter W</quote
+>).</para>
+
+<para
+>Cando se preme unha das outras dez iconas, o rato convértese nunha <quote
+>brocha</quote
+> que pinta esa icona. Inicialmente a brocha está configurado para <quote
+>tixolo</quote
+>.</para>
+
+<para
+>Píntase sinalando e premendo o &LMB; , para colocar un obxecto solto nun cadrado, ou tendo premido o &LMB; e arrastrando o rato, para encher unha liña ou área, como unha escada longo, un bloque longo de tixolos ou un chan de formigón. Déixase de pintar cando se solta o botón do rato. Se cometes un erro podes empregar o &RMB; para borralo ou podes escoller a icona <guiicon
+>Borrar</guiicon
+> e pintar con ela.</para>
+
+<para
+>A icona do heroe funciona de xeito diferente porque só pode haber un heroe. Cando pintas o heroe, este móvese da súa posición anterior para o lugar no que soltes o botón do rato.</para>
+
+</sect2>
+
+<sect2 id="saving-your-work">
+<title
+>Gardar o traballo</title>
+
+<para
+>Unha vez remates de pintar, garda o traballo coa icona <guiicon
+>disco</guiicon
+> ou con <guimenuitem
+>Gardar as edicións</guimenuitem
+> do menú <guimenu
+>Editor</guimenu
+> ou con <guimenuitem
+>Gardar as edicións</guimenuitem
+> no menú <guimenu
+>Partida</guimenu
+>. Tes que gardar sempre nas túas propias partidas, nunca nas partidas do sistema.</para>
+
+<para
+>Se estás a crear un nivel, empregas o diálogo de escolla de nivel para asignalo a unha partida e número de nivel. Emprégase o mesmo diálogo se se editou un nivel, mais por omisión gárdase no sitio do que veu. Pódese modificar a partida e o nivel para obter un efecto <quote
+>Gardar como...</quote
+>. Se estiveches a editar un nivel do sistema telo que gardar como copia nunha das túas propias partidas.</para>
+
+</sect2>
+
+<sect2 id="adding-name-and-hint">
+<title
+>Engadir un nome de nivel e axuda</title>
+
+<para
+>Na versión Gardar da caixa de diálogo de escolla de nivel hai un botón marcado <guibutton
+>Editar o nome do nivel e a axuda</guibutton
+>. Pódelo empregar para darlle os toques finais ao nivel engadíndolle un nome e unha axuda. Ambos os dous son opcionais, mais son esenciais para os niveis titoriais e é habitual fornecelos para os niveis moi difíciles, como as partidas de campionato (consulta a partida <quote
+>A vinganza de Peter W</quote
+>). Tamén é posíbel, por suposto, empregar a icona <guiicon
+>Editar o nome/axuda</guiicon
+> en calquera momento para engadir ou editar un nome ou suxestión. </para>
+
+</sect2>
+
+<sect2 id="testing-a-level">
+<title
+>Probar un nivel</title>
+
+<para
+>Unha vez gardado e editado un nivel, pódelo probar empregando <guimenuitem
+>Nova partida</guimenuitem
+> do menú <guimenu
+>Partida</guimenu
+> ou o atallo de teclado equivalente. Por omisión, a partida e o número de nivel son lembrados e pódese ir directamente ao nivel con só uns poucos clics. Se nesa altura queres editar un pouco máis, o mesmo acontece cando se emprega <guimenuitem
+>Editar un nivel</guimenuitem
+> de novo. É esencial probar cada nivel que se compoña para asegurarse de que é posíbel completalo e de que non é doado de máis.</para>
+
+</sect2>
+</sect1>
+
+<sect1 id="reorganizing-games">
+<title
+>Reorganización das partidas e os niveis</title>
+
+<sect2 id="moving-a-level">
+<title
+>Mover un nivel</title>
+
+<para
+>Pódese empregar <guimenuitem
+>Mover o nivel</guimenuitem
+> no menú <guimenu
+>Editor</guimenu
+> para reordenar ou renumerar os niveis dunha partida ou mover un nivel desde unha partida para outra. <guimenuitem
+>Mover o nivel</guimenuitem
+> é unha operación en dúas partes. Primeiro cárgase un nivel escolléndoo para editalo ou xogar con el e a seguir, canse se emprega <guimenuitem
+>Mover o nivel</guimenuitem
+>, aparece a caixa de diálogo de escolla de nivel e pódese escoller o número novo do nivel e a partida (o que se requira).</para>
+
+<para
+>Ao mover non se deixan ocos na secuencia de números de nivel dunha partida. Por exemplo, se se move o nivel 10 da partida A para o nivel 3 da partida B, os niveis 11 e superiores da partida A renúmeranse baixando unha unidade (para pechar o oco) e os niveis 3 e superiores da partida B renuméranse subindo unha unidade (para deixar sitio ao que acaba de chegar).</para>
+
+</sect2>
+
+<sect2 id="deleting-a-level">
+<title
+>Eliminar un nivel</title>
+
+<para
+>Pódese empregar <guimenuitem
+>Eliminar un nivel</guimenuitem
+> no menú <guimenu
+>Editor</guimenu
+> para retirar un nivel que non se queira. Os demais niveis renuméranse para fechar o oco da secuencia. </para>
+
+</sect2>
+</sect1>
+
+</chapter>
+
+<chapter id="tips-tricks-and-hints">
+<title
+>Consellos, trucos e axudas</title>
+
+<sect1 id="tips-overview">
+<title
+>Resumo</title>
+
+<para
+>Este capítulo presenta algúns consellos e suxestións para xogar ao &kgoldrunner;, en contraste coa axuda específica que se atopa nos niveis nas partidas de titorial e campionato (consulta <link linkend="move-menu"
+><menuchoice
+><guimenu
+>Mover</guimenu
+><guimenuitem
+>Axuda</guimenuitem
+></menuchoice
+></link
+>). As axudas agrúpanse do xeito seguinte:</para>
+
+<itemizedlist>
+
+<listitem>
+<para
+><link linkend="hints-dealing-with-enemies"
+>Dealing with Enemies</link
+></para>
+</listitem>
+
+<listitem>
+<para
+><link linkend="hints-digging-puzzles"
+>Digging Puzzles</link
+></para>
+</listitem>
+
+<listitem>
+<para
+><link linkend="hints-tricks-with-gold"
+>Tricks with Gold</link
+></para>
+</listitem>
+
+<listitem>
+<para
+><link linkend="hints-solving-difficult-levels"
+>Solving Difficult Levels</link
+></para>
+</listitem>
+
+</itemizedlist>
+</sect1>
+
+<sect1 id="hints-dealing-with-enemies">
+<title
+>Tratar cos inimigos</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Sempre se pode atrapar nun furado un inimigo que se achegue só, apañar o seu ouro e correr por riba del sen o matar. Con frecuencia é unha boa idea cavar por detrás de un mesmo para retardalo máis, aínda que iso podería matalo. Nalgúns niveis non é boa idea matar inimigos.</para>
+</listitem>
+<listitem>
+<para
+>Normalmente pódense atrapar dous en dous furados dous inimigos que se acheguen, apañar o seu ouro e correr por riba deles, mais isto é perigoso se os inimigos están separados por dous ou tres espazos. Ás veces dous furados matan un dos inimigos e o outro escapa e, ás veces, escapan os dous. Coas regras do &kgoldrunner;  é máis doado atrapar dous inimigos e correr por riba deles porque fican máis tempo dentro dos furados.</para>
+</listitem>
+<listitem>
+<para
+>É practicamente imposíbel atrapar tres inimigos que se acheguen e correr por riba deles. Teralos que matar, cavar e deixarte caer a través do chan ou simplemente fuxir.</para>
+</listitem>
+<listitem>
+<para
+>Tenta amorear todos os inimigos que corran xuntos. Así non che han arrodear e podes facer cousas tan pándegas como recoller ouro mentres che seguen a correr.</para>
+</listitem>
+<listitem>
+<para
+>Ás veces pódese matar un inimigo con dous furados, mais normalmente precísanse entre tres e nove matar de un a cinco.</para>
+</listitem>
+<listitem>
+<para
+>É posíbel matar un inimigo cun único furado se están suficientemente lonxe cando o cavas.</para>
+</listitem>
+<listitem>
+<para
+>Nas partidas <quote
+>tradicionais</quote
+> pódese atrapar un inimigo permanentemente nun foxo de tixolos ou de formigón. Agarda perto do bordo do foxo do outro lado do inimigo. Segundo se aproxima ao foxo, baixa un cadrado (ao nivel do chan do foxo) e o inimigo normalmente cae no foxo.</para>
+</listitem>
+<listitem>
+<para
+>Nalgúns niveis das partidas <quote
+>tradicionais</quote
+> pódese obrigar a un inimigo a agachar por unha escada por diante de ti se agardas nalgún sitio por riba da parte de abaixo da escadas.</para>
+</listitem>
+<listitem>
+<para
+>Nas partidas do <quote
+>&kgoldrunner;</quote
+> podes atrapar un inimigo nun foxo facendo que caia desde máis arriba de ti e correndo entón para un lago e cavando antes de que chegue onde ti.</para>
+</listitem>
+<listitem>
+<para
+>Nas partidas do <quote
+>&kgoldrunner;</quote
+> os inimigos non poden correr a través dos tixolos escavados, polo que estes poden ás veces empregarse como barreira ou escondedoiro.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="hints-digging-puzzles">
+<title
+>Quebracabezas de cavar</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Para cavar a través de máis de unha capa de tixolos, comeza escavando tantos tixolos como capas haxa, entra dentro, cava un tixolo menos e así.</para>
+</listitem>
+<listitem>
+<para
+>Se cavas a carón dunha escada ou dunha sucesión de barras, podes cavar para abaixo a través de calquera cantidade de capas e até cinco ou seis tixolos horizontalmente. Simplemente recúa cara a escada ou as barras despois de cavar cada capa e a seguir baixa un cadrado, sae correndo e cava a seguinte capa.</para>
+</listitem>
+<listitem>
+<para
+>Se un quebracabezas de escavar parece imposíbel, considera que podería conter algúns tixolos falsos. Pode que a capa inferior sexa falsa ou pode que podas colocarte sobre un tixolo falso e cavar ao lado del.</para>
+</listitem>
+<listitem>
+<para
+>Pensa na orde na que pensas recoller o ouro. Se o fas na orde correcta, escavar podería ser máis doado.</para>
+</listitem>
+<listitem>
+<para
+>Algúns niveis requiren que escaves completamente un muro de tixolos, apañes ouro e saias correndo de novo antes de que os tixolos se fechen e che atrapen.</para>
+</listitem>
+<listitem>
+<para
+>É posíbel caer mentres se cae por un espazo baleiro se se calcula ben. Non hai por que ter un inimigo sobre o que montar. Este é un erro que se converteu nunha <quote
+>funcionalidade</quote
+> e se emprega moitísimo nas partidas <quote
+>O estado do terror</quote
+>, <quote
+>Conta</quote
+> e <quote
+>A maldición da momia</quote
+>.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="hints-tricks-with-gold">
+<title
+>Trucos co ouro</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Se non podes chegar a unha peza de ouro, pensa en facer que o faga un inimigo. Pensa mesmo en empregares a testa dun inimigo como ponte para atravesares un foxo ou unha carricova.</para>
+</listitem>
+<listitem>
+<para
+>Nalgúns niveis hai unha pebida que hai que coller o último de todo porque fan falta as escadas agochadas para fuxir desa posición.</para>
+</listitem>
+<listitem>
+<para
+>Nalgunhas situacións pódese matar un inimigo sen soltar o ouro que leva. O ouro convértese nunha <quote
+>pebida perdida</quote
+>. Non se puntúa por facer que un inimigo perda unha pebida mais, cando menos, remátase o nivel.</para>
+</listitem>
+<listitem>
+<para
+>Se non hai ningures onde cavar, fai que os inimigos sigan a correr sobre o formigón e as partes de arriba das escadas para que vaian ceibando o ouro ao chou.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="hints-solving-difficult-levels">
+<title
+>Resolución dos niveis difíciles</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Tenta a modificar as opcións de velocidade até Principiante ou mesmo menos.</para>
+</listitem>
+<listitem>
+<para
+>Emprega a funcionalidade do Editor para <quote
+>atusmar</quote
+> onde están os tixolos falsos e as escadas agochadas.</para>
+</listitem>
+<listitem>
+<para
+>Emprega a funcionalidade do Editor para gardar o nivel nunha das túas propias partidas e entón edítamo para que non teñas que comezar no principio cando morras. Isto permite desenvolver a solución en etapas máis doadas.</para>
+</listitem>
+<listitem>
+<para
+>Nos quebracabezas de cavar, procura os tixolos falso nos que poidas caer e así terás un tixolo menos que cavar. Ou considera empregar un inimigo para que vaia por diante de ti para poderes colocarte na súa testa e cavar.</para>
+</listitem>
+<listitem>
+<para
+>Procura un tema ou truco no nivel, como baixar montado na testa dun inimigo, atrapar todos os inimigos nun foxo, atraer os inimigos a un recuncho no que fiquen e non che persigan, atraer os inimigos cara foxos que teñas que cruzar para obter ouro, facer que apañen eles o ouro ou atopa lugares nos que podas quedar quieto e facer que un inimigo se mova a onde ti queiras.</para>
+</listitem>
+<listitem>
+<para
+>Emprega <menuchoice
+><guimenu
+>Mover</guimenu
+> <guimenuitem
+>Mostrar unha solución...</guimenuitem
+></menuchoice
+> para comprobar se existe unha solución gravada dese nivel. Isto mostra maneiras de manexar as dificultades do nivel, aínda que non teñen por que ser as mellores. Moitas veces hai moitos xeitos de gañar un nivel e cada vez que o xogos verás pequenas diferenzas nos tempos, etc. Así que probabelmente non serás quen de copiar exactamente a solución gravada.</para>
+</listitem>
+<listitem>
+<para
+>Emprega <menuchoice
+><guimenu
+>Mover</guimenu
+> <guimenuitem
+>Reprodución instantánea</guimenuitem
+></menuchoice
+> ou <menuchoice
+><guimenu
+>Mover</guimenu
+><guimenuitem
+>Reproducir o último nivel</guimenuitem
+></menuchoice
+> para repetir un nivel até xusto antes de onde tes problemas, interrompe a repetición e tenta outro enfoque.</para>
+</listitem>
+</itemizedlist>
+</sect1>
+
+<!-- This is the place for a FAQ section, if required.
+<sect1 id="hints-faq">
+<title
+>FAQ</title>
+
+<qandaset id="faq">
+
+<qandaentry>
+<question>
+<para
+>Question 1</para>
+</question>
+<answer>
+<para
+>The answer</para>
+</answer>
+</qandaentry>
+
+</qandaset>
+</sect1>
+-->
+
+</chapter>
+
+<chapter id="credits-and-licenses">
+<title
+>Créditos e licenza</title>
+
+<para
+>&kgoldrunner; copyright 2003 Ian Wadham e Marco Krüger.</para>
+
+<para
+>O &kgoldrunner; está inspirado nun antigo xogo de computador chamado <trademark
+>Lode Runner</trademark
+>, escrito nos EUA por <trademark class="copyright"
+>Doug Smith</trademark
+> e publicado por vez primeira en 1983 por <trademark class="copyright"
+>Broderbund Software</trademark
+>. Apareceu orixinalmente nos computadores Apple II e Commodore 64, que foi ao que se engancharon a familia Wadham e Marco Krüger. Foi un éxito de vendas no seu tempo e é un dos grandes xogos informáticos de todos os tempos.</para>
+
+<para
+>Podes saber máis sobre o <trademark
+>Lode Runner</trademark
+> e as varias versións que se teñen publicado desde 1983 na páxina web <ulink url="http://entropymine.com/jason/lr"
+>Jason's Lode Runner Archive</ulink
+> (http://entropymine.com/jason/lr/). Ese sitio tamén ten a historia do desenvolvemento orixinal do xogo, no ficheiro <ulink url="http://entropymine.com/jason/lr/misc/ldhist.html"
+>misc/ldhist.html</ulink
+>. A Wikipedia tamén ten un bon artigo sobre o <trademark
+>Lode Runner</trademark
+>, con ligazóns interesantes a outros sitios.</para>
+
+<para
+>O &kgoldrunner; é un intento de conservar o espírito do xogo clásico orixinal nunha plataforma que sexa portábel e que dure máis do que uns poucos anos. Está dispoñíbel como software libre en forma de código fonte. Xa non se poden obter copias do xogo orixinal e as máquinas nas que se executaban están nos museos.</para>
+
+<para
+>Marco Krüger desenvolveu o &kgoldrunner; até a versión 0.3 por causa da morriña do xogo orixinal para o Commodore 64. Ian Wadham engadiu algunhas funcionalidades e niveis e creou a versión actual. O fillo maior de Ian, Peter, compuxo os cen niveis da partida <quote
+>Iniciación</quote
+> e os vinte niveis complicados de <quote
+>A vinganza de Peter W</quote
+>. Os demais niveis foron compostos por Ian, Peter, Marco Krüger e amigos e os outros fillos de Ian, Simon e Genevieve. </para>
+<para
+>Stuart Popejoy, de Nova Iorque, aportou a partida <quote
+>O estado do terror</quote
+> en 2007, a primeira partida de campionato que empregou as regras do &kgoldrunner; e unha das partidas máis difíciles de todos os tempos.</para>
+
+<para
+>Steve Mann, de Waterloo, no Canadá, aportou a partida <quote
+>Conta</quote
+> en 2008 e <quote
+>A maldición da momia</quote
+> en 2008. Ambas as dúas empregan as regras tradicionais e teñen temas interesantes, ademais de seren bastante difíciles.</para>
+
+<para
+>Peter Wadham compuxo os efectos sonoros en 2008 e Luciano Montanaro incorporou os sons no programa KGoldrunner.</para>
+
+<para
+>Grazas especiais para Mauricio Piacentini e Dmitry Suzdalev, que converteron o &kgoldrunner; ao &Qt; e &kde; 4 e aos moitos artistas gráficos que contribuíron aos gráficos e temas novos en SVG da versión &kde; 4: especialmente Mauricio Piacentini polo tema <quote
+>Predeterminado</quote
+> e os novos corredores, Johann Ollivier Lapeyre polas escadas e as barras, Eugene Trounev polos temas <quote
+>Cidade Cibernética</quote
+> e <quote
+>O tesouro de Exipto</quote
+> e, último mais non menos importante, Luciano Montanar polos dous temas <quote
+>Morriña</quote
+>, o tema con accesibilidade <quote
+>Branco sobre negro</quote
+>, melloras dos corredores, varios fondos e outras varias ideas.</para>
+
+<para
+>Tradución da documentación: Xosé Calvo - http://trasno.net/</para
+> 
+&underFDL; &underGPL; </chapter>
+
+<appendix id="installation">
+<title
+>Instalación</title>
+
+<sect1 id="how-to-obtain-kgoldrunner">
+<title
+>Como obter o &kgoldrunner;</title>
+&install.intro.documentation; </sect1>
+
+<sect1 id="compilation-and-installation">
+<title
+>Compilación e instalación</title>
+&install.compile.documentation; </sect1>
+
+</appendix>
+
+<appendix id="porting-kgoldrunner">
+<title
+>Pasaxe do &kgoldrunner; a outras plataformas</title>
+
+<para
+>O &kgoldrunner; está escrito en C++ empregando &Linux; e a versión de software libre da biblioteca portábel de obxectos e &GUI; de &Qt;. A versión actual pódese compilar e executar con &GUI; 4 e &kde; 4.</para>
+
+<para
+>O &kgoldrunner; depende das bibliotecas do &kde; (kdelibs e kdegames), que foron portadas a outras plataformas e é posíbel obter edicións de código aberto de &Qt; 4 para outras plataformas, polo que, en principio, debería ser posíbel compilar, construír e executar o &kgoldrunner; en plataformas diferentes de &Linux;.</para>
+
+</appendix>
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-general-insert-case: lower
+End:
+-->

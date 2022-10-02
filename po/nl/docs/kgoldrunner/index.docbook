@@ -1,0 +1,2448 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Dutch "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<book id="kgoldrunner" lang="&language;">
+
+<bookinfo>
+<title
+>Het handboek van &kgoldrunner;</title>
+<authorgroup>
+<author
+><firstname
+>Ian</firstname
+> <surname
+>Wadham</surname
+> <affiliation
+><address
+><email
+>iandw.au at gmail com</email
+></address
+></affiliation>
+</author>
+<author
+><firstname
+>Marco</firstname
+> <surname
+>Krüger</surname
+> </author>
+&Sander.Koning; 
+</authorgroup>
+
+<copyright>
+<year
+>2015</year>
+<holder
+>Ian Wadham</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2021-06-30</date>
+<releaseinfo
+>KDE Gear 21.04</releaseinfo>
+
+<abstract>
+<para
+>&kgoldrunner;, een spel van actie en het oplossen van puzzels. Ren door het doolhof, ontwijk uw vijanden, verzamel al het goud en klim naar het volgende niveau. <emphasis
+>Opmerking:</emphasis
+> de regels voor graven zijn in deze versie enigszins gewijzigd.</para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdegames</keyword>
+<keyword
+>spel</keyword>
+<keyword
+>arcade</keyword>
+<keyword
+>strategie</keyword>
+<keyword
+>vijanden</keyword>
+<keyword
+>steen</keyword>
+<keyword
+>stenen</keyword>
+<keyword
+>graven</keyword>
+<keyword
+>graven</keyword>
+<keyword
+>val</keyword>
+<keyword
+>vallen</keyword>
+<keyword
+>goud</keyword>
+<keyword
+>ladder</keyword>
+<keyword
+>ladders</keyword>
+<keyword
+>KGoldrunner</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="playing-kgoldrunner">
+<title
+>&kgoldrunner; spelen</title>
+
+<sect1 id="introduction">
+<title
+>Inleiding</title>
+<para
+>Speltype: arcade, strategie </para>
+<para
+>Aantal spelers: één </para>
+
+<para
+>&kgoldrunner; is een actiespel waar de helden door een doolhof rennen en uitwijken voor vijanden. U moet de held met de muis of het toetsenbord leiden en alle goudklompjes verzamelen, vervolgens kunt u naar het volgende niveau klimmen. Uw vijanden zitten ook achter het goud aan. En erger nog, ze zitten achter u aan! Als ze u vangen, doden ze u!</para>
+
+<para
+>Het probleem is dat u geen wapen hebt om <emphasis
+>hen</emphasis
+> te doden. Het enige dat u kunt doen is wegrennen, gaten in de vloer graven om ze vast te zetten of ze in een gebied lokken waar ze u geen pijn kunnen doen. Na korte tijd klimt een vastgezette vijand uit zijn gat, maar als dit daarvóór dichtgaat, gaat hij dood en verschijnt hij ergens anders opnieuw. </para>
+
+<para
+>Als u nog niet eerder gespeeld hebt, probeer dan het spel <quote
+>Oefening</quote
+>, dat u de regels en basistechnieken leert. Probeer dan het spel <quote
+>De initiatie</quote
+>. Experts zullen misschien het spel <quote
+>Uitdaging</quote
+>, <quote
+>De wraak van Peter W</quote
+>, <quote
+>Tellen</quote
+> of <quote
+>Vloek van de mummie</quote
+> leuk vinden, maar het spel <quote
+>De initiatie</quote
+> bevat 100 niveaus en sommige zijn erg moeilijk. Het is een goed spel om een topscore mee te behalen.</para>
+
+<para
+>Al deze spellen gebruiken traditionele regels, die vergelijkbaar zijn met die gebruikt op vroegere home-computers, zoals de Apple II of Commodore 64. De <quote
+>&kgoldrunner;</quote
+> en <quote
+>State of Terror</quote
+> spellen gebruiken &kgoldrunner; regels, waarin de vijanden sneller rennen en een meer agressieve zoekstrategie hebben dan in traditionele regels. Zie <link linkend="choice-of-rules"
+>Regels kiezen</link
+> voor details.</para>
+
+<para
+>Als u naar hogere niveaus opklimt, zult u merken dat &kgoldrunner; actie, strategie, tactiek en puzzels oplossen combineert &mdash; allemaal in één spel. Veel geluk!</para>
+
+</sect1>
+
+<sect1 id="typical-game">
+<title
+>Een typisch spel</title>
+
+<para
+>Hieronder ziet u een typisch spel tijdens het spelen. De held is in niveau 4 van het spel "Uitgebreide oefening". De onderste deel van het venster toont hoeveel levens hij over heeft en hoeveel punten hij gescoord heeft. Ook toont deze dat er een tip voor dit niveau beschikbaar is (zoals altijd in oefenspellen) en dat de actie gestopt is (tijdens het maken van deze schermafdruk) en vervolgd kan worden door op <keycap
+>P</keycap
+> of &Esc; te drukken.</para>
+
+<para
+>De held begon linksbovenin, groef een gat en viel op een kolom valse stenen en goud waar u hem nu kunt zien vallen. De vijand boven hem zal in het gat vallen, er vervolgens uitklimmen en daarboven vastzitten tot het einde van het niveau. Hij zou de held daar wat problemen kunnen gaan veroorzaken, omdat daar de verborgen ladders verschijnen als al het goud weg is. De held moet die gebruiken om naar het volgende niveau te komen.</para>
+
+<screenshot>
+<screeninfo
+>Typisch spel in &kgoldrunner;</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="tute008.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Typisch spel in &kgoldrunner;</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>De vijand rechts is aan het vallen en draagt wat goud. De derde vijand zal zo direct een ladder afdalen om de held op te jagen, die beide vijanden zal moeten ontwijken als hij de vloer bereikt. Dit niveau toont ook stenen, waar u doorheen kunt graven, en beton, waar u niet doorheen kunt graven, en bevat veel vallen (valse stenen) die er precies hetzelfde uitzien als gewone stenen.</para>
+
+</sect1>
+
+<sect1 id="how-to-play">
+<title
+>Hoe te spelen</title>
+
+<sect2>
+<title
+>Het spel starten</title>
+
+<para
+>&kgoldrunner; begint door een opgeslagen demonstratie van een spel te tonen. U kunt dit beëindigen door met de muis op het spelgebied te klikken, op de spatiebalk te drukken of een menu-item te selecteren of sneltoets (zoals <menuchoice
+> <guimenu
+>Spel</guimenu
+><guimenuitem
+>Nieuw spel...</guimenuitem
+></menuchoice
+> of <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+>). U kunt deze demonstratie in het vervolg overslaan door het menu-item <menuchoice
+> <guimenu
+>Instellingen</guimenu
+><guimenuitem
+>Demo bij starten</guimenuitem
+> </menuchoice
+> te gebruiken. U kunt het ook weer opnieuw op elk moment bekijken via het menu-item <menuchoice
+><guimenu
+>Zet</guimenu
+><guimenuitem
+>Demo</guimenuitem
+></menuchoice
+>. </para>
+
+<para
+>Als u de demo hebt overgeslagen of de muis of spatiebalk hebt gebruikt om het te beëindigen, zal snelstart popup-dialoog getoond worden met de namen, nummer en een voorbeeld van het laatste spel en niveau dat u hebt geladen of, als u het niet eerder hebt gespeeld, dezelfde informatie voor oefenniveau 1.</para>
+
+<para
+>Klik op de knop <guibutton
+>SPELEN</guibutton
+> om onmiddellijk met spelen te beginnen. Anders kunt u op de knop <guibutton
+>Afsluiten</guibutton
+> klikken, op de knop <guibutton
+>Nieuw spel...</guibutton
+> of de knop <guibutton
+>Menu gebruiken</guibutton
+>. De eerste zal &kgoldrunner; afsluiten, als u niet wilt spelen, de tweede zal een dialoog <link linkend="select-game-dialog"
+>Spel kiezen</link
+> tonen, waarin u een ander spel en niveau kunt kiezen en de laatste zal de dialoog beëindigen, waarna u vrij bent om de menu's van &kgoldrunner; te gebruiken.</para>
+
+<para
+>Als u een spel en niveau hebt gekozen, verschijnt het en de muiscursor bevindt zich op de plaats van de held. In een oefenspel verschijnt er een mededeling voor dat het niveau begint. U begint met spelen door de muisaanwijzer te verplaatsen, te klikken of een toets in te drukken die de held bestuurt (&eg; &Space;), maar gebruik niet <keycap
+>Q</keycap
+>, <keycap
+>S</keycap
+>, <keycap
+>P</keycap
+> of &Esc;. U start elk niveau op dezelfde manier.</para>
+
+<para
+>U hebt vijf levens in het begin en krijgt een bonusleven voor elk afgerond niveau.</para>
+
+</sect2>
+
+<sect2 id="mouse-control">
+<title
+>Bewegen</title>
+
+<para
+>U bestuurt de held standaard met de muis, maar u kunt hem ook met het  toetsenbord (<link linkend="keyboard-control"
+>zie onder</link
+>) besturen of, op een laptop, door een mix van toetsenbord voor graven en het touchpad of ander aanwijsapparaat voor het leiden van de held.</para>
+
+<para
+>De held beweegt naar waar u de pijl ook plaatst. Hij kan niet zo snel bewegen als u de muis kunt verplaatsen, maar zal zijn best doen. Als de pijl boven of onder zijn niveau is, gaat hij omhoog of omlaag als er een ladder of een plek om te vallen beschikbaar is. Anders beweegt hij horizontaal tot hij onder, boven of precies op de pijl staat. U kunt hem eenvoudige paden (zoals _ | L of U) laten volgen, maar maak niet te veel bochten ver vóór hem.</para>
+
+<para
+>U kunt naar links en rechts bewegen over stenen, beton, ladders en balken en omhoog en omlaag over ladders. Als u op een leeg veld of een goudklompje staat en er geen steen, beton, ladder of balk is om u tegen te houden, neemt de zwaartekracht het over en valt u. U valt ook als u naar beneden beweegt vanaf een balk of de onderkant van een ladder, dus houd de muisaanwijzer daarboven als u zich vast wilt blijven houden.</para>
+
+</sect2>
+
+<sect2 id="keyboard-control">
+<title
+>Toetsenbordbesturing</title>
+
+<para
+>Als u dat liever hebt, kunt u het toetsenbord gebruiken om de held te besturen. De standaardtoetsen zijn de pijltoetsen en <keycap
+>I</keycap
+>, <keycap
+>J</keycap
+>, <keycap
+>K</keycap
+> en <keycap
+>L</keycap
+> (als eerbetoon aan het originele spel op de Apple II), met de toetsen <keycap
+>Z</keycap
+> en <keycap
+>C</keycap
+> om te graven. U kunt met één hand spelen door <keycap
+>U</keycap
+>, <keycap
+>I</keycap
+>, <keycap
+>O</keycap
+>, <keycap
+>J</keycap
+>, <keycap
+>K</keycap
+>, <keycap
+>L</keycap
+> en &Space; te gebruiken (op een <quote
+>QWERTY</quote
+>-toetsenbord) of met twee handen door de pijltoetsen, &Space;, <keycap
+>Z</keycap
+> en <keycap
+>C</keycap
+> te gebruiken. U kunt ook andere toetsen kiezen in het menu-item <menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Sneltoetsen instellen</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>U schakelt over naar toetsenbordmodus door een van de toetsen in te drukken waarmee u de held kunt besturen of selecteren van menu-item <menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Toetsenbordbesturing</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>Met de bewegingstoetsen (<keycap
+>I</keycap
+>, <keycap
+>J</keycap
+>, <keycap
+>K</keycap
+>, <keycap
+>L</keycap
+> of pijltoetsen) begint de held omhoog, omlaag, naar links of naar rechts te bewegen. Hij blijft in die richting bewegen zolang hij kan, totdat u een andere bewegingstoets of &Space; indrukt om te stoppen. In muis- of laptopmodus stopt hij automatisch als hij de aanwijzer bereikt.</para>
+
+<para
+>Een waarschuwing: het toetsenbord gebruiken is veel moeilijker, op lange termijn, dan de muis gebruiken. Zie de muis als een joystick.</para>
+
+</sect2>
+
+<sect2 id="pausing">
+<title
+>Een pauze nemen</title>
+
+<para
+>U kunt het spel op ieder moment stoppen door een pauzetoets in te drukken (de standaard is <keycap
+>P</keycap
+> of &Esc;). U kunt verdergaan door de toets Pauze opnieuw in te drukken. Er is ook een menu-item <menuchoice
+><guimenu
+>Spel</guimenu
+> <guimenuitem
+>Pauzeren</guimenuitem
+></menuchoice
+>, maar het probleem is om met de aanwijzer daarboven te komen zonder de held te bewegen en in problemen te raken.</para>
+
+<tip
+><para
+>Als u het menu van &kgoldrunner; wilt gebruiken of werk in een ander venster wilt doen, gebruik dan altijd een pauzetoets om het spel te onderbreken. Anders blijft de held de aanwijzer volgen en zou hij in problemen kunnen raken.</para
+></tip>
+
+</sect2>
+
+<sect2 id="winning">
+<title
+>Een niveau winnen</title>
+
+<para
+>Het doel van het spel is om al het goud te verzamelen, door er doorheen te lopen of te vallen. Als er geen meer over is, moet u naar de bovenkant van het speelveld bewegen om naar het volgende niveau te komen. Vaak verschijnen er verborgen ladders als u het laatste goud verzameld hebt die u kunt gebruiken om naar boven te klimmen. Soms zijn er geen verborgen ladders. Ook, hoewel zelden, kunnen de verborgen ladders een afleiding zijn en leiden ze u op de verkeerde weg.Als het niveau geen goud heeft, dan zijn er geen verborgen ladders en zult u uw weg naar de bovenkant van het speelveld moeten vinden.</para>
+
+</sect2>
+
+<sect2 id="false-bricks">
+<title
+>Pas op voor valse stenen</title>
+
+<para
+>Valse stenen, ook wel bekend als doorvalstenen of vallen, vormen de andere verborgen eigenschap van het spel. Ze lijken precies op gewone stenen, maar als u er overheen rent valt u. Dit kan slecht zijn als er een vijand of een put beneden is, of goed als er wat goud is.</para>
+
+</sect2>
+
+<sect2 id="enemies">
+<title
+>Vijanden</title>
+
+<para
+>Vijanden bewegen erg vergelijkbaar met de manier waarop de held beweegt. He hoofdverschil is wanneer ze in een gat vallen dat de held heeft gegraven (zie hieronder <link linkend="importance-of-digging"
+>De belangrijkheid van graven</link
+>). </para>
+<para
+>Ze pakken goud altijd of willekeurig op, afhankelijk van de instellingen van het spel, en laten goud willekeurig op steen, beton of de bovenkant van een ladder vallen. Als een vijand het laatste stukje goud draagt moet u het van hem wegkrijgen voordat u het niveau kunt afmaken.</para>
+
+<para
+>Als een vijand u raakt gaat u dood en moet u het niveau overnieuw starten als u nog levens over hebt. Echter, het is mogelijk om op het hoofd van een vijand te lopen of te staan en u kunt met een vijand meegaan naar beneden als hij valt. Sommige geavanceerde niveaus vereisen zulke acties.</para>
+
+</sect2>
+
+<sect2 id="losing-a-level">
+<title
+>Een niveau verliezen</title>
+
+<para
+>Zoals hierboven uitgelegd, kunt u een niveau en een leven verliezen door een vijand aan te raken. U kunt ook verliezen door in een uitgegraven steen opgesloten te raken als deze weer dichtgaat. Verder kunt u zelfmoord plegen door op de toets <keycap
+>Q</keycap
+> te drukken of het menu-item <menuchoice
+><guimenu
+>Spel</guimenu
+><guimenuitem
+>Held doden</guimenuitem
+></menuchoice
+> te gebruiken. Waarom zou u dat willen doen? Wel, soms raakt u opgesloten op een plek waaruit u niet kunt ontsnappen. U blijft voor eeuwig opgesloten tenzij u zelfmoord pleegt!</para>
+
+</sect2>
+
+<sect2 id="importance-of-digging">
+<title
+>Het belang van graven</title>
+
+<para
+>Graven is een van de krachtigste tactieken die u bezit. Om een gat in een steen links of rechts van u te graven, klikt u de <mousebutton
+>linker</mousebutton
+> of de <mousebutton
+>rechter</mousebutton
+> muisknop, of gebruikt u een van de graaftoetsen (standaard <keycap
+>Z</keycap
+>, <keycap
+>C</keycap
+>, <keycap
+>U</keycap
+>, <keycap
+>O</keycap
+>).</para>
+
+<para
+>U kunt een aankomende vijand ontwijken door een gat te graven, te wachten tot hij erin valt en dan snel over zijn hoofd te rennen. Op hetzelfde moment kunt u het eventuele goud dat hij draagt verzamelen. Normaal gesproken kunt u twee gaten graven om twee vijanden te vangen en over hen weg te rennen, maar dit werkt zelden als de vijanden gescheiden zijn of als er meer dan twee zijn.</para>
+
+<para
+>U kunt vijanden doden door genoeg gaten in hun pad te graven. Meestal zijn er twee of meer gaten nodig om één vijand te doden en tot acht of meer gaten om er vier of vijf te doden. Als vijanden dood gaan, verschijnen ze onmiddellijk opnieuw. Afhankelijk van of het spel de regels en instellingen van <quote
+>&kgoldrunner;</quote
+> of <quote
+>traditionele</quote
+> regels volgt, is dit op de plek waar ze in het niveau begonnen of bovenaan het speelveld (zie <link linkend="choice-of-rules"
+>Regels kiezen</link
+>).</para>
+
+<para
+>Tenslotte, op veel niveaus is het goud niet onmiddellijk beschikbaar en moet u graven om het te verkrijgen. Enkele van deze graafpuzzels zijn behoorlijk complex en moet u de graafvolgorde uitwerken en daarna in in een beperkte tijd uitvoeren alvorens u het niveau kunt voltooien.</para>
+
+</sect2>
+
+<sect2 id="rules-of-digging">
+<title
+>Regels van het graven</title>
+
+<para
+>U klikt op de <mousebutton
+>Linker</mousebutton
+> of <mousebutton
+>Rechter</mousebutton
+> muisknop om een gat in een steen links of rechts van u te graven of u gebruikt de toetsen <keycap
+>Z</keycap
+>, <keycap
+>C</keycap
+>, <keycap
+>U</keycap
+> of <keycap
+>O</keycap
+>).</para>
+
+<para
+>Je kunt alleen stenen opgraven, niets anders. Het gat zal in de vloer aan de ene of andere kant verschijnen (&ie; onder en links of rechts van de held). Er moet een lege ruimte of gat boven de steen zijn (&ie; niet graven onder een ladder, balk, goud, steen, beton of valse steen). Je kunt rennen, stil staan of omlaag op een vallende vijand rijden wanneer je graaft. Graven bij vallen in de lucht of valse stenen is toegestaan in enkele spelen maar niet in andere. Zie onderstaand <link linkend="dig-while-falling"
+>Graven tijdens vallen</link
+>.</para>
+
+<para
+>De held kan in elke richting door gegraven gaten heen bewegen, inclusief er doorheen vallen om aan een vijand te ontsnappen. Na korte tijd gaan gegraven gaten weer dicht, dus u moet ze snel gebruiken. Bereid het graven voor. Er is geen tijd om te stoppen en na te denken terwijl u graaft.</para>
+
+<para
+>Vijanden raken altijd gevangen als ze in een gegraven gat vallen en zullen altijd omhoog klimmen om eruit te raken. De tijd dat ze in een gat doorbrengen is minder dan de tijd die het gat open blijft, dus om vijanden te doden moet u normaal gesproken meerdere gaten snel achter elkaar graven. Vijanden laten goud altijd los als ze in een gat vallen, dus u kunt snel het hoofd van een vijand oprennen en het goud grijpen voordat u eruit klimt.</para>
+
+<para
+>Vijanden vallen niet van bovenaf naar beneden door een gat heen, maar afhankelijk van de spelregels en het menu <guimenu
+>Instellingen</guimenu
+> (zie <link linkend="choice-of-rules"
+>Regels kiezen</link
+>), kunnen ze horizontaal een gegraven gat inrennen en niet opgesloten raken en kunnen ze daaruit vallen of een ander gat inrennen of het gat uitrennen. Diverse niveaus die de <quote
+>Traditionele</quote
+> regels volgen, zijn ervan afhankelijk dat een vijand door een gat heen kan rennen. Sommige niveaus die de <quote
+>&kgoldrunner;</quote
+> regels volgen hangen af van een vijand die NIET door een gat kan rennen.</para>
+
+</sect2>
+
+<sect2 id="dig-while-falling">
+<title
+>Graven tijdens vallen</title>
+
+<para
+>In het originele spel op Apple II en Commodore 64, moest de held ondersteund worden op iets vast bij graven: een ladder, beton, een steen, een balk --- of op het hoofd van een vijand. Deze regel was in &kgoldrunner; over het hoofd gezien en op een dag ontdekte de zoon van de auteur dat je kon graven tijdens vallen! Hij maakte onmiddellijk een niveau om dit uit te buiten. Andere samenstellers van spellen hebben nu hetzelfde gedaan. Je moet graven tijdens het vallen in recente spellen van de kampioenschapsvaardigheid zoals <quote
+>State of Terror</quote
+>, <quote
+>Curse of the Mummy</quote
+> en <quote
+>Gold Rush</quote
+>.</para>
+
+<para
+>Aan de andere kant maakt graven tijdens het vallen oudere spellen te gemakkelijk. Dus vanaf december 2015 is het verboden in de spellen <quote
+>Inleiding</quote
+>, <quote
+>Geavanceerde inleiding</quote
+>, <quote
+>Initiatie</quote
+>, <quote
+>&kgoldrunner;</quote
+> en <quote
+>Uitdagingen</quote
+>. Het spel <quote
+>Vengeance of Peter W</quote
+> staat het toe in slechts één niveau en het nieuwe spel <quote
+>Beginner's Luck</quote
+>, die zich richt op spelers van het eerste uur, staat het niet toe.</para>
+
+</sect2>
+
+<sect2 id="winning-and-losing-the-game">
+<title
+>Het spel winnen en verliezen</title>
+
+<para
+>U wint door het laatste niveau in het spel af te maken. U verliest als uw laatste leven over is. In beide gevallen kunt u uw prestatie in <quote
+>&kgoldrunner;'s galerij der groten</quote
+> opnemen, als u één van de tien topscores voor dat spel hebt behaald.</para>
+
+</sect2>
+
+<sect2 id="recordings-replays-and-solutions">
+<title
+>Opnemen, afspelen en oplossingen</title>
+
+<para
+>Alle niveaus in spellen worden opgenomen tijdens het spelen, zodat u elk niveau kan afspelen dat u eerder hebt gespeeld. Ook hebben sommige niveaus opgeslagen oplossingen, die kunnen helpen om uit te werken hoe deze te winnen. Gebruik gewoon het menu <guimenu
+>Zet</guimenu
+> en opties <guimenuitem
+>Een oplossing tonen</guimenuitem
+>, <guimenuitem
+>Onmiddellijk afspelen</guimenuitem
+>, <guimenuitem
+>Laatste niveau afspelen</guimenuitem
+> en <guimenuitem
+>Een niveau afspelen</guimenuitem
+>. De oplossingen en het afspelen kan op elk moment onderbroken worden door met de muis op het speelveld te klikken, de spatiebalk in te drukken of een menu-item of sneltoets te gebruiken (zoals <menuchoice
+><guimenu
+>Spel</guimenu
+> <guimenuitem
+>Nieuw spel...</guimenuitem
+></menuchoice
+> of <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+>).</para>
+
+<para
+><guimenuitem
+>Direct afspelen</guimenuitem
+> en <guimenuitem
+>Laatste niveau afspelen</guimenuitem
+> laat u doorgaan met spelen na een interruptie. Dus als de dingen niet goed gaan, dan kunt u <guimenuitem
+>Direct afspelen</guimenuitem
+> gebruiken, het afspelen op een bepaald punt onderbreken en dan een andere benadering proberen. Of als de held al dood is, dan kunt u op dezelfde manier <guimenuitem
+>Laatste niveau afspelen</guimenuitem
+> gebruiken. Deze mogelijkheden kunnen u helpen om een oplossing in stappen op te bouwen voor een moeilijk niveau, maar hen gebruiken maakt elke hoge score, waaraan u zou kunnen werken, ongeldig.</para>
+
+</sect2>
+</sect1>
+
+<sect1 id="scoring">
+<title
+>Scoren</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Begin met 5 levens</para>
+</listitem>
+<listitem>
+<para
+>Verlies een leven en doe een niveau overnieuw als de held sterft</para>
+</listitem>
+<listitem>
+<para
+>Krijg een leven erbij als u een niveau voltooit</para>
+</listitem>
+<listitem>
+<para
+>75 punten voor het opsluiten van een vijand</para>
+</listitem>
+<listitem>
+<para
+>75 punten voor het doden van een vijand</para>
+</listitem>
+<listitem>
+<para
+>250 punten voor het verzamelen van goud</para>
+</listitem>
+<listitem>
+<para
+>1500 punten voor het voltooien van een niveau</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="choice-of-rules">
+<title
+>Regels kiezen</title>
+
+<para
+>De meeste regels van &kgoldrunner; zijn beschreven in de sectie <link linkend="how-to-play"
+>Hoe te spelen</link
+>, maar er zijn twee belangrijke soorten regels die de manier van spelen beïnvloeden: <quote
+>traditioneel</quote
+> en <quote
+>&kgoldrunner;</quote
+>. Het is belangrijk om te weten welke instellingen van kracht zijn als u een spel aan het spelen bent. &kgoldrunner; kiest automatisch de juiste instellingen voor een spel als u een van zijn niveaus speelt en de regels van het spel getoond worden in het dialoogvak <link linkend="select-game-dialog"
+>Spel kiezen</link
+>.</para>
+
+<para
+>Het belangrijkste verschil tussen de <quote
+>traditionele</quote
+> en <quote
+>&kgoldrunner;</quote
+>-instellingen is de manier waarop de vijanden hun weg naar de held kiezen.</para>
+
+<itemizedlist>
+<listitem>
+<para
+>Met de <quote
+>traditionele</quote
+> methode zoeken vijanden naar verticale paden (ladders en vallen) en proberen ze hoger dan de held of op dezelfde hoogte te blijven. Ze gaan alleen onder hem als een laatste redmiddel. De vijanden doen geen poging om de held in horizontale richting te benaderen totdat ze op dezelfde hoogte zijn en een horizontaal pad kunnen vinden. Dit leidt tot situaties waarin u vijanden die ver weg van u zijn kunt <quote
+>besturen</quote
+> en ze voor u kunt laten werken of ze op zijn minst van u weg laten blijven.</para>
+</listitem>
+<listitem>
+<para
+>De <quote
+>&kgoldrunner;</quote
+>-methode zoekt afwisselend naar horizontale en verticale paden, hetgeen er voor zorgt dat de vijanden aan uw kant van het speelveld blijven en op ongeveer dezelfde hoogte (&ie; ze zijn agressiever en niet zo gemakkelijk te manipuleren). Dat leidt tot een meer met actie gevuld spel, maar ook tot minder mogelijkheden voor strategie en het oplossen van puzzels. Het spel <quote
+>State of Terror</quote
+>, toegevoegd in 2007, gebruikt <quote
+>&kgoldrunner;</quote
+> regels en heeft zeer veel op te lossen puzzels terwijl u aan het rennen bent. Dat maakt het zo'n moeilijk spel.</para>
+</listitem>
+</itemizedlist>
+
+<para
+>De andere verschillen staan hieronder:</para>
+
+<itemizedlist>
+<listitem>
+<para
+>In het <quote
+>&kgoldrunner;</quote
+>-spel bewegen de held en de vijanden met een vaste snelheid en doen stenen er altijd even lang over om dicht te gaan. In het <quote
+>traditionele</quote
+> spel hangt de speelsnelheid af van het aantal vijanden in een niveau. Hoe meer vijanden, des te langzamer ze rennen. De held wordt ook langzamer, maar minder merkbaar.</para>
+</listitem>
+<listitem>
+<para
+>In het <quote
+>traditionele</quote
+> spel verzamelen vijanden altijd goudklompjes als ze er overheen rennen. In het <quote
+>&kgoldrunner;</quote
+>-spel is dit een willekeurige keuze. De vijanden laten in beide speltypes goud na een willekeurige tijd vallen.</para>
+</listitem>
+<listitem>
+<para
+>Vijanden kunnen horizontaal door gaten rennen in het <quote
+>traditionele</quote
+> spel maar niet in het <quote
+>&kgoldrunner;</quote
+>-spel. De truc in diverse <quote
+>traditionele</quote
+> niveaus is het vrijlaten van een vijand van achter een stenen muur. Als u de stenen weggraaft, rent hij het gat uit. In sommige niveaus van <quote
+>&kgoldrunner;</quote
+>, aan de andere kant, moet er zich in verbergen of achter een opgegraven steen schuilen om aan een vijand te ontsnappen.</para>
+</listitem>
+<listitem>
+<para
+>Als vijanden doodgaan in het <quote
+>&kgoldrunner;</quote
+>-spel gaan ze terug naar waar ze het niveau begonnen. In het <quote
+>traditionele</quote
+> spel verschijnen ze opnieuw op een willekeurige plek bovenaan het speelveld. Dit maakt een groot verschil, zeker in niveaus waar u vijanden goudklompjes voor u moet laten verzamelen, maar ook omdat de vijanden net zo snel op u neer komen vallen als u ze kunt doden.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+</chapter>
+
+<chapter id="select-game-dialog">
+<title
+>Het dialoogvenster Spel kiezen</title>
+
+<sect1 id="select-game-dialog-box">
+<title
+>Het dialoogvenster Spel kiezen gebruiken</title>
+<screenshot>
+<screeninfo
+>Het dialoogvenster Spel kiezen</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="select.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Het dialoogvenster Spel kiezen</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Deze dialoog verschijnt wanneer u de actie <guimenuitem
+>Nieuw spel</guimenuitem
+> selecteert en ook wanneer u opties uit het menu <guimenu
+>Bewerken</guimenu
+> selecteert of een afspeeloptie uit het menu <guimenu
+>Zet</guimenu
+>. U gebruikt het om een spel te kiezen en een niveau te spelen, af te spelen, te bewerken, op te slaan, een zet te doen, te hernummeren of te  verwijderen. De hoofdknop onderaan is de knop <guibutton
+>OK</guibutton
+>. Zijn label wijzigt zich volgens wat u aan het doen bent: in dit geval het kiezen van een spel en een te spelen niveau.</para>
+
+<sect2 id="selecting-a-game">
+<title
+>Een spel kiezen</title>
+
+<para
+>Er zijn diverse <quote
+>systeem</quote
+>spellen die met &kgoldrunner; meegeleverd worden en u kunt uw eigen spellen toevoegen met de bewerker. Al deze spellen verschijnen in de lijst bovenaan de dialoog, gegroepeerd per moeilijkheidsgraad. De oefenspellen verschijnen als laatste in de lijst en de spellen voor normale vaardigheden verschijnen eerst. Om één van de spellen te selecteren klikt u eenvoudig op zijn naam.</para>
+
+<para
+>De lijst toont welke regels van toepassing zijn op elk spel (zie <link linkend="choice-of-rules"
+>Regels kiezen</link
+>) en hoeveel niveaus er zijn. Wanneer u een spel selecteert, dan geeft een vak verder naar onder in het venster u meer informatie over dat spel.</para>
+
+</sect2>
+
+<sect2 id="selecting-a-level">
+<title
+>Een niveau kiezen</title>
+
+<para
+>U kunt kiezen om een spel op elk niveau te starten, maar het beste is om op niveau 1 te starten en zich omhoog te werken, speciaal als u gaat voor een hoge score. In het algemeen zijn de hoger genummerde niveaus moeilijker.</para>
+
+<para
+>Wanneer u begint met de dialoog <guilabel
+>Spel selecteren</guilabel
+>, zal het standaard niveau iets redelijks zijn, zoiets als het laatste niveau dat u hebt gespeeld of bewerkt. U kunt een ander niveau kiezen met de pijlen in het afrolvak of door de schuifbalk te verplaatsen. De pijlen aan de uiteinden verhogen of verlagen het getal met één. U kunt de schuifbalk ook met de &LMB; verslepen en zo het getal snel veranderen. Of met 10 verlagen of verhogen door boven of onder de schuifbalk te klikken.</para>
+
+<para
+>Met het veranderen van het nummer verschijnt een voorbeeld van het niveau in het kleine voorbeeldvenster en verschijnt ook de naam van het niveau (als die er is).</para>
+
+</sect2>
+
+<sect2 id="completing-selection">
+<title
+>Uw selectie voltooien</title>
+
+<para
+>Als u een spel en niveau hebt gekozen, klikt u op de hoofdknop onderaan om door te gaan met bewerken, spelen of afspelen.</para>
+
+<para
+>Totdat u dat doet verandert er niets, dus u kunt altijd op <guibutton
+>Annuleren</guibutton
+> klikken en doorgaan met waar u daarvoor mee bezig was. Merk op dat de actie gepauzeerd wordt als de dialoog actief is, u kunt dus doorgaan met spelen waar u gebleven was als u <guibutton
+>Annuleren</guibutton
+> kiest.</para>
+
+</sect2>
+
+<sect2 id="saving-changes">
+<title
+>Wijzigingen opslaan</title>
+
+<para
+>Als u een optie uit de menu's <guimenu
+>Spel</guimenu
+>, <guimenu
+>Bewerken</guimenu
+> of <guimenu
+>Zet</guimenu
+> kiest en u daarvoor aan het bewerken was en uw wijzigingen niet hebt opgeslagen, dan krijgt u een vraag of u wilt opslaan, uw wijzigingen wilt verliezen, of wilt doorgaan. De nieuwe actie of het dialoogvenster verschijnt pas als u een beslissing over uw vorige werk hebt gemaakt.</para>
+
+</sect2>
+
+<sect2 id="any-level">
+<title
+><quote
+>Elk</quote
+> niveau spelen of bewerken</title>
+
+<para
+>Let op dat de menu's en de dialoog u de mogelijkheid geven om <quote
+>elk</quote
+> niveau te kiezen om te spelen of te bewerken. Als u een spel na niveau 1 start is dat OK, maar u zult niet zo'n hoge score krijgen. Ervaren spelers spelen vaak liever hogere niveaus voor de lol in plaats van proberen een topscore te krijgen of willen wellicht op hogere niveaus <quote
+>oefenen</quote
+> voordat ze een topscore proberen te krijgen.</para>
+
+<para
+>U kunt ook systeemniveaus kiezen om te bewerken, dat mag ook, maar moet het wel in een van uw eigen spellen opslaan: niet in het systeemspel. U wilt bijvoorbeeld een erg moeilijk niveau wijzigen, zodat u niet steeds teruggaat naar het begin van het niveau als u dood gaat.</para>
+
+<para
+>Om te zien wat dit betekent, probeert u het spel <quote
+>Uitdaging</quote
+>, niveau 16, <quote
+>De drie musketiers</quote
+>. Dat niveau bevat ongeveer tien moeilijke puzzels. Als u puzzel 1 hebt opgelost, wilt u die niet steeds opnieuw doen terwijl u aan puzzel 2 bezig bent. Het geheim is om een bewerkbare kopie te maken en die steeds bij te werken en het beginpunt van de held aan te passen, totdat u alle puzzels opgelost hebt. Dan kunt u de echte versie gaan proberen.</para>
+
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="menu-reference">
+<title
+>De menugids</title>
+
+<sect1 id="menu-overview">
+<title
+>Overzicht van de menu's</title>
+
+<variablelist>
+<varlistentry>
+<term
+><link linkend="game-menu"
+><guimenu
+>Spel</guimenu
+></link
+></term>
+<listitem>
+<para
+>Dit menu bevat opties die het spelverloop beïnvloeden, zoals spellen starten en beëindigen, spellen opslaan en opgeslagen spellen laden, topscores tonen (als die beschikbaar zijn). Bevat ook de optie <guimenuitem
+>Stoppen</guimenuitem
+> of u kunt ook stoppen door op de <guiicon
+>X</guiicon
+> rechts bovenaan het venster van &kgoldrunner; te klikken.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link linkend="move-menu"
+><guimenu
+>Zet</guimenu
+></link
+></term>
+<listitem>
+<para
+>Dit menu bevat een optie om een tip te krijgen (als er een is). Kampioenschap- en oefenspellen hebben tips op elk niveau. Andere spellen hebben zelden tips. Het bevat ook opties om opnamen van spellen af te spelen, zoals bij het doen van demonstraties, waarbij voorbeelden van oplossingen worden getoond en uw eigen inspanningen opnieuw worden afgespeeld.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link linkend="view-menu"
+><guimenu
+>Beeld</guimenu
+></link
+></term>
+<listitem>
+<para
+>Dit menu bevat een optie om de modus volledig scherm af te wisselen.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link
+linkend="editor-menu"
+><guimenu
+>Bewerken</guimenu
+></link
+></term>
+<listitem>
+<para
+>Dit menu bevat alles dat u nodig hebt om uw eigen spellen en niveaus te maken en te onderhouden, inclusief het veranderen van de niveauvolgorde, het verplaatsen van niveaus tussen spellen en het verwijderen van niveaus. Als u uw niveaus reorganiseert, blijven de niveaunummers opeenvolgend en worden niveaus automatisch opnieuw genummerd.</para>
+<para
+>Als u de spelbewerker gebruikt, verschijnt een grafische werkbalk met tekstballonnen onder de menubalk. Zie de <link linkend="game-editor"
+>spelbewerker</link
+> voor meer details over het maken en bewerken van &kgoldrunner;-niveaus.</para
+> </listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link
+linkend="settings-menu"
+><guimenu
+>Instellingen</guimenu
+></link
+></term>
+<listitem>
+<para
+>Dit menu bevat verschillende groepen instellingen van &kgoldrunner;, inclusief de keuze tussen muis- toetsenbord- of hybriede (laptop) besturing en de keuzes voor thema's en speelsnelheid. De huidige selecties zijn ingeschakeld. De instellingen worden automatisch gekozen als u begint te spelen, maar u kunt dit menu gebruiken om ze naar wens aan te passen.</para>
+
+<para
+>Er is ook een optie om sneltoetsen en besturingstoetsen voor uw held opnieuw toe te wijzen.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link linkend="help-menu"
+><guimenu
+>Help</guimenu
+></link
+></term>
+<listitem>
+<para
+>Het menu <guimenu
+>Help</guimenu
+> biedt toegang tot de opties Handboek van &kgoldrunner; (dit document) <guimenuitem
+>Info over &kgoldrunner;</guimenuitem
+> en <guimenuitem
+>Info over KDE</guimenuitem
+>.</para>
+<para
+>Er is ook een optie om een bug of wens te rapporteren.</para>
+<para
+>Als u een suggestie wilt doen of nieuwe niveaus wilt bijdragen, dan kunt u het huidige e-mailadres van de auteur vinden in de optie <guimenuitem
+>Over &kgoldrunner;</guimenuitem
+>.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="game-menu">
+<title
+>Het menu Spel</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Spel</guimenu
+><guimenuitem
+>Nieuw spel...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Toont de dialoog <guilabel
+>Spel selecteren</guilabel
+> (zie <link linkend="select-game-dialog-box"
+> De dialoog Spel selecteren gebruiken</link
+>), waar u een spel en een niveau in dat spel kiest. In het begin is het het gemakkelijkst om op niveau 1 te beginnen, omdat de niveaus ongeveer gerangschikt zijn in volgorde van moeilijkheid. Ook is het het beste daar te beginnen als u voor een hoge score gaat.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Spel</guimenu
+><guimenuitem
+>Opgeslagen spel laden...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Toont een tabel met eerder opgeslagen spellen, gesorteerd met de nieuwste eerst. Elke regel geeft spel, niveau, aantal levens, score, dag van de week en datum en tijd aan. Als u een regel selecteert en op de knop <guibutton
+>OK</guibutton
+> klikt, start het spel aan het begin van dat niveau, met het aantal levens en de score zoals u ze opgeslagen hebt.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>Y</keycap
+></shortcut
+> <guimenu
+>Spel</guimenu
+><guimenuitem
+>Volgende niveau spelen</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Laadt het volgende niveau in het huidige spel, klaar o te spelen en zonder enige verdere dialoog. U kunt dit gebruiken om snel door de niveaus van een spel te bladeren.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>S</keycap
+></shortcut
+> <guimenu
+>Spel</guimenu
+><guimenuitem
+>Spel opslaan...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Slaat huidige spel, niveau, levens en score op. Deze optie slaat de positie en score op zoals aan het begin van het huidige niveau. U kunt opslaan wanneer u midden in een niveau bent, maar &kgoldrunner; slaat de positie (en score) op zoals deze aan het begin van het niveau waren. U krijgt daar een waarschuwing over. Voordat u deze optie gebruikt zou u een pauzetoets moeten indrukken (<keycap
+>P</keycap
+> of &Esc;) om het spel te onderbreken om de muis te bewegen, maar het is veel eenvoudiger om de toets <keycap
+>S</keycap
+> als een sneltoets te gebruiken.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Spel</guimenu
+><guimenuitem
+>Bewerkingen opslaan...</guimenuitem
+> </menuchoice>
+</term>
+<listitem
+><para
+>Deze optie is alleen ingeschakeld als u de spelbewerker gebruikt. De dialoog <guilabel
+>Spel selecteren</guilabel
+> verschijnt en u kunt een niveaunummer en spel kiezen om uw werk in op te slaan. Deze actie doet precies hetzelfde als het menu-item <menuchoice
+><guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Wijzigingen opslaan</guimenuitem
+></menuchoice
+> en het pictogram <guiicon
+>schijf</guiicon
+> op de werkbalk.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Shift;<keycap
+>S</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Spel</guimenu
+><guimenuitem
+>Een oplossing opslaan...</guimenuitem
+> </menuchoice>
+</term>
+<listitem
+><para
+>Een oplossing voor een niveau in een bestand genaamd <quote
+><filename
+>sol_<replaceable
+>prefix</replaceable
+>.txt</filename
+></quote
+> in uw map voor gebruikersgegevens opslaan.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>P of &Esc;</keycap
+></shortcut
+> <guimenu
+>Spel</guimenu
+><guimenuitem
+>Pauze</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Stopt of herstart de spelactie.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Topscores tonen...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Toont een tabel van maximaal tien topscores voor het huidige spel. Elke regel toont de rang en naam van de speler, het bereikte niveau, de behaalde score, de dag van de week en de datum.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>Q</keycap
+></shortcut
+> <guimenu
+>Spel</guimenu
+><guimenuitem
+>Held doden</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Doodt de held als hij in een positie is waaruit hij niet kan ontsnappen.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Afsluiten</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Sluit &kgoldrunner; onmiddellijk af. Als er een spel bezig is, verdwijnt het voorgoed (tenzij u het zojuist opgeslagen had) en er wordt niet naar een topscore gekeken. Als u een niveau aan het bewerken was, krijgt u een kans om uw werk op te slaan.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+<sect1 id="move-menu">
+<title
+>Het menu Zet</title>
+
+<tip
+><para
+>Alle demo- en afspeelzetten zullen eerder opgenomen niveaus afspelen. Allen kunnen onderbroken en gestopt worden door op het speelveld te klikken met de muis, de spatiebalk in te drukken of een menu-item of sneltoets (zoals <menuchoice
+><guimenu
+>Spel</guimenu
+> <guimenuitem
+>Nieuw spel...</guimenuitem
+></menuchoice
+> of <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+>) te gebruiken.</para
+></tip>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycap
+>H</keycap
+> </shortcut
+> <guimenu
+>Zet</guimenu
+> <guimenuitem
+>Tip</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Toont een popup-tip, als er een is voor het gespeelde niveau. Bij conventie hebben Kampioenschap- en oefenspellen op elk niveau tips. Andere spellen hebben zelden tips. Het onderste deel van het &kgoldrunner; venster toont of er een tip beschikbaar is of niet.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>D</keycap
+></shortcut
+> <guimenu
+>Zet</guimenu
+> <guimenuitem
+>Demo</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Speelt een demonstratiespel in een paar opgenomen niveaus. Deze zijn hetzelfde als in the demo bij opstarten.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Zet</guimenu
+><guimenuitem
+>Een oplossing tonen</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Speelt een opgenomen oplossing van een niveau af, als er een oplossing in een bestand is in de vrijgegeven spelgegevens.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>R</keycap
+></shortcut
+> <guimenu
+>Zet</guimenu
+><guimenuitem
+>Direct afspelen</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Stopt het spel in het huidige niveau en speelt de opgenomen versie af vanaf het begin. Als u het afspelen onderbreekt, dan kunt u doorgaan met spelen vanaf dat punt en een andere benadering proberen. U kunt deze mogelijkheid gebruiken om een winnende rij van zetten in stappen op te bouwen, maar dat maakt elke hoge score waaraan u zou kunnen werken ongeldig.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>A</keycap
+></shortcut
+> <guimenu
+>Zet</guimenu
+><guimenuitem
+>Laatste niveau afspelen</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Speelt de opgenomen versie van het laatste niveau af dat u hebt gespeeld vanaf het begin (&eg; als het niveau hebt verloren). Als u het afspelen onderbreekt, dan kunt u doorgaan met spelen vanaf dat punt en een andere benadering proberen. U kunt deze mogelijkheid gebruiken om een winnende rij van zetten in stappen op te bouwen, maar dat maakt elke hoge score waaraan u zou kunnen werken ongeldig.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Zet</guimenu
+><guimenuitem
+>Een niveau afspelen</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Speelt de opgenomen versie af van elk niveau dat u eerder hebt gespeeld. </para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+<sect1 id="view-menu">
+<title
+>Het menu Beeld</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>F</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Beeld</guimenu
+> <guimenuitem
+>Modus Volledig scherm</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Zet Volledig scherm</action
+> aan en uit. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+<sect1 id="editor-menu">
+<title
+>Het menu Bewerken</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Bewerken</guimenu
+><guimenuitem
+>Niveau aanmaken</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Toont de werkbalk en een leeg speelveld waarop u een nieuw niveau kunt tekenen. Als u klaar bent gebruikt u de optie <guimenuitem
+>Bewerkingen opslaan...</guimenuitem
+> om het nieuwe niveau aan een spel en niveaunummer toe te wijzen.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Bewerken</guimenu
+><guimenuitem
+>Niveau bewerken...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Toont de dialoog <guilabel
+>Spel selecteren</guilabel
+>, waarin u een spel en niveau kunt kiezen om te bewerken. U kunt een systeemspel en -niveau kiezen, maar u krijgt dan een waarschuwing dat u het bewerkte niveau alleen in één van uw eigen spellen kunt opslaan.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Bewerken</guimenu
+><guimenuitem
+>Wijzigingen opslaan...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Toont de dialoog <guilabel
+>Spel selecteren</guilabel
+> met toepasselijke standaardinstellingen om een nieuw of bewerkt niveau op te slaan. U kunt het spel en niveaunummer wijzigen en het effect van <quote
+>Opslaan als...</quote
+> bereiken. Deze dialoog heeft een speciale knop <guibutton
+>Niveaunaam of tip</guibutton
+>, die een dialoog toont waarin u een optionele naam en tip aan uw niveau kunt toevoegen.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Bewerken</guimenu
+><guimenuitem
+>Niveau verplaatsen...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Deze handeling bestaat uit twee delen. Voordat u <guimenuitem
+>Niveau verplaatsen</guimenuitem
+> kunt gebruiken, moet u een niveau laden dat verplaatst moet worden, door het te selecteren voor spelen of bewerken. Daarna wordt de dialoog <guilabel
+>Spel selecteren</guilabel
+> getoond, waarin u een nieuwe plaats voor het geladen niveau kiest. U kunt zowel het spel als het niveaunummer veranderen om een niveau naar een ander spel te verplaatsen, of u kunt alleen het niveaunummer veranderen om niveaus binnen een spel opnieuw te sorteren. U kunt een systeemniveau niet verplaatsen.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Bewerken</guimenu
+><guimenuitem
+>Niveau verwijderen...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Toont de dialoog <guilabel
+>Spel selecteren</guilabel
+>, waarin u het te verwijderen niveau kiest. U kunt een systeemniveau niet verwijderen.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Bewerken</guimenu
+><guimenuitem
+>Spel aanmaken...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>U moet deze optie gebruiken voordat u uw eigen &kgoldrunner;-niveaus begint te maken. Er wordt een dialoog getoond waarin u de naam van het nieuwe spel kunt invoeren, een voorvoegsel van 1-5 tekens voor de bestandsnamen van de niveaus, de standaardregels voor uw spel (<quote
+>&kgoldrunner;</quote
+> of <quote
+>traditioneel</quote
+>) en een optionele beschrijving of opmerking over het spel.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Bewerken</guimenu
+><guimenuitem
+>Spelinformatie bewerken...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Toont de dialoog <guilabel
+>Spel selecteren</guilabel
+>, waarin u een spel kiest om te bewerken, en toont dan de spelinformatie in een dialoog waarin u de naam, regels en beschrijving kunt bewerken. Echter niet het voorvoegsel voor bestandsnamen, als u wat niveaus hebt opgeslagen, omdat het voorvoegsel intern in bestandsnamen gebruikt wordt.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+<sect1 id="settings-menu">
+<title
+>Het menu Instellingen</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+><guisubmenu
+>Thema wijzigen</guisubmenu
+> </menuchoice
+></term>
+<listitem>
+<para
+>Dit submenu biedt u een keuze uit achtergrondthema's of <quote
+>werelden</quote
+> waarin u speelt. U kunt het thema op elk moment wijzigen, zelfs als het spel wordt gespeeld. Voor hen met artistieke kwaliteiten, is het mogelijk om nieuwe thema's te ontwerpen, inclusief iets grafisch of geluid of beide en ze toe te voegen aan &kgoldrunner;. Neem eenvoudig contact op met de auteur voor details.</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>De schat van Egypte</guimenuitem
+></term>
+<listitem>
+<para
+>Matt Goldrunner bevindt zich in een oude Egyptische tempel, achtervolgt door mummies die vastbesloten zijn om de juwelen van hun voorouders ten koste van alles te beschermen.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Zwart op wit</guimenuitem
+></term>
+<listitem>
+<para
+>Dit thema is volledig van franje ontdaan tot de eenvoudigste grafische eenheden en in alleen in zwart-wit getekend. Het is bedoeld om spelers te helpen die een visuele beperking hebben. De auteur stelt het op prijs om e-mail respons te ontvangen over hoe effectief het is en wat voor verbeteringen er in zichtbaarheid gemaakt kunnen worden.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Standaarden van &kgoldrunner;</guimenuitem
+></term>
+<listitem>
+<para
+>Geeft u het standaard &kgoldrunner;-thema, met rode stenen en grijs beton.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Geek City</guimenuitem
+></term>
+<listitem>
+<para
+>Onze held is gevangen in een computer. Zal hij ontsnappen wanneer hij uiteindelijk het laatste niveau bereikt?</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Nostalgia Blues</guimenuitem
+></term>
+<listitem>
+<para
+>Roept herinneringenop aan het spel op de Apple II, waar stenen en beton een mooie blauwe kleur hadden, de held wit, hadden de vijanden witte broeken en oranje (vleeskleurige) bovenlijven en was het goud witte dozen met oranje panelen. Het hele effect was waziger (een soort anti-aliasing in de hardware), wat de stenen bijna een driedimensionaal uiterlijk gaf &mdash; moeilijk om op de hedendaagse haarscherpe beeldschermen te verkrijgen.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Nostalgia</guimenuitem
+></term>
+<listitem>
+<para
+>Roept de dagen van het originele spel op de Apple II en Commodore 64 in herinnering, zoals het was toen u uw machine in uw TV inplugde &mdash; anders had u een monochrome monitor. Voor hen die zulke heroïsche dagen niet kennen, dit is geen exacte reproductie, maar het geeft u een algemeen idee. Bijvoorbeeld de held was toen geheel zwart-wit, maar nu is hij blauw.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>Geluiden afspelen</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Zet het geluid aan en uit.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>Voetstapgeluiden afspelen</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Zet het geluid van voetstappen aan en uit.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Demo bij de start</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Schakelt het starten van de demo aan en uit (zie <link linkend="how-to-play"
+>Het spel starten</link
+>).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Muis bestuurt held</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Stelt muisbesturing van de held in (zie <link linkend="mouse-control"
+>Bewegen</link
+>).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Toetsenbord bestuurt held</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Stelt toetsenbordbesturing van de held in (zie <link linkend="keyboard-control"
+>Toetsenbordbesturing</link
+>).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Hybriede besturing (laptop</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Stelt hybride besturing van de held in, voor laptops, waar het touchpad of ander aanwijsapparaat wordt gebruikt om de held te leiden en de toetsen op het toetsenbord worden gebruikt om links en rechts te graven.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>Klik op toets om te verplaatsen</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>In toetsenbordmodus, klik op een pijltjestoets om met verplaatsen te beginnen en blijf gaan totdat je op een andere toets klikt.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>Houd de toets ingedrukt om te verplaatsen</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>In toetsenbordmodus, houd de pijltjestoets ingedrukt om te verplaatsen en laat los om te stoppen.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>Normale snelheid</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Stelt normale speelsnelheid in (10 eenheden).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>Beginnerssnelheid</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Stelt de speelsnelheid in voor beginners (5 eenheden, de helft van de normale snelheid).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Kampioensnelheid</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Stelt de speelsnelheid in voor kampioenen (15 eenheden, anderhalf maal de normale snelheid).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>+</keycap
+></shortcut
+> <guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Snelheid verhogen</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Verhoogt de speelsnelheid met één eenheid, tot een maximum van 20 eenheden (twee maal normale snelheid). U kunt de toets <keycap
+>+</keycap
+> als sneltoets gebruiken.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>-</keycap
+></shortcut
+> <guimenu
+>Instellingen</guimenu
+><guimenuitem
+>Snelheid verlagen</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Verlaagt de speelsnelheid met één eenheid, tot een minimum van 2 eenheden (een viifde van de normale snelheid). U kunt de toets <keycap
+>-</keycap
+> als sneltoets gebruiken.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Sneltoetsen instellen...</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>In het &kde;-bureaublad kunt u met dit item de toetsenbordtoewijzingen wijzigen (&eg; voor toetsenbordbesturing van de held) of uw eigen sneltoetsen voor menu-items instellen.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="help-menu">
+<title
+>Het menu Help</title>
+
+<para
+>&kgoldrunner; heeft de standaard &kde;-menu-items <guimenu
+>Instellingen</guimenu
+> en <guimenu
+>Help</guimenu
+>, lees voor meer informatie de secties over het <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menu Instellingen</ulink
+> en <ulink url="help:/fundamentals/ui.html#menus-help"
+>Help Menu</ulink
+> van de &kde; Fundamentals. </para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="game-editor">
+<title
+>De spelbewerker</title>
+
+<sect1 id="editor-start">
+<title
+>Met de bewerker leren omgaan</title>
+
+<sect2 id="creating-a-game">
+<title
+>Een spel aanmaken</title>
+
+<para
+>Voordat u een &kgoldrunner;-niveau aanmaakt of bewerkt, moet u een spel aanmaken om het in op te slaan. Gebruik het menu-item <menuchoice
+><guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Spel aanmaken</guimenuitem
+></menuchoice
+>. Als u dit vergeet wordt u eraan herinnerd.</para>
+
+<para
+>De belangrijkste beslissingen die u moet maken als u een spel aanmaakt zijn de regels die u gaat volgen (<quote
+>traditioneel</quote
+> of <quote
+>&kgoldrunner;</quote
+>, zie <link linkend="choice-of-rules"
+>Regels kiezen</link
+>) en het kiezen van een uniek voorvoegsel van 1-5 tekens voor uw spel en niveaus. U hebt ook een naam en beschrijving voor het spel nodig, maar die kunnen later gemakkelijk veranderd worden.</para>
+
+<para
+>Het voorvoegsel wordt intern door &kgoldrunner; gebruikt om niveaubestanden, topscorebestanden en opgeslagen spellen te identificeren. U kunt uw initialen gebruiken als voorvoegsel, als deze niet hetzelfde zijn als een &kgoldrunner;-voorvoegsel. Tot nu toe zijn de voorvoegsels <quote
+>level</quote
+>, <quote
+>plws</quote
+>, <quote
+>wad</quote
+>, <quote
+>plwv</quote
+>, <quote
+>sot</quote
+>, <quote
+>cnt</quote
+>, <quote
+>CM</quote
+>, <quote
+>tute</quote
+> en <quote
+>tutea</quote
+> in gebruik.</para>
+
+<para
+>Het vierletterige voorvoegsel <quote
+>tute</quote
+> is gereserveerd voor oefenspellen, die de tips op elk niveau weergeven als ze gespeeld worden. Als u uw eigen "Oefening" maakt zou u het voorvoegsel <quote
+>tutex</quote
+> kunnen gebruiken, om het als een oefening te laten spelen, maar de bestanden niet te laten verwarren met die van de spellen "Oefening" of "Uitgebreide oefening" (voorvoegsels <quote
+>tute</quote
+> en <quote
+>tutea</quote
+>).</para>
+
+</sect2>
+
+<sect2 id="creating-a-level">
+<title
+>Een niveau aanmaken</title>
+
+<para
+>Als u het spel ingesteld hebt, kiest u het menu-item <menuchoice
+><guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Niveau aanmaken</guimenuitem
+></menuchoice
+> om te beginnen met het aanmaken van een niveau. U krijgt een leeg speelveld van 28x20 velden, met de held links bovenaan. U kunt de held ergens anders plaatsen als u dat liever hebt en u hoeft niet het hele speelveld van 28x20 te gebruiken. Veel interessante niveaus hebben kleinere speelvelden.</para>
+
+<para
+>De minimumeis aan een speelbaar niveau is een held, die ergens bovenaan het speelgebied op iets staat, maar dat is een triviaal geval. Een meer realistische heeft een op te lossen doolhof en enige zichtbare of verborgen ladders die naar de bovenkant van het speelveld leiden, maar geen goudklompjes. U hoeft niet per se vijanden, goudklompjes, balken, verborgen ladders of zelfs stenen te gebruiken. Er zijn veel uitdagende niveaus die geen vijanden of stenen bevatten, maar de meeste niveaus hebben minstens een goudklompje, enige vijanden en enige verborgen ladders die verschijnen wanneer het laatste goudklompje is verzameld.</para>
+
+</sect2>
+</sect1>
+
+<sect1 id="editing-and-testing">
+<title
+>Bewerken en uitproberen</title>
+
+<sect2 id="editing-a-level">
+<title
+>Een niveau bewerken</title>
+
+<para
+>Gebruik het menu-item <menuchoice
+><guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Niveau bewerken...</guimenuitem
+></menuchoice
+> om een bestaand niveau te bewerken of gebruik menu-item <menuchoice
+><guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Niveau aanmaken</guimenuitem
+></menuchoice
+> om een nieuw niveau te bewerken.</para>
+
+<para
+>Als u een systeemniveau kiest, wordt u gewaarschuwd dat u het in een van uw eigen spellen moet opslaan. Anders is de standaard dat het niveau wordt opgeslagen waar het vandaan kwam, maar u kunt dat wijzigen.</para>
+
+</sect2>
+
+<sect2 id="painting-objects">
+<title
+>Objecten in een niveau tekenen</title>
+
+<para
+>De onderstaande afbeelding toont de werkbalk, die verschijnt als u eerst optie <guimenuitem
+>Niveau aanmaken</guimenuitem
+> kiest of optie <guimenuitem
+>Niveau bewerken...</guimenuitem
+> uit het menu <guimenu
+>Bewerken</guimenu
+> om zo van speel- naar bewerkingsmodus over te schakelen. De werkbalk verdwijnt weer als u teruggaat naar speelmodus. Merk ook op dat in bewerkmodus valse stenen en verborgen ladders zichtbaar worden in het speelveld.</para>
+
+<para
+>De drie pictogrammen links op de werkbalk hebben dezelfde acties als de menu-opties <guimenuitem
+>Niveau aanmaken</guimenuitem
+>, <guimenuitem
+>Niveau bewerken</guimenuitem
+> en <guimenuitem
+>Wijzigingen opslaan</guimenuitem
+>. De andere elf pictogrammen zijn voor het bewerken en het tekenen van objecten in uw niveau.</para>
+
+
+<para
+>Van links naar rechts zijn de ander elf pictogrammen <guiicon
+>Naam/Tip </guiicon
+> (gloeilamp), <guiicon
+>Uitvegen</guiicon
+> (achtergrond), <guiicon
+>Held</guiicon
+>, <guiicon
+>Vijand</guiicon
+>, <guiicon
+>Steen</guiicon
+> (graven kan), <guiicon
+>Beton</guiicon
+> (graven kan niet), <guiicon
+>Val</guiicon
+> ook bekend als valse steen of doorheenvalsteen), <guiicon
+>Ladder</guiicon
+>, <guiicon
+>H-ladder</guiicon
+> (verborgen ladder), <guiicon
+>Balk</guiicon
+> (of staaf) en <guiicon
+>Goudklompje</guiicon
+>. De illustraties, behalve voor de gloeilamp, worden gekopieerd uit het thema dat door &kgoldrunner; wordt gebruiikt.</para>
+
+<screenshot>
+<screeninfo
+>Een niveau bewerken</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="editbar.png" format="PNG"/>
+</imageobject>
+<textobject
+><phrase
+>Een niveau bewerken</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Het pictogram <guiicon
+>Naam/Tip</guiicon
+> opent een dialoogvenster waarin u de naam en tip van uw niveau kunt aanmaken of wijzigen. Beide zijn optioneel, maar zijn essentieel voor oefenniveaus en het is gebruikelijk om ze bij zeer moeilijke niveaus, zoals Kampioenspellen (zie het spel <quote
+>Vengeance of Peter W
+></quote
+> "De wraak van Peter W" op te geven).</para>
+
+<para
+>Als u op een van de andere 10 pictogrammen klikt, wordt de muis een <quote
+>kwast</quote
+> waarmee u dat pictogram kunt tekenen. In eerste instantie is de kwast een <quote
+>steen</quote
+>.</para>
+
+<para
+>U tekent door met de &LMB; op een veld te klikken waar u een enkel object wilt plaatsen of door de &LMB; vast te houden en de muis te slepen om een lijn of gebied op te vullen, zoals een lange ladder, een groot blok stenen of een betonnen vloer. Het plaatsen stopt als u de muis loslaat. Als u een vergissing maakt, kunt u de &RMB; gebruiken om te wissen of het pictogram <guiicon
+>Wissen</guiicon
+> en daarmee tekenen.</para>
+
+<para
+>Het heldpictogram werkt anders, omdat er maar één held kan zijn. Als u de held plaatst, verplaatst hij van zijn oude positie naar waar u de muisknop loslaat.</para>
+
+</sect2>
+
+<sect2 id="saving-your-work">
+<title
+>Uw werk opslaan</title>
+
+<para
+>Als u klaar bent met tekenen, slaat u uw werk op met het pictogram <guiicon
+>schijf</guiicon
+>of de menu-items <menuchoice
+><guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Bewerkingen opslaan</guimenuitem
+></menuchoice
+> of <menuchoice
+><guimenu
+>Spel</guimenu
+> <guimenuitem
+>Bewerkingen opslaan...</guimenuitem
+></menuchoice
+>. U moet altijd in een eigen spel opslaan, niet in één van de systeemspellen.</para>
+
+<para
+>Als u een niveau aan het maken bent, gebruikt u de dialoog <guilabel
+>Spel selecteren</guilabel
+> om er een spel en niveaunummer aan toe te wijzen. U gebruikt hetzelfde dialoogvenster als u een niveau aan het bewerken was, maar de standaard is om het op te slaan waar het vandaan kwam. U kunt het spel en niveau wijzigen om het effect van <quote
+>Opslaan als...</quote
+> te bereiken. Als u een systeemniveau aan het bewerken was moet u het als een kopie in één van uw eigen spellen opslaan.</para>
+
+</sect2>
+
+<sect2 id="adding-name-and-hint">
+<title
+>Een niveaunaam en tip toevoegen</title>
+
+<para
+>De variant van de dialoog <guilabel
+>Spel selecteren</guilabel
+> om op te slaan bevat een knop <guibutton
+>Niveaunaam of tip bewerken</guibutton
+>. U kunt deze gebruiken om de puntjes op de i te zetten voor uw niveau door een naam en tip toe te voegen. Beide zijn optioneel, maar essentieel voor oefeningsniveaus en het is gebruikelijk om ze bij zeer moeilijke niveaus op te geven (zie het spel <quote
+>De wraak van Peter W</quote
+>). Natuurlijk kunt u ook altijd het <guiicon
+>gloeilamp</guiicon
+>-pictogram gebruiken om een naam of tip toe te voegen of te wijzigen.</para>
+
+</sect2>
+
+<sect2 id="testing-a-level">
+<title
+>Een niveau uitproberen</title>
+
+<para
+>Nadat u een bewerkt niveau hebt opgeslagen, kunt u het uitproberen met het menu-item <menuchoice
+><guimenu
+>Spel</guimenu
+> <guimenuitem
+>Nieuw spel...</guimenuitem
+></menuchoice
+> of de overeenkomstige sneltoets. Standaard worden het spel en niveaunummer herinnerd en kunt u het niveau direct bereiken met maar een paar klikken. Als u dan nog wat meer wilt wijzigen, geldt hetzelfde als u weer het menu-item <menuchoice
+><guimenu
+>Game</guimenu
+> <guimenuitem
+>Niveau bewerken...</guimenuitem
+></menuchoice
+> gebruikt. Het is essentieel om elk niveau dat u maakt te testen, om na te gaan dat het mogelijk is het te voltooien en dat het niet te gemakkelijk is.</para>
+
+</sect2>
+</sect1>
+
+<sect1 id="reorganizing-games">
+<title
+>Spellen en niveaus reorganiseren</title>
+
+<sect2 id="moving-a-level">
+<title
+>Een niveau verplaatsen</title>
+
+<para
+>U kunt <guimenuitem
+>Niveau verplaatsen</guimenuitem
+> uit het menu <guimenu
+>Bewerken</guimenu
+> gebruiken om de niveaus in een spel opnieuw te sorteren of te nummeren of om een niveau van een spel naar een ander spel te verplaatsen. <guimenuitem
+>Niveau verplaatsen</guimenuitem
+> is een tweedelige handeling. Eerst moet u een niveau laden door het te selecteren, vervolgens verschijnt de dialoog <guilabel
+>Spel selecteren</guilabel
+> als u <guimenuitem
+>Niveau verplaatsen</guimenuitem
+> kiest en kunt u hier het nieuwe niveaunummer en/of spel kiezen.</para>
+
+<para
+>Verplaatsingen laten geen gaten achter in de nummervolgorde van niveaus in een spel. Als u bijvoorbeeld niveau 10 van spel A naar niveau 3 van spel B verplaatst, worden de niveaus 11 en hoger in spel A een nummer omlaag verplaatst om het gat te dichten, en niveaus 3 en hoger in spel B een nummer omhoog verplaatst om ruimte te maken voor de nieuwkomer.</para>
+
+</sect2>
+
+<sect2 id="deleting-a-level">
+<title
+>Een niveau verwijderen</title>
+
+<para
+>U kunt menu-item <menuchoice
+><guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Niveau verwijderen...</guimenuitem
+></menuchoice
+> gebruiken om een ongewenst niveau te verwijderen. De andere niveaus worden opnieuw genummerd om het gat in de volgorde te dichten.</para>
+
+</sect2>
+</sect1>
+
+</chapter>
+
+<chapter id="tips-tricks-and-hints">
+<title
+>Tips, trucs en aanwijzingen</title>
+
+<sect1 id="tips-overview">
+<title
+>Overzicht</title>
+
+<para
+>Dit hoofdstuk geeft wat algemene tips en aanwijzingen voor het spelen van &kgoldrunner;, in tegenstelling tot de specifieke tips in de niveaus van oefen- en kampioenschapsspellen (zie <link linkend="move-menu"
+><menuchoice
+><guimenu
+>Zet</guimenu
+><guimenuitem
+>Tip</guimenuitem
+></menuchoice
+></link
+> of <keycap
+>H</keycap
+>). De tips zijn als volgt ingedeeld:</para>
+
+<itemizedlist>
+
+<listitem>
+<para
+><link linkend="hints-dealing-with-enemies"
+>Met vijanden omgaan</link
+></para>
+</listitem>
+
+<listitem>
+<para
+><link linkend="hints-digging-puzzles"
+>Graafpuzzels</link
+></para>
+</listitem>
+
+<listitem>
+<para
+><link linkend="hints-tricks-with-gold"
+>Trucs met goud</link
+></para>
+</listitem>
+
+<listitem>
+<para
+><link linkend="hints-solving-difficult-levels"
+>Moeilijke niveaus oplossen</link
+></para>
+</listitem>
+
+</itemizedlist>
+</sect1>
+
+<sect1 id="hints-dealing-with-enemies">
+<title
+>Met vijanden omgaan</title>
+
+<itemizedlist>
+<listitem>
+<para
+>U kunt een enkele op u afkomende vijand altijd in één gat vastzetten, zijn goud krijgen en over hem heenrennen zonder hem te doden. Het is vaak een goed idee om achter u te graven en hem langer op te houden, maar dat zou hem kunnen doden. In sommige niveaus is het geen goed idee om vijanden te doden.</para>
+</listitem>
+<listitem>
+<para
+>U kunt twee op u afkomende vijanden meestal in twee gaten vastzetten, hun goud krijgen en over hen heen doorrennen, maar dit is gevaarlijk als ze twee of drie velden van elkaar verwijderd zijn. Soms doden twee gaten één van de vijanden en ontsnapt de ander, en soms ontsnappen beiden. In de &kgoldrunner;-regels is het gemakkelijker om twee vijanden te vast te zetten en over hen heen te rennen, omdat ze langer in de gaten blijven.</para>
+</listitem>
+<listitem>
+<para
+>Het is bijna altijd onmogelijk om drie op u afkomende vijanden vast te zetten en over ze heen door te rennen. U zult ze moeten doden, graven en door de vloer vallen of eenvoudigweg wegrennen.</para>
+</listitem>
+<listitem>
+<para
+>Probeer alle vijanden bij elkaar in één groep te krijgen. Op die manier wordt u niet omsingeld en kunt u leuke dingen doen zoals goud verzamelen terwijl ze achter u aanrennen.</para>
+</listitem>
+<listitem>
+<para
+>Soms kunt u een vijand doden met twee gaten, maar er zijn vaak drie tot negen gaten nodig om één tot vijf vijanden te doden.</para>
+</listitem>
+<listitem>
+<para
+>Het is mogelijk om een vijand met één gat te doden als hij ver genoeg weg is als u het graaft.</para>
+</listitem>
+<listitem>
+<para
+>In het <quote
+>traditionele</quote
+> spel kunt u een vijand permanent vastzetten in een put van steen of beton. Ga naast de rand van de put staan aan de andere kant dan waar de vijand is. Als hij de put nadert beweegt u een vakje naar onderen (naar het niveau van de vloer van de put) en de vijand rent gewoonlijk de put in.</para>
+</listitem>
+<listitem>
+<para
+>In sommige niveaus in het <quote
+>traditionele</quote
+> spel kunt u een vijand dwingen een ladder voor u te beklimmen als u ergens boven de bodem van de ladder staat.</para>
+</listitem>
+<listitem>
+<para
+>In het spel <quote
+>&kgoldrunner;</quote
+>, kunt u een vijand in een put vangen door hem zich te laten vallen vanaf boven u, daarna zijwaarts te rennen en iets uit te graven voordat hij u bereikt.</para>
+</listitem>
+<listitem>
+<para
+>In het spel <quote
+>&kgoldrunner;</quote
+>, kunnen vijanden niet door een weggegraven steen rennen, dus kunt u deze soms als een barrière of verstopplaats gebruiken.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="hints-digging-puzzles">
+<title
+>Graafpuzzels</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Om door meer dan één laag stenen te graven begint u met net zoveel gaten te graven als er lagen zijn, springt u naar beneden, graaft u één gat minder, enzovoort.</para>
+</listitem>
+<listitem>
+<para
+>Als u naast een ladder of een serie balken graaft, kunt u door elk aantal lagen en tot vijf of zes stenen horizontaal heen graven. Ga terug naar de ladder of balken nadat u door een laag heen hebt gegraven, beweeg een veld naar beneden, ren eruit en graaf door de volgende laag heen.</para>
+</listitem>
+<listitem>
+<para
+>Als een graafpuzzel onmogelijk lijkt, bedenk dan dat er valse stenen kunnen zijn. Misschien is de onderste laag vals of kunt u in een valse steen staan en ernaast graven.</para>
+</listitem>
+<listitem>
+<para
+>Denk over de volgorde waarin u het goud verzamelt. Als u de goede volgorde kiest, is het graven wellicht eenvoudiger.</para>
+</listitem>
+<listitem>
+<para
+>Sommige niveaus vereisen dat u een stenen muur weggraaft, naar binnen rent, wat goud verzamelt en weer naar buiten rent voordat de stenen u opsluiten.</para>
+</listitem>
+<listitem>
+<para
+>Het is mogelijk om te graven tijdens het vallen door lege ruimte, als u de timing juist kan krijgen. U hebt geen vijand nodig om op te rijden. Dit was een bug die een <quote
+>mogelijkheid</quote
+> is geworden en uitgebreid wordt gebruikt in de spellen <quote
+>State of Terror</quote
+>, <quote
+>Count</quote
+> en <quote
+>Curse of the Mummy</quote
+>.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="hints-tricks-with-gold">
+<title
+>Trucs met goud</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Als u een goudklompje niet kunt bereiken, denk er dan over om een vijand het voor te laten halen. Denk er zelfs over na om het hoofd van een vijand als een brug te gebruiken om over een put of afgrond heen te komen.</para>
+</listitem>
+<listitem>
+<para
+>In sommige niveaus is er een goudklompje dat u als laatste moet verzamelen, omdat u de verborgen ladders nodig heeft om van die plek af te komen.</para>
+</listitem>
+<listitem>
+<para
+>In sommige situaties kan een vijand gedood worden zonder dat hij het goud opgeeft dat hij draagt. Het goud wordt dan een <quote
+>verloren goudklompje</quote
+>. U krijgt geen punten als een vijand een goudklompje verliest, maar u kunt tenminste het niveau afmaken.</para>
+</listitem>
+<listitem>
+<para
+>Als u nergens kunt graven, laat u de vijanden over beton en de bovenkanten van ladders rennen om ze hun goud willekeurig te laten loslaten.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="hints-solving-difficult-levels">
+<title
+>Moeilijke niveaus oplossen</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Probeer de snelheid in te stellen op "beginner" of zelfs lager.</para>
+</listitem>
+<listitem>
+<para
+>Gebruik de bewerker om te <quote
+>spieken</quote
+> waar de valse stenen en verborgen ladders zijn.</para>
+</listitem>
+<listitem>
+<para
+>Gebruik de bewerker om het niveau in één van uw eigen spellen op te slaan, vervolgens kunt u het bewerken zodat u niet altijd bij het begin hoeft te beginnen als u doodgaat. Hiermee kunt u de oplossing in kleinere stukken vinden.</para>
+</listitem>
+<listitem>
+<para
+>Zoek in graafpuzzels naar valse stenen waar u in kunt vallen om één steen minder weg te hoeven graven. Of overweeg het gebruik van een vijand om voor u uit te gaan, zodat u op zijn hoofd kan staan terwijl u graaft.</para>
+</listitem>
+<listitem>
+<para
+>Zoek naar een thema of truc in het niveau, zoals op het hoofd van een vijand naar beneden gaan, alle vijanden in een put vastzetten, de vijanden een hoek in lokken waar ze blijven en u niet opjagen, de vijanden in putten lokken waar u overheen moet om bij wat goud te komen, de vijanden goud voor u laten ophalen of plaatsen vinden waar u kunt gaan staan om de vijand naar de plek te laten lopen waar u hem wilt hebben.</para>
+</listitem>
+<listitem>
+<para
+>Gebruik het menu-item <menuchoice
+><guimenu
+>Zet</guimenu
+> <guimenuitem
+>Een oplossing tonen...</guimenuitem
+></menuchoice
+> om te controleren of er een opgeslagen oplossing is op het niveau. Dit zal u enige manieren tonen om moeilijkheden op het niveau te behandelen, maar niet noodzakelijk op de beste manier. Er zijn vaak vele manieren om een niveau te winnen en elke keer dat u het speelt zijn er kleine verschillen in timing, &etc; U zult dus waarschijnlijk niet in staat zijn om de opgeslagen oplossing exact te kopiëren.</para>
+</listitem>
+<listitem>
+<para
+>Gebruik <menuchoice
+><guimenu
+>Zet</guimenu
+> <guimenuitem
+>Direct afspelen</guimenuitem
+></menuchoice
+> of <menuchoice
+><guimenu
+>Zet</guimenu
+> <guimenuitem
+>Laatste niveau herhalen</guimenuitem
+></menuchoice
+> om een niveau te herhalen tot een punt net voordat u problemen had, dan stopt het herhalen en probeert u een andere benadering.</para>
+</listitem>
+</itemizedlist>
+</sect1>
+
+<!-- This is the place for a FAQ section, if required.
+<sect1 id="hints-faq">
+<title
+>FAQ</title>
+
+<qandaset id="faq">
+
+<qandaentry>
+<question>
+<para
+>Question 1</para>
+</question>
+<answer>
+<para
+>The answer</para>
+</answer>
+</qandaentry>
+
+</qandaset>
+</sect1>
+-->
+
+</chapter>
+
+<chapter id="credits-and-license">
+<title
+>Dankbetuigingen en licentie</title>
+
+<para
+>&kgoldrunner; copyright 2003 Ian Wadham en Marco Krüger.</para>
+
+<para
+>&kgoldrunner; is geïnspireerd door een oud computerspel genaamd <trademark
+>Lode Runner</trademark
+> dat in de VS geschreven is door <trademark class="copyright"
+>Doug Smith</trademark
+> en als eerste in 1983 is uitgegeven door <trademark class="copyright"
+>Broderbund Software</trademark
+>. Het verscheen oorspronkelijk op de Apple II en de Commodore 64, waaraan de familie Wadham en Marco Krüger verslaafd raakten. Het was een groot succes en is een van de beste computerspellen aller tijden.</para>
+
+<para
+>U kunt meer over <trademark
+>Lode Runner</trademark
+> en de diverse versies die sinds 1983 zijn uitgebracht te weten komen op de website <ulink url="http://entropymine.com/jason/lr"
+>Jason's Lode Runner Archive</ulink
+> (https://entropymine.com/jason/lr/). Die site bevat ook het verhaal van de oorspronkelijke ontwikkeling van het spel, in het bestand <ulink url="http://entropymine.com/jason/lr/misc/ldhist.html"
+>misc/ldhist.html</ulink
+>. Wikipedia heeft ook een erg goed artikel over <trademark
+>Lode Runner</trademark
+>, met interessante koppelingen naar andere sites.</para>
+
+<para
+>&kgoldrunner; is een poging om de geest van het originele spel te bewaren op een platform dat overzetbaar is en meer dan een paar jaar zal blijven bestaan. Het is beschikbaar als vrije software in broncodevorm. Kopieën van het originele spel zijn niet meer verkrijgbaar en de machines waarop het draaide gaan naar museums.</para>
+
+<para
+>Marco Krüger ontwikkelde KGoldrunner tot versie 0.3, uit nostalgie voor het originele Commodore 64-spel. Ian Wadham voegde diverse mogelijkheden en niveaus toe en maakte de huidige versie. Ian's oudste zoon Peter maakte de 100 niveaus in het spel <quote
+>De initiatie</quote
+> en de 20 lastige niveaus in <quote
+>Vengeance of Peter W</quote
+> (De wraak van Peter W). De andere niveaus zijn gemaakt door Ian, Peter, Marco Krüger en vrienden en Ian's andere kinderen Simon en Genevieve. </para>
+<para
+>Stuart Popejoy uit New York heeft het spel <quote
+>State of Terror</quote
+> in 2007 bijgedragen, het eerste Kampioensspel dat &kgoldrunner;-regels gebruikt en een van de meest moeilijke spellen ooit.</para>
+
+<para
+>Steve Mann uit Waterloo in Canada heeft het <quote
+>Tellen</quote
+>-spel in 2008 bijgedragen en in 2008 het spel <quote
+>Vloek van de mummie</quote
+>. Beiden gebruiken traditionele regels en beiden hebben interessante thema's die er doorheen rennen, evenals dat ze tamelijk moeilijk zijn.</para>
+
+<para
+>Peter Wadham heeft in 2008 de geluidseffecten gecomponeerd en Luciano Montanaro heeft geluid in het &kgoldrunner; programma ingevoegd.</para>
+
+<para
+>Speciale dank is verschuldigd aan &Mauricio.Piacentini; en Dmitry Suzdalev, die &kgoldrunner; naar &Qt; 4 en &kde; 4 hebben geconverteerd en aan de vele grafische artiesten die hebben bijgedragen aan de nieuwe SVG-graphics en thema's in de &kde; 4 versie: speciaal &Mauricio.Piacentini; voor het <quote
+>Standaard</quote
+> thema en de nieuwe renners, Johann Ollivier Lapeyre voor de ladders en balken, Eugene Trounev voor de <quote
+>Geek City</quote
+> en thema's <quote
+>Schatten van Egypte</quote
+> en, tenslotte, Luciano Montanaro voor de twee <quote
+>Nostalgia</quote
+> thema's, het <quote
+>Zwart op wit</quote
+> toegankelijkheidsthema, verbeteringen aan de renners, meerdere achtergronden en verschillende andere ideeën.</para>
+
+&meld.fouten;&vertaling.sander;&vertaling.freek; &underFDL; &underGPL; </chapter>
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-general-insert-case: lower
+End:
+-->

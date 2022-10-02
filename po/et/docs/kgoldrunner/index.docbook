@@ -1,0 +1,2325 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY kgoldrunner "<application
+>KGoldrunner</application
+>">
+  <!ENTITY kappname "&kgoldrunner;">
+  <!ENTITY package "kdegames">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Estonian  "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<book id="kgoldrunner" lang="&language;">
+
+<bookinfo>
+<title
+>&kgoldrunner;i käsiraamat</title>
+<authorgroup>
+<author
+><firstname
+>Ian</firstname
+> <surname
+>Wadham</surname
+> <affiliation
+><address
+><email
+>iandw.au at gmail com</email
+></address
+></affiliation>
+</author>
+<author
+><firstname
+>Marco</firstname
+> <surname
+>Krüger</surname
+> </author>
+<othercredit role="translator"
+><firstname
+>Marek</firstname
+> <surname
+>Laane</surname
+> <affiliation
+><address
+><email
+>bald@smail.ee</email
+></address
+></affiliation
+><contrib
+>Tõlge eesti keelde</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2011</year>
+<holder
+>Ian Wadham</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2013-05-14</date>
+<releaseinfo
+>4.10 (&kde; 4.11)</releaseinfo>
+
+<abstract>
+<para
+>&kgoldrunner; on põnev mõistatuste lahendamise mäng: leia õige tee labürindis, kõrvalda oma vaenlased, korja kokku kogu kuld ja roni järgmisele tasemele.</para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KGoldrunner</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="playing-kgoldrunner">
+<title
+>&kgoldrunner;i mängimine</title>
+
+<sect1 id="introduction">
+<title
+>Sissejuhatus</title>
+<para
+>Mäng tüüp: arkaadmäng, strateegia </para>
+<para
+>Mängijate arv: üks </para>
+
+<para
+>&kgoldrunner; on põnev mäng,milles kangelane seikleb labürindis ja lööb vastaseid jalust maha. Kangelast saab juhtida hiirega või klaviatuuri abil, lastes tal korjata kokku kogu kulla ning seejärel ronida järgmisele tasemele. Ka vaenlased jahivad kulda. Aga mitte ainult - nad jahivad ka sind! Ja kui kätte saavad, teevad otsa peale!</para>
+
+<para
+>Häda on selles, et sul pole ühtki relva <emphasis
+>nende</emphasis
+> hävitamiseks. Sa saad ainult eest ära joosta, kaevata põrandasse auke, kuhu nad sisse langeksid, või meelitada nad kuhugi, kus nad ei saa sulle viga teha. Auku kukkunud vaenlane suudab sealt üsna ruttu välja ronida, aga kui auk enne seda peaks kinni vajuma, saab vaenlane surma ja sünnib uuesti juba kuskil mujal. </para>
+
+<para
+>Kui see on sul esimene kokkupuude mänguga, võiksid proovida <quote
+>treeningmängu</quote
+>, mis teeb selgeks reeglid ja aitab omandada põhilised võtted. Seejärel proovi <quote
+>sissepühitsemist</quote
+>. Asjatundjatele võib muidugi meeldida <quote
+>Väljakutse</quote
+> või <quote
+>Peter W. kättemaks</quote
+>, <quote
+>Arvestus</quote
+> või <quote
+>Muumia needus</quote
+>, aga ka <quote
+>Sissepühitsemine</quote
+> pakub 100 taset, millest mõned on päris rasked. See on igati hea korraliku punktisumma kogumiseks.</para>
+
+<para
+>Kõik mängud kasutavad traditsioonilisi reegleid, mis sarnanevad nendega, mida kasutati esimestel koduarvutitel, näiteks Apple II või Commodore 64. Mängud <quote
+>&kgoldrunner;</quote
+> ning <quote
+>Hirm ja õud</quote
+> kasutavad &kgoldrunner;i reegleid, mille puhul vastased liiguvad kiiremini ja käituvad agressiivsemalt kui traditsiooniliste reeglite korral. Täpsemalt kõneleb sellest osa <link linkend="choice-of-rules"
+>Reeglite valik</link
+>.</para>
+
+<para
+>Kõrgematele tasemetele jõudes leiad kindlasti, et &kgoldrunner; pakub nii põnevust, strateegiat, taktikat kui ka mõistatuste lahendamist &mdash; ja seda kõike ühes mängus. Palju õnne ja edu!</para>
+
+</sect1>
+
+<sect1 id="typical-game">
+<title
+>Tüüpiline mäng</title>
+
+<para
+>Allpool on toodud tüüpilise mängu näide. Kangelane on täiustatud treeningmängus 4. tasemel. Akna allosas näeb, mitu elu on tal veel alles ja kui palju on ta punkte kogunud. Seal on ka näha, et sellel tasemel saab kasutada vihjet (treeningmängudes on see alati olemas) ja et mäng on parajasti peatatud (ekraani pildistamise ajaks on see ka päris loomulik), aga et seda saab jätkata, kui vajutada <keycap
+>P</keycap
+> või &Esc;.</para>
+
+<para
+>Kangelane alustas ülalt vasakult, kaevas augu ja sattus libatelliste ning kulla peale, kus ta ongi praegu näha langemas. Tema kohal asuv vaenlane langeb auku, ronib siis üles ja jääb sinna kinni kuni taseme lõpuni. Ta võib küll kangelasele veel peavalu valmistada, sest just sinna ilmuvad peidetud redelid, kui kogu kuld on kokku korjatud. Redeleid peab kangelane kasutama järgmisele tasemele jõudmiseks.</para>
+
+<screenshot>
+<screeninfo
+>&kgoldrunner;i tüüpiline mäng</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="tute008.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>&kgoldrunner;i tüüpiline mäng</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Paremal asuv vaenlane langeb, kandes kulda. Kolmas vaenlane on asunud redelist alla tulema, et kangelast ahistama kukkuda. Kangelasel tuleb põrandale jõudes mõlema vaenlasega hakkama saada... Sel tasemel on näha ka kaevatavad tellised ning kaevamiseks kõlbmatu betoon, samuti mitmed lõksud (libatellised), mis näevad välja täpselt nagu tavalised tellised.</para>
+
+</sect1>
+
+<sect1 id="how-to-play">
+<title
+>Kuidas mängida</title>
+
+<sect2>
+<title
+>Mängu käivitamine</title>
+
+<para
+>&kgoldrunner; näitab algul salvestatud demonstratsioonmängu. Selle saab lõpetada hiirega mängualale klõpsates, tühikuklahvi vajutades või sobivat menüükäsku või kiirklahvi kasutades (näiteks <menuchoice
+><guimenu
+>Mäng</guimenu
+><guimenuitem
+>Uus mäng...</guimenuitem
+></menuchoice
+>). Edaspidi saab demo näitamist vältida, kui eemaldada märge kirje eest <menuchoice
+><guimenu
+>Seadistused</guimenu
+><guimenuitem
+>Demo käivitumisel</guimenuitem
+></menuchoice
+>. Uuesti saab seda näha alati, kui valida menüükäsk <menuchoice
+><guimenu
+>Liikumine</guimenu
+><guimenuitem
+>Demo</guimenuitem
+></menuchoice
+>. </para>
+
+<para
+>Kui oled demo vahele jätnud või lõpetanud selle hiire või tühikuklahvi abil, ilmub kiirkäivitusdialoog, kus on näha viimase mängu ja laaditud taseme nimi, number ja eelvaatlus või kui sa pole varem mängu mänginud, sama teave treeningmängu esimese taseme kohta.</para>
+
+<para
+>Klõpsa nupule <guibutton
+>MÄNGI</guibutton
+>, kui soovid kohe mängima asuda. Samuti võid klõpsata nuppudele <guibutton
+>Välju</guibutton
+>, <guibutton
+>Uus mäng</guibutton
+> või <guibutton
+>Kasuta menüüd</guibutton
+>. Esimene lõpetab &kgoldrunner;i töö, kui sa ei peakski soovima mängida, teine avab <link linkend="level-selection-dialog"
+>taseme valimise</link
+> dialoogi, kus saab valida mõne teise mängu ja taseme, ning kolmas sulgeb dialoogi, võimaldades sul oma äranägemist mööda kasutada &kgoldrunner;i menüüsid.</para>
+
+<para
+>Kui oled valinud mängu ja taseme, avaneb mänguväli, kus hiirekursor asub kangelase kohal. Treeningmängu korral näidatakse enne taseme algust alati selgitavat teksti. Mängu saab alustada hiirt liigutades, seda klõpsates või vajutades mõnda kangelast juhtivat klahvi (&eg; <keycap
+>tühikuklahv</keycap
+>). Siiski tuleks vältida klahvide <keycap
+>Q</keycap
+>, <keycap
+>S</keycap
+>, <keycap
+>P</keycap
+> või &Esc; kasutamist - vähemalt päris alguses kindlasti. Üldiselt algavad kõik tasemed ühtmoodi.</para>
+
+<para
+>Mängu alguses on sul viis elu. Iga läbitud tase annab ühe elu juurde.</para>
+
+</sect2>
+
+<sect2 id="mouse-control">
+<title
+>Liikumine</title>
+
+<para
+>Vaikimisi juhitakse kangelast hiirega, kuid teda võib sama hästi juhtida ka klaviatuurilt (<link linkend="keyboard-control"
+>vaata allpool</link
+>) või sülearvuti korral ka nii klaviatuurilt (eriti kaevamiseks) kui puuteplaadi või mõne muu osutusseadme abil.</para>
+
+<para
+>Kangelane liigub sinna, kuhu sa viid hiirekursori. Ta ei suuda küll liikuda nii kiiresti, kui sa hiirt liigutad, aga ta püüab väga sinuga sammu pidada. Kui hiirekursor asub temast kõrgemal või madalamal, püüab ta alati leida üles- või allaliikumiseks redeli või augu. Kui see ei õnnestu, liigub ta horisontaalselt, kuni asub hiirekursori kohal, all või sellest paremal pool. Kangelast on võimalik panna järgima lihtsaid marsruute (näiteks &mdash; | L või U), kuid püüa teda mitte panna liiga palju keerutama.</para>
+
+<para
+>Vasakule või paremale saab liikuda telliseid, betooni, redeleid või poste pidi, üles või alla redeleid pidi. Kui seisad tühjal väljal või kullatükil ning sinu all ei ole tellist, betooni, redelit või posti, ütleb gravitatsioon oma sõna ja sa kukud alla. Kukkuda saab ka posti või redelit pidi alla liikudes, nii et jälgi hoolikalt, kuhu hiirekursori asetad.</para>
+
+</sect2>
+
+<sect2 id="keyboard-control">
+<title
+>Klaviatuuri kasutamine</title>
+
+<para
+>Kui soovid, võid juhtida kangelast ka klaviatuurilt. Vaikimisi saab seda teha nooleklahvidega ning klahvidega <keycap
+>I</keycap
+>, <keycap
+>J</keycap
+>, <keycap
+>K</keycap
+> ja <keycap
+>L</keycap
+> (algupärase Apple II mängu auks) ja kaevamiseks klahvidega <keycap
+>Z</keycap
+> ja <keycap
+>C</keycap
+> või <keycap
+>U</keycap
+> ja <keycap
+>O</keycap
+>. Mängida võib ühe käega, kui kasutada klahve <keycap
+>U</keycap
+>, <keycap
+>I</keycap
+>, <keycap
+>O</keycap
+>, <keycap
+>J</keycap
+>, <keycap
+>K</keycap
+>, <keycap
+>L</keycap
+> ja <keycap
+>tühikuklahv</keycap
+> (<quote
+>QWERTY</quote
+> klaviatuuril), või kahe käega, kui kasutada nooleklahve ja klahve <keycap
+>tühik</keycap
+>, <keycap
+>Z</keycap
+> ja <keycap
+>C</keycap
+>. Kui tahad, võid muidugi kasutada ka hoopis muid klahve, mida saab seadistada, kui valida menüüst <guimenu
+>Seadistused</guimenu
+> käsk <guimenuitem
+>Kiirklahvide seadistamine</guimenuitem
+>.</para>
+
+<para
+>Klaviatuurirežiimi saab minna mõnda kangelast juhtivat klahvi vajutades või valides käsu <guimenuitem
+>Juhtimine klaviatuurilt</guimenuitem
+>, mille leiab menüüs <guimenu
+>Seadistused</guimenu
+>.</para>
+
+<para
+>Liikumisklahvid (<keycap
+>I</keycap
+>, <keycap
+>J</keycap
+>, <keycap
+>K</keycap
+>, <keycap
+>L</keycap
+> või nooleklahvid) panevad kangelase võtma suunda üles, alla, vasakule või paremale. Ta liigub valitud suunas seni, kuni vajutad mõnda muud liikumisklahvi või <keycap
+>tühikuklahv</keycap
+>i tema peatamiseks. Hiire- või sülearvutirežiimis peatub kangelane siis, kui on jõudnud hiirekursorini.</para>
+
+<para
+>Hoiatus: klaviatuuri kasutamine on märksa keerulisem ja pikemas perspektiivis oleks mõttekam pruukida hiirt.</para>
+
+</sect2>
+
+<sect2 id="pausing">
+<title
+>Puhkamine</title>
+
+<para
+>Mängu saab igal ajal peatada pausiklahvi vajutades (vaikimisi kas <keycap
+>P</keycap
+> või &Esc;). Mängu saab taas käivitada pausiklahvi uuesti vajutades. Võimalus <guimenuitem
+>Paus</guimenuitem
+> on olemas ka menüüs <guimenu
+>Mäng</guimenu
+>, aga siin on probleemiks see, et hiirt menüüle viies hakkab üsna kindlalt liikuma ka kangelane ja see ei pruugi olla üldse kasulik.</para>
+
+<tip
+><para
+>Kui soovid kasutada &kgoldrunner;i menüüd või teha midagi hoopis mõnes muus aknas, vajuta alati mängu peatamiseks pausiklahvi. Kui sa seda ei tee, võtab kangelane truult suuna hiirekursorile, mis ei pruugi olla üldse kasulik.</para
+></tip>
+
+</sect2>
+
+<sect2 id="winning">
+<title
+>Taseme võitmine</title>
+
+<para
+>Mängu eesmärk on korjata kokku kogu kuld selle peale liikudes või kukkudes. Kui kuld on kokku korjatud, tuleb minna mänguala ülaossa ja sealt uuele tasemele liikuda. Enamasti ilmuvad viimast kullatüki taskusse pistes peidetud redelid, mille abil saab üles ronida. Mõnikord aga peidetud redeleid ei olegi. Samuti võivad peidetud redelid haruharva olla petlikud, juhtides täiesti valele teele. Kui tasemel ei ole kulda, ei ole seal ka peidetud redeleid ja sul tuleb lihtsalt välja nuputada, kuidas pääseda mänguala ülaossa.</para>
+
+</sect2>
+
+<sect2 id="false-bricks">
+<title
+>Hoidumine libatelliste eest</title>
+
+<para
+>Libatellised ehk lõksud on veel üks selle mängu peidetud omadustest. Need näevad välja täpselt nagu tavalised tellised, aga neile astudes nad murenevad ja sa kukud alla. See võib olla üsna halb, kui all ootab näiteks vaenlane, aga ka päris hea, kui vaenlase asemel on hoopis kullahunnik.</para>
+
+</sect2>
+
+<sect2 id="enemies">
+<title
+>Vaenlased</title>
+
+<para
+>Vaenlased liiguvad üsna samamoodi nagu kangelane. Põhiline erinevus ilmneb siis, kui nad langevad kangelase kaevatud auku (vaata allpool lõiku <link linkend="importance-of-digging"
+>kaevamise tähtsusest</link
+>). </para>
+<para
+>Nad korjavad vastavalt mängu seadistusele kulda üles kas alati või juhuslikult ning poetavad selle juhuslikult tellistele, betoonile või redeli tippu. Kulda kandvat vaenlast näidatakse kuldse joonega ääristatuna. Enne taseme lõpetamist tuleb kuld kätte saada ka vaenlaste käest.</para>
+
+<para
+>Kui vaenlane sind puudutab või sa ise talle otsa komistad, saad surma ja peab taset uuesti alustama, kui sul on veel elusid alles. Siiski on võimalik vaenlasele pähe astuda või teda tõugata, kui ta parajasti langeb. Mõnel kõrgemal tasemel on selliseid samme isegi lausa vajalik ette võtta.</para>
+
+</sect2>
+
+<sect2 id="losing-a-level">
+<title
+>Taseme kaotamine</title>
+
+<para
+>Nagu äsja selgitatud, kaotad taseme ja elu vaenlast puudutades. Kaotus saabub ka siis, kui satud auku ja see sulgub. Enesetapu võib korda saata ka klahvile <keycap
+>Q</keycap
+> vajutades või menüükäsuga <menuchoice
+><guimenu
+>Mäng</guimenu
+><guimenuitem
+>Tapa kangelane</guimenuitem
+></menuchoice
+>. Miks midagi nii äärmuslikku ette võtta? Paraku võid vahel jääda kinni kohta, kust enam pääsemist ei ole ja kui sa ennast ise ei kõrvalda, jääd vangi aegade lõpuni!</para>
+
+</sect2>
+
+<sect2 id="importance-of-digging">
+<title
+>Kaevamise tähtsusest</title>
+
+<para
+>Kaevamine on kangelase üks tõhusamaid taktikalisi võtteid. Augu kaevamiseks tellistesse paremal või vasakul klõpsa hiire <mousebutton
+>vasakut</mousebutton
+> või <mousebutton
+>paremat</mousebutton
+> nuppu või kasuta mõnda kaevamisklahvi (vaikimisi <keycap
+>Z</keycap
+>, <keycap
+>C</keycap
+>, <keycap
+>U</keycap
+>, <keycap
+>O</keycap
+>).</para>
+
+<para
+>Läheneva vaenlase saab elimineerida auku valmis kaevates, oodates, kuni ta sinna sisse langeb, ja siis kiiresti üle tema pea joostes. Samal ajal saab tema käest kulla ära võtta. Tavaliselt on hea mõte kaevata kaks auku ja joosta üle kahe lähestikku asuva vaenlase, kuid see õnnestub harva, kui vaenlased ei ole eriti lähestikku või kui neid on enam kui kaks.</para>
+
+<para
+>Vaenlast saab tappa tema teele auku kaevates. Ühe vaenlase tapmiseks kulub tavaliselt kaks või isegi rohkem auku, kui vaenlasi on neli või viis, siis lausa kaheksa või enamgi. Kui vaenlased surevad, ilmuvad nad otsekohe uuesti välja kas seal, kus nad mängu alustasid või siis mänguala ülaosas vastavalt sellele, kas mäng käib <quote
+>&kgoldrunner;i</quote
+> või <quote
+>traditsiooniliste</quote
+> reeglite ja seadistuste järgi (vaata <link linkend="choice-of-rules"
+>reeglite valimise osa</link
+>).</para>
+
+<para
+>Lõpuks tuleb mainida, et mitmel tasemel ei olegi kuld niisama lihtsalt kättesaadav ja selleks tuleb usinalt kaevata. Mõned kaevamisülesanded on päris keerukad ning tuleb hoolikalt välja mõelda, mida ja millises järjekorras teha selle piiratud ajaga, mis on sinu käsutuses enne taseme lõpetamist.</para>
+
+</sect2>
+
+<sect2 id="rules-of-digging">
+<title
+>Kaevamise reeglid</title>
+
+<para
+>Augu kaevamiseks vasakule või paremale võib klõpsata hiire <mousebutton
+>vasakut</mousebutton
+> või <mousebutton
+>paremat</mousebutton
+> nuppu või vajutada klahve <keycap
+>Z</keycap
+>, <keycap
+>C</keycap
+>, <keycap
+>U</keycap
+> või <keycap
+>O</keycap
+>. Kaevata saab ainult tellistes, mitte kusagil mujal. Auk ilmub põrandasse sellel pool kangelast, kus kaevatakse (&ie; all ja vasakul või paremal). Kaevamise ajal võib liikuda, seista või kukkuda. Tellise kohal peab olema tühi ruum või auk (&ie; kaevata ei saa redeli, posti, kulla, tellise, betooni, libatellise või vaenlase all).</para>
+
+<para
+>Kangelane võib kaevatud aukude kaudu igas suunas liikuda, sealhulgas sellest läbi kukkuda, kui ta näiteks vaenlase eest pageb. Mõne aja pärast kasvavad augud kinni, nii et neid tuleb kiiresti ära kasutada. Plaani kaevamistööd aegsasti ette: kaevamise enda ajal ei ole enam aega peatuda ja mõtiskleda elu ja armastuse ja parima taktika üle.</para>
+
+<para
+>Vaenlased langevad auku kukkudes alati lõksu ning ronivad alati ÜLES, et välja pääseda. Nende augus viibimise aeg on väiksem kui augu avatuna oleku aeg, nii et vaenlase tapmiseks tuleb tavaliselt kaevata mitu auku järjest. Vaenlased annavad auku kukkudes alati kulla vabaks, nii et on võimalik joosta kiiresti üle tema pea ja kuld ära võtta, enne kui ta jõuab välja ronida.</para>
+
+<para
+>Vaenlased ei kuku kunagi läbi augu ülevalt alla, kuid vastavalt mängureeglitele ja <guimenu
+>seadistustele</guimenu
+> (vaata osa <link linkend="choice-of-rules"
+>reeglite valik</link
+>) võivad nad horisontaalselt joosta kaevatud auku ning mitte vangi langeda ja langeda seal või joosta teise auku või joosta august välja. Mitmed <quote
+>traditsioonilisi</quote
+> reegleid järgivad tasemed kasutavadki ära vaenlase oskust joosta läbi augu. Mõned <quote
+>&kgoldrunner;i</quote
+> reegleid järgivad tasemed aga sõltuvad just nimelt sellest, et vaenlane EI SAA joosta läbi augu.</para>
+
+</sect2>
+
+<sect2 id="winning-and-losing-the-game">
+<title
+>Mängu võitmine ja kaotamine</title>
+
+<para
+>Mäng on võidetud pärast viimase taseme lõpetamist. Kaotus saabub koos viimase elu haihtumisega. Igal juhul võid, kui oled saavutanud antud mängus kümne parema hulka mahtuva punktisumma, oma saavutuse jäädvustada <quote
+>&kgoldrunner;i kuulsuste hallis</quote
+>.</para>
+
+</sect2>
+
+<sect2 id="recordings-replays-and-solutions">
+<title
+>Salvestamine, taasläbimängimine ja lahendused</title>
+
+<para
+>Kõik mängude tasemed salvestatakse mängimise ajal, nii et sul on alati võimalus taas läbi mängida varem mängitud tasemeid. Samuti on mõnel tasemel olemas salvestatud lahendused, mis võivad aidata sul leida, kuidas neid võita. Kõigeks selleks kasuta lihtsalt menüüs <guimenu
+>Liikumine</guimenu
+> olevaid käske <guimenuitem
+>Näita lahendust</guimenuitem
+>, <guimenuitem
+>Viimane uuesti</guimenuitem
+>, <guimenuitem
+>Viimane tase uuesti</guimenuitem
+> ja <guimenuitem
+>Valitud tase uuesti</guimenuitem
+>. Lahenduse ja korduse esitamist saab iga hetk katkestada, kui klõpsata hiirega mängualale, vajutada tühikuklahvi või valida sobiv menüükäsk või kiirklahv (näiteks <menuchoice
+><guimenu
+>Mäng</guimenu
+><guimenuitem
+>Uus mäng</guimenuitem
+></menuchoice
+>).</para>
+
+<para
+><guimenuitem
+>Viimane uuesti</guimenuitem
+> ja <guimenuitem
+>Viimane tase uuesti</guimenuitem
+> võimaldavad pärast katkestamist uuesti jätkata. Nii et kui asjad ei lähe hästi, võid valida <guimenuitem
+>Viimane uuesti</guimenuitem
+>, katkestada teataval hetkel korduse ning proovida mõnda muud lähenemist probleemile. Aga kui lausa kangelane sai surma, siis võib samamoodi kasutada võimalust <guimenuitem
+>Viimane tase uuesti</guimenuitem
+>. Need võimalused lubavad sul leida raskete tasemete puhul katse-eksituse meetodil õige lahenduse, kuid tasub silmas pidada, et nende kasutamisel ei lisata tulemust edetabelisse.</para>
+
+</sect2>
+</sect1>
+
+<sect1 id="scoring">
+<title
+>Hindamine</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Mängu alustatakse 5 eluga.</para>
+</listitem>
+<listitem>
+<para
+>Kangelase surm toob kaasa elu kaotamise ja taseme kordamise.</para>
+</listitem>
+<listitem>
+<para
+>Taseme läbimine annab ühe elu juurde.</para>
+</listitem>
+<listitem>
+<para
+>75 punkti vaenlase lõksu meelitamise eest.</para>
+</listitem>
+<listitem>
+<para
+>75 punkti vaenlase tapmise eest.</para>
+</listitem>
+<listitem>
+<para
+>250 punkti kulla ärakorjamise eest.</para>
+</listitem>
+<listitem>
+<para
+>1500 punkti taseme lõpetamise eest.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="choice-of-rules">
+<title
+>Reeglite valik</title>
+
+<para
+>Enamik &kgoldrunner;i reegleid on ära seletatud osas <link linkend="how-to-play"
+>Kuidas mängida</link
+>, kuid lisaks sellele on veel kaks põhilist reeglite seadistust, mis mõjutavad kogu mängu stiili. Need kannavad nimetusi <quote
+>traditsiooniline</quote
+> ja <quote
+>&kgoldrunner;</quote
+>. Mängu mängides on päris oluline teada, milline reeglistik parajasti kehtib. Et asi oleks lihtsam, valib &kgoldrunner; automaatselt korrektsed seadistused vastavalt mängule, mida soovid ette võtta, ning iga mängu reegleid näeb ka <link linkend="level-selection-dialog"
+>taseme valimise</link
+> dialoogis.</para>
+
+<para
+><quote
+>Traditsiooniliste</quote
+> ja <quote
+>&kgoldrunner;i</quote
+> seadistuste suurim erinevus seisab viisis, mille alusel vaenlased valivad oma teekonna kangelase juurde.</para>
+
+<itemizedlist>
+<listitem>
+<para
+><quote
+>Traditsioonilise</quote
+> otsimismeetodi korral otsivad vaenlased püstteid (redelid ja kukkumiskoha) ning püüavad olla kangelasest kõrgemal või samal kõrgusel. Kangelasest allapoole lähevad vaenlased ainult siis, kui nad kuidagi teisiti ei saa. Vaenlased ei tee katset ahistada kangelast rõhtsuunas seni, kuni nad ei ole temaga samal kõrgusel ja nende ees ei avane horisontaalne teekond kangelaseni. See võib tuua kaasa olukordi, kus kangelane saab <quote
+>juhtida</quote
+> endast päris kaugel asuvaid vaenlasi ning panna nad enda eest tööle või vähemalt hoida oma teelt kõrval.</para>
+</listitem>
+<listitem>
+<para
+><quote
+>&kgoldrunner;i</quote
+> seadistuste korral otsitakse nii rõht- kui püstteid, mille tulemusena vaenlased koonduvad enamvähem samale kõrgusele kangelasega ja kindlasti mänguala samasse piirkonda (&ie; nad on agressiivsemad ja mitte nii hästi manipuleeritavad). Selle tulemusena on mäng aktiivsem ja põnevam, kuid strateegiaks ja mõistatuste lahendamiseks on võimalusi samas vähem. Kuid näiteks 2007. aastal lisandunud mäng <quote
+>Hirm ja õud</quote
+> kasutab <quote
+>&kgoldrunner;i</quote
+> reegleid ning pakub rohkelt mõistatusi lahendada ka siis, kui sul on tõesti väga kiire. Seepärast on ka tegemist kohe päris raske mänguga.</para>
+</listitem>
+</itemizedlist>
+
+<para
+>Ülejäänud erinevused:</para>
+
+<itemizedlist>
+<listitem>
+<para
+><quote
+>&kgoldrunner;i</quote
+> korral liiguvad kangelane ja vaenlased alati kindla kiirusega ning tellistel kulub alati ühesugune aeg sulgumiseks. <quote
+>Traditsioonilises</quote
+> mängus sõltub kiirus vaenlaste arvust tasemel: mida rohkem vaenlasi, seda aeglasemalt nad liiguvad. Aeglasemaks muutub ka kangelase liikumine, kuid mitte nii palju.</para>
+</listitem>
+<listitem>
+<para
+><quote
+>Traditsioonilises</quote
+> mängus korjavad vaenlased alati kulla üles, kui nad sellele peale satuvad. <quote
+>&kgoldrunner;i</quote
+> korral korjavad nad kulda juhuslikult. Kulla mahapoetamine käib mõlema mängutüübi korral juhuslikult.</para>
+</listitem>
+<listitem>
+<para
+>Vaenlased võivad horisontaalselt läbi aukude liikuda <quote
+>traditsioonilises</quote
+> mängus, aga mitte <quote
+>&kgoldrunner;i</quote
+> mängus. Mitme <quote
+>traditsioonilise</quote
+> mängu taseme korral ongi üks huvitav nipp vaenlase vabastamine tellismüüri tagant: telliseid eemaldades tormab ta läbi avause. Mõnel <quote
+>&kgoldrunner;i</quote
+> tasemel tuleb sul aga ennast vaenlase eest pääsemiseks hoopis peita ärakaevatud tellise taga.</para>
+</listitem>
+<listitem>
+<para
+>Kui vaenlased surevad <quote
+>&kgoldrunner;i</quote
+> tüüpi mängus, lähevad nad tagasi sinna, kust nad antud tasemel alustasid. <quote
+>Traditsioonilises</quote
+> mängus ilmuvad nad tagasi juhuslikus kohas mänguala ülaosas. See on päris oluline erinevus, seda eriti tasemetel, kus tuleb kuld lasta välja koukida vaenlastel, aga ka seetõttu, et vaenlased langevad sama kiiresti, kui sa jõuad neid tappa.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+</chapter>
+
+<chapter id="level-selection-dialog">
+<title
+>Taseme valimise dialoog</title>
+
+<sect1 id="level-selection-dialog-box">
+<title
+>Taseme valimise dialoogi kasutamine</title>
+
+<screenshot>
+<screeninfo
+>Taseme valimise dialoog</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="select.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Taseme valimise dialoog</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>See kast ilmub, kui valid käsu <guimenuitem
+>Uus mäng</guimenuitem
+> või ka mõne kirje menüüst <guimenu
+>Redaktor</guimenu
+> või kordamise käsud menüüst <guimenu
+>Liikumine</guimenu
+>. Selle abil saab valida mängu ja taseme, mida mängida, korrata, muuta, salvestada, ümber nummerdada või kustutada. Peamine nupp dialoogi allservas on <guibutton
+>OK</guibutton
+>. Kiri sellel nupul muutub vastavalt sellele, mida sa parajasti teed: näiteks toodud juhul on tegemist mängu ja taseme valimisega mängimiseks.</para>
+
+<sect2 id="selecting-a-game">
+<title
+>Mängu valimine</title>
+
+<para
+>Mitu <quote
+>süsteemset</quote
+> mängu tuleb kaasa juba &kgoldrunner;i endaga ning redaktorit kasutades on sul võimalik lisada ka oma mänge. Kõiki neid näidatakse nimekirjakastis esimestena, rühmitatuna vastavalt raskusastmele. Treeningmängud on nimekirja lõpus, enne neid asuvad tavalised mängud. Mõne mängu valimiseks nimekirjast lihtsalt klõpsa selle nimel.</para>
+
+<para
+>Mängu valides näitab dialoog automaatselt, millised reeglid sellele kehtivad (vaata osa <link linkend="choice-of-rules"
+>Reeglite valimine</link
+>) ja mitu taset mängul on. Mängu valimisel näeb allpool olevas kastis mängu kohta lisateavet.</para>
+
+</sect2>
+
+<sect2 id="selecting-a-level">
+<title
+>Taseme valimine</title>
+
+<para
+>Mängu võib alustada mis tahes tasemel, aga kõige mõistlikum on siiski alustada esimesest tasemest ja liikuda sealt edasi, eriti kui sinu sooviks on koguda võimalikult hea punktisumma. Üldiselt on suurema numbriga tasemed ka raskemad.</para>
+
+<para
+>Taseme valimise dialoogi ilmudes on seal vaikimisi tasemeks midagi enam-vähem mõistlikku, näiteks sinu viimane mängitud või muudetud tase. Taset saab muuta kerimiskasti nooltega, numbrit kerimiskasti kirjutades või liugurit kasutades. Nooled liuguri otstes suurendavad või vähendavad numbrit ühe võrra. Liugurit saab muidugi ka hiirega nihutada, mis võimaldab numbreid kiiremini muuta. Kümnekaupa saab numbrit muuta, kui klõpsata liuguripideme kohal või all asuvale alale.</para>
+
+<para
+>Taseme numbri muutudes ilmub vastava taseme eelvaatlus väikesesse aknasse ning näha on ka taseme nimi (kui see on olemas).</para>
+
+</sect2>
+
+<sect2 id="completing-selection">
+<title
+>Valimise lõpetamine</title>
+
+<para
+>Kui oled mängu ja taseme valinud, klõpsa peanupule all, et asuda mängu mängima, kordama või muutma.</para>
+
+<para
+>Enne seda ei juhtu midagi, nii et sa võid alati klõpsata nupule <guibutton
+>Loobu</guibutton
+> ja naasta sinna, kust dialoogi avasid. Pane tähele, et mäng on dialoogi lahtioleku ajal nii-öelda külmutatud, mistõttu mängu saab jätkata kohast, kus see pooleli jäi, pärast klõpsu nupule <guibutton
+>Loobu</guibutton
+>.</para>
+
+</sect2>
+
+<sect2 id="saving-changes">
+<title
+>Muudatuste salvestamine</title>
+
+<para
+>Kui valid toimingu menüüst <guimenu
+>Mäng</guimenu
+>, <guimenu
+>Redaktor</guimenu
+> või <guimenu
+>Liikumine</guimenu
+> ning oled varem midagi muutnud, aga mitte salvestanud, ilmub dialoog, mis pärib, kas soovid muudatusi salvestada, neist loobuda või nendega edasi tegelda. Uus toiming ega selle dialoog ei ilmu enne, kui oled langetanud otsuse, mida ette võtta oma varasema kätetööga.</para>
+
+</sect2>
+
+<sect2 id="any-level">
+<title
+><quote
+>Suvalise</quote
+> taseme mängimine või redigeerimine</title>
+
+<para
+>Pane tähele, et menüüd võimaldavad valida ja mängida või muuta ka <quote
+>suvalist</quote
+> taset. Kui alustad mängu kõrgemal tasemel kui 1, on kõik korras, sa ei saa arvatavasti ainult hirmus suurt punktisummat kokku. Pühendunud mängijad eelistavad sageli lihtsalt lõbu pärast mängida kõrgemaid tasemeid, seadmatagi sihiks punktisummat, samuti võib sul tekkida huvi kõigepealt <quote
+>treenida</quote
+> kõrgematel tasemetel, enne kui asuda skoori taga ajama.</para>
+
+<para
+>Täiesti võimalik on valida muutmiseks ka süsteemne tase, kuid muudatuste tegemisel tuleb need kindlasti salvestada omaloodud mängu, sest süsteemsesse mängu ei ole see lihtsalt lubatud. Kui tegemist on väga raske tasemega, võib sul tekkida soov seda muuta, et sa ei peaks muudkui taset algusest peale alustama, kui saad pidevalt surma.</para>
+
+<para
+>Kui tahad täpsemalt mõista äsjaöeldut, proovi näiteks <quote
+>väljakutse</quote
+> mängu tasemel 16 <quote
+>Kolm musketäri</quote
+>. Sellel tasemel on lahendada umbes kümme keerulist mõistatust. Kui oled esimese mõistatuse lahendanud, on loomulik, et sa ei taha seda uuesti läbi teha, kui oled saanud surma teise mõistatuse kallal vaeva nähes. Nipiks on siin redigeeritava koopia valmistamine, seda seejärel värskendades ja muutes kangelase algushetke, kuni oled kõik mõistatused lahendanud. Seejärel võid proovida kõike päriselt läbi teha.</para>
+
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="menu-reference">
+<title
+>Menüükirjed</title>
+
+<sect1 id="menu-overview">
+<title
+>Menüüde ülevaade</title>
+
+<variablelist>
+<varlistentry>
+<term
+><link linkend="game-menu"
+><guimenu
+>Mäng</guimenu
+></link
+></term>
+<listitem>
+<para
+>Selle menüü käsud puudutavad kogu mängu: alustamine ja lõpetamine, mängude salvestamine, salvestatud mängude avamine ning rekordite näitamine (kui neid muidugi on). Menüü <guimenu
+>Mäng</guimenu
+> sisaldab ka korraldust <guimenuitem
+>Välju</guimenuitem
+> ning võimalust käivitada treeningmäng ilma taseme valiku dialoogi avamata. Mängust tervikuna saab küll väljuda ka &kgoldrunner;i akna ülemises paremas nurgas asuvat <guiicon
+>X</guiicon
+>-i klõpsates.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link linkend="move-menu"
+><guimenu
+>Liikumine</guimenu
+></link
+></term>
+<listitem>
+<para
+>See menüü sisaldab vihje kasutamise võimalust (kui muidugi vihjeid leidub). Meistritaseme ja treeningmängud sisaldavad vihjeid iga taseme kohta. Teistes mängudes esineb vihjeid harva. Samuti leiduvad siin käsud, mis võimaldavad salvestatud mänge või tasemeid korrata, käivitada demo ning näidata võimalikke lahendusi.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link
+linkend="editor-menu"
+><guimenu
+>Redaktor</guimenu
+></link
+></term>
+<listitem>
+<para
+>Selle menüü abil saab teha kõike, mis puudutab omaenda mängude ja tasemete loomist ning redigeerimist, sealhulgas tasemeid ümber korraldada, liigutada neid teise mängu või sootuks kustutada, kui tunned, et nende järele ei ole enam vajadust. Tasemeid ümber seades jäävad need mängu sees siiski järjepidevaks (see tähendab, et auke ei teki) ning need nummerdatakse taset lisades või eemaldades automaatselt ümber.</para>
+<para
+>Mängu redaktorit kasutades ilmub menüüriba alla graafiline tööriba, mis pakub ka kohtspikreid. Selle kohta, kuidas luua ja redigeerida &kgoldrunner;i tasemeid, vaata täpsemalt osa <link linkend="game-editor"
+>Mängu redaktor</link
+>.</para
+> </listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link
+linkend="settings-menu"
+><guimenu
+>Seadistused</guimenu
+></link
+></term>
+<listitem>
+<para
+>Selles menüüs on mitut laadi &kgoldrunner;i seadistusi, sealhulgas mängu juhtimine hiirega, klaviatuurilt või hoopis hübriidselt (sülearvuti puhul) ning mängu teema ja kiirus. Parajasti kehtivad valikud on linnukesega märgitud. Seadistused valitakse automaatselt mängu käivitades, kuid selle menüü abil võib neid muuta.</para>
+
+<para
+>Samuti on siin võimalik ka muuta kiirklahve ning kangelase juhtimise klahve.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link linkend="help-menu"
+><guimenu
+>Abi</guimenu
+></link
+></term>
+<listitem>
+<para
+>Menüü <guimenu
+>Abi</guimenu
+> sisaldab võimalust kasutada &kgoldrunner;i käsiraamatut (sedasama, mida praegu loed) ning võimalusi <guimenuitem
+>&kgoldrunner;i info</guimenuitem
+> ja <guimenuitem
+>&kde; info</guimenuitem
+>.</para>
+<para
+>Samuti saab kasutada võimalust anda teada vigadest või esitada oma soov mängu paremaks muutmise kohta.</para>
+<para
+>Kui soovid teha mõne ettepaneku või pakkuda välja täiendavaid tasemeid, leiad autori e-posti aadressi menüükäsuga <guimenuitem
+>&kgoldrunner;i info</guimenuitem
+>.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="game-menu">
+<title
+>Menüü Mäng</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Mäng</guimenu
+><guimenuitem
+>Uus mäng...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Avab taseme valimise dialoogi (vaata osa <link linkend="level-selection-dialog-box"
+>Taseme valimise dialoogi kasutamine</link
+>), kus saab valida mängu ja taseme. Vähemalt algajal on mõistlik alustada esimesest tasemest, sest tasemed on üldiselt järjestatud vastavalt raskusele. Samuti annab see hea võimaluse koguda võimalikult hea punktisumma.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Mäng</guimenu
+><guimenuitem
+>Laadi salvestatud mäng...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Avab varem salvestatud mängude tabeli, kus need on sorteeritud nii, et kõige esimesel kohal on viimati salvestatu. Iga rida märgib ära mängu, taseme, elude arvu, punktisumma, nädalapäeva, kuupäeva ja aja. Valides mingi rea ja klõpsates nupule <guibutton
+>OK</guibutton
+>, algab mäng antud tasemelt just sellele omase elude arvu ja punktisummaga.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>Y</keycap
+></shortcut
+> <guimenu
+>Mäng</guimenu
+><guimenuitem
+>Mängi järgmist taset</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Laadib aktiivse mängu järgmise taseme ilma taseme valimise dialoogi avamata. Selle käsuga võib kiiresti läbi lapata mängu eri tasemed.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>S</keycap
+></shortcut
+> <guimenu
+>Mäng</guimenu
+><guimenuitem
+>Salvesta mäng...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Salvestab parajasti avatud mängu, taseme, elude arvu ja punktisumma. See salvestab ainult positsiooni ja punktisumma nii, nagu oleks tegemist taseme algusega. Tegelikult võid olla ka tasemega peaaegu juba ühele poole saanud, kuid &kgoldrunner; salvestab positsiooni (ja punktisumma) ikkagi nii, nagu oleks tegemist taseme algusega. Vastavat hoiatusteadet peaksid samuti nägema. Enne selle võimaluse kasutamist tuleks vajutada pausiklahvi (<keycap
+>P</keycap
+> või &Esc;), kui soovid salvestada hiirt kasutades, kuigi märksa lihtsam on kasutada kiirklahvi <keycap
+>S</keycap
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Mäng</guimenu
+><guimenuitem
+>Salvesta muudatused...</guimenuitem
+> </menuchoice>
+</term>
+<listitem
+><para
+>Seda saab kasutada ainult mängu redaktoris. Ilmub taseme valimise dialoog, kus saad määrata taseme numbri ja mängu, kuhu oma muudatused salvestada. Toime on igatahes täpselt sama, nagu menüü <guimenu
+>Redaktor</guimenu
+> käsul <guimenuitem
+>Salvesta muudatused</guimenuitem
+> ja redaktoriribal asuval <guiicon
+>ketta</guiicon
+>kujulisel ikoonil.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>P või &Esc;</keycap
+></shortcut
+> <guimenu
+>Mäng</guimenu
+><guimenuitem
+>Paus</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Peatab või käivitab mängu uuesti.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Mäng</guimenu
+><guimenuitem
+>Näita rekordeid</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Näitab tabelit parajasti valitud mängu kuni kümne parema tulemusega. Igal real on ära toodud mängija koht ja nimi, saavutatud tase, kogutud punktisumma, nädalapäev ja kuupäev.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>Q</keycap
+></shortcut
+> <guimenu
+>Mäng</guimenu
+><guimenuitem
+>Tapa kangelane</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Tapab kangelase, mis on abiks eriti siis, kui kangelane on sattunud positsiooni, kust ta enam välja ei pääse.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Mäng</guimenu
+> <guimenuitem
+>Välju</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Lõpetab otsekohe &kgoldrunner;i töö. Kui mäng on parajasti pooleli, kaob see igaveseks (kui sa ei ole seda just varem salvestanud) ning rekord jäetakse arvestamata (eeldusel muidugi, et oled rekordini jõudnud, millisel juhul on väheusutav, et sa seda võimalust kasutad :-) Kui tegemist on taseme redigeerimisega, pakutakse sulle võimalust tehtud muudatused salvestada.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+<sect1 id="move-menu">
+<title
+>Menüü Liikumine</title>
+
+<tip
+><para
+>Kõik demo ja korduste käigud mängivad läbi varem salvestatud tasemeid. Kõiki neid saab katkestada ja peatada, kui klõpsata mängualale hiirega, vajutada tühikuklahvi või valida sobiv menüükäsk või kiirklahv (näiteks <menuchoice
+><guimenu
+>Mäng</guimenu
+><guimenuitem
+>Uus mäng...</guimenuitem
+></menuchoice
+>).</para
+></tip>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>H</keycap
+></shortcut
+> <guimenu
+>Liikumine</guimenu
+> <guimenuitem
+>Vihje</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Näitab vihjet, kui see on mängitava taseme kohta olemas. Reeglina on meistritaseme ja treeningmängudel vihjed iga taseme kohta. Teistes mängudes leidub vihjeid harva. &kgoldrunner;i akna allosas näeb, kas vihjeid on või mitte.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>D</keycap
+></shortcut
+> <guimenu
+>Liikumine</guimenu
+><guimenuitem
+>Demo</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Esitab mängu mõne salvestatud taseme demonstratsiooni. Need on samasugused, nagu näidatakse käivitusaegses demos.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Liikumine</guimenu
+><guimenuitem
+>Näita lahendust...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Esitab taseme salvestatud lahenduse, kui see leidub mänguandmete failis.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>R</keycap
+></shortcut
+> <guimenu
+>Liikumine</guimenu
+><guimenuitem
+>Viimane uuesti</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Peatab aktiivse taseme mängimise ja esitab selle salvestatud versiooni algusest peale. Kui korduse katkestad, võid jätkata mängimist peatuskohast ja valida teistsuguse käitumise. Sel moel saab katse-eksituse meetodil leida võiduka lahenduse, kuid samas ei võeta sel juhul saavutatud tulemust arvesse edetabelis.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>A</keycap
+></shortcut
+> <guimenu
+>Liikumine</guimenu
+><guimenuitem
+>Viimane tase uuesti</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Kordab viimast salvestatud mängitud taset algusest peale (kui &eg; oled taseme kaotanud). Kui korduse katkestad, võid jätkata mängimist peatuskohast ja valida teistsuguse käitumise. Sel moel saab katse-eksituse meetodil leida võiduka lahenduse, kuid samas ei võeta sel juhul saavutatud tulemust arvesse edetabelis.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Liikumine</guimenu
+><guimenuitem
+>Valitud tase uuesti</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Kordab mis tahes varem mängitud salvestatud taset. </para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+<sect1 id="editor-menu">
+<title
+>Menüü Redaktor</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Redaktor</guimenu
+><guimenuitem
+>Loo tase</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Toob nähtavale redaktoririba ja tühja mänguala, kus saab kujundada uue taseme. Kui oled valmis, kasuta käsku <guimenuitem
+>Salvesta muudatused</guimenuitem
+> uue taseme lisamiseks mõnele mängule ja tasemele numbri andmiseks.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Redaktor</guimenu
+><guimenuitem
+>Muuda taset...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Avab taseme valimise dialoogi, kus saab valida mängu ja taseme, mida soovid redigeerida. Võid valida ka süsteemse mängu ja taseme, kuid sellisel juhul hoiatatakse sind, et redigeeritud taseme saad salvestada ainult omaloodud mängu.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Redaktor</guimenu
+><guimenuitem
+>Salvesta muudatused...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Avab taseme valimise dialoogi sobivate vaikeväärtustega uue või redigeeritud taseme salvestamiseks. Võid muuta mängu ja taseme numbrit, mis tähendab sisuliselt võimaluse <quote
+>Salvesta kui...</quote
+> kasutamist. Dialoogil on erinupp <guibutton
+>Taseme nimi ja vihje</guibutton
+>, mis avab dialoogi, kus saab anda tasemele nime ja lisada vihje.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Redaktor</guimenu
+><guimenuitem
+>Liiguta taset...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>See on kaheosaline operatsioon. Enne seda, kui kasutada võimalust <guimenuitem
+>Liiguta taset</guimenuitem
+>, tuleb tase, mida soovid liigutada, valida. Seejärel avab käsk <guimenuitem
+>Liiguta taset</guimenuitem
+> taseme valimise dialoogi, kus saab valida laetud tasemele uue asukoha. Muuta võib nii mängu kui taseme numbrit liigutamaks tase mõnesse muusse mängu või ka muuta ainult taseme numbrit, kui soovid muuta selle asukohta valitud mängus. Liigutada ei ole võimalik süsteemset taset.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Redaktor</guimenu
+><guimenuitem
+>Kustuta tase...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Avab taseme valimise dialoogi, kus saab valida taseme, mida soovid kustutada. Kustutada ei saa süsteemset taset.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Redaktor</guimenu
+><guimenuitem
+>Loo mäng...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Seda võimalust tuleb kasutada enne seda, kui asud looma omaenda &kgoldrunner;i tasemeid. See avab dialoogi, kus saad anda uue mängu nime, ühe- kuni viietähelise prefiksi tasemefailide nimele, mängu vaikereegli (<quote
+>&kgoldrunner;</quote
+> või <quote
+>traditsiooniline</quote
+>) ning lisavõimalusena mängu kirjelduse või kommentaari.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Redaktor</guimenu
+><guimenuitem
+>Muuda mänguinfot...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Avab taseme valimise dialoogi, kus saad valida mängu, mida soovid redigeerida, ning seejärel ilmub mänguinfo dialoog, kus saab muuta nime, reeglit ja kirjeldust, aga mitte failinime prefiksit, kui oled salvestanud mingeid tasemeid. Selle põhjuseks on asjaolu, et tasemefailide nimed kasutavad seda prefiksit seemiselt.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+<sect1 id="settings-menu">
+<title
+>Menüü Seadistused</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>F</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Seadistused</guimenu
+> <guimenuitem
+>Täisekraanirežiim</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Lülitab täisekraanirežiimi</action
+> sisse ja välja. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Seadistused</guimenu
+><guimenuitem
+>Teema muutmine</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>See alammenüü võimaldab valida taustateemasid ehk <quote
+>maailmu</quote
+>, milles mäng aset leiab. Teemat võib muuta ka siis, kui mäng parajasti käib. Kunstikalduvustega isikutel on võimalik luua oma teemasid, lisades sinna nii graafikat kui ka helisid, ja lasta &kgoldrunner;il neid kasutada. Täpsema teabe saamiseks võta lihtsalt autoriga ühendust.</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Must valgel</guimenuitem
+></term>
+<listitem>
+<para
+>See teema kujutab endast kõige elementaarsemat graafikat, mis on loodud kõigest mustvalgena. Selle loomisel on eriti silmas peetud nägemisvaegustega inimesi. Autor ootab pingsalt e-kirju, mis teataksid, kui tõhus see teema on ja kas selles saaks midagi paremaks muuta.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Egiptuse aare</guimenuitem
+></term>
+<listitem>
+<para
+>Matt Goldrunner leiab end Muinas-Egiptuse templis, kus teda ajavad taga muumiad, kes on kindlameelselt valmis iga hinna eest kaitsma esivanemate varandust.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>&kgoldrunner; vaikimisi</guimenuitem
+></term>
+<listitem>
+<para
+>&kgoldrunner;i vaiketeema punaste telliste ja halli betooniga.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Nohikulinn</guimenuitem
+></term>
+<listitem>
+<para
+>Meie kangelane on lõksus arvuti sees. Kas ta suudab pääseda, kui jõuab lõpuks viimasele tasemele?</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Nostalgia</guimenuitem
+></term>
+<listitem>
+<para
+>See tuletab meelde algupärase Apple II ja Commodore 64 mängu aegu, kui masin tuli ühendada teleriga &mdash; monitor oli ju ühevärviline. Teadmiseks neile, kes ei mäleta toonaseid kangelaslikke aegu, siis see ei ole päris täpne taasesitus, aga väga sarnane siiski. Nii oli näiteks kangelane tookord üleni valge, nüüd aga on ta sinine.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Nostalgiasina</guimenuitem
+></term>
+<listitem>
+<para
+>See meenutab Apple II mängu, kus tellised ja betoon olid kenasti sinised, kangelane valge, vaenlastel oli valge alaosa ja oranž ülaosa ning kuld paiknes valgetes oranžide kaantega kastides. Selle efekt oli suhteliselt hägune (omamoodi riistvaraline antialias), mis andis tellistele peaaegu ruumilise väljanägemise &mdash; midagi, mida tänapäeva imeteravatel monitoridel on väga raske järgi teha.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Seadistused</guimenu
+><guimenuitem
+>Helide esitamine</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Lülitab helide esitamise sisse ja välja.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Seadistused</guimenu
+><guimenuitem
+>Sammude esitamine heliga</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Lülitab sammude esitamise heliga sisse ja välja.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Seadistused</guimenu
+><guimenuitem
+>Demo käivitumisel</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Lülitab käivitumisel demo esitamise sisse või välja ( vaata osa <link linkend="how-to-play"
+>Mängu käivitamine</link
+>).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Seadistused</guimenu
+><guimenuitem
+>Kangelase juhtimine hiirega</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Määrab kangelast juhtima hiire (vaata osa <link linkend="mouse-control"
+>Liikumine</link
+>).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Seadistused</guimenu
+> <guimenuitem
+>Kangelase juhtimine klaviatuurilt</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Määrab kangelast juhtima klaviatuuri (vaata osa <link linkend="keyboard-control"
+>Juhtimine klaviatuurilt</link
+>).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Seadistused</guimenu
+><guimenuitem
+>Hübriidjuhtimine (sülearvuti)</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Lülitab sülearvuti korral sisse hübriidjuhtimise, kus puuteplaadi või mõne muu osutusseadmega saab juhtida kangelast, kuid klaviatuuri kaevamisklahvidega kaevata vasakul ja paremal.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Seadistused</guimenu
+><guimenuitem
+>Klahvi klõpsamine liikumiseks</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Klaviatuurirežiimis tuleb liikumise alustamiseks klõpsata suunaklahvile ning liikumine kestab, kuni klõpsatakse teist klahvi.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Seadistused</guimenu
+><guimenuitem
+>Klahvi allhoidmine liikumiseks</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Klaviatuurirežiimis tuleb liikumise alustamiseks hoida klahvi all ja vabastada klahv liikumise lõpetamiseks.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Seadistused</guimenu
+><guimenuitem
+>Normaalne kiirus</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Seab mängukiiruse normaalseks (10 ühikut).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Seadistused</guimenu
+><guimenuitem
+>Algaja kiirus</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Seab mängukiiruse algajale vastavaks (5 ühikut ehk pool normaalsest kiirusest).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Seadistused</guimenu
+><guimenuitem
+>Meistri kiirus</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Seab mängukiiruse vastavaks meistrile (15 ühikut ehk 1,5 normaalset kiirust).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>+</keycap
+></shortcut
+> <guimenu
+>Seadistused</guimenu
+><guimenuitem
+>Suurenda kiirust</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Suurendab kiirust ühe ühiku võrra kuni maksimaalse 20 ühikuni (kahekordne normaalne kiirus). Kiirklahvina võib kasutada klahvi <keycap
+>+</keycap
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>-</keycap
+></shortcut
+> <guimenu
+>Seadistused</guimenu
+><guimenuitem
+>Vähenda kiirust</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Vähendab kiirust ühe ühiku võrra kuni minimaalse 2 ühikuni (viiendik normaalsest kiirusest). Kiirklahvina võib kasutada klahvi <keycap
+>-</keycap
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Seadistused</guimenu
+><guimenuitem
+>Kiirklahvide seadistamine...</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>&kde; versioonis saab selle abil muuta klahviseoseid (&eg; klahve, millega juhtida kangelast) või anda menüükirjetele just endale meeldivad kiirklahvid.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="help-menu">
+<title
+>Menüü Abi</title>
+
+<para
+>Sisaldab tavapäraseid &kde; abimenüü kirjeid:</para>
+&help.menu.documentation; </sect1>
+
+</chapter>
+
+<chapter id="game-editor">
+<title
+>Mängu redaktor</title>
+
+<sect1 id="editor-start">
+<title
+>Redaktori käivitamine</title>
+
+<sect2 id="creating-a-game">
+<title
+>Mängu loomine</title>
+
+<para
+>Enne seda, kui saad &kgoldrunner;i taset luua või redigeerida, tuleb luua mäng, kuhu see tase siis salvestada. Selleks kasuta käsku <guimenuitem
+>Loo mäng</guimenuitem
+>, mille leiab menüüst <guimenu
+>Redaktor</guimenu
+>. Kui sul peaks mängu loomine meelest minema, tuletab küll ka rakendus ise sulle seda vajadusel meelde. </para>
+
+<para
+>Mängu loomisel on vahest kõige tähtsam otsustada, milliseid reegleid see peaks järgima (<quote
+>traditsioonilised</quote
+> või <quote
+>&kgoldrunner;i</quote
+> reeglid, vaata lähemalt osa <link linkend="choice-of-rules"
+>Reeglite valimine</link
+>). Teine oluline asi on määrata unikaalne ühest kuni viiest tähest koosnev failinime prefiks oma mängule ja tasemetele. Mängule tuleb muidugi anda ka nimi ja soovi korral kirjeldus, kuid need on asjad, mida saab ka hiljem muuta.</para>
+
+<para
+>Prefiksit kasutab &kgoldrunner; seesmiselt taseme-, rekordi- ja salvestatud mängude failide tuvastamiseks. Võid prefiksina kasutada kas või enda initsiaale, kui need ei lange just kokku &kgoldrunner;i prefiksitega. Praeguseks on kasutusel prefiksid <quote
+>level</quote
+>, <quote
+>plws</quote
+>, <quote
+>wad</quote
+>, <quote
+>plwv</quote
+>, <quote
+>sot</quote
+>, <quote
+>cnt</quote
+>, <quote
+>CM</quote
+>, <quote
+>tute</quote
+> ja <quote
+>tutea</quote
+>.</para>
+
+<para
+>Neljatäheline prefiks <quote
+>tute</quote
+> on reserveeritud treeningmängudele, mis näitavad mängu kirjeldust ja vihjeid. Kui lood ise treeningmängu, võiksid kasutada näiteks prefiksit <quote
+>tutex</quote
+>, mis paneb mängu tööle treeningmänguna, aga ei aja selle faile segi elementaarse või täiustatud treeningmängu omadega (vastavalt prefiksid <quote
+>tute</quote
+> ja <quote
+>tutea</quote
+>). </para>
+
+</sect2>
+
+<sect2 id="creating-a-level">
+<title
+>Taseme loomine</title>
+
+<para
+>Kui oled mängu loonud, kasuta tasemete loomiseks käsku <guimenuitem
+>Loo tase</guimenuitem
+>, mille leiab menüüst <guimenu
+>Redaktor</guimenu
+>. See avab tühja mänguala suurusega 28x20 ruutu, kus kangelane paikneb ülemises vasakus nurgas. Kangelase võid ka mujale asetada ning mõistagi ei pea ära kasutama kogu 28x20 ala. Õigupoolest tulevadki paljud huvitavad tasemed toime märksa väiksema pinnaga. </para>
+
+<para
+>Minimaalselt on ühele mängitavale tasemele vajalikud kangelane, kes seisab mängualal millegi peal, aga see on muidugi liiga lihtne. Palju realistlikumas mängus peab ikka olema ka labürint, mille läbimine nõuab veidi mõtlemist, ning mõned nähtavad redelid, mis viivad mänguala ülaossa, kuid mitte tingimata kulda. Vaenlased, postid, peidetud redelid ega isegi tellised ei ole kohustuslikud. Mitmed päris nõudlikudki tasemed tulevad toime ilma vaenlaste või tellisteta, kuid enamikul tasemetel on siiski vähemalt üks kullatükk, mõned vaenlased ja mõned peidetud redelid, mis ilmuvad nähtavale pärast seda, kui viimanegi kullatükk on üles korjatud.</para>
+
+</sect2>
+</sect1>
+
+<sect1 id="editing-and-testing">
+<title
+>Redigeerimine ja testimine</title>
+
+<sect2 id="editing-a-level">
+<title
+>Taseme redigeerimine</title>
+
+<para
+>Kasuta käsku <guimenuitem
+>Muuda taset</guimenuitem
+> (menüüs <guimenu
+>Redaktor</guimenu
+>) olemasoleva taseme muutmiseks või käsku <guimenuitem
+>Loo tase</guimenuitem
+> uue taseme loomiseks.</para>
+
+<para
+>Kui valid süsteemse taseme, hoiatatakse sind, et tehtud muudatused saad salvestada ainult omaloodud mängu. Üldiselt salvestatakse tase vaikimisi sellesse mängu, millest seda redigeerima hakati, kuid seda on võimalik ka muuta.</para>
+
+</sect2>
+
+<sect2 id="painting-objects">
+<title
+>Taseme objektide loomine</title>
+
+<para
+>Allnähtav redigeerimisriba ilmub siis, kui valid menüüst <guimenu
+>Redaktor</guimenu
+> käsu <guimenuitem
+>Loo tase</guimenuitem
+> või <guimenuitem
+>Muuda taset</guimenuitem
+>, mis asendab ühtlasi mängimisrežiimi redigeerimisrežiimiga. Mängimisrežiimi tagasi minnes need tööriistaribad kaovad. Pane tähele ka seda, et redigeerimisrežiimis on mängualal näha libatellised ja peidetud redelid.</para>
+
+<para
+>Kolm ikooni redigeerimisriba vasakus ääres toimivad täpselt nagu menüükäsud <guimenuitem
+>Loo tase</guimenuitem
+>, <guimenuitem
+>Muuda taset</guimenuitem
+> ja <guimenuitem
+>Salvesta muudatused</guimenuitem
+>. Ülejäänud üksteist ikooni on mõeldud taseme objektide redigeerimiseks ja asetamiseks mängualale. </para>
+
+
+<para
+>Vasakult paremale on ikoonid järgmised: <guiicon
+>nimi/vihje</guiicon
+> (elektripirn), <guiicon
+>kustuta</guiicon
+> (taust), <guiicon
+>kangelane</guiicon
+>, <guiicon
+>vaenlane</guiicon
+>, <guiicon
+>tellis</guiicon
+> (kaevatav), <guiicon
+>betoon</guiicon
+> (mittekaevatav), <guiicon
+>lõks</guiicon
+> (võib läbi kukkuda), <guiicon
+>redel</guiicon
+>, <guiicon
+>peidetud redel</guiicon
+>, <guiicon
+>post</guiicon
+> ja <guiicon
+>kullatükk</guiicon
+>. Nende ikoonide graafika (välja arvatud elektripirn) kopeeritakse sellest &kgoldrunner;i teemast, mida parajasti kasutad.</para>
+
+<screenshot>
+<screeninfo
+>Taseme redigeerimine</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="editbar.png" format="PNG"/>
+</imageobject>
+<textobject
+><phrase
+>Taseme redigeerimine</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+><guiicon
+>Nimi/vihje</guiicon
+> avab dialoogi, kus saab tasemele anda nime ja vihje või neid muuta. Kumbki ei ole kohustuslik element, kuid treeningmängudes on neil väga tähtis osa ja tavaliselt pakutakse vihjeid ka väga rasketel tasemetel (vaata näiteks mängu <quote
+>Peter W. kättemaks</quote
+>).</para>
+
+<para
+>Mõnele ülejäänud kümnest ikoonist klõpsates muutub hiir <quote
+>pintsliks</quote
+>, millega saab ikooni asetada. Algselt on pintsel seatud <quote
+>tellisele</quote
+>.</para>
+
+<para
+>Konkreetse objekti saab ruudule asetada lihtsalt sellel &HVNga; klõpsates ja siis vastavale ruudule klõpsates. Teine võimalus on &HVN; all hoides hiirt lohistada suurema ala täitmiseks, näiteks pikema redeli, suure telliseploki või betoonpõranda joonistamiseks. Joonistamine lõpeb hetkel, mil hiirenupu vabastad. Kui oled teinud vea, saad valestijoonistatu ära kustutada &HPNga;või valida ikooni <guiicon
+>Kustuta</guiicon
+> ja sellega "joonistada".</para>
+
+<para
+>Kangelase ikoon on natuke erinev, sest mängus saab olla ainult üks kangelane. Kangelast asetades liigub ta oma esialgselt positsioonilt nurgas sinna, kus sa hiirenupu vabastad.</para>
+
+</sect2>
+
+<sect2 id="saving-your-work">
+<title
+>Töö salvestamine</title>
+
+<para
+>Kui oled mänguala kujundamise lõpetanud, salvesta oma saavutused klõpsuga <guiicon
+>disketi</guiicon
+>ikoonil või menüükäsuga <guimenuitem
+>Salvesta muudatused</guimenuitem
+> (menüüs <guimenu
+>Redaktor</guimenu
+>). Veel üks hea võimalus salvestada on menüükäsk <guimenuitem
+>Salvesta muudatused</guimenuitem
+> (sedakorda menüüs <guimenu
+>Mäng</guimenu
+>). Salvestada saad ainult omaloodud mängudesse, süsteemsetesse mängudesse ei ole see võimalik.</para>
+
+<para
+>Taset luues saad kasutada taseme valimise dialoogi sellele nime ja taseme numbri omistamiseks. Sama dialoogi kasutad taset redigeerides, kuid vaikimisi salvestatakse tase mängu, kust see redigeerimiseks avati. Võid muidugi mängu ja taset muuta (see annab <quote
+>salvesta kui...</quote
+> efekti). Kui redigeerid süsteemset taset, PEAD selle salvestama koopiana mõnda omaloodud mängu.</para>
+
+</sect2>
+
+<sect2 id="adding-name-and-hint">
+<title
+>Taseme nime ja vihje lisamine</title>
+
+<para
+>Taseme valimise dialoogi salvestamisrežiimis on nupp <guibutton
+>Redigeeri taseme nime ja vihjet</guibutton
+>. Selle abil võid anda enda loodud suurepärasele tasemele nime ja lisada vihje. Kumbki neist ei ole küll kohustuslik, kuid näiteks treeningmängus on nad väga olulised ja enamasti kasulikud ka väga raskete tasemete korral (vaata näiteks <quote
+>Peter W. kättemaksu</quote
+>). Loomulikult võid ikooni <guiicon
+>Redigeeri nime/vihjet</guiicon
+> kasutada suvalisel ajahetkel nime ja vihje lisamiseks. </para>
+
+</sect2>
+
+<sect2 id="testing-a-level">
+<title
+>Taseme testimine</title>
+
+<para
+>Kui oled redigeeritud taseme salvestanud, saad seda testida menüükäsuga <guimenuitem
+>Uus mäng</guimenuitem
+>, mille leiad menüüst <guimenu
+>Mäng</guimenu
+> (või vastava kiirklahviga). Vaikimisi peetakse mäng ja taseme number meeles ning sul on mõne klõpsuga võimalik see avada. Kui soovid seda edasi muuta, saad seda hõlpsasti teha menüükäsuga <guimenuitem
+>Muuda taset</guimenuitem
+>. Kõigi loodud tasemete testimine on väga oluline, sest ainult nii saab kontrollida, et see on ikka täielik ega ole samas liiga lihtne läbi mängida.</para>
+
+</sect2>
+</sect1>
+
+<sect1 id="reorganizing-games">
+<title
+>Mängude ja tasemete ümberkorraldamine</title>
+
+<sect2 id="moving-a-level">
+<title
+>Taseme liigutamine</title>
+
+<para
+>Tasemete ümberseadmiseks või ümbernummerdamiseks mängus saab kasutada menüükäsku <guimenuitem
+>Liiguta taset</guimenuitem
+> (menüüs <guimenu
+>Redaktor</guimenu
+>). Käsk <guimenuitem
+>Liiguta taset</guimenuitem
+> aga võimaldab viia taseme ühest mängust teise. Igal juhul on tegemist kaheosalise operatsiooniga: kõigepealt tuleb tase laadida, valides selle redigeerimiseks või mängimiseks, ning seejärel ilmub käsu <guimenuitem
+>Liiguta taset</guimenuitem
+> valimisel taseme valimise dialoog, kus saab valida uue taseme numbri ja/või mängu.</para>
+
+<para
+>Liigutamine ei jäta auku tasemete järjekorda mängus. Kui näiteks liigutad mängu A 10. taseme mängu B 3. tasemeks, kahaneb mängus A 11. ja kõrgemate tasemete number ühe võrra (et tekkinud auku sulgeda) ning mängus B suureneb 3. ja kõrgema taseme number samuti ühe võrra (et teha ruumi uustulnukale).</para>
+
+</sect2>
+
+<sect2 id="deleting-a-level">
+<title
+>Taseme kustutamine</title>
+
+<para
+>Soovimatu taseme saab kõrvaldada käsuga <guimenuitem
+>Kustuta tase</guimenuitem
+>, mille leiad menüüst <guimenu
+>Redaktor</guimenu
+>. Ülejäänud tasemed nummerdatakse tekkinud augu täitmiseks ümber. </para>
+
+</sect2>
+</sect1>
+
+</chapter>
+
+<chapter id="tips-tricks-and-hints">
+<title
+>Nõuanded ja soovitused</title>
+
+<sect1 id="tips-overview">
+<title
+>Ülevaade</title>
+
+<para
+>Selles peatükis pakume mõningaid üldisemaid nõuandeid &kgoldrunner;i mängimiseks. Konkreetsemaid nõuandeid leiab vihjete näol näiteks treening- ja meistritaseme mängudes (vaata <link linkend="move-menu"
+><menuchoice
+> <guimenu
+>Liikumine</guimenu
+><guimenuitem
+>Vihje</guimenuitem
+></menuchoice
+></link
+>). Nõuanded on rühmitatud järgmiselt:</para>
+
+<itemizedlist>
+
+<listitem>
+<para
+><link linkend="hints-dealing-with-enemies"
+>Mida teha vaenlastega?</link
+></para>
+</listitem>
+
+<listitem>
+<para
+><link linkend="hints-digging-puzzles"
+>Kaevamisnipid</link
+></para>
+</listitem>
+
+<listitem>
+<para
+><link linkend="hints-tricks-with-gold"
+>Kuld ja selle ümber</link
+></para>
+</listitem>
+
+<listitem>
+<para
+><link linkend="hints-solving-difficult-levels"
+>Keeruliste tasemete läbimine</link
+></para>
+</listitem>
+
+</itemizedlist>
+</sect1>
+
+<sect1 id="hints-dealing-with-enemies">
+<title
+>Mida teha vaenlastega?</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Üksik lähenev vaenlane on võimalik meelitada auku, võtta talt kuld ära ja joosta üle tema pea ilma teda tapmata. Sageli on mõttekas enda liikumisteel maha jätta auke, mis aeglustab vaenlast veelgi, kuid see võib ta ka tappa. Mõnel tasemel ei ole vaenlase tapmine üldse hea mõte.</para>
+</listitem>
+<listitem>
+<para
+>Tavaliselt on võimalik kaks lähenevat vaenlast meelitada kahte auku, võtta neilt kuld ära ja üle nende minema joosta, kuid see võib olla ohtlik, eriti kui vaenlasi eraldab kaks või isegi kolm välja. Mõnikord tapavad kaks auku ühe vaenlase ning teine pääseb, vahel pääsevad mõlemad vaenlased. &kgoldrunner;i reeglite korral on lihtsam meelitada lõksu kaks vaenlast ja joosta üle nende, sest nad jäävad auku kauemaks.</para>
+</listitem>
+<listitem>
+<para
+>Peaaegu võimatu on lõksu meelitada kolm lähenevat vaenlast. Need tuleb tappa, kaevata ja läbi põranda end alla kukutada või lihtsalt eest ära joosta.</para>
+</listitem>
+<listitem>
+<para
+>Proovi oma vaenlased ühte gruppi ajada. Sel moel ei piira nad sind ümber ja sa võid teha muud huvitavat, näiteks kulda kokku korjata, kuni nemad sinu sabas sörgivad.</para>
+</listitem>
+<listitem>
+<para
+>Vahel on võimalik üks vaenlane tappa kahe auguga, kuid enamasti kulub ühe kuni viie vaenlase tapmiseks kolm kuni üheksa auku.</para>
+</listitem>
+<listitem>
+<para
+>Vaenlast on võimalik tappa ühe auguga, kui ta on selle kaevamise hetkel piisavalt kaugel.</para>
+</listitem>
+<listitem>
+<para
+><quote
+>Traditsioonilises</quote
+> mängus saab vaenlase vangistada püsivalt tellistes või betoonis olevasse auku. Seisa augu serval, aga kindlasti teisel pool võrreldes vaenlase lähenemissuunaga. Kui ta augule läheneb, astu üks samm alla (augupõhja tasandile) ja vaenlane langeb peaaegu kindlalt auku.</para>
+</listitem>
+<listitem>
+<para
+>Mõnel <quote
+>traditsioonilise</quote
+> mängu tasemel saab vaenlase sundida redelist üles ronima, kui seisad kuskil redeli alumisest otsast kõrgemal.</para>
+</listitem>
+<listitem>
+<para
+><quote
+>&kgoldrunner;i</quote
+> mängus saab vaenlast auku meelitada, kui lased tal ülalt enda peale langeda, jooksed ise kõrvale ning kaevad, enne kui ta sinuni jõuab.</para>
+</listitem>
+<listitem>
+<para
+><quote
+>&kgoldrunner;i</quote
+> mängus ei saa vaenlased joosta läbi kaevatud telliste, nii et mõnikord saab neid ära kasutada tõkke või peidukohana.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="hints-digging-puzzles">
+<title
+>Kaevamisnipid</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Et kaevata läbi enam kui üks kiht telliseid, alusta kaevamist nii paljude tellistega, kui on kihte, hüppa sisse, kaeva veel üks tellis ära ja nii edasi.</para>
+</listitem>
+<listitem>
+<para
+>Kui kaevad redeli või postide kõrval, võid kaevata püstsuunas läbi suvalise arvu kihtide ning rõhtsuunas kuni viis-kuus kihti telliseid. Tule iga kihi kaevamise järel redeli või posti juurde tagasi, liigu üks väli allapoole ja torma uut kihti kaevama.</para>
+</listitem>
+<listitem>
+<para
+>Kui kaevamine tundub osutuvat võimatuks, tasuks kahtlustada libatelliste olemasolu. Võib-olla on alumine kiht tegelikult mäda või seisad ise libatellisel ja kaevad selle kõrvalt.</para>
+</listitem>
+<listitem>
+<para
+>Mõtle välja järjekord, kuidas kuld kokku korjata. Kui valid õige järgnevuse, võib ka kaevamine osutuda hõlpsamaks.</para>
+</listitem>
+<listitem>
+<para
+>Mõnel tasemel võib olla vaja tellismüürist läbi kaevata, korjata kuld (või vähemalt osa) kokku ning tormata uuesti välja, enne kui tellised sulguvad ja sind lõksu jätavad.</para>
+</listitem>
+<listitem>
+<para
+>Kaevata on võimalik ka läbi tühja ruumi langedes, kui oled kõik õigesti ajastanud. Selleks pole vaja isegi vaenlast. See on viga, mis on tasapisi muutunud <quote
+>võimaluseks</quote
+>, mida kasutavad edukalt ära mängud <quote
+>Hirm ja õud</quote
+>, <quote
+>Arvestus</quote
+> ning <quote
+>Muumia needus</quote
+>.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="hints-tricks-with-gold">
+<title
+>Kuld ja selle ümber</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Kui sa ei saa ise kulda kätte, võiksid kaaluda mõtet, kuidas panna seda enda eest tegema vaenlane. Sa võid isegi kasutada vaenlase pead sillana augu või takistuse ületamisel.</para>
+</listitem>
+<listitem>
+<para
+>Mõnel tasemel on vaja teatud kulatükk viimasena ära korjata, sest sul läheb antud positsioonist ärasaamiseks vaja peidetud redelit.</para>
+</listitem>
+<listitem>
+<para
+>Mõnes olukorras võib vaenlane surma saada, ilma et ta loovutaks kaasas kantud kulda. Selline kuld on siis <quote
+>kaotsi läinud</quote
+>. Punkte sa muidugi selle eest ei saa, aga vähemalt tase on võimalik läbi teha.</para>
+</listitem>
+<listitem>
+<para
+>Kui enam kuskil kaevata ei ole, püüa panna vaenlased jooksma üle betooni ja redelite tippude, et nad ühel hetkel kuskil kulla maha poetaks.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="hints-solving-difficult-levels">
+<title
+>Keeruliste tasemete läbimine</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Proovi kiirust vähendada algaja tasemele või isegi madalamale.</para>
+</listitem>
+<listitem>
+<para
+>Kasuta redaktorit <quote
+>väljanuhkimiseks</quote
+>, kus paiknevad libatellised ja peidetud redelid.</para>
+</listitem>
+<listitem>
+<para
+>Kasuta redaktorit taseme salvestamiseks mõnda omaloodud mängu, misjärel saad seda redigeerida, nii et ei pea alati algusest peale alustama, kui surma saad. See võimaldab lihtsate etappidena ka keerulistele probleemidele lahendusi leida.</para>
+</listitem>
+<listitem>
+<para
+>Kaevamisel otsi libatelliseid, mis annavad sulle võimaluse ühe kivi võrra vähem kaevata. Teine võimalus on lasta vaenlasel enda ees liikuda, et võiksid tema pea peal seista ja kaevata.</para>
+</listitem>
+<listitem>
+<para
+>Püüa leida tasemele omane võte, näiteks allasõitmine mööda vaenlase pead, kõigi vaenlaste auku meelitamine, vaenlaste meelitamine nurka, kuhu nad pidama jääksid ega saaks sind ahistada, vaenlase meelitamine auku, mida sul tuleb kulla kättesaamiseks ületada, laskmine vaenlastel enda eest kuld kokku korjata või sellise asukoha leidmine, kus sina võid paigal seista ja panna vaenlased oma tahtmist mööda liikuma.</para>
+</listitem>
+<listitem>
+<para
+>Kontrolli menüükäsuga <menuchoice
+><guimenu
+>Liikumine</guimenu
+><guimenuitem
+>Näita lahendust</guimenuitem
+></menuchoice
+>, kas tasemel on olemas salvestatud lahendust. See näitab mõningaid võimalusi, kuidas saada jagu taseme keerukatest kohtadest, kuid need ei pruugi olla just parimad võimalused. Sageli on taseme võitmiseks mitu teed ning iga kord võivad valitseda teatavad erinevused ajastuses jms. Sestap ei pruugi salvestatud lahenduse kopeerimine olla alati isegi päris hästi võimalik.</para>
+</listitem>
+<listitem>
+<para
+>Kasuta menüükäsku <menuchoice
+><guimenu
+>Liikumine</guimenu
+><guimenuitem
+>Viimane uuesti</guimenuitem
+></menuchoice
+> või <menuchoice
+><guimenu
+>Liikumine</guimenu
+><guimenuitem
+>Viimane tase uuesti</guimenuitem
+></menuchoice
+> taseme kordamiseks hetkeni, mil sul hakkasid tekkima raskused, katkesta siis kordus ja katseta mõne muu lähenemisviisiga probleeme lahendada.</para>
+</listitem>
+</itemizedlist>
+</sect1>
+
+<!-- This is the place for a FAQ section, if required.
+<sect1 id="hints-faq">
+<title
+>FAQ</title>
+
+<qandaset id="faq">
+
+<qandaentry>
+<question>
+<para
+>Question 1</para>
+</question>
+<answer>
+<para
+>The answer</para>
+</answer>
+</qandaentry>
+
+</qandaset>
+</sect1>
+-->
+
+</chapter>
+
+<chapter id="credits-and-license">
+<title
+>Autorid ja litsents</title>
+
+<para
+>&kgoldrunner;i autoriõigus 2003: Ian Wadham ja Marco Krüger.</para>
+
+<para
+>&kgoldrunner;i loomist innustas ammune arvutimäng <trademark
+>Lode Runner</trademark
+>, mille kirjutas USAs <trademark class="copyright"
+>Doug Smith</trademark
+> ja avaldas 1983. aastal <trademark class="copyright"
+>Broderbund Software</trademark
+>. See oli algselt mõeldud Apple II ja Commodore 64 arvutitele, mida kasutades Wadhamite perekond ja Marco Krüger selle sõltlasteks saidki. Omal ajal oli see mäng tõeline hitt ning on seniajani üks kõigi aegade paremaid arvutimänge.</para>
+
+<para
+><trademark
+>Lode Runner</trademark
+> ja selle pärast 1983. aastat ilmunud erinevate versioonide kohta leiab rohkem infot veebis <ulink url="http://entropymine.com/jason/lr"
+>Jasoni Lode Runneri arhiivis</ulink
+> (http://entropymine.com/jason/lr/). Seal on ka põjalikumalt juttu mängu esialgsest arendamisest (leheküljel <ulink url="http://entropymine.com/jason/lr/misc/ldhist.html"
+> misc/ldhist.html</ulink
+>). Samuti leidub Wikipedias väga hea artikkel <trademark
+>Lode Runner</trademark
+> kohta, mille juurest leiab ka huvipakkuvad viited teistele lehekülgedele.</para>
+
+<para
+>&kgoldrunner; on katse hoida alal algupärase klassikaks muutunud mängu vaim porditaval platvormil, nii et see võiks püsida aktiivsena enam kui pelgalt aasta-paar. Selle lähtetekst on vabalt saadaval. Algupärase mängu koopiaid enam saada ei ole ning masinadki, millel see nii edukalt töötas, kuuluvad tänapäeval muuseumisaalidesse.</para>
+
+<para
+>Marco Krüger arendas &kgoldrunner;it versioonini 0.3 ääretust nostalgiast algupärase Commodore 64 mängu järele. Ian Wadham lisas mõningad võimalused ja tasemed ning lõi käesoleva versiooni. Iani vanim poeg Peter koostas 100 <quote
+>Initsiatsiooni</quote
+> taset ning 20 nupukatele mõeldud <quote
+>Peter W. kättemaksu</quote
+> taset. Ülejäänud tasemete loojaks on Ian, Peter ja Marco Krüger ning nende sõbrad ja Iani lapsed Simon ning Genevieve. </para>
+<para
+>Stuart Popejoy New Yorgist annetas 2007. aastal mängu <quote
+>Hirm ja õud</quote
+>, mis oli esimene meistritaseme mäng, mis kasutas &kgoldrunner;i reegleid, ning sellisena üldse üks raskemaid mänge.</para>
+
+<para
+>Steve Mann Waterloost Kanadas annetas 2008. aastal mängu <quote
+>Arvestus</quote
+> ja samal aastal ka mängu <quote
+>Muumia needus</quote
+>. Mõlemad kasutavad traditsioonilisi reegleid ning mõlema teemad on päris huvitavad. Samuti on mõlemad mängud üpris rasked.</para>
+
+<para
+>Peter Wadham lõi 2008. aasta heliefektid ning Luciano Montanaro lõimis need KGoldrunnerisse.</para>
+
+<para
+>Eriline tänu kuulub Mauricio Piacentinile ja Dmitry Suzdalevile, kes portisid &kgoldrunner;i &Qt; 4 ja &kde; 4 peale, ning paljudele kunstnikele, tänu kellele sündis uus SVG-graafika ja teemad spetsiaalselt &kde; 4 jaoks: eriline tänu Mauricio Piacentinile <quote
+>vaikimisi</quote
+> teema ja uute kangelaste eest, Johann Ollivier Lapeyre'ile redelite ja postide eest, Eugene Trounevile teemade <quote
+>Nohikulinn</quote
+> ja <quote
+>Egiptuse aare</quote
+> eest ning lõpuks Luciano Montanarole kahe <quote
+>Nostalgia</quote
+> teema, vaegustega inimestele mõeldud teema <quote
+>Must valgel</quote
+>, kangelaste parandamise, mitme tausta ja teiste väärt mõtete eest.</para>
+
+<para
+>Tõlge eesti keelde: Marek Laane<email
+>bald@smail.ee</email
+></para
+> 
+&underFDL; &underGPL; </chapter>
+
+<appendix id="installation">
+<title
+>Paigaldamine</title>
+
+<sect1 id="how-to-obtain-kgoldrunner">
+<title
+>&kgoldrunner;i hankimine</title>
+&install.intro.documentation; </sect1>
+
+<sect1 id="compilation-and-installation">
+<title
+>Kompileerimine ja paigaldamine</title>
+&install.compile.documentation; </sect1>
+
+</appendix>
+
+<appendix id="porting-kgoldrunner">
+<title
+>&kgoldrunner;i portimine teistele platvormidele</title>
+
+<para
+>&kgoldrunner; on kirjutatud C++ keeles &Linux; ja porditavat &Qt; objekti- ja &GUI; teegi vaba tarkvara versiooni kasutades. Praegust versiooni saab kompileerida ja tööle panna &kde; 4 ja &Qt; 4 all.</para>
+
+<para
+>&kgoldrunner; sõltub &kde; teekidest (kdelibs ja kdegames), mis on porditud teistele platvormidele. Samuti on võimalik hankida &Qt; 4 avatud lähtekoodiga versioon, nii et põhimõtteliselt peaks olema võimalik &kgoldrunner;i kompileerimine, ehitamine ja käivitamine ka teistel platvormidel kui ainult &Linux;.</para>
+
+</appendix>
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-general-insert-case: lower
+End:
+-->

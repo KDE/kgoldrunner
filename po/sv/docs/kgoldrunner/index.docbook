@@ -1,0 +1,2479 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Swedish "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<book id="kgoldrunner" lang="&language;">
+
+<bookinfo>
+<title
+>Handbok &kgoldrunner;</title>
+<authorgroup>
+<author
+><firstname
+>Ian</firstname
+> <surname
+>Wadham</surname
+> <affiliation
+><address
+><email
+>iandw.au snabela gmail com</email
+></address
+></affiliation>
+</author>
+<author
+><firstname
+>Marco</firstname
+> <surname
+>Krüger</surname
+> </author>
+<othercredit role="translator"
+><firstname
+>Stefan</firstname
+><surname
+>Asserhäll</surname
+><affiliation
+><address
+><email
+>stefan.asserhall@bredband.net</email
+></address
+></affiliation
+><contrib
+>Översättare</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2015</year>
+<holder
+>Ian Wadham</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2021-06-30</date>
+<releaseinfo
+>KDE Gear 21.04</releaseinfo>
+
+<abstract>
+<para
+>&kgoldrunner; är ett spel med action och problemlösning. Spring genom labyrinten, undvik fiender, plocka upp allt guld, och klättra därefter upp till nästa nivå. <emphasis
+>Observera:</emphasis
+> Reglerna för att gräva har ändrats något i den här versionen.</para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdegames</keyword>
+<keyword
+>spel</keyword>
+<keyword
+>spelhall</keyword>
+<keyword
+>strategi</keyword>
+<keyword
+>fiender</keyword>
+<keyword
+>tegelsten</keyword>
+<keyword
+>tegelstenar</keyword>
+<keyword
+>gräv</keyword>
+<keyword
+>gräva</keyword>
+<keyword
+>falla</keyword>
+<keyword
+>faller</keyword>
+<keyword
+>guld</keyword>
+<keyword
+>stege</keyword>
+<keyword
+>stegar</keyword>
+<keyword
+>Kgoldrunner</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="playing-kgoldrunner">
+<title
+>Spela &kgoldrunner;</title>
+
+<sect1 id="introduction">
+<title
+>Inledning</title>
+<para
+>Speltyp: Spelhall, strategi </para>
+<para
+>Antal spelare: En </para>
+
+<para
+>&kgoldrunner; är ett actionspel där hjälten springer genom en labyrint och undviker fiender. Du måste styra hjälten med musen eller tangentbordet och samla ihop alla guldklimpar, därefter kan du klättra upp till nästa nivå. Dina fiender är också ute efter guldet. Vad som är värre, de är ute efter dig! De dödar dig om de fångar dig!</para>
+
+<para
+>Problemet är att du inte har några vapen att döda <emphasis
+>dem</emphasis
+> med. Allt du kan göra är att springa iväg, gräva hål i golvet för att fånga dem, eller lura dem till något område där de inte kan skada dig. Efter en kort tid, klättrar en fångad fiende upp ur sitt hål, men om det stängs innan dess, dör han och återuppstår någon annanstans. </para>
+
+<para
+>Om du aldrig har spelat förut, prova spelet <quote
+>Övning</quote
+>, som lär dig reglerna och grundläggande färdigheter. Försök därefter med spelet <quote
+>Invigning</quote
+>. Experter kan njuta av spelen <quote
+>Utmaning</quote
+>, <quote
+>Peter W:s hämnd</quote
+>, <quote
+>Räkna</quote
+> eller <quote
+>Mumiens förbannelse</quote
+>, men spelet <quote
+>Invigning</quote
+> har 100 nivåer, och vissa är mycket svåra. Det är ett bra spel för att hamna på poängtoppen.</para>
+
+<para
+>Alla dessa spel använder traditionella regler, som liknar de som användes i tidiga hemdatorer, som Apple II eller Commodore 64. Spelen <quote
+>&kgoldrunner;</quote
+> och <quote
+>Terrortillstånd</quote
+> använder &kgoldrunner;-regler, där fienderna springer snabbare och har en aggressivare sökstrategi än med traditionella regler. Se <link linkend="choice-of-rules"
+>Val av regler</link
+> för detaljinformation.</para>
+
+<para
+>När du går till mer avancerade nivåer, märker du att &kgoldrunner; kombinerar action, strategi, taktik och problemlösning &mdash; allt i ett spel. Lycka till!</para>
+
+</sect1>
+
+<sect1 id="typical-game">
+<title
+>Ett typiskt spel</title>
+
+<para
+>Nedan syns ett typiskt spel som pågår. Hjälten är på nivå fyra i det avancerade övningsspelet. Fönstrets nedre del visar hur många liv han har kvar, och hur många poäng han har samlat. Det visar också att det finns ett tips tillgängligt för nivån (som det alltid gör i övningsspelen) och att spelet har stannats (för att ta skärmbilden), men kan fortsättas genom att trycka på <keycap
+>P</keycap
+> eller <keycap
+>Esc</keycap
+>.</para>
+
+<para
+>Hjälten startade längst upp till vänster, grävde ett hål och hoppade ner på en rad falska tegelstenar och guld, där du nu ser honom falla. Fienden ovanför honom kommer att falla ner i hålet, och därefter klättra upp och fångas där uppe till nivån är färdig. Han skulle kunna ge hjälten några problem då, eftersom det är då den dolda stegen visas när allt guld har samlats in. Hjälten måste använda stegen för att komma till nästa nivå.</para>
+
+<screenshot>
+<screeninfo
+>Typiskt spel i &kgoldrunner;</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="tute008.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Typiskt spel i &kgoldrunner;</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Fienden till höger faller, och bär på lite guld. Den tredje fienden är på väg nerför en stege för att jaga hjälten, som måste undvika båda fienderna när han når golvet. Den här nivån visar också tegelstenar som går att gräva igenom, betong som inte går att gräva i, och har många fällor (falska tegelstenar), som ser ut precis som vanliga tegelstenar.</para>
+
+</sect1>
+
+<sect1 id="how-to-play">
+<title
+>Hur man spelar</title>
+
+<sect2>
+<title
+>Starta spelet</title>
+
+<para
+>Spelet börjar med att visa en inspelad demonstration av hur man spelar. Du kan avsluta den genom att klicka i spelområdet med musen, trycka på mellanslag, välja ett menyalternativ eller trycka på en snabbtangent (som <menuchoice
+><guimenu
+>Spel</guimenu
+><guimenuitem
+>Nytt spel...</guimenuitem
+></menuchoice
+> eller <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+>). Du kan hoppa över demonstrationen in framtiden genom att använda menyalternativet <menuchoice
+><guimenu
+>Inställningar</guimenu
+><guimenuitem
+>Demonstration vid start</guimenuitem
+></menuchoice
+>. Du kan också se den igen när som helst genom att använda menyalternativet <menuchoice
+><guimenu
+>Flytta</guimenu
+><guimenuitem
+>Demonstration</guimenuitem
+></menuchoice
+>. </para>
+
+<para
+>Om du hoppade över demonstrationen eller använde musen eller mellanslag för att avsluta den, visas en dialogruta för snabbstart namn, nummer och en förhandsgranskning av det senaste spelet och nivån du läste in, eller om du inte har spelat tidigare, samma information för övningens första nivå.</para>
+
+<para
+>Klicka på knappen <guibutton
+>Spela</guibutton
+> för att omedelbart börja spela. Annars kan du klicka på knappen <guibutton
+>Avsluta</guibutton
+>, knappen <guibutton
+>Nytt spel...</guibutton
+> eller knappen <guibutton
+>Använd meny</guibutton
+>. Den första stänger &kgoldrunner; om du inte vill spela, den andra visar dialogrutan <link linkend="select-game-dialog"
+>Välj spel</link
+> där du kan välja ett annat spel och nivå, och den sista stänger dialogrutan vilket låter dig använda menyerna i &kgoldrunner; fritt.</para>
+
+<para
+>Om du har valt att spela ett spel och en nivå, visas den och muspekaren befinner sig vid hjälten. I ett övningsspel visas ett förklarande meddelande innan varje nivå startas. Du börjar spela genom att röra musen, klicka med musen eller trycka på någon tangent som kan styra hjälten (t.ex. <keycap
+>Mellanslag</keycap
+>), men undvik att använda <keycap
+>Q</keycap
+>, <keycap
+>S</keycap
+>, <keycap
+>P</keycap
+> eller <keycap
+>Esc</keycap
+> vid detta tillfälle. Alla nivåer startas på samma sätt.</para>
+
+<para
+>Du har fem liv vid starten och får ett bonusliv för varje nivå du slutför.</para>
+
+</sect2>
+
+<sect2 id="mouse-control">
+<title
+>Flytta omkring</title>
+
+<para
+>Normalt styr du hjälten med musen, men du kan också styra honom med tangentbordet (<link linkend="keyboard-control"
+>se nedan</link
+>), eller på en bärbar dator, genom att använda en blandning av tangentbordet för att gräva och tryckplattan eller en annan typ av pekare för att styra hjälten.</para>
+
+<para
+>Hjälten går åt det håll du placerar pekaren. Han kan inte röra sig så fort som du rör pekaren, men han gör sitt bästa för att komma ifatt. Om pekaren är ovanför eller under hans nivå, går han alltid upp eller ner när det finns en stege tillgänglig, eller en plats att falla ner. Annars rör han sig horisontellt, till han är ovanför, under, eller precis på pekaren. Du kan få honom att följa enkla vägar (som &mdash; | L eller U), men var försiktig så att du inte hamnar för många svängar och vändningar före honom.</para>
+
+<para
+>Du kan gå till vänster eller höger över tegelstenar, betong, stegar eller stänger, och uppför eller nerför stegar. Om du är på en tom ruta, eller en guldklimp och det inte finns någon tegelsten, betong, stege eller stång för att hålla dig uppe, tar gravitationen över, och du faller. Du kan också falla genom att flytta dig neråt från en stång, eller längst ner på en stege, så behåll pekaren där uppe om du vill hålla dig fast.</para>
+
+</sect2>
+
+<sect2 id="keyboard-control">
+<title
+>Tangentbordsstyrning</title>
+
+<para
+>Om du föredrar kan du använda tangentbordet för att styra hjälten. Standardtangenterna är piltangenterna och <keycap
+>I</keycap
+>, <keycap
+>J</keycap
+>, <keycap
+>K</keycap
+> och <keycap
+>L</keycap
+> (för att ära det ursprungliga Apple II spelet), med tangenterna <keycap
+>Z</keycap
+> och <keycap
+>C</keycap
+>, eller <keycap
+>U</keycap
+> och <keycap
+>O</keycap
+>, för att gräva. Du kan spela med en hand genom att använda <keycap
+>U</keycap
+>, <keycap
+>I</keycap
+>, <keycap
+>O</keycap
+>, <keycap
+>J</keycap
+>, <keycap
+>K</keycap
+>, <keycap
+>L</keycap
+> och <keycap
+>Mellanslag</keycap
+> (på ett <quote
+>QWERTY</quote
+>-tangentbord) eller med två händer genom att använda piltangenterna, <keycap
+>Mellanslag</keycap
+>, <keycap
+>Z</keycap
+> och <keycap
+>C</keycap
+>. Du kan också välja andra tangenter i menyalternativet <menuchoice
+><guimenu
+>Inställningar</guimenu
+> <guimenuitem
+>Anpassa genvägar...</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>Du väljer tangentbordsläge genom att trycka på en av tangenterna som kan styra hjälten, eller genom att välja menyalternativet <menuchoice
+><guimenu
+>Inställningar</guimenu
+> <guimenuitem
+>Tangentbordet styr hjälten</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>Förflyttningstangenterna (<keycap
+>I</keycap
+>, <keycap
+>J</keycap
+>, <keycap
+>K</keycap
+>, <keycap
+>L</keycap
+> eller piltangenterna) börjar röra hjälten upp, ner, vänster eller höger. Han fortsätter röra sig i den riktningen, om han kan, till du trycker på en annan förflyttningstangent eller <keycap
+>Mellanslag</keycap
+> för att stanna. Med mus eller bärbar dator stannar han automatiskt när han kommer till pekaren.</para>
+
+<para
+>Ett varningens ord: det är mycket svårare att använda tangentbordet, i det långa loppet, än att använda musen. Betrakta musen som en styrspak.</para>
+
+</sect2>
+
+<sect2 id="pausing">
+<title
+>Ta en paus</title>
+
+<para
+>Du kan stoppa spelet när som helst genom att trycka på en paustangent (standardvärden är antingen <keycap
+>P</keycap
+> eller <keycap
+>Esc</keycap
+>). Spelet kan återupptas genom att trycka på en paustangent igen. Menyalternativet <menuchoice
+><guimenu
+>Spel</guimenu
+> <guimenuitem
+>Paus</guimenuitem
+></menuchoice
+> finns också, men problemet är att ta sig dit utan att flytta hjälten och komma i svårigheter.</para>
+
+<tip
+><para
+>När du vill använda &kgoldrunner;s meny eller göra något arbete i ett annat fönster, tryck alltid på en paustangent för att stanna spelet. Annars fortsätter hjälten att följa pekaren, och kan komma i svårigheter.</para
+></tip>
+
+</sect2>
+
+<sect2 id="winning">
+<title
+>Vinna en nivå</title>
+
+<para
+>Målet med spelet är att samla ihop allt guld, genom att röra sig till det eller falla på det. När inget finns kvar, måste du flytta dig till spelområdets övre kant för att komma till nästa nivå. Ofta visas dolda stegar när du samlat in den sista guldklimpen, som du kan använda för att klättra upp till överkanten. Ibland finns det inte några dolda stegar. Dessutom kan de dolda stegarna vara lockbeten som leder åt fel håll. Om nivån inte har något guld, finns det inga dolda stegar, och du måste helt enkelt räkna ut hur man tar sig till spelområdets övre kant.</para>
+
+</sect2>
+
+<sect2 id="false-bricks">
+<title
+>Se upp med falska tegelstenar</title>
+
+<para
+>Falska tegelstenar, annars kända som fällor, är den andra dolda egenskapen i spelet. De ser precis ut som vanliga tegelstenar, men om du springer över en, faller du. Det kan vara dåligt om det finns en fiende eller grop där nere, eller bra om det finns lite guld.</para>
+
+</sect2>
+
+<sect2 id="enemies">
+<title
+>Fiender</title>
+
+<para
+>Fiender rör sig i stort sett på samma sätt som hjälten. Den huvudsakliga skillnaden är när de faller ner i ett hål som hjälten har grävt (se <link linkend="importance-of-digging"
+>Vikten av att gräva</link
+> nedan).  </para>
+<para
+>De samlar antingen alltid in guld, eller slumpmässigt, beroende på spelets inställning, och släpper guld slumpmässigt på tegelstenar, betong eller längst upp på en stege. Om en fiende bär på den sista guldklimpen måste du få honom att släppa det innan nivån kan slutföras.</para>
+
+<para
+>Om en fiende rör dig, dör du och måste starta om nivån, om du har några liv kvar. Det är dock möjligt att gå eller stå på en fiendes huvud, och du kan sitta på en fiende när han faller. Några avancerade nivåer kräver sådana förflyttningar.</para>
+
+</sect2>
+
+<sect2 id="losing-a-level">
+<title
+>Förlora en nivå</title>
+
+<para
+>Som förklarades ovan, kan du förlora en nivå och ett liv genom att röra vid en fiende. Du kan också förlora genom att fångas i ett hål du grävt, när det stängs. Annars kan du begå självmord, genom att trycka på tangenten <keycap
+>Q</keycap
+>, eller använda menyalternativet <menuchoice
+><guimenu
+>Spel</guimenu
+> <guimenuitem
+>Döda hjälten</guimenuitem
+></menuchoice
+>. Varför skulle du vilja göra det? Jo, ibland kan du bli fångad på en plats du inte kan komma ifrån. Du förblir inspärrad för evigt, om du inte begår självmord!</para>
+
+</sect2>
+
+<sect2 id="importance-of-digging">
+<title
+>Vikten av att gräva</title>
+
+<para
+>Att gräva är en av de mest kraftfulla taktiker du har tillgång till. För att gräva ett hål i en tegelsten till vänster eller höger, klicka bara med <mousebutton
+>vänster</mousebutton
+> eller <mousebutton
+>höger</mousebutton
+> musknapp, eller använd en av grävtangenterna (normalt <keycap
+>Z</keycap
+>, <keycap
+>C</keycap
+>, <keycap
+>U</keycap
+>, <keycap
+>O</keycap
+>).</para>
+
+<para
+>Du kan undvika en ankommande fiende genom att gräva ett hål, vänta på att han faller i och sedan snabbt springa över hans huvud. Samtidigt samlar du in allt guld han bar på. Ofta kan du gräva två hål för att fånga och springa över två fiender som är tätt intill varandra, men det fungerar sällan om fienderna är åtskilda, eller det finns fler än två.</para>
+
+<para
+>Du kan döda fiender genom att gräva tillräckligt med hål i deras väg. Det krävs ofta två eller flera hål för att döda en fiende, och upp till åtta eller flera hål för att döda fyra eller fem. När fiender dör, återuppstår de omedelbart, antingen där de startade nivån eller nära överkanten på spelområdet, beroende på om spelet följer <quote
+>&kgoldrunner;</quote
+> eller <quote
+>traditionella</quote
+> regler och inställningar (se <link linkend="choice-of-rules"
+>Val av regler</link
+>).</para>
+
+<para
+>Till sist, i många nivåer är guldet inte omedelbart tillgängligt och du måste gräva för att nå det. En del grävproblem är riktigt komplicerade och du måste räkna ut en grävningsföljd som därefter måste utföras på begränsad tid innan nivån kan avslutas.</para>
+
+</sect2>
+
+<sect2 id="rules-of-digging">
+<title
+>Regler för att gräva</title>
+
+<para
+>För att gräva ett hål till vänster eller höger, klicka med <mousebutton
+>vänster</mousebutton
+> eller <mousebutton
+>höger</mousebutton
+> musknapp, eller använd tangenterna <keycap
+>Z</keycap
+>, <keycap
+>C</keycap
+>, <keycap
+>U</keycap
+> eller <keycap
+>O</keycap
+>.</para>
+
+<para
+>Bara tegelstenar går att gräva, ingenting annat. Hålet dyker upp i golvet på ena eller andra sidan (dvs. nedanför och till vänster eller höger om hjälten). Det måste finnas ett tomt utrymme eller hål ovanför tegelstenen (dvs. det går inte att gräva under en stege, stång, guldklimp, tegelsten, betong eller falsk tegelsten). Du kan springa, stå eller åka på en fallande fiende när du gräver. Att gräva medan du faller i tomma intet eller genom falska tegelstenar är tillåtet i vissa spel men inte i andra. Se <link linkend="dig-while-falling"
+>Att gräva medan du faller</link
+> nedan.</para>
+
+<para
+>Hjälten kan röra sig åt vilket håll som helst genom grävda hål, inklusive att falla rakt genom ett hål för att undvika en fiende. Efter en kort tid, fylls grävda hål igen, så du måste snabbt använda dem. Planera grävandet i förväg. Det finns ingen tid att stanna och tänka medan du gräver.</para>
+
+<para
+>Fiender fångas alltid om de faller i ett grävt hål, och klättrar alltid UPPÅT för att komma ur det. Deras tid i hålet är kortare än tiden hålet förblir öppet, så för att döda fiender måste du oftast gräva flera hål i snabb följd. Fiender släpper alltid sitt guld när de faller i ett hål, så att du snabbt kan springa över fiendens huvud och ta guldet innan han klättrar upp.</para>
+
+<para
+>Fiender faller aldrig ner genom ett hål ovanifrån, men beroende på spelets regler och <guimenu
+>inställningar</guimenu
+> (se <link linkend="choice-of-rules"
+>Val av regler</link
+>), kan de springa horisontellt i ett grävt hål och inte fångas, och kan falla därifrån eller springa in i ett annat hål eller ut ur hålet. Flera nivåer som följer <quote
+>traditionella</quote
+> regler förlitar sig på att en fiende kan springa genom ett hål. Vissa nivåer som följer <quote
+>&kgoldrunner;-regler</quote
+> förlitar sig på att fiender INTE kan springa genom ett hål.</para>
+
+</sect2>
+
+<sect2 id="dig-while-falling">
+<title
+>Att gräva medan du faller</title>
+
+<para
+>I det ursprungliga spelet på Apple II och Commodore 64 var hjälten tvungen att stå på något fast när han grävde: en stege, betong, en tegelsten, en stång, eller en fiendes huvud. Regeln förbisågs i &kgoldrunner; och en dag upptäckte upphovsmannens son att man kunde gräva medan man föll! Han skapade omedelbart en nivå för att utnyttja det. Andra spelkonstruktörer har nu gjort detsamma. Man måste gräva medan man faller i de senaste spelen på mästerskapsnivå såsom <quote
+>Terrortillstånd</quote
+>, <quote
+>Mumiens förbannelse</quote
+> och <quote
+>Guldrush</quote
+>.</para>
+
+<para
+>Å andra sidan blir gamla spel för lätta genom att gräva medan man faller. Från december 2015 är det alltså förbjudet i spelen <quote
+>Övning</quote
+>, <quote
+>Avancerad övning</quote
+>, <quote
+>Invigning</quote
+>, <quote
+>&kgoldrunner;</quote
+> och <quote
+>Utmaning</quote
+>. Spelet <quote
+>Peter W:s hämnd</quote
+> tillåter det bara på en nivå och det nya spelet <quote
+>Nybörjartur</quote
+>, avsett för förstagångsspelare, tillåter det inte heller.</para>
+
+</sect2>
+
+<sect2 id="winning-and-losing-the-game">
+<title
+>Vinna och förlora spelet</title>
+
+<para
+>Du vinner genom att slutföra den sista nivån i spelet. Du förlorar när ditt sista liv är förbrukat. Hur som helst, om du har uppnått ett av de tio högsta poängen för spelet, kan du registrera din bedrift i <quote
+>&kgoldrunner;s poängtopp</quote
+>.</para>
+
+</sect2>
+
+<sect2 id="recordings-replays-and-solutions">
+<title
+>Inspelningar, uppspelningar och lösningar</title>
+
+<para
+>Alla nivåer i spelet spelas in medan du spelar, så du kan spela upp vilken nivå som helst som du tidigare har spelat. Dessutom har vissa nivåer inspelade lösningar, som kan hjälpa dig att räkna ut hur de kan vinnas. Använd bara menyn <guimenu
+>Flytta</guimenu
+>, alternativen <guimenuitem
+>Visa en lösning</guimenuitem
+>, <guimenuitem
+>Repris</guimenuitem
+>, <guimenuitem
+>Repris av senaste nivå</guimenuitem
+> och <guimenuitem
+>Repris av godtycklig nivå</guimenuitem
+>. Lösningarna och repriserna kan avbrytas när som helst genom att klicka med musen i spelområdet, trycka på mellanslag, välja ett menyalternativ eller trycka på en snabbtangent (som <menuchoice
+><guimenu
+>Spel</guimenu
+> <guimenuitem
+>Nytt spel...</guimenuitem
+></menuchoice
+> eller <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+>).</para>
+
+<para
+><guimenuitem
+>Repris</guimenuitem
+> och <guimenuitem
+>Repris av senaste nivå</guimenuitem
+> låter dig fortsätta spela efter ett avbrott. Om det inte går bra, kan du alltså använda <guimenuitem
+>Repris</guimenuitem
+>, avbryta reprisen och därefter prova en annan metod. Eller om hjälten redan har dött, kan du använda <guimenuitem
+>Repris av senaste nivå</guimenuitem
+> på samma sätt. Funktionerna kan hjälpa dig att bygga upp en lösning av en svår nivå i steg, men använder du dem blir alla höga poäng som du eventuellt försöker uppnå ogiltiga.</para>
+
+</sect2>
+</sect1>
+
+<sect1 id="scoring">
+<title
+>Poängsättning</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Starta med fem liv</para>
+</listitem>
+<listitem>
+<para
+>Förlora ett liv och upprepa en nivå om hjälten dör</para>
+</listitem>
+<listitem>
+<para
+>Vinn ett liv när en nivå slutförs</para>
+</listitem>
+<listitem>
+<para
+>75 poäng för att fånga en fiende</para>
+</listitem>
+<listitem>
+<para
+>75 poäng för att döda en fiende</para>
+</listitem>
+<listitem>
+<para
+>250 poäng för att samla guld</para>
+</listitem>
+<listitem>
+<para
+>1500 poäng för att slutföra en nivå</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="choice-of-rules">
+<title
+>Val av regler</title>
+
+<para
+>De flesta reglerna i &kgoldrunner; täcks i avsnittet <link linkend="how-to-play"
+>Hur man spelar</link
+>, men det finns två huvudsakliga regelinställningar som påverkar spelstilen, kända som <quote
+>traditionella</quote
+> och <quote
+>&kgoldrunner;</quote
+> regler. Det är viktigt att känna till vilka inställningar som gäller när du spelar. &kgoldrunner; väljer automatiskt riktiga inställningar för ett spel när du börjar spela en av dess nivåer, och reglerna för varje spel visas i dialogrutan <link linkend="select-game-dialog"
+>Välj spel</link
+>.</para>
+
+<para
+>Den huvudsakliga skillnaden mellan <quote
+>traditionella</quote
+> och <quote
+>&kgoldrunner;</quote
+>-inställningar är sättet som fienderna väljer en väg till hjälten.</para>
+
+<itemizedlist>
+<listitem>
+<para
+>Med den <quote
+>traditionella</quote
+> sökmetoden, letar fiender efter vertikala vägar (stegar och fall) och de försöker förbli ovanför eller på samma nivå som hjälten. De går under honom bara som en sista utväg. Fienderna gör inga försök att jaga hjälten i horisontell riktning förrän de är på samma höjd och kan hitta en horisontell väg. De ger situationer där du kan <quote
+>styra</quote
+> fiender, som är långt borta från dig och få dem att arbeta för dig, eller åtminstone hålla dem ur vägen.</para>
+</listitem>
+<listitem>
+<para
+><quote
+>&kgoldrunner;-metoden</quote
+> söker omväxlande efter horisontella och vertikala vägar, vilket brukar leda till att fienderna finns på din sida spelområdet och på ungefär samma höjd (dvs. de är aggressivare och inte så lätta att manipulera). Det leder till ett spel med mer action, men med mindre tillfälle för strategi och problemlösning. Spelet <quote
+>Terrortillstånd</quote
+>, tillagt under 2007, använder dock <quote
+>&kgoldrunner;-regler</quote
+> och har många problem att lösa medan du flyr. Det är därför det är ett så svårt spel.</para>
+</listitem>
+</itemizedlist>
+
+<para
+>Övriga skillnader listas nedan:</para>
+
+<itemizedlist>
+<listitem>
+<para
+>Med <quote
+>&kgoldrunner;-regler</quote
+> rör sig fiender och hjälten alltid med samma hastighet i varje nivå, och grävda hål tar alltid lika lång tid att fyllas i. Med <quote
+>traditionella</quote
+> regler, beror spelets hastighet på antal fiender på en nivå. Ju fler fiender, desto långsammare springer de. Hjälten blir också långsammare, men inte så märkbart.</para>
+</listitem>
+<listitem>
+<para
+>Med <quote
+>traditionella</quote
+> regler, samlar fiender alltid in guldklimpar när de springer på dem. Med <quote
+>&kgoldrunner;-regler</quote
+> är det ett slumpmässigt val. Fiender släpper guldklimpar efter en slumpmässig tid med båda sorters regler.</para>
+</listitem>
+<listitem>
+<para
+>Fiender kan springa horisontellt genom hål med <quote
+>traditionella</quote
+> regler, men inte med <quote
+>&kgoldrunner;-regler</quote
+>. Tricket i flera spel med <quote
+>traditionella</quote
+> regler går ut på att släppa en fiende fri som finns bakom en tegelvägg. När du gräver bort tegelstenarna, springer han ut genom hålet. I vissa <quote
+>&kgoldrunner;-nivåer</quote
+>, måste du å andra sidan gömma dig inne i eller bakom en grävd tegelsten för att undkomma fienden.</para>
+</listitem>
+<listitem>
+<para
+>När fiender dör med <quote
+>&kgoldrunner;-regler</quote
+>, går de tillbaka till där de startade nivån. Med <quote
+>traditionella</quote
+> regler, återuppstår de på en slumpmässig plats nära spelområdets överkant. Detta utgör en väsentlig skillnad, särskilt för nivåer där du måste få fiender att hämta guldklimpar åt dig, men också därför att fiender fortsätter falla ner på dig lika snabbt som du kan döda dem.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+</chapter>
+
+<chapter id="select-game-dialog">
+<title
+>Dialogrutan Välj spel</title>
+
+<sect1 id="select-game-dialog-box">
+<title
+>Använda dialogrutan Välj spel</title>
+<screenshot>
+<screeninfo
+>Dialogrutan Välj spel</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="select.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Dialogrutan Välj spel</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Den här dialogrutan visas när du väljer alternativet <guimenuitem
+>Nytt spel</guimenuitem
+>, och dessutom när du väljer alternativ i menyn <guimenu
+>Editor</guimenu
+> eller något reprisalternativ från menyn <guimenu
+>Flytta</guimenu
+>. Du använder den för att välja ett spel och en nivå att spela, spela upp, redigera, spara, flytta, ändra nummer på eller ta bort. Den stora knappen längst ner motsvarar <guibutton
+>Ok</guibutton
+>. Dess namn ändras i enlighet med vad du gör: I detta fall att välja ett spel och en nivå att spela.</para>
+
+<sect2 id="selecting-a-game">
+<title
+>Välja ett spel</title>
+
+<para
+>Det finns flera <quote
+>systemspel</quote
+> som levereras med &kgoldrunner;s utgåva, och du kan lägga till egna spel genom att använda editorn. Alla dessa spel visas i listan längst upp i dialogrutan, ordnade enligt svårighetsgrad. Övningsspelen visas sist i listan och spelen med normal svårighetsgrad visas först. För att välja ett av spelen i listan, klicka bara på namnet.</para>
+
+<para
+>Listan visar vilka regelinställningar som gäller för varje spel (se <link linkend="choice-of-rules"
+>Val av regler</link
+>) och hur många nivåer som finns. När du markerar ett spel, visar en ruta längre ner på skärmen ytterligare information om spelet.</para>
+
+</sect2>
+
+<sect2 id="selecting-a-level">
+<title
+>Välja en nivå</title>
+
+<para
+>Du kan välja att börja ett spel på vilken nivå som helst, men det är bäst att börja på första nivån och arbeta sig uppåt, särskilt om du siktar på höga poäng. I allmänhet är nivåerna med högre nummer svårare.</para>
+
+<para
+>Den förvalda nivån är något rimligt när du visar dialogrutan <guilabel
+>Välj spel</guilabel
+>, som den senaste nivån du spelade eller redigerade. Du kan välja en annan nivå med nummerrutans pilar, genom att skriva in nivånumret i nummerrutan, eller genom att flytta skjutreglaget. Pilarna vid skjutreglagets ändar ökar eller minskar numret med ett. Du kan också dra reglaget medan vänster musknapp hålls nere för att snabbt ändra nummer, eller ändra det i steg om 10 genom att klicka i utrymmet till vänster eller höger om reglaget.</para>
+
+<para
+>När nivånumret ändras, visas en förhandsgranskning av nivån i det lilla förhandsgranskningsfönstret och nivåns namn (om den har något) visas också.</para>
+
+</sect2>
+
+<sect2 id="completing-selection">
+<title
+>Slutföra ditt val</title>
+
+<para
+>När du har valt ett spel och en nivå, klicka bara på den stora knappen längst ner för att gå vidare med att redigera, spela eller spela upp.</para>
+
+<para
+>Innan du gör det, ändras ingenting, så du kan alltid klicka på <guibutton
+>Avbryt</guibutton
+> och gå tillbaka till vad du höll på med tidigare. Observera att spelet är stannat medan dialogrutan visas, så du kan fortsätta spela där du slutade om du väljer <guibutton
+>Avbryt</guibutton
+>.</para>
+
+</sect2>
+
+<sect2 id="saving-changes">
+<title
+>Spara ändringar</title>
+
+<para
+>Om du väljer ett alternativ i menyerna <guimenu
+>Spel</guimenu
+>, <guimenu
+>Editor</guimenu
+> eller <guimenu
+>Flytta</guimenu
+> och tidigare redigerade och inte hade sparat dina ändringar, får du ett meddelande som ber dig spara, kasta eller fortsätta ditt arbete. Varken den nya åtgärden eller dess dialogruta aktiveras förrän du har tagit ett beslut om ditt tidigare arbete.</para>
+
+</sect2>
+
+<sect2 id="any-level">
+<title
+>Spela eller redigera <quote
+>vilken nivå som helst</quote
+></title>
+
+<para
+>Observera att menyerna och dialogrutan låter dig att välja och spela eller redigera <quote
+>alla</quote
+> nivåer. Om du börjar ett spel efter nivå 1, är det helt ok, du får bara inte så höga poäng. Hängivna spelare föredrar ofta att spela nivåer med höga nummer för att det är roligare, istället för att satsa på höga poäng, eller de kanske vill <quote
+>öva</quote
+> på högre nivåer innan de försöker uppnå höga poäng.</para>
+
+<para
+>Om du väljer en systemnivå att redigera, är det också ok, men du måste spara den i ett av dina egna spel, inte tillbaka i systemspelet. Om det är en mycket svår nivå, kanske du vill ändra den så att du inte går tillbaka till början av nivån varje gång du dör.</para>
+
+<para
+>För att se vad detta innebär, försök med spelet <quote
+>Utmaning</quote
+>, nivå 16, <quote
+>De tre musketörerna</quote
+>. Nivån innehåller ungefär tio svåra problem. När du har löst det första problemet, vill du inte behöva hålla på och upprepa det medan du arbetar på det andra problemet. Hemligheten är att göra en redigerbar kopia, och sedan fortsätta uppdatera den och ändra hjältens startposition, till du har löst alla problem. Därefter kan du gå tillbaka och försöka med den riktiga nivån från början till slut.</para>
+
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="menu-reference">
+<title
+>Menyreferens</title>
+
+<sect1 id="menu-overview">
+<title
+>Översikt över menyerna</title>
+
+<variablelist>
+<varlistentry>
+<term
+><link linkend="game-menu"
+><guimenu
+>Spel</guimenu
+></link
+></term>
+<listitem>
+<para
+>Menyn innehåller alternativ som påverkar spelet, som att starta och avsluta spel, spara spel, läsa in sparade spel, och visa bästa resultat (om det finns). Den innehåller också alternativet <guimenuitem
+>Avsluta</guimenuitem
+>. Du kan också avsluta genom att klicka på <guiicon
+>X</guiicon
+> längst upp till höger i &kgoldrunner;s fönster.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link linkend="move-menu"
+><guimenu
+>Flytta</guimenu
+></link
+></term>
+<listitem>
+<para
+>Menyn innehåller ett alternativ för att få ett tips (om det finns något). Mästarspel och övningar har tips för varje nivå. Andra spel har sällan tips. Den innehåller också alternativ för att spela upp inspelningar av spelet, såsom när demonstrationer visas, exempel på lösningar visas eller du spelar upp dina egna insatser.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link linkend="view-menu"
+><guimenu
+>Visa</guimenu
+></link
+></term>
+<listitem>
+<para
+>Den här menyn innehåller ett alternativ för att ändra fullskärmsläge.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link
+linkend="editor-menu"
+><guimenu
+>Editor</guimenu
+></link
+></term>
+<listitem>
+<para
+>Den här menyn har allt som du behöver för att skapa dina egna spel och nivåer, och underhålla dem, inklusive funktioner som hjälper dig ordna om nivåer, flytta dem mellan spel, eller ta bort dem när de inte längre behövs. När du organiserar om dina nivåer, förblir nivånumren i spelet i följd (utan hål) och nivåerna numreras automatiskt om.</para>
+<para
+>När du använder speleditorn, visas en grafisk verktygsrad med verktygstips under menyraden. Se <link linkend="game-editor"
+>Speleditorn</link
+> för mer information om hur man skapar och redigerar &kgoldrunner;-nivåer.</para
+> </listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link
+linkend="settings-menu"
+><guimenu
+>Inställningar</guimenu
+></link
+></term>
+<listitem>
+<para
+>Menyn har flera grupper med inställningar av &kgoldrunner;: val av mus, tangentbord eller hybridstyrning (för bärbara datorer), och val av teman och spelhastighet. Inställningarna väljs automatiskt när du börjar spela, men du kan använda menyn för att ändra dem om du vill.</para>
+
+<para
+>Det finns också ett alternativ för att ändra snabbtangenter och styrtangenter för hjälten.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link linkend="help-menu"
+><guimenu
+>Hjälp</guimenu
+></link
+></term>
+<listitem>
+<para
+>Menyn <guimenu
+>Hjälp</guimenu
+> innehåller ett alternativ för att komma åt &kgoldrunner;s handbok (det här dokumentet), <guimenuitem
+>Om &kgoldrunner;</guimenuitem
+> och <guimenuitem
+>Om &kde;</guimenuitem
+>.</para>
+<para
+>Det finns också ett alternativ för att rapportera ett fel eller önskemål.</para>
+<para
+>Om du vill ge ett förslag, eller har några nya nivåer att bidra med, finns nuvarande upphovsmans e-postadress under alternativet <guimenuitem
+>Om &kgoldrunner;</guimenuitem
+>.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="game-menu">
+<title
+>Menyn Spel</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Spel</guimenu
+><guimenuitem
+>Nytt spel...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Visar dialogrutan <guilabel
+>Välj spel</guilabel
+> (se <link linkend="select-game-dialog-box"
+>Använda dialogrutan Välj spel</link
+>), där du väljer ett spel och en nivå i det spelet. Först är det enklast att starta med nivå 1, eftersom nivåerna är ungefärligen ordnade efter svårighetsgrad. Det är också bäst att börja där om du försöker nå höga poäng.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Spel</guimenu
+><guimenuitem
+>Ladda sparat spel...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Visar en lista med tidigare sparade spel, sorterade med det senaste först. Varje rad visar spel, nivå, antal liv, poäng, veckodag, datum och tid. Om du markerar en rad, och klickar på knappen <guibutton
+>Ok</guibutton
+>, startas det spelet i början av den nivån, med liven och poängen du sparade.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>Y</keycap
+></shortcut
+> <guimenu
+>Spel</guimenu
+><guimenuitem
+>Spela nästa nivå</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Läser in nästa nivå i det pågående spelet, klar att spela och utan några ytterligare dialogrutor. Du kan använda det för att snabbt bläddra igenom nivåerna i ett spel.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>S</keycap
+></shortcut
+> <guimenu
+>Spel</guimenu
+><guimenuitem
+>Spara spel...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Sparar nuvarande spel, nivå, liv och poäng. Alternativet sparar bara position och poäng vid den nuvarande nivåns början. Du kan spara när du är halvvägs genom en nivå, men &kgoldrunner; sparar ändå positionen (och poängen) som de var vid start av nivån. Du får ett varningsmeddelande om det. Innan du använder alternativet, måste du trycka på en paustangent (<keycap
+>P</keycap
+> eller <keycap
+>Esc</keycap
+>) för att frysa spelet när du flyttar musen, men det är mycket enklare att använda snabbtangenten <keycap
+>S</keycap
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Spel</guimenu
+><guimenuitem
+>Spara redigeringar...</guimenuitem
+> </menuchoice>
+</term>
+<listitem
+><para
+>Det här alternativet är bara aktiverat om du har använt speleditorn. Det visar dialogrutan <guilabel
+>Välj spel</guilabel
+>, och låter dig välja ett nivånummer och spel där du ska spara ditt arbete. Åtgärden är exakt samma sak som menyalternativet <menuchoice
+><guimenu
+>Editor</guimenu
+> <guimenuitem
+>Spara redigeringar</guimenuitem
+></menuchoice
+> och <guiicon
+>diskett</guiicon
+>ikonen i editorns verktygsrad.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Shift;<keycap
+>S</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Spel</guimenu
+><guimenuitem
+>Spara en lösning...</guimenuitem
+> </menuchoice>
+</term>
+<listitem
+><para
+>Spara en lösning av en nivå i en fil som heter <quote
+><filename
+>sol_<replaceable
+>prefix</replaceable
+>.txt</filename
+></quote
+> i användarens datakatalog.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>P eller Esc</keycap
+></shortcut
+> <guimenu
+>Spel</guimenu
+><guimenuitem
+>Paus</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Stoppar eller startar om spelet.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Spel</guimenu
+><guimenuitem
+>Visa bästa resultat...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Visar en tabell med upp till tio bästa resultat för nuvarande spel. Varje rad visar spelarens rangordning och namn, nivån som uppnåtts, poängen som erhållits, veckodagen och datumet.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>Q</keycap
+></shortcut
+> <guimenu
+>Spel</guimenu
+><guimenuitem
+>Döda hjälten</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Dödar hjälten när han är på en plats som han inte kan komma ifrån.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Spel</guimenu
+><guimenuitem
+>Avsluta</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Avslutar &kgoldrunner; omedelbart. Om ett spel pågår, försvinner det för alltid (om du inte just har sparat det) och det görs ingen kontroll av bästa resultat. Om du redigerade en nivå, får du tillfälle att spara ditt arbete.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+<sect1 id="move-menu">
+<title
+>Menyn Flytta</title>
+
+<tip
+><para
+>Alla demonstrationer och repris av förflyttningar spelar upp tidigare inspelade nivåer. De kan alla avbrytas och stoppas genom genom att klicka i spelområdet med musen, trycka på mellanslag, välja ett menyalternativ eller trycka på en snabbtangent (som <menuchoice
+><guimenu
+>Spel</guimenu
+><guimenuitem
+>Nytt spel...</guimenuitem
+></menuchoice
+> eller <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+>).</para
+></tip>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>H</keycap
+></shortcut
+> <guimenu
+>Flytta</guimenu
+><guimenuitem
+>Tips</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Visar ett meddelande med ett tips, om det finns något för nivån som spelas. Mästarspel och övningsspel har av tradition tips för varje nivå. Andra spel har sällan tips. Den nedre delen av &kgoldrunner;s fönster visar om ett tips är tillgängligt eller inte.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>D</keycap
+></shortcut
+> <guimenu
+>Flytta</guimenu
+><guimenuitem
+>Demonstration</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Spelar en demonstration av spelet för några få inspelade nivåer. De är samma som i demonstrationen vid start.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Flytta</guimenu
+><guimenuitem
+>Visa en lösning</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Spelar upp en inspelad lösning av en nivå, om det finns en arkiverad lösning i utgiven speldata.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>R</keycap
+></shortcut
+> <guimenu
+>Flytta</guimenu
+><guimenuitem
+>Repris</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Stoppar spelet av nuvarande nivå och spelar upp den inspelade versionen från början. Om du avbryter reprisen, kan du fortsätta spela från det stället och försöka med en annan metod. Du kan använda funktionen för att bygga upp en följd av steg för att vinna, men det gör att alla höga poäng som du eventuellt försöker uppnå blir ogiltiga.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>A</keycap
+></shortcut
+> <guimenu
+>Flytta</guimenu
+><guimenuitem
+>Repris av senaste nivå</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Spelar upp den inspelade versionen av den senaste nivån du spelade från början (t.ex. om du förlorade nivån). Om du avbryter reprisen, kan du fortsätta spela från det stället och försöka med en annan metod. Du kan använda funktionen för att bygga upp en följd av steg för att vinna, men det gör att alla höga poäng som du eventuellt försöker uppnå blir ogiltiga.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Flytta</guimenu
+><guimenuitem
+>Repris av godtycklig nivå</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Spelar upp den inspelade versionen av vilken nivå som helst som du tidigare har spelat. </para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+<sect1 id="view-menu">
+<title
+>Menyn Visa</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>F</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Visa</guimenu
+> <guimenuitem
+>Fullskärmsläge</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Sätter på eller stänger av fullskärmsläge</action
+>. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+<sect1 id="editor-menu">
+<title
+>Menyn Redigera</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Skapa nivå</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Visar editorns verktygsrad och ett tomt spelområde där du kan rita en ny nivå. När du är klar, använd alternativet <guimenuitem
+>Spara redigeringar...</guimenuitem
+> för att tilldela den nya nivån till ett spel och ge den ett nivånummer.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Redigera valfri nivå...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Visar dialogrutan <guilabel
+>Välj spel</guilabel
+>, där du väljer ett spel och nivå att redigera. Du kan välja ett systemspel och nivå, men du får en varning att du bara kan spara den redigerade nivån i ett av dina egna spel.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Editor</guimenu
+><guimenuitem
+>Spara redigeringar...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Visar dialogrutan <guilabel
+>Välj spel</guilabel
+> med lämpliga standardinställningar för att spara en ny eller redigerad nivå. Du kan ändra spel och nivånummer och uppnå effekten <quote
+>Spara som...</quote
+>. Dialogrutan har en särskild knapp <guibutton
+>Redigera nivånamn eller tips</guibutton
+>, som visar en dialogruta där du kan lägga till ett valfritt namn och tips till din nivå.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Flytta nivå...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Det här är en operation i två delar. Innan du använder <guimenuitem
+>Flytta nivå...</guimenuitem
+> måste du läsa in en nivå att flytta genom att välja den för spel eller redigering. Då visas dialogrutan <guilabel
+>Välj spel</guilabel
+>, där du väljer en ny plats för den inlästa nivån. Du kan ändra både spel och nivånummer för att flytta en nivå till ett annat spel, eller bara ändra nivånumret för att ordna om nivåer i ett spel. Du kan inte flytta en systemnivå.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Ta bort nivå...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Visar dialogrutan <guilabel
+>Välj spel</guilabel
+>, där du kan välja en nivå att ta bort. Du kan inte ta bort en systemnivå.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Skapa spel...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Du måste använda det här alternativet innan du börjar skapa dina egna nivåer i &kgoldrunner;. Det visar en dialogruta där du kan skriva in namnet på ett nytt spel, ett 1-5 teckens prefix för nivåfilnamn, standardreglerna för det nya spelet (<quote
+>&kgoldrunner;</quote
+> eller <quote
+>traditionella</quote
+>) och en valfri beskrivning eller kommentar om spelet.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Redigera spelinformation...</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Visar dialogrutan <guilabel
+>Välj spel</guilabel
+>, där du väljer ett spel att redigera. Därefter visas spelinformationen i en dialogruta, där du kan redigera namnet, regler och beskrivning, men inte filnamnsprefixet, ifall du redan har sparat några nivåer. Det beror på att prefixet används internt i nivåfilnamn.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+<sect1 id="settings-menu">
+<title
+>Menyn Inställningar</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Inställningar</guimenu
+> <guisubmenu
+>Ändra tema</guisubmenu
+> </menuchoice
+></term>
+<listitem>
+<para
+>Den här undermenyn erbjuder ett urval av bakgrundsteman eller <quote
+>världar</quote
+> att spela i. Du kan ändra temat när som helst, även medan ett spel pågår. För de med artistiska talanger, är det möjligt att komponera nya teman, inklusive grafik eller ljud, eller både ock, och lägga till dem i &kgoldrunner;. Kontakta upphovsmannen för detaljerad information.</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Den egyptiska skatten</guimenuitem
+></term>
+<listitem>
+<para
+>Matt Goldrunner upptäcker att han är i ett forntida egyptiskt tempel, där han förföljs av mumier som är fast beslutna att skydda sina förfäders ädelstenar.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Svartvitt</guimenuitem
+></term>
+<listitem>
+<para
+>Temat är förenklat till de mest grundläggande grafiska elementen, och ritas bara i svartvitt. Det är avsett att hjälpa spelare med nedsatt syn. Upphovsmannen skulle uppskatta e-postsvar om hur användbart det är, och vilka tydlighetsförbättringar som skulle kunna göras.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Standardvärde i &kgoldrunner;</guimenuitem
+></term>
+<listitem>
+<para
+>Ger dig &kgoldrunner;s standardtema, med röda tegelstenar och grå betong.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Nördstaden</guimenuitem
+></term>
+<listitem>
+<para
+>Vår hjälte är fången inne i en dator. Kommer han att lyckas fly när han till sist når den sista nivån?</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Nostalgi-blues</guimenuitem
+></term>
+<listitem>
+<para
+>Erinrar om spelet på Apple II, där tegelstenarna och betongen hade en snygg blå färg, hjälten var vit, fienderna hade vita byxor och orange (hudfärgade) tröjor, guldet var vita lådor med orange sidor. Hela effekten var oskarpare (en sort kantutjämning med hårdvara), som gjorde att tegelstenarna nästan såg tredimensionella ut &mdash; svårt att återskapa på dagens skarpa bildskärmar.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Nostalgi</guimenuitem
+></term>
+<listitem>
+<para
+>Erinrar om tiden för det ursprungliga spelet på Apple II eller Commodore 64, som det såg ut när du kopplade in datorn i tv-apparaten, eller använde en svartvit bildskärm. För de som inte kommer ihåg denna hjältarnas tid, är det inte en exakt reproduktion, men det ger en ganska god idé. Exempelvis var hjälten helt vit på den tiden, medan han är blå idag.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Inställningar</guimenu
+><guimenuitem
+>Spela ljud</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Sätter på eller stänger av ljud.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Inställningar</guimenu
+><guimenuitem
+>Spela ljud av fotsteg</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Sätter på eller stänger av ljud av fotsteg.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Inställningar</guimenu
+><guimenuitem
+>Demonstration vid start</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Stänger av eller sätter på demonstration vid start (se <link linkend="how-to-play"
+>Starta spelet</link
+>).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Inställningar</guimenu
+><guimenuitem
+>Musen styr hjälten</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Väljer musstyrning av hjälten (se <link linkend="mouse-control"
+>Flytta omkring</link
+>).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Inställningar</guimenu
+><guimenuitem
+>Tangentbordet styr hjälten</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Väljer tangentbordsstyrning av hjälten (se <link linkend="mouse-control"
+>Tangentbordsstyrning</link
+>).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Inställningar</guimenu
+><guimenuitem
+>Hybridkontroll (bärbar dator)</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Ställer in hybridkontroll av hjälten för bärbara datorer, där tryckplattan eller en annan typ av pekare används för att styra hjälten, och grävtangenterna på tangentbordet används för att gräva åt vänster och höger.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Inställningar</guimenu
+> <guimenuitem
+>Tryck på tangent för att flytta</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>I tangentbordsläge, tryck på en riktningstangent för att börja röra dig och fortsätta till du trycker på en annan tangent</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Inställningar</guimenu
+> <guimenuitem
+>Håll nere tangent för att flytta</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>I tangentbordsläge, håll nere en riktningstangent för att flytta och släpp den för att stoppa.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Inställningar</guimenu
+><guimenuitem
+>Normal hastighet</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Ställer in normal spelhastighet (10 enheter).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Inställningar</guimenu
+><guimenuitem
+>Nybörjarhastighet</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Ställer in spelhastighet för nybörjare (5 enheter, halva normala hastigheten).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Inställningar</guimenu
+><guimenuitem
+>Mästarhastighet</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Ställer in spelhastighet för mästare (15 enheter, 1,5 gånger normala hastigheten).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>+</keycap
+></shortcut
+> <guimenu
+>Inställningar</guimenu
+><guimenuitem
+>Öka hastighet</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Ökar spelhastigheten en enhet, upp till maximalt 20 enheter (dubbelt så fort som normalt). Du kan använda <keycap
+>+</keycap
+> som snabbtangent.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>-</keycap
+></shortcut
+> <guimenu
+>Inställningar</guimenu
+><guimenuitem
+>Minska hastighet</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Minskar spelhastigheten en enhet, ner till minimalt 2 enheter (en femtedel så fort som normalt). Du kan använda <keycap
+>-</keycap
+> som snabbtangent.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Inställningar</guimenu
+> <guimenuitem
+>Anpassa genvägar...</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Med &kde;-skrivbordet låter det här alternativet dig ändra tilldelade tangenter (t.ex. för tangentbordsstyrning av hjälten) eller tilldela dina egna snabbtangenter till menyalternativ.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="help-menu">
+<title
+>Menyn Hjälp</title>
+
+<para
+>Dessutom har &kgoldrunner; &kde;:s vanliga menyalternativ i menyn <guimenu
+>Hjälp</guimenu
+>. För mer information läs avsnittet om <ulink url="help:/fundamentals/menus.html#menus-help"
+>hjälpmenyn</ulink
+> i &kde;:s grunder. </para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="game-editor">
+<title
+>Speleditorn</title>
+
+<sect1 id="editor-start">
+<title
+>Komma igång med editorn</title>
+
+<sect2 id="creating-a-game">
+<title
+>Skapa ett spel</title>
+
+<para
+>Innan du skapar eller redigerar en &kgoldrunner;-nivå, måste du skapa ett spel där den kan sparas. Använd menyalternativet <menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Skapa spel</guimenuitem
+></menuchoice
+>. Om du glömmer, blir du påmind.</para>
+
+<para
+>De viktigaste besluten att ta när du skapar ett spel, är att välja reglerna du ska använda (<quote
+>traditionella</quote
+> eller <quote
+>&kgoldrunner;</quote
+>, se <link linkend="choice-of-rules"
+>Val av regler</link
+>) och att välja ett unikt 1-5 teckens filnamnsprefix för ditt spel och dina nivåer. Du behöver också ett namn och en beskrivning på spelet, men de kan lätt ändras senare.</para>
+
+<para
+>Prefixet används internt av &kgoldrunner; för att identifiera nivåfiler, resultatfiler och sparade spel. Du kan använda dina initialer som prefix, under förutsättning att de inte är samma som ett &kgoldrunner;-prefix. Hittills, har prefixen <quote
+>level</quote
+>, <quote
+>plws</quote
+>, <quote
+>wad</quote
+>, <quote
+>plwv</quote
+>, <quote
+>sot</quote
+>, <quote
+>cnt</quote
+>, <quote
+>CM</quote
+>, <quote
+>tute</quote
+> och <quote
+>tutea</quote
+> använts.</para>
+
+<para
+>Prefixet med fyra bokstäver <quote
+>tute</quote
+> är reserverat för övningsspel, som visar spelbeskrivningen och tips på varje nivå när de spelas. Om du komponerar dina egna övningsspel kan du använda prefixet <quote
+>tutex</quote
+> för att få det att köra som ett övningsspel men inte blanda ihop filerna med de grundläggande övningsspelet eller avancerade övningsspelet (med prefixen <quote
+>tute</quote
+> och <quote
+>tutea</quote
+>).</para>
+
+</sect2>
+
+<sect2 id="creating-a-level">
+<title
+>Skapa en nivå</title>
+
+<para
+>När du har skapat ett spel, använd menyalternativet <menuchoice
+><guimenu
+>Redigera</guimenu
+> <guimenuitem
+>Skapa nivå</guimenuitem
+></menuchoice
+> för att börja skapa en nivå. Det ger dig ett tomt spelområde med 28x30 fyrkanter, med hjälten längst upp till vänster. Du kan placera hjälten någon annanstans om du föredrar, och du behöver inte använda hela 28x30 området. Många intressanta nivåer använder mindre områden.</para>
+
+<para
+>Det minimala kravet för att en nivå ska kunna spelas är att det finns en hjälte som står på någonting längst upp i spelområdet, men det är ett trivialt fall. Mer realistiskt är att ha en labyrint att lösa, och några synliga stegar som leder längst upp i spelområdet, men inget guld. Du behöver inte ha fiender, guld, stänger, dolda stegar eller till och med tegelstenar. Det finns många utmanande nivåer som saknar fiender eller tegelstenar, men de flesta nivåer har dock minst en guldklimp och några dolda stegar som visas när den sista guldklimpen har hämtats.</para>
+
+</sect2>
+</sect1>
+
+<sect1 id="editing-and-testing">
+<title
+>Redigera och testa</title>
+
+<sect2 id="editing-a-level">
+<title
+>Redigera en nivå</title>
+
+<para
+>Använd <menuchoice
+><guimenu
+>Editor</guimenu
+> <guimenuitem
+>Redigera nivå...</guimenuitem
+></menuchoice
+> för att börja redigera en befintlig nivå eller använd <menuchoice
+><guimenu
+>Editor</guimenu
+> <guimenuitem
+>Skapa nivå</guimenuitem
+></menuchoice
+> för att börja redigera en ny nivå.</para>
+
+<para
+>Om du väljer en systemnivå, blir du varnad att du måste spara den i något av dina egna spel. Annars är det normalt att spara nivån där den kom från, men du kan ändra det.</para>
+
+</sect2>
+
+<sect2 id="painting-objects">
+<title
+>Rita objekt i en nivå</title>
+
+<para
+>Bilden nedanför visar editorns verktygsrad, som visas när du först väljer <guimenuitem
+>Skapa nivå</guimenuitem
+>, <guimenuitem
+>Redigera nivå...</guimenuitem
+> i menyn <guimenu
+>Editor</guimenu
+> och på så sätt byter från spelläge till redigeringsläge. Den försvinner när du går tillbaka till spelläge. Observera också att i redigeringsläge, görs falska tegelstenar och dolda stegar synliga i spelområdet.</para>
+
+<para
+>De tre ikonerna till vänster i editorns verktygsrad utför samma åtgärder som menyalternativen <guimenuitem
+>Skapa nivå</guimenuitem
+>, <guimenuitem
+>Redigera nivå...</guimenuitem
+> och <guimenuitem
+>Spara redigeringar...</guimenuitem
+>. Övriga elva ikoner är till för att redigera och rita objekt i nivån.</para>
+
+
+<para
+>Från vänster till höger är de övriga elva ikonerna <guiicon
+>Namn/tips</guiicon
+> (glödlampa), <guiicon
+>Radera</guiicon
+> (bakgrund), <guiicon
+>Hjälte</guiicon
+>, <guiicon
+>Fiende</guiicon
+>, <guiicon
+>Tegelsten</guiicon
+> (kan gräva), <guiicon
+>Betong</guiicon
+> (kan inte gräva), <guiicon
+>Falsk tegelsten</guiicon
+> (också känd som fälla), <guiicon
+>Stege</guiicon
+>, <guiicon
+>D stege</guiicon
+> (dold stege), <guiicon
+>Stång</guiicon
+> (eller påle) och <guiicon
+>Guldklimp</guiicon
+>. Grafiken för ikonerna, förutom glödlampan, hämtas från det &kgoldrunner;-tema du för närvarande använder.</para>
+
+<screenshot>
+<screeninfo
+>Redigera en nivå</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="editbar.png" format="PNG"/>
+</imageobject>
+<textobject
+><phrase
+>Redigera en nivå</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Ikonen <guiicon
+>Namn/tips</guiicon
+> visar en dialogruta där du kan skapa eller redigera nivåns namn och tips. Båda är valfria, men de är väsentliga för övningsnivåer och det är vanligt att tillhandahålla dem för mycket svåra nivåer, som i mästarspel (se spelet <quote
+>Peter W:s hämnd</quote
+>).</para>
+
+<para
+>När du klickar på någon av de övriga tio ikonerna, blir musen en <quote
+>borste</quote
+> som ritar ikonen. Från början är borsten inställd till <quote
+>tegelsten</quote
+>.</para>
+
+<para
+>Du ritar antingen genom att peka och klicka med vänster musknapp för att placera ett enstaka objekt i en fyrkant, eller genom att hålla nere vänster musknapp och dra musen för att fylla i en linje eller ett område, som en lång stege, ett stort tegelstensblock, eller ett betonggolv. Du slutar rita så fort du släpper upp musknappen. Om du gör ett misstag, kan du klicka med höger musknapp för att sudda det, eller välja ikonen <guiicon
+>Radera</guiicon
+> och rita med den.</para>
+
+<para
+>Hjältens ikon fungerar annorlunda, eftersom det bara kan finnas en hjälte. När du ritar hjälten, flyttas han från sin föregående position till var du än släpper musknappen.</para>
+
+</sect2>
+
+<sect2 id="saving-your-work">
+<title
+>Spara ditt arbete</title>
+
+<para
+>När du har ritat färdigt, spara arbetet med <guiicon
+>diskett</guiicon
+>ikonen, <menuchoice
+><guimenu
+>Editor</guimenu
+> <guimenuitem
+>Spara redigeringar...</guimenuitem
+></menuchoice
+> eller <menuchoice
+><guimenu
+>Spel</guimenu
+> <guimenuitem
+>Spara redigeringar...</guimenuitem
+></menuchoice
+>. Du måste alltid spara i dina egna spel, aldrig i systemets spel.</para>
+
+<para
+>Om du skapar en nivå, använder du dialogrutan <guilabel
+>Välj spel</guilabel
+> för att tilldela den till ett spel och nivånummer. Du använder samma dialogruta om du har redigerat en nivå, men det är normalt att spara nivån där den kom från. Du kan ändra spel och nivånummer för att uppnå effekten <quote
+>Spara som...</quote
+>. Om du har redigerat en systemnivå måste du spara den som en kopia i ett av dina egna spel.</para>
+
+</sect2>
+
+<sect2 id="adding-name-and-hint">
+<title
+>Lägga till ett nivånamn och tips</title>
+
+<para
+>I versionen av dialogrutan <guilabel
+>Välj spel</guilabel
+> för att spara, finns en knapp som heter <guibutton
+>Redigera nivånamn eller tips</guibutton
+>. Du kan använda den för att ge nivån en slutputsning genom att ge den ett namn och tips. Båda är valfria, men de är väsentliga för övningsnivåer och det är vanligt att tillhandahålla dem för mycket svåra nivåer, som för mästarspel (se spelet <quote
+>Peter W:s hämnd</quote
+>). Du kan förstås också använda ikonen <guiicon
+>Redigera namn eller tips</guiicon
+>, för att när som helst lägga till eller redigera namn och tips.</para>
+
+</sect2>
+
+<sect2 id="testing-a-level">
+<title
+>Testa en nivå</title>
+
+<para
+>Efter att ha sparat en redigerad nivå, kan du prova den genom att använda menyalternativet <menuchoice
+><guimenu
+>Spel</guimenu
+> <guimenuitem
+>Nytt spel...</guimenuitem
+></menuchoice
+> eller motsvarande snabbtangent. Normalt är spel och nivånummer ihågkomna, och du kan direkt komma till nivån med några få klick. Om du därefter vill redigera lite till, gäller samma sak när du använder <menuchoice
+><guimenu
+>Spel</guimenu
+> <guimenuitem
+>Redigera nivå...</guimenuitem
+></menuchoice
+> igen. Det är väsentligt att du provar alla nivåer du skapar, för att försäkra dig om att det är möjligt att slutföra dem och att de inte är för lätta.</para>
+
+</sect2>
+</sect1>
+
+<sect1 id="reorganizing-games">
+<title
+>Organisera om spel och nivåer</title>
+
+<sect2 id="moving-a-level">
+<title
+>Flytta en nivå</title>
+
+<para
+>Du kan använda <guimenuitem
+>Flytta nivå</guimenuitem
+> i menyn <guimenu
+>Editor</guimenu
+> för att ordna om eller numrera om nivåerna i ett spel, eller för att flytta en nivå från ett spel till ett annat. <guimenuitem
+>Flytta nivå</guimenuitem
+> är en operation med två delar. Du måste först läsa in en nivå att flytta genom att välja den för spel eller redigering, när du därefter använder alternativet <guimenuitem
+>Flytta nivå</guimenuitem
+> visas dialogrutan <guilabel
+>Välj spel</guilabel
+>, och du kan välja det nya nivånumret och spelet (efter behov).</para>
+
+<para
+>Förflyttningar lämnar inga hål i sekvensen med nivånummer i spelet. Om du till exempel flyttar nivå 10 i spel A till nivå 3 i spel B, numreras nivå 11 och uppåt i spel A om ett steg neråt (för att stänga gapet) och nivå 3 och uppåt i spel B numreras om ett steg uppåt (för att ge plats för nykomlingen).</para>
+
+</sect2>
+
+<sect2 id="deleting-a-level">
+<title
+>Ta bort en nivå</title>
+
+<para
+>Du kan använda menyalternativet <menuchoice
+><guimenu
+>Editor</guimenu
+> <guimenuitem
+>Ta bort nivå...</guimenuitem
+></menuchoice
+> för att ta bort en oönskad nivå. Övriga nivåer numreras om så att gapet i sekvensen stängs.</para>
+
+</sect2>
+</sect1>
+
+</chapter>
+
+<chapter id="tips-tricks-and-hints">
+<title
+>Tips, trick och råd</title>
+
+<sect1 id="tips-overview">
+<title
+>Översikt</title>
+
+<para
+>Det här kapitlet ger några allmänna tips och råd om hur man spelar &kgoldrunner;, i motsats till de specifika tips som du hittar för nivåer i övningsspel och mästarspel (se <link linkend="move-menu"
+><menuchoice
+><guimenu
+>Flytta</guimenu
+><guimenuitem
+>Tips</guimenuitem
+></menuchoice
+></link
+> eller <keycap
+>H</keycap
+>). Tipsen är grupperade på följande sätt:</para>
+
+<itemizedlist>
+
+<listitem>
+<para
+><link linkend="hints-dealing-with-enemies"
+>Hantera fiender</link
+></para>
+</listitem>
+
+<listitem>
+<para
+><link linkend="hints-digging-puzzles"
+>Grävproblem</link
+></para>
+</listitem>
+
+<listitem>
+<para
+><link linkend="hints-tricks-with-gold"
+>Trick med guld</link
+></para>
+</listitem>
+
+<listitem>
+<para
+><link linkend="hints-solving-difficult-levels"
+>Lösa svåra nivåer</link
+></para>
+</listitem>
+
+</itemizedlist>
+</sect1>
+
+<sect1 id="hints-dealing-with-enemies">
+<title
+>Hantera fiender</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Du kan alltid fånga en ensam ankommande fiende i ett hål, ta hans guld och springa över honom utan att döda honom. Det är ofta en god idé att gräva bakom dig och fördröja honom ytterligare, men det kan döda honom. I vissa nivåer är det inte en god idé att döda fiender.</para>
+</listitem>
+<listitem>
+<para
+>Du kan oftast fånga två ankommande fiender i två hål, ta deras guld och springa över dem, men det är farligt om fienderna skiljs av två eller tre mellanrum. Ibland dödar två hål en av fienderna, och den andra undkommer, och ibland undkommer båda. Med &kgoldrunner;-regler är det enklare att fånga två fiender och springa över dem, eftersom de förblir i hålen en längre tid.</para>
+</listitem>
+<listitem>
+<para
+>Det är nästa alltid omöjligt att fånga tre ankommande fiender och springa över dem. Du måste döda dem, gräva och hoppa ner genom golvet eller bara springa din väg.</para>
+</listitem>
+<listitem>
+<para
+>Försök få alla fiender att springa tillsammans i en grupp. På så sätt blir du inte omringad och kan göra roliga saker, som att samla guld medan de springer omkring bakom dig.</para>
+</listitem>
+<listitem>
+<para
+>Ibland kan du döda en fiende med två hål, men ofta krävs det från tre upp till nio hål för att döda en till fem fiender.</para>
+</listitem>
+<listitem>
+<para
+>Det är möjligt att döda en fiende med ett hål om han är nog långt borta när du gräver det.</para>
+</listitem>
+<listitem>
+<para
+>Med <quote
+>traditionella</quote
+> regler, kan du fånga en fiende för gott i en grop av tegelsten eller betong. Stå nära gropens kant på motsatt sida om fienden. När han närmar sig gropen, flytta ner en fyrkant (till nivån för gropens botten) så springer fienden oftast ner i gropen.</para>
+</listitem>
+<listitem>
+<para
+>I vissa nivåer med <quote
+>traditionella</quote
+> regler, kan du tvinga en fiende att klättra uppför en stege innan dig om du står någonstans ovanför stegens början.</para>
+</listitem>
+<listitem>
+<para
+>I <quote
+>&kgoldrunner;</quote
+>-spelen kan du fånga en fiende i ett hål genom att få honom att falla ovanför dig, därefter springa åt sidan och gräva dig ut innan han når dig.</para>
+</listitem>
+<listitem>
+<para
+>I <quote
+>&kgoldrunner;</quote
+>-spelen kan inte fiender springa genom grävda tegelstenar, så ibland kan du använda dem som barriärer eller gömställen.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="hints-digging-puzzles">
+<title
+>Grävproblem</title>
+
+<itemizedlist>
+<listitem>
+<para
+>För att gräva dig igenom mer än ett lager tegelsten, börja genom att gräva lika många hål som det finns lager, hoppa ner, gräv en tegelsten mindre, och så vidare.</para>
+</listitem>
+<listitem>
+<para
+>Om du gräver nära en stege eller en följd av stänger, kan du gräva ner genom hur många lager som helst, och upp till fem eller sex tegelstenar horisontellt. Gå bara tillbaka till stegen eller stängerna efter varje lager har grävts, gå ner en fyrkant, spring ut och gräv nästa lager.</para>
+</listitem>
+<listitem>
+<para
+>Om ett grävproblem verkar omöjligt, tänk på att det kan finnas några falska tegelstenar i det. Kanske är understa lagret falskt eller du kanske kan stå mitt i en falsk tegelsten och gräva intill den.</para>
+</listitem>
+<listitem>
+<para
+>Tänk igenom ordningen som du tänker samla in guldet. Om du väljer rätt ordning, kan grävandet bli lättare.</para>
+</listitem>
+<listitem>
+<para
+>Vissa nivåer kräver att du gräver bort en tegelstensvägg, springer in, samlar lite guld och springer ut igen innan tegelstenarna stängs igen och fångar dig.</para>
+</listitem>
+<listitem>
+<para
+>Det är möjligt att gräva medan du faller i ett tomrum, om du kan göra det i rätt ögonblick. Du behöver inte ha en fiende att rida på. Det är ett fel som har blivit till en <quote
+>funktion</quote
+>, och det används flitigt i spelen <quote
+>Terrortillstånd</quote
+>, <quote
+>Räkna</quote
+> och <quote
+>Mumiens förbannelse</quote
+>.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="hints-tricks-with-gold">
+<title
+>Trick med guld</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Om du inte kan komma till en guldklimp, fundera på att få en fiende att gå dit och hämta den. Fundera till och med på att använda fiendens huvud som en brygga för att komma över en grop eller stup.</para>
+</listitem>
+<listitem>
+<para
+>I vissa nivåer finns en guldklimp som måste hämtas sist av allt, eftersom du kommer att behöva de dolda stegarna för att komma från dess position.</para>
+</listitem>
+<listitem>
+<para
+>I vissa fall kan en fiende dödas utan att han lämnar ifrån sig guldet som han bär på. Guldet blir en <quote
+>förlorad guldklimp</quote
+>. Du får inga poäng för att fienden lämnade ifrån sig sitt guld, men du kan åtminstone avsluta nivån.</para>
+</listitem>
+<listitem>
+<para
+>Om det inte finns någonstans att gräva, låt fienderna springa över betongen och längst upp på stegarna, och på så sätt få dem att lämna sitt guld på slumpmässiga ställen.</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="hints-solving-difficult-levels">
+<title
+>Lösa svåra nivåer</title>
+
+<itemizedlist>
+<listitem>
+<para
+>Försök att ändra hastighetsinställningarna till nybörjare eller till och med ännu lägre.</para>
+</listitem>
+<listitem>
+<para
+>Använd editorfunktionen för att <quote
+>kika</quote
+> var falska tegelstenar och gömda stegar finns.</para>
+</listitem>
+<listitem>
+<para
+>Använd editorfunktionen för att spara nivån i ett av dina egna spel. Därefter kan du redigera den så att du inte alltid måste starta från början när du dör. Det låter dig utveckla lösningen i enklare steg.</para>
+</listitem>
+<listitem>
+<para
+>Med grävproblem, leta efter falska tegelstenar du kan falla ner i och på så sätt ha en tegelsten mindre att gräva. Eller fundera på att använda en fiende som går framför dig, så att du kan stå på hans huvud och gräva.</para>
+</listitem>
+<listitem>
+<para
+>Leta efter ett tema eller trick i nivån, som att åka ner på en fiendes huvud, fånga alla fiender i en grop, lura in fienderna i ett hörn där de står och inte längre jagar dig, lura fienderna i gropar du måste korsa för att komma åt en del guld, få fienderna att hämta guld åt dig, eller hitta platser där du kan stå för att få en fiende att gå dit du vill ha honom.</para>
+</listitem>
+<listitem>
+<para
+>Använd menyalternativet <menuchoice
+><guimenu
+>Flytta</guimenu
+> <guimenuitem
+>Visa en lösning</guimenuitem
+></menuchoice
+> för att kontrollera om det finns en inspelad lösning för nivån. Den visar dig några sätt att hantera svårigheter i nivån, men inte nödvändigtvis de bästa sätten. Det finns ofta många sätt att vinna en nivå, och varje gång du spelar den är det små skillnader i timing, etc. Troligen kan du alltså inte kopiera den inspelade lösningen exakt.</para>
+</listitem>
+<listitem>
+<para
+>Använd <menuchoice
+><guimenu
+>Flytta</guimenu
+> <guimenuitem
+>Repris</guimenuitem
+></menuchoice
+> eller <menuchoice
+><guimenu
+>Flytta</guimenu
+> <guimenuitem
+>Repris av senaste nivå</guimenuitem
+></menuchoice
+> för att spela upp en nivå till ett ställe precis innan du råkade i svårigheter, avbryt därefter reprisen och försök med någon annan metod.</para>
+</listitem>
+</itemizedlist>
+</sect1>
+
+<!-- This is the place for a FAQ section, if required.
+<sect1 id="hints-faq">
+<title
+>FAQ</title>
+
+<qandaset id="faq">
+
+<qandaentry>
+<question>
+<para
+>Question 1</para>
+</question>
+<answer>
+<para
+>The answer</para>
+</answer>
+</qandaentry>
+
+</qandaset>
+</sect1>
+-->
+
+</chapter>
+
+<chapter id="credits-and-license">
+<title
+>Tack till och licens</title>
+
+<para
+>&kgoldrunner; copyright 2003 Ian Wadham och Marco Krüger.</para>
+
+<para
+>&kgoldrunner; är inspirerat av ett tidigt datorspel som kallades <trademark
+>Lode Runner</trademark
+>, som skrevs i U.S.A. av <trademark class="copyright"
+>Doug Smith</trademark
+> och först gavs ut 1983 av <trademark class="copyright"
+>Broderbund Software</trademark
+>. Det förekom först på Apple II och Commodore 64 datorer, där familjen Wadham och Marco Krüger blev beroende. Det var en stor bestseller på sin tid, och är ett av de allra största datorspelen genom tiderna.</para>
+
+<para
+>Du kan ta reda på mer om <trademark
+>Lode Runner</trademark
+> och de olika versionerna som har publicerats sedan 1983 på webbsidan <ulink url="https://entropymine.com/jason/lr"
+>Jasons Lode Runner arkiv</ulink
+> (https://entropymine.com/jason/lr/). Sidan har också historien om spelets ursprungliga utveckling, i filen <ulink url="https://entropymine.com/jason/lr/misc/ldhist.html"
+>misc/ldhist.html</ulink
+>. Wikipedia har också en mycket bra artikel om <trademark
+>Lode Runner</trademark
+>, med intressanta länkar till andra platser.</para>
+
+<para
+>&kgoldrunner; är ett försök att bevara andan i det ursprungliga klassiska spelet på en plattform som kommer att vara flyttbar och räcka längre än några få år. Det är tillgängligt som fri programvara på källkodsform. Kopior av det ursprungliga spelet går inte längre att få tag på, och datorerna som det kördes på är museiföremål.</para>
+
+<para
+>Marco Krüger utvecklade &kgoldrunner; fram till version 0.3, av nostalgi för det ursprungliga spelet för Commodore 64. Ian Wadham lade till flera funktioner och nivåer och skapade den nuvarande versionen. Ians äldsta son Peter komponerade de 100 nivåerna i spelet <quote
+>Invigning</quote
+> och de 20 knepiga nivåerna i <quote
+>Peter W:s hämnd</quote
+>. Övriga nivåer skapades av Ian, Peter, Marco Krüger med vänner, samt Ians andra barn, Simon and Genevieve. </para>
+<para
+>Stuart Popejoy från New York bidrog med spelet <quote
+>Terrortillstånd</quote
+> 2007, det första mästarspelet som använder &kgoldrunner;-regler och ett av de svåraste spelen som finns.</para>
+
+<para
+>Steve Mann från Waterloo i Kanada bidrog 2008 med spelen <quote
+>Räkna</quote
+> och <quote
+>Mumiens förbannelse</quote
+>. Båda använder traditionella regler, och båda har genomgående intressanta teman, samt är rätt svåra.</para>
+
+<para
+>Peter Wadham komponerade ljudeffekterna 2008 och Luciano Montanaro införlivade ljuden i &kgoldrunner;-programmet.</para>
+
+<para
+>Särskilt tack till &Mauricio.Piacentini; och Dmitry Suzdalev, som konverterade &kgoldrunner; till &Qt; 4 och &kde; 4, och till de många grafiker som bidrog till den nya SVG-grafiken och teman i &kde; 4-versionen: särskilt &Mauricio.Piacentini; för standardtemat och de nya figurerna, Johann Ollivier Lapeyre för stegarna och stängerna, Eugene Trounev för teman <quote
+>Grekiska staden</quote
+> och <quote
+>Egyptens skatt</quote
+>, och sist men inte minst, Luciano Montanaro för temat <quote
+>Nostalgi</quote
+>, temat <quote
+>Svartvitt</quote
+> för handikappstöd, förbättringar av figurerna, flera bakgrunder och många andra idéer.</para>
+
+<para
+>Översättning Stefan Asserhäll <email
+>stefan.asserhall@bredband.net</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-general-insert-case: lower
+End:
+-->
