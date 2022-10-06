@@ -3324,7 +3324,7 @@ msgstr ""
 "Si no, hauràs d'empényer als zombis una mica més amunt que l'or, després "
 "córrer ràpidament, submergir-te de costat i arreplegar l'or. Després d'açò, "
 "hauràs de córrer de tornada cap a l'escala i empényer-los cap amunt i per "
-"damunt de la barra, més amunt, el que serà el seu nou punt d'eixida.\n"
+"damunt de la barra, més amunt, el que serà el seu punt nou d'eixida.\n"
 "\n"
 "Una altra possibilitat, que és més ràpida però potser més arriscada, és "
 "esperar per damunt d'una sèrie de peces d'or que voleu arreplegar fins que "
@@ -8401,7 +8401,7 @@ msgstr "Reproduïx els efectes de so durant la partida."
 #: src/kgoldrunner.cpp:372
 #, kde-format
 msgid "Play &Footstep Sounds"
-msgstr "&Reproduïx els sons dels passos"
+msgstr "Re&produïx els sons dels passos"
 
 #: src/kgoldrunner.cpp:373 src/kgoldrunner.cpp:374
 #, kde-format
@@ -9051,7 +9051,7 @@ msgstr "&Inserix el nivell"
 #: src/kgreditor.cpp:245 src/kgreditor.cpp:444
 #, kde-format
 msgid "&Cancel"
-msgstr "&Cancel·la"
+msgstr "C&ancel·la"
 
 #: src/kgreditor.cpp:261 src/kgreditor.cpp:779 src/kgrgame.cpp:1483
 #: src/kgrgame.cpp:1695
@@ -9333,7 +9333,7 @@ msgstr ""
 #: src/kgrgame.cpp:730
 #, kde-format
 msgid "&Use Menu"
-msgstr "&Utilitza el menú"
+msgstr "Utilit&za el menú"
 
 #: src/kgrgame.cpp:732
 #, kde-format
