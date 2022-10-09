@@ -1825,7 +1825,7 @@ msgstr ""
 "\n"
 "Per descomptat, encara queden algunes trampes pel camí, però són amb "
 "facilitat evitables, així que les hauràs de trobar tu mateix. Ja ho saps, "
-"sempre pots prémer «Q» per tornar a iniciar el nivell."
+"sempre pots prémer «Q» per a tornar a iniciar el nivell."
 
 #: gamedata/game_GMGR.txt:16
 #, kde-format
