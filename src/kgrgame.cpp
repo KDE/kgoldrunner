@@ -43,6 +43,7 @@
 #include <QFileInfo>
 #include <QRandomGenerator>
 
+#include <kwidgetsaddons_version.h>
 #include <KConfigGroup>
 #include <KGuiItem>
 #include <KSharedConfig>
@@ -1411,7 +1412,11 @@ void KGrGame::kbControl (const int dirn, const bool pressed)
         // Halt the game while a message is displayed.
         freeze (ProgramPause, true);
 
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        switch (KMessageBox::questionTwoActions (view,
+#else
         switch (KMessageBox::questionYesNo (view, 
+#endif
                 i18n ("You have pressed a key that can be used to control the "
                 "Hero. Do you want to switch automatically to keyboard "
                 "control? Pointer control is easier to use in the long term "
@@ -1421,13 +1426,21 @@ void KGrGame::kbControl (const int dirn, const bool pressed)
                 KGuiItem (i18n ("Stay in &Mouse Mode")),
                 i18n ("Keyboard Mode")))
         {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        case KMessageBox::PrimaryAction:
+#else
         case KMessageBox::Yes:
+#endif
         case KMessageBox::Ok:
         case KMessageBox::Continue:
             settings (KEYBOARD);
             Q_EMIT setToggle ("keyboard_mode", true);	// Adjust Settings menu.
             break;
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        case KMessageBox::SecondaryAction:
+#else
         case KMessageBox::No:
+#endif
         case KMessageBox::Cancel:
             break;
         }
