@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-28 00:43+0000\n"
-"PO-Revision-Date: 2022-10-07 13:34+0300\n"
+"PO-Revision-Date: 2022-10-16 12:34+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2294,11 +2294,17 @@ msgid ""
 "Fifty Championship levels, including hints and recorded solutions, from "
 "Gabriel Miltschitzky, April 2021."
 msgstr ""
+"Zombi Kıyameti gerçekleşti ve sen yeryüzündeki en son kişisin; ancak "
+"zombilerde çok fazla altın var. Yine de, zombiler, zombiliklerini yapıyorlar "
+"ve altından çok senle ilgileniyorlar...\n"
+"\n"
+"Gabriel Miltschitzky tarafından Nisan 2021'de hazırlanan bu bölümde elliden "
+"fazla şampiyona bölümü, ipuçları ve kayıtlı çözümler var."
 
 #: gamedata/game_GotD.txt:9
 #, kde-format
 msgid "Last Person On Earth"
-msgstr ""
+msgstr "Yeryüzündeki Son Kişi"
 
 #: gamedata/game_GotD.txt:10
 #, kde-format
@@ -2332,6 +2338,33 @@ msgid ""
 "give you more room for error, because you will not get killed when the brick "
 "refills."
 msgstr ""
+"Zombi Kıyametinden sağ çıkan tek insansın ve hâlâ altından başka bir şey "
+"düşünemiyor musun? Bakalım bu sana nasıl yarayacak...\n"
+"\n"
+"İlk ipucu: Her düzeyin kayıtlı bir çözümü vardır, kuşkuya düşersen onlara "
+"bir göz at. İkinci ipucu: Altının peşine düşmeden önce bir kaçış rotası "
+"hazırlamayacak kadar akıllı değilsen kolaylıkla bir yerlerde "
+"takılabilirsin.\n"
+"\n"
+"Bu kaçış rotasını hazırlamak için sağ alt köşede zamanlanmış kazmaya "
+"gereksinimin olacak. Merdivenin yanındaki en yüksek tuğlayı kaz, biraz bekle "
+"ve en üstteki yeniden dolmadan hemen önce altındaki tuğlaları da kaz. Bu, "
+"üstteki tuğlanın üzerinden yürümene ve dönüşünde alttaki tuğlaların içinden "
+"koşabilmene izin verir.\n"
+"\n"
+"Merkezdeki altın parçalarının içinde seni yakalayabilen düşen tuğlalar (veya "
+"tuzaklar) var. En önce dış altın sütunlarını toplamak en iyisidir. Diğer "
+"bölgelerde tuzakların arasından düşerken kazman gerekebilir.\n"
+"\n"
+"Sol alt köşe bayağı bir karmaşık. En sol altın parçası için olan kaçış "
+"rotası iki adet altın parçasının olduğu sağda. Sola geçmeden önce orada bir "
+"delik bırak. En soldaki altını toplamak ve zamanında dönebilmek için her iki "
+"yanınızda aynı anda delikler kazmaya çalış.\n"
+"\n"
+"Bu ipucuna rağmen zamanınız kısıtlı. Yalnızca üstten üçüncü tuğlayı kazarak "
+"biraz zaman kazanabilirsiniz. Soldan geri bırakırken, çıkışını engelleyen "
+"sağdaki tuğlayı kaz. Bu sana biraz daha hata yapabilme şansı tanıyacak; "
+"çünkü tuğla geri dolduğunda artık ölmeyeceksin."
 
 #: gamedata/game_GotD.txt:23
 #, kde-format
@@ -2580,7 +2613,7 @@ msgid ""
 "This will be necessary a few times to let a zombie free on one side while "
 "you  escape to the other side."
 msgstr ""
-"Her iki tarafta aynı anda kazabilirsiniz.\n"
+"Her iki tarafta aynı anda kazabilirsin.\n"
 "\n"
 "Bu, bazen bir tarafta bir zombiyi serbest bırakırken diğer taraftan kaçmak "
 "için gerekli olabilir."
@@ -6721,9 +6754,8 @@ msgid ""
 msgstr ""
 "Bu kılavuz, size KGoldrunner kurallarını öğreten ve sahip olmanız gereken "
 "becerilerinizi geliştirmenize yardımcı olan, kolay düzeylerden oluşan bir "
-"toplamadır. İlk ev bilgisayarınızı kullanmanıza benzer Geleneksel kurallar "
-"kümesini kullanır. Her düzey için kısa bir açıklama vardır, o zaman "
-"oynayın ...\n"
+"toplamadır. Oyun, bir geleneksel kurallar kümesini kullanır. Her düzey için "
+"kısa bir açıklama vardır, sonrasında oyuna başlarsınız ...\n"
 "\n"
 "Daha ileri düzeyleri oynamayı sürdürürseniz KGoldrunner'ın aksiyon, strateji "
 "ve bulmaca çözmeyi birleştirdiğini göreceksiniz --- hepsi tek bir oyunda."
@@ -6748,7 +6780,7 @@ msgstr ""
 "külçelerini toplayıp oyun alanının en üstüne çıkıp bir sonraki düzeye "
 "geçmektir. Son külçeyi aldıktan sonra gizli bir merdiven ortaya çıkar.\n"
 "\n"
-"Kahraman sizin oyuncunuzdur. Külçeleri toplamak için yalnızca fareyi nereye "
+"Kahraman. sizin oyuncunuzdur. Külçeleri toplamak için yalnızca fareyi nereye "
 "gitmek istiyorsanız oraya işaretleyin. İlk yer çekiminde düşersiniz ..."
 
 #: gamedata/game_tute.txt:15
@@ -6768,14 +6800,14 @@ msgid ""
 "bottom right.  If you do get trapped there, the only way out is to kill the "
 "hero (press key Q for quit) and start the level again."
 msgstr ""
-"Bu etrafta dolaşma alıştırmasıdır. Sağda merdiven belirene kadar altın "
-"külçelerinin izlerini takip edin. Kahraman fareyi yalnızca birkaç basit "
-"hareket ile takip edebilir (_ | L veya U gibi) dolayısıyla fareyi "
+"Bu bir etrafta dolaşma alıştırmasıdır. Sağda merdiven belirene kadar altın "
+"külçelerinin izlerini takip edin. Kahraman, fareyi yalnızca birkaç basit "
+"hareket ile takip edebilir (_ | L veya U gibi); dolayısıyla fareyi "
 "kahramandan fazla uzağa tutmayın.\n"
 "\n"
 "TEHLİKE: Merdiven veya metal çubuklardan alt sağdaki asit çukurlarına "
 "düşmemeye çalışın. Eğer tuzağa düşerseniz dışarı çıkmanın tek yolu kahramanı "
-"öldürüp (çıkmak için Q düğmesine basın) düzeye yeniden başlayın."
+"öldürüp (çıkmak için Q düğmesine basın) düzeye yeniden başlamaktır."
 
 #: gamedata/game_tute.txt:21
 #, kde-format
@@ -8000,17 +8032,17 @@ msgstr "Şampiyonların hızını ayarla (normalin 1.5 katı)."
 #: src/kgoldrunner.cpp:465
 #, kde-format
 msgid "Increase Speed"
-msgstr "Hızı Arttır"
+msgstr "Hızı Artır"
 
 #: src/kgoldrunner.cpp:466
 #, kde-format
 msgid "Increase speed."
-msgstr "Hızı arttır."
+msgstr "Hızı artır."
 
 #: src/kgoldrunner.cpp:467
 #, kde-format
 msgid "Increase the game speed by 0.1 (maximum is 2.0 times normal)."
-msgstr "Oyun hızını 0.1 kat arttır (en fazla normalin 2.0 katı)."
+msgstr "Oyun hızını 0.1 kat artır (en fazla normalin 2.0 katı)."
 
 #: src/kgoldrunner.cpp:472
 #, kde-format
@@ -8117,12 +8149,12 @@ msgstr "SÜRDÜRMEK için \"%1\" veya \"%2\" düğmesine basın"
 #: src/kgoldrunner.cpp:746
 #, kde-format
 msgid "Press \"%1\" to PAUSE"
-msgstr "DURDURMAK için \"%1\" ögesine basın"
+msgstr "DURAKLATMAK için \"%1\" düğmesine basın"
 
 #: src/kgoldrunner.cpp:748
 #, kde-format
 msgid "Press \"%1\" or \"%2\" to PAUSE"
-msgstr "DURDURMAK için \"%1\" veya \"%2\" ögesine basın"
+msgstr "DURAKLATMAK için \"%1\" veya \"%2\" düğmelerine basın"
 
 #: src/kgoldrunner.cpp:760
 #, kde-format
@@ -9113,7 +9145,7 @@ msgstr "Tema Seçici"
 #: src/kgrscene.cpp:277
 #, kde-format
 msgid "Lives: %1"
-msgstr "Haklar: %1"
+msgstr "Can: %1"
 
 #: src/kgrscene.cpp:284
 #, kde-format

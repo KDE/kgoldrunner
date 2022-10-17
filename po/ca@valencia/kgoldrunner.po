@@ -8102,7 +8102,7 @@ msgstr ""
 "l'enemic, anirà a la dreta i caurà dins del pou. Espera sobre el seu cap i "
 "cava a l'esquerra per a alliberar-lo.\n"
 "\n"
-"Pots empényer l'enemic a pujar per l'escala de la dreta i l'esquerra "
+"Pots empényer l'enemic per a que puge per l'escala de la dreta i l'esquerra "
 "esperant una mica davall l'escala. Has de calcular el temps amb cura i cavar "
 "per a aconseguir que caiga en el pou. Una vegada ací, pots córrer per damunt "
 "seu. Si encara té una mica d'or, espera a l'esquerra del forat i cava "
@@ -9277,8 +9277,9 @@ msgid ""
 "There is no last level to replay.  You need to play a level to completion, "
 "win or lose, before you can use the Replay Last Level action."
 msgstr ""
-"No hi ha últim nivell a repetir. Has de tindre un nivell completat, guanyat "
-"o perdut, abans de poder utilitzar de nou l'acció de repetir l'últim nivell."
+"No hi ha últim nivell que repetir. Has de tindre un nivell completat, "
+"guanyat o perdut, abans de poder utilitzar de nou l'acció de repetir l'últim "
+"nivell."
 
 #: src/kgrgame.cpp:695
 #, kde-format
@@ -9544,7 +9545,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Save High Score"
-msgstr "Guardada de la puntuació màxima"
+msgstr "Guardeu la puntuació màxima"
 
 #: src/kgrgame.cpp:1813
 #, kde-format
