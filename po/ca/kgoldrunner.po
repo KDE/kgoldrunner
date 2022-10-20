@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"POT-Creation-Date: 2022-10-20 00:44+0000\n"
 "PO-Revision-Date: 2022-09-18 03:02+0200\n"
 "Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -8126,7 +8126,7 @@ msgstr ""
 "Sí, has de córrer a sobre del cap de l'enemic --- durant tot el camí! Tot el "
 "que es necessita és un pols ferm."
 
-#: src/kgoldrunner.cpp:184 src/kgrgame.cpp:723
+#: src/kgoldrunner.cpp:184 src/kgrgame.cpp:724
 #, kde-format
 msgid "&New Game..."
 msgstr "&Partida nova..."
@@ -8170,7 +8170,7 @@ msgstr ""
 "Desa una solució per a un nivell en un fitxer anomenat «sol_&lt;prefix&gt;."
 "txt» en el vostre directori de dades d'usuari..."
 
-#: src/kgoldrunner.cpp:246 src/kgrgame.cpp:1303
+#: src/kgoldrunner.cpp:246 src/kgrgame.cpp:1304
 #, kde-format
 msgid "&Show a Solution"
 msgstr "Mo&stra una solució"
@@ -8293,7 +8293,7 @@ msgstr "Edita qualsevol nivell..."
 msgid "Edit"
 msgstr "Edita"
 
-#: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1459
+#: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1472
 #, kde-format
 msgid "&Save Edits..."
 msgstr "&Desa els canvis..."
@@ -8911,88 +8911,88 @@ msgstr "&Editor"
 msgid "Edit Toolbar"
 msgstr "Barra d'eines d'edició"
 
-#: src/kgrdialog.cpp:34
+#: src/kgrdialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Name or Hint"
 msgstr "Edició del nom o del consell"
 
-#: src/kgrdialog.cpp:56
+#: src/kgrdialog.cpp:57
 #, kde-format
 msgid "Name of level:"
 msgstr "Nom del nivell:"
 
-#: src/kgrdialog.cpp:63
+#: src/kgrdialog.cpp:64
 #, kde-format
 msgid "Hint for level:"
 msgstr "Consell per al nivell:"
 
-#: src/kgrdialog.cpp:103 src/kgrdialog.cpp:172
+#: src/kgrdialog.cpp:104 src/kgrdialog.cpp:173
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Game Info"
 msgstr "Edició de la informació de la partida"
 
-#: src/kgrdialog.cpp:123
+#: src/kgrdialog.cpp:124
 #, kde-format
 msgid "Name of game:"
 msgstr "Nom de la partida:"
 
-#: src/kgrdialog.cpp:131
+#: src/kgrdialog.cpp:132
 #, kde-format
 msgid "File name prefix:"
 msgstr "Prefix del nom de fitxer:"
 
-#: src/kgrdialog.cpp:139
+#: src/kgrdialog.cpp:140
 #, kde-format
 msgid "Traditional rules"
 msgstr "Regles de Tradicional"
 
-#: src/kgrdialog.cpp:140
+#: src/kgrdialog.cpp:141
 #, kde-format
 msgid "KGoldrunner rules"
 msgstr "Regles de KGoldrunner"
 
-#: src/kgrdialog.cpp:149 src/kgrdialog.cpp:184
+#: src/kgrdialog.cpp:150 src/kgrdialog.cpp:185
 #, kde-format
 msgid "1 level"
 msgid_plural "%1 levels"
 msgstr[0] "1 nivell"
 msgstr[1] "%1 nivells"
 
-#: src/kgrdialog.cpp:152
+#: src/kgrdialog.cpp:153
 #, kde-format
 msgid "About this game:"
 msgstr "Quant a aquesta partida:"
 
-#: src/kgrdialog.cpp:169
+#: src/kgrdialog.cpp:170
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Game"
 msgstr "Creació d'una partida"
 
-#: src/kgrdialog.cpp:186
+#: src/kgrdialog.cpp:187
 #, kde-format
 msgid "Save Changes"
 msgstr "Desa els canvis"
 
-#: src/kgrdialog.cpp:191
+#: src/kgrdialog.cpp:192
 #, kde-format
 msgid "0 levels"
 msgstr "0 nivells"
 
-#: src/kgrdialog.cpp:192 src/kgrselector.cpp:265
+#: src/kgrdialog.cpp:193 src/kgrselector.cpp:265
 #, kde-format
 msgid "Save New"
 msgstr "Desa nou"
 
-#: src/kgrdialog.cpp:247
+#: src/kgrdialog.cpp:248
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Saved Game"
 msgstr "Selecció d'una partida desada"
 
-#: src/kgrdialog.cpp:266
+#: src/kgrdialog.cpp:267
 #, kde-format
 msgid "Game                       Level/Lives/Score   Day    Date     Time  "
 msgstr ""
@@ -9037,7 +9037,7 @@ msgstr ""
 "teves partides. No estaràs només donant un cop d'ull per a veure les escales "
 "ocultes i els maons que cauen, no? :-)"
 
-#: src/kgreditor.cpp:242 src/kgreditor.cpp:260 src/kgrgame.cpp:260
+#: src/kgreditor.cpp:242 src/kgreditor.cpp:260 src/kgrgame.cpp:261
 #, kde-format
 msgid "Save Level"
 msgstr "Desa el nivell"
@@ -9057,8 +9057,8 @@ msgstr "&Insereix el nivell"
 msgid "&Cancel"
 msgstr "&Cancel·la"
 
-#: src/kgreditor.cpp:261 src/kgreditor.cpp:779 src/kgrgame.cpp:1483
-#: src/kgrgame.cpp:1695
+#: src/kgreditor.cpp:261 src/kgreditor.cpp:779 src/kgrgame.cpp:1496
+#: src/kgrgame.cpp:1708
 #, kde-format
 msgid "Cannot open file '%1' for output."
 msgstr "No s'ha pogut obrir el fitxer «%1» per a escriptura."
@@ -9196,44 +9196,44 @@ msgstr "Només pots modificar les partides d'usuari."
 msgid "New Level"
 msgstr "Nivell nou"
 
-#: src/kgreditor.cpp:839 src/kgrgame.cpp:1388
+#: src/kgreditor.cpp:839 src/kgrgame.cpp:1389
 #, kde-format
 msgctxt "Game name - level number."
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: src/kgreditor.cpp:843 src/kgrgame.cpp:1391
+#: src/kgreditor.cpp:843 src/kgrgame.cpp:1392
 #, kde-format
 msgctxt "Game name - level number - level name."
 msgid "%1 - %2 - %3"
 msgstr "%1 - %2 - %3"
 
-#: src/kgrgame.cpp:109
+#: src/kgrgame.cpp:110
 #, kde-format
 msgid "Click anywhere to begin live play"
 msgstr "Clica a qualsevol lloc per a començar la partida en directe"
 
-#: src/kgrgame.cpp:190
+#: src/kgrgame.cpp:191
 #, kde-format
 msgid "Play Next Level"
 msgstr "Juga el nivell següent"
 
-#: src/kgrgame.cpp:191
+#: src/kgrgame.cpp:192
 #, kde-format
 msgid "There are no more levels in this game."
 msgstr "No hi ha més nivells en aquesta partida."
 
-#: src/kgrgame.cpp:261
+#: src/kgrgame.cpp:262
 #, kde-format
 msgid "Inappropriate action: you are not editing a level."
 msgstr "Acció no apropiada: no estàs editant un nivell."
 
-#: src/kgrgame.cpp:420
+#: src/kgrgame.cpp:421
 #, kde-format
 msgid "No Sound"
 msgstr "Sense so"
 
-#: src/kgrgame.cpp:421
+#: src/kgrgame.cpp:422
 #, kde-format
 msgid ""
 "Warning: This copy of KGoldrunner has no sound.\n"
@@ -9246,12 +9246,12 @@ msgstr ""
 "Això és perquè les versions de desenvolupament de les biblioteques OpenAL i "
 "SndFile no eren presents quan es va compilar i construir."
 
-#: src/kgrgame.cpp:625 src/kgrgame.cpp:782
+#: src/kgrgame.cpp:626 src/kgrgame.cpp:783
 #, kde-format
 msgid "Game Paused"
 msgstr "Partida en pausa"
 
-#: src/kgrgame.cpp:626
+#: src/kgrgame.cpp:627
 #, kde-format
 msgid ""
 "The replay has stopped and the game is pausing while you prepare to go on "
@@ -9260,12 +9260,12 @@ msgstr ""
 "La reproducció s'ha aturat i la partida està en pausa mentre et prepares per "
 "a jugar. Si us plau, prem la tecla de pausa (P o Esc) quan estiguis llest."
 
-#: src/kgrgame.cpp:670 src/kgrgame.cpp:676
+#: src/kgrgame.cpp:671 src/kgrgame.cpp:677
 #, kde-format
 msgid "Replay Last Level"
 msgstr "Torna a jugar l'últim nivell"
 
-#: src/kgrgame.cpp:671
+#: src/kgrgame.cpp:672
 #, kde-format
 msgid ""
 "ERROR: Could not find and replay a recording of the last level you played."
@@ -9273,7 +9273,7 @@ msgstr ""
 "ERROR: No s'ha pogut trobar i reproduir un enregistrament de l'últim nivell "
 "que has jugat."
 
-#: src/kgrgame.cpp:677
+#: src/kgrgame.cpp:678
 #, kde-format
 msgid ""
 "There is no last level to replay.  You need to play a level to completion, "
@@ -9282,24 +9282,24 @@ msgstr ""
 "No hi ha últim nivell a repetir. Has de tenir un nivell completat, guanyat o "
 "perdut, abans de poder utilitzar de nou l'acció de repetir l'últim nivell."
 
-#: src/kgrgame.cpp:695
+#: src/kgrgame.cpp:696
 #, kde-format
 msgctxt "@title:window"
 msgid "Quick Start"
 msgstr "Inici ràpid"
 
-#: src/kgrgame.cpp:712
+#: src/kgrgame.cpp:713
 #, kde-format
 msgctxt "Button text: start playing a game"
 msgid "&PLAY"
 msgstr "&JUGAR"
 
-#: src/kgrgame.cpp:713
+#: src/kgrgame.cpp:714
 #, kde-format
 msgid "Start playing this level"
 msgstr "Comença a jugar aquest nivell"
 
-#: src/kgrgame.cpp:715
+#: src/kgrgame.cpp:716
 #, kde-format
 msgid ""
 "Set up to start playing the game and level being shown, as soon as you "
@@ -9308,22 +9308,22 @@ msgstr ""
 "Prepara per a començar a jugar la partida i el nivell mostrats, tan aviat "
 "com facis clic, moguis el ratolí o premis una tecla"
 
-#: src/kgrgame.cpp:719
+#: src/kgrgame.cpp:720
 #, kde-format
 msgid "&Quit"
 msgstr "&Surt"
 
-#: src/kgrgame.cpp:720
+#: src/kgrgame.cpp:721
 #, kde-format
 msgid "Close KGoldrunner"
 msgstr "Tanca el KGoldrunner"
 
-#: src/kgrgame.cpp:724
+#: src/kgrgame.cpp:725
 #, kde-format
 msgid "Start a different game or level"
 msgstr "Comença una partida o un nivell diferent"
 
-#: src/kgrgame.cpp:726
+#: src/kgrgame.cpp:727
 #, kde-format
 msgid ""
 "Use the Select Game dialog box to choose a different game or level and start "
@@ -9332,17 +9332,17 @@ msgstr ""
 "Usa el diàleg Selecció d'una partida per a triar una partida o un nivell "
 "diferent i comença a jugar"
 
-#: src/kgrgame.cpp:730
+#: src/kgrgame.cpp:731
 #, kde-format
 msgid "&Use Menu"
 msgstr "&Usa el menú"
 
-#: src/kgrgame.cpp:732
+#: src/kgrgame.cpp:733
 #, kde-format
 msgid "Use the menus to choose other actions"
 msgstr "Usa el menú per a triar altres accions"
 
-#: src/kgrgame.cpp:734
+#: src/kgrgame.cpp:735
 #, kde-format
 msgid ""
 "Before playing, use the menus to choose other actions, such as loading a "
@@ -9351,7 +9351,7 @@ msgstr ""
 "Abans de jugar, usa els menús per a triar altres accions, com carregar una "
 "partida desada o canviar el tema"
 
-#: src/kgrgame.cpp:783
+#: src/kgrgame.cpp:784
 #, kde-format
 msgid ""
 "The game is halted. You will need to press the Pause key (default P or Esc) "
@@ -9360,12 +9360,12 @@ msgstr ""
 "La partida està en pausa. Hauràs de prémer la tecla de pausa (P o Esc) quan "
 "estiguis preparat per a jugar."
 
-#: src/kgrgame.cpp:836
+#: src/kgrgame.cpp:837
 #, kde-format
 msgid "Show a Solution"
 msgstr "Mostra una solució"
 
-#: src/kgrgame.cpp:837
+#: src/kgrgame.cpp:838
 #, kde-format
 msgid ""
 "Sorry, although all levels of KGoldrunner can be solved, no solution has "
@@ -9374,12 +9374,12 @@ msgstr ""
 "Ho sentim, malgrat que tots els nivells del KGoldrunner es poden resoldre, "
 "encara no s'ha enregistrat una solució per al nivell seleccionat."
 
-#: src/kgrgame.cpp:848
+#: src/kgrgame.cpp:849
 #, kde-format
 msgid "Replay Any Level"
 msgstr "Torna a jugar qualsevol nivell"
 
-#: src/kgrgame.cpp:849 src/kgrgame.cpp:2057
+#: src/kgrgame.cpp:850 src/kgrgame.cpp:2070
 #, kde-format
 msgid ""
 "Sorry, you do not seem to have played and recorded the selected level before."
@@ -9387,7 +9387,7 @@ msgstr ""
 "Ho sento, no sembla que hagis jugat i enregistrat abans el nivell "
 "seleccionat."
 
-#: src/kgrgame.cpp:1063
+#: src/kgrgame.cpp:1064
 #, kde-format
 msgid ""
 "<NOBR><B>GAME OVER !!!</B></NOBR><P>Would you like to try this level again?</"
@@ -9396,22 +9396,22 @@ msgstr ""
 "<NOBR><B>FINAL DE LA PARTIDA!!!</B></NOBR><P>T'agradaria tornar a intentar "
 "aquest nivell de nou?</P>"
 
-#: src/kgrgame.cpp:1065
+#: src/kgrgame.cpp:1066
 #, kde-format
 msgid "Game Over"
 msgstr "Final de la partida"
 
-#: src/kgrgame.cpp:1066
+#: src/kgrgame.cpp:1067
 #, kde-format
 msgid "&Try Again"
 msgstr "&Intenta de nou"
 
-#: src/kgrgame.cpp:1066
+#: src/kgrgame.cpp:1067
 #, kde-format
 msgid "&Finish"
 msgstr "&Finalitza"
 
-#: src/kgrgame.cpp:1140
+#: src/kgrgame.cpp:1141
 #, kde-format
 msgid ""
 "<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the <b>"
@@ -9420,27 +9420,27 @@ msgstr ""
 "<b>FELICITATS!!!!</b><p>Has conquerit l'últim nivell de la partida <b>«%1»</"
 "b>!!</p>"
 
-#: src/kgrgame.cpp:1297
+#: src/kgrgame.cpp:1298
 #, kde-format
 msgid "Hint"
 msgstr "Consell"
 
-#: src/kgrgame.cpp:1303
+#: src/kgrgame.cpp:1304
 #, kde-format
 msgid "&OK"
 msgstr "D'ac&ord"
 
-#: src/kgrgame.cpp:1316
+#: src/kgrgame.cpp:1317
 #, kde-format
 msgid "Sorry, there is no hint for this level."
 msgstr "Ho sento, no hi ha consell per a aquest nivell."
 
-#: src/kgrgame.cpp:1378
+#: src/kgrgame.cpp:1379
 #, kde-format
 msgid "T H E   E N D"
 msgstr "F I N A L"
 
-#: src/kgrgame.cpp:1415
+#: src/kgrgame.cpp:1420
 #, kde-format
 msgid ""
 "You have pressed a key that can be used to control the Hero. Do you want to "
@@ -9451,33 +9451,33 @@ msgstr ""
 "al mode de control amb el teclat? El control amb el punter és més fàcil "
 "d'usar a llarg termini, com anar en bicicleta millor que caminar!"
 
-#: src/kgrgame.cpp:1419
+#: src/kgrgame.cpp:1424
 #, kde-format
 msgid "Switch to Keyboard Mode"
 msgstr "Canvia al mode de teclat"
 
-#: src/kgrgame.cpp:1420
+#: src/kgrgame.cpp:1425
 #, kde-format
 msgid "Switch to &Keyboard Mode"
 msgstr "Canvia al mode de &teclat"
 
-#: src/kgrgame.cpp:1421
+#: src/kgrgame.cpp:1426
 #, kde-format
 msgid "Stay in &Mouse Mode"
 msgstr "Mantén el mode de &ratolí"
 
-#: src/kgrgame.cpp:1422
+#: src/kgrgame.cpp:1427
 #, kde-format
 msgid "Keyboard Mode"
 msgstr "Mode de teclat"
 
-#: src/kgrgame.cpp:1456 src/kgrgame.cpp:1482 src/kgrgame.cpp:1492
-#: src/kgrgame.cpp:1511 src/kgrgame.cpp:1517
+#: src/kgrgame.cpp:1469 src/kgrgame.cpp:1495 src/kgrgame.cpp:1505
+#: src/kgrgame.cpp:1524 src/kgrgame.cpp:1530
 #, kde-format
 msgid "Save Game"
 msgstr "Desa la partida"
 
-#: src/kgrgame.cpp:1457
+#: src/kgrgame.cpp:1470
 #, kde-format
 msgid ""
 "Sorry, you cannot save your game play while you are editing. Please try menu "
@@ -9486,13 +9486,13 @@ msgstr ""
 "Ho sento, no pots desar la partida mentre estiguis editant. Si us plau, "
 "prova amb «%1»."
 
-#: src/kgrgame.cpp:1493 src/kgrgame.cpp:1537 src/kgrgame.cpp:1656
-#: src/kgrgame.cpp:1859 src/kgrgame.cpp:2023 src/kgrgameio.cpp:170
+#: src/kgrgame.cpp:1506 src/kgrgame.cpp:1550 src/kgrgame.cpp:1669
+#: src/kgrgame.cpp:1872 src/kgrgame.cpp:2036 src/kgrgameio.cpp:170
 #, kde-format
 msgid "Cannot open file '%1' for read-only."
 msgstr "No s'ha pogut obrir el fitxer «%1» per a lectura."
 
-#: src/kgrgame.cpp:1512
+#: src/kgrgame.cpp:1525
 #, kde-format
 msgid ""
 "Please note: for reasons of simplicity, your saved game position and score "
@@ -9501,37 +9501,37 @@ msgstr ""
 "Nota: per raons de simplicitat, la posició i puntuació desada no seran les "
 "actuals, sinó les de l'inici del nivell."
 
-#: src/kgrgame.cpp:1518
+#: src/kgrgame.cpp:1531
 #, kde-format
 msgid "Error: Failed to save your game."
 msgstr "Error: no s'ha pogut desar la teva partida."
 
-#: src/kgrgame.cpp:1530 src/kgrgame.cpp:1536 src/kgrgame.cpp:1578
+#: src/kgrgame.cpp:1543 src/kgrgame.cpp:1549 src/kgrgame.cpp:1591
 #, kde-format
 msgid "Load Game"
 msgstr "Carrega una partida"
 
-#: src/kgrgame.cpp:1531
+#: src/kgrgame.cpp:1544
 #, kde-format
 msgid "Sorry, there are no saved games."
 msgstr "Ho sento, no hi ha cap partida desada."
 
-#: src/kgrgame.cpp:1579
+#: src/kgrgame.cpp:1592
 #, kde-format
 msgid "Cannot find the game with prefix '%1'."
 msgstr "No s'ha pogut trobar la partida amb prefix «%1»."
 
-#: src/kgrgame.cpp:1637
+#: src/kgrgame.cpp:1650
 #, kde-format
 msgid "Unknown"
 msgstr "Desconegut"
 
-#: src/kgrgame.cpp:1655 src/kgrgame.cpp:1694
+#: src/kgrgame.cpp:1668 src/kgrgame.cpp:1707
 #, kde-format
 msgid "Check for High Score"
 msgstr "Comprova la puntuació màxima"
 
-#: src/kgrgame.cpp:1712
+#: src/kgrgame.cpp:1725
 #, kde-format
 msgid ""
 "<html><b>Congratulations !!!</b><br/>You have achieved a high score in this "
@@ -9542,40 +9542,40 @@ msgstr ""
 "aquesta partida.<br/>Si us plau, introdueix el teu nom per tal que puguis<br/"
 ">ser adorat al Saló de la fama del KGoldrunner.</html>"
 
-#: src/kgrgame.cpp:1726
+#: src/kgrgame.cpp:1739
 #, kde-format
 msgctxt "@title:window"
 msgid "Save High Score"
 msgstr "Desament de la puntuació màxima"
 
-#: src/kgrgame.cpp:1813
+#: src/kgrgame.cpp:1826
 #, kde-format
 msgid "Save High Score"
 msgstr "Desa la puntuació màxima"
 
-#: src/kgrgame.cpp:1814
+#: src/kgrgame.cpp:1827
 #, kde-format
 msgid "Error: Failed to save your high score."
 msgstr "Error: no s'ha pogut desar la teva puntuació màxima."
 
-#: src/kgrgame.cpp:1826 src/kgrgame.cpp:1849 src/kgrgame.cpp:1858
+#: src/kgrgame.cpp:1839 src/kgrgame.cpp:1862 src/kgrgame.cpp:1871
 #, kde-format
 msgid "Show High Scores"
 msgstr "Mostra les millors puntuacions"
 
 # skip-rule: common-tutorial
-#: src/kgrgame.cpp:1827
+#: src/kgrgame.cpp:1840
 #, kde-format
 msgid "Sorry, we do not keep high scores for tutorial games."
 msgstr ""
 "Ho sento, no es desen les puntuacions per a les partides d'aprenentatge."
 
-#: src/kgrgame.cpp:1850
+#: src/kgrgame.cpp:1863
 #, kde-format
 msgid "Sorry, there are no high scores for the \"%1\" game yet."
 msgstr "Ho sento, encara no hi ha millors puntuacions per a la partida «%1»."
 
-#: src/kgrgame.cpp:1874
+#: src/kgrgame.cpp:1887
 #, kde-format
 msgid ""
 "<center><h2>KGoldrunner Hall of Fame</h2></center><center><h3>\"%1\" Game</"
@@ -9584,63 +9584,63 @@ msgstr ""
 "<center><h2>Saló de la fama del KGoldrunner</h2></center><center><h3>Partida "
 "«%1»</h3></center>"
 
-#: src/kgrgame.cpp:1884
+#: src/kgrgame.cpp:1897
 #, kde-format
 msgctxt "1, 2, 3 etc."
 msgid "Rank"
 msgstr "Posició"
 
-#: src/kgrgame.cpp:1885
+#: src/kgrgame.cpp:1898
 #, kde-format
 msgctxt "Person"
 msgid "Name"
 msgstr "Nom"
 
-#: src/kgrgame.cpp:1886
+#: src/kgrgame.cpp:1899
 #, kde-format
 msgctxt "Game level reached"
 msgid "Level"
 msgstr "Nivell"
 
-#: src/kgrgame.cpp:1887
+#: src/kgrgame.cpp:1900
 #, kde-format
 msgid "Score"
 msgstr "Punts"
 
-#: src/kgrgame.cpp:1888
+#: src/kgrgame.cpp:1901
 #, kde-format
 msgid "Date"
 msgstr "Data"
 
-#: src/kgrgame.cpp:1891
+#: src/kgrgame.cpp:1904
 #, kde-format
 msgctxt "@title:window"
 msgid "High Scores"
 msgstr "Puntuacions màximes"
 
-#: src/kgrgame.cpp:2016 src/kgrgame.cpp:2022 src/kgrgame.cpp:2026
+#: src/kgrgame.cpp:2029 src/kgrgame.cpp:2035 src/kgrgame.cpp:2039
 #, kde-format
 msgid "Load Game Info"
 msgstr "Informació de càrrega de partida"
 
-#: src/kgrgame.cpp:2017
+#: src/kgrgame.cpp:2030
 #, kde-format
 msgid "Cannot find game info file '%1'."
 msgstr "No s'ha pogut trobar el fitxer «%1» d'informació de la partida."
 
-#: src/kgrgame.cpp:2027
+#: src/kgrgame.cpp:2040
 #, kde-format
 msgid "Reached end of file '%1' before finding end of game-data."
 msgstr ""
 "S'ha arribat al final del fitxer «%1» abans de trobar el final de les dades "
 "de la partida."
 
-#: src/kgrgame.cpp:2051 src/kgrgame.cpp:2056 src/kgrselector.cpp:259
+#: src/kgrgame.cpp:2064 src/kgrgame.cpp:2069 src/kgrselector.cpp:259
 #, kde-format
 msgid "Save A Solution"
 msgstr "Desa una solució"
 
-#: src/kgrgame.cpp:2052
+#: src/kgrgame.cpp:2065
 #, kde-format
 msgid "Your solution to level %1 has been saved on file %2"
 msgstr "La solució al nivell %1 s'ha desat en el fitxer %2"

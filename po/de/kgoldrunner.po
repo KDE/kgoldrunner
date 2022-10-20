@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"POT-Creation-Date: 2022-10-20 00:44+0000\n"
 "PO-Revision-Date: 2021-06-10 10:56+0200\n"
 "Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -7943,7 +7943,7 @@ msgstr ""
 "Ja, Sie müssen auf dem Kopf des Gegners laufen – den ganzen Weg entlang! "
 "Alles, was Sie dafür benötigen, ist eine ruhige Hand."
 
-#: src/kgoldrunner.cpp:184 src/kgrgame.cpp:723
+#: src/kgoldrunner.cpp:184 src/kgrgame.cpp:724
 #, kde-format
 msgid "&New Game..."
 msgstr "&Neues Spiel ..."
@@ -7987,7 +7987,7 @@ msgstr ""
 "Speichert eine Lösung für eine Ebene in eine Datei mit dem Namen „sol_&lt;"
 "prefix&gt;.txt“ im Datenordner des Benutzers."
 
-#: src/kgoldrunner.cpp:246 src/kgrgame.cpp:1303
+#: src/kgoldrunner.cpp:246 src/kgrgame.cpp:1304
 #, fuzzy, kde-format
 #| msgid "&Show A Solution"
 msgid "&Show a Solution"
@@ -8112,7 +8112,7 @@ msgstr "Beliebige Ebene bearbeiten ..."
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1459
+#: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1472
 #, kde-format
 msgid "&Save Edits..."
 msgstr "Ä&nderungen speichern ..."
@@ -8729,92 +8729,92 @@ msgstr "&Editor"
 msgid "Edit Toolbar"
 msgstr "Werkzeugleiste bearbeiten"
 
-#: src/kgrdialog.cpp:34
+#: src/kgrdialog.cpp:35
 #, fuzzy, kde-format
 #| msgid "Edit Name & Hint"
 msgctxt "@title:window"
 msgid "Edit Name or Hint"
 msgstr "Name und Tipp bearbeiten"
 
-#: src/kgrdialog.cpp:56
+#: src/kgrdialog.cpp:57
 #, kde-format
 msgid "Name of level:"
 msgstr "Name der Ebene:"
 
-#: src/kgrdialog.cpp:63
+#: src/kgrdialog.cpp:64
 #, kde-format
 msgid "Hint for level:"
 msgstr "Tipp für Ebene:"
 
-#: src/kgrdialog.cpp:103 src/kgrdialog.cpp:172
+#: src/kgrdialog.cpp:104 src/kgrdialog.cpp:173
 #, fuzzy, kde-format
 #| msgid "Edit Game Info"
 msgctxt "@title:window"
 msgid "Edit Game Info"
 msgstr "Spielinfo bearbeiten"
 
-#: src/kgrdialog.cpp:123
+#: src/kgrdialog.cpp:124
 #, kde-format
 msgid "Name of game:"
 msgstr "Name des Spiels:"
 
-#: src/kgrdialog.cpp:131
+#: src/kgrdialog.cpp:132
 #, kde-format
 msgid "File name prefix:"
 msgstr "Präfix für Dateinamen:"
 
-#: src/kgrdialog.cpp:139
+#: src/kgrdialog.cpp:140
 #, kde-format
 msgid "Traditional rules"
 msgstr "Herkömmliche Regeln"
 
-#: src/kgrdialog.cpp:140
+#: src/kgrdialog.cpp:141
 #, kde-format
 msgid "KGoldrunner rules"
 msgstr "KGoldrunner-Regeln"
 
-#: src/kgrdialog.cpp:149 src/kgrdialog.cpp:184
+#: src/kgrdialog.cpp:150 src/kgrdialog.cpp:185
 #, kde-format
 msgid "1 level"
 msgid_plural "%1 levels"
 msgstr[0] "1 Ebene"
 msgstr[1] "%1 Ebenen"
 
-#: src/kgrdialog.cpp:152
+#: src/kgrdialog.cpp:153
 #, kde-format
 msgid "About this game:"
 msgstr "Über dieses Spiel:"
 
-#: src/kgrdialog.cpp:169
+#: src/kgrdialog.cpp:170
 #, fuzzy, kde-format
 #| msgid "Create Game"
 msgctxt "@title:window"
 msgid "Create Game"
 msgstr "Spiel erstellen"
 
-#: src/kgrdialog.cpp:186
+#: src/kgrdialog.cpp:187
 #, kde-format
 msgid "Save Changes"
 msgstr "Änderungen speichern"
 
-#: src/kgrdialog.cpp:191
+#: src/kgrdialog.cpp:192
 #, kde-format
 msgid "0 levels"
 msgstr "Keine Ebenen"
 
-#: src/kgrdialog.cpp:192 src/kgrselector.cpp:265
+#: src/kgrdialog.cpp:193 src/kgrselector.cpp:265
 #, kde-format
 msgid "Save New"
 msgstr "Neue speichern"
 
-#: src/kgrdialog.cpp:247
+#: src/kgrdialog.cpp:248
 #, fuzzy, kde-format
 #| msgid "Select Saved Game"
 msgctxt "@title:window"
 msgid "Select Saved Game"
 msgstr "Gespeichertes Spiel auswählen"
 
-#: src/kgrdialog.cpp:266
+#: src/kgrdialog.cpp:267
 #, kde-format
 msgid "Game                       Level/Lives/Score   Day    Date     Time  "
 msgstr ""
@@ -8859,7 +8859,7 @@ msgstr ""
 "eigenen Spiele speichern. Sie versuchen nicht gerade zu mogeln, indem Sie "
 "nachsehen, wo die versteckte Leiter und die Fallen sind, oder? ;)"
 
-#: src/kgreditor.cpp:242 src/kgreditor.cpp:260 src/kgrgame.cpp:260
+#: src/kgreditor.cpp:242 src/kgreditor.cpp:260 src/kgrgame.cpp:261
 #, kde-format
 msgid "Save Level"
 msgstr "Ebene speichern"
@@ -8881,8 +8881,8 @@ msgstr "&Ebene einfügen"
 msgid "&Cancel"
 msgstr "&Abbrechen"
 
-#: src/kgreditor.cpp:261 src/kgreditor.cpp:779 src/kgrgame.cpp:1483
-#: src/kgrgame.cpp:1695
+#: src/kgreditor.cpp:261 src/kgreditor.cpp:779 src/kgrgame.cpp:1496
+#: src/kgrgame.cpp:1708
 #, kde-format
 msgid "Cannot open file '%1' for output."
 msgstr "Die Ausgabedatei „%1“ lässt sich nicht öffnen."
@@ -9028,44 +9028,44 @@ msgstr "Sie können nur selbsterstellte Spiele verändern."
 msgid "New Level"
 msgstr "Neue Ebene"
 
-#: src/kgreditor.cpp:839 src/kgrgame.cpp:1388
+#: src/kgreditor.cpp:839 src/kgrgame.cpp:1389
 #, kde-format
 msgctxt "Game name - level number."
 msgid "%1 - %2"
 msgstr "%1 – %2"
 
-#: src/kgreditor.cpp:843 src/kgrgame.cpp:1391
+#: src/kgreditor.cpp:843 src/kgrgame.cpp:1392
 #, kde-format
 msgctxt "Game name - level number - level name."
 msgid "%1 - %2 - %3"
 msgstr "%1 – %2 – %3"
 
-#: src/kgrgame.cpp:109
+#: src/kgrgame.cpp:110
 #, kde-format
 msgid "Click anywhere to begin live play"
 msgstr "Klicken Sie irgendwo, um das Spiel zu starten"
 
-#: src/kgrgame.cpp:190
+#: src/kgrgame.cpp:191
 #, kde-format
 msgid "Play Next Level"
 msgstr "Nächste Ebene spielen"
 
-#: src/kgrgame.cpp:191
+#: src/kgrgame.cpp:192
 #, kde-format
 msgid "There are no more levels in this game."
 msgstr "Es existieren keine weiteren Ebenen in diesem Spiel."
 
-#: src/kgrgame.cpp:261
+#: src/kgrgame.cpp:262
 #, kde-format
 msgid "Inappropriate action: you are not editing a level."
 msgstr "Unzulässige Aktion: Sie bearbeiten keine Ebene."
 
-#: src/kgrgame.cpp:420
+#: src/kgrgame.cpp:421
 #, kde-format
 msgid "No Sound"
 msgstr "Keine Klangeffekte"
 
-#: src/kgrgame.cpp:421
+#: src/kgrgame.cpp:422
 #, kde-format
 msgid ""
 "Warning: This copy of KGoldrunner has no sound.\n"
@@ -9080,12 +9080,12 @@ msgstr ""
 "SndFile-Bibliotheken bei der Kompilierung von KGoldrunner installiert "
 "gewesen sind."
 
-#: src/kgrgame.cpp:625 src/kgrgame.cpp:782
+#: src/kgrgame.cpp:626 src/kgrgame.cpp:783
 #, kde-format
 msgid "Game Paused"
 msgstr "Spiel angehalten"
 
-#: src/kgrgame.cpp:626
+#: src/kgrgame.cpp:627
 #, kde-format
 msgid ""
 "The replay has stopped and the game is pausing while you prepare to go on "
@@ -9095,12 +9095,12 @@ msgstr ""
 "Um fortzufahren müssen Sie die Pausentaste (Standard: „P“ oder „Esc“ ) "
 "drücken."
 
-#: src/kgrgame.cpp:670 src/kgrgame.cpp:676
+#: src/kgrgame.cpp:671 src/kgrgame.cpp:677
 #, kde-format
 msgid "Replay Last Level"
 msgstr "Letzte Ebene wiedergeben"
 
-#: src/kgrgame.cpp:671
+#: src/kgrgame.cpp:672
 #, kde-format
 msgid ""
 "ERROR: Could not find and replay a recording of the last level you played."
@@ -9108,7 +9108,7 @@ msgstr ""
 "FEHLER: Es ist keine Aufzeichnung der zuletzt gespielten Ebene auffindbar "
 "und damit keine Wiedergabe möglich."
 
-#: src/kgrgame.cpp:677
+#: src/kgrgame.cpp:678
 #, kde-format
 msgid ""
 "There is no last level to replay.  You need to play a level to completion, "
@@ -9118,25 +9118,25 @@ msgstr ""
 "Ebene beenden (gewinnen oder verlieren) bevor „Letzte Ebene wiederholen“ "
 "verwendet werden kann."
 
-#: src/kgrgame.cpp:695
+#: src/kgrgame.cpp:696
 #, fuzzy, kde-format
 #| msgid "Quick Start"
 msgctxt "@title:window"
 msgid "Quick Start"
 msgstr "Schnellstart"
 
-#: src/kgrgame.cpp:712
+#: src/kgrgame.cpp:713
 #, kde-format
 msgctxt "Button text: start playing a game"
 msgid "&PLAY"
 msgstr "&SPIELEN"
 
-#: src/kgrgame.cpp:713
+#: src/kgrgame.cpp:714
 #, kde-format
 msgid "Start playing this level"
 msgstr "Startet auf dieser Spielebene"
 
-#: src/kgrgame.cpp:715
+#: src/kgrgame.cpp:716
 #, kde-format
 msgid ""
 "Set up to start playing the game and level being shown, as soon as you "
@@ -9145,22 +9145,22 @@ msgstr ""
 "Beginnt das Spiel auf der gewählten Spielebene sobald Sie klicken, die Maus "
 "bewegen oder eine Taste drücken."
 
-#: src/kgrgame.cpp:719
+#: src/kgrgame.cpp:720
 #, kde-format
 msgid "&Quit"
 msgstr "Be&enden"
 
-#: src/kgrgame.cpp:720
+#: src/kgrgame.cpp:721
 #, kde-format
 msgid "Close KGoldrunner"
 msgstr "Schließt KGoldrunner"
 
-#: src/kgrgame.cpp:724
+#: src/kgrgame.cpp:725
 #, kde-format
 msgid "Start a different game or level"
 msgstr "Ein anderes Spiel oder Spielebene beginnen"
 
-#: src/kgrgame.cpp:726
+#: src/kgrgame.cpp:727
 #, kde-format
 msgid ""
 "Use the Select Game dialog box to choose a different game or level and start "
@@ -9169,17 +9169,17 @@ msgstr ""
 "Verwenden Sie den Dialog „Ebene wählen“, um ein anderes Spiel oder eine "
 "andere Ebene zu beginnen."
 
-#: src/kgrgame.cpp:730
+#: src/kgrgame.cpp:731
 #, kde-format
 msgid "&Use Menu"
 msgstr "&Menü verwenden"
 
-#: src/kgrgame.cpp:732
+#: src/kgrgame.cpp:733
 #, kde-format
 msgid "Use the menus to choose other actions"
 msgstr "Verwenden Sie die Menüs, um andere Aktionen auszuführen."
 
-#: src/kgrgame.cpp:734
+#: src/kgrgame.cpp:735
 #, kde-format
 msgid ""
 "Before playing, use the menus to choose other actions, such as loading a "
@@ -9188,7 +9188,7 @@ msgstr ""
 "Bevor Sie das Spiel beginnen können Sie im Menü andere Aktionen durchführen, "
 "etwa das Design ändern oder ein gespeichertes Spiel laden."
 
-#: src/kgrgame.cpp:783
+#: src/kgrgame.cpp:784
 #, kde-format
 msgid ""
 "The game is halted. You will need to press the Pause key (default P or Esc) "
@@ -9197,13 +9197,13 @@ msgstr ""
 "Das Spiel ist angehalten. Um fortzufahren müssen Sie die Pausentaste "
 "(Standard: „P“) drücken."
 
-#: src/kgrgame.cpp:836
+#: src/kgrgame.cpp:837
 #, fuzzy, kde-format
 #| msgid "Show A Solution"
 msgid "Show a Solution"
 msgstr "Eine Lösung wiedergeben"
 
-#: src/kgrgame.cpp:837
+#: src/kgrgame.cpp:838
 #, kde-format
 msgid ""
 "Sorry, although all levels of KGoldrunner can be solved, no solution has "
@@ -9212,12 +9212,12 @@ msgstr ""
 "Entschuldigung. Obwohl alle Ebenen von KGoldrunner gelöst werden können, "
 "wurde für diese Ebene noch keine Lösungsmöglichkeit aufgezeichnet."
 
-#: src/kgrgame.cpp:848
+#: src/kgrgame.cpp:849
 #, kde-format
 msgid "Replay Any Level"
 msgstr "Beliebige Ebene wiedergeben"
 
-#: src/kgrgame.cpp:849 src/kgrgame.cpp:2057
+#: src/kgrgame.cpp:850 src/kgrgame.cpp:2070
 #, kde-format
 msgid ""
 "Sorry, you do not seem to have played and recorded the selected level before."
@@ -9225,7 +9225,7 @@ msgstr ""
 "Entschuldigung. Vermutlich haben Sie die Ebene zuvor nicht gespielt und "
 "aufgezeichnet."
 
-#: src/kgrgame.cpp:1063
+#: src/kgrgame.cpp:1064
 #, kde-format
 msgid ""
 "<NOBR><B>GAME OVER !!!</B></NOBR><P>Would you like to try this level again?</"
@@ -9234,22 +9234,22 @@ msgstr ""
 "<NOBR><B>Das Spiel ist beendet.</B></NOBR><P>Möchten Sie diese Ebene erneut "
 "versuchen?</P>"
 
-#: src/kgrgame.cpp:1065
+#: src/kgrgame.cpp:1066
 #, kde-format
 msgid "Game Over"
 msgstr "Spiel beendet"
 
-#: src/kgrgame.cpp:1066
+#: src/kgrgame.cpp:1067
 #, kde-format
 msgid "&Try Again"
 msgstr "&Erneut versuchen"
 
-#: src/kgrgame.cpp:1066
+#: src/kgrgame.cpp:1067
 #, kde-format
 msgid "&Finish"
 msgstr "Be&enden"
 
-#: src/kgrgame.cpp:1140
+#: src/kgrgame.cpp:1141
 #, kde-format
 msgid ""
 "<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the <b>"
@@ -9258,27 +9258,27 @@ msgstr ""
 "<b>Glückwunsch!</b><p>Sie haben die letzte Ebene im Spiel „<b>%1</b>“ "
 "geschafft!</p>"
 
-#: src/kgrgame.cpp:1297
+#: src/kgrgame.cpp:1298
 #, kde-format
 msgid "Hint"
 msgstr "Tipp"
 
-#: src/kgrgame.cpp:1303
+#: src/kgrgame.cpp:1304
 #, kde-format
 msgid "&OK"
 msgstr "&OK"
 
-#: src/kgrgame.cpp:1316
+#: src/kgrgame.cpp:1317
 #, kde-format
 msgid "Sorry, there is no hint for this level."
 msgstr "Für diese Ebene gibt es keinen Tipp."
 
-#: src/kgrgame.cpp:1378
+#: src/kgrgame.cpp:1379
 #, kde-format
 msgid "T H E   E N D"
 msgstr "E N D E"
 
-#: src/kgrgame.cpp:1415
+#: src/kgrgame.cpp:1420
 #, kde-format
 msgid ""
 "You have pressed a key that can be used to control the Hero. Do you want to "
@@ -9289,33 +9289,33 @@ msgstr ""
 "Sie das Spiel auf Tastatursteuerung umschalten? Die Maussteuerung ist auf "
 "die Dauer komfortabler – genauso wie Fahrradfahren anstatt Laufen."
 
-#: src/kgrgame.cpp:1419
+#: src/kgrgame.cpp:1424
 #, kde-format
 msgid "Switch to Keyboard Mode"
 msgstr "Auf Tastatur umschalten"
 
-#: src/kgrgame.cpp:1420
+#: src/kgrgame.cpp:1425
 #, kde-format
 msgid "Switch to &Keyboard Mode"
 msgstr "Auf &Tastatur umschalten"
 
-#: src/kgrgame.cpp:1421
+#: src/kgrgame.cpp:1426
 #, kde-format
 msgid "Stay in &Mouse Mode"
 msgstr "Bei &Maussteuerung bleiben"
 
-#: src/kgrgame.cpp:1422
+#: src/kgrgame.cpp:1427
 #, kde-format
 msgid "Keyboard Mode"
 msgstr "Tastaturmodus"
 
-#: src/kgrgame.cpp:1456 src/kgrgame.cpp:1482 src/kgrgame.cpp:1492
-#: src/kgrgame.cpp:1511 src/kgrgame.cpp:1517
+#: src/kgrgame.cpp:1469 src/kgrgame.cpp:1495 src/kgrgame.cpp:1505
+#: src/kgrgame.cpp:1524 src/kgrgame.cpp:1530
 #, kde-format
 msgid "Save Game"
 msgstr "Spiel speichern"
 
-#: src/kgrgame.cpp:1457
+#: src/kgrgame.cpp:1470
 #, kde-format
 msgid ""
 "Sorry, you cannot save your game play while you are editing. Please try menu "
@@ -9324,13 +9324,13 @@ msgstr ""
 "Sie können das Spiel nicht speichern, während Sie es bearbeiten. Bitte "
 "versuchen Sie es mit dem Menü-Eintrag „%1“."
 
-#: src/kgrgame.cpp:1493 src/kgrgame.cpp:1537 src/kgrgame.cpp:1656
-#: src/kgrgame.cpp:1859 src/kgrgame.cpp:2023 src/kgrgameio.cpp:170
+#: src/kgrgame.cpp:1506 src/kgrgame.cpp:1550 src/kgrgame.cpp:1669
+#: src/kgrgame.cpp:1872 src/kgrgame.cpp:2036 src/kgrgameio.cpp:170
 #, kde-format
 msgid "Cannot open file '%1' for read-only."
 msgstr "Datei „%1“ lässt sich nicht lesen."
 
-#: src/kgrgame.cpp:1512
+#: src/kgrgame.cpp:1525
 #, kde-format
 msgid ""
 "Please note: for reasons of simplicity, your saved game position and score "
@@ -9340,37 +9340,37 @@ msgstr ""
 "Start auf die Anfangsposition der aktuellen Ebene zurückgesetzt. Änderungen "
 "gehen verloren."
 
-#: src/kgrgame.cpp:1518
+#: src/kgrgame.cpp:1531
 #, kde-format
 msgid "Error: Failed to save your game."
 msgstr "Fehler: Spiel kann nicht gespeichert werden."
 
-#: src/kgrgame.cpp:1530 src/kgrgame.cpp:1536 src/kgrgame.cpp:1578
+#: src/kgrgame.cpp:1543 src/kgrgame.cpp:1549 src/kgrgame.cpp:1591
 #, kde-format
 msgid "Load Game"
 msgstr "Spiel laden"
 
-#: src/kgrgame.cpp:1531
+#: src/kgrgame.cpp:1544
 #, kde-format
 msgid "Sorry, there are no saved games."
 msgstr "Sie haben keine gespeicherten Spiele."
 
-#: src/kgrgame.cpp:1579
+#: src/kgrgame.cpp:1592
 #, kde-format
 msgid "Cannot find the game with prefix '%1'."
 msgstr "Ein Spiel, das mit „%1“ anfängt, ist nicht auffindbar."
 
-#: src/kgrgame.cpp:1637
+#: src/kgrgame.cpp:1650
 #, kde-format
 msgid "Unknown"
 msgstr "Unbekannt"
 
-#: src/kgrgame.cpp:1655 src/kgrgame.cpp:1694
+#: src/kgrgame.cpp:1668 src/kgrgame.cpp:1707
 #, kde-format
 msgid "Check for High Score"
 msgstr "Nach Punkteliste sehen"
 
-#: src/kgrgame.cpp:1712
+#: src/kgrgame.cpp:1725
 #, kde-format
 msgid ""
 "<html><b>Congratulations !!!</b><br/>You have achieved a high score in this "
@@ -9381,39 +9381,39 @@ msgstr ""
 "Spiel erreicht.<br />Bitte geben Sie Ihren Namen ein, damit er in der<br /"
 ">Bestenliste von KGoldrunner die Zeiten überdauert.</html>"
 
-#: src/kgrgame.cpp:1726
+#: src/kgrgame.cpp:1739
 #, fuzzy, kde-format
 #| msgid "Save High Score"
 msgctxt "@title:window"
 msgid "Save High Score"
 msgstr "Bestenliste speichern"
 
-#: src/kgrgame.cpp:1813
+#: src/kgrgame.cpp:1826
 #, kde-format
 msgid "Save High Score"
 msgstr "Bestenliste speichern"
 
-#: src/kgrgame.cpp:1814
+#: src/kgrgame.cpp:1827
 #, kde-format
 msgid "Error: Failed to save your high score."
 msgstr "Fehler: Punktzahl kann nicht gespeichert werden."
 
-#: src/kgrgame.cpp:1826 src/kgrgame.cpp:1849 src/kgrgame.cpp:1858
+#: src/kgrgame.cpp:1839 src/kgrgame.cpp:1862 src/kgrgame.cpp:1871
 #, kde-format
 msgid "Show High Scores"
 msgstr "Bestenliste anzeigen"
 
-#: src/kgrgame.cpp:1827
+#: src/kgrgame.cpp:1840
 #, kde-format
 msgid "Sorry, we do not keep high scores for tutorial games."
 msgstr "Für die Einführungsspiele lassen sich keine Punktzahlen speichern."
 
-#: src/kgrgame.cpp:1850
+#: src/kgrgame.cpp:1863
 #, kde-format
 msgid "Sorry, there are no high scores for the \"%1\" game yet."
 msgstr "Für das Spiel „%1“ existiert bisher keine Bestenliste."
 
-#: src/kgrgame.cpp:1874
+#: src/kgrgame.cpp:1887
 #, kde-format
 msgid ""
 "<center><h2>KGoldrunner Hall of Fame</h2></center><center><h3>\"%1\" Game</"
@@ -9422,62 +9422,62 @@ msgstr ""
 "<center><h2>Bestenliste von KGoldrunner</h2></center><center><h3>Spiel: "
 "„%1“</h3></center>"
 
-#: src/kgrgame.cpp:1884
+#: src/kgrgame.cpp:1897
 #, kde-format
 msgctxt "1, 2, 3 etc."
 msgid "Rank"
 msgstr "Platzierung"
 
-#: src/kgrgame.cpp:1885
+#: src/kgrgame.cpp:1898
 #, kde-format
 msgctxt "Person"
 msgid "Name"
 msgstr "Name"
 
-#: src/kgrgame.cpp:1886
+#: src/kgrgame.cpp:1899
 #, kde-format
 msgctxt "Game level reached"
 msgid "Level"
 msgstr "Ebene"
 
-#: src/kgrgame.cpp:1887
+#: src/kgrgame.cpp:1900
 #, kde-format
 msgid "Score"
 msgstr "Punktzahl"
 
-#: src/kgrgame.cpp:1888
+#: src/kgrgame.cpp:1901
 #, kde-format
 msgid "Date"
 msgstr "Datum"
 
-#: src/kgrgame.cpp:1891
+#: src/kgrgame.cpp:1904
 #, fuzzy, kde-format
 #| msgid "High Scores"
 msgctxt "@title:window"
 msgid "High Scores"
 msgstr "Bestenliste"
 
-#: src/kgrgame.cpp:2016 src/kgrgame.cpp:2022 src/kgrgame.cpp:2026
+#: src/kgrgame.cpp:2029 src/kgrgame.cpp:2035 src/kgrgame.cpp:2039
 #, kde-format
 msgid "Load Game Info"
 msgstr "Spielinfo laden"
 
-#: src/kgrgame.cpp:2017
+#: src/kgrgame.cpp:2030
 #, kde-format
 msgid "Cannot find game info file '%1'."
 msgstr "Spielinfodatei „%1“ ist nicht auffindbar"
 
-#: src/kgrgame.cpp:2027
+#: src/kgrgame.cpp:2040
 #, kde-format
 msgid "Reached end of file '%1' before finding end of game-data."
 msgstr "Die Ebene in der Datei „%1“"
 
-#: src/kgrgame.cpp:2051 src/kgrgame.cpp:2056 src/kgrselector.cpp:259
+#: src/kgrgame.cpp:2064 src/kgrgame.cpp:2069 src/kgrselector.cpp:259
 #, kde-format
 msgid "Save A Solution"
 msgstr "Eine Lösung speichern"
 
-#: src/kgrgame.cpp:2052
+#: src/kgrgame.cpp:2065
 #, kde-format
 msgid "Your solution to level %1 has been saved on file %2"
 msgstr "Ihre Lösung für die Ebene %1 wurde in der Datei %2 gespeichert"

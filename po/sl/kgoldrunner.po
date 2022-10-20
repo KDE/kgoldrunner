@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"POT-Creation-Date: 2022-10-20 00:44+0000\n"
 "PO-Revision-Date: 2021-07-05 09:21+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -7950,7 +7950,7 @@ msgstr ""
 "Da, morate teci po sovražnikovi glavi --- vse do konca! Potrebovali boste "
 "mirno roko."
 
-#: src/kgoldrunner.cpp:184 src/kgrgame.cpp:723
+#: src/kgoldrunner.cpp:184 src/kgrgame.cpp:724
 #, kde-format
 msgid "&New Game..."
 msgstr "&Nova igra ..."
@@ -7994,7 +7994,7 @@ msgstr ""
 "Shrani rešitev stopnje v datoteko imenovano »sol_&lt;predpona&gt;.txt« v "
 "mapi z vašimi uporabniškimi podatki ..."
 
-#: src/kgoldrunner.cpp:246 src/kgrgame.cpp:1303
+#: src/kgoldrunner.cpp:246 src/kgrgame.cpp:1304
 #, kde-format
 msgid "&Show a Solution"
 msgstr "&Pokaži rešitev"
@@ -8115,7 +8115,7 @@ msgstr "Uredi &katerokoli stopnjo ..."
 msgid "Edit"
 msgstr "Uredi"
 
-#: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1459
+#: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1472
 #, kde-format
 msgid "&Save Edits..."
 msgstr "&Shrani urejanja ..."
@@ -8725,49 +8725,49 @@ msgstr "Ur&ejevalnik"
 msgid "Edit Toolbar"
 msgstr "Orodna vrstica urejanja"
 
-#: src/kgrdialog.cpp:34
+#: src/kgrdialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Name or Hint"
 msgstr "Uredi ime in namig"
 
-#: src/kgrdialog.cpp:56
+#: src/kgrdialog.cpp:57
 #, kde-format
 msgid "Name of level:"
 msgstr "Ime stopnje:"
 
-#: src/kgrdialog.cpp:63
+#: src/kgrdialog.cpp:64
 #, kde-format
 msgid "Hint for level:"
 msgstr "Namig za stopnjo:"
 
-#: src/kgrdialog.cpp:103 src/kgrdialog.cpp:172
+#: src/kgrdialog.cpp:104 src/kgrdialog.cpp:173
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Game Info"
 msgstr "Uredi podatke o igri"
 
-#: src/kgrdialog.cpp:123
+#: src/kgrdialog.cpp:124
 #, kde-format
 msgid "Name of game:"
 msgstr "Ime igre:"
 
-#: src/kgrdialog.cpp:131
+#: src/kgrdialog.cpp:132
 #, kde-format
 msgid "File name prefix:"
 msgstr "Predpona imena datoteke:"
 
-#: src/kgrdialog.cpp:139
+#: src/kgrdialog.cpp:140
 #, kde-format
 msgid "Traditional rules"
 msgstr "Tradicionalna pravila"
 
-#: src/kgrdialog.cpp:140
+#: src/kgrdialog.cpp:141
 #, kde-format
 msgid "KGoldrunner rules"
 msgstr "Pravila igre KGoldrunner"
 
-#: src/kgrdialog.cpp:149 src/kgrdialog.cpp:184
+#: src/kgrdialog.cpp:150 src/kgrdialog.cpp:185
 #, kde-format
 msgid "1 level"
 msgid_plural "%1 levels"
@@ -8776,39 +8776,39 @@ msgstr[1] "%1 stopnji"
 msgstr[2] "%1 stopnje"
 msgstr[3] "%1 stopenj"
 
-#: src/kgrdialog.cpp:152
+#: src/kgrdialog.cpp:153
 #, kde-format
 msgid "About this game:"
 msgstr "O tej igri:"
 
-#: src/kgrdialog.cpp:169
+#: src/kgrdialog.cpp:170
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Game"
 msgstr "Ustvari igro"
 
-#: src/kgrdialog.cpp:186
+#: src/kgrdialog.cpp:187
 #, kde-format
 msgid "Save Changes"
 msgstr "Shrani spremembe"
 
-#: src/kgrdialog.cpp:191
+#: src/kgrdialog.cpp:192
 #, kde-format
 msgid "0 levels"
 msgstr "0 stopenj"
 
-#: src/kgrdialog.cpp:192 src/kgrselector.cpp:265
+#: src/kgrdialog.cpp:193 src/kgrselector.cpp:265
 #, kde-format
 msgid "Save New"
 msgstr "Shrani novo"
 
-#: src/kgrdialog.cpp:247
+#: src/kgrdialog.cpp:248
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Saved Game"
 msgstr "Izberite shranjeno igro"
 
-#: src/kgrdialog.cpp:266
+#: src/kgrdialog.cpp:267
 #, kde-format
 msgid "Game                       Level/Lives/Score   Day    Date     Time  "
 msgstr "Igra                 Stopnja/življenja/rezultat   Dan    Datum    Čas "
@@ -8852,7 +8852,7 @@ msgstr ""
 "svojih iger. Menda ne vohljate za skritimi lestvami in prehodnimi "
 "opekami? :-)"
 
-#: src/kgreditor.cpp:242 src/kgreditor.cpp:260 src/kgrgame.cpp:260
+#: src/kgreditor.cpp:242 src/kgreditor.cpp:260 src/kgrgame.cpp:261
 #, kde-format
 msgid "Save Level"
 msgstr "Shrani stopnjo"
@@ -8873,8 +8873,8 @@ msgstr "&Vstavi stopnjo"
 msgid "&Cancel"
 msgstr "&Prekliči"
 
-#: src/kgreditor.cpp:261 src/kgreditor.cpp:779 src/kgrgame.cpp:1483
-#: src/kgrgame.cpp:1695
+#: src/kgreditor.cpp:261 src/kgreditor.cpp:779 src/kgrgame.cpp:1496
+#: src/kgrgame.cpp:1708
 #, kde-format
 msgid "Cannot open file '%1' for output."
 msgstr "Ni bilo mogoče odpreti datoteke '%1' za izhod."
@@ -9014,44 +9014,44 @@ msgstr "Spremenite lahko samo uporabniške igre."
 msgid "New Level"
 msgstr "Nova stopnja"
 
-#: src/kgreditor.cpp:839 src/kgrgame.cpp:1388
+#: src/kgreditor.cpp:839 src/kgrgame.cpp:1389
 #, kde-format
 msgctxt "Game name - level number."
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: src/kgreditor.cpp:843 src/kgrgame.cpp:1391
+#: src/kgreditor.cpp:843 src/kgrgame.cpp:1392
 #, kde-format
 msgctxt "Game name - level number - level name."
 msgid "%1 - %2 - %3"
 msgstr "%1 - %2 - %3"
 
-#: src/kgrgame.cpp:109
+#: src/kgrgame.cpp:110
 #, kde-format
 msgid "Click anywhere to begin live play"
 msgstr "Kliknite kamorkoli, da začnete z igro"
 
-#: src/kgrgame.cpp:190
+#: src/kgrgame.cpp:191
 #, kde-format
 msgid "Play Next Level"
 msgstr "Igraj &naslednjo stopnjo"
 
-#: src/kgrgame.cpp:191
+#: src/kgrgame.cpp:192
 #, kde-format
 msgid "There are no more levels in this game."
 msgstr "Za to igro ni več stopenj."
 
-#: src/kgrgame.cpp:261
+#: src/kgrgame.cpp:262
 #, kde-format
 msgid "Inappropriate action: you are not editing a level."
 msgstr "Neprimerno dejanje: ne urejate stopnje."
 
-#: src/kgrgame.cpp:420
+#: src/kgrgame.cpp:421
 #, kde-format
 msgid "No Sound"
 msgstr "Brez zvoka"
 
-#: src/kgrgame.cpp:421
+#: src/kgrgame.cpp:422
 #, kde-format
 msgid ""
 "Warning: This copy of KGoldrunner has no sound.\n"
@@ -9064,12 +9064,12 @@ msgstr ""
 "To je zato, ker ob grajenju ni bilo prisotnih razvojnih različic knjižnic "
 "OpenAL in SndFil."
 
-#: src/kgrgame.cpp:625 src/kgrgame.cpp:782
+#: src/kgrgame.cpp:626 src/kgrgame.cpp:783
 #, kde-format
 msgid "Game Paused"
 msgstr "Igra je v premoru"
 
-#: src/kgrgame.cpp:626
+#: src/kgrgame.cpp:627
 #, kde-format
 msgid ""
 "The replay has stopped and the game is pausing while you prepare to go on "
@@ -9079,19 +9079,19 @@ msgstr ""
 "igranje. Pritisnite tipko za premor (privzeto P ali Esc), ko boste "
 "pripravljeni."
 
-#: src/kgrgame.cpp:670 src/kgrgame.cpp:676
+#: src/kgrgame.cpp:671 src/kgrgame.cpp:677
 #, kde-format
 msgid "Replay Last Level"
 msgstr "Ponovno igraj zadnjo stopnjo"
 
-#: src/kgrgame.cpp:671
+#: src/kgrgame.cpp:672
 #, kde-format
 msgid ""
 "ERROR: Could not find and replay a recording of the last level you played."
 msgstr ""
 "NAPAKA: ni bilo mogoče najti posnetka zadnje stopnje, ki ste jo igrali."
 
-#: src/kgrgame.cpp:677
+#: src/kgrgame.cpp:678
 #, kde-format
 msgid ""
 "There is no last level to replay.  You need to play a level to completion, "
@@ -9101,24 +9101,24 @@ msgstr ""
 "ali izgubiti, preden lahko izberete dejanje Predvajaj posnetek zadnje "
 "stopnje."
 
-#: src/kgrgame.cpp:695
+#: src/kgrgame.cpp:696
 #, kde-format
 msgctxt "@title:window"
 msgid "Quick Start"
 msgstr "Hitri začetek"
 
-#: src/kgrgame.cpp:712
+#: src/kgrgame.cpp:713
 #, kde-format
 msgctxt "Button text: start playing a game"
 msgid "&PLAY"
 msgstr "&IGRAJ"
 
-#: src/kgrgame.cpp:713
+#: src/kgrgame.cpp:714
 #, kde-format
 msgid "Start playing this level"
 msgstr "Začni z igranjem te stopnje"
 
-#: src/kgrgame.cpp:715
+#: src/kgrgame.cpp:716
 #, kde-format
 msgid ""
 "Set up to start playing the game and level being shown, as soon as you "
@@ -9127,22 +9127,22 @@ msgstr ""
 "Nastavite, da se izbrana igra in stopnja začnete takoj ko kliknete, "
 "premaknete miško ali pritisnete tipko"
 
-#: src/kgrgame.cpp:719
+#: src/kgrgame.cpp:720
 #, kde-format
 msgid "&Quit"
 msgstr "&Končaj"
 
-#: src/kgrgame.cpp:720
+#: src/kgrgame.cpp:721
 #, kde-format
 msgid "Close KGoldrunner"
 msgstr "Zapri KGoldrunner"
 
-#: src/kgrgame.cpp:724
+#: src/kgrgame.cpp:725
 #, kde-format
 msgid "Start a different game or level"
 msgstr "Začni drugo igro ali stopnjo"
 
-#: src/kgrgame.cpp:726
+#: src/kgrgame.cpp:727
 #, kde-format
 msgid ""
 "Use the Select Game dialog box to choose a different game or level and start "
@@ -9151,17 +9151,17 @@ msgstr ""
 "Uporabite pogovorno okno Izberi igro, da izberete drugo igro ali stopnjo ter "
 "pričnete z igranjem"
 
-#: src/kgrgame.cpp:730
+#: src/kgrgame.cpp:731
 #, kde-format
 msgid "&Use Menu"
 msgstr "&Uporabi meni"
 
-#: src/kgrgame.cpp:732
+#: src/kgrgame.cpp:733
 #, kde-format
 msgid "Use the menus to choose other actions"
 msgstr "Uporabi meni za izbor drugih dejanj"
 
-#: src/kgrgame.cpp:734
+#: src/kgrgame.cpp:735
 #, kde-format
 msgid ""
 "Before playing, use the menus to choose other actions, such as loading a "
@@ -9170,7 +9170,7 @@ msgstr ""
 "Pred začetkom igranjem, uporabite menije, da izberete druga dejanja, kot "
 "recimo nalaganje shranjene igre ali spremembo teme"
 
-#: src/kgrgame.cpp:783
+#: src/kgrgame.cpp:784
 #, kde-format
 msgid ""
 "The game is halted. You will need to press the Pause key (default P or Esc) "
@@ -9179,12 +9179,12 @@ msgstr ""
 "Igra je zaustavljena. Pritisniti boste morali tipko za premor (privzeto P "
 "ali Esc), ko boste pripravljeni za igranje."
 
-#: src/kgrgame.cpp:836
+#: src/kgrgame.cpp:837
 #, kde-format
 msgid "Show a Solution"
 msgstr "Pokaži rešitev"
 
-#: src/kgrgame.cpp:837
+#: src/kgrgame.cpp:838
 #, kde-format
 msgid ""
 "Sorry, although all levels of KGoldrunner can be solved, no solution has "
@@ -9193,19 +9193,19 @@ msgstr ""
 "Čeprav so vse stopnje v igri KGoldrunner rešljive, za izbrano stopnjo še ni "
 "bilo posnete rešitve."
 
-#: src/kgrgame.cpp:848
+#: src/kgrgame.cpp:849
 #, kde-format
 msgid "Replay Any Level"
 msgstr "Ponovno igraj katerokoli stopnjo"
 
-#: src/kgrgame.cpp:849 src/kgrgame.cpp:2057
+#: src/kgrgame.cpp:850 src/kgrgame.cpp:2070
 #, kde-format
 msgid ""
 "Sorry, you do not seem to have played and recorded the selected level before."
 msgstr ""
 "Žal izgleda, da izbrane stopnje še niste igrali ali je še niste posneli."
 
-#: src/kgrgame.cpp:1063
+#: src/kgrgame.cpp:1064
 #, kde-format
 msgid ""
 "<NOBR><B>GAME OVER !!!</B></NOBR><P>Would you like to try this level again?</"
@@ -9213,22 +9213,22 @@ msgid ""
 msgstr ""
 "<NOBR><B>KONEC IGRE !!!</B></NOBR><P>Želite ponovno poskusiti to stopnjo?</P>"
 
-#: src/kgrgame.cpp:1065
+#: src/kgrgame.cpp:1066
 #, kde-format
 msgid "Game Over"
 msgstr "Konec igre"
 
-#: src/kgrgame.cpp:1066
+#: src/kgrgame.cpp:1067
 #, kde-format
 msgid "&Try Again"
 msgstr "&Poskusi znova"
 
-#: src/kgrgame.cpp:1066
+#: src/kgrgame.cpp:1067
 #, kde-format
 msgid "&Finish"
 msgstr "&Končaj"
 
-#: src/kgrgame.cpp:1140
+#: src/kgrgame.cpp:1141
 #, kde-format
 msgid ""
 "<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the <b>"
@@ -9236,27 +9236,27 @@ msgid ""
 msgstr ""
 "<b>ČESTITKE !!!</b><p>Končali ste zadnjo stopnjo v igri <b>'%1'</b>!</p>"
 
-#: src/kgrgame.cpp:1297
+#: src/kgrgame.cpp:1298
 #, kde-format
 msgid "Hint"
 msgstr "Namig"
 
-#: src/kgrgame.cpp:1303
+#: src/kgrgame.cpp:1304
 #, kde-format
 msgid "&OK"
 msgstr "&V redu"
 
-#: src/kgrgame.cpp:1316
+#: src/kgrgame.cpp:1317
 #, kde-format
 msgid "Sorry, there is no hint for this level."
 msgstr "Žal za to stopnjo ni namiga."
 
-#: src/kgrgame.cpp:1378
+#: src/kgrgame.cpp:1379
 #, kde-format
 msgid "T H E   E N D"
 msgstr "K O N E C"
 
-#: src/kgrgame.cpp:1415
+#: src/kgrgame.cpp:1420
 #, kde-format
 msgid ""
 "You have pressed a key that can be used to control the Hero. Do you want to "
@@ -9267,33 +9267,33 @@ msgstr ""
 "samodejno preklopiti na nadzor s tipkovnico? Nadzor z miško je dolgoročno "
 "enostavnejši - kot vožnja s kolesom namesto hoje!"
 
-#: src/kgrgame.cpp:1419
+#: src/kgrgame.cpp:1424
 #, kde-format
 msgid "Switch to Keyboard Mode"
 msgstr "Preklopi na način tipkovnice"
 
-#: src/kgrgame.cpp:1420
+#: src/kgrgame.cpp:1425
 #, kde-format
 msgid "Switch to &Keyboard Mode"
 msgstr "Preklopi na način &tipkovnice"
 
-#: src/kgrgame.cpp:1421
+#: src/kgrgame.cpp:1426
 #, kde-format
 msgid "Stay in &Mouse Mode"
 msgstr "Ostani v načinu &miške"
 
-#: src/kgrgame.cpp:1422
+#: src/kgrgame.cpp:1427
 #, kde-format
 msgid "Keyboard Mode"
 msgstr "Način tipkovnice"
 
-#: src/kgrgame.cpp:1456 src/kgrgame.cpp:1482 src/kgrgame.cpp:1492
-#: src/kgrgame.cpp:1511 src/kgrgame.cpp:1517
+#: src/kgrgame.cpp:1469 src/kgrgame.cpp:1495 src/kgrgame.cpp:1505
+#: src/kgrgame.cpp:1524 src/kgrgame.cpp:1530
 #, kde-format
 msgid "Save Game"
 msgstr "Shrani igro"
 
-#: src/kgrgame.cpp:1457
+#: src/kgrgame.cpp:1470
 #, kde-format
 msgid ""
 "Sorry, you cannot save your game play while you are editing. Please try menu "
@@ -9302,13 +9302,13 @@ msgstr ""
 "Žal ne morete shraniti vaše igre med urejanjem. Poskusite s predmetom menija "
 "%1."
 
-#: src/kgrgame.cpp:1493 src/kgrgame.cpp:1537 src/kgrgame.cpp:1656
-#: src/kgrgame.cpp:1859 src/kgrgame.cpp:2023 src/kgrgameio.cpp:170
+#: src/kgrgame.cpp:1506 src/kgrgame.cpp:1550 src/kgrgame.cpp:1669
+#: src/kgrgame.cpp:1872 src/kgrgame.cpp:2036 src/kgrgameio.cpp:170
 #, kde-format
 msgid "Cannot open file '%1' for read-only."
 msgstr "Ni bilo mogoče odpreti datoteke '%1' samo za branje."
 
-#: src/kgrgame.cpp:1512
+#: src/kgrgame.cpp:1525
 #, kde-format
 msgid ""
 "Please note: for reasons of simplicity, your saved game position and score "
@@ -9317,37 +9317,37 @@ msgstr ""
 "Zapomnite si: zaradi preprostosti bosta vaš položaj shranjene igre in "
 "rezultat enaka, kot sta bila na začetku te stopnje, in ne, kot sta sedaj."
 
-#: src/kgrgame.cpp:1518
+#: src/kgrgame.cpp:1531
 #, kde-format
 msgid "Error: Failed to save your game."
 msgstr "Napaka: ni bilo mogoče shraniti vaše igre."
 
-#: src/kgrgame.cpp:1530 src/kgrgame.cpp:1536 src/kgrgame.cpp:1578
+#: src/kgrgame.cpp:1543 src/kgrgame.cpp:1549 src/kgrgame.cpp:1591
 #, kde-format
 msgid "Load Game"
 msgstr "Naloži igro"
 
-#: src/kgrgame.cpp:1531
+#: src/kgrgame.cpp:1544
 #, kde-format
 msgid "Sorry, there are no saved games."
 msgstr "Žal ni shranjenih iger."
 
-#: src/kgrgame.cpp:1579
+#: src/kgrgame.cpp:1592
 #, kde-format
 msgid "Cannot find the game with prefix '%1'."
 msgstr "Ni bilo mogoče najti igre s predpono '%1'."
 
-#: src/kgrgame.cpp:1637
+#: src/kgrgame.cpp:1650
 #, kde-format
 msgid "Unknown"
 msgstr "Neznan"
 
-#: src/kgrgame.cpp:1655 src/kgrgame.cpp:1694
+#: src/kgrgame.cpp:1668 src/kgrgame.cpp:1707
 #, kde-format
 msgid "Check for High Score"
 msgstr "Preveri najboljše rezultate"
 
-#: src/kgrgame.cpp:1712
+#: src/kgrgame.cpp:1725
 #, kde-format
 msgid ""
 "<html><b>Congratulations !!!</b><br/>You have achieved a high score in this "
@@ -9358,38 +9358,38 @@ msgstr ""
 "Vnesite vaše ime, da se lahko pojavi<br/> v Najboljših rezultatih igre "
 "KGoldrunner.</html>"
 
-#: src/kgrgame.cpp:1726
+#: src/kgrgame.cpp:1739
 #, kde-format
 msgctxt "@title:window"
 msgid "Save High Score"
 msgstr "Shrani najboljši rezultat"
 
-#: src/kgrgame.cpp:1813
+#: src/kgrgame.cpp:1826
 #, kde-format
 msgid "Save High Score"
 msgstr "Shrani najboljše rezultate"
 
-#: src/kgrgame.cpp:1814
+#: src/kgrgame.cpp:1827
 #, kde-format
 msgid "Error: Failed to save your high score."
 msgstr "Napaka: ni bilo mogoče shraniti vašega rezultata."
 
-#: src/kgrgame.cpp:1826 src/kgrgame.cpp:1849 src/kgrgame.cpp:1858
+#: src/kgrgame.cpp:1839 src/kgrgame.cpp:1862 src/kgrgame.cpp:1871
 #, kde-format
 msgid "Show High Scores"
 msgstr "Pokaži najboljše rezultate"
 
-#: src/kgrgame.cpp:1827
+#: src/kgrgame.cpp:1840
 #, kde-format
 msgid "Sorry, we do not keep high scores for tutorial games."
 msgstr "Žal se najboljši rezultati začetniških iger ne shranjujejo."
 
-#: src/kgrgame.cpp:1850
+#: src/kgrgame.cpp:1863
 #, kde-format
 msgid "Sorry, there are no high scores for the \"%1\" game yet."
 msgstr "Žal še ni najboljših rezultatov za igro \"%1\"."
 
-#: src/kgrgame.cpp:1874
+#: src/kgrgame.cpp:1887
 #, kde-format
 msgid ""
 "<center><h2>KGoldrunner Hall of Fame</h2></center><center><h3>\"%1\" Game</"
@@ -9398,62 +9398,62 @@ msgstr ""
 "<center><h2>Najboljši rezultati igre KGoldrunner</h2></"
 "center><center><h3>Igra \"%1\"</h3></center>"
 
-#: src/kgrgame.cpp:1884
+#: src/kgrgame.cpp:1897
 #, kde-format
 msgctxt "1, 2, 3 etc."
 msgid "Rank"
 msgstr "Položaj"
 
-#: src/kgrgame.cpp:1885
+#: src/kgrgame.cpp:1898
 #, kde-format
 msgctxt "Person"
 msgid "Name"
 msgstr "Ime"
 
-#: src/kgrgame.cpp:1886
+#: src/kgrgame.cpp:1899
 #, kde-format
 msgctxt "Game level reached"
 msgid "Level"
 msgstr "Stopnja"
 
-#: src/kgrgame.cpp:1887
+#: src/kgrgame.cpp:1900
 #, kde-format
 msgid "Score"
 msgstr "Rezultat"
 
-#: src/kgrgame.cpp:1888
+#: src/kgrgame.cpp:1901
 #, kde-format
 msgid "Date"
 msgstr "Datum"
 
-#: src/kgrgame.cpp:1891
+#: src/kgrgame.cpp:1904
 #, kde-format
 msgctxt "@title:window"
 msgid "High Scores"
 msgstr "Najboljši rezultati"
 
-#: src/kgrgame.cpp:2016 src/kgrgame.cpp:2022 src/kgrgame.cpp:2026
+#: src/kgrgame.cpp:2029 src/kgrgame.cpp:2035 src/kgrgame.cpp:2039
 #, kde-format
 msgid "Load Game Info"
 msgstr "Naloži podrobnosti o igri"
 
-#: src/kgrgame.cpp:2017
+#: src/kgrgame.cpp:2030
 #, kde-format
 msgid "Cannot find game info file '%1'."
 msgstr "Ni bilo mogoče najti datoteke s podrobnostmi za igro '%1'."
 
-#: src/kgrgame.cpp:2027
+#: src/kgrgame.cpp:2040
 #, kde-format
 msgid "Reached end of file '%1' before finding end of game-data."
 msgstr ""
 "Dosežen je bil konec datoteke '%1', preden so se našli podatki o stopnji."
 
-#: src/kgrgame.cpp:2051 src/kgrgame.cpp:2056 src/kgrselector.cpp:259
+#: src/kgrgame.cpp:2064 src/kgrgame.cpp:2069 src/kgrselector.cpp:259
 #, kde-format
 msgid "Save A Solution"
 msgstr "Shrani rešitev"
 
-#: src/kgrgame.cpp:2052
+#: src/kgrgame.cpp:2065
 #, kde-format
 msgid "Your solution to level %1 has been saved on file %2"
 msgstr "Vaša rešitev za stopnjo %1 je bila shranjena v datoteko %2"
