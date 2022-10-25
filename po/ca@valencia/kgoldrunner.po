@@ -799,9 +799,9 @@ msgid ""
 "These elegant and rather tricky Championship levels were composed by Steve "
 "Mann <smann at cgl uwaterloo ca>. You need to dig while falling sometimes."
 msgstr ""
-"Este joc està basat a comptar, de 0 fins a 16 (o de 0 a 10 en hexadecimal). "
-"El primer nivell no té una mica d'or ni enemics: s'ha de trobar una eixida "
-"cap al nivell següent. Després d'açò, el nombre d'enemics i de monedes d'or "
+"Este joc es basa en comptar, de 0 fins a 16 (o de 0 a 10 en hexadecimal). El "
+"primer nivell no té una mica d'or ni enemics: s'ha de trobar una eixida cap "
+"al nivell següent. Després d'açò, el nombre d'enemics i de monedes d'or "
 "s'incrementa en 1 a cada nivell. El nom de cada nivell correspon al nombre "
 "d'enemics, al nombre de monedes d'or i al dígit que apareix al disseny.\n"
 "\n"
@@ -4973,8 +4973,8 @@ msgid ""
 msgstr ""
 "La part més difícil és quan dos enemics queden en el centre del laberint i "
 "necessites passar-los. Intenta moure't cap a baix i la seua esquerra, atrau-"
-"ne un cap a baix, atrapa'l i després ves cap a dalt a atrapar l'altre. En "
-"cas contrari una excavació intel·ligent pot ocupar-se d'ells."
+"ne un cap a baix, atrapa'l i després ves cap a dalt per a atrapar l'altre. "
+"En cas contrari una excavació intel·ligent pot ocupar-se d'ells."
 
 #: gamedata/game_MAZ.txt:54
 #, kde-format
@@ -5525,7 +5525,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:169
 #, kde-format
 msgid "Lots of false floors to use and avoid."
-msgstr "Molts terres falsos a utilitzar i evitar."
+msgstr "Molts terres falsos que s'utilitzaran i evitaran."
 
 #: gamedata/game_MAZ.txt:172
 #, kde-format
@@ -9209,7 +9209,7 @@ msgstr "%1 - %2 - %3"
 #: src/kgrgame.cpp:110
 #, kde-format
 msgid "Click anywhere to begin live play"
-msgstr "Clica a qualsevol lloc per a començar la partida en directe"
+msgstr "Clica en qualsevol lloc per a començar la partida en directe"
 
 #: src/kgrgame.cpp:191
 #, kde-format
