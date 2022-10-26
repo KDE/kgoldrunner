@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-20 00:44+0000\n"
-"PO-Revision-Date: 2022-10-16 12:34+0300\n"
+"PO-Revision-Date: 2022-10-25 12:02+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2369,7 +2369,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:23
 #, kde-format
 msgid "A Little Digging Warm-Up"
-msgstr ""
+msgstr "Biraz Kazma Alıştırması"
 
 #: gamedata/game_GotD.txt:24
 #, kde-format
@@ -2387,7 +2387,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:29
 #, kde-format
 msgid "Patient Zero"
-msgstr ""
+msgstr "İlk Hasta"
 
 #: gamedata/game_GotD.txt:30
 #, kde-format
@@ -2464,7 +2464,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:57
 #, kde-format
 msgid "Do Not Worry"
-msgstr ""
+msgstr "Hiç Endişelenme"
 
 #: gamedata/game_GotD.txt:58
 #, kde-format
@@ -2474,7 +2474,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:61
 #, kde-format
 msgid "They Are So Many!"
-msgstr ""
+msgstr "Çok Fazlalar!"
 
 #: gamedata/game_GotD.txt:62
 #, kde-format
@@ -2498,7 +2498,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:73
 #, kde-format
 msgid "Never Trust The H-Ladders"
-msgstr ""
+msgstr "Yatay Merdivenlere Sakın Güvenme"
 
 #: gamedata/game_GotD.txt:74
 #, kde-format
@@ -2513,7 +2513,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:79
 #, kde-format
 msgid "Please Do Let Me Pass!"
-msgstr ""
+msgstr "Bırakın Geçeyim!"
 
 #: gamedata/game_GotD.txt:80
 #, kde-format
@@ -2544,7 +2544,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:89
 #, kde-format
 msgid "Thieves"
-msgstr ""
+msgstr "Hırsızlar"
 
 #: gamedata/game_GotD.txt:90
 #, kde-format
@@ -2557,7 +2557,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:93
 #, kde-format
 msgid "Climbing And Falling"
-msgstr ""
+msgstr "Tırmanma ve Düşme"
 
 #: gamedata/game_GotD.txt:94
 #, kde-format
@@ -2621,7 +2621,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:119
 #, kde-format
 msgid "Patience?"
-msgstr ""
+msgstr "Sabır?"
 
 #: gamedata/game_GotD.txt:120
 #, kde-format
@@ -2633,7 +2633,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:123
 #, kde-format
 msgid "Lock Them Away!"
-msgstr ""
+msgstr "Hepsini Kilitle!"
 
 #: gamedata/game_GotD.txt:124
 #, kde-format
@@ -2674,12 +2674,12 @@ msgstr ""
 #: gamedata/game_GotD.txt:137
 #, kde-format
 msgid "Harder Than It Looks"
-msgstr ""
+msgstr "Göründüğünden Daha Güç"
 
 #: gamedata/game_GotD.txt:138
 #, kde-format
 msgid "Timing is everything."
-msgstr ""
+msgstr "Zamanlama her şeydir."
 
 #: gamedata/game_GotD.txt:141
 #, kde-format
@@ -2787,7 +2787,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:179
 #, kde-format
 msgid "Diving"
-msgstr ""
+msgstr "Dalış"
 
 #: gamedata/game_GotD.txt:180
 #, kde-format
@@ -2805,7 +2805,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:187
 #, kde-format
 msgid "Encircled"
-msgstr ""
+msgstr "Sarılmış"
 
 #: gamedata/game_GotD.txt:188
 #, kde-format
@@ -2879,7 +2879,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:215
 #, kde-format
 msgid "Busy Town"
-msgstr ""
+msgstr "Yoğun Şehir"
 
 #: gamedata/game_GotD.txt:216
 #, kde-format
@@ -2904,7 +2904,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:223
 #, kde-format
 msgid "Is It Really Worth It?"
-msgstr ""
+msgstr "Gerçekten Değdi mi?"
 
 #: gamedata/game_GotD.txt:224
 #, kde-format
@@ -3013,7 +3013,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:263
 #, kde-format
 msgid "Out Of My Way!"
-msgstr ""
+msgstr "Yoldan Çekilin!"
 
 #: gamedata/game_GotD.txt:264
 #, kde-format
@@ -3028,7 +3028,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:269
 #, kde-format
 msgid "Waking Up The Dead"
-msgstr ""
+msgstr "Ölüleri Uyandırmak"
 
 #: gamedata/game_GotD.txt:270
 #, kde-format
@@ -3128,7 +3128,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:307
 #, kde-format
 msgid "A Desperate Jump"
-msgstr ""
+msgstr "Umutsuz Bir Atlayış"
 
 #: gamedata/game_GotD.txt:308
 #, kde-format
@@ -3142,7 +3142,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:313
 #, kde-format
 msgid "Among Zombies"
-msgstr ""
+msgstr "Zombiler Arasında"
 
 #: gamedata/game_GotD.txt:314
 #, kde-format
@@ -3165,7 +3165,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:323
 #, kde-format
 msgid "Dance With Death"
-msgstr ""
+msgstr "Ölümle Dans"
 
 #: gamedata/game_GotD.txt:324
 #, kde-format
@@ -3189,7 +3189,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:331
 #, kde-format
 msgid "Just Survive"
-msgstr ""
+msgstr "Hayatta Kalsan Yeter"
 
 #: gamedata/game_GotD.txt:332
 #, kde-format
@@ -3202,7 +3202,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:335
 #, kde-format
 msgid "Death Race"
-msgstr ""
+msgstr "Ölüm Yarışı"
 
 #: gamedata/game_GotD.txt:336
 #, kde-format
@@ -3214,7 +3214,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:339
 #, kde-format
 msgid "Zombie Free Zone"
-msgstr ""
+msgstr "Zombisiz Bölge"
 
 #: gamedata/game_GotD.txt:340
 #, kde-format
@@ -3222,6 +3222,8 @@ msgid ""
 "Finally, you have escaped the horrors of the zombie-infested world. Now that "
 "you are in the zombie-free zone, nothing can go wrong, can it?"
 msgstr ""
+"En sonunda, zombilerle istila edilmiş dünyanın korkunçluklarından kaçtınız. "
+"Artık zombisiz bölgede olduğunuza göre bir şey ters gidemez, değil mi?"
 
 #: gamedata/game_GotD.txt:343
 #, kde-format
@@ -6981,14 +6983,7 @@ msgid "Bars and Ladders"
 msgstr "Çubuklar ve Merdivenler"
 
 #: gamedata/game_tutea.txt:8
-#, fuzzy, kde-format
-#| msgid ""
-#| "There is nowhere to dig, so you must dodge the enemies and avoid falling "
-#| "to the concrete at the wrong time.  Try to keep the enemies together.\n"
-#| "\n"
-#| "If an enemy has gold coloring, he is holding a nugget. He might drop it "
-#| "as he runs over the concrete or maybe at the top of a ladder ... "
-#| "patience, patience!"
+#, kde-format
 msgid ""
 "There is nowhere to dig, so you must dodge the enemies and avoid falling to "
 "the concrete at the wrong time.  Try to keep the enemies together.\n"
