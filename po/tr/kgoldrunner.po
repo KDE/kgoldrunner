@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-20 00:44+0000\n"
-"PO-Revision-Date: 2022-10-25 12:02+0300\n"
+"PO-Revision-Date: 2022-11-04 11:05+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.08.1\n"
+"X-Generator: Lokalize 22.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -2383,6 +2383,14 @@ msgid ""
 "back out need you to dig bricks on both sides at the same time, by pressing "
 "both mouse keys."
 msgstr ""
+"Bu düzey, sonraki düzeylerde gereksinim duyacağın bazı kazma becerilerini "
+"geliştirmek için iyi bir fırsattır.\n"
+"\n"
+"Oldukça basit olmasına rağmen, sonunda sizi yaramaz küçük bir tuzak "
+"bekliyor. Bundan kaçınmak için, küçük bir kazma zamanlama bulmacası olan sol "
+"taraftan gelerek altınları toplamanız gerekli. Altına ve geri çekilmeye "
+"giden son adımlar, her iki fare düğmesine de basarak aynı anda her iki "
+"taraftaki tuğlaları kazmanızı gerektirir."
 
 #: gamedata/game_GotD.txt:29
 #, kde-format
@@ -2403,6 +2411,17 @@ msgid ""
 "P.S. Sometimes he appears somewhere he really should not. If so, you can "
 "only kill the hero and restart the level. Sorry for that one!"
 msgstr ""
+"Dikkat et! Bu bir zombi. Onu serbest bırakır bırakmaz seni öldürmeye "
+"çalışacak!\n"
+"\n"
+"Öte yandan, onu geçmenin başka yolu yok...\n"
+"\n"
+"Ancak, tümüyle işe yaramaz değil. Başının üzerinde yürümek, aksi takdirde "
+"ulaşamayacağınız belirli altın parçalarına ulaşmanızı sağlar.\n"
+"\n"
+"Not: Bazen gerçekten olmaması gereken bir yerde ortaya çıkıyor. Eğer "
+"öyleyse, sadece kahramanı öldürebilir ve düzeyi yeniden başlatabilirsiniz. "
+"Bunun için üzgünüm!"
 
 #: gamedata/game_GotD.txt:39 gamedata/game_plws.txt:113
 #, kde-format
@@ -2412,7 +2431,7 @@ msgstr "Zig Zag"
 #: gamedata/game_GotD.txt:40
 #, kde-format
 msgid "This is as easy as it gets..."
-msgstr ""
+msgstr "Bu olabildiğince kolay..."
 
 #: gamedata/game_GotD.txt:43 gamedata/game_wad.txt:63
 #, kde-format
@@ -2426,6 +2445,9 @@ msgid ""
 "on top of a ladder until a zombie comes really close to you and then you "
 "sneak away beneath him at the right moment."
 msgstr ""
+"Başlangıçta zombilerden kaçınmak en kötü kısım olabilir. Bir zombi size "
+"gerçekten yaklaşana kadar bir merdivenin tepesinde beklemeniz gerekiyor ve "
+"ardından doğru anda onun altından gizlice kaçıyorsunuz."
 
 #: gamedata/game_GotD.txt:47
 #, kde-format
@@ -2460,6 +2482,29 @@ msgid ""
 "right and wait there until they are near - the distance they keep if you do "
 "not change anything is ideal."
 msgstr ""
+"Zombiler, yalnızca size doğru gelmenin yanında belirli yönlerde yürümeleri "
+"için aldatılabilir Örneğin, bir merdivende onların altındaysanız (ama "
+"merdivenin altında değil) sizden kaçabilirler. Bu bilgi, kazacak hiçbir "
+"yeriniz olmadığında hayatınızı kurtarabilir ve bir sonraki düzeye çıkmak "
+"istediğinizde çok faydalı olabilir.\n"
+"\n"
+"Özel bir durum olarak, bir zombi bir merdivende altınızdayken ve bir başkası "
+"sizin üstünüzde olduğundadır. O zaman üstteki kaçmaz, size doğru iner. Ama "
+"genellikle size ulaşmadan hemen önce döner. Bu durumla en başta "
+"karşılaşacaksınız ve güçlü sinirlere gereksinimiz var; ancak nasıl tepki "
+"vereceklerini bildikten sonra üstesinden gelmek çok güç olmamalı.\n"
+"\n"
+"Başka bir yararlı numara ise, bir veya daha fazla zombinin bir düzeyinde, "
+"ancak solunda veya sağında durmaktır. Size doğrudan bir yol yoksa o düzeye "
+"gidebilir ve donmuş kalabilirler veya size doğru tökezleyebilir ve kalıcı "
+"veya yeni kazılmış bir çukura düşebilirler.\n"
+"\n"
+"Not: Sağ alt merdivene geldiğinizde her iki zombinin de biraz ayrı olsalar "
+"da üzerinden geçmeniz olanaklı. Aslında, onları minimum düzeyde ayrı tutmak "
+"çok önemlidir, aksi takdirde biri diğerinin başının üzerinde yürür ve sol "
+"taraftaki tepeye çıkan merdivene ulaşmanızı olanaksız duruma getirir. Sadece "
+"sağ alttaki merdivene gidin ve yaklaşana kadar orada bekleyin - hiçbir şeyi "
+"değiştirmezseniz tuttukları uzaklık idealdir."
 
 #: gamedata/game_GotD.txt:57
 #, kde-format
@@ -2469,7 +2514,7 @@ msgstr "Hiç Endişelenme"
 #: gamedata/game_GotD.txt:58
 #, kde-format
 msgid "Come on, they are completely harmless ;-)"
-msgstr ""
+msgstr "Hadi ama, tamamen zararsızlar ;-)"
 
 #: gamedata/game_GotD.txt:61
 #, kde-format
@@ -2494,6 +2539,22 @@ msgid ""
 "somewhere. Given time, some of them will not appear above the bricks and "
 "will fall to the floor, which will make this level a bit easier for you."
 msgstr ""
+"Tüm zombilerin eşit derecede hızlı olmadığını fark edebilirsiniz. Büyük "
+"gruplar halinde toplananlar, tek tek olanlardan daha yavaştır - en azından "
+"küçük bir rahatlama olabilir.\n"
+"\n"
+"Altını da alıyorlar - büyük olasılıkla önceki yaşamlarından kalma eski bir "
+"içgüdü.\n"
+"\n"
+"Ancak bu durumda, altını size indirebilecekleri için faydalıdır.\n"
+"\n"
+"Tuzaklarınızı dikkatlice yerleştirin: Onlardan kaçmak için sınırsız alanınız "
+"yok.\n"
+"\n"
+"Ayrıca zombilerin bir şekilde ölümsüz olduğuna dikkat edin: hepsi bir yerde "
+"yeniden ortaya çıkacak. Zaman verildiğinde, bazıları tuğlaların üzerinde "
+"görünmeyecek ve yere düşecek, bu da bu düzeyi sizin için biraz daha "
+"kolaylaştırır."
 
 #: gamedata/game_GotD.txt:73
 #, kde-format
@@ -2509,6 +2570,12 @@ msgid ""
 "heads. Going up immediately will help you to group them. Make sure no zombie "
 "is walking on the others' heads when you lure them towards you."
 msgstr ""
+"Merdiveninizin çok kısa olduğunu mu düşünüyorsunuz?\n"
+"\n"
+"Bence yatay merdiven, zombilerin kafalarının üzerinden tırmanmanız için "
+"yeterince yüksek. Hemen yukarı çıkmak onları gruplandırmanıza yardımcı "
+"olacaktır. Diğerlerini kendinize doğru çekerken hiçbir zombinin kafalarının "
+"üzerinde yürümediğinden emin olun."
 
 #: gamedata/game_GotD.txt:79
 #, kde-format
@@ -2526,11 +2593,18 @@ msgid ""
 "ladders. Find the right moment to get up and dig the bricks on the left, "
 "then you will be able to avoid him."
 msgstr ""
+"Düşecek sahte tuğlalar yok, bu yüzden işleri zor yoldan yapmalısın. "
+"Zombilerin sonuncusunu geçmek bir tür meydan okuma oluşturabilir.\n"
+"\n"
+"Altlarındaki merdivende iseniz zombilerin sizden kaçtığını unutmayın. Bu, "
+"merdivenlerin solundaki boşluğun yanında yukarı ve aşağı ilerleyecektir. "
+"Kalkmak ve soldaki tuğlaları kazmak için doğru anı bulun, o zaman ondan "
+"kaçınabileceksiniz."
 
 #: gamedata/game_GotD.txt:85
 #, kde-format
 msgid "Three Little Pieces Of Elegance"
-msgstr ""
+msgstr "Zarafetin Üç Küçük Parçası"
 
 #: gamedata/game_GotD.txt:86
 #, kde-format
@@ -2540,6 +2614,11 @@ msgid ""
 "it. In the first box, for example, this saves your life, because you can run "
 "over the upper brick and then trap the zombie."
 msgstr ""
+"Burada zamanlama sorunlarıyla karşı karşıya kalıyorsunuz. Çoğu durumda bir "
+"tuğla kazmanız, ardından yeniden doldurmadan hemen önce beklemeniz ve "
+"altındaki tuğlayı kazmanız gerekir. Örneğin ilk kutuda bu, hayatınızı "
+"kurtarıyor çünkü üst tuğlanın üzerinden geçebilir ve ardından zombiyi tuzağa "
+"düşürebilirsiniz."
 
 #: gamedata/game_GotD.txt:89
 #, kde-format
@@ -2553,6 +2632,9 @@ msgid ""
 "of this level. The trick is to separate the zombies with the gold from the "
 "others and dig them in."
 msgstr ""
+"Bu bölümün en zor kısmının zombilerden altın almak olduğunu fark "
+"edeceksiniz. İşin püf noktası, altınları olan zombileri diğerlerinden "
+"ayırmak ve onları kazmaktır."
 
 #: gamedata/game_GotD.txt:93
 #, kde-format
@@ -2574,6 +2656,16 @@ msgid ""
 "you wait for the zombie to fall down, is sometimes important - especially at "
 "the last gap."
 msgstr ""
+"Sağ tarafta, son zombinin sizi takip etmesine gereksiniminiz var.\n"
+"\n"
+"Biraz isteksiz olabilir; ancak merak etmeyin, bir şekilde başka planları "
+"varsa ve başka bir yöne gittiyse her zaman geri dönebilirsiniz.\n"
+"\n"
+"Sizi takip ettiğinden emin olmak için bazen hareket etmeden önce sizi "
+"neredeyse yakalamasını beklemeniz gerekir, aksi halde geri döner.\n"
+"\n"
+"Son tavsiye: Zombinin düşmesini beklerken bir merdivende tam olarak "
+"durduğunuz yükseklik bazen önemlidir - özellikle son boşlukta."
 
 #: gamedata/game_GotD.txt:103
 #, kde-format
@@ -2599,6 +2691,19 @@ msgid ""
 "them. The place they start from when you lure them down is crucial. Trial "
 "and error will help you figure this one out."
 msgstr ""
+"Altını elde etmek işin daha kolay kısmı: Dış tapınağa çıkın ve iç tapınağa "
+"yukarıdan girin - oradan altını kazmak olanaklıdır.\n"
+"\n"
+"Zor olan kısım zombileri geçmek. Üçünü aynı anda geçemezsiniz, bu yüzden "
+"çözüm çoğunu cezbetmektir.\n"
+"\n"
+"Zombiyi iç tapınaktan alttaki çukura çekin, ardından sağdaki zombiyi iç "
+"tapınağa alın. Onu altının olduğu yere götürmeye çalışın. O zaman diğer "
+"zombileri de iç tapınağa sokmak daha kolaydır. \n"
+"\n"
+"Ancak zombiler bazen istediğiniz yere gitmek konusunda biraz isteksiz "
+"olacaktır. Onları cezbettiğinizde başladıkları yer çok önemlidir. Deneme ve "
+"yanılma, bunu anlamanıza yardımcı olacaktır."
 
 #: gamedata/game_GotD.txt:113
 #, kde-format
@@ -2629,6 +2734,8 @@ msgid ""
 "Sometimes it is better to wait, but sometimes you should take what is yours "
 "before the zombies steal it."
 msgstr ""
+"Bazen beklemek daha iyidir; ancak bazen sizin olanı zombiler çalmadan önce "
+"almalısınız."
 
 #: gamedata/game_GotD.txt:123
 #, kde-format
@@ -2670,6 +2777,35 @@ msgid ""
 "right to get past the zombie and lure him into the gap on the right by going "
 "down the ladder to the same height."
 msgstr ""
+"İlk zombiyle nasıl başa çıkacaksınız? Merdivenin yanında, sonsuza kadar "
+"dönerken içine atlayacağı sahte bir tuğla var. Onu geçmenin yolu, doğru "
+"zamanda (merdivenden yukarı tırmanışı sırasında) tuzağa düşmek, ardından "
+"hızla sola ve aşağı gitmektir.\n"
+"\n"
+"Şimdi bir sonraki merdivene giden boşluğu doldurmak için ona gereksiniminiz "
+"olacak. Şimdiye kadar zombilerin bu tür deliklere atlamak için manipüle "
+"edilebileceğini öğrenmiş olabilirsiniz. Ne yazık ki boşluğun altındaki tuğla "
+"bir tuzak, yani delik iki blok derinliğinde. Bu, çok derine batmadan önce "
+"başının üzerinden geçebileceğiniz küçük bir anınız olduğu anlamına gelir. "
+"Arkanızdaki tuğlaları kazarsanız bunu birden çok kez deneyebilirsiniz. "
+"Yeterince hızlı değilseniz onu yeniden serbest bırakabilirsiniz.\n"
+"\n"
+"Sonraki alan, kırılması çok zor olmayan bir kazma zamanlama bulmacasıdır.\n"
+"\n"
+"Açıkça ikinci zombi, zarar veremeyeceği deliğe yönlendirilecek.\n"
+"\n"
+"Altını senin için kapması için üçüncü zombiye gereksiniminiz var. Altınlı "
+"kutunun üstündeki merdivenlerin altında iki sahte tuğla var. Biri, düşmanın "
+"arkasına geçmek için kullanabileceğiniz sol merdivenin hemen yanında. Daha "
+"sonra bir adım aşağı inerseniz ortadaki tuzağa düşecek ve altını alacaktır. "
+"O zaman onu kazıp kurtararak cezbetmelisiniz. Altını yolda düşürmediğinizden "
+"emin olun!\n"
+"\n"
+"Bundan sonra endişelenmen gereken son bir zombi var. En soldaki merdivenin "
+"tepesinden bir adım aşağıdayken size doğru koştuğunu anlayacaksınız. Başının "
+"üzerinden geçmek ve bir sonraki merdivene ulaşmak için doğru anı bulun. "
+"Şimdi hemen yanındaki iki tuğlayı kazın, zombiyi geçmek için sağa atlayın ve "
+"merdivenden aynı yüksekliğe inerek onu sağdaki boşluğa çekin."
 
 #: gamedata/game_GotD.txt:137
 #, kde-format
@@ -2703,6 +2839,19 @@ msgid ""
 "\n"
 "Please watch the solution to get a better idea of how all this works."
 msgstr ""
+"Merdivene tırmanın; ancak minimum düzeyde beton sıra ile aynı düzeyde "
+"bekleyin. Ardından soldaki ilk merdivene koşun. Soldaki zombilerden önce ona "
+"ulaşmanız gerekiyor; ancak yukarıdaki tek zombi arkanızdan düşmelidir.\n"
+"\n"
+"Şimdi merdiveni tırmanın ve sağa gidin. Bir sonraki merdivenden bir adım "
+"aşağı inin ve aşağıdaki zombi geçene kadar bekleyin, ardından aşağı inin ve "
+"ilk merdiveninize geri dönün. Bir adım aşağı inin ve zombilerin çoğu "
+"başınızın üzerinden geçene kadar bekleyin. Sağdaki merdivenler artık en iyi "
+"kaçış yolu olmalı, çünkü orada sadece iki zombi kalmalıdır, geri kalanlar "
+"sol tarafta kalmalıdır.\n"
+"\n"
+"Tüm bunların nasıl çalıştığı hakkında daha iyi bir fikir edinmek için lütfen "
+"çözümü izleyin."
 
 #: gamedata/game_GotD.txt:149
 #, kde-format
@@ -2721,6 +2870,14 @@ msgid ""
 "descending and taking as much gold as possible - never staying too long at "
 "the bottom!"
 msgstr ""
+"Genel olarak tüm zombileri oldukları yerde tutmak en iyisidir. Elbette "
+"onları her zaman sağa çekmeye ve çukurlardan birine atmaya çalışabilirsiniz "
+"(altınlarını temizledikten sonra, söylemeye gerek yok), ancak bu oldukça "
+"karmaşık bir işlemdir.\n"
+"\n"
+"Hızlı bir şekilde alçalmadan ve olabildiğince çok altın almadan önce onları "
+"köşegenlerinin en tepesine çekmek daha iyidir - asla dipte çok uzun süre "
+"kalmayın!"
 
 #: gamedata/game_GotD.txt:155
 #, kde-format
@@ -2746,6 +2903,21 @@ msgid ""
 "he does not drop to the lower ladders with a piece of gold.  If he reappears "
 "near his original starting position, lucky you..."
 msgstr ""
+"Zombilerden birini çukura çekmeniz gerekiyor. Sahte tuğladan düştüklerinde, "
+"üstteki zombi diğerinin kafasının üzerinden geçebilir ve böylece çukura "
+"girebilir.\n"
+"\n"
+"Zombilerin nereye gittiği, merdivenin neresinde durduğuna ve aralarında ne "
+"kadar uzaklık olduğuna bağlıdır. Çok yakınlarsa birbirlerine yapışırlar, çok "
+"uzağa giderler ve ikisi birden düşer.\n"
+"\n"
+"Tuzağa düşen zombinin kafasının üzerinden geçip altını alabilmek için diğer "
+"zombinin üzerindeki sahte tuğlalardan geçmeniz gerekiyor. Kutudan çıkmak "
+"için düşerken tuzağa düşen zombinin altındaki tuğlayı kazın.\n"
+"\n"
+"Yeniden ortaya çıkan zombi hayatınızı biraz zorlaştırabilir. Alt "
+"merdivenlere bir parça altınla düşmediğinden emin olun. Özgün başlangıç "
+"pozisyonuna yakın bir yerde tekrar ortaya çıkarsa şanslısınız..."
 
 #: gamedata/game_GotD.txt:165
 #, kde-format
@@ -2761,16 +2933,21 @@ msgid ""
 "zombie: be quick. Wait for him to get close to you, then step down or up in "
 "the last moment and pass him."
 msgstr ""
+"Zombiyi serbest bırakın ve sol taraftaki altına ulaşmak için onu kullanın.\n"
+"\n"
+"Sonunda alçak merdivenlere indiğinizde zombiyi geçmenin tek bir yolu var: "
+"Hızlı olun. Size yaklaşmasını bekleyin, ardından son anda aşağı veya yukarı "
+"adım atın ve onu geçin."
 
 #: gamedata/game_GotD.txt:171
 #, kde-format
 msgid "Running Against Time"
-msgstr ""
+msgstr "Zamana Karşı Koşmak"
 
 #: gamedata/game_GotD.txt:172
 #, kde-format
 msgid "Be quicker than the zombies - otherwise they will eat you."
-msgstr ""
+msgstr "Zombilerden daha hızlı olun - yoksa sizi yerler."
 
 #: gamedata/game_GotD.txt:175
 #, kde-format
@@ -2783,6 +2960,8 @@ msgid ""
 "The two columns of gold on the left need to be taken first. The rest can be "
 "collected on the way back up."
 msgstr ""
+"Önce soldaki iki altın sütunun alınması gerekiyor. Gerisi dönüş yolunda "
+"toplanabilir."
 
 #: gamedata/game_GotD.txt:179
 #, kde-format
@@ -2801,6 +2980,14 @@ msgid ""
 "You might notice that there is not enough time to get the gold over on the "
 "right-hand side, so look for a short cut."
 msgstr ""
+"Kural 17: Kahraman olma! (Zombieland filminden alıntı)\n"
+"\n"
+"Dalış yaparken asla iki şeyi aynı anda yapmaya çalışmayın. Örneğin sol "
+"tarafta, zombiyi mağarasından çıkarmak için bir dalış, onu geçitten çıkarmak "
+"için bir dalış ve altın için gitmek için bir dalışa gereksinimi var.\n"
+"\n"
+"Sağ tarafta altını almak için yeterli zaman olmadığını fark edebilirsiniz, "
+"bu nedenle kısa bir yol arayın."
 
 #: gamedata/game_GotD.txt:187
 #, kde-format
@@ -2816,6 +3003,11 @@ msgid ""
 "is no real problem if zombies who have gold land in the pit: you can always "
 "release them later and get back the gold."
 msgstr ""
+"Bu düzeyin özü, bir parça altını olmayan zombileri diğerlerinden ayırıp "
+"çukura kilitlemektir. Bu nedenle, herhangi bir zombi onu almadan önce "
+"alabildiğiniz kadar altını almanız yararlı olacaktır. Altına sahip "
+"zombilerin çukura düşmesi gerçekten sorun değil: Onları daha sonra her zaman "
+"serbest bırakabilir ve altını geri alabilirsiniz."
 
 #: gamedata/game_GotD.txt:191
 #, kde-format
@@ -2846,6 +3038,27 @@ msgid ""
 "Finally you have to collect the remaining gold from the zombies. Never land "
 "on the ground to the right of them."
 msgstr ""
+"En alttaki en sağdaki üç merdivenin yanında sahte tuğlalar var, bu yüzden bu "
+"şekilde çok yükseğe tırmanamazsınız. Alttaki en soldaki iki merdiven daha "
+"yükseğe çıkar.\n"
+"\n"
+"Oraya ulaşmak için, en yakındaki zombiden kaçmak için önce en sağdaki "
+"merdivenden çıkmanız gerekiyor. Sonra ikinci merdivenin üstündeki altını "
+"alabilirsiniz. Ancak bir sonraki zombi soldan gelene kadar o merdivenin "
+"altında bekleyin, böylece son anda başının üzerinden geçebilirsiniz.\n"
+"\n"
+"Şimdi üçüncü merdivenden yukarı çıkın, altını oraya götürüp düşün ve yeniden "
+"yukarı çıkın. En soldaki merdivenlere koşmak için ideal anı bekleyin. Eğer "
+"soldan bir zombi peşinizden gelirse onun başının üzerinden geçin ve koşmaya "
+"başlayın.\n"
+"\n"
+"Sola gidemiyorsanız ortadaki küçük merdiveni tırmanmak size biraz yer ve "
+"zaman kazandırabilir. Ayrıca size daha kısa bir çıkış yolu da sunabilir - "
+"nasıl olduğunu görmek için çözümü oynayın.\n"
+"\n"
+"Şimdi üst düzeylerdeki tüm altınları temizlemeye çalışın; ancak tuzaklara "
+"dikkat edin! Son olarak zombilerden kalan altınları toplamanız gerekiyor. "
+"Asla sağlarına yere inmeyin."
 
 #: gamedata/game_GotD.txt:203 gamedata/game_lars.txt:44
 #, kde-format
@@ -2860,6 +3073,10 @@ msgid ""
 "The last piece of gold can only be reached with the help of the zombie: the "
 "same goes for the ladders leading back to the top."
 msgstr ""
+"Her altın parçasını alın, aksi takdirde geri dönüş yolunuz engellenir.\n"
+"\n"
+"Son altın parçasına yalnızca zombinin yardımıyla ulaşılabilir: Aynı şey "
+"tepeye çıkan merdivenler için de geçerlidir."
 
 #: gamedata/game_GotD.txt:209
 #, kde-format
@@ -2875,6 +3092,11 @@ msgid ""
 "route carefully before you dig down. Zombies can also be used to fill the "
 "gaps."
 msgstr ""
+"Sürprizi bozmak istemem...\n"
+"\n"
+"Ancak altının üzerindeki tuğlalara ulaştığınızda, kazmadan önce dikkatlice "
+"bir kaçış rotası planlamalısınız. Zombiler de boşlukları doldurmak için "
+"kullanılabilir."
 
 #: gamedata/game_GotD.txt:215
 #, kde-format
@@ -2887,6 +3109,8 @@ msgid ""
 "If you are not too happy with that many zombies running around, there is "
 "more than one opportunity to get rid of them!"
 msgstr ""
+"Etrafta dolaşan bu kadar çok zombiden memnun değilseniz onlardan kurtulmak "
+"için birden fazla fırsatınız var!"
 
 #: gamedata/game_GotD.txt:219
 #, kde-format
@@ -2900,6 +3124,9 @@ msgid ""
 "bottom, let all the zombies out of the prison. You might have to enter it "
 "again..."
 msgstr ""
+"Zombilerin altından kaymak için sahte tuğlaları kullanın. Aşağıya "
+"vardığınızda, tüm zombilerin hapishaneden çıkmasına izin verin. Yeniden "
+"girmek zorunda kalabilirsiniz..."
 
 #: gamedata/game_GotD.txt:223
 #, kde-format
@@ -2937,6 +3164,32 @@ msgid ""
 "downstairs long enough for them to start circling, then to go upstairs as "
 "quickly as possible, so as to step over their heads."
 msgstr ""
+"Bu düzey, zombilerin garip davranışlarına bağlıdır. Ne olduğunu görmek için "
+"çözümü izlemeye değer.\n"
+"\n"
+"Yere inip altınları topladıktan sonra ekstra merdivenler görünecektir. "
+"Bunlar, soldaki zombiyi çukurunuza çekerek ve ardından sağdaki merdiveni "
+"tırmanarak ve başının üzerinden geçerek onu atlatmayı olanaklı kılar. Bunu "
+"olabildiğince çabuk halletmelisiniz.\n"
+"\n"
+"Şimdi soldaki kısa bir merdivenin veya beton blokun üzerinde bekleyin. Bu, "
+"soldaki bazı zombilerin üstünüze çıkıp oradan aşağı düşmesine neden "
+"olacaktır. Bunu ancak bu noktaya kısa sürede gelirseniz yapacaklardır.\n"
+"\n"
+"Dört zombi de düştüğünde, yukarı çıkın ve beton çukurun sağında zombiler "
+"gelip yeniden doldurana kadar bekleyin. Ardından tarafları değiştirin ve "
+"betonun solunda bekleyin. Bu ürkütücü zombi dansına başlayacaklar...\n"
+"\n"
+"Merdivenin en üstüne gidin ve başlarının üzerinden kısa merdivenlerin "
+"sırasına geçin. En soldaki kısa merdivenin üstünde bekleyin ve daire çizmeye "
+"başladıklarında yeniden başlarının üzerinden geçin. Şimdi sağa giden "
+"merdivenlerde olmalısınız.\n"
+"\n"
+"Sağdaki zombilerle uğraşmak biraz zor. Üst zombi ile aynı yüksekliğe gitmek "
+"onların daire çizmeye başlamasına neden olur, ancak üstlerine çıkar çıkmaz "
+"dururlar. Alt katta daire çizmeye başlamaları için yeterince uzun süre "
+"beklemek, sonra başlarının üzerinden geçmek için olabildiğince çabuk yukarı "
+"çıkmak çok iyi bir zamanlama gerektirir."
 
 #: gamedata/game_GotD.txt:238
 #, kde-format
@@ -2978,6 +3231,42 @@ msgid ""
 "left when collecting the gold. One last hint: if a zombie drops some gold, "
 "collect it on your next trip, before it gets picked up again."
 msgstr ""
+"Kabul edelim: Kaçacak veya kazacak hiçbir yeri olmayan zemin, zombiler sizin "
+"için geldiğinde olmak istediğiniz yer değil. Ancak, ne zaman biraz altın "
+"toplarsanız orada kalırsınız. İşin püf noktası, zombilerin altlarından yan "
+"merdivenlerden birine koşarken üstlerinden düşmesini sağlamaktır.\n"
+"\n"
+"Bir olasılık, zombiler de yukarı çıkana kadar bir merdivenin tepesine yakın "
+"(ama dıştaki değil) beklemektir. Sonra inin, yanınıza alabildiğiniz kadar "
+"altın alın ve hızla merdivene dönün. Şanslıysanız oraya ulaştığınızda "
+"zombiler hâlâ havada olacak.\n"
+"\n"
+"Zombilerden biri merdivene sizden önce ulaştıysa yukarı çıkmayı deneyin. "
+"Çoğu zaman bu, zombinin sizden kaçmasına ve belki de bir tarafa çıkıp "
+"düşmesine neden olur. Zombi ancak en yakın çıkış olduğunu düşündüğü yere "
+"kadar yukarı çıkacak ama yerçekimini pek iyi anlamıyor... Sağda merdivenin "
+"yanında bir çubuk var, bu iyi ama solda merdivenin yanında bir altın parçası "
+"ve zombiler üzerinde yürüyebileceklerini sanıyorlar, bu yüzden onları "
+"merdivenden yukarı iterseniz sadece bir adım öteye gidecekler.\n"
+"\n"
+"Şanslıysanız siz oraya varmadan zombiler o altını kaldıracak. Ya da "
+"vardığınızda biraz uzakta olabilirler, bu yüzden toplaması kolaydır. Bunu "
+"başaramazsanız, zombileri altından biraz daha yükseğe itmeniz, ardından "
+"hızla koşmanız, yanlara dalmanız ve altını toplamanız gerekir. Bundan sonra "
+"merdivene geri dönmeli ve onları yeni çıkış noktası olan barın yukarısına ve "
+"yukarısına itmelisiniz.\n"
+"\n"
+"Daha hızlı ama belki daha riskli olan bir diğer olasılık, toplamak "
+"istediğiniz bir dizi altın parçasının üzerinde zombiler bir yan merdivende "
+"çıkış noktasının üzerine çıkana kadar beklemek, sonra düşüp altını toplamak "
+"ve ya son beton blokunuza yaslanmaktır; yoksa zombiler çıkışlarına "
+"ulaştığında düşerler. Daha sonra merdiveni terk edecekler ve siz onların "
+"altından koşarak bir kez daha merdivene tırmanırken düşecekler.\n"
+"\n"
+"Bu olasılıklar, Free Fall için kaydedilen çözümde gösterilmektedir; ancak "
+"zor yoldur: Altınları toplarken sağdan sola çalışmak aslında daha kolay. Son "
+"bir ipucu: Bir zombi biraz altın düşürürse yeniden alınmadan önce bir "
+"sonraki yolculuğunuzda toplayın."
 
 #: gamedata/game_GotD.txt:251
 #, kde-format
@@ -3009,6 +3298,25 @@ msgid ""
 "as the pit and wait for the zombie to walk over you and fall in. Then you "
 "are free to go."
 msgstr ""
+"Önce sağdaki altınla başlamalısınız, bu da küçük geçitte zombiyi atlatmanız "
+"gerektiği anlamına geliyor.\n"
+"\n"
+"Orada, alt altını geri alamazsınız (girebilirsiniz, ancak geri "
+"çıkamazsınız). Bu yüzden zombiyi çukura çekmeniz ve onu altınla birlikte sol "
+"tarafındaki tuğlaları kazarak ve içine çekerek öldürmeniz gerekiyor. Bazen "
+"akıllı olur ve tuzağa düşmeden önce altını düşürür, bu yüzden tüm süreci "
+"yinelemeniz gerekir. İlk etapta hızlı hareket etmek bunu daha az olası "
+"kılar...\n"
+"\n"
+"Zombi en üstte yeniden belirdiğinde, onu sol tarafa doğru çekin, yanından "
+"geçin ve çift tuğla sütunu kazarken sizi takip ettiğinden emin olun.\n"
+"\n"
+"Son altın parçası için zombiyi beton mağaraya çekip kafasına binin, altını "
+"alın ve gizli merdivenler göründüğünde olabildiğince çabuk dışarı çıkın. Bu, "
+"büyük olasılıkla en zor kısımdır.\n"
+"\n"
+"Çıkış merdiveninden önce çukura ulaştığınızda çukurla aynı düzeye inin ve "
+"zombinin üzerinizden geçip düşmesini bekleyin. Artık gitmekte özgürsünüz."
 
 #: gamedata/game_GotD.txt:263
 #, kde-format
@@ -3024,6 +3332,11 @@ msgid ""
 "After you are past the last one, let them fall onto the concrete, then "
 "collecting the gold will be a cakewalk."
 msgstr ""
+"Zombilerin altından geçmek daha kolay. Biri size gerçekten yaklaşana kadar "
+"bekleyin (son ana kadar bekleyin), ardından onu geçin.\n"
+"\n"
+"Sonuncuyu geçtikten sonra, betona düşmelerine izin verin, ardından altınları "
+"toplamak bir çocuk oyuncağı olacak."
 
 #: gamedata/game_GotD.txt:269
 #, kde-format
@@ -3046,11 +3359,22 @@ msgid ""
 "You will need to group the second wave of zombies before you can get past "
 "them."
 msgstr ""
+"Zombilerin yatay gitmeden önce sizin yönünüzde dikey olarak hareket ettiğini "
+"fark edeceksiniz. Bu, çoğu zaman düz bir çizgide yukarı doğru hareket "
+"edecekleri anlamına gelir. Yanlarına inmek için bunu kullanın.\n"
+"\n"
+"Tabii ki ilk zombi dalgası sadece bu numara ile geçilemeyecek kadar büyük, "
+"bu yüzden önce birkaç zombiyi küçük mağaraya çekmelisiniz. Sonra onları "
+"tırmanmak ve sonra inmek için önce yukarı doğru hareket edin. Ancak, "
+"zombiler düz bir çizgi oluşturmayacağından, iniş başlangıçta biraz zikzak "
+"gerektirir.\n"
+"\n"
+"Onları geçebilmek için ikinci zombi dalgasını gruplamanız gerekecek."
 
 #: gamedata/game_GotD.txt:277
 #, kde-format
 msgid "Zombie Lemmings"
-msgstr ""
+msgstr "Zombi \"Lemmings\""
 
 #: gamedata/game_GotD.txt:278
 #, kde-format
@@ -3065,6 +3389,15 @@ msgid ""
 "over a zombie as you climb the pop-up ladders, note that the zombies use the "
 "same trick themselves to come after you, so you will have to do it twice."
 msgstr ""
+"Zombilerin kafalarının üzerinden yürüyerek yukarı çıkın. Yalnızca son "
+"ikisiyle zorlaşıyor; çünkü orada kesin zamanlamaya gereksiniminiz var.\n"
+"\n"
+"Sağdaki altınla başlayın. Kutunun altındaki beşte ortadakiyle bitirin.\n"
+"\n"
+"Açılır merdivenleri tırmanırken bir zombinin üzerinden geçmeniz gereken "
+"yerlerde neden iki grup  yatay merdiven olduğunu merak ediyorsanız "
+"zombilerin de aynı numarayı sizin peşinizden gelmek için kullandıklarını "
+"unutmayın, bu yüzden iki kez yapmanız gerekecek."
 
 #: gamedata/game_GotD.txt:285
 #, kde-format
@@ -3074,7 +3407,7 @@ msgstr "Ölüm Tuzağı"
 #: gamedata/game_GotD.txt:286
 #, kde-format
 msgid "Rule Number 22: When in doubt, know your way out!"
-msgstr ""
+msgstr "22 Numaralı Kural: Kuşkuya düştüğünüzde çıkış yolunu bilin!"
 
 #: gamedata/game_GotD.txt:289 gamedata/game_plws.txt:227
 #, kde-format
@@ -3089,6 +3422,11 @@ msgid ""
 "as possible before anyone else. You might not manage to get every piece "
 "before them, but there are some places where it is easier to rob them."
 msgstr ""
+"Zombiler sonunda kendilerini gruplandıracaklar, bu da onlardan kaçınmanızı "
+"kolaylaştırıyor; ancak altınlarını çalmanızı güçleştirir. En iyisi, "
+"herkesten önce olabildiğince çok altın almanız. Her parçayı onlardan önce "
+"almayı başaramayabilirsiniz; ancak onları soymanın daha kolay olduğu bazı "
+"yerler var."
 
 #: gamedata/game_GotD.txt:293
 #, kde-format
@@ -3114,6 +3452,20 @@ msgid ""
 "to go inside more frequently than try to get everything at once and be "
 "locked in..."
 msgstr ""
+"İki zombinin üzerinde sola doğru yürüdükçe, bir noktada size doğru hareket "
+"eden bir tane daha olacak. Sola atlayın ve hemen üzerinden geçin, aksi "
+"takdirde merdivenlerden aşağı inemezsiniz.\n"
+"\n"
+"Ortadaki tüm altınları tek seferde toplamak en iyisidir (bir istisna "
+"dışında), aksi takdirde zombilerden bazı altınları geri almak uzun ve yorucu "
+"bir iş olacaktır.\n"
+"\n"
+"En alta geldiğinizde, büyük merdivenlerin dibinde yeterince bekleyerek her "
+"zombiyi aynı yönde hareket ettirirseniz işinize yarayabilir.\n"
+"\n"
+"Kutulardaki kazma zamanlama bulmacalarına gelince, her şeyi bir kerede alıp "
+"kilitli kalmaya çalışmaktansa daha sık içeri girmenin daha iyi olduğu "
+"konusunda tavsiyeme uyun..."
 
 #: gamedata/game_GotD.txt:303
 #, kde-format
@@ -3123,7 +3475,7 @@ msgstr "Yağmur Gibi Zombiler"
 #: gamedata/game_GotD.txt:304
 #, kde-format
 msgid "Let us see if you have learned your lesson about zombies and ladders..."
-msgstr ""
+msgstr "Bakalım zombiler ve merdivenler hakkında dersini almış mısınız..."
 
 #: gamedata/game_GotD.txt:307
 #, kde-format
@@ -3138,6 +3490,10 @@ msgid ""
 "\n"
 "To get past the other zombies, you sometimes need to run over their heads."
 msgstr ""
+"Zombinin merdivenin tepesine ulaştığı ve aşağı inmeye başladığı anı bekleyin "
+"- işte o zaman atlayın.\n"
+"\n"
+"Diğer zombileri geçmek için bazen başlarının üzerinden geçmeniz gerekir."
 
 #: gamedata/game_GotD.txt:313
 #, kde-format
@@ -3147,7 +3503,7 @@ msgstr "Zombiler Arasında"
 #: gamedata/game_GotD.txt:314
 #, kde-format
 msgid "All it takes is good strong nerves..."
-msgstr ""
+msgstr "Tek gereken iyi, güçlü sinirler..."
 
 #: gamedata/game_GotD.txt:317
 #, kde-format
@@ -3161,6 +3517,9 @@ msgid ""
 "\n"
 "Hurry up and do those puzzles. The clock is ticking..."
 msgstr ""
+"Zombilerle ilgili olan şey bu: daha yavaş olan daha ürkütücü.\n"
+"\n"
+"Acele edin ve şu bulmacaları yapın. Zaman geçiyor..."
 
 #: gamedata/game_GotD.txt:323
 #, kde-format
@@ -3173,6 +3532,8 @@ msgid ""
 "The only way to get the gold is to ride the whole way on his head. Yee-hah! "
 "Ride him cowboy!"
 msgstr ""
+"Altını almanın tek yolu, bütün yolu kafasına binip gitmektir. Evet-hah! Bin "
+"ona kovboy!"
 
 #: gamedata/game_GotD.txt:327
 #, kde-format
@@ -3185,6 +3546,8 @@ msgid ""
 "Watch what happens if you climb up a ladder on the side, but only to where "
 "you are level with the bricks the zombies are walking on..."
 msgstr ""
+"Yan taraftaki bir merdivene tırmanırsanız; ancak yalnızca zombilerin "
+"üzerinde yürüdüğü tuğlalarla aynı hizada olduğunuzda ne olduğunu izleyin..."
 
 #: gamedata/game_GotD.txt:331
 #, kde-format
@@ -3198,6 +3561,9 @@ msgid ""
 "who are on their own and not in a row with the others will ruin your day. "
 "Therefore the left side is easier, because there are fewer lone zombies. "
 msgstr ""
+"Zombilerden kaçınmak düşündüğünüzden daha kolaydır. Yalnızca kendi başına "
+"olan ve diğerleriyle üst üste olmayan birkaç zombi gününüzü mahvedecek. Bu "
+"nedenle sol taraf daha kolay; çünkü daha az yalnız zombi var. "
 
 #: gamedata/game_GotD.txt:335
 #, kde-format
@@ -3210,6 +3576,8 @@ msgid ""
 "You can distract the zombie from running down when you are on the same level "
 "as him. Who said it had to be fair play?"
 msgstr ""
+"Onunla aynı düzeyde olduğunuzda zombinin kaçmasını engelleyebilirsiniz. Adil "
+"oyun olması gerektiğini kim söyledi?"
 
 #: gamedata/game_GotD.txt:339
 #, kde-format
