@@ -24,6 +24,7 @@ include(ECMQtDeclareLoggingCategory)
 include(ECMSetupVersion)
 include(FeatureSummary)
 include(InternalMacros)
+include(ECMDeprecationSettings)
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Gui Widgets)
 
@@ -41,12 +42,10 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
 )
 
 find_package(KF5KDEGames 7.3.0 REQUIRED)
-
-add_definitions(
-    -DQT_DISABLE_DEPRECATED_BEFORE=0x050F00
-    -DQT_DEPRECATED_WARNINGS_SINCE=0x060000
-    -DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055900
-    -DKF_DEPRECATED_WARNINGS_SINCE=0x060000
+ecm_set_disabled_deprecation_versions(
+    QT 5.15.2
+    KF 5.101
+    KDEGAMES 7.3
 )
 
 add_subdirectory(src)
