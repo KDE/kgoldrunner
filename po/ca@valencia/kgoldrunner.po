@@ -7423,8 +7423,9 @@ msgstr ""
 "fer en iniciar este nivell. Cava un forat, atrapa l'enemic a dins, i corre "
 "sobre ell, mentre un altre inicia una persecució trepidant...\n"
 "\n"
-"Si et sents angoixat, pots prémer la tecla de pausa en qualsevol moment (per "
-"defecte P o Esc) i descansar. Prem-la de nou quan vullgues continuar."
+"Si et sents angoixat, pots prémer la tecla de pausa en qualsevol moment (de "
+"manera predeterminada P o Esc) i descansar. Prem-la de nou quan vullgues "
+"continuar."
 
 #: gamedata/game_tute.txt:43
 #, kde-format
@@ -7540,8 +7541,9 @@ msgstr ""
 "No pots arribar a l'or, així que has d'aconseguir que els enemics té "
 "l'acosten. Però com els faràs tornar?\n"
 "\n"
-"Si estàs cansat, pots prémer la tecla de pausa (per defecte P o Esc) i fer "
-"un descans. També, pots emprar el menú «Configuració» per a alentir l'acció."
+"Si estàs cansat, pots prémer la tecla de pausa (de manera predeterminada P o "
+"Esc) i fer un descans. També, pots emprar el menú «Configuració» per a "
+"alentir l'acció."
 
 #: gamedata/game_tutea.txt:19
 #, kde-format
@@ -8181,7 +8183,7 @@ msgstr "Mostra com guanyar este nivell."
 #: src/kgoldrunner.cpp:248
 #, kde-format
 msgid "Play a recording of how to win this level, if there is one available."
-msgstr "Reproduïx un gravació de com guanyar este nivell, si n'hi ha una."
+msgstr "Reproduïx una gravació de com guanyar este nivell, si n'hi ha una."
 
 #: src/kgoldrunner.cpp:252
 #, kde-format
@@ -8196,7 +8198,7 @@ msgstr "Repetició instantània."
 #: src/kgoldrunner.cpp:254
 #, kde-format
 msgid "Show a recording of the level you are currently playing."
-msgstr "Mostra un gravació del nivell que s'està jugant."
+msgstr "Mostra una gravació del nivell que s'està jugant."
 
 #: src/kgoldrunner.cpp:259
 #, kde-format
@@ -8214,8 +8216,8 @@ msgid ""
 "Show a recording of the last level you played and finished, regardless of "
 "whether you won or lost."
 msgstr ""
-"Mostra un gravació de l'últim nivell jugat i acabat, amb independència de si "
-"has guanyat o perdut."
+"Mostra una gravació de l'últim nivell jugat i acabat, amb independència de "
+"si has guanyat o perdut."
 
 #: src/kgoldrunner.cpp:267
 #, kde-format
@@ -8230,7 +8232,7 @@ msgstr "Torna a jugar qualsevol nivell."
 #: src/kgoldrunner.cpp:269
 #, kde-format
 msgid "Show a recording of any level you have played so far."
-msgstr "Mostra un gravació de qualsevol nivell que hages jugat fins ara."
+msgstr "Mostra una gravació de qualsevol nivell que hages jugat fins ara."
 
 #: src/kgoldrunner.cpp:274
 #, kde-format
@@ -9270,7 +9272,7 @@ msgstr "Torna a jugar l'últim nivell"
 msgid ""
 "ERROR: Could not find and replay a recording of the last level you played."
 msgstr ""
-"ERROR: No s'ha pogut trobar i reproduir un gravació de l'últim nivell que "
+"ERROR: No s'ha pogut trobar i reproduir una gravació de l'últim nivell que "
 "has jugat."
 
 #: src/kgrgame.cpp:678
@@ -9415,8 +9417,8 @@ msgstr "&Finalitza"
 #: src/kgrgame.cpp:1141
 #, kde-format
 msgid ""
-"<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the <b>"
-"\"%1\"</b> game !!</p>"
+"<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the "
+"<b>\"%1\"</b> game !!</p>"
 msgstr ""
 "<b>FELICITATS!!!!</b><p>Has conquerit l'últim nivell de la partida <b>«%1»</"
 "b>!!</p>"
