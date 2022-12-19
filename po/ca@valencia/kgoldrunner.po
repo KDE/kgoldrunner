@@ -9417,8 +9417,8 @@ msgstr "&Finalitza"
 #: src/kgrgame.cpp:1141
 #, kde-format
 msgid ""
-"<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the "
-"<b>\"%1\"</b> game !!</p>"
+"<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the <b>"
+"\"%1\"</b> game !!</p>"
 msgstr ""
 "<b>FELICITATS!!!!</b><p>Has conquerit l'últim nivell de la partida <b>«%1»</"
 "b>!!</p>"
