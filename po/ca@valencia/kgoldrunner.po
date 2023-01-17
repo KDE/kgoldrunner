@@ -8915,7 +8915,7 @@ msgstr "Barra d'eines d'edició"
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Name or Hint"
-msgstr "Edició del nom o del consell"
+msgstr "Editeu el nom o el consell"
 
 #: src/kgrdialog.cpp:57
 #, kde-format
@@ -8931,7 +8931,7 @@ msgstr "Consell per al nivell:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Game Info"
-msgstr "Edició de la informació de la partida"
+msgstr "Editeu la informació de la partida"
 
 #: src/kgrdialog.cpp:124
 #, kde-format
@@ -8969,7 +8969,7 @@ msgstr "Quant a esta partida:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Game"
-msgstr "Creació d'una partida"
+msgstr "Creeu una partida"
 
 #: src/kgrdialog.cpp:187
 #, kde-format
