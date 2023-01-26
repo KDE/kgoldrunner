@@ -61,12 +61,12 @@ ecm_add_app_icon(kgoldrunner ICONS ${ICONS_SRCS})
 
 target_link_libraries(kgoldrunner
     KF5KDEGames
-    KF5::ConfigWidgets
-    KF5::DBusAddons
-    KF5::KIOCore
-    KF5::Crash
-    KF5::WidgetsAddons
-    KF5::XmlGui
+    KF${KF_MAJOR_VERSION}::ConfigWidgets
+    KF${KF_MAJOR_VERSION}::DBusAddons
+    KF${KF_MAJOR_VERSION}::KIOCore
+    KF${KF_MAJOR_VERSION}::Crash
+    KF${KF_MAJOR_VERSION}::WidgetsAddons
+    KF${KF_MAJOR_VERSION}::XmlGui
 )
 
 install(TARGETS kgoldrunner  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
