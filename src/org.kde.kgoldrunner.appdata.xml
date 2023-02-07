@@ -31,7 +31,7 @@
   <name xml:lang="sr-ijekavian">К‑златобојац</name>
   <name xml:lang="sr-ijekavianlatin">K‑zlatobojac</name>
   <name xml:lang="sv">Kgoldrunner</name>
-  <name xml:lang="tr">KGoldrunner</name>
+  <name xml:lang="tr">K Altın Avı</name>
   <name xml:lang="uk">Золотошукач</name>
   <name xml:lang="x-test">xxKGoldrunnerxx</name>
   <name xml:lang="zh-CN">KGoldrunner</name>
@@ -97,7 +97,7 @@
     <p xml:lang="sr-ijekavian">К‑златобојац је акциона игра у којој јунак трчи кроз лавиринт, пење се уз степенице, копа рупе и избегава непријатеље како био се докопао свих златних груменова и побегао на наредни ниво. И ваши непријатељи јуре за златом, и, још горе, за вама!</p>
     <p xml:lang="sr-ijekavianlatin">K‑zlatobojac je akciona igra u kojoj junak trči kroz lavirint, penje se uz stepenice, kopa rupe i izbegava neprijatelje kako bio se dokopao svih zlatnih grumenova i pobegao na naredni nivo. I vaši neprijatelji jure za zlatom, i, još gore, za vama!</p>
     <p xml:lang="sv">Kgoldrunner är ett äventyrsspel där hjälten springer genom en labyrint, klättrar på stegar, gräver hål och undviker fiender för att samla in alla guldklimpar och fly till nästa nivå. Fienderna är också ute efter guldet. Vad värre är, de är också är ute efter dig!</p>
-    <p xml:lang="tr">KGoldrunner, kahramanımızın labirentte dolaştığı, tüm altın külçelerini toplamak ve bir sonraki düzeye çıkmak için merdiven tırmandığı, delik açtığı ve düşman avı yaptığı bir kaçış aksiyon oyunudur. Düşmanların da altının peşinde. Daha da kötüsü, senin peşindeler!</p>
+    <p xml:lang="tr">K Altın Avı, kahramanımızın labirentte dolaştığı, tüm altın külçelerini toplamak ve bir sonraki düzeye çıkmak için merdiven tırmandığı, delik açtığı ve düşman avı yaptığı bir kaçış aksiyon oyunudur. Düşmanların da altının peşinde. Daha da kötüsü, senin peşindeler!</p>
     <p xml:lang="uk">«Золотошукач» — рухлива гра, де герой подорожує лабіринтом, видирається на стіни, копає ями та втікає від ворогів, збираючи при цьому золоті самородки і переходячи з рівня на рівень. Окрім вашого героя, за золотом полюють і вороги. Вони також не проти звести вашого героя з цього світу!</p>
     <p xml:lang="x-test">xxKGoldrunner is an action game where the hero runs through a maze, climbs stairs, dig holes and dodges enemies in order to collect all the gold nuggets and escape to the next level. Your enemies are also after the gold. Worse still, they are after you!.xx</p>
     <p xml:lang="zh-CN">KGoldrunner 是一个动作游戏，主角穿过迷宫，爬楼梯，挖洞和躲闪敌人，以收集所有的金块并逃生到下一关。您的敌人也在追金。更糟的是，他们在追您！</p>
@@ -253,7 +253,7 @@
       <li xml:lang="sr-ijekavian">Два режима за непријатеље: класични и К‑златобојчев. У К‑златобојчевом режиму непријатељи су паметнији, у класичном их је лакше заварати.</li>
       <li xml:lang="sr-ijekavianlatin">Dva režima za neprijatelje: klasični i K‑zlatobojčev. U K‑zlatobojčevom režimu neprijatelji su pametniji, u klasičnom ih je lakše zavarati.</li>
       <li xml:lang="sv">Två typer av fiender: klassiska och Kgoldrunner-regler. Med Kgoldrunner-regler är de intelligentare, med klassiska regler är det enklare att lura dem.</li>
-      <li xml:lang="tr">Düşmanlar için iki kip: Klasik ve KGoldrunner kipi. KGoldrunner kipinde daha zekidir, klasik kipte onları kandırmak daha kolaydır</li>
+      <li xml:lang="tr">Düşmanlar için iki kip: Klasik ve K Altın Avı kipi. K Altın Avı kipinde daha zekidir, klasik kipte onları kandırmak daha kolaydır</li>
       <li xml:lang="uk">Два режими поведінки ворогів: класичний і режим «Золотошукача». У режимі «Золотошукача» вороги кмітливіші, їх не так просто обманути, як у класичному режимі.</li>
       <li xml:lang="x-test">xxTwo modes for the enemies: classical and KGoldrunner-mode, in KGoldrunner-mode they are more intelligent, in the classical mode it is easier to fool themxx</li>
       <li xml:lang="zh-CN">两种模式的敌人：经典模式和 KGoldrunner 模式，在 KGoldrunner 模式，他们更聪明，而在经典模式，则更容易愚弄他们</li>
@@ -380,7 +380,7 @@
       <caption xml:lang="sk">Hranie KGoldrunner</caption>
       <caption xml:lang="sl">Igra KGoldrunner</caption>
       <caption xml:lang="sv">Spela Kgoldrunner</caption>
-      <caption xml:lang="tr">KGoldrunner oynarken</caption>
+      <caption xml:lang="tr">K Altın Avı oynarken</caption>
       <caption xml:lang="uk">Гра у Золотошукача</caption>
       <caption xml:lang="x-test">xxPlaying KGoldrunnerxx</caption>
       <caption xml:lang="zh-CN">正在玩 KGoldrunner</caption>
