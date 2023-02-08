@@ -1,36 +1,37 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kgoldrunner package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-20 00:44+0000\n"
-"PO-Revision-Date: 2023-02-07 11:05\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2023-02-07 08:48+0100\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
+"Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-stable/messages/kgoldrunner/kgoldrunner.pot\n"
-"X-Crowdin-File-ID: 6281\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "KDE 中国"
+msgstr "Temuri Doghonadze"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "kde-china@kde.org"
+msgstr "Temuri.doghonadze@gmail.com"
 
 #: gamedata/game_blb.txt:3
 #, kde-format
 msgid "Beginner's Luck"
-msgstr "新手的运气"
+msgstr "დამწყების ბედი"
 
 #: gamedata/game_blb.txt:4
 #, kde-format
@@ -45,18 +46,11 @@ msgid ""
 "\n"
 "Jason provided most of the solutions, but some are by Ian Wadham."
 msgstr ""
-"这70个级别是传统游戏的分级介绍，由Jason Self (j at jxself org) 编写。 虽然没"
-"有提示，但每个级别都有一个已有的解决方案。\n"
-"\n"
-"游戏针对的是新玩家, 但后期的级别相当困难, 所以要留意敌人对你的动作的反应。当"
-"你到达70级时, 你需要达到训练有素的程度。\n"
-"\n"
-"Jason 提供了大多数的解决方案, 有些是由Ian Wadham完成。"
 
 #: gamedata/game_CM.txt:2
 #, kde-format
 msgid "Curse of the Mummy"
-msgstr "木乃伊的诅咒"
+msgstr "მუმიის წყევლა"
 
 #: gamedata/game_CM.txt:3
 #, kde-format
@@ -73,19 +67,11 @@ msgid ""
 "ca>, with a few Egyptian ideas and the Red Sea level contributed by Ian "
 "Wadham."
 msgstr ""
-"因为借鉴了西方关于木乃伊和埃及的电影图标, 这系列的关卡在埃及宝藏的主题下运行"
-"能获得更好的效果。有时你也需要在下落的时候挖洞。\n"
-"\n"
-"复习一下您的埃及古物学吧。您将在提示中找到与每个级别相关的各种信息，它们是来"
-"自维基百科的真实数据而不是好莱坞电影。\n"
-"\n"
-"锦标赛游戏由Steve Mann <smann at cgl uwaterloo ca>编写，有几个关于埃及和红海"
-"的关卡是由Ian Wadham贡献。"
 
 #: gamedata/game_CM.txt:10
 #, kde-format
 msgid "The Giza Plateau"
-msgstr "吉萨高原"
+msgstr "გიზას პლატო"
 
 #: gamedata/game_CM.txt:11
 #, kde-format
@@ -99,16 +85,11 @@ msgid ""
 "too many reappear on the right, it becomes difficult to escape at the end.  "
 "To get started, you will need to use the technique of digging while falling."
 msgstr ""
-"开罗郊区的吉萨高原是吉萨墓地的遗址, 它由胡夫金字塔(又称吉萨大金字塔)、卡夫拉"
-"金字塔、孟卡拉金字塔，以及狮身人面像和其他一些较小的建筑物组成。\n"
-"\n"
-"当你在高原下走的时候, 尽量避免杀死木乃伊: 如果有太多木乃伊重新出现在右边, 最"
-"后就很难逃脱。开始时你将需要使用一边下落一边挖掘的技术。"
 
 #: gamedata/game_CM.txt:16
 #, kde-format
 msgid "The Pyramid of Djoser"
-msgstr "左塞尔金字塔"
+msgstr "ჯოსერს პირამიდა"
 
 #: gamedata/game_CM.txt:17
 #, kde-format
@@ -139,7 +120,7 @@ msgstr ""
 #: gamedata/game_CM.txt:28
 #, kde-format
 msgid "Pharaoh's Barge"
-msgstr "法老之舟"
+msgstr "ფარაონის ბარჟა"
 
 #: gamedata/game_CM.txt:29
 #, kde-format
@@ -160,7 +141,7 @@ msgstr ""
 #: gamedata/game_CM.txt:36
 #, kde-format
 msgid "Pyramid Puzzles"
-msgstr "金字塔之谜"
+msgstr "პირამიდის პაზლები"
 
 #: gamedata/game_CM.txt:37
 #, kde-format
@@ -188,7 +169,7 @@ msgstr ""
 #: gamedata/game_CM.txt:46
 #, kde-format
 msgid "Crocodile"
-msgstr "鳄鱼"
+msgstr "ნიანგი"
 
 #: gamedata/game_CM.txt:47
 #, kde-format
@@ -208,7 +189,7 @@ msgstr ""
 #: gamedata/game_CM.txt:54
 #, kde-format
 msgid "Three Pyramids"
-msgstr "三个金字塔"
+msgstr "სამი პირამიდა"
 
 #: gamedata/game_CM.txt:55
 #, kde-format
@@ -225,7 +206,7 @@ msgstr ""
 #: gamedata/game_CM.txt:60
 #, kde-format
 msgid "Tura Caves"
-msgstr "图拉石窟"
+msgstr "ტურას მღვიმეები"
 
 #: gamedata/game_CM.txt:61
 #, kde-format
@@ -254,7 +235,7 @@ msgstr ""
 #: gamedata/game_CM.txt:68
 #, kde-format
 msgid "Pyramid Crawl"
-msgstr "金字塔的魔爪"
+msgstr "პირამიდაზე ბობღვა"
 
 #: gamedata/game_CM.txt:69
 #, kde-format
@@ -269,7 +250,7 @@ msgstr ""
 #: gamedata/game_CM.txt:74
 #, kde-format
 msgid "The Great Sphinx"
-msgstr "狮身人面像"
+msgstr "სფინქსი"
 
 #: gamedata/game_CM.txt:75
 #, kde-format
@@ -285,7 +266,7 @@ msgstr ""
 #: gamedata/game_CM.txt:80
 #, kde-format
 msgid "Ladder Pyramid"
-msgstr "梯形金字塔"
+msgstr "კიბის პირამიდა"
 
 #: gamedata/game_CM.txt:81
 #, kde-format
@@ -311,7 +292,7 @@ msgstr ""
 #: gamedata/game_CM.txt:88
 #, kde-format
 msgid "Ankh"
-msgstr "安科"
+msgstr "ანხი"
 
 #: gamedata/game_CM.txt:89
 #, kde-format
@@ -326,7 +307,7 @@ msgstr ""
 #: gamedata/game_CM.txt:94 gamedata/game_plwv.txt:55
 #, kde-format
 msgid "Pharaoh's Tomb"
-msgstr "法老之墓"
+msgstr "ფარაონის საფლავი"
 
 #: gamedata/game_CM.txt:95
 #, kde-format
@@ -350,7 +331,7 @@ msgstr ""
 #: gamedata/game_CM.txt:102
 #, kde-format
 msgid "Cat"
-msgstr "种类"
+msgstr "კატა"
 
 #: gamedata/game_CM.txt:103
 #, kde-format
@@ -371,7 +352,7 @@ msgstr ""
 #: gamedata/game_CM.txt:110
 #, kde-format
 msgid "Pyramid Power"
-msgstr "金字塔的力量"
+msgstr "პირამიდის ძალა"
 
 #: gamedata/game_CM.txt:111
 #, kde-format
@@ -394,7 +375,7 @@ msgstr ""
 #: gamedata/game_CM.txt:118
 #, kde-format
 msgid "Eye of Horus"
-msgstr "荷鲁斯之眼"
+msgstr "ჰორუსის თვალი"
 
 #: gamedata/game_CM.txt:119
 #, kde-format
@@ -415,7 +396,7 @@ msgstr ""
 #: gamedata/game_CM.txt:124
 #, kde-format
 msgid "Inverted Pyramid"
-msgstr "倒金字塔"
+msgstr "ამოტრიალებული პირამიდა"
 
 #: gamedata/game_CM.txt:125
 #, kde-format
@@ -436,7 +417,7 @@ msgstr ""
 #: gamedata/game_CM.txt:132
 #, kde-format
 msgid "Anubis"
-msgstr "阿努比斯"
+msgstr "ანუბისი"
 
 #: gamedata/game_CM.txt:133
 #, kde-format
@@ -462,7 +443,7 @@ msgstr ""
 #: gamedata/game_CM.txt:140
 #, kde-format
 msgid "Pyramid of Treasure"
-msgstr ""
+msgstr "განძის პირამიდა"
 
 #: gamedata/game_CM.txt:141
 #, kde-format
@@ -477,7 +458,7 @@ msgstr ""
 #: gamedata/game_CM.txt:146
 #, kde-format
 msgid "Sarcophagus"
-msgstr "石棺"
+msgstr "სარკოფანგი"
 
 #: gamedata/game_CM.txt:147
 #, kde-format
@@ -495,7 +476,7 @@ msgstr ""
 #: gamedata/game_CM.txt:152
 #, kde-format
 msgid "The Parting of the Red Sea"
-msgstr ""
+msgstr "წითელი ზღვის დაშორება"
 
 #: gamedata/game_CM.txt:153
 #, kde-format
@@ -525,7 +506,7 @@ msgstr ""
 #: gamedata/game_cnt.txt:2
 #, kde-format
 msgid "Count"
-msgstr "Count"
+msgstr "რაოდენობა"
 
 #: gamedata/game_cnt.txt:3
 #, kde-format
@@ -544,7 +525,7 @@ msgstr ""
 #: gamedata/game_cnt.txt:8
 #, kde-format
 msgid "Zero"
-msgstr "清零"
+msgstr "ნული"
 
 #: gamedata/game_cnt.txt:9
 #, kde-format
@@ -562,7 +543,7 @@ msgstr ""
 #: gamedata/game_cnt.txt:14
 #, kde-format
 msgid "One"
-msgstr "一个"
+msgstr "ერთი"
 
 #: gamedata/game_cnt.txt:15
 #, kde-format
@@ -585,7 +566,7 @@ msgstr ""
 #: gamedata/game_cnt.txt:22
 #, kde-format
 msgid "Two"
-msgstr "双"
+msgstr "ორი"
 
 #: gamedata/game_cnt.txt:23
 #, kde-format
@@ -598,7 +579,7 @@ msgstr ""
 #: gamedata/game_cnt.txt:26
 #, kde-format
 msgid "Three"
-msgstr "三"
+msgstr "სამი"
 
 #: gamedata/game_cnt.txt:27
 #, kde-format
@@ -612,7 +593,7 @@ msgstr ""
 #: gamedata/game_cnt.txt:30
 #, kde-format
 msgid "Four"
-msgstr ""
+msgstr "ოთხი"
 
 #: gamedata/game_cnt.txt:31
 #, kde-format
@@ -630,7 +611,7 @@ msgstr ""
 #: gamedata/game_cnt.txt:36
 #, kde-format
 msgid "Five"
-msgstr "五"
+msgstr "ხუთი"
 
 #: gamedata/game_cnt.txt:37
 #, kde-format
@@ -647,7 +628,7 @@ msgstr ""
 #: gamedata/game_cnt.txt:40
 #, kde-format
 msgid "Six"
-msgstr "六"
+msgstr "ექვსი"
 
 #: gamedata/game_cnt.txt:41
 #, kde-format
@@ -667,7 +648,7 @@ msgstr ""
 #: gamedata/game_cnt.txt:46
 #, kde-format
 msgid "Seven"
-msgstr "七"
+msgstr "შვიდი"
 
 #: gamedata/game_cnt.txt:47
 #, kde-format
@@ -680,7 +661,7 @@ msgstr ""
 #: gamedata/game_cnt.txt:50
 #, kde-format
 msgid "Eight"
-msgstr "八"
+msgstr "რვა"
 
 #: gamedata/game_cnt.txt:51
 #, kde-format
@@ -700,7 +681,7 @@ msgstr ""
 #: gamedata/game_cnt.txt:58
 #, kde-format
 msgid "Nine"
-msgstr "九"
+msgstr "ცხრა"
 
 #: gamedata/game_cnt.txt:59
 #, kde-format
@@ -722,7 +703,7 @@ msgstr ""
 #: gamedata/game_cnt.txt:64
 #, kde-format
 msgid "Ten"
-msgstr "十"
+msgstr "ათი"
 
 #: gamedata/game_cnt.txt:65
 #, kde-format
@@ -735,7 +716,7 @@ msgstr ""
 #: gamedata/game_cnt.txt:68
 #, kde-format
 msgid "Eleven"
-msgstr "十一"
+msgstr "თერთმეტი"
 
 #: gamedata/game_cnt.txt:69
 #, kde-format
@@ -763,7 +744,7 @@ msgstr ""
 #: gamedata/game_cnt.txt:76
 #, kde-format
 msgid "Twelve"
-msgstr "十二"
+msgstr "თორმეტი"
 
 #: gamedata/game_cnt.txt:77
 #, kde-format
@@ -801,7 +782,7 @@ msgstr ""
 #: gamedata/game_cnt.txt:90
 #, kde-format
 msgid "Thirteen"
-msgstr "十三"
+msgstr "ცამეტი"
 
 #: gamedata/game_cnt.txt:91
 #, kde-format
@@ -825,7 +806,7 @@ msgstr ""
 #: gamedata/game_cnt.txt:98
 #, kde-format
 msgid "Fourteen"
-msgstr "十四"
+msgstr "თოთხმეტი"
 
 #: gamedata/game_cnt.txt:99
 #, kde-format
@@ -849,7 +830,7 @@ msgstr ""
 #: gamedata/game_cnt.txt:108
 #, kde-format
 msgid "Fifteen"
-msgstr "十五"
+msgstr "თხუთმეტი"
 
 #: gamedata/game_cnt.txt:109
 #, kde-format
@@ -870,7 +851,7 @@ msgstr ""
 #: gamedata/game_cnt.txt:114
 #, kde-format
 msgid "Sixteen"
-msgstr "十六"
+msgstr "თექვსმეტი"
 
 #: gamedata/game_cnt.txt:115
 #, kde-format
@@ -937,7 +918,7 @@ msgstr ""
 #: gamedata/game_fd.txt:2
 #, kde-format
 msgid "Dig While Falling"
-msgstr "边挖边坠"
+msgstr "თხრა ვარდნის დროს"
 
 #: gamedata/game_fd.txt:3
 #, kde-format
@@ -946,13 +927,11 @@ msgid ""
 "a graded introduction to that technique, composed by Jason Self (j at jxself "
 "org). Every level has a recorded solution, also provided by Jason."
 msgstr ""
-"在高手游戏中，你经常得一边下坠一边挖。这些关卡就是为了检验这种技巧而做的，由 "
-"Jason Self (j@jxself.org) 创作。每一关都有记录的解法，也是由 Jason 提供的。"
 
 #: gamedata/game_GMEP.txt:2
 #, kde-format
 msgid "Jail Break"
-msgstr "越狱"
+msgstr "ციხიდან გაქცევა"
 
 #: gamedata/game_GMEP.txt:3
 #, kde-format
@@ -972,7 +951,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:10
 #, kde-format
 msgid "Don't Panic!"
-msgstr "别慌！"
+msgstr "პანიკაში ნუ ჩავარდებით!"
 
 #: gamedata/game_GMEP.txt:11
 #, kde-format
@@ -986,7 +965,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:16
 #, kde-format
 msgid "Robbery"
-msgstr "抢劫"
+msgstr "ძარცვა"
 
 #: gamedata/game_GMEP.txt:17
 #, kde-format
@@ -1000,7 +979,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:22
 #, kde-format
 msgid "Use the Guards"
-msgstr "以逸待劳"
+msgstr "დაცვის გამოყენება"
 
 #: gamedata/game_GMEP.txt:23
 #, kde-format
@@ -1067,7 +1046,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:50
 #, kde-format
 msgid "Forbidden Gold"
-msgstr "幽禁的秘宝"
+msgstr ""
 
 #: gamedata/game_GMEP.txt:51
 #, kde-format
@@ -1111,7 +1090,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:68
 #, kde-format
 msgid "Awaiting Enemies"
-msgstr "守株待兔"
+msgstr ""
 
 #: gamedata/game_GMEP.txt:69
 #, kde-format
@@ -1123,7 +1102,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:72
 #, kde-format
 msgid "Too Many Guards"
-msgstr "太多守卫"
+msgstr ""
 
 #: gamedata/game_GMEP.txt:73
 #, kde-format
@@ -1154,7 +1133,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:82
 #, kde-format
 msgid "Caught In The Heights"
-msgstr "上去容易下来难"
+msgstr ""
 
 #: gamedata/game_GMEP.txt:83
 #, kde-format
@@ -1162,8 +1141,6 @@ msgid ""
 "As soon as you move down they will chase you till you are dead. So you are "
 "advised to plan an exact route before you start your escape attempt."
 msgstr ""
-"一旦你开始向下走，他们就开始来追你了，直到你死掉。所以你最好在逃跑前就想好准"
-"确的路线。"
 
 #: gamedata/game_GMEP.txt:86
 #, kde-format
@@ -1220,7 +1197,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:2
 #, kde-format
 msgid "Gold Rush"
-msgstr "劫掠一空"
+msgstr ""
 
 #: gamedata/game_GMGR.txt:3
 #, kde-format
@@ -1269,17 +1246,17 @@ msgstr ""
 #: gamedata/game_GMGR.txt:22
 #, kde-format
 msgid "Golddigger"
-msgstr "淘金者"
+msgstr ""
 
 #: gamedata/game_GMGR.txt:23
 #, kde-format
 msgid "My suggestion: dig!"
-msgstr "我的建议是：挖，挖，挖！"
+msgstr ""
 
 #: gamedata/game_GMGR.txt:26
 #, kde-format
 msgid "Golden Town"
-msgstr "黄金城"
+msgstr ""
 
 #: gamedata/game_GMGR.txt:27
 #, kde-format
@@ -1465,7 +1442,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:98 gamedata/game_plwv.txt:9
 #, kde-format
 msgid "Impossible?"
-msgstr "不可能的任务?"
+msgstr ""
 
 #: gamedata/game_GMGR.txt:99
 #, kde-format
@@ -1714,7 +1691,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:39 gamedata/game_plws.txt:113
 #, kde-format
 msgid "Zig Zag"
-msgstr "锯齿"
+msgstr ""
 
 #: gamedata/game_GotD.txt:40
 #, kde-format
@@ -1724,7 +1701,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:43 gamedata/game_wad.txt:63
 #, kde-format
 msgid "The Box"
-msgstr "沙盒"
+msgstr ""
 
 #: gamedata/game_GotD.txt:44
 #, kde-format
@@ -2010,7 +1987,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:149
 #, kde-format
 msgid "Diagonal"
-msgstr ""
+msgstr "დიაგონალური"
 
 #: gamedata/game_GotD.txt:150
 #, kde-format
@@ -3047,7 +3024,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:191 gamedata/game_lars.txt:85
 #, kde-format
 msgid "No hint!"
-msgstr "无提示信息!"
+msgstr ""
 
 #: gamedata/game_kgr.txt:3 src/main.cpp:33
 #, kde-format
@@ -3103,7 +3080,7 @@ msgstr ""
 #: gamedata/game_lars.txt:16
 #, kde-format
 msgid "Fetch!"
-msgstr "获取!"
+msgstr ""
 
 #: gamedata/game_lars.txt:17
 #, kde-format
@@ -3113,7 +3090,7 @@ msgstr ""
 #: gamedata/game_lars.txt:20
 #, kde-format
 msgid "Acrophobia"
-msgstr ""
+msgstr "აკროფობია"
 
 #: gamedata/game_lars.txt:21
 #, kde-format
@@ -3155,7 +3132,7 @@ msgstr ""
 #: gamedata/game_lars.txt:36
 #, kde-format
 msgid "Vertical"
-msgstr "水平"
+msgstr "ვერტიკალური"
 
 #: gamedata/game_lars.txt:37
 #, kde-format
@@ -3251,7 +3228,7 @@ msgstr ""
 #: gamedata/game_lars.txt:72
 #, kde-format
 msgid "Depth"
-msgstr "深度"
+msgstr "სიღრმე"
 
 #: gamedata/game_lars.txt:73
 #, kde-format
@@ -3263,7 +3240,7 @@ msgstr ""
 #: gamedata/game_lars.txt:76
 #, kde-format
 msgid "Density"
-msgstr "密度"
+msgstr "სიმკვრივე"
 
 #: gamedata/game_lars.txt:77
 #, kde-format
@@ -3283,7 +3260,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:2
 #, kde-format
 msgid "Mazes"
-msgstr "迷宫"
+msgstr ""
 
 #: gamedata/game_MAZ.txt:3
 #, kde-format
@@ -3302,7 +3279,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:8
 #, kde-format
 msgid "Dopey"
-msgstr "迟钝"
+msgstr ""
 
 #: gamedata/game_MAZ.txt:9
 #, kde-format
@@ -3316,7 +3293,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:12
 #, kde-format
 msgid "Sleepy"
-msgstr "瞌睡"
+msgstr ""
 
 #: gamedata/game_MAZ.txt:13
 #, kde-format
@@ -3326,7 +3303,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:16
 #, kde-format
 msgid "Doc"
-msgstr "文档"
+msgstr ""
 
 #: gamedata/game_MAZ.txt:17
 #, kde-format
@@ -3336,7 +3313,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:20
 #, kde-format
 msgid "Grumpy"
-msgstr "躁狂"
+msgstr ""
 
 #: gamedata/game_MAZ.txt:21
 #, kde-format
@@ -3377,7 +3354,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:34
 #, kde-format
 msgid "Happy"
-msgstr "开心"
+msgstr "ბედნიერი"
 
 #: gamedata/game_MAZ.txt:35
 #, kde-format
@@ -3423,7 +3400,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:46
 #, kde-format
 msgid "Ori"
-msgstr "Ori"
+msgstr ""
 
 #: gamedata/game_MAZ.txt:47
 #, kde-format
@@ -3435,7 +3412,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:50
 #, kde-format
 msgid "Nori"
-msgstr "紫菜"
+msgstr ""
 
 #: gamedata/game_MAZ.txt:51
 #, kde-format
@@ -3449,7 +3426,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:54
 #, kde-format
 msgid "Dori"
-msgstr "多里"
+msgstr "დორი"
 
 #: gamedata/game_MAZ.txt:55
 #, kde-format
@@ -3536,7 +3513,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:80
 #, kde-format
 msgid "Oin"
-msgstr "Oin"
+msgstr ""
 
 #: gamedata/game_MAZ.txt:81
 #, kde-format
@@ -3548,7 +3525,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:84
 #, kde-format
 msgid "Kili"
-msgstr "吉利"
+msgstr "კილი"
 
 #: gamedata/game_MAZ.txt:85
 #, kde-format
@@ -3664,7 +3641,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:120
 #, kde-format
 msgid "Gimli"
-msgstr "吉姆利"
+msgstr "გიმლი"
 
 #: gamedata/game_MAZ.txt:121
 #, kde-format
@@ -4272,7 +4249,7 @@ msgstr ""
 #: gamedata/game_plws.txt:230
 #, kde-format
 msgid "Pillars"
-msgstr "台柱"
+msgstr "ბოძები"
 
 #: gamedata/game_plws.txt:233
 #, kde-format
@@ -4307,7 +4284,7 @@ msgstr ""
 #: gamedata/game_plws.txt:251
 #, kde-format
 msgid "Getting Started"
-msgstr "入门"
+msgstr "საერთო ინფორმაცია"
 
 #: gamedata/game_plws.txt:257
 #, kde-format
@@ -4332,12 +4309,12 @@ msgstr ""
 #: gamedata/game_plws.txt:269
 #, kde-format
 msgid "Drop?"
-msgstr "删除?"
+msgstr ""
 
 #: gamedata/game_plws.txt:272
 #, kde-format
 msgid "Help!"
-msgstr "帮助!"
+msgstr "დახმარება!"
 
 #: gamedata/game_plws.txt:275
 #, kde-format
@@ -4367,7 +4344,7 @@ msgstr ""
 #: gamedata/game_plws.txt:290
 #, kde-format
 msgid "Funny?"
-msgstr "有趣的?"
+msgstr ""
 
 #: gamedata/game_plws.txt:293
 #, kde-format
@@ -5073,7 +5050,7 @@ msgstr ""
 #: gamedata/game_sot.txt:94
 #, kde-format
 msgid "Ruins"
-msgstr "废墟"
+msgstr "ნანგრევები"
 
 #: gamedata/game_sot.txt:95
 #, kde-format
@@ -5122,7 +5099,7 @@ msgstr ""
 #: gamedata/game_tute.txt:3
 #, kde-format
 msgid "Tutorial"
-msgstr "教程"
+msgstr "სახელმძღვანელო"
 
 #: gamedata/game_tute.txt:4
 #, kde-format
@@ -5139,7 +5116,7 @@ msgstr ""
 #: gamedata/game_tute.txt:9
 #, kde-format
 msgid "Hi!"
-msgstr "你好！"
+msgstr ""
 
 #: gamedata/game_tute.txt:10
 #, kde-format
@@ -5156,7 +5133,7 @@ msgstr ""
 #: gamedata/game_tute.txt:15
 #, kde-format
 msgid "Navigation"
-msgstr "导航"
+msgstr "ნავიგაცია"
 
 #: gamedata/game_tute.txt:16
 #, kde-format
@@ -5230,7 +5207,7 @@ msgstr ""
 #: gamedata/game_tute.txt:43
 #, kde-format
 msgid "Bars"
-msgstr "巴"
+msgstr "მართკუთხედები"
 
 #: gamedata/game_tute.txt:44
 #, kde-format
@@ -5251,12 +5228,11 @@ msgid ""
 "Some of the bricks in this level are not what they seem.  If you walk onto "
 "them you fall through.  The enemies fall through them too."
 msgstr ""
-"这一关里有些砖块跟看上去的不一样。如果走到上面，您就会掉下去。敌人也是一样。"
 
 #: gamedata/game_tute.txt:51 gamedata/game_tutea.txt:31
 #, kde-format
 msgid "Bye ..."
-msgstr "再见 ..."
+msgstr ""
 
 #: gamedata/game_tute.txt:52 gamedata/game_tutea.txt:32
 #, kde-format
@@ -5272,30 +5248,23 @@ msgid ""
 "\n"
 "It has been a pleasure showing you around.  Bye!"
 msgstr ""
-"这只是一些非常容易的关卡。希望您能在其他 KGoldrunner 游戏关卡里找到乐趣。\n"
-"\n"
-"别忘了还有一个游戏编辑器。您和您的朋友可以用它制作关卡来相互挑战。如果您喜欢"
-"紧张刺激的游戏过程，KGoldrunner 在某些关卡中的规则可以让你体验到行云流水的畅"
-"快。帮助菜单里有一个 KGoldrunner 手册，里面有比这个教程更丰富的内容。\n"
-"\n"
-"非常高兴能为您作这些介绍，后会有期！"
 
 #: gamedata/game_tutea.txt:3
 #, kde-format
 msgid "Advanced Tutorial"
-msgstr "高级教学关"
+msgstr ""
 
 #: gamedata/game_tutea.txt:4
 #, kde-format
 msgid ""
 "This tutorial is preparation for some of the things you might find in the "
 "middle levels of the 'Initiation' game.  Enjoy ..."
-msgstr "这套教学关是为有中级技巧基础的游戏新手准备的。祝玩得开心..."
+msgstr ""
 
 #: gamedata/game_tutea.txt:7
 #, kde-format
 msgid "Bars and Ladders"
-msgstr "挂绳和梯子"
+msgstr ""
 
 #: gamedata/game_tutea.txt:8
 #, kde-format
@@ -5307,16 +5276,11 @@ msgid ""
 "he runs over the concrete or maybe at the top of a ladder ... patience, "
 "patience!"
 msgstr ""
-"这里没有地方挖洞，所以您必须躲着敌人，不要在错误的时刻落到地面上。尽量让敌人"
-"在一起。\n"
-"\n"
-"当敌人从地上或者梯子顶端走过时，金块才可能会从他们身上掉下来，所以，要有耐"
-"心，耐心！"
 
 #: gamedata/game_tutea.txt:13
 #, kde-format
 msgid "To kill ..."
-msgstr "杀..."
+msgstr ""
 
 #: gamedata/game_tutea.txt:14
 #, kde-format
@@ -5328,16 +5292,11 @@ msgid ""
 "and take a break.  Also, you can use the Settings menu to slow down the "
 "action."
 msgstr ""
-"您够不到金块，所以必须等敌人把它们带过来。但是怎样才能让他们不停回到出发点"
-"呢？\n"
-"\n"
-"如果您感觉压力太大了，可以按暂停键(默认是 P 或 Esc)，然后休息一下。还有，您可"
-"以在设置菜单里降低游戏的速度。"
 
 #: gamedata/game_tutea.txt:19
 #, kde-format
 msgid "...  Or not to kill?"
-msgstr "... 还是不杀？"
+msgstr ""
 
 #: gamedata/game_tutea.txt:20
 #, kde-format
@@ -5349,15 +5308,11 @@ msgid ""
 "the top left, you can still finish the level by digging away the side of the "
 "pit he is in."
 msgstr ""
-"最好还是不要杀掉敌人。试试就知道为什么了... 呵呵，嘿嘿，哈哈！\n"
-"\n"
-"如果您在捡到左上角那块金子之前一不小心杀掉了敌人，可以通过凿碎他旁边的墙来完"
-"成任务。"
 
 #: gamedata/game_tutea.txt:25
 #, kde-format
 msgid "Traps"
-msgstr "陷阱"
+msgstr "ხაფანგები"
 
 #: gamedata/game_tutea.txt:26
 #, kde-format
@@ -5370,16 +5325,11 @@ msgid ""
 "At the start, jump into the concrete pit, dig and drop through.  That will "
 "get one enemy tied up for a while ..."
 msgstr ""
-"有些砖块跟看起来的不一样，它们可以被叫做假砖块、能穿过的砖块或者是陷阱。如果"
-"您从上面走过就会掉下去；如果敌人从上面走过，他们就可能没有预兆地落在您的头"
-"上。有时候您需要从假砖块上落下去才能得到金块。\n"
-"\n"
-"一开始，跳到水泥块上，挖洞然后跳下去。这就可以把一个敌人困住一段时间..."
 
 #: gamedata/game_wad.txt:3
 #, kde-format
 msgid "Challenge"
-msgstr "挑战"
+msgstr "გამოწვევა"
 
 #: gamedata/game_wad.txt:4
 #, kde-format
@@ -5387,33 +5337,31 @@ msgid ""
 "These tricky little levels were composed by Peter, Simon, Genevieve and "
 "their father Ian Wadham.  They use traditional playing rules.  Enjoy!"
 msgstr ""
-"这些关卡由 Peter、Simon、Genevieve 和他们的前辈 Ian Wadham 共同精心设计，使用"
-"传统游戏规则。祝玩得开心！"
 
 #: gamedata/game_wad.txt:7
 #, kde-format
 msgid "Easy Start"
-msgstr "简单的起步"
+msgstr ""
 
 #: gamedata/game_wad.txt:8
 #, kde-format
 msgid "Drop through the false brick under the bar."
-msgstr "从挂绳下面的假砖块里穿过去。"
+msgstr ""
 
 #: gamedata/game_wad.txt:11
 #, kde-format
 msgid "Mobile Bricks"
-msgstr "会移动的砖块"
+msgstr ""
 
 #: gamedata/game_wad.txt:12
 #, kde-format
 msgid "Just run over the enemies' heads."
-msgstr "就从敌人的头上迈过去。"
+msgstr ""
 
 #: gamedata/game_wad.txt:15
 #, kde-format
 msgid "The Big Haul"
-msgstr "大拖拉机"
+msgstr ""
 
 #: gamedata/game_wad.txt:16
 #, kde-format
@@ -5425,15 +5373,11 @@ msgid ""
 "Now go right and clear out all the brick and ladder structures in right-to-"
 "left order."
 msgstr ""
-"迅速往右走，挖洞困住迎头赶来的敌人。然后引诱从您后面掉下来的敌人，然后挖洞挖"
-"洞挖洞，干掉所有的敌人。\n"
-"\n"
-"然后走到右路，按照从右到左的顺序扫荡干净所有的砖块和梯子。"
 
 #: gamedata/game_wad.txt:21
 #, kde-format
 msgid "Quick Off The Mark"
-msgstr "快抢分啊"
+msgstr ""
 
 #: gamedata/game_wad.txt:22
 #, kde-format
@@ -5442,23 +5386,21 @@ msgid ""
 "brought down all the gold.  Retreat to higher ground and dig there, if "
 "necessary."
 msgstr ""
-"开始游戏后赶紧快速向右移动，不停地挖洞直到敌人把所有的金块都带下来。如果需要"
-"的话，可以把敌人引诱到高处。"
 
 #: gamedata/game_wad.txt:25
 #, kde-format
 msgid "Who Needs Enemies?"
-msgstr "谁想要敌人？"
+msgstr ""
 
 #: gamedata/game_wad.txt:26
 #, kde-format
 msgid "Keep digging rows of three bricks next to the ladder."
-msgstr "不停在梯子边的三个砖块上挖洞。"
+msgstr ""
 
 #: gamedata/game_wad.txt:29
 #, kde-format
 msgid "Asymmetrical"
-msgstr "不对称美"
+msgstr ""
 
 #: gamedata/game_wad.txt:30
 #, kde-format
@@ -5466,13 +5408,11 @@ msgid ""
 "Leave the bottom left nugget till last.  False bricks give you access to "
 "most of the nuggets, but they are not symmetrically placed."
 msgstr ""
-"最后再拣左下角的那块金。假砖块可以让您收集到大部分金块，但它们并不是对称分布"
-"的。"
 
 #: gamedata/game_wad.txt:33
 #, kde-format
 msgid "Goldrunner Prophecy"
-msgstr "淘金者的预言"
+msgstr ""
 
 #: gamedata/game_wad.txt:34
 #, kde-format
@@ -5494,22 +5434,11 @@ msgid ""
 "When you release the enemy, retreat quickly to where you can trap and kill "
 "him.  After one or two tries he will re-appear harmlessly over on the left."
 msgstr ""
-"Peter W. 在 1985 年设计了这一关。您看到预言的字母“GR”了么？真恐怖！\n"
-"\n"
-"当您收集左下角的那一排金块时，在那等一会，第一个敌人就会乖乖的掉到您头上的陷"
-"阱里去。\n"
-"\n"
-"然后向右前进，收集所有的金块--除了悬在梯子底下的那三个，把它们留到最后吧。\n"
-"\n"
-"要拿被困住敌人头上的那两块金子，您就要爬上梯子，往下挖四块，当它们开始重现的"
-"时候再挖一个，往上爬，再去挖头两个砖块，跳下去拿金块并从敌人的头上离开。\n"
-"\n"
-"当您释放了敌人后，迅速挖洞并且杀掉他。一两次之后他就会在左边重生。"
 
 #: gamedata/game_wad.txt:45
 #, kde-format
 msgid "The Rosette"
-msgstr "蔷薇结"
+msgstr ""
 
 #: gamedata/game_wad.txt:46
 #, kde-format
@@ -5522,16 +5451,11 @@ msgid ""
 "Collect all the gold not in the trough, then release the enemies and lead "
 "them around over the tops of ladders, until they drop their gold."
 msgstr ""
-"先到中间，再往下，尽量让所有的敌人聚在一起。然后把他们困在下面的凹槽里，先不"
-"管里面的金块。要驻留在槽的一边，要是敌人跑上来了，就往下走一格。\n"
-"\n"
-"收集不在槽里的所有金块。然后把敌人放出来，带着他们在梯子顶上转圈吧，等他们把"
-"金子丢掉。"
 
 #: gamedata/game_wad.txt:51
 #, kde-format
 msgid "He Has The Gold"
-msgstr "他有金子"
+msgstr ""
 
 #: gamedata/game_wad.txt:52
 #, kde-format
@@ -5541,15 +5465,11 @@ msgid ""
 "You can kill him and destroy the gold by digging to the left of the small "
 "ladder.  You may need to kill the other enemy and trap him in there too."
 msgstr ""
-"右手边上那个被困住的敌人手里有金块。\n"
-"\n"
-"您可以在小梯子左侧挖洞来杀掉敌人并拿到金块，您可能还需要杀掉其他敌人使其困在"
-"那里。"
 
 #: gamedata/game_wad.txt:57
 #, kde-format
 msgid "Towers of Gold"
-msgstr "黄金塔楼"
+msgstr ""
 
 #: gamedata/game_wad.txt:58
 #, kde-format
@@ -5562,21 +5482,16 @@ msgid ""
 "gold, step back and trap the second enemy just to the left of the third "
 "tower.  Now run right, with three enemies in hot pursuit and very much alive!"
 msgstr ""
-"在您杀掉任何敌人之前，您必须收集完所有在挂绳和塔楼上的金块。\n"
-"\n"
-"左数第二个塔楼下面是个开始的好地方。挖一个洞困住那个迎面而来的敌人，然后右走"
-"拿些金块，在左数第三个塔楼下面杀个回马枪困住第二个敌人。然后赶快向右跑吧，后"
-"面有三个敌人生龙活虎地追着您呢！"
 
 #: gamedata/game_wad.txt:64
 #, kde-format
 msgid "Dig the two bricks next to a ladder, then look for fall-through bricks."
-msgstr "把梯子旁边的那几块砖挖掉，然后找假砖块吧！"
+msgstr ""
 
 #: gamedata/game_wad.txt:67
 #, kde-format
 msgid "Delayed Drop"
-msgstr "延时降落"
+msgstr ""
 
 #: gamedata/game_wad.txt:68
 #, kde-format
@@ -5587,15 +5502,11 @@ msgid ""
 "until the second enemy gets back up the ladders and well clear of the "
 "concrete."
 msgstr ""
-"在你过得了右边的敌人之前，左边的敌人就先落下来了。\n"
-"\n"
-"所以先和他在一起吧！不断地挖洞困住他。等到左边的敌人从梯子爬上来的时候再跳到"
-"水泥地上去。"
 
 #: gamedata/game_wad.txt:73
 #, kde-format
 msgid "Maze of Ladders"
-msgstr "天梯迷宫"
+msgstr ""
 
 #: gamedata/game_wad.txt:74
 #, kde-format
@@ -5607,16 +5518,11 @@ msgid ""
 "\n"
 "Ignore the enemy.  Let him stay trapped."
 msgstr ""
-"从左边的中部往上走，你就可以跳下来然后左右移动拿取金块。\n"
-"\n"
-"把 U 形空间里的金块留到最后。\n"
-"\n"
-"忽略敌人，让他困在那里吧。"
 
 #: gamedata/game_wad.txt:81
 #, kde-format
 msgid "Ride Them Down"
-msgstr "草上飞"
+msgstr ""
 
 #: gamedata/game_wad.txt:82
 #, kde-format
@@ -5627,14 +5533,11 @@ msgid ""
 "Now fall onto them and collect the gold, then ride the third enemy down and "
 "use him to get across to the ladder."
 msgstr ""
-"迅速让头两个敌人落到两个水泥块上面的格子里，然后马上从左边放走他们。\n"
-"\n"
-"然后迅速向右走，落到正在下落的第三个敌人的头上。踩着他的头登上梯子。"
 
 #: gamedata/game_wad.txt:87
 #, kde-format
 msgid "Hair's Breadth Timing"
-msgstr "Hair 的计时器"
+msgstr ""
 
 #: gamedata/game_wad.txt:88
 #, kde-format
@@ -5652,19 +5555,11 @@ msgid ""
 "the right, run like mad round to the hole, drop in, collect the gold, fall "
 "through some bricks and dig again to escape."
 msgstr ""
-"在中部的顶端先挖掉两块砖。在它们开始重现的时候，再往下挖两个，从上面跑过去把"
-"短梯子旁边的砖块挖掉然后跳进去收集金块。您没有时间浪费！\n"
-"\n"
-"最后再清理左下方。要到右边，最好从短梯子下的假砖块下去，然后顺着水泥块爬。\n"
-"\n"
-"在右手边的中央，抓住洞右边的挂绳，往左边挖一个格，然后钻到假砖块里，再挖两"
-"块。往下走然后向左。最后站在短梯子上，在右边挖出你的逃命路。狂奔到洞边然后跳"
-"下去收集金子，穿过几个砖头再挖几个砖头然后赶快逃命吧！"
 
 #: gamedata/game_wad.txt:95
 #, kde-format
 msgid "The Three Musketeers"
-msgstr "三个火枪手"
+msgstr ""
 
 #: gamedata/game_wad.txt:96
 #, kde-format
@@ -5681,18 +5576,11 @@ msgid ""
 "it, then exit to the next level along roughly the same route as you used "
 "earlier."
 msgstr ""
-"您必须要杀掉那三个火枪手来填满顶端的假砖块。忽略掉在右下角的达达尼昂吧，您只"
-"需踩过他去拿金块就好了。\n"
-"\n"
-"在底下按照从左到右的顺序收集金块，然后在上面从右到左走。只要您留下水泥地左边"
-"中央的金块就好，最后再拿它。\n"
-"\n"
-"在拿最后一个金块之前，在上方和左方挖三个洞，用老方法进到下一关。"
 
 #: gamedata/game_wad.txt:103
 #, kde-format
 msgid "Rat Trap"
-msgstr "破坏陷阱"
+msgstr ""
 
 #: gamedata/game_wad.txt:104
 #, kde-format
@@ -5707,18 +5595,11 @@ msgid ""
 "some gold, dig one hole at the right hand end of the pit, go back down the "
 "ladder and lead the enemy to his death, whereupon the gold will be destroyed."
 msgstr ""
-"超快速地移动，困住两个敌人然后跑过去。如果您等到他们都快碰到您了再跑就很难困"
-"住他们了，这时您可以往上走然后绕个圈到右下方。从梯子下到水泥地上然后永久地把"
-"他们困在附近的陷阱里。\n"
-"\n"
-"如果有敌人跑进塔里，您可以用同样的手段。塔的底部有一些假砖块，如果有人拿着金"
-"块被困住了，那么就在右边的尽头挖个洞，爬下梯子把敌人引向死亡吧，然后就能拿到"
-"金块了。"
 
 #: gamedata/game_wad.txt:109
 #, kde-format
 msgid "Head Case"
-msgstr "首要任务"
+msgstr ""
 
 #: gamedata/game_wad.txt:110
 #, kde-format
@@ -5731,16 +5612,11 @@ msgid ""
 "If you move to the bottom right corner, you can get the enemy to fall into "
 "the hole containing gold."
 msgstr ""
-"这只是为后面几关的热身。想拿到右边的金块，就要落到敌人的头上，把他从左边放出"
-"去。踩在他的头上一起落下去的同时挖掉挡路的砖块。然后就可以进去拿金子了。别忘"
-"了在砖块重现之前出来。\n"
-"\n"
-"如果走到右下角，您就可以让敌人掉进有金块的那个坑里了。"
 
 #: gamedata/game_wad.txt:115
 #, kde-format
 msgid "Under the Stairs"
-msgstr "在楼梯下"
+msgstr ""
 
 #: gamedata/game_wad.txt:116
 #, kde-format
@@ -5757,7 +5633,7 @@ msgstr ""
 #: gamedata/game_wad.txt:121
 #, kde-format
 msgid "Bertie Beetle"
-msgstr "贝蒂的甲壳虫"
+msgstr ""
 
 #: gamedata/game_wad.txt:122
 #, kde-format
@@ -5778,22 +5654,11 @@ msgid ""
 "again.  Collect the nugget, dig left and escape left onto the concrete.  As "
 "the enemy climbs out he will fall into the pit.\n"
 msgstr ""
-"这一关的顶部有点像“首要任务”。把敌人困在梯子顶端附近右侧。顺着梯子往下跑一点"
-"让他掉进第一个陷阱里。您需要多做几次。\n"
-"\n"
-"现在您必须让敌人掉进左下方远端的陷阱里，这样您才能够从他头上走过去，拿甲虫身"
-"体里的金块。\n"
-"\n"
-"把敌人困在甲虫触角下的那一排砖块。站在他头上，往右挖洞跳下去，再往右走，挖左"
-"边的洞困住他。\n"
-"\n"
-"往下走到左方，挖陷阱右方的砖块再度困住他。拿金块后，挖左边的洞。敌人爬出來后"
-"会掉进陷阱中。\n"
 
 #: gamedata/game_wad.txt:132
 #, kde-format
 msgid "Short Circuit"
-msgstr "捷径"
+msgstr ""
 
 #: gamedata/game_wad.txt:133
 #, kde-format
@@ -5828,49 +5693,49 @@ msgstr ""
 #: gamedata/game_wad.txt:144
 #, kde-format
 msgid "Synchronised Running"
-msgstr "同步快跑"
+msgstr ""
 
 #: gamedata/game_wad.txt:145
 #, kde-format
 msgid ""
 "Yes, you must run on the enemy's head --- all the way across!  All it takes "
 "is a steady hand."
-msgstr "对了，您必须要踩在敌人头上跑，而且是一整路！这只要一种稳定的手感。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:184 src/kgrgame.cpp:724
 #, kde-format
 msgid "&New Game..."
-msgstr "&新游戏..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:187
 #, kde-format
 msgid "Pla&y Next Level"
-msgstr "玩下一关(&Y)"
+msgstr ""
 
 #: src/kgoldrunner.cpp:188
 #, kde-format
 msgid "Play next level."
-msgstr "玩下一关。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:189
 #, kde-format
 msgid "Try the next level in the game you are playing."
-msgstr "尝试玩当前游戏的下一关。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:196
 #, kde-format
 msgid "&Load Saved Game..."
-msgstr "加载保存的游戏(&L)..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:205
 #, kde-format
 msgid "&Save Game..."
-msgstr "&保存游戏..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:211 src/kgoldrunner.cpp:212
 #, kde-format
 msgid "Save A Solution..."
-msgstr "保存过关指导..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:213
 #, kde-format
@@ -5887,513 +5752,513 @@ msgstr ""
 #: src/kgoldrunner.cpp:247
 #, kde-format
 msgid "Show how to win this level."
-msgstr "显示本关的过关指导。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:248
 #, kde-format
 msgid "Play a recording of how to win this level, if there is one available."
-msgstr "如果有的话，播放本关的过关录像。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:252
 #, kde-format
 msgid "&Instant Replay"
-msgstr "实时重放(&I)"
+msgstr ""
 
 #: src/kgoldrunner.cpp:253
 #, kde-format
 msgid "Instant replay."
-msgstr "实时重放。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:254
 #, kde-format
 msgid "Show a recording of the level you are currently playing."
-msgstr "显示您正在玩的这关的录像。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:259
 #, kde-format
 msgid "Replay &Last Level"
-msgstr "重放上一关(&L)"
+msgstr ""
 
 #: src/kgoldrunner.cpp:260
 #, kde-format
 msgid "Replay last level."
-msgstr "重放上一关的录像。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:261
 #, kde-format
 msgid ""
 "Show a recording of the last level you played and finished, regardless of "
 "whether you won or lost."
-msgstr "显示您玩过的上一关的录像，无论是否打赢。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:267
 #, kde-format
 msgid "&Replay Any Level"
-msgstr "&重放任意关"
+msgstr ""
 
 #: src/kgoldrunner.cpp:268
 #, kde-format
 msgid "Replay any level."
-msgstr "重放任意一关的录像。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:269
 #, kde-format
 msgid "Show a recording of any level you have played so far."
-msgstr "显示您曾经玩过的任何一关的录像。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:274
 #, kde-format
 msgid "&Kill Hero"
-msgstr "自杀(&K)"
+msgstr ""
 
 #: src/kgoldrunner.cpp:275
 #, kde-format
 msgid "Kill Hero."
-msgstr "自杀。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:276
 #, kde-format
 msgid ""
 "Kill the hero, in case he finds himself in a situation from which he cannot "
 "escape."
-msgstr "当您发现自己身陷绝境无路可逃时，可以选择自杀。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:293
 #, kde-format
 msgid "&Create Level"
-msgstr "&创建关卡"
+msgstr ""
 
 #: src/kgoldrunner.cpp:294
 #, kde-format
 msgid "Create level."
-msgstr "创建关卡。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:295
 #, kde-format
 msgid "Create a completely new level."
-msgstr "创建一个全新的关卡。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:297
 #, kde-format
 msgid "Create"
-msgstr "创建"
+msgstr ""
 
 #: src/kgoldrunner.cpp:300
 #, kde-format
 msgid "&Edit Level..."
-msgstr "编辑关卡(&E)..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:301
 #, kde-format
 msgid "Edit level..."
-msgstr "编辑关卡..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:302
 #, kde-format
 msgid "Edit any level..."
-msgstr "编辑任一关卡..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:304
 #, kde-format
 msgid "Edit"
-msgstr "编辑"
+msgstr ""
 
 #: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1472
 #, kde-format
 msgid "&Save Edits..."
-msgstr "保存编辑内容(&S)..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:313
 #, kde-format
 msgid "Save edits..."
-msgstr "保存编辑内容..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:314
 #, kde-format
 msgid "Save your level after editing..."
-msgstr "编辑完成后保存您的关卡..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:316
 #, kde-format
 msgid "Save"
-msgstr "保存"
+msgstr ""
 
 #: src/kgoldrunner.cpp:320
 #, kde-format
 msgid "&Move Level..."
-msgstr "移动关卡(&M)..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:321
 #, kde-format
 msgid "Move level..."
-msgstr "移动关卡..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:322
 #, kde-format
 msgid "Change a level's number or move it to another game..."
-msgstr "更改某个关卡的编号，或将其移至另一个关卡合集内..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:326
 #, kde-format
 msgid "&Delete Level..."
-msgstr "&删除关卡..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:327
 #, kde-format
 msgid "Delete level..."
-msgstr "删除关卡..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:328
 #, kde-format
 msgid "Delete a level..."
-msgstr "删除一个关卡..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:335
 #, kde-format
 msgid "Create &Game..."
-msgstr "创建游戏(&G)..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:336
 #, kde-format
 msgid "Create game..."
-msgstr "创建游戏..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:337
 #, kde-format
 msgid "Create a completely new game..."
-msgstr "创建一个全新的游戏..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:340
 #, kde-format
 msgid "Edit Game &Info..."
-msgstr "编辑游戏信息(&I)..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:341
 #, kde-format
 msgid "Edit game info..."
-msgstr "编辑游戏信息..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:342
 #, kde-format
 msgid "Change the name, rules or description of a game..."
-msgstr "更改一个游戏的名字、规则或描述..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:351
 #, kde-format
 msgid "Change &Theme..."
-msgstr "更改主题(&T)..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:352
 #, kde-format
 msgid "Change the graphics theme..."
-msgstr "更改图形主题..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:353
 #, kde-format
 msgid "Alter the visual appearance of the runners and background scene..."
-msgstr "替换玩家外观和背景..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:367
 #, kde-format
 msgid "&Play Sounds"
-msgstr "播放声音(&P)"
+msgstr "&ხმის დაკვრა"
 
 #: src/kgoldrunner.cpp:368
 #, kde-format
 msgid "Play sound effects."
-msgstr "播放声音效果。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:369
 #, kde-format
 msgid "Play sound effects during the game."
-msgstr "在游戏时播放声音效果。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:372
 #, kde-format
 msgid "Play &Footstep Sounds"
-msgstr "播放脚步声(&F)"
+msgstr ""
 
 #: src/kgoldrunner.cpp:373 src/kgoldrunner.cpp:374
 #, kde-format
 msgid "Make sounds of player's footsteps."
-msgstr "使玩家的脚步声有音效。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:379
 #, kde-format
 msgid "&Demo At Start"
-msgstr "启动时运行演示(&D)"
+msgstr ""
 
 #: src/kgoldrunner.cpp:380 src/kgoldrunner.cpp:381
 #, kde-format
 msgid "Run a demo when the game starts."
-msgstr "党游戏启动时运行演示。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:389
 #, kde-format
 msgid "&Mouse Controls Hero"
-msgstr "鼠标控制角色(&M)"
+msgstr ""
 
 #: src/kgoldrunner.cpp:390
 #, kde-format
 msgid "Mouse controls hero."
-msgstr "鼠标控制角色。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:391
 #, kde-format
 msgid "Use the mouse to control the hero's moves."
-msgstr "用鼠标控制主角的移动。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:395
 #, kde-format
 msgid "&Keyboard Controls Hero"
-msgstr "键盘控制角色(&K)"
+msgstr ""
 
 #: src/kgoldrunner.cpp:396
 #, kde-format
 msgid "Keyboard controls hero."
-msgstr "键盘控制角色。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:397
 #, kde-format
 msgid "Use the keyboard to control the hero's moves."
-msgstr "用键盘控制主角的移动。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:401
 #, kde-format
 msgid "Hybrid Control (&Laptop)"
-msgstr "混合控制 (用于笔记本电脑)(&L)"
+msgstr ""
 
 #: src/kgoldrunner.cpp:402
 #, kde-format
 msgid "Pointer controls hero; dig using keyboard."
-msgstr "用鼠标控制角色；用键盘挖洞。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:404
 #, kde-format
 msgid ""
 "Use the laptop's pointer device to control the hero's moves, and use the "
 "keyboard to dig left and right."
-msgstr "使用笔记本电脑的鼠标设备控制主角的移动，用键盘控制向左右挖洞。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:419
 #, kde-format
 msgid "&Click Key To Move"
-msgstr "点击按键移动(&C)"
+msgstr ""
 
 #: src/kgoldrunner.cpp:420
 #, kde-format
 msgid "Click Key To Move."
-msgstr "点击按键来移动。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:421
 #, kde-format
 msgid ""
 "In keyboard mode, click a direction-key to start moving and keep on going "
 "until you click another key."
-msgstr "在键盘模式下，按下方向键即开始持续移动，直到按下其他键才停止。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:427
 #, kde-format
 msgid "&Hold Key To Move"
-msgstr "按住按键移动(&H)"
+msgstr ""
 
 #: src/kgoldrunner.cpp:428
 #, kde-format
 msgid "Hold Key To Move."
-msgstr "按住按键来移动。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:429
 #, kde-format
 msgid ""
 "In keyboard mode, hold down a direction-key to move and release it to stop."
-msgstr "在键盘模式下，按住方向键持续移动，松开即停止移动。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:446
 #, kde-format
 msgid "Normal Speed"
-msgstr "正常速度"
+msgstr ""
 
 #: src/kgoldrunner.cpp:447
 #, kde-format
 msgid "Set normal speed."
-msgstr "设为正常速度。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:448
 #, kde-format
 msgid "Set normal game speed."
-msgstr "设为正常游戏速度。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:452
 #, kde-format
 msgid "Beginner Speed"
-msgstr "新手速度"
+msgstr ""
 
 #: src/kgoldrunner.cpp:453
 #, kde-format
 msgid "Set beginners' speed."
-msgstr "设为新手速度。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:454
 #, kde-format
 msgid "Set beginners' game speed (0.5 times normal)."
-msgstr "设为新手级游戏速度(一半速度)。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:459
 #, kde-format
 msgid "Champion Speed"
-msgstr "高手速度"
+msgstr ""
 
 #: src/kgoldrunner.cpp:460
 #, kde-format
 msgid "Set champions' speed."
-msgstr "设为高手速度。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:461
 #, kde-format
 msgid "Set champions' game speed (1.5 times normal)."
-msgstr "设为高手级游戏速度(1.5倍速度)。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:465
 #, kde-format
 msgid "Increase Speed"
-msgstr "增加速度"
+msgstr ""
 
 #: src/kgoldrunner.cpp:466
 #, kde-format
 msgid "Increase speed."
-msgstr "增加速度。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:467
 #, kde-format
 msgid "Increase the game speed by 0.1 (maximum is 2.0 times normal)."
-msgstr "游戏速度增加 0.1(最大 2.0)。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:472
 #, kde-format
 msgid "Decrease Speed"
-msgstr "降低速度"
+msgstr ""
 
 #: src/kgoldrunner.cpp:473
 #, kde-format
 msgid "Decrease speed."
-msgstr "降低速度。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:474
 #, kde-format
 msgid "Decrease the game speed by 0.1 (minimum is 0.2 times normal)."
-msgstr "游戏速度降低 0.1(最小 0.2)。"
+msgstr ""
 
 #: src/kgoldrunner.cpp:504
 #, kde-format
 msgid "Stop"
-msgstr "停止"
+msgstr "შეჩერება"
 
 #: src/kgoldrunner.cpp:505
 #, kde-format
 msgid "Move Right"
-msgstr "向右移动"
+msgstr "მარჯვნივ გაწევა"
 
 #: src/kgoldrunner.cpp:506
 #, kde-format
 msgid "Move Left"
-msgstr "向左移动"
+msgstr "მარცხნივ გაწევა"
 
 #: src/kgoldrunner.cpp:507
 #, kde-format
 msgid "Move Up"
-msgstr "上移(&U)"
+msgstr "აწევა"
 
 #: src/kgoldrunner.cpp:508
 #, kde-format
 msgid "Move Down"
-msgstr "向下移动"
+msgstr "ჩამოწევა"
 
 #: src/kgoldrunner.cpp:509
 #, kde-format
 msgid "Dig Right"
-msgstr "向右挖"
+msgstr ""
 
 #: src/kgoldrunner.cpp:510
 #, kde-format
 msgid "Dig Left"
-msgstr "向左挖"
+msgstr ""
 
 #: src/kgoldrunner.cpp:534
 #, kde-format
 msgid "Do a Step"
-msgstr "走一步"
+msgstr ""
 
 #: src/kgoldrunner.cpp:535
 #, kde-format
 msgid "Test Bug Fix"
-msgstr "测试缺陷修正"
+msgstr ""
 
 #: src/kgoldrunner.cpp:536
 #, kde-format
 msgid "Show Positions"
-msgstr "显示位置"
+msgstr ""
 
 #: src/kgoldrunner.cpp:537
 #, kde-format
 msgid "Start Logging"
-msgstr "启动日志记录"
+msgstr ""
 
 #: src/kgoldrunner.cpp:538
 #, kde-format
 msgid "Show Hero"
-msgstr "显示主角"
+msgstr ""
 
 #: src/kgoldrunner.cpp:539
 #, kde-format
 msgid "Show Object"
-msgstr "显示物体"
+msgstr ""
 
 #: src/kgoldrunner.cpp:541 src/kgoldrunner.cpp:542 src/kgoldrunner.cpp:543
 #: src/kgoldrunner.cpp:544 src/kgoldrunner.cpp:545 src/kgoldrunner.cpp:546
 #: src/kgoldrunner.cpp:547
 #, kde-format
 msgid "Show Enemy"
-msgstr "显示敌人"
+msgstr ""
 
 #: src/kgoldrunner.cpp:735
 #, kde-format
 msgid "The game is paused"
-msgstr "游戏已暂停"
+msgstr ""
 
 #: src/kgoldrunner.cpp:737
 #, kde-format
 msgid "Press \"%1\" to RESUME"
-msgstr "按“%1”继续游戏"
+msgstr ""
 
 #: src/kgoldrunner.cpp:739
 #, kde-format
 msgid "Press \"%1\" or \"%2\" to RESUME"
-msgstr "按“%1”或“%2”继续游戏"
+msgstr ""
 
 #: src/kgoldrunner.cpp:746
 #, kde-format
 msgid "Press \"%1\" to PAUSE"
-msgstr "按“%1”暂停游戏"
+msgstr ""
 
 #: src/kgoldrunner.cpp:748
 #, kde-format
 msgid "Press \"%1\" or \"%2\" to PAUSE"
-msgstr "按“%1”或“%2”暂停游戏"
+msgstr ""
 
 #: src/kgoldrunner.cpp:760
 #, kde-format
 msgid "Has hint"
-msgstr "有提示"
+msgstr ""
 
 #: src/kgoldrunner.cpp:760
 #, kde-format
 msgid "No hint"
-msgstr "无提示信息"
+msgstr "მინიშნებების გარეშე"
 
 #: src/kgoldrunner.cpp:877
 #, kde-format
 msgid "Get Folders"
-msgstr "获得文件夹"
+msgstr ""
 
 #: src/kgoldrunner.cpp:878
 #, kde-format
@@ -6403,204 +6268,204 @@ msgstr ""
 #: src/kgoldrunner.cpp:911
 #, kde-format
 msgid "Edit Name/Hint"
-msgstr "编辑游戏/提示"
+msgstr ""
 
 #: src/kgoldrunner.cpp:912
 #, kde-format
 msgid "Edit level name or hint"
-msgstr "编辑关卡名称或提示"
+msgstr ""
 
 #: src/kgoldrunner.cpp:913
 #, kde-format
 msgid "Edit text for the name or hint of a level"
-msgstr "编辑某个关卡的名称或提示文字"
+msgstr ""
 
 #: src/kgoldrunner.cpp:916
 #, kde-format
 msgid "Name/Hint"
-msgstr "名称/提示"
+msgstr ""
 
 #: src/kgoldrunner.cpp:919
 #, kde-format
 msgid "Erase"
-msgstr "擦除"
+msgstr "წაშლა"
 
 #: src/kgoldrunner.cpp:919
 #, kde-format
 msgid "Space/Erase"
-msgstr "清除"
+msgstr ""
 
 #: src/kgoldrunner.cpp:920
 #, kde-format
 msgid "Paint empty squares or erase"
-msgstr "绘制空格或擦除"
+msgstr ""
 
 #: src/kgoldrunner.cpp:921
 #, kde-format
 msgid "Erase objects or paint empty squares"
-msgstr "擦除一个物体或绘制空格"
+msgstr ""
 
 #: src/kgoldrunner.cpp:924
 #, kde-format
 msgid "Hero"
-msgstr "主角"
+msgstr ""
 
 #: src/kgoldrunner.cpp:925
 #, kde-format
 msgid "Move hero"
-msgstr "移动主角"
+msgstr ""
 
 #: src/kgoldrunner.cpp:926
 #, kde-format
 msgid "Change the hero's starting position"
-msgstr "更改主角的初始位置"
+msgstr ""
 
 #: src/kgoldrunner.cpp:929
 #, kde-format
 msgid "Enemy"
-msgstr "敌人"
+msgstr ""
 
 #: src/kgoldrunner.cpp:930
 #, kde-format
 msgid "Paint enemies"
-msgstr "绘制敌人"
+msgstr ""
 
 #: src/kgoldrunner.cpp:931
 #, kde-format
 msgid "Paint enemies at their starting positions"
-msgstr "绘制敌人的初始位置"
+msgstr ""
 
 #: src/kgoldrunner.cpp:935
 #, kde-format
 msgid "Brick"
-msgstr "砖块"
+msgstr ""
 
 #: src/kgoldrunner.cpp:936
 #, kde-format
 msgid "Paint bricks (can dig)"
-msgstr "绘制可挖掘的砖块"
+msgstr ""
 
 #: src/kgoldrunner.cpp:937
 #, kde-format
 msgid "Paint bricks (diggable objects)"
-msgstr "绘制砖块(可挖掘物体)"
+msgstr ""
 
 #: src/kgoldrunner.cpp:940
 #, kde-format
 msgid "Concrete"
-msgstr "混凝土"
+msgstr ""
 
 #: src/kgoldrunner.cpp:941
 #, kde-format
 msgid "Paint concrete (cannot dig)"
-msgstr "绘制混凝土 (不可挖掘)"
+msgstr ""
 
 #: src/kgoldrunner.cpp:942
 #, kde-format
 msgid "Paint concrete objects (not diggable)"
-msgstr "绘制混凝土块 (不可挖掘)"
+msgstr ""
 
 #: src/kgoldrunner.cpp:945
 #, kde-format
 msgid "Trap"
-msgstr "陷阱"
+msgstr ""
 
 #: src/kgoldrunner.cpp:945
 #, kde-format
 msgid "Trap/False Brick"
-msgstr "陷阱/假砖块"
+msgstr ""
 
 #: src/kgoldrunner.cpp:946 src/kgoldrunner.cpp:948
 #, kde-format
 msgid "Paint traps or false bricks (can fall through)"
-msgstr "绘制陷阱或假砖块 (可以落下)"
+msgstr ""
 
 #: src/kgoldrunner.cpp:952
 #, kde-format
 msgid "Ladder"
-msgstr "梯子"
+msgstr ""
 
 #: src/kgoldrunner.cpp:953
 #, kde-format
 msgid "Paint ladders"
-msgstr "绘制梯子"
+msgstr ""
 
 #: src/kgoldrunner.cpp:954
 #, kde-format
 msgid "Paint ladders (ways to go up or down)"
-msgstr "绘制梯子 (可向上或向下攀爬)"
+msgstr ""
 
 #: src/kgoldrunner.cpp:957
 #, kde-format
 msgid "H Ladder"
-msgstr "隐梯子"
+msgstr ""
 
 #: src/kgoldrunner.cpp:957
 #, kde-format
 msgid "Hidden Ladder"
-msgstr "隐藏的梯子"
+msgstr ""
 
 #: src/kgoldrunner.cpp:958
 #, kde-format
 msgid "Paint hidden ladders"
-msgstr "绘制隐藏的梯子"
+msgstr ""
 
 #: src/kgoldrunner.cpp:959
 #, kde-format
 msgid "Paint hidden ladders, which appear when all the gold is gone"
-msgstr "绘制隐藏的梯子，当取得所有金子后会出现"
+msgstr ""
 
 #: src/kgoldrunner.cpp:963
 #, kde-format
 msgid "Bar"
-msgstr "条形图"
+msgstr "ზოლი"
 
 #: src/kgoldrunner.cpp:963
 #, kde-format
 msgid "Bar/Pole"
-msgstr "挂绳/撑杆"
+msgstr ""
 
 #: src/kgoldrunner.cpp:964
 #, kde-format
 msgid "Paint bars or poles"
-msgstr "绘制挂绳或撑杆"
+msgstr ""
 
 #: src/kgoldrunner.cpp:965
 #, kde-format
 msgid "Paint bars or poles (can fall from these)"
-msgstr "绘制可悬在上面的挂绳或撑杆"
+msgstr ""
 
 #: src/kgoldrunner.cpp:969
 #, kde-format
 msgid "Gold"
-msgstr "金币"
+msgstr "ოქრო"
 
 #: src/kgoldrunner.cpp:969
 #, kde-format
 msgid "Gold/Treasure"
-msgstr "金子/财宝"
+msgstr ""
 
 #: src/kgoldrunner.cpp:970
 #, kde-format
 msgid "Paint gold (or other treasure)"
-msgstr "绘制金子 (或其其他财宝)"
+msgstr ""
 
 #: src/kgoldrunner.cpp:971
 #, kde-format
 msgid "Paint gold pieces (or other treasure)"
-msgstr "绘制金块 (或其他财宝)"
+msgstr ""
 
 #. i18n: ectx: Menu (editor)
 #: src/kgoldrunnerui.rc:20
 #, kde-format
 msgid "&Editor"
-msgstr "编辑器(&E)"
+msgstr "&რედაქტორი"
 
 #. i18n: ectx: ToolBar (editToolbar)
 #: src/kgoldrunnerui.rc:52
 #, kde-format
 msgid "Edit Toolbar"
-msgstr "编辑工具栏"
+msgstr "ხელსაწყოთა ზოლის რედაქტირება"
 
 #: src/kgrdialog.cpp:35
 #, kde-format
@@ -6611,12 +6476,12 @@ msgstr ""
 #: src/kgrdialog.cpp:57
 #, kde-format
 msgid "Name of level:"
-msgstr "关卡名称："
+msgstr ""
 
 #: src/kgrdialog.cpp:64
 #, kde-format
 msgid "Hint for level:"
-msgstr "关卡提示："
+msgstr ""
 
 #: src/kgrdialog.cpp:104 src/kgrdialog.cpp:173
 #, kde-format
@@ -6627,89 +6492,90 @@ msgstr ""
 #: src/kgrdialog.cpp:124
 #, kde-format
 msgid "Name of game:"
-msgstr "游戏名称："
+msgstr ""
 
 #: src/kgrdialog.cpp:132
 #, kde-format
 msgid "File name prefix:"
-msgstr "文件名前缀："
+msgstr "ფაილის სახელის პრეფიქსი:"
 
 #: src/kgrdialog.cpp:140
 #, kde-format
 msgid "Traditional rules"
-msgstr "传统规则"
+msgstr ""
 
 #: src/kgrdialog.cpp:141
 #, kde-format
 msgid "KGoldrunner rules"
-msgstr "KGoldrunner 规则"
+msgstr ""
 
 #: src/kgrdialog.cpp:150 src/kgrdialog.cpp:185
 #, kde-format
 msgid "1 level"
 msgid_plural "%1 levels"
-msgstr[0] "%1 个关卡"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/kgrdialog.cpp:153
 #, kde-format
 msgid "About this game:"
-msgstr "关于此游戏："
+msgstr ""
 
 #: src/kgrdialog.cpp:170
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Game"
-msgstr "创建游戏"
+msgstr "თამაშის შექმნა"
 
 #: src/kgrdialog.cpp:187
 #, kde-format
 msgid "Save Changes"
-msgstr "保存更改"
+msgstr "ცვლილებების შენახვა"
 
 #: src/kgrdialog.cpp:192
 #, kde-format
 msgid "0 levels"
-msgstr "0 个关卡"
+msgstr ""
 
 #: src/kgrdialog.cpp:193 src/kgrselector.cpp:265
 #, kde-format
 msgid "Save New"
-msgstr "保存新的"
+msgstr ""
 
 #: src/kgrdialog.cpp:248
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Saved Game"
-msgstr "选择保存的游戏"
+msgstr ""
 
 #: src/kgrdialog.cpp:267
 #, kde-format
 msgid "Game                       Level/Lives/Score   Day    Date     Time  "
-msgstr "游戏                       关卡/命数/分数   日    日期     时间  "
+msgstr ""
 
 #: src/kgreditor.cpp:66
 #, kde-format
 msgid "Create Level"
-msgstr "创建关卡"
+msgstr "დონის შექმნა"
 
 #: src/kgreditor.cpp:67
 #, kde-format
 msgid ""
 "You cannot create and save a level until you have created a game to hold it. "
 "Try menu item \"Create Game\"."
-msgstr "在您保存新建的游戏前无法创建并保存关卡。请尝试使用菜单项“创建游戏”。"
+msgstr ""
 
 #: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:262
 #, kde-format
 msgid "Edit Level"
-msgstr "编辑关卡"
+msgstr ""
 
 #: src/kgreditor.cpp:116
 #, kde-format
 msgid ""
 "You cannot edit and save a level until you have created a game and a level. "
 "Try menu item \"Create Game\"."
-msgstr "在您创建完游戏和关卡前无法编辑并保存关卡，请尝试使用菜单项“创建游戏”。"
+msgstr ""
 
 #: src/kgreditor.cpp:138
 #, kde-format
@@ -6727,44 +6593,44 @@ msgstr ""
 #: src/kgreditor.cpp:243
 #, kde-format
 msgid "Do you want to insert a level and move existing levels up by one?"
-msgstr "您要插入一个新关卡，并将原来的关卡上移一位吗？"
+msgstr ""
 
 #: src/kgreditor.cpp:245
 #, kde-format
 msgid "&Insert Level"
-msgstr "插入关卡(&I)"
+msgstr ""
 
 #: src/kgreditor.cpp:245 src/kgreditor.cpp:444
 #, kde-format
 msgid "&Cancel"
-msgstr "取消(&C)"
+msgstr "&შეწყვეტა"
 
 #: src/kgreditor.cpp:261 src/kgreditor.cpp:779 src/kgrgame.cpp:1496
 #: src/kgrgame.cpp:1708
 #, kde-format
 msgid "Cannot open file '%1' for output."
-msgstr "无法打开文件“%1”并输出。"
+msgstr ""
 
 #: src/kgreditor.cpp:316 src/kgreditor.cpp:332 src/kgreditor.cpp:340
 #: src/kgreditor.cpp:355
 #, kde-format
 msgid "Move Level"
-msgstr "移动关卡"
+msgstr ""
 
 #: src/kgreditor.cpp:317
 #, kde-format
 msgid "You must first load a level to be moved. Use the \"%1\" or \"%2\" menu."
-msgstr "您必须先加载一个要移动的关卡，请使用菜单项“%1”或“%2”。"
+msgstr ""
 
 #: src/kgreditor.cpp:319
 #, kde-format
 msgid "Game"
-msgstr "游戏"
+msgstr "თამაში"
 
 #: src/kgreditor.cpp:319 src/kgreditor.cpp:639
 #, kde-format
 msgid "Editor"
-msgstr "编辑"
+msgstr "რედაქტორი"
 
 #: src/kgreditor.cpp:333
 #, kde-format
@@ -6772,144 +6638,143 @@ msgid ""
 "You cannot move a level until you have created a game and at least two "
 "levels. Try menu item \"Create Game\"."
 msgstr ""
-"在您创建了游戏及其至少两个关卡以前无法移动关卡。请尝试使用菜单项“创建游戏”。"
 
 #: src/kgreditor.cpp:341
 #, kde-format
 msgid "Sorry, you cannot move a system level."
-msgstr "抱歉，您无法移动系统关卡。"
+msgstr ""
 
 #: src/kgreditor.cpp:356
 #, kde-format
 msgid "You must change the level or the game or both."
-msgstr "您必须更改关卡和/或游戏。"
+msgstr ""
 
 #: src/kgreditor.cpp:418 src/kgreditor.cpp:441 src/kgreditor.cpp:459
 #: src/kgrselector.cpp:271
 #, kde-format
 msgid "Delete Level"
-msgstr "删除关卡"
+msgstr "დონის წაშლა"
 
 #: src/kgreditor.cpp:419
 #, kde-format
 msgid ""
 "You cannot delete a level until you have created a game and a level. Try "
 "menu item \"Create Game\"."
-msgstr "在您创建了游戏及其一个关卡前无法删除关卡。请尝试使用菜单项“创建游戏”。"
+msgstr ""
 
 #: src/kgreditor.cpp:442
 #, kde-format
 msgid "Do you want to delete a level and move higher levels down by one?"
-msgstr "您要删除一个关卡，并使上一个关卡下移一位吗？"
+msgstr ""
 
 #: src/kgreditor.cpp:444
 #, kde-format
 msgid "&Delete Level"
-msgstr "&删除关卡"
+msgstr ""
 
 #: src/kgreditor.cpp:460
 #, kde-format
 msgid "Cannot find file '%1' to be deleted."
-msgstr "找不到要删除的文件“%1”。"
+msgstr ""
 
 #: src/kgreditor.cpp:508 src/kgreditor.cpp:518 src/kgreditor.cpp:523
 #: src/kgreditor.cpp:537 src/kgreditor.cpp:555 src/kgreditor.cpp:767
 #: src/kgreditor.cpp:778
 #, kde-format
 msgid "Save Game Info"
-msgstr "保存游戏信息"
+msgstr ""
 
 #: src/kgreditor.cpp:509
 #, kde-format
 msgid "You must enter a name for the game."
-msgstr "您必须输入游戏的名称。"
+msgstr ""
 
 #: src/kgreditor.cpp:519
 #, kde-format
 msgid "You must enter a filename prefix for the game."
-msgstr "您必须输入游戏的文件名前缀。"
+msgstr ""
 
 #: src/kgreditor.cpp:524
 #, kde-format
 msgid "The filename prefix should not be more than 5 characters."
-msgstr "文件名前缀不应大于 5 个字符。"
+msgstr ""
 
 #: src/kgreditor.cpp:538
 #, kde-format
 msgid "The filename prefix should be all alphabetic characters."
-msgstr "文件名前缀应全部是字母字符。"
+msgstr ""
 
 #: src/kgreditor.cpp:556
 #, kde-format
 msgid "The filename prefix '%1' is already in use."
-msgstr "文件名前缀“%1”正在使用中。"
+msgstr ""
 
 #: src/kgreditor.cpp:640
 #, kde-format
 msgid "You have not saved your work. Do you want to save it now?"
-msgstr "您的工作尚未保存。现在要保存吗？"
+msgstr ""
 
 #: src/kgreditor.cpp:642
 #, kde-format
 msgid "&Save"
-msgstr "保存(&S)"
+msgstr ""
 
 #: src/kgreditor.cpp:642
 #, kde-format
 msgid "&Do Not Save"
-msgstr "不保存(&D)"
+msgstr "&არ შეინახო"
 
 #: src/kgreditor.cpp:643
 #, kde-format
 msgid "&Go on editing"
-msgstr "继续编辑(&G)"
+msgstr ""
 
 #: src/kgreditor.cpp:768
 #, kde-format
 msgid "You can only modify user games."
-msgstr "您不能只修改用户的游戏。"
+msgstr ""
 
 #: src/kgreditor.cpp:829
 #, kde-format
 msgid "New Level"
-msgstr "新建关卡"
+msgstr ""
 
 #: src/kgreditor.cpp:839 src/kgrgame.cpp:1389
 #, kde-format
 msgctxt "Game name - level number."
 msgid "%1 - %2"
-msgstr "%1 - %2"
+msgstr ""
 
 #: src/kgreditor.cpp:843 src/kgrgame.cpp:1392
 #, kde-format
 msgctxt "Game name - level number - level name."
 msgid "%1 - %2 - %3"
-msgstr "%1 - %2 - %3"
+msgstr ""
 
 #: src/kgrgame.cpp:110
 #, kde-format
 msgid "Click anywhere to begin live play"
-msgstr "点击任意位置开始游戏"
+msgstr ""
 
 #: src/kgrgame.cpp:191
 #, kde-format
 msgid "Play Next Level"
-msgstr "玩下一关"
+msgstr ""
 
 #: src/kgrgame.cpp:192
 #, kde-format
 msgid "There are no more levels in this game."
-msgstr "此游戏集内没有其他关卡了。"
+msgstr ""
 
 #: src/kgrgame.cpp:262
 #, kde-format
 msgid "Inappropriate action: you are not editing a level."
-msgstr "操作不当：您没有在编辑关卡。"
+msgstr ""
 
 #: src/kgrgame.cpp:421
 #, kde-format
 msgid "No Sound"
-msgstr "无声音"
+msgstr "ხმის გარეშე"
 
 #: src/kgrgame.cpp:422
 #, kde-format
@@ -6919,109 +6784,106 @@ msgid ""
 "This is because no development versions of the OpenAL and SndFile libraries "
 "were present when it was compiled and built."
 msgstr ""
-"警告：此 KGoldrunner 程序副本没有声音支持。\n"
-"\n"
-"可能是因为在编译构建时没有引入 OpenAL 和 SndFile 开发版的类库。"
 
 #: src/kgrgame.cpp:626 src/kgrgame.cpp:783
 #, kde-format
 msgid "Game Paused"
-msgstr "游戏暂停"
+msgstr ""
 
 #: src/kgrgame.cpp:627
 #, kde-format
 msgid ""
 "The replay has stopped and the game is pausing while you prepare to go on "
 "playing. Please press the Pause key (default P or Esc) when you are ready."
-msgstr "重放已停止，游戏也已暂停。要重新再玩时请按暂停键(默认为 P 或 Esc)。"
+msgstr ""
 
 #: src/kgrgame.cpp:671 src/kgrgame.cpp:677
 #, kde-format
 msgid "Replay Last Level"
-msgstr "重放上一关"
+msgstr ""
 
 #: src/kgrgame.cpp:672
 #, kde-format
 msgid ""
 "ERROR: Could not find and replay a recording of the last level you played."
-msgstr "错误：找不到上一关的录像。"
+msgstr ""
 
 #: src/kgrgame.cpp:678
 #, kde-format
 msgid ""
 "There is no last level to replay.  You need to play a level to completion, "
 "win or lose, before you can use the Replay Last Level action."
-msgstr "没有可重放的上一关。要播放上一关录像，您需要先打完一关，无论能否通过。"
+msgstr ""
 
 #: src/kgrgame.cpp:696
 #, kde-format
 msgctxt "@title:window"
 msgid "Quick Start"
-msgstr "快速入门"
+msgstr ""
 
 #: src/kgrgame.cpp:713
 #, kde-format
 msgctxt "Button text: start playing a game"
 msgid "&PLAY"
-msgstr "开始(&P)"
+msgstr ""
 
 #: src/kgrgame.cpp:714
 #, kde-format
 msgid "Start playing this level"
-msgstr "开始玩这一关"
+msgstr ""
 
 #: src/kgrgame.cpp:716
 #, kde-format
 msgid ""
 "Set up to start playing the game and level being shown, as soon as you "
 "click, move the mouse or press a key"
-msgstr "开始玩当前显示的游戏关卡，点击后请移动鼠标或按下键盘"
+msgstr ""
 
 #: src/kgrgame.cpp:720
 #, kde-format
 msgid "&Quit"
-msgstr "退出(&Q)"
+msgstr ""
 
 #: src/kgrgame.cpp:721
 #, kde-format
 msgid "Close KGoldrunner"
-msgstr "关闭 KGoldrunner"
+msgstr ""
 
 #: src/kgrgame.cpp:725
 #, kde-format
 msgid "Start a different game or level"
-msgstr "开始不同的游戏或关卡"
+msgstr ""
 
 #: src/kgrgame.cpp:727
 #, kde-format
 msgid ""
 "Use the Select Game dialog box to choose a different game or level and start "
 "playing it"
-msgstr "使用选择游戏对话框重新选择一个不同的游戏或关卡，并开始"
+msgstr ""
 
 #: src/kgrgame.cpp:731
 #, kde-format
 msgid "&Use Menu"
-msgstr "使用菜单(&U)"
+msgstr ""
 
 #: src/kgrgame.cpp:733
 #, kde-format
 msgid "Use the menus to choose other actions"
-msgstr "使用菜单选择其他操作"
+msgstr ""
 
 #: src/kgrgame.cpp:735
 #, kde-format
 msgid ""
 "Before playing, use the menus to choose other actions, such as loading a "
 "saved game or changing the theme"
-msgstr "在开始游戏前，您可使用菜单选择其他操作，如加载保存的游戏或更换主题"
+msgstr ""
 
 #: src/kgrgame.cpp:784
 #, kde-format
 msgid ""
 "The game is halted. You will need to press the Pause key (default P or Esc) "
 "when you are ready to play."
-msgstr "游戏已挂起。重新再玩时请按暂停键(默认为 P 或 Esc)。"
+msgstr ""
 
 #: src/kgrgame.cpp:837
 #, kde-format
@@ -7034,67 +6896,66 @@ msgid ""
 "Sorry, although all levels of KGoldrunner can be solved, no solution has "
 "been recorded yet for the level you selected."
 msgstr ""
-"抱歉，虽然 KGoldrunner 中每关都有过关之道，但对所选这关还没有记载相关指导。"
 
 #: src/kgrgame.cpp:849
 #, kde-format
 msgid "Replay Any Level"
-msgstr "重放任意关"
+msgstr ""
 
 #: src/kgrgame.cpp:850 src/kgrgame.cpp:2070
 #, kde-format
 msgid ""
 "Sorry, you do not seem to have played and recorded the selected level before."
-msgstr "抱歉，您以前似乎未曾玩过和录过所选关的录像。"
+msgstr ""
 
 #: src/kgrgame.cpp:1064
 #, kde-format
 msgid ""
 "<NOBR><B>GAME OVER !!!</B></NOBR><P>Would you like to try this level again?</"
 "P>"
-msgstr "<NOBR><B>游戏结束！</B></NOBR><P>您要尝试再玩一次本关吗？</P>"
+msgstr ""
 
 #: src/kgrgame.cpp:1066
 #, kde-format
 msgid "Game Over"
-msgstr "游戏结束"
+msgstr "თამაში დასრულდა"
 
 #: src/kgrgame.cpp:1067
 #, kde-format
 msgid "&Try Again"
-msgstr "重试(&T)"
+msgstr "&კიდევ სცადეთ"
 
 #: src/kgrgame.cpp:1067
 #, kde-format
 msgid "&Finish"
-msgstr "完成(&F)"
+msgstr "&დასრულება"
 
 #: src/kgrgame.cpp:1141
 #, kde-format
 msgid ""
 "<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the <b>"
 "\"%1\"</b> game !!</p>"
-msgstr "<b>恭喜！</b><p>您已赢得了游戏<b>“%1”</b>中最后一关的胜利！</p>"
+msgstr ""
 
 #: src/kgrgame.cpp:1298
 #, kde-format
 msgid "Hint"
-msgstr "提示"
+msgstr "მინიშნება"
 
 #: src/kgrgame.cpp:1304
 #, kde-format
 msgid "&OK"
-msgstr "确定(&O)"
+msgstr ""
 
 #: src/kgrgame.cpp:1317
 #, kde-format
 msgid "Sorry, there is no hint for this level."
-msgstr "抱歉，这一关没有提示。"
+msgstr ""
 
 #: src/kgrgame.cpp:1379
 #, kde-format
 msgid "T H E   E N D"
-msgstr "T H E   E N D"
+msgstr ""
 
 #: src/kgrgame.cpp:1420
 #, kde-format
@@ -7103,47 +6964,45 @@ msgid ""
 "switch automatically to keyboard control? Pointer control is easier to use "
 "in the long term - like riding a bike rather than walking!"
 msgstr ""
-"您按下了一个可以控制主角的按键。您要自动切换到键盘控制模式吗？然而在长时间游"
-"戏时，鼠标控制更加简单，好比骑车总比走路快！"
 
 #: src/kgrgame.cpp:1424
 #, kde-format
 msgid "Switch to Keyboard Mode"
-msgstr "切换到键盘模式"
+msgstr ""
 
 #: src/kgrgame.cpp:1425
 #, kde-format
 msgid "Switch to &Keyboard Mode"
-msgstr "切换到键盘模式(&K)"
+msgstr ""
 
 #: src/kgrgame.cpp:1426
 #, kde-format
 msgid "Stay in &Mouse Mode"
-msgstr "留在鼠标模式(&M)"
+msgstr ""
 
 #: src/kgrgame.cpp:1427
 #, kde-format
 msgid "Keyboard Mode"
-msgstr "键盘模式"
+msgstr "კლავიატურის რეჟმი"
 
 #: src/kgrgame.cpp:1469 src/kgrgame.cpp:1495 src/kgrgame.cpp:1505
 #: src/kgrgame.cpp:1524 src/kgrgame.cpp:1530
 #, kde-format
 msgid "Save Game"
-msgstr "保存游戏"
+msgstr "თამაშის შენახვა"
 
 #: src/kgrgame.cpp:1470
 #, kde-format
 msgid ""
 "Sorry, you cannot save your game play while you are editing. Please try menu "
 "item \"%1\"."
-msgstr "抱歉，您不能在编辑状态中保存您的游戏。请尝试用菜单项“%1”进行操作。"
+msgstr ""
 
 #: src/kgrgame.cpp:1506 src/kgrgame.cpp:1550 src/kgrgame.cpp:1669
 #: src/kgrgame.cpp:1872 src/kgrgame.cpp:2036 src/kgrgameio.cpp:170
 #, kde-format
 msgid "Cannot open file '%1' for read-only."
-msgstr "无法以只读模式打开文件“%1”。"
+msgstr ""
 
 #: src/kgrgame.cpp:1525
 #, kde-format
@@ -7151,38 +7010,36 @@ msgid ""
 "Please note: for reasons of simplicity, your saved game position and score "
 "will be as they were at the start of this level, not as they are now."
 msgstr ""
-"请注意：为设计简单考虑，您保存的游戏进度和分数都以该关卡开始时为准，而不是现"
-"在的状态。"
 
 #: src/kgrgame.cpp:1531
 #, kde-format
 msgid "Error: Failed to save your game."
-msgstr "错误：保存游戏失败。"
+msgstr ""
 
 #: src/kgrgame.cpp:1543 src/kgrgame.cpp:1549 src/kgrgame.cpp:1591
 #, kde-format
 msgid "Load Game"
-msgstr "加载游戏"
+msgstr "თამაშის ჩატვირთვა"
 
 #: src/kgrgame.cpp:1544
 #, kde-format
 msgid "Sorry, there are no saved games."
-msgstr "抱歉，没有已保存的游戏。"
+msgstr ""
 
 #: src/kgrgame.cpp:1592
 #, kde-format
 msgid "Cannot find the game with prefix '%1'."
-msgstr "通过前缀“%1”找不到游戏。"
+msgstr ""
 
 #: src/kgrgame.cpp:1650
 #, kde-format
 msgid "Unknown"
-msgstr "未知"
+msgstr ""
 
 #: src/kgrgame.cpp:1668 src/kgrgame.cpp:1707
 #, kde-format
 msgid "Check for High Score"
-msgstr "检查高分傍"
+msgstr ""
 
 #: src/kgrgame.cpp:1725
 #, kde-format
@@ -7191,8 +7048,6 @@ msgid ""
 "game.<br/>Please enter your name so that it may be enshrined<br/>in the "
 "KGoldrunner Hall of Fame.</html>"
 msgstr ""
-"<html><b>恭喜！</b><br/>您达成了一个此游戏的新高分。<br/>请输入您的名字，它将"
-"显示在 KGoldrunner 名人堂内。</html>"
 
 #: src/kgrgame.cpp:1739
 #, kde-format
@@ -7203,27 +7058,27 @@ msgstr ""
 #: src/kgrgame.cpp:1826
 #, kde-format
 msgid "Save High Score"
-msgstr "保存高分"
+msgstr ""
 
 #: src/kgrgame.cpp:1827
 #, kde-format
 msgid "Error: Failed to save your high score."
-msgstr "错误：无法保存您的高分。"
+msgstr ""
 
 #: src/kgrgame.cpp:1839 src/kgrgame.cpp:1862 src/kgrgame.cpp:1871
 #, kde-format
 msgid "Show High Scores"
-msgstr "显示高分"
+msgstr ""
 
 #: src/kgrgame.cpp:1840
 #, kde-format
 msgid "Sorry, we do not keep high scores for tutorial games."
-msgstr "抱歉，教学游戏不会保留高分。"
+msgstr ""
 
 #: src/kgrgame.cpp:1863
 #, kde-format
 msgid "Sorry, there are no high scores for the \"%1\" game yet."
-msgstr "抱歉，游戏“%1”还没有高分记录。"
+msgstr ""
 
 #: src/kgrgame.cpp:1887
 #, kde-format
@@ -7231,185 +7086,183 @@ msgid ""
 "<center><h2>KGoldrunner Hall of Fame</h2></center><center><h3>\"%1\" Game</"
 "h3></center>"
 msgstr ""
-"<center><h2>KGoldrunner 名人堂</h2></center><center><h3>游戏“%1”</h3></"
-"center>"
 
 #: src/kgrgame.cpp:1897
 #, kde-format
 msgctxt "1, 2, 3 etc."
 msgid "Rank"
-msgstr "等级"
+msgstr "რანგი"
 
 #: src/kgrgame.cpp:1898
 #, kde-format
 msgctxt "Person"
 msgid "Name"
-msgstr "名称"
+msgstr ""
 
 #: src/kgrgame.cpp:1899
 #, kde-format
 msgctxt "Game level reached"
 msgid "Level"
-msgstr "关卡"
+msgstr "დონე"
 
 #: src/kgrgame.cpp:1900
 #, kde-format
 msgid "Score"
-msgstr "评分"
+msgstr "ქულები"
 
 #: src/kgrgame.cpp:1901
 #, kde-format
 msgid "Date"
-msgstr "日期"
+msgstr ""
 
 #: src/kgrgame.cpp:1904
 #, kde-format
 msgctxt "@title:window"
 msgid "High Scores"
-msgstr "高分"
+msgstr "უმაღლესი ქულები"
 
 #: src/kgrgame.cpp:2029 src/kgrgame.cpp:2035 src/kgrgame.cpp:2039
 #, kde-format
 msgid "Load Game Info"
-msgstr "加载游戏信息"
+msgstr ""
 
 #: src/kgrgame.cpp:2030
 #, kde-format
 msgid "Cannot find game info file '%1'."
-msgstr "在文件“%1”中找不到游戏。"
+msgstr ""
 
 #: src/kgrgame.cpp:2040
 #, kde-format
 msgid "Reached end of file '%1' before finding end of game-data."
-msgstr "在定位到游戏数据末尾前先达到了文件末尾“%1”。"
+msgstr ""
 
 #: src/kgrgame.cpp:2064 src/kgrgame.cpp:2069 src/kgrselector.cpp:259
 #, kde-format
 msgid "Save A Solution"
-msgstr "保存过关指导"
+msgstr ""
 
 #: src/kgrgame.cpp:2065
 #, kde-format
 msgid "Your solution to level %1 has been saved on file %2"
-msgstr "您对级别 %1 的过关指导已保存在文件 %2 上"
+msgstr ""
 
 #: src/kgrgameio.cpp:164 src/kgrgameio.cpp:169 src/kgrgameio.cpp:173
 #, kde-format
 msgid "Read Level Data"
-msgstr "读取关卡数据"
+msgstr ""
 
 #: src/kgrgameio.cpp:165
 #, kde-format
 msgid "Cannot find file '%1'."
-msgstr "找不到文件“%1”。"
+msgstr ""
 
 #: src/kgrgameio.cpp:174
 #, kde-format
 msgid "Reached end of file '%1' without finding level data."
-msgstr "已到达文件“%1”的末尾，找不到关卡数据。"
+msgstr ""
 
 #: src/kgrgameio.cpp:382 src/kgrgameio.cpp:389
 #, kde-format
 msgid "Rename File"
-msgstr "重命名文件"
+msgstr "ფაილის გადარქმევა"
 
 #: src/kgrgameio.cpp:383
 #, kde-format
 msgid "Cannot delete previous version of file '%1'."
-msgstr "无法删除文件“%1”的上一个版本。"
+msgstr ""
 
 #: src/kgrgameio.cpp:390
 #, kde-format
 msgid "Cannot rename file '%1' to '%2'."
-msgstr "无法重命名文件“%1”为“%2”。"
+msgstr ""
 
 #: src/kgrrenderer.cpp:109
 #, kde-format
 msgid "Theme Selector"
-msgstr "主题选择器"
+msgstr ""
 
 #: src/kgrscene.cpp:277
 #, kde-format
 msgid "Lives: %1"
-msgstr "生命数：%1"
+msgstr "სიცოცხლეები: %1"
 
 #: src/kgrscene.cpp:284
 #, kde-format
 msgid "Score: %1"
-msgstr "分数：%1"
+msgstr "ქულები: %1"
 
 #: src/kgrselector.cpp:69 src/kgrselector.cpp:75 src/kgrselector.cpp:95
 #: src/kgrselector.cpp:498
 #, kde-format
 msgid "Select Level"
-msgstr "选择关卡"
+msgstr ""
 
 #: src/kgrselector.cpp:70
 #, kde-format
 msgid "Sorry, you can only save or move into one of your own games."
-msgstr "抱歉，您只能保存或移动自有的游戏。"
+msgstr ""
 
 #: src/kgrselector.cpp:76
 #, kde-format
 msgid "Sorry, you can only delete a level from one of your own games."
-msgstr "抱歉，您只能从自有的游戏中删除关卡。"
+msgstr ""
 
 #: src/kgrselector.cpp:81 src/kgrselector.cpp:277
 #, kde-format
 msgid "Edit Game Info"
-msgstr "编辑游戏信息"
+msgstr ""
 
 #: src/kgrselector.cpp:82
 #, kde-format
 msgid "Sorry, you can only edit the game information on your own games."
-msgstr "抱歉，您只能编辑自有的游戏的信息。"
+msgstr ""
 
 #: src/kgrselector.cpp:96
 #, kde-format
 msgid "There is no level %1 in \"%2\", so you cannot play or edit it."
-msgstr "在“%2”中没有关卡 %1，因此您无法玩或编辑它。"
+msgstr ""
 
 #: src/kgrselector.cpp:118 src/kgrselector.cpp:173
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Game"
-msgstr "选择游戏"
+msgstr ""
 
 #: src/kgrselector.cpp:132
 #, kde-format
 msgid "<html><b>Please select a game:</b></html>"
-msgstr "<html><b>请选择一个游戏：</b></html>"
+msgstr ""
 
 #: src/kgrselector.cpp:140
 #, kde-format
 msgid "Name of Game"
-msgstr "游戏名"
+msgstr ""
 
 #: src/kgrselector.cpp:141
 #, kde-format
 msgid "Rules"
-msgstr "规则"
+msgstr "წესები"
 
 #: src/kgrselector.cpp:142
 #, kde-format
 msgid "Levels"
-msgstr "色阶"
+msgstr "დონეები"
 
 #: src/kgrselector.cpp:143
 #, kde-format
 msgid "Skill"
-msgstr "技能"
+msgstr ""
 
 #: src/kgrselector.cpp:175
 #, kde-format
 msgid "Level 1 of the selected game is:"
-msgstr "选中游戏的关卡 1 是："
+msgstr ""
 
 #: src/kgrselector.cpp:179
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Game/Level"
-msgstr "选择游戏/关卡"
+msgstr ""
 
 #: src/kgrselector.cpp:181
 #, kde-format
@@ -7429,7 +7282,7 @@ msgstr ""
 #: src/kgrselector.cpp:241
 #, kde-format
 msgid "Start Game"
-msgstr "开始游戏"
+msgstr "თამაშის დაწყება"
 
 #: src/kgrselector.cpp:250
 #, kde-format
@@ -7454,7 +7307,7 @@ msgstr ""
 #: src/kgrselector.cpp:274
 #, kde-format
 msgid "Move To..."
-msgstr "移动到..."
+msgstr ""
 
 #: src/kgrselector.cpp:355
 #, kde-format
@@ -7466,37 +7319,39 @@ msgstr "KGoldrunner"
 #, kde-format
 msgctxt "Rules"
 msgid "Traditional"
-msgstr "传统"
+msgstr "ტრადიციული"
 
 #: src/kgrselector.cpp:359
 #, kde-format
 msgctxt "Skill Level"
 msgid "Tutorial"
-msgstr "教程"
+msgstr "სახელმძღვანელო"
 
 #: src/kgrselector.cpp:361
 #, kde-format
 msgctxt "Skill Level"
 msgid "Normal"
-msgstr "普通窗口"
+msgstr "ნორმალური"
 
 #: src/kgrselector.cpp:362
 #, kde-format
 msgctxt "Skill Level"
 msgid "Championship"
-msgstr "高手"
+msgstr ""
 
 #: src/kgrselector.cpp:465
 #, kde-format
 msgid "1 level, uses KGoldrunner rules."
 msgid_plural "%1 levels, uses KGoldrunner rules."
 msgstr[0] ""
+msgstr[1] ""
 
 #: src/kgrselector.cpp:468
 #, kde-format
 msgid "1 level, uses Traditional rules."
 msgid_plural "%1 levels, uses Traditional rules."
 msgstr[0] ""
+msgstr[1] ""
 
 #: src/kgrselector.cpp:473
 #, kde-format
@@ -7619,7 +7474,7 @@ msgstr ""
 #: src/main.cpp:37
 #, kde-format
 msgid "(C) 2003 Ian Wadham and Marco Krüger"
-msgstr "(C) 2003 Ian Wadham and Marco Krüger"
+msgstr ""
 
 #: src/main.cpp:70
 #, kde-format
@@ -7629,7 +7484,7 @@ msgstr "Ian Wadham"
 #: src/main.cpp:70
 #, kde-format
 msgid "Current author"
-msgstr "当前作者"
+msgstr "მიმდინარე ავტორი"
 
 #: src/main.cpp:72
 #, kde-format
@@ -7639,7 +7494,7 @@ msgstr ""
 #: src/main.cpp:72
 #, kde-format
 msgid "Original author"
-msgstr "最初作者"
+msgstr "საწყისი ავტორი"
 
 #: src/main.cpp:74 src/main.cpp:80
 #, kde-format
@@ -7649,22 +7504,22 @@ msgstr "Mauricio Piacentini"
 #: src/main.cpp:75
 #, kde-format
 msgid "Port to KDE4, Qt4 and KGameCanvas classes"
-msgstr "移植到 KDE4，Qt4 和 KGameCanvas 类的设计者"
+msgstr ""
 
 #: src/main.cpp:77
 #, kde-format
 msgid "Maurizio Monge"
-msgstr "Maurizio Monge"
+msgstr ""
 
 #: src/main.cpp:78
 #, kde-format
 msgid "KGameCanvas classes for KDE4"
-msgstr "KDE4 的 KGameCanvas 类"
+msgstr ""
 
 #: src/main.cpp:81
 #, kde-format
 msgid "Artwork for runners and default theme"
-msgstr "游戏人物和默认主题的美工"
+msgstr ""
 
 #: src/main.cpp:83
 #, kde-format
@@ -7674,7 +7529,7 @@ msgstr "Johann Ollivier Lapeyre"
 #: src/main.cpp:84
 #, kde-format
 msgid "Artwork for bars and ladders"
-msgstr "挂绳和梯子的美工"
+msgstr ""
 
 #: src/main.cpp:86 src/main.cpp:94
 #, kde-format
@@ -7684,21 +7539,21 @@ msgstr "Eugene Trounev"
 #: src/main.cpp:87
 #, kde-format
 msgid "Artwork for background of Geek City theme"
-msgstr "“极客之城”主题的背景美工"
+msgstr ""
 
 #: src/main.cpp:89
 #, kde-format
 msgid "Luciano Montanaro"
-msgstr "Luciano Montanaro"
+msgstr ""
 
 #: src/main.cpp:90
 #, kde-format
 msgid ""
 "Nostalgia themes, improvements to runners, multiple-backgrounds feature, "
 "fade-in/fade-out feature and several other ideas"
-msgstr "怀旧主题设计、游戏人物改进、多重背景特性、淡入/淡出特性和一些创意"
+msgstr ""
 
 #: src/main.cpp:95
 #, kde-format
 msgid "Artwork for the Treasure of Egypt theme"
-msgstr "“埃及宝藏”主题的美工"
+msgstr ""
