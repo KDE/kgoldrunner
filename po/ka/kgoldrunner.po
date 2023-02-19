@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-20 00:44+0000\n"
-"PO-Revision-Date: 2023-02-07 08:48+0100\n"
+"PO-Revision-Date: 2023-02-18 07:51+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1714,7 +1714,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:47
 #, kde-format
 msgid "Manipulation"
-msgstr ""
+msgstr "მანიპულაცია"
 
 #: gamedata/game_GotD.txt:48
 #, kde-format
@@ -6353,7 +6353,7 @@ msgstr ""
 #: src/kgoldrunner.cpp:940
 #, kde-format
 msgid "Concrete"
-msgstr ""
+msgstr "ცემენტი"
 
 #: src/kgoldrunner.cpp:941
 #, kde-format
@@ -6945,7 +6945,7 @@ msgstr "მინიშნება"
 #: src/kgrgame.cpp:1304
 #, kde-format
 msgid "&OK"
-msgstr ""
+msgstr "&დიახ"
 
 #: src/kgrgame.cpp:1317
 #, kde-format
@@ -7034,7 +7034,7 @@ msgstr ""
 #: src/kgrgame.cpp:1650
 #, kde-format
 msgid "Unknown"
-msgstr ""
+msgstr "უცნობი"
 
 #: src/kgrgame.cpp:1668 src/kgrgame.cpp:1707
 #, kde-format
@@ -7097,7 +7097,7 @@ msgstr "რანგი"
 #, kde-format
 msgctxt "Person"
 msgid "Name"
-msgstr ""
+msgstr "სახელი"
 
 #: src/kgrgame.cpp:1899
 #, kde-format
@@ -7113,7 +7113,7 @@ msgstr "ქულები"
 #: src/kgrgame.cpp:1901
 #, kde-format
 msgid "Date"
-msgstr ""
+msgstr "თარიღი"
 
 #: src/kgrgame.cpp:1904
 #, kde-format
@@ -7179,7 +7179,7 @@ msgstr ""
 #: src/kgrrenderer.cpp:109
 #, kde-format
 msgid "Theme Selector"
-msgstr ""
+msgstr "თემის ამრჩევი"
 
 #: src/kgrscene.cpp:277
 #, kde-format
