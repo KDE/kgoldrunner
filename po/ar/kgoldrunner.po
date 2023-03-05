@@ -6520,7 +6520,7 @@ msgstr "احصل المجلّدات"
 #: src/kgoldrunner.cpp:878
 #, fuzzy, kde-format
 msgid "Cannot find system games sub-folder '/system/' in areas '%1'."
-msgstr "لا يستطيع ابحث نظام مجلد نظام بوصة منطقة من كدي مجلد KDEDIRS."
+msgstr "لا يستطيع ابحث نظام مجلد نظام بوصة منطقة من كِيدِي مجلد KDEDIRS."
 
 #: src/kgoldrunner.cpp:911
 #, fuzzy, kde-format
@@ -7864,21 +7864,22 @@ msgstr "صورة الغلاف لـ الكنز من مصر تيمة"
 #~ msgid ""
 #~ "Cannot find documentation sub-folder 'en/%1/' in area '%2' of the KDE "
 #~ "folder ($KDEDIRS)."
-#~ msgstr "لا يستطيع ابحث توثيق مجلد بوصة منطقة من كدي مجلد KDEDIRS."
+#~ msgstr "لا يستطيع ابحث توثيق مجلد بوصة منطقة من كِيدِي مجلد KDEDIRS."
 
 #, fuzzy
 #~ msgid ""
 #~ "Cannot find or create user games sub-folder '%1/user/' in area '%2' of "
 #~ "the KDE user area ($KDEHOME)."
 #~ msgstr ""
-#~ "لا يستطيع ابحث أو إ_نشئ مستخدم مجلد مستخدم بوصة منطقة من كدي مستخدم منطقة."
+#~ "لا يستطيع ابحث أو إ_نشئ مستخدم مجلد مستخدم بوصة منطقة من كِيدِي مستخدم "
+#~ "منطقة."
 
 #, fuzzy
 #~ msgid ""
 #~ "Cannot find or create 'levels/' folder in sub-folder '%1/user/' in the "
 #~ "KDE user area ($KDEHOME)."
 #~ msgstr ""
-#~ "لا يستطيع ابحث أو إ_نشئ مجلد بوصة مجلد مستخدم بوصة كدي مستخدم منطقة."
+#~ "لا يستطيع ابحث أو إ_نشئ مجلد بوصة مجلد مستخدم بوصة كِيدِي مستخدم منطقة."
 
 #, fuzzy
 #~ msgid "Missing Name"
