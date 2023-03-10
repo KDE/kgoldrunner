@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-20 00:44+0000\n"
-"PO-Revision-Date: 2023-02-07 00:47+0300\n"
+"PO-Revision-Date: 2023-03-09 13:37+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1682,7 +1682,7 @@ msgid ""
 msgstr ""
 "Hapisten kaçmanıza yardım etmesi için bir düşmana gereksiniminiz olacak.\n"
 "\n"
-"Soldaki altın için, biraz zamanlamaya ihtiyaç var.\n"
+"Soldaki altın için, biraz zamanlamaya gereksinim var.\n"
 "\n"
 "Sağa ve sola doğru ilerlerken, takım arkadaşınızın çukura düşmediğinden emin "
 "olun. Sağdaki üç altını toplamak için, onu sol merdivenin yanında tutun, "
@@ -3643,8 +3643,8 @@ msgstr ""
 "miltschitzky at googlemail dot com] tarafından hazırlandı.\n"
 "\n"
 "Talih Kuşu II'yi denemeden önce, ilk Talih Kuşu düzeylerini oynamak daha iyi "
-"olacaktır; çünkü orda uygulanan bir çok tekniğe ihtiyaç duyacaksınız. Talih "
-"Kuşu ve Talih Kuşu II'deki düzeylerin hiçbiri olanaksız değildir. "
+"olacaktır; çünkü orda uygulanan bir çok tekniğe gereksinim duyacaksınız. "
+"Talih Kuşu ve Talih Kuşu II'deki düzeylerin hiçbiri olanaksız değildir. "
 "Şüpheliyseniz yazar tarafından sağlanmış çözümleri izleme için 'Hareket-"
 ">Çözüm Göster' menüsünü kullanabilirsiniz."
 
@@ -6155,7 +6155,7 @@ msgstr ""
 #: gamedata/game_plwv.txt:39
 #, kde-format
 msgid "Do You Need Him?"
-msgstr "Ona İhtiyacın Var Mı?"
+msgstr "O Sana Gerekli mi?"
 
 #: gamedata/game_plwv.txt:40
 #, kde-format
@@ -7511,7 +7511,7 @@ msgstr ""
 #: gamedata/game_wad.txt:25
 #, kde-format
 msgid "Who Needs Enemies?"
-msgstr "Kimin Düşmana İhtiyacı Var?"
+msgstr "Kimin Düşmana Gereksinimi Var?"
 
 #: gamedata/game_wad.txt:26
 #, kde-format
