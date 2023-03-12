@@ -17,7 +17,6 @@
   <name xml:lang="gl">KGoldrunner</name>
   <name xml:lang="id">KGoldrunner</name>
   <name xml:lang="it">KGoldrunner</name>
-  <name xml:lang="ka">KGoldrunner</name>
   <name xml:lang="ko">KGoldrunner</name>
   <name xml:lang="nl">KGoldrunner</name>
   <name xml:lang="nn">KGoldrunner</name>
@@ -32,7 +31,7 @@
   <name xml:lang="sr-ijekavian">К‑златобојац</name>
   <name xml:lang="sr-ijekavianlatin">K‑zlatobojac</name>
   <name xml:lang="sv">Kgoldrunner</name>
-  <name xml:lang="tr">KGoldrunner</name>
+  <name xml:lang="tr">K Altın Avı</name>
   <name xml:lang="uk">Золотошукач</name>
   <name xml:lang="x-test">xxKGoldrunnerxx</name>
   <name xml:lang="zh-CN">KGoldrunner</name>
@@ -49,7 +48,6 @@
   <summary xml:lang="gl">Colle moedas, escapa dos inimigos e resolve quebracabezas</summary>
   <summary xml:lang="id">Memburu Emas, Menghindari Musuh, dan Memecahkan Teka-teki</summary>
   <summary xml:lang="it">Cerca l'oro, evita i nemici e risolvi i problemi</summary>
-  <summary xml:lang="ka">ინადირეთ ოქროზე, თავიდან აიცილეთ მტრები და ამოხსენით პაზლები</summary>
   <summary xml:lang="ko">금을 캐고, 적을 피하고, 퍼즐을 풀기</summary>
   <summary xml:lang="nl">Jaag op goud, versla vijanden en los puzzels op</summary>
   <summary xml:lang="nn">Jakt etter gull, unngå fiendar og løys oppgåver</summary>
@@ -85,7 +83,6 @@
     <p xml:lang="gl">KGoldrunner é un xogo de acción no que o heroe corre a través dun labirinto, sube por escaleiras, cava foxos e esquiva inimigos para recoller todas as moedas de ouro e escapar ao seguinte nivel. Os inimigos tamén van a polo ouro. E aínda peor, van tras de ti!</p>
     <p xml:lang="id">KGoldrunner adalah permainan aksi di mana pahlawan berlari melalui jalan simpang siur, memanjat tangga, menggali lubang dan menghindari musuh untuk mengumpulkan semua bongkahan emas dan melarikan diri ke level selanjutnya. Musuhmu juga mengejar emas. Yang lebih parahnya lagi, mereka mengejarmu!.</p>
     <p xml:lang="it">KGoldrunner è un gioco d'azione in cui l'eroe corre in un labirinto, sale scale, scava buche e schiva nemici per raccogliere tutte le pepite d'oro e scappare verso il livello successivo. Anche i tuoi nemici vanno a caccia dell'oro. Peggio, vanno a caccia di te!</p>
-    <p xml:lang="ka">KGoldrunner თამაშია, სადაც გმირი დახტის ლაბირინთში, ძვრება კიბეებზე, თხრის ორმოებს და თავიდან იცილებს მტრებს იმისთვის, რომ ოქროს ნაწილები შეაგროვოს და შემდეგ დონეზე გადავიდეს. თქვენი მტრებიც ოქროს ეძებენ, მაგრამ რაც ცუდია, თქვენც დაგდევენ!.</p>
     <p xml:lang="ko">KGoldrunner는 캐릭터를 조종해서 미로를 따라가고, 계단을 올라가고, 구멍을 파고 적을 따돌려서 모든 금괴를 모으고 다음 레벨로 도망가는 게임입니다. 적은 금괴뿐만 아니라 플레이어도 노리고 있습니다!.</p>
     <p xml:lang="nl">KGoldrunner is een actiespel waar de held door een doolhof rent, ladders beklimt, gaten graaft en vijanden verslaat om alle goudklompjes te verzamelen en te ontsnappen naar het volgende level. Jouw vijanden zitten ook achter het goud aan. Nog erger, ze gaan ook achter jou aan!.</p>
     <p xml:lang="nn">KGoldrunner er eit actionspel der du spring gjennom ulike brett, klatrar, grev hol og unngår fiendar for å samla gullklumpar og komma deg vidare til neste brett. Fiendane dine er òg ute etter gullet. Og endå verre: Dei er ute etter deg!</p>
@@ -100,7 +97,7 @@
     <p xml:lang="sr-ijekavian">К‑златобојац је акциона игра у којој јунак трчи кроз лавиринт, пење се уз степенице, копа рупе и избегава непријатеље како био се докопао свих златних груменова и побегао на наредни ниво. И ваши непријатељи јуре за златом, и, још горе, за вама!</p>
     <p xml:lang="sr-ijekavianlatin">K‑zlatobojac je akciona igra u kojoj junak trči kroz lavirint, penje se uz stepenice, kopa rupe i izbegava neprijatelje kako bio se dokopao svih zlatnih grumenova i pobegao na naredni nivo. I vaši neprijatelji jure za zlatom, i, još gore, za vama!</p>
     <p xml:lang="sv">Kgoldrunner är ett äventyrsspel där hjälten springer genom en labyrint, klättrar på stegar, gräver hål och undviker fiender för att samla in alla guldklimpar och fly till nästa nivå. Fienderna är också ute efter guldet. Vad värre är, de är också är ute efter dig!</p>
-    <p xml:lang="tr">KGoldrunner, kahramanımızın labirentte dolaştığı, tüm altın külçelerini toplamak ve bir sonraki düzeye çıkmak için merdiven tırmandığı, delik açtığı ve düşman avı yaptığı bir kaçış aksiyon oyunudur. Düşmanların da altının peşinde. Daha da kötüsü, senin peşindeler!</p>
+    <p xml:lang="tr">K Altın Avı, kahramanımızın labirentte dolaştığı, tüm altın külçelerini toplamak ve bir sonraki düzeye çıkmak için merdiven tırmandığı, delik açtığı ve düşman avı yaptığı bir kaçış aksiyon oyunudur. Düşmanların da altının peşinde. Daha da kötüsü, senin peşindeler!</p>
     <p xml:lang="uk">«Золотошукач» — рухлива гра, де герой подорожує лабіринтом, видирається на стіни, копає ями та втікає від ворогів, збираючи при цьому золоті самородки і переходячи з рівня на рівень. Окрім вашого героя, за золотом полюють і вороги. Вони також не проти звести вашого героя з цього світу!</p>
     <p xml:lang="x-test">xxKGoldrunner is an action game where the hero runs through a maze, climbs stairs, dig holes and dodges enemies in order to collect all the gold nuggets and escape to the next level. Your enemies are also after the gold. Worse still, they are after you!.xx</p>
     <p xml:lang="zh-CN">KGoldrunner 是一个动作游戏，主角穿过迷宫，爬楼梯，挖洞和躲闪敌人，以收集所有的金块并逃生到下一关。您的敌人也在追金。更糟的是，他们在追您！</p>
@@ -117,7 +114,6 @@
     <p xml:lang="gl">Funcionalidades:</p>
     <p xml:lang="id">Fitur:</p>
     <p xml:lang="it">Caratteristiche:</p>
-    <p xml:lang="ka">თვისებები:</p>
     <p xml:lang="ko">기능:</p>
     <p xml:lang="nl">Mogelijkheden:</p>
     <p xml:lang="nn">Funksjonar:</p>
@@ -150,7 +146,6 @@
       <li xml:lang="gl">Admite temas.</li>
       <li xml:lang="id">Dapat ditemakan</li>
       <li xml:lang="it">Supporto per i temi</li>
-      <li xml:lang="ka">თემების მხარდაჭერა</li>
       <li xml:lang="ko">테마 기능</li>
       <li xml:lang="nl">Thema in te stellen</li>
       <li xml:lang="nn">Ulike grafiske tema</li>
@@ -182,7 +177,6 @@
       <li xml:lang="gl">Centos de niveis.</li>
       <li xml:lang="id">Ratusan level</li>
       <li xml:lang="it">Centinaia di livelli</li>
-      <li xml:lang="ka">ასობით დონე</li>
       <li xml:lang="ko">다양한 레벨</li>
       <li xml:lang="nl">Honderden levels</li>
       <li xml:lang="nn">Fleire hundre brett</li>
@@ -214,7 +208,6 @@
       <li xml:lang="gl">Editor de niveis.</li>
       <li xml:lang="id">Pengedit level</li>
       <li xml:lang="it">Editor di livelli</li>
-      <li xml:lang="ka">დონეების რედაქტორი</li>
       <li xml:lang="ko">레벨 편집기</li>
       <li xml:lang="nl">Bewerker van levels</li>
       <li xml:lang="nn">Brettredigering</li>
@@ -246,7 +239,6 @@
       <li xml:lang="gl">Dous modos para os inimigos: o clásico e o modo de KGoldrunner; no modo de KGoldrunner son máis intelixentes, no clásico é máis doado enganalos.</li>
       <li xml:lang="id">Dua mode untuk musuh: mode KGoldrunner dan klasik, dalam mode KGoldrunner ada kecerdasan lebih, dalam mode klasik masih mudah untuk menipu mereka</li>
       <li xml:lang="it">Due modalità per i nemici: classica e modalità KGoldrunner; in modalità KGoldrunner i nemici sono più intelligenti, mentre in quella classica è più facile ingannarli</li>
-      <li xml:lang="ka">მტრებისთვის ორი რეჟიმია: კლასიკური და kgoldrunner-ის რეჟიმი. kgoldrunner-ის რეჟიმში ისინი უფრო ჭკვიანები არიან, კლასიკურში კი უფრო შტერები</li>
       <li xml:lang="ko">두 가지 적 모드: 고전 모드와 KGoldrunner 모드. KGoldrunner 모드에서의 적은 더 똑똑하며, 고전 모드에서의 적은 더 쉽게 속일 수 있습니다</li>
       <li xml:lang="nl">Twee modi voor de vijanden: klassiek en modus KGoldrunner, in modus KGoldrunner zijn ze intelligenter, in de klassieke modus zijn ze gemakkelijker voor de gek te houden</li>
       <li xml:lang="nn">To modusar for fiendane: klassisk og KGoldrunner. I KGoldrunner-modusen er dei meir intelligente, mens i klassisk modus er det lettare å lura dei.</li>
@@ -261,7 +253,7 @@
       <li xml:lang="sr-ijekavian">Два режима за непријатеље: класични и К‑златобојчев. У К‑златобојчевом режиму непријатељи су паметнији, у класичном их је лакше заварати.</li>
       <li xml:lang="sr-ijekavianlatin">Dva režima za neprijatelje: klasični i K‑zlatobojčev. U K‑zlatobojčevom režimu neprijatelji su pametniji, u klasičnom ih je lakše zavarati.</li>
       <li xml:lang="sv">Två typer av fiender: klassiska och Kgoldrunner-regler. Med Kgoldrunner-regler är de intelligentare, med klassiska regler är det enklare att lura dem.</li>
-      <li xml:lang="tr">Düşmanlar için iki kip: Klasik ve KGoldrunner kipi. KGoldrunner kipinde daha zekidir, klasik kipte onları kandırmak daha kolaydır</li>
+      <li xml:lang="tr">Düşmanlar için iki kip: Klasik ve K Altın Avı kipi. K Altın Avı kipinde daha zekidir, klasik kipte onları kandırmak daha kolaydır</li>
       <li xml:lang="uk">Два режими поведінки ворогів: класичний і режим «Золотошукача». У режимі «Золотошукача» вороги кмітливіші, їх не так просто обманути, як у класичному режимі.</li>
       <li xml:lang="x-test">xxTwo modes for the enemies: classical and KGoldrunner-mode, in KGoldrunner-mode they are more intelligent, in the classical mode it is easier to fool themxx</li>
       <li xml:lang="zh-CN">两种模式的敌人：经典模式和 KGoldrunner 模式，在 KGoldrunner 模式，他们更聪明，而在经典模式，则更容易愚弄他们</li>
@@ -278,7 +270,6 @@
       <li xml:lang="gl">Niveis moi moi difíciles</li>
       <li xml:lang="id">Level sangat sangat sulit</li>
       <li xml:lang="it">Livelli molto molto difficili</li>
-      <li xml:lang="ka">ძალიან რთული დონეები</li>
       <li xml:lang="ko">매우 어려운 레벨</li>
       <li xml:lang="nl">Zeer zeer moeilijke levels</li>
       <li xml:lang="nn">Nokre frykteleg vanskelege brett</li>
@@ -310,7 +301,6 @@
       <li xml:lang="gl">Control do teclado ou do rato</li>
       <li xml:lang="id">Kendali keyboard atau mouse</li>
       <li xml:lang="it">Controllo via tastiera o mouse</li>
-      <li xml:lang="ka">კლავიატურით ან თაგუნათი კონტროლი</li>
       <li xml:lang="ko">키보드 및 마우스로 컨트롤</li>
       <li xml:lang="nl">Toetsenbord- en muisbesturing</li>
       <li xml:lang="nn">Kan spela med tastatur eller mus</li>
@@ -342,7 +332,6 @@
       <li xml:lang="gl">Pódense gardar as partidas.</li>
       <li xml:lang="id">Permainan dapat disimpan</li>
       <li xml:lang="it">Salvataggio delle partite</li>
-      <li xml:lang="ka">შენახვადი თამაშები</li>
       <li xml:lang="ko">게임 저장</li>
       <li xml:lang="nl">Spellen kunnen opgeslagen worden</li>
       <li xml:lang="nn">Kan lagra framgangen</li>
@@ -381,7 +370,6 @@
       <caption xml:lang="gl">Xogando a KGoldrunner</caption>
       <caption xml:lang="id">Memainkan KGoldrunner</caption>
       <caption xml:lang="it">Giocando con KGoldrunner</caption>
-      <caption xml:lang="ka">KGoldrunner-ის თამაში</caption>
       <caption xml:lang="ko">KGoldrunner 플레이</caption>
       <caption xml:lang="nl">KGoldrunner spelen</caption>
       <caption xml:lang="nn">Spelar KGoldrunner</caption>
@@ -392,7 +380,7 @@
       <caption xml:lang="sk">Hranie KGoldrunner</caption>
       <caption xml:lang="sl">Igra KGoldrunner</caption>
       <caption xml:lang="sv">Spela Kgoldrunner</caption>
-      <caption xml:lang="tr">KGoldrunner oynarken</caption>
+      <caption xml:lang="tr">K Altın Avı oynarken</caption>
       <caption xml:lang="uk">Гра у Золотошукача</caption>
       <caption xml:lang="x-test">xxPlaying KGoldrunnerxx</caption>
       <caption xml:lang="zh-CN">正在玩 KGoldrunner</caption>
