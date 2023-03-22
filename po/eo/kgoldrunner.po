@@ -1,4 +1,5 @@
 # Translation of kgoldrunner into esperanto.
+# Copyright (C) 2009 Free Software Foundation, Inc.
 # Axel Rousseau <axel@esperanto-jeunes.org>, 2009.
 #
 msgid ""
@@ -6,8 +7,8 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-20 00:44+0000\n"
-"PO-Revision-Date: 2009-11-15 12:06+0100\n"
-"Last-Translator: Axel Rousseau <axel@esperanto-jeunes.org>\n"
+"PO-Revision-Date: 2023-03-20 22:43+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -48,7 +49,7 @@ msgstr ""
 #: gamedata/game_CM.txt:2
 #, kde-format
 msgid "Curse of the Mummy"
-msgstr ""
+msgstr "Malbeno de la Mumio"
 
 #: gamedata/game_CM.txt:3
 #, kde-format
@@ -644,10 +645,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_cnt.txt:46
-#, fuzzy, kde-format
-#| msgid "&See!"
+#, kde-format
 msgid "Seven"
-msgstr "&Vidu!"
+msgstr ""
 
 #: gamedata/game_cnt.txt:47
 #, kde-format
@@ -658,10 +658,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_cnt.txt:50
-#, fuzzy, kde-format
-#| msgid "Straight"
+#, kde-format
 msgid "Eight"
-msgstr "Strato"
+msgstr ""
 
 #: gamedata/game_cnt.txt:51
 #, kde-format
@@ -1195,10 +1194,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GMGR.txt:2
-#, fuzzy, kde-format
-#| msgid "Gold"
+#, kde-format
 msgid "Gold Rush"
-msgstr "Oro"
+msgstr ""
 
 #: gamedata/game_GMGR.txt:3
 #, kde-format
@@ -1713,10 +1711,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:47
-#, fuzzy, kde-format
-#| msgid "Navigation"
+#, kde-format
 msgid "Manipulation"
-msgstr "Navigado"
+msgstr ""
 
 #: gamedata/game_GotD.txt:48
 #, kde-format
@@ -2521,10 +2518,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GRII.txt:2
-#, fuzzy, kde-format
-#| msgid "Gold"
+#, kde-format
 msgid "Gold Rush II"
-msgstr "Oro"
+msgstr ""
 
 #: gamedata/game_GRII.txt:3
 #, kde-format
@@ -5208,9 +5204,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_tute.txt:43
-#, fuzzy, kde-format
+#, kde-format
 msgid "Bars"
-msgstr "Steloj"
+msgstr ""
 
 #: gamedata/game_tute.txt:44
 #, kde-format
@@ -5706,9 +5702,9 @@ msgid ""
 msgstr ""
 
 #: src/kgoldrunner.cpp:184 src/kgrgame.cpp:724
-#, fuzzy, kde-format
+#, kde-format
 msgid "&New Game..."
-msgstr "&Nomoj..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:187
 #, kde-format
@@ -5736,10 +5732,9 @@ msgid "&Save Game..."
 msgstr ""
 
 #: src/kgoldrunner.cpp:211 src/kgoldrunner.cpp:212
-#, fuzzy, kde-format
-#| msgid "Show &Solution"
+#, kde-format
 msgid "Save A Solution..."
-msgstr "Montri la &solvon"
+msgstr ""
 
 #: src/kgoldrunner.cpp:213
 #, kde-format
@@ -5749,10 +5744,9 @@ msgid ""
 msgstr ""
 
 #: src/kgoldrunner.cpp:246 src/kgrgame.cpp:1304
-#, fuzzy, kde-format
-#| msgid "Show &Solution"
+#, kde-format
 msgid "&Show a Solution"
-msgstr "Montri la &solvon"
+msgstr ""
 
 #: src/kgoldrunner.cpp:247
 #, kde-format
@@ -5979,10 +5973,9 @@ msgid "Play sound effects during the game."
 msgstr ""
 
 #: src/kgoldrunner.cpp:372
-#, fuzzy, kde-format
-#| msgid "&Play Sounds"
+#, kde-format
 msgid "Play &Footstep Sounds"
-msgstr "&Ludi sonojn"
+msgstr ""
 
 #: src/kgoldrunner.cpp:373 src/kgoldrunner.cpp:374
 #, kde-format
@@ -6227,9 +6220,9 @@ msgid "Show Enemy"
 msgstr ""
 
 #: src/kgoldrunner.cpp:735
-#, fuzzy, kde-format
+#, kde-format
 msgid "The game is paused"
-msgstr " (Paŭzo)"
+msgstr ""
 
 #: src/kgoldrunner.cpp:737
 #, kde-format
@@ -6528,11 +6521,10 @@ msgid "About this game:"
 msgstr ""
 
 #: src/kgrdialog.cpp:170
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Game"
-msgstr "Krei"
+msgstr ""
 
 #: src/kgrdialog.cpp:187
 #, kde-format
@@ -6550,11 +6542,10 @@ msgid "Save New"
 msgstr ""
 
 #: src/kgrdialog.cpp:248
-#, fuzzy, kde-format
-#| msgid "Save Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Saved Game"
-msgstr "Konservu etoson."
+msgstr ""
 
 #: src/kgrdialog.cpp:267
 #, kde-format
@@ -6780,10 +6771,9 @@ msgid "Inappropriate action: you are not editing a level."
 msgstr ""
 
 #: src/kgrgame.cpp:421
-#, fuzzy, kde-format
-#| msgid "&Play Sounds"
+#, kde-format
 msgid "No Sound"
-msgstr "&Ludi sonojn"
+msgstr ""
 
 #: src/kgrgame.cpp:422
 #, kde-format
@@ -6795,9 +6785,9 @@ msgid ""
 msgstr ""
 
 #: src/kgrgame.cpp:626 src/kgrgame.cpp:783
-#, fuzzy, kde-format
+#, kde-format
 msgid "Game Paused"
-msgstr " (Paŭzo)"
+msgstr ""
 
 #: src/kgrgame.cpp:627
 #, kde-format
@@ -6895,10 +6885,9 @@ msgid ""
 msgstr ""
 
 #: src/kgrgame.cpp:837
-#, fuzzy, kde-format
-#| msgid "Show &Solution"
+#, kde-format
 msgid "Show a Solution"
-msgstr "Montri la &solvon"
+msgstr ""
 
 #: src/kgrgame.cpp:838
 #, kde-format
@@ -6997,10 +6986,9 @@ msgstr ""
 
 #: src/kgrgame.cpp:1469 src/kgrgame.cpp:1495 src/kgrgame.cpp:1505
 #: src/kgrgame.cpp:1524 src/kgrgame.cpp:1530
-#, fuzzy, kde-format
-#| msgid "Save Theme"
+#, kde-format
 msgid "Save Game"
-msgstr "Konservu etoson."
+msgstr ""
 
 #: src/kgrgame.cpp:1470
 #, kde-format
@@ -7061,11 +7049,10 @@ msgid ""
 msgstr ""
 
 #: src/kgrgame.cpp:1739
-#, fuzzy, kde-format
-#| msgid "High Scores"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save High Score"
-msgstr "Rekordoj"
+msgstr ""
 
 #: src/kgrgame.cpp:1826
 #, kde-format
@@ -7128,8 +7115,7 @@ msgid "Date"
 msgstr "Dato"
 
 #: src/kgrgame.cpp:1904
-#, fuzzy, kde-format
-#| msgid "High Scores"
+#, kde-format
 msgctxt "@title:window"
 msgid "High Scores"
 msgstr "Rekordoj"
@@ -7150,10 +7136,9 @@ msgid "Reached end of file '%1' before finding end of game-data."
 msgstr ""
 
 #: src/kgrgame.cpp:2064 src/kgrgame.cpp:2069 src/kgrselector.cpp:259
-#, fuzzy, kde-format
-#| msgid "Show &Solution"
+#, kde-format
 msgid "Save A Solution"
-msgstr "Montri la &solvon"
+msgstr ""
 
 #: src/kgrgame.cpp:2065
 #, kde-format
@@ -7201,10 +7186,9 @@ msgid "Lives: %1"
 msgstr ""
 
 #: src/kgrscene.cpp:284
-#, fuzzy, kde-format
-#| msgid "Score"
+#, kde-format
 msgid "Score: %1"
-msgstr "Poentoj"
+msgstr ""
 
 #: src/kgrselector.cpp:69 src/kgrselector.cpp:75 src/kgrselector.cpp:95
 #: src/kgrselector.cpp:498
@@ -7238,11 +7222,10 @@ msgid "There is no level %1 in \"%2\", so you cannot play or edit it."
 msgstr ""
 
 #: src/kgrselector.cpp:118 src/kgrselector.cpp:173
-#, fuzzy, kde-format
-#| msgid "Save Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Game"
-msgstr "Konservu etoson."
+msgstr ""
 
 #: src/kgrselector.cpp:132
 #, kde-format
@@ -7260,10 +7243,9 @@ msgid "Rules"
 msgstr ""
 
 #: src/kgrselector.cpp:142
-#, fuzzy, kde-format
-#| msgid "Level:"
+#, kde-format
 msgid "Levels"
-msgstr "Nivelo:"
+msgstr ""
 
 #: src/kgrselector.cpp:143
 #, kde-format
@@ -7312,10 +7294,9 @@ msgid "Replay Level"
 msgstr ""
 
 #: src/kgrselector.cpp:256
-#, fuzzy, kde-format
-#| msgid "Show &Solution"
+#, kde-format
 msgid "Show Solution"
-msgstr "Montri la &solvon"
+msgstr "Montri la Solvon"
 
 #: src/kgrselector.cpp:268
 #, kde-format
