@@ -7,7 +7,7 @@
 # Martin Ereth <martin.ereth@arcor.de>, 2008.
 # Burkhard Lück <lueck@hube-lueck.de>, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016, 2017, 2018, 2020, 2021.
 # Johannes Obermayr <johannesobermayr@gmx.de>, 2009, 2010, 2011, 2012.
-# Frederik Schwarzer <schwarzer@kde.org>, 2010, 2011, 2012, 2015.
+# Frederik Schwarzer <schwarzer@kde.org>, 2010, 2011, 2012, 2015, 2023.
 # Panagiotis Papadopoulos <pano_90@gmx.net>, 2010, 2011.
 # Jonas Schürmann <jonasschuermann@aol.de>, 2012.
 msgid ""
@@ -15,14 +15,15 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-20 00:44+0000\n"
-"PO-Revision-Date: 2021-06-10 10:56+0200\n"
-"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"PO-Revision-Date: 2023-04-26 20:57+0200\n"
+"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 22.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -2382,12 +2383,12 @@ msgctxt ""
 "level to the next by using the Y key and you can prevent a level from "
 "playing by using the Pause key (P or Escape)."
 msgid " "
-msgstr ""
+msgstr " "
 
 #: gamedata/game_GotD.txt:3
 #, kde-format
 msgid "Gold Of The Living Dead"
-msgstr ""
+msgstr "Das Gold der lebenden Toten"
 
 #: gamedata/game_GotD.txt:4
 #, kde-format
