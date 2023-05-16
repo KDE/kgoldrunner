@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-20 00:44+0000\n"
-"PO-Revision-Date: 2023-03-09 13:37+0300\n"
+"PO-Revision-Date: 2023-05-15 22:11+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.03.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -6175,7 +6175,7 @@ msgstr ""
 #: gamedata/game_plwv.txt:45
 #, kde-format
 msgid "Stuck in Storage"
-msgstr "Mahzende Sıkışıp Kalmak"
+msgstr "Depoda Sıkışıp Kalmak"
 
 #: gamedata/game_plwv.txt:46
 #, kde-format
@@ -6192,7 +6192,7 @@ msgstr ""
 "tuğlalar ile düşmanları öldürebilir ve onları mağarada yakalayabilirsiniz.\n"
 "\n"
 "Sağdaki dikey altınları alın, ardından karşıya geçin ve yatay platformdaki "
-"altınları alın. Sağda kalın, son platformu kazın, sonra mağranın sağ "
+"altınları alın. Sağda kalın, son platformu kazın, sonra mağaranın sağ "
 "tarafındaki külçeyi alın. Artık sol taraftaki külçeyi alabilirsiniz."
 
 #: gamedata/game_plwv.txt:51
