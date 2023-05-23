@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-20 00:44+0000\n"
-"PO-Revision-Date: 2023-04-26 20:57+0200\n"
+"PO-Revision-Date: 2023-05-23 02:36+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.07.70\n"
+"X-Generator: Lokalize 23.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1501,7 +1501,7 @@ msgid ""
 "The trick is to tie up your enemies. If you can make each one fall onto a "
 "concrete block, that might help. On the other hand, you can just run a lot..."
 msgstr ""
-"Wieder auf freiem Fuss wird Geld benötigt.\n"
+"Wieder auf freiem Fuß wird Geld benötigt.\n"
 "\n"
 "Der Trick besteht im Fangen der Feinde indem sie alle auf Betonblöcke "
 "fallen. Andererseits kann aber auch viel Bewegung helfen ..."
@@ -1609,7 +1609,7 @@ msgid ""
 msgstr ""
 "Die Flucht in den letzten Ebenen war sehr nett.\n"
 "\n"
-"Wieder auf freiem Fuss kann alles gemacht werden. Alles außer das erneute "
+"Wieder auf freiem Fuß kann alles gemacht werden. Alles außer das erneute "
 "Stehlen des Goldes (unnötig zu sagen) ..."
 
 #: gamedata/game_GMEP.txt:56
@@ -2404,7 +2404,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:9
 #, kde-format
 msgid "Last Person On Earth"
-msgstr ""
+msgstr "Letzter Mensch auf Erden"
 
 #: gamedata/game_GotD.txt:10
 #, kde-format
