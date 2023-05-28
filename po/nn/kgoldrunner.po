@@ -7925,8 +7925,8 @@ msgstr "&Fullfør"
 #: src/kgrgame.cpp:1141
 #, kde-format
 msgid ""
-"<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the <b>"
-"\"%1\"</b> game !!</p>"
+"<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the "
+"<b>\"%1\"</b> game !!</p>"
 msgstr ""
 "<b>Gratulerer!</b><p>Du har fullført det siste brettet i spelet <b>%1</b>!</"
 "p>"
