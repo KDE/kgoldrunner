@@ -6934,8 +6934,8 @@ msgstr ""
 #: src/kgrgame.cpp:1141
 #, kde-format
 msgid ""
-"<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the <b>"
-"\"%1\"</b> game !!</p>"
+"<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the "
+"<b>\"%1\"</b> game !!</p>"
 msgstr ""
 
 #: src/kgrgame.cpp:1298
