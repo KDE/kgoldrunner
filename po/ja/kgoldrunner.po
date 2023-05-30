@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.1\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
@@ -6782,8 +6782,7 @@ msgstr "KGoldrunner ルール"
 #, kde-format
 msgid "1 level"
 msgid_plural "%1 levels"
-msgstr[0] "1 レベル"
-msgstr[1] "%1 レベル"
+msgstr[0] "%1 レベル"
 
 #: src/kgrdialog.cpp:153
 #, kde-format
@@ -7671,15 +7670,13 @@ msgstr "チャンピオン級"
 #, kde-format
 msgid "1 level, uses KGoldrunner rules."
 msgid_plural "%1 levels, uses KGoldrunner rules."
-msgstr[0] "1 レベル、KGoldrunner ルールを使用。"
-msgstr[1] "%1 レベル、KGoldrunner ルールを使用。"
+msgstr[0] "%1 レベル、KGoldrunner ルールを使用。"
 
 #: src/kgrselector.cpp:468
 #, kde-format
 msgid "1 level, uses Traditional rules."
 msgid_plural "%1 levels, uses Traditional rules."
-msgstr[0] "1 レベル、従来のルールを使用。"
-msgstr[1] "%1 レベル、従来のルールを使用。"
+msgstr[0] "%1 レベル、従来のルールを使用。"
 
 #: src/kgrselector.cpp:473
 #, kde-format
