@@ -3795,7 +3795,7 @@ msgstr ""
 "cap amunt i espera l'enemic, després puja sobre el seu cap, agafa l'or, cava "
 "tres maons i entra a l'estructura central.\n"
 "\n"
-"Espera que l'enemic puge quan isques per la dreta. Mentre es mou amunt i "
+"Espera que l'enemic puge quan isques per la dreta. Mentre es mou cap amunt i "
 "avall pels esglaons superiors, tria el moment apropiat per a caminar per "
 "damunt el seu cap i arribar a l'or de dalt a la dreta. La resta és fàcil."
 
@@ -8597,22 +8597,22 @@ msgstr "Para"
 #: src/kgoldrunner.cpp:505
 #, kde-format
 msgid "Move Right"
-msgstr "Mou a la dreta"
+msgstr "Mou cap a la dreta"
 
 #: src/kgoldrunner.cpp:506
 #, kde-format
 msgid "Move Left"
-msgstr "Mou a l'esquerra"
+msgstr "Mou cap a l'esquerra"
 
 #: src/kgoldrunner.cpp:507
 #, kde-format
 msgid "Move Up"
-msgstr "Mou amunt"
+msgstr "Mou cap amunt"
 
 #: src/kgoldrunner.cpp:508
 #, kde-format
 msgid "Move Down"
-msgstr "Mou avall"
+msgstr "Mou cap avall"
 
 #: src/kgoldrunner.cpp:509
 #, kde-format
