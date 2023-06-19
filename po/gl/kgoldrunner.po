@@ -10,25 +10,26 @@
 # Xosé <xosecalvo@gmail.com>, 2009, 2012.
 # Adrián Chaves Fernández <adriyetichaves@gmail.com>, 2009, 2012, 2015, 2017.
 # Marce Villarino <mvillarino@kde-espana.es>, 2012, 2013, 2014.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-20 00:44+0000\n"
-"PO-Revision-Date: 2019-06-01 19:28+0200\n"
+"PO-Revision-Date: 2023-06-18 11:41+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
-"Language-Team: Galician <kde-i18n-doc@kde.org>\n"
+"Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "mvillarino, Xosé Calvo, Adrián Chaves Fernández"
+msgstr "mvillarino, Xosé Calvo, Adrian Chaves (Gallaecio)"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -2311,12 +2312,12 @@ msgctxt ""
 "level to the next by using the Y key and you can prevent a level from "
 "playing by using the Pause key (P or Escape)."
 msgid " "
-msgstr ""
+msgstr " "
 
 #: gamedata/game_GotD.txt:3
 #, kde-format
 msgid "Gold Of The Living Dead"
-msgstr ""
+msgstr "Ouro dos mortos viventes"
 
 #: gamedata/game_GotD.txt:4
 #, kde-format
@@ -2332,7 +2333,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:9
 #, kde-format
 msgid "Last Person On Earth"
-msgstr ""
+msgstr "Última persoa na Terra"
 
 #: gamedata/game_GotD.txt:10
 #, kde-format
@@ -2370,7 +2371,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:23
 #, kde-format
 msgid "A Little Digging Warm-Up"
-msgstr ""
+msgstr "Quentar escarvando"
 
 #: gamedata/game_GotD.txt:24
 #, kde-format
@@ -2388,7 +2389,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:29
 #, kde-format
 msgid "Patient Zero"
-msgstr ""
+msgstr "Paciente cero"
 
 #: gamedata/game_GotD.txt:30
 #, kde-format
@@ -2413,7 +2414,7 @@ msgstr "Zigzag"
 #: gamedata/game_GotD.txt:40
 #, kde-format
 msgid "This is as easy as it gets..."
-msgstr ""
+msgstr "A cousa non irá a mellor…"
 
 #: gamedata/game_GotD.txt:43 gamedata/game_wad.txt:63
 #, kde-format
@@ -2429,10 +2430,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:47
-#, fuzzy, kde-format
-#| msgid "Infiltration"
+#, kde-format
 msgid "Manipulation"
-msgstr "Infiltración"
+msgstr "Manipulación"
 
 #: gamedata/game_GotD.txt:48
 #, kde-format
@@ -2466,17 +2466,17 @@ msgstr ""
 #: gamedata/game_GotD.txt:57
 #, kde-format
 msgid "Do Not Worry"
-msgstr ""
+msgstr "Non te preocupes"
 
 #: gamedata/game_GotD.txt:58
 #, kde-format
 msgid "Come on, they are completely harmless ;-)"
-msgstr ""
+msgstr "Veña, que son inofensivos ;-)"
 
 #: gamedata/game_GotD.txt:61
 #, kde-format
 msgid "They Are So Many!"
-msgstr ""
+msgstr "Son tantos!"
 
 #: gamedata/game_GotD.txt:62
 #, kde-format
@@ -2500,7 +2500,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:73
 #, kde-format
 msgid "Never Trust The H-Ladders"
-msgstr ""
+msgstr "Nunca confíes nas escadas"
 
 #: gamedata/game_GotD.txt:74
 #, kde-format
@@ -2515,7 +2515,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:79
 #, kde-format
 msgid "Please Do Let Me Pass!"
-msgstr ""
+msgstr "Déixame pasar!"
 
 #: gamedata/game_GotD.txt:80
 #, kde-format
@@ -2532,7 +2532,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:85
 #, kde-format
 msgid "Three Little Pieces Of Elegance"
-msgstr ""
+msgstr "Tres detalles de elegancia"
 
 #: gamedata/game_GotD.txt:86
 #, kde-format
@@ -2546,7 +2546,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:89
 #, kde-format
 msgid "Thieves"
-msgstr ""
+msgstr "Ladras"
 
 #: gamedata/game_GotD.txt:90
 #, kde-format
@@ -2559,7 +2559,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:93
 #, kde-format
 msgid "Climbing And Falling"
-msgstr ""
+msgstr "Trepar e caer"
 
 #: gamedata/game_GotD.txt:94
 #, kde-format
@@ -2578,10 +2578,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:103
-#, fuzzy, kde-format
-#| msgid "Treasures of Gold"
+#, kde-format
 msgid "Temple Of Gold"
-msgstr "Tesouros de ouro"
+msgstr "Templo do ouro"
 
 #: gamedata/game_GotD.txt:104
 #, kde-format
@@ -2604,10 +2603,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:113
-#, fuzzy, kde-format
-#| msgid "Dig Your Way Out"
+#, kde-format
 msgid "Always Know Your Way Out"
-msgstr "Escavar o camiño de fuxida"
+msgstr "Ten sempre unha saída"
 
 #: gamedata/game_GotD.txt:114
 #, kde-format
@@ -2621,7 +2619,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:119
 #, kde-format
 msgid "Patience?"
-msgstr ""
+msgstr "Paciencia?"
 
 #: gamedata/game_GotD.txt:120
 #, kde-format
@@ -2633,7 +2631,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:123
 #, kde-format
 msgid "Lock Them Away!"
-msgstr ""
+msgstr "Péchaos!"
 
 #: gamedata/game_GotD.txt:124
 #, kde-format
@@ -2674,18 +2672,17 @@ msgstr ""
 #: gamedata/game_GotD.txt:137
 #, kde-format
 msgid "Harder Than It Looks"
-msgstr ""
+msgstr "Máis difícil do que parece"
 
 #: gamedata/game_GotD.txt:138
 #, kde-format
 msgid "Timing is everything."
-msgstr ""
+msgstr "Cómpre elixir ben o momento."
 
 #: gamedata/game_GotD.txt:141
-#, fuzzy, kde-format
-#| msgid "Concrete Towers"
+#, kde-format
 msgid "Concrete Desert"
-msgstr "Torres de formigón"
+msgstr "Deserto de formigón"
 
 #: gamedata/game_GotD.txt:142
 #, kde-format
@@ -2706,10 +2703,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:149
-#, fuzzy, kde-format
-#| msgid "Diagonal Disaster"
+#, kde-format
 msgid "Diagonal"
-msgstr "Desastre diagonal"
+msgstr "Diagonal"
 
 #: gamedata/game_GotD.txt:150
 #, kde-format
@@ -2725,10 +2721,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:155
-#, fuzzy, kde-format
-#| msgid "He Has The Gold"
+#, kde-format
 msgid "Give Me That Gold!"
-msgstr "El ten o ouro"
+msgstr "Dáme o ouro!"
 
 #: gamedata/game_GotD.txt:156
 #, kde-format
@@ -2751,10 +2746,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:165
-#, fuzzy, kde-format
-#| msgid "Too Easy?"
+#, kde-format
 msgid "Too Fast?"
-msgstr "Doado de máis?"
+msgstr "Rápido de máis?"
 
 #: gamedata/game_GotD.txt:166
 #, kde-format
@@ -2769,7 +2763,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:171
 #, kde-format
 msgid "Running Against Time"
-msgstr ""
+msgstr "Contra o reloxo"
 
 #: gamedata/game_GotD.txt:172
 #, kde-format
@@ -2777,10 +2771,9 @@ msgid "Be quicker than the zombies - otherwise they will eat you."
 msgstr ""
 
 #: gamedata/game_GotD.txt:175
-#, fuzzy, kde-format
-#| msgid "The Big Maze"
+#, kde-format
 msgid "The Big Drop"
-msgstr "O gran labirinto"
+msgstr "A gran caída"
 
 #: gamedata/game_GotD.txt:176
 #, kde-format
@@ -2792,7 +2785,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:179
 #, kde-format
 msgid "Diving"
-msgstr ""
+msgstr "Mergullar"
 
 #: gamedata/game_GotD.txt:180
 #, kde-format
@@ -2810,7 +2803,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:187
 #, kde-format
 msgid "Encircled"
-msgstr ""
+msgstr "Rodeadas"
 
 #: gamedata/game_GotD.txt:188
 #, kde-format
@@ -2823,10 +2816,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:191
-#, fuzzy, kde-format
-#| msgid "Ups And Downs"
+#, kde-format
 msgid "Up And Down"
-msgstr "Arribas e abaixos"
+msgstr "Arriba e abaixo"
 
 #: gamedata/game_GotD.txt:192
 #, kde-format
@@ -2868,10 +2860,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:209
-#, fuzzy, kde-format
-#| msgid "Surprise Ending"
+#, kde-format
 msgid "Surprise, Surprise"
-msgstr "Final sorpresa"
+msgstr "Sorpresa!"
 
 #: gamedata/game_GotD.txt:210
 #, kde-format
@@ -2886,7 +2877,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:215
 #, kde-format
 msgid "Busy Town"
-msgstr ""
+msgstr "Vila ocupada"
 
 #: gamedata/game_GotD.txt:216
 #, kde-format
@@ -2896,10 +2887,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:219
-#, fuzzy, kde-format
-#| msgid "Jail Break"
+#, kde-format
 msgid "Jailbreak"
-msgstr "Escapar da prisión"
+msgstr "Fuga"
 
 #: gamedata/game_GotD.txt:220
 #, kde-format
@@ -2912,7 +2902,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:223
 #, kde-format
 msgid "Is It Really Worth It?"
-msgstr ""
+msgstr "Paga a pena?"
 
 #: gamedata/game_GotD.txt:224
 #, kde-format
@@ -2988,10 +2978,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:251
-#, fuzzy, kde-format
-#| msgid "The Balance"
+#, kde-format
 msgid "The Passage"
-msgstr "O balanzo"
+msgstr "O paso"
 
 #: gamedata/game_GotD.txt:252
 #, kde-format
@@ -3022,7 +3011,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:263
 #, kde-format
 msgid "Out Of My Way!"
-msgstr ""
+msgstr "Aparta!"
 
 #: gamedata/game_GotD.txt:264
 #, kde-format
@@ -3037,7 +3026,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:269
 #, kde-format
 msgid "Waking Up The Dead"
-msgstr ""
+msgstr "Espertar aos mortos"
 
 #: gamedata/game_GotD.txt:270
 #, kde-format
@@ -3059,7 +3048,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:277
 #, kde-format
 msgid "Zombie Lemmings"
-msgstr ""
+msgstr "Lemmings zombi"
 
 #: gamedata/game_GotD.txt:278
 #, kde-format
@@ -3076,15 +3065,14 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:285
-#, fuzzy, kde-format
-#| msgid "Rat Trap"
+#, kde-format
 msgid "Death Trap"
-msgstr "Trampa para ratas"
+msgstr "Trampa mortal"
 
 #: gamedata/game_GotD.txt:286
 #, kde-format
 msgid "Rule Number 22: When in doubt, know your way out!"
-msgstr ""
+msgstr "Regra 22: se dubidas, lembra a saída!"
 
 #: gamedata/game_GotD.txt:289 gamedata/game_plws.txt:227
 #, kde-format
@@ -3101,8 +3089,7 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:293
-#, fuzzy, kde-format
-#| msgid "Fear of Heights"
+#, kde-format
 msgid "Fear Of Heights"
 msgstr "Medo das alturas"
 
@@ -3127,10 +3114,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:303
-#, fuzzy, kde-format
-#| msgid "Awaiting Enemies"
+#, kde-format
 msgid "Raining Zombies"
-msgstr "Inimigos á espreita"
+msgstr "Chuvia zombi"
 
 #: gamedata/game_GotD.txt:304
 #, kde-format
@@ -3140,7 +3126,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:307
 #, kde-format
 msgid "A Desperate Jump"
-msgstr ""
+msgstr "Salto á desesperada"
 
 #: gamedata/game_GotD.txt:308
 #, kde-format
@@ -3154,7 +3140,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:313
 #, kde-format
 msgid "Among Zombies"
-msgstr ""
+msgstr "Entre zombis"
 
 #: gamedata/game_GotD.txt:314
 #, kde-format
@@ -3162,10 +3148,9 @@ msgid "All it takes is good strong nerves..."
 msgstr ""
 
 #: gamedata/game_GotD.txt:317
-#, fuzzy, kde-format
-#| msgid "The Rose"
+#, kde-format
 msgid "The Horde"
-msgstr "A rosa"
+msgstr "A horda"
 
 #: gamedata/game_GotD.txt:318
 #, kde-format
@@ -3178,7 +3163,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:323
 #, kde-format
 msgid "Dance With Death"
-msgstr ""
+msgstr "Baile coa morte"
 
 #: gamedata/game_GotD.txt:324
 #, kde-format
@@ -3188,10 +3173,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:327
-#, fuzzy, kde-format
-#| msgid "Space Invader"
+#, kde-format
 msgid "Zombie Invaders"
-msgstr "Invasor do espazo"
+msgstr "Invasión zombi"
 
 #: gamedata/game_GotD.txt:328
 #, kde-format
@@ -3203,7 +3187,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:331
 #, kde-format
 msgid "Just Survive"
-msgstr ""
+msgstr "Sobrevive e punto"
 
 #: gamedata/game_GotD.txt:332
 #, kde-format
@@ -3216,7 +3200,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:335
 #, kde-format
 msgid "Death Race"
-msgstr ""
+msgstr "Carreira mortal"
 
 #: gamedata/game_GotD.txt:336
 #, kde-format
@@ -3228,7 +3212,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:339
 #, kde-format
 msgid "Zombie Free Zone"
-msgstr ""
+msgstr "Zona sen zombis"
 
 #: gamedata/game_GotD.txt:340
 #, kde-format
@@ -3238,16 +3222,12 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:343
-#, fuzzy, kde-format
-#| msgid "The Foundry"
+#, kde-format
 msgid "The End"
-msgstr "A fundición"
+msgstr "O final"
 
 #: gamedata/game_GotD.txt:344
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the <b>"
-#| "\"%1\"</b> game !!</p>"
+#, kde-format
 msgid ""
 "CONGRATULATIONS !!!!\n"
 "\n"
@@ -3255,7 +3235,11 @@ msgid ""
 "\n"
 "Or have you?"
 msgstr ""
-"<b>PARABÉNS!!!</b><p>Remataches o derradeiro nivel do xogo <b>«%1»</b>!!.</p>"
+"PARABÉNS!!!\n"
+"\n"
+"Completaches todos os niveis de «Ouro dos mortos viventes»!!!\n"
+"\n"
+"Ou iso pensabas…"
 
 #: gamedata/game_GRII.txt:2
 #, kde-format
@@ -3263,20 +3247,7 @@ msgid "Gold Rush II"
 msgstr "Febre do Ouro II"
 
 #: gamedata/game_GRII.txt:3
-#, fuzzy, kde-format
-#| msgid ""
-#| "These 20 levels have even harder challenges, more complicated puzzles and "
-#| "tighter timings than the first Gold Rush. They are not for the faint "
-#| "hearted. As before, you need to dig while falling sometimes. Have fun!\n"
-#| "\n"
-#| "Created by Gabriel Miltschitzky [gabriel dot miltschitzky at googlemail "
-#| "dot com], who also provided the recorded solutions.\n"
-#| "\n"
-#| "It is best to play the first Gold Rush levels before attempting Gold Rush "
-#| "II, because you will need many techniques that are easier to learn there. "
-#| "None of the levels in Gold Rush and Gold Rush II are impossible. If in "
-#| "doubt, use menu item 'Move->Show A Solution' to watch solutions provided "
-#| "by the author."
+#, kde-format
 msgid ""
 "These 20 levels have even harder challenges, more complicated puzzles and "
 "tighter timings than the first Gold Rush. They are not for the faint "
@@ -3302,7 +3273,7 @@ msgstr ""
 "É mellor xogar á primeira Febre do Ouro antes de probar con Febre do Ouro II "
 "porque precisa de moitas técnicas que son máis doadas de aprender alí. "
 "Ningún dos niveis de Febre do Ouro nin de Febre do Ouro II son imposíbeis. "
-"Se tes dúbidas, emprega o elemento do menú «Mover->Mostrar unha solución» "
+"Se tes dúbidas, emprega o elemento do menú «Mover → Mostrar unha solución» "
 "para ver as solucións que fornece o autor."
 
 #: gamedata/game_GRII.txt:10
@@ -7730,8 +7701,7 @@ msgstr ""
 "prefixo&gt;.txt» no teu directorio de datos de usuario…"
 
 #: src/kgoldrunner.cpp:246 src/kgrgame.cpp:1304
-#, fuzzy, kde-format
-#| msgid "&Show A Solution"
+#, kde-format
 msgid "&Show a Solution"
 msgstr "Mo&strar unha solución"
 
@@ -8466,11 +8436,10 @@ msgid "Edit Toolbar"
 msgstr "Editar a barra de ferramentas"
 
 #: src/kgrdialog.cpp:35
-#, fuzzy, kde-format
-#| msgid "Edit Name & Hint"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Name or Hint"
-msgstr "Editar nome e consello"
+msgstr "Editar o nome ou o consello"
 
 #: src/kgrdialog.cpp:57
 #, kde-format
@@ -8483,8 +8452,7 @@ msgid "Hint for level:"
 msgstr "Consello para o nivel:"
 
 #: src/kgrdialog.cpp:104 src/kgrdialog.cpp:173
-#, fuzzy, kde-format
-#| msgid "Edit Game Info"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Game Info"
 msgstr "Editar a información do xogo"
@@ -8522,11 +8490,10 @@ msgid "About this game:"
 msgstr "Sobre este xogo:"
 
 #: src/kgrdialog.cpp:170
-#, fuzzy, kde-format
-#| msgid "Create Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Game"
-msgstr "Crear un xogo"
+msgstr "Crear unha partida"
 
 #: src/kgrdialog.cpp:187
 #, kde-format
@@ -8544,8 +8511,7 @@ msgid "Save New"
 msgstr "Gardar como novo"
 
 #: src/kgrdialog.cpp:248
-#, fuzzy, kde-format
-#| msgid "Select Saved Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Saved Game"
 msgstr "Seleccionar un xogo gardado"
@@ -8845,8 +8811,7 @@ msgstr ""
 "último nivel."
 
 #: src/kgrgame.cpp:696
-#, fuzzy, kde-format
-#| msgid "Quick Start"
+#, kde-format
 msgctxt "@title:window"
 msgid "Quick Start"
 msgstr "Inicio rápido"
@@ -8924,8 +8889,7 @@ msgstr ""
 "ou Escape) cando esteas listo para seguir xogando."
 
 #: src/kgrgame.cpp:837
-#, fuzzy, kde-format
-#| msgid "Show A Solution"
+#, kde-format
 msgid "Show a Solution"
 msgstr "Mostrar unha solución"
 
@@ -9106,8 +9070,7 @@ msgstr ""
 "KGoldrunner.</html>"
 
 #: src/kgrgame.cpp:1739
-#, fuzzy, kde-format
-#| msgid "Save High Score"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save High Score"
 msgstr "Gardar a puntuación"
@@ -9176,8 +9139,7 @@ msgid "Date"
 msgstr "Data"
 
 #: src/kgrgame.cpp:1904
-#, fuzzy, kde-format
-#| msgid "High Scores"
+#, kde-format
 msgctxt "@title:window"
 msgid "High Scores"
 msgstr "Mellores puntuacións"
@@ -9286,8 +9248,7 @@ msgstr ""
 "Non existe ningún nivel %1 en «%2», polo que non o podes xogar ou editar."
 
 #: src/kgrselector.cpp:118 src/kgrselector.cpp:173
-#, fuzzy, kde-format
-#| msgid "Select Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Game"
 msgstr "Seleccionar un xogo"
@@ -9323,8 +9284,7 @@ msgid "Level 1 of the selected game is:"
 msgstr "O nivel 1 do xogo seleccionado é:"
 
 #: src/kgrselector.cpp:179
-#, fuzzy, kde-format
-#| msgid "Select Game/Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Game/Level"
 msgstr "Seleccionar o xogo / nivel"
@@ -9340,10 +9300,9 @@ msgid "Level number:"
 msgstr "Número do nivel:"
 
 #: src/kgrselector.cpp:206
-#, fuzzy, kde-format
-#| msgid "Edit Level Name && Hint"
+#, kde-format
 msgid "Edit Level Name o&r Hint"
-msgstr "Editar o nome do nivel e o consello"
+msgstr "Edita&r o nome do nivel ou o consello"
 
 #: src/kgrselector.cpp:241
 #, kde-format
@@ -9587,10 +9546,9 @@ msgid "Help: Select Game & Level"
 msgstr "Axuda: seleccionar xogo e nivel"
 
 #: src/main.cpp:35
-#, fuzzy, kde-format
-#| msgid "KGoldrunner is a game of action and puzzle solving"
+#, kde-format
 msgid "A game of action and puzzle solving"
-msgstr "O KGoldrunner é un xogo de acción e estratexia"
+msgstr "Un xogo de acción e resolución de quebracabezas."
 
 #: src/main.cpp:37
 #, kde-format
