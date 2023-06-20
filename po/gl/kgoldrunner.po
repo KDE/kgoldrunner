@@ -131,7 +131,7 @@ msgstr ""
 "\n"
 "Segundo avances pola meseta, intenta evitar matar as momias: se reaparecen "
 "demasiadas pola dereita ao final resulta difícil escapar. Para comezar terás "
-"que empregar a técnica de cavar mentres caes."
+"que usar a técnica de cavar mentres caes."
 
 # Djeser, Djoser, Zoser, Netjerikhet. (2667 - 2648 a.c.). Segundo faraón da Dinastía III.
 #: gamedata/game_CM.txt:16
@@ -251,8 +251,8 @@ msgstr ""
 "laborioso para os antigos exipcios, e seguramente tamén te resulte laborioso "
 "a ti subires e baixares desta pirámide.\n"
 "\n"
-"Para obteres o segundo tesouro da esquerda tes que empregar o bloque que "
-"bloquea a escada que hai no fondo como ponte para escapar.\n"
+"Para obteres o segundo tesouro da esquerda tes que usar o bloque que bloquea "
+"a escada que hai no fondo como ponte para escapar.\n"
 "\n"
 "Para obteres o cuarto tesouro da esquerda, limpa os tres bloques que hai "
 "enriba e á dereita da momia que hai máis á dereita; se se extraen na orde "
@@ -1426,8 +1426,8 @@ msgstr ""
 "veces antes de che mataren… Así que ten coidado e, o máis importante: se "
 "rápido, ou morre!\n"
 "\n"
-"Estes niveis de campionato empregan as Regras rápidas e raras do KGoldrunner "
-"e foron compostos por Gabriel Miltschitzky [gabriel dot miltschitzky en "
+"Estes niveis de campionato usan as Regras rápidas e raras do KGoldrunner e "
+"foron compostos por Gabriel Miltschitzky [gabriel dot miltschitzky en "
 "freenet de]. Ás veces necesitas cavar mentres caes."
 
 #: gamedata/game_GMEP.txt:10
@@ -1497,7 +1497,7 @@ msgid ""
 "If there is more than one gap to cross, first make the enemies walk right, "
 "then start walking on their heads."
 msgstr ""
-"Emprega os teus inimigos camiñando sobre as súas testas.\n"
+"Usa os teus inimigos camiñando sobre as súas testas.\n"
 "\n"
 "Se hai máis que un espazo que cruzar, fai que os teus inimigos camiñen "
 "primeiro para a dereita e logo comeza a camiñar sobre as súas testas."
@@ -2013,8 +2013,8 @@ msgid ""
 "and get out fast.\n"
 msgstr ""
 "Para saíres da estrutura de formigón que tes debaixo, baixa primeiro, agarda "
-"polo inimigo e camiña sobre a súa testa e escapa. Emprega un truco similar "
-"co segundo inimigo.\n"
+"polo inimigo e camiña sobre a súa testa e escapa. Usa un truco similar co "
+"segundo inimigo.\n"
 "\n"
 "A liña de ouro nos ladrillos que hai preto do fondo require pensalo un pouco "
 "máis. Dado que un dos ladrillos é unha trampa, terás que escavar todos os "
@@ -3273,8 +3273,8 @@ msgstr ""
 "É mellor xogar á primeira Febre do Ouro antes de probar con Febre do Ouro II "
 "porque precisa de moitas técnicas que son máis doadas de aprender alí. "
 "Ningún dos niveis de Febre do Ouro nin de Febre do Ouro II son imposíbeis. "
-"Se tes dúbidas, emprega o elemento do menú «Mover → Mostrar unha solución» "
-"para ver as solucións que fornece o autor."
+"Se tes dúbidas, usa o elemento do menú «Mover → Amosar unha solución» para "
+"ver as solucións que fornece o autor."
 
 #: gamedata/game_GRII.txt:10
 #, kde-format
@@ -3363,8 +3363,8 @@ msgid ""
 "Use the four enemies to fill up the false bricks you will find on your way "
 "up the ladders."
 msgstr ""
-"Emprega os catro inimigos para encher os ladrillos falsos que vas atopar "
-"cando subas polas escadas."
+"Usa os catro inimigos para encher os ladrillos falsos que vas atopar cando "
+"subas polas escadas."
 
 #: gamedata/game_GRII.txt:34
 #, kde-format
@@ -3788,10 +3788,10 @@ msgstr ""
 "Cando chegues ao medio fai que caia entre os dous anacos de ouro. Agarda en "
 "cada barra e pasa por riba del para apañares o ouro.\n"
 "\n"
-"Para acadar o derradeiro anaco de ouro emprega o truco de facer que o "
-"inimigo suba correndo por diante de ti cando esteas por debaixo del nunha "
-"escada. Empúrrao para riba e para o formigón. Segundo cae, pasa por riba da "
-"súa testa e apaña o ouro."
+"Para acadar o derradeiro anaco de ouro usa o truco de facer que o inimigo "
+"suba correndo por diante de ti cando esteas por debaixo del nunha escada. "
+"Empúrrao para riba e para o formigón. Segundo cae, pasa por riba da súa "
+"testa e apaña o ouro."
 
 #: gamedata/game_GRII.txt:134
 #, kde-format
@@ -3879,7 +3879,7 @@ msgstr ""
 "\n"
 "O inimigo que está a gardar o ouro pódese adiantar no ladrillo que hai máis "
 "á esquerda dos tres, que é falso. Agarda ata que agache pola escada, cae "
-"rapidamente pola trampa e vai polo ouro. Para adiantalo, emprega un truco "
+"rapidamente pola trampa e vai polo ouro. Para adiantalo, usa un truco "
 "similar ao que empregaches co primeiro.\n"
 "\n"
 "Cando escales de novo asegúrase de que só un dos catro inimigos seguintes "
@@ -5904,7 +5904,7 @@ msgid ""
 "of ladders that leads down and to the left ..."
 msgstr ""
 "Cae desde a barra de arriba á esquerda e chegarás á moeda. Sae pola dereita "
-"e arriba, empregando a escada que aparece. Cruza por arriba ata que esteas a "
+"e arriba, usando a escada que aparece. Cruza por arriba ata que esteas a "
 "sete ou oito espazos da dereita, logo baixa.\n"
 "\n"
 "Cando vaias en diagonal baixando á esquerda, haberá dous bloques falsos. Cae "
@@ -6357,13 +6357,13 @@ msgstr ""
 "Entra no vestíbulo e sobe a escada da escultura para coller a moeda. Cae á "
 "esquerda no bloque de cemento e agarda a que o inimigo se agrupe. Cae á "
 "esquerda e volve correndo para fóra ao afloramento de cemento cos inimigos "
-"tras de ti. Emprega a mesma escada e poste para volver a dentro. \n"
+"tras de ti. Usa a mesma escada e poste para volver a dentro. \n"
 "Corre ao cume do edificio ás escadas da dereita. Queda no punto de máis á "
 "esquerda do teito. Agarda a que un inimigo caia tras de ti, logo volve, "
 "escava e cae detrás del ao balcón, onde podes recoller tres moedas. Se "
 "agarda tempo de abondo no teito antes de caer pode convencer a varios "
 "inimigos de que o sigan e queden atrapados no balcón.\n"
-"Emprega as escadas da dereita para recoller a moeda restante e saia."
+"Usa as escadas da dereita para recoller a moeda restante e saia."
 
 #: gamedata/game_sot.txt:35
 #, kde-format
@@ -6565,7 +6565,7 @@ msgstr ""
 "de cemento do seu corpo, para determinar onde caer ou non caer. Os catro "
 "inimigos terán que atraparse sobre pezas concretas de cemento, para "
 "permitirlle acadar certas moedas.\n"
-"Atrapa os inimigos empregando as regras de KGoldrunner no teu proveito.\n"
+"Atrapa os inimigos usando as regras de KGoldrunner no teu proveito.\n"
 "Agarda no pau de arriba no lugar onde queiras que caia o inimigo. A medida "
 "que se lle aproxime, cae nun pau máis baixo e vai á esquerda ou á dereita "
 "para escapar dos inimigos. Deste xeito el caerá no perigo mentres ti o fas "
@@ -6681,13 +6681,13 @@ msgstr ""
 "cámara.\n"
 "Cando saias, debes caer na escada xunto ao cemento. Baixa por ela, baixo o "
 "cemento á dereita e logo sobe ao cume da seguinte cámara.\n"
-"Segunda cámara. Vai de esquerda a dereita cos pozos, empregando a túa "
-"habilidade escavando para coller a moeda. No pozo da dereita de todo, escava "
-"á esquerda mentres caes, logo cae á esquerda mentres escavas tanto á "
-"esquerda como á dereita. Na plataforma de tres bloques que queda, escava o "
-"bloque da esquerda, logo o dereito e o centro mentres caes escavando á "
-"esquerda. Escava de novo á esquerda, cae na escada xunto ao cemento, como "
-"antes, e segue cara arriba á seguinte cámara.\n"
+"Segunda cámara. Vai de esquerda a dereita cos pozos, usando a túa habilidade "
+"escavando para coller a moeda. No pozo da dereita de todo, escava á esquerda "
+"mentres caes, logo cae á esquerda mentres escavas tanto á esquerda como á "
+"dereita. Na plataforma de tres bloques que queda, escava o bloque da "
+"esquerda, logo o dereito e o centro mentres caes escavando á esquerda. "
+"Escava de novo á esquerda, cae na escada xunto ao cemento, como antes, e "
+"segue cara arriba á seguinte cámara.\n"
 "Terceira cámara. Escava á dereita, cae na moeda da esquerda e escava "
 "inmediatamente á dereita para atrapar o inimigo, logo escava e sae pola "
 "esquerda. Repite a xogada, un bloque por riba, para a moeda á dereita. Agora "
@@ -7487,10 +7487,10 @@ msgstr ""
 "podes subir ás presas e rodeando o fondo dereita, baixar a escada ata o "
 "cemento e atrapalos permanentemente no foxo.\n"
 "\n"
-"Se un queda atrapado na estrutura da torre, emprega o mesmo truco. Hai "
-"bloques falsos no fondo da torre. Se un queda atrapado con ouro, escava un "
-"furado no extremo da dereita do foxo, volve á escada e conduce ao inimigo a "
-"esta morte, onde se destruirá a moeda."
+"Se un queda atrapado na estrutura da torre, usa o mesmo truco. Hai bloques "
+"falsos no fondo da torre. Se un queda atrapado con ouro, escava un furado no "
+"extremo da dereita do foxo, volve á escada e conduce ao inimigo a esta "
+"morte, onde se destruirá a moeda."
 
 #: gamedata/game_wad.txt:109
 #, kde-format
@@ -7627,8 +7627,8 @@ msgstr ""
 "\n"
 "Para pasar polo foxo de abaixo de todo á esquerda, queda sobre o inimigo e "
 "escava á esquerda. Cando caias. escava á dereita e foxe, pero non subas ata "
-"que se pechen os bloques; entón poderás empregar a escada curta para "
-"conducir ao inimigo cara arriba, atravesar, baixar e saír.\n"
+"que se pechen os bloques; entón poderás usar a escada curta para conducir ao "
+"inimigo cara arriba, atravesar, baixar e saír.\n"
 "\n"
 "Para actuar no foxo de baixo á dereita, vai e recolle a moeda no centro do "
 "circuíto, logo escava a cada lado da escada curta que hai alí. Cae á "
@@ -7708,7 +7708,7 @@ msgstr "Mo&strar unha solución"
 #: src/kgoldrunner.cpp:247
 #, kde-format
 msgid "Show how to win this level."
-msgstr "Mostrar como se gaña este nivel."
+msgstr "Amosar como se gaña este nivel."
 
 #: src/kgoldrunner.cpp:248
 #, kde-format
@@ -7728,7 +7728,7 @@ msgstr "Reprodución instantánea."
 #: src/kgoldrunner.cpp:254
 #, kde-format
 msgid "Show a recording of the level you are currently playing."
-msgstr "Mostrar unha gravación do nivel no que se está a xogar."
+msgstr "Amosar unha gravación do nivel no que se está a xogar."
 
 #: src/kgoldrunner.cpp:259
 #, kde-format
@@ -7746,7 +7746,7 @@ msgid ""
 "Show a recording of the last level you played and finished, regardless of "
 "whether you won or lost."
 msgstr ""
-"Mostrar unha gravación do último nivel no que xogaches e remataches, "
+"Amosar unha gravación do último nivel no que xogaches e remataches, "
 "independentemente de se gañaches ou perdiches."
 
 #: src/kgoldrunner.cpp:267
@@ -7762,7 +7762,7 @@ msgstr "Xogar de novo en calquera nivel."
 #: src/kgoldrunner.cpp:269
 #, kde-format
 msgid "Show a recording of any level you have played so far."
-msgstr "Mostrar unha gravación de calquera nivel no que xa xogases."
+msgstr "Amosar unha gravación de calquera nivel no que xa xogases."
 
 #: src/kgoldrunner.cpp:274
 #, kde-format
@@ -7999,9 +7999,8 @@ msgid ""
 "Use the laptop's pointer device to control the hero's moves, and use the "
 "keyboard to dig left and right."
 msgstr ""
-"Emprega o dispositivo do portátil para controlar o punteiro para controlar "
-"ti os movementos do heroe, e emprega o teclado para cavar á esquerda e á "
-"dereita."
+"Usa o dispositivo do portátil para controlar o punteiro para controlar ti os "
+"movementos do heroe, e usa o teclado para cavar á esquerda e á dereita."
 
 #: src/kgoldrunner.cpp:419
 #, kde-format
@@ -8163,7 +8162,7 @@ msgstr "Proba de fallos"
 #: src/kgoldrunner.cpp:536
 #, kde-format
 msgid "Show Positions"
-msgstr "Mostrar as posicións"
+msgstr "Amosar as posicións"
 
 #: src/kgoldrunner.cpp:537
 #, kde-format
@@ -8173,19 +8172,19 @@ msgstr "Iniciar o rexistro"
 #: src/kgoldrunner.cpp:538
 #, kde-format
 msgid "Show Hero"
-msgstr "Mostrar o heroe"
+msgstr "Amosar o heroe"
 
 #: src/kgoldrunner.cpp:539
 #, kde-format
 msgid "Show Object"
-msgstr "Mostrar o obxecto"
+msgstr "Amosar o obxecto"
 
 #: src/kgoldrunner.cpp:541 src/kgoldrunner.cpp:542 src/kgoldrunner.cpp:543
 #: src/kgoldrunner.cpp:544 src/kgoldrunner.cpp:545 src/kgoldrunner.cpp:546
 #: src/kgoldrunner.cpp:547
 #, kde-format
 msgid "Show Enemy"
-msgstr "Mostrar o inimigo"
+msgstr "Amosar o inimigo"
 
 #: src/kgoldrunner.cpp:735
 #, kde-format
@@ -8807,7 +8806,7 @@ msgid ""
 "win or lose, before you can use the Replay Last Level action."
 msgstr ""
 "Non hai ningún último nivel que reproducir. Tes que xogar un nivel e "
-"completalo, gañes ou perdas, antes de poderes empregar a acción Reproducir o "
+"completalo, gañes ou perdas, antes de poderes usar a acción Reproducir o "
 "último nivel."
 
 #: src/kgrgame.cpp:696
@@ -8891,7 +8890,7 @@ msgstr ""
 #: src/kgrgame.cpp:837
 #, kde-format
 msgid "Show a Solution"
-msgstr "Mostrar unha solución"
+msgstr "Amosar unha solución"
 
 #: src/kgrgame.cpp:838
 #, kde-format
@@ -9088,7 +9087,7 @@ msgstr "Produciuse un erro: non se puido gardar a túa puntuación."
 #: src/kgrgame.cpp:1839 src/kgrgame.cpp:1862 src/kgrgame.cpp:1871
 #, kde-format
 msgid "Show High Scores"
-msgstr "Mostrar as mellores puntuacións"
+msgstr "Amosar as mellores puntuacións"
 
 #: src/kgrgame.cpp:1840
 #, kde-format
@@ -9322,7 +9321,7 @@ msgstr "Xogar de novo o nivel"
 #: src/kgrselector.cpp:256
 #, kde-format
 msgid "Show Solution"
-msgstr "Mostrar a solución"
+msgstr "Amosar a solución"
 
 #: src/kgrselector.cpp:268
 #, kde-format
@@ -9412,7 +9411,7 @@ msgstr ""
 "\n"
 "\n"
 "Se esta é a primeira vez que usas o KGoldrunner, selecciona a partida de "
-"titorial, que che vai mostrando o funcionamento do xogo.\n"
+"titorial, que che vai amosando o funcionamento do xogo.\n"
 "\n"
 "Doutro xeito, abonda con premer o nome dun xogo da táboa e despois, para "
 "comezar no nivel 001, premer o botón principal de baixo. A partida comeza "
