@@ -2,22 +2,22 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Vít Pelčák <vit@pelcak.org>, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012, 2013.
-# Vit Pelcak <vit@pelcak.org>, 2021.
+# Vit Pelcak <vit@pelcak.org>, 2021, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-20 00:44+0000\n"
-"PO-Revision-Date: 2021-07-08 14:19+0200\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"PO-Revision-Date: 2023-06-15 16:03+0200\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.04.2\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -6494,7 +6494,7 @@ msgstr "Rada pro úroveň:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Game Info"
-msgstr "Upravit info o hře"
+msgstr "Upravit informace o hře"
 
 #: src/kgrdialog.cpp:124
 #, kde-format
@@ -6703,7 +6703,7 @@ msgstr "Nelze nalézt soubor '%1' ke smazání."
 #: src/kgreditor.cpp:778
 #, kde-format
 msgid "Save Game Info"
-msgstr "Uložit info o hře"
+msgstr "Uložit informace o hře"
 
 #: src/kgreditor.cpp:509
 #, kde-format
@@ -7161,7 +7161,7 @@ msgstr "Načíst informace o hře"
 #: src/kgrgame.cpp:2030
 #, kde-format
 msgid "Cannot find game info file '%1'."
-msgstr "Nelze nalézt info soubor hry '%1'."
+msgstr "Nelze nalézt soubor informací hry '%1'."
 
 #: src/kgrgame.cpp:2040
 #, kde-format
