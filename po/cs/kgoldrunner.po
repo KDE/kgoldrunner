@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-20 00:44+0000\n"
-"PO-Revision-Date: 2023-06-15 16:03+0200\n"
+"PO-Revision-Date: 2023-06-23 09:10+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -7243,7 +7243,7 @@ msgstr "Lituji, můžete smazat úroveň pouze z jedné ze svých vlastních her
 #: src/kgrselector.cpp:81 src/kgrselector.cpp:277
 #, kde-format
 msgid "Edit Game Info"
-msgstr "Upravit info o hře"
+msgstr "Upravit informace o hře"
 
 #: src/kgrselector.cpp:82
 #, kde-format
