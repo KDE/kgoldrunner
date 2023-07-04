@@ -725,4 +725,4 @@ void KGrThumbNail::paintEvent (QPaintEvent * /* event (unused) */)
     p.drawRect (rect().left(), rect().top(), rect().right(), rect().bottom());
 }
 
-
+#include "moc_kgrselector.cpp"

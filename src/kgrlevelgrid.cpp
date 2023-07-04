@@ -194,4 +194,4 @@ void KGrLevelGrid::placeHiddenLadders()
     hiddenLadders.clear();
 }
 
-
+#include "moc_kgrlevelgrid.cpp"

@@ -632,4 +632,4 @@ void KGrScene::setTextFont (QGraphicsSimpleTextItem * t, double fontFraction)
     t->setFont (f);
 }
 
-
+#include "moc_kgrscene.cpp"

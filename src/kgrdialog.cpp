@@ -376,4 +376,4 @@ int KGrMessage::warning (QWidget * parent, const QString &caption,
     return (result);
 }
 
-
+#include "moc_kgrdialog.cpp"

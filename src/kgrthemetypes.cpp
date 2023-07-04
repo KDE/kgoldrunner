@@ -65,4 +65,4 @@ bool KGrSetTheme::readFromDesktopFile(const QString& path)
     return true;
 }
 
-
+#include "moc_kgrthemetypes.cpp"

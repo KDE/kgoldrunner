@@ -393,4 +393,4 @@ bool KGrGameIO::safeRename (QWidget * theView, const QString & oldName,
     return true;
 }
 
-
+#include "moc_kgrgameio.cpp"

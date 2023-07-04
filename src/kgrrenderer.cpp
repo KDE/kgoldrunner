@@ -325,4 +325,4 @@ int KGrRenderer::countFrames (const int index)
     return count;
 }
 
-
+#include "moc_kgrrenderer.cpp"

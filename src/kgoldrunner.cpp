@@ -991,4 +991,4 @@ QSize KGoldrunner::sizeHint() const
     return QSize (640, 600);
 }
 
-
+#include "moc_kgoldrunner.cpp"

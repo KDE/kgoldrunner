@@ -91,4 +91,4 @@ void KGrSounds::setVolume (int effect, qreal volume)
     sounds[effect]->setVolume (volume);
 }
 
-
+#include "moc_kgrsounds.cpp"

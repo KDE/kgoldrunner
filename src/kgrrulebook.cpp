@@ -671,4 +671,4 @@ Direction KGrScavengerRules::findBestWay   (const int eI, const int eJ,
     return RIGHT;
 }
 
-
+#include "moc_kgrrulebook.cpp"

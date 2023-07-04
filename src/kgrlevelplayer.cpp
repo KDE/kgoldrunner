@@ -1233,5 +1233,4 @@ void KGrLevelPlayer::showEnemyState (int enemyId)
     }
 }
 
-
-
+#include "moc_kgrlevelplayer.cpp"

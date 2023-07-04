@@ -641,4 +641,4 @@ void KGrEnemy::showState()
                  gridX, gridY, currAnimation, interval, prevInCell);
 }
 
-
+#include "moc_kgrrunner.cpp"

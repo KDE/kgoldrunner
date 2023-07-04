@@ -2349,5 +2349,6 @@ void KGrGame::myMessage (QWidget * parent, const QString &title, const QString &
     freeze (ProgramPause, false);
 }
 
+#include "moc_kgrgame.cpp"
 
 // vi: set sw=4 :

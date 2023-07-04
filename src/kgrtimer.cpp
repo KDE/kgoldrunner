@@ -63,4 +63,4 @@ void KGrTimer::internalSlot()
     }
 }
 
-
+#include "moc_kgrtimer.cpp"
