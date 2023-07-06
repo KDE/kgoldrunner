@@ -9,7 +9,7 @@
 # Mauricio Piacentini <piacentini@kde.org>, 2007, 2008, 2010.
 # Diniz Bortolotto <diniz.bortolotto@gmail.com>, 2008.
 # Fernando Boaglio <boaglio@kde.org>, 2008.
-# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2009, 2010, 2012, 2017, 2018, 2019, 2020.
+# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2009, 2010, 2012, 2017, 2018, 2019, 2020, 2023.
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2010, 2011, 2012, 2013, 2015, 2016.
 # Marcus Gama <marcus.gama@gmail.com>, 2011, 2012.
 msgid ""
@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-20 00:44+0000\n"
-"PO-Revision-Date: 2020-10-21 16:03-0300\n"
+"PO-Revision-Date: 2023-07-05 17:53-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 20.04.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -2339,7 +2339,7 @@ msgctxt ""
 "level to the next by using the Y key and you can prevent a level from "
 "playing by using the Pause key (P or Escape)."
 msgid " "
-msgstr ""
+msgstr " "
 
 #: gamedata/game_GotD.txt:3
 #, kde-format
@@ -2779,10 +2779,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:165
-#, fuzzy, kde-format
-#| msgid "Too Easy?"
+#, kde-format
 msgid "Too Fast?"
-msgstr "Muito fácil?"
+msgstr "Muito rápido?"
 
 #: gamedata/game_GotD.txt:166
 #, kde-format
