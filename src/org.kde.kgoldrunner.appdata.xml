@@ -13,6 +13,7 @@
   <name xml:lang="eo">KGoldrunner</name>
   <name xml:lang="es">KGoldrunner</name>
   <name xml:lang="et">KGoldrunner</name>
+  <name xml:lang="eu">KGoldrunner</name>
   <name xml:lang="fi">KGoldrunner</name>
   <name xml:lang="fr">KGoldrunner</name>
   <name xml:lang="gl">KGoldrunner</name>
@@ -45,6 +46,7 @@
   <summary xml:lang="eo">Ĉasu Oron, Evitu Malamikojn kaj Solvu Enigmojn</summary>
   <summary xml:lang="es">Recoge oro, esquiva enemigos y resuelve rompecabezas</summary>
   <summary xml:lang="et">Kulla jahtimine, vaenlaste eest põiklemine ja mõistatuste lahendamine</summary>
+  <summary xml:lang="eu">Ehizatu urrea, etsaiak saihestu eta ebatzi buru-hausgarriak </summary>
   <summary xml:lang="fi">Etsi kultaa, välttele vihollisia ja ratkaise tehtäviä</summary>
   <summary xml:lang="fr">Chassez l'or, évitez les ennemis et résolvez des énigmes</summary>
   <summary xml:lang="gl">Colle moedas, escapa dos inimigos e resolve quebracabezas</summary>
@@ -81,6 +83,7 @@
     <p xml:lang="eo">KGoldrunner estas agoludo, kie la heroo kuras tra labirinto, grimpas ŝtuparojn, fosas truojn kaj evitas malamikojn por kolekti ĉiujn ornugetojn kaj eskapi al la sekva nivelo. Viaj malamikoj ankaŭ serĉas la oron. Pli malbone, ili estas post vi!.</p>
     <p xml:lang="es">KGoldrunner es un juego de acción en el que un héroe corre por un laberinto, sube escaleras, cava hoyos y esquiva enemigos para recoger todas las piezas de oro y escapar al siguiente nivel. Los enemigos también van a por el oro. Y, todavía peor, ¡van a por ti!</p>
     <p xml:lang="et">KGoldrunner on tegevusmäng, milles kangelane liigub labürindis, ronib mööda redeleid, kaevab auke ja põikleb kõrvale vaenlaste eest, et koguda kokku kõik kullatükid ja pääseda järgmisele tasemele. Vaenlased jahivad samuti kulda. Aga mis veel hullem, nad jahivad ka sind!</p>
+    <p xml:lang="eu">«KGoldrunner» ekintza-joko bat da, heroia labirinto batean zehar doa, eskailerak igo, zuloak hondeatu eta etsaiak saihestuz, urre pipita guztiak bildu eta hurrengo mailara ihes egiteko. Zure etsaiak ere urrearen atzetik doaz. Okerragoa dena, zu harrapatu nahian doaz.</p>
     <p xml:lang="fi">KGoldrunner on toimintapeli, missä sankari kulkee läpi sokkelon, nousee portaita, kaivaa kuoppia ja välttelee vihollisia kerätäkseen kultahippuja ja paetakseen seuraavalle tasolle. Myös vihollisesi himoitsevat kultaa – ne ovat perässäsi!</p>
     <p xml:lang="fr">KGoldrunner est un jeu d'action dans lequel le héros parcourt un labyrinthe, grimpe aux échelles, creuse des trous et évite les ennemis afin de collecter toutes les pépites d'or et de s'échapper vers le niveau suivant. Vos ennemis sont également à la recherche de l'or. Pire encore, ils sont à votre poursuite !</p>
     <p xml:lang="gl">KGoldrunner é un xogo de acción no que o heroe corre a través dun labirinto, sube por escaleiras, cava foxos e esquiva inimigos para recoller todas as moedas de ouro e escapar ao seguinte nivel. Os inimigos tamén van a polo ouro. E aínda peor, van tras de ti!</p>
@@ -113,6 +116,7 @@
     <p xml:lang="eo">Trajtoj:</p>
     <p xml:lang="es">Funciones:</p>
     <p xml:lang="et">Omadused:</p>
+    <p xml:lang="eu">Ezaugarriak:</p>
     <p xml:lang="fi">Ominaisuudet:</p>
     <p xml:lang="fr">Fonctionnalités :</p>
     <p xml:lang="gl">Funcionalidades:</p>
@@ -146,6 +150,7 @@
       <li xml:lang="eo">Temebla</li>
       <li xml:lang="es">Uso de temas</li>
       <li xml:lang="et">Teemade kasutamine</li>
+      <li xml:lang="eu">Gaia aldagarria</li>
       <li xml:lang="fi">Teemoitettavissa</li>
       <li xml:lang="fr">Thèmes</li>
       <li xml:lang="gl">Admite temas.</li>
@@ -178,6 +183,7 @@
       <li xml:lang="eo">Centoj da niveloj</li>
       <li xml:lang="es">Cientos de niveles</li>
       <li xml:lang="et">Sadu tasemeid</li>
+      <li xml:lang="eu">Ehunka maila</li>
       <li xml:lang="fi">Satoja pelitasoja</li>
       <li xml:lang="fr">Centaines de niveaux</li>
       <li xml:lang="gl">Centos de niveis.</li>
@@ -210,6 +216,7 @@
       <li xml:lang="eo">Nivel-redaktisto</li>
       <li xml:lang="es">Editor de niveles</li>
       <li xml:lang="et">Tasemete redaktor</li>
+      <li xml:lang="eu">Maila editorea</li>
       <li xml:lang="fi">Tasojen muokkaus</li>
       <li xml:lang="fr">Éditeur de niveaux</li>
       <li xml:lang="gl">Editor de niveis.</li>
@@ -242,6 +249,7 @@
       <li xml:lang="eo">Du reĝimoj por la malamikoj: klasika kaj KGoldrunner-reĝimo, en KGoldrunner-reĝimo ili estas pli inteligentaj, en la klasika reĝimo estas pli facile trompi ilin</li>
       <li xml:lang="es">Dos modos para los enemigos: clásico y modo KGoldrunner. En el modo KGoldrunner son más inteligentes, mientras que en el modo clásico resulta más fácil engañarlos.</li>
       <li xml:lang="et">Kaht tüüpi vaenlased: klassikalised ja KGoldrunneri omad. KGoldrunneri vaenlased on nupukamad, klassikalisi on küllaltki hõlpus ninapidi vedada</li>
+      <li xml:lang="eu">Etsaientzako bi modu: klasikoa eta «KGoldrunner» modua, «KGoldrunner» moduan adimentsuagoak dira, modu klasikoan haiek engainatzea errazagoa da</li>
       <li xml:lang="fi">Kahdenlaisia vihollisia: perinteisiä ja KGoldrunner-tyyppisiä. Jälkimmäiset ovat älykkkäämpiä, perinteisiä on helpompi jallittaa</li>
       <li xml:lang="fr">Deux modes pour les ennemis : classique et KGoldrunner. En mode KGoldrunner, les ennemis sont plus intelligents, en mode classique il est plus facile de les tromper</li>
       <li xml:lang="gl">Dous modos para os inimigos: o clásico e o modo de KGoldrunner; no modo de KGoldrunner son máis intelixentes, no clásico é máis doado enganalos.</li>
@@ -274,6 +282,7 @@
       <li xml:lang="eo">Tre tre malfacilaj niveloj</li>
       <li xml:lang="es">Muchísimos niveles de dificultad</li>
       <li xml:lang="et">Väga, tõesti väga rasked tasemed</li>
+      <li xml:lang="eu">Maila oso osoa zailak</li>
       <li xml:lang="fi">Hyvin hyvin vaikeita tasoja</li>
       <li xml:lang="fr">Niveaux très, très difficiles</li>
       <li xml:lang="gl">Niveis moi moi difíciles</li>
@@ -306,6 +315,7 @@
       <li xml:lang="eo">Kontrolo de klavaro aŭ muso</li>
       <li xml:lang="es">Control por teclado y por ratón</li>
       <li xml:lang="et">Juhtimine klaviatuurilt või hiirega</li>
+      <li xml:lang="eu">Teklatu edo sagu bidezko agintea</li>
       <li xml:lang="fi">Näppäimistö- tai hiiriohjaus</li>
       <li xml:lang="fr">Contrôle au clavier ou à la souris</li>
       <li xml:lang="gl">Control do teclado ou do rato</li>
@@ -338,6 +348,7 @@
       <li xml:lang="eo">Konserveblaj ludoj</li>
       <li xml:lang="es">Los juegos se pueden guardar</li>
       <li xml:lang="et">Salvestatavad mängud</li>
+      <li xml:lang="eu">Jokoak gorde daitezke</li>
       <li xml:lang="fi">Pelit ovat tallennettavissa</li>
       <li xml:lang="fr">Parties enregistrables</li>
       <li xml:lang="gl">Pódense gardar as partidas.</li>
@@ -378,6 +389,7 @@
       <caption xml:lang="eo">Ludante KGoldrunner</caption>
       <caption xml:lang="es">Jugando KGoldrunner</caption>
       <caption xml:lang="et">KGoldrunneri mängimine</caption>
+      <caption xml:lang="eu">«KGoldrunner»rean jokatzen</caption>
       <caption xml:lang="fr">Partie de KGoldrunner en cours</caption>
       <caption xml:lang="gl">Xogando a KGoldrunner</caption>
       <caption xml:lang="id">Memainkan KGoldrunner</caption>
