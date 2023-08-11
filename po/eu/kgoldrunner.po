@@ -1,22 +1,26 @@
-# translation of kgoldrunner.po to Basque
-# Copyright (C) 2003, 2005, 2009 Free Software Foundation, Inc.
+# Translation for kgoldrunner.po to Euskara/Basque (eu).
+# Copyright (C) 2003-2023 This file is copyright:
+# This file is distributed under the same license as the kgoldrunner package.
+# KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>.
 #
+# Translators:
 # Marcos  <marcos@euskalgnu.org>, 2003, 2005.
 # Ion Gaztañaga <igaztanaga@gmail.com>, 2005.
 # Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2009.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-20 00:44+0000\n"
-"PO-Revision-Date: 2009-06-23 17:26+0200\n"
-"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
-"Language-Team: Basque <itzulpena@euskalgnu.org>\n"
+"PO-Revision-Date: 2023-08-10 21:27+0200\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
+"Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 23.04.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #, kde-format
@@ -30,10 +34,9 @@ msgid "Your emails"
 msgstr "igaztanaga@gmail.com"
 
 #: gamedata/game_blb.txt:3
-#, fuzzy, kde-format
-#| msgid "Beginner Speed"
+#, kde-format
 msgid "Beginner's Luck"
-msgstr "Hasiberriaren abiadura"
+msgstr "Hasiberriaren zortea"
 
 #: gamedata/game_blb.txt:4
 #, kde-format
@@ -48,6 +51,16 @@ msgid ""
 "\n"
 "Jason provided most of the solutions, but some are by Ian Wadham."
 msgstr ""
+"70 maila hauek joko tradizionalaren sarrera graduatua dira, Jason Self-ek "
+"konposatua (j at jxself org). Aholkurik ez egon arren, maila bakoitzak "
+"grabatu dagoen ebazpen bat du.\n"
+"\n"
+"Jokoa jokalariei zuzendua dago, baina azken mailak nahiko zailak dira, "
+"beraz, aurrera joan ahala etsaiek zure mugimenduei nola erantzuten dieten "
+"zaindu. 70. mailara iristen zarenerako haiek ondo trabatuta izan behar "
+"dituzu.\n"
+"\n"
+"Jason-ek ebazpen gehienak eman zituen, baina batzuk Ian Wadham-enak dira."
 
 #: gamedata/game_CM.txt:2
 #, kde-format
@@ -55,18 +68,7 @@ msgid "Curse of the Mummy"
 msgstr "Momiaren madarikazioa"
 
 #: gamedata/game_CM.txt:3
-#, fuzzy, kde-format
-#| msgid ""
-#| "Drawing on Western movie icons about mummies and Egypt, this set of "
-#| "levels is best run under the Treasure of Egypt theme.\n"
-#| "\n"
-#| "To polish your Egyptology, you will find factual tidbits related to each "
-#| "level in the hints, where the facts are drawn from Wikipedia rather than "
-#| "Hollywood.\n"
-#| "\n"
-#| "This Championship game was composed by Steve Mann <smann at cgl uwaterloo "
-#| "ca>, with a few Egyptian ideas and the Red Sea level contributed by Ian "
-#| "Wadham."
+#, kde-format
 msgid ""
 "Drawing on Western movie icons about mummies and Egypt, this set of levels "
 "is best run under the Treasure of Egypt theme. You also need to dig while "
@@ -80,20 +82,21 @@ msgid ""
 "ca>, with a few Egyptian ideas and the Red Sea level contributed by Ian "
 "Wadham."
 msgstr ""
-"Egipto eta momiei buruzko mendebaldeko filmeetan oinarrituta, maila multzo "
-"hau 'Egiptoko altxorra' gaiaren exekuzio onena da.\n"
+"Egipto eta momiei buruzko mendebaldeko filmetako ikonoetan oinarrituta, "
+"maila multzo hau «Egiptoko altxorra» gaiarekin ibiltzen da hobekien. "
+"Batzuetan, erori bitartean ere hondeatu beharrean izango zara.\n"
 "\n"
-"Zure egiptologia fintzeko, gertaeren albisteak maila bakoitzeko argibideetan "
-"aurki ditzakezu. Gertaerak Wikipedia gunetik eskuratu dira eta ez Hollywood-"
-"etik.\n"
+"Zure egiptologia fintzeko, iradokizunetan, maila bakoitzarekin lotutako "
+"benetako datuak aurkituko dituzu, Wikipediakoak, Hollywood-etik izan ordez.\n"
 "\n"
-"Joko hau Steve Mann <smann abildua cgl uwaterloo ca> osatu zuen, Egiptoko "
-"burutazio batzuk eta Itsas Gorriko maila Ian Wadham-en laguntzarekin."
+"Txapelketa joko hori Steve Mann-ek <smann at cgl uwaterloo ca> osatu zuen, "
+"Egiptori buruzko ideia batzuekin, eta Itsas Gorriko maila Ian Wadham-ek egin "
+"zuen."
 
 #: gamedata/game_CM.txt:10
 #, kde-format
 msgid "The Giza Plateau"
-msgstr "Giza goi-lautada"
+msgstr "Gizako goi-lautada"
 
 #: gamedata/game_CM.txt:11
 #, kde-format
@@ -107,18 +110,20 @@ msgid ""
 "too many reappear on the right, it becomes difficult to escape at the end.  "
 "To get started, you will need to use the technique of digging while falling."
 msgstr ""
-"Cairoren inguruan dagoen Giza-ko goilautada Giza nekropoliaren lekua da, "
-"bertan Keops, Kefren eta Mikerinosen piramideak daude, Esfinge handia eta "
-"beste eraikuntza txikiekin batera.\n"
+"Gizako goi-lautada, Kairoren kanpoaldean, Gizako Nekropoliaren gunea da; "
+"Keops-en Piramidea (Piramide Handia), Kefren-en Piramidea, Mizerino-ren "
+"Piramidea, Esfinge Handiarekin eta beste zenbait eraikin txikiagorekin "
+"batera osatzen dute.\n"
 "\n"
-"Goilautadan ibiltzean saihestu momiak hiltzea: eskuinean gehiegi agertzen "
-"badira, zaila gertatuko da amaieran ihes egitea. Hasteko, erabili behar "
-"duzun teknika zuloa egitea da erortzen zarenean."
+"Goi-lautada azpian ibiltzen zarenean, saia zaitez momiak hiltzea saihesten: "
+"eskuinean haietako behar baino gehiago berragertzen badira, azkenean ihes "
+"egitea zailagoa izango da. Hasteko, erori bitartean hondeatzeko teknika "
+"erabili beharko duzu."
 
 #: gamedata/game_CM.txt:16
 #, kde-format
 msgid "The Pyramid of Djoser"
-msgstr "Djoser-en piramidea"
+msgstr "Zoser-ren Piramidea"
 
 #: gamedata/game_CM.txt:17
 #, kde-format
@@ -145,27 +150,27 @@ msgid ""
 "the pyramid - if there is more than one mummy on the bottom right before the "
 "escape ladder appears, you will be unable to reach the exit."
 msgstr ""
-"Djoser-en Piramidea (edo Piramide Mailakatua) Egiptoko Menphis hiriaren ipar-"
-"mendebaldeko Sakkarah nekropoliseko eraikin arkeologiko bat da.\n"
+"Zoser-ren (Djoser) Piramidea, edo Piramide Mailakatua (Egiptoeraz kbhw-"
+"ntrw), Sakkara Nekropoliko aztarna arkeologiko bat da, Egipto, Menfis "
+"hiriaren ipar-mendebaldean.\n"
 "\n"
-"Maila hau osatzeko, garrantzitsua da urratsetan lantzea: aurrenik bigarren "
-"mailako (behetik) ezkerraldeko momia askatu, barrura jaregiteko baimenduz "
-"eta bete lur mailako ezkutatuta dagoen zuloa.\n"
+"Maila hau osatzeko, garrantzitsua da urratsez urrats aurrera jarraitzea: "
+"aurrena, askatu (behetik hasita) bigarren mailako ezker aldeko momia, "
+"lurzoru mailako ezkutuko zulora erori eta bete dezan.\n"
 "\n"
-"Orain, sartu bigarren mailako eskuinaldean eta mugitu poloan zehar, momiaren "
-"gainetik, eta lortu erdian dagoen altxorraren pieza, erdiko ezkerreko "
-"adreilua lurpetik ateratzeaz ziurtatuz.\n"
+"Orain, sartu bigarren mailako eskuinaldera eta mugitu zurtoinean zehar, "
+"momiaren gainetik, eta lortu erdian dagoen altxorraren pieza, erdialdeko "
+"ezkerreko adreilua ateratzeaz ziurtatuz.\n"
 "\n"
-"Hirugarren mailako momia arazoak sor ditzake, altxorraren zati bat hartu eta "
-"eraman dezakeelako. Sortea izan dezakezu nonbaiten utz dezakeen bere "
-"altxorra aurki dezakezulako, gainera momia atrapa dezakezu zula daitekeen "
-"eskuineko adreiluan, arretaz egindako denboran.\n"
+"Hirugarren mailako momia arazotsua da, altxor pieza bat hartu eta berarekin "
+"eramango duelako. Zortea izan dezakezu eta altxorra nonbaiten uzten duela "
+"aurkitu, baina eskuinean atera daitekeen adreiluren lekuan harrapa dezakezu "
+"ere, denbora tentuz neurtuz gero.\n"
 "\n"
-"Azkenik, altxorraren azken pieza lortu aurretik, piramide mailakatuaren "
-"beheko eskuinaldea irekitzeaz ziurtatu eskuineko momiak piramidean sartzeko "
-"aukera eskainiz. Ihes egiteko eskailera agertu baino lehenago momia bat "
-"baino gehiago beheko eskuinaldean egonez gero, ezin izango duzu irteerara "
-"iritsi."
+"Azkenik, altxorraren azken pieza lortu aurretik, ireki ezazu piramide "
+"mailakatuaren beheko eskuinaldea, eskuineko momiei piramidera sartzen uzteko "
+"- ihes egiteko ezkilara agertu aurretik behe-eskuinean momia bat baino "
+"gehiago baldin badago, ezingo zara irteerara iritsi."
 
 #: gamedata/game_CM.txt:28
 #, kde-format
