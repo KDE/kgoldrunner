@@ -7333,7 +7333,7 @@ msgstr ""
 "\n"
 "PERILL: Intenta no caure de l'escala o de la barra cap al pou de formigó de "
 "baix a la dreta. Si hi caus, estaràs atrapat i l'única forma d'eixir-ne serà "
-"matar l'heroi (prémer la tecla Q) i iniciar el nivell una altra vegada."
+"matar l'heroi (prémer la tecla «Q») i iniciar el nivell una altra vegada."
 
 #: gamedata/game_tute.txt:21
 #, kde-format
@@ -7423,9 +7423,8 @@ msgstr ""
 "fer en iniciar este nivell. Cava un forat, atrapa l'enemic a dins, i corre "
 "sobre ell, mentre un altre inicia una persecució trepidant...\n"
 "\n"
-"Si et sents angoixat, pots prémer la tecla de pausa en qualsevol moment (de "
-"manera predeterminada P o Esc) i descansar. Prem-la de nou quan vullgues "
-"continuar."
+"Si et sents angoixat, pots prémer la tecla de pausa en qualsevol moment (per "
+"defecte «P» o «Esc») i descansar. Prem-la de nou quan vullgues continuar."
 
 #: gamedata/game_tute.txt:43
 #, kde-format
@@ -7541,9 +7540,9 @@ msgstr ""
 "No pots arribar a l'or, així que has d'aconseguir que els enemics té "
 "l'acosten. Però com els faràs tornar?\n"
 "\n"
-"Si estàs cansat, pots prémer la tecla de pausa (de manera predeterminada P o "
-"Esc) i fer un descans. També, pots emprar el menú «Configuració» per a "
-"alentir l'acció."
+"Si estàs cansat, pots prémer la tecla de pausa (per defecte «P» o «Esc») i "
+"fer un descans. També, pots emprar el menú «Configuració» per a alentir "
+"l'acció."
 
 #: gamedata/game_tutea.txt:19
 #, kde-format
@@ -9260,7 +9259,7 @@ msgid ""
 "playing. Please press the Pause key (default P or Esc) when you are ready."
 msgstr ""
 "La reproducció s'ha parat i la partida està en pausa mentre et prepares per "
-"a jugar. Per favor, prem la tecla de pausa (P o Esc) quan estigues llest."
+"a jugar. Per favor, prem la tecla de pausa («P» o «Esc») quan estigues llest."
 
 #: src/kgrgame.cpp:671 src/kgrgame.cpp:677
 #, kde-format
@@ -9360,8 +9359,8 @@ msgid ""
 "The game is halted. You will need to press the Pause key (default P or Esc) "
 "when you are ready to play."
 msgstr ""
-"La partida està en pausa. Hauràs de prémer la tecla de pausa (P o Esc) quan "
-"estigues preparat per a jugar."
+"La partida està en pausa. Hauràs de prémer la tecla de pausa («P» o «Esc») "
+"quan estigues preparat per a jugar."
 
 #: src/kgrgame.cpp:837
 #, kde-format
