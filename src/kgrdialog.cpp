@@ -19,7 +19,6 @@
 #include <QTextStream>
 #include <QVBoxLayout>
 
-#include <kwidgetsaddons_version.h>
 #include <KLocalizedString>
 #include <KGuiItem>
 #include <KMessageBox>
@@ -343,35 +342,19 @@ int KGrMessage::warning (QWidget * parent, const QString &caption,
     int result = 0;
     if (label2.isEmpty()) {
         // Display a box with 2 buttons.
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
         KMessageBox::ButtonCode ans = KMessageBox::questionTwoActions (parent, text, caption,
-#else
-        KMessageBox::ButtonCode ans = KMessageBox::questionYesNo (parent, text, caption,
-#endif
                             KGuiItem (label0), KGuiItem (label1));
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
         result = (ans == KMessageBox::PrimaryAction) ? 0 : 1;
-#else
-        result = (ans == KMessageBox::Yes) ? 0 : 1;
-#endif
     }
     else {
         // Display a box with 3 buttons.
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
         KMessageBox::ButtonCode ans = KMessageBox::questionTwoActionsCancel (parent, text, caption,
-#else
-        KMessageBox::ButtonCode ans = KMessageBox::questionYesNoCancel (parent, text, caption,
-#endif
                             KGuiItem (label0), KGuiItem (label1),
                             KGuiItem (label2));
         if (ans == KMessageBox::Cancel)
             result = 2;
         else
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
             result = (ans == KMessageBox::PrimaryAction) ? 0 : 1;
-#else
-            result = (ans == KMessageBox::Yes) ? 0 : 1;
-#endif
     }
     return (result);
 }

@@ -59,19 +59,14 @@ ecm_qt_declare_logging_category(kgoldrunner
 file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*-apps-kgoldrunner.png")
 ecm_add_app_icon(kgoldrunner ICONS ${ICONS_SRCS})
 
-if (QT_MAJOR_VERSION STREQUAL "6")
-    target_link_libraries(kgoldrunner KDEGames6)
-else()
-    target_link_libraries(kgoldrunner KF5KDEGames)
-endif()
-
 target_link_libraries(kgoldrunner
-    KF${KF_MAJOR_VERSION}::ConfigWidgets
-    KF${KF_MAJOR_VERSION}::DBusAddons
-    KF${KF_MAJOR_VERSION}::KIOCore
-    KF${KF_MAJOR_VERSION}::Crash
-    KF${KF_MAJOR_VERSION}::WidgetsAddons
-    KF${KF_MAJOR_VERSION}::XmlGui
+    KDEGames6
+    KF6::ConfigWidgets
+    KF6::DBusAddons
+    KF6::KIOCore
+    KF6::Crash
+    KF6::WidgetsAddons
+    KF6::XmlGui
 )
 
 install(TARGETS kgoldrunner  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
