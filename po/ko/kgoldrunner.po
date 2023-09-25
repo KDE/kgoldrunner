@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-20 00:44+0000\n"
+"POT-Creation-Date: 2023-09-25 01:39+0000\n"
 "PO-Revision-Date: 2022-04-16 22:02+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -3047,7 +3047,7 @@ msgstr "하트 브레이커"
 msgid "No hint!"
 msgstr "힌트 없음!"
 
-#: gamedata/game_kgr.txt:3 src/main.cpp:33
+#: gamedata/game_kgr.txt:3 src/main.cpp:29
 #, kde-format
 msgid "KGoldrunner"
 msgstr "KGoldrunner"
@@ -5727,7 +5727,7 @@ msgid ""
 "is a steady hand."
 msgstr ""
 
-#: src/kgoldrunner.cpp:184 src/kgrgame.cpp:724
+#: src/kgoldrunner.cpp:184 src/kgrgame.cpp:723
 #, kde-format
 msgid "&New Game..."
 msgstr "새 게임(&N)..."
@@ -5771,7 +5771,7 @@ msgstr ""
 "단계에 대한 공략법을 사용자 데이터 디렉터리의 'sol_&lt;prefix&gt;.txt'파일에 "
 "저장합니다."
 
-#: src/kgoldrunner.cpp:246 src/kgrgame.cpp:1304
+#: src/kgoldrunner.cpp:246 src/kgrgame.cpp:1303
 #, fuzzy, kde-format
 #| msgid "&Show A Solution"
 msgid "&Show a Solution"
@@ -5892,7 +5892,7 @@ msgstr "임의 단계 편집..."
 msgid "Edit"
 msgstr "편집"
 
-#: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1472
+#: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1459
 #, kde-format
 msgid "&Save Edits..."
 msgstr "편집 저장(&S)..."
@@ -6505,91 +6505,91 @@ msgstr "편집기(&E)"
 msgid "Edit Toolbar"
 msgstr "도구 모음 편집"
 
-#: src/kgrdialog.cpp:35
+#: src/kgrdialog.cpp:34
 #, fuzzy, kde-format
 #| msgid "Edit Name & Hint"
 msgctxt "@title:window"
 msgid "Edit Name or Hint"
 msgstr "이름 및 힌트 편집"
 
-#: src/kgrdialog.cpp:57
+#: src/kgrdialog.cpp:56
 #, kde-format
 msgid "Name of level:"
 msgstr "단계 이름:"
 
-#: src/kgrdialog.cpp:64
+#: src/kgrdialog.cpp:63
 #, kde-format
 msgid "Hint for level:"
 msgstr "단계에 대한 힌트:"
 
-#: src/kgrdialog.cpp:104 src/kgrdialog.cpp:173
+#: src/kgrdialog.cpp:103 src/kgrdialog.cpp:172
 #, fuzzy, kde-format
 #| msgid "Edit Game Info"
 msgctxt "@title:window"
 msgid "Edit Game Info"
 msgstr "게임 정보 편집"
 
-#: src/kgrdialog.cpp:124
+#: src/kgrdialog.cpp:123
 #, kde-format
 msgid "Name of game:"
 msgstr "게임 이름:"
 
-#: src/kgrdialog.cpp:132
+#: src/kgrdialog.cpp:131
 #, kde-format
 msgid "File name prefix:"
 msgstr "파일 이름 접두사:"
 
-#: src/kgrdialog.cpp:140
+#: src/kgrdialog.cpp:139
 #, kde-format
 msgid "Traditional rules"
 msgstr "기존 규칙"
 
-#: src/kgrdialog.cpp:141
+#: src/kgrdialog.cpp:140
 #, kde-format
 msgid "KGoldrunner rules"
 msgstr "KGoldrunner 규칙"
 
-#: src/kgrdialog.cpp:150 src/kgrdialog.cpp:185
+#: src/kgrdialog.cpp:149 src/kgrdialog.cpp:184
 #, kde-format
 msgid "1 level"
 msgid_plural "%1 levels"
 msgstr[0] "단계 %1개"
 
-#: src/kgrdialog.cpp:153
+#: src/kgrdialog.cpp:152
 #, kde-format
 msgid "About this game:"
 msgstr "이 게임에 대해:"
 
-#: src/kgrdialog.cpp:170
+#: src/kgrdialog.cpp:169
 #, fuzzy, kde-format
 #| msgid "Create Game"
 msgctxt "@title:window"
 msgid "Create Game"
 msgstr "게임 만들기"
 
-#: src/kgrdialog.cpp:187
+#: src/kgrdialog.cpp:186
 #, kde-format
 msgid "Save Changes"
 msgstr "변경 사항 저장"
 
-#: src/kgrdialog.cpp:192
+#: src/kgrdialog.cpp:191
 #, kde-format
 msgid "0 levels"
 msgstr "단계 0개"
 
-#: src/kgrdialog.cpp:193 src/kgrselector.cpp:265
+#: src/kgrdialog.cpp:192 src/kgrselector.cpp:265
 #, kde-format
 msgid "Save New"
 msgstr "새로 저장"
 
-#: src/kgrdialog.cpp:248
+#: src/kgrdialog.cpp:247
 #, fuzzy, kde-format
 #| msgid "Select Saved Game"
 msgctxt "@title:window"
 msgid "Select Saved Game"
 msgstr "저장된 게임 선택"
 
-#: src/kgrdialog.cpp:267
+#: src/kgrdialog.cpp:266
 #, kde-format
 msgid "Game                       Level/Lives/Score   Day    Date     Time  "
 msgstr "게임                       단계/목숨/점수   요일    날짜     시간  "
@@ -6632,7 +6632,7 @@ msgstr ""
 "시스템 단계를 편집할 수는 있지만, 해당 단계는 사용자 게임에만 저장할 수 있습"
 "니다. 숨겨진 사다리와 떨어지는 벽돌을 엿보려고 하는 건 아니죠? :-)"
 
-#: src/kgreditor.cpp:242 src/kgreditor.cpp:260 src/kgrgame.cpp:261
+#: src/kgreditor.cpp:242 src/kgreditor.cpp:260 src/kgrgame.cpp:260
 #, kde-format
 msgid "Save Level"
 msgstr "단계 저장"
@@ -6652,8 +6652,8 @@ msgstr "단계 삽입(&I)"
 msgid "&Cancel"
 msgstr "취소(&C)"
 
-#: src/kgreditor.cpp:261 src/kgreditor.cpp:779 src/kgrgame.cpp:1496
-#: src/kgrgame.cpp:1708
+#: src/kgreditor.cpp:261 src/kgreditor.cpp:779 src/kgrgame.cpp:1483
+#: src/kgrgame.cpp:1691
 #, kde-format
 msgid "Cannot open file '%1' for output."
 msgstr "'%1' 파일에 쓰려고 열 수 없습니다."
@@ -6791,44 +6791,44 @@ msgstr "사용자 게임만 수정할 수 있습니다."
 msgid "New Level"
 msgstr "새로운 단계"
 
-#: src/kgreditor.cpp:839 src/kgrgame.cpp:1389
+#: src/kgreditor.cpp:839 src/kgrgame.cpp:1388
 #, kde-format
 msgctxt "Game name - level number."
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: src/kgreditor.cpp:843 src/kgrgame.cpp:1392
+#: src/kgreditor.cpp:843 src/kgrgame.cpp:1391
 #, kde-format
 msgctxt "Game name - level number - level name."
 msgid "%1 - %2 - %3"
 msgstr "%1 - %2 - %3"
 
-#: src/kgrgame.cpp:110
+#: src/kgrgame.cpp:109
 #, kde-format
 msgid "Click anywhere to begin live play"
 msgstr "게임을 시작하려면 아무 곳이나 클릭"
 
-#: src/kgrgame.cpp:191
+#: src/kgrgame.cpp:190
 #, kde-format
 msgid "Play Next Level"
 msgstr "다음 단계 플레이"
 
-#: src/kgrgame.cpp:192
+#: src/kgrgame.cpp:191
 #, kde-format
 msgid "There are no more levels in this game."
 msgstr "이 게임에는 더 이상 단계가 없습니다."
 
-#: src/kgrgame.cpp:262
+#: src/kgrgame.cpp:261
 #, kde-format
 msgid "Inappropriate action: you are not editing a level."
 msgstr "부적절한 작업: 단계를 편집하지 않습니다."
 
-#: src/kgrgame.cpp:421
+#: src/kgrgame.cpp:420
 #, kde-format
 msgid "No Sound"
 msgstr "소리 없음"
 
-#: src/kgrgame.cpp:422
+#: src/kgrgame.cpp:421
 #, kde-format
 msgid ""
 "Warning: This copy of KGoldrunner has no sound.\n"
@@ -6841,12 +6841,12 @@ msgstr ""
 "컴파일 및 빌드할 때 OpenAL과 SndFile 라이브러리의 개발 버전이 설치되어 있지 "
 "않았습니다."
 
-#: src/kgrgame.cpp:626 src/kgrgame.cpp:783
+#: src/kgrgame.cpp:625 src/kgrgame.cpp:782
 #, kde-format
 msgid "Game Paused"
 msgstr "게임 일시 정지"
 
-#: src/kgrgame.cpp:627
+#: src/kgrgame.cpp:626
 #, kde-format
 msgid ""
 "The replay has stopped and the game is pausing while you prepare to go on "
@@ -6855,18 +6855,18 @@ msgstr ""
 "리플레이가 정지되었습니다. 다시 시작할 준비가 될 때까지 게임이 일시 정지되었"
 "습니다. 준비가 되었으면 일시 정지 키(기본값: P 또는 Esc)를 누르십시오."
 
-#: src/kgrgame.cpp:671 src/kgrgame.cpp:677
+#: src/kgrgame.cpp:670 src/kgrgame.cpp:676
 #, kde-format
 msgid "Replay Last Level"
 msgstr "마지막 단계 리플레이"
 
-#: src/kgrgame.cpp:672
+#: src/kgrgame.cpp:671
 #, kde-format
 msgid ""
 "ERROR: Could not find and replay a recording of the last level you played."
 msgstr "오류: 마지막으로 플레이한 단계의 리플레이를 찾을 수 없습니다."
 
-#: src/kgrgame.cpp:678
+#: src/kgrgame.cpp:677
 #, kde-format
 msgid ""
 "There is no last level to replay.  You need to play a level to completion, "
@@ -6875,25 +6875,25 @@ msgstr ""
 "리플레이할 마지막 단계가 없습니다. 마지막 단계 리플레이를 수행하기 전에 단계"
 "를 이기든 지든 완전히 플레이해야 합니다."
 
-#: src/kgrgame.cpp:696
+#: src/kgrgame.cpp:695
 #, fuzzy, kde-format
 #| msgid "Quick Start"
 msgctxt "@title:window"
 msgid "Quick Start"
 msgstr "빠른 시작"
 
-#: src/kgrgame.cpp:713
+#: src/kgrgame.cpp:712
 #, kde-format
 msgctxt "Button text: start playing a game"
 msgid "&PLAY"
 msgstr "플레이(&P)"
 
-#: src/kgrgame.cpp:714
+#: src/kgrgame.cpp:713
 #, kde-format
 msgid "Start playing this level"
 msgstr "이 단계 플레이 시작"
 
-#: src/kgrgame.cpp:716
+#: src/kgrgame.cpp:715
 #, kde-format
 msgid ""
 "Set up to start playing the game and level being shown, as soon as you "
@@ -6902,22 +6902,22 @@ msgstr ""
 "표시한 게임과 단계를 클릭, 마우스 이동, 키 누름 이후 시작할 수 있도록 준비합"
 "니다."
 
-#: src/kgrgame.cpp:720
+#: src/kgrgame.cpp:719
 #, kde-format
 msgid "&Quit"
 msgstr "끝내기(&Q)"
 
-#: src/kgrgame.cpp:721
+#: src/kgrgame.cpp:720
 #, kde-format
 msgid "Close KGoldrunner"
 msgstr "KGoldrunner 닫기"
 
-#: src/kgrgame.cpp:725
+#: src/kgrgame.cpp:724
 #, kde-format
 msgid "Start a different game or level"
 msgstr "다른 게임이나 단계 시작"
 
-#: src/kgrgame.cpp:727
+#: src/kgrgame.cpp:726
 #, kde-format
 msgid ""
 "Use the Select Game dialog box to choose a different game or level and start "
@@ -6925,17 +6925,17 @@ msgid ""
 msgstr ""
 "게임 선택 대화 상자를 사용하여 다른 게임이나 단계를 선택하고 플레이 시작"
 
-#: src/kgrgame.cpp:731
+#: src/kgrgame.cpp:730
 #, kde-format
 msgid "&Use Menu"
 msgstr "메뉴 사용(&U)"
 
-#: src/kgrgame.cpp:733
+#: src/kgrgame.cpp:732
 #, kde-format
 msgid "Use the menus to choose other actions"
 msgstr "메뉴를 사용하여 다른 작업 선택"
 
-#: src/kgrgame.cpp:735
+#: src/kgrgame.cpp:734
 #, kde-format
 msgid ""
 "Before playing, use the menus to choose other actions, such as loading a "
@@ -6944,7 +6944,7 @@ msgstr ""
 "플레이하기 전에 저장된 게임 불러오기나 테마 변경 등 다른 작업을 수행하려면 메"
 "뉴를 사용하십시오"
 
-#: src/kgrgame.cpp:784
+#: src/kgrgame.cpp:783
 #, kde-format
 msgid ""
 "The game is halted. You will need to press the Pause key (default P or Esc) "
@@ -6953,13 +6953,13 @@ msgstr ""
 "게임이 정지되었습니다. 플레이할 준비가 되었으면 일시 정지 키(기본값: P 또는 "
 "Esc)를 누르십시오."
 
-#: src/kgrgame.cpp:837
+#: src/kgrgame.cpp:836
 #, fuzzy, kde-format
 #| msgid "Show A Solution"
 msgid "Show a Solution"
 msgstr "공략법 표시"
 
-#: src/kgrgame.cpp:838
+#: src/kgrgame.cpp:837
 #, kde-format
 msgid ""
 "Sorry, although all levels of KGoldrunner can be solved, no solution has "
@@ -6968,67 +6968,67 @@ msgstr ""
 "죄송합니다. KGoldrunner의 모든 단계는 해결할 수 있지만, 선택한 단계의 해결책"
 "은 아직까지 기록되지 않았습니다."
 
-#: src/kgrgame.cpp:849
+#: src/kgrgame.cpp:848
 #, kde-format
 msgid "Replay Any Level"
 msgstr "임의 단계 리플레이"
 
-#: src/kgrgame.cpp:850 src/kgrgame.cpp:2070
+#: src/kgrgame.cpp:849 src/kgrgame.cpp:2053
 #, kde-format
 msgid ""
 "Sorry, you do not seem to have played and recorded the selected level before."
 msgstr "죄송합니다. 선택한 단계를 이전에 플레이하고 기록하지 않은 것 같습니다."
 
-#: src/kgrgame.cpp:1064
+#: src/kgrgame.cpp:1063
 #, kde-format
 msgid ""
 "<NOBR><B>GAME OVER !!!</B></NOBR><P>Would you like to try this level again?</"
 "P>"
 msgstr "<NOBR><B>게임 끝!!!</B></NOBR><P>이 단계를 다시 시도하시겠습니까?</P>"
 
-#: src/kgrgame.cpp:1066
+#: src/kgrgame.cpp:1065
 #, kde-format
 msgid "Game Over"
 msgstr "게임 끝"
 
-#: src/kgrgame.cpp:1067
+#: src/kgrgame.cpp:1066
 #, kde-format
 msgid "&Try Again"
 msgstr "다시 시도(&T)"
 
-#: src/kgrgame.cpp:1067
+#: src/kgrgame.cpp:1066
 #, kde-format
 msgid "&Finish"
 msgstr "끝내기(&F)"
 
-#: src/kgrgame.cpp:1141
+#: src/kgrgame.cpp:1140
 #, kde-format
 msgid ""
 "<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the <b>"
 "\"%1\"</b> game !!</p>"
 msgstr "<b>축하합니다!!!!</b><p>%1 게임에서 마지막 단계를 정복하셨습니다!!</p>"
 
-#: src/kgrgame.cpp:1298
+#: src/kgrgame.cpp:1297
 #, kde-format
 msgid "Hint"
 msgstr "힌트"
 
-#: src/kgrgame.cpp:1304
+#: src/kgrgame.cpp:1303
 #, kde-format
 msgid "&OK"
 msgstr "확인(&O)"
 
-#: src/kgrgame.cpp:1317
+#: src/kgrgame.cpp:1316
 #, kde-format
 msgid "Sorry, there is no hint for this level."
 msgstr "이 단계의 힌트는 없습니다."
 
-#: src/kgrgame.cpp:1379
+#: src/kgrgame.cpp:1378
 #, kde-format
 msgid "T H E   E N D"
 msgstr "T H E   E N D"
 
-#: src/kgrgame.cpp:1420
+#: src/kgrgame.cpp:1415
 #, kde-format
 msgid ""
 "You have pressed a key that can be used to control the Hero. Do you want to "
@@ -7039,33 +7039,33 @@ msgstr ""
 "하시겠습니까? 포인터 컨트롤은 걷기보다는 자전거를 타는 것처럼 장기적으로 사용"
 "하기 더 쉽습니다!"
 
-#: src/kgrgame.cpp:1424
+#: src/kgrgame.cpp:1419
 #, kde-format
 msgid "Switch to Keyboard Mode"
 msgstr "키보드 모드로 전환"
 
-#: src/kgrgame.cpp:1425
+#: src/kgrgame.cpp:1420
 #, kde-format
 msgid "Switch to &Keyboard Mode"
 msgstr "키보드 모드로 전환(&K)"
 
-#: src/kgrgame.cpp:1426
+#: src/kgrgame.cpp:1421
 #, kde-format
 msgid "Stay in &Mouse Mode"
 msgstr "마우스 모드 유지(&M)"
 
-#: src/kgrgame.cpp:1427
+#: src/kgrgame.cpp:1422
 #, kde-format
 msgid "Keyboard Mode"
 msgstr "키보드 모드"
 
-#: src/kgrgame.cpp:1469 src/kgrgame.cpp:1495 src/kgrgame.cpp:1505
-#: src/kgrgame.cpp:1524 src/kgrgame.cpp:1530
+#: src/kgrgame.cpp:1456 src/kgrgame.cpp:1482 src/kgrgame.cpp:1492
+#: src/kgrgame.cpp:1511 src/kgrgame.cpp:1517
 #, kde-format
 msgid "Save Game"
 msgstr "게임 저장"
 
-#: src/kgrgame.cpp:1470
+#: src/kgrgame.cpp:1457
 #, kde-format
 msgid ""
 "Sorry, you cannot save your game play while you are editing. Please try menu "
@@ -7074,13 +7074,13 @@ msgstr ""
 "죄송합니다. 편집하는 동안에는 게임 플레이를 저장할 수 없습니다. \"%1\" 메뉴 "
 "항목을 사용해 보십시오."
 
-#: src/kgrgame.cpp:1506 src/kgrgame.cpp:1550 src/kgrgame.cpp:1669
-#: src/kgrgame.cpp:1872 src/kgrgame.cpp:2036 src/kgrgameio.cpp:170
+#: src/kgrgame.cpp:1493 src/kgrgame.cpp:1537 src/kgrgame.cpp:1652
+#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2019 src/kgrgameio.cpp:170
 #, kde-format
 msgid "Cannot open file '%1' for read-only."
 msgstr "'%1' 파일을 읽기 전용으로 열 수 없습니다."
 
-#: src/kgrgame.cpp:1525
+#: src/kgrgame.cpp:1512
 #, kde-format
 msgid ""
 "Please note: for reasons of simplicity, your saved game position and score "
@@ -7089,37 +7089,37 @@ msgstr ""
 "참고: 단순성으로 인해 저장된 게임 위치 및 점수는 현재와 같은 단계가 아니라 "
 "이 단계의 시작과 동일합니다."
 
-#: src/kgrgame.cpp:1531
+#: src/kgrgame.cpp:1518
 #, kde-format
 msgid "Error: Failed to save your game."
 msgstr "오류: 게임을 저장하지 못했습니다."
 
-#: src/kgrgame.cpp:1543 src/kgrgame.cpp:1549 src/kgrgame.cpp:1591
+#: src/kgrgame.cpp:1530 src/kgrgame.cpp:1536 src/kgrgame.cpp:1574
 #, kde-format
 msgid "Load Game"
 msgstr "게임 불러오기"
 
-#: src/kgrgame.cpp:1544
+#: src/kgrgame.cpp:1531
 #, kde-format
 msgid "Sorry, there are no saved games."
 msgstr "죄송합니다. 저장된 게임이 없습니다."
 
-#: src/kgrgame.cpp:1592
+#: src/kgrgame.cpp:1575
 #, kde-format
 msgid "Cannot find the game with prefix '%1'."
 msgstr "접두사가 '%1'인 게임을 찾을 수 없습니다."
 
-#: src/kgrgame.cpp:1650
+#: src/kgrgame.cpp:1633
 #, kde-format
 msgid "Unknown"
 msgstr "알 수 없음"
 
-#: src/kgrgame.cpp:1668 src/kgrgame.cpp:1707
+#: src/kgrgame.cpp:1651 src/kgrgame.cpp:1690
 #, kde-format
 msgid "Check for High Score"
 msgstr "최고 점수 확인"
 
-#: src/kgrgame.cpp:1725
+#: src/kgrgame.cpp:1708
 #, kde-format
 msgid ""
 "<html><b>Congratulations !!!</b><br/>You have achieved a high score in this "
@@ -7130,39 +7130,39 @@ msgstr ""
 ">KGoldrunner 명예의 전당에 안치될 수 있도록<br/>이름을 입력해 주십시오.</"
 "html>"
 
-#: src/kgrgame.cpp:1739
+#: src/kgrgame.cpp:1722
 #, fuzzy, kde-format
 #| msgid "Save High Score"
 msgctxt "@title:window"
 msgid "Save High Score"
 msgstr "최고 점수 저장"
 
-#: src/kgrgame.cpp:1826
+#: src/kgrgame.cpp:1809
 #, kde-format
 msgid "Save High Score"
 msgstr "최고 점수 저장"
 
-#: src/kgrgame.cpp:1827
+#: src/kgrgame.cpp:1810
 #, kde-format
 msgid "Error: Failed to save your high score."
 msgstr "오류: 최고 점수를 저장하지 못했습니다."
 
-#: src/kgrgame.cpp:1839 src/kgrgame.cpp:1862 src/kgrgame.cpp:1871
+#: src/kgrgame.cpp:1822 src/kgrgame.cpp:1845 src/kgrgame.cpp:1854
 #, kde-format
 msgid "Show High Scores"
 msgstr "최고 점수 표시"
 
-#: src/kgrgame.cpp:1840
+#: src/kgrgame.cpp:1823
 #, kde-format
 msgid "Sorry, we do not keep high scores for tutorial games."
 msgstr "죄송합니다. 튜토리얼 게임에서는 최고 점수를 저장하지 않습니다."
 
-#: src/kgrgame.cpp:1863
+#: src/kgrgame.cpp:1846
 #, kde-format
 msgid "Sorry, there are no high scores for the \"%1\" game yet."
 msgstr "죄송합니다. 아직 \"%1\" 게임의 최고 점수가 없습니다."
 
-#: src/kgrgame.cpp:1887
+#: src/kgrgame.cpp:1870
 #, kde-format
 msgid ""
 "<center><h2>KGoldrunner Hall of Fame</h2></center><center><h3>\"%1\" Game</"
@@ -7171,62 +7171,62 @@ msgstr ""
 "<center><h2>KGoldrunner 명예의 전당</h2></center><center><h3>\"%1\" 게임</"
 "h3></center>"
 
-#: src/kgrgame.cpp:1897
+#: src/kgrgame.cpp:1880
 #, kde-format
 msgctxt "1, 2, 3 etc."
 msgid "Rank"
 msgstr "순위"
 
-#: src/kgrgame.cpp:1898
+#: src/kgrgame.cpp:1881
 #, kde-format
 msgctxt "Person"
 msgid "Name"
 msgstr "이름"
 
-#: src/kgrgame.cpp:1899
+#: src/kgrgame.cpp:1882
 #, kde-format
 msgctxt "Game level reached"
 msgid "Level"
 msgstr "단계"
 
-#: src/kgrgame.cpp:1900
+#: src/kgrgame.cpp:1883
 #, kde-format
 msgid "Score"
 msgstr "점수"
 
-#: src/kgrgame.cpp:1901
+#: src/kgrgame.cpp:1884
 #, kde-format
 msgid "Date"
 msgstr "날짜"
 
-#: src/kgrgame.cpp:1904
+#: src/kgrgame.cpp:1887
 #, fuzzy, kde-format
 #| msgid "High Scores"
 msgctxt "@title:window"
 msgid "High Scores"
 msgstr "최고 점수"
 
-#: src/kgrgame.cpp:2029 src/kgrgame.cpp:2035 src/kgrgame.cpp:2039
+#: src/kgrgame.cpp:2012 src/kgrgame.cpp:2018 src/kgrgame.cpp:2022
 #, kde-format
 msgid "Load Game Info"
 msgstr "게임 정보 불러오기"
 
-#: src/kgrgame.cpp:2030
+#: src/kgrgame.cpp:2013
 #, kde-format
 msgid "Cannot find game info file '%1'."
 msgstr "'%1' 게임 정보 파일을 찾을 수 없습니다."
 
-#: src/kgrgame.cpp:2040
+#: src/kgrgame.cpp:2023
 #, kde-format
 msgid "Reached end of file '%1' before finding end of game-data."
 msgstr "게임 데이터의 끝을 찾기 전에 '%1' 파일의 끝에 도달했습니다."
 
-#: src/kgrgame.cpp:2064 src/kgrgame.cpp:2069 src/kgrselector.cpp:259
+#: src/kgrgame.cpp:2047 src/kgrgame.cpp:2052 src/kgrselector.cpp:259
 #, kde-format
 msgid "Save A Solution"
 msgstr "공략법 저장"
 
-#: src/kgrgame.cpp:2065
+#: src/kgrgame.cpp:2048
 #, kde-format
 msgid "Your solution to level %1 has been saved on file %2"
 msgstr "%1 단계에 대한 공략법이 %2 파일에 저장되었습니다"
@@ -7261,7 +7261,7 @@ msgstr "'%1' 파일의 이전 버전을 삭제할 수 없습니다."
 msgid "Cannot rename file '%1' to '%2'."
 msgstr "파일 '%1'의 이름을 '%2'(으)로 변경할 수 없습니다."
 
-#: src/kgrrenderer.cpp:109
+#: src/kgrrenderer.cpp:100
 #, kde-format
 msgid "Theme Selector"
 msgstr "테마 선택기"
@@ -7600,88 +7600,88 @@ msgstr ""
 msgid "Help: Select Game & Level"
 msgstr "도움말: 게임 및 단계 선택"
 
-#: src/main.cpp:35
+#: src/main.cpp:31
 #, fuzzy, kde-format
 #| msgid "KGoldrunner is a game of action and puzzle solving"
 msgid "A game of action and puzzle solving"
 msgstr "KGoldrunner는 액션과 퍼즐 풀기 게임입니다"
 
-#: src/main.cpp:37
+#: src/main.cpp:33
 #, kde-format
 msgid "(C) 2003 Ian Wadham and Marco Krüger"
 msgstr "(C) 2003 Ian Wadham and Marco Krüger"
 
-#: src/main.cpp:70
+#: src/main.cpp:66
 #, kde-format
 msgid "Ian Wadham"
 msgstr "Ian Wadham"
 
-#: src/main.cpp:70
+#: src/main.cpp:66
 #, kde-format
 msgid "Current author"
 msgstr "현재 작성자"
 
-#: src/main.cpp:72
+#: src/main.cpp:68
 #, kde-format
 msgid "Marco Krüger"
 msgstr "Marco Krüger"
 
-#: src/main.cpp:72
+#: src/main.cpp:68
 #, kde-format
 msgid "Original author"
 msgstr "원 작성자"
 
-#: src/main.cpp:74 src/main.cpp:80
+#: src/main.cpp:70 src/main.cpp:76
 #, kde-format
 msgid "Mauricio Piacentini"
 msgstr "Mauricio Piacentini"
 
-#: src/main.cpp:75
+#: src/main.cpp:71
 #, kde-format
 msgid "Port to KDE4, Qt4 and KGameCanvas classes"
 msgstr "KDE4, Qt4 및 KGameCanvas 클래스로 이식"
 
-#: src/main.cpp:77
+#: src/main.cpp:73
 #, kde-format
 msgid "Maurizio Monge"
 msgstr "Maurizio Monge"
 
-#: src/main.cpp:78
+#: src/main.cpp:74
 #, kde-format
 msgid "KGameCanvas classes for KDE4"
 msgstr "KDE4용 KGameCanvas 클래스"
 
-#: src/main.cpp:81
+#: src/main.cpp:77
 #, kde-format
 msgid "Artwork for runners and default theme"
 msgstr "러너용 아트워크 및 기본 테마"
 
-#: src/main.cpp:83
+#: src/main.cpp:79
 #, kde-format
 msgid "Johann Ollivier Lapeyre"
 msgstr "Johann Ollivier Lapeyre"
 
-#: src/main.cpp:84
+#: src/main.cpp:80
 #, kde-format
 msgid "Artwork for bars and ladders"
 msgstr "막대와 사다리용 아트워크"
 
-#: src/main.cpp:86 src/main.cpp:94
+#: src/main.cpp:82 src/main.cpp:90
 #, kde-format
 msgid "Eugene Trounev"
 msgstr "Eugene Trounev"
 
-#: src/main.cpp:87
+#: src/main.cpp:83
 #, kde-format
 msgid "Artwork for background of Geek City theme"
 msgstr "엽기 도시 테마의 배경 아트워크"
 
-#: src/main.cpp:89
+#: src/main.cpp:85
 #, kde-format
 msgid "Luciano Montanaro"
 msgstr "Luciano Montanaro"
 
-#: src/main.cpp:90
+#: src/main.cpp:86
 #, kde-format
 msgid ""
 "Nostalgia themes, improvements to runners, multiple-backgrounds feature, "
@@ -7690,7 +7690,7 @@ msgstr ""
 "향수 테마, 러너에 대한 개선 사항, 다중 백그라운드 기능, 페이드인/페이드아웃 "
 "기능 및 기타 여러 가지 아이디어"
 
-#: src/main.cpp:95
+#: src/main.cpp:91
 #, kde-format
 msgid "Artwork for the Treasure of Egypt theme"
 msgstr "이집트의 보물 테마 아트워크"

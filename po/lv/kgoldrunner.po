@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-20 00:44+0000\n"
+"POT-Creation-Date: 2023-09-25 01:39+0000\n"
 "PO-Revision-Date: 2012-06-29 22:03+0300\n"
 "Last-Translator: Einars Sprugis <einars8@gmail.com>\n"
 "Language-Team: Latvian <locale@laka.lv>\n"
@@ -3617,7 +3617,7 @@ msgstr "Siržu lauzējs"
 msgid "No hint!"
 msgstr "Bez ieteikuma!"
 
-#: gamedata/game_kgr.txt:3 src/main.cpp:33
+#: gamedata/game_kgr.txt:3 src/main.cpp:29
 #, kde-format
 msgid "KGoldrunner"
 msgstr "KGoldrunner"
@@ -7204,7 +7204,7 @@ msgstr ""
 "Jā, tev jāskrien, turoties uz ienaidnieka galvas — un tā līdz pat kāpnēm! "
 "Viss, kas ir vajadzīgs — droša roka."
 
-#: src/kgoldrunner.cpp:184 src/kgrgame.cpp:724
+#: src/kgoldrunner.cpp:184 src/kgrgame.cpp:723
 #, kde-format
 msgid "&New Game..."
 msgstr "&Jauna spēle..."
@@ -7247,7 +7247,7 @@ msgid ""
 "your user's data directory..."
 msgstr ""
 
-#: src/kgoldrunner.cpp:246 src/kgrgame.cpp:1304
+#: src/kgoldrunner.cpp:246 src/kgrgame.cpp:1303
 #, fuzzy, kde-format
 #| msgid "&Show A Solution"
 msgid "&Show a Solution"
@@ -7371,7 +7371,7 @@ msgstr "Rediģēt jebkuru līmeni..."
 msgid "Edit"
 msgstr "Rediģēt"
 
-#: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1472
+#: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1459
 #, kde-format
 msgid "&Save Edits..."
 msgstr "&Saglabāt izmaiņas..."
@@ -7992,51 +7992,51 @@ msgstr "&Redaktors"
 msgid "Edit Toolbar"
 msgstr "Rediģēt rīkjoslu"
 
-#: src/kgrdialog.cpp:35
+#: src/kgrdialog.cpp:34
 #, fuzzy, kde-format
 #| msgid "Edit Name & Hint"
 msgctxt "@title:window"
 msgid "Edit Name or Hint"
 msgstr "Rediģēt nosaukumu un ieteikumu"
 
-#: src/kgrdialog.cpp:57
+#: src/kgrdialog.cpp:56
 #, kde-format
 msgid "Name of level:"
 msgstr "Līmeņa nosaukums:"
 
-#: src/kgrdialog.cpp:64
+#: src/kgrdialog.cpp:63
 #, kde-format
 msgid "Hint for level:"
 msgstr "Līmeņa ieteikums:"
 
-#: src/kgrdialog.cpp:104 src/kgrdialog.cpp:173
+#: src/kgrdialog.cpp:103 src/kgrdialog.cpp:172
 #, fuzzy, kde-format
 #| msgid "Edit Game Info"
 msgctxt "@title:window"
 msgid "Edit Game Info"
 msgstr "Rediģēt informāciju par spēli"
 
-#: src/kgrdialog.cpp:124
+#: src/kgrdialog.cpp:123
 #, kde-format
 msgid "Name of game:"
 msgstr "Spēles nosaukums:"
 
-#: src/kgrdialog.cpp:132
+#: src/kgrdialog.cpp:131
 #, kde-format
 msgid "File name prefix:"
 msgstr "Faila nosaukuma prefikss:"
 
-#: src/kgrdialog.cpp:140
+#: src/kgrdialog.cpp:139
 #, kde-format
 msgid "Traditional rules"
 msgstr "Tradicionālie noteikumi"
 
-#: src/kgrdialog.cpp:141
+#: src/kgrdialog.cpp:140
 #, kde-format
 msgid "KGoldrunner rules"
 msgstr "KGoldrunner noteikumi"
 
-#: src/kgrdialog.cpp:150 src/kgrdialog.cpp:185
+#: src/kgrdialog.cpp:149 src/kgrdialog.cpp:184
 #, kde-format
 msgid "1 level"
 msgid_plural "%1 levels"
@@ -8044,41 +8044,41 @@ msgstr[0] "%1 līmenis"
 msgstr[1] "%1 līmeņi"
 msgstr[2] "%1 līmeņu"
 
-#: src/kgrdialog.cpp:153
+#: src/kgrdialog.cpp:152
 #, kde-format
 msgid "About this game:"
 msgstr "Par šo spēli:"
 
-#: src/kgrdialog.cpp:170
+#: src/kgrdialog.cpp:169
 #, fuzzy, kde-format
 #| msgid "Create Game"
 msgctxt "@title:window"
 msgid "Create Game"
 msgstr "Izveidot spēli"
 
-#: src/kgrdialog.cpp:187
+#: src/kgrdialog.cpp:186
 #, kde-format
 msgid "Save Changes"
 msgstr "Saglabāt izmaiņas"
 
-#: src/kgrdialog.cpp:192
+#: src/kgrdialog.cpp:191
 #, kde-format
 msgid "0 levels"
 msgstr "0 līmeņu"
 
-#: src/kgrdialog.cpp:193 src/kgrselector.cpp:265
+#: src/kgrdialog.cpp:192 src/kgrselector.cpp:265
 #, kde-format
 msgid "Save New"
 msgstr "Saglabāt jaunu"
 
-#: src/kgrdialog.cpp:248
+#: src/kgrdialog.cpp:247
 #, fuzzy, kde-format
 #| msgid "Select Saved Game"
 msgctxt "@title:window"
 msgid "Select Saved Game"
 msgstr "Izvēlies saglabāto spēli"
 
-#: src/kgrdialog.cpp:267
+#: src/kgrdialog.cpp:266
 #, kde-format
 msgid "Game                       Level/Lives/Score   Day    Date     Time  "
 msgstr ""
@@ -8124,7 +8124,7 @@ msgstr ""
 "spēlēm. Tu taču neglūni uz slēpto kāpņu un viltus ķieģeļu atrašanās vietām, "
 "vai ne? :-)"
 
-#: src/kgreditor.cpp:242 src/kgreditor.cpp:260 src/kgrgame.cpp:261
+#: src/kgreditor.cpp:242 src/kgreditor.cpp:260 src/kgrgame.cpp:260
 #, kde-format
 msgid "Save Level"
 msgstr "Saglabāt līmeni"
@@ -8145,8 +8145,8 @@ msgstr "&Ievietot līmeni"
 msgid "&Cancel"
 msgstr "&Atcelt"
 
-#: src/kgreditor.cpp:261 src/kgreditor.cpp:779 src/kgrgame.cpp:1496
-#: src/kgrgame.cpp:1708
+#: src/kgreditor.cpp:261 src/kgreditor.cpp:779 src/kgrgame.cpp:1483
+#: src/kgrgame.cpp:1691
 #, kde-format
 msgid "Cannot open file '%1' for output."
 msgstr "Neizdevās atvērt failu '%1' izvadei."
@@ -8287,44 +8287,44 @@ msgstr "Tu vari izmainīt tikai lietotāju spēles."
 msgid "New Level"
 msgstr "Jauns līmenis"
 
-#: src/kgreditor.cpp:839 src/kgrgame.cpp:1389
+#: src/kgreditor.cpp:839 src/kgrgame.cpp:1388
 #, kde-format
 msgctxt "Game name - level number."
 msgid "%1 - %2"
 msgstr "%1 — %2"
 
-#: src/kgreditor.cpp:843 src/kgrgame.cpp:1392
+#: src/kgreditor.cpp:843 src/kgrgame.cpp:1391
 #, kde-format
 msgctxt "Game name - level number - level name."
 msgid "%1 - %2 - %3"
 msgstr "%1 — %2 — %3"
 
-#: src/kgrgame.cpp:110
+#: src/kgrgame.cpp:109
 #, kde-format
 msgid "Click anywhere to begin live play"
 msgstr "Noklikšķini jebkur, lai sāktu dzīvo spēli"
 
-#: src/kgrgame.cpp:191
+#: src/kgrgame.cpp:190
 #, kde-format
 msgid "Play Next Level"
 msgstr "Spēlēt nākamo līmeni"
 
-#: src/kgrgame.cpp:192
+#: src/kgrgame.cpp:191
 #, kde-format
 msgid "There are no more levels in this game."
 msgstr "Šajā spēlē nav vairāk līmeņu."
 
-#: src/kgrgame.cpp:262
+#: src/kgrgame.cpp:261
 #, kde-format
 msgid "Inappropriate action: you are not editing a level."
 msgstr "Neatbilstoša darbība: tu pašreiz nerediģē līmeni."
 
-#: src/kgrgame.cpp:421
+#: src/kgrgame.cpp:420
 #, kde-format
 msgid "No Sound"
 msgstr "Nav skaņas"
 
-#: src/kgrgame.cpp:422
+#: src/kgrgame.cpp:421
 #, kde-format
 msgid ""
 "Warning: This copy of KGoldrunner has no sound.\n"
@@ -8337,12 +8337,12 @@ msgstr ""
 "Tas ir tādēļ, ka programmas kompilācijas laikā netika atrastas OpenAL un "
 "SndFile bibliotēku izstrāžu versijas."
 
-#: src/kgrgame.cpp:626 src/kgrgame.cpp:783
+#: src/kgrgame.cpp:625 src/kgrgame.cpp:782
 #, kde-format
 msgid "Game Paused"
 msgstr "Spēle ir apturēta"
 
-#: src/kgrgame.cpp:627
+#: src/kgrgame.cpp:626
 #, kde-format
 msgid ""
 "The replay has stopped and the game is pausing while you prepare to go on "
@@ -8352,19 +8352,19 @@ msgstr ""
 "spēlēt. Lūdzu, nospied taustiņu 'Pauze' (pēc noklusējuma 'P' vai 'Esc'), kad "
 "esi gatavs."
 
-#: src/kgrgame.cpp:671 src/kgrgame.cpp:677
+#: src/kgrgame.cpp:670 src/kgrgame.cpp:676
 #, kde-format
 msgid "Replay Last Level"
 msgstr "Atkārtot pēdējo līmeni"
 
-#: src/kgrgame.cpp:672
+#: src/kgrgame.cpp:671
 #, kde-format
 msgid ""
 "ERROR: Could not find and replay a recording of the last level you played."
 msgstr ""
 "KĻŪDA: neizdevās atrast un parādīt pēdējā tevis spēlētā līmeņa ierakstu."
 
-#: src/kgrgame.cpp:678
+#: src/kgrgame.cpp:677
 #, kde-format
 msgid ""
 "There is no last level to replay.  You need to play a level to completion, "
@@ -8373,25 +8373,25 @@ msgstr ""
 "Nav pēdējā līmeņa, ko atkārtot. Pirms varēsi izmantot 'Atkārtot pēdējo "
 "līmeni' darbību, tev līmenis ir jāizspēlē pilnībā — jāuzvar vai jāzaudē."
 
-#: src/kgrgame.cpp:696
+#: src/kgrgame.cpp:695
 #, fuzzy, kde-format
 #| msgid "Quick Start"
 msgctxt "@title:window"
 msgid "Quick Start"
 msgstr "Ātrais starts"
 
-#: src/kgrgame.cpp:713
+#: src/kgrgame.cpp:712
 #, kde-format
 msgctxt "Button text: start playing a game"
 msgid "&PLAY"
 msgstr "&SPĒLĒT"
 
-#: src/kgrgame.cpp:714
+#: src/kgrgame.cpp:713
 #, kde-format
 msgid "Start playing this level"
 msgstr "Sākt spēlēt šo līmeni"
 
-#: src/kgrgame.cpp:716
+#: src/kgrgame.cpp:715
 #, kde-format
 msgid ""
 "Set up to start playing the game and level being shown, as soon as you "
@@ -8400,22 +8400,22 @@ msgstr ""
 "Iestatīt, lai sāktu spēlēt norādīto spēli un līmeni, tiklīdz pakustināsi vai "
 "noklikšķināsi peli, vai nospiedīsi taustiņu"
 
-#: src/kgrgame.cpp:720
+#: src/kgrgame.cpp:719
 #, kde-format
 msgid "&Quit"
 msgstr "&Iziet"
 
-#: src/kgrgame.cpp:721
+#: src/kgrgame.cpp:720
 #, kde-format
 msgid "Close KGoldrunner"
 msgstr "Aizvērt KGoldrunner"
 
-#: src/kgrgame.cpp:725
+#: src/kgrgame.cpp:724
 #, kde-format
 msgid "Start a different game or level"
 msgstr "Sākt citu spēli vai līmeni"
 
-#: src/kgrgame.cpp:727
+#: src/kgrgame.cpp:726
 #, kde-format
 msgid ""
 "Use the Select Game dialog box to choose a different game or level and start "
@@ -8424,17 +8424,17 @@ msgstr ""
 "Lieto 'Izvēlēties spēli' dialoglogu, lai izvēlētos citu spēli vai līmeni, un "
 "sāktu to spēlēt"
 
-#: src/kgrgame.cpp:731
+#: src/kgrgame.cpp:730
 #, kde-format
 msgid "&Use Menu"
 msgstr "&Lietot izvēlni"
 
-#: src/kgrgame.cpp:733
+#: src/kgrgame.cpp:732
 #, kde-format
 msgid "Use the menus to choose other actions"
 msgstr "Lieto izvēlnes, lai izvēlētos citas darbības"
 
-#: src/kgrgame.cpp:735
+#: src/kgrgame.cpp:734
 #, kde-format
 msgid ""
 "Before playing, use the menus to choose other actions, such as loading a "
@@ -8443,7 +8443,7 @@ msgstr ""
 "Pirms sāc spēli, izmanto izvēlnes, lai izvēlētos citas darbības, piemēram, "
 "saglabātas spēles ielādēšanu vai tēmas nomaiņu"
 
-#: src/kgrgame.cpp:784
+#: src/kgrgame.cpp:783
 #, kde-format
 msgid ""
 "The game is halted. You will need to press the Pause key (default P or Esc) "
@@ -8452,13 +8452,13 @@ msgstr ""
 "Spēle ir apstādināta. Kad būsi gatavs spēlēt, tev vajadzēs nospiest pauzes "
 "taustiņu (noklusētie — 'P' vai 'Esc')"
 
-#: src/kgrgame.cpp:837
+#: src/kgrgame.cpp:836
 #, fuzzy, kde-format
 #| msgid "Show A Solution"
 msgid "Show a Solution"
 msgstr "Parādīt atrisinājumu"
 
-#: src/kgrgame.cpp:838
+#: src/kgrgame.cpp:837
 #, kde-format
 msgid ""
 "Sorry, although all levels of KGoldrunner can be solved, no solution has "
@@ -8467,18 +8467,18 @@ msgstr ""
 "Atvaino, lai gan visi KGoldrunner līmeņi ir atrisināmi, tevis izvēlētajam "
 "līmenim atrisinājums vēl nav ierakstīts."
 
-#: src/kgrgame.cpp:849
+#: src/kgrgame.cpp:848
 #, kde-format
 msgid "Replay Any Level"
 msgstr "Atkārtot jebkuru līmeni"
 
-#: src/kgrgame.cpp:850 src/kgrgame.cpp:2070
+#: src/kgrgame.cpp:849 src/kgrgame.cpp:2053
 #, kde-format
 msgid ""
 "Sorry, you do not seem to have played and recorded the selected level before."
 msgstr "Atvaino, tu, šķiet, vēl neesi spēlējis un ierakstījis šo līmeni."
 
-#: src/kgrgame.cpp:1064
+#: src/kgrgame.cpp:1063
 #, kde-format
 msgid ""
 "<NOBR><B>GAME OVER !!!</B></NOBR><P>Would you like to try this level again?</"
@@ -8487,22 +8487,22 @@ msgstr ""
 "<NOBR><B>SPĒLES BEIGAS !!!</B></NOBR><P>Vai vēlies mēģināt šo līmeni vēlreiz?"
 "</P>"
 
-#: src/kgrgame.cpp:1066
+#: src/kgrgame.cpp:1065
 #, kde-format
 msgid "Game Over"
 msgstr "Spēles beigas"
 
-#: src/kgrgame.cpp:1067
+#: src/kgrgame.cpp:1066
 #, kde-format
 msgid "&Try Again"
 msgstr "&Mēģināt vēlreiz"
 
-#: src/kgrgame.cpp:1067
+#: src/kgrgame.cpp:1066
 #, kde-format
 msgid "&Finish"
 msgstr "&Pabeigt"
 
-#: src/kgrgame.cpp:1141
+#: src/kgrgame.cpp:1140
 #, kde-format
 msgid ""
 "<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the <b>"
@@ -8511,27 +8511,27 @@ msgstr ""
 "<b>APSVEICAM !!!</b><p>Tu esi iekarojis pēdējo līmeni <b>\"%1\"</b> spēlē !!"
 "</p>"
 
-#: src/kgrgame.cpp:1298
+#: src/kgrgame.cpp:1297
 #, kde-format
 msgid "Hint"
 msgstr "Padoms"
 
-#: src/kgrgame.cpp:1304
+#: src/kgrgame.cpp:1303
 #, kde-format
 msgid "&OK"
 msgstr "&Labi"
 
-#: src/kgrgame.cpp:1317
+#: src/kgrgame.cpp:1316
 #, kde-format
 msgid "Sorry, there is no hint for this level."
 msgstr "Atvaino, šim līmenim ieteikuma nav."
 
-#: src/kgrgame.cpp:1379
+#: src/kgrgame.cpp:1378
 #, kde-format
 msgid "T H E   E N D"
 msgstr "Beigas"
 
-#: src/kgrgame.cpp:1420
+#: src/kgrgame.cpp:1415
 #, kde-format
 msgid ""
 "You have pressed a key that can be used to control the Hero. Do you want to "
@@ -8543,33 +8543,33 @@ msgstr ""
 "kursoru ilgtermiņā ir vieglāka — līdzīgi kā braukt ar velosipēdu nevis iet "
 "ar kājām."
 
-#: src/kgrgame.cpp:1424
+#: src/kgrgame.cpp:1419
 #, kde-format
 msgid "Switch to Keyboard Mode"
 msgstr "Pārslēgties uz tastatūras režīmu"
 
-#: src/kgrgame.cpp:1425
+#: src/kgrgame.cpp:1420
 #, kde-format
 msgid "Switch to &Keyboard Mode"
 msgstr "Pārslēgties uz &tastatūras režīmu"
 
-#: src/kgrgame.cpp:1426
+#: src/kgrgame.cpp:1421
 #, kde-format
 msgid "Stay in &Mouse Mode"
 msgstr "Palikt &peles režīmā"
 
-#: src/kgrgame.cpp:1427
+#: src/kgrgame.cpp:1422
 #, kde-format
 msgid "Keyboard Mode"
 msgstr "Tastatūras režīms"
 
-#: src/kgrgame.cpp:1469 src/kgrgame.cpp:1495 src/kgrgame.cpp:1505
-#: src/kgrgame.cpp:1524 src/kgrgame.cpp:1530
+#: src/kgrgame.cpp:1456 src/kgrgame.cpp:1482 src/kgrgame.cpp:1492
+#: src/kgrgame.cpp:1511 src/kgrgame.cpp:1517
 #, kde-format
 msgid "Save Game"
 msgstr "Saglabāt spēli"
 
-#: src/kgrgame.cpp:1470
+#: src/kgrgame.cpp:1457
 #, kde-format
 msgid ""
 "Sorry, you cannot save your game play while you are editing. Please try menu "
@@ -8578,13 +8578,13 @@ msgstr ""
 "Atvaino, tu nevari saglabāt savu spēli rediģēšanas laikā. Lūdzu, mēģini "
 "izvēlnes ierakstu \"%1\"."
 
-#: src/kgrgame.cpp:1506 src/kgrgame.cpp:1550 src/kgrgame.cpp:1669
-#: src/kgrgame.cpp:1872 src/kgrgame.cpp:2036 src/kgrgameio.cpp:170
+#: src/kgrgame.cpp:1493 src/kgrgame.cpp:1537 src/kgrgame.cpp:1652
+#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2019 src/kgrgameio.cpp:170
 #, kde-format
 msgid "Cannot open file '%1' for read-only."
 msgstr "Neizdevās atvērt failu '%1' 'tikai lasīt' režīmā."
 
-#: src/kgrgame.cpp:1525
+#: src/kgrgame.cpp:1512
 #, kde-format
 msgid ""
 "Please note: for reasons of simplicity, your saved game position and score "
@@ -8594,37 +8594,37 @@ msgstr ""
 "rezultāts būs tādi, kādi tie bija šī līmeņa sākumā nevis tādi, kādi tie ir "
 "pašreiz."
 
-#: src/kgrgame.cpp:1531
+#: src/kgrgame.cpp:1518
 #, kde-format
 msgid "Error: Failed to save your game."
 msgstr "Kļūda: neizdevās saglabāt tavu spēli."
 
-#: src/kgrgame.cpp:1543 src/kgrgame.cpp:1549 src/kgrgame.cpp:1591
+#: src/kgrgame.cpp:1530 src/kgrgame.cpp:1536 src/kgrgame.cpp:1574
 #, kde-format
 msgid "Load Game"
 msgstr "Ielādēt spēli"
 
-#: src/kgrgame.cpp:1544
+#: src/kgrgame.cpp:1531
 #, kde-format
 msgid "Sorry, there are no saved games."
 msgstr "Atvaino, nav nevienas saglabātās spēles."
 
-#: src/kgrgame.cpp:1592
+#: src/kgrgame.cpp:1575
 #, kde-format
 msgid "Cannot find the game with prefix '%1'."
 msgstr "Neizdevās atrast spēli ar prefiksu '%1'."
 
-#: src/kgrgame.cpp:1650
+#: src/kgrgame.cpp:1633
 #, kde-format
 msgid "Unknown"
 msgstr "Nezināms"
 
-#: src/kgrgame.cpp:1668 src/kgrgame.cpp:1707
+#: src/kgrgame.cpp:1651 src/kgrgame.cpp:1690
 #, kde-format
 msgid "Check for High Score"
 msgstr "Pārbaudīt labāko rezultātu"
 
-#: src/kgrgame.cpp:1725
+#: src/kgrgame.cpp:1708
 #, fuzzy, kde-format
 #| msgid ""
 #| "<html><b>Congratulations !!!</b><br>You have achieved a high score in "
@@ -8639,39 +8639,39 @@ msgstr ""
 "šajā spēlē.<br>Lūdzu, ievadi savu vārdu, lai tas varētu tikt "
 "iemūžināts<br>KGoldrunner slavas zālē.</html>"
 
-#: src/kgrgame.cpp:1739
+#: src/kgrgame.cpp:1722
 #, fuzzy, kde-format
 #| msgid "Save High Score"
 msgctxt "@title:window"
 msgid "Save High Score"
 msgstr "Saglabāt labāko rezultātu"
 
-#: src/kgrgame.cpp:1826
+#: src/kgrgame.cpp:1809
 #, kde-format
 msgid "Save High Score"
 msgstr "Saglabāt labāko rezultātu"
 
-#: src/kgrgame.cpp:1827
+#: src/kgrgame.cpp:1810
 #, kde-format
 msgid "Error: Failed to save your high score."
 msgstr "Kļūda: neizdevās saglabāt tavu labāko rezultātu."
 
-#: src/kgrgame.cpp:1839 src/kgrgame.cpp:1862 src/kgrgame.cpp:1871
+#: src/kgrgame.cpp:1822 src/kgrgame.cpp:1845 src/kgrgame.cpp:1854
 #, kde-format
 msgid "Show High Scores"
 msgstr "Rādīt labākos rezultātus"
 
-#: src/kgrgame.cpp:1840
+#: src/kgrgame.cpp:1823
 #, kde-format
 msgid "Sorry, we do not keep high scores for tutorial games."
 msgstr "Atvaino, pamācību spēlēm labākie rezultāti netiek paturēti."
 
-#: src/kgrgame.cpp:1863
+#: src/kgrgame.cpp:1846
 #, kde-format
 msgid "Sorry, there are no high scores for the \"%1\" game yet."
 msgstr "Atvaino, \"%1\" spēlei vēl nav augstāko rezultātu."
 
-#: src/kgrgame.cpp:1887
+#: src/kgrgame.cpp:1870
 #, kde-format
 msgid ""
 "<center><h2>KGoldrunner Hall of Fame</h2></center><center><h3>\"%1\" Game</"
@@ -8680,63 +8680,63 @@ msgstr ""
 "<center><h2>KGoldrunner slavas zāle</h2></center><center><h3>\"%1\" spēle</"
 "h3></center>"
 
-#: src/kgrgame.cpp:1897
+#: src/kgrgame.cpp:1880
 #, kde-format
 msgctxt "1, 2, 3 etc."
 msgid "Rank"
 msgstr "Rangs"
 
-#: src/kgrgame.cpp:1898
+#: src/kgrgame.cpp:1881
 #, kde-format
 msgctxt "Person"
 msgid "Name"
 msgstr "Vārds"
 
-#: src/kgrgame.cpp:1899
+#: src/kgrgame.cpp:1882
 #, kde-format
 msgctxt "Game level reached"
 msgid "Level"
 msgstr "Līmenis"
 
-#: src/kgrgame.cpp:1900
+#: src/kgrgame.cpp:1883
 #, kde-format
 msgid "Score"
 msgstr "Punkti"
 
-#: src/kgrgame.cpp:1901
+#: src/kgrgame.cpp:1884
 #, kde-format
 msgid "Date"
 msgstr "Datums"
 
-#: src/kgrgame.cpp:1904
+#: src/kgrgame.cpp:1887
 #, fuzzy, kde-format
 #| msgid "High Scores"
 msgctxt "@title:window"
 msgid "High Scores"
 msgstr "Labākie rezultāti"
 
-#: src/kgrgame.cpp:2029 src/kgrgame.cpp:2035 src/kgrgame.cpp:2039
+#: src/kgrgame.cpp:2012 src/kgrgame.cpp:2018 src/kgrgame.cpp:2022
 #, kde-format
 msgid "Load Game Info"
 msgstr "Ielādēt spēles info"
 
-#: src/kgrgame.cpp:2030
+#: src/kgrgame.cpp:2013
 #, kde-format
 msgid "Cannot find game info file '%1'."
 msgstr "Neizdevās atrast spēles info failu '%1'."
 
-#: src/kgrgame.cpp:2040
+#: src/kgrgame.cpp:2023
 #, kde-format
 msgid "Reached end of file '%1' before finding end of game-data."
 msgstr "Neatrodot spēles datu beigas, sasniegtas faila '%1' beigas."
 
-#: src/kgrgame.cpp:2064 src/kgrgame.cpp:2069 src/kgrselector.cpp:259
+#: src/kgrgame.cpp:2047 src/kgrgame.cpp:2052 src/kgrselector.cpp:259
 #, fuzzy, kde-format
 #| msgid "Show A Solution"
 msgid "Save A Solution"
 msgstr "Parādīt atrisinājumu"
 
-#: src/kgrgame.cpp:2065
+#: src/kgrgame.cpp:2048
 #, kde-format
 msgid "Your solution to level %1 has been saved on file %2"
 msgstr ""
@@ -8771,7 +8771,7 @@ msgstr "Neizdevās izdzēst faila '%1' iepriekšējo versiju."
 msgid "Cannot rename file '%1' to '%2'."
 msgstr "Neizdevās pārdēvēt failu no '%1' uz '%2'."
 
-#: src/kgrrenderer.cpp:109
+#: src/kgrrenderer.cpp:100
 #, kde-format
 msgid "Theme Selector"
 msgstr ""
@@ -9123,88 +9123,88 @@ msgstr ""
 msgid "Help: Select Game & Level"
 msgstr "Palīdzība: izvēlies spēli un līmeni"
 
-#: src/main.cpp:35
+#: src/main.cpp:31
 #, fuzzy, kde-format
 #| msgid "KGoldrunner is a game of action and puzzle solving"
 msgid "A game of action and puzzle solving"
 msgstr "KGoldrunner ir spēle, kas sevī apvieno rīcību ar mīklu risināšanu"
 
-#: src/main.cpp:37
+#: src/main.cpp:33
 #, kde-format
 msgid "(C) 2003 Ian Wadham and Marco Krüger"
 msgstr "(C) 2003 Ian Wadham un Marco Krüger"
 
-#: src/main.cpp:70
+#: src/main.cpp:66
 #, kde-format
 msgid "Ian Wadham"
 msgstr "Ian Wadham"
 
-#: src/main.cpp:70
+#: src/main.cpp:66
 #, kde-format
 msgid "Current author"
 msgstr "Pašreizējais autors"
 
-#: src/main.cpp:72
+#: src/main.cpp:68
 #, kde-format
 msgid "Marco Krüger"
 msgstr "Marco Krüger"
 
-#: src/main.cpp:72
+#: src/main.cpp:68
 #, kde-format
 msgid "Original author"
 msgstr "Sākotnējais autors"
 
-#: src/main.cpp:74 src/main.cpp:80
+#: src/main.cpp:70 src/main.cpp:76
 #, kde-format
 msgid "Mauricio Piacentini"
 msgstr "Mauricio Piacentini"
 
-#: src/main.cpp:75
+#: src/main.cpp:71
 #, kde-format
 msgid "Port to KDE4, Qt4 and KGameCanvas classes"
 msgstr "Portēšana uz KDE4, Qt4 un KGameCanvas klases"
 
-#: src/main.cpp:77
+#: src/main.cpp:73
 #, kde-format
 msgid "Maurizio Monge"
 msgstr "Maurizio Monge"
 
-#: src/main.cpp:78
+#: src/main.cpp:74
 #, kde-format
 msgid "KGameCanvas classes for KDE4"
 msgstr "KGameCanvas klases priekš KDE4"
 
-#: src/main.cpp:81
+#: src/main.cpp:77
 #, kde-format
 msgid "Artwork for runners and default theme"
 msgstr "Skrējēju mākslinieciskais noformējums un noklusējuma tēma"
 
-#: src/main.cpp:83
+#: src/main.cpp:79
 #, kde-format
 msgid "Johann Ollivier Lapeyre"
 msgstr "Johann Ollivier Lapeyre"
 
-#: src/main.cpp:84
+#: src/main.cpp:80
 #, kde-format
 msgid "Artwork for bars and ladders"
 msgstr "Joslu un kāpņu mākslinieciskais noformējums"
 
-#: src/main.cpp:86 src/main.cpp:94
+#: src/main.cpp:82 src/main.cpp:90
 #, kde-format
 msgid "Eugene Trounev"
 msgstr "Eugene Trounev"
 
-#: src/main.cpp:87
+#: src/main.cpp:83
 #, kde-format
 msgid "Artwork for background of Geek City theme"
 msgstr "Mākslinieciskais noformējums 'Gīku pilsēta' tēmai"
 
-#: src/main.cpp:89
+#: src/main.cpp:85
 #, kde-format
 msgid "Luciano Montanaro"
 msgstr "Luciano Montanaro"
 
-#: src/main.cpp:90
+#: src/main.cpp:86
 #, kde-format
 msgid ""
 "Nostalgia themes, improvements to runners, multiple-backgrounds feature, "
@@ -9213,7 +9213,7 @@ msgstr ""
 "'Nostaļģija' tēmas, skrējēju uzlabojumi, dažādu fonu iespēja, pakāpeniska "
 "pastiprināšanās/izdzišana iespēja un vairākas citas idejas"
 
-#: src/main.cpp:95
+#: src/main.cpp:91
 #, kde-format
 msgid "Artwork for the Treasure of Egypt theme"
 msgstr "Mākslinieciskais noformējums 'Ēģiptes dārgumi' tēmai"

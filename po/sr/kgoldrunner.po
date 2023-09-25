@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-05-11 03:20+0200\n"
+"POT-Creation-Date: 2023-09-25 01:39+0000\n"
 "PO-Revision-Date: 2017-09-28 17:59+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -2017,7 +2017,8 @@ msgstr ""
 "\n"
 "Поново сте слободни!"
 
-#: gamedata/game_GMGR.txt:82 gamedata/game_plws.txt:116
+#: gamedata/game_GMGR.txt:82 gamedata/game_GotD.txt:237
+#: gamedata/game_plws.txt:116
 #, kde-format
 msgid "Free Fall"
 msgstr "Слободан пад"
@@ -2272,6 +2273,963 @@ msgstr "Мали поклон за растанак"
 msgid "After some very hard levels, maybe you would like an easy one. Goodbye!"
 msgstr "После неких врло тешких нивоа, можда ће вам пријати један лак. Здраво!"
 
+#: gamedata/game_GotD.txt:1
+#, kde-format
+msgctxt ""
+"Note to translators: the hints for the levels of Gold Of The Living Dead, a "
+"KGoldrunner game, are sometimes rather complicated, so it may help you to "
+"open the game and display the layout of a level as you translate the hint. "
+"It may also help to play the solution, by pressing H (for Hint) and then "
+"Escape (or click the 'Show a Solution' button). You can move easily from one "
+"level to the next by using the Y key and you can prevent a level from "
+"playing by using the Pause key (P or Escape)."
+msgid " "
+msgstr ""
+
+#: gamedata/game_GotD.txt:3
+#, kde-format
+msgid "Gold Of The Living Dead"
+msgstr ""
+
+#: gamedata/game_GotD.txt:4
+#, kde-format
+msgid ""
+"The Zombie Apocalypse is upon us and you are the last human left alive on "
+"Earth, but the zombies still have plenty of gold. However, being zombies, "
+"they are more interested in you than the treasure...\n"
+"\n"
+"Fifty Championship levels, including hints and recorded solutions, from "
+"Gabriel Miltschitzky, April 2021."
+msgstr ""
+
+#: gamedata/game_GotD.txt:9
+#, kde-format
+msgid "Last Person On Earth"
+msgstr ""
+
+#: gamedata/game_GotD.txt:10
+#, kde-format
+msgid ""
+"You are the only human being to survive the Zombie Apocalypse and still you "
+"can think of nothing but your gold? Well then, let us see what good it will "
+"do you...\n"
+"\n"
+"First hint: every level has a recorded solution, so when in doubt have a "
+"look at it. Second hint: you can easily get stuck if you were not smart "
+"enough to prepare an escape route before going after some gold.\n"
+"\n"
+"In the bottom right corner you need timed digging to prepare that escape "
+"route. Dig the highest brick next to the ladder, then wait a little and dig "
+"the bricks beneath it, just before the top one refills again. This enables "
+"you to walk over the upper brick and run through the lower bricks on your "
+"return.\n"
+"\n"
+"Among the gold pieces in the center there are fall-through bricks (or traps) "
+"that can catch you. It is best to collect the outside columns of gold first. "
+"In other areas you may need to dig while falling through traps.\n"
+"\n"
+"The bottom left corner is quite hectic. The escape route for the leftmost "
+"gold is on the right where there are two pieces of gold. Leave a hole there "
+"before you go over to the left. To collect the leftmost gold and get back in "
+"time, try digging holes on both sides of you at once.\n"
+"\n"
+"Even with this hint the timing will be tight. You can save a little time by "
+"digging just the third-highest brick next to the ladder. As you drop back "
+"from the left, dig the brick on the right that blocks your exit. This will "
+"give you more room for error, because you will not get killed when the brick "
+"refills."
+msgstr ""
+
+#: gamedata/game_GotD.txt:23
+#, kde-format
+msgid "A Little Digging Warm-Up"
+msgstr ""
+
+#: gamedata/game_GotD.txt:24
+#, kde-format
+msgid ""
+"This level is a good opportunity to practice some digging skills you will "
+"need in later levels.\n"
+"\n"
+"Although it is quite straightforward, a naughty little trap awaits you at "
+"the end. To avoid it, you have to collect the gold by coming from the left "
+"side, which is a little dig-timing puzzle. The last steps to the gold and "
+"back out need you to dig bricks on both sides at the same time, by pressing "
+"both mouse keys."
+msgstr ""
+
+#: gamedata/game_GotD.txt:29
+#, kde-format
+msgid "Patient Zero"
+msgstr ""
+
+#: gamedata/game_GotD.txt:30
+#, kde-format
+msgid ""
+"Watch out! This is a zombie. As soon as you let him loose, he will try to "
+"kill you!\n"
+"\n"
+"On the other hand, there is no other way past him...\n"
+"\n"
+"However, he is not completely useless. Walking on his head will enable you "
+"to reach certain pieces of gold that would otherwise be out of reach.\n"
+"\n"
+"P.S. Sometimes he appears somewhere he really should not. If so, you can "
+"only kill the hero and restart the level. Sorry for that one!"
+msgstr ""
+
+#: gamedata/game_GotD.txt:39 gamedata/game_plws.txt:113
+#, kde-format
+msgid "Zig Zag"
+msgstr "Цик‑цак"
+
+#: gamedata/game_GotD.txt:40
+#, kde-format
+msgid "This is as easy as it gets..."
+msgstr ""
+
+#: gamedata/game_GotD.txt:43 gamedata/game_wad.txt:63
+#, kde-format
+msgid "The Box"
+msgstr "Кутија"
+
+#: gamedata/game_GotD.txt:44
+#, kde-format
+msgid ""
+"Avoiding the zombies at the start might be the worst part. You need to wait "
+"on top of a ladder until a zombie comes really close to you and then you "
+"sneak away beneath him at the right moment."
+msgstr ""
+
+#: gamedata/game_GotD.txt:47
+#, fuzzy, kde-format
+#| msgid "Infiltration"
+msgid "Manipulation"
+msgstr "Инфилтрација"
+
+#: gamedata/game_GotD.txt:48
+#, kde-format
+msgid ""
+"Zombies can be manipulated to walk in directions other than just heading for "
+"you. For example they might run away from you if you are below them on a "
+"ladder (but not at the bottom of the ladder). This knowledge may save your "
+"life when you have nowhere to dig and can be very useful when you want to go "
+"up a ladder to the next level.\n"
+"\n"
+"A special case is when one zombie is close below you on a ladder and another "
+"one is above you. Then the upper one will not run away but descend towards "
+"you. But usually he will turn around just before he reaches you. You will "
+"have this situation at the very start and it needs strong nerves, but it "
+"should not be too difficult to handle once you know how they will react.\n"
+"\n"
+"Another useful trick is to stand at some level but away to the left or right "
+"of one or more zombies. They may go to that level and stay frozen, if there "
+"is no direct way towards you, or they may stumble towards you and fall into "
+"a pit - permanent or freshly dug.\n"
+"\n"
+"P.S. When you are at the bottom right ladder, it is possible to walk over "
+"both zombies, even if they are slightly apart. In fact, it is crucial to "
+"keep them minimally apart, otherwise one of them will walk on top of the "
+"other's head and make it impossible for you to reach the ladder on the left "
+"side which leads to the top. Just head straight to the ladder at the bottom "
+"right and wait there until they are near - the distance they keep if you do "
+"not change anything is ideal."
+msgstr ""
+
+#: gamedata/game_GotD.txt:57
+#, kde-format
+msgid "Do Not Worry"
+msgstr ""
+
+#: gamedata/game_GotD.txt:58
+#, kde-format
+msgid "Come on, they are completely harmless ;-)"
+msgstr ""
+
+#: gamedata/game_GotD.txt:61
+#, kde-format
+msgid "They Are So Many!"
+msgstr ""
+
+#: gamedata/game_GotD.txt:62
+#, kde-format
+msgid ""
+"You may realize that not all zombies are equally fast. Those that gather in "
+"bigger groups are slower than single ones - a small relief at least.\n"
+"\n"
+"They also take the gold - probably an old instinct from their former lives.\n"
+"\n"
+"In this case, however, it is useful because they can bring the gold down to "
+"you.\n"
+"\n"
+"Place your traps thoughtfully: you do not have unlimited space to evade "
+"them.\n"
+"\n"
+"Also note that zombies are somehow immortal: they will all reappear "
+"somewhere. Given time, some of them will not appear above the bricks and "
+"will fall to the floor, which will make this level a bit easier for you."
+msgstr ""
+
+#: gamedata/game_GotD.txt:73
+#, kde-format
+msgid "Never Trust The H-Ladders"
+msgstr ""
+
+#: gamedata/game_GotD.txt:74
+#, kde-format
+msgid ""
+"You think your ladder is too short?\n"
+"\n"
+"In my opinion the H-ladder is high enough for you to climb over the zombies' "
+"heads. Going up immediately will help you to group them. Make sure no zombie "
+"is walking on the others' heads when you lure them towards you."
+msgstr ""
+
+#: gamedata/game_GotD.txt:79
+#, kde-format
+msgid "Please Do Let Me Pass!"
+msgstr ""
+
+#: gamedata/game_GotD.txt:80
+#, kde-format
+msgid ""
+"There are no false bricks to fall through, so you have to do things the hard "
+"way. Getting past the last of the zombies may pose some kind of challenge.\n"
+"\n"
+"Remember that the zombies run away from you if you are on the ladder below "
+"them. This one will pace up and down next to the gap to the left of the "
+"ladders. Find the right moment to get up and dig the bricks on the left, "
+"then you will be able to avoid him."
+msgstr ""
+
+#: gamedata/game_GotD.txt:85
+#, kde-format
+msgid "Three Little Pieces Of Elegance"
+msgstr ""
+
+#: gamedata/game_GotD.txt:86
+#, kde-format
+msgid ""
+"Here you are confronted with timing problems. In most cases you need to dig "
+"one brick, then wait until just before it refills and dig the brick under "
+"it. In the first box, for example, this saves your life, because you can run "
+"over the upper brick and then trap the zombie."
+msgstr ""
+
+#: gamedata/game_GotD.txt:89
+#, kde-format
+msgid "Thieves"
+msgstr ""
+
+#: gamedata/game_GotD.txt:90
+#, kde-format
+msgid ""
+"You will notice that getting gold back from the zombies is the hardest part "
+"of this level. The trick is to separate the zombies with the gold from the "
+"others and dig them in."
+msgstr ""
+
+#: gamedata/game_GotD.txt:93
+#, kde-format
+msgid "Climbing And Falling"
+msgstr ""
+
+#: gamedata/game_GotD.txt:94
+#, kde-format
+msgid ""
+"On the right hand side, you need the last zombie to follow you.\n"
+"\n"
+"Well, he may be a bit reluctant, but do not worry, you can always go back if "
+"he somehow had other plans and went in another direction.\n"
+"\n"
+"To make sure he is following you, you sometimes have to wait until he nearly "
+"catches you before you move, otherwise he will turn around.\n"
+"\n"
+"Last piece of advice: the exact height where you stand on a ladder, while "
+"you wait for the zombie to fall down, is sometimes important - especially at "
+"the last gap."
+msgstr ""
+
+#: gamedata/game_GotD.txt:103
+#, fuzzy, kde-format
+#| msgid "Treasures of Gold"
+msgid "Temple Of Gold"
+msgstr "Златна богатства"
+
+#: gamedata/game_GotD.txt:104
+#, kde-format
+msgid ""
+"Getting the gold is the easier part: get out into the outer temple and enter "
+"the inner temple from above - from there it is possible to dig your way to "
+"the gold.\n"
+"\n"
+"The harder part is getting past the zombies. You cannot get past three of "
+"them at once, so the solution is to lure most of them away.\n"
+"\n"
+"Lure the zombie from the inner temple into the bottom pit, then get the "
+"zombie on the right into the inner temple. Try to get him into the place "
+"where the gold was. Then it is easier to get the other zombies into the "
+"inner temple as well. \n"
+"\n"
+"However the zombies will sometimes be a bit reluctant to go where you want "
+"them. The place they start from when you lure them down is crucial. Trial "
+"and error will help you figure this one out."
+msgstr ""
+
+#: gamedata/game_GotD.txt:113
+#, fuzzy, kde-format
+#| msgid "Dig Your Way Out"
+msgid "Always Know Your Way Out"
+msgstr "Прокопај пут напоље"
+
+#: gamedata/game_GotD.txt:114
+#, kde-format
+msgid ""
+"You can dig on both sides simultaneously.\n"
+"\n"
+"This will be necessary a few times to let a zombie free on one side while "
+"you  escape to the other side."
+msgstr ""
+
+#: gamedata/game_GotD.txt:119
+#, kde-format
+msgid "Patience?"
+msgstr ""
+
+#: gamedata/game_GotD.txt:120
+#, kde-format
+msgid ""
+"Sometimes it is better to wait, but sometimes you should take what is yours "
+"before the zombies steal it."
+msgstr ""
+
+#: gamedata/game_GotD.txt:123
+#, kde-format
+msgid "Lock Them Away!"
+msgstr ""
+
+#: gamedata/game_GotD.txt:124
+#, kde-format
+msgid ""
+"How do you deal with the first zombie? Next to the ladder there is a false "
+"brick into which he will jump as he loops around forever. Your way past him "
+"is to drop into the trap at the right time (which is during his climb up the "
+"ladder), then quickly go left and down.\n"
+"\n"
+"Now you will need him to fill the gap to the next ladder. You might have "
+"learned by now that zombies can be manipulated to jump into such holes. "
+"Unfortunately the brick beneath the gap is a trap, so the hole is two blocks "
+"deep. That means you have just a small moment when you can run over his head "
+"before he has sunk too deep. You can have more than one try at this if you "
+"dig the bricks behind you. Then you can let him out again if you were not "
+"fast enough.\n"
+"\n"
+"The next area is a dig-timing puzzle that should not be too hard to crack.\n"
+"\n"
+"Clearly the second zombie is to be led into the hole where he cannot do any "
+"harm.\n"
+"\n"
+"You need the third zombie to grab the gold for you. There are two false "
+"bricks under the ladders above the box with the gold. One is right next to "
+"the left-hand ladder which you can use to get behind the enemy. If you then "
+"move down one step he will fall through the trap in the middle and take the "
+"gold. Then you have to lure him down by digging him free. Make sure he does "
+"not drop the gold on the way!\n"
+"\n"
+"After this there is only one last zombie for you to worry about. You will "
+"realize that he runs towards you when you are one step below the top of the "
+"leftmost ladder. Find the right moment to walk over his head and reach the "
+"next ladder. Now dig the upper two bricks right next to it, jump to the "
+"right to get past the zombie and lure him into the gap on the right by going "
+"down the ladder to the same height."
+msgstr ""
+
+#: gamedata/game_GotD.txt:137
+#, kde-format
+msgid "Harder Than It Looks"
+msgstr ""
+
+#: gamedata/game_GotD.txt:138
+#, kde-format
+msgid "Timing is everything."
+msgstr ""
+
+#: gamedata/game_GotD.txt:141
+#, fuzzy, kde-format
+#| msgid "Concrete Towers"
+msgid "Concrete Desert"
+msgstr "Бетонске куле"
+
+#: gamedata/game_GotD.txt:142
+#, kde-format
+msgid ""
+"Climb up the ladder, but wait minimally on the same level as the concrete "
+"row. Then run to the first ladder to the left. You need to reach it before "
+"the zombies to the left, but the single zombie above should drop down behind "
+"you.\n"
+"\n"
+"Now climb the ladder and go right. Go one step down on the next ladder and "
+"wait until the zombie below passes, then drop down and go back to your very "
+"first ladder. Go down one step and wait until most of the zombies pass over "
+"your head. The ladders to the right should now be the best escape route as "
+"only two zombies should remain there while the rest are crowding to the "
+"left.\n"
+"\n"
+"Please watch the solution to get a better idea of how all this works."
+msgstr ""
+
+#: gamedata/game_GotD.txt:149
+#, fuzzy, kde-format
+#| msgid "Diagonal Disaster"
+msgid "Diagonal"
+msgstr "Дијагонална катастрофа"
+
+#: gamedata/game_GotD.txt:150
+#, kde-format
+msgid ""
+"In general it is best to keep all the zombies where they are. Of course you "
+"can always try to lure them to the right and dump them in one of the pits "
+"(after clearing them of gold, needless to say), but this is quite a "
+"complicated process.\n"
+"\n"
+"It is better to lure them to the very top of their diagonals before quickly "
+"descending and taking as much gold as possible - never staying too long at "
+"the bottom!"
+msgstr ""
+
+#: gamedata/game_GotD.txt:155
+#, fuzzy, kde-format
+#| msgid "He Has The Gold"
+msgid "Give Me That Gold!"
+msgstr "Он има злато"
+
+#: gamedata/game_GotD.txt:156
+#, kde-format
+msgid ""
+"You need to lure one of the zombies into the pit. When they drop through the "
+"false brick, the upper zombie can walk over the other one's head and thus "
+"move into the pit.\n"
+"\n"
+"Where the zombies go depends on where you stand on the ladder and what "
+"distance they have between them. Too close and they will stick together, too "
+"far and both will just fall.\n"
+"\n"
+"To be able to step over the trapped zombie's head and get the gold, you have "
+"to fall through the false-bricks on top of the other zombie.  To get back "
+"out of the box, dig the brick under the trapped zombie as you fall.\n"
+"\n"
+"The reappearing zombie might make your life a bit difficult. Make sure that "
+"he does not drop to the lower ladders with a piece of gold.  If he reappears "
+"near his original starting position, lucky you..."
+msgstr ""
+
+#: gamedata/game_GotD.txt:165
+#, fuzzy, kde-format
+#| msgid "Too Easy?"
+msgid "Too Fast?"
+msgstr "Превише лако?"
+
+#: gamedata/game_GotD.txt:166
+#, kde-format
+msgid ""
+"Release the zombie and use him to reach the gold on the left side.\n"
+"\n"
+"When you finally land on the low ladders there is just one way to pass the "
+"zombie: be quick. Wait for him to get close to you, then step down or up in "
+"the last moment and pass him."
+msgstr ""
+
+#: gamedata/game_GotD.txt:171
+#, kde-format
+msgid "Running Against Time"
+msgstr ""
+
+#: gamedata/game_GotD.txt:172
+#, kde-format
+msgid "Be quicker than the zombies - otherwise they will eat you."
+msgstr ""
+
+#: gamedata/game_GotD.txt:175
+#, fuzzy, kde-format
+#| msgid "The Big Maze"
+msgid "The Big Drop"
+msgstr "Велики лавиринт"
+
+#: gamedata/game_GotD.txt:176
+#, kde-format
+msgid ""
+"The two columns of gold on the left need to be taken first. The rest can be "
+"collected on the way back up."
+msgstr ""
+
+#: gamedata/game_GotD.txt:179
+#, kde-format
+msgid "Diving"
+msgstr ""
+
+#: gamedata/game_GotD.txt:180
+#, kde-format
+msgid ""
+"Rule number 17: Don't be a hero! (Quotation from the movie Zombieland)\n"
+"\n"
+"When diving down, never try to do two things at once. On the left side, for "
+"example, it needs one dive down to lure the zombie out of his cave, one to "
+"get him out of the passageway and one to go for the gold.\n"
+"\n"
+"You might notice that there is not enough time to get the gold over on the "
+"right-hand side, so look for a short cut."
+msgstr ""
+
+#: gamedata/game_GotD.txt:187
+#, kde-format
+msgid "Encircled"
+msgstr ""
+
+#: gamedata/game_GotD.txt:188
+#, kde-format
+msgid ""
+"The essence of this level is to get the zombies who do not have a piece of "
+"gold separated from the others and locked away in the pit. So it is helpful "
+"to get as much of the gold as you can before any of the zombies get it. It "
+"is no real problem if zombies who have gold land in the pit: you can always "
+"release them later and get back the gold."
+msgstr ""
+
+#: gamedata/game_GotD.txt:191
+#, fuzzy, kde-format
+#| msgid "Ups And Downs"
+msgid "Up And Down"
+msgstr "Горе‑доле"
+
+#: gamedata/game_GotD.txt:192
+#, kde-format
+msgid ""
+"The three rightmost ladders at the bottom have false bricks near them, so "
+"you cannot climb very high that way. The two leftmost ladders at the bottom "
+"lead higher.\n"
+"\n"
+"To get over there, you first have to go up the rightmost ladder to escape "
+"the nearest zombie. Then you can take the gold above the second ladder. But "
+"wait at the bottom of that ladder until the next zombie arrives from the "
+"left, so you can step over his head at the last moment.\n"
+"\n"
+"Now go up the third ladder, take the gold there, fall and go up again. Wait "
+"for the ideal moment to run for the leftmost ladders. If one zombie from the "
+"left comes after you, step over his head and begin your run.\n"
+"\n"
+"If you cannot make it to the left, climbing the little ladder in the middle "
+"can buy you some space and time. It might also offer you a shorter way "
+"upwards - play the solution to see how.\n"
+"\n"
+"Now try to clear all the gold on the upper levels, but watch for traps! "
+"Finally you have to collect the remaining gold from the zombies. Never land "
+"on the ground to the right of them."
+msgstr ""
+
+#: gamedata/game_GotD.txt:203 gamedata/game_lars.txt:44
+#, kde-format
+msgid "Do Not Fall Down"
+msgstr "Немој да паднеш"
+
+#: gamedata/game_GotD.txt:204
+#, kde-format
+msgid ""
+"Get every piece of gold, otherwise your way back will be blocked.\n"
+"\n"
+"The last piece of gold can only be reached with the help of the zombie: the "
+"same goes for the ladders leading back to the top."
+msgstr ""
+
+#: gamedata/game_GotD.txt:209
+#, fuzzy, kde-format
+#| msgid "Surprise Ending"
+msgid "Surprise, Surprise"
+msgstr "Изненађујући крај"
+
+#: gamedata/game_GotD.txt:210
+#, kde-format
+msgid ""
+"I would not want to spoil the surprise...\n"
+"\n"
+"However, when you reach the bricks above the gold, you should plan an escape "
+"route carefully before you dig down. Zombies can also be used to fill the "
+"gaps."
+msgstr ""
+
+#: gamedata/game_GotD.txt:215
+#, kde-format
+msgid "Busy Town"
+msgstr ""
+
+#: gamedata/game_GotD.txt:216
+#, kde-format
+msgid ""
+"If you are not too happy with that many zombies running around, there is "
+"more than one opportunity to get rid of them!"
+msgstr ""
+
+#: gamedata/game_GotD.txt:219
+#, fuzzy, kde-format
+#| msgid "Jail Break"
+msgid "Jailbreak"
+msgstr "Бекство из затвора"
+
+#: gamedata/game_GotD.txt:220
+#, kde-format
+msgid ""
+"Use the false bricks to slide away under the zombies. When you arrive at the "
+"bottom, let all the zombies out of the prison. You might have to enter it "
+"again..."
+msgstr ""
+
+#: gamedata/game_GotD.txt:223
+#, kde-format
+msgid "Is It Really Worth It?"
+msgstr ""
+
+#: gamedata/game_GotD.txt:224
+#, kde-format
+msgid ""
+"This level depends on strange behaviour of the zombies. It is worth watching "
+"the solution to see what happens.\n"
+"\n"
+"After you get down to the floor and collect the gold, extra ladders will "
+"appear. These make it possible to dodge the zombie on the left by luring him "
+"into your pit and then stepping up the ladder on the right and walking over "
+"his head. You should get this done as quickly as possible.\n"
+"\n"
+"Now wait on top of a short ladder or concrete block over to the left. This "
+"will cause some zombies from the left to climb above you and fall down from "
+"there. They will do that only if you got to this point soon enough.\n"
+"\n"
+"When all four zombies are falling, climb up and wait on the right of the "
+"concrete pit until the zombies come up and fill it again. Then change sides "
+"and wait to the left of the concrete. They will start this creepy zombie-"
+"dancing...\n"
+"\n"
+"Go to the top of the ladder and step over their heads to the row of short "
+"ladders. Wait on top of the leftmost short ladder and step over their heads "
+"again when they start circling. You should now be on the ladders that lead "
+"to the right.\n"
+"\n"
+"The zombies on the right are a bit tricky to deal with. Going to the same "
+"height as the upper zombie will make them start circling, but as soon as you "
+"go above them they will stop. It requires very good timing to wait "
+"downstairs long enough for them to start circling, then to go upstairs as "
+"quickly as possible, so as to step over their heads."
+msgstr ""
+
+#: gamedata/game_GotD.txt:238
+#, kde-format
+msgid ""
+"Lets face it: the ground with nowhere to run or dig is not where you want to "
+"be when the zombies come for you. However, every time you collect some gold "
+"you end up down there. The trick is to have the zombies falling overhead as "
+"you run beneath them to one of the side ladders.\n"
+"\n"
+"One possibility is to wait near the top of a ladder (but not an outer one) "
+"until the zombies also gather up high. Then descend, take as much gold with "
+"you as possible and quickly return to the ladder. If you are lucky the "
+"zombies will still be in the air when you reach it.\n"
+"\n"
+"If one of the zombies has reached the ladder before you, try going up it. "
+"Often that will make the zombie run away from you and maybe exit to one side "
+"and fall. The zombie will go up only as far as what he thinks is the nearest "
+"exit, but he does not understand gravity very well... On the right there is "
+"a bar next to the ladder, which is fine, but on the left there is a piece of "
+"gold next to the ladder and the zombies think they can walk on it, so they "
+"will go only one space past it if you push them up the ladder.\n"
+"\n"
+"If you are lucky, the zombies will remove that gold before you get there. Or "
+"they may be some distance away when you arrive, so it is easy to collect. "
+"Failing that, you have to push the zombies up just a bit higher than the "
+"gold, then quickly run up, dive sideways and collect the gold. After that "
+"you must run back to the ladder and push them up and over the bar, up "
+"higher, which is their new exit point.\n"
+"\n"
+"Another possibility, which is faster but maybe riskier, is to wait above a "
+"series of gold pieces you wish to collect until the zombies get above their "
+"exit point on a side ladder, then fall and collect the gold and either rest "
+"on your last concrete block or be falling when the zombies reach their exit. "
+"They will then leave the ladder and fall while you run across under them and "
+"climb the ladder one more time.\n"
+"\n"
+"These possibilities are demonstrated in the recorded solution for Free Fall, "
+"but it does things the hard way: it is actually easier to work from right to "
+"left when collecting the gold. One last hint: if a zombie drops some gold, "
+"collect it on your next trip, before it gets picked up again."
+msgstr ""
+
+#: gamedata/game_GotD.txt:251
+#, fuzzy, kde-format
+#| msgid "The Balance"
+msgid "The Passage"
+msgstr "Равнотежа"
+
+#: gamedata/game_GotD.txt:252
+#, kde-format
+msgid ""
+"You need to start with the gold on the right first, which means you have to "
+"dodge the zombie in the small passage.\n"
+"\n"
+"Over there, you can not retrieve the lower gold (you can get in, but not "
+"back out). So you need to lure the zombie into the pit and kill him, along "
+"with the gold, by digging the bricks to his left and luring him into them. "
+"Sometimes he gets smart and drops the gold before getting trapped, so you "
+"have to repeat the whole process. Moving quickly in the first place makes "
+"this less likely...\n"
+"\n"
+"When the zombie reappears at the top, lure him into the left hand side, get "
+"past him and make sure he follows you when you dig through the double column "
+"of bricks.\n"
+"\n"
+"For the last piece of gold, lure the zombie into the concrete cave, ride on "
+"his head, take the gold and get out as quickly as you can when the hidden "
+"ladders appear. This is probably the hardest part.\n"
+"\n"
+"When you reach the pit before the exit ladder, step down to the same level "
+"as the pit and wait for the zombie to walk over you and fall in. Then you "
+"are free to go."
+msgstr ""
+
+#: gamedata/game_GotD.txt:263
+#, kde-format
+msgid "Out Of My Way!"
+msgstr ""
+
+#: gamedata/game_GotD.txt:264
+#, kde-format
+msgid ""
+"It is easier to pass below the zombies. Wait until one comes really close to "
+"you (wait until the last moment) then switch past him.\n"
+"\n"
+"After you are past the last one, let them fall onto the concrete, then "
+"collecting the gold will be a cakewalk."
+msgstr ""
+
+#: gamedata/game_GotD.txt:269
+#, kde-format
+msgid "Waking Up The Dead"
+msgstr ""
+
+#: gamedata/game_GotD.txt:270
+#, kde-format
+msgid ""
+"You will realize that zombies move vertically in your direction first before "
+"going horizontally. This means that most of the time they will move in a "
+"straight line upwards. Use this to descend next to them.\n"
+"\n"
+"Of course the first wave of zombies is too big to get past with just this "
+"trick, so you should lure a few zombies into the little cave first. Then "
+"move upwards first to make them climb and then descend. However, descending "
+"requires a little zig-zag at the start because the zombies will not form a "
+"straight line.\n"
+"\n"
+"You will need to group the second wave of zombies before you can get past "
+"them."
+msgstr ""
+
+#: gamedata/game_GotD.txt:277
+#, kde-format
+msgid "Zombie Lemmings"
+msgstr ""
+
+#: gamedata/game_GotD.txt:278
+#, kde-format
+msgid ""
+"You go up by walking over the zombies' heads. It only gets difficult with "
+"the last two because you need precise timing there.\n"
+"\n"
+"Start with the gold on the right. Finish with the middle one of five at the "
+"bottom of the box.\n"
+"\n"
+"If you wonder why there are two groups of h-ladders where you need to step "
+"over a zombie as you climb the pop-up ladders, note that the zombies use the "
+"same trick themselves to come after you, so you will have to do it twice."
+msgstr ""
+
+#: gamedata/game_GotD.txt:285
+#, fuzzy, kde-format
+#| msgid "Rat Trap"
+msgid "Death Trap"
+msgstr "Замка за пацове"
+
+#: gamedata/game_GotD.txt:286
+#, kde-format
+msgid "Rule Number 22: When in doubt, know your way out!"
+msgstr ""
+
+#: gamedata/game_GotD.txt:289 gamedata/game_plws.txt:227
+#, kde-format
+msgid "Overcrowding"
+msgstr "Претрпано"
+
+#: gamedata/game_GotD.txt:290
+#, kde-format
+msgid ""
+"The zombies will eventually group themselves, which makes it easier for you "
+"to avoid them, but harder to steal their gold. Best if you get as much gold "
+"as possible before anyone else. You might not manage to get every piece "
+"before them, but there are some places where it is easier to rob them."
+msgstr ""
+
+#: gamedata/game_GotD.txt:293
+#, fuzzy, kde-format
+#| msgid "Fear of Heights"
+msgid "Fear Of Heights"
+msgstr "Страх од висине"
+
+#: gamedata/game_GotD.txt:294
+#, kde-format
+msgid ""
+"As you walk left on top of the two zombies, there will be another one that "
+"moves in your direction at some point. Jump left and run over him "
+"immediately, otherwise you will not be able to move down to the ladders.\n"
+"\n"
+"It is best if you collect all the gold in the middle in one run (with one "
+"exception), otherwise it will be a long and weary job to get some pieces of "
+"gold back from the zombies.\n"
+"\n"
+"When you arrive at the bottom, it might come in handy if you make every "
+"zombie move in the same direction by waiting long enough at the bottom of "
+"the big ladders.\n"
+"\n"
+"As for the dig-timing puzzles in the boxes, take my advice that it is better "
+"to go inside more frequently than try to get everything at once and be "
+"locked in..."
+msgstr ""
+
+#: gamedata/game_GotD.txt:303
+#, fuzzy, kde-format
+#| msgid "Awaiting Enemies"
+msgid "Raining Zombies"
+msgstr "Ишчекујући непријатеље"
+
+#: gamedata/game_GotD.txt:304
+#, kde-format
+msgid "Let us see if you have learned your lesson about zombies and ladders..."
+msgstr ""
+
+#: gamedata/game_GotD.txt:307
+#, kde-format
+msgid "A Desperate Jump"
+msgstr ""
+
+#: gamedata/game_GotD.txt:308
+#, kde-format
+msgid ""
+"Wait for the moment when the zombie has reached the top of the ladder and is "
+"starting to descend - that is when you make your jump.\n"
+"\n"
+"To get past the other zombies, you sometimes need to run over their heads."
+msgstr ""
+
+#: gamedata/game_GotD.txt:313
+#, kde-format
+msgid "Among Zombies"
+msgstr ""
+
+#: gamedata/game_GotD.txt:314
+#, kde-format
+msgid "All it takes is good strong nerves..."
+msgstr ""
+
+#: gamedata/game_GotD.txt:317
+#, fuzzy, kde-format
+#| msgid "The Rose"
+msgid "The Horde"
+msgstr "Ружа"
+
+#: gamedata/game_GotD.txt:318
+#, kde-format
+msgid ""
+"That is the thing with zombies: the slower the creepier.\n"
+"\n"
+"Hurry up and do those puzzles. The clock is ticking..."
+msgstr ""
+
+#: gamedata/game_GotD.txt:323
+#, kde-format
+msgid "Dance With Death"
+msgstr ""
+
+#: gamedata/game_GotD.txt:324
+#, kde-format
+msgid ""
+"The only way to get the gold is to ride the whole way on his head. Yee-hah! "
+"Ride him cowboy!"
+msgstr ""
+
+# skip-rule: t-space
+#: gamedata/game_GotD.txt:327
+#, fuzzy, kde-format
+#| msgid "Space Invader"
+msgid "Zombie Invaders"
+msgstr "Нападач из свемира"
+
+#: gamedata/game_GotD.txt:328
+#, kde-format
+msgid ""
+"Watch what happens if you climb up a ladder on the side, but only to where "
+"you are level with the bricks the zombies are walking on..."
+msgstr ""
+
+#: gamedata/game_GotD.txt:331
+#, kde-format
+msgid "Just Survive"
+msgstr ""
+
+#: gamedata/game_GotD.txt:332
+#, kde-format
+msgid ""
+"Avoiding the zombies is easier than you might think. Only the few zombies "
+"who are on their own and not in a row with the others will ruin your day. "
+"Therefore the left side is easier, because there are fewer lone zombies. "
+msgstr ""
+
+#: gamedata/game_GotD.txt:335
+#, kde-format
+msgid "Death Race"
+msgstr ""
+
+#: gamedata/game_GotD.txt:336
+#, kde-format
+msgid ""
+"You can distract the zombie from running down when you are on the same level "
+"as him. Who said it had to be fair play?"
+msgstr ""
+
+#: gamedata/game_GotD.txt:339
+#, kde-format
+msgid "Zombie Free Zone"
+msgstr ""
+
+#: gamedata/game_GotD.txt:340
+#, kde-format
+msgid ""
+"Finally, you have escaped the horrors of the zombie-infested world. Now that "
+"you are in the zombie-free zone, nothing can go wrong, can it?"
+msgstr ""
+
+#: gamedata/game_GotD.txt:343
+#, fuzzy, kde-format
+#| msgid "The Foundry"
+msgid "The End"
+msgstr "Ковачница"
+
+#: gamedata/game_GotD.txt:344
+#, fuzzy, kde-format
+#| msgid ""
+#| "<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the <b>"
+#| "\"%1\"</b> game !!</p>"
+msgid ""
+"CONGRATULATIONS !!!!\n"
+"\n"
+"You have conquered all levels of the Gold Of The Living Dead game !!!\n"
+"\n"
+"Or have you?"
+msgstr "<b>ЧЕСТИТАМО!</b><p>Завршили сте последњи ниво у игри „<b>%1</b>“!</p>"
+
 #: gamedata/game_GRII.txt:2
 #, kde-format
 msgid "Gold Rush II"
@@ -2279,7 +3237,20 @@ msgstr "Златна грозница 2"
 
 # rewrite-msgid: /need to dig while falling//
 #: gamedata/game_GRII.txt:3
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "These 20 levels have even harder challenges, more complicated puzzles and "
+#| "tighter timings than the first Gold Rush. They are not for the faint "
+#| "hearted. As before, you need to dig while falling sometimes. Have fun!\n"
+#| "\n"
+#| "Created by Gabriel Miltschitzky [gabriel dot miltschitzky at googlemail "
+#| "dot com], who also provided the recorded solutions.\n"
+#| "\n"
+#| "It is best to play the first Gold Rush levels before attempting Gold Rush "
+#| "II, because you will need many techniques that are easier to learn there. "
+#| "None of the levels in Gold Rush and Gold Rush II are impossible. If in "
+#| "doubt, use menu item 'Move->Show A Solution' to watch solutions provided "
+#| "by the author."
 msgid ""
 "These 20 levels have even harder challenges, more complicated puzzles and "
 "tighter timings than the first Gold Rush. They are not for the faint "
@@ -2291,7 +3262,7 @@ msgid ""
 "It is best to play the first Gold Rush levels before attempting Gold Rush "
 "II, because you will need many techniques that are easier to learn there. "
 "None of the levels in Gold Rush and Gold Rush II are impossible. If in "
-"doubt, use menu item 'Move->Show A Solution' to watch solutions provided by "
+"doubt, use menu item 'Move->Show a Solution' to watch solutions provided by "
 "the author."
 msgstr ""
 "Ових 20 нивоа нуди још теже изазове, још запетљаније загонетке и тесније "
@@ -3074,7 +4045,7 @@ msgstr "Срцоломац"
 msgid "No hint!"
 msgstr "Нема савета!"
 
-#: gamedata/game_kgr.txt:3 src/main.cpp:45
+#: gamedata/game_kgr.txt:3 src/main.cpp:29
 #, kde-format
 msgid "KGoldrunner"
 msgstr "К‑златобојац"
@@ -3216,11 +4187,6 @@ msgid ""
 msgstr ""
 "Једног непријатеља можете убити тако што откопате једну од доњих цигала у "
 "раздвајачу и натерате га да упадне."
-
-#: gamedata/game_lars.txt:44
-#, kde-format
-msgid "Do Not Fall Down"
-msgstr "Немој да паднеш"
 
 #: gamedata/game_lars.txt:45
 #, kde-format
@@ -4434,11 +5400,6 @@ msgstr "Брзи"
 msgid "Dig Deep"
 msgstr "Копај дубоко"
 
-#: gamedata/game_plws.txt:113
-#, kde-format
-msgid "Zig Zag"
-msgstr "Цик‑цак"
-
 #: gamedata/game_plws.txt:119
 #, kde-format
 msgid "Forgotten Gold"
@@ -4618,11 +5579,6 @@ msgstr "Звездани талас"
 #, kde-format
 msgid "Amazing Finish"
 msgstr "Невероватан завршетак"
-
-#: gamedata/game_plws.txt:227
-#, kde-format
-msgid "Overcrowding"
-msgstr "Претрпано"
 
 #: gamedata/game_plws.txt:230
 #, kde-format
@@ -6410,11 +7366,6 @@ msgstr ""
 "лево од треће куле. Сада трчите десно, са трима непријатељима за петама и "
 "врло живахним!"
 
-#: gamedata/game_wad.txt:63
-#, kde-format
-msgid "The Box"
-msgstr "Кутија"
-
 #: gamedata/game_wad.txt:64
 #, kde-format
 msgid "Dig the two bricks next to a ladder, then look for fall-through bricks."
@@ -6740,42 +7691,42 @@ msgstr ""
 "Да, морате трчати преко непријатељских глава — скроз до краја! Само вам "
 "треба мирна рука."
 
-#: src/kgoldrunner.cpp:194 src/kgrgame.cpp:739
+#: src/kgoldrunner.cpp:184 src/kgrgame.cpp:723
 #, kde-format
 msgid "&New Game..."
 msgstr "&Нова игра..."
 
-#: src/kgoldrunner.cpp:197
+#: src/kgoldrunner.cpp:187
 #, kde-format
 msgid "Pla&y Next Level"
 msgstr "&Иди следећи ниво"
 
-#: src/kgoldrunner.cpp:198
+#: src/kgoldrunner.cpp:188
 #, kde-format
 msgid "Play next level."
 msgstr "Пређи на следећи ниво"
 
-#: src/kgoldrunner.cpp:199
+#: src/kgoldrunner.cpp:189
 #, kde-format
 msgid "Try the next level in the game you are playing."
 msgstr "Покушајте са следећим нивоом у игри коју играте."
 
-#: src/kgoldrunner.cpp:206
+#: src/kgoldrunner.cpp:196
 #, kde-format
 msgid "&Load Saved Game..."
 msgstr "&Учитај позицију..."
 
-#: src/kgoldrunner.cpp:215
+#: src/kgoldrunner.cpp:205
 #, kde-format
 msgid "&Save Game..."
 msgstr "&Сачувај позицију..."
 
-#: src/kgoldrunner.cpp:221 src/kgoldrunner.cpp:222
+#: src/kgoldrunner.cpp:211 src/kgoldrunner.cpp:212
 #, kde-format
 msgid "Save A Solution..."
 msgstr "Сачувај решење..."
 
-#: src/kgoldrunner.cpp:223
+#: src/kgoldrunner.cpp:213
 #, kde-format
 msgid ""
 "Save a solution for a level into a file called 'sol_&lt;prefix&gt;.txt' in "
@@ -6784,47 +7735,48 @@ msgstr ""
 "Сачувајте решење нивоа у фајл по имену „sol_&lt;префикс&gt;.txt“ у својој "
 "корисничкој фасцикли података."
 
-#: src/kgoldrunner.cpp:256 src/kgrgame.cpp:1319
-#, kde-format
-msgid "&Show A Solution"
+#: src/kgoldrunner.cpp:246 src/kgrgame.cpp:1303
+#, fuzzy, kde-format
+#| msgid "&Show A Solution"
+msgid "&Show a Solution"
 msgstr "&Прикажи решење"
 
-#: src/kgoldrunner.cpp:257
+#: src/kgoldrunner.cpp:247
 #, kde-format
 msgid "Show how to win this level."
 msgstr "Покажи како завршити овај ниво"
 
-#: src/kgoldrunner.cpp:258
+#: src/kgoldrunner.cpp:248
 #, kde-format
 msgid "Play a recording of how to win this level, if there is one available."
 msgstr "Пушта снимак решавања овог нивоа, ако га има."
 
-#: src/kgoldrunner.cpp:262
+#: src/kgoldrunner.cpp:252
 #, kde-format
 msgid "&Instant Replay"
 msgstr "&Реприза"
 
-#: src/kgoldrunner.cpp:263
+#: src/kgoldrunner.cpp:253
 #, kde-format
 msgid "Instant replay."
 msgstr "Реприза"
 
-#: src/kgoldrunner.cpp:264
+#: src/kgoldrunner.cpp:254
 #, kde-format
 msgid "Show a recording of the level you are currently playing."
 msgstr "Пушта снимак нивоа који тренутно играте."
 
-#: src/kgoldrunner.cpp:269
+#: src/kgoldrunner.cpp:259
 #, kde-format
 msgid "Replay &Last Level"
 msgstr "&Понови последњи ниво"
 
-#: src/kgoldrunner.cpp:270
+#: src/kgoldrunner.cpp:260
 #, kde-format
 msgid "Replay last level."
 msgstr "Понови последњи ниво"
 
-#: src/kgoldrunner.cpp:271
+#: src/kgoldrunner.cpp:261
 #, kde-format
 msgid ""
 "Show a recording of the last level you played and finished, regardless of "
@@ -6833,249 +7785,249 @@ msgstr ""
 "Приказује снимак последњег нивоа који сте играли и завршили, без обзира да "
 "ли сте победили или изгубили."
 
-#: src/kgoldrunner.cpp:277
+#: src/kgoldrunner.cpp:267
 #, kde-format
 msgid "&Replay Any Level"
 msgstr "Понови &било који ниво"
 
-#: src/kgoldrunner.cpp:278
+#: src/kgoldrunner.cpp:268
 #, kde-format
 msgid "Replay any level."
 msgstr "Понови било који ниво"
 
-#: src/kgoldrunner.cpp:279
+#: src/kgoldrunner.cpp:269
 #, kde-format
 msgid "Show a recording of any level you have played so far."
 msgstr "Приказује снимак неког од нивоа који сте до сада играли."
 
-#: src/kgoldrunner.cpp:284
+#: src/kgoldrunner.cpp:274
 #, kde-format
 msgid "&Kill Hero"
 msgstr "&Убиј јунака"
 
-#: src/kgoldrunner.cpp:285
+#: src/kgoldrunner.cpp:275
 #, kde-format
 msgid "Kill Hero."
 msgstr "Убиј јунака"
 
-#: src/kgoldrunner.cpp:286
+#: src/kgoldrunner.cpp:276
 #, kde-format
 msgid ""
 "Kill the hero, in case he finds himself in a situation from which he cannot "
 "escape."
 msgstr "Убијте јунака, у случају да се нађе у безизлазној ситуацији."
 
-#: src/kgoldrunner.cpp:303
+#: src/kgoldrunner.cpp:293
 #, kde-format
 msgid "&Create Level"
 msgstr "&Направи ниво"
 
-#: src/kgoldrunner.cpp:304
+#: src/kgoldrunner.cpp:294
 #, kde-format
 msgid "Create level."
 msgstr "Направи ниво"
 
-#: src/kgoldrunner.cpp:305
+#: src/kgoldrunner.cpp:295
 #, kde-format
 msgid "Create a completely new level."
 msgstr "Направите потпуно нови ниво."
 
-#: src/kgoldrunner.cpp:307
+#: src/kgoldrunner.cpp:297
 #, kde-format
 msgid "Create"
 msgstr "Направи"
 
-#: src/kgoldrunner.cpp:310
+#: src/kgoldrunner.cpp:300
 #, kde-format
 msgid "&Edit Level..."
 msgstr "&Уреди ниво..."
 
-#: src/kgoldrunner.cpp:311
+#: src/kgoldrunner.cpp:301
 #, kde-format
 msgid "Edit level..."
 msgstr "Уреди ниво..."
 
-#: src/kgoldrunner.cpp:312
+#: src/kgoldrunner.cpp:302
 #, kde-format
 msgid "Edit any level..."
 msgstr "Уреди било који ниво..."
 
-#: src/kgoldrunner.cpp:314
+#: src/kgoldrunner.cpp:304
 #, kde-format
 msgid "Edit"
 msgstr "Уреди"
 
-#: src/kgoldrunner.cpp:322 src/kgrgame.cpp:1475
+#: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1459
 #, kde-format
 msgid "&Save Edits..."
 msgstr "&Сачувај измене..."
 
-#: src/kgoldrunner.cpp:323
+#: src/kgoldrunner.cpp:313
 #, kde-format
 msgid "Save edits..."
 msgstr "Сачувај измене..."
 
-#: src/kgoldrunner.cpp:324
+#: src/kgoldrunner.cpp:314
 #, kde-format
 msgid "Save your level after editing..."
 msgstr "Сачувајте ниво након уређивања."
 
-#: src/kgoldrunner.cpp:326
+#: src/kgoldrunner.cpp:316
 #, kde-format
 msgid "Save"
 msgstr "Сачувај"
 
-#: src/kgoldrunner.cpp:330
+#: src/kgoldrunner.cpp:320
 #, kde-format
 msgid "&Move Level..."
 msgstr "&Помери ниво..."
 
-#: src/kgoldrunner.cpp:331
+#: src/kgoldrunner.cpp:321
 #, kde-format
 msgid "Move level..."
 msgstr "Помери ниво"
 
-#: src/kgoldrunner.cpp:332
+#: src/kgoldrunner.cpp:322
 #, kde-format
 msgid "Change a level's number or move it to another game..."
 msgstr "Промените број нивоа или га пребаците у другу игру."
 
-#: src/kgoldrunner.cpp:336
+#: src/kgoldrunner.cpp:326
 #, kde-format
 msgid "&Delete Level..."
 msgstr "&Обриши ниво..."
 
-#: src/kgoldrunner.cpp:337
+#: src/kgoldrunner.cpp:327
 #, kde-format
 msgid "Delete level..."
 msgstr "Обриши ниво"
 
-#: src/kgoldrunner.cpp:338
+#: src/kgoldrunner.cpp:328
 #, kde-format
 msgid "Delete a level..."
 msgstr "Брише ниво."
 
-#: src/kgoldrunner.cpp:345
+#: src/kgoldrunner.cpp:335
 #, kde-format
 msgid "Create &Game..."
 msgstr "Направи и&гру..."
 
-#: src/kgoldrunner.cpp:346
+#: src/kgoldrunner.cpp:336
 #, kde-format
 msgid "Create game..."
 msgstr "Направи игру"
 
-#: src/kgoldrunner.cpp:347
+#: src/kgoldrunner.cpp:337
 #, kde-format
 msgid "Create a completely new game..."
 msgstr "Направите потпуно нову игру."
 
-#: src/kgoldrunner.cpp:350
+#: src/kgoldrunner.cpp:340
 #, kde-format
 msgid "Edit Game &Info..."
 msgstr "Измени &податке о игри..."
 
-#: src/kgoldrunner.cpp:351
+#: src/kgoldrunner.cpp:341
 #, kde-format
 msgid "Edit game info..."
 msgstr "Измени податке о игри"
 
-#: src/kgoldrunner.cpp:352
+#: src/kgoldrunner.cpp:342
 #, kde-format
 msgid "Change the name, rules or description of a game..."
 msgstr "Измените назив, правила или опис игре."
 
-#: src/kgoldrunner.cpp:361
+#: src/kgoldrunner.cpp:351
 #, kde-format
 msgid "Change &Theme..."
 msgstr "Промени &тему..."
 
-#: src/kgoldrunner.cpp:362
+#: src/kgoldrunner.cpp:352
 #, kde-format
 msgid "Change the graphics theme..."
 msgstr "Промените графичку тему."
 
-#: src/kgoldrunner.cpp:363
+#: src/kgoldrunner.cpp:353
 #, kde-format
 msgid "Alter the visual appearance of the runners and background scene..."
 msgstr "Измените изглед тркача и позадинске сцене."
 
-#: src/kgoldrunner.cpp:377
+#: src/kgoldrunner.cpp:367
 #, kde-format
 msgid "&Play Sounds"
 msgstr "&Звук"
 
-#: src/kgoldrunner.cpp:378
+#: src/kgoldrunner.cpp:368
 #, kde-format
 msgid "Play sound effects."
 msgstr "Пуштај звучне ефекте"
 
-#: src/kgoldrunner.cpp:379
+#: src/kgoldrunner.cpp:369
 #, kde-format
 msgid "Play sound effects during the game."
 msgstr "Пуштање звучних ефеката током игре."
 
-#: src/kgoldrunner.cpp:382
+#: src/kgoldrunner.cpp:372
 #, kde-format
 msgid "Play &Footstep Sounds"
 msgstr "Звук &корака"
 
-#: src/kgoldrunner.cpp:383 src/kgoldrunner.cpp:384
+#: src/kgoldrunner.cpp:373 src/kgoldrunner.cpp:374
 #, kde-format
 msgid "Make sounds of player's footsteps."
 msgstr "Пуштај звук играчевих корака"
 
-#: src/kgoldrunner.cpp:389
+#: src/kgoldrunner.cpp:379
 #, kde-format
 msgid "&Demo At Start"
 msgstr "&Демо на покретању"
 
-#: src/kgoldrunner.cpp:390 src/kgoldrunner.cpp:391
+#: src/kgoldrunner.cpp:380 src/kgoldrunner.cpp:381
 #, kde-format
 msgid "Run a demo when the game starts."
 msgstr "Започни демо пошто се игра покрене"
 
-#: src/kgoldrunner.cpp:399
+#: src/kgoldrunner.cpp:389
 #, kde-format
 msgid "&Mouse Controls Hero"
 msgstr "Јунаком се управља &мишем"
 
-#: src/kgoldrunner.cpp:400
+#: src/kgoldrunner.cpp:390
 #, kde-format
 msgid "Mouse controls hero."
 msgstr "Јунаком се управља мишем"
 
-#: src/kgoldrunner.cpp:401
+#: src/kgoldrunner.cpp:391
 #, kde-format
 msgid "Use the mouse to control the hero's moves."
 msgstr "Користите миш да управљате кретањем јунака."
 
-#: src/kgoldrunner.cpp:405
+#: src/kgoldrunner.cpp:395
 #, kde-format
 msgid "&Keyboard Controls Hero"
 msgstr "Јунак се управља &тастатуром"
 
-#: src/kgoldrunner.cpp:406
+#: src/kgoldrunner.cpp:396
 #, kde-format
 msgid "Keyboard controls hero."
 msgstr "Јунак се управља тастатуром"
 
-#: src/kgoldrunner.cpp:407
+#: src/kgoldrunner.cpp:397
 #, kde-format
 msgid "Use the keyboard to control the hero's moves."
 msgstr "Користите тастатуру да управљате кретањем јунака."
 
-#: src/kgoldrunner.cpp:411
+#: src/kgoldrunner.cpp:401
 #, kde-format
 msgid "Hybrid Control (&Laptop)"
 msgstr "Хибридно управљање (&лаптоп)"
 
-#: src/kgoldrunner.cpp:412
+#: src/kgoldrunner.cpp:402
 #, kde-format
 msgid "Pointer controls hero; dig using keyboard."
 msgstr "Показивач управља јунаком, копање преко тастатуре"
 
-#: src/kgoldrunner.cpp:414
+#: src/kgoldrunner.cpp:404
 #, kde-format
 msgid ""
 "Use the laptop's pointer device to control the hero's moves, and use the "
@@ -7084,17 +8036,17 @@ msgstr ""
 "Користите показивачки уређај лаптопа за управљање кретањем јунака, а "
 "тастатуру за копање лево и десно."
 
-#: src/kgoldrunner.cpp:429
+#: src/kgoldrunner.cpp:419
 #, kde-format
 msgid "&Click Key To Move"
 msgstr "&Клик тастером за кретање"
 
-#: src/kgoldrunner.cpp:430
+#: src/kgoldrunner.cpp:420
 #, kde-format
 msgid "Click Key To Move."
 msgstr "Клик тастером за кретање"
 
-#: src/kgoldrunner.cpp:431
+#: src/kgoldrunner.cpp:421
 #, kde-format
 msgid ""
 "In keyboard mode, click a direction-key to start moving and keep on going "
@@ -7103,17 +8055,17 @@ msgstr ""
 "У режиму тастатуре, кликните тастером смера за почетак кретања, које траје "
 "док не кликнете другим тастером."
 
-#: src/kgoldrunner.cpp:437
+#: src/kgoldrunner.cpp:427
 #, kde-format
 msgid "&Hold Key To Move"
 msgstr "&Држање тастера за кретање"
 
-#: src/kgoldrunner.cpp:438
+#: src/kgoldrunner.cpp:428
 #, kde-format
 msgid "Hold Key To Move."
 msgstr "Држање тастера за кретање"
 
-#: src/kgoldrunner.cpp:439
+#: src/kgoldrunner.cpp:429
 #, kde-format
 msgid ""
 "In keyboard mode, hold down a direction-key to move and release it to stop."
@@ -7121,393 +8073,393 @@ msgstr ""
 "У режиму тастатуре, држите тастер смера за кретање, и пустите га за "
 "заустављање."
 
-#: src/kgoldrunner.cpp:456
+#: src/kgoldrunner.cpp:446
 #, kde-format
 msgid "Normal Speed"
 msgstr "Нормална брзина"
 
-#: src/kgoldrunner.cpp:457
+#: src/kgoldrunner.cpp:447
 #, kde-format
 msgid "Set normal speed."
 msgstr "Постави нормалну брзину"
 
-#: src/kgoldrunner.cpp:458
+#: src/kgoldrunner.cpp:448
 #, kde-format
 msgid "Set normal game speed."
 msgstr "Поставља нормалну брзину игре."
 
-#: src/kgoldrunner.cpp:462
+#: src/kgoldrunner.cpp:452
 #, kde-format
 msgid "Beginner Speed"
 msgstr "Почетничка брзина"
 
-#: src/kgoldrunner.cpp:463
+#: src/kgoldrunner.cpp:453
 #, kde-format
 msgid "Set beginners' speed."
 msgstr "Постави почетничку брзину"
 
-#: src/kgoldrunner.cpp:464
+#: src/kgoldrunner.cpp:454
 #, kde-format
 msgid "Set beginners' game speed (0.5 times normal)."
 msgstr "Поставља почетничку брзину игре (0,5 пута нормална)."
 
-#: src/kgoldrunner.cpp:469
+#: src/kgoldrunner.cpp:459
 #, kde-format
 msgid "Champion Speed"
 msgstr "Шампионска брзина"
 
-#: src/kgoldrunner.cpp:470
+#: src/kgoldrunner.cpp:460
 #, kde-format
 msgid "Set champions' speed."
 msgstr "Постави шампионску брзину"
 
-#: src/kgoldrunner.cpp:471
+#: src/kgoldrunner.cpp:461
 #, kde-format
 msgid "Set champions' game speed (1.5 times normal)."
 msgstr "Поставља шампионску брзину игре (1,5 пута нормална)."
 
-#: src/kgoldrunner.cpp:475
+#: src/kgoldrunner.cpp:465
 #, kde-format
 msgid "Increase Speed"
 msgstr "Повећај брзину"
 
-#: src/kgoldrunner.cpp:476
+#: src/kgoldrunner.cpp:466
 #, kde-format
 msgid "Increase speed."
 msgstr "Повећај брзину"
 
-#: src/kgoldrunner.cpp:477
+#: src/kgoldrunner.cpp:467
 #, kde-format
 msgid "Increase the game speed by 0.1 (maximum is 2.0 times normal)."
 msgstr "Повећава брзину игре за 0,1 (највиша је 2,0 пута нормална)."
 
-#: src/kgoldrunner.cpp:482
+#: src/kgoldrunner.cpp:472
 #, kde-format
 msgid "Decrease Speed"
 msgstr "Смањи брзину"
 
-#: src/kgoldrunner.cpp:483
+#: src/kgoldrunner.cpp:473
 #, kde-format
 msgid "Decrease speed."
 msgstr "Смањи брзину"
 
-#: src/kgoldrunner.cpp:484
+#: src/kgoldrunner.cpp:474
 #, kde-format
 msgid "Decrease the game speed by 0.1 (minimum is 0.2 times normal)."
 msgstr "Смањује брзину игре за 0,1 (најмања је 0,2 пута нормална)."
 
-#: src/kgoldrunner.cpp:514
+#: src/kgoldrunner.cpp:504
 #, kde-format
 msgid "Stop"
 msgstr "Стани"
 
-#: src/kgoldrunner.cpp:515
+#: src/kgoldrunner.cpp:505
 #, kde-format
 msgid "Move Right"
 msgstr "Иди десно"
 
-#: src/kgoldrunner.cpp:516
+#: src/kgoldrunner.cpp:506
 #, kde-format
 msgid "Move Left"
 msgstr "Иди лево"
 
-#: src/kgoldrunner.cpp:517
+#: src/kgoldrunner.cpp:507
 #, kde-format
 msgid "Move Up"
 msgstr "Иди горе"
 
-#: src/kgoldrunner.cpp:518
+#: src/kgoldrunner.cpp:508
 #, kde-format
 msgid "Move Down"
 msgstr "Иди доле"
 
-#: src/kgoldrunner.cpp:519
+#: src/kgoldrunner.cpp:509
 #, kde-format
 msgid "Dig Right"
 msgstr "Копај десно"
 
-#: src/kgoldrunner.cpp:520
+#: src/kgoldrunner.cpp:510
 #, kde-format
 msgid "Dig Left"
 msgstr "Копај лево"
 
-#: src/kgoldrunner.cpp:544
+#: src/kgoldrunner.cpp:534
 #, kde-format
 msgid "Do a Step"
 msgstr "Коракни"
 
-#: src/kgoldrunner.cpp:545
+#: src/kgoldrunner.cpp:535
 #, kde-format
 msgid "Test Bug Fix"
 msgstr "Испробај исправку грешке"
 
-#: src/kgoldrunner.cpp:546
+#: src/kgoldrunner.cpp:536
 #, kde-format
 msgid "Show Positions"
 msgstr "Прикажи положаје"
 
-#: src/kgoldrunner.cpp:547
+#: src/kgoldrunner.cpp:537
 #, kde-format
 msgid "Start Logging"
 msgstr "Почни бележење"
 
-#: src/kgoldrunner.cpp:548
+#: src/kgoldrunner.cpp:538
 #, kde-format
 msgid "Show Hero"
 msgstr "Прикажи јунака"
 
-#: src/kgoldrunner.cpp:549
+#: src/kgoldrunner.cpp:539
 #, kde-format
 msgid "Show Object"
 msgstr "Прикажи објекат"
 
-#: src/kgoldrunner.cpp:551 src/kgoldrunner.cpp:552 src/kgoldrunner.cpp:553
-#: src/kgoldrunner.cpp:554 src/kgoldrunner.cpp:555 src/kgoldrunner.cpp:556
-#: src/kgoldrunner.cpp:557
+#: src/kgoldrunner.cpp:541 src/kgoldrunner.cpp:542 src/kgoldrunner.cpp:543
+#: src/kgoldrunner.cpp:544 src/kgoldrunner.cpp:545 src/kgoldrunner.cpp:546
+#: src/kgoldrunner.cpp:547
 #, kde-format
 msgid "Show Enemy"
 msgstr "Прикажи непријатеља"
 
 # >> @info:status
-#: src/kgoldrunner.cpp:745
+#: src/kgoldrunner.cpp:735
 #, kde-format
 msgid "The game is paused"
 msgstr "игра паузирана"
 
 # >> @info:status
-#: src/kgoldrunner.cpp:747
+#: src/kgoldrunner.cpp:737
 #, kde-format
 msgid "Press \"%1\" to RESUME"
 msgstr "притисните „%1“ за наставак"
 
 # >> @info:status
-#: src/kgoldrunner.cpp:749
+#: src/kgoldrunner.cpp:739
 #, kde-format
 msgid "Press \"%1\" or \"%2\" to RESUME"
 msgstr "притисните „%1“ или „%2“ за наставак"
 
 # >> @info:status
-#: src/kgoldrunner.cpp:756
+#: src/kgoldrunner.cpp:746
 #, kde-format
 msgid "Press \"%1\" to PAUSE"
 msgstr "притисните „%1“ за паузу"
 
 # >> @info:status
-#: src/kgoldrunner.cpp:758
+#: src/kgoldrunner.cpp:748
 #, kde-format
 msgid "Press \"%1\" or \"%2\" to PAUSE"
 msgstr "притисните „%1“ или „%2“ за паузу"
 
 # >> @info:status
-#: src/kgoldrunner.cpp:770
+#: src/kgoldrunner.cpp:760
 #, kde-format
 msgid "Has hint"
 msgstr "има савет"
 
 # >> @info:status
-#: src/kgoldrunner.cpp:770
+#: src/kgoldrunner.cpp:760
 #, kde-format
 msgid "No hint"
 msgstr "нема савет"
 
 # >> @title:window
-#: src/kgoldrunner.cpp:886
+#: src/kgoldrunner.cpp:877
 #, kde-format
 msgid "Get Folders"
 msgstr "Добављање фасцикли"
 
-#: src/kgoldrunner.cpp:887
+#: src/kgoldrunner.cpp:878
 #, kde-format
 msgid "Cannot find system games sub-folder '/system/' in areas '%1'."
 msgstr ""
 "Не могу да нађем системску потфасциклу са играма „/system/“ у областима „%1“."
 
-#: src/kgoldrunner.cpp:920
+#: src/kgoldrunner.cpp:911
 #, kde-format
 msgid "Edit Name/Hint"
 msgstr "Уреди име/савет"
 
-#: src/kgoldrunner.cpp:921
+#: src/kgoldrunner.cpp:912
 #, kde-format
 msgid "Edit level name or hint"
 msgstr "Измени име нивоа или савет"
 
-#: src/kgoldrunner.cpp:922
+#: src/kgoldrunner.cpp:913
 #, kde-format
 msgid "Edit text for the name or hint of a level"
 msgstr "Уредите име или текст савета нивоа."
 
-#: src/kgoldrunner.cpp:925
+#: src/kgoldrunner.cpp:916
 #, kde-format
 msgid "Name/Hint"
 msgstr "Име/савет"
 
-#: src/kgoldrunner.cpp:928
+#: src/kgoldrunner.cpp:919
 #, kde-format
 msgid "Erase"
 msgstr "Обриши"
 
-#: src/kgoldrunner.cpp:928
+#: src/kgoldrunner.cpp:919
 #, kde-format
 msgid "Space/Erase"
 msgstr "Размакни/обриши"
 
-#: src/kgoldrunner.cpp:929
+#: src/kgoldrunner.cpp:920
 #, kde-format
 msgid "Paint empty squares or erase"
 msgstr "Исцртај празна поља или обриши"
 
-#: src/kgoldrunner.cpp:930
+#: src/kgoldrunner.cpp:921
 #, kde-format
 msgid "Erase objects or paint empty squares"
 msgstr "Брише објекте или исцртава празна поља."
 
-#: src/kgoldrunner.cpp:933
+#: src/kgoldrunner.cpp:924
 #, kde-format
 msgid "Hero"
 msgstr "Јунак"
 
-#: src/kgoldrunner.cpp:934
+#: src/kgoldrunner.cpp:925
 #, kde-format
 msgid "Move hero"
 msgstr "Помери јунака"
 
-#: src/kgoldrunner.cpp:935
+#: src/kgoldrunner.cpp:926
 #, kde-format
 msgid "Change the hero's starting position"
 msgstr "Променити почетни положај јунака."
 
-#: src/kgoldrunner.cpp:938
+#: src/kgoldrunner.cpp:929
 #, kde-format
 msgid "Enemy"
 msgstr "Непријатељ"
 
-#: src/kgoldrunner.cpp:939
+#: src/kgoldrunner.cpp:930
 #, kde-format
 msgid "Paint enemies"
 msgstr "Исцртај непријатеља"
 
-#: src/kgoldrunner.cpp:940
+#: src/kgoldrunner.cpp:931
 #, kde-format
 msgid "Paint enemies at their starting positions"
 msgstr "Исцртава непријатеље на почетним положајима."
 
-#: src/kgoldrunner.cpp:944
+#: src/kgoldrunner.cpp:935
 #, kde-format
 msgid "Brick"
 msgstr "Цигла"
 
-#: src/kgoldrunner.cpp:945
+#: src/kgoldrunner.cpp:936
 #, kde-format
 msgid "Paint bricks (can dig)"
 msgstr "Исцртај циглу (може да се копа)"
 
-#: src/kgoldrunner.cpp:946
+#: src/kgoldrunner.cpp:937
 #, kde-format
 msgid "Paint bricks (diggable objects)"
 msgstr "Исцртава циглу, која може да се копа."
 
-#: src/kgoldrunner.cpp:949
+#: src/kgoldrunner.cpp:940
 #, kde-format
 msgid "Concrete"
 msgstr "Бетон"
 
-#: src/kgoldrunner.cpp:950
+#: src/kgoldrunner.cpp:941
 #, kde-format
 msgid "Paint concrete (cannot dig)"
 msgstr "Исцртај бетон (не може да се копа)"
 
-#: src/kgoldrunner.cpp:951
+#: src/kgoldrunner.cpp:942
 #, kde-format
 msgid "Paint concrete objects (not diggable)"
 msgstr "Исцртај бетонски објекат, који не може да се копа."
 
-#: src/kgoldrunner.cpp:954
+#: src/kgoldrunner.cpp:945
 #, kde-format
 msgid "Trap"
 msgstr "Замка"
 
-#: src/kgoldrunner.cpp:954
+#: src/kgoldrunner.cpp:945
 #, kde-format
 msgid "Trap/False Brick"
 msgstr "Замка/лажна цигла"
 
-#: src/kgoldrunner.cpp:955 src/kgoldrunner.cpp:957
+#: src/kgoldrunner.cpp:946 src/kgoldrunner.cpp:948
 #, kde-format
 msgid "Paint traps or false bricks (can fall through)"
 msgstr "Замке или лажне цигле (може да се пропадне)"
 
-#: src/kgoldrunner.cpp:961
+#: src/kgoldrunner.cpp:952
 #, kde-format
 msgid "Ladder"
 msgstr "Мердевине"
 
-#: src/kgoldrunner.cpp:962
+#: src/kgoldrunner.cpp:953
 #, kde-format
 msgid "Paint ladders"
 msgstr "Исцртај мердевине"
 
-#: src/kgoldrunner.cpp:963
+#: src/kgoldrunner.cpp:954
 #, kde-format
 msgid "Paint ladders (ways to go up or down)"
 msgstr "Мердевине служе за кретање нагоре и надоле."
 
-#: src/kgoldrunner.cpp:966
+#: src/kgoldrunner.cpp:957
 #, kde-format
 msgid "H Ladder"
 msgstr "С‑мердевине"
 
-#: src/kgoldrunner.cpp:966
+#: src/kgoldrunner.cpp:957
 #, kde-format
 msgid "Hidden Ladder"
 msgstr "Скривене мердевине"
 
-#: src/kgoldrunner.cpp:967
+#: src/kgoldrunner.cpp:958
 #, kde-format
 msgid "Paint hidden ladders"
 msgstr "Исцртај скривене мердевине"
 
-#: src/kgoldrunner.cpp:968
+#: src/kgoldrunner.cpp:959
 #, kde-format
 msgid "Paint hidden ladders, which appear when all the gold is gone"
 msgstr "Исцртава скривене мердевине, које се појављују кад нема више злата."
 
-#: src/kgoldrunner.cpp:972
+#: src/kgoldrunner.cpp:963
 #, kde-format
 msgid "Bar"
 msgstr "Греда"
 
-#: src/kgoldrunner.cpp:972
+#: src/kgoldrunner.cpp:963
 #, kde-format
 msgid "Bar/Pole"
 msgstr "Греда/шипка"
 
-#: src/kgoldrunner.cpp:973
+#: src/kgoldrunner.cpp:964
 #, kde-format
 msgid "Paint bars or poles"
 msgstr "Исцртај греде или шипке"
 
-#: src/kgoldrunner.cpp:974
+#: src/kgoldrunner.cpp:965
 #, kde-format
 msgid "Paint bars or poles (can fall from these)"
 msgstr "Исцртава греде или шипке (може да се падне)"
 
-#: src/kgoldrunner.cpp:978
+#: src/kgoldrunner.cpp:969
 #, kde-format
 msgid "Gold"
 msgstr "Злато"
 
-#: src/kgoldrunner.cpp:978
+#: src/kgoldrunner.cpp:969
 #, kde-format
 msgid "Gold/Treasure"
 msgstr "Злато/благо"
 
-#: src/kgoldrunner.cpp:979
+#: src/kgoldrunner.cpp:970
 #, kde-format
 msgid "Paint gold (or other treasure)"
 msgstr "Исцртај злато (или друго благо)"
 
-#: src/kgoldrunner.cpp:980
+#: src/kgoldrunner.cpp:971
 #, kde-format
 msgid "Paint gold pieces (or other treasure)"
 msgstr "Исцртава грумене злата или друго благо."
@@ -7525,49 +8477,52 @@ msgid "Edit Toolbar"
 msgstr "Трака уређивања"
 
 # >> @title:window
-#: src/kgrdialog.cpp:45
-#, kde-format
-msgid "Edit Name & Hint"
+#: src/kgrdialog.cpp:34
+#, fuzzy, kde-format
+#| msgid "Edit Name & Hint"
+msgctxt "@title:window"
+msgid "Edit Name or Hint"
 msgstr "Уређивање имена и савета"
 
-#: src/kgrdialog.cpp:67
+#: src/kgrdialog.cpp:56
 #, kde-format
 msgid "Name of level:"
 msgstr "Име нивоа:"
 
-#: src/kgrdialog.cpp:74
+#: src/kgrdialog.cpp:63
 #, kde-format
 msgid "Hint for level:"
 msgstr "Савет за ниво:"
 
 # >> @title:window
-#: src/kgrdialog.cpp:114 src/kgrdialog.cpp:183 src/kgrselector.cpp:93
-#: src/kgrselector.cpp:289
-#, kde-format
+#: src/kgrdialog.cpp:103 src/kgrdialog.cpp:172
+#, fuzzy, kde-format
+#| msgid "Edit Game Info"
+msgctxt "@title:window"
 msgid "Edit Game Info"
 msgstr "Уређивање података о игри"
 
-#: src/kgrdialog.cpp:134
+#: src/kgrdialog.cpp:123
 #, kde-format
 msgid "Name of game:"
 msgstr "Име игре:"
 
-#: src/kgrdialog.cpp:142
+#: src/kgrdialog.cpp:131
 #, kde-format
 msgid "File name prefix:"
 msgstr "Префикс имена фајла:"
 
-#: src/kgrdialog.cpp:150
+#: src/kgrdialog.cpp:139
 #, kde-format
 msgid "Traditional rules"
 msgstr "Традиционална правила"
 
-#: src/kgrdialog.cpp:151
+#: src/kgrdialog.cpp:140
 #, kde-format
 msgid "KGoldrunner rules"
 msgstr "Правила К‑златобојца"
 
-#: src/kgrdialog.cpp:160 src/kgrdialog.cpp:195
+#: src/kgrdialog.cpp:149 src/kgrdialog.cpp:184
 #, kde-format
 msgid "1 level"
 msgid_plural "%1 levels"
@@ -7576,51 +8531,55 @@ msgstr[1] "%1 нивоа"
 msgstr[2] "%1 нивоа"
 msgstr[3] "1 ниво"
 
-#: src/kgrdialog.cpp:163
+#: src/kgrdialog.cpp:152
 #, kde-format
 msgid "About this game:"
 msgstr "О овој игри:"
 
 # >> @title:window
-#: src/kgrdialog.cpp:180
-#, kde-format
+#: src/kgrdialog.cpp:169
+#, fuzzy, kde-format
+#| msgid "Create Game"
+msgctxt "@title:window"
 msgid "Create Game"
 msgstr "Стварање игре"
 
-#: src/kgrdialog.cpp:197
+#: src/kgrdialog.cpp:186
 #, kde-format
 msgid "Save Changes"
 msgstr "Сачувај измене"
 
-#: src/kgrdialog.cpp:202
+#: src/kgrdialog.cpp:191
 #, kde-format
 msgid "0 levels"
 msgstr "0 нивоа"
 
-#: src/kgrdialog.cpp:203 src/kgrselector.cpp:277
+#: src/kgrdialog.cpp:192 src/kgrselector.cpp:265
 #, kde-format
 msgid "Save New"
 msgstr "Сачувај нови"
 
 # >> @title:window
-#: src/kgrdialog.cpp:258
-#, kde-format
+#: src/kgrdialog.cpp:247
+#, fuzzy, kde-format
+#| msgid "Select Saved Game"
+msgctxt "@title:window"
 msgid "Select Saved Game"
 msgstr "Избор позиције"
 
-#: src/kgrdialog.cpp:277
+#: src/kgrdialog.cpp:266
 #, kde-format
 msgid "Game                       Level/Lives/Score   Day    Date     Time  "
 msgstr ""
 "игра                       ниво/животи/резултат   дан    датум    време  "
 
 # >> @title:window
-#: src/kgreditor.cpp:77
+#: src/kgreditor.cpp:66
 #, kde-format
 msgid "Create Level"
 msgstr "Стварање нивоа"
 
-#: src/kgreditor.cpp:78
+#: src/kgreditor.cpp:67
 #, kde-format
 msgid ""
 "You cannot create and save a level until you have created a game to hold it. "
@@ -7630,12 +8589,12 @@ msgstr ""
 "га садржати. Идите на ставку менија „Стварање игре“."
 
 # >> @title:window
-#: src/kgreditor.cpp:126 src/kgreditor.cpp:148 src/kgrselector.cpp:274
+#: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:262
 #, kde-format
 msgid "Edit Level"
 msgstr "Уређивање нивоа"
 
-#: src/kgreditor.cpp:127
+#: src/kgreditor.cpp:116
 #, kde-format
 msgid ""
 "You cannot edit and save a level until you have created a game and a level. "
@@ -7644,7 +8603,7 @@ msgstr ""
 "Не можете да уредите и сачувате ниво пре него што направите игру и ниво. "
 "Идите на ставку менија „Стварање игре“."
 
-#: src/kgreditor.cpp:149
+#: src/kgreditor.cpp:138
 #, kde-format
 msgid ""
 "It is OK to edit a system level, but you MUST save the level in one of your "
@@ -7656,58 +8615,58 @@ msgstr ""
 "пропадне цигле? :-)"
 
 # >> @title:window
-#: src/kgreditor.cpp:253 src/kgreditor.cpp:271 src/kgrgame.cpp:276
+#: src/kgreditor.cpp:242 src/kgreditor.cpp:260 src/kgrgame.cpp:260
 #, kde-format
 msgid "Save Level"
 msgstr "Уписивање нивоа"
 
-#: src/kgreditor.cpp:254
+#: src/kgreditor.cpp:243
 #, kde-format
 msgid "Do you want to insert a level and move existing levels up by one?"
 msgstr "Желите ли да уметнете ниво и померите постојеће нивое за један нагоре?"
 
-#: src/kgreditor.cpp:256
+#: src/kgreditor.cpp:245
 #, kde-format
 msgid "&Insert Level"
 msgstr "&Уметни ниво"
 
-#: src/kgreditor.cpp:256 src/kgreditor.cpp:455
+#: src/kgreditor.cpp:245 src/kgreditor.cpp:444
 #, kde-format
 msgid "&Cancel"
 msgstr "&Одустани"
 
-#: src/kgreditor.cpp:272 src/kgreditor.cpp:790 src/kgrgame.cpp:1499
-#: src/kgrgame.cpp:1707
+#: src/kgreditor.cpp:261 src/kgreditor.cpp:779 src/kgrgame.cpp:1483
+#: src/kgrgame.cpp:1691
 #, kde-format
 msgid "Cannot open file '%1' for output."
 msgstr "Не могу да отворим фајл „%1“ за излаз."
 
 # >> @title:window
-#: src/kgreditor.cpp:327 src/kgreditor.cpp:343 src/kgreditor.cpp:351
-#: src/kgreditor.cpp:366
+#: src/kgreditor.cpp:316 src/kgreditor.cpp:332 src/kgreditor.cpp:340
+#: src/kgreditor.cpp:355
 #, kde-format
 msgid "Move Level"
 msgstr "Померање нивоа"
 
-#: src/kgreditor.cpp:328
+#: src/kgreditor.cpp:317
 #, kde-format
 msgid "You must first load a level to be moved. Use the \"%1\" or \"%2\" menu."
 msgstr ""
 "Прво морате да учитате ниво који треба померити. Идите на мени „%1“ или „%2“."
 
 # >> @title:menu
-#: src/kgreditor.cpp:330
+#: src/kgreditor.cpp:319
 #, kde-format
 msgid "Game"
 msgstr "Игра"
 
 # >> @title:menu
-#: src/kgreditor.cpp:330 src/kgreditor.cpp:650
+#: src/kgreditor.cpp:319 src/kgreditor.cpp:639
 #, kde-format
 msgid "Editor"
 msgstr "Уређивач"
 
-#: src/kgreditor.cpp:344
+#: src/kgreditor.cpp:333
 #, kde-format
 msgid ""
 "You cannot move a level until you have created a game and at least two "
@@ -7716,24 +8675,24 @@ msgstr ""
 "Не можете да померите ниво пре него што направите игру са бар два нивоа. "
 "Идите на ставку менија „Стварање игре“."
 
-#: src/kgreditor.cpp:352
+#: src/kgreditor.cpp:341
 #, kde-format
 msgid "Sorry, you cannot move a system level."
 msgstr "Не можете померити системски ниво."
 
-#: src/kgreditor.cpp:367
+#: src/kgreditor.cpp:356
 #, kde-format
 msgid "You must change the level or the game or both."
 msgstr "Морате да промените ниво, игру, или оба."
 
 # >> @title:window
-#: src/kgreditor.cpp:429 src/kgreditor.cpp:452 src/kgreditor.cpp:470
-#: src/kgrselector.cpp:283
+#: src/kgreditor.cpp:418 src/kgreditor.cpp:441 src/kgreditor.cpp:459
+#: src/kgrselector.cpp:271
 #, kde-format
 msgid "Delete Level"
 msgstr "Брисање нивоа"
 
-#: src/kgreditor.cpp:430
+#: src/kgreditor.cpp:419
 #, kde-format
 msgid ""
 "You cannot delete a level until you have created a game and a level. Try "
@@ -7742,126 +8701,126 @@ msgstr ""
 "Не можете да обришете ниво пре него што направите игру и ниво. Идите на "
 "ставку менија „Стварање игре“."
 
-#: src/kgreditor.cpp:453
+#: src/kgreditor.cpp:442
 #, kde-format
 msgid "Do you want to delete a level and move higher levels down by one?"
 msgstr "Желите ли да обришете ниво и померите више нивое за један надоле?"
 
-#: src/kgreditor.cpp:455
+#: src/kgreditor.cpp:444
 #, kde-format
 msgid "&Delete Level"
 msgstr "&Обриши ниво"
 
-#: src/kgreditor.cpp:471
+#: src/kgreditor.cpp:460
 #, kde-format
 msgid "Cannot find file '%1' to be deleted."
 msgstr "Не могу да пронађем фајл „%1“ за брисање."
 
 # >> @title:window
-#: src/kgreditor.cpp:519 src/kgreditor.cpp:529 src/kgreditor.cpp:534
-#: src/kgreditor.cpp:548 src/kgreditor.cpp:566 src/kgreditor.cpp:778
-#: src/kgreditor.cpp:789
+#: src/kgreditor.cpp:508 src/kgreditor.cpp:518 src/kgreditor.cpp:523
+#: src/kgreditor.cpp:537 src/kgreditor.cpp:555 src/kgreditor.cpp:767
+#: src/kgreditor.cpp:778
 #, kde-format
 msgid "Save Game Info"
 msgstr "Уписивање података о игри"
 
-#: src/kgreditor.cpp:520
+#: src/kgreditor.cpp:509
 #, kde-format
 msgid "You must enter a name for the game."
 msgstr "Морате унети име за игру."
 
-#: src/kgreditor.cpp:530
+#: src/kgreditor.cpp:519
 #, kde-format
 msgid "You must enter a filename prefix for the game."
 msgstr "Морате унети префикс имена фајла за игру."
 
-#: src/kgreditor.cpp:535
+#: src/kgreditor.cpp:524
 #, kde-format
 msgid "The filename prefix should not be more than 5 characters."
 msgstr "Префикс имена фајла не треба да буде дужи од 5 знакова."
 
-#: src/kgreditor.cpp:549
+#: src/kgreditor.cpp:538
 #, kde-format
 msgid "The filename prefix should be all alphabetic characters."
 msgstr "Префикс имена фајла треба да се састоји само од алфабетских знакова."
 
-#: src/kgreditor.cpp:567
+#: src/kgreditor.cpp:556
 #, kde-format
 msgid "The filename prefix '%1' is already in use."
 msgstr "Префикс имена фајла „%1“ већ је у употреби."
 
-#: src/kgreditor.cpp:651
+#: src/kgreditor.cpp:640
 #, kde-format
 msgid "You have not saved your work. Do you want to save it now?"
 msgstr "Нисте сачували свој рад. Желите ли да га сачувате сада?"
 
-#: src/kgreditor.cpp:653
+#: src/kgreditor.cpp:642
 #, kde-format
 msgid "&Save"
 msgstr "&Сачувај"
 
-#: src/kgreditor.cpp:653
+#: src/kgreditor.cpp:642
 #, kde-format
 msgid "&Do Not Save"
 msgstr "&Не уписуј"
 
-#: src/kgreditor.cpp:654
+#: src/kgreditor.cpp:643
 #, kde-format
 msgid "&Go on editing"
 msgstr "&Настави са уређивањем"
 
-#: src/kgreditor.cpp:779
+#: src/kgreditor.cpp:768
 #, kde-format
 msgid "You can only modify user games."
 msgstr "Можете мењати само корисничке игре."
 
-#: src/kgreditor.cpp:840
+#: src/kgreditor.cpp:829
 #, kde-format
 msgid "New Level"
 msgstr "Нови ниво"
 
-#: src/kgreditor.cpp:850 src/kgrgame.cpp:1404
+#: src/kgreditor.cpp:839 src/kgrgame.cpp:1388
 #, kde-format
 msgctxt "Game name - level number."
 msgid "%1 - %2"
 msgstr "%1 — %2"
 
-#: src/kgreditor.cpp:854 src/kgrgame.cpp:1407
+#: src/kgreditor.cpp:843 src/kgrgame.cpp:1391
 #, kde-format
 msgctxt "Game name - level number - level name."
 msgid "%1 - %2 - %3"
 msgstr "%1 — %2 — %3"
 
-#: src/kgrgame.cpp:125
+#: src/kgrgame.cpp:109
 #, kde-format
 msgid "Click anywhere to begin live play"
 msgstr "Кликните било где да заиграте"
 
 # >> @title:window
-#: src/kgrgame.cpp:206
+#: src/kgrgame.cpp:190
 #, kde-format
 msgid "Play Next Level"
 msgstr "Прелазак на следећи ниво"
 
-#: src/kgrgame.cpp:207
+#: src/kgrgame.cpp:191
 #, kde-format
 msgid "There are no more levels in this game."
 msgstr "Нема више нивоа у овој игри."
 
 # switch-rule: t-action > t-action-ui
-#: src/kgrgame.cpp:277
+#: src/kgrgame.cpp:261
 #, kde-format
 msgid "Inappropriate action: you are not editing a level."
 msgstr "Непримерена радња; не уређујете ниво."
 
 # >> @title:window
-#: src/kgrgame.cpp:436
+#: src/kgrgame.cpp:420
 #, kde-format
 msgid "No Sound"
 msgstr "Нема звука"
 
 # rewrite-msgid: /copy/installation/
-#: src/kgrgame.cpp:437
+#: src/kgrgame.cpp:421
 #, kde-format
 msgid ""
 "Warning: This copy of KGoldrunner has no sound.\n"
@@ -7874,13 +8833,13 @@ msgstr ""
 "Ово је зато што при компилацији и градњи нису биле присутне развојне верзије "
 "библиотека опенАЛ и Либсндфајл."
 
-#: src/kgrgame.cpp:641 src/kgrgame.cpp:798
+#: src/kgrgame.cpp:625 src/kgrgame.cpp:782
 #, kde-format
 msgid "Game Paused"
 msgstr "Игра је паузирана"
 
 # rewrite-msgid: /while you prepare to go on playing//
-#: src/kgrgame.cpp:642
+#: src/kgrgame.cpp:626
 #, kde-format
 msgid ""
 "The replay has stopped and the game is pausing while you prepare to go on "
@@ -7890,12 +8849,12 @@ msgstr ""
 "(подразумевано P или Esc) кад сте спремни."
 
 # >> @title:window
-#: src/kgrgame.cpp:686 src/kgrgame.cpp:692
+#: src/kgrgame.cpp:670 src/kgrgame.cpp:676
 #, kde-format
 msgid "Replay Last Level"
 msgstr "Понављање последњег нивоа"
 
-#: src/kgrgame.cpp:687
+#: src/kgrgame.cpp:671
 #, kde-format
 msgid ""
 "ERROR: Could not find and replay a recording of the last level you played."
@@ -7903,7 +8862,7 @@ msgstr ""
 "ГРЕШКА: Не могу да нађем и пустим снимак последњег нивоа који сте играли."
 
 # switch-rule: t-action > t-action-ui
-#: src/kgrgame.cpp:693
+#: src/kgrgame.cpp:677
 #, kde-format
 msgid ""
 "There is no last level to replay.  You need to play a level to completion, "
@@ -7912,24 +8871,26 @@ msgstr ""
 "Нема последњег нивоа за пуштање. Мораћете да одиграте један ниво до краја, "
 "победивши или изгубивши, да бисте могли да употребите ову радњу."
 
-#: src/kgrgame.cpp:711
-#, kde-format
+#: src/kgrgame.cpp:695
+#, fuzzy, kde-format
+#| msgid "Quick Start"
+msgctxt "@title:window"
 msgid "Quick Start"
 msgstr "Брзи почетак"
 
 # ? Нешто боље?
-#: src/kgrgame.cpp:728
+#: src/kgrgame.cpp:712
 #, kde-format
 msgctxt "Button text: start playing a game"
 msgid "&PLAY"
 msgstr "&ЗАИГРАЈ"
 
-#: src/kgrgame.cpp:729
+#: src/kgrgame.cpp:713
 #, kde-format
 msgid "Start playing this level"
 msgstr "Започни играње овог нивоа"
 
-#: src/kgrgame.cpp:731
+#: src/kgrgame.cpp:715
 #, kde-format
 msgid ""
 "Set up to start playing the game and level being shown, as soon as you "
@@ -7938,22 +8899,22 @@ msgstr ""
 "Постављено да започне игру и ниво који су приказани, чим кликнете, померите "
 "миш или притиснете тастер."
 
-#: src/kgrgame.cpp:735
+#: src/kgrgame.cpp:719
 #, kde-format
 msgid "&Quit"
 msgstr "&Напусти"
 
-#: src/kgrgame.cpp:736
+#: src/kgrgame.cpp:720
 #, kde-format
 msgid "Close KGoldrunner"
 msgstr "Напушта К‑златобојац"
 
-#: src/kgrgame.cpp:740
+#: src/kgrgame.cpp:724
 #, kde-format
 msgid "Start a different game or level"
 msgstr "Започни другу игру или ниво"
 
-#: src/kgrgame.cpp:742
+#: src/kgrgame.cpp:726
 #, kde-format
 msgid ""
 "Use the Select Game dialog box to choose a different game or level and start "
@@ -7961,19 +8922,19 @@ msgid ""
 msgstr ""
 "Употребите дијалог избора игре за прелазак на играње друге игре или нивоа."
 
-#: src/kgrgame.cpp:746
+#: src/kgrgame.cpp:730
 #, kde-format
 msgid "&Use Menu"
 msgstr "&Мени"
 
 # switch-rule: t-action > t-action-ui
-#: src/kgrgame.cpp:748
+#: src/kgrgame.cpp:732
 #, kde-format
 msgid "Use the menus to choose other actions"
 msgstr "Менији за избор других радњи."
 
 # switch-rule: t-action > t-action-ui
-#: src/kgrgame.cpp:750
+#: src/kgrgame.cpp:734
 #, kde-format
 msgid ""
 "Before playing, use the menus to choose other actions, such as loading a "
@@ -7982,7 +8943,7 @@ msgstr ""
 "Пре него што заиграте, можете употребити меније за друге радње, попут "
 "учитавања позиције или промене теме."
 
-#: src/kgrgame.cpp:799
+#: src/kgrgame.cpp:783
 #, kde-format
 msgid ""
 "The game is halted. You will need to press the Pause key (default P or Esc) "
@@ -7992,12 +8953,13 @@ msgstr ""
 "сте спремни да заиграте."
 
 # >> @title:window
-#: src/kgrgame.cpp:852
-#, kde-format
-msgid "Show A Solution"
+#: src/kgrgame.cpp:836
+#, fuzzy, kde-format
+#| msgid "Show A Solution"
+msgid "Show a Solution"
 msgstr "Приказ решења"
 
-#: src/kgrgame.cpp:853
+#: src/kgrgame.cpp:837
 #, kde-format
 msgid ""
 "Sorry, although all levels of KGoldrunner can be solved, no solution has "
@@ -8007,18 +8969,18 @@ msgstr ""
 "решење још није забележено."
 
 # >> @title:window
-#: src/kgrgame.cpp:864
+#: src/kgrgame.cpp:848
 #, kde-format
 msgid "Replay Any Level"
 msgstr "Понављање било ког нивоа"
 
-#: src/kgrgame.cpp:865 src/kgrgame.cpp:2069
+#: src/kgrgame.cpp:849 src/kgrgame.cpp:2053
 #, kde-format
 msgid ""
 "Sorry, you do not seem to have played and recorded the selected level before."
 msgstr "Изгледа да до сада нисте играли и снимили изабрани ниво."
 
-#: src/kgrgame.cpp:1079
+#: src/kgrgame.cpp:1063
 #, kde-format
 msgid ""
 "<NOBR><B>GAME OVER !!!</B></NOBR><P>Would you like to try this level again?</"
@@ -8027,49 +8989,49 @@ msgstr ""
 "<nobr><b>КРАЈ ИГРЕ!</b></nobr><p>Желите ли да покушате поново овај ниво?</p>"
 
 # >> @title:window
-#: src/kgrgame.cpp:1081
+#: src/kgrgame.cpp:1065
 #, kde-format
 msgid "Game Over"
 msgstr "Крај игре"
 
-#: src/kgrgame.cpp:1082
+#: src/kgrgame.cpp:1066
 #, kde-format
 msgid "&Try Again"
 msgstr "&Покушај поново"
 
-#: src/kgrgame.cpp:1082
+#: src/kgrgame.cpp:1066
 #, kde-format
 msgid "&Finish"
 msgstr "&Заврши"
 
-#: src/kgrgame.cpp:1156
+#: src/kgrgame.cpp:1140
 #, kde-format
 msgid ""
 "<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the <b>"
 "\"%1\"</b> game !!</p>"
 msgstr "<b>ЧЕСТИТАМО!</b><p>Завршили сте последњи ниво у игри „<b>%1</b>“!</p>"
 
-#: src/kgrgame.cpp:1313
+#: src/kgrgame.cpp:1297
 #, kde-format
 msgid "Hint"
 msgstr "Савет"
 
-#: src/kgrgame.cpp:1319
+#: src/kgrgame.cpp:1303
 #, kde-format
 msgid "&OK"
 msgstr "&У реду"
 
-#: src/kgrgame.cpp:1332
+#: src/kgrgame.cpp:1316
 #, kde-format
 msgid "Sorry, there is no hint for this level."
 msgstr "Нема савета за овај ниво."
 
-#: src/kgrgame.cpp:1394
+#: src/kgrgame.cpp:1378
 #, kde-format
 msgid "T H E   E N D"
 msgstr "К Р А Ј"
 
-#: src/kgrgame.cpp:1431
+#: src/kgrgame.cpp:1415
 #, kde-format
 msgid ""
 "You have pressed a key that can be used to control the Hero. Do you want to "
@@ -8080,34 +9042,34 @@ msgstr ""
 "аутоматски пребаците на управљање тастатуром? Управљање показивачем је лакше "
 "на дуге стазе — као вожња бицикла уместо ходања!"
 
-#: src/kgrgame.cpp:1435
+#: src/kgrgame.cpp:1419
 #, kde-format
 msgid "Switch to Keyboard Mode"
 msgstr "Пребаци на режим тастатуре"
 
-#: src/kgrgame.cpp:1436
+#: src/kgrgame.cpp:1420
 #, kde-format
 msgid "Switch to &Keyboard Mode"
 msgstr "Пребаци на режим &тастатуре"
 
-#: src/kgrgame.cpp:1437
+#: src/kgrgame.cpp:1421
 #, kde-format
 msgid "Stay in &Mouse Mode"
 msgstr "Остани у режиму &миша"
 
-#: src/kgrgame.cpp:1438
+#: src/kgrgame.cpp:1422
 #, kde-format
 msgid "Keyboard Mode"
 msgstr "Режим тастатуре"
 
 # >> @title:window
-#: src/kgrgame.cpp:1472 src/kgrgame.cpp:1498 src/kgrgame.cpp:1508
-#: src/kgrgame.cpp:1527 src/kgrgame.cpp:1533
+#: src/kgrgame.cpp:1456 src/kgrgame.cpp:1482 src/kgrgame.cpp:1492
+#: src/kgrgame.cpp:1511 src/kgrgame.cpp:1517
 #, kde-format
 msgid "Save Game"
 msgstr "Уписивање позиције"
 
-#: src/kgrgame.cpp:1473
+#: src/kgrgame.cpp:1457
 #, kde-format
 msgid ""
 "Sorry, you cannot save your game play while you are editing. Please try menu "
@@ -8115,13 +9077,13 @@ msgid ""
 msgstr ""
 "Не можете сачувати позицију док уређујете. Пробајте ставку менија „%1“."
 
-#: src/kgrgame.cpp:1509 src/kgrgame.cpp:1553 src/kgrgame.cpp:1668
-#: src/kgrgame.cpp:1871 src/kgrgame.cpp:2035 src/kgrgameio.cpp:181
+#: src/kgrgame.cpp:1493 src/kgrgame.cpp:1537 src/kgrgame.cpp:1652
+#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2019 src/kgrgameio.cpp:170
 #, kde-format
 msgid "Cannot open file '%1' for read-only."
 msgstr "Не могу да отворим фајл „%1“ само за читање."
 
-#: src/kgrgame.cpp:1528
+#: src/kgrgame.cpp:1512
 #, kde-format
 msgid ""
 "Please note: for reasons of simplicity, your saved game position and score "
@@ -8130,40 +9092,40 @@ msgstr ""
 "Обратите пажњу: ради једноставности, ваш положај и резултат из игре у "
 "сачуваној позицији биће као на почетку овог нивоа, а не какви су сада."
 
-#: src/kgrgame.cpp:1534
+#: src/kgrgame.cpp:1518
 #, kde-format
 msgid "Error: Failed to save your game."
 msgstr "Грешка: Не могу да сачувам позицију."
 
 # >> @title:window
-#: src/kgrgame.cpp:1546 src/kgrgame.cpp:1552 src/kgrgame.cpp:1590
+#: src/kgrgame.cpp:1530 src/kgrgame.cpp:1536 src/kgrgame.cpp:1574
 #, kde-format
 msgid "Load Game"
 msgstr "Учитавање позиције"
 
-#: src/kgrgame.cpp:1547
+#: src/kgrgame.cpp:1531
 #, kde-format
 msgid "Sorry, there are no saved games."
 msgstr "Нема сачуваних позиција."
 
-#: src/kgrgame.cpp:1591
+#: src/kgrgame.cpp:1575
 #, kde-format
 msgid "Cannot find the game with prefix '%1'."
 msgstr "Не могу да нађем игру са префиксом „%1“."
 
 # >> @item unknown user
-#: src/kgrgame.cpp:1649
+#: src/kgrgame.cpp:1633
 #, kde-format
 msgid "Unknown"
 msgstr "непознат"
 
 # >> @title:window
-#: src/kgrgame.cpp:1667 src/kgrgame.cpp:1706
+#: src/kgrgame.cpp:1651 src/kgrgame.cpp:1690
 #, kde-format
 msgid "Check for High Score"
 msgstr "Провера најрезултата"
 
-#: src/kgrgame.cpp:1724
+#: src/kgrgame.cpp:1708
 #, kde-format
 msgid ""
 "<html><b>Congratulations !!!</b><br/>You have achieved a high score in this "
@@ -8175,33 +9137,41 @@ msgstr ""
 "славних.</html>"
 
 # >> @title:window
-#: src/kgrgame.cpp:1738 src/kgrgame.cpp:1825
+#: src/kgrgame.cpp:1722
+#, fuzzy, kde-format
+#| msgid "Save High Score"
+msgctxt "@title:window"
+msgid "Save High Score"
+msgstr "Уписивање најрезултата"
+
+# >> @title:window
+#: src/kgrgame.cpp:1809
 #, kde-format
 msgid "Save High Score"
 msgstr "Уписивање најрезултата"
 
-#: src/kgrgame.cpp:1826
+#: src/kgrgame.cpp:1810
 #, kde-format
 msgid "Error: Failed to save your high score."
 msgstr "Грешка: Не могу да сачувам најрезултате."
 
 # >> @title:window
-#: src/kgrgame.cpp:1838 src/kgrgame.cpp:1861 src/kgrgame.cpp:1870
+#: src/kgrgame.cpp:1822 src/kgrgame.cpp:1845 src/kgrgame.cpp:1854
 #, kde-format
 msgid "Show High Scores"
 msgstr "Приказ најрезултата"
 
-#: src/kgrgame.cpp:1839
+#: src/kgrgame.cpp:1823
 #, kde-format
 msgid "Sorry, we do not keep high scores for tutorial games."
 msgstr "Најрезултати се не прате за игре туторијала."
 
-#: src/kgrgame.cpp:1862
+#: src/kgrgame.cpp:1846
 #, kde-format
 msgid "Sorry, there are no high scores for the \"%1\" game yet."
 msgstr "Још нема најрезултата за игру „%1“."
 
-#: src/kgrgame.cpp:1886
+#: src/kgrgame.cpp:1870
 #, kde-format
 msgid ""
 "<center><h2>KGoldrunner Hall of Fame</h2></center><center><h3>\"%1\" Game</"
@@ -8211,269 +9181,282 @@ msgstr ""
 "„%1“</h3></center>"
 
 # >> @title:column
-#: src/kgrgame.cpp:1896
+#: src/kgrgame.cpp:1880
 #, kde-format
 msgctxt "1, 2, 3 etc."
 msgid "Rank"
 msgstr "место"
 
 # >> @title:column
-#: src/kgrgame.cpp:1897
+#: src/kgrgame.cpp:1881
 #, kde-format
 msgctxt "Person"
 msgid "Name"
 msgstr "име"
 
 # >> @title:column
-#: src/kgrgame.cpp:1898
+#: src/kgrgame.cpp:1882
 #, kde-format
 msgctxt "Game level reached"
 msgid "Level"
 msgstr "ниво"
 
 # >> @title:column
-#: src/kgrgame.cpp:1899
+#: src/kgrgame.cpp:1883
 #, kde-format
 msgid "Score"
 msgstr "резултат"
 
 # >> @title:column
-#: src/kgrgame.cpp:1900
+#: src/kgrgame.cpp:1884
 #, kde-format
 msgid "Date"
 msgstr "датум"
 
 # >> @title:window
-#: src/kgrgame.cpp:1903
-#, kde-format
+#: src/kgrgame.cpp:1887
+#, fuzzy, kde-format
+#| msgid "High Scores"
+msgctxt "@title:window"
 msgid "High Scores"
 msgstr "Најрезултати"
 
 # >> @title:window
-#: src/kgrgame.cpp:2028 src/kgrgame.cpp:2034 src/kgrgame.cpp:2038
+#: src/kgrgame.cpp:2012 src/kgrgame.cpp:2018 src/kgrgame.cpp:2022
 #, kde-format
 msgid "Load Game Info"
 msgstr "Учитавање података о игри"
 
-#: src/kgrgame.cpp:2029
+#: src/kgrgame.cpp:2013
 #, kde-format
 msgid "Cannot find game info file '%1'."
 msgstr "Не могу да нађем фајл „%1“ са подацима о игри."
 
-#: src/kgrgame.cpp:2039
+#: src/kgrgame.cpp:2023
 #, kde-format
 msgid "Reached end of file '%1' before finding end of game-data."
 msgstr "Досегнут крај фајла ‘%1’ пре него што је нађен крај података о игри."
 
 # >> @title:window
-#: src/kgrgame.cpp:2063 src/kgrgame.cpp:2068 src/kgrselector.cpp:271
+#: src/kgrgame.cpp:2047 src/kgrgame.cpp:2052 src/kgrselector.cpp:259
 #, kde-format
 msgid "Save A Solution"
 msgstr "Уписивање решења"
 
-#: src/kgrgame.cpp:2064
+#: src/kgrgame.cpp:2048
 #, kde-format
 msgid "Your solution to level %1 has been saved on file %2"
 msgstr "Ваше решење нивоа %1 сачувано је у фајл %2."
 
 # >> @title:window
-#: src/kgrgameio.cpp:175 src/kgrgameio.cpp:180 src/kgrgameio.cpp:184
+#: src/kgrgameio.cpp:164 src/kgrgameio.cpp:169 src/kgrgameio.cpp:173
 #, kde-format
 msgid "Read Level Data"
 msgstr "Учитавање података нивоа"
 
-#: src/kgrgameio.cpp:176
+#: src/kgrgameio.cpp:165
 #, kde-format
 msgid "Cannot find file '%1'."
 msgstr "Не могу да нађем фајл „%1“."
 
-#: src/kgrgameio.cpp:185
+#: src/kgrgameio.cpp:174
 #, kde-format
 msgid "Reached end of file '%1' without finding level data."
 msgstr "Досегнут крај фајла ‘%1’ а да нису нађени подаци о нивоу."
 
 # >> @title:window
-#: src/kgrgameio.cpp:393 src/kgrgameio.cpp:400
+#: src/kgrgameio.cpp:382 src/kgrgameio.cpp:389
 #, kde-format
 msgid "Rename File"
 msgstr "Преименовање фајла"
 
-#: src/kgrgameio.cpp:394
+#: src/kgrgameio.cpp:383
 #, kde-format
 msgid "Cannot delete previous version of file '%1'."
 msgstr "Не могу да обришем претходну верзију фајла „%1“."
 
-#: src/kgrgameio.cpp:401
+#: src/kgrgameio.cpp:390
 #, kde-format
 msgid "Cannot rename file '%1' to '%2'."
 msgstr "Не могу да преименујем фајл „%1“ у „%2“."
 
-#: src/kgrrenderer.cpp:111
+#: src/kgrrenderer.cpp:100
 #, kde-format
 msgid "Theme Selector"
 msgstr "Бирач тема"
 
 # >> @info:status
-#: src/kgrscene.cpp:288
+#: src/kgrscene.cpp:277
 #, kde-format
 msgid "Lives: %1"
 msgstr "живота: %1"
 
 # >> @info:status
-#: src/kgrscene.cpp:295
+#: src/kgrscene.cpp:284
 #, kde-format
 msgid "Score: %1"
 msgstr "резултат: %1"
 
 # >> @title:window
-#: src/kgrselector.cpp:81 src/kgrselector.cpp:87 src/kgrselector.cpp:107
-#: src/kgrselector.cpp:514
+#: src/kgrselector.cpp:69 src/kgrselector.cpp:75 src/kgrselector.cpp:95
+#: src/kgrselector.cpp:498
 #, kde-format
 msgid "Select Level"
 msgstr "Избор нивоа"
 
-#: src/kgrselector.cpp:82
+#: src/kgrselector.cpp:70
 #, kde-format
 msgid "Sorry, you can only save or move into one of your own games."
 msgstr "Сачувати или померити можете само у једну од сопствених игара."
 
-#: src/kgrselector.cpp:88
+#: src/kgrselector.cpp:76
 #, kde-format
 msgid "Sorry, you can only delete a level from one of your own games."
 msgstr "Обрисати ниво можете само из једне од сопствених игара."
 
-#: src/kgrselector.cpp:94
+# >> @title:window
+#: src/kgrselector.cpp:81 src/kgrselector.cpp:277
+#, kde-format
+msgid "Edit Game Info"
+msgstr "Уређивање података о игри"
+
+#: src/kgrselector.cpp:82
 #, kde-format
 msgid "Sorry, you can only edit the game information on your own games."
 msgstr "Уређивати податке о игри можете само за сопствене игре."
 
-#: src/kgrselector.cpp:108
+#: src/kgrselector.cpp:96
 #, kde-format
 msgid "There is no level %1 in \"%2\", so you cannot play or edit it."
 msgstr "Нема нивоа %1 у „%2“, па га не можете ни играти ни уређивати."
 
 # >> @title:window
-#: src/kgrselector.cpp:130 src/kgrselector.cpp:185
-#, kde-format
+#: src/kgrselector.cpp:118 src/kgrselector.cpp:173
+#, fuzzy, kde-format
+#| msgid "Select Game"
+msgctxt "@title:window"
 msgid "Select Game"
 msgstr "Избор игре"
 
-#: src/kgrselector.cpp:144
+#: src/kgrselector.cpp:132
 #, kde-format
 msgid "<html><b>Please select a game:</b></html>"
 msgstr "<html><b>Изаберите игру:</b></html>"
 
 # >> @title:column
-#: src/kgrselector.cpp:152
+#: src/kgrselector.cpp:140
 #, kde-format
 msgid "Name of Game"
 msgstr "име игре"
 
 # >> @title:column
-#: src/kgrselector.cpp:153
+#: src/kgrselector.cpp:141
 #, kde-format
 msgid "Rules"
 msgstr "правила"
 
 # >> @title:column
-#: src/kgrselector.cpp:154
+#: src/kgrselector.cpp:142
 #, kde-format
 msgid "Levels"
 msgstr "нивоа"
 
 # >> @title:column
-#: src/kgrselector.cpp:155
+#: src/kgrselector.cpp:143
 #, kde-format
 msgid "Skill"
 msgstr "вештина"
 
-#: src/kgrselector.cpp:187
+#: src/kgrselector.cpp:175
 #, kde-format
 msgid "Level 1 of the selected game is:"
 msgstr "Ниво 1 одабране игре:"
 
 # >> @title:window
-#: src/kgrselector.cpp:191
-#, kde-format
+#: src/kgrselector.cpp:179
+#, fuzzy, kde-format
+#| msgid "Select Game/Level"
+msgctxt "@title:window"
 msgid "Select Game/Level"
 msgstr "Избор игре/нивоа"
 
-#: src/kgrselector.cpp:193
+#: src/kgrselector.cpp:181
 #, kde-format
 msgid "Please select a level:"
 msgstr "Изаберите ниво:"
 
-#: src/kgrselector.cpp:212
+#: src/kgrselector.cpp:200
 #, kde-format
 msgid "Level number:"
 msgstr "Број нивоа:"
 
-#: src/kgrselector.cpp:218
-#, kde-format
-msgid "Edit Level Name && Hint"
+#: src/kgrselector.cpp:206
+#, fuzzy, kde-format
+#| msgid "Edit Level Name && Hint"
+msgid "Edit Level Name o&r Hint"
 msgstr "Уреди име и савет нивоа"
 
-#: src/kgrselector.cpp:253
+#: src/kgrselector.cpp:241
 #, kde-format
 msgid "Start Game"
 msgstr "Покрени игру"
 
-#: src/kgrselector.cpp:262
+#: src/kgrselector.cpp:250
 #, kde-format
 msgid "Play Level"
 msgstr "Играј ниво"
 
-#: src/kgrselector.cpp:265
+#: src/kgrselector.cpp:253
 #, kde-format
 msgid "Replay Level"
 msgstr "Понови ниво"
 
-#: src/kgrselector.cpp:268
+#: src/kgrselector.cpp:256
 #, kde-format
 msgid "Show Solution"
 msgstr "Прикажи решење"
 
-#: src/kgrselector.cpp:280
+#: src/kgrselector.cpp:268
 #, kde-format
 msgid "Save Change"
 msgstr "Сачувај измене"
 
-#: src/kgrselector.cpp:286
+#: src/kgrselector.cpp:274
 #, kde-format
 msgid "Move To..."
 msgstr "Премести на..."
 
-#: src/kgrselector.cpp:371
+#: src/kgrselector.cpp:355
 #, kde-format
 msgctxt "Rules"
 msgid "KGoldrunner"
 msgstr "К‑златобојчеве"
 
-#: src/kgrselector.cpp:372
+#: src/kgrselector.cpp:356
 #, kde-format
 msgctxt "Rules"
 msgid "Traditional"
 msgstr "традиционална"
 
-#: src/kgrselector.cpp:375
+#: src/kgrselector.cpp:359
 #, kde-format
 msgctxt "Skill Level"
 msgid "Tutorial"
 msgstr "туторијал"
 
-#: src/kgrselector.cpp:377
+#: src/kgrselector.cpp:361
 #, kde-format
 msgctxt "Skill Level"
 msgid "Normal"
 msgstr "нормално"
 
-#: src/kgrselector.cpp:378
+#: src/kgrselector.cpp:362
 #, kde-format
 msgctxt "Skill Level"
 msgid "Championship"
 msgstr "шампионски"
 
-#: src/kgrselector.cpp:481
+#: src/kgrselector.cpp:465
 #, kde-format
 msgid "1 level, uses KGoldrunner rules."
 msgid_plural "%1 levels, uses KGoldrunner rules."
@@ -8482,7 +9465,7 @@ msgstr[1] "%1 нивоа, правила К‑златобојца"
 msgstr[2] "%1 нивоа, правила К‑златобојца"
 msgstr[3] "1 ниво, правила К‑златобојца"
 
-#: src/kgrselector.cpp:484
+#: src/kgrselector.cpp:468
 #, kde-format
 msgid "1 level, uses Traditional rules."
 msgid_plural "%1 levels, uses Traditional rules."
@@ -8491,18 +9474,18 @@ msgstr[1] "%1 нивоа, традиционална правила."
 msgstr[2] "%1 нивоа, традиционална правила."
 msgstr[3] "1 ниво, традиционална правила."
 
-#: src/kgrselector.cpp:489
+#: src/kgrselector.cpp:473
 #, kde-format
 msgid "Sorry, there is no further information about this game."
 msgstr "Нема додатних података о овој игри."
 
-#: src/kgrselector.cpp:515
+#: src/kgrselector.cpp:499
 #, kde-format
 msgid "This level number is not valid. It can not be used."
 msgstr "Овај број нивоа није добар, не може да се узме."
 
 # switch-rule: t-action > t-action-ui
-#: src/kgrselector.cpp:536
+#: src/kgrselector.cpp:520
 #, kde-format
 msgid ""
 "The main button at the bottom echoes the menu action you selected. Click it "
@@ -8511,7 +9494,7 @@ msgstr ""
 "Главно дугме у дну одражава радњу из менија коју сте изабрали. Кликните на "
 "њега након бирања игре и нивоа, или на „Одустани“."
 
-#: src/kgrselector.cpp:541
+#: src/kgrselector.cpp:525
 #, kde-format
 msgid ""
 "\n"
@@ -8532,7 +9515,7 @@ msgstr ""
 "001, кликните на главно дугме у дну. Игра почиње када померите миш или "
 "притиснете тастер."
 
-#: src/kgrselector.cpp:550
+#: src/kgrselector.cpp:534
 #, kde-format
 msgid ""
 "\n"
@@ -8551,7 +9534,7 @@ msgstr ""
 "десно дугме миша за брисање. Држањем дугмета и превлачењем миша цртате или "
 "бришете више поља одједном."
 
-#: src/kgrselector.cpp:558
+#: src/kgrselector.cpp:542
 #, kde-format
 msgid ""
 "\n"
@@ -8568,7 +9551,7 @@ msgstr ""
 "на крај игре, али такође можете изабрати и број нивоа и сачувати га негде "
 "унутар игре."
 
-#: src/kgrselector.cpp:565
+#: src/kgrselector.cpp:549
 #, kde-format
 msgid ""
 "\n"
@@ -8585,7 +9568,7 @@ msgstr ""
 "морате сачувати у неку од сопствених игара. Ако сачувате ниво унутар серије, "
 "остали нивои се аутоматски поново нумеришу."
 
-#: src/kgrselector.cpp:572
+#: src/kgrselector.cpp:556
 #, kde-format
 msgid ""
 "\n"
@@ -8598,7 +9581,7 @@ msgstr ""
 "Нивое можете брисати само из неке од сопствених игара. Ако обришете ниво из "
 "средине серије, остали нивои ће бити аутоматски поново нумерисани."
 
-#: src/kgrselector.cpp:577
+#: src/kgrselector.cpp:561
 #, kde-format
 msgid ""
 "\n"
@@ -8615,7 +9598,7 @@ msgstr ""
 "број, или чак различиту игру. Остали нивои биће аутоматски поново нумерисани "
 "по потреби. Нивое можете премештати само унутар сопствених игара."
 
-#: src/kgrselector.cpp:584
+#: src/kgrselector.cpp:568
 #, kde-format
 msgid ""
 "\n"
@@ -8628,7 +9611,7 @@ msgstr ""
 "За уређивање података о игри, треба само да изаберете игру, а онда можете да "
 "одете у дијалог где уређујете њене детаље."
 
-#: src/kgrselector.cpp:591
+#: src/kgrselector.cpp:575
 #, kde-format
 msgid ""
 "\n"
@@ -8654,92 +9637,93 @@ msgstr ""
 
 # rewrite-msgid: /Help://
 # >> @title:window
-#: src/kgrselector.cpp:602
+#: src/kgrselector.cpp:586
 #, kde-format
 msgid "Help: Select Game & Level"
 msgstr "Избор игре и нивоа"
 
-#: src/main.cpp:33
-#, kde-format
-msgid "KGoldrunner is a game of action and puzzle solving"
+#: src/main.cpp:31
+#, fuzzy, kde-format
+#| msgid "KGoldrunner is a game of action and puzzle solving"
+msgid "A game of action and puzzle solving"
 msgstr "К‑златобојац је игра акције и решавања загонетки"
 
-#: src/main.cpp:48
+#: src/main.cpp:33
 #, kde-format
 msgid "(C) 2003 Ian Wadham and Marco Krüger"
 msgstr "© 2003, Ијан Вадам и Марко Кригер"
 
-#: src/main.cpp:81
+#: src/main.cpp:66
 #, kde-format
 msgid "Ian Wadham"
 msgstr "Ијан Вадам"
 
-#: src/main.cpp:81
+#: src/main.cpp:66
 #, kde-format
 msgid "Current author"
 msgstr "Тренутни аутор"
 
-#: src/main.cpp:83
+#: src/main.cpp:68
 #, kde-format
 msgid "Marco Krüger"
 msgstr "Марко Кригер"
 
-#: src/main.cpp:83
+#: src/main.cpp:68
 #, kde-format
 msgid "Original author"
 msgstr "Првобитни аутор"
 
-#: src/main.cpp:85 src/main.cpp:91
+#: src/main.cpp:70 src/main.cpp:76
 #, kde-format
 msgid "Mauricio Piacentini"
 msgstr "Мауричо Пјаћентини"
 
-#: src/main.cpp:86
+#: src/main.cpp:71
 #, kde-format
 msgid "Port to KDE4, Qt4 and KGameCanvas classes"
 msgstr "Преношење на КДЕ‑4, КуТ‑4 и класе KGameCanvas"
 
-#: src/main.cpp:88
+#: src/main.cpp:73
 #, kde-format
 msgid "Maurizio Monge"
 msgstr "Маурицио Монђе"
 
-#: src/main.cpp:89
+#: src/main.cpp:74
 #, kde-format
 msgid "KGameCanvas classes for KDE4"
 msgstr "Класе KGameCanvas за КДЕ‑4"
 
-#: src/main.cpp:92
+#: src/main.cpp:77
 #, kde-format
 msgid "Artwork for runners and default theme"
 msgstr "Графика тркача и подразумевана тема"
 
-#: src/main.cpp:94
+#: src/main.cpp:79
 #, kde-format
 msgid "Johann Ollivier Lapeyre"
 msgstr "Јохан Оливје Лапер"
 
-#: src/main.cpp:95
+#: src/main.cpp:80
 #, kde-format
 msgid "Artwork for bars and ladders"
 msgstr "Греде и мердевине"
 
-#: src/main.cpp:97 src/main.cpp:105
+#: src/main.cpp:82 src/main.cpp:90
 #, kde-format
 msgid "Eugene Trounev"
 msgstr "Јевгениј Труњов"
 
-#: src/main.cpp:98
+#: src/main.cpp:83
 #, kde-format
 msgid "Artwork for background of Geek City theme"
 msgstr "Графика позадина и тема „Град штребера“"
 
-#: src/main.cpp:100
+#: src/main.cpp:85
 #, kde-format
 msgid "Luciano Montanaro"
 msgstr "Лучано Монтанаро"
 
-#: src/main.cpp:101
+#: src/main.cpp:86
 #, kde-format
 msgid ""
 "Nostalgia themes, improvements to runners, multiple-backgrounds feature, "
@@ -8748,7 +9732,7 @@ msgstr ""
 "Теме „Носталгија“, побољшања за тркаче, могућност вишеструких позадина и "
 "израњања/утапања, и још неколико идеја."
 
-#: src/main.cpp:106
+#: src/main.cpp:91
 #, kde-format
 msgid "Artwork for the Treasure of Egypt theme"
 msgstr "Графика за тему „Благо Египта“"

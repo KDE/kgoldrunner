@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-20 00:44+0000\n"
+"POT-Creation-Date: 2023-09-25 01:39+0000\n"
 "PO-Revision-Date: 2020-07-29 13:47+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -3759,7 +3759,7 @@ msgstr "Ei vihjettä!"
 
 # pmap: =/gen=KGoldrunnerin/
 # pmap: =/elat=KGoldrunnerista/
-#: gamedata/game_kgr.txt:3 src/main.cpp:33
+#: gamedata/game_kgr.txt:3 src/main.cpp:29
 #, kde-format
 msgid "KGoldrunner"
 msgstr "KGoldrunner"
@@ -6678,7 +6678,7 @@ msgstr ""
 "Kyllä, sinun on juostavan vihollisten päiden yli – kaiken aikaa! Se vaatii "
 "vain vakaata kättä."
 
-#: src/kgoldrunner.cpp:184 src/kgrgame.cpp:724
+#: src/kgoldrunner.cpp:184 src/kgrgame.cpp:723
 #, kde-format
 msgid "&New Game..."
 msgstr "&Uusi peli…"
@@ -6722,7 +6722,7 @@ msgstr ""
 "Tallenna tason ratkaisusi tiedostoon ”sol_&lt;etuliite&gt;.txt” käyttäjän "
 "datakansiossasi…"
 
-#: src/kgoldrunner.cpp:246 src/kgrgame.cpp:1304
+#: src/kgoldrunner.cpp:246 src/kgrgame.cpp:1303
 #, fuzzy, kde-format
 #| msgid "&Show A Solution"
 msgid "&Show a Solution"
@@ -6845,7 +6845,7 @@ msgstr "Muokkaa tasoa…"
 msgid "Edit"
 msgstr "Muokkaa"
 
-#: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1472
+#: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1459
 #, kde-format
 msgid "&Save Edits..."
 msgstr "Tal&lenna muutokset…"
@@ -7456,92 +7456,92 @@ msgstr "&Muokkain"
 msgid "Edit Toolbar"
 msgstr "Muokkaa työkaluriviä"
 
-#: src/kgrdialog.cpp:35
+#: src/kgrdialog.cpp:34
 #, fuzzy, kde-format
 #| msgid "Edit Name & Hint"
 msgctxt "@title:window"
 msgid "Edit Name or Hint"
 msgstr "Muokkaa peliä & vihjettä"
 
-#: src/kgrdialog.cpp:57
+#: src/kgrdialog.cpp:56
 #, kde-format
 msgid "Name of level:"
 msgstr "Tason nimi:"
 
-#: src/kgrdialog.cpp:64
+#: src/kgrdialog.cpp:63
 #, kde-format
 msgid "Hint for level:"
 msgstr "Tason vihje:"
 
-#: src/kgrdialog.cpp:104 src/kgrdialog.cpp:173
+#: src/kgrdialog.cpp:103 src/kgrdialog.cpp:172
 #, fuzzy, kde-format
 #| msgid "Edit Game Info"
 msgctxt "@title:window"
 msgid "Edit Game Info"
 msgstr "Muuta pelin tietoja"
 
-#: src/kgrdialog.cpp:124
+#: src/kgrdialog.cpp:123
 #, kde-format
 msgid "Name of game:"
 msgstr "Pelin nimi:"
 
-#: src/kgrdialog.cpp:132
+#: src/kgrdialog.cpp:131
 #, kde-format
 msgid "File name prefix:"
 msgstr "Tiedostonimen etuliite:"
 
-#: src/kgrdialog.cpp:140
+#: src/kgrdialog.cpp:139
 #, kde-format
 msgid "Traditional rules"
 msgstr "Perinteiset säännöt"
 
-#: src/kgrdialog.cpp:141
+#: src/kgrdialog.cpp:140
 #, kde-format
 msgid "KGoldrunner rules"
 msgstr "KGoldrunnerin säännöt"
 
-#: src/kgrdialog.cpp:150 src/kgrdialog.cpp:185
+#: src/kgrdialog.cpp:149 src/kgrdialog.cpp:184
 #, kde-format
 msgid "1 level"
 msgid_plural "%1 levels"
 msgstr[0] "1 taso"
 msgstr[1] "%1 tasoa"
 
-#: src/kgrdialog.cpp:153
+#: src/kgrdialog.cpp:152
 #, kde-format
 msgid "About this game:"
 msgstr "Tietoa pelistä:"
 
-#: src/kgrdialog.cpp:170
+#: src/kgrdialog.cpp:169
 #, fuzzy, kde-format
 #| msgid "Create Game"
 msgctxt "@title:window"
 msgid "Create Game"
 msgstr "Luo peli"
 
-#: src/kgrdialog.cpp:187
+#: src/kgrdialog.cpp:186
 #, kde-format
 msgid "Save Changes"
 msgstr "Tallenna muutokset"
 
-#: src/kgrdialog.cpp:192
+#: src/kgrdialog.cpp:191
 #, kde-format
 msgid "0 levels"
 msgstr "0 tasoa"
 
-#: src/kgrdialog.cpp:193 src/kgrselector.cpp:265
+#: src/kgrdialog.cpp:192 src/kgrselector.cpp:265
 #, kde-format
 msgid "Save New"
 msgstr "Tallenna nyt"
 
-#: src/kgrdialog.cpp:248
+#: src/kgrdialog.cpp:247
 #, fuzzy, kde-format
 #| msgid "Select Saved Game"
 msgctxt "@title:window"
 msgid "Select Saved Game"
 msgstr "Valitse tallennettu peli"
 
-#: src/kgrdialog.cpp:267
+#: src/kgrdialog.cpp:266
 #, kde-format
 msgid "Game                       Level/Lives/Score   Day    Date     Time  "
 msgstr ""
@@ -7586,7 +7586,7 @@ msgstr ""
 "peliisi. Ethän vain kurki piilotettuja tikkaita ja tippuvia tiiliä, "
 "ethän? :-)"
 
-#: src/kgreditor.cpp:242 src/kgreditor.cpp:260 src/kgrgame.cpp:261
+#: src/kgreditor.cpp:242 src/kgreditor.cpp:260 src/kgrgame.cpp:260
 #, kde-format
 msgid "Save Level"
 msgstr "Tallenna taso"
@@ -7606,8 +7606,8 @@ msgstr "&Lisää taso"
 msgid "&Cancel"
 msgstr "&Peru"
 
-#: src/kgreditor.cpp:261 src/kgreditor.cpp:779 src/kgrgame.cpp:1496
-#: src/kgrgame.cpp:1708
+#: src/kgreditor.cpp:261 src/kgreditor.cpp:779 src/kgrgame.cpp:1483
+#: src/kgrgame.cpp:1691
 #, kde-format
 msgid "Cannot open file '%1' for output."
 msgstr "Tiedostoon ”%1” ei voi kirjoittaa."
@@ -7744,44 +7744,44 @@ msgstr "Voit muuttaa vain käyttäjän pelejä."
 msgid "New Level"
 msgstr "Uusi taso"
 
-#: src/kgreditor.cpp:839 src/kgrgame.cpp:1389
+#: src/kgreditor.cpp:839 src/kgrgame.cpp:1388
 #, kde-format
 msgctxt "Game name - level number."
 msgid "%1 - %2"
 msgstr "%1 – %2"
 
-#: src/kgreditor.cpp:843 src/kgrgame.cpp:1392
+#: src/kgreditor.cpp:843 src/kgrgame.cpp:1391
 #, kde-format
 msgctxt "Game name - level number - level name."
 msgid "%1 - %2 - %3"
 msgstr "%1 – %2 – %3"
 
-#: src/kgrgame.cpp:110
+#: src/kgrgame.cpp:109
 #, kde-format
 msgid "Click anywhere to begin live play"
 msgstr "Aloita live-peli napsauttamalla minne vain"
 
-#: src/kgrgame.cpp:191
+#: src/kgrgame.cpp:190
 #, kde-format
 msgid "Play Next Level"
 msgstr "Pelaa seuraava taso"
 
-#: src/kgrgame.cpp:192
+#: src/kgrgame.cpp:191
 #, kde-format
 msgid "There are no more levels in this game."
 msgstr "Pelissä ei ole useampia tasoja."
 
-#: src/kgrgame.cpp:262
+#: src/kgrgame.cpp:261
 #, kde-format
 msgid "Inappropriate action: you are not editing a level."
 msgstr "Toimintoa ei voi tehdä: et muokkaa tasoa."
 
-#: src/kgrgame.cpp:421
+#: src/kgrgame.cpp:420
 #, kde-format
 msgid "No Sound"
 msgstr "Ei ääntä"
 
-#: src/kgrgame.cpp:422
+#: src/kgrgame.cpp:421
 #, kde-format
 msgid ""
 "Warning: This copy of KGoldrunner has no sound.\n"
@@ -7794,12 +7794,12 @@ msgstr ""
 "Tämä johtuu siitä, ettei OpenAL- ja SndFile-kirjastoista ollut "
 "kehitysversioita käytettävissä ohjelmaa koostettaessa."
 
-#: src/kgrgame.cpp:626 src/kgrgame.cpp:783
+#: src/kgrgame.cpp:625 src/kgrgame.cpp:782
 #, kde-format
 msgid "Game Paused"
 msgstr "Peli keskeytetty"
 
-#: src/kgrgame.cpp:627
+#: src/kgrgame.cpp:626
 #, kde-format
 msgid ""
 "The replay has stopped and the game is pausing while you prepare to go on "
@@ -7808,12 +7808,12 @@ msgstr ""
 "Tallenne on pysähnyt ja peli keskeytetty valmistautuessasi pelaamaan. Paina "
 "taukonäppäintä (oletuksena P tai Esc), kun olet valmis."
 
-#: src/kgrgame.cpp:671 src/kgrgame.cpp:677
+#: src/kgrgame.cpp:670 src/kgrgame.cpp:676
 #, kde-format
 msgid "Replay Last Level"
 msgstr "Pelaa viimeisin taso uudelleen"
 
-#: src/kgrgame.cpp:672
+#: src/kgrgame.cpp:671
 #, kde-format
 msgid ""
 "ERROR: Could not find and replay a recording of the last level you played."
@@ -7821,7 +7821,7 @@ msgstr ""
 "VIRHE: Ei löydetty eikä voitu toistaa viimeisimmän pelaamasi tason "
 "tallennetta."
 
-#: src/kgrgame.cpp:678
+#: src/kgrgame.cpp:677
 #, kde-format
 msgid ""
 "There is no last level to replay.  You need to play a level to completion, "
@@ -7830,25 +7830,25 @@ msgstr ""
 "Viimeisintä pelattua tasoa ei ole. Peli on pelattava (voitettava tai "
 "hävittävä) pisteytetyssä tilassa, ennen kuin sen tallenteen voi toistaa."
 
-#: src/kgrgame.cpp:696
+#: src/kgrgame.cpp:695
 #, fuzzy, kde-format
 #| msgid "Quick Start"
 msgctxt "@title:window"
 msgid "Quick Start"
 msgstr "Pikakäynnistys"
 
-#: src/kgrgame.cpp:713
+#: src/kgrgame.cpp:712
 #, kde-format
 msgctxt "Button text: start playing a game"
 msgid "&PLAY"
 msgstr "&Pelaa"
 
-#: src/kgrgame.cpp:714
+#: src/kgrgame.cpp:713
 #, kde-format
 msgid "Start playing this level"
 msgstr "Aloita tämän tason pelaaminen"
 
-#: src/kgrgame.cpp:716
+#: src/kgrgame.cpp:715
 #, kde-format
 msgid ""
 "Set up to start playing the game and level being shown, as soon as you "
@@ -7857,39 +7857,39 @@ msgstr ""
 "Valmistaudu pelaamaan näytettyä peli ja taso heti napsautettuasi tai "
 "liikutettuasi hiirtä tai painettuasi jotakin näppäintä"
 
-#: src/kgrgame.cpp:720
+#: src/kgrgame.cpp:719
 #, kde-format
 msgid "&Quit"
 msgstr "&Lopeta"
 
-#: src/kgrgame.cpp:721
+#: src/kgrgame.cpp:720
 #, kde-format
 msgid "Close KGoldrunner"
 msgstr "Lopeta KGoldrunner"
 
-#: src/kgrgame.cpp:725
+#: src/kgrgame.cpp:724
 #, kde-format
 msgid "Start a different game or level"
 msgstr "Aloita toinen peli tai taso"
 
-#: src/kgrgame.cpp:727
+#: src/kgrgame.cpp:726
 #, kde-format
 msgid ""
 "Use the Select Game dialog box to choose a different game or level and start "
 "playing it"
 msgstr "Valitse toinen peli tai taso Valitse peli -ikkunasta ja käynnistä se"
 
-#: src/kgrgame.cpp:731
+#: src/kgrgame.cpp:730
 #, kde-format
 msgid "&Use Menu"
 msgstr "&Käytä valikkoa"
 
-#: src/kgrgame.cpp:733
+#: src/kgrgame.cpp:732
 #, kde-format
 msgid "Use the menus to choose other actions"
 msgstr "Voit valita muita toimintoja valikoista"
 
-#: src/kgrgame.cpp:735
+#: src/kgrgame.cpp:734
 #, kde-format
 msgid ""
 "Before playing, use the menus to choose other actions, such as loading a "
@@ -7897,7 +7897,7 @@ msgid ""
 msgstr ""
 "Ennen peliä voit esim. ladata tallennetun pelin tai vaihtaa teemaa valikoista"
 
-#: src/kgrgame.cpp:784
+#: src/kgrgame.cpp:783
 #, kde-format
 msgid ""
 "The game is halted. You will need to press the Pause key (default P or Esc) "
@@ -7906,13 +7906,13 @@ msgstr ""
 "Peli on keskeytetty. Paina taukonäppäintä (oletus P tai Esc), kun olet "
 "valmis jatkamaan sitä."
 
-#: src/kgrgame.cpp:837
+#: src/kgrgame.cpp:836
 #, fuzzy, kde-format
 #| msgid "Show A Solution"
 msgid "Show a Solution"
 msgstr "Näytä ratkaisu"
 
-#: src/kgrgame.cpp:838
+#: src/kgrgame.cpp:837
 #, kde-format
 msgid ""
 "Sorry, although all levels of KGoldrunner can be solved, no solution has "
@@ -7921,18 +7921,18 @@ msgstr ""
 "Vaikka kaikki KGoldrunnerin tasot ovat ratkaistavissa, valitsemallesi "
 "tasolle ei valitettavasti ole vielä tallennettu ratkaisua."
 
-#: src/kgrgame.cpp:849
+#: src/kgrgame.cpp:848
 #, kde-format
 msgid "Replay Any Level"
 msgstr "Pelaa mikä tahansa taso uudelleen"
 
-#: src/kgrgame.cpp:850 src/kgrgame.cpp:2070
+#: src/kgrgame.cpp:849 src/kgrgame.cpp:2053
 #, kde-format
 msgid ""
 "Sorry, you do not seem to have played and recorded the selected level before."
 msgstr "Et näy pelanneen ja tallentaneen valittua tasoa aiemmin."
 
-#: src/kgrgame.cpp:1064
+#: src/kgrgame.cpp:1063
 #, kde-format
 msgid ""
 "<NOBR><B>GAME OVER !!!</B></NOBR><P>Would you like to try this level again?</"
@@ -7940,22 +7940,22 @@ msgid ""
 msgstr ""
 "<NOBR><B>PELI PÄÄTTYI!</B></NOBR><P>Haluatko yrittää tasoa uudelleen?</P>"
 
-#: src/kgrgame.cpp:1066
+#: src/kgrgame.cpp:1065
 #, kde-format
 msgid "Game Over"
 msgstr "Peli päättyi"
 
-#: src/kgrgame.cpp:1067
+#: src/kgrgame.cpp:1066
 #, kde-format
 msgid "&Try Again"
 msgstr "&Yritä uudelleen"
 
-#: src/kgrgame.cpp:1067
+#: src/kgrgame.cpp:1066
 #, kde-format
 msgid "&Finish"
 msgstr "L&opeta"
 
-#: src/kgrgame.cpp:1141
+#: src/kgrgame.cpp:1140
 #, kde-format
 msgid ""
 "<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the <b>"
@@ -7964,27 +7964,27 @@ msgstr ""
 "<b>ONNEKSI OLKOON!</b><p>Et valloittanut pelin <b>”%1”</b> viimeisen tason!</"
 "p>"
 
-#: src/kgrgame.cpp:1298
+#: src/kgrgame.cpp:1297
 #, kde-format
 msgid "Hint"
 msgstr "Vihje"
 
-#: src/kgrgame.cpp:1304
+#: src/kgrgame.cpp:1303
 #, kde-format
 msgid "&OK"
 msgstr "&OK"
 
-#: src/kgrgame.cpp:1317
+#: src/kgrgame.cpp:1316
 #, kde-format
 msgid "Sorry, there is no hint for this level."
 msgstr "Tälle tasolle ei ole vihjettä."
 
-#: src/kgrgame.cpp:1379
+#: src/kgrgame.cpp:1378
 #, kde-format
 msgid "T H E   E N D"
 msgstr "L O P P U"
 
-#: src/kgrgame.cpp:1420
+#: src/kgrgame.cpp:1415
 #, kde-format
 msgid ""
 "You have pressed a key that can be used to control the Hero. Do you want to "
@@ -7995,46 +7995,46 @@ msgstr ""
 "näppäimistötilaan? Hiiri on pitkällä aikavälillä parempi – kuin ajaisit "
 "pyörällä verrattuna kävelemiseen!"
 
-#: src/kgrgame.cpp:1424
+#: src/kgrgame.cpp:1419
 #, kde-format
 msgid "Switch to Keyboard Mode"
 msgstr "Vaihda näppäimistötilaan"
 
-#: src/kgrgame.cpp:1425
+#: src/kgrgame.cpp:1420
 #, kde-format
 msgid "Switch to &Keyboard Mode"
 msgstr "Vaihda &näppäimistötilaan"
 
-#: src/kgrgame.cpp:1426
+#: src/kgrgame.cpp:1421
 #, kde-format
 msgid "Stay in &Mouse Mode"
 msgstr "Pysy &hiiritilassa"
 
-#: src/kgrgame.cpp:1427
+#: src/kgrgame.cpp:1422
 #, kde-format
 msgid "Keyboard Mode"
 msgstr "Näppäimistötila"
 
-#: src/kgrgame.cpp:1469 src/kgrgame.cpp:1495 src/kgrgame.cpp:1505
-#: src/kgrgame.cpp:1524 src/kgrgame.cpp:1530
+#: src/kgrgame.cpp:1456 src/kgrgame.cpp:1482 src/kgrgame.cpp:1492
+#: src/kgrgame.cpp:1511 src/kgrgame.cpp:1517
 #, kde-format
 msgid "Save Game"
 msgstr "Tallenna peli"
 
-#: src/kgrgame.cpp:1470
+#: src/kgrgame.cpp:1457
 #, kde-format
 msgid ""
 "Sorry, you cannot save your game play while you are editing. Please try menu "
 "item \"%1\"."
 msgstr "Et voi tallentaa peliäsi muokatessasi sitä. Yritä valikon kohtaa ”%1”."
 
-#: src/kgrgame.cpp:1506 src/kgrgame.cpp:1550 src/kgrgame.cpp:1669
-#: src/kgrgame.cpp:1872 src/kgrgame.cpp:2036 src/kgrgameio.cpp:170
+#: src/kgrgame.cpp:1493 src/kgrgame.cpp:1537 src/kgrgame.cpp:1652
+#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2019 src/kgrgameio.cpp:170
 #, kde-format
 msgid "Cannot open file '%1' for read-only."
 msgstr "Tiedostoa '%1' ei voi lukea."
 
-#: src/kgrgame.cpp:1525
+#: src/kgrgame.cpp:1512
 #, kde-format
 msgid ""
 "Please note: for reasons of simplicity, your saved game position and score "
@@ -8043,37 +8043,37 @@ msgstr ""
 "Huomaa: yksinkertaisuuden vuoksi talletettu pelitilanteesi ja pisteet ovat "
 "tämän tason alkutilanteesta, ei nykyisestä tilanteesta."
 
-#: src/kgrgame.cpp:1531
+#: src/kgrgame.cpp:1518
 #, kde-format
 msgid "Error: Failed to save your game."
 msgstr "Virhesi: Peliäsi ei saatu tallennetuksi."
 
-#: src/kgrgame.cpp:1543 src/kgrgame.cpp:1549 src/kgrgame.cpp:1591
+#: src/kgrgame.cpp:1530 src/kgrgame.cpp:1536 src/kgrgame.cpp:1574
 #, kde-format
 msgid "Load Game"
 msgstr "Lataa peli"
 
-#: src/kgrgame.cpp:1544
+#: src/kgrgame.cpp:1531
 #, kde-format
 msgid "Sorry, there are no saved games."
 msgstr "Ei tallennettuja pelejä."
 
-#: src/kgrgame.cpp:1592
+#: src/kgrgame.cpp:1575
 #, kde-format
 msgid "Cannot find the game with prefix '%1'."
 msgstr "Etuliitteellä '%1' ei löydy peliä."
 
-#: src/kgrgame.cpp:1650
+#: src/kgrgame.cpp:1633
 #, kde-format
 msgid "Unknown"
 msgstr "Tuntematon"
 
-#: src/kgrgame.cpp:1668 src/kgrgame.cpp:1707
+#: src/kgrgame.cpp:1651 src/kgrgame.cpp:1690
 #, kde-format
 msgid "Check for High Score"
 msgstr "Tarkista ennätykset"
 
-#: src/kgrgame.cpp:1725
+#: src/kgrgame.cpp:1708
 #, kde-format
 msgid ""
 "<html><b>Congratulations !!!</b><br/>You have achieved a high score in this "
@@ -8084,39 +8084,39 @@ msgstr ""
 ">Anna nimesi jotta se voidaan ikuistaa<br/>KGoldrunnerin kunniataululle.</"
 "html>"
 
-#: src/kgrgame.cpp:1739
+#: src/kgrgame.cpp:1722
 #, fuzzy, kde-format
 #| msgid "Save High Score"
 msgctxt "@title:window"
 msgid "Save High Score"
 msgstr "Tallenna ennätys"
 
-#: src/kgrgame.cpp:1826
+#: src/kgrgame.cpp:1809
 #, kde-format
 msgid "Save High Score"
 msgstr "Tallenna ennätys"
 
-#: src/kgrgame.cpp:1827
+#: src/kgrgame.cpp:1810
 #, kde-format
 msgid "Error: Failed to save your high score."
 msgstr "Virhe: Ennätystäsi ei saatu tallennetuksi."
 
-#: src/kgrgame.cpp:1839 src/kgrgame.cpp:1862 src/kgrgame.cpp:1871
+#: src/kgrgame.cpp:1822 src/kgrgame.cpp:1845 src/kgrgame.cpp:1854
 #, kde-format
 msgid "Show High Scores"
 msgstr "Näytä ennätykset"
 
-#: src/kgrgame.cpp:1840
+#: src/kgrgame.cpp:1823
 #, kde-format
 msgid "Sorry, we do not keep high scores for tutorial games."
 msgstr "Ohjaustunnin ennätyksiä ei tallenneta."
 
-#: src/kgrgame.cpp:1863
+#: src/kgrgame.cpp:1846
 #, kde-format
 msgid "Sorry, there are no high scores for the \"%1\" game yet."
 msgstr "Pelille ”%1” ei ole vielä ennätyksiä."
 
-#: src/kgrgame.cpp:1887
+#: src/kgrgame.cpp:1870
 #, kde-format
 msgid ""
 "<center><h2>KGoldrunner Hall of Fame</h2></center><center><h3>\"%1\" Game</"
@@ -8125,62 +8125,62 @@ msgstr ""
 "<center><h2>KGoldrunnerin kunniataulu</h2></center><center><h3>Peli: ”%1”</"
 "h3></center>"
 
-#: src/kgrgame.cpp:1897
+#: src/kgrgame.cpp:1880
 #, kde-format
 msgctxt "1, 2, 3 etc."
 msgid "Rank"
 msgstr "Sijoitus"
 
-#: src/kgrgame.cpp:1898
+#: src/kgrgame.cpp:1881
 #, kde-format
 msgctxt "Person"
 msgid "Name"
 msgstr "Nimi"
 
-#: src/kgrgame.cpp:1899
+#: src/kgrgame.cpp:1882
 #, kde-format
 msgctxt "Game level reached"
 msgid "Level"
 msgstr "Taso"
 
-#: src/kgrgame.cpp:1900
+#: src/kgrgame.cpp:1883
 #, kde-format
 msgid "Score"
 msgstr "Tulos"
 
-#: src/kgrgame.cpp:1901
+#: src/kgrgame.cpp:1884
 #, kde-format
 msgid "Date"
 msgstr "Päiväys"
 
-#: src/kgrgame.cpp:1904
+#: src/kgrgame.cpp:1887
 #, fuzzy, kde-format
 #| msgid "High Scores"
 msgctxt "@title:window"
 msgid "High Scores"
 msgstr "Ennätykset"
 
-#: src/kgrgame.cpp:2029 src/kgrgame.cpp:2035 src/kgrgame.cpp:2039
+#: src/kgrgame.cpp:2012 src/kgrgame.cpp:2018 src/kgrgame.cpp:2022
 #, kde-format
 msgid "Load Game Info"
 msgstr "Lataa pelitiedot"
 
-#: src/kgrgame.cpp:2030
+#: src/kgrgame.cpp:2013
 #, kde-format
 msgid "Cannot find game info file '%1'."
 msgstr "Ei löydä pelin info-tiedostoa '%1'."
 
-#: src/kgrgame.cpp:2040
+#: src/kgrgame.cpp:2023
 #, kde-format
 msgid "Reached end of file '%1' before finding end of game-data."
 msgstr "Tiedoston ”%1” loppu saavutettu löytämättä pelidatan loppua."
 
-#: src/kgrgame.cpp:2064 src/kgrgame.cpp:2069 src/kgrselector.cpp:259
+#: src/kgrgame.cpp:2047 src/kgrgame.cpp:2052 src/kgrselector.cpp:259
 #, kde-format
 msgid "Save A Solution"
 msgstr "Tallenna ratkaisu"
 
-#: src/kgrgame.cpp:2065
+#: src/kgrgame.cpp:2048
 #, kde-format
 msgid "Your solution to level %1 has been saved on file %2"
 msgstr "Ratkaisusi tasolle %1 on tallennettu tiedostoon %2"
@@ -8215,7 +8215,7 @@ msgstr "Tiedoston ”%1” edellistä versiota ei voida poistaa."
 msgid "Cannot rename file '%1' to '%2'."
 msgstr "Tiedoston ”%1” nimeksi ei voi muuttaa ”%2”."
 
-#: src/kgrrenderer.cpp:109
+#: src/kgrrenderer.cpp:100
 #, kde-format
 msgid "Theme Selector"
 msgstr "Teemavalitsin"
@@ -8559,88 +8559,88 @@ msgstr ""
 msgid "Help: Select Game & Level"
 msgstr "Ohje: Valitse peli ja taso"
 
-#: src/main.cpp:35
+#: src/main.cpp:31
 #, fuzzy, kde-format
 #| msgid "KGoldrunner is a game of action and puzzle solving"
 msgid "A game of action and puzzle solving"
 msgstr "KGoldrunner on toiminta- ja ongelmanratkaisupeli"
 
-#: src/main.cpp:37
+#: src/main.cpp:33
 #, kde-format
 msgid "(C) 2003 Ian Wadham and Marco Krüger"
 msgstr "© 2003 Ian Wadham ja Marco Krüger"
 
-#: src/main.cpp:70
+#: src/main.cpp:66
 #, kde-format
 msgid "Ian Wadham"
 msgstr "Ian Wadham"
 
-#: src/main.cpp:70
+#: src/main.cpp:66
 #, kde-format
 msgid "Current author"
 msgstr "Nykyinen tekijä"
 
-#: src/main.cpp:72
+#: src/main.cpp:68
 #, kde-format
 msgid "Marco Krüger"
 msgstr "Marco Krüger"
 
-#: src/main.cpp:72
+#: src/main.cpp:68
 #, kde-format
 msgid "Original author"
 msgstr "Alkuperäinen tekijä"
 
-#: src/main.cpp:74 src/main.cpp:80
+#: src/main.cpp:70 src/main.cpp:76
 #, kde-format
 msgid "Mauricio Piacentini"
 msgstr "Mauricio Piacentini"
 
-#: src/main.cpp:75
+#: src/main.cpp:71
 #, kde-format
 msgid "Port to KDE4, Qt4 and KGameCanvas classes"
 msgstr "Siirros KDE 4:ään, Qt 4:ään ja KGameCanvas-luokkiin"
 
-#: src/main.cpp:77
+#: src/main.cpp:73
 #, kde-format
 msgid "Maurizio Monge"
 msgstr "Maurizio Monge"
 
-#: src/main.cpp:78
+#: src/main.cpp:74
 #, kde-format
 msgid "KGameCanvas classes for KDE4"
 msgstr "KGameCanvas-luokat KDE 4:ään"
 
-#: src/main.cpp:81
+#: src/main.cpp:77
 #, kde-format
 msgid "Artwork for runners and default theme"
 msgstr "Etsijöiden ja oletusteeman taide"
 
-#: src/main.cpp:83
+#: src/main.cpp:79
 #, kde-format
 msgid "Johann Ollivier Lapeyre"
 msgstr "Johann Ollivier Lapeyre"
 
-#: src/main.cpp:84
+#: src/main.cpp:80
 #, kde-format
 msgid "Artwork for bars and ladders"
 msgstr "Tankojen ja tikkaiden grafiikka"
 
-#: src/main.cpp:86 src/main.cpp:94
+#: src/main.cpp:82 src/main.cpp:90
 #, kde-format
 msgid "Eugene Trounev"
 msgstr "Eugene Trounev"
 
-#: src/main.cpp:87
+#: src/main.cpp:83
 #, kde-format
 msgid "Artwork for background of Geek City theme"
 msgstr "Nörttikaupunkiteeman taustataide"
 
-#: src/main.cpp:89
+#: src/main.cpp:85
 #, kde-format
 msgid "Luciano Montanaro"
 msgstr "Luciano Montanaro"
 
-#: src/main.cpp:90
+#: src/main.cpp:86
 #, kde-format
 msgid ""
 "Nostalgia themes, improvements to runners, multiple-backgrounds feature, "
@@ -8649,7 +8649,7 @@ msgstr ""
 "Nostalgiateemat, parannukset etsijöihn, useampitaustaisuus, häivytyspiirre "
 "ja monet muut ideat"
 
-#: src/main.cpp:95
+#: src/main.cpp:91
 #, kde-format
 msgid "Artwork for the Treasure of Egypt theme"
 msgstr "Egyptin aarre -teeman grafiikka"

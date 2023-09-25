@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: @PACKAGE\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-20 00:44+0000\n"
+"POT-Creation-Date: 2023-09-25 01:39+0000\n"
 "PO-Revision-Date: 2012-03-07 22:17+0200\n"
 "Last-Translator: Cristian Oneț <onet.cristian@gmail.com>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -3794,7 +3794,7 @@ msgstr "Laboratorul"
 msgid "No hint!"
 msgstr "Niciun indiciu"
 
-#: gamedata/game_kgr.txt:3 src/main.cpp:33
+#: gamedata/game_kgr.txt:3 src/main.cpp:29
 #, kde-format
 msgid "KGoldrunner"
 msgstr "KGoldrunner"
@@ -7448,7 +7448,7 @@ msgstr ""
 "Da, trebuie să alergați pe capul inamicului --- tot drumul! Tot ce vă "
 "trebuie este o mână stabilă."
 
-#: src/kgoldrunner.cpp:184 src/kgrgame.cpp:724
+#: src/kgoldrunner.cpp:184 src/kgrgame.cpp:723
 #, kde-format
 msgid "&New Game..."
 msgstr "Joc &nou..."
@@ -7491,7 +7491,7 @@ msgid ""
 "your user's data directory..."
 msgstr ""
 
-#: src/kgoldrunner.cpp:246 src/kgrgame.cpp:1304
+#: src/kgoldrunner.cpp:246 src/kgrgame.cpp:1303
 #, fuzzy, kde-format
 #| msgid "&Show A Solution"
 msgid "&Show a Solution"
@@ -7617,7 +7617,7 @@ msgstr "Editează orice nivel..."
 msgid "Edit"
 msgstr "Editează"
 
-#: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1472
+#: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1459
 #, kde-format
 msgid "&Save Edits..."
 msgstr "&Salvează modificările..."
@@ -8237,51 +8237,51 @@ msgstr "&Editor"
 msgid "Edit Toolbar"
 msgstr "Editați bara de instrumente"
 
-#: src/kgrdialog.cpp:35
+#: src/kgrdialog.cpp:34
 #, fuzzy, kde-format
 #| msgid "Edit Name & Hint"
 msgctxt "@title:window"
 msgid "Edit Name or Hint"
 msgstr "Editează nume & indiciu"
 
-#: src/kgrdialog.cpp:57
+#: src/kgrdialog.cpp:56
 #, kde-format
 msgid "Name of level:"
 msgstr "Numele nivelului:"
 
-#: src/kgrdialog.cpp:64
+#: src/kgrdialog.cpp:63
 #, kde-format
 msgid "Hint for level:"
 msgstr "Indiciu pentru nivel:"
 
-#: src/kgrdialog.cpp:104 src/kgrdialog.cpp:173
+#: src/kgrdialog.cpp:103 src/kgrdialog.cpp:172
 #, fuzzy, kde-format
 #| msgid "Edit Game Info"
 msgctxt "@title:window"
 msgid "Edit Game Info"
 msgstr "Editați informații"
 
-#: src/kgrdialog.cpp:124
+#: src/kgrdialog.cpp:123
 #, kde-format
 msgid "Name of game:"
 msgstr "Numele jocului:"
 
-#: src/kgrdialog.cpp:132
+#: src/kgrdialog.cpp:131
 #, kde-format
 msgid "File name prefix:"
 msgstr "Prefixul numelui fișierului:"
 
-#: src/kgrdialog.cpp:140
+#: src/kgrdialog.cpp:139
 #, kde-format
 msgid "Traditional rules"
 msgstr "Reguli tradiționale"
 
-#: src/kgrdialog.cpp:141
+#: src/kgrdialog.cpp:140
 #, kde-format
 msgid "KGoldrunner rules"
 msgstr "Reguli KGoldrunner"
 
-#: src/kgrdialog.cpp:150 src/kgrdialog.cpp:185
+#: src/kgrdialog.cpp:149 src/kgrdialog.cpp:184
 #, fuzzy, kde-format
 msgid "1 level"
 msgid_plural "%1 levels"
@@ -8289,41 +8289,41 @@ msgstr[0] "Nivelul 4"
 msgstr[1] "3 nivele"
 msgstr[2] "3 nivele"
 
-#: src/kgrdialog.cpp:153
+#: src/kgrdialog.cpp:152
 #, kde-format
 msgid "About this game:"
 msgstr "Despre acest joc:"
 
-#: src/kgrdialog.cpp:170
+#: src/kgrdialog.cpp:169
 #, fuzzy, kde-format
 #| msgid "Create Game"
 msgctxt "@title:window"
 msgid "Create Game"
 msgstr "Creați joc"
 
-#: src/kgrdialog.cpp:187
+#: src/kgrdialog.cpp:186
 #, kde-format
 msgid "Save Changes"
 msgstr "Salvare modificări"
 
-#: src/kgrdialog.cpp:192
+#: src/kgrdialog.cpp:191
 #, kde-format
 msgid "0 levels"
 msgstr "0 nivele"
 
-#: src/kgrdialog.cpp:193 src/kgrselector.cpp:265
+#: src/kgrdialog.cpp:192 src/kgrselector.cpp:265
 #, kde-format
 msgid "Save New"
 msgstr "Salvează nou"
 
-#: src/kgrdialog.cpp:248
+#: src/kgrdialog.cpp:247
 #, fuzzy, kde-format
 #| msgid "Select Saved Game"
 msgctxt "@title:window"
 msgid "Select Saved Game"
 msgstr "Selectează jocurile salvate"
 
-#: src/kgrdialog.cpp:267
+#: src/kgrdialog.cpp:266
 #, kde-format
 msgid "Game                       Level/Lives/Score   Day    Date     Time  "
 msgstr "Joc                       Nivel/Vieți/Scor   Ziua    Data     Ora  "
@@ -8367,7 +8367,7 @@ msgstr ""
 "unul dintre jocurile dumneavoastră. Nu aruncați doar o privire la scările "
 "ascunse și cărămizile prin care se poate cădea, nu-i așa? :-)"
 
-#: src/kgreditor.cpp:242 src/kgreditor.cpp:260 src/kgrgame.cpp:261
+#: src/kgreditor.cpp:242 src/kgreditor.cpp:260 src/kgrgame.cpp:260
 #, kde-format
 msgid "Save Level"
 msgstr "Salvează nivelul"
@@ -8388,8 +8388,8 @@ msgstr "Inserați nivelul"
 msgid "&Cancel"
 msgstr "&Renunță"
 
-#: src/kgreditor.cpp:261 src/kgreditor.cpp:779 src/kgrgame.cpp:1496
-#: src/kgrgame.cpp:1708
+#: src/kgreditor.cpp:261 src/kgreditor.cpp:779 src/kgrgame.cpp:1483
+#: src/kgrgame.cpp:1691
 #, kde-format
 msgid "Cannot open file '%1' for output."
 msgstr "Fișierul '%1' nu a putut fi deschis pentru producție."
@@ -8529,44 +8529,44 @@ msgstr "Puteți modifica doar jourile utlizatorilor"
 msgid "New Level"
 msgstr "Nivel nou"
 
-#: src/kgreditor.cpp:839 src/kgrgame.cpp:1389
+#: src/kgreditor.cpp:839 src/kgrgame.cpp:1388
 #, kde-format
 msgctxt "Game name - level number."
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: src/kgreditor.cpp:843 src/kgrgame.cpp:1392
+#: src/kgreditor.cpp:843 src/kgrgame.cpp:1391
 #, kde-format
 msgctxt "Game name - level number - level name."
 msgid "%1 - %2 - %3"
 msgstr "%1 - %2 - %3"
 
-#: src/kgrgame.cpp:110
+#: src/kgrgame.cpp:109
 #, kde-format
 msgid "Click anywhere to begin live play"
 msgstr "Clic oriunde pentru a începe jocul"
 
-#: src/kgrgame.cpp:191
+#: src/kgrgame.cpp:190
 #, kde-format
 msgid "Play Next Level"
 msgstr "Jucați nivelul următor"
 
-#: src/kgrgame.cpp:192
+#: src/kgrgame.cpp:191
 #, kde-format
 msgid "There are no more levels in this game."
 msgstr "Nu mai există niveluri în acest joc."
 
-#: src/kgrgame.cpp:262
+#: src/kgrgame.cpp:261
 #, kde-format
 msgid "Inappropriate action: you are not editing a level."
 msgstr "Acțiune necorespunzătoare: nu editați nivelul."
 
-#: src/kgrgame.cpp:421
+#: src/kgrgame.cpp:420
 #, kde-format
 msgid "No Sound"
 msgstr "Fără sunet"
 
-#: src/kgrgame.cpp:422
+#: src/kgrgame.cpp:421
 #, kde-format
 msgid ""
 "Warning: This copy of KGoldrunner has no sound.\n"
@@ -8579,12 +8579,12 @@ msgstr ""
 "Aceasta deoarece nicio versiune dezvoltată a bibliotecilor OpenAL și SndFile "
 "nu a fost prezentă când a fost elaborată și construită"
 
-#: src/kgrgame.cpp:626 src/kgrgame.cpp:783
+#: src/kgrgame.cpp:625 src/kgrgame.cpp:782
 #, kde-format
 msgid "Game Paused"
 msgstr "Pauză"
 
-#: src/kgrgame.cpp:627
+#: src/kgrgame.cpp:626
 #, kde-format
 msgid ""
 "The replay has stopped and the game is pausing while you prepare to go on "
@@ -8593,19 +8593,19 @@ msgstr ""
 "Redarea a oprită și jocul a fost întrerupt în timp ce vă pregătiți pentru a "
 "juca. Apăsați tasta Pauză (implicit P sau Esc) când sunteți pregătit."
 
-#: src/kgrgame.cpp:671 src/kgrgame.cpp:677
+#: src/kgrgame.cpp:670 src/kgrgame.cpp:676
 #, kde-format
 msgid "Replay Last Level"
 msgstr "Reluați ultimul nivel"
 
-#: src/kgrgame.cpp:672
+#: src/kgrgame.cpp:671
 #, kde-format
 msgid ""
 "ERROR: Could not find and replay a recording of the last level you played."
 msgstr ""
 "EROARE: Nu s-a putut găsi și reda o înregistrare a ultimului nivel jucat."
 
-#: src/kgrgame.cpp:678
+#: src/kgrgame.cpp:677
 #, kde-format
 msgid ""
 "There is no last level to replay.  You need to play a level to completion, "
@@ -8615,25 +8615,25 @@ msgstr ""
 "să câștigați sau să pierdeți, înainte de a putea folosi acțiunea Reda "
 "ultimul nivel."
 
-#: src/kgrgame.cpp:696
+#: src/kgrgame.cpp:695
 #, fuzzy, kde-format
 #| msgid "Quick Start"
 msgctxt "@title:window"
 msgid "Quick Start"
 msgstr "Pornire rapidă"
 
-#: src/kgrgame.cpp:713
+#: src/kgrgame.cpp:712
 #, kde-format
 msgctxt "Button text: start playing a game"
 msgid "&PLAY"
 msgstr "&JUCAȚI"
 
-#: src/kgrgame.cpp:714
+#: src/kgrgame.cpp:713
 #, kde-format
 msgid "Start playing this level"
 msgstr "Începeți să jucați acest nivel"
 
-#: src/kgrgame.cpp:716
+#: src/kgrgame.cpp:715
 #, kde-format
 msgid ""
 "Set up to start playing the game and level being shown, as soon as you "
@@ -8642,22 +8642,22 @@ msgstr ""
 "Setați să începeți să jucați jocul sau nivelul fiind arătat, imediat ce dați "
 "clic, mișcați mausul sau apăsați orice tastă"
 
-#: src/kgrgame.cpp:720
+#: src/kgrgame.cpp:719
 #, kde-format
 msgid "&Quit"
 msgstr "&Ieșire"
 
-#: src/kgrgame.cpp:721
+#: src/kgrgame.cpp:720
 #, kde-format
 msgid "Close KGoldrunner"
 msgstr "Închideți KGoldrunner"
 
-#: src/kgrgame.cpp:725
+#: src/kgrgame.cpp:724
 #, kde-format
 msgid "Start a different game or level"
 msgstr "Începeți un joc sau nivel diferit"
 
-#: src/kgrgame.cpp:727
+#: src/kgrgame.cpp:726
 #, kde-format
 msgid ""
 "Use the Select Game dialog box to choose a different game or level and start "
@@ -8666,17 +8666,17 @@ msgstr ""
 "Folosiți caseta de dialog Selectați Joc pentru a alege un joc sau nivel "
 "diferit și începeți să jucați"
 
-#: src/kgrgame.cpp:731
+#: src/kgrgame.cpp:730
 #, kde-format
 msgid "&Use Menu"
 msgstr "&Folosiți meniul"
 
-#: src/kgrgame.cpp:733
+#: src/kgrgame.cpp:732
 #, kde-format
 msgid "Use the menus to choose other actions"
 msgstr "Folosiți meniul pentru a alege altă acțiune"
 
-#: src/kgrgame.cpp:735
+#: src/kgrgame.cpp:734
 #, kde-format
 msgid ""
 "Before playing, use the menus to choose other actions, such as loading a "
@@ -8685,7 +8685,7 @@ msgstr ""
 "Înainte de a juca, folosiți meniul pentru a alege alte acțiuni, precum "
 "încărcarea unui joc salvat sau schimbarea temei"
 
-#: src/kgrgame.cpp:784
+#: src/kgrgame.cpp:783
 #, kde-format
 msgid ""
 "The game is halted. You will need to press the Pause key (default P or Esc) "
@@ -8694,13 +8694,13 @@ msgstr ""
 "Jocul este oprit. Trebuie să apăsați tasta Pauză (implicit P sau Esc) când "
 "sunteți pregătit să jucați."
 
-#: src/kgrgame.cpp:837
+#: src/kgrgame.cpp:836
 #, fuzzy, kde-format
 #| msgid "Show A Solution"
 msgid "Show a Solution"
 msgstr "Afișează o soluție"
 
-#: src/kgrgame.cpp:838
+#: src/kgrgame.cpp:837
 #, kde-format
 msgid ""
 "Sorry, although all levels of KGoldrunner can be solved, no solution has "
@@ -8709,12 +8709,12 @@ msgstr ""
 "Ne pare rău, deși toate nivelurile din KGoldrunner pot fi rezolvate, nicio "
 "soluție nu a fost înregistrată încă pentru nivelul selectat."
 
-#: src/kgrgame.cpp:849
+#: src/kgrgame.cpp:848
 #, kde-format
 msgid "Replay Any Level"
 msgstr "Reluați orice nivel"
 
-#: src/kgrgame.cpp:850 src/kgrgame.cpp:2070
+#: src/kgrgame.cpp:849 src/kgrgame.cpp:2053
 #, kde-format
 msgid ""
 "Sorry, you do not seem to have played and recorded the selected level before."
@@ -8722,7 +8722,7 @@ msgstr ""
 "Ne pare rău, se pare că nu ați mai jucat sau înregistrat nivelul selectat "
 "înainte."
 
-#: src/kgrgame.cpp:1064
+#: src/kgrgame.cpp:1063
 #, kde-format
 msgid ""
 "<NOBR><B>GAME OVER !!!</B></NOBR><P>Would you like to try this level again?</"
@@ -8731,22 +8731,22 @@ msgstr ""
 "<NOBR><B>JOC TERMINAT !!!</B></NOBR><P>Doriți să încercați acest nivel din "
 "nou?</P>"
 
-#: src/kgrgame.cpp:1066
+#: src/kgrgame.cpp:1065
 #, kde-format
 msgid "Game Over"
 msgstr "Sfârșit"
 
-#: src/kgrgame.cpp:1067
+#: src/kgrgame.cpp:1066
 #, kde-format
 msgid "&Try Again"
 msgstr "&Încercați din nou"
 
-#: src/kgrgame.cpp:1067
+#: src/kgrgame.cpp:1066
 #, kde-format
 msgid "&Finish"
 msgstr "&Finalizează"
 
-#: src/kgrgame.cpp:1141
+#: src/kgrgame.cpp:1140
 #, kde-format
 msgid ""
 "<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the <b>"
@@ -8755,27 +8755,27 @@ msgstr ""
 "<b>FELICITĂRI !!!!</b><p>Ați cucerit ultimul nivel al jocului <b>\"%1\"</"
 "b> !!</p>"
 
-#: src/kgrgame.cpp:1298
+#: src/kgrgame.cpp:1297
 #, kde-format
 msgid "Hint"
 msgstr "Sfat"
 
-#: src/kgrgame.cpp:1304
+#: src/kgrgame.cpp:1303
 #, kde-format
 msgid "&OK"
 msgstr ""
 
-#: src/kgrgame.cpp:1317
+#: src/kgrgame.cpp:1316
 #, kde-format
 msgid "Sorry, there is no hint for this level."
 msgstr "Ne pare rău, nu există indiciu pentru acest nivel."
 
-#: src/kgrgame.cpp:1379
+#: src/kgrgame.cpp:1378
 #, kde-format
 msgid "T H E   E N D"
 msgstr "S F Â R Ș I T"
 
-#: src/kgrgame.cpp:1420
+#: src/kgrgame.cpp:1415
 #, kde-format
 msgid ""
 "You have pressed a key that can be used to control the Hero. Do you want to "
@@ -8787,33 +8787,33 @@ msgstr ""
 "ușor de folosit pe termen lung - precum mersul pe bicicletă decât mersul pe "
 "jos!"
 
-#: src/kgrgame.cpp:1424
+#: src/kgrgame.cpp:1419
 #, kde-format
 msgid "Switch to Keyboard Mode"
 msgstr "Schimbă pe Modul Tastatură"
 
-#: src/kgrgame.cpp:1425
+#: src/kgrgame.cpp:1420
 #, kde-format
 msgid "Switch to &Keyboard Mode"
 msgstr "Schimbă pe Modul &Tastatură"
 
-#: src/kgrgame.cpp:1426
+#: src/kgrgame.cpp:1421
 #, kde-format
 msgid "Stay in &Mouse Mode"
 msgstr "Rămâneți în Modul &Maus"
 
-#: src/kgrgame.cpp:1427
+#: src/kgrgame.cpp:1422
 #, kde-format
 msgid "Keyboard Mode"
 msgstr "Modul Tastatură"
 
-#: src/kgrgame.cpp:1469 src/kgrgame.cpp:1495 src/kgrgame.cpp:1505
-#: src/kgrgame.cpp:1524 src/kgrgame.cpp:1530
+#: src/kgrgame.cpp:1456 src/kgrgame.cpp:1482 src/kgrgame.cpp:1492
+#: src/kgrgame.cpp:1511 src/kgrgame.cpp:1517
 #, kde-format
 msgid "Save Game"
 msgstr "Salvează jocul"
 
-#: src/kgrgame.cpp:1470
+#: src/kgrgame.cpp:1457
 #, kde-format
 msgid ""
 "Sorry, you cannot save your game play while you are editing. Please try menu "
@@ -8822,13 +8822,13 @@ msgstr ""
 "Ne pare rău, nu puteți salva jocul în timp ce editați. Încercați elementul "
 "meniului \"%1\"."
 
-#: src/kgrgame.cpp:1506 src/kgrgame.cpp:1550 src/kgrgame.cpp:1669
-#: src/kgrgame.cpp:1872 src/kgrgame.cpp:2036 src/kgrgameio.cpp:170
+#: src/kgrgame.cpp:1493 src/kgrgame.cpp:1537 src/kgrgame.cpp:1652
+#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2019 src/kgrgameio.cpp:170
 #, kde-format
 msgid "Cannot open file '%1' for read-only."
 msgstr "Nu s-a putut deschide fișierul '%1' doar pentru citire."
 
-#: src/kgrgame.cpp:1525
+#: src/kgrgame.cpp:1512
 #, kde-format
 msgid ""
 "Please note: for reasons of simplicity, your saved game position and score "
@@ -8837,37 +8837,37 @@ msgstr ""
 "Observați: din motive de simplitate, poziția jocului și scorul salvat vor fi "
 "cum au fost la începutul acestui nivel, nu cum sunt acum."
 
-#: src/kgrgame.cpp:1531
+#: src/kgrgame.cpp:1518
 #, kde-format
 msgid "Error: Failed to save your game."
 msgstr "Eroare: Jocul nu poate fi salvat."
 
-#: src/kgrgame.cpp:1543 src/kgrgame.cpp:1549 src/kgrgame.cpp:1591
+#: src/kgrgame.cpp:1530 src/kgrgame.cpp:1536 src/kgrgame.cpp:1574
 #, kde-format
 msgid "Load Game"
 msgstr "Încarcă joc"
 
-#: src/kgrgame.cpp:1544
+#: src/kgrgame.cpp:1531
 #, kde-format
 msgid "Sorry, there are no saved games."
 msgstr "Nu există jocuri salvate."
 
-#: src/kgrgame.cpp:1592
+#: src/kgrgame.cpp:1575
 #, kde-format
 msgid "Cannot find the game with prefix '%1'."
 msgstr "Jocul cu prefixul '%1' nu poate fi găsit."
 
-#: src/kgrgame.cpp:1650
+#: src/kgrgame.cpp:1633
 #, kde-format
 msgid "Unknown"
 msgstr "Necunoscut"
 
-#: src/kgrgame.cpp:1668 src/kgrgame.cpp:1707
+#: src/kgrgame.cpp:1651 src/kgrgame.cpp:1690
 #, kde-format
 msgid "Check for High Score"
 msgstr "Verificați recordurile"
 
-#: src/kgrgame.cpp:1725
+#: src/kgrgame.cpp:1708
 #, fuzzy, kde-format
 #| msgid ""
 #| "<html><b>Congratulations !!!</b><br>You have achieved a high score in "
@@ -8882,39 +8882,39 @@ msgstr ""
 "<br>Introduceți numele ca să poată fi consacrat<br>în Panoul de onoare "
 "KGoldrunner.</html>"
 
-#: src/kgrgame.cpp:1739
+#: src/kgrgame.cpp:1722
 #, fuzzy, kde-format
 #| msgid "Save High Score"
 msgctxt "@title:window"
 msgid "Save High Score"
 msgstr "Salvează record"
 
-#: src/kgrgame.cpp:1826
+#: src/kgrgame.cpp:1809
 #, kde-format
 msgid "Save High Score"
 msgstr "Salvează record"
 
-#: src/kgrgame.cpp:1827
+#: src/kgrgame.cpp:1810
 #, kde-format
 msgid "Error: Failed to save your high score."
 msgstr "Eroare: Nu s-a putut salva recordul."
 
-#: src/kgrgame.cpp:1839 src/kgrgame.cpp:1862 src/kgrgame.cpp:1871
+#: src/kgrgame.cpp:1822 src/kgrgame.cpp:1845 src/kgrgame.cpp:1854
 #, fuzzy, kde-format
 msgid "Show High Scores"
 msgstr "Afișează recordurile"
 
-#: src/kgrgame.cpp:1840
+#: src/kgrgame.cpp:1823
 #, kde-format
 msgid "Sorry, we do not keep high scores for tutorial games."
 msgstr "Nu păstrăm recorduri pentru jocurile îndrumătoare."
 
-#: src/kgrgame.cpp:1863
+#: src/kgrgame.cpp:1846
 #, kde-format
 msgid "Sorry, there are no high scores for the \"%1\" game yet."
 msgstr "Nu există recorduri pentru jocul \"%1\" încă."
 
-#: src/kgrgame.cpp:1887
+#: src/kgrgame.cpp:1870
 #, kde-format
 msgid ""
 "<center><h2>KGoldrunner Hall of Fame</h2></center><center><h3>\"%1\" Game</"
@@ -8923,65 +8923,65 @@ msgstr ""
 "<center><h2>Sala de jocuri KGoldrunner</h2></center><center><h3>\"%1\" Joc</"
 "h3></center>"
 
-#: src/kgrgame.cpp:1897
+#: src/kgrgame.cpp:1880
 #, kde-format
 msgctxt "1, 2, 3 etc."
 msgid "Rank"
 msgstr "Rang"
 
-#: src/kgrgame.cpp:1898
+#: src/kgrgame.cpp:1881
 #, kde-format
 msgctxt "Person"
 msgid "Name"
 msgstr "Nume"
 
-#: src/kgrgame.cpp:1899
+#: src/kgrgame.cpp:1882
 #, kde-format
 msgctxt "Game level reached"
 msgid "Level"
 msgstr "Nivel"
 
-#: src/kgrgame.cpp:1900
+#: src/kgrgame.cpp:1883
 #, kde-format
 msgid "Score"
 msgstr "Scor"
 
-#: src/kgrgame.cpp:1901
+#: src/kgrgame.cpp:1884
 #, kde-format
 msgid "Date"
 msgstr "Dată"
 
-#: src/kgrgame.cpp:1904
+#: src/kgrgame.cpp:1887
 #, fuzzy, kde-format
 #| msgid "High Scores"
 msgctxt "@title:window"
 msgid "High Scores"
 msgstr "Recorduri"
 
-#: src/kgrgame.cpp:2029 src/kgrgame.cpp:2035 src/kgrgame.cpp:2039
+#: src/kgrgame.cpp:2012 src/kgrgame.cpp:2018 src/kgrgame.cpp:2022
 #, kde-format
 msgid "Load Game Info"
 msgstr "Încarcă informațiile jocului"
 
-#: src/kgrgame.cpp:2030
+#: src/kgrgame.cpp:2013
 #, kde-format
 msgid "Cannot find game info file '%1'."
 msgstr "Jocul din fișierul '%1' nu a putut fi găsit."
 
-#: src/kgrgame.cpp:2040
+#: src/kgrgame.cpp:2023
 #, kde-format
 msgid "Reached end of file '%1' before finding end of game-data."
 msgstr ""
 "S-a ajuns la sfârșitul fișierului '%1' înaintea găsirii sfârșitului datelor "
 "de joc."
 
-#: src/kgrgame.cpp:2064 src/kgrgame.cpp:2069 src/kgrselector.cpp:259
+#: src/kgrgame.cpp:2047 src/kgrgame.cpp:2052 src/kgrselector.cpp:259
 #, fuzzy, kde-format
 #| msgid "Show A Solution"
 msgid "Save A Solution"
 msgstr "Afișează o soluție"
 
-#: src/kgrgame.cpp:2065
+#: src/kgrgame.cpp:2048
 #, kde-format
 msgid "Your solution to level %1 has been saved on file %2"
 msgstr ""
@@ -9017,7 +9017,7 @@ msgstr "Nu s-a putut șterge versiunea anterioară a fișierului \"%1\"."
 msgid "Cannot rename file '%1' to '%2'."
 msgstr "Nu s-a putut redenumi fișierul \"%1\" în \"%2\""
 
-#: src/kgrrenderer.cpp:109
+#: src/kgrrenderer.cpp:100
 #, kde-format
 msgid "Theme Selector"
 msgstr ""
@@ -9374,88 +9374,88 @@ msgstr ""
 msgid "Help: Select Game & Level"
 msgstr "Ajutor: Selectați joc și nivel"
 
-#: src/main.cpp:35
+#: src/main.cpp:31
 #, fuzzy, kde-format
 #| msgid "KGoldrunner is a game of action and puzzle solving"
 msgid "A game of action and puzzle solving"
 msgstr "KGoldrunner este un joc de acțiune și rezolvare puzzle"
 
-#: src/main.cpp:37
+#: src/main.cpp:33
 #, kde-format
 msgid "(C) 2003 Ian Wadham and Marco Krüger"
 msgstr "(C) 2003 Ian Wadham și Marco Krüger"
 
-#: src/main.cpp:70
+#: src/main.cpp:66
 #, kde-format
 msgid "Ian Wadham"
 msgstr "Ian Wadham"
 
-#: src/main.cpp:70
+#: src/main.cpp:66
 #, kde-format
 msgid "Current author"
 msgstr "Autorul actual"
 
-#: src/main.cpp:72
+#: src/main.cpp:68
 #, kde-format
 msgid "Marco Krüger"
 msgstr "Marco Krüger"
 
-#: src/main.cpp:72
+#: src/main.cpp:68
 #, kde-format
 msgid "Original author"
 msgstr "Autor original"
 
-#: src/main.cpp:74 src/main.cpp:80
+#: src/main.cpp:70 src/main.cpp:76
 #, kde-format
 msgid "Mauricio Piacentini"
 msgstr "Mauricio Piacentini"
 
-#: src/main.cpp:75
+#: src/main.cpp:71
 #, kde-format
 msgid "Port to KDE4, Qt4 and KGameCanvas classes"
 msgstr "Transferă clasele la KDE4, Qt4 și KGameCanvas"
 
-#: src/main.cpp:77
+#: src/main.cpp:73
 #, kde-format
 msgid "Maurizio Monge"
 msgstr "Maurizio Monge"
 
-#: src/main.cpp:78
+#: src/main.cpp:74
 #, kde-format
 msgid "KGameCanvas classes for KDE4"
 msgstr "KGameCanvas clase pentru KDE4"
 
-#: src/main.cpp:81
+#: src/main.cpp:77
 #, kde-format
 msgid "Artwork for runners and default theme"
 msgstr "Ilustrație pentru alergători și temă implicită"
 
-#: src/main.cpp:83
+#: src/main.cpp:79
 #, kde-format
 msgid "Johann Ollivier Lapeyre"
 msgstr "Johann Ollivier Lapeyre"
 
-#: src/main.cpp:84
+#: src/main.cpp:80
 #, kde-format
 msgid "Artwork for bars and ladders"
 msgstr "Ilustrație pentru bare și scări"
 
-#: src/main.cpp:86 src/main.cpp:94
+#: src/main.cpp:82 src/main.cpp:90
 #, kde-format
 msgid "Eugene Trounev"
 msgstr "Eugene Trounev"
 
-#: src/main.cpp:87
+#: src/main.cpp:83
 #, kde-format
 msgid "Artwork for background of Geek City theme"
 msgstr "Ilustrație pentru fundalul temei Orașul tocilarilor"
 
-#: src/main.cpp:89
+#: src/main.cpp:85
 #, kde-format
 msgid "Luciano Montanaro"
 msgstr "Luciano Montanaro"
 
-#: src/main.cpp:90
+#: src/main.cpp:86
 #, kde-format
 msgid ""
 "Nostalgia themes, improvements to runners, multiple-backgrounds feature, "
@@ -9464,7 +9464,7 @@ msgstr ""
 "Teme nostalgice, îmbunătățiri pentru alergători, opțiunea mai multor "
 "fundaluri, opțiunea de colorare/decolorare și câteva alte idei"
 
-#: src/main.cpp:95
+#: src/main.cpp:91
 #, kde-format
 msgid "Artwork for the Treasure of Egypt theme"
 msgstr "Ilustrație pentru tema Comoara Egiptului"
