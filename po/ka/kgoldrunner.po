@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-25 01:39+0000\n"
-"PO-Revision-Date: 2023-08-30 09:42+0200\n"
+"PO-Revision-Date: 2023-09-25 11:29+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1046,7 +1046,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:50
 #, kde-format
 msgid "Forbidden Gold"
-msgstr ""
+msgstr "აკრძალული ოქრო"
 
 #: gamedata/game_GMEP.txt:51
 #, kde-format
@@ -1060,7 +1060,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:56
 #, kde-format
 msgid "Dig Your Way Out"
-msgstr ""
+msgstr "გათხარეთ თქვენი გზა"
 
 #: gamedata/game_GMEP.txt:57
 #, kde-format
@@ -1078,7 +1078,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:64
 #, kde-format
 msgid "An Unpleasant Cellmate"
-msgstr ""
+msgstr "უსიამოვნო მეზობელი"
 
 #: gamedata/game_GMEP.txt:65
 #, kde-format
@@ -1090,7 +1090,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:68
 #, kde-format
 msgid "Awaiting Enemies"
-msgstr ""
+msgstr "მტრების მოლოდინი"
 
 #: gamedata/game_GMEP.txt:69
 #, kde-format
@@ -1133,7 +1133,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:82
 #, kde-format
 msgid "Caught In The Heights"
-msgstr ""
+msgstr "დაჭერილია სიმაღლეებში"
 
 #: gamedata/game_GMEP.txt:83
 #, kde-format
@@ -1197,7 +1197,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:2
 #, kde-format
 msgid "Gold Rush"
-msgstr ""
+msgstr "ოქროს ციებცხელება"
 
 #: gamedata/game_GMGR.txt:3
 #, kde-format
@@ -1211,7 +1211,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:8
 #, kde-format
 msgid "Too Easy?"
-msgstr ""
+msgstr "ძალიან ადვილია?"
 
 #: gamedata/game_GMGR.txt:9
 #, kde-format
@@ -1232,7 +1232,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:16
 #, kde-format
 msgid "Have A Nice Flight..."
-msgstr ""
+msgstr "ბედნიერი ფრენა..."
 
 #: gamedata/game_GMGR.txt:17
 #, kde-format
@@ -1246,17 +1246,17 @@ msgstr ""
 #: gamedata/game_GMGR.txt:22
 #, kde-format
 msgid "Golddigger"
-msgstr ""
+msgstr "ოქროს მაძიებელი"
 
 #: gamedata/game_GMGR.txt:23
 #, kde-format
 msgid "My suggestion: dig!"
-msgstr ""
+msgstr "ჩემი რჩევაა: თხარე!"
 
 #: gamedata/game_GMGR.txt:26
 #, kde-format
 msgid "Golden Town"
-msgstr ""
+msgstr "ოქროს ქალაქი"
 
 #: gamedata/game_GMGR.txt:27
 #, kde-format
@@ -1269,7 +1269,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:30
 #, kde-format
 msgid "A Hectic Enemy"
-msgstr ""
+msgstr "მოუსვენარი მტერი"
 
 #: gamedata/game_GMGR.txt:31
 #, kde-format
@@ -1288,7 +1288,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:38
 #, kde-format
 msgid "Don't Wake Them Up"
-msgstr ""
+msgstr "არ გააღვიძოთ"
 
 #: gamedata/game_GMGR.txt:39
 #, kde-format
@@ -1311,7 +1311,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:46
 #, kde-format
 msgid "On The Brink"
-msgstr ""
+msgstr "ნაპირზე"
 
 #: gamedata/game_GMGR.txt:47
 #, kde-format
@@ -1337,7 +1337,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:57
 #, kde-format
 msgid "The Big Maze"
-msgstr ""
+msgstr "დიდი ლაბირინთი"
 
 #: gamedata/game_GMGR.txt:58
 #, kde-format
@@ -1353,7 +1353,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:63
 #, kde-format
 msgid "Hurry Up!"
-msgstr ""
+msgstr "იჩქარეთ!"
 
 #: gamedata/game_GMGR.txt:64
 #, kde-format
@@ -1369,7 +1369,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:69
 #, kde-format
 msgid "Two Useful Enemies"
-msgstr ""
+msgstr "ორი საჭირო მტერი"
 
 #: gamedata/game_GMGR.txt:70
 #, kde-format
@@ -1387,7 +1387,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:76
 #, kde-format
 msgid "The Prison"
-msgstr ""
+msgstr "ციხე"
 
 #: gamedata/game_GMGR.txt:77
 #, kde-format
@@ -1404,7 +1404,7 @@ msgstr ""
 #: gamedata/game_plws.txt:116
 #, kde-format
 msgid "Free Fall"
-msgstr ""
+msgstr "თავისუფალი ვარდნა"
 
 #: gamedata/game_GMGR.txt:83
 #, kde-format
@@ -1475,7 +1475,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:114
 #, kde-format
 msgid "Snakepits"
-msgstr ""
+msgstr "გველის სოროები"
 
 #: gamedata/game_GMGR.txt:115
 #, kde-format
@@ -1491,7 +1491,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:120
 #, kde-format
 msgid "Get In And Up"
-msgstr ""
+msgstr "შიგნით და მაღლა"
 
 #: gamedata/game_GMGR.txt:121
 #, kde-format
@@ -1504,7 +1504,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:124
 #, kde-format
 msgid "No Way Out"
-msgstr ""
+msgstr "გარეთ გზა არაა"
 
 #: gamedata/game_GMGR.txt:125
 #, kde-format
@@ -1514,7 +1514,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:128
 #, kde-format
 msgid "How To Get There"
-msgstr ""
+msgstr "როგორ მოვხვდე იქ?"
 
 #: gamedata/game_GMGR.txt:129
 #, kde-format
@@ -1556,7 +1556,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:144
 #, kde-format
 msgid "Long Way Up"
-msgstr ""
+msgstr "გრძელი გზა ზემოთ"
 
 #: gamedata/game_GMGR.txt:145
 #, kde-format
@@ -1576,7 +1576,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:152
 #, kde-format
 msgid "A Little Present To Say Goodbye"
-msgstr ""
+msgstr "პატარა დასამშვიდობებელი საჩუქარი"
 
 #: gamedata/game_GMGR.txt:153
 #, kde-format
@@ -1594,12 +1594,12 @@ msgctxt ""
 "level to the next by using the Y key and you can prevent a level from "
 "playing by using the Pause key (P or Escape)."
 msgid " "
-msgstr ""
+msgstr " "
 
 #: gamedata/game_GotD.txt:3
 #, kde-format
 msgid "Gold Of The Living Dead"
-msgstr ""
+msgstr "ცოცხალი მკვდრების ოქრო"
 
 #: gamedata/game_GotD.txt:4
 #, kde-format
@@ -1615,7 +1615,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:9
 #, kde-format
 msgid "Last Person On Earth"
-msgstr ""
+msgstr "უკანასკნელი ადამიანი დედამიწაზე"
 
 #: gamedata/game_GotD.txt:10
 #, kde-format
@@ -1653,7 +1653,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:23
 #, kde-format
 msgid "A Little Digging Warm-Up"
-msgstr ""
+msgstr "პატარა გახურება გათხრებამდე"
 
 #: gamedata/game_GotD.txt:24
 #, kde-format
@@ -1671,7 +1671,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:29
 #, kde-format
 msgid "Patient Zero"
-msgstr ""
+msgstr "ნულოვანი პაციენტი"
 
 #: gamedata/game_GotD.txt:30
 #, kde-format
@@ -1691,12 +1691,12 @@ msgstr ""
 #: gamedata/game_GotD.txt:39 gamedata/game_plws.txt:113
 #, kde-format
 msgid "Zig Zag"
-msgstr ""
+msgstr "ზიგაზი"
 
 #: gamedata/game_GotD.txt:40
 #, kde-format
 msgid "This is as easy as it gets..."
-msgstr ""
+msgstr "ისეთი ადვილი, როგორც ეს შეიძლება, მოხდეს..."
 
 #: gamedata/game_GotD.txt:43 gamedata/game_wad.txt:63
 #, kde-format
@@ -1748,17 +1748,17 @@ msgstr ""
 #: gamedata/game_GotD.txt:57
 #, kde-format
 msgid "Do Not Worry"
-msgstr ""
+msgstr "ნუ შეწუხდებით"
 
 #: gamedata/game_GotD.txt:58
 #, kde-format
 msgid "Come on, they are completely harmless ;-)"
-msgstr ""
+msgstr "ისინი ხომ სრულიად უვნებლები არიან ;-)"
 
 #: gamedata/game_GotD.txt:61
 #, kde-format
 msgid "They Are So Many!"
-msgstr ""
+msgstr "აუ, რამდენნი არიან!"
 
 #: gamedata/game_GotD.txt:62
 #, kde-format
@@ -1797,7 +1797,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:79
 #, kde-format
 msgid "Please Do Let Me Pass!"
-msgstr ""
+msgstr "გამატარეთ!"
 
 #: gamedata/game_GotD.txt:80
 #, kde-format
@@ -1828,7 +1828,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:89
 #, kde-format
 msgid "Thieves"
-msgstr ""
+msgstr "ქურდები"
 
 #: gamedata/game_GotD.txt:90
 #, kde-format
@@ -1841,7 +1841,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:93
 #, kde-format
 msgid "Climbing And Falling"
-msgstr ""
+msgstr "ცოცვა და ჩამოვარდნა"
 
 #: gamedata/game_GotD.txt:94
 #, kde-format
@@ -1862,7 +1862,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:103
 #, kde-format
 msgid "Temple Of Gold"
-msgstr ""
+msgstr "ოქროს ტაძარი"
 
 #: gamedata/game_GotD.txt:104
 #, kde-format
@@ -1887,7 +1887,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:113
 #, kde-format
 msgid "Always Know Your Way Out"
-msgstr ""
+msgstr "ყოველთვის გქონდეთ გასაქცევი"
 
 #: gamedata/game_GotD.txt:114
 #, kde-format
@@ -1901,7 +1901,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:119
 #, kde-format
 msgid "Patience?"
-msgstr ""
+msgstr "მოთმიმება?"
 
 #: gamedata/game_GotD.txt:120
 #, kde-format
@@ -1913,7 +1913,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:123
 #, kde-format
 msgid "Lock Them Away!"
-msgstr ""
+msgstr "ჩაკეტეთ!"
 
 #: gamedata/game_GotD.txt:124
 #, kde-format
@@ -1954,17 +1954,17 @@ msgstr ""
 #: gamedata/game_GotD.txt:137
 #, kde-format
 msgid "Harder Than It Looks"
-msgstr ""
+msgstr "უფრო ძნელია, ვიდრე ჩანს"
 
 #: gamedata/game_GotD.txt:138
 #, kde-format
 msgid "Timing is everything."
-msgstr ""
+msgstr "დროის ათვლა ყველაფერს წყვეტს"
 
 #: gamedata/game_GotD.txt:141
 #, kde-format
 msgid "Concrete Desert"
-msgstr ""
+msgstr "ბეტონის უდაბნო"
 
 #: gamedata/game_GotD.txt:142
 #, kde-format
@@ -2005,7 +2005,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:155
 #, kde-format
 msgid "Give Me That Gold!"
-msgstr ""
+msgstr "მომეცი ეგ ოქრო!"
 
 #: gamedata/game_GotD.txt:156
 #, kde-format
@@ -2030,7 +2030,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:165
 #, kde-format
 msgid "Too Fast?"
-msgstr ""
+msgstr "ძალიან სწრაფია?"
 
 #: gamedata/game_GotD.txt:166
 #, kde-format
@@ -2045,7 +2045,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:171
 #, kde-format
 msgid "Running Against Time"
-msgstr ""
+msgstr "დრო სრულდება"
 
 #: gamedata/game_GotD.txt:172
 #, kde-format
@@ -2067,7 +2067,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:179
 #, kde-format
 msgid "Diving"
-msgstr ""
+msgstr "ყვინთვა"
 
 #: gamedata/game_GotD.txt:180
 #, kde-format
@@ -2085,7 +2085,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:187
 #, kde-format
 msgid "Encircled"
-msgstr ""
+msgstr "ალყაში"
 
 #: gamedata/game_GotD.txt:188
 #, kde-format
@@ -2100,7 +2100,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:191
 #, kde-format
 msgid "Up And Down"
-msgstr ""
+msgstr "ზემოთ და ქვემოთ"
 
 #: gamedata/game_GotD.txt:192
 #, kde-format
@@ -2130,7 +2130,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:203 gamedata/game_lars.txt:44
 #, kde-format
 msgid "Do Not Fall Down"
-msgstr ""
+msgstr "არ ჩავარდეთ"
 
 #: gamedata/game_GotD.txt:204
 #, kde-format
@@ -2144,7 +2144,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:209
 #, kde-format
 msgid "Surprise, Surprise"
-msgstr ""
+msgstr "გაგიკვირდა"
 
 #: gamedata/game_GotD.txt:210
 #, kde-format
@@ -2159,7 +2159,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:215
 #, kde-format
 msgid "Busy Town"
-msgstr ""
+msgstr "დაკავებული ქალაქი"
 
 #: gamedata/game_GotD.txt:216
 #, kde-format
@@ -2171,7 +2171,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:219
 #, kde-format
 msgid "Jailbreak"
-msgstr ""
+msgstr "ციხიდან გაქცევა"
 
 #: gamedata/game_GotD.txt:220
 #, kde-format
@@ -2184,7 +2184,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:223
 #, kde-format
 msgid "Is It Really Worth It?"
-msgstr ""
+msgstr "ღირდა?"
 
 #: gamedata/game_GotD.txt:224
 #, kde-format
@@ -2262,7 +2262,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:251
 #, kde-format
 msgid "The Passage"
-msgstr ""
+msgstr "გასავლელი"
 
 #: gamedata/game_GotD.txt:252
 #, kde-format
@@ -2293,7 +2293,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:263
 #, kde-format
 msgid "Out Of My Way!"
-msgstr ""
+msgstr "გამეცალე!"
 
 #: gamedata/game_GotD.txt:264
 #, kde-format
@@ -2308,7 +2308,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:269
 #, kde-format
 msgid "Waking Up The Dead"
-msgstr ""
+msgstr "მკვდრების გაღვიძება"
 
 #: gamedata/game_GotD.txt:270
 #, kde-format
@@ -2330,7 +2330,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:277
 #, kde-format
 msgid "Zombie Lemmings"
-msgstr ""
+msgstr "ზომბი ლემინგები"
 
 #: gamedata/game_GotD.txt:278
 #, kde-format
@@ -2349,7 +2349,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:285
 #, kde-format
 msgid "Death Trap"
-msgstr ""
+msgstr "სასიკვდილო ხაფანგი"
 
 #: gamedata/game_GotD.txt:286
 #, kde-format
@@ -2359,7 +2359,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:289 gamedata/game_plws.txt:227
 #, kde-format
 msgid "Overcrowding"
-msgstr ""
+msgstr "გადავსება"
 
 #: gamedata/game_GotD.txt:290
 #, kde-format
@@ -2373,7 +2373,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:293
 #, kde-format
 msgid "Fear Of Heights"
-msgstr ""
+msgstr "სიმაღლის შიში"
 
 #: gamedata/game_GotD.txt:294
 #, kde-format
@@ -2398,7 +2398,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:303
 #, kde-format
 msgid "Raining Zombies"
-msgstr ""
+msgstr "ზომბების წვიმა"
 
 #: gamedata/game_GotD.txt:304
 #, kde-format
@@ -2408,7 +2408,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:307
 #, kde-format
 msgid "A Desperate Jump"
-msgstr ""
+msgstr "განწირული ნახტომი"
 
 #: gamedata/game_GotD.txt:308
 #, kde-format
@@ -2422,7 +2422,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:313
 #, kde-format
 msgid "Among Zombies"
-msgstr ""
+msgstr "ზომბებს შორის"
 
 #: gamedata/game_GotD.txt:314
 #, kde-format
@@ -2432,7 +2432,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:317
 #, kde-format
 msgid "The Horde"
-msgstr ""
+msgstr "ურდო"
 
 #: gamedata/game_GotD.txt:318
 #, kde-format
@@ -2445,7 +2445,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:323
 #, kde-format
 msgid "Dance With Death"
-msgstr ""
+msgstr "სიკვდილთან თამაში"
 
 #: gamedata/game_GotD.txt:324
 #, kde-format
@@ -2457,7 +2457,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:327
 #, kde-format
 msgid "Zombie Invaders"
-msgstr ""
+msgstr "ზომბების თავდასხმა"
 
 #: gamedata/game_GotD.txt:328
 #, kde-format
@@ -2469,7 +2469,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:331
 #, kde-format
 msgid "Just Survive"
-msgstr ""
+msgstr "უბრალოდ გადარჩენა"
 
 #: gamedata/game_GotD.txt:332
 #, kde-format
@@ -2482,7 +2482,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:335
 #, kde-format
 msgid "Death Race"
-msgstr ""
+msgstr "სასიკვდილო რბოლა"
 
 #: gamedata/game_GotD.txt:336
 #, kde-format
@@ -2494,7 +2494,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:339
 #, kde-format
 msgid "Zombie Free Zone"
-msgstr ""
+msgstr "ზომბებისგან თავისუფალი ადგილი"
 
 #: gamedata/game_GotD.txt:340
 #, kde-format
@@ -2506,7 +2506,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:343
 #, kde-format
 msgid "The End"
-msgstr ""
+msgstr "დასასრული"
 
 #: gamedata/game_GotD.txt:344
 #, kde-format
@@ -2521,7 +2521,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:2
 #, kde-format
 msgid "Gold Rush II"
-msgstr ""
+msgstr "ოქროს ციებცხელება II"
 
 #: gamedata/game_GRII.txt:3
 #, kde-format
@@ -2543,7 +2543,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:10
 #, kde-format
 msgid "A Big Start"
-msgstr ""
+msgstr "დიდი დასაწყის"
 
 #: gamedata/game_GRII.txt:11
 #, kde-format
@@ -2566,7 +2566,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:20
 #, kde-format
 msgid "Teamwork"
-msgstr ""
+msgstr "გუნდური მუშაობა"
 
 #: gamedata/game_GRII.txt:21
 #, kde-format
@@ -2590,7 +2590,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:30
 #, kde-format
 msgid "Watch Out For Traps"
-msgstr ""
+msgstr "ყურადღებით, ხაფანგებია"
 
 #: gamedata/game_GRII.txt:31
 #, kde-format
@@ -2602,7 +2602,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:34
 #, kde-format
 msgid "Easy Prey"
-msgstr ""
+msgstr "იოლი მსხვერპლი"
 
 #: gamedata/game_GRII.txt:35
 #, kde-format
@@ -2621,7 +2621,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:42
 #, kde-format
 msgid "The Gold Mine"
-msgstr ""
+msgstr "ოქროს საბადო"
 
 #: gamedata/game_GRII.txt:43
 #, kde-format
@@ -2640,7 +2640,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:50 gamedata/game_plwv.txt:61
 #, kde-format
 msgid "Entangled"
-msgstr ""
+msgstr "გახლართული"
 
 #: gamedata/game_GRII.txt:51
 #, kde-format
@@ -2672,7 +2672,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:62
 #, kde-format
 msgid "Three Friends"
-msgstr ""
+msgstr "სამი მეგობარი"
 
 #: gamedata/game_GRII.txt:63
 #, kde-format
@@ -2706,7 +2706,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:72
 #, kde-format
 msgid "Let Me Out!"
-msgstr ""
+msgstr "გამიშვით!"
 
 #: gamedata/game_GRII.txt:73
 #, kde-format
@@ -2722,7 +2722,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:78
 #, kde-format
 msgid "Let Them Live"
-msgstr ""
+msgstr "იცოცხლონ"
 
 #: gamedata/game_GRII.txt:79
 #, kde-format
@@ -2750,7 +2750,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:88
 #, kde-format
 msgid "Jump And Run!"
-msgstr ""
+msgstr "გადახტი და გაიქეცი!"
 
 #: gamedata/game_GRII.txt:89
 #, kde-format
@@ -2771,7 +2771,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:96
 #, kde-format
 msgid "The Lone Golddigger"
-msgstr ""
+msgstr "ეული ოქროს მაძიებელი"
 
 #: gamedata/game_GRII.txt:97
 #, kde-format
@@ -2799,7 +2799,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:106
 #, kde-format
 msgid "Left Or Right?"
-msgstr ""
+msgstr "მარჯვნივ თუ მარცხნივ?"
 
 #: gamedata/game_GRII.txt:107
 #, kde-format
@@ -2821,7 +2821,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:114
 #, kde-format
 msgid "Treasures of Gold"
-msgstr ""
+msgstr "ოქროს ქვიშები"
 
 #: gamedata/game_GRII.txt:115
 #, kde-format
@@ -2848,7 +2848,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:126
 #, kde-format
 msgid "Never Reaching The Bottom"
-msgstr ""
+msgstr "ფსკერის მიუღწევლად"
 
 #: gamedata/game_GRII.txt:127
 #, kde-format
@@ -2869,7 +2869,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:134
 #, kde-format
 msgid "Getting Past The Enemy"
-msgstr ""
+msgstr "მტრისაგან გაღწევისას"
 
 #: gamedata/game_GRII.txt:135
 #, kde-format
@@ -2892,7 +2892,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:144
 #, kde-format
 msgid "Narrow Paths"
-msgstr ""
+msgstr "ვიწრო ბილიკები"
 
 #: gamedata/game_GRII.txt:145
 #, kde-format
@@ -2935,7 +2935,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:160
 #, kde-format
 msgid "The Breakout"
-msgstr ""
+msgstr "გარღვევა"
 
 #: gamedata/game_GRII.txt:161
 #, kde-format
@@ -3002,7 +3002,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:184
 #, kde-format
 msgid "Synchronised Running 2"
-msgstr ""
+msgstr "სინქრონიზებული სირბილი 2"
 
 #: gamedata/game_GRII.txt:185
 #, kde-format
@@ -3019,12 +3019,12 @@ msgstr ""
 #: gamedata/game_GRII.txt:190
 #, kde-format
 msgid "The Heartbreaker"
-msgstr ""
+msgstr "გატეხილი გული"
 
 #: gamedata/game_GRII.txt:191 gamedata/game_lars.txt:85
 #, kde-format
 msgid "No hint!"
-msgstr ""
+msgstr "მინიშნებების გარეშე!"
 
 #: gamedata/game_kgr.txt:3 src/main.cpp:29
 #, kde-format
@@ -3043,7 +3043,7 @@ msgstr ""
 #: gamedata/game_lars.txt:2
 #, kde-format
 msgid "Demolition"
-msgstr ""
+msgstr "დანგრევა"
 
 #: gamedata/game_lars.txt:3
 #, kde-format
@@ -3057,7 +3057,7 @@ msgstr ""
 #: gamedata/game_lars.txt:8
 #, kde-format
 msgid "Ups And Downs"
-msgstr ""
+msgstr "ზემოთ და ქვემოთ"
 
 #: gamedata/game_lars.txt:9
 #, kde-format
@@ -3070,17 +3070,17 @@ msgstr ""
 #: gamedata/game_lars.txt:12
 #, kde-format
 msgid "Dig, Baby, Dig!"
-msgstr ""
+msgstr "გათხარე, პატარავ, გათხარე!"
 
 #: gamedata/game_lars.txt:13
 #, kde-format
 msgid "This should be fairly easy. No hint!"
-msgstr ""
+msgstr "ეს საკმაოდ იოლია. მინიშნებების გარეშე!"
 
 #: gamedata/game_lars.txt:16
 #, kde-format
 msgid "Fetch!"
-msgstr ""
+msgstr "მომიტანე!"
 
 #: gamedata/game_lars.txt:17
 #, kde-format
@@ -3100,7 +3100,7 @@ msgstr ""
 #: gamedata/game_lars.txt:24
 #, kde-format
 msgid "Panic!"
-msgstr ""
+msgstr "პანიკა!"
 
 #: gamedata/game_lars.txt:25
 #, kde-format
@@ -3132,7 +3132,7 @@ msgstr ""
 #: gamedata/game_lars.txt:36
 #, kde-format
 msgid "Vertical"
-msgstr ""
+msgstr "ვერტიკალური"
 
 #: gamedata/game_lars.txt:37
 #, kde-format
@@ -3144,7 +3144,7 @@ msgstr ""
 #: gamedata/game_lars.txt:40
 #, kde-format
 msgid "The Divide"
-msgstr ""
+msgstr "გამყოფი"
 
 #: gamedata/game_lars.txt:41
 #, kde-format
@@ -3175,32 +3175,32 @@ msgstr ""
 #: gamedata/game_lars.txt:52
 #, kde-format
 msgid "Crowd Control"
-msgstr ""
+msgstr "ბრბოს მართვა"
 
 #: gamedata/game_lars.txt:53
 #, kde-format
 msgid "Remember 'Landfill'?"
-msgstr ""
+msgstr "გახსოვთ „ნაგავსაყრელი“?"
 
 #: gamedata/game_lars.txt:56
 #, kde-format
 msgid "One Way Up"
-msgstr ""
+msgstr "ერთი გზა ზემოთ"
 
 #: gamedata/game_lars.txt:57 gamedata/game_lars.txt:81
 #, kde-format
 msgid "This one is easy. No hint!"
-msgstr ""
+msgstr "ეს იოლია. მინიშნებების გარეშე!"
 
 #: gamedata/game_lars.txt:60
 #, kde-format
 msgid "Use Your Enemy"
-msgstr ""
+msgstr "გამოიყენეთ თქვენი მტერი"
 
 #: gamedata/game_lars.txt:61
 #, kde-format
 msgid "Use yourself as bait."
-msgstr ""
+msgstr "გამოიყენეთ თქვენი თავი სატყუარად."
 
 #: gamedata/game_lars.txt:64
 #, kde-format
@@ -3260,7 +3260,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:2
 #, kde-format
 msgid "Mazes"
-msgstr ""
+msgstr "ლაბირინთები"
 
 #: gamedata/game_MAZ.txt:3
 #, kde-format
@@ -3293,7 +3293,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:12
 #, kde-format
 msgid "Sleepy"
-msgstr ""
+msgstr "მძინარა"
 
 #: gamedata/game_MAZ.txt:13
 #, kde-format
@@ -3303,7 +3303,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:16
 #, kde-format
 msgid "Doc"
-msgstr ""
+msgstr "ექიმი"
 
 #: gamedata/game_MAZ.txt:17
 #, kde-format
@@ -3313,7 +3313,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:20
 #, kde-format
 msgid "Grumpy"
-msgstr ""
+msgstr "ღრენია"
 
 #: gamedata/game_MAZ.txt:21
 #, kde-format
