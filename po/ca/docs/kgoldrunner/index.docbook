@@ -523,7 +523,7 @@
 >Enregistrar, repetir i les solucions</title>
 
 <para
->Tots els nivells de les partides s'enregistraran a mesura que jugueu, pel que podreu tornar a jugar qualsevol nivell que hàgiu jugat anteriorment. A més, alguns nivells tenen solucions enregistrades, el qual pot ajudar-vos a esbrinar com guanyar-los. Senzillament utilitzeu el menú <guimenu
+>Tots els nivells de les partides s'enregistraran a mesura que jugueu, i per això podreu tornar a jugar qualsevol nivell que hàgiu jugat anteriorment. A més, alguns nivells tenen solucions enregistrades, el qual pot ajudar-vos a esbrinar com guanyar-los. Senzillament utilitzeu el menú <guimenu
 >Mou</guimenu
 > i les opcions <guimenuitem
 >Mostra una solució</guimenuitem
@@ -2079,7 +2079,7 @@ linkend="settings-menu"
 ><guimenuitem
 >Mou un nivell</guimenuitem
 ></menuchoice
-> per tornar a ordenar o tornar a numerar els nivells en una partida, o per a moure un nivell des d'una partida a una altra. Aquesta és una operació de dues parts. Primer heu de carregar un nivell seleccionant per a editar o jugar, i després, quan utilitzeu <guimenuitem
+> per a tornar a ordenar o tornar a numerar els nivells en una partida, o per a moure un nivell des d'una partida a una altra. Aquesta és una operació de dues parts. Primer heu de carregar un nivell seleccionant per a editar o jugar, i després, quan utilitzeu <guimenuitem
 >Mou un nivell</guimenuitem
 >, apareixerà el diàleg <guilabel
 >Selecció d'una partida</guilabel
@@ -2234,7 +2234,7 @@ linkend="settings-menu"
 </listitem>
 <listitem>
 <para
->Si un trencaclosques d'excavació sembla impossible, considereu que poden haver-hi alguns maons falsos. Potser la capa inferior sigui falsa o potser podreu aturar-vos en un maó fals i cavar al seu costat.</para>
+>Si un trencaclosques d'excavació sembla impossible, considereu que poden haver-hi alguns maons falsos. Potser la capa inferior és falsa o potser podreu aturar-vos en un maó fals i cavar al seu costat.</para>
 </listitem>
 <listitem>
 <para
@@ -2308,7 +2308,7 @@ linkend="settings-menu"
 </listitem>
 <listitem>
 <para
->En cavar als trencaclosques, cerqueu maons falsos en els quals pugueu caure i, per tant, tindreu un maó menys per cavar. O considereu utilitzar a un enemic perquè us avanci, de manera que pugueu aturar-vos sobre el seu cap i cavar.</para>
+>En cavar als trencaclosques, cerqueu maons falsos en els quals pugueu caure i, per tant, tindreu un maó menys a cavar. O considereu utilitzar a un enemic perquè us avanci, de manera que pugueu aturar-vos sobre el seu cap i cavar.</para>
 </listitem>
 <listitem>
 <para
