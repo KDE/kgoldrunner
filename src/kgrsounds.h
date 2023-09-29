@@ -8,8 +8,8 @@
 #ifndef KGRSOUNDS_H
 #define KGRSOUNDS_H
 
+#include <QList>
 #include <QObject>
-#include <QVector>
 #include <QElapsedTimer>
 
 #include <KgSound>
@@ -68,10 +68,10 @@ public:
     void setVolume (int effect, qreal volume);
 
 private:
-    QVector<KgSound *> sounds;
-    QVector<int>       startTime;	// Start times of timed sounds, else 0.
-    bool               muted;
-    QElapsedTimer              t;
+    QList<KgSound *> sounds;
+    QList<int>       startTime;	// Start times of timed sounds, else 0.
+    bool             muted;
+    QElapsedTimer    t;
 };
 
 #endif // KGRSOUNDS_H

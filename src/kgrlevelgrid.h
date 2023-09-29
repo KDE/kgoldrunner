@@ -11,7 +11,6 @@
 
 #include <QList>
 #include <QObject>
-#include <QVector>
 
 class KGrLevelGrid : public QObject
 {
@@ -65,14 +64,14 @@ private:
 
     bool runThruHole;		// Rule: Whether enemies run L/R through a hole.
 
-    QVector<char>  layout;
-    QVector<Flags> heroAccess;
-    QVector<Flags> enemyAccess;
-    QVector<int>   enemyHere;
+    QList<char>  layout;
+    QList<Flags> heroAccess;
+    QList<Flags> enemyAccess;
+    QList<int>   enemyHere;
 
-    QList<int>     hiddenLadders;
-    QList<int>     hiddenEnemies;
-    QList<int>     flashingGold;
+    QList<int>   hiddenLadders;
+    QList<int>   hiddenEnemies;
+    QList<int>   flashingGold;
 };
 
 #endif // KGRLEVELGRID_H

@@ -245,7 +245,7 @@ private:
 
     // The visible elements of the scenario (tiles and borders), excluding the
     // background picture and the animated sprites.
-    QVector <KGameRenderedItem *> m_tiles;
+    QList <KGameRenderedItem *> m_tiles;
 
     // The type of each tile stored in m_tiles.
     QByteArray m_tileTypes;

@@ -436,7 +436,7 @@ private:
     QList <DugBrick *> dugBricks;
 
     int          reappearIndex;
-    QVector<int> reappearPos;
+    QList<int>   reappearPos;
     void         makeReappearanceSequence();
     bool         doRecordedMove();
     void         recordInitialWaitTime (const int ms);

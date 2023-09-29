@@ -13,7 +13,6 @@
 
 #include <QObject>
 #include <QList>
-#include <QVector>
 
 /**
  * Sets up games and levels in KGoldrunner and controls the play.
@@ -217,7 +216,7 @@ private:
 /*******************************  SOUND SUPPORT *******************************/
 /******************************************************************************/
     KGrSounds * effects;
-    QVector<int> fx;
+    QList<int> fx;
     bool soundOn;
     bool stepsOn;
 
