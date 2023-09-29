@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-25 01:39+0000\n"
-"PO-Revision-Date: 2023-09-27 06:05+0200\n"
+"PO-Revision-Date: 2023-09-28 09:51+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1145,7 +1145,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:86
 #, kde-format
 msgid "Teamwork (1) - The Liberation"
-msgstr ""
+msgstr "გუნდური მუშაობა (1) - გათავისუფლება"
 
 #: gamedata/game_GMEP.txt:87
 #, kde-format
@@ -1172,17 +1172,17 @@ msgstr ""
 #: gamedata/game_GMEP.txt:98
 #, kde-format
 msgid "Teamwork (2) - Diving Platforms"
-msgstr ""
+msgstr "გუნდური მუშაობა (2) - ჩასაყვინთი პლატფორმები"
 
 #: gamedata/game_GMEP.txt:99
 #, kde-format
 msgid "Start running immediately or you are doomed!"
-msgstr ""
+msgstr "ახლავე დაიწყე სირბილი, ან განწირული ხარ!"
 
 #: gamedata/game_GMEP.txt:102
 #, kde-format
 msgid "Teamwork (3) - The Final Escape"
-msgstr ""
+msgstr "გუნდური მუშაობა (3) - საბოლოო გაქცევა"
 
 #: gamedata/game_GMEP.txt:103
 #, kde-format
@@ -1782,7 +1782,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:73
 #, kde-format
 msgid "Never Trust The H-Ladders"
-msgstr ""
+msgstr "არასდროს ენდოთ H-კიბეებს"
 
 #: gamedata/game_GotD.txt:74
 #, kde-format
@@ -1814,7 +1814,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:85
 #, kde-format
 msgid "Three Little Pieces Of Elegance"
-msgstr ""
+msgstr "ელეგანტურობის სამი პატარა ნაწილი"
 
 #: gamedata/game_GotD.txt:86
 #, kde-format
@@ -2050,12 +2050,12 @@ msgstr "დრო სრულდება"
 #: gamedata/game_GotD.txt:172
 #, kde-format
 msgid "Be quicker than the zombies - otherwise they will eat you."
-msgstr ""
+msgstr "იყავით ზომბებზე სწრაფი - არადა, შეგჭამენ."
 
 #: gamedata/game_GotD.txt:175
 #, kde-format
 msgid "The Big Drop"
-msgstr ""
+msgstr "დიდი თანხა"
 
 #: gamedata/game_GotD.txt:176
 #, kde-format
@@ -2403,7 +2403,7 @@ msgstr "ზომბების წვიმა"
 #: gamedata/game_GotD.txt:304
 #, kde-format
 msgid "Let us see if you have learned your lesson about zombies and ladders..."
-msgstr ""
+msgstr "აბა ვნახოთ, რა ისწავლეთ ზომბებზე და კიბეებზე გაკვეთილისგან..."
 
 #: gamedata/game_GotD.txt:307
 #, kde-format
@@ -2427,7 +2427,7 @@ msgstr "ზომბებს შორის"
 #: gamedata/game_GotD.txt:314
 #, kde-format
 msgid "All it takes is good strong nerves..."
-msgstr ""
+msgstr "ყველაფერი, რაც საჭიროა, არის კარგი ნერვები..."
 
 #: gamedata/game_GotD.txt:317
 #, kde-format
@@ -2964,7 +2964,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:172 gamedata/game_plws.txt:254
 #, kde-format
 msgid "Digging Hassle"
-msgstr ""
+msgstr "თხრის აურზაური"
 
 #: gamedata/game_GRII.txt:173
 #, kde-format
@@ -3117,12 +3117,12 @@ msgstr "ნაგავსაყრელი"
 #: gamedata/game_lars.txt:29
 #, kde-format
 msgid "You can walk on top of trapped enemies."
-msgstr ""
+msgstr "შეგიძლიათ, ხაფანგში ჩაცვენილ მტრებზე იაროთ."
 
 #: gamedata/game_lars.txt:32
 #, kde-format
 msgid "Inwards And Upwards"
-msgstr ""
+msgstr "შიგნით და მაღლა"
 
 #: gamedata/game_lars.txt:33
 #, kde-format
@@ -3163,7 +3163,7 @@ msgstr ""
 #: gamedata/game_lars.txt:48
 #, kde-format
 msgid "The Box (1)"
-msgstr ""
+msgstr "ყუთი (1)"
 
 #: gamedata/game_lars.txt:49
 #, kde-format
@@ -3340,7 +3340,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:28
 #, kde-format
 msgid "Bashful"
-msgstr ""
+msgstr "იდუმალა"
 
 #: gamedata/game_MAZ.txt:29
 #, kde-format
@@ -3868,7 +3868,7 @@ msgstr ""
 #: gamedata/game_plws.txt:3
 #, kde-format
 msgid "Initiation"
-msgstr ""
+msgstr "შესავალი"
 
 #: gamedata/game_plws.txt:4
 #, kde-format
@@ -4054,7 +4054,7 @@ msgstr "ტარაკანი"
 #: gamedata/game_plws.txt:104 gamedata/game_plwv.txt:13
 #, kde-format
 msgid "The Runaround"
-msgstr ""
+msgstr "მიზეზები"
 
 #: gamedata/game_plws.txt:107
 #, kde-format
@@ -4339,7 +4339,7 @@ msgstr "ოქროს ფარდა"
 #: gamedata/game_plws.txt:287
 #, kde-format
 msgid "Are you spider or fly?"
-msgstr ""
+msgstr "ბუზი ხარ თუ ობობა?"
 
 #: gamedata/game_plws.txt:290
 #, kde-format
@@ -4385,7 +4385,7 @@ msgstr "ქმედება დიაგონალურად"
 #: gamedata/game_plwv.txt:3
 #, kde-format
 msgid "Vengeance of Peter W"
-msgstr ""
+msgstr "პიტერ ვ-ს შურისძიება"
 
 #: gamedata/game_plwv.txt:4
 #, kde-format
@@ -4844,7 +4844,7 @@ msgstr ""
 #: gamedata/game_sot.txt:35
 #, kde-format
 msgid "Endless Enemies (1)"
-msgstr ""
+msgstr "დაუსრულებელი მტრები (1)"
 
 #: gamedata/game_sot.txt:36
 #, kde-format
@@ -4972,7 +4972,7 @@ msgstr ""
 #: gamedata/game_sot.txt:72
 #, kde-format
 msgid "Breaking and Entering"
-msgstr ""
+msgstr "შეღწევა და შესვლა"
 
 #: gamedata/game_sot.txt:73
 #, kde-format
@@ -4992,7 +4992,7 @@ msgstr ""
 #: gamedata/game_sot.txt:78
 #, kde-format
 msgid "Tunnels (2) - The Honeycomb"
-msgstr ""
+msgstr "გვირაბები (2) - თაფლის ფიჭა"
 
 #: gamedata/game_sot.txt:79
 #, kde-format
@@ -5179,7 +5179,7 @@ msgstr ""
 #: gamedata/game_tute.txt:31
 #, kde-format
 msgid "You Have ENEMIES!"
-msgstr ""
+msgstr "თქვენ მტრები გყავთ!"
 
 #: gamedata/game_tute.txt:32
 #, kde-format
@@ -5353,17 +5353,17 @@ msgstr ""
 #: gamedata/game_wad.txt:11
 #, kde-format
 msgid "Mobile Bricks"
-msgstr ""
+msgstr "მოძრავი აგურები"
 
 #: gamedata/game_wad.txt:12
 #, kde-format
 msgid "Just run over the enemies' heads."
-msgstr ""
+msgstr "უბრალოდ გადაირბინეთ მტრების თავებზე."
 
 #: gamedata/game_wad.txt:15
 #, kde-format
 msgid "The Big Haul"
-msgstr ""
+msgstr "დიდი თანხა"
 
 #: gamedata/game_wad.txt:16
 #, kde-format
@@ -5414,7 +5414,7 @@ msgstr ""
 #: gamedata/game_wad.txt:33
 #, kde-format
 msgid "Goldrunner Prophecy"
-msgstr ""
+msgstr "ოქროს მაძიებლის წინასწარმეტყველება"
 
 #: gamedata/game_wad.txt:34
 #, kde-format
@@ -5524,7 +5524,7 @@ msgstr ""
 #: gamedata/game_wad.txt:81
 #, kde-format
 msgid "Ride Them Down"
-msgstr ""
+msgstr "გააჭენეთ ქვემოთ"
 
 #: gamedata/game_wad.txt:82
 #, kde-format
@@ -5722,7 +5722,7 @@ msgstr "შემდეგი დონის თამაში."
 #: src/kgoldrunner.cpp:189
 #, kde-format
 msgid "Try the next level in the game you are playing."
-msgstr ""
+msgstr "სცადეთ შემდეგი დონე თამაშის, რომელსაც თამაშობთ."
 
 #: src/kgoldrunner.cpp:196
 #, kde-format
@@ -6028,12 +6028,12 @@ msgstr "გმირის საკონტროლოდ კლავია�
 #: src/kgoldrunner.cpp:401
 #, kde-format
 msgid "Hybrid Control (&Laptop)"
-msgstr ""
+msgstr "ჰიბრიდული კონტროლი (&ლეპტოპი)"
 
 #: src/kgoldrunner.cpp:402
 #, kde-format
 msgid "Pointer controls hero; dig using keyboard."
-msgstr ""
+msgstr "გმირს მაჩვენებელი აკონტროლებს. კლავიატურით გათხრა."
 
 #: src/kgoldrunner.cpp:404
 #, kde-format
@@ -6045,12 +6045,12 @@ msgstr ""
 #: src/kgoldrunner.cpp:419
 #, kde-format
 msgid "&Click Key To Move"
-msgstr ""
+msgstr "გადასაადგილებლად &დააწექით ღილაკს"
 
 #: src/kgoldrunner.cpp:420
 #, kde-format
 msgid "Click Key To Move."
-msgstr ""
+msgstr "გადასაადგილებლად დააწექით ღილაკს."
 
 #: src/kgoldrunner.cpp:421
 #, kde-format
@@ -6062,12 +6062,12 @@ msgstr ""
 #: src/kgoldrunner.cpp:427
 #, kde-format
 msgid "&Hold Key To Move"
-msgstr ""
+msgstr "გადასაადგილებლად გ&ეჭიროთ ღილაკი"
 
 #: src/kgoldrunner.cpp:428
 #, kde-format
 msgid "Hold Key To Move."
-msgstr ""
+msgstr "გადასაადგილებლად გეჭიროთ ღილაკი."
 
 #: src/kgoldrunner.cpp:429
 #, kde-format
@@ -6083,12 +6083,12 @@ msgstr "ნორმალური სიჩქარე"
 #: src/kgoldrunner.cpp:447
 #, kde-format
 msgid "Set normal speed."
-msgstr ""
+msgstr "ნორმალური სიჩქარის დაყენება."
 
 #: src/kgoldrunner.cpp:448
 #, kde-format
 msgid "Set normal game speed."
-msgstr ""
+msgstr "თამაშის ნორმალური სიჩქარის დაყენება."
 
 #: src/kgoldrunner.cpp:452
 #, kde-format
@@ -6098,12 +6098,12 @@ msgstr "დამწყების სიჩქარე"
 #: src/kgoldrunner.cpp:453
 #, kde-format
 msgid "Set beginners' speed."
-msgstr ""
+msgstr "დამწყების სიჩქარის დაყენება."
 
 #: src/kgoldrunner.cpp:454
 #, kde-format
 msgid "Set beginners' game speed (0.5 times normal)."
-msgstr ""
+msgstr "თამაშის დამწყების სიჩქარის დაყენება (ნორმალურის ნახევარი)."
 
 #: src/kgoldrunner.cpp:459
 #, kde-format
@@ -6113,12 +6113,12 @@ msgstr "პროფესიონალის სიჩქარე"
 #: src/kgoldrunner.cpp:460
 #, kde-format
 msgid "Set champions' speed."
-msgstr ""
+msgstr "ჩემპიონის სიჩქარის დაყენება."
 
 #: src/kgoldrunner.cpp:461
 #, kde-format
 msgid "Set champions' game speed (1.5 times normal)."
-msgstr ""
+msgstr "ჩემპიონის სიჩქარის დაყენება (ნორმალურზე ერთნახევარჯერ მეტი)."
 
 #: src/kgoldrunner.cpp:465
 #, kde-format
@@ -6230,22 +6230,22 @@ msgstr "თამაში შეჩერებულია"
 #: src/kgoldrunner.cpp:737
 #, kde-format
 msgid "Press \"%1\" to RESUME"
-msgstr ""
+msgstr "გასაგრძელებლად დააწექით ღილაკს \"%1\""
 
 #: src/kgoldrunner.cpp:739
 #, kde-format
 msgid "Press \"%1\" or \"%2\" to RESUME"
-msgstr ""
+msgstr "გასაგრძელებლად დააწექით \"%1\" ან \"%2\""
 
 #: src/kgoldrunner.cpp:746
 #, kde-format
 msgid "Press \"%1\" to PAUSE"
-msgstr ""
+msgstr "შესაჩერებლად დააწექით ღილაკს \"%1\""
 
 #: src/kgoldrunner.cpp:748
 #, kde-format
 msgid "Press \"%1\" or \"%2\" to PAUSE"
-msgstr ""
+msgstr "შესაჩერებლად დააწექით ღილაკს \"%1\" ან \"%2\""
 
 #: src/kgoldrunner.cpp:760
 #, kde-format
@@ -6275,12 +6275,12 @@ msgstr "სახელის/მინიშნების ჩასწორ�
 #: src/kgoldrunner.cpp:912
 #, kde-format
 msgid "Edit level name or hint"
-msgstr ""
+msgstr "შეიყვანეთ დონის სახელი ან მინიშნება"
 
 #: src/kgoldrunner.cpp:913
 #, kde-format
 msgid "Edit text for the name or hint of a level"
-msgstr ""
+msgstr "დონის სახელის ან მინიშნების ტექსტის ჩასწორება"
 
 #: src/kgoldrunner.cpp:916
 #, kde-format
@@ -6295,7 +6295,7 @@ msgstr "წაშლა"
 #: src/kgoldrunner.cpp:919
 #, kde-format
 msgid "Space/Erase"
-msgstr ""
+msgstr "გამოტოვება/წაშლა"
 
 #: src/kgoldrunner.cpp:920
 #, kde-format
@@ -6345,12 +6345,12 @@ msgstr "აგური"
 #: src/kgoldrunner.cpp:936
 #, kde-format
 msgid "Paint bricks (can dig)"
-msgstr ""
+msgstr "აგურების დახატვა (გათხრა შესაძლებელია)"
 
 #: src/kgoldrunner.cpp:937
 #, kde-format
 msgid "Paint bricks (diggable objects)"
-msgstr ""
+msgstr "აგურების დახატვა (გათხრადი ობიექტები)"
 
 #: src/kgoldrunner.cpp:940
 #, kde-format
@@ -6360,12 +6360,12 @@ msgstr "ცემენტი"
 #: src/kgoldrunner.cpp:941
 #, kde-format
 msgid "Paint concrete (cannot dig)"
-msgstr ""
+msgstr "ბეტონის დახატვა (გათხრა შეუძლებელია)"
 
 #: src/kgoldrunner.cpp:942
 #, kde-format
 msgid "Paint concrete objects (not diggable)"
-msgstr ""
+msgstr "ბეტონის ობიექტების დახატვა (გათხრა შეუძლებელია)"
 
 #: src/kgoldrunner.cpp:945
 #, kde-format
@@ -6375,12 +6375,12 @@ msgstr "ხაფანგი"
 #: src/kgoldrunner.cpp:945
 #, kde-format
 msgid "Trap/False Brick"
-msgstr ""
+msgstr "ხაფანგი/ცრუ აგური"
 
 #: src/kgoldrunner.cpp:946 src/kgoldrunner.cpp:948
 #, kde-format
 msgid "Paint traps or false bricks (can fall through)"
-msgstr ""
+msgstr "ხაფანგი/ცრუ აგური (შეიძლება ჩავარდეთ)"
 
 #: src/kgoldrunner.cpp:952
 #, kde-format
@@ -6390,12 +6390,12 @@ msgstr "კიბე"
 #: src/kgoldrunner.cpp:953
 #, kde-format
 msgid "Paint ladders"
-msgstr ""
+msgstr "კიბეების დახატვა"
 
 #: src/kgoldrunner.cpp:954
 #, kde-format
 msgid "Paint ladders (ways to go up or down)"
-msgstr ""
+msgstr "კიბეების დახატვა (გზა, მაღლა ახვიდეთ ან დაბლა ჩახვიდეთ)"
 
 #: src/kgoldrunner.cpp:957
 #, kde-format
@@ -6416,6 +6416,7 @@ msgstr "დამალული კიბეების დახატვა"
 #, kde-format
 msgid "Paint hidden ladders, which appear when all the gold is gone"
 msgstr ""
+"დამალული კიბეების დახატვა. ისინი მაშინ გამოჩნდება, როცა ოქრო სულ გაქრება"
 
 #: src/kgoldrunner.cpp:963
 #, kde-format
@@ -6473,7 +6474,7 @@ msgstr "ხელსაწყოთა ზოლის რედაქტირ�
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Name or Hint"
-msgstr ""
+msgstr "სახელის ან მინიშნების ჩასწორება"
 
 #: src/kgrdialog.cpp:56
 #, kde-format
@@ -6611,7 +6612,7 @@ msgstr "&შეწყვეტა"
 #: src/kgrgame.cpp:1691
 #, kde-format
 msgid "Cannot open file '%1' for output."
-msgstr ""
+msgstr "ფაილის '%1' გამოტანისთვის გახსნა შეუძლებელია."
 
 #: src/kgreditor.cpp:316 src/kgreditor.cpp:332 src/kgreditor.cpp:340
 #: src/kgreditor.cpp:355
@@ -6644,7 +6645,7 @@ msgstr ""
 #: src/kgreditor.cpp:341
 #, kde-format
 msgid "Sorry, you cannot move a system level."
-msgstr ""
+msgstr "სისტემურ დონეს ვერ გადაიტანთ."
 
 #: src/kgreditor.cpp:356
 #, kde-format
@@ -6677,7 +6678,7 @@ msgstr "&დონის წაშლა"
 #: src/kgreditor.cpp:460
 #, kde-format
 msgid "Cannot find file '%1' to be deleted."
-msgstr ""
+msgstr "წასაშლელად ფაილი '%1' ვერ ვიპოვე."
 
 #: src/kgreditor.cpp:508 src/kgreditor.cpp:518 src/kgreditor.cpp:523
 #: src/kgreditor.cpp:537 src/kgreditor.cpp:555 src/kgreditor.cpp:767
@@ -6689,32 +6690,32 @@ msgstr "თამაშის ინფორმაციის შენახ�
 #: src/kgreditor.cpp:509
 #, kde-format
 msgid "You must enter a name for the game."
-msgstr ""
+msgstr "თამაშისთვის სახელის შეყვანა აუცილებელია."
 
 #: src/kgreditor.cpp:519
 #, kde-format
 msgid "You must enter a filename prefix for the game."
-msgstr ""
+msgstr "თამაშისთვის ფაილის სახელის პრეფიქსის შეყვანა აუცილებელია."
 
 #: src/kgreditor.cpp:524
 #, kde-format
 msgid "The filename prefix should not be more than 5 characters."
-msgstr ""
+msgstr "ფაილის სახელის პრეფიქსი 5 სიმბოლოზე მეტი არ შეიძლება, იყოს."
 
 #: src/kgreditor.cpp:538
 #, kde-format
 msgid "The filename prefix should be all alphabetic characters."
-msgstr ""
+msgstr "ფაილის სახელის ყველა ლათინური ანბანის სიმბოლო უნდა იყოს."
 
 #: src/kgreditor.cpp:556
 #, kde-format
 msgid "The filename prefix '%1' is already in use."
-msgstr ""
+msgstr "ფაილის სახელის პრეფიქსი '%1' უკვე გამოიყენება."
 
 #: src/kgreditor.cpp:640
 #, kde-format
 msgid "You have not saved your work. Do you want to save it now?"
-msgstr ""
+msgstr "ნამუშევარი არ შეგინახავთ. გნებავთ, შეინახოთ?"
 
 #: src/kgreditor.cpp:642
 #, kde-format
@@ -6734,7 +6735,7 @@ msgstr "ჩასწორებაზე &გადასვლა"
 #: src/kgreditor.cpp:768
 #, kde-format
 msgid "You can only modify user games."
-msgstr ""
+msgstr "მხოლოდ მომხმარებლის თამაშების შეცვლა შეგიძლიათ."
 
 #: src/kgreditor.cpp:829
 #, kde-format
@@ -6756,7 +6757,7 @@ msgstr "%1 - %2 - %3"
 #: src/kgrgame.cpp:109
 #, kde-format
 msgid "Click anywhere to begin live play"
-msgstr ""
+msgstr "დააწკაპუნეთ სადმე ცოცხალი თამაშის დასაწყებად"
 
 #: src/kgrgame.cpp:190
 #, kde-format
@@ -6766,12 +6767,12 @@ msgstr "შემდეგი დონის თამაში"
 #: src/kgrgame.cpp:191
 #, kde-format
 msgid "There are no more levels in this game."
-msgstr ""
+msgstr "ამ თამაშში მეტი დონე აღარაა."
 
 #: src/kgrgame.cpp:261
 #, kde-format
 msgid "Inappropriate action: you are not editing a level."
-msgstr ""
+msgstr "შეუფერებელი ქმედება: დონის ჩასწორება არ მიმდინარეობს."
 
 #: src/kgrgame.cpp:420
 #, kde-format
@@ -6802,7 +6803,7 @@ msgstr ""
 #: src/kgrgame.cpp:670 src/kgrgame.cpp:676
 #, kde-format
 msgid "Replay Last Level"
-msgstr ""
+msgstr "უკანასკნელი დონის თავიდან თამაში"
 
 #: src/kgrgame.cpp:671
 #, kde-format
@@ -6871,7 +6872,7 @@ msgstr "&მენიუს გამოყენება"
 #: src/kgrgame.cpp:732
 #, kde-format
 msgid "Use the menus to choose other actions"
-msgstr ""
+msgstr "სხვა ქმედებებისთვის მენიუ გამოიყენეთ"
 
 #: src/kgrgame.cpp:734
 #, kde-format
@@ -6890,7 +6891,7 @@ msgstr ""
 #: src/kgrgame.cpp:836
 #, kde-format
 msgid "Show a Solution"
-msgstr ""
+msgstr "ამოხსნის ჩვენება"
 
 #: src/kgrgame.cpp:837
 #, kde-format
@@ -6902,7 +6903,7 @@ msgstr ""
 #: src/kgrgame.cpp:848
 #, kde-format
 msgid "Replay Any Level"
-msgstr ""
+msgstr "ნებისმიერი დონის თავიდან თამაში"
 
 #: src/kgrgame.cpp:849 src/kgrgame.cpp:2053
 #, kde-format
@@ -6952,7 +6953,7 @@ msgstr "&დიახ"
 #: src/kgrgame.cpp:1316
 #, kde-format
 msgid "Sorry, there is no hint for this level."
-msgstr ""
+msgstr "უკაცრავად, ამ დონეს მინიშნებები არ აქვს."
 
 #: src/kgrgame.cpp:1378
 #, kde-format
@@ -7004,7 +7005,7 @@ msgstr ""
 #: src/kgrgame.cpp:1855 src/kgrgame.cpp:2019 src/kgrgameio.cpp:170
 #, kde-format
 msgid "Cannot open file '%1' for read-only."
-msgstr ""
+msgstr "ფაილის '%1' მხოლოდ-წასაკითხად გახსნა შეუძლებელია."
 
 #: src/kgrgame.cpp:1512
 #, kde-format
@@ -7016,7 +7017,7 @@ msgstr ""
 #: src/kgrgame.cpp:1518
 #, kde-format
 msgid "Error: Failed to save your game."
-msgstr ""
+msgstr "შეცდომა: თქვენი თამაშის შენახვა ჩავარდა."
 
 #: src/kgrgame.cpp:1530 src/kgrgame.cpp:1536 src/kgrgame.cpp:1574
 #, kde-format
@@ -7026,12 +7027,12 @@ msgstr "თამაშის ჩატვირთვა"
 #: src/kgrgame.cpp:1531
 #, kde-format
 msgid "Sorry, there are no saved games."
-msgstr ""
+msgstr "უკაცრავად, შენახული თამაშები აღმოჩენილი არაა."
 
 #: src/kgrgame.cpp:1575
 #, kde-format
 msgid "Cannot find the game with prefix '%1'."
-msgstr ""
+msgstr "თამაში, პრეფიქსით '%1', ვერ ვიპოვე."
 
 #: src/kgrgame.cpp:1633
 #, kde-format
@@ -7065,7 +7066,7 @@ msgstr "მაღალი ქულის შენახვა"
 #: src/kgrgame.cpp:1810
 #, kde-format
 msgid "Error: Failed to save your high score."
-msgstr ""
+msgstr "შეცდომა: თქვენი თამაშის შენახვა ჩავარდა."
 
 #: src/kgrgame.cpp:1822 src/kgrgame.cpp:1845 src/kgrgame.cpp:1854
 #, kde-format
@@ -7075,12 +7076,12 @@ msgstr "უმაღლესი ქულების ჩვენება"
 #: src/kgrgame.cpp:1823
 #, kde-format
 msgid "Sorry, we do not keep high scores for tutorial games."
-msgstr ""
+msgstr "უკაცრავად, სასწავლო თამაშების ქულებს არ ვინახავთ."
 
 #: src/kgrgame.cpp:1846
 #, kde-format
 msgid "Sorry, there are no high scores for the \"%1\" game yet."
-msgstr ""
+msgstr "უკაცრავად, უმაღლესი ქულები თამაშისთვის '%1' ჯერ ხელმისაწვდობი არაა."
 
 #: src/kgrgame.cpp:1870
 #, kde-format
@@ -7088,6 +7089,8 @@ msgid ""
 "<center><h2>KGoldrunner Hall of Fame</h2></center><center><h3>\"%1\" Game</"
 "h3></center>"
 msgstr ""
+"<center><h2>KGoldrunner-ის საამაყო სია</h2></center><center><h3>თამაში "
+"\"%1\"</h3></center>"
 
 #: src/kgrgame.cpp:1880
 #, kde-format
@@ -7131,7 +7134,7 @@ msgstr "თამაშის ინფორმაციის ჩატვი�
 #: src/kgrgame.cpp:2013
 #, kde-format
 msgid "Cannot find game info file '%1'."
-msgstr ""
+msgstr "თამაშის ინფორმაციის ფაილი ('%1') ვერ ვიპოვე."
 
 #: src/kgrgame.cpp:2023
 #, kde-format
@@ -7141,7 +7144,7 @@ msgstr ""
 #: src/kgrgame.cpp:2047 src/kgrgame.cpp:2052 src/kgrselector.cpp:259
 #, kde-format
 msgid "Save A Solution"
-msgstr ""
+msgstr "ამოხსნის შენახვა"
 
 #: src/kgrgame.cpp:2048
 #, kde-format
@@ -7151,12 +7154,12 @@ msgstr ""
 #: src/kgrgameio.cpp:164 src/kgrgameio.cpp:169 src/kgrgameio.cpp:173
 #, kde-format
 msgid "Read Level Data"
-msgstr ""
+msgstr "დონის მონაცემების წაკითხვა"
 
 #: src/kgrgameio.cpp:165
 #, kde-format
 msgid "Cannot find file '%1'."
-msgstr ""
+msgstr "ფაილი '%1' ვერ ვიპოვე."
 
 #: src/kgrgameio.cpp:174
 #, kde-format
@@ -7171,12 +7174,12 @@ msgstr "ფაილის გადარქმევა"
 #: src/kgrgameio.cpp:383
 #, kde-format
 msgid "Cannot delete previous version of file '%1'."
-msgstr ""
+msgstr "ფაილის '%1' წინა ვერსიის წაშლა შეუძლებელია."
 
 #: src/kgrgameio.cpp:390
 #, kde-format
 msgid "Cannot rename file '%1' to '%2'."
-msgstr ""
+msgstr "ფაილის სახელის \"%1\"-დან \"%2\"-ად გადარქმევა შეუძლებელია."
 
 #: src/kgrrenderer.cpp:100
 #, kde-format
@@ -7197,7 +7200,7 @@ msgstr "ქულები: %1"
 #: src/kgrselector.cpp:498
 #, kde-format
 msgid "Select Level"
-msgstr ""
+msgstr "აირჩიეთ დონე"
 
 #: src/kgrselector.cpp:70
 #, kde-format
@@ -7258,7 +7261,7 @@ msgstr "უნარი"
 #: src/kgrselector.cpp:175
 #, kde-format
 msgid "Level 1 of the selected game is:"
-msgstr ""
+msgstr "მონიშნული თამაშის პირველი დონეა:"
 
 #: src/kgrselector.cpp:179
 #, kde-format
@@ -7279,7 +7282,7 @@ msgstr "დონის ნომერი:"
 #: src/kgrselector.cpp:206
 #, kde-format
 msgid "Edit Level Name o&r Hint"
-msgstr ""
+msgstr "შეიყვანეთ დონის სახელი ა&ნ მინიშნება"
 
 #: src/kgrselector.cpp:241
 #, kde-format
@@ -7345,25 +7348,25 @@ msgstr "ჩემპიონატი"
 #, kde-format
 msgid "1 level, uses KGoldrunner rules."
 msgid_plural "%1 levels, uses KGoldrunner rules."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 დონე, იყენებს KGoldrunner-ის წესებს."
+msgstr[1] "%1 დონე, იყენებს KGoldrunner-ის წესებს."
 
 #: src/kgrselector.cpp:468
 #, kde-format
 msgid "1 level, uses Traditional rules."
 msgid_plural "%1 levels, uses Traditional rules."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 დონე. იყენებს ტრადიციულ წესებს."
+msgstr[1] "%1 დონე. იყენებს ტრადიციულ წესებს."
 
 #: src/kgrselector.cpp:473
 #, kde-format
 msgid "Sorry, there is no further information about this game."
-msgstr ""
+msgstr "უკაცრავად, ამ დონის შესახებ მეტი ინფორმაცია ხელმისაწვდომიარაა."
 
 #: src/kgrselector.cpp:499
 #, kde-format
 msgid "This level number is not valid. It can not be used."
-msgstr ""
+msgstr "დონის ნომერი არასწორია. მას ვერ გამოიყენებთ."
 
 #: src/kgrselector.cpp:520
 #, kde-format
@@ -7466,7 +7469,7 @@ msgstr ""
 #: src/kgrselector.cpp:586
 #, kde-format
 msgid "Help: Select Game & Level"
-msgstr ""
+msgstr "დახმარება: აირჩიეთ თამაში და დონე"
 
 #: src/main.cpp:31
 #, kde-format
@@ -7476,7 +7479,7 @@ msgstr ""
 #: src/main.cpp:33
 #, kde-format
 msgid "(C) 2003 Ian Wadham and Marco Krüger"
-msgstr ""
+msgstr "(C) 2003 Ian Wadham და Marco Krüger"
 
 #: src/main.cpp:66
 #, kde-format
@@ -7506,7 +7509,7 @@ msgstr "Mauricio Piacentini"
 #: src/main.cpp:71
 #, kde-format
 msgid "Port to KDE4, Qt4 and KGameCanvas classes"
-msgstr ""
+msgstr "KDE4, Qt4-ზე და KGameCanvas კლასებზე გადმოტანა"
 
 #: src/main.cpp:73
 #, kde-format
@@ -7516,7 +7519,7 @@ msgstr "Maurizio Monge"
 #: src/main.cpp:74
 #, kde-format
 msgid "KGameCanvas classes for KDE4"
-msgstr ""
+msgstr "KGameCanvas კლასები KDE4-სთვის"
 
 #: src/main.cpp:77
 #, kde-format
