@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-25 01:39+0000\n"
-"PO-Revision-Date: 2023-09-28 09:51+0200\n"
+"PO-Revision-Date: 2023-09-30 10:57+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -993,7 +993,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:28
 #, kde-format
 msgid "Falling Enemies (1) - Finding A Way"
-msgstr ""
+msgstr "მტრები, რომლებიც ცვივა (1) - გზის პოვნა"
 
 #: gamedata/game_GMEP.txt:29
 #, kde-format
@@ -1007,7 +1007,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:34
 #, kde-format
 msgid "Falling Enemies (2) - Digging"
-msgstr ""
+msgstr "მტრები, რომლებიც ცვივა (1) - თხრა"
 
 #: gamedata/game_GMEP.txt:35
 #, kde-format
@@ -1017,7 +1017,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:38
 #, kde-format
 msgid "Falling Enemies (3) - Hidden Ladders"
-msgstr ""
+msgstr "მტრები, რომლებიც ცვივა (1) - დამალული კიბეები"
 
 #: gamedata/game_GMEP.txt:39
 #, kde-format
@@ -1325,7 +1325,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:52
 #, kde-format
 msgid "Dropping Enemies"
-msgstr ""
+msgstr "მტრები, რომლებიც ცვივა"
 
 #: gamedata/game_GMGR.txt:53
 #, kde-format
@@ -1451,6 +1451,9 @@ msgid ""
 "\n"
 "But it is not impossible."
 msgstr ""
+"ამჯერად მინიშნება არ გაქვთ!\n"
+"\n"
+"მაგრამ ეს შეუძლებელი არაა."
 
 #: gamedata/game_GMGR.txt:104
 #, kde-format
@@ -4505,7 +4508,7 @@ msgstr ""
 #: gamedata/game_plwv.txt:51
 #, kde-format
 msgid "So Far for So Little"
-msgstr ""
+msgstr "ცუდად"
 
 #: gamedata/game_plwv.txt:52
 #, kde-format
@@ -4606,7 +4609,7 @@ msgstr ""
 #: gamedata/game_plwv.txt:89
 #, kde-format
 msgid "Pete likes Ladders"
-msgstr ""
+msgstr "პეტეს უყვარს კიბეები"
 
 #: gamedata/game_plwv.txt:90
 #, kde-format
@@ -6555,6 +6558,7 @@ msgstr "აირჩიეთ შენახული თამაში"
 #, kde-format
 msgid "Game                       Level/Lives/Score   Day    Date     Time  "
 msgstr ""
+"თამაში                       დონე/სიცოცხლე/ქულა   დღე    თარიღი     დრო  "
 
 #: src/kgreditor.cpp:66
 #, kde-format

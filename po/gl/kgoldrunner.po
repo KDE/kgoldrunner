@@ -2086,7 +2086,7 @@ msgid ""
 "tube, run up the ladder and wait for the enemy to fall in. Now you can ride "
 "on his head and step to the right to take the gold."
 msgstr ""
-"Utiliza o teu amigo.\n"
+"Usa o teu amigo.\n"
 "\n"
 "Escávao e camiña sobre a súa testa para chegares á barra que hai á túa "
 "esquerda e abaixo. Unha vez collido o ouro de arriba á esquerda, libera de "
@@ -4461,9 +4461,9 @@ msgid ""
 msgstr ""
 "Hai dous trucos para este nivel. En primeiro lugar, para conseguir a moeda "
 "superior, vai a modo para librarte dos inimigos, e logo sobe para collela  "
-"(e viceversa). En segundo lugar, nalgún momento has necesitar utilizar o "
-"truco da escala: se estás nunha escada vertical cun inimigo enriba túa, ás "
-"veces o inimigo afastarase de ti."
+"(e viceversa). En segundo lugar, nalgún momento has necesitar usar o truco "
+"da escala: se estás nunha escada vertical cun inimigo enriba túa, ás veces o "
+"inimigo afastarase de ti."
 
 #: gamedata/game_MAZ.txt:38
 #, kde-format
@@ -4549,7 +4549,7 @@ msgid ""
 "The only trick to this level is using the hidden passages and enticing the "
 "enemies to use them."
 msgstr ""
-"O único truco neste nivel consiste en utilizar os pasadizos agochados e "
+"O único truco neste nivel consiste en usar os pasadizos agochados e "
 "conseguir que os inimigos os usen tamén."
 
 #: gamedata/game_MAZ.txt:58
@@ -4731,7 +4731,7 @@ msgid ""
 "floors.  Trial and error is your only hope - try mapping it on paper if you "
 "are having trouble."
 msgstr ""
-"Un labirinto, pero non podes ver a ruta de saída. Tes que utilizar os falsos "
+"Un labirinto, pero non podes ver a ruta de saída. Tes que usar os falsos "
 "chans. O único que che queda é o método de proba e erro. Proba a debuxalo "
 "nun papel se non dás."
 
@@ -5137,8 +5137,8 @@ msgstr ""
 "cavaches antes de que peche\n"
 "\n"
 "O inimigo é algo complicado de superar. Intenta atraelo ata a parte inferior "
-"do labirinto, deixándote caer ao chan no que tes unha escada que utilizar "
-"para volver subir, pero co inimigo sobre unha esquina sen escala, atrapado."
+"do labirinto, deixándote caer ao chan no que tes unha escada que usar para "
+"volver subir, pero co inimigo sobre unha esquina sen escala, atrapado."
 
 #: gamedata/game_MAZ.txt:185
 #, kde-format
@@ -6466,15 +6466,15 @@ msgstr ""
 "vez, máis ou menos á metade da baixada. Despois da última moeda, escava e "
 "sobe pola escada inferior. Agarda baixo o bloque que segue a aquel onde está "
 "atrapado o inimigo. Este aganchará e baixará, corre a través da abertura "
-"onde estaba el, antes de que se peche. Entón poderás utilizalo para te "
-"moveres sobre a seguinte escada á dereita.\n"
+"onde estaba el, antes de que se peche. Entón poderás usalo para te moveres "
+"sobre a seguinte escada á dereita.\n"
 "Corre ao cume da escala, sobre e baixo a escaleira. Escava á esquerda "
 "mentres segue sobre o inimigo e logo á dereita, baixo o inimigo, cando "
 "esteas xunto a el. Corre sobre el, para recoller a moeda que tivese, e logo "
 "baixa uns poucos pasos. Escava e sobe pola escala, para agardar a que renaza "
-"e baixe pola súa escaleira, de tal maneira que o poidas utilizar para te "
-"moveres ata a seguinte escala. Repite isto nas seguintes escaleiras á "
-"dereita ata que poidas chegar ao pau de riba.\n"
+"e baixe pola súa escaleira, de tal maneira que o poidas usar para te moveres "
+"ata a seguinte escala. Repite isto nas seguintes escaleiras á dereita ata "
+"que poidas chegar ao pau de riba.\n"
 "Cruza para o extremo da esquerda e cae ao bloque superior da sección do "
 "fondo á esquerda. Recolle todas as moedas, deixando a moeda da esquerda de "
 "todo na segunda escaleira para o final, ou pola contra caerás e quedarás "
@@ -8230,7 +8230,8 @@ msgstr "Obter os cartafoles"
 #, kde-format
 msgid "Cannot find system games sub-folder '/system/' in areas '%1'."
 msgstr ""
-"Non se pode atopar o cartafol de xogos do sistema «/system/» nas zonas «%1»."
+"Non é posíbel atopar o cartafol de xogos do sistema «/system/» nas zonas "
+"«%1»."
 
 #: src/kgoldrunner.cpp:911
 #, kde-format
@@ -8532,7 +8533,7 @@ msgid ""
 "You cannot create and save a level until you have created a game to hold it. "
 "Try menu item \"Create Game\"."
 msgstr ""
-"Non se pode crear nin gardar un nivel ata despois de crear un xogo para "
+"Non é posíbel crear nin gardar un nivel ata despois de crear un xogo para "
 "contelo. Probe o elemento de menú «Crear un xogo»."
 
 #: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:262
@@ -8546,7 +8547,7 @@ msgid ""
 "You cannot edit and save a level until you have created a game and a level. "
 "Try menu item \"Create Game\"."
 msgstr ""
-"Non se pode editar e gardar un nivel ata que non se creen un xogo e un "
+"Non é posíbel editar e gardar un nivel ata que non se creen un xogo e un "
 "nivel. Usa o elemento de menú «Crear un xogo»."
 
 #: src/kgreditor.cpp:138
@@ -8585,7 +8586,7 @@ msgstr "&Cancelar"
 #: src/kgrgame.cpp:1691
 #, kde-format
 msgid "Cannot open file '%1' for output."
-msgstr "Non se pode abrir o ficheiro «%1» para saída."
+msgstr "Non é posíbel abrir o ficheiro «%1» para saída."
 
 #: src/kgreditor.cpp:316 src/kgreditor.cpp:332 src/kgreditor.cpp:340
 #: src/kgreditor.cpp:355
@@ -8615,7 +8616,7 @@ msgid ""
 "You cannot move a level until you have created a game and at least two "
 "levels. Try menu item \"Create Game\"."
 msgstr ""
-"Non se pode mover ningún nivel ata despois de crear un xogo e, polo menos, "
+"Non é posíbel mover ningún nivel ata despois de crear un xogo e, polo menos, "
 "dous niveis. Intenta usar o elemento do menú «Crear un xogo»."
 
 #: src/kgreditor.cpp:341
@@ -8640,7 +8641,7 @@ msgid ""
 "You cannot delete a level until you have created a game and a level. Try "
 "menu item \"Create Game\"."
 msgstr ""
-"Non se pode eliminar ningún nivel ata despois de crear un xogo e un nivel. "
+"Non é posíbel eliminar ningún nivel ata despois de crear un xogo e un nivel. "
 "Intenta usar o elemento do menú «Crear un xogo»."
 
 #: src/kgreditor.cpp:442
@@ -8657,7 +8658,7 @@ msgstr "&Eliminar o nivel"
 #: src/kgreditor.cpp:460
 #, kde-format
 msgid "Cannot find file '%1' to be deleted."
-msgstr "Non se pode atopar o ficheiro «%1» que queres eliminar."
+msgstr "Non é posíbel atopar o ficheiro «%1» que queres eliminar."
 
 #: src/kgreditor.cpp:508 src/kgreditor.cpp:518 src/kgreditor.cpp:523
 #: src/kgreditor.cpp:537 src/kgreditor.cpp:555 src/kgreditor.cpp:767
@@ -9016,7 +9017,7 @@ msgstr ""
 #: src/kgrgame.cpp:1855 src/kgrgame.cpp:2019 src/kgrgameio.cpp:170
 #, kde-format
 msgid "Cannot open file '%1' for read-only."
-msgstr "Non se pode abrir o ficheiro «%1» só para lectura."
+msgstr "Non é posíbel abrir o ficheiro «%1» só para lectura."
 
 #: src/kgrgame.cpp:1512
 #, kde-format
@@ -9045,7 +9046,7 @@ msgstr "Non hai partidas gardadas."
 #: src/kgrgame.cpp:1575
 #, kde-format
 msgid "Cannot find the game with prefix '%1'."
-msgstr "Non se pode atopar o xogo co prefixo «%1»."
+msgstr "Non é posíbel atopar o xogo co prefixo «%1»."
 
 #: src/kgrgame.cpp:1633
 #, kde-format
@@ -9151,7 +9152,7 @@ msgstr "Cargar a información do xogo"
 #: src/kgrgame.cpp:2013
 #, kde-format
 msgid "Cannot find game info file '%1'."
-msgstr "Non se pode atopar o ficheiro de información do xogo «%1»."
+msgstr "Non é posíbel atopar o ficheiro de información do xogo «%1»."
 
 #: src/kgrgame.cpp:2023
 #, kde-format
@@ -9177,7 +9178,7 @@ msgstr "Ler os datos do nivel"
 #: src/kgrgameio.cpp:165
 #, kde-format
 msgid "Cannot find file '%1'."
-msgstr "Non se pode atopar o ficheiro «%1»."
+msgstr "Non é posíbel atopar o ficheiro «%1»."
 
 #: src/kgrgameio.cpp:174
 #, kde-format
@@ -9192,12 +9193,12 @@ msgstr "Renomear o ficheiro"
 #: src/kgrgameio.cpp:383
 #, kde-format
 msgid "Cannot delete previous version of file '%1'."
-msgstr "Non se pode eliminar a versión anterior do ficheiro «%1»."
+msgstr "Non é posíbel eliminar a versión anterior do ficheiro «%1»."
 
 #: src/kgrgameio.cpp:390
 #, kde-format
 msgid "Cannot rename file '%1' to '%2'."
-msgstr "Non se pode renomear o ficheiro «%1» para «%2»."
+msgstr "Non é posíbel renomear o ficheiro «%1» para «%2»."
 
 #: src/kgrrenderer.cpp:100
 #, kde-format
