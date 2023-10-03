@@ -12,7 +12,7 @@
 #include <QObject>
 #include <QElapsedTimer>
 
-#include <KgSound>
+#include <KGameSound>
 
 class KGrSounds : public QObject
 {
@@ -68,7 +68,7 @@ public:
     void setVolume (int effect, qreal volume);
 
 private:
-    QList<KgSound *> sounds;
+    QList<KGameSound *> sounds;
     QList<int>       startTime;	// Start times of timed sounds, else 0.
     bool             muted;
     QElapsedTimer    t;

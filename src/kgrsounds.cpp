@@ -24,7 +24,7 @@ KGrSounds::~KGrSounds()
 int KGrSounds::loadSound (const QString &fileName)
 {
     //qCDebug(KGOLDRUNNER_LOG) << "Loading sound" << fileName;
-    sounds << (new KgSound (fileName));
+    sounds << (new KGameSound (fileName));
     startTime << 0;
     return sounds.count() - 1;
 }
