@@ -7,12 +7,12 @@
 #ifndef KGRTHEMETYPES_H
 #define KGRTHEMETYPES_H
 
-#include <KgTheme>
+#include <KGameTheme>
 
 /**
- * Class to locate KGoldrunner's "Actors" SVG files: derived from KgTheme.
+ * Class to locate KGoldrunner's "Actors" SVG files: derived from KGameTheme.
  */
-class KGrActorsTheme : public KgTheme
+class KGrActorsTheme : public KGameTheme
 {
     Q_OBJECT
 public:
@@ -20,7 +20,7 @@ public:
     ~KGrActorsTheme() override;
 
     /*
-     * Re-defined from KgTheme. Finds a SVG file with config name "Actors".
+     * Re-defined from KGameTheme. Finds a SVG file with config name "Actors".
      *
      * @param path    The full path of the theme's .desktop file.
      */
@@ -29,9 +29,9 @@ public:
 
 
 /**
- * Class to locate KGoldrunner's "Set" SVG files: derived from KgTheme.
+ * Class to locate KGoldrunner's "Set" SVG files: derived from KGameTheme.
  */
-class KGrSetTheme : public KgTheme
+class KGrSetTheme : public KGameTheme
 {
     Q_OBJECT
 public:
@@ -39,7 +39,7 @@ public:
     ~KGrSetTheme() override;
 
     /*
-     * Re-defined from KgTheme. Finds a SVG file with config name "Set".
+     * Re-defined from KGameTheme. Finds a SVG file with config name "Set".
      *
      * @param path    The full path of the theme's .desktop file.
      */

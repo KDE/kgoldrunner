@@ -9,8 +9,8 @@
 
 // KDEGames
 #include <KGameRenderedItem>
-#include <KgThemeProvider>
-#include <KgThemeSelector>
+#include <KGameThemeProvider>
+#include <KGameThemeSelector>
 // KF
 #include <KLocalizedString>
 
@@ -29,8 +29,8 @@ KGrRenderer::KGrRenderer (KGrScene * scene)
     m_scene (scene)
 {
     // Set up two theme providers: for the Set and the Actors.
-    m_setProvider     = new KgThemeProvider("Theme", this);	// Save config.
-    m_actorsProvider  = new KgThemeProvider("",      this);	// Do not save.
+    m_setProvider     = new KGameThemeProvider("Theme", this);	// Save config.
+    m_actorsProvider  = new KGameThemeProvider("",      this);	// Do not save.
 
     // Find SVG files for the Set, i.e. tiles and backgrounds.
     const QMetaObject * setThemeClass = & KGrSetTheme::staticMetaObject;
@@ -43,8 +43,8 @@ KGrRenderer::KGrRenderer (KGrScene * scene)
                                    QStringLiteral ("egypt"), actorsThemeClass);
 
     // Set up a dialog for selecting themes.
-    m_themeSelector  = new KgThemeSelector (m_setProvider,
-                                            KgThemeSelector::DefaultBehavior,
+    m_themeSelector  = new KGameThemeSelector (m_setProvider,
+                                            KGameThemeSelector::DefaultBehavior,
                                             nullptr);	// No parent: modeless dialog.
 
     // Set up the renderer for the Set, i.e. tiles and backgrounds.
@@ -60,7 +60,7 @@ KGrRenderer::KGrRenderer (KGrScene * scene)
     m_actorsRenderer->setFrameBaseIndex (1);
 
     // Match the Actors SVG theme to the Set theme, whenever the theme changes.
-    connect(m_setProvider, &KgThemeProvider::currentThemeChanged, this, &KGrRenderer::currentThemeChanged);
+    connect(m_setProvider, &KGameThemeProvider::currentThemeChanged, this, &KGrRenderer::currentThemeChanged);
 
     // Match the starting SVG theme for the Actors to the one for the Set.
     matchThemes (m_setProvider->currentTheme());
@@ -71,13 +71,13 @@ KGrRenderer::~KGrRenderer()
     delete m_themeSelector;
 }
 
-void KGrRenderer::matchThemes (const KgTheme * currentSetTheme)
+void KGrRenderer::matchThemes (const KGameTheme * currentSetTheme)
 {
     // Start of game or change of theme: initialise the counts of pixmap keys.
     initPixmapKeys();
 
     const auto themes = m_actorsProvider->themes();
-    for (const KgTheme * actorsTheme : themes) {
+    for (const KGameTheme * actorsTheme : themes) {
     if (actorsTheme->customData(QStringLiteral("Set")) ==
             currentSetTheme->customData(QStringLiteral("Set"))) {
 	    m_actorsProvider->setCurrentTheme (actorsTheme);
@@ -86,7 +86,7 @@ void KGrRenderer::matchThemes (const KgTheme * currentSetTheme)
     }
 }
 
-void KGrRenderer::currentThemeChanged (const KgTheme* currentSetTheme)
+void KGrRenderer::currentThemeChanged (const KGameTheme* currentSetTheme)
 {
     //qCDebug(KGOLDRUNNER_LOG) << "KGrRenderer::currentThemeChanged()" << currentSetTheme->name();
 

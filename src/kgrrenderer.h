@@ -15,8 +15,8 @@
 #include "kgrsprite.h"
 
 class KGrScene;
-class KgThemeProvider;
-class KgThemeSelector;
+class KGameThemeProvider;
+class KGameThemeSelector;
 class KGameRenderedItem;
 
 /* @short A class to assist theme-handling and rendering in KGoldrunner.
@@ -26,12 +26,12 @@ class KGameRenderedItem;
  *
  * The files are marked with the keywords "Actors" and "Set" in each theme's
  * .desktop file, rather than the usual "Filename" keyword. There are two
- * KgThemeProvider objects and two KGameRenderer objects, each with its own
- * set of SVG files and KgTheme objects.
+ * KGameThemeProvider objects and two KGameRenderer objects, each with its own
+ * set of SVG files and KGameTheme objects.
  *
- * There is one KgThemeSelector object, which selects the "Set" theme and uses
- * the "Set" KgThemeProvider. Its currentThemeChanged signal is connected to a
- * currentThemeChanged slot in KGrRenderer, which finds the KgTheme for the
+ * There is one KGameThemeSelector object, which selects the "Set" theme and uses
+ * the "Set" KGameThemeProvider. Its currentThemeChanged signal is connected to a
+ * currentThemeChanged slot in KGrRenderer, which finds the KGameTheme for the
  * corresponding "Actors" theme and SVG file.
  *
  * KGoldrunner also has several different usages of the KGameRenderer concepts
@@ -137,7 +137,7 @@ public:
 private Q_SLOTS:
      // Keep the "Set" and "Actors" parts of a KGoldrunner theme in synch as
      // the theme-selection changes.
-    void currentThemeChanged(const KgTheme * currentSetTheme);
+    void currentThemeChanged(const KGameTheme * currentSetTheme);
 
 private:
     enum   PicSrc     {Actors, Set};
@@ -157,10 +157,10 @@ private:
 
     KGrScene        * m_scene;		// The scene to be rendered.
 
-    KgThemeProvider * m_setProvider;	// Provider for Set themes.
-    KgThemeProvider * m_actorsProvider;	// Provider for Actors themes.
+    KGameThemeProvider * m_setProvider;	// Provider for Set themes.
+    KGameThemeProvider * m_actorsProvider;	// Provider for Actors themes.
 
-    KgThemeSelector * m_themeSelector;	// Selector (dialog) for themes.
+    KGameThemeSelector * m_themeSelector;	// Selector (dialog) for themes.
 
     KGameRenderer   * m_setRenderer;	// Renderer for Set SVG files.
     KGameRenderer   * m_actorsRenderer;	// Renderer for Actors SVG files.
@@ -171,7 +171,7 @@ private:
     void initPixmapKeys();
 
     // Make the Actors theme (hero, etc.) match the Set theme (bricks, etc.).
-    void matchThemes (const KgTheme * currentSetTheme);
+    void matchThemes (const KGameTheme * currentSetTheme);
 
     // Find a tile type or background in the table of tiles and backgrounds.
     int findKeyTableIndex (const char picType);

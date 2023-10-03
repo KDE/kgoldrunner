@@ -25,7 +25,7 @@ QString absolutePath (const QString & path, const QString & relativePath)
 
 KGrActorsTheme::KGrActorsTheme(const QByteArray &identifier, QObject *parent)
     :
-    KgTheme(identifier, parent)
+    KGameTheme(identifier, parent)
 {
 }
 
@@ -36,7 +36,7 @@ KGrActorsTheme::~KGrActorsTheme()
 bool KGrActorsTheme::readFromDesktopFile(const QString& path)
 {
     // Base-class call.
-    if (!KgTheme::readFromDesktopFile(path))
+    if (!KGameTheme::readFromDesktopFile(path))
         return false;
 
     // Customized behaviour: interprete "Actors" key as "FileName" for SVG file.
@@ -46,7 +46,7 @@ bool KGrActorsTheme::readFromDesktopFile(const QString& path)
 
 KGrSetTheme::KGrSetTheme(const QByteArray &identifier, QObject *parent)
     :
-    KgTheme(identifier, parent)
+    KGameTheme(identifier, parent)
 {
 }
 
@@ -57,7 +57,7 @@ KGrSetTheme::~KGrSetTheme()
 bool KGrSetTheme::readFromDesktopFile(const QString& path)
 {
     // Base-class call.
-    if (!KgTheme::readFromDesktopFile(path))
+    if (!KGameTheme::readFromDesktopFile(path))
         return false;
 
     // Customized behaviour: interprete "Set" key as "FileName" for SVG file.
