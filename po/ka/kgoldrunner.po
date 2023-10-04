@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-25 01:39+0000\n"
-"PO-Revision-Date: 2023-09-30 10:57+0200\n"
+"PO-Revision-Date: 2023-10-03 16:19+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -913,7 +913,7 @@ msgstr ""
 #: gamedata/game_ende.txt:31
 #, kde-format
 msgid "TRANSLATORS: Please see the notes in the translation comment."
-msgstr ""
+msgstr "ეს სათარგმნი არაა."
 
 #: gamedata/game_fd.txt:2
 #, kde-format
@@ -1013,6 +1013,7 @@ msgstr "მტრები, რომლებიც ცვივა (1) - თ�
 #, kde-format
 msgid "Start the level with a click. The rest should be self-explanatory..."
 msgstr ""
+"დაიწყეთ დონე დაწკაპუნებით. ყველაფერი დანარჩენი ისედაც გასაგები უნდა იყოს..."
 
 #: gamedata/game_GMEP.txt:38
 #, kde-format
@@ -2357,7 +2358,7 @@ msgstr "სასიკვდილო ხაფანგი"
 #: gamedata/game_GotD.txt:286
 #, kde-format
 msgid "Rule Number 22: When in doubt, know your way out!"
-msgstr ""
+msgstr "წესი ნომერი 22: როცა შარში ხარ, იცოდე, როგორ გაიქცე!"
 
 #: gamedata/game_GotD.txt:289 gamedata/game_plws.txt:227
 #, kde-format
@@ -3098,7 +3099,7 @@ msgstr "აკროფობია"
 #: gamedata/game_lars.txt:21
 #, kde-format
 msgid "To get that last piece of gold, kill an enemy and have him fetch it."
-msgstr ""
+msgstr "ოქროს ბოლო ნაწილის მისაღებად, მოჰკალით მტერი და აიძულეთ ის, მოგიტანოთ."
 
 #: gamedata/game_lars.txt:24
 #, kde-format
@@ -3248,7 +3249,7 @@ msgstr "სიმკვრივე"
 #: gamedata/game_lars.txt:77
 #, kde-format
 msgid "Avoid killing enemies. That will make the last bit much easier."
-msgstr ""
+msgstr "თავი მოარიდეთ მტრების ხოცვას. ეს ბოლო ნაწილს საკმაოდ გაგიადვილებთ."
 
 #: gamedata/game_lars.txt:80
 #, kde-format
@@ -6196,7 +6197,7 @@ msgstr "გადააბიჯე"
 #: src/kgoldrunner.cpp:535
 #, kde-format
 msgid "Test Bug Fix"
-msgstr ""
+msgstr "ტესტის შეცდომის გასწორება"
 
 #: src/kgoldrunner.cpp:536
 #, kde-format
@@ -6268,7 +6269,7 @@ msgstr "საქაღალდეების მიღება"
 #: src/kgoldrunner.cpp:878
 #, kde-format
 msgid "Cannot find system games sub-folder '/system/' in areas '%1'."
-msgstr ""
+msgstr "ვერ ვიპოვე სისტემური თამაშების ქვესაქაღალდე '/system/' ბილიკებზე '%1'."
 
 #: src/kgoldrunner.cpp:911
 #, kde-format
@@ -6303,12 +6304,12 @@ msgstr "გამოტოვება/წაშლა"
 #: src/kgoldrunner.cpp:920
 #, kde-format
 msgid "Paint empty squares or erase"
-msgstr ""
+msgstr "ცარიელი უჯრედების დახატვა თუ წაშლა"
 
 #: src/kgoldrunner.cpp:921
 #, kde-format
 msgid "Erase objects or paint empty squares"
-msgstr ""
+msgstr "ობიექტების წაშლა ან ცარიელი უჯრედების დახატვა"
 
 #: src/kgoldrunner.cpp:924
 #, kde-format
@@ -6323,7 +6324,7 @@ msgstr "გმირის გადაადგილება"
 #: src/kgoldrunner.cpp:926
 #, kde-format
 msgid "Change the hero's starting position"
-msgstr ""
+msgstr "გმირის საწყისი მდებარეობის შექმნა"
 
 #: src/kgoldrunner.cpp:929
 #, kde-format
@@ -6338,7 +6339,7 @@ msgstr "მტრების შეღებვა"
 #: src/kgoldrunner.cpp:931
 #, kde-format
 msgid "Paint enemies at their starting positions"
-msgstr ""
+msgstr "მტრების მათ საწყის მდებარეობებზე დახატვა"
 
 #: src/kgoldrunner.cpp:935
 #, kde-format
