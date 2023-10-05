@@ -65,6 +65,7 @@ target_link_libraries(kgoldrunner
     KF6::DBusAddons
     KF6::KIOCore
     KF6::Crash
+    KF6::I18n
     KF6::WidgetsAddons
     KF6::XmlGui
 )
