@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-25 01:39+0000\n"
-"PO-Revision-Date: 2023-10-03 16:19+0200\n"
+"PO-Revision-Date: 2023-10-04 12:16+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1087,6 +1087,8 @@ msgid ""
 "Click to start the level and he will be trapped before he can do you any "
 "harm."
 msgstr ""
+"დააწკაპუნეთ დონის დასაწყებად და ის ხაფანგში გაებმება მანამდე, სანამ რამის "
+"დაშავებას მოასწრებს."
 
 #: gamedata/game_GMEP.txt:68
 #, kde-format
@@ -1099,6 +1101,8 @@ msgid ""
 "They will not do anything to you if you stay where you are. They just want "
 "to protect their gold."
 msgstr ""
+"ისინი არაფერს გიზამენ, შეგიძლიათ, იქ დარჩეთ, სადაც ბრძანდებით. ისინი უბრალოდ "
+"თავიანთ ოქროს იცავენ."
 
 #: gamedata/game_GMEP.txt:72
 #, kde-format
@@ -1334,6 +1338,8 @@ msgid ""
 "No, there is no special trick for solving this level.\n"
 "Just be faster than your enemies."
 msgstr ""
+"არა, სპეციალური ხერხი ამ დონის გასავლელეად არ არსებობს.\n"
+"უბრალოდ, იყავით უფრო სწრაფი, ვიდრე თქვენი მტრები."
 
 #: gamedata/game_GMGR.txt:57
 #, kde-format
@@ -1513,7 +1519,7 @@ msgstr "გარეთ გზა არაა"
 #: gamedata/game_GMGR.txt:125
 #, kde-format
 msgid "You have to dig before you take the gold and before the ladders appear."
-msgstr ""
+msgstr "უნდა გათხაროთ მანამდე, სანამ ოქროს აიღებთ და სანამ კიბე გამოჩნდება."
 
 #: gamedata/game_GMGR.txt:128
 #, kde-format
@@ -1585,7 +1591,7 @@ msgstr "პატარა დასამშვიდობებელი ს�
 #: gamedata/game_GMGR.txt:153
 #, kde-format
 msgid "After some very hard levels, maybe you would like an easy one. Goodbye!"
-msgstr ""
+msgstr "ბევრი ურთულესი დონის შემდეგ, მგონი, სჯობს იოლი აირჩიოთ. ნახვამდის!"
 
 #: gamedata/game_GotD.txt:1
 #, kde-format
@@ -2602,6 +2608,8 @@ msgid ""
 "Use the four enemies to fill up the false bricks you will find on your way "
 "up the ladders."
 msgstr ""
+"აირჩიეთ ოთხი მტერი, რომ შეავსოთ ცრუ აგურები, რომლებსაც კიბეზე ასვლისას "
+"იპოვით."
 
 #: gamedata/game_GRII.txt:34
 #, kde-format
@@ -3090,6 +3098,7 @@ msgstr "მომიტანე!"
 #, kde-format
 msgid "Make your enemies fetch the gold pieces you cannot reach yourself."
 msgstr ""
+"აიძულეთ მტრებს, მოგიტანონ ოქროს ნაწილები, რომლებსაც თავად ვერ სწვდებით."
 
 #: gamedata/game_lars.txt:20
 #, kde-format
@@ -3131,7 +3140,7 @@ msgstr "შიგნით და მაღლა"
 #: gamedata/game_lars.txt:33
 #, kde-format
 msgid "You only get one chance to grab those first three pieces of gold."
-msgstr ""
+msgstr "იმ პირველი სამი ოქროს ნაწილის ასაღებად ხმოლოდ ერთი შანსი გაქვთ."
 
 #: gamedata/game_lars.txt:36
 #, kde-format
@@ -3322,7 +3331,7 @@ msgstr "ღრენია"
 #: gamedata/game_MAZ.txt:21
 #, kde-format
 msgid "Visually confusing, but otherwise a simple maze."
-msgstr ""
+msgstr "ვიზუალურად დამაბნეველი, მაგრამ ისე მარტივი ლაბირინთი."
 
 #: gamedata/game_MAZ.txt:24
 #, kde-format
@@ -3809,12 +3818,12 @@ msgstr ""
 #: gamedata/game_MAZ.txt:169
 #, kde-format
 msgid "Lots of false floors to use and avoid."
-msgstr ""
+msgstr "უამრავი ცრუ სართული გამოსაყენებლად და თავიდან ასაცილებლად."
 
 #: gamedata/game_MAZ.txt:172
 #, kde-format
 msgid "Rumpelstiltskin"
-msgstr ""
+msgstr "Rumpelstiltskin"
 
 #: gamedata/game_MAZ.txt:173
 #, kde-format
@@ -4432,7 +4441,7 @@ msgstr ""
 #: gamedata/game_plwv.txt:23
 #, kde-format
 msgid "Sky Walker"
-msgstr ""
+msgstr "ცასწავალა"
 
 #: gamedata/game_plwv.txt:24
 #, kde-format
