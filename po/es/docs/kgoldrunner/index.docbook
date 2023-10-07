@@ -332,7 +332,7 @@
 ><guimenu
 >Preferencias</guimenu
 > <guimenuitem
->Configurar accesos rápidos...</guimenuitem
+>Configurar atajos de teclado...</guimenuitem
 ></menuchoice
 >.</para>
 
@@ -989,7 +989,7 @@ linkend="settings-menu"
 >P</keycap
 > o &Esc;) para congelar el juego mientras mueve el ratón, aunque es mucho más recomendable utilizar la tecla <keycap
 >S</keycap
-> del acceso rápido de teclado.</para>
+> del atajo de teclado.</para>
 </listitem>
 </varlistentry>
 
@@ -1741,12 +1741,12 @@ linkend="settings-menu"
 ><guimenu
 >Preferencias</guimenu
 ><guimenuitem
->Configurar accesos rápidos de teclado</guimenuitem
+>Configurar atajos de teclado</guimenuitem
 > </menuchoice
 ></term>
 <listitem>
 <para
->En el escritorio de &kde; este elemento permite cambiar las asociaciones de teclado (&eg;, control del héroe a través del teclado) o asociar sus propios accesos rápidos para cada elemento del menú.</para>
+>En el escritorio de &kde; este elemento permite cambiar las asociaciones de teclado (&eg;, control del héroe a través del teclado) o asociar sus propios atajos de teclado para cada elemento del menú.</para>
 </listitem>
 </varlistentry>
 
