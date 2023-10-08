@@ -35,12 +35,15 @@ int main (int argc, char **argv)
                      QStringLiteral("https://apps.kde.org/kgoldrunner") );
     addCredits (about);
 
-    QCommandLineParser parser;
     KAboutData::setApplicationData(about);
+
     KCrash::initialize();
+
+    QCommandLineParser parser;
     about.setupCommandLine(&parser);
     parser.process(app);
     about.processCommandLine(&parser);
+
     KDBusService service;
 
     app.setWindowIcon(QIcon::fromTheme(QStringLiteral("kgoldrunner")));
