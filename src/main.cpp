@@ -32,7 +32,7 @@ int main (int argc, char **argv)
                      KAboutLicense::GPL,
                      i18n ("(C) 2003 Ian Wadham and Marco Krüger"),
                      QString(),
-                     QStringLiteral("https://apps.kde.org/de/kgoldrunner") );
+                     QStringLiteral("https://apps.kde.org/kgoldrunner") );
     addCredits (about);
 
     QCommandLineParser parser;
