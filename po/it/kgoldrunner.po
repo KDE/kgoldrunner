@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-25 01:39+0000\n"
+"POT-Creation-Date: 2023-10-09 01:44+0000\n"
 "PO-Revision-Date: 2021-08-24 01:05+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -10007,77 +10007,77 @@ msgstr "Un gioco sia d'azione che rompicapo"
 msgid "(C) 2003 Ian Wadham and Marco Krüger"
 msgstr "© 2003 Ian Wadham e Marco Krüger"
 
-#: src/main.cpp:66
+#: src/main.cpp:69
 #, kde-format
 msgid "Ian Wadham"
 msgstr "Ian Wadham"
 
-#: src/main.cpp:66
+#: src/main.cpp:69
 #, kde-format
 msgid "Current author"
 msgstr "Autore attuale"
 
-#: src/main.cpp:68
+#: src/main.cpp:71
 #, kde-format
 msgid "Marco Krüger"
 msgstr "Marco Krüger"
 
-#: src/main.cpp:68
+#: src/main.cpp:71
 #, kde-format
 msgid "Original author"
 msgstr "Autore originale"
 
-#: src/main.cpp:70 src/main.cpp:76
+#: src/main.cpp:73 src/main.cpp:79
 #, kde-format
 msgid "Mauricio Piacentini"
 msgstr "Mauricio Piacentini"
 
-#: src/main.cpp:71
+#: src/main.cpp:74
 #, kde-format
 msgid "Port to KDE4, Qt4 and KGameCanvas classes"
 msgstr "Conversione per KDE4, Qt4 e per le classi KGameCanvas"
 
-#: src/main.cpp:73
+#: src/main.cpp:76
 #, kde-format
 msgid "Maurizio Monge"
 msgstr "Maurizio Monge"
 
-#: src/main.cpp:74
+#: src/main.cpp:77
 #, kde-format
 msgid "KGameCanvas classes for KDE4"
 msgstr "Classi KGameCanvas per KDE4"
 
-#: src/main.cpp:77
+#: src/main.cpp:80
 #, kde-format
 msgid "Artwork for runners and default theme"
 msgstr "Grafica per i corridori e il tema predefinito"
 
-#: src/main.cpp:79
+#: src/main.cpp:82
 #, kde-format
 msgid "Johann Ollivier Lapeyre"
 msgstr "Johann Ollivier Lapeyre"
 
-#: src/main.cpp:80
+#: src/main.cpp:83
 #, kde-format
 msgid "Artwork for bars and ladders"
 msgstr "Grafica per le sbarre e le scale"
 
-#: src/main.cpp:82 src/main.cpp:90
+#: src/main.cpp:85 src/main.cpp:93
 #, kde-format
 msgid "Eugene Trounev"
 msgstr "Eugene Trounev"
 
-#: src/main.cpp:83
+#: src/main.cpp:86
 #, kde-format
 msgid "Artwork for background of Geek City theme"
 msgstr "Grafica per lo sfondo del tema Smanettopoli"
 
-#: src/main.cpp:85
+#: src/main.cpp:88
 #, kde-format
 msgid "Luciano Montanaro"
 msgstr "Luciano Montanaro"
 
-#: src/main.cpp:86
+#: src/main.cpp:89
 #, kde-format
 msgid ""
 "Nostalgia themes, improvements to runners, multiple-backgrounds feature, "
@@ -10086,7 +10086,7 @@ msgstr ""
 "Temi Nostalgia, miglioramenti ai corridori, gestione degli sfondi multipli "
 "nei temi, effetti di transizione fra i livelli e parecchie altre idee"
 
-#: src/main.cpp:91
+#: src/main.cpp:94
 #, kde-format
 msgid "Artwork for the Treasure of Egypt theme"
 msgstr "Grafica per il tema «Il tesoro d'Egitto»"

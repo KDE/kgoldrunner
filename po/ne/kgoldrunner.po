@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-25 01:39+0000\n"
+"POT-Creation-Date: 2023-10-09 01:44+0000\n"
 "PO-Revision-Date: 2007-08-20 12:22+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -8630,84 +8630,84 @@ msgstr "केडीई गोल्ड रनर कार्य र पजल 
 msgid "(C) 2003 Ian Wadham and Marco Krüger"
 msgstr "(C) 2003 इयान वाडह्यम र मार्को क्रुगर"
 
-#: src/main.cpp:66
+#: src/main.cpp:69
 #, kde-format
 msgid "Ian Wadham"
 msgstr "इयान वाडह्याम"
 
-#: src/main.cpp:66
+#: src/main.cpp:69
 #, kde-format
 msgid "Current author"
 msgstr "हालको लेखक"
 
-#: src/main.cpp:68
+#: src/main.cpp:71
 #, kde-format
 msgid "Marco Krüger"
 msgstr "मार्को क्रुगर"
 
-#: src/main.cpp:68
+#: src/main.cpp:71
 #, kde-format
 msgid "Original author"
 msgstr "मौलिक लेखक"
 
-#: src/main.cpp:70 src/main.cpp:76
+#: src/main.cpp:73 src/main.cpp:79
 #, kde-format
 msgid "Mauricio Piacentini"
 msgstr "माउरिसिओ पियासेन्टिटनि"
 
-#: src/main.cpp:71
+#: src/main.cpp:74
 #, kde-format
 msgid "Port to KDE4, Qt4 and KGameCanvas classes"
 msgstr "केडीई४, क्यूटी४ र केडीई खेल क्यान्भास वर्गमा पोर्ट गर्नुहोस्"
 
-#: src/main.cpp:73
+#: src/main.cpp:76
 #, kde-format
 msgid "Maurizio Monge"
 msgstr "माउरिजिओ मोङ्ग"
 
-#: src/main.cpp:74
+#: src/main.cpp:77
 #, kde-format
 msgid "KGameCanvas classes for KDE4"
 msgstr "केडीई४ का लागि केडीई खेल क्यान्भास वर्ग"
 
-#: src/main.cpp:77
+#: src/main.cpp:80
 #, kde-format
 msgid "Artwork for runners and default theme"
 msgstr "रनर र पूर्वनिर्धारित विषयवस्तुका लागि कलाकार्य"
 
-#: src/main.cpp:79
+#: src/main.cpp:82
 #, kde-format
 msgid "Johann Ollivier Lapeyre"
 msgstr "जोहान ओलिभर लापेरी"
 
-#: src/main.cpp:80
+#: src/main.cpp:83
 #, kde-format
 msgid "Artwork for bars and ladders"
 msgstr "पट्टी र भर्याङका लागि कलाकार्य"
 
-#: src/main.cpp:82 src/main.cpp:90
+#: src/main.cpp:85 src/main.cpp:93
 #, kde-format
 msgid "Eugene Trounev"
 msgstr "युगेने ट्रुनेभ"
 
-#: src/main.cpp:83
+#: src/main.cpp:86
 #, kde-format
 msgid "Artwork for background of Geek City theme"
 msgstr "गीक शहर पृष्ठभूमिका लागि कलाकार्य"
 
-#: src/main.cpp:85
+#: src/main.cpp:88
 #, kde-format
 msgid "Luciano Montanaro"
 msgstr ""
 
-#: src/main.cpp:86
+#: src/main.cpp:89
 #, kde-format
 msgid ""
 "Nostalgia themes, improvements to runners, multiple-backgrounds feature, "
 "fade-in/fade-out feature and several other ideas"
 msgstr ""
 
-#: src/main.cpp:91
+#: src/main.cpp:94
 #, fuzzy, kde-format
 #| msgid "Artwork for runners and default theme"
 msgid "Artwork for the Treasure of Egypt theme"
