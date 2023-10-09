@@ -339,7 +339,7 @@ void KGrLevelPlayer::setTarget (int pointerI, int pointerJ)
             T = 0;
         }
         playState = Playing;
-        Q_FALLTHROUGH();
+        [[fallthrough]];
     case Playing:
         // The human player is playing now.
         if (! playback) {
