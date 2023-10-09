@@ -661,8 +661,7 @@ void KGrThumbNail::paintEvent (QPaintEvent * /* event (unused) */)
     QColor poleColor =       QColor ("#a0a0a0"); // Steely grey.
     QColor heroColor =       QColor ("#00ff00"); // Green.
     QColor enemyColor =      QColor ("#0080ff"); // Bright blue.
-    QColor gold;
-    gold.setNamedColor (QStringLiteral("gold"));		 // Gold.
+    QColor gold =            QColor::fromString(QStringLiteral("gold")); // Gold.
 
     pen.setColor (backgroundColor);
     p.setPen (pen);
