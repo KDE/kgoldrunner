@@ -2119,7 +2119,7 @@ bool KGrGame::initRecordingData (const Owner fileOwner, const QString & prefix,
         recording->speed       = timeScale;
         recording->controlMode = controlMode;
         recording->keyOption   = holdKeyOption;
-        recording->content [0] = 0xff;
+        recording->content [0] = static_cast<char>(0xff);
     }
     return true;
 }

@@ -1062,7 +1062,7 @@ void KGrLevelPlayer::interruptPlayback()
         }
     }
 
-    recording->content [recIndex + 1] = END_CODE;
+    recording->content [recIndex + 1] = static_cast<char>(END_CODE);
     for (int i = (recIndex + 2); i < recording->content.size(); i++) {
         recording->content [i] = 0;
     }
