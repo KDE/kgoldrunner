@@ -8833,7 +8833,7 @@ msgid ""
 "Set up to start playing the game and level being shown, as soon as you "
 "click, move the mouse or press a key"
 msgstr ""
-"Opción para comezar a xogar a partida no nivel que se mostra, en canto fagas "
+"Opción para comezar a xogar a partida no nivel que se amosa, en canto fagas "
 "clic, movas o rato ou premas unha tecla"
 
 #: src/kgrgame.cpp:719

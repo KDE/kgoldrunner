@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-09 01:44+0000\n"
-"PO-Revision-Date: 2023-10-12 08:21+0200\n"
+"PO-Revision-Date: 2023-10-13 08:19+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -3322,7 +3322,7 @@ msgstr "მძინარა"
 #: gamedata/game_MAZ.txt:13
 #, kde-format
 msgid "A lot of backtracking, but nothing too difficult here."
-msgstr ""
+msgstr "უკან დაბრუნებების მიუხედავად, ძნელი, აქ, არაფერია."
 
 #: gamedata/game_MAZ.txt:16
 #, kde-format
@@ -4482,7 +4482,7 @@ msgstr ""
 #: gamedata/game_plwv.txt:33
 #, kde-format
 msgid "Patchwork Quilt"
-msgstr ""
+msgstr "დანაკუწებული ზედახორა"
 
 #: gamedata/game_plwv.txt:34
 #, kde-format
@@ -4535,7 +4535,7 @@ msgstr "ცუდად"
 #, kde-format
 msgid ""
 "At the start, go down and dig.  At the finish, approach the gold from below."
-msgstr ""
+msgstr "დასაწყისში, ჩადით და ამოთხარეთ.  ბოლოში, ოქროს, ქვემოდან მიუდექით."
 
 #: gamedata/game_plwv.txt:56
 #, kde-format
@@ -5039,7 +5039,7 @@ msgstr ""
 #: gamedata/game_sot.txt:85
 #, kde-format
 msgid "Four Chambers Suspended"
-msgstr ""
+msgstr "ოთხი ორთქლიანი ოთახი"
 
 #: gamedata/game_sot.txt:86
 #, kde-format
@@ -5290,7 +5290,7 @@ msgstr ""
 #: gamedata/game_tutea.txt:7
 #, kde-format
 msgid "Bars and Ladders"
-msgstr ""
+msgstr "ძელები და კიბეები"
 
 #: gamedata/game_tutea.txt:8
 #, kde-format
@@ -5403,7 +5403,7 @@ msgstr ""
 #: gamedata/game_wad.txt:21
 #, kde-format
 msgid "Quick Off The Mark"
-msgstr ""
+msgstr "ჭდიდან შორს, სწრაფად"
 
 #: gamedata/game_wad.txt:22
 #, kde-format
@@ -6450,17 +6450,17 @@ msgstr "ზოლი"
 #: src/kgoldrunner.cpp:963
 #, kde-format
 msgid "Bar/Pole"
-msgstr ""
+msgstr "ძელი/ჭოკი"
 
 #: src/kgoldrunner.cpp:964
 #, kde-format
 msgid "Paint bars or poles"
-msgstr ""
+msgstr "ძელების და ჭოკების დახტვა"
 
 #: src/kgoldrunner.cpp:965
 #, kde-format
 msgid "Paint bars or poles (can fall from these)"
-msgstr ""
+msgstr "ძელების და ჭოკების დახტვა (აქედან, შეიძლება, ჩამოვარდეთ)"
 
 #: src/kgoldrunner.cpp:969
 #, kde-format
@@ -6475,12 +6475,12 @@ msgstr "ოქრო/განძი"
 #: src/kgoldrunner.cpp:970
 #, kde-format
 msgid "Paint gold (or other treasure)"
-msgstr ""
+msgstr "ოქროს (ან სხვა ძვირფასეულის) დახატვა"
 
 #: src/kgoldrunner.cpp:971
 #, kde-format
 msgid "Paint gold pieces (or other treasure)"
-msgstr ""
+msgstr "ოქროს ნაწილების (ან სხვა ძვირფასეულის) დახატვა"
 
 #. i18n: ectx: Menu (editor)
 #: src/kgoldrunnerui.rc:20
