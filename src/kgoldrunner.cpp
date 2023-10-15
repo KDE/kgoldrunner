@@ -203,7 +203,7 @@ void KGoldrunner::setupActions()
     actionCollection()->addAction (saveGame->objectName(), saveGame);
     connect (saveGame, &QAction::triggered, this, [this] { game->gameActions(SAVE_GAME); });
     saveGame->setText (i18n ("&Save Game..."));
-    actionCollection()->setDefaultShortcut(saveGame, Qt::Key_S); // Alternate key.
+    KActionCollection::setDefaultShortcut(saveGame, Qt::Key_S); // Alternate key.
 
     // The name of the solution-file is 'sol_<prefix>.txt', where <prefix> is
     // the unique prefix belonging to the game involved (eg. plws, tute, etc.).
@@ -559,7 +559,7 @@ QAction * KGoldrunner::gameAction (const QString & name,
     ga->setToolTip (toolTip);
     ga->setWhatsThis (whatsThis);
     if (! key.isEmpty()) {
-        actionCollection()->setDefaultShortcut(ga, key);
+        KActionCollection::setDefaultShortcut(ga, key);
     }
     connect (ga, &QAction::triggered, this, [this, code] { game->gameActions(code); });
     return ga;
@@ -615,7 +615,7 @@ void KGoldrunner::keyControl (const QString & name, const QString & text,
 {
     QAction * a = actionCollection()->addAction (name);
     a->setText (text);
-    actionCollection()->setDefaultShortcut(a, shortcut);
+    KActionCollection::setDefaultShortcut(a, shortcut);
     a->setAutoRepeat (false);		// Avoid repeats of signals by QAction.
 
     // If this is a move-key, let keyPressEvent() through, instead of signal.
@@ -635,7 +635,7 @@ void KGoldrunner::keyControlDebug (const QString & name, const QString & text,
 {
     QAction * a = actionCollection()->addAction (name);
     a->setText (text);
-    actionCollection()->setDefaultShortcut(a, shortcut);
+    KActionCollection::setDefaultShortcut(a, shortcut);
     a->setAutoRepeat (false);		// Avoid repeats of signals by QAction.
 
     // If this is a move-key, let keyPressEvent() through, instead of signal.
