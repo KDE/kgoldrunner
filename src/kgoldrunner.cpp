@@ -24,7 +24,7 @@
 #include <KSharedConfig>
 #include <KShortcutsDialog>
 #include <KStandardAction>
-#include <KStandardGameAction>
+#include <KGameStandardAction>
 #include <KToggleAction>
 #include <KToggleFullScreenAction>
 #include <KToolBar>
@@ -178,7 +178,7 @@ void KGoldrunner::setupActions()
     // Load Saved Game...
     // --------------------------
 
-    QAction * a = KStandardGameAction::gameNew (this, nullptr, nullptr);
+    QAction * a = KGameStandardAction::gameNew (this, nullptr, nullptr);
     actionCollection()->addAction (a->objectName(), a);
     connect (a, &QAction::triggered, this, [this] { game->gameActions(NEW); });
     a->setText (i18n ("&New Game..."));
@@ -190,7 +190,7 @@ void KGoldrunner::setupActions()
                                  "you are playing."),
                            Qt::Key_Y);
 
-    a =	KStandardGameAction::load (this, nullptr, nullptr);
+    a =	KGameStandardAction::load (this, nullptr, nullptr);
     actionCollection()->addAction (a->objectName(), a);
     connect (a, &QAction::triggered, this, [this] { game->gameActions(LOAD); });
     a->setText (i18n ("&Load Saved Game..."));
@@ -199,7 +199,7 @@ void KGoldrunner::setupActions()
     // Save Solution...
     // --------------------------
 
-    saveGame = KStandardGameAction::save (this, nullptr, nullptr);
+    saveGame = KGameStandardAction::save (this, nullptr, nullptr);
     actionCollection()->addAction (saveGame->objectName(), saveGame);
     connect (saveGame, &QAction::triggered, this, [this] { game->gameActions(SAVE_GAME); });
     saveGame->setText (i18n ("&Save Game..."));
@@ -221,26 +221,26 @@ void KGoldrunner::setupActions()
     // Kill the Hero
     // --------------------------
 
-    myPause = KStandardGameAction::pause (this, nullptr, nullptr);
+    myPause = KGameStandardAction::pause (this, nullptr, nullptr);
     actionCollection()->addAction (myPause->objectName(), myPause);
     connect (myPause, &QAction::triggered, this, [this] { game->gameActions(PAUSE); });
     // QAction * myPause gets QAction::shortcut(), returning 1 OR 2 shortcuts.
     QList<QKeySequence> pauseShortcut = { myPause->shortcut(), Qt::Key_Escape };
     myPause->setShortcuts (pauseShortcut);
 
-    highScore = KStandardGameAction::highscores (this, nullptr, nullptr);
+    highScore = KGameStandardAction::highscores (this, nullptr, nullptr);
     actionCollection()->addAction (highScore->objectName(), highScore);
     connect (highScore, &QAction::triggered, this, [this] { game->gameActions(HIGH_SCORE); });
 
-    hintAction = KStandardGameAction::hint (this, nullptr, nullptr);
+    hintAction = KGameStandardAction::hint (this, nullptr, nullptr);
     actionCollection()->addAction (hintAction->objectName(), hintAction);
     connect (hintAction, &QAction::triggered, this, [this] { game->gameActions(HINT); });
 
-    a = KStandardGameAction::demo (this, nullptr, nullptr);
+    a = KGameStandardAction::demo (this, nullptr, nullptr);
     actionCollection()->addAction (a->objectName(), a);
     connect (a, &QAction::triggered, this, [this] { game->gameActions(DEMO); });
 
-    a = KStandardGameAction::solve (this, nullptr, nullptr);
+    a = KGameStandardAction::solve (this, nullptr, nullptr);
     actionCollection()->addAction (a->objectName(), a);
     connect (a, &QAction::triggered, this, [this] { game->gameActions(SOLVE); });
     a->setText      (i18n ("&Show a Solution"));
@@ -280,7 +280,7 @@ void KGoldrunner::setupActions()
     // Quit
     // --------------------------
 
-    KStandardGameAction::quit (this, &QWidget::close, actionCollection());
+    KGameStandardAction::quit (this, &QWidget::close, actionCollection());
 
     /**************************************************************************/
     /***************************   GAME EDITOR MENU  **************************/
