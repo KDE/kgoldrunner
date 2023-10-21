@@ -1,5 +1,5 @@
 # Translation of kgoldrunner.po to Catalan (Valencian)
-# Copyright (C) 2009-2022 This_file_is_part_of_KDE
+# Copyright (C) 2009-2023 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
@@ -490,7 +490,7 @@ msgstr ""
 "construir la gran piràmide, amb un pes mitjà prop de 2,5 tones per bloc.\n"
 "\n"
 "La piràmide d'este nivell va ser construïda a partir de menys de 100 blocs. "
-"Al principi, maniobra per a entrar a l'interior de la piràmide i, a "
+"Al començament, maniobra per a entrar a l'interior de la piràmide i, a "
 "continuació, mantín-te sobre una de les escales de mà en la segona capa més "
 "propera a la paret exterior de la part esquerra de la piràmide. Espera fins "
 "que el grup de mòmies s'agrupe en l'altra banda de la paret exterior. A "
@@ -947,8 +947,8 @@ msgid ""
 "the long ladder drops next to you.  Then climb up and to the right to get up "
 "the big ladder."
 msgstr ""
-"Al principi, baixa per les primeres escales i espera en la part de baix fins "
-"que els enemics s'hagen situat a les seues posicions. Llavors cau cap a "
+"Al començament, baixa per les primeres escales i espera en la part de baix "
+"fins que els enemics s'hagen situat a les seues posicions. Llavors cau cap a "
 "terra i apunta cap a l'escala gran de la dreta amb una forqueta davall. La "
 "forqueta és el què et permet passar per davall dels enemics: espera a nivell "
 "de terra del cercle de l'esquerra (i no pas davall del nivell de terra!) "
@@ -997,7 +997,7 @@ msgid ""
 "the left most square of the top of the 7 and wait there until enemies fill "
 "the holes on top of the 7."
 msgstr ""
-"L'or de la part superior del 7 és el desafiament principal. Al principi, "
+"L'or de la part superior del 7 és el desafiament principal. Al començament, "
 "puja pel quadrat situat més a la dreta de la part superior del 7 i espera "
 "fins que els enemics òmpliguen els forats de la part superior del 7."
 
