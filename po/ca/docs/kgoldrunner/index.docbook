@@ -111,28 +111,10 @@
 >. Tot el que podeu fer és fugir, cavar forats en el terra per a atrapar-los o atraure'ls fins a una àrea on no puguin fer-vos mal. Després de poc temps, un enemic atrapat sortirà del seu forat, però si el tapeu abans d'això, morirà i reapareixerà en un altre lloc. </para>
 
 <para
->Si no heu jugat mai, proveu amb la <quote
->Partida d'aprenentatge</quote
->, la qual us ensenyarà les regles i les habilitats bàsiques. Llavors proveu amb la partida <quote
->Iniciació</quote
->. Els experts poden gaudir de les partides <quote
->Repte</quote
->, <quote
->La venjança d'en Peter W</quote
->, <quote
->Compta</quote
-> o <quote
->La maledicció de la mòmia</quote
->, però la partida <quote
->Iniciació</quote
-> té 100 nivells i alguns són molt difícils. És una bona partida per a aconseguir una puntuació alta.</para>
+>Si no heu jugat mai, proveu amb la «Partida d'aprenentatge», la qual us ensenyarà les regles i les habilitats bàsiques. Llavors proveu amb la partida «Iniciació». Els experts poden gaudir de les partides «Repte», «La venjança d'en Peter W», «Compta» o «La maledicció de la mòmia», però la partida «Iniciació» té 100 nivells i alguns són molt difícils. És una bona partida per a aconseguir una puntuació alta.</para>
 
 <para
->Totes aquestes partides empren les regles de Tradicional, les quals són similars a les que s'empraven en els primers ordinadors personals, com Apple II o Commodore 64. Les partides <quote
->KGoldrunner</quote
-> i <quote
->Estat de terror</quote
-> empren les regles de KGoldrunner, en les quals els enemics corren més de pressa i tenen una estratègia de cerca més agressiva que en les regles de Tradicional. Per a més detalls, vegeu &nbsp;&nbsp;<link linkend="choice-of-rules"
+>Totes aquestes partides empren les regles de Tradicional, les quals són similars a les que s'empraven en els primers ordinadors personals, com Apple II o Commodore 64. Les partides «KGoldrunner» i «Estat de terror» empren les regles de KGoldrunner, en les quals els enemics corren més de pressa i tenen una estratègia de cerca més agressiva que en les regles de Tradicional. Per a més detalls, vegeu &nbsp;&nbsp;<link linkend="choice-of-rules"
 >Triar les regles</link
 >.</para>
 
@@ -284,9 +266,7 @@
 >K</keycap
 >, <keycap
 >L</keycap
-> i &Space; (en un teclat <quote
->QWERTY</quote
->) o amb les dues mans amb les tecles de fletxa, &Space;, <keycap
+> i &Space; (en un teclat «QWERTY») o amb les dues mans amb les tecles de fletxa, &Space;, <keycap
 >Z</keycap
 > i <keycap
 >C</keycap
@@ -419,11 +399,7 @@
 >Podeu esquivar un enemic que s'aproxima cavant un forat, esperant fins que caigui i després corrent ràpidament per sobre del seu cap. Al mateix temps, podreu recollir l'or que portava. En general, podeu cavar dos forats per a capturar i córrer per sobre de dos enemics que estan molt junts, però això funciona poques vegades si els enemics estan separats o si n'hi ha més de dos.</para>
 
 <para
->Podeu matar els enemics cavant prou forats en el seu camí. En general, calen dos o més forats per a matar un enemic i fins a vuit o més forats per a matar-ne quatre o cinc. Quan els enemics moren, reapareixen immediatament, sigui on van començar el nivell o prop de la part superior de l'àrea de joc, depenent de si la partida segueix les regles i opcions de configuració &nbsp;<quote
->KGoldrunner</quote
-> o <quote
->Tradicional</quote
-> (vegeu <link linkend="choice-of-rules"
+>Podeu matar els enemics cavant prou forats en el seu camí. En general, calen dos o més forats per a matar un enemic i fins a vuit o més forats per a matar-ne quatre o cinc. Quan els enemics moren, reapareixen immediatament, sigui on van començar el nivell o prop de la part superior de l'àrea de joc, depenent de si la partida segueix les regles i opcions de configuració &nbsp;«KGoldrunner» o «Tradicional» (vegeu <link linkend="choice-of-rules"
 >Triar les regles</link
 >).</para>
 
@@ -467,11 +443,7 @@
 >Arranjament</guimenu
 > (vegeu <link linkend="choice-of-rules"
 >Triar les regles</link
->), poden córrer horitzontalment cap a un forat cavat i no ser capturats, i poden caure des d'allà, córrer cap a un altre forat o sortir-ne. Diversos nivells que segueixen les regles de <quote
->Tradicional</quote
-> depenen que un enemic pugui córrer per un forat. Alguns nivells que segueixen les regles de <quote
->KGoldrunner</quote
-> depenen que un enemic NO pugui córrer per un forat.</para>
+>), poden córrer horitzontalment cap a un forat cavat i no ser capturats, i poden caure des d'allà, córrer cap a un altre forat o sortir-ne. Diversos nivells que segueixen les regles de «Tradicional» depenen que un enemic pugui córrer per un forat. Alguns nivells que segueixen les regles de «KGoldrunner» depenen que un enemic NO pugui córrer per un forat.</para>
 
 </sect2>
 
@@ -480,30 +452,10 @@
 >Cavar mentre es cau</title>
 
 <para
->En el joc original en l'Apple II i el Commodore 64, l'heroi havia de recolzar-se en alguna cosa sòlida mentre cavava: una escala, formigó, un maó, una barra --- o el cap d'un enemic. Aquesta regla es va passar per alt en el &kgoldrunner; i un dia el fill de l'autor va descobrir que es podia cavar mentre es queia! Immediatament va compondre un nivell per a explotar això. Ara, altres compositors de jocs han fet el mateix. Haureu de cavar mentre caieu en partides recents amb Campionat habilitat com ara <quote
->Estat de terror</quote
->, <quote
->La maledicció de la mòmia</quote
-> i <quote
->La febre de l'or</quote
->.</para>
+>En el joc original en l'Apple II i el Commodore 64, l'heroi havia de recolzar-se en alguna cosa sòlida mentre cavava: una escala, formigó, un maó, una barra --- o el cap d'un enemic. Aquesta regla es va passar per alt en el &kgoldrunner; i un dia el fill de l'autor va descobrir que es podia cavar mentre es queia! Immediatament va compondre un nivell per a explotar això. Ara, altres compositors de jocs han fet el mateix. Haureu de cavar mentre caieu en partides recents amb Campionat habilitat com ara «Estat de terror», «La maledicció de la mòmia» i «La febre de l'or».</para>
 
 <para
->D'altra banda, cavar mentre es cau fa que les partides més antigues siguin massa fàcils. Llavors, a partir de desembre de 2015, està prohibit en <quote
->Partida d'aprenentatge</quote
->, <quote
->Partida d'aprenentatge avançat</quote
->, <quote
->Iniciació</quote
->, <quote
->KGoldrunner</quote
-> i <quote
->Repte</quote
->. La partida <quote
->La venjança d'en Peter W</quote
-> ho permet en un sol nivell i la nova <quote
->La sort del principiant</quote
->, la qual està dirigida a jugadors principiants, no ho permet.</para>
+>D'altra banda, cavar mentre es cau fa que les partides més antigues siguin massa fàcils. Llavors, a partir de desembre de 2015, està prohibit en «Partida d'aprenentatge», «Partida d'aprenentatge avançat», «Iniciació», «KGoldrunner» i «Repte». La partida «La venjança d'en Peter W» ho permet en un sol nivell i la nova «La sort del principiant», la qual està dirigida a jugadors principiants, no ho permet.</para>
 
 </sect2>
 
@@ -512,9 +464,7 @@
 >Guanyar i perdre la partida</title>
 
 <para
->Guanyareu en completar l'últim nivell de la partida. Perdreu quan s'acabi la vostra última vida. De qualsevol manera, si heu aconseguit una de les deu puntuacions més altes per a aquest joc, podreu enregistrar el vostre èxit en el &nbsp;<quote
->Saló de la fama del &kgoldrunner;</quote
->.</para>
+>Guanyareu en completar l'últim nivell de la partida. Perdreu quan s'acabi la vostra última vida. De qualsevol manera, si heu aconseguit una de les deu puntuacions més altes per a aquest joc, podreu enregistrar el vostre èxit en el &nbsp;«Saló de la fama del &kgoldrunner;».</para>
 
 </sect2>
 
@@ -603,39 +553,21 @@
 <para
 >La majoria de les regles del &kgoldrunner; es tracten a la secció <link linkend="how-to-play"
 >Com jugar</link
->, però hi ha dues configuracions de regles principals que afecten l'estil de joc: conegudes com la <quote
->Tradicional</quote
-> i la <quote
->KGoldrunner</quote
->. És important saber quines configuracions estan vigents mentre jugueu. El &kgoldrunner; triarà automàticament la configuració correcta per a una partida quan jugueu a un dels seus nivells i les regles per a cada partida es mostren en el diàleg <link linkend="select-game-dialog"
+>, però hi ha dues configuracions de regles principals que afecten l'estil de joc: conegudes com la «Tradicional» i la «KGoldrunner». És important saber quines configuracions estan vigents mentre jugueu. El &kgoldrunner; triarà automàticament la configuració correcta per a una partida quan jugueu a un dels seus nivells i les regles per a cada partida es mostren en el diàleg <link linkend="select-game-dialog"
 >Selecció d'una partida</link
 >.</para>
 
 <para
->La principal diferència entre la configuració <quote
->Tradicional</quote
-> i <quote
->KGoldrunner</quote
-> és el mètode pel qual els enemics trien un camí fins a l'heroi.</para>
+>La principal diferència entre la configuració «Tradicional» i «KGoldrunner» és el mètode pel qual els enemics trien un camí fins a l'heroi.</para>
 
 <itemizedlist>
 <listitem>
 <para
->En el mètode de cerca <quote
->Tradicional</quote
->, els enemics cerquen camins verticals (escales i caigudes) i intenten mantenir-se més alts que l'heroi o a la mateixa alçada. Només van per sota seu com a últim recurs. Els enemics no intenten perseguir l'heroi en direcció horitzontal fins que es troben a la mateixa alçada i poden trobar un camí horitzontal. Això us durà a situacions en què podreu <quote
->controlar</quote
-> als enemics que estan lluny vostre i fer que treballin per vosaltres o almenys que no molestin.</para>
+>En el mètode de cerca «Tradicional», els enemics cerquen camins verticals (escales i caigudes) i intenten mantenir-se més alts que l'heroi o a la mateixa alçada. Només van per sota seu com a últim recurs. Els enemics no intenten perseguir l'heroi en direcció horitzontal fins que es troben a la mateixa alçada i poden trobar un camí horitzontal. Això us durà a situacions en què podreu «controlar» als enemics que estan lluny vostre i fer que treballin per vosaltres o almenys que no molestin.</para>
 </listitem>
 <listitem>
 <para
->El mètode <quote
->KGoldrunner</quote
-> cerca alternativament camins horitzontals i verticals, el qual tendeix a mantenir els enemics per sobre del vostre costat a l'àrea de joc i aproximadament a la mateixa alçada (&ead;, són més agressius i no tan fàcils de manipular). Això condueix a una partida més plena d'acció, però amb menys oportunitats per a l'estratègia i la resolució dels trencaclosques. No obstant això, la partida <quote
->Estat de terror</quote
->, afegida el 2007, empra les regles <quote
->KGoldrunner</quote
-> i té molts trencaclosques per a resoldre mentre esteu en la carrera. Per això és un joc tan difícil.</para>
+>El mètode «KGoldrunner» cerca alternativament camins horitzontals i verticals, el qual tendeix a mantenir els enemics per sobre del vostre costat a l'àrea de joc i aproximadament a la mateixa alçada (&ead;, són més agressius i no tan fàcils de manipular). Això condueix a una partida més plena d'acció, però amb menys oportunitats per a l'estratègia i la resolució dels trencaclosques. No obstant això, la partida «Estat de terror», afegida el 2007, empra les regles «KGoldrunner» i té molts trencaclosques per a resoldre mentre esteu en la carrera. Per això és un joc tan difícil.</para>
 </listitem>
 </itemizedlist>
 
@@ -645,39 +577,19 @@
 <itemizedlist>
 <listitem>
 <para
->En jugar <quote
->KGoldrunner</quote
->, l'heroi i els enemics es mouran a velocitats fixes en tots els nivells i els maons sempre trigaran el mateix temps a tancar-se. En jugar <quote
->Tradicional</quote
->, la velocitat del joc dependrà del nombre d'enemics en un nivell. Com més enemics, més lent correran. L'heroi també es tornarà més lent, però no tan notablement.</para>
+>En jugar «KGoldrunner», l'heroi i els enemics es mouran a velocitats fixes en tots els nivells i els maons sempre trigaran el mateix temps a tancar-se. En jugar «Tradicional», la velocitat del joc dependrà del nombre d'enemics en un nivell. Com més enemics, més lent correran. L'heroi també es tornarà més lent, però no tan notablement.</para>
 </listitem>
 <listitem>
 <para
->En jugar <quote
->Tradicional</quote
->, els enemics sempre recolliran les llavors d'or quan es topin amb elles. En jugar <quote
->KGoldrunner</quote
->, serà una elecció aleatòria. Els enemics deixaran anar les llavors després d'un temps aleatori en ambdós tipus de joc.</para>
+>En jugar «Tradicional», els enemics sempre recolliran les llavors d'or quan es topin amb elles. En jugar «KGoldrunner», serà una elecció aleatòria. Els enemics deixaran anar les llavors després d'un temps aleatori en ambdós tipus de joc.</para>
 </listitem>
 <listitem>
 <para
->Els enemics poden córrer horitzontalment a través dels forats en jugar <quote
->Tradicional</quote
-> però no en jugar <quote
->KGoldrunner</quote
->. El truc en diversos nivells de <quote
->Tradicional</quote
-> dependrà d'alliberar a un enemic del darrere d'un mur de maons. Quan caveu els maons, sortirà corrent del forat. D'altra banda, en alguns nivells de <quote
->KGoldrunner</quote
->, haureu d'amagar-vos dins o darrere d'un maó cavat per a escapar d'un enemic.</para>
+>Els enemics poden córrer horitzontalment a través dels forats en jugar «Tradicional» però no en jugar «KGoldrunner». El truc en diversos nivells de «Tradicional» dependrà d'alliberar a un enemic del darrere d'un mur de maons. Quan caveu els maons, sortirà corrent del forat. D'altra banda, en alguns nivells de «KGoldrunner», haureu d'amagar-vos dins o darrere d'un maó cavat per a escapar d'un enemic.</para>
 </listitem>
 <listitem>
 <para
->Quan els enemics moren en jugar <quote
->KGoldrunner</quote
->, tornaran al lloc on van començar el nivell. En jugar <quote
->Tradicional</quote
->, reapareixeran en un lloc aleatori prop de la part superior de l'àrea de joc. Això fa una gran diferència, especialment en els nivells en què heu de fer que els enemics us portin llavors, però també perquè els enemics segueixen caient sobre vostre tan ràpid com podeu matar-los.</para>
+>Quan els enemics moren en jugar «KGoldrunner», tornaran al lloc on van començar el nivell. En jugar «Tradicional», reapareixeran en un lloc aleatori prop de la part superior de l'àrea de joc. Això fa una gran diferència, especialment en els nivells en què heu de fer que els enemics us portin llavors, però també perquè els enemics segueixen caient sobre vostre tan ràpid com podeu matar-los.</para>
 </listitem>
 </itemizedlist>
 
@@ -721,9 +633,7 @@
 >Seleccionar una partida</title>
 
 <para
->Hi ha diverses partides del <quote
->Sistema</quote
-> que venen amb la versió del &kgoldrunner; i podreu afegir les vostres pròpies utilitzant l'editor. Totes aquestes partides apareixeran a la llista a la part superior del diàleg, agrupades per nivell de dificultat. Les partides d'aprenentatge apareixeran en últim lloc a la llista i les partides d'habilitat normal apareixeran primer. Per a seleccionar una de les partides, senzillament feu clic sobre el seu nom.</para>
+>Hi ha diverses partides del «Sistema» que venen amb la versió del &kgoldrunner; i podreu afegir les vostres pròpies utilitzant l'editor. Totes aquestes partides apareixeran a la llista a la part superior del diàleg, agrupades per nivell de dificultat. Les partides d'aprenentatge apareixeran en últim lloc a la llista i les partides d'habilitat normal apareixeran primer. Per a seleccionar una de les partides, senzillament feu clic sobre el seu nom.</para>
 
 <para
 >La llista mostra quina configuració de regles s'apliquen a cada partida (vegeu <link linkend="choice-of-rules"
@@ -780,26 +690,16 @@
 
 <sect2 id="any-level">
 <title
->Jugar o editar <quote
->qualsevol</quote
-> nivell</title>
+>Jugar o editar «qualsevol» nivell</title>
 
 <para
->Cal recordar que els menús i el diàleg us permetran seleccionar i jugar o editar <quote
->qualsevol</quote
-> nivell. Si comenceu una partida després del nivell 1, està bé, senzillament no obtindreu una puntuació tan alta. Els jugadors dedicats sovint prefereixen jugar nivells alts per diversió, en lloc de cercar una puntuació alta, o els agrada &nbsp;<quote
->entrenar</quote
-> en els nivells més alts abans d'intentar una puntuació alta.</para>
+>Cal recordar que els menús i el diàleg us permetran seleccionar i jugar o editar «qualsevol» nivell. Si comenceu una partida després del nivell 1, està bé, senzillament no obtindreu una puntuació tan alta. Els jugadors dedicats sovint prefereixen jugar nivells alts per diversió, en lloc de cercar una puntuació alta, o els agrada &nbsp;«entrenar» en els nivells més alts abans d'intentar una puntuació alta.</para>
 
 <para
 >Si seleccioneu un nivell del sistema per a editar-lo, també està bé, però haureu de desar-lo en una de les vostres pròpies partides: no en la partida del sistema. Per exemple, és possible que vulgueu modificar un nivell molt difícil per a no haver de tornar al començament del nivell cada vegada que es mor.</para>
 
 <para
->Per a veure el que significa això, proveu la partida <quote
->Repte</quote
->, nivell 16, <quote
->Els tres mosqueters</quote
->. Aquest nivell té prop de deu trencaclosques difícils. Quan hàgiu resolt el trencaclosques 1, no voldreu seguir repetint mentre treballeu en el trencaclosques 2. El secret és fer una còpia editable, després seguir actualitzant-la i anar canviant el punt de partida de l'heroi, fins que hàgiu resolt tots els trencaclosques. Després, podreu tornar enrere i provar-ho amb la realitat, des del començament fins al final.</para>
+>Per a veure el que significa això, proveu la partida «Repte», nivell 16, «Els tres mosqueters». Aquest nivell té prop de deu trencaclosques difícils. Quan hàgiu resolt el trencaclosques 1, no voldreu seguir repetint mentre treballeu en el trencaclosques 2. El secret és fer una còpia editable, després seguir actualitzant-la i anar canviant el punt de partida de l'heroi, fins que hàgiu resolt tots els trencaclosques. Després, podreu tornar enrere i provar-ho amb la realitat, des del començament fins al final.</para>
 
 </sect2>
 </sect1>
@@ -1063,13 +963,11 @@ linkend="settings-menu"
 </term>
 <listitem
 ><para
->Desa una solució per a un nivell en un fitxer anomenat &nbsp;<quote
-><filename
+>Desa una solució per a un nivell en un fitxer anomenat &nbsp;«<filename
 >sol_<replaceable
 >prefix</replaceable
 >.txt</filename
-></quote
-> en el vostre directori de dades d'usuari.</para>
+>» en el vostre directori de dades d'usuari.</para>
 </listitem>
 </varlistentry>
 
@@ -1377,9 +1275,7 @@ linkend="settings-menu"
 <para
 >Mostra el diàleg <guilabel
 >Selecció d'una partida</guilabel
-> amb la configuració predeterminada adequada per a desar un nivell nou o editat. Podreu canviar la partida i el número de nivell, i aconseguir un efecte <quote
->Desa com a...</quote
->. Aquest diàleg té un botó especial, <guibutton
+> amb la configuració predeterminada adequada per a desar un nivell nou o editat. Podreu canviar la partida i el número de nivell, i aconseguir un efecte «Desa com a...». Aquest diàleg té un botó especial, <guibutton
 >Edita el nom del nivell o el consell</guibutton
 >, el qual mostrarà un diàleg on podreu afegir un nom opcional i un consell al vostre nivell.</para>
 </listitem>
@@ -1432,11 +1328,7 @@ linkend="settings-menu"
 </term>
 <listitem>
 <para
->Haureu d'utilitzar aquesta opció abans de començar a crear els vostres propis nivells del &kgoldrunner;. Mostrarà un diàleg on podreu introduir el nom d'una partida nova, un prefix d'1 a 5 caràcters per als noms dels fitxers de nivell, les regles predeterminades per a la vostra partida (<quote
->KGoldrunner</quote
-> o <quote
->Tradicional</quote
->) i una descripció o comentari opcional sobre la partida.</para>
+>Haureu d'utilitzar aquesta opció abans de començar a crear els vostres propis nivells del &kgoldrunner;. Mostrarà un diàleg on podreu introduir el nom d'una partida nova, un prefix d'1 a 5 caràcters per als noms dels fitxers de nivell, les regles predeterminades per a la vostra partida («KGoldrunner» o «Tradicional») i una descripció o comentari opcional sobre la partida.</para>
 </listitem>
 </varlistentry>
 
@@ -1477,9 +1369,7 @@ linkend="settings-menu"
 ></term>
 <listitem>
 <para
->Aquest submenú ofereix una selecció dels temes de fons o <quote
->mons</quote
-> en els quals jugar. Podreu canviar el tema en qualsevol moment, fins i tot mentre es juga la partida. Per a aquells que tenen inclinacions artístiques, és possible compondre temes nous, inclosos els gràfics, el so o ambdós, i afegir-ho tot al &kgoldrunner;. Per a més detalls, contacteu amb l'autor.</para>
+>Aquest submenú ofereix una selecció dels temes de fons o «mons» en els quals jugar. Podreu canviar el tema en qualsevol moment, fins i tot mentre es juga la partida. Per a aquells que tenen inclinacions artístiques, és possible compondre temes nous, inclosos els gràfics, el so o ambdós, i afegir-ho tot al &kgoldrunner;. Per a més detalls, contacteu amb l'autor.</para>
 <variablelist>
 
 <varlistentry>
@@ -1820,45 +1710,15 @@ linkend="settings-menu"
 >. Si us oblideu, us ho recordarà.</para>
 
 <para
->Les decisions més importants que heu de prendre quan es crea una partida són triar les regles que seguirà (<quote
->Tradicional</quote
-> o <quote
->KGoldrunner</quote
->, vegeu <link linkend="choice-of-rules"
+>Les decisions més importants que heu de prendre quan es crea una partida són triar les regles que seguirà («Tradicional» o «KGoldrunner», vegeu <link linkend="choice-of-rules"
 >Triar les regles</link
 >) i triar un prefix únic de nom del fitxer d'entre 1 a 5 caràcters per a la vostra partida i nivells. També necessitareu un nom i una descripció per a la vostra partida, però aquests es poden canviar amb facilitat més endavant.</para>
 
 <para
->El &kgoldrunner; utilitza internament el prefix per a identificar els fitxers de nivell, els fitxers de puntuació més alta i les partides desades. Podeu utilitzar les vostres inicials com prefix, sempre que no siguin les mateixes que en un prefix del &kgoldrunner;. Fins ara ja s'han utilitzat els prefixos <quote
->level</quote
->, <quote
->plws</quote
->, <quote
->wad</quote
->, <quote
->plwv</quote
->, <quote
->sot</quote
->, <quote
->cnt</quote
->, <quote
->CM</quote
->, <quote
->tute</quote
-> i <quote
->tutea</quote
->.</para>
+>El &kgoldrunner; utilitza internament el prefix per a identificar els fitxers de nivell, els fitxers de puntuació més alta i les partides desades. Podeu utilitzar les vostres inicials com prefix, sempre que no siguin les mateixes que en un prefix del &kgoldrunner;. Fins ara ja s'han utilitzat els prefixos «level», «plws», «wad», «plwv», «sot», «cnt», «CM», «tute» i «tutea».</para>
 
 <para
->El prefix <quote
->tute</quote
-> de quatre lletres està reservat per a les partides d'aprenentatge, les quals mostren el consell en cada nivell a mesura que el jugueu. Si componeu la vostra pròpia partida d'aprenentatge, podreu utilitzar el prefix <quote
->tutex</quote
->, per a fer que s'executi com a partida d'aprenentatge però no confondre els seus fitxers amb els de la Partida d'aprenentatge bàsica o de la Partida d'aprenentatge avançat (prefixos <quote
->tute</quote
-> i <quote
->tutea</quote
->).</para>
+>El prefix «tute» de quatre lletres està reservat per a les partides d'aprenentatge, les quals mostren el consell en cada nivell a mesura que el jugueu. Si componeu la vostra pròpia partida d'aprenentatge, podreu utilitzar el prefix «tutex», per a fer que s'executi com a partida d'aprenentatge però no confondre els seus fitxers amb els de la Partida d'aprenentatge bàsica o de la Partida d'aprenentatge avançat (prefixos «tute» i «tutea»).</para>
 
 </sect2>
 
@@ -1974,16 +1834,10 @@ linkend="settings-menu"
 <para
 >La icona <guiicon
 >Nom/Consell</guiicon
-> mostra un diàleg en el qual podreu crear o editar el nom i el consell del vostre nivell. Tots dos són opcionals, però són imprescindibles per als nivells de les partides d'aprenentatge i és habitual dotar-les de nivells molt difícils, com en les partides de Campionat (vegeu la partida <quote
->La venjança d'en Peter W</quote
->).</para>
+> mostra un diàleg en el qual podreu crear o editar el nom i el consell del vostre nivell. Tots dos són opcionals, però són imprescindibles per als nivells de les partides d'aprenentatge i és habitual dotar-les de nivells molt difícils, com en les partides de Campionat (vegeu la partida «La venjança d'en Peter W»).</para>
 
 <para
->Quan feu clic sobre una de les altres 10 icones, el ratolí es convertirà en un &nbsp;<quote
->pinzell</quote
-> que pinta aquesta icona. Inicialment, el pinzell estarà establert com a <quote
->maó</quote
->.</para>
+>Quan feu clic sobre una de les altres 10 icones, el ratolí es convertirà en un &nbsp;«pinzell» que pinta aquesta icona. Inicialment, el pinzell estarà establert com a «maó».</para>
 
 <para
 >Podeu pintar apuntant i fent clic amb el &BER; per a posar un sol objecte en un quadrat, o mantenir premut el &BER; i arrossegant-lo per a emplenar una línia o àrea, com una escala llarga, un bloc gran de maons o un terra de formigó. La pintura s'aturarà on deixeu anar el botó del ratolí. Si cometeu un error, podreu utilitzar el &BDR; per a esborrar-ho o podreu seleccionar la icona <guiicon
@@ -2019,9 +1873,7 @@ linkend="settings-menu"
 <para
 >Si esteu creant un nivell, utilitzeu el diàleg <guilabel
 >Selecció d'una partida</guilabel
-> per a assignar un nivell a una partida amb un número de nivell. Utilitzeu el diàleg si heu estat editant un nivell, però el valor predeterminat és desat d'on venia. Podreu canviar la partida i el nivell per a obtenir un efecte <quote
->Desa com a...</quote
->. Si heu estat editant un nivell del sistema, haureu de desar-lo com a una còpia en una de les vostres pròpies partides.</para>
+> per a assignar un nivell a una partida amb un número de nivell. Utilitzeu el diàleg si heu estat editant un nivell, però el valor predeterminat és desat d'on venia. Podreu canviar la partida i el nivell per a obtenir un efecte «Desa com a...». Si heu estat editant un nivell del sistema, haureu de desar-lo com a una còpia en una de les vostres pròpies partides.</para>
 
 </sect2>
 
@@ -2034,9 +1886,7 @@ linkend="settings-menu"
 >Selecció d'una partida</guilabel
 >, hi ha un botó marcat com <guibutton
 >Edita el nom del nivell o el consell</guibutton
->. Podeu utilitzar-lo per a donar els tocs finals al vostre nivell afegint un nom i un consell. Ambdós són opcionals, però són imprescindibles per als nivells de les partides d'aprenentatge i és habitual dotar-les de nivells molt difícils, com en les partides de Campionat (vegeu la partida <quote
->La venjança d'en Peter W</quote
->). Per descomptat, també podeu utilitzar la icona <guiicon
+>. Podeu utilitzar-lo per a donar els tocs finals al vostre nivell afegint un nom i un consell. Ambdós són opcionals, però són imprescindibles per als nivells de les partides d'aprenentatge i és habitual dotar-les de nivells molt difícils, com en les partides de Campionat (vegeu la partida «La venjança d'en Peter W»). Per descomptat, també podeu utilitzar la icona <guiicon
 >Edita el nom/consell</guiicon
 > en qualsevol moment, per a afegir o editar un nom i un consell.</para>
 
@@ -2193,27 +2043,19 @@ linkend="settings-menu"
 </listitem>
 <listitem>
 <para
->En la partida <quote
->Tradicional</quote
->, podreu atrapar un enemic de forma permanent en un pou de maons o formigó. Pareu-vos a prop de la vora del pou en el costat oposat a l'enemic. Quan s'apropi al pou, baixeu un quadrat (fins al nivell de terra del pou) i l'enemic generalment correrà cap al pou.</para>
+>En la partida «Tradicional», podreu atrapar un enemic de forma permanent en un pou de maons o formigó. Pareu-vos a prop de la vora del pou en el costat oposat a l'enemic. Quan s'apropi al pou, baixeu un quadrat (fins al nivell de terra del pou) i l'enemic generalment correrà cap al pou.</para>
 </listitem>
 <listitem>
 <para
->En alguns nivells de la partida <quote
->Tradicional</quote
->, podreu obligar un enemic a pujar una escala davant vostre si us pareu en algun lloc per sobre de la part inferior de l'escala.</para>
+>En alguns nivells de la partida «Tradicional», podreu obligar un enemic a pujar una escala davant vostre si us pareu en algun lloc per sobre de la part inferior de l'escala.</para>
 </listitem>
 <listitem>
 <para
->En la partida <quote
->KGoldrunner</quote
->, podreu atrapar un enemic en un pou fent que caigui sobre vostre, després corrent de costat i cavant abans que us atrapi.</para>
+>En la partida «KGoldrunner», podreu atrapar un enemic en un pou fent que caigui sobre vostre, després corrent de costat i cavant abans que us atrapi.</para>
 </listitem>
 <listitem>
 <para
->En la partida <quote
->KGoldrunner</quote
->, els enemics no poden travessar els maons cavats, de manera que de vegades podreu utilitzar-los com a barrera o amagatall.</para>
+>En la partida «KGoldrunner», els enemics no poden travessar els maons cavats, de manera que de vegades podreu utilitzar-los com a barrera o amagatall.</para>
 </listitem>
 </itemizedlist>
 
@@ -2246,15 +2088,7 @@ linkend="settings-menu"
 </listitem>
 <listitem>
 <para
->És possible cavar mentre es cau per un espai buit, si podeu encertar en el temps. No cal tenir un enemic sobre el qual muntar. Aquest és un error que ha esdevingut una <quote
->característica</quote
-> i s'utilitza àmpliament en les partides <quote
->Estat de terror</quote
->, <quote
->Compta</quote
-> i <quote
->La maledicció de la mòmia</quote
->.</para>
+>És possible cavar mentre es cau per un espai buit, si podeu encertar en el temps. No cal tenir un enemic sobre el qual muntar. Aquest és un error que ha esdevingut una «característica» i s'utilitza àmpliament en les partides «Estat de terror», «Compta» i «La maledicció de la mòmia».</para>
 </listitem>
 </itemizedlist>
 
@@ -2275,9 +2109,7 @@ linkend="settings-menu"
 </listitem>
 <listitem>
 <para
->En algunes situacions, un enemic pot morir sense renunciar a l'or que porta. L'or es convertirà en una <quote
->llavor perduda</quote
->. No s'obtenen punts per fer que un enemic perdi una llavor, però almenys podreu finalitzar el nivell.</para>
+>En algunes situacions, un enemic pot morir sense renunciar a l'or que porta. L'or es convertirà en una «llavor perduda». No s'obtenen punts per fer que un enemic perdi una llavor, però almenys podreu finalitzar el nivell.</para>
 </listitem>
 <listitem>
 <para
@@ -2298,9 +2130,7 @@ linkend="settings-menu"
 </listitem>
 <listitem>
 <para
->Utilitzeu la característica Editor per a <quote
->donar una ullada</quote
-> a on es troben els maons falsos i les escales ocultes.</para>
+>Utilitzeu la característica Editor per a «donar una ullada» a on es troben els maons falsos i les escales ocultes.</para>
 </listitem>
 <listitem>
 <para
@@ -2398,38 +2228,18 @@ linkend="settings-menu"
 >El &kgoldrunner; és un intent de mantenir l'esperit del joc clàssic original en una plataforma que serà portàtil i que durarà més d'uns pocs anys. Està disponible com a programari lliure en forma de codi font. Les còpies del joc original ara són impossibles d'obtenir i les màquines amb què funcionava van a parar als museus.</para>
 
 <para
->En Marc Krüger va desenvolupar el &kgoldrunner; fins a la versió 0.3, per nostàlgia del joc per al Commodore 64 original. En Ian Wadham ha afegit diverses característiques i nivells, i ha creat la versió actual. En Peter, el fill gran de l'Ian, va compondre els 100 nivells en el joc <quote
->Iniciació</quote
-> i els 20 nivells complicats a <quote
->La venjança d'en Peter W</quote
->. Els altres nivells han estat dissenyats per: Ian, Peter, Marc Krüger i amics, i els altres fills de l'Ian, Simon i Genevieve. </para>
+>En Marc Krüger va desenvolupar el &kgoldrunner; fins a la versió 0.3, per nostàlgia del joc per al Commodore 64 original. En Ian Wadham ha afegit diverses característiques i nivells, i ha creat la versió actual. En Peter, el fill gran de l'Ian, va compondre els 100 nivells en el joc «Iniciació» i els 20 nivells complicats a «La venjança d'en Peter W». Els altres nivells han estat dissenyats per: Ian, Peter, Marc Krüger i amics, i els altres fills de l'Ian, Simon i Genevieve. </para>
 <para
->En Stuart Popejoy de Nova York va contribuir amb el joc <quote
->Estat de terror</quote
->, el 2007, la primera partida de Campionat a utilitzar les regles de KGoldrunner i un dels jocs més difícils de la història.</para>
+>En Stuart Popejoy de Nova York va contribuir amb el joc «Estat de terror», el 2007, la primera partida de Campionat a utilitzar les regles de KGoldrunner i un dels jocs més difícils de la història.</para>
 
 <para
->En Steve Mann de Waterloo al Canadà, va contribuir amb el joc <quote
->Compta</quote
->, el 2008, i el joc <quote
->La maledicció de la mòmia</quote
->, el 2008. Ambdós utilitzen les regles de Tradicional i tenen temes interessants, a més de ser molt difícils.</para>
+>En Steve Mann de Waterloo al Canadà, va contribuir amb el joc «Compta», el 2008, i el joc «La maledicció de la mòmia», el 2008. Ambdós utilitzen les regles de Tradicional i tenen temes interessants, a més de ser molt difícils.</para>
 
 <para
 >En Peter Wadham va compondre els efectes de so el 2008 i en Luciano Montanaro els va incorporar en el &nbsp;&nbsp;&kgoldrunner;.</para>
 
 <para
->Un agraïment especial a en &Mauricio.Piacentini; i en Dmitry Suzdalev, els quals van adaptar el &kgoldrunner; a les &Qt; 4 i al &kde; 4, i als molts artistes gràfics que van contribuir amb gràfics nous i temes SVG en la versió del &kde; 4: especialment a en &Mauricio.Piacentini; pel tema <quote
->Predeterminat</quote
-> i els corredors nous, a en Johann Ollivier Lapeyre per les escales i barres, a en Eugene Trounev pels temes <quote
->Ciutat Freak</quote
-> i <quote
->El tresor d'Egipte</quote
-> i, finalment, però no menys important, a en Luciano Montanaro pels dos temes <quote
->Nostàlgia</quote
->, el tema accessible <quote
->Negre sobre blanc</quote
->, millores en els corredors, múltiples fons i diverses altres idees.</para>
+>Un agraïment especial a en &Mauricio.Piacentini; i en Dmitry Suzdalev, els quals van adaptar el &kgoldrunner; a les &Qt; 4 i al &kde; 4, i als molts artistes gràfics que van contribuir amb gràfics nous i temes SVG en la versió del &kde; 4: especialment a en &Mauricio.Piacentini; pel tema «Predeterminat» i els corredors nous, a en Johann Ollivier Lapeyre per les escales i barres, a en Eugene Trounev pels temes «Ciutat Freak» i «El tresor d'Egipte» i, finalment, però no menys important, a en Luciano Montanaro pels dos temes «Nostàlgia», el tema accessible «Negre sobre blanc», millores en els corredors, múltiples fons i diverses altres idees.</para>
 
 <para
 >Traductor de la documentació: &credits.Antoni.Bella;</para
