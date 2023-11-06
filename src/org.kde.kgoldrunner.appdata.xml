@@ -4,6 +4,7 @@
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>KGoldrunner</name>
+  <name xml:lang="ast">KGoldrunner</name>
   <name xml:lang="ca">KGoldrunner</name>
   <name xml:lang="ca-valencia">KGoldrunner</name>
   <name xml:lang="cs">KGoldrunner</name>
@@ -112,6 +113,7 @@
     <p xml:lang="x-test">xxKGoldrunner is an action game where the hero runs through a maze, climbs stairs, dig holes and dodges enemies in order to collect all the gold nuggets and escape to the next level. Your enemies are also after the gold. Worse still, they are after you!.xx</p>
     <p xml:lang="zh-CN">KGoldrunner 是一个动作游戏，主角穿过迷宫，爬楼梯，挖洞和躲闪敌人，以收集所有的金块并逃生到下一关。您的敌人也在追金。更糟的是，他们在追您！</p>
     <p>Features:</p>
+    <p xml:lang="ast">Funciones:</p>
     <p xml:lang="ca">Característiques:</p>
     <p xml:lang="ca-valencia">Característiques:</p>
     <p xml:lang="cs">Vlastnosti:</p>
