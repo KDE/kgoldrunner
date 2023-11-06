@@ -525,7 +525,7 @@ void KGoldrunner::setupActions()
     // stepping through the animation, toggling a debug patch or log messages
     // on or off during gameplay and printing the states of runners or tiles.
 
-    KConfigGroup debugGroup (KSharedConfig::openConfig(), "Debugging");
+    KConfigGroup debugGroup (KSharedConfig::openConfig(), QStringLiteral("Debugging"));
     bool addDebuggingShortcuts = debugGroup.readEntry
                         ("DebuggingShortcuts", false);	// Get debug option.
     if (! addDebuggingShortcuts)
