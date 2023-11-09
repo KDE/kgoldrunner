@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-20 00:44+0000\n"
-"PO-Revision-Date: 2023-07-05 17:53-0300\n"
+"PO-Revision-Date: 2023-11-08 15:34-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -2457,10 +2457,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:47
-#, fuzzy, kde-format
-#| msgid "Infiltration"
+#, kde-format
 msgid "Manipulation"
-msgstr "Infiltração"
+msgstr "Manipulação"
 
 #: gamedata/game_GotD.txt:48
 #, kde-format
@@ -3291,20 +3290,7 @@ msgid "Gold Rush II"
 msgstr "Corrida ao Ouro II"
 
 #: gamedata/game_GRII.txt:3
-#, fuzzy, kde-format
-#| msgid ""
-#| "These 20 levels have even harder challenges, more complicated puzzles and "
-#| "tighter timings than the first Gold Rush. They are not for the faint "
-#| "hearted. As before, you need to dig while falling sometimes. Have fun!\n"
-#| "\n"
-#| "Created by Gabriel Miltschitzky [gabriel dot miltschitzky at googlemail "
-#| "dot com], who also provided the recorded solutions.\n"
-#| "\n"
-#| "It is best to play the first Gold Rush levels before attempting Gold Rush "
-#| "II, because you will need many techniques that are easier to learn there. "
-#| "None of the levels in Gold Rush and Gold Rush II are impossible. If in "
-#| "doubt, use menu item 'Move->Show A Solution' to watch solutions provided "
-#| "by the author."
+#, kde-format
 msgid ""
 "These 20 levels have even harder challenges, more complicated puzzles and "
 "tighter timings than the first Gold Rush. They are not for the faint "
