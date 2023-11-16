@@ -1606,7 +1606,7 @@ msgstr ""
 "Excava els maons propers a la barra. En caure, troba una forma de tornar "
 "ràpidament a la barra de manera que pugues creuar per damunt dins del "
 "nínxol. Per descomptat, tan sols ho aconseguiràs si saps com i no "
-"desisteixes. No hi ha molt temps a perdre..."
+"desistixes. No hi ha molt temps a perdre..."
 
 #: gamedata/game_GMEP.txt:64
 #, kde-format
@@ -4163,7 +4163,7 @@ msgstr ""
 "Quan arribes a la part inferior, agafa l'or i corre a l'escala més propera "
 "que porte cap amunt. Continua pujant un moment, però torna a la part "
 "inferior a l'esquerra dels enemics i ves cap a l'escala de l'extrem "
-"esquerre, que et portarà cap al cantó superior dret.\n"
+"esquerre, que et portarà cap al cantó dret superior.\n"
 "\n"
 "Caldrà una mica d'habilitat per a passar els dos enemics. Mou-te cap amunt i "
 "avall fins que els dos enemics pugen i un vinga a l'esquerra per a agafar-"
@@ -9944,9 +9944,9 @@ msgstr ""
 "\n"
 "Ací pots afegir un nom i un consell per al nivell nou, però has de guardar "
 "el nivell que hages creat en una de les teues pròpies partides. De manera "
-"predeterminada, el teu nivell nou anirà al final de la teua partida, però "
-"també pots escollir un número de nivell i guardar-lo a la meitat de la teua "
-"partida."
+"predeterminada, el teu nivell nou anirà fins al final de la teua partida, "
+"però també pots escollir un número de nivell i guardar-lo a la meitat de la "
+"teua partida."
 
 #: src/kgrselector.cpp:549
 #, kde-format
