@@ -48,15 +48,15 @@ install_theme(black-on-white
 
 install_theme(egypt
     FILES
-        egypt/egypt_kgr.svgz
-        egypt/actors.svgz
+        egypt/egypt_kgr.svg
+        egypt/actors.svg
         egypt/egypt.png
 )
 
 install_theme(kgr_geek
     FILES
-        kgr_geek/set.svgz
-        kgr_geek/actors.svgz
+        kgr_geek/set.svg
+        kgr_geek/actors.svg
         kgr_geek/kgr_geek.png
 )
 
