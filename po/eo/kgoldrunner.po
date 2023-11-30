@@ -2283,16 +2283,7 @@ msgid "After some very hard levels, maybe you would like an easy one. Goodbye!"
 msgstr "Post kelkaj tre malfacilaj niveloj, eble vi ŝatus facilan. Ĝis revido!"
 
 #: gamedata/game_GotD.txt:1
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Note to translators: the hints for the levels of Gold Of The Living Dead, "
-#| "a ¦KGoldrunner game, are sometimes rather complicated, so it may help you "
-#| "to ¦open the game and display the layout of a level as you translate the "
-#| "hint. ¦It may also help to play the solution, by pressing H (for Hint) "
-#| "and then ¦Escape (or click the 'Show a Solution' button). You can move "
-#| "easily from one ¦level to the next by using the Y key and you can prevent "
-#| "a level from ¦playing by using the Pause key (P or Escape)."
-#| msgid " "
+#, kde-format
 msgctxt ""
 "Note to translators: the hints for the levels of Gold Of The Living Dead, a "
 "KGoldrunner game, are sometimes rather complicated, so it may help you to "
