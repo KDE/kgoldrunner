@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-20 00:44+0000\n"
-"PO-Revision-Date: 2023-12-05 19:19+0100\n"
+"PO-Revision-Date: 2023-12-06 08:29+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -3330,6 +3330,26 @@ msgid ""
 "as the pit and wait for the zombie to walk over you and fall in. Then you "
 "are free to go."
 msgstr ""
+"Tes que comezar co ouro da dereita, e polo tanto esquivar o zombi do pequeno "
+"pasadizo.\n"
+"\n"
+"Alí non podes recoller o ouro inferior (podes entrar pero non saír). Así que "
+"tes que atraer ao zombi ao burato e matalo, xunto co ouro, escavando os "
+"ladrillos á súa esquerda e atraéndoo a eles. Ás veces é listo e solta o ouro "
+"antes de quedar atrapado, obrigándote a repetir todo o proceso. Moverse "
+"rápido de primeiras reduce a probabilidade de que pase…\n"
+"\n"
+"Cando o zombi reaparece arriba, atráeo á banda esquerda, atravésao e "
+"asegúrate de que te segue cando escaves a través da columna dobre de "
+"ladrillos.\n"
+"\n"
+"Para a última peza de ouro, atrae ao zombi á cova de cemento, monta na súa "
+"cabeza, colle o ouro e sae canto antes cando apareza a escaleira agochada. "
+"Isto é probablemente a parte máis difícil.\n"
+"\n"
+"Cando acades o burato antes da escaleira de saída, baixa ao mesmo nivel que "
+"o burato e agarda a que o zombi camiñe sobre ti e caia. Entón podes saír sen "
+"problemas."
 
 #: gamedata/game_GotD.txt:263
 #, kde-format
@@ -3345,6 +3365,11 @@ msgid ""
 "After you are past the last one, let them fall onto the concrete, then "
 "collecting the gold will be a cakewalk."
 msgstr ""
+"É máis doado pasar baixo os zombis. Agarda ata que un se achegue moito, ata "
+"o último momento, e entón atravésao.\n"
+"\n"
+"Unha vez superado o último, deixa que caian no cemento; recoller o ouro "
+"despois será pan comido."
 
 #: gamedata/game_GotD.txt:269
 #, kde-format
@@ -3367,6 +3392,17 @@ msgid ""
 "You will need to group the second wave of zombies before you can get past "
 "them."
 msgstr ""
+"Verás que os zombis se moven primeiro verticalmente na túa dirección e logo "
+"horizontalmente. Isto significa que a maioría das veces moveranse en liña "
+"recta cara arriba. Aprovéitao para descender canda eles.\n"
+"\n"
+"Por suposto, o primeiro grupo de zombis é grande de máis para atravesalo con "
+"este truco, así que deberás atraer primeiro a algúns zombis cara a coviña. "
+"Despois sobe primeiro para facelos subir e logo baixa. Pero baixar require "
+"un pouco de movemento alternante ao principio porque os zombis non van "
+"formar unha liña recta.\n"
+"\n"
+"Terás que agrupar o segundo grupo de zombis para poder atravesalos."
 
 #: gamedata/game_GotD.txt:277
 #, kde-format
@@ -3386,6 +3422,16 @@ msgid ""
 "over a zombie as you climb the pop-up ladders, note that the zombies use the "
 "same trick themselves to come after you, so you will have to do it twice."
 msgstr ""
+"Sobes camiñando sobre as cabezas dos zombis. Só se volve difícil cos dous "
+"últimos porque tes que controlar ben o tempo.\n"
+"\n"
+"Comeza polo ouro da dereita. Remata co do medio dos cinco ao fondo da "
+"caixa.\n"
+"\n"
+"Se te preguntas por que hai dous grupos de escaleiras H nas que necesitas "
+"camiñas sobre un zombi mentres sobes polas escaleiras despregábeis, ten en "
+"conta que os zombis usan o mesmo truco para seguirte, así que terás que "
+"facelo dúas veces."
 
 #: gamedata/game_GotD.txt:285
 #, kde-format
@@ -3410,6 +3456,10 @@ msgid ""
 "as possible before anyone else. You might not manage to get every piece "
 "before them, but there are some places where it is easier to rob them."
 msgstr ""
+"Os zombis acabarán arrecunchándose, o que te facilita evitalos, pero te "
+"dificulta roubarlles o ouro. O mellor é que consigas todo o ouro posíbel "
+"antes que ninguén. Pode que non consigas todas as pezas antes que eles, pero "
+"hai algúns lugares onde resulta máis doado roubarlle o ouro."
 
 #: gamedata/game_GotD.txt:293
 #, kde-format
@@ -3435,6 +3485,20 @@ msgid ""
 "to go inside more frequently than try to get everything at once and be "
 "locked in..."
 msgstr ""
+"A medida que camiñas cara a esquerda sobre os dous zombis, haberá outro que "
+"se mova na túa dirección nun momento dado. Salta á esquerda e corre sobre el "
+"inmediatamente, senón non poderán baixar ás escaleiras.\n"
+"\n"
+"É mellor se recoller todo o ouro do medio dunha vez (cunha excepción), senón "
+"levará tempo e dificultade conseguir algunhas das pezas de ouro despois de "
+"que as recollan os zombis.\n"
+"\n"
+"Cando chegues ao fondo, pode ser útil facer que todos os zombis se movan na "
+"mesma dirección agardando tempo dabondo no fondo das escaleiras grandes.\n"
+"\n"
+"No que respecta aos quebracabezas de escavar e tempo nas caixas, é "
+"recomendábel entrar con máis frecuencia que intentar recollelo todo dunha "
+"vez e quedar dentro sen saída…"
 
 #: gamedata/game_GotD.txt:303
 #, kde-format
@@ -3444,7 +3508,7 @@ msgstr "Chuvia zombi"
 #: gamedata/game_GotD.txt:304
 #, kde-format
 msgid "Let us see if you have learned your lesson about zombies and ladders..."
-msgstr ""
+msgstr "Vexamos se aprendiches a lección sobre zombis e escaleiras…"
 
 #: gamedata/game_GotD.txt:307
 #, kde-format
@@ -3459,6 +3523,11 @@ msgid ""
 "\n"
 "To get past the other zombies, you sometimes need to run over their heads."
 msgstr ""
+"Agarda ata o intre no que o zombi chega ao cume da escaleira e comeza a "
+"baixar, e entón salta.\n"
+"\n"
+"Para atravesar o resto de zombis, ás veces terás que correr sobre as súas "
+"cabezas."
 
 #: gamedata/game_GotD.txt:313
 #, kde-format
@@ -3468,7 +3537,7 @@ msgstr "Entre zombis"
 #: gamedata/game_GotD.txt:314
 #, kde-format
 msgid "All it takes is good strong nerves..."
-msgstr ""
+msgstr "O único que necesitas é uns nervios de ferro…"
 
 #: gamedata/game_GotD.txt:317
 #, kde-format
@@ -3482,6 +3551,9 @@ msgid ""
 "\n"
 "Hurry up and do those puzzles. The clock is ticking..."
 msgstr ""
+"O tema cos zombis é que, cando máis lentos son, máis estraños resultan.\n"
+"\n"
+"Resolve os quebracabezas canto antes. A agulla do reloxo non para…"
 
 #: gamedata/game_GotD.txt:323
 #, kde-format
@@ -3494,6 +3566,8 @@ msgid ""
 "The only way to get the gold is to ride the whole way on his head. Yee-hah! "
 "Ride him cowboy!"
 msgstr ""
+"O único xeito de conseguir o ouro é percorrer todo o camiño sobre a súa "
+"cabeza. Arre!"
 
 #: gamedata/game_GotD.txt:327
 #, kde-format
@@ -3506,6 +3580,8 @@ msgid ""
 "Watch what happens if you climb up a ladder on the side, but only to where "
 "you are level with the bricks the zombies are walking on..."
 msgstr ""
+"Mira o que pasa se sobes a escaleira lateral, pero só ata o nivel dos "
+"ladrillos sobre os que camiñan os zombis…"
 
 #: gamedata/game_GotD.txt:331
 #, kde-format
@@ -3519,6 +3595,9 @@ msgid ""
 "who are on their own and not in a row with the others will ruin your day. "
 "Therefore the left side is easier, because there are fewer lone zombies. "
 msgstr ""
+"Evitar os zombis é máis doado do que poida parecer. Só hai algúns zombis sós "
+"e non nunha fila co resto, e son eses os que poden arruinarte o día. Así que "
+"o máis doado é o lado da esquerda, porque hai menos zombis solitarios."
 
 #: gamedata/game_GotD.txt:335
 #, kde-format
@@ -3531,6 +3610,8 @@ msgid ""
 "You can distract the zombie from running down when you are on the same level "
 "as him. Who said it had to be fair play?"
 msgstr ""
+"Podes distraer ao zombi e evitar que baixe cando estás ao mesmo nivel que "
+"el. Quen dixo que había que xogar limpo?"
 
 #: gamedata/game_GotD.txt:339
 #, kde-format
@@ -3543,6 +3624,8 @@ msgid ""
 "Finally, you have escaped the horrors of the zombie-infested world. Now that "
 "you are in the zombie-free zone, nothing can go wrong, can it?"
 msgstr ""
+"Por fin deixaches atrás os horrores do mundo infestado de zombis. Agora "
+"estás nunha zona sen zombis, nada malo pode pasar, verdade?"
 
 #: gamedata/game_GotD.txt:343
 #, kde-format
