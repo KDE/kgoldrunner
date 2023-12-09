@@ -3,17 +3,17 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
+# SPDX-FileCopyrightText: 2014, 2020, 2021, 2022, 2023 Antoni Bella Pérez <antonibella5@yahoo.com>
 # Manuel Tortosa Moreno <manutortosa@gmail.com>, 2009, 2010.
 # Josep M. Ferrer <txemaq@gmail.com>, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Manuel Tortosa <manutortosa@chakra-project.org>, 2010, 2011.
-# SPDX-FileCopyrightText: 2014, 2020, 2021, 2022, 2023 Antoni Bella Pérez <antonibella5@yahoo.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-09 01:44+0000\n"
-"PO-Revision-Date: 2023-10-24 02:01+0200\n"
-"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
+"PO-Revision-Date: 2023-12-08 14:12+0100\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -4605,7 +4605,7 @@ msgstr ""
 #: gamedata/game_lars.txt:28
 #, kde-format
 msgid "Landfill"
-msgstr "Terra coberta"
+msgstr "Abocador"
 
 #: gamedata/game_lars.txt:29
 #, kde-format
@@ -4683,7 +4683,7 @@ msgstr "Control de multituds"
 #: gamedata/game_lars.txt:53
 #, kde-format
 msgid "Remember 'Landfill'?"
-msgstr "Recordes la «Terra coberta»?"
+msgstr "Recordes l'«Abocador»?"
 
 #: gamedata/game_lars.txt:56
 #, kde-format
@@ -10120,52 +10120,3 @@ msgstr ""
 #, kde-format
 msgid "Artwork for the Treasure of Egypt theme"
 msgstr "Gràfics per al tema El tresor d'Egipte"
-
-#~ msgid ""
-#~ "Cannot find documentation sub-folder 'en/%1/' in area '%2' of the KDE "
-#~ "folder ($KDEDIRS)."
-#~ msgstr ""
-#~ "No s'ha pogut trobar la subcarpeta de la documentació «en/%1/» a l'àrea "
-#~ "«%2» de la carpeta del KDE ($KDEDIRS)."
-
-#~ msgid ""
-#~ "Cannot find or create user games sub-folder '%1/user/' in area '%2' of "
-#~ "the KDE user area ($KDEHOME)."
-#~ msgstr ""
-#~ "No s'ha pogut trobar o crear la subcarpeta dels jocs d'usuari al «%1/"
-#~ "user/» a l'àrea «%2» de l'àrea KDE d'usuari ($KDEHOME)."
-
-#~ msgid ""
-#~ "Cannot find or create 'levels/' folder in sub-folder '%1/user/' in the "
-#~ "KDE user area ($KDEHOME)."
-#~ msgstr ""
-#~ "No s'ha pogut trobar o crear el directori «levels/» a la subcarpeta «%1/"
-#~ "user/» de l'àrea KDE d'usuari ($KDEHOME)."
-
-#~ msgid "Missing Name"
-#~ msgstr "Falta el nom"
-
-#~ msgid "   Lives: "
-#~ msgstr "   Vides: "
-
-#~ msgid "   Score: "
-#~ msgstr "   Punts: "
-
-#~ msgid "   Level: "
-#~ msgstr "   Nivell: "
-
-#~ msgid "   No hint   "
-#~ msgstr "   Sense consell   "
-
-#~ msgid "Theme Not Loaded"
-#~ msgstr "Tema no carregat"
-
-#~ msgid ""
-#~ "Cannot load the theme you selected.  It is not in the required graphics "
-#~ "format (SVG)."
-#~ msgstr ""
-#~ "No es pot carregar el tema que has seleccionat. No es troba en el format "
-#~ "gràfic requerit (SVG)."
-
-#~ msgid "&Themes"
-#~ msgstr "&Temes"
