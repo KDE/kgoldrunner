@@ -1,21 +1,21 @@
 # translation of kgoldrunner.po to Slovak
 # Stanislav Visnovsky <visnovsky@kde.org>, 2003, 2004.
 # Richard Fric <Richard.Fric@kdemail.net>, 2006, 2009.
-# Roman Paholík <wizzardsk@gmail.com>, 2012, 2013, 2014, 2015, 2017.
+# SPDX-FileCopyrightText: 2012, 2013, 2014, 2015, 2017, 2023 Roman Paholík <wizzardsk@gmail.com>
 # Matej Mrenica <matejm98mthw@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-20 00:44+0000\n"
-"PO-Revision-Date: 2019-11-18 13:02+0100\n"
-"Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
-"Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2023-12-11 19:00+0100\n"
+"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.11.80\n"
+"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #, kde-format
@@ -2277,7 +2277,7 @@ msgctxt ""
 "level to the next by using the Y key and you can prevent a level from "
 "playing by using the Pause key (P or Escape)."
 msgid " "
-msgstr ""
+msgstr " "
 
 #: gamedata/game_GotD.txt:3
 #, kde-format
@@ -2672,10 +2672,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:149
-#, fuzzy, kde-format
-#| msgid "Diagonal Disaster"
+#, kde-format
 msgid "Diagonal"
-msgstr "Diagonálna pohroma"
+msgstr "Diagonálne"
 
 #: gamedata/game_GotD.txt:150
 #, kde-format
@@ -8430,8 +8429,7 @@ msgid "Hint for level:"
 msgstr "Rada pre úroveň:"
 
 #: src/kgrdialog.cpp:104 src/kgrdialog.cpp:173
-#, fuzzy, kde-format
-#| msgid "Edit Game Info"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Game Info"
 msgstr "Upraviť informácie o hre"
@@ -8470,8 +8468,7 @@ msgid "About this game:"
 msgstr "O tejto hre:"
 
 #: src/kgrdialog.cpp:170
-#, fuzzy, kde-format
-#| msgid "Create Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Game"
 msgstr "Vytvoriť hru"
@@ -8791,8 +8788,7 @@ msgstr ""
 "úroveň."
 
 #: src/kgrgame.cpp:696
-#, fuzzy, kde-format
-#| msgid "Quick Start"
+#, kde-format
 msgctxt "@title:window"
 msgid "Quick Start"
 msgstr "Rýchly štart"
@@ -9053,8 +9049,7 @@ msgstr ""
 "KGoldrunner.</html>"
 
 #: src/kgrgame.cpp:1739
-#, fuzzy, kde-format
-#| msgid "Save High Score"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save High Score"
 msgstr "Uložiť dosiahnuté skóre"
@@ -9122,8 +9117,7 @@ msgid "Date"
 msgstr "Dátum"
 
 #: src/kgrgame.cpp:1904
-#, fuzzy, kde-format
-#| msgid "High Scores"
+#, kde-format
 msgctxt "@title:window"
 msgid "High Scores"
 msgstr "Najvyššie skóre"
@@ -9288,7 +9282,7 @@ msgstr "Číslo úrovne:"
 #, fuzzy, kde-format
 #| msgid "Edit Level Name && Hint"
 msgid "Edit Level Name o&r Hint"
-msgstr "Upraviť meno úrovne a radu"
+msgstr "Upraviť názov úrovne alebo rady"
 
 #: src/kgrselector.cpp:241
 #, kde-format
@@ -9536,7 +9530,7 @@ msgstr "Pomocník: Vyberte hru a úroveň"
 #, fuzzy, kde-format
 #| msgid "KGoldrunner is a game of action and puzzle solving"
 msgid "A game of action and puzzle solving"
-msgstr "KGoldrunner je akčná hra kombinovaná s logickým problémom"
+msgstr "Kombinovaná akčná a logická hra"
 
 #: src/main.cpp:37
 #, kde-format
