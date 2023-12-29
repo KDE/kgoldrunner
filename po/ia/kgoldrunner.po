@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-09 01:44+0000\n"
-"PO-Revision-Date: 2023-09-25 16:24+0200\n"
+"PO-Revision-Date: 2023-12-28 19:45+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -1441,7 +1441,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:98 gamedata/game_plwv.txt:9
 #, kde-format
 msgid "Impossible?"
-msgstr ""
+msgstr "Impossibile?"
 
 #: gamedata/game_GMGR.txt:99
 #, kde-format
@@ -3023,12 +3023,12 @@ msgstr ""
 #: gamedata/game_GRII.txt:191 gamedata/game_lars.txt:85
 #, kde-format
 msgid "No hint!"
-msgstr ""
+msgstr "Nulle Suggestion!"
 
 #: gamedata/game_kgr.txt:3 src/main.cpp:29
 #, kde-format
 msgid "KGoldrunner"
-msgstr ""
+msgstr "KGoldrunner"
 
 #: gamedata/game_kgr.txt:4
 #, kde-format
@@ -3425,7 +3425,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:54
 #, kde-format
 msgid "Dori"
-msgstr ""
+msgstr "Dori"
 
 #: gamedata/game_MAZ.txt:55
 #, kde-format
@@ -6252,7 +6252,7 @@ msgstr ""
 #: src/kgoldrunner.cpp:760
 #, kde-format
 msgid "No hint"
-msgstr ""
+msgstr "Nulle Suggestion"
 
 #: src/kgoldrunner.cpp:877
 #, kde-format
@@ -7281,7 +7281,7 @@ msgstr ""
 #: src/kgrselector.cpp:241
 #, kde-format
 msgid "Start Game"
-msgstr ""
+msgstr "Initia Joco"
 
 #: src/kgrselector.cpp:250
 #, kde-format
@@ -7312,13 +7312,13 @@ msgstr "Move a..."
 #, kde-format
 msgctxt "Rules"
 msgid "KGoldrunner"
-msgstr ""
+msgstr "KGoldrunner"
 
 #: src/kgrselector.cpp:356
 #, kde-format
 msgctxt "Rules"
 msgid "Traditional"
-msgstr ""
+msgstr "Traditional"
 
 #: src/kgrselector.cpp:359
 #, kde-format
@@ -7478,7 +7478,7 @@ msgstr ""
 #: src/main.cpp:69
 #, kde-format
 msgid "Ian Wadham"
-msgstr ""
+msgstr "Ian Wadham"
 
 #: src/main.cpp:69
 #, kde-format
