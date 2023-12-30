@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2009, 2010, 2011, 2012, 2023 Johannes Obermayr <johannesobermayr@gmx.de>
 # Thomas Diehl <thd@kde.org>, 2003.
 # Frank Schütte <F.Schuette@t-online.de>, 2004.
 # Stefan Winter <swinter@kde.org>, 2004, 2005, 2007.
@@ -6,7 +7,6 @@
 # Rolf Eike Beer <kde@opensource.sf-tec.de>, 2008.
 # Martin Ereth <martin.ereth@arcor.de>, 2008.
 # Burkhard Lück <lueck@hube-lueck.de>, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016, 2017, 2018, 2020, 2021.
-# Johannes Obermayr <johannesobermayr@gmx.de>, 2009, 2010, 2011, 2012, 2023.
 # Frederik Schwarzer <schwarzer@kde.org>, 2010, 2011, 2012, 2015, 2023.
 # Panagiotis Papadopoulos <pano_90@gmx.net>, 2010, 2011.
 # Jonas Schürmann <jonasschuermann@aol.de>, 2012.
@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-09 01:44+0000\n"
-"PO-Revision-Date: 2023-12-18 01:44+0100\n"
+"PO-Revision-Date: 2023-12-22 11:02+0100\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -2485,7 +2485,7 @@ msgstr "Zickzack"
 #: gamedata/game_GotD.txt:40
 #, kde-format
 msgid "This is as easy as it gets..."
-msgstr ""
+msgstr "Das ist so einfach wie es nur geht …"
 
 #: gamedata/game_GotD.txt:43 gamedata/game_wad.txt:63
 #, kde-format
@@ -2542,12 +2542,12 @@ msgstr ""
 #: gamedata/game_GotD.txt:58
 #, kde-format
 msgid "Come on, they are completely harmless ;-)"
-msgstr ""
+msgstr "Auf geht's. Sie sind vollkommen ungefährlich ;-)"
 
 #: gamedata/game_GotD.txt:61
 #, kde-format
 msgid "They Are So Many!"
-msgstr ""
+msgstr "Es sind so viele!"
 
 #: gamedata/game_GotD.txt:62
 #, kde-format
@@ -2674,10 +2674,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:113
-#, fuzzy, kde-format
-#| msgid "Dig Your Way Out"
+#, kde-format
 msgid "Always Know Your Way Out"
-msgstr "Ausweg graben"
+msgstr "Immer den Ausweg kennen"
 
 #: gamedata/game_GotD.txt:114
 #, kde-format
@@ -2749,13 +2748,12 @@ msgstr ""
 #: gamedata/game_GotD.txt:138
 #, kde-format
 msgid "Timing is everything."
-msgstr ""
+msgstr "Das Zeitgefühl ist alles."
 
 #: gamedata/game_GotD.txt:141
-#, fuzzy, kde-format
-#| msgid "Concrete Towers"
+#, kde-format
 msgid "Concrete Desert"
-msgstr "Betontürme"
+msgstr "Betonwüste"
 
 #: gamedata/game_GotD.txt:142
 #, kde-format
@@ -2794,10 +2792,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:155
-#, fuzzy, kde-format
-#| msgid "He Has The Gold"
+#, kde-format
 msgid "Give Me That Gold!"
-msgstr "Er hat das Gold!"
+msgstr "Gib mir das Gold!"
 
 #: gamedata/game_GotD.txt:156
 #, kde-format
@@ -2837,7 +2834,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:171
 #, kde-format
 msgid "Running Against Time"
-msgstr ""
+msgstr "Wettlauf gegen die Zeit"
 
 #: gamedata/game_GotD.txt:172
 #, kde-format
@@ -2845,10 +2842,9 @@ msgid "Be quicker than the zombies - otherwise they will eat you."
 msgstr ""
 
 #: gamedata/game_GotD.txt:175
-#, fuzzy, kde-format
-#| msgid "The Big Maze"
+#, kde-format
 msgid "The Big Drop"
-msgstr "Großes Labyrinth"
+msgstr "Großer Sturz"
 
 #: gamedata/game_GotD.txt:176
 #, kde-format
@@ -2860,7 +2856,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:179
 #, kde-format
 msgid "Diving"
-msgstr ""
+msgstr "Abtauchen"
 
 #: gamedata/game_GotD.txt:180
 #, kde-format
@@ -2878,7 +2874,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:187
 #, kde-format
 msgid "Encircled"
-msgstr ""
+msgstr "Eingekreist"
 
 #: gamedata/game_GotD.txt:188
 #, kde-format
@@ -2891,8 +2887,7 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:191
-#, fuzzy, kde-format
-#| msgid "Ups And Downs"
+#, kde-format
 msgid "Up And Down"
 msgstr "Auf und Nieder"
 
@@ -2936,10 +2931,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:209
-#, fuzzy, kde-format
-#| msgid "Surprise Ending"
+#, kde-format
 msgid "Surprise, Surprise"
-msgstr "Überraschendes Ende"
+msgstr "Überraschung, Überraschung"
 
 #: gamedata/game_GotD.txt:210
 #, kde-format
@@ -3055,10 +3049,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:251
-#, fuzzy, kde-format
-#| msgid "The Balance"
+#, kde-format
 msgid "The Passage"
-msgstr "Gleichgewichtsübungen"
+msgstr "Der Durchgang"
 
 #: gamedata/game_GotD.txt:252
 #, kde-format
@@ -3192,10 +3185,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:303
-#, fuzzy, kde-format
-#| msgid "Awaiting Enemies"
+#, kde-format
 msgid "Raining Zombies"
-msgstr "Feinde erwarten"
+msgstr "Zombieregen"
 
 #: gamedata/game_GotD.txt:304
 #, kde-format
@@ -3227,10 +3219,9 @@ msgid "All it takes is good strong nerves..."
 msgstr ""
 
 #: gamedata/game_GotD.txt:317
-#, fuzzy, kde-format
-#| msgid "The Rose"
+#, kde-format
 msgid "The Horde"
-msgstr "Die Rose"
+msgstr "Die Meute"
 
 #: gamedata/game_GotD.txt:318
 #, kde-format
@@ -3253,10 +3244,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:327
-#, fuzzy, kde-format
-#| msgid "Space Invader"
+#, kde-format
 msgid "Zombie Invaders"
-msgstr "Invasion aus dem Weltall"
+msgstr "Zombie-Eindringlinge"
 
 #: gamedata/game_GotD.txt:328
 #, kde-format
@@ -3308,10 +3298,7 @@ msgid "The End"
 msgstr "Das Ende"
 
 #: gamedata/game_GotD.txt:344
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the <b>"
-#| "\"%1\"</b> game !!</p>"
+#, kde-format
 msgid ""
 "CONGRATULATIONS !!!!\n"
 "\n"
@@ -3321,7 +3308,10 @@ msgid ""
 msgstr ""
 "Glückwunsch!\n"
 "\n"
-"Sie haben die letzte Ebene im Spiel „<b>%1</b>“ geschafft!</p>"
+"Sie haben die letzte Ebene im Spiel „Das Gold der lebenden Toten“ "
+"geschafft!\n"
+"\n"
+"Oder doch nicht?"
 
 #: gamedata/game_GRII.txt:2
 #, kde-format
