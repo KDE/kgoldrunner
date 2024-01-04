@@ -1,5 +1,5 @@
 # Translators:
-# SPDX-FileCopyrightText: 2022, 2023 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
 # Görkem Çetin <gorkem@kde.org>, 2004.
 # Ömer Fadıl USTA <omer_fad@yahoo.com>, 2004.
 # Serdar Dalgıç <serdar@pardus.org.tr>, 2010.
@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-09 01:44+0000\n"
-"PO-Revision-Date: 2023-12-27 14:33+0300\n"
+"PO-Revision-Date: 2024-01-03 23:02+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -777,7 +777,7 @@ msgstr ""
 "dayalıdır. Birinci düzeyde, altın veya düşman yoktur: sorun, bir sonraki "
 "düzey için doğru bir çıkış yolu bulmaktır. Bundan sonra, her düzeyde düşman "
 "ve altın sayısı 1'er kez artar. Her düzeyin adı, düşman sayısına, altın "
-"parçalarına ve yerleşimde görünün sayıya göre değişir.\n"
+"parçalarına ve yerleşimde görünen sayıya göre değişir.\n"
 "\n"
 "Bu zarif ve zorlu Şampiyona düzeyleri, Steve Mann <smann at cgl uwaterloo "
 "ca> tarafından düzenlendi. Bazen düşerkende kazmaya gereksiniminiz olur."
