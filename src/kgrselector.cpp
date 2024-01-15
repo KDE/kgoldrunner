@@ -27,6 +27,9 @@
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <KLocalizedString>
+
+#include <array>
+
 /******************************************************************************/
 /*****************    DIALOG BOX TO SELECT A GAME AND LEVEL   *****************/
 /******************************************************************************/
@@ -136,11 +139,12 @@ void KGrSLDialog::setupWidgets()
     mainLayout->addWidget(games);
     mainLayout->addWidget (games, 50);
     games->setColumnCount (4);
-    games->setHeaderLabels (QStringList() <<
-                            i18n ("Name of Game") <<
-                            i18n ("Rules") <<
-                            i18n ("Levels") <<
-                            i18n ("Skill"));
+    games->setHeaderLabels ({
+        i18n ("Name of Game"),
+        i18n ("Rules"),
+        i18n ("Levels"),
+        i18n ("Skill"),
+    });
     games->setRootIsDecorated (false);
 
     QHBoxLayout * hboxLayout1 = new QHBoxLayout();
@@ -339,27 +343,26 @@ void KGrSLDialog::slSetGames (int cIndex)
     games->clear();
     slGameIndex = -1;
 
-    QList<char> sortOrder1, sortOrder2;		// Crude, but effective.
-    sortOrder1 << 'N' << 'C' << 'T';
-    sortOrder2 << 'T' << 'K';
+    const std::array<char, 3> sortOrder1{'N', 'C', 'T'};
+    const std::array<char, 2> sortOrder2{'T', 'K'};
 
     for (char sortItem1 : std::as_const(sortOrder1)) {
         for (char sortItem2 : std::as_const(sortOrder2)) {
             for (i = 0; i < imax; ++i) {
                 if ((myGameList.at (i)->skill == sortItem1) &&
                     (myGameList.at (i)->rules == sortItem2)) {
-                    QStringList data;
-                    data
-                        << myGameList.at (i)->name
-                        << ((myGameList.at (i)->rules == 'K') ? 
+                    const QStringList data{
+                        myGameList.at (i)->name,
+                        ((myGameList.at (i)->rules == 'K') ?
                             i18nc ("Rules", "KGoldrunner") :
-                            i18nc ("Rules", "Traditional"))
-                        << QString().setNum (myGameList.at (i)->nLevels)
-                        << ((myGameList.at (i)->skill == 'T') ? 
+                            i18nc ("Rules", "Traditional")),
+                        QString().setNum (myGameList.at (i)->nLevels),
+                        (myGameList.at (i)->skill == 'T') ?
                             i18nc ("Skill Level", "Tutorial") :
-                            ((myGameList.at (i)->skill == 'N') ? 
+                            ((myGameList.at (i)->skill == 'N') ?
                             i18nc ("Skill Level", "Normal") :
-                            i18nc ("Skill Level", "Championship")));
+                            i18nc ("Skill Level", "Championship")),
+                    };
                     KGrGameListItem * thisGame = new KGrGameListItem (data, i);
                     games->addTopLevelItem (thisGame);
 

@@ -1876,12 +1876,13 @@ void KGrGame::showHighScores()
     QTreeWidget * scores = new QTreeWidget (hs);
     mainLayout->addWidget (scores, 50);
     scores->setColumnCount (5);
-    scores->setHeaderLabels (QStringList() <<
-                            i18nc ("1, 2, 3 etc.", "Rank") <<
-                            i18nc ("Person", "Name") <<
-                            i18nc ("Game level reached", "Level") <<
-                            i18n ("Score") <<
-                            i18n ("Date"));
+    scores->setHeaderLabels ({
+        i18nc ("1, 2, 3 etc.", "Rank"),
+        i18nc ("Person", "Name"),
+        i18nc ("Game level reached", "Level"),
+        i18n ("Score"),
+        i18n ("Date"),
+    });
     scores->setRootIsDecorated (false);
 
     hs->		setWindowTitle (i18nc("@title:window", "High Scores"));
@@ -1900,12 +1901,13 @@ void KGrGame::showHighScores()
 
         // prevUser has been saved on file as UTF-8 to allow non=ASCII chars
         // in the user's name (e.g. "Krüger" is encoded as "KrÃ¼ger" in UTF-8).
-        QStringList data;
-        data << QString().setNum (n+1)
-            << QString().fromUtf8 (prevUser)
-            << QString().setNum (prevLevel)
-            << QString().setNum (prevScore)
-            << QString().fromUtf8 (prevDate);
+        const QStringList data{
+            QString().setNum (n+1),
+            QString::fromUtf8 (prevUser),
+            QString().setNum (prevLevel),
+            QString().setNum (prevScore),
+            QString::fromUtf8 (prevDate),
+        };
         QTreeWidgetItem * score = new QTreeWidgetItem (data);
         score->setTextAlignment (0, Qt::AlignRight);	// Rank.
         score->setTextAlignment (1, Qt::AlignLeft);	// Name.

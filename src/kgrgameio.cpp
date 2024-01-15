@@ -24,8 +24,7 @@ IOStatus KGrGameIO::fetchGameListData
                               QString & filePath)
 {
     QDir directory (dir);
-    QStringList pattern;
-    pattern << QStringLiteral("game_*");
+    const QStringList pattern {QStringLiteral("game_*")};
     QStringList files = directory.entryList (pattern, QDir::Files, QDir::Name);
 
     // KGr 3 has a game's data and all its levels in one file.
