@@ -184,5 +184,3 @@ Comment[x-test]=xxA game of action and puzzle-solvingxx
 Comment[zh_CN]=动作和解谜游戏
 Comment[zh_TW]= 一個動作和解謎的遊戲
 Categories=Qt;KDE;Game;ArcadeGame;
-X-DBUS-StartupType=Multi
-X-DBUS-ServiceName=org.kde.kgoldrunner
