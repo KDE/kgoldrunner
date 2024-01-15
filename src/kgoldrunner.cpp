@@ -761,14 +761,14 @@ void KGoldrunner::adjustHintAction (bool hintAvailable)
     scene->setHasHintText (msg);
 }
 
-void KGoldrunner::setToggle (const char * actionName, const bool onOff)
+void KGoldrunner::setToggle (const QString &actionName, const bool onOff)
 {
-    ((KToggleAction *) ACTION (QLatin1String(actionName)))->setChecked (onOff);
+    ((KToggleAction *) ACTION (actionName))->setChecked (onOff);
 }
 
-void KGoldrunner::setAvail (const char * actionName, const bool onOff)
+void KGoldrunner::setAvail (const QString &actionName, const bool onOff)
 {
-    ((QAction *) ACTION (QLatin1String(actionName)))->setEnabled (onOff);
+    ((QAction *) ACTION (actionName))->setEnabled (onOff);
 }
 
 void KGoldrunner::setEditMenu (bool on_off)
@@ -779,8 +779,8 @@ void KGoldrunner::setEditMenu (bool on_off)
     hintAction->setEnabled (! on_off);
     killHero->setEnabled   (! on_off);
     highScore->setEnabled  (! on_off);
-    setAvail ("instant_replay", (! on_off));
-    setAvail ("game_pause",     (! on_off));
+    setAvail (QStringLiteral("instant_replay"), (! on_off));
+    setAvail (QStringLiteral("game_pause"),     (! on_off));
 
     if (on_off){
         // Set the editToolbar icons to the current tile-size.
@@ -798,7 +798,7 @@ void KGoldrunner::setEditMenu (bool on_off)
         setEditIcon (QStringLiteral("hladderbg"), HLADDER);
         setEditIcon (QStringLiteral("edherobg"),  HERO);
         setEditIcon (QStringLiteral("edenemybg"), ENEMY);
-        setToggle   ("brickbg", true);		// Default edit-object is BRICK.
+        setToggle   (QStringLiteral("brickbg"), true); // Default edit-object is BRICK.
 
         toolBar (QStringLiteral("editToolbar"))->show();
     }

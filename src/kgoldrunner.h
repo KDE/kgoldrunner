@@ -46,8 +46,8 @@ public:
      */
     bool startedOK() {return (startupOK);}
 
-    void setToggle      (const char * actionName, const bool onOff);
-    void setAvail       (const char * actionName, const bool onOff);
+    void setToggle      (const QString &actionName, const bool onOff);
+    void setAvail       (const QString &actionName, const bool onOff);
     void redrawEditToolbar();
 
 protected:

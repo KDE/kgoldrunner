@@ -142,8 +142,8 @@ Q_SIGNALS:
     void quitGame();			// Used for Quit option in Quick Start.
 
     // Used to set/clear toggle actions and enable/disable actions.
-    void setToggle (const char * actionName, const bool onOff);
-    void setAvail  (const char * actionName, const bool onOff);
+    void setToggle (const QString &actionName, const bool onOff);
+    void setAvail  (const QString &actionName, const bool onOff);
 
 private:
     QDialog * qs;			// Pointer to Quick Start dialog box.

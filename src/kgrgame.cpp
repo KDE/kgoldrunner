@@ -453,19 +453,19 @@ void KGrGame::initGame()
 
     // Set control-mode, hold-key option (for when K/B is used) and game-speed.
     settings (gameGroup.readEntry ("ControlMode", (int) MOUSE));
-    Q_EMIT setToggle (((controlMode == MOUSE) ?    "mouse_mode" :
-                    ((controlMode == KEYBOARD) ? "keyboard_mode" :
-                                                 "laptop_mode")), true);
+    Q_EMIT setToggle (((controlMode == MOUSE) ?  QStringLiteral("mouse_mode") :
+                    ((controlMode == KEYBOARD) ? QStringLiteral("keyboard_mode") :
+                                                 QStringLiteral("laptop_mode"))), true);
 
     holdKeyOption = gameGroup.readEntry ("HoldKeyOption", (int) CLICK_KEY);
-    Q_EMIT setToggle (((holdKeyOption == CLICK_KEY) ? "click_key" :
-                                                    "hold_key"), true);
+    Q_EMIT setToggle (((holdKeyOption == CLICK_KEY) ? QStringLiteral("click_key") :
+                                                      QStringLiteral("hold_key")), true);
 
     int speedLevel = gameGroup.readEntry ("SpeedLevel", (int) NORMAL_SPEED);
     settings (speedLevel);
-    Q_EMIT setToggle ((speedLevel == NORMAL_SPEED) ?    "normal_speed" :
-                    ((speedLevel == BEGINNER_SPEED) ? "beginner_speed" :
-                                                      "champion_speed"), true);
+    Q_EMIT setToggle ((speedLevel == NORMAL_SPEED) ?  QStringLiteral("normal_speed") :
+                    ((speedLevel == BEGINNER_SPEED) ? QStringLiteral("beginner_speed") :
+                                                      QStringLiteral("champion_speed")), true);
     timeScale = gameGroup.readEntry ("ActualSpeed", 10);
 
 #ifdef KGAUDIO_BACKEND_OPENAL
@@ -476,11 +476,11 @@ void KGrGame::initGame()
             loadSounds();
             effects->setMuted (false);
         }
-        Q_EMIT setToggle ("options_sounds", soundOn);
+        Q_EMIT setToggle (QStringLiteral("options_sounds"), soundOn);
 
         stepsOn = gameGroup.readEntry ("StepSounds", false);
         //qCDebug(KGOLDRUNNER_LOG) << "StepSounds" << stepsOn;
-        Q_EMIT setToggle ("options_steps", stepsOn);
+        Q_EMIT setToggle (QStringLiteral("options_steps"), stepsOn);
 #endif
 
     dbk1 << "Owner" << gameList.at (gameIndex)->owner
@@ -496,7 +496,7 @@ void KGrGame::initGame()
         newGame (level, gameIndex);
         quickStartDialog();
     }
-    Q_EMIT setToggle ("options_demo", startupDemo);
+    Q_EMIT setToggle (QStringLiteral("options_demo"), startupDemo);
 
     // Allow a short break, to display the graphics, then use the demo delay-time
     // or the reaction-time to the quick-start dialog to do some more rendering.
@@ -1158,8 +1158,8 @@ void KGrGame::setControlMode (const int mode)
 {
     // Enable/disable keyboard-mode options.
     bool enableDisable = (mode == KEYBOARD);
-    Q_EMIT setAvail ("click_key", enableDisable);
-    Q_EMIT setAvail ("hold_key",  enableDisable);
+    Q_EMIT setAvail (QStringLiteral("click_key"), enableDisable);
+    Q_EMIT setAvail (QStringLiteral("hold_key"),  enableDisable);
 
     controlMode = mode;
     if (levelPlayer && (! playback)) {
@@ -1344,21 +1344,21 @@ void KGrGame::setPlayback (const bool onOff)
     if (playback != onOff) {
         // Disable high scores, kill hero and some settings during demo/replay.
         bool enableDisable = (! onOff);
-        Q_EMIT setAvail  ("game_highscores", enableDisable);
-        Q_EMIT setAvail  ("kill_hero",       enableDisable);
+        Q_EMIT setAvail  (QStringLiteral("game_highscores"), enableDisable);
+        Q_EMIT setAvail  (QStringLiteral("kill_hero"),       enableDisable);
 
-        Q_EMIT setAvail  ("mouse_mode",      enableDisable);
-        Q_EMIT setAvail  ("keyboard_mode",   enableDisable);
-        Q_EMIT setAvail  ("laptop_mode",     enableDisable);
+        Q_EMIT setAvail  (QStringLiteral("mouse_mode"),      enableDisable);
+        Q_EMIT setAvail  (QStringLiteral("keyboard_mode"),   enableDisable);
+        Q_EMIT setAvail  (QStringLiteral("laptop_mode"),     enableDisable);
 
-        Q_EMIT setAvail  ("click_key",       enableDisable);
-        Q_EMIT setAvail  ("hold_key",        enableDisable);
+        Q_EMIT setAvail  (QStringLiteral("click_key"),       enableDisable);
+        Q_EMIT setAvail  (QStringLiteral("hold_key"),        enableDisable);
 
-        Q_EMIT setAvail  ("normal_speed",    enableDisable);
-        Q_EMIT setAvail  ("beginner_speed",  enableDisable);
-        Q_EMIT setAvail  ("champion_speed",  enableDisable);
-        Q_EMIT setAvail  ("increase_speed",  enableDisable);
-        Q_EMIT setAvail  ("decrease_speed",  enableDisable);
+        Q_EMIT setAvail  (QStringLiteral("normal_speed"),    enableDisable);
+        Q_EMIT setAvail  (QStringLiteral("beginner_speed"),  enableDisable);
+        Q_EMIT setAvail  (QStringLiteral("champion_speed"),  enableDisable);
+        Q_EMIT setAvail  (QStringLiteral("increase_speed"),  enableDisable);
+        Q_EMIT setAvail  (QStringLiteral("decrease_speed"),  enableDisable);
     }
     scene->showReplayMessage (onOff);
     playback = onOff;
@@ -1425,7 +1425,7 @@ void KGrGame::kbControl (const int dirn, const bool pressed)
         case KMessageBox::Ok:
         case KMessageBox::Continue:
             settings (KEYBOARD);
-            Q_EMIT setToggle ("keyboard_mode", true);	// Adjust Settings menu.
+            Q_EMIT setToggle (QStringLiteral("keyboard_mode"), true);	// Adjust Settings menu.
             break;
         case KMessageBox::SecondaryAction:
         case KMessageBox::Cancel:
