@@ -24,7 +24,7 @@ int main (int argc, char **argv)
 {
     QApplication app(argc, argv);
 
-    KLocalizedString::setApplicationDomain("kgoldrunner");
+    KLocalizedString::setApplicationDomain(QByteArrayLiteral("kgoldrunner"));
 
     KAboutData about (QStringLiteral("kgoldrunner"), i18n ("KGoldrunner"),
                      QStringLiteral(KGOLDRUNNER_VERSION_STRING),
