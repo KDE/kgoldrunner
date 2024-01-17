@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:44+0000\n"
+"POT-Creation-Date: 2024-01-17 00:36+0000\n"
 "PO-Revision-Date: 2017-11-11 11:18+0200\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish\n"
@@ -8518,7 +8518,7 @@ msgstr "Gem ændringer"
 msgid "0 levels"
 msgstr "0 baner"
 
-#: src/kgrdialog.cpp:192 src/kgrselector.cpp:265
+#: src/kgrdialog.cpp:192 src/kgrselector.cpp:269
 #, kde-format
 msgid "Save New"
 msgstr "Gem ny"
@@ -8550,7 +8550,7 @@ msgstr ""
 "Du kan ikke lave og gemme en bane før du har lavet et spil til at holde det. "
 "Prøv menupunktet \"Opret spil\"."
 
-#: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:262
+#: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:266
 #, kde-format
 msgid "Edit Level"
 msgstr "Redigér bane"
@@ -8644,7 +8644,7 @@ msgid "You must change the level or the game or both."
 msgstr "Du skal ændre banen, spillet eller begge."
 
 #: src/kgreditor.cpp:418 src/kgreditor.cpp:441 src/kgreditor.cpp:459
-#: src/kgrselector.cpp:271
+#: src/kgrselector.cpp:275
 #, kde-format
 msgid "Delete Level"
 msgstr "Slet bane"
@@ -8920,7 +8920,7 @@ msgstr ""
 msgid "Replay Any Level"
 msgstr "Gengiv en bane"
 
-#: src/kgrgame.cpp:849 src/kgrgame.cpp:2053
+#: src/kgrgame.cpp:849 src/kgrgame.cpp:2055
 #, kde-format
 msgid ""
 "Sorry, you do not seem to have played and recorded the selected level before."
@@ -9027,7 +9027,7 @@ msgstr ""
 "menupunktetet \"%1\"."
 
 #: src/kgrgame.cpp:1493 src/kgrgame.cpp:1537 src/kgrgame.cpp:1652
-#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2019 src/kgrgameio.cpp:170
+#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2021 src/kgrgameio.cpp:169
 #, kde-format
 msgid "Cannot open file '%1' for read-only."
 msgstr "Kan ikke åbne filen \"%1\" til kun-læsning."
@@ -9151,65 +9151,65 @@ msgstr "Score"
 msgid "Date"
 msgstr "Dato"
 
-#: src/kgrgame.cpp:1887
+#: src/kgrgame.cpp:1888
 #, fuzzy, kde-format
 #| msgid "High Scores"
 msgctxt "@title:window"
 msgid "High Scores"
 msgstr "Topresultater"
 
-#: src/kgrgame.cpp:2012 src/kgrgame.cpp:2018 src/kgrgame.cpp:2022
+#: src/kgrgame.cpp:2014 src/kgrgame.cpp:2020 src/kgrgame.cpp:2024
 #, kde-format
 msgid "Load Game Info"
 msgstr "Indlæs spil-info"
 
-#: src/kgrgame.cpp:2013
+#: src/kgrgame.cpp:2015
 #, kde-format
 msgid "Cannot find game info file '%1'."
 msgstr "Kan ikke finde spil-info-filen \"%1\"."
 
-#: src/kgrgame.cpp:2023
+#: src/kgrgame.cpp:2025
 #, kde-format
 msgid "Reached end of file '%1' before finding end of game-data."
 msgstr ""
 "Nåede afslutningen af filen \"%1\" før afslutningen af spildata blev fundet."
 
-#: src/kgrgame.cpp:2047 src/kgrgame.cpp:2052 src/kgrselector.cpp:259
+#: src/kgrgame.cpp:2049 src/kgrgame.cpp:2054 src/kgrselector.cpp:263
 #, kde-format
 msgid "Save A Solution"
 msgstr "Gem en løsning"
 
-#: src/kgrgame.cpp:2048
+#: src/kgrgame.cpp:2050
 #, kde-format
 msgid "Your solution to level %1 has been saved on file %2"
 msgstr "Din løsning af niveau %1 er blevet gemt i filen %2"
 
-#: src/kgrgameio.cpp:164 src/kgrgameio.cpp:169 src/kgrgameio.cpp:173
+#: src/kgrgameio.cpp:163 src/kgrgameio.cpp:168 src/kgrgameio.cpp:172
 #, kde-format
 msgid "Read Level Data"
 msgstr "Læs banens data"
 
-#: src/kgrgameio.cpp:165
+#: src/kgrgameio.cpp:164
 #, kde-format
 msgid "Cannot find file '%1'."
 msgstr "Kan ikke finde filen \"%1\"."
 
-#: src/kgrgameio.cpp:174
+#: src/kgrgameio.cpp:173
 #, kde-format
 msgid "Reached end of file '%1' without finding level data."
 msgstr "Nåede slutningen af filen \"%1\" uden at finde banedata."
 
-#: src/kgrgameio.cpp:382 src/kgrgameio.cpp:389
+#: src/kgrgameio.cpp:381 src/kgrgameio.cpp:388
 #, kde-format
 msgid "Rename File"
 msgstr "Omdøb fil"
 
-#: src/kgrgameio.cpp:383
+#: src/kgrgameio.cpp:382
 #, kde-format
 msgid "Cannot delete previous version of file '%1'."
 msgstr "Kan ikke slette tidligere version af filen \"%1\"."
 
-#: src/kgrgameio.cpp:390
+#: src/kgrgameio.cpp:389
 #, kde-format
 msgid "Cannot rename file '%1' to '%2'."
 msgstr "Kan ikke omdøbe filen \"%1\" til \"%2\"."
@@ -9229,183 +9229,183 @@ msgstr "Liv: %1"
 msgid "Score: %1"
 msgstr "Score: %1"
 
-#: src/kgrselector.cpp:69 src/kgrselector.cpp:75 src/kgrselector.cpp:95
-#: src/kgrselector.cpp:498
+#: src/kgrselector.cpp:72 src/kgrselector.cpp:78 src/kgrselector.cpp:98
+#: src/kgrselector.cpp:501
 #, kde-format
 msgid "Select Level"
 msgstr "Vælg bane"
 
-#: src/kgrselector.cpp:70
+#: src/kgrselector.cpp:73
 #, kde-format
 msgid "Sorry, you can only save or move into one of your own games."
 msgstr "Du kan desværre kun gemme eller flytte ind i et af dine egne spil."
 
-#: src/kgrselector.cpp:76
+#: src/kgrselector.cpp:79
 #, kde-format
 msgid "Sorry, you can only delete a level from one of your own games."
 msgstr "Du kan desværre kun slette en bane fra et af dine egne spil."
 
-#: src/kgrselector.cpp:81 src/kgrselector.cpp:277
+#: src/kgrselector.cpp:84 src/kgrselector.cpp:281
 #, kde-format
 msgid "Edit Game Info"
 msgstr "Redigér spilinfo"
 
-#: src/kgrselector.cpp:82
+#: src/kgrselector.cpp:85
 #, kde-format
 msgid "Sorry, you can only edit the game information on your own games."
 msgstr "Du kan desværre kun redigere spil-information i et af dine egne spil."
 
-#: src/kgrselector.cpp:96
+#: src/kgrselector.cpp:99
 #, kde-format
 msgid "There is no level %1 in \"%2\", so you cannot play or edit it."
 msgstr ""
 "Der er ikke nogen bane %1 i \"%2\", så du kan ikke spille eller redigere den."
 
-#: src/kgrselector.cpp:118 src/kgrselector.cpp:173
+#: src/kgrselector.cpp:121 src/kgrselector.cpp:177
 #, fuzzy, kde-format
 #| msgid "Select Game"
 msgctxt "@title:window"
 msgid "Select Game"
 msgstr "Vælg spil"
 
-#: src/kgrselector.cpp:132
+#: src/kgrselector.cpp:135
 #, kde-format
 msgid "<html><b>Please select a game:</b></html>"
 msgstr "<html><b>Vælg et spil:</b></html>"
 
-#: src/kgrselector.cpp:140
+#: src/kgrselector.cpp:143
 #, kde-format
 msgid "Name of Game"
 msgstr "Navn på spil"
 
-#: src/kgrselector.cpp:141
+#: src/kgrselector.cpp:144
 #, kde-format
 msgid "Rules"
 msgstr "Regler"
 
-#: src/kgrselector.cpp:142
+#: src/kgrselector.cpp:145
 #, kde-format
 msgid "Levels"
 msgstr "Baner"
 
-#: src/kgrselector.cpp:143
+#: src/kgrselector.cpp:146
 #, kde-format
 msgid "Skill"
 msgstr "Sværhed"
 
-#: src/kgrselector.cpp:175
+#: src/kgrselector.cpp:179
 #, kde-format
 msgid "Level 1 of the selected game is:"
 msgstr "Bane 1 for det valgte spil er:"
 
-#: src/kgrselector.cpp:179
+#: src/kgrselector.cpp:183
 #, fuzzy, kde-format
 #| msgid "Select Game/Level"
 msgctxt "@title:window"
 msgid "Select Game/Level"
 msgstr "Vælg spil/bane"
 
-#: src/kgrselector.cpp:181
+#: src/kgrselector.cpp:185
 #, kde-format
 msgid "Please select a level:"
 msgstr "Vælg en bane:"
 
-#: src/kgrselector.cpp:200
+#: src/kgrselector.cpp:204
 #, kde-format
 msgid "Level number:"
 msgstr "Bane nummer:"
 
-#: src/kgrselector.cpp:206
+#: src/kgrselector.cpp:210
 #, fuzzy, kde-format
 #| msgid "Edit Level Name && Hint"
 msgid "Edit Level Name o&r Hint"
 msgstr "Redigér banes navn og tip"
 
-#: src/kgrselector.cpp:241
+#: src/kgrselector.cpp:245
 #, kde-format
 msgid "Start Game"
 msgstr "Start spil"
 
-#: src/kgrselector.cpp:250
+#: src/kgrselector.cpp:254
 #, kde-format
 msgid "Play Level"
 msgstr "Spil bane"
 
-#: src/kgrselector.cpp:253
+#: src/kgrselector.cpp:257
 #, kde-format
 msgid "Replay Level"
 msgstr "Gengiv bane"
 
-#: src/kgrselector.cpp:256
+#: src/kgrselector.cpp:260
 #, kde-format
 msgid "Show Solution"
 msgstr "Vis løsning"
 
-#: src/kgrselector.cpp:268
+#: src/kgrselector.cpp:272
 #, kde-format
 msgid "Save Change"
 msgstr "Gem ændring"
 
-#: src/kgrselector.cpp:274
+#: src/kgrselector.cpp:278
 #, kde-format
 msgid "Move To..."
 msgstr "Flyt til..."
 
-#: src/kgrselector.cpp:355
+#: src/kgrselector.cpp:357
 #, kde-format
 msgctxt "Rules"
 msgid "KGoldrunner"
 msgstr "KGoldrunner"
 
-#: src/kgrselector.cpp:356
+#: src/kgrselector.cpp:358
 #, kde-format
 msgctxt "Rules"
 msgid "Traditional"
 msgstr "Traditionelle"
 
-#: src/kgrselector.cpp:359
+#: src/kgrselector.cpp:361
 #, kde-format
 msgctxt "Skill Level"
 msgid "Tutorial"
 msgstr "Gennemgang"
 
-#: src/kgrselector.cpp:361
+#: src/kgrselector.cpp:363
 #, kde-format
 msgctxt "Skill Level"
 msgid "Normal"
 msgstr "Normal"
 
-#: src/kgrselector.cpp:362
+#: src/kgrselector.cpp:364
 #, kde-format
 msgctxt "Skill Level"
 msgid "Championship"
 msgstr "Mester"
 
-#: src/kgrselector.cpp:465
+#: src/kgrselector.cpp:468
 #, kde-format
 msgid "1 level, uses KGoldrunner rules."
 msgid_plural "%1 levels, uses KGoldrunner rules."
 msgstr[0] "1 bane, bruger KGoldrunner-regler."
 msgstr[1] "%1 baner, bruger KGoldrunner-regler."
 
-#: src/kgrselector.cpp:468
+#: src/kgrselector.cpp:471
 #, kde-format
 msgid "1 level, uses Traditional rules."
 msgid_plural "%1 levels, uses Traditional rules."
 msgstr[0] "1 bane, bruger traditionelle regler."
 msgstr[1] "%1 baner, bruger traditionelle regler."
 
-#: src/kgrselector.cpp:473
+#: src/kgrselector.cpp:476
 #, kde-format
 msgid "Sorry, there is no further information about this game."
 msgstr "Der er desværre ingen yderligere information om dette spil."
 
-#: src/kgrselector.cpp:499
+#: src/kgrselector.cpp:502
 #, kde-format
 msgid "This level number is not valid. It can not be used."
 msgstr "Dette banenummer er ikke gyldigt. Det kan ikke bruges."
 
-#: src/kgrselector.cpp:520
+#: src/kgrselector.cpp:523
 #, kde-format
 msgid ""
 "The main button at the bottom echoes the menu action you selected. Click it "
@@ -9414,7 +9414,7 @@ msgstr ""
 "Hovedknappen for neden giver et ekko af den menu-handling du valgte. Klik på "
 "den efter at have valgt spil og bane - eller brug \"Annullér\"."
 
-#: src/kgrselector.cpp:525
+#: src/kgrselector.cpp:528
 #, kde-format
 msgid ""
 "\n"
@@ -9435,7 +9435,7 @@ msgstr ""
 "starte på bane 001, klik på hovedknappen for neden. Spillet begynder når du "
 "flytter musen eller trykker på en tast."
 
-#: src/kgrselector.cpp:534
+#: src/kgrselector.cpp:537
 #, kde-format
 msgid ""
 "\n"
@@ -9454,7 +9454,7 @@ msgstr ""
 "\" eller venstre museknap til at slette. Du kan trække musen henover med en "
 "knap trykket og male eller slette adskillige felter."
 
-#: src/kgrselector.cpp:542
+#: src/kgrselector.cpp:545
 #, kde-format
 msgid ""
 "\n"
@@ -9471,7 +9471,7 @@ msgstr ""
 "nye bane i slutningen af dit spil, men du kan også vælge et nummer til banen "
 "og gemme den midt i dit spil."
 
-#: src/kgrselector.cpp:549
+#: src/kgrselector.cpp:552
 #, kde-format
 msgid ""
 "\n"
@@ -9488,7 +9488,7 @@ msgstr ""
 "altid gemme til et af dine egne spil. Hvis du gemmer en bane midt i en "
 "serie, får de andre baner automatisk et andet nummer."
 
-#: src/kgrselector.cpp:556
+#: src/kgrselector.cpp:559
 #, kde-format
 msgid ""
 "\n"
@@ -9501,7 +9501,7 @@ msgstr ""
 "Du kan kun slette baner fra et af dine egne spil. Hvis du sletter en bane "
 "fra midten af en serie, får de andre baner automatisk et andet nummer."
 
-#: src/kgrselector.cpp:561
+#: src/kgrselector.cpp:564
 #, kde-format
 msgid ""
 "\n"
@@ -9518,7 +9518,7 @@ msgstr ""
 "nummer eller endda lægge den i et andet spil. Andre baner får automatisk "
 "andet nummer efter behov. Du kan kun flytte baner indenfor dine egne spil."
 
-#: src/kgrselector.cpp:568
+#: src/kgrselector.cpp:571
 #, kde-format
 msgid ""
 "\n"
@@ -9531,7 +9531,7 @@ msgstr ""
 "Når du redigerer spil-info skal du kun vælge et spil, så kan du gå til en "
 "dialog hvor du redigerer detaljerne i spillet."
 
-#: src/kgrselector.cpp:575
+#: src/kgrselector.cpp:578
 #, kde-format
 msgid ""
 "\n"
@@ -9555,7 +9555,7 @@ msgstr ""
 "rullebjælken. Mens du varierer spillet eller banen, viser miniatureområdet "
 "en forhåndsvisning af dit valg."
 
-#: src/kgrselector.cpp:586
+#: src/kgrselector.cpp:589
 #, kde-format
 msgid "Help: Select Game & Level"
 msgstr "Hjælp: Vælg spil og bane"

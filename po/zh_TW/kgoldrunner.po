@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:44+0000\n"
+"POT-Creation-Date: 2024-01-17 00:36+0000\n"
 "PO-Revision-Date: 2019-01-03 18:36+0800\n"
 "Last-Translator: pan93412 <pan93412@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -7813,7 +7813,7 @@ msgstr "儲存變更"
 msgid "0 levels"
 msgstr "沒有關卡"
 
-#: src/kgrdialog.cpp:192 src/kgrselector.cpp:265
+#: src/kgrdialog.cpp:192 src/kgrselector.cpp:269
 #, kde-format
 msgid "Save New"
 msgstr "另存新檔"
@@ -7843,7 +7843,7 @@ msgid ""
 msgstr ""
 "您建立與儲存新關卡之前必須先產生新的遊戲來儲存。請試試選單中的「創造遊戲」。"
 
-#: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:262
+#: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:266
 #, kde-format
 msgid "Edit Level"
 msgstr "編輯關卡"
@@ -7933,7 +7933,7 @@ msgid "You must change the level or the game or both."
 msgstr "您必須更換關卡或遊戲，或兩者都更換。"
 
 #: src/kgreditor.cpp:418 src/kgreditor.cpp:441 src/kgreditor.cpp:459
-#: src/kgrselector.cpp:271
+#: src/kgrselector.cpp:275
 #, kde-format
 msgid "Delete Level"
 msgstr "刪除關卡"
@@ -8192,7 +8192,7 @@ msgstr ""
 msgid "Replay Any Level"
 msgstr "重播任一關卡"
 
-#: src/kgrgame.cpp:849 src/kgrgame.cpp:2053
+#: src/kgrgame.cpp:849 src/kgrgame.cpp:2055
 #, kde-format
 msgid ""
 "Sorry, you do not seem to have played and recorded the selected level before."
@@ -8291,7 +8291,7 @@ msgid ""
 msgstr "抱歉，您在編輯時無法儲存您的遊戲。請試著使用選單項目「%1」。"
 
 #: src/kgrgame.cpp:1493 src/kgrgame.cpp:1537 src/kgrgame.cpp:1652
-#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2019 src/kgrgameio.cpp:170
+#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2021 src/kgrgameio.cpp:169
 #, kde-format
 msgid "Cannot open file '%1' for read-only."
 msgstr "無法開啟檔案 %1。"
@@ -8414,64 +8414,64 @@ msgstr "   分數："
 msgid "Date"
 msgstr "日期"
 
-#: src/kgrgame.cpp:1887
+#: src/kgrgame.cpp:1888
 #, fuzzy, kde-format
 #| msgid "High Scores"
 msgctxt "@title:window"
 msgid "High Scores"
 msgstr "高分榜"
 
-#: src/kgrgame.cpp:2012 src/kgrgame.cpp:2018 src/kgrgame.cpp:2022
+#: src/kgrgame.cpp:2014 src/kgrgame.cpp:2020 src/kgrgame.cpp:2024
 #, kde-format
 msgid "Load Game Info"
 msgstr "載入遊戲資訊"
 
-#: src/kgrgame.cpp:2013
+#: src/kgrgame.cpp:2015
 #, kde-format
 msgid "Cannot find game info file '%1'."
 msgstr "找不到由遊戲資訊檔 '%1'"
 
-#: src/kgrgame.cpp:2023
+#: src/kgrgame.cpp:2025
 #, kde-format
 msgid "Reached end of file '%1' before finding end of game-data."
 msgstr "到達檔案 %1 的結尾，但是找不到遊戲資料的結尾。"
 
-#: src/kgrgame.cpp:2047 src/kgrgame.cpp:2052 src/kgrselector.cpp:259
+#: src/kgrgame.cpp:2049 src/kgrgame.cpp:2054 src/kgrselector.cpp:263
 #, kde-format
 msgid "Save A Solution"
 msgstr "儲存解決方式"
 
-#: src/kgrgame.cpp:2048
+#: src/kgrgame.cpp:2050
 #, kde-format
 msgid "Your solution to level %1 has been saved on file %2"
 msgstr "您的等級 %1 解決方式已經被儲存到檔案 %2 中"
 
-#: src/kgrgameio.cpp:164 src/kgrgameio.cpp:169 src/kgrgameio.cpp:173
+#: src/kgrgameio.cpp:163 src/kgrgameio.cpp:168 src/kgrgameio.cpp:172
 #, kde-format
 msgid "Read Level Data"
 msgstr "讀取關卡資料"
 
-#: src/kgrgameio.cpp:165
+#: src/kgrgameio.cpp:164
 #, kde-format
 msgid "Cannot find file '%1'."
 msgstr "找不到由檔案 %1。"
 
-#: src/kgrgameio.cpp:174
+#: src/kgrgameio.cpp:173
 #, kde-format
 msgid "Reached end of file '%1' without finding level data."
 msgstr "到了檔案 %1 的結尾，但找不到關卡資料。"
 
-#: src/kgrgameio.cpp:382 src/kgrgameio.cpp:389
+#: src/kgrgameio.cpp:381 src/kgrgameio.cpp:388
 #, kde-format
 msgid "Rename File"
 msgstr "重新命名檔案"
 
-#: src/kgrgameio.cpp:383
+#: src/kgrgameio.cpp:382
 #, kde-format
 msgid "Cannot delete previous version of file '%1'."
 msgstr "無法刪除前一個版本的檔案 %1。"
 
-#: src/kgrgameio.cpp:390
+#: src/kgrgameio.cpp:389
 #, kde-format
 msgid "Cannot rename file '%1' to '%2'."
 msgstr "無法將檔案 %1 重命名為 %2。"
@@ -8491,180 +8491,180 @@ msgstr "生命數：%1"
 msgid "Score: %1"
 msgstr "分數：%1"
 
-#: src/kgrselector.cpp:69 src/kgrselector.cpp:75 src/kgrselector.cpp:95
-#: src/kgrselector.cpp:498
+#: src/kgrselector.cpp:72 src/kgrselector.cpp:78 src/kgrselector.cpp:98
+#: src/kgrselector.cpp:501
 #, kde-format
 msgid "Select Level"
 msgstr "選擇關卡"
 
-#: src/kgrselector.cpp:70
+#: src/kgrselector.cpp:73
 #, kde-format
 msgid "Sorry, you can only save or move into one of your own games."
 msgstr "抱歉，您只能儲存或移動您自己遊戲裡的關卡。"
 
-#: src/kgrselector.cpp:76
+#: src/kgrselector.cpp:79
 #, kde-format
 msgid "Sorry, you can only delete a level from one of your own games."
 msgstr "抱歉，您只能刪除您自己遊戲裡的關卡。"
 
-#: src/kgrselector.cpp:81 src/kgrselector.cpp:277
+#: src/kgrselector.cpp:84 src/kgrselector.cpp:281
 #, kde-format
 msgid "Edit Game Info"
 msgstr "編輯遊戲資訊"
 
-#: src/kgrselector.cpp:82
+#: src/kgrselector.cpp:85
 #, kde-format
 msgid "Sorry, you can only edit the game information on your own games."
 msgstr "抱歉，您只能編輯您自己遊戲裡的關卡資訊。"
 
-#: src/kgrselector.cpp:96
+#: src/kgrselector.cpp:99
 #, kde-format
 msgid "There is no level %1 in \"%2\", so you cannot play or edit it."
 msgstr "在 %2 中沒有關卡 %1，所以無法玩或編輯它。"
 
-#: src/kgrselector.cpp:118 src/kgrselector.cpp:173
+#: src/kgrselector.cpp:121 src/kgrselector.cpp:177
 #, fuzzy, kde-format
 #| msgid "Select Game"
 msgctxt "@title:window"
 msgid "Select Game"
 msgstr "選擇遊戲"
 
-#: src/kgrselector.cpp:132
+#: src/kgrselector.cpp:135
 #, kde-format
 msgid "<html><b>Please select a game:</b></html>"
 msgstr "<html><b>請選擇遊戲：</b></html>"
 
-#: src/kgrselector.cpp:140
+#: src/kgrselector.cpp:143
 #, kde-format
 msgid "Name of Game"
 msgstr "遊戲名稱"
 
-#: src/kgrselector.cpp:141
+#: src/kgrselector.cpp:144
 #, kde-format
 msgid "Rules"
 msgstr "規則"
 
-#: src/kgrselector.cpp:142
+#: src/kgrselector.cpp:145
 #, kde-format
 msgid "Levels"
 msgstr "關卡"
 
-#: src/kgrselector.cpp:143
+#: src/kgrselector.cpp:146
 #, kde-format
 msgid "Skill"
 msgstr "技能"
 
-#: src/kgrselector.cpp:175
+#: src/kgrselector.cpp:179
 #, kde-format
 msgid "Level 1 of the selected game is:"
 msgstr "所選遊戲的第一關是："
 
-#: src/kgrselector.cpp:179
+#: src/kgrselector.cpp:183
 #, fuzzy, kde-format
 #| msgid "Select Game/Level"
 msgctxt "@title:window"
 msgid "Select Game/Level"
 msgstr "選擇 遊戲/關卡"
 
-#: src/kgrselector.cpp:181
+#: src/kgrselector.cpp:185
 #, kde-format
 msgid "Please select a level:"
 msgstr "選擇關卡："
 
-#: src/kgrselector.cpp:200
+#: src/kgrselector.cpp:204
 #, kde-format
 msgid "Level number:"
 msgstr "關卡編號："
 
-#: src/kgrselector.cpp:206
+#: src/kgrselector.cpp:210
 #, fuzzy, kde-format
 #| msgid "Edit Level Name && Hint"
 msgid "Edit Level Name o&r Hint"
 msgstr "編輯關卡名稱和提示"
 
-#: src/kgrselector.cpp:241
+#: src/kgrselector.cpp:245
 #, kde-format
 msgid "Start Game"
 msgstr "開始遊戲"
 
-#: src/kgrselector.cpp:250
+#: src/kgrselector.cpp:254
 #, kde-format
 msgid "Play Level"
 msgstr "玩關卡"
 
-#: src/kgrselector.cpp:253
+#: src/kgrselector.cpp:257
 #, kde-format
 msgid "Replay Level"
 msgstr "重玩關卡"
 
-#: src/kgrselector.cpp:256
+#: src/kgrselector.cpp:260
 #, kde-format
 msgid "Show Solution"
 msgstr "顯示答案"
 
-#: src/kgrselector.cpp:268
+#: src/kgrselector.cpp:272
 #, kde-format
 msgid "Save Change"
 msgstr "儲存變更"
 
-#: src/kgrselector.cpp:274
+#: src/kgrselector.cpp:278
 #, kde-format
 msgid "Move To..."
 msgstr "移到..."
 
-#: src/kgrselector.cpp:355
+#: src/kgrselector.cpp:357
 #, kde-format
 msgctxt "Rules"
 msgid "KGoldrunner"
 msgstr "KGoldrunner"
 
-#: src/kgrselector.cpp:356
+#: src/kgrselector.cpp:358
 #, kde-format
 msgctxt "Rules"
 msgid "Traditional"
 msgstr "傳統的規則"
 
-#: src/kgrselector.cpp:359
+#: src/kgrselector.cpp:361
 #, kde-format
 msgctxt "Skill Level"
 msgid "Tutorial"
 msgstr "體驗教學"
 
-#: src/kgrselector.cpp:361
+#: src/kgrselector.cpp:363
 #, kde-format
 msgctxt "Skill Level"
 msgid "Normal"
 msgstr "正常"
 
-#: src/kgrselector.cpp:362
+#: src/kgrselector.cpp:364
 #, kde-format
 msgctxt "Skill Level"
 msgid "Championship"
 msgstr "冠軍"
 
-#: src/kgrselector.cpp:465
+#: src/kgrselector.cpp:468
 #, kde-format
 msgid "1 level, uses KGoldrunner rules."
 msgid_plural "%1 levels, uses KGoldrunner rules."
 msgstr[0] "%1 個關卡，使用 KGoldrunner 的規則。"
 
-#: src/kgrselector.cpp:468
+#: src/kgrselector.cpp:471
 #, kde-format
 msgid "1 level, uses Traditional rules."
 msgid_plural "%1 levels, uses Traditional rules."
 msgstr[0] "%1 個關卡，使用傳統規則。"
 
-#: src/kgrselector.cpp:473
+#: src/kgrselector.cpp:476
 #, kde-format
 msgid "Sorry, there is no further information about this game."
 msgstr "抱歉，沒有關於這個遊戲的進一步資訊"
 
-#: src/kgrselector.cpp:499
+#: src/kgrselector.cpp:502
 #, kde-format
 msgid "This level number is not valid. It can not be used."
 msgstr "這個關卡編號無效，無法使用。"
 
-#: src/kgrselector.cpp:520
+#: src/kgrselector.cpp:523
 #, kde-format
 msgid ""
 "The main button at the bottom echoes the menu action you selected. Click it "
@@ -8673,7 +8673,7 @@ msgstr ""
 "底部的主要按鍵會回應您所選擇的選單的動作。選好遊戲與關卡後按下按鍵，或是按下"
 "「取消」。"
 
-#: src/kgrselector.cpp:525
+#: src/kgrselector.cpp:528
 #, kde-format
 msgid ""
 "\n"
@@ -8692,7 +8692,7 @@ msgstr ""
 "不然也可以在表格中按下遊戲的名稱，然後按下底部的主要按鍵從第一關開始玩。關卡"
 "會在您移動滑鼠或按下任何鍵之後開始。"
 
-#: src/kgrselector.cpp:534
+#: src/kgrselector.cpp:537
 #, kde-format
 msgid ""
 "\n"
@@ -8709,7 +8709,7 @@ msgstr ""
 "物品，移動滑鼠來填上空間。「清除空間」則可以把物品清除。您可以按住滑鼠按鍵並"
 "拖曳來畫或擦除多個空間。"
 
-#: src/kgrselector.cpp:542
+#: src/kgrselector.cpp:545
 #, kde-format
 msgid ""
 "\n"
@@ -8724,7 +8724,7 @@ msgstr ""
 "您可以在新關卡加入一個名稱或提示，但是要記得儲存。您的新關卡預設會加到最後"
 "面，但是您也可以選擇插入中間的關卡編號。"
 
-#: src/kgrselector.cpp:549
+#: src/kgrselector.cpp:552
 #, kde-format
 msgid ""
 "\n"
@@ -8740,7 +8740,7 @@ msgstr ""
 "檔」，但要記得至少儲存到一個地方。如果您將關卡插到中間，其他的關卡會自動重新"
 "編號。"
 
-#: src/kgrselector.cpp:556
+#: src/kgrselector.cpp:559
 #, kde-format
 msgid ""
 "\n"
@@ -8752,7 +8752,7 @@ msgstr ""
 "\n"
 "您只能刪除您自己的關卡。如果您刪除了中間的關卡，其他的關卡會自動重新編號。"
 
-#: src/kgrselector.cpp:561
+#: src/kgrselector.cpp:564
 #, kde-format
 msgid ""
 "\n"
@@ -8767,7 +8767,7 @@ msgstr ""
 "要移動關卡，您要先選擇「編輯任一關卡」，然後選擇「移動關卡」來重新移動關卡編"
 "號。其他的關卡會自動重新編號。"
 
-#: src/kgrselector.cpp:568
+#: src/kgrselector.cpp:571
 #, kde-format
 msgid ""
 "\n"
@@ -8779,7 +8779,7 @@ msgstr ""
 "\n"
 "您只要選擇一個遊戲，然後就可以編輯遊戲的詳情。"
 
-#: src/kgrselector.cpp:575
+#: src/kgrselector.cpp:578
 #, kde-format
 msgid ""
 "\n"
@@ -8800,7 +8800,7 @@ msgstr ""
 "\n"
 "您可以用鍵盤輸入或用按鍵選擇關卡編號，然後可以看到關於該遊戲或關卡的預覽。"
 
-#: src/kgrselector.cpp:586
+#: src/kgrselector.cpp:589
 #, kde-format
 msgid "Help: Select Game & Level"
 msgstr "說明：選擇遊戲與關卡"

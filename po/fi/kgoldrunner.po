@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:44+0000\n"
+"POT-Creation-Date: 2024-01-17 00:36+0000\n"
 "PO-Revision-Date: 2020-07-29 13:47+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -7529,7 +7529,7 @@ msgstr "Tallenna muutokset"
 msgid "0 levels"
 msgstr "0 tasoa"
 
-#: src/kgrdialog.cpp:192 src/kgrselector.cpp:265
+#: src/kgrdialog.cpp:192 src/kgrselector.cpp:269
 #, kde-format
 msgid "Save New"
 msgstr "Tallenna nyt"
@@ -7561,7 +7561,7 @@ msgstr ""
 "Et voi luoda ja tallentaa tasoa, ellet ole tehnyt peliä, johon se "
 "tallennetaan. Valitse ”Luo peli”."
 
-#: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:262
+#: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:266
 #, kde-format
 msgid "Edit Level"
 msgstr "Muokkaa tasoa"
@@ -7653,7 +7653,7 @@ msgid "You must change the level or the game or both."
 msgstr "Muuta tasoa, peliä tai molempia."
 
 #: src/kgreditor.cpp:418 src/kgreditor.cpp:441 src/kgreditor.cpp:459
-#: src/kgrselector.cpp:271
+#: src/kgrselector.cpp:275
 #, kde-format
 msgid "Delete Level"
 msgstr "Poista taso"
@@ -7926,7 +7926,7 @@ msgstr ""
 msgid "Replay Any Level"
 msgstr "Pelaa mikä tahansa taso uudelleen"
 
-#: src/kgrgame.cpp:849 src/kgrgame.cpp:2053
+#: src/kgrgame.cpp:849 src/kgrgame.cpp:2055
 #, kde-format
 msgid ""
 "Sorry, you do not seem to have played and recorded the selected level before."
@@ -8029,7 +8029,7 @@ msgid ""
 msgstr "Et voi tallentaa peliäsi muokatessasi sitä. Yritä valikon kohtaa ”%1”."
 
 #: src/kgrgame.cpp:1493 src/kgrgame.cpp:1537 src/kgrgame.cpp:1652
-#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2019 src/kgrgameio.cpp:170
+#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2021 src/kgrgameio.cpp:169
 #, kde-format
 msgid "Cannot open file '%1' for read-only."
 msgstr "Tiedostoa '%1' ei voi lukea."
@@ -8153,64 +8153,64 @@ msgstr "Tulos"
 msgid "Date"
 msgstr "Päiväys"
 
-#: src/kgrgame.cpp:1887
+#: src/kgrgame.cpp:1888
 #, fuzzy, kde-format
 #| msgid "High Scores"
 msgctxt "@title:window"
 msgid "High Scores"
 msgstr "Ennätykset"
 
-#: src/kgrgame.cpp:2012 src/kgrgame.cpp:2018 src/kgrgame.cpp:2022
+#: src/kgrgame.cpp:2014 src/kgrgame.cpp:2020 src/kgrgame.cpp:2024
 #, kde-format
 msgid "Load Game Info"
 msgstr "Lataa pelitiedot"
 
-#: src/kgrgame.cpp:2013
+#: src/kgrgame.cpp:2015
 #, kde-format
 msgid "Cannot find game info file '%1'."
 msgstr "Ei löydä pelin info-tiedostoa '%1'."
 
-#: src/kgrgame.cpp:2023
+#: src/kgrgame.cpp:2025
 #, kde-format
 msgid "Reached end of file '%1' before finding end of game-data."
 msgstr "Tiedoston ”%1” loppu saavutettu löytämättä pelidatan loppua."
 
-#: src/kgrgame.cpp:2047 src/kgrgame.cpp:2052 src/kgrselector.cpp:259
+#: src/kgrgame.cpp:2049 src/kgrgame.cpp:2054 src/kgrselector.cpp:263
 #, kde-format
 msgid "Save A Solution"
 msgstr "Tallenna ratkaisu"
 
-#: src/kgrgame.cpp:2048
+#: src/kgrgame.cpp:2050
 #, kde-format
 msgid "Your solution to level %1 has been saved on file %2"
 msgstr "Ratkaisusi tasolle %1 on tallennettu tiedostoon %2"
 
-#: src/kgrgameio.cpp:164 src/kgrgameio.cpp:169 src/kgrgameio.cpp:173
+#: src/kgrgameio.cpp:163 src/kgrgameio.cpp:168 src/kgrgameio.cpp:172
 #, kde-format
 msgid "Read Level Data"
 msgstr "Lue tasodata"
 
-#: src/kgrgameio.cpp:165
+#: src/kgrgameio.cpp:164
 #, kde-format
 msgid "Cannot find file '%1'."
 msgstr "Tiedostoa ”%1” ei löydy."
 
-#: src/kgrgameio.cpp:174
+#: src/kgrgameio.cpp:173
 #, kde-format
 msgid "Reached end of file '%1' without finding level data."
 msgstr "Tiedoston ”%1” loppu saavutettu löytämättä tasodataa."
 
-#: src/kgrgameio.cpp:382 src/kgrgameio.cpp:389
+#: src/kgrgameio.cpp:381 src/kgrgameio.cpp:388
 #, kde-format
 msgid "Rename File"
 msgstr "Muuta tiedoston nimeä"
 
-#: src/kgrgameio.cpp:383
+#: src/kgrgameio.cpp:382
 #, kde-format
 msgid "Cannot delete previous version of file '%1'."
 msgstr "Tiedoston ”%1” edellistä versiota ei voida poistaa."
 
-#: src/kgrgameio.cpp:390
+#: src/kgrgameio.cpp:389
 #, kde-format
 msgid "Cannot rename file '%1' to '%2'."
 msgstr "Tiedoston ”%1” nimeksi ei voi muuttaa ”%2”."
@@ -8230,182 +8230,182 @@ msgstr "Elämiä: %1"
 msgid "Score: %1"
 msgstr "Pisteet: %1"
 
-#: src/kgrselector.cpp:69 src/kgrselector.cpp:75 src/kgrselector.cpp:95
-#: src/kgrselector.cpp:498
+#: src/kgrselector.cpp:72 src/kgrselector.cpp:78 src/kgrselector.cpp:98
+#: src/kgrselector.cpp:501
 #, kde-format
 msgid "Select Level"
 msgstr "Valitse taso"
 
-#: src/kgrselector.cpp:70
+#: src/kgrselector.cpp:73
 #, kde-format
 msgid "Sorry, you can only save or move into one of your own games."
 msgstr "Voit tallentaa tai siirtää vain omiin peleihin."
 
-#: src/kgrselector.cpp:76
+#: src/kgrselector.cpp:79
 #, kde-format
 msgid "Sorry, you can only delete a level from one of your own games."
 msgstr "Voit poistaa tason vain omista peleistäsi."
 
-#: src/kgrselector.cpp:81 src/kgrselector.cpp:277
+#: src/kgrselector.cpp:84 src/kgrselector.cpp:281
 #, kde-format
 msgid "Edit Game Info"
 msgstr "Muuta pelin tietoja"
 
-#: src/kgrselector.cpp:82
+#: src/kgrselector.cpp:85
 #, kde-format
 msgid "Sorry, you can only edit the game information on your own games."
 msgstr "Voit muokata vain omien pelien tietoja."
 
-#: src/kgrselector.cpp:96
+#: src/kgrselector.cpp:99
 #, kde-format
 msgid "There is no level %1 in \"%2\", so you cannot play or edit it."
 msgstr "Pelissä ”%2” ei ole tasoa %1, joten et voi pelata tai muokata sitä."
 
-#: src/kgrselector.cpp:118 src/kgrselector.cpp:173
+#: src/kgrselector.cpp:121 src/kgrselector.cpp:177
 #, fuzzy, kde-format
 #| msgid "Select Game"
 msgctxt "@title:window"
 msgid "Select Game"
 msgstr "Valitse peli"
 
-#: src/kgrselector.cpp:132
+#: src/kgrselector.cpp:135
 #, kde-format
 msgid "<html><b>Please select a game:</b></html>"
 msgstr "<html><b>Valitse peli:</b></html>"
 
-#: src/kgrselector.cpp:140
+#: src/kgrselector.cpp:143
 #, kde-format
 msgid "Name of Game"
 msgstr "Pelin nimi"
 
-#: src/kgrselector.cpp:141
+#: src/kgrselector.cpp:144
 #, kde-format
 msgid "Rules"
 msgstr "Säännöt"
 
-#: src/kgrselector.cpp:142
+#: src/kgrselector.cpp:145
 #, kde-format
 msgid "Levels"
 msgstr "Tasot"
 
-#: src/kgrselector.cpp:143
+#: src/kgrselector.cpp:146
 #, kde-format
 msgid "Skill"
 msgstr "Taitotaso"
 
-#: src/kgrselector.cpp:175
+#: src/kgrselector.cpp:179
 #, kde-format
 msgid "Level 1 of the selected game is:"
 msgstr "Valitun pelin taso 1 on:"
 
-#: src/kgrselector.cpp:179
+#: src/kgrselector.cpp:183
 #, fuzzy, kde-format
 #| msgid "Select Game/Level"
 msgctxt "@title:window"
 msgid "Select Game/Level"
 msgstr "Valitse peli tai taso"
 
-#: src/kgrselector.cpp:181
+#: src/kgrselector.cpp:185
 #, kde-format
 msgid "Please select a level:"
 msgstr "Valitse taso:"
 
-#: src/kgrselector.cpp:200
+#: src/kgrselector.cpp:204
 #, kde-format
 msgid "Level number:"
 msgstr "Tason numero:"
 
-#: src/kgrselector.cpp:206
+#: src/kgrselector.cpp:210
 #, fuzzy, kde-format
 #| msgid "Edit Level Name && Hint"
 msgid "Edit Level Name o&r Hint"
 msgstr "Muokkaa tason nimeä ja vihjettä"
 
-#: src/kgrselector.cpp:241
+#: src/kgrselector.cpp:245
 #, kde-format
 msgid "Start Game"
 msgstr "Aloita peli"
 
-#: src/kgrselector.cpp:250
+#: src/kgrselector.cpp:254
 #, kde-format
 msgid "Play Level"
 msgstr "Pelaa taso"
 
-#: src/kgrselector.cpp:253
+#: src/kgrselector.cpp:257
 #, kde-format
 msgid "Replay Level"
 msgstr "Pelaa taso uudelleen"
 
-#: src/kgrselector.cpp:256
+#: src/kgrselector.cpp:260
 #, kde-format
 msgid "Show Solution"
 msgstr "Näytä ratkaisu"
 
-#: src/kgrselector.cpp:268
+#: src/kgrselector.cpp:272
 #, kde-format
 msgid "Save Change"
 msgstr "Tallenna muutokset"
 
-#: src/kgrselector.cpp:274
+#: src/kgrselector.cpp:278
 #, kde-format
 msgid "Move To..."
 msgstr "Siirry…"
 
-#: src/kgrselector.cpp:355
+#: src/kgrselector.cpp:357
 #, kde-format
 msgctxt "Rules"
 msgid "KGoldrunner"
 msgstr "KGoldrunner"
 
-#: src/kgrselector.cpp:356
+#: src/kgrselector.cpp:358
 #, kde-format
 msgctxt "Rules"
 msgid "Traditional"
 msgstr "Perinteinen"
 
-#: src/kgrselector.cpp:359
+#: src/kgrselector.cpp:361
 #, kde-format
 msgctxt "Skill Level"
 msgid "Tutorial"
 msgstr "Ohjaustunti"
 
-#: src/kgrselector.cpp:361
+#: src/kgrselector.cpp:363
 #, kde-format
 msgctxt "Skill Level"
 msgid "Normal"
 msgstr "Tavallinen"
 
-#: src/kgrselector.cpp:362
+#: src/kgrselector.cpp:364
 #, kde-format
 msgctxt "Skill Level"
 msgid "Championship"
 msgstr "Mestaruus"
 
-#: src/kgrselector.cpp:465
+#: src/kgrselector.cpp:468
 #, kde-format
 msgid "1 level, uses KGoldrunner rules."
 msgid_plural "%1 levels, uses KGoldrunner rules."
 msgstr[0] "1 taso, käytössä KGoldrunnerin säännöt."
 msgstr[1] "%1 tasoa, käytössä KGoldrunnerin säännöt."
 
-#: src/kgrselector.cpp:468
+#: src/kgrselector.cpp:471
 #, kde-format
 msgid "1 level, uses Traditional rules."
 msgid_plural "%1 levels, uses Traditional rules."
 msgstr[0] "1 taso, käytössä perinteiset säännöt."
 msgstr[1] "%1 tasoa, käytössä perinteiset säännöt."
 
-#: src/kgrselector.cpp:473
+#: src/kgrselector.cpp:476
 #, kde-format
 msgid "Sorry, there is no further information about this game."
 msgstr "Tästä pelistä ei ole enempää tietoa."
 
-#: src/kgrselector.cpp:499
+#: src/kgrselector.cpp:502
 #, kde-format
 msgid "This level number is not valid. It can not be used."
 msgstr "Tason numero ei ole kelvollinen. Vaihda tason numero."
 
-#: src/kgrselector.cpp:520
+#: src/kgrselector.cpp:523
 #, kde-format
 msgid ""
 "The main button at the bottom echoes the menu action you selected. Click it "
@@ -8414,7 +8414,7 @@ msgstr ""
 "Pääpainike alhaalla suorittaa valitsemasi valikkotoiminnon. Napsauta sitä "
 "pelin ja tason valitsemisen jälkeen - tai napsauta \"Keskeytä\"."
 
-#: src/kgrselector.cpp:525
+#: src/kgrselector.cpp:528
 #, kde-format
 msgid ""
 "\n"
@@ -8435,7 +8435,7 @@ msgstr ""
 "napsauttamalla alta painiketta. Peli alkaa siirtäessäsi hiirtä tai "
 "painaessasi jotakin näppäintä."
 
-#: src/kgrselector.cpp:534
+#: src/kgrselector.cpp:537
 #, kde-format
 msgid ""
 "\n"
@@ -8454,7 +8454,7 @@ msgstr ""
 "painikkeella voit pyyhkiä. Useampia palasia voi maalata tai pyyhkiä "
 "vetämällä hiiren painike pohjassa."
 
-#: src/kgrselector.cpp:542
+#: src/kgrselector.cpp:545
 #, kde-format
 msgid ""
 "\n"
@@ -8471,7 +8471,7 @@ msgstr ""
 "loppuun, mutta voit myös valita tason numeron ja tallentaa tason pelisi "
 "keskivaiheille."
 
-#: src/kgrselector.cpp:549
+#: src/kgrselector.cpp:552
 #, kde-format
 msgid ""
 "\n"
@@ -8488,7 +8488,7 @@ msgstr ""
 "aina joksikin omaksi peliksesi. Jos tallennat tason sarjan keskivaiheille, "
 "muut tasota numeroidaan uudelleen automaattisesti."
 
-#: src/kgrselector.cpp:556
+#: src/kgrselector.cpp:559
 #, kde-format
 msgid ""
 "\n"
@@ -8501,7 +8501,7 @@ msgstr ""
 "Voit poistaa omien peliesi tasoja. Jos poistat tason sarjan keskivaiheilta, "
 "muut tasot numeroidaan uudelleen automaattisesti."
 
-#: src/kgrselector.cpp:561
+#: src/kgrselector.cpp:564
 #, kde-format
 msgid ""
 "\n"
@@ -8518,7 +8518,7 @@ msgstr ""
 "siirtää sen eri kohtaan tai vaikka eri peliin. Muut tasot numeroidaan "
 "automaattisesti uudelleen. Voit muuttaa vain omien peliesi tasoja."
 
-#: src/kgrselector.cpp:568
+#: src/kgrselector.cpp:571
 #, kde-format
 msgid ""
 "\n"
@@ -8531,7 +8531,7 @@ msgstr ""
 "Kun muokkaat pelin tietoja, sinun tarvitsee vain valita peli, sitten voit "
 "siirtyä ikkunaan, jossa voit muokata pelin yksityiskohtia."
 
-#: src/kgrselector.cpp:575
+#: src/kgrselector.cpp:578
 #, kde-format
 msgid ""
 "\n"
@@ -8554,7 +8554,7 @@ msgstr ""
 "Voit valita tason kirjoittamalla sen numeron tai valitsimia käyttäen.  Jos "
 "muutat peliä tai tasoa, pienoiskuva-alue näyttää valintasi esikatselun."
 
-#: src/kgrselector.cpp:586
+#: src/kgrselector.cpp:589
 #, kde-format
 msgid "Help: Select Game & Level"
 msgstr "Ohje: Valitse peli ja taso"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:44+0000\n"
+"POT-Creation-Date: 2024-01-17 00:36+0000\n"
 "PO-Revision-Date: 2007-10-28 14:33+0200\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@licei2.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -6665,7 +6665,7 @@ msgstr "Захаваць змены"
 msgid "0 levels"
 msgstr "0 узроўняў"
 
-#: src/kgrdialog.cpp:192 src/kgrselector.cpp:265
+#: src/kgrdialog.cpp:192 src/kgrselector.cpp:269
 #, fuzzy, kde-format
 msgid "Save New"
 msgstr "Захаваць новы ўзровень"
@@ -6696,7 +6696,7 @@ msgstr ""
 "Нельга стварыць або захаваць узровень, калі гульня не створаная. Вылучыце "
 "\"Стварыць гульню\"."
 
-#: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:262
+#: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:266
 #, fuzzy, kde-format
 msgid "Edit Level"
 msgstr "Змяніць узровень"
@@ -6785,7 +6785,7 @@ msgid "You must change the level or the game or both."
 msgstr "Зменіце ўзровень і/або гульню."
 
 #: src/kgreditor.cpp:418 src/kgreditor.cpp:441 src/kgreditor.cpp:459
-#: src/kgrselector.cpp:271
+#: src/kgrselector.cpp:275
 #, fuzzy, kde-format
 msgid "Delete Level"
 msgstr "Выдаліць узровень"
@@ -7042,7 +7042,7 @@ msgstr ""
 msgid "Replay Any Level"
 msgstr "Вылучыць узровень..."
 
-#: src/kgrgame.cpp:849 src/kgrgame.cpp:2053
+#: src/kgrgame.cpp:849 src/kgrgame.cpp:2055
 #, kde-format
 msgid ""
 "Sorry, you do not seem to have played and recorded the selected level before."
@@ -7142,7 +7142,7 @@ msgstr ""
 "Нельга захаваць мінанне гульні пры рэдагаванні. Вылучыце пункт меню %1."
 
 #: src/kgrgame.cpp:1493 src/kgrgame.cpp:1537 src/kgrgame.cpp:1652
-#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2019 src/kgrgameio.cpp:170
+#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2021 src/kgrgameio.cpp:169
 #, fuzzy, kde-format
 msgid "Cannot open file '%1' for read-only."
 msgstr "Не атрымліваецца адкрыць файл '%1' для чытання."
@@ -7262,63 +7262,63 @@ msgstr "   Рахунак: "
 msgid "Date"
 msgstr ""
 
-#: src/kgrgame.cpp:1887
+#: src/kgrgame.cpp:1888
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "High Scores"
 msgstr "Рэкорды"
 
-#: src/kgrgame.cpp:2012 src/kgrgame.cpp:2018 src/kgrgame.cpp:2022
+#: src/kgrgame.cpp:2014 src/kgrgame.cpp:2020 src/kgrgame.cpp:2024
 #, fuzzy, kde-format
 msgid "Load Game Info"
 msgstr "Загрузка дадзеных гульні"
 
-#: src/kgrgame.cpp:2013
+#: src/kgrgame.cpp:2015
 #, fuzzy, kde-format
 msgid "Cannot find game info file '%1'."
 msgstr "Не атрымалася знайсці файл дадзеных '%1'."
 
-#: src/kgrgame.cpp:2023
+#: src/kgrgame.cpp:2025
 #, kde-format
 msgid "Reached end of file '%1' before finding end of game-data."
 msgstr ""
 
-#: src/kgrgame.cpp:2047 src/kgrgame.cpp:2052 src/kgrselector.cpp:259
+#: src/kgrgame.cpp:2049 src/kgrgame.cpp:2054 src/kgrselector.cpp:263
 #, fuzzy, kde-format
 msgid "Save A Solution"
 msgstr "Паказаць пазіцыі"
 
-#: src/kgrgame.cpp:2048
+#: src/kgrgame.cpp:2050
 #, kde-format
 msgid "Your solution to level %1 has been saved on file %2"
 msgstr ""
 
-#: src/kgrgameio.cpp:164 src/kgrgameio.cpp:169 src/kgrgameio.cpp:173
+#: src/kgrgameio.cpp:163 src/kgrgameio.cpp:168 src/kgrgameio.cpp:172
 #, fuzzy, kde-format
 msgid "Read Level Data"
 msgstr "Загрузіць узровень"
 
-#: src/kgrgameio.cpp:165
+#: src/kgrgameio.cpp:164
 #, fuzzy, kde-format
 msgid "Cannot find file '%1'."
 msgstr "Не атрымалася знайсці файл дадзеных '%1'."
 
-#: src/kgrgameio.cpp:174
+#: src/kgrgameio.cpp:173
 #, kde-format
 msgid "Reached end of file '%1' without finding level data."
 msgstr ""
 
-#: src/kgrgameio.cpp:382 src/kgrgameio.cpp:389
+#: src/kgrgameio.cpp:381 src/kgrgameio.cpp:388
 #, kde-format
 msgid "Rename File"
 msgstr ""
 
-#: src/kgrgameio.cpp:383
+#: src/kgrgameio.cpp:382
 #, fuzzy, kde-format
 msgid "Cannot delete previous version of file '%1'."
 msgstr "Не атрымалася знайсці файл дадзеных '%1'."
 
-#: src/kgrgameio.cpp:390
+#: src/kgrgameio.cpp:389
 #, fuzzy, kde-format
 msgid "Cannot rename file '%1' to '%2'."
 msgstr "Не атрымалася пераназваць файл '%1' у '%2'."
@@ -7338,157 +7338,157 @@ msgstr "   Жыцці: "
 msgid "Score: %1"
 msgstr "   Рахунак: "
 
-#: src/kgrselector.cpp:69 src/kgrselector.cpp:75 src/kgrselector.cpp:95
-#: src/kgrselector.cpp:498
+#: src/kgrselector.cpp:72 src/kgrselector.cpp:78 src/kgrselector.cpp:98
+#: src/kgrselector.cpp:501
 #, fuzzy, kde-format
 msgid "Select Level"
 msgstr "Вылучыць узровень"
 
-#: src/kgrselector.cpp:70
+#: src/kgrselector.cpp:73
 #, fuzzy, kde-format
 msgid "Sorry, you can only save or move into one of your own games."
 msgstr "Вы можаце захоўваць узроўні толькі ў сваю гульню."
 
-#: src/kgrselector.cpp:76
+#: src/kgrselector.cpp:79
 #, fuzzy, kde-format
 msgid "Sorry, you can only delete a level from one of your own games."
 msgstr "Вы можаце выдаляць узроўні толькі з сваёй гульні."
 
-#: src/kgrselector.cpp:81 src/kgrselector.cpp:277
+#: src/kgrselector.cpp:84 src/kgrselector.cpp:281
 #, fuzzy, kde-format
 msgid "Edit Game Info"
 msgstr "Змяніць дадзеныя гульні"
 
-#: src/kgrselector.cpp:82
+#: src/kgrselector.cpp:85
 #, fuzzy, kde-format
 msgid "Sorry, you can only edit the game information on your own games."
 msgstr "Вы можаце змяняць дадзеныя толькі сваёй гульні."
 
-#: src/kgrselector.cpp:96
+#: src/kgrselector.cpp:99
 #, fuzzy, kde-format
 msgid "There is no level %1 in \"%2\", so you cannot play or edit it."
 msgstr ""
 "Узроўня %1 у гульне %2 не існуе, так што вы не можаце гуляць або змяняць яго."
 
-#: src/kgrselector.cpp:118 src/kgrselector.cpp:173
+#: src/kgrselector.cpp:121 src/kgrselector.cpp:177
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Game"
 msgstr "Вылучыць гульню"
 
-#: src/kgrselector.cpp:132
+#: src/kgrselector.cpp:135
 #, kde-format
 msgid "<html><b>Please select a game:</b></html>"
 msgstr ""
 
-#: src/kgrselector.cpp:140
+#: src/kgrselector.cpp:143
 #, fuzzy, kde-format
 msgid "Name of Game"
 msgstr "Назоў гульні:"
 
-#: src/kgrselector.cpp:141
+#: src/kgrselector.cpp:144
 #, kde-format
 msgid "Rules"
 msgstr ""
 
-#: src/kgrselector.cpp:142
+#: src/kgrselector.cpp:145
 #, fuzzy, kde-format
 msgid "Levels"
 msgstr "0 узроўняў"
 
-#: src/kgrselector.cpp:143
+#: src/kgrselector.cpp:146
 #, kde-format
 msgid "Skill"
 msgstr ""
 
-#: src/kgrselector.cpp:175
+#: src/kgrselector.cpp:179
 #, fuzzy, kde-format
 msgid "Level 1 of the selected game is:"
 msgstr "Першы ўзровень вылучанай гульні:"
 
-#: src/kgrselector.cpp:179
+#: src/kgrselector.cpp:183
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Game/Level"
 msgstr "Вылучыць гульню/узровень"
 
-#: src/kgrselector.cpp:181
+#: src/kgrselector.cpp:185
 #, fuzzy, kde-format
 msgid "Please select a level:"
 msgstr "Вылучыць узровень:"
 
-#: src/kgrselector.cpp:200
+#: src/kgrselector.cpp:204
 #, fuzzy, kde-format
 msgid "Level number:"
 msgstr "Нумар узроўня:"
 
-#: src/kgrselector.cpp:206
+#: src/kgrselector.cpp:210
 #, fuzzy, kde-format
 msgid "Edit Level Name o&r Hint"
 msgstr "Змяніць назоў узроўня і падказку"
 
-#: src/kgrselector.cpp:241
+#: src/kgrselector.cpp:245
 #, fuzzy, kde-format
 msgid "Start Game"
 msgstr "Пачаць гульню"
 
-#: src/kgrselector.cpp:250
+#: src/kgrselector.cpp:254
 #, fuzzy, kde-format
 msgid "Play Level"
 msgstr "Гуляць на ўзроўні"
 
-#: src/kgrselector.cpp:253
+#: src/kgrselector.cpp:257
 #, fuzzy, kde-format
 msgid "Replay Level"
 msgstr "Вылучыць узровень..."
 
-#: src/kgrselector.cpp:256
+#: src/kgrselector.cpp:260
 #, fuzzy, kde-format
 msgid "Show Solution"
 msgstr "Паказаць пазіцыі"
 
-#: src/kgrselector.cpp:268
+#: src/kgrselector.cpp:272
 #, fuzzy, kde-format
 msgid "Save Change"
 msgstr "Захаваць зменены ўзровень"
 
-#: src/kgrselector.cpp:274
+#: src/kgrselector.cpp:278
 #, fuzzy, kde-format
 msgid "Move To..."
 msgstr "Перамясціць у ..."
 
-#: src/kgrselector.cpp:355
+#: src/kgrselector.cpp:357
 #, fuzzy, kde-format
 #| msgid "KGoldrunner"
 msgctxt "Rules"
 msgid "KGoldrunner"
 msgstr "KGoldrunner"
 
-#: src/kgrselector.cpp:356
+#: src/kgrselector.cpp:358
 #, fuzzy, kde-format
 msgctxt "Rules"
 msgid "Traditional"
 msgstr "Традыцыйныя правілы"
 
-#: src/kgrselector.cpp:359
+#: src/kgrselector.cpp:361
 #, fuzzy, kde-format
 msgctxt "Skill Level"
 msgid "Tutorial"
 msgstr "Навучанне"
 
-#: src/kgrselector.cpp:361
+#: src/kgrselector.cpp:363
 #, fuzzy, kde-format
 msgctxt "Skill Level"
 msgid "Normal"
 msgstr "Нармалёвая хуткасць"
 
-#: src/kgrselector.cpp:362
+#: src/kgrselector.cpp:364
 #, fuzzy, kde-format
 msgctxt "Skill Level"
 msgid "Championship"
 msgstr "Чэмпіён"
 
-#: src/kgrselector.cpp:465
+#: src/kgrselector.cpp:468
 #, fuzzy, kde-format
 msgid "1 level, uses KGoldrunner rules."
 msgid_plural "%1 levels, uses KGoldrunner rules."
@@ -7496,7 +7496,7 @@ msgstr[0] " узроўняў, правілы KGoldrunner."
 msgstr[1] " узроўняў, правілы KGoldrunner."
 msgstr[2] " узроўняў, правілы KGoldrunner."
 
-#: src/kgrselector.cpp:468
+#: src/kgrselector.cpp:471
 #, fuzzy, kde-format
 msgid "1 level, uses Traditional rules."
 msgid_plural "%1 levels, uses Traditional rules."
@@ -7504,17 +7504,17 @@ msgstr[0] " узроўняў, традыцыйныя правілы."
 msgstr[1] " узроўняў, традыцыйныя правілы."
 msgstr[2] " узроўняў, традыцыйныя правілы."
 
-#: src/kgrselector.cpp:473
+#: src/kgrselector.cpp:476
 #, fuzzy, kde-format
 msgid "Sorry, there is no further information about this game."
 msgstr "Няма дадатковай інфармацыі па гэтай гульне."
 
-#: src/kgrselector.cpp:499
+#: src/kgrselector.cpp:502
 #, fuzzy, kde-format
 msgid "This level number is not valid. It can not be used."
 msgstr "Няслушны нумар узроўня."
 
-#: src/kgrselector.cpp:520
+#: src/kgrselector.cpp:523
 #, fuzzy, kde-format
 msgid ""
 "The main button at the bottom echoes the menu action you selected. Click it "
@@ -7523,7 +7523,7 @@ msgstr ""
 "Націсніце на кнопку ўнізе пасля выбару гульні і ўзроўня або націсніце "
 "\"Адмена\"."
 
-#: src/kgrselector.cpp:525
+#: src/kgrselector.cpp:528
 #, fuzzy, kde-format
 msgid ""
 "\n"
@@ -7543,7 +7543,7 @@ msgstr ""
 "Інакш проста вылучыце гульню (у спісе). Яна пачнецца па першым руху мышы або "
 "націску клавішы."
 
-#: src/kgrselector.cpp:534
+#: src/kgrselector.cpp:537
 #, fuzzy, kde-format
 msgid ""
 "\n"
@@ -7559,7 +7559,7 @@ msgstr ""
 "Вы можаце змяніць убудаваныя ўзроўні, але захаваць іх можна толькі ў гульне, "
 "якую вы стварылі."
 
-#: src/kgrselector.cpp:542
+#: src/kgrselector.cpp:545
 #, fuzzy, kde-format
 msgid ""
 "\n"
@@ -7575,7 +7575,7 @@ msgstr ""
 "будзе захаваць толькі ў створанай вамі гульні. нумар узроўня вызначае яго "
 "чарговасць у гульне."
 
-#: src/kgrselector.cpp:549
+#: src/kgrselector.cpp:552
 #, fuzzy, kde-format
 msgid ""
 "\n"
@@ -7591,7 +7591,7 @@ msgstr ""
 "захаваеце ўзровень у сярэдзіне спісу, узроўні, наступныя за ім, будуць "
 "аўтаматычна перанумараваныя."
 
-#: src/kgrselector.cpp:556
+#: src/kgrselector.cpp:559
 #, fuzzy, kde-format
 msgid ""
 "\n"
@@ -7605,7 +7605,7 @@ msgstr ""
 "з сярэдзіны спісу, узроўні, наступныя за ім, будуць аўтаматычна "
 "перанумараваныя."
 
-#: src/kgrselector.cpp:561
+#: src/kgrselector.cpp:564
 #, fuzzy, kde-format
 msgid ""
 "\n"
@@ -7621,7 +7621,7 @@ msgstr ""
 "потым \"Перамясціць узровень...\". Наступныя за ім узроўні будуць "
 "аўтаматычна перанумараваныя. Гэта можна рабіць толькі ў сваіх гульнях."
 
-#: src/kgrselector.cpp:568
+#: src/kgrselector.cpp:571
 #, fuzzy, kde-format
 msgid ""
 "\n"
@@ -7633,7 +7633,7 @@ msgstr ""
 "\n"
 "Каб змяніць дадзеныя гульні, вылучыце яе і перайдзіце ў адпаведны дыялог."
 
-#: src/kgrselector.cpp:575
+#: src/kgrselector.cpp:578
 #, fuzzy, kde-format
 msgid ""
 "\n"
@@ -7652,7 +7652,7 @@ msgstr ""
 "Вы можаце вылучыць узровень уводам яго нумара або з спісу. Звернеце ўвагу на "
 "магчымасць прадпрагляду ўзроўня."
 
-#: src/kgrselector.cpp:586
+#: src/kgrselector.cpp:589
 #, fuzzy, kde-format
 msgid "Help: Select Game & Level"
 msgstr "Даведка: выбар гульні і ўзроўня"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:44+0000\n"
+"POT-Creation-Date: 2024-01-17 00:36+0000\n"
 "PO-Revision-Date: 2023-12-31 15:29+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -7830,7 +7830,7 @@ msgstr "Gorde aldaketak"
 msgid "0 levels"
 msgstr "0 maila"
 
-#: src/kgrdialog.cpp:192 src/kgrselector.cpp:265
+#: src/kgrdialog.cpp:192 src/kgrselector.cpp:269
 #, kde-format
 msgid "Save New"
 msgstr "Gorde berria"
@@ -7863,7 +7863,7 @@ msgstr ""
 "Ezin duzu maila bat sortu eta gorde hau sartzeko jokorik sortu ez baduzu. "
 "Saiatu menuko \"Sortu menua\" elementuarekin."
 
-#: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:262
+#: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:266
 #, kde-format
 msgid "Edit Level"
 msgstr "Editatu maila"
@@ -7957,7 +7957,7 @@ msgid "You must change the level or the game or both."
 msgstr "Joko bat eta/edo maila bat aldatu behar dituzu."
 
 #: src/kgreditor.cpp:418 src/kgreditor.cpp:441 src/kgreditor.cpp:459
-#: src/kgrselector.cpp:271
+#: src/kgrselector.cpp:275
 #, kde-format
 msgid "Delete Level"
 msgstr "Ezabatu maila"
@@ -8233,7 +8233,7 @@ msgstr ""
 msgid "Replay Any Level"
 msgstr "Jokatu maila"
 
-#: src/kgrgame.cpp:849 src/kgrgame.cpp:2053
+#: src/kgrgame.cpp:849 src/kgrgame.cpp:2055
 #, kde-format
 msgid ""
 "Sorry, you do not seem to have played and recorded the selected level before."
@@ -8343,7 +8343,7 @@ msgstr ""
 "elementuarekin."
 
 #: src/kgrgame.cpp:1493 src/kgrgame.cpp:1537 src/kgrgame.cpp:1652
-#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2019 src/kgrgameio.cpp:170
+#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2021 src/kgrgameio.cpp:169
 #, kde-format
 msgid "Cannot open file '%1' for read-only."
 msgstr "Ezin da \"%1\" fitxategia irakurtzeko bakarrik ireki."
@@ -8470,68 +8470,68 @@ msgstr "Puntuazioa"
 msgid "Date"
 msgstr "Data"
 
-#: src/kgrgame.cpp:1887
+#: src/kgrgame.cpp:1888
 #, fuzzy, kde-format
 #| msgid "High Scores"
 msgctxt "@title:window"
 msgid "High Scores"
 msgstr "Puntuazio onenak"
 
-#: src/kgrgame.cpp:2012 src/kgrgame.cpp:2018 src/kgrgame.cpp:2022
+#: src/kgrgame.cpp:2014 src/kgrgame.cpp:2020 src/kgrgame.cpp:2024
 #, kde-format
 msgid "Load Game Info"
 msgstr "Kargatu jokoaren informazioa"
 
-#: src/kgrgame.cpp:2013
+#: src/kgrgame.cpp:2015
 #, kde-format
 msgid "Cannot find game info file '%1'."
 msgstr "Ezin da jokoaren \"%1\" informazio-fitxategia kargatu."
 
-#: src/kgrgame.cpp:2023
+#: src/kgrgame.cpp:2025
 #, kde-format
 msgid "Reached end of file '%1' before finding end of game-data."
 msgstr ""
 "'%1' fitxategiaren amaierara iritsi da jokoaren datuen amaiera aurkitu baino "
 "lehen."
 
-#: src/kgrgame.cpp:2047 src/kgrgame.cpp:2052 src/kgrselector.cpp:259
+#: src/kgrgame.cpp:2049 src/kgrgame.cpp:2054 src/kgrselector.cpp:263
 #, fuzzy, kde-format
 #| msgid "Show Positions"
 msgid "Save A Solution"
 msgstr "Erakutsi posizioak"
 
-#: src/kgrgame.cpp:2048
+#: src/kgrgame.cpp:2050
 #, kde-format
 msgid "Your solution to level %1 has been saved on file %2"
 msgstr ""
 
-#: src/kgrgameio.cpp:164 src/kgrgameio.cpp:169 src/kgrgameio.cpp:173
+#: src/kgrgameio.cpp:163 src/kgrgameio.cpp:168 src/kgrgameio.cpp:172
 #, kde-format
 msgid "Read Level Data"
 msgstr "Irakurri mailaren datuak"
 
-#: src/kgrgameio.cpp:165
+#: src/kgrgameio.cpp:164
 #, kde-format
 msgid "Cannot find file '%1'."
 msgstr "Ezin da '%1' fitxategia aurkitu."
 
-#: src/kgrgameio.cpp:174
+#: src/kgrgameio.cpp:173
 #, kde-format
 msgid "Reached end of file '%1' without finding level data."
 msgstr ""
 "'%1' fitxategiaren amaierara iritsi da baina ez da mailaren daturik aurkitu."
 
-#: src/kgrgameio.cpp:382 src/kgrgameio.cpp:389
+#: src/kgrgameio.cpp:381 src/kgrgameio.cpp:388
 #, kde-format
 msgid "Rename File"
 msgstr "Aldatu izena fitxategiari"
 
-#: src/kgrgameio.cpp:383
+#: src/kgrgameio.cpp:382
 #, kde-format
 msgid "Cannot delete previous version of file '%1'."
 msgstr "Ezin da '%1' fitxategiaren aurreko bertsioa ezabatu."
 
-#: src/kgrgameio.cpp:390
+#: src/kgrgameio.cpp:389
 #, kde-format
 msgid "Cannot rename file '%1' to '%2'."
 msgstr "Ezin da \"%1\" fitxategia \"%2\"-(e)ra berrizendatu."
@@ -8553,185 +8553,185 @@ msgstr "Bizitzak: "
 msgid "Score: %1"
 msgstr "Puntuazioa: "
 
-#: src/kgrselector.cpp:69 src/kgrselector.cpp:75 src/kgrselector.cpp:95
-#: src/kgrselector.cpp:498
+#: src/kgrselector.cpp:72 src/kgrselector.cpp:78 src/kgrselector.cpp:98
+#: src/kgrselector.cpp:501
 #, kde-format
 msgid "Select Level"
 msgstr "Hautatu maila"
 
-#: src/kgrselector.cpp:70
+#: src/kgrselector.cpp:73
 #, kde-format
 msgid "Sorry, you can only save or move into one of your own games."
 msgstr "Zure joko batera bakarrik gorde edo mugi dezakezu."
 
-#: src/kgrselector.cpp:76
+#: src/kgrselector.cpp:79
 #, kde-format
 msgid "Sorry, you can only delete a level from one of your own games."
 msgstr "Maila bat zure joko batetik bakarrik ezabat dezakezu."
 
-#: src/kgrselector.cpp:81 src/kgrselector.cpp:277
+#: src/kgrselector.cpp:84 src/kgrselector.cpp:281
 #, kde-format
 msgid "Edit Game Info"
 msgstr "Editatu jokoaren informazioa"
 
-#: src/kgrselector.cpp:82
+#: src/kgrselector.cpp:85
 #, kde-format
 msgid "Sorry, you can only edit the game information on your own games."
 msgstr "Zure joko bateko maila bat bakarrik edita dezakezu."
 
-#: src/kgrselector.cpp:96
+#: src/kgrselector.cpp:99
 #, fuzzy, kde-format
 #| msgid "There is no level %1 in %2, so you cannot play or edit it."
 msgid "There is no level %1 in \"%2\", so you cannot play or edit it."
 msgstr "Ez dago %1 mailarik %2-(e)n, eta beraz ezin duzu jokatu edo editatu."
 
-#: src/kgrselector.cpp:118 src/kgrselector.cpp:173
+#: src/kgrselector.cpp:121 src/kgrselector.cpp:177
 #, fuzzy, kde-format
 #| msgid "Select Game"
 msgctxt "@title:window"
 msgid "Select Game"
 msgstr "Hautatu jokoa"
 
-#: src/kgrselector.cpp:132
+#: src/kgrselector.cpp:135
 #, kde-format
 msgid "<html><b>Please select a game:</b></html>"
 msgstr "<html><b>Hautatu joko bat:</b></html>"
 
-#: src/kgrselector.cpp:140
+#: src/kgrselector.cpp:143
 #, kde-format
 msgid "Name of Game"
 msgstr "Jokoaren izena"
 
-#: src/kgrselector.cpp:141
+#: src/kgrselector.cpp:144
 #, kde-format
 msgid "Rules"
 msgstr "Arauak"
 
-#: src/kgrselector.cpp:142
+#: src/kgrselector.cpp:145
 #, kde-format
 msgid "Levels"
 msgstr "Mailak"
 
-#: src/kgrselector.cpp:143
+#: src/kgrselector.cpp:146
 #, kde-format
 msgid "Skill"
 msgstr "Trebetasuna"
 
-#: src/kgrselector.cpp:175
+#: src/kgrselector.cpp:179
 #, kde-format
 msgid "Level 1 of the selected game is:"
 msgstr "Hautatutako jokoaren 1. maila:"
 
-#: src/kgrselector.cpp:179
+#: src/kgrselector.cpp:183
 #, fuzzy, kde-format
 #| msgid "Select Game/Level"
 msgctxt "@title:window"
 msgid "Select Game/Level"
 msgstr "Hautatu jokoa/maila"
 
-#: src/kgrselector.cpp:181
+#: src/kgrselector.cpp:185
 #, kde-format
 msgid "Please select a level:"
 msgstr "Hautatu maila:"
 
-#: src/kgrselector.cpp:200
+#: src/kgrselector.cpp:204
 #, kde-format
 msgid "Level number:"
 msgstr "Mailaren zenbakia:"
 
-#: src/kgrselector.cpp:206
+#: src/kgrselector.cpp:210
 #, fuzzy, kde-format
 #| msgid "Edit Level Name && Hint"
 msgid "Edit Level Name o&r Hint"
 msgstr "Editatu mailaren izena eta argibidea"
 
-#: src/kgrselector.cpp:241
+#: src/kgrselector.cpp:245
 #, kde-format
 msgid "Start Game"
 msgstr "Hasi jokoa"
 
-#: src/kgrselector.cpp:250
+#: src/kgrselector.cpp:254
 #, kde-format
 msgid "Play Level"
 msgstr "Jokatu maila"
 
-#: src/kgrselector.cpp:253
+#: src/kgrselector.cpp:257
 #, fuzzy, kde-format
 #| msgid "Play Level"
 msgid "Replay Level"
 msgstr "Jokatu maila"
 
-#: src/kgrselector.cpp:256
+#: src/kgrselector.cpp:260
 #, fuzzy, kde-format
 #| msgid "Show Positions"
 msgid "Show Solution"
 msgstr "Erakutsi posizioak"
 
-#: src/kgrselector.cpp:268
+#: src/kgrselector.cpp:272
 #, kde-format
 msgid "Save Change"
 msgstr "Gorde aldaketa"
 
-#: src/kgrselector.cpp:274
+#: src/kgrselector.cpp:278
 #, kde-format
 msgid "Move To..."
 msgstr "Mugitu hona..."
 
-#: src/kgrselector.cpp:355
+#: src/kgrselector.cpp:357
 #, kde-format
 msgctxt "Rules"
 msgid "KGoldrunner"
 msgstr "KGoldrunner"
 
-#: src/kgrselector.cpp:356
+#: src/kgrselector.cpp:358
 #, kde-format
 msgctxt "Rules"
 msgid "Traditional"
 msgstr "Tradizionalak"
 
-#: src/kgrselector.cpp:359
+#: src/kgrselector.cpp:361
 #, kde-format
 msgctxt "Skill Level"
 msgid "Tutorial"
 msgstr "Tutoretza"
 
-#: src/kgrselector.cpp:361
+#: src/kgrselector.cpp:363
 #, kde-format
 msgctxt "Skill Level"
 msgid "Normal"
 msgstr "Normala"
 
-#: src/kgrselector.cpp:362
+#: src/kgrselector.cpp:364
 #, kde-format
 msgctxt "Skill Level"
 msgid "Championship"
 msgstr "Aditua"
 
-#: src/kgrselector.cpp:465
+#: src/kgrselector.cpp:468
 #, kde-format
 msgid "1 level, uses KGoldrunner rules."
 msgid_plural "%1 levels, uses KGoldrunner rules."
 msgstr[0] "Maila 1, KGoldrunner-en arauak darabilzki."
 msgstr[1] "%1 maila, KGoldrunner-en arauak darabilzkite."
 
-#: src/kgrselector.cpp:468
+#: src/kgrselector.cpp:471
 #, kde-format
 msgid "1 level, uses Traditional rules."
 msgid_plural "%1 levels, uses Traditional rules."
 msgstr[0] "Maila 1, arau tradizionalak darabilzki."
 msgstr[1] "%1 maila, arau tradizionalak darabilzkite."
 
-#: src/kgrselector.cpp:473
+#: src/kgrselector.cpp:476
 #, kde-format
 msgid "Sorry, there is no further information about this game."
 msgstr "Ez dago joko honen informazio gehiago."
 
-#: src/kgrselector.cpp:499
+#: src/kgrselector.cpp:502
 #, kde-format
 msgid "This level number is not valid. It can not be used."
 msgstr "Maila zenbaki hau ez da baliozkoa. Ezin da erabili."
 
-#: src/kgrselector.cpp:520
+#: src/kgrselector.cpp:523
 #, kde-format
 msgid ""
 "The main button at the bottom echoes the menu action you selected. Click it "
@@ -8740,7 +8740,7 @@ msgstr ""
 "Botoi nagusiak hautatutako menuko ekintza isladatuko du. Klikatu jokoa eta "
 "maila hautatu ondoren edo erabili \"Utzi\"."
 
-#: src/kgrselector.cpp:525
+#: src/kgrselector.cpp:528
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -8772,7 +8772,7 @@ msgstr ""
 "hasteko, klikatu beheko botoi nagusian. Jokoa sagua mugitu edo tekla bat "
 "sakatzen duzunean hasiko da."
 
-#: src/kgrselector.cpp:534
+#: src/kgrselector.cpp:537
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -8797,7 +8797,7 @@ msgstr ""
 "editorearen tresna-barrak paleta bezala. Erabili \"Hutsunea\" botoia "
 "ezabatzeko."
 
-#: src/kgrselector.cpp:542
+#: src/kgrselector.cpp:545
 #, kde-format
 msgid ""
 "\n"
@@ -8814,7 +8814,7 @@ msgstr ""
 "berria zure jokoaren amaieran kokatuko da, baina maila zenbakia hautatu eta "
 "zure jokoaren erdian sar dezakezu."
 
-#: src/kgrselector.cpp:549
+#: src/kgrselector.cpp:552
 #, kde-format
 msgid ""
 "\n"
@@ -8832,7 +8832,7 @@ msgstr ""
 "baten erdian gordetzen baduzu, beste mailak automatikoki berriro zenbatuko "
 "dira."
 
-#: src/kgrselector.cpp:556
+#: src/kgrselector.cpp:559
 #, kde-format
 msgid ""
 "\n"
@@ -8845,7 +8845,7 @@ msgstr ""
 "Zure jokoetako mailak bakarrik ezaba ditzakezu. Segida baten erdiko maila "
 "bat ezabatzen baduzu, beste mailak automatikoki berriro zenbatuko dira."
 
-#: src/kgrselector.cpp:561
+#: src/kgrselector.cpp:564
 #, kde-format
 msgid ""
 "\n"
@@ -8863,7 +8863,7 @@ msgstr ""
 "automatikoki zenbatuko dira. Mailak zure jokoen barruan bakarrik mugi "
 "ditzakezu."
 
-#: src/kgrselector.cpp:568
+#: src/kgrselector.cpp:571
 #, kde-format
 msgid ""
 "\n"
@@ -8876,7 +8876,7 @@ msgstr ""
 "Joko baten informazioa editatzeko, joko bat hautatu, eta ondoren jokoaren "
 "xehetasunak editatzeko elkarrizketa-koadro batera jo dezakezu."
 
-#: src/kgrselector.cpp:575
+#: src/kgrselector.cpp:578
 #, kde-format
 msgid ""
 "\n"
@@ -8901,7 +8901,7 @@ msgstr ""
 "barra erabil dezakezu. Jokoa edo maila aldatzen duzun heinean, koadro-txiki "
 "azalerak zure hautapenaren aurreikuspegi bat erakusten du."
 
-#: src/kgrselector.cpp:586
+#: src/kgrselector.cpp:589
 #, kde-format
 msgid "Help: Select Game & Level"
 msgstr "Laguntza: Hautatu jokoa eta maila"

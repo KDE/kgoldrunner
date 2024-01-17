@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:44+0000\n"
+"POT-Creation-Date: 2024-01-17 00:36+0000\n"
 "PO-Revision-Date: 2012-06-29 22:03+0300\n"
 "Last-Translator: Einars Sprugis <einars8@gmail.com>\n"
 "Language-Team: Latvian <locale@laka.lv>\n"
@@ -8066,7 +8066,7 @@ msgstr "Saglabāt izmaiņas"
 msgid "0 levels"
 msgstr "0 līmeņu"
 
-#: src/kgrdialog.cpp:192 src/kgrselector.cpp:265
+#: src/kgrdialog.cpp:192 src/kgrselector.cpp:269
 #, kde-format
 msgid "Save New"
 msgstr "Saglabāt jaunu"
@@ -8099,7 +8099,7 @@ msgstr ""
 "Tu nevari izveidot un saglabāt līmeni līdz pats neesi izveidojis spēli, kur "
 "to saglabāt. Pamēģini izvēlnes elementu \"Izveidot spēli\"."
 
-#: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:262
+#: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:266
 #, kde-format
 msgid "Edit Level"
 msgstr "Rediģēt līmeni"
@@ -8194,7 +8194,7 @@ msgid "You must change the level or the game or both."
 msgstr "Tev jāizmaina līmenis vai spēle, vai arī abi."
 
 #: src/kgreditor.cpp:418 src/kgreditor.cpp:441 src/kgreditor.cpp:459
-#: src/kgrselector.cpp:271
+#: src/kgrselector.cpp:275
 #, kde-format
 msgid "Delete Level"
 msgstr "Dzēst līmeni"
@@ -8472,7 +8472,7 @@ msgstr ""
 msgid "Replay Any Level"
 msgstr "Atkārtot jebkuru līmeni"
 
-#: src/kgrgame.cpp:849 src/kgrgame.cpp:2053
+#: src/kgrgame.cpp:849 src/kgrgame.cpp:2055
 #, kde-format
 msgid ""
 "Sorry, you do not seem to have played and recorded the selected level before."
@@ -8579,7 +8579,7 @@ msgstr ""
 "izvēlnes ierakstu \"%1\"."
 
 #: src/kgrgame.cpp:1493 src/kgrgame.cpp:1537 src/kgrgame.cpp:1652
-#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2019 src/kgrgameio.cpp:170
+#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2021 src/kgrgameio.cpp:169
 #, kde-format
 msgid "Cannot open file '%1' for read-only."
 msgstr "Neizdevās atvērt failu '%1' 'tikai lasīt' režīmā."
@@ -8708,65 +8708,65 @@ msgstr "Punkti"
 msgid "Date"
 msgstr "Datums"
 
-#: src/kgrgame.cpp:1887
+#: src/kgrgame.cpp:1888
 #, fuzzy, kde-format
 #| msgid "High Scores"
 msgctxt "@title:window"
 msgid "High Scores"
 msgstr "Labākie rezultāti"
 
-#: src/kgrgame.cpp:2012 src/kgrgame.cpp:2018 src/kgrgame.cpp:2022
+#: src/kgrgame.cpp:2014 src/kgrgame.cpp:2020 src/kgrgame.cpp:2024
 #, kde-format
 msgid "Load Game Info"
 msgstr "Ielādēt spēles info"
 
-#: src/kgrgame.cpp:2013
+#: src/kgrgame.cpp:2015
 #, kde-format
 msgid "Cannot find game info file '%1'."
 msgstr "Neizdevās atrast spēles info failu '%1'."
 
-#: src/kgrgame.cpp:2023
+#: src/kgrgame.cpp:2025
 #, kde-format
 msgid "Reached end of file '%1' before finding end of game-data."
 msgstr "Neatrodot spēles datu beigas, sasniegtas faila '%1' beigas."
 
-#: src/kgrgame.cpp:2047 src/kgrgame.cpp:2052 src/kgrselector.cpp:259
+#: src/kgrgame.cpp:2049 src/kgrgame.cpp:2054 src/kgrselector.cpp:263
 #, fuzzy, kde-format
 #| msgid "Show A Solution"
 msgid "Save A Solution"
 msgstr "Parādīt atrisinājumu"
 
-#: src/kgrgame.cpp:2048
+#: src/kgrgame.cpp:2050
 #, kde-format
 msgid "Your solution to level %1 has been saved on file %2"
 msgstr ""
 
-#: src/kgrgameio.cpp:164 src/kgrgameio.cpp:169 src/kgrgameio.cpp:173
+#: src/kgrgameio.cpp:163 src/kgrgameio.cpp:168 src/kgrgameio.cpp:172
 #, kde-format
 msgid "Read Level Data"
 msgstr "Lasīt līmeņa datus"
 
-#: src/kgrgameio.cpp:165
+#: src/kgrgameio.cpp:164
 #, kde-format
 msgid "Cannot find file '%1'."
 msgstr "Neizdevās atrast failu '%1'."
 
-#: src/kgrgameio.cpp:174
+#: src/kgrgameio.cpp:173
 #, kde-format
 msgid "Reached end of file '%1' without finding level data."
 msgstr "Neatrodot līmeņa datus, sasniegtas faila '%1' beigas."
 
-#: src/kgrgameio.cpp:382 src/kgrgameio.cpp:389
+#: src/kgrgameio.cpp:381 src/kgrgameio.cpp:388
 #, kde-format
 msgid "Rename File"
 msgstr "Pārdēvēt failu"
 
-#: src/kgrgameio.cpp:383
+#: src/kgrgameio.cpp:382
 #, kde-format
 msgid "Cannot delete previous version of file '%1'."
 msgstr "Neizdevās izdzēst faila '%1' iepriekšējo versiju."
 
-#: src/kgrgameio.cpp:390
+#: src/kgrgameio.cpp:389
 #, kde-format
 msgid "Cannot rename file '%1' to '%2'."
 msgstr "Neizdevās pārdēvēt failu no '%1' uz '%2'."
@@ -8788,158 +8788,158 @@ msgstr "Dzīvības: "
 msgid "Score: %1"
 msgstr "Punkti: "
 
-#: src/kgrselector.cpp:69 src/kgrselector.cpp:75 src/kgrselector.cpp:95
-#: src/kgrselector.cpp:498
+#: src/kgrselector.cpp:72 src/kgrselector.cpp:78 src/kgrselector.cpp:98
+#: src/kgrselector.cpp:501
 #, kde-format
 msgid "Select Level"
 msgstr "Izvēlies līmeni"
 
-#: src/kgrselector.cpp:70
+#: src/kgrselector.cpp:73
 #, kde-format
 msgid "Sorry, you can only save or move into one of your own games."
 msgstr "Atvaino, tu vari saglabāt vai ievietot tikai kādā no savām spēlēm."
 
-#: src/kgrselector.cpp:76
+#: src/kgrselector.cpp:79
 #, kde-format
 msgid "Sorry, you can only delete a level from one of your own games."
 msgstr "Atvaino, tu vari dzēst līmeni tikai no kādas no savām spēlēm."
 
-#: src/kgrselector.cpp:81 src/kgrselector.cpp:277
+#: src/kgrselector.cpp:84 src/kgrselector.cpp:281
 #, kde-format
 msgid "Edit Game Info"
 msgstr "Rediģēt informāciju par spēli"
 
-#: src/kgrselector.cpp:82
+#: src/kgrselector.cpp:85
 #, kde-format
 msgid "Sorry, you can only edit the game information on your own games."
 msgstr "Atvaino, tu vari rediģēt tikai savu spēļu informāciju."
 
-#: src/kgrselector.cpp:96
+#: src/kgrselector.cpp:99
 #, kde-format
 msgid "There is no level %1 in \"%2\", so you cannot play or edit it."
 msgstr "\"%2\" nesatur %1. līmeni, tādējādi tu to nevari spēlēt vai rediģēt."
 
-#: src/kgrselector.cpp:118 src/kgrselector.cpp:173
+#: src/kgrselector.cpp:121 src/kgrselector.cpp:177
 #, fuzzy, kde-format
 #| msgid "Select Game"
 msgctxt "@title:window"
 msgid "Select Game"
 msgstr "Izvēlies spēli"
 
-#: src/kgrselector.cpp:132
+#: src/kgrselector.cpp:135
 #, kde-format
 msgid "<html><b>Please select a game:</b></html>"
 msgstr "<html><b>Lūdzu, izvēlies spēli:</b></html>"
 
-#: src/kgrselector.cpp:140
+#: src/kgrselector.cpp:143
 #, kde-format
 msgid "Name of Game"
 msgstr "Spēles nosaukums"
 
-#: src/kgrselector.cpp:141
+#: src/kgrselector.cpp:144
 #, kde-format
 msgid "Rules"
 msgstr "Noteikumi"
 
-#: src/kgrselector.cpp:142
+#: src/kgrselector.cpp:145
 #, kde-format
 msgid "Levels"
 msgstr "Līmeņi"
 
-#: src/kgrselector.cpp:143
+#: src/kgrselector.cpp:146
 #, kde-format
 msgid "Skill"
 msgstr "Prasmju līmenis"
 
-#: src/kgrselector.cpp:175
+#: src/kgrselector.cpp:179
 #, kde-format
 msgid "Level 1 of the selected game is:"
 msgstr "Izvēlētās spēles 1. līmenis ir:"
 
-#: src/kgrselector.cpp:179
+#: src/kgrselector.cpp:183
 #, fuzzy, kde-format
 #| msgid "Select Game/Level"
 msgctxt "@title:window"
 msgid "Select Game/Level"
 msgstr "Izvēlies spēli/līmeni"
 
-#: src/kgrselector.cpp:181
+#: src/kgrselector.cpp:185
 #, kde-format
 msgid "Please select a level:"
 msgstr "Lūdzu, izvēlies līmeni:"
 
-#: src/kgrselector.cpp:200
+#: src/kgrselector.cpp:204
 #, kde-format
 msgid "Level number:"
 msgstr "Līmeņa numurs:"
 
-#: src/kgrselector.cpp:206
+#: src/kgrselector.cpp:210
 #, fuzzy, kde-format
 #| msgid "Edit Level Name && Hint"
 msgid "Edit Level Name o&r Hint"
 msgstr "Rediģēt līmeņa nosaukumu un ieteikumu"
 
-#: src/kgrselector.cpp:241
+#: src/kgrselector.cpp:245
 #, kde-format
 msgid "Start Game"
 msgstr "Sākt spēli"
 
-#: src/kgrselector.cpp:250
+#: src/kgrselector.cpp:254
 #, kde-format
 msgid "Play Level"
 msgstr "Spēlēt līmeni"
 
-#: src/kgrselector.cpp:253
+#: src/kgrselector.cpp:257
 #, kde-format
 msgid "Replay Level"
 msgstr "Atkārtot līmeni"
 
-#: src/kgrselector.cpp:256
+#: src/kgrselector.cpp:260
 #, kde-format
 msgid "Show Solution"
 msgstr "Parādīt atrisinājumu"
 
-#: src/kgrselector.cpp:268
+#: src/kgrselector.cpp:272
 #, kde-format
 msgid "Save Change"
 msgstr "Saglabāt izmaiņas"
 
-#: src/kgrselector.cpp:274
+#: src/kgrselector.cpp:278
 #, kde-format
 msgid "Move To..."
 msgstr "Pārvietot uz..."
 
-#: src/kgrselector.cpp:355
+#: src/kgrselector.cpp:357
 #, kde-format
 msgctxt "Rules"
 msgid "KGoldrunner"
 msgstr "KGoldrunner"
 
-#: src/kgrselector.cpp:356
+#: src/kgrselector.cpp:358
 #, kde-format
 msgctxt "Rules"
 msgid "Traditional"
 msgstr "Tradicionālie"
 
-#: src/kgrselector.cpp:359
+#: src/kgrselector.cpp:361
 #, kde-format
 msgctxt "Skill Level"
 msgid "Tutorial"
 msgstr "Pamācība"
 
-#: src/kgrselector.cpp:361
+#: src/kgrselector.cpp:363
 #, kde-format
 msgctxt "Skill Level"
 msgid "Normal"
 msgstr "Normāls"
 
-#: src/kgrselector.cpp:362
+#: src/kgrselector.cpp:364
 #, kde-format
 msgctxt "Skill Level"
 msgid "Championship"
 msgstr "Meistarsacīkstes"
 
-#: src/kgrselector.cpp:465
+#: src/kgrselector.cpp:468
 #, kde-format
 msgid "1 level, uses KGoldrunner rules."
 msgid_plural "%1 levels, uses KGoldrunner rules."
@@ -8947,7 +8947,7 @@ msgstr[0] "%1 līmenis, izmanto KGoldrunner noteikumus."
 msgstr[1] "%1 līmeņi, izmanto KGoldrunner noteikumus."
 msgstr[2] "%1 līmeņu, izmanto KGoldrunner noteikumus."
 
-#: src/kgrselector.cpp:468
+#: src/kgrselector.cpp:471
 #, kde-format
 msgid "1 level, uses Traditional rules."
 msgid_plural "%1 levels, uses Traditional rules."
@@ -8955,17 +8955,17 @@ msgstr[0] "%1 līmenis, izmanto tradicionālos noteikumus."
 msgstr[1] "%1 līmeņi, izmanto tradicionālos noteikumus."
 msgstr[2] "%1 līmeņu, izmanto tradicionālos noteikumus."
 
-#: src/kgrselector.cpp:473
+#: src/kgrselector.cpp:476
 #, kde-format
 msgid "Sorry, there is no further information about this game."
 msgstr "Atvaino, sīkāka informācija par šo spēli nav pieejama."
 
-#: src/kgrselector.cpp:499
+#: src/kgrselector.cpp:502
 #, kde-format
 msgid "This level number is not valid. It can not be used."
 msgstr "Līmeņa numurs nav derīgs. Tas nevar tikt izmantots."
 
-#: src/kgrselector.cpp:520
+#: src/kgrselector.cpp:523
 #, kde-format
 msgid ""
 "The main button at the bottom echoes the menu action you selected. Click it "
@@ -8975,7 +8975,7 @@ msgstr ""
 "Noklikšķini uz tās pēc tam, kad esi izvēlējies spēli un līmeni, vai arī "
 "izmanto 'Atcelt'."
 
-#: src/kgrselector.cpp:525
+#: src/kgrselector.cpp:528
 #, kde-format
 msgid ""
 "\n"
@@ -8996,7 +8996,7 @@ msgstr ""
 "lai sāktu no līmeņa 001, noklikšķini uz galvenās pogas apakšā. Spēle sākas, "
 "kad pakustini peli vai nospied tastatūras taustiņu."
 
-#: src/kgrselector.cpp:534
+#: src/kgrselector.cpp:537
 #, kde-format
 msgid ""
 "\n"
@@ -9015,7 +9015,7 @@ msgstr ""
 "dzēšanai. Pārvietojot peli ar nospiestu tās pogu, vari aizkrāsot vai nodzēst "
 "vairākus kvadrātus."
 
-#: src/kgrselector.cpp:542
+#: src/kgrselector.cpp:545
 #, kde-format
 msgid ""
 "\n"
@@ -9032,7 +9032,7 @@ msgstr ""
 "jaunais līmenis tiks saglabāts tavas spēles beigās, bet vari arī izvēlēties "
 "līmeņa numuru un saglabāt līmeni spēles vidū."
 
-#: src/kgrselector.cpp:549
+#: src/kgrselector.cpp:552
 #, kde-format
 msgid ""
 "\n"
@@ -9049,7 +9049,7 @@ msgstr ""
 "\", bet tev vienmēr ir jāsaglabā kādā no savām spēlēm. Ja līmenis tiek "
 "saglabāts sērijas vidū, pārējie līmeņi tiek automātiski pārnumurēti."
 
-#: src/kgrselector.cpp:556
+#: src/kgrselector.cpp:559
 #, kde-format
 msgid ""
 "\n"
@@ -9062,7 +9062,7 @@ msgstr ""
 "Izdzēst līmeņus vari tikai no kādas no savām spēlēm. Ja līmenis tiek "
 "izdzēsts no sērijas vidus, pārējie līmeņi tiek automātiski pārnumurēti."
 
-#: src/kgrselector.cpp:561
+#: src/kgrselector.cpp:564
 #, kde-format
 msgid ""
 "\n"
@@ -9080,7 +9080,7 @@ msgstr ""
 "automātiski pārnumurēti pēc vajadzības. Pārvietot līmeņus vari tikai savās "
 "spēlēs."
 
-#: src/kgrselector.cpp:568
+#: src/kgrselector.cpp:571
 #, kde-format
 msgid ""
 "\n"
@@ -9093,7 +9093,7 @@ msgstr ""
 "Labojot informāciju par spēli, tev jāizvēlas tikai spēle, un tad vari pāriet "
 "uz dialoglogu, kur rediģēt spēles detaļas."
 
-#: src/kgrselector.cpp:575
+#: src/kgrselector.cpp:578
 #, kde-format
 msgid ""
 "\n"
@@ -9118,7 +9118,7 @@ msgstr ""
 "ritjoslu. Izmainot spēli vai līmeni, sīktēla apgabalā tiks parādīts tavas "
 "izvēles priekšskatījums."
 
-#: src/kgrselector.cpp:586
+#: src/kgrselector.cpp:589
 #, kde-format
 msgid "Help: Select Game & Level"
 msgstr "Palīdzība: izvēlies spēli un līmeni"

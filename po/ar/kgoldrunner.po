@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:44+0000\n"
+"POT-Creation-Date: 2024-01-17 00:36+0000\n"
 "PO-Revision-Date: 2013-08-13 19:08+0300\n"
 "Last-Translator: Safa Alfulaij <safaalfulaij@hotmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -6799,7 +6799,7 @@ msgstr "احفظ التغييرات"
 msgid "0 levels"
 msgstr "مستوى"
 
-#: src/kgrdialog.cpp:192 src/kgrselector.cpp:265
+#: src/kgrdialog.cpp:192 src/kgrselector.cpp:269
 #, kde-format
 msgid "Save New"
 msgstr "احفظ جديد"
@@ -6829,7 +6829,7 @@ msgstr ""
 "أنت إ_نشئ و حفظ a مستوى حتّى a لعبة إلى إبقاء الإيطالية حاول قائمة عنصر إنشاء "
 "لعبة."
 
-#: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:262
+#: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:266
 #, kde-format
 msgid "Edit Level"
 msgstr "حرر المستوى"
@@ -6916,7 +6916,7 @@ msgid "You must change the level or the game or both."
 msgstr "أنت تغيير مستوى أو لعبة أو."
 
 #: src/kgreditor.cpp:418 src/kgreditor.cpp:441 src/kgreditor.cpp:459
-#: src/kgrselector.cpp:271
+#: src/kgrselector.cpp:275
 #, kde-format
 msgid "Delete Level"
 msgstr "احذف المستوى"
@@ -7168,7 +7168,7 @@ msgstr ""
 msgid "Replay Any Level"
 msgstr "العب المستوى"
 
-#: src/kgrgame.cpp:849 src/kgrgame.cpp:2053
+#: src/kgrgame.cpp:849 src/kgrgame.cpp:2055
 #, kde-format
 msgid ""
 "Sorry, you do not seem to have played and recorded the selected level before."
@@ -7267,7 +7267,7 @@ msgid ""
 msgstr "عذراً حفظ لعبة تشغيل بينما رجاء قائمة عنصر."
 
 #: src/kgrgame.cpp:1493 src/kgrgame.cpp:1537 src/kgrgame.cpp:1652
-#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2019 src/kgrgameio.cpp:170
+#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2021 src/kgrgameio.cpp:169
 #, fuzzy, kde-format
 msgid "Cannot open file '%1' for read-only."
 msgstr "لا يستطيع فتح ملفّ لـ قراءة."
@@ -7387,64 +7387,64 @@ msgstr "النتيجة"
 msgid "Date"
 msgstr "التاريخ"
 
-#: src/kgrgame.cpp:1887
+#: src/kgrgame.cpp:1888
 #, fuzzy, kde-format
 #| msgid "High Scores"
 msgctxt "@title:window"
 msgid "High Scores"
 msgstr "أعلى نقاط"
 
-#: src/kgrgame.cpp:2012 src/kgrgame.cpp:2018 src/kgrgame.cpp:2022
+#: src/kgrgame.cpp:2014 src/kgrgame.cpp:2020 src/kgrgame.cpp:2024
 #, fuzzy, kde-format
 msgid "Load Game Info"
 msgstr "تحميل لعبة معلومات"
 
-#: src/kgrgame.cpp:2013
+#: src/kgrgame.cpp:2015
 #, fuzzy, kde-format
 msgid "Cannot find game info file '%1'."
 msgstr "لا يستطيع ابحث لعبة معلومات ملفّ."
 
-#: src/kgrgame.cpp:2023
+#: src/kgrgame.cpp:2025
 #, fuzzy, kde-format
 msgid "Reached end of file '%1' before finding end of game-data."
 msgstr "واصل end من ملفّ قبل end من لعبة البيانات."
 
-#: src/kgrgame.cpp:2047 src/kgrgame.cpp:2052 src/kgrselector.cpp:259
+#: src/kgrgame.cpp:2049 src/kgrgame.cpp:2054 src/kgrselector.cpp:263
 #, fuzzy, kde-format
 msgid "Save A Solution"
 msgstr "اعرض المواقع"
 
-#: src/kgrgame.cpp:2048
+#: src/kgrgame.cpp:2050
 #, kde-format
 msgid "Your solution to level %1 has been saved on file %2"
 msgstr ""
 
-#: src/kgrgameio.cpp:164 src/kgrgameio.cpp:169 src/kgrgameio.cpp:173
+#: src/kgrgameio.cpp:163 src/kgrgameio.cpp:168 src/kgrgameio.cpp:172
 #, fuzzy, kde-format
 msgid "Read Level Data"
 msgstr "اقرأ المستوى البيانات"
 
-#: src/kgrgameio.cpp:165
+#: src/kgrgameio.cpp:164
 #, fuzzy, kde-format
 msgid "Cannot find file '%1'."
 msgstr "لا يستطيع ابحث ملفّ."
 
-#: src/kgrgameio.cpp:174
+#: src/kgrgameio.cpp:173
 #, fuzzy, kde-format
 msgid "Reached end of file '%1' without finding level data."
 msgstr "واصل end من ملفّ مستوى البيانات."
 
-#: src/kgrgameio.cpp:382 src/kgrgameio.cpp:389
+#: src/kgrgameio.cpp:381 src/kgrgameio.cpp:388
 #, fuzzy, kde-format
 msgid "Rename File"
 msgstr "إعادة تسمية الملف"
 
-#: src/kgrgameio.cpp:383
+#: src/kgrgameio.cpp:382
 #, fuzzy, kde-format
 msgid "Cannot delete previous version of file '%1'."
 msgstr "لا يستطيع حذف السابق النسخة من ملفّ."
 
-#: src/kgrgameio.cpp:390
+#: src/kgrgameio.cpp:389
 #, fuzzy, kde-format
 msgid "Cannot rename file '%1' to '%2'."
 msgstr "لا يستطيع اعادة تسمية  ملفّ إلى."
@@ -7464,158 +7464,158 @@ msgstr "الحياة "
 msgid "Score: %1"
 msgstr "النتيجة "
 
-#: src/kgrselector.cpp:69 src/kgrselector.cpp:75 src/kgrselector.cpp:95
-#: src/kgrselector.cpp:498
+#: src/kgrselector.cpp:72 src/kgrselector.cpp:78 src/kgrselector.cpp:98
+#: src/kgrselector.cpp:501
 #, fuzzy, kde-format
 msgid "Select Level"
 msgstr "انتقِ المستوى"
 
-#: src/kgrselector.cpp:70
+#: src/kgrselector.cpp:73
 #, fuzzy, kde-format
 msgid "Sorry, you can only save or move into one of your own games."
 msgstr "عذراً حفظ أو انقل من."
 
-#: src/kgrselector.cpp:76
+#: src/kgrselector.cpp:79
 #, fuzzy, kde-format
 msgid "Sorry, you can only delete a level from one of your own games."
 msgstr "عذراً حذف a مستوى من من."
 
-#: src/kgrselector.cpp:81 src/kgrselector.cpp:277
+#: src/kgrselector.cpp:84 src/kgrselector.cpp:281
 #, kde-format
 msgid "Edit Game Info"
 msgstr "حرر معلومات اللعبة"
 
-#: src/kgrselector.cpp:82
+#: src/kgrselector.cpp:85
 #, fuzzy, kde-format
 msgid "Sorry, you can only edit the game information on your own games."
 msgstr "عذراً حرّر لعبة معلومات يعمل."
 
-#: src/kgrselector.cpp:96
+#: src/kgrselector.cpp:99
 #, fuzzy, kde-format
 msgid "There is no level %1 in \"%2\", so you cannot play or edit it."
 msgstr "هناك هو لا مستوى بوصة تشغيل أو حرّر الإيطالية."
 
-#: src/kgrselector.cpp:118 src/kgrselector.cpp:173
+#: src/kgrselector.cpp:121 src/kgrselector.cpp:177
 #, fuzzy, kde-format
 #| msgid "Select Game"
 msgctxt "@title:window"
 msgid "Select Game"
 msgstr "اختر لعبة"
 
-#: src/kgrselector.cpp:132
+#: src/kgrselector.cpp:135
 #, fuzzy, kde-format
 msgid "<html><b>Please select a game:</b></html>"
 msgstr "<html><b> رجاء تحديد a لعبة</b></html>"
 
-#: src/kgrselector.cpp:140
+#: src/kgrselector.cpp:143
 #, kde-format
 msgid "Name of Game"
 msgstr "اسم اللعبة"
 
-#: src/kgrselector.cpp:141
+#: src/kgrselector.cpp:144
 #, kde-format
 msgid "Rules"
 msgstr "القواعد"
 
-#: src/kgrselector.cpp:142
+#: src/kgrselector.cpp:145
 #, kde-format
 msgid "Levels"
 msgstr "المستويات"
 
-#: src/kgrselector.cpp:143
+#: src/kgrselector.cpp:146
 #, kde-format
 msgid "Skill"
 msgstr "المهارة"
 
-#: src/kgrselector.cpp:175
+#: src/kgrselector.cpp:179
 #, kde-format
 msgid "Level 1 of the selected game is:"
 msgstr "المستوى الأول من اللعبة المختارة: "
 
-#: src/kgrselector.cpp:179
+#: src/kgrselector.cpp:183
 #, fuzzy, kde-format
 #| msgid "Select Game/Level"
 msgctxt "@title:window"
 msgid "Select Game/Level"
 msgstr "اختر لعبة/مستوى"
 
-#: src/kgrselector.cpp:181
+#: src/kgrselector.cpp:185
 #, fuzzy, kde-format
 msgid "Please select a level:"
 msgstr "رجاء تحديد a مستوى:"
 
-#: src/kgrselector.cpp:200
+#: src/kgrselector.cpp:204
 #, kde-format
 msgid "Level number:"
 msgstr "رقم المستوى:"
 
-#: src/kgrselector.cpp:206
+#: src/kgrselector.cpp:210
 #, fuzzy, kde-format
 #| msgid "Edit Level Name && Hint"
 msgid "Edit Level Name o&r Hint"
 msgstr "حرر اسم المستوى و التلميح"
 
-#: src/kgrselector.cpp:241
+#: src/kgrselector.cpp:245
 #, kde-format
 msgid "Start Game"
 msgstr "ابدأ اللعبة"
 
-#: src/kgrselector.cpp:250
+#: src/kgrselector.cpp:254
 #, kde-format
 msgid "Play Level"
 msgstr "العب المستوى"
 
-#: src/kgrselector.cpp:253
+#: src/kgrselector.cpp:257
 #, fuzzy, kde-format
 msgid "Replay Level"
 msgstr "العب المستوى"
 
-#: src/kgrselector.cpp:256
+#: src/kgrselector.cpp:260
 #, fuzzy, kde-format
 msgid "Show Solution"
 msgstr "اعرض المواقع"
 
-#: src/kgrselector.cpp:268
+#: src/kgrselector.cpp:272
 #, kde-format
 msgid "Save Change"
 msgstr "احفظ التغير"
 
-#: src/kgrselector.cpp:274
+#: src/kgrselector.cpp:278
 #, kde-format
 msgid "Move To..."
 msgstr "انقل إلى ..."
 
-#: src/kgrselector.cpp:355
+#: src/kgrselector.cpp:357
 #, fuzzy, kde-format
 msgctxt "Rules"
 msgid "KGoldrunner"
 msgstr "الركض للذهب ك"
 
-#: src/kgrselector.cpp:356
+#: src/kgrselector.cpp:358
 #, fuzzy, kde-format
 msgctxt "Rules"
 msgid "Traditional"
 msgstr "تقليدي"
 
-#: src/kgrselector.cpp:359
+#: src/kgrselector.cpp:361
 #, fuzzy, kde-format
 msgctxt "Skill Level"
 msgid "Tutorial"
 msgstr "تعليمالبحث"
 
-#: src/kgrselector.cpp:361
+#: src/kgrselector.cpp:363
 #, fuzzy, kde-format
 msgctxt "Skill Level"
 msgid "Normal"
 msgstr "عادي"
 
-#: src/kgrselector.cpp:362
+#: src/kgrselector.cpp:364
 #, fuzzy, kde-format
 msgctxt "Skill Level"
 msgid "Championship"
 msgstr "البطولة"
 
-#: src/kgrselector.cpp:465
+#: src/kgrselector.cpp:468
 #, fuzzy, kde-format
 msgid "1 level, uses KGoldrunner rules."
 msgid_plural "%1 levels, uses KGoldrunner rules."
@@ -7626,7 +7626,7 @@ msgstr[3] "%1 مستويات، تستعمل قواعد الركض للذهب.ك.
 msgstr[4] "%1 مستوىً، يستعمل قواعد الركض للذهب.ك."
 msgstr[5] "%1 مستوى، يستعمل قواعد الركض للذهب.ك."
 
-#: src/kgrselector.cpp:468
+#: src/kgrselector.cpp:471
 #, fuzzy, kde-format
 msgid "1 level, uses Traditional rules."
 msgid_plural "%1 levels, uses Traditional rules."
@@ -7637,17 +7637,17 @@ msgstr[3] ""
 msgstr[4] ""
 msgstr[5] ""
 
-#: src/kgrselector.cpp:473
+#: src/kgrselector.cpp:476
 #, fuzzy, kde-format
 msgid "Sorry, there is no further information about this game."
 msgstr "عذراً هو لا معلومات حوْل لعبة."
 
-#: src/kgrselector.cpp:499
+#: src/kgrselector.cpp:502
 #, fuzzy, kde-format
 msgid "This level number is not valid. It can not be used."
 msgstr "هذا مستوى رقم هو ليس سليم itإيطالياهو ليس مُستخدَم."
 
-#: src/kgrselector.cpp:520
+#: src/kgrselector.cpp:523
 #, fuzzy, kde-format
 msgid ""
 "The main button at the bottom echoes the menu action you selected. Click it "
@@ -7656,7 +7656,7 @@ msgstr ""
 "الـ رئيسي زر عند الأسفل قائمة الأفعال مُنتقى نقر الإيطالية بعد a لعبة و مستوى "
 "أو استخدام إلغاء."
 
-#: src/kgrselector.cpp:525
+#: src/kgrselector.cpp:528
 #, fuzzy, kde-format
 msgid ""
 "\n"
@@ -7673,7 +7673,7 @@ msgstr ""
 "مربّع إلى تشغيل عند مستوى انقر يعمل رئيسي زر عند الأسفل تشغيل انقل الماوس أو "
 "ضغط a مفتاح."
 
-#: src/kgrselector.cpp:534
+#: src/kgrselector.cpp:537
 #, fuzzy, kde-format
 msgid ""
 "\n"
@@ -7687,7 +7687,7 @@ msgstr ""
 "n تحديد النظام لـ أو حفظ نتيجو بوصة a لعبة إستعمل الماوس a و محرِّر شريط "
 "الأدوات a لوحة ألوان إستعمل فارغ فضائي زر إلى مسح."
 
-#: src/kgrselector.cpp:542
+#: src/kgrselector.cpp:545
 #, fuzzy, kde-format
 msgid ""
 "\n"
@@ -7700,7 +7700,7 @@ msgstr ""
 "n اضف a الاسم و تلْميحة إلى جديد مستوى حفظ مستوى من بواسطة افتراضي جديد مستوى "
 "اذهب عند end من لعبة تحديد a مستوى رقم و حفظ من لعبة."
 
-#: src/kgrselector.cpp:549
+#: src/kgrselector.cpp:552
 #, fuzzy, kde-format
 msgid ""
 "\n"
@@ -7713,7 +7713,7 @@ msgstr ""
 "n إ_نشئ أو حرّر a الاسم و تلْميحة قبل إذا تغيير لعبة أو مستوى a نسخ أو احفظ ك "
 "دائماً حفظ من إذا حفظ a مستوى من a غير ذلك NULL."
 
-#: src/kgrselector.cpp:556
+#: src/kgrselector.cpp:559
 #, fuzzy, kde-format
 msgid ""
 "\n"
@@ -7722,7 +7722,7 @@ msgid ""
 "from the middle of a series, the other levels are automatically re-numbered."
 msgstr "n حذف من من إذا حذف a مستوى من من a غير ذلك NULL."
 
-#: src/kgrselector.cpp:561
+#: src/kgrselector.cpp:564
 #, fuzzy, kde-format
 msgid ""
 "\n"
@@ -7736,7 +7736,7 @@ msgstr ""
 "نقل المستوى إلى تعيين الإيطالية a جديد رقم أو a مختلف لعبة أخرى NULL مطلوب "
 "أنت انقل."
 
-#: src/kgrselector.cpp:568
+#: src/kgrselector.cpp:571
 #, fuzzy, kde-format
 msgid ""
 "\n"
@@ -7745,7 +7745,7 @@ msgid ""
 "dialog where you edit the details of the game."
 msgstr "n لعبة معلومات إلى اختيار a لعبة اذهب إلى a حوار حرّر تفاصيل من لعبة."
 
-#: src/kgrselector.cpp:575
+#: src/kgrselector.cpp:578
 #, fuzzy, kde-format
 msgid ""
 "\n"
@@ -7763,7 +7763,7 @@ msgstr ""
 "لعبة و متابعة إعدادات قائمة n تحديد a مستوى رقم أداء كتابة الإيطالية أو لفّ "
 "شريط ك لعبة أو مستوى صورة مصغّرة منطقة a معاينة من اختيار."
 
-#: src/kgrselector.cpp:586
+#: src/kgrselector.cpp:589
 #, fuzzy, kde-format
 msgid "Help: Select Game & Level"
 msgstr "مساعدة انتقِ لعبة المستوى"

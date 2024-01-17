@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:44+0000\n"
+"POT-Creation-Date: 2024-01-17 00:36+0000\n"
 "PO-Revision-Date: 2023-03-12 09:13+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -8961,7 +8961,7 @@ msgstr "Zapisz zmiany"
 msgid "0 levels"
 msgstr "0 poziomów"
 
-#: src/kgrdialog.cpp:192 src/kgrselector.cpp:265
+#: src/kgrdialog.cpp:192 src/kgrselector.cpp:269
 #, kde-format
 msgid "Save New"
 msgstr "Zapisz nowy"
@@ -8992,7 +8992,7 @@ msgstr ""
 "Nie możesz tworzyć i zapisywać poziomów dopóki nie ma gry, która mogłaby je "
 "zawierać. Wybierz z menu \"Utwórz grę\"."
 
-#: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:262
+#: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:266
 #, kde-format
 msgid "Edit Level"
 msgstr "Edytuj poziom"
@@ -9086,7 +9086,7 @@ msgid "You must change the level or the game or both."
 msgstr "Musisz zmienić poziom albo grę lub jedno i drugie."
 
 #: src/kgreditor.cpp:418 src/kgreditor.cpp:441 src/kgreditor.cpp:459
-#: src/kgrselector.cpp:271
+#: src/kgrselector.cpp:275
 #, kde-format
 msgid "Delete Level"
 msgstr "Usuń poziom"
@@ -9360,7 +9360,7 @@ msgstr ""
 msgid "Replay Any Level"
 msgstr "Powtórz jakikolwiek poziom"
 
-#: src/kgrgame.cpp:849 src/kgrgame.cpp:2053
+#: src/kgrgame.cpp:849 src/kgrgame.cpp:2055
 #, kde-format
 msgid ""
 "Sorry, you do not seem to have played and recorded the selected level before."
@@ -9467,7 +9467,7 @@ msgstr ""
 "\"%1\"."
 
 #: src/kgrgame.cpp:1493 src/kgrgame.cpp:1537 src/kgrgame.cpp:1652
-#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2019 src/kgrgameio.cpp:170
+#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2021 src/kgrgameio.cpp:169
 #, kde-format
 msgid "Cannot open file '%1' for read-only."
 msgstr "Nie można otworzyć pliku '%1' tylko do odczytu."
@@ -9591,63 +9591,63 @@ msgstr "Wynik"
 msgid "Date"
 msgstr "Data"
 
-#: src/kgrgame.cpp:1887
+#: src/kgrgame.cpp:1888
 #, kde-format
 msgctxt "@title:window"
 msgid "High Scores"
 msgstr "Najlepsze wyniki"
 
-#: src/kgrgame.cpp:2012 src/kgrgame.cpp:2018 src/kgrgame.cpp:2022
+#: src/kgrgame.cpp:2014 src/kgrgame.cpp:2020 src/kgrgame.cpp:2024
 #, kde-format
 msgid "Load Game Info"
 msgstr "Wczytaj opis gry"
 
-#: src/kgrgame.cpp:2013
+#: src/kgrgame.cpp:2015
 #, kde-format
 msgid "Cannot find game info file '%1'."
 msgstr "Nie można znaleźć pliku opisu gry '%1'."
 
-#: src/kgrgame.cpp:2023
+#: src/kgrgame.cpp:2025
 #, kde-format
 msgid "Reached end of file '%1' before finding end of game-data."
 msgstr "Osiągnięto koniec pliku %1 zanim znaleziono koniec danych gry."
 
-#: src/kgrgame.cpp:2047 src/kgrgame.cpp:2052 src/kgrselector.cpp:259
+#: src/kgrgame.cpp:2049 src/kgrgame.cpp:2054 src/kgrselector.cpp:263
 #, kde-format
 msgid "Save A Solution"
 msgstr "Zapisz rozwiązanie"
 
-#: src/kgrgame.cpp:2048
+#: src/kgrgame.cpp:2050
 #, kde-format
 msgid "Your solution to level %1 has been saved on file %2"
 msgstr "Twoje rozwiązanie poziomu %1 zostało zapisane do pliku %2"
 
-#: src/kgrgameio.cpp:164 src/kgrgameio.cpp:169 src/kgrgameio.cpp:173
+#: src/kgrgameio.cpp:163 src/kgrgameio.cpp:168 src/kgrgameio.cpp:172
 #, kde-format
 msgid "Read Level Data"
 msgstr "Wczytaj dane poziomu"
 
-#: src/kgrgameio.cpp:165
+#: src/kgrgameio.cpp:164
 #, kde-format
 msgid "Cannot find file '%1'."
 msgstr "Nie można znaleźć pliku %1."
 
-#: src/kgrgameio.cpp:174
+#: src/kgrgameio.cpp:173
 #, kde-format
 msgid "Reached end of file '%1' without finding level data."
 msgstr "Osiągnięto koniec pliku %1 bez znalezienia danych poziomu."
 
-#: src/kgrgameio.cpp:382 src/kgrgameio.cpp:389
+#: src/kgrgameio.cpp:381 src/kgrgameio.cpp:388
 #, kde-format
 msgid "Rename File"
 msgstr "Zmień nazwę pliku"
 
-#: src/kgrgameio.cpp:383
+#: src/kgrgameio.cpp:382
 #, kde-format
 msgid "Cannot delete previous version of file '%1'."
 msgstr "Nie można usunąć poprzedniej wersji pliku '%1'."
 
-#: src/kgrgameio.cpp:390
+#: src/kgrgameio.cpp:389
 #, kde-format
 msgid "Cannot rename file '%1' to '%2'."
 msgstr "Nie można zmienić nazwy pliku z '%1' na '%2'."
@@ -9667,157 +9667,157 @@ msgstr "Życia: %1"
 msgid "Score: %1"
 msgstr "Wynik: %1"
 
-#: src/kgrselector.cpp:69 src/kgrselector.cpp:75 src/kgrselector.cpp:95
-#: src/kgrselector.cpp:498
+#: src/kgrselector.cpp:72 src/kgrselector.cpp:78 src/kgrselector.cpp:98
+#: src/kgrselector.cpp:501
 #, kde-format
 msgid "Select Level"
 msgstr "Wybierz poziom"
 
-#: src/kgrselector.cpp:70
+#: src/kgrselector.cpp:73
 #, kde-format
 msgid "Sorry, you can only save or move into one of your own games."
 msgstr ""
 "Niestety możesz jedynie zapisywać lub przenosić tylko do własnych gier."
 
-#: src/kgrselector.cpp:76
+#: src/kgrselector.cpp:79
 #, kde-format
 msgid "Sorry, you can only delete a level from one of your own games."
 msgstr "Niestety możesz jedynie usuwać poziom z jednej ze swoich gier."
 
-#: src/kgrselector.cpp:81 src/kgrselector.cpp:277
+#: src/kgrselector.cpp:84 src/kgrselector.cpp:281
 #, kde-format
 msgid "Edit Game Info"
 msgstr "Edytuj opis gry"
 
-#: src/kgrselector.cpp:82
+#: src/kgrselector.cpp:85
 #, kde-format
 msgid "Sorry, you can only edit the game information on your own games."
 msgstr "Niestety możesz jedynie edytować opisy tylko własnych gier."
 
-#: src/kgrselector.cpp:96
+#: src/kgrselector.cpp:99
 #, kde-format
 msgid "There is no level %1 in \"%2\", so you cannot play or edit it."
 msgstr ""
 "Nie ma poziomu %1 w \"%2:, więc nie możesz go edytować ani w niego grać."
 
-#: src/kgrselector.cpp:118 src/kgrselector.cpp:173
+#: src/kgrselector.cpp:121 src/kgrselector.cpp:177
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Game"
 msgstr "Wybierz grę"
 
-#: src/kgrselector.cpp:132
+#: src/kgrselector.cpp:135
 #, kde-format
 msgid "<html><b>Please select a game:</b></html>"
 msgstr "<html><b>Proszę wybrać grę:</b></html>"
 
-#: src/kgrselector.cpp:140
+#: src/kgrselector.cpp:143
 #, kde-format
 msgid "Name of Game"
 msgstr "Nazwa gry"
 
-#: src/kgrselector.cpp:141
+#: src/kgrselector.cpp:144
 #, kde-format
 msgid "Rules"
 msgstr "Zasady"
 
-#: src/kgrselector.cpp:142
+#: src/kgrselector.cpp:145
 #, kde-format
 msgid "Levels"
 msgstr "Poziomy"
 
-#: src/kgrselector.cpp:143
+#: src/kgrselector.cpp:146
 #, kde-format
 msgid "Skill"
 msgstr "Umiejętności"
 
-#: src/kgrselector.cpp:175
+#: src/kgrselector.cpp:179
 #, kde-format
 msgid "Level 1 of the selected game is:"
 msgstr "Poziom 1 zaznaczonej gry to:"
 
-#: src/kgrselector.cpp:179
+#: src/kgrselector.cpp:183
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Game/Level"
 msgstr "Wybierz grę/poziom"
 
-#: src/kgrselector.cpp:181
+#: src/kgrselector.cpp:185
 #, kde-format
 msgid "Please select a level:"
 msgstr "Proszę wybrać poziom:"
 
-#: src/kgrselector.cpp:200
+#: src/kgrselector.cpp:204
 #, kde-format
 msgid "Level number:"
 msgstr "Numer poziomu:"
 
-#: src/kgrselector.cpp:206
+#: src/kgrselector.cpp:210
 #, kde-format
 msgid "Edit Level Name o&r Hint"
 msgstr "&Edytuj nazwę poziomu lub podpowiedź"
 
-#: src/kgrselector.cpp:241
+#: src/kgrselector.cpp:245
 #, kde-format
 msgid "Start Game"
 msgstr "Uruchom grę"
 
-#: src/kgrselector.cpp:250
+#: src/kgrselector.cpp:254
 #, kde-format
 msgid "Play Level"
 msgstr "Poziom gry"
 
-#: src/kgrselector.cpp:253
+#: src/kgrselector.cpp:257
 #, kde-format
 msgid "Replay Level"
 msgstr "Powtórz poziom"
 
-#: src/kgrselector.cpp:256
+#: src/kgrselector.cpp:260
 #, kde-format
 msgid "Show Solution"
 msgstr "Pokaż rozwiązanie"
 
-#: src/kgrselector.cpp:268
+#: src/kgrselector.cpp:272
 #, kde-format
 msgid "Save Change"
 msgstr "Zapisz zmiany"
 
-#: src/kgrselector.cpp:274
+#: src/kgrselector.cpp:278
 #, kde-format
 msgid "Move To..."
 msgstr "Przenieś do ..."
 
-#: src/kgrselector.cpp:355
+#: src/kgrselector.cpp:357
 #, kde-format
 msgctxt "Rules"
 msgid "KGoldrunner"
 msgstr "KGoldrunner"
 
-#: src/kgrselector.cpp:356
+#: src/kgrselector.cpp:358
 #, kde-format
 msgctxt "Rules"
 msgid "Traditional"
 msgstr "Tradycyjnie"
 
-#: src/kgrselector.cpp:359
+#: src/kgrselector.cpp:361
 #, kde-format
 msgctxt "Skill Level"
 msgid "Tutorial"
 msgstr "Samouczek"
 
-#: src/kgrselector.cpp:361
+#: src/kgrselector.cpp:363
 #, kde-format
 msgctxt "Skill Level"
 msgid "Normal"
 msgstr "Normalna"
 
-#: src/kgrselector.cpp:362
+#: src/kgrselector.cpp:364
 #, kde-format
 msgctxt "Skill Level"
 msgid "Championship"
 msgstr "Mistrzowska"
 
-#: src/kgrselector.cpp:465
+#: src/kgrselector.cpp:468
 #, kde-format
 msgid "1 level, uses KGoldrunner rules."
 msgid_plural "%1 levels, uses KGoldrunner rules."
@@ -9825,7 +9825,7 @@ msgstr[0] "%1 poziom, używa zasad KGoldrunnera."
 msgstr[1] "%1 poziomy, używają zasad KGoldrunnera."
 msgstr[2] "%1 poziomów, używają zasad KGoldrunnera."
 
-#: src/kgrselector.cpp:468
+#: src/kgrselector.cpp:471
 #, kde-format
 msgid "1 level, uses Traditional rules."
 msgid_plural "%1 levels, uses Traditional rules."
@@ -9833,17 +9833,17 @@ msgstr[0] "%1 poziom, używa zasad Tradycyjnych."
 msgstr[1] "%1 poziomy, używają zasad Tradycyjnych."
 msgstr[2] "%1 poziomów, używają zasad Tradycyjnych."
 
-#: src/kgrselector.cpp:473
+#: src/kgrselector.cpp:476
 #, kde-format
 msgid "Sorry, there is no further information about this game."
 msgstr "Niestety nie ma dalszych informacji o tej grze."
 
-#: src/kgrselector.cpp:499
+#: src/kgrselector.cpp:502
 #, kde-format
 msgid "This level number is not valid. It can not be used."
 msgstr "Numer tego poziomu jest nieprawidłowy i nie może zostać użyty."
 
-#: src/kgrselector.cpp:520
+#: src/kgrselector.cpp:523
 #, kde-format
 msgid ""
 "The main button at the bottom echoes the menu action you selected. Click it "
@@ -9852,7 +9852,7 @@ msgstr ""
 "Główny przycisk znajdujący się poniżej wywołuje działania wybranego menu. "
 "Naciśnij go po wybraniu gry i poziomu - lub naciśnij \"Anuluj\"."
 
-#: src/kgrselector.cpp:525
+#: src/kgrselector.cpp:528
 #, kde-format
 msgid ""
 "\n"
@@ -9874,7 +9874,7 @@ msgstr ""
 "poniżej. Gra rozpoczyna się w momencie, gry poruszysz myszką lub naciśniesz "
 "klawisz."
 
-#: src/kgrselector.cpp:534
+#: src/kgrselector.cpp:537
 #, kde-format
 msgid ""
 "\n"
@@ -9893,7 +9893,7 @@ msgstr ""
 "prawy przycisk myszy usuwają dany element. Możesz poruszać kursorem z "
 "wciśniętym przyciskiem myszki, by rysować lub usuwać wiele kwadratów."
 
-#: src/kgrselector.cpp:542
+#: src/kgrselector.cpp:545
 #, kde-format
 msgid ""
 "\n"
@@ -9910,7 +9910,7 @@ msgstr ""
 "poziom zostanie dodany na końcu twojej gry, lecz możesz również wybrać numer "
 "poziomu, aby zapisać go w środku."
 
-#: src/kgrselector.cpp:549
+#: src/kgrselector.cpp:552
 #, kde-format
 msgid ""
 "\n"
@@ -9928,7 +9928,7 @@ msgstr ""
 "twoje gry. Jeśli zapiszesz poziom w środku twojej gry, to pozostałe poziomy "
 "zostaną automatycznie przenumerowane."
 
-#: src/kgrselector.cpp:556
+#: src/kgrselector.cpp:559
 #, kde-format
 msgid ""
 "\n"
@@ -9941,7 +9941,7 @@ msgstr ""
 "Możesz jedynie usunąć poziomy z jednej z twoich gier. Jeśli kasujesz poziom "
 "ze środka gry, to pozostałe poziomy zostaną automatycznie przenumerowane."
 
-#: src/kgrselector.cpp:561
+#: src/kgrselector.cpp:564
 #, kde-format
 msgid ""
 "\n"
@@ -9959,7 +9959,7 @@ msgstr ""
 "automatycznie przenumerowywane. Możesz przenosić poziomy tylko między swoimi "
 "grami."
 
-#: src/kgrselector.cpp:568
+#: src/kgrselector.cpp:571
 #, kde-format
 msgid ""
 "\n"
@@ -9972,7 +9972,7 @@ msgstr ""
 "Podczas edycji opisu musisz jedynie wybrać grę, którą chcesz opisać "
 "następnie możesz w oknie wpisać szczegóły o grze."
 
-#: src/kgrselector.cpp:575
+#: src/kgrselector.cpp:578
 #, kde-format
 msgid ""
 "\n"
@@ -9997,7 +9997,7 @@ msgstr ""
 "przewijania. Jeśli zmienisz grę lub poziom, zobaczysz podgląd wyboru w "
 "miniaturce."
 
-#: src/kgrselector.cpp:586
+#: src/kgrselector.cpp:589
 #, kde-format
 msgid "Help: Select Game & Level"
 msgstr "Pomoc: wybierz grę i poziom"

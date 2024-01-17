@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:44+0000\n"
+"POT-Creation-Date: 2024-01-17 00:36+0000\n"
 "PO-Revision-Date: 2009-04-23 22:29+0300\n"
 "Last-Translator: Toussis Manolis <manolis@koppermind.homelinux.org>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -7641,7 +7641,7 @@ msgstr "Αποθήκευση αλλαγών"
 msgid "0 levels"
 msgstr "0 επίπεδα"
 
-#: src/kgrdialog.cpp:192 src/kgrselector.cpp:265
+#: src/kgrdialog.cpp:192 src/kgrselector.cpp:269
 #, kde-format
 msgid "Save New"
 msgstr "Αποθήκευση νέου"
@@ -7674,7 +7674,7 @@ msgstr ""
 "Δεν μπορείτε να δημιουργήσετε και να αποθηκεύσετε ένα επίπεδο μέχρις ότου να "
 "δημιουργήσετε ένα παιχνίδι. Δοκιμάστε το μενού \"Δημιουργία παιχνιδιού\"."
 
-#: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:262
+#: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:266
 #, kde-format
 msgid "Edit Level"
 msgstr "Επεξεργασία επιπέδου"
@@ -7772,7 +7772,7 @@ msgid "You must change the level or the game or both."
 msgstr "Πρέπει να αλλάξετε το επίπεδο ή το παιχνίδι ή και τα δύο."
 
 #: src/kgreditor.cpp:418 src/kgreditor.cpp:441 src/kgreditor.cpp:459
-#: src/kgrselector.cpp:271
+#: src/kgrselector.cpp:275
 #, kde-format
 msgid "Delete Level"
 msgstr "Διαγραφή επιπέδου"
@@ -8054,7 +8054,7 @@ msgstr ""
 msgid "Replay Any Level"
 msgstr "Παίξιμο επιπέδου"
 
-#: src/kgrgame.cpp:849 src/kgrgame.cpp:2053
+#: src/kgrgame.cpp:849 src/kgrgame.cpp:2055
 #, kde-format
 msgid ""
 "Sorry, you do not seem to have played and recorded the selected level before."
@@ -8165,7 +8165,7 @@ msgstr ""
 "Παρακαλώ δοκιμάστε την επιλογή μενού \"%1\"."
 
 #: src/kgrgame.cpp:1493 src/kgrgame.cpp:1537 src/kgrgame.cpp:1652
-#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2019 src/kgrgameio.cpp:170
+#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2021 src/kgrgameio.cpp:169
 #, kde-format
 msgid "Cannot open file '%1' for read-only."
 msgstr "Αδύνατο άνοιγμα του αρχείου '%1' για ανάγνωση μόνο."
@@ -8294,69 +8294,69 @@ msgstr "Βαθμός"
 msgid "Date"
 msgstr "Ημερομηνία"
 
-#: src/kgrgame.cpp:1887
+#: src/kgrgame.cpp:1888
 #, fuzzy, kde-format
 #| msgid "High Scores"
 msgctxt "@title:window"
 msgid "High Scores"
 msgstr "Υψηλές βαθμολογίες"
 
-#: src/kgrgame.cpp:2012 src/kgrgame.cpp:2018 src/kgrgame.cpp:2022
+#: src/kgrgame.cpp:2014 src/kgrgame.cpp:2020 src/kgrgame.cpp:2024
 #, kde-format
 msgid "Load Game Info"
 msgstr "Φόρτωση πληροφοριών παιχνιδιού"
 
-#: src/kgrgame.cpp:2013
+#: src/kgrgame.cpp:2015
 #, kde-format
 msgid "Cannot find game info file '%1'."
 msgstr "Αδύνατο να βρεθεί το αρχείο πληροφοριών παιχνιδιού '%1'."
 
-#: src/kgrgame.cpp:2023
+#: src/kgrgame.cpp:2025
 #, kde-format
 msgid "Reached end of file '%1' before finding end of game-data."
 msgstr ""
 "Έφτασα στο τέλος του αρχείου '%1' χωρίς να βρεθεί το τέλος των δεδομένων "
 "επιπέδου του παιχνιδιού."
 
-#: src/kgrgame.cpp:2047 src/kgrgame.cpp:2052 src/kgrselector.cpp:259
+#: src/kgrgame.cpp:2049 src/kgrgame.cpp:2054 src/kgrselector.cpp:263
 #, fuzzy, kde-format
 #| msgid "Show Positions"
 msgid "Save A Solution"
 msgstr "Εμφάνιση θέσεων"
 
-#: src/kgrgame.cpp:2048
+#: src/kgrgame.cpp:2050
 #, kde-format
 msgid "Your solution to level %1 has been saved on file %2"
 msgstr ""
 
-#: src/kgrgameio.cpp:164 src/kgrgameio.cpp:169 src/kgrgameio.cpp:173
+#: src/kgrgameio.cpp:163 src/kgrgameio.cpp:168 src/kgrgameio.cpp:172
 #, kde-format
 msgid "Read Level Data"
 msgstr "Ανάγνωση δεδομένων επιπέδου"
 
-#: src/kgrgameio.cpp:165
+#: src/kgrgameio.cpp:164
 #, kde-format
 msgid "Cannot find file '%1'."
 msgstr "Αδύνατο να βρεθεί το αρχείο '%1'."
 
-#: src/kgrgameio.cpp:174
+#: src/kgrgameio.cpp:173
 #, kde-format
 msgid "Reached end of file '%1' without finding level data."
 msgstr ""
 "Έφτασα στο τέλος του αρχείου '%1' χωρίς να βρεθούν δεδομένα επιπέδου του "
 "παιχνιδιού."
 
-#: src/kgrgameio.cpp:382 src/kgrgameio.cpp:389
+#: src/kgrgameio.cpp:381 src/kgrgameio.cpp:388
 #, kde-format
 msgid "Rename File"
 msgstr "Μετονομασία αρχείου"
 
-#: src/kgrgameio.cpp:383
+#: src/kgrgameio.cpp:382
 #, kde-format
 msgid "Cannot delete previous version of file '%1'."
 msgstr "Αδύνατη η διαγραφή της προηγούμενης έκδοσης του αρχείου '%1'."
 
-#: src/kgrgameio.cpp:390
+#: src/kgrgameio.cpp:389
 #, kde-format
 msgid "Cannot rename file '%1' to '%2'."
 msgstr "Αδύνατη η μετονομασία του αρχείου '%1' σε '%2'."
@@ -8378,39 +8378,39 @@ msgstr "Ζωές: "
 msgid "Score: %1"
 msgstr "Βαθμός: "
 
-#: src/kgrselector.cpp:69 src/kgrselector.cpp:75 src/kgrselector.cpp:95
-#: src/kgrselector.cpp:498
+#: src/kgrselector.cpp:72 src/kgrselector.cpp:78 src/kgrselector.cpp:98
+#: src/kgrselector.cpp:501
 #, kde-format
 msgid "Select Level"
 msgstr "Επιλογή επιπέδου"
 
-#: src/kgrselector.cpp:70
+#: src/kgrselector.cpp:73
 #, kde-format
 msgid "Sorry, you can only save or move into one of your own games."
 msgstr ""
 "Δυστυχώς, μπορείτε να αποθηκεύσετε ή να μεταβείτε μόνο σε ένα από τα "
 "παιχνίδια σας."
 
-#: src/kgrselector.cpp:76
+#: src/kgrselector.cpp:79
 #, kde-format
 msgid "Sorry, you can only delete a level from one of your own games."
 msgstr ""
 "Δυστυχώς, μπορείτε να διαγράψετε κάποιο επίπεδο μόνο από τα δικά σας "
 "παιχνίδια."
 
-#: src/kgrselector.cpp:81 src/kgrselector.cpp:277
+#: src/kgrselector.cpp:84 src/kgrselector.cpp:281
 #, kde-format
 msgid "Edit Game Info"
 msgstr "Επεξεργασία πληροφοριών παιχνιδιού"
 
-#: src/kgrselector.cpp:82
+#: src/kgrselector.cpp:85
 #, kde-format
 msgid "Sorry, you can only edit the game information on your own games."
 msgstr ""
 "Δυστυχώς, μπορείτε να επεξεργαστείτε τις πληροφορίες των παιχνιδιών μόνο στα "
 "δικά σας παιχνίδια."
 
-#: src/kgrselector.cpp:96
+#: src/kgrselector.cpp:99
 #, fuzzy, kde-format
 #| msgid "There is no level %1 in %2, so you cannot play or edit it."
 msgid "There is no level %1 in \"%2\", so you cannot play or edit it."
@@ -8418,155 +8418,155 @@ msgstr ""
 "Δεν υπάρχει κανένα επίπεδο %1 στο %2, έτσι δεν μπορείτε να το παίξετε ή να "
 "το επεξεργαστείτε."
 
-#: src/kgrselector.cpp:118 src/kgrselector.cpp:173
+#: src/kgrselector.cpp:121 src/kgrselector.cpp:177
 #, fuzzy, kde-format
 #| msgid "Select Game"
 msgctxt "@title:window"
 msgid "Select Game"
 msgstr "Επιλογή παιχνιδιού"
 
-#: src/kgrselector.cpp:132
+#: src/kgrselector.cpp:135
 #, kde-format
 msgid "<html><b>Please select a game:</b></html>"
 msgstr "<html><b>Παρακαλώ επιλέξτε ένα παιχνίδι:</b></html>"
 
-#: src/kgrselector.cpp:140
+#: src/kgrselector.cpp:143
 #, kde-format
 msgid "Name of Game"
 msgstr "Όνομα του παιχνιδιού"
 
-#: src/kgrselector.cpp:141
+#: src/kgrselector.cpp:144
 #, kde-format
 msgid "Rules"
 msgstr "Κανόνες"
 
-#: src/kgrselector.cpp:142
+#: src/kgrselector.cpp:145
 #, kde-format
 msgid "Levels"
 msgstr "Επίπεδα"
 
-#: src/kgrselector.cpp:143
+#: src/kgrselector.cpp:146
 #, kde-format
 msgid "Skill"
 msgstr "Δεξιότητα"
 
-#: src/kgrselector.cpp:175
+#: src/kgrselector.cpp:179
 #, kde-format
 msgid "Level 1 of the selected game is:"
 msgstr "Το επίπεδο 1 του επιλεγμένου παιχνιδιού είναι:"
 
-#: src/kgrselector.cpp:179
+#: src/kgrselector.cpp:183
 #, fuzzy, kde-format
 #| msgid "Select Game/Level"
 msgctxt "@title:window"
 msgid "Select Game/Level"
 msgstr "Επιλογή παιχνιδιού/επιπέδου"
 
-#: src/kgrselector.cpp:181
+#: src/kgrselector.cpp:185
 #, kde-format
 msgid "Please select a level:"
 msgstr "Παρακαλώ επιλέξτε ένα επίπεδο:"
 
-#: src/kgrselector.cpp:200
+#: src/kgrselector.cpp:204
 #, kde-format
 msgid "Level number:"
 msgstr "Αριθμός επιπέδου:"
 
-#: src/kgrselector.cpp:206
+#: src/kgrselector.cpp:210
 #, fuzzy, kde-format
 #| msgid "Edit Level Name && Hint"
 msgid "Edit Level Name o&r Hint"
 msgstr "Επεξεργασία ονόματος επιπέδου && συμβουλής"
 
-#: src/kgrselector.cpp:241
+#: src/kgrselector.cpp:245
 #, kde-format
 msgid "Start Game"
 msgstr "Έναρξη παιχνιδιού"
 
-#: src/kgrselector.cpp:250
+#: src/kgrselector.cpp:254
 #, kde-format
 msgid "Play Level"
 msgstr "Παίξιμο επιπέδου"
 
-#: src/kgrselector.cpp:253
+#: src/kgrselector.cpp:257
 #, fuzzy, kde-format
 #| msgid "Play Level"
 msgid "Replay Level"
 msgstr "Παίξιμο επιπέδου"
 
-#: src/kgrselector.cpp:256
+#: src/kgrselector.cpp:260
 #, fuzzy, kde-format
 #| msgid "Show Positions"
 msgid "Show Solution"
 msgstr "Εμφάνιση θέσεων"
 
-#: src/kgrselector.cpp:268
+#: src/kgrselector.cpp:272
 #, kde-format
 msgid "Save Change"
 msgstr "Αποθήκευση αλλαγής"
 
-#: src/kgrselector.cpp:274
+#: src/kgrselector.cpp:278
 #, kde-format
 msgid "Move To..."
 msgstr "Μετάβαση σε ..."
 
-#: src/kgrselector.cpp:355
+#: src/kgrselector.cpp:357
 #, kde-format
 msgctxt "Rules"
 msgid "KGoldrunner"
 msgstr "KGoldrunner"
 
-#: src/kgrselector.cpp:356
+#: src/kgrselector.cpp:358
 #, kde-format
 msgctxt "Rules"
 msgid "Traditional"
 msgstr "Παραδοσιακοί"
 
-#: src/kgrselector.cpp:359
+#: src/kgrselector.cpp:361
 #, kde-format
 msgctxt "Skill Level"
 msgid "Tutorial"
 msgstr "Εκμάθηση"
 
-#: src/kgrselector.cpp:361
+#: src/kgrselector.cpp:363
 #, kde-format
 msgctxt "Skill Level"
 msgid "Normal"
 msgstr "Κανονική"
 
-#: src/kgrselector.cpp:362
+#: src/kgrselector.cpp:364
 #, kde-format
 msgctxt "Skill Level"
 msgid "Championship"
 msgstr "Πρωταθλητής"
 
-#: src/kgrselector.cpp:465
+#: src/kgrselector.cpp:468
 #, kde-format
 msgid "1 level, uses KGoldrunner rules."
 msgid_plural "%1 levels, uses KGoldrunner rules."
 msgstr[0] "1 επίπεδο, χρησιμοποιούνται οι κανόνες του KGoldrunner."
 msgstr[1] "%1 επίπεδα, χρησιμοποιούνται οι κανόνες του KGoldrunner."
 
-#: src/kgrselector.cpp:468
+#: src/kgrselector.cpp:471
 #, kde-format
 msgid "1 level, uses Traditional rules."
 msgid_plural "%1 levels, uses Traditional rules."
 msgstr[0] "1 επίπεδο, χρησιμοποιούνται οι παραδοσιακοί κανόνες."
 msgstr[1] "%1 επίπεδα, χρησιμοποιούνται οι παραδοσιακοί κανόνες."
 
-#: src/kgrselector.cpp:473
+#: src/kgrselector.cpp:476
 #, kde-format
 msgid "Sorry, there is no further information about this game."
 msgstr ""
 "Δυστυχώς, δεν υπάρχουν επιπλέον πληροφορίες σχετικά με αυτό το παιχνίδι."
 
-#: src/kgrselector.cpp:499
+#: src/kgrselector.cpp:502
 #, kde-format
 msgid "This level number is not valid. It can not be used."
 msgstr ""
 "Αυτός ο αριθμός επιπέδου δεν είναι έγκυρος. Δεν μπορεί να χρησιμοποιηθεί."
 
-#: src/kgrselector.cpp:520
+#: src/kgrselector.cpp:523
 #, kde-format
 msgid ""
 "The main button at the bottom echoes the menu action you selected. Click it "
@@ -8576,7 +8576,7 @@ msgstr ""
 "επιλέξει. Κάντε κλικ σε αυτό αφού επιλέξετε ένα παιχνίδι και επίπεδο - ή "
 "πατήστε \"Άκυρο\"."
 
-#: src/kgrselector.cpp:525
+#: src/kgrselector.cpp:528
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -8610,7 +8610,7 @@ msgstr ""
 "στο κάτω μέρος. Το παιχνίδι ξεκινά όταν κουνήσετε το ποντίκι ή πατήστε "
 "κάποιο πλήκτρο."
 
-#: src/kgrselector.cpp:534
+#: src/kgrselector.cpp:537
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -8636,7 +8636,7 @@ msgstr ""
 "κουμπιά της γραμμής εργαλείων του επεξεργαστή σαν παλέτα. Χρησιμοποιήστε το "
 "κουμπί \"Κενός χώρος\" για διαγραφή."
 
-#: src/kgrselector.cpp:542
+#: src/kgrselector.cpp:545
 #, kde-format
 msgid ""
 "\n"
@@ -8654,7 +8654,7 @@ msgstr ""
 "τέλος του παιχνιδιού σας, αλλά μπορείτε να επιλέξτε ένα νούμερο επιπέδου και "
 "να το αποθηκεύσετε στη μέση του παιχνιδιού σας."
 
-#: src/kgrselector.cpp:549
+#: src/kgrselector.cpp:552
 #, kde-format
 msgid ""
 "\n"
@@ -8672,7 +8672,7 @@ msgstr ""
 "σε ένα από τα δικά σας παιχνίδια. Αν αποθηκεύστε ένα επίπεδο στη μέση μιας "
 "σειράς, τα άλλα επίπεδα θα αλλάξουν νούμερο αυτόματα."
 
-#: src/kgrselector.cpp:556
+#: src/kgrselector.cpp:559
 #, kde-format
 msgid ""
 "\n"
@@ -8686,7 +8686,7 @@ msgstr ""
 "ένα επίπεδο στη μέση μιας σειράς, τα υπόλοιπα επίπεδα θα αριθμηθούν και πάλι "
 "αυτόματα."
 
-#: src/kgrselector.cpp:561
+#: src/kgrselector.cpp:564
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -8712,7 +8712,7 @@ msgstr ""
 "νούμερο όταν απαιτείται. Μπορείτε να μετακινήστε επίπεδα μόνο μέσα στα δικά "
 "σας παιχνίδια."
 
-#: src/kgrselector.cpp:568
+#: src/kgrselector.cpp:571
 #, kde-format
 msgid ""
 "\n"
@@ -8726,7 +8726,7 @@ msgstr ""
 "παιχνίδι, στη συνέχεια μπορείτε να πάτε στο διάλογο όπου επεξεργάζεστε τις "
 "λεπτομέρειες του παιχνιδιού."
 
-#: src/kgrselector.cpp:575
+#: src/kgrselector.cpp:578
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -8760,7 +8760,7 @@ msgstr ""
 "μπάρα κύλισης. Καθώς αλλάζετε παιχνίδι ή επίπεδο, η περιοχή επισκόπησης "
 "εμφανίζει μία προεπισκόπηση της επιλογής σας."
 
-#: src/kgrselector.cpp:586
+#: src/kgrselector.cpp:589
 #, kde-format
 msgid "Help: Select Game & Level"
 msgstr "Βοήθεια: Επιλογή παιχνιδιού & επιπέδου"

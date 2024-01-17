@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:44+0000\n"
+"POT-Creation-Date: 2024-01-17 00:36+0000\n"
 "PO-Revision-Date: 2005-03-22 22:18-0800\n"
 "Last-Translator: Tamil PC <tamilpc@ambalam.com>\n"
 "Language-Team: English <en@li.org>\n"
@@ -6910,7 +6910,7 @@ msgstr "மாறுதல்களை சேமி"
 msgid "0 levels"
 msgstr "0 மட்டங்கள்"
 
-#: src/kgrdialog.cpp:192 src/kgrselector.cpp:265
+#: src/kgrdialog.cpp:192 src/kgrselector.cpp:269
 #, kde-format
 msgid "Save New"
 msgstr "புதிதை சேமி"
@@ -6941,7 +6941,7 @@ msgstr ""
 "You cannot create and save a level until you have created a game to hold it. "
 "Try menu item \"Create Game\"."
 
-#: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:262
+#: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:266
 #, kde-format
 msgid "Edit Level"
 msgstr "மட்டத்தை திருத்து"
@@ -7034,7 +7034,7 @@ msgid "You must change the level or the game or both."
 msgstr "நீங்கள் மட்டத்தை அல்லது விளையாட்டை அல்லது இரண்டையுமே மாற்ற வேண்டும்"
 
 #: src/kgreditor.cpp:418 src/kgreditor.cpp:441 src/kgreditor.cpp:459
-#: src/kgrselector.cpp:271
+#: src/kgrselector.cpp:275
 #, kde-format
 msgid "Delete Level"
 msgstr "மட்டத்தை நீக்கு"
@@ -7297,7 +7297,7 @@ msgstr ""
 msgid "Replay Any Level"
 msgstr "&எந்த மட்டத்திலும் விளையாடு"
 
-#: src/kgrgame.cpp:849 src/kgrgame.cpp:2053
+#: src/kgrgame.cpp:849 src/kgrgame.cpp:2055
 #, kde-format
 msgid ""
 "Sorry, you do not seem to have played and recorded the selected level before."
@@ -7408,7 +7408,7 @@ msgstr ""
 "தயவு செய்து நிரல் விவரம் %1யை முயற்சி"
 
 #: src/kgrgame.cpp:1493 src/kgrgame.cpp:1537 src/kgrgame.cpp:1652
-#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2019 src/kgrgameio.cpp:170
+#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2021 src/kgrgameio.cpp:169
 #, kde-format
 msgid "Cannot open file '%1' for read-only."
 msgstr " '%1' கூட படிக்க மட்டும் கோப்பினை திறக்க முடியவில்லை"
@@ -7533,66 +7533,66 @@ msgstr "மதிப்பெண்"
 msgid "Date"
 msgstr ""
 
-#: src/kgrgame.cpp:1887
+#: src/kgrgame.cpp:1888
 #, fuzzy, kde-format
 #| msgid "High Scores"
 msgctxt "@title:window"
 msgid "High Scores"
 msgstr "அதிக மதிப்பீடுகள்"
 
-#: src/kgrgame.cpp:2012 src/kgrgame.cpp:2018 src/kgrgame.cpp:2022
+#: src/kgrgame.cpp:2014 src/kgrgame.cpp:2020 src/kgrgame.cpp:2024
 #, kde-format
 msgid "Load Game Info"
 msgstr "விளையாட்டின் தகவல்களை உள்வாங்கு"
 
-#: src/kgrgame.cpp:2013
+#: src/kgrgame.cpp:2015
 #, kde-format
 msgid "Cannot find game info file '%1'."
 msgstr "கேம் இன்ஃபோ கோப்பினைக் காணவில்லை '%1'."
 
-#: src/kgrgame.cpp:2023
+#: src/kgrgame.cpp:2025
 #, kde-format
 msgid "Reached end of file '%1' before finding end of game-data."
 msgstr ""
 
-#: src/kgrgame.cpp:2047 src/kgrgame.cpp:2052 src/kgrselector.cpp:259
+#: src/kgrgame.cpp:2049 src/kgrgame.cpp:2054 src/kgrselector.cpp:263
 #, fuzzy, kde-format
 #| msgid "Show Positions"
 msgid "Save A Solution"
 msgstr "நிலையைக் காட்டு"
 
-#: src/kgrgame.cpp:2048
+#: src/kgrgame.cpp:2050
 #, kde-format
 msgid "Your solution to level %1 has been saved on file %2"
 msgstr ""
 
-#: src/kgrgameio.cpp:164 src/kgrgameio.cpp:169 src/kgrgameio.cpp:173
+#: src/kgrgameio.cpp:163 src/kgrgameio.cpp:168 src/kgrgameio.cpp:172
 #, fuzzy, kde-format
 msgid "Read Level Data"
 msgstr "மட்டத்தை உள்வாங்கு"
 
-#: src/kgrgameio.cpp:165
+#: src/kgrgameio.cpp:164
 #, fuzzy, kde-format
 msgid "Cannot find file '%1'."
 msgstr "கேம் இன்ஃபோ கோப்பினைக் காணவில்லை '%1'."
 
-#: src/kgrgameio.cpp:174
+#: src/kgrgameio.cpp:173
 #, kde-format
 msgid "Reached end of file '%1' without finding level data."
 msgstr ""
 
-#: src/kgrgameio.cpp:382 src/kgrgameio.cpp:389
+#: src/kgrgameio.cpp:381 src/kgrgameio.cpp:388
 #, kde-format
 msgid "Rename File"
 msgstr ""
 
-#: src/kgrgameio.cpp:383
+#: src/kgrgameio.cpp:382
 #, fuzzy, kde-format
 #| msgid "Cannot find game info file '%1'."
 msgid "Cannot delete previous version of file '%1'."
 msgstr "கேம் இன்ஃபோ கோப்பினைக் காணவில்லை '%1'."
 
-#: src/kgrgameio.cpp:390
+#: src/kgrgameio.cpp:389
 #, kde-format
 msgid "Cannot rename file '%1' to '%2'."
 msgstr "'%1' to '%2'. என்னும் கோப்பு பெயர்மாற்றம் இயலாது"
@@ -7614,192 +7614,192 @@ msgstr "உயிர்கள்"
 msgid "Score: %1"
 msgstr "மதிப்பெண்"
 
-#: src/kgrselector.cpp:69 src/kgrselector.cpp:75 src/kgrselector.cpp:95
-#: src/kgrselector.cpp:498
+#: src/kgrselector.cpp:72 src/kgrselector.cpp:78 src/kgrselector.cpp:98
+#: src/kgrselector.cpp:501
 #, kde-format
 msgid "Select Level"
 msgstr "மட்டத்தை தேர்ந்தெடு"
 
-#: src/kgrselector.cpp:70
+#: src/kgrselector.cpp:73
 #, kde-format
 msgid "Sorry, you can only save or move into one of your own games."
 msgstr "உங்களது ஒரு விளையாட்டை சேமிக்க அல்லது நகர முடிவதற்காக மன்னிக்கவும். "
 
-#: src/kgrselector.cpp:76
+#: src/kgrselector.cpp:79
 #, kde-format
 msgid "Sorry, you can only delete a level from one of your own games."
 msgstr ""
 "உங்களுடைய ஒரு விளையாட்டிலிருந்து ஒரு மட்டத்தை மட்டும் நீக்க முடிவதற்க்காக மன்னிக்கவும்."
 
-#: src/kgrselector.cpp:81 src/kgrselector.cpp:277
+#: src/kgrselector.cpp:84 src/kgrselector.cpp:281
 #, kde-format
 msgid "Edit Game Info"
 msgstr "விளையாட்டின் தகவல்களை திருத்து"
 
-#: src/kgrselector.cpp:82
+#: src/kgrselector.cpp:85
 #, kde-format
 msgid "Sorry, you can only edit the game information on your own games."
 msgstr "உங்கள் விளையாட்டுத் தகவல்களை திருத்த மட்டுமே முடிவதற்க்காக மன்னிக்கவும்."
 
-#: src/kgrselector.cpp:96
+#: src/kgrselector.cpp:99
 #, fuzzy, kde-format
 #| msgid "There is no level %1 in %2, so you cannot play or edit it."
 msgid "There is no level %1 in \"%2\", so you cannot play or edit it."
 msgstr "%2வில் %1 மட்டம் இல்லை, அதனால் உங்களால் விளையாடவோ திருத்தவோ முடியாது."
 
-#: src/kgrselector.cpp:118 src/kgrselector.cpp:173
+#: src/kgrselector.cpp:121 src/kgrselector.cpp:177
 #, fuzzy, kde-format
 #| msgid "Select Game"
 msgctxt "@title:window"
 msgid "Select Game"
 msgstr "விளையாட்டைத் தேர்ந்தெடு"
 
-#: src/kgrselector.cpp:132
+#: src/kgrselector.cpp:135
 #, kde-format
 msgid "<html><b>Please select a game:</b></html>"
 msgstr ""
 
-#: src/kgrselector.cpp:140
+#: src/kgrselector.cpp:143
 #, fuzzy, kde-format
 #| msgid "Name of game:"
 msgid "Name of Game"
 msgstr "விளையாட்டின் பெயர்"
 
-#: src/kgrselector.cpp:141
+#: src/kgrselector.cpp:144
 #, kde-format
 msgid "Rules"
 msgstr ""
 
-#: src/kgrselector.cpp:142
+#: src/kgrselector.cpp:145
 #, fuzzy, kde-format
 #| msgid "0 levels"
 msgid "Levels"
 msgstr "0 மட்டங்கள்"
 
-#: src/kgrselector.cpp:143
+#: src/kgrselector.cpp:146
 #, kde-format
 msgid "Skill"
 msgstr ""
 
-#: src/kgrselector.cpp:175
+#: src/kgrselector.cpp:179
 #, kde-format
 msgid "Level 1 of the selected game is:"
 msgstr "தேர்ந்தெடுக்கப்பட்ட விளையாட்டின் மட்டம் 1 "
 
-#: src/kgrselector.cpp:179
+#: src/kgrselector.cpp:183
 #, fuzzy, kde-format
 #| msgid "Select Game/Level"
 msgctxt "@title:window"
 msgid "Select Game/Level"
 msgstr "விளையாட்டு/மட்டம் தேர்ந்தெடு"
 
-#: src/kgrselector.cpp:181
+#: src/kgrselector.cpp:185
 #, fuzzy, kde-format
 #| msgid "Select level:"
 msgid "Please select a level:"
 msgstr "மட்டத்தை தேர்ந்தெடு"
 
-#: src/kgrselector.cpp:200
+#: src/kgrselector.cpp:204
 #, kde-format
 msgid "Level number:"
 msgstr "மட்டத்தின் எண்"
 
-#: src/kgrselector.cpp:206
+#: src/kgrselector.cpp:210
 #, fuzzy, kde-format
 #| msgid "Edit Level Name && Hint"
 msgid "Edit Level Name o&r Hint"
 msgstr "மட்டத்தின் பெயரையும்&& உதவுக்குறிப்பை திருத்து"
 
-#: src/kgrselector.cpp:241
+#: src/kgrselector.cpp:245
 #, kde-format
 msgid "Start Game"
 msgstr "விளையாட்டைத் துவக்கு"
 
-#: src/kgrselector.cpp:250
+#: src/kgrselector.cpp:254
 #, kde-format
 msgid "Play Level"
 msgstr "மட்டத்தில் விளையாடு"
 
-#: src/kgrselector.cpp:253
+#: src/kgrselector.cpp:257
 #, fuzzy, kde-format
 #| msgid "&Play Any Level..."
 msgid "Replay Level"
 msgstr "&எந்த மட்டத்திலும் விளையாடு"
 
-#: src/kgrselector.cpp:256
+#: src/kgrselector.cpp:260
 #, fuzzy, kde-format
 #| msgid "Show Positions"
 msgid "Show Solution"
 msgstr "நிலையைக் காட்டு"
 
-#: src/kgrselector.cpp:268
+#: src/kgrselector.cpp:272
 #, kde-format
 msgid "Save Change"
 msgstr "சேமித்ததை மாற்று"
 
-#: src/kgrselector.cpp:274
+#: src/kgrselector.cpp:278
 #, kde-format
 msgid "Move To..."
 msgstr "செல்..."
 
-#: src/kgrselector.cpp:355
+#: src/kgrselector.cpp:357
 #, fuzzy, kde-format
 #| msgid "KGoldrunner"
 msgctxt "Rules"
 msgid "KGoldrunner"
 msgstr "Kகோல்டு ரன்னர்"
 
-#: src/kgrselector.cpp:356
+#: src/kgrselector.cpp:358
 #, fuzzy, kde-format
 #| msgid "Traditional rules"
 msgctxt "Rules"
 msgid "Traditional"
 msgstr "பழைய விதிகள்"
 
-#: src/kgrselector.cpp:359
+#: src/kgrselector.cpp:361
 #, fuzzy, kde-format
 #| msgid "Tutorial"
 msgctxt "Skill Level"
 msgid "Tutorial"
 msgstr "பாடம்"
 
-#: src/kgrselector.cpp:361
+#: src/kgrselector.cpp:363
 #, fuzzy, kde-format
 #| msgid "Normal Speed"
 msgctxt "Skill Level"
 msgid "Normal"
 msgstr "இயல்பான வேகம்"
 
-#: src/kgrselector.cpp:362
+#: src/kgrselector.cpp:364
 #, fuzzy, kde-format
 #| msgid "Champion Speed"
 msgctxt "Skill Level"
 msgid "Championship"
 msgstr "சிறந்த வேகம்"
 
-#: src/kgrselector.cpp:465
+#: src/kgrselector.cpp:468
 #, fuzzy, kde-format
 msgid "1 level, uses KGoldrunner rules."
 msgid_plural "%1 levels, uses KGoldrunner rules."
 msgstr[0] "%1 மட்டங்கள், KGoldrunner விதிகளை பயன்படுத்துகிறது."
 
-#: src/kgrselector.cpp:468
+#: src/kgrselector.cpp:471
 #, fuzzy, kde-format
 msgid "1 level, uses Traditional rules."
 msgid_plural "%1 levels, uses Traditional rules."
 msgstr[0] "%1 எல்லைகள், பழைய விதிகளை பயன்படுத்துகிறது."
 
-#: src/kgrselector.cpp:473
+#: src/kgrselector.cpp:476
 #, kde-format
 msgid "Sorry, there is no further information about this game."
 msgstr "மன்னிக்கவும், இந்த விளையாட்டைப் பற்றிய மேற்பட்ட தகவல்கள் இல்லை"
 
-#: src/kgrselector.cpp:499
+#: src/kgrselector.cpp:502
 #, kde-format
 msgid "This level number is not valid. It can not be used."
 msgstr "இந்த மட்ட எண் உரியது அல்ல.அதை உபயோகிக்க முடியாது"
 
-#: src/kgrselector.cpp:520
+#: src/kgrselector.cpp:523
 #, kde-format
 msgid ""
 "The main button at the bottom echoes the menu action you selected. Click it "
@@ -7808,7 +7808,7 @@ msgstr ""
 "நீங்கள் தேர்வு செய்த பட்டி செயல் கீழ் உள்ள முக்கிய பொத்தானை எதிரொலிக்கும்.விளையாட்டு மற்றும் "
 "மட்டத்தை தேர்வு செய்த பின் சொடுக்கவும் அல்லது \"Cancel\" ஐ உபயோகிக்கவும்."
 
-#: src/kgrselector.cpp:525
+#: src/kgrselector.cpp:528
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -7840,7 +7840,7 @@ msgstr ""
 "துவக்கவும், கீழ் உள்ள முக்கிய பொத்தானை அழுத்தவும். நீங்கள் சுட்டியை அழுத்தினாலோ அல்லது "
 "சொடுக்கினாலோ விளையாட்டு ஆரம்பித்து விடும்."
 
-#: src/kgrselector.cpp:534
+#: src/kgrselector.cpp:537
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -7865,7 +7865,7 @@ msgstr ""
 "தொகுப்பி கருவிப்பட்டியை பட்டியாக உபயோகிக்கவும்.'காலி இடத்தை' பொத்தானை அழிப்பதற்கு "
 "பயன்படுத்தவும்."
 
-#: src/kgrselector.cpp:542
+#: src/kgrselector.cpp:545
 #, kde-format
 msgid ""
 "\n"
@@ -7882,7 +7882,7 @@ msgstr ""
 "உங்கள் புது மட்டத்தை உங்கள் விளையாட்டின் இறுதியில் சென்றுவிடும், மட்டத்தை எண்ணை நீங்கள் தேர்வு "
 "செய்யலாம் அதன் பின் உங்கள் விளையாட்டின் நடுவே சேமிக்கலாம்."
 
-#: src/kgrselector.cpp:549
+#: src/kgrselector.cpp:552
 #, kde-format
 msgid ""
 "\n"
@@ -7899,7 +7899,7 @@ msgstr ""
 "செய்யலாம், ஆனால் நீங்கள் எப்போதும் உங்களின் ஏதாவது ஒரு சொந்த விளையாட்டில் சேமிக்க வேண்டும். "
 "மட்டங்களை விளையாட்டின் நடுவே சேமித்தால், மற்ற மட்டங்கள் தானாகவே எண்ணிப்படும்."
 
-#: src/kgrselector.cpp:556
+#: src/kgrselector.cpp:559
 #, kde-format
 msgid ""
 "\n"
@@ -7912,7 +7912,7 @@ msgstr ""
 "உங்களின் ஏதாவது ஒரு சொந்த விளையாட்டில் மட்டும் தான் மட்டத்தை நீங்கள் நீக்கலாம். நடு வரிசையில் "
 "இருந்து நீங்கள் மட்டத்தை நீக்கினால், மற்ற மட்டங்கள் தானாகவே எண்ணிப்படும்."
 
-#: src/kgrselector.cpp:561
+#: src/kgrselector.cpp:564
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -7936,7 +7936,7 @@ msgstr ""
 "அல்லது வேறு ஒரு விளையாட்டை அமைக்கலாம். எதிர்பார்த்தது போல் மற்ற மட்டங்கள் தானாகவே "
 "எண்ணிப்படும். உங்கள் சொந்த விளையாட்டில் மட்டுமே நீங்கள் மட்டங்களை மாற்றலாம்."
 
-#: src/kgrselector.cpp:568
+#: src/kgrselector.cpp:571
 #, kde-format
 msgid ""
 "\n"
@@ -7949,7 +7949,7 @@ msgstr ""
 "விளையாட்டு தகவல்களை தொகுக்கும் பொழுது நீங்கள் விளையாட்டை தேர்வு செய்தால் போதுமானது, அதன் "
 "பின் விளையாட்டு தகவல்களை தொகுக்கும் உரையாடல் பெட்டிக்கு செல்லலாம்."
 
-#: src/kgrselector.cpp:575
+#: src/kgrselector.cpp:578
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -7982,7 +7982,7 @@ msgstr ""
 "விளையாட்டு அல்லது மட்டக்கையை மாற்றும் பொழுது, கட்ட விரல் இடம் உங்களின் தேர்வின் முன் "
 "பார்வையை காண்பிக்கும்."
 
-#: src/kgrselector.cpp:586
+#: src/kgrselector.cpp:589
 #, kde-format
 msgid "Help: Select Game & Level"
 msgstr "உதவி:விளையாட்டு/மட்டம் தேர்ந்தெடு"

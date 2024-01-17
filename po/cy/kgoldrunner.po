@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:44+0000\n"
+"POT-Creation-Date: 2024-01-17 00:36+0000\n"
 "PO-Revision-Date: 2005-10-14 16:49+0100\n"
 "Last-Translator: Kevin Donnelly <kevin@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -6922,7 +6922,7 @@ msgstr "Cadw Newidiadau"
 msgid "0 levels"
 msgstr "0 lefel"
 
-#: src/kgrdialog.cpp:192 src/kgrselector.cpp:265
+#: src/kgrdialog.cpp:192 src/kgrselector.cpp:269
 #, kde-format
 msgid "Save New"
 msgstr "Cadw Newydd"
@@ -6955,7 +6955,7 @@ msgstr ""
 "Ni allwch greu neu gadw lefel tan i chi greu gêm i'w chynnwys.  Ceisiwch y "
 "cofnod \"Creu Gêm\" ar y ddewislen."
 
-#: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:262
+#: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:266
 #, kde-format
 msgid "Edit Level"
 msgstr "Golygu Lefel"
@@ -7053,7 +7053,7 @@ msgid "You must change the level or the game or both."
 msgstr "Rhaid i chi newid y lefel neu'r gêm neu'r ddau."
 
 #: src/kgreditor.cpp:418 src/kgreditor.cpp:441 src/kgreditor.cpp:459
-#: src/kgrselector.cpp:271
+#: src/kgrselector.cpp:275
 #, kde-format
 msgid "Delete Level"
 msgstr "Dileu Lefel"
@@ -7315,7 +7315,7 @@ msgstr ""
 msgid "Replay Any Level"
 msgstr "Ch&warae Unrhyw Lefel..."
 
-#: src/kgrgame.cpp:849 src/kgrgame.cpp:2053
+#: src/kgrgame.cpp:849 src/kgrgame.cpp:2055
 #, kde-format
 msgid ""
 "Sorry, you do not seem to have played and recorded the selected level before."
@@ -7426,7 +7426,7 @@ msgstr ""
 "ddewislen."
 
 #: src/kgrgame.cpp:1493 src/kgrgame.cpp:1537 src/kgrgame.cpp:1652
-#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2019 src/kgrgameio.cpp:170
+#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2021 src/kgrgameio.cpp:169
 #, kde-format
 msgid "Cannot open file '%1' for read-only."
 msgstr "Methu agor ffeil '%1' ar gyfer darllen-yn-unig."
@@ -7552,66 +7552,66 @@ msgstr "Sgôr: "
 msgid "Date"
 msgstr ""
 
-#: src/kgrgame.cpp:1887
+#: src/kgrgame.cpp:1888
 #, fuzzy, kde-format
 #| msgid "High Scores"
 msgctxt "@title:window"
 msgid "High Scores"
 msgstr "Sgorau Gorau"
 
-#: src/kgrgame.cpp:2012 src/kgrgame.cpp:2018 src/kgrgame.cpp:2022
+#: src/kgrgame.cpp:2014 src/kgrgame.cpp:2020 src/kgrgame.cpp:2024
 #, kde-format
 msgid "Load Game Info"
 msgstr "Llwytho Gwybodaeth Gêm"
 
-#: src/kgrgame.cpp:2013
+#: src/kgrgame.cpp:2015
 #, kde-format
 msgid "Cannot find game info file '%1'."
 msgstr "Methu canfod ffeil wybodaeth y gêm '%1'."
 
-#: src/kgrgame.cpp:2023
+#: src/kgrgame.cpp:2025
 #, kde-format
 msgid "Reached end of file '%1' before finding end of game-data."
 msgstr ""
 
-#: src/kgrgame.cpp:2047 src/kgrgame.cpp:2052 src/kgrselector.cpp:259
+#: src/kgrgame.cpp:2049 src/kgrgame.cpp:2054 src/kgrselector.cpp:263
 #, fuzzy, kde-format
 #| msgid "Show Positions"
 msgid "Save A Solution"
 msgstr "Dangos Lleoliadau"
 
-#: src/kgrgame.cpp:2048
+#: src/kgrgame.cpp:2050
 #, kde-format
 msgid "Your solution to level %1 has been saved on file %2"
 msgstr ""
 
-#: src/kgrgameio.cpp:164 src/kgrgameio.cpp:169 src/kgrgameio.cpp:173
+#: src/kgrgameio.cpp:163 src/kgrgameio.cpp:168 src/kgrgameio.cpp:172
 #, fuzzy, kde-format
 msgid "Read Level Data"
 msgstr "Llwytho Lefel"
 
-#: src/kgrgameio.cpp:165
+#: src/kgrgameio.cpp:164
 #, fuzzy, kde-format
 msgid "Cannot find file '%1'."
 msgstr "Methu canfod ffeil wybodaeth y gêm '%1'."
 
-#: src/kgrgameio.cpp:174
+#: src/kgrgameio.cpp:173
 #, kde-format
 msgid "Reached end of file '%1' without finding level data."
 msgstr ""
 
-#: src/kgrgameio.cpp:382 src/kgrgameio.cpp:389
+#: src/kgrgameio.cpp:381 src/kgrgameio.cpp:388
 #, kde-format
 msgid "Rename File"
 msgstr ""
 
-#: src/kgrgameio.cpp:383
+#: src/kgrgameio.cpp:382
 #, fuzzy, kde-format
 #| msgid "Cannot find game info file '%1'."
 msgid "Cannot delete previous version of file '%1'."
 msgstr "Methu canfod ffeil wybodaeth y gêm '%1'."
 
-#: src/kgrgameio.cpp:390
+#: src/kgrgameio.cpp:389
 #, kde-format
 msgid "Cannot rename file '%1' to '%2'."
 msgstr "Methu ailenwi ffeil '%1' i '%2'."
@@ -7633,194 +7633,194 @@ msgstr "Bywydau: "
 msgid "Score: %1"
 msgstr "Sgôr: "
 
-#: src/kgrselector.cpp:69 src/kgrselector.cpp:75 src/kgrselector.cpp:95
-#: src/kgrselector.cpp:498
+#: src/kgrselector.cpp:72 src/kgrselector.cpp:78 src/kgrselector.cpp:98
+#: src/kgrselector.cpp:501
 #, kde-format
 msgid "Select Level"
 msgstr "Dewis Lefel"
 
-#: src/kgrselector.cpp:70
+#: src/kgrselector.cpp:73
 #, kde-format
 msgid "Sorry, you can only save or move into one of your own games."
 msgstr "Sori - gallwch gadw neu symud i mewn i un o'ch gemau eich hun yn unig."
 
-#: src/kgrselector.cpp:76
+#: src/kgrselector.cpp:79
 #, kde-format
 msgid "Sorry, you can only delete a level from one of your own games."
 msgstr "Sori - gallwch ddileu level o un o'ch gemau eich hun yn unig."
 
-#: src/kgrselector.cpp:81 src/kgrselector.cpp:277
+#: src/kgrselector.cpp:84 src/kgrselector.cpp:281
 #, kde-format
 msgid "Edit Game Info"
 msgstr "Golygu Gwybodaeth Gêm"
 
-#: src/kgrselector.cpp:82
+#: src/kgrselector.cpp:85
 #, kde-format
 msgid "Sorry, you can only edit the game information on your own games."
 msgstr ""
 "Sori - gallwch olygu gwybodaeth y gêm mewn un o'ch gemau eich hun yn unig."
 
-#: src/kgrselector.cpp:96
+#: src/kgrselector.cpp:99
 #, fuzzy, kde-format
 #| msgid "There is no level %1 in %2, so you cannot play or edit it."
 msgid "There is no level %1 in \"%2\", so you cannot play or edit it."
 msgstr "Nid oes lefel %1 yn %2, felly ni chewch ei chwarae neu ei golygu."
 
-#: src/kgrselector.cpp:118 src/kgrselector.cpp:173
+#: src/kgrselector.cpp:121 src/kgrselector.cpp:177
 #, fuzzy, kde-format
 #| msgid "Select Game"
 msgctxt "@title:window"
 msgid "Select Game"
 msgstr "Dewis Gêm"
 
-#: src/kgrselector.cpp:132
+#: src/kgrselector.cpp:135
 #, kde-format
 msgid "<html><b>Please select a game:</b></html>"
 msgstr ""
 
-#: src/kgrselector.cpp:140
+#: src/kgrselector.cpp:143
 #, fuzzy, kde-format
 #| msgid "Name of game:"
 msgid "Name of Game"
 msgstr "Enw'r gêm:"
 
-#: src/kgrselector.cpp:141
+#: src/kgrselector.cpp:144
 #, kde-format
 msgid "Rules"
 msgstr ""
 
-#: src/kgrselector.cpp:142
+#: src/kgrselector.cpp:145
 #, fuzzy, kde-format
 #| msgid "0 levels"
 msgid "Levels"
 msgstr "0 lefel"
 
-#: src/kgrselector.cpp:143
+#: src/kgrselector.cpp:146
 #, kde-format
 msgid "Skill"
 msgstr ""
 
-#: src/kgrselector.cpp:175
+#: src/kgrselector.cpp:179
 #, kde-format
 msgid "Level 1 of the selected game is:"
 msgstr "Lefel 1 o'r gêm a ddewiswyd yw:"
 
-#: src/kgrselector.cpp:179
+#: src/kgrselector.cpp:183
 #, fuzzy, kde-format
 #| msgid "Select Game/Level"
 msgctxt "@title:window"
 msgid "Select Game/Level"
 msgstr "Dewis Gêm/Lefel"
 
-#: src/kgrselector.cpp:181
+#: src/kgrselector.cpp:185
 #, fuzzy, kde-format
 #| msgid "Select level:"
 msgid "Please select a level:"
 msgstr "Dewis lefel:"
 
-#: src/kgrselector.cpp:200
+#: src/kgrselector.cpp:204
 #, kde-format
 msgid "Level number:"
 msgstr "Rhif lefel:"
 
-#: src/kgrselector.cpp:206
+#: src/kgrselector.cpp:210
 #, fuzzy, kde-format
 #| msgid "Edit Level Name && Hint"
 msgid "Edit Level Name o&r Hint"
 msgstr "Golygu En&w a Cynghoryn y Lefel"
 
-#: src/kgrselector.cpp:241
+#: src/kgrselector.cpp:245
 #, kde-format
 msgid "Start Game"
 msgstr "Dechrau Gêm"
 
-#: src/kgrselector.cpp:250
+#: src/kgrselector.cpp:254
 #, kde-format
 msgid "Play Level"
 msgstr "Chwarae Lefel"
 
-#: src/kgrselector.cpp:253
+#: src/kgrselector.cpp:257
 #, fuzzy, kde-format
 #| msgid "&Play Any Level..."
 msgid "Replay Level"
 msgstr "Ch&warae Unrhyw Lefel..."
 
-#: src/kgrselector.cpp:256
+#: src/kgrselector.cpp:260
 #, fuzzy, kde-format
 #| msgid "Show Positions"
 msgid "Show Solution"
 msgstr "Dangos Lleoliadau"
 
-#: src/kgrselector.cpp:268
+#: src/kgrselector.cpp:272
 #, kde-format
 msgid "Save Change"
 msgstr "Cadw Newid"
 
-#: src/kgrselector.cpp:274
+#: src/kgrselector.cpp:278
 #, kde-format
 msgid "Move To..."
 msgstr "Symud I ..."
 
-#: src/kgrselector.cpp:355
+#: src/kgrselector.cpp:357
 #, fuzzy, kde-format
 #| msgid "KGoldrunner"
 msgctxt "Rules"
 msgid "KGoldrunner"
 msgstr "KGoldrunner"
 
-#: src/kgrselector.cpp:356
+#: src/kgrselector.cpp:358
 #, fuzzy, kde-format
 #| msgid "Traditional rules"
 msgctxt "Rules"
 msgid "Traditional"
 msgstr "Rheolau Traddodiadol"
 
-#: src/kgrselector.cpp:359
+#: src/kgrselector.cpp:361
 #, fuzzy, kde-format
 #| msgid "Tutorial"
 msgctxt "Skill Level"
 msgid "Tutorial"
 msgstr "Hyfforddiad"
 
-#: src/kgrselector.cpp:361
+#: src/kgrselector.cpp:363
 #, fuzzy, kde-format
 #| msgid "Normal Speed"
 msgctxt "Skill Level"
 msgid "Normal"
 msgstr "Cyflymder Arferol"
 
-#: src/kgrselector.cpp:362
+#: src/kgrselector.cpp:364
 #, fuzzy, kde-format
 #| msgid "Champion Speed"
 msgctxt "Skill Level"
 msgid "Championship"
 msgstr "Cyflymder Pencampwr"
 
-#: src/kgrselector.cpp:465
+#: src/kgrselector.cpp:468
 #, fuzzy, kde-format
 msgid "1 level, uses KGoldrunner rules."
 msgid_plural "%1 levels, uses KGoldrunner rules."
 msgstr[0] "1 lefel, yn defnyddio rheolau KGoldRunner."
 msgstr[1] "%1 lefel, yn defnyddio rheolau KGoldRunner."
 
-#: src/kgrselector.cpp:468
+#: src/kgrselector.cpp:471
 #, fuzzy, kde-format
 msgid "1 level, uses Traditional rules."
 msgid_plural "%1 levels, uses Traditional rules."
 msgstr[0] "1 lefel, yn defnyddio rheolau Traddodiadol."
 msgstr[1] "%1 lefel, yn defnyddio rheolau Traddodiadol."
 
-#: src/kgrselector.cpp:473
+#: src/kgrselector.cpp:476
 #, kde-format
 msgid "Sorry, there is no further information about this game."
 msgstr "Sori, nid oes rhagor o wybodaeth ynglŷn â'r gêm yma."
 
-#: src/kgrselector.cpp:499
+#: src/kgrselector.cpp:502
 #, kde-format
 msgid "This level number is not valid. It can not be used."
 msgstr "Nid yw rhif y lefel yma yn ddilys.  Ni ellir ei ddefnyddio."
 
-#: src/kgrselector.cpp:520
+#: src/kgrselector.cpp:523
 #, kde-format
 msgid ""
 "The main button at the bottom echoes the menu action you selected. Click it "
@@ -7829,7 +7829,7 @@ msgstr ""
 "Mae'r prif fotwm yn y gwaelod yn atseinio'r weithred ddewislen wnaethoch ei "
 "dewis.  Cliciwch fo ar ôl dewis gêm neu lefel - neu defnyddiwch \"Diddymu\"."
 
-#: src/kgrselector.cpp:525
+#: src/kgrselector.cpp:528
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -7861,7 +7861,7 @@ msgstr ""
 "lefel 001, cliciwch ar y prif fotwm yn y gwaelod.  Mae'r chwarae yn dechrau "
 "wrth i chi symud y llygoden neu wasgu bysell."
 
-#: src/kgrselector.cpp:534
+#: src/kgrselector.cpp:537
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -7886,7 +7886,7 @@ msgstr ""
 "brws paent, a'r botymau ar far offer y golyfydd fel palet.  Defnyddiwch y "
 "botwm 'Lle Gwag' i ddileu."
 
-#: src/kgrselector.cpp:542
+#: src/kgrselector.cpp:545
 #, kde-format
 msgid ""
 "\n"
@@ -7903,7 +7903,7 @@ msgstr ""
 "yn mynd yn rhagosodol wrth ddiwedd eich gêm, ond cewch ddewis rhif lefel "
 "hefyd i gadw yng nghanol eich gêm."
 
-#: src/kgrselector.cpp:549
+#: src/kgrselector.cpp:552
 #, kde-format
 msgid ""
 "\n"
@@ -7920,7 +7920,7 @@ msgstr ""
 "eich hun o hyd.  Os cadwch lefel yng nghanol cyfres, mae'r lefelau eraill yn "
 "cael eu ailrifo yn ymysgogol."
 
-#: src/kgrselector.cpp:556
+#: src/kgrselector.cpp:559
 #, kde-format
 msgid ""
 "\n"
@@ -7933,7 +7933,7 @@ msgstr ""
 "Cewch ddileu lefelau o un o'ch gemau eich hun yn unig.  Os dileuwch lefel o "
 "ganol cyfres, mae'r lefelau eraill yn cael eu ailrifo yn ymysgogol."
 
-#: src/kgrselector.cpp:561
+#: src/kgrselector.cpp:564
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -7958,7 +7958,7 @@ msgstr ""
 "eu ailrifo yn ymysgogol fel bo angen.  Cewch symud lefelau tu mewn eich "
 "gemau eich hun yn unig."
 
-#: src/kgrselector.cpp:568
+#: src/kgrselector.cpp:571
 #, kde-format
 msgid ""
 "\n"
@@ -7971,7 +7971,7 @@ msgstr ""
 "Wrth olygu gwybodaeth am y gêm cewch ddewis gêm, ac wedyn mynd at ymgom lle "
 "mae'n bosib golygu manylion y gêm."
 
-#: src/kgrselector.cpp:575
+#: src/kgrselector.cpp:578
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -8004,7 +8004,7 @@ msgstr ""
 "Fel byddwch yn amnewid y gêm neu lefel, bydd yr ardal rhagolygon cryno yn "
 "dangos rhagolwg o'ch dewis."
 
-#: src/kgrselector.cpp:586
+#: src/kgrselector.cpp:589
 #, kde-format
 msgid "Help: Select Game & Level"
 msgstr "Cymorth: Dewis Gêm & Lefel"
