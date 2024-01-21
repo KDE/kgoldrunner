@@ -11,19 +11,20 @@
 # Franklin Weng <franklin@goodhorse.idv.tw>, 2012.
 # Jeff Huang <s8321414@gmail.com>, 2017.
 # pan93412 <pan93412@gmail.com>, 2018, 2019.
+# SPDX-FileCopyrightText: 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-17 00:36+0000\n"
-"PO-Revision-Date: 2019-01-03 18:36+0800\n"
-"Last-Translator: pan93412 <pan93412@gmail.com>\n"
-"Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
+"PO-Revision-Date: 2024-01-21 01:53+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 18.12.0\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #, kde-format
@@ -2999,10 +3000,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:343
-#, fuzzy, kde-format
-#| msgid "The Foundry"
+#, kde-format
 msgid "The End"
-msgstr "鑄造場"
+msgstr "結尾"
 
 #: gamedata/game_GotD.txt:344
 #, fuzzy, kde-format
@@ -3023,20 +3023,7 @@ msgid "Gold Rush II"
 msgstr "金塊衝衝衝 II"
 
 #: gamedata/game_GRII.txt:3
-#, fuzzy, kde-format
-#| msgid ""
-#| "These 20 levels have even harder challenges, more complicated puzzles and "
-#| "tighter timings than the first Gold Rush. They are not for the faint "
-#| "hearted. As before, you need to dig while falling sometimes. Have fun!\n"
-#| "\n"
-#| "Created by Gabriel Miltschitzky [gabriel dot miltschitzky at googlemail "
-#| "dot com], who also provided the recorded solutions.\n"
-#| "\n"
-#| "It is best to play the first Gold Rush levels before attempting Gold Rush "
-#| "II, because you will need many techniques that are easier to learn there. "
-#| "None of the levels in Gold Rush and Gold Rush II are impossible. If in "
-#| "doubt, use menu item 'Move->Show A Solution' to watch solutions provided "
-#| "by the author."
+#, kde-format
 msgid ""
 "These 20 levels have even harder challenges, more complicated puzzles and "
 "tighter timings than the first Gold Rush. They are not for the faint "
@@ -7017,8 +7004,7 @@ msgstr ""
 "料目錄中..."
 
 #: src/kgoldrunner.cpp:246 src/kgrgame.cpp:1303
-#, fuzzy, kde-format
-#| msgid "&Show A Solution"
+#, kde-format
 msgid "&Show a Solution"
 msgstr "顯示解答(&S)"
 
@@ -7742,11 +7728,10 @@ msgid "Edit Toolbar"
 msgstr "編輯器工具列"
 
 #: src/kgrdialog.cpp:34
-#, fuzzy, kde-format
-#| msgid "Edit Name & Hint"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Name or Hint"
-msgstr "編輯名稱和提示"
+msgstr "編輯名稱或提示"
 
 #: src/kgrdialog.cpp:56
 #, kde-format
@@ -7759,8 +7744,7 @@ msgid "Hint for level:"
 msgstr "關卡的提示："
 
 #: src/kgrdialog.cpp:103 src/kgrdialog.cpp:172
-#, fuzzy, kde-format
-#| msgid "Edit Game Info"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Game Info"
 msgstr "編輯遊戲資訊"
@@ -7797,8 +7781,7 @@ msgid "About this game:"
 msgstr "關於這個遊戲："
 
 #: src/kgrdialog.cpp:169
-#, fuzzy, kde-format
-#| msgid "Create Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Game"
 msgstr "創造遊戲"
@@ -7819,8 +7802,7 @@ msgid "Save New"
 msgstr "另存新檔"
 
 #: src/kgrdialog.cpp:247
-#, fuzzy, kde-format
-#| msgid "Select Saved Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Saved Game"
 msgstr "選擇已存遊戲"
@@ -8103,8 +8085,7 @@ msgid ""
 msgstr "沒有上一關可以重播。您需要玩完一關，不管輸贏，然後才能重播。"
 
 #: src/kgrgame.cpp:695
-#, fuzzy, kde-format
-#| msgid "Quick Start"
+#, kde-format
 msgctxt "@title:window"
 msgid "Quick Start"
 msgstr "快速開始"
@@ -8174,8 +8155,7 @@ msgid ""
 msgstr "遊戲已暫停。您必須按「暫停」鍵（預設為 P 或 Esc）才會再開始。"
 
 #: src/kgrgame.cpp:836
-#, fuzzy, kde-format
-#| msgid "Show A Solution"
+#, kde-format
 msgid "Show a Solution"
 msgstr "顯示解答"
 
@@ -8346,8 +8326,7 @@ msgstr ""
 "人堂中留下您的名字。</html>"
 
 #: src/kgrgame.cpp:1722
-#, fuzzy, kde-format
-#| msgid "Save High Score"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save High Score"
 msgstr "儲存高分紀錄"
@@ -8415,8 +8394,7 @@ msgid "Date"
 msgstr "日期"
 
 #: src/kgrgame.cpp:1888
-#, fuzzy, kde-format
-#| msgid "High Scores"
+#, kde-format
 msgctxt "@title:window"
 msgid "High Scores"
 msgstr "高分榜"
@@ -8523,8 +8501,7 @@ msgid "There is no level %1 in \"%2\", so you cannot play or edit it."
 msgstr "在 %2 中沒有關卡 %1，所以無法玩或編輯它。"
 
 #: src/kgrselector.cpp:121 src/kgrselector.cpp:177
-#, fuzzy, kde-format
-#| msgid "Select Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Game"
 msgstr "選擇遊戲"
@@ -8560,11 +8537,10 @@ msgid "Level 1 of the selected game is:"
 msgstr "所選遊戲的第一關是："
 
 #: src/kgrselector.cpp:183
-#, fuzzy, kde-format
-#| msgid "Select Game/Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Game/Level"
-msgstr "選擇 遊戲/關卡"
+msgstr "選擇遊戲/關卡"
 
 #: src/kgrselector.cpp:185
 #, kde-format
@@ -8577,10 +8553,9 @@ msgid "Level number:"
 msgstr "關卡編號："
 
 #: src/kgrselector.cpp:210
-#, fuzzy, kde-format
-#| msgid "Edit Level Name && Hint"
+#, kde-format
 msgid "Edit Level Name o&r Hint"
-msgstr "編輯關卡名稱和提示"
+msgstr "編輯關卡名稱或提示(&R)"
 
 #: src/kgrselector.cpp:245
 #, kde-format
@@ -8806,10 +8781,9 @@ msgid "Help: Select Game & Level"
 msgstr "說明：選擇遊戲與關卡"
 
 #: src/main.cpp:31
-#, fuzzy, kde-format
-#| msgid "KGoldrunner is a game of action and puzzle solving"
+#, kde-format
 msgid "A game of action and puzzle solving"
-msgstr "KGoldrunner 是一款動作與解謎的遊戲。"
+msgstr "一款動作與解謎遊戲"
 
 #: src/main.cpp:33
 #, kde-format
