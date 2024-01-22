@@ -183,6 +183,7 @@
       <li xml:lang="uk">Зміна тем</li>
       <li xml:lang="x-test">xxThemeablexx</li>
       <li xml:lang="zh-CN">可主题化</li>
+      <li xml:lang="zh-TW">可自訂主題</li>
       <li>Hundreds of levels</li>
       <li xml:lang="ca">Centenars de nivells</li>
       <li xml:lang="ca-valencia">Centenars de nivells</li>
@@ -217,6 +218,7 @@
       <li xml:lang="uk">Сотні рівнів</li>
       <li xml:lang="x-test">xxHundreds of levelsxx</li>
       <li xml:lang="zh-CN">上百关卡</li>
+      <li xml:lang="zh-TW">數百個關卡</li>
       <li>Level-editor</li>
       <li xml:lang="ca">Editor de nivells</li>
       <li xml:lang="ca-valencia">Editor de nivells</li>
@@ -251,6 +253,7 @@
       <li xml:lang="uk">Редактор рівнів</li>
       <li xml:lang="x-test">xxLevel-editorxx</li>
       <li xml:lang="zh-CN">关卡编辑器</li>
+      <li xml:lang="zh-TW">關卡編輯器</li>
       <li>Two modes for the enemies: classical and KGoldrunner-mode, in KGoldrunner-mode they are
           more intelligent, in the classical mode it is easier to fool them</li>
       <li xml:lang="ca">Dos modes per als enemics: mode clàssic i mode KGoldrunner. En el mode KGoldrunner són més intel·ligents, en el mode clàssic és més fàcil que es tornin boigs</li>
@@ -319,6 +322,7 @@
       <li xml:lang="uk">Дуже-дуже складні рівні</li>
       <li xml:lang="x-test">xxVery very difficult levelsxx</li>
       <li xml:lang="zh-CN">非常非常难的关卡</li>
+      <li xml:lang="zh-TW">非常非常難的關卡</li>
       <li>Keyboard or mouse control</li>
       <li xml:lang="ca">Control amb el teclat o el ratolí</li>
       <li xml:lang="ca-valencia">Control amb el teclat o el ratolí</li>
@@ -353,6 +357,7 @@
       <li xml:lang="uk">Керування за допомогою клавіатури або миші</li>
       <li xml:lang="x-test">xxKeyboard or mouse controlxx</li>
       <li xml:lang="zh-CN">键盘或鼠标控制</li>
+      <li xml:lang="zh-TW">鍵盤或滑鼠控制</li>
       <li>Savable games</li>
       <li xml:lang="ca">Les partides es poden desar</li>
       <li xml:lang="ca-valencia">Les partides es poden guardar</li>
@@ -387,6 +392,7 @@
       <li xml:lang="uk">Можливість збереження гри</li>
       <li xml:lang="x-test">xxSavable gamesxx</li>
       <li xml:lang="zh-CN">可保存游戏</li>
+      <li xml:lang="zh-TW">可存檔</li>
     </ul>
   </description>
   <url type="homepage">https://apps.kde.org/kgoldrunner</url>
