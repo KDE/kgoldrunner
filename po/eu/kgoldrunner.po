@@ -1,19 +1,19 @@
 # Translation for kgoldrunner.po to Euskara/Basque (eu).
-# Copyright (C) 2003-2023 This file is copyright:
+# Copyright (C) 2003-2024 This file is copyright:
 # This file is distributed under the same license as the kgoldrunner package.
-# SPDX-FileCopyrightText: 2023 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023, 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Marcos  <marcos@euskalgnu.org>, 2003, 2005.
 # Ion Gaztañaga <igaztanaga@gmail.com>, 2005.
 # Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2009.
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2023.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-09 01:44+0000\n"
-"PO-Revision-Date: 2023-12-31 15:29+0100\n"
+"PO-Revision-Date: 2024-01-28 21:45+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -26,12 +26,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Ion Gaztañaga"
+msgstr "Iñigo Salvador Azurmendi,Ion Gaztañaga"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "igaztanaga@gmail.com"
+msgstr "xalba@ni.eus,igaztanaga@gmail.com"
 
 #: gamedata/game_blb.txt:3
 #, kde-format
@@ -51,14 +51,14 @@ msgid ""
 "\n"
 "Jason provided most of the solutions, but some are by Ian Wadham."
 msgstr ""
-"70 maila hauek joko tradizionalaren sarrera graduatua dira, Jason Self-ek "
-"konposatua (j at jxself org). Aholkurik ez egon arren, maila bakoitzak "
-"grabatu dagoen ebazpen bat du.\n"
+"70 maila hauek joko tradizionalaren sarrera mailakatu bat dira, Jason Self-"
+"ek konposatua (j at jxself org). Aholkurik ez egon arren, maila bakoitzak "
+"grabatuta dagoen ebazpen bat du.\n"
 "\n"
-"Jokoa jokalariei zuzendua dago, baina azken mailak nahiko zailak dira, "
-"beraz, aurrera joan ahala etsaiek zure mugimenduei nola erantzuten dieten "
-"zaindu. 70. mailara iristen zarenerako haiek ondo trabatuta izan behar "
-"dituzu.\n"
+"Jokoa jokalari berriei zuzendua dago, baina azken mailak nahiko zailak dira, "
+"beraz, aurrera joan ahala, etsaiek zure mugimenduekiko duten erreakzioetan "
+"arreta ipini. 70. mailara iristen zarenerako ondo trebatuta izan behar "
+"duzu.\n"
 "\n"
 "Jason-ek ebazpen gehienak eman zituen, baina batzuk Ian Wadham-enak dira."
 
@@ -768,17 +768,7 @@ msgid "Count"
 msgstr "Zenbatu"
 
 #: gamedata/game_cnt.txt:3
-#, fuzzy, kde-format
-#| msgid ""
-#| "This game is based on counting, from 0 to 16 (or 0 to 10 in "
-#| "hexadecimal).  The first level has no gold and no enemies: the problem is "
-#| "to find a way out and up to the next level.  After that, the number of "
-#| "enemies and pieces of gold increases by 1 at each level.  The name of "
-#| "each level corresponds to the number of enemies, the pieces of gold and "
-#| "the digits that appear in the layout.\n"
-#| "\n"
-#| "These elegant and rather tricky Championship levels were composed by "
-#| "Steve Mann <smann at cgl uwaterloo ca>."
+#, kde-format
 msgid ""
 "This game is based on counting, from 0 to 16 (or 0 to 10 in hexadecimal).  "
 "The first level has no gold and no enemies: the problem is to find a way out "
@@ -790,15 +780,15 @@ msgid ""
 "These elegant and rather tricky Championship levels were composed by Steve "
 "Mann <smann at cgl uwaterloo ca>. You need to dig while falling sometimes."
 msgstr ""
-"Joko honen oinarria zenbatzea da, 0 - 16 (edo 0 - 10 hamaseitarrean). "
-"Aurreneko mailak ez dauka urrerik ezta etsairik ere: arazoa irtetzeko bidea "
-"aurkitzea da eta hurrengo mailara igotzea da. Horren ondoren, urre eta "
-"etsaien kopurua 1ekin gehitzen doa maila bakoitzeko. Maila bakoitzaren izena "
-"etsai, urreen pieza eta diseinuan agertzen diren digituen kopuruari "
-"dagokio.\n"
+"Joko hau zenbatzean oinarritzen da, 0tik 16ra (edo 0tik 10era "
+"hamaseitarrean). Aurreneko mailak ez dauka urrerik ezta etsairik ere: arazoa "
+"irteteko bidea aurkitzea eta hurrengo mailara igarotzea da. Horren ondoren, "
+"urre eta etsai kopurua 1ean gehitzen doa maila bakoitzean. Maila bakoitzaren "
+"izena etsai, urre-pieza eta antolaeran agertzen diren digituei dagokio.\n"
 "\n"
-"Leihaketako maila hauen dotoretasuna eta trikimailuen arduraduna honakoa "
-"izan zen: Steve Mann <smann at cgl uwaterloo ca>."
+"Txapelketa-maila dotore eta nahikoa korapilotsu horiek Steve Mann-ek <smann "
+"at cgl uwaterloo ca> landu zituen. Batzuetan erori bitartean zulatu behar "
+"duzu."
 
 #: gamedata/game_cnt.txt:8
 #, kde-format
@@ -924,15 +914,7 @@ msgid "Five"
 msgstr "Bost"
 
 #: gamedata/game_cnt.txt:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "In the beginning, climb down the first set of ladders and wait on the "
-#| "lowest section until the enemies have settled in their positions.  Then "
-#| "drop to the floor and aim for the big ladder at the the right with the "
-#| "fork at the bottom.  The fork is what enables you to get past the enemies "
-#| "above: wait at the floor level of the left rung (not below the floor "
-#| "level!) until the enemy on the long ladder drops next to you.  Then climb "
-#| "up and to the right to get up the big ladder."
+#, kde-format
 msgid ""
 "In the beginning, climb down the first set of ladders and wait on the lowest "
 "section until the enemies have settled in their positions.  Then drop to the "
@@ -942,13 +924,13 @@ msgid ""
 "the long ladder drops next to you.  Then climb up and to the right to get up "
 "the big ladder."
 msgstr ""
-"Hasieran, jeitsi itzazu aurreneko eskailera multzoa eta itxaron behe behean "
-"dagoen atalean etsaiak beraien posizioan egonkortu arte. Ondoren jaregin "
-"zorura eta beheko sardearekin eskuineko eskailera handira zuzendu zaitez. "
-"Sardeak gaineko etsaiak zeharkatzeko erabili: itxaron ezkerreko zurmailako "
-"zoruaren mailan (zoruaren mailan ez ordea!) etsaiek eskailera luzean "
-"zuregana jaregin arte. Gero, igo eta joan eskuinera eskailera handian "
-"igotzeko."
+"Hasieran, jaitsi aurreneko eskailera multzoa eta itxoin beheko atalean "
+"etsaiak beren lekuetan egon arte. Ondoren, lurrera jautsi eta saia zaitez "
+"eskuineko eskailera handira, behe aldean bitan adarkatzen denera, joaten. "
+"Adarrei esker igaroko zara gaineko etsaien artetik: itxoin esker mailetako "
+"lurreko mailan (ez lurreko mailaren azpitik!) eskailera luzeko etsaia zure "
+"ondora erortzen den arte. Ondoren igo eskaileratik eta eskuinera eskailera "
+"handitik igotzeko."
 
 #: gamedata/game_cnt.txt:40
 #, kde-format
@@ -1382,7 +1364,7 @@ msgstr "OK"
 #: gamedata/game_fd.txt:2
 #, kde-format
 msgid "Dig While Falling"
-msgstr ""
+msgstr "Zulatu erori bitartean"
 
 #: gamedata/game_fd.txt:3
 #, kde-format
@@ -1391,11 +1373,15 @@ msgid ""
 "a graded introduction to that technique, composed by Jason Self (j at jxself "
 "org). Every level has a recorded solution, also provided by Jason."
 msgstr ""
+"Txapelketa jokoetan, maiz, erori bitartean zulatu behar duzu. Maila hauek "
+"teknika horretarako sarrera mailakatu bat dira, Jason Self-ek (j at jxself "
+"org) landutakoak. Maila bakoitzak grabatutako ebazpen bat dauka, Jason-ek "
+"berak hornitutakoa."
 
 #: gamedata/game_GMEP.txt:2
 #, kde-format
 msgid "Jail Break"
-msgstr ""
+msgstr "Kartzelatik ihesa"
 
 #: gamedata/game_GMEP.txt:3
 #, kde-format
@@ -1411,12 +1397,21 @@ msgid ""
 "composed by Gabriel Miltschitzky [gabriel dot miltschitzky at freenet de]. "
 "You need to dig while falling sometimes."
 msgstr ""
+"Lapurretagatik atxilo, eta zure etsaiak hainbat aldiz atrakatu eta "
+"harrapatzeagatik, presondegian atxikita zaude.\n"
+"\n"
+"Baina polizia gupidagabea da hemen, eta ihes egiten saiatzen bazara, ez dute "
+"zu hiltzeagatik lorik galduko... Beraz, kontuz ibili eta guztietan "
+"garrantzitsuena: azkar ibili --- edo hilda zaude!\n"
+"\n"
+"Txapelketa-maila hauek «KGoldrunner»reko arau bizkor eta xelebreak "
+"erabiltzen dituzte eta Gabriel Miltschitzky-k [gabriel puntu miltschitzky at "
+"freenet de] landutakoak dira. Batzuetan erori bitartean zulatu behar duzu."
 
 #: gamedata/game_GMEP.txt:10
-#, fuzzy, kde-format
-#| msgid "Don't Panic"
+#, kde-format
 msgid "Don't Panic!"
-msgstr "Ez beldurtu"
+msgstr "Ez izutu!"
 
 #: gamedata/game_GMEP.txt:11
 #, kde-format
@@ -1426,11 +1421,15 @@ msgid ""
 "It is very easy to escape from this prison, because the guards themselves "
 "are trapped and cannot touch you..."
 msgstr ""
+"Mailaren izenak adierazi bezala, ez dago izutzeko inolako beharrik.\n"
+"\n"
+"Oso erraza da presondegi honetatik ihes egitea, zaintzaileak beraiek ere "
+"atrapatuta daudelako eta ezin zaitzaketelako ukitu..."
 
 #: gamedata/game_GMEP.txt:16
 #, kde-format
 msgid "Robbery"
-msgstr ""
+msgstr "Lapurreta"
 
 #: gamedata/game_GMEP.txt:17
 #, kde-format
@@ -1440,12 +1439,16 @@ msgid ""
 "The trick is to tie up your enemies. If you can make each one fall onto a "
 "concrete block, that might help. On the other hand, you can just run a lot..."
 msgstr ""
+"Berriz aske egonik nonbaitetik dirua lortu beharrean zaude.\n"
+"\n"
+"Zure etsaiak lotzea da gakoa. Haietako bakoitza hormigoizko bloke batean "
+"eroraraztea lortzen baduzu, lagungarria izan liteke. Bestalde, korrika asko "
+"egin dezakezu..."
 
 #: gamedata/game_GMEP.txt:22
-#, fuzzy, kde-format
-#| msgid "Under the Stairs"
+#, kde-format
 msgid "Use the Guards"
-msgstr "Izarpean"
+msgstr "Erabili zaindariak"
 
 #: gamedata/game_GMEP.txt:23
 #, kde-format
@@ -1455,11 +1458,15 @@ msgid ""
 "When you reach the ladders on the right, wait for one guard to jump, then "
 "walk over his head to fetch the gold."
 msgstr ""
+"Gupidagabeak izan daitezke, baina egiten dutena aurreikus daiteke.\n"
+"\n"
+"Eskuineko eskaileretara iristen zarenean, itxoin zaindari baten jauzi egin "
+"arte, ondoren, ibili haren buruaren gainean urrea eskuratzeko."
 
 #: gamedata/game_GMEP.txt:28
 #, kde-format
 msgid "Falling Enemies (1) - Finding A Way"
-msgstr ""
+msgstr "Erortzen diren etsaiak (1) - Bide bat bilatzea"
 
 #: gamedata/game_GMEP.txt:29
 #, kde-format
@@ -1469,21 +1476,28 @@ msgid ""
 "If there is more than one gap to cross, first make the enemies walk right, "
 "then start walking on their heads."
 msgstr ""
+"Erabili zure etsaiak haien buruen gainetik ibiltzeko.\n"
+"\n"
+"Zeharkatu beharreko hutsune bat baino gehiago badago, aurrena egin ezazu "
+"zure etsaiek eskuinera ibil daitezela, ondoren hasi haien buruen gainetik "
+"ibiltzen."
 
 #: gamedata/game_GMEP.txt:34
 #, kde-format
 msgid "Falling Enemies (2) - Digging"
-msgstr ""
+msgstr "Erortzen diren etsaiak (2) - Zulatzea"
 
 #: gamedata/game_GMEP.txt:35
 #, kde-format
 msgid "Start the level with a click. The rest should be self-explanatory..."
 msgstr ""
+"Hasi maila klik batekin. Gainontzekoa berez ulergarria izan beharko "
+"litzateke..."
 
 #: gamedata/game_GMEP.txt:38
 #, kde-format
 msgid "Falling Enemies (3) - Hidden Ladders"
-msgstr ""
+msgstr "Erortzen diren etsaiak (3) - Ezkutuko eskailerak"
 
 #: gamedata/game_GMEP.txt:39
 #, kde-format
@@ -1500,7 +1514,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:46
 #, kde-format
 msgid "Imprisoned Guards"
-msgstr ""
+msgstr "Espetxeratutako zaindariak"
 
 #: gamedata/game_GMEP.txt:47
 #, kde-format
@@ -1508,12 +1522,13 @@ msgid ""
 "It is easy enough to break into the main structure, but to collect all the "
 "gold and get out again, you will need to walk on an enemy's head."
 msgstr ""
+"Egitura nagusian sartze aski erraza da, baina urre guztia bildu eta berriz "
+"kanpora irteteko, etsaien buru gainean ibil beharko duzu."
 
 #: gamedata/game_GMEP.txt:50
-#, fuzzy, kde-format
-#| msgid "Forgotten Gold"
+#, kde-format
 msgid "Forbidden Gold"
-msgstr "Ahaztutako urrea"
+msgstr "Debekatutako urrea"
 
 #: gamedata/game_GMEP.txt:51
 #, kde-format
@@ -1527,7 +1542,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:56
 #, kde-format
 msgid "Dig Your Way Out"
-msgstr ""
+msgstr "Zulatu zure kanporako bidea"
 
 #: gamedata/game_GMEP.txt:57
 #, kde-format
@@ -1545,7 +1560,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:64
 #, kde-format
 msgid "An Unpleasant Cellmate"
-msgstr ""
+msgstr "Zelda-kide ezatsegina"
 
 #: gamedata/game_GMEP.txt:65
 #, kde-format
@@ -1553,12 +1568,13 @@ msgid ""
 "Click to start the level and he will be trapped before he can do you any "
 "harm."
 msgstr ""
+"Egin klik maila hasteko, eta atrapatuta egongo da zuri kalterik egiteko "
+"aukera izan aurretik."
 
 #: gamedata/game_GMEP.txt:68
-#, fuzzy, kde-format
-#| msgid "Paint enemies"
+#, kde-format
 msgid "Awaiting Enemies"
-msgstr "Marraztu etsaiak"
+msgstr "Etsaien zain"
 
 #: gamedata/game_GMEP.txt:69
 #, kde-format
@@ -1566,11 +1582,13 @@ msgid ""
 "They will not do anything to you if you stay where you are. They just want "
 "to protect their gold."
 msgstr ""
+"Ez dizute ezer egingo zauden tokian gelditzen bazara. Beraien urrea babestu "
+"besterik ez dute egin nahi."
 
 #: gamedata/game_GMEP.txt:72
 #, kde-format
 msgid "Too Many Guards"
-msgstr ""
+msgstr "Zaindari gehiegi"
 
 #: gamedata/game_GMEP.txt:73
 #, kde-format
@@ -1601,7 +1619,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:82
 #, kde-format
 msgid "Caught In The Heights"
-msgstr ""
+msgstr "Altueretan harrapatua"
 
 #: gamedata/game_GMEP.txt:83
 #, kde-format
@@ -1609,11 +1627,14 @@ msgid ""
 "As soon as you move down they will chase you till you are dead. So you are "
 "advised to plan an exact route before you start your escape attempt."
 msgstr ""
+"Beherantz mugitzen zaren bezain laster, hilda zauden arte jazarriko "
+"zaituzte. Beraz, ihesaldi saiakerarekin hasi baino lehen, bide zehatz bat "
+"planifikatzea gomendatzen zaizu."
 
 #: gamedata/game_GMEP.txt:86
 #, kde-format
 msgid "Teamwork (1) - The Liberation"
-msgstr ""
+msgstr "Talde-lana (1) - Askapena"
 
 #: gamedata/game_GMEP.txt:87
 #, kde-format
@@ -1638,19 +1659,19 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GMEP.txt:98
-#, kde-format
+#, fuzzy, kde-format
 msgid "Teamwork (2) - Diving Platforms"
-msgstr ""
+msgstr "Talde-lana (2) - "
 
 #: gamedata/game_GMEP.txt:99
 #, kde-format
 msgid "Start running immediately or you are doomed!"
-msgstr ""
+msgstr "Hasi berehala korrika egiten edo hilda zaude!"
 
 #: gamedata/game_GMEP.txt:102
 #, kde-format
 msgid "Teamwork (3) - The Final Escape"
-msgstr ""
+msgstr "Talde-lana (3) - Azken ihesaldia"
 
 #: gamedata/game_GMEP.txt:103
 #, kde-format
@@ -1663,10 +1684,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GMGR.txt:2
-#, fuzzy, kde-format
-#| msgid "Gold Mesh"
+#, kde-format
 msgid "Gold Rush"
-msgstr "Urrezko sare-begia"
+msgstr "Urrearen sukarra"
 
 #: gamedata/game_GMGR.txt:3
 #, kde-format
@@ -1680,7 +1700,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:8
 #, kde-format
 msgid "Too Easy?"
-msgstr ""
+msgstr "Errazegia?"
 
 #: gamedata/game_GMGR.txt:9
 #, kde-format
@@ -1701,7 +1721,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:16
 #, kde-format
 msgid "Have A Nice Flight..."
-msgstr ""
+msgstr "Hegaldi on..."
 
 #: gamedata/game_GMGR.txt:17
 #, kde-format
@@ -1711,22 +1731,25 @@ msgid ""
 "Just put the mouse in the upper left corner and the hero will automatically "
 "finish the level."
 msgstr ""
+"Ez litzateke zailegia izan behar.\n"
+"\n"
+"Nahikoa da sagua goiko ezkerreko izkinan ipintzea eta heroiak maila "
+"automatikoki bukatuko du."
 
 #: gamedata/game_GMGR.txt:22
 #, kde-format
 msgid "Golddigger"
-msgstr ""
+msgstr "Urre bilatzailea"
 
 #: gamedata/game_GMGR.txt:23
 #, kde-format
 msgid "My suggestion: dig!"
-msgstr ""
+msgstr "Nire iradokizuna: zulatu!"
 
 #: gamedata/game_GMGR.txt:26
-#, fuzzy, kde-format
-#| msgid "Golden Tower"
+#, kde-format
 msgid "Golden Town"
-msgstr "Urrezko dorrea"
+msgstr "Urrezko herria"
 
 #: gamedata/game_GMGR.txt:27
 #, kde-format
@@ -1735,11 +1758,14 @@ msgid ""
 "way down. It is easier to control the enemies when you are on the lower "
 "levels."
 msgstr ""
+"Aurrena zure eskuineko urrea bildu behar duzu. Gero, saia zaitez beheraka "
+"bide bat zulatzen. Zure etsaiak kontrolatzea errazagoa da beheko mailetan "
+"zaudenean."
 
 #: gamedata/game_GMGR.txt:30
 #, kde-format
 msgid "A Hectic Enemy"
-msgstr ""
+msgstr "Etsai asaldatu bat"
 
 #: gamedata/game_GMGR.txt:31
 #, kde-format
@@ -1758,7 +1784,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:38
 #, kde-format
 msgid "Don't Wake Them Up"
-msgstr ""
+msgstr "Ez haiek esnatu"
 
 #: gamedata/game_GMGR.txt:39
 #, kde-format
