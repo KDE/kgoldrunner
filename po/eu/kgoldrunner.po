@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-17 00:36+0000\n"
-"PO-Revision-Date: 2024-01-28 21:45+0100\n"
+"PO-Revision-Date: 2024-01-30 00:08+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -1807,7 +1807,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:46
 #, kde-format
 msgid "On The Brink"
-msgstr ""
+msgstr "Muga-mugan"
 
 #: gamedata/game_GMGR.txt:47
 #, kde-format
@@ -1817,12 +1817,14 @@ msgid ""
 "Before entering any of the structures on the right, make sure you have an "
 "escape route."
 msgstr ""
+"Itxoin edo ez itxoin? Beno ba, saiatu...\n"
+"\n"
+"Eskuineko edozein egituratan sartu aurretik, ziurtatu ihesbide bat duzula."
 
 #: gamedata/game_GMGR.txt:52
-#, fuzzy, kde-format
-#| msgid "Paint enemies"
+#, kde-format
 msgid "Dropping Enemies"
-msgstr "Marraztu etsaiak"
+msgstr "Erortzen diren etsaiak"
 
 #: gamedata/game_GMGR.txt:53
 #, kde-format
@@ -1830,12 +1832,13 @@ msgid ""
 "No, there is no special trick for solving this level.\n"
 "Just be faster than your enemies."
 msgstr ""
+"Ez, ez dago maila hau ebazteko trikimailu berezirik.\n"
+"Etsaiak baino azkarrago izan behar duzu, besterik ez."
 
 #: gamedata/game_GMGR.txt:57
-#, fuzzy, kde-format
-#| msgid "The Big Haul"
+#, kde-format
 msgid "The Big Maze"
-msgstr "Harrapakin handia"
+msgstr "Labirinto handia"
 
 #: gamedata/game_GMGR.txt:58
 #, kde-format
@@ -1851,7 +1854,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:63
 #, kde-format
 msgid "Hurry Up!"
-msgstr ""
+msgstr "Arin ibili!"
 
 #: gamedata/game_GMGR.txt:64
 #, kde-format
@@ -1865,10 +1868,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GMGR.txt:69
-#, fuzzy, kde-format
-#| msgid "Who Needs Enemies?"
+#, kde-format
 msgid "Two Useful Enemies"
-msgstr "Nork behar ditu etsaiak?"
+msgstr "Bi etsai erabilgarri"
 
 #: gamedata/game_GMGR.txt:70
 #, kde-format
@@ -1884,10 +1886,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GMGR.txt:76
-#, fuzzy, kde-format
-#| msgid "The Heist"
+#, kde-format
 msgid "The Prison"
-msgstr "Lapurreta"
+msgstr "Presondegia"
 
 #: gamedata/game_GMGR.txt:77
 #, kde-format
@@ -1904,7 +1905,7 @@ msgstr ""
 #: gamedata/game_plws.txt:116
 #, kde-format
 msgid "Free Fall"
-msgstr "Erorketa librea"
+msgstr "Erorketa askea"
 
 #: gamedata/game_GMGR.txt:83
 #, kde-format
@@ -1918,10 +1919,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GMGR.txt:88
-#, fuzzy, kde-format
-#| msgid "Two of Diamonds"
+#, kde-format
 msgid "Two Friends"
-msgstr "Diamantezko bi"
+msgstr "Bi lagun"
 
 #: gamedata/game_GMGR.txt:89
 #, kde-format
@@ -1952,12 +1952,14 @@ msgid ""
 "\n"
 "But it is not impossible."
 msgstr ""
+"Oraingoan aholkurik ez\n"
+"\n"
+"Baina ez da ezinezkoa."
 
 #: gamedata/game_GMGR.txt:104
-#, fuzzy, kde-format
-#| msgid "The Vault"
+#, kde-format
 msgid "The Wall"
-msgstr "Kripta"
+msgstr "Horma"
 
 #: gamedata/game_GMGR.txt:105
 #, kde-format
@@ -1977,7 +1979,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:114
 #, kde-format
 msgid "Snakepits"
-msgstr ""
+msgstr "Suge-hobiak"
 
 #: gamedata/game_GMGR.txt:115
 #, kde-format
@@ -1993,7 +1995,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:120
 #, kde-format
 msgid "Get In And Up"
-msgstr ""
+msgstr "Sartu eta igo"
 
 #: gamedata/game_GMGR.txt:121
 #, kde-format
@@ -2006,18 +2008,19 @@ msgstr ""
 #: gamedata/game_GMGR.txt:124
 #, kde-format
 msgid "No Way Out"
-msgstr ""
+msgstr "Ez dago irteerarik"
 
 #: gamedata/game_GMGR.txt:125
 #, kde-format
 msgid "You have to dig before you take the gold and before the ladders appear."
 msgstr ""
+"Zulatu egin behar duzu urrea hartu baino lehen eta eskailerak agertu baino "
+"lehen."
 
 #: gamedata/game_GMGR.txt:128
-#, fuzzy, kde-format
-#| msgid "Cannot Get Up There"
+#, kde-format
 msgid "How To Get There"
-msgstr "Ezin naiz hara igo"
+msgstr "Hara nola iritsi"
 
 #: gamedata/game_GMGR.txt:129
 #, kde-format
@@ -2038,10 +2041,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GMGR.txt:138
-#, fuzzy, kde-format
-#| msgid "The Vault"
+#, kde-format
 msgid "The Bull"
-msgstr "Kripta"
+msgstr "Zezena"
 
 #: gamedata/game_GMGR.txt:139
 #, kde-format
@@ -2058,10 +2060,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GMGR.txt:144
-#, fuzzy, kde-format
-#| msgid "Long Drop"
+#, kde-format
 msgid "Long Way Up"
-msgstr "Erorketa handia"
+msgstr "Goranzko bida luzea"
 
 #: gamedata/game_GMGR.txt:145
 #, kde-format
@@ -2081,12 +2082,12 @@ msgstr ""
 #: gamedata/game_GMGR.txt:152
 #, kde-format
 msgid "A Little Present To Say Goodbye"
-msgstr ""
+msgstr "Agur esate opari xume bat"
 
 #: gamedata/game_GMGR.txt:153
 #, kde-format
 msgid "After some very hard levels, maybe you would like an easy one. Goodbye!"
-msgstr ""
+msgstr "Maila oso zail batzuen ondoren, agian errez bat nahi zenuke. Agur!"
 
 #: gamedata/game_GotD.txt:1
 #, kde-format
@@ -2099,12 +2100,12 @@ msgctxt ""
 "level to the next by using the Y key and you can prevent a level from "
 "playing by using the Pause key (P or Escape)."
 msgid " "
-msgstr ""
+msgstr " "
 
 #: gamedata/game_GotD.txt:3
 #, kde-format
 msgid "Gold Of The Living Dead"
-msgstr ""
+msgstr "Hildako bizidunen urrea"
 
 #: gamedata/game_GotD.txt:4
 #, kde-format
@@ -2116,11 +2117,17 @@ msgid ""
 "Fifty Championship levels, including hints and recorded solutions, from "
 "Gabriel Miltschitzky, April 2021."
 msgstr ""
+"Zonbien Apokalipsia gainean dugu eta lurrean bizirik geratzen den azken "
+"gizakia zara, zonbiek oraindik urre asko dute ordea. Halere, zonbiak izanik, "
+"altxorrarekiko baino zurekiko interes handiagoa dute...\n"
+"\n"
+"Txapelketako berrogeita hamar maila, aholkuak eta grabatutako ebazpenak "
+"barne, Gabriel Miltschitzky-k eginak, 2021eko apirila."
 
 #: gamedata/game_GotD.txt:9
 #, kde-format
 msgid "Last Person On Earth"
-msgstr ""
+msgstr "Lurreko azken pertsona"
 
 #: gamedata/game_GotD.txt:10
 #, kde-format
@@ -2176,7 +2183,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:29
 #, kde-format
 msgid "Patient Zero"
-msgstr ""
+msgstr "Zero pazientea"
 
 #: gamedata/game_GotD.txt:30
 #, kde-format
@@ -2217,10 +2224,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:47
-#, fuzzy, kde-format
-#| msgid "Infiltration"
+#, kde-format
 msgid "Manipulation"
-msgstr "Infiltrazioa"
+msgstr "Manipulazioa"
 
 #: gamedata/game_GotD.txt:48
 #, kde-format
@@ -2254,17 +2260,17 @@ msgstr ""
 #: gamedata/game_GotD.txt:57
 #, kde-format
 msgid "Do Not Worry"
-msgstr ""
+msgstr "Ez arduratu"
 
 #: gamedata/game_GotD.txt:58
 #, kde-format
 msgid "Come on, they are completely harmless ;-)"
-msgstr ""
+msgstr "Tira, es dira batere kaltegarriak ;-)"
 
 #: gamedata/game_GotD.txt:61
 #, kde-format
 msgid "They Are So Many!"
-msgstr ""
+msgstr "Horrenbeste dira!"
 
 #: gamedata/game_GotD.txt:62
 #, kde-format
@@ -2288,7 +2294,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:73
 #, kde-format
 msgid "Never Trust The H-Ladders"
-msgstr ""
+msgstr "Ez bidatu H formako eskailerez"
 
 #: gamedata/game_GotD.txt:74
 #, kde-format
@@ -2299,11 +2305,17 @@ msgid ""
 "heads. Going up immediately will help you to group them. Make sure no zombie "
 "is walking on the others' heads when you lure them towards you."
 msgstr ""
+"Zure eskailera laburregia dela uste duzu?\n"
+"\n"
+"Ene ustean, H formako eskaileraren altuera nahikoa da zonbien buru gainera "
+"igotzeko. Berehala gora joatea, haiek taldekatzen lagunduko dizu. Zugana "
+"erakartzen dituzunean, besteen buruen gainetik dabilenik ez dagoela ziurta "
+"ezazu."
 
 #: gamedata/game_GotD.txt:79
 #, kde-format
 msgid "Please Do Let Me Pass!"
-msgstr ""
+msgstr "Mesedez, utzi niri pasatzen!"
 
 #: gamedata/game_GotD.txt:80
 #, kde-format
@@ -2334,7 +2346,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:89
 #, kde-format
 msgid "Thieves"
-msgstr ""
+msgstr "Lapurrak"
 
 #: gamedata/game_GotD.txt:90
 #, kde-format
@@ -2347,7 +2359,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:93
 #, kde-format
 msgid "Climbing And Falling"
-msgstr ""
+msgstr "Eskalatzea eta erortzea"
 
 #: gamedata/game_GotD.txt:94
 #, kde-format
@@ -2366,10 +2378,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:103
-#, fuzzy, kde-format
-#| msgid "Towers of Gold"
+#, kde-format
 msgid "Temple Of Gold"
-msgstr "Urreko dorreak"
+msgstr "Urrezko tenplua"
 
 #: gamedata/game_GotD.txt:104
 #, kde-format
@@ -2408,7 +2419,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:119
 #, kde-format
 msgid "Patience?"
-msgstr ""
+msgstr "Pazientzia?"
 
 #: gamedata/game_GotD.txt:120
 #, kde-format
@@ -2416,6 +2427,8 @@ msgid ""
 "Sometimes it is better to wait, but sometimes you should take what is yours "
 "before the zombies steal it."
 msgstr ""
+"Batzuetan hobe da itxoitea, baina beste batzuetan zurea dena hartu beharko "
+"zenuke zonbiek ostu baino lehen."
 
 #: gamedata/game_GotD.txt:123
 #, kde-format
@@ -2461,18 +2474,17 @@ msgstr ""
 #: gamedata/game_GotD.txt:137
 #, kde-format
 msgid "Harder Than It Looks"
-msgstr ""
+msgstr "Dirudiena baino zailagoa"
 
 #: gamedata/game_GotD.txt:138
 #, kde-format
 msgid "Timing is everything."
-msgstr ""
+msgstr "Memento egokia aukeratzeak berebiziko garrantzia du."
 
 #: gamedata/game_GotD.txt:141
-#, fuzzy, kde-format
-#| msgid "Concrete"
+#, kde-format
 msgid "Concrete Desert"
-msgstr "Hormigoia"
+msgstr "Hormigoizko basamortua"
 
 #: gamedata/game_GotD.txt:142
 #, kde-format
@@ -2493,10 +2505,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:149
-#, fuzzy, kde-format
-#| msgid "Diagonal Disaster"
+#, kde-format
 msgid "Diagonal"
-msgstr "Desastre diagonala"
+msgstr "Diagonala"
 
 #: gamedata/game_GotD.txt:150
 #, kde-format
@@ -2512,10 +2523,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:155
-#, fuzzy, kde-format
-#| msgid "He Has The Gold"
+#, kde-format
 msgid "Give Me That Gold!"
-msgstr "Hark urrea dauka"
+msgstr "Emadazu urre hori!"
 
 #: gamedata/game_GotD.txt:156
 #, kde-format
@@ -2540,7 +2550,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:165
 #, kde-format
 msgid "Too Fast?"
-msgstr ""
+msgstr "Azkarregi?"
 
 #: gamedata/game_GotD.txt:166
 #, kde-format
@@ -2555,12 +2565,12 @@ msgstr ""
 #: gamedata/game_GotD.txt:171
 #, kde-format
 msgid "Running Against Time"
-msgstr ""
+msgstr "Denboraren aurka korrika egitea"
 
 #: gamedata/game_GotD.txt:172
 #, kde-format
 msgid "Be quicker than the zombies - otherwise they will eat you."
-msgstr ""
+msgstr "Izan zaitez zonbiak baino azkarragoa - bestela jango zaituzte."
 
 #: gamedata/game_GotD.txt:175
 #, fuzzy, kde-format
@@ -2574,11 +2584,13 @@ msgid ""
 "The two columns of gold on the left need to be taken first. The rest can be "
 "collected on the way back up."
 msgstr ""
+"Ezkerreko bi urre-zutabeak hartu behar dira aurrena. Gainontzeko itzulerako "
+"gorako bidean bildu daiteke."
 
 #: gamedata/game_GotD.txt:179
 #, kde-format
 msgid "Diving"
-msgstr ""
+msgstr "Urpekaritza"
 
 #: gamedata/game_GotD.txt:180
 #, kde-format
@@ -2611,7 +2623,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:191
 #, kde-format
 msgid "Up And Down"
-msgstr ""
+msgstr "Gora eta behera"
 
 #: gamedata/game_GotD.txt:192
 #, kde-format
@@ -2639,10 +2651,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:203 gamedata/game_lars.txt:44
-#, fuzzy, kde-format
-#| msgid "Do Not Look Down (1)"
+#, kde-format
 msgid "Do Not Fall Down"
-msgstr "Ez behera begiratu (1)"
+msgstr "Ez erori"
 
 #: gamedata/game_GotD.txt:204
 #, kde-format
@@ -2654,10 +2665,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:209
-#, fuzzy, kde-format
-#| msgid "Surprise Ending"
+#, kde-format
 msgid "Surprise, Surprise"
-msgstr "Sorpresadun amaiera"
+msgstr "Sorpresa, sorpresa"
 
 #: gamedata/game_GotD.txt:210
 #, kde-format
@@ -2668,11 +2678,16 @@ msgid ""
 "route carefully before you dig down. Zombies can also be used to fill the "
 "gaps."
 msgstr ""
+"Ez nuke sorpresa zapuztu nahi...\n"
+"\n"
+"Halere, urrearen gaineko adreiluetara iristen zarenean, beheraka zulatu "
+"aurretik, ihesbidea bat arretaz planifikatu beharko zenuke. Zonbiak "
+"hutsuneak betetzeko ere erabil daitezke."
 
 #: gamedata/game_GotD.txt:215
 #, kde-format
 msgid "Busy Town"
-msgstr ""
+msgstr "Giro biziko herria"
 
 #: gamedata/game_GotD.txt:216
 #, kde-format
@@ -2684,7 +2699,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:219
 #, kde-format
 msgid "Jailbreak"
-msgstr ""
+msgstr "Espetxetik ihesa"
 
 #: gamedata/game_GotD.txt:220
 #, kde-format
@@ -2697,7 +2712,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:223
 #, kde-format
 msgid "Is It Really Worth It?"
-msgstr ""
+msgstr "Benetan merezi du?"
 
 #: gamedata/game_GotD.txt:224
 #, kde-format
@@ -2773,10 +2788,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:251
-#, fuzzy, kde-format
-#| msgid "The Balance"
+#, kde-format
 msgid "The Passage"
-msgstr "Oreka"
+msgstr "Pasabidea"
 
 #: gamedata/game_GotD.txt:252
 #, kde-format
@@ -2807,7 +2821,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:263
 #, kde-format
 msgid "Out Of My Way!"
-msgstr ""
+msgstr "Alde nire bidetik!"
 
 #: gamedata/game_GotD.txt:264
 #, kde-format
@@ -2822,7 +2836,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:269
 #, kde-format
 msgid "Waking Up The Dead"
-msgstr ""
+msgstr "Hildakoak esnatzea"
 
 #: gamedata/game_GotD.txt:270
 #, kde-format
@@ -2861,15 +2875,14 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:285
-#, fuzzy, kde-format
-#| msgid "Rat Trap"
+#, kde-format
 msgid "Death Trap"
-msgstr "Arratoiaren tranpa"
+msgstr "Tranpa hilgarria"
 
 #: gamedata/game_GotD.txt:286
 #, kde-format
 msgid "Rule Number 22: When in doubt, know your way out!"
-msgstr ""
+msgstr "22 zenbakiko araua: Zalantza baduzu, jakin nondik irten behar duzun!"
 
 #: gamedata/game_GotD.txt:289 gamedata/game_plws.txt:227
 #, kde-format
@@ -2886,10 +2899,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:293
-#, fuzzy, kde-format
-#| msgid "Fear of Heights"
+#, kde-format
 msgid "Fear Of Heights"
-msgstr "Altuerei beldur"
+msgstr "Altueren beldur"
 
 #: gamedata/game_GotD.txt:294
 #, kde-format
@@ -2912,20 +2924,19 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:303
-#, fuzzy, kde-format
-#| msgid "Paint enemies"
+#, kde-format
 msgid "Raining Zombies"
-msgstr "Marraztu etsaiak"
+msgstr "Zonbien euria"
 
 #: gamedata/game_GotD.txt:304
 #, kde-format
 msgid "Let us see if you have learned your lesson about zombies and ladders..."
-msgstr ""
+msgstr "Ikus dezagun zonbiak eta eskailerei buruzko lezioa ikasi ote duzun..."
 
 #: gamedata/game_GotD.txt:307
 #, kde-format
 msgid "A Desperate Jump"
-msgstr ""
+msgstr "Etsipenezko jauzi bat"
 
 #: gamedata/game_GotD.txt:308
 #, kde-format
@@ -2939,7 +2950,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:313
 #, kde-format
 msgid "Among Zombies"
-msgstr ""
+msgstr "Zonbien artean"
 
 #: gamedata/game_GotD.txt:314
 #, kde-format
@@ -2963,7 +2974,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:323
 #, kde-format
 msgid "Dance With Death"
-msgstr ""
+msgstr "Heriotzarekin dantzan"
 
 #: gamedata/game_GotD.txt:324
 #, kde-format
@@ -2973,10 +2984,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:327
-#, fuzzy, kde-format
-#| msgid "Space Invader"
+#, kde-format
 msgid "Zombie Invaders"
-msgstr "Espazioko erasotzaileak"
+msgstr "Zonbi inbaditzaileak"
 
 #: gamedata/game_GotD.txt:328
 #, kde-format
@@ -2988,7 +2998,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:331
 #, kde-format
 msgid "Just Survive"
-msgstr ""
+msgstr "Bizirik irautea"
 
 #: gamedata/game_GotD.txt:332
 #, kde-format
@@ -3013,7 +3023,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:339
 #, kde-format
 msgid "Zombie Free Zone"
-msgstr ""
+msgstr "Zonbirik gabeko gunea"
 
 #: gamedata/game_GotD.txt:340
 #, kde-format
@@ -3023,10 +3033,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:343
-#, fuzzy, kde-format
-#| msgid "The Foundry"
+#, kde-format
 msgid "The End"
-msgstr "Galdategia"
+msgstr "Bukaera"
 
 #: gamedata/game_GotD.txt:344
 #, fuzzy, kde-format
@@ -3350,10 +3359,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GRII.txt:114
-#, fuzzy, kde-format
-#| msgid "Towers of Gold"
+#, kde-format
 msgid "Treasures of Gold"
-msgstr "Urreko dorreak"
+msgstr "Urrezko altxorrak"
 
 #: gamedata/game_GRII.txt:115
 #, kde-format
@@ -3557,10 +3565,9 @@ msgid "The Heartbreaker"
 msgstr "Laborategia"
 
 #: gamedata/game_GRII.txt:191 gamedata/game_lars.txt:85
-#, fuzzy, kde-format
-#| msgid "   No hint   "
+#, kde-format
 msgid "No hint!"
-msgstr "   Argibiderik ez   "
+msgstr "Argibiderik ez!"
 
 #: gamedata/game_kgr.txt:3 src/main.cpp:29
 #, kde-format
@@ -3671,10 +3678,9 @@ msgid "You only get one chance to grab those first three pieces of gold."
 msgstr ""
 
 #: gamedata/game_lars.txt:36
-#, fuzzy, kde-format
-#| msgid "Asymmetrical"
+#, kde-format
 msgid "Vertical"
-msgstr "Asimetrikoa"
+msgstr "Bertikala"
 
 #: gamedata/game_lars.txt:37
 #, kde-format
@@ -3771,7 +3777,7 @@ msgstr ""
 #: gamedata/game_lars.txt:72
 #, kde-format
 msgid "Depth"
-msgstr ""
+msgstr "Sakonera"
 
 #: gamedata/game_lars.txt:73
 #, kde-format
@@ -3783,7 +3789,7 @@ msgstr ""
 #: gamedata/game_lars.txt:76
 #, kde-format
 msgid "Density"
-msgstr ""
+msgstr "Dentsitatea"
 
 #: gamedata/game_lars.txt:77
 #, kde-format
@@ -3837,10 +3843,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_MAZ.txt:12
-#, fuzzy, kde-format
-#| msgid "Speedy"
+#, kde-format
 msgid "Sleepy"
-msgstr "Azkarra"
+msgstr "Logurarekin"
 
 #: gamedata/game_MAZ.txt:13
 #, kde-format
@@ -3860,7 +3865,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:20
 #, kde-format
 msgid "Grumpy"
-msgstr ""
+msgstr "Umore txarreko"
 
 #: gamedata/game_MAZ.txt:21
 #, kde-format
@@ -3902,7 +3907,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:34
 #, kde-format
 msgid "Happy"
-msgstr ""
+msgstr "Zoriontsu"
 
 #: gamedata/game_MAZ.txt:35
 #, kde-format
@@ -5527,7 +5532,7 @@ msgstr ""
 #: gamedata/game_sot.txt:13
 #, kde-format
 msgid "Fear of Heights"
-msgstr "Altuerei beldur"
+msgstr "Altueren beldur"
 
 #: gamedata/game_sot.txt:14
 #, kde-format
@@ -6613,7 +6618,7 @@ msgstr ""
 #: gamedata/game_wad.txt:57
 #, kde-format
 msgid "Towers of Gold"
-msgstr "Urreko dorreak"
+msgstr "Urrezko dorreak"
 
 #: gamedata/game_wad.txt:58
 #, kde-format
@@ -7115,10 +7120,9 @@ msgid "Create a completely new level."
 msgstr "Sortu erabateko maila berri bat"
 
 #: src/kgoldrunner.cpp:297
-#, fuzzy, kde-format
-#| msgid "Concrete"
+#, kde-format
 msgid "Create"
-msgstr "Hormigoia"
+msgstr "Sortu"
 
 #: src/kgoldrunner.cpp:300
 #, kde-format
@@ -7136,10 +7140,9 @@ msgid "Edit any level..."
 msgstr "Editatu edozein maila..."
 
 #: src/kgoldrunner.cpp:304
-#, fuzzy, kde-format
-#| msgid "Editor"
+#, kde-format
 msgid "Edit"
-msgstr "Editorea"
+msgstr "Editatu"
 
 #: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1459
 #, kde-format
@@ -7157,10 +7160,9 @@ msgid "Save your level after editing..."
 msgstr "Gorde zure maila editatu ondoren..."
 
 #: src/kgoldrunner.cpp:316
-#, fuzzy, kde-format
-#| msgid "&Save"
+#, kde-format
 msgid "Save"
-msgstr "&Gorde"
+msgstr "Gorde"
 
 #: src/kgoldrunner.cpp:320
 #, kde-format
@@ -7283,10 +7285,9 @@ msgid "&Mouse Controls Hero"
 msgstr "&Saguak heroia kontrolatzen du"
 
 #: src/kgoldrunner.cpp:390
-#, fuzzy, kde-format
-#| msgid "Mouse controls hero"
+#, kde-format
 msgid "Mouse controls hero."
-msgstr "Saguak heroia kontrolatzen du"
+msgstr "Saguak heroia kontrolatzen du."
 
 #: src/kgoldrunner.cpp:391
 #, fuzzy, kde-format
@@ -7300,10 +7301,9 @@ msgid "&Keyboard Controls Hero"
 msgstr "&Teklatuak heroia kontrolatzen du"
 
 #: src/kgoldrunner.cpp:396
-#, fuzzy, kde-format
-#| msgid "Keyboard controls hero"
+#, kde-format
 msgid "Keyboard controls hero."
-msgstr "Teklatuak heroia kontrolatzen du"
+msgstr "Teklatuak heroia kontrolatzen du."
 
 #: src/kgoldrunner.cpp:397
 #, fuzzy, kde-format
@@ -7555,10 +7555,9 @@ msgid "Has hint"
 msgstr "   Argibidea du   "
 
 #: src/kgoldrunner.cpp:760
-#, fuzzy, kde-format
-#| msgid "   No hint   "
+#, kde-format
 msgid "No hint"
-msgstr "   Argibiderik ez   "
+msgstr "Argibiderik ez"
 
 #: src/kgoldrunner.cpp:877
 #, kde-format
@@ -7801,8 +7800,7 @@ msgid "Hint for level:"
 msgstr "Mailaren argibidea:"
 
 #: src/kgrdialog.cpp:103 src/kgrdialog.cpp:172
-#, fuzzy, kde-format
-#| msgid "Edit Game Info"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Game Info"
 msgstr "Editatu jokoaren informazioa"
@@ -7840,8 +7838,7 @@ msgid "About this game:"
 msgstr "Joko honi buruz:"
 
 #: src/kgrdialog.cpp:169
-#, fuzzy, kde-format
-#| msgid "Create Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Game"
 msgstr "Sortu jokoa"
@@ -7862,8 +7859,7 @@ msgid "Save New"
 msgstr "Gorde berria"
 
 #: src/kgrdialog.cpp:247
-#, fuzzy, kde-format
-#| msgid "Select Saved Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Saved Game"
 msgstr "Hautatu gordetako maila"
@@ -8111,10 +8107,9 @@ msgid "Inappropriate action: you are not editing a level."
 msgstr "Ekintza desegokia: ez zaude maila bat editatzen."
 
 #: src/kgrgame.cpp:420
-#, fuzzy, kde-format
-#| msgid "&Play Sounds"
+#, kde-format
 msgid "No Sound"
-msgstr "&Erreproduzitu soinuak"
+msgstr "Soinurik ez"
 
 #: src/kgrgame.cpp:421
 #, kde-format
@@ -8162,8 +8157,7 @@ msgid ""
 msgstr ""
 
 #: src/kgrgame.cpp:695
-#, fuzzy, kde-format
-#| msgid "Quick Start"
+#, kde-format
 msgctxt "@title:window"
 msgid "Quick Start"
 msgstr "Abiarazte bizkorra"
@@ -8274,10 +8268,9 @@ msgid ""
 msgstr "Nahi duzu maila hau berriro saiatzea?"
 
 #: src/kgrgame.cpp:1065
-#, fuzzy, kde-format
-#| msgid "Game"
+#, kde-format
 msgid "Game Over"
-msgstr "Jokoa"
+msgstr "Jokoa bukatu da"
 
 #: src/kgrgame.cpp:1066
 #, kde-format
@@ -8306,7 +8299,7 @@ msgstr "Argibidea"
 #: src/kgrgame.cpp:1303
 #, kde-format
 msgid "&OK"
-msgstr ""
+msgstr "&Ados"
 
 #: src/kgrgame.cpp:1316
 #, kde-format
@@ -8428,8 +8421,7 @@ msgstr ""
 "Sartu zure izena KGoldrunner-en ospearen aretoan agertzeko.</html>"
 
 #: src/kgrgame.cpp:1722
-#, fuzzy, kde-format
-#| msgid "Save High Score"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save High Score"
 msgstr "Gorde puntuazio ona"
@@ -8568,16 +8560,14 @@ msgid "Theme Selector"
 msgstr ""
 
 #: src/kgrscene.cpp:277
-#, fuzzy, kde-format
-#| msgid "Lives: "
+#, kde-format
 msgid "Lives: %1"
-msgstr "Bizitzak: "
+msgstr "Bizitzak: %1"
 
 #: src/kgrscene.cpp:284
-#, fuzzy, kde-format
-#| msgid "Score: "
+#, kde-format
 msgid "Score: %1"
-msgstr "Puntuazioa: "
+msgstr "Puntuazioa: %1"
 
 #: src/kgrselector.cpp:72 src/kgrselector.cpp:78 src/kgrselector.cpp:98
 #: src/kgrselector.cpp:501
@@ -8612,8 +8602,7 @@ msgid "There is no level %1 in \"%2\", so you cannot play or edit it."
 msgstr "Ez dago %1 mailarik %2-(e)n, eta beraz ezin duzu jokatu edo editatu."
 
 #: src/kgrselector.cpp:121 src/kgrselector.cpp:177
-#, fuzzy, kde-format
-#| msgid "Select Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Game"
 msgstr "Hautatu jokoa"
@@ -8649,8 +8638,7 @@ msgid "Level 1 of the selected game is:"
 msgstr "Hautatutako jokoaren 1. maila:"
 
 #: src/kgrselector.cpp:183
-#, fuzzy, kde-format
-#| msgid "Select Game/Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Game/Level"
 msgstr "Hautatu jokoa/maila"
