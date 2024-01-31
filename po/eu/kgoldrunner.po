@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-20 00:44+0000\n"
-"PO-Revision-Date: 2024-01-30 00:09+0100\n"
+"PO-Revision-Date: 2024-01-30 23:38+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -1510,6 +1510,13 @@ msgid ""
 "You will have to trap the leaders while you wait for the others. On the way "
 "up, keep an eye out for more reborn enemies."
 msgstr ""
+"Oraingoan adimentsuagoak dira eta zugana goitik erortzen dira.\n"
+"\n"
+"Aurrena, zulatu urrera bidean dauden adreilu guztiak.\n"
+"\n"
+"Ondoren, zoaz korrika erdira eta itxoin atzera jaiotako etsaiak eror "
+"daitezen. Buruzagiak atzeman behar dituzu besteen zain zauden bitartean. "
+"Gorako bidean, mantendu arreta atzera jaiotako etsai gehiago ote datozen."
 
 #: gamedata/game_GMEP.txt:46
 #, kde-format
@@ -1538,6 +1545,10 @@ msgid ""
 "Now you are free again and may do whatever you please. Everything except "
 "stealing the gold again, needless to say..."
 msgstr ""
+"Azken mailetan oso ondo ihes egin diezu.\n"
+"\n"
+"Orain, berriz ere aske zara eta nahi duzuna egin dezakezu. Dena, urrea "
+"berrizlapurtzea ezik, esan beharrik ez dago..."
 
 #: gamedata/game_GMEP.txt:56
 #, kde-format
@@ -1556,6 +1567,14 @@ msgid ""
 "succeed if you know the way and do not hesitate. There is not much time to "
 "spare..."
 msgstr ""
+"Zaindaririk ez eta oraindik laguntza eske?\n"
+"\n"
+"Beno, jaso dezakezu.\n"
+"\n"
+"Zulatu barraren ondoko adreiluak. Erortzen zarenean, laster barrara "
+"itzultzeko bide bat aurkitu behar duzu, nitxoa gurutzatu ahal izateko. "
+"Jakina, arrakastarako bide bakarra bidea ezagutzean eta zalantzarik ez "
+"egitean datza. Ez dago galtzeko denborarik..."
 
 #: gamedata/game_GMEP.txt:64
 #, kde-format
