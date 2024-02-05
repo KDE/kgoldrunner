@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-09 01:44+0000\n"
-"PO-Revision-Date: 2024-01-30 23:39+0100\n"
+"PO-Revision-Date: 2024-02-04 22:08+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -1634,6 +1634,29 @@ msgid ""
 "rightmost ladders to the first brick you dug (hoping it has not closed by "
 "now), then head right and on up to the exit."
 msgstr ""
+"Maila hau zaila da, baina ez ezinezkoa.\n"
+"\n"
+"Libra zaitez lehen zaintzaile taldeaz haiek hondoraino eramanez. Horra nola "
+"egin. Zoaz beheren dauden eskaileretara eta egon une batez eskuinen dagoen "
+"eskailera beherenean, ondoren, azkar, itzuli ezkerrera etsai bakarrak jarrai "
+"zaitzan. Itxoin ezkerren dagoen eskailera beherenean bera ere beheren dauden "
+"eskaileretara iritsi arte, ondoren joan gora eta ezkerrera. Berak lurrera "
+"jauzi egingo du. Errepikatu trikimailu hori kokaleku horretako zaindari "
+"guztiekin.\n"
+"\n"
+"Hurrengo zaindaria pasatzea erraza izan beharko litzateke, baino horren "
+"ondoren lan pixka bat izango duzu... Hormigoiaren ondoko eskailera igotzen "
+"duzunean, zaindaria ezkerren dagoen eskailerarantz eta atzera korrika hasiko "
+"da. Bere buruaren gainean ibiltzeko une egokia aurkitu behar duzu.\n"
+"\n"
+"Azken zatian, zulatu beharra dago. Aurrena, ezkerrean dagoen gezurrezko "
+"adreiluzko tuneletik erori behar duzu, pasa ahala urrea hartzea ahaztu gabe. "
+"Ondoren, igo eskailera luzean gora. Eskuineko hirugarren adreilua tranpa bat "
+"da. Bertan erori, ondoren zulatu eskuinera, eta bost aldiz ezkerrera erori "
+"ahala. Jarraitu beherantz. Zulatu gainean hutsunea duten bi adreiluetan "
+"behekoa, joan eskuinen dauden eskaileratan gora zulatu duzun lehenengo "
+"adreiluraino (oraindik itxi ez delakoan), ondoren zoaz eskuinera eta gora "
+"irteerara."
 
 #: gamedata/game_GMEP.txt:82
 #, kde-format
@@ -1701,6 +1724,11 @@ msgid ""
 "Sorry, I cannot help you further. There is nothing more to the level than "
 "sleight of hand."
 msgstr ""
+"Hau da zure lagunarekin lanean arituko zaren azken maila. Uste dut "
+"askatasuna merezi izateko adina lagundu dizula.\n"
+"\n"
+"Barkatu, ezin dizut gehiago lagundu. Maila gainditzeko ez da esku-trebezia "
+"besterik behar."
 
 #: gamedata/game_GMGR.txt:2
 #, kde-format
@@ -1715,6 +1743,10 @@ msgid ""
 "\n"
 "Created by Gabriel Miltschitzky [gabriel dot miltschitzky at freenet de]"
 msgstr ""
+"Ohiko arauak dituzten maila labur batzuk, baliteke haiek ebazteko denboratxo "
+"bat behar izatea. Batzuetan, erori bitartean zulatu egin beharko duzu.\n"
+"\n"
+"Sortzailea Gabriel Miltschitzky [gabriel puntu miltschitzky at freenet de]"
 
 #: gamedata/game_GMGR.txt:8
 #, kde-format
@@ -3078,7 +3110,7 @@ msgid "Gold Rush II"
 msgstr "Urrezko sare-begia"
 
 #: gamedata/game_GRII.txt:3
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "These 20 levels have even harder challenges, more complicated puzzles and "
 "tighter timings than the first Gold Rush. They are not for the faint "
@@ -3093,6 +3125,10 @@ msgid ""
 "doubt, use menu item 'Move->Show a Solution' to watch solutions provided by "
 "the author."
 msgstr ""
+"\n"
+"Sortzailea Gabriel Miltschitzky [gabriel puntu miltschitzky at googlemail "
+"puntu com], grabatutako ebazpenak ere berak eman zituen.\n"
+"\n"
 
 #: gamedata/game_GRII.txt:10
 #, fuzzy, kde-format
@@ -3175,10 +3211,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GRII.txt:42
-#, fuzzy, kde-format
-#| msgid "The Dotted Line"
+#, kde-format
 msgid "The Gold Mine"
-msgstr "Puntudun lerroa"
+msgstr "Urre-meategia"
 
 #: gamedata/game_GRII.txt:43
 #, kde-format
@@ -3612,13 +3647,15 @@ msgid "Demolition"
 msgstr ""
 
 #: gamedata/game_lars.txt:3
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "Twenty levels that require a bit of thinking and a bit of timing. You need "
 "to dig while falling sometimes.\n"
 "\n"
 "Created by Lars Luthman <lars luthman at gmail com>."
 msgstr ""
+"\n"
+"Sortzailea Lars Luthman <lars luthman at gmail com>."
 
 #: gamedata/game_lars.txt:8
 #, kde-format
