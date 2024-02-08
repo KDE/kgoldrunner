@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-20 00:44+0000\n"
-"PO-Revision-Date: 2024-02-04 22:10+0100\n"
+"PO-Revision-Date: 2024-02-07 22:56+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -1699,6 +1699,23 @@ msgid ""
 "Better be nice to your team mate: you will probably have to get along with "
 "him for the next couple of levels..."
 msgstr ""
+"Lehen etsaiak ihes egiten laguntzea behar duzu.\n"
+"\n"
+"Ezkerreko urreak denbora pixka bat behar du.\n"
+"\n"
+"Gora eta eskuinera zoazela, ziurtatu zure kidea ez dela hormigoiko zuloan "
+"erortzen. Eskuineko urrezko hiru puskak jasotzeko, saia zaitez bera "
+"ezkerreko eskaileran edukitzen, bere buru gainetik urrera salto egiteko "
+"aukera izan dezazun.\n"
+"\n"
+"Gora eta ezkerrera joaten zarenean, hormigoizko zutabe batean eskailera bat "
+"dago. Jar zaitez zure lagunaren buru gainean hartara iristeko eta jarrai "
+"ezazu bere gainean. Zure ezkerreko lehenengo adreilua tranpa bat da. Ibili "
+"haren buruaren gainean, tranpara zure ordez bera eror dadin. Baina bera "
+"berriz askatu beharko duzu eskailera altuenetara iritsi nahi baduzu.\n"
+"\n"
+"Hobe izango da zure taldekidearekin atsegina izatea: hurrengo bi mailatan "
+"ziurrenik berarekin ondo moldatu beharko duzu..."
 
 #: gamedata/game_GMEP.txt:98
 #, fuzzy, kde-format
@@ -1768,6 +1785,18 @@ msgid ""
 "easier to avoid, so you will have to find them yourself. You know, you can "
 "always press 'Q' to restart the level."
 msgstr ""
+"Nahiko erraza ematen duen arren, ez da horrela, urrerako bidean gezurrezko "
+"adreilu asko daudelako.\n"
+"\n"
+"Zulatu lehenengo adreilua erori bitartean, ondoren erori hartatik, "
+"eskaileran gora korrika egin, eta itxoin etsaia zuloan barrena salto egin "
+"arte. Orduan bere buru gainera eror zaitez eta joan ezkerrera. Egin salto "
+"ezkerreko zulora eta zulatu beste adreilu bat erori bitartean. Horrek barran "
+"ezkerrera jarraitzeko aukera emango dizu.\n"
+"\n"
+"Jakina, bidean oraindik tranpa ugari dago, baina saihesteko errazagoak dira; "
+"beraz, zuk zeuk aurkitu beharko dituzu. Badakizu, beti duzu, 'Q' sakatuz, "
+"maila berriz hasteko aukera."
 
 #: gamedata/game_GMGR.txt:16
 #, kde-format
@@ -1831,6 +1860,16 @@ msgid ""
 "Two important notes: do not let the enemy fall onto the middle row of "
 "ladders and leave the gold down there till last."
 msgstr ""
+"Ez duzu azkar ibili beharrik. Etsaia nola saihestu jakitea besterik ez duzu "
+"behar.\n"
+"\n"
+"Azpiko mailara salto eginda, erori bitartean, zure etsaia eskailera batean "
+"gora eta behera ibilarazi dezakezu. Maila behekoenera iristen zaren bezain "
+"laster, etsaiak jarraitu egingo dizu, baina urre pixka bat biltzeko edo bera "
+"pasatu eta beste atal batera mugitzeko denbora izango duzu.\n"
+"\n"
+"Bi ohar garrantzitsu: ez utzi etsaiari eskaileren erdiko errenkadara "
+"erortzen eta utzi urrea hor behean bukaera arte."
 
 #: gamedata/game_GMGR.txt:38
 #, kde-format
@@ -1854,6 +1893,20 @@ msgid ""
 "getting past them by moving up a ladder just before they reach you. Then "
 "walk over their heads. Good luck!"
 msgstr ""
+"Hau ez da batere erraza, mailatik irteteko bide bakarra oztopatzen duten "
+"etsai asko dagoelako.\n"
+"\n"
+"Haiek gainditzeko modurik onena eskuinean gora joan eta etsai gehienak "
+"erdiko eskaileretatik gora joan arte itxoitea da. Ondoren, gora eta behera "
+"mugituz, saia zaitez haiek taldean biltzen. Azkenik, eror zaitez maila "
+"behekoenera eta itxoin beraiek gauza bera egin arte. Lehenengo etsaia "
+"iristen denean, korrika gora joan eta saia zaitez hormigoiko hobi garaienera "
+"besteak baino lehenago iristen. Baliteke lortu aurretik hainbat aldiz saiatu "
+"behar izatea.\n"
+"\n"
+"Irteera oztopatzen duten etsai bat edo bi bakarrik daudenean, saia zaitezke "
+"haiek zugana iritsi aurretik, eskailera batean gora mugituz, haiek "
+"gainditzen. Ondoren haien buruen gainetik ibili. Zorte on!"
 
 #: gamedata/game_GMGR.txt:46
 #, kde-format
@@ -3209,6 +3262,15 @@ msgid ""
 "Furthermore some of the bricks are traps, so you can sometimes take a short "
 "cut. But you should not count on it."
 msgstr ""
+"Hau ez da oso zaila. Garrantzitsuena etsaiek urre zatirik ez lortzea da. "
+"Hori egitea ematen duena baino errazagoa da, aurrena, hartzeko errazak diren "
+"zatiak biltzen badituzu.\n"
+"\n"
+"Etsaiak taldekatzen saiatzea lagungarria izango da. Hesi baten beste aldean "
+"bazaude, gora eta behera mugituz haiek biltzea lortuko duzu.\n"
+"\n"
+"Gainera, adreilu batzuk tranpak dira, eta batzuetan lasterbide bat har "
+"zenezake. Baina ez ezazu ziurtzat eman."
 
 #: gamedata/game_GRII.txt:42
 #, kde-format
@@ -3691,10 +3753,9 @@ msgid "Make your enemies fetch the gold pieces you cannot reach yourself."
 msgstr ""
 
 #: gamedata/game_lars.txt:20
-#, fuzzy, kde-format
-#| msgid "Acrobat"
+#, kde-format
 msgid "Acrophobia"
-msgstr "Akrobata"
+msgstr "Akrofobia"
 
 #: gamedata/game_lars.txt:21
 #, kde-format
@@ -3841,6 +3902,8 @@ msgid ""
 "Get some enemies into the concrete pit so that you can go across it. Then "
 "push them one step further down before you dig and grab the gold."
 msgstr ""
+"Lortu etsai batzuk hormigoiko hobira eror daitezen, hura zeharkatzeko. "
+"Ondoren, zulatu eta urrea hartu aurretik, bultza itzazu urrats bat beherago."
 
 #: gamedata/game_lars.txt:76
 #, kde-format
@@ -3850,24 +3913,22 @@ msgstr "Dentsitatea"
 #: gamedata/game_lars.txt:77
 #, kde-format
 msgid "Avoid killing enemies. That will make the last bit much easier."
-msgstr ""
+msgstr "Saihestu etsaiak hiltzea. Horrek azken zatia asko erraztuko du."
 
 #: gamedata/game_lars.txt:80
-#, fuzzy, kde-format
-#| msgid "The Box"
+#, kde-format
 msgid "The Box (2)"
-msgstr "Kaxa"
+msgstr "Kutxa (2)"
 
 #: gamedata/game_lars.txt:84
-#, fuzzy, kde-format
-#| msgid "Concrete"
+#, kde-format
 msgid "Concrete Towers"
-msgstr "Hormigoia"
+msgstr "Hormigoizko dorreak"
 
 #: gamedata/game_MAZ.txt:2
 #, kde-format
 msgid "Mazes"
-msgstr ""
+msgstr "Labirintoak"
 
 #: gamedata/game_MAZ.txt:3
 #, kde-format
@@ -3882,12 +3943,20 @@ msgid ""
 "(with a few named after elves), beginning with the seven dwarves from "
 "Disney's version of Snow White."
 msgstr ""
+"Labirintoak, labirintoak, labirintoak. Batzuk etsaiekin, beste batzuk gabe. "
+"Batzuetan etsai bat hil beharko duzun arren, arau orokor gisa hobe da haiek "
+"ez hiltzea, goiko aldean berragertu eta zure bidea oztopatuko dutelako. "
+"Batzuetan, erori bitartean zulatu beharrean izango zara.\n"
+"\n"
+"Steve Mann-en beste Txapelketa-maila multzo bikain bat <smann at cgl "
+"uwaterloo ca>. Mailek mitoetako eta istorioetako nanoen izenak hartzen "
+"dituzte (elfoen izanak dituzten bakan batzuekin), Disney-ren Edurne Zuriren  "
+"zazpi ipotxekin hasita."
 
 #: gamedata/game_MAZ.txt:8
-#, fuzzy, kde-format
-#| msgid "Drop?"
+#, kde-format
 msgid "Dopey"
-msgstr "Erori?"
+msgstr "Kaskarin"
 
 #: gamedata/game_MAZ.txt:9
 #, kde-format
@@ -3897,42 +3966,47 @@ msgid ""
 "tall vertical ladder, just below the second highest horizontal ladder, until "
 "the path to the exit is clear."
 msgstr ""
+"Nahiko erraza, eskaileratik erortzea ekidin behar duzu. Bukaerako bi etsaien "
+"aurretik pasatzeko modu ezberdinak daude. Azkarrenetako bat eskailera "
+"bertikal altu batean itxoitean datza, justu bigarren eskailera altuenaren "
+"azpian, irteerako bidea libre egon arte."
 
 #: gamedata/game_MAZ.txt:12
 #, kde-format
 msgid "Sleepy"
-msgstr "Logurarekin"
+msgstr "Loti"
 
 #: gamedata/game_MAZ.txt:13
 #, kde-format
 msgid "A lot of backtracking, but nothing too difficult here."
-msgstr ""
+msgstr "Atzerapauso asko eman behar, baina ez dago zailegia den ezer."
 
 #: gamedata/game_MAZ.txt:16
 #, kde-format
 msgid "Doc"
-msgstr ""
+msgstr "Jakintsu"
 
 #: gamedata/game_MAZ.txt:17
 #, kde-format
 msgid "A few tricks to figure out how to get the gold, but nothing too hard."
 msgstr ""
+"Urrea nola lortu asmatzeko trikimailu batzuk, baina ez dago nekezegia den "
+"ezer."
 
 #: gamedata/game_MAZ.txt:20
 #, kde-format
 msgid "Grumpy"
-msgstr "Umore txarreko"
+msgstr "Marmarti"
 
 #: gamedata/game_MAZ.txt:21
 #, kde-format
 msgid "Visually confusing, but otherwise a simple maze."
-msgstr ""
+msgstr "Ikusmen aldetik nahasgarria, baina bestela labirinto sinple bat."
 
 #: gamedata/game_MAZ.txt:24
-#, fuzzy, kde-format
-#| msgid "Speedy"
+#, kde-format
 msgid "Sneezy"
-msgstr "Azkarra"
+msgstr "Usintsu"
 
 #: gamedata/game_MAZ.txt:25
 #, kde-format
@@ -3949,7 +4023,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:28
 #, kde-format
 msgid "Bashful"
-msgstr ""
+msgstr "Lotsati"
 
 #: gamedata/game_MAZ.txt:29
 #, kde-format
@@ -3963,7 +4037,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:34
 #, kde-format
 msgid "Happy"
-msgstr "Zoriontsu"
+msgstr "Alai"
 
 #: gamedata/game_MAZ.txt:35
 #, kde-format
@@ -3978,7 +4052,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:38
 #, kde-format
 msgid "Glorfindel"
-msgstr ""
+msgstr "Glorfindel"
 
 #: gamedata/game_MAZ.txt:39
 #, kde-format
@@ -3992,7 +4066,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:42
 #, kde-format
 msgid "Hreidmar"
-msgstr ""
+msgstr "Hreidmar"
 
 #: gamedata/game_MAZ.txt:43
 #, kde-format
@@ -4009,7 +4083,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:46
 #, kde-format
 msgid "Ori"
-msgstr ""
+msgstr "Ori"
 
 #: gamedata/game_MAZ.txt:47
 #, kde-format
@@ -4019,10 +4093,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_MAZ.txt:50
-#, fuzzy, kde-format
-#| msgid "or"
+#, kde-format
 msgid "Nori"
-msgstr "edo"
+msgstr "Nori"
 
 #: gamedata/game_MAZ.txt:51
 #, kde-format
@@ -4034,10 +4107,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_MAZ.txt:54
-#, fuzzy, kde-format
-#| msgid "or"
+#, kde-format
 msgid "Dori"
-msgstr "edo"
+msgstr "Dori"
 
 #: gamedata/game_MAZ.txt:55
 #, kde-format
@@ -4045,12 +4117,13 @@ msgid ""
 "The only trick to this level is using the hidden passages and enticing the "
 "enemies to use them."
 msgstr ""
+"Maila honetako trikimailu bakarra ezkutuko pasabidea erabiltzea eta etsaiak "
+"hura erabiltzera erakartzean datza."
 
 #: gamedata/game_MAZ.txt:58
-#, fuzzy, kde-format
-#| msgid "Four"
+#, kde-format
 msgid "Bombur"
-msgstr "Lau"
+msgstr "Bombur"
 
 #: gamedata/game_MAZ.txt:59
 #, kde-format
@@ -4066,7 +4139,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:62
 #, kde-format
 msgid "Luthien"
-msgstr ""
+msgstr "Luthien"
 
 #: gamedata/game_MAZ.txt:63
 #, kde-format
@@ -4078,10 +4151,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_MAZ.txt:66
-#, fuzzy, kde-format
-#| msgid "Four"
+#, kde-format
 msgid "Bofur"
-msgstr "Lau"
+msgstr "Bofur"
 
 #: gamedata/game_MAZ.txt:67
 #, kde-format
@@ -4094,7 +4166,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:70
 #, kde-format
 msgid "Bifur"
-msgstr ""
+msgstr "Bifur"
 
 #: gamedata/game_MAZ.txt:71
 #, kde-format
@@ -4112,7 +4184,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:76
 #, kde-format
 msgid "Gloin"
-msgstr ""
+msgstr "Gloin"
 
 #: gamedata/game_MAZ.txt:77
 #, kde-format
@@ -4124,10 +4196,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_MAZ.txt:80
-#, fuzzy, kde-format
-#| msgid "One"
+#, kde-format
 msgid "Oin"
-msgstr "Bat"
+msgstr "Oin"
 
 #: gamedata/game_MAZ.txt:81
 #, kde-format
@@ -4139,7 +4210,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:84
 #, kde-format
 msgid "Kili"
-msgstr ""
+msgstr "Kili"
 
 #: gamedata/game_MAZ.txt:85
 #, kde-format
@@ -4153,7 +4224,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:88
 #, kde-format
 msgid "Fili"
-msgstr ""
+msgstr "Fili"
 
 #: gamedata/game_MAZ.txt:89
 #, kde-format
@@ -4175,7 +4246,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:94
 #, kde-format
 msgid "Dwalin"
-msgstr ""
+msgstr "Dwalin"
 
 #: gamedata/game_MAZ.txt:95
 #, kde-format
@@ -4186,10 +4257,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_MAZ.txt:98 gamedata/game_MAZ.txt:184
-#, fuzzy, kde-format
-#| msgid "Ruins"
+#, kde-format
 msgid "Durin"
-msgstr "Hondakinak"
+msgstr "Durin"
 
 #: gamedata/game_MAZ.txt:99
 #, kde-format
@@ -4202,7 +4272,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:102
 #, kde-format
 msgid "Dain"
-msgstr ""
+msgstr "Dain"
 
 #: gamedata/game_MAZ.txt:103
 #, kde-format
@@ -4223,7 +4293,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:110
 #, kde-format
 msgid "Duergar "
-msgstr ""
+msgstr "Duergar "
 
 #: gamedata/game_MAZ.txt:111
 #, kde-format
@@ -4238,7 +4308,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:114
 #, kde-format
 msgid "Balin"
-msgstr ""
+msgstr "Balin"
 
 #: gamedata/game_MAZ.txt:115
 #, kde-format
@@ -4256,7 +4326,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:120
 #, kde-format
 msgid "Gimli"
-msgstr ""
+msgstr "Gimli"
 
 #: gamedata/game_MAZ.txt:121
 #, kde-format
@@ -4278,7 +4348,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:128
 #, kde-format
 msgid "Brokkr"
-msgstr ""
+msgstr "Brokkr"
 
 #: gamedata/game_MAZ.txt:129
 #, kde-format
@@ -4292,10 +4362,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_MAZ.txt:132 gamedata/game_MAZ.txt:168
-#, fuzzy, kde-format
-#| msgid "&Try Again"
+#, kde-format
 msgid "Thrain"
-msgstr "&Saiatu berriro"
+msgstr "Thrain"
 
 #: gamedata/game_MAZ.txt:133
 #, kde-format
@@ -4310,7 +4379,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:136
 #, kde-format
 msgid "Thorin"
-msgstr ""
+msgstr "Thorin"
 
 #: gamedata/game_MAZ.txt:137
 #, kde-format
@@ -4335,7 +4404,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:144
 #, kde-format
 msgid "Telchar"
-msgstr ""
+msgstr "Telchar"
 
 #: gamedata/game_MAZ.txt:145
 #, kde-format
@@ -4349,7 +4418,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:148
 #, kde-format
 msgid "Dvergar"
-msgstr ""
+msgstr "Dvergar"
 
 #: gamedata/game_MAZ.txt:149
 #, kde-format
@@ -4369,7 +4438,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:154
 #, kde-format
 msgid "Thingol"
-msgstr ""
+msgstr "Thingol"
 
 #: gamedata/game_MAZ.txt:155
 #, kde-format
@@ -4393,7 +4462,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:162
 #, kde-format
 msgid "Dvalin"
-msgstr ""
+msgstr "Dvalin"
 
 #: gamedata/game_MAZ.txt:163
 #, kde-format
@@ -4421,12 +4490,12 @@ msgstr ""
 #: gamedata/game_MAZ.txt:169
 #, kde-format
 msgid "Lots of false floors to use and avoid."
-msgstr ""
+msgstr "Erabili eta saihestu beharreko gezurrezko zoru asko."
 
 #: gamedata/game_MAZ.txt:172
 #, kde-format
 msgid "Rumpelstiltskin"
-msgstr ""
+msgstr "Rumpelstiltskin"
 
 #: gamedata/game_MAZ.txt:173
 #, kde-format
@@ -4444,10 +4513,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_MAZ.txt:178
-#, fuzzy, kde-format
-#| msgid "Three"
+#, kde-format
 msgid "Thror"
-msgstr "Hiru"
+msgstr "Thror"
 
 #: gamedata/game_MAZ.txt:179
 #, kde-format
@@ -5546,12 +5614,7 @@ msgid "State Of Terror"
 msgstr "Izuaren egoera"
 
 #: gamedata/game_sot.txt:3
-#, fuzzy, kde-format
-#| msgid ""
-#| "Just when you thought it was safe ... fifteen levels of pure terror, "
-#| "using those quirky-yet-fast KGoldrunner rules.\n"
-#| "\n"
-#| "Composed by Stuart Popejoy - spopejoy@panix.com"
+#, kde-format
 msgid ""
 "Just when you thought it was safe ... fifteen levels of pure terror, using "
 "those quirky-yet-fast KGoldrunner rules. You frequently need to dig while "
@@ -5559,10 +5622,11 @@ msgid ""
 "\n"
 "Composed by Stuart Popejoy - spopejoy@panix.com"
 msgstr ""
-"Segurua zela uste zenuenean... izutuko zaituzten hamabost maila, KGoldrunner-"
-"en 'bitxia baina azkarra' (quirky-yet-fast) arau horiek erabiliz.\n"
+"Segurua zela uste zenuenean ... izutzeko moduko hamabost maila, "
+"«KGoldrunner»en arau bitxia baina azkar horiek erabiliz. Sarritan, erori "
+"bitartean zulatu beharrean izango zara.\n"
 "\n"
-"Erruduna: Stuart Popejoy - spopejoy@panix.com"
+"Konposatzailea: Stuart Popejoy - spopejoy@panix.com"
 
 #: gamedata/game_sot.txt:8
 #, kde-format
@@ -6234,20 +6298,7 @@ msgid "Digging"
 msgstr "Zulatzen"
 
 #: gamedata/game_tute.txt:22
-#, fuzzy, kde-format
-#| msgid ""
-#| "Now you have to dig to get the gold!  Just use the left and right mouse "
-#| "buttons to dig left or right of the hero's position.  The hero can then "
-#| "jump into and through the hole he has dug.  He can also dig several holes "
-#| "in a row and run sideways through the dug holes.  Be careful though.  "
-#| "After a while the holes close up and you can get trapped and killed.\n"
-#| "\n"
-#| "In the third box down, you have to dig two holes, jump in and quickly dig "
-#| "one more, to get through two layers.  On the right, you have to dig "
-#| "three, then two then one to get through.  There are also two little "
-#| "puzzles to work out along the way.  Good luck!\n"
-#| "\n"
-#| "By the way, you can dig through brick, but not concrete."
+#, kde-format
 msgid ""
 "Now you have to dig to get the gold!  Just use the left and right mouse "
 "buttons to dig left or right of the hero's position.  The hero can then jump "
@@ -6266,19 +6317,23 @@ msgid ""
 "\n"
 "By the way, you can dig through brick, but not concrete."
 msgstr ""
-"Urrea eskuratzeko zulatu egin behar duzu. Erabili ezkerreko eta eskuineko "
-"saguaren botoiak heroiaren posizioaren ezkerreko edo eskuineko posizioa "
-"zulatzeko. Heroia orduan egin berri duen zulotik joan daiteke. Segidan "
-"dauden hainbat zulo egin ditzake eta bertatik korri egin. Baina kontuz "
-"ibili, denbora bat pasa ondoren, zuloak berriro itxi egiten dira eta han "
-"arrapatuta gelditu eta hil zaitezke.\n"
+"Orain, urrea lortzeko zulatu egin behar duzu. Erabili saguaren ezkerreko eta "
+"eskuineko botoiak heroiaren kokalekuaren ezkerrean edo eskuinean zulatzeko. "
+"Heroiak zulatu duen zulora jauzi egin eta zeharka dezake. Hainbat zulo "
+"segidan egin eta haietan zehar alde batetik bestera korrika ibil daiteke. "
+"Baina kontuz ibili. Denbora tarta bat igarota zuloak itxi egingo baitira eta "
+"barnean harrapatuta gelditu eta hil zaitezke.\n"
 "\n"
-"Beheko hirugarren eskualdean, bi zulo egin behar dituzu, salto egin eta "
-"azkar beste bat zulatu, bi mailetan zehar joateko. Eskuinean hiru, geroago "
-"bi eta gero beste bat zulatu behar dituzu. Bi puzzle txiki ere dituzu bidean "
-"ebazteko. Zorte on!\n"
+"Zulatzen duzunean, solidoa den zerbaitek eutsi behar zaitu, eskailera batek, "
+"hormigoiak, adreilu batek edo barra batek esaterako. Txapelketa joko "
+"batzuetan erori bitartean zula dezakezu, ez ordea joko honetan.\n"
 "\n"
-"Adreiluak zula ditzakezu baina ez hormigoia."
+"Beheko hirugarren kutxan, bi zulo egin behar dituzu, barrura jauzi eta azkar "
+"beste bat gehiago zulatu, bi geruzen artean igarotzeko. Eskuinean, "
+"igarotzeko, hiru, ondoren bi, eta ondoren bat zulatu behar duzu. Bidean "
+"barrena badaude ebatzi beharreko bi buru-hausgarri  txiki ere. Zorte on!\n"
+"\n"
+"Bide batez, adreiluetan barna zula dezakezu, ez ordea hormigoian barna."
 
 #: gamedata/game_tute.txt:31
 #, kde-format
@@ -7794,7 +7849,7 @@ msgstr "Barra"
 #: src/kgoldrunner.cpp:963
 #, kde-format
 msgid "Bar/Pole"
-msgstr ""
+msgstr "Barra/Zurtoina"
 
 #: src/kgoldrunner.cpp:964
 #, kde-format
@@ -7814,7 +7869,7 @@ msgstr "Urrea"
 #: src/kgoldrunner.cpp:969
 #, kde-format
 msgid "Gold/Treasure"
-msgstr ""
+msgstr "Urrea/Altxorra"
 
 #: src/kgoldrunner.cpp:970
 #, kde-format
