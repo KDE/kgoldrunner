@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-17 00:36+0000\n"
-"PO-Revision-Date: 2024-02-06 18:34+0100\n"
+"PO-Revision-Date: 2024-02-07 22:52+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -1661,7 +1661,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:82
 #, kde-format
 msgid "Caught In The Heights"
-msgstr "Altueretan harrapatua"
+msgstr "Gailurretan harrapatua"
 
 #: gamedata/game_GMEP.txt:83
 #, kde-format
@@ -1669,8 +1669,8 @@ msgid ""
 "As soon as you move down they will chase you till you are dead. So you are "
 "advised to plan an exact route before you start your escape attempt."
 msgstr ""
-"Beherantz mugitzen zaren bezain laster, hilda zauden arte jazarriko "
-"zaituzte. Beraz, ihesaldi saiakerarekin hasi baino lehen, bide zehatz bat "
+"Beherantz mugitzen zaren bezain laster, hil arte jazarriko baitzaituzte. "
+"Beraz, ihesaldi saiakerarekin hasi baino lehen, bide zehatz bat "
 "planifikatzea gomendatzen zaizu."
 
 #: gamedata/game_GMEP.txt:86
@@ -1699,6 +1699,23 @@ msgid ""
 "Better be nice to your team mate: you will probably have to get along with "
 "him for the next couple of levels..."
 msgstr ""
+"Lehen etsaiak ihes egiten laguntzea behar duzu.\n"
+"\n"
+"Ezkerreko urreak denbora pixka bat behar du.\n"
+"\n"
+"Gora eta eskuinera zoazela, ziurtatu zure kidea ez dela hormigoiko zuloan "
+"erortzen. Eskuineko urrezko hiru puskak jasotzeko, saia zaitez bera "
+"ezkerreko eskaileran edukitzen, bere buru gainetik urrera salto egiteko "
+"aukera izan dezazun.\n"
+"\n"
+"Gora eta ezkerrera joaten zarenean, hormigoizko zutabe batean eskailera bat "
+"dago. Jar zaitez zure lagunaren buru gainean hartara iristeko eta jarrai "
+"ezazu bere gainean. Zure ezkerreko lehenengo adreilua tranpa bat da. Ibili "
+"haren buruaren gainean, tranpara zure ordez bera eror dadin. Baina bera "
+"berriz askatu beharko duzu eskailera altuenetara iritsi nahi baduzu.\n"
+"\n"
+"Hobe izango da zure taldekidearekin atsegina izatea: hurrengo bi mailatan "
+"ziurrenik berarekin ondo moldatu beharko duzu..."
 
 #: gamedata/game_GMEP.txt:98
 #, fuzzy, kde-format
@@ -1768,6 +1785,18 @@ msgid ""
 "easier to avoid, so you will have to find them yourself. You know, you can "
 "always press 'Q' to restart the level."
 msgstr ""
+"Nahiko erraza ematen duen arren, ez da horrela, urrerako bidean gezurrezko "
+"adreilu asko daudelako.\n"
+"\n"
+"Zulatu lehenengo adreilua erori bitartean, ondoren erori hartatik, "
+"eskaileran gora korrika egin, eta itxoin etsaia zuloan barrena salto egin "
+"arte. Orduan bere buru gainera eror zaitez eta joan ezkerrera. Egin salto "
+"ezkerreko zulora eta zulatu beste adreilu bat erori bitartean. Horrek barran "
+"ezkerrera jarraitzeko aukera emango dizu.\n"
+"\n"
+"Jakina, bidean oraindik tranpa ugari dago, baina saihesteko errazagoak dira; "
+"beraz, zuk zeuk aurkitu beharko dituzu. Badakizu, beti duzu, 'Q' sakatuz, "
+"maila berriz hasteko aukera."
 
 #: gamedata/game_GMGR.txt:16
 #, kde-format
@@ -1831,6 +1860,16 @@ msgid ""
 "Two important notes: do not let the enemy fall onto the middle row of "
 "ladders and leave the gold down there till last."
 msgstr ""
+"Ez duzu azkar ibili beharrik. Etsaia nola saihestu jakitea besterik ez duzu "
+"behar.\n"
+"\n"
+"Azpiko mailara salto eginda, erori bitartean, zure etsaia eskailera batean "
+"gora eta behera ibilarazi dezakezu. Maila behekoenera iristen zaren bezain "
+"laster, etsaiak jarraitu egingo dizu, baina urre pixka bat biltzeko edo bera "
+"pasatu eta beste atal batera mugitzeko denbora izango duzu.\n"
+"\n"
+"Bi ohar garrantzitsu: ez utzi etsaiari eskaileren erdiko errenkadara "
+"erortzen eta utzi urrea hor behean bukaera arte."
 
 #: gamedata/game_GMGR.txt:38
 #, kde-format
@@ -1854,6 +1893,20 @@ msgid ""
 "getting past them by moving up a ladder just before they reach you. Then "
 "walk over their heads. Good luck!"
 msgstr ""
+"Hau ez da batere erraza, mailatik irteteko bide bakarra oztopatzen duten "
+"etsai asko dagoelako.\n"
+"\n"
+"Haiek gainditzeko modurik onena eskuinean gora joan eta etsai gehienak "
+"erdiko eskaileretatik gora joan arte itxoitea da. Ondoren, gora eta behera "
+"mugituz, saia zaitez haiek taldean biltzen. Azkenik, eror zaitez maila "
+"behekoenera eta itxoin beraiek gauza bera egin arte. Lehenengo etsaia "
+"iristen denean, korrika gora joan eta saia zaitez hormigoiko hobi garaienera "
+"besteak baino lehenago iristen. Baliteke lortu aurretik hainbat aldiz saiatu "
+"behar izatea.\n"
+"\n"
+"Irteera oztopatzen duten etsai bat edo bi bakarrik daudenean, saia zaitezke "
+"haiek zugana iritsi aurretik, eskailera batean gora mugituz, haiek "
+"gainditzen. Ondoren haien buruen gainetik ibili. Zorte on!"
 
 #: gamedata/game_GMGR.txt:46
 #, kde-format
@@ -3700,10 +3753,9 @@ msgid "Make your enemies fetch the gold pieces you cannot reach yourself."
 msgstr ""
 
 #: gamedata/game_lars.txt:20
-#, fuzzy, kde-format
-#| msgid "Acrobat"
+#, kde-format
 msgid "Acrophobia"
-msgstr "Akrobata"
+msgstr "Akrofobia"
 
 #: gamedata/game_lars.txt:21
 #, kde-format
@@ -3850,6 +3902,8 @@ msgid ""
 "Get some enemies into the concrete pit so that you can go across it. Then "
 "push them one step further down before you dig and grab the gold."
 msgstr ""
+"Lortu etsai batzuk hormigoiko hobira eror daitezen, hura zeharkatzeko. "
+"Ondoren, zulatu eta urrea hartu aurretik, bultza itzazu urrats bat beherago."
 
 #: gamedata/game_lars.txt:76
 #, kde-format
@@ -3900,10 +3954,9 @@ msgstr ""
 "zazpi ipotxekin hasita."
 
 #: gamedata/game_MAZ.txt:8
-#, fuzzy, kde-format
-#| msgid "Drop?"
+#, kde-format
 msgid "Dopey"
-msgstr "Erori?"
+msgstr "Kaskarin"
 
 #: gamedata/game_MAZ.txt:9
 #, kde-format
@@ -3913,42 +3966,47 @@ msgid ""
 "tall vertical ladder, just below the second highest horizontal ladder, until "
 "the path to the exit is clear."
 msgstr ""
+"Nahiko erraza, eskaileratik erortzea ekidin behar duzu. Bukaerako bi etsaien "
+"aurretik pasatzeko modu ezberdinak daude. Azkarrenetako bat eskailera "
+"bertikal altu batean itxoitean datza, justu bigarren eskailera altuenaren "
+"azpian, irteerako bidea libre egon arte."
 
 #: gamedata/game_MAZ.txt:12
 #, kde-format
 msgid "Sleepy"
-msgstr "Logurarekin"
+msgstr "Loti"
 
 #: gamedata/game_MAZ.txt:13
 #, kde-format
 msgid "A lot of backtracking, but nothing too difficult here."
-msgstr ""
+msgstr "Atzerapauso asko eman behar, baina ez dago zailegia den ezer."
 
 #: gamedata/game_MAZ.txt:16
 #, kde-format
 msgid "Doc"
-msgstr ""
+msgstr "Jakintsu"
 
 #: gamedata/game_MAZ.txt:17
 #, kde-format
 msgid "A few tricks to figure out how to get the gold, but nothing too hard."
 msgstr ""
+"Urrea nola lortu asmatzeko trikimailu batzuk, baina ez dago nekezegia den "
+"ezer."
 
 #: gamedata/game_MAZ.txt:20
 #, kde-format
 msgid "Grumpy"
-msgstr "Umore txarreko"
+msgstr "Marmarti"
 
 #: gamedata/game_MAZ.txt:21
 #, kde-format
 msgid "Visually confusing, but otherwise a simple maze."
-msgstr ""
+msgstr "Ikusmen aldetik nahasgarria, baina bestela labirinto sinple bat."
 
 #: gamedata/game_MAZ.txt:24
-#, fuzzy, kde-format
-#| msgid "Speedy"
+#, kde-format
 msgid "Sneezy"
-msgstr "Azkarra"
+msgstr "Usintsu"
 
 #: gamedata/game_MAZ.txt:25
 #, kde-format
@@ -3965,7 +4023,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:28
 #, kde-format
 msgid "Bashful"
-msgstr ""
+msgstr "Lotsati"
 
 #: gamedata/game_MAZ.txt:29
 #, kde-format
@@ -3979,7 +4037,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:34
 #, kde-format
 msgid "Happy"
-msgstr "Zoriontsu"
+msgstr "Alai"
 
 #: gamedata/game_MAZ.txt:35
 #, kde-format
@@ -4059,6 +4117,8 @@ msgid ""
 "The only trick to this level is using the hidden passages and enticing the "
 "enemies to use them."
 msgstr ""
+"Maila honetako trikimailu bakarra ezkutuko pasabidea erabiltzea eta etsaiak "
+"hura erabiltzera erakartzean datza."
 
 #: gamedata/game_MAZ.txt:58
 #, kde-format
@@ -6029,7 +6089,7 @@ msgstr ""
 "zulatzen duzun bitartean.\n"
 "\n"
 "Ateratzen zarenean, zuzenean erori hormigoitik gertu dagoen eskaileraren "
-"gainera. Jeitsi eskailera hori, hormigoiaren azpitik eskuinera eta gero igo "
+"gainera. Jaitsi eskailera hori, hormigoiaren azpitik eskuinera eta gero igo "
 "hurrengo ganberaren gainera.\n"
 "\n"
 "Bigarren ganbera. Joan ezkerretik eskuinera ardatzekin, zulatzeko duzun "
@@ -6224,18 +6284,20 @@ msgid ""
 "bottom right.  If you do get trapped there, the only way out is to kill the "
 "hero (press key Q for quit) and start the level again."
 msgstr ""
-"Hau mugitzeko ariketa batzuk dira. Jarraitu urrezko pipiten bidea eskuinean "
-"eskailera agertzen den arte. Heroiak sagua bide sinpleetatik zehar bakarrik "
-"jarrai dezake (adib. _ | L edo U), beraz, kontuan izan .\n"
+"Hau, inguruan mugitzeko ariketa bat da. Jarraitu urrezko pipiten arrastoari "
+"eskuinean eskailera agertu arte. Heroiak sagua bide sinpleetatik bakarrik "
+"jarrai dezake ( _  | L edo U gisakoak), beraz, kontu izan harengandik "
+"aurrera gehiegi ez urruntzeko.\n"
 "\n"
-"ARRISKUA: Saiatu eskaileratik edo barratik beheko hormigoizko putzura ez "
-"erortzen. Hemen sartzen bazara, irtetzeko bide bakarra heroia hiltzea "
-"(sakatu Q irtetzeko) eta maila berriro hastea da."
+"ARRISKUA: Saiatu eskaileratik edo barratik hormigoian behean eskuinean "
+"dagoen hobira ez erortzen. Han harrapatuta gelditzen bazara, ateratzeko era "
+"bakarra heroia hiltzea (sakatu Q tekla irteteko) eta maila berriz hastea "
+"izango da."
 
 #: gamedata/game_tute.txt:21
 #, kde-format
 msgid "Digging"
-msgstr "Zulatzen"
+msgstr "Zulatzea"
 
 #: gamedata/game_tute.txt:22
 #, kde-format
