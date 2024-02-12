@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-20 00:44+0000\n"
-"PO-Revision-Date: 2024-02-08 21:53+0100\n"
+"PO-Revision-Date: 2024-02-11 23:37+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -612,18 +612,18 @@ msgid ""
 "above the bricks inside the pyramid, pause the game and switch back to mouse "
 "mode."
 msgstr ""
-"Baliteke Egiptoko ohizko diseinua ez izatea.\n"
+"Ziurrenik ez da Egiptoko diseinu tradizional bat.\n"
 "\n"
-"Poloetan zehar aurrera eta atzera zig-zag eginez ibili beharko zara altxor "
-"guztiak lortzeko. Momia ehiztari bakartia igarotzea lortzeko, egon zaitez "
-"bere zain polo batean, eta zuregana iristen denean, jaregin azpiko polora "
-"eta mugitu haren azpitik.\n"
+"Zurtoinetan zehar aurrera eta atzera sigi-saga ibili beharko duzu altxor "
+"guztiak eskuratzeko. Momia jazarle bakartia gainditzeko, egon zaitez zurtoin "
+"batean bere zain, eta zuregana iritsi aurretik, eror zaitez azpiko "
+"zurtoinera eta mugi zaitez haren azpian.\n"
 "\n"
-"Diseinu hau ez denez ohikoa, maila hau modu ez-ohizko batean jokatzea hartu "
-"beharko zenuke kontutan: 'jaregin eta azpitik igarotzea' mugimendua "
-"teklatuarekin egitea askoz ere errazagoa da (hala ere zaila izango da). "
-"Piramide barruako aogiko altxorraren azken pieza lortutakoan, pausatu joko "
-"eta itzuli saguaren modura."
+"Diseinua tradizionala ez denez, kontuan izan era ezohikoan jokatzea: "
+"erortzen utzi eta azpian mugitzea teklatuarekin errazago egiten da "
+"(errazagoa, baina zaila hala ere). Behin piramide barruko, adreiluen gaineko "
+"azken altxor pieza eskuratu duzunean, jokoan etenaldia egin eta aldatu "
+"berriz sagu modura."
 
 #: gamedata/game_CM.txt:132
 #, kde-format
@@ -3206,6 +3206,21 @@ msgid ""
 "\n"
 "Your escape further upwards depends on your speed and dexterity."
 msgstr ""
+"Itxoin pixka bat ezkerrerantz abiatu aurretik. Ondoren, etsaien buruen "
+"gainetik joanda, urrera iristea errazagoa izango da.\n"
+"\n"
+"Agertzen direnean igo azkar eskailera gainera. Ondoren, eskailera garaienera "
+"iritsi ahal izateko, bi hutsune zeharkatu beharko dituzu etsai baten "
+"laguntzarekin.\n"
+"\n"
+"Horretan nola moldatzen zaren, lehenengo eskaileratik igotzen zarenean "
+"jarraitzen zaituzten etsaien araberakoa izango da. Egoerarik onenean bi "
+"izango dira, lehenengo hutsunea gainditzeko beraien gainetik itzuli ahal "
+"izango duzu, ondoren egin etenaldi labur bat hurrengo hutsunean zubi bat "
+"osatzen duten bitartean.\n"
+"\n"
+"Zure goranzko ihesaldia zure azkartasunaren eta trebetasunaren araberakoa "
+"izango da."
 
 #: gamedata/game_GRII.txt:20
 #, kde-format
@@ -6366,24 +6381,27 @@ msgid ""
 "If you are feeling stressed, you can hit the Pause key at any time (default "
 "P or Esc) and take a break.  Hit it again when you wish to continue."
 msgstr ""
-"Hasteko polita izan da, baina ez dago jokorik etsairik gabe. Urreen bila ere "
-"dabiltza, baina baita zure atzetik ere. Harrapatzen bazaituzte hilda zaude, "
-"agian oraindik bizitza batzuk izan ditzakezu eta berriro has zaitezke.\n"
+"Ederki, orain artekoa polita eta erraza izan da, baina etsairik gabe, jokoa "
+"ez litzateke jostagarria izango. Haiek ere urrearen atzetik dabiltza: "
+"oraindik okerrago, zuk harrapatu nahian dabiltza, baina agian oraindik "
+"bizitza batzuk geldituko zaizkizu eta berriz has zaitezke.\n"
 "\n"
-"Etsaien aurka egiteko, korri egin, zulo bat egin edo hauei iruzur eginez.\n"
+"Etsaiei aurre egiteko, ihes egin, zuloa egin edo inora joan ezinik geldituko "
+"diren jokoaren esparru batera erakar ditzakezu.\n"
 "\n"
-"Etsaien bat zulo batean gelditzen bada, duen edozein urre galtzen du, zuloan "
-"gelditzen da denbora batean eta berriro irtetzen da. Zuloa bera barruan "
-"dagoen bitartean ixten bada, hil egiten da eta pantailako beste leku batean "
-"agertzen da. Etsaiak erraza hiltzeko hainbat zulo egin ditzakezu jarraian.\n"
+"Etsai bat zulo batera erortzen bada, daraman urre guztia uzten du. Gero, "
+"denbora batez zuloan harrapatuta gelditzen da, eta azkenik handik irteten "
+"da. Bertan dagoela zuloa ixten bada, hil egingo da eta pantailako beste leku "
+"batean berragertuko da. Hainbat zulo jarraian zulatuz, etsaiak hil "
+"ditzakezu.\n"
 "\n"
-"Garrantzitsuena: etsaien buruen gainetik ibil zaitezke. Maila honen hasieran "
-"egin behar duzu. Zulatu zulo bat, etsaia bertan sartu, itxaron hura erori "
-"arte eta gainetik korritu ezazu...\n"
+"Garrantzitsuena, etsaien buruen gainetik ibil zaitezke. Maila honen hasieran "
+"hori egin behar zenuke. Zulo bat zulatu, etsaia harrapatu, hura beheraino "
+"iritsi arte itxoin, eta ondoren haren gainetik ibili, gainerako etsaiak "
+"atzean jarraika dituzula...\n"
 "\n"
-"Urduriegi eta egonezinik zaudela somatzen baduzu, edozein Pausa tekla "
-"edozein momentutan saka dezakezu (P edo Ihes teklak dira lehenetsiak) eta "
-"lasaitzeko aukera izango duzu. "
+"Estresatuta bazaude, nahi duzunean Etenaldi tekla (era lehenetsian P edo "
+"Ihes) sakatu eta atseden har dezakezu. Berriz sakatu jarraitu nahi duzunean."
 
 #: gamedata/game_tute.txt:43
 #, kde-format
@@ -6397,9 +6415,9 @@ msgid ""
 "will let go and fall ...  Also, note that you can collect gold by falling "
 "onto it."
 msgstr ""
-"Horizontalki barretatik (edo poleetatik) mugi zaitezke, baina behera "
-"mugitzen bazara erori egin zaitezke. Gainera, kontuan izan urrea erortzen "
-"zaren bitartean jaso dezakezula."
+"Barretatik (edo zurtoinetatik) horizontalki mugi zaitezke, baina behera "
+"mugitzen bazara, askatu eta erori egingo zara ... Gainera, kontuan izan "
+"urrera erortzean ura jaso dezakezula."
 
 #: gamedata/game_tute.txt:47
 #, kde-format
@@ -6495,11 +6513,12 @@ msgid ""
 "and take a break.  Also, you can use the Settings menu to slow down the "
 "action."
 msgstr ""
-"Ezin duzu urreraino igo, baina etsairen batek ekartzea lortu behar duzu. "
-"Baina nola bidali ditzakezu berriro?\n"
+"Ezin duzu urreraino igo, beraz, etsairen batek behera ekartzea lortu behar "
+"duzu. Baina nola lor dezakezu haiek itzultzen jarraitzea?\n"
 "\n"
-"Estresatuta bazaude, sakatu P edo Ihes tekla eta hartu atseden piskat. "
-"Gainera, erritmoa moteltzeko Ezarpenak menua erabil dezakezu."
+"Estresatuta bazaude, Etenaldi tekla (era lehenetsian P edo Ihes) sakatu eta "
+"atseden har dezakezu. Gainera, Ezarpenak menua erabil dezakezu ekintza "
+"moteltzeko."
 
 #: gamedata/game_tutea.txt:19
 #, kde-format
@@ -7632,38 +7651,34 @@ msgid "Show Enemy"
 msgstr "Erakutsi etsaia"
 
 #: src/kgoldrunner.cpp:735
-#, fuzzy, kde-format
-#| msgid "Game Paused"
+#, kde-format
 msgid "The game is paused"
-msgstr "Jokoa pausarazita"
+msgstr "Jokoa etenaldian dago"
 
 #: src/kgoldrunner.cpp:737
 #, kde-format
 msgid "Press \"%1\" to RESUME"
-msgstr "Sakatu \"%1\" JARRAITZEKO"
+msgstr "Sakatu \"%1\" BERREKITEKO"
 
 #: src/kgoldrunner.cpp:739
-#, fuzzy, kde-format
-#| msgid "Press \"%1\" to RESUME"
+#, kde-format
 msgid "Press \"%1\" or \"%2\" to RESUME"
-msgstr "Sakatu \"%1\" JARRAITZEKO"
+msgstr "Sakatu \"%1\" edo \"%2\" BERREKITEKO"
 
 #: src/kgoldrunner.cpp:746
 #, kde-format
 msgid "Press \"%1\" to PAUSE"
-msgstr "Sakatu \"%1\" PAUSATZEKO"
+msgstr "Sakatu \"%1\" ETENALDIA egiteko"
 
 #: src/kgoldrunner.cpp:748
-#, fuzzy, kde-format
-#| msgid "Press \"%1\" to PAUSE"
+#, kde-format
 msgid "Press \"%1\" or \"%2\" to PAUSE"
-msgstr "Sakatu \"%1\" PAUSATZEKO"
+msgstr "Sakatu \"%1\" edo \"%2\" ETENALDIA egiteko"
 
 #: src/kgoldrunner.cpp:760
-#, fuzzy, kde-format
-#| msgid "   Has hint   "
+#, kde-format
 msgid "Has hint"
-msgstr "   Argibidea du   "
+msgstr "Argibidea du"
 
 #: src/kgoldrunner.cpp:760
 #, kde-format
@@ -7676,14 +7691,9 @@ msgid "Get Folders"
 msgstr "Eskuratu karpetak"
 
 #: src/kgoldrunner.cpp:878
-#, fuzzy, kde-format
-#| msgid ""
-#| "Cannot find system games sub-folder '%1/system/' in area '%2' of the KDE "
-#| "folder ($KDEDIRS)."
+#, kde-format
 msgid "Cannot find system games sub-folder '/system/' in areas '%1'."
-msgstr ""
-"Ezin da KDE-ren karpetako ($KDEDIRS) \"%2\" arean \"%1/system\" sistemako "
-"jokoaren azpi-karpeta aurkitu."
+msgstr "Ezin du aurkitu, '%1' esparruetan, sistemako jokoen '/system' karpeta."
 
 #: src/kgoldrunner.cpp:911
 #, kde-format
@@ -7693,18 +7703,17 @@ msgstr "Editatu izena/argibidea"
 #: src/kgoldrunner.cpp:912
 #, kde-format
 msgid "Edit level name or hint"
-msgstr "Editatu mailaren izena eta argibidea"
+msgstr "Editatu mailaren izena edo argibidea"
 
 #: src/kgoldrunner.cpp:913
 #, kde-format
 msgid "Edit text for the name or hint of a level"
-msgstr "Editatu maila baten izenaren eta argibidearen testuatestua"
+msgstr "Editatu maila baten izenaren edo argibidearen testua"
 
 #: src/kgoldrunner.cpp:916
-#, fuzzy, kde-format
-#| msgid "Edit Name/Hint"
+#, kde-format
 msgid "Name/Hint"
-msgstr "Editatu izena/argibidea"
+msgstr "Izena/Argibidea"
 
 #: src/kgoldrunner.cpp:919
 #, kde-format
@@ -7712,22 +7721,19 @@ msgid "Erase"
 msgstr "Ezabatu"
 
 #: src/kgoldrunner.cpp:919
-#, fuzzy, kde-format
-#| msgid "Erase"
+#, kde-format
 msgid "Space/Erase"
-msgstr "Ezabatu"
+msgstr "Zuriunea/Ezabatu"
 
 #: src/kgoldrunner.cpp:920
-#, fuzzy, kde-format
-#| msgid "Paint bars or poles"
+#, kde-format
 msgid "Paint empty squares or erase"
-msgstr "Marraztu barrak edo poloak"
+msgstr "Marraztu karratu hutsak edo ezabatu"
 
 #: src/kgoldrunner.cpp:921
-#, fuzzy, kde-format
-#| msgid "Erase objects by painting empty squares"
+#, kde-format
 msgid "Erase objects or paint empty squares"
-msgstr "Ezabatu objektuak karratu hutsak margotuz"
+msgstr "Ezabatu objektuak edo margotu karratu hutsak"
 
 #: src/kgoldrunner.cpp:924
 #, kde-format
@@ -7742,7 +7748,7 @@ msgstr "Mugitu heroia"
 #: src/kgoldrunner.cpp:926
 #, kde-format
 msgid "Change the hero's starting position"
-msgstr "Aldatu heroiaren hasierako posizioa"
+msgstr "Aldatu heroiaren hasierako kokalekua"
 
 #: src/kgoldrunner.cpp:929
 #, kde-format
@@ -7757,7 +7763,7 @@ msgstr "Marraztu etsaiak"
 #: src/kgoldrunner.cpp:931
 #, kde-format
 msgid "Paint enemies at their starting positions"
-msgstr "Marraztu etsaiak haien hasierako posizioetan"
+msgstr "Marraztu etsaiak haien hasierako kokalekuetan"
 
 #: src/kgoldrunner.cpp:935
 #, kde-format
@@ -7812,18 +7818,17 @@ msgstr "Eskailera"
 #: src/kgoldrunner.cpp:953
 #, kde-format
 msgid "Paint ladders"
-msgstr "Marraztu eskailera"
+msgstr "Marraztu eskailerak"
 
 #: src/kgoldrunner.cpp:954
 #, kde-format
 msgid "Paint ladders (ways to go up or down)"
-msgstr "Marraztu eskailerak (igotzeko edo jeisteko bideak)"
+msgstr "Marraztu eskailerak (igotzeko edo jaisteko modua)"
 
 #: src/kgoldrunner.cpp:957
-#, fuzzy, kde-format
-#| msgid "Ladder"
+#, kde-format
 msgid "H Ladder"
-msgstr "Eskailera"
+msgstr "H eskailera"
 
 #: src/kgoldrunner.cpp:957
 #, kde-format
@@ -7838,7 +7843,7 @@ msgstr "Marraztu ezkutuko eskailerak"
 #: src/kgoldrunner.cpp:959
 #, kde-format
 msgid "Paint hidden ladders, which appear when all the gold is gone"
-msgstr "Marraztu ezkutuko eskailerak, urre guztia joandakoan agertzen dira"
+msgstr "Marraztu ezkutuko eskailerak, urre guztia jasotakoan agertzen direnak"
 
 #: src/kgoldrunner.cpp:963
 #, kde-format
@@ -7853,12 +7858,12 @@ msgstr "Barra/Zurtoina"
 #: src/kgoldrunner.cpp:964
 #, kde-format
 msgid "Paint bars or poles"
-msgstr "Marraztu barrak edo poloak"
+msgstr "Marraztu barrak edo zurtoinak"
 
 #: src/kgoldrunner.cpp:965
 #, kde-format
 msgid "Paint bars or poles (can fall from these)"
-msgstr "Marraztu barrak edo poloak (hautetatik eror zaitezke)"
+msgstr "Marraztu barrak edo zurtoinak (hautetatik eror daiteke)"
 
 #: src/kgoldrunner.cpp:969
 #, kde-format
@@ -7873,12 +7878,12 @@ msgstr "Urrea/Altxorra"
 #: src/kgoldrunner.cpp:970
 #, kde-format
 msgid "Paint gold (or other treasure)"
-msgstr "Marraztu urrea (edo beste altxorrak)"
+msgstr "Marraztu urrea (edo beste altxor batzuk)"
 
 #: src/kgoldrunner.cpp:971
 #, kde-format
 msgid "Paint gold pieces (or other treasure)"
-msgstr "Marraztu urrezko piezak (edo beste altxorrak)"
+msgstr "Marraztu urrezko zatiak (edo beste altxor batzuk)"
 
 #. i18n: ectx: Menu (editor)
 #: src/kgoldrunnerui.rc:20
@@ -7893,11 +7898,10 @@ msgid "Edit Toolbar"
 msgstr "Editatu tresna-barra"
 
 #: src/kgrdialog.cpp:35
-#, fuzzy, kde-format
-#| msgid "Edit Name & Hint"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Name or Hint"
-msgstr "Editatu izena eta argibidea"
+msgstr "Editatu izena edo argibidea"
 
 #: src/kgrdialog.cpp:57
 #, kde-format
@@ -7923,7 +7927,7 @@ msgstr "Jokoaren izena:"
 #: src/kgrdialog.cpp:132
 #, kde-format
 msgid "File name prefix:"
-msgstr "Fitxategiaren aurrizkia:"
+msgstr "Fitxategi-izenaren aurrizkia:"
 
 #: src/kgrdialog.cpp:140
 #, kde-format
@@ -7933,7 +7937,7 @@ msgstr "Ohiko arauak"
 #: src/kgrdialog.cpp:141
 #, kde-format
 msgid "KGoldrunner rules"
-msgstr "KGoldrunner-en arauak"
+msgstr "«KGoldrunner»en arauak"
 
 #: src/kgrdialog.cpp:150 src/kgrdialog.cpp:185
 #, kde-format
@@ -7992,8 +7996,8 @@ msgid ""
 "You cannot create and save a level until you have created a game to hold it. "
 "Try menu item \"Create Game\"."
 msgstr ""
-"Ezin duzu maila bat sortu eta gorde hau sartzeko jokorik sortu ez baduzu. "
-"Saiatu menuko \"Sortu menua\" elementuarekin."
+"Ezin duzu maila bat sortu eta gorde hura eusteko joko bat sortu arte. "
+"Erabili menuko \"Sortu jokoa\" elementua."
 
 #: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:262
 #, kde-format
@@ -8006,8 +8010,8 @@ msgid ""
 "You cannot edit and save a level until you have created a game and a level. "
 "Try menu item \"Create Game\"."
 msgstr ""
-"Ez duzu maila bat editatu eta gorde joko bat eta maila bat sortu arte. "
-"Saiatu menuko \"Sortu jokoa\" elementua."
+"Ezin duzu maila bat editatu eta gorde joko bat eta maila bat sortu arte. "
+"Erabili menuko \"Sortu jokoa\" elementua."
 
 #: src/kgreditor.cpp:138
 #, kde-format
@@ -8016,9 +8020,9 @@ msgid ""
 "own games. You are not just taking a peek at the hidden ladders and fall-"
 "through bricks, are you? :-)"
 msgstr ""
-"Sistemako maila bat edita dezakezu baina maila zure joko batean gorde behar "
-"duzu. Hau ez duzu ezkutuko eskailerak aurkitzeko eta adreilu faltsuetan "
-"zehar erortzeko egiten, ezta? :-)"
+"Sistemako maila bat editatzea ondo dago, baina maila zure joko batean gorde "
+"behar duzu. Hori ez duzu egiten, ezkutuko eskailerak eta zeharka daitezkeen "
+"adreiluei begiratu bat emateko, ezta? :-)"
 
 #: src/kgreditor.cpp:242 src/kgreditor.cpp:260 src/kgrgame.cpp:261
 #, kde-format
@@ -8028,7 +8032,7 @@ msgstr "Gorde maila"
 #: src/kgreditor.cpp:243
 #, kde-format
 msgid "Do you want to insert a level and move existing levels up by one?"
-msgstr "Maila bat txertatu eta beste mailak gorantze mugitu nahi dituzu?"
+msgstr "Maila bat txertatu eta beste mailak gorantz mugitu nahi dituzu?"
 
 #: src/kgreditor.cpp:245
 #, kde-format
@@ -8056,7 +8060,7 @@ msgstr "Mugitu maila"
 #, kde-format
 msgid "You must first load a level to be moved. Use the \"%1\" or \"%2\" menu."
 msgstr ""
-"Lehenengo mugitzeko maila bat kargatu behar duzu. Erabili \"%1\" edo \"%2\" "
+"Lehenengo, mugitzeko, maila bat zamatu behar duzu. Erabili \"%1\" edo \"%2\" "
 "menua."
 
 #: src/kgreditor.cpp:319
@@ -8075,18 +8079,18 @@ msgid ""
 "You cannot move a level until you have created a game and at least two "
 "levels. Try menu item \"Create Game\"."
 msgstr ""
-"Ezin duzu maila bat mugitu joko bat sortu eta bi mail sortu arte. Saiatu "
-"menuko \"Sortu jokoa\" elementua."
+"Ezin duzu maila bat mugitu joko bat eta gutxienez bi maila sortu arte. "
+"Erabili menuko \"Sortu jokoa\" elementua."
 
 #: src/kgreditor.cpp:341
 #, kde-format
 msgid "Sorry, you cannot move a system level."
-msgstr "Ezin duzu sistemako maila bat mugitu."
+msgstr "Barkatu, ezin duzu sistemako maila bat mugitu."
 
 #: src/kgreditor.cpp:356
 #, kde-format
 msgid "You must change the level or the game or both."
-msgstr "Joko bat eta/edo maila bat aldatu behar dituzu."
+msgstr "Maila, edo jokoa, edo biak, aldatu behar dituzu."
 
 #: src/kgreditor.cpp:418 src/kgreditor.cpp:441 src/kgreditor.cpp:459
 #: src/kgrselector.cpp:271
@@ -8100,15 +8104,14 @@ msgid ""
 "You cannot delete a level until you have created a game and a level. Try "
 "menu item \"Create Game\"."
 msgstr ""
-"Ezin duzu maila bat ezabatu joko bat eta maila bat sortu arte. Saiatu menuko "
-"\"Sortu jokoa\"."
+"Ezin duzu maila bat ezabatu joko bat eta maila bat sortu arte. Erabili "
+"menuko \"Sortu jokoa\" elementua."
 
 #: src/kgreditor.cpp:442
 #, kde-format
 msgid "Do you want to delete a level and move higher levels down by one?"
 msgstr ""
-"Ziur zaude maila bat ezabatu eta maila altuagok beherantz mugitu nahi "
-"dituzula?"
+"Maila bat ezabatu eta gorago dauden mailak bat beheraka mugitu nahi dituzu?"
 
 #: src/kgreditor.cpp:444
 #, kde-format
@@ -8118,7 +8121,7 @@ msgstr "&Ezabatu maila"
 #: src/kgreditor.cpp:460
 #, kde-format
 msgid "Cannot find file '%1' to be deleted."
-msgstr "Ezin da ezabatzeko \"%1\" fitxategia aurkitu."
+msgstr "Ezin da ezabatu beharreko \"%1\" fitxategia aurkitu."
 
 #: src/kgreditor.cpp:508 src/kgreditor.cpp:518 src/kgreditor.cpp:523
 #: src/kgreditor.cpp:537 src/kgreditor.cpp:555 src/kgreditor.cpp:767
@@ -8141,18 +8144,20 @@ msgstr "Jokoarentzako fitxategi-izenaren aurrizki bat sartu behar duzu."
 #, kde-format
 msgid "The filename prefix should not be more than 5 characters."
 msgstr ""
-"Fitxategi-izenaren aurrizkiak ezin ditu 5 karaktere baina gehiago eduki."
+"Fitxategi-izenaren aurrizkiak ez lituzke 5 karaktere baina gehiago eduki "
+"behar."
 
 #: src/kgreditor.cpp:538
 #, kde-format
 msgid "The filename prefix should be all alphabetic characters."
 msgstr ""
-"Fitxategi-izenaren aurrizkiaren karaktere denak alfabetikoak izan behar dira."
+"Fitxategi-izenaren aurrizkiaren karaktere denak alfabetokoak izan beharko "
+"lirateke."
 
 #: src/kgreditor.cpp:556
 #, kde-format
 msgid "The filename prefix '%1' is already in use."
-msgstr "\"%1\" fitxategi-izenaren aurrizkia dagoeneko erabilita dago."
+msgstr "Fitxategi-izenaren '%1' aurrizkia jada erabilita dago."
 
 #: src/kgreditor.cpp:640
 #, kde-format
@@ -8209,7 +8214,7 @@ msgstr "Jokatu hurrengo maila"
 #: src/kgrgame.cpp:192
 #, kde-format
 msgid "There are no more levels in this game."
-msgstr "Joko honetan ez dago maila gehiago."
+msgstr "Joko honetan ez dago maila gehiagorik."
 
 #: src/kgrgame.cpp:262
 #, kde-format
@@ -8237,7 +8242,7 @@ msgstr ""
 #: src/kgrgame.cpp:626 src/kgrgame.cpp:783
 #, kde-format
 msgid "Game Paused"
-msgstr "Jokoa geldituta dago"
+msgstr "Jokoa Etenaldian dago"
 
 #: src/kgrgame.cpp:627
 #, kde-format
@@ -8245,9 +8250,9 @@ msgid ""
 "The replay has stopped and the game is pausing while you prepare to go on "
 "playing. Please press the Pause key (default P or Esc) when you are ready."
 msgstr ""
-"Berriz jotzea geldituta dago eta jokoa pausatuta dago jokatzeko prestatzen "
-"zaren bitartean. Mesedez, sakatu Pausaren tekla (era lehenetsian P edo Ihes) "
-"prest zaudenean."
+"Berriz jotzea geldituta dago eta jokoa etenaldian dago jokatzeko prestatzen "
+"zaren bitartean. Mesedez, sakatu Etenaldiaren tekla (era lehenetsian P edo "
+"Ihes) prest zaudenean."
 
 #: src/kgrgame.cpp:671 src/kgrgame.cpp:677
 #, kde-format
@@ -8259,7 +8264,7 @@ msgstr "Azken maila berriz jo"
 msgid ""
 "ERROR: Could not find and replay a recording of the last level you played."
 msgstr ""
-"ERROREA: Ezin izan du, jokatu duzun azken mailaren grabazio bat aurkitu eta "
+"ERROREA: Ezin izan du jokatu duzun azken mailaren grabazio bat aurkitu eta "
 "berriz jo."
 
 #: src/kgrgame.cpp:678
@@ -8310,7 +8315,7 @@ msgstr "Itxi KGoldrunner"
 #: src/kgrgame.cpp:725
 #, kde-format
 msgid "Start a different game or level"
-msgstr "Hasi joko edo maila desberdin bat"
+msgstr "Hasi joko edo maila ezberdin bat"
 
 #: src/kgrgame.cpp:727
 #, kde-format
@@ -8346,7 +8351,7 @@ msgid ""
 "The game is halted. You will need to press the Pause key (default P or Esc) "
 "when you are ready to play."
 msgstr ""
-"Jokoa geldituta dago. Pausaren tekla (era lehenetsian P edo Ihes) sakatu "
+"Jokoa etenaldian dago. Etenaldi tekla (era lehenetsian P edo Ihes) sakatu "
 "behar duzu jokatzeko prest zaudenean."
 
 #: src/kgrgame.cpp:837
@@ -8416,7 +8421,7 @@ msgstr "Argibidea"
 #: src/kgrgame.cpp:1304
 #, kde-format
 msgid "&OK"
-msgstr "&Ados"
+msgstr "Ad&os"
 
 #: src/kgrgame.cpp:1317
 #, kde-format
@@ -8429,39 +8434,35 @@ msgid "T H E   E N D"
 msgstr "B U K A E R A"
 
 #: src/kgrgame.cpp:1420
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have pressed a key that can be used to move the Hero. Do you want to "
-#| "switch automatically to keyboard control? Mouse control is easier to use "
-#| "in the long term - like riding a bike rather than walking!"
+#, kde-format
 msgid ""
 "You have pressed a key that can be used to control the Hero. Do you want to "
 "switch automatically to keyboard control? Pointer control is easier to use "
 "in the long term - like riding a bike rather than walking!"
 msgstr ""
-"Heroia mugitzeko erabil daitekeen tekla bat sakatu duzu. Automatikoki "
-"teklatuaren kontrola aldatu nahi duzu? Saguaren kontrola errazagoa da ohitu "
-"ondoren!"
+"Heroia agintzeko erabil daitekeen tekla bat sakatu duzu. Teklatu bidezko "
+"agintera automatikoki aldatzea nahi duzu? Epe luzera, erakuslearen bidezko "
+"agintea erabiltzea errazagoa da - ibili ordez bizikletan ibiltzea bezala!"
 
 #: src/kgrgame.cpp:1424
 #, kde-format
 msgid "Switch to Keyboard Mode"
-msgstr "Aldatu teklatuaren modua"
+msgstr "Aldatu teklatu modua"
 
 #: src/kgrgame.cpp:1425
 #, kde-format
 msgid "Switch to &Keyboard Mode"
-msgstr "Aldatu &teklatuaren modura"
+msgstr "Aldatu &Teklatu modura"
 
 #: src/kgrgame.cpp:1426
 #, kde-format
 msgid "Stay in &Mouse Mode"
-msgstr "Jarraitu &saguaren moduan"
+msgstr "Jarraitu &Sagu moduan"
 
 #: src/kgrgame.cpp:1427
 #, kde-format
 msgid "Keyboard Mode"
-msgstr "Teklatuaren modua"
+msgstr "Teklatu modua"
 
 #: src/kgrgame.cpp:1469 src/kgrgame.cpp:1495 src/kgrgame.cpp:1505
 #: src/kgrgame.cpp:1524 src/kgrgame.cpp:1530
@@ -8475,14 +8476,14 @@ msgid ""
 "Sorry, you cannot save your game play while you are editing. Please try menu "
 "item \"%1\"."
 msgstr ""
-"Ezin duzu zure jokoa editatzen ari zaren bitartean gorde. Saiatu menuko '%1' "
-"elementuarekin."
+"Barkatu, ezin duzu zure jokoa gorde, editatzen ari zaren bitartean. Mesedez, "
+"erabili menuko '%1' elementua."
 
 #: src/kgrgame.cpp:1506 src/kgrgame.cpp:1550 src/kgrgame.cpp:1669
 #: src/kgrgame.cpp:1872 src/kgrgame.cpp:2036 src/kgrgameio.cpp:170
 #, kde-format
 msgid "Cannot open file '%1' for read-only."
-msgstr "Ezin da \"%1\" fitxategia irakurtzeko bakarrik ireki."
+msgstr "Ezin du '%1' fitxategia irakurtzeko bakarrik ireki."
 
 #: src/kgrgame.cpp:1525
 #, kde-format
@@ -8490,8 +8491,9 @@ msgid ""
 "Please note: for reasons of simplicity, your saved game position and score "
 "will be as they were at the start of this level, not as they are now."
 msgstr ""
-"Oharra: sinpleagoa izan dadin zure gordtako jokoaren posizioa eta puntuazioa "
-"maila honen hasierakoa izango dira, eta ez unekoak."
+"Kontuan izan: gauzak errazteko, gordetako zure jokoaren kokapena eta "
+"puntuazioa, maila honen hasieran zeuden bezala egongo dira, ez orain dauden "
+"bezala."
 
 #: src/kgrgame.cpp:1531
 #, kde-format
@@ -8511,7 +8513,7 @@ msgstr "Barkatu, ez dago gordetako jokorik."
 #: src/kgrgame.cpp:1592
 #, kde-format
 msgid "Cannot find the game with prefix '%1'."
-msgstr "Ezin da \"%1\" aurrizkidun jokoa aurkitu."
+msgstr "Ezin da '%1' aurrizkidun jokoa aurkitu."
 
 #: src/kgrgame.cpp:1650
 #, kde-format
@@ -8558,7 +8560,7 @@ msgstr "Erakutsi puntuazio altuak"
 #: src/kgrgame.cpp:1840
 #, kde-format
 msgid "Sorry, we do not keep high scores for tutorial games."
-msgstr "Barkatu, ez dugu tutoretza-jokoetarako puntuaziorik mantentzen ."
+msgstr "Barkatu, ez dugu tutoretza-jokoetarako puntuaziorik mantentzen."
 
 #: src/kgrgame.cpp:1863
 #, kde-format
@@ -8571,7 +8573,7 @@ msgid ""
 "<center><h2>KGoldrunner Hall of Fame</h2></center><center><h3>\"%1\" Game</"
 "h3></center>"
 msgstr ""
-"<center><h2>KGoldrunner-en ospearen aretoa</h2></center><center><h3>\"%1\" "
+"<center><h2>«KGoldrunner»ren ospearen aretoa</h2></center><center><h3>\"%1\" "
 "jokoa</h3></center>"
 
 #: src/kgrgame.cpp:1897
@@ -8616,14 +8618,14 @@ msgstr "Zamatu jokoaren informazioa"
 #: src/kgrgame.cpp:2030
 #, kde-format
 msgid "Cannot find game info file '%1'."
-msgstr "Ezin du jokoaren \"%1\" informazio-fitxategia aurkitu."
+msgstr "Ezin du jokoaren '%1' informazio-fitxategia aurkitu."
 
 #: src/kgrgame.cpp:2040
 #, kde-format
 msgid "Reached end of file '%1' before finding end of game-data."
 msgstr ""
-"'%1' fitxategiaren bukaerara iritsi da jokoaren amaierako datuak aurkitu "
-"baino lehen."
+"Jokoaren amaierako datuak aurkitu baino lehen '%1' fitxategiaren bukaerara "
+"iritsi da."
 
 #: src/kgrgame.cpp:2064 src/kgrgame.cpp:2069 src/kgrselector.cpp:259
 #, kde-format
@@ -8643,7 +8645,7 @@ msgstr "Irakurri mailaren datuak"
 #: src/kgrgameio.cpp:165
 #, kde-format
 msgid "Cannot find file '%1'."
-msgstr "Ezin du '%1' fitxategia aurkitu."
+msgstr "Ezin du aurkitu '%1' fitxategia."
 
 #: src/kgrgameio.cpp:174
 #, kde-format
@@ -8810,7 +8812,7 @@ msgstr "KGoldrunner"
 #, kde-format
 msgctxt "Rules"
 msgid "Traditional"
-msgstr "Ohikoa"
+msgstr "Tradizionala"
 
 #: src/kgrselector.cpp:359
 #, kde-format
@@ -8834,15 +8836,15 @@ msgstr "Txapelketa"
 #, kde-format
 msgid "1 level, uses KGoldrunner rules."
 msgid_plural "%1 levels, uses KGoldrunner rules."
-msgstr[0] "Maila 1ek, «KGoldrunner»en arauak erabiltzen ditu."
-msgstr[1] "%1 mailek, «KGoldrunner»en arauak erabiltzen dituzte."
+msgstr[0] "Maila 1, «KGoldrunner»en arauak erabiltzen ditu."
+msgstr[1] "%1 maila, «KGoldrunner»en arauak erabiltzen dituzte."
 
 #: src/kgrselector.cpp:468
 #, kde-format
 msgid "1 level, uses Traditional rules."
 msgid_plural "%1 levels, uses Traditional rules."
-msgstr[0] "Maila 1, arau tradizionalak darabilzki."
-msgstr[1] "%1 mailek, ohiko arauak erabiltzen dituzte."
+msgstr[0] "Maila 1, arau tradizionalak erabiltzen ditu."
+msgstr[1] "%1 maila, arau tradizionalak erabiltzen dituzte."
 
 #: src/kgrselector.cpp:473
 #, kde-format
@@ -8864,17 +8866,7 @@ msgstr ""
 "klik joko bat eta maila bat hautatu ondoren - edo erabili \"Utzi\"."
 
 #: src/kgrselector.cpp:525
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "\n"
-#| "If this is your first time in KGoldrunner, select the tutorial game or "
-#| "click \"Cancel\" and click that item in the Game or Help menu. The "
-#| "tutorial game gives you hints as you go.\n"
-#| "\n"
-#| "Otherwise, just click on the name of a game (in the list box), then, to "
-#| "start at level 001, click on the main button at the bottom. Play begins "
-#| "when you move the mouse or press a key."
+#, kde-format
 msgid ""
 "\n"
 "\n"
@@ -8887,23 +8879,15 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Hau zure lehen KGoldrunner saioa bada, hautatu tutoretza-jokoa edo klikatu "
-"\"Utzi\" eta klikatu Jokoa edo Laguntza menuan. Tutoretze-jokoak argibideak "
-"emango dizkizu jokoan zehar.\n"
+"KGoldrunner erabiltzen duzun lehen aldia bada, hautatu tutoretza-jokoa, "
+"aurreratu ahala argibideak emango dizkizuna.\n"
 "\n"
-"Bestela, klikatu joko baten izenean (zerrenda-laukian) eta 001 mailan "
-"hasteko, klikatu beheko botoi nagusian. Jokoa sagua mugitu edo tekla bat "
+"Bestela, taulako joko baten izenean klik egin, ondoren, egin klik beheko "
+"botoi nagusian 001 mailan hasteko. Jokoa sagua mugitzen edo tekla bat "
 "sakatzen duzunean hasiko da."
 
 #: src/kgrselector.cpp:534
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "\n"
-#| "You can select System levels for editing (or copying), but you must save "
-#| "the result in a game you have created. Use the mouse as a paintbrush and "
-#| "the editor toolbar buttons as a palette. Use the 'Empty Space' button to "
-#| "erase."
+#, kde-format
 msgid ""
 "\n"
 "\n"
@@ -8915,10 +8899,12 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Sistemaren mailak hauta ditzakezu editatzeko (edo kopiatzeko) baina emaitza "
-"zuk sortutako joko batean gorde behar duzu. Erabili sagua brotxa moduan eta "
-"editorearen tresna-barrak paleta bezala. Erabili \"Hutsunea\" botoia "
-"ezabatzeko."
+"Sistemaren mailak, editatzeko (edo kopiatzeko), hauta ditzakezu, baina "
+"emaitza zuk sortutako joko batean gorde behar duzu. Erabili saguaren "
+"ezkerreko botoia pintzel moduan eta editorearen tresna-barra paleta gisa. "
+"Erabili \"Ezabatu\" botoia edo saguaren eskuineko botoia ezabatzeko. Sagua, "
+"botoi bat eutsita duzula, arrastatu dezakezu karratu bat baino gehiago "
+"margotzeko edo ezabatzeko. "
 
 #: src/kgrselector.cpp:542
 #, kde-format
