@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-17 00:36+0000\n"
-"PO-Revision-Date: 2024-02-11 23:31+0100\n"
+"PO-Revision-Date: 2024-02-13 00:45+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -7220,20 +7220,17 @@ msgid "&Kill Hero"
 msgstr "&Hil heroia"
 
 #: src/kgoldrunner.cpp:275
-#, fuzzy, kde-format
-#| msgid "&Kill Hero"
+#, kde-format
 msgid "Kill Hero."
-msgstr "&Hil heroia"
+msgstr "Hil heroia."
 
 #: src/kgoldrunner.cpp:276
-#, fuzzy, kde-format
-#| msgid ""
-#| "Kill the hero, in case he finds himself in a situation from which he "
-#| "cannot escape"
+#, kde-format
 msgid ""
 "Kill the hero, in case he finds himself in a situation from which he cannot "
 "escape."
-msgstr "Hil ezazu heroia, ihes egin ezin duen agoera batean aurkitzen bada."
+msgstr ""
+"Heroia hi, ihes egitea ezinezkoa izango zaion egoera batean aurkitzen bada."
 
 #: src/kgoldrunner.cpp:293
 #, kde-format
@@ -7241,16 +7238,14 @@ msgid "&Create Level"
 msgstr "&Sortu maila"
 
 #: src/kgoldrunner.cpp:294
-#, fuzzy, kde-format
-#| msgid "Create level"
+#, kde-format
 msgid "Create level."
-msgstr "Sortu maila"
+msgstr "Sortu maila."
 
 #: src/kgoldrunner.cpp:295
-#, fuzzy, kde-format
-#| msgid "Create a completely new level"
+#, kde-format
 msgid "Create a completely new level."
-msgstr "Sortu erabateko maila berri bat"
+msgstr "Sortu maila erabat berri bat."
 
 #: src/kgoldrunner.cpp:297
 #, kde-format
@@ -7300,12 +7295,12 @@ msgstr "Gorde"
 #: src/kgoldrunner.cpp:320
 #, kde-format
 msgid "&Move Level..."
-msgstr "Maila &gehiago..."
+msgstr "&Mugitu maila..."
 
 #: src/kgoldrunner.cpp:321
 #, kde-format
 msgid "Move level..."
-msgstr "Maila gehiago..."
+msgstr "Maila mugitu..."
 
 #: src/kgoldrunner.cpp:322
 #, kde-format
@@ -7315,7 +7310,7 @@ msgstr "Aldatu maila baten zenbakia edo eraman beste joko batera..."
 #: src/kgoldrunner.cpp:326
 #, kde-format
 msgid "&Delete Level..."
-msgstr "&Ezabatu maila..."
+msgstr "E&zabatu maila..."
 
 #: src/kgoldrunner.cpp:327
 #, kde-format
@@ -7325,12 +7320,12 @@ msgstr "Ezabatu maila..."
 #: src/kgoldrunner.cpp:328
 #, kde-format
 msgid "Delete a level..."
-msgstr "Ezabatu maila..."
+msgstr "Ezabatu maila bat..."
 
 #: src/kgoldrunner.cpp:335
 #, kde-format
 msgid "Create &Game..."
-msgstr "&Sortu jokoa..."
+msgstr "Sortu &jokoa..."
 
 #: src/kgoldrunner.cpp:336
 #, kde-format
@@ -7340,7 +7335,7 @@ msgstr "Sortu jokoa..."
 #: src/kgoldrunner.cpp:337
 #, kde-format
 msgid "Create a completely new game..."
-msgstr "Sortu erabateko joko berria..."
+msgstr "Sortu joko erabat berri bat..."
 
 #: src/kgoldrunner.cpp:340
 #, kde-format
@@ -7355,23 +7350,22 @@ msgstr "Editatu jokoaren informazioa..."
 #: src/kgoldrunner.cpp:342
 #, kde-format
 msgid "Change the name, rules or description of a game..."
-msgstr "Aldatu izena, arauak edo jokoaren deskripzioa..."
+msgstr "Aldatu joko baten izena, arauak edo deskribapena..."
 
 #: src/kgoldrunner.cpp:351
-#, fuzzy, kde-format
-#| msgid "Create &Game..."
+#, kde-format
 msgid "Change &Theme..."
-msgstr "&Sortu jokoa..."
+msgstr "Aldatu &gaia..."
 
 #: src/kgoldrunner.cpp:352
 #, kde-format
 msgid "Change the graphics theme..."
-msgstr ""
+msgstr "Aldatu grafikoen gaia..."
 
 #: src/kgoldrunner.cpp:353
 #, kde-format
 msgid "Alter the visual appearance of the runners and background scene..."
-msgstr ""
+msgstr "Aldatu lasterkarien ikus-itxura eta atzeko-planoko eszena..."
 
 #: src/kgoldrunner.cpp:367
 #, kde-format
@@ -7386,7 +7380,7 @@ msgstr "Jo soinu-efektuak."
 #: src/kgoldrunner.cpp:369
 #, kde-format
 msgid "Play sound effects during the game."
-msgstr "Jokoan zehar soinu-efektua jotzea."
+msgstr "Jokoan zehar soinu-efektuak jotzea."
 
 #: src/kgoldrunner.cpp:372
 #, kde-format
@@ -7396,61 +7390,57 @@ msgstr "Jo &oin-urratsen efektuak"
 #: src/kgoldrunner.cpp:373 src/kgoldrunner.cpp:374
 #, kde-format
 msgid "Make sounds of player's footsteps."
-msgstr ""
+msgstr "Egin jokalariaren oinen urratsen soinuak."
 
 #: src/kgoldrunner.cpp:379
-#, fuzzy, kde-format
-#| msgid "&Do Not Save"
+#, kde-format
 msgid "&Demo At Start"
-msgstr "&Ez gorde"
+msgstr "Erakustal&dia abiatzean"
 
 #: src/kgoldrunner.cpp:380 src/kgoldrunner.cpp:381
 #, kde-format
 msgid "Run a demo when the game starts."
-msgstr ""
+msgstr "Exekutatu erakustaldi bat jokoa hasten denean."
 
 #: src/kgoldrunner.cpp:389
 #, kde-format
 msgid "&Mouse Controls Hero"
-msgstr "&Saguak heroia kontrolatzen du"
+msgstr "&Sagua heroiari agintzeko"
 
 #: src/kgoldrunner.cpp:390
 #, kde-format
 msgid "Mouse controls hero."
-msgstr "Saguak heroia kontrolatzen du."
+msgstr "Sagua heroiari agintzeko."
 
 #: src/kgoldrunner.cpp:391
-#, fuzzy, kde-format
-#| msgid "Use the mouse to control the hero's moves"
+#, kde-format
 msgid "Use the mouse to control the hero's moves."
-msgstr "Erabili sagua heroiaren mugimenduak kontrolatzeko"
+msgstr "Erabili sagua heroiaren mugimenduak agintzeko."
 
 #: src/kgoldrunner.cpp:395
 #, kde-format
 msgid "&Keyboard Controls Hero"
-msgstr "&Teklatuak heroia kontrolatzen du"
+msgstr "&Teklatua heroiari agintzeko"
 
 #: src/kgoldrunner.cpp:396
 #, kde-format
 msgid "Keyboard controls hero."
-msgstr "Teklatuak heroia kontrolatzen du."
+msgstr "Teklatua heroiari agintzeko."
 
 #: src/kgoldrunner.cpp:397
-#, fuzzy, kde-format
-#| msgid "Use the keyboard to control the hero's moves"
+#, kde-format
 msgid "Use the keyboard to control the hero's moves."
-msgstr "Erabili teklatua heroiaren mugimenduak kontrolatzeko"
+msgstr "Erabili teklatua heroiaren mugimenduak agintzeko."
 
 #: src/kgoldrunner.cpp:401
-#, fuzzy, kde-format
-#| msgid "&Keyboard Controls Hero"
+#, kde-format
 msgid "Hybrid Control (&Laptop)"
-msgstr "&Teklatuak heroia kontrolatzen du"
+msgstr "Aginte hibridoa (Maga&lekoa)"
 
 #: src/kgoldrunner.cpp:402
 #, kde-format
 msgid "Pointer controls hero; dig using keyboard."
-msgstr ""
+msgstr "Erakuslea heroiari agintzeko; zulatu teklatua erabiliz."
 
 #: src/kgoldrunner.cpp:404
 #, kde-format
@@ -7458,16 +7448,18 @@ msgid ""
 "Use the laptop's pointer device to control the hero's moves, and use the "
 "keyboard to dig left and right."
 msgstr ""
+"Erabili magalekoaren gailu erakuslea heroiaren mugimenduak agintzeko, eta "
+"erabili teklatua eskuinean eta ezkerrean zulatzeko."
 
 #: src/kgoldrunner.cpp:419
 #, kde-format
 msgid "&Click Key To Move"
-msgstr ""
+msgstr "Egin &klik tekla bati mugitzeko"
 
 #: src/kgoldrunner.cpp:420
 #, kde-format
 msgid "Click Key To Move."
-msgstr ""
+msgstr "Egin klik tekla bati mugitzeko."
 
 #: src/kgoldrunner.cpp:421
 #, kde-format
@@ -7475,39 +7467,41 @@ msgid ""
 "In keyboard mode, click a direction-key to start moving and keep on going "
 "until you click another key."
 msgstr ""
+"Teklatu moduan, egin klik norabide-tekla bati mugitzen hasteko eta "
+"jarraitumugitzen beste tekla bati klik egin arte."
 
 #: src/kgoldrunner.cpp:427
 #, kde-format
 msgid "&Hold Key To Move"
-msgstr ""
+msgstr "E&utsi tekla mugitzeko"
 
 #: src/kgoldrunner.cpp:428
 #, kde-format
 msgid "Hold Key To Move."
-msgstr ""
+msgstr "Eutsi tekla mugitzeko."
 
 #: src/kgoldrunner.cpp:429
 #, kde-format
 msgid ""
 "In keyboard mode, hold down a direction-key to move and release it to stop."
 msgstr ""
+"Teklatu moduan, eutsi norabide-tekla bat sakatuta mugitzeko eta "
+"askatugelditzeko."
 
 #: src/kgoldrunner.cpp:446
 #, kde-format
 msgid "Normal Speed"
-msgstr "Abiadura normala"
+msgstr "Abiadura arrunta"
 
 #: src/kgoldrunner.cpp:447
-#, fuzzy, kde-format
-#| msgid "Normal speed"
+#, kde-format
 msgid "Set normal speed."
-msgstr "Abiadura normala"
+msgstr "Ezarri abiadura arrunta."
 
 #: src/kgoldrunner.cpp:448
-#, fuzzy, kde-format
-#| msgid "Normal speed"
+#, kde-format
 msgid "Set normal game speed."
-msgstr "Abiadura normala"
+msgstr "Ezarri jokoaren abiadura arrunta."
 
 #: src/kgoldrunner.cpp:452
 #, kde-format
@@ -7515,67 +7509,61 @@ msgid "Beginner Speed"
 msgstr "Hasiberriaren abiadura"
 
 #: src/kgoldrunner.cpp:453
-#, fuzzy, kde-format
-#| msgid "Beginner speed"
+#, kde-format
 msgid "Set beginners' speed."
-msgstr "Hasiberriaren abiadura"
+msgstr "Ezarri hasiberriaren abiadura."
 
 #: src/kgoldrunner.cpp:454
-#, fuzzy, kde-format
-#| msgid "Set beginners' game speed (6 units)"
+#, kde-format
 msgid "Set beginners' game speed (0.5 times normal)."
-msgstr "Ezarri jokoaren hasibarriaren abiadura (6 unitate)"
+msgstr "Ezarri hasiberriaren joko-abiadura (abiadura arrunta 0,5 bider)."
 
 #: src/kgoldrunner.cpp:459
 #, kde-format
 msgid "Champion Speed"
-msgstr "Adituaren abiadura"
+msgstr "Txapeldunaren abiadura"
 
 #: src/kgoldrunner.cpp:460
-#, fuzzy, kde-format
-#| msgid "Champion speed"
+#, kde-format
 msgid "Set champions' speed."
-msgstr "Adituaren abiadura"
+msgstr "Ezarri txapeldunaren abiadura."
 
 #: src/kgoldrunner.cpp:461
-#, fuzzy, kde-format
-#| msgid "Set champions' game speed (18 units)"
+#, kde-format
 msgid "Set champions' game speed (1.5 times normal)."
-msgstr "Ezarri jokoaren adituaren abiadura (18 unitate)"
+msgstr "Ezarri txapeldunaren joko-abiadura (abiadura arrunta 1,5 bider)."
 
 #: src/kgoldrunner.cpp:465
 #, kde-format
 msgid "Increase Speed"
-msgstr "Handiagotu abiadura"
+msgstr "Abiadura azkartu"
 
 #: src/kgoldrunner.cpp:466
-#, fuzzy, kde-format
-#| msgid "Increase speed"
+#, kde-format
 msgid "Increase speed."
-msgstr "Handiagotu abiadura"
+msgstr "Abiadura azkartu."
 
 #: src/kgoldrunner.cpp:467
-#, fuzzy, kde-format
-#| msgid "Increase the game speed by one unit"
+#, kde-format
 msgid "Increase the game speed by 0.1 (maximum is 2.0 times normal)."
-msgstr "Handiagotu jokoaren abiadura unitate batean"
+msgstr ""
+"Jokoaren abiadura 0,1 azkartu (gehienezkoa abiadura arrunta halako 2,0 da)."
 
 #: src/kgoldrunner.cpp:472
 #, kde-format
 msgid "Decrease Speed"
-msgstr "Txikiagotu abiadura"
+msgstr "Abiadura moteldu"
 
 #: src/kgoldrunner.cpp:473
-#, fuzzy, kde-format
-#| msgid "Decrease speed"
+#, kde-format
 msgid "Decrease speed."
-msgstr "Txikiagotu abiadura"
+msgstr "Abiadura moteldu."
 
 #: src/kgoldrunner.cpp:474
-#, fuzzy, kde-format
-#| msgid "Decrease the game speed by one unit"
+#, kde-format
 msgid "Decrease the game speed by 0.1 (minimum is 0.2 times normal)."
-msgstr "Txikiagotu jokoaren abiadura unitate batean"
+msgstr ""
+"Jokoaren abiadura 0,1 moteldu (gutxienekoa abiadura arruntaren 0,2 da)."
 
 #: src/kgoldrunner.cpp:504
 #, kde-format
@@ -7585,22 +7573,22 @@ msgstr "Gelditu"
 #: src/kgoldrunner.cpp:505
 #, kde-format
 msgid "Move Right"
-msgstr "Mugitu eskuinera"
+msgstr "Eskuinerantz mugitu"
 
 #: src/kgoldrunner.cpp:506
 #, kde-format
 msgid "Move Left"
-msgstr "Mugitu ezkerrera"
+msgstr "Ezkerrerantz mugitu"
 
 #: src/kgoldrunner.cpp:507
 #, kde-format
 msgid "Move Up"
-msgstr "Mugitu gorantz"
+msgstr "Gorantz mugitu"
 
 #: src/kgoldrunner.cpp:508
 #, kde-format
 msgid "Move Down"
-msgstr "Mugitu behera"
+msgstr "Beherantz mugitu"
 
 #: src/kgoldrunner.cpp:509
 #, kde-format
@@ -7613,10 +7601,9 @@ msgid "Dig Left"
 msgstr "Zulatu ezkerrean"
 
 #: src/kgoldrunner.cpp:534
-#, fuzzy, kde-format
-#| msgid "Step"
+#, kde-format
 msgid "Do a Step"
-msgstr "Pausoa"
+msgstr "Urrats bat egin"
 
 #: src/kgoldrunner.cpp:535
 #, kde-format
@@ -7626,7 +7613,7 @@ msgstr "Probatu programa-arazoaren konponketa"
 #: src/kgoldrunner.cpp:536
 #, kde-format
 msgid "Show Positions"
-msgstr "Erakutsi posizioak"
+msgstr "Erakutsi kokapenak"
 
 #: src/kgoldrunner.cpp:537
 #, kde-format
