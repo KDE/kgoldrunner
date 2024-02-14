@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-17 00:36+0000\n"
-"PO-Revision-Date: 2024-02-13 00:45+0100\n"
+"PO-Revision-Date: 2024-02-13 10:23+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -7100,8 +7100,8 @@ msgid ""
 "Yes, you must run on the enemy's head --- all the way across!  All it takes "
 "is a steady hand."
 msgstr ""
-"Bai, etsaiaren buruaren gainetik egin behar duzu korrika, norabide "
-"guztietan! Behar den guztia pultso tinkoa edukitzea da."
+"Bai, etsaiaren buruaren gainetik korrika egin behar duzu, zeharkatzeko bide "
+"osoan! Esku sendoa izatea beharrezkoa da."
 
 #: src/kgoldrunner.cpp:184 src/kgrgame.cpp:723
 #, kde-format
@@ -7109,26 +7109,24 @@ msgid "&New Game..."
 msgstr "Joko &berria..."
 
 #: src/kgoldrunner.cpp:187
-#, fuzzy, kde-format
-#| msgid "Play Level"
+#, kde-format
 msgid "Pla&y Next Level"
-msgstr "Jokatu maila"
+msgstr "&Jokatu hurrengo maila"
 
 #: src/kgoldrunner.cpp:188
-#, fuzzy, kde-format
-#| msgid "Play Level"
+#, kde-format
 msgid "Play next level."
-msgstr "Jokatu maila"
+msgstr "Jokatu hurrengo maila."
 
 #: src/kgoldrunner.cpp:189
 #, kde-format
 msgid "Try the next level in the game you are playing."
-msgstr ""
+msgstr "Proba ezazu jokatzen ari zaren jokoaren hurrengo maila."
 
 #: src/kgoldrunner.cpp:196
 #, kde-format
 msgid "&Load Saved Game..."
-msgstr "&Kargatu gordetako jokoa..."
+msgstr "&Zamatu gordetako jokoa..."
 
 #: src/kgoldrunner.cpp:205
 #, kde-format
@@ -7136,10 +7134,9 @@ msgid "&Save Game..."
 msgstr "&Gorde jokoa..."
 
 #: src/kgoldrunner.cpp:211 src/kgoldrunner.cpp:212
-#, fuzzy, kde-format
-#| msgid "Show Positions"
+#, kde-format
 msgid "Save A Solution..."
-msgstr "Erakutsi posizioak"
+msgstr "Gorde ebazpen bat..."
 
 #: src/kgoldrunner.cpp:213
 #, kde-format
@@ -7147,38 +7144,39 @@ msgid ""
 "Save a solution for a level into a file called 'sol_&lt;prefix&gt;.txt' in "
 "your user's data directory..."
 msgstr ""
+"Gorde maila baten ebazpena 'sol_&lt;prefix&gt;.txt' izeneko fitxategi "
+"batean, zure erabiltzailearen datuen direktorioan..."
 
 #: src/kgoldrunner.cpp:246 src/kgrgame.cpp:1303
-#, fuzzy, kde-format
-#| msgid "Show Positions"
+#, kde-format
 msgid "&Show a Solution"
-msgstr "Erakutsi posizioak"
+msgstr "Erakut&si ebazpen bat"
 
 #: src/kgoldrunner.cpp:247
-#, fuzzy, kde-format
-#| msgid "Sorry, there is no hint for this level."
+#, kde-format
 msgid "Show how to win this level."
-msgstr "Ez dago argibiderik maila honentzat."
+msgstr "Erakutsi maila hau nola irabazi."
 
 #: src/kgoldrunner.cpp:248
 #, kde-format
 msgid "Play a recording of how to win this level, if there is one available."
 msgstr ""
+"Jo maila hau nola irabazi erakusten duen grabazio bat, erabilgarri badago."
 
 #: src/kgoldrunner.cpp:252
 #, kde-format
 msgid "&Instant Replay"
-msgstr ""
+msgstr "&Bat-bateko berriz jotzea"
 
 #: src/kgoldrunner.cpp:253
 #, kde-format
 msgid "Instant replay."
-msgstr ""
+msgstr "Bat-bateko berriz jotzea."
 
 #: src/kgoldrunner.cpp:254
 #, kde-format
 msgid "Show a recording of the level you are currently playing."
-msgstr ""
+msgstr "Erakutsi une honetan jokatzen ari zaren mailaren grabazio bat."
 
 #: src/kgoldrunner.cpp:259
 #, kde-format
@@ -7196,28 +7194,28 @@ msgid ""
 "Show a recording of the last level you played and finished, regardless of "
 "whether you won or lost."
 msgstr ""
+"Erakutsi jokatu eta bukatu zenuen azken mailaren grabazio bat, irabazi edo "
+"galdu zenuen kontuan hartu gabe."
 
 #: src/kgoldrunner.cpp:267
-#, fuzzy, kde-format
-#| msgid "Play Level"
+#, kde-format
 msgid "&Replay Any Level"
-msgstr "Jokatu maila"
+msgstr "Edozein maila be&rriz jo"
 
 #: src/kgoldrunner.cpp:268
-#, fuzzy, kde-format
-#| msgid "Edit any level..."
+#, kde-format
 msgid "Replay any level."
-msgstr "Editatu edozein maila..."
+msgstr "Edozein maila berriz jo."
 
 #: src/kgoldrunner.cpp:269
 #, kde-format
 msgid "Show a recording of any level you have played so far."
-msgstr ""
+msgstr "Erakutsi orain arte jokatu duzun edozein mailaren grabazioa."
 
 #: src/kgoldrunner.cpp:274
 #, kde-format
 msgid "&Kill Hero"
-msgstr "&Hil heroia"
+msgstr "Heroia &hil"
 
 #: src/kgoldrunner.cpp:275
 #, kde-format
@@ -8519,8 +8517,8 @@ msgid ""
 "game.<br/>Please enter your name so that it may be enshrined<br/>in the "
 "KGoldrunner Hall of Fame.</html>"
 msgstr ""
-"<html><b>Zorionak !!!</b><br/>Joko honetan puntuazio altua lortu duzu.<br> "
-"Mesedez, sartu zure izena,<br/> «KGoldrunner»en ospearen aretoan agertu "
+"<html><b>Zorionak !!!</b><br/>Joko honetan puntuazio altua lortu duzu.<br/> "
+"Mesedez, sartu zure izena,<br/> «KGoldrunner»en ospearen aretoan jasota gera "
 "dadin.</html>"
 
 #: src/kgrgame.cpp:1722
