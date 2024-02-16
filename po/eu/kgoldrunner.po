@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-17 00:36+0000\n"
-"PO-Revision-Date: 2024-02-13 10:23+0100\n"
+"PO-Revision-Date: 2024-02-15 21:14+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -82,14 +82,14 @@ msgid ""
 "ca>, with a few Egyptian ideas and the Red Sea level contributed by Ian "
 "Wadham."
 msgstr ""
-"Egipto eta momiei buruzko mendebaldeko filmetako ikonoetan oinarrituta, "
-"maila multzo hau «Egiptoko altxorra» gaiarekin ibiltzen da hobekien. "
-"Batzuetan, erori bitartean ere hondeatu beharrean izango zara.\n"
+"Egipto eta momiei buruzko mendebaldeko filmetako ikonoak marraztuta, maila "
+"multzo hau «Egiptoko altxorra» gaiarekin ibiltzen da hobekien. Batzuetan, "
+"erori bitartean ere zulatu beharrean izango zara.\n"
 "\n"
 "Zure egiptologia fintzeko, iradokizunetan, maila bakoitzarekin lotutako "
-"benetako datuak aurkituko dituzu, Wikipediakoak, Hollywood-etik izan ordez.\n"
+"benetako datuak aurkituko dituzu, Hollywoodekoen ordez, Wikipediakoak.\n"
 "\n"
-"Txapelketa joko hori Steve Mann-ek <smann at cgl uwaterloo ca> osatu zuen, "
+"Txapelketa-joko hori Steve Mann-ek <smann at cgl uwaterloo ca> osatu zuen, "
 "Egiptori buruzko ideia batzuekin, eta Itsas Gorriko maila Ian Wadham-ek egin "
 "zuen."
 
@@ -110,14 +110,14 @@ msgid ""
 "too many reappear on the right, it becomes difficult to escape at the end.  "
 "To get started, you will need to use the technique of digging while falling."
 msgstr ""
-"Gizako goi-lautada, Kairoren kanpoaldean, Gizako Nekropoliaren gunea da; "
-"Keops-en Piramidea (Piramide Handia), Kefren-en Piramidea, Mizerino-ren "
-"Piramidea, Esfinge Handiarekin eta beste zenbait eraikin txikiagorekin "
-"batera osatzen dute.\n"
+"Gizako goi-lautada, Kairo kanpoaldean, Gizako Nekropoliaren gunea da; Keops-"
+"en Piramidea (Piramide Handia), Kefren-en Piramidea, Mizerino-ren Piramidea, "
+"Esfinge Handiarekin eta beste zenbait eraikin txikiagorekin batera osatzen "
+"dute.\n"
 "\n"
 "Goi-lautada azpian ibiltzen zarenean, saia zaitez momiak hiltzea saihesten: "
 "eskuinean haietako behar baino gehiago berragertzen badira, azkenean ihes "
-"egitea zailagoa izango da. Hasteko, erori bitartean hondeatzeko teknika "
+"egitea zailagoa izango da. Hasteko, erori bitartean zulatzeko teknika "
 "erabili beharko duzu."
 
 #: gamedata/game_CM.txt:16
@@ -175,7 +175,7 @@ msgstr ""
 #: gamedata/game_CM.txt:28
 #, kde-format
 msgid "Pharaoh's Barge"
-msgstr "Faraoiaren ontzia"
+msgstr "Faraoiaren gabarra"
 
 #: gamedata/game_CM.txt:29
 #, kde-format
@@ -192,22 +192,22 @@ msgid ""
 "This is almost a simple level: good treasure and not too many mummies.  But "
 "your task is to wrest the treasure they carry."
 msgstr ""
-"Keops-en ontzia ukitu gabeko tamaina osoko aintzinako Egiptoko ontzia bat "
-"da, Gizako Piramide Handiaren oinean dagoen Giza piramidearen zulo batean "
-"itxita, gutxi gorabehera 2.500 KA urtean. Ontzi hau Keops-entzako eraiki "
-"zen.\n"
+"Khufuren itsasontzia, egoera ezin hobean dagoen antzinako Egiptoko tamaina "
+"osoko ontzi bat da, Gizako piramide multzoan, Gizako Piramide Handiaren "
+"oinean K.A. 2.500 urte inguruan hobi batean zigilatu zutena. Itsasontzia ia "
+"seguru Khufurentzat (Keops erregea) eraiki zuten.\n"
 "\n"
-"Aintzinako ontzi zaharrena, handiena eta ongien mantendutakoa da, 43,6 m "
-"neurtzen du guztira. Zaharra izan arren, gaur egun itsasoan nabiga daiteke "
-"uretan jarriz gero.\n"
+"Antzinako ontzi zaharrenetako, handienetako eta hobekien kontserbatuetako "
+"bat da, eta guztira 43,6 m neurtzen du. Bere adina gorabehera, uretan sartuz "
+"gero, nabigatu ahalko luke.\n"
 "\n"
-"Hau maila bakunena da: altxo ona eta momia gehiegirik ez. Haiek daramaten "
-"altxorra kentzea da zure zeregina."
+"Hau ia maila sinple bat da: altxor ona eta momia gehiegi ez. Baina zure "
+"zeregina daramaten altxorra ebastea da."
 
 #: gamedata/game_CM.txt:36
 #, kde-format
 msgid "Pyramid Puzzles"
-msgstr "Piramide puzzleak"
+msgstr "Piramide buru-hausgarriak"
 
 #: gamedata/game_CM.txt:37
 #, kde-format
@@ -231,8 +231,8 @@ msgid ""
 "is possible to release the mummies and trap them in one of the other "
 "chambers."
 msgstr ""
-"Piramide Handia gizakiak eraikitako munduko egitura altuena izan da ia 3.800 "
-"urtetan. Denbora guztian gora eta behera joatea izan da anztinako "
+"Piramide Handia gizakiak eraikitako munduko egitura altuena izan zen ia "
+"3.800 urtez. Denbora guztian gora eta behera joatea izan da anztinako "
 "egiptoarren zeregina, zeu ere piramide honetan egingo duzun bezala.\n"
 "\n"
 "Bigarren altxorra ezkerretik eskuratzeko, beheko eskailera blokeatzen duen "
@@ -306,7 +306,7 @@ msgstr ""
 #: gamedata/game_CM.txt:60
 #, kde-format
 msgid "Tura Caves"
-msgstr "Tura-ko haitzuloak"
+msgstr "Turako haitzuloak"
 
 #: gamedata/game_CM.txt:61
 #, kde-format
@@ -354,7 +354,7 @@ msgstr ""
 #: gamedata/game_CM.txt:68
 #, kde-format
 msgid "Pyramid Crawl"
-msgstr "Piramidean lau ankatan"
+msgstr "Piramidean lau hankatan"
 
 #: gamedata/game_CM.txt:69
 #, kde-format
@@ -365,11 +365,11 @@ msgid ""
 "In this pyramid level (built around AD 2008), avoid (by luring away or "
 "killing) getting the two mummies in the middle of the bottom section."
 msgstr ""
-"100 piramide baino gehiago daude Egipton, eta zaharrena 2.600 KA inguruan "
+"100 piramide baino gehiago daude Egipton, eta zaharrena K.A. 2.600 inguruan "
 "eraiki zen.\n"
 "\n"
-"Piramidearen maila honetan (2008 KO eraikita), saihestu (urrunera erakarri "
-"edo hil)beheko atalaren erdian bi momia edukitzea."
+"Piramidearen maila honetan (K.O. 2008 inguruan eraikia), saihestu bi momiak "
+"beheko atalaren erdira iristea (alde egin dezaten erakarri edo hil)."
 
 #: gamedata/game_CM.txt:74
 #, kde-format
@@ -386,13 +386,13 @@ msgid ""
 "As you grab the treasure inside the sphinx, try to solve The Riddle of the "
 "Sphinx: how do you get past the horde of mummies on the right?"
 msgstr ""
-"Esfinge Handia Giza-ko goilautadaren zaindaria zen, bere aurpegiak "
-"eguzkiaren irteerara begiratzen du. Luzeran 73 metro, eta 20 metroko "
+"Esfinge Handia Gizako goi lautadaren zaindaria da, non bere aurpegiak "
+"eguzkiaren irteera aldera begiratzen duen. 73 metroko luzera, eta 20 metroko "
 "altuera, munduko estatua monolitiko handiena da eta 4.500 urte besterik ez "
 "ditu.\n"
 "\n"
-"Esfinge barrutik altxorra hartu dezakezu, Esfingearen Asmakizuna ebatzi "
-"behar duzu: nola igaroko duzu eskuinaldeko momia mordoa?"
+"Esfinge barruko altxorra hartzen duzun bitartean, saia zaitez Esfingearen "
+"Enigma ebazten: nola lortuko duzu eskuineko momia horda gainditzea?"
 
 #: gamedata/game_CM.txt:80
 #, kde-format
@@ -2269,7 +2269,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:23
 #, kde-format
 msgid "A Little Digging Warm-Up"
-msgstr ""
+msgstr "Zulatzeko beroketa-ariketa txiki bat"
 
 #: gamedata/game_GotD.txt:24
 #, kde-format
@@ -2307,12 +2307,12 @@ msgstr ""
 #: gamedata/game_GotD.txt:39 gamedata/game_plws.txt:113
 #, kde-format
 msgid "Zig Zag"
-msgstr "Zig-zag-a"
+msgstr "Zig-zaga"
 
 #: gamedata/game_GotD.txt:40
 #, kde-format
 msgid "This is as easy as it gets..."
-msgstr ""
+msgstr "Ezin errazago..."
 
 #: gamedata/game_GotD.txt:43 gamedata/game_wad.txt:63
 #, kde-format
@@ -2326,6 +2326,9 @@ msgid ""
 "on top of a ladder until a zombie comes really close to you and then you "
 "sneak away beneath him at the right moment."
 msgstr ""
+"Hasierako zonbiak saihestea izan liteke zatirik okerrena. Eskailera baten "
+"gainean itxoin behar duzu zonbi bat zugana asko hurbildu arte eta gero, une "
+"egokian, haren azpitik ihes egin behar duzu."
 
 #: gamedata/game_GotD.txt:47
 #, kde-format
@@ -2369,7 +2372,7 @@ msgstr "Ez arduratu"
 #: gamedata/game_GotD.txt:58
 #, kde-format
 msgid "Come on, they are completely harmless ;-)"
-msgstr "Tira, es dira batere kaltegarriak ;-)"
+msgstr "Tira, ez dira batere kaltegarriak ;-)"
 
 #: gamedata/game_GotD.txt:61
 #, kde-format
@@ -2398,7 +2401,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:73
 #, kde-format
 msgid "Never Trust The H-Ladders"
-msgstr "Ez bidatu H formako eskailerez"
+msgstr "Ez fidatu H formako eskailerez"
 
 #: gamedata/game_GotD.txt:74
 #, kde-format
@@ -2459,6 +2462,9 @@ msgid ""
 "of this level. The trick is to separate the zombies with the gold from the "
 "others and dig them in."
 msgstr ""
+"Maila honetako zatirik zailena zonbiengatik urrea eskuratzea dela nabarituko "
+"duzu. Trikimailua, urrea duten zonbiak besteengandik banatu eta haiek "
+"lurperatzea da."
 
 #: gamedata/game_GotD.txt:93
 #, kde-format
@@ -2519,6 +2525,10 @@ msgid ""
 "This will be necessary a few times to let a zombie free on one side while "
 "you  escape to the other side."
 msgstr ""
+"Bi aldeetan aldi berean zula dezakezu.\n"
+"\n"
+"Hori hainbat aldiz egitea beharrezkoa izango da, alde batean zonbi bat aske "
+"utzi bitartean beste aldera ihes egiteko."
 
 #: gamedata/game_GotD.txt:119
 #, kde-format
@@ -2532,12 +2542,12 @@ msgid ""
 "before the zombies steal it."
 msgstr ""
 "Batzuetan hobe da itxoitea, baina beste batzuetan zurea dena hartu beharko "
-"zenuke zonbiek ostu baino lehen."
+"zenuke zonbiek hura ostu baino lehen."
 
 #: gamedata/game_GotD.txt:123
 #, kde-format
 msgid "Lock Them Away!"
-msgstr ""
+msgstr "Giltzapetu itzazu!"
 
 #: gamedata/game_GotD.txt:124
 #, kde-format
@@ -2677,10 +2687,9 @@ msgid "Be quicker than the zombies - otherwise they will eat you."
 msgstr "Izan zaitez zonbiak baino azkarragoa - bestela jango zaituzte."
 
 #: gamedata/game_GotD.txt:175
-#, fuzzy, kde-format
-#| msgid "The Big Haul"
+#, kde-format
 msgid "The Big Drop"
-msgstr "Harrapakin handia"
+msgstr "Erorialdi handia"
 
 #: gamedata/game_GotD.txt:176
 #, kde-format
@@ -2708,11 +2717,19 @@ msgid ""
 "You might notice that there is not enough time to get the gold over on the "
 "right-hand side, so look for a short cut."
 msgstr ""
+"17. araua: Ez zaitez heroia izan! (Zombieland pelikularen aipua)\n"
+"\n"
+"Urperatzean, ez saiatu bi gauza batera egiten. Ezkerraldean, adibidez, "
+"beherantz murgiltze bat behar du zonbia bere kobazulotik ateratzeko, bat "
+"pasabidetik ateratzeko, eta bat urrearen bila joateko.\n"
+"\n"
+"Nabaritu zenezake ez dagoela urrea eskuinaldean ipintzeko denbora nahikoa, "
+"beraz, bila ezazu lasterbide bat."
 
 #: gamedata/game_GotD.txt:187
 #, kde-format
 msgid "Encircled"
-msgstr ""
+msgstr "Inguratuta"
 
 #: gamedata/game_GotD.txt:188
 #, kde-format
@@ -2757,7 +2774,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:203 gamedata/game_lars.txt:44
 #, kde-format
 msgid "Do Not Fall Down"
-msgstr "Ez erori"
+msgstr "Ez behera erori"
 
 #: gamedata/game_GotD.txt:204
 #, kde-format
@@ -2767,6 +2784,10 @@ msgid ""
 "The last piece of gold can only be reached with the help of the zombie: the "
 "same goes for the ladders leading back to the top."
 msgstr ""
+"Jaso urre zati guztiak, bestela zure itzulerako bidea oztopatu egingo da.\n"
+"\n"
+"Azken urre zatia ezin da lortu zonbiaren laguntza gabe: gauza bera gertatzen "
+"da gora daramaten eskailerekin."
 
 #: gamedata/game_GotD.txt:209
 #, kde-format
@@ -2785,13 +2806,13 @@ msgstr ""
 "Ez nuke sorpresa zapuztu nahi...\n"
 "\n"
 "Halere, urrearen gaineko adreiluetara iristen zarenean, beheraka zulatu "
-"aurretik, ihesbidea bat arretaz planifikatu beharko zenuke. Zonbiak "
-"hutsuneak betetzeko ere erabil daitezke."
+"aurretik, ihesbide bat arretaz planifikatu beharko zenuke. Zonbiak hutsuneak "
+"betetzeko ere erabil daitezke."
 
 #: gamedata/game_GotD.txt:215
 #, kde-format
 msgid "Busy Town"
-msgstr "Giro biziko herria"
+msgstr "Hiri lanpetua"
 
 #: gamedata/game_GotD.txt:216
 #, kde-format
@@ -2799,6 +2820,8 @@ msgid ""
 "If you are not too happy with that many zombies running around, there is "
 "more than one opportunity to get rid of them!"
 msgstr ""
+"Inguruan horrenbeste zonbi korrika izateak pozten ez bazaitu, haietaz "
+"libratzeko aukera bat baino gehiago dago!"
 
 #: gamedata/game_GotD.txt:219
 #, kde-format
@@ -2812,6 +2835,9 @@ msgid ""
 "bottom, let all the zombies out of the prison. You might have to enter it "
 "again..."
 msgstr ""
+"Erabili gezurrezko adreiluak zonbien azpitik ihes egiteko. Hondora iristen "
+"zarenean, utzi zonbi guztiei kartzelatik irteten. Agian berriz sartu beharko "
+"duzu..."
 
 #: gamedata/game_GotD.txt:223
 #, kde-format
