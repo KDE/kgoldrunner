@@ -2,21 +2,22 @@
 # محمد سعد  Mohamed SAAD <metehyi@free.fr>, 2006.
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
 # Safa Alfulaij <safaalfulaij@hotmail.con>, 2013.
+# SPDX-FileCopyrightText: 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-09 01:44+0000\n"
-"PO-Revision-Date: 2013-08-13 19:08+0300\n"
-"Last-Translator: Safa Alfulaij <safaalfulaij@hotmail.com>\n"
-"Language-Team: Arabic <doc@arabeyes.org>\n"
+"PO-Revision-Date: 2024-02-25 21:32+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -31,7 +32,7 @@ msgstr "metehyi@free.fr,safaalfulaij@hotmail.com"
 #: gamedata/game_blb.txt:3
 #, fuzzy, kde-format
 msgid "Beginner's Luck"
-msgstr "مبتديء السرعة"
+msgstr "حظ المبتدئ"
 
 #: gamedata/game_blb.txt:4
 #, kde-format
@@ -300,7 +301,7 @@ msgstr ""
 #: gamedata/game_CM.txt:88
 #, kde-format
 msgid "Ankh"
-msgstr ""
+msgstr "مفتاح الحياة"
 
 #: gamedata/game_CM.txt:89
 #, kde-format
@@ -425,7 +426,7 @@ msgstr ""
 #: gamedata/game_CM.txt:132
 #, kde-format
 msgid "Anubis"
-msgstr ""
+msgstr "أنوبيس"
 
 #: gamedata/game_CM.txt:133
 #, kde-format
@@ -939,7 +940,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:2
 #, kde-format
 msgid "Jail Break"
-msgstr ""
+msgstr "الهروب من السجن"
 
 #: gamedata/game_GMEP.txt:3
 #, kde-format
@@ -973,7 +974,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:16
 #, kde-format
 msgid "Robbery"
-msgstr ""
+msgstr "سرقة بالإكراه"
 
 #: gamedata/game_GMEP.txt:17
 #, kde-format
@@ -1203,9 +1204,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GMGR.txt:2
-#, fuzzy, kde-format
+#, kde-format
 msgid "Gold Rush"
-msgstr "ذهب شبكة"
+msgstr "حمى الذهب"
 
 #: gamedata/game_GMGR.txt:3
 #, kde-format
@@ -1412,7 +1413,7 @@ msgstr ""
 #: gamedata/game_plws.txt:116
 #, fuzzy, kde-format
 msgid "Free Fall"
-msgstr "متفرّغ السقوط"
+msgstr "سقوط حر"
 
 #: gamedata/game_GMGR.txt:83
 #, kde-format
@@ -1448,9 +1449,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GMGR.txt:98 gamedata/game_plwv.txt:9
-#, fuzzy, kde-format
+#, kde-format
 msgid "Impossible?"
-msgstr "مستحيل?"
+msgstr "مستحيل؟"
 
 #: gamedata/game_GMGR.txt:99
 #, kde-format
@@ -1461,9 +1462,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GMGR.txt:104
-#, fuzzy, kde-format
+#, kde-format
 msgid "The Wall"
-msgstr "الـ المدفن"
+msgstr "ذا وول"
 
 #: gamedata/game_GMGR.txt:105
 #, kde-format
@@ -1512,7 +1513,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:124
 #, kde-format
 msgid "No Way Out"
-msgstr ""
+msgstr "لا مفر"
 
 #: gamedata/game_GMGR.txt:125
 #, kde-format
@@ -1679,7 +1680,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:29
 #, kde-format
 msgid "Patient Zero"
-msgstr ""
+msgstr "مريض رقم صفر"
 
 #: gamedata/game_GotD.txt:30
 #, kde-format
@@ -1697,9 +1698,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:39 gamedata/game_plws.txt:113
-#, fuzzy, kde-format
+#, kde-format
 msgid "Zig Zag"
-msgstr "منعرج شكل متعرّج"
+msgstr "متعرّج"
 
 #: gamedata/game_GotD.txt:40
 #, kde-format
@@ -1709,7 +1710,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:43 gamedata/game_wad.txt:63
 #, fuzzy, kde-format
 msgid "The Box"
-msgstr "الـ صندوق"
+msgstr "الصندوق"
 
 #: gamedata/game_GotD.txt:44
 #, kde-format
@@ -1720,9 +1721,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:47
-#, fuzzy, kde-format
+#, kde-format
 msgid "Manipulation"
-msgstr "التسرّب"
+msgstr "تلاعب"
 
 #: gamedata/game_GotD.txt:48
 #, kde-format
@@ -1909,7 +1910,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:119
 #, kde-format
 msgid "Patience?"
-msgstr ""
+msgstr "سوليتير؟"
 
 #: gamedata/game_GotD.txt:120
 #, kde-format
@@ -1993,9 +1994,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:149
-#, fuzzy, kde-format
+#, kde-format
 msgid "Diagonal"
-msgstr "مائل الكارثة"
+msgstr "قطري"
 
 #: gamedata/game_GotD.txt:150
 #, kde-format
@@ -2074,9 +2075,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:179
-#, kde-format
+#, fuzzy, kde-format
 msgid "Diving"
-msgstr ""
+msgstr "غطس"
 
 #: gamedata/game_GotD.txt:180
 #, kde-format
@@ -2479,7 +2480,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:331
 #, kde-format
 msgid "Just Survive"
-msgstr ""
+msgstr "جاست سورفايف"
 
 #: gamedata/game_GotD.txt:332
 #, kde-format
@@ -2492,7 +2493,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:335
 #, kde-format
 msgid "Death Race"
-msgstr ""
+msgstr "سباق الموت"
 
 #: gamedata/game_GotD.txt:336
 #, kde-format
@@ -2516,7 +2517,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:343
 #, fuzzy, kde-format
 msgid "The End"
-msgstr "الـ المسبك"
+msgstr "النهاية"
 
 #: gamedata/game_GotD.txt:344
 #, fuzzy, kde-format
@@ -2576,7 +2577,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:20
 #, kde-format
 msgid "Teamwork"
-msgstr ""
+msgstr "فريق العمل"
 
 #: gamedata/game_GRII.txt:21
 #, kde-format
@@ -3032,9 +3033,9 @@ msgid "The Heartbreaker"
 msgstr "الـ المختبر"
 
 #: gamedata/game_GRII.txt:191 gamedata/game_lars.txt:85
-#, fuzzy, kde-format
+#, kde-format
 msgid "No hint!"
-msgstr "لا تلْميحة "
+msgstr "دون تلْميح!"
 
 #: gamedata/game_kgr.txt:3 src/main.cpp:29
 #, kde-format
@@ -3055,7 +3056,7 @@ msgstr ""
 #: gamedata/game_lars.txt:2
 #, kde-format
 msgid "Demolition"
-msgstr ""
+msgstr "الهدم"
 
 #: gamedata/game_lars.txt:3
 #, kde-format
@@ -3092,7 +3093,7 @@ msgstr ""
 #: gamedata/game_lars.txt:16
 #, kde-format
 msgid "Fetch!"
-msgstr ""
+msgstr "اجلب!"
 
 #: gamedata/game_lars.txt:17
 #, kde-format
@@ -3100,9 +3101,9 @@ msgid "Make your enemies fetch the gold pieces you cannot reach yourself."
 msgstr ""
 
 #: gamedata/game_lars.txt:20
-#, fuzzy, kde-format
+#, kde-format
 msgid "Acrophobia"
-msgstr "البهلوان"
+msgstr "رهاب المرتفعات"
 
 #: gamedata/game_lars.txt:21
 #, kde-format
@@ -3112,7 +3113,7 @@ msgstr ""
 #: gamedata/game_lars.txt:24
 #, kde-format
 msgid "Panic!"
-msgstr ""
+msgstr "فزع!"
 
 #: gamedata/game_lars.txt:25
 #, kde-format
@@ -3124,7 +3125,7 @@ msgstr ""
 #: gamedata/game_lars.txt:28
 #, kde-format
 msgid "Landfill"
-msgstr ""
+msgstr "مكب نفايات"
 
 #: gamedata/game_lars.txt:29
 #, kde-format
@@ -3142,9 +3143,9 @@ msgid "You only get one chance to grab those first three pieces of gold."
 msgstr ""
 
 #: gamedata/game_lars.txt:36
-#, fuzzy, kde-format
+#, kde-format
 msgid "Vertical"
-msgstr "غير متناسق"
+msgstr "رأسي"
 
 #: gamedata/game_lars.txt:37
 #, kde-format
@@ -3175,7 +3176,7 @@ msgstr ""
 #: gamedata/game_lars.txt:48
 #, fuzzy, kde-format
 msgid "The Box (1)"
-msgstr "الـ صندوق"
+msgstr "الصندوق"
 
 #: gamedata/game_lars.txt:49
 #, kde-format
@@ -3187,7 +3188,7 @@ msgstr ""
 #: gamedata/game_lars.txt:52
 #, kde-format
 msgid "Crowd Control"
-msgstr ""
+msgstr "سيطرة على الحشود"
 
 #: gamedata/game_lars.txt:53
 #, kde-format
@@ -3217,7 +3218,7 @@ msgstr ""
 #: gamedata/game_lars.txt:64
 #, kde-format
 msgid "Race To The Bottom"
-msgstr ""
+msgstr "السباق لأسفل"
 
 #: gamedata/game_lars.txt:65
 #, kde-format
@@ -3240,7 +3241,7 @@ msgstr ""
 #: gamedata/game_lars.txt:72
 #, kde-format
 msgid "Depth"
-msgstr ""
+msgstr "العمق"
 
 #: gamedata/game_lars.txt:73
 #, kde-format
@@ -3252,7 +3253,7 @@ msgstr ""
 #: gamedata/game_lars.txt:76
 #, kde-format
 msgid "Density"
-msgstr ""
+msgstr "الكثافة"
 
 #: gamedata/game_lars.txt:77
 #, kde-format
@@ -3262,7 +3263,7 @@ msgstr ""
 #: gamedata/game_lars.txt:80
 #, fuzzy, kde-format
 msgid "The Box (2)"
-msgstr "الـ صندوق"
+msgstr "الصندوق"
 
 #: gamedata/game_lars.txt:84
 #, fuzzy, kde-format
@@ -3291,7 +3292,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:8
 #, fuzzy, kde-format
 msgid "Dopey"
-msgstr "إسقاط?"
+msgstr "دوبي"
 
 #: gamedata/game_MAZ.txt:9
 #, kde-format
@@ -3303,9 +3304,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_MAZ.txt:12
-#, fuzzy, kde-format
+#, kde-format
 msgid "Sleepy"
-msgstr "سريع"
+msgstr "نائم"
 
 #: gamedata/game_MAZ.txt:13
 #, kde-format
@@ -3313,9 +3314,9 @@ msgid "A lot of backtracking, but nothing too difficult here."
 msgstr ""
 
 #: gamedata/game_MAZ.txt:16
-#, kde-format
+#, fuzzy, kde-format
 msgid "Doc"
-msgstr ""
+msgstr "وثيقة"
 
 #: gamedata/game_MAZ.txt:17
 #, kde-format
@@ -3325,7 +3326,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:20
 #, kde-format
 msgid "Grumpy"
-msgstr ""
+msgstr "نكد"
 
 #: gamedata/game_MAZ.txt:21
 #, kde-format
@@ -3366,7 +3367,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:34
 #, kde-format
 msgid "Happy"
-msgstr ""
+msgstr "سعيد"
 
 #: gamedata/game_MAZ.txt:35
 #, kde-format
@@ -3410,9 +3411,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_MAZ.txt:46
-#, kde-format
+#, fuzzy, kde-format
 msgid "Ori"
-msgstr ""
+msgstr "اوراي"
 
 #: gamedata/game_MAZ.txt:47
 #, kde-format
@@ -3422,9 +3423,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_MAZ.txt:50
-#, fuzzy, kde-format
+#, kde-format
 msgid "Nori"
-msgstr "أو"
+msgstr "نوري"
 
 #: gamedata/game_MAZ.txt:51
 #, kde-format
@@ -3436,9 +3437,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_MAZ.txt:54
-#, fuzzy, kde-format
+#, kde-format
 msgid "Dori"
-msgstr "أو"
+msgstr "دوري"
 
 #: gamedata/game_MAZ.txt:55
 #, kde-format
@@ -3537,7 +3538,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:84
 #, kde-format
 msgid "Kili"
-msgstr ""
+msgstr "كيلي"
 
 #: gamedata/game_MAZ.txt:85
 #, kde-format
@@ -3704,9 +3705,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_MAZ.txt:136
-#, kde-format
+#, fuzzy, kde-format
 msgid "Thorin"
-msgstr ""
+msgstr "ثورين"
 
 #: gamedata/game_MAZ.txt:137
 #, kde-format
@@ -3822,7 +3823,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:172
 #, kde-format
 msgid "Rumpelstiltskin"
-msgstr ""
+msgstr "رامبيل ستيلتسكين"
 
 #: gamedata/game_MAZ.txt:173
 #, kde-format
@@ -3878,9 +3879,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_plws.txt:3
-#, fuzzy, kde-format
+#, kde-format
 msgid "Initiation"
-msgstr "التلقين"
+msgstr "البدء"
 
 #: gamedata/game_plws.txt:4
 #, fuzzy, kde-format
@@ -4058,14 +4059,14 @@ msgid "Winding Road"
 msgstr "اللفّ الطريق"
 
 #: gamedata/game_plws.txt:98
-#, fuzzy, kde-format
+#, kde-format
 msgid "Light My Fire"
-msgstr "فاتح خاصتي نار"
+msgstr "أشعل ناري"
 
 #: gamedata/game_plws.txt:101
-#, fuzzy, kde-format
+#, kde-format
 msgid "Cockroach"
-msgstr "الصرصور"
+msgstr "صرصور"
 
 #: gamedata/game_plws.txt:104 gamedata/game_plwv.txt:13
 #, fuzzy, kde-format
@@ -4203,14 +4204,14 @@ msgid "Long Drop"
 msgstr "طويل إسقاط"
 
 #: gamedata/game_plws.txt:191
-#, fuzzy, kde-format
+#, kde-format
 msgid "Party On!"
-msgstr "الحفلات تشغيل!"
+msgstr "بدأ الحفلة!"
 
 #: gamedata/game_plws.txt:194
-#, fuzzy, kde-format
+#, kde-format
 msgid "Cross-stitch"
-msgstr "تقاطع"
+msgstr "كروس ستيتش"
 
 #: gamedata/game_plws.txt:197
 #, fuzzy, kde-format
@@ -4301,9 +4302,9 @@ msgid "Do Not Look Down (1)"
 msgstr "تنفيذ لا المظهر أسفل"
 
 #: gamedata/game_plws.txt:251
-#, fuzzy, kde-format
+#, kde-format
 msgid "Getting Started"
-msgstr "بدء العمل"
+msgstr "ابدأ"
 
 #: gamedata/game_plws.txt:257
 #, fuzzy, kde-format
@@ -4326,12 +4327,12 @@ msgid "Do Not Look Down (3)"
 msgstr "تنفيذ لا المظهر أسفل"
 
 #: gamedata/game_plws.txt:269
-#, fuzzy, kde-format
+#, kde-format
 msgid "Drop?"
-msgstr "إسقاط?"
+msgstr "أأسقط؟"
 
 #: gamedata/game_plws.txt:272
-#, fuzzy, kde-format
+#, kde-format
 msgid "Help!"
 msgstr "مساعدة!"
 
@@ -4341,9 +4342,9 @@ msgid "Yorick's Skull"
 msgstr "يوريك s الجمجمة"
 
 #: gamedata/game_plws.txt:278
-#, fuzzy, kde-format
+#, kde-format
 msgid "No Mercy"
-msgstr "لا الرحمة"
+msgstr "دون رحمة"
 
 #: gamedata/game_plws.txt:281
 #, fuzzy, kde-format
@@ -4361,9 +4362,9 @@ msgid "Are you spider or fly?"
 msgstr "هل أو?"
 
 #: gamedata/game_plws.txt:290
-#, fuzzy, kde-format
+#, kde-format
 msgid "Funny?"
-msgstr "مضحك?"
+msgstr "مضحك؟"
 
 #: gamedata/game_plws.txt:293
 #, fuzzy, kde-format
@@ -4389,9 +4390,9 @@ msgstr ""
 "ك n صغير تلْميحة IF يعمل يمين end من زورق get إلى هو أعلى إلى!"
 
 #: gamedata/game_plws.txt:305
-#, fuzzy, kde-format
+#, kde-format
 msgid "Quick!  RUN!"
-msgstr "بسرعة!"
+msgstr "بسرعة! اركض!"
 
 #: gamedata/game_plws.txt:308
 #, fuzzy, kde-format
@@ -4437,7 +4438,7 @@ msgstr ""
 #: gamedata/game_plwv.txt:19
 #, fuzzy, kde-format
 msgid "Short Cut?"
-msgstr "قصير قص?"
+msgstr "قطع قطعير"
 
 #: gamedata/game_plwv.txt:20
 #, fuzzy, kde-format
@@ -4469,7 +4470,7 @@ msgstr ""
 #: gamedata/game_plwv.txt:29
 #, fuzzy, kde-format
 msgid "The Vault"
-msgstr "الـ المدفن"
+msgstr "القبو"
 
 #: gamedata/game_plwv.txt:30
 #, fuzzy, kde-format
@@ -4722,9 +4723,9 @@ msgstr ""
 "التقاط ذهبي n ذهبي إبقاء يعمل و إلى حتّى إصدار الإيطالية."
 
 #: gamedata/game_plwv.txt:109
-#, fuzzy, kde-format
+#, kde-format
 msgid "Cooperation?"
-msgstr "التعاون?"
+msgstr "التعاون؟"
 
 #: gamedata/game_plwv.txt:110
 #, fuzzy, kde-format
@@ -4955,7 +4956,7 @@ msgstr ""
 #: gamedata/game_sot.txt:39
 #, fuzzy, kde-format
 msgid "Torture Chamber"
-msgstr "التعذيب الغرفة"
+msgstr "غرفة تعذيب"
 
 #: gamedata/game_sot.txt:40
 #, fuzzy, kde-format
@@ -5030,9 +5031,9 @@ msgstr ""
 "الحفر إلى باقٍ و أعلى يعمل يمين إلى end مستوى."
 
 #: gamedata/game_sot.txt:54
-#, fuzzy, kde-format
+#, kde-format
 msgid "Infiltration"
-msgstr "التسرّب"
+msgstr "تسلل"
 
 #: gamedata/game_sot.txt:55
 #, fuzzy, kde-format
@@ -5201,9 +5202,9 @@ msgstr ""
 "تنفيذ إلى الأسفل و إلى أعلى من ذهبي و get خارج."
 
 #: gamedata/game_sot.txt:94
-#, fuzzy, kde-format
+#, kde-format
 msgid "Ruins"
-msgstr "الخراب"
+msgstr "أطلال"
 
 #: gamedata/game_sot.txt:95
 #, fuzzy, kde-format
@@ -5288,9 +5289,9 @@ msgstr ""
 "ابحث الركض للذهب ك الأفعال و الكل بوصة لعبة."
 
 #: gamedata/game_tute.txt:9
-#, fuzzy, kde-format
+#, kde-format
 msgid "Hi!"
-msgstr "أهلا!"
+msgstr "أهلًا!"
 
 #: gamedata/game_tute.txt:10
 #, fuzzy, kde-format
@@ -5397,9 +5398,9 @@ msgstr ""
 "وقت افتراضي P أو Esc و a توقّف نجاح الإيطالية إلى متابعة."
 
 #: gamedata/game_tute.txt:43
-#, fuzzy, kde-format
+#, kde-format
 msgid "Bars"
-msgstr "أعمدة"
+msgstr "شرائط"
 
 #: gamedata/game_tute.txt:44
 #, fuzzy, kde-format
@@ -5423,9 +5424,9 @@ msgid ""
 msgstr "بعض من بوصة مستوى ليس إذا أمشي الـ."
 
 #: gamedata/game_tute.txt:51 gamedata/game_tutea.txt:31
-#, fuzzy, kde-format
+#, kde-format
 msgid "Bye ..."
-msgstr "مع السلامةوقفة التّأهّب."
+msgstr "مع السلامة ..."
 
 #: gamedata/game_tute.txt:52 gamedata/game_tutea.txt:32
 #, fuzzy, kde-format
@@ -5514,9 +5515,9 @@ msgstr ""
 "قتل قبل ذهبي عند الأعلى يسار إنهاء مستوى أداء من هو بوصة."
 
 #: gamedata/game_tutea.txt:25
-#, fuzzy, kde-format
+#, kde-format
 msgid "Traps"
-msgstr "الفخاخ"
+msgstr "الأفخاخ"
 
 #: gamedata/game_tutea.txt:26
 #, fuzzy, kde-format
@@ -5533,7 +5534,7 @@ msgstr ""
 "a إلى get بعض ذهبي n تشغيل قفز :: تجاوز و ذلك get أعلى لـ a بينما."
 
 #: gamedata/game_wad.txt:3
-#, fuzzy, kde-format
+#, kde-format
 msgid "Challenge"
 msgstr "التحدي"
 
@@ -5788,9 +5789,9 @@ msgstr ""
 "فتحة بوصة التقاط ذهبي بعض و إلى إفلات."
 
 #: gamedata/game_wad.txt:95
-#, fuzzy, kde-format
+#, kde-format
 msgid "The Three Musketeers"
-msgstr "الـ ثلاثة"
+msgstr "الفرسان الثلاثة"
 
 #: gamedata/game_wad.txt:96
 #, fuzzy, kde-format
@@ -5813,9 +5814,9 @@ msgstr ""
 "من الإيطالية خروج إلى التالي مستوى طريق مُستخدَم."
 
 #: gamedata/game_wad.txt:103
-#, fuzzy, kde-format
+#, kde-format
 msgid "Rat Trap"
-msgstr "الجرذ الفخّ"
+msgstr "مصيدة جرذان"
 
 #: gamedata/game_wad.txt:104
 #, fuzzy, kde-format
@@ -5906,7 +5907,7 @@ msgstr ""
 #: gamedata/game_wad.txt:132
 #, fuzzy, kde-format
 msgid "Short Circuit"
-msgstr "قصير الدائرة"
+msgstr "دائرة قصر"
 
 #: gamedata/game_wad.txt:133
 #, fuzzy, kde-format
@@ -6083,12 +6084,12 @@ msgstr "اقتل بوصة حالة بوصة a من إفلات"
 #: src/kgoldrunner.cpp:293
 #, fuzzy, kde-format
 msgid "&Create Level"
-msgstr "إنشاء المستوى"
+msgstr "انشئ مستوى"
 
 #: src/kgoldrunner.cpp:294
 #, fuzzy, kde-format
 msgid "Create level."
-msgstr "إنشاء مستوى"
+msgstr "انشئ مستوى"
 
 #: src/kgoldrunner.cpp:295
 #, fuzzy, kde-format
@@ -6096,19 +6097,19 @@ msgid "Create a completely new level."
 msgstr "إنشاء a جديد مستوى"
 
 #: src/kgoldrunner.cpp:297
-#, fuzzy, kde-format
+#, kde-format
 msgid "Create"
-msgstr "خرسانة"
+msgstr "أنشئ"
 
 #: src/kgoldrunner.cpp:300
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Edit Level..."
-msgstr "تحرير المستوى."
+msgstr "&حرر المستوى..."
 
 #: src/kgoldrunner.cpp:301
 #, fuzzy, kde-format
 msgid "Edit level..."
-msgstr "تحرير مستوى."
+msgstr "حرر المستوى"
 
 #: src/kgoldrunner.cpp:302
 #, fuzzy, kde-format
@@ -6116,9 +6117,9 @@ msgid "Edit any level..."
 msgstr "تحرير أي منها مستوى."
 
 #: src/kgoldrunner.cpp:304
-#, fuzzy, kde-format
+#, kde-format
 msgid "Edit"
-msgstr "المحرر"
+msgstr "حرّر"
 
 #: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1459
 #, fuzzy, kde-format
@@ -6138,7 +6139,7 @@ msgstr "احفظ مستوى بعد."
 #: src/kgoldrunner.cpp:316
 #, fuzzy, kde-format
 msgid "Save"
-msgstr "ا&حفظ"
+msgstr "احفظ"
 
 #: src/kgoldrunner.cpp:320
 #, fuzzy, kde-format
@@ -6158,12 +6159,12 @@ msgstr "غيّر a مستوى s رقم أو انقل الإيطالية إلى �
 #: src/kgoldrunner.cpp:326
 #, fuzzy, kde-format
 msgid "&Delete Level..."
-msgstr "احذف المستوى."
+msgstr "احذ&ف المستوى"
 
 #: src/kgoldrunner.cpp:327
-#, fuzzy, kde-format
+#, kde-format
 msgid "Delete level..."
-msgstr "احذف مستوى."
+msgstr "احذف المستوى..."
 
 #: src/kgoldrunner.cpp:328
 #, fuzzy, kde-format
@@ -6186,14 +6187,14 @@ msgid "Create a completely new game..."
 msgstr "إنشاء a جديد لعبة."
 
 #: src/kgoldrunner.cpp:340
-#, fuzzy, kde-format
+#, kde-format
 msgid "Edit Game &Info..."
-msgstr "تحرير لعبة معلومات."
+msgstr "حرر &معلومات اللعبة..."
 
 #: src/kgoldrunner.cpp:341
 #, fuzzy, kde-format
 msgid "Edit game info..."
-msgstr "تحرير لعبة معلومات."
+msgstr "حرر معلومات اللعبة"
 
 #: src/kgoldrunner.cpp:342
 #, fuzzy, kde-format
@@ -6218,7 +6219,7 @@ msgstr ""
 #: src/kgoldrunner.cpp:367
 #, kde-format
 msgid "&Play Sounds"
-msgstr ""
+msgstr "شغّل الأ&صوات"
 
 #: src/kgoldrunner.cpp:368
 #, kde-format
@@ -6408,27 +6409,27 @@ msgstr "خفض لعبة سرعة أداء وحدة"
 #: src/kgoldrunner.cpp:504
 #, fuzzy, kde-format
 msgid "Stop"
-msgstr "قف"
+msgstr "أوقف"
 
 #: src/kgoldrunner.cpp:505
-#, fuzzy, kde-format
+#, kde-format
 msgid "Move Right"
-msgstr "تحرك لليمين"
+msgstr "حرك لليمين"
 
 #: src/kgoldrunner.cpp:506
-#, fuzzy, kde-format
+#, kde-format
 msgid "Move Left"
-msgstr "تحرك لليسار"
+msgstr "حرك لليسار"
 
 #: src/kgoldrunner.cpp:507
-#, fuzzy, kde-format
+#, kde-format
 msgid "Move Up"
-msgstr "تحريك للأعلى"
+msgstr "حرك لأعلى"
 
 #: src/kgoldrunner.cpp:508
-#, fuzzy, kde-format
+#, kde-format
 msgid "Move Down"
-msgstr "تحريك للأسفل"
+msgstr "حرك لأسفل"
 
 #: src/kgoldrunner.cpp:509
 #, fuzzy, kde-format
@@ -6458,7 +6459,7 @@ msgstr "اعرض المواقع"
 #: src/kgoldrunner.cpp:537
 #, fuzzy, kde-format
 msgid "Start Logging"
-msgstr "ابدأ تسجيل الوقائع"
+msgstr "اب&دأ التسجيل"
 
 #: src/kgoldrunner.cpp:538
 #, fuzzy, kde-format
@@ -6508,9 +6509,9 @@ msgid "Has hint"
 msgstr "له تلْميحة "
 
 #: src/kgoldrunner.cpp:760
-#, fuzzy, kde-format
+#, kde-format
 msgid "No hint"
-msgstr "لا تلْميحة "
+msgstr "دون تلْميح"
 
 #: src/kgoldrunner.cpp:877
 #, fuzzy, kde-format
@@ -6543,9 +6544,9 @@ msgid "Name/Hint"
 msgstr "تحرير الاسم تلميحةالتلميح"
 
 #: src/kgoldrunner.cpp:919
-#, fuzzy, kde-format
+#, kde-format
 msgid "Erase"
-msgstr "فسخ"
+msgstr "امسح"
 
 #: src/kgoldrunner.cpp:919
 #, fuzzy, kde-format
@@ -6595,7 +6596,7 @@ msgstr "طلاء عند بدء"
 #: src/kgoldrunner.cpp:935
 #, fuzzy, kde-format
 msgid "Brick"
-msgstr "الطّوب"
+msgstr "آجُريّ"
 
 #: src/kgoldrunner.cpp:936
 #, fuzzy, kde-format
@@ -6608,7 +6609,7 @@ msgid "Paint bricks (diggable objects)"
 msgstr "طلاء"
 
 #: src/kgoldrunner.cpp:940
-#, fuzzy, kde-format
+#, kde-format
 msgid "Concrete"
 msgstr "خرسانة"
 
@@ -6623,9 +6624,9 @@ msgid "Paint concrete objects (not diggable)"
 msgstr "طلاء ليس"
 
 #: src/kgoldrunner.cpp:945
-#, fuzzy, kde-format
+#, kde-format
 msgid "Trap"
-msgstr "الفخّ"
+msgstr "فخ"
 
 #: src/kgoldrunner.cpp:945
 #, fuzzy, kde-format
@@ -6638,9 +6639,9 @@ msgid "Paint traps or false bricks (can fall through)"
 msgstr "طلاء أو خاطئ"
 
 #: src/kgoldrunner.cpp:952
-#, fuzzy, kde-format
+#, kde-format
 msgid "Ladder"
-msgstr "السلّم"
+msgstr "سلم"
 
 #: src/kgoldrunner.cpp:953
 #, fuzzy, kde-format
@@ -6673,9 +6674,9 @@ msgid "Paint hidden ladders, which appear when all the gold is gone"
 msgstr "طلاء مخفي ظهور الكل ذهبي هو"
 
 #: src/kgoldrunner.cpp:963
-#, fuzzy, kde-format
+#, kde-format
 msgid "Bar"
-msgstr "عمود"
+msgstr "شريط"
 
 #: src/kgoldrunner.cpp:963
 #, kde-format
@@ -6693,9 +6694,9 @@ msgid "Paint bars or poles (can fall from these)"
 msgstr "طلاء أو من"
 
 #: src/kgoldrunner.cpp:969
-#, fuzzy, kde-format
+#, kde-format
 msgid "Gold"
-msgstr "ذهب"
+msgstr "الذهب"
 
 #: src/kgoldrunner.cpp:969
 #, kde-format
@@ -6714,15 +6715,15 @@ msgstr "طلاء ذهبي أو غير ذلك"
 
 #. i18n: ectx: Menu (editor)
 #: src/kgoldrunnerui.rc:20
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Editor"
-msgstr "المحرر"
+msgstr "ال&محرر"
 
 #. i18n: ectx: ToolBar (editToolbar)
 #: src/kgoldrunnerui.rc:52
-#, fuzzy, kde-format
+#, kde-format
 msgid "Edit Toolbar"
-msgstr "تحرير شريط الأدوات"
+msgstr "حرر شريط الأدوات الرئيسي"
 
 #: src/kgrdialog.cpp:34
 #, fuzzy, kde-format
@@ -6741,21 +6742,20 @@ msgid "Hint for level:"
 msgstr "تلميحةالتلميح لـ مستوى:"
 
 #: src/kgrdialog.cpp:103 src/kgrdialog.cpp:172
-#, fuzzy, kde-format
-#| msgid "Edit Game Info"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Game Info"
 msgstr "حرر معلومات اللعبة"
 
 #: src/kgrdialog.cpp:123
-#, fuzzy, kde-format
+#, kde-format
 msgid "Name of game:"
-msgstr "الاسم من لعبة:"
+msgstr "اسم اللعبة:"
 
 #: src/kgrdialog.cpp:131
-#, fuzzy, kde-format
+#, kde-format
 msgid "File name prefix:"
-msgstr "ملف الاسم:"
+msgstr "بادئة اسم الملف:"
 
 #: src/kgrdialog.cpp:139
 #, fuzzy, kde-format
@@ -6771,12 +6771,12 @@ msgstr "الركض للذهب ك"
 #, fuzzy, kde-format
 msgid "1 level"
 msgid_plural "%1 levels"
-msgstr[0] "لا مستويات"
-msgstr[1] "مستوى واحد"
-msgstr[2] "مستويان"
-msgstr[3] "%1 مستويات"
-msgstr[4] "%1 مستوى"
-msgstr[5] "%1 مستوى"
+msgstr[0] "المستوى %1"
+msgstr[1] "المستويات"
+msgstr[2] "المستويات"
+msgstr[3] "المستويات"
+msgstr[4] "المستويات"
+msgstr[5] "المستويات"
 
 #: src/kgrdialog.cpp:152
 #, fuzzy, kde-format
@@ -6792,12 +6792,12 @@ msgstr "أنشئ لعبة"
 #: src/kgrdialog.cpp:186
 #, fuzzy, kde-format
 msgid "Save Changes"
-msgstr "احفظ التغييرات"
+msgstr "احفظ التّغييرات"
 
 #: src/kgrdialog.cpp:191
-#, fuzzy, kde-format
+#, kde-format
 msgid "0 levels"
-msgstr "مستوى"
+msgstr "المستويات 0"
 
 #: src/kgrdialog.cpp:192 src/kgrselector.cpp:265
 #, kde-format
@@ -6879,9 +6879,9 @@ msgstr "لا يستطيع فتح ملفّ لـ مخرجات."
 
 #: src/kgreditor.cpp:316 src/kgreditor.cpp:332 src/kgreditor.cpp:340
 #: src/kgreditor.cpp:355
-#, fuzzy, kde-format
+#, kde-format
 msgid "Move Level"
-msgstr "نقل المستوى"
+msgstr "حرك مستوى"
 
 #: src/kgreditor.cpp:317
 #, fuzzy, kde-format
@@ -6889,14 +6889,14 @@ msgid "You must first load a level to be moved. Use the \"%1\" or \"%2\" menu."
 msgstr "أنت الأوّل التحميل a مستوى إلى إستعمل أو قائمة."
 
 #: src/kgreditor.cpp:319
-#, fuzzy, kde-format
+#, kde-format
 msgid "Game"
-msgstr "لعبة"
+msgstr "اللعبة"
 
 #: src/kgreditor.cpp:319 src/kgreditor.cpp:639
 #, fuzzy, kde-format
 msgid "Editor"
-msgstr "المحرر"
+msgstr "المحرّر"
 
 #: src/kgreditor.cpp:333
 #, fuzzy, kde-format
@@ -7023,9 +7023,9 @@ msgid "Click anywhere to begin live play"
 msgstr ""
 
 #: src/kgrgame.cpp:190
-#, fuzzy, kde-format
+#, kde-format
 msgid "Play Next Level"
-msgstr "العب المستوى"
+msgstr "العب المستوى التالي"
 
 #: src/kgrgame.cpp:191
 #, fuzzy, kde-format
@@ -7040,7 +7040,7 @@ msgstr "غير ملائم الأفعال ليس a مستوى."
 #: src/kgrgame.cpp:420
 #, kde-format
 msgid "No Sound"
-msgstr ""
+msgstr "دون صوت"
 
 #: src/kgrgame.cpp:421
 #, kde-format
@@ -7054,7 +7054,7 @@ msgstr ""
 #: src/kgrgame.cpp:625 src/kgrgame.cpp:782
 #, kde-format
 msgid "Game Paused"
-msgstr ""
+msgstr "اللعبة ألبثت"
 
 #: src/kgrgame.cpp:626
 #, kde-format
@@ -7085,13 +7085,13 @@ msgstr ""
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Quick Start"
-msgstr "بدء العمل"
+msgstr "البدء السريع"
 
 #: src/kgrgame.cpp:712
 #, kde-format
 msgctxt "Button text: start playing a game"
 msgid "&PLAY"
-msgstr ""
+msgstr "&شغّل"
 
 #: src/kgrgame.cpp:713
 #, kde-format
@@ -7108,7 +7108,7 @@ msgstr ""
 #: src/kgrgame.cpp:719
 #, kde-format
 msgid "&Quit"
-msgstr ""
+msgstr "أ&نهِ"
 
 #: src/kgrgame.cpp:720
 #, fuzzy, kde-format
@@ -7182,19 +7182,19 @@ msgid ""
 msgstr "هل مثل إلى مستوى?"
 
 #: src/kgrgame.cpp:1065
-#, fuzzy, kde-format
+#, kde-format
 msgid "Game Over"
-msgstr "لعبة"
+msgstr "انتهت اللعبة"
 
 #: src/kgrgame.cpp:1066
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Try Again"
-msgstr "حاول مرة ثانية"
+msgstr "&حاول مجدّدًا"
 
 #: src/kgrgame.cpp:1066
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Finish"
-msgstr "إ&نتهاء"
+msgstr "أ&نهِ"
 
 #: src/kgrgame.cpp:1140
 #, fuzzy, kde-format
@@ -7204,14 +7204,14 @@ msgid ""
 msgstr "<b></b><p> أنت الأخير مستوى بوصة<b></b> لعبة</p>"
 
 #: src/kgrgame.cpp:1297
-#, fuzzy, kde-format
+#, kde-format
 msgid "Hint"
-msgstr "تلميحةالتلميح"
+msgstr "تلميح"
 
 #: src/kgrgame.cpp:1303
 #, kde-format
 msgid "&OK"
-msgstr ""
+msgstr "&موافق"
 
 #: src/kgrgame.cpp:1316
 #, fuzzy, kde-format
@@ -7255,7 +7255,7 @@ msgstr "تحوّل إلى لوحة المفاتيح الوضع"
 
 #: src/kgrgame.cpp:1456 src/kgrgame.cpp:1482 src/kgrgame.cpp:1492
 #: src/kgrgame.cpp:1511 src/kgrgame.cpp:1517
-#, fuzzy, kde-format
+#, kde-format
 msgid "Save Game"
 msgstr "احفظ لعبة"
 
@@ -7285,7 +7285,7 @@ msgid "Error: Failed to save your game."
 msgstr "خطأ فشل إلى حفظ لعبة."
 
 #: src/kgrgame.cpp:1530 src/kgrgame.cpp:1536 src/kgrgame.cpp:1574
-#, fuzzy, kde-format
+#, kde-format
 msgid "Load Game"
 msgstr "حمَل لعبة"
 
@@ -7300,7 +7300,7 @@ msgid "Cannot find the game with prefix '%1'."
 msgstr "لا يستطيع ابحث لعبة مع."
 
 #: src/kgrgame.cpp:1633
-#, fuzzy, kde-format
+#, kde-format
 msgid "Unknown"
 msgstr "مجهول"
 
@@ -7338,7 +7338,7 @@ msgstr "خطأ فشل إلى حفظ مرتفع."
 #: src/kgrgame.cpp:1822 src/kgrgame.cpp:1845 src/kgrgame.cpp:1854
 #, fuzzy, kde-format
 msgid "Show High Scores"
-msgstr "اعرض عالي النتائج"
+msgstr "أظهر أعلى النتائج"
 
 #: src/kgrgame.cpp:1823
 #, fuzzy, kde-format
@@ -7360,19 +7360,19 @@ msgstr ""
 "h3></center>"
 
 #: src/kgrgame.cpp:1880
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "1, 2, 3 etc."
 msgid "Rank"
 msgstr "الرتبة"
 
 #: src/kgrgame.cpp:1881
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Person"
 msgid "Name"
 msgstr "الاسم"
 
 #: src/kgrgame.cpp:1882
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Game level reached"
 msgid "Level"
 msgstr "المستوى"
@@ -7388,8 +7388,7 @@ msgid "Date"
 msgstr "التاريخ"
 
 #: src/kgrgame.cpp:1887
-#, fuzzy, kde-format
-#| msgid "High Scores"
+#, kde-format
 msgctxt "@title:window"
 msgid "High Scores"
 msgstr "أعلى نقاط"
@@ -7435,7 +7434,7 @@ msgid "Reached end of file '%1' without finding level data."
 msgstr "واصل end من ملفّ مستوى البيانات."
 
 #: src/kgrgameio.cpp:382 src/kgrgameio.cpp:389
-#, fuzzy, kde-format
+#, kde-format
 msgid "Rename File"
 msgstr "إعادة تسمية الملف"
 
@@ -7455,14 +7454,14 @@ msgid "Theme Selector"
 msgstr ""
 
 #: src/kgrscene.cpp:277
-#, fuzzy, kde-format
+#, kde-format
 msgid "Lives: %1"
-msgstr "الحياة "
+msgstr "المحاولات: %1"
 
 #: src/kgrscene.cpp:284
 #, fuzzy, kde-format
 msgid "Score: %1"
-msgstr "النتيجة "
+msgstr "النتيجة: %1"
 
 #: src/kgrselector.cpp:69 src/kgrselector.cpp:75 src/kgrselector.cpp:95
 #: src/kgrselector.cpp:498
@@ -7586,34 +7585,34 @@ msgid "Move To..."
 msgstr "انقل إلى ..."
 
 #: src/kgrselector.cpp:355
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Rules"
 msgid "KGoldrunner"
 msgstr "الركض للذهب ك"
 
 #: src/kgrselector.cpp:356
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Rules"
 msgid "Traditional"
 msgstr "تقليدي"
 
 #: src/kgrselector.cpp:359
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Skill Level"
 msgid "Tutorial"
-msgstr "تعليمالبحث"
+msgstr "درس تعليمي"
 
 #: src/kgrselector.cpp:361
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Skill Level"
 msgid "Normal"
 msgstr "عادي"
 
 #: src/kgrselector.cpp:362
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Skill Level"
 msgid "Championship"
-msgstr "البطولة"
+msgstr "بطولة"
 
 #: src/kgrselector.cpp:465
 #, fuzzy, kde-format
@@ -7824,9 +7823,9 @@ msgid "Artwork for runners and default theme"
 msgstr "صورة الغلاف لـ و افتراضي تيمة"
 
 #: src/main.cpp:82
-#, fuzzy, kde-format
+#, kde-format
 msgid "Johann Ollivier Lapeyre"
-msgstr "Johann Ollivier Lapeyre"
+msgstr "يوهان أوليفييه لابير"
 
 #: src/main.cpp:83
 #, fuzzy, kde-format
@@ -7834,7 +7833,7 @@ msgid "Artwork for bars and ladders"
 msgstr "صورة الغلاف لـ و"
 
 #: src/main.cpp:85 src/main.cpp:93
-#, fuzzy, kde-format
+#, kde-format
 msgid "Eugene Trounev"
 msgstr "Eugene Trounev"
 
