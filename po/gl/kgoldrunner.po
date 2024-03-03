@@ -3,7 +3,7 @@
 #
 #
 #
-# SPDX-FileCopyrightText: 2023 Adrián Chaves (Gallaecio)
+# SPDX-FileCopyrightText: 2023, 2024 Adrián Chaves (Gallaecio)
 # Iván Seoane Pardo <talivan.ivan@gmail.com>, 2006.
 # Xabi G. Feal <xabigf@gmx.net>, 2006.
 # mvillarino <mvillarino@users.sourceforge.net>, 2007, 2008, 2009.
@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-09 01:44+0000\n"
-"PO-Revision-Date: 2023-12-06 08:29+0100\n"
+"PO-Revision-Date: 2024-03-02 21:02+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -60,7 +60,7 @@ msgstr ""
 "unha solución gravada.\n"
 "\n"
 "O xogo está destinado a novos xogadores, pero os últimos niveis son bastante "
-"difíciles, así que vixila como os inimigos reaccionan aos teus movementos a "
+"difíciles, así que vixía como os inimigos reaccionan aos teus movementos a "
 "medida que avanzas. Tes que telos ven adestrados para cando chegues ao nivel "
 "70.\n"
 "\n"
@@ -95,8 +95,7 @@ msgstr ""
 "con cada nivel nas pistas, obtidos de Wikipedia e non de Hollywood.\n"
 "\n"
 "Este xogo de competición foi obra de Steve Mann <smann arroba cgl uwaterloo "
-"ca>, con algunhas ideas sobre Exipto e a atopega do nivel «Mar Vermello» por "
-"parte de Ian Wadham."
+"ca>, con algunhas ideas sobre Exipto e o nivel «Mar Vermello» de Ian Wadham."
 
 #: gamedata/game_CM.txt:10
 #, kde-format
@@ -383,7 +382,7 @@ msgid ""
 "In this pyramid level (built around AD 2008), avoid (by luring away or "
 "killing) getting the two mummies in the middle of the bottom section."
 msgstr ""
-"Hai máis de 100 pirámides en Exipto, das cales a máis antiga construiuse "
+"Hai máis de 100 pirámides en Exipto, das cales a máis antiga construíuse "
 "arredor do 2600 a.C.\n"
 "\n"
 "Neste nivel da pirámide (construída arredor do 2008 d.C.), evita (ben "
@@ -1479,7 +1478,7 @@ msgid ""
 "When you reach the ladders on the right, wait for one guard to jump, then "
 "walk over his head to fetch the gold."
 msgstr ""
-"Poden ser ruíns, pero son predicíbeis.\n"
+"Poden ser ruíns, pero son previsíbeis.\n"
 "\n"
 "Cando chegues ás escadas da dereita, agarda a que un dos gardas salte e "
 "camiña por riba da súa testa para obteres o ouro."
@@ -1670,7 +1669,7 @@ msgstr ""
 "nela e escava á dereita e cinco veces á dereita mentres caes. Continúa para "
 "abaixo. Escava o inferior dos dous ladrillos que teñen espazos por riba "
 "deles, agacha polas escadas de máis á dereita do primeiro ladrillo que "
-"escavaches (esperando que non se pechase xa) e diríxite á dereita e para "
+"escavaches (esperando que non se pechase xa) e diríxete á dereita e para "
 "riba cara a saída."
 
 #: gamedata/game_GMEP.txt:82
@@ -1725,7 +1724,7 @@ msgstr ""
 "Cando subas e vaias á esquerda, hai unha escada apoiada nunha columna de "
 "formigón. Camiña sobre a testa do teu amigo para chegar a ela e queda sobre "
 "el. O primeiro ladrillo da esquerda é unha trampa. Camiña sobre a testa para "
-"que sea el quen caia na trampa e non ti. Pero entón telo que liberalo de "
+"que sexa el quen caia na trampa e non ti. Pero entón telo que liberalo de "
 "novo se queres chegar ás escadas de máis arriba.\n"
 "\n"
 "O mellor é que sexas bo co teu compañeiro: teraste que levar ben con el "
@@ -1824,7 +1823,7 @@ msgid ""
 "Just put the mouse in the upper left corner and the hero will automatically "
 "finish the level."
 msgstr ""
-"Non debería demasiarse difícil.\n"
+"Non debería ser demasiado difícil.\n"
 "\n"
 "Chega con poñeres o rato no recanto superior esquerdo e o heroe remata "
 "automaticamente o nivel."
@@ -3923,7 +3922,7 @@ msgstr ""
 "testa para chegares á seguinte escada e sobe de novo.\n"
 "\n"
 "Salta dentro do foxo e escava nos dous lados por igual. Segundo se che vai "
-"atopegando o inimigo polos ladrillos escavados, atrápao para que poidas "
+"achegando o inimigo polos ladrillos escavados, atrápao para que poidas "
 "escavar dúas columnas de ladrillos máis á esquerda. Cando saia do ladrillo "
 "escavado vai á esquerda, agarda a carón do foxo e escava á dereita para "
 "atrapalo de novo. Baixa un dos chanzos da escada máis próxima e fai que "
@@ -4157,7 +4156,7 @@ msgstr ""
 "que permitir que se che achegue moito…\n"
 "\n"
 "As seccións restantes precisan de algo de reflexión e un bo cálculo do "
-"tempo, pero non deberían demasiarse difíciles.\n"
+"tempo, pero non deberían ser demasiado difíciles.\n"
 "\n"
 "Apaña o ouro da dereita de todo ao final. Hai pouco tempo para regresar "
 "arriba cando aparezan as escadas agochadas.\n"
@@ -4454,6 +4453,7 @@ msgstr ""
 "queres un desafío real, inténtao no modo teclado. Iso fará que sexa algo "
 "máis esixente…"
 
+# well-spelled: Quebracorazóns
 #: gamedata/game_GRII.txt:190
 #, kde-format
 msgid "The Heartbreaker"
@@ -4502,7 +4502,7 @@ msgstr ""
 #: gamedata/game_lars.txt:8
 #, kde-format
 msgid "Ups And Downs"
-msgstr "Arribas e abaixos"
+msgstr "Subidas e baixadas"
 
 #: gamedata/game_lars.txt:9
 #, kde-format
@@ -4511,7 +4511,7 @@ msgid ""
 "make them follow you up in small groups. Once they are up on the bricks you "
 "can kill them and take their gold."
 msgstr ""
-"O truco consiste en ultrapasar todos os inimigos e proseguir cara a escada "
+"O truco consiste en esquivar a todos os inimigos e proseguir cara a escada "
 "máis alta e facer que che sigan en pequenos grupos. Unha vez que estean nos "
 "ladrillos pódelos matar e levarlles o ouro."
 
@@ -4616,7 +4616,7 @@ msgid ""
 "The way up to the escape route on the right is tricky. How do you get past "
 "that last enemy? Timing is everything!"
 msgstr ""
-"A subida á ruta de escape da dereita ten o seu aquel. Como ultrapasas ese "
+"A subida á ruta de escape da dereita ten o seu aquel. Como esquivas ese "
 "último inimigo? A sincronización é a chave!"
 
 #: gamedata/game_lars.txt:48
@@ -5263,7 +5263,7 @@ msgstr ""
 "pola túa escada atraendo así ao inimigo ata o falso bloque. Apúrate a subir "
 "e pasa pro arriba da cabeza do inimigo.\n"
 "\n"
-"Senón, eche cousa de conseguir que os inimigos queden atrapados en algures "
+"Senón, éche cousa de conseguir que os inimigos queden atrapados en algures "
 "ou superalos dalgún xeito. O único problema de verdade ocorre se un inimigo "
 "colle unha das moedas e queda atrapado nalgún sitio ao que non poidas "
 "acceder. Non sempre se pode gañar.\n"
@@ -6117,6 +6117,7 @@ msgstr "Desastre diagonal"
 msgid "Vengeance of Peter W"
 msgstr "A vinganza de Peter W"
 
+# well-spelled: Booooa, Muarrhh, huuarrrr
 #: gamedata/game_plwv.txt:4
 #, kde-format
 msgid ""
@@ -6408,7 +6409,7 @@ msgstr ""
 #: gamedata/game_plwv.txt:89
 #, kde-format
 msgid "Pete likes Ladders"
-msgstr "Peter gosta das escadas"
+msgstr "Peter gusta das escadas"
 
 #: gamedata/game_plwv.txt:90
 #, kde-format
@@ -6532,8 +6533,8 @@ msgstr ""
 "Comeza por recoller a moeda á dereita do «T», deste xeito poderás facer que "
 "un inimigo caia no foxo con forma de «U».\n"
 "\n"
-"Coidado co bloque falso no meio da plataforma do fondo á esquerda. Terás que "
-"recoller a moeda en varias partes desde a esquerda e a dereita."
+"Coidado co bloque falso no medio da plataforma do fondo á esquerda. Terás "
+"que recoller a moeda en varias partes desde a esquerda e a dereita."
 
 #: gamedata/game_plwv.txt:121
 #, kde-format
@@ -8046,7 +8047,7 @@ msgstr ""
 "manténdote un pouco separado do fondo da escala. Debes controlar moi ben "
 "canto correr e escavar para levalo ao foxo de arriba á dereita. Unha vez "
 "aló, poderás correr sobre el, e se aínda leva algo de ouro, queda á esquerda "
-"do foxo e escava varias veces ata que tire o outro nalgures."
+"do foxo e escava varias veces ata que tire o outro en algures."
 
 #: gamedata/game_wad.txt:144
 #, kde-format
@@ -8103,7 +8104,7 @@ msgid ""
 "Save a solution for a level into a file called 'sol_&lt;prefix&gt;.txt' in "
 "your user's data directory..."
 msgstr ""
-"Garadr unha solución para este nivel nun ficheiro chamado «sol_&lt;"
+"Gardar unha solución para este nivel nun ficheiro chamado «sol_&lt;"
 "prefixo&gt;.txt» no teu directorio de datos de usuario…"
 
 #: src/kgoldrunner.cpp:246 src/kgrgame.cpp:1303
