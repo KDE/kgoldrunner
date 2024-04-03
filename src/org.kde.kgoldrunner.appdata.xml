@@ -3,6 +3,9 @@
   <id>org.kde.kgoldrunner.desktop</id>
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-2.0+</project_license>
+  <developer id="org.kde">
+    <name translate="no">KDE</name>
+  </developer>
   <name>KGoldrunner</name>
   <name xml:lang="ast">KGoldrunner</name>
   <name xml:lang="ca">KGoldrunner</name>
