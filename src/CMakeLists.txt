@@ -51,8 +51,9 @@ target_sources(kgoldrunner PRIVATE
 ecm_qt_declare_logging_category(kgoldrunner
     HEADER kgoldrunner_debug.h
     IDENTIFIER KGOLDRUNNER_LOG
-    CATEGORY_NAME log_kgoldrunner
-    DESCRIPTION "KGoldrunner"
+    CATEGORY_NAME kgoldrunner
+    OLD_CATEGORY_NAMES log_kgoldrunner
+    DESCRIPTION "KGoldrunner game"
     EXPORT KGOLDRUNNER
 )
 
