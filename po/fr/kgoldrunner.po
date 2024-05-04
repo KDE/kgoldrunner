@@ -9,7 +9,7 @@
 # Julien Angot <angot.julien@gmail.com>, 2008.
 # Sébastien Renard <Sebastien.Renard@digitalfox.org>, 2008, 2009.
 # Stanislas Zeller <uncensored.assault@gmail.com>, 2009.
-# SPDX-FileCopyrightText: 2012, 2013, 2020, 2021, 2023 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2012, 2013, 2020, 2021, 2023, 2024 Xavier Besnard <xavier.besnard@kde.org>
 # Arnaud R. <kasai@redwolf.fr>, 2013.
 # Simon Depiets <sdepiets@gmail.com>, 2017, 2018.
 # Vincent Pinon <vpinon@kde.org>, 2017.
@@ -20,15 +20,15 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-17 00:36+0000\n"
-"PO-Revision-Date: 2023-12-20 09:43+0100\n"
+"PO-Revision-Date: 2024-05-02 16:05+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
-"Language-Team: French <kde-francophone@kde.org>\n"
+"Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -1474,7 +1474,7 @@ msgstr ""
 "manqueront la moindre occasion de vous tuer… Soyez donc prudent et le plus "
 "important de tout : être rapide --- or être mort ! \n"
 "\n"
-"Ces niveaux de championnat utilisent les règles KGoldrunner rapides et "
+"Ces niveaux de championnat utilisent les règles KGoldRunner rapides et "
 "originales qui sont composés par Gabriel Miltschitzky [Gabriel point "
 "miltschitzky @ freenet point de]. Vous devrez parfois creuser en tombant."
 
@@ -4615,7 +4615,7 @@ msgstr "Aucun conseil !"
 #: gamedata/game_kgr.txt:3 src/main.cpp:29
 #, kde-format
 msgid "KGoldrunner"
-msgstr "KGoldrunner"
+msgstr "KGoldRunner"
 
 #: gamedata/game_kgr.txt:4
 #, kde-format
@@ -4626,8 +4626,8 @@ msgid ""
 "strategy.  Enjoy!"
 msgstr ""
 "Ces niveaux ont été créés par Marco Krüger, l'auteur original du programme "
-"KGoldrunner, et par certains de ses amis et autres contributeurs. Ils "
-"utilisent les règles de KGoldrunner. Les ennemis courent vite et ont une "
+"KGoldRunner, et par certains de ses amis et autres contributeurs. Ils "
+"utilisent les règles de KGoldRunner. Les ennemis courent vite et ont une "
 "stratégie de recherche agressive. Amusez-vous bien !"
 
 #: gamedata/game_lars.txt:2
@@ -6280,7 +6280,7 @@ msgid ""
 msgstr ""
 "Ce niveau est nommé d'après le célèbre film allemand de guerre sous-marine "
 "« Das Boot » et est dédié à Marco Krüger de Berlin, l'auteur original de "
-"KGoldrunner.\n"
+"KGoldRunner.\n"
 "\n"
 "Juste un petit conseil... Si vous restez à l'extrémité droite du bateau, "
 "vous pouvez faire en sorte que l'ennemi tombe dans votre direction... Le "
@@ -6860,7 +6860,7 @@ msgid ""
 "Composed by Stuart Popejoy - spopejoy@panix.com"
 msgstr ""
 "Au moment où vous pensiez être en sécurité… quinze niveau de pure terreur, "
-"utilisant les règles bizarres de KGoldrunner. Vous devrez fréquemment "
+"utilisant les règles bizarres de KGoldRunner. Vous devrez fréquemment "
 "creuser en tombant.\n"
 "\n"
 "Composé par Stuart Popejoy – spopejoy@panix.com"
@@ -7196,7 +7196,7 @@ msgstr ""
 "tomber. Les quatre ennemis devront tous être piégés au-dessus de parties en "
 "béton particulières, afin de vous permettre d'atteindre certaines pièces "
 "d'or.\n"
-"Piégez les ennemis en utilisant les règles de KGoldrunner à votre avantage.\n"
+"Piégez les ennemis en utilisant les règles de KGoldRunner à votre avantage.\n"
 "Sur la poutre du haut, attendez à l'endroit où vous voulez que l'ennemi "
 "tombe. Lorsqu'il vous approche, tombez sur une poutre en dessous, et "
 "déplacez-vous vers la gauche ou la droite pour éviter le sort que l'ennemi "
@@ -7466,13 +7466,13 @@ msgid ""
 "KGoldrunner combines action, strategy and puzzle solving --- all in one game."
 msgstr ""
 "Ce tutoriel est une collection de niveaux faciles qui vous apprennent les "
-"règles de KGoldrunner et vous aident à développer les talents nécessaires "
+"règles de KGoldRunner et vous aident à développer les talents nécessaires "
 "pour commencer. Il utilise l'ensemble des règles traditionnelles, similaires "
 "à celles utilisées sur les premiers ordinateurs. Chaque niveau contient une "
 "brève explication, puis vous jouez...\n"
 "\n"
 "Lorsque vous avancerez dans les niveaux plus avancés, vous verrez que "
-"KGoldrunner combine action, stratégie et résolution de puzzle --- le tout "
+"KGoldRunner combine action, stratégie et résolution de puzzle --- le tout "
 "dans un seul jeu."
 
 #: gamedata/game_tute.txt:9
@@ -7491,7 +7491,7 @@ msgid ""
 "point the mouse where you want him to go.  At first gravity takes over and "
 "he falls ..."
 msgstr ""
-"Salut ! Bienvenue dans KGoldrunner ! Le principe de ce jeu est de ramasser "
+"Salut ! Bienvenue dans KGoldRunner ! Le principe de ce jeu est de ramasser "
 "toutes les pépites d'or, puis de grimper au sommet de l'aire de jeu et de "
 "passer au niveau suivant. Une échelle cachée apparaîtra lorsque vous "
 "ramasserez la dernière pépite.\n"
@@ -7674,12 +7674,12 @@ msgid ""
 "It has been a pleasure showing you around.  Bye!"
 msgstr ""
 "Voila un niveau simple et amusant pour finir. Amusez-vous bien avec les "
-"autres jeux de KGoldrunner.\n"
+"autres jeux de KGoldRunner.\n"
 "\n"
 "Notez qu'il existe un éditeur de niveaux dans lequel vous et vos amis pouvez "
 "créer des niveaux et vous affronter. Et si vous aimez l'action, les règles "
-"de KGoldrunner utilisées dans certains jeux sont agressives et impitoyables. "
-"Il y a aussi un manuel de KGoldrunner dans le menu « Aide », contenant plus "
+"de KGoldRunner utilisées dans certains jeux sont agressives et impitoyables. "
+"Il y a aussi un manuel de KGoldRunner dans le menu « Aide », contenant plus "
 "de détails que ce tutoriel.\n"
 "\n"
 "Ce fut un plaisir de vous faire découvrir le jeu. Au revoir !"
@@ -9183,7 +9183,7 @@ msgstr "Règles traditionnelles"
 #: src/kgrdialog.cpp:140
 #, kde-format
 msgid "KGoldrunner rules"
-msgstr "Règles de KGoldrunner"
+msgstr "Règles de KGoldRunner"
 
 #: src/kgrdialog.cpp:149 src/kgrdialog.cpp:184
 #, kde-format
@@ -9478,10 +9478,10 @@ msgid ""
 "This is because no development versions of the OpenAL and SndFile libraries "
 "were present when it was compiled and built."
 msgstr ""
-"Attention : cette copie de KGoldrunner n'a aucun son.\n"
+"Attention : cette copie de KGoldRunner n'a aucun son.\n"
 "\n"
 "Ceci est dû à l'absence de versions de développement des bibliothèques "
-"OpenAL et SndFile lorsque KGoldrunner a été compilé et construit."
+"OpenAL et SndFile lorsque KGoldRunner a été compilé et construit."
 
 #: src/kgrgame.cpp:625 src/kgrgame.cpp:782
 #, kde-format
@@ -9555,7 +9555,7 @@ msgstr "Quitter"
 #: src/kgrgame.cpp:720
 #, kde-format
 msgid "Close KGoldrunner"
-msgstr "Fermer KGoldrunner"
+msgstr "Fermer KGoldRunner"
 
 #: src/kgrgame.cpp:724
 #, kde-format
@@ -9610,7 +9610,7 @@ msgid ""
 "Sorry, although all levels of KGoldrunner can be solved, no solution has "
 "been recorded yet for the level you selected."
 msgstr ""
-"Désolé, même si tous les niveaux de KGoldrunner peuvent être résolus, aucune "
+"Désolé, même si tous les niveaux de KGoldRunner peuvent être résolus, aucune "
 "solution n'a encore été enregistrée pour le niveau que vous avez sélectionné."
 
 #: src/kgrgame.cpp:848
@@ -9782,7 +9782,7 @@ msgid ""
 msgstr ""
 "<html><b>Félicitations !!! </b><br/>Vous avez réussi un des meilleurs scores "
 "dans ce jeu.<br/>Veuillez saisir votre nom pour qu'il soit affiché<br/>dans "
-"le Panthéon de KGoldrunner.</html>"
+"le Panthéon de KGoldRunner.</html>"
 
 #: src/kgrgame.cpp:1722
 #, kde-format
@@ -9822,7 +9822,7 @@ msgid ""
 "<center><h2>KGoldrunner Hall of Fame</h2></center><center><h3>\"%1\" Game</"
 "h3></center>"
 msgstr ""
-"<center><h2>Panthéon de KGoldrunner</h2></center><center><h3> « %1 » Jeu</"
+"<center><h2>Panthéon de KGoldRunner</h2></center><center><h3> « %1 » Jeu</"
 "h3></center>"
 
 #: src/kgrgame.cpp:1880
@@ -10061,7 +10061,7 @@ msgstr "Aller à..."
 #, kde-format
 msgctxt "Rules"
 msgid "KGoldrunner"
-msgstr "KGoldrunner"
+msgstr "KGoldRunner"
 
 #: src/kgrselector.cpp:358
 #, kde-format
@@ -10092,7 +10092,7 @@ msgstr "Vitesse de champion"
 #, kde-format
 msgid "1 level, uses KGoldrunner rules."
 msgid_plural "%1 levels, uses KGoldrunner rules."
-msgstr[0] "1 niveau, utilisation des règles de KGoldrunner."
+msgstr[0] "1 niveau, utilisation des règles de KGoldRunner."
 msgstr[1] "%1 niveaux, utilisation des règles de KGoldRunner."
 
 #: src/kgrselector.cpp:471
