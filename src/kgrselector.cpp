@@ -69,19 +69,19 @@ bool KGrSLDialog::selectLevel (int & selectedGame, int & selectedLevel)
             case SL_CREATE:	// Can save only in a USER collection.
             case SL_SAVE:
             case SL_MOVE:
-                KGrMessage::information (slParent, i18n ("Select Level"),
+                KGrMessage::information (slParent, i18nc("@title:window", "Select Level"),
                         i18n ("Sorry, you can only save or move "
                         "into one of your own games."));
                 continue;			// Re-run the dialog box.
                 break;
             case SL_DELETE:	// Can delete only in a USER collection.
-                KGrMessage::information (slParent, i18n ("Select Level"),
+                KGrMessage::information (slParent, i18nc("@title:window", "Select Level"),
                         i18n ("Sorry, you can only delete a level "
                         "from one of your own games."));
                 continue;			// Re-run the dialog box.
                 break;
             case SL_UPD_GAME:	// Can edit info only in a USER collection.
-                KGrMessage::information (slParent, i18n ("Edit Game Info"),
+                KGrMessage::information (slParent, i18nc("@title:window", "Edit Game Info"),
                         i18n ("Sorry, you can only edit the game "
                         "information on your own games."));
                 continue;			// Re-run the dialog box.
@@ -95,7 +95,7 @@ bool KGrSLDialog::selectLevel (int & selectedGame, int & selectedLevel)
         if ((selectedLevel > myGameList.at (selectedGame)->nLevels) &&
             (slAction != SL_CREATE) && (slAction != SL_SAVE) &&
             (slAction != SL_MOVE) && (slAction != SL_UPD_GAME)) {
-            KGrMessage::information (slParent, i18n ("Select Level"),
+            KGrMessage::information (slParent, i18nc("@title:window", "Select Level"),
                 i18n ("There is no level %1 in \"%2\", "
                 "so you cannot play or edit it.",
                  selectedLevel,
@@ -140,10 +140,10 @@ void KGrSLDialog::setupWidgets()
     mainLayout->addWidget (games, 50);
     games->setColumnCount (4);
     games->setHeaderLabels ({
-        i18n ("Name of Game"),
-        i18n ("Rules"),
-        i18n ("Levels"),
-        i18n ("Skill"),
+        i18nc ("@title:column", "Name of Game"),
+        i18nc ("@title:column", "Rules"),
+        i18nc ("@title:column", "Levels"),
+        i18nc ("@title:column", "Skill"),
     });
     games->setRootIsDecorated (false);
 
@@ -201,13 +201,13 @@ void KGrSLDialog::setupWidgets()
     hboxLayout2->setContentsMargins(0, 0, 0, 0);
     numberPair->setLayout (hboxLayout2);
     grid->addWidget (numberPair, 1, 1, 1, 3);
-    numberL   = new QLabel (i18n ("Level number:"), numberPair);
+    numberL   = new QLabel (i18nc ("@label:spinbox", "Level number:"), numberPair);
     display = new QSpinBox (numberPair);
     display->setRange (1, 150);
     hboxLayout2->addWidget (numberL);
     hboxLayout2->addWidget (display);
 
-    levelNH   = new QPushButton (i18n ("Edit Level Name o&r Hint"), dad);
+    levelNH   = new QPushButton (i18nc ("@action:button", "Edit Level Name o&r Hint"), dad);
     mainLayout->addWidget (levelNH);
 
     slName    = new QLabel (dad);
@@ -242,7 +242,7 @@ void KGrSLDialog::setupWidgets()
     QString OKText;
     switch (slAction) {
     case SL_START:	// Must start at level 1, but can choose a game.
-                        OKText = i18n ("Start Game");
+                        OKText = i18nc ("@action:button", "Start Game");
                         number->setValue (1);
                         number->setEnabled (false);
                         display->setEnabled (false);
@@ -251,34 +251,34 @@ void KGrSLDialog::setupWidgets()
                         display->hide();
                         break;
     case SL_ANY:	// Can start playing at any level in any game.
-                        OKText = i18n ("Play Level");
+                        OKText = i18nc ("@action:button", "Play Level");
                         break;
     case SL_REPLAY:	// Can ask to see a replay of any level in any game.
-                        OKText = i18n ("Replay Level");
+                        OKText = i18nc ("@action:button", "Replay Level");
                         break;
     case SL_SOLVE:	// Can ask to see a solution of any level in any game.
-                        OKText = i18n ("Show Solution");
+                        OKText = i18nc ("@action:button", "Show Solution");
                         break;
     case SL_SAVE_SOLUTION: // Can ask to save a recording on a solution-file.
-                        OKText = i18n ("Save A Solution");
+                        OKText = i18nc ("@action:button", "Save a Solution");
                         break;
     case SL_UPDATE:	// Can use any level in any game as edit input.
-                        OKText = i18n ("Edit Level");
+                        OKText = i18nc ("@action:button", "Edit Level");
                         break;
     case SL_CREATE:	// Can save a new level only in a USER game.
-                        OKText = i18n ("Save New");
+                        OKText = i18nc ("@action:button", "Save New");
                         break;
     case SL_SAVE:	// Can save an edited level only in a USER game.
-                        OKText = i18n ("Save Change");
+                        OKText = i18nc ("@action:button", "Save Change");
                         break;
     case SL_DELETE:	// Can delete a level only in a USER game.
-                        OKText = i18n ("Delete Level");
+                        OKText = i18nc ("@action:button", "Delete Level");
                         break;
     case SL_MOVE:	// Can move a level only into a USER game.
-                        OKText = i18n ("Move To...");
+                        OKText = i18nc ("@action:button", "Move To…");
                         break;
     case SL_UPD_GAME:	// Can only edit USER game details.
-                        OKText = i18n ("Edit Game Info");
+                        OKText = i18nc ("@action:button", "Edit Game Info");
                         number->setValue (1);
                         number->setEnabled (false);
                         display->setEnabled (false);
@@ -498,7 +498,7 @@ void KGrSLDialog::slUpdate (const QString & text)
         slPaintLevel();
     }
     else
-        KGrMessage::information (this, i18n ("Select Level"),
+        KGrMessage::information (this, i18nc ("@title:window", "Select Level"),
                 i18n ("This level number is not valid. It can not be used."));
 }
 
@@ -586,7 +586,7 @@ void KGrSLDialog::slotHelp()
             "preview of your choice.");
    }
 
-   KGrMessage::information (slParent, i18n ("Help: Select Game & Level"), s);
+   KGrMessage::information (slParent, i18nc ("@title:window", "Help: Select Game & Level"), s);
 }
 
 /*******************************************************************************

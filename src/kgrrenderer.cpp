@@ -97,7 +97,7 @@ void KGrRenderer::currentThemeChanged (const KGameTheme* currentSetTheme)
 void KGrRenderer::selectTheme()
 {
     // Show the theme-selection dialog.
-    m_themeSelector->showAsDialog (i18n("Theme Selector"));
+    m_themeSelector->showAsDialog (i18nc("@title:window", "Theme Selector"));
 }
 
 KGrRenderer::PixmapSpec KGrRenderer::keyTable [] = {

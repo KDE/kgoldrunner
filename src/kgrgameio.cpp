@@ -160,16 +160,16 @@ bool KGrGameIO::readLevelData (const QString & dir,
                         (dir, prefix, levelNo, d, filePath);
     switch (stat) {
     case NotFound:
-        KGrMessage::information (view, i18n ("Read Level Data"),
+        KGrMessage::information (view, i18nc("@title:window", "Read Level Data"),
             i18n ("Cannot find file '%1'.", filePath));
         break;
     case NoRead:
     case NoWrite:
-        KGrMessage::information (view, i18n ("Read Level Data"),
+        KGrMessage::information (view, i18nc("@title:window", "Read Level Data"),
             i18n ("Cannot open file '%1' for read-only.", filePath));
         break;
     case UnexpectedEOF:
-        KGrMessage::information (view, i18n ("Read Level Data"),
+        KGrMessage::information (view, i18nc("@title:window", "Read Level Data"),
             i18n ("Reached end of file '%1' without finding level data.",
             filePath));
         break;
@@ -378,14 +378,14 @@ bool KGrGameIO::safeRename (QWidget * theView, const QString & oldName,
         // upcoming QFile::rename will fail, according to Qt4 docs.  This
         // seems to be true with reiserfs at least.
         if (! newFile.remove()) {
-            KGrMessage::information (theView, i18n ("Rename File"),
+            KGrMessage::information (theView, i18nc("@title:window", "Rename File"),
                 i18n ("Cannot delete previous version of file '%1'.", newName));
             return false;
         }
     }
     QFile oldFile (oldName);
     if (! oldFile.rename (newName)) {
-        KGrMessage::information (theView, i18n ("Rename File"),
+        KGrMessage::information (theView, i18nc("@title:window", "Rename File"),
             i18n ("Cannot rename file '%1' to '%2'.", oldName, newName));
         return false;
     }

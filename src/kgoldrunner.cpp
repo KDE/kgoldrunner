@@ -181,19 +181,19 @@ void KGoldrunner::setupActions()
     QAction * a = KGameStandardAction::gameNew (this, nullptr, nullptr);
     actionCollection()->addAction (a->objectName(), a);
     connect (a, &QAction::triggered, this, [this] { game->gameActions(NEW); });
-    a->setText (i18n ("&New Game..."));
+    a->setText (i18nc ("@action", "&New Game…"));
 
     a        = gameAction (QStringLiteral("next_level"), NEXT_LEVEL,
-                           i18n ("Pla&y Next Level"),
-                           i18n ("Play next level."),
-                           i18n ("Try the next level in the game "
-                                 "you are playing."),
+                           i18nc ("@action", "Pla&y Next Level"),
+                           i18nc ("@info:tooltip", "Play the next level"),
+                           i18nc ("@info:whatsthis", "Switches to the next level in the game "
+                                  "you are playing."),
                            Qt::Key_Y);
 
     a =	KGameStandardAction::load (this, nullptr, nullptr);
     actionCollection()->addAction (a->objectName(), a);
     connect (a, &QAction::triggered, this, [this] { game->gameActions(LOAD); });
-    a->setText (i18n ("&Load Saved Game..."));
+    a->setText (i18nc ("@action", "&Load Saved Game…"));
 
     // Save Game...
     // Save Solution...
@@ -202,17 +202,17 @@ void KGoldrunner::setupActions()
     saveGame = KGameStandardAction::save (this, nullptr, nullptr);
     actionCollection()->addAction (saveGame->objectName(), saveGame);
     connect (saveGame, &QAction::triggered, this, [this] { game->gameActions(SAVE_GAME); });
-    saveGame->setText (i18n ("&Save Game..."));
+    saveGame->setText (i18nc ("@action", "&Save Game…"));
     KActionCollection::setDefaultShortcut(saveGame, Qt::Key_S); // Alternate key.
 
     // The name of the solution-file is 'sol_<prefix>.txt', where <prefix> is
     // the unique prefix belonging to the game involved (eg. plws, tute, etc.).
     a        = gameAction (QStringLiteral("save_solution"), SAVE_SOLUTION,
-                           i18n ("Save A Solution..."),
-                           i18n ("Save A Solution..."),
-                           i18n ("Save a solution for a level into a file "
+                           i18nc ("@action", "Save a Solution…"),
+                           i18nc ("@info:tooltip", "Save a solution"),
+                           i18nc ("@info:whatsthis", "Saves a solution for a level into a file "
                                  "called 'sol_&lt;prefix&gt;.txt' in your "
-				 "user's data directory..."),
+				 "user's data directory."),
                            {Qt::ShiftModifier | Qt::Key_S});
 
     // Pause
@@ -243,37 +243,37 @@ void KGoldrunner::setupActions()
     a = KGameStandardAction::solve (this, nullptr, nullptr);
     actionCollection()->addAction (a->objectName(), a);
     connect (a, &QAction::triggered, this, [this] { game->gameActions(SOLVE); });
-    a->setText      (i18n ("&Show a Solution"));
-    a->setToolTip   (i18n ("Show how to win this level."));
-    a->setWhatsThis (i18n ("Play a recording of how to win this level, if "
+    a->setText      (i18nc ("@action", "&Show a Solution"));
+    a->setToolTip   (i18nc ("@info:tooltip", "Show how to win this level"));
+    a->setWhatsThis (i18nc ("@info:whatsthis", "Plays a recording of how to win this level, if "
                            "there is one available."));
 
     a        = gameAction (QStringLiteral("instant_replay"), INSTANT_REPLAY,
-                           i18n ("&Instant Replay"),
-                           i18n ("Instant replay."),
-                           i18n ("Show a recording of the level "
+                           i18nc ("@action", "&Instant Replay"),
+                           i18nc ("@info:tooltip", "Instant replay"),
+                           i18nc ("@info:whatsthis", "Shows a recording of the level "
                                  "you are currently playing."),
                            Qt::Key_R);
 
     a        = gameAction (QStringLiteral("replay_last"), REPLAY_LAST,
-                           i18n ("Replay &Last Level"),
-                           i18n ("Replay last level."),
-                           i18n ("Show a recording of the last level you "
+                           i18nc ("@action", "Replay &Last Level"),
+                           i18nc ("@info:tooltip", "Replay last level"),
+                           i18nc ("@info:whatsthis", "Shows a recording of the last level you "
                                  "played and finished, regardless of whether "
                                  "you won or lost."),
                            Qt::Key_A);
 
     a        = gameAction (QStringLiteral("replay_any"), REPLAY_ANY,
-                           i18n ("&Replay Any Level"),
-                           i18n ("Replay any level."),
-                           i18n ("Show a recording of any level you have "
+                           i18nc ("@action", "&Replay Any Level"),
+                           i18nc ("@info:tooltip", "Replay any level"),
+                           i18nc ("@info:whatsthis", "Shows a recording of any level you have "
                                  "played so far."),
                            QKeySequence());	// No key assigned.
 
     killHero = gameAction (QStringLiteral("kill_hero"), KILL_HERO,
-                           i18n ("&Kill Hero"),
-                           i18n ("Kill Hero."),
-                           i18n ("Kill the hero, in case he finds himself in "
+                           i18nc ("@action", "&Kill Hero"),
+                           i18nc ("@info:tooltip", "Kill the hero"),
+                           i18nc ("@info:whatsthis", "Kills the hero, in case he finds himself in "
                                  "a situation from which he cannot escape."),
                            Qt::Key_Q);
 
@@ -290,18 +290,18 @@ void KGoldrunner::setupActions()
     // --------------------------
 
     QAction * ed = editAction (QStringLiteral("create_level"), CREATE_LEVEL,
-                               i18n ("&Create Level"),
-                               i18n ("Create level."),
-                               i18n ("Create a completely new level."));
+                               i18nc ("@action", "&Create Level"),
+                               i18nc ("@info:tooltip", "Create level"),
+                               i18nc ("@info:whatsthis", "Creates a completely new level."));
     ed->setIcon (QIcon::fromTheme( QStringLiteral( "document-new" )));
-    ed->setIconText (i18n ("Create"));
+    ed->setIconText (i18nc ("@action", "Create"));
 
     ed           = editAction (QStringLiteral("edit_any"), EDIT_ANY,
-                               i18n ("&Edit Level..."),
-                               i18n ("Edit level..."),
-                               i18n ("Edit any level..."));
+                               i18nc ("@action", "&Edit Level…"),
+                               i18nc ("@info:tooltip", "Edit level"),
+                               i18nc ("@info:whatsthis", "Edits any level."));
     ed->setIcon (QIcon::fromTheme( QStringLiteral( "document-open" )));
-    ed->setIconText (i18n ("Edit"));
+    ed->setIconText (i18nc ("@action", "Edit"));
 
     // Save Edits...
     // Move Level...
@@ -309,38 +309,38 @@ void KGoldrunner::setupActions()
     // --------------------------
 
     saveEdits    = editAction (QStringLiteral("save_edits"), SAVE_EDITS,
-                               i18n ("&Save Edits..."),
-                               i18n ("Save edits..."),
-                               i18n ("Save your level after editing..."));
+                               i18nc ("@action", "&Save Edits…"),
+                               i18nc ("@info:tooltip", "Save edits"),
+                               i18nc ("@info:whatsthis", "Saves your level after editing."));
     saveEdits->setIcon (QIcon::fromTheme( QStringLiteral( "document-save" )));
-    saveEdits->setIconText (i18n ("Save"));
+    saveEdits->setIconText (i18nc ("@action", "Save"));
     saveEdits->setEnabled (false);		// Nothing to save, yet.
 
     ed           = editAction (QStringLiteral("move_level"), MOVE_LEVEL,
-                               i18n ("&Move Level..."),
-                               i18n ("Move level..."),
-                               i18n ("Change a level's number or move "
-                                     "it to another game..."));
+                               i18nc ("@action", "&Move Level…"),
+                               i18nc ("@info:tooltip", "Move level"),
+                               i18nc ("@info:whatsthis", "Changes a level's number or move "
+                                     "it to another game."));
 
     ed           = editAction (QStringLiteral("delete_level"), DELETE_LEVEL,
-                               i18n ("&Delete Level..."),
-                               i18n ("Delete level..."),
-                               i18n ("Delete a level..."));
+                               i18nc ("@action", "&Delete Level…"),
+                               i18nc ("@info:tooltip", "Delete level"),
+                               i18nc ("@info:whatsthis", "Deletes a level."));
 
     // Create a Game
     // Edit Game Info...
     // --------------------------
 
     ed           = editAction (QStringLiteral("create_game"), CREATE_GAME,
-                               i18n ("Create &Game..."),
-                               i18n ("Create game..."),
-                               i18n ("Create a completely new game..."));
+                               i18nc ("@action", "Create &Game…"),
+                               i18nc ("@info:tooltip", "Create game"),
+                               i18nc ("@info:whatsthis", "Creates a completely new game."));
 
     ed           = editAction (QStringLiteral("edit_game"), EDIT_GAME,
-                               i18n ("Edit Game &Info..."),
-                               i18n ("Edit game info..."),
-                               i18n ("Change the name, rules or description "
-                                     "of a game..."));
+                               i18nc ("@action", "Edit Game &Info…"),
+                               i18nc ("@info:tooltip", "Edit game info"),
+                               i18nc ("@info:whatsthis", "Changes the name, rules or description "
+                                     "of a game."));
 
     /**************************************************************************/
     /****************************   SETTINGS MENU  ****************************/
@@ -348,10 +348,10 @@ void KGoldrunner::setupActions()
 
     // Theme settings are handled by this class and KGrRenderer.
     QAction * themes = actionCollection()->addAction (QStringLiteral("select_theme"));
-    themes->setText      (i18n ("Change &Theme..."));
-    themes->setToolTip   (i18n ("Change the graphics theme..."));
-    themes->setWhatsThis (i18n ("Alter the visual appearance of the runners "
-                                "and background scene..."));
+    themes->setText      (i18nc ("@action", "Change &Theme…"));
+    themes->setToolTip   (i18nc ("@info:tooltip", "Change the graphics theme"));
+    themes->setWhatsThis (i18nc ("@info:whatsthis", "Alters the visual appearance of the runners "
+                                "and background scene."));
     connect (themes, &QAction::triggered, this, &KGoldrunner::changeTheme);
 
     // Show/Exit Full Screen Mode
@@ -364,21 +364,21 @@ void KGoldrunner::setupActions()
 #ifdef KGAUDIO_BACKEND_OPENAL
     // Sound effects on/off
                                   settingAction (QStringLiteral("options_sounds"), PLAY_SOUNDS,
-                                  i18n ("&Play Sounds"),
-                                  i18n ("Play sound effects."),
-                                  i18n ("Play sound effects during the game."));
+                                  i18nc ("@option:check", "&Play Sounds"),
+                                  i18nc ("@info:tooltip", "Play sound effects"),
+                                  i18nc ("@info:whatsthis", "Plays sound effects during the game."));
 
                                   settingAction (QStringLiteral("options_steps"), PLAY_STEPS,
-                                  i18n ("Play &Footstep Sounds"),
-                                  i18n ("Make sounds of player's footsteps."),
-                                  i18n ("Make sounds of player's footsteps."));
+                                  i18nc ("@option:check", "Play &Footstep Sounds"),
+                                  i18nc ("@info:tooltip", "Make sounds of player's footsteps"),
+                                  i18nc ("@info:whatsthis", "Makes sounds of player's footsteps."));
 #endif
 
     // Demo at start on/off.
                                   settingAction (QStringLiteral("options_demo"), STARTUP_DEMO,
-                                  i18n ("&Demo At Start"),
-                                  i18n ("Run a demo when the game starts."),
-                                  i18n ("Run a demo when the game starts."));
+                                  i18nc ("@option:check", "&Demo at Start"),
+                                  i18nc ("@info:tooltip", "Run a demo when the game starts"),
+                                  i18nc ("@info:whatsthis", "Runs a demo when the game starts."));
 
     // Mouse Controls Hero
     // Keyboard Controls Hero
@@ -386,22 +386,22 @@ void KGoldrunner::setupActions()
     // --------------------------
 
     KToggleAction * setMouse    = settingAction (QStringLiteral("mouse_mode"), MOUSE,
-                                  i18n ("&Mouse Controls Hero"),
-                                  i18n ("Mouse controls hero."),
-                                  i18n ("Use the mouse to control "
+                                  i18nc ("@option:check", "&Mouse Controls Hero"),
+                                  i18nc ("@info:tooltip", "Mouse controls hero"),
+                                  i18nc ("@info:whatsthis", "Use the mouse to control "
                                         "the hero's moves."));
 
     KToggleAction * setKeyboard = settingAction (QStringLiteral("keyboard_mode"), KEYBOARD,
-                                  i18n ("&Keyboard Controls Hero"),
-                                  i18n ("Keyboard controls hero."),
-                                  i18n ("Use the keyboard to control "
+                                  i18nc ("@option:check", "&Keyboard Controls Hero"),
+                                  i18nc ("@info:tooltip", "Keyboard controls hero"),
+                                  i18nc ("@info:whatsthis", "Use the keyboard to control "
                                         "the hero's moves."));
 
     KToggleAction * setLaptop   = settingAction (QStringLiteral("laptop_mode"), LAPTOP,
-                                  i18n ("Hybrid Control (&Laptop)"),
-                                  i18n ("Pointer controls hero; dig "
-                                        "using keyboard."),
-                                  i18n ("Use the laptop's pointer device "
+                                  i18nc ("@option:check", "Hybrid Control (&Laptop)"),
+                                  i18nc ("@info:tooltip", "Pointer controls hero; dig "
+                                        "using keyboard"),
+                                  i18nc ("@info:whatsthis", "Use the laptop's pointer device "
                                         "to control the hero's moves, and use "
                                         "the keyboard to dig left and right."));
 
@@ -416,17 +416,17 @@ void KGoldrunner::setupActions()
     // Click and hold key to begin moving: release key to stop.
 
     KToggleAction * clickKey    = settingAction (QStringLiteral("click_key"), CLICK_KEY,
-                                  i18n ("&Click Key To Move"),
-                                  i18n ("Click Key To Move."),
-                                  i18n ("In keyboard mode, click a "
+                                  i18nc ("@option:check", "&Click Key to Move"),
+                                  i18nc ("@info:tooltip", "Click key to move"),
+                                  i18nc ("@info:whatsthis", "In keyboard mode, click a "
                                         "direction-key to start moving "
                                         "and keep on going until you "
                                         "click another key."));
 
     KToggleAction * holdKey     = settingAction (QStringLiteral("hold_key"), HOLD_KEY,
-                                  i18n ("&Hold Key To Move"),
-                                  i18n ("Hold Key To Move."),
-                                  i18n ("In keyboard mode, hold down a "
+                                  i18nc ("@option:check", "&Hold Key to Move"),
+                                  i18nc ("@info:tooltip", "Hold key to move"),
+                                  i18nc ("@info:whatsthis", "In keyboard mode, hold down a "
                                         "direction-key to move "
                                         "and release it to stop."));
 
@@ -443,35 +443,35 @@ void KGoldrunner::setupActions()
     // --------------------------
 
     KToggleAction * nSpeed      = settingAction (QStringLiteral("normal_speed"), NORMAL_SPEED,
-                                  i18n ("Normal Speed"),
-                                  i18n ("Set normal speed."),
-                                  i18n ("Set normal game speed."));
+                                  i18nc ("@item:inmenu", "Normal Speed"),
+                                  i18nc ("@info:tooltip", "Set normal speed"),
+                                  i18nc ("@info:whatsthis", "Set normal game speed."));
 
     KToggleAction * bSpeed      = settingAction (QStringLiteral("beginner_speed"),
                                   BEGINNER_SPEED,
-                                  i18n ("Beginner Speed"),
-                                  i18n ("Set beginners' speed."),
-                                  i18n ("Set beginners' game speed "
+                                  i18nc ("@item:inmenu", "Beginner Speed"),
+                                  i18nc ("@info:tooltip", "Set beginners' speed"),
+                                  i18nc ("@info:whatsthis", "Set beginners' game speed "
                                         "(0.5 times normal)."));
 
     KToggleAction * cSpeed      = settingAction (QStringLiteral("champion_speed"),
                                   CHAMPION_SPEED,
-                                  i18n ("Champion Speed"),
-                                  i18n ("Set champions' speed."),
-                                  i18n ("Set champions' game speed "
+                                  i18nc ("@item:inmenu", "Champion Speed"),
+                                  i18nc ("@info:tooltip", "Set champions' speed"),
+                                  i18nc ("@info:whatsthis", "Set champions' game speed "
                                         "(1.5 times normal)."));
 
     a                           = gameAction (QStringLiteral("increase_speed"), INC_SPEED,
-                                  i18n ("Increase Speed"),
-                                  i18n ("Increase speed."),
-                                  i18n ("Increase the game speed by 0.1 "
+                                  i18nc ("@action", "Increase Speed"),
+                                  i18nc ("@info:tooltip", "Increase speed"),
+                                  i18nc ("@info:whatsthis", "Increases the game speed by 0.1 "
                                         "(maximum is 2.0 times normal)."),
                                   Qt::Key_Plus);
 
     a                           = gameAction (QStringLiteral("decrease_speed"), DEC_SPEED,
-                                  i18n ("Decrease Speed"),
-                                  i18n ("Decrease speed."),
-                                  i18n ("Decrease the game speed by 0.1 "
+                                  i18nc ("@action", "Decrease Speed"),
+                                  i18nc ("@info:tooltip", "Decrease speed"),
+                                  i18nc ("@info:whatsthis", "Decreases the game speed by 0.1 "
                                         "(minimum is 0.2 times normal)."),
                                   Qt::Key_Minus);
 
@@ -501,13 +501,13 @@ void KGoldrunner::setupActions()
     // corresponding keyReleaseEvent() call and make the hold-key option
     // work correctly when two keys are held down simultaneously.
 
-    keyControl (QStringLiteral("stop"),       i18n ("Stop"),       Qt::Key_Space, STAND);
-    keyControl (QStringLiteral("move_right"), i18n ("Move Right"), Qt::Key_Right, RIGHT, true);
-    keyControl (QStringLiteral("move_left"),  i18n ("Move Left"),  Qt::Key_Left,  LEFT,  true);
-    keyControl (QStringLiteral("move_up"),    i18n ("Move Up"),    Qt::Key_Up,    UP,    true);
-    keyControl (QStringLiteral("move_down"),  i18n ("Move Down"),  Qt::Key_Down,  DOWN,  true);
-    keyControl (QStringLiteral("dig_right"),  i18n ("Dig Right"),  Qt::Key_C,     DIG_RIGHT);
-    keyControl (QStringLiteral("dig_left"),   i18n ("Dig Left"),   Qt::Key_Z,     DIG_LEFT);
+    keyControl (QStringLiteral("stop"),       i18nc ("@action", "Stop"),       Qt::Key_Space, STAND);
+    keyControl (QStringLiteral("move_right"), i18nc ("@action", "Move Right"), Qt::Key_Right, RIGHT, true);
+    keyControl (QStringLiteral("move_left"),  i18nc ("@action", "Move Left"),  Qt::Key_Left,  LEFT,  true);
+    keyControl (QStringLiteral("move_up"),    i18nc ("@action", "Move Up"),    Qt::Key_Up,    UP,    true);
+    keyControl (QStringLiteral("move_down"),  i18nc ("@action", "Move Down"),  Qt::Key_Down,  DOWN,  true);
+    keyControl (QStringLiteral("dig_right"),  i18nc ("@action", "Dig Right"),  Qt::Key_C,     DIG_RIGHT);
+    keyControl (QStringLiteral("dig_left"),   i18nc ("@action", "Dig Left"),   Qt::Key_Z,     DIG_LEFT);
 
     // Alternate one-handed controls.  Set up in "kgoldrunnerui.rc".
 
@@ -531,20 +531,20 @@ void KGoldrunner::setupActions()
     if (! addDebuggingShortcuts)
         return;
 
-    keyControlDebug (QStringLiteral("do_step"),      i18n ("Do a Step"), Qt::Key_Period, DO_STEP);
-    keyControlDebug (QStringLiteral("bug_fix"),      i18n ("Test Bug Fix"), Qt::Key_B, BUG_FIX);
-    keyControlDebug (QStringLiteral("show_positions"), i18n ("Show Positions"), Qt::Key_W, S_POSNS);
-    keyControlDebug (QStringLiteral("logging"),      i18n ("Start Logging"), Qt::Key_G, LOGGING);
-    keyControlDebug (QStringLiteral("show_hero"),    i18n ("Show Hero"), Qt::Key_E, S_HERO);
-    keyControlDebug (QStringLiteral("show_obj"),     i18n ("Show Object"), Qt::Key_Slash, S_OBJ);
+    keyControlDebug (QStringLiteral("do_step"),      i18nc ("@action", "Do a Step"), Qt::Key_Period, DO_STEP);
+    keyControlDebug (QStringLiteral("bug_fix"),      i18nc ("@action", "Test Bug Fix"), Qt::Key_B, BUG_FIX);
+    keyControlDebug (QStringLiteral("show_positions"), i18nc ("@action", "Show Positions"), Qt::Key_W, S_POSNS);
+    keyControlDebug (QStringLiteral("logging"),      i18nc ("@action", "Start Logging"), Qt::Key_G, LOGGING);
+    keyControlDebug (QStringLiteral("show_hero"),    i18nc ("@action", "Show Hero"), Qt::Key_E, S_HERO);
+    keyControlDebug (QStringLiteral("show_obj"),     i18nc ("@action", "Show Object"), Qt::Key_Slash, S_OBJ);
 
-    keyControlDebug (QStringLiteral("show_enemy_0"), i18n ("Show Enemy") + QLatin1Char('0'), Qt::Key_0, ENEMY_0);
-    keyControlDebug (QStringLiteral("show_enemy_1"), i18n ("Show Enemy") + QLatin1Char('1'), Qt::Key_1, ENEMY_1);
-    keyControlDebug (QStringLiteral("show_enemy_2"), i18n ("Show Enemy") + QLatin1Char('2'), Qt::Key_2, ENEMY_2);
-    keyControlDebug (QStringLiteral("show_enemy_3"), i18n ("Show Enemy") + QLatin1Char('3'), Qt::Key_3, ENEMY_3);
-    keyControlDebug (QStringLiteral("show_enemy_4"), i18n ("Show Enemy") + QLatin1Char('4'), Qt::Key_4, ENEMY_4);
-    keyControlDebug (QStringLiteral("show_enemy_5"), i18n ("Show Enemy") + QLatin1Char('5'), Qt::Key_5, ENEMY_5);
-    keyControlDebug (QStringLiteral("show_enemy_6"), i18n ("Show Enemy") + QLatin1Char('6'), Qt::Key_6, ENEMY_6);
+    keyControlDebug (QStringLiteral("show_enemy_0"), i18nc ("@action", "Show Enemy") + QLatin1Char('0'), Qt::Key_0, ENEMY_0);
+    keyControlDebug (QStringLiteral("show_enemy_1"), i18nc ("@action", "Show Enemy") + QLatin1Char('1'), Qt::Key_1, ENEMY_1);
+    keyControlDebug (QStringLiteral("show_enemy_2"), i18nc ("@action", "Show Enemy") + QLatin1Char('2'), Qt::Key_2, ENEMY_2);
+    keyControlDebug (QStringLiteral("show_enemy_3"), i18nc ("@action", "Show Enemy") + QLatin1Char('3'), Qt::Key_3, ENEMY_3);
+    keyControlDebug (QStringLiteral("show_enemy_4"), i18nc ("@action", "Show Enemy") + QLatin1Char('4'), Qt::Key_4, ENEMY_4);
+    keyControlDebug (QStringLiteral("show_enemy_5"), i18nc ("@action", "Show Enemy") + QLatin1Char('5'), Qt::Key_5, ENEMY_5);
+    keyControlDebug (QStringLiteral("show_enemy_6"), i18nc ("@action", "Show Enemy") + QLatin1Char('6'), Qt::Key_6, ENEMY_6);
 }
 
 QAction * KGoldrunner::gameAction (const QString & name,
@@ -874,7 +874,7 @@ bool KGoldrunner::getDirectories()
                                            QStringLiteral("system/")
                                            , QStandardPaths::LocateDirectory);
     if (systemDataDir.length() <= 0) {
-        KGrMessage::information (this, i18n ("Get Folders"),
+        KGrMessage::information (this, i18nc ("@window:title", "Get Folders"),
         i18n ("Cannot find system games sub-folder '/system/' "
         "in areas '%1'.",
         appDataLocations.join(QLatin1Char(';'))));
@@ -908,67 +908,67 @@ bool KGoldrunner::queryClose()
 void KGoldrunner::setupEditToolbarActions()
 {
     QAction * ed = editAction (QStringLiteral("edit_hint"), EDIT_HINT,
-                               i18n ("Edit Name/Hint"),
-                               i18n ("Edit level name or hint"),
-                               i18n ("Edit text for the name or hint "
+                               i18nc ("@action", "Edit Name/Hint"),
+                               i18nc ("@info:tooltip", "Edit level name or hint"),
+                               i18nc ("@info:whatsthis", "Edits text for the name or hint "
                                      "of a level"));
     ed->setIcon (QIcon::fromTheme( QStringLiteral( "games-hint" )));
-    ed->setIconText (i18n ("Name/Hint"));
+    ed->setIconText (i18nc ("@action", "Name/Hint"));
 
     KToggleAction * free    = editToolbarAction (QStringLiteral("freebg"), FREE,
-                              i18n ("Erase"), i18n ("Space/Erase"),
-                              i18n ("Paint empty squares or erase"),
-                              i18n ("Erase objects or paint empty squares"));
+                              i18nc ("@option:check", "Erase"), i18nc ("@option:check", "Space/Erase"),
+                              i18nc ("@info:tooltip", "Paint empty squares or erase"),
+                              i18nc ("@info:whatsthis", "Erases objects or paint empty squares."));
 
     KToggleAction * edhero  = editToolbarAction (QStringLiteral("edherobg"), HERO,
-                              i18n("Hero"), i18n ("Hero"),
-                              i18n ("Move hero"),
-                              i18n ("Change the hero's starting position"));
+                              i18nc ("@option:check", "Hero"), i18nc ("@option:check", "Hero"),
+                              i18nc ("@info:tooltip", "Move hero"),
+                              i18nc ("@info:whatsthis", "Changes the hero's starting position."));
 
     KToggleAction * edenemy = editToolbarAction (QStringLiteral("edenemybg"), ENEMY,
-                              i18n ("Enemy"), i18n ("Enemy"),
-                              i18n ("Paint enemies"),
-                              i18n ("Paint enemies at their starting positions")
+                              i18nc ("@option:check", "Enemy"), i18nc ("@option:check", "Enemy"),
+                              i18nc ("@info:tooltip", "Paint enemies"),
+                              i18nc ("@info:whatsthis", "Paints enemies at their starting positions.")
                               );
 
     KToggleAction * brick   = editToolbarAction (QStringLiteral("brickbg"), BRICK,
-                              i18n ("Brick"), i18n ("Brick"),
-                              i18n ("Paint bricks (can dig)"),
-                              i18n ("Paint bricks (diggable objects)"));
+                              i18nc ("@option:check", "Brick"), i18nc ("@option:check", "Brick"),
+                              i18nc ("@info:tooltip", "Paint bricks (can dig)"),
+                              i18nc ("@info:whatsthis", "Paints bricks (diggable objects)."));
 
     KToggleAction* concrete = editToolbarAction (QStringLiteral("concretebg"), CONCRETE,
-                              i18n ("Concrete"), i18n ("Concrete"),
-                              i18n ("Paint concrete (cannot dig)"),
-                              i18n ("Paint concrete objects (not diggable)"));
+                              i18nc ("@option:check", "Concrete"), i18nc ("@option:check", "Concrete"),
+                              i18nc ("@info:tooltip", "Paint concrete (cannot dig)"),
+                              i18nc ("@info:whatsthis", "Paints concrete objects (not diggable)."));
 
     KToggleAction * fbrick  = editToolbarAction (QStringLiteral("fbrickbg"), FBRICK,
-                              i18n ("Trap"), i18n ("Trap/False Brick"),
-                              i18n ("Paint traps or false bricks "
+                              i18nc ("@option:check", "Trap"), i18nc ("@option:check", "Trap/False Brick"),
+                              i18nc ("@info:tooltip", "Paint traps or false bricks "
                                     "(can fall through)"),
-                              i18n ("Paint traps or false bricks "
-                                    "(can fall through)"));
+                              i18nc ("@info:whatsthis", "Paints traps or false bricks "
+                                    "(can fall through)."));
 
     KToggleAction * ladder  = editToolbarAction (QStringLiteral("ladderbg"), LADDER,
-                              i18n ("Ladder"), i18n ("Ladder"),
-                              i18n ("Paint ladders"),
-                              i18n ("Paint ladders (ways to go up or down)"));
+                              i18nc ("@option:check", "Ladder"), i18nc ("@option:check", "Ladder"),
+                              i18nc ("@info:tooltip", "Paint ladders"),
+                              i18nc ("@info:whatsthis", "Paints ladders (ways to go up or down)."));
 
     KToggleAction * hladder = editToolbarAction (QStringLiteral("hladderbg"), HLADDER,
-                              i18n ("H Ladder"), i18n ("Hidden Ladder"),
-                              i18n ("Paint hidden ladders"),
-                              i18n ("Paint hidden ladders, which appear "
-                                    "when all the gold is gone"));
+                              i18nc ("@option:check", "H Ladder"), i18nc ("@option:check", "Hidden Ladder"),
+                              i18nc ("@info:tooltip", "Paint hidden ladders"),
+                              i18nc ("@info:whatsthis", "Paints hidden ladders, which appear "
+                                    "when all the gold is gone."));
 
     KToggleAction * bar     = editToolbarAction (QStringLiteral("polebg"), BAR,
-                              i18n ("Bar"), i18n ("Bar/Pole"),
-                              i18n ("Paint bars or poles"),
-                              i18n ("Paint bars or poles (can fall from these)")
+                              i18nc ("@option:check", "Bar"), i18nc ("@option:check", "Bar/Pole"),
+                              i18nc ("@info:tooltip", "Paint bars or poles"),
+                              i18nc ("@info:whatsthis", "Paints bars or poles (can fall from these).")
                               );
 
     KToggleAction * nugget  = editToolbarAction (QStringLiteral("nuggetbg"), NUGGET,
-                              i18n ("Gold"), i18n ("Gold/Treasure"),
-                              i18n ("Paint gold (or other treasure)"),
-                              i18n ("Paint gold pieces (or other treasure)"));
+                              i18nc ("@option:check", "Gold"), i18nc ("@option:check", "Gold/Treasure"),
+                              i18nc ("@info:tooltip", "Paint gold (or other treasure)"),
+                              i18nc ("@info:whatsthis", "Paints gold pieces (or other treasure)."));
 
     QActionGroup* editButtons = new QActionGroup (this);
     editButtons->setExclusive (true);

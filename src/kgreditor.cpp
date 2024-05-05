@@ -63,7 +63,7 @@ bool KGrEditor::createLevel (int pGameIndex)
     }
 
     if (! ownerOK (USER)) {
-        KGrMessage::information (view, i18n ("Create Level"),
+        KGrMessage::information (view, i18nc("@title:window", "Create Level"),
                 i18n ("You cannot create and save a level "
                 "until you have created a game to hold "
                 "it. Try menu item \"Create Game\"."));
@@ -112,7 +112,7 @@ bool KGrEditor::updateLevel (int pGameIndex, int level)
     }
 
     if (! ownerOK (USER)) {
-        KGrMessage::information (view, i18n ("Edit Level"),
+        KGrMessage::information (view, i18nc("@title:window", "Edit Level"),
             i18n ("You cannot edit and save a level until you "
             "have created a game and a level. Try menu item \"Create Game\"."));
         return false;
@@ -134,7 +134,7 @@ bool KGrEditor::updateLevel (int pGameIndex, int level)
     }
 
     if (gameList.at(gameIndex)->owner == SYSTEM) {
-        KGrMessage::information (view, i18n ("Edit Level"),
+        KGrMessage::information (view, i18nc("@title:window", "Edit Level"),
             i18n ("It is OK to edit a system level, but you MUST save "
             "the level in one of your own games. You are not just "
             "taking a peek at the hidden ladders "
@@ -239,10 +239,11 @@ bool KGrEditor::saveLevelFile()
         isNew = true;
         // Check if the file is to be inserted in or appended to the game.
         if (levelFile.exists()) {
-            switch (KGrMessage::warning (view, i18n ("Save Level"),
+            switch (KGrMessage::warning (view, i18nc("@title:window", "Save Level"),
                         i18n ("Do you want to insert a level and "
                         "move existing levels up by one?"),
-                        i18n ("&Insert Level"), i18n ("&Cancel"))) {
+                        i18nc ("@action:button", "&Insert Level"),
+                        i18nc ("@action:button", "&Cancel"))) {
 
             case 0:	if (! reNumberLevels (n, selectedLevel,
                                             gameList.at (n)->nLevels, +1)) {
@@ -257,7 +258,7 @@ bool KGrEditor::saveLevelFile()
 
     // Open the output file.
     if (! levelFile.open (QIODevice::WriteOnly)) {
-        KGrMessage::information (view, i18n ("Save Level"),
+        KGrMessage::information (view, i18nc("@title:window", "Save Level"),
                 i18n ("Cannot open file '%1' for output.", filePath));
         return false;
     }
@@ -313,10 +314,10 @@ bool KGrEditor::saveLevelFile()
 bool KGrEditor::moveLevelFile (int pGameIndex, int level)
 {
     if (level <= 0) {
-        KGrMessage::information (view, i18n ("Move Level"),
+        KGrMessage::information (view, i18nc("@title:window", "Move Level"),
                 i18n ("You must first load a level to be moved. Use "
                      "the \"%1\" or \"%2\" menu.",
-                     i18n ("Game"), i18n ("Editor")));
+                     i18nc ("@title:menu", "Game"), i18nc ("@title:menu", "Editor")));
         return false;
     }
     gameIndex = pGameIndex;
@@ -329,7 +330,7 @@ bool KGrEditor::moveLevelFile (int pGameIndex, int level)
     int toL   = fromL;
 
     if (! ownerOK (USER)) {
-        KGrMessage::information (view, i18n ("Move Level"),
+        KGrMessage::information (view, i18nc("@title:window", "Move Level"),
                 i18n ("You cannot move a level until you "
                 "have created a game and at least two levels. Try "
                 "menu item \"Create Game\"."));
@@ -337,7 +338,7 @@ bool KGrEditor::moveLevelFile (int pGameIndex, int level)
     }
 
     if (gameList.at (fromC)->owner != USER) {
-        KGrMessage::information (view, i18n ("Move Level"),
+        KGrMessage::information (view, i18nc("@title:window", "Move Level"),
                 i18n ("Sorry, you cannot move a system level."));
         return false;
     }
@@ -352,7 +353,7 @@ bool KGrEditor::moveLevelFile (int pGameIndex, int level)
         toC = gameIndex;
 
         if ((toC == fromC) && (toL == fromL)) {
-            KGrMessage::information (view, i18n ("Move Level"),
+            KGrMessage::information (view, i18nc("@title:window", "Move Level"),
                     i18n ("You must change the level or the game or both."));
         }
     }
@@ -415,7 +416,7 @@ bool KGrEditor::deleteLevelFile (int pGameIndex, int level)
     gameIndex = pGameIndex;
 
     if (! ownerOK (USER)) {
-        KGrMessage::information (view, i18n ("Delete Level"),
+        KGrMessage::information (view, i18nc("@title:window", "Delete Level"),
                 i18n ("You cannot delete a level until you "
                 "have created a game and a level. Try "
                 "menu item \"Create Game\"."));
@@ -438,10 +439,11 @@ bool KGrEditor::deleteLevelFile (int pGameIndex, int level)
     // Delete the file for the selected game and level.
     if (levelFile.exists()) {
         if (selectedLevel < gameList.at (n)->nLevels) {
-            switch (KGrMessage::warning (view, i18n ("Delete Level"),
+            switch (KGrMessage::warning (view, i18nc("@title:window", "Delete Level"),
                                 i18n ("Do you want to delete a level and "
                                 "move higher levels down by one?"),
-                                i18n ("&Delete Level"), i18n ("&Cancel"))) {
+                                i18nc ("@action:button", "&Delete Level"),
+                                i18nc ("@action:button", "&Cancel"))) {
             case 0:	break;
             case 1:	return false; break;
             }
@@ -456,7 +458,7 @@ bool KGrEditor::deleteLevelFile (int pGameIndex, int level)
         }
     }
     else {
-        KGrMessage::information (view, i18n ("Delete Level"),
+        KGrMessage::information (view, i18nc("@title:window", "Delete Level"),
                 i18n ("Cannot find file '%1' to be deleted.", filePath));
         return false;
     }
@@ -505,7 +507,7 @@ bool KGrEditor::editGame (int pGameIndex)
         QString ecName = ec->getName();
         int len = ecName.length();
         if (len == 0) {
-            KGrMessage::information (view, i18n ("Save Game Info"),
+            KGrMessage::information (view, i18nc("@title:window", "Save Game Info"),
                 i18n ("You must enter a name for the game."));
             continue;
         }
@@ -515,12 +517,12 @@ bool KGrEditor::editGame (int pGameIndex)
             // The filename prefix could have been entered, so validate it.
             len = ecPrefix.length();
 	    if (len == 0) {
-                KGrMessage::information (view, i18n ("Save Game Info"),
+                KGrMessage::information (view, i18nc("@title:window", "Save Game Info"),
                     i18n ("You must enter a filename prefix for the game."));
                 continue;
             }
             if (len > 5) {
-                KGrMessage::information (view, i18n ("Save Game Info"),
+                KGrMessage::information (view, i18nc("@title:window", "Save Game Info"),
                     i18n ("The filename prefix should not "
                     "be more than 5 characters."));
                 continue;
@@ -534,7 +536,7 @@ bool KGrEditor::editGame (int pGameIndex)
                 }
             }
             if (! allAlpha) {
-                KGrMessage::information (view, i18n ("Save Game Info"),
+                KGrMessage::information (view, i18nc("@title:window", "Save Game Info"),
                     i18n ("The filename prefix should be "
                     "all alphabetic characters."));
                 continue;
@@ -552,7 +554,7 @@ bool KGrEditor::editGame (int pGameIndex)
             }
 
             if (duplicatePrefix) {
-                KGrMessage::information (view, i18n ("Save Game Info"),
+                KGrMessage::information (view, i18nc("@title:window", "Save Game Info"),
                     i18n ("The filename prefix '%1' is already in use.",
                     ecPrefix));
                 continue;
@@ -636,11 +638,12 @@ bool KGrEditor::saveOK ()
 
     if ((shouldSave) || (levelData.layout != savedLevelData.layout)) {
         // If shouldSave == true, level name or hint was edited.
-        switch (KGrMessage::warning (view, i18n ("Editor"),
+        switch (KGrMessage::warning (view, i18nc("@title:window", "Editor"),
                     i18n ("You have not saved your work. Do "
                     "you want to save it now?"),
-                    i18n ("&Save"), i18n ("&Do Not Save"),
-                    i18n ("&Go on editing")))
+                    i18nc ("@action:button", "&Save"),
+                    i18nc ("@action:button", "&Do Not Save"),
+                    i18nc ("@action:button", "&Go on Editing")))
         {
         case 0:
             result = saveLevelFile();	// Save, do next action: or more edits.
@@ -764,7 +767,7 @@ bool KGrEditor::saveGameData (Owner o)
     QString	filePath;
 
     if (o != USER) {
-        KGrMessage::information (view, i18n ("Save Game Info"),
+        KGrMessage::information (view, i18nc("@title:window", "Save Game Info"),
             i18n ("You can only modify user games."));
         return (false);
     }
@@ -775,7 +778,7 @@ bool KGrEditor::saveGameData (Owner o)
 
     // Open the output file.
     if (! c.open (QIODevice::WriteOnly)) {
-        KGrMessage::information (view, i18n ("Save Game Info"),
+        KGrMessage::information (view, i18nc("@title:window", "Save Game Info"),
                 i18n ("Cannot open file '%1' for output.", filePath));
         return (false);
     }

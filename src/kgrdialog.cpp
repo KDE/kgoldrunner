@@ -53,14 +53,14 @@ KGrNHDialog::KGrNHDialog (const QString & levelName, const QString & levelHint,
     mainLayout2->setSpacing (spacing);
     mainLayout2->setContentsMargins(margin, margin, margin, margin);
 
-    QLabel *    nameL  = new QLabel (i18n ("Name of level:"), dad);
+    QLabel *    nameL  = new QLabel (i18nc ("@label:textbox", "Name of level:"), dad);
     mainLayout2->addWidget(nameL);
     mainLayout2->addWidget (nameL);
                         nhName  = new QLineEdit (dad);
                         mainLayout->addWidget(nhName);
     mainLayout2->addWidget (nhName);
 
-    QLabel *    mleL = new QLabel (i18n ("Hint for level:"), dad);
+    auto *    mleL = new QLabel (i18nc ("@label:textbox", "Hint for level:"), dad);
     mainLayout2->addWidget(mleL);
     mainLayout2->addWidget (mleL);
 
@@ -120,7 +120,7 @@ KGrECDialog::KGrECDialog (int action, int gameIndex,
 
     QHBoxLayout *hboxLayout5 = new QHBoxLayout();
     hboxLayout5->setSpacing (spacing);
-    nameL    = new QLabel (i18n ("Name of game:"), dad);
+    nameL    = new QLabel (i18nc ("@label:textbox", "Name of game:"), dad);
     hboxLayout5->addWidget (nameL);
     ecName   = new QLineEdit (dad);
     hboxLayout5->addWidget (ecName);
@@ -128,7 +128,7 @@ KGrECDialog::KGrECDialog (int action, int gameIndex,
 
     QHBoxLayout *hboxLayout6 = new QHBoxLayout();
     hboxLayout6->setSpacing (spacing);
-    prefixL  = new QLabel (i18n ("File name prefix:"), dad);
+    prefixL  = new QLabel (i18nc ("@label:textbox", "File name prefix:"), dad);
     hboxLayout6->addWidget (prefixL);
     ecPrefix = new QLineEdit (dad);
     hboxLayout6->addWidget (ecPrefix);
@@ -136,8 +136,8 @@ KGrECDialog::KGrECDialog (int action, int gameIndex,
 
     //In Qt4, QButtonGroup is no longer a widget...
     ecGrp    = new QButtonGroup (dad);
-    ecTradB  = new QRadioButton (i18n ("Traditional rules"), dad);
-    ecKGrB   = new QRadioButton (i18n ("KGoldrunner rules"), dad);
+    ecTradB  = new QRadioButton (i18nc ("@option:radio", "Traditional rules"), dad);
+    ecKGrB   = new QRadioButton (i18nc ("@option:radio", "KGoldrunner rules"), dad);
     ecGrp->addButton (ecTradB);
     ecGrp->addButton (ecKGrB);
 
@@ -149,7 +149,7 @@ KGrECDialog::KGrECDialog (int action, int gameIndex,
     nLevL    = new QLabel (i18np ("1 level", "%1 levels", 0), dad);
     mainLayout->addWidget (nLevL);
 
-    mleL     = new QLabel (i18n ("About this game:"), dad);
+    mleL     = new QLabel (i18nc ("@label:textbox", "About this game:"), dad);
     mainLayout->addWidget (mleL);
 
     // Set up a widget to hold the wrapped text, using \n for paragraph breaks.
@@ -183,13 +183,13 @@ KGrECDialog::KGrECDialog (int action, int gameIndex,
         QString		s;
         nLevL->		setText (i18np ("1 level", "%1 levels",
                                         myGameList.at (defaultGame)->nLevels));
-        OKText = i18n ("Save Changes");
+        OKText = i18nc ("@action:button", "Save Changes");
     }
     else {					// Create a game.
         ecName->        setText (QString());
         ecPrefix->      setText (QString());
         nLevL->         setText (i18n ("0 levels"));
-        OKText = i18n ("Save New");
+        OKText = i18nc ("@action:button", "Save New");
     }
     KGuiItem::assign(buttonBox->button(QDialogButtonBox::Ok), KGuiItem (OKText));
 

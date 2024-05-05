@@ -187,7 +187,7 @@ void KGrGame::gameActions (const int action)
         break;
     case NEXT_LEVEL:
         if (level >= levelMax) {
-            KGrMessage::information (view, i18n ("Play Next Level"),
+            KGrMessage::information (view, i18nc("@title:window", "Play Next Level"),
                 i18n ("There are no more levels in this game."));
             return;
         }
@@ -257,7 +257,7 @@ void KGrGame::editActions (const int action)
     // dbk << "Level" << level << prefix << gameIndex;
     if (newEditor) {
         if (action == SAVE_EDITS) {
-            KGrMessage::information (view, i18n ("Save Level"),
+            KGrMessage::information (view, i18nc("@title:window", "Save Level"),
                 i18n ("Inappropriate action: you are not editing a level."));
             return;
         }
@@ -417,7 +417,7 @@ void KGrGame::setInitialTheme (const QString & themeFilepath)
 void KGrGame::initGame()
 {
 #ifndef KGAUDIO_BACKEND_OPENAL
-        KGrMessage::information (view, i18n ("No Sound"),
+        KGrMessage::information (view, i18nc("@title:window", "No Sound"),
             i18n ("Warning: This copy of KGoldrunner has no sound.\n"
                   "\n"
                   "This is because no development versions of the OpenAL and "
@@ -622,7 +622,7 @@ void KGrGame::interruptDemo()
         setPlayback (false);
         levelMax = gameList.at (gameIndex)->nLevels;
         freeze (UserPause, true);
-        KGrMessage::information (view, i18n ("Game Paused"),
+        KGrMessage::information (view, i18nc("@title:window", "Game Paused"),
             i18n ("The replay has stopped and the game is pausing while you "
                   "prepare to go on playing. Please press the Pause key "
                   "(default P or Esc) when you are ready."),
@@ -667,13 +667,13 @@ void KGrGame::replayLastLevel()
         demoType = REPLAY_LAST;
         if (! startDemo (USER, lastPrefix, lastLevel)) {
             setPlayback (false);
-            KGrMessage::information (view, i18n ("Replay Last Level"),
+            KGrMessage::information (view, i18nc("@title:window", "Replay Last Level"),
                 i18n ("ERROR: Could not find and replay a recording of "
                       "the last level you played."));
         }
     }
     else {
-        KGrMessage::information (view, i18n ("Replay Last Level"),
+        KGrMessage::information (view, i18nc("@title:window", "Replay Last Level"),
             i18n ("There is no last level to replay.  You need to play a "
                   "level to completion, win or lose, before you can use "
                   "the Replay Last Level action."));
@@ -709,29 +709,29 @@ void KGrGame::quickStartDialog()
     buttonBox->setOrientation (Qt::Vertical);
 
     // Set up the PLAY button.
-    buttonBox->button (QDialogButtonBox::Ok)->setText(i18nc ("Button text: start playing a game", "&PLAY"));
-    buttonBox->button (QDialogButtonBox::Ok)->setToolTip(i18n ("Start playing this level"));
+    buttonBox->button (QDialogButtonBox::Ok)->setText(i18nc ("@action:button start playing a game", "&PLAY"));
+    buttonBox->button (QDialogButtonBox::Ok)->setToolTip(i18nc ("@info:tooltip", "Start playing this level"));
     buttonBox->button (QDialogButtonBox::Ok)->setWhatsThis(
-            i18n ("Set up to start playing the game and level being shown, "
+            i18nc ("@info:whatsthis", "Set up to start playing the game and level being shown, "
                  "as soon as you click, move the mouse or press a key"));
 
     // Set up the Quit button.
-    buttonBox->button (QDialogButtonBox::Cancel)->setText(i18n ("&Quit"));
-    buttonBox->button (QDialogButtonBox::Cancel)->setToolTip(i18n ("Close KGoldrunner"));
+    buttonBox->button (QDialogButtonBox::Cancel)->setText(i18nc ("@action:button", "&Quit"));
+    buttonBox->button (QDialogButtonBox::Cancel)->setToolTip(i18nc ("@info:tooltip", "Close KGoldrunner"));
 
     // Set up the New Game button.
-    newGameButton->setText(i18n ("&New Game..."));
-    newGameButton->setToolTip (i18n ("Start a different game or level"));
+    newGameButton->setText(i18nc ("@action:button", "&New Game…"));
+    newGameButton->setToolTip (i18nc ("@info:tooltip", "Start a different game or level"));
     newGameButton->setWhatsThis(
-            i18n ("Use the Select Game dialog box to choose a "
+            i18nc ("@info:whatsthis", "Use the Select Game dialog box to choose a "
                  "different game or level and start playing it"));
 
     // Set up the Use Menu button.
-    useMenuButton->setText(i18n ("&Use Menu"));
+    useMenuButton->setText(i18nc ("@action:button", "&Use Menu"));
     useMenuButton->setToolTip(
-            i18n ("Use the menus to choose other actions"));
+            i18nc ("@info:tooltip", "Use the menus to choose other actions"));
     useMenuButton->setWhatsThis(
-            i18n ("Before playing, use the menus to choose other actions, "
+            i18nc ("@info:whatsthis", "Before playing, use the menus to choose other actions, "
                  "such as loading a saved game or changing the theme"));
 
     // Add the KGoldrunner application icon to the dialog box.
@@ -779,7 +779,7 @@ void KGrGame::quickStartUseMenu()
     qs->accept();
     freeze (ProgramPause, false);
     freeze (UserPause, true);
-    KGrMessage::information (view, i18n ("Game Paused"),
+    KGrMessage::information (view, i18nc("@title:window", "Game Paused"),
             i18n ("The game is halted. You will need to press the Pause key "
                   "(default P or Esc) when you are ready to play."));
 
@@ -833,7 +833,7 @@ void KGrGame::runReplay (const int action,
             setPlayback (true);	// Set playback again (startDemo() cleared it).
             if (! startDemo
                 (SYSTEM, gameList.at (selectedGame)->prefix, selectedLevel)) {
-                KGrMessage::information (view, i18n ("Show a Solution"),
+                KGrMessage::information (view, i18nc("@title:window", "Show a Solution"),
                     i18n ("Sorry, although all levels of KGoldrunner can be "
                           "solved, no solution has been recorded yet for the "
                           "level you selected."), QStringLiteral("Show_noSolutionRecorded"));
@@ -845,7 +845,7 @@ void KGrGame::runReplay (const int action,
         demoType = REPLAY_ANY;
         if (! startDemo
             (USER,  gameList.at (selectedGame)->prefix, selectedLevel)) {
-            KGrMessage::information (view, i18n ("Replay Any Level"),
+            KGrMessage::information (view, i18nc("@title:window", "Replay Any Level"),
                 i18n ("Sorry, you do not seem to have played and recorded "
                       "the selected level before."), QStringLiteral("Show_noReplay"));
         }
@@ -1062,8 +1062,9 @@ void KGrGame::herosDead()
         // Offer the player a chance to start this level again with 5 new lives.
         QString gameOver = i18n ("<NOBR><B>GAME OVER !!!</B></NOBR><P>"
                                  "Would you like to try this level again?</P>");
-        switch (KGrMessage::warning (view, i18n ("Game Over"), gameOver,
-                            i18n ("&Try Again"), i18n ("&Finish"))) {
+        switch (KGrMessage::warning (view, i18nc("@title:window", "Game Over"), gameOver,
+                            i18nc ("@action:button", "&Try Again"),
+                            i18nc ("@action:button", "&Finish"))) {
         case 0:
             freeze (ProgramPause, false);		// Offer accepted.
             newGame (level, gameIndex);
@@ -1294,13 +1295,14 @@ void KGrGame::freeze (const bool userAction, const bool on_off)
 void KGrGame::showHint()
 {
     // Put out a hint for this level.
-    QString caption = i18n ("Hint");
+    const QString caption = i18nc("@title:window", "Hint");
 
     if (levelHint.length() > 0) {
 	freeze (ProgramPause, true);
 	// TODO - IDW. Check if a solution exists BEFORE showing the extra button.
 	switch (KGrMessage::warning (view, caption, levelHint,
-			    i18n ("&OK"), i18n ("&Show a Solution"))) {
+			    i18nc ("@action:button", "&Ok"),
+			    i18nc ("@action:button", "&Show a Solution"))) {
 	case 0:
 	    freeze (ProgramPause, false);	// No replay requested.
 	    break;
@@ -1416,9 +1418,9 @@ void KGrGame::kbControl (const int dirn, const bool pressed)
                 "Hero. Do you want to switch automatically to keyboard "
                 "control? Pointer control is easier to use in the long term "
                 "- like riding a bike rather than walking!"),
-                i18n ("Switch to Keyboard Mode"),
-                KGuiItem (i18n ("Switch to &Keyboard Mode")),
-                KGuiItem (i18n ("Stay in &Mouse Mode")),
+                i18nc("@title:window", "Switch to Keyboard Mode"),
+                KGuiItem (i18nc ("@action:button", "Switch to &Keyboard Mode")),
+                KGuiItem (i18nc ("@action:button", "Stay in &Mouse Mode")),
                 i18n ("Keyboard Mode")))
         {
         case KMessageBox::PrimaryAction:
@@ -1453,10 +1455,10 @@ void KGrGame::kbControl (const int dirn, const bool pressed)
 void KGrGame::saveGame()		// Save game ID, score and level.
 {
     if (editor) {
-        myMessage (view, i18n ("Save Game"),
+        myMessage (view, i18nc("@title:window", "Save Game"),
         i18n ("Sorry, you cannot save your game play while you are editing. "
         "Please try menu item \"%1\".",
-        i18n ("&Save Edits...")));
+        i18nc ("@action", "&Save Edits…")));
         return;
     }
     if (playback) {
@@ -1479,7 +1481,7 @@ void KGrGame::saveGame()		// Save game ID, score and level.
     QFile file2 (userDataDir + QStringLiteral("savegame.tmp"));
 
     if (! file2.open (QIODevice::WriteOnly)) {
-        KGrMessage::information (view, i18n ("Save Game"),
+        KGrMessage::information (view, i18nc("@title:window", "Save Game"),
                 i18n ("Cannot open file '%1' for output.",
                  userDataDir + QStringLiteral("savegame.tmp")));
         return;
@@ -1489,7 +1491,7 @@ void KGrGame::saveGame()		// Save game ID, score and level.
 
     if (file1.exists()) {
         if (! file1.open (QIODevice::ReadOnly)) {
-            KGrMessage::information (view, i18n ("Save Game"),
+            KGrMessage::information (view, i18nc("@title:window", "Save Game"),
                 i18n ("Cannot open file '%1' for read-only.",
                  userDataDir + QStringLiteral("savegame.dat")));
             return;
@@ -1508,13 +1510,13 @@ void KGrGame::saveGame()		// Save game ID, score and level.
 
     if (KGrGameIO::safeRename (view, userDataDir+QStringLiteral("savegame.tmp"),
                                userDataDir+QStringLiteral("savegame.dat"))) {
-        KGrMessage::information (view, i18n ("Save Game"),
+        KGrMessage::information (view, i18nc("@title:window", "Save Game"),
             i18n ("Please note: for reasons of simplicity, your saved game "
             "position and score will be as they were at the start of this "
             "level, not as they are now."));
     }
     else {
-        KGrMessage::information (view, i18n ("Save Game"),
+        KGrMessage::information (view, i18nc("@title:window", "Save Game"),
                                 i18n ("Error: Failed to save your game."));
     }
 }
@@ -1527,13 +1529,13 @@ bool KGrGame::selectSavedGame (int & selectedGame, int & selectedLevel)
     QFile savedGames (userDataDir + QStringLiteral("savegame.dat"));
     if (! savedGames.exists()) {
         // Use myMessage() because it stops the game while the message appears.
-        myMessage (view, i18n ("Load Game"),
+        myMessage (view, i18nc("@title:window", "Load Game"),
                          i18n ("Sorry, there are no saved games."));
         return false;
     }
 
     if (! savedGames.open (QIODevice::ReadOnly)) {
-        myMessage (view, i18n ("Load Game"),
+        myMessage (view, i18nc("@title:window", "Load Game"),
                          i18n ("Cannot open file '%1' for read-only.",
                          userDataDir + QStringLiteral("savegame.dat")));
         return false;
@@ -1571,7 +1573,7 @@ bool KGrGame::selectSavedGame (int & selectedGame, int & selectedLevel)
             result = true;
         }
         else {
-            KGrMessage::information (view, i18n ("Load Game"),
+            KGrMessage::information (view, i18nc("@title:window", "Load Game"),
                 i18n ("Cannot find the game with prefix '%1'.", pr));
         }
     }
@@ -1648,7 +1650,7 @@ void KGrGame::checkHighScore()
     if (prevHigh) {
         if (! high1.open (QIODevice::ReadOnly)) {
             QString high1_name = high1.fileName();
-            KGrMessage::information (view, i18n ("Check for High Score"),
+            KGrMessage::information (view, i18nc("@title:window", "Check for High Score"),
                 i18n ("Cannot open file '%1' for read-only.", high1_name));
             return;
         }
@@ -1687,7 +1689,7 @@ void KGrGame::checkHighScore()
     QDataStream s2;
 
     if (! high2.open (QIODevice::WriteOnly)) {
-        KGrMessage::information (view, i18n ("Check for High Score"),
+        KGrMessage::information (view, i18nc("@title:window", "Check for High Score"),
                 i18n ("Cannot open file '%1' for output.",
                  userDataDir + QStringLiteral("hi_") + prefix + QStringLiteral(".tmp")));
         return;
@@ -1802,11 +1804,11 @@ void KGrGame::checkHighScore()
     if (KGrGameIO::safeRename (view, high2.fileName(),
                 userDataDir + QStringLiteral("hi_") + prefix + QStringLiteral(".dat"))) {
         // Remove a redundant popup message.
-        // KGrMessage::information (view, i18n ("Save High Score"),
+        // KGrMessage::information (view, i18nc("@title:window", "Save High Score"),
                                 // i18n ("Your high score has been saved."));
     }
     else {
-        KGrMessage::information (view, i18n ("Save High Score"),
+        KGrMessage::information (view, i18nc("@title:window", "Save High Score"),
                             i18n ("Error: Failed to save your high score."));
     }
 
@@ -1819,7 +1821,7 @@ void KGrGame::showHighScores()
 {
     // Don't keep high scores for tutorial games.
     if (prefix.left (4) == QLatin1String("tute")) {
-        KGrMessage::information (view, i18n ("Show High Scores"),
+        KGrMessage::information (view, i18nc("@title:window", "Show High Scores"),
                 i18n ("Sorry, we do not keep high scores for tutorial games."));
         return;
     }
@@ -1842,7 +1844,7 @@ void KGrGame::showHighScores()
     if (! high1.exists()) {
         high1.setFileName (systemDataDir + QStringLiteral("hi_") + prefix + QStringLiteral(".dat"));
         if (! high1.exists()) {
-            KGrMessage::information (view, i18n ("Show High Scores"),
+            KGrMessage::information (view, i18nc("@title:window", "Show High Scores"),
                 i18n("Sorry, there are no high scores for the \"%1\" game yet.",
                          gameList.at (gameIndex)->name));
             return;
@@ -1851,7 +1853,7 @@ void KGrGame::showHighScores()
 
     if (! high1.open (QIODevice::ReadOnly)) {
         QString high1_name = high1.fileName();
-        KGrMessage::information (view, i18n ("Show High Scores"),
+        KGrMessage::information (view, i18nc("@title:window", "Show High Scores"),
             i18n ("Cannot open file '%1' for read-only.", high1_name));
         return;
     }
@@ -1877,11 +1879,11 @@ void KGrGame::showHighScores()
     mainLayout->addWidget (scores, 50);
     scores->setColumnCount (5);
     scores->setHeaderLabels ({
-        i18nc ("1, 2, 3 etc.", "Rank"),
-        i18nc ("Person", "Name"),
-        i18nc ("Game level reached", "Level"),
-        i18n ("Score"),
-        i18n ("Date"),
+        i18nc ("@title:column 1, 2, 3 etc.", "Rank"),
+        i18nc ("@title:column person", "Name"),
+        i18nc ("@title:column game level reached", "Level"),
+        i18nc ("@title:column", "Score"),
+        i18nc ("@title:column", "Date"),
     });
     scores->setRootIsDecorated (false);
 
@@ -2011,17 +2013,17 @@ bool KGrGame::loadGameData (Owner o)
     case NotFound:
         // If the user has not yet created a collection, don't worry.
         if (o == SYSTEM) {
-            KGrMessage::information (view, i18n ("Load Game Info"),
+            KGrMessage::information (view, i18nc("@title:window", "Load Game Info"),
                 i18n ("Cannot find game info file '%1'.", filePath));
         }
         break;
     case NoRead:
     case NoWrite:
-        KGrMessage::information (view, i18n ("Load Game Info"),
+        KGrMessage::information (view, i18nc("@title:window", "Load Game Info"),
             i18n ("Cannot open file '%1' for read-only.", filePath));
         break;
     case UnexpectedEOF:
-        KGrMessage::information (view, i18n ("Load Game Info"),
+        KGrMessage::information (view, i18nc("@title:window", "Load Game Info"),
             i18n ("Reached end of file '%1' before finding end of game-data.",
                 filePath));
         break;
@@ -2046,12 +2048,12 @@ void KGrGame::saveSolution (const QString & prefix, const int levelNo)
     if (initRecordingData (USER, prefix, levelNo, true)) {
 	// But instead just save the recording data on a solution file.
     saveRecording (QStringLiteral("sol_"));
-	KGrMessage::information (view, i18n ("Save A Solution"),
+	KGrMessage::information (view, i18nc("@title:window", "Save a Solution"),
             i18n ("Your solution to level %1 has been saved on file %2",
                   levelNo, userDataDir + QStringLiteral("sol_") + prefix + QStringLiteral(".txt")));
     }
     else {
-	KGrMessage::information (view, i18n ("Save A Solution"),
+	KGrMessage::information (view, i18nc("@title:window", "Save a Solution"),
 	    i18n ("Sorry, you do not seem to have played and recorded "
           "the selected level before."), QStringLiteral("Show_noRecording"));
     }
