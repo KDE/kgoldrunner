@@ -363,10 +363,11 @@ void KGoldrunner::setupActions()
 
 #ifdef KGAUDIO_BACKEND_OPENAL
     // Sound effects on/off
-                                  settingAction (QStringLiteral("options_sounds"), PLAY_SOUNDS,
+    KToggleAction * playSounds  = settingAction (QStringLiteral("options_sounds"), PLAY_SOUNDS,
                                   i18nc ("@option:check", "&Play Sounds"),
                                   i18nc ("@info:tooltip", "Play sound effects"),
                                   i18nc ("@info:whatsthis", "Plays sound effects during the game."));
+    playSounds->setIcon(QIcon::fromTheme(QStringLiteral("speaker")));
 
                                   settingAction (QStringLiteral("options_steps"), PLAY_STEPS,
                                   i18nc ("@option:check", "Play &Footstep Sounds"),
