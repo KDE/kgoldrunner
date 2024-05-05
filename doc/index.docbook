@@ -152,7 +152,7 @@ ordinary bricks.</para>
 <para>&kgoldrunner; begins by showing you a recorded demonstration of play. You
 can terminate this by clicking on the playing area with the mouse, pressing
 the &Space; bar or selecting a menu item or shortcut (such as <menuchoice>
-<guimenu>Game</guimenu><guimenuitem>New Game...</guimenuitem></menuchoice> or
+<guimenu>Game</guimenu><guimenuitem>New Game…</guimenuitem></menuchoice> or
 <keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo>).
 You can skip this demonstration in future by using menu item <menuchoice>
 <guimenu>Settings</guimenu><guimenuitem>Demo At Start</guimenuitem>
@@ -167,7 +167,7 @@ the same information for Tutorial level 1.</para>
 
 <para>Click on the <guibutton>PLAY</guibutton> button to begin playing
 immediately. Otherwise you can click on the <guibutton>Quit</guibutton> button,
-the <guibutton>New Game...</guibutton> button or the
+the <guibutton>New Game…</guibutton> button or the
 <guibutton>Use Menu</guibutton> button. The first will close &kgoldrunner;, if
 you do not wish to play, the second will show you a
 <link linkend="select-game-dialog">Select Game</link> dialog,
@@ -229,7 +229,7 @@ honor of the original Apple II game), with the keys
 two-handed by using the arrow keys, &Space;,
 <keycap>Z</keycap> and <keycap>C</keycap>. You can also choose other
 keys, on the <menuchoice><guimenu>Settings</guimenu>
-<guimenuitem>Configure Shortcuts...</guimenuitem></menuchoice> menu item.</para>
+<guimenuitem>Configure Shortcuts…</guimenuitem></menuchoice> menu item.</para>
 
 <para>You enter keyboard mode by pressing one of the keys that can
 control the hero or by selecting the <menuchoice><guimenu>Settings</guimenu>
@@ -441,7 +441,7 @@ menu and the <guimenuitem>Show a Solution</guimenuitem>,
 solutions and replays can be interrupted at any time by clicking with
 the mouse on the playing area, pressing the &Space; bar or selecting a menu
 item or shortcut (such as <menuchoice><guimenu>Game</guimenu>
-<guimenuitem>New Game...</guimenuitem></menuchoice> or <keycombo
+<guimenuitem>New Game…</guimenuitem></menuchoice> or <keycombo
 action="simul">&Ctrl;<keycap>N</keycap></keycombo>).</para>
 
 <para><guimenuitem>Instant Replay</guimenuitem> and
@@ -582,7 +582,7 @@ them.</para>
 </mediaobject>
 </screenshot>
 
-<para>This dialog appears when you select the <guimenuitem>New Game...</guimenuitem>
+<para>This dialog appears when you select the <guimenuitem>New Game…</guimenuitem>
 action and also when you select options from the <guimenu>Editor</guimenu>
 menu or any replay option from the <guimenu>Move</guimenu> menu. You use
 it to choose a game and a level to play, replay, edit, save,
@@ -771,7 +771,7 @@ to contribute, the current author's email address is in the
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo></shortcut>
-<guimenu>Game</guimenu><guimenuitem>New Game...</guimenuitem>
+<guimenu>Game</guimenu><guimenuitem>New Game…</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
@@ -787,7 +787,7 @@ Also it is best to start there if you are going for a high score.</para>
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycombo action="simul">&Ctrl;<keycap>O</keycap></keycombo></shortcut>
-<guimenu>Game</guimenu><guimenuitem>Load Saved Game...</guimenuitem>
+<guimenu>Game</guimenu><guimenuitem>Load Saved Game…</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
@@ -813,7 +813,7 @@ of a game.</para>
 
 <varlistentry>
 <term><menuchoice><shortcut><keycap>S</keycap></shortcut>
-<guimenu>Game</guimenu><guimenuitem>Save Game...</guimenuitem>
+<guimenu>Game</guimenu><guimenuitem>Save Game…</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
@@ -832,14 +832,14 @@ shortcut.</para>
 <varlistentry>
 <term><menuchoice><shortcut>
 <keycombo action="simul">&Ctrl;<keycap>S</keycap></keycombo></shortcut>
-<guimenu>Game</guimenu><guimenuitem>Save Edits...</guimenuitem>
+<guimenu>Game</guimenu><guimenuitem>Save Edits…</guimenuitem>
 </menuchoice>
 </term>
 <listitem><para>This option is enabled only if you have been using
 the Game Editor.  It brings up the <guilabel>Select Game</guilabel> dialog and lets
 you choose a level number and game in which to save your work.  Its
 action is exactly the same as the <menuchoice><guimenu>Editor</guimenu>
-<guimenuitem>Save Edits...</guimenuitem></menuchoice> menu item and
+<guimenuitem>Save Edits…</guimenuitem></menuchoice> menu item and
 the <guiicon>disk</guiicon> icon on the Editor toolbar.</para>
 </listitem>
 </varlistentry>
@@ -847,7 +847,7 @@ the <guiicon>disk</guiicon> icon on the Editor toolbar.</para>
 <varlistentry>
 <term><menuchoice><shortcut>
 <keycombo action="simul">&Shift;<keycap>S</keycap></keycombo></shortcut>
-<guimenu>Game</guimenu><guimenuitem>Save a Solution...</guimenuitem>
+<guimenu>Game</guimenu><guimenuitem>Save a Solution…</guimenuitem>
 </menuchoice>
 </term>
 <listitem><para>Save a solution for a level into a file called
@@ -870,7 +870,7 @@ in your user's data directory.</para>
 <varlistentry>
 <term><menuchoice><shortcut>
 <keycombo action="simul">&Ctrl;<keycap>H</keycap></keycombo></shortcut>
-<guimenu>Game</guimenu><guimenuitem>Show High Scores...</guimenuitem>
+<guimenu>Game</guimenu><guimenuitem>Show High Scores…</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
@@ -916,7 +916,7 @@ are given an opportunity to save your work.</para>
 levels. All can be interrupted and stopped by clicking on the playing area
 with the mouse, pressing the &Space; bar or selecting a menu item or shortcut
 (such as <menuchoice><guimenu>Game</guimenu>
-<guimenuitem>New Game...</guimenuitem></menuchoice> or <keycombo
+<guimenuitem>New Game…</guimenuitem></menuchoice> or <keycombo
 action="simul">&Ctrl;<keycap>N</keycap></keycombo>).</para></tip>
 
 <variablelist>
@@ -1031,14 +1031,14 @@ on.</para>
 <listitem>
 <para>Shows the Editor toolbar and a blank playing area
 on which you can draw a new level.  When done, use the
-<guimenuitem>Save Edits...</guimenuitem> option to assign the new level to a game
+<guimenuitem>Save Edits…</guimenuitem> option to assign the new level to a game
 and level number.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Editor</guimenu><guimenuitem>Edit Level...</guimenuitem>
+<guimenu>Editor</guimenu><guimenuitem>Edit Level…</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
@@ -1052,13 +1052,13 @@ in one of your own games.</para>
 <varlistentry>
 <term><menuchoice><shortcut>
 <keycombo action="simul">&Ctrl;<keycap>S</keycap></keycombo></shortcut>
-<guimenu>Editor</guimenu><guimenuitem>Save Edits...</guimenuitem>
+<guimenu>Editor</guimenu><guimenuitem>Save Edits…</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
 <para>Shows the <guilabel>Select Game</guilabel> dialog with
 appropriate default settings for saving a new or edited level.  You can
-change the game and level number and achieve a <quote>Save As...</quote>
+change the game and level number and achieve a <quote>Save As…</quote>
 effect. This dialog has a special button, <guibutton>Edit Level Name or
 Hint</guibutton>, which shows a dialog where you can add an optional
 name and hint to your level.</para>
@@ -1067,12 +1067,12 @@ name and hint to your level.</para>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Editor</guimenu><guimenuitem>Move Level...</guimenuitem>
+<guimenu>Editor</guimenu><guimenuitem>Move Level…</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
 <para>This is a two-part operation.  Before using <guimenuitem>Move
-Level...</guimenuitem>, you must load a level to be moved by selecting it
+Level…</guimenuitem>, you must load a level to be moved by selecting it
 for play or edit. Then shows the <guilabel>Select Game</guilabel>
 dialog, where you choose a new place
 for the loaded level.  You can change both the game and the level
@@ -1084,7 +1084,7 @@ level.</para>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Editor</guimenu><guimenuitem>Delete Level...</guimenuitem>
+<guimenu>Editor</guimenu><guimenuitem>Delete Level…</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
@@ -1095,7 +1095,7 @@ to delete.  You cannot delete a System level.</para>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Editor</guimenu><guimenuitem>Create Game...</guimenuitem>
+<guimenu>Editor</guimenu><guimenuitem>Create Game…</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
@@ -1110,7 +1110,7 @@ optional description or comment about the game.</para>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Editor</guimenu><guimenuitem>Edit Game Info...</guimenuitem>
+<guimenu>Editor</guimenu><guimenuitem>Edit Game Info…</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
@@ -1337,7 +1337,7 @@ as a shortcut.</para>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Settings</guimenu><guimenuitem>Configure Shortcuts...</guimenuitem>
+<guimenu>Settings</guimenu><guimenuitem>Configure Shortcuts…</guimenuitem>
 </menuchoice></term>
 <listitem>
 <para>In the &kde; desktop this item allows you to change the keyboard
@@ -1374,7 +1374,7 @@ of the &kde; Fundamentals.
 
 <para>Before you create or edit a &kgoldrunner; level, you must create
 a game in which to save it. Use the <menuchoice><guimenu>Editor</guimenu>
-<guimenuitem>Create Game...</guimenuitem></menuchoice> menu item. If you
+<guimenuitem>Create Game…</guimenuitem></menuchoice> menu item. If you
 forget, you will be reminded.</para>
 
 <para>The most important decisions to make when creating a game are to
@@ -1432,7 +1432,7 @@ some hidden ladders that appear when the last gold is collected.</para>
 <title>Editing a Level</title>
 
 <para>Use the <menuchoice><guimenu>Editor</guimenu> <guimenuitem>Edit
-Level...</guimenuitem></menuchoice> menu item to start editing an
+Level…</guimenuitem></menuchoice> menu item to start editing an
 existing level or use the <menuchoice><guimenu>Editor</guimenu>
 <guimenuitem>Create Level</guimenuitem></menuchoice> menu item to start
 editing a new level.</para>
@@ -1449,7 +1449,7 @@ it came from, but you can vary that.</para>
 
 <para>The picture below shows the edit toolbar, which
 appears when you first choose <guimenuitem>Create Level</guimenuitem>
-or <guimenuitem>Edit Level...</guimenuitem> options from the
+or <guimenuitem>Edit Level…</guimenuitem> options from the
 <guimenu>Editor</guimenu> menu and so change from Play to Edit
 mode. It disappears when you go back to Play mode. Note also that, in
 Edit mode, false bricks and hidden ladders are made visible in the
@@ -1457,8 +1457,8 @@ playing area.</para>
 
 <para>The three icons on the left of the edit toolbar have the same
 actions as the <guimenuitem>Create Level</guimenuitem>,
-<guimenuitem>Edit Level...</guimenuitem> and <guimenuitem>Save
-Edits...</guimenuitem> menu options. The other eleven icons are for editing and
+<guimenuitem>Edit Level…</guimenuitem> and <guimenuitem>Save
+Edits…</guimenuitem> menu options. The other eleven icons are for editing and
 painting objects in your level.</para>
 
 
@@ -1511,15 +1511,15 @@ wherever you release the mouse button.</para>
 
 <para>When you have finished painting, save your work using the
 <guiicon>disk</guiicon> icon or the <menuchoice><guimenu>Editor</guimenu>
-<guimenuitem>Save Edits...</guimenuitem></menuchoice> or
-<menuchoice><guimenu>Game</guimenu> <guimenuitem>Save Edits...</guimenuitem></menuchoice>
+<guimenuitem>Save Edits…</guimenuitem></menuchoice> or
+<menuchoice><guimenu>Game</guimenu> <guimenuitem>Save Edits…</guimenuitem></menuchoice>
 menu items. You must always save into your own games, never into the
 System games.</para>
 
 <para>If you are creating a level, you use the <guilabel>Select Game</guilabel> dialog
 to assign it to a game and level number. You use the same dialog if
 you have been editing a level, but the default is to save it where it
-came from. You can change the game and level, to get a <quote>Save as...</quote>
+came from. You can change the game and level, to get a <quote>Save as…</quote>
 effect. If you have been editing a System level you must
 save it as a copy in one of your own games.</para>
 
@@ -1544,12 +1544,12 @@ name and hint.</para>
 <title>Testing a Level</title>
 
 <para>After saving an edited level, you can test it by using the
-<menuchoice><guimenu>Game</guimenu> <guimenuitem>New Game...</guimenuitem></menuchoice>
+<menuchoice><guimenu>Game</guimenu> <guimenuitem>New Game…</guimenuitem></menuchoice>
 menu item or the equivalent keyboard shortcut. By default the game and
 level number are remembered and you can get straight into the level with
 just a few clicks. If you then want to edit some more, the same is true
 when you use the <menuchoice><guimenu>Game</guimenu>
-<guimenuitem>Edit Level...</guimenuitem></menuchoice> menu item again.
+<guimenuitem>Edit Level…</guimenuitem></menuchoice> menu item again.
 It is essential to test every level you compose, to make sure that it is
 possible to complete it and that it is not too easy.</para>
 
@@ -1583,7 +1583,7 @@ the gap) and levels 3 and above in game B are re-numbered up by one
 <title>Deleting a Level</title>
 
 <para>You can use the <menuchoice><guimenu>Editor</guimenu> <guimenuitem>Delete
-Level...</guimenuitem></menuchoice> menu item to remove an unwanted level.
+Level…</guimenuitem></menuchoice> menu item to remove an unwanted level.
 The other levels are re-numbered so as to close the gap in the sequence.</para>
 
 </sect2>
