@@ -657,14 +657,14 @@ void KGrThumbNail::paintEvent (QPaintEvent * /* event (unused) */)
     int		fw = 1;				// Set frame width.
     int		n = width() / FIELDWIDTH;	// Set thumbnail cell-size.
 
-    QColor backgroundColor = QColor ("#000038"); // Midnight blue.
-    QColor brickColor =      QColor ("#9c0f0f"); // Oxygen's brick-red.
-    QColor concreteColor =   QColor ("#585858"); // Dark grey.
-    QColor ladderColor =     QColor ("#a0a0a0"); // Steely grey.
-    QColor poleColor =       QColor ("#a0a0a0"); // Steely grey.
-    QColor heroColor =       QColor ("#00ff00"); // Green.
-    QColor enemyColor =      QColor ("#0080ff"); // Bright blue.
-    QColor gold =            QColor::fromString(QStringLiteral("gold")); // Gold.
+    QColor backgroundColor = QColor (0x00, 0x00, 0x38); // Midnight blue.
+    QColor brickColor =      QColor (0x9c, 0x0f, 0x0f); // Oxygen's brick-red.
+    QColor concreteColor =   QColor (0x58, 0x58, 0x58); // Dark grey.
+    QColor ladderColor =     QColor (0xa0, 0xa0, 0xa0); // Steely grey.
+    QColor poleColor =       QColor (0xa0, 0xa0, 0xa0); // Steely grey.
+    QColor heroColor =       QColor (0x00, 0xff, 0x00); // Green.
+    QColor enemyColor =      QColor (0x00, 0x80, 0xff); // Bright blue.
+    QColor gold =            QColor (0xff, 0xd7, 0x00); // Gold.
 
     pen.setColor (backgroundColor);
     p.setPen (pen);
