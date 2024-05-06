@@ -180,7 +180,7 @@
 > <guimenu
 >Гра</guimenu
 ><guimenuitem
->Нова гра...</guimenuitem
+>Нова гра…</guimenuitem
 ></menuchoice
 > або <keycombo action="simul"
 >&Ctrl;<keycap
@@ -503,7 +503,7 @@
 ><guimenu
 >Гра</guimenu
 > <guimenuitem
->Нова гра...</guimenuitem
+>Нова гра…</guimenuitem
 ></menuchoice
 >).</para>
 
@@ -847,7 +847,7 @@ linkend="settings-menu"
 > <guimenu
 >Гра</guimenu
 > <guimenuitem
->Нова гра...</guimenuitem
+>Нова гра…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -870,7 +870,7 @@ linkend="settings-menu"
 > <guimenu
 >Гра</guimenu
 > <guimenuitem
->Завантажити збережену гру...</guimenuitem
+>Завантажити збережену гру…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -910,7 +910,7 @@ linkend="settings-menu"
 > <guimenu
 >Гра</guimenu
 > <guimenuitem
->Зберегти гру...</guimenuitem
+>Зберегти гру…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -935,7 +935,7 @@ linkend="settings-menu"
 > <guimenu
 >Гра</guimenu
 > <guimenuitem
->Зберегти зміни...</guimenuitem
+>Зберегти зміни…</guimenuitem
 > </menuchoice>
 </term>
 <listitem
@@ -962,7 +962,7 @@ linkend="settings-menu"
 > <guimenu
 >Гра</guimenu
 > <guimenuitem
->Зберегти проходження...</guimenuitem
+>Зберегти проходження…</guimenuitem
 > </menuchoice>
 </term>
 <listitem
@@ -1071,7 +1071,7 @@ linkend="settings-menu"
 > <guimenu
 >Гра</guimenu
 ><guimenuitem
->Нова гра...</guimenuitem
+>Нова гра…</guimenuitem
 ></menuchoice
 > або <keycombo action="simul"
 >&Ctrl;<keycap
@@ -1125,7 +1125,7 @@ linkend="settings-menu"
 ><guimenu
 >Хід</guimenu
 ><guimenuitem
->Показати проходження...</guimenuitem
+>Показати проходження…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1251,7 +1251,7 @@ linkend="settings-menu"
 ><guimenu
 >Редактор</guimenu
 > <guimenuitem
->Редагувати рівень...</guimenuitem
+>Редагувати рівень…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1272,12 +1272,12 @@ linkend="settings-menu"
 > <guimenu
 >Редактор</guimenu
 > <guimenuitem
->Зберегти зміни...</guimenuitem
+>Зберегти зміни…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
 <para
->Відкриває діалогове вікно вибору гри з відповідними типовими параметрами для збереження нового або зміненого рівня. У вікні ви можете змінити гру і номер рівня і таким чином досягти ефекту використання функції «Зберегти як...». У цьому діалоговому вікні є особлива кнопка, <guibutton
+>Відкриває діалогове вікно вибору гри з відповідними типовими параметрами для збереження нового або зміненого рівня. У вікні ви можете змінити гру і номер рівня і таким чином досягти ефекту використання функції «Зберегти як…». У цьому діалоговому вікні є особлива кнопка, <guibutton
 >Редагувати назву або підказку рівня</guibutton
 >, за допомогою якої можна відкрити діалогове вікно, у якому ви можете додати необов’язкову назву і підказку для вашого рівня.</para>
 </listitem>
@@ -1289,7 +1289,7 @@ linkend="settings-menu"
 ><guimenu
 >Редактор</guimenu
 > <guimenuitem
->Перемістити рівень...</guimenuitem
+>Перемістити рівень…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1306,7 +1306,7 @@ linkend="settings-menu"
 ><guimenu
 >Редактор</guimenu
 > <guimenuitem
->Вилучити рівень...</guimenuitem
+>Вилучити рівень…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1321,7 +1321,7 @@ linkend="settings-menu"
 ><guimenu
 >Редактор</guimenu
 > <guimenuitem
->Створити гру...</guimenuitem
+>Створити гру…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1336,7 +1336,7 @@ linkend="settings-menu"
 ><guimenu
 >Редактор</guimenu
 > <guimenuitem
->Редагувати інформацію про гру...</guimenuitem
+>Редагувати інформацію про гру…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1657,7 +1657,7 @@ linkend="settings-menu"
 ><guimenu
 >Параметри</guimenu
 > <guimenuitem
->Налаштування скорочень...</guimenuitem
+>Налаштування скорочень…</guimenuitem
 > </menuchoice
 ></term>
 <listitem>
@@ -1774,7 +1774,7 @@ linkend="settings-menu"
 >, <guimenuitem
 >Редагувати рівень</guimenuitem
 > і <guimenuitem
->Зберегти зміни...</guimenuitem
+>Зберегти зміни…</guimenuitem
 >. Інші одинадцять піктограм призначено для редагування і малювання об’єктів вашого рівня.</para>
 
 
@@ -1853,7 +1853,7 @@ linkend="settings-menu"
 >. Вам завжди слід зберігати рівні у ваших власних, а не системних іграх.</para>
 
 <para
->Якщо ви створюєте рівень, ви можете скористатися діалоговим вікно вибору гри, щоб вказати гру і її рівень, куди буде додано створений вами рівень. Те саме діалогове вікно буде відкрито і якщо ви редагували рівень, але у останньому випадку рівень типово буде збережено на попередньому місці. Для отримання ефекту використання можливості «Зберегти як...» можна скористатися зміною гри і рівня. Якщо ви редагували системний рівень, вам слід буде зберегти його як копію у одній з ваших власних ігор.</para>
+>Якщо ви створюєте рівень, ви можете скористатися діалоговим вікно вибору гри, щоб вказати гру і її рівень, куди буде додано створений вами рівень. Те саме діалогове вікно буде відкрито і якщо ви редагували рівень, але у останньому випадку рівень типово буде збережено на попередньому місці. Для отримання ефекту використання можливості «Зберегти як…» можна скористатися зміною гри і рівня. Якщо ви редагували системний рівень, вам слід буде зберегти його як копію у одній з ваших власних ігор.</para>
 
 </sect2>
 
@@ -2118,7 +2118,7 @@ linkend="settings-menu"
 ><guimenu
 >Хід</guimenu
 > <guimenuitem
->Показати проходження...</guimenuitem
+>Показати проходження…</guimenuitem
 ></menuchoice
 >, щоб перевірити, чи існує записане проходження цього рівня. За допомогою цього пункту ви зможете переглянути деякі зі способів уникнення перешкод цього рівня, але не обов’язково найкращі способи. Часто пройти рівень можна у декілька способів, час кожного з проходжень може бути іншим тощо. Отже, ймовірно, вам не вдасться точно скопіювати записане проходження.</para>
 </listitem>

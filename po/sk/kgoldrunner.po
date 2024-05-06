@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 00:36+0000\n"
+"POT-Creation-Date: 2024-05-06 00:36+0000\n"
 "PO-Revision-Date: 2019-11-18 13:02+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -7633,346 +7633,507 @@ msgstr ""
 "Áno, musíte bežať po hlave nepriateľa --- celou cestou na druh[ stranu! Celé "
 "to vyžaduje pevnú ruku."
 
-#: src/kgoldrunner.cpp:184 src/kgrgame.cpp:723
-#, kde-format
-msgid "&New Game..."
+#: src/kgoldrunner.cpp:184
+#, fuzzy, kde-format
+#| msgid "&New Game..."
+msgctxt "@action"
+msgid "&New Game…"
 msgstr "&Nová hra..."
 
 #: src/kgoldrunner.cpp:187
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Pla&y Next Level"
+msgctxt "@action"
 msgid "Pla&y Next Level"
 msgstr "&Hrať ďalšiu úroveň"
 
 #: src/kgoldrunner.cpp:188
-#, kde-format
-msgid "Play next level."
+#, fuzzy, kde-format
+#| msgid "Play next level."
+msgctxt "@info:tooltip"
+msgid "Play the next level"
 msgstr "Hrať ďalšiu úroveň."
 
 #: src/kgoldrunner.cpp:189
-#, kde-format
-msgid "Try the next level in the game you are playing."
+#, fuzzy, kde-format
+#| msgid "Try the next level in the game you are playing."
+msgctxt "@info:whatsthis"
+msgid "Switches to the next level in the game you are playing."
 msgstr "Skúste ďalšiu úroveň v hre, ktorú hráte."
 
 #: src/kgoldrunner.cpp:196
-#, kde-format
-msgid "&Load Saved Game..."
+#, fuzzy, kde-format
+#| msgid "&Load Saved Game..."
+msgctxt "@action"
+msgid "&Load Saved Game…"
 msgstr "&Načítať uloženú hru..."
 
 #: src/kgoldrunner.cpp:205
-#, kde-format
-msgid "&Save Game..."
-msgstr "&Uložiť hru..."
+#, fuzzy, kde-format
+#| msgid "Save Game"
+msgctxt "@action"
+msgid "&Save Game…"
+msgstr "Uložiť hru"
 
-#: src/kgoldrunner.cpp:211 src/kgoldrunner.cpp:212
-#, kde-format
-msgid "Save A Solution..."
-msgstr "Uložiť riešenie..."
+#: src/kgoldrunner.cpp:211
+#, fuzzy, kde-format
+#| msgid "Save A Solution"
+msgctxt "@action"
+msgid "Save a Solution…"
+msgstr "Uložiť riešenie"
+
+#: src/kgoldrunner.cpp:212
+#, fuzzy, kde-format
+#| msgid "Save A Solution"
+msgctxt "@info:tooltip"
+msgid "Save a solution"
+msgstr "Uložiť riešenie"
 
 #: src/kgoldrunner.cpp:213
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Save a solution for a level into a file called 'sol_&lt;prefix&gt;.txt' "
+#| "in your user's data directory..."
+msgctxt "@info:whatsthis"
 msgid ""
-"Save a solution for a level into a file called 'sol_&lt;prefix&gt;.txt' in "
-"your user's data directory..."
+"Saves a solution for a level into a file called 'sol_&lt;prefix&gt;.txt' in "
+"your user's data directory."
 msgstr ""
 "Uložiť riešenie pre úroveň do súboru s názvom 'sol_&lt;prefix&gt;.txt' do "
 "vášho dátového adresára..."
 
-#: src/kgoldrunner.cpp:246 src/kgrgame.cpp:1303
+#: src/kgoldrunner.cpp:246
 #, fuzzy, kde-format
 #| msgid "&Show A Solution"
+msgctxt "@action"
 msgid "&Show a Solution"
 msgstr "&Ukázať riešenie"
 
 #: src/kgoldrunner.cpp:247
-#, kde-format
-msgid "Show how to win this level."
+#, fuzzy, kde-format
+#| msgid "Show how to win this level."
+msgctxt "@info:tooltip"
+msgid "Show how to win this level"
 msgstr "Ukázať, ako vyhrať túto úroveň."
 
 #: src/kgoldrunner.cpp:248
-#, kde-format
-msgid "Play a recording of how to win this level, if there is one available."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Play a recording of how to win this level, if there is one available."
+msgctxt "@info:whatsthis"
+msgid "Plays a recording of how to win this level, if there is one available."
 msgstr ""
 "Prehrať záznam o tom, ako vyhrať túto úroveň, ak je nejaký k dispozícii."
 
 #: src/kgoldrunner.cpp:252
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Instant Replay"
+msgctxt "@action"
 msgid "&Instant Replay"
 msgstr "&Opakovaný záber"
 
 #: src/kgoldrunner.cpp:253
-#, kde-format
-msgid "Instant replay."
+#, fuzzy, kde-format
+#| msgid "Instant replay."
+msgctxt "@info:tooltip"
+msgid "Instant replay"
 msgstr "Opakovaný záber."
 
 #: src/kgoldrunner.cpp:254
-#, kde-format
-msgid "Show a recording of the level you are currently playing."
+#, fuzzy, kde-format
+#| msgid "Show a recording of the level you are currently playing."
+msgctxt "@info:whatsthis"
+msgid "Shows a recording of the level you are currently playing."
 msgstr "Ukázať záznam úrovne, ktorú práve hráte."
 
 #: src/kgoldrunner.cpp:259
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Replay &Last Level"
+msgctxt "@action"
 msgid "Replay &Last Level"
 msgstr "Prehrať pos&lednú úroveň"
 
 #: src/kgoldrunner.cpp:260
-#, kde-format
-msgid "Replay last level."
+#, fuzzy, kde-format
+#| msgid "Replay last level."
+msgctxt "@info:tooltip"
+msgid "Replay last level"
 msgstr "Prehrať poslednú úroveň."
 
 #: src/kgoldrunner.cpp:261
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Show a recording of the last level you played and finished, regardless of "
+#| "whether you won or lost."
+msgctxt "@info:whatsthis"
 msgid ""
-"Show a recording of the last level you played and finished, regardless of "
+"Shows a recording of the last level you played and finished, regardless of "
 "whether you won or lost."
 msgstr ""
 "Ukázať záznam poslednej úroveň, ktorú ste hrali a skončili bez ohľadu na to, "
 "či ste vyhrali alebo prehrali."
 
 #: src/kgoldrunner.cpp:267
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Replay Any Level"
+msgctxt "@action"
 msgid "&Replay Any Level"
 msgstr "&Prehrať ktorúkoľvek úroveň"
 
 #: src/kgoldrunner.cpp:268
-#, kde-format
-msgid "Replay any level."
+#, fuzzy, kde-format
+#| msgid "Replay any level."
+msgctxt "@info:tooltip"
+msgid "Replay any level"
 msgstr "Prehrať ktorúkoľvek úroveň."
 
 #: src/kgoldrunner.cpp:269
-#, kde-format
-msgid "Show a recording of any level you have played so far."
+#, fuzzy, kde-format
+#| msgid "Show a recording of any level you have played so far."
+msgctxt "@info:whatsthis"
+msgid "Shows a recording of any level you have played so far."
 msgstr "Ukázať záznam akejkoľvek úrovne, ktorú ste doteraz hrali."
 
 #: src/kgoldrunner.cpp:274
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Kill Hero"
+msgctxt "@action"
 msgid "&Kill Hero"
 msgstr "&Zabiť hrdinu"
 
 #: src/kgoldrunner.cpp:275
-#, kde-format
-msgid "Kill Hero."
-msgstr "Zabiť hrdinu."
+#, fuzzy, kde-format
+#| msgid "&Kill Hero"
+msgctxt "@info:tooltip"
+msgid "Kill the hero"
+msgstr "&Zabiť hrdinu"
 
 #: src/kgoldrunner.cpp:276
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Kill the hero, in case he finds himself in a situation from which he "
+#| "cannot escape."
+msgctxt "@info:whatsthis"
 msgid ""
-"Kill the hero, in case he finds himself in a situation from which he cannot "
+"Kills the hero, in case he finds himself in a situation from which he cannot "
 "escape."
 msgstr ""
 "Zabiť hrdinu v prípade, že sa ocitne v situácii, z ktorej nemôže uniknúť."
 
 #: src/kgoldrunner.cpp:293
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Create Level"
+msgctxt "@action"
 msgid "&Create Level"
 msgstr "&Vytvoriť úroveň"
 
 #: src/kgoldrunner.cpp:294
-#, kde-format
-msgid "Create level."
+#, fuzzy, kde-format
+#| msgid "Create level."
+msgctxt "@info:tooltip"
+msgid "Create level"
 msgstr "Vytvoriť úroveň."
 
 #: src/kgoldrunner.cpp:295
-#, kde-format
-msgid "Create a completely new level."
+#, fuzzy, kde-format
+#| msgid "Create a completely new level."
+msgctxt "@info:whatsthis"
+msgid "Creates a completely new level."
 msgstr "Vytvoriť úplne novú úroveň."
 
 #: src/kgoldrunner.cpp:297
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create"
+msgctxt "@action"
 msgid "Create"
 msgstr "Vytvoriť"
 
 #: src/kgoldrunner.cpp:300
-#, kde-format
-msgid "&Edit Level..."
-msgstr "Upraviť úroveň..."
+#, fuzzy, kde-format
+#| msgid "Edit Level"
+msgctxt "@action"
+msgid "&Edit Level…"
+msgstr "Upraviť úroveň"
 
 #: src/kgoldrunner.cpp:301
-#, kde-format
-msgid "Edit level..."
-msgstr "Upraviť úroveň..."
+#, fuzzy, kde-format
+#| msgid "Edit Level"
+msgctxt "@info:tooltip"
+msgid "Edit level"
+msgstr "Upraviť úroveň"
 
 #: src/kgoldrunner.cpp:302
-#, kde-format
-msgid "Edit any level..."
+#, fuzzy, kde-format
+#| msgid "Edit any level..."
+msgctxt "@info:whatsthis"
+msgid "Edits any level."
 msgstr "Upraviť ktorúkoľvek úroveň..."
 
 #: src/kgoldrunner.cpp:304
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action"
 msgid "Edit"
 msgstr "Upraviť"
 
-#: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1459
-#, kde-format
-msgid "&Save Edits..."
+#: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1461
+#, fuzzy, kde-format
+#| msgid "&Save Edits..."
+msgctxt "@action"
+msgid "&Save Edits…"
 msgstr "&Uložiť zmeny..."
 
 #: src/kgoldrunner.cpp:313
-#, kde-format
-msgid "Save edits..."
+#, fuzzy, kde-format
+#| msgid "Save edits..."
+msgctxt "@info:tooltip"
+msgid "Save edits"
 msgstr "Uložiť zmeny..."
 
 #: src/kgoldrunner.cpp:314
-#, kde-format
-msgid "Save your level after editing..."
+#, fuzzy, kde-format
+#| msgid "Save your level after editing..."
+msgctxt "@info:whatsthis"
+msgid "Saves your level after editing."
 msgstr "Uložiť úroveň po úprave..."
 
 #: src/kgoldrunner.cpp:316
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save"
+msgctxt "@action"
 msgid "Save"
 msgstr "Uložiť"
 
 #: src/kgoldrunner.cpp:320
-#, kde-format
-msgid "&Move Level..."
-msgstr "&Presunúť úroveň..."
+#, fuzzy, kde-format
+#| msgid "Move Level"
+msgctxt "@action"
+msgid "&Move Level…"
+msgstr "Presunúť uroveň"
 
 #: src/kgoldrunner.cpp:321
-#, kde-format
-msgid "Move level..."
-msgstr "Presunúť úroveň..."
+#, fuzzy, kde-format
+#| msgid "Move Level"
+msgctxt "@info:tooltip"
+msgid "Move level"
+msgstr "Presunúť uroveň"
 
 #: src/kgoldrunner.cpp:322
-#, kde-format
-msgid "Change a level's number or move it to another game..."
+#, fuzzy, kde-format
+#| msgid "Change a level's number or move it to another game..."
+msgctxt "@info:whatsthis"
+msgid "Changes a level's number or move it to another game."
 msgstr "Zmeniť číslo úrovne alebo sa presunúť do ďalšej hry..."
 
 #: src/kgoldrunner.cpp:326
-#, kde-format
-msgid "&Delete Level..."
-msgstr "O&dstrániť úroveň..."
+#, fuzzy, kde-format
+#| msgid "&Delete Level"
+msgctxt "@action"
+msgid "&Delete Level…"
+msgstr "O&dstrániť úroveň"
 
 #: src/kgoldrunner.cpp:327
-#, kde-format
-msgid "Delete level..."
-msgstr "Odstrániť úroveň..."
+#, fuzzy, kde-format
+#| msgid "Delete Level"
+msgctxt "@info:tooltip"
+msgid "Delete level"
+msgstr "Odstrániť úroveň"
 
 #: src/kgoldrunner.cpp:328
-#, kde-format
-msgid "Delete a level..."
+#, fuzzy, kde-format
+#| msgid "Delete a level..."
+msgctxt "@info:whatsthis"
+msgid "Deletes a level."
 msgstr "Vymazať úroveň..."
 
 #: src/kgoldrunner.cpp:335
-#, kde-format
-msgid "Create &Game..."
-msgstr "Vytvoriť hru..."
+#, fuzzy, kde-format
+#| msgid "Create Game"
+msgctxt "@action"
+msgid "Create &Game…"
+msgstr "Vytvoriť hru"
 
 #: src/kgoldrunner.cpp:336
-#, kde-format
-msgid "Create game..."
-msgstr "Vytvoriť hru..."
+#, fuzzy, kde-format
+#| msgid "Create Game"
+msgctxt "@info:tooltip"
+msgid "Create game"
+msgstr "Vytvoriť hru"
 
 #: src/kgoldrunner.cpp:337
-#, kde-format
-msgid "Create a completely new game..."
+#, fuzzy, kde-format
+#| msgid "Create a completely new game..."
+msgctxt "@info:whatsthis"
+msgid "Creates a completely new game."
 msgstr "Vytvoriť úplne novú hru..."
 
 #: src/kgoldrunner.cpp:340
-#, kde-format
-msgid "Edit Game &Info..."
-msgstr "Upraviť informácie o hre..."
+#, fuzzy, kde-format
+#| msgid "Edit Game Info"
+msgctxt "@action"
+msgid "Edit Game &Info…"
+msgstr "Upraviť informácie o hre"
 
 #: src/kgoldrunner.cpp:341
-#, kde-format
-msgid "Edit game info..."
+#, fuzzy, kde-format
+#| msgid "Edit game info..."
+msgctxt "@info:tooltip"
+msgid "Edit game info"
 msgstr "Upraviť informácie o hre..."
 
 #: src/kgoldrunner.cpp:342
-#, kde-format
-msgid "Change the name, rules or description of a game..."
+#, fuzzy, kde-format
+#| msgid "Change the name, rules or description of a game..."
+msgctxt "@info:whatsthis"
+msgid "Changes the name, rules or description of a game."
 msgstr "Zmeniť názov, pravidlá alebo opis hry..."
 
 #: src/kgoldrunner.cpp:351
-#, kde-format
-msgid "Change &Theme..."
+#, fuzzy, kde-format
+#| msgid "Change &Theme..."
+msgctxt "@action"
+msgid "Change &Theme…"
 msgstr "Zmeniť tému..."
 
 #: src/kgoldrunner.cpp:352
-#, kde-format
-msgid "Change the graphics theme..."
+#, fuzzy, kde-format
+#| msgid "Change the graphics theme..."
+msgctxt "@info:tooltip"
+msgid "Change the graphics theme"
 msgstr "Zmeniť grafickú tému..."
 
 #: src/kgoldrunner.cpp:353
-#, kde-format
-msgid "Alter the visual appearance of the runners and background scene..."
+#, fuzzy, kde-format
+#| msgid "Alter the visual appearance of the runners and background scene..."
+msgctxt "@info:whatsthis"
+msgid "Alters the visual appearance of the runners and background scene."
 msgstr "Zmeniť vzhľad bežcov a pozadia scény..."
 
 #: src/kgoldrunner.cpp:367
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Play Sounds"
+msgctxt "@option:check"
 msgid "&Play Sounds"
 msgstr "Pre&hrávať zvuky"
 
 #: src/kgoldrunner.cpp:368
-#, kde-format
-msgid "Play sound effects."
+#, fuzzy, kde-format
+#| msgid "Play sound effects."
+msgctxt "@info:tooltip"
+msgid "Play sound effects"
 msgstr "Prehrávať zvukové efekty."
 
 #: src/kgoldrunner.cpp:369
-#, kde-format
-msgid "Play sound effects during the game."
+#, fuzzy, kde-format
+#| msgid "Play sound effects during the game."
+msgctxt "@info:whatsthis"
+msgid "Plays sound effects during the game."
 msgstr "Prehrávať zvukové efekty počas hry."
 
-#: src/kgoldrunner.cpp:372
-#, kde-format
+#: src/kgoldrunner.cpp:373
+#, fuzzy, kde-format
+#| msgid "Play &Footstep Sounds"
+msgctxt "@option:check"
 msgid "Play &Footstep Sounds"
 msgstr "&Prehrávať zvuky krokov"
 
-#: src/kgoldrunner.cpp:373 src/kgoldrunner.cpp:374
-#, kde-format
-msgid "Make sounds of player's footsteps."
+#: src/kgoldrunner.cpp:374
+#, fuzzy, kde-format
+#| msgid "Make sounds of player's footsteps."
+msgctxt "@info:tooltip"
+msgid "Make sounds of player's footsteps"
 msgstr "Urobiť zvuky hráčových krokov."
 
-#: src/kgoldrunner.cpp:379
-#, kde-format
-msgid "&Demo At Start"
+#: src/kgoldrunner.cpp:375
+#, fuzzy, kde-format
+#| msgid "Make sounds of player's footsteps."
+msgctxt "@info:whatsthis"
+msgid "Makes sounds of player's footsteps."
+msgstr "Urobiť zvuky hráčových krokov."
+
+#: src/kgoldrunner.cpp:380
+#, fuzzy, kde-format
+#| msgid "&Demo At Start"
+msgctxt "@option:check"
+msgid "&Demo at Start"
 msgstr "&Demo pri spustení"
 
-#: src/kgoldrunner.cpp:380 src/kgoldrunner.cpp:381
-#, kde-format
-msgid "Run a demo when the game starts."
+#: src/kgoldrunner.cpp:381
+#, fuzzy, kde-format
+#| msgid "Run a demo when the game starts."
+msgctxt "@info:tooltip"
+msgid "Run a demo when the game starts"
 msgstr "Prehrať demo pri spustení hry."
 
-#: src/kgoldrunner.cpp:389
-#, kde-format
+#: src/kgoldrunner.cpp:382
+#, fuzzy, kde-format
+#| msgid "Run a demo when the game starts."
+msgctxt "@info:whatsthis"
+msgid "Runs a demo when the game starts."
+msgstr "Prehrať demo pri spustení hry."
+
+#: src/kgoldrunner.cpp:390
+#, fuzzy, kde-format
+#| msgid "&Mouse Controls Hero"
+msgctxt "@option:check"
 msgid "&Mouse Controls Hero"
 msgstr "&Myš ovláda hrdinu"
 
-#: src/kgoldrunner.cpp:390
-#, kde-format
-msgid "Mouse controls hero."
+#: src/kgoldrunner.cpp:391
+#, fuzzy, kde-format
+#| msgid "Mouse controls hero."
+msgctxt "@info:tooltip"
+msgid "Mouse controls hero"
 msgstr "Myš ovláda hrdinu."
 
-#: src/kgoldrunner.cpp:391
-#, kde-format
+#: src/kgoldrunner.cpp:392
+#, fuzzy, kde-format
+#| msgid "Use the mouse to control the hero's moves."
+msgctxt "@info:whatsthis"
 msgid "Use the mouse to control the hero's moves."
 msgstr "Použiť myš pre ovládanie pohybov hrdinu."
 
-#: src/kgoldrunner.cpp:395
-#, kde-format
+#: src/kgoldrunner.cpp:396
+#, fuzzy, kde-format
+#| msgid "&Keyboard Controls Hero"
+msgctxt "@option:check"
 msgid "&Keyboard Controls Hero"
 msgstr "&Klávesnica ovláda hrdinu"
 
-#: src/kgoldrunner.cpp:396
-#, kde-format
-msgid "Keyboard controls hero."
+#: src/kgoldrunner.cpp:397
+#, fuzzy, kde-format
+#| msgid "Keyboard controls hero."
+msgctxt "@info:tooltip"
+msgid "Keyboard controls hero"
 msgstr "Klávesnica ovláda hrdinu."
 
-#: src/kgoldrunner.cpp:397
-#, kde-format
+#: src/kgoldrunner.cpp:398
+#, fuzzy, kde-format
+#| msgid "Use the keyboard to control the hero's moves."
+msgctxt "@info:whatsthis"
 msgid "Use the keyboard to control the hero's moves."
 msgstr "Použiť klávesnicu pre ovládanie pohybov hrdinu."
 
-#: src/kgoldrunner.cpp:401
-#, kde-format
+#: src/kgoldrunner.cpp:402
+#, fuzzy, kde-format
+#| msgid "Hybrid Control (&Laptop)"
+msgctxt "@option:check"
 msgid "Hybrid Control (&Laptop)"
 msgstr "Hybridné ovládanie (&Laptop)"
 
-#: src/kgoldrunner.cpp:402
-#, kde-format
-msgid "Pointer controls hero; dig using keyboard."
+#: src/kgoldrunner.cpp:403
+#, fuzzy, kde-format
+#| msgid "Pointer controls hero; dig using keyboard."
+msgctxt "@info:tooltip"
+msgid "Pointer controls hero; dig using keyboard"
 msgstr "Ukazovateľ ovláda hrdinu; kopanie použitím klávesnice."
 
-#: src/kgoldrunner.cpp:404
-#, kde-format
+#: src/kgoldrunner.cpp:405
+#, fuzzy, kde-format
+#| msgid ""
+#| "Use the laptop's pointer device to control the hero's moves, and use the "
+#| "keyboard to dig left and right."
+msgctxt "@info:whatsthis"
 msgid ""
 "Use the laptop's pointer device to control the hero's moves, and use the "
 "keyboard to dig left and right."
@@ -7980,18 +8141,26 @@ msgstr ""
 "Použiť polohovacie zariadenie prenosného počítača na ovládanie pohybov "
 "hrdinu a klávesnicu použiť na výkopy vľavo a vpravo."
 
-#: src/kgoldrunner.cpp:419
-#, kde-format
-msgid "&Click Key To Move"
+#: src/kgoldrunner.cpp:420
+#, fuzzy, kde-format
+#| msgid "&Click Key To Move"
+msgctxt "@option:check"
+msgid "&Click Key to Move"
 msgstr "&Stlačiť klávesu pre presun"
 
-#: src/kgoldrunner.cpp:420
-#, kde-format
-msgid "Click Key To Move."
-msgstr "Stlačiť klávesu pre presun."
-
 #: src/kgoldrunner.cpp:421
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Click Key To Move"
+msgctxt "@info:tooltip"
+msgid "Click key to move"
+msgstr "&Stlačiť klávesu pre presun"
+
+#: src/kgoldrunner.cpp:422
+#, fuzzy, kde-format
+#| msgid ""
+#| "In keyboard mode, click a direction-key to start moving and keep on going "
+#| "until you click another key."
+msgctxt "@info:whatsthis"
 msgid ""
 "In keyboard mode, click a direction-key to start moving and keep on going "
 "until you click another key."
@@ -7999,405 +8168,556 @@ msgstr ""
 "V režime klávesnice kliknite na smerový kláves na spustenie pohybu a "
 "pokračujte ďalej, kým nekliknete na iný kláves."
 
-#: src/kgoldrunner.cpp:427
-#, kde-format
-msgid "&Hold Key To Move"
+#: src/kgoldrunner.cpp:428
+#, fuzzy, kde-format
+#| msgid "&Hold Key To Move"
+msgctxt "@option:check"
+msgid "&Hold Key to Move"
 msgstr "&Podržať klávesu pre presun"
 
-#: src/kgoldrunner.cpp:428
-#, kde-format
-msgid "Hold Key To Move."
-msgstr "Podržať klávesu pre presun."
-
 #: src/kgoldrunner.cpp:429
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Hold Key To Move"
+msgctxt "@info:tooltip"
+msgid "Hold key to move"
+msgstr "&Podržať klávesu pre presun"
+
+#: src/kgoldrunner.cpp:430
+#, fuzzy, kde-format
+#| msgid ""
+#| "In keyboard mode, hold down a direction-key to move and release it to "
+#| "stop."
+msgctxt "@info:whatsthis"
 msgid ""
 "In keyboard mode, hold down a direction-key to move and release it to stop."
 msgstr ""
 "V režime klávesnice stlačiť a držať smerový kláves na pohyb a uvoľniť ho na "
 "zastavenie."
 
-#: src/kgoldrunner.cpp:446
-#, kde-format
+#: src/kgoldrunner.cpp:447
+#, fuzzy, kde-format
+#| msgid "Normal Speed"
+msgctxt "@item:inmenu"
 msgid "Normal Speed"
 msgstr "Normálna rýchlosť"
 
-#: src/kgoldrunner.cpp:447
-#, kde-format
-msgid "Set normal speed."
+#: src/kgoldrunner.cpp:448
+#, fuzzy, kde-format
+#| msgid "Set normal speed."
+msgctxt "@info:tooltip"
+msgid "Set normal speed"
 msgstr "Nastaviť obvyklú rýchlosť."
 
-#: src/kgoldrunner.cpp:448
-#, kde-format
+#: src/kgoldrunner.cpp:449
+#, fuzzy, kde-format
+#| msgid "Set normal game speed."
+msgctxt "@info:whatsthis"
 msgid "Set normal game speed."
 msgstr "Nastaviť obvyklú rýchlosť hry."
 
-#: src/kgoldrunner.cpp:452
-#, kde-format
+#: src/kgoldrunner.cpp:453
+#, fuzzy, kde-format
+#| msgid "Beginner Speed"
+msgctxt "@item:inmenu"
 msgid "Beginner Speed"
 msgstr "Rýchlosť začiatočníkov"
 
-#: src/kgoldrunner.cpp:453
-#, kde-format
-msgid "Set beginners' speed."
+#: src/kgoldrunner.cpp:454
+#, fuzzy, kde-format
+#| msgid "Set beginners' speed."
+msgctxt "@info:tooltip"
+msgid "Set beginners' speed"
 msgstr "Nastaviť rýchlosť začiatočníkov."
 
-#: src/kgoldrunner.cpp:454
-#, kde-format
+#: src/kgoldrunner.cpp:455
+#, fuzzy, kde-format
+#| msgid "Set beginners' game speed (0.5 times normal)."
+msgctxt "@info:whatsthis"
 msgid "Set beginners' game speed (0.5 times normal)."
 msgstr "Nastaviť rýchlosť hry začiatočníkov (normálne násobok 0.5)."
 
-#: src/kgoldrunner.cpp:459
-#, kde-format
+#: src/kgoldrunner.cpp:460
+#, fuzzy, kde-format
+#| msgid "Champion Speed"
+msgctxt "@item:inmenu"
 msgid "Champion Speed"
 msgstr "Rýchlosť šampiónov"
 
-#: src/kgoldrunner.cpp:460
-#, kde-format
-msgid "Set champions' speed."
+#: src/kgoldrunner.cpp:461
+#, fuzzy, kde-format
+#| msgid "Set champions' speed."
+msgctxt "@info:tooltip"
+msgid "Set champions' speed"
 msgstr "Nastaviť rýchlosť šampiónov."
 
-#: src/kgoldrunner.cpp:461
-#, kde-format
+#: src/kgoldrunner.cpp:462
+#, fuzzy, kde-format
+#| msgid "Set champions' game speed (1.5 times normal)."
+msgctxt "@info:whatsthis"
 msgid "Set champions' game speed (1.5 times normal)."
 msgstr "Nastaviť rýchlosť hry šampiónov (normálne násobok 1.5)."
 
-#: src/kgoldrunner.cpp:465
-#, kde-format
+#: src/kgoldrunner.cpp:466
+#, fuzzy, kde-format
+#| msgid "Increase Speed"
+msgctxt "@action"
 msgid "Increase Speed"
 msgstr "Zvýšiť rýchlosť"
 
-#: src/kgoldrunner.cpp:466
-#, kde-format
-msgid "Increase speed."
+#: src/kgoldrunner.cpp:467
+#, fuzzy, kde-format
+#| msgid "Increase speed."
+msgctxt "@info:tooltip"
+msgid "Increase speed"
 msgstr "Zvýšiť rýchlosť"
 
-#: src/kgoldrunner.cpp:467
-#, kde-format
-msgid "Increase the game speed by 0.1 (maximum is 2.0 times normal)."
+#: src/kgoldrunner.cpp:468
+#, fuzzy, kde-format
+#| msgid "Increase the game speed by 0.1 (maximum is 2.0 times normal)."
+msgctxt "@info:whatsthis"
+msgid "Increases the game speed by 0.1 (maximum is 2.0 times normal)."
 msgstr "Zvýšiť rýchlosť hry o 0,1(maximum je obvykle 0,2 násobok)."
 
-#: src/kgoldrunner.cpp:472
-#, kde-format
+#: src/kgoldrunner.cpp:473
+#, fuzzy, kde-format
+#| msgid "Decrease Speed"
+msgctxt "@action"
 msgid "Decrease Speed"
 msgstr "Znížiť rýchlosť"
 
-#: src/kgoldrunner.cpp:473
-#, kde-format
-msgid "Decrease speed."
+#: src/kgoldrunner.cpp:474
+#, fuzzy, kde-format
+#| msgid "Decrease speed."
+msgctxt "@info:tooltip"
+msgid "Decrease speed"
 msgstr "Znížiť rýchlosť"
 
-#: src/kgoldrunner.cpp:474
-#, kde-format
-msgid "Decrease the game speed by 0.1 (minimum is 0.2 times normal)."
+#: src/kgoldrunner.cpp:475
+#, fuzzy, kde-format
+#| msgid "Decrease the game speed by 0.1 (minimum is 0.2 times normal)."
+msgctxt "@info:whatsthis"
+msgid "Decreases the game speed by 0.1 (minimum is 0.2 times normal)."
 msgstr "Znížiť rýchlosť hry o 0,1(minimum je obvykle 0,2 násobok)."
 
-#: src/kgoldrunner.cpp:504
-#, kde-format
+#: src/kgoldrunner.cpp:505
+#, fuzzy, kde-format
+#| msgid "Stop"
+msgctxt "@action"
 msgid "Stop"
 msgstr "Zastaviť"
 
-#: src/kgoldrunner.cpp:505
-#, kde-format
+#: src/kgoldrunner.cpp:506
+#, fuzzy, kde-format
+#| msgid "Move Right"
+msgctxt "@action"
 msgid "Move Right"
 msgstr "Doprava"
 
-#: src/kgoldrunner.cpp:506
-#, kde-format
+#: src/kgoldrunner.cpp:507
+#, fuzzy, kde-format
+#| msgid "Move Left"
+msgctxt "@action"
 msgid "Move Left"
 msgstr "Doľava"
 
-#: src/kgoldrunner.cpp:507
-#, kde-format
+#: src/kgoldrunner.cpp:508
+#, fuzzy, kde-format
+#| msgid "Move Up"
+msgctxt "@action"
 msgid "Move Up"
 msgstr "Hore"
 
-#: src/kgoldrunner.cpp:508
-#, kde-format
+#: src/kgoldrunner.cpp:509
+#, fuzzy, kde-format
+#| msgid "Move Down"
+msgctxt "@action"
 msgid "Move Down"
 msgstr "Dolu"
 
-#: src/kgoldrunner.cpp:509
-#, kde-format
+#: src/kgoldrunner.cpp:510
+#, fuzzy, kde-format
+#| msgid "Dig Right"
+msgctxt "@action"
 msgid "Dig Right"
 msgstr "Kopať vpravo"
 
-#: src/kgoldrunner.cpp:510
-#, kde-format
+#: src/kgoldrunner.cpp:511
+#, fuzzy, kde-format
+#| msgid "Dig Left"
+msgctxt "@action"
 msgid "Dig Left"
 msgstr "Kopať vľavo"
 
-#: src/kgoldrunner.cpp:534
-#, kde-format
+#: src/kgoldrunner.cpp:535
+#, fuzzy, kde-format
+#| msgid "Do a Step"
+msgctxt "@action"
 msgid "Do a Step"
 msgstr "Urobiť krok"
 
-#: src/kgoldrunner.cpp:535
-#, kde-format
+#: src/kgoldrunner.cpp:536
+#, fuzzy, kde-format
+#| msgid "Test Bug Fix"
+msgctxt "@action"
 msgid "Test Bug Fix"
 msgstr "Otestovať opravu"
 
-#: src/kgoldrunner.cpp:536
-#, kde-format
+#: src/kgoldrunner.cpp:537
+#, fuzzy, kde-format
+#| msgid "Show Positions"
+msgctxt "@action"
 msgid "Show Positions"
 msgstr "Zobraziť pozície"
 
-#: src/kgoldrunner.cpp:537
-#, kde-format
+#: src/kgoldrunner.cpp:538
+#, fuzzy, kde-format
+#| msgid "Start Logging"
+msgctxt "@action"
 msgid "Start Logging"
 msgstr "Spustiť záznam"
 
-#: src/kgoldrunner.cpp:538
-#, kde-format
+#: src/kgoldrunner.cpp:539
+#, fuzzy, kde-format
+#| msgid "Show Hero"
+msgctxt "@action"
 msgid "Show Hero"
 msgstr "Zobraziť hrdinu"
 
-#: src/kgoldrunner.cpp:539
-#, kde-format
+#: src/kgoldrunner.cpp:540
+#, fuzzy, kde-format
+#| msgid "Show Object"
+msgctxt "@action"
 msgid "Show Object"
 msgstr "Zobraziť objekt"
 
-#: src/kgoldrunner.cpp:541 src/kgoldrunner.cpp:542 src/kgoldrunner.cpp:543
-#: src/kgoldrunner.cpp:544 src/kgoldrunner.cpp:545 src/kgoldrunner.cpp:546
-#: src/kgoldrunner.cpp:547
-#, kde-format
+#: src/kgoldrunner.cpp:542 src/kgoldrunner.cpp:543 src/kgoldrunner.cpp:544
+#: src/kgoldrunner.cpp:545 src/kgoldrunner.cpp:546 src/kgoldrunner.cpp:547
+#: src/kgoldrunner.cpp:548
+#, fuzzy, kde-format
+#| msgid "Show Enemy"
+msgctxt "@action"
 msgid "Show Enemy"
 msgstr "Zobraziť nepriateľov"
 
-#: src/kgoldrunner.cpp:735
+#: src/kgoldrunner.cpp:736
 #, kde-format
 msgid "The game is paused"
 msgstr "Hra je pozastavená"
 
-#: src/kgoldrunner.cpp:737
+#: src/kgoldrunner.cpp:738
 #, kde-format
 msgid "Press \"%1\" to RESUME"
 msgstr "Stlačte \"%1\" pre pokračovanie"
 
-#: src/kgoldrunner.cpp:739
+#: src/kgoldrunner.cpp:740
 #, kde-format
 msgid "Press \"%1\" or \"%2\" to RESUME"
 msgstr "Stlačiť \"%1\" alebo \"%2\" pre pauzu"
 
-#: src/kgoldrunner.cpp:746
+#: src/kgoldrunner.cpp:747
 #, kde-format
 msgid "Press \"%1\" to PAUSE"
 msgstr "Stlačte \"%1\" pre pauzu"
 
-#: src/kgoldrunner.cpp:748
+#: src/kgoldrunner.cpp:749
 #, kde-format
 msgid "Press \"%1\" or \"%2\" to PAUSE"
 msgstr "Stlačiť \"%1\" alebo \"%2\" pre pauzu"
 
-#: src/kgoldrunner.cpp:760
+#: src/kgoldrunner.cpp:761
 #, kde-format
 msgid "Has hint"
 msgstr "Existuje rada   "
 
-#: src/kgoldrunner.cpp:760
+#: src/kgoldrunner.cpp:761
 #, kde-format
 msgid "No hint"
 msgstr "Žiadna rada   "
 
-#: src/kgoldrunner.cpp:877
-#, kde-format
+#: src/kgoldrunner.cpp:878
+#, fuzzy, kde-format
+#| msgid "Get Folders"
+msgctxt "@window:title"
 msgid "Get Folders"
 msgstr "Získať priečinky"
 
-#: src/kgoldrunner.cpp:878
+#: src/kgoldrunner.cpp:879
 #, kde-format
 msgid "Cannot find system games sub-folder '/system/' in areas '%1'."
 msgstr ""
 "Nepodarilo sa nájsť systémový podpriečinok '/system/' v oblastiach '%1'."
 
-#: src/kgoldrunner.cpp:911
-#, kde-format
+#: src/kgoldrunner.cpp:912
+#, fuzzy, kde-format
+#| msgid "Edit Name/Hint"
+msgctxt "@action"
 msgid "Edit Name/Hint"
 msgstr "Upraviť meno/radu"
 
-#: src/kgoldrunner.cpp:912
-#, kde-format
+#: src/kgoldrunner.cpp:913
+#, fuzzy, kde-format
+#| msgid "Edit level name or hint"
+msgctxt "@info:tooltip"
 msgid "Edit level name or hint"
 msgstr "Upraviť názov úrovne alebo rady"
 
-#: src/kgoldrunner.cpp:913
-#, kde-format
-msgid "Edit text for the name or hint of a level"
+#: src/kgoldrunner.cpp:914
+#, fuzzy, kde-format
+#| msgid "Edit text for the name or hint of a level"
+msgctxt "@info:whatsthis"
+msgid "Edits text for the name or hint of a level"
 msgstr "Upraviť text názvu alebo rady úrovne"
 
-#: src/kgoldrunner.cpp:916
-#, kde-format
+#: src/kgoldrunner.cpp:917
+#, fuzzy, kde-format
+#| msgid "Name/Hint"
+msgctxt "@action"
 msgid "Name/Hint"
 msgstr "Názov/Rady"
 
-#: src/kgoldrunner.cpp:919
-#, kde-format
+#: src/kgoldrunner.cpp:920
+#, fuzzy, kde-format
+#| msgid "Erase"
+msgctxt "@option:check"
 msgid "Erase"
 msgstr "Mazať"
 
-#: src/kgoldrunner.cpp:919
-#, kde-format
+#: src/kgoldrunner.cpp:920
+#, fuzzy, kde-format
+#| msgid "Space/Erase"
+msgctxt "@option:check"
 msgid "Space/Erase"
 msgstr "Rozmiestniť/Vymazať"
 
-#: src/kgoldrunner.cpp:920
-#, kde-format
+#: src/kgoldrunner.cpp:921
+#, fuzzy, kde-format
+#| msgid "Paint empty squares or erase"
+msgctxt "@info:tooltip"
 msgid "Paint empty squares or erase"
 msgstr "Vymaľovať prázdne štvorce alebo vymazať"
 
-#: src/kgoldrunner.cpp:921
-#, kde-format
-msgid "Erase objects or paint empty squares"
+#: src/kgoldrunner.cpp:922
+#, fuzzy, kde-format
+#| msgid "Erase objects or paint empty squares"
+msgctxt "@info:whatsthis"
+msgid "Erases objects or paint empty squares."
 msgstr "Zmazať objekty alebo vymaľovať prázdne štvorce"
 
-#: src/kgoldrunner.cpp:924
-#, kde-format
+#: src/kgoldrunner.cpp:925
+#, fuzzy, kde-format
+#| msgid "Hero"
+msgctxt "@option:check"
 msgid "Hero"
 msgstr "Hrdina"
 
-#: src/kgoldrunner.cpp:925
-#, kde-format
+#: src/kgoldrunner.cpp:926
+#, fuzzy, kde-format
+#| msgid "Move hero"
+msgctxt "@info:tooltip"
 msgid "Move hero"
 msgstr "Pohybovať hrdinom"
 
-#: src/kgoldrunner.cpp:926
-#, kde-format
-msgid "Change the hero's starting position"
+#: src/kgoldrunner.cpp:927
+#, fuzzy, kde-format
+#| msgid "Change the hero's starting position"
+msgctxt "@info:whatsthis"
+msgid "Changes the hero's starting position."
 msgstr "Zmeniť východiskovú pozíciu hrdinu"
 
-#: src/kgoldrunner.cpp:929
-#, kde-format
+#: src/kgoldrunner.cpp:930
+#, fuzzy, kde-format
+#| msgid "Enemy"
+msgctxt "@option:check"
 msgid "Enemy"
 msgstr "Nepriateľ"
 
-#: src/kgoldrunner.cpp:930
-#, kde-format
+#: src/kgoldrunner.cpp:931
+#, fuzzy, kde-format
+#| msgid "Paint enemies"
+msgctxt "@info:tooltip"
 msgid "Paint enemies"
 msgstr "Vymaľovať nepriateľov"
 
-#: src/kgoldrunner.cpp:931
-#, kde-format
-msgid "Paint enemies at their starting positions"
+#: src/kgoldrunner.cpp:932
+#, fuzzy, kde-format
+#| msgid "Paint enemies at their starting positions"
+msgctxt "@info:whatsthis"
+msgid "Paints enemies at their starting positions."
 msgstr "Vymaľovať nepriateľov na ich východiskových pozíciách"
 
-#: src/kgoldrunner.cpp:935
-#, kde-format
+#: src/kgoldrunner.cpp:936
+#, fuzzy, kde-format
+#| msgid "Brick"
+msgctxt "@option:check"
 msgid "Brick"
 msgstr "Tehly"
 
-#: src/kgoldrunner.cpp:936
-#, kde-format
+#: src/kgoldrunner.cpp:937
+#, fuzzy, kde-format
+#| msgid "Paint bricks (can dig)"
+msgctxt "@info:tooltip"
 msgid "Paint bricks (can dig)"
 msgstr "Vymaľovať tehly (je možné kopanie)"
 
-#: src/kgoldrunner.cpp:937
-#, kde-format
-msgid "Paint bricks (diggable objects)"
+#: src/kgoldrunner.cpp:938
+#, fuzzy, kde-format
+#| msgid "Paint bricks (diggable objects)"
+msgctxt "@info:whatsthis"
+msgid "Paints bricks (diggable objects)."
 msgstr "Vymaľovať tehly (kopateľné objekty)"
 
-#: src/kgoldrunner.cpp:940
-#, kde-format
+#: src/kgoldrunner.cpp:941
+#, fuzzy, kde-format
+#| msgid "Concrete"
+msgctxt "@option:check"
 msgid "Concrete"
 msgstr "Betón"
 
-#: src/kgoldrunner.cpp:941
-#, kde-format
+#: src/kgoldrunner.cpp:942
+#, fuzzy, kde-format
+#| msgid "Paint concrete (cannot dig)"
+msgctxt "@info:tooltip"
 msgid "Paint concrete (cannot dig)"
 msgstr "Vymaľovať betón (nie je možné kopanie)"
 
-#: src/kgoldrunner.cpp:942
-#, kde-format
-msgid "Paint concrete objects (not diggable)"
+#: src/kgoldrunner.cpp:943
+#, fuzzy, kde-format
+#| msgid "Paint concrete objects (not diggable)"
+msgctxt "@info:whatsthis"
+msgid "Paints concrete objects (not diggable)."
 msgstr "Vymaľovať betónové objekty (nekopateľné)"
 
-#: src/kgoldrunner.cpp:945
-#, kde-format
+#: src/kgoldrunner.cpp:946
+#, fuzzy, kde-format
+#| msgid "Trap"
+msgctxt "@option:check"
 msgid "Trap"
 msgstr "Pasca"
 
-#: src/kgoldrunner.cpp:945
-#, kde-format
+#: src/kgoldrunner.cpp:946
+#, fuzzy, kde-format
+#| msgid "Trap/False Brick"
+msgctxt "@option:check"
 msgid "Trap/False Brick"
 msgstr "Pasca/Falošná tehla"
 
-#: src/kgoldrunner.cpp:946 src/kgoldrunner.cpp:948
-#, kde-format
+#: src/kgoldrunner.cpp:947
+#, fuzzy, kde-format
+#| msgid "Paint traps or false bricks (can fall through)"
+msgctxt "@info:tooltip"
 msgid "Paint traps or false bricks (can fall through)"
 msgstr "Vymaľovať pasce alebo falošné tehly (môžno cez ne prepadnúť)"
 
-#: src/kgoldrunner.cpp:952
-#, kde-format
+#: src/kgoldrunner.cpp:949
+#, fuzzy, kde-format
+#| msgid "Paint traps or false bricks (can fall through)"
+msgctxt "@info:whatsthis"
+msgid "Paints traps or false bricks (can fall through)."
+msgstr "Vymaľovať pasce alebo falošné tehly (môžno cez ne prepadnúť)"
+
+#: src/kgoldrunner.cpp:953
+#, fuzzy, kde-format
+#| msgid "Ladder"
+msgctxt "@option:check"
 msgid "Ladder"
 msgstr "Rebrík"
 
-#: src/kgoldrunner.cpp:953
-#, kde-format
+#: src/kgoldrunner.cpp:954
+#, fuzzy, kde-format
+#| msgid "Paint ladders"
+msgctxt "@info:tooltip"
 msgid "Paint ladders"
 msgstr "Vymaľovať rebríky"
 
-#: src/kgoldrunner.cpp:954
-#, kde-format
-msgid "Paint ladders (ways to go up or down)"
+#: src/kgoldrunner.cpp:955
+#, fuzzy, kde-format
+#| msgid "Paint ladders (ways to go up or down)"
+msgctxt "@info:whatsthis"
+msgid "Paints ladders (ways to go up or down)."
 msgstr "Vymaľovať rebríky (spôsoby, ako ísť hore alebo dole)"
 
-#: src/kgoldrunner.cpp:957
-#, kde-format
+#: src/kgoldrunner.cpp:958
+#, fuzzy, kde-format
+#| msgid "H Ladder"
+msgctxt "@option:check"
 msgid "H Ladder"
 msgstr "Sk rebrík"
 
-#: src/kgoldrunner.cpp:957
-#, kde-format
+#: src/kgoldrunner.cpp:958
+#, fuzzy, kde-format
+#| msgid "Hidden Ladder"
+msgctxt "@option:check"
 msgid "Hidden Ladder"
 msgstr "Skrytý rebrík"
 
-#: src/kgoldrunner.cpp:958
-#, kde-format
+#: src/kgoldrunner.cpp:959
+#, fuzzy, kde-format
+#| msgid "Paint hidden ladders"
+msgctxt "@info:tooltip"
 msgid "Paint hidden ladders"
 msgstr "Vymaľovať skryté rebríky"
 
-#: src/kgoldrunner.cpp:959
-#, kde-format
-msgid "Paint hidden ladders, which appear when all the gold is gone"
+#: src/kgoldrunner.cpp:960
+#, fuzzy, kde-format
+#| msgid "Paint hidden ladders, which appear when all the gold is gone"
+msgctxt "@info:whatsthis"
+msgid "Paints hidden ladders, which appear when all the gold is gone."
 msgstr "Vymaľovať skryté rebríky, ktoré sa objavia, keď je všetko zlato preč"
 
-#: src/kgoldrunner.cpp:963
-#, kde-format
+#: src/kgoldrunner.cpp:964
+#, fuzzy, kde-format
+#| msgid "Bar"
+msgctxt "@option:check"
 msgid "Bar"
 msgstr "Stĺpec"
 
-#: src/kgoldrunner.cpp:963
-#, kde-format
+#: src/kgoldrunner.cpp:964
+#, fuzzy, kde-format
+#| msgid "Bar/Pole"
+msgctxt "@option:check"
 msgid "Bar/Pole"
 msgstr "Tyč/Žrď"
 
-#: src/kgoldrunner.cpp:964
-#, kde-format
+#: src/kgoldrunner.cpp:965
+#, fuzzy, kde-format
+#| msgid "Paint bars or poles"
+msgctxt "@info:tooltip"
 msgid "Paint bars or poles"
 msgstr "Vymaľovať tyče alebo žrde"
 
-#: src/kgoldrunner.cpp:965
-#, kde-format
-msgid "Paint bars or poles (can fall from these)"
+#: src/kgoldrunner.cpp:966
+#, fuzzy, kde-format
+#| msgid "Paint bars or poles (can fall from these)"
+msgctxt "@info:whatsthis"
+msgid "Paints bars or poles (can fall from these)."
 msgstr "Vymaľovať tyče alebo žrde (môže z nich spadnúť)"
 
-#: src/kgoldrunner.cpp:969
-#, kde-format
+#: src/kgoldrunner.cpp:970
+#, fuzzy, kde-format
+#| msgid "Gold"
+msgctxt "@option:check"
 msgid "Gold"
 msgstr "Zlato"
 
-#: src/kgoldrunner.cpp:969
-#, kde-format
+#: src/kgoldrunner.cpp:970
+#, fuzzy, kde-format
+#| msgid "Gold/Treasure"
+msgctxt "@option:check"
 msgid "Gold/Treasure"
 msgstr "Zlato/Poklad"
 
-#: src/kgoldrunner.cpp:970
-#, kde-format
+#: src/kgoldrunner.cpp:971
+#, fuzzy, kde-format
+#| msgid "Paint gold (or other treasure)"
+msgctxt "@info:tooltip"
 msgid "Paint gold (or other treasure)"
 msgstr "Vymaľovať zlato (alebo iný poklad)"
 
-#: src/kgoldrunner.cpp:971
-#, kde-format
-msgid "Paint gold pieces (or other treasure)"
+#: src/kgoldrunner.cpp:972
+#, fuzzy, kde-format
+#| msgid "Paint gold pieces (or other treasure)"
+msgctxt "@info:whatsthis"
+msgid "Paints gold pieces (or other treasure)."
 msgstr "Vymaľovať zlaté kusy (alebo iný poklad)"
 
 #. i18n: ectx: Menu (editor)
@@ -8420,16 +8740,20 @@ msgid "Edit Name or Hint"
 msgstr "Úprava mena a rady"
 
 #: src/kgrdialog.cpp:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name of level:"
+msgctxt "@label:textbox"
 msgid "Name of level:"
 msgstr "Meno úrovne:"
 
 #: src/kgrdialog.cpp:63
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Hint for level:"
+msgctxt "@label:textbox"
 msgid "Hint for level:"
 msgstr "Rada pre úroveň:"
 
-#: src/kgrdialog.cpp:103 src/kgrdialog.cpp:172
+#: src/kgrdialog.cpp:103 src/kgrdialog.cpp:172 src/kgrselector.cpp:84
 #, fuzzy, kde-format
 #| msgid "Edit Game Info"
 msgctxt "@title:window"
@@ -8437,22 +8761,30 @@ msgid "Edit Game Info"
 msgstr "Upraviť informácie o hre"
 
 #: src/kgrdialog.cpp:123
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name of game:"
+msgctxt "@label:textbox"
 msgid "Name of game:"
 msgstr "Meno hry:"
 
 #: src/kgrdialog.cpp:131
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "File name prefix:"
+msgctxt "@label:textbox"
 msgid "File name prefix:"
 msgstr "Predpona mena súboru:"
 
 #: src/kgrdialog.cpp:139
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Traditional rules"
+msgctxt "@option:radio"
 msgid "Traditional rules"
 msgstr "Tradičné pravidlá"
 
 #: src/kgrdialog.cpp:140
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "KGoldrunner rules"
+msgctxt "@option:radio"
 msgid "KGoldrunner rules"
 msgstr "Pravidlá KGoldrunner"
 
@@ -8465,7 +8797,9 @@ msgstr[1] "%1 úrovne"
 msgstr[2] "%1 úrovní"
 
 #: src/kgrdialog.cpp:152
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "About this game:"
+msgctxt "@label:textbox"
 msgid "About this game:"
 msgstr "O tejto hre:"
 
@@ -8477,7 +8811,9 @@ msgid "Create Game"
 msgstr "Vytvoriť hru"
 
 #: src/kgrdialog.cpp:186
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Changes"
+msgctxt "@action:button"
 msgid "Save Changes"
 msgstr "Uložiť zmeny"
 
@@ -8487,7 +8823,9 @@ msgid "0 levels"
 msgstr "0 úrovní"
 
 #: src/kgrdialog.cpp:192 src/kgrselector.cpp:269
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save New"
+msgctxt "@action:button"
 msgid "Save New"
 msgstr "Uložiť"
 
@@ -8504,7 +8842,9 @@ msgid "Game                       Level/Lives/Score   Day    Date     Time  "
 msgstr "Hra                        Úroveň/Životy/Skóre Deň    Dátum    Čas   "
 
 #: src/kgreditor.cpp:66
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create Level"
+msgctxt "@title:window"
 msgid "Create Level"
 msgstr "Vytvoriť úroveň"
 
@@ -8517,8 +8857,10 @@ msgstr ""
 "Nemôžete upraviť a uložiť úroveň, kým ste nevytvorili hru a aspoň jednu "
 "úroveň. Použite položku menu \"Vytvoriť hru\"."
 
-#: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:266
-#, kde-format
+#: src/kgreditor.cpp:115 src/kgreditor.cpp:137
+#, fuzzy, kde-format
+#| msgid "Edit Level"
+msgctxt "@title:window"
 msgid "Edit Level"
 msgstr "Upraviť úroveň"
 
@@ -8542,8 +8884,10 @@ msgstr ""
 "uložiť do jednej zo svojich hier. Nesnažíte sa, iba si pozrieť skryté "
 "rebríky a prepadávacie tehly, však? :-)"
 
-#: src/kgreditor.cpp:242 src/kgreditor.cpp:260 src/kgrgame.cpp:260
-#, kde-format
+#: src/kgreditor.cpp:242 src/kgreditor.cpp:261 src/kgrgame.cpp:260
+#, fuzzy, kde-format
+#| msgid "Save Level"
+msgctxt "@title:window"
 msgid "Save Level"
 msgstr "Uložiť úroveň"
 
@@ -8553,45 +8897,55 @@ msgid "Do you want to insert a level and move existing levels up by one?"
 msgstr "Chcete vložiť úroveň a presunúť existujúce úrovne o jednu vyššie?"
 
 #: src/kgreditor.cpp:245
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Insert Level"
+msgctxt "@action:button"
 msgid "&Insert Level"
 msgstr "&Vložiť úroveň"
 
-#: src/kgreditor.cpp:245 src/kgreditor.cpp:444
-#, kde-format
+#: src/kgreditor.cpp:246 src/kgreditor.cpp:446
+#, fuzzy, kde-format
+#| msgid "&Cancel"
+msgctxt "@action:button"
 msgid "&Cancel"
 msgstr "&Zrušiť"
 
-#: src/kgreditor.cpp:261 src/kgreditor.cpp:779 src/kgrgame.cpp:1483
-#: src/kgrgame.cpp:1691
+#: src/kgreditor.cpp:262 src/kgreditor.cpp:782 src/kgrgame.cpp:1485
+#: src/kgrgame.cpp:1693
 #, kde-format
 msgid "Cannot open file '%1' for output."
 msgstr "Nepodarilo sa otvoriť súbor '%1' pre zápis."
 
-#: src/kgreditor.cpp:316 src/kgreditor.cpp:332 src/kgreditor.cpp:340
-#: src/kgreditor.cpp:355
-#, kde-format
+#: src/kgreditor.cpp:317 src/kgreditor.cpp:333 src/kgreditor.cpp:341
+#: src/kgreditor.cpp:356
+#, fuzzy, kde-format
+#| msgid "Move Level"
+msgctxt "@title:window"
 msgid "Move Level"
 msgstr "Presunúť uroveň"
 
-#: src/kgreditor.cpp:317
+#: src/kgreditor.cpp:318
 #, kde-format
 msgid "You must first load a level to be moved. Use the \"%1\" or \"%2\" menu."
 msgstr ""
 "Najprv musíte načítať úroveň, aby sa mohla presunúť. Použite menu \"%1\" "
 "alebo \"%2\"."
 
-#: src/kgreditor.cpp:319
-#, kde-format
+#: src/kgreditor.cpp:320
+#, fuzzy, kde-format
+#| msgid "Game"
+msgctxt "@title:menu"
 msgid "Game"
 msgstr "Hra"
 
-#: src/kgreditor.cpp:319 src/kgreditor.cpp:639
-#, kde-format
+#: src/kgreditor.cpp:320
+#, fuzzy, kde-format
+#| msgid "Editor"
+msgctxt "@title:menu"
 msgid "Editor"
 msgstr "Editor"
 
-#: src/kgreditor.cpp:333
+#: src/kgreditor.cpp:334
 #, kde-format
 msgid ""
 "You cannot move a level until you have created a game and at least two "
@@ -8600,23 +8954,24 @@ msgstr ""
 "Nemôžete presunúť úroveň, kým ste nevytvorili hru a aspoň dve úrovne. "
 "Použite položku menu \"Vytvoriť hru\"."
 
-#: src/kgreditor.cpp:341
+#: src/kgreditor.cpp:342
 #, kde-format
 msgid "Sorry, you cannot move a system level."
 msgstr "Ľutujem, nemôžete presunúť systémovú úroveň."
 
-#: src/kgreditor.cpp:356
+#: src/kgreditor.cpp:357
 #, kde-format
 msgid "You must change the level or the game or both."
 msgstr "Musíte zmeniť úroveň alebo hru, alebo obe."
 
-#: src/kgreditor.cpp:418 src/kgreditor.cpp:441 src/kgreditor.cpp:459
-#: src/kgrselector.cpp:275
-#, kde-format
+#: src/kgreditor.cpp:419 src/kgreditor.cpp:442 src/kgreditor.cpp:461
+#, fuzzy, kde-format
+#| msgid "Delete Level"
+msgctxt "@title:window"
 msgid "Delete Level"
 msgstr "Odstrániť úroveň"
 
-#: src/kgreditor.cpp:419
+#: src/kgreditor.cpp:420
 #, kde-format
 msgid ""
 "You cannot delete a level until you have created a game and a level. Try "
@@ -8625,90 +8980,107 @@ msgstr ""
 "Nemôžete odstrániť úroveň, kým ste nevytvorili hru a aspoň jednu úroveň. "
 "Použite položku menu \"Vytvoriť hru\"."
 
-#: src/kgreditor.cpp:442
+#: src/kgreditor.cpp:443
 #, kde-format
 msgid "Do you want to delete a level and move higher levels down by one?"
 msgstr "Chcete odstrániť úroveň a presunúť vyššie úrovne o jednu nižšie?"
 
-#: src/kgreditor.cpp:444
-#, kde-format
+#: src/kgreditor.cpp:445
+#, fuzzy, kde-format
+#| msgid "&Delete Level"
+msgctxt "@action:button"
 msgid "&Delete Level"
 msgstr "O&dstrániť úroveň"
 
-#: src/kgreditor.cpp:460
+#: src/kgreditor.cpp:462
 #, kde-format
 msgid "Cannot find file '%1' to be deleted."
 msgstr "Nepodarilo sa nájsť súbor '%1', ktorý sa má odstrániť."
 
-#: src/kgreditor.cpp:508 src/kgreditor.cpp:518 src/kgreditor.cpp:523
-#: src/kgreditor.cpp:537 src/kgreditor.cpp:555 src/kgreditor.cpp:767
-#: src/kgreditor.cpp:778
-#, kde-format
+#: src/kgreditor.cpp:510 src/kgreditor.cpp:520 src/kgreditor.cpp:525
+#: src/kgreditor.cpp:539 src/kgreditor.cpp:557 src/kgreditor.cpp:770
+#: src/kgreditor.cpp:781
+#, fuzzy, kde-format
+#| msgid "Save Game Info"
+msgctxt "@title:window"
 msgid "Save Game Info"
 msgstr "Uloženie informácie o hre"
 
-#: src/kgreditor.cpp:509
+#: src/kgreditor.cpp:511
 #, kde-format
 msgid "You must enter a name for the game."
 msgstr "Musíte zadať meno pre hru."
 
-#: src/kgreditor.cpp:519
+#: src/kgreditor.cpp:521
 #, kde-format
 msgid "You must enter a filename prefix for the game."
 msgstr "Musíte zadať predponu súboru pre hru."
 
-#: src/kgreditor.cpp:524
+#: src/kgreditor.cpp:526
 #, kde-format
 msgid "The filename prefix should not be more than 5 characters."
 msgstr "Predpona súboru by nemala mať viac ako 5 znakov."
 
-#: src/kgreditor.cpp:538
+#: src/kgreditor.cpp:540
 #, kde-format
 msgid "The filename prefix should be all alphabetic characters."
 msgstr "Predpona súboru by mala obsahoavť iba písmená."
 
-#: src/kgreditor.cpp:556
+#: src/kgreditor.cpp:558
 #, kde-format
 msgid "The filename prefix '%1' is already in use."
 msgstr "Predpona súboru '%1' sa už používa."
 
-#: src/kgreditor.cpp:640
+#: src/kgreditor.cpp:641
+#, fuzzy, kde-format
+#| msgid "Editor"
+msgctxt "@title:window"
+msgid "Editor"
+msgstr "Editor"
+
+#: src/kgreditor.cpp:642
 #, kde-format
 msgid "You have not saved your work. Do you want to save it now?"
 msgstr "Neuložili ste zmeny. Chcete to urobiť teraz?"
 
-#: src/kgreditor.cpp:642
-#, kde-format
+#: src/kgreditor.cpp:644
+#, fuzzy, kde-format
+#| msgid "&Save"
+msgctxt "@action:button"
 msgid "&Save"
 msgstr "&Uložiť"
 
-#: src/kgreditor.cpp:642
-#, kde-format
+#: src/kgreditor.cpp:645
+#, fuzzy, kde-format
+#| msgid "&Do Not Save"
+msgctxt "@action:button"
 msgid "&Do Not Save"
 msgstr "&Neukladať"
 
-#: src/kgreditor.cpp:643
-#, kde-format
-msgid "&Go on editing"
+#: src/kgreditor.cpp:646
+#, fuzzy, kde-format
+#| msgid "&Go on editing"
+msgctxt "@action:button"
+msgid "&Go on Editing"
 msgstr "&Pokračovať v úpravách"
 
-#: src/kgreditor.cpp:768
+#: src/kgreditor.cpp:771
 #, kde-format
 msgid "You can only modify user games."
 msgstr "Môžete meniť iba užívateľské hry."
 
-#: src/kgreditor.cpp:829
+#: src/kgreditor.cpp:832
 #, kde-format
 msgid "New Level"
 msgstr "Nová úroveň"
 
-#: src/kgreditor.cpp:839 src/kgrgame.cpp:1388
+#: src/kgreditor.cpp:842 src/kgrgame.cpp:1390
 #, kde-format
 msgctxt "Game name - level number."
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: src/kgreditor.cpp:843 src/kgrgame.cpp:1391
+#: src/kgreditor.cpp:846 src/kgrgame.cpp:1393
 #, kde-format
 msgctxt "Game name - level number - level name."
 msgid "%1 - %2 - %3"
@@ -8720,7 +9092,9 @@ msgid "Click anywhere to begin live play"
 msgstr "Kliknutím na ľubovoľné miesto začať aktívnu hru"
 
 #: src/kgrgame.cpp:190
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Play Next Level"
+msgctxt "@title:window"
 msgid "Play Next Level"
 msgstr "Hrať nasledujúcu úroveň"
 
@@ -8735,7 +9109,9 @@ msgid "Inappropriate action: you are not editing a level."
 msgstr "Nesprávna akcia: neupravujete úroveň."
 
 #: src/kgrgame.cpp:420
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "No Sound"
+msgctxt "@title:window"
 msgid "No Sound"
 msgstr "Bez zvuku"
 
@@ -8753,7 +9129,9 @@ msgstr ""
 "prítomné, keď bol program preložený a zostavený."
 
 #: src/kgrgame.cpp:625 src/kgrgame.cpp:782
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Game Paused"
+msgctxt "@title:window"
 msgid "Game Paused"
 msgstr "Hra pozastavená"
 
@@ -8768,7 +9146,9 @@ msgstr ""
 "ste pripravený."
 
 #: src/kgrgame.cpp:670 src/kgrgame.cpp:676
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Replay Last Level"
+msgctxt "@title:window"
 msgid "Replay Last Level"
 msgstr "Hrať znovu poslednú úroveň"
 
@@ -8798,18 +9178,26 @@ msgid "Quick Start"
 msgstr "Rýchly štart"
 
 #: src/kgrgame.cpp:712
-#, kde-format
-msgctxt "Button text: start playing a game"
+#, fuzzy, kde-format
+#| msgctxt "Button text: start playing a game"
+#| msgid "&PLAY"
+msgctxt "@action:button start playing a game"
 msgid "&PLAY"
 msgstr "HRAŤ"
 
 #: src/kgrgame.cpp:713
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start playing this level"
+msgctxt "@info:tooltip"
 msgid "Start playing this level"
 msgstr "Spustiť hranie tejto úrovne"
 
 #: src/kgrgame.cpp:715
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set up to start playing the game and level being shown, as soon as you "
+#| "click, move the mouse or press a key"
+msgctxt "@info:whatsthis"
 msgid ""
 "Set up to start playing the game and level being shown, as soon as you "
 "click, move the mouse or press a key"
@@ -8818,22 +9206,39 @@ msgstr ""
 "pohnete myšou alebo stlačíte kláves"
 
 #: src/kgrgame.cpp:719
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Quit"
+msgctxt "@action:button"
 msgid "&Quit"
 msgstr "&Koniec"
 
 #: src/kgrgame.cpp:720
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Close KGoldrunner"
+msgctxt "@info:tooltip"
 msgid "Close KGoldrunner"
 msgstr "Zatvoriť KGoldrunner"
 
+#: src/kgrgame.cpp:723
+#, fuzzy, kde-format
+#| msgid "&New Game..."
+msgctxt "@action:button"
+msgid "&New Game…"
+msgstr "&Nová hra..."
+
 #: src/kgrgame.cpp:724
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start a different game or level"
+msgctxt "@info:tooltip"
 msgid "Start a different game or level"
 msgstr "Spustiť inú hru alebo úroveň"
 
 #: src/kgrgame.cpp:726
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Use the Select Game dialog box to choose a different game or level and "
+#| "start playing it"
+msgctxt "@info:whatsthis"
 msgid ""
 "Use the Select Game dialog box to choose a different game or level and start "
 "playing it"
@@ -8842,17 +9247,25 @@ msgstr ""
 "hrať"
 
 #: src/kgrgame.cpp:730
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Use Menu"
+msgctxt "@action:button"
 msgid "&Use Menu"
 msgstr "Použiť ponuku"
 
 #: src/kgrgame.cpp:732
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use the menus to choose other actions"
+msgctxt "@info:tooltip"
 msgid "Use the menus to choose other actions"
 msgstr "Použiť ponuku pre výber ďalších akcií"
 
 #: src/kgrgame.cpp:734
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Before playing, use the menus to choose other actions, such as loading a "
+#| "saved game or changing the theme"
+msgctxt "@info:whatsthis"
 msgid ""
 "Before playing, use the menus to choose other actions, such as loading a "
 "saved game or changing the theme"
@@ -8872,6 +9285,7 @@ msgstr ""
 #: src/kgrgame.cpp:836
 #, fuzzy, kde-format
 #| msgid "Show A Solution"
+msgctxt "@title:window"
 msgid "Show a Solution"
 msgstr "Ukázať riešenie"
 
@@ -8885,11 +9299,13 @@ msgstr ""
 "ešte nebolo zaznamenané pre úroveň, ktorú ste si vybrali."
 
 #: src/kgrgame.cpp:848
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Replay Any Level"
+msgctxt "@title:window"
 msgid "Replay Any Level"
 msgstr "Hrať znovu ktorúkoľvek úroveň"
 
-#: src/kgrgame.cpp:849 src/kgrgame.cpp:2055
+#: src/kgrgame.cpp:849 src/kgrgame.cpp:2057
 #, kde-format
 msgid ""
 "Sorry, you do not seem to have played and recorded the selected level before."
@@ -8907,21 +9323,27 @@ msgstr ""
 "P>"
 
 #: src/kgrgame.cpp:1065
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Game Over"
+msgctxt "@title:window"
 msgid "Game Over"
 msgstr "Koniec hry"
 
 #: src/kgrgame.cpp:1066
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Try Again"
+msgctxt "@action:button"
 msgid "&Try Again"
 msgstr "Skúsiť znovu"
 
-#: src/kgrgame.cpp:1066
-#, kde-format
+#: src/kgrgame.cpp:1067
+#, fuzzy, kde-format
+#| msgid "&Finish"
+msgctxt "@action:button"
 msgid "&Finish"
 msgstr "Do&končiť"
 
-#: src/kgrgame.cpp:1140
+#: src/kgrgame.cpp:1141
 #, kde-format
 msgid ""
 "<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the <b>"
@@ -8929,27 +9351,38 @@ msgid ""
 msgstr ""
 "<b>GRATULUJEME!!!!</b><p>Zdolali ste poslednú úroveň hry <b>%1!</b></p>"
 
-#: src/kgrgame.cpp:1297
-#, kde-format
+#: src/kgrgame.cpp:1298
+#, fuzzy, kde-format
+#| msgid "Hint"
+msgctxt "@title:window"
 msgid "Hint"
 msgstr "Rada"
 
-#: src/kgrgame.cpp:1303
-#, kde-format
-msgid "&OK"
+#: src/kgrgame.cpp:1304
+#, fuzzy, kde-format
+#| msgid "&OK"
+msgctxt "@action:button"
+msgid "&Ok"
 msgstr "&OK"
 
-#: src/kgrgame.cpp:1316
+#: src/kgrgame.cpp:1305
+#, fuzzy, kde-format
+#| msgid "&Show A Solution"
+msgctxt "@action:button"
+msgid "&Show a Solution"
+msgstr "&Ukázať riešenie"
+
+#: src/kgrgame.cpp:1318
 #, kde-format
 msgid "Sorry, there is no hint for this level."
 msgstr "Ľutujem, pre túto úroveň nie je žiadna rada."
 
-#: src/kgrgame.cpp:1378
+#: src/kgrgame.cpp:1380
 #, kde-format
 msgid "T H E   E N D"
 msgstr "K O N I E C"
 
-#: src/kgrgame.cpp:1415
+#: src/kgrgame.cpp:1417
 #, kde-format
 msgid ""
 "You have pressed a key that can be used to control the Hero. Do you want to "
@@ -8961,33 +9394,41 @@ msgstr ""
 "jednoduchšie v dlhodobom horizonte - podobne ako jazda na bicykli namiesto "
 "chodenia!"
 
-#: src/kgrgame.cpp:1419
-#, kde-format
+#: src/kgrgame.cpp:1421
+#, fuzzy, kde-format
+#| msgid "Switch to Keyboard Mode"
+msgctxt "@title:window"
 msgid "Switch to Keyboard Mode"
 msgstr "Prepnúť do režimu klávesnice"
 
-#: src/kgrgame.cpp:1420
-#, kde-format
+#: src/kgrgame.cpp:1422
+#, fuzzy, kde-format
+#| msgid "Switch to &Keyboard Mode"
+msgctxt "@action:button"
 msgid "Switch to &Keyboard Mode"
 msgstr "Prepnúť do režimu &klávesnice"
 
-#: src/kgrgame.cpp:1421
-#, kde-format
+#: src/kgrgame.cpp:1423
+#, fuzzy, kde-format
+#| msgid "Stay in &Mouse Mode"
+msgctxt "@action:button"
 msgid "Stay in &Mouse Mode"
 msgstr "Zostať v režime &myši"
 
-#: src/kgrgame.cpp:1422
+#: src/kgrgame.cpp:1424
 #, kde-format
 msgid "Keyboard Mode"
 msgstr "Režim klávesnice"
 
-#: src/kgrgame.cpp:1456 src/kgrgame.cpp:1482 src/kgrgame.cpp:1492
-#: src/kgrgame.cpp:1511 src/kgrgame.cpp:1517
-#, kde-format
+#: src/kgrgame.cpp:1458 src/kgrgame.cpp:1484 src/kgrgame.cpp:1494
+#: src/kgrgame.cpp:1513 src/kgrgame.cpp:1519
+#, fuzzy, kde-format
+#| msgid "Save Game"
+msgctxt "@title:window"
 msgid "Save Game"
 msgstr "Uložiť hru"
 
-#: src/kgrgame.cpp:1457
+#: src/kgrgame.cpp:1459
 #, kde-format
 msgid ""
 "Sorry, you cannot save your game play while you are editing. Please try menu "
@@ -8996,13 +9437,13 @@ msgstr ""
 "Ľutujeme, nemôžete uložiť rozohranú hru počas úprav. Prosím, použite položku "
 "menu \"%1\"."
 
-#: src/kgrgame.cpp:1493 src/kgrgame.cpp:1537 src/kgrgame.cpp:1652
-#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2021 src/kgrgameio.cpp:169
+#: src/kgrgame.cpp:1495 src/kgrgame.cpp:1539 src/kgrgame.cpp:1654
+#: src/kgrgame.cpp:1857 src/kgrgame.cpp:2023 src/kgrgameio.cpp:169
 #, kde-format
 msgid "Cannot open file '%1' for read-only."
 msgstr "Nepodarilo sa otvoriť súbor '%1' na čítanie."
 
-#: src/kgrgame.cpp:1512
+#: src/kgrgame.cpp:1514
 #, kde-format
 msgid ""
 "Please note: for reasons of simplicity, your saved game position and score "
@@ -9011,37 +9452,41 @@ msgstr ""
 "Upozornenie: z dôvodov jednoduchosti, vaša uložená herná pozícia a skóre "
 "budú také, aké boli na začiatku tejto úrovne, nie také, aké sú teraz."
 
-#: src/kgrgame.cpp:1518
+#: src/kgrgame.cpp:1520
 #, kde-format
 msgid "Error: Failed to save your game."
 msgstr "Chyba: Zlyhalo uloženie vašej hry."
 
-#: src/kgrgame.cpp:1530 src/kgrgame.cpp:1536 src/kgrgame.cpp:1574
-#, kde-format
+#: src/kgrgame.cpp:1532 src/kgrgame.cpp:1538 src/kgrgame.cpp:1576
+#, fuzzy, kde-format
+#| msgid "Load Game"
+msgctxt "@title:window"
 msgid "Load Game"
 msgstr "Načítať hru"
 
-#: src/kgrgame.cpp:1531
+#: src/kgrgame.cpp:1533
 #, kde-format
 msgid "Sorry, there are no saved games."
 msgstr "Ľutujem, nie sú uložené žiadne hry."
 
-#: src/kgrgame.cpp:1575
+#: src/kgrgame.cpp:1577
 #, kde-format
 msgid "Cannot find the game with prefix '%1'."
 msgstr "Nepodarilo sa nájsť hru s predponou '%1'."
 
-#: src/kgrgame.cpp:1633
+#: src/kgrgame.cpp:1635
 #, kde-format
 msgid "Unknown"
 msgstr "Neznámy"
 
-#: src/kgrgame.cpp:1651 src/kgrgame.cpp:1690
-#, kde-format
+#: src/kgrgame.cpp:1653 src/kgrgame.cpp:1692
+#, fuzzy, kde-format
+#| msgid "Check for High Score"
+msgctxt "@title:window"
 msgid "Check for High Score"
 msgstr "Kontrola najvyššieho skóre"
 
-#: src/kgrgame.cpp:1708
+#: src/kgrgame.cpp:1710
 #, kde-format
 msgid ""
 "<html><b>Congratulations !!!</b><br/>You have achieved a high score in this "
@@ -9052,39 +9497,36 @@ msgstr ""
 ">Prosím, zadajte vaše meno, aby ho bolo možné uchovať<br/>v Sieni slávy "
 "KGoldrunner.</html>"
 
-#: src/kgrgame.cpp:1722
+#: src/kgrgame.cpp:1724 src/kgrgame.cpp:1811
 #, fuzzy, kde-format
 #| msgid "Save High Score"
 msgctxt "@title:window"
 msgid "Save High Score"
 msgstr "Uložiť dosiahnuté skóre"
 
-#: src/kgrgame.cpp:1809
-#, kde-format
-msgid "Save High Score"
-msgstr "Uložiť dosiahnuté skóre"
-
-#: src/kgrgame.cpp:1810
+#: src/kgrgame.cpp:1812
 #, kde-format
 msgid "Error: Failed to save your high score."
 msgstr "Chyba: Zlyhalo uloženie vášho vysokého skóre."
 
-#: src/kgrgame.cpp:1822 src/kgrgame.cpp:1845 src/kgrgame.cpp:1854
-#, kde-format
+#: src/kgrgame.cpp:1824 src/kgrgame.cpp:1847 src/kgrgame.cpp:1856
+#, fuzzy, kde-format
+#| msgid "Show High Scores"
+msgctxt "@title:window"
 msgid "Show High Scores"
 msgstr "Zobraziť najvyššie skóre"
 
-#: src/kgrgame.cpp:1823
+#: src/kgrgame.cpp:1825
 #, kde-format
 msgid "Sorry, we do not keep high scores for tutorial games."
 msgstr "Ľutujem, ale pre výučbové úrovne sa najvyššie skóre neukladá."
 
-#: src/kgrgame.cpp:1846
+#: src/kgrgame.cpp:1848
 #, kde-format
 msgid "Sorry, there are no high scores for the \"%1\" game yet."
 msgstr "Ľutujeme, pre hru %1 ešte nie sú uložené žiadne vysoké skóre."
 
-#: src/kgrgame.cpp:1870
+#: src/kgrgame.cpp:1872
 #, kde-format
 msgid ""
 "<center><h2>KGoldrunner Hall of Fame</h2></center><center><h3>\"%1\" Game</"
@@ -9093,68 +9535,84 @@ msgstr ""
 "<center><h2>Sieň slávy KGoldrunner</h2></center><center><h3>Hra \"%1\"</h3></"
 "center>"
 
-#: src/kgrgame.cpp:1880
-#, kde-format
-msgctxt "1, 2, 3 etc."
+#: src/kgrgame.cpp:1882
+#, fuzzy, kde-format
+#| msgctxt "1, 2, 3 etc."
+#| msgid "Rank"
+msgctxt "@title:column 1, 2, 3 etc."
 msgid "Rank"
 msgstr "Hodnosť"
 
-#: src/kgrgame.cpp:1881
-#, kde-format
-msgctxt "Person"
+#: src/kgrgame.cpp:1883
+#, fuzzy, kde-format
+#| msgctxt "Person"
+#| msgid "Name"
+msgctxt "@title:column person"
 msgid "Name"
 msgstr "Názov"
 
-#: src/kgrgame.cpp:1882
-#, kde-format
-msgctxt "Game level reached"
+#: src/kgrgame.cpp:1884
+#, fuzzy, kde-format
+#| msgctxt "Game level reached"
+#| msgid "Level"
+msgctxt "@title:column game level reached"
 msgid "Level"
 msgstr "Úroveň"
 
-#: src/kgrgame.cpp:1883
-#, kde-format
+#: src/kgrgame.cpp:1885
+#, fuzzy, kde-format
+#| msgid "Score"
+msgctxt "@title:column"
 msgid "Score"
 msgstr "Skóre"
 
-#: src/kgrgame.cpp:1884
-#, kde-format
+#: src/kgrgame.cpp:1886
+#, fuzzy, kde-format
+#| msgid "Date"
+msgctxt "@title:column"
 msgid "Date"
 msgstr "Dátum"
 
-#: src/kgrgame.cpp:1888
+#: src/kgrgame.cpp:1890
 #, fuzzy, kde-format
 #| msgid "High Scores"
 msgctxt "@title:window"
 msgid "High Scores"
 msgstr "Najvyššie skóre"
 
-#: src/kgrgame.cpp:2014 src/kgrgame.cpp:2020 src/kgrgame.cpp:2024
-#, kde-format
+#: src/kgrgame.cpp:2016 src/kgrgame.cpp:2022 src/kgrgame.cpp:2026
+#, fuzzy, kde-format
+#| msgid "Load Game Info"
+msgctxt "@title:window"
 msgid "Load Game Info"
 msgstr "Načítať informácie o hre"
 
-#: src/kgrgame.cpp:2015
+#: src/kgrgame.cpp:2017
 #, kde-format
 msgid "Cannot find game info file '%1'."
 msgstr "Nepodarilo sa nájsť súbor s informáciami o hre '%1'."
 
-#: src/kgrgame.cpp:2025
+#: src/kgrgame.cpp:2027
 #, kde-format
 msgid "Reached end of file '%1' before finding end of game-data."
 msgstr "Dosiahnutý koniec súboru '%1', skôr ako sa našiel koniec herných dát."
 
-#: src/kgrgame.cpp:2049 src/kgrgame.cpp:2054 src/kgrselector.cpp:263
-#, kde-format
-msgid "Save A Solution"
+#: src/kgrgame.cpp:2051 src/kgrgame.cpp:2056
+#, fuzzy, kde-format
+#| msgid "Save A Solution"
+msgctxt "@title:window"
+msgid "Save a Solution"
 msgstr "Uložiť riešenie"
 
-#: src/kgrgame.cpp:2050
+#: src/kgrgame.cpp:2052
 #, kde-format
 msgid "Your solution to level %1 has been saved on file %2"
 msgstr "Vaše riešenie do úrovne %1 bolo uložené do súboru %2"
 
 #: src/kgrgameio.cpp:163 src/kgrgameio.cpp:168 src/kgrgameio.cpp:172
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Read Level Data"
+msgctxt "@title:window"
 msgid "Read Level Data"
 msgstr "Čítať dáta úrovne"
 
@@ -9169,7 +9627,9 @@ msgid "Reached end of file '%1' without finding level data."
 msgstr "Dosiahnutý koniec súboru '%1' bez nájdenia dát úrovne."
 
 #: src/kgrgameio.cpp:381 src/kgrgameio.cpp:388
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Rename File"
+msgctxt "@title:window"
 msgid "Rename File"
 msgstr "Premenovať súbor"
 
@@ -9184,7 +9644,9 @@ msgid "Cannot rename file '%1' to '%2'."
 msgstr "Nie je možné premenovať súbor '%1' na '%2'."
 
 #: src/kgrrenderer.cpp:100
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Theme Selector"
+msgctxt "@title:window"
 msgid "Theme Selector"
 msgstr "Výber tém"
 
@@ -9200,7 +9662,9 @@ msgstr "Skóre: %1"
 
 #: src/kgrselector.cpp:72 src/kgrselector.cpp:78 src/kgrselector.cpp:98
 #: src/kgrselector.cpp:501
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select Level"
+msgctxt "@title:window"
 msgid "Select Level"
 msgstr "Vybrať úroveň"
 
@@ -9214,11 +9678,6 @@ msgstr ""
 #, kde-format
 msgid "Sorry, you can only delete a level from one of your own games."
 msgstr "Ľutujem, ale odstrániť úroveň môžete iba zo svojich vlastných hier."
-
-#: src/kgrselector.cpp:84 src/kgrselector.cpp:281
-#, kde-format
-msgid "Edit Game Info"
-msgstr "Upraviť informácie o hre"
 
 #: src/kgrselector.cpp:85
 #, kde-format
@@ -9243,22 +9702,30 @@ msgid "<html><b>Please select a game:</b></html>"
 msgstr "<html><b>Prosím, vyberte hru:</b></html>"
 
 #: src/kgrselector.cpp:143
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name of Game"
+msgctxt "@title:column"
 msgid "Name of Game"
 msgstr "Názov hry"
 
 #: src/kgrselector.cpp:144
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Rules"
+msgctxt "@title:column"
 msgid "Rules"
 msgstr "Pravidlá"
 
 #: src/kgrselector.cpp:145
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Levels"
+msgctxt "@title:column"
 msgid "Levels"
 msgstr "Úrovne"
 
 #: src/kgrselector.cpp:146
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Skill"
+msgctxt "@title:column"
 msgid "Skill"
 msgstr "Zručnosť"
 
@@ -9280,45 +9747,88 @@ msgid "Please select a level:"
 msgstr "Prosím, vyberať úroveň:"
 
 #: src/kgrselector.cpp:204
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Level number:"
+msgctxt "@label:spinbox"
 msgid "Level number:"
 msgstr "Číslo úrovne:"
 
 #: src/kgrselector.cpp:210
 #, fuzzy, kde-format
 #| msgid "Edit Level Name && Hint"
+msgctxt "@action:button"
 msgid "Edit Level Name o&r Hint"
 msgstr "Upraviť meno úrovne a radu"
 
 #: src/kgrselector.cpp:245
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start Game"
+msgctxt "@action:button"
 msgid "Start Game"
 msgstr "Spustiť hru"
 
 #: src/kgrselector.cpp:254
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Play Level"
+msgctxt "@action:button"
 msgid "Play Level"
 msgstr "Hrať úroveň"
 
 #: src/kgrselector.cpp:257
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Replay Level"
+msgctxt "@action:button"
 msgid "Replay Level"
 msgstr "Znovu hrať úroveň"
 
 #: src/kgrselector.cpp:260
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Show Solution"
+msgctxt "@action:button"
 msgid "Show Solution"
 msgstr "Zobraziť riešenie"
 
+#: src/kgrselector.cpp:263
+#, fuzzy, kde-format
+#| msgid "Save A Solution"
+msgctxt "@action:button"
+msgid "Save a Solution"
+msgstr "Uložiť riešenie"
+
+#: src/kgrselector.cpp:266
+#, fuzzy, kde-format
+#| msgid "Edit Level"
+msgctxt "@action:button"
+msgid "Edit Level"
+msgstr "Upraviť úroveň"
+
 #: src/kgrselector.cpp:272
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Change"
+msgctxt "@action:button"
 msgid "Save Change"
 msgstr "Uložiť zmeny"
 
+#: src/kgrselector.cpp:275
+#, fuzzy, kde-format
+#| msgid "Delete Level"
+msgctxt "@action:button"
+msgid "Delete Level"
+msgstr "Odstrániť úroveň"
+
 #: src/kgrselector.cpp:278
-#, kde-format
-msgid "Move To..."
+#, fuzzy, kde-format
+#| msgid "Move To..."
+msgctxt "@action:button"
+msgid "Move To…"
 msgstr "Presunúť do..."
+
+#: src/kgrselector.cpp:281
+#, fuzzy, kde-format
+#| msgid "Edit Game Info"
+msgctxt "@action:button"
+msgid "Edit Game Info"
+msgstr "Upraviť informácie o hre"
 
 #: src/kgrselector.cpp:357
 #, kde-format
@@ -9528,7 +10038,9 @@ msgstr ""
 "podľa vašej voľby."
 
 #: src/kgrselector.cpp:589
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Help: Select Game & Level"
+msgctxt "@title:window"
 msgid "Help: Select Game & Level"
 msgstr "Pomocník: Vyberte hru a úroveň"
 
@@ -9626,6 +10138,51 @@ msgstr ""
 #, kde-format
 msgid "Artwork for the Treasure of Egypt theme"
 msgstr "Grafický dizajn tému Poklad Egypta"
+
+#~ msgid "&Save Game..."
+#~ msgstr "&Uložiť hru..."
+
+#~ msgid "Save A Solution..."
+#~ msgstr "Uložiť riešenie..."
+
+#~ msgid "Kill Hero."
+#~ msgstr "Zabiť hrdinu."
+
+#~ msgid "&Edit Level..."
+#~ msgstr "Upraviť úroveň..."
+
+#~ msgid "Edit level..."
+#~ msgstr "Upraviť úroveň..."
+
+#~ msgid "&Move Level..."
+#~ msgstr "&Presunúť úroveň..."
+
+#~ msgid "Move level..."
+#~ msgstr "Presunúť úroveň..."
+
+#~ msgid "&Delete Level..."
+#~ msgstr "O&dstrániť úroveň..."
+
+#~ msgid "Delete level..."
+#~ msgstr "Odstrániť úroveň..."
+
+#~ msgid "Create &Game..."
+#~ msgstr "Vytvoriť hru..."
+
+#~ msgid "Create game..."
+#~ msgstr "Vytvoriť hru..."
+
+#~ msgid "Edit Game &Info..."
+#~ msgstr "Upraviť informácie o hre..."
+
+#~ msgid "Click Key To Move."
+#~ msgstr "Stlačiť klávesu pre presun."
+
+#~ msgid "Hold Key To Move."
+#~ msgstr "Podržať klávesu pre presun."
+
+#~ msgid "Save High Score"
+#~ msgstr "Uložiť dosiahnuté skóre"
 
 #~ msgid ""
 #~ "Cannot find documentation sub-folder 'en/%1/' in area '%2' of the KDE "

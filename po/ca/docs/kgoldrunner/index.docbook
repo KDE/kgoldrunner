@@ -166,7 +166,7 @@
 ><guimenu
 >Joc</guimenu
 > <guimenuitem
->Partida nova...</guimenuitem
+>Partida nova…</guimenuitem
 ></menuchoice
 > o <keycombo action="simul"
 >&Ctrl;<keycap
@@ -195,7 +195,7 @@
 > per a començar a jugar immediatament. En cas contrari, podeu fer clic sobre el botó <guibutton
 >Surt</guibutton
 >, el botó <guibutton
->Partida nova...</guibutton
+>Partida nova…</guibutton
 > o el botó <guibutton
 >Usa el menú</guibutton
 >. El primer tancarà el &kgoldrunner;, si no voleu jugar, el segon us mostrarà un diàleg <link linkend="select-game-dialog"
@@ -274,7 +274,7 @@
 ><guimenu
 >Arranjament</guimenu
 > <guimenuitem
->Configura les dreceres de teclat...</guimenuitem
+>Configura les dreceres de teclat…</guimenuitem
 ></menuchoice
 >.</para>
 
@@ -487,7 +487,7 @@
 ><guimenu
 >Joc</guimenu
 > <guimenuitem
->Partida nova...</guimenuitem
+>Partida nova…</guimenuitem
 ></menuchoice
 > o <keycombo action="simul"
 >&Ctrl;<keycap
@@ -619,7 +619,7 @@
 
 <para
 >Aquest diàleg apareixerà quan seleccioneu l'opció <guimenuitem
->Partida nova...</guimenuitem
+>Partida nova…</guimenuitem
 > i també quan seleccioneu opcions des del menú <guimenu
 >Editor</guimenu
 > o qualsevol opció de repetició des del menú <guimenu
@@ -837,7 +837,7 @@ linkend="settings-menu"
 > <guimenu
 >Joc</guimenu
 > <guimenuitem
->Partida nova...</guimenuitem
+>Partida nova…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -862,7 +862,7 @@ linkend="settings-menu"
 > <guimenu
 >Joc</guimenu
 > <guimenuitem
->Carrega una partida desada...</guimenuitem
+>Carrega una partida desada…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -902,7 +902,7 @@ linkend="settings-menu"
 > <guimenu
 >Joc</guimenu
 ><guimenuitem
->Desa la partida...</guimenuitem
+>Desa la partida…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -927,7 +927,7 @@ linkend="settings-menu"
 > <guimenu
 >Joc</guimenu
 ><guimenuitem
->Desa els canvis...</guimenuitem
+>Desa els canvis…</guimenuitem
 > </menuchoice>
 </term>
 <listitem
@@ -938,7 +938,7 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 > <guimenuitem
->Desa els canvis...</guimenuitem
+>Desa els canvis…</guimenuitem
 ></menuchoice
 > i la icona de <guiicon
 >disc</guiicon
@@ -958,7 +958,7 @@ linkend="settings-menu"
 > <guimenu
 >Joc</guimenu
 ><guimenuitem
->Desa una solució...</guimenuitem
+>Desa una solució…</guimenuitem
 > </menuchoice>
 </term>
 <listitem
@@ -1002,7 +1002,7 @@ linkend="settings-menu"
 > <guimenu
 >Joc</guimenu
 > <guimenuitem
->Mostra les puntuacions...</guimenuitem
+>Mostra les puntuacions…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1065,7 +1065,7 @@ linkend="settings-menu"
 ><guimenu
 >Joc</guimenu
 > <guimenuitem
->Partida nova...</guimenuitem
+>Partida nova…</guimenuitem
 ></menuchoice
 > o <keycombo action="simul"
 >&Ctrl;<keycap
@@ -1234,7 +1234,7 @@ linkend="settings-menu"
 <listitem>
 <para
 >Mostra la barra d'eines de l'editor i una àrea de joc en blanc en la qual podreu dibuixar un nivell nou. Quan acabeu, utilitzeu l'opció <guimenuitem
->Desa els canvis...</guimenuitem
+>Desa els canvis…</guimenuitem
 > per a assignar el nivell nou a una partida amb un número de nivell.</para>
 </listitem>
 </varlistentry>
@@ -1245,7 +1245,7 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 ><guimenuitem
->Edita un nivell...</guimenuitem
+>Edita un nivell…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1268,14 +1268,14 @@ linkend="settings-menu"
 > <guimenu
 >Editor</guimenu
 ><guimenuitem
->Desa els canvis...</guimenuitem
+>Desa els canvis…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
 <para
 >Mostra el diàleg <guilabel
 >Selecció d'una partida</guilabel
-> amb la configuració predeterminada adequada per a desar un nivell nou o editat. Podreu canviar la partida i el número de nivell, i aconseguir un efecte «Desa com a...». Aquest diàleg té un botó especial, <guibutton
+> amb la configuració predeterminada adequada per a desar un nivell nou o editat. Podreu canviar la partida i el número de nivell, i aconseguir un efecte «Desa com a…». Aquest diàleg té un botó especial, <guibutton
 >Edita el nom del nivell o el consell</guibutton
 >, el qual mostrarà un diàleg on podreu afegir un nom opcional i un consell al vostre nivell.</para>
 </listitem>
@@ -1287,13 +1287,13 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 ><guimenuitem
->Mou un nivell...</guimenuitem
+>Mou un nivell…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
 <para
 >Aquesta és una operació de dues parts. Abans d'utilitzar-la, haureu de carregar un nivell a moure seleccionant-lo per a jugar o editar. L'opció <guimenuitem
->Mou un nivell...</guimenuitem
+>Mou un nivell…</guimenuitem
 > mostrarà el diàleg <guilabel
 >Selecció d'una partida</guilabel
 >, on es triarà un lloc nou per al nivell carregat. Podreu canviar tant la partida com el número del nivell, per a moure un nivell a una altra partida, o senzillament podeu canviar el número de nivell per a tornar a ordenar-los dins d'una partida. No podreu moure un nivell del sistema.</para>
@@ -1306,7 +1306,7 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 ><guimenuitem
->Suprimeix un nivell...</guimenuitem
+>Suprimeix un nivell…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1323,7 +1323,7 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 ><guimenuitem
->Crea una partida...</guimenuitem
+>Crea una partida…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1338,7 +1338,7 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 ><guimenuitem
->Edita la informació d'una partida...</guimenuitem
+>Edita la informació d'una partida…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1364,7 +1364,7 @@ linkend="settings-menu"
 ><guimenu
 >Arranjament</guimenu
 ><guisubmenu
->Canvia el tema...</guisubmenu
+>Canvia el tema…</guisubmenu
 > </menuchoice
 ></term>
 <listitem>
@@ -1661,7 +1661,7 @@ linkend="settings-menu"
 ><guimenu
 >Arranjament</guimenu
 ><guimenuitem
->Configura les dreceres de teclat...</guimenuitem
+>Configura les dreceres de teclat…</guimenuitem
 > </menuchoice
 ></term>
 <listitem>
@@ -1705,7 +1705,7 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 > <guimenuitem
->Crea una partida...</guimenuitem
+>Crea una partida…</guimenuitem
 ></menuchoice
 >. Si us oblideu, us ho recordarà.</para>
 
@@ -1754,7 +1754,7 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 > <guimenuitem
->Edita un nivell...</guimenuitem
+>Edita un nivell…</guimenuitem
 ></menuchoice
 > per a començar a editar un nivell existent o utilitzeu l'element de menú <menuchoice
 ><guimenu
@@ -1777,7 +1777,7 @@ linkend="settings-menu"
 >La imatge següent mostra la barra d'eines d'edició, la qual apareix quan trieu per primera vegada les opcions <guimenuitem
 >Crea un nivell</guimenuitem
 > o <guimenuitem
->Edita un nivell...</guimenuitem
+>Edita un nivell…</guimenuitem
 > des del menú <guimenu
 >Editor</guimenu
 > i així canviareu des del mode Juga a Edita. Desapareixerà quan torneu al mode Juga. També cal tenir en compte, que en el mode Edita, els maons falsos i les escales ocultes es faran visibles en l'àrea de joc.</para>
@@ -1786,9 +1786,9 @@ linkend="settings-menu"
 >Les tres icones a l'esquerra de la barra d'eines d'edició tenen les mateixes accions que les opcions de menú <guimenuitem
 >Crea un nivell</guimenuitem
 >, <guimenuitem
->Edita un nivell...</guimenuitem
+>Edita un nivell…</guimenuitem
 > i <guimenuitem
->Desa els canvis...</guimenuitem
+>Desa els canvis…</guimenuitem
 >. Les altres onze icones són per a editar i pintar els objectes en el vostre nivell.</para>
 
 
@@ -1860,20 +1860,20 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 > <guimenuitem
->Desa els canvis...</guimenuitem
+>Desa els canvis…</guimenuitem
 ></menuchoice
 > o <menuchoice
 ><guimenu
 >Joc</guimenu
 > <guimenuitem
->Desa els canvis...</guimenuitem
+>Desa els canvis…</guimenuitem
 ></menuchoice
 >. Sempre haureu de desar en les vostres pròpies partides, mai en les del sistema.</para>
 
 <para
 >Si esteu creant un nivell, utilitzeu el diàleg <guilabel
 >Selecció d'una partida</guilabel
-> per a assignar un nivell a una partida amb un número de nivell. Utilitzeu el diàleg si heu estat editant un nivell, però el valor predeterminat és desat d'on venia. Podreu canviar la partida i el nivell per a obtenir un efecte «Desa com a...». Si heu estat editant un nivell del sistema, haureu de desar-lo com a una còpia en una de les vostres pròpies partides.</para>
+> per a assignar un nivell a una partida amb un número de nivell. Utilitzeu el diàleg si heu estat editant un nivell, però el valor predeterminat és desat d'on venia. Podreu canviar la partida i el nivell per a obtenir un efecte «Desa com a…». Si heu estat editant un nivell del sistema, haureu de desar-lo com a una còpia en una de les vostres pròpies partides.</para>
 
 </sect2>
 
@@ -1901,13 +1901,13 @@ linkend="settings-menu"
 ><guimenu
 >Joc</guimenu
 > <guimenuitem
->Partida nova...</guimenuitem
+>Partida nova…</guimenuitem
 ></menuchoice
 > o la drecera de teclat equivalent. De manera predeterminada, es recordaran la partida i el número de nivell, i podreu accedir directament al nivell amb només uns pocs clics. Si després voleu editar una mica més, passarà el mateix quan utilitzeu de nou l'element de menú <menuchoice
 ><guimenu
 >Joc</guimenu
 > <guimenuitem
->Edita un nivell...</guimenuitem
+>Edita un nivell…</guimenuitem
 ></menuchoice
 >. És fonamental provar tots els nivells que componeu, per a assegurar-vos que és possible completar-los i que no són massa fàcils.</para>
 
@@ -1949,7 +1949,7 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 > <guimenuitem
->Suprimeix un nivell...</guimenuitem
+>Suprimeix un nivell…</guimenuitem
 ></menuchoice
 > per a eliminar un nivell no desitjat. Els altres nivells es tornaran a numerar per a tancar la bretxa en la seqüència.</para>
 

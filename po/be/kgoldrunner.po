@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 00:36+0000\n"
+"POT-Creation-Date: 2024-05-06 00:36+0000\n"
 "PO-Revision-Date: 2007-10-28 14:33+0200\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@licei2.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -5826,760 +5826,924 @@ msgid ""
 "is a steady hand."
 msgstr ""
 
-#: src/kgoldrunner.cpp:184 src/kgrgame.cpp:723
+#: src/kgoldrunner.cpp:184
 #, fuzzy, kde-format
-msgid "&New Game..."
+msgctxt "@action"
+msgid "&New Game…"
 msgstr "Новая гульня..."
 
 #: src/kgoldrunner.cpp:187
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Pla&y Next Level"
 msgstr "Наступны ўзровень..."
 
 #: src/kgoldrunner.cpp:188
 #, fuzzy, kde-format
-msgid "Play next level."
+msgctxt "@info:tooltip"
+msgid "Play the next level"
 msgstr "Наступны ўзровень..."
 
 #: src/kgoldrunner.cpp:189
 #, kde-format
-msgid "Try the next level in the game you are playing."
+msgctxt "@info:whatsthis"
+msgid "Switches to the next level in the game you are playing."
 msgstr ""
 
 #: src/kgoldrunner.cpp:196
 #, fuzzy, kde-format
-msgid "&Load Saved Game..."
+msgctxt "@action"
+msgid "&Load Saved Game…"
 msgstr "Загрузіць гульню..."
 
 #: src/kgoldrunner.cpp:205
 #, fuzzy, kde-format
-msgid "&Save Game..."
-msgstr "Захаваць гульню..."
+msgctxt "@action"
+msgid "&Save Game…"
+msgstr "Захаваць гульню"
 
-#: src/kgoldrunner.cpp:211 src/kgoldrunner.cpp:212
+#: src/kgoldrunner.cpp:211
 #, fuzzy, kde-format
-msgid "Save A Solution..."
+msgctxt "@action"
+msgid "Save a Solution…"
+msgstr "Паказаць пазіцыі"
+
+#: src/kgoldrunner.cpp:212
+#, fuzzy, kde-format
+msgctxt "@info:tooltip"
+msgid "Save a solution"
 msgstr "Паказаць пазіцыі"
 
 #: src/kgoldrunner.cpp:213
 #, kde-format
+msgctxt "@info:whatsthis"
 msgid ""
-"Save a solution for a level into a file called 'sol_&lt;prefix&gt;.txt' in "
-"your user's data directory..."
+"Saves a solution for a level into a file called 'sol_&lt;prefix&gt;.txt' in "
+"your user's data directory."
 msgstr ""
 
-#: src/kgoldrunner.cpp:246 src/kgrgame.cpp:1303
+#: src/kgoldrunner.cpp:246
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "&Show a Solution"
 msgstr "Паказаць пазіцыі"
 
 #: src/kgoldrunner.cpp:247
 #, fuzzy, kde-format
-msgid "Show how to win this level."
+msgctxt "@info:tooltip"
+msgid "Show how to win this level"
 msgstr "Для гэтага ўзроўня падказкі няма."
 
 #: src/kgoldrunner.cpp:248
 #, kde-format
-msgid "Play a recording of how to win this level, if there is one available."
+msgctxt "@info:whatsthis"
+msgid "Plays a recording of how to win this level, if there is one available."
 msgstr ""
 
 #: src/kgoldrunner.cpp:252
 #, kde-format
+msgctxt "@action"
 msgid "&Instant Replay"
 msgstr ""
 
 #: src/kgoldrunner.cpp:253
 #, kde-format
-msgid "Instant replay."
+msgctxt "@info:tooltip"
+msgid "Instant replay"
 msgstr ""
 
 #: src/kgoldrunner.cpp:254
 #, kde-format
-msgid "Show a recording of the level you are currently playing."
+msgctxt "@info:whatsthis"
+msgid "Shows a recording of the level you are currently playing."
 msgstr ""
 
 #: src/kgoldrunner.cpp:259
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Replay &Last Level"
 msgstr "Вылучыць узровень..."
 
 #: src/kgoldrunner.cpp:260
 #, fuzzy, kde-format
-msgid "Replay last level."
+msgctxt "@info:tooltip"
+msgid "Replay last level"
 msgstr "Вылучыць узровень..."
 
 #: src/kgoldrunner.cpp:261
 #, kde-format
+msgctxt "@info:whatsthis"
 msgid ""
-"Show a recording of the last level you played and finished, regardless of "
+"Shows a recording of the last level you played and finished, regardless of "
 "whether you won or lost."
 msgstr ""
 
 #: src/kgoldrunner.cpp:267
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "&Replay Any Level"
 msgstr "Вылучыць узровень..."
 
 #: src/kgoldrunner.cpp:268
 #, fuzzy, kde-format
-msgid "Replay any level."
+msgctxt "@info:tooltip"
+msgid "Replay any level"
 msgstr "Вылучыць узровень..."
 
 #: src/kgoldrunner.cpp:269
 #, kde-format
-msgid "Show a recording of any level you have played so far."
+msgctxt "@info:whatsthis"
+msgid "Shows a recording of any level you have played so far."
 msgstr ""
 
 #: src/kgoldrunner.cpp:274
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "&Kill Hero"
 msgstr "Забіць героя"
 
 #: src/kgoldrunner.cpp:275
 #, fuzzy, kde-format
-msgid "Kill Hero."
+msgctxt "@info:tooltip"
+msgid "Kill the hero"
 msgstr "Забіць героя"
 
 #: src/kgoldrunner.cpp:276
 #, kde-format
+msgctxt "@info:whatsthis"
 msgid ""
-"Kill the hero, in case he finds himself in a situation from which he cannot "
+"Kills the hero, in case he finds himself in a situation from which he cannot "
 "escape."
 msgstr ""
 
 #: src/kgoldrunner.cpp:293
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "&Create Level"
 msgstr "Стварыць узровень"
 
 #: src/kgoldrunner.cpp:294
 #, fuzzy, kde-format
-msgid "Create level."
+msgctxt "@info:tooltip"
+msgid "Create level"
 msgstr "Стварыць узровень"
 
 #: src/kgoldrunner.cpp:295
 #, kde-format
-msgid "Create a completely new level."
+msgctxt "@info:whatsthis"
+msgid "Creates a completely new level."
 msgstr ""
 
 #: src/kgoldrunner.cpp:297
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Create"
 msgstr "Стварыць гульню"
 
 #: src/kgoldrunner.cpp:300
 #, fuzzy, kde-format
-msgid "&Edit Level..."
-msgstr "Змяніць узровень..."
+msgctxt "@action"
+msgid "&Edit Level…"
+msgstr "Змяніць узровень"
 
 #: src/kgoldrunner.cpp:301
 #, fuzzy, kde-format
-msgid "Edit level..."
+msgctxt "@info:tooltip"
+msgid "Edit level"
 msgstr "Змяніць узровень"
 
 #: src/kgoldrunner.cpp:302
 #, fuzzy, kde-format
-msgid "Edit any level..."
+msgctxt "@info:whatsthis"
+msgid "Edits any level."
 msgstr "Змяніць узровень..."
 
 #: src/kgoldrunner.cpp:304
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Edit"
 msgstr "Рэдактар"
 
-#: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1459
+#: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1461
 #, fuzzy, kde-format
-msgid "&Save Edits..."
+msgctxt "@action"
+msgid "&Save Edits…"
 msgstr "Захаваць змены..."
 
 #: src/kgoldrunner.cpp:313
 #, fuzzy, kde-format
-msgid "Save edits..."
+msgctxt "@info:tooltip"
+msgid "Save edits"
 msgstr "Захаваць змены..."
 
 #: src/kgoldrunner.cpp:314
 #, kde-format
-msgid "Save your level after editing..."
+msgctxt "@info:whatsthis"
+msgid "Saves your level after editing."
 msgstr ""
 
 #: src/kgoldrunner.cpp:316
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Save"
 msgstr "&Запісаць"
 
 #: src/kgoldrunner.cpp:320
 #, fuzzy, kde-format
-msgid "&Move Level..."
-msgstr "Перамясціць узровень..."
+msgctxt "@action"
+msgid "&Move Level…"
+msgstr "Перамясціць узровень"
 
 #: src/kgoldrunner.cpp:321
 #, fuzzy, kde-format
-msgid "Move level..."
-msgstr "Перамясціць узровень..."
+msgctxt "@info:tooltip"
+msgid "Move level"
+msgstr "Перамясціць узровень"
 
 #: src/kgoldrunner.cpp:322
-#, kde-format
-msgid "Change a level's number or move it to another game..."
-msgstr ""
+#, fuzzy, kde-format
+msgctxt "@info:whatsthis"
+msgid "Changes a level's number or move it to another game."
+msgstr "Няслушны нумар узроўня."
 
 #: src/kgoldrunner.cpp:326
 #, fuzzy, kde-format
-msgid "&Delete Level..."
-msgstr "Выдаліць узровень..."
+msgctxt "@action"
+msgid "&Delete Level…"
+msgstr "Выдаліць узровень"
 
 #: src/kgoldrunner.cpp:327
 #, fuzzy, kde-format
-msgid "Delete level..."
-msgstr "Выдаліць узровень..."
+msgctxt "@info:tooltip"
+msgid "Delete level"
+msgstr "Выдаліць узровень"
 
 #: src/kgoldrunner.cpp:328
 #, fuzzy, kde-format
-msgid "Delete a level..."
+msgctxt "@info:whatsthis"
+msgid "Deletes a level."
 msgstr "Выдаліць узровень..."
 
 #: src/kgoldrunner.cpp:335
 #, fuzzy, kde-format
-msgid "Create &Game..."
-msgstr "Стварыць гульню..."
+msgctxt "@action"
+msgid "Create &Game…"
+msgstr "Стварыць гульню"
 
 #: src/kgoldrunner.cpp:336
 #, fuzzy, kde-format
-msgid "Create game..."
-msgstr "Стварыць гульню..."
+msgctxt "@info:tooltip"
+msgid "Create game"
+msgstr "Стварыць гульню"
 
 #: src/kgoldrunner.cpp:337
 #, kde-format
-msgid "Create a completely new game..."
+msgctxt "@info:whatsthis"
+msgid "Creates a completely new game."
 msgstr ""
 
 #: src/kgoldrunner.cpp:340
 #, fuzzy, kde-format
-msgid "Edit Game &Info..."
-msgstr "Змяніць дадзеныя гульні..."
+msgctxt "@action"
+msgid "Edit Game &Info…"
+msgstr "Змяніць дадзеныя гульні"
 
 #: src/kgoldrunner.cpp:341
 #, fuzzy, kde-format
-msgid "Edit game info..."
+msgctxt "@info:tooltip"
+msgid "Edit game info"
 msgstr "Змяніць дадзеныя гульні..."
 
 #: src/kgoldrunner.cpp:342
 #, kde-format
-msgid "Change the name, rules or description of a game..."
+msgctxt "@info:whatsthis"
+msgid "Changes the name, rules or description of a game."
 msgstr ""
 
 #: src/kgoldrunner.cpp:351
 #, fuzzy, kde-format
-msgid "Change &Theme..."
+msgctxt "@action"
+msgid "Change &Theme…"
 msgstr "Стварыць гульню..."
 
 #: src/kgoldrunner.cpp:352
 #, kde-format
-msgid "Change the graphics theme..."
+msgctxt "@info:tooltip"
+msgid "Change the graphics theme"
 msgstr ""
 
 #: src/kgoldrunner.cpp:353
 #, kde-format
-msgid "Alter the visual appearance of the runners and background scene..."
+msgctxt "@info:whatsthis"
+msgid "Alters the visual appearance of the runners and background scene."
 msgstr ""
 
 #: src/kgoldrunner.cpp:367
 #, kde-format
+msgctxt "@option:check"
 msgid "&Play Sounds"
 msgstr ""
 
 #: src/kgoldrunner.cpp:368
 #, kde-format
-msgid "Play sound effects."
+msgctxt "@info:tooltip"
+msgid "Play sound effects"
 msgstr ""
 
 #: src/kgoldrunner.cpp:369
 #, kde-format
-msgid "Play sound effects during the game."
+msgctxt "@info:whatsthis"
+msgid "Plays sound effects during the game."
 msgstr ""
 
-#: src/kgoldrunner.cpp:372
+#: src/kgoldrunner.cpp:373
 #, kde-format
+msgctxt "@option:check"
 msgid "Play &Footstep Sounds"
 msgstr ""
 
-#: src/kgoldrunner.cpp:373 src/kgoldrunner.cpp:374
+#: src/kgoldrunner.cpp:374
 #, kde-format
-msgid "Make sounds of player's footsteps."
+msgctxt "@info:tooltip"
+msgid "Make sounds of player's footsteps"
 msgstr ""
 
-#: src/kgoldrunner.cpp:379
+#: src/kgoldrunner.cpp:375
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "Makes sounds of player's footsteps."
+msgstr ""
+
+#: src/kgoldrunner.cpp:380
 #, fuzzy, kde-format
-msgid "&Demo At Start"
+msgctxt "@option:check"
+msgid "&Demo at Start"
 msgstr "&Не запісваць"
 
-#: src/kgoldrunner.cpp:380 src/kgoldrunner.cpp:381
+#: src/kgoldrunner.cpp:381
 #, kde-format
-msgid "Run a demo when the game starts."
+msgctxt "@info:tooltip"
+msgid "Run a demo when the game starts"
 msgstr ""
 
-#: src/kgoldrunner.cpp:389
-#, fuzzy, kde-format
-msgid "&Mouse Controls Hero"
-msgstr "Кіраванне героем мышшу"
+#: src/kgoldrunner.cpp:382
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "Runs a demo when the game starts."
+msgstr ""
 
 #: src/kgoldrunner.cpp:390
 #, fuzzy, kde-format
-msgid "Mouse controls hero."
+msgctxt "@option:check"
+msgid "&Mouse Controls Hero"
 msgstr "Кіраванне героем мышшу"
 
 #: src/kgoldrunner.cpp:391
+#, fuzzy, kde-format
+msgctxt "@info:tooltip"
+msgid "Mouse controls hero"
+msgstr "Кіраванне героем мышшу"
+
+#: src/kgoldrunner.cpp:392
 #, kde-format
+msgctxt "@info:whatsthis"
 msgid "Use the mouse to control the hero's moves."
 msgstr ""
 
-#: src/kgoldrunner.cpp:395
+#: src/kgoldrunner.cpp:396
 #, fuzzy, kde-format
+msgctxt "@option:check"
 msgid "&Keyboard Controls Hero"
 msgstr "Кіраванне героем праз клавіятуру"
 
-#: src/kgoldrunner.cpp:396
+#: src/kgoldrunner.cpp:397
 #, fuzzy, kde-format
-msgid "Keyboard controls hero."
+msgctxt "@info:tooltip"
+msgid "Keyboard controls hero"
 msgstr "Кіраванне героем праз клавіятуру"
 
-#: src/kgoldrunner.cpp:397
-#, kde-format
-msgid "Use the keyboard to control the hero's moves."
-msgstr ""
-
-#: src/kgoldrunner.cpp:401
+#: src/kgoldrunner.cpp:398
 #, fuzzy, kde-format
-msgid "Hybrid Control (&Laptop)"
+msgctxt "@info:whatsthis"
+msgid "Use the keyboard to control the hero's moves."
 msgstr "Кіраванне героем праз клавіятуру"
 
 #: src/kgoldrunner.cpp:402
+#, fuzzy, kde-format
+msgctxt "@option:check"
+msgid "Hybrid Control (&Laptop)"
+msgstr "Кіраванне героем праз клавіятуру"
+
+#: src/kgoldrunner.cpp:403
 #, kde-format
-msgid "Pointer controls hero; dig using keyboard."
+msgctxt "@info:tooltip"
+msgid "Pointer controls hero; dig using keyboard"
 msgstr ""
 
-#: src/kgoldrunner.cpp:404
+#: src/kgoldrunner.cpp:405
 #, kde-format
+msgctxt "@info:whatsthis"
 msgid ""
 "Use the laptop's pointer device to control the hero's moves, and use the "
 "keyboard to dig left and right."
 msgstr ""
 
-#: src/kgoldrunner.cpp:419
-#, kde-format
-msgid "&Click Key To Move"
-msgstr ""
-
 #: src/kgoldrunner.cpp:420
 #, kde-format
-msgid "Click Key To Move."
+msgctxt "@option:check"
+msgid "&Click Key to Move"
 msgstr ""
 
 #: src/kgoldrunner.cpp:421
 #, kde-format
+msgctxt "@info:tooltip"
+msgid "Click key to move"
+msgstr ""
+
+#: src/kgoldrunner.cpp:422
+#, kde-format
+msgctxt "@info:whatsthis"
 msgid ""
 "In keyboard mode, click a direction-key to start moving and keep on going "
 "until you click another key."
 msgstr ""
 
-#: src/kgoldrunner.cpp:427
-#, kde-format
-msgid "&Hold Key To Move"
-msgstr ""
-
 #: src/kgoldrunner.cpp:428
 #, kde-format
-msgid "Hold Key To Move."
+msgctxt "@option:check"
+msgid "&Hold Key to Move"
 msgstr ""
 
 #: src/kgoldrunner.cpp:429
 #, kde-format
+msgctxt "@info:tooltip"
+msgid "Hold key to move"
+msgstr ""
+
+#: src/kgoldrunner.cpp:430
+#, kde-format
+msgctxt "@info:whatsthis"
 msgid ""
 "In keyboard mode, hold down a direction-key to move and release it to stop."
 msgstr ""
 
-#: src/kgoldrunner.cpp:446
-#, fuzzy, kde-format
-msgid "Normal Speed"
-msgstr "Нармалёвая хуткасць"
-
 #: src/kgoldrunner.cpp:447
 #, fuzzy, kde-format
-msgid "Set normal speed."
+msgctxt "@item:inmenu"
+msgid "Normal Speed"
 msgstr "Нармалёвая хуткасць"
 
 #: src/kgoldrunner.cpp:448
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
+msgid "Set normal speed"
+msgstr "Нармалёвая хуткасць"
+
+#: src/kgoldrunner.cpp:449
+#, fuzzy, kde-format
+msgctxt "@info:whatsthis"
 msgid "Set normal game speed."
 msgstr "Нармалёвая хуткасць"
 
-#: src/kgoldrunner.cpp:452
-#, fuzzy, kde-format
-msgid "Beginner Speed"
-msgstr "Распачыналы"
-
 #: src/kgoldrunner.cpp:453
 #, fuzzy, kde-format
-msgid "Set beginners' speed."
+msgctxt "@item:inmenu"
+msgid "Beginner Speed"
 msgstr "Распачыналы"
 
 #: src/kgoldrunner.cpp:454
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
+msgid "Set beginners' speed"
+msgstr "Распачыналы"
+
+#: src/kgoldrunner.cpp:455
+#, fuzzy, kde-format
+msgctxt "@info:whatsthis"
 msgid "Set beginners' game speed (0.5 times normal)."
 msgstr "Распачыналы"
 
-#: src/kgoldrunner.cpp:459
-#, fuzzy, kde-format
-msgid "Champion Speed"
-msgstr "Чэмпіён"
-
 #: src/kgoldrunner.cpp:460
 #, fuzzy, kde-format
-msgid "Set champions' speed."
+msgctxt "@item:inmenu"
+msgid "Champion Speed"
 msgstr "Чэмпіён"
 
 #: src/kgoldrunner.cpp:461
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
+msgid "Set champions' speed"
+msgstr "Чэмпіён"
+
+#: src/kgoldrunner.cpp:462
+#, fuzzy, kde-format
+msgctxt "@info:whatsthis"
 msgid "Set champions' game speed (1.5 times normal)."
 msgstr "Чэмпіён"
 
-#: src/kgoldrunner.cpp:465
+#: src/kgoldrunner.cpp:466
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Increase Speed"
 msgstr "Павялічыць хуткасць"
 
-#: src/kgoldrunner.cpp:466
+#: src/kgoldrunner.cpp:467
 #, fuzzy, kde-format
-msgid "Increase speed."
+msgctxt "@info:tooltip"
+msgid "Increase speed"
 msgstr "Павялічыць хуткасць"
 
-#: src/kgoldrunner.cpp:467
+#: src/kgoldrunner.cpp:468
 #, kde-format
-msgid "Increase the game speed by 0.1 (maximum is 2.0 times normal)."
+msgctxt "@info:whatsthis"
+msgid "Increases the game speed by 0.1 (maximum is 2.0 times normal)."
 msgstr ""
-
-#: src/kgoldrunner.cpp:472
-#, fuzzy, kde-format
-msgid "Decrease Speed"
-msgstr "Паменшыць хуткасць"
 
 #: src/kgoldrunner.cpp:473
 #, fuzzy, kde-format
-msgid "Decrease speed."
+msgctxt "@action"
+msgid "Decrease Speed"
 msgstr "Паменшыць хуткасць"
 
 #: src/kgoldrunner.cpp:474
-#, kde-format
-msgid "Decrease the game speed by 0.1 (minimum is 0.2 times normal)."
-msgstr ""
-
-#: src/kgoldrunner.cpp:504
 #, fuzzy, kde-format
-msgid "Stop"
-msgstr "Спыніць"
+msgctxt "@info:tooltip"
+msgid "Decrease speed"
+msgstr "Паменшыць хуткасць"
+
+#: src/kgoldrunner.cpp:475
+#, fuzzy, kde-format
+msgctxt "@info:whatsthis"
+msgid "Decreases the game speed by 0.1 (minimum is 0.2 times normal)."
+msgstr "Распачыналы"
 
 #: src/kgoldrunner.cpp:505
 #, fuzzy, kde-format
-msgid "Move Right"
-msgstr "Управа"
+msgctxt "@action"
+msgid "Stop"
+msgstr "Спыніць"
 
 #: src/kgoldrunner.cpp:506
 #, fuzzy, kde-format
-msgid "Move Left"
-msgstr "Улева"
+msgctxt "@action"
+msgid "Move Right"
+msgstr "Управа"
 
 #: src/kgoldrunner.cpp:507
 #, fuzzy, kde-format
-msgid "Move Up"
-msgstr "Пасунуць угору"
+msgctxt "@action"
+msgid "Move Left"
+msgstr "Улева"
 
 #: src/kgoldrunner.cpp:508
 #, fuzzy, kde-format
-msgid "Move Down"
-msgstr "Пасунуць долу"
+msgctxt "@action"
+msgid "Move Up"
+msgstr "Пасунуць угору"
 
 #: src/kgoldrunner.cpp:509
 #, fuzzy, kde-format
-msgid "Dig Right"
-msgstr "Капаць направа"
+msgctxt "@action"
+msgid "Move Down"
+msgstr "Пасунуць долу"
 
 #: src/kgoldrunner.cpp:510
 #, fuzzy, kde-format
+msgctxt "@action"
+msgid "Dig Right"
+msgstr "Капаць направа"
+
+#: src/kgoldrunner.cpp:511
+#, fuzzy, kde-format
+msgctxt "@action"
 msgid "Dig Left"
 msgstr "Капаць налева"
 
-#: src/kgoldrunner.cpp:534
+#: src/kgoldrunner.cpp:535
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Do a Step"
 msgstr "Крок"
 
-#: src/kgoldrunner.cpp:535
+#: src/kgoldrunner.cpp:536
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Test Bug Fix"
 msgstr "Праверка і выпраўленне памылак"
 
-#: src/kgoldrunner.cpp:536
+#: src/kgoldrunner.cpp:537
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Show Positions"
 msgstr "Паказаць пазіцыі"
 
-#: src/kgoldrunner.cpp:537
+#: src/kgoldrunner.cpp:538
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Start Logging"
 msgstr "Пачаць журналяванне"
 
-#: src/kgoldrunner.cpp:538
+#: src/kgoldrunner.cpp:539
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Show Hero"
 msgstr "Паказаць героя"
 
-#: src/kgoldrunner.cpp:539
+#: src/kgoldrunner.cpp:540
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Show Object"
 msgstr "Паказаць аб'ект"
 
-#: src/kgoldrunner.cpp:541 src/kgoldrunner.cpp:542 src/kgoldrunner.cpp:543
-#: src/kgoldrunner.cpp:544 src/kgoldrunner.cpp:545 src/kgoldrunner.cpp:546
-#: src/kgoldrunner.cpp:547
+#: src/kgoldrunner.cpp:542 src/kgoldrunner.cpp:543 src/kgoldrunner.cpp:544
+#: src/kgoldrunner.cpp:545 src/kgoldrunner.cpp:546 src/kgoldrunner.cpp:547
+#: src/kgoldrunner.cpp:548
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Show Enemy"
 msgstr "Паказаць ворага"
 
-#: src/kgoldrunner.cpp:735
+#: src/kgoldrunner.cpp:736
 #, kde-format
 msgid "The game is paused"
 msgstr ""
 
-#: src/kgoldrunner.cpp:737
+#: src/kgoldrunner.cpp:738
 #, fuzzy, kde-format
 msgid "Press \"%1\" to RESUME"
 msgstr "Націсніце \"%1\" для працягу"
 
-#: src/kgoldrunner.cpp:739
+#: src/kgoldrunner.cpp:740
 #, fuzzy, kde-format
 msgid "Press \"%1\" or \"%2\" to RESUME"
 msgstr "Націсніце \"%1\" для працягу"
 
-#: src/kgoldrunner.cpp:746
+#: src/kgoldrunner.cpp:747
 #, fuzzy, kde-format
 msgid "Press \"%1\" to PAUSE"
 msgstr "Націсніце \"%1\" для паўзы"
 
-#: src/kgoldrunner.cpp:748
+#: src/kgoldrunner.cpp:749
 #, fuzzy, kde-format
 msgid "Press \"%1\" or \"%2\" to PAUSE"
 msgstr "Націсніце \"%1\" для паўзы"
 
-#: src/kgoldrunner.cpp:760
+#: src/kgoldrunner.cpp:761
 #, fuzzy, kde-format
 msgid "Has hint"
 msgstr "   Падказка   "
 
-#: src/kgoldrunner.cpp:760
+#: src/kgoldrunner.cpp:761
 #, fuzzy, kde-format
 msgid "No hint"
 msgstr "   Няма падказкі   "
 
-#: src/kgoldrunner.cpp:877
+#: src/kgoldrunner.cpp:878
 #, fuzzy, kde-format
+msgctxt "@window:title"
 msgid "Get Folders"
 msgstr "Атрыманне тэчак"
 
-#: src/kgoldrunner.cpp:878
+#: src/kgoldrunner.cpp:879
 #, fuzzy, kde-format
 msgid "Cannot find system games sub-folder '/system/' in areas '%1'."
 msgstr ""
 "Не атрымалася знайсці тэчку гульні '%1/system/' у спісе тэчак KDE "
 "'%2' ($KDEDIRS)."
 
-#: src/kgoldrunner.cpp:911
+#: src/kgoldrunner.cpp:912
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Edit Name/Hint"
 msgstr "Змяніць назоў/падказку"
 
-#: src/kgoldrunner.cpp:912
+#: src/kgoldrunner.cpp:913
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid "Edit level name or hint"
 msgstr "Змяніць назоў узроўня і падказку"
 
-#: src/kgoldrunner.cpp:913
-#, kde-format
-msgid "Edit text for the name or hint of a level"
-msgstr ""
-
-#: src/kgoldrunner.cpp:916
+#: src/kgoldrunner.cpp:914
 #, fuzzy, kde-format
+msgctxt "@info:whatsthis"
+msgid "Edits text for the name or hint of a level"
+msgstr "Змяніць назоў узроўня і падказку"
+
+#: src/kgoldrunner.cpp:917
+#, fuzzy, kde-format
+msgctxt "@action"
 msgid "Name/Hint"
 msgstr "Змяніць назоў/падказку"
 
-#: src/kgoldrunner.cpp:919
+#: src/kgoldrunner.cpp:920
 #, fuzzy, kde-format
+msgctxt "@option:check"
 msgid "Erase"
 msgstr "Пасткі"
 
-#: src/kgoldrunner.cpp:919
+#: src/kgoldrunner.cpp:920
 #, fuzzy, kde-format
+msgctxt "@option:check"
 msgid "Space/Erase"
 msgstr "Пасткі"
 
-#: src/kgoldrunner.cpp:920
+#: src/kgoldrunner.cpp:921
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Paint empty squares or erase"
 msgstr ""
 
-#: src/kgoldrunner.cpp:921
+#: src/kgoldrunner.cpp:922
 #, kde-format
-msgid "Erase objects or paint empty squares"
+msgctxt "@info:whatsthis"
+msgid "Erases objects or paint empty squares."
 msgstr ""
-
-#: src/kgoldrunner.cpp:924
-#, fuzzy, kde-format
-msgid "Hero"
-msgstr "Герой"
 
 #: src/kgoldrunner.cpp:925
 #, fuzzy, kde-format
+msgctxt "@option:check"
+msgid "Hero"
+msgstr "Герой"
+
+#: src/kgoldrunner.cpp:926
+#, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid "Move hero"
 msgstr "Пасунуць долу"
 
-#: src/kgoldrunner.cpp:926
+#: src/kgoldrunner.cpp:927
 #, kde-format
-msgid "Change the hero's starting position"
+msgctxt "@info:whatsthis"
+msgid "Changes the hero's starting position."
 msgstr ""
 
-#: src/kgoldrunner.cpp:929
+#: src/kgoldrunner.cpp:930
 #, fuzzy, kde-format
+msgctxt "@option:check"
 msgid "Enemy"
 msgstr "Вораг"
 
-#: src/kgoldrunner.cpp:930
-#, kde-format
-msgid "Paint enemies"
-msgstr ""
-
 #: src/kgoldrunner.cpp:931
-#, kde-format
-msgid "Paint enemies at their starting positions"
-msgstr ""
+#, fuzzy, kde-format
+msgctxt "@info:tooltip"
+msgid "Paint enemies"
+msgstr "Дзіўны канец"
 
-#: src/kgoldrunner.cpp:935
+#: src/kgoldrunner.cpp:932
 #, kde-format
-msgid "Brick"
+msgctxt "@info:whatsthis"
+msgid "Paints enemies at their starting positions."
 msgstr ""
 
 #: src/kgoldrunner.cpp:936
+#, kde-format
+msgctxt "@option:check"
+msgid "Brick"
+msgstr ""
+
+#: src/kgoldrunner.cpp:937
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid "Paint bricks (can dig)"
 msgstr "Цэгла (можна капаць)"
 
-#: src/kgoldrunner.cpp:937
-#, kde-format
-msgid "Paint bricks (diggable objects)"
-msgstr ""
+#: src/kgoldrunner.cpp:938
+#, fuzzy, kde-format
+msgctxt "@info:whatsthis"
+msgid "Paints bricks (diggable objects)."
+msgstr "Цэгла (можна капаць)"
 
-#: src/kgoldrunner.cpp:940
+#: src/kgoldrunner.cpp:941
 #, kde-format
+msgctxt "@option:check"
 msgid "Concrete"
 msgstr ""
 
-#: src/kgoldrunner.cpp:941
+#: src/kgoldrunner.cpp:942
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid "Paint concrete (cannot dig)"
 msgstr "Бетон (нельга капаць)"
 
-#: src/kgoldrunner.cpp:942
-#, kde-format
-msgid "Paint concrete objects (not diggable)"
-msgstr ""
-
-#: src/kgoldrunner.cpp:945
+#: src/kgoldrunner.cpp:943
 #, fuzzy, kde-format
+msgctxt "@info:whatsthis"
+msgid "Paints concrete objects (not diggable)."
+msgstr "Бетон (нельга капаць)"
+
+#: src/kgoldrunner.cpp:946
+#, fuzzy, kde-format
+msgctxt "@option:check"
 msgid "Trap"
 msgstr "Пасткі"
 
-#: src/kgoldrunner.cpp:945
+#: src/kgoldrunner.cpp:946
 #, fuzzy, kde-format
+msgctxt "@option:check"
 msgid "Trap/False Brick"
 msgstr "Ілжывая цэгла"
 
-#: src/kgoldrunner.cpp:946 src/kgoldrunner.cpp:948
+#: src/kgoldrunner.cpp:947
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid "Paint traps or false bricks (can fall through)"
 msgstr "Пастка (можна зваліцца)"
 
-#: src/kgoldrunner.cpp:952
+#: src/kgoldrunner.cpp:949
 #, fuzzy, kde-format
-msgid "Ladder"
-msgstr "Лесвіца"
+msgctxt "@info:whatsthis"
+msgid "Paints traps or false bricks (can fall through)."
+msgstr "Пастка (можна зваліцца)"
 
 #: src/kgoldrunner.cpp:953
 #, fuzzy, kde-format
+msgctxt "@option:check"
+msgid "Ladder"
+msgstr "Лесвіца"
+
+#: src/kgoldrunner.cpp:954
+#, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid "Paint ladders"
 msgstr "Утоеная лесвіца"
 
-#: src/kgoldrunner.cpp:954
+#: src/kgoldrunner.cpp:955
 #, kde-format
-msgid "Paint ladders (ways to go up or down)"
+msgctxt "@info:whatsthis"
+msgid "Paints ladders (ways to go up or down)."
 msgstr ""
-
-#: src/kgoldrunner.cpp:957
-#, fuzzy, kde-format
-msgid "H Ladder"
-msgstr "Лесвіца"
-
-#: src/kgoldrunner.cpp:957
-#, fuzzy, kde-format
-msgid "Hidden Ladder"
-msgstr "Утоеная лесвіца"
 
 #: src/kgoldrunner.cpp:958
 #, fuzzy, kde-format
-msgid "Paint hidden ladders"
+msgctxt "@option:check"
+msgid "H Ladder"
+msgstr "Лесвіца"
+
+#: src/kgoldrunner.cpp:958
+#, fuzzy, kde-format
+msgctxt "@option:check"
+msgid "Hidden Ladder"
 msgstr "Утоеная лесвіца"
 
 #: src/kgoldrunner.cpp:959
-#, kde-format
-msgid "Paint hidden ladders, which appear when all the gold is gone"
-msgstr ""
-
-#: src/kgoldrunner.cpp:963
 #, fuzzy, kde-format
-msgid "Bar"
-msgstr "Слупкі"
+msgctxt "@info:tooltip"
+msgid "Paint hidden ladders"
+msgstr "Утоеная лесвіца"
 
-#: src/kgoldrunner.cpp:963
+#: src/kgoldrunner.cpp:960
 #, kde-format
-msgid "Bar/Pole"
+msgctxt "@info:whatsthis"
+msgid "Paints hidden ladders, which appear when all the gold is gone."
 msgstr ""
 
 #: src/kgoldrunner.cpp:964
+#, fuzzy, kde-format
+msgctxt "@option:check"
+msgid "Bar"
+msgstr "Слупкі"
+
+#: src/kgoldrunner.cpp:964
 #, kde-format
-msgid "Paint bars or poles"
+msgctxt "@option:check"
+msgid "Bar/Pole"
 msgstr ""
 
 #: src/kgoldrunner.cpp:965
 #, kde-format
-msgid "Paint bars or poles (can fall from these)"
+msgctxt "@info:tooltip"
+msgid "Paint bars or poles"
 msgstr ""
 
-#: src/kgoldrunner.cpp:969
+#: src/kgoldrunner.cpp:966
+#, fuzzy, kde-format
+msgctxt "@info:whatsthis"
+msgid "Paints bars or poles (can fall from these)."
+msgstr "Пастка (можна зваліцца)"
+
+#: src/kgoldrunner.cpp:970
 #, fuzzy, kde-format
 #| msgid "Gold Bars"
+msgctxt "@option:check"
 msgid "Gold"
 msgstr "Залатыя зліткі"
 
-#: src/kgoldrunner.cpp:969
-#, kde-format
-msgid "Gold/Treasure"
-msgstr ""
-
 #: src/kgoldrunner.cpp:970
 #, kde-format
-msgid "Paint gold (or other treasure)"
+msgctxt "@option:check"
+msgid "Gold/Treasure"
 msgstr ""
 
 #: src/kgoldrunner.cpp:971
 #, kde-format
-msgid "Paint gold pieces (or other treasure)"
+msgctxt "@info:tooltip"
+msgid "Paint gold (or other treasure)"
+msgstr ""
+
+#: src/kgoldrunner.cpp:972
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "Paints gold pieces (or other treasure)."
 msgstr ""
 
 #. i18n: ectx: Menu (editor)
@@ -6602,15 +6766,17 @@ msgstr "Змяніць назоў і падказку"
 
 #: src/kgrdialog.cpp:56
 #, fuzzy, kde-format
+msgctxt "@label:textbox"
 msgid "Name of level:"
 msgstr "Назоў узроўня:"
 
 #: src/kgrdialog.cpp:63
 #, fuzzy, kde-format
+msgctxt "@label:textbox"
 msgid "Hint for level:"
 msgstr "Падказка для ўзроўня:"
 
-#: src/kgrdialog.cpp:103 src/kgrdialog.cpp:172
+#: src/kgrdialog.cpp:103 src/kgrdialog.cpp:172 src/kgrselector.cpp:84
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Edit Game Info"
@@ -6618,21 +6784,25 @@ msgstr "Змяніць дадзеныя гульні"
 
 #: src/kgrdialog.cpp:123
 #, fuzzy, kde-format
+msgctxt "@label:textbox"
 msgid "Name of game:"
 msgstr "Назоў гульні:"
 
 #: src/kgrdialog.cpp:131
 #, fuzzy, kde-format
+msgctxt "@label:textbox"
 msgid "File name prefix:"
 msgstr "Прэфікс імя файла:"
 
 #: src/kgrdialog.cpp:139
 #, fuzzy, kde-format
+msgctxt "@option:radio"
 msgid "Traditional rules"
 msgstr "Традыцыйныя правілы"
 
 #: src/kgrdialog.cpp:140
 #, fuzzy, kde-format
+msgctxt "@option:radio"
 msgid "KGoldrunner rules"
 msgstr "Правілы KGoldrunner"
 
@@ -6645,7 +6815,9 @@ msgstr[1] "%1 узроўняў"
 msgstr[2] "%1 узроўняў"
 
 #: src/kgrdialog.cpp:152
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "About this game:"
+msgctxt "@label:textbox"
 msgid "About this game:"
 msgstr "Пра гульню:"
 
@@ -6657,6 +6829,7 @@ msgstr "Стварыць гульню"
 
 #: src/kgrdialog.cpp:186
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Save Changes"
 msgstr "Захаваць змены"
 
@@ -6667,6 +6840,7 @@ msgstr "0 узроўняў"
 
 #: src/kgrdialog.cpp:192 src/kgrselector.cpp:269
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Save New"
 msgstr "Захаваць новы ўзровень"
 
@@ -6684,6 +6858,7 @@ msgstr ""
 
 #: src/kgreditor.cpp:66
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Create Level"
 msgstr "Стварыць узровень"
 
@@ -6696,8 +6871,9 @@ msgstr ""
 "Нельга стварыць або захаваць узровень, калі гульня не створаная. Вылучыце "
 "\"Стварыць гульню\"."
 
-#: src/kgreditor.cpp:115 src/kgreditor.cpp:137 src/kgrselector.cpp:266
+#: src/kgreditor.cpp:115 src/kgreditor.cpp:137
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Edit Level"
 msgstr "Змяніць узровень"
 
@@ -6718,8 +6894,9 @@ msgid ""
 msgstr ""
 "Вы можаце змяніць сістэмны ўзровень, але захаваць яго трэба ў вашай гульне."
 
-#: src/kgreditor.cpp:242 src/kgreditor.cpp:260 src/kgrgame.cpp:260
+#: src/kgreditor.cpp:242 src/kgreditor.cpp:261 src/kgrgame.cpp:260
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Save Level"
 msgstr "Захаваць узровень"
 
@@ -6730,42 +6907,47 @@ msgstr "Вы жадаеце ўставіць узровень у сярэдзі�
 
 #: src/kgreditor.cpp:245
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "&Insert Level"
 msgstr "Уставіць узровень"
 
-#: src/kgreditor.cpp:245 src/kgreditor.cpp:444
+#: src/kgreditor.cpp:246 src/kgreditor.cpp:446
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "&Cancel"
 msgstr "&Скасаваць"
 
-#: src/kgreditor.cpp:261 src/kgreditor.cpp:779 src/kgrgame.cpp:1483
-#: src/kgrgame.cpp:1691
+#: src/kgreditor.cpp:262 src/kgreditor.cpp:782 src/kgrgame.cpp:1485
+#: src/kgrgame.cpp:1693
 #, fuzzy, kde-format
 msgid "Cannot open file '%1' for output."
 msgstr "Не атрымліваецца адкрыць файл '%1' для запісу."
 
-#: src/kgreditor.cpp:316 src/kgreditor.cpp:332 src/kgreditor.cpp:340
-#: src/kgreditor.cpp:355
+#: src/kgreditor.cpp:317 src/kgreditor.cpp:333 src/kgreditor.cpp:341
+#: src/kgreditor.cpp:356
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Move Level"
 msgstr "Перамясціць узровень"
 
-#: src/kgreditor.cpp:317
+#: src/kgreditor.cpp:318
 #, fuzzy, kde-format
 msgid "You must first load a level to be moved. Use the \"%1\" or \"%2\" menu."
 msgstr "Загрузіце перамяшчаемы ўзровень. Выкарыстайце меню %1 або %2."
 
-#: src/kgreditor.cpp:319
+#: src/kgreditor.cpp:320
 #, fuzzy, kde-format
+msgctxt "@title:menu"
 msgid "Game"
 msgstr "Гульня"
 
-#: src/kgreditor.cpp:319 src/kgreditor.cpp:639
+#: src/kgreditor.cpp:320
 #, fuzzy, kde-format
+msgctxt "@title:menu"
 msgid "Editor"
 msgstr "Рэдактар"
 
-#: src/kgreditor.cpp:333
+#: src/kgreditor.cpp:334
 #, fuzzy, kde-format
 msgid ""
 "You cannot move a level until you have created a game and at least two "
@@ -6774,23 +6956,23 @@ msgstr ""
 "Нельга перамясціць узровень калі ў гульне іх менш двух. Вылучыце \"Стварыць "
 "гульню\"."
 
-#: src/kgreditor.cpp:341
+#: src/kgreditor.cpp:342
 #, fuzzy, kde-format
 msgid "Sorry, you cannot move a system level."
 msgstr "Нельга перамяшчаць сістэмныя ўзроўні."
 
-#: src/kgreditor.cpp:356
+#: src/kgreditor.cpp:357
 #, fuzzy, kde-format
 msgid "You must change the level or the game or both."
 msgstr "Зменіце ўзровень і/або гульню."
 
-#: src/kgreditor.cpp:418 src/kgreditor.cpp:441 src/kgreditor.cpp:459
-#: src/kgrselector.cpp:275
+#: src/kgreditor.cpp:419 src/kgreditor.cpp:442 src/kgreditor.cpp:461
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Delete Level"
 msgstr "Выдаліць узровень"
 
-#: src/kgreditor.cpp:419
+#: src/kgreditor.cpp:420
 #, fuzzy, kde-format
 msgid ""
 "You cannot delete a level until you have created a game and a level. Try "
@@ -6799,90 +6981,101 @@ msgstr ""
 "Нельга выдаліць узровень, калі ён і гульня не створаныя. Вылучыце \"Стварыць "
 "гульню\"."
 
-#: src/kgreditor.cpp:442
+#: src/kgreditor.cpp:443
 #, fuzzy, kde-format
 msgid "Do you want to delete a level and move higher levels down by one?"
 msgstr "Вы сапраўды жадаеце выдаліць узровень?"
 
-#: src/kgreditor.cpp:444
+#: src/kgreditor.cpp:445
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "&Delete Level"
 msgstr "Выдаліць узровень"
 
-#: src/kgreditor.cpp:460
+#: src/kgreditor.cpp:462
 #, fuzzy, kde-format
 msgid "Cannot find file '%1' to be deleted."
 msgstr "Не атрымалася знайсці файл '%1' для выдалення."
 
-#: src/kgreditor.cpp:508 src/kgreditor.cpp:518 src/kgreditor.cpp:523
-#: src/kgreditor.cpp:537 src/kgreditor.cpp:555 src/kgreditor.cpp:767
-#: src/kgreditor.cpp:778
+#: src/kgreditor.cpp:510 src/kgreditor.cpp:520 src/kgreditor.cpp:525
+#: src/kgreditor.cpp:539 src/kgreditor.cpp:557 src/kgreditor.cpp:770
+#: src/kgreditor.cpp:781
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Save Game Info"
 msgstr "Захаваць дадзеныя гульні"
 
-#: src/kgreditor.cpp:509
+#: src/kgreditor.cpp:511
 #, fuzzy, kde-format
 msgid "You must enter a name for the game."
 msgstr "Увядзіце назоў гульні."
 
-#: src/kgreditor.cpp:519
+#: src/kgreditor.cpp:521
 #, fuzzy, kde-format
 msgid "You must enter a filename prefix for the game."
 msgstr "Увядзіце прэфікс гульні."
 
-#: src/kgreditor.cpp:524
+#: src/kgreditor.cpp:526
 #, fuzzy, kde-format
 msgid "The filename prefix should not be more than 5 characters."
 msgstr "Прэфікс не павінен быць больш 5 знакаў."
 
-#: src/kgreditor.cpp:538
+#: src/kgreditor.cpp:540
 #, fuzzy, kde-format
 msgid "The filename prefix should be all alphabetic characters."
 msgstr "Прэфікс павінен складацца толькі з літар."
 
-#: src/kgreditor.cpp:556
+#: src/kgreditor.cpp:558
 #, fuzzy, kde-format
 msgid "The filename prefix '%1' is already in use."
 msgstr "Прэфікс '%1' ужо выкарыстоўваецца."
 
-#: src/kgreditor.cpp:640
+#: src/kgreditor.cpp:641
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Editor"
+msgstr "Рэдактар"
+
+#: src/kgreditor.cpp:642
 #, fuzzy, kde-format
 msgid "You have not saved your work. Do you want to save it now?"
 msgstr "Змены не былі захаваныя. Жадаеце іх захаваць?"
 
-#: src/kgreditor.cpp:642
+#: src/kgreditor.cpp:644
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "&Save"
 msgstr "&Запісаць"
 
-#: src/kgreditor.cpp:642
+#: src/kgreditor.cpp:645
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "&Do Not Save"
 msgstr "&Не запісваць"
 
-#: src/kgreditor.cpp:643
+#: src/kgreditor.cpp:646
 #, fuzzy, kde-format
-msgid "&Go on editing"
+msgctxt "@action:button"
+msgid "&Go on Editing"
 msgstr "Працягнуць праўку"
 
-#: src/kgreditor.cpp:768
+#: src/kgreditor.cpp:771
 #, kde-format
 msgid "You can only modify user games."
 msgstr "Можна змяняць толькі карыстацкія гульні."
 
-#: src/kgreditor.cpp:829
+#: src/kgreditor.cpp:832
 #, fuzzy, kde-format
 msgid "New Level"
 msgstr "Новы ўзровень"
 
-#: src/kgreditor.cpp:839 src/kgrgame.cpp:1388
+#: src/kgreditor.cpp:842 src/kgrgame.cpp:1390
 #, kde-format
 msgctxt "Game name - level number."
 msgid "%1 - %2"
 msgstr ""
 
-#: src/kgreditor.cpp:843 src/kgrgame.cpp:1391
+#: src/kgreditor.cpp:846 src/kgrgame.cpp:1393
 #, kde-format
 msgctxt "Game name - level number - level name."
 msgid "%1 - %2 - %3"
@@ -6895,6 +7088,7 @@ msgstr ""
 
 #: src/kgrgame.cpp:190
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Play Next Level"
 msgstr "Наступны ўзровень..."
 
@@ -6912,6 +7106,7 @@ msgstr "Няслушнае дзеянне: вы не змяняеце ўзров
 
 #: src/kgrgame.cpp:420
 #, kde-format
+msgctxt "@title:window"
 msgid "No Sound"
 msgstr ""
 
@@ -6925,9 +7120,10 @@ msgid ""
 msgstr ""
 
 #: src/kgrgame.cpp:625 src/kgrgame.cpp:782
-#, kde-format
+#, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Game Paused"
-msgstr ""
+msgstr "Гульня"
 
 #: src/kgrgame.cpp:626
 #, kde-format
@@ -6938,6 +7134,7 @@ msgstr ""
 
 #: src/kgrgame.cpp:670 src/kgrgame.cpp:676
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Replay Last Level"
 msgstr "Вылучыць узровень..."
 
@@ -6962,17 +7159,19 @@ msgstr "Пачатак"
 
 #: src/kgrgame.cpp:712
 #, kde-format
-msgctxt "Button text: start playing a game"
+msgctxt "@action:button start playing a game"
 msgid "&PLAY"
 msgstr ""
 
 #: src/kgrgame.cpp:713
-#, kde-format
+#, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid "Start playing this level"
-msgstr ""
+msgstr "Для гэтага ўзроўня падказкі няма."
 
 #: src/kgrgame.cpp:715
 #, kde-format
+msgctxt "@info:whatsthis"
 msgid ""
 "Set up to start playing the game and level being shown, as soon as you "
 "click, move the mouse or press a key"
@@ -6980,22 +7179,32 @@ msgstr ""
 
 #: src/kgrgame.cpp:719
 #, kde-format
+msgctxt "@action:button"
 msgid "&Quit"
 msgstr ""
 
 #: src/kgrgame.cpp:720
 #, fuzzy, kde-format
 #| msgid "KGoldrunner"
+msgctxt "@info:tooltip"
 msgid "Close KGoldrunner"
 msgstr "KGoldrunner"
 
+#: src/kgrgame.cpp:723
+#, fuzzy, kde-format
+msgctxt "@action:button"
+msgid "&New Game…"
+msgstr "Новая гульня..."
+
 #: src/kgrgame.cpp:724
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Start a different game or level"
 msgstr ""
 
 #: src/kgrgame.cpp:726
 #, kde-format
+msgctxt "@info:whatsthis"
 msgid ""
 "Use the Select Game dialog box to choose a different game or level and start "
 "playing it"
@@ -7003,16 +7212,19 @@ msgstr ""
 
 #: src/kgrgame.cpp:730
 #, kde-format
+msgctxt "@action:button"
 msgid "&Use Menu"
 msgstr ""
 
 #: src/kgrgame.cpp:732
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Use the menus to choose other actions"
 msgstr ""
 
 #: src/kgrgame.cpp:734
 #, kde-format
+msgctxt "@info:whatsthis"
 msgid ""
 "Before playing, use the menus to choose other actions, such as loading a "
 "saved game or changing the theme"
@@ -7027,6 +7239,7 @@ msgstr ""
 
 #: src/kgrgame.cpp:836
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Show a Solution"
 msgstr "Паказаць пазіцыі"
 
@@ -7039,10 +7252,11 @@ msgstr ""
 
 #: src/kgrgame.cpp:848
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Replay Any Level"
 msgstr "Вылучыць узровень..."
 
-#: src/kgrgame.cpp:849 src/kgrgame.cpp:2055
+#: src/kgrgame.cpp:849 src/kgrgame.cpp:2057
 #, kde-format
 msgid ""
 "Sorry, you do not seem to have played and recorded the selected level before."
@@ -7057,47 +7271,58 @@ msgstr ""
 
 #: src/kgrgame.cpp:1065
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Game Over"
 msgstr "Гульня"
 
 #: src/kgrgame.cpp:1066
 #, kde-format
+msgctxt "@action:button"
 msgid "&Try Again"
 msgstr ""
 
-#: src/kgrgame.cpp:1066
+#: src/kgrgame.cpp:1067
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "&Finish"
 msgstr "Поўнач"
 
-#: src/kgrgame.cpp:1140
+#: src/kgrgame.cpp:1141
 #, fuzzy, kde-format
 msgid ""
 "<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the <b>"
 "\"%1\"</b> game !!</p>"
 msgstr "<b>Віншуем!</b><p>Вы прайшлі апошні ўзровень у гульне %1!</p>"
 
-#: src/kgrgame.cpp:1297
+#: src/kgrgame.cpp:1298
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Hint"
 msgstr "Падказка"
 
-#: src/kgrgame.cpp:1303
+#: src/kgrgame.cpp:1304
 #, fuzzy, kde-format
-msgid "&OK"
+msgctxt "@action:button"
+msgid "&Ok"
 msgstr "&Добра"
 
-#: src/kgrgame.cpp:1316
+#: src/kgrgame.cpp:1305
+#, fuzzy, kde-format
+msgctxt "@action:button"
+msgid "&Show a Solution"
+msgstr "Паказаць пазіцыі"
+
+#: src/kgrgame.cpp:1318
 #, fuzzy, kde-format
 msgid "Sorry, there is no hint for this level."
 msgstr "Для гэтага ўзроўня падказкі няма."
 
-#: src/kgrgame.cpp:1378
+#: src/kgrgame.cpp:1380
 #, kde-format
 msgid "T H E   E N D"
 msgstr ""
 
-#: src/kgrgame.cpp:1415
+#: src/kgrgame.cpp:1417
 #, fuzzy, kde-format
 msgid ""
 "You have pressed a key that can be used to control the Hero. Do you want to "
@@ -7107,33 +7332,37 @@ msgstr ""
 "Вы націснулі клавішу, якая можа выкарыстоўвацца для кіравання героем. "
 "Жадаеце пераключыцца ў рэжым клавіятуры? Кіраванне мышшу прасцей!"
 
-#: src/kgrgame.cpp:1419
+#: src/kgrgame.cpp:1421
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Switch to Keyboard Mode"
 msgstr "Пераключыцца ў рэжым клавіятуры"
 
-#: src/kgrgame.cpp:1420
+#: src/kgrgame.cpp:1422
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Switch to &Keyboard Mode"
 msgstr "Пераключыцца ў рэжым клавіятуры"
 
-#: src/kgrgame.cpp:1421
+#: src/kgrgame.cpp:1423
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Stay in &Mouse Mode"
 msgstr "Кіраванне мышшу"
 
-#: src/kgrgame.cpp:1422
+#: src/kgrgame.cpp:1424
 #, fuzzy, kde-format
 msgid "Keyboard Mode"
 msgstr "Пераключыцца ў рэжым клавіятуры"
 
-#: src/kgrgame.cpp:1456 src/kgrgame.cpp:1482 src/kgrgame.cpp:1492
-#: src/kgrgame.cpp:1511 src/kgrgame.cpp:1517
+#: src/kgrgame.cpp:1458 src/kgrgame.cpp:1484 src/kgrgame.cpp:1494
+#: src/kgrgame.cpp:1513 src/kgrgame.cpp:1519
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Save Game"
 msgstr "Захаваць гульню"
 
-#: src/kgrgame.cpp:1457
+#: src/kgrgame.cpp:1459
 #, fuzzy, kde-format
 msgid ""
 "Sorry, you cannot save your game play while you are editing. Please try menu "
@@ -7141,50 +7370,52 @@ msgid ""
 msgstr ""
 "Нельга захаваць мінанне гульні пры рэдагаванні. Вылучыце пункт меню %1."
 
-#: src/kgrgame.cpp:1493 src/kgrgame.cpp:1537 src/kgrgame.cpp:1652
-#: src/kgrgame.cpp:1855 src/kgrgame.cpp:2021 src/kgrgameio.cpp:169
+#: src/kgrgame.cpp:1495 src/kgrgame.cpp:1539 src/kgrgame.cpp:1654
+#: src/kgrgame.cpp:1857 src/kgrgame.cpp:2023 src/kgrgameio.cpp:169
 #, fuzzy, kde-format
 msgid "Cannot open file '%1' for read-only."
 msgstr "Не атрымліваецца адкрыць файл '%1' для чытання."
 
-#: src/kgrgame.cpp:1512
+#: src/kgrgame.cpp:1514
 #, fuzzy, kde-format
 msgid ""
 "Please note: for reasons of simplicity, your saved game position and score "
 "will be as they were at the start of this level, not as they are now."
 msgstr "Нататка: пазіцыя і рахунак гульні будуць па стане на пачатак узроўня."
 
-#: src/kgrgame.cpp:1518
+#: src/kgrgame.cpp:1520
 #, kde-format
 msgid "Error: Failed to save your game."
 msgstr ""
 
-#: src/kgrgame.cpp:1530 src/kgrgame.cpp:1536 src/kgrgame.cpp:1574
+#: src/kgrgame.cpp:1532 src/kgrgame.cpp:1538 src/kgrgame.cpp:1576
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Load Game"
 msgstr "Загрузіць гульню"
 
-#: src/kgrgame.cpp:1531
+#: src/kgrgame.cpp:1533
 #, fuzzy, kde-format
 msgid "Sorry, there are no saved games."
 msgstr "Няма захаваных гульняў."
 
-#: src/kgrgame.cpp:1575
+#: src/kgrgame.cpp:1577
 #, fuzzy, kde-format
 msgid "Cannot find the game with prefix '%1'."
 msgstr "Не атрымалася знайсці гульню з прэфіксам '%1'."
 
-#: src/kgrgame.cpp:1633
+#: src/kgrgame.cpp:1635
 #, fuzzy, kde-format
 msgid "Unknown"
 msgstr "Невядомы"
 
-#: src/kgrgame.cpp:1651 src/kgrgame.cpp:1690
+#: src/kgrgame.cpp:1653 src/kgrgame.cpp:1692
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Check for High Score"
 msgstr "Праглядзець рэкорды"
 
-#: src/kgrgame.cpp:1708
+#: src/kgrgame.cpp:1710
 #, fuzzy, kde-format
 msgid ""
 "<html><b>Congratulations !!!</b><br/>You have achieved a high score in this "
@@ -7194,38 +7425,34 @@ msgstr ""
 "<b>Віншуем!</b> Вы ўсталявалі новы рэкорд у гэтай гульне. Увядзіце сваё імя "
 "для захавання ў кнізе рэкордаў KGoldrunner."
 
-#: src/kgrgame.cpp:1722
+#: src/kgrgame.cpp:1724 src/kgrgame.cpp:1811
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Save High Score"
 msgstr "Захаваць рэкорд"
 
-#: src/kgrgame.cpp:1809
-#, fuzzy, kde-format
-msgid "Save High Score"
-msgstr "Захаваць рэкорд"
-
-#: src/kgrgame.cpp:1810
+#: src/kgrgame.cpp:1812
 #, kde-format
 msgid "Error: Failed to save your high score."
 msgstr ""
 
-#: src/kgrgame.cpp:1822 src/kgrgame.cpp:1845 src/kgrgame.cpp:1854
+#: src/kgrgame.cpp:1824 src/kgrgame.cpp:1847 src/kgrgame.cpp:1856
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Show High Scores"
 msgstr "Паказаць рэкорды"
 
-#: src/kgrgame.cpp:1823
+#: src/kgrgame.cpp:1825
 #, fuzzy, kde-format
 msgid "Sorry, we do not keep high scores for tutorial games."
 msgstr "Рэкорды для якія навучаюць гульняў не захоўваюцца."
 
-#: src/kgrgame.cpp:1846
+#: src/kgrgame.cpp:1848
 #, fuzzy, kde-format
 msgid "Sorry, there are no high scores for the \"%1\" game yet."
 msgstr "Для гульні %1 няма рэкордаў."
 
-#: src/kgrgame.cpp:1870
+#: src/kgrgame.cpp:1872
 #, fuzzy, kde-format
 msgid ""
 "<center><h2>KGoldrunner Hall of Fame</h2></center><center><h3>\"%1\" Game</"
@@ -7234,67 +7461,72 @@ msgstr ""
 "<center><h2>Табліца рэкордаў KGoldrunner</h2></center><br><center><h3>Гульня "
 "\"%1\"</h3></center>"
 
-#: src/kgrgame.cpp:1880
+#: src/kgrgame.cpp:1882
 #, kde-format
-msgctxt "1, 2, 3 etc."
+msgctxt "@title:column 1, 2, 3 etc."
 msgid "Rank"
 msgstr ""
 
-#: src/kgrgame.cpp:1881
+#: src/kgrgame.cpp:1883
 #, fuzzy, kde-format
-msgctxt "Person"
+msgctxt "@title:column person"
 msgid "Name"
 msgstr "Гульня"
 
-#: src/kgrgame.cpp:1882
+#: src/kgrgame.cpp:1884
 #, fuzzy, kde-format
-msgctxt "Game level reached"
+msgctxt "@title:column game level reached"
 msgid "Level"
 msgstr "0 узроўняў"
 
-#: src/kgrgame.cpp:1883
+#: src/kgrgame.cpp:1885
 #, fuzzy, kde-format
+msgctxt "@title:column"
 msgid "Score"
 msgstr "   Рахунак: "
 
-#: src/kgrgame.cpp:1884
+#: src/kgrgame.cpp:1886
 #, kde-format
+msgctxt "@title:column"
 msgid "Date"
 msgstr ""
 
-#: src/kgrgame.cpp:1888
+#: src/kgrgame.cpp:1890
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "High Scores"
 msgstr "Рэкорды"
 
-#: src/kgrgame.cpp:2014 src/kgrgame.cpp:2020 src/kgrgame.cpp:2024
+#: src/kgrgame.cpp:2016 src/kgrgame.cpp:2022 src/kgrgame.cpp:2026
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Load Game Info"
 msgstr "Загрузка дадзеных гульні"
 
-#: src/kgrgame.cpp:2015
+#: src/kgrgame.cpp:2017
 #, fuzzy, kde-format
 msgid "Cannot find game info file '%1'."
 msgstr "Не атрымалася знайсці файл дадзеных '%1'."
 
-#: src/kgrgame.cpp:2025
+#: src/kgrgame.cpp:2027
 #, kde-format
 msgid "Reached end of file '%1' before finding end of game-data."
 msgstr ""
 
-#: src/kgrgame.cpp:2049 src/kgrgame.cpp:2054 src/kgrselector.cpp:263
+#: src/kgrgame.cpp:2051 src/kgrgame.cpp:2056
 #, fuzzy, kde-format
-msgid "Save A Solution"
+msgctxt "@title:window"
+msgid "Save a Solution"
 msgstr "Паказаць пазіцыі"
 
-#: src/kgrgame.cpp:2050
+#: src/kgrgame.cpp:2052
 #, kde-format
 msgid "Your solution to level %1 has been saved on file %2"
 msgstr ""
 
 #: src/kgrgameio.cpp:163 src/kgrgameio.cpp:168 src/kgrgameio.cpp:172
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Read Level Data"
 msgstr "Загрузіць узровень"
 
@@ -7310,6 +7542,7 @@ msgstr ""
 
 #: src/kgrgameio.cpp:381 src/kgrgameio.cpp:388
 #, kde-format
+msgctxt "@title:window"
 msgid "Rename File"
 msgstr ""
 
@@ -7325,6 +7558,7 @@ msgstr "Не атрымалася пераназваць файл '%1' у '%2'."
 
 #: src/kgrrenderer.cpp:100
 #, kde-format
+msgctxt "@title:window"
 msgid "Theme Selector"
 msgstr ""
 
@@ -7341,6 +7575,7 @@ msgstr "   Рахунак: "
 #: src/kgrselector.cpp:72 src/kgrselector.cpp:78 src/kgrselector.cpp:98
 #: src/kgrselector.cpp:501
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Select Level"
 msgstr "Вылучыць узровень"
 
@@ -7353,11 +7588,6 @@ msgstr "Вы можаце захоўваць узроўні толькі ў св
 #, fuzzy, kde-format
 msgid "Sorry, you can only delete a level from one of your own games."
 msgstr "Вы можаце выдаляць узроўні толькі з сваёй гульні."
-
-#: src/kgrselector.cpp:84 src/kgrselector.cpp:281
-#, fuzzy, kde-format
-msgid "Edit Game Info"
-msgstr "Змяніць дадзеныя гульні"
 
 #: src/kgrselector.cpp:85
 #, fuzzy, kde-format
@@ -7383,21 +7613,25 @@ msgstr ""
 
 #: src/kgrselector.cpp:143
 #, fuzzy, kde-format
+msgctxt "@title:column"
 msgid "Name of Game"
 msgstr "Назоў гульні:"
 
 #: src/kgrselector.cpp:144
 #, kde-format
+msgctxt "@title:column"
 msgid "Rules"
 msgstr ""
 
 #: src/kgrselector.cpp:145
 #, fuzzy, kde-format
+msgctxt "@title:column"
 msgid "Levels"
 msgstr "0 узроўняў"
 
 #: src/kgrselector.cpp:146
 #, kde-format
+msgctxt "@title:column"
 msgid "Skill"
 msgstr ""
 
@@ -7419,43 +7653,75 @@ msgstr "Вылучыць узровень:"
 
 #: src/kgrselector.cpp:204
 #, fuzzy, kde-format
+msgctxt "@label:spinbox"
 msgid "Level number:"
 msgstr "Нумар узроўня:"
 
 #: src/kgrselector.cpp:210
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Edit Level Name o&r Hint"
 msgstr "Змяніць назоў узроўня і падказку"
 
 #: src/kgrselector.cpp:245
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Start Game"
 msgstr "Пачаць гульню"
 
 #: src/kgrselector.cpp:254
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Play Level"
 msgstr "Гуляць на ўзроўні"
 
 #: src/kgrselector.cpp:257
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Replay Level"
 msgstr "Вылучыць узровень..."
 
 #: src/kgrselector.cpp:260
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Show Solution"
 msgstr "Паказаць пазіцыі"
 
+#: src/kgrselector.cpp:263
+#, fuzzy, kde-format
+msgctxt "@action:button"
+msgid "Save a Solution"
+msgstr "Паказаць пазіцыі"
+
+#: src/kgrselector.cpp:266
+#, fuzzy, kde-format
+msgctxt "@action:button"
+msgid "Edit Level"
+msgstr "Змяніць узровень"
+
 #: src/kgrselector.cpp:272
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Save Change"
 msgstr "Захаваць зменены ўзровень"
 
+#: src/kgrselector.cpp:275
+#, fuzzy, kde-format
+msgctxt "@action:button"
+msgid "Delete Level"
+msgstr "Выдаліць узровень"
+
 #: src/kgrselector.cpp:278
 #, fuzzy, kde-format
-msgid "Move To..."
+msgctxt "@action:button"
+msgid "Move To…"
 msgstr "Перамясціць у ..."
+
+#: src/kgrselector.cpp:281
+#, fuzzy, kde-format
+msgctxt "@action:button"
+msgid "Edit Game Info"
+msgstr "Змяніць дадзеныя гульні"
 
 #: src/kgrselector.cpp:357
 #, fuzzy, kde-format
@@ -7654,6 +7920,7 @@ msgstr ""
 
 #: src/kgrselector.cpp:589
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Help: Select Game & Level"
 msgstr "Даведка: выбар гульні і ўзроўня"
 
@@ -7751,6 +8018,58 @@ msgid "Artwork for the Treasure of Egypt theme"
 msgstr ""
 
 #, fuzzy
+#~ msgid "&Save Game..."
+#~ msgstr "Захаваць гульню..."
+
+#, fuzzy
+#~ msgid "Save A Solution..."
+#~ msgstr "Паказаць пазіцыі"
+
+#, fuzzy
+#~ msgid "Kill Hero."
+#~ msgstr "Забіць героя"
+
+#, fuzzy
+#~ msgid "&Edit Level..."
+#~ msgstr "Змяніць узровень..."
+
+#, fuzzy
+#~ msgid "Edit level..."
+#~ msgstr "Змяніць узровень"
+
+#, fuzzy
+#~ msgid "&Move Level..."
+#~ msgstr "Перамясціць узровень..."
+
+#, fuzzy
+#~ msgid "Move level..."
+#~ msgstr "Перамясціць узровень..."
+
+#, fuzzy
+#~ msgid "&Delete Level..."
+#~ msgstr "Выдаліць узровень..."
+
+#, fuzzy
+#~ msgid "Delete level..."
+#~ msgstr "Выдаліць узровень..."
+
+#, fuzzy
+#~ msgid "Create &Game..."
+#~ msgstr "Стварыць гульню..."
+
+#, fuzzy
+#~ msgid "Create game..."
+#~ msgstr "Стварыць гульню..."
+
+#, fuzzy
+#~ msgid "Edit Game &Info..."
+#~ msgstr "Змяніць дадзеныя гульні..."
+
+#, fuzzy
+#~ msgid "Save High Score"
+#~ msgstr "Захаваць рэкорд"
+
+#, fuzzy
 #~ msgid ""
 #~ "Cannot find documentation sub-folder 'en/%1/' in area '%2' of the KDE "
 #~ "folder ($KDEDIRS)."
@@ -7809,10 +8128,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Cannot find the tutorial game (file-prefix '%1') in the '%2' files."
 #~ msgstr "Не атрымалася знайсці якая навучае гульню (прэфікс %1) у файлах %2."
-
-#, fuzzy
-#~ msgid "Kill hero"
-#~ msgstr "Забіць героя"
 
 #, fuzzy
 #~ msgid "&Traditional Rules"
