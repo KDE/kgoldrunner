@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-06 00:36+0000\n"
-"PO-Revision-Date: 2024-03-21 20:37+0300\n"
+"PO-Revision-Date: 2024-05-06 18:42+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.02.0\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -56,7 +56,7 @@ msgstr ""
 "\n"
 "Oyun yeni oyuncuları hedef almaktadır; ancak sonraki düzeyler oldukça "
 "zordur. Bu nedenle düşmanların hareketlerinize nasıl tepki verdiğine dikkat "
-"edin. Düzey 70'e ulaşana kadar iyi bir eğitim almış olmalısınız.\n"
+"edin. Düzey 70’e ulaşana kadar iyi bir eğitim almış olmalısınız.\n"
 "\n"
 "Jason, çözümlerin çoğunu sağlamıştır; ancak bazıları Ian Wadham tarafından "
 "hazırlanmıştır."
@@ -82,14 +82,14 @@ msgid ""
 "Wadham."
 msgstr ""
 "Eski Mısır ve mumyalar hakkında kovboy filmi simgelerini çizen bu oyun "
-"düzeyleri en iyi Eski Mısır'ın Hazinesi temasında çalıştırılır.\n"
+"düzeyleri en iyi Eski Mısır’ın Hazinesi temasında çalıştırılır.\n"
 "\n"
 "Mısırolojinizi geliştirmek için ipuçlarında her düzey ile ilgili "
-"Hollywood'dan değil de Wikipedia'dan çekilen gerçek eğlencelik bilgiler "
+"Hollywood’dan değil de Wikipedia’dan çekilen gerçek eğlencelik bilgiler "
 "bulacaksınız.\n"
 "\n"
-"Bu Şampiyona oyunu Steve Mann<smann at cgl uwaterloo ca> tarafından "
-"düzenlenmiştir. Bir kaç Eski Mısır fikri ve Kızlı Deniz düzeyinde ise Ian "
+"Bu Şampiyona oyunu Steve Mann <smann at cgl uwaterloo ca> tarafından "
+"düzenlenmiştir. Bir kaç Eski Mısır fikri ve Kızıldeniz düzeyinde ise Ian "
 "Wadham katkıda bulunmuştur."
 
 #: gamedata/game_CM.txt:10
@@ -111,7 +111,7 @@ msgid ""
 msgstr ""
 "Kahire eteklerinde bulunan Gize Vadisi, Keops(Büyük Piramid), Kefren ve "
 "Mikerinos piramitlerinin, Büyük Sfenks ve irili ufaklı birkaç binanın da "
-"bulunduğu Gize Nekropol'ünün olduğu yerdir.\n"
+"bulunduğu Gize Nekropol’ünün olduğu yerdir.\n"
 "\n"
 "Vadinin derinliklerine doğru ilerlerken, mumyaları öldürmekten kaçının: eğer "
 "sağda çok fazlası yeniden doğduğunda kaçmak zor olacaktır. Başlangıçta, "
@@ -147,32 +147,32 @@ msgid ""
 "the pyramid - if there is more than one mummy on the bottom right before the "
 "escape ladder appears, you will be unable to reach the exit."
 msgstr ""
-"Djoser (Zoser) Piramidi, ya da basamaklı piramit (Eski Mısır dilinde kbhw-"
-"ntrw) Mısır'da, Memphis şehrinin kuzeybatısındaki Sakkara Nekropol'ünün "
+"Djoser (Zoser) Piramidi veya basamaklı piramit (Eski Mısır dilinde kbhw-"
+"ntrw) Mısır’da, Memphis şehrinin kuzeybatısındaki Sakkara Nekropolü’nün "
 "arkeolojik kalıntılarındandır.\n"
 "\n"
 "Bu bölümü bitirmek için adım adım ilerlemek önemlidir: Önce (aşağıdan) "
 "ikinci düzeyin solundaki mumyayı serbest bırakın, ki düşüp zemindeki gizli "
 "çukuru doldursun.\n"
 "\n"
-"Sonra, ikinci düzeyin sağına girin ve mumyanın üzerinden sırığa doğru "
+"Sonra, ikinci düzeyin sağına girin ve mumyanın üzerinden direğe doğru "
 "ilerleyin ve ortanın solundaki kiremiti kazdığınızdan emin olup ortadaki "
 "hazine parçasını alın.\n"
 "\n"
-"Üçüncü düzeydeki mumya biraz sorunludur çünkü bir parça hazine alıp onu "
-"taşıyacaktır. Şanslıysanız mumya bir yerde hazinesini terk edebilir, ama "
+"Üçüncü düzeydeki mumya biraz sorunludur; çünkü bir parça hazine alıp onu "
+"taşıyacaktır. Şanslıysanız mumya bir yerde hazinesini terk edebilir; ancak "
 "yine de sağdaki kazılabilir bir kiremidi düzgün zamanlamayla kullanarak "
 "kıstırabilirsiniz.\n"
 "\n"
 "Hazinenin son parçasını almadan önce basamaklı piramidin sağ alt köşesini "
 "açmayı unutmayın; böylece sağdaki mumyaların piramide girmesine izin "
-"verirsiniz - kaçış merdiveninin ortaya çıkmasından önce sağ altta bir mumya "
+"verirsiniz — kaçış merdiveninin ortaya çıkmasından önce sağ altta bir mumya "
 "daha varsa çıkışa ulaşamazsınız."
 
 #: gamedata/game_CM.txt:28
 #, kde-format
 msgid "Pharaoh's Barge"
-msgstr "Firavun'un Mavnası"
+msgstr "Firavun’un Mavnası"
 
 #: gamedata/game_CM.txt:29
 #, kde-format
@@ -190,11 +190,11 @@ msgid ""
 "your task is to wrest the treasure they carry."
 msgstr ""
 "Khufu gemisi, M.Ö. 2500 civarında Büyük Gize Piramidinin ayaklarındaki Gize "
-"piramid kompleksinin içinde bir çukura girmiş, Eski Mısır'dan günümüze kadar "
+"piramid kompleksinin içinde bir çukura girmiş, Eski Mısır’dan günümüze kadar "
 "yapısı bozulmamış normal büyüklükte bir gemidir.\n"
 "\n"
 "İlk çağdan kalmış en eski, en büyük ve en iyi korunmuş gemilerden biridir. "
-"Boydan boya 43.6 m'dir. Yaşına rağmen, bugün suya konulsa yine suda "
+"Boydan boya 43,6 metredir. Yaşına rağmen, bugün suya konulsa yine suda "
 "yüzebilir.\n"
 "\n"
 "Bu bölüm hemen hemen daha kolay bir bölümdür: iyi hazine ve çok da fazla "
@@ -264,16 +264,16 @@ msgid ""
 "In this level, it is not the crocodile you need to fear.  Still, a prayer to "
 "Sobek might help you escape the mummies while you gather the treasure."
 msgstr ""
-"Timsahlar, 100 yaştan fazla yaşabilirler. En büyük türkleri ise 4.85 metreye "
+"Timsahlar, 100 yaştan fazla yaşabilirler. En büyük türkleri ise 4,85 metreye "
 "kadar ulaşabilir. Köpek balıklarına saldıran ve öldürebilen farklı türleri "
 "gözlemlenmiştir.\n"
 "\n"
 "Sobek, timsahların kutsallaştırılmış haliydi. Nil nehri üzerinde çalışan "
-"veya seyahat eden Mısırlılar, timsah tanrısı Sobek'e dua ederlerse "
+"veya seyahat eden Mısırlılar, timsah tanrısı Sobek’e dua ederlerse "
 "timsahların saldırısına maruz kalmayacaklarını düşünürlerdi.\n"
 "\n"
 "Bu düzeyde, korkmanız gereken timsah değildir. Yine de, hazine toplarken "
-"Sobek'e edeceğiniz bir dua, sihirbazlardan kaçmanıza yardımcı olabilir."
+"Sobek’e edeceğiniz bir dua, sihirbazlardan kaçmanıza yardımcı olabilir."
 
 #: gamedata/game_CM.txt:54
 #, kde-format
@@ -327,8 +327,8 @@ msgid ""
 "Note: If you feel like some variety, you can do all of the right first and "
 "then the left."
 msgstr ""
-"Tura, Mısır'ın kireç taşı çıkan başlıca taş ocağıydı ve Hufu Büyük "
-"Piramidi'nde kullanılıyordu. Bu kireç taşı madenciliği mağaraların arkasında "
+"Tura, Mısır’ın kireç taşı çıkan başlıca taş ocağıydı ve Hufu Büyük "
+"Piramidi’nde kullanılıyordu. Bu kireç taşı madenciliği mağaraların arkasında "
 "bırakılmış ve daha sonra İngiliz Ordusu tarafından II. Dünya savışında gizli "
 "bir depo olarak kullanılmıştır. Artık keşfedebilirsiniz.\n"
 "\n"
@@ -361,10 +361,10 @@ msgid ""
 "In this pyramid level (built around AD 2008), avoid (by luring away or "
 "killing) getting the two mummies in the middle of the bottom section."
 msgstr ""
-"Mısır'da en eski olanı M.Ö. 2600 civarında inşa edilen 100'den fazla piramit "
+"Mısır’da en eski olanı M.Ö. 2600 civarında inşa edilen 100’den fazla piramit "
 "vardır.\n"
 "\n"
-"Bu piramit düzeyinde (M.S. 2008'de inşa edilmiştir), alttaki bölümün "
+"Bu piramit düzeyinde (M.S. 2008’de inşa edilmiştir), alttaki bölümün "
 "ortasında iki mumyayı elde etmekten kaçınınız (uzaklaştırın veya öldürün)."
 
 #: gamedata/game_CM.txt:74
@@ -382,11 +382,11 @@ msgid ""
 "As you grab the treasure inside the sphinx, try to solve The Riddle of the "
 "Sphinx: how do you get past the horde of mummies on the right?"
 msgstr ""
-"Büyük Sfenks, yükselen güneşle yüz yüze geldiğen Giza Yaylası'nın "
+"Büyük Sfenks, yükselen güneşle yüz yüze geldiğen Giza Yaylası’nın "
 "koruyucusudur. 73 metre uzunluğunda ve 20 metre yüksekliğindedir ve "
 "dünyadaki en büyük monolit heykeldir, yalnızca 4500 yaşındadır.\n"
 "\n"
-"Sfenks'in içindeki hazineyi yakalarken, Sfenks'in bulmacasını çözmeye "
+"Sfenks’in içindeki hazineyi yakalarken, Sfenks’in bulmacasını çözmeye "
 "çalışın: sağdaki mumya kalabalığından nasıl geçersiniz?"
 
 #: gamedata/game_CM.txt:80
@@ -421,7 +421,7 @@ msgstr ""
 "gibi, inşaatta da büyük olasılıkla birçok merdiven vardı.\n"
 "\n"
 "Bu düzey çoğunlukla koşuşturmaca üzerinedir. Mumyadan kaçarken hazineyi "
-"kaldırmak o kadar da zor değildir - fakat hazineyi mumyalardan uzak tutmak "
+"kaldırmak o kadar da zor değildir — ancak hazineyi mumyalardan uzak tutmak "
 "çok daha zor bir görevdir. Üçlü taş platformu kullanılabilinecek bir ölüm "
 "alanıdır; ancak hazineyi düzgün şekilde sıraya taşıyan mumyaları almak için "
 "biraz dolaşmanız gerekir. Ayrıca, bu platformun orta bloğunun, bir geçiş "
@@ -445,17 +445,16 @@ msgid ""
 "To keep your life on this level, be careful of the false bricks in the main "
 "Ankh and figure out which of them are useful."
 msgstr ""
-"Ankh, \"yaşam\" ı okuyan Mısır hiyeroglifi sembolüdür ve bir güneş sembolü "
-"olarak neredeyse tamamen altından hazırlanmıştır.\n"
+"Ankh, “yaşam”ı okuyan Mısır hiyeroglifi sembolüdür ve bir güneş sembolü "
+"olarak neredeyse tümüyle altından hazırlanmıştır.\n"
 "\n"
-"Canlarınızı bu düzeyde tutmak kaybetmeme için, ana Ankh'daki yanlış "
-"tuğlalara dikkat edin ve bunlardan hangisinin kullanışlı olduğuna karar "
-"verin."
+"Canlarınızı bu düzeyde tutmak kaybetmeme için ana Ankh’daki yanlış tuğlalara "
+"dikkat edin ve bunlardan hangisinin kullanışlı olduğuna karar verin."
 
 #: gamedata/game_CM.txt:94 gamedata/game_plwv.txt:55
 #, kde-format
 msgid "Pharaoh's Tomb"
-msgstr "Firavun'un Mezarı"
+msgstr "Firavun’un Mezarı"
 
 #: gamedata/game_CM.txt:95
 #, kde-format
@@ -475,11 +474,11 @@ msgid ""
 "Repeat this trick to exit after grabbing the lone piece of treasure, only "
 "this time you need to get out on the right side of the pyramid."
 msgstr ""
-"Araştırmacılar, Büyük Piramidi inşa etmek için 2.3 milyon taş blok "
-"kullanıldığını ve blokların ortalama 2.5 ton ağırlığa sahip olduğunu tahmin "
+"Araştırmacılar, Büyük Piramidi inşa etmek için 2,3 milyon taş blok "
+"kullanıldığını ve blokların ortalama 2,5 ton ağırlığa sahip olduğunu tahmin "
 "ediyorlar.\n"
 "\n"
-"Bu düzeydeki piramit, 100'den az taş bloktan inşa edilmiştir. Başlangıçta, "
+"Bu düzeydeki piramit, 100’den az taş bloktan inşa edilmiştir. Başlangıçta, "
 "piramidin içine girmek ve ardından piramitin sol tarafının dış duvarına en "
 "yakın ikinci katmandaki merdivenlerden birinde durmak için manevra yapın. "
 "Dış duvarın diğer tarafındaki mumyaların toplanmasını bekleyin. Daha sonra "
@@ -545,7 +544,7 @@ msgid ""
 "the mummies on the ladder above you and maneuver ... and hope!"
 msgstr ""
 "İmhotep, ölmüş firavun ruhunun göğe yükselebileceği devasa bir merdiven "
-"olarak hizmet vermek için Djoser Basamak Piramidini tasarladı. İmhotep'in "
+"olarak hizmet vermek için Djoser Basamak Piramidini tasarladı. İmhotep’in "
 "sonraki Mısırlılar tarafından kutsallaştırılmasının sebebi buydu.\n"
 "\n"
 "Bu piramit düzeyinin zirvesine yükselmeden önce, en altta olmanız gerekir. "
@@ -555,12 +554,12 @@ msgstr ""
 "\n"
 "Son hazine parçasını aldıktan sonra, sağdan çıkın ve merdivenlerden inip "
 "ilerleyin. Sol alttaki tek zor kısım: Yalnızca üst merdivendeki mumyaların "
-"altından geçin ve manevra yapın ... ve umut edin!"
+"altından geçin ve manevra yapın … ve umut edin!"
 
 #: gamedata/game_CM.txt:118
 #, kde-format
 msgid "Eye of Horus"
-msgstr "Horus'un Gözü"
+msgstr "Horus’un Gözü"
 
 #: gamedata/game_CM.txt:119
 #, kde-format
@@ -577,7 +576,7 @@ msgid ""
 "fall in the top pit.  Move across the two trapped mummies and climb to the "
 "top."
 msgstr ""
-"Horus'un Gözü, eski Mısır'da tanrıların kraliyet gücü ve korumasının bir "
+"Horus’un Gözü, eski Mısır’da tanrıların kraliyet gücü ve korumasının bir "
 "sembolüdür.\n"
 "\n"
 "Bu düzeyde, gözün içinde fazla olmasada bir miktar koruma bulunmaktadır. Tüm "
@@ -646,7 +645,7 @@ msgid ""
 msgstr ""
 "Anubis ya da Inpu, ölüm sonrası hayatın tanrısıydı.\n"
 "\n"
-"Anubis'in kulakları arasındaki hazineyi alabilmek için, mumyanın solundaki "
+"Anubis’in kulakları arasındaki hazineyi alabilmek için, mumyanın solundaki "
 "iki sütunu kazın ve mumyayı üstüne koyun. Sağa doğru kazarken, mumyayı "
 "bırakın. Mumya en sağ sütundaki deliğe düşmelidir. Şimdi merdivene gidinceye "
 "kadar sol iki sütunu kazın. En sağ ve en aşağıdaki merdivenden aşağı doğru "
@@ -675,11 +674,11 @@ msgid ""
 "In this pyramid, treasure is even in the air!  Lots of treasure, only three "
 "mummies - it can't be that hard, can it?"
 msgstr ""
-"Nubia, Mısır'ın önemli bir altın kaynağıydı. Mitanni Kralı Tushratta, "
-"Mısır'da altının 'kumdan daha çok' olduğunu iddia ederdi.\n"
+"Nubia, Mısır’ın önemli bir altın kaynağıydı. Mitanni Kralı Tushratta, "
+"Mısır’da altının “kumdan daha çok” olduğunu iddia ederdi.\n"
 "\n"
-"Bu piramitte, havada bile hazine vardır! Bir sürü hazine, yalnızca üç "
-"maymundan oluşur - o kadar da zor olamaz değil mi?"
+"Bu piramitte havada bile hazine vardır! Bir sürü hazine, yalnızca üç "
+"maymundan oluşur — o kadar da zor olamaz değil mi?"
 
 #: gamedata/game_CM.txt:146
 #, kde-format
@@ -699,18 +698,18 @@ msgid ""
 "there is no way to get it."
 msgstr ""
 "Lahit, bir ceset için hazırlanmış, oyulmuş ve taş şeklinde kesilmiş cenaze "
-"haznesidir. Antik Mısır'da bir lahit, kraliyet mumyaları için dış tabakayı "
+"haznesidir. Antik Mısır’da bir lahit, kraliyet mumyaları için dış tabakayı "
 "oluşturuyordu. Tabutların içinde kat kat içindeydi ve genellikle su "
 "mermerinden yapılıyordu.\n"
 "\n"
 "Bu düzeyin lahiti olması istemiyorsanız başlangıçta lahitin sol kenarının "
-"altından hazinenin parçası alın - aksi takdirde, onu elde etmenin hiçbir "
+"altından hazinenin parçası alın — aksi takdirde, onu elde etmenin hiçbir "
 "yolu yoktur."
 
 #: gamedata/game_CM.txt:152
 #, kde-format
 msgid "The Parting of the Red Sea"
-msgstr "Kızıl Deniz'in İkiye Ayrılması"
+msgstr "Kızıldeniz’in İkiye Ayrılması"
 
 #: gamedata/game_CM.txt:153
 #, kde-format
@@ -736,12 +735,12 @@ msgid ""
 "Note: It is possible to move up the wall of water to your left initially, "
 "but it is much harder."
 msgstr ""
-"Kutsal Kitap, Musa'nın Firavun'un adamlarından kaçmak için denizi ayırdığını "
-"söyledi. Atalarının piramitlerini yağmalandıktan sonra, Firavun'un "
+"Kutsal Kitap, Musa’nın Firavun’un adamlarından kaçmak için denizi ayırdığını "
+"söyledi. Atalarının piramitlerini yağmalandıktan sonra, Firavun’un "
 "adamlarını senin peşinden gönderdiği de şaşırtıcı olmamalı.\n"
 "\n"
 "Neyse ki, deniz yalnızca son hazine yere düştüğünde ikiye ayrılabilir. "
-"Firavun'un adamlarında kaçmak o kadar da kolay değildir. Önce, kahramanınızı "
+"Firavun’un adamlarında kaçmak o kadar da kolay değildir. Önce, kahramanınızı "
 "olabildiğince aşağı çekin ve anı bekleyin. Ardından su duvarını sağa doğru "
 "hareket ettirin, ucu orta noktaya getirin ve ikinci kez bırakmadan önce "
 "mumyaların suyun üst kısmına ulaşmasını bekleyin.\n"
@@ -773,10 +772,10 @@ msgid ""
 "These elegant and rather tricky Championship levels were composed by Steve "
 "Mann <smann at cgl uwaterloo ca>. You need to dig while falling sometimes."
 msgstr ""
-"Bu oyun, 0'dan 16'ya (veya onaltılık düzenden 0'dan 10'a) kadar saymaya "
+"Bu oyun, 0’dan 16’ya (veya onaltılık düzenden 0’dan 10’a) kadar saymaya "
 "dayalıdır. Birinci düzeyde, altın veya düşman yoktur: sorun, bir sonraki "
 "düzey için doğru bir çıkış yolu bulmaktır. Bundan sonra, her düzeyde düşman "
-"ve altın sayısı 1'er kez artar. Her düzeyin adı, düşman sayısına, altın "
+"ve altın sayısı 1’er kez artar. Her düzeyin adı, düşman sayısına, altın "
 "parçalarına ve yerleşimde görünen sayıya göre değişir.\n"
 "\n"
 "Bu zarif ve zorlu Şampiyona düzeyleri, Steve Mann <smann at cgl uwaterloo "
@@ -799,10 +798,10 @@ msgid ""
 "bricks and immediately moving right to get into the 0.  The timing is fairly "
 "tight."
 msgstr ""
-"Tek zorluk, çıkışın tek yolu olan 0'ın içine girmektir.\n"
+"Tek zorluk, çıkışın tek yolu olan 0’ın içine girmektir.\n"
 "\n"
-"0'ın içine girmek için yapmanız gerek, zikzak merdiveninin tepesine "
-"tırmanmak, 0'ın sol kenarında beş tuğlayı kazmak, kutup üzerinde zikzak "
+"0’ın içine girmek için yapmanız gerek, zikzak merdiveninin tepesine "
+"tırmanmak, 0’ın sol kenarında beş tuğlayı kazmak, kutup üzerinde zikzak "
 "merdiveninin tepesine inmek ve son kazılı tuğlalardan düşerek hemen sağa "
 "ilerlemenizdir. Zamanlama oldukça sıkıdır. Zamanlaması oldukça zordur."
 
@@ -831,14 +830,14 @@ msgstr ""
 "Altınız elde etmek için, doğru yerlerde birçok kazı yapmak gerekir. Yinede, "
 "bir sonraki paragrafa göz atın.\n"
 "\n"
-"Çıkmak için, düşmanın 1'in üstünden geçmesini ve altındaki çukura düşmesini "
+"Çıkmak için, düşmanın 1’in üstünden geçmesini ve altındaki çukura düşmesini "
 "sağlamanız gerekir. Bunu yapmanın üç yolu vardır. İlki ve en akılcı olanı, "
-"düşmen üstteyken ve sağ doğru ilerliyorken, 1'in altındaki kenar uçta "
-"beklemek ve 1'in altına geldiğinizde sağa doğru kazı yapmaktır.\n"
+"düşmen üstteyken ve sağ doğru ilerliyorken, 1’in altındaki kenar uçta "
+"beklemek ve 1’in altına geldiğinizde sağa doğru kazı yapmaktır.\n"
 "\n"
 "İkinci yol, altın kazma zamanlaması (ya da altının nerede olduğu); Doğru "
-"zamanda altının üstüne hareket edilirse düşmanın 1'in sağındaki çukura "
-"düşmesi sağlanabilir. Üçüncüsü ise düşmanı yok etmektir ve 1'in sağ "
+"zamanda altının üstüne hareket edilirse düşmanın 1’in sağındaki çukura "
+"düşmesi sağlanabilir. Üçüncüsü ise düşmanı yok etmektir ve 1’in sağ "
 "tarafında yeniden oluşmasını umut etmektir."
 
 #: gamedata/game_cnt.txt:22
@@ -896,7 +895,7 @@ msgstr ""
 "düşürmeniz gerekecek (şansa burada bir altın alacaksınız); ancak 4 "
 "şeklindeki merdivenlerden kolayca çıkabilirsiniz. \n"
 "\n"
-"4'ten altını alırken, düşmanlar 4 şeklindeki merdivenin üst kısmına gelene "
+"4’ten altını alırken, düşmanlar 4 şeklindeki merdivenin üst kısmına gelene "
 "kadar bekleyin. Bu, düşmanlar sizin önünüzü kesmeden önce, merdivenlere "
 "ulaşabilmeniz için yeterli zamanı sağlayacaktır."
 
@@ -942,13 +941,13 @@ msgid ""
 "and wait for them to come over the poles.  Then drop to the floor and cross "
 "to the ladder."
 msgstr ""
-"Bu düzeydeki ilk ipucu, düşman 6'nın solundaki merdivene tırmandığında 6'nın "
+"Bu düzeydeki ilk ipucu, düşman 6’nın solundaki merdivene tırmandığında 6’nın "
 "altından geçmektir. Merdivene geldikten sonra, düşman merdivene tırmanacak, "
-"siz yalnızca 6'nın altını kazamadan önce, merdivene yakın düşman kalmayana "
+"siz yalnızca 6’nın altını kazamadan önce, merdivene yakın düşman kalmayana "
 "kadar beklemelisiniz.\n"
 "\n"
 "İkinci ipucu ise ekranın solundaki merdivendeki düşmanların nasıl "
-"alınacağını anlamaktır. Bir yol, ortadaki büyük 6'nın üzerdeyken kenarlardan "
+"alınacağını anlamaktır. Bir yol, ortadaki büyük 6’nın üzerdeyken kenarlardan "
 "ve üstten gelmesini beklemektir. Ardından yere atlayıp merdivenden tırmanın."
 
 #: gamedata/game_cnt.txt:46
@@ -963,7 +962,7 @@ msgid ""
 "the left most square of the top of the 7 and wait there until enemies fill "
 "the holes on top of the 7."
 msgstr ""
-"7'nin üstünde bulunan altın, ana görevdir. Başlangıçta, en üstte ve en "
+"7’nin üstünde bulunan altın, ana görevdir. Başlangıçta, en üstte ve en "
 "soldaki kata tırmanın, ardından düşmanların üstündeki delikler dolana kadara "
 "orada bekleyin."
 
@@ -1019,12 +1018,12 @@ msgid ""
 msgstr ""
 "Başlangıçta, yere ulaşmak için olabildiğince tez düşün. Merdivenden gelen "
 "düşmanları atlatmak için birkaç çukur kazın. Ardından bu iki parçanın üstünü "
-"kapattıktan sonra, 9'a girebilmek için, çukurların etrafında dolaşan düşman "
-"yokken, 9'un sol tarafındaki iki altın parçayı alın.\n"
+"kapattıktan sonra, 9’a girebilmek için, çukurların etrafında dolaşan düşman "
+"yokken, 9’un sol tarafındaki iki altın parçayı alın.\n"
 "\n"
-"9'un altındaki altını almak için, soldaki düşmanın üstünde durun, sola doğru "
+"9’un altındaki altını almak için, soldaki düşmanın üstünde durun, sola doğru "
 "kazın ve sağa doğru ilerleyin. İki düşman sola doğru, düşmeye ve merdivene "
-"tırmanmaya başlayacak. İlki kazdığınız yere sıkıştığında, 9'un en üst "
+"tırmanmaya başlayacak. İlki kazdığınız yere sıkıştığında, 9’un en üst "
 "düzeyine zıplayın ve sola doğru kazın. Sonraki düşman, altınları "
 "düşürecektir. Altınları alın, sağa doğru kazın, ağağı doğru altınları atın "
 "ve olabildiğince tez kaçın."
@@ -1077,7 +1076,7 @@ msgstr ""
 "yükseklikteki duvarın solundaki yere bırakın. Düşmanlar farklı bölümlere "
 "düşecektir.  Şimdi üç şey yapmanız gerekecek: altını sola ve orta bölümlere "
 "koyun, zeminde olduğunuzda düşmanlardan altını alın ve olabildiğince çok "
-"sayıda düşmanı 11'in solundaki bölüme doğru çekin.\n"
+"sayıda düşmanı 11’in solundaki bölüme doğru çekin.\n"
 "\n"
 "İlk iki görev diğerlerine göre kolaydor: Son görev de çeşitli şekillerde "
 "tamamlanabilir.  Orta merdivene doğru koşup sola doğru hareket ederseniz "
@@ -1085,7 +1084,7 @@ msgstr ""
 "bölümde aynı anda birkaç düşmanı öldürebilirsiniz. Bunu yaparken de bir veya "
 "iki parça altın alabilirsiniz.\n"
 "\n"
-"Bütün altınları aldıktan sonra (11'in sağındaki parçalar hariç) ortadaki H "
+"Bütün altınları aldıktan sonra (11’in sağındaki parçalar hariç) ortadaki H "
 "merdiveninin sağ üst köşesine doğru koşun.  Bu, sağ bölümdeki tüm "
 "düşmanların sola doğru hareket etmesine neden olacaktır."
 
@@ -1216,14 +1215,14 @@ msgid ""
 "of gold in or near the floating 14 at middle right.  Then you can run up the "
 "ladder that appears there."
 msgstr ""
-"Dört ipucu: birincisi, soldaki 4'lerde sıkışan düşmanları sonuna kadar (eğer "
-"biri ortada sıkışıp kalırsa dahi) kazmaya çalışmayın - bu boşa çıkacak daha "
+"Dört ipucu: birincisi, soldaki 4’lerde sıkışan düşmanları sonuna kadar (eğer "
+"biri ortada sıkışıp kalırsa dahi) kazmaya çalışmayın — bu boşa çıkacak daha "
 "az düşman bırakacaktır. \n"
 "\n"
-"İkincisi, soldaki 4'lerde altın tızağı ve ortadaki kayan altın parçasını "
+"İkincisi, soldaki 4’lerde altın tızağı ve ortadaki kayan altın parçasını "
 "almak için düşmanın üstüne çıkmanız gerekcektir.\n"
 "\n"
-"Üçüncüsü, sağ taraftaki 4'lerde (ve büyük olasılıkla 4'lerdeki soldaki iki) "
+"Üçüncüsü, sağ taraftaki 4’lerde (ve büyük olasılıkla 4’lerdeki soldaki iki) "
 "düşmanı serbest bıraktığınızda, kazmayı ve altın parçalarını kaybetmeyi "
 "kolaylaştırabilirsiniz.\n"
 "\n"
@@ -1252,15 +1251,15 @@ msgid ""
 "to the left of the 1 and get the gold to the left of the 1."
 msgstr ""
 "İki ipucu: soldaki iki merdiven arasına asılmış altın parçasının altındaki "
-"merdivenlerden birinde, merdiveni beklerseniz ordadaki düşmanlar 5'in "
+"merdivenlerden birinde, merdiveni beklerseniz ordadaki düşmanlar 5’in "
 "tabanına atlayacaklardır. Bu kolayaca 1 ve 5 arasındaki altınları almanızı "
 "sağlayacaktır.\n"
 "\n"
-"İkincisi, 1'in sağındaki yerde beklerseniz 1'in solundaki iki merdivenin "
-"sağındaki düşmanı, kenardan 1'in tabanına atladığını göreceksiniz. Eğer, "
-"düşmanlar, 1'in tabanına doğru düşerken, 1'in solundaki merdivenlerden "
+"İkincisi, 1’in sağındaki yerde beklerseniz 1’in solundaki iki merdivenin "
+"sağındaki düşmanı, kenardan 1’in tabanına atladığını göreceksiniz. Eğer, "
+"düşmanlar, 1’in tabanına doğru düşerken, 1’in solundaki merdivenlerden "
 "yukarı çıkıp altını alabilirsiniz, 1 ile 5 arasındaki yükseklikte bekleyin, "
-"ardından 1'in tabanına, sola doğru atlayın."
+"ardından 1’in tabanına, sola doğru atlayın."
 
 #: gamedata/game_cnt.txt:114
 #, kde-format
@@ -1293,10 +1292,10 @@ msgid ""
 "passing through the middle false floor on the 1 and exiting via the ladders "
 "on the left of the 1."
 msgstr ""
-"1'in solundaki sütun, düşmanları önlemek için her iki yoldan da dikkatli bir "
+"1’in solundaki sütun, düşmanları önlemek için her iki yoldan da dikkatli bir "
 "şekilde atlatmak suretiyle, aşağı doğru tez koşmayı gerektirir.\n"
 "\n"
-"6'nın ortasındaki altını almak için, 5'nın 'O' bölümünün en üstüne gelin, "
+"6’nın ortasındaki altını almak için, 5’in “O” bölümünün en üstüne gelin, "
 "sağa gidin/sola kazın ve hemen sola haraket edip yakalaması olası "
 "düşmanlardan kaçmak için sola doğru kazın. Bununla birlikte, daha önce iki "
 "düşmanı serbest bırakmamak için bu altı parçasını sonda bırakmak "
@@ -1304,14 +1303,14 @@ msgstr ""
 "düşmanı elde etmek te olanaklıdır.\n"
 "\n"
 "Sağ alttaki düşmanları tuttuğu altını alabilmek için, solu tıkayan alanı "
-"kazmak, merdiveni çıkmak, 6'nın sağ tarafını kazmak, içeri girmek, sola "
+"kazmak, merdiveni çıkmak, 6’nın sağ tarafını kazmak, içeri girmek, sola "
 "koşmak ve sol tarafta bir alan kazıp aşağı atlamak gerekir. Zamanlama "
-"önemlidir - sağ alt bölümde yalnızca bir veya iki düşman sonraki alana "
-"geçer. Altını almak için 6'nın alt ksımını bulmak zorundasınız, fakat bu, "
-"6'nın solundaki düşmanlar yüzünden biraz telaş yapmasına rağmen oldukça "
+"önemlidir — sağ alt bölümde yalnızca bir veya iki düşman sonraki alana "
+"geçer. Altını almak için 6’nın alt kısmını bulmak zorundasınız; ancak bu, "
+"6’nın solundaki düşmanlar yüzünden biraz telaş yapmasına rağmen oldukça "
 "kolaydır.\n"
 "\n"
-"Bütün altınları aldıktan sonra, 1'deki tuzak zeminden geçerek ve 1'in "
+"Bütün altınları aldıktan sonra, 1’deki tuzak zeminden geçerek ve 1’in "
 "solundaki merdivenlerden çıkarak, en kolay çıkışı bulabilirsiniz."
 
 #. i18n:
@@ -1389,8 +1388,8 @@ msgstr ""
 "olaylarına karıştınız, hapishanede tutuluyorsunuz.\n"
 "\n"
 "Ancak polis burada acımasızdır ve kaçmaya çalışırsanız sizi öldürmek için "
-"hiç çekinmezler... Bunun için çok dikkatli olun ve en önemlisi olarak: çabuk "
-"hareket edin --- yoksa ölürsünüz!\n"
+"hiç çekinmezler… Bunun için çok dikkatli olun ve en önemlisi olarak: çabuk "
+"hareket edin — yoksa ölürsünüz!\n"
 "\n"
 "Bu Şampiyona düzeyleri, tez ve ilginç KGoldRunner Kuralları içeriyor ve "
 "bunlar Gabriel Miltschitzky [gabriel dot miltschitzky at freenet de] "
@@ -1412,7 +1411,7 @@ msgstr ""
 "Düzeyin adında belirtildiği gibi, panik yapmaya kesinlikle gerek yoktur.\n"
 "\n"
 "Bu cezaevinden kaçmak kolaydır, çünkü gardiyanlar kendilerini sıkıştırıyor "
-"ve size dokunamıyorlar..."
+"ve size dokunamıyorlar…"
 
 #: gamedata/game_GMEP.txt:16
 #, kde-format
@@ -1430,7 +1429,7 @@ msgstr ""
 "Yeniden özgür olmak için, bir yerlerden bir miktar para bulmanız gerekiyor.\n"
 "\n"
 "Buradaki ipucu, düşmanlarınızı bağlamanızdır. Her birini beton blok üzerine "
-"düşürebilirsiniz. Diğer türlü çok çalışmanız gerekecek..."
+"düşürebilirsiniz. Diğer türlü çok çalışmanız gerekecek…"
 
 #: gamedata/game_GMEP.txt:22
 #, kde-format
@@ -1454,7 +1453,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:28
 #, kde-format
 msgid "Falling Enemies (1) - Finding A Way"
-msgstr "Düşen Düşmanlar (1) - Bir Yol Bulmak"
+msgstr "Düşen Düşmanlar (1) — Bir Yol Bulmak"
 
 #: gamedata/game_GMEP.txt:29
 #, kde-format
@@ -1472,17 +1471,17 @@ msgstr ""
 #: gamedata/game_GMEP.txt:34
 #, kde-format
 msgid "Falling Enemies (2) - Digging"
-msgstr "Düşen Düşmanlar (2) - Kazma"
+msgstr "Düşen Düşmanlar (2) — Kazma"
 
 #: gamedata/game_GMEP.txt:35
 #, kde-format
 msgid "Start the level with a click. The rest should be self-explanatory..."
-msgstr "Tıklayarak düzeye başlayın. Gerisi kendiliğinden gelecektir..."
+msgstr "Tıklayarak düzeye başlayın. Gerisi kendiliğinden gelecektir…"
 
 #: gamedata/game_GMEP.txt:38
 #, kde-format
 msgid "Falling Enemies (3) - Hidden Ladders"
-msgstr "Düşen Düşmanlar (3) - Gizli Merdivenler"
+msgstr "Düşen Düşmanlar (3) — Gizli Merdivenler"
 
 #: gamedata/game_GMEP.txt:39
 #, kde-format
@@ -1533,7 +1532,7 @@ msgstr ""
 "Son bir kaç düzeydir düşmanlardan oldukça iyi bir şekilde kaçtınız.\n"
 "\n"
 "Şimdi, yeniden özgürsün ve ne istersen yapabilirsin. Tabii ki altını çalmak "
-"dışında her şeyi..."
+"dışında her şeyi…"
 
 #: gamedata/game_GMEP.txt:56
 #, kde-format
@@ -1558,7 +1557,7 @@ msgstr ""
 "\n"
 "Çubuğun yanındaki tuğlaları kazın. Düştüğünüzde, içine girebilmeniz için tez "
 "çubuğun tarafına geri dönme yolunu bulun. Yolu zaten biliyorsanız "
-"tereddütsüz geri dönün. Boşa harcayacak zaman kalmamış olacak..."
+"tereddütsüz geri dönün. Boşa harcayacak zaman kalmamış olacak…"
 
 #: gamedata/game_GMEP.txt:64
 #, kde-format
@@ -1627,7 +1626,7 @@ msgstr ""
 "için yineleyin.\n"
 "\n"
 "Sonraki bekçiyi atlatmak kolay olmalı; ancak bundan sonra da yapılacak işler "
-"var... Merdivene basarak, blokun yanına geldiğinizde, bekçi en soldaki "
+"var… Merdivene basarak, blokun yanına geldiğinizde, bekçi en soldaki "
 "merdivene gelecek. Kafasının üstünden geçmek için doğru anı "
 "yakalamalısınız.\n"
 "\n"
@@ -1656,7 +1655,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:86
 #, kde-format
 msgid "Teamwork (1) - The Liberation"
-msgstr "Takım Çalışması (1) - Kurtuluş"
+msgstr "Takım Çalışması (1) — Kurtuluş"
 
 #: gamedata/game_GMEP.txt:87
 #, kde-format
@@ -1694,12 +1693,12 @@ msgstr ""
 "onu yeniden serbest bırakmanız gerekecektir.\n"
 "\n"
 "Takım arkadaşınıza karşı nazik olun: Büyük olasılıkla bir sonraki düzey için "
-"de bir araya geleceksiniz..."
+"de bir araya geleceksiniz…"
 
 #: gamedata/game_GMEP.txt:98
 #, kde-format
 msgid "Teamwork (2) - Diving Platforms"
-msgstr "Takım Çalışması (2) - Dalış Platformları"
+msgstr "Takım Çalışması (2) — Dalış Platformları"
 
 #: gamedata/game_GMEP.txt:99
 #, kde-format
@@ -1709,7 +1708,7 @@ msgstr "Hemen koşmaya başlayın, yoksa mahkum kalırsınız!"
 #: gamedata/game_GMEP.txt:102
 #, kde-format
 msgid "Teamwork (3) - The Final Escape"
-msgstr "Takım Çalışması (3) - Son Kaçış"
+msgstr "Takım Çalışması (3) — Son Kaçış"
 
 #: gamedata/game_GMEP.txt:103
 #, kde-format
@@ -1774,13 +1773,13 @@ msgstr ""
 "üstünden sola gitmenize olanak sağlayacak.\n"
 "\n"
 "Tabi ki yolda çok sayıda tuzak var; ancak kaçması kolay. Bu yüzden onları "
-"kendiniz bulmanız gerekecek. Düzeyi yeniden başlatmak için 'Q' düğmesine "
+"kendiniz bulmanız gerekecek. Düzeyi yeniden başlatmak için “Q” düğmesine "
 "basabilirsiniz."
 
 #: gamedata/game_GMGR.txt:16
 #, kde-format
 msgid "Have A Nice Flight..."
-msgstr "İyi Uçuşlar..."
+msgstr "İyi Uçuşlar…"
 
 #: gamedata/game_GMGR.txt:17
 #, kde-format
@@ -1898,7 +1897,7 @@ msgid ""
 "Before entering any of the structures on the right, make sure you have an "
 "escape route."
 msgstr ""
-"Beklemek ya da beklememek? Yalnızca deneyin...\n"
+"Beklemek ya da beklememek? Yalnızca deneyin…\n"
 "\n"
 "Sağdaki yapılardan herhangi birine girmeden önce, kaçış rotanızı "
 "belirlediğinizden emin olun."
@@ -2004,7 +2003,7 @@ msgid ""
 msgstr ""
 "Düşmanlara ulaştığınızda, tüm altınları alın. Sonra tuğlalardan birini kazıp "
 "içine atlayıp iki tarafa doğru da kazı yapın. Her iki taraftaki düşmanlar, "
-"10 durumun 9'unda tuzağa düşecekler. Şimdi düşmanlardan birine doğru adım "
+"10 durumun 9’unda tuzağa düşecekler. Şimdi düşmanlardan birine doğru adım "
 "atın, ortadaki tuğlayı kazın ve atlayın.\n"
 "\n"
 "Yeniden özgürsünüz!"
@@ -2110,7 +2109,7 @@ msgstr ""
 "\n"
 "Ama diğer tarafa nasıl ulaşırsınız?\n"
 "\n"
-"Hata yapın ve yeniden deneyin..."
+"Hata yapın ve yeniden deneyin…"
 
 #: gamedata/game_GMGR.txt:114
 #, kde-format
@@ -2214,9 +2213,9 @@ msgid ""
 "the last falling enemy. Be quick, because you can only reach the five pieces "
 "of gold on the left by riding on an enemy."
 msgstr ""
-"Soldaki altını almak için, 'Serbest Düşüş' e benzeyen, çok iyi bir "
-"zamanlama, hatta biraz daha zoru gereklidir. Bir düşmanın kafasına çıkmak "
-"için doğru anı bulmaya çalışın.\n"
+"Soldaki altını almak için, “Serbest Düşüş’e benzeyen, çok iyi bir zamanlama, "
+"hatta biraz daha zoru gereklidir. Bir düşmanın kafasına çıkmak için doğru "
+"anı bulmaya çalışın.\n"
 "\n"
 "Sağ tarafta, düşmanın soldaki deliğe girmesine izin vermek için, iki tuğlayı "
 "kazmaya başlayın. Kafasının üstüne çıkın, düşerken iki tarafıda kazın, "
@@ -2295,9 +2294,9 @@ msgid ""
 msgstr ""
 "Zombi Kıyameti gerçekleşti ve sen yeryüzündeki en son kişisin; ancak "
 "zombilerde çok fazla altın var. Yine de, zombiler, zombiliklerini yapıyorlar "
-"ve altından çok senle ilgileniyorlar...\n"
+"ve altından çok senle ilgileniyorlar…\n"
 "\n"
-"Gabriel Miltschitzky tarafından Nisan 2021'de hazırlanan bu bölümde elliden "
+"Gabriel Miltschitzky tarafından Nisan 2021’de hazırlanan bu bölümde elliden "
 "fazla şampiyona bölümü, ipuçları ve kayıtlı çözümler var."
 
 #: gamedata/game_GotD.txt:9
@@ -2338,7 +2337,7 @@ msgid ""
 "refills."
 msgstr ""
 "Zombi Kıyametinden sağ çıkan tek insansın ve hâlâ altından başka bir şey "
-"düşünemiyor musun? Bakalım bu sana nasıl yarayacak...\n"
+"düşünemiyor musun? Bakalım bu sana nasıl yarayacak…\n"
 "\n"
 "İlk ipucu: Her düzeyin kayıtlı bir çözümü vardır, kuşkuya düşersen onlara "
 "bir göz at. İkinci ipucu: Altının peşine düşmeden önce bir kaçış rotası "
@@ -2413,7 +2412,7 @@ msgstr ""
 "Dikkat et! Bu bir zombi. Onu serbest bırakır bırakmaz seni öldürmeye "
 "çalışacak!\n"
 "\n"
-"Öte yandan, onu geçmenin başka yolu yok...\n"
+"Öte yandan, onu geçmenin başka yolu yok…\n"
 "\n"
 "Ancak, tümüyle işe yaramaz değil. Başının üzerinde yürümek, aksi takdirde "
 "ulaşamayacağınız belirli altın parçalarına ulaşmanızı sağlar.\n"
@@ -2430,7 +2429,7 @@ msgstr "Zig Zag"
 #: gamedata/game_GotD.txt:40
 #, kde-format
 msgid "This is as easy as it gets..."
-msgstr "Bu olabildiğince kolay..."
+msgstr "Bu olabildiğince kolay…"
 
 #: gamedata/game_GotD.txt:43 gamedata/game_wad.txt:63
 #, kde-format
@@ -2502,7 +2501,7 @@ msgstr ""
 "da üzerinden geçmeniz olanaklı. Aslında, onları minimum düzeyde ayrı tutmak "
 "çok önemlidir, aksi takdirde biri diğerinin başının üzerinde yürür ve sol "
 "taraftaki tepeye çıkan merdivene ulaşmanızı olanaksız duruma getirir. "
-"Yalnızca sağ alttaki merdivene gidin ve yaklaşana kadar orada bekleyin - "
+"Yalnızca sağ alttaki merdivene gidin ve yaklaşana kadar orada bekleyin — "
 "hiçbir şeyi değiştirmezseniz tuttukları uzaklık idealdir."
 
 #: gamedata/game_GotD.txt:57
@@ -2539,10 +2538,10 @@ msgid ""
 "will fall to the floor, which will make this level a bit easier for you."
 msgstr ""
 "Tüm zombilerin eşit derecede hızlı olmadığını fark edebilirsiniz. Büyük "
-"gruplar halinde toplananlar, tek tek olanlardan daha yavaştır - en azından "
+"gruplar halinde toplananlar, tek tek olanlardan daha yavaştır — en azından "
 "küçük bir rahatlama olabilir.\n"
 "\n"
-"Altını da alıyorlar - büyük olasılıkla önceki yaşamlarından kalma eski bir "
+"Altını da alıyorlar — büyük olasılıkla önceki yaşamlarından kalma eski bir "
 "içgüdü.\n"
 "\n"
 "Ancak bu durumda, altını size indirebilecekleri için faydalıdır.\n"
@@ -2664,7 +2663,7 @@ msgstr ""
 "neredeyse yakalamasını beklemeniz gerekir, aksi halde geri döner.\n"
 "\n"
 "Son tavsiye: Zombinin düşmesini beklerken bir merdivende tam olarak "
-"durduğunuz yükseklik bazen önemlidir - özellikle son boşlukta."
+"durduğunuz yükseklik bazen önemlidir — özellikle son boşlukta."
 
 #: gamedata/game_GotD.txt:103
 #, kde-format
@@ -2691,7 +2690,7 @@ msgid ""
 "and error will help you figure this one out."
 msgstr ""
 "Altını elde etmek işin daha kolay kısmı: Dış tapınağa çıkın ve iç tapınağa "
-"yukarıdan girin - oradan altını kazmak olanaklıdır.\n"
+"yukarıdan girin — oradan altını kazmak olanaklıdır.\n"
 "\n"
 "Zor olan kısım zombileri geçmek. Üçünü aynı anda geçemezsiniz, bu yüzden "
 "çözüm çoğunu cezbetmektir.\n"
@@ -2875,7 +2874,7 @@ msgstr ""
 "karmaşık bir işlemdir.\n"
 "\n"
 "Tez alçalmadan ve olabildiğince çok altın almadan önce onları köşegenlerinin "
-"en tepesine çekmek daha iyidir - asla dipte çok uzun süre kalmayın!"
+"en tepesine çekmek daha iyidir — asla dipte çok uzun süre kalmayın!"
 
 #: gamedata/game_GotD.txt:155
 #, kde-format
@@ -2915,7 +2914,7 @@ msgstr ""
 "\n"
 "Yeniden ortaya çıkan zombi hayatınızı biraz zorlaştırabilir. Alt "
 "merdivenlere bir parça altınla düşmediğinden emin olun. Özgün başlangıç "
-"pozisyonuna yakın bir yerde yeniden ortaya çıkarsa şanslısınız..."
+"pozisyonuna yakın bir yerde yeniden ortaya çıkarsa şanslısınız…"
 
 #: gamedata/game_GotD.txt:165
 #, kde-format
@@ -2945,7 +2944,7 @@ msgstr "Zamana Karşı Koşmak"
 #: gamedata/game_GotD.txt:172
 #, kde-format
 msgid "Be quicker than the zombies - otherwise they will eat you."
-msgstr "Zombilerden daha tez olun - yoksa sizi yerler."
+msgstr "Zombilerden daha tez olun — yoksa sizi yerler."
 
 #: gamedata/game_GotD.txt:175
 #, kde-format
@@ -3051,7 +3050,7 @@ msgstr ""
 "başlayın.\n"
 "\n"
 "Sola gidemiyorsanız ortadaki küçük merdiveni tırmanmak size biraz yer ve "
-"zaman kazandırabilir. Ayrıca size daha kısa bir çıkış yolu da sunabilir - "
+"zaman kazandırabilir. Ayrıca size daha kısa bir çıkış yolu da sunabilir — "
 "nasıl olduğunu görmek için çözümü oynayın.\n"
 "\n"
 "Şimdi üst düzeylerdeki tüm altınları temizlemeye çalışın; ancak tuzaklara "
@@ -3090,7 +3089,7 @@ msgid ""
 "route carefully before you dig down. Zombies can also be used to fill the "
 "gaps."
 msgstr ""
-"Sürprizi bozmak istemem...\n"
+"Sürprizi bozmak istemem…\n"
 "\n"
 "Ancak altının üzerindeki tuğlalara ulaştığınızda, kazmadan önce dikkatlice "
 "bir kaçış rotası planlamalısınız. Zombiler de boşlukları doldurmak için "
@@ -3124,7 +3123,7 @@ msgid ""
 msgstr ""
 "Zombilerin altından kaymak için sahte tuğlaları kullanın. Aşağıya "
 "vardığınızda, tüm zombilerin hapishaneden çıkmasına izin verin. Yeniden "
-"girmek zorunda kalabilirsiniz..."
+"girmek zorunda kalabilirsiniz…"
 
 #: gamedata/game_GotD.txt:223
 #, kde-format
@@ -3176,7 +3175,7 @@ msgstr ""
 "\n"
 "Dört zombi de düştüğünde, yukarı çıkın ve beton çukurun sağında zombiler "
 "gelip yeniden doldurana kadar bekleyin. Ardından tarafları değiştirin ve "
-"betonun solunda bekleyin. Bu ürkütücü zombi dansına başlayacaklar...\n"
+"betonun solunda bekleyin. Bu ürkütücü zombi dansına başlayacaklar…\n"
 "\n"
 "Merdivenin en üstüne gidin ve başlarının üzerinden kısa merdivenlerin "
 "sırasına geçin. En soldaki kısa merdivenin üstünde bekleyin ve daire çizmeye "
@@ -3242,7 +3241,7 @@ msgstr ""
 "Zombilerden biri merdivene sizden önce ulaştıysa yukarı çıkmayı deneyin. "
 "Çoğu zaman bu, zombinin sizden kaçmasına ve belki de bir tarafa çıkıp "
 "düşmesine neden olur. Zombi ancak en yakın çıkış olduğunu düşündüğü yere "
-"kadar yukarı çıkacak ama yerçekimini pek iyi anlamıyor... Sağda merdivenin "
+"kadar yukarı çıkacak ama yerçekimini pek iyi anlamıyor… Sağda merdivenin "
 "yanında bir çubuk var, bu iyi ama solda merdivenin yanında bir altın parçası "
 "ve zombiler üzerinde yürüyebileceklerini sanıyorlar, bu yüzden onları "
 "merdivenden yukarı iterseniz yalnızca bir adım öteye gidecekler.\n"
@@ -3303,8 +3302,7 @@ msgstr ""
 "çıkamazsınız). Bu yüzden zombiyi çukura çekmeniz ve onu altınla birlikte sol "
 "tarafındaki tuğlaları kazarak ve içine çekerek öldürmeniz gerekiyor. Bazen "
 "akıllı olur ve tuzağa düşmeden önce altını düşürür, bu yüzden tüm süreci "
-"yinelemeniz gerekir. İlk etapta tez hareket etmek bunu daha az olası "
-"kılar...\n"
+"yinelemeniz gerekir. İlk etapta tez hareket etmek bunu daha az olası kılar…\n"
 "\n"
 "Zombi en üstte yeniden belirdiğinde, onu sol tarafa doğru çekin, yanından "
 "geçin ve çift tuğla sütunu kazarken sizi takip ettiğinden emin olun.\n"
@@ -3372,7 +3370,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:277
 #, kde-format
 msgid "Zombie Lemmings"
-msgstr "Zombi \"Lemmings\""
+msgstr "Zombi “Lemmings”"
 
 #: gamedata/game_GotD.txt:278
 #, kde-format
@@ -3463,7 +3461,7 @@ msgstr ""
 "\n"
 "Kutulardaki kazma zamanlama bulmacalarına gelince, her şeyi bir kerede alıp "
 "kilitli kalmaya çalışmaktansa daha sık içeri girmenin daha iyi olduğu "
-"konusunda tavsiyeme uyun..."
+"konusunda tavsiyeme uyun…"
 
 #: gamedata/game_GotD.txt:303
 #, kde-format
@@ -3473,7 +3471,7 @@ msgstr "Yağmur Gibi Zombiler"
 #: gamedata/game_GotD.txt:304
 #, kde-format
 msgid "Let us see if you have learned your lesson about zombies and ladders..."
-msgstr "Bakalım zombiler ve merdivenler hakkında dersini almış mısınız..."
+msgstr "Bakalım zombiler ve merdivenler hakkında dersini almış mısınız…"
 
 #: gamedata/game_GotD.txt:307
 #, kde-format
@@ -3489,7 +3487,7 @@ msgid ""
 "To get past the other zombies, you sometimes need to run over their heads."
 msgstr ""
 "Zombinin merdivenin tepesine ulaştığı ve aşağı inmeye başladığı anı bekleyin "
-"- işte o zaman atlayın.\n"
+"— işte o zaman atlayın.\n"
 "\n"
 "Diğer zombileri geçmek için bazen başlarının üzerinden geçmeniz gerekir."
 
@@ -3501,7 +3499,7 @@ msgstr "Zombiler Arasında"
 #: gamedata/game_GotD.txt:314
 #, kde-format
 msgid "All it takes is good strong nerves..."
-msgstr "Tek gereken iyi, güçlü sinirler..."
+msgstr "Tek gereken iyi, güçlü sinirler…"
 
 #: gamedata/game_GotD.txt:317
 #, kde-format
@@ -3517,7 +3515,7 @@ msgid ""
 msgstr ""
 "Zombilerle ilgili olan şey bu: daha yavaş olan daha ürkütücü.\n"
 "\n"
-"Acele edin ve şu bulmacaları yapın. Zaman geçiyor..."
+"Acele edin ve şu bulmacaları yapın. Zaman geçiyor…"
 
 #: gamedata/game_GotD.txt:323
 #, kde-format
@@ -3530,7 +3528,7 @@ msgid ""
 "The only way to get the gold is to ride the whole way on his head. Yee-hah! "
 "Ride him cowboy!"
 msgstr ""
-"Altını almanın tek yolu, bütün yolu kafasına binip gitmektir. Evet-hah! Bin "
+"Altını almanın tek yolu, bütün yolu kafasına binip gitmektir. Evet, hah! Bin "
 "ona kovboy!"
 
 #: gamedata/game_GotD.txt:327
@@ -3545,7 +3543,7 @@ msgid ""
 "you are level with the bricks the zombies are walking on..."
 msgstr ""
 "Yan taraftaki bir merdivene tırmanırsanız; ancak yalnızca zombilerin "
-"üzerinde yürüdüğü tuğlalarla aynı hizada olduğunuzda ne olduğunu izleyin..."
+"üzerinde yürüdüğü tuğlalarla aynı hizada olduğunuzda ne olduğunu izleyin…"
 
 #: gamedata/game_GotD.txt:331
 #, kde-format
@@ -3633,18 +3631,18 @@ msgid ""
 "the author."
 msgstr ""
 "Bu 20 düzey daha da zorlayacaktır, daha karmaşık bulmacalar ve Talih "
-"Kuşu'ndan daha sıkı zamanlamalar gerektirir. Hafif yürekli olanlar için "
+"Kuşu’ndan daha sıkı zamanlamalar gerektirir. Hafif yürekli olanlar için "
 "değildir. Daha önce de olduğu gibi, düşerken kazmaya gereksiniminiz olacak. "
 "İyi eğlenceler!\n"
 "\n"
 "Kayıtlı çözümler de sunmuş olan, Gabriel Miltschitzky [gabriel dot "
 "miltschitzky at googlemail dot com] tarafından hazırlandı.\n"
 "\n"
-"Talih Kuşu II'yi denemeden önce, ilk Talih Kuşu düzeylerini oynamak daha iyi "
+"Talih Kuşu II’yi denemeden önce, ilk Talih Kuşu düzeylerini oynamak daha iyi "
 "olacaktır; çünkü orda uygulanan birçok tekniğe gereksinim duyacaksınız. "
-"Talih Kuşu ve Talih Kuşu II'deki düzeylerin hiçbiri olanaksız değildir. "
-"Şüpheliyseniz yazar tarafından sağlanmış çözümleri izleme için 'Hareket-"
-">Çözüm Göster' menüsünü kullanabilirsiniz."
+"Talih Kuşu ve Talih Kuşu II’deki düzeylerin hiçbiri olanaksız değildir. "
+"Şüpheliyseniz yazar tarafından sağlanmış çözümleri izleme için “Hareket → "
+"Bir Çözüm Göster” menüsünü kullanabilirsiniz."
 
 #: gamedata/game_GRII.txt:10
 #, kde-format
@@ -3789,7 +3787,7 @@ msgstr ""
 "\n"
 "Alttaki altının yanına gelince, alt tarafa doğru kazmaya başlamadan önce "
 "kaçış yolunun nerede olabileceğini düşünün, çünkü büyük çukurun içindeyken "
-"düşünmeye zamanınız kalmayacaktır..."
+"düşünmeye zamanınız kalmayacaktır…"
 
 #: gamedata/game_GRII.txt:50 gamedata/game_plwv.txt:61
 #, kde-format
@@ -3966,7 +3964,7 @@ msgstr ""
 "merdivenden önce, kısa olana ulaşmak için zaman olacaktır. Düşene kadar orda "
 "bekleyin, sonra tez tırmanıp kaçabilirsiniz.\n"
 "\n"
-"Üç düşmanın da hayatta kalmasını sağlarsanız çok şanslı sayılırsınız..."
+"Üç düşmanın da hayatta kalmasını sağlarsanız çok şanslı sayılırsınız…"
 
 #: gamedata/game_GRII.txt:88
 #, kde-format
@@ -4042,13 +4040,13 @@ msgstr ""
 "altınları alın ve geri dönün. Son tuğlada iki tarafı da kazmanız "
 "gerekecektir.\n"
 "\n"
-"Büyük kutunun içindeki altın için biraz düşünmelisiniz --- ve çok da hızlı "
-"olmalısınız..."
+"Büyük kutunun içindeki altın için biraz düşünmelisiniz — ve çok da hızlı "
+"olmalısınız…"
 
 #: gamedata/game_GRII.txt:106
 #, kde-format
 msgid "Left Or Right?"
-msgstr "Sola Mı Sağa Mı?"
+msgstr "Sola mı Sağa mı?"
 
 #: gamedata/game_GRII.txt:107
 #, kde-format
@@ -4391,11 +4389,11 @@ msgid ""
 "real challenge, try it in keyboard mode. That will make things a little more "
 "demanding..."
 msgstr ""
-"Bu düzey adını, 'Düello' oyunundaki özgün 'Senkronize Koşu' dan almaktadır.\n"
+"Bu düzey adını, “Düello” oyunundaki özgün “Senkronize Koşu”dan almaktadır.\n"
 "\n"
 "Şüphesiz ki, düşmanın kafasının üstündeyken, onunla aynı hızda yürümek çok "
 "zordur; ancak kesinlikle imkansız denemez. Gerçek bir meydan okuma "
-"istedseniz klavye kipinde oynayın. Bu, işleri biraz daha zorlaştıracaktır..."
+"istedseniz klavye kipinde oynayın. Bu, işleri biraz daha zorlaştıracaktır…"
 
 #: gamedata/game_GRII.txt:190
 #, kde-format
@@ -4422,7 +4420,7 @@ msgid ""
 msgstr ""
 "Bu düzeyler, K Altın Avı programının özgün yazarı Marco Krüger, bazı "
 "arkadaşları ve katkıda bulunan kişiler tarafından hazırlandı. K Altın "
-"Avı'nın kuralları geçerlidir. Düşmanlar hızlıdır ve agresif bir arama "
+"Avı’nın kuralları geçerlidir. Düşmanlar hızlıdır ve agresif bir arama "
 "stratejisine sahiptirler. İyi Eğlenceler!"
 
 #: gamedata/game_lars.txt:2
@@ -4508,7 +4506,7 @@ msgstr ""
 #: gamedata/game_lars.txt:28
 #, kde-format
 msgid "Landfill"
-msgstr "Doldurma Alanı"
+msgstr "Çöp Sahası"
 
 #: gamedata/game_lars.txt:29
 #, kde-format
@@ -4584,7 +4582,7 @@ msgstr "Kalabalık Denetimi"
 #: gamedata/game_lars.txt:53
 #, kde-format
 msgid "Remember 'Landfill'?"
-msgstr "'Doldurma Alanı' nı Anımsıyor Musunuz?"
+msgstr "“Çöp Sahası”nı anımsıyor musunuz?"
 
 #: gamedata/game_lars.txt:56
 #, kde-format
@@ -4841,7 +4839,7 @@ msgid ""
 "move over the enemy.  But it is better to maneuver the enemies so that they "
 "stay away from the bottom section while you are down there getting the gold."
 msgstr ""
-"Düşmanların altını almasına izin vermemeye dikkat edin - onlardan kaçmak "
+"Düşmanların altını almasına izin vermemeye dikkat edin — onlardan kaçmak "
 "zordur!  Aksi takdirde, orta bölüme geçerek düşmanların çoğunu sağ tarafa ve "
 "yukarı doğru hareket ettirebilirsiniz. Bu, alt düzeydeki altını almanıza "
 "olanak sağlar. En üstteki tuğlaların bazıları tuzaklıdır. Bir düşman "
@@ -4973,7 +4971,7 @@ msgstr ""
 "İlk bölüm, yalnızca altını bulmak için kazı yapmayı içerir. Fakat altını sol "
 "altta tutmanın açık bir yolu bulunmuyor. Ulaşmak için merdivenin altında bir "
 "tuzak arayın. Tek ipucu, altınların hepsini almak ve düşmanı son altının "
-"olduğu yerde bırakmaktır. Dikkat edin - çünkü tek bir düşman var ve o çok "
+"olduğu yerde bırakmaktır. Dikkat edin — çünkü tek bir düşman var ve o çok "
 "hızlı!"
 
 #: gamedata/game_MAZ.txt:76
@@ -5053,7 +5051,7 @@ msgstr ""
 "\n"
 "Ortadaki dört yüksek tuzak, oyun kesicidir: tüm altınları topladıktan sonra "
 "onu geri getirebilirisiniz. Geri kalan altınları temizleyene kadar sağ üstte "
-"kalın. Ardından, sağ üst merdivenin altındaki tuzağa bırakın - altın "
+"kalın. Ardından, sağ üst merdivenin altındaki tuzağa bırakın — altın "
 "parçasını almanın başka bir yolu yoktur. Aşağıya indiğinizde, tüm altınlar "
 "bitene kadar, sağ üstte dönmenin bir yolu yoktur. Sağ ortadaki altını "
 "aldıktan sonra, iki bitişik parçanın sol tarafını kazın. Tüm altınlar "
@@ -5073,7 +5071,7 @@ msgid ""
 "are having trouble."
 msgstr ""
 "Yolu göremediğiniz bir labirent. Tuzak zemini kullanmalısınız. Deneme "
-"yanılma yapmak tek şansınız - sorun yaşarsanız kağıt üzerinde eşlemeyi "
+"yanılma yapmak tek şansınız — sorun yaşarsanız kağıt üzerinde eşlemeyi "
 "deneyin."
 
 #: gamedata/game_MAZ.txt:98 gamedata/game_MAZ.txt:184
@@ -5139,7 +5137,7 @@ msgid ""
 "digging, but that can lead to a rather slow game while you wait for the "
 "bricks you dig to refill."
 msgstr ""
-"Duvarlar ve düşmanı olmayan bir labirent - ne kadar zor olabilir ki? Ancak "
+"Duvarlar ve düşmanı olmayan bir labirent — ne kadar zor olabilir ki? Ancak "
 "tuzaklar duvar gibi davranmaz ve düşmanlar yalnızca tuzakları dolduruyor "
 "olacak, belki bu harita çizmenizi gerektirebilir. Tuzakları, kazarak "
 "arayabileceğinizi unutmayın; ancak doldurduğunuz tuğlaları beklerken, "
@@ -5407,8 +5405,8 @@ msgstr ""
 "arasında bir tupla bırakın. Düşman boş bölümün içinden, merdivenlere doğru "
 "hareket edecektir. Sonunda altını merdivenin üstüne bırakacaktır, bu noktada "
 "merdiven yukarı çekin, altını geri almasını önlemek için aşağıya inmek "
-"zorunda kalacaksınız. Zamanlamanız önemlidir - iyi şanslar! Alternatif "
-"olarak, etrafta dolaşabilir ve şansa güvenebilirsiniz - düşman en sonunda "
+"zorunda kalacaksınız. Zamanlamanız önemlidir — iyi şanslar! Alternatif "
+"olarak, etrafta dolaşabilir ve şansa güvenebilirsiniz — düşman en sonunda "
 "altın parçasını atacaktır!"
 
 #: gamedata/game_MAZ.txt:169
@@ -5495,9 +5493,9 @@ msgstr ""
 "fenadır. Labirent değişkendir. Bu ilginç labirentlerde gezinin.\n"
 "\n"
 "Son birkaç altın parçasını alabilmek için, soldaki ve sol alttaki labirentin "
-"bir bölümünü kapalı hale getirmeniz gerekecek. Bu bölüm büyük 'L' harfine "
-"benzemektedir. L'nin sağ kenarında (ortanın solu) iki tuğla kazın ve atlayın "
-"- burada size yardım eden tuzak tuğla olacaktır.\n"
+"bir bölümünü kapalı hale getirmeniz gerekecek. Bu bölüm büyük “L” harfine "
+"benzemektedir. L’nin sağ kenarında (ortanın solu) iki tuğla kazın ve atlayın "
+"— burada size yardım eden tuzak tuğla olacaktır.\n"
 "\n"
 "Tüm altınları topladıktan sonra labirent değişir. Başlangıcın yakınında bir "
 "yere bırakmanız ve yeniden geriye dönmeniz gerekmektedir. Sağ üstteki çıkış "
@@ -5523,8 +5521,8 @@ msgstr ""
 "puanlar kazanmalarını sağladı. Peter Wadham tarafından oluşturulmuş ve "
 "geleneksel oyun kurallarına bağlı kalınmıştır.\n"
 "\n"
-"Son birkaç düzey çok zordur; ancak bir meydan okuma arıyorsanız 'Peter W'nin "
-"İntikamı' na gitmelisiniz ..."
+"Son birkaç düzey çok zordur; ancak bir meydan okuma arıyorsanız “Peter W’nin "
+"İntikamı”na gitmelisiniz …"
 
 #: gamedata/game_plws.txt:9
 #, kde-format
@@ -5538,9 +5536,9 @@ msgid ""
 "so, in large friendly letters, so there is no need to panic.  The enemies "
 "are behind a wall and can not reach you."
 msgstr ""
-"Douglas Adams tarafından yazılan 'Otostopçunun Galaksi Rehberi' nin "
-"kapağında da dediği gibi, büyük harflerle, paniğe gerek yok yazıyordu. "
-"Duvarın arkasındaki düşmanlar, size ulaşamazlar."
+"Douglas Adams tarafından yazılan “Otostopçunun Galaksi Rehberi’nin kapağında "
+"da dediği gibi, büyük harflerle, paniğe gerek yok yazıyordu. Duvarın "
+"arkasındaki düşmanlar, size ulaşamazlar."
 
 #: gamedata/game_plws.txt:13
 #, kde-format
@@ -5649,12 +5647,12 @@ msgstr "Merkezi Gözle"
 #: gamedata/game_plws.txt:71
 #, kde-format
 msgid "Where to Dig?"
-msgstr "Nereyi Kaz?"
+msgstr "Nereyi Kazmalı?"
 
 #: gamedata/game_plws.txt:74
 #, kde-format
 msgid "Easy Stages"
-msgstr "Bazit Bölümler"
+msgstr "Basit Bölümler"
 
 #: gamedata/game_plws.txt:77
 #, kde-format
@@ -5844,7 +5842,7 @@ msgstr "Partiyi Sürdür!"
 #: gamedata/game_plws.txt:194
 #, kde-format
 msgid "Cross-stitch"
-msgstr "Ters-dikiş"
+msgstr "Ters Dikiş"
 
 #: gamedata/game_plws.txt:197
 #, kde-format
@@ -5969,7 +5967,7 @@ msgstr "Yardım!"
 #: gamedata/game_plws.txt:275
 #, kde-format
 msgid "Yorick's Skull"
-msgstr "Yorick'in Kafatası"
+msgstr "Yorick’in Kafatası"
 
 #: gamedata/game_plws.txt:278
 #, kde-format
@@ -6016,12 +6014,12 @@ msgid ""
 "Just one small hint ... if you stand on the right hand end of the boat you "
 "can get the enemy to fall towards you ... the rest is up to you!"
 msgstr ""
-"Bu düzey ünlü Alman denizaltı savaş filmi 'Das Boot' un adını taşıyor ve K "
-"Altın Avı'nın özgün yazarı olan, Berlin'den Marco Krüger'e ithaf "
+"Bu düzey ünlü Alman denizaltı savaş filmi “Das Boot’un adını taşıyor ve K "
+"Altın Avı’nın özgün yazarı olan, Berlin’den Marco Krüger’e ithaf "
 "edilmiştir.\n"
 "\n"
-"Ufak bir ipucu ... Eğer teknenin sağ tarafında durursanız düşmanı kendinize "
-"doğru düşürebilirsiniz ... gerisi size kalmış!"
+"Ufak bir ipucu… Eğer teknenin sağ tarafında durursanız düşmanı kendinize "
+"doğru düşürebilirsiniz… Gerisi size kalmış!"
 
 #: gamedata/game_plws.txt:305
 #, kde-format
@@ -6041,7 +6039,7 @@ msgstr "Çapraz Felaket"
 #: gamedata/game_plwv.txt:3
 #, kde-format
 msgid "Vengeance of Peter W"
-msgstr "Peter W'nin İntikamı"
+msgstr "Peter W’nin İntikamı"
 
 #: gamedata/game_plwv.txt:4
 #, kde-format
@@ -6241,7 +6239,7 @@ msgstr ""
 "\n"
 "Çapraz olarak sol alta ilerlediğinizde, iki hileli tuğla bulacaksınız. "
 "İkinciye atlayın, içinde kalın ve sağa doğru kazın. Şimdi aşağı inen ve sola "
-"doğru kuzana merdivenleri kullanın ..."
+"doğru kuzana merdivenleri kullanın …"
 
 #: gamedata/game_plwv.txt:67
 #, kde-format
@@ -6253,8 +6251,7 @@ msgstr "Uçan Kule"
 msgid ""
 "Well you just have to be fast and accurate on this one and that is all we "
 "can say ..."
-msgstr ""
-"Burada hızlı ve kesin olmalısınız, bu söyleyebileceğimiz tek şeydir ..."
+msgstr "Burada hızlı ve kesin olmalısınız, bu söyleyebileceğimiz tek şeydir …"
 
 #: gamedata/game_plwv.txt:71
 #, kde-format
@@ -6328,7 +6325,7 @@ msgstr ""
 "sonraki düzeye çıkmanız gerekir. En üstteki ortadaki külçeyi toplayabilmek "
 "için sağ taraftan gelin.\n"
 "\n"
-"'Bunsen ateşi' üzerinden geçmiş düşmanları sağda öldürerek ortasındakini "
+"“Bunsen Ateşi” üzerinden geçmiş düşmanları sağda öldürerek ortasındakini "
 "alın ve neredeyse dokununcaya kadara yaklaşıp peşinize düşürün veya üsünüze "
 "gelmeden önce kafalarının üstünden geçip sola doğru atlayın."
 
@@ -6346,7 +6343,7 @@ msgid ""
 msgstr ""
 "Düşmanı atlatmak için en üst ve en alt arasında sürdürün. Olabildiğincekülçe "
 "toplayın. Düşman bir tanesini alırsa yalnızca boş alanlardan birine "
-"atacaktır. Onların geçmesini sağlayın ve sabırla bekleyin ..."
+"atacaktır. Onların geçmesini sağlayın ve sabırla bekleyin …"
 
 #: gamedata/game_plwv.txt:93
 #, kde-format
@@ -6370,7 +6367,7 @@ msgstr ""
 "\n"
 "Bu bölümde bir düşman varsa sahte duvarın altında saklanıp yanından bir "
 "delik kazarak onu öldürün. Sizi tutmaya çalışırken ölecektir. Kazı yapmak "
-"istediğiniz tuğlanın üstünde altın varsa işe yaramayacaktır ..."
+"istediğiniz tuğlanın üstünde altın varsa işe yaramayacaktır …"
 
 #: gamedata/game_plwv.txt:99
 #, kde-format
@@ -6456,7 +6453,7 @@ msgstr ""
 "Onların altında tuzak tuğlalar olan üç yerden çıkın. T şeklinde olan "
 "tuğlaların arasına düşmek intihar olacaktır.\n"
 "\n"
-"T'nin altındaki altınları toplayarak başlayın: ardından U şeklindeki çukura "
+"T’nin altındaki altınları toplayarak başlayın: ardından U şeklindeki çukura "
 "girmek için düşmanı elde edebilirsiniz.\n"
 "\n"
 "Sol alt platfomun ortasındaki tuzak tuğlaya dikkat edin. Altınları sol ve "
@@ -6566,10 +6563,10 @@ msgid ""
 "\n"
 "Composed by Stuart Popejoy - spopejoy@panix.com"
 msgstr ""
-"Yalnızca güvende olduğunuzu düşündüğünüzde ... tuhaf ama hızlı K Altın Avı "
-"kurallarını kullanarak, on beş saf terör içeren düzey vardır.\n"
+"Tam da güvende olduğunuzu düşündüğünüzde… On beş adet saf terör içeren "
+"bölümler.\n"
 "\n"
-"Stuart Popejoy tarafından hazırlandı - spopejoy@panix.com"
+"Stuart Popejoy tarafından hazırlandı — spopejoy@panix.com"
 
 #: gamedata/game_sot.txt:8
 #, kde-format
@@ -6651,7 +6648,7 @@ msgid ""
 msgstr ""
 "Genellikle kazı yapılır ve altına ulaşılılır, ardından sağa ilerleyin ve bir "
 "sonraki kayaya kadar gidin.\n"
-"Bununla birlikte, üst-orta bölümün, soldan ikinci kayaya ilerlenmesi "
+"Bununla birlikte, üst–orta bölümün, soldan ikinci kayaya ilerlenmesi "
 "gerekmektedir. Bir altın parçasını sondaki orta bölüme bırakın. Ardından "
 "hemen çıkın!"
 
@@ -6818,7 +6815,7 @@ msgid ""
 "and dig the next brick in towards the center. Fall onto the enemy and run "
 "right or left, then dig to trap him.  You will have to be quick!"
 msgstr ""
-"Tez koşun ve kazın ...\n"
+"Tez koşun ve kazın …\n"
 "En içteki odanın üstünde ve soldaki tuğlayı bulun ve bir sonraki tuğlayı "
 "ortasından kazın. Düşmanın üzerine atlayı ve sağa doğru koşun, ardından onu "
 "yakalayabilmek için kazı yapın. Çabuk olmak zorundasınız!"
@@ -6863,7 +6860,7 @@ msgstr ""
 #: gamedata/game_sot.txt:66
 #, kde-format
 msgid "Tunnels (1) - The Monster"
-msgstr "Tüneller (1) - Canavar"
+msgstr "Tüneller (1) — Canavar"
 
 #: gamedata/game_sot.txt:67
 #, kde-format
@@ -6920,7 +6917,7 @@ msgstr ""
 #: gamedata/game_sot.txt:78
 #, kde-format
 msgid "Tunnels (2) - The Honeycomb"
-msgstr "Tüneller (2) - Petek"
+msgstr "Tüneller (2) — Petek"
 
 #: gamedata/game_sot.txt:79
 #, kde-format
@@ -7120,10 +7117,10 @@ msgstr ""
 "Bu kılavuz, size K Altın Avı kurallarını öğreten ve sahip olmanız gereken "
 "becerilerinizi geliştirmenize yardımcı olan, kolay düzeylerden oluşan bir "
 "toplamadır. Oyun, bir geleneksel kurallar kümesini kullanır. Her düzey için "
-"kısa bir açıklama vardır, sonrasında oyuna başlarsınız ...\n"
+"kısa bir açıklama vardır, sonrasında oyuna başlarsınız…\n"
 "\n"
-"Daha ileri düzeyleri oynamayı sürdürürseniz K Altın Avı'nın aksiyon, "
-"strateji ve bulmaca çözmeyi birleştirdiğini göreceksiniz --- hepsi tek bir "
+"Daha ileri düzeyleri oynamayı sürdürürseniz K Altın Avı’nın aksiyon, "
+"strateji ve bulmaca çözmeyi birleştirdiğini göreceksiniz — hepsi tek bir "
 "oyunda."
 
 #: gamedata/game_tute.txt:9
@@ -7142,12 +7139,12 @@ msgid ""
 "point the mouse where you want him to go.  At first gravity takes over and "
 "he falls ..."
 msgstr ""
-"Merhaba! KGoldRunner'a hoş geldiniz! Bu oyunun ana fikri tüm altın "
+"Merhaba! KGoldRunner’a hoş geldiniz! Bu oyunun ana fikri tüm altın "
 "külçelerini toplayıp oyun alanının en üstüne çıkıp bir sonraki düzeye "
 "geçmektir. Son külçeyi aldıktan sonra gizli bir merdiven ortaya çıkar.\n"
 "\n"
 "Kahraman. sizin oyuncunuzdur. Külçeleri toplamak için yalnızca fareyi nereye "
-"gitmek istiyorsanız oraya işaretleyin. İlk yer çekiminde düşersiniz ..."
+"gitmek istiyorsanız oraya işaretleyin. İlk yer çekiminde düşersiniz …"
 
 #: gamedata/game_tute.txt:15
 #, kde-format
@@ -7207,7 +7204,7 @@ msgstr ""
 "süre sonra delikler kapanacaktır, tuzağa düşebilir ve ölebilirsiniz.\n"
 "\n"
 "Kazı yaptığınızda, merdiven, beton, tuğla veya herhangi bir çubuğu sert bir "
-"şeyle desteklemelisiniz. Bazı oyunlarda düşerkende kazı yapmaya izin "
+"şeyle desteklemelisiniz. Bazı oyunlarda düşerken de kazı yapmaya izin "
 "verilmektedir; ancak bu oyunda kazamazsınız.\n"
 "\n"
 "Üçüncü kutuya iki delik açın, atlayın ve bir kat daha kazıp ikinci katmana "
@@ -7215,7 +7212,7 @@ msgstr ""
 "yapmalısınız. Yol boyunca çalışmak için, iki küçük bulmaca bulacaksınız. İyi "
 "şanslar!\n"
 "\n"
-"Bu arada, tuğlaları kazabilirsiniz ancak betonları kazamazsınız."
+"Bu arada, tuğlaları kazabilirsiniz; ancak betonları kazamazsınız."
 
 #: gamedata/game_tute.txt:31
 #, kde-format
@@ -7261,7 +7258,7 @@ msgstr ""
 "\n"
 "En önemlisi, düşmanların kafasının üstünden geçebilirsiniz. Bunu düzeyin "
 "başında yapmalısınız. Bir delik kazın, düşmanı tuzak kazın, onun tuzağa "
-"düşmesini bekleyin, ardından diğer düşman kovalarken üstünden geçin ...\n"
+"düşmesini bekleyin, ardından diğer düşman kovalarken üstünden geçin …\n"
 "\n"
 "Kendinizi gerilmiş hissettiğinizde, istediğiniz zaman Duraklat düğmesine "
 "basabilir (varsayılan P veya ESC) ve ara verebilirsiniz. Sürdürmek "
@@ -7280,8 +7277,8 @@ msgid ""
 "onto it."
 msgstr ""
 "Yatay olarak çubukda (veya kenarlarda) hareket edebilirsiniz; ancak aşağı "
-"inerseniz düşersiniz ... Ayrıca, üzerine düşerek altınları "
-"toplayabileceğinizi unutmayın."
+"inerseniz düşersiniz … Ayrıca, üzerine düşerek altınları toplayabileceğinizi "
+"unutmayın."
 
 #: gamedata/game_tute.txt:47
 #, kde-format
@@ -7300,7 +7297,7 @@ msgstr ""
 #: gamedata/game_tute.txt:51 gamedata/game_tutea.txt:31
 #, kde-format
 msgid "Bye ..."
-msgstr "Hoşça kal ..."
+msgstr "Hoşça kal …"
 
 #: gamedata/game_tute.txt:52 gamedata/game_tutea.txt:32
 #, kde-format
@@ -7316,7 +7313,7 @@ msgid ""
 "\n"
 "It has been a pleasure showing you around.  Bye!"
 msgstr ""
-"Bu düzey, bitirmek için güzel ve kolay bir düzeydir. K Altın Avı'ndaki diğer "
+"Bu düzey, bitirmek için güzel ve kolay bir düzeydir. K Altın Avı’ndaki diğer "
 "oyunlarda size iyi eğlenceler.\n"
 "\n"
 "Kendiniz ve arkadaşlarınızla düzeyler oluşturup birbirinize meydan "
@@ -7338,8 +7335,8 @@ msgid ""
 "This tutorial is preparation for some of the things you might find in the "
 "middle levels of the 'Initiation' game.  Enjoy ..."
 msgstr ""
-"Bu kılavuz, 'Başlangıç' oyunlarının orta düzeyinde bulabileceğiniz bazı "
-"şeyler için hazırlık amaçlıdır. Keyfini çıkarın ..."
+"Bu kılavuz, “Acemi” oyunlarının orta düzeyinde bulabileceğiniz bazı şeyler "
+"için hazırlık amaçlıdır. Keyfini çıkarın…"
 
 #: gamedata/game_tutea.txt:7
 #, kde-format
@@ -7361,13 +7358,12 @@ msgstr ""
 "çalışın.\n"
 "\n"
 "Düşmanda altın rengi varsa bir külçe tutuyor demektir. Beton üzerinde veya "
-"belki de bir merdivenin tepesine uzandığında onu düşürecektir ... sabır, "
-"sabır!"
+"belki de bir merdivenin tepesine uzandığında onu düşürecektir … sabır, sabır!"
 
 #: gamedata/game_tutea.txt:13
 #, kde-format
 msgid "To kill ..."
-msgstr "Öldürmek ..."
+msgstr "Öldürmek …"
 
 #: gamedata/game_tutea.txt:14
 #, kde-format
@@ -7389,7 +7385,7 @@ msgstr ""
 #: gamedata/game_tutea.txt:19
 #, kde-format
 msgid "...  Or not to kill?"
-msgstr "... Veya öldürmemek?"
+msgstr "… Veya öldürmemek?"
 
 #: gamedata/game_tutea.txt:20
 #, kde-format
@@ -7429,7 +7425,7 @@ msgstr ""
 "inebilirler. Bazen altını almak için tuğlaya düşmek zorunda kalabilirsiniz.\n"
 "\n"
 "Başlangıçta, beton çukura atlayın, kazın ve içinden çıkın. Bu bir süre "
-"düşmanı orada tutacaktır ..."
+"düşmanı orada tutacaktır …"
 
 #: gamedata/game_wad.txt:3
 #, kde-format
@@ -7759,7 +7755,7 @@ msgid ""
 "earlier."
 msgstr ""
 "Üç silahşörlerin hepsini ödürmelisiniz, böylece üst kısımdaki boşlukların "
-"altındaki tuzak tuğlalar dolacaktır. Sağ alttaki d'Artagnan'ı görmezden "
+"altındaki tuzak tuğlalar dolacaktır. Sağ alttaki d’Artagnan’ı görmezden "
 "gelin. Bir külçeyi almak için onun üzerinden yürüyün.\n"
 "\n"
 "Oyun alanın altında, soldan sağa doğru altın toplayın, ardından üstte sağdan "
@@ -7841,7 +7837,7 @@ msgstr ""
 "edin. Yolun üçte birinden fazlasına ulaşırsa kalıcı olarak tuzağa "
 "düşeceklerdir.\n"
 "\n"
-"Şimdi üç kaz-ve-koş bulmacasını çözmeye çalışın. Bir alanı boşaltmak için "
+"Şimdi üç kaz–ve–koş bulmacasını çözmeye çalışın. Bir alanı boşaltmak için "
 "birkaç yolculuk yapmanız gerekebilir. En sonunda, en sağdaki külçeyi "
 "toplayın."
 
@@ -7957,763 +7953,644 @@ msgid ""
 "Yes, you must run on the enemy's head --- all the way across!  All it takes "
 "is a steady hand."
 msgstr ""
-"Evet, düşmanın kafasının üzerinden geçmelisiniz -- tüm yol boyunca! Tek "
+"Evet, düşmanın kafasının üzerinden geçmelisiniz — tüm yol boyunca! Tek "
 "gereken sabit bir eldir."
 
 #: src/kgoldrunner.cpp:184
-#, fuzzy, kde-format
-#| msgid "&New Game..."
+#, kde-format
 msgctxt "@action"
 msgid "&New Game…"
-msgstr "&Yeni Oyun..."
+msgstr "&Yeni Oyun…"
 
 #: src/kgoldrunner.cpp:187
-#, fuzzy, kde-format
-#| msgid "Pla&y Next Level"
+#, kde-format
 msgctxt "@action"
 msgid "Pla&y Next Level"
 msgstr "&Sonraki Düzeyi Oyna"
 
 #: src/kgoldrunner.cpp:188
-#, fuzzy, kde-format
-#| msgid "Play next level."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Play the next level"
-msgstr "Sonraki düzeyi oyna."
+msgstr "Sonraki düzeyi oyna"
 
 #: src/kgoldrunner.cpp:189
-#, fuzzy, kde-format
-#| msgid "Try the next level in the game you are playing."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Switches to the next level in the game you are playing."
-msgstr "Oynadığınız oyunun sonraki düzeyini deneyin."
+msgstr "Oynadığınız oyundaki sonraki düzeye geçer."
 
 #: src/kgoldrunner.cpp:196
-#, fuzzy, kde-format
-#| msgid "&Load Saved Game..."
+#, kde-format
 msgctxt "@action"
 msgid "&Load Saved Game…"
-msgstr "Kayıtlı Oyunu Yü&kle..."
+msgstr "Kayıtlı Oyunu Yü&kle…"
 
 #: src/kgoldrunner.cpp:205
-#, fuzzy, kde-format
-#| msgid "Save Game"
+#, kde-format
 msgctxt "@action"
 msgid "&Save Game…"
-msgstr "Oyunu Kaydet"
+msgstr "&Oyunu Kaydet…"
 
 #: src/kgoldrunner.cpp:211
-#, fuzzy, kde-format
-#| msgid "Save A Solution"
+#, kde-format
 msgctxt "@action"
 msgid "Save a Solution…"
-msgstr "Bir Çözüm Kaydet"
+msgstr "Bir Çözüm Kaydet…"
 
 #: src/kgoldrunner.cpp:212
-#, fuzzy, kde-format
-#| msgid "Save A Solution"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Save a solution"
-msgstr "Bir Çözüm Kaydet"
+msgstr "Bir çözüm kaydet"
 
 #: src/kgoldrunner.cpp:213
-#, fuzzy, kde-format
-#| msgid ""
-#| "Save a solution for a level into a file called 'sol_&lt;prefix&gt;.txt' "
-#| "in your user's data directory..."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Saves a solution for a level into a file called 'sol_&lt;prefix&gt;.txt' in "
 "your user's data directory."
 msgstr ""
-"Bir düzey için olan çözümü, kullanı verisi dizininizdeki 'sol_&lt;prefix&gt;."
-"txt' adlı dosyaya kaydedin..."
+"Bir düzey için olan sonucu, kullanıcınızın veri dizinindeki “sol_&lt;"
+"prefix&gt;.txt” adlı bir dosyaya kaydeder."
 
 #: src/kgoldrunner.cpp:246
-#, fuzzy, kde-format
-#| msgid "&Show a Solution"
+#, kde-format
 msgctxt "@action"
 msgid "&Show a Solution"
 msgstr "&Bir Çözüm Göster"
 
 #: src/kgoldrunner.cpp:247
-#, fuzzy, kde-format
-#| msgid "Show how to win this level."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show how to win this level"
-msgstr "Bu düzeyin nasıl kazanılacağını göster."
+msgstr "Bu düzeyin nasıl kazanılacağını göster"
 
 #: src/kgoldrunner.cpp:248
-#, fuzzy, kde-format
-#| msgid ""
-#| "Play a recording of how to win this level, if there is one available."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Plays a recording of how to win this level, if there is one available."
-msgstr "Eğer mevcutsa bu düzeyin nasıl geçileceğinin kaydını oynatın."
+msgstr "Eğer varsa bu düzeyin nasıl geçileceğinin bir kaydını oynatın."
 
 #: src/kgoldrunner.cpp:252
-#, fuzzy, kde-format
-#| msgid "&Instant Replay"
+#, kde-format
 msgctxt "@action"
 msgid "&Instant Replay"
 msgstr "&Anı Yeniden Oynat"
 
 #: src/kgoldrunner.cpp:253
-#, fuzzy, kde-format
-#| msgid "Instant replay."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Instant replay"
-msgstr "Anı yeniden oynatın."
+msgstr "Anı yeniden oynat"
 
 #: src/kgoldrunner.cpp:254
-#, fuzzy, kde-format
-#| msgid "Show a recording of the level you are currently playing."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Shows a recording of the level you are currently playing."
-msgstr "Oynadığınız oyun düzeyinin bir kaydını göster."
+msgstr "Şu anda oynadığınız düzeyin bir kaydını gösterir."
 
 #: src/kgoldrunner.cpp:259
-#, fuzzy, kde-format
-#| msgid "Replay &Last Level"
+#, kde-format
 msgctxt "@action"
 msgid "Replay &Last Level"
 msgstr "&Son Düzeyi Yeniden Oyna"
 
 #: src/kgoldrunner.cpp:260
-#, fuzzy, kde-format
-#| msgid "Replay last level."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Replay last level"
-msgstr "Son düzeyi yeniden oyna."
+msgstr "Son düzeyi yeniden oyna"
 
 #: src/kgoldrunner.cpp:261
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show a recording of the last level you played and finished, regardless of "
-#| "whether you won or lost."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Shows a recording of the last level you played and finished, regardless of "
 "whether you won or lost."
 msgstr ""
-"Kazanıp kazanmadığınıza bakılmaksızın, son oynadığınız ve tamamladığınız "
-"düzeyin kaydını göster."
+"Kazanmış veya kaybetmiş olmanıza bakılmaksızın oynadığınız ve bitirdiğiniz "
+"son düzeyin kaydını gösterir."
 
 #: src/kgoldrunner.cpp:267
-#, fuzzy, kde-format
-#| msgid "&Replay Any Level"
+#, kde-format
 msgctxt "@action"
 msgid "&Replay Any Level"
 msgstr "&Herhangi Bir Düzeyi Yeniden Oyna"
 
 #: src/kgoldrunner.cpp:268
-#, fuzzy, kde-format
-#| msgid "Replay any level."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Replay any level"
-msgstr "Herhangi bir düzeyi yeniden oyna."
+msgstr "Herhangi bir düzeyi yeniden oyna"
 
 #: src/kgoldrunner.cpp:269
-#, fuzzy, kde-format
-#| msgid "Show a recording of any level you have played so far."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Shows a recording of any level you have played so far."
-msgstr "Şimdiye kadar oynadığınız herhangi bir düzeyin kaydını seyredin."
+msgstr "Şu ana kadar oynadığınız herhangi bir düzeyin kaydını gösterir."
 
 #: src/kgoldrunner.cpp:274
-#, fuzzy, kde-format
-#| msgid "&Kill Hero"
+#, kde-format
 msgctxt "@action"
 msgid "&Kill Hero"
 msgstr "&Kahramanı Öldür"
 
 #: src/kgoldrunner.cpp:275
-#, fuzzy, kde-format
-#| msgid "&Kill Hero"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Kill the hero"
-msgstr "&Kahramanı Öldür"
+msgstr "Kahramanı öldür"
 
 #: src/kgoldrunner.cpp:276
-#, fuzzy, kde-format
-#| msgid ""
-#| "Kill the hero, in case he finds himself in a situation from which he "
-#| "cannot escape."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Kills the hero, in case he finds himself in a situation from which he cannot "
 "escape."
-msgstr ""
-"Kahramanı, eğer kaçamayacağı bir durumun içinde kendisini bulursa öldür."
+msgstr "Kendini kaçamayacağı bir durumda bulması durumunda kahramanı öldürür."
 
 #: src/kgoldrunner.cpp:293
-#, fuzzy, kde-format
-#| msgid "&Create Level"
+#, kde-format
 msgctxt "@action"
 msgid "&Create Level"
 msgstr "&Düzey Oluştur"
 
 #: src/kgoldrunner.cpp:294
-#, fuzzy, kde-format
-#| msgid "Create level."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Create level"
-msgstr "Düzey oluştur."
+msgstr "Düzey oluştur"
 
 #: src/kgoldrunner.cpp:295
-#, fuzzy, kde-format
-#| msgid "Create a completely new level."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Creates a completely new level."
-msgstr "Tamamen yeni bir düzey oluştur."
+msgstr "Tümüyle yeni bir düzey oluşturur."
 
 #: src/kgoldrunner.cpp:297
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgctxt "@action"
 msgid "Create"
 msgstr "Oluştur"
 
 #: src/kgoldrunner.cpp:300
-#, fuzzy, kde-format
-#| msgid "Edit Level"
+#, kde-format
 msgctxt "@action"
 msgid "&Edit Level…"
-msgstr "Düzeyi Düzenle"
+msgstr "Düzeyi Dü&zenle…"
 
 #: src/kgoldrunner.cpp:301
-#, fuzzy, kde-format
-#| msgid "Edit Level"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit level"
-msgstr "Düzeyi Düzenle"
+msgstr "Düzeyi düzenle"
 
 #: src/kgoldrunner.cpp:302
-#, fuzzy, kde-format
-#| msgid "Edit any level..."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Edits any level."
-msgstr "Herhangi bir düzeyi düzenle..."
+msgstr "Herhangi bir düzeyi düzenler."
 
 #: src/kgoldrunner.cpp:304
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action"
 msgid "Edit"
 msgstr "Düzenle"
 
 #: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1461
-#, fuzzy, kde-format
-#| msgid "&Save Edits..."
+#, kde-format
 msgctxt "@action"
 msgid "&Save Edits…"
-msgstr "&Düzenlemeleri Kaydet..."
+msgstr "Düzenlemeleri &Kaydet…"
 
 #: src/kgoldrunner.cpp:313
-#, fuzzy, kde-format
-#| msgid "Save edits..."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Save edits"
-msgstr "Düzenlemeleri kaydet..."
+msgstr "Düzenlemeleri kaydet"
 
 #: src/kgoldrunner.cpp:314
-#, fuzzy, kde-format
-#| msgid "Save your level after editing..."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Saves your level after editing."
-msgstr "Düzenlemeden sonra düzeyi kaydet..."
+msgstr "Düzenleme sonrasında düzeyinizi kaydeder."
 
 #: src/kgoldrunner.cpp:316
-#, fuzzy, kde-format
-#| msgid "Save"
+#, kde-format
 msgctxt "@action"
 msgid "Save"
 msgstr "Kaydet"
 
 #: src/kgoldrunner.cpp:320
-#, fuzzy, kde-format
-#| msgid "Move Level"
+#, kde-format
 msgctxt "@action"
 msgid "&Move Level…"
-msgstr "Düzeyi Taşı"
+msgstr "Düzeyi &Taşı…"
 
 #: src/kgoldrunner.cpp:321
-#, fuzzy, kde-format
-#| msgid "Move Level"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Move level"
-msgstr "Düzeyi Taşı"
+msgstr "Düzeyi taşı"
 
 #: src/kgoldrunner.cpp:322
-#, fuzzy, kde-format
-#| msgid "Change a level's number or move it to another game..."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Changes a level's number or move it to another game."
-msgstr "Bir düzeyin numarasını değiştir ya da başka bir oyuna taşı..."
+msgstr "Bir düzeyin numarasını değiştirir veya başka bir oyuna taşır."
 
 #: src/kgoldrunner.cpp:326
-#, fuzzy, kde-format
-#| msgid "&Delete Level"
+#, kde-format
 msgctxt "@action"
 msgid "&Delete Level…"
-msgstr "&Düzeyi Sil"
+msgstr "&Düzeyi Sil…"
 
 #: src/kgoldrunner.cpp:327
-#, fuzzy, kde-format
-#| msgid "Delete Level"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete level"
-msgstr "Düzeyi Sil"
+msgstr "Düzeyi sil"
 
 #: src/kgoldrunner.cpp:328
-#, fuzzy, kde-format
-#| msgid "Delete a level..."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Deletes a level."
-msgstr "Bir düzey sil..."
+msgstr "Bir düzeyi siler."
 
 #: src/kgoldrunner.cpp:335
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Create Game"
+#, kde-format
 msgctxt "@action"
 msgid "Create &Game…"
-msgstr "Oyun Oluştur"
+msgstr "Oyun &Oluştur…"
 
 #: src/kgoldrunner.cpp:336
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Create Game"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Create game"
-msgstr "Oyun Oluştur"
+msgstr "Oyun oluştur"
 
 #: src/kgoldrunner.cpp:337
-#, fuzzy, kde-format
-#| msgid "Create a completely new game..."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Creates a completely new game."
-msgstr "Tamamen yeni bir oyun yarat..."
+msgstr "Tümüyle yeni bir oyun oluşturur."
 
 #: src/kgoldrunner.cpp:340
-#, fuzzy, kde-format
-#| msgid "Edit Game Info"
+#, kde-format
 msgctxt "@action"
 msgid "Edit Game &Info…"
-msgstr "Oyun Bilgisini Düzenle"
+msgstr "Oyun &Bilgisini Düzenle…"
 
 #: src/kgoldrunner.cpp:341
-#, fuzzy, kde-format
-#| msgid "Edit game info..."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit game info"
-msgstr "Oyun bilgilerini düzenle..."
+msgstr "Oyun bilgisini düzenle"
 
 #: src/kgoldrunner.cpp:342
-#, fuzzy, kde-format
-#| msgid "Change the name, rules or description of a game..."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Changes the name, rules or description of a game."
-msgstr "Oyunun adını, kurallarını ya da açıklamasını değiştir..."
+msgstr "Oyunun adını, kurallarını veya açıklamasını değiştirir."
 
 #: src/kgoldrunner.cpp:351
-#, fuzzy, kde-format
-#| msgid "Change &Theme..."
+#, kde-format
 msgctxt "@action"
 msgid "Change &Theme…"
-msgstr "&Temayı Değiştir..."
+msgstr "&Temayı Değiştir…"
 
 #: src/kgoldrunner.cpp:352
-#, fuzzy, kde-format
-#| msgid "Change the graphics theme..."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Change the graphics theme"
-msgstr "Grafik temasını değiştir..."
+msgstr "Grafik temasını değiştir"
 
 #: src/kgoldrunner.cpp:353
-#, fuzzy, kde-format
-#| msgid "Alter the visual appearance of the runners and background scene..."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Alters the visual appearance of the runners and background scene."
-msgstr "Yarışanların ve arka plan sahnelerinin görselliğini değiştirin..."
+msgstr "Koşucuların ve arka plan sahnesinin görsel görünüşünü değiştirir."
 
 #: src/kgoldrunner.cpp:367
-#, fuzzy, kde-format
-#| msgid "&Play Sounds"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Play Sounds"
-msgstr "&Sesleri Çal"
+msgstr "&Sesleri çal"
 
 #: src/kgoldrunner.cpp:368
-#, fuzzy, kde-format
-#| msgid "Play sound effects."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Play sound effects"
-msgstr "Ses efektlerini çal."
+msgstr "Ses efektlerini çal"
 
 #: src/kgoldrunner.cpp:369
-#, fuzzy, kde-format
-#| msgid "Play sound effects during the game."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Plays sound effects during the game."
-msgstr "Oyun sırasında ses efektlerini çal."
+msgstr "Oyun sırasında ses efektlerini çalar."
 
 #: src/kgoldrunner.cpp:373
-#, fuzzy, kde-format
-#| msgid "Play &Footstep Sounds"
+#, kde-format
 msgctxt "@option:check"
 msgid "Play &Footstep Sounds"
-msgstr "&Ayak Seslerini Çal"
+msgstr "&Ayak Sesi Çıkar"
 
 #: src/kgoldrunner.cpp:374
-#, fuzzy, kde-format
-#| msgid "Make sounds of player's footsteps."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Make sounds of player's footsteps"
-msgstr "Oyuncuların ayak seslerini çıkar."
+msgstr "Oyuncuların ayak seslerini çıkar"
 
 #: src/kgoldrunner.cpp:375
-#, fuzzy, kde-format
-#| msgid "Make sounds of player's footsteps."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Makes sounds of player's footsteps."
-msgstr "Oyuncuların ayak seslerini çıkar."
+msgstr "Oyuncuların ayak seslerini çıkarır."
 
 #: src/kgoldrunner.cpp:380
-#, fuzzy, kde-format
-#| msgid "&Demo At Start"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Demo at Start"
-msgstr "Başlangıçta &Demoyu Aç"
+msgstr "Başlangıçta &Tanıtımı Aç"
 
 #: src/kgoldrunner.cpp:381
-#, fuzzy, kde-format
-#| msgid "Run a demo when the game starts."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Run a demo when the game starts"
-msgstr "Oyun başladığında demoyu çalıştır."
+msgstr "Oyun başladığında bir tanıtım çalıştır"
 
 #: src/kgoldrunner.cpp:382
-#, fuzzy, kde-format
-#| msgid "Run a demo when the game starts."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Runs a demo when the game starts."
-msgstr "Oyun başladığında demoyu çalıştır."
+msgstr "Oyun başladığında bir tanıtım çalıştırır."
 
 #: src/kgoldrunner.cpp:390
-#, fuzzy, kde-format
-#| msgid "&Mouse Controls Hero"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Mouse Controls Hero"
 msgstr "Kahramanı &Fare Yönetir"
 
 #: src/kgoldrunner.cpp:391
-#, fuzzy, kde-format
-#| msgid "Mouse controls hero."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Mouse controls hero"
-msgstr "Kahramanı fare yönetir."
+msgstr "Kahramanı fare yönetir"
 
 #: src/kgoldrunner.cpp:392
-#, fuzzy, kde-format
-#| msgid "Use the mouse to control the hero's moves."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Use the mouse to control the hero's moves."
 msgstr "Kahramanın hareketlerini denetlemek için fareyi kullanın."
 
 #: src/kgoldrunner.cpp:396
-#, fuzzy, kde-format
-#| msgid "&Keyboard Controls Hero"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Keyboard Controls Hero"
-msgstr "&Kahramanımızı Klavye Yönetir"
+msgstr "&Kahramanı Klavye Yönetir"
 
 #: src/kgoldrunner.cpp:397
-#, fuzzy, kde-format
-#| msgid "Keyboard controls hero."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Keyboard controls hero"
-msgstr "Kahramanı klavye yönetir."
+msgstr "Kahramanı klavye yönetir"
 
 #: src/kgoldrunner.cpp:398
-#, fuzzy, kde-format
-#| msgid "Use the keyboard to control the hero's moves."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Use the keyboard to control the hero's moves."
 msgstr "Kahramanın hareketlerini denetlemek için klavyeyi kullanın."
 
 #: src/kgoldrunner.cpp:402
-#, fuzzy, kde-format
-#| msgid "Hybrid Control (&Laptop)"
+#, kde-format
 msgctxt "@option:check"
 msgid "Hybrid Control (&Laptop)"
-msgstr "Melez Yönetim (&Laptop)"
+msgstr "Hibrit Denetim (&Dizüstü)"
 
 #: src/kgoldrunner.cpp:403
-#, fuzzy, kde-format
-#| msgid "Pointer controls hero; dig using keyboard."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Pointer controls hero; dig using keyboard"
-msgstr "İmleç kahramanı denetler; kazmak için klavyeyi kullanın."
+msgstr "İşaretçi kahramanı denetler; klavyeyi kullanarak kaz"
 
 #: src/kgoldrunner.cpp:405
-#, fuzzy, kde-format
-#| msgid ""
-#| "Use the laptop's pointer device to control the hero's moves, and use the "
-#| "keyboard to dig left and right."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Use the laptop's pointer device to control the hero's moves, and use the "
 "keyboard to dig left and right."
 msgstr ""
-"Sağa sola kazmak için klavyeyi, kahramanın hareketlerini denetlemek için "
-"dizüstünün fare imlecini kullanın."
+"Kahramanın hareketlerini denetlemek için dizüstü bilgisayarın işaretçi "
+"aygıtını ve sola/sağa doğru kazmak için klavyeyi kullanın."
 
 #: src/kgoldrunner.cpp:420
-#, fuzzy, kde-format
-#| msgid "&Click Key To Move"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Click Key to Move"
-msgstr "Hareket Etmek için Düğmeye &Basın"
+msgstr "Hareket Etmek için Düğmeye &Bas"
 
 #: src/kgoldrunner.cpp:421
-#, fuzzy, kde-format
-#| msgid "&Click Key To Move"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click key to move"
-msgstr "Hareket Etmek için Düğmeye &Basın"
+msgstr "Hareket etmek için düğmeye bas"
 
 #: src/kgoldrunner.cpp:422
-#, fuzzy, kde-format
-#| msgid ""
-#| "In keyboard mode, click a direction-key to start moving and keep on going "
-#| "until you click another key."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "In keyboard mode, click a direction-key to start moving and keep on going "
 "until you click another key."
 msgstr ""
-"Klavye kipinde, hareket etmeye başlamak için bir yön düğmesine basın ve "
-"başka düğmeye basana kadar sürdürün."
+"Klavye kipinde, hareket etmeye başlamak ve başka bir düğmeye tıklayana kadar "
+"sürdürmek için bir yön düğmesine basın."
 
 #: src/kgoldrunner.cpp:428
-#, fuzzy, kde-format
-#| msgid "&Hold Key To Move"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Hold Key to Move"
-msgstr "&Hareket Etmek İçin Düğmeyi Basılı Tutun"
+msgstr "&Hareket Etmek için Düğmeyi Basılı Tut"
 
 #: src/kgoldrunner.cpp:429
-#, fuzzy, kde-format
-#| msgid "&Hold Key To Move"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Hold key to move"
-msgstr "&Hareket Etmek İçin Düğmeyi Basılı Tutun"
+msgstr "&Hareket etmek için düğmeyi basılı tut"
 
 #: src/kgoldrunner.cpp:430
-#, fuzzy, kde-format
-#| msgid ""
-#| "In keyboard mode, hold down a direction-key to move and release it to "
-#| "stop."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "In keyboard mode, hold down a direction-key to move and release it to stop."
 msgstr ""
-"Klavye kipinde, hareket etmek ve durmak için bir yön düğmesine basın ve "
-"bırakın."
+"Klavye kipinde, hareket etmek için yön düğmesini basılı tutun ve durdurmak "
+"için bırakın."
 
 #: src/kgoldrunner.cpp:447
-#, fuzzy, kde-format
-#| msgid "Normal Speed"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Normal Speed"
 msgstr "Normal Hız"
 
 #: src/kgoldrunner.cpp:448
-#, fuzzy, kde-format
-#| msgid "Set normal speed."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set normal speed"
-msgstr "Normal hızı ayarla."
+msgstr "Normal hızı ayarla"
 
 #: src/kgoldrunner.cpp:449
-#, fuzzy, kde-format
-#| msgid "Set normal game speed."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Set normal game speed."
-msgstr "Normak oyun hızını ayarla."
+msgstr "Normak oyun hızını ayarlayın."
 
 #: src/kgoldrunner.cpp:453
-#, fuzzy, kde-format
-#| msgid "Beginner Speed"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Beginner Speed"
-msgstr "Başlangıç Hızı"
+msgstr "Acemi Hızı"
 
 #: src/kgoldrunner.cpp:454
-#, fuzzy, kde-format
-#| msgid "Set beginners' speed."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set beginners' speed"
-msgstr "Acemi hızını ayarla."
+msgstr "Acemi hızını ayarla"
 
 #: src/kgoldrunner.cpp:455
-#, fuzzy, kde-format
-#| msgid "Set beginners' game speed (0.5 times normal)."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Set beginners' game speed (0.5 times normal)."
-msgstr "Başlangıç oyun hızı ayarlar (normalin 0.5 katı)."
+msgstr "Acemiler için oyun hızını ayarlar (normalin 0,5 katı)."
 
 #: src/kgoldrunner.cpp:460
-#, fuzzy, kde-format
-#| msgid "Champion Speed"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Champion Speed"
 msgstr "Şampiyon Hızı"
 
 #: src/kgoldrunner.cpp:461
-#, fuzzy, kde-format
-#| msgid "Set champions' speed."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set champions' speed"
-msgstr "Şampiyonların hızını ayarla."
+msgstr "Şampiyon hızını ayarla"
 
 #: src/kgoldrunner.cpp:462
-#, fuzzy, kde-format
-#| msgid "Set champions' game speed (1.5 times normal)."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Set champions' game speed (1.5 times normal)."
-msgstr "Şampiyonların hızını ayarla (normalin 1.5 katı)."
+msgstr "Şampiyonlar için oyun hızını ayarlar (normalin 1,5 katı)."
 
 #: src/kgoldrunner.cpp:466
-#, fuzzy, kde-format
-#| msgid "Increase Speed"
+#, kde-format
 msgctxt "@action"
 msgid "Increase Speed"
 msgstr "Hızı Artır"
 
 #: src/kgoldrunner.cpp:467
-#, fuzzy, kde-format
-#| msgid "Increase speed."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Increase speed"
-msgstr "Hızı artır."
+msgstr "Hızı artır"
 
 #: src/kgoldrunner.cpp:468
-#, fuzzy, kde-format
-#| msgid "Increase the game speed by 0.1 (maximum is 2.0 times normal)."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Increases the game speed by 0.1 (maximum is 2.0 times normal)."
-msgstr "Oyun hızını 0.1 kat artır (en fazla normalin 2.0 katı)."
+msgstr "Oyun hızını 0,1 kat artırır (en fazla normalin 2,0 katı)."
 
 #: src/kgoldrunner.cpp:473
-#, fuzzy, kde-format
-#| msgid "Decrease Speed"
+#, kde-format
 msgctxt "@action"
 msgid "Decrease Speed"
 msgstr "Hızı Azalt"
 
 #: src/kgoldrunner.cpp:474
-#, fuzzy, kde-format
-#| msgid "Decrease speed."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Decrease speed"
-msgstr "Hızı azalt."
+msgstr "Hızı azalt"
 
 #: src/kgoldrunner.cpp:475
-#, fuzzy, kde-format
-#| msgid "Decrease the game speed by 0.1 (minimum is 0.2 times normal)."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Decreases the game speed by 0.1 (minimum is 0.2 times normal)."
-msgstr "Oyun hızını 0.1 kat azalt (en fazla normalin 0.2 katı)."
+msgstr "Oyun hızını 0,1 kat azaltır (en fazla normalin 0,2 katı)."
 
 #: src/kgoldrunner.cpp:505
-#, fuzzy, kde-format
-#| msgid "Stop"
+#, kde-format
 msgctxt "@action"
 msgid "Stop"
-msgstr "Dur"
+msgstr "Durdur"
 
 #: src/kgoldrunner.cpp:506
-#, fuzzy, kde-format
-#| msgid "Move Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Right"
-msgstr "Sağa Taşı"
+msgstr "Sağa Hareket Et"
 
 #: src/kgoldrunner.cpp:507
-#, fuzzy, kde-format
-#| msgid "Move Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Left"
-msgstr "Sola Taşı"
+msgstr "Sola Hareket Et"
 
 #: src/kgoldrunner.cpp:508
-#, fuzzy, kde-format
-#| msgid "Move Up"
+#, kde-format
 msgctxt "@action"
 msgid "Move Up"
-msgstr "Yukarı Taşı"
+msgstr "Yukarı Hareket Et"
 
 #: src/kgoldrunner.cpp:509
-#, fuzzy, kde-format
-#| msgid "Move Down"
+#, kde-format
 msgctxt "@action"
 msgid "Move Down"
-msgstr "Aşağı Taşı"
+msgstr "Aşağı Hareket Et"
 
 #: src/kgoldrunner.cpp:510
-#, fuzzy, kde-format
-#| msgid "Dig Right"
+#, kde-format
 msgctxt "@action"
 msgid "Dig Right"
 msgstr "Sağa Doğru Kaz"
 
 #: src/kgoldrunner.cpp:511
-#, fuzzy, kde-format
-#| msgid "Dig Left"
+#, kde-format
 msgctxt "@action"
 msgid "Dig Left"
 msgstr "Sola Doğru Kaz"
 
 #: src/kgoldrunner.cpp:535
-#, fuzzy, kde-format
-#| msgid "Do a Step"
+#, kde-format
 msgctxt "@action"
 msgid "Do a Step"
-msgstr "Bir Adım Yap"
+msgstr "Bir Adım At"
 
 #: src/kgoldrunner.cpp:536
-#, fuzzy, kde-format
-#| msgid "Test Bug Fix"
+#, kde-format
 msgctxt "@action"
 msgid "Test Bug Fix"
 msgstr "Hata Düzeltimi Denemesi"
 
 #: src/kgoldrunner.cpp:537
-#, fuzzy, kde-format
-#| msgid "Show Positions"
+#, kde-format
 msgctxt "@action"
 msgid "Show Positions"
 msgstr "Konumları Göster"
 
 #: src/kgoldrunner.cpp:538
-#, fuzzy, kde-format
-#| msgid "Start Logging"
+#, kde-format
 msgctxt "@action"
 msgid "Start Logging"
-msgstr "Kayıt İşlemine Başla"
+msgstr "Günlükleme İşlemine Başla"
 
 #: src/kgoldrunner.cpp:539
-#, fuzzy, kde-format
-#| msgid "Show Hero"
+#, kde-format
 msgctxt "@action"
 msgid "Show Hero"
 msgstr "Kahramanı Göster"
 
 #: src/kgoldrunner.cpp:540
-#, fuzzy, kde-format
-#| msgid "Show Object"
+#, kde-format
 msgctxt "@action"
 msgid "Show Object"
 msgstr "Nesneyi Göster"
@@ -8721,8 +8598,7 @@ msgstr "Nesneyi Göster"
 #: src/kgoldrunner.cpp:542 src/kgoldrunner.cpp:543 src/kgoldrunner.cpp:544
 #: src/kgoldrunner.cpp:545 src/kgoldrunner.cpp:546 src/kgoldrunner.cpp:547
 #: src/kgoldrunner.cpp:548
-#, fuzzy, kde-format
-#| msgid "Show Enemy"
+#, kde-format
 msgctxt "@action"
 msgid "Show Enemy"
 msgstr "Düşmanı Göster"
@@ -8735,22 +8611,22 @@ msgstr "Oyun duraklatıldı"
 #: src/kgoldrunner.cpp:738
 #, kde-format
 msgid "Press \"%1\" to RESUME"
-msgstr "SÜRDÜRMEK için \"%1\" düğmesine basın"
+msgstr "SÜRDÜRMEK için “%1” düğmesine basın"
 
 #: src/kgoldrunner.cpp:740
 #, kde-format
 msgid "Press \"%1\" or \"%2\" to RESUME"
-msgstr "SÜRDÜRMEK için \"%1\" veya \"%2\" düğmesine basın"
+msgstr "SÜRDÜRMEK için “%1” veya “%2” düğmesine basın"
 
 #: src/kgoldrunner.cpp:747
 #, kde-format
 msgid "Press \"%1\" to PAUSE"
-msgstr "DURAKLATMAK için \"%1\" düğmesine basın"
+msgstr "DURAKLATMAK için “%1” düğmesine basın"
 
 #: src/kgoldrunner.cpp:749
 #, kde-format
 msgid "Press \"%1\" or \"%2\" to PAUSE"
-msgstr "DURAKLATMAK için \"%1\" veya \"%2\" düğmelerine basın"
+msgstr "DURAKLATMAK için “%1” veya “%2” düğmesine basın"
 
 #: src/kgoldrunner.cpp:761
 #, kde-format
@@ -8763,289 +8639,249 @@ msgid "No hint"
 msgstr "İpucu yok"
 
 #: src/kgoldrunner.cpp:878
-#, fuzzy, kde-format
-#| msgid "Get Folders"
+#, kde-format
 msgctxt "@window:title"
 msgid "Get Folders"
-msgstr "Dizinleri Al"
+msgstr "Klasörleri Al"
 
 #: src/kgoldrunner.cpp:879
 #, kde-format
 msgid "Cannot find system games sub-folder '/system/' in areas '%1'."
-msgstr "'%1' içinde sistem oyunları alt klasörü '/system' bulunamıyor."
+msgstr "“%1” içinde sistem oyunları alt klasörü “/system” bulunamıyor."
 
 #: src/kgoldrunner.cpp:912
-#, fuzzy, kde-format
-#| msgid "Edit Name/Hint"
+#, kde-format
 msgctxt "@action"
 msgid "Edit Name/Hint"
-msgstr "Ad/İpucu Düzenle"
+msgstr "Adı/İpucunu Düzenle"
 
 #: src/kgoldrunner.cpp:913
-#, fuzzy, kde-format
-#| msgid "Edit level name or hint"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit level name or hint"
-msgstr "Düzey adını ve ipucunu düzenle"
+msgstr "Düzey adını veya ipucunu düzenle"
 
 #: src/kgoldrunner.cpp:914
-#, fuzzy, kde-format
-#| msgid "Edit text for the name or hint of a level"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Edits text for the name or hint of a level"
-msgstr "Düzey adı ve ipucu için metni düzenle"
+msgstr "Ad metnini veya bir düzeyi ipucunu düzenler."
 
 #: src/kgoldrunner.cpp:917
-#, fuzzy, kde-format
-#| msgid "Name/Hint"
+#, kde-format
 msgctxt "@action"
 msgid "Name/Hint"
 msgstr "Ad/İpucu"
 
 #: src/kgoldrunner.cpp:920
-#, fuzzy, kde-format
-#| msgid "Erase"
+#, kde-format
 msgctxt "@option:check"
 msgid "Erase"
 msgstr "Sil"
 
 #: src/kgoldrunner.cpp:920
-#, fuzzy, kde-format
-#| msgid "Space/Erase"
+#, kde-format
 msgctxt "@option:check"
 msgid "Space/Erase"
-msgstr "Boş Bırak/Sil"
+msgstr "Boş bırak/sil"
 
 #: src/kgoldrunner.cpp:921
-#, fuzzy, kde-format
-#| msgid "Paint empty squares or erase"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint empty squares or erase"
-msgstr "Boş kareler çiz veya sil"
+msgstr "Boş kareler boya veya sil"
 
 #: src/kgoldrunner.cpp:922
-#, fuzzy, kde-format
-#| msgid "Erase objects or paint empty squares"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Erases objects or paint empty squares."
-msgstr "Nesneleri sil ya da boş kareler boya"
+msgstr "Nesneleri siler veya boş kareler boyar."
 
 #: src/kgoldrunner.cpp:925
-#, fuzzy, kde-format
-#| msgid "Hero"
+#, kde-format
 msgctxt "@option:check"
 msgid "Hero"
 msgstr "Kahraman"
 
 #: src/kgoldrunner.cpp:926
-#, fuzzy, kde-format
-#| msgid "Move hero"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Move hero"
-msgstr "Kahramanı taşı"
+msgstr "Kahramanı hareket ettir"
 
 #: src/kgoldrunner.cpp:927
-#, fuzzy, kde-format
-#| msgid "Change the hero's starting position"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Changes the hero's starting position."
-msgstr "Kahramanın başlangıç konumunu değiştir"
+msgstr "Kahramanın başlangıç konumunu değiştirir."
 
 #: src/kgoldrunner.cpp:930
-#, fuzzy, kde-format
-#| msgid "Enemy"
+#, kde-format
 msgctxt "@option:check"
 msgid "Enemy"
 msgstr "Düşman"
 
 #: src/kgoldrunner.cpp:931
-#, fuzzy, kde-format
-#| msgid "Paint enemies"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint enemies"
 msgstr "Düşmanları boya"
 
 #: src/kgoldrunner.cpp:932
-#, fuzzy, kde-format
-#| msgid "Paint enemies at their starting positions"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints enemies at their starting positions."
 msgstr "Düşmanları başlangıç konumlarında boya"
 
 #: src/kgoldrunner.cpp:936
-#, fuzzy, kde-format
-#| msgid "Brick"
+#, kde-format
 msgctxt "@option:check"
 msgid "Brick"
 msgstr "Tuğla"
 
 #: src/kgoldrunner.cpp:937
-#, fuzzy, kde-format
-#| msgid "Paint bricks (can dig)"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint bricks (can dig)"
-msgstr "Boyalı tuğlalar (kazılabilir)"
+msgstr "Tuğlaları boya (kazabilir)"
 
 #: src/kgoldrunner.cpp:938
-#, fuzzy, kde-format
-#| msgid "Paint bricks (diggable objects)"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints bricks (diggable objects)."
-msgstr "Boyalı tuğlalar (kazılabilir nesneler)"
+msgstr "Tuğlaları boyar (kazılabilir nesneler)."
 
 #: src/kgoldrunner.cpp:941
-#, fuzzy, kde-format
-#| msgid "Concrete"
+#, kde-format
 msgctxt "@option:check"
 msgid "Concrete"
 msgstr "Beton"
 
 #: src/kgoldrunner.cpp:942
-#, fuzzy, kde-format
-#| msgid "Paint concrete (cannot dig)"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint concrete (cannot dig)"
-msgstr "Beton boyama (kazılamaz)"
+msgstr "Betonu boya (kazılamaz)"
 
 #: src/kgoldrunner.cpp:943
-#, fuzzy, kde-format
-#| msgid "Paint concrete objects (not diggable)"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints concrete objects (not diggable)."
-msgstr "Beton nesnelerini boyama (kazılamaz)"
+msgstr "Beton nesneleri boya (kazılamaz)."
 
 #: src/kgoldrunner.cpp:946
-#, fuzzy, kde-format
-#| msgid "Trap"
+#, kde-format
 msgctxt "@option:check"
 msgid "Trap"
 msgstr "Tuzak"
 
 #: src/kgoldrunner.cpp:946
-#, fuzzy, kde-format
-#| msgid "Trap/False Brick"
+#, kde-format
 msgctxt "@option:check"
 msgid "Trap/False Brick"
-msgstr "Tuzak/Yanlış Tuğla"
+msgstr "Tuzak/Yalancı Tuğla"
 
 #: src/kgoldrunner.cpp:947
-#, fuzzy, kde-format
-#| msgid "Paint traps or false bricks (can fall through)"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint traps or false bricks (can fall through)"
-msgstr "Tuzakları ve yanlış tuğlaları boya (aşağı düşebilir)"
+msgstr "Tuzakları veya yalancı tuğlaları boya (aşağı düşebilir)"
 
 #: src/kgoldrunner.cpp:949
-#, fuzzy, kde-format
-#| msgid "Paint traps or false bricks (can fall through)"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints traps or false bricks (can fall through)."
-msgstr "Tuzakları ve yanlış tuğlaları boya (aşağı düşebilir)"
+msgstr "Tuzakları veya yalancı tuğlaları boyar (aşağı düşebilir)."
 
 #: src/kgoldrunner.cpp:953
-#, fuzzy, kde-format
-#| msgid "Ladder"
+#, kde-format
 msgctxt "@option:check"
 msgid "Ladder"
 msgstr "Merdiven"
 
 #: src/kgoldrunner.cpp:954
-#, fuzzy, kde-format
-#| msgid "Paint ladders"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint ladders"
 msgstr "Merdivenleri boya"
 
 #: src/kgoldrunner.cpp:955
-#, fuzzy, kde-format
-#| msgid "Paint ladders (ways to go up or down)"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints ladders (ways to go up or down)."
-msgstr "Merdivenleri boya (yukarı ya da aşağı inmenin yolları)"
+msgstr "Merdivenleri boyar (yukarı veya aşağı inme yolları)"
 
 #: src/kgoldrunner.cpp:958
-#, fuzzy, kde-format
-#| msgid "H Ladder"
+#, kde-format
 msgctxt "@option:check"
 msgid "H Ladder"
-msgstr "H Merdiven"
+msgstr "G merdiven"
 
 #: src/kgoldrunner.cpp:958
-#, fuzzy, kde-format
-#| msgid "Hidden Ladder"
+#, kde-format
 msgctxt "@option:check"
 msgid "Hidden Ladder"
-msgstr "Gizli Merdiven"
+msgstr "Gizli merdiven"
 
 #: src/kgoldrunner.cpp:959
-#, fuzzy, kde-format
-#| msgid "Paint hidden ladders"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint hidden ladders"
 msgstr "Gizli merdivenleri boya"
 
 #: src/kgoldrunner.cpp:960
-#, fuzzy, kde-format
-#| msgid "Paint hidden ladders, which appear when all the gold is gone"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints hidden ladders, which appear when all the gold is gone."
-msgstr "Bütün altın gittiğinde gözüken gizli merdivenleri boya"
+msgstr "Tüm altın bittiğinde ortaya çıkan gizli merdivenleri boyar."
 
 #: src/kgoldrunner.cpp:964
-#, fuzzy, kde-format
-#| msgid "Bar"
+#, kde-format
 msgctxt "@option:check"
 msgid "Bar"
 msgstr "Çubuk"
 
 #: src/kgoldrunner.cpp:964
-#, fuzzy, kde-format
-#| msgid "Bar/Pole"
+#, kde-format
 msgctxt "@option:check"
 msgid "Bar/Pole"
-msgstr "Çubuk/Sırık"
+msgstr "Çubuk/Direk"
 
 #: src/kgoldrunner.cpp:965
-#, fuzzy, kde-format
-#| msgid "Paint bars or poles"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint bars or poles"
-msgstr "Çubuk ya da sırıkları boya"
+msgstr "Çubukları veya direkleri boya"
 
 #: src/kgoldrunner.cpp:966
-#, fuzzy, kde-format
-#| msgid "Paint bars or poles (can fall from these)"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints bars or poles (can fall from these)."
-msgstr "Çubuk ya da sırıkları boya (buralardan düşülebilir)"
+msgstr "Çubukları veya direkleri boyar (buralardan düşülebilir)."
 
 #: src/kgoldrunner.cpp:970
-#, fuzzy, kde-format
-#| msgid "Gold"
+#, kde-format
 msgctxt "@option:check"
 msgid "Gold"
 msgstr "Altın"
 
 #: src/kgoldrunner.cpp:970
-#, fuzzy, kde-format
-#| msgid "Gold/Treasure"
+#, kde-format
 msgctxt "@option:check"
 msgid "Gold/Treasure"
 msgstr "Altın/Hazine"
 
 #: src/kgoldrunner.cpp:971
-#, fuzzy, kde-format
-#| msgid "Paint gold (or other treasure)"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint gold (or other treasure)"
-msgstr "Altın (ya da başka bir hazineyi) boya"
+msgstr "Altın (veya başka bir hazineyi) boya"
 
 #: src/kgoldrunner.cpp:972
-#, fuzzy, kde-format
-#| msgid "Paint gold pieces (or other treasure)"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints gold pieces (or other treasure)."
-msgstr "Altın parçaları (ya da başka bir hazineyi) boya"
+msgstr "Altın parçalarını (veya başka bir hazineyi) boyar."
 
 #. i18n: ectx: Menu (editor)
 #: src/kgoldrunnerui.rc:20
@@ -9066,18 +8902,16 @@ msgid "Edit Name or Hint"
 msgstr "Ad veya İpucunu Düzenle"
 
 #: src/kgrdialog.cpp:56
-#, fuzzy, kde-format
-#| msgid "Name of level:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name of level:"
-msgstr "Düzey adı:"
+msgstr "Düzeyin adı:"
 
 #: src/kgrdialog.cpp:63
-#, fuzzy, kde-format
-#| msgid "Hint for level:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Hint for level:"
-msgstr "Düzey ipucu:"
+msgstr "Düzey için ipucu:"
 
 #: src/kgrdialog.cpp:103 src/kgrdialog.cpp:172 src/kgrselector.cpp:84
 #, kde-format
@@ -9086,29 +8920,25 @@ msgid "Edit Game Info"
 msgstr "Oyun Bilgisini Düzenle"
 
 #: src/kgrdialog.cpp:123
-#, fuzzy, kde-format
-#| msgid "Name of game:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name of game:"
-msgstr "Oyun adı:"
+msgstr "Oyunun adı:"
 
 #: src/kgrdialog.cpp:131
-#, fuzzy, kde-format
-#| msgid "File name prefix:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "File name prefix:"
-msgstr "Dosya adı ön eki:"
+msgstr "Dosya adı öneki:"
 
 #: src/kgrdialog.cpp:139
-#, fuzzy, kde-format
-#| msgid "Traditional rules"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Traditional rules"
 msgstr "Geleneksel kurallar"
 
 #: src/kgrdialog.cpp:140
-#, fuzzy, kde-format
-#| msgid "KGoldrunner rules"
+#, kde-format
 msgctxt "@option:radio"
 msgid "KGoldrunner rules"
 msgstr "K Altın Avı kuralları"
@@ -9121,8 +8951,7 @@ msgstr[0] "%1 düzey"
 msgstr[1] "%1 düzey"
 
 #: src/kgrdialog.cpp:152
-#, fuzzy, kde-format
-#| msgid "About this game:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "About this game:"
 msgstr "Bu oyun hakkında:"
@@ -9134,8 +8963,7 @@ msgid "Create Game"
 msgstr "Oyun Oluştur"
 
 #: src/kgrdialog.cpp:186
-#, fuzzy, kde-format
-#| msgid "Save Changes"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save Changes"
 msgstr "Değişiklikleri Kaydet"
@@ -9146,11 +8974,10 @@ msgid "0 levels"
 msgstr "0 düzey"
 
 #: src/kgrdialog.cpp:192 src/kgrselector.cpp:269
-#, fuzzy, kde-format
-#| msgid "Save New"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save New"
-msgstr "Yeni Kaydet"
+msgstr "Yeni Olarak Kaydet"
 
 #: src/kgrdialog.cpp:247
 #, kde-format
@@ -9164,8 +8991,7 @@ msgid "Game                       Level/Lives/Score   Day    Date     Time  "
 msgstr "Oyun                       Düzey/Hak/Puan   Gün    Tarih     Saat  "
 
 #: src/kgreditor.cpp:66
-#, fuzzy, kde-format
-#| msgid "Create Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Level"
 msgstr "Düzey Oluştur"
@@ -9177,11 +9003,10 @@ msgid ""
 "Try menu item \"Create Game\"."
 msgstr ""
 "Sürdürmek için bir oyun oluşturulana kadar bir düzey oluşturamaz ve "
-"kaydedemezsiniz. 'Düzey Oluştur' menü ögesini deneyin."
+"kaydedemezsiniz. ‘Düzey Oluştur’ menü ögesini deneyin."
 
 #: src/kgreditor.cpp:115 src/kgreditor.cpp:137
-#, fuzzy, kde-format
-#| msgid "Edit Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Level"
 msgstr "Düzeyi Düzenle"
@@ -9193,7 +9018,7 @@ msgid ""
 "Try menu item \"Create Game\"."
 msgstr ""
 "Bir oyun ve düzey oluşturana kadar bir düzeyi düzenleyip kaydedemezsiniz. "
-"'Oyun Oluştur' menü ögesini deneyin."
+"‘Oyun Oluştur’ menü ögesini deneyin."
 
 #: src/kgreditor.cpp:138
 #, kde-format
@@ -9207,11 +9032,10 @@ msgstr ""
 "dikizlemiyorsunuz değil mi? :-)"
 
 #: src/kgreditor.cpp:242 src/kgreditor.cpp:261 src/kgrgame.cpp:260
-#, fuzzy, kde-format
-#| msgid "Save Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Level"
-msgstr "Düzey Kaydet"
+msgstr "Düzeyi Kaydet"
 
 #: src/kgreditor.cpp:243
 #, kde-format
@@ -9220,15 +9044,13 @@ msgstr ""
 "Bir düzey eklemek ve var olan düzeyleri birer yukarı taşımak ister misiniz?"
 
 #: src/kgreditor.cpp:245
-#, fuzzy, kde-format
-#| msgid "&Insert Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Insert Level"
 msgstr "&Düzey Yerleştir"
 
 #: src/kgreditor.cpp:246 src/kgreditor.cpp:446
-#, fuzzy, kde-format
-#| msgid "&Cancel"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Cancel"
 msgstr "İ&ptal"
@@ -9237,12 +9059,11 @@ msgstr "İ&ptal"
 #: src/kgrgame.cpp:1693
 #, kde-format
 msgid "Cannot open file '%1' for output."
-msgstr "'%1' dosyası çıktı için çalışmıyor."
+msgstr "“%1” dosyası çıktı için çalışmıyor."
 
 #: src/kgreditor.cpp:317 src/kgreditor.cpp:333 src/kgreditor.cpp:341
 #: src/kgreditor.cpp:356
-#, fuzzy, kde-format
-#| msgid "Move Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Move Level"
 msgstr "Düzeyi Taşı"
@@ -9251,19 +9072,16 @@ msgstr "Düzeyi Taşı"
 #, kde-format
 msgid "You must first load a level to be moved. Use the \"%1\" or \"%2\" menu."
 msgstr ""
-"Önce taşınacak olan düzeyi yüklemelisiniz. \"%1\" ve \"%2\" menüsünü "
-"kullanın."
+"Önce taşınacak olan düzeyi yüklemelisiniz. “%1” ve “%2” menüsünü kullanın."
 
 #: src/kgreditor.cpp:320
-#, fuzzy, kde-format
-#| msgid "Game"
+#, kde-format
 msgctxt "@title:menu"
 msgid "Game"
 msgstr "Oyun"
 
 #: src/kgreditor.cpp:320
-#, fuzzy, kde-format
-#| msgid "Editor"
+#, kde-format
 msgctxt "@title:menu"
 msgid "Editor"
 msgstr "Düzenleyici"
@@ -9274,8 +9092,8 @@ msgid ""
 "You cannot move a level until you have created a game and at least two "
 "levels. Try menu item \"Create Game\"."
 msgstr ""
-"Bir oyun oluşturana ve enaz iki düzeye kadar bir düzeyi taşıyamazsınız. "
-"\"Oyun Oluştur\" menü ögesini deneyin."
+"Bir oyun oluşturana ve en az iki düzeye kadar bir düzeyi taşıyamazsınız. "
+"‘Oyun Oluştur’ menü ögesini deneyin."
 
 #: src/kgreditor.cpp:342
 #, kde-format
@@ -9288,8 +9106,7 @@ msgid "You must change the level or the game or both."
 msgstr "Düzeyi, oyunu ya da her ikisini de değiştirmelisiniz."
 
 #: src/kgreditor.cpp:419 src/kgreditor.cpp:442 src/kgreditor.cpp:461
-#, fuzzy, kde-format
-#| msgid "Delete Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Level"
 msgstr "Düzeyi Sil"
@@ -9300,7 +9117,7 @@ msgid ""
 "You cannot delete a level until you have created a game and a level. Try "
 "menu item \"Create Game\"."
 msgstr ""
-"Bir oyun ve bir düzey oluşturana kadar, düzeyi silemessiniz. 'Oyun Oluştur' "
+"Bir oyun ve bir düzey oluşturana kadar, düzeyi silemessiniz. ‘Oyun Oluştur’ "
 "menü ögesini deneyin."
 
 #: src/kgreditor.cpp:443
@@ -9309,8 +9126,7 @@ msgid "Do you want to delete a level and move higher levels down by one?"
 msgstr "Bir düzeyi silmek ve üst düzeyleri bir aşağı taşımak istiyor musunuz?"
 
 #: src/kgreditor.cpp:445
-#, fuzzy, kde-format
-#| msgid "&Delete Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Delete Level"
 msgstr "&Düzeyi Sil"
@@ -9318,13 +9134,12 @@ msgstr "&Düzeyi Sil"
 #: src/kgreditor.cpp:462
 #, kde-format
 msgid "Cannot find file '%1' to be deleted."
-msgstr "'%1' adlı düzey bulunamadı."
+msgstr "“%1” adlı düzey bulunamadı."
 
 #: src/kgreditor.cpp:510 src/kgreditor.cpp:520 src/kgreditor.cpp:525
 #: src/kgreditor.cpp:539 src/kgreditor.cpp:557 src/kgreditor.cpp:770
 #: src/kgreditor.cpp:781
-#, fuzzy, kde-format
-#| msgid "Save Game Info"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Game Info"
 msgstr "Oyun Bilgisini Kaydet"
@@ -9352,11 +9167,10 @@ msgstr "Dosya adı ön eki bütün alfabetik karakterleri içerebilir."
 #: src/kgreditor.cpp:558
 #, kde-format
 msgid "The filename prefix '%1' is already in use."
-msgstr "Dosya adı ön eki '%1' şu an kullanımda."
+msgstr "Dosya adı ön eki “%1” şu an kullanımda."
 
 #: src/kgreditor.cpp:641
-#, fuzzy, kde-format
-#| msgid "Editor"
+#, kde-format
 msgctxt "@title:window"
 msgid "Editor"
 msgstr "Düzenleyici"
@@ -9367,25 +9181,22 @@ msgid "You have not saved your work. Do you want to save it now?"
 msgstr "Yapılan çalışmaları kaydetmediniz. Bunları kaydetmek istiyor musunuz?"
 
 #: src/kgreditor.cpp:644
-#, fuzzy, kde-format
-#| msgid "&Save"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Save"
 msgstr "&Kaydet"
 
 #: src/kgreditor.cpp:645
-#, fuzzy, kde-format
-#| msgid "&Do Not Save"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Do Not Save"
 msgstr "&Kaydetme"
 
 #: src/kgreditor.cpp:646
-#, fuzzy, kde-format
-#| msgid "&Go on editing"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Go on Editing"
-msgstr "&Düzenlemeyi sürdür"
+msgstr "&Düzenlemeyi Sürdür"
 
 #: src/kgreditor.cpp:771
 #, kde-format
@@ -9401,13 +9212,13 @@ msgstr "Yeni Düzey"
 #, kde-format
 msgctxt "Game name - level number."
 msgid "%1 - %2"
-msgstr "%1 - %2"
+msgstr "%1 — %2"
 
 #: src/kgreditor.cpp:846 src/kgrgame.cpp:1393
 #, kde-format
 msgctxt "Game name - level number - level name."
 msgid "%1 - %2 - %3"
-msgstr "%1 - %2 - %3"
+msgstr "%1 — %2 — %3"
 
 #: src/kgrgame.cpp:109
 #, kde-format
@@ -9415,8 +9226,7 @@ msgid "Click anywhere to begin live play"
 msgstr "Canlı oyuna başlamak için herhangi bir yere tıklayın"
 
 #: src/kgrgame.cpp:190
-#, fuzzy, kde-format
-#| msgid "Play Next Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Play Next Level"
 msgstr "Sonraki Düzeyi Oyna"
@@ -9432,8 +9242,7 @@ msgid "Inappropriate action: you are not editing a level."
 msgstr "Uygun olmayan işlem: bir düzeyi düzenleyemezsiniz."
 
 #: src/kgrgame.cpp:420
-#, fuzzy, kde-format
-#| msgid "No Sound"
+#, kde-format
 msgctxt "@title:window"
 msgid "No Sound"
 msgstr "Ses Yok"
@@ -9446,14 +9255,13 @@ msgid ""
 "This is because no development versions of the OpenAL and SndFile libraries "
 "were present when it was compiled and built."
 msgstr ""
-"Uyarı: K Altın Avı'nın bu kopyasının sesi yoktur.\n"
+"Uyarı: K Altın Avı’nın bu kopyasının sesi yoktur.\n"
 "\n"
 "Bunun nedeni, derlendiği sırada, OpenAL ve SndFile kitaplıklarının "
 "geliştirme sürümünün mevcut olmamasıdır."
 
 #: src/kgrgame.cpp:625 src/kgrgame.cpp:782
-#, fuzzy, kde-format
-#| msgid "Game Paused"
+#, kde-format
 msgctxt "@title:window"
 msgid "Game Paused"
 msgstr "Oyun Duraklatıldı"
@@ -9469,8 +9277,7 @@ msgstr ""
 "düğmesine basın."
 
 #: src/kgrgame.cpp:670 src/kgrgame.cpp:676
-#, fuzzy, kde-format
-#| msgid "Replay Last Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Replay Last Level"
 msgstr "Son Düzeyi Yeniden Oyna"
@@ -9497,100 +9304,82 @@ msgid "Quick Start"
 msgstr "Tez Başlangıç"
 
 #: src/kgrgame.cpp:712
-#, fuzzy, kde-format
-#| msgctxt "Button text: start playing a game"
-#| msgid "&PLAY"
+#, kde-format
 msgctxt "@action:button start playing a game"
 msgid "&PLAY"
 msgstr "&OYNA"
 
 #: src/kgrgame.cpp:713
-#, fuzzy, kde-format
-#| msgid "Start playing this level"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start playing this level"
 msgstr "Bu düzeyi oynamayı başlat"
 
 #: src/kgrgame.cpp:715
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set up to start playing the game and level being shown, as soon as you "
-#| "click, move the mouse or press a key"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Set up to start playing the game and level being shown, as soon as you "
 "click, move the mouse or press a key"
 msgstr ""
-"Gösterilen oyunun ve oynanan oyunu başlatmak, fareyi hareket ettirdikten "
-"veya bir düğmeye bastıktan hemen sonradır"
+"Oyunu oynamaya başlamayı, gösterilen düzeyi tıkladığınızda, fareyi hareket "
+"ettirdiğinizde veya bir düğmeye bastığınızda olacak biçimde ayarlayın"
 
 #: src/kgrgame.cpp:719
-#, fuzzy, kde-format
-#| msgid "&Quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Quit"
-msgstr "&Çık"
+msgstr "Çı&k"
 
 #: src/kgrgame.cpp:720
-#, fuzzy, kde-format
-#| msgid "Close KGoldrunner"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close KGoldrunner"
-msgstr "K Altın Avı Oyununu Kapat"
+msgstr "K Altın Avı’nı Kapat"
 
 #: src/kgrgame.cpp:723
-#, fuzzy, kde-format
-#| msgid "&New Game..."
+#, kde-format
 msgctxt "@action:button"
 msgid "&New Game…"
-msgstr "&Yeni Oyun..."
+msgstr "&Yeni Oyun…"
 
 #: src/kgrgame.cpp:724
-#, fuzzy, kde-format
-#| msgid "Start a different game or level"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start a different game or level"
-msgstr "Farklı bir oyun veya düzey başlat"
+msgstr "Başka bir oyunu veya düzeyi başlat"
 
 #: src/kgrgame.cpp:726
-#, fuzzy, kde-format
-#| msgid ""
-#| "Use the Select Game dialog box to choose a different game or level and "
-#| "start playing it"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Use the Select Game dialog box to choose a different game or level and start "
 "playing it"
 msgstr ""
-"Oyun Seç iletişim penceresini kullanarak, farklı bir oyun veya düzey seçin "
-"ve oynamaya başlayın"
+"Farklı bir oyun veya düzey seçip oynamaya başlamak için Oyun Seç iletişim "
+"kutusunu kullanın."
 
 #: src/kgrgame.cpp:730
-#, fuzzy, kde-format
-#| msgid "&Use Menu"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Use Menu"
 msgstr "&Menüyü Kullan"
 
 #: src/kgrgame.cpp:732
-#, fuzzy, kde-format
-#| msgid "Use the menus to choose other actions"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Use the menus to choose other actions"
-msgstr "Diğer işlemleri seçmek için menüleri kullanın"
+msgstr "Diğer eylemeri seçmek için menüleri kullan"
 
 #: src/kgrgame.cpp:734
-#, fuzzy, kde-format
-#| msgid ""
-#| "Before playing, use the menus to choose other actions, such as loading a "
-#| "saved game or changing the theme"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Before playing, use the menus to choose other actions, such as loading a "
 "saved game or changing the theme"
 msgstr ""
-"Oynamadan önce, kayıtlı bir oyunu yükleme veya temayı değiştirme gibi diğer "
-"işlemleri seçmek için menüleri kullanın"
+"Oynamadan önce, kayıtlı bir oyunu yüklemek veya temayı değiştirmek gibi "
+"diğer eylemleri seçmek için menüleri kullanın."
 
 #: src/kgrgame.cpp:783
 #, kde-format
@@ -9602,8 +9391,7 @@ msgstr ""
 "veya Esc) basmanız gerekecek."
 
 #: src/kgrgame.cpp:836
-#, fuzzy, kde-format
-#| msgid "Show a Solution"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show a Solution"
 msgstr "Bir Çözüm Göster"
@@ -9614,12 +9402,11 @@ msgid ""
 "Sorry, although all levels of KGoldrunner can be solved, no solution has "
 "been recorded yet for the level you selected."
 msgstr ""
-"K Altın Avı'nın tüm düzeyleri çözülebilirdir; ancak maalesef seçtiğiniz "
+"K Altın Avı’nın tüm düzeyleri çözülebilirdir; ancak maalesef seçtiğiniz "
 "düzey için henüz bir çözüm kaydedilmemiştir."
 
 #: src/kgrgame.cpp:848
-#, fuzzy, kde-format
-#| msgid "Replay Any Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Replay Any Level"
 msgstr "Herhangi Bir Düzeyi Yeniden Oyna"
@@ -9641,22 +9428,19 @@ msgstr ""
 "</P>"
 
 #: src/kgrgame.cpp:1065
-#, fuzzy, kde-format
-#| msgid "Game Over"
+#, kde-format
 msgctxt "@title:window"
 msgid "Game Over"
 msgstr "Oyun Bitti"
 
 #: src/kgrgame.cpp:1066
-#, fuzzy, kde-format
-#| msgid "&Try Again"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Try Again"
 msgstr "&Yeniden Dene"
 
 #: src/kgrgame.cpp:1067
-#, fuzzy, kde-format
-#| msgid "&Finish"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Finish"
 msgstr "&Bitir"
@@ -9666,29 +9450,25 @@ msgstr "&Bitir"
 msgid ""
 "<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the <b>"
 "\"%1\"</b> game !!</p>"
-msgstr ""
-"<b>TEBRİKLER !!!!</b><p><b>\"%1\"</b> oyunundaki son düzeyi bitirdiniz !!</p>"
+msgstr "<b>TEBRİKLER!</b><p><b>“%1”</b> oyunundaki son düzeyi bitirdiniz!</p>"
 
 #: src/kgrgame.cpp:1298
-#, fuzzy, kde-format
-#| msgid "Hint"
+#, kde-format
 msgctxt "@title:window"
 msgid "Hint"
 msgstr "İpucu"
 
 #: src/kgrgame.cpp:1304
-#, fuzzy, kde-format
-#| msgid "&OK"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Ok"
-msgstr "&TAMAM"
+msgstr "&Tamam"
 
 #: src/kgrgame.cpp:1305
-#, fuzzy, kde-format
-#| msgid "&Show a Solution"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Show a Solution"
-msgstr "&Bir Çözüm Göster"
+msgstr "Bir Çözüm &Göster"
 
 #: src/kgrgame.cpp:1318
 #, kde-format
@@ -9709,25 +9489,22 @@ msgid ""
 msgstr ""
 "Kahramanı denetlemek için kullanılan düğmeye bastınız. Kendiliğinden klavye "
 "denetimine geçmek istiyor musunuz? İşaretçi denetimi, uzun vadede daha "
-"kolaydır - yürümek yerine bisiklete binmek gibi!"
+"kolaydır — yürümek yerine bisiklete binmek gibi!"
 
 #: src/kgrgame.cpp:1421
-#, fuzzy, kde-format
-#| msgid "Switch to Keyboard Mode"
+#, kde-format
 msgctxt "@title:window"
 msgid "Switch to Keyboard Mode"
 msgstr "Klavye Kipine Geç"
 
 #: src/kgrgame.cpp:1422
-#, fuzzy, kde-format
-#| msgid "Switch to &Keyboard Mode"
+#, kde-format
 msgctxt "@action:button"
 msgid "Switch to &Keyboard Mode"
 msgstr "&Klavye Kipine Geç"
 
 #: src/kgrgame.cpp:1423
-#, fuzzy, kde-format
-#| msgid "Stay in &Mouse Mode"
+#, kde-format
 msgctxt "@action:button"
 msgid "Stay in &Mouse Mode"
 msgstr "&Fare Kipinde Kal"
@@ -9739,8 +9516,7 @@ msgstr "Klavye Kipi"
 
 #: src/kgrgame.cpp:1458 src/kgrgame.cpp:1484 src/kgrgame.cpp:1494
 #: src/kgrgame.cpp:1513 src/kgrgame.cpp:1519
-#, fuzzy, kde-format
-#| msgid "Save Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Game"
 msgstr "Oyunu Kaydet"
@@ -9751,7 +9527,7 @@ msgid ""
 "Sorry, you cannot save your game play while you are editing. Please try menu "
 "item \"%1\"."
 msgstr ""
-"Üzgünüz, oyun düzenlerken, kayıt yapamazsınız. Lütfen \"%1\" menü ögesini "
+"Üzgünüz, oyun düzenlerken kayıt yapamazsınız. Lütfen “%1” menü ögesini "
 "deneyin."
 
 #: src/kgrgame.cpp:1495 src/kgrgame.cpp:1539 src/kgrgame.cpp:1654
@@ -9775,11 +9551,10 @@ msgid "Error: Failed to save your game."
 msgstr "Hata: Oyununuzu kaydetme başarısız oldu."
 
 #: src/kgrgame.cpp:1532 src/kgrgame.cpp:1538 src/kgrgame.cpp:1576
-#, fuzzy, kde-format
-#| msgid "Load Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Game"
-msgstr "Oyunu Yükle"
+msgstr "Oyun Yükle"
 
 #: src/kgrgame.cpp:1533
 #, kde-format
@@ -9789,7 +9564,7 @@ msgstr "Üzgünüz, hiç kayıtlı oyun yok."
 #: src/kgrgame.cpp:1577
 #, kde-format
 msgid "Cannot find the game with prefix '%1'."
-msgstr "'%1' öneki ile başlayan oyun bulunamıyor."
+msgstr "“%1” öneki ile başlayan oyun bulunamıyor."
 
 #: src/kgrgame.cpp:1635
 #, kde-format
@@ -9797,11 +9572,10 @@ msgid "Unknown"
 msgstr "Bilinmeyen"
 
 #: src/kgrgame.cpp:1653 src/kgrgame.cpp:1692
-#, fuzzy, kde-format
-#| msgid "Check for High Score"
+#, kde-format
 msgctxt "@title:window"
 msgid "Check for High Score"
-msgstr "Yüksek Puanlar İçin Tıklayın"
+msgstr "Yüksek Puanlara Bak"
 
 #: src/kgrgame.cpp:1710
 #, kde-format
@@ -9826,8 +9600,7 @@ msgid "Error: Failed to save your high score."
 msgstr "Hata: Yüksek puanınızı kaydetme başarısız oldu."
 
 #: src/kgrgame.cpp:1824 src/kgrgame.cpp:1847 src/kgrgame.cpp:1856
-#, fuzzy, kde-format
-#| msgid "Show High Scores"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show High Scores"
 msgstr "Yüksek Puanları Göster"
@@ -9840,8 +9613,7 @@ msgstr "Üzgünüz, öğretici oyunlardaki yüksek puanları kaydetmiyoruz."
 #: src/kgrgame.cpp:1848
 #, kde-format
 msgid "Sorry, there are no high scores for the \"%1\" game yet."
-msgstr ""
-"Üzgünüz, \"%1\" oyunu için henüz kaydedilmiş yüksek puanlar listesi yok."
+msgstr "Üzgünüz, “%1” oyunu için henüz kaydedilmiş yüksek puanlar listesi yok."
 
 #: src/kgrgame.cpp:1872
 #, kde-format
@@ -9849,43 +9621,35 @@ msgid ""
 "<center><h2>KGoldrunner Hall of Fame</h2></center><center><h3>\"%1\" Game</"
 "h3></center>"
 msgstr ""
-"<center><h2>K Altın Avı Onur Listesi</h2></center><center><h3>\"%1\" Oyunu</"
+"<center><h2>K Altın Avı Onur Listesi</h2></center><center><h3>“%1” Oyunu</"
 "h3></center>"
 
 #: src/kgrgame.cpp:1882
-#, fuzzy, kde-format
-#| msgctxt "1, 2, 3 etc."
-#| msgid "Rank"
+#, kde-format
 msgctxt "@title:column 1, 2, 3 etc."
 msgid "Rank"
 msgstr "Sıralama"
 
 #: src/kgrgame.cpp:1883
-#, fuzzy, kde-format
-#| msgctxt "Person"
-#| msgid "Name"
+#, kde-format
 msgctxt "@title:column person"
 msgid "Name"
 msgstr "Ad"
 
 #: src/kgrgame.cpp:1884
-#, fuzzy, kde-format
-#| msgctxt "Game level reached"
-#| msgid "Level"
+#, kde-format
 msgctxt "@title:column game level reached"
 msgid "Level"
 msgstr "Düzey"
 
 #: src/kgrgame.cpp:1885
-#, fuzzy, kde-format
-#| msgid "Score"
+#, kde-format
 msgctxt "@title:column"
 msgid "Score"
 msgstr "Puan"
 
 #: src/kgrgame.cpp:1886
-#, fuzzy, kde-format
-#| msgid "Date"
+#, kde-format
 msgctxt "@title:column"
 msgid "Date"
 msgstr "Tarih"
@@ -9897,8 +9661,7 @@ msgid "High Scores"
 msgstr "Yüksek Puanlar"
 
 #: src/kgrgame.cpp:2016 src/kgrgame.cpp:2022 src/kgrgame.cpp:2026
-#, fuzzy, kde-format
-#| msgid "Load Game Info"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Game Info"
 msgstr "Oyun Bilgisini Yükle"
@@ -9906,16 +9669,15 @@ msgstr "Oyun Bilgisini Yükle"
 #: src/kgrgame.cpp:2017
 #, kde-format
 msgid "Cannot find game info file '%1'."
-msgstr "'%1' oyun bilgisi dosyası bulunamıyor."
+msgstr "“%1” oyun bilgisi dosyası bulunamıyor."
 
 #: src/kgrgame.cpp:2027
 #, kde-format
 msgid "Reached end of file '%1' before finding end of game-data."
-msgstr "Oyun verisinin sonuna ulaşmadan önce '%1' dosyasının sonuna ulaşıldı."
+msgstr "Oyun verisinin sonuna ulaşmadan önce “%1” dosyasının sonuna ulaşıldı."
 
 #: src/kgrgame.cpp:2051 src/kgrgame.cpp:2056
-#, fuzzy, kde-format
-#| msgid "Save A Solution"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save a Solution"
 msgstr "Bir Çözüm Kaydet"
@@ -9926,25 +9688,23 @@ msgid "Your solution to level %1 has been saved on file %2"
 msgstr "%1 düzeyi için çözümünüz, %2 dosyasına kaydedildi"
 
 #: src/kgrgameio.cpp:163 src/kgrgameio.cpp:168 src/kgrgameio.cpp:172
-#, fuzzy, kde-format
-#| msgid "Read Level Data"
+#, kde-format
 msgctxt "@title:window"
 msgid "Read Level Data"
-msgstr "Düzey Versini Oku"
+msgstr "Düzey Verisini Oku"
 
 #: src/kgrgameio.cpp:164
 #, kde-format
 msgid "Cannot find file '%1'."
-msgstr "'%1' dosyası bulunamadı."
+msgstr "“%1” dosyası bulunamadı."
 
 #: src/kgrgameio.cpp:173
 #, kde-format
 msgid "Reached end of file '%1' without finding level data."
-msgstr "Düzey verisi bulunamadan, '%1' dosyasının sonuna gelindi."
+msgstr "Düzey verisi bulunamadan, “%1” dosyasının sonuna gelindi."
 
 #: src/kgrgameio.cpp:381 src/kgrgameio.cpp:388
-#, fuzzy, kde-format
-#| msgid "Rename File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rename File"
 msgstr "Dosyayı Yeniden Adlandır"
@@ -9952,19 +9712,18 @@ msgstr "Dosyayı Yeniden Adlandır"
 #: src/kgrgameio.cpp:382
 #, kde-format
 msgid "Cannot delete previous version of file '%1'."
-msgstr "'%1' dosyasının önceki sürümü silinemedi."
+msgstr "“%1” dosyasının önceki sürümü silinemedi."
 
 #: src/kgrgameio.cpp:389
 #, kde-format
 msgid "Cannot rename file '%1' to '%2'."
-msgstr "'%1' dosyası '%2' olarak yeniden adlandırılamadı."
+msgstr "“%1” dosyası “%2” olarak yeniden adlandırılamadı."
 
 #: src/kgrrenderer.cpp:100
-#, fuzzy, kde-format
-#| msgid "Theme Selector"
+#, kde-format
 msgctxt "@title:window"
 msgid "Theme Selector"
-msgstr "Tema Seçici"
+msgstr "Tema Seçicisi"
 
 #: src/kgrscene.cpp:277
 #, kde-format
@@ -9978,8 +9737,7 @@ msgstr "Puan: %1"
 
 #: src/kgrselector.cpp:72 src/kgrselector.cpp:78 src/kgrselector.cpp:98
 #: src/kgrselector.cpp:501
-#, fuzzy, kde-format
-#| msgid "Select Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Level"
 msgstr "Düzey Seç"
@@ -10005,7 +9763,7 @@ msgstr ""
 #, kde-format
 msgid "There is no level %1 in \"%2\", so you cannot play or edit it."
 msgstr ""
-"\"%2\" içinde %1 düzey yok, bu yüzden oynayamaz veya düzenleyemezsiniz."
+"“%2” içinde %1 düzeyi yok, bu yüzden onu oynayamaz veya düzenleyemezsiniz."
 
 #: src/kgrselector.cpp:121 src/kgrselector.cpp:177
 #, kde-format
@@ -10019,29 +9777,25 @@ msgid "<html><b>Please select a game:</b></html>"
 msgstr "<html><b>Lütfen bir oyun seçin:</b></html>"
 
 #: src/kgrselector.cpp:143
-#, fuzzy, kde-format
-#| msgid "Name of Game"
+#, kde-format
 msgctxt "@title:column"
 msgid "Name of Game"
 msgstr "Oyunun Adı"
 
 #: src/kgrselector.cpp:144
-#, fuzzy, kde-format
-#| msgid "Rules"
+#, kde-format
 msgctxt "@title:column"
 msgid "Rules"
 msgstr "Kurallar"
 
 #: src/kgrselector.cpp:145
-#, fuzzy, kde-format
-#| msgid "Levels"
+#, kde-format
 msgctxt "@title:column"
 msgid "Levels"
 msgstr "Düzeyler"
 
 #: src/kgrselector.cpp:146
-#, fuzzy, kde-format
-#| msgid "Skill"
+#, kde-format
 msgctxt "@title:column"
 msgid "Skill"
 msgstr "Yetenek"
@@ -10063,85 +9817,73 @@ msgid "Please select a level:"
 msgstr "Lütfen bir düzey seçin:"
 
 #: src/kgrselector.cpp:204
-#, fuzzy, kde-format
-#| msgid "Level number:"
+#, kde-format
 msgctxt "@label:spinbox"
 msgid "Level number:"
 msgstr "Düzey numarası:"
 
 #: src/kgrselector.cpp:210
-#, fuzzy, kde-format
-#| msgid "Edit Level Name o&r Hint"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit Level Name o&r Hint"
-msgstr "Düzey Adını &ve İpucunu Düzenle"
+msgstr "Düzey Adını &veya İpucunu Düzenle"
 
 #: src/kgrselector.cpp:245
-#, fuzzy, kde-format
-#| msgid "Start Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Game"
-msgstr "Oyun Başlat"
+msgstr "Oyunu Başlat"
 
 #: src/kgrselector.cpp:254
-#, fuzzy, kde-format
-#| msgid "Play Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "Play Level"
-msgstr "Düzey Oyna"
+msgstr "Düzeyi Oyna"
 
 #: src/kgrselector.cpp:257
-#, fuzzy, kde-format
-#| msgid "Replay Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "Replay Level"
 msgstr "Düzeyi Yeniden Oyna"
 
 #: src/kgrselector.cpp:260
-#, fuzzy, kde-format
-#| msgid "Show Solution"
+#, kde-format
 msgctxt "@action:button"
 msgid "Show Solution"
 msgstr "Çözümü Göster"
 
 #: src/kgrselector.cpp:263
-#, fuzzy, kde-format
-#| msgid "Save A Solution"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save a Solution"
 msgstr "Bir Çözüm Kaydet"
 
 #: src/kgrselector.cpp:266
-#, fuzzy, kde-format
-#| msgid "Edit Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit Level"
 msgstr "Düzeyi Düzenle"
 
 #: src/kgrselector.cpp:272
-#, fuzzy, kde-format
-#| msgid "Save Change"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save Change"
-msgstr "Değişiklikleri Kaydet"
+msgstr "Değişikliği Kaydet"
 
 #: src/kgrselector.cpp:275
-#, fuzzy, kde-format
-#| msgid "Delete Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Level"
 msgstr "Düzeyi Sil"
 
 #: src/kgrselector.cpp:278
-#, fuzzy, kde-format
-#| msgid "Move To..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Move To…"
-msgstr "Taşı..."
+msgstr "Şuraya Taşı…"
 
 #: src/kgrselector.cpp:281
-#, fuzzy, kde-format
-#| msgid "Edit Game Info"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit Game Info"
 msgstr "Oyun Bilgisini Düzenle"
@@ -10180,15 +9922,15 @@ msgstr "Şampiyonluk"
 #, kde-format
 msgid "1 level, uses KGoldrunner rules."
 msgid_plural "%1 levels, uses KGoldrunner rules."
-msgstr[0] "%1 düzey, K Altın Avı kuralları uygunlanır."
-msgstr[1] "%1 düzey, K Altın Avı kuralları uygunlanır."
+msgstr[0] "%1 düzey, K Altın Avı kurallarını kullanır"
+msgstr[1] "%1 düzey, K Altın Avı kurallarını kullanır."
 
 #: src/kgrselector.cpp:471
 #, kde-format
 msgid "1 level, uses Traditional rules."
 msgid_plural "%1 levels, uses Traditional rules."
-msgstr[0] "%1 düzey, Geleneksel kurallar uygunlanır."
-msgstr[1] "%1 düzey, Geleneksel kurallar uygunlanır."
+msgstr[0] "%1 düzey, geleneksel kuralları kullanır."
+msgstr[1] "%1 düzey, geleneksel kuralları kullanır."
 
 #: src/kgrselector.cpp:476
 #, kde-format
@@ -10207,7 +9949,7 @@ msgid ""
 "after choosing a game and level - or use \"Cancel\"."
 msgstr ""
 "Alttaki ana düğme, seçtiğiniz menü işlemini yansıtır. Oyun ve düzey "
-"seçtikten sonra tıklayın - veya 'İptal' düğmesini kullanın."
+"seçtikten sonra tıklayın veya ‘İptal’ düğmesini kullanın."
 
 #: src/kgrselector.cpp:528
 #, kde-format
@@ -10223,7 +9965,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"K Altın Avı'nı ilk defa oynuyorsanız size ipuçları veren öğretici oyunu "
+"K Altın Avı’nı ilk defa oynuyorsanız size ipuçları veren öğretici oyunu "
 "seçin.\n"
 "\n"
 "Aksi takdirde, tablodan herhangi bir oyuna tıklamanız yeterlidir, ardından "
@@ -10243,10 +9985,10 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Düzenleme (veya kopyalama) için Sistem düzeylerini seçebilirsiniz; ancak "
+"Düzenleme (veya kopyalama) için sistem düzeylerini seçebilirsiniz; ancak "
 "sonucu oluşturduğunuz oyuna kaydetmelisiniz. Farenin sol düğmesini, fırça ve "
 "düzenleyici araç çubuğundaki düğmeleri palet olarak kullanın. Silmek için "
-"'Sil' düğmesini veya sağ fare düğmesini kullanın. Bir düğmeye basılı tutarak "
+"‘Sil’ düğmesini veya sağ fare düğmesini kullanın. Bir düğmeye basılı tutarak "
 "fareyi sürükleyebilir ve birden fazla kareyi boyayabilir veya silebilirsiniz."
 
 #: src/kgrselector.cpp:545
@@ -10279,10 +10021,10 @@ msgstr ""
 "\n"
 "\n"
 "Kaydetmeden önce burada bir ad oluşturup düzenleyebilirsiniz. Oyunu veya "
-"düzeyi değiştirirseniz bir kopya alabilir veya \"Farklı Kaydet\" "
+"düzeyi değiştirirseniz bir kopya alabilir veya ‘Farklı Kaydet’ "
 "yapabilirsiniz; ancak her zaman kendi oyunlarınızdan birine kaydetmeniz "
-"gerekir. Bir düzeyi oyunun ortasına kaydederseniz diğer düzeyler otomatik "
-"olarak yeniden numaralandırılacaklardır."
+"gerekir. Bir düzeyi oyunun ortasına kaydederseniz diğer düzeyler "
+"kendiliğinden yeniden numaralandırılacaklardır."
 
 #: src/kgrselector.cpp:559
 #, kde-format
@@ -10310,9 +10052,9 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Bir düzeyi taşımak (yeniden numaralandırmak) için, önce \"Herhangi Bir "
-"Düzeyi Düzenle\", ardından yeni bir numaraya veya başka bir oyuna taşımak "
-"için 'Düzeyi Taşı' yı kullanmalısınız. Diğer düzeyler, gerektiği gibi "
+"Bir düzeyi taşımak (yeniden numaralandırmak) için, önce ‘Herhangi Bir Düzeyi "
+"Düzenle…’, ardından yeni bir numaraya veya başka bir oyuna taşımak için "
+"‘Düzeyi Taşı’yı kullanmalısınız. Diğer düzeyler, gerektiği gibi "
 "kendiliğinden numaralandırılır. Kendi oyunlarınızda yalnızca düzeyleri "
 "taşıyabilirsiniz."
 
@@ -10355,8 +10097,7 @@ msgstr ""
 "seçtiğinizde bir önizleme gözükecektir."
 
 #: src/kgrselector.cpp:589
-#, fuzzy, kde-format
-#| msgid "Help: Select Game & Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Help: Select Game & Level"
 msgstr "Yardım: Oyun ve Düzey Seçimi"
@@ -10379,7 +10120,7 @@ msgstr "Ian Wadham"
 #: src/main.cpp:69
 #, kde-format
 msgid "Current author"
-msgstr "Geçerli yazar"
+msgstr "Şu anki bakımcı"
 
 #: src/main.cpp:71
 #, kde-format
@@ -10389,7 +10130,7 @@ msgstr "Marco Krüger"
 #: src/main.cpp:71
 #, kde-format
 msgid "Original author"
-msgstr "Asıl yazar"
+msgstr "Özgün yazar"
 
 #: src/main.cpp:73 src/main.cpp:79
 #, kde-format
@@ -10399,7 +10140,7 @@ msgstr "Mauricio Piacentini"
 #: src/main.cpp:74
 #, kde-format
 msgid "Port to KDE4, Qt4 and KGameCanvas classes"
-msgstr "KDE4, Qt4 ve KGameCanvas sınıflarına port edilmiştir"
+msgstr "KDE4, Qt4 ve KGameCanvas sınıflarına geçiş"
 
 #: src/main.cpp:76
 #, kde-format
@@ -10414,7 +10155,7 @@ msgstr "KDE4 için KGameCanvas sınıfları"
 #: src/main.cpp:80
 #, kde-format
 msgid "Artwork for runners and default theme"
-msgstr "Yarışçı ve varsayılan tema için sanat işleri"
+msgstr "Koşucular görselleri ve öntanımlı tema"
 
 #: src/main.cpp:82
 #, kde-format
@@ -10448,7 +10189,7 @@ msgid ""
 "fade-in/fade-out feature and several other ideas"
 msgstr ""
 "Nostalgia temaları, yarışma iyileştirmeleri, çoklu arka plan özelliği, "
-"görünme/kararma özelliği ve birkaç diğer fikirler"
+"görünme/kararma özelliği ve birkaç diğer fikir"
 
 #: src/main.cpp:94
 #, kde-format

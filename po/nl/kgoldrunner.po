@@ -5,27 +5,27 @@
 # Bram Schoenmakers <bramschoenmakers@kde.nl>, 2004, 2006.
 # Rinse de Vries <rinsedevries@kde.nl>, 2004, 2007, 2008.
 # Kristof Bal <kristof.bal@gmail.com>, 2008, 2009.
-# Freek de Kruijf <freekdekruijf@kde.nl>, 2009, 2010, 2011, 2012.
+# SPDX-FileCopyrightText: 2009, 2010, 2011, 2012, 2024 Freek de Kruijf <freekdekruijf@kde.nl>
 # Freek de Kruijf <freekdekruijf@kde.nl>, 2011, 2015, 2017, 2018, 2019, 2020, 2021, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-06 00:36+0000\n"
-"PO-Revision-Date: 2023-06-25 15:09+0200\n"
+"PO-Revision-Date: 2024-05-06 11:01+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Lokalize 24.02.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Rinse de Vries,Antoon Tolboom,Kristof Bal,Freek de Kruijf 2009-2021"
+msgstr "Rinse de Vries,Antoon Tolboom,Kristof Bal,Freek de Kruijf 2009-2024"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -50,14 +50,14 @@ msgid ""
 "\n"
 "Jason provided most of the solutions, but some are by Ian Wadham."
 msgstr ""
-"Deze 70 niveaus zijn een graduele introductie tot het traditionele spel, "
+"Deze 70 levels zijn een graduele introductie tot het traditionele spel, "
 "samengesteld door Jason hemzelf (j at jxself org). Hoewel er geen hints "
-"zijn, heeft elk niveau een opgeslagen oplossing.\n"
+"zijn, heeft elk level een opgeslagen oplossing.\n"
 "\n"
-"Het spel richt zich op nieuwe spelers, maar de latere niveaus zijn "
-"behoorlijk moeilijk, hou dus een oogje op hoe de vijanden reageren op uw "
-"verplaatsingen als je beweegt. Je moet ze goed trainen tegen de tijd dat je "
-"bij niveau 70 bent.\n"
+"Het spel richt zich op nieuwe spelers, maar de latere levels zijn behoorlijk "
+"moeilijk, hou dus een oogje op hoe de vijanden reageren op uw verplaatsingen "
+"als je beweegt. Je moet ze goed trainen tegen de tijd dat je bij level 70 "
+"bent.\n"
 "\n"
 "Jason leverde de meeste oplossingen, maar enkele zijn van Ian Wadham."
 
@@ -82,15 +82,15 @@ msgid ""
 "Wadham."
 msgstr ""
 "Puttend uit de Western-filmpictogrammen over mummies en Egypte, is dit stel "
-"niveaus het beste te draaien onder het thema Schatten uit Egypte.Je moet "
-"soms ook graven tijdens het vallen.\n"
+"levels het beste te draaien onder het thema Schatten uit Egypte.Je moet soms "
+"ook graven tijdens het vallen.\n"
 "\n"
 "Om jouw Egyptologie op te poetsen, zul je feitjes vinden die zijn "
-"gerelateerd aan elk niveau in de hints, waar de feiten uit Wikipedia komen "
-"en niet uit Hollywood.\n"
+"gerelateerd aan elk level in de hints, waar de feiten uit Wikipedia komen en "
+"niet uit Hollywood.\n"
 "\n"
 "Dit kampioensschapspel is samengesteld door Steve Mann <smann at cgl "
-"uwaterloo ca>, met een paar Egyptische ideeën en het Rode Zee niveau "
+"uwaterloo ca>, met een paar Egyptische ideeën en het Rode Zee level "
 "bijgedragen door Ian Wadham."
 
 #: gamedata/game_CM.txt:10
@@ -154,16 +154,16 @@ msgstr ""
 "archeologisch overblijfsel in de Saqqara necropolis, Egypte, ten NW van de "
 "stad Memphis.\n"
 "\n"
-"Om dit niveau te voltooien is het belangrijk om in stappen te gaan: eerst de "
-"mummie bevrijden aan de linker kant van het tweede niveau (vanaf onder), "
+"Om dit level te voltooien is het belangrijk om in stappen te gaan: eerst de "
+"mummie bevrijden aan de linker kant van het tweede level (vanaf onder), "
 "toestaan dat het in het verborgen put onderaan valt en deze vult.\n"
 "\n"
-"Ga dan naar de rechter kant van het tweede niveau en beweeg over de stang, "
+"Ga dan naar de rechter kant van het tweede level en beweeg over de stang, "
 "over de mummie en pak de schat in het midden, graaf de steen aan de "
 "linkerkant van het midden uit.\n"
 "\n"
-"De mummie op het derde niveau is een beetje problematisch omdat het een "
-"schat zal pakken en meedragen  U kunt geluk hebben omdat het de schat op een "
+"De mummie op het derde level is een beetje problematisch omdat het een schat "
+"zal pakken en meedragen. Je kunt geluk hebben omdat het de schat op een "
 "bepaalt punt achterlaat, maar je kunt hem ook in de val laten lopen in die "
 "ene opgraafbare steen aan de rechterkant door precieze timing.\n"
 "\n"
@@ -201,7 +201,7 @@ msgstr ""
 "wereld en meet 43,6 m over het geheel.  Ondanks zijn leeftijd zou het "
 "vandaag nog kunnen zeilen als het in het water gelaten zou worden.\n"
 "\n"
-"Dit is bijna een eenvoudig niveau: veel schatten en niet te veel mummies.  "
+"Dit is bijna een eenvoudig level: veel schatten en niet te veel mummies.  "
 "Maar jouw taak is om de schatten die zij dragen te ontfutselen."
 
 #: gamedata/game_CM.txt:36
@@ -248,8 +248,8 @@ msgstr ""
 "te verkrijgen. Je moet echter de eerste, tweede en vierde schat (vanaf "
 "links) verkrijgen, alvorens mummies vrij te geven.Wees voorzichtig om geen "
 "mummies te doden; als zij aan de rechterkant van de piramide verschijnen, "
-"zul je niet in staat zijn om dit niveau te beëindigen. Het is ook mogelijk "
-"de mummies vrij te laten en ze dan te vangen in een van de andere kamers."
+"zul je niet in staat zijn om dit level te beëindigen. Het is ook mogelijk de "
+"mummies vrij te laten en ze dan te vangen in een van de andere kamers."
 
 #: gamedata/game_CM.txt:46
 #, kde-format
@@ -278,7 +278,7 @@ msgstr ""
 "reisden hoopten dat als zij tot Sobek baden, dat de krokodilgod hen zou "
 "beschermen tegen een aanval door krokodillen.\n"
 "\n"
-"Op dit niveau is het niet de krokodil waarvoor je moet vrezen.  Maar, een "
+"Op dit level is het niet de krokodil waarvoor je moet vrezen.  Maar, een "
 "gebed tot Sobek zou kunnen helpen bij het ontsnappen aan de mummies terwijl "
 "u de schat verzameld."
 
@@ -348,10 +348,10 @@ msgstr ""
 "verschillende keren om jouw ontsnappingsroute te openen.\n"
 "\n"
 "Pak alle schatten links op het bord, ga dan rechts.  Bevrijd de mummie "
-"bovenaan zodat je later zijn schat pakt.  U zal ook zijn hulp nodig hebben "
-"om terug te ontsnappen naar links aan het eind van het niveau.  De schat "
+"bovenaan zodat je later zijn schat pakt. Je zal ook zijn hulp nodig hebben "
+"om terug te ontsnappen naar links aan het eind van het level.  De schat "
 "rechts is gemakkelijker te pakken dan het lijkt: strategisch geplaatste "
-"valse stenen maken dit de gemakkelijke helft van het niveau.  Opmerking: Als "
+"valse stenen maken dit de gemakkelijke helft van het level.  Opmerking: Als "
 "je wat afwisseling wilt, dan kunt je alles rechts eerst doen en dan links."
 
 #: gamedata/game_CM.txt:68
@@ -371,7 +371,7 @@ msgstr ""
 "Er zijn meer dan 100 piramiden in Egypte, waarbij de oudste rond 2600 vC is "
 "gebouwd.\n"
 "\n"
-"In dit piramide niveau (gebouwd rond 2008 nC), probeer je (door ze weg te "
+"In dit piramide level (gebouwd rond 2008 nC), probeer je (door ze weg te "
 "lokken of te doden) te vermijden dat de twee mummies in het midden van de "
 "onderste sectie terecht komen."
 
@@ -427,9 +427,9 @@ msgstr ""
 "verplaatsen vanuit een steengroeve en deze te verslepen en naar hun plaats "
 "te tillen. De dispuut gaat om de methode waarmee de stenen zijn verplaatst "
 "en geplaatst.  Ondanks dat, is het waarschijnlijk dat er vele ladders zijn "
-"gebruikt bij het bouwen, zoals op dit niveau.\n"
+"gebruikt bij het bouwen, zoals op dit level.\n"
 "\n"
-"Dit niveau gaat om het rondrennen.  Een schat pakken en mummies vermijden is "
+"Dit level gaat om het rondrennen.  Een schat pakken en mummies vermijden is "
 "niet zo moeilijk - maar een schat bij de mummies wegkrijgen is veel "
 "moeilijker.  Het driesteens brede platform is een bruikbaar slagveld, hoewel "
 "u een beetje rond zal moeten rennen om de mummies die schatten dragen op de "
@@ -458,7 +458,7 @@ msgstr ""
 "De Ankh is de Egyptische hiëroglief die 'leven' betekent en als "
 "zonnesymbool, was het bijna altijd  in goud uitgevoerd.\n"
 "\n"
-"Om in leven te blijven op dit niveau, pas dan op de valse stenen in de hoofd-"
+"Om in leven te blijven op dit level, pas dan op de valse stenen in de hoofd-"
 "Ankh en probeer uit vissen hoe ze nuttig te gebruiken."
 
 #: gamedata/game_CM.txt:94 gamedata/game_plwv.txt:55
@@ -488,7 +488,7 @@ msgstr ""
 "Piramide te bouwen, met een gemiddeld gewicht van ongeveer 2,5 metrische ton "
 "per blok.\n"
 "\n"
-"De piramide op dit niveau is gebouwd met minder dan 100 blokken.  In het "
+"De piramide op dit level is gebouwd met minder dan 100 blokken.  In het "
 "begin, manoeuvreer je om in de piramide te komen en dan, staande op een van "
 "de ladders op de tweede laag, vlak bij de buitenmuur links van de piramide.  "
 "Wacht op de mummies die zich groeperen aan de andere kant van de "
@@ -523,7 +523,7 @@ msgstr ""
 "Een aanbeden, belangrijk dier in de Egyptische gemeenschap en religie, de "
 "kat, kreeg dezelfde rechten op mummificatie na zijn dood als mensen hadden.\n"
 "\n"
-"Bij het beëindigen van dit kattenniveau, laat je dan niet bedriegen door "
+"Bij het beëindigen van dit kattenlevel, laat je dan niet bedriegen door "
 "staart van de kat die verschijnt bij het pakken van de laatste schat.  De "
 "enige uitgang is links.  Het is daarom nodig dat de mummies je de schat "
 "brengen die rechts van de kattenkop is, omdat je niet iedere schat kan "
@@ -560,10 +560,10 @@ msgstr ""
 "De daden van Imhotep waren zo belangrijk dat hij vergoddelijkt is door "
 "latere Egyptenaren.\n"
 "\n"
-"Alvorens je naar de top van dit piramide niveau kunt opstijgen, moet je "
-"eerst naar onderen.  Om de bovenste schat te pakken, ga links vanuit de nok, "
-"graaf het volgende blok en stap op de mummie eronder, ga rechts verder "
-"(probeer de muisaanwijzer op de nok te plaatsen).\n"
+"Alvorens je naar de top van dit piramide level kunt opstijgen, moet je eerst "
+"naar onderen.  Om de bovenste schat te pakken, ga links vanuit de nok, graaf "
+"het volgende blok en stap op de mummie eronder, ga rechts verder (probeer de "
+"muisaanwijzer op de nok te plaatsen).\n"
 "\n"
 "Na het pakken van de laatste schat, eindig rechts en ren omhoog en omlaag op "
 "de ladders. Linksonder is het enige moeilijke deel: ren onder de mummies op "
@@ -592,7 +592,7 @@ msgstr ""
 "Het Oog van Horus is een oud Egyptisch symbool voor bescherming en "
 "koninklijke macht tegen de goden.\n"
 "\n"
-"Op dit niveau is er enige bescherming in het oog, maar niet veel.  Herhaalde "
+"Op dit level is er enige bescherming in het oog, maar niet veel.  Herhaalde "
 "reisjes van de top naar onder zijn vereist om alle schatten te pakken.  "
 "Uiteindelijk zijn er twee mummies linksonder.  Om er te komen, klim naar de "
 "top van de korte ladder vierde van links, graaf links, klim naar beneden en "
@@ -627,7 +627,7 @@ msgstr ""
 "stang en net voor hij je bereikt, val je naar de stang eronder en ga direct "
 "onder hem staan.\n"
 "\n"
-"Omdat het ontwerp niet traditioneel is, kunt je overwegen het niveau niet "
+"Omdat het ontwerp niet traditioneel is, kunt je overwegen het level niet "
 "traditioneel te spelen: de val-en-ga-eronder beweging is gemakkelijker te "
 "doen met het toetsenbord (gemakkelijker, maar toch moeilijk).  Als je de "
 "laatste schat boven de stenen in de piramide hebt gepakt, pauzeer het spel "
@@ -794,13 +794,13 @@ msgid ""
 "Mann <smann at cgl uwaterloo ca>. You need to dig while falling sometimes."
 msgstr ""
 "Dit spel is gebaseerd op tellen van 0 naar 16 (of 0 naar 10 in hexadecimale "
-"notatie). Het eerste niveau heeft geen goud of vijanden: het probleem is dat "
-"je er moet zien weg te raken en het volgende niveau moet bereiken. Daarna "
-"wordt het aantal vijanden en goudstukken verhoogd met 1 op elk niveau. De "
-"naam van elk niveau verwijst naar het aantal vijanden, goudstukken en de "
+"notatie). Het eerste level heeft geen goud of vijanden: het probleem is dat "
+"je er moet zien weg te raken en het volgende level moet bereiken. Daarna "
+"wordt het aantal vijanden en goudstukken verhoogd met 1 op elk level. De "
+"naam van elk level verwijst naar het aantal vijanden, goudstukken en de "
 "cijfers die in de layout verschijnen.\n"
 "\n"
-"Deze elegante en nogal moeilijke Kampioenschapniveau's werden gemaakt door "
+"Deze elegante en nogal moeilijke Kampioenschaplevel's werden gemaakt door "
 "Steve Mann <smann at cgl uwaterloo ca>. Je moet soms ook graven tijdens het "
 "vallen."
 
@@ -917,7 +917,7 @@ msgid ""
 "top of the ladders shaped like a 4.  This will allow you enough time to "
 "reach the ladders before the enemies cut you off."
 msgstr ""
-"Bij het begin moet je naar de vloer rennen aan de rechterkant. U zult enige "
+"Bij het begin moet je naar de vloer rennen aan de rechterkant. Je zult enige "
 "vijanden in de val moeten lokken (met enig geluk krijgt je hierbij ook nog "
 "een goudstuk), maar je zou gemakkelijk de ladders in de vorm van een 4 aan "
 "de rechterkant op kunnen gaan.\n"
@@ -946,7 +946,7 @@ msgstr ""
 "laagste sectie totdat de vijanden in hun posities vastzitten.  Daarna val je "
 "naar de vloer en richt je je op de grote ladder rechts met de vork op de "
 "bodem.  De vork stelt je in staat om langs de vijanden erboven te komen: "
-"wacht op vloerniveau van de linker rung (niet onder vloerniveau!) totdat de "
+"wacht op vloerlevel van de linker rung (niet onder vloerlevel!) totdat de "
 "vijand op de lange ladder naast je neervalt.  Daarna klim je omhoog en naar "
 "rechts naar de grote ladder."
 
@@ -969,7 +969,7 @@ msgid ""
 "and wait for them to come over the poles.  Then drop to the floor and cross "
 "to the ladder."
 msgstr ""
-"De eerste truc voor dit niveau is het juiste tijdstip te bepalen om door de "
+"De eerste truc voor dit level is het juiste tijdstip te bepalen om door de "
 "bodem van de 6 heen te gaan terwijl de vijand de ladder opklimt aan de "
 "linkerkant van de 6.  Als je eenmaal op de ladder bent zullen de vijanden de "
 "ladder opklimmen bij je vandaan, zodat je alleen hoeft te wachten totdat er "
@@ -1049,16 +1049,16 @@ msgid ""
 "gold down.  Grab it, dig to the right, drop down to the pole and escape as "
 "quickly as you can."
 msgstr ""
-"Laat u aan het begin zo vlug mogelijk naar de vloer vallen. Graaf "
+"Laat je aan het begin zo vlug mogelijk naar de vloer vallen. Graaf "
 "verschillende putten op de bodem om de vijanden te vertragen om de ladder op "
 "te komen. Pak daarna de twee goudstukken aan de linkerkant van de 9. terwijl "
 "er geen vijanden in de buurt zijn en graaf om toegang te krijgen tot de 9 na "
 "het pakken van de hoogste van deze twee stukken.\n"
 "\n"
-"Om het goud aan de onderkant van de 9 te pakken moet u aan de linker kant "
+"Om het goud aan de onderkant van de 9 te pakken moet je aan de linker kant "
 "van de vijand zijn, graaf links en beweeg naar rechts.  De twee vijanden "
 "zullen naar links gaan, vallen en de ladder opklimmen. Als de eerste vast "
-"zit waar u hebt gegraven, springt u in het laagste gedeelte van de 9 en "
+"zit waar je hebt gegraven, springt je in het laagste gedeelte van de 9 en "
 "graaft links. De volgende vijand neemt het goud mee naar beneden. Pak het, "
 "graaf rechts, val naar de stang en ontsnap zo vlug mogelijk."
 
@@ -1109,19 +1109,19 @@ msgstr ""
 "Haal het goudstuk onder de linkerzijde van de palen in de vorm van een 11 "
 "eerst, pak dan het stuk aan de basis van de linker 1 van de centrale 11.  "
 "Val daarna naar de vloer iets links van de dubbele hoge muur. De vijanden "
-"vallen in verschillende secties.  U moet dan drie dingen doen: haal het geld "
+"vallen in verschillende secties. Je moet dan drie dingen doen: haal het geld "
 "in de linker en centrale secties, pak het geld van vijanden aan uw "
-"rechterkant wanneer u op de vloer bent en lok zo veel mogelijk vijanden in "
+"rechterkant wanneer je op de vloer bent en lok zo veel mogelijk vijanden in "
 "de sectie links van de 11.\n"
 "\n"
 "De eerste twee taken zijn relatief eenvoudig: de laatste taak kan op "
-"verschillende manieren worden gedaan.  Als u de centrale ladder op gaat en "
-"naar links gaat, dan kunt u wachten boven de rechterkant van de palen "
+"verschillende manieren worden gedaan.  Als je de centrale ladder op gaat en "
+"naar links gaat, dan kunt je wachten boven de rechterkant van de palen "
 "(mogelijk door op de palen te vallen) en een paar vijanden tegelijk uit de "
-"centrale sectie naar de linker sectie te lokken. U kunt ook een paar "
+"centrale sectie naar de linker sectie te lokken. Je kunt ook een paar "
 "goudstukken oppakken bij het doen hiervan.\n"
 "\n"
-"Als u alle goudstukken hebt (behalve de stukken aan de rechterkant van de "
+"Als je alle goudstukken hebt (behalve de stukken aan de rechterkant van de "
 "11), ren dan naar de top rechts van de H-vormige ladders in het midden.  Dit "
 "zorgt ervoor dat alle vijanden die zich niet in de rechtse sectie bevinden "
 "zich naar de linkse sectie te begeven."
@@ -1163,28 +1163,28 @@ msgid ""
 "last, you should be able to escape without much difficultly.  Otherwise, the "
 "enemies trapped on the far left will cut off your escape route."
 msgstr ""
-"Dit is een langzaam niveau met veel wachten op vijanden om zich te bewegen "
-"naar daar waar u ze wilt hebben.\n"
+"Dit is een langzaam level met veel wachten op vijanden om zich te bewegen "
+"naar daar waar je ze wilt hebben.\n"
 "\n"
-"Bij de start valt u op de dichtbij zijnde vijand tijdens zijn val en beweegt "
-"u zich naar de rechtse palen om de goudstukken te bemachtigen die zich "
-"eronder bevinden.  Wacht op een opening in de vijanden beneden alvorens u "
-"zich laat vallen op dit goudstuk.\n"
+"Bij de start valt je op de dichtbij zijnde vijand tijdens zijn val en "
+"beweegt u zich naar de rechtse palen om de goudstukken te bemachtigen die "
+"zich eronder bevinden.  Wacht op een opening in de vijanden beneden alvorens "
+"je zich laat vallen op dit goudstuk.\n"
 "\n"
-"Het raster van 12 vakken rechts is bruikbaar.  Als u op dit raster bent maar "
-"onder de top dan zullen de klimmende vijanden op de ladder net links van het "
-"raster niet op het raster vallen en u achteraan zitten.  U kunt in de buurt "
-"van de onderkant van het raster wachten totdat de vijanden zich bewegen "
-"boven de putten van stenen en beton linksonder, daarna kunt u zich laten "
-"vallen op de vloer. Als gevolg daarvan vallen de vijanden in de putten komen "
-"vast te zitten.\n"
+"Het raster van 12 vakken rechts is bruikbaar.  Als je op dit raster bent "
+"maar onder de top dan zullen de klimmende vijanden op de ladder net links "
+"van het raster niet op het raster vallen en je achteraan zitten. Je kunt in "
+"de buurt van de onderkant van het raster wachten totdat de vijanden zich "
+"bewegen boven de putten van stenen en beton linksonder, daarna kunt je zich "
+"laten vallen op de vloer. Als gevolg daarvan vallen de vijanden in de putten "
+"komen vast te zitten.\n"
 "\n"
 "Een andere bruikbare truc is te wachten aan de top van de ladder helemaal "
-"links, (waar u het niveau start).  Alle vijanden die ver genoeg weg zijn "
+"links, (waar je het level start).  Alle vijanden die ver genoeg weg zijn "
 "rennen over de bovenkant van de vakken en vallen in de vallen aan de "
 "rechterkant.\n"
 "\n"
-"Om het goud van de linkerkant van de vloer te krijgen moet u de tweede "
+"Om het goud van de linkerkant van de vloer te krijgen moet je de tweede "
 "sectie van de vloer opvullen met vijanden en vierkanten uitgraven die de "
 "vijanden blokkeren in het meest linker gedeelte.  U kunt er voor kiezen dit "
 "goud te verliezen (d.w.z. dat de vijand met het goud een gegraven vierkant "
@@ -1357,7 +1357,7 @@ msgstr ""
 "graven om hun goud te verkrijgen, maar dat is rechttoe rechtaan hoewel een "
 "beetje hectisch vanwege de vijanden die op de loer liggen links van de 6.\n"
 "\n"
-"Als u alle goud hebt, dan is het het gemakkelijkst om het niveau te verlaten "
+"Als u alle goud hebt, dan is het het gemakkelijkst om het level te verlaten "
 "door door het midden van de valse vloer te gaan op de 1 en via de ladders "
 "links van de 1 te eindigen."
 
@@ -1409,8 +1409,8 @@ msgid ""
 "org). Every level has a recorded solution, also provided by Jason."
 msgstr ""
 "In kampioensschapspellen heb je vaak graven tijdens vallen nodig. Deze "
-"niveaus zijn een toenemende introductie in die techniek, samengesteld door "
-"Jason zelf (j at jxself org). Elk niveau heeft een opgenomen oplossing, "
+"levels zijn een toenemende introductie in die techniek, samengesteld door "
+"Jason zelf (j at jxself org). Elk level heeft een opgenomen oplossing, "
 "eveneens geleverd door Jason."
 
 #: gamedata/game_GMEP.txt:2
@@ -1439,7 +1439,7 @@ msgstr ""
 "zij er geen slapeloze nacht van hebben u te doden...  Wees dus voorzichtig "
 "en het meest belangrijk van alles is: wees snel --- of u bent dood!\n"
 "\n"
-"Deze kampioenschapsniveaus gebruiken de snelle en wispelturige KGoldrunner-"
+"Deze kampioenschapslevels gebruiken de snelle en wispelturige KGoldrunner-"
 "regels en zijn opgesteld door Gabriel Miltschitzky [gabriel dot miltschitzky "
 "at freenet de]. Je moet soms ook graven tijdens het vallen."
 
@@ -1456,7 +1456,7 @@ msgid ""
 "It is very easy to escape from this prison, because the guards themselves "
 "are trapped and cannot touch you..."
 msgstr ""
-"Zoals de naam van het niveau zegt, is er absoluut geen paniek nodig.\n"
+"Zoals de naam van het level zegt, is er absoluut geen paniek nodig.\n"
 "\n"
 "Het is erg gemakkelijk om uit deze gevangenis te ontsnappen, omdat de "
 "wachten zelf inde val zitten en u niet aan kunnen raken..."
@@ -1524,7 +1524,7 @@ msgstr "Dalende vijanden (2) - Graven"
 #: gamedata/game_GMEP.txt:35
 #, kde-format
 msgid "Start the level with a click. The rest should be self-explanatory..."
-msgstr "Start het niveau met een klik. De rest zou zichzelf moet wijzen..."
+msgstr "Start het level met een klik. De rest zou zichzelf moet wijzen..."
 
 #: gamedata/game_GMEP.txt:38
 #, kde-format
@@ -1578,7 +1578,7 @@ msgid ""
 "Now you are free again and may do whatever you please. Everything except "
 "stealing the gold again, needless to say..."
 msgstr ""
-"U bent erg mooi aan ze ontsnapt in de laatste paar niveaus.\n"
+"U bent erg mooi aan ze ontsnapt in de laatste paar levels.\n"
 "\n"
 "Nu bent u weer vrij en mag u doen wat u wilt. Alles behalve het goud opnieuw "
 "stelen, onnodig om te zeggen..."
@@ -1620,7 +1620,7 @@ msgid ""
 "Click to start the level and he will be trapped before he can do you any "
 "harm."
 msgstr ""
-"Klik om het niveau te beginnen en hij zal val zitten alvorens hij enige "
+"Klik om het level te beginnen en hij zal val zitten alvorens hij enige "
 "schade kan doen."
 
 #: gamedata/game_GMEP.txt:68
@@ -1667,7 +1667,7 @@ msgid ""
 "rightmost ladders to the first brick you dug (hoping it has not closed by "
 "now), then head right and on up to the exit."
 msgstr ""
-"Dit niveau is moeilijk, maar zeker niet onmogelijk.\n"
+"Dit level is moeilijk, maar zeker niet onmogelijk.\n"
 "\n"
 "Raak de eerste groep wachters kwijt door ze maar onder te leiden. Hier is "
 "hoe. Ga naar de onderste ladders en blijf even op de meest rechtse lage "
@@ -1747,7 +1747,7 @@ msgstr ""
 "hoogste ladders wilt bereiken.\n"
 "\n"
 "U kunt beter vriendelijk zijn voor uw teamgenoot: u zult waarschijnlijk "
-"samen met hem zijn voor de volgende paar niveaus..."
+"samen met hem zijn voor de volgende paar levels..."
 
 #: gamedata/game_GMEP.txt:98
 #, kde-format
@@ -1773,10 +1773,10 @@ msgid ""
 "Sorry, I cannot help you further. There is nothing more to the level than "
 "sleight of hand."
 msgstr ""
-"Dit is het laatste niveau waar u samenwerkt met uw vriend. Hij heeft u "
-"genoeg geholpen om zijn bevrijding te verdienen.\n"
+"Dit is het laatste level waar u samenwerkt met uw vriend. Hij heeft u genoeg "
+"geholpen om zijn bevrijding te verdienen.\n"
 "\n"
-"Sorry, ik kan u niet verder helpen. Er is niets moeilijks meer op dit niveau."
+"Sorry, ik kan u niet verder helpen. Er is niets moeilijks meer op dit level."
 
 #: gamedata/game_GMGR.txt:2
 #, kde-format
@@ -1791,8 +1791,8 @@ msgid ""
 "\n"
 "Created by Gabriel Miltschitzky [gabriel dot miltschitzky at freenet de]"
 msgstr ""
-"Enkele kleine niveaus met traditionele regels die wel even kunnen duren om "
-"ze op te lossen. Je moet soms ook graven tijdens het vallen.\n"
+"Enkele kleine levels met traditionele regels die wel even kunnen duren om ze "
+"op te lossen. Je moet soms ook graven tijdens het vallen.\n"
 "\n"
 "Gemaakt door Gabriel Miltschitzky [gabriel dot miltschitzky at freenet de]"
 
@@ -1826,7 +1826,7 @@ msgstr ""
 "\n"
 "Natuurlijk zijn er nog steeds heel wat vallen op de weg, maar zij kunnen "
 "gemakkelijker worden vermeden, die u dus zelf moet vinden. U weet het, u "
-"kunt altijd het niveau opnieuw te beginnen door op 'Q' te drukken."
+"kunt altijd het level opnieuw te beginnen door op 'Q' te drukken."
 
 #: gamedata/game_GMGR.txt:16
 #, kde-format
@@ -1844,7 +1844,7 @@ msgstr ""
 "Het zou niet al te moeilijk moeten zijn.\n"
 "\n"
 "Zet de muis gewoon in de rechter bovenhoek en de held zal automatisch het "
-"niveau beëindigen."
+"level beëindigen."
 
 #: gamedata/game_GMGR.txt:22
 #, kde-format
@@ -1870,7 +1870,7 @@ msgid ""
 msgstr ""
 "U moet het goud rechts van u eerst verzamelen. Daarna probeert u zich een "
 "weg naar beneden te graven. Het is gemakkelijker om de vijanden te "
-"controleren wanneer u op de lagere niveaus bent."
+"controleren wanneer u op de lagere levels bent."
 
 #: gamedata/game_GMGR.txt:30
 #, kde-format
@@ -1893,8 +1893,8 @@ msgstr ""
 "U hoeft niet vlug te zijn. U hoeft alleen maar te weten hoe u de vijand kunt "
 "vermijden.\n"
 "\n"
-"Door naar het lagere niveau te springen kunt u uw vijand op en neer op een "
-"ladder laten rennen als u valt. Zodra u het lagere niveau bereikt zal de "
+"Door naar het lagere level te springen kunt u uw vijand op en neer op een "
+"ladder laten rennen als u valt. Zodra u het lagere level bereikt zal de "
 "vijand u volgen, maar u zult tijd hebben om enig goud te verzamelen of langs "
 "hem heen te komen en naar een andere sectie te gaan.\n"
 "\n"
@@ -1924,12 +1924,12 @@ msgid ""
 "walk over their heads. Good luck!"
 msgstr ""
 "Dit is niet erg gemakkelijk omdat er zo veel vijanden zijn die de enige weg "
-"uit het niveau blokkeren.\n"
+"uit het level blokkeren.\n"
 "\n"
 "De best manier om langs ze te komen is om rechts omhoog te gaan en te "
 "wachten totdat de meeste vijanden de middelste ladders op gaan. Door daarna "
 "op en neer te gaan kunt u proberen ze te groeperen. Val tenslotte naar het "
-"laagste niveau en wacht op ze om hetzelfde te doen. Wanneer de eerste "
+"laagste level en wacht op ze om hetzelfde te doen. Wanneer de eerste "
 "vijanden aankomen, rent u omhoog en probeert u naar het hoogste betonnen gat "
 "te komen voor de anderen. U moet het mogelijk verschillende keren proberen "
 "voordat u succes hebt.\n"
@@ -1967,7 +1967,7 @@ msgid ""
 "No, there is no special trick for solving this level.\n"
 "Just be faster than your enemies."
 msgstr ""
-"Nee, er is geen speciale truc voor het oplossen van dit niveau.\n"
+"Nee, er is geen speciale truc voor het oplossen van dit level.\n"
 "Wees gewoon sneller dan uw vijanden."
 
 #: gamedata/game_GMGR.txt:57
@@ -2008,7 +2008,7 @@ msgid ""
 "You are not done yet, because you have to reach the gold before the second "
 "enemy arrives. So speed up!"
 msgstr ""
-"Zoals de naam van het niveau u vertelt moet u niet al te lang blijven "
+"Zoals de naam van het level u vertelt moet u niet al te lang blijven "
 "rondhangen. Ren onmiddellijk, graaf de eerste steen op en laat de vijand er "
 "invallen, ren dan naar de tweede steen en graaf er doorheen.\n"
 "\n"
@@ -2322,7 +2322,7 @@ msgstr "Een klein cadeautje om tot ziens te zeggen"
 #, kde-format
 msgid "After some very hard levels, maybe you would like an easy one. Goodbye!"
 msgstr ""
-"Na enige moeilijke niveaus wilt u misschien een gemakkelijke. Tot ziens!"
+"Na enige moeilijke levels wilt u misschien een gemakkelijke. Tot ziens!"
 
 #: gamedata/game_GotD.txt:1
 #, kde-format
@@ -2356,7 +2356,7 @@ msgstr ""
 "maar de zombies hebben nog steeds veel goud. Echter, omdat ze zombies zijn, "
 "zijn ze meer geïnteresseerd in u dan de schatten...\n"
 "\n"
-"Vijftig kampioenschapsniveaus, inclusief tips en opgenomen oplossingen, van "
+"Vijftig kampioenschapslevels, inclusief tips en opgenomen oplossingen, van "
 "Gabriel Miltschitzky, April 2021."
 
 #: gamedata/game_GotD.txt:9
@@ -2400,10 +2400,10 @@ msgstr ""
 "denkt u aan niets dan uw goud? Welnu, laten we kijken wat voor goeds het "
 "voor u zal doen...\n"
 "\n"
-"Eerste tip: elk niveau heeft een opgenomen oplossing, dus bij twijfel kijk "
-"er eens naar. Tweede tip: u kunt gemakkelijk vastlopen als u niet slim "
-"genoeg bent om een ontsnappingsroute voor te bereiden voordat u achter enig "
-"goud gaat.\n"
+"Eerste tip: elk level heeft een opgenomen oplossing, dus bij twijfel kijk er "
+"eens naar. Tweede tip: u kunt gemakkelijk vastlopen als u niet slim genoeg "
+"bent om een ontsnappingsroute voor te bereiden voordat u achter enig goud "
+"gaat.\n"
 "\n"
 "In de rechtsonder hoek hebt u getimed graven nodig om die ontsnappingsroute "
 "voor te bereiden. Graaf de hoogste steen op naast de ladder, wacht dan even "
@@ -2445,8 +2445,8 @@ msgid ""
 "back out need you to dig bricks on both sides at the same time, by pressing "
 "both mouse keys."
 msgstr ""
-"Dit niveau is een goede gelegenheid om enige graafvaardigheden te oefenen "
-"die u in latere niveaus nodig zal hebben.\n"
+"Dit level is een goede gelegenheid om enige graafvaardigheden te oefenen die "
+"u in latere levels nodig zal hebben.\n"
 "\n"
 "Hoewel het tamelijk rechtlijnig is, er wacht een ondeugende kleine val aan "
 "het eind op u. Om het te vermijden moet u het goud verzameld hebben door van "
@@ -2482,7 +2482,7 @@ msgstr ""
 "om bepaalde stukjes goud te bereiken die anders buiten bereik zouden zijn.\n"
 "\n"
 "P.S. Soms verschijnt hij ergens waar hij niet zou moeten verschijnen. Als "
-"dat zo is dan is het doden van de held het enige en het niveau opnieuw "
+"dat zo is dan is het doden van de held het enige en het level opnieuw "
 "starten. Sorry daarvoor!"
 
 #: gamedata/game_GotD.txt:39 gamedata/game_plws.txt:113
@@ -2548,7 +2548,7 @@ msgstr ""
 "u. Ze kunnen weg van u gaan als u onder hen bent op een ladder (maar niet "
 "onderaan de ladder). Deze kennis kan u uw leven sparen wanneer u nergens "
 "kunt graven en kan erg nuttig zijn wanneer u een ladder op wilt gaan naar "
-"het volgende niveau.\n"
+"het volgende level.\n"
 "\n"
 "Een speciaal geval is wanneer één zombie dicht onder u is op een ladder en "
 "een andere boven u. Dan zal de bovenste niet wegrennen maar naar u afdalen. "
@@ -2557,10 +2557,10 @@ msgstr ""
 "maar het zou niet te moeilijk om mee om te gaan zijn nadat u weet hoe ze "
 "zullen reageren.\n"
 "\n"
-"Een andere nuttige truc is om op een niveau te staan helemaal links of "
-"rechts van een of meer zombies. Ze kunnen naar dat niveau gaan en bevroren "
-"blijven, als er geen directe weg naar u toe is of ze kunnen naar u "
-"strompelen en in een put vallen - permanent of vers gegraven.\n"
+"Een andere nuttige truc is om op een level te staan helemaal links of rechts "
+"van een of meer zombies. Ze kunnen naar dat level gaan en bevroren blijven, "
+"als er geen directe weg naar u toe is of ze kunnen naar u strompelen en in "
+"een put vallen - permanent of vers gegraven.\n"
 "\n"
 "P.S. Wanneer u onderaan de rechter ladder bent, is het mogelijk om over "
 "beide zombies te lopen, zelfs als ze enigszins apart zijn. In feite is het "
@@ -2617,7 +2617,7 @@ msgstr ""
 "\n"
 "Merk ook op dat zombies enigszins onsterfelijk zijn: ze zullen allen ergens "
 "weer verschijnen. Na enige tijd zullen sommige van hen niet verschijnen "
-"boven de stenen en naar de vloer vallen, wat dit niveau een beetje "
+"boven de stenen en naar de vloer vallen, wat dit level een beetje "
 "gemakkelijker voor u zal maken."
 
 #: gamedata/game_GotD.txt:73
@@ -2698,7 +2698,7 @@ msgid ""
 "others and dig them in."
 msgstr ""
 "Je zult merken dat goud terugkrijgen van de zombies het moeilijkste "
-"onderdeel van dit niveau is. The truc is om de zombies met het goud te "
+"onderdeel van dit level is. The truc is om de zombies met het goud te "
 "scheiden van de anderen en ze ingraven."
 
 #: gamedata/game_GotD.txt:93
@@ -2911,7 +2911,7 @@ msgid ""
 "\n"
 "Please watch the solution to get a better idea of how all this works."
 msgstr ""
-"Klim op de ladder, maar wacht minimaal op hetzelfde niveau als de betonbalk. "
+"Klim op de ladder, maar wacht minimaal op hetzelfde level als de betonbalk. "
 "Ren daarna naar de eerste ladder links. U moet er zijn voor de zombies "
 "links, maar de enkele zombie boven zou achter u omlaag moeten vallen.\n"
 "\n"
@@ -3076,7 +3076,7 @@ msgid ""
 "is no real problem if zombies who have gold land in the pit: you can always "
 "release them later and get back the gold."
 msgstr ""
-"De essentie van dit niveau is om de zombies die geen goudstukken hebben te "
+"De essentie van dit level is om de zombies die geen goudstukken hebben te "
 "scheiden van de anderen en weg te sluiten in de put. Het is dus behulpzaam "
 "om zoveel mogelijk goud als je kan pakken te pakken voordat een van de "
 "zombies dat doet. Het is geen echt probleem als zombies die goud hebben in "
@@ -3129,7 +3129,7 @@ msgstr ""
 "midden u enige ruimte en tijd geven. Het kan u ook een kortere weg omhoog "
 "geven - speel de oplossing om te zien hoe.\n"
 "\n"
-"Probeer nu al het goud op de hoge niveaus te verzamelen, maar kijk uit voor "
+"Probeer nu al het goud op de hoge levels te verzamelen, maar kijk uit voor "
 "vallen! Tenslotte moet u het overblijvende goud van de zombies verzamelen. "
 "Land nooit op de grond rechts van hen."
 
@@ -3237,7 +3237,7 @@ msgid ""
 "downstairs long enough for them to start circling, then to go upstairs as "
 "quickly as possible, so as to step over their heads."
 msgstr ""
-"Dit niveau hangt af van vreemd gedrag van de zombies. Bekijk de oplossing "
+"Dit level hangt af van vreemd gedrag van de zombies. Bekijk de oplossing "
 "eens om te zien wat er gebeurt.\n"
 "\n"
 "Nadat u omlaag bent op de vloer en het goud verzamelt zullen extra ladders "
@@ -3393,7 +3393,7 @@ msgstr ""
 "verborgen ladders verschijnen. Dit is waarschijnlijk het moeilijkste deel.\n"
 "\n"
 "Wanneer u de put bereikt voor de uitgangsladder, stap omlaag naar hetzelfde "
-"niveau als de put en wacht op de zombie om over u heen te lopen en erin te "
+"level als de put en wacht op de zombie om over u heen te lopen en erin te "
 "vallen. Daarna bent u vrij om te gaan."
 
 #: gamedata/game_GotD.txt:263
@@ -3628,7 +3628,7 @@ msgid ""
 "you are level with the bricks the zombies are walking on..."
 msgstr ""
 "Kijk naar wat er gebeurt als je op een ladder aan de zijkant klimt, maar "
-"alleen tot waar je op gelijk niveau komt met de stenen waar de zombies op "
+"alleen tot waar je op gelijk level komt met de stenen waar de zombies op "
 "lopen..."
 
 #: gamedata/game_GotD.txt:331
@@ -3659,7 +3659,7 @@ msgid ""
 "You can distract the zombie from running down when you are on the same level "
 "as him. Who said it had to be fair play?"
 msgstr ""
-"Je kunt de zombie afleiden van omlaag rennen wanneer u op hetzelfde niveau "
+"Je kunt de zombie afleiden van omlaag rennen wanneer u op hetzelfde level "
 "bent als hij. Wie zei dat het een eerlijk spel moet zijn?"
 
 #: gamedata/game_GotD.txt:339
@@ -3693,7 +3693,7 @@ msgid ""
 msgstr ""
 "GEFELICITEERD !!!!\n"
 "\n"
-"U hebt alle niveaus van het spel Goud van de levende dood overwonnen !!!\n"
+"U hebt alle levels van het spel Goud van de levende dood overwonnen !!!\n"
 "\n"
 "Of hebt u?"
 
@@ -3718,16 +3718,16 @@ msgid ""
 "doubt, use menu item 'Move->Show a Solution' to watch solutions provided by "
 "the author."
 msgstr ""
-"Deze 20 niveaus hebben nog moeilijker uitdagingen, meer gecompliceerde "
+"Deze 20 levels hebben nog moeilijker uitdagingen, meer gecompliceerde "
 "puzzels en strakkere timing dan de eerste Gold Rush. Ze zijn er niet voor de "
 "bangeriken. Je moet soms ook graven tijdens het vallen. Have fun!\n"
 "\n"
 "Gemaakt door Gabriel Miltschitzky [gabriel dot miltschitzky at googlemail "
 "dot com], die ook de opgenomen oplossingen leverde.\n"
 "\n"
-"Het beste is om de eerste Gold Rush niveaus te spelen voordat Gold Rush II "
+"Het beste is om de eerste Gold Rush levels te spelen voordat Gold Rush II "
 "geprobeerd wordt, omdat u veel technieken nodig hebt die daar gemakkelijker "
-"zijn te leren. Geen van de niveaus in Gold Rush en Gold Rush II zijn "
+"zijn te leren. Geen van de levels in Gold Rush en Gold Rush II zijn "
 "onmogelijk. Gebruik bij twijfel het menu-item 'Verplaatsen->Een oplossing "
 "tonen' om de oplossingen te bekijken die door de auteur zijn geleverd."
 
@@ -3791,7 +3791,7 @@ msgid ""
 "head and reach the gold at the top right. The rest is easy."
 msgstr ""
 "Het goud aan de rechterkant is gewoon een kwestie van snelheid en "
-"handigheid. Zo ook het goud op de lagere niveaus.\n"
+"handigheid. Zo ook het goud op de lagere levels.\n"
 "\n"
 "Om het goud boven de balk links te bereiken, loop over het hoofd van uw "
 "vijand als hij langs de balk loopt.\n"
@@ -3962,7 +3962,7 @@ msgid ""
 "towards the pit. You need to start your escape to the left when he is just "
 "starting to fall into the pit, to avoid being killed when the bricks close."
 msgstr ""
-"U hebt beide vijanden nodig om te helpen bij het beëindigen van het niveau. "
+"U hebt beide vijanden nodig om te helpen bij het beëindigen van het level. "
 "Wanneer u het goud op de kolom beton pakt, wacht op de rand. Kijk goed dat "
 "uw eerste helper u volgt wanneer u omlaag springt. Pak het goud links, ga "
 "dan omhoog en graaf vlug de stenen links van de ladder weg totdat u verder "
@@ -3979,7 +3979,7 @@ msgstr ""
 "\n"
 "Als u terug gaat naar rechts, moet u een schacht van valse stenen vinden die "
 "verborgen is onder een weg te graven steen. Wanneer u terug bent, laat de "
-"tweede vijand u volgen omlaag naar het laagste niveau. Laat hem daar, maar "
+"tweede vijand u volgen omlaag naar het laagste level. Laat hem daar, maar "
 "gebruik hem om terug te gaan naar de ladders omhoog.\n"
 "\n"
 "Ga naar de put en ladder midden-links en open een schacht twee stenen breed "
@@ -4042,7 +4042,7 @@ msgstr ""
 "passeren. Ze doden is geen optie, omdat u twee van de drie vijanden nodig "
 "hebt, wees dus voorzichtig met te vreog te graven, anders zullen de vijanden "
 "opnieuw verschijnen dicht bij de betonnen put rechtsboven en zult u het "
-"niveau opnieuw moeten beginnen.\n"
+"level opnieuw moeten beginnen.\n"
 "\n"
 "De volgende twee goudstukken kunnen alleen bereikt worden met de hulp van "
 "twee vijanden. U hebt de vrije keuze bij het kiezen van welk goudstuk eerst, "
@@ -4358,12 +4358,12 @@ msgstr ""
 "\n"
 "Ga terug naar onderen waar je was, pak het goud en laat de vijand je erdoor "
 "volgend. Als hij begint met vallen, ren opnieuw omhoog en ontsnap. Misleidt "
-"de volgende drie vijanden op het laagste niveau, waar genoeg ruimte is om  "
+"de volgende drie vijanden op het laagste level, waar genoeg ruimte is om  "
 "langs ze heen te gaan.\n"
 "\n"
-"Now make sure that the last enemy lingers on the right-hand ladder when you "
-"dig through to him. He is only enemy in this level who can be trapped by "
-"digging. Have fun!"
+"Ga na dat de laatste vijand aarzelt aan de rechtse ladder wanneer je er "
+"doorheen graaft naar hem. Hij is de enige vijand in dit level die gevangen "
+"kan worden door graven. Veel plezier!"
 
 #: gamedata/game_GRII.txt:160
 #, kde-format
@@ -4466,11 +4466,11 @@ msgstr ""
 "Klim omhoog en graaf de bovenste steen links. Val door de valse stenen "
 "eronder, vergeet niet om nog drie stenen links weg te graven. Hierna zult u "
 "een goede timing nodig hebben om het goud te pakken en door te gaan naar het "
-"onderste niveau. Graaf alle twee kolommen stenen links weg, behalve de twee "
+"onderste level. Graaf alle twee kolommen stenen links weg, behalve de twee "
 "laagste. Als de stenen zich opnieuw beginnen te vullen, graaf alle "
 "overblijvende stenen weg, ren de ladders op, graaf de hoogste van de stenen "
 "rechts weg en pak het goud. Daarna graaf uw weg omlaag naar het onderste "
-"deel van dit niveau.\n"
+"deel van dit level.\n"
 "\n"
 "De weg naar de bodem en over naar de hoge ladder rechts is erg tricky. De "
 "aanwijzingen zijn twee kruisvormen van vijf stenen elk. Val in het "
@@ -4497,7 +4497,7 @@ msgid ""
 "real challenge, try it in keyboard mode. That will make things a little more "
 "demanding..."
 msgstr ""
-"Dit niveau is genoemd naar het originele spel 'Synchronised Running' in het "
+"Dit level is genoemd naar het originele spel 'Synchronised Running' in het "
 "spel 'Challenge'.\n"
 "\n"
 "Toegegeven, het is erg moeilijk om dezelfde snelheid als de vijand te houden "
@@ -4528,9 +4528,9 @@ msgid ""
 "KGoldrunner rules.  The enemies run fast and have an aggressive search "
 "strategy.  Enjoy!"
 msgstr ""
-"Deze niveaus zijn geschreven door Marco Krüger, de oorspronkelijke auteur "
-"van het spel KGoldRunner. Sommige niveaus zijn geschreven door zijn vrienden "
-"en andere bijdragers. Ze maken gebruik van de spelregels van KGoldrunner. De "
+"Deze levels zijn geschreven door Marco Krüger, de oorspronkelijke auteur van "
+"het spel KGoldRunner. Sommige levels zijn geschreven door zijn vrienden en "
+"andere bijdragers. Ze maken gebruik van de spelregels van KGoldrunner. De "
 "vijanden rennen snel en hebben een agressieve zoekstrategie. Veel plezier!"
 
 #: gamedata/game_lars.txt:2
@@ -4546,7 +4546,7 @@ msgid ""
 "\n"
 "Created by Lars Luthman <lars luthman at gmail com>."
 msgstr ""
-"Twintig niveaus die een beetje denkwerk en een beetje timing vereisen. Je "
+"Twintig levels die een beetje denkwerk en een beetje timing vereisen. Je "
 "moet soms ook graven tijdens het vallen.\n"
 "\n"
 "Gecreëerd door Lars Luthman <lars luthman at gmail com>."
@@ -4680,7 +4680,7 @@ msgid ""
 "This level is fairly straightforward. There are some places where you can "
 "trap enemies if you do not like all of them running around."
 msgstr ""
-"Dit niveau is tamelijk rechttoe rechtaan. Er zijn enkele plaatsen waar je "
+"Dit level is tamelijk rechttoe rechtaan. Er zijn enkele plaatsen waar je "
 "vijanden in de vast kan zetten als je ze niet allemaal rond wilt laten "
 "rennen."
 
@@ -4799,8 +4799,8 @@ msgstr ""
 "dat niet te doen, omdat ze opnieuw bovenaan verschijnen uw uitgang "
 "blokkeren. Je moet soms ook graven tijdens het vallen.\n"
 "\n"
-"Een andere set kampioenschapniveaus van Steve Mann <smann at cgl uwaterloo "
-"ca>. De niveaus worden naar dwergen in mythen en verhalen genoemd (met een "
+"Een andere set kampioenschaplevels van Steve Mann <smann at cgl uwaterloo "
+"ca>. De levels worden naar dwergen in mythen en verhalen genoemd (met een "
 "paar namen van elven), beginnend met de zeven dwergen uit Disney's versie "
 "van Sneeuwwitje."
 
@@ -4910,7 +4910,7 @@ msgid ""
 "on a vertical ladder with an enemy above you, sometimes the enemy will run "
 "away from you."
 msgstr ""
-"Er zijn twee trucks op dit niveau. Als eerste haal je het hoge goud, ga naar "
+"Er zijn twee trucks op dit level. Als eerste haal je het hoge goud, ga naar "
 "onder en trek de vijanden naar beneden, ga dan naar boven om het goud te "
 "halen en omgekeerd. Ten tweede gebruik je zo af en toe de laddertruc: als u "
 "op een verticale ladder staat met een vijand boven u, dan rent deze soms weg "
@@ -5001,7 +5001,7 @@ msgid ""
 "The only trick to this level is using the hidden passages and enticing the "
 "enemies to use them."
 msgstr ""
-"De enige truck op dit niveau is het gebruik van de verborgen doorgang en de "
+"De enige truck op dit level is het gebruik van de verborgen doorgang en de "
 "vijanden verleiden deze te gebruiken."
 
 #: gamedata/game_MAZ.txt:58
@@ -5042,7 +5042,7 @@ msgid ""
 msgstr ""
 "Na de eerste vijand verlokt te hebben naar je toe te komen, probeer dan niet "
 "eraf te springen en het drijvende goudstuk te snel te pakken. Als je dat "
-"doet, zal de naar je toe gelokte vijand naar een lager niveau vallen, een "
+"doet, zal de naar je toe gelokte vijand naar een lager level vallen, een "
 "goudstuk pakken naar de grond gaan waar je dat goud niet van hem kan "
 "afpakken."
 
@@ -5227,18 +5227,18 @@ msgid ""
 "you should be able to complete the level without intentionally trapping any "
 "enemies, but some may inadvertently fall into your two pits."
 msgstr ""
-"Er zijn te veel vijanden om tegen te vechten op het topniveau (er zijn daar "
+"Er zijn te veel vijanden om tegen te vechten op het toplevel (er zijn daar "
 "maar weinig stenen voor een bepaalde reden). In plaats daarvan wacht je op "
-"het niveau eronder en laat hen naar je toe komen. Graaf dan om te ontsnappen "
+"het level eronder en laat hen naar je toe komen. Graaf dan om te ontsnappen "
 "en pak het goud linksonder.\n"
 "\n"
-"Op de weg terug, ga dan staan op het hoogste niveau en gebruik dezelfde truc "
+"Op de weg terug, ga dan staan op het hoogste level en gebruik dezelfde truc "
 "om de vijanden naar boven te trekken. Graaf een steen die naar beneden leidt "
 "en ga naar de uitgang.\n"
 "\n"
 "Het enige tricky gedeelte is wanneer twee vijanden linksonder eindigen, in "
 "het midden (op uw weg terug) of boven rechts. Behalve in het laatste geval "
-"zou je toch in staat moeten zijn het niveau te beëindigen zonder met opzet "
+"zou je toch in staat moeten zijn het level te beëindigen zonder met opzet "
 "vijanden in de val te zetten, maar enkelen mogen niet opzettelijk in uw twee "
 "putten vallen."
 
@@ -5397,7 +5397,7 @@ msgstr ""
 "\n"
 "Om het goudstuk rechtsboven te pakken, moet je eerst die ene vijand uit die "
 "sectie lokken. Na het verzamelen van het goud, kun je bedreigd worden door "
-"vijanden rechts. Ga dan naar het laagste niveau van de sectie die je kunt "
+"vijanden rechts. Ga dan naar het laagste level van de sectie die je kunt "
 "bereiken zonder te graven. De vijanden zullen in een zijgang gaan, waardoor "
 "u genoeg tijd hebt om omhoog te rennen over de stang en precies voor hen de "
 "top van de piramide bereiken.\n"
@@ -5417,7 +5417,7 @@ msgid ""
 "Save the middle bottom gold for last: you can not get out of this section "
 "until a hidden ladder appears."
 msgstr ""
-"Valse vloeren zijn de sleutel tot dit niveau. De weg in een sectie is vaak "
+"Valse vloeren zijn de sleutel tot dit level. De weg in een sectie is vaak "
 "niet de weg eruit. Veel van de vijanden zullen in de val zitten als je zich "
 "laag verplaatst. Bewaar de het goud midden onder voor het laatst: je kunt "
 "niet uit deze sectie totdat de verborgen ladder verschijnt."
@@ -5561,12 +5561,12 @@ msgid ""
 "square and drop down, there is a path through a false floor that avoids "
 "retracing all the early part of the maze."
 msgstr ""
-"De hoofdtruc voor dit niveau is het lokken van de vijanden zodat je er "
-"omheen kan of, in een geval, zodat je over een vijand kan lopen om een "
-"goudstuk te verzamelen. Het lokken is niet zo moeilijk, maar de afstanden "
-"waarover je hen moet lokken zijn lang. Het manoeuvreren van de vijand zodat "
-"je over hem kunt lopen om een goudstuk te pakken heeft een nauwe timing, "
-"maar niet al te erg.\n"
+"De hoofdtruc voor dit level is het lokken van de vijanden zodat je er omheen "
+"kan of, in een geval, zodat je over een vijand kan lopen om een goudstuk te "
+"verzamelen. Het lokken is niet zo moeilijk, maar de afstanden waarover je "
+"hen moet lokken zijn lang. Het manoeuvreren van de vijand zodat je over hem "
+"kunt lopen om een goudstuk te pakken heeft een nauwe timing, maar niet al te "
+"erg.\n"
 "\n"
 "Als je de sectie bereikt boven jouw startpunt, dan zijn er twee wegen uit: "
 "een is een valse staan onder een korte ladder. Maar als je in het andere "
@@ -5650,12 +5650,12 @@ msgid ""
 "The last few levels are very hard, but if you are looking for even more of a "
 "challenge, have a go at 'Vengeance of Peter W' ..."
 msgstr ""
-"Deze 100 niveaus vormen een uitstekend introductiespel, maar ook een goede "
+"Deze 100 levels vormen een uitstekend introductiespel, maar ook een goede "
 "gelegenheid voor gevorderde spelers om hoge scores op te bouwen. Ze zijn "
 "geschreven door Peter Wadham en maken gebruik van traditionele spelregels.\n"
 "\n"
-"De laatste niveaus zijn erg moeilijk. Als je echter een nog grotere "
-"uitdaging wilt, ga dan naar \"De wraak van Peter W\" ..."
+"De laatste levels zijn erg moeilijk. Als je echter een nog grotere uitdaging "
+"wilt, ga dan naar \"De wraak van Peter W\" ..."
 
 #: gamedata/game_plws.txt:9
 #, kde-format
@@ -5919,7 +5919,7 @@ msgstr "Hondetanden"
 #: gamedata/game_plws.txt:161
 #, kde-format
 msgid "Five Levels"
-msgstr "Vijf spelniveaus"
+msgstr "Vijf spellevels"
 
 #: gamedata/game_plws.txt:164
 #, kde-format
@@ -6146,7 +6146,7 @@ msgid ""
 "Just one small hint ... if you stand on the right hand end of the boat you "
 "can get the enemy to fall towards you ... the rest is up to you!"
 msgstr ""
-"Dit niveau is vernoemd naar de beroemde Duitse duikboot-oorlogsfilm 'Das "
+"Dit level is vernoemd naar de beroemde Duitse duikboot-oorlogsfilm 'Das "
 "Boot' en opgedragen aan Marco Krüger uit Berlijn, de oorspronkelijke auteur "
 "van KGoldrunner.\n"
 "\n"
@@ -6299,7 +6299,7 @@ msgstr ""
 "\n"
 "Ga naar vlakbij het goud rechtsonder.  Raap het nog niet op, maar ga naar "
 "boven en neem de twee goudklompen linksboven. Je kan dan teruggaan naar waar "
-"je was en het niveau voltooien."
+"je was en het level voltooien."
 
 #: gamedata/game_plwv.txt:45
 #, kde-format
@@ -6460,7 +6460,7 @@ msgid ""
 "the top of the burner."
 msgstr ""
 "Je zal de meest linkse ladder op moeten gaan om bij elke klomp te komen en "
-"ga dan naar het volgende niveau.  Ga vanaf rechts naar de andere kant om de "
+"ga dan naar het volgende level.  Ga vanaf rechts naar de andere kant om de "
 "middenbovenste klomp te verzamelen.\n"
 "\n"
 "Versla je vijanden op de bunsenbrander door ze rechts daarvan te doden, door "
@@ -6714,7 +6714,7 @@ msgid ""
 "\n"
 "Composed by Stuart Popejoy - spopejoy@panix.com"
 msgstr ""
-"Net toen je dacht dat het veilig was ....vijftien niveaus van echte "
+"Net toen je dacht dat het veilig was ....vijftien levels van echte "
 "verschrikking, gebruikt  de zenuwachtige-maar-snelle spelregels van "
 "KGoldrunner. Je moet soms ook graven tijdens het vallen.\n"
 "\n"
@@ -7289,11 +7289,11 @@ msgid ""
 "When you move on to play more advanced levels, you will find that "
 "KGoldrunner combines action, strategy and puzzle solving --- all in one game."
 msgstr ""
-"Deze oefening is een verzameling van eenvoudige niveaus die je de regels van "
+"Deze oefening is een verzameling van eenvoudige levels die je de regels van "
 "KGoldrunner leren en je helpt enige vaardigheid op te bouwen die je nodig "
-"hebt om te kunnen beginnen. Elk niveau begint met een korte uitleg, en "
-"daarna begin je met spelen.\n"
-"Als je doorgaat naar de meer uitgebreide niveaus zal je merken dat "
+"hebt om te kunnen beginnen. Elk level begint met een korte uitleg, en daarna "
+"begin je met spelen.\n"
+"Als je doorgaat naar de meer uitgebreide levels zal je merken dat "
 "KGoldrunner actie, strategie en puzzeloplossing combineert in een spel."
 
 #: gamedata/game_tute.txt:9
@@ -7314,7 +7314,7 @@ msgid ""
 msgstr ""
 "Hallo! Welkom bij KGoldRunner! De bedoeling van dit spel is dat je alle "
 "goudklompen verzamelt en vervolgens naar de bovenkant van het speelveld "
-"klimt om naar het volgende niveau te gaan. Als je het laatste goudklompje "
+"klimt om naar het volgende level te gaan. Als je het laatste goudklompje "
 "hebt verzameld zal er een verborgen ladder verschijnen.\n"
 "\n"
 "De held (het rode mannetje) wordt door jouw aangestuurd. Om de goudklompen "
@@ -7345,7 +7345,7 @@ msgstr ""
 "\n"
 "GEVAAR: Val niet van de ladder of stang in de betonnen put rechts onderaan. "
 "Als je in die put terecht komt kan je er alleen uitkomen door de held te "
-"doden (druk op de toets Q om af te sluiten) en het niveau opnieuw te starten."
+"doden (druk op de toets Q om af te sluiten) en het level opnieuw te starten."
 
 #: gamedata/game_tute.txt:21
 #, kde-format
@@ -7434,7 +7434,7 @@ msgstr ""
 "meerdere gaten op een rij te graven.\n"
 "\n"
 "je kan ook over het hoofd van een vijand rennen. Doe dat meteen aan het "
-"begin van dit niveau. Graaf een gat, lok de vijand erin, wacht totdat hij er "
+"begin van dit level. Graaf een gat, lok de vijand erin, wacht totdat hij er "
 "helemaal in is gevallen en ren over zijn hoofd terwijl de andere vijanden "
 "achter je aanzitten ... \n"
 "\n"
@@ -7468,7 +7468,7 @@ msgid ""
 "Some of the bricks in this level are not what they seem.  If you walk onto "
 "them you fall through.  The enemies fall through them too."
 msgstr ""
-"Sommige stenen in dit niveau zijn niet wat ze lijken. Als je er overheen "
+"Sommige stenen in dit level zijn niet wat ze lijken. Als je er overheen "
 "loopt zal je door ze heenvallen. De vijanden vallen er ook doorheen."
 
 #: gamedata/game_tute.txt:51 gamedata/game_tutea.txt:31
@@ -7490,10 +7490,10 @@ msgid ""
 "\n"
 "It has been a pleasure showing you around.  Bye!"
 msgstr ""
-"Dit is een leuk eenvoudig niveau om mee af te sluiten. Veel plezier met de "
+"Dit is een leuk eenvoudig level om mee af te sluiten. Veel plezier met de "
 "anders spellen in KGoldrunner.\n"
 "\n"
-"Opmerking: er is een spelbewerker waar je en je vrienden eigen niveaus kunt "
+"Opmerking: er is een spelbewerker waar je en je vrienden eigen levels kunt "
 "aanmaken en elkaar mee kunt uitdagen. Wanneer je van actie houdt, de "
 "spelregels van KGoldrunner, die in enkele spellen gebruikt worden, zijn snel "
 "en heftig.  Voor meer gedetailleerde informatie kan je terecht bij het "
@@ -7579,7 +7579,7 @@ msgstr ""
 "heh, heh!!\n"
 "\n"
 "Als je de vijand ongewild doodt voordat je het goud linksboven hebt "
-"verzameld kan je dit niveau nog steeds voltooien door de zijkant van de put "
+"verzameld kan je dit level nog steeds voltooien door de zijkant van de put "
 "waar hij in ligt weg te graven."
 
 #: gamedata/game_tutea.txt:25
@@ -7618,7 +7618,7 @@ msgid ""
 "These tricky little levels were composed by Peter, Simon, Genevieve and "
 "their father Ian Wadham.  They use traditional playing rules.  Enjoy!"
 msgstr ""
-"Deze kleine (en gemene) niveaus zijn geschreven door Peter, Simon, Genevieve "
+"Deze kleine (en gemene) levels zijn geschreven door Peter, Simon, Genevieve "
 "en hun vader Ian Wadham.  Ze maken gebruik van traditionele spelregels.  "
 "Veel plezier!"
 
@@ -7998,7 +7998,7 @@ msgid ""
 "If you move to the bottom right corner, you can get the enemy to fall into "
 "the hole containing gold."
 msgstr ""
-"Dit is een warmup voor een later niveau. Om het goud rechts te pakken, ga "
+"Dit is een warmup voor een later level. Om het goud rechts te pakken, ga "
 "omlaag op het hoofd van de vijand, laat hem naar links gaan, ga links achter "
 "hem aan en, terwijl jij op zijn hoofd mee omlaag gaat, graaf je rechts.  Je "
 "kan er dan in rennen, pak het goud en ga naar buiten voordat de steen "
@@ -8056,7 +8056,7 @@ msgid ""
 "again.  Collect the nugget, dig left and escape left onto the concrete.  As "
 "the enemy climbs out he will fall into the pit.\n"
 msgstr ""
-"De bovenkant van deze is gelijkwaardig aan het niveau Hoofdzaak (18).  Sluit "
+"De bovenkant van deze is gelijkwaardig aan het level Hoofdzaak (18).  Sluit "
 "de vijand rechts nabij de top van de ladder in.  Ren een gedeelte van de "
 "ladder omlaag en laat hem in de eerste van de putten vallen.  Je dient dit "
 "een aantal malen te herhalen.\n"
@@ -8150,509 +8150,429 @@ msgstr ""
 "andere kant!  Je hebt alleen een vaste hand nodig."
 
 #: src/kgoldrunner.cpp:184
-#, fuzzy, kde-format
-#| msgid "&New Game..."
+#, kde-format
 msgctxt "@action"
 msgid "&New Game…"
-msgstr "&Nieuw spel..."
+msgstr "&Nieuw spel…"
 
 #: src/kgoldrunner.cpp:187
-#, fuzzy, kde-format
-#| msgid "Pla&y Next Level"
+#, kde-format
 msgctxt "@action"
 msgid "Pla&y Next Level"
-msgstr "Volgende niveau s&pelen"
+msgstr "Volgende level s&pelen"
 
 #: src/kgoldrunner.cpp:188
-#, fuzzy, kde-format
-#| msgid "Play next level."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Play the next level"
-msgstr "Volgende niveau spelen."
+msgstr "Volgende level spelen"
 
 #: src/kgoldrunner.cpp:189
-#, fuzzy, kde-format
-#| msgid "Try the next level in the game you are playing."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Switches to the next level in the game you are playing."
-msgstr "Probeer het volgende niveau van het spel dat je aan het spelen bent."
+msgstr ""
+"Schakelt om naar het volgende level van het spel dat je aan het spelen bent."
 
 #: src/kgoldrunner.cpp:196
-#, fuzzy, kde-format
-#| msgid "&Load Saved Game..."
+#, kde-format
 msgctxt "@action"
 msgid "&Load Saved Game…"
-msgstr "Opgeslagen spel &laden..."
+msgstr "Opgeslagen spel &laden…"
 
 #: src/kgoldrunner.cpp:205
-#, fuzzy, kde-format
-#| msgid "Save Game"
+#, kde-format
 msgctxt "@action"
 msgid "&Save Game…"
-msgstr "Spel opslaan"
+msgstr "&Spel opslaan…"
 
 #: src/kgoldrunner.cpp:211
-#, fuzzy, kde-format
-#| msgid "Save A Solution"
+#, kde-format
 msgctxt "@action"
 msgid "Save a Solution…"
-msgstr "Een oplossing opslaan"
+msgstr "Een oplossing opslaan…"
 
 #: src/kgoldrunner.cpp:212
-#, fuzzy, kde-format
-#| msgid "Save A Solution"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Save a solution"
 msgstr "Een oplossing opslaan"
 
 #: src/kgoldrunner.cpp:213
-#, fuzzy, kde-format
-#| msgid ""
-#| "Save a solution for a level into a file called 'sol_&lt;prefix&gt;.txt' "
-#| "in your user's data directory..."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Saves a solution for a level into a file called 'sol_&lt;prefix&gt;.txt' in "
 "your user's data directory."
 msgstr ""
-"Een oplossing voor een level in een bestand genaamd 'sol_&lt;prefix&gt;.txt' "
-"in uw map voor gebruikersgegevens opslaan..."
+"Slaat een oplossing op voor een level in een bestand genaamd 'sol_&lt;"
+"prefix&gt;.txt' in uw map voor gebruikersgegevens opslaan."
 
 #: src/kgoldrunner.cpp:246
-#, fuzzy, kde-format
-#| msgid "&Show a Solution"
+#, kde-format
 msgctxt "@action"
 msgid "&Show a Solution"
 msgstr "Een oplossing &tonen"
 
 #: src/kgoldrunner.cpp:247
-#, fuzzy, kde-format
-#| msgid "Show how to win this level."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show how to win this level"
-msgstr "Toon hoe dit niveau te winnen."
+msgstr "Toon hoe dit level te winnen"
 
 #: src/kgoldrunner.cpp:248
-#, fuzzy, kde-format
-#| msgid ""
-#| "Play a recording of how to win this level, if there is one available."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Plays a recording of how to win this level, if there is one available."
 msgstr ""
-"Speel een opname af over hoe dit niveau te winnen, als deze beschikbaar is."
+"Speelt een opname af over hoe dit level te winnen, als deze beschikbaar is."
 
 #: src/kgoldrunner.cpp:252
-#, fuzzy, kde-format
-#| msgid "&Instant Replay"
+#, kde-format
 msgctxt "@action"
 msgid "&Instant Replay"
 msgstr "&Direct herhalen"
 
 #: src/kgoldrunner.cpp:253
-#, fuzzy, kde-format
-#| msgid "Instant replay."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Instant replay"
-msgstr "Direct herhalen."
+msgstr "Direct herhalen"
 
 #: src/kgoldrunner.cpp:254
-#, fuzzy, kde-format
-#| msgid "Show a recording of the level you are currently playing."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Shows a recording of the level you are currently playing."
-msgstr "Toon een opname van het niveau dat je nu aan het spelen bent."
+msgstr "Toont een opname van het level dat u nu aan het spelen bent."
 
 #: src/kgoldrunner.cpp:259
-#, fuzzy, kde-format
-#| msgid "Replay &Last Level"
+#, kde-format
 msgctxt "@action"
 msgid "Replay &Last Level"
-msgstr "&Laatste niveau opnieuw spelen"
+msgstr "&Laatste level opnieuw spelen"
 
 #: src/kgoldrunner.cpp:260
-#, fuzzy, kde-format
-#| msgid "Replay last level."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Replay last level"
-msgstr "Laatste niveau opnieuw spelen."
+msgstr "Laatste level opnieuw spelen"
 
 #: src/kgoldrunner.cpp:261
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show a recording of the last level you played and finished, regardless of "
-#| "whether you won or lost."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Shows a recording of the last level you played and finished, regardless of "
 "whether you won or lost."
 msgstr ""
-"Toon een opname van het laatste niveau dat je speelde en beëindigde, "
+"Toont een opname van het laatste level dat je speelde en beëindigde, "
 "onafhankelijk of je hebt gewonnen of verloren."
 
 #: src/kgoldrunner.cpp:267
-#, fuzzy, kde-format
-#| msgid "&Replay Any Level"
+#, kde-format
 msgctxt "@action"
 msgid "&Replay Any Level"
-msgstr "Elk niveau &opnieuw spelen"
+msgstr "Elk level &opnieuw spelen"
 
 #: src/kgoldrunner.cpp:268
-#, fuzzy, kde-format
-#| msgid "Replay any level."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Replay any level"
-msgstr "Elk niveau opnieuw spelen."
+msgstr "Elk level opnieuw spelen"
 
 #: src/kgoldrunner.cpp:269
-#, fuzzy, kde-format
-#| msgid "Show a recording of any level you have played so far."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Shows a recording of any level you have played so far."
-msgstr "Toon een opname van een van de niveaus die je tot nu hebt gespeeld."
+msgstr "Toont een opname van een van de levels die u tot nu hebt gespeeld."
 
 #: src/kgoldrunner.cpp:274
-#, fuzzy, kde-format
-#| msgid "&Kill Hero"
+#, kde-format
 msgctxt "@action"
 msgid "&Kill Hero"
 msgstr "&Held doden"
 
 #: src/kgoldrunner.cpp:275
-#, fuzzy, kde-format
-#| msgid "&Kill Hero"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Kill the hero"
-msgstr "&Held doden"
+msgstr "De held doden"
 
 #: src/kgoldrunner.cpp:276
-#, fuzzy, kde-format
-#| msgid ""
-#| "Kill the hero, in case he finds himself in a situation from which he "
-#| "cannot escape."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Kills the hero, in case he finds himself in a situation from which he cannot "
 "escape."
 msgstr ""
-"Dood de vijand, in het geval dat hij zich in een situatie bevindt waaruit "
-"hij niet kan ontsnappen."
+"Doodt de held, in het geval dat hij zich in een situatie bevindt waaruit hij "
+"niet kan ontsnappen."
 
 #: src/kgoldrunner.cpp:293
-#, fuzzy, kde-format
-#| msgid "&Create Level"
+#, kde-format
 msgctxt "@action"
 msgid "&Create Level"
 msgstr "Nivea&u aanmaken"
 
 #: src/kgoldrunner.cpp:294
-#, fuzzy, kde-format
-#| msgid "Create level."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Create level"
-msgstr "Niveau aanmaken."
+msgstr "level aanmaken"
 
 #: src/kgoldrunner.cpp:295
-#, fuzzy, kde-format
-#| msgid "Create a completely new level."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Creates a completely new level."
-msgstr "Een volledig nieuw niveau aanmaken."
+msgstr "Maakt een volledig nieuw level aan."
 
 #: src/kgoldrunner.cpp:297
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgctxt "@action"
 msgid "Create"
 msgstr "Aanmaken"
 
 #: src/kgoldrunner.cpp:300
-#, fuzzy, kde-format
-#| msgid "Edit Level"
+#, kde-format
 msgctxt "@action"
 msgid "&Edit Level…"
-msgstr "Spelniveau bewerken"
+msgstr "Spellevel b&ewerken…"
 
 #: src/kgoldrunner.cpp:301
-#, fuzzy, kde-format
-#| msgid "Edit Level"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit level"
-msgstr "Spelniveau bewerken"
+msgstr "Spellevel bewerken"
 
 #: src/kgoldrunner.cpp:302
-#, fuzzy, kde-format
-#| msgid "Edit any level..."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Edits any level."
-msgstr "Een niveau bewerken..."
+msgstr "Bewerkt elk level."
 
 #: src/kgoldrunner.cpp:304
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action"
 msgid "Edit"
 msgstr "Bewerken"
 
 #: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1461
-#, fuzzy, kde-format
-#| msgid "&Save Edits..."
+#, kde-format
 msgctxt "@action"
 msgid "&Save Edits…"
-msgstr "Wijzigingen op&slaan..."
+msgstr "Bewerkingen op&slaan…"
 
 #: src/kgoldrunner.cpp:313
-#, fuzzy, kde-format
-#| msgid "Save edits..."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Save edits"
-msgstr "Wijzigingen opslaan..."
+msgstr "Bewerkingen opslaan"
 
 #: src/kgoldrunner.cpp:314
-#, fuzzy, kde-format
-#| msgid "Save your level after editing..."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Saves your level after editing."
-msgstr "Sla je spelniveau op na het bewerken..."
+msgstr "Slaat jouw spellevel op na bewerken."
 
 #: src/kgoldrunner.cpp:316
-#, fuzzy, kde-format
-#| msgid "Save"
+#, kde-format
 msgctxt "@action"
 msgid "Save"
 msgstr "Opslaan"
 
 #: src/kgoldrunner.cpp:320
-#, fuzzy, kde-format
-#| msgid "Move Level"
+#, kde-format
 msgctxt "@action"
 msgid "&Move Level…"
-msgstr "Niveau verplaatsen"
+msgstr "Spelniveau &verplaatsen…"
 
 #: src/kgoldrunner.cpp:321
-#, fuzzy, kde-format
-#| msgid "Move Level"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Move level"
-msgstr "Niveau verplaatsen"
+msgstr "Spellevel verplaatsen"
 
 #: src/kgoldrunner.cpp:322
-#, fuzzy, kde-format
-#| msgid "Change a level's number or move it to another game..."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Changes a level's number or move it to another game."
-msgstr "Verander het spelniveaunummer of verplaats het naar een ander spel..."
+msgstr "Wijzigt een spellevelnummer of verplaatst het naar een ander spel."
 
 #: src/kgoldrunner.cpp:326
-#, fuzzy, kde-format
-#| msgid "&Delete Level"
+#, kde-format
 msgctxt "@action"
 msgid "&Delete Level…"
-msgstr "Niveau verwij&deren"
+msgstr "Spellevel verwij&deren…"
 
 #: src/kgoldrunner.cpp:327
-#, fuzzy, kde-format
-#| msgid "Delete Level"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete level"
 msgstr "Spelniveau verwijderen"
 
 #: src/kgoldrunner.cpp:328
-#, fuzzy, kde-format
-#| msgid "Delete a level..."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Deletes a level."
-msgstr "Spelniveau verwijderen..."
+msgstr "Verwijdert een spellevel."
 
 #: src/kgoldrunner.cpp:335
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Create Game"
+#, kde-format
 msgctxt "@action"
 msgid "Create &Game…"
-msgstr "Spel aanmaken"
+msgstr "&Spel aanmaken…"
 
 #: src/kgoldrunner.cpp:336
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Create Game"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Create game"
 msgstr "Spel aanmaken"
 
 #: src/kgoldrunner.cpp:337
-#, fuzzy, kde-format
-#| msgid "Create a completely new game..."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Creates a completely new game."
-msgstr "Een volledig nieuw spel aanmaken..."
+msgstr "Maakt een volledig nieuw spel aan."
 
 #: src/kgoldrunner.cpp:340
-#, fuzzy, kde-format
-#| msgid "Edit Game Info"
+#, kde-format
 msgctxt "@action"
 msgid "Edit Game &Info…"
-msgstr "Spelniveau bewerken"
+msgstr "Spel&informatie bewerken…"
 
 #: src/kgoldrunner.cpp:341
-#, fuzzy, kde-format
-#| msgid "Edit game info..."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit game info"
-msgstr "Spelinformatie bewerken..."
+msgstr "Spelinformatie bewerken"
 
 #: src/kgoldrunner.cpp:342
-#, fuzzy, kde-format
-#| msgid "Change the name, rules or description of a game..."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Changes the name, rules or description of a game."
-msgstr "Verander de naam, regels of de beschrijving van een spel..."
+msgstr "Verandert de naam, regels of de beschrijving van een spel."
 
 #: src/kgoldrunner.cpp:351
-#, fuzzy, kde-format
-#| msgid "Change &Theme..."
+#, kde-format
 msgctxt "@action"
 msgid "Change &Theme…"
-msgstr "&Thema wijzigen..."
+msgstr "&Thema wijzigen…"
 
 #: src/kgoldrunner.cpp:352
-#, fuzzy, kde-format
-#| msgid "Change the graphics theme..."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Change the graphics theme"
-msgstr "Het grafische thema wijzigen..."
+msgstr "Wijzigt het grafische thema"
 
 #: src/kgoldrunner.cpp:353
-#, fuzzy, kde-format
-#| msgid "Alter the visual appearance of the runners and background scene..."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Alters the visual appearance of the runners and background scene."
-msgstr ""
-"Het visuele uiterlijk van de renners en de achtergrondscene veranderen..."
+msgstr "Wijzigt het visuele uiterlijk van de renners en de achtergrondscène."
 
 #: src/kgoldrunner.cpp:367
-#, fuzzy, kde-format
-#| msgid "&Play Sounds"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Play Sounds"
 msgstr "Geluiden afs&pelen"
 
 #: src/kgoldrunner.cpp:368
-#, fuzzy, kde-format
-#| msgid "Play sound effects."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Play sound effects"
-msgstr "Geluidseffecten afspelen."
+msgstr "Geluidseffecten afspelen"
 
 #: src/kgoldrunner.cpp:369
-#, fuzzy, kde-format
-#| msgid "Play sound effects during the game."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Plays sound effects during the game."
-msgstr "Geluidseffecten afspelen tijdens het spel."
+msgstr "Speelt geluidseffecten af tijdens het spel."
 
 #: src/kgoldrunner.cpp:373
-#, fuzzy, kde-format
-#| msgid "Play &Footstep Sounds"
+#, kde-format
 msgctxt "@option:check"
 msgid "Play &Footstep Sounds"
 msgstr "&Voetstap geluiden afspelen"
 
 #: src/kgoldrunner.cpp:374
-#, fuzzy, kde-format
-#| msgid "Make sounds of player's footsteps."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Make sounds of player's footsteps"
-msgstr "Maak het geluid van de voetstappen van de speler."
+msgstr "Maakt geluiden van de voetstappen van de speler"
 
 #: src/kgoldrunner.cpp:375
-#, fuzzy, kde-format
-#| msgid "Make sounds of player's footsteps."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Makes sounds of player's footsteps."
-msgstr "Maak het geluid van de voetstappen van de speler."
+msgstr "Maakt het geluid van de voetstappen van de speler."
 
 #: src/kgoldrunner.cpp:380
-#, fuzzy, kde-format
-#| msgid "&Demo At Start"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Demo at Start"
 msgstr "&Demo bij de start"
 
 #: src/kgoldrunner.cpp:381
-#, fuzzy, kde-format
-#| msgid "Run a demo when the game starts."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Run a demo when the game starts"
-msgstr "Doe een demo als het spel start."
+msgstr "Doe een demo als het spel start"
 
 #: src/kgoldrunner.cpp:382
-#, fuzzy, kde-format
-#| msgid "Run a demo when the game starts."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Runs a demo when the game starts."
-msgstr "Doe een demo als het spel start."
+msgstr "Doet een demo als het spel start."
 
 #: src/kgoldrunner.cpp:390
-#, fuzzy, kde-format
-#| msgid "&Mouse Controls Hero"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Mouse Controls Hero"
 msgstr "&Muis bestuurt held"
 
 #: src/kgoldrunner.cpp:391
-#, fuzzy, kde-format
-#| msgid "Mouse controls hero."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Mouse controls hero"
-msgstr "Muis bestuurt de held."
+msgstr "Muis bestuurt de held"
 
 #: src/kgoldrunner.cpp:392
-#, fuzzy, kde-format
-#| msgid "Use the mouse to control the hero's moves."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Use the mouse to control the hero's moves."
 msgstr "Gebruik de muis om de bewegingen van de held te besturen."
 
 #: src/kgoldrunner.cpp:396
-#, fuzzy, kde-format
-#| msgid "&Keyboard Controls Hero"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Keyboard Controls Hero"
 msgstr "&Toetsenbord bestuurt held"
 
 #: src/kgoldrunner.cpp:397
-#, fuzzy, kde-format
-#| msgid "Keyboard controls hero."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Keyboard controls hero"
-msgstr "Toetsenbord bestuurt held."
+msgstr "Toetsenbord bestuurt held"
 
 #: src/kgoldrunner.cpp:398
-#, fuzzy, kde-format
-#| msgid "Use the keyboard to control the hero's moves."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Use the keyboard to control the hero's moves."
 msgstr "Gebruik het toetsenbord om de bewegingen van de held te besturen."
 
 #: src/kgoldrunner.cpp:402
-#, fuzzy, kde-format
-#| msgid "Hybrid Control (&Laptop)"
+#, kde-format
 msgctxt "@option:check"
 msgid "Hybrid Control (&Laptop)"
 msgstr "Hybride besturing (&laptop)"
 
 #: src/kgoldrunner.cpp:403
-#, fuzzy, kde-format
-#| msgid "Pointer controls hero; dig using keyboard."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Pointer controls hero; dig using keyboard"
-msgstr "Muis bestuurt held; graven met het toetsenbord."
+msgstr "Muisaanwijzer bestuurt held; graven met het toetsenbord"
 
 #: src/kgoldrunner.cpp:405
-#, fuzzy, kde-format
-#| msgid ""
-#| "Use the laptop's pointer device to control the hero's moves, and use the "
-#| "keyboard to dig left and right."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Use the laptop's pointer device to control the hero's moves, and use the "
@@ -8662,24 +8582,19 @@ msgstr ""
 "toetsenbord voor het links en rechts graven."
 
 #: src/kgoldrunner.cpp:420
-#, fuzzy, kde-format
-#| msgid "&Click Key To Move"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Click Key to Move"
 msgstr "&Klik op toets om te verplaatsen"
 
 #: src/kgoldrunner.cpp:421
-#, fuzzy, kde-format
-#| msgid "&Click Key To Move"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click key to move"
-msgstr "&Klik op toets om te verplaatsen"
+msgstr "Klik op toets om te verplaatsen"
 
 #: src/kgoldrunner.cpp:422
-#, fuzzy, kde-format
-#| msgid ""
-#| "In keyboard mode, click a direction-key to start moving and keep on going "
-#| "until you click another key."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "In keyboard mode, click a direction-key to start moving and keep on going "
@@ -8689,24 +8604,19 @@ msgstr ""
 "beginnen en blijf gaan totdat je op een andere toets klikt."
 
 #: src/kgoldrunner.cpp:428
-#, fuzzy, kde-format
-#| msgid "&Hold Key To Move"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Hold Key to Move"
 msgstr "&Houd de toets ingedrukt om te verplaatsen"
 
 #: src/kgoldrunner.cpp:429
-#, fuzzy, kde-format
-#| msgid "&Hold Key To Move"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Hold key to move"
-msgstr "&Houd de toets ingedrukt om te verplaatsen"
+msgstr "Houd de toets ingedrukt om te verplaatsen"
 
 #: src/kgoldrunner.cpp:430
-#, fuzzy, kde-format
-#| msgid ""
-#| "In keyboard mode, hold down a direction-key to move and release it to "
-#| "stop."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "In keyboard mode, hold down a direction-key to move and release it to stop."
@@ -8715,197 +8625,169 @@ msgstr ""
 "laat los om te stoppen."
 
 #: src/kgoldrunner.cpp:447
-#, fuzzy, kde-format
-#| msgid "Normal Speed"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Normal Speed"
 msgstr "Normale snelheid"
 
 #: src/kgoldrunner.cpp:448
-#, fuzzy, kde-format
-#| msgid "Set normal speed."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set normal speed"
-msgstr "Normale snelheid instellen."
+msgstr "Normale snelheid instellen"
 
 #: src/kgoldrunner.cpp:449
-#, fuzzy, kde-format
-#| msgid "Set normal game speed."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Set normal game speed."
 msgstr "Normale spelsnelheid instellen."
 
 #: src/kgoldrunner.cpp:453
-#, fuzzy, kde-format
-#| msgid "Beginner Speed"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Beginner Speed"
 msgstr "Beginnersnelheid"
 
 #: src/kgoldrunner.cpp:454
-#, fuzzy, kde-format
-#| msgid "Set beginners' speed."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set beginners' speed"
-msgstr "Beginnersnelheid."
+msgstr "Beginnerssnelheid instellen"
 
 #: src/kgoldrunner.cpp:455
-#, fuzzy, kde-format
-#| msgid "Set beginners' game speed (0.5 times normal)."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Set beginners' game speed (0.5 times normal)."
 msgstr "Zet de spelsnelheid op beginner (0,5 maal normaal)."
 
 #: src/kgoldrunner.cpp:460
-#, fuzzy, kde-format
-#| msgid "Champion Speed"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Champion Speed"
 msgstr "Kampioensnelheid"
 
 #: src/kgoldrunner.cpp:461
-#, fuzzy, kde-format
-#| msgid "Set champions' speed."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set champions' speed"
-msgstr "Kampioenssnelheid."
+msgstr "Kampioenssnelheid instellen"
 
 #: src/kgoldrunner.cpp:462
-#, fuzzy, kde-format
-#| msgid "Set champions' game speed (1.5 times normal)."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Set champions' game speed (1.5 times normal)."
 msgstr "Zet de spelsnelheid op kampioen (1,5 keer normaal)."
 
 #: src/kgoldrunner.cpp:466
-#, fuzzy, kde-format
-#| msgid "Increase Speed"
+#, kde-format
 msgctxt "@action"
 msgid "Increase Speed"
 msgstr "Snelheid verhogen"
 
 #: src/kgoldrunner.cpp:467
-#, fuzzy, kde-format
-#| msgid "Increase speed."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Increase speed"
-msgstr "Snelheid verhogen."
+msgstr "Snelheid verhogen"
 
 #: src/kgoldrunner.cpp:468
-#, fuzzy, kde-format
-#| msgid "Increase the game speed by 0.1 (maximum is 2.0 times normal)."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Increases the game speed by 0.1 (maximum is 2.0 times normal)."
-msgstr "Verhoog de spelsnelheid met 0,1 (maximum is 2,0 maal normaal)."
+msgstr "Verhoogt de spelsnelheid met 0,1 (maximum is 2,0 maal normaal)."
 
 #: src/kgoldrunner.cpp:473
-#, fuzzy, kde-format
-#| msgid "Decrease Speed"
+#, kde-format
 msgctxt "@action"
 msgid "Decrease Speed"
 msgstr "Snelheid verlagen"
 
 #: src/kgoldrunner.cpp:474
-#, fuzzy, kde-format
-#| msgid "Decrease speed."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Decrease speed"
-msgstr "Snelheid verlagen."
+msgstr "Snelheid verlagen"
 
 #: src/kgoldrunner.cpp:475
-#, fuzzy, kde-format
-#| msgid "Decrease the game speed by 0.1 (minimum is 0.2 times normal)."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Decreases the game speed by 0.1 (minimum is 0.2 times normal)."
-msgstr "Verlaag de spelsnelheid met 0,1 (minimum is 0,2 maal normaal)."
+msgstr "Verlaagt de spelsnelheid met 0,1 (minimum is 0,2 maal normaal)."
 
 #: src/kgoldrunner.cpp:505
-#, fuzzy, kde-format
-#| msgid "Stop"
+#, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "Stoppen"
 
 #: src/kgoldrunner.cpp:506
-#, fuzzy, kde-format
-#| msgid "Move Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Right"
 msgstr "Naar rechts"
 
 #: src/kgoldrunner.cpp:507
-#, fuzzy, kde-format
-#| msgid "Move Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Left"
 msgstr "Naar links"
 
 #: src/kgoldrunner.cpp:508
-#, fuzzy, kde-format
-#| msgid "Move Up"
+#, kde-format
 msgctxt "@action"
 msgid "Move Up"
-msgstr "Omhoog"
+msgstr "Naar omhoog"
 
 #: src/kgoldrunner.cpp:509
-#, fuzzy, kde-format
-#| msgid "Move Down"
+#, kde-format
 msgctxt "@action"
 msgid "Move Down"
-msgstr "Omlaag"
+msgstr "Naar omlaag"
 
 #: src/kgoldrunner.cpp:510
-#, fuzzy, kde-format
-#| msgid "Dig Right"
+#, kde-format
 msgctxt "@action"
 msgid "Dig Right"
 msgstr "Rechts graven"
 
 #: src/kgoldrunner.cpp:511
-#, fuzzy, kde-format
-#| msgid "Dig Left"
+#, kde-format
 msgctxt "@action"
 msgid "Dig Left"
 msgstr "Links graven"
 
 #: src/kgoldrunner.cpp:535
-#, fuzzy, kde-format
-#| msgid "Do a Step"
+#, kde-format
 msgctxt "@action"
 msgid "Do a Step"
 msgstr "Doe een stap"
 
 #: src/kgoldrunner.cpp:536
-#, fuzzy, kde-format
-#| msgid "Test Bug Fix"
+#, kde-format
 msgctxt "@action"
 msgid "Test Bug Fix"
 msgstr "Programmareparatie testen"
 
 #: src/kgoldrunner.cpp:537
-#, fuzzy, kde-format
-#| msgid "Show Positions"
+#, kde-format
 msgctxt "@action"
 msgid "Show Positions"
 msgstr "Posities tonen"
 
 #: src/kgoldrunner.cpp:538
-#, fuzzy, kde-format
-#| msgid "Start Logging"
+#, kde-format
 msgctxt "@action"
 msgid "Start Logging"
 msgstr "Protocol starten"
 
 #: src/kgoldrunner.cpp:539
-#, fuzzy, kde-format
-#| msgid "Show Hero"
+#, kde-format
 msgctxt "@action"
 msgid "Show Hero"
 msgstr "Held tonen"
 
 #: src/kgoldrunner.cpp:540
-#, fuzzy, kde-format
-#| msgid "Show Object"
+#, kde-format
 msgctxt "@action"
 msgid "Show Object"
 msgstr "Object tonen"
@@ -8913,8 +8795,7 @@ msgstr "Object tonen"
 #: src/kgoldrunner.cpp:542 src/kgoldrunner.cpp:543 src/kgoldrunner.cpp:544
 #: src/kgoldrunner.cpp:545 src/kgoldrunner.cpp:546 src/kgoldrunner.cpp:547
 #: src/kgoldrunner.cpp:548
-#, fuzzy, kde-format
-#| msgid "Show Enemy"
+#, kde-format
 msgctxt "@action"
 msgid "Show Enemy"
 msgstr "Vijand tonen"
@@ -8955,8 +8836,7 @@ msgid "No hint"
 msgstr "Geen tip"
 
 #: src/kgoldrunner.cpp:878
-#, fuzzy, kde-format
-#| msgid "Get Folders"
+#, kde-format
 msgctxt "@window:title"
 msgid "Get Folders"
 msgstr "Mappen ophalen"
@@ -8967,279 +8847,239 @@ msgid "Cannot find system games sub-folder '/system/' in areas '%1'."
 msgstr "De submap voor games '/system/' in gebied '%1' is niet te vinden."
 
 #: src/kgoldrunner.cpp:912
-#, fuzzy, kde-format
-#| msgid "Edit Name/Hint"
+#, kde-format
 msgctxt "@action"
 msgid "Edit Name/Hint"
 msgstr "Naam/tip bewerken"
 
 #: src/kgoldrunner.cpp:913
-#, fuzzy, kde-format
-#| msgid "Edit level name or hint"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit level name or hint"
-msgstr "Niveaunaam en tip bewerken"
+msgstr "levelnaam en tip bewerken"
 
 #: src/kgoldrunner.cpp:914
-#, fuzzy, kde-format
-#| msgid "Edit text for the name or hint of a level"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Edits text for the name or hint of a level"
-msgstr "Naam of de tip van een niveau bewerken"
+msgstr "Bewerkt de tekst van de naam of tip van een level"
 
 #: src/kgoldrunner.cpp:917
-#, fuzzy, kde-format
-#| msgid "Name/Hint"
+#, kde-format
 msgctxt "@action"
 msgid "Name/Hint"
 msgstr "Naam/tip"
 
 #: src/kgoldrunner.cpp:920
-#, fuzzy, kde-format
-#| msgid "Erase"
+#, kde-format
 msgctxt "@option:check"
 msgid "Erase"
 msgstr "Wissen"
 
 #: src/kgoldrunner.cpp:920
-#, fuzzy, kde-format
-#| msgid "Space/Erase"
+#, kde-format
 msgctxt "@option:check"
 msgid "Space/Erase"
 msgstr "Spatie/wissen"
 
 #: src/kgoldrunner.cpp:921
-#, fuzzy, kde-format
-#| msgid "Paint empty squares or erase"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint empty squares or erase"
 msgstr "Lege vierkantjes tekenen of wissen"
 
 #: src/kgoldrunner.cpp:922
-#, fuzzy, kde-format
-#| msgid "Erase objects or paint empty squares"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Erases objects or paint empty squares."
-msgstr "Wis objecten door lege vierkanten"
+msgstr "Wist objecten door tekent lege vierkanten."
 
 #: src/kgoldrunner.cpp:925
-#, fuzzy, kde-format
-#| msgid "Hero"
+#, kde-format
 msgctxt "@option:check"
 msgid "Hero"
 msgstr "Held"
 
 #: src/kgoldrunner.cpp:926
-#, fuzzy, kde-format
-#| msgid "Move hero"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Move hero"
 msgstr "Held bewegen"
 
 #: src/kgoldrunner.cpp:927
-#, fuzzy, kde-format
-#| msgid "Change the hero's starting position"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Changes the hero's starting position."
-msgstr "Verander de beginpositie van de held"
+msgstr "Wijzigt de beginpositie van de held."
 
 #: src/kgoldrunner.cpp:930
-#, fuzzy, kde-format
-#| msgid "Enemy"
+#, kde-format
 msgctxt "@option:check"
 msgid "Enemy"
 msgstr "Vijand"
 
 #: src/kgoldrunner.cpp:931
-#, fuzzy, kde-format
-#| msgid "Paint enemies"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint enemies"
 msgstr "Vijanden plaatsen"
 
 #: src/kgoldrunner.cpp:932
-#, fuzzy, kde-format
-#| msgid "Paint enemies at their starting positions"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints enemies at their starting positions."
-msgstr "Plaats vijanden op hun beginposities"
+msgstr "Plaats vijanden op hun beginposities."
 
 #: src/kgoldrunner.cpp:936
-#, fuzzy, kde-format
-#| msgid "Brick"
+#, kde-format
 msgctxt "@option:check"
 msgid "Brick"
 msgstr "Steen"
 
 #: src/kgoldrunner.cpp:937
-#, fuzzy, kde-format
-#| msgid "Paint bricks (can dig)"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint bricks (can dig)"
 msgstr "Plaats steen (kan in worden gegraven)"
 
 #: src/kgoldrunner.cpp:938
-#, fuzzy, kde-format
-#| msgid "Paint bricks (diggable objects)"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints bricks (diggable objects)."
-msgstr "Plaats steen (kan in worden gegraven)"
+msgstr "Plaats stenen (kan in worden gegraven)."
 
 #: src/kgoldrunner.cpp:941
-#, fuzzy, kde-format
-#| msgid "Concrete"
+#, kde-format
 msgctxt "@option:check"
 msgid "Concrete"
 msgstr "Beton"
 
 #: src/kgoldrunner.cpp:942
-#, fuzzy, kde-format
-#| msgid "Paint concrete (cannot dig)"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint concrete (cannot dig)"
 msgstr "Plaats beton (kan niet in worden gegraven)"
 
 #: src/kgoldrunner.cpp:943
-#, fuzzy, kde-format
-#| msgid "Paint concrete objects (not diggable)"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints concrete objects (not diggable)."
-msgstr "Plaats beton (kan niet in worden gegraven)"
+msgstr "Plaatst beton (kan niet in worden gegraven)."
 
 #: src/kgoldrunner.cpp:946
-#, fuzzy, kde-format
-#| msgid "Trap"
+#, kde-format
 msgctxt "@option:check"
 msgid "Trap"
 msgstr "Val"
 
 #: src/kgoldrunner.cpp:946
-#, fuzzy, kde-format
-#| msgid "Trap/False Brick"
+#, kde-format
 msgctxt "@option:check"
 msgid "Trap/False Brick"
 msgstr "Val/valse stenen"
 
 #: src/kgoldrunner.cpp:947
-#, fuzzy, kde-format
-#| msgid "Paint traps or false bricks (can fall through)"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint traps or false bricks (can fall through)"
 msgstr "Plaats val of valse steen (kan er doorheen vallen)"
 
 #: src/kgoldrunner.cpp:949
-#, fuzzy, kde-format
-#| msgid "Paint traps or false bricks (can fall through)"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints traps or false bricks (can fall through)."
-msgstr "Plaats val of valse steen (kan er doorheen vallen)"
+msgstr "Plaatst vallen of valse stenen (kan er doorheen vallen)"
 
 #: src/kgoldrunner.cpp:953
-#, fuzzy, kde-format
-#| msgid "Ladder"
+#, kde-format
 msgctxt "@option:check"
 msgid "Ladder"
 msgstr "Ladder"
 
 #: src/kgoldrunner.cpp:954
-#, fuzzy, kde-format
-#| msgid "Paint ladders"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint ladders"
 msgstr "Plaats ladders"
 
 #: src/kgoldrunner.cpp:955
-#, fuzzy, kde-format
-#| msgid "Paint ladders (ways to go up or down)"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints ladders (ways to go up or down)."
-msgstr "Plaats ladders (mogelijkheid om omhoog of omlaag te gaan)"
+msgstr "Plaatst ladders (mogelijkheid om omhoog of omlaag te gaan)."
 
 #: src/kgoldrunner.cpp:958
-#, fuzzy, kde-format
-#| msgid "H Ladder"
+#, kde-format
 msgctxt "@option:check"
 msgid "H Ladder"
 msgstr "H-ladder"
 
 #: src/kgoldrunner.cpp:958
-#, fuzzy, kde-format
-#| msgid "Hidden Ladder"
+#, kde-format
 msgctxt "@option:check"
 msgid "Hidden Ladder"
 msgstr "Verborgen ladder"
 
 #: src/kgoldrunner.cpp:959
-#, fuzzy, kde-format
-#| msgid "Paint hidden ladders"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint hidden ladders"
 msgstr "Plaats verborgen ladder"
 
 #: src/kgoldrunner.cpp:960
-#, fuzzy, kde-format
-#| msgid "Paint hidden ladders, which appear when all the gold is gone"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints hidden ladders, which appear when all the gold is gone."
 msgstr ""
-"Plaats verborgen ladder, die tevoorschijn komt wanneer al het goud verdwenen "
-"is"
+"Plaatst verborgen ladders, die verschijnen wanneer al het goud verdwenen is."
 
 #: src/kgoldrunner.cpp:964
-#, fuzzy, kde-format
-#| msgid "Bar"
+#, kde-format
 msgctxt "@option:check"
 msgid "Bar"
 msgstr "Stang"
 
 #: src/kgoldrunner.cpp:964
-#, fuzzy, kde-format
-#| msgid "Bar/Pole"
+#, kde-format
 msgctxt "@option:check"
 msgid "Bar/Pole"
 msgstr "Balk/stang"
 
 #: src/kgoldrunner.cpp:965
-#, fuzzy, kde-format
-#| msgid "Paint bars or poles"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint bars or poles"
 msgstr "Plaats balken of stangen"
 
 #: src/kgoldrunner.cpp:966
-#, fuzzy, kde-format
-#| msgid "Paint bars or poles (can fall from these)"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints bars or poles (can fall from these)."
-msgstr "Teken balken of stangen (kan van deze vallen)"
+msgstr "Tekent balken of stangen (kan van deze vallen)."
 
 #: src/kgoldrunner.cpp:970
-#, fuzzy, kde-format
-#| msgid "Gold"
+#, kde-format
 msgctxt "@option:check"
 msgid "Gold"
 msgstr "Goud"
 
 #: src/kgoldrunner.cpp:970
-#, fuzzy, kde-format
-#| msgid "Gold/Treasure"
+#, kde-format
 msgctxt "@option:check"
 msgid "Gold/Treasure"
 msgstr "Goud/schat"
 
 #: src/kgoldrunner.cpp:971
-#, fuzzy, kde-format
-#| msgid "Paint gold (or other treasure)"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint gold (or other treasure)"
 msgstr "Plaats goud (of andere schatten)"
 
 #: src/kgoldrunner.cpp:972
-#, fuzzy, kde-format
-#| msgid "Paint gold pieces (or other treasure)"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints gold pieces (or other treasure)."
-msgstr "Plaats goudstukken (of andere schatten)"
+msgstr "Plaatst goudstukken (of andere schatten)."
 
 #. i18n: ectx: Menu (editor)
 #: src/kgoldrunnerui.rc:20
@@ -9260,49 +9100,43 @@ msgid "Edit Name or Hint"
 msgstr "Naam of tip bewerken"
 
 #: src/kgrdialog.cpp:56
-#, fuzzy, kde-format
-#| msgid "Name of level:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name of level:"
-msgstr "Niveaunaam:"
+msgstr "levelnaam:"
 
 #: src/kgrdialog.cpp:63
-#, fuzzy, kde-format
-#| msgid "Hint for level:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Hint for level:"
-msgstr "Niveautip:"
+msgstr "leveltip:"
 
 #: src/kgrdialog.cpp:103 src/kgrdialog.cpp:172 src/kgrselector.cpp:84
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Game Info"
-msgstr "Spelniveau bewerken"
+msgstr "Spellevel bewerken"
 
 #: src/kgrdialog.cpp:123
-#, fuzzy, kde-format
-#| msgid "Name of game:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name of game:"
 msgstr "Spelnaam:"
 
 #: src/kgrdialog.cpp:131
-#, fuzzy, kde-format
-#| msgid "File name prefix:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "File name prefix:"
 msgstr "Bestandsnaamvoorvoegsel:"
 
 #: src/kgrdialog.cpp:139
-#, fuzzy, kde-format
-#| msgid "Traditional rules"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Traditional rules"
 msgstr "Traditionele regels"
 
 #: src/kgrdialog.cpp:140
-#, fuzzy, kde-format
-#| msgid "KGoldrunner rules"
+#, kde-format
 msgctxt "@option:radio"
 msgid "KGoldrunner rules"
 msgstr "KGoldrunner-regels"
@@ -9311,12 +9145,11 @@ msgstr "KGoldrunner-regels"
 #, kde-format
 msgid "1 level"
 msgid_plural "%1 levels"
-msgstr[0] "%1 niveau"
-msgstr[1] "%1 niveaus"
+msgstr[0] "%1 level"
+msgstr[1] "%1 levels"
 
 #: src/kgrdialog.cpp:152
-#, fuzzy, kde-format
-#| msgid "About this game:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "About this game:"
 msgstr "Informatie over dit spel:"
@@ -9328,8 +9161,7 @@ msgid "Create Game"
 msgstr "Spel aanmaken"
 
 #: src/kgrdialog.cpp:186
-#, fuzzy, kde-format
-#| msgid "Save Changes"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save Changes"
 msgstr "Wijzigingen opslaan"
@@ -9337,11 +9169,10 @@ msgstr "Wijzigingen opslaan"
 #: src/kgrdialog.cpp:191
 #, kde-format
 msgid "0 levels"
-msgstr "Geen niveaus"
+msgstr "Geen levels"
 
 #: src/kgrdialog.cpp:192 src/kgrselector.cpp:269
-#, fuzzy, kde-format
-#| msgid "Save New"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save New"
 msgstr "Nieuwe opslaan"
@@ -9356,14 +9187,13 @@ msgstr "Opgeslagen spel selecteren"
 #, kde-format
 msgid "Game                       Level/Lives/Score   Day    Date     Time  "
 msgstr ""
-"Spel                       Niveau/Levens/Score   dag    datum     Tijd  "
+"Spel                       level/Levens/Score   dag    datum     Tijd  "
 
 #: src/kgreditor.cpp:66
-#, fuzzy, kde-format
-#| msgid "Create Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Level"
-msgstr "Niveau aanmaken"
+msgstr "level aanmaken"
 
 #: src/kgreditor.cpp:67
 #, kde-format
@@ -9371,16 +9201,15 @@ msgid ""
 "You cannot create and save a level until you have created a game to hold it. "
 "Try menu item \"Create Game\"."
 msgstr ""
-"Je kan pas een spelniveau aanmaken en opslaan nadat je een spel hebt "
-"aangemaakt om het spelniveau aan toe te voegen. Probeer menuoptie \"Spel "
+"Je kan pas een spellevel aanmaken en opslaan nadat je een spel hebt "
+"aangemaakt om het spellevel aan toe te voegen. Probeer menuoptie \"Spel "
 "aanmaken\"."
 
 #: src/kgreditor.cpp:115 src/kgreditor.cpp:137
-#, fuzzy, kde-format
-#| msgid "Edit Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Level"
-msgstr "Spelniveau bewerken"
+msgstr "Spellevel bewerken"
 
 #: src/kgreditor.cpp:116
 #, kde-format
@@ -9388,8 +9217,8 @@ msgid ""
 "You cannot edit and save a level until you have created a game and a level. "
 "Try menu item \"Create Game\"."
 msgstr ""
-"Je kan pas een spelniveau bewerken en opslaan nadat je een spel en niveau "
-"hebt aangemaakt. Probeer menuoptie \"Spel aanmaken\"."
+"Je kan pas een spellevel bewerken en opslaan nadat je een spel en level hebt "
+"aangemaakt. Probeer menuoptie \"Spel aanmaken\"."
 
 #: src/kgreditor.cpp:138
 #, kde-format
@@ -9398,33 +9227,29 @@ msgid ""
 "own games. You are not just taking a peek at the hidden ladders and fall-"
 "through bricks, are you? :-)"
 msgstr ""
-"Je kan een systeemniveau bewerken, let erop dat je het niveau dient op te "
+"Je kan een systeemlevel bewerken, let erop dat je het level dient op te "
 "slaan in een van je eigen spellen. Je probeert toch niet een glimp op te "
 "vangen van de verborgen ladders en de doorvalstenen? :-)"
 
 #: src/kgreditor.cpp:242 src/kgreditor.cpp:261 src/kgrgame.cpp:260
-#, fuzzy, kde-format
-#| msgid "Save Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Level"
-msgstr "Niveau opslaan"
+msgstr "level opslaan"
 
 #: src/kgreditor.cpp:243
 #, kde-format
 msgid "Do you want to insert a level and move existing levels up by one?"
-msgstr ""
-"Wil je een niveau invoegen en de bestaande niveaus een plaats verhogen?"
+msgstr "Wil je een level invoegen en de bestaande levels een plaats verhogen?"
 
 #: src/kgreditor.cpp:245
-#, fuzzy, kde-format
-#| msgid "&Insert Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Insert Level"
-msgstr "Niveau &invoegen"
+msgstr "level &invoegen"
 
 #: src/kgreditor.cpp:246 src/kgreditor.cpp:446
-#, fuzzy, kde-format
-#| msgid "&Cancel"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Cancel"
 msgstr "&Annuleren"
@@ -9437,29 +9262,26 @@ msgstr "Uitvoerbestand '%1' kan niet worden geopend."
 
 #: src/kgreditor.cpp:317 src/kgreditor.cpp:333 src/kgreditor.cpp:341
 #: src/kgreditor.cpp:356
-#, fuzzy, kde-format
-#| msgid "Move Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Move Level"
-msgstr "Niveau verplaatsen"
+msgstr "level verplaatsen"
 
 #: src/kgreditor.cpp:318
 #, kde-format
 msgid "You must first load a level to be moved. Use the \"%1\" or \"%2\" menu."
 msgstr ""
-"Laadt eerst het niveau dat je wilt verplaatsen. Gebruik hiervoor menu \"%1\" "
+"Laadt eerst het level dat je wilt verplaatsen. Gebruik hiervoor menu \"%1\" "
 "of \"%2\"."
 
 #: src/kgreditor.cpp:320
-#, fuzzy, kde-format
-#| msgid "Game"
+#, kde-format
 msgctxt "@title:menu"
 msgid "Game"
 msgstr "Spel"
 
 #: src/kgreditor.cpp:320
-#, fuzzy, kde-format
-#| msgid "Editor"
+#, kde-format
 msgctxt "@title:menu"
 msgid "Editor"
 msgstr "Bewerker"
@@ -9470,25 +9292,24 @@ msgid ""
 "You cannot move a level until you have created a game and at least two "
 "levels. Try menu item \"Create Game\"."
 msgstr ""
-"Om een niveau te kunnen verplaatsen dien je een spel met tenminste twee "
-"spelniveaus te hebben aangemaakt. Probeer menuoptie \"Spel aanmaken\"."
+"Om een level te kunnen verplaatsen dien je een spel met tenminste twee "
+"spellevels te hebben aangemaakt. Probeer menuoptie \"Spel aanmaken\"."
 
 #: src/kgreditor.cpp:342
 #, kde-format
 msgid "Sorry, you cannot move a system level."
-msgstr "Helaas, je kan geen systeemniveau verplaatsen."
+msgstr "Helaas, je kan geen systeemlevel verplaatsen."
 
 #: src/kgreditor.cpp:357
 #, kde-format
 msgid "You must change the level or the game or both."
-msgstr "Verander het spel, het spelniveau of allebei."
+msgstr "Verander het spel, het spellevel of allebei."
 
 #: src/kgreditor.cpp:419 src/kgreditor.cpp:442 src/kgreditor.cpp:461
-#, fuzzy, kde-format
-#| msgid "Delete Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Level"
-msgstr "Spelniveau verwijderen"
+msgstr "Spellevel verwijderen"
 
 #: src/kgreditor.cpp:420
 #, kde-format
@@ -9496,22 +9317,21 @@ msgid ""
 "You cannot delete a level until you have created a game and a level. Try "
 "menu item \"Create Game\"."
 msgstr ""
-"Maak eerst een spel en niveau aan voordat je niveaus kan verwijderen. "
-"Probeer menuoptie \"Spel aanmaken\"."
+"Maak eerst een spel en level aan voordat je levels kan verwijderen. Probeer "
+"menuoptie \"Spel aanmaken\"."
 
 #: src/kgreditor.cpp:443
 #, kde-format
 msgid "Do you want to delete a level and move higher levels down by one?"
 msgstr ""
-"Wil je een niveau verwijderen en de hogere niveaus een plaats naar beneden "
+"Wil je een level verwijderen en de hogere levels een plaats naar beneden "
 "schuiven?"
 
 #: src/kgreditor.cpp:445
-#, fuzzy, kde-format
-#| msgid "&Delete Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Delete Level"
-msgstr "Niveau verwij&deren"
+msgstr "level verwij&deren"
 
 #: src/kgreditor.cpp:462
 #, kde-format
@@ -9521,8 +9341,7 @@ msgstr "Het te verwijderen bestand '%1' is niet gevonden."
 #: src/kgreditor.cpp:510 src/kgreditor.cpp:520 src/kgreditor.cpp:525
 #: src/kgreditor.cpp:539 src/kgreditor.cpp:557 src/kgreditor.cpp:770
 #: src/kgreditor.cpp:781
-#, fuzzy, kde-format
-#| msgid "Save Game Info"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Game Info"
 msgstr "Spelinformatie opslaan"
@@ -9554,8 +9373,7 @@ msgid "The filename prefix '%1' is already in use."
 msgstr "Bestandsnaamvoorvoegsel '%1' wordt al gebruikt."
 
 #: src/kgreditor.cpp:641
-#, fuzzy, kde-format
-#| msgid "Editor"
+#, kde-format
 msgctxt "@title:window"
 msgid "Editor"
 msgstr "Bewerker"
@@ -9566,22 +9384,19 @@ msgid "You have not saved your work. Do you want to save it now?"
 msgstr "Je hebt je werk niet opgeslagen. Wil je het nu opslaan?"
 
 #: src/kgreditor.cpp:644
-#, fuzzy, kde-format
-#| msgid "&Save"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Save"
 msgstr "Op&slaan"
 
 #: src/kgreditor.cpp:645
-#, fuzzy, kde-format
-#| msgid "&Do Not Save"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Do Not Save"
 msgstr "&Niet opslaan"
 
 #: src/kgreditor.cpp:646
-#, fuzzy, kde-format
-#| msgid "&Go on editing"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Go on Editing"
 msgstr "Verder&gaan met bewerken"
@@ -9594,7 +9409,7 @@ msgstr "Je kan alleen gebruikerspellen bewerken."
 #: src/kgreditor.cpp:832
 #, kde-format
 msgid "New Level"
-msgstr "Nieuw niveau"
+msgstr "Nieuw level"
 
 #: src/kgreditor.cpp:842 src/kgrgame.cpp:1390
 #, kde-format
@@ -9614,25 +9429,23 @@ msgid "Click anywhere to begin live play"
 msgstr "Klik ergens om het echte spel te starten"
 
 #: src/kgrgame.cpp:190
-#, fuzzy, kde-format
-#| msgid "Play Next Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Play Next Level"
-msgstr "Volgende niveau spelen"
+msgstr "Volgende level spelen"
 
 #: src/kgrgame.cpp:191
 #, kde-format
 msgid "There are no more levels in this game."
-msgstr "Er zijn geen niveaus meer in dit spel."
+msgstr "Er zijn geen levels meer in dit spel."
 
 #: src/kgrgame.cpp:261
 #, kde-format
 msgid "Inappropriate action: you are not editing a level."
-msgstr "Onjuiste handeling, je bent niet een niveau aan het bewerken."
+msgstr "Onjuiste handeling, je bent niet een level aan het bewerken."
 
 #: src/kgrgame.cpp:420
-#, fuzzy, kde-format
-#| msgid "No Sound"
+#, kde-format
 msgctxt "@title:window"
 msgid "No Sound"
 msgstr "Geen geluid"
@@ -9651,8 +9464,7 @@ msgstr ""
 "bibliotheken waren toen het was gecompileerd en gebouwd."
 
 #: src/kgrgame.cpp:625 src/kgrgame.cpp:782
-#, fuzzy, kde-format
-#| msgid "Game Paused"
+#, kde-format
 msgctxt "@title:window"
 msgid "Game Paused"
 msgstr "Spel is gepauzeerd"
@@ -9668,18 +9480,17 @@ msgstr ""
 "verder te spelen."
 
 #: src/kgrgame.cpp:670 src/kgrgame.cpp:676
-#, fuzzy, kde-format
-#| msgid "Replay Last Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Replay Last Level"
-msgstr "Laatste niveau opnieuw spelen"
+msgstr "Laatste level opnieuw spelen"
 
 #: src/kgrgame.cpp:671
 #, kde-format
 msgid ""
 "ERROR: Could not find and replay a recording of the last level you played."
 msgstr ""
-"FOUT: Kon geen opname vinden en afspelen van het laatst gespeelde niveau."
+"FOUT: Kon geen opname vinden en afspelen van het laatst gespeelde level."
 
 #: src/kgrgame.cpp:677
 #, kde-format
@@ -9687,8 +9498,8 @@ msgid ""
 "There is no last level to replay.  You need to play a level to completion, "
 "win or lose, before you can use the Replay Last Level action."
 msgstr ""
-"Er is geen laatste niveau om af te spelen.  Je moet een niveau tot het eind "
-"spelen, winnend of verliezend, alvorens je de actie 'Laatste niveau opnieuw "
+"Er is geen laatste level om af te spelen.  Je moet een level tot het eind "
+"spelen, winnend of verliezend, alvorens je de actie 'Laatste level opnieuw "
 "spelen' kunt gebruiken."
 
 #: src/kgrgame.cpp:695
@@ -9698,93 +9509,75 @@ msgid "Quick Start"
 msgstr "Snelstart"
 
 #: src/kgrgame.cpp:712
-#, fuzzy, kde-format
-#| msgctxt "Button text: start playing a game"
-#| msgid "&PLAY"
+#, kde-format
 msgctxt "@action:button start playing a game"
 msgid "&PLAY"
 msgstr "S&PELEN"
 
 #: src/kgrgame.cpp:713
-#, fuzzy, kde-format
-#| msgid "Start playing this level"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start playing this level"
-msgstr "Begin met dit spelniveau"
+msgstr "Begin met dit spellevel"
 
 #: src/kgrgame.cpp:715
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set up to start playing the game and level being shown, as soon as you "
-#| "click, move the mouse or press a key"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Set up to start playing the game and level being shown, as soon as you "
 "click, move the mouse or press a key"
 msgstr ""
-"Begint het spel op het gekozen spelniveau zodra je op de muis klikt, beweegt "
+"Begint het spel op het gekozen spellevel zodra je op de muis klikt, beweegt "
 "of een toets indrukt"
 
 #: src/kgrgame.cpp:719
-#, fuzzy, kde-format
-#| msgid "&Quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Quit"
 msgstr "&Afsluiten"
 
 #: src/kgrgame.cpp:720
-#, fuzzy, kde-format
-#| msgid "Close KGoldrunner"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close KGoldrunner"
 msgstr "KGoldrunner sluiten"
 
 #: src/kgrgame.cpp:723
-#, fuzzy, kde-format
-#| msgid "&New Game..."
+#, kde-format
 msgctxt "@action:button"
 msgid "&New Game…"
-msgstr "&Nieuw spel..."
+msgstr "&Nieuw spel…"
 
 #: src/kgrgame.cpp:724
-#, fuzzy, kde-format
-#| msgid "Start a different game or level"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start a different game or level"
-msgstr "Een ander spel of niveau beginnen"
+msgstr "Een ander spel of level beginnen"
 
 #: src/kgrgame.cpp:726
-#, fuzzy, kde-format
-#| msgid ""
-#| "Use the Select Game dialog box to choose a different game or level and "
-#| "start playing it"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Use the Select Game dialog box to choose a different game or level and start "
 "playing it"
 msgstr ""
-"Gebruik de dialoog \"Spel selecteren\" om een ander spel of spelniveau te "
+"Gebruik de dialoog \"Spel selecteren\" om een ander spel of spellevel te "
 "beginnen"
 
 #: src/kgrgame.cpp:730
-#, fuzzy, kde-format
-#| msgid "&Use Menu"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Use Menu"
 msgstr "Menu gebr&uiken"
 
 #: src/kgrgame.cpp:732
-#, fuzzy, kde-format
-#| msgid "Use the menus to choose other actions"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Use the menus to choose other actions"
 msgstr "Gebruik de menu's om een andere actie te kiezen"
 
 #: src/kgrgame.cpp:734
-#, fuzzy, kde-format
-#| msgid ""
-#| "Before playing, use the menus to choose other actions, such as loading a "
-#| "saved game or changing the theme"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Before playing, use the menus to choose other actions, such as loading a "
@@ -9803,8 +9596,7 @@ msgstr ""
 "verder te spelen."
 
 #: src/kgrgame.cpp:836
-#, fuzzy, kde-format
-#| msgid "Show a Solution"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show a Solution"
 msgstr "Een oplossing tonen"
@@ -9815,22 +9607,21 @@ msgid ""
 "Sorry, although all levels of KGoldrunner can be solved, no solution has "
 "been recorded yet for the level you selected."
 msgstr ""
-"Helaas, hoewel alle niveaus van KGoldrunner opgelost kunnen worden, is er "
-"nog geen oplossing opgenomen voor het niveau dat u hebt geselecteerd."
+"Helaas, hoewel alle levels van KGoldrunner opgelost kunnen worden, is er nog "
+"geen oplossing opgenomen voor het level dat u hebt geselecteerd."
 
 #: src/kgrgame.cpp:848
-#, fuzzy, kde-format
-#| msgid "Replay Any Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Replay Any Level"
-msgstr "Elk niveau opnieuw spelen"
+msgstr "Elk level opnieuw spelen"
 
 #: src/kgrgame.cpp:849 src/kgrgame.cpp:2057
 #, kde-format
 msgid ""
 "Sorry, you do not seem to have played and recorded the selected level before."
 msgstr ""
-"Helaas, het lijkt erop dat u het geselecteerde niveau niet eerder hebt "
+"Helaas, het lijkt erop dat u het geselecteerde level niet eerder hebt "
 "gespeeld en opgenomen."
 
 #: src/kgrgame.cpp:1063
@@ -9839,25 +9630,22 @@ msgid ""
 "<NOBR><B>GAME OVER !!!</B></NOBR><P>Would you like to try this level again?</"
 "P>"
 msgstr ""
-"<NOBR><B>SPEL OVER !!!</B></NOBR><P>Wilt u dit niveau opnieuw proberen?</P>"
+"<NOBR><B>SPEL OVER !!!</B></NOBR><P>Wilt u dit level opnieuw proberen?</P>"
 
 #: src/kgrgame.cpp:1065
-#, fuzzy, kde-format
-#| msgid "Game Over"
+#, kde-format
 msgctxt "@title:window"
 msgid "Game Over"
-msgstr "Spel over"
+msgstr "Spel is afgelopen"
 
 #: src/kgrgame.cpp:1066
-#, fuzzy, kde-format
-#| msgid "&Try Again"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Try Again"
 msgstr "Opnieu&w proberen"
 
 #: src/kgrgame.cpp:1067
-#, fuzzy, kde-format
-#| msgid "&Finish"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Finish"
 msgstr "Vol&tooien"
@@ -9868,26 +9656,23 @@ msgid ""
 "<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the <b>"
 "\"%1\"</b> game !!</p>"
 msgstr ""
-"<b>Gefeliciteerd!!!!</b><p>Je hebt het laatste niveau van het <b>\"%1\"</b> "
+"<b>Gefeliciteerd!!!!</b><p>Je hebt het laatste level van het <b>\"%1\"</b> "
 "spel overwonnen!!</p>"
 
 #: src/kgrgame.cpp:1298
-#, fuzzy, kde-format
-#| msgid "Hint"
+#, kde-format
 msgctxt "@title:window"
 msgid "Hint"
 msgstr "Tip"
 
 #: src/kgrgame.cpp:1304
-#, fuzzy, kde-format
-#| msgid "&OK"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Ok"
 msgstr "&OK"
 
 #: src/kgrgame.cpp:1305
-#, fuzzy, kde-format
-#| msgid "&Show a Solution"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Show a Solution"
 msgstr "Een oplossing &tonen"
@@ -9895,7 +9680,7 @@ msgstr "Een oplossing &tonen"
 #: src/kgrgame.cpp:1318
 #, kde-format
 msgid "Sorry, there is no hint for this level."
-msgstr "Er is geen tip voor dit niveau beschikbaar."
+msgstr "Er is geen tip voor dit level beschikbaar."
 
 #: src/kgrgame.cpp:1380
 #, kde-format
@@ -9915,22 +9700,19 @@ msgstr ""
 "makkelijker is dan lopen!"
 
 #: src/kgrgame.cpp:1421
-#, fuzzy, kde-format
-#| msgid "Switch to Keyboard Mode"
+#, kde-format
 msgctxt "@title:window"
 msgid "Switch to Keyboard Mode"
 msgstr "Overschakelen naar toetsenbordmodus"
 
 #: src/kgrgame.cpp:1422
-#, fuzzy, kde-format
-#| msgid "Switch to &Keyboard Mode"
+#, kde-format
 msgctxt "@action:button"
 msgid "Switch to &Keyboard Mode"
 msgstr "Overscha&kelen naar toetsenbordmodus"
 
 #: src/kgrgame.cpp:1423
-#, fuzzy, kde-format
-#| msgid "Stay in &Mouse Mode"
+#, kde-format
 msgctxt "@action:button"
 msgid "Stay in &Mouse Mode"
 msgstr "In &muismodus blijven"
@@ -9942,8 +9724,7 @@ msgstr "Toetsenbordmodus"
 
 #: src/kgrgame.cpp:1458 src/kgrgame.cpp:1484 src/kgrgame.cpp:1494
 #: src/kgrgame.cpp:1513 src/kgrgame.cpp:1519
-#, fuzzy, kde-format
-#| msgid "Save Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Game"
 msgstr "Spel opslaan"
@@ -9970,7 +9751,7 @@ msgid ""
 "will be as they were at the start of this level, not as they are now."
 msgstr ""
 "Opmerking: Om het eenvoudiger te maken zal jouw opgeslagen spelpositie en "
-"score zijn zoals ze waren toen je dit niveau startte, niet zoals ze nu zijn."
+"score zijn zoals ze waren toen je dit level startte, niet zoals ze nu zijn."
 
 #: src/kgrgame.cpp:1520
 #, kde-format
@@ -9978,8 +9759,7 @@ msgid "Error: Failed to save your game."
 msgstr "Fout: Spel is niet opgeslagen."
 
 #: src/kgrgame.cpp:1532 src/kgrgame.cpp:1538 src/kgrgame.cpp:1576
-#, fuzzy, kde-format
-#| msgid "Load Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Game"
 msgstr "Spel laden"
@@ -10000,8 +9780,7 @@ msgid "Unknown"
 msgstr "Onbekend"
 
 #: src/kgrgame.cpp:1653 src/kgrgame.cpp:1692
-#, fuzzy, kde-format
-#| msgid "Check for High Score"
+#, kde-format
 msgctxt "@title:window"
 msgid "Check for High Score"
 msgstr "Naar topscore zoeken"
@@ -10029,8 +9808,7 @@ msgid "Error: Failed to save your high score."
 msgstr "Fout: Je topscore kan in opgeslagen worden."
 
 #: src/kgrgame.cpp:1824 src/kgrgame.cpp:1847 src/kgrgame.cpp:1856
-#, fuzzy, kde-format
-#| msgid "Show High Scores"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show High Scores"
 msgstr "Topscores tonen"
@@ -10055,39 +9833,31 @@ msgstr ""
 "spel</h3></center>"
 
 #: src/kgrgame.cpp:1882
-#, fuzzy, kde-format
-#| msgctxt "1, 2, 3 etc."
-#| msgid "Rank"
+#, kde-format
 msgctxt "@title:column 1, 2, 3 etc."
 msgid "Rank"
 msgstr "Rangorde"
 
 #: src/kgrgame.cpp:1883
-#, fuzzy, kde-format
-#| msgctxt "Person"
-#| msgid "Name"
+#, kde-format
 msgctxt "@title:column person"
 msgid "Name"
 msgstr "Naam"
 
 #: src/kgrgame.cpp:1884
-#, fuzzy, kde-format
-#| msgctxt "Game level reached"
-#| msgid "Level"
+#, kde-format
 msgctxt "@title:column game level reached"
 msgid "Level"
-msgstr "Niveau"
+msgstr "Level"
 
 #: src/kgrgame.cpp:1885
-#, fuzzy, kde-format
-#| msgid "Score"
+#, kde-format
 msgctxt "@title:column"
 msgid "Score"
 msgstr "Score"
 
 #: src/kgrgame.cpp:1886
-#, fuzzy, kde-format
-#| msgid "Date"
+#, kde-format
 msgctxt "@title:column"
 msgid "Date"
 msgstr "Datum"
@@ -10099,8 +9869,7 @@ msgid "High Scores"
 msgstr "Topscores"
 
 #: src/kgrgame.cpp:2016 src/kgrgame.cpp:2022 src/kgrgame.cpp:2026
-#, fuzzy, kde-format
-#| msgid "Load Game Info"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Game Info"
 msgstr "Spelinformatie laden"
@@ -10116,8 +9885,7 @@ msgid "Reached end of file '%1' before finding end of game-data."
 msgstr "De spelinformatie in bestand '%1' is onvolledig."
 
 #: src/kgrgame.cpp:2051 src/kgrgame.cpp:2056
-#, fuzzy, kde-format
-#| msgid "Save A Solution"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save a Solution"
 msgstr "Een oplossing opslaan"
@@ -10128,11 +9896,10 @@ msgid "Your solution to level %1 has been saved on file %2"
 msgstr "Uw oplossing naar level %1 is opgeslagen in bestand %2"
 
 #: src/kgrgameio.cpp:163 src/kgrgameio.cpp:168 src/kgrgameio.cpp:172
-#, fuzzy, kde-format
-#| msgid "Read Level Data"
+#, kde-format
 msgctxt "@title:window"
 msgid "Read Level Data"
-msgstr "Niveau laden"
+msgstr "level laden"
 
 #: src/kgrgameio.cpp:164
 #, kde-format
@@ -10142,11 +9909,10 @@ msgstr "Het spelinformatiebestand '%1' is niet gevonden."
 #: src/kgrgameio.cpp:173
 #, kde-format
 msgid "Reached end of file '%1' without finding level data."
-msgstr "Geen informatie over het spelniveau in het bestand '%1' gevonden."
+msgstr "Geen informatie over het spellevel in het bestand '%1' gevonden."
 
 #: src/kgrgameio.cpp:381 src/kgrgameio.cpp:388
-#, fuzzy, kde-format
-#| msgid "Rename File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rename File"
 msgstr "Bestand hernoemen"
@@ -10162,8 +9928,7 @@ msgid "Cannot rename file '%1' to '%2'."
 msgstr "Het bestand '%1' kan niet worden hernoemd naar '%2'."
 
 #: src/kgrrenderer.cpp:100
-#, fuzzy, kde-format
-#| msgid "Theme Selector"
+#, kde-format
 msgctxt "@title:window"
 msgid "Theme Selector"
 msgstr "Themaselectie"
@@ -10180,23 +9945,22 @@ msgstr "Score: %1"
 
 #: src/kgrselector.cpp:72 src/kgrselector.cpp:78 src/kgrselector.cpp:98
 #: src/kgrselector.cpp:501
-#, fuzzy, kde-format
-#| msgid "Select Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Level"
-msgstr "Niveau selecteren"
+msgstr "level selecteren"
 
 #: src/kgrselector.cpp:73
 #, kde-format
 msgid "Sorry, you can only save or move into one of your own games."
 msgstr ""
-"Helaas, niveaus toevoegen of verplaatsen is alleen mogelijk in je eigen "
+"Helaas, levels toevoegen of verplaatsen is alleen mogelijk in je eigen "
 "spellen."
 
 #: src/kgrselector.cpp:79
 #, kde-format
 msgid "Sorry, you can only delete a level from one of your own games."
-msgstr "Helaas, je kan alleen een niveau uit je eigen spellen verwijderen."
+msgstr "Helaas, je kan alleen een level uit je eigen spellen verwijderen."
 
 #: src/kgrselector.cpp:85
 #, kde-format
@@ -10207,7 +9971,7 @@ msgstr "Helaas, je kan alleen de spelinformatie van je eigen spellen bewerken."
 #, kde-format
 msgid "There is no level %1 in \"%2\", so you cannot play or edit it."
 msgstr ""
-"Er is geen niveau %1 in %2. Je kan dat niveau dus niet bewerken of spelen."
+"Er is geen level %1 in %2. Je kan dat level dus niet bewerken of spelen."
 
 #: src/kgrselector.cpp:121 src/kgrselector.cpp:177
 #, kde-format
@@ -10221,29 +9985,25 @@ msgid "<html><b>Please select a game:</b></html>"
 msgstr "<html><b>Spel kiezen:</b></html>"
 
 #: src/kgrselector.cpp:143
-#, fuzzy, kde-format
-#| msgid "Name of Game"
+#, kde-format
 msgctxt "@title:column"
 msgid "Name of Game"
 msgstr "Spelnaam"
 
 #: src/kgrselector.cpp:144
-#, fuzzy, kde-format
-#| msgid "Rules"
+#, kde-format
 msgctxt "@title:column"
 msgid "Rules"
 msgstr "Regels"
 
 #: src/kgrselector.cpp:145
-#, fuzzy, kde-format
-#| msgid "Levels"
+#, kde-format
 msgctxt "@title:column"
 msgid "Levels"
-msgstr "Niveaus"
+msgstr "levels"
 
 #: src/kgrselector.cpp:146
-#, fuzzy, kde-format
-#| msgid "Skill"
+#, kde-format
 msgctxt "@title:column"
 msgid "Skill"
 msgstr "Vaardigheid"
@@ -10251,102 +10011,90 @@ msgstr "Vaardigheid"
 #: src/kgrselector.cpp:179
 #, kde-format
 msgid "Level 1 of the selected game is:"
-msgstr "Niveau 1 van het gekozen spel is:"
+msgstr "level 1 van het gekozen spel is:"
 
 #: src/kgrselector.cpp:183
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Game/Level"
-msgstr "Niveau/spel kiezen"
+msgstr "level/spel kiezen"
 
 #: src/kgrselector.cpp:185
 #, kde-format
 msgid "Please select a level:"
-msgstr "Niveau kiezen:"
+msgstr "level kiezen:"
 
 #: src/kgrselector.cpp:204
-#, fuzzy, kde-format
-#| msgid "Level number:"
+#, kde-format
 msgctxt "@label:spinbox"
 msgid "Level number:"
-msgstr "Niveaunummer:"
+msgstr "levelnummer:"
 
 #: src/kgrselector.cpp:210
-#, fuzzy, kde-format
-#| msgid "Edit Level Name o&r Hint"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit Level Name o&r Hint"
-msgstr "Niveaunaam of tip bewerken"
+msgstr "levelnaam of tip bewerken"
 
 #: src/kgrselector.cpp:245
-#, fuzzy, kde-format
-#| msgid "Start Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Game"
 msgstr "Spel starten"
 
 #: src/kgrselector.cpp:254
-#, fuzzy, kde-format
-#| msgid "Play Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "Play Level"
-msgstr "Speel op niveau"
+msgstr "Speel op level"
 
 #: src/kgrselector.cpp:257
-#, fuzzy, kde-format
-#| msgid "Replay Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "Replay Level"
-msgstr "Niveau opnieuw spelen"
+msgstr "level opnieuw spelen"
 
 #: src/kgrselector.cpp:260
-#, fuzzy, kde-format
-#| msgid "Show Solution"
+#, kde-format
 msgctxt "@action:button"
 msgid "Show Solution"
 msgstr "Oplossing tonen"
 
 #: src/kgrselector.cpp:263
-#, fuzzy, kde-format
-#| msgid "Save A Solution"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save a Solution"
 msgstr "Een oplossing opslaan"
 
 #: src/kgrselector.cpp:266
-#, fuzzy, kde-format
-#| msgid "Edit Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit Level"
-msgstr "Spelniveau bewerken"
+msgstr "Spellevel bewerken"
 
 #: src/kgrselector.cpp:272
-#, fuzzy, kde-format
-#| msgid "Save Change"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save Change"
 msgstr "Wijziging opslaan"
 
 #: src/kgrselector.cpp:275
-#, fuzzy, kde-format
-#| msgid "Delete Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Level"
-msgstr "Spelniveau verwijderen"
+msgstr "Spellevel verwijderen"
 
 #: src/kgrselector.cpp:278
-#, fuzzy, kde-format
-#| msgid "Move To..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Move To…"
-msgstr "Verplaatsen naar..."
+msgstr "Verplaatsen naar…"
 
 #: src/kgrselector.cpp:281
-#, fuzzy, kde-format
-#| msgid "Edit Game Info"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit Game Info"
-msgstr "Spelniveau bewerken"
+msgstr "Spellevel bewerken"
 
 #: src/kgrselector.cpp:357
 #, kde-format
@@ -10382,15 +10130,15 @@ msgstr "Kampioenschap"
 #, kde-format
 msgid "1 level, uses KGoldrunner rules."
 msgid_plural "%1 levels, uses KGoldrunner rules."
-msgstr[0] "1 niveau, gebruikt KGoldrunner-regels."
-msgstr[1] "%1 niveaus, gebruikt KGoldrunner-regels."
+msgstr[0] "1 level, gebruikt KGoldrunner-regels."
+msgstr[1] "%1 levels, gebruikt KGoldrunner-regels."
 
 #: src/kgrselector.cpp:471
 #, kde-format
 msgid "1 level, uses Traditional rules."
 msgid_plural "%1 levels, uses Traditional rules."
-msgstr[0] "%1 niveau, gebruikt traditionele regels."
-msgstr[1] "%1 niveaus, gebruikt traditionele regels."
+msgstr[0] "%1 level, gebruikt traditionele regels."
+msgstr[1] "%1 levels, gebruikt traditionele regels."
 
 #: src/kgrselector.cpp:476
 #, kde-format
@@ -10400,7 +10148,7 @@ msgstr "Er is geen verdere informatie beschikbaar over dit spel."
 #: src/kgrselector.cpp:502
 #, kde-format
 msgid "This level number is not valid. It can not be used."
-msgstr "Dit niveaunummer is ongeldig. Het kan niet worden gebruikt."
+msgstr "Dit levelnummer is ongeldig. Het kan niet worden gebruikt."
 
 #: src/kgrselector.cpp:523
 #, kde-format
@@ -10409,8 +10157,8 @@ msgid ""
 "after choosing a game and level - or use \"Cancel\"."
 msgstr ""
 "De hoofdknop op de bodem komt overeen met de menuhandeling die je hebt "
-"geselecteerd. Klik erop nadat je een spel en niveau hebt gekozen of kies "
-"voor \"Annuleren\"."
+"geselecteerd. Klik erop nadat je een spel en level hebt gekozen of kies voor "
+"\"Annuleren\"."
 
 #: src/kgrselector.cpp:528
 #, kde-format
@@ -10429,7 +10177,7 @@ msgstr ""
 "Als dit de eerste keer is dat je KGoldrunner draait, selecteer dan het "
 "oefenspel. Het oefenspel geeft je tips tijdens het spelen.\n"
 "\n"
-"Klik anders op de naam van een spel in de lijst en klik om bij niveau 001 te "
+"Klik anders op de naam van een spel in de lijst en klik om bij level 001 te "
 "beginnen op de hoofdknop onderaan. Het spel begint als je de muis beweegt of "
 "op een toets drukt."
 
@@ -10446,7 +10194,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Je kan systeemniveaus kiezen om te bewerken (of te kopiëren). Sla vervolgens "
+"Je kan systeemlevels kiezen om te bewerken (of te kopiëren). Sla vervolgens "
 "wel het resultaat op in een spel dat je hebt aangemaakt. Gebruik de linker "
 "muisknop als een verfkwast en de werkbalkknoppen als een palet. Gebruik de "
 "knop 'Wissen' of de rechter muisknop om iets te wissen. U kunt slepen met "
@@ -10464,10 +10212,10 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Je kan hier een naam en tip toevoegen aan je nieuwe niveau. Sla daarna wel "
-"het niveau op in een van je eigen spellen. Standaard zal jouw nieuwe niveau "
-"op het einde van jouw spel worden geplaatst. Je kan ook een niveaunummer "
-"kiezen om het niveau ergens in het midden van het spel op te slaan."
+"Je kan hier een naam en tip toevoegen aan je nieuwe level. Sla daarna wel "
+"het level op in een van je eigen spellen. Standaard zal jouw nieuwe level op "
+"het einde van jouw spel worden geplaatst. Je kan ook een levelnummer kiezen "
+"om het level ergens in het midden van het spel op te slaan."
 
 #: src/kgrselector.cpp:552
 #, kde-format
@@ -10482,10 +10230,10 @@ msgstr ""
 "\n"
 "\n"
 "Je kan hier een naam en tip aanmaken of bewerken voordat je alles opslaat. "
-"Als je het spel of niveau wijzigt kan je ook een kopie maken of kiezen voor "
+"Als je het spel of level wijzigt kan je ook een kopie maken of kiezen voor "
 "\"Opslaan als\". Je kan echter alleen opslaan in een van je eigen spellen. "
-"Als je een niveau in het midden van een serie wilt plaatsen worden de andere "
-"niveaus automatisch opnieuw genummerd."
+"Als je een level in het midden van een serie wilt plaatsen worden de andere "
+"levels automatisch opnieuw genummerd."
 
 #: src/kgrselector.cpp:559
 #, kde-format
@@ -10497,8 +10245,8 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Jekan alleen niveaus uit een van je eigen spellen verwijderen. Als je een "
-"niveau verwijdert uit het midden van een serie zullen de andere niveaus "
+"Jekan alleen levels uit een van je eigen spellen verwijderen. Als je een "
+"level verwijdert uit het midden van een serie zullen de andere levels "
 "automatisch opnieuw worden genummerd."
 
 #: src/kgrselector.cpp:564
@@ -10513,11 +10261,11 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Om een niveau te verplaatsen (hernummeren), selecteer u eerst via de optie "
-"\"Een niveau bewerken...\" en gebruik vervolgens de optie \"Niveau "
+"Om een level te verplaatsen (hernummeren), selecteer u eerst via de optie "
+"\"Een level bewerken...\" en gebruik vervolgens de optie \"level "
 "verplaatsen...\" om het toe te wijzen aan een nieuw nummer of zelfs een "
-"ander spel. De overige niveaus worden automatisch opnieuw genummerd als dat "
-"nodig is. Je kan alleen niveaus verplaatsen in je eigen spellen."
+"ander spel. De overige levels worden automatisch opnieuw genummerd als dat "
+"nodig is. Je kan alleen levels verplaatsen in je eigen spellen."
 
 #: src/kgrselector.cpp:571
 #, kde-format
@@ -10549,19 +10297,18 @@ msgstr ""
 "\n"
 "\n"
 "Klik in de tabel om een spel te kiezen. Onder de tabel staat meer informatie "
-"over het gekozen spel, het aantal spelniveaus, hoe moeilijk het spel is en "
+"over het gekozen spel, het aantal spellevels, hoe moeilijk het spel is en "
 "welke regels de vijanden volgen (kijk in KGoldrunner handleiding).\n"
 "\n"
-"U selecteert een niveau door het bijhorende nummer in te typen of door "
-"middel van de draaiknop of schuifbalk. Voor elk niveau wordt een "
-"miniatuurafbeelding getoond met een voorbeeld van het spelniveau."
+"U selecteert een level door het bijhorende nummer in te typen of door middel "
+"van de draaiknop of schuifbalk. Voor elk level wordt een miniatuurafbeelding "
+"getoond met een voorbeeld van het spellevel."
 
 #: src/kgrselector.cpp:589
-#, fuzzy, kde-format
-#| msgid "Help: Select Game & Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Help: Select Game & Level"
-msgstr "Help: selecteer het spel en niveau"
+msgstr "Help: selecteer het spel en level"
 
 #: src/main.cpp:31
 #, kde-format
