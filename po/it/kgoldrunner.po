@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-17 00:36+0000\n"
-"PO-Revision-Date: 2024-05-03 21:48+0200\n"
+"PO-Revision-Date: 2024-05-06 22:12+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -870,7 +870,7 @@ msgid ""
 msgstr ""
 "Per raggiungere l'oro più a sinistra lasciati cadere su di esso dall'alto, "
 "facendo un passo di una casella a destra o a sinistra mentre cadi. Scava "
-"immediatamente la casella subito sotto l'oro ed entraci. Il falso pavimento "
+"immediatamente il quadrato subito sotto l'oro ed entraci. Il falso pavimento "
 "ti farà scendere fino in fondo."
 
 #: gamedata/game_cnt.txt:26
@@ -982,7 +982,7 @@ msgid ""
 "the left most square of the top of the 7 and wait there until enemies fill "
 "the holes on top of the 7."
 msgstr ""
-"L'oro sulla cima del 7 è la sfida principale. All'inizio, sali sul mattone "
+"L'oro sulla cima del 7 è la sfida principale. All'inizio, sali sul quadrato "
 "più a sinistra della cima del 7 ed aspetta fino a quando i nemici avranno "
 "riempito i buchi."
 
@@ -1327,9 +1327,9 @@ msgstr ""
 "intrappolare nuovamente nella stessa sezione, comunque.\n"
 "\n"
 "Per raccogliere l'oro sorvegliato dai nemici in basso a destra, scava il "
-"mattone alla loro sinistra, corri in cima alla scala, scava via il lato "
+"quadrato alla loro sinistra, corri in cima alla scala, scava via il lato "
 "destro del 6, entra nel buco appena fatto, corri a sinistra, scava un "
-"mattone sul lato sinistro del 6 e buttatici dentro. Il tempo è pochissimo – "
+"quadrato sul lato sinistro del 6 e buttatici dentro. Il tempo è pochissimo – "
 "solo uno o due nemici dalla sezione a destra in basso riusciranno a "
 "spostarsi nella sezione successiva a sinistra. Dovrai ancora scavare il "
 "fondo del 6 per prendere il loro oro, ma è facile, anche se un po' "
@@ -7714,10 +7714,10 @@ msgid ""
 msgstr ""
 "Prova a radunare i nemici andando verso il centro e poi in basso. Ora "
 "intrappolali nella zona inferiore, ignorando l'oro che vi si trova per il "
-"momento. Resta su un lato subito sopra di loro, poi lasciati cadere di una "
-"casella mentre i nemici risalgono.\n"
+"momento. Resta su un lato subito sopra di loro, poi lasciati cadere di un "
+"quadrato mentre i nemici risalgono.\n"
 "\n"
-"Raccogli tutto l;oro che non si trova nella fossa, poi lascia uscire i "
+"Raccogli tutto l'oro che non si trova nella fossa, poi lascia uscire i "
 "nemici e portali in giro in cima alle scale, finché non rilasciano l'oro."
 
 #: gamedata/game_wad.txt:51
@@ -8694,7 +8694,7 @@ msgstr "Modifica il nome o il suggerimento del livello"
 #: src/kgoldrunner.cpp:913
 #, kde-format
 msgid "Edit text for the name or hint of a level"
-msgstr "Modifica il testo per il none o per il suggerimento di un livello"
+msgstr "Modifica il testo per il nome o per il suggerimento di un livello"
 
 #: src/kgoldrunner.cpp:916
 #, kde-format
@@ -8714,12 +8714,12 @@ msgstr "Spazio/Cancella"
 #: src/kgoldrunner.cpp:920
 #, kde-format
 msgid "Paint empty squares or erase"
-msgstr "Disegna spazi vuoti o cancella"
+msgstr "Disegna quadrati vuoti o cancella"
 
 #: src/kgoldrunner.cpp:921
 #, kde-format
 msgid "Erase objects or paint empty squares"
-msgstr "Cancella gli oggetti usando una cella vuota"
+msgstr "Cancella gli oggetti o dipingi quadrati vuoti"
 
 #: src/kgoldrunner.cpp:924
 #, kde-format
@@ -8804,7 +8804,7 @@ msgstr "Scala"
 #: src/kgoldrunner.cpp:953
 #, kde-format
 msgid "Paint ladders"
-msgstr "Scala nascosta"
+msgstr "Disegna le scale"
 
 #: src/kgoldrunner.cpp:954
 #, kde-format
@@ -8864,7 +8864,7 @@ msgstr "Oro/tesoro"
 #: src/kgoldrunner.cpp:970
 #, kde-format
 msgid "Paint gold (or other treasure)"
-msgstr "Disegna l'oro (o gli altri tesori)"
+msgstr "Disegna l'oro (o altro tesoro)"
 
 #: src/kgoldrunner.cpp:971
 #, kde-format
@@ -9886,7 +9886,7 @@ msgstr ""
 "sinistro del mouse come un pennello ed i pulsanti sulla barra degli "
 "strumenti di modifica come una tavolozza. Usa il pulsante «Cancella» o il "
 "tasto destro del mouse per cancellare. Tenendo premuto il tasto del mouse "
-"potrai disegnare o cancellare più caselle con una sola azione."
+"potrai disegnare o cancellare più quadrati con una sola azione."
 
 #: src/kgrselector.cpp:545
 #, kde-format
