@@ -9987,39 +9987,3 @@ msgstr ""
 #, kde-format
 msgid "Artwork for the Treasure of Egypt theme"
 msgstr "Bilde for temaet «Skatten i Egypt»"
-
-#~ msgid "&Save Game..."
-#~ msgstr "&Lagre spillet …"
-
-#~ msgid "Kill Hero."
-#~ msgstr "Drep helten."
-
-#~ msgid "&Edit Level..."
-#~ msgstr "&Rediger brett …"
-
-#~ msgid "Edit level..."
-#~ msgstr "Rediger brett …"
-
-#~ msgid "&Move Level..."
-#~ msgstr "&Flytt brett …"
-
-#~ msgid "Move level..."
-#~ msgstr "Flytt brett …"
-
-#~ msgid "&Delete Level..."
-#~ msgstr "&Slett brett …"
-
-#~ msgid "Delete level..."
-#~ msgstr "Slett brett …"
-
-#~ msgid "Edit Game &Info..."
-#~ msgstr "Rediger spill&info …"
-
-#~ msgid "Click Key To Move."
-#~ msgstr "Trykk tast for å flytte"
-
-#~ msgid "Hold Key To Move."
-#~ msgstr "Hold tast for å flytte"
-
-#~ msgid "Save High Score"
-#~ msgstr "Lagre rekord"

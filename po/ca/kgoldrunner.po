@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-06 00:36+0000\n"
-"PO-Revision-Date: 2024-05-06 11:52+0200\n"
+"PO-Revision-Date: 2024-05-07 12:30+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -9015,7 +9015,8 @@ msgstr "Pinta escales ocultes"
 msgctxt "@info:whatsthis"
 msgid "Paints hidden ladders, which appear when all the gold is gone."
 msgstr ""
-"Pinta les escales ocultes, les quals apareixeran quan ha desaparegut tot l'or"
+"Pinta les escales ocultes, les quals apareixeran quan ha desaparegut tot "
+"l'or."
 
 #: src/kgoldrunner.cpp:964
 #, kde-format
