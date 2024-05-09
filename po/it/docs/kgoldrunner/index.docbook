@@ -556,7 +556,7 @@
 
 <sect2 id="recordings-replays-and-solutions">
 <title
->Registrazione, replay e soluzioni</title>
+>Registrazione, riproduzioni e soluzioni</title>
 
 <para
 >Tutti i livelli delle partite vengono registrati durante il gioco, in modo da poter giocare di nuovo tutti i livelli giocati in precedenza. Inoltre, alcuni livelli hanno delle soluzioni registrate che potrebbero aiutare a capire come passarli. Usa il menu <guimenu
@@ -2374,7 +2374,7 @@ linkend="settings-menu"
 </listitem>
 <listitem>
 <para
->USa <menuchoice
+>Usa <menuchoice
 ><guimenu
 >Mossa</guimenu
 ><guimenuitem
