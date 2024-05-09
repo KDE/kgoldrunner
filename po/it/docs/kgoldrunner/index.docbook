@@ -222,7 +222,7 @@
 ><guimenu
 >Partita</guimenu
 ><guimenuitem
->Nuova partita...</guimenuitem
+>Nuova partita…</guimenuitem
 ></menuchoice
 > o <keycombo action="simul"
 >&Ctrl;<keycap
@@ -251,7 +251,7 @@
 > per iniziare a giocare immediatamente. Altrimenti puoi premere il pulsante <guibutton
 >Esci</guibutton
 >, il pulsante <guibutton
->Nuova partita...</guibutton
+>Nuova partita…</guibutton
 > o il pulsante <guibutton
 >Usa il menu</guibutton
 >. Il primo farà terminare &kgoldrunner;, se non vuoi giocare, il secondo mostrerà la finestra <link linkend="select-game-dialog"
@@ -331,7 +331,7 @@
 >. Puoi anche scegliere altri tasti, usando la voce del menu <guimenu
 >Impostazioni</guimenu
 > <guimenuitem
->Configura le scorciatoie...</guimenuitem
+>Configura le scorciatoie…</guimenuitem
 >.</para>
 
 <para
@@ -556,7 +556,7 @@
 
 <sect2 id="recordings-replays-and-solutions">
 <title
->Registrazione, replay e soluzioni</title>
+>Registrazione, riproduzioni e soluzioni</title>
 
 <para
 >Tutti i livelli delle partite vengono registrati durante il gioco, in modo da poter giocare di nuovo tutti i livelli giocati in precedenza. Inoltre, alcuni livelli hanno delle soluzioni registrate che potrebbero aiutare a capire come passarli. Usa il menu <guimenu
@@ -573,7 +573,7 @@
 ><guimenu
 >Partita</guimenu
 ><guimenuitem
->Nuova partita...</guimenuitem
+>Nuova partita…</guimenuitem
 ></menuchoice
 > o <keycombo action="simul"
 >&Ctrl;<keycap
@@ -739,7 +739,7 @@
 
 <para
 >Questa finestra appare quando selezioni l'azione <guimenuitem
->Nuova partita</guimenuitem
+>Nuova partita…</guimenuitem
 > e anche quando selezioni delle opzioni dal menu <guimenu
 >Editor</guimenu
 > o qualsiasi opzioni di riproduzione dal menu <guimenu
@@ -977,7 +977,7 @@ linkend="settings-menu"
 > <guimenu
 >Partita</guimenu
 ><guimenuitem
->Nuova partita...</guimenuitem
+>Nuova partita…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1002,7 +1002,7 @@ linkend="settings-menu"
 > <guimenu
 >Partita</guimenu
 ><guimenuitem
->Carica partita salvata...</guimenuitem
+>Carica partita salvata…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1042,7 +1042,7 @@ linkend="settings-menu"
 > <guimenu
 >Partita</guimenu
 ><guimenuitem
->Salva la partita...</guimenuitem
+>Salva la partita…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1067,7 +1067,7 @@ linkend="settings-menu"
 > <guimenu
 >Partita</guimenu
 ><guimenuitem
->Salva le modifiche...</guimenuitem
+>Salva le modifiche…</guimenuitem
 > </menuchoice>
 </term>
 <listitem
@@ -1078,7 +1078,7 @@ linkend="settings-menu"
 ><guimenuitem
 >Editor</guimenuitem
 > <guimenuitem
->Salva le modifiche</guimenuitem
+>Salva le modifiche…</guimenuitem
 ></menuchoice
 > e dell'icona <guiicon
 >disco</guiicon
@@ -1098,7 +1098,7 @@ linkend="settings-menu"
 > <guimenu
 >Partita</guimenu
 ><guimenuitem
->Salva una soluzione...</guimenuitem
+>Salva una soluzione…</guimenuitem
 > </menuchoice>
 </term>
 <listitem
@@ -1144,7 +1144,7 @@ linkend="settings-menu"
 > <guimenu
 >Partita</guimenu
 ><guimenuitem
->Mostra la classifica...</guimenuitem
+>Mostra la classifica…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1209,7 +1209,7 @@ linkend="settings-menu"
 ><guimenu
 >Partita</guimenu
 > <guimenuitem
->Nuova partita</guimenuitem
+>Nuova partita…</guimenuitem
 ></menuchoice
 > o <keycombo action="simul"
 >&Ctrl;<keycap
@@ -1380,7 +1380,7 @@ linkend="settings-menu"
 <listitem>
 <para
 >Mostra la barra degli strumenti dell'Editor ed un'area di gioco vuota in cui potrai disegnare un nuovo livello. Una volta finito, usa l'opzione <guimenuitem
->Salva le modifiche...</guimenuitem
+>Salva le modifiche…</guimenuitem
 > per assegnare il nuovo livello ad una partita e ad un numero di livello.</para>
 </listitem>
 </varlistentry>
@@ -1391,7 +1391,7 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 ><guimenuitem
->Modifica il livello</guimenuitem
+>Modifica il livello…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1414,7 +1414,7 @@ linkend="settings-menu"
 > <guimenu
 >Editor</guimenu
 ><guimenuitem
->Salva le modifiche</guimenuitem
+>Salva le modifiche…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1422,7 +1422,7 @@ linkend="settings-menu"
 >Mostra la finestra <guilabel
 >Seleziona la partita</guilabel
 > con le appropriate impostazioni predefinite per salvare un livello nuovo o modificato. Puoi cambiare la partita ed il numero di livello ed ottenere un effetto simile a <quote
->Salva come</quote
+>Salva come…</quote
 >. Questa finestra ha un pulsante speciale, <guibutton
 >Modifica nome o suggerimento del livello</guibutton
 >, che apre un'altra finestra in cui puoi aggiungere un nome facoltativo ed un suggerimento al tuo livello.</para>
@@ -1435,13 +1435,13 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 ><guimenuitem
->Sposta il livello</guimenuitem
+>Sposta il livello…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
 <para
 >Questa è un'operazione in due parti. Prima di usare <guimenuitem
->Sposta il livello...</guimenuitem
+>Sposta il livello…</guimenuitem
 > devi caricare un livello da spostare, selezionandolo per il gioco o la modifica. Fatto ciò, mostra la finestra <guimenuitem
 >Seleziona la partita</guimenuitem
 > in cui sceglierai un nuovo posto per il livello caricato. Puoi cambiare sia la partita che il numero del livello, spostare un livello ad un'altra partita, o puoi cambiare solo il numero del livello per riordinare i livelli di una partita. Non puoi spostare un livello di sistema.</para>
@@ -1454,7 +1454,7 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 ><guimenuitem
->Elimina il livello...</guimenuitem
+>Elimina il livello…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1471,7 +1471,7 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 ><guimenuitem
->Crea partita...</guimenuitem
+>Crea partita…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1490,7 +1490,7 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 ><guimenuitem
->Modifica informazioni sul gioco...</guimenuitem
+>Modifica informazioni sul gioco…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1819,7 +1819,7 @@ linkend="settings-menu"
 ><guimenu
 >Impostazioni</guimenu
 ><guimenuitem
->Configura le scorciatoie</guimenuitem
+>Configura le scorciatoie…</guimenuitem
 > </menuchoice
 ></term>
 <listitem>
@@ -1865,7 +1865,7 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 > <guimenuitem
->Crea partita...</guimenuitem
+>Crea partita…</guimenuitem
 ></menuchoice
 >. Se lo dimentichi, ti verrà ricordato.</para>
 
@@ -1944,7 +1944,7 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 > <guimenuitem
->Modifica il livello...</guimenuitem
+>Modifica il livello…</guimenuitem
 ></menuchoice
 > per iniziare a modificare un livello esistente o la voce <menuchoice
 ><guimenu
@@ -1967,7 +1967,7 @@ linkend="settings-menu"
 >L'immagine sotto mostra la barra dei menu e la barra degli strumenti di modifica, che appare quando scegli le opzioni <guimenuitem
 >Crea livello</guimenuitem
 > o <guimenuitem
->Modifica il livello...</guimenuitem
+>Modifica il livello…</guimenuitem
 > per la prima volta dal menu <guimenu
 >Editor</guimenu
 > passando così dalla modalità di gioco a quella di modifica. Sparisce quando si torna in modalità Gioco. Nota anche che, in modalità Modifica, i mattoni finti e le scale nascoste sono resi visibili nell'area di gioco.</para>
@@ -1976,9 +1976,9 @@ linkend="settings-menu"
 >Le tre icone alla sinistra barra degli strumenti di modifica hanno la stessa funzione delle opzioni di menu <guimenuitem
 >Crea livello</guimenuitem
 >, <guimenuitem
->Modifica il livello...</guimenuitem
+>Modifica il livello…</guimenuitem
 > e <guimenuitem
->Salva le modifiche...</guimenuitem
+>Salva le modifiche…</guimenuitem
 >. Le altre undici icone servono a modificare ed a colorare gli oggetti nel tuo livello.</para>
 
 
@@ -2056,13 +2056,13 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 > <guimenuitem
->Salva le modifiche...</guimenuitem
+>Salva le modifiche…</guimenuitem
 ></menuchoice
 > o <menuchoice
 ><guimenu
 >Partita</guimenu
 > <guimenuitem
->Salva le modifiche...</guimenuitem
+>Salva le modifiche…</guimenuitem
 ></menuchoice
 >. Devi sempre salvare in una tua partita, mai in una di sistema.</para>
 
@@ -2070,7 +2070,7 @@ linkend="settings-menu"
 >Se stai creando un livello, usa la finestra <guilabel
 >Seleziona la partita</guilabel
 > per assegnarlo ad una partita e ad un numero di livello. Usi la stessa finestra di dialogo se stavi modificando un livello, ma l'azione predefinita è di salvarlo da dove proveniva. Puoi cambiare la partita ed il livello, per ottenere l'effetto di <quote
->Salva come</quote
+>Salva come…</quote
 >. Se stavi modificando un livello di Sistema devi salvarlo come una copia in una delle tue partite.</para>
 
 </sect2>
@@ -2101,13 +2101,13 @@ linkend="settings-menu"
 ><guimenu
 >Partita</guimenu
 > <guimenuitem
->Nuova partita...</guimenuitem
+>Nuova partita…</guimenuitem
 ></menuchoice
 > o la sua scorciatoia da tastiera. La partita ed il numero del livello sono automaticamente memorizzati, quindi puoi entrare direttamente nel livello con pochi passi. Se poi vuoi modificarlo ancora, la stessa cosa accade quando usi nuovamente la voce di menu <menuchoice
 ><guimenu
 >Partita</guimenu
 > <guimenuitem
->Modifica il livello...</guimenuitem
+>Modifica il livello…</guimenuitem
 ></menuchoice
 >. È essenziale che provi a giocare a tutti i livelli che componi, per assicurarti che sia possibile completarli e che non siano troppo semplici.</para>
 
@@ -2149,7 +2149,7 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 > <guimenuitem
->Elimina il livello...</guimenuitem
+>Elimina il livello…</guimenuitem
 ></menuchoice
 > per rimuovere un livello non voluto. Gli altri livelli vengono rinumerati in modo da richiudere il buco nella sequenza.</para>
 
@@ -2374,7 +2374,7 @@ linkend="settings-menu"
 </listitem>
 <listitem>
 <para
->USa <menuchoice
+>Usa <menuchoice
 ><guimenu
 >Mossa</guimenu
 ><guimenuitem
