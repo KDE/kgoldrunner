@@ -570,8 +570,8 @@ msgstr ""
 "\n"
 "Després d'aconseguir l'última peça del tresor, ix a la dreta i corre escales "
 "amunt. La part inferior esquerra és l'única part difícil: n'hi ha prou amb "
-"córrer davall les mòmies de l'escala per damunt teu i de maniobrar... i "
-"tindre esperança!"
+"córrer davall les mòmies de l'escala per damunt teu i de maniobrar… i tindre "
+"esperança!"
 
 #: gamedata/game_CM.txt:118
 #, kde-format
@@ -1436,8 +1436,8 @@ msgstr ""
 "acabes empresonat.\n"
 "\n"
 "Però la policia ací és molt despistada i si intentes escapar, no perdran la "
-"son en matar-te... Ves amb compte i el que és més important: has de ser "
-"ràpid -- o morir!\n"
+"son en matar-te… Ves amb compte i el que és més important: has de ser ràpid "
+"-- o morir!\n"
 "\n"
 "Estos nivells de campionat utilitzen les regles ràpides de KGoldrunner ràpid "
 "i els ha creat Gabriel Miltschitzky [gabriel dot miltschitzky at freenet "
@@ -1459,7 +1459,7 @@ msgstr ""
 "Tal com diu el nom del nivell, no has de tindre por en absolut.\n"
 "\n"
 "És molt fàcil escapar d'esta presó, perquè els mateixos guardes estan "
-"atrapats i no et poden tocar..."
+"atrapats i no et poden tocar…"
 
 #: gamedata/game_GMEP.txt:16
 #, kde-format
@@ -1478,7 +1478,7 @@ msgstr ""
 "\n"
 "El truc consistix a embolicar els enemics. Si pots fer que cada un caiga en "
 "un bloc concret, açò t'ajudaria. D'altra banda, pots senzillament córrer "
-"molt..."
+"molt…"
 
 #: gamedata/game_GMEP.txt:22
 #, kde-format
@@ -1524,7 +1524,7 @@ msgstr "Enemics caent (2) - Excavant"
 #: gamedata/game_GMEP.txt:35
 #, kde-format
 msgid "Start the level with a click. The rest should be self-explanatory..."
-msgstr "Comença el nivell amb un clic. La resta s'explicarà tot sol..."
+msgstr "Comença el nivell amb un clic. La resta s'explicarà tot sol…"
 
 #: gamedata/game_GMEP.txt:38
 #, kde-format
@@ -1580,7 +1580,7 @@ msgstr ""
 "Has escapat molt bé els darrers nivells.\n"
 "\n"
 "Ara tornes a ser lliure i pots fer tot el que vullgues. Qualsevol cosa "
-"excepte tornar a robar l'or. No cal dir..."
+"excepte tornar a robar l'or. No cal dir…"
 
 #: gamedata/game_GMEP.txt:56
 #, kde-format
@@ -1606,7 +1606,7 @@ msgstr ""
 "Excava els maons propers a la barra. En caure, troba una forma de tornar "
 "ràpidament a la barra de manera que pugues creuar per damunt dins del "
 "nínxol. Per descomptat, tan sols ho aconseguiràs si saps com i no "
-"desistixes. No hi ha molt temps a perdre..."
+"desistixes. No hi ha molt temps a perdre…"
 
 #: gamedata/game_GMEP.txt:64
 #, kde-format
@@ -1675,9 +1675,9 @@ msgstr ""
 "tots els guardes d'este lloc.\n"
 "\n"
 "El següent guarda hauria de ser fàcil de passar, però després d'açò tindràs "
-"una mica de treball per a fer... Quan escales l'escala propera el formigó, "
-"el guarda començarà a córrer a l'escala de l'extrem esquerre i tornarà. Has "
-"de trobar el moment correcte per a creuar per damunt del seu cap.\n"
+"una mica de treball per a fer… Quan escales l'escala propera el formigó, el "
+"guarda començarà a córrer a l'escala de l'extrem esquerre i tornarà. Has de "
+"trobar el moment correcte per a creuar per damunt del seu cap.\n"
 "\n"
 " A l'última secció s'ha d'excavar una mica. Primer deixa't caure a través "
 "del túnel de maons falsos a l'esquerra, sense oblidar agafar l'or mentre vas "
@@ -1745,7 +1745,7 @@ msgstr ""
 "escales més altes.\n"
 "\n"
 "Millor que et portes bé amb el teu company: probablement hauràs de seguir "
-"amb ell un grapat de nivells..."
+"amb ell un grapat de nivells…"
 
 #: gamedata/game_GMEP.txt:98
 #, kde-format
@@ -1830,7 +1830,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:16
 #, kde-format
 msgid "Have A Nice Flight..."
-msgstr "Que tingues un bon vol..."
+msgstr "Que tingues un bon vol…"
 
 #: gamedata/game_GMGR.txt:17
 #, kde-format
@@ -1948,7 +1948,7 @@ msgid ""
 "Before entering any of the structures on the right, make sure you have an "
 "escape route."
 msgstr ""
-"Esperar o no esperar? Bé, prova-ho...\n"
+"Esperar o no esperar? Bé, prova-ho…\n"
 "\n"
 "Abans d'entrar en qualsevol de les estructures de la dreta, assegura't una "
 "via d'escapada."
@@ -2161,7 +2161,7 @@ msgstr ""
 "\n"
 "Però com vaig fins a l'altra banda?\n"
 "\n"
-"Prova i error..."
+"Prova i error…"
 
 #: gamedata/game_GMGR.txt:114
 #, kde-format
@@ -2349,7 +2349,7 @@ msgid ""
 msgstr ""
 "L'apocalipsi zombi està sobre nosaltres i eres l'últim humà que queda amb "
 "vida a la Terra, però els zombis encara tenen molt d'or. No obstant açò, en "
-"ser zombis, estan més interessats en tu que en el tresor...\n"
+"ser zombis, estan més interessats en tu que en el tresor…\n"
 "\n"
 "Cinquanta nivells de campionat, inclosos consells i solucions enregistrades, "
 "d'en Gabriel Miltschitzky, abril de 2021."
@@ -2392,7 +2392,7 @@ msgid ""
 "refills."
 msgstr ""
 "Eres l'únic ser humà que ha sobreviscut a l'apocalipsi zombi i encara no "
-"pots pensar en res més que en el teu or? Doncs bé, vegem quin bé et farà...\n"
+"pots pensar en res més que en el teu or? Doncs bé, vegem quin bé et farà…\n"
 "\n"
 "Primer consell: cada nivell té una solució enregistrada, així que, en cas de "
 "dubte, dona un colp d'ull. Segon consell: et pots quedar encallat amb "
@@ -2469,7 +2469,7 @@ msgstr ""
 "Compte! Este és un zombi. Tan prompte com el deixes anar, intentarà matar-"
 "te!\n"
 "\n"
-"D'altra banda, no hi ha cap altra manera de passar-hi...\n"
+"D'altra banda, no hi ha cap altra manera de passar-hi…\n"
 "\n"
 "No obstant açò, no és del tot inútil. Caminar sobre el seu cap et permetrà "
 "aconseguir certes peces d'or que d'altra manera estarien fora del teu "
@@ -2486,7 +2486,7 @@ msgstr "Ziga-zaga"
 #: gamedata/game_GotD.txt:40
 #, kde-format
 msgid "This is as easy as it gets..."
-msgstr "Açò és tan fàcil com pareix..."
+msgstr "Açò és tan fàcil com pareix…"
 
 #: gamedata/game_GotD.txt:43 gamedata/game_wad.txt:63
 #, kde-format
@@ -2983,7 +2983,7 @@ msgstr ""
 "\n"
 "El zombi que reapareix podria complicar-te una mica la vida. Assegura't que "
 "no caiga a les escales inferiors amb una peça d'or. Si reapareix prop de la "
-"seua posició inicial original, hauràs tingut sort..."
+"seua posició inicial original, hauràs tingut sort…"
 
 #: gamedata/game_GotD.txt:165
 #, kde-format
@@ -3162,7 +3162,7 @@ msgid ""
 "route carefully before you dig down. Zombies can also be used to fill the "
 "gaps."
 msgstr ""
-"No vull espatlar la sorpresa...\n"
+"No vull espatlar la sorpresa…\n"
 "\n"
 "Tanmateix, quan arribes als maons per damunt de l'or, hauràs de planificar "
 "amb cura una ruta d'escapada abans d'excavar. Els zombis també es poden "
@@ -3196,7 +3196,7 @@ msgid ""
 msgstr ""
 "Utilitza els maons falsos per a lliscar per davall dels zombis. Quan arribes "
 "a la part inferior, deixa eixir a tots els zombis de la presó. Podria ser "
-"necessari tornar-los-hi a introduir..."
+"necessari tornar-los-hi a introduir…"
 
 #: gamedata/game_GotD.txt:223
 #, kde-format
@@ -3249,7 +3249,7 @@ msgstr ""
 "Quan caiguen els quatre zombis, puja i espera a la dreta del pou de formigó "
 "fins que els zombis s'acosten i l'òmpliguen de nou. Després canvia de costat "
 "i espera a l'esquerra del formigó. Començaran este esgarrifós ball de "
-"zombis...\n"
+"zombis…\n"
 "\n"
 "Ves fins a dalt de l'escala i passa per damunt dels seus caps fins a la fila "
 "d'escales curtes. Espera a dalt de l'escala curta més a l'esquerra i torna a "
@@ -3318,7 +3318,7 @@ msgstr ""
 "Si un dels zombis ha arribat a l'escala abans que tu, intenta pujar-la. "
 "Sovint, açò farà que el zombi fugi i potser eixirà cap a un costat i caiga. "
 "El zombi només pujarà fins on crega que és l'eixida més propera, però no "
-"entén gaire la gravetat... A la dreta hi ha una barra al costat de l'escala, "
+"entén gaire la gravetat… A la dreta hi ha una barra al costat de l'escala, "
 "que està bé, però a l'esquerra hi ha una peça d'or al costat de l'escala i "
 "els zombis creuen que poden caminar-hi per damunt, de manera que només "
 "passaran un espai més enllà si els feu pujar per l'escala.\n"
@@ -3382,7 +3382,7 @@ msgstr ""
 "juntament amb l'or, cavant els maons a la seua esquerra i atraent-lo cap a "
 "ells. A vegades es torna intel·ligent i deixa caure l'or abans de quedar "
 "atrapat, de manera que hauràs de repetir tot el procés. Moure's ràpidament "
-"farà que açò siga menys probable...\n"
+"farà que açò siga menys probable…\n"
 "\n"
 "Quan el zombi reaparega a la part superior, atraeu-lo cap al costat "
 "esquerre, passa'l i assegura't que et seguisca quan caves a través de la "
@@ -3547,7 +3547,7 @@ msgstr ""
 "\n"
 "Pel que fa als trencaclosques de temps d'excavació en les caixes, seguix el "
 "meu consell, és millor entrar-hi amb més freqüència que intentar aconseguir-"
-"lo tot d'una vegada i quedar-hi tancat..."
+"lo tot d'una vegada i quedar-hi tancat…"
 
 #: gamedata/game_GotD.txt:303
 #, kde-format
@@ -3557,7 +3557,7 @@ msgstr "Pluja de zombis"
 #: gamedata/game_GotD.txt:304
 #, kde-format
 msgid "Let us see if you have learned your lesson about zombies and ladders..."
-msgstr "Vegem si has aprés la lliçó sobre zombis i escales..."
+msgstr "Vegem si has aprés la lliçó sobre zombis i escales…"
 
 #: gamedata/game_GotD.txt:307
 #, kde-format
@@ -3586,7 +3586,7 @@ msgstr "Entre els zombis"
 #: gamedata/game_GotD.txt:314
 #, kde-format
 msgid "All it takes is good strong nerves..."
-msgstr "Només cal tindre nervis ben forts..."
+msgstr "Només cal tindre nervis ben forts…"
 
 #: gamedata/game_GotD.txt:317
 #, kde-format
@@ -3602,7 +3602,7 @@ msgid ""
 msgstr ""
 "Açò és el que passa amb els zombis: com més lent, més esgarrifós.\n"
 "\n"
-"Afanya't i resol estos trencaclosques. El rellotge està corrent..."
+"Afanya't i resol estos trencaclosques. El rellotge està corrent…"
 
 #: gamedata/game_GotD.txt:323
 #, kde-format
@@ -3630,7 +3630,7 @@ msgid ""
 "you are level with the bricks the zombies are walking on..."
 msgstr ""
 "Observa el que passa si puges per una escala lateral, però només fins nivell "
-"dels maons per damunt dels quals caminen els zombis..."
+"dels maons per damunt dels quals caminen els zombis…"
 
 #: gamedata/game_GotD.txt:331
 #, kde-format
@@ -3874,7 +3874,7 @@ msgstr ""
 "\n"
 "Per a l'or de la part inferior, pensa a on pot estar la ruta d'eixida abans "
 "de començar a cavar l'or, perquè no tindràs temps de reflexionar quan "
-"estigues dins del pou gran..."
+"estigues dins del pou gran…"
 
 #: gamedata/game_GRII.txt:50 gamedata/game_plwv.txt:61
 #, kde-format
@@ -4054,7 +4054,7 @@ msgstr ""
 "curta abans de les dues escales llargues. Espera fins que salte cap avall, "
 "quan podràs pujar i escapar.\n"
 "\n"
-"Si aconseguixes que sobrevisquen tots tres enemics, hauràs tingut sort..."
+"Si aconseguixes que sobrevisquen tots tres enemics, hauràs tingut sort…"
 
 #: gamedata/game_GRII.txt:88
 #, kde-format
@@ -4133,7 +4133,7 @@ msgstr ""
 "l'or i torna. En l'últim maó caldrà cavar les dues bandes a la vegada.\n"
 "\n"
 "L'or de dins del quadro gran demana una mica de reflexió. I també cal ser "
-"ràpid..."
+"ràpid…"
 
 #: gamedata/game_GRII.txt:106
 #, kde-format
@@ -4202,7 +4202,7 @@ msgstr ""
 "Esquiva l'enemic lliure, puja a l'or més alt i agafa les tres primeres "
 "peces, assegurant que has netejat una ruta d'escapada. Després atrau "
 "l'enemic lliure cap amunt i dins el maó fals d'esta secció i agafa l'última "
-"peça d'or. En un punt del camí de pujada has de deixar que s'acoste molt...\n"
+"peça d'or. En un punt del camí de pujada has de deixar que s'acoste molt…\n"
 "\n"
 "Les seccions restants necessiten una mica de reflexió i tenen un temps just, "
 "però no són massa dures.\n"
@@ -4495,7 +4495,7 @@ msgstr ""
 "\n"
 "Admetem-ho, és molt difícil mantindre la mateixa velocitat que l'enemic "
 "mentre camines sobre el seu cap, però no és impossible. Si voleu un repte "
-"real, proveu-ho en mode teclat. Açò farà que tot siga més exigent..."
+"real, proveu-ho en mode teclat. Açò farà que tot siga més exigent…"
 
 #: gamedata/game_GRII.txt:190
 #, kde-format
@@ -5652,7 +5652,7 @@ msgstr ""
 "en Peter Wadham i utilitzen les regles de joc de Tradicional.\n"
 "\n"
 "Els últims nivells són molt difícils, però si busques un repte més gran "
-"prova «La venjança de Peter W»..."
+"prova «La venjança de Peter W»…"
 
 #: gamedata/game_plws.txt:9
 #, kde-format
@@ -6148,8 +6148,8 @@ msgstr ""
 "submarins alemanya «Das Boot» i està dedicat a Marque Krüger de Berlín, "
 "l'autor original de KGoldrunner.\n"
 "\n"
-"Només un xicotet consell... si et situes a mà dreta, al final de la nau, "
-"podràs aconseguir que l'enemic caiga cap a tu... la resta és cosa teua!"
+"Només un xicotet consell… si et situes a mà dreta, al final de la nau, "
+"podràs aconseguir que l'enemic caiga cap a tu… la resta és cosa teua!"
 
 #: gamedata/game_plws.txt:305
 #, kde-format
@@ -6374,7 +6374,7 @@ msgstr ""
 "\n"
 "Mentre et dirigixes en diagonal cap avall a l'esquerra, hi ha dos maons "
 "falsos. Llançat pel segon, mantín-te dins i cava cap a la dreta. Ara cau en "
-"una cadena d'escales que va cap a baix i cap a l'esquerra..."
+"una cadena d'escales que va cap a baix i cap a l'esquerra…"
 
 #: gamedata/game_plwv.txt:67
 #, kde-format
@@ -6387,7 +6387,7 @@ msgid ""
 "Well you just have to be fast and accurate on this one and that is all we "
 "can say ..."
 msgstr ""
-"Bé, sols has de ser ràpid i precís en esta i açò és tot el que podem dir..."
+"Bé, sols has de ser ràpid i precís en esta i açò és tot el que podem dir…"
 
 #: gamedata/game_plwv.txt:71
 #, kde-format
@@ -6482,7 +6482,7 @@ msgstr ""
 "Mantín-te en moviment entre la part de dalt i la de baix per a esquivar "
 "l'enemic. Agafa les llavors quan pugues. Si l'enemic n'agafa una, sols la "
 "podrà deixar en un dels espais buits. Així que mantín-lo corrent a través "
-"d'ells i espera amb paciència..."
+"d'ells i espera amb paciència…"
 
 #: gamedata/game_plwv.txt:93
 #, kde-format
@@ -6506,7 +6506,7 @@ msgstr ""
 "\n"
 "Si hi ha un enemic en aquella secció, mata'l amagant-te a la part de baix "
 "d'una paret falsa i cavant un forat al costat. Morirà quan intente agafar-"
-"te. Açò no funcionarà si hi ha or al maó on vullgues cavar..."
+"te. Açò no funcionarà si hi ha or al maó on vullgues cavar…"
 
 #: gamedata/game_plwv.txt:99
 #, kde-format
@@ -6707,8 +6707,8 @@ msgid ""
 "\n"
 "Composed by Stuart Popejoy - spopejoy@panix.com"
 msgstr ""
-"Just quan creies que era segur... quinze nivells de terror pur, utilitzant "
-"les estranyes, però al mateix temps ràpides, regles de KGoldrunner. Amb "
+"Just quan creies que era segur… quinze nivells de terror pur, utilitzant les "
+"estranyes, però al mateix temps ràpides, regles de KGoldrunner. Amb "
 "freqüència, cal cavar en caure.\n"
 "\n"
 "Creat per en Stuart Popejoy - spopejoy@panix.com"
@@ -6975,7 +6975,7 @@ msgid ""
 "and dig the next brick in towards the center. Fall onto the enemy and run "
 "right or left, then dig to trap him.  You will have to be quick!"
 msgstr ""
-"Corre ràpidament i cava bé...\n"
+"Corre ràpidament i cava bé…\n"
 "A la cambra més interior, posa't dalt el maó de més a la dreta o a "
 "l'esquerra i cava el següent maó cap al centre. Cau on està l'enemic i corre "
 "a dreta o esquerra, i aleshores cava per a atrapar-lo. Hauràs de ser ràpid!"
@@ -7292,7 +7292,7 @@ msgstr ""
 "les regles de KGoldrunner i ajuden a desenvolupar les habilitats necessàries "
 "per a començar. Utilitza el conjunt de regles de Tradicional, similars a les "
 "que s'usaven en els primers ordinadors domèstics. Cada nivell té una breu "
-"explicació, i després jugues...\n"
+"explicació, i després jugues…\n"
 "\n"
 "Quan arribes a jugar en nivells avançats, descobriràs que KGoldrunner "
 "combina acció, estratègia, solució de trencaclosques --- tot en un joc."
@@ -7320,12 +7320,12 @@ msgstr ""
 "\n"
 "L'heroi, a dalt a l'esquerra, és el teu delegat. Per a arreplegar les "
 "llavors, apunta amb el ratolí on vols que vaja. En començar, la gravetat té "
-"efecte i ell cau..."
+"efecte i ell cau…"
 
 #: gamedata/game_tute.txt:15
 #, kde-format
 msgid "Navigation"
-msgstr "Navegació"
+msgstr "Navegueu"
 
 #: gamedata/game_tute.txt:16
 #, kde-format
@@ -7433,7 +7433,7 @@ msgstr ""
 "\n"
 "Encara més important, pots córrer per damunt del cap d'un enemic. Ho pots "
 "fer en iniciar este nivell. Cava un forat, atrapa l'enemic a dins, i corre "
-"sobre ell, mentre un altre inicia una persecució trepidant...\n"
+"sobre ell, mentre un altre inicia una persecució trepidant…\n"
 "\n"
 "Si et sents angoixat, pots prémer la tecla de pausa en qualsevol moment (per "
 "defecte «P» o «Esc») i descansar. Prem-la de nou quan vullgues continuar."
@@ -7451,7 +7451,7 @@ msgid ""
 "onto it."
 msgstr ""
 "Pots moure't horitzontalment al llarg de les barres, però si et mous cap "
-"avall, et deixaràs anar i cauràs... Nota: També que pots arreplegar or si hi "
+"avall, et deixaràs anar i cauràs… Nota: També que pots arreplegar or si hi "
 "caus damunt."
 
 #: gamedata/game_tute.txt:47
@@ -7471,7 +7471,7 @@ msgstr ""
 #: gamedata/game_tute.txt:51 gamedata/game_tutea.txt:31
 #, kde-format
 msgid "Bye ..."
-msgstr "Adeu..."
+msgstr "Adeu…"
 
 #: gamedata/game_tute.txt:52 gamedata/game_tutea.txt:32
 #, kde-format
@@ -7510,7 +7510,7 @@ msgid ""
 "middle levels of the 'Initiation' game.  Enjoy ..."
 msgstr ""
 "Esta partida d'aprenentatge és una preparació per a alguna de les coses que "
-"pots trobar en els nivells mitjans de la partida «Iniciació». Gaudix..."
+"pots trobar en els nivells mitjans de la partida «Iniciació». Gaudix…"
 
 #: gamedata/game_tutea.txt:7
 #, kde-format
@@ -7531,13 +7531,13 @@ msgstr ""
 "al formigó en el punt equivocat. Intenta mantindre junts als enemics.\n"
 "\n"
 "Si un enemic té un color daurat, porta una llavor d'or. Potser la inicia "
-"quan corre sobre el formigó o potser a dalt d'una escala... paciència, "
+"quan corre sobre el formigó o potser a dalt d'una escala… paciència, "
 "paciència!"
 
 #: gamedata/game_tutea.txt:13
 #, kde-format
 msgid "To kill ..."
-msgstr "Matar..."
+msgstr "Matar…"
 
 # skip-rule: da-te, common-te
 #: gamedata/game_tutea.txt:14
@@ -7560,7 +7560,7 @@ msgstr ""
 #: gamedata/game_tutea.txt:19
 #, kde-format
 msgid "...  Or not to kill?"
-msgstr "... O no matar?"
+msgstr "… O no matar?"
 
 #: gamedata/game_tutea.txt:20
 #, kde-format
@@ -7572,7 +7572,7 @@ msgid ""
 "the top left, you can still finish the level by digging away the side of the "
 "pit he is in."
 msgstr ""
-"És millor no matar l'enemic. Intenta-ho i trobaràs el perquè... he, he, he!\n"
+"És millor no matar l'enemic. Intenta-ho i trobaràs el perquè… he, he, he!\n"
 "\n"
 "Si el mates accidentalment, abans d'arreplegar l'or de dalt a l'esquerra, "
 "encara pots acabar el nivell cavant al costat del pou on està ell."
@@ -7599,7 +7599,7 @@ msgstr ""
 "travessar un maó per a obtindre una mica d'or.\n"
 "\n"
 "Al començament, salta cap al pou de formigó, cava i deixa't caure. Açò farà "
-"que un enemic estiga ocupat durant una estona..."
+"que un enemic estiga ocupat durant una estona…"
 
 #: gamedata/game_wad.txt:3
 #, kde-format
@@ -8141,7 +8141,7 @@ msgstr ""
 #: src/kgoldrunner.cpp:184 src/kgrgame.cpp:723
 #, kde-format
 msgid "&New Game..."
-msgstr "&Partida nova..."
+msgstr "&Partida nova…"
 
 #: src/kgoldrunner.cpp:187
 #, kde-format
@@ -8161,17 +8161,17 @@ msgstr "Prova el nivell següent en la partida que estigues jugant."
 #: src/kgoldrunner.cpp:196
 #, kde-format
 msgid "&Load Saved Game..."
-msgstr "&Carrega una partida guardada..."
+msgstr "&Carrega una partida guardada…"
 
 #: src/kgoldrunner.cpp:205
 #, kde-format
 msgid "&Save Game..."
-msgstr "Guar&da la partida..."
+msgstr "Guar&da la partida…"
 
 #: src/kgoldrunner.cpp:211 src/kgoldrunner.cpp:212
 #, kde-format
 msgid "Save A Solution..."
-msgstr "Guarda una solució..."
+msgstr "Guarda una solució…"
 
 #: src/kgoldrunner.cpp:213
 #, kde-format
@@ -8180,7 +8180,7 @@ msgid ""
 "your user's data directory..."
 msgstr ""
 "Guarda una solució per a un nivell en un fitxer anomenat «sol_&lt;prefix&gt;."
-"txt» en el vostre directori de dades d'usuari..."
+"txt» en el vostre directori de dades d'usuari…"
 
 #: src/kgoldrunner.cpp:246 src/kgrgame.cpp:1303
 #, kde-format
@@ -8287,17 +8287,17 @@ msgstr "Crea"
 #: src/kgoldrunner.cpp:300
 #, kde-format
 msgid "&Edit Level..."
-msgstr "&Edita un nivell..."
+msgstr "&Edita un nivell…"
 
 #: src/kgoldrunner.cpp:301
 #, kde-format
 msgid "Edit level..."
-msgstr "Edita un nivell..."
+msgstr "Edita un nivell…"
 
 #: src/kgoldrunner.cpp:302
 #, kde-format
 msgid "Edit any level..."
-msgstr "Edita qualsevol nivell..."
+msgstr "Edita qualsevol nivell…"
 
 #: src/kgoldrunner.cpp:304
 #, kde-format
@@ -8307,17 +8307,17 @@ msgstr "Edita"
 #: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1459
 #, kde-format
 msgid "&Save Edits..."
-msgstr "Guar&da els canvis..."
+msgstr "Guar&da els canvis…"
 
 #: src/kgoldrunner.cpp:313
 #, kde-format
 msgid "Save edits..."
-msgstr "Guarda els canvis..."
+msgstr "Guarda els canvis…"
 
 #: src/kgoldrunner.cpp:314
 #, kde-format
 msgid "Save your level after editing..."
-msgstr "Guarda el teu nivell després d'editar-lo..."
+msgstr "Guarda el teu nivell després d'editar-lo…"
 
 #: src/kgoldrunner.cpp:316
 #, kde-format
@@ -8327,77 +8327,77 @@ msgstr "Guarda"
 #: src/kgoldrunner.cpp:320
 #, kde-format
 msgid "&Move Level..."
-msgstr "&Mou un nivell..."
+msgstr "&Mou un nivell…"
 
 #: src/kgoldrunner.cpp:321
 #, kde-format
 msgid "Move level..."
-msgstr "Mou un nivell..."
+msgstr "Mou un nivell…"
 
 #: src/kgoldrunner.cpp:322
 #, kde-format
 msgid "Change a level's number or move it to another game..."
-msgstr "Canvia el número d'un nivell o el mou cap a una altra partida..."
+msgstr "Canvia el número d'un nivell o el mou cap a una altra partida…"
 
 #: src/kgoldrunner.cpp:326
 #, kde-format
 msgid "&Delete Level..."
-msgstr "Sup&rimix el nivell..."
+msgstr "Sup&rimix el nivell…"
 
 #: src/kgoldrunner.cpp:327
 #, kde-format
 msgid "Delete level..."
-msgstr "Suprimix un nivell..."
+msgstr "Suprimix un nivell…"
 
 #: src/kgoldrunner.cpp:328
 #, kde-format
 msgid "Delete a level..."
-msgstr "Suprimix un nivell..."
+msgstr "Suprimix un nivell…"
 
 #: src/kgoldrunner.cpp:335
 #, kde-format
 msgid "Create &Game..."
-msgstr "Crea una &partida..."
+msgstr "Crea una &partida…"
 
 #: src/kgoldrunner.cpp:336
 #, kde-format
 msgid "Create game..."
-msgstr "Crea una partida..."
+msgstr "Crea una partida…"
 
 #: src/kgoldrunner.cpp:337
 #, kde-format
 msgid "Create a completely new game..."
-msgstr "Crea una partida completament nova..."
+msgstr "Crea una partida completament nova…"
 
 #: src/kgoldrunner.cpp:340
 #, kde-format
 msgid "Edit Game &Info..."
-msgstr "Edita la &informació d'una partida..."
+msgstr "Edita la &informació d'una partida…"
 
 #: src/kgoldrunner.cpp:341
 #, kde-format
 msgid "Edit game info..."
-msgstr "Edita la informació d'una partida..."
+msgstr "Edita la informació d'una partida…"
 
 #: src/kgoldrunner.cpp:342
 #, kde-format
 msgid "Change the name, rules or description of a game..."
-msgstr "Canvia el nom, les regles o la descripció d'una partida..."
+msgstr "Canvia el nom, les regles o la descripció d'una partida…"
 
 #: src/kgoldrunner.cpp:351
 #, kde-format
 msgid "Change &Theme..."
-msgstr "Canvia el &tema..."
+msgstr "Canvia el &tema…"
 
 #: src/kgoldrunner.cpp:352
 #, kde-format
 msgid "Change the graphics theme..."
-msgstr "Canvia el tema gràfic..."
+msgstr "Canvia el tema gràfic…"
 
 #: src/kgoldrunner.cpp:353
 #, kde-format
 msgid "Alter the visual appearance of the runners and background scene..."
-msgstr "Modifica l'aparença visual dels corredors i l'escena de fons..."
+msgstr "Modifica l'aparença visual dels corredors i l'escena de fons…"
 
 #: src/kgoldrunner.cpp:367
 #, kde-format
@@ -8644,7 +8644,7 @@ msgstr "Fes un pas"
 #: src/kgoldrunner.cpp:535
 #, kde-format
 msgid "Test Bug Fix"
-msgstr "Prova de correcció d'errors"
+msgstr "Prova d'esmena d'errors"
 
 #: src/kgoldrunner.cpp:536
 #, kde-format
@@ -9823,7 +9823,7 @@ msgstr "Guarda els canvis"
 #: src/kgrselector.cpp:278
 #, kde-format
 msgid "Move To..."
-msgstr "Mou cap a..."
+msgstr "Mou cap a…"
 
 #: src/kgrselector.cpp:357
 #, kde-format
@@ -9961,7 +9961,7 @@ msgstr ""
 "\n"
 "\n"
 "Ací pots crear o editar el nom i el consell, abans de guardar. Si canvies la "
-"partida o el nivell, pots fer una còpia o utilitzar «Anomena i guarda...», "
+"partida o el nivell, pots fer una còpia o utilitzar «Anomena i guarda…», "
 "però sempre has de guardar en una de les teues partides. Si guardes el "
 "nivell en la meitat d'una sèrie, la resta de nivells es tornaran a numerar "
 "automàticament."
@@ -9993,8 +9993,8 @@ msgstr ""
 "\n"
 "\n"
 "Per a moure (tornar a numerar) un nivell, primer has de seleccionar-lo "
-"utilitzant «Edita qualsevol nivell...», després pots utilitzar «Mou un "
-"nivell...» per a moure'l cap a un número nou o fins i tot una partida "
+"utilitzant «Edita qualsevol nivell…», després pots utilitzar «Mou un "
+"nivell…» per a moure'l cap a un número nou o fins i tot una partida "
 "diferent. La resta de nivells es tornaran a numerar automàticament si fa "
 "falta. Només pots moure nivells entre les teues partides."
 
