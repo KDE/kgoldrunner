@@ -9,7 +9,7 @@
 # Santiago Fernandez Sancho <santi@kde-es.org>, 2004, 2006.
 # Santiago Fernández Sancho <santi@kde-es.org>, 2007, 2008.
 # santi <santi@kde-es.org>, 2009.
-# SPDX-FileCopyrightText: 2009, 2012, 2015, 2017, 2018, 2020, 2021, 2023 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2009, 2012, 2015, 2017, 2018, 2020, 2021, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
 # Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>, 2009.
 # Huever, 2009, 2010.
 # Kira J. Fernandez <kirajfdez@gmail.com>, 2010, 2011.
@@ -20,14 +20,14 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-06 00:36+0000\n"
-"PO-Revision-Date: 2023-10-02 21:28+0100\n"
+"PO-Revision-Date: 2024-05-11 13:34+0100\n"
 "Last-Translator: Sofía Priego <spriego@darksylvania.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -8258,8 +8258,7 @@ msgid "&New Game…"
 msgstr "&Nueva partida..."
 
 #: src/kgoldrunner.cpp:187
-#, fuzzy, kde-format
-#| msgid "Pla&y Next Level"
+#, kde-format
 msgctxt "@action"
 msgid "Pla&y Next Level"
 msgstr "&Jugar el siguiente nivel"
@@ -8343,8 +8342,7 @@ msgstr ""
 "Reproducir una grabación sobre cómo ganar este nivel, si está disponible."
 
 #: src/kgoldrunner.cpp:252
-#, fuzzy, kde-format
-#| msgid "&Instant Replay"
+#, kde-format
 msgctxt "@action"
 msgid "&Instant Replay"
 msgstr "Reproducción &instantánea"
@@ -8364,8 +8362,7 @@ msgid "Shows a recording of the level you are currently playing."
 msgstr "Mostrar una grabación del nivel que está jugando actualmente."
 
 #: src/kgoldrunner.cpp:259
-#, fuzzy, kde-format
-#| msgid "Replay &Last Level"
+#, kde-format
 msgctxt "@action"
 msgid "Replay &Last Level"
 msgstr "Reproducir el ú&ltimo nivel"
@@ -8391,8 +8388,7 @@ msgstr ""
 "importar si ganó o perdió."
 
 #: src/kgoldrunner.cpp:267
-#, fuzzy, kde-format
-#| msgid "&Replay Any Level"
+#, kde-format
 msgctxt "@action"
 msgid "&Replay Any Level"
 msgstr "&Reproducir cualquier nivel"
@@ -8413,8 +8409,7 @@ msgstr ""
 "Mostrar una grabación de todos los niveles que haya jugado hasta ahora."
 
 #: src/kgoldrunner.cpp:274
-#, fuzzy, kde-format
-#| msgid "&Kill Hero"
+#, kde-format
 msgctxt "@action"
 msgid "&Kill Hero"
 msgstr "&Matar al héroe"
@@ -8440,8 +8435,7 @@ msgstr ""
 "pueda escapar."
 
 #: src/kgoldrunner.cpp:293
-#, fuzzy, kde-format
-#| msgid "&Create Level"
+#, kde-format
 msgctxt "@action"
 msgid "&Create Level"
 msgstr "&Crear nivel"
@@ -8461,8 +8455,7 @@ msgid "Creates a completely new level."
 msgstr "Crear un nivel completamente nuevo."
 
 #: src/kgoldrunner.cpp:297
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgctxt "@action"
 msgid "Create"
 msgstr "Crear"
@@ -8489,8 +8482,7 @@ msgid "Edits any level."
 msgstr "Editar cualquier nivel..."
 
 #: src/kgoldrunner.cpp:304
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action"
 msgid "Edit"
 msgstr "Editar"
@@ -8517,8 +8509,7 @@ msgid "Saves your level after editing."
 msgstr "Guardar su nivel después de editarlo..."
 
 #: src/kgoldrunner.cpp:316
-#, fuzzy, kde-format
-#| msgid "Save"
+#, kde-format
 msgctxt "@action"
 msgid "Save"
 msgstr "Guardar"
@@ -8631,8 +8622,7 @@ msgid "Alters the visual appearance of the runners and background scene."
 msgstr "Cambiar el aspecto visual de los corredores y de la escena de fondo..."
 
 #: src/kgoldrunner.cpp:367
-#, fuzzy, kde-format
-#| msgid "&Play Sounds"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Play Sounds"
 msgstr "Re&producir sonidos"
@@ -8652,8 +8642,7 @@ msgid "Plays sound effects during the game."
 msgstr "Reproducir efectos de sonido durante el juego."
 
 #: src/kgoldrunner.cpp:373
-#, fuzzy, kde-format
-#| msgid "Play &Footstep Sounds"
+#, kde-format
 msgctxt "@option:check"
 msgid "Play &Footstep Sounds"
 msgstr "Reproducir sonidos de &pisadas"
@@ -8694,8 +8683,7 @@ msgid "Runs a demo when the game starts."
 msgstr "Ejecutar una demostración al iniciar el juego."
 
 #: src/kgoldrunner.cpp:390
-#, fuzzy, kde-format
-#| msgid "&Mouse Controls Hero"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Mouse Controls Hero"
 msgstr "El &ratón controla al héroe"
@@ -8708,15 +8696,13 @@ msgid "Mouse controls hero"
 msgstr "El ratón controla al héroe."
 
 #: src/kgoldrunner.cpp:392
-#, fuzzy, kde-format
-#| msgid "Use the mouse to control the hero's moves."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Use the mouse to control the hero's moves."
 msgstr "Usar el ratón para controlar los movimientos del héroe."
 
 #: src/kgoldrunner.cpp:396
-#, fuzzy, kde-format
-#| msgid "&Keyboard Controls Hero"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Keyboard Controls Hero"
 msgstr "El &teclado controla al héroe"
@@ -8729,15 +8715,13 @@ msgid "Keyboard controls hero"
 msgstr "El teclado controla al héroe."
 
 #: src/kgoldrunner.cpp:398
-#, fuzzy, kde-format
-#| msgid "Use the keyboard to control the hero's moves."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Use the keyboard to control the hero's moves."
 msgstr "Usar el teclado para controlar los movimientos del héroe."
 
 #: src/kgoldrunner.cpp:402
-#, fuzzy, kde-format
-#| msgid "Hybrid Control (&Laptop)"
+#, kde-format
 msgctxt "@option:check"
 msgid "Hybrid Control (&Laptop)"
 msgstr "Control híbrido (para portáti&les)"
@@ -8750,10 +8734,7 @@ msgid "Pointer controls hero; dig using keyboard"
 msgstr "El puntero controla al héroe; cavar usando el teclado."
 
 #: src/kgoldrunner.cpp:405
-#, fuzzy, kde-format
-#| msgid ""
-#| "Use the laptop's pointer device to control the hero's moves, and use the "
-#| "keyboard to dig left and right."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Use the laptop's pointer device to control the hero's moves, and use the "
@@ -8778,10 +8759,7 @@ msgid "Click key to move"
 msgstr "Pulsar una te&cla para mover"
 
 #: src/kgoldrunner.cpp:422
-#, fuzzy, kde-format
-#| msgid ""
-#| "In keyboard mode, click a direction-key to start moving and keep on going "
-#| "until you click another key."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "In keyboard mode, click a direction-key to start moving and keep on going "
@@ -8805,10 +8783,7 @@ msgid "Hold key to move"
 msgstr "&Mantener pulsada la tecla para mover"
 
 #: src/kgoldrunner.cpp:430
-#, fuzzy, kde-format
-#| msgid ""
-#| "In keyboard mode, hold down a direction-key to move and release it to "
-#| "stop."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "In keyboard mode, hold down a direction-key to move and release it to stop."
@@ -8817,8 +8792,7 @@ msgstr ""
 "y suéltela para pararse."
 
 #: src/kgoldrunner.cpp:447
-#, fuzzy, kde-format
-#| msgid "Normal Speed"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Normal Speed"
 msgstr "Velocidad normal"
@@ -8831,15 +8805,13 @@ msgid "Set normal speed"
 msgstr "Cambiar a velocidad normal."
 
 #: src/kgoldrunner.cpp:449
-#, fuzzy, kde-format
-#| msgid "Set normal game speed."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Set normal game speed."
 msgstr "Establecer la velocidad de juego en normal."
 
 #: src/kgoldrunner.cpp:453
-#, fuzzy, kde-format
-#| msgid "Beginner Speed"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Beginner Speed"
 msgstr "Velocidad de principiante"
@@ -8852,16 +8824,14 @@ msgid "Set beginners' speed"
 msgstr "Cambiar a velocidad de principiante."
 
 #: src/kgoldrunner.cpp:455
-#, fuzzy, kde-format
-#| msgid "Set beginners' game speed (0.5 times normal)."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Set beginners' game speed (0.5 times normal)."
 msgstr ""
 "Establecer la velocidad del juego para principiantes (0,5 veces la normal)."
 
 #: src/kgoldrunner.cpp:460
-#, fuzzy, kde-format
-#| msgid "Champion Speed"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Champion Speed"
 msgstr "Velocidad de campeón"
@@ -8874,15 +8844,13 @@ msgid "Set champions' speed"
 msgstr "Velocidad de campeón."
 
 #: src/kgoldrunner.cpp:462
-#, fuzzy, kde-format
-#| msgid "Set champions' game speed (1.5 times normal)."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Set champions' game speed (1.5 times normal)."
 msgstr "Establecer la velocidad de juego para campeones (1,5 veces la normal)."
 
 #: src/kgoldrunner.cpp:466
-#, fuzzy, kde-format
-#| msgid "Increase Speed"
+#, kde-format
 msgctxt "@action"
 msgid "Increase Speed"
 msgstr "Aumentar velocidad"
@@ -8904,8 +8872,7 @@ msgstr ""
 "la normal)."
 
 #: src/kgoldrunner.cpp:473
-#, fuzzy, kde-format
-#| msgid "Decrease Speed"
+#, kde-format
 msgctxt "@action"
 msgid "Decrease Speed"
 msgstr "Disminuir velocidad"
@@ -8927,92 +8894,79 @@ msgstr ""
 "la normal)."
 
 #: src/kgoldrunner.cpp:505
-#, fuzzy, kde-format
-#| msgid "Stop"
+#, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "Detener"
 
 #: src/kgoldrunner.cpp:506
-#, fuzzy, kde-format
-#| msgid "Move Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Right"
 msgstr "Derecha"
 
 #: src/kgoldrunner.cpp:507
-#, fuzzy, kde-format
-#| msgid "Move Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Left"
 msgstr "Izquierda"
 
 #: src/kgoldrunner.cpp:508
-#, fuzzy, kde-format
-#| msgid "Move Up"
+#, kde-format
 msgctxt "@action"
 msgid "Move Up"
 msgstr "Subir"
 
 #: src/kgoldrunner.cpp:509
-#, fuzzy, kde-format
-#| msgid "Move Down"
+#, kde-format
 msgctxt "@action"
 msgid "Move Down"
 msgstr "Bajar"
 
 #: src/kgoldrunner.cpp:510
-#, fuzzy, kde-format
-#| msgid "Dig Right"
+#, kde-format
 msgctxt "@action"
 msgid "Dig Right"
 msgstr "Cavar derecha"
 
 #: src/kgoldrunner.cpp:511
-#, fuzzy, kde-format
-#| msgid "Dig Left"
+#, kde-format
 msgctxt "@action"
 msgid "Dig Left"
 msgstr "Cavar izquierda"
 
 #: src/kgoldrunner.cpp:535
-#, fuzzy, kde-format
-#| msgid "Do a Step"
+#, kde-format
 msgctxt "@action"
 msgid "Do a Step"
 msgstr "Dar un paso"
 
 #: src/kgoldrunner.cpp:536
-#, fuzzy, kde-format
-#| msgid "Test Bug Fix"
+#, kde-format
 msgctxt "@action"
 msgid "Test Bug Fix"
 msgstr "Prueba de fallos"
 
 #: src/kgoldrunner.cpp:537
-#, fuzzy, kde-format
-#| msgid "Show Positions"
+#, kde-format
 msgctxt "@action"
 msgid "Show Positions"
 msgstr "Mostrar posiciones"
 
 #: src/kgoldrunner.cpp:538
-#, fuzzy, kde-format
-#| msgid "Start Logging"
+#, kde-format
 msgctxt "@action"
 msgid "Start Logging"
 msgstr "Iniciar registro"
 
 #: src/kgoldrunner.cpp:539
-#, fuzzy, kde-format
-#| msgid "Show Hero"
+#, kde-format
 msgctxt "@action"
 msgid "Show Hero"
 msgstr "Mostrar héroe"
 
 #: src/kgoldrunner.cpp:540
-#, fuzzy, kde-format
-#| msgid "Show Object"
+#, kde-format
 msgctxt "@action"
 msgid "Show Object"
 msgstr "Mostrar objeto"
@@ -9020,8 +8974,7 @@ msgstr "Mostrar objeto"
 #: src/kgoldrunner.cpp:542 src/kgoldrunner.cpp:543 src/kgoldrunner.cpp:544
 #: src/kgoldrunner.cpp:545 src/kgoldrunner.cpp:546 src/kgoldrunner.cpp:547
 #: src/kgoldrunner.cpp:548
-#, fuzzy, kde-format
-#| msgid "Show Enemy"
+#, kde-format
 msgctxt "@action"
 msgid "Show Enemy"
 msgstr "Mostrar enemigo"
@@ -9062,8 +9015,7 @@ msgid "No hint"
 msgstr "No hay pistas"
 
 #: src/kgoldrunner.cpp:878
-#, fuzzy, kde-format
-#| msgid "Get Folders"
+#, kde-format
 msgctxt "@window:title"
 msgid "Get Folders"
 msgstr "Obtener carpetas"
@@ -9076,15 +9028,13 @@ msgstr ""
 "las zonas «%1»."
 
 #: src/kgoldrunner.cpp:912
-#, fuzzy, kde-format
-#| msgid "Edit Name/Hint"
+#, kde-format
 msgctxt "@action"
 msgid "Edit Name/Hint"
 msgstr "Editar nombre/pista"
 
 #: src/kgoldrunner.cpp:913
-#, fuzzy, kde-format
-#| msgid "Edit level name or hint"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit level name or hint"
 msgstr "Editar nombre del nivel y pista"
@@ -9097,29 +9047,25 @@ msgid "Edits text for the name or hint of a level"
 msgstr "Edita el texto del nombre o de la pista de un nivel"
 
 #: src/kgoldrunner.cpp:917
-#, fuzzy, kde-format
-#| msgid "Name/Hint"
+#, kde-format
 msgctxt "@action"
 msgid "Name/Hint"
 msgstr "Nombre/pista"
 
 #: src/kgoldrunner.cpp:920
-#, fuzzy, kde-format
-#| msgid "Erase"
+#, kde-format
 msgctxt "@option:check"
 msgid "Erase"
 msgstr "Borrar"
 
 #: src/kgoldrunner.cpp:920
-#, fuzzy, kde-format
-#| msgid "Space/Erase"
+#, kde-format
 msgctxt "@option:check"
 msgid "Space/Erase"
 msgstr "Espacio/borrar"
 
 #: src/kgoldrunner.cpp:921
-#, fuzzy, kde-format
-#| msgid "Paint empty squares or erase"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint empty squares or erase"
 msgstr "Dibujar cuadrados vacíos o borrar"
@@ -9132,15 +9078,13 @@ msgid "Erases objects or paint empty squares."
 msgstr "Borrar objetos o dibujar cuadrados vacíos"
 
 #: src/kgoldrunner.cpp:925
-#, fuzzy, kde-format
-#| msgid "Hero"
+#, kde-format
 msgctxt "@option:check"
 msgid "Hero"
 msgstr "Héroe"
 
 #: src/kgoldrunner.cpp:926
-#, fuzzy, kde-format
-#| msgid "Move hero"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Move hero"
 msgstr "Mover el héroe"
@@ -9153,15 +9097,13 @@ msgid "Changes the hero's starting position."
 msgstr "Cambia la posición de inicio del héroe"
 
 #: src/kgoldrunner.cpp:930
-#, fuzzy, kde-format
-#| msgid "Enemy"
+#, kde-format
 msgctxt "@option:check"
 msgid "Enemy"
 msgstr "Enemigo"
 
 #: src/kgoldrunner.cpp:931
-#, fuzzy, kde-format
-#| msgid "Paint enemies"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint enemies"
 msgstr "Dibujar enemigos"
@@ -9174,15 +9116,13 @@ msgid "Paints enemies at their starting positions."
 msgstr "Dibuja enemigos en sus posiciones de inicio"
 
 #: src/kgoldrunner.cpp:936
-#, fuzzy, kde-format
-#| msgid "Brick"
+#, kde-format
 msgctxt "@option:check"
 msgid "Brick"
 msgstr "Ladrillo"
 
 #: src/kgoldrunner.cpp:937
-#, fuzzy, kde-format
-#| msgid "Paint bricks (can dig)"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint bricks (can dig)"
 msgstr "Dibujar ladrillos (se puede cavar)"
@@ -9195,15 +9135,13 @@ msgid "Paints bricks (diggable objects)."
 msgstr "Dibuja ladrillos (objetos cavables)"
 
 #: src/kgoldrunner.cpp:941
-#, fuzzy, kde-format
-#| msgid "Concrete"
+#, kde-format
 msgctxt "@option:check"
 msgid "Concrete"
 msgstr "Hormigón"
 
 #: src/kgoldrunner.cpp:942
-#, fuzzy, kde-format
-#| msgid "Paint concrete (cannot dig)"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint concrete (cannot dig)"
 msgstr "Dibujar hormigón (no se puede cavar)"
@@ -9216,22 +9154,19 @@ msgid "Paints concrete objects (not diggable)."
 msgstr "Dibujar hormigón (no cavable)"
 
 #: src/kgoldrunner.cpp:946
-#, fuzzy, kde-format
-#| msgid "Trap"
+#, kde-format
 msgctxt "@option:check"
 msgid "Trap"
 msgstr "Trampa"
 
 #: src/kgoldrunner.cpp:946
-#, fuzzy, kde-format
-#| msgid "Trap/False Brick"
+#, kde-format
 msgctxt "@option:check"
 msgid "Trap/False Brick"
 msgstr "Trampa/ladrillo falso"
 
 #: src/kgoldrunner.cpp:947
-#, fuzzy, kde-format
-#| msgid "Paint traps or false bricks (can fall through)"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint traps or false bricks (can fall through)"
 msgstr "Dibujar trampas o ladrillos falsos (se pueden atravesar)"
@@ -9244,15 +9179,13 @@ msgid "Paints traps or false bricks (can fall through)."
 msgstr "Dibujar trampas o ladrillos falsos (se pueden atravesar)"
 
 #: src/kgoldrunner.cpp:953
-#, fuzzy, kde-format
-#| msgid "Ladder"
+#, kde-format
 msgctxt "@option:check"
 msgid "Ladder"
 msgstr "Escalera"
 
 #: src/kgoldrunner.cpp:954
-#, fuzzy, kde-format
-#| msgid "Paint ladders"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint ladders"
 msgstr "Dibujar escaleras"
@@ -9265,22 +9198,19 @@ msgid "Paints ladders (ways to go up or down)."
 msgstr "Dibujar escaleras (para subir y bajar)"
 
 #: src/kgoldrunner.cpp:958
-#, fuzzy, kde-format
-#| msgid "H Ladder"
+#, kde-format
 msgctxt "@option:check"
 msgid "H Ladder"
 msgstr "Escalera H"
 
 #: src/kgoldrunner.cpp:958
-#, fuzzy, kde-format
-#| msgid "Hidden Ladder"
+#, kde-format
 msgctxt "@option:check"
 msgid "Hidden Ladder"
 msgstr "Escalera oculta"
 
 #: src/kgoldrunner.cpp:959
-#, fuzzy, kde-format
-#| msgid "Paint hidden ladders"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint hidden ladders"
 msgstr "Dibujar escaleras ocultas"
@@ -9294,22 +9224,19 @@ msgstr ""
 "Dibuja escaleras ocultas, que aparecen cuando se ha recogido todo el oro"
 
 #: src/kgoldrunner.cpp:964
-#, fuzzy, kde-format
-#| msgid "Bar"
+#, kde-format
 msgctxt "@option:check"
 msgid "Bar"
 msgstr "Barra"
 
 #: src/kgoldrunner.cpp:964
-#, fuzzy, kde-format
-#| msgid "Bar/Pole"
+#, kde-format
 msgctxt "@option:check"
 msgid "Bar/Pole"
 msgstr "Barra/palo"
 
 #: src/kgoldrunner.cpp:965
-#, fuzzy, kde-format
-#| msgid "Paint bars or poles"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint bars or poles"
 msgstr "Dibujar barras o palos"
@@ -9322,22 +9249,19 @@ msgid "Paints bars or poles (can fall from these)."
 msgstr "Dibuja barras o palos (se puede caer desde ellos)"
 
 #: src/kgoldrunner.cpp:970
-#, fuzzy, kde-format
-#| msgid "Gold"
+#, kde-format
 msgctxt "@option:check"
 msgid "Gold"
 msgstr "Oro"
 
 #: src/kgoldrunner.cpp:970
-#, fuzzy, kde-format
-#| msgid "Gold/Treasure"
+#, kde-format
 msgctxt "@option:check"
 msgid "Gold/Treasure"
 msgstr "Oro/tesoro"
 
 #: src/kgoldrunner.cpp:971
-#, fuzzy, kde-format
-#| msgid "Paint gold (or other treasure)"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint gold (or other treasure)"
 msgstr "Dibujar oro (u otro tesoro)"
@@ -9368,15 +9292,13 @@ msgid "Edit Name or Hint"
 msgstr "Editar nombre o pista"
 
 #: src/kgrdialog.cpp:56
-#, fuzzy, kde-format
-#| msgid "Name of level:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name of level:"
 msgstr "Nombre del nivel:"
 
 #: src/kgrdialog.cpp:63
-#, fuzzy, kde-format
-#| msgid "Hint for level:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Hint for level:"
 msgstr "Pista para el nivel:"
@@ -9388,29 +9310,25 @@ msgid "Edit Game Info"
 msgstr "Editar información del juego"
 
 #: src/kgrdialog.cpp:123
-#, fuzzy, kde-format
-#| msgid "Name of game:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name of game:"
 msgstr "Nombre del juego:"
 
 #: src/kgrdialog.cpp:131
-#, fuzzy, kde-format
-#| msgid "File name prefix:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "File name prefix:"
 msgstr "Prefijo del archivo:"
 
 #: src/kgrdialog.cpp:139
-#, fuzzy, kde-format
-#| msgid "Traditional rules"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Traditional rules"
 msgstr "Reglas tradicionales"
 
 #: src/kgrdialog.cpp:140
-#, fuzzy, kde-format
-#| msgid "KGoldrunner rules"
+#, kde-format
 msgctxt "@option:radio"
 msgid "KGoldrunner rules"
 msgstr "Reglas KGoldrunner"
@@ -9423,8 +9341,7 @@ msgstr[0] "1 nivel"
 msgstr[1] "%1 niveles"
 
 #: src/kgrdialog.cpp:152
-#, fuzzy, kde-format
-#| msgid "About this game:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "About this game:"
 msgstr "Acerca de este juego:"
@@ -9436,8 +9353,7 @@ msgid "Create Game"
 msgstr "Crear juego"
 
 #: src/kgrdialog.cpp:186
-#, fuzzy, kde-format
-#| msgid "Save Changes"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save Changes"
 msgstr "Guardar cambios"
@@ -9448,8 +9364,7 @@ msgid "0 levels"
 msgstr "0 niveles"
 
 #: src/kgrdialog.cpp:192 src/kgrselector.cpp:269
-#, fuzzy, kde-format
-#| msgid "Save New"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save New"
 msgstr "Guardar como nuevo"
@@ -9467,8 +9382,7 @@ msgstr ""
 "Juego                       Nivel/Vida/Puntuación   Día    Fecha     Hora  "
 
 #: src/kgreditor.cpp:66
-#, fuzzy, kde-format
-#| msgid "Create Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Level"
 msgstr "Crear nivel"
@@ -9510,8 +9424,7 @@ msgstr ""
 "ocultas y los ladrillos falsos, ¿verdad? :-)"
 
 #: src/kgreditor.cpp:242 src/kgreditor.cpp:261 src/kgrgame.cpp:260
-#, fuzzy, kde-format
-#| msgid "Save Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Level"
 msgstr "Guardar nivel"
@@ -9522,15 +9435,13 @@ msgid "Do you want to insert a level and move existing levels up by one?"
 msgstr "¿Desea insertar un nivel y mover los existentes hacia delante?"
 
 #: src/kgreditor.cpp:245
-#, fuzzy, kde-format
-#| msgid "&Insert Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Insert Level"
 msgstr "&Insertar nivel"
 
 #: src/kgreditor.cpp:246 src/kgreditor.cpp:446
-#, fuzzy, kde-format
-#| msgid "&Cancel"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Cancel"
 msgstr "&Cancelar"
@@ -9543,8 +9454,7 @@ msgstr "No se puede abrir el archivo «%1» para escribir."
 
 #: src/kgreditor.cpp:317 src/kgreditor.cpp:333 src/kgreditor.cpp:341
 #: src/kgreditor.cpp:356
-#, fuzzy, kde-format
-#| msgid "Move Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Move Level"
 msgstr "Mover nivel"
@@ -9556,8 +9466,7 @@ msgstr ""
 "Primero debe cargar el nivel que desea mover. Use los menús «%1» o «%2»."
 
 #: src/kgreditor.cpp:320
-#, fuzzy, kde-format
-#| msgid "Game"
+#, kde-format
 msgctxt "@title:menu"
 msgid "Game"
 msgstr "Juego"
@@ -9610,8 +9519,7 @@ msgid "Do you want to delete a level and move higher levels down by one?"
 msgstr "¿Desea eliminar un nivel y desplazar hacia abajo los siguientes?"
 
 #: src/kgreditor.cpp:445
-#, fuzzy, kde-format
-#| msgid "&Delete Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Delete Level"
 msgstr "&Eliminar nivel"
@@ -9624,8 +9532,7 @@ msgstr "No se encuentra el archivo a eliminar «%1»."
 #: src/kgreditor.cpp:510 src/kgreditor.cpp:520 src/kgreditor.cpp:525
 #: src/kgreditor.cpp:539 src/kgreditor.cpp:557 src/kgreditor.cpp:770
 #: src/kgreditor.cpp:781
-#, fuzzy, kde-format
-#| msgid "Save Game Info"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Game Info"
 msgstr "Guardar información del juego"
@@ -9656,8 +9563,7 @@ msgid "The filename prefix '%1' is already in use."
 msgstr "El prefijo de archivo «%1» ya está en uso."
 
 #: src/kgreditor.cpp:641
-#, fuzzy, kde-format
-#| msgid "Editor"
+#, kde-format
 msgctxt "@title:window"
 msgid "Editor"
 msgstr "Editor"
@@ -9668,15 +9574,13 @@ msgid "You have not saved your work. Do you want to save it now?"
 msgstr "No ha guardado su trabajo. ¿Desea guardarlo ahora?"
 
 #: src/kgreditor.cpp:644
-#, fuzzy, kde-format
-#| msgid "&Save"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Save"
 msgstr "&Guardar"
 
 #: src/kgreditor.cpp:645
-#, fuzzy, kde-format
-#| msgid "&Do Not Save"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Do Not Save"
 msgstr "No guar&dar"
@@ -9716,8 +9620,7 @@ msgid "Click anywhere to begin live play"
 msgstr "Haga clic en cualquier sitio para empezar el juego en directo"
 
 #: src/kgrgame.cpp:190
-#, fuzzy, kde-format
-#| msgid "Play Next Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Play Next Level"
 msgstr "Jugar siguiente nivel"
@@ -9733,8 +9636,7 @@ msgid "Inappropriate action: you are not editing a level."
 msgstr "Acción no válida: no está editando un nivel."
 
 #: src/kgrgame.cpp:420
-#, fuzzy, kde-format
-#| msgid "No Sound"
+#, kde-format
 msgctxt "@title:window"
 msgid "No Sound"
 msgstr "Sin sonidos"
@@ -9753,8 +9655,7 @@ msgstr ""
 "OpenAL y SndFile cuando se compiló."
 
 #: src/kgrgame.cpp:625 src/kgrgame.cpp:782
-#, fuzzy, kde-format
-#| msgid "Game Paused"
+#, kde-format
 msgctxt "@title:window"
 msgid "Game Paused"
 msgstr "Partida detenida"
@@ -9770,8 +9671,7 @@ msgstr ""
 "omisión) cuando esté preparado para jugar."
 
 #: src/kgrgame.cpp:670 src/kgrgame.cpp:676
-#, fuzzy, kde-format
-#| msgid "Replay Last Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Replay Last Level"
 msgstr "Reproducir el último nivel"
@@ -9801,25 +9701,19 @@ msgid "Quick Start"
 msgstr "Inicio rápido"
 
 #: src/kgrgame.cpp:712
-#, fuzzy, kde-format
-#| msgctxt "Button text: start playing a game"
-#| msgid "&PLAY"
+#, kde-format
 msgctxt "@action:button start playing a game"
 msgid "&PLAY"
 msgstr "&JUGAR"
 
 #: src/kgrgame.cpp:713
-#, fuzzy, kde-format
-#| msgid "Start playing this level"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start playing this level"
 msgstr "Comenzar a jugar en este nivel"
 
 #: src/kgrgame.cpp:715
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set up to start playing the game and level being shown, as soon as you "
-#| "click, move the mouse or press a key"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Set up to start playing the game and level being shown, as soon as you "
@@ -9829,15 +9723,13 @@ msgstr ""
 "tan pronto como pulse, mueva el ratón o pulse una tecla"
 
 #: src/kgrgame.cpp:719
-#, fuzzy, kde-format
-#| msgid "&Quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Quit"
 msgstr "&Salir"
 
 #: src/kgrgame.cpp:720
-#, fuzzy, kde-format
-#| msgid "Close KGoldrunner"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close KGoldrunner"
 msgstr "Cerrar KGoldrunner"
@@ -9850,17 +9742,13 @@ msgid "&New Game…"
 msgstr "&Nueva partida..."
 
 #: src/kgrgame.cpp:724
-#, fuzzy, kde-format
-#| msgid "Start a different game or level"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start a different game or level"
 msgstr "Iniciar una partida o nivel diferente"
 
 #: src/kgrgame.cpp:726
-#, fuzzy, kde-format
-#| msgid ""
-#| "Use the Select Game dialog box to choose a different game or level and "
-#| "start playing it"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Use the Select Game dialog box to choose a different game or level and start "
@@ -9870,24 +9758,19 @@ msgstr ""
 "diferente y comience a jugar"
 
 #: src/kgrgame.cpp:730
-#, fuzzy, kde-format
-#| msgid "&Use Menu"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Use Menu"
 msgstr "&Usar menú"
 
 #: src/kgrgame.cpp:732
-#, fuzzy, kde-format
-#| msgid "Use the menus to choose other actions"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Use the menus to choose other actions"
 msgstr "Use los menús para elegir otras acciones"
 
 #: src/kgrgame.cpp:734
-#, fuzzy, kde-format
-#| msgid ""
-#| "Before playing, use the menus to choose other actions, such as loading a "
-#| "saved game or changing the theme"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Before playing, use the menus to choose other actions, such as loading a "
@@ -9906,8 +9789,7 @@ msgstr ""
 "defecto) cuando esté preparado para jugar."
 
 #: src/kgrgame.cpp:836
-#, fuzzy, kde-format
-#| msgid "Show a Solution"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show a Solution"
 msgstr "Mostrar una solución"
@@ -9922,8 +9804,7 @@ msgstr ""
 "todavía no se ha guardado una solución para el nivel que ha seleccionado."
 
 #: src/kgrgame.cpp:848
-#, fuzzy, kde-format
-#| msgid "Replay Any Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Replay Any Level"
 msgstr "Reproducir cualquier nivel"
@@ -9946,22 +9827,19 @@ msgstr ""
 "</P>"
 
 #: src/kgrgame.cpp:1065
-#, fuzzy, kde-format
-#| msgid "Game Over"
+#, kde-format
 msgctxt "@title:window"
 msgid "Game Over"
 msgstr "Juego terminado"
 
 #: src/kgrgame.cpp:1066
-#, fuzzy, kde-format
-#| msgid "&Try Again"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Try Again"
 msgstr "In&tentarlo de nuevo"
 
 #: src/kgrgame.cpp:1067
-#, fuzzy, kde-format
-#| msgid "&Finish"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Finish"
 msgstr "&Finalizar"
@@ -9976,8 +9854,7 @@ msgstr ""
 "</p>"
 
 #: src/kgrgame.cpp:1298
-#, fuzzy, kde-format
-#| msgid "Hint"
+#, kde-format
 msgctxt "@title:window"
 msgid "Hint"
 msgstr "Pista"
@@ -9990,8 +9867,7 @@ msgid "&Ok"
 msgstr "&Aceptar"
 
 #: src/kgrgame.cpp:1305
-#, fuzzy, kde-format
-#| msgid "&Show a Solution"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Show a Solution"
 msgstr "Mostrar una &solución"
@@ -10018,22 +9894,19 @@ msgstr ""
 "la larga, más sencillo (¡como la diferencia entre ir en bici o andando!)"
 
 #: src/kgrgame.cpp:1421
-#, fuzzy, kde-format
-#| msgid "Switch to Keyboard Mode"
+#, kde-format
 msgctxt "@title:window"
 msgid "Switch to Keyboard Mode"
 msgstr "Cambiar al modo de teclado"
 
 #: src/kgrgame.cpp:1422
-#, fuzzy, kde-format
-#| msgid "Switch to &Keyboard Mode"
+#, kde-format
 msgctxt "@action:button"
 msgid "Switch to &Keyboard Mode"
 msgstr "Cambiar al modo de &teclado"
 
 #: src/kgrgame.cpp:1423
-#, fuzzy, kde-format
-#| msgid "Stay in &Mouse Mode"
+#, kde-format
 msgctxt "@action:button"
 msgid "Stay in &Mouse Mode"
 msgstr "Mantener el modo de &ratón"
@@ -10045,8 +9918,7 @@ msgstr "Modo de teclado"
 
 #: src/kgrgame.cpp:1458 src/kgrgame.cpp:1484 src/kgrgame.cpp:1494
 #: src/kgrgame.cpp:1513 src/kgrgame.cpp:1519
-#, fuzzy, kde-format
-#| msgid "Save Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Game"
 msgstr "Guardar partida"
@@ -10082,8 +9954,7 @@ msgid "Error: Failed to save your game."
 msgstr "Error: Fallo al guardar la partida."
 
 #: src/kgrgame.cpp:1532 src/kgrgame.cpp:1538 src/kgrgame.cpp:1576
-#, fuzzy, kde-format
-#| msgid "Load Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Game"
 msgstr "Cargar partida"
@@ -10104,8 +9975,7 @@ msgid "Unknown"
 msgstr "Desconocido"
 
 #: src/kgrgame.cpp:1653 src/kgrgame.cpp:1692
-#, fuzzy, kde-format
-#| msgid "Check for High Score"
+#, kde-format
 msgctxt "@title:window"
 msgid "Check for High Score"
 msgstr "Comprobar mejores puntuaciones"
@@ -10133,8 +10003,7 @@ msgid "Error: Failed to save your high score."
 msgstr "Error: fallo al guardar su mejor puntuación."
 
 #: src/kgrgame.cpp:1824 src/kgrgame.cpp:1847 src/kgrgame.cpp:1856
-#, fuzzy, kde-format
-#| msgid "Show High Scores"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show High Scores"
 msgstr "Mostrar mejores puntuaciones"
@@ -10159,39 +10028,31 @@ msgstr ""
 "«%1»</h3></center>"
 
 #: src/kgrgame.cpp:1882
-#, fuzzy, kde-format
-#| msgctxt "1, 2, 3 etc."
-#| msgid "Rank"
+#, kde-format
 msgctxt "@title:column 1, 2, 3 etc."
 msgid "Rank"
 msgstr "Categoría"
 
 #: src/kgrgame.cpp:1883
-#, fuzzy, kde-format
-#| msgctxt "Person"
-#| msgid "Name"
+#, kde-format
 msgctxt "@title:column person"
 msgid "Name"
 msgstr "Nombre"
 
 #: src/kgrgame.cpp:1884
-#, fuzzy, kde-format
-#| msgctxt "Game level reached"
-#| msgid "Level"
+#, kde-format
 msgctxt "@title:column game level reached"
 msgid "Level"
 msgstr "Nivel"
 
 #: src/kgrgame.cpp:1885
-#, fuzzy, kde-format
-#| msgid "Score"
+#, kde-format
 msgctxt "@title:column"
 msgid "Score"
 msgstr "Puntuación"
 
 #: src/kgrgame.cpp:1886
-#, fuzzy, kde-format
-#| msgid "Date"
+#, kde-format
 msgctxt "@title:column"
 msgid "Date"
 msgstr "Fecha"
@@ -10203,8 +10064,7 @@ msgid "High Scores"
 msgstr "Mejores puntuaciones"
 
 #: src/kgrgame.cpp:2016 src/kgrgame.cpp:2022 src/kgrgame.cpp:2026
-#, fuzzy, kde-format
-#| msgid "Load Game Info"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Game Info"
 msgstr "Cargar información del juego"
@@ -10234,8 +10094,7 @@ msgid "Your solution to level %1 has been saved on file %2"
 msgstr "Su solución para el nivel %1 se ha guardado en el archivo %2"
 
 #: src/kgrgameio.cpp:163 src/kgrgameio.cpp:168 src/kgrgameio.cpp:172
-#, fuzzy, kde-format
-#| msgid "Read Level Data"
+#, kde-format
 msgctxt "@title:window"
 msgid "Read Level Data"
 msgstr "Leer datos de nivel"
@@ -10252,8 +10111,7 @@ msgstr ""
 "Se ha alcanzado el final del archivo «%1» sin encontrar datos del nivel."
 
 #: src/kgrgameio.cpp:381 src/kgrgameio.cpp:388
-#, fuzzy, kde-format
-#| msgid "Rename File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rename File"
 msgstr "Cambiar el nombre del archivo"
@@ -10269,8 +10127,7 @@ msgid "Cannot rename file '%1' to '%2'."
 msgstr "No se puede cambiar el nombre del archivo «%1» a «%2»."
 
 #: src/kgrrenderer.cpp:100
-#, fuzzy, kde-format
-#| msgid "Theme Selector"
+#, kde-format
 msgctxt "@title:window"
 msgid "Theme Selector"
 msgstr "Selector de temas"
@@ -10287,8 +10144,7 @@ msgstr "Puntuación:  %1"
 
 #: src/kgrselector.cpp:72 src/kgrselector.cpp:78 src/kgrselector.cpp:98
 #: src/kgrselector.cpp:501
-#, fuzzy, kde-format
-#| msgid "Select Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Level"
 msgstr "Seleccionar nivel"
@@ -10325,29 +10181,25 @@ msgid "<html><b>Please select a game:</b></html>"
 msgstr "<html><b>Seleccione un juego:</b></html>"
 
 #: src/kgrselector.cpp:143
-#, fuzzy, kde-format
-#| msgid "Name of Game"
+#, kde-format
 msgctxt "@title:column"
 msgid "Name of Game"
 msgstr "Nombre del juego"
 
 #: src/kgrselector.cpp:144
-#, fuzzy, kde-format
-#| msgid "Rules"
+#, kde-format
 msgctxt "@title:column"
 msgid "Rules"
 msgstr "Reglas"
 
 #: src/kgrselector.cpp:145
-#, fuzzy, kde-format
-#| msgid "Levels"
+#, kde-format
 msgctxt "@title:column"
 msgid "Levels"
 msgstr "Niveles"
 
 #: src/kgrselector.cpp:146
-#, fuzzy, kde-format
-#| msgid "Skill"
+#, kde-format
 msgctxt "@title:column"
 msgid "Skill"
 msgstr "Habilidad"
@@ -10369,43 +10221,37 @@ msgid "Please select a level:"
 msgstr "Seleccione un nivel:"
 
 #: src/kgrselector.cpp:204
-#, fuzzy, kde-format
-#| msgid "Level number:"
+#, kde-format
 msgctxt "@label:spinbox"
 msgid "Level number:"
 msgstr "Número de nivel:"
 
 #: src/kgrselector.cpp:210
-#, fuzzy, kde-format
-#| msgid "Edit Level Name o&r Hint"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit Level Name o&r Hint"
 msgstr "Editar nombre de nivel o pista"
 
 #: src/kgrselector.cpp:245
-#, fuzzy, kde-format
-#| msgid "Start Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Game"
 msgstr "Iniciar partida"
 
 #: src/kgrselector.cpp:254
-#, fuzzy, kde-format
-#| msgid "Play Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "Play Level"
 msgstr "Jugar nivel"
 
 #: src/kgrselector.cpp:257
-#, fuzzy, kde-format
-#| msgid "Replay Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "Replay Level"
 msgstr "Volver a jugar el nivel"
 
 #: src/kgrselector.cpp:260
-#, fuzzy, kde-format
-#| msgid "Show Solution"
+#, kde-format
 msgctxt "@action:button"
 msgid "Show Solution"
 msgstr "Mostrar solución"
@@ -10418,22 +10264,19 @@ msgid "Save a Solution"
 msgstr "Guardar una solución"
 
 #: src/kgrselector.cpp:266
-#, fuzzy, kde-format
-#| msgid "Edit Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit Level"
 msgstr "Editar nivel"
 
 #: src/kgrselector.cpp:272
-#, fuzzy, kde-format
-#| msgid "Save Change"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save Change"
 msgstr "Guardar cambios"
 
 #: src/kgrselector.cpp:275
-#, fuzzy, kde-format
-#| msgid "Delete Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Level"
 msgstr "Borrar nivel"
@@ -10446,8 +10289,7 @@ msgid "Move To…"
 msgstr "Mover a..."
 
 #: src/kgrselector.cpp:281
-#, fuzzy, kde-format
-#| msgid "Edit Game Info"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit Game Info"
 msgstr "Editar información del juego"
@@ -10661,8 +10503,7 @@ msgstr ""
 "una vista previa de lo que ha seleccionado."
 
 #: src/kgrselector.cpp:589
-#, fuzzy, kde-format
-#| msgid "Help: Select Game & Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Help: Select Game & Level"
 msgstr "Ayuda: seleccionar juego y nivel"
