@@ -1,15 +1,15 @@
 # Translation of kgoldrunner into esperanto.
 # Copyright (C) 2009 Free Software Foundation, Inc.
 # Axel Rousseau <axel@esperanto-jeunes.org>, 2009.
-# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
+# Oliver Kellogg <olivermkellogg@gmail.com>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-17 00:36+0000\n"
-"PO-Revision-Date: 2023-10-10 07:12+0100\n"
-"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"PO-Revision-Date: 2024-05-06 22:06+0100\n"
+"Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr "Axel Rousseau,Oliver Kellogg"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "axel@esperanto-jeunes.org,okellogg@users.sourceforge.net"
+msgstr "axel@esperanto-jeunes.org,olivermkellogg@gmail.com"
 
 #: gamedata/game_blb.txt:3
 #, kde-format
@@ -1368,7 +1368,7 @@ msgstr "TRADUKTOJ: Bonvolu vidi la notojn en la tradukkomento."
 #: gamedata/game_fd.txt:2
 #, kde-format
 msgid "Dig While Falling"
-msgstr "Fosu Dum Falado"
+msgstr "Fosi Dum Falado"
 
 #: gamedata/game_fd.txt:3
 #, kde-format
@@ -1450,7 +1450,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:22
 #, kde-format
 msgid "Use the Guards"
-msgstr "Uzu la Gardistojn"
+msgstr "Uzi la Gardistojn"
 
 #: gamedata/game_GMEP.txt:23
 #, kde-format
@@ -2152,7 +2152,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:120
 #, kde-format
 msgid "Get In And Up"
-msgstr "Eniru Kaj Supren"
+msgstr "Eniri Kaj Supren"
 
 #: gamedata/game_GMGR.txt:121
 #, kde-format
@@ -4330,7 +4330,8 @@ msgstr ""
 "La vojo al la sekva malamiko estas fosa tempo-enigmo. Akiri la du orpecojn "
 "en la mezo de la brikoj estas sufiĉe komplika kaj tre malfacila, eĉ kiam vi "
 "konas la vojon, do ne rezignu se ŝajnas neeble. En la plej malbona kazo vi "
-"eble devos rigardi la brikojn per la ludredaktilo aŭ eĉ reludi la solvon.\n"
+"eble devos rigardi la brikojn per la ludredaktilo aŭ eĉ reprodukti la "
+"solvon.\n"
 "\n"
 "Kiam vi atingas la sekcion kun la dua malamiko, vi devas logi lin en la "
 "kavon. La briko en la kavo estas kaptilo, do vi devas esti sufiĉe rapida por "
@@ -7760,7 +7761,7 @@ msgstr ""
 #: gamedata/game_wad.txt:81
 #, kde-format
 msgid "Ride Them Down"
-msgstr "Rajdu Ilin Malsupren"
+msgstr "Tretu Ilin Malsupren"
 
 #: gamedata/game_wad.txt:82
 #, kde-format
@@ -8102,7 +8103,7 @@ msgstr ""
 #: src/kgoldrunner.cpp:252
 #, kde-format
 msgid "&Instant Replay"
-msgstr "Tuja R&ipeto"
+msgstr "Tuj Reprodukt&i"
 
 #: src/kgoldrunner.cpp:253
 #, kde-format
@@ -8117,7 +8118,7 @@ msgstr "Montri registradon de la nivelo, kiun vi ludas."
 #: src/kgoldrunner.cpp:259
 #, kde-format
 msgid "Replay &Last Level"
-msgstr "Reludi &Lastan Nivelon"
+msgstr "Reprodukti &Lastan Nivelon"
 
 #: src/kgoldrunner.cpp:260
 #, kde-format
@@ -8136,7 +8137,7 @@ msgstr ""
 #: src/kgoldrunner.cpp:267
 #, kde-format
 msgid "&Replay Any Level"
-msgstr "&Reludi ajnan Nivelon"
+msgstr "&Reprodukti Ajnan Nivelon"
 
 #: src/kgoldrunner.cpp:268
 #, kde-format
@@ -8304,7 +8305,7 @@ msgstr "Ŝanĝi la vidan aspekton de la kuristoj kaj fona sceno..."
 #: src/kgoldrunner.cpp:367
 #, kde-format
 msgid "&Play Sounds"
-msgstr "&Ludi sonojn"
+msgstr "&Produkti Sonojn"
 
 #: src/kgoldrunner.cpp:368
 #, kde-format
@@ -8319,7 +8320,7 @@ msgstr "Ludi sonefektojn dum la ludo."
 #: src/kgoldrunner.cpp:372
 #, kde-format
 msgid "Play &Footstep Sounds"
-msgstr "Ludi &Paŝajn Sonojn"
+msgstr "Aŭdigi &Piedpaŝajn Sonojn"
 
 #: src/kgoldrunner.cpp:373 src/kgoldrunner.cpp:374
 #, kde-format
@@ -8450,7 +8451,7 @@ msgstr "Agordu la rapidon de komencantoj."
 #: src/kgoldrunner.cpp:454
 #, kde-format
 msgid "Set beginners' game speed (0.5 times normal)."
-msgstr "Agordu la ludrapidecon de komencantoj (0,5 fojojn normala)."
+msgstr "Agordi la ludrapidecon de komencantoj (0,5 fojojn normala)."
 
 #: src/kgoldrunner.cpp:459
 #, kde-format
@@ -8465,7 +8466,7 @@ msgstr "Agordu la rapidon de ĉampionoj."
 #: src/kgoldrunner.cpp:461
 #, kde-format
 msgid "Set champions' game speed (1.5 times normal)."
-msgstr "Agordu la ludrapidecon de ĉampionoj (1,5 fojojn normala)."
+msgstr "Agordi la ludrapidecon de ĉampionoj (1,5 fojojn normala)."
 
 #: src/kgoldrunner.cpp:465
 #, kde-format
@@ -8485,7 +8486,7 @@ msgstr "Pliigu la ludrapidecon je 0.1 (maksimumo estas 2.0 fojojn normala)."
 #: src/kgoldrunner.cpp:472
 #, kde-format
 msgid "Decrease Speed"
-msgstr "Malpliigu Rapidon"
+msgstr "Malpliigi Rapidon"
 
 #: src/kgoldrunner.cpp:473
 #, kde-format
@@ -8525,17 +8526,17 @@ msgstr "Movi malsupren"
 #: src/kgoldrunner.cpp:509
 #, kde-format
 msgid "Dig Right"
-msgstr "Fosu Ĝuste"
+msgstr "Fosi Dekstren"
 
 #: src/kgoldrunner.cpp:510
 #, kde-format
 msgid "Dig Left"
-msgstr "Fosu Maldekstren"
+msgstr "Fosi Maldekstren"
 
 #: src/kgoldrunner.cpp:534
 #, kde-format
 msgid "Do a Step"
-msgstr "Faru Paŝon"
+msgstr "Fari Paŝon"
 
 #: src/kgoldrunner.cpp:535
 #, kde-format
@@ -8545,29 +8546,29 @@ msgstr "Testa Cimo Riparo"
 #: src/kgoldrunner.cpp:536
 #, kde-format
 msgid "Show Positions"
-msgstr "Montru Poziciojn"
+msgstr "Montri Poziciojn"
 
 #: src/kgoldrunner.cpp:537
 #, kde-format
 msgid "Start Logging"
-msgstr "Komencu Registrado"
+msgstr "Komenci Protokoladon"
 
 #: src/kgoldrunner.cpp:538
 #, kde-format
 msgid "Show Hero"
-msgstr "Montru Heroon"
+msgstr "Montri Heroon"
 
 #: src/kgoldrunner.cpp:539
 #, kde-format
 msgid "Show Object"
-msgstr "Montru Objekton"
+msgstr "Montri Objekton"
 
 #: src/kgoldrunner.cpp:541 src/kgoldrunner.cpp:542 src/kgoldrunner.cpp:543
 #: src/kgoldrunner.cpp:544 src/kgoldrunner.cpp:545 src/kgoldrunner.cpp:546
 #: src/kgoldrunner.cpp:547
 #, kde-format
 msgid "Show Enemy"
-msgstr "Montru Malamikon"
+msgstr "Montri Malamikon"
 
 #: src/kgoldrunner.cpp:735
 #, kde-format
@@ -8607,7 +8608,7 @@ msgstr "Neniu sugesto"
 #: src/kgoldrunner.cpp:877
 #, kde-format
 msgid "Get Folders"
-msgstr "Akiru Dosierujojn"
+msgstr "Akiri Dosierujojn"
 
 #: src/kgoldrunner.cpp:878
 #, kde-format
@@ -8618,12 +8619,12 @@ msgstr ""
 #: src/kgoldrunner.cpp:911
 #, kde-format
 msgid "Edit Name/Hint"
-msgstr "Redaktu Nomon/Konsilon"
+msgstr "Redakti Nomon/Konsilon"
 
 #: src/kgoldrunner.cpp:912
 #, kde-format
 msgid "Edit level name or hint"
-msgstr "Redaktu nivelnomon aŭ sugeston"
+msgstr "Redakti nivelnomon aŭ sugeston"
 
 #: src/kgoldrunner.cpp:913
 #, kde-format
@@ -8648,7 +8649,7 @@ msgstr "Spaco/Forigi"
 #: src/kgoldrunner.cpp:920
 #, kde-format
 msgid "Paint empty squares or erase"
-msgstr "Pentru malplenajn kvadratojn aŭ viŝu"
+msgstr "Pentri malplenajn kvadratojn aŭ viŝi"
 
 #: src/kgoldrunner.cpp:921
 #, kde-format
@@ -8663,7 +8664,7 @@ msgstr "Heroo"
 #: src/kgoldrunner.cpp:925
 #, kde-format
 msgid "Move hero"
-msgstr "Movu heroon"
+msgstr "Movi heroon"
 
 #: src/kgoldrunner.cpp:926
 #, kde-format
@@ -8798,7 +8799,7 @@ msgstr "Oro/Trezoro"
 #: src/kgoldrunner.cpp:970
 #, kde-format
 msgid "Paint gold (or other treasure)"
-msgstr "Pentru oron (aŭ alian trezoron)"
+msgstr "Pentri oron (aŭ alian trezoron)"
 
 #: src/kgoldrunner.cpp:971
 #, kde-format
@@ -8821,7 +8822,7 @@ msgstr "Redakti Ilobreton"
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Name or Hint"
-msgstr "Redaktu Nomon aŭ Sugeston"
+msgstr "Redakti Nomon aŭ Sugeston"
 
 #: src/kgrdialog.cpp:56
 #, kde-format
@@ -8837,7 +8838,7 @@ msgstr "Sugesto por nivelo:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Game Info"
-msgstr "Redaktu Ludan Informojn"
+msgstr "Redakti Ludan Informojn"
 
 #: src/kgrdialog.cpp:123
 #, kde-format
@@ -8880,7 +8881,7 @@ msgstr "Krei Ludon"
 #: src/kgrdialog.cpp:186
 #, kde-format
 msgid "Save Changes"
-msgstr "Konservu Ŝanĝojn"
+msgstr "Konservi Ŝanĝojn"
 
 #: src/kgrdialog.cpp:191
 #, kde-format
@@ -8890,13 +8891,13 @@ msgstr "0 niveloj"
 #: src/kgrdialog.cpp:192 src/kgrselector.cpp:269
 #, kde-format
 msgid "Save New"
-msgstr "Konservu Novan"
+msgstr "Konservi Novan"
 
 #: src/kgrdialog.cpp:247
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Saved Game"
-msgstr "Elektu Konservitan Ludon"
+msgstr "Elekti Konservitan Ludon"
 
 #: src/kgrdialog.cpp:266
 #, kde-format
@@ -8945,7 +8946,7 @@ msgstr ""
 #: src/kgreditor.cpp:242 src/kgreditor.cpp:260 src/kgrgame.cpp:260
 #, kde-format
 msgid "Save Level"
-msgstr "Konservu Nivelon"
+msgstr "Konservi Nivelon"
 
 #: src/kgreditor.cpp:243
 #, kde-format
@@ -8973,7 +8974,7 @@ msgstr "Ne povas malfermi dosieron '%1' por eligo."
 #: src/kgreditor.cpp:355
 #, kde-format
 msgid "Move Level"
-msgstr "Movu Nivelon"
+msgstr "Movi Nivelon"
 
 #: src/kgreditor.cpp:317
 #, kde-format
@@ -9046,7 +9047,7 @@ msgstr "Ne povas trovi dosieron '%1' por esti forigita."
 #: src/kgreditor.cpp:778
 #, kde-format
 msgid "Save Game Info"
-msgstr "Konservu Ludan Informojn"
+msgstr "Konservi Ludan Informojn"
 
 #: src/kgreditor.cpp:509
 #, kde-format
@@ -9123,7 +9124,7 @@ msgstr "Alklaku ie ajn por komenci viva ludadon"
 #: src/kgrgame.cpp:190
 #, kde-format
 msgid "Play Next Level"
-msgstr "Ludu Sekvan Nivelon"
+msgstr "Ludi Sekvan Nivelon"
 
 #: src/kgrgame.cpp:191
 #, kde-format
@@ -9164,20 +9165,20 @@ msgid ""
 "The replay has stopped and the game is pausing while you prepare to go on "
 "playing. Please press the Pause key (default P or Esc) when you are ready."
 msgstr ""
-"La ripeto ĉesis kaj la ludo paŭzas dum vi prepariĝas por daŭrigi la ludadon. "
-"Bonvolu premi la Paŭzklavon (defaŭlte P aŭ Esc) kiam vi estas preta."
+"La reprodukto ĉesis kaj la ludo paŭzas dum vi prepariĝas por daŭrigi la "
+"ludadon. Bonvolu premi la Paŭzklavon (defaŭlte P aŭ Esc) kiam vi estas preta."
 
 #: src/kgrgame.cpp:670 src/kgrgame.cpp:676
 #, kde-format
 msgid "Replay Last Level"
-msgstr "Riludu Lastan Nivelon"
+msgstr "Reprodukti Lastan Nivelon"
 
 #: src/kgrgame.cpp:671
 #, kde-format
 msgid ""
 "ERROR: Could not find and replay a recording of the last level you played."
 msgstr ""
-"ERARO: Ne eblis trovi kaj reludi registradon de la lasta nivelo, kiun vi "
+"ERARO: Ne eblis trovi kaj reprodukti registradon de la lasta nivelo, kiun vi "
 "ludis."
 
 #: src/kgrgame.cpp:677
@@ -9186,7 +9187,7 @@ msgid ""
 "There is no last level to replay.  You need to play a level to completion, "
 "win or lose, before you can use the Replay Last Level action."
 msgstr ""
-"Ne estas lasta nivelo por reludi. Vi devas ludi nivelon ĝis kompletiĝo, "
+"Ne estas lasta nivelo por reprodukti. Vi devas ludi nivelon ĝis kompletiĝo, "
 "gajni aŭ perdi, antaŭ ol vi povas uzi la agon Replay Last Level."
 
 #: src/kgrgame.cpp:695
@@ -9204,7 +9205,7 @@ msgstr "&LUDI"
 #: src/kgrgame.cpp:713
 #, kde-format
 msgid "Start playing this level"
-msgstr "Komencu ludi ĉi tiun nivelon"
+msgstr "Komenci ludi ĉi tiun nivelon"
 
 #: src/kgrgame.cpp:715
 #, kde-format
@@ -9247,7 +9248,7 @@ msgstr "&Uzi Menuon"
 #: src/kgrgame.cpp:732
 #, kde-format
 msgid "Use the menus to choose other actions"
-msgstr "Uzu la menuojn por elekti aliajn agojn"
+msgstr "Uzi la menuojn por elekti aliajn agojn"
 
 #: src/kgrgame.cpp:734
 #, kde-format
@@ -9270,7 +9271,7 @@ msgstr ""
 #: src/kgrgame.cpp:836
 #, kde-format
 msgid "Show a Solution"
-msgstr "Montru Solvon"
+msgstr "Montri Solvon"
 
 #: src/kgrgame.cpp:837
 #, kde-format
@@ -9284,7 +9285,7 @@ msgstr ""
 #: src/kgrgame.cpp:848
 #, kde-format
 msgid "Replay Any Level"
-msgstr "Riludu Iun ajn Nivelon"
+msgstr "Reprodukti Iun ajn Nivelon"
 
 #: src/kgrgame.cpp:849 src/kgrgame.cpp:2055
 #, kde-format
@@ -9309,7 +9310,7 @@ msgstr "Ludo finita"
 #: src/kgrgame.cpp:1066
 #, kde-format
 msgid "&Try Again"
-msgstr "&Provu denove"
+msgstr "&Provi Denove"
 
 #: src/kgrgame.cpp:1066
 #, kde-format
@@ -9359,17 +9360,17 @@ msgstr ""
 #: src/kgrgame.cpp:1419
 #, kde-format
 msgid "Switch to Keyboard Mode"
-msgstr "Ŝaltu al Klavarreĝimo"
+msgstr "Ŝalti al Klavarreĝimo"
 
 #: src/kgrgame.cpp:1420
 #, kde-format
 msgid "Switch to &Keyboard Mode"
-msgstr "Ŝaltu al &Klavara Reĝimo"
+msgstr "Ŝalti al &Klavara Reĝimo"
 
 #: src/kgrgame.cpp:1421
 #, kde-format
 msgid "Stay in &Mouse Mode"
-msgstr "Restu en &Musa Reĝimo"
+msgstr "Resti en &Musa Reĝimo"
 
 #: src/kgrgame.cpp:1422
 #, kde-format
@@ -9414,7 +9415,7 @@ msgstr "Eraro: Malsukcesis konservi vian ludon."
 #: src/kgrgame.cpp:1530 src/kgrgame.cpp:1536 src/kgrgame.cpp:1574
 #, kde-format
 msgid "Load Game"
-msgstr "Ŝargu ludon"
+msgstr "Ŝargi ludon"
 
 #: src/kgrgame.cpp:1531
 #, kde-format
@@ -9595,7 +9596,7 @@ msgstr "Poentaro: %1"
 #: src/kgrselector.cpp:501
 #, kde-format
 msgid "Select Level"
-msgstr "Elektu Nivelon"
+msgstr "Elekti Nivelon"
 
 #: src/kgrselector.cpp:73
 #, kde-format
@@ -9610,7 +9611,7 @@ msgstr "Pardonu, vi povas nur forigi nivelon de unu el viaj propraj ludoj."
 #: src/kgrselector.cpp:84 src/kgrselector.cpp:281
 #, kde-format
 msgid "Edit Game Info"
-msgstr "Redaktu Ludan Informojn"
+msgstr "Redakti Ludan Informojn"
 
 #: src/kgrselector.cpp:85
 #, kde-format
@@ -9627,7 +9628,7 @@ msgstr "Ne estas nivelo %1 en \"%2\", do vi ne povas ludi aŭ redakti ĝin."
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Game"
-msgstr "Elektu Ludon"
+msgstr "Elekti Ludon"
 
 #: src/kgrselector.cpp:135
 #, kde-format
@@ -9693,12 +9694,12 @@ msgstr "Ludi Nivelon"
 #: src/kgrselector.cpp:257
 #, kde-format
 msgid "Replay Level"
-msgstr "Ripetnivelo"
+msgstr "Reproduktnivelo"
 
 #: src/kgrselector.cpp:260
 #, kde-format
 msgid "Show Solution"
-msgstr "Montri la Solvon"
+msgstr "Montri Solvon"
 
 #: src/kgrselector.cpp:272
 #, kde-format
