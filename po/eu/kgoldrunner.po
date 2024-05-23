@@ -13,14 +13,14 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-17 00:36+0000\n"
-"PO-Revision-Date: 2024-02-16 11:13+0100\n"
+"PO-Revision-Date: 2024-05-23 00:21+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.02.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #, kde-format
@@ -3166,6 +3166,8 @@ msgid ""
 "Finally, you have escaped the horrors of the zombie-infested world. Now that "
 "you are in the zombie-free zone, nothing can go wrong, can it?"
 msgstr ""
+"Azkenean, zombiz betetako munduaren izugarrikeriei ihes egin diezu. Zombirik "
+"gabeko aldean zaudelarik, ezin da ezer okeratu, ezta?"
 
 #: gamedata/game_GotD.txt:343
 #, kde-format
@@ -3173,10 +3175,7 @@ msgid "The End"
 msgstr "Bukaera"
 
 #: gamedata/game_GotD.txt:344
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the <b>"
-#| "\"%1\"</b> game !!</p>"
+#, kde-format
 msgid ""
 "CONGRATULATIONS !!!!\n"
 "\n"
@@ -3184,14 +3183,16 @@ msgid ""
 "\n"
 "Or have you?"
 msgstr ""
-"<b>ZORIONAK !!!!</b><p><b>\"%1\"</b> jokoaren azken maila gainditu duzu !!</"
-"p>"
+"ZORIONAK !!!!\n"
+"\n"
+"Hildako bizidunen urrea jokoaren maila guztiak menderatu dituzu!!!\n"
+"\n"
+"Edo egin duzu?"
 
 #: gamedata/game_GRII.txt:2
-#, fuzzy, kde-format
-#| msgid "Gold Mesh"
+#, kde-format
 msgid "Gold Rush II"
-msgstr "Urrezko sare-begia"
+msgstr "Urrearen sukarra II"
 
 #: gamedata/game_GRII.txt:3
 #, fuzzy, kde-format
@@ -3215,10 +3216,9 @@ msgstr ""
 "\n"
 
 #: gamedata/game_GRII.txt:10
-#, fuzzy, kde-format
-#| msgid "Quick Start"
+#, kde-format
 msgid "A Big Start"
-msgstr "Abiarazte bizkorra"
+msgstr "Hasiera handia"
 
 #: gamedata/game_GRII.txt:11
 #, kde-format
@@ -3256,7 +3256,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:20
 #, kde-format
 msgid "Teamwork"
-msgstr ""
+msgstr "Taldelana"
 
 #: gamedata/game_GRII.txt:21
 #, kde-format
@@ -3280,7 +3280,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:30
 #, kde-format
 msgid "Watch Out For Traps"
-msgstr ""
+msgstr "Kontuz tranpekin"
 
 #: gamedata/game_GRII.txt:31
 #, kde-format
@@ -3288,12 +3288,13 @@ msgid ""
 "Use the four enemies to fill up the false bricks you will find on your way "
 "up the ladders."
 msgstr ""
+"Erabili zure etsaiak eskaileran gora aurkituko dituzun gezurrezko adreiluak "
+"betetzeko."
 
 #: gamedata/game_GRII.txt:34
-#, fuzzy, kde-format
-#| msgid "Easy Start"
+#, kde-format
 msgid "Easy Prey"
-msgstr "Hasiera erraza"
+msgstr "Harrapakin erraza"
 
 #: gamedata/game_GRII.txt:35
 #, kde-format
@@ -3370,10 +3371,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GRII.txt:62
-#, fuzzy, kde-format
-#| msgid "Two of Diamonds"
+#, kde-format
 msgid "Three Friends"
-msgstr "Diamantezko bi"
+msgstr "Hiru lagun"
 
 #: gamedata/game_GRII.txt:63
 #, kde-format
@@ -3407,7 +3407,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:72
 #, kde-format
 msgid "Let Me Out!"
-msgstr ""
+msgstr "Utzi irteten!"
 
 #: gamedata/game_GRII.txt:73
 #, kde-format
@@ -3423,7 +3423,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:78
 #, kde-format
 msgid "Let Them Live"
-msgstr ""
+msgstr "Utzi bizitzen"
 
 #: gamedata/game_GRII.txt:79
 #, kde-format
@@ -3451,7 +3451,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:88
 #, kde-format
 msgid "Jump And Run!"
-msgstr ""
+msgstr "Jauzi eta korri!"
 
 #: gamedata/game_GRII.txt:89
 #, kde-format
@@ -3498,8 +3498,7 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GRII.txt:106
-#, fuzzy, kde-format
-#| msgid "Left or Right?"
+#, kde-format
 msgid "Left Or Right?"
 msgstr "Ezkerrera edo eskuinera?"
 
@@ -3594,7 +3593,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:144
 #, kde-format
 msgid "Narrow Paths"
-msgstr ""
+msgstr "Bidezidorrak"
 
 #: gamedata/game_GRII.txt:145
 #, kde-format
@@ -3703,10 +3702,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GRII.txt:184
-#, fuzzy, kde-format
-#| msgid "Synchronised Running"
+#, kde-format
 msgid "Synchronised Running 2"
-msgstr "Lasterketa sinkronizatua"
+msgstr "Lasterketa sinkronizatua 2"
 
 #: gamedata/game_GRII.txt:185
 #, kde-format
@@ -3721,10 +3719,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GRII.txt:190
-#, fuzzy, kde-format
-#| msgid "The Laboratory"
+#, kde-format
 msgid "The Heartbreaker"
-msgstr "Laborategia"
+msgstr "Bihotz-hauslea"
 
 #: gamedata/game_GRII.txt:191 gamedata/game_lars.txt:85
 #, kde-format
@@ -3752,7 +3749,7 @@ msgstr ""
 #: gamedata/game_lars.txt:2
 #, kde-format
 msgid "Demolition"
-msgstr ""
+msgstr "Eraispena"
 
 #: gamedata/game_lars.txt:3
 #, fuzzy, kde-format
@@ -3768,7 +3765,7 @@ msgstr ""
 #: gamedata/game_lars.txt:8
 #, kde-format
 msgid "Ups And Downs"
-msgstr ""
+msgstr "Gorabeherak"
 
 #: gamedata/game_lars.txt:9
 #, kde-format
@@ -3781,22 +3778,23 @@ msgstr ""
 #: gamedata/game_lars.txt:12
 #, kde-format
 msgid "Dig, Baby, Dig!"
-msgstr ""
+msgstr "Zulatu, haurra, zulatu!"
 
 #: gamedata/game_lars.txt:13
 #, kde-format
 msgid "This should be fairly easy. No hint!"
-msgstr ""
+msgstr "Hau nahiko erraza izan beharko litzateke. Argibiderik ez!"
 
 #: gamedata/game_lars.txt:16
 #, kde-format
 msgid "Fetch!"
-msgstr ""
+msgstr "Ekarri!"
 
 #: gamedata/game_lars.txt:17
 #, kde-format
 msgid "Make your enemies fetch the gold pieces you cannot reach yourself."
 msgstr ""
+"Eragin zure etsaiek zuk zeuk lor ezin ditzakezun urre-zatiak eskura ditzaten."
 
 #: gamedata/game_lars.txt:20
 #, kde-format
@@ -3807,11 +3805,12 @@ msgstr "Akrofobia"
 #, kde-format
 msgid "To get that last piece of gold, kill an enemy and have him fetch it."
 msgstr ""
+"Azken urre-zatia lortzeko, etsai bat hil eta eragin berak eskura dezan."
 
 #: gamedata/game_lars.txt:24
 #, kde-format
 msgid "Panic!"
-msgstr ""
+msgstr "Izua!"
 
 #: gamedata/game_lars.txt:25
 #, kde-format
@@ -3819,6 +3818,8 @@ msgid ""
 "Sometimes you can make the enemies run towards or away from you by moving "
 "one step up or down a ladder."
 msgstr ""
+"Batzuetan, eskaileran urrats bat gora edo behera eginez, etsaiek zuregana "
+"edo zugandik korrika egin dezaten eragin dezakezu."
 
 #: gamedata/game_lars.txt:28
 #, kde-format
@@ -3828,17 +3829,17 @@ msgstr ""
 #: gamedata/game_lars.txt:29
 #, kde-format
 msgid "You can walk on top of trapped enemies."
-msgstr ""
+msgstr "Harrapatutako etsien gainean ibil zaitezke."
 
 #: gamedata/game_lars.txt:32
 #, kde-format
 msgid "Inwards And Upwards"
-msgstr ""
+msgstr "Barrurantz eta kanporantz"
 
 #: gamedata/game_lars.txt:33
 #, kde-format
 msgid "You only get one chance to grab those first three pieces of gold."
-msgstr ""
+msgstr "Aurreneko hiru urre-zati horiek eskuratzeko aukera bakarra duzu."
 
 #: gamedata/game_lars.txt:36
 #, kde-format
@@ -3851,6 +3852,8 @@ msgid ""
 "If you dig a hole quickly and jump into it, the enemy will jump into the "
 "concrete hole to the right."
 msgstr ""
+"Zulo bat egin eta hartara azkar salto egiten baduzu, etsaiak eskuineko "
+"hornigoiko zulora salto egingo du."
 
 #: gamedata/game_lars.txt:40
 #, kde-format
@@ -3872,10 +3875,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_lars.txt:48
-#, fuzzy, kde-format
-#| msgid "The Box"
+#, kde-format
 msgid "The Box (1)"
-msgstr "Kaxa"
+msgstr "Kaxa (1)"
 
 #: gamedata/game_lars.txt:49
 #, kde-format
@@ -3883,6 +3885,8 @@ msgid ""
 "This level is fairly straightforward. There are some places where you can "
 "trap enemies if you do not like all of them running around."
 msgstr ""
+"Maila hau nahiko sinplea da. Etsai guztiak zure inguruan korriaka ibiltzea "
+"gustoko ez baduzu, haiek harrapatzeko leku batzuk daude."
 
 #: gamedata/game_lars.txt:52
 #, kde-format
@@ -3902,22 +3906,22 @@ msgstr ""
 #: gamedata/game_lars.txt:57 gamedata/game_lars.txt:81
 #, kde-format
 msgid "This one is easy. No hint!"
-msgstr ""
+msgstr "Honako hau erraza da. Argibiderik ez!"
 
 #: gamedata/game_lars.txt:60
 #, kde-format
 msgid "Use Your Enemy"
-msgstr ""
+msgstr "Erabili zure etsaia"
 
 #: gamedata/game_lars.txt:61
 #, kde-format
 msgid "Use yourself as bait."
-msgstr ""
+msgstr "Erabili zeure buru amu gisa."
 
 #: gamedata/game_lars.txt:64
 #, kde-format
 msgid "Race To The Bottom"
-msgstr ""
+msgstr "Hondora iristeko lasterketa"
 
 #: gamedata/game_lars.txt:65
 #, kde-format
@@ -3925,11 +3929,13 @@ msgid ""
 "Unless you can stop all the enemies from reaching the bottom before you, you "
 "are dead."
 msgstr ""
+"Zure etsai guztiak zu baino lehen hondoraino iristea eragozten ez baduzu, "
+"hilda zaude."
 
 #: gamedata/game_lars.txt:68
 #, kde-format
 msgid "No-Brainer"
-msgstr ""
+msgstr "Erraz-erraza"
 
 #: gamedata/game_lars.txt:69
 #, kde-format
