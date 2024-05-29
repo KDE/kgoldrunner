@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-06 00:36+0000\n"
-"PO-Revision-Date: 2024-05-17 00:28+0100\n"
+"PO-Revision-Date: 2024-05-29 01:51+0100\n"
 "Last-Translator: Sofía Priego <spriego@darksylvania.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -2062,7 +2062,7 @@ msgstr ""
 "arriba, cavar hasta el oro restante y salir rápido.\n"
 
 #: gamedata/game_GMGR.txt:76
-#, fuzzy, kde-format
+#, kde-format
 msgid "The Prison"
 msgstr "La cárcel"
 
@@ -2076,13 +2076,13 @@ msgid ""
 "\n"
 "You are free again!"
 msgstr ""
-"Cuando alcance a los enemigos, coja todo el oro. Después, excave uno de los "
-"ladrillos, salte dentro y cave inmediatamente a ambos lados. Los enemigos a "
-"cada lado de usted quedarán atrapados en 9 de cada 10 casos. Ahora salte "
-"sobre uno de los enemigos, excave el ladrillo del medio y salte a través de "
-"él.\n"
+"Cuando alcances a los enemigos, recoge todo el oro. Después, excava uno de "
+"los ladrillos, salta dentro y cava inmediatamente a ambos lados. Los "
+"enemigos que tienes a cada lado quedarán atrapados en 9 de cada 10 casos. "
+"Ahora salta sobre uno de los enemigos, excava el ladrillo del centro y salta "
+"a través de él.\n"
 "\n"
-"¡Ya es libre otra vez!"
+"¡Ya eres libre otra vez!"
 
 #: gamedata/game_GMGR.txt:82 gamedata/game_GotD.txt:237
 #: gamedata/game_plws.txt:116
@@ -2102,9 +2102,9 @@ msgid ""
 msgstr ""
 "Esto necesita un poco de coordinación.\n"
 "\n"
-"Cuando haya entrado en el hueco de cemento, espere el momento justo para "
-"pasar sobre los enemigos: ni demasiado pronto, porque caminaría justo hasta "
-"sus brazos, ni demasiado tarde, porque no alcanzará el otro lado."
+"Cuando hayas entrado en el hueco del cemento, espera el momento justo para "
+"pasar sobre los enemigos: ni demasiado pronto, porque irías directo a sus "
+"brazos, ni demasiado tarde, porque no alcanzarás el otro lado."
 
 #: gamedata/game_GMGR.txt:88
 #, kde-format
@@ -2127,19 +2127,20 @@ msgid ""
 "tube, run up the ladder and wait for the enemy to fall in. Now you can ride "
 "on his head and step to the right to take the gold."
 msgstr ""
-"Use a su amigo.\n"
+"Usa a tu amigo.\n"
 "\n"
-"Excave para sacarlo, después camine sobre su cabeza para alcanzar la barra a "
-"la izquierda y debajo de usted. Después de coger el oro arriba a la "
-"izquierda, deje libre a su amigo otra vez.\n"
+"Excava para sacarlo, camina sobre su cabeza para alcanzar la barra que hay a "
+"la izquierda y debajo de ti. Después de recoger el oro de la parte superior "
+"izquierda, deja libre a tu amigo otra vez.\n"
 "\n"
-"Cuando corra hacia usted y caiga al pozo, salte sobre su cabeza y después "
-"coja cinco piezas de oro mientras camina sobre su cabeza. Necesitará ajustar "
-"su velocidad para conseguirlo.\n"
+"Cuando corra hacia ti y caiga al pozo, salta sobre su cabeza y después "
+"recoge cinco piezas de oro mientras caminas sobre su cabeza. Tendrás que "
+"ajustar tu velocidad para conseguirlo.\n"
 "\n"
-"Para alcanzar la pieza de oro junto a un tubo de ladrillos falsos, salte a "
-"través del tubo, suba corriendo la escalera y espere a que el enemigo caiga. "
-"Ahora puede subirse a su cabeza y pasar hacia la derecha para coger el oro."
+"Para alcanzar la pieza de oro que hay junto a un tubo de ladrillos falsos, "
+"salta a través del tubo, sube corriendo la escalera y espera a que el "
+"enemigo caiga. Ahora puedes subirte a su cabeza y pasar hacia la derecha "
+"para recoger el oro."
 
 #: gamedata/game_GMGR.txt:98 gamedata/game_plwv.txt:9
 #, kde-format
@@ -2177,13 +2178,13 @@ msgid ""
 "Trial and error..."
 msgstr ""
 "Solo hay una escalera hasta la parte superior del muro, y para alcanzarla "
-"necesitará a un enemigo. Así que tendrá que excavar a la derecha y a la "
-"izquierda todo el camino hasta el suelo mientras cae.\n"
+"necesitarás a un enemigo. Así que tendrás que excavar a la derecha y a la "
+"izquierda todo el camino hasta el suelo mientras caes.\n"
 "\n"
-"Al otro lado de la pared tendrá que esperar en el suelo hasta que el enemigo "
-"casi le alcance, y después subir corriendo muy deprisa.\n"
+"Al otro lado de la pared tendrás que esperar en el suelo hasta que el "
+"enemigo casi te alcance, y después subir corriendo muy deprisa.\n"
 "\n"
-"¿Pero cómo consigue llegar al otro lado?\n"
+"Pero ¿cómo consigues llegar al otro lado?\n"
 "\n"
 "Ensayo y error..."
 
@@ -2202,19 +2203,19 @@ msgid ""
 "To make the enemies in the boxes on the left move into position as you make "
 "your escape, just stand at the same height on one side or the other."
 msgstr ""
-"Después de que alcance la escalera y mientras se construye un camino hacia "
-"abajo a través de la sección central, necesitará liberar a cinco enemigos, "
-"ni más ni menos. Le ayudarán a formar un puente hasta las escaleras que "
-"aparecen a la izquierda.\n"
+"Después de alcanzar la escalera y mientras creas un camino a través de la "
+"sección central, tendrás que liberar a cinco enemigos, ni más ni menos. Te "
+"ayudarán a formar un puente hasta las escaleras que aparecen a la "
+"izquierda.\n"
 "\n"
-"Para hacer que los enemigos de las cajas de la izquierda se muevan hasta su "
-"posición mientras usted escapa, permanezca de pie a la misma altura a un "
-"lado o al otro."
+"Para hacer que los enemigos de las cajas de la izquierda se pongan en "
+"posición mientras escapas, permanece de pie a la misma altura a un lado o al "
+"otro."
 
 #: gamedata/game_GMGR.txt:120
 #, kde-format
 msgid "Get In And Up"
-msgstr "Entre y suba"
+msgstr "Entrar y subir"
 
 #: gamedata/game_GMGR.txt:121
 #, kde-format
@@ -2223,10 +2224,10 @@ msgid ""
 "towards you. When they are nearly upon you, run up, go left and enter the "
 "building. Take the two pieces of gold and dig yourself through."
 msgstr ""
-"Después de que llegue a la primera escalera, baje y espere a que los "
-"enemigos corran hacia usted. Cuando ya estén casi encima, suba deprisa, vaya "
-"a la izquierda y entre en el edificio. Coja las dos piezas de oro y cave "
-"para salir."
+"Después de llegar a la primera escalera, baja y espera a que los enemigos "
+"corran hacia ti. Cuando ya estén casi encima, sube deprisa, ve a la "
+"izquierda y entra en el edificio. Coge las dos piezas de oro y cava para "
+"salir."
 
 #: gamedata/game_GMGR.txt:124
 #, kde-format
@@ -2237,7 +2238,8 @@ msgstr "Sin salida"
 #, kde-format
 msgid "You have to dig before you take the gold and before the ladders appear."
 msgstr ""
-"Tiene que cavar antes de coger el oro y antes de que aparezcan las escaleras."
+"Tienes que cavar antes de coger el oro y antes de que aparezcan las "
+"escaleras."
 
 #: gamedata/game_GMGR.txt:128
 #, kde-format
@@ -2261,21 +2263,21 @@ msgid ""
 "\n"
 "The timing is very tight. The tiniest hesitation will kill you!"
 msgstr ""
-"Primero debe encontrar un camino hasta la esquina superior izquierda.\n"
+"Primero debes encontrar un camino hasta la esquina superior izquierda.\n"
 "\n"
-"Cuando llegue, hay dos escaleras bajo usted, una muy corta y otra más larga. "
-"Entre ellas hay una columna de ladrillos. Los dos de arriba son reales: el "
-"resto es un tubo de trampas y tendrá que pasar a través de él.\n"
+"Cuando llegues, hay dos escaleras debajo de ti, una muy corta y otra más "
+"larga. Entre ellas hay una columna de ladrillos. Los dos de arriba son "
+"reales: el resto es un tubo de trampas y tendrás que pasar a través de él.\n"
 "\n"
-"Excave a través de dos columnas de ladrillos a la derecha, muévase a la "
-"izquierda y suba corriendo por la escalera. Salte a la izquierda y excave "
-"dos ladrillos mientras cae. Regrese deprisa a la derecha, pero excave el "
-"último ladrillo, porque el que tiene a la izquierda es una trampa. Suba "
-"corriendo por la escalera grande, vaya a la izquierda y excave a través del "
-"ladrillo sobre la escalera pequeña. Caiga sobre él, diríjase a la izquierda "
-"y caiga por el tubo.\n"
+"Excava a través de dos columnas de ladrillos a la derecha, muévete a la "
+"izquierda y sube corriendo por la escalera. Salta a la izquierda y excava "
+"dos ladrillos mientras caes. Regresa deprisa a la derecha, pero excava el "
+"último ladrillo, porque el que tienes a la izquierda es una trampa. Sube "
+"corriendo por la escalera grande, ve a la izquierda y excava a través del "
+"ladrillo que hay sobre la escalera pequeña. Cae sobre él, dirígete a la "
+"izquierda y cae por el tubo.\n"
 "\n"
-"El tiempo es muy justo. ¡La menor duda le matará!"
+"El tiempo está muy ajustado. ¡La más mínima duda te matará!"
 
 #: gamedata/game_GMGR.txt:138
 #, kde-format
@@ -2295,16 +2297,16 @@ msgid ""
 "the last falling enemy. Be quick, because you can only reach the five pieces "
 "of gold on the left by riding on an enemy."
 msgstr ""
-"Para el oro de la izquierda necesita muy buena coordinación, parecida a la "
-"de «Caída libre», solo un poco más difícil. Intente encontrar el momento "
+"Para el oro de la izquierda necesitas muy buena coordinación, parecida a la "
+"de «Caída libre», aunque un poco más difícil. Intenta encontrar el momento "
 "exacto para correr sobre la cabeza de un enemigo.\n"
 "\n"
-"En el lado derecho, comience excavando dos ladrillos para dejar que el "
-"enemigo corra a la izquierda y caiga al agujero. Salte sobre su cabeza, "
-"excave a ambos lados a la vez mientras cae, y después corra hacia la "
-"izquierda, coja el oro, regreses corriendo y pase sobre el último enemigo en "
-"caer. Dese prisa, porque solo puede alcanzar las cinco piezas de oro de la "
-"izquierda montándose en un enemigo."
+"En el lado derecho, empieza excavando dos ladrillos para dejar que el "
+"enemigo corra a la izquierda y caiga al agujero. Salta sobre su cabeza, "
+"excava a ambos lados a la vez mientras caes y después corre hacia la "
+"izquierda, recoge el oro, vuelve corriendo y pasa sobre el último enemigo "
+"que caiga. Date prisa, porque solo puedes alcanzar las cinco piezas de oro "
+"de la izquierda montándote sobre un enemigo."
 
 #: gamedata/game_GMGR.txt:144
 #, kde-format
@@ -2325,16 +2327,16 @@ msgid ""
 "The rest is a bit hard, but it is easy to understand how to do it. In "
 "general, it is best to avoid killing enemies."
 msgstr ""
-"Tiene que subir a la pirámide de escaleras y correr sobre las cabezas de los "
-"enemigos. Necesitará más suerte que habilidad. Es mejor esperar un momento "
-"antes de escalar.\n"
+"Tienes que subir a la pirámide de escaleras y correr sobre las cabezas de "
+"los enemigos. Necesitarás más suerte que habilidad. Es mejor esperar un "
+"momento antes de escalar.\n"
 "\n"
-"Para conseguir el oro sobre las trampas cerca del centro, libere a los "
-"enemigos y después baje hacia la izquierda de la barra grande. Los enemigos "
-"llenarán el pozo bajo las trampas, de forma que puede coger el oro "
-"fácilmente.\n"
+"Para conseguir el oro sobre las trampas que hay cerca del centro, libera a "
+"los enemigos y después baja hacia la izquierda de la barra grande. Los "
+"enemigos llenarán el pozo que hay bajo las trampas, de forma que puedes "
+"recoger el oro con facilidad.\n"
 "\n"
-"El resto es un poco difícil, pero es fácil entender cómo hacerlo. En "
+"El resto es un poco difícil, aunque es fácil entender cómo hacerlo. En "
 "general, es mejor evitar matar a los enemigos."
 
 #: gamedata/game_GMGR.txt:152
@@ -2346,7 +2348,7 @@ msgstr "Un regalito para decir adiós"
 #, kde-format
 msgid "After some very hard levels, maybe you would like an easy one. Goodbye!"
 msgstr ""
-"Después de unos niveles muy difíciles, quizás le gustaría uno más fácil. "
+"Después de algunos niveles muy difíciles, tal vez te guste uno más fácil. "
 "¡Adiós!"
 
 #: gamedata/game_GotD.txt:1
@@ -2378,7 +2380,7 @@ msgid ""
 "Gabriel Miltschitzky, April 2021."
 msgstr ""
 "El apocalipsis zombi ha llegado y eres el último humano que queda con vida "
-"en la Tierra, pero los zombies todavía tienen mucho oro. Sin embargo, al ser "
+"en la Tierra, pero los zombis todavía tienen mucho oro. Sin embargo, al ser "
 "zombis, están más interesados en ti que en el tesoro...\n"
 "\n"
 "Cincuenta niveles de campeonato que incluyen sugerencias y soluciones "
@@ -2387,7 +2389,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:9
 #, kde-format
 msgid "Last Person On Earth"
-msgstr "La última persona en la Tierra"
+msgstr "La última persona sobre la Tierra"
 
 #: gamedata/game_GotD.txt:10
 #, kde-format
@@ -2421,37 +2423,37 @@ msgid ""
 "give you more room for error, because you will not get killed when the brick "
 "refills."
 msgstr ""
-"¿Es el único ser humano que ha sobrevivido al apocalipsis zombi y aún no "
-"puede pensar en otra cosa que en el oro? Pues bien, veamos qué bien te "
-"hará...\n"
+"¿Eres el único ser humano que ha sobrevivido al apocalipsis zombi y aún no "
+"puedes pensar en otra cosa que en el oro? Pues bien, veamos de qué te "
+"sirve...\n"
 "\n"
 "Primera sugerencia: cada nivel tiene una solución registrada, así que en "
-"caso de duda, échele un vistazo. Segunda sugerencia: puede quedarse atascado "
-"fácilmente si no es lo suficientemente inteligente como para preparar una "
-"ruta de escape antes de ir tras algo de oro.\n"
+"caso de duda, échale un vistazo. Segunda sugerencia: puedes quedarte "
+"atascado fácilmente si no eres lo suficientemente inteligente como para "
+"preparar una ruta de escape antes de ir por oro.\n"
 "\n"
-"En la esquina inferior derecha, necesita una excavación cronometrada para "
-"preparar esa ruta de escape. Excave en el ladrillo más alto al lado de la "
-"escalera, luego espere un poco y excave en los ladrillos que hay debajo de "
-"él, justo antes de que el de arriba se vuelva a llenar. Esto le permite "
+"En la esquina inferior derecha, necesitas una excavación cronometrada para "
+"preparar esa ruta de escape. Excava en el ladrillo más alto que hay al lado "
+"de la escalera, espere un poco y excava en los ladrillos que hay debajo de "
+"él, justo antes de que el de arriba se vuelva a llenar. Esto te permitirá "
 "caminar sobre el ladrillo superior y correr a través de los ladrillos "
-"inferiores a su regreso.\n"
+"inferiores cuando vuelvas.\n"
 "\n"
 "Entre las piezas de oro del centro hay ladrillos caídos (o trampas) que "
-"pueden atraparlo. Es mejor recoger primero las columnas exteriores de oro. "
-"Es posible que en otras áreas deba cavar mientras cae a través de las "
+"pueden atraparte. Es mejor recoger primero las columnas exteriores de oro. "
+"Es posible que en otras áreas debas cavar mientras caes a través de las "
 "trampas.\n"
 "\n"
 "La esquina inferior izquierda está bastante agitada. La ruta de escape para "
 "el oro que hay en el extremo izquierdo está a la derecha, donde hay dos "
-"piezas de oro. Deje un agujero allí antes de pasar a la izquierda. Para "
-"recolectar el oro que está más a la izquierda y retroceder en el tiempo, "
-"intente cavar agujeros en ambos lados a la vez.\n"
+"piezas de oro. Deja un agujero allí antes de pasar a la izquierda. Para "
+"recolectar el oro que está más a la izquierda y retroceder a tiempo, intenta "
+"cavar agujeros en ambos lados a la vez.\n"
 "\n"
-"Incluso con esta pista, el tiempo estará ajustado. Puede ahorrar un poco de "
-"tiempo cavando solo el tercer ladrillo más alto junto a la escalera. A "
-"medida que retroceda desde la izquierda, excave el ladrillo de la derecha "
-"que bloquea su salida. Esto le dará más margen de error, porque no lo "
+"Incluso con esta pista, el tiempo será ajustado. Puedes ahorrar un poco de "
+"tiempo cavando solo el tercer ladrillo más alto que hay junto a la escalera. "
+"A medida que retrocedas desde la izquierda, excava el ladrillo de la derecha "
+"que bloquea tu salida. Esto te dará más margen de error, porque no te "
 "matarán cuando el ladrillo se vuelva a rellenar."
 
 #: gamedata/game_GotD.txt:23
@@ -2472,12 +2474,12 @@ msgid ""
 "both mouse keys."
 msgstr ""
 "Este nivel es una buena oportunidad para practicar algunas habilidades de "
-"excavación que necesitará en niveles posteriores.\n"
+"excavación que necesitarás en niveles posteriores.\n"
 "\n"
-"Aunque es bastante sencillo, una trampa perversa le espera al final. Para "
-"evitarla, debe recolectar el oro viniendo del lado izquierdo, lo que es un "
+"Aunque es bastante sencillo, una trampa perversa te espera al final. Para "
+"evitarla, debes recolectar el oro viniendo del lado izquierdo, lo que es un "
 "pequeño rompecabezas de excavación contrarreloj. Los últimos pasos hacia el "
-"oro y hacia atrás necesitan que excave ladrillos a ambos lados al mismo "
+"oro y hacia atrás necesitan que excaves ladrillos a ambos lados al mismo "
 "tiempo, pulsando ambas teclas del ratón."
 
 #: gamedata/game_GotD.txt:29
@@ -2499,22 +2501,22 @@ msgid ""
 "P.S. Sometimes he appears somewhere he really should not. If so, you can "
 "only kill the hero and restart the level. Sorry for that one!"
 msgstr ""
-"¡Cuidado! Esto es un zombi. En cuanto lo suelte, ¡intentará matarlo!\n"
+"¡Cuidado! Esto es un zombi. En cuanto lo sueltes, ¡intentará matarte!\n"
 "\n"
-"Por otro lado, no hay otro camino que superarlo...\n"
+"Por otro lado, no hay otro modo de superarlo...\n"
 "\n"
-"No obstante, no es completamente inútil. Caminar sobre su cabeza le "
+"No obstante, no es completamente inútil. Caminar sobre su cabeza te "
 "permitirá alcanzar ciertas piezas de oro que de otro modo estarían fuera de "
-"su alcance.\n"
+"tu alcance.\n"
 "\n"
 "P. S.: A veces aparece en algún lugar donde realmente no debería. Si es así, "
-"lo único que puede hacer es matar al héroe y reiniciar el nivel. ¡Perdón por "
-"esto!"
+"lo único que puedes hacer es matar al héroe y reiniciar el nivel. ¡Perdón "
+"por esto!"
 
 #: gamedata/game_GotD.txt:39 gamedata/game_plws.txt:113
 #, kde-format
 msgid "Zig Zag"
-msgstr "Zig Zag"
+msgstr "Zigzag"
 
 #: gamedata/game_GotD.txt:40
 #, kde-format
@@ -2533,9 +2535,9 @@ msgid ""
 "on top of a ladder until a zombie comes really close to you and then you "
 "sneak away beneath him at the right moment."
 msgstr ""
-"Evitar los zombis al inicio puede ser la peor parte. Necesita esperar en lo "
-"alto de una escalera hasta que un zombi se le acerque bastante y luego "
-"escabullirse por debajo de él en el momento adecuado."
+"Evitar los zombis al inicio puede ser la peor parte. Debes esperar en lo "
+"alto de una escalera hasta que un zombi se te acerque lo suficiente y luego "
+"escabullirte por debajo de él en el momento adecuado."
 
 #: gamedata/game_GotD.txt:47
 #, kde-format
@@ -2571,31 +2573,30 @@ msgid ""
 "not change anything is ideal."
 msgstr ""
 "Los zombis se pueden manipular para que caminen en direcciones distintas a "
-"las que se dirigen hacia usted. Por ejemplo, podrían huir de usted si se "
-"sitúa debajo de ellos en una escalera (pero no en la parte inferior de la "
-"escalera). Este conocimiento puede salvarle la vida cuando no tiene dónde "
-"excavar y puede ser muy útil cuando quiera subir una escalera hasta "
-"siguiente nivel.\n"
+"las que se dirigen a ti. Por ejemplo, podrían huir de ti si te sitúas debajo "
+"de ellos en una escalera (pero no en la parte inferior de la escalera). Este "
+"conocimiento puede salvarte la vida cuando no tengas dónde excavar y puede "
+"ser muy útil cuando quieras subir una escalera hasta el siguiente nivel.\n"
 "\n"
-"Un caso especial es cuando un zombi está cerca de usted en una escalera y "
-"tiene otro por encima. En tal caso, el superior no huirá, sino que "
-"descenderá hacia usted. Pero por lo general se dará la vuelta justo antes de "
-"alcanzarlo. Tendrá esta situación desde el principio y necesitará nervios de "
-"acero, aunque no debería ser demasiado difícil de manejar una vez que sepa "
-"cómo reaccionan.\n"
+"Un caso especial es cuando un zombi está cerca de ti en una escalera y "
+"tienes otro por encima. En tal caso, el superior no huirá, sino que "
+"descenderá hacia ti. Aunque, por lo general, se dará la vuelta justo antes "
+"de alcanzarte. Tendrás esta situación desde el principio y necesitarás "
+"nervios de acero, aunque no debería ser demasiado difícil de manejar una vez "
+"que sepas cómo reaccionan.\n"
 "\n"
-"Otro truco útil es pararse en algún nivel, pero lejos de la izquierda o de "
+"Otro truco útil es pararse en algún nivel, aunque lejos de la izquierda o de "
 "la derecha de uno o más zombis. Pueden llegar a ese nivel y permanecer "
-"congelados si no hay un camino directo hacia usted, o pueden tropezar hacia "
-"usted y caer en un pozo permanente o recién cavado.\n"
+"congelados si no hay un camino directo hacia ti, o pueden tropezar hacia ti "
+"y caer en un pozo permanente o recién cavado.\n"
 "\n"
-"P. S.: Cuando esté en la escalera inferior derecha, es posible caminar sobre "
+"P. S.: Cuando estés en la escalera inferior derecha, puedes caminar sobre "
 "ambos zombis, incluso si están ligeramente separados. De hecho, es "
 "fundamental mantenerlos mínimamente separados; de lo contrario, uno de ellos "
-"caminará sobre la cabeza del otro para que usted no pueda alcanzar la "
-"escalera del lado izquierdo que conduce a la parte superior. Solo tiene que "
-"dirigirse directamente a la escalera de la parte inferior derecha y esperar "
-"allí hasta que estén cerca; la distancia que mantienen si no cambia nada es "
+"caminará sobre la cabeza del otro para que nos puedas alcanzar la escalera "
+"del lado izquierdo que conduce a la parte superior. Solo tienes que "
+"dirigirte directamente a la escalera de la parte inferior derecha y esperar "
+"allí hasta que estén cerca; la distancia que mantienen si no cambias nada es "
 "ideal."
 
 #: gamedata/game_GotD.txt:57
@@ -2631,19 +2632,19 @@ msgid ""
 "somewhere. Given time, some of them will not appear above the bricks and "
 "will fall to the floor, which will make this level a bit easier for you."
 msgstr ""
-"Puede que se dé cuenta de que todos los zombis no son igual de rápidos. Los "
-"que se reúnen en grupos más grandes son más lentos que los aislados, lo que "
+"Quizá te des cuenta de que todos los zombis no son igual de rápidos. Los que "
+"se reúnen en grupos más grandes son más lentos que los aislados, lo que "
 "supone un pequeño alivio.\n"
 "\n"
-"También cogerán el oro: probablemente se trate de un antiguo instinto de sus "
-"vidas anteriores.\n"
+"También recogerán el oro: probablemente se trate de un antiguo instinto de "
+"sus vidas anteriores.\n"
 "\n"
-"Esto, no obstante, es de utilidad, ya que pueden traerle el oro.\n"
+"Esto, no obstante, es de utilidad, ya que pueden traerte el oro.\n"
 "\n"
-"Coloque las trampas con cuidado: no dispone de espacio ilimitado para "
-"evadirlas.\n"
+"Coloca las trampas con cuidado: no dispones de espacio ilimitado para "
+"evadirlos.\n"
 "\n"
-"También debe tener en cuenta que los zombis son, de alguna manera, "
+"También debes tener en cuenta que los zombis son, de alguna manera, "
 "inmortales: todos reaparecerán en algún lugar. Con el tiempo, algunos no "
 "aparecerán por encima de los ladrillos y caerán al suelo, lo que hará que "
 "este nivel sea un poco más fácil."
@@ -2662,12 +2663,12 @@ msgid ""
 "heads. Going up immediately will help you to group them. Make sure no zombie "
 "is walking on the others' heads when you lure them towards you."
 msgstr ""
-"¿Cree que su escalera es demasiado corta?\n"
+"¿Crees que tu escalera es demasiado corta?\n"
 "\n"
 "En mi opinión, la escalera H es lo suficientemente alta como para escalar "
-"por encima de las cabezas de los zombis. Subir inmediatamente le ayudará a "
-"agruparlos. Asegúrese de que ningún zombi esté caminando sobre las cabezas "
-"de los demás cuando los atraiga hacia usted."
+"por encima de las cabezas de los zombis. Subir inmediatamente te ayudará a "
+"agruparlos. Asegúrate de que ningún zombi esté caminando sobre las cabezas "
+"de los demás cuando los atraigas hacia ti."
 
 #: gamedata/game_GotD.txt:79
 #, kde-format
@@ -2685,14 +2686,14 @@ msgid ""
 "ladders. Find the right moment to get up and dig the bricks on the left, "
 "then you will be able to avoid him."
 msgstr ""
-"No hay ladrillos falsos por los que caer, por lo que debe hacer las cosas de "
-"la manera más difícil. Superar al último de los zombis puede suponer algún "
-"tipo de desafío.\n"
+"No hay ladrillos falsos por los que caer, por lo que debes hacer las cosas "
+"de la manera más difícil. Superar al último de los zombis puede suponer "
+"algún tipo de desafío.\n"
 "\n"
-"Recuerde que los zombis huyen de usted si se sitúa en una escalera debajo de "
+"Recuerda que los zombis huyen de ti si te sitúas en una escalera debajo de "
 "ellos. Esto hará que se muevan arriba y abajo junto al hueco que hay a la "
-"izquierda de las escaleras. Encuentre el momento oportuno para subir y "
-"escave los ladrillos de la izquierda para poder evitarlos."
+"izquierda de las escaleras. Encuentra el momento oportuno para subir y "
+"escavar los ladrillos de la izquierda para poder evitarlos."
 
 #: gamedata/game_GotD.txt:85
 #, kde-format
@@ -2707,11 +2708,11 @@ msgid ""
 "it. In the first box, for example, this saves your life, because you can run "
 "over the upper brick and then trap the zombie."
 msgstr ""
-"Aquí se enfrenta a problemas de sincronización. En la mayoría de los casos, "
-"debe cavar un ladrillo, esperar hasta justo antes de que se vuelva a llenar "
-"y cavar el ladrillo de debajo de él. En el primer cuadro, por ejemplo, esto "
-"le salva la vida, porque puede correr sobre el ladrillo superior y luego "
-"atrapar al zombi."
+"Aquí te enfrentas a problemas de sincronización. En la mayoría de los casos, "
+"debes excavar un ladrillo, esperar hasta justo antes de que se vuelva a "
+"llenar para excavar el ladrillo de debajo de él. En el primer cuadro, por "
+"ejemplo, esto te salva la vida, porque puedes correr sobre el ladrillo "
+"superior y luego atrapar al zombi."
 
 #: gamedata/game_GotD.txt:89
 #, kde-format
@@ -2725,14 +2726,14 @@ msgid ""
 "of this level. The trick is to separate the zombies with the gold from the "
 "others and dig them in."
 msgstr ""
-"Notará que obtener el oro de los zombis es la parte más difícil de este "
-"nivel. El truco consiste en separar a los zombis con el oro de los demás y "
-"enterrarlos."
+"Te darás cuenta de que obtener el oro de los zombis es la parte más difícil "
+"de este nivel. El truco consiste en separar a los zombis con oro de los "
+"demás y enterrarlos."
 
 #: gamedata/game_GotD.txt:93
 #, kde-format
 msgid "Climbing And Falling"
-msgstr "Escalando y cayendo"
+msgstr "Subir y caer"
 
 #: gamedata/game_GotD.txt:94
 #, kde-format
@@ -2749,17 +2750,18 @@ msgid ""
 "you wait for the zombie to fall down, is sometimes important - especially at "
 "the last gap."
 msgstr ""
-"En el lado derecho, necesita que el último zombi lo siga.\n"
+"En el lado derecho, necesitas que el último zombi te siga.\n"
 "\n"
-"Bueno, puede que sea un poco reacio; pero no se preocupe, siempre puede "
-"regresar si de alguna manera tenía otros planes y se fue en otra dirección.\n"
+"Bueno, puede que sea un poco reacio; pero no te preocupes, siempre puedes "
+"volver si, de alguna manera, tiene otros planes y se marcha en otra "
+"dirección.\n"
 "\n"
-"Para asegurarse de que lo está siguiendo, es posible que tenga que esperar "
-"hasta que casi lo atrape antes de moverse; en caso contrario, se dará media "
+"Para asegurarte de que te está siguiendo, es posible que tengas que esperar "
+"hasta que casi te atrape antes de moverte; en caso contrario, se dará media "
 "vuelta.\n"
 "\n"
 "Un último consejo: A veces es importante la altura exacta de la escalera en "
-"la que espera a que caiga un zombi, especialmente en el último hueco."
+"la que esperas a que caiga un zombi, especialmente en el último hueco."
 
 #: gamedata/game_GotD.txt:103
 #, kde-format
@@ -2785,26 +2787,26 @@ msgid ""
 "them. The place they start from when you lure them down is crucial. Trial "
 "and error will help you figure this one out."
 msgstr ""
-"Conseguir el oro es la parte más fácil: salga al templo exterior y entre al "
-"templo interior desde arriba; desde allí se puede abrir camino hasta el "
+"Conseguir el oro es la parte más fácil: sal al templo exterior y entra al "
+"templo interior desde arriba; desde allí te puede abrir camino hasta el "
 "oro.\n"
 "\n"
-"La parte más difícil es superar a los zombis. No puede pasar a tres de ellos "
-"a la vez, por lo que la solución es atraer a la mayoría de ellos.\n"
+"La parte más difícil es superar a los zombis. No puedes pasar a tres de "
+"ellos a la vez, por lo que la solución es atraer a la mayoría de ellos.\n"
 "\n"
-"Atraiga al zombi del templo interior hasta el pozo inferior, luego lleve al "
-"zombi de la derecha al templo interior. Intente llevarlo al lugar donde "
+"Atrae al zombi del templo interior hasta el pozo inferior y luego lleva al "
+"zombi de la derecha al templo interior. Intenta llevarlo al lugar donde "
 "estaba el oro. Después de esto es más fácil llevar también a los otros "
 "zombis al templo interior.\n"
 "\n"
 "Sin embargo, los zombis serán a veces un poco reacios a ir a donde los "
-"quiera llevar. El lugar desde el que comienzan cuando los atrae es crucial. "
-"El método de prueba y error le ayudará a resolverlo."
+"quieras llevar. El lugar desde el que comienzan cuando los atraes es "
+"crucial. El método de prueba y error te ayudará a resolverlo."
 
 #: gamedata/game_GotD.txt:113
 #, kde-format
 msgid "Always Know Your Way Out"
-msgstr "Conozca siempre su salida"
+msgstr "Conoce siempre tu salida"
 
 #: gamedata/game_GotD.txt:114
 #, kde-format
@@ -2814,10 +2816,10 @@ msgid ""
 "This will be necessary a few times to let a zombie free on one side while "
 "you  escape to the other side."
 msgstr ""
-"Puede cavar en ambos lados simultáneamente.\n"
+"Puedes cavar en ambos lados simultáneamente.\n"
 "\n"
-"Tendrá que hacerlo varias veces para dejar que un zombi se libere por un "
-"lado mientras usted escapa por el otro."
+"Tendrás que hacerlo varias veces para dejar que un zombi se libere por un "
+"lado mientras tú escapas por el otro."
 
 #: gamedata/game_GotD.txt:119
 #, kde-format
@@ -2830,8 +2832,8 @@ msgid ""
 "Sometimes it is better to wait, but sometimes you should take what is yours "
 "before the zombies steal it."
 msgstr ""
-"A veces es mejor esperar, aunque otras veces debe coger lo que es suyo antes "
-"de que los zombis se lo roben."
+"A veces es mejor esperar, aunque otras veces debes coger lo que es tuyo "
+"antes de que los zombis te lo roben."
 
 #: gamedata/game_GotD.txt:123
 #, kde-format
@@ -2875,38 +2877,38 @@ msgid ""
 msgstr ""
 "¿Cómo lidiar con el primer zombi? Junto a la escalera hay un falso ladrillo "
 "al que el zombi saltará mientras da vueltas de forma continua. Para "
-"superarlo deberá caer en la trampa en el momento oportuno (que es cuando el "
-"zombi sube por la escalera) y luego ir rápidamente hacia la izquierda y "
+"superarlo, deberás caer en la trampa en el momento oportuno (que es cuando "
+"el zombi sube por la escalera) y luego ir rápidamente hacia la izquierda y "
 "hacia abajo.\n"
 "\n"
-"Ahora necesitará al zombi para llenar el hueco hasta la siguiente escalera. "
-"Es posible que ya haya aprendido que se puede manipular a los zombis para "
+"Ahora necesitarás al zombi para llenar el hueco hasta la siguiente escalera. "
+"Es posible que ya hayas aprendido que se puede manipular a los zombis para "
 "que salten a esos agujeros. Desafortunadamente, el ladrillo que hay debajo "
 "del hueco es una trampa, por lo que el agujero tiene dos bloques de "
-"profundidad. Eso significa que solo dispone de un breve momento en el que "
-"puede correr sobre la cabeza del zombi antes de que se haya hundido "
-"demasiado. Puede tener más de un intento para esto si excava los ladrillos "
-"que hay detrás de usted. Entonces puede dejarlo salir de nuevo si no fue lo "
-"suficientemente rápido.\n"
+"profundidad. Eso significa que solo dispones de un breve momento en el que "
+"puedes correr sobre la cabeza del zombi antes de que se haya hundido "
+"demasiado. Puedes tener más de un intento para esto si excavas los ladrillos "
+"que hay detrás de ti. Entonces puedes dejarlo salir de nuevo si no has sido "
+"lo suficientemente rápido.\n"
 "\n"
 "La siguiente área es un acertijo de ritmo de excavación que no debería ser "
 "demasiado difícil de resolver.\n"
 "\n"
-"Claramente, debe conducir al segundo zombi hasta el agujero, donde no podrá "
+"Claramente, debes conducir al segundo zombi hasta el agujero, donde no podrá "
 "hacer ningún daño.\n"
 "\n"
-"Necesita que el tercer zombi coja el oro por usted. Hay dos ladrillos falsos "
+"Necesitas que el tercer zombi coja el oro por ti. Hay dos ladrillos falsos "
 "debajo de las escaleras sobre la caja que contiene el oro. Uno está justo al "
-"lado de la escalera de la izquierda, que puede usar para ponerse detrás del "
-"enemigo. Si luego baja un escalón, el zombi caerá a través de la trampa del "
-"centro y cogerá el oro. Entonces tendrá que atraerlo excavando para "
-"liberarlo. ¡Asegúrese de que no se le caiga el oro en el camino!\n"
+"lado de la escalera de la izquierda, que puedes usar para ponerte detrás del "
+"enemigo. Si luego bajas un escalón, el zombi caerá a través de la trampa del "
+"centro y cogerá el oro. Entonces tendrás que atraerlo excavando para "
+"liberarlo. ¡Asegúrate de que no se le caiga el oro en el camino!\n"
 "\n"
-"Después de esto, solo queda un último zombi del que preocuparse. Se dará "
-"cuenta de que corre hacia usted cuando esté un paso por debajo de la parte "
-"superior de la escalera que está más a la izquierda. Encuentre el momento "
+"Después de esto, solo queda un último zombi del que preocuparse. Te darás "
+"cuenta de que corre hacia ti cuando estés un paso por debajo de la parte "
+"superior de la escalera que está más a la izquierda. Encuentra el momento "
 "adecuado para caminar sobre su cabeza y alcanzar la siguiente escalera. "
-"Ahora cave los dos ladrillos superiores que hay justo al lado, salte a la "
+"Ahora cava los dos ladrillos superiores que hay justo al lado, salta a la "
 "derecha para pasar al zombi y atraerlo hacia el espacio de la derecha "
 "bajando la escalera a la misma altura."
 
@@ -2942,19 +2944,19 @@ msgid ""
 "\n"
 "Please watch the solution to get a better idea of how all this works."
 msgstr ""
-"Suba por la escalera, pero espere mínimamente al mismo nivel que la fila de "
-"hormigón. Luego corra hacia la primera escalera a la izquierda. Debe "
+"Sube por la escalera, pero espera mínimamente al mismo nivel que la fila de "
+"hormigón. Luego, corre hacia la primera escalera de la izquierda. Debes "
 "alcanzarla antes que los zombis de la izquierda, aunque el único zombi de "
-"arriba debería caer detrás de usted.\n"
+"arriba debería caer detrás de ti.\n"
 "\n"
-"Ahora suba la escalera y vaya a la derecha. Baje un escalón en la siguiente "
-"escalera y espere hasta que pase el zombi de abajo, luego baje y vuelva a la "
-"primera escalera. Baje un escalón y espere hasta que la mayoría de los "
-"zombis pasen por encima de su cabeza. Las escaleras de la derecha deberían "
+"Ahora sube la escalera y ve a la derecha. Baja un escalón en la siguiente "
+"escalera y espera hasta que pase el zombi de abajo. Luego baja y vuelve a la "
+"primera escalera. Baja un escalón y espere hasta que la mayoría de los "
+"zombis pasen por encima de tu cabeza. Las escaleras de la derecha deberían "
 "ser ahora la mejor ruta de escape, ya que solo dos zombis deberían "
-"permanecer allí mientras el resto se acumulan en la izquierda.\n"
+"permanecer allí mientras el resto se acumulan a la izquierda.\n"
 "\n"
-"Vea la solución para tener una mejor idea de cómo funciona todo esto."
+"Observa la solución para tener una mejor idea de cómo funciona todo esto."
 
 #: gamedata/game_GotD.txt:149
 #, kde-format
@@ -2974,12 +2976,12 @@ msgid ""
 "the bottom!"
 msgstr ""
 "En general, es mejor mantener a todos los zombis donde están. Por supuesto, "
-"siempre puede intentar atraerlos hacia la derecha y tirarlos en uno de los "
+"siempre puedes intentar atraerlos hacia la derecha y tirarlos en uno de los "
 "pozos (después de quitarles de oro, no hace falta decirlo), aunque este es "
 "un proceso bastante complicado.\n"
 "\n"
 "Es mejor atraerlos a la parte superior de sus diagonales antes de descender "
-"rápidamente y recoger la mayor cantidad de oro posible, ¡nunca permanezca "
+"rápidamente y recoger la mayor cantidad de oro posible. ¡Nunca permanezcas "
 "demasiado tiempo en la parte inferior!"
 
 #: gamedata/game_GotD.txt:155
@@ -3006,22 +3008,22 @@ msgid ""
 "he does not drop to the lower ladders with a piece of gold.  If he reappears "
 "near his original starting position, lucky you..."
 msgstr ""
-"Necesita atraer a uno de los zombis al pozo. Cuando caen a través del falso "
+"Necesitas atraer a uno de los zombis al pozo. Cuando caen a través del falso "
 "ladrillo, el zombi superior puede caminar sobre la cabeza del otro y así "
 "moverse hacia el pozo.\n"
 "\n"
-"A dónde van los zombis depende de dónde se encuentres en la escalera y de la "
+"A dónde van los zombis depende de dónde te encuentres en la escalera y de la "
 "distancia que haya entre ellos. Demasiado cerca y se pegarán, demasiado "
 "lejos y ambos caerán.\n"
 "\n"
 "Para poder pasar por encima de la cabeza del zombi atrapado y recoger el "
-"oro, debe caer a través de los falsos ladrillos encima del otro zombi. Para "
-"salir de la caja, cave en el ladrillo que hay debajo del zombi atrapado "
-"mientras cae.\n"
+"oro, debes caer a través de los falsos ladrillos encima del otro zombi. Para "
+"salir de la caja, cava en el ladrillo que hay debajo del zombi atrapado "
+"mientras caes.\n"
 "\n"
-"El zombi que reaparece podría complicarle un poco la vida. Asegúrese de que "
+"El zombi que reaparece podría complicarte un poco la vida. Asegúrate de que "
 "no caiga a las escaleras inferiores con una pieza de oro. Si reaparece cerca "
-"de su posición inicial original, ¡menuda suerte!"
+"de su posición inicial, ¡habrás tenido suerte!"
 
 #: gamedata/game_GotD.txt:165
 #, kde-format
@@ -3037,10 +3039,10 @@ msgid ""
 "zombie: be quick. Wait for him to get close to you, then step down or up in "
 "the last moment and pass him."
 msgstr ""
-"Libere al zombi y úselo para alcanzar el oro del lado izquierdo.\n"
+"Libera al zombi y úsalo para alcanzar el oro del lado izquierdo.\n"
 "\n"
-"Cuando finalmente aterrice en las escaleras bajas, solo hay una forma de "
-"pasar al zombi: ser rápido. Espere a que se le acerque y luego suba o baje "
+"Cuando finalmente aterrices en las escaleras bajas, solo hay una forma de "
+"pasar al zombi: ser rápido. Espera a que se te acerque y luego sube o baja "
 "en el último momento para pasarlo."
 
 #: gamedata/game_GotD.txt:171
@@ -3051,7 +3053,7 @@ msgstr "Corriendo contra el tiempo"
 #: gamedata/game_GotD.txt:172
 #, kde-format
 msgid "Be quicker than the zombies - otherwise they will eat you."
-msgstr "Sea más rápido que los zombis. De lo contrario, se lo comerán."
+msgstr "Sé más rápido que los zombis. De lo contrario, te comerán."
 
 #: gamedata/game_GotD.txt:175
 #, kde-format
@@ -3084,14 +3086,14 @@ msgid ""
 "You might notice that there is not enough time to get the gold over on the "
 "right-hand side, so look for a short cut."
 msgstr ""
-"Regla número 17: ¡No seas un héroe! (Cita de la película Zombieland).\n"
+"Regla número 17: ¡No seas un héroe! (Cita de la película «Zombieland»).\n"
 "\n"
-"Al bucear, nunca intente hacer dos cosas a la vez. En el lado izquierdo, por "
-"ejemplo, necesita una inmersión para atraer al zombi fuera de su cueva, otra "
-"para sacarlo del pasillo y otra más para ir a por el oro.\n"
+"Al bucear, nunca intentes hacer dos cosas a la vez. En el lado izquierdo, "
+"por ejemplo, necesitas una inmersión para atraer al zombi fuera de su cueva, "
+"otra para sacarlo del pasillo y otra más para ir a por el oro.\n"
 "\n"
-"Es posible que note que no hay tiempo suficiente para colocar el oro en el "
-"lado derecho, así que busque un atajo."
+"Es posible que notes que no hay tiempo suficiente para hacerte con el oro "
+"del lado derecho, así que busca un atajo."
 
 #: gamedata/game_GotD.txt:187
 #, kde-format
@@ -3111,7 +3113,7 @@ msgstr ""
 "de oro se separen de los demás y se encierren en el pozo. Por lo tanto, es "
 "útil obtener la mayor cantidad de oro posible antes de que los zombis lo "
 "obtengan. No es un problema real si los zombis que tienen oro acaban en el "
-"pozo: siempre puede liberarlos más tarde y recuperar el oro."
+"pozo: siempre puedes liberarlos más tarde y recuperar el oro."
 
 #: gamedata/game_GotD.txt:191
 #, kde-format
@@ -3143,33 +3145,33 @@ msgid ""
 "on the ground to the right of them."
 msgstr ""
 "Las tres escaleras que hay más a la derecha en la parte inferior tienen "
-"ladrillos falsos cerca de ellas, por lo que no puede subir muy alto de esa "
-"manera. Las dos escaleras de más a la izquierda en la parte inferior "
+"ladrillos falsos cerca de ellas, por lo que no puedes subir muy alto de esa "
+"manera. Las dos escaleras de más a la izquierda de la parte inferior "
 "conducen más alto.\n"
 "\n"
-"Para llegar allí, primero debe subir por la escalera de la derecha para "
-"escapar del zombi más cercano. Entonces puede llevar el oro por encima de la "
-"segunda escalera. Pero espere en la parte inferior de esa escalera hasta que "
-"llegue el siguiente zombi por la izquierda para poder pasar por encima de su "
-"cabeza en el último momento.\n"
+"Para llegar allí, primero debes subir por la escalera de la derecha para "
+"escapar del zombi más cercano. Entonces puedes coger el oro que hay encima "
+"de la segunda escalera. Pero espera en la parte inferior de esa escalera "
+"hasta que llegue el siguiente zombi por la izquierda para poder pasar por "
+"encima de su cabeza en el último momento.\n"
 "\n"
-"Ahora suba por la tercera escalera, coja el oro que hay allí, caiga y vuelva "
-"a subir. Espere el momento ideal para correr por las escaleras de más a la "
-"izquierda. Si un zombi de la izquierda lo persigue, pase por encima de su "
-"cabeza y comience a correr.\n"
+"Ahora sube por la tercera escalera, coge el oro que hay allí, cae y vuelve a "
+"subir. Espera el momento ideal para correr por las escaleras de más a la "
+"izquierda. Si un zombi de la izquierda te persigue, pasa por encima de su "
+"cabeza y empieza a correr.\n"
 "\n"
-"Si no puede llegar a la izquierda, suba la pequeña escalera del centro para "
-"ganar algo de espacio y tiempo. También podría ofrecerle un camino más corto "
-"hacia arriba: reproduzca la solución para ver cómo.\n"
+"Si no puedes llegar a la izquierda, sube la pequeña escalera del centro para "
+"ganar algo de espacio y tiempo. También podría ofrecerte un camino más corto "
+"hacia arriba: reproduce la solución para ver cómo.\n"
 "\n"
-"Ahora intente hacerse con todo el oro de los niveles superiores, ¡pero tenga "
-"cuidado con las trampas! Finalmente tendrá que recoger el oro restante de "
-"los zombis. Nunca aterrice en el suelo a la derecha de ellos."
+"Ahora intenta hacerte con todo el oro de los niveles superiores, ¡pero ten "
+"cuidado con las trampas! Finalmente, tendrás que recoger el oro restante de "
+"los zombis. Nunca aterrices en el suelo a la derecha de ellos."
 
 #: gamedata/game_GotD.txt:203 gamedata/game_lars.txt:44
 #, kde-format
 msgid "Do Not Fall Down"
-msgstr "No se caiga"
+msgstr "No te caigas"
 
 #: gamedata/game_GotD.txt:204
 #, kde-format
@@ -3179,7 +3181,7 @@ msgid ""
 "The last piece of gold can only be reached with the help of the zombie: the "
 "same goes for the ladders leading back to the top."
 msgstr ""
-"Obtenga cada pieza de oro, de lo contrario, su camino de regreso estará "
+"Recoge todas las piezas de oro; de lo contrario, tu camino de vuelta estará "
 "bloqueado.\n"
 "\n"
 "La última pieza de oro solo se puede alcanzar con la ayuda del zombi: lo "
@@ -3201,7 +3203,7 @@ msgid ""
 msgstr ""
 "No quisiera estropear la sorpresa...\n"
 "\n"
-"Sin embargo, cuando llegue a los ladrillos que hay encima del oro, debe "
+"Sin embargo, cuando llegues a los ladrillos que hay encima del oro, debes "
 "planificar una ruta de escape con cuidado antes de excavar. Los zombis "
 "también se pueden usar para llenar los huecos."
 
@@ -3216,8 +3218,8 @@ msgid ""
 "If you are not too happy with that many zombies running around, there is "
 "more than one opportunity to get rid of them!"
 msgstr ""
-"Si no está muy contento con tantos zombis corriendo, ¡tiene más de una "
-"oportunidad para deshacerse de ellos!"
+"Si no estás muy contento con tantos zombis corriendo, ¡tienes más de una "
+"oportunidad para deshacerte de ellos!"
 
 #: gamedata/game_GotD.txt:219
 #, kde-format
@@ -3231,9 +3233,9 @@ msgid ""
 "bottom, let all the zombies out of the prison. You might have to enter it "
 "again..."
 msgstr ""
-"Use los ladrillos falsos para deslizarse debajo de los zombis. Cuando llegue "
-"al fondo, deje salir a todos los zombies de la prisión. Puede que tenga que "
-"volver a entrar..."
+"Usa los ladrillos falsos para deslizarte debajo de los zombis. Cuando "
+"llegues al fondo, deja salir a todos los zombies de la prisión. Puede que "
+"tengas que volver a entrar..."
 
 #: gamedata/game_GotD.txt:223
 #, kde-format
@@ -3275,32 +3277,32 @@ msgstr ""
 "mirar la solución para ver qué sucede.\n"
 "\n"
 "Después de bajar hasta el suelo y recoger el oro, aparecerán unas escaleras "
-"adicionales. Con ellas podrá esquivar al zombi de la izquierda atrayéndolo "
-"hasta su pozo y luego subiendo la escalera de la derecha para caminar sobre "
-"su cabeza. Debe hacer esto lo más rápido posible.\n"
+"adicionales. Con ellas podrás esquivar al zombi de la izquierda atrayéndolo "
+"hasta tu pozo y luego subiendo la escalera de la derecha para caminar sobre "
+"su cabeza. Debes hacer esto lo más rápido posible.\n"
 "\n"
-"Ahora espere en la parte superior de una escalera corta o en un bloque de "
+"Ahora espera en la parte superior de una escalera corta o en un bloque de "
 "hormigón a la izquierda. Esto hará que algunos zombis de la izquierda trepen "
-"por encima de usted y caigan desde allí. Lo harán solo si llega a este punto "
+"por encima de ti y caigan desde allí. Lo harán solo si llegas a este punto "
 "lo suficientemente pronto.\n"
 "\n"
-"Cuando los cuatro zombis estén cayendo, suba y espere a la derecha del pozo "
+"Cuando los cuatro zombis estén cayendo, sube y espera a la derecha del pozo "
 "de hormigón hasta que los zombis se acerquen y lo llenen de nuevo. Luego "
-"cambie de lado y espere a la izquierda del hormigón. Comenzarán este "
-"escalofriante baile de zombies...\n"
+"cambia de lado y espera a la izquierda del hormigón. Comenzarán este "
+"escalofriante baile de zombis...\n"
 "\n"
-"Vaya a la parte superior de la escalera y pase por encima de sus cabezas "
-"hasta la fila de escaleras cortas. Espere en la parte superior de la "
-"escalera corta de más a la izquierda y vuelva a pasar por encima de sus "
-"cabezas cuando empiecen a dar vueltas. Ahora debería estar en las escaleras "
-"que conducen a la derecha.\n"
+"Ve a la parte superior de la escalera y pasa por encima de sus cabezas hasta "
+"la fila de escaleras cortas. Espera en la parte superior de la escalera "
+"corta de más a la izquierda y vuelve a pasar por encima de sus cabezas "
+"cuando empiecen a dar vueltas. Ahora deberías estar en las escaleras que "
+"conducen a la derecha.\n"
 "\n"
-"Los zombis de la derecha son un poco difíciles de tratar. Vaya hasta la "
-"misma altura que el zombi superior para que empiecen a dar vueltas, pero se "
-"detendrán en cuanto pase por encima de ellos. Se requiere una buena "
-"sincronización para esperar abajo el tiempo suficiente para que comiencen a "
-"dar vueltas, luego subir las escaleras lo más rápido posible, para pasar por "
-"encima de sus cabezas."
+"Los zombis de la derecha son un poco difíciles de tratar. Ve hasta la misma "
+"altura que el zombi superior para que empiecen a dar vueltas, aunque se "
+"detendrán en cuanto pases por encima de ellos. Se requiere una buena "
+"sincronización para esperar debajo el tiempo suficiente para que empiecen a "
+"dar vueltas, y luego subir las escaleras lo más rápido posible para pasar "
+"por encima de sus cabezas."
 
 #: gamedata/game_GotD.txt:238
 #, kde-format
@@ -3343,48 +3345,48 @@ msgid ""
 "collect it on your next trip, before it gets picked up again."
 msgstr ""
 "Seamos realistas: el suelo sin ningún lugar para correr o cavar no es el "
-"lugar donde quiera estar cuando los zombis vengan a por usted. Sin embargo, "
-"cada vez que recoja algo de oro acabará ahí abajo. El truco consiste en "
-"hacer que los zombis caigan sobre su cabeza mientras corre debajo de ellos "
+"lugar donde quieras estar cuando los zombis vengan a por ti. Sin embargo, "
+"cada vez que recojas algo de oro acabarás ahí abajo. El truco consiste en "
+"hacer que los zombis caigan sobre tu cabeza mientras corres debajo de ellos "
 "hacia una de las escaleras laterales.\n"
 "\n"
 "Una posibilidad es esperar cerca de la parte superior de una escalera (pero "
 "no exterior) hasta que los zombis también se reúnan en lo alto. Luego "
-"descienda, lleve la mayor cantidad de oro posible y regrese rápidamente a la "
-"escalera. Si tiene suerte, los zombis todavía estarán en el aire cuando "
-"llegue a ella.\n"
+"desciende, lleva la mayor cantidad de oro posible y vuelve rápidamente a la "
+"escalera. Si tienes suerte, los zombis todavía estarán en el aire cuando "
+"llegues a ella.\n"
 "\n"
-"Si uno de los zombis ha llegado a la escalera antes que usted, intente "
-"subirla. A menudo eso hará que el zombi huya y tal vez salga por un lado y "
-"caiga. El zombi subirá solo hasta lo que crea que es la salida más cercana, "
-"pero no entiende muy bien la gravedad... A la derecha hay una barra al lado "
-"de la escalera, que está bien, pero a la izquierda hay una pieza de oro al "
-"lado de la escalera y los zombis creen que pueden caminar sobre ella, por lo "
-"que solo pasarán un espacio más allá si los hace subir por la escalera.\n"
+"Si uno de los zombis ha llegado a la escalera antes que tú, intenta subirla. "
+"A menudo eso hará que el zombi huya y tal vez salga por un lado y caiga. El "
+"zombi subirá solo hasta lo que crea que es la salida más cercana, aunque no "
+"entiende muy bien la gravedad... A la derecha hay una barra al lado de la "
+"escalera, que está bien, pero a la izquierda hay una pieza de oro al lado de "
+"la escalera y los zombis creen que pueden caminar sobre ella, por lo que "
+"solo pasarán un espacio más allá si los haces subir por la escalera.\n"
 "\n"
-"Si tiene suerte, los zombis cogerán ese oro antes de que llegue allí. O "
-"pueden estar a cierta distancia cuando llegue, por lo que es fácil de "
-"recoger. De lo contrario, debe empujar a los zombis un poco más arriba que "
-"el oro, luego correr rápidamente, sumergirse de lado y recoger el oro. "
-"Después de eso, debe correr de regreso a la escalera y empujarlos hacia "
+"Si tienes suerte, los zombis cogerán ese oro antes de que llegues allí. O "
+"pueden estar a cierta distancia cuando llegues, por lo que es fácil de "
+"recoger. De lo contrario, debes empujar a los zombis un poco más arriba que "
+"el oro, luego correr rápidamente, sumergirte de lado y recoger el oro. "
+"Después de eso, debes correr de regreso a la escalera y empujarlos hacia "
 "arriba y sobre la barra, más arriba, que es su nuevo punto de salida.\n"
 "\n"
 "Otra posibilidad, que es más rápida pero quizá más arriesgada, es esperar "
-"por encima de una serie de piezas de oro que desee recolectar hasta que los "
-"zombis lleguen por encima de su punto de salida en una escalera lateral, "
+"por encima de una serie de piezas de oro que quieras recolectar hasta que "
+"los zombis lleguen por encima de su punto de salida en una escalera lateral, "
 "luego caer y recolectar el oro y descansar en el último bloque de hormigón o "
 "estar cayendo cuando los zombis lleguen a su salida. Luego dejarán la "
-"escalera y caerán mientras corre por debajo de ellos y sube la escalera una "
-"vez más.\n"
+"escalera y caerán mientras corres por debajo de ellos y subes la escalera "
+"una vez más.\n"
 "\n"
 "Estas posibilidades se demuestran en la solución grabada para «Caída libre», "
 "pero hace las cosas de la manera más difícil: en realidad, es más fácil "
 "trabajar de derecha a izquierda al recoger el oro. Un último consejo: si un "
-"zombi deja caer algo de oro, recójalo en su próximo viaje antes de que "
+"zombi deja caer algo de oro, recógelo en tu próximo viaje antes de que "
 "vuelvan a recogerlo."
 
 #: gamedata/game_GotD.txt:251
-#, kde-format
+#, fuzzy, kde-format
 msgid "The Passage"
 msgstr "El pasadizo"
 
@@ -3527,7 +3529,7 @@ msgstr "Trampa mortal"
 #: gamedata/game_GotD.txt:286
 #, kde-format
 msgid "Rule Number 22: When in doubt, know your way out!"
-msgstr "Regla número 22: En caso de duda, ¡conozca la salida!"
+msgstr "Regla número 22: En caso de duda, ¡conoce la salida!"
 
 #: gamedata/game_GotD.txt:289 gamedata/game_plws.txt:227
 #, kde-format
@@ -3625,7 +3627,7 @@ msgstr "Entre zombis"
 #: gamedata/game_GotD.txt:314
 #, kde-format
 msgid "All it takes is good strong nerves..."
-msgstr "Todo lo que necesita son unos nervios de acero..."
+msgstr "Todo lo que necesitas son unos nervios de acero..."
 
 #: gamedata/game_GotD.txt:317
 #, kde-format
@@ -3641,12 +3643,12 @@ msgid ""
 msgstr ""
 "Eso es lo que pasa con los zombis: cuanto más lentos, más espeluznantes.\n"
 "\n"
-"Dese prisa y resuelva los rompecabezas. El reloj está corriendo..."
+"Date prisa y resuelve los rompecabezas. El reloj está corriendo..."
 
 #: gamedata/game_GotD.txt:323
 #, kde-format
 msgid "Dance With Death"
-msgstr "Baile con la muerte"
+msgstr "Baila con la muerte"
 
 #: gamedata/game_GotD.txt:324
 #, kde-format
@@ -3731,7 +3733,7 @@ msgid ""
 msgstr ""
 "¡ENHORABUENA!\n"
 "\n"
-"¡Ha completado todos los niveles del juego «El oro de los muertos "
+"¡Has completado todos los niveles del juego «El oro de los muertos "
 "vivientes»!\n"
 "\n"
 "¿De verdad?"
@@ -4472,7 +4474,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:172 gamedata/game_plws.txt:254
 #, kde-format
 msgid "Digging Hassle"
-msgstr "Excavación molesta"
+msgstr "Problemas de excavación"
 
 #: gamedata/game_GRII.txt:173
 #, kde-format
@@ -4642,7 +4644,7 @@ msgstr "¡Consíguelo!"
 #, kde-format
 msgid "Make your enemies fetch the gold pieces you cannot reach yourself."
 msgstr ""
-"Haga que sus enemigos consigan las piezas de oro que no puede alcanzar usted "
+"Haz que tus enemigos consigan las piezas de oro que no puedes alcanzar tú "
 "mismo."
 
 #: gamedata/game_lars.txt:20
@@ -4654,7 +4656,7 @@ msgstr "Acrofobia"
 #, kde-format
 msgid "To get that last piece of gold, kill an enemy and have him fetch it."
 msgstr ""
-"Para obtener la última pieza de oro, mate a un enemigo y  haga que se lo "
+"Para obtener la última pieza de oro, mata a un enemigo y haz que te lo "
 "traiga."
 
 #: gamedata/game_lars.txt:24
@@ -4679,7 +4681,7 @@ msgstr "Vertedero"
 #: gamedata/game_lars.txt:29
 #, kde-format
 msgid "You can walk on top of trapped enemies."
-msgstr "Puede caminar sobre enemigos atrapados."
+msgstr "Puedes caminar sobre enemigos atrapados."
 
 #: gamedata/game_lars.txt:32
 #, kde-format
@@ -4689,7 +4691,7 @@ msgstr "Hacia dentro y hacia arriba"
 #: gamedata/game_lars.txt:33
 #, kde-format
 msgid "You only get one chance to grab those first three pieces of gold."
-msgstr "Solo tiene una oportunidad de coger esas tres primeras piezas de oro."
+msgstr "Solo tienes una oportunidad de coger esas tres primeras piezas de oro."
 
 #: gamedata/game_lars.txt:36
 #, kde-format
@@ -4702,7 +4704,7 @@ msgid ""
 "If you dig a hole quickly and jump into it, the enemy will jump into the "
 "concrete hole to the right."
 msgstr ""
-"Si cava un agujero rápido y salta dentro de él, el enemigo saltará dentro "
+"Si cavas un agujero rápido y saltas dentro de él, el enemigo saltará dentro "
 "del agujero de cemento a la derecha."
 
 #: gamedata/game_lars.txt:40
@@ -4716,7 +4718,7 @@ msgid ""
 "You can kill one enemy by digging away one of the bottom bricks in the "
 "divider and making him go in there."
 msgstr ""
-"Puede matar un enemigo cavando uno de los ladrillos del fondo en la línea "
+"Puedes matar un enemigo cavando uno de los ladrillos del fondo en la línea "
 "divisoria y haciéndole ir hasta allí."
 
 #: gamedata/game_lars.txt:45
@@ -4750,7 +4752,7 @@ msgstr "Control de multitudes"
 #: gamedata/game_lars.txt:53
 #, kde-format
 msgid "Remember 'Landfill'?"
-msgstr "¿Se acuerda de «Vertedero»?"
+msgstr "¿Te acuerdas del «Vertedero»?"
 
 #: gamedata/game_lars.txt:56
 #, kde-format
@@ -4765,12 +4767,12 @@ msgstr "Este es fácil. ¡No hay pistas!"
 #: gamedata/game_lars.txt:60
 #, kde-format
 msgid "Use Your Enemy"
-msgstr "Use a su enemigo"
+msgstr "Usa a tu enemigo"
 
 #: gamedata/game_lars.txt:61
 #, kde-format
 msgid "Use yourself as bait."
-msgstr "Utilícese usted como cebo."
+msgstr "Úsate a ti mismo como cebo."
 
 #: gamedata/game_lars.txt:64
 #, kde-format
@@ -4880,7 +4882,7 @@ msgstr ""
 "Bastante sencillo, solo evite caerse de las escaleras. Hay varias formas de "
 "evitar a los dos enemigos del final. Una de las más rápidas es esperar en "
 "una alta escalera vertical, justo debajo de la segunda escalera horizontal "
-"más alta, hasta que el camino a la salida esté despejado. "
+"más alta, hasta que el camino a la salida esté despejado."
 
 #: gamedata/game_MAZ.txt:12
 #, kde-format
@@ -5731,7 +5733,7 @@ msgstr ""
 #: gamedata/game_plws.txt:9
 #, kde-format
 msgid "Don't Panic"
-msgstr "No se asuste"
+msgstr "No te asustes"
 
 #: gamedata/game_plws.txt:10
 #, kde-format
@@ -5766,7 +5768,7 @@ msgstr "¿Escaleras? ¡Confíe en mí!"
 #: gamedata/game_plws.txt:20
 #, kde-format
 msgid "Drop In and Say Hello"
-msgstr "Pase y salude"
+msgstr "Pasa y saluda"
 
 #: gamedata/game_plws.txt:23
 #, kde-format
@@ -5776,12 +5778,12 @@ msgstr "La máscara"
 #: gamedata/game_plws.txt:26
 #, kde-format
 msgid "Check for Traps"
-msgstr "Vigile si hay trampas"
+msgstr "Comprueba si hay trampas"
 
 #: gamedata/game_plws.txt:29
 #, kde-format
 msgid "Take It Easy!"
-msgstr "¡Tómeselo con calma!"
+msgstr "¡Tómatelo con calma!"
 
 #: gamedata/game_plws.txt:32
 #, kde-format
@@ -5841,12 +5843,12 @@ msgstr "Trampa con retraso"
 #: gamedata/game_plws.txt:65
 #, kde-format
 msgid "Nowhere to Hide"
-msgstr "Sin lugar para ocultarse"
+msgstr "Ningún lugar para ocultarse"
 
 #: gamedata/game_plws.txt:68
 #, kde-format
 msgid "Watch the Centre"
-msgstr "Vigile el centro"
+msgstr "Vigila el centro"
 
 #: gamedata/game_plws.txt:71
 #, kde-format
@@ -5916,7 +5918,7 @@ msgstr "Veloz"
 #: gamedata/game_plws.txt:110
 #, kde-format
 msgid "Dig Deep"
-msgstr "Excave profundo"
+msgstr "Excava profundo"
 
 #: gamedata/game_plws.txt:119
 #, kde-format
@@ -5941,7 +5943,7 @@ msgstr "Fácil acceso"
 #: gamedata/game_plws.txt:131
 #, kde-format
 msgid "Gold Braid"
-msgstr "Galón de oro"
+msgstr "Trenza dorada"
 
 #: gamedata/game_plws.txt:134
 #, kde-format
@@ -5966,7 +5968,7 @@ msgstr "Laberinto enrejado"
 #: gamedata/game_plws.txt:146
 #, kde-format
 msgid "Hard Work for Poor Pay"
-msgstr "Trabajo difícil para tan poca paga"
+msgstr "Trabajo duro para tan poca paga"
 
 #: gamedata/game_plws.txt:149
 #, kde-format
@@ -5976,7 +5978,7 @@ msgstr "Escaleras bifurcadas"
 #: gamedata/game_plws.txt:152
 #, kde-format
 msgid "Snowing Gold"
-msgstr "Nieve de oro"
+msgstr "Nevando oro"
 
 #: gamedata/game_plws.txt:155
 #, kde-format
@@ -5986,7 +5988,7 @@ msgstr "¿Izquierda o derecha?"
 #: gamedata/game_plws.txt:158
 #, kde-format
 msgid "Houndstooth"
-msgstr "Acosado"
+msgstr "Pata de gallo"
 
 #: gamedata/game_plws.txt:161
 #, kde-format
@@ -6001,7 +6003,7 @@ msgstr "Obstáculos"
 #: gamedata/game_plws.txt:167
 #, kde-format
 msgid "Get IN There!"
-msgstr "¡Entre AQUÍ!"
+msgstr "¡Entra AQUÍ!"
 
 #: gamedata/game_plws.txt:170
 #, kde-format
@@ -6011,12 +6013,12 @@ msgstr "Una escalada firme"
 #: gamedata/game_plws.txt:173
 #, kde-format
 msgid "Fall-through Lattice"
-msgstr "Enrejado fracasado"
+msgstr "Enrejado de caída"
 
 #: gamedata/game_plws.txt:176
 #, kde-format
 msgid "Get me OUT of Here!"
-msgstr "¡SÁQUEME de aquí!"
+msgstr "¡SÁCAME de aquí!"
 
 #: gamedata/game_plws.txt:179
 #, kde-format
@@ -6056,7 +6058,7 @@ msgstr "No puedo subir hasta ahí"
 #: gamedata/game_plws.txt:200
 #, kde-format
 msgid "They Are Everywhere!"
-msgstr "¡Están en todas partes!"
+msgstr "¡Están por todas partes!"
 
 #: gamedata/game_plws.txt:203
 #, kde-format
@@ -6071,7 +6073,7 @@ msgstr "Trampas engañosas"
 #: gamedata/game_plws.txt:209
 #, kde-format
 msgid "Make Them Work for You"
-msgstr "Haga que trabajen para usted"
+msgstr "Haz que trabajen para ti"
 
 #: gamedata/game_plws.txt:212
 #, kde-format
@@ -6131,12 +6133,12 @@ msgstr "La línea punteada"
 #: gamedata/game_plws.txt:248
 #, kde-format
 msgid "Do Not Look Down (1)"
-msgstr "No mire abajo (1)"
+msgstr "No mires abajo (1)"
 
 #: gamedata/game_plws.txt:251
 #, kde-format
 msgid "Getting Started"
-msgstr "Comenzando"
+msgstr "Empezando"
 
 #: gamedata/game_plws.txt:257
 #, kde-format
@@ -6146,7 +6148,7 @@ msgstr "Centro sencillo"
 #: gamedata/game_plws.txt:260
 #, kde-format
 msgid "Do Not Look Down (2)"
-msgstr "No mire abajo (2)"
+msgstr "No mires abajo (2)"
 
 #: gamedata/game_plws.txt:263
 #, kde-format
@@ -6156,7 +6158,7 @@ msgstr "¿Qué camino?"
 #: gamedata/game_plws.txt:266
 #, kde-format
 msgid "Do Not Look Down (3)"
-msgstr "No mire abajo (3)"
+msgstr "No mires abajo (3)"
 
 #: gamedata/game_plws.txt:269
 #, kde-format
@@ -6229,7 +6231,7 @@ msgstr ""
 #: gamedata/game_plws.txt:305
 #, kde-format
 msgid "Quick!  RUN!"
-msgstr "¡Rápido! ¡CORRA!"
+msgstr "¡Rápido! ¡CORRE!"
 
 #: gamedata/game_plws.txt:308
 #, kde-format
@@ -6358,7 +6360,7 @@ msgstr ""
 #: gamedata/game_plwv.txt:39
 #, kde-format
 msgid "Do You Need Him?"
-msgstr "¿Le necesita?"
+msgstr "¿Lo necesitas?"
 
 #: gamedata/game_plwv.txt:40
 #, kde-format
@@ -6467,7 +6469,7 @@ msgstr ""
 #: gamedata/game_plwv.txt:71
 #, kde-format
 msgid "Pot Hole"
-msgstr "Cueva"
+msgstr "El pozo"
 
 #: gamedata/game_plwv.txt:72
 #, kde-format
