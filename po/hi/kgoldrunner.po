@@ -4,30 +4,31 @@
 #
 # Ravishankar Shrivastava <raviratlami@yahoo.com>, 2007.
 # Raghavendra Kamath <raghu@raghukamath.com>, 2021.
+# G Karunakar <karunakar@indlinux.org>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-17 00:36+0000\n"
-"PO-Revision-Date: 2021-08-21 16:25+0530\n"
-"Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
-"Language-Team: kde-hindi\n"
+"PO-Revision-Date: 2024-05-31 00:08+0530\n"
+"Last-Translator: G Karunakar <karunakar@indlinux.org>\n"
+"Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Lokalize 21.08.0\n"
+"X-Generator: Lokalize 20.12.0\n"
 
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "रविशंकर श्रीवास्तव, जी. करूणाकर"
+msgstr "रविशंकर श्रीवास्तव, जी. करूणाकर, राघवेंद्र कामत"
 
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "raviratlami@aol.in"
+msgstr "raviratlami@aol.in, karunakar@indlinux.org, raghu@raghukamath.com"
 
 #: gamedata/game_blb.txt:3
 #, fuzzy, kde-format
@@ -52,7 +53,7 @@ msgstr ""
 #: gamedata/game_CM.txt:2
 #, kde-format
 msgid "Curse of the Mummy"
-msgstr ""
+msgstr "ममी का श्राप"
 
 #: gamedata/game_CM.txt:3
 #, kde-format
@@ -73,7 +74,7 @@ msgstr ""
 #: gamedata/game_CM.txt:10
 #, kde-format
 msgid "The Giza Plateau"
-msgstr ""
+msgstr "गीज़ा का पठार"
 
 #: gamedata/game_CM.txt:11
 #, kde-format
@@ -91,7 +92,7 @@ msgstr ""
 #: gamedata/game_CM.txt:16
 #, kde-format
 msgid "The Pyramid of Djoser"
-msgstr ""
+msgstr "दज़ोसेर का पिरामिड"
 
 #: gamedata/game_CM.txt:17
 #, kde-format
@@ -120,10 +121,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_CM.txt:28
-#, fuzzy, kde-format
-#| msgid "Pharaoh's Tomb"
+#, kde-format
 msgid "Pharaoh's Barge"
-msgstr "फाराहो का मकबरा"
+msgstr "फाराहो की नौका"
 
 #: gamedata/game_CM.txt:29
 #, kde-format
@@ -144,7 +144,7 @@ msgstr ""
 #: gamedata/game_CM.txt:36
 #, kde-format
 msgid "Pyramid Puzzles"
-msgstr ""
+msgstr "पिरामिड पहेलियाँ"
 
 #: gamedata/game_CM.txt:37
 #, kde-format
@@ -172,7 +172,7 @@ msgstr ""
 #: gamedata/game_CM.txt:46
 #, kde-format
 msgid "Crocodile"
-msgstr ""
+msgstr "मगरमच्छ"
 
 #: gamedata/game_CM.txt:47
 #, kde-format
@@ -192,7 +192,7 @@ msgstr ""
 #: gamedata/game_CM.txt:54
 #, kde-format
 msgid "Three Pyramids"
-msgstr ""
+msgstr "तीन पिरामिड"
 
 #: gamedata/game_CM.txt:55
 #, kde-format
@@ -209,7 +209,7 @@ msgstr ""
 #: gamedata/game_CM.txt:60
 #, kde-format
 msgid "Tura Caves"
-msgstr ""
+msgstr "तुरा गुफाएँ"
 
 #: gamedata/game_CM.txt:61
 #, kde-format
