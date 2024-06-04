@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-17 00:36+0000\n"
-"PO-Revision-Date: 2024-05-02 16:05+0200\n"
+"PO-Revision-Date: 2024-06-02 10:30+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -38,7 +38,7 @@ msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 "Xavier Besnard, Cédric Pasteur, Nicolas Ternisien, Julien Angot, Stanislas "
-"Zeller, Jean-Jacques Finazzi, Arnaud Reygnaud, Simon Depiets"
+"Zeller, Jean-Jacques Finazzi, Arnaud Reygnaud, Simon Depiets, Xavier Besnard,"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -46,7 +46,7 @@ msgid "Your emails"
 msgstr ""
 "xavier.besnard@kde.org, cedric.pasteur@free.fr, nicolas.ternisien@gmail.com, "
 "angot.julien@gmail.com, uncensored.assault@gmail.com, mrjay01@users."
-"sourceforge.net, kasai@redwolf.fr, sdepiets@gmail.com"
+"sourceforge.net, kasai@redwolf.fr, sdepiets@gmail.com, xavier.besnard@kde.org"
 
 #: gamedata/game_blb.txt:3
 #, kde-format
@@ -2539,7 +2539,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:39 gamedata/game_plws.txt:113
 #, kde-format
 msgid "Zig Zag"
-msgstr "Zig Zag"
+msgstr "Zigzag"
 
 #: gamedata/game_GotD.txt:40
 #, kde-format
@@ -6604,10 +6604,10 @@ msgstr ""
 "et ensuite passer au niveau suivant. Traversez en partant de la droite pour "
 "collecter la pépite en haut au centre.\n"
 "\n"
-"Obtenez des ennemis qu'ils passent sur « bunsen le brûleur » en les tuant à "
-"droite de celui-ci, en chutant au milieu de lui quand ils sont près de vous "
-"toucher et tomberont après vous OU en sautant à gauche au-dessus de leurs "
-"tête avant qu'ils n'arrivent au sommet du brûleur."
+"Obtenez des ennemis qu'ils passent sur le « brûleur à bec Bunsen » en les "
+"tuant à droite de celui-ci, en chutant au milieu de lui quand ils sont près "
+"de vous toucher et tomberont après vous OU en sautant à gauche au-dessus de "
+"leurs tête avant qu'ils n'arrivent au sommet du brûleur."
 
 #: gamedata/game_plwv.txt:89
 #, kde-format
