@@ -20,14 +20,14 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-17 00:36+0000\n"
-"PO-Revision-Date: 2024-05-30 01:10+0100\n"
+"PO-Revision-Date: 2024-06-10 22:23+0100\n"
 "Last-Translator: Sofía Priego <spriego@darksylvania.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -5077,7 +5077,7 @@ msgstr ""
 "enemigos para que los usen."
 
 #: gamedata/game_MAZ.txt:58
-#, fuzzy, kde-format
+#, kde-format
 msgid "Bombur"
 msgstr "Bombur"
 
@@ -5092,12 +5092,12 @@ msgid ""
 "remain trapped, leaving you no way to get past them."
 msgstr ""
 "Hay varias formas de pasar a un enemigo que está en el bucle de la escalera-"
-"trampa. Una es esperar cerca de la trampa y cuando el enemigo esté a medio "
+"trampa. Una es esperar cerca de la trampa y, cuando el enemigo esté a medio "
 "camino de la escalera, meterse en la trampa y moverse inmediatamente a la "
-"izquierda y abajo. Sin embargo, al principio, puede tener tres enemigos en "
-"el bucle de la escalera-trampa. Evite esto. Uno de los tres puede salir del "
-"bucle, pero los otros dos se quedarán atrapados, dejándole sin forma de que "
-"pueda pasar por ellos."
+"izquierda y abajo. Sin embargo, al principio, puede haber tres enemigos en "
+"el bucle de la escalera-trampa. Evita esto. Uno de los tres puede salir del "
+"bucle, pero los otros dos se quedarán atrapados, sin dejarte la posibilidad "
+"de pasarlos."
 
 #: gamedata/game_MAZ.txt:62
 #, kde-format
@@ -5112,10 +5112,10 @@ msgid ""
 "just dodged will drop to the lower level, grab a piece of gold and head for "
 "the floor where you can not get the gold away from him."
 msgstr ""
-"Después de evitar al primer enemigo con el que se encuentra, intente no "
-"saltar y agarrar la pieza de oro flotante del centro demasiado pronto. Si lo "
-"hace, el enemigo al que acaba de evitar caerá al nivel inferior, cogerá la "
-"pieza de oro y se dirigirá hacia el suelo, donde no podrá recuperar el oro."
+"Después de evitar al primer enemigo con el que te encuentres, intenta no "
+"saltar y atrapar la pieza de oro flotante del centro demasiado pronto. Si lo "
+"haces, el enemigo que acabas de evitar caerá al nivel inferior, cogerá la "
+"pieza de oro y se dirigirá hacia el suelo, donde no podrás recuperar el oro."
 
 #: gamedata/game_MAZ.txt:66
 #, kde-format
@@ -5129,10 +5129,10 @@ msgid ""
 "may find the diggable columns useful.  Dig two layers, wait one from the top "
 "to trap the first enemy and then move to the top to trap the second enemy."
 msgstr ""
-"Si tiene a dos o más enemigos entre usted y adonde quiere ir, puede "
-"encontrar útiles las columnas excavables. Excave dos capas, deje una de la "
-"parte superior para atrapar al primer enemigo y muévase hacia arriba para "
-"atrapar al segundo. "
+"Si tienes dos o más enemigos entre ti y el lugar al que quieres ir, es "
+"posible que las columnas excavables te resulten útiles. Cava dos capas, "
+"espera uno desde arriba para atrapar al primer enemigo y luego muévete hacia "
+"arriba para atrapar al segundo enemigo."
 
 #: gamedata/game_MAZ.txt:70
 #, kde-format
@@ -5156,9 +5156,9 @@ msgstr ""
 "\n"
 "La primera parte consiste en excavar (en su mayor parte) para coger el oro. "
 "Pero entonces no queda ninguna forma obvia de conseguir el oro de abajo y de "
-"la izquierda. Busque una trampa bajo la parte inferior de la escalera para "
-"llegar hasta él. El otro truco es obtener todo el oro y dejar el enemigo con "
-"su pieza de oro para el final. Y tenga cuidado -ya que solo hay un enemigo, "
+"la izquierda. Busca una trampa bajo la parte inferior de la escalera para "
+"llegar hasta él. El otro truco es obtener todo el oro y dejar al enemigo y a "
+"su pieza de oro para el final. Pero ten cuidado: como solo hay un enemigo, "
 "¡es bastante rápido!"
 
 #: gamedata/game_MAZ.txt:76
@@ -5175,9 +5175,9 @@ msgid ""
 "forget it."
 msgstr ""
 "El pozo de arriba a la derecha es bastante peliagudo. Para salir del "
-"laberinto, necesitará tener a un enemigo en el pozo. Pero será mejor que no "
-"caiga ahí antes de que usted haya recogido el oro. Si dos enemigos caen en "
-"el pozo antes de que usted consiga el oro, olvídelo."
+"laberinto, necesitarás tener a un enemigo en el pozo. Pero será mejor que no "
+"caiga ahí antes de que hayas recogido el oro. Si dos enemigos caen en el "
+"pozo antes de que consigas el oro, olvídalo."
 
 #: gamedata/game_MAZ.txt:80
 #, kde-format
@@ -5190,8 +5190,8 @@ msgid ""
 "Look for false floors to get to places that are otherwise inaccessible.  You "
 "have to dig to find a couple of them."
 msgstr ""
-"Busque suelos falsos para llegar a lugares que de otra manera serían "
-"inaccesibles. Tendrá que excavar para encontrar un par de ellos. "
+"Busca suelos falsos para llegar a lugares que de otra manera serían "
+"inaccesibles. Tendrás que excavar para encontrar un par de ellos. "
 
 #: gamedata/game_MAZ.txt:84
 #, kde-format
@@ -5206,10 +5206,10 @@ msgid ""
 "the left is just asking for it) then they only block your way to the exit "
 "rather than make it impossible to gather the remaining gold."
 msgstr ""
-"Consiga el oro del centro y de la parte superior antes de coger el oro del "
-"centro o de abajo a la izquierda. De esa forma, si tiene que matar a un "
-"enemigo (el de la izquierda lo está pidiendo), entonces solo le bloquearán "
-"el camino a la salida y no le harán imposible conseguir el oro restante. "
+"Consigue el oro del centro y de la parte superior antes de coger el oro del "
+"centro o de abajo a la izquierda. De esa forma, si tienes que matar a un "
+"enemigo (el de la izquierda lo está pidiendo), solo te bloquearán el camino "
+"a la salida y no te harán imposible conseguir el oro restante. "
 
 #: gamedata/game_MAZ.txt:88
 #, kde-format
@@ -5232,18 +5232,18 @@ msgid ""
 "escape from the lower right comes when all the gold is gathered and a small "
 "section of ladder appears in the center."
 msgstr ""
-"Muchos ladrillos falsos para atraparle o para darle acceso a diferentes "
-"partes del laberinto. Pruebe bajo las escaleras y en otros lugares.\n"
+"Muchos ladrillos falsos para atraparte o para darte acceso a diferentes "
+"partes del laberinto. Prueba bajo las escaleras y en otros lugares.\n"
 "\n"
-"La cuarta trampa alta del centro es una aguafiestas: solo puede pasar por "
-"ella una vez, cuando haya conseguido todo el oro. Así que permanezca lejos "
-"de la zona inferior derecha hasta que lo haya recogido del todo. Entonces, "
-"déjese caer hasta la trampa de debajo de la escalera superior derecha -no "
-"hay otra forma de conseguir la pieza de oro bajo ella. Una vez esté ahí "
-"debajo, no se puede volver a la zona superior derecha hasta que tenga todo "
-"el oro. Tras conseguir la pieza del centro a la derecha, excave hacia abajo "
+"La cuarta trampa alta del centro es una aguafiestas: solo puedes pasar por "
+"ella una vez, cuando hayas conseguido todo el oro. Así que permanece lejos "
+"de la zona inferior derecha hasta que hayas recogido todo el oro. Entonces, "
+"déjate caer hasta la trampa de debajo de la escalera superior derecha (no "
+"hay otra forma de conseguir la pieza de oro que hay debajo de ella). Cuando "
+"estés ahí, no podrás volver a la zona superior derecha hasta que tengas todo "
+"el oro. Tras conseguir la pieza del centro a la derecha, excava hacia abajo "
 "para llegar a la izquierda de las dos piezas adyacentes. La salida de la "
-"zona inferior derecha aparece cuando se haya recogido todo el oro y aparezca "
+"zona inferior derecha aparece cuando hayas recogido todo el oro y aparezca "
 "una pequeña sección de la escalera en el centro."
 
 #: gamedata/game_MAZ.txt:94
@@ -5258,9 +5258,9 @@ msgid ""
 "floors.  Trial and error is your only hope - try mapping it on paper if you "
 "are having trouble."
 msgstr ""
-"Un laberinto, pero no se puede ver el camino de salida. Tendrá que hacer uso "
-"de los falsos suelos. Su única esperanza es el ensayo y error -intente "
-"dibujarse un mapa en un papel si tiene problemas."
+"Un laberinto, pero no puedes ver el camino de salida. Tendrás que usar los "
+"falsos suelos. Tu única esperanza es el ensayo y error (intenta dibujar un "
+"mapa en papel si tienes problemas)."
 
 #: gamedata/game_MAZ.txt:98 gamedata/game_MAZ.txt:184
 #, kde-format
@@ -5275,8 +5275,8 @@ msgid ""
 "into one of the pits.  Then the rest is almost a cake walk."
 msgstr ""
 "Este laberinto diagonal no es demasiado difícil, solo que ocasionalmente hay "
-"algún pozo donde quedarse atrapado y que el único enemigo es rápido. Intente "
-"atraerlo abajo hacia uno de los pozos. Entonces, el resto es casi pan comido."
+"algún pozo donde quedarse atrapado y que el único enemigo es rápido. Intenta "
+"atraerlo abajo, hacia uno de los pozos. El resto será casi pan comido."
 
 #: gamedata/game_MAZ.txt:102
 #, kde-format
@@ -5299,19 +5299,19 @@ msgid ""
 "enemies, but some may inadvertently fall into your two pits."
 msgstr ""
 "En el nivel superior hay demasiados enemigos como para luchar con ellos (no "
-"hay muchos ladrillos ahí por una razón). En su lugar, espere en el nivel de "
-"abajo y déjeles que vengan hacia usted. Cave para escapar y recoja el oro de "
-"abajo a la izquierda.\n"
+"hay muchos ladrillos ahí por una razón). En lugar de ello, espera en el "
+"nivel de abajo y deja que vengan hacia ti. Cava para escapar y recoge el oro "
+"de abajo a la izquierda.\n"
 "\n"
-"En el camino de vuelta, párese en el nivel superior y use el mismo truco "
-"para sacar a los enemigos de ahí. Excave un ladrillo que lleve abajo y "
-"encamínese a la salida.\n"
+"En el camino de vuelta, párate en el nivel superior y usa el mismo truco "
+"para sacar a los enemigos de ahí. Excava un ladrillo que lleve abajo y "
+"dirígete a la salida.\n"
 "\n"
 "Las únicas partes difíciles vienen cuando dos enemigos acaban abajo a la "
-"izquierda, en el centro (en su camino de vuelta) o en la zona superior "
-"derecha. Excepto por ese último caso, debería ser capaz de completar el "
-"nivel sin atrapar intencionadamente a ningún enemigo, pero puede que algunos "
-"caigan inadvertidamente en sus dos pozos."
+"izquierda, en el centro (en tu camino de vuelta) o en la zona superior "
+"derecha. Excepto por ese último caso, deberías ser capaz de completar el "
+"nivel sin atrapar intencionadamente a ningún enemigo, pero puede que alguno "
+"caiga inadvertidamente en tus dos pozos."
 
 #: gamedata/game_MAZ.txt:110
 #, kde-format
@@ -5327,9 +5327,9 @@ msgid ""
 "digging, but that can lead to a rather slow game while you wait for the "
 "bricks you dig to refill."
 msgstr ""
-"Un laberinto sin paredes ni enemigos -¿cómo va a ser difícil? Pero las "
-"trampas actúan como muros, y los enemigos solo llenarían las trampas, así "
-"que quizás este nivel es otro donde querrás dibujar un mapa. Puedes intentar "
+"Un laberinto sin paredes ni enemigos: ¿cómo va a ser difícil? Pero las "
+"trampas actúan como muros y los enemigos solo llenarían las trampas, así que "
+"quizá este nivel es otro donde querrás dibujar un mapa. Puedes intentar "
 "encontrar las trampas cavando, pero eso puede hacer el juego muy lento "
 "mientas esperas a que los ladrillos que has excavado se rellenen."
 
@@ -5350,15 +5350,15 @@ msgid ""
 "of ladders.  Beneath one of them is a false floor to use for your escape "
 "route."
 msgstr ""
-"Para pasar por el centro tendrá que limpiarlo antes de enemigos, pero solo "
-"hay un ladrillo excavable. Úselo para dejarse caer por él, corra hacia la "
-"derecha y suba hasta la fila por encima del ladrillo excavado. Tiene el "
+"Para pasar por el centro tendrás que limpiarlo antes de enemigos, pero solo "
+"hay un ladrillo excavable. Úsalo para dejarte caer por él, corre hacia la "
+"derecha y sube hasta la fila por encima del ladrillo excavado. Tienes el "
 "tiempo justo para atraer al enemigo hasta el agujero antes de que se cierre. "
-"Repita el proceso si es necesario.\n"
+"Repite el proceso si es necesario.\n"
 "\n"
-"Para salir del laberinto, necesitará encontrar un camino atravesando la "
+"Para salir del laberinto, necesitarás encontrar un camino atravesando la "
 "larga barrera diagonal de escaleras. Bajo una de ellas hay una puerta falsa "
-"que puede usar como ruta de escape."
+"que puedes usar como ruta de escape."
 
 #: gamedata/game_MAZ.txt:120
 #, kde-format
@@ -5381,19 +5381,19 @@ msgid ""
 "\n"
 "To get out of the center section, search for the double trap on the left."
 msgstr ""
-"Los enemigos no son tan fieros como los pintan, aunque necesitará algún "
-"truco para pasar al primero. Párese encima de la escalera a la izquierda del "
+"Los enemigos no son tan fieros como los pintan, aunque necesitarás algún "
+"truco para pasar al primero. Párate encima de la escalera a la izquierda del "
 "ladrillo falso. Cuando el enemigo se mueva sobre la escalera a la derecha de "
-"este, baje por su escalera, atrayendo al enemigo hasta que baje por el "
-"ladrillo falso. Entonces, suba rápidamente y salte sobre la cabeza del "
+"este, baja por tu escalera, atrayendo al enemigo hasta que baje por el "
+"ladrillo falso. Entonces, sube rápidamente y salta sobre la cabeza del "
 "enemigo.\n"
 "\n"
 "De otra forma, es solo cuestión de engañar a los enemigos para que vayan "
-"hasta un lugar donde pueda atraparlos o sobrepasarlos. El único problema "
-"ocurre si un enemigo agarra una pieza de oro y se queda atascado en alguna "
-"parte sin que usted pueda sacarlo de allí. Bueno, a veces se pierde.\n"
+"hasta un lugar donde puedas atraparlos o sobrepasarlos. El único problema "
+"serio ocurre cuando un enemigo consigue una pieza de oro y se queda atascado "
+"en alguna parte sin que puedas sacarlo de allí. Bueno, a veces se pierde.\n"
 "\n"
-"Para salir de la sección central, busque la doble trampa a la izquierda."
+"Para salir de la sección central, busca la doble trampa a la izquierda."
 
 #: gamedata/game_MAZ.txt:128
 #, kde-format
@@ -5410,11 +5410,11 @@ msgid ""
 "pits fill with ladders once you have all the gold, allowing the trapped "
 "enemies to escape."
 msgstr ""
-"Deje la pieza de oro abajo a su derecha hasta el final.Para regresar a esta "
-"sección del laberinto, necesitará excavar la pared un poco hacia abajo y a "
-"su derecha. La forma más fácil de acabar con todos los enemigos es atraerlos "
-"hasta que caigan en un pozo. Pero cuidado, los pozos se llenan con escaleras "
-"una vez usted tenga todo el oro, permitiendo escapar a los enemigos "
+"Deja la pieza de oro justo abajo y a tu derecha hasta el final. Para volver "
+"a esta sección del laberinto, tendrás que excavar la pared un poco hacia "
+"abajo y a la derecha. La forma más fácil de acabar con todos los enemigos es "
+"atraerlos hasta que caigan en un pozo. Pero ¡cuidado!: los pozos se llenan "
+"con escaleras cuando tengas todo el oro, permitiendo escapar a los enemigos "
 "atrapados. "
 
 #: gamedata/game_MAZ.txt:132 gamedata/game_MAZ.txt:168
@@ -5431,14 +5431,14 @@ msgid ""
 "of gold.  You will also need to use the false floor on the far right at the "
 "top."
 msgstr ""
-"En su mayor parte fácil, pero tenga cuidado con un par de puertas de un solo "
+"En su mayor parte fácil, pero ten cuidado con un par de puertas de un solo "
 "sentido, en particular en la sección superior, a la derecha del centro. "
-"Asegúrese de recoger todo el oro antes de liberar al enemigo atrapado arriba "
-"a la derecha, que tiene una pieza de oro. Necesitará también usar el falso "
+"Asegúrate de recoger todo el oro antes de liberar al enemigo atrapado arriba "
+"a la derecha, que tiene una pieza de oro. También tendrás que usar el falso "
 "suelo a la derecha del todo en la zona superior."
 
 #: gamedata/game_MAZ.txt:136
-#, kde-format
+#, fuzzy, kde-format
 msgid "Thorin"
 msgstr "Thorin"
 
@@ -9254,23 +9254,23 @@ msgid ""
 "You cannot delete a level until you have created a game and a level. Try "
 "menu item \"Create Game\"."
 msgstr ""
-"No es posible eliminar un nivel hasta que haya creado un juego y un nivel. "
-"Use el elemento de menú «Crear juego»."
+"No se puede borrar un nivel hasta que hayas creado un juego y un nivel. Usa "
+"la opción del menú «Crear juego»."
 
 #: src/kgreditor.cpp:442
 #, kde-format
 msgid "Do you want to delete a level and move higher levels down by one?"
-msgstr "¿Desea eliminar un nivel y desplazar hacia abajo los siguientes?"
+msgstr "¿Quieres borrar un nivel y desplazar hacia abajo los siguientes?"
 
 #: src/kgreditor.cpp:444
 #, kde-format
 msgid "&Delete Level"
-msgstr "&Eliminar nivel"
+msgstr "&Borrar nivel"
 
 #: src/kgreditor.cpp:460
 #, kde-format
 msgid "Cannot find file '%1' to be deleted."
-msgstr "No se encuentra el archivo a eliminar «%1»."
+msgstr "No se encuentra el archivo que se va a borrar «%1»."
 
 #: src/kgreditor.cpp:508 src/kgreditor.cpp:518 src/kgreditor.cpp:523
 #: src/kgreditor.cpp:537 src/kgreditor.cpp:555 src/kgreditor.cpp:767
@@ -9282,22 +9282,23 @@ msgstr "Guardar información del juego"
 #: src/kgreditor.cpp:509
 #, kde-format
 msgid "You must enter a name for the game."
-msgstr "Debe introducir un nombre para el juego."
+msgstr "Debes introducir un nombre para el juego."
 
 #: src/kgreditor.cpp:519
 #, kde-format
 msgid "You must enter a filename prefix for the game."
-msgstr "Debe introducir un prefijo de nombre de archivo para el juego."
+msgstr "Debes introducir un prefijo del nombre de archivo para el juego."
 
 #: src/kgreditor.cpp:524
 #, kde-format
 msgid "The filename prefix should not be more than 5 characters."
-msgstr "El prefijo de nombre de archivo no debe tener más de 5 caracteres."
+msgstr "El prefijo del nombre de archivo no debe tener más de 5 caracteres."
 
 #: src/kgreditor.cpp:538
 #, kde-format
 msgid "The filename prefix should be all alphabetic characters."
-msgstr "El prefijo de archivo debe estar compuesto de caracteres alfabéticos."
+msgstr ""
+"El prefijo del archivo debe estar compuesto por caracteres alfabéticos."
 
 #: src/kgreditor.cpp:556
 #, kde-format
@@ -9307,7 +9308,7 @@ msgstr "El prefijo de archivo «%1» ya está en uso."
 #: src/kgreditor.cpp:640
 #, kde-format
 msgid "You have not saved your work. Do you want to save it now?"
-msgstr "No ha guardado su trabajo. ¿Desea guardarlo ahora?"
+msgstr "No has guardado tu trabajo. ¿Quieres guardarlo ahora?"
 
 #: src/kgreditor.cpp:642
 #, kde-format
@@ -9327,7 +9328,7 @@ msgstr "&Ir a la edición"
 #: src/kgreditor.cpp:768
 #, kde-format
 msgid "You can only modify user games."
-msgstr "Únicamente puede modificar juegos del usuario."
+msgstr "Solo puedes modificar juegos del usuario."
 
 #: src/kgreditor.cpp:829
 #, kde-format
@@ -9349,7 +9350,7 @@ msgstr "%1 - %2 - %3"
 #: src/kgrgame.cpp:109
 #, kde-format
 msgid "Click anywhere to begin live play"
-msgstr "Haga clic en cualquier sitio para empezar el juego en directo"
+msgstr "Haz clic en cualquier sitio para empezar el juego en vivo"
 
 #: src/kgrgame.cpp:190
 #, kde-format
@@ -9364,12 +9365,12 @@ msgstr "No hay más niveles en este juego."
 #: src/kgrgame.cpp:261
 #, kde-format
 msgid "Inappropriate action: you are not editing a level."
-msgstr "Acción no válida: no está editando un nivel."
+msgstr "Acción no válida: no estás editando un nivel."
 
 #: src/kgrgame.cpp:420
 #, kde-format
 msgid "No Sound"
-msgstr "Sin sonidos"
+msgstr "Sin sonido"
 
 #: src/kgrgame.cpp:421
 #, kde-format
@@ -9381,8 +9382,8 @@ msgid ""
 msgstr ""
 "Advertencia: Esta copia de KGoldrunner no tiene sonidos.\n"
 "\n"
-"Esto es porque no había presentes versiones en desarrollo de las bibliotecas "
-"OpenAL y SndFile cuando se compiló."
+"Esto se debe a que no estaban presentes las versiones de desarrollo de las "
+"bibliotecas OpenAL y SndFile cuando se compiló."
 
 #: src/kgrgame.cpp:625 src/kgrgame.cpp:782
 #, kde-format
@@ -9396,8 +9397,8 @@ msgid ""
 "playing. Please press the Pause key (default P or Esc) when you are ready."
 msgstr ""
 "La repetición de la partida se ha detenido y el juego está en pausa mientras "
-"se prepara para reanudar la partida. Pulse la tecla Pausa (P o Esc, por "
-"omisión) cuando esté preparado para jugar."
+"te preparas para reanudar la partida. Pulsa la tecla Pausa (P o Esc, por "
+"omisión) cuando estés preparado para jugar."
 
 #: src/kgrgame.cpp:670 src/kgrgame.cpp:676
 #, kde-format
@@ -9409,8 +9410,8 @@ msgstr "Reproducir el último nivel"
 msgid ""
 "ERROR: Could not find and replay a recording of the last level you played."
 msgstr ""
-"ERROR: No se puede encontrar ni reproducir una grabación del último nivel "
-"que ha jugado."
+"Error: no se puede encontrar ni reproducir una grabación del último nivel "
+"que has jugado."
 
 #: src/kgrgame.cpp:677
 #, kde-format
@@ -9418,8 +9419,8 @@ msgid ""
 "There is no last level to replay.  You need to play a level to completion, "
 "win or lose, before you can use the Replay Last Level action."
 msgstr ""
-"No hay un último nivel para reproducir. Necesita jugar un nivel y terminarlo "
-"(gane o pierda) antes de que pueda usar la acción de reproducir el último "
+"No hay un último nivel para reproducir. Debes jugar un nivel y terminarlo "
+"(ganes o pierdas) antes de poder usar la acción de reproducir el último "
 "nivel."
 
 #: src/kgrgame.cpp:695
@@ -9437,7 +9438,7 @@ msgstr "&JUGAR"
 #: src/kgrgame.cpp:713
 #, kde-format
 msgid "Start playing this level"
-msgstr "Comenzar a jugar en este nivel"
+msgstr "Empezar a jugar en este nivel"
 
 #: src/kgrgame.cpp:715
 #, kde-format
@@ -9445,8 +9446,8 @@ msgid ""
 "Set up to start playing the game and level being shown, as soon as you "
 "click, move the mouse or press a key"
 msgstr ""
-"Configura el inicio de la partida del juego y se muestra el nivel de inicio, "
-"tan pronto como pulse, mueva el ratón o pulse una tecla"
+"Configuración para empezar a jugar y se muestra el nivel, en cuanto hagas "
+"clic, muevas el ratón o pulses una tecla"
 
 #: src/kgrgame.cpp:719
 #, kde-format
@@ -9461,7 +9462,7 @@ msgstr "Cerrar KGoldrunner"
 #: src/kgrgame.cpp:724
 #, kde-format
 msgid "Start a different game or level"
-msgstr "Iniciar una partida o nivel diferente"
+msgstr "Empezar una partida o nivel diferente"
 
 #: src/kgrgame.cpp:726
 #, kde-format
@@ -9469,8 +9470,8 @@ msgid ""
 "Use the Select Game dialog box to choose a different game or level and start "
 "playing it"
 msgstr ""
-"Use el diálogo de selección de juego para elegir una partida o nivel "
-"diferente y comience a jugar"
+"Usa el diálogo de selección de juego para elegir una partida o nivel "
+"diferente y empezar a jugar"
 
 #: src/kgrgame.cpp:730
 #, kde-format
@@ -9480,7 +9481,7 @@ msgstr "&Usar menú"
 #: src/kgrgame.cpp:732
 #, kde-format
 msgid "Use the menus to choose other actions"
-msgstr "Use los menús para elegir otras acciones"
+msgstr "Usar el menú para elegir otras acciones"
 
 #: src/kgrgame.cpp:734
 #, kde-format
@@ -9488,8 +9489,8 @@ msgid ""
 "Before playing, use the menus to choose other actions, such as loading a "
 "saved game or changing the theme"
 msgstr ""
-"Antes de jugar, use los menús para elegir otras acciones, tales como cargar "
-"una partida guardada o cambiar el tema"
+"Antes de jugar, usa el menú para elegir otras acciones, como cargar una "
+"partida guardada o cambiar el tema"
 
 #: src/kgrgame.cpp:783
 #, kde-format
@@ -9497,8 +9498,8 @@ msgid ""
 "The game is halted. You will need to press the Pause key (default P or Esc) "
 "when you are ready to play."
 msgstr ""
-"La partida está detenida. Deberá pulsar la tecla Pausa (P o Esc, por "
-"defecto) cuando esté preparado para jugar."
+"La partida está detenida. Tendrás que pulsar la tecla Pausa (P o Esc, por "
+"defecto) cuando estés preparado para jugar."
 
 #: src/kgrgame.cpp:836
 #, kde-format
@@ -9511,8 +9512,8 @@ msgid ""
 "Sorry, although all levels of KGoldrunner can be solved, no solution has "
 "been recorded yet for the level you selected."
 msgstr ""
-"Disculpe: aunque todos los niveles de KGoldrunner se pueden resolver, "
-"todavía no se ha guardado una solución para el nivel que ha seleccionado."
+"Lo sentimos: aunque todos los niveles de KGoldrunner se pueden resolver, "
+"todavía no se ha guardado una solución para el nivel que has seleccionado."
 
 #: src/kgrgame.cpp:848
 #, kde-format
@@ -9524,7 +9525,7 @@ msgstr "Reproducir cualquier nivel"
 msgid ""
 "Sorry, you do not seem to have played and recorded the selected level before."
 msgstr ""
-"Disculpe: parece que no ha jugado y guardado el nivel seleccionado con "
+"Lo sentimos: parece que no has jugado y guardado el nivel seleccionado con "
 "anterioridad."
 
 #: src/kgrgame.cpp:1063
@@ -9533,13 +9534,13 @@ msgid ""
 "<NOBR><B>GAME OVER !!!</B></NOBR><P>Would you like to try this level again?</"
 "P>"
 msgstr ""
-"<NOBR><B>¡FIN DE LA PARTIDA!</B></NOBR><P>¿Quiere volver a probar este nivel?"
-"</P>"
+"<NOBR><B>¡FIN DE LA PARTIDA!</B></NOBR><P>¿Quieres volver a probar este "
+"nivel?</P>"
 
 #: src/kgrgame.cpp:1065
 #, kde-format
 msgid "Game Over"
-msgstr "Juego terminado"
+msgstr "Partida terminada"
 
 #: src/kgrgame.cpp:1066
 #, kde-format
@@ -9557,7 +9558,7 @@ msgid ""
 "<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the <b>"
 "\"%1\"</b> game !!</p>"
 msgstr ""
-"<b>¡¡¡ENHORABUENA!!!</b><p>Ha finalizado el último nivel del juego <b>%1</b>."
+"<b>¡¡¡ENHORABUENA!!!</b><p>Has terminado el último nivel del juego <b>%1</b>."
 "</p>"
 
 #: src/kgrgame.cpp:1297
@@ -9573,7 +9574,7 @@ msgstr "&Aceptar"
 #: src/kgrgame.cpp:1316
 #, kde-format
 msgid "Sorry, there is no hint for this level."
-msgstr "Disculpe: no hay pistas para este nivel."
+msgstr "Lo sentimos: no hay pistas para este nivel."
 
 #: src/kgrgame.cpp:1378
 #, kde-format
@@ -9587,8 +9588,8 @@ msgid ""
 "switch automatically to keyboard control? Pointer control is easier to use "
 "in the long term - like riding a bike rather than walking!"
 msgstr ""
-"Ha pulsado una tecla que se puede usar para controlar al héroe. ¿Desea "
-"cambiar automáticamente al control de teclado? El control de puntero es, a "
+"Has pulsado una tecla que se puede usar para controlar al héroe. ¿Quieres "
+"cambiar automáticamente al control de teclado? El control del puntero es, a "
 "la larga, más sencillo (¡como la diferencia entre ir en bici o andando!)"
 
 #: src/kgrgame.cpp:1419
@@ -9604,7 +9605,7 @@ msgstr "Cambiar al modo de &teclado"
 #: src/kgrgame.cpp:1421
 #, kde-format
 msgid "Stay in &Mouse Mode"
-msgstr "Mantener el modo de &ratón"
+msgstr "Permanecer en el modo de &ratón"
 
 #: src/kgrgame.cpp:1422
 #, kde-format
@@ -9623,8 +9624,8 @@ msgid ""
 "Sorry, you cannot save your game play while you are editing. Please try menu "
 "item \"%1\"."
 msgstr ""
-"Disculpe: no es posible guardar la partida mientras está editando. Use el "
-"elemento del menú «%1»."
+"Lo sentimos: no se puede guardar la partida mientras estés editando. Usa la "
+"opción del menú «%1»."
 
 #: src/kgrgame.cpp:1493 src/kgrgame.cpp:1537 src/kgrgame.cpp:1652
 #: src/kgrgame.cpp:1855 src/kgrgame.cpp:2021 src/kgrgameio.cpp:169
@@ -9638,14 +9639,14 @@ msgid ""
 "Please note: for reasons of simplicity, your saved game position and score "
 "will be as they were at the start of this level, not as they are now."
 msgstr ""
-"Tenga en cuenta que, por razones de simplificación, la posición y la "
-"puntuación de la partida guardada será la del principio de este nivel, y no "
+"Ten en cuenta que, por razones de simplificación, la posición y la "
+"puntuación de la partida guardada será la del principio de este nivel y no "
 "la actual."
 
 #: src/kgrgame.cpp:1518
 #, kde-format
 msgid "Error: Failed to save your game."
-msgstr "Error: Fallo al guardar la partida."
+msgstr "Error: no se ha podido guardar la partida."
 
 #: src/kgrgame.cpp:1530 src/kgrgame.cpp:1536 src/kgrgame.cpp:1574
 #, kde-format
@@ -9655,7 +9656,7 @@ msgstr "Cargar partida"
 #: src/kgrgame.cpp:1531
 #, kde-format
 msgid "Sorry, there are no saved games."
-msgstr "Disculpe: no hay partidas guardadas."
+msgstr "Lo sentimos: no hay partidas guardadas."
 
 #: src/kgrgame.cpp:1575
 #, kde-format
@@ -9679,9 +9680,9 @@ msgid ""
 "game.<br/>Please enter your name so that it may be enshrined<br/>in the "
 "KGoldrunner Hall of Fame.</html>"
 msgstr ""
-"<html><b>¡¡¡Enhorabuena!!!</b><br />Ha logrado una alta puntuación en este "
-"juego.<br />Introduzca su nombre para que quede registrado<br />en la "
-"Galería de la Fama de KGoldrunner.</html>"
+"<html><b>¡¡¡Enhorabuena!!!</b><br />Has conseguido una puntuación alta en "
+"este juego.<br />Introduce tu nombre para que quede registrado<br />en la "
+"galería de la fama de KGoldrunner.</html>"
 
 #: src/kgrgame.cpp:1722
 #, kde-format
@@ -9697,7 +9698,7 @@ msgstr "Guardar puntuación"
 #: src/kgrgame.cpp:1810
 #, kde-format
 msgid "Error: Failed to save your high score."
-msgstr "Error: fallo al guardar su mejor puntuación."
+msgstr "Error: no se ha podido guardar tu mejor puntuación."
 
 #: src/kgrgame.cpp:1822 src/kgrgame.cpp:1845 src/kgrgame.cpp:1854
 #, kde-format
@@ -9707,12 +9708,13 @@ msgstr "Mostrar mejores puntuaciones"
 #: src/kgrgame.cpp:1823
 #, kde-format
 msgid "Sorry, we do not keep high scores for tutorial games."
-msgstr "Disculpe: no hay mejores puntuaciones para las partidas de tutorial."
+msgstr ""
+"Lo sentimos: no hay mejores puntuaciones para las partidas de tutorial."
 
 #: src/kgrgame.cpp:1846
 #, kde-format
 msgid "Sorry, there are no high scores for the \"%1\" game yet."
-msgstr "Disculpe: todavía no hay mejores puntuaciones para el juego «%1»."
+msgstr "Lo sentimos: todavía no hay mejores puntuaciones para el juego «%1»."
 
 #: src/kgrgame.cpp:1870
 #, kde-format
@@ -9839,12 +9841,13 @@ msgstr "Seleccionar nivel"
 #: src/kgrselector.cpp:73
 #, kde-format
 msgid "Sorry, you can only save or move into one of your own games."
-msgstr "Disculpe: solo puede guardar o cambiar a uno de sus propios juegos."
+msgstr ""
+"Lo sentimos: solo puedes guardar o cambiar a uno de tus propios juegos."
 
 #: src/kgrselector.cpp:79
 #, kde-format
 msgid "Sorry, you can only delete a level from one of your own games."
-msgstr "Disculpe: solo puede eliminar niveles de sus propios juegos."
+msgstr "Lo sentimos: solo puedes borrar niveles de tus propios juegos."
 
 #: src/kgrselector.cpp:84 src/kgrselector.cpp:281
 #, kde-format
@@ -9854,12 +9857,12 @@ msgstr "Editar información del juego"
 #: src/kgrselector.cpp:85
 #, kde-format
 msgid "Sorry, you can only edit the game information on your own games."
-msgstr "Disculpe: solo puede editar la información de sus propios juegos."
+msgstr "Lo sentimos: solo puedes editar la información de tus propios juegos."
 
 #: src/kgrselector.cpp:99
 #, kde-format
 msgid "There is no level %1 in \"%2\", so you cannot play or edit it."
-msgstr "No hay nivel %1 en «%2», por lo que no puede jugar en él ni editarlo."
+msgstr "No hay nivel %1 en «%2», por lo que no puedes jugar en él ni editarlo."
 
 #: src/kgrselector.cpp:121 src/kgrselector.cpp:177
 #, kde-format
@@ -9870,7 +9873,7 @@ msgstr "Seleccionar juego"
 #: src/kgrselector.cpp:135
 #, kde-format
 msgid "<html><b>Please select a game:</b></html>"
-msgstr "<html><b>Seleccione un juego:</b></html>"
+msgstr "<html><b>Selecciona un juego:</b></html>"
 
 #: src/kgrselector.cpp:143
 #, kde-format
@@ -9906,7 +9909,7 @@ msgstr "Seleccionar juego/nivel"
 #: src/kgrselector.cpp:185
 #, kde-format
 msgid "Please select a level:"
-msgstr "Seleccione un nivel:"
+msgstr "Selecciona un nivel:"
 
 #: src/kgrselector.cpp:204
 #, kde-format
@@ -9982,25 +9985,25 @@ msgstr "Campeonato"
 #, kde-format
 msgid "1 level, uses KGoldrunner rules."
 msgid_plural "%1 levels, uses KGoldrunner rules."
-msgstr[0] "1 nivel, usa las reglas de KGoldrunner."
-msgstr[1] "%1 niveles, usan las reglas de KGoldrunner."
+msgstr[0] "1 nivel, se usan las reglas de KGoldrunner."
+msgstr[1] "%1 niveles, se usan las reglas de KGoldrunner."
 
 #: src/kgrselector.cpp:471
 #, kde-format
 msgid "1 level, uses Traditional rules."
 msgid_plural "%1 levels, uses Traditional rules."
-msgstr[0] "1 nivel, usa las reglas Tradicionales."
-msgstr[1] "%1 niveles, usan las reglas Tradicionales."
+msgstr[0] "1 nivel, se usan las reglas tradicionales."
+msgstr[1] "%1 niveles, se usan las reglas tradicionales."
 
 #: src/kgrselector.cpp:476
 #, kde-format
 msgid "Sorry, there is no further information about this game."
-msgstr "Disculpe: no hay más información sobre este juego."
+msgstr "Lo sentimos: no hay más información sobre este juego."
 
 #: src/kgrselector.cpp:502
 #, kde-format
 msgid "This level number is not valid. It can not be used."
-msgstr "Este número de nivel no es válido. No se puede ser usar."
+msgstr "Este número de nivel no es válido. No se puede usar."
 
 #: src/kgrselector.cpp:523
 #, kde-format
@@ -10008,8 +10011,8 @@ msgid ""
 "The main button at the bottom echoes the menu action you selected. Click it "
 "after choosing a game and level - or use \"Cancel\"."
 msgstr ""
-"El botón principal de la parte inferior repite la acción del menú que haya "
-"seleccionado. Púlselo después de elegir un juego y un nivel, o use "
+"El botón principal de la parte inferior repite la acción del menú que hayas "
+"seleccionado. Púlsalo después de elegir un juego y un nivel, o usa "
 "«Cancelar»."
 
 #: src/kgrselector.cpp:528
@@ -10026,13 +10029,13 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Si esta es la primera vez que usa KGoldrunner, seleccione la partida de "
-"tutorial, que le irá mostrando el funcionamiento del juego.\n"
+"Si esta es la primera vez que usas KGoldrunner, selecciona la partida de "
+"tutorial, que te irá mostrando el funcionamiento del juego.\n"
 "\n"
-"En caso contrario, basta con que seleccione el nombre de un juego en la "
-"tabla, y luego, para comenzar en el nivel 001, pulse en el botón principal "
-"de la parte inferior. La partida comienza cuando se mueve el ratón o se "
-"pulsa una tecla."
+"En caso contrario, basta con que selecciones el nombre de un juego en la "
+"tabla y luego, para comenzar en el nivel 001, pulsa en el botón principal de "
+"la parte inferior. La partida comienza cuando se mueve el ratón o se pulsa "
+"una tecla."
 
 #: src/kgrselector.cpp:537
 #, kde-format
@@ -10047,11 +10050,11 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Puede seleccionar los niveles del sistema para editarlos (o copiarlos), pero "
-"debe guardar el resultado en un juego creado por usted. Use el botón "
+"Puedes seleccionar los niveles del sistema para editarlos (o copiarlos), "
+"pero debes guardar el resultado en un juego creado por ti. Usa el botón "
 "izquierdo del ratón como brocha y la barra de herramientas del editor como "
-"paleta. Use el botón «Borrar» o el botón derecho del ratón para borrar. "
-"Puede arrastrar el ratón con un botón pulsado y pintar o borrar varios "
+"paleta. Usa el botón «Borrar» o el botón derecho del ratón para borrar. "
+"Puedes arrastrar el ratón con un botón pulsado y pintar o borrar varios "
 "cuadrados."
 
 #: src/kgrselector.cpp:545
@@ -10066,10 +10069,10 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Aquí puede añadir el nombre y las pistas del nuevo nivel, pero debe guardar "
-"dicho nivel dentro de uno de los juegos creados por usted. De forma "
-"predeterminada, el nuevo nivel se colocará al final de juego, pero usted "
-"puede seleccionar un número de nivel para guardarlo en cualquier otro punto."
+"Aquí puedes añadir el nombre y las pistas del nuevo nivel, pero debes "
+"guardar dicho nivel dentro de uno de los juegos creados por ti. De forma "
+"predeterminada, el nuevo nivel se colocará al final de juego, pero puedes "
+"seleccionar un número de nivel para guardarlo en cualquier otro punto."
 
 #: src/kgrselector.cpp:552
 #, kde-format
@@ -10083,10 +10086,10 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Aquí puede crear o editar un nombre y una pista, antes de guardar. Si cambia "
-"el juego o el nivel, puede hacer una copia o «Guardar como», pero siempre "
-"debe guardarlo dentro de uno de sus propios juegos. Si guarda un nivel entre "
-"medias de otros, el resto será renumerado automáticamente."
+"Aquí puedes crear o editar un nombre y una pista, antes de guardar. Si "
+"cambias el juego o el nivel, puedes hacer una copia o usar «Guardar como», "
+"pero siempre debes guardarlo dentro de uno de tus propios juegos. Si guardas "
+"un nivel entre otros, el resto se renumerará automáticamente."
 
 #: src/kgrselector.cpp:559
 #, kde-format
@@ -10098,8 +10101,8 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Únicamente puede eliminar niveles de sus propios juegos. Si elimina un nivel "
-"que esté entre medias de otros, el resto será renumerado automáticamente."
+"Solo puedes borrar niveles de tus propios juegos. Si borras un nivel que "
+"esté entre otros, el resto se renumerará automáticamente."
 
 #: src/kgrselector.cpp:564
 #, kde-format
@@ -10113,10 +10116,10 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Para mover (renumerar) un nivel, primero debe seleccionarlo usando «Editar "
-"cualquier nivel...», y después podrá usar «Mover nivel...» para asignarle un "
-"nuevo número o, incluso, un juego diferente. El resto de niveles se renumera "
-"automáticamente. Únicamente puede mover niveles de sus propios juegos."
+"Para mover (renumerar) un nivel, primero debes seleccionarlo usando «Editar "
+"un nivel...», y después podrás usar «Mover nivel...» para asignarle un nuevo "
+"número o, incluso, un juego diferente. El resto de niveles se renumera "
+"automáticamente. Solo puedes mover niveles de tus propios juegos."
 
 #: src/kgrselector.cpp:571
 #, kde-format
@@ -10128,8 +10131,8 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Cuando edite la información de un juego, únicamente necesita seleccionar "
-"este, entonces irá a un diálogo en el que podrá modificar los detalles."
+"Cuando edites la información de un juego, solo tienes que seleccionarlo: "
+"irás a un diálogo en el que podrás modificar los detalles."
 
 #: src/kgrselector.cpp:578
 #, kde-format
@@ -10147,14 +10150,14 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Use la tabla para seleccionar un juego. En la tabla y bajo ella puede ver "
-"más información sobre el juego seleccionado, incluyendo cuántos niveles "
-"tiene, su dificultad y las reglas que siguen los enemigos (consulte el "
-"manual de KGoldrunner).\n"
+"Usa la tabla para seleccionar un juego. En la tabla y debajo de ella puedes "
+"ver más información sobre el juego seleccionado, incluyendo el número de "
+"niveles que contiene, su dificultad y las reglas que siguen los enemigos "
+"(consulta el manual de KGoldrunner).\n"
 "\n"
-"Para seleccionar un número de nivel debe teclearlo o usar la casilla "
-"incremental. Al cambiar de juego o de nivel, el área en miniatura muestra "
-"una vista previa de lo que ha seleccionado."
+"Para seleccionar un número de nivel debes escribirlo o usar la casilla "
+"numérica. Al cambiar de juego o de nivel, el área en miniatura mostrará una "
+"vista previa de lo que hayas seleccionado."
 
 #: src/kgrselector.cpp:589
 #, kde-format
