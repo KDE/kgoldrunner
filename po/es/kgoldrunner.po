@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-06 00:36+0000\n"
-"PO-Revision-Date: 2024-06-13 02:25+0100\n"
+"PO-Revision-Date: 2024-06-14 01:39+0100\n"
 "Last-Translator: Sofía Priego <spriego@darksylvania.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -1493,7 +1493,7 @@ msgstr ""
 "Ahora que vuelves a ser libre, necesitas obtener dinero de algún sitio.\n"
 "\n"
 "El truco es inmovilizar a tus enemigos. Si puedes hacer que caigan sobre un "
-"bloque de cemento, eso puede ayudar. Por otro lado, también puedes correr "
+"bloque de hormigón, eso puede ayudar. Por otro lado, también puedes correr "
 "mucho..."
 
 #: gamedata/game_GMEP.txt:22
@@ -1694,9 +1694,9 @@ msgstr ""
 "\n"
 "El siguiente guardia debería ser fácil de pasar, pero después tendrás algo "
 "de trabajo que hacer... Cuando subas por las escaleras que hay cerca del "
-"cemento, el guardia empezará una carrera de ida y vuelta hacia la escalera "
+"hormigón, el guardia empezará una carrera de ida y vuelta hacia la escalera "
 "de más a la izquierda. Encuentra el momento exacto para cruzar sobre su "
-"cabeza. Después, el guardia del pozo de cemento te puede llevar hacia la "
+"cabeza. Después, el guardia del pozo de hormigón te puede llevar hacia la "
 "derecha si caminas con cuidado sobre su cabeza.\n"
 "\n"
 "La última sección incluye excavar. Primero, cae por el túnel de ladrillos "
@@ -1753,12 +1753,12 @@ msgstr ""
 "El oro de la izquierda necesita un poco de coordinación.\n"
 "\n"
 "Mientras subes y te desplazas hacia la derecha, asegúrate de que tu "
-"compañero de equipo no cae en el pozo de cemento. Para recoger las tres "
+"compañero de equipo no cae en el pozo de hormigón. Para recoger las tres "
 "piezas de oro de la derecha, intenta mantenerlo en la escalera de la "
 "izquierda, de forma que puedas saltar sobre su cabeza hasta el oro.\n"
 "\n"
 "Cuando vayas hacia arriba y a la izquierda, hay una escalera sobre una "
-"columna de cemento. Camina sobre la cabeza de tu amigo para alcanzarla y "
+"columna de hormigón. Camina sobre la cabeza de tu amigo para alcanzarla y "
 "permanece sobre ella. El primer ladrillo a tu izquierda es una trampa. "
 "Camine sobre su cabeza de forma que él caiga en la trampa y tú no. Pero "
 "después tendrás que liberarlo de nuevo si quieres alcanzar las escaleras más "
@@ -1949,7 +1949,7 @@ msgstr ""
 "la mayoría de los enemigos suban por las escaleras centrales. Después, "
 "muévete arriba y abajo para intentar agruparlos. Finalmente, cae al nivel "
 "más bajo y espera a que ellos hagan lo mismo. Cuando lleguen los primeros "
-"enemigos, corre hacia arriba e intenta llegar al pozo de cemento más alto "
+"enemigos, corre hacia arriba e intenta llegar al pozo de hormigón más alto "
 "por delante de los otros. Puede que tengas que intentarlo varias veces antes "
 "de tener éxito.\n"
 "\n"
@@ -2052,7 +2052,7 @@ msgid ""
 "the trap, then run over the bricks above, dig through to the remaining gold "
 "and get out fast.\n"
 msgstr ""
-"Para salir de la estructura de cemento de abajo, baja primero, espera al "
+"Para salir de la estructura de hormigón de abajo, baja primero, espera al "
 "enemigo, camina sobre su cabeza y escapa. Usa un truco similar con el "
 "segundo enemigo.\n"
 "\n"
@@ -2102,7 +2102,7 @@ msgid ""
 msgstr ""
 "Esto necesita un poco de coordinación.\n"
 "\n"
-"Cuando hayas entrado en el hueco del cemento, espera el momento justo para "
+"Cuando hayas entrado en el hueco del hormigón, espera el momento justo para "
 "pasar sobre los enemigos: ni demasiado pronto, porque irías directo a sus "
 "brazos, ni demasiado tarde, porque no alcanzarás el otro lado."
 
@@ -4709,7 +4709,7 @@ msgid ""
 "concrete hole to the right."
 msgstr ""
 "Si cavas un agujero rápido y saltas dentro de él, el enemigo saltará dentro "
-"del agujero de cemento a la derecha."
+"del agujero de hormigón a la derecha."
 
 #: gamedata/game_lars.txt:40
 #, kde-format
@@ -4816,7 +4816,7 @@ msgid ""
 "Get some enemies into the concrete pit so that you can go across it. Then "
 "push them one step further down before you dig and grab the gold."
 msgstr ""
-"Haz que algunos enemigos caigan al pozo de cemento, de forma que lo puedas "
+"Haz que algunos enemigos caigan al pozo de hormigón, de forma que lo puedas "
 "cruzar. Entonces, empújalos un paso hacia abajo antes de excavar, y recoge "
 "el oro."
 
@@ -4840,7 +4840,7 @@ msgstr "La caja (2)"
 #: gamedata/game_lars.txt:84
 #, kde-format
 msgid "Concrete Towers"
-msgstr "Torres de cemento"
+msgstr "Torres de hormigón"
 
 #: gamedata/game_MAZ.txt:2
 #, kde-format
@@ -6596,7 +6596,7 @@ msgstr ""
 "Esto no funcionará si hay oro sobre el ladrillo que quieres cavar..."
 
 #: gamedata/game_plwv.txt:99
-#, fuzzy, kde-format
+#, kde-format
 msgid "Ninja Style"
 msgstr "Estilo ninja"
 
@@ -6622,26 +6622,25 @@ msgid ""
 "If the enemies are still carrying gold, keep them chasing you around on the "
 "middle ladder and falling to the concrete until they release it."
 msgstr ""
-"Después de recoger todo el oro de la parte izquierda, permanezca ahí, suba a "
-"lo más alto y deje que el enemigo le siga, después salte al suelo. Si un "
-"enemigo cae cerca del centro de la escalera de la derecha, rápidamente "
-"ascienda hasta un punto que esté más alto. Después de varios intentos, "
-"debería tener a los tres enemigos a la derecha en la escalera grande situada "
-"más a la derecha. Ahora será sencillo limpiar las dos primeras áreas de oro "
-"de la derecha.\n"
+"Después de recoger todo el oro de la parte izquierda, permanece ahí, sube a "
+"lo más alto y deja que el enemigo te siga; después, salta al suelo. Si un "
+"enemigo cae cerca del centro de la escalera de la derecha, asciende "
+"rápidamente hasta un punto que esté más alto. Tras varios intentos, deberías "
+"tener a los tres enemigos a la derecha en la escalera grande situada más a "
+"la derecha. Ahora será sencillo limpiar las dos primeras áreas de oro de la "
+"parte derecha.\n"
 "\n"
-"Atraiga a tres o quizá solo a dos enemigos a la escalera del medio en la "
-"parte derecha. Suba hasta cerca del agujero en el cemento, déjese caer, "
-"corra a la derecha, suba por la escalera larga, caiga a la izquierda y "
-"recoja el oro.\n"
+"Atrae a tres, o quizá solo a dos enemigos, a la escalera central de la parte "
+"derecha. Sube hasta cerca del agujero del hormigón, déjate caer, corre a la "
+"derecha, sube por la escalera larga, cae a la izquierda y recoge el oro.\n"
 "\n"
-"Si solo consigue atraer a dos enemigos a la escalera larga, asegúrese de que "
-"el tercero se cae de la escalera derecha antes de que usted cruce. Entonces "
-"tendrá que subir hasta arriba de la escalera larga y esperar hasta que sea "
-"seguro caer a la izquierda y coger el oro.\n"
+"Si solo consigues atraer a dos enemigos a la escalera larga, asegúrate de "
+"que el tercero se cae de la escalera derecha antes de que cruces. Entonces "
+"tendrás que subir hasta la parte superior de la escalera larga y esperar "
+"hasta que sea seguro caer a la izquierda y coger el oro.\n"
 "\n"
-"Si los enemigos aún llevan oro con ellos, continúe haciendo que le persigan "
-"por la escalera del medio y que caigan al cemento hasta que lo suelten."
+"Si los enemigos aún llevan oro con ellos, continúa haciendo que te persigan "
+"por la escalera del centro y que caigan al hormigón hasta que lo suelten."
 
 #: gamedata/game_plwv.txt:109
 #, kde-format
@@ -6670,26 +6669,26 @@ msgid ""
 "left.  You have to collect the gold in separate trips from the left and the "
 "right."
 msgstr ""
-"Parece como si debiera atrapar a dos enemigos en los dos pozos del fondo. "
-"Inténtelo, pero es muy difícil conseguir que uno caiga en el pozo de la "
+"Parece como si debieras atrapar a dos enemigos en los dos pozos del fondo. "
+"Inténtalo, pero es muy difícil conseguir que uno caiga en el pozo de la "
 "derecha y es probable que algún enemigo con oro caiga en el de la izquierda. "
-"Cuatro ladrillos falsos más a la izquierda evitan que usted sobrepase el "
-"límite izquierdo cavando.\n"
+"Cuatro ladrillos falsos más a la izquierda evitan que sobrepases el límite "
+"izquierdo cavando.\n"
 "\n"
 "Es mejor recoger la fila inferior de oro al final, dejándose caer ahí por "
 "donde está la pepita que cuelga a la derecha y escapando por medio de la "
 "escalera que aparece.\n"
 "\n"
 "La clave para limpiar la sección izquierda es la fila de escaleras "
-"incrustadas en los ladrillos. Salga por alguno de los tres lugares que "
-"tienen ladrillos falsos debajo. Es un suicidio dejarse caer en la zona "
-"central de los ladrillos con forma de T.\n"
+"incrustadas en los ladrillos. Sal por alguno de los tres lugares que tienen "
+"ladrillos falsos debajo. Es un suicidio dejarse caer en la zona central de "
+"los ladrillos con forma de T.\n"
 "\n"
-"Comience recogiendo el oro a la derecha de la T. Entonces puede hacer que un "
-"enemigo corra hacia el foso con forma de U.\n"
+"Comienza recogiendo el oro que hay a la derecha de la T. Luego puedes hacer "
+"que un enemigo corra hacia el foso con forma de U.\n"
 "\n"
 "Cuidado con el ladrillo falso en mitad de la plataforma abajo a la "
-"izquierda. Tendrá que coger el oro en recorridos diferentes desde la "
+"izquierda. Tendrás que coger el oro en recorridos diferentes desde la "
 "izquierda y desde la derecha."
 
 #: gamedata/game_plwv.txt:121
@@ -6741,52 +6740,51 @@ msgid ""
 "P.P.S.  There is no room for error or hesitation in this method!  Not much "
 "in the first method either!"
 msgstr ""
-"Atrape al primer enemigo inmediatamente. Suba, vaya a la derecha y cuélguese "
-"de la escalera situada a la derecha de la barra corta. En cuanto el enemigo "
-"llegue, salte rápidamente. Cuando le alcance de nuevo, vaya a la izquierda, "
-"déjese caer y suba por la escalera de la izquierda hasta arriba.\n"
+"Atrapa al primer enemigo inmediatamente. Sube, ve a la derecha y cuélgate de "
+"la escalera situada a la derecha de la barra corta. En cuanto el enemigo "
+"llegue, salta rápidamente. Cuando te alcance de nuevo, ve a la izquierda, "
+"déjate caer y sube por la escalera de la izquierda hasta arriba.\n"
 "\n"
 "El enemigo debería dirigirse hacia la derecha, sobre el hormigón, y caer. "
-"Ahora descienda a la esquina inferior izquierda. El enemigo debería caer en "
+"Ahora desciende a la esquina inferior izquierda. El enemigo debería caer en "
 "el ladrillo falso situado al lado del oro.\n"
 "\n"
-"Recoja todo el oro de la parte superior, a continuación cave y caiga al lado "
-"del siguiente enemigo. Espérele, cave a la izquierda y muévase a la derecha. "
-"El enemigo caerá en el agujero. Muévase a la derecha y recoja más oro "
-"mientras cae.\n"
+"Recoge todo el oro de la parte superior; a continuación, cava y cae al lado "
+"del siguiente enemigo. Espéralo, cava a la izquierda y muévete a la derecha. "
+"El enemigo caerá en el agujero. Muévete a la derecha y recoge más oro "
+"mientras caes.\n"
 "\n"
-"Trepe hasta la parte superior, déjese caer sobre el enemigo atrapado a "
-"través del ladrillo falso bajo una barra y recoja cinco pepitas más. Ahora "
-"cave y descienda por la escalera corta a la parte derecha de los ladrillos, "
+"Trepa hasta la parte superior, déjate caer sobre el enemigo atrapado a "
+"través del ladrillo falso bajo una barra y recoge cinco pepitas más. Ahora "
+"cava y desciende por la escalera corta a la parte derecha de los ladrillos "
 "para matar al enemigo en el agujero (que tiene más oro). Debería volver a "
-"aparecer sobre usted y caer a través de un ladrillo falso volviendo al "
+"aparecer sobre ti y caer a través de un ladrillo falso para volver al "
 "agujero.\n"
 "\n"
-"Cave tres ladrillos entre los dos enemigos y descienda por la escalera "
-"pequeña hasta que agrupe a los enemigos. Cave dos ladrillos más para "
-"liberarlos. Suba por la escalera hasta estar sobre el hormigón y, justo "
-"antes de que los enemigos lleguen hasta allí, déjese caer al suelo y corra "
+"Cava tres ladrillos entre los dos enemigos y desciende por la escalera "
+"pequeña hasta que agrupes a los enemigos. Cava dos ladrillos más para "
+"liberarlos. Sube por la escalera hasta estar sobre el hormigón y, justo "
+"antes de que los enemigos lleguen hasta allí, déjate caer al suelo y corre "
 "hasta el fondo de la escalera corta. Los enemigos deberían bajar y correr "
 "hasta caer en el pozo doble de la derecha.\n"
 "\n"
-"Salga corriendo rápidamente desde la derecha, sobre los enemigos. Caiga "
-"sobre la última pieza de oro, a la derecha, y aparecerá una escalera oculta. "
-"¡Uf!\n"
+"Sal corriendo rápidamente desde la derecha, sobre los enemigos. Cae sobre la "
+"última pieza de oro, a la derecha, y aparecerá una escalera oculta. ¡Uf!\n"
 "\n"
-"P.D.- Otra manera de atrapar al enemigo de la izquierda en el ladrillo falso "
-"es hacer que le siga hasta la escalera de más a la izquierda mientras usted "
-"corre cruzando la parte superior y cava para caer sobre el segundo enemigo. "
-"El tiempo es MUY justo. Debe cavar y dejarse caer antes de que el enemigo "
-"ascienda hasta arriba a la izquierda y corra hacia la derecha.\n"
+"P. S.: Otra manera de atrapar al enemigo de la izquierda en el ladrillo "
+"falso es hacer que te siga hasta la escalera de más a la izquierda mientras "
+"corres cruzando la parte superior y cavas para caer sobre el segundo "
+"enemigo. El tiempo es MUY justo. Debes cavar y dejarte caer antes de que el "
+"enemigo ascienda hasta arriba a la izquierda y corra hacia la derecha.\n"
 "\n"
-"Después, suba las escaleras de la derecha hasta arriba, espere en la barra "
+"Después, sube las escaleras de la derecha hasta arriba, espera en la barra "
 "de la izquierda sobre un ladrillo falso hasta que el enemigo de más a la "
-"izquierda empiece a correr hacia usted, entonces déjese caer. Espere de "
-"nuevo hasta que empiece a caer, entonces excave dos ladrillos a la derecha "
-"de la escalera corta. El enemigo debería caerse atravesando un ladrillo "
-"falso y una escalera hasta el ladrillo falso de abajo.\n"
+"izquierda empiece a correr hacia ti; entonces, déjate caer. Espera de nuevo "
+"hasta que empiece a caer y excava dos ladrillos a la derecha de la escalera "
+"corta. El enemigo debería caerse atravesando un ladrillo falso y una "
+"escalera hasta el ladrillo falso de abajo.\n"
 "\n"
-"P.P.D.- ¡No hay lugar para los errores o las dudas con este método! Y "
+"P. P. S.: ¡No hay lugar para los errores o las dudas con este método! Y "
 "tampoco con el primer método."
 
 #: gamedata/game_sot.txt:2
@@ -6803,11 +6801,11 @@ msgid ""
 "\n"
 "Composed by Stuart Popejoy - spopejoy@panix.com"
 msgstr ""
-"Justo cuando creía que ya estaba a salvo... quince niveles de puro terror, "
-"que usan esas reglas estrafalarias-aunque-rápidas de KGoldrunner. Necesitará "
-"cavar mientras cae con bastante frecuencia.\n"
+"Justo cuando creías que ya estabas a salvo... quince niveles de puro terror, "
+"que usan esas reglas estrafalarias-aunque-rápidas de KGoldrunner. Tendrás "
+"que cavar mientras caes con bastante frecuencia.\n"
 "\n"
-"Creado por Stuart Popejoy - spopejoy@panix.com"
+"Creado por Stuart Popejoy (spopejoy@panix.com)."
 
 #: gamedata/game_sot.txt:8
 #, kde-format
@@ -6823,12 +6821,12 @@ msgid ""
 "falling, and escape back to the top of the platform. Head upward as quickly "
 "as you can."
 msgstr ""
-"Vaya escaleras abajo de plataforma en plataforma hasta la tercera desde "
-"abajo. Espere en la parte situada más a la derecha para que los enemigos "
-"caigan al fondo.\n"
-"Déjese caer sobre la plataforma más baja y cave sobre el oro. A continuación "
-"cave a la derecha, mientras cae, y escape por la plataforma superior. Corra "
-"escaleras arriba tan rápido como pueda."
+"Ve escaleras abajo de plataforma en plataforma hasta la tercera desde abajo. "
+"Espera en la parte situada más a la derecha para que los enemigos caigan al "
+"fondo.\n"
+"Déjate caer sobre la plataforma más baja y cava sobre el oro. A "
+"continuación, cava a la derecha, mientras caes, y escapa por la plataforma "
+"superior. Corre escaleras arriba tan rápido como puedas."
 
 #: gamedata/game_sot.txt:13
 #, kde-format
@@ -6846,15 +6844,15 @@ msgid ""
 "and fall to the right of the outside ladder. As the enemies fall after you, "
 "run back up the ladder and fall on top of the enemies to get to the pole."
 msgstr ""
-"Por cada cara de la estructura de la terraza, corra hacia arriba por la "
-"escalera exterior empezando desde abajo y caiga en la plataforma más baja. "
-"Corra hacia el centro de la escalera y espere en un hueco a que los enemigos "
-"caigan por las escaleras exteriores. Caiga tras ellos hasta donde está el "
+"Por cada cara de la estructura de la terraza, corre hacia arriba por la "
+"escalera exterior empezando desde abajo y cae en la plataforma más baja. "
+"Corre hacia el centro de la escalera y espera en un hueco a que los enemigos "
+"caigan por las escaleras exteriores. Cae tras ellos hasta donde está el "
 "oro.\n"
-"Después de recoger el oro, corra hacia la derecha, cruce la parte superior "
-"con los enemigos pisándole los talones, y caiga a la derecha de la escalera "
-"exterior. Cuando los enemigos caigan tras usted, vuelva a correr escaleras "
-"arriba y déjese caer sobre los enemigos para llegar hasta el mástil."
+"Después de recoger el oro, corre hacia la derecha, cruza la parte superior "
+"con los enemigos pisándote los talones y cae a la derecha de la escalera "
+"exterior. Cuando los enemigos caigan detrás de ti, vuelve a correr escaleras "
+"arriba y déjate caer sobre los enemigos para llegar hasta el mástil."
 
 #: gamedata/game_sot.txt:18
 #, kde-format
@@ -6871,12 +6869,12 @@ msgid ""
 "collecting the gold, dig to trap enemies at the bottom, then exit at the top "
 "left."
 msgstr ""
-"Ábrase camino para salir de la espiral, excavando para atrapar a los "
-"enemigos justo antes de que usted emerja de los túneles.\n"
-" Diríjase hacia arriba hasta la parte superior izquierda. Mientras corre a "
-"la derecha, caiga en el área en zig-zag antes de que lo haga el enemigo, "
-"para llegar a la parte superior de la derecha. Tras coger el oro, excave "
-"para atrapar a los enemigos de abajo, y entonces salga por la parte superior "
+"Ábrete camino para salir de la espiral, excavando para atrapar a los "
+"enemigos justo antes de que emerjas de los túneles.\n"
+"Dirígete hacia arriba hasta la parte superior izquierda. Mientras corres "
+"hacia la derecha, cae en el área en zigzag antes de que lo haga el enemigo, "
+"para llegar a la parte superior de la derecha. Tras coger el oro, excava "
+"para atrapar a los enemigos de abajo, y entonces sal por la parte superior "
 "izquierda."
 
 #: gamedata/game_sot.txt:23
@@ -6895,9 +6893,9 @@ msgid ""
 msgstr ""
 "En general, se cava y se intenta conseguir el oro, para a continuación "
 "correr hacia arriba a la derecha hasta la siguiente piedra.\n"
-"Sin embargo, es necesario hacer la piedra superior central antes que la "
-"segunda piedra de la derecha. Deje una pieza de oro en el área central para "
-"el final. ¡Entonces salga rápido!"
+"Sin embargo, la piedra central superior debe hacerse antes de la segunda "
+"piedra desde la izquierda. Deja un trozo de oro en la zona media para el "
+"final. ¡Luego sal rápido!"
 
 #: gamedata/game_sot.txt:28
 #, kde-format
@@ -6924,21 +6922,21 @@ msgid ""
 msgstr ""
 "La forma más segura de entrar en el edificio es descender por la escalera de "
 "arriba a la izquierda y esperar en la parte superior de la escalera pequeña "
-"de la derecha. En cuanto un enemigo se aproxime, corra sobre él hacia la "
-"barra. Ahora vaya a la derecha y caiga en el balcón, a continuación cave y "
-"vuelva a caer.\n"
-"Corra por el vestíbulo y suba la escultura de escaleras para recoger el oro. "
-"Tírese por la derecha hasta el bloque de hormigón y espere a que se agrupen "
-"los enemigos. Déjese caer a la izquierda y corra por el exterior del "
-"hormigón con los enemigos siguiéndole. Use la misma escalera y la barra para "
+"de la derecha. En cuanto un enemigo se aproxime, corre sobre él hacia la "
+"barra. Ahora ve a la derecha y cae en el balcón; a continuación, cava y "
+"vuelve a caer.\n"
+"Corre por el vestíbulo y sube la escultura de escaleras para recoger el oro. "
+"Tírate por la derecha hasta el bloque de hormigón y espera a que se agrupen "
+"los enemigos. Déjate caer a la izquierda y corre por el exterior del "
+"hormigón con los enemigos siguiéndote. Usa la misma escalera y barra para "
 "volver.\n"
-"Suba hasta arriba del edificio por las escaleras situadas más a la derecha. "
-"Espere en el punto situado más a la izquierda del tejado. Espere un enemigo "
-"para que caiga bajo usted, y a continuación vuelva atrás, cave y caiga por "
-"el balcón, donde podrá recoger tres piezas de oro. Si espera lo suficiente "
-"en el tejado antes de caer puede persuadir a varios enemigos para que caigan "
-"y se queden atrapados en el balcón.\n"
-"Use las escaleras de la derecha para recoger el oro que falta y salir."
+"Sube hasta arriba del edificio por las escaleras situadas más a la derecha. "
+"Espera en el punto situado más a la izquierda del tejado. Espera a un "
+"enemigo para que caiga debajo de ti y, a continuación, vuelve atrás; cava y "
+"cae por el balcón, donde podrás recoger tres piezas de oro. Si esperas lo "
+"suficiente en el tejado antes de caer, puedes persuadir a varios enemigos "
+"para que caigan y se queden atrapados en el balcón.\n"
+"Usa las escaleras de la derecha para recoger el oro que falta y salir."
 
 #: gamedata/game_sot.txt:35
 #, kde-format
@@ -6951,9 +6949,9 @@ msgid ""
 "Collect the gold by working from top to bottom. Before the last gold, dig to "
 "the right of it and left of the enemy. Run up as fast as you can."
 msgstr ""
-"Recoja el oro trabajando de arriba hacia abajo. Antes de la última pepita, "
-"cave a la derecha de ella y a la izquierda del enemigo. Corra hacia arriba "
-"tan rápido como pueda."
+"Recoge el oro trabajando de arriba a abajo. Antes de la última pepita, cava "
+"a la derecha de ella y a la izquierda del enemigo. Corre hacia arriba tan "
+"rápido como puedas."
 
 #: gamedata/game_sot.txt:39
 #, kde-format
@@ -6984,31 +6982,30 @@ msgid ""
 "digging right to trap the enemy. Finally, escape via the right hand side of "
 "the play area."
 msgstr ""
-"Caiga por la cornisa, cavando a la izquierda para subir después por la "
-"escalera de la izquierda. Continúe hacia la izquierda por la barra, a "
-"continuación caiga mientras cava por la parte izquierda y recoja más oro. "
-"Vaya a la derecha, caiga a través del ladrillo falso bajo la escalera, "
-"continúe hacia la derecha y caiga a través de un túnel de ladrillos hasta "
-"una barra bajo él.\n"
-"Tome la derecha y caiga a través de otro túnel de ladrillo mientras cava por "
-"la derecha. Cave y atrape al enemigo, al lado de la escalera, suba y siga "
-"por la izquierda, a continuación cave y caiga para recoger el oro. Cave para "
-"atrapar nuevamente al enemigo. Cuando se rellene el primer agujero, suba a "
-"la parte superior de la sección con el enemigo siguiéndole. Cave en la parte "
-"izquierda para recoger oro y volver a caer en la barra.\n"
-"Ahora diríjase hacia la izquierda y caiga a través del túnel de ladrillo, "
-"cavando a la izquierda para atrapar al siguiente enemigo. Vaya hacia la "
-"parte superior izquierda de la sección, a continuación caiga, cave a la "
-"izquierda y salte para alcanzar la plataforma de la parte superior "
-"izquierda.\n"
-"Ahora podrá navegar por la espiral de escaleras y los túneles de ladrillos "
+"Cae por la cornisa, cavando a la izquierda para subir después por la "
+"escalera de la izquierda. Continúa hacia la izquierda por la barra; a "
+"continuación, cae mientras cavas por la parte izquierda y recoge más oro. Ve "
+"a la derecha, cae a través del ladrillo falso de debajo de la escalera, "
+"continúe hacia la derecha y cae a través de un túnel de ladrillos hasta una "
+"barra bajo él.\n"
+"Dirígete a la derecha y cae a través de otro túnel de ladrillo mientras "
+"cavas por la derecha. Cava y atrapa al enemigo, al lado de la escalera, sube "
+"y sigue por la izquierda; a continuación, cava y cae para recoger el oro. "
+"Cava para atrapar nuevamente al enemigo. Cuando se rellene el primer "
+"agujero, sube a la parte superior de la sección con el enemigo siguiéndote. "
+"Cava en la parte izquierda para recoger oro y volver a caer en la barra.\n"
+"Ahora dirígete hacia la izquierda y cae a través del túnel de ladrillo, "
+"cavando a la izquierda para atrapar al siguiente enemigo. Ve hacia la parte "
+"superior izquierda de la sección; a continuación, cae, cava a la izquierda y "
+"salta para alcanzar la plataforma de la parte superior izquierda.\n"
+"Ahora podrás navegar por la espiral de escaleras y los túneles de ladrillos "
 "para recolectar cuatro piezas más de oro.\n"
-"Después de esto, vuelva a la derecha, caiga y camine sobre el enemigo "
-"atrapado en la parte inferior, para volver por la mitad derecha del área de "
-"juego. Diríjase a la escalera situada arriba a la derecha, a continuación "
-"caiga, cave dos veces a la derecha, para conseguir la última pieza de oro. "
-"Repita la caída en el túnel de ladrillo de la derecha y cave a su derecha "
-"para atrapar al enemigo. Finalmente, escape por la derecha del área de juego."
+"Después de esto, vuelve a la derecha, cae y camina sobre el enemigo atrapado "
+"en la parte inferior para volver por la mitad derecha del área de juego. "
+"Dirígete a la escalera situada arriba a la derecha; a continuación, cae y "
+"cava dos veces a la derecha para conseguir la última pieza de oro. Repite la "
+"caída en el túnel de ladrillo de la derecha y cava a tu derecha para atrapar "
+"al enemigo. Finalmente, escapa por la derecha del área de juego."
 
 #: gamedata/game_sot.txt:47
 #, kde-format
@@ -7039,25 +7036,25 @@ msgid ""
 "enemies, proceeding through the remaining cascades and up the ladders on the "
 "far right to end the level."
 msgstr ""
-"Vaya rápidamente hacia la derecha y baje las escaleras, con el enemigo "
-"siguiéndole. Cave una vez, aproximadamente a medio descenso. Después de la "
-"última pieza de oro, cave y suba por la escalera. Espere hasta que se rompa "
-"el siguiente ladrillo en el que quedará atrapado el enemigo. El enemigo "
-"descenderá. Corra a través de la abertura antes de que se cierre. Puede "
+"Ve rápidamente a la derecha y baja las escaleras, con el enemigo "
+"siguiéndote. Cava una vez, aproximadamente a medio descenso. Después de la "
+"última pieza de oro, cava y sube por la escalera. Espera hasta que se rompa "
+"el siguiente ladrillo, donde quedará atrapado el enemigo. El enemigo "
+"descenderá. Corre a través de la abertura antes de que se cierre. Puedes "
 "usarla para ir a la siguiente escalera de la derecha.\n"
-"Corra por la parte superior y baje la escalera. Cave a la izquierda mientras "
-"espera al enemigo y a continuación cave a la derecha, bajo el enemigo, "
-"cuando esté cerca de él. Corra sobre él para recoger cualquier pieza de oro "
-"que tenga, y descienda unos pocos pasos. Cave y suba la escalera, esperando "
-"a que renazca y caiga por las escaleras, para que pueda moverse a la "
-"siguiente escalera. Repítalo con las siguientes escaleras hasta que llegue "
-"al poste superior.\n"
-"Corra hacia la izquierda y caiga sobre el ladrillo superior de la sección "
-"inferior izquierda. Recoja todo el oro, deje la pieza más alejada de la "
-"izquierda de la segunda escalera para el final, si no acabará atrapado.\n"
-"Esquive a los enemigos corriendo escaleras arriba y atráigalos. Corra hacia "
-"la derecha y arriba hasta alcanzar la última escalera. Cave para burlar a "
-"los enemigos, yendo a través de las cataratas que quedan y suba las "
+"Corre por la parte superior y baja la escalera. Cava a la izquierda mientras "
+"esperas al enemigo y, a continuación, cava a la derecha, bajo el enemigo, "
+"cuando estés cerca de él. Corre sobre él para recoger cualquier pieza de oro "
+"que tenga y desciende unos pocos pasos. Cava y sube la escalera, esperando a "
+"que renazca y baje por tu escalera, para que puedas usarlo para pasar a la "
+"siguiente escalera inferior. Repítelo con las siguientes escaleras hasta que "
+"llegues al poste superior.\n"
+"Corre hacia la izquierda y cae sobre el ladrillo superior de la sección "
+"inferior izquierda. Recoge todo el oro, dejando la pieza más alejada de la "
+"izquierda de la segunda escalera para el final; si no, acabarás atrapado.\n"
+"Esquiva a los enemigos corriendo escaleras arriba y atraelos. Corre hacia la "
+"derecha y hacia arriba hasta alcanzar la última escalera. Cava para burlar a "
+"los enemigos, continuando a través de las cataratas que quedan, y sube las "
 "escaleras más lejanas de la derecha para finalizar el nivel."
 
 #: gamedata/game_sot.txt:54
@@ -7073,14 +7070,14 @@ msgid ""
 "and dig the next brick in towards the center. Fall onto the enemy and run "
 "right or left, then dig to trap him.  You will have to be quick!"
 msgstr ""
-"Corra rápido y cave bien...\n"
-"En la habituación más recóndita, espere bien en la parte más a la izquierda "
-"o bien en la parte más a la derecha de la parte superior y cave el siguiente "
-"ladrillo hacia el centro. Caiga sobre el enemigo y corra a derecha o "
-"izquierda, cave y atrápelo. ¡Tendrá que ser rápido!"
+"Corre rápido y cava bien...\n"
+"En la habitación más recóndita, espera en la parte de más a la izquierda o "
+"de más a la derecha en la parte superior y cava el siguiente ladrillo hacia "
+"el centro. Caie sobre el enemigo y corre a la derecha o a la izquierda; cava "
+"y atrápalo. ¡Tendrás que ser rápido!"
 
 #: gamedata/game_sot.txt:59
-#, kde-format
+#, fuzzy, kde-format
 msgid "Endless Enemies (2)"
 msgstr "Enemigos sin fin (2)"
 
@@ -7454,7 +7451,7 @@ msgstr ""
 "ratón en trayectos sencillos (como _ | o U), así que tenga cuidado de no "
 "alejarse mucho de él.\n"
 "\n"
-"CUIDADO: Intente no caer de la escalera o la barra al pozo de cemento de la "
+"CUIDADO: Intente no caer de la escalera o la barra al pozo de hormigón de la "
 "parte inferior derecha. Si se queda atrapado ahí, la única manera de salir "
 "es matar al héroe (presionando la tecla Q para salir) y volver a empezar el "
 "nivel."
@@ -7492,7 +7489,7 @@ msgstr ""
 "tiempo, los agujeros se cierran y podría quedar atrapado y morir.\n"
 "\n"
 "Cuando cave, debe estar situado sobre algo sólido, como una escalera, "
-"cemento, un ladrillo o una barra. En algunos juegos de campeonato podrá "
+"hormigón, un ladrillo o una barra. En algunos juegos de campeonato podrá "
 "cavar mientras cae, pero no en este juego.\n"
 "\n"
 "En la tercera área de abajo, usted tendrá que excavar dos agujeros, saltar "
@@ -7502,7 +7499,7 @@ msgstr ""
 "por el camino. ¡Buena suerte!\n"
 "\n"
 "A propósito, usted puede excavar a través de los ladrillos, pero no del "
-"cemento."
+"hormigón."
 
 #: gamedata/game_tute.txt:31
 #, kde-format
@@ -7643,10 +7640,10 @@ msgid ""
 "patience!"
 msgstr ""
 "No existe nada donde excavar, por eso deberá esquivar a los enemigos y "
-"evitar caer en el cemento. Intente mantener juntos a los enemigos.\n"
+"evitar caer en el hormigón. Intente mantener juntos a los enemigos.\n"
 "\n"
 "Si un enemigo tiene un contorno dorado es que posee una pepita. Podrá "
-"caersele cuando corra sobre el cemento o tal vez en lo alto de una "
+"caersele cuando corra sobre el hormigón o tal vez en lo alto de una "
 "escalera... ¡Paciencia, paciencia!"
 
 #: gamedata/game_tutea.txt:13
@@ -7712,7 +7709,7 @@ msgstr ""
 "Si los enemigos pasan por ellos, podrán caer sobre usted sin avisar. En "
 "algún momento tendrá que caer sobre algún ladrillo para obtener oro.\n"
 "\n"
-"En el inicio, salte en el pozo de cemento, excave y caiga. Eso hará que un "
+"En el inicio, salte en el pozo de hormigón, excave y caiga. Eso hará que un "
 "enemigo quede preso durante un tiempo..."
 
 #: gamedata/game_wad.txt:3
@@ -8625,25 +8622,22 @@ msgid "Makes sounds of player's footsteps."
 msgstr "Generar el sonido de las pisadas del jugador."
 
 #: src/kgoldrunner.cpp:380
-#, fuzzy, kde-format
-#| msgid "&Demo At Start"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Demo at Start"
 msgstr "&Demostración al iniciar"
 
 #: src/kgoldrunner.cpp:381
-#, fuzzy, kde-format
-#| msgid "Run a demo when the game starts."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Run a demo when the game starts"
-msgstr "Ejecutar una demostración al iniciar el juego."
+msgstr "Ejecutar una demostración al iniciar el juego"
 
 #: src/kgoldrunner.cpp:382
-#, fuzzy, kde-format
-#| msgid "Run a demo when the game starts."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Runs a demo when the game starts."
-msgstr "Ejecutar una demostración al iniciar el juego."
+msgstr "Ejecuta una demostración al iniciar el juego."
 
 #: src/kgoldrunner.cpp:390
 #, kde-format
@@ -8652,11 +8646,10 @@ msgid "&Mouse Controls Hero"
 msgstr "El &ratón controla al héroe"
 
 #: src/kgoldrunner.cpp:391
-#, fuzzy, kde-format
-#| msgid "Mouse controls hero."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Mouse controls hero"
-msgstr "El ratón controla al héroe."
+msgstr "El ratón controla al héroe"
 
 #: src/kgoldrunner.cpp:392
 #, kde-format
@@ -8671,11 +8664,10 @@ msgid "&Keyboard Controls Hero"
 msgstr "El &teclado controla al héroe"
 
 #: src/kgoldrunner.cpp:397
-#, fuzzy, kde-format
-#| msgid "Keyboard controls hero."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Keyboard controls hero"
-msgstr "El teclado controla al héroe."
+msgstr "El teclado controla al héroe"
 
 #: src/kgoldrunner.cpp:398
 #, kde-format
@@ -8690,8 +8682,7 @@ msgid "Hybrid Control (&Laptop)"
 msgstr "Control híbrido (para portáti&les)"
 
 #: src/kgoldrunner.cpp:403
-#, fuzzy, kde-format
-#| msgid "Pointer controls hero; dig using keyboard."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Pointer controls hero; dig using keyboard"
 msgstr "El puntero controla al héroe; cavar usando el teclado."
@@ -8708,18 +8699,16 @@ msgstr ""
 "izquierda."
 
 #: src/kgoldrunner.cpp:420
-#, fuzzy, kde-format
-#| msgid "&Click Key To Move"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Click Key to Move"
 msgstr "Pulsar una te&cla para mover"
 
 #: src/kgoldrunner.cpp:421
-#, fuzzy, kde-format
-#| msgid "&Click Key To Move"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click key to move"
-msgstr "Pulsar una te&cla para mover"
+msgstr "Pulsar una tecla para mover"
 
 #: src/kgoldrunner.cpp:422
 #, kde-format
@@ -8728,22 +8717,20 @@ msgid ""
 "In keyboard mode, click a direction-key to start moving and keep on going "
 "until you click another key."
 msgstr ""
-"En el modo de teclado, pulse una tecla de dirección para empezar a moverse y "
-"continuar haciéndolo hasta que pulse otra tecla."
+"En el modo de teclado, pulsa una tecla de dirección para empezar a moverte y "
+"continuar haciéndolo hasta que pulses otra tecla."
 
 #: src/kgoldrunner.cpp:428
-#, fuzzy, kde-format
-#| msgid "&Hold Key To Move"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Hold Key to Move"
 msgstr "&Mantener pulsada la tecla para mover"
 
 #: src/kgoldrunner.cpp:429
-#, fuzzy, kde-format
-#| msgid "&Hold Key To Move"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Hold key to move"
-msgstr "&Mantener pulsada la tecla para mover"
+msgstr "Mantener pulsada la tecla para mover"
 
 #: src/kgoldrunner.cpp:430
 #, kde-format
@@ -8751,8 +8738,8 @@ msgctxt "@info:whatsthis"
 msgid ""
 "In keyboard mode, hold down a direction-key to move and release it to stop."
 msgstr ""
-"En el modo de teclado, mantenga pulsada una tecla de dirección para moverse "
-"y suéltela para pararse."
+"En el modo de teclado, mantén pulsada una tecla de dirección para moverte y "
+"suéltala para detenerte."
 
 #: src/kgoldrunner.cpp:447
 #, kde-format
@@ -8761,17 +8748,16 @@ msgid "Normal Speed"
 msgstr "Velocidad normal"
 
 #: src/kgoldrunner.cpp:448
-#, fuzzy, kde-format
-#| msgid "Set normal speed."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set normal speed"
-msgstr "Cambiar a velocidad normal."
+msgstr "Fijar la velocidad normal"
 
 #: src/kgoldrunner.cpp:449
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Set normal game speed."
-msgstr "Establecer la velocidad de juego en normal."
+msgstr "Fijar la velocidad del juego en normal."
 
 #: src/kgoldrunner.cpp:453
 #, kde-format
@@ -8780,18 +8766,16 @@ msgid "Beginner Speed"
 msgstr "Velocidad de principiante"
 
 #: src/kgoldrunner.cpp:454
-#, fuzzy, kde-format
-#| msgid "Set beginners' speed."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set beginners' speed"
-msgstr "Cambiar a velocidad de principiante."
+msgstr "Fijar la velocidad de principiantes"
 
 #: src/kgoldrunner.cpp:455
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Set beginners' game speed (0.5 times normal)."
-msgstr ""
-"Establecer la velocidad del juego para principiantes (0,5 veces la normal)."
+msgstr "Fijar la velocidad del juego para principiantes (0,5 veces la normal)."
 
 #: src/kgoldrunner.cpp:460
 #, kde-format
@@ -8800,17 +8784,16 @@ msgid "Champion Speed"
 msgstr "Velocidad de campeón"
 
 #: src/kgoldrunner.cpp:461
-#, fuzzy, kde-format
-#| msgid "Set champions' speed."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set champions' speed"
-msgstr "Velocidad de campeón."
+msgstr "Fijar la velocidad de campeones"
 
 #: src/kgoldrunner.cpp:462
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Set champions' game speed (1.5 times normal)."
-msgstr "Establecer la velocidad de juego para campeones (1,5 veces la normal)."
+msgstr "Fijar la velocidad del juego para campeones (1,5 veces la normal)."
 
 #: src/kgoldrunner.cpp:466
 #, kde-format
@@ -8819,19 +8802,17 @@ msgid "Increase Speed"
 msgstr "Aumentar velocidad"
 
 #: src/kgoldrunner.cpp:467
-#, fuzzy, kde-format
-#| msgid "Increase speed."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Increase speed"
-msgstr "Aumentar velocidad."
+msgstr "Aumentar velocidad"
 
 #: src/kgoldrunner.cpp:468
-#, fuzzy, kde-format
-#| msgid "Increase the game speed by 0.1 (maximum is 2.0 times normal)."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Increases the game speed by 0.1 (maximum is 2.0 times normal)."
 msgstr ""
-"Aumentar la velocidad del juego en un factor de 0,1 (lo máximo es 2,0 veces "
+"Aumenta la velocidad del juego en un factor de 0,1 (lo máximo es 2,0 veces "
 "la normal)."
 
 #: src/kgoldrunner.cpp:473
@@ -8841,20 +8822,18 @@ msgid "Decrease Speed"
 msgstr "Disminuir velocidad"
 
 #: src/kgoldrunner.cpp:474
-#, fuzzy, kde-format
-#| msgid "Decrease speed."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Decrease speed"
-msgstr "Disminuir velocidad."
+msgstr "Disminuir velocidad"
 
 #: src/kgoldrunner.cpp:475
-#, fuzzy, kde-format
-#| msgid "Decrease the game speed by 0.1 (minimum is 0.2 times normal)."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Decreases the game speed by 0.1 (minimum is 0.2 times normal)."
 msgstr ""
-"Reducir la velocidad del juego en un factor de 0,1 (lo mínimo es 0,2 veces "
-"la normal)."
+"Reduce la velocidad del juego en un factor de 0,1 (lo mínimo es 0,2 veces la "
+"normal)."
 
 #: src/kgoldrunner.cpp:505
 #, kde-format
@@ -8866,13 +8845,13 @@ msgstr "Detener"
 #, kde-format
 msgctxt "@action"
 msgid "Move Right"
-msgstr "Derecha"
+msgstr "Mover a la derecha"
 
 #: src/kgoldrunner.cpp:507
 #, kde-format
 msgctxt "@action"
 msgid "Move Left"
-msgstr "Izquierda"
+msgstr "Mover a la izquierda"
 
 #: src/kgoldrunner.cpp:508
 #, kde-format
@@ -8890,13 +8869,13 @@ msgstr "Bajar"
 #, kde-format
 msgctxt "@action"
 msgid "Dig Right"
-msgstr "Cavar derecha"
+msgstr "Cavar a la derecha"
 
 #: src/kgoldrunner.cpp:511
 #, kde-format
 msgctxt "@action"
 msgid "Dig Left"
-msgstr "Cavar izquierda"
+msgstr "Cavar a la izquierda"
 
 #: src/kgoldrunner.cpp:535
 #, kde-format
@@ -8950,22 +8929,22 @@ msgstr "La partida está en pausa"
 #: src/kgoldrunner.cpp:738
 #, kde-format
 msgid "Press \"%1\" to RESUME"
-msgstr "Pulse «%1» para CONTINUAR"
+msgstr "Pulsa «%1» para CONTINUAR"
 
 #: src/kgoldrunner.cpp:740
 #, kde-format
 msgid "Press \"%1\" or \"%2\" to RESUME"
-msgstr "Pulse «%1» o «%2» para CONTINUAR"
+msgstr "Pulsa «%1» o «%2» para CONTINUAR"
 
 #: src/kgoldrunner.cpp:747
 #, kde-format
 msgid "Press \"%1\" to PAUSE"
-msgstr "Pulse «%1» para DETENERSE"
+msgstr "Pulsa «%1» para PONER EN PAUSA"
 
 #: src/kgoldrunner.cpp:749
 #, kde-format
 msgid "Press \"%1\" or \"%2\" to PAUSE"
-msgstr "Pulse «%1» o «%2» para DETENERSE"
+msgstr "Pulsa «%1» o «%2» para PONER EN PAUSA"
 
 #: src/kgoldrunner.cpp:761
 #, kde-format
@@ -9000,14 +8979,13 @@ msgstr "Editar nombre/pista"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit level name or hint"
-msgstr "Editar nombre del nivel y pista"
+msgstr "Editar nombre del nivel o pista"
 
 #: src/kgoldrunner.cpp:914
-#, fuzzy, kde-format
-#| msgid "Edit text for the name or hint of a level"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Edits text for the name or hint of a level"
-msgstr "Edita el texto del nombre o de la pista de un nivel"
+msgstr "Edita el texto del nombre o de la pista de un nivel."
 
 #: src/kgoldrunner.cpp:917
 #, kde-format
@@ -9034,11 +9012,10 @@ msgid "Paint empty squares or erase"
 msgstr "Dibujar cuadrados vacíos o borrar"
 
 #: src/kgoldrunner.cpp:922
-#, fuzzy, kde-format
-#| msgid "Erase objects or paint empty squares"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Erases objects or paint empty squares."
-msgstr "Borrar objetos o dibujar cuadrados vacíos"
+msgstr "Borra objetos o dibuja cuadrados vacíos."
 
 #: src/kgoldrunner.cpp:925
 #, kde-format
@@ -9050,14 +9027,13 @@ msgstr "Héroe"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Move hero"
-msgstr "Mover el héroe"
+msgstr "Mover al héroe"
 
 #: src/kgoldrunner.cpp:927
-#, fuzzy, kde-format
-#| msgid "Change the hero's starting position"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Changes the hero's starting position."
-msgstr "Cambia la posición de inicio del héroe"
+msgstr "Cambia la posición de inicio del héroe."
 
 #: src/kgoldrunner.cpp:930
 #, kde-format
@@ -9072,11 +9048,10 @@ msgid "Paint enemies"
 msgstr "Dibujar enemigos"
 
 #: src/kgoldrunner.cpp:932
-#, fuzzy, kde-format
-#| msgid "Paint enemies at their starting positions"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints enemies at their starting positions."
-msgstr "Dibuja enemigos en sus posiciones de inicio"
+msgstr "Dibuja enemigos en sus posiciones de inicio."
 
 #: src/kgoldrunner.cpp:936
 #, kde-format
@@ -9088,14 +9063,13 @@ msgstr "Ladrillo"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint bricks (can dig)"
-msgstr "Dibujar ladrillos (se puede cavar)"
+msgstr "Dibujar ladrillos (se pueden cavar)"
 
 #: src/kgoldrunner.cpp:938
-#, fuzzy, kde-format
-#| msgid "Paint bricks (diggable objects)"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints bricks (diggable objects)."
-msgstr "Dibuja ladrillos (objetos cavables)"
+msgstr "Dibuja ladrillos (objetos que se pueden cavar)."
 
 #: src/kgoldrunner.cpp:941
 #, kde-format
@@ -9110,11 +9084,10 @@ msgid "Paint concrete (cannot dig)"
 msgstr "Dibujar hormigón (no se puede cavar)"
 
 #: src/kgoldrunner.cpp:943
-#, fuzzy, kde-format
-#| msgid "Paint concrete objects (not diggable)"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints concrete objects (not diggable)."
-msgstr "Dibujar hormigón (no cavable)"
+msgstr "Dibuja objetos de hormigón (no se pueden cavar)."
 
 #: src/kgoldrunner.cpp:946
 #, kde-format
@@ -9132,14 +9105,13 @@ msgstr "Trampa/ladrillo falso"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint traps or false bricks (can fall through)"
-msgstr "Dibujar trampas o ladrillos falsos (se pueden atravesar)"
+msgstr "Dibujar trampas o ladrillos falsos (se puede caer por ellos)"
 
 #: src/kgoldrunner.cpp:949
-#, fuzzy, kde-format
-#| msgid "Paint traps or false bricks (can fall through)"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints traps or false bricks (can fall through)."
-msgstr "Dibujar trampas o ladrillos falsos (se pueden atravesar)"
+msgstr "Dibuja trampas o ladrillos falsos (se puede caer por ellos)."
 
 #: src/kgoldrunner.cpp:953
 #, kde-format
@@ -9154,11 +9126,10 @@ msgid "Paint ladders"
 msgstr "Dibujar escaleras"
 
 #: src/kgoldrunner.cpp:955
-#, fuzzy, kde-format
-#| msgid "Paint ladders (ways to go up or down)"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints ladders (ways to go up or down)."
-msgstr "Dibujar escaleras (para subir y bajar)"
+msgstr "Dibuja escaleras (para subir y bajar)."
 
 #: src/kgoldrunner.cpp:958
 #, kde-format
@@ -9179,12 +9150,11 @@ msgid "Paint hidden ladders"
 msgstr "Dibujar escaleras ocultas"
 
 #: src/kgoldrunner.cpp:960
-#, fuzzy, kde-format
-#| msgid "Paint hidden ladders, which appear when all the gold is gone"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints hidden ladders, which appear when all the gold is gone."
 msgstr ""
-"Dibuja escaleras ocultas, que aparecen cuando se ha recogido todo el oro"
+"Dibuja escaleras ocultas, que aparecen cuando se ha recogido todo el oro."
 
 #: src/kgoldrunner.cpp:964
 #, kde-format
@@ -9205,11 +9175,10 @@ msgid "Paint bars or poles"
 msgstr "Dibujar barras o palos"
 
 #: src/kgoldrunner.cpp:966
-#, fuzzy, kde-format
-#| msgid "Paint bars or poles (can fall from these)"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints bars or poles (can fall from these)."
-msgstr "Dibuja barras o palos (se puede caer desde ellos)"
+msgstr "Dibuja barras o palos (se puede caer desde ellos)."
 
 #: src/kgoldrunner.cpp:970
 #, kde-format
@@ -9233,7 +9202,7 @@ msgstr "Dibujar oro (u otro tesoro)"
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints gold pieces (or other treasure)."
-msgstr "Dibujar piezas de oro (u otro tesoro)."
+msgstr "Dibuja piezas de oro (u otro tesoro)."
 
 #. i18n: ectx: Menu (editor)
 #: src/kgoldrunnerui.rc:20
@@ -9293,7 +9262,7 @@ msgstr "Reglas tradicionales"
 #, kde-format
 msgctxt "@option:radio"
 msgid "KGoldrunner rules"
-msgstr "Reglas KGoldrunner"
+msgstr "Reglas de KGoldrunner"
 
 #: src/kgrdialog.cpp:149 src/kgrdialog.cpp:184
 #, kde-format
@@ -9355,8 +9324,8 @@ msgid ""
 "You cannot create and save a level until you have created a game to hold it. "
 "Try menu item \"Create Game\"."
 msgstr ""
-"No puede crear y guardar un nivel hasta que no haya creado un juego para "
-"albergarlo. Use la opción «Crear juego»."
+"No puedes crear y guardar un nivel hasta que no hayas creado un juego que lo "
+"contenga. Usa la opción del menú «Crear juego»."
 
 #: src/kgreditor.cpp:115 src/kgreditor.cpp:137
 #, kde-format
@@ -9370,8 +9339,8 @@ msgid ""
 "You cannot edit and save a level until you have created a game and a level. "
 "Try menu item \"Create Game\"."
 msgstr ""
-"No puede crear y guardar un nivel hasta que no haya creado un juego y un "
-"nivel. Use la opción «Crear juego»."
+"No puedes crear y guardar un nivel hasta que no hayas creado un juego y un "
+"nivel. Usa la opción del menú «Crear juego»."
 
 #: src/kgreditor.cpp:138
 #, kde-format
@@ -9380,9 +9349,9 @@ msgid ""
 "own games. You are not just taking a peek at the hidden ladders and fall-"
 "through bricks, are you? :-)"
 msgstr ""
-"No hay problema en editar un nivel del sistema, pero debe guardarlo en uno "
-"de sus propios juegos. No lo estará haciendo para descubrir las escaleras "
-"ocultas y los ladrillos falsos, ¿verdad? :-)"
+"No hay problema en editar un nivel del sistema, aunque debes guardarlo en "
+"uno de tus propios juegos. ¿No lo estarás haciendo para descubrir las "
+"escaleras ocultas y los ladrillos falsos, verdad? :-)"
 
 #: src/kgreditor.cpp:242 src/kgreditor.cpp:261 src/kgrgame.cpp:260
 #, kde-format
@@ -9393,7 +9362,8 @@ msgstr "Guardar nivel"
 #: src/kgreditor.cpp:243
 #, kde-format
 msgid "Do you want to insert a level and move existing levels up by one?"
-msgstr "¿Desea insertar un nivel y mover los existentes hacia delante?"
+msgstr ""
+"¿Quieres insertar un nivel y mover los existentes una posición hacia arriba?"
 
 #: src/kgreditor.cpp:245
 #, kde-format
@@ -9411,7 +9381,7 @@ msgstr "&Cancelar"
 #: src/kgrgame.cpp:1693
 #, kde-format
 msgid "Cannot open file '%1' for output."
-msgstr "No se puede abrir el archivo «%1» para escribir."
+msgstr "No se puede abrir el archivo «%1» para escritura."
 
 #: src/kgreditor.cpp:317 src/kgreditor.cpp:333 src/kgreditor.cpp:341
 #: src/kgreditor.cpp:356
@@ -9424,7 +9394,7 @@ msgstr "Mover nivel"
 #, kde-format
 msgid "You must first load a level to be moved. Use the \"%1\" or \"%2\" menu."
 msgstr ""
-"Primero debe cargar el nivel que desea mover. Use los menús «%1» o «%2»."
+"Primero debes cargar el nivel que quieres mover. Usa los menús «%1» o «%2»."
 
 #: src/kgreditor.cpp:320
 #, kde-format
@@ -9444,21 +9414,21 @@ msgid ""
 "You cannot move a level until you have created a game and at least two "
 "levels. Try menu item \"Create Game\"."
 msgstr ""
-"No puede mover un nivel hasta que haya creado un juego y, al menos, dos "
-"niveles. Use el elemento de menú «Crear juego»."
+"No puedes mover un nivel hasta que hayas creado un juego y, al menos, dos "
+"niveles. Usa la opción del menú «Crear juego»."
 
 #: src/kgreditor.cpp:342
 #, kde-format
 msgid "Sorry, you cannot move a system level."
-msgstr "Disculpe: no es posible mover un nivel del sistema."
+msgstr "Lo sentimos: no se puede mover un nivel del sistema."
 
 #: src/kgreditor.cpp:357
 #, kde-format
 msgid "You must change the level or the game or both."
-msgstr "Debe cambiar de nivel, de juego, o ambos."
+msgstr "Debes cambiar de nivel, de juego, o de ambas cosas."
 
 #: src/kgreditor.cpp:419 src/kgreditor.cpp:442 src/kgreditor.cpp:461
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Level"
 msgstr "Borrar nivel"
