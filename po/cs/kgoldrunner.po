@@ -2,22 +2,22 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Vít Pelčák <vit@pelcak.org>, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012, 2013.
-# Vit Pelcak <vit@pelcak.org>, 2021, 2023.
+# SPDX-FileCopyrightText: 2021, 2023, 2024 Vit Pelcak <vit@pelcak.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-06 00:36+0000\n"
-"PO-Revision-Date: 2023-06-23 09:10+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2024-06-18 14:56+0200\n"
+"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Lokalize 24.05.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -5713,19 +5713,19 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "&New Game…"
-msgstr ""
+msgstr "&Nová hra…"
 
 #: src/kgoldrunner.cpp:187
 #, kde-format
 msgctxt "@action"
 msgid "Pla&y Next Level"
-msgstr ""
+msgstr "H&rát následující úroveň"
 
 #: src/kgoldrunner.cpp:188
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Play the next level"
-msgstr ""
+msgstr "Hrát následující úroveň"
 
 #: src/kgoldrunner.cpp:189
 #, kde-format
@@ -5737,25 +5737,25 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "&Load Saved Game…"
-msgstr ""
+msgstr "Načíst u&loženou hru…"
 
 #: src/kgoldrunner.cpp:205
 #, kde-format
 msgctxt "@action"
 msgid "&Save Game…"
-msgstr ""
+msgstr "&Uložit hru…"
 
 #: src/kgoldrunner.cpp:211
 #, kde-format
 msgctxt "@action"
 msgid "Save a Solution…"
-msgstr ""
+msgstr "Uložit řešení…"
 
 #: src/kgoldrunner.cpp:212
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save a solution"
-msgstr ""
+msgstr "Uložit řešení"
 
 #: src/kgoldrunner.cpp:213
 #, kde-format
@@ -5769,13 +5769,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "&Show a Solution"
-msgstr ""
+msgstr "&Zobrazit řešení"
 
 #: src/kgoldrunner.cpp:247
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show how to win this level"
-msgstr ""
+msgstr "Ukázat jak vyhrát tuto úroveň"
 
 #: src/kgoldrunner.cpp:248
 #, kde-format
@@ -5805,13 +5805,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Replay &Last Level"
-msgstr ""
+msgstr "Hrát pos&lední úroveň"
 
 #: src/kgoldrunner.cpp:260
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Replay last level"
-msgstr ""
+msgstr "Hrát poslední úroveň"
 
 #: src/kgoldrunner.cpp:261
 #, kde-format
@@ -5825,13 +5825,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "&Replay Any Level"
-msgstr ""
+msgstr "H&rát jakoukoliv úroveň"
 
 #: src/kgoldrunner.cpp:268
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Replay any level"
-msgstr ""
+msgstr "H&rát jakoukoliv úroveň"
 
 #: src/kgoldrunner.cpp:269
 #, kde-format
@@ -5843,13 +5843,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "&Kill Hero"
-msgstr ""
+msgstr "Za&bít hrdinu"
 
 #: src/kgoldrunner.cpp:275
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Kill the hero"
-msgstr ""
+msgstr "Zabít hrdinu"
 
 #: src/kgoldrunner.cpp:276
 #, kde-format
@@ -5863,13 +5863,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "&Create Level"
-msgstr ""
+msgstr "&Vytvořit úroveň"
 
 #: src/kgoldrunner.cpp:294
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create level"
-msgstr ""
+msgstr "Vytvořit úroveň"
 
 #: src/kgoldrunner.cpp:295
 #, kde-format
@@ -5887,13 +5887,13 @@ msgstr "Vytvořit"
 #, kde-format
 msgctxt "@action"
 msgid "&Edit Level…"
-msgstr ""
+msgstr "&Upravit úroveň…"
 
 #: src/kgoldrunner.cpp:301
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit level"
-msgstr ""
+msgstr "Upravit úroveň"
 
 #: src/kgoldrunner.cpp:302
 #, kde-format
@@ -5911,13 +5911,13 @@ msgstr "Upravit"
 #, kde-format
 msgctxt "@action"
 msgid "&Save Edits…"
-msgstr ""
+msgstr "&Uložit úpravy…"
 
 #: src/kgoldrunner.cpp:313
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save edits"
-msgstr ""
+msgstr "Uložit úpravy"
 
 #: src/kgoldrunner.cpp:314
 #, kde-format
@@ -5935,13 +5935,13 @@ msgstr "Uložit"
 #, kde-format
 msgctxt "@action"
 msgid "&Move Level…"
-msgstr ""
+msgstr "&Přesunout úroveň…"
 
 #: src/kgoldrunner.cpp:321
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Move level"
-msgstr ""
+msgstr "Přesunout úroveň"
 
 #: src/kgoldrunner.cpp:322
 #, kde-format
@@ -5953,31 +5953,31 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "&Delete Level…"
-msgstr ""
+msgstr "&Smazat úroveň…"
 
 #: src/kgoldrunner.cpp:327
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete level"
-msgstr ""
+msgstr "Smazat úroveň"
 
 #: src/kgoldrunner.cpp:328
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Deletes a level."
-msgstr ""
+msgstr "Smaže úroveň."
 
 #: src/kgoldrunner.cpp:335
 #, kde-format
 msgctxt "@action"
 msgid "Create &Game…"
-msgstr ""
+msgstr "Vytvořit hru…"
 
 #: src/kgoldrunner.cpp:336
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create game"
-msgstr ""
+msgstr "Vytvořit hru"
 
 #: src/kgoldrunner.cpp:337
 #, kde-format
@@ -5989,13 +5989,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Edit Game &Info…"
-msgstr ""
+msgstr "Upravit &informace o hře…"
 
 #: src/kgoldrunner.cpp:341
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit game info"
-msgstr ""
+msgstr "Upravit informace o hře"
 
 #: src/kgoldrunner.cpp:342
 #, kde-format
@@ -6007,13 +6007,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Change &Theme…"
-msgstr ""
+msgstr "Změnit mo&tiv…"
 
 #: src/kgoldrunner.cpp:352
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Change the graphics theme"
-msgstr ""
+msgstr "Změnit grafický mo&tiv"
 
 #: src/kgoldrunner.cpp:353
 #, kde-format
@@ -6025,13 +6025,13 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "&Play Sounds"
-msgstr ""
+msgstr "Hrát z&vuky"
 
 #: src/kgoldrunner.cpp:368
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Play sound effects"
-msgstr ""
+msgstr "Přehrát zvukové efekty"
 
 #: src/kgoldrunner.cpp:369
 #, kde-format
@@ -6079,13 +6079,13 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "&Mouse Controls Hero"
-msgstr ""
+msgstr "&Myš ovládá hrdinu"
 
 #: src/kgoldrunner.cpp:391
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mouse controls hero"
-msgstr ""
+msgstr "Myš ovládá hrdinu"
 
 #: src/kgoldrunner.cpp:392
 #, kde-format
@@ -6097,13 +6097,13 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "&Keyboard Controls Hero"
-msgstr ""
+msgstr "&Klávesnice ovládá hrdinu"
 
 #: src/kgoldrunner.cpp:397
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Keyboard controls hero"
-msgstr ""
+msgstr "Klávesnice ovládá hrdinu"
 
 #: src/kgoldrunner.cpp:398
 #, kde-format
@@ -6115,7 +6115,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Hybrid Control (&Laptop)"
-msgstr ""
+msgstr "Smíšené ovládání (&Laptop)"
 
 #: src/kgoldrunner.cpp:403
 #, kde-format
@@ -6174,31 +6174,31 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Normal Speed"
-msgstr ""
+msgstr "Normální rychlost"
 
 #: src/kgoldrunner.cpp:448
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Set normal speed"
-msgstr ""
+msgstr "Nastavit normální rychlost"
 
 #: src/kgoldrunner.cpp:449
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Set normal game speed."
-msgstr ""
+msgstr "Nastavit normální rychlost hry."
 
 #: src/kgoldrunner.cpp:453
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Beginner Speed"
-msgstr ""
+msgstr "Rychlost začátečníků"
 
 #: src/kgoldrunner.cpp:454
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Set beginners' speed"
-msgstr ""
+msgstr "Nastavit rychlost začátečníků"
 
 #: src/kgoldrunner.cpp:455
 #, kde-format
@@ -6210,13 +6210,13 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Champion Speed"
-msgstr ""
+msgstr "Rychlost šampionů"
 
 #: src/kgoldrunner.cpp:461
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Set champions' speed"
-msgstr ""
+msgstr "Nastavit rychlost šampionů"
 
 #: src/kgoldrunner.cpp:462
 #, kde-format
@@ -6228,13 +6228,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Increase Speed"
-msgstr ""
+msgstr "Zvýšit rychlost"
 
 #: src/kgoldrunner.cpp:467
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Increase speed"
-msgstr ""
+msgstr "Zvýšit rychlost"
 
 #: src/kgoldrunner.cpp:468
 #, kde-format
@@ -6246,13 +6246,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Decrease Speed"
-msgstr ""
+msgstr "Snížit rychlost"
 
 #: src/kgoldrunner.cpp:474
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Decrease speed"
-msgstr ""
+msgstr "Snížit rychlost"
 
 #: src/kgoldrunner.cpp:475
 #, kde-format
@@ -6294,13 +6294,13 @@ msgstr "Posunout dolů"
 #, kde-format
 msgctxt "@action"
 msgid "Dig Right"
-msgstr ""
+msgstr "Kopat vpravo"
 
 #: src/kgoldrunner.cpp:511
 #, kde-format
 msgctxt "@action"
 msgid "Dig Left"
-msgstr ""
+msgstr "Kopat vlevo"
 
 #: src/kgoldrunner.cpp:535
 #, kde-format
@@ -6312,31 +6312,31 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Test Bug Fix"
-msgstr ""
+msgstr "Testovat opravu"
 
 #: src/kgoldrunner.cpp:537
 #, kde-format
 msgctxt "@action"
 msgid "Show Positions"
-msgstr ""
+msgstr "Zobrazit pozice"
 
 #: src/kgoldrunner.cpp:538
 #, kde-format
 msgctxt "@action"
 msgid "Start Logging"
-msgstr ""
+msgstr "Začít zápis záznamu"
 
 #: src/kgoldrunner.cpp:539
 #, kde-format
 msgctxt "@action"
 msgid "Show Hero"
-msgstr ""
+msgstr "Zobrazit hrdinu"
 
 #: src/kgoldrunner.cpp:540
 #, kde-format
 msgctxt "@action"
 msgid "Show Object"
-msgstr ""
+msgstr "Zobrazit objekt"
 
 #: src/kgoldrunner.cpp:542 src/kgoldrunner.cpp:543 src/kgoldrunner.cpp:544
 #: src/kgoldrunner.cpp:545 src/kgoldrunner.cpp:546 src/kgoldrunner.cpp:547
@@ -6344,7 +6344,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Show Enemy"
-msgstr ""
+msgstr "Zobrazit nepřítele"
 
 #: src/kgoldrunner.cpp:736
 #, kde-format
@@ -6385,7 +6385,7 @@ msgstr "žádná rada"
 #, kde-format
 msgctxt "@window:title"
 msgid "Get Folders"
-msgstr ""
+msgstr "Získat složky"
 
 #: src/kgoldrunner.cpp:879
 #, kde-format
@@ -6396,13 +6396,13 @@ msgstr "Nelze nalézt systémovou podsložku her '/system/' v oblastech '%1'."
 #, kde-format
 msgctxt "@action"
 msgid "Edit Name/Hint"
-msgstr ""
+msgstr "Upravit název/radu"
 
 #: src/kgoldrunner.cpp:913
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit level name or hint"
-msgstr ""
+msgstr "Upravit název úrovně nebo radu"
 
 #: src/kgoldrunner.cpp:914
 #, kde-format
@@ -6414,13 +6414,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Name/Hint"
-msgstr ""
+msgstr "Název/rada"
 
 #: src/kgoldrunner.cpp:920
 #, kde-format
 msgctxt "@option:check"
 msgid "Erase"
-msgstr ""
+msgstr "Smazat"
 
 #: src/kgoldrunner.cpp:920
 #, kde-format
@@ -6444,13 +6444,13 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Hero"
-msgstr ""
+msgstr "Hrdina"
 
 #: src/kgoldrunner.cpp:926
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Move hero"
-msgstr ""
+msgstr "Posunout hrdinu"
 
 #: src/kgoldrunner.cpp:927
 #, kde-format
@@ -6462,7 +6462,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Enemy"
-msgstr ""
+msgstr "Nepřítel"
 
 #: src/kgoldrunner.cpp:931
 #, kde-format
@@ -6480,13 +6480,13 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Brick"
-msgstr ""
+msgstr "Cihla"
 
 #: src/kgoldrunner.cpp:937
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint bricks (can dig)"
-msgstr ""
+msgstr "Namalovat cihly (může se kopat)"
 
 #: src/kgoldrunner.cpp:938
 #, kde-format
@@ -6498,13 +6498,13 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Concrete"
-msgstr ""
+msgstr "Beton"
 
 #: src/kgoldrunner.cpp:942
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint concrete (cannot dig)"
-msgstr ""
+msgstr "Namalovat beton (nemůže se kopat)"
 
 #: src/kgoldrunner.cpp:943
 #, kde-format
@@ -6516,37 +6516,37 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Trap"
-msgstr ""
+msgstr "Past"
 
 #: src/kgoldrunner.cpp:946
 #, kde-format
 msgctxt "@option:check"
 msgid "Trap/False Brick"
-msgstr ""
+msgstr "Past/Falešná cihla"
 
 #: src/kgoldrunner.cpp:947
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint traps or false bricks (can fall through)"
-msgstr ""
+msgstr "Namalovat pasti a falešné cihly (může se propadnout)"
 
 #: src/kgoldrunner.cpp:949
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints traps or false bricks (can fall through)."
-msgstr ""
+msgstr "Namaluje pasti a falešné cihly (může se propadnout)."
 
 #: src/kgoldrunner.cpp:953
 #, kde-format
 msgctxt "@option:check"
 msgid "Ladder"
-msgstr ""
+msgstr "Žebřík"
 
 #: src/kgoldrunner.cpp:954
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint ladders"
-msgstr ""
+msgstr "Malovat žebříky"
 
 #: src/kgoldrunner.cpp:955
 #, kde-format
@@ -6564,13 +6564,13 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Hidden Ladder"
-msgstr ""
+msgstr "Skrytý žebřík"
 
 #: src/kgoldrunner.cpp:959
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint hidden ladders"
-msgstr ""
+msgstr "Namalovat skryté žebříky"
 
 #: src/kgoldrunner.cpp:960
 #, kde-format
@@ -6582,7 +6582,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Bar"
-msgstr ""
+msgstr "Sloupec"
 
 #: src/kgoldrunner.cpp:964
 #, kde-format
@@ -6606,7 +6606,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Gold"
-msgstr ""
+msgstr "Zlato"
 
 #: src/kgoldrunner.cpp:970
 #, kde-format
@@ -6648,13 +6648,13 @@ msgstr "Upravit název a radu"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name of level:"
-msgstr ""
+msgstr "Název úrovně:"
 
 #: src/kgrdialog.cpp:63
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Hint for level:"
-msgstr ""
+msgstr "Rada pro úroveň:"
 
 #: src/kgrdialog.cpp:103 src/kgrdialog.cpp:172 src/kgrselector.cpp:84
 #, kde-format
@@ -6666,25 +6666,25 @@ msgstr "Upravit informace o hře"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name of game:"
-msgstr ""
+msgstr "Název hry:"
 
 #: src/kgrdialog.cpp:131
 #, kde-format
 msgctxt "@label:textbox"
 msgid "File name prefix:"
-msgstr ""
+msgstr "Předpona souboru:"
 
 #: src/kgrdialog.cpp:139
 #, kde-format
 msgctxt "@option:radio"
 msgid "Traditional rules"
-msgstr ""
+msgstr "Tradiční pravidla"
 
 #: src/kgrdialog.cpp:140
 #, kde-format
 msgctxt "@option:radio"
 msgid "KGoldrunner rules"
-msgstr ""
+msgstr "Pravidla KGoldrunner"
 
 #: src/kgrdialog.cpp:149 src/kgrdialog.cpp:184
 #, kde-format
@@ -6698,7 +6698,7 @@ msgstr[2] "%1 úrovní"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "About this game:"
-msgstr ""
+msgstr "O této hře:"
 
 #: src/kgrdialog.cpp:169
 #, kde-format
@@ -6721,7 +6721,7 @@ msgstr "0 úrovní"
 #, kde-format
 msgctxt "@action:button"
 msgid "Save New"
-msgstr ""
+msgstr "Uložit nový"
 
 #: src/kgrdialog.cpp:247
 #, kde-format
@@ -6738,7 +6738,7 @@ msgstr "Hra                       Úroveň/Životy/Skóre   Den    Datum     Ča
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Level"
-msgstr ""
+msgstr "Vytvořit úroveň"
 
 #: src/kgreditor.cpp:67
 #, kde-format
@@ -6753,7 +6753,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Level"
-msgstr ""
+msgstr "Upravit úroveň"
 
 #: src/kgreditor.cpp:116
 #, kde-format
@@ -6779,7 +6779,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Level"
-msgstr ""
+msgstr "Uložit úroveň"
 
 #: src/kgreditor.cpp:243
 #, kde-format
@@ -6790,7 +6790,7 @@ msgstr "Přejete si vložit úroveň a posunout existující úroveň o jednu na
 #, kde-format
 msgctxt "@action:button"
 msgid "&Insert Level"
-msgstr ""
+msgstr "Vlož&it úroveň"
 
 #: src/kgreditor.cpp:246 src/kgreditor.cpp:446
 #, kde-format
@@ -6809,7 +6809,7 @@ msgstr "Nelze otevřít výstupní soubor '%1'."
 #, kde-format
 msgctxt "@title:window"
 msgid "Move Level"
-msgstr ""
+msgstr "Přesunout úroveň"
 
 #: src/kgreditor.cpp:318
 #, kde-format
@@ -6822,7 +6822,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:menu"
 msgid "Game"
-msgstr ""
+msgstr "Hra"
 
 #: src/kgreditor.cpp:320
 #, kde-format
@@ -6853,7 +6853,7 @@ msgstr "Musíte změnit úroveň, hru, nebo oboje."
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Level"
-msgstr ""
+msgstr "Smazat úroveň"
 
 #: src/kgreditor.cpp:420
 #, kde-format
@@ -6873,7 +6873,7 @@ msgstr "Přejete si smazat úroveň a přesunout vyšší úrovně o jednu níž
 #, kde-format
 msgctxt "@action:button"
 msgid "&Delete Level"
-msgstr ""
+msgstr "&Smazat úroveň"
 
 #: src/kgreditor.cpp:462
 #, kde-format
@@ -6886,12 +6886,12 @@ msgstr "Nelze nalézt soubor '%1' ke smazání."
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Game Info"
-msgstr ""
+msgstr "Uložit informace o hře"
 
 #: src/kgreditor.cpp:511
 #, kde-format
 msgid "You must enter a name for the game."
-msgstr "Musíte zadat jméno hry."
+msgstr "Musíte zadat název hry."
 
 #: src/kgreditor.cpp:521
 #, kde-format
@@ -6917,7 +6917,7 @@ msgstr "Předpona souboru '%1' se již používá."
 #, kde-format
 msgctxt "@title:window"
 msgid "Editor"
-msgstr ""
+msgstr "Editor"
 
 #: src/kgreditor.cpp:642
 #, kde-format
@@ -6934,13 +6934,13 @@ msgstr "&Uložit"
 #, kde-format
 msgctxt "@action:button"
 msgid "&Do Not Save"
-msgstr ""
+msgstr "Neuklá&dat"
 
 #: src/kgreditor.cpp:646
 #, kde-format
 msgctxt "@action:button"
 msgid "&Go on Editing"
-msgstr ""
+msgstr "&Pokračovat v úpravách"
 
 #: src/kgreditor.cpp:771
 #, kde-format
@@ -6973,7 +6973,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Play Next Level"
-msgstr ""
+msgstr "Hrát následující úroveň"
 
 #: src/kgrgame.cpp:191
 #, kde-format
@@ -6989,7 +6989,7 @@ msgstr "Neodpovídající činnost: neupravujete úroveň."
 #, kde-format
 msgctxt "@title:window"
 msgid "No Sound"
-msgstr ""
+msgstr "Žádný zvuk"
 
 #: src/kgrgame.cpp:421
 #, kde-format
@@ -7004,7 +7004,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Game Paused"
-msgstr ""
+msgstr "Hra pozastavena"
 
 #: src/kgrgame.cpp:626
 #, kde-format
@@ -7017,7 +7017,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Replay Last Level"
-msgstr ""
+msgstr "Hrát poslední úroveň"
 
 #: src/kgrgame.cpp:671
 #, kde-format
@@ -7042,7 +7042,7 @@ msgstr "Rychlý start"
 #, kde-format
 msgctxt "@action:button start playing a game"
 msgid "&PLAY"
-msgstr ""
+msgstr "H&RÁT"
 
 #: src/kgrgame.cpp:713
 #, kde-format
@@ -7062,19 +7062,19 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "&Quit"
-msgstr ""
+msgstr "&Ukončit"
 
 #: src/kgrgame.cpp:720
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close KGoldrunner"
-msgstr ""
+msgstr "Zavřít KGoldrunner"
 
 #: src/kgrgame.cpp:723
 #, kde-format
 msgctxt "@action:button"
 msgid "&New Game…"
-msgstr ""
+msgstr "&Nová hra…"
 
 #: src/kgrgame.cpp:724
 #, kde-format
@@ -7121,7 +7121,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Show a Solution"
-msgstr ""
+msgstr "Zobrazit řešení"
 
 #: src/kgrgame.cpp:837
 #, kde-format
@@ -7134,7 +7134,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Replay Any Level"
-msgstr ""
+msgstr "Hrát jakoukoliv úroveň..."
 
 #: src/kgrgame.cpp:849 src/kgrgame.cpp:2057
 #, kde-format
@@ -7153,13 +7153,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Game Over"
-msgstr ""
+msgstr "Konec hry"
 
 #: src/kgrgame.cpp:1066
 #, kde-format
 msgctxt "@action:button"
 msgid "&Try Again"
-msgstr ""
+msgstr "Zkusi&t znovu"
 
 #: src/kgrgame.cpp:1067
 #, kde-format
@@ -7180,19 +7180,19 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Hint"
-msgstr ""
+msgstr "Rada"
 
 #: src/kgrgame.cpp:1304
 #, kde-format
 msgctxt "@action:button"
 msgid "&Ok"
-msgstr ""
+msgstr "&OK"
 
 #: src/kgrgame.cpp:1305
 #, kde-format
 msgctxt "@action:button"
 msgid "&Show a Solution"
-msgstr ""
+msgstr "&Zobrazit řešení"
 
 #: src/kgrgame.cpp:1318
 #, kde-format
@@ -7216,19 +7216,19 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Switch to Keyboard Mode"
-msgstr ""
+msgstr "Přepnout do režimu klávesnice"
 
 #: src/kgrgame.cpp:1422
 #, kde-format
 msgctxt "@action:button"
 msgid "Switch to &Keyboard Mode"
-msgstr ""
+msgstr "Přepnout do režimu &klávesnice"
 
 #: src/kgrgame.cpp:1423
 #, kde-format
 msgctxt "@action:button"
 msgid "Stay in &Mouse Mode"
-msgstr ""
+msgstr "Zůstat v režimu &myši"
 
 #: src/kgrgame.cpp:1424
 #, kde-format
@@ -7296,7 +7296,7 @@ msgstr "Neznámé"
 #, kde-format
 msgctxt "@title:window"
 msgid "Check for High Score"
-msgstr ""
+msgstr "Zjistit nejvyšší skóre"
 
 #: src/kgrgame.cpp:1710
 #, kde-format
@@ -7324,7 +7324,7 @@ msgstr "Chyba: Nepovedlo se uložit vysoké skóre."
 #, kde-format
 msgctxt "@title:window"
 msgid "Show High Scores"
-msgstr ""
+msgstr "Zobrazit nejvyšší skóre"
 
 #: src/kgrgame.cpp:1825
 #, kde-format
@@ -7349,25 +7349,26 @@ msgstr ""
 #, kde-format
 msgctxt "@title:column 1, 2, 3 etc."
 msgid "Rank"
-msgstr ""
+msgstr "Pořadí"
 
+# Tohle vypadá na název vlastnosti. Jméno bycvh nechal pro lidi a zvířata.
 #: src/kgrgame.cpp:1883
 #, kde-format
 msgctxt "@title:column person"
 msgid "Name"
-msgstr ""
+msgstr "Jméno"
 
 #: src/kgrgame.cpp:1884
 #, kde-format
 msgctxt "@title:column game level reached"
 msgid "Level"
-msgstr ""
+msgstr "Úroveň"
 
 #: src/kgrgame.cpp:1885
 #, kde-format
 msgctxt "@title:column"
 msgid "Score"
-msgstr ""
+msgstr "Skóre"
 
 #: src/kgrgame.cpp:1886
 #, kde-format
@@ -7385,7 +7386,7 @@ msgstr "Nejvyšší skóre"
 #, kde-format
 msgctxt "@title:window"
 msgid "Load Game Info"
-msgstr ""
+msgstr "Načíst informace o hře"
 
 #: src/kgrgame.cpp:2017
 #, kde-format
@@ -7401,7 +7402,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Save a Solution"
-msgstr ""
+msgstr "Uložit řešení"
 
 #: src/kgrgame.cpp:2052
 #, kde-format
@@ -7412,7 +7413,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Read Level Data"
-msgstr ""
+msgstr "Načíst data úrovně"
 
 #: src/kgrgameio.cpp:164
 #, kde-format
@@ -7444,7 +7445,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Theme Selector"
-msgstr ""
+msgstr "Výběr motivů"
 
 #: src/kgrscene.cpp:277
 #, kde-format
@@ -7461,7 +7462,7 @@ msgstr "Skóre: %1"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Level"
-msgstr ""
+msgstr "Vybrat úroveň"
 
 #: src/kgrselector.cpp:73
 #, kde-format
@@ -7499,25 +7500,25 @@ msgstr "<html><b>Prosím, vyberte hru:</b></html>"
 #, kde-format
 msgctxt "@title:column"
 msgid "Name of Game"
-msgstr ""
+msgstr "Název hry"
 
 #: src/kgrselector.cpp:144
 #, kde-format
 msgctxt "@title:column"
 msgid "Rules"
-msgstr ""
+msgstr "Pravidla"
 
 #: src/kgrselector.cpp:145
 #, kde-format
 msgctxt "@title:column"
 msgid "Levels"
-msgstr ""
+msgstr "Úrovně"
 
 #: src/kgrselector.cpp:146
 #, kde-format
 msgctxt "@title:column"
 msgid "Skill"
-msgstr ""
+msgstr "Dovednost"
 
 #: src/kgrselector.cpp:179
 #, kde-format
@@ -7539,73 +7540,73 @@ msgstr "Prosím, vyberte úroveň:"
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Level number:"
-msgstr ""
+msgstr "Číslo úrovně:"
 
 #: src/kgrselector.cpp:210
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit Level Name o&r Hint"
-msgstr ""
+msgstr "Upravit název úrovně nebo &radu"
 
 #: src/kgrselector.cpp:245
 #, kde-format
 msgctxt "@action:button"
 msgid "Start Game"
-msgstr ""
+msgstr "Spustit hru"
 
 #: src/kgrselector.cpp:254
 #, kde-format
 msgctxt "@action:button"
 msgid "Play Level"
-msgstr ""
+msgstr "Hrát úroveň"
 
 #: src/kgrselector.cpp:257
 #, kde-format
 msgctxt "@action:button"
 msgid "Replay Level"
-msgstr ""
+msgstr "Znovu hrát úroveň"
 
 #: src/kgrselector.cpp:260
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Solution"
-msgstr ""
+msgstr "Zobrazit řešení"
 
 #: src/kgrselector.cpp:263
 #, kde-format
 msgctxt "@action:button"
 msgid "Save a Solution"
-msgstr ""
+msgstr "Uložit řešení"
 
 #: src/kgrselector.cpp:266
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit Level"
-msgstr ""
+msgstr "Upravit úroveň"
 
 #: src/kgrselector.cpp:272
 #, kde-format
 msgctxt "@action:button"
 msgid "Save Change"
-msgstr ""
+msgstr "Uložit změny"
 
 #: src/kgrselector.cpp:275
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete Level"
-msgstr ""
+msgstr "Smazat úroveň"
 
 #: src/kgrselector.cpp:278
 #, kde-format
 msgctxt "@action:button"
 msgid "Move To…"
-msgstr ""
+msgstr "Přesunout na…"
 
 #: src/kgrselector.cpp:281
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit Game Info"
-msgstr ""
+msgstr "Upravit informace o hře"
 
 #: src/kgrselector.cpp:357
 #, kde-format
@@ -7689,7 +7690,7 @@ msgstr ""
 "Pokud jste poprvé v KGoldrunner, vyberte výukovou hru která vám dává rady, "
 "jak postupujete.\n"
 "\n"
-"Jinak jen klikněte na jméno hry (v seznamu), potom po stisknutí hlavního "
+"Jinak jen klikněte na název hry (v seznamu), potom po stisknutí hlavního "
 "tlačítka vespod začnete hrát úroveň 001. Hra začíná, když pohnete myší nebo "
 "stisknete klávesu."
 
@@ -7717,7 +7718,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Můžete přidat jméno a radu do vaší nové úrovně, ale musíte výsledek uložit "
+"Můžete přidat název a radu do vaší nové úrovně, ale musíte výsledek uložit "
 "do vámi vytvořené hry. Standardně půjde nová úroveň na konec vaši hry, ale "
 "můžete vybrat číslo úrovně a uložit ji tak třeba uprostřed hry."
 
@@ -7733,7 +7734,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Můžete vytvořit nebo upravit jméno a radu před uložením. Pokud změníte hru "
+"Můžete vytvořit nebo upravit název a radu před uložením. Pokud změníte hru "
 "nebo úroveň, můžete ji zkopírovat nebo \"Uložit jako\". Musíte však vždy "
 "uložit do vámi vytvořené hry. Pokud uložíte úroveň uprostřed série, ostatní "
 "úrovně se automaticky přečíslují."
@@ -7801,7 +7802,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Help: Select Game & Level"
-msgstr ""
+msgstr "Nápověda: Vybrat hru a úroveň"
 
 #: src/main.cpp:31
 #, kde-format
