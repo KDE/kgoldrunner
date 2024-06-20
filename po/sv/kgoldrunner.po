@@ -8068,65 +8068,54 @@ msgstr ""
 
 #: src/kgoldrunner.cpp:184
 #, kde-format
-#| msgid "&New Game..."
 msgctxt "@action"
 msgid "&New Game…"
 msgstr "&Nytt spel…"
 
 #: src/kgoldrunner.cpp:187
 #, kde-format
-#| msgid "Pla&y Next Level"
 msgctxt "@action"
 msgid "Pla&y Next Level"
 msgstr "Spela &nästa nivå"
 
 #: src/kgoldrunner.cpp:188
 #, kde-format
-#| msgid "Play next level."
 msgctxt "@info:tooltip"
 msgid "Play the next level"
 msgstr "Spela nästa nivå"
 
 #: src/kgoldrunner.cpp:189
 #, kde-format
-#| msgid "Try the next level in the game you are playing."
 msgctxt "@info:whatsthis"
 msgid "Switches to the next level in the game you are playing."
 msgstr "Försök med nästa nivå i spelet du håller på att spela."
 
 #: src/kgoldrunner.cpp:196
 #, kde-format
-#| msgid "&Load Saved Game..."
 msgctxt "@action"
 msgid "&Load Saved Game…"
 msgstr "&Ladda sparat spel…"
 
 #: src/kgoldrunner.cpp:205
 #, kde-format
-#| msgid "Save Game"
 msgctxt "@action"
 msgid "&Save Game…"
 msgstr "&Spara spel…"
 
 #: src/kgoldrunner.cpp:211
 #, kde-format
-#| msgid "Save A Solution"
 msgctxt "@action"
 msgid "Save a Solution…"
 msgstr "Spara en lösning…"
 
 #: src/kgoldrunner.cpp:212
 #, kde-format
-#| msgid "Save A Solution"
 msgctxt "@info:tooltip"
 msgid "Save a solution"
 msgstr "Spara en lösning"
 
 #: src/kgoldrunner.cpp:213
 #, kde-format
-#| msgid ""
-#| "Save a solution for a level into a file called 'sol_&lt;prefix&gt;.txt' "
-#| "in your user's data directory..."
 msgctxt "@info:whatsthis"
 msgid ""
 "Saves a solution for a level into a file called 'sol_&lt;prefix&gt;.txt' in "
@@ -8137,22 +8126,18 @@ msgstr ""
 
 #: src/kgoldrunner.cpp:246
 #, kde-format
-#| msgid "&Show a Solution"
 msgctxt "@action"
 msgid "&Show a Solution"
 msgstr "&Visa en lösning"
 
 #: src/kgoldrunner.cpp:247
 #, kde-format
-#| msgid "Show how to win this level."
 msgctxt "@info:tooltip"
 msgid "Show how to win this level"
 msgstr "Visa hur man vinner den här nivån"
 
 #: src/kgoldrunner.cpp:248
 #, kde-format
-#| msgid ""
-#| "Play a recording of how to win this level, if there is one available."
 msgctxt "@info:whatsthis"
 msgid "Plays a recording of how to win this level, if there is one available."
 msgstr ""
@@ -8160,92 +8145,76 @@ msgstr ""
 
 #: src/kgoldrunner.cpp:252
 #, kde-format
-#| msgid "&Instant Replay"
 msgctxt "@action"
 msgid "&Instant Replay"
 msgstr "&Repris"
 
 #: src/kgoldrunner.cpp:253
 #, kde-format
-#| msgid "Instant replay."
 msgctxt "@info:tooltip"
 msgid "Instant replay"
 msgstr "Repris"
 
 #: src/kgoldrunner.cpp:254
 #, kde-format
-#| msgid "Show a recording of the level you are currently playing."
 msgctxt "@info:whatsthis"
 msgid "Shows a recording of the level you are currently playing."
 msgstr "Visa en inspelning av nivån du för närvarande spelar."
 
 #: src/kgoldrunner.cpp:259
 #, kde-format
-#| msgid "Replay &Last Level"
 msgctxt "@action"
 msgid "Replay &Last Level"
 msgstr "Repris av &senaste nivå"
 
 #: src/kgoldrunner.cpp:260
 #, kde-format
-#| msgid "Replay last level."
 msgctxt "@info:tooltip"
 msgid "Replay last level"
 msgstr "Repris av senaste nivå"
 
 #: src/kgoldrunner.cpp:261
 #, kde-format
-#| msgid ""
-#| "Show a recording of the last level you played and finished, regardless of "
-#| "whether you won or lost."
 msgctxt "@info:whatsthis"
 msgid ""
 "Shows a recording of the last level you played and finished, regardless of "
 "whether you won or lost."
 msgstr ""
-"Visar en inspelning av den senaste nivån du spelade och avslutade, oavsett om "
-"du vann eller förlorade."
+"Visar en inspelning av den senaste nivån du spelade och avslutade, oavsett "
+"om du vann eller förlorade."
 
 #: src/kgoldrunner.cpp:267
 #, kde-format
-#| msgid "&Replay Any Level"
 msgctxt "@action"
 msgid "&Replay Any Level"
 msgstr "&Repris av godtycklig nivå"
 
 #: src/kgoldrunner.cpp:268
 #, kde-format
-#| msgid "Replay any level."
 msgctxt "@info:tooltip"
 msgid "Replay any level"
 msgstr "Repris av godtycklig nivå"
 
 #: src/kgoldrunner.cpp:269
 #, kde-format
-#| msgid "Show a recording of any level you have played so far."
 msgctxt "@info:whatsthis"
 msgid "Shows a recording of any level you have played so far."
 msgstr "Visar en inspelning av en godtycklig nivå som du hittills har spelat."
 
 #: src/kgoldrunner.cpp:274
 #, kde-format
-#| msgid "&Kill Hero"
 msgctxt "@action"
 msgid "&Kill Hero"
 msgstr "&Döda hjälten"
 
 #: src/kgoldrunner.cpp:275
 #, kde-format
-#| msgid "&Kill Hero"
 msgctxt "@info:tooltip"
 msgid "Kill the hero"
 msgstr "Döda hjälten"
 
 #: src/kgoldrunner.cpp:276
 #, kde-format
-#| msgid ""
-#| "Kill the hero, in case he finds himself in a situation from which he "
-#| "cannot escape."
 msgctxt "@info:whatsthis"
 msgid ""
 "Kills the hero, in case he finds himself in a situation from which he cannot "
@@ -8255,126 +8224,108 @@ msgstr ""
 
 #: src/kgoldrunner.cpp:293
 #, kde-format
-#| msgid "&Create Level"
 msgctxt "@action"
 msgid "&Create Level"
 msgstr "S&kapa nivå"
 
 #: src/kgoldrunner.cpp:294
 #, kde-format
-#| msgid "Create level."
 msgctxt "@info:tooltip"
 msgid "Create level"
 msgstr "Skapa nivå"
 
 #: src/kgoldrunner.cpp:295
 #, kde-format
-#| msgid "Create a completely new level."
 msgctxt "@info:whatsthis"
 msgid "Creates a completely new level."
 msgstr "Skapa en helt ny nivå."
 
 #: src/kgoldrunner.cpp:297
 #, kde-format
-#| msgid "Create"
 msgctxt "@action"
 msgid "Create"
 msgstr "Skapa"
 
 #: src/kgoldrunner.cpp:300
 #, kde-format
-#| msgid "Edit Level"
 msgctxt "@action"
 msgid "&Edit Level…"
 msgstr "&Redigera nivå…"
 
 #: src/kgoldrunner.cpp:301
 #, kde-format
-#| msgid "Edit Level"
 msgctxt "@info:tooltip"
 msgid "Edit level"
 msgstr "Redigera nivå"
 
 #: src/kgoldrunner.cpp:302
 #, kde-format
-#| msgid "Edit any level..."
 msgctxt "@info:whatsthis"
 msgid "Edits any level."
 msgstr "Redigera valfri nivå."
 
 #: src/kgoldrunner.cpp:304
 #, kde-format
-#| msgid "Edit"
 msgctxt "@action"
 msgid "Edit"
 msgstr "Redigera"
 
 #: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1461
 #, kde-format
-#| msgid "&Save Edits..."
 msgctxt "@action"
 msgid "&Save Edits…"
 msgstr "Spara r&edigeringar…"
 
 #: src/kgoldrunner.cpp:313
 #, kde-format
-#| msgid "Save edits..."
 msgctxt "@info:tooltip"
 msgid "Save edits"
 msgstr "Spara redigeringar"
 
 #: src/kgoldrunner.cpp:314
 #, kde-format
-#| msgid "Save your level after editing..."
 msgctxt "@info:whatsthis"
 msgid "Saves your level after editing."
 msgstr "Sparar nivån efter redigering."
 
 #: src/kgoldrunner.cpp:316
 #, kde-format
-#| msgid "Save"
 msgctxt "@action"
 msgid "Save"
 msgstr "Spara"
 
 #: src/kgoldrunner.cpp:320
 #, kde-format
-#| msgid "Move Level"
 msgctxt "@action"
 msgid "&Move Level…"
 msgstr "&Flytta nivå…"
 
 #: src/kgoldrunner.cpp:321
 #, kde-format
-#| msgid "Move Level"
 msgctxt "@info:tooltip"
 msgid "Move level"
 msgstr "Flytta nivå"
 
 #: src/kgoldrunner.cpp:322
 #, kde-format
-#| msgid "Change a level's number or move it to another game..."
 msgctxt "@info:whatsthis"
 msgid "Changes a level's number or move it to another game."
 msgstr "Ändrar nivåns nummer eller flytta den till ett annat spel."
 
 #: src/kgoldrunner.cpp:326
 #, kde-format
-#| msgid "&Delete Level"
 msgctxt "@action"
 msgid "&Delete Level…"
 msgstr "&Ta bort nivå…"
 
 #: src/kgoldrunner.cpp:327
 #, kde-format
-#| msgid "Delete Level"
 msgctxt "@info:tooltip"
 msgid "Delete level"
 msgstr "Ta bort nivå"
 
 #: src/kgoldrunner.cpp:328
 #, kde-format
-#| msgid "Delete a level..."
 msgctxt "@info:whatsthis"
 msgid "Deletes a level."
 msgstr "Tar bort en nivå."
@@ -8446,7 +8397,6 @@ msgstr "Ändra figurernas och bakgrundsscenens visuella utseende..."
 
 #: src/kgoldrunner.cpp:367
 #, kde-format
-#| msgid "&Play Sounds"
 msgctxt "@option:check"
 msgid "&Play Sounds"
 msgstr "&Spela ljud"
@@ -8467,7 +8417,6 @@ msgstr "Spela ljudeffekter under spelets gång."
 
 #: src/kgoldrunner.cpp:373
 #, kde-format
-#| msgid "Play &Footstep Sounds"
 msgctxt "@option:check"
 msgid "Play &Footstep Sounds"
 msgstr "Spela ljud av &fotsteg"
@@ -8509,7 +8458,6 @@ msgstr "Kör en demonstration när spelet startar."
 
 #: src/kgoldrunner.cpp:390
 #, kde-format
-#| msgid "&Mouse Controls Hero"
 msgctxt "@option:check"
 msgid "&Mouse Controls Hero"
 msgstr "&Musen styr hjälten"
@@ -8523,14 +8471,12 @@ msgstr "Musen styr hjälten."
 
 #: src/kgoldrunner.cpp:392
 #, kde-format
-#| msgid "Use the mouse to control the hero's moves."
 msgctxt "@info:whatsthis"
 msgid "Use the mouse to control the hero's moves."
 msgstr "Använd musen för att styra hjältens förflyttning."
 
 #: src/kgoldrunner.cpp:396
 #, kde-format
-#| msgid "&Keyboard Controls Hero"
 msgctxt "@option:check"
 msgid "&Keyboard Controls Hero"
 msgstr "&Tangentbordet styr hjälten"
@@ -8544,14 +8490,12 @@ msgstr "Tangentbordet styr hjälten."
 
 #: src/kgoldrunner.cpp:398
 #, kde-format
-#| msgid "Use the keyboard to control the hero's moves."
 msgctxt "@info:whatsthis"
 msgid "Use the keyboard to control the hero's moves."
 msgstr "Använd tangentbordet för att styra hjältens förflyttning."
 
 #: src/kgoldrunner.cpp:402
 #, kde-format
-#| msgid "Hybrid Control (&Laptop)"
 msgctxt "@option:check"
 msgid "Hybrid Control (&Laptop)"
 msgstr "Hybridkontroll (&bärbar dator)"
@@ -8565,9 +8509,6 @@ msgstr "Pekaren styr hjälten: gräv med hjälp av tangentbordet."
 
 #: src/kgoldrunner.cpp:405
 #, kde-format
-#| msgid ""
-#| "Use the laptop's pointer device to control the hero's moves, and use the "
-#| "keyboard to dig left and right."
 msgctxt "@info:whatsthis"
 msgid ""
 "Use the laptop's pointer device to control the hero's moves, and use the "
@@ -8592,9 +8533,6 @@ msgstr "&Tryck på tangent för att flytta"
 
 #: src/kgoldrunner.cpp:422
 #, kde-format
-#| msgid ""
-#| "In keyboard mode, click a direction-key to start moving and keep on going "
-#| "until you click another key."
 msgctxt "@info:whatsthis"
 msgid ""
 "In keyboard mode, click a direction-key to start moving and keep on going "
@@ -8619,9 +8557,6 @@ msgstr "&Håll nere tangent för att flytta"
 
 #: src/kgoldrunner.cpp:430
 #, kde-format
-#| msgid ""
-#| "In keyboard mode, hold down a direction-key to move and release it to "
-#| "stop."
 msgctxt "@info:whatsthis"
 msgid ""
 "In keyboard mode, hold down a direction-key to move and release it to stop."
@@ -8631,7 +8566,6 @@ msgstr ""
 
 #: src/kgoldrunner.cpp:447
 #, kde-format
-#| msgid "Normal Speed"
 msgctxt "@item:inmenu"
 msgid "Normal Speed"
 msgstr "Normal hastighet"
@@ -8645,14 +8579,12 @@ msgstr "Ställ in normal hastighet."
 
 #: src/kgoldrunner.cpp:449
 #, kde-format
-#| msgid "Set normal game speed."
 msgctxt "@info:whatsthis"
 msgid "Set normal game speed."
 msgstr "Ställ in normal spelhastighet."
 
 #: src/kgoldrunner.cpp:453
 #, kde-format
-#| msgid "Beginner Speed"
 msgctxt "@item:inmenu"
 msgid "Beginner Speed"
 msgstr "Nybörjarhastighet"
@@ -8666,14 +8598,12 @@ msgstr "Ställ in nybörjarhastighet."
 
 #: src/kgoldrunner.cpp:455
 #, kde-format
-#| msgid "Set beginners' game speed (0.5 times normal)."
 msgctxt "@info:whatsthis"
 msgid "Set beginners' game speed (0.5 times normal)."
 msgstr "Ställ in nybörjarspelhastighet (0,5 gånger normal)."
 
 #: src/kgoldrunner.cpp:460
 #, kde-format
-#| msgid "Champion Speed"
 msgctxt "@item:inmenu"
 msgid "Champion Speed"
 msgstr "Mästarhastighet"
@@ -8687,14 +8617,12 @@ msgstr "Ställ in mästarhastighet."
 
 #: src/kgoldrunner.cpp:462
 #, kde-format
-#| msgid "Set champions' game speed (1.5 times normal)."
 msgctxt "@info:whatsthis"
 msgid "Set champions' game speed (1.5 times normal)."
 msgstr "Ställ in mästarspelhastighet (1,5 gånger normal)."
 
 #: src/kgoldrunner.cpp:466
 #, kde-format
-#| msgid "Increase Speed"
 msgctxt "@action"
 msgid "Increase Speed"
 msgstr "Öka hastighet"
@@ -8715,7 +8643,6 @@ msgstr "Öka spelhastigheten med 0,1 (maximum är 2,0 gånger normal)."
 
 #: src/kgoldrunner.cpp:473
 #, kde-format
-#| msgid "Decrease Speed"
 msgctxt "@action"
 msgid "Decrease Speed"
 msgstr "Minska hastighet"
@@ -8736,91 +8663,78 @@ msgstr "Minska spelhastigheten med 0,1 (minimum är 0,2 gånger normal)"
 
 #: src/kgoldrunner.cpp:505
 #, kde-format
-#| msgid "Stop"
 msgctxt "@action"
 msgid "Stop"
 msgstr "Stoppa"
 
 #: src/kgoldrunner.cpp:506
 #, kde-format
-#| msgid "Move Right"
 msgctxt "@action"
 msgid "Move Right"
 msgstr "Flytta höger"
 
 #: src/kgoldrunner.cpp:507
 #, kde-format
-#| msgid "Move Left"
 msgctxt "@action"
 msgid "Move Left"
 msgstr "Flytta vänster"
 
 #: src/kgoldrunner.cpp:508
 #, kde-format
-#| msgid "Move Up"
 msgctxt "@action"
 msgid "Move Up"
 msgstr "Flytta upp"
 
 #: src/kgoldrunner.cpp:509
 #, kde-format
-#| msgid "Move Down"
 msgctxt "@action"
 msgid "Move Down"
 msgstr "Flytta ner"
 
 #: src/kgoldrunner.cpp:510
 #, kde-format
-#| msgid "Dig Right"
 msgctxt "@action"
 msgid "Dig Right"
 msgstr "Gräv åt höger"
 
 #: src/kgoldrunner.cpp:511
 #, kde-format
-#| msgid "Dig Left"
 msgctxt "@action"
 msgid "Dig Left"
 msgstr "Gräv åt vänster"
 
 #: src/kgoldrunner.cpp:535
 #, kde-format
-#| msgid "Do a Step"
 msgctxt "@action"
 msgid "Do a Step"
 msgstr "Stega"
 
 #: src/kgoldrunner.cpp:536
 #, kde-format
-#| msgid "Test Bug Fix"
 msgctxt "@action"
 msgid "Test Bug Fix"
 msgstr "Testa felrättning"
 
 #: src/kgoldrunner.cpp:537
 #, kde-format
-#| msgid "Show Positions"
 msgctxt "@action"
 msgid "Show Positions"
 msgstr "Visa positioner"
 
 #: src/kgoldrunner.cpp:538
 #, kde-format
-#| msgid "Start Logging"
 msgctxt "@action"
 msgid "Start Logging"
 msgstr "Starta loggning"
 
 #: src/kgoldrunner.cpp:539
 #, kde-format
-#| msgid "Show Hero"
 msgctxt "@action"
 msgid "Show Hero"
 msgstr "Visa hjälte"
 
 #: src/kgoldrunner.cpp:540
 #, kde-format
-#| msgid "Show Object"
 msgctxt "@action"
 msgid "Show Object"
 msgstr "Visa objekt"
@@ -8829,7 +8743,6 @@ msgstr "Visa objekt"
 #: src/kgoldrunner.cpp:545 src/kgoldrunner.cpp:546 src/kgoldrunner.cpp:547
 #: src/kgoldrunner.cpp:548
 #, kde-format
-#| msgid "Show Enemy"
 msgctxt "@action"
 msgid "Show Enemy"
 msgstr "Visa fiende"
@@ -8871,7 +8784,6 @@ msgstr "Inget tips"
 
 #: src/kgoldrunner.cpp:878
 #, kde-format
-#| msgid "Get Folders"
 msgctxt "@window:title"
 msgid "Get Folders"
 msgstr "Hämta kataloger"
@@ -8883,14 +8795,12 @@ msgstr "Hittar inte underkatalogen för spelsystem '/system/' i området '%1'."
 
 #: src/kgoldrunner.cpp:912
 #, kde-format
-#| msgid "Edit Name/Hint"
 msgctxt "@action"
 msgid "Edit Name/Hint"
 msgstr "Redigera namn/tips"
 
 #: src/kgoldrunner.cpp:913
 #, kde-format
-#| msgid "Edit level name or hint"
 msgctxt "@info:tooltip"
 msgid "Edit level name or hint"
 msgstr "Redigera nivånamn eller tips"
@@ -8904,28 +8814,24 @@ msgstr "Redigera texten för en nivås namn eller tips"
 
 #: src/kgoldrunner.cpp:917
 #, kde-format
-#| msgid "Name/Hint"
 msgctxt "@action"
 msgid "Name/Hint"
 msgstr "Namn/tips"
 
 #: src/kgoldrunner.cpp:920
 #, kde-format
-#| msgid "Erase"
 msgctxt "@option:check"
 msgid "Erase"
 msgstr "Radera"
 
 #: src/kgoldrunner.cpp:920
 #, kde-format
-#| msgid "Space/Erase"
 msgctxt "@option:check"
 msgid "Space/Erase"
 msgstr "Mellanrum/radera"
 
 #: src/kgoldrunner.cpp:921
 #, kde-format
-#| msgid "Paint empty squares or erase"
 msgctxt "@info:tooltip"
 msgid "Paint empty squares or erase"
 msgstr "Rita tomma fyrkanter eller radera"
@@ -8939,14 +8845,12 @@ msgstr "Radera objekt eller rita tomma fyrkanter"
 
 #: src/kgoldrunner.cpp:925
 #, kde-format
-#| msgid "Hero"
 msgctxt "@option:check"
 msgid "Hero"
 msgstr "Hjälte"
 
 #: src/kgoldrunner.cpp:926
 #, kde-format
-#| msgid "Move hero"
 msgctxt "@info:tooltip"
 msgid "Move hero"
 msgstr "Flytta hjälten"
@@ -8960,14 +8864,12 @@ msgstr "Ändra hjältens startposition"
 
 #: src/kgoldrunner.cpp:930
 #, kde-format
-#| msgid "Enemy"
 msgctxt "@option:check"
 msgid "Enemy"
 msgstr "Fiende"
 
 #: src/kgoldrunner.cpp:931
 #, kde-format
-#| msgid "Paint enemies"
 msgctxt "@info:tooltip"
 msgid "Paint enemies"
 msgstr "Rita fiender"
@@ -8981,14 +8883,12 @@ msgstr "Rita fiender på deras startpositioner"
 
 #: src/kgoldrunner.cpp:936
 #, kde-format
-#| msgid "Brick"
 msgctxt "@option:check"
 msgid "Brick"
 msgstr "Tegelsten"
 
 #: src/kgoldrunner.cpp:937
 #, kde-format
-#| msgid "Paint bricks (can dig)"
 msgctxt "@info:tooltip"
 msgid "Paint bricks (can dig)"
 msgstr "Rita tegelstenar (kan gräva)"
@@ -9002,14 +8902,12 @@ msgstr "Rita tegelstenar (grävbara objekt)"
 
 #: src/kgoldrunner.cpp:941
 #, kde-format
-#| msgid "Concrete"
 msgctxt "@option:check"
 msgid "Concrete"
 msgstr "Betong"
 
 #: src/kgoldrunner.cpp:942
 #, kde-format
-#| msgid "Paint concrete (cannot dig)"
 msgctxt "@info:tooltip"
 msgid "Paint concrete (cannot dig)"
 msgstr "Rita betong (kan inte gräva)"
@@ -9023,21 +8921,18 @@ msgstr "Rita betongobjekt (inte grävbara)"
 
 #: src/kgoldrunner.cpp:946
 #, kde-format
-#| msgid "Trap"
 msgctxt "@option:check"
 msgid "Trap"
 msgstr "Fälla"
 
 #: src/kgoldrunner.cpp:946
 #, kde-format
-#| msgid "Trap/False Brick"
 msgctxt "@option:check"
 msgid "Trap/False Brick"
 msgstr "Fälla/lös tegelsten"
 
 #: src/kgoldrunner.cpp:947
 #, kde-format
-#| msgid "Paint traps or false bricks (can fall through)"
 msgctxt "@info:tooltip"
 msgid "Paint traps or false bricks (can fall through)"
 msgstr "Rita fällor eller lösa tegelstenar (kan falla ner)"
@@ -9051,14 +8946,12 @@ msgstr "Rita fällor eller lösa tegelstenar (kan falla ner)"
 
 #: src/kgoldrunner.cpp:953
 #, kde-format
-#| msgid "Ladder"
 msgctxt "@option:check"
 msgid "Ladder"
 msgstr "Stege"
 
 #: src/kgoldrunner.cpp:954
 #, kde-format
-#| msgid "Paint ladders"
 msgctxt "@info:tooltip"
 msgid "Paint ladders"
 msgstr "Rita stegar"
@@ -9072,21 +8965,18 @@ msgstr "Rita stegar (sätt att gå uppåt eller neråt)"
 
 #: src/kgoldrunner.cpp:958
 #, kde-format
-#| msgid "H Ladder"
 msgctxt "@option:check"
 msgid "H Ladder"
 msgstr "D stege"
 
 #: src/kgoldrunner.cpp:958
 #, kde-format
-#| msgid "Hidden Ladder"
 msgctxt "@option:check"
 msgid "Hidden Ladder"
 msgstr "Dold stege"
 
 #: src/kgoldrunner.cpp:959
 #, kde-format
-#| msgid "Paint hidden ladders"
 msgctxt "@info:tooltip"
 msgid "Paint hidden ladders"
 msgstr "Rita dolda stegar"
@@ -9100,21 +8990,18 @@ msgstr "Rita dolda stegar, som visas när allt guld är borta"
 
 #: src/kgoldrunner.cpp:964
 #, kde-format
-#| msgid "Bar"
 msgctxt "@option:check"
 msgid "Bar"
 msgstr "Stång"
 
 #: src/kgoldrunner.cpp:964
 #, kde-format
-#| msgid "Bar/Pole"
 msgctxt "@option:check"
 msgid "Bar/Pole"
 msgstr "Stång/påle"
 
 #: src/kgoldrunner.cpp:965
 #, kde-format
-#| msgid "Paint bars or poles"
 msgctxt "@info:tooltip"
 msgid "Paint bars or poles"
 msgstr "Rita stänger eller pålar"
@@ -9128,21 +9015,18 @@ msgstr "Rita stänger eller pålar (går att falla från)"
 
 #: src/kgoldrunner.cpp:970
 #, kde-format
-#| msgid "Gold"
 msgctxt "@option:check"
 msgid "Gold"
 msgstr "Guldtackor"
 
 #: src/kgoldrunner.cpp:970
 #, kde-format
-#| msgid "Gold/Treasure"
 msgctxt "@option:check"
 msgid "Gold/Treasure"
 msgstr "Guld/skatt"
 
 #: src/kgoldrunner.cpp:971
 #, kde-format
-#| msgid "Paint gold (or other treasure)"
 msgctxt "@info:tooltip"
 msgid "Paint gold (or other treasure)"
 msgstr "Rita guldtackor (eller andra skatter)"
@@ -9174,14 +9058,12 @@ msgstr "Redigera namn eller tips"
 
 #: src/kgrdialog.cpp:56
 #, kde-format
-#| msgid "Name of level:"
 msgctxt "@label:textbox"
 msgid "Name of level:"
 msgstr "Nivåns namn:"
 
 #: src/kgrdialog.cpp:63
 #, kde-format
-#| msgid "Hint for level:"
 msgctxt "@label:textbox"
 msgid "Hint for level:"
 msgstr "Nivåns tips:"
@@ -9194,28 +9076,24 @@ msgstr "Redigera spelinformation"
 
 #: src/kgrdialog.cpp:123
 #, kde-format
-#| msgid "Name of game:"
 msgctxt "@label:textbox"
 msgid "Name of game:"
 msgstr "Spelets namn:"
 
 #: src/kgrdialog.cpp:131
 #, kde-format
-#| msgid "File name prefix:"
 msgctxt "@label:textbox"
 msgid "File name prefix:"
 msgstr "Filnamnsprefix:"
 
 #: src/kgrdialog.cpp:139
 #, kde-format
-#| msgid "Traditional rules"
 msgctxt "@option:radio"
 msgid "Traditional rules"
 msgstr "Traditionella regler"
 
 #: src/kgrdialog.cpp:140
 #, kde-format
-#| msgid "KGoldrunner rules"
 msgctxt "@option:radio"
 msgid "KGoldrunner rules"
 msgstr "Kgoldrunner-regler"
@@ -9229,7 +9107,6 @@ msgstr[1] "%1 nivåer"
 
 #: src/kgrdialog.cpp:152
 #, kde-format
-#| msgid "About this game:"
 msgctxt "@label:textbox"
 msgid "About this game:"
 msgstr "Om detta spel:"
@@ -9242,7 +9119,6 @@ msgstr "Skapa spel"
 
 #: src/kgrdialog.cpp:186
 #, kde-format
-#| msgid "Save Changes"
 msgctxt "@action:button"
 msgid "Save Changes"
 msgstr "Spara ändringar"
@@ -9254,7 +9130,6 @@ msgstr "0 nivåer"
 
 #: src/kgrdialog.cpp:192 src/kgrselector.cpp:269
 #, kde-format
-#| msgid "Save New"
 msgctxt "@action:button"
 msgid "Save New"
 msgstr "Spara ny"
@@ -9272,7 +9147,6 @@ msgstr "Spel                       Nivå/Liv/Poäng   Dag    Datum     Tid  "
 
 #: src/kgreditor.cpp:66
 #, kde-format
-#| msgid "Create Level"
 msgctxt "@title:window"
 msgid "Create Level"
 msgstr "Skapa nivå"
@@ -9315,7 +9189,6 @@ msgstr ""
 
 #: src/kgreditor.cpp:242 src/kgreditor.cpp:261 src/kgrgame.cpp:260
 #, kde-format
-#| msgid "Save Level"
 msgctxt "@title:window"
 msgid "Save Level"
 msgstr "Spara nivå"
@@ -9327,14 +9200,12 @@ msgstr "Vill du infoga en nivå, och flytta befintliga nivåer uppåt ett steg?"
 
 #: src/kgreditor.cpp:245
 #, kde-format
-#| msgid "&Insert Level"
 msgctxt "@action:button"
 msgid "&Insert Level"
 msgstr "&Infoga nivå"
 
 #: src/kgreditor.cpp:246 src/kgreditor.cpp:446
 #, kde-format
-#| msgid "&Cancel"
 msgctxt "@action:button"
 msgid "&Cancel"
 msgstr "&Avbryt"
@@ -9348,7 +9219,6 @@ msgstr "Kan inte öppna filen '%1' för skrivning."
 #: src/kgreditor.cpp:317 src/kgreditor.cpp:333 src/kgreditor.cpp:341
 #: src/kgreditor.cpp:356
 #, kde-format
-#| msgid "Move Level"
 msgctxt "@title:window"
 msgid "Move Level"
 msgstr "Flytta nivå"
@@ -9361,7 +9231,6 @@ msgstr ""
 
 #: src/kgreditor.cpp:320
 #, kde-format
-#| msgid "Game"
 msgctxt "@title:menu"
 msgid "Game"
 msgstr "Spel"
@@ -9415,7 +9284,6 @@ msgstr "Vill du ta bort en nivå, och flytta befintliga nivåer neråt ett steg?
 
 #: src/kgreditor.cpp:445
 #, kde-format
-#| msgid "&Delete Level"
 msgctxt "@action:button"
 msgid "&Delete Level"
 msgstr "&Ta bort nivå"
@@ -9429,7 +9297,6 @@ msgstr "Hittar inte filen '%1' som ska tas bort."
 #: src/kgreditor.cpp:539 src/kgreditor.cpp:557 src/kgreditor.cpp:770
 #: src/kgreditor.cpp:781
 #, kde-format
-#| msgid "Save Game Info"
 msgctxt "@title:window"
 msgid "Save Game Info"
 msgstr "Spara spelinformation"
@@ -9461,7 +9328,6 @@ msgstr "Filnamnsprefixed '%1' används redan."
 
 #: src/kgreditor.cpp:641
 #, kde-format
-#| msgid "Editor"
 msgctxt "@title:window"
 msgid "Editor"
 msgstr "Editor"
@@ -9473,14 +9339,12 @@ msgstr "Du har inte sparat ditt arbete. Vill du spara det nu?"
 
 #: src/kgreditor.cpp:644
 #, kde-format
-#| msgid "&Save"
 msgctxt "@action:button"
 msgid "&Save"
 msgstr "&Spara"
 
 #: src/kgreditor.cpp:645
 #, kde-format
-#| msgid "&Do Not Save"
 msgctxt "@action:button"
 msgid "&Do Not Save"
 msgstr "Spara i&nte"
@@ -9521,7 +9385,6 @@ msgstr "Klicka var som helst för att börja spela"
 
 #: src/kgrgame.cpp:190
 #, kde-format
-#| msgid "Play Next Level"
 msgctxt "@title:window"
 msgid "Play Next Level"
 msgstr "Spela nästa nivå"
@@ -9538,7 +9401,6 @@ msgstr "Felaktig åtgärd: du håller inte på att redigera en nivå."
 
 #: src/kgrgame.cpp:420
 #, kde-format
-#| msgid "No Sound"
 msgctxt "@title:window"
 msgid "No Sound"
 msgstr "Inget ljud"
@@ -9558,7 +9420,6 @@ msgstr ""
 
 #: src/kgrgame.cpp:625 src/kgrgame.cpp:782
 #, kde-format
-#| msgid "Game Paused"
 msgctxt "@title:window"
 msgid "Game Paused"
 msgstr "Spelpaus"
@@ -9574,7 +9435,6 @@ msgstr ""
 
 #: src/kgrgame.cpp:670 src/kgrgame.cpp:676
 #, kde-format
-#| msgid "Replay Last Level"
 msgctxt "@title:window"
 msgid "Replay Last Level"
 msgstr "Repris av senaste nivå"
@@ -9602,24 +9462,18 @@ msgstr "Snabbstart"
 
 #: src/kgrgame.cpp:712
 #, kde-format
-#| msgctxt "Button text: start playing a game"
-#| msgid "&PLAY"
 msgctxt "@action:button start playing a game"
 msgid "&PLAY"
 msgstr "S&pela"
 
 #: src/kgrgame.cpp:713
 #, kde-format
-#| msgid "Start playing this level"
 msgctxt "@info:tooltip"
 msgid "Start playing this level"
 msgstr "Börja spela nivån"
 
 #: src/kgrgame.cpp:715
 #, kde-format
-#| msgid ""
-#| "Set up to start playing the game and level being shown, as soon as you "
-#| "click, move the mouse or press a key"
 msgctxt "@info:whatsthis"
 msgid ""
 "Set up to start playing the game and level being shown, as soon as you "
@@ -9630,14 +9484,12 @@ msgstr ""
 
 #: src/kgrgame.cpp:719
 #, kde-format
-#| msgid "&Quit"
 msgctxt "@action:button"
 msgid "&Quit"
 msgstr "&Avsluta"
 
 #: src/kgrgame.cpp:720
 #, kde-format
-#| msgid "Close KGoldrunner"
 msgctxt "@info:tooltip"
 msgid "Close KGoldrunner"
 msgstr "Avsluta Kgoldrunner"
@@ -9651,16 +9503,12 @@ msgstr "&Nytt spel..."
 
 #: src/kgrgame.cpp:724
 #, kde-format
-#| msgid "Start a different game or level"
 msgctxt "@info:tooltip"
 msgid "Start a different game or level"
 msgstr "Starta ett annat spel eller en annan nivå"
 
 #: src/kgrgame.cpp:726
 #, kde-format
-#| msgid ""
-#| "Use the Select Game dialog box to choose a different game or level and "
-#| "start playing it"
 msgctxt "@info:whatsthis"
 msgid ""
 "Use the Select Game dialog box to choose a different game or level and start "
@@ -9671,23 +9519,18 @@ msgstr ""
 
 #: src/kgrgame.cpp:730
 #, kde-format
-#| msgid "&Use Menu"
 msgctxt "@action:button"
 msgid "&Use Menu"
 msgstr "An&vänd meny"
 
 #: src/kgrgame.cpp:732
 #, kde-format
-#| msgid "Use the menus to choose other actions"
 msgctxt "@info:tooltip"
 msgid "Use the menus to choose other actions"
 msgstr "Använd menyer för att välja andra alternativ"
 
 #: src/kgrgame.cpp:734
 #, kde-format
-#| msgid ""
-#| "Before playing, use the menus to choose other actions, such as loading a "
-#| "saved game or changing the theme"
 msgctxt "@info:whatsthis"
 msgid ""
 "Before playing, use the menus to choose other actions, such as loading a "
@@ -9707,7 +9550,6 @@ msgstr ""
 
 #: src/kgrgame.cpp:836
 #, kde-format
-#| msgid "Show a Solution"
 msgctxt "@title:window"
 msgid "Show a Solution"
 msgstr "Visa en lösning"
@@ -9723,7 +9565,6 @@ msgstr ""
 
 #: src/kgrgame.cpp:848
 #, kde-format
-#| msgid "Replay Any Level"
 msgctxt "@title:window"
 msgid "Replay Any Level"
 msgstr "Repris av godtycklig nivå"
@@ -9746,21 +9587,18 @@ msgstr ""
 
 #: src/kgrgame.cpp:1065
 #, kde-format
-#| msgid "Game Over"
 msgctxt "@title:window"
 msgid "Game Over"
 msgstr "Spelet slut"
 
 #: src/kgrgame.cpp:1066
 #, kde-format
-#| msgid "&Try Again"
 msgctxt "@action:button"
 msgid "&Try Again"
 msgstr "&Försök igen"
 
 #: src/kgrgame.cpp:1067
 #, kde-format
-#| msgid "&Finish"
 msgctxt "@action:button"
 msgid "&Finish"
 msgstr "&Avsluta"
@@ -9774,7 +9612,6 @@ msgstr "<b>Gratulerar!</b> <p>Du har klarat av sista nivån i spelet %1.</p>"
 
 #: src/kgrgame.cpp:1298
 #, kde-format
-#| msgid "Hint"
 msgctxt "@title:window"
 msgid "Hint"
 msgstr "Tips"
@@ -9788,7 +9625,6 @@ msgstr "&Ok"
 
 #: src/kgrgame.cpp:1305
 #, kde-format
-#| msgid "&Show a Solution"
 msgctxt "@action:button"
 msgid "&Show a Solution"
 msgstr "&Visa en lösning"
@@ -9816,21 +9652,18 @@ msgstr ""
 
 #: src/kgrgame.cpp:1421
 #, kde-format
-#| msgid "Switch to Keyboard Mode"
 msgctxt "@title:window"
 msgid "Switch to Keyboard Mode"
 msgstr "Byt till tangentbordsläge"
 
 #: src/kgrgame.cpp:1422
 #, kde-format
-#| msgid "Switch to &Keyboard Mode"
 msgctxt "@action:button"
 msgid "Switch to &Keyboard Mode"
 msgstr "Byt till &tangentbordsläge"
 
 #: src/kgrgame.cpp:1423
 #, kde-format
-#| msgid "Stay in &Mouse Mode"
 msgctxt "@action:button"
 msgid "Stay in &Mouse Mode"
 msgstr "Bli kvar i &musläge"
@@ -9843,7 +9676,6 @@ msgstr "Tangentbordsläge"
 #: src/kgrgame.cpp:1458 src/kgrgame.cpp:1484 src/kgrgame.cpp:1494
 #: src/kgrgame.cpp:1513 src/kgrgame.cpp:1519
 #, kde-format
-#| msgid "Save Game"
 msgctxt "@title:window"
 msgid "Save Game"
 msgstr "Spara spel"
@@ -9879,7 +9711,6 @@ msgstr "Fel: Misslyckades spara spelet."
 
 #: src/kgrgame.cpp:1532 src/kgrgame.cpp:1538 src/kgrgame.cpp:1576
 #, kde-format
-#| msgid "Load Game"
 msgctxt "@title:window"
 msgid "Load Game"
 msgstr "Ladda spel."
@@ -9901,7 +9732,6 @@ msgstr "Okänd"
 
 #: src/kgrgame.cpp:1653 src/kgrgame.cpp:1692
 #, kde-format
-#| msgid "Check for High Score"
 msgctxt "@title:window"
 msgid "Check for High Score"
 msgstr "Kontrollera bästa resultat"
@@ -9930,7 +9760,6 @@ msgstr "Fel: Misslyckades spara ditt bästa resultat."
 
 #: src/kgrgame.cpp:1824 src/kgrgame.cpp:1847 src/kgrgame.cpp:1856
 #, kde-format
-#| msgid "Show High Scores"
 msgctxt "@title:window"
 msgid "Show High Scores"
 msgstr "Visa bästa resultat"
@@ -9956,38 +9785,30 @@ msgstr ""
 
 #: src/kgrgame.cpp:1882
 #, kde-format
-#| msgctxt "1, 2, 3 etc."
-#| msgid "Rank"
 msgctxt "@title:column 1, 2, 3 etc."
 msgid "Rank"
 msgstr "Placering"
 
 #: src/kgrgame.cpp:1883
 #, kde-format
-#| msgctxt "Person"
-#| msgid "Name"
 msgctxt "@title:column person"
 msgid "Name"
 msgstr "Namn"
 
 #: src/kgrgame.cpp:1884
 #, kde-format
-#| msgctxt "Game level reached"
-#| msgid "Level"
 msgctxt "@title:column game level reached"
 msgid "Level"
 msgstr "Nivå"
 
 #: src/kgrgame.cpp:1885
 #, kde-format
-#| msgid "Score"
 msgctxt "@title:column"
 msgid "Score"
 msgstr "Poäng"
 
 #: src/kgrgame.cpp:1886
 #, kde-format
-#| msgid "Date"
 msgctxt "@title:column"
 msgid "Date"
 msgstr "Datum"
@@ -10000,7 +9821,6 @@ msgstr "Bästa resultat"
 
 #: src/kgrgame.cpp:2016 src/kgrgame.cpp:2022 src/kgrgame.cpp:2026
 #, kde-format
-#| msgid "Load Game Info"
 msgctxt "@title:window"
 msgid "Load Game Info"
 msgstr "Ladda spelinformation"
@@ -10029,7 +9849,6 @@ msgstr "Din lösning av nivå %1 har sparats i filen %2"
 
 #: src/kgrgameio.cpp:163 src/kgrgameio.cpp:168 src/kgrgameio.cpp:172
 #, kde-format
-#| msgid "Read Level Data"
 msgctxt "@title:window"
 msgid "Read Level Data"
 msgstr "Läs nivådata"
@@ -10046,7 +9865,6 @@ msgstr "Slutet på filen '%1' nått utan att ha hittat nivådata."
 
 #: src/kgrgameio.cpp:381 src/kgrgameio.cpp:388
 #, kde-format
-#| msgid "Rename File"
 msgctxt "@title:window"
 msgid "Rename File"
 msgstr "Byt namn på fil"
@@ -10063,7 +9881,6 @@ msgstr "Kan byta namn på filen '%1' till '%2'."
 
 #: src/kgrrenderer.cpp:100
 #, kde-format
-#| msgid "Theme Selector"
 msgctxt "@title:window"
 msgid "Theme Selector"
 msgstr "Temaväljare"
@@ -10081,7 +9898,6 @@ msgstr "Poäng: %1"
 #: src/kgrselector.cpp:72 src/kgrselector.cpp:78 src/kgrselector.cpp:98
 #: src/kgrselector.cpp:501
 #, kde-format
-#| msgid "Select Level"
 msgctxt "@title:window"
 msgid "Select Level"
 msgstr "Välj nivå"
@@ -10121,28 +9937,24 @@ msgstr "<html><b>Välj ett spel:</b></html>"
 
 #: src/kgrselector.cpp:143
 #, kde-format
-#| msgid "Name of Game"
 msgctxt "@title:column"
 msgid "Name of Game"
 msgstr "Spelets namn"
 
 #: src/kgrselector.cpp:144
 #, kde-format
-#| msgid "Rules"
 msgctxt "@title:column"
 msgid "Rules"
 msgstr "Regler"
 
 #: src/kgrselector.cpp:145
 #, kde-format
-#| msgid "Levels"
 msgctxt "@title:column"
 msgid "Levels"
 msgstr "Nivåer"
 
 #: src/kgrselector.cpp:146
 #, kde-format
-#| msgid "Skill"
 msgctxt "@title:column"
 msgid "Skill"
 msgstr "Färdighet"
@@ -10165,42 +9977,36 @@ msgstr "Välj en nivå:"
 
 #: src/kgrselector.cpp:204
 #, kde-format
-#| msgid "Level number:"
 msgctxt "@label:spinbox"
 msgid "Level number:"
 msgstr "Nivånummer:"
 
 #: src/kgrselector.cpp:210
 #, kde-format
-#| msgid "Edit Level Name o&r Hint"
 msgctxt "@action:button"
 msgid "Edit Level Name o&r Hint"
 msgstr "&Redigera nivånamn eller tips"
 
 #: src/kgrselector.cpp:245
 #, kde-format
-#| msgid "Start Game"
 msgctxt "@action:button"
 msgid "Start Game"
 msgstr "Starta spelet"
 
 #: src/kgrselector.cpp:254
 #, kde-format
-#| msgid "Play Level"
 msgctxt "@action:button"
 msgid "Play Level"
 msgstr "Spela nivå"
 
 #: src/kgrselector.cpp:257
 #, kde-format
-#| msgid "Replay Level"
 msgctxt "@action:button"
 msgid "Replay Level"
 msgstr "Repris av nivå"
 
 #: src/kgrselector.cpp:260
 #, kde-format
-#| msgid "Show Solution"
 msgctxt "@action:button"
 msgid "Show Solution"
 msgstr "Visa lösning"
@@ -10214,21 +10020,18 @@ msgstr "Spara en lösning"
 
 #: src/kgrselector.cpp:266
 #, kde-format
-#| msgid "Edit Level"
 msgctxt "@action:button"
 msgid "Edit Level"
 msgstr "Redigera nivå"
 
 #: src/kgrselector.cpp:272
 #, kde-format
-#| msgid "Save Change"
 msgctxt "@action:button"
 msgid "Save Change"
 msgstr "Spara ändring"
 
 #: src/kgrselector.cpp:275
 #, kde-format
-#| msgid "Delete Level"
 msgctxt "@action:button"
 msgid "Delete Level"
 msgstr "Ta bort nivå"
@@ -10242,7 +10045,6 @@ msgstr "Flytta till..."
 
 #: src/kgrselector.cpp:281
 #, kde-format
-#| msgid "Edit Game Info"
 msgctxt "@action:button"
 msgid "Edit Game Info"
 msgstr "Redigera spelinformation"
@@ -10454,7 +10256,6 @@ msgstr ""
 
 #: src/kgrselector.cpp:589
 #, kde-format
-#| msgid "Help: Select Game & Level"
 msgctxt "@title:window"
 msgid "Help: Select Game & Level"
 msgstr "Hjälp: Välj spel och nivå"
@@ -10660,4 +10461,3 @@ msgstr "Grafik för temat Egyptens skatt"
 
 #~ msgid "Set normal game speed (12 units)."
 #~ msgstr "Ställ in normal spelhastighet (12 enheter)."
-
