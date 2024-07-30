@@ -85,6 +85,20 @@
 ><contrib
 >Traductora</contrib
 ></othercredit
+> <othercredit role="translator"
+><firstname
+>Eloy</firstname
+> <surname
+>Cuadra</surname
+> <affiliation
+><address
+><email
+>ecuadra@eloihr.net</email
+></address
+></affiliation
+> <contrib
+>Corrección de la traducción</contrib
+></othercredit
 > 
 </authorgroup>
 
@@ -105,7 +119,7 @@
 
 <abstract>
 <para
->&kgoldrunner; es un juego de acción en el que debe resolver un puzzle. Corra por el laberinto, esquive a sus enemigos, recoja todo el oro y escale hasta el último nivel. <emphasis
+>&kgoldrunner; es un juego de acción en el que debes resolver un puzle. Corre por el laberinto, esquiva a tus enemigos, recoge todo el oro y escala hasta el último nivel. <emphasis
 >Advertencia:</emphasis
 > las reglas de excavación han cambiado ligeramente en esta versión.</para>
 </abstract>
@@ -118,7 +132,7 @@
 <keyword
 >juego</keyword>
 <keyword
->arcade</keyword>
+>recreativo</keyword>
 <keyword
 >estrategia</keyword>
 <keyword
@@ -159,23 +173,23 @@
 >Número de jugadores: Uno </para>
 
 <para
->&kgoldrunner; es un juego de acción en el que el héroe corre a través de un laberinto esquivando enemigos. Puede guiar al héroe con el ratón o con el teclado y recoger las pepitas de oro, consiguiendo pasar al siguiente nivel. Sus enemigos van detrás del oro. Y lo que todavía es peor, ¡Van detrás! ¡Le matarán si le dan caza!</para>
+>&kgoldrunner; es un juego de acción en el que el héroe corre a través de un laberinto esquivando enemigos. Puedes guiar al héroe con el ratón o con el teclado y recoger las pepitas de oro para conseguir pasar al siguiente nivel. Tus enemigos también van detrás del oro. Y lo que todavía es peor, ¡van a por ti! ¡Te matarán si te atrapan!</para>
 
 <para
->El problema es que usted no tiene armas para matarlos a <emphasis
+>El problema es que no tienes armas para matarlos a <emphasis
 >ellos</emphasis
->. Todo lo que puede hacer es correr, excavar agujeros en el suelo para atraparlos o atraerlos hacia algún área en la que no puedan hacerle daño. En poco tiempo un enemigo atrapado saldrá del agujero, pero si este se cierra, morirá y reaparecerá en cualquier otro sitio. </para>
+>. Todo lo que puedes hacer es correr, excavar agujeros en el suelo para atraparlos o atraerlos hacia algún área en la que no puedan hacerte daño. Tras un breve período de tiempo, un enemigo atrapado saldrá del agujero, pero si este se cierra antes, morirá y reaparecerá en cualquier otro sitio. </para>
 
 <para
->Si no ha jugado anteriormente lea el «Tutorial» del juego, que le enseñará las reglas y técnicas básicas. Posteriormente intente jugar al juego de «Iniciación». Los expertos pueden intentarlo con los juegos «Desafío» o «La venganza de Peter W», pero el juego de «Iniciación» tiene más de 100 niveles y algunos de ellos son muy difíciles. Este es un buen juego para conseguir una puntuación elevada.</para>
+>Si no has jugado anteriormente, lee el «Tutorial» del juego, que te enseñará las reglas y las técnicas básicas. Posteriormente, intenta jugar al juego de «Iniciación». Los expertos pueden intentarlo con los juegos «Desafío» o «La venganza de Peter W», aunque el juego de «Iniciación» tiene más de 100 niveles y algunos de ellos son muy difíciles. Este es un buen juego para conseguir una puntuación elevada.</para>
 
 <para
->Todos estos juegos utilizan las reglas tradicionales, que son similares a aquellas utilizadas en los primeros equipos, como el Apple II o el Commodore 64. Los juegos «&kgoldrunner;» y «Estado de terror» utilizan las reglas &kgoldrunner;, en las que los enemigos corren más rápido y tienen una búsqueda estratégica más agresiva que en las reglas tradicionales. Consulte <link linkend="choice-of-rules"
+>Todos estos juegos usan las reglas tradicionales, que son similares a las que se usaban en los primeros equipos, como el Apple II o el Commodore 64. Los juegos «&kgoldrunner;» y «Estado de terror» usan las reglas de &kgoldrunner;, en las que los enemigos corren más rápido y tienen una búsqueda estratégica más agresiva que en las reglas tradicionales. Consulta <link linkend="choice-of-rules"
 >Elección de reglas</link
-> para obtener detalles.</para>
+> para obtener más detalles.</para>
 
 <para
->En cuanto se mueva por niveles más avanzados verá que &kgoldrunner; combina acción, estrategia, tácticas y la resolución de un rompecabezas. Todo en un juego. ¡Buena suerte!</para>
+>En cuanto te muevas por niveles más avanzados, verás que &kgoldrunner; combina acción, estrategia, tácticas y la resolución de un rompecabezas. Todo en un solo juego. ¡Buena suerte!</para>
 
 </sect1>
 
@@ -184,7 +198,7 @@
 >Una partida típica</title>
 
 <para
->Debajo se muestra una partida típica en curso. El héroe está en el nivel 4 del juego Tutorial avanzado. La barra de estado de la pantalla muestra cuántas vidas le quedan y cuántos puntos ha conseguido. También muestra que existe un consejo disponible para este nivel (como sucede siempre en los juegos tutorial) y que la acción está parada (mientras se toma esta captura de pantalla), pero se puede reanudar pulsando <keycap
+>Debajo se muestra una partida típica en curso. El héroe está en el nivel 4 del juego «Tutorial avanzado». La barra de estado de la pantalla muestra cuántas vidas le quedan y cuántos puntos ha conseguido. También muestra que existe una pista disponible para este nivel (como sucede siempre en los juegos de tutorial) y que la acción está detenida (mientras se toma esta captura de pantalla), aunque se puede reanudar pulsando <keycap
 >P</keycap
 > o &Esc;.</para>
 
@@ -193,82 +207,82 @@
 
 <screenshot>
 <screeninfo
->Una típica partida de kgoldrunner; </screeninfo>
+>Una partida típica de kgoldrunner; </screeninfo>
 <mediaobject>
 <imageobject
 ><imagedata fileref="tute008.png" format="PNG"/></imageobject>
 <textobject
 ><phrase
->Una partida de &kgoldrunner;</phrase
+>Una partida típica de &kgoldrunner;</phrase
 ></textobject>
 </mediaobject>
 </screenshot>
 
 <para
->El enemigo de la derecha se ha caído y llevaba oro. El tercer enemigo está a punto de descender por la escalera para atrapar al héroe, que esquivará a ambos enemigos cuando lleguen al suelo. Este nivel muestra también los ladrillos que se pueden romper y otros que, además de muchas trampas (ladrillos falsos), que son similares a los ladrillos normales.</para>
+>El enemigo de la derecha está cayendo y lleva oro. El tercer enemigo está a punto de descender por la escalera para atrapar al héroe, que esquivará a ambos enemigos cuando llegue al suelo. Este nivel muestra también ladrillos que se pueden romper y cemento donde no se puede cavar, además de muchas trampas (ladrillos falsos), que son similares a los ladrillos normales.</para>
 
 </sect1>
 
 <sect1 id="how-to-play">
 <title
->Cómo jugar</title>
+>Cómo se juega</title>
 
 <sect2>
 <title
->Comenzando la partida</title>
+>Empezar una partida</title>
 
 <para
->&kgoldrunner; empieza mostrándole una demostración grabada del juego. Usted puede detenerla haciendo click en el área de juego con el ratón, presionando la barra &Space; o seleccionando un elemento del menú o un atajo de teclado (como <menuchoice
+>&kgoldrunner; empieza con una demostración grabada del juego. Puedes detenerla haciendo clic en el área de juego con el ratón, pulsando la tecla &Space; o usando una opción del menú o un atajo de teclado (como <menuchoice
 ><guimenu
 >Juego</guimenu
 > <guimenuitem
->Juego nuevo...</guimenuitem
+>Nueva partida...</guimenuitem
 ></menuchoice
 > o <keycombo action="simul"
 >&Ctrl;<keycap
 >N</keycap
 ></keycombo
->). Puede saltarse esta demostración en el futuro usando el elemento del menú<menuchoice
+>). Puedes omitir esta demostración en el futuro usando la opción del menú<menuchoice
 ><guimenu
 >Preferencias</guimenu
 ><guimenuitem
->Demostración al principio</guimenuitem
+>Demostración al iniciar</guimenuitem
 ></menuchoice
->. También puede verla de nuevo en cualquier momento usando el elemento del menú <menuchoice
+>. También puedes verla de nuevo en cualquier momento usando la opción del menú <menuchoice
 ><guimenu
 >Mover</guimenu
 ><guimenuitem
->Demostración </guimenuitem
+>Demostración</guimenuitem
 ></menuchoice
 >. </para>
 
 <para
->si se ha saltado la demostración o ha utilizado el ratón o la bara espaciadora para terminarla, el primer diálogo que aparece muestra los nombres, número y vista previa de la última partida y nivel cargado o, si todavía no había jugado, la misma información para el tutorial del nivel 1.</para>
+>Si has omitido la demostración o has usado el ratón o la tecla &Space; para terminarla, un diálogo de inicio rápido muestra los nombres, el número y una vista previa de la última partida y nivel cargado o, si todavía no habías jugado, la misma información para el tutorial del nivel 1.</para>
 
 <para
->Pulse el botón <guibutton
+>Pulsa el botón <guibutton
 >Jugar</guibutton
-> para comenzar a jugar. También puede pulsar el botón <guibutton
+> para empezar a jugar. También puedes pulsar el botón <guibutton
 >Salir</guibutton
 >, el botón <guibutton
 >Nueva partida...</guibutton
 > o el botón <guibutton
->Utilizar menú</guibutton
->. El primero cerrará &kgoldrunner;, si no desea jugar; el segundo mostrará un diálogo de <link linkend="select-game-dialog"
+>Usar menú</guibutton
+>. El primero cerrará &kgoldrunner;, si no quieres jugar; el segundo mostrará un diálogo de <link linkend="select-game-dialog"
 >Selección de partida</link
-> en el que podrá elegir un juego diferente y en el último cerrará el diálogo dejándole libre para utilizar los menús de &kgoldrunner;.</para>
+> donde podrás elegir un juego diferente y el último cerrará el diálogo dejándote libertad para usar los menús de &kgoldrunner;.</para>
 
 <para
->Cuando elija jugar una partida y un nivel, aparecerá el puntero del ratón sobre el héroe. En un juego de tutorial, verá un mensaje explicativo antes de comenzar cada nivel. Puede empezar a jugar moviendo el ratón, pulsando con el ratón o pulsando una de las teclas que controlan al héroe (por ejemplo, &Space;), excepto las teclas <keycap
+>Si has elegido jugar una partida y un nivel, se mostrará en ese momento y el puntero se situará sobre el héroe. En un juego de tutorial, verás un mensaje explicativo antes de empezar cada nivel. Puedes empezar a jugar moviendo el puntero, haciendo clic con el ratón o pulsando una de las teclas que controlan al héroe (por ejemplo, &Space;), excepto las teclas <keycap
 >Q</keycap
 >, <keycap
 >S</keycap
 >, <keycap
 >P</keycap
-> o &Esc;. Cada nivel empieza de la misma forma.</para>
+> o &Esc; en esta fase. Cada nivel empieza de la misma forma.</para>
 
 <para
->Al inicio del juego se tienen cinco vidas y se van ganando vidas extra al completar cada nivel.</para>
+>Al inicio del juego tienes cinco vidas y ganas vidas extra al completar cada nivel.</para>
 
 </sect2>
 
@@ -277,17 +291,15 @@
 >Moviéndose</title>
 
 <para
->Por defecto, usted controla al héroe con el ratón, pero también puede controlarlo con el teclado (<link linkend="keyboard-control"
->ver abajo</link
->) o, con un portátil, utilizando una combinación del teclado para cavar y del touchpad u otro dispositivo señalador para guiar al héroe.</para>
+>De forma predeterminada, controlas al héroe con el ratón, aunque también puedes controlarlo con el teclado (<link linkend="keyboard-control"
+>ver más adelante</link
+>) o, en un portátil, usando una combinación del teclado para cavar y del panel táctil u otro dispositivo apuntador para guiar al héroe.</para>
 
 <para
->De forma predeterminada el héroe se controla con el ratón, pero también es posible controlarlo con el teclado (<link linkend="keyboard-control"
->ver más abajo</link
->). Se moverá hacia donde esté el puntero del ratón. No se moverá tan rápido como usted pueda mover el ratón, pero intentará llegar lo más rápidamente posible. Si el puntero del ratón está encima o debajo de él, irá hacia arriba o hacia abajo siempre y cuando haya una escalera disponible o un lugar en el que caer. Por lo demás se moverá horizontalmente hasta que esté debajo, encima o a la derecha del puntero del ratón. Puede hacer rutas sencillas (similares a _ | L o U), pero tenga cuidado de no hacer demasiados giros ni vueltas delante de él.</para>
+>El héroe se moverá hacia donde sitúes el puntero. No se moverá tan rápido como tú muevas el puntero, aunque intentará llegar a él lo más rápido posible. Si el puntero está encima o debajo de él, subirá o bajará siempre que haya una escalera disponible o un lugar por donde caer. En caso contrario, se moverá horizontalmente hasta que esté debajo, encima o a la derecha del puntero. Puedes hacer que siga rutas sencillas (como | L o U), pero debes tener cuidado de no hacer demasiados giros ni vueltas delante de él.</para>
 
 <para
->Puede moverse hacia la izquierda o hacia la derecha, sobre ladrillos, hormigón, escaleras o barras y subir o bajar por las escaleras. Si está en un cuadro vacío o en una pepita de oro y no está sobre un ladrillo, hormigón, una escalera o una barra, la gravedad le hará caer. También puede desplazarse moviéndose hacia abajo en una barra o en una escalera, por tanto, no deje arriba el puntero del ratón si quiere bajar.</para>
+>Puedes moverte hacia la izquierda o hacia la derecha sobre ladrillos, hormigón, escaleras o barras y subir o bajar por las escaleras. Si estás en una casilla vacía o en una pepita de oro y no hay ladrillo, hormigón, escalera o barra que te sostenga, la gravedad toma el control y te caes. También puedes desplazarte moviéndote hacia abajo en una barra o en una escalera, por lo que debes mantener el puntero en lo alto si quieres aguantar.</para>
 
 </sect2>
 
@@ -296,7 +308,7 @@
 >Control con el teclado</title>
 
 <para
->Si lo prefiere puede usar el teclado para controlar al héroe. Las teclas predeterminadas son <keycap
+>Si lo prefieres puede, usar el teclado para controlar al héroe. Las teclas predeterminadas son <keycap
 >I</keycap
 >, <keycap
 >J</keycap
@@ -312,7 +324,7 @@
 >U</keycap
 > y <keycap
 >O</keycap
-> para excavar. Puede jugar con una mano usando las teclas <keycap
+> para excavar. Puedes jugar con una mano usando las teclas <keycap
 >U</keycap
 >, <keycap
 >I</keycap
@@ -324,11 +336,11 @@
 >K</keycap
 >, <keycap
 >L</keycap
-> y &Space; (en un teclado «QWERTY») o con las dos usando las teclas de dirección, &Space;, <keycap
+> y &Space; (en un teclado «QWERTY»), o con las dos usando las teclas de dirección, &Space;, <keycap
 >Z</keycap
 > y <keycap
 >C</keycap
->. También es posible elegir otras teclas usando la opción del menú <menuchoice
+>. También puedes elegir otras teclas usando la opción del menú <menuchoice
 ><guimenu
 >Preferencias</guimenu
 > <guimenuitem
@@ -337,7 +349,7 @@
 >.</para>
 
 <para
->Puede entrar en el modo de control con el teclado pulsando cualquiera de las teclas que controlan al héroe o usando la opción del menú <menuchoice
+>Puedes entrar en el modo de control con el teclado pulsando cualquiera de las teclas que controlan al héroe o usando la opción del menú <menuchoice
 ><guimenu
 >Preferencias</guimenu
 > <guimenuitem
@@ -354,10 +366,10 @@
 >K</keycap
 >, <keycap
 > L</keycap
-> o las flechas) hacen que el héroe se mueva arriba, abajo, a la izquierda o a la derecha. Se continuará moviendo en esta dirección, si puede, hasta que pulse otra tecla de movimiento o &Space; para parar. En el modo de control con el ratón para automáticamente cuando alcanza el puntero del ratón.</para>
+> o las flechas) hacen que el héroe se mueva arriba, abajo, a la izquierda o a la derecha. Se continuará moviendo en esta dirección, si es posible, hasta que pulses otra tecla de movimiento o &Space; para parar. En el modo de control con el ratón o portátil, se detiene automáticamente cuando alcanza el puntero.</para>
 
 <para
->Un consejo: usar el teclado es mucho más lento que usar el ratón, piense en el ratón como en un joystick.</para>
+>Un consejo: usar el teclado es mucho más difícil, a la larga, que usar el ratón. Piensa en el ratón como en un joystick.</para>
 
 </sect2>
 
@@ -366,29 +378,29 @@
 >Tomarse un respiro</title>
 
 <para
->Puede detener el juego en cualquier momento pulsando una tecla de pausa (las predeterminadas son <keycap
+>Puedes detener el juego en cualquier momento pulsando una tecla de pausa (las predeterminadas son <keycap
 >P</keycap
-> o &Esc;). Puede reanudar el juego pulsando de nuevo la tecla de pausa. También existe la opción del menú <menuchoice
+> o &Esc;). Puedes reanudar el juego pulsando de nuevo la tecla de pausa. También existe la opción del menú <menuchoice
 ><guimenu
 >Juego</guimenu
 > <guimenuitem
 >Pausa</guimenuitem
 ></menuchoice
->, pero el problema es llegar a esta opción sin poner al héroe en apuros.</para>
+>, aunque el problema es llegar a esta opción sin poner al héroe en apuros.</para>
 
 <tip
 ><para
->Cuando quiera usar el menú de &kgoldrunner; o hacer algo en otra ventana, pulse siempre la tecla Pausa y pare el juego. De otra manera el héroe continuará siguiendo el puntero del ratón y puede meterse en problemas.</para
+>Cuando quieras usar el menú de &kgoldrunner; o hacer algo en otra ventana, pulsa siempre la tecla Pausa y detén el juego. De lo contrario, el héroe continuará siguiendo el puntero del ratón y puede meterse en problemas.</para
 ></tip>
 
 </sect2>
 
 <sect2 id="winning">
 <title
->Ganando un nivel</title>
+>Ganar un nivel</title>
 
 <para
->El objeto del juego es recoger el oro, moviéndose o cayendo sobre él. Cuando no quede nada, debe moverse hasta la parte superior del área de juego para subir al siguiente nivel. Algunas veces, cuando se ha recogido todo el oro, aparecen escaleras ocultas que han de ser usadas para ascender al siguiente nivel.</para>
+>El objetivo del juego es recoger todo el oro, moviéndose o cayendo sobre él. Cuando no quede nada por recoger, debes moverte a la parte superior del área de juego para pasar al siguiente nivel. A menudo, cuando recojas la última pieza de oro, aparecerán escaleras ocultas y podrás usarlas para subir a la cima. A veces no hay escaleras ocultas. Además, en muy raras ocasiones, las escaleras ocultas pueden ser una trampa que conduzca a un camino equivocado. Si el nivel no tiene oro, no habrá escaleras ocultas y solo tendrás que descubrir cómo llegar a la parte superior del área de juego.</para>
 
 </sect2>
 
@@ -397,7 +409,7 @@
 >Cuidado con los falsos ladrillos</title>
 
 <para
->Los falsos ladrillos, también conocidos como ladrillos de caída o trampas, son otra de las características ocultas del juego. Se parecen a los ladrillos normales, pero si pasa sobre uno, se caerá. Esto puede ser malo si hay un enemigo o un foso debajo, o bueno si hay oro.</para>
+>Los falsos ladrillos, también conocidos como ladrillos de caída o trampas, son otra de las características ocultas del juego. Se parecen a los ladrillos normales, pero si pasas sobre uno, caerás. Esto puede ser malo si hay un enemigo o un foso debajo, o bueno si hay oro.</para>
 
 </sect2>
 
@@ -406,23 +418,23 @@
 >Enemigos</title>
 
 <para
->Los enemigos se mueven en gran medida de la misma forma que el héroe. La principal diferencia es que cuando caen en un hoyo el héroe puede cavar (consulte <link linkend="importance-of-digging"
+>Los enemigos se mueven en gran medida de la misma forma que el héroe. La principal diferencia es cuando caen en un agujero que el héroe ha cavado (consulte <link linkend="importance-of-digging"
 >La importancia de cavar</link
-> más adelante. </para>
+> más adelante). </para>
 <para
->Recogerán el oro siempre, o de manera aleatoria, en función de como haya configurado el juego y echarlo en un ladrillo al azar, en hormigón o en la parte superior de una escalera. Si un enemigo transporta la última pieza de oro, debe quitárselo para poder finalizar el nivel.</para>
+>Recogerán el oro siempre o de manera aleatoria, en función de las preferencias del juego, y soltarán el oro al azar en un ladrillo, en hormigón o en la parte superior de una escalera. Si un enemigo transporta la última pieza de oro, debes quitárselo para poder finalizar el nivel.</para>
 
 <para
->Si un enemigo le toca morirá y habrá de empezar de nuevo el nivel, si es que aún le quedan vidas. No obstante, es posible pisar la cabeza de un enemigo y echar a correr mientras se está cayendo. Algunos niveles avanzados requieren de este tipo de movimientos.</para>
+>Si un enemigo te toca, morirás y tendrás de empezar de nuevo el nivel, si aún te quedan vidas. No obstante, se puede caminar sobre la cabeza de un enemigo o permanecer sobre ella y puedes derribar a un enemigo cuando está cayendo. Algunos niveles avanzados requieren este movimiento.</para>
 
 </sect2>
 
 <sect2 id="losing-a-level">
 <title
->Perdiendo un nivel</title>
+>Perder un nivel</title>
 
 <para
->Como se explicaba anteriormente, se puede perder un nivel y una vida tocando a un enemigo. También es posible perderlo si tras caer por un falso ladrillo este se cierra. Otra forma de hacerlo es suicidarse pulsando la tecla <keycap
+>Como se explicaba anteriormente, se puede perder un nivel y una vida tocando a un enemigo. También se puede perder si, tras caer por un falso ladrillo, este se cierra. Otra forma de hacerlo es suicidarse pulsando la tecla <keycap
 >Q</keycap
 > o usando la opción del menú <menuchoice
 ><guimenu
@@ -430,7 +442,7 @@
 > <guimenuitem
 >Matar al héroe</guimenuitem
 ></menuchoice
-> ¿Cuándo querrá hacer esto? Bueno, algunas veces puede quedar atrapado en algún sitio del que no es posible salir. ¡Puede estar prisionero indefinidamente a menos que se suicide!</para>
+> ¿Cuándo querrás hacer esto? Bueno, algunas veces puedes quedar atrapado en algún sitio del que no es posible salir. ¡Puedes estar prisionero indefinidamente a menos que te suicides!</para>
 
 </sect2>
 
@@ -439,11 +451,11 @@
 >La importancia de cavar</title>
 
 <para
->Cavar es una de las posibilidades más poderosas de las que se dispone. Para cavar un agujero en un ladrillo a la izquierda o a la derecha, tan solo es necesario pulsar los botones <mousebutton
+>Cavar es una de las tácticas más poderosas de las que dispones. Para cavar un agujero en un ladrillo a la izquierda o a la derecha, tan solo es necesario pulsar los botones <mousebutton
 >izquierdo</mousebutton
 > o <mousebutton
 >derecho</mousebutton
-> del ratón o utilizar las teclas para cavar (por defecto <keycap
+> del ratón o usar las teclas para cavar (por defecto, <keycap
 >Z</keycap
 >, <keycap
 >C</keycap
@@ -454,28 +466,28 @@
 >).</para>
 
 <para
->Puede esquivar a un enemigo que se acerca cavando un agujero, esperando por él a que caiga y echando a correr rápidamente por encima de él. A la vez puede recoger todo el oro que este llevase. Normalmente es posible cavar dos agujeros para capturar y pasar por encima de dos enemigos que le hayan dejado encerrado entre ellos, pero esto raramente funciona si los enemigos están separados o son más de dos.</para>
+>Puedes esquivar a un enemigo que se aproxima cavando un hoyo, esperando a que caiga y luego corriendo rápidamente sobre su cabeza. Al mismo tiempo, podrás recoger el oro que llevaba. Por lo general, puedes cavar dos agujeros para capturar y atropellar a dos enemigos que están muy juntos, pero esto rara vez funciona si los enemigos están separados o hay más de dos.</para>
 
 <para
->Puede matar enemigos cavando el número suficiente de agujeros en su camino. Normalmente se necesitan dos o más para matar a un enemigo y más de ocho para matar cuatro o cinco. Cuando un enemigo muere reaparece inmediatamente, bien donde empezó o bien cerca de la parte superior del área de juego, dependiendo de si en las Preferencias (ver <link linkend="choice-of-rules"
+>Puedes matar enemigos cavando un número suficiente de agujeros en su camino. Normalmente se necesitan dos o más para matar a un enemigo, y más de ocho para matar cuatro o cinco. Cuando un enemigo muere, reaparece inmediatamente, bien donde empezó o bien cerca de la parte superior del área de juego, dependiendo de si en las Preferencias (consulta <link linkend="choice-of-rules"
 >Elegir las reglas</link
 >) se ha elegido «&kgoldrunner;» o «Tradicionales».</para>
 
 <para
->Finalmente, en muchos niveles el oro no está accesible de inmediato y debe cavar para obtenerlo. Algunos de estos rompecabezas para cavar son muy complejos y debe trabajar sobre una secuencia de cavado para resolverlo en un tiempo limitado antes de poder completar el nivel.</para>
+>Finalmente, en muchos niveles el oro no está accesible de inmediato y debes cavar para obtenerlo. Algunos de estos rompecabezas de excavación son muy complejos y debes trabajar sobre una secuencia de cavado para resolverlos en un tiempo limitado antes de poder completar el nivel.</para>
 
 </sect2>
 
 <sect2 id="rules-of-digging">
 <title
->Reglas para Cavar</title>
+>Reglas para cavar</title>
 
 <para
->Para cavar un agujero a la izquierda o a la derecha, pulse los botones <mousebutton
+>Para cavar un agujero a la izquierda o a la derecha, pulsa los botones <mousebutton
 >izquierdo</mousebutton
 > o <mousebutton
 >derecho</mousebutton
-> del ratón, o bien use las teclas <keycap
+> del ratón, o bien usa las teclas <keycap
 >Z</keycap
 >, <keycap
 >C</keycap
@@ -486,31 +498,31 @@
 >.</para>
 
 <para
->Solo puede cavar en los ladrillos. El agujero aparecerá en el suelo, a uno u otro lado (&ie;, debajo y a la derecha o a la izquierda del héroe). Debe existir un espacio vacío o un agujero sobre el ladrillo (&ie;, no se puede cavar debajo de una escalera, una barra, una pieza de oro, un ladrillo, cemento o un falso ladrillo). Cuando cave, puede estar corriendo, parado o descendiendo sobre un enemigo que cae. Es posible cavar mientras cae en el vacío o sobre falsos ladrillos en algunos juegos, pero no en otros. Consulte <link linkend="dig-while-falling"
->Cavar mientras cae</link
+>Solo puedes cavar en los ladrillos. El agujero aparecerá en el suelo, a uno u otro lado (es decir, debajo y a la derecha o a la izquierda del héroe). Debe existir un espacio vacío o un agujero sobre el ladrillo (es decir, no se puede cavar debajo de una escalera, una barra, una pieza de oro, un ladrillo, cemento o un falso ladrillo). Cuando caves, puedes estar corriendo, parado o descendiendo sobre un enemigo que cae. Puedes cavar mientras caes en el vacío o sobre falsos ladrillos en algunos juegos, pero no en otros. Consulta <link linkend="dig-while-falling"
+>Cavar mientras caes</link
 > más adelante.</para>
 
 <para
->El héroe se puede mover en cualquier dirección en el agujero cavado, incluso puede caer a través del agujero para escapar de un enemigo. Solo se puede estar en el agujero mientras este esté abierto, por tanto, para matar enemigos debe cavar varios agujeros rápidamente. No hay tiempo para parar y pensar mientras se cava.</para>
+>El héroe se puede mover en cualquier dirección en el agujero cavado, incluso puede caer a través del agujero para escapar de un enemigo. Solo se puede estar en el agujero mientras este esté abierto. Por lo tanto, para matar enemigos debes cavar varios agujeros rápidamente. No hay tiempo para parar y pensar mientras cavas.</para>
 
 <para
->Los enemigos serán capturados siempre que caigan en un agujero cavado y treparán hacia arriba para salir de él. El tiempo de permanencia en el agujero es inferior al tiempo que tarda el agujero en cerrarse, por tanto, para matar a los enemigos, lo normal es cavar varios agujeros en una sucesión rápida. Los enemigos siempre dejarán el oro arriba al caer al agujero, así que deberá correr rápidamente y pasar por encima del enemigo para quitarle el oro antes de que salga fuera.</para>
+>Los enemigos serán capturados siempre que caigan en un agujero cavado y treparán hacia arriba para salir de él. El tiempo de permanencia en el agujero es inferior al tiempo que tarda el agujero en cerrarse; por lo tanto, para matar a los enemigos, lo normal es cavar varios agujeros en una rápida sucesión. Los enemigos siempre dejarán el oro arriba al caer al agujero, así que tendrás que correr rápidamente y pasar por encima de la cabeza del enemigo para quitarle el oro antes de que salga fuera.</para>
 
 <para
->Los enemigos nunca caerán a través de un agujero, pero dependiendo de las reglas del juego y de las <guimenu
+>Los enemigos nunca caerán por un agujero desde arriba; aunque, dependiendo de las reglas del juego y de las <guimenu
 > Preferencias</guimenu
->, (consulte <link linkend="choice-of-rules"
+> (consulta <link linkend="choice-of-rules"
 >Elección de reglas</link
->), pueden correr horizontalmente en un hoyo cavado y no ser capturados y pueden caer sobre él o correr hacia otro hoyo e incluso salir fuera del hoyo. En algunos niveles que siguen las reglas «Tradicionales» los enemigos pueden pasar por encima del agujero. En algunos niveles que siguen las reglas «&kgoldrunner;» los enemigos NO puedan correr a través de un hoyo.</para>
+>), pueden correr horizontalmente en un hoyo cavado sin ser capturados y pueden caer sobre él o correr hacia otro hoyo e incluso salir fuera del hoyo. En algunos niveles que siguen las reglas «Tradicionales», los enemigos pueden pasar por encima del agujero. En algunos niveles que siguen las reglas de «&kgoldrunner;», los enemigos NO puedan correr a través de un hoyo.</para>
 
 </sect2>
 
 <sect2 id="dig-while-falling">
 <title
->Cavar mientras cae</title>
+>Cavar mientras caes</title>
 
 <para
->En el juego original para Apple II y Commodore 64, el héroe debe estar situado sobre algo sólido para poder cavar: una escalera, cemento, un ladrillo, una barra (o la cabeza de un enemigo). En &kgoldrunner; no se había dado mucha importancia a esta regla, y un día el hijo del autor descubrió que ¡podía cavar mientras caía! Poco después compuso un nivel para hacer uso de esta característica. Otras personas han hecho lo mismo. Debe cavar mientras cae en juegos recientes de habilidad de campeonato, como <quote
+>En el juego original para Apple II y Commodore 64, el héroe debe estar situado sobre algo sólido para poder cavar: una escalera, cemento, un ladrillo, una barra (o la cabeza de un enemigo). En &kgoldrunner; no se había dado mucha importancia a esta regla, y un día el hijo del autor descubrió que ¡podía cavar mientras caía! Poco después compuso un nivel para hacer uso de esta función. Otras personas han hecho lo mismo. Debes cavar mientras caes en juegos recientes de habilidad de campeonato, como <quote
 >Estado de terror</quote
 >, <quote
 >La maldición de la Momia</quote
@@ -519,7 +531,7 @@
 >.</para>
 
 <para
->Por otra parte, cavar mientras cae hace que los juegos antiguos sean bastante fáciles. Por ello, desde diciembre de 2015, no se puede hacer en los juegos <quote
+>Por otra parte, cavar mientras se cae hace que los juegos antiguos sean bastante fáciles. Por ello, desde diciembre de 2015, no se puede hacer en los juegos <quote
 >Tutorial</quote
 >, <quote
 >Tutorial avanzado</quote
@@ -539,10 +551,10 @@
 
 <sect2 id="winning-and-losing-the-game">
 <title
->Ganando y perdiendo el juego</title>
+>Ganar y perder el juego</title>
 
 <para
->Gana al completar el último nivel del juego. Pierde cuando se termina con la última vida. De todas formas si ha conseguido una de las puntuaciones más altas para este juego, puede guardar la puntuación obtenida en las «Mejores puntuaciones de &kgoldrunner;».</para>
+>Ganas al completar el último nivel del juego. Pierdes cuando terminas con la última vida. De todas formas, si has conseguido una de las puntuaciones más altas para este juego, puedes guardar la puntuación obtenida en las «Mejores puntuaciones de &kgoldrunner;».</para>
 
 </sect2>
 
@@ -551,15 +563,15 @@
 >Grabaciones, reproducciones y soluciones</title>
 
 <para
->Todos los niveles del juego se graban conforme usted juega, de forma que puede reproducir cualquier nivel que haya jugado previamente. Además, algunos niveles tienen soluciones grabadas, que le pueden ayudar a averiguar cómo ganar. Solo tiene que usar el menú <guimenu
+>Todos los niveles del juego se graban conforme juegas, de forma que puedes volver a jugar cualquier nivel que hayas jugado previamente. Además, algunos niveles tienen soluciones grabadas, que te pueden ayudar a averiguar cómo ganar. Solo tienes que ir al menú <guimenu
 >Mover</guimenu
-> y las opciones <guimenuitem
+> y usar las opciones <guimenuitem
 >Mostrar una solución</guimenuitem
 >, <guimenuitem
 >Reproducción instantánea</guimenuitem
 >, <guimenuitem
 >Reproducir el último nivel</guimenuitem
-> y <guimenuitem
+> o <guimenuitem
 >Reproducir cualquier nivel</guimenuitem
 >. Las soluciones y reproducciones se pueden interrumpir en cualquier momento pulsando con el ratón en el área de juego, pulsando &Space; o seleccionando un elemento del menú o un atajo de teclado (como <menuchoice
 ><guimenu
@@ -578,11 +590,11 @@
 >Reproducción instantánea</guimenuitem
 > y <guimenuitem
 > Reproducir último nivel</guimenuitem
-> le permiten continuar jugando tras una interrupción. Así, si las cosas no van bien, puede utilizar <guimenuitem
+> te permiten continuar jugando tras una interrupción. Así, si las cosas no van bien, puedes usar <guimenuitem
 > Reproducción instantánea</guimenuitem
->, interrumpir la reproducción en algún punto y entonces intentar otra aproximación. O, si el héroe ya ha muerto, puede usar <guimenuitem
+>, interrumpir la reproducción en algún punto y entonces intentar otra aproximación. O, si el héroe ya ha muerto, puedes usar <guimenuitem
 >Reproducir último nivel</guimenuitem
-> de la misma forma. Estas funcionalidades le pueden ayudar a desarrollar una solución por etapas para un nivel difícil, pero utilizarlas invalidará cualquier récord de puntuación en el que pudiera estar trabajando.</para>
+> de la misma forma. Estas funciones te pueden ayudar a desarrollar una solución por etapas para un nivel difícil, pero usarlas invalidará cualquier récord de puntuación en el que pudieras estar trabajando.</para>
 
 </sect2>
 </sect1>
@@ -598,7 +610,7 @@
 </listitem>
 <listitem>
 <para
->Al morir el héroe se pierde una vida y se repite el nivel.</para>
+>Al morir el héroe, se pierde una vida y se repite el nivel.</para>
 </listitem>
 <listitem>
 <para
@@ -631,43 +643,43 @@
 <para
 >La mayor parte de las reglas de &kgoldrunner; son las recogidas en la sección<link linkend="how-to-play"
 >Cómo jugar</link
->, sin embargo existen dos reglas que pueden afectar al estilo de juego, conocidas como «Tradicionales» y «&kgoldrunner;». Es importante saber a qué reglas atenerse mientras se está jugando. &kgoldrunner; selecciona automáticamente la configuración correcta para cada juego cuando está en uno de sus niveles. Las reglas de cada juego se muestran en el diálogo <link linkend="select-game-dialog"
+>. Sin embargo, existen dos reglas que pueden afectar al estilo de juego, conocidas como «Tradicionales» y de «&kgoldrunner;». Es importante saber a qué reglas atenerse cuando se juega. &kgoldrunner; selecciona automáticamente la configuración correcta para cada juego cuando estás en uno de sus niveles. Las reglas de cada juego se muestran en el diálogo <link linkend="select-game-dialog"
 >Seleccionar juego</link
 >.</para>
 
 <para
->La principal diferencia entre las reglas «Tradicionales» y «&kgoldrunner;» es la forma en que el enemigo sigue el camino hacia el héroe.</para>
+>La principal diferencia entre las reglas «Tradicionales» y de «&kgoldrunner;» es la forma en que el enemigo sigue el camino hacia el héroe.</para>
 
 <itemizedlist>
 <listitem>
 <para
->Con el método de búsqueda «tradicional», los enemigos buscan por rutas verticales (escaleras y fosas) e intentan estar sobre el héroe o a la misma altura que él. Solo van por debajo él como último recurso. Los enemigos no intentan cazar al héroe en horizontal hasta que no están a la misma altura que él y pueden encontrar una ruta horizontal. Esto conduce a situaciones en las que es posible «controlar» enemigos que están lejos y hacerles trabajar para usted, o al menos mantenerles alejados.</para>
+>Con el método de búsqueda «tradicional», los enemigos buscan por rutas verticales (escaleras y fosas) e intentan estar sobre el héroe o a la misma altura que él. Solo van por debajo él como último recurso. Los enemigos no intentan cazar al héroe en horizontal hasta que no están a la misma altura que él y pueden encontrar una ruta horizontal. Esto conduce a situaciones en las que es posible «controlar» enemigos que están lejos y hacerlos trabajar para ti, o al menos mantenerlos alejados.</para>
 </listitem>
 <listitem>
 <para
->Con las reglas «&kgoldrunner;» se buscan alternativamente rutas horizontales y verticales, con lo que hay una tendencia a tener a los enemigos más cerca y a la misma altura (&ie;, son más agresivos y no tan fáciles de manipular). Esto lo convierte más en un juego de acción, pero sin restar importancia a la estrategia y a la resolución de rompecabezas. El juego «Estado de terror», añadido en 2007, utiliza las reglas «&kgoldrunner;» y está lleno de rompecabezas para resolver mientras corre. De ahí la dificultad del juego.</para>
+>Con las reglas de «&kgoldrunner;» se buscan alternativamente rutas horizontales y verticales, con lo que hay una tendencia a tener a los enemigos más cerca y a la misma altura (es decir, son más agresivos y no tan fáciles de manipular). Esto lo convierte más en un juego de acción, pero sin restar importancia a la estrategia y a la resolución de rompecabezas. El juego «Estado de terror», añadido en 2007, utiliza las reglas de«&kgoldrunner;» y está lleno de rompecabezas que debes resolver mientras corres. De ahí la dificultad del juego.</para>
 </listitem>
 </itemizedlist>
 
 <para
->Las otras diferencias son la siguientes:</para>
+>Otras diferencias son las siguientes:</para>
 
 <itemizedlist>
 <listitem>
 <para
->En un juego «&kgoldrunner;» los enemigos y el héroe siempre se mueven a la misma velocidad y los ladrillos siempre tardan lo mismo en cerrarse. En un juego con las reglas «Tradicionales» la velocidad del juego depende del número de enemigos en el nivel. Mientras más enemigos haya más despacio irán. El héroe se vuelve lento pero no demasiado.</para>
+>En un juego «&kgoldrunner;», los enemigos y el héroe siempre se mueven a la misma velocidad y los ladrillos siempre tardan lo mismo en cerrarse. En un juego con las reglas «Tradicionales», la velocidad del juego depende del número de enemigos del nivel. Cuantos más enemigos haya, más despacio irán. El héroe se vuelve lento, pero no demasiado.</para>
 </listitem>
 <listitem>
 <para
->Con las reglas «Tradicionales» los enemigos recogen las pepitas de oro al pasar sobre ellas. Con las reglas «&kgoldrunner;» este es un hecho aleatorio. Los enemigos dejan las pepitas en ambos casos después de un tiempo aleatorio.</para>
+>Con las reglas «Tradicionales», los enemigos recogen las pepitas de oro al pasar sobre ellas. Con las reglas de «&kgoldrunner;», esto ocurre aleatoriamente. Los enemigos dejan las pepitas en ambos casos después de un tiempo aleatorio.</para>
 </listitem>
 <listitem>
 <para
->Con las reglas «Tradicionales» los enemigos pueden correr horizontalmente a través de los agujeros, y con las reglas «&kgoldrunner;» no. El truco en algunos niveles del juego con reglas «Tradicionales» consiste en liberar algún enemigo que esté detrás de una muralla de ladrillos. Cuando cava el ladrillo, él sale del agujero. En algunos niveles «&kgoldrunner;», por otro lado, debe ocultarse dentro o detrás de un ladrillo cavado para escapar del enemigo.</para>
+>Con las reglas «Tradicionales» los enemigos pueden correr horizontalmente a través de los agujeros, y con las reglas «&kgoldrunner;» no. El truco en algunos niveles del juego con reglas «Tradicionales» consiste en liberar algún enemigo que esté detrás de una muralla de ladrillos. Cuando caves el ladrillo, él sale del agujero. En algunos niveles «&kgoldrunner;», por otro lado, debes ocultarte dentro o detrás de un ladrillo cavado para escapar del enemigo.</para>
 </listitem>
 <listitem>
 <para
->Con las reglas «&kgoldrunner;» los enemigos al morir vuelven al punto de partida del nivel. Con las reglas «Tradicionales», reaparecen en un lugar al azar cerca de la parte superior del área de juego. Esto supone una gran diferencia, especialmente en los niveles en los que los enemigos recogen pepitas para usted, ya que los enemigos intentarán acercarse lo más posible en cuanto les haya matado.</para>
+>Con las reglas «&kgoldrunner;», cuando muere un enemigo vuelve al punto de partida del nivel. Con las reglas «Tradicionales», reaparecen en un lugar al azar cerca de la parte superior del área de juego. Esto supone una gran diferencia, especialmente en los niveles en los que los enemigos recogen pepitas para ti, ya que los enemigos intentarán acercarse lo más posible en cuanto los hayas matado.</para>
 </listitem>
 </itemizedlist>
 
@@ -696,41 +708,41 @@
 </screenshot>
 
 <para
->Este diálogo aparece cuando selecciona la acción <guimenuitem
+>Este diálogo aparece cuando seleccionas la acción <guimenuitem
 >Nueva partida...</guimenuitem
 > y también al seleccionar opciones del menú <guimenu
 >Editor</guimenu
 > o con cualquier opción de reproducción del menú <guimenu
 >Mover</guimenu
->. Puede usarlo para escoger un juego y un nivel para jugar, reproducir, editar, guardar, mover, renumerar o borrar. El botón inferior principal es <guibutton
+>. Puedes usarlo para escoger un juego y un nivel para jugar, reproducir, editar, guardar, mover, renumerar o borrar. El botón inferior principal es <guibutton
 >Aceptar</guibutton
->. Su etiqueta cambia en función de lo que se esté haciendo: En este caso, seleccionando un juego y un nivel para editarlo.</para>
+>. Su etiqueta cambia en función de lo que estés haciendo: en este caso, seleccionando un juego y un nivel para editarlo.</para>
 
 <sect2 id="selecting-a-game">
 <title
->Eligiendo un juego</title>
+>Selección de un juego</title>
 
 <para
->Existen algunos juegos de «Sistema» que vienen con la versión de &kgoldrunner; y puede añadir sus propios juegos utilizando el editor. Todos estos juegos aparecen en la parte superior del diálogo, agrupados por nivel de dificultad. Los juegos de tutorial aparecen al final de la lista y los juegos de habilidad normal aparecen primero. Para seleccionar uno de los juegos bastará con pulsar sobre su nombre.</para>
+>Existen algunos juegos del «Sistema» que vienen con la versión de &kgoldrunner; y puedes añadir tus propios juegos usando el editor. Todos estos juegos aparecen en la parte superior del diálogo, agrupados por nivel de dificultad. Los juegos de tutorial aparecen al final de la lista y los juegos de habilidad normal aparecen primero. Para seleccionar uno de los juegos, pulsa sobre su nombre.</para>
 
 <para
->La lista muestra que reglas se aplicarán a cada juego (consulte la <link linkend="choice-of-rules"
+>La lista muestra la reglas que se aplicarán a cada juego (consulta la <link linkend="choice-of-rules"
 >Elección de las reglas</link
->) y cuántos niveles tiene. Cuando selecciona un juego, un cuadro en la parte inferior muestra una pantalla con más información sobre el juego.</para>
+>) y cuántos niveles existen. Cuando selecciones un juego, un cuadro en la parte inferior muestra una pantalla con más información sobre él.</para>
 
 </sect2>
 
 <sect2 id="selecting-a-level">
 <title
->Eligiendo un nivel</title>
+>Selección de un nivel</title>
 
 <para
->Puede decidir comenzar en cualquier nivel, pero lo mejor es comenzar por el nivel 1 e ir subiendo, especialmente si está intentando conseguir una de las máximas puntuaciones. En general, los niveles con números más altos tienen mayor dificultad.</para>
+>Puedes decidir comenzar en cualquier nivel, pero lo mejor es comenzar por el nivel 1 e ir subiendo, especialmente si estás intentando conseguir una de las máximas puntuaciones. En general, los niveles con números más altos tienen mayor dificultad.</para>
 
 <para
 >Cuando se muestra el diálogo <guilabel
 >Seleccionar juego</guilabel
->, el nivel predeterminado será algo razonable, como el último nivel en el que jugó o que editó. Puede seleccionar cualquier nivel escribiéndolo o moviendo el deslizador. Las flechas al final del deslizador incrementan o reducen el número de uno en uno. También puede arrastrar el deslizador con el &LMB; manteniéndolo pulsado y cambiando el número de nivel rápidamente. O puede cambiar el número de nivel en pasos de 10 pulsando en el espacio superior o inferior del asa del deslizador.</para>
+>, el nivel predeterminado será algo razonable, como el último nivel en el que jugaste o que editaste. Puedes seleccionar cualquier nivel escribiéndolo o moviendo el deslizador. Las flechas que hay al final del deslizador aumentan o disminuyen el número de uno en uno. También puedes arrastrar el deslizador con el &LMB; manteniéndolo pulsado y cambiando el número de nivel rápidamente. También puedes cambiar el número de nivel en pasos de 10 pulsando en el espacio superior o inferior del asa del deslizador.</para>
 
 <para
 >Al cambiar el número de nivel, aparecerá la vista previa del nivel y el nombre del nivel (si tiene uno) en una ventanita.</para>
@@ -739,15 +751,15 @@
 
 <sect2 id="completing-selection">
 <title
->Completando la selección</title>
+>Completar la selección</title>
 
 <para
->Cuando se haya elegido un juego y un nivel, pulse el botón principal de la parte inferior para comenzar la edición o el juego, a jugarlo o a reproducirlo.</para>
+>Cuando hayas elegido un juego y un nivel, pulsa el botón principal de la parte inferior para comenzar la edición, a jugar o a reproducirlo.</para>
 
 <para
->Hasta que no haya hecho esto no habrá cambios, por ello siempre puede pulsar sobre el botón <guibutton
+>Hasta que no hagas esto, no habrá cambios, por ello siempre puedes pulsar el botón <guibutton
 >Cancelar</guibutton
-> y volver hacia atrás. Tenga en cuenta que mientras este diálogo esté activo el juego permanecerá parado, reanudándose en cuanto desaparezca si se ha pulsado <guibutton
+> y volver atrás. Ten en cuenta que mientras este diálogo esté activo, el juego permanecerá detenido, reanudándose en cuanto desaparezca si has pulsado <guibutton
 >Cancelar</guibutton
 >.</para>
 
@@ -758,26 +770,26 @@
 >Guardar los cambios</title>
 
 <para
->Si selecciona una opción en los menús <guimenu
+>Si seleccionas una opción en los menús <guimenu
 >Juego</guimenu
 > o <guimenu
 >Editor</guimenu
-> y estaba anteriormente editando y no guardó los cambios, aparecerá un mensaje preguntando si quiere guardar, abandonar o continuar con su trabajo. El cuadro de diálogo de selección de nivel para una acción nueva no aparecerá hasta que no haya tomado una decisión sobre su trabajo anterior.</para>
+> y estabas editando antes y no habías guardado los cambios, aparecerá un mensaje preguntando si quieres guardar, abandonar o continuar con tu trabajo. El diálogo de selección de nivel para una acción nueva no aparecerá hasta que no hayas tomado una decisión sobre tu trabajo anterior.</para>
 
 </sect2>
 
 <sect2 id="any-level">
 <title
->Jugando o editando un nivel «cualquiera»</title>
+>Jugar o editar un nivel «cualquiera»</title>
 
 <para
->Tenga en cuenta que los menús le permitirán seleccionar, jugar o editar «cualquier» nivel. Si empieza un juego posterior al nivel 1, perfecto, pero no se tendrá en cuenta la puntuación alcanzada para incluirla como máxima puntuación. Los jugadores más apasionados algunas veces prefieren jugar niveles con un número alto por diversión, raramente para conseguir la máxima puntuación, o puede «entrenarse» en niveles superiores antes de intentar batir la máxima puntuación.</para>
+>Ten en cuenta que los menús te permitirán seleccionar, jugar o editar «cualquier» nivel. Si empiezas un juego posterior al nivel 1, perfecto, pero no se tendrá en cuenta la puntuación que obtengas para incluirla en las puntuaciones máximas. Los jugadores más apasionados prefieren a veces jugar niveles con un número alto por diversión, raramente para conseguir la máxima puntuación, o puedes «entrenar» en niveles superiores antes de intentar batir la puntuación más alta.</para>
 
 <para
->Si selecciona un nivel de Sistema para su edición, perfecto también, pero debe guardarlo en uno de sus propios juegos, no en el juego de Sistema. Si es un nivel muy difícil, es posible que quiera cambiar el nivel de inicio para que empiece en el nivel cada vez que muera.</para>
+>Si seleccionas un nivel de sistema para editarlo, perfecto también, pero debes guardarlo en uno de tus propios juegos, no en el juego del sistema. Por ejemplo, es posible que quieras modificar un nivel muy difícil para que no tengas que volver al principio del nivel cada vez que mueras.</para>
 
 <para
->Para ver lo que esto significa intente jugar en el juego «Desafío», nivel 16, «los tres mosqueteros». Este nivel tiene aproximadamente 10 rompecabezas difíciles. Cuando se resuelve el rompecabezas 1, no querrá estar repitiéndolo mientras trabaja en el 2. El secreto es hacer una copia que se pueda editar, y a continuación modificarla cambiando el punto de salida del héroe hasta que haya resuelto todos los rompecabezas, y entonces intentarlo en un juego real.</para>
+>Para ver lo que significa esto, intenta jugar en el juego «Desafío», nivel 16, «los tres mosqueteros». Este nivel tiene aproximadamente 10 rompecabezas difíciles. Cuando se resuelve el rompecabezas 1, no querrás estar repitiéndolo mientras trabajas en el 2. El secreto es hacer una copia que se pueda editar y, a continuación, modificarla cambiando el punto de salida del héroe hasta que hayas resuelto todos los rompecabezas. Posteriormente puedes volver atrás e intentar el real, desde el principio hasta el final.</para>
 
 </sect2>
 </sect1>
@@ -785,11 +797,11 @@
 
 <chapter id="menu-reference">
 <title
->Referencia de los menús</title>
+>Referencia del menú</title>
 
 <sect1 id="menu-overview">
 <title
->Acerca de los menús</title>
+>Resumen de los menús</title>
 
 <variablelist>
 <varlistentry>
@@ -801,9 +813,9 @@
 ></term>
 <listitem>
 <para
->Este menú contiene las opciones que afectan al juego, tales como los puntos de inicio y fin de los juegos, guardar los juegos, cargar los juegos previamente guardados, mostrar las mejores puntuaciones y los consejos (si están disponibles). También contiene la opción <guimenuitem
+>Este menú contiene las opciones que afectan al juego, como son los puntos de inicio y fin de los juegos, guardar los juegos, cargar los juegos previamente guardados, mostrar las mejores puntuaciones y los consejos (si están disponibles). También contiene la opción <guimenuitem
 > Salir</guimenuitem
->. También puede salir pulsando en la <guiicon
+>. También puedes salir pulsando en la <guiicon
 >X</guiicon
 > de la parte superior derecha de la ventana de &kgoldrunner;.</para>
 </listitem>
@@ -818,7 +830,7 @@
 ></term>
 <listitem>
 <para
->Este menú contiene una opción para conseguir una pista (si existe). Los campeonatos y tutoriales tienen pistas para cada nivel. Los demás juegos en raras ocasiones tienen pistas. También contiene opciones para reproducir grabaciones del juego, como cuando se pone en marcha una demostración, mostrando ejemplos de soluciones o de sus propios esfuerzos.</para>
+>Este menú contiene una opción para obtener una pista (si existe). Los campeonatos y tutoriales tienen pistas para cada nivel. Los demás juegos en raras ocasiones tienen pistas. También contiene opciones para reproducir grabaciones del juego, como cuando se pone en marcha una demostración, mostrando ejemplos de soluciones o de tus propios esfuerzos.</para>
 </listitem>
 </varlistentry>
 
@@ -831,7 +843,7 @@
 ></term>
 <listitem>
 <para
->Este menú contiene una opción para alternar el modo a pantalla completa.</para>
+>Este menú contiene una opción para conmutar el modo a pantalla completa.</para>
 </listitem>
 </varlistentry>
 
@@ -845,11 +857,11 @@ linkend="editor-menu"
 ></term>
 <listitem>
 <para
->Este menú es todo lo que necesita para crear sus propios juegos y niveles y mantenerlos, incluyendo la posibilidad de reordenar los niveles o moverlos entre diferentes juegos, e incluso borrarlos cuando ya no sean necesarios. Cuando se reorganizan los niveles, los números de nivel se hacen consecutivos (sin huecos), renumerándose automáticamente.</para>
+>Este menú es todo lo que necesitas para crear tus propios juegos y niveles y mantenerlos, incluyendo la posibilidad de reordenar los niveles o moverlos entre diferentes juegos, e incluso borrarlos cuando ya no sean necesarios. Cuando se reorganizan los niveles, los números de nivel permanecen consecutivos (sin huecos), renumerándose automáticamente.</para>
 <para
->Cuando se está usando el editor de juegos aparecerá una barra de herramientas gráfica, con sus correspondientes ayudas. Vea el <link linkend="game-editor"
+>Cuando estés usando el editor de juegos aparecerá una barra de herramientas gráficas, con sus correspondientes ayudas. Consulta el <link linkend="game-editor"
 >editor de juegos</link
-> para obtener más detalles sobre cómo crear y editar los niveles en &kgoldrunner;.</para
+> para obtener más detalles sobre cómo crear y editar niveles de &kgoldrunner;.</para
 > </listitem>
 </varlistentry>
 
@@ -863,7 +875,7 @@ linkend="settings-menu"
 ></term>
 <listitem>
 <para
->Este menú tiene varios grupos de preferencias para &kgoldrunner;, que incluyen la elección del control a través del ratón, del teclado o de ambos (en portátiles), y la elección de los temas y de la velocidad del juego. Las selecciones actuales están marcadas. Las preferencias se seleccionan automáticamente cuando empieza a jugar, pero puede utilizar este menú para cambiarlas si lo desea.</para>
+>Este menú tiene varios grupos de preferencias para &kgoldrunner;, que incluyen la elección del control a través del ratón, del teclado o de ambos (en portátiles), y la elección de los temas y de la velocidad del juego. Las selecciones actuales están marcadas. Las preferencias se seleccionan automáticamente cuando empieces a jugar, aunque puedes usar este menú para cambiarlas, si lo deseas.</para>
 
 <para
 >También hay una opción para reasignar atajos de teclado y las teclas para controlar al héroe.</para>
@@ -889,7 +901,7 @@ linkend="settings-menu"
 <para
 >También existe una opción para informar de fallos o nuevas características deseadas.</para>
 <para
->Si quiere hacer alguna sugerencia o tiene nuevos niveles con los que contribuir, la dirección del correo electrónico del autor es la que aparece en la opción <guimenuitem
+>Si quieres hacer alguna sugerencia o tienes nuevos niveles con los que contribuir, la dirección del correo electrónico del autor es la que aparece en la opción <guimenuitem
 >Acerca de &kgoldrunner;</guimenuitem
 >.</para>
 </listitem>
@@ -900,7 +912,7 @@ linkend="settings-menu"
 
 <sect1 id="game-menu">
 <title
->El menú Jugar</title>
+>El menú Juego</title>
 
 <variablelist>
 <varlistentry>
@@ -922,9 +934,9 @@ linkend="settings-menu"
 <para
 >Muestra el diálogo <guilabel
 >Seleccionar juego</guilabel
-> (consulte <link linkend="select-game-dialog-box"
+> (consulta <link linkend="select-game-dialog-box"
 >Uso del diálogo de selección del juego</link
->), donde puede elegir un juego y un nivel para el mismo. Al principio lo más fácil es comenzar con el nivel 1, ya que los niveles están colocados en orden de dificultad. También es mejor comenzar aquí si está intentando conseguir una de las mejores puntuaciones.</para>
+>), donde puedes elegir un juego y un nivel para el mismo. Al principio, lo más fácil es comenzar con el nivel 1, ya que los niveles están colocados por orden de dificultad. También es mejor comenzar aquí si estás intentando conseguir una de las mejores puntuaciones.</para>
 </listitem>
 </varlistentry>
 
@@ -945,9 +957,9 @@ linkend="settings-menu"
 </term>
 <listitem>
 <para
->Muestra una tabla con las partidas grabadas, mostrando la última al principio. Cada línea muestra el juego, el nivel, el número de vidas, la puntuación el día de la semana, la fecha y la hora. Si selecciona una línea y pulsa el botón <guibutton
+>Muestra una tabla con las partidas grabadas, con la última al principio. Cada línea muestra la partida, el nivel, el número de vidas, la puntuación, el día de la semana, la fecha y la hora. Si seleccionas una línea y pulsas el botón <guibutton
 >Aceptar</guibutton
->, el juego comenzará al principio del nivel, con las vidas y la puntuación que se habían guardado.</para>
+>, empezarás a jugar al principio del nivel, con las vidas y la puntuación que se habían guardado.</para>
 </listitem>
 </varlistentry>
 
@@ -966,7 +978,7 @@ linkend="settings-menu"
 </term>
 <listitem>
 <para
->Carga el siguiente nivel del juego actual, listo para jugar sin ningún diálogo posterior. Puede usar esto para navegar rápidamente por los niveles de un juego.</para>
+>Carga el siguiente nivel del juego actual, listo para jugar sin ningún diálogo posterior. Puedes usar esto para explorar rápidamente los niveles de un juego.</para>
 </listitem>
 </varlistentry>
 
@@ -985,9 +997,9 @@ linkend="settings-menu"
 </term>
 <listitem>
 <para
->Guarda el juego, nivel, las vidas y la puntuación actuales. Esta opción solo guardará la posición y la puntuación al comienzo del nivel actual. Puede guardarla a la mitad del nivel, pero &kgoldrunner; únicamente guardará la posición (y la puntuación), que había al comenzar el nivel. Recibirá un aviso sobre esto. Antes de utilizar esta opción pulse la tecla de pausa (<keycap
+>Guarda el juego, nivel, las vidas y la puntuación actuales. Esta opción solo guardará la posición y la puntuación al comienzo del nivel actual. Puedes guardarla a la mitad del nivel, pero &kgoldrunner; únicamente guardará la posición (y la puntuación), que había al comenzar el nivel. Se mostrará un aviso sobre esto. Antes de usar esta opción, pulsa la tecla de pausa (<keycap
 >P</keycap
-> o &Esc;) para congelar el juego mientras mueve el ratón, aunque es mucho más recomendable utilizar la tecla <keycap
+> o &Esc;) para congelar el juego cuando mueves el ratón, aunque es mucho más recomendable usar la tecla <keycap
 >S</keycap
 > del atajo de teclado.</para>
 </listitem>
@@ -1010,9 +1022,9 @@ linkend="settings-menu"
 </term>
 <listitem
 ><para
->Esta opción está activada solo si ha estado usando el editor de juegos. Muestra el diálogo para <guilabel
+>Esta opción está activada solo si has estado usando el editor de juegos. Muestra el diálogo para <guilabel
 >Seleccionar juego</guilabel
-> y le permite escoger un nivel y un juego en el que se guardará su trabajo. Hace exactamente lo mismo que la opción del menú <menuchoice
+> y te permite escoger un nivel y un juego para guardar tu trabajo. Hace exactamente lo mismo que la opción del menú <menuchoice
 ><guimenu
 >Editor</guimenu
 > <guimenuitem
@@ -1066,7 +1078,7 @@ linkend="settings-menu"
 </term>
 <listitem>
 <para
->Para o continúa el juego.</para>
+>Detiene o continúa el juego.</para>
 </listitem>
 </varlistentry>
 
@@ -1127,7 +1139,7 @@ linkend="settings-menu"
 </term>
 <listitem>
 <para
->Finaliza &kgoldrunner; de forma inmediata. Si se está jugando, el juego desaparece para siempre a menos que haya sido grabado y no se tendrá en cuenta a la hora de establecer las puntuaciones más altas. Si estaba editando un nivel, se le dará una oportunidad para guardar su trabajo.</para>
+>Finaliza &kgoldrunner; de forma inmediata. Si estás jugando, el juego desaparece para siempre a menos que lo hayas guardado y no se tendrá en cuenta para las puntuaciones más altas. Si estabas editando un nivel, tendrás la oportunidad de guardar tu trabajo.</para>
 </listitem>
 </varlistentry>
 
@@ -1141,7 +1153,7 @@ linkend="settings-menu"
 
 <tip
 ><para
->Todos los movimientos de reproducción y demostración reproducirán niveles guardados previamente. Todos se pueden interrumpir y detener haciendo clic con el ratón en el área de juego, pulsando la tecla &Space; o seleccionando un elemento de menú o un atajo de teclado (como <menuchoice
+>Todos los movimientos de reproducción y demostración reproducirán niveles guardados previamente. Todos se pueden interrumpir y detener haciendo clic con el ratón en el área de juego, pulsando la tecla &Space; o seleccionando una opción del menú o un atajo de teclado (como <menuchoice
 ><guimenu
 >Juego</guimenu
 > <guimenuitem
@@ -1170,7 +1182,7 @@ linkend="settings-menu"
 </term>
 <listitem>
 <para
->Muestra una pista en forma de mensaje emergente, si es que existe, para el nivel que se está jugando. Por convención, los campeonatos y tutoriales tienen pistas para cada nivel. Los demás juegos en raras ocasiones las tienen. La parte inferior de la pantalla de &kgoldrunner; muestra si hay pista disponible o no.</para>
+>Muestra una pista en forma de mensaje emergente, si existe, para el nivel que estás jugando. Por convención, los campeonatos y los tutoriales tienen pistas para cada nivel. Los demás juegos las tienen en raras ocasiones. La parte inferior de la pantalla de &kgoldrunner; muestra si hay una pista disponible.</para>
 </listitem>
 </varlistentry>
 
@@ -1189,7 +1201,7 @@ linkend="settings-menu"
 </term>
 <listitem>
 <para
->Reproduce una demostración del juego de unos pocos niveles guardados. Son los mismos que en la demostración inicial.</para>
+>Reproduce una demostración del juego de algunos niveles guardados. Son los mismos de la demostración que se muestra al iniciar el juego.</para>
 </listitem>
 </varlistentry>
 
@@ -1223,7 +1235,7 @@ linkend="settings-menu"
 </term>
 <listitem>
 <para
->Detiene la reproducción en el nivel actual y reproduce la versión guardada del principio. Si interrumpe la reproducción, puede continuarla desde ese punto e intentar otra aproximación. Puede usar esta característica para desarrollar una secuencia de movimientos ganadora por etapas, pero esto invalidará cualquier récord de puntuación en el que estuviera trabajando.</para>
+>Detiene la reproducción en el nivel actual y reproduce la versión guardada desde el principio. Si interrumpes la reproducción, puedes continuarla desde ese punto e intentar otra aproximación. Puedes usar esta función para desarrollar una secuencia de movimientos ganadora por etapas, pero esto invalidará cualquier récord de puntuación en el que estuvieras trabajando.</para>
 </listitem>
 </varlistentry>
 
@@ -1242,7 +1254,7 @@ linkend="settings-menu"
 </term>
 <listitem>
 <para
->Reproduce desde el principio la versión guardada del último nivel que ha jugado (por ejemplo, si ha perdido en el nivel). Si interrumpe la reproducción, puede continuarla desde ese punto e intentar otra aproximación. Puede usar esta característica para desarrollar una secuencia de movimientos ganadora por etapas, pero esto invalidará cualquier récord de puntuación en el que estuviera trabajando.</para>
+>Reproduce desde el principio la versión guardada del último nivel que has jugado (por ejemplo, si has perdido en el nivel). Si interrumpes la reproducción, puedes continuarla desde ese punto e intentar otra aproximación. Puedes usar esta función para desarrollar una secuencia de movimientos ganadora por etapas, pero esto invalidará cualquier récord de puntuación en el que estuvieras trabajando.</para>
 </listitem>
 </varlistentry>
 
@@ -1257,7 +1269,7 @@ linkend="settings-menu"
 </term>
 <listitem>
 <para
->Reproduce la versión guardada de cualquier nivel que haya jugado previamente. </para>
+>Reproduce la versión guardada de cualquier nivel que hayas jugado previamente. </para>
 </listitem>
 </varlistentry>
 
@@ -1313,7 +1325,7 @@ linkend="settings-menu"
 </term>
 <listitem>
 <para
->Muestra la barra de herramientas del editor y un área de juego en blanco en la que podrá dibujar un nuevo nivel. Cuando haya terminado, use la opción <guimenuitem
+>Muestra la barra de herramientas del editor y un área de juego en blanco en la que podrás dibujar un nuevo nivel. Cuando hayas terminado, usa la opción <guimenuitem
 >Guardar ediciones...</guimenuitem
 >, con lo que se asignará un número al nivel, que a su vez se añadirá a un juego.</para>
 </listitem>
@@ -1332,7 +1344,7 @@ linkend="settings-menu"
 <para
 >Muestra el diálogo de <guilabel
 >Selección de juego</guilabel
-> en el que se escoge el nivel a editar. Podrá elegir un juego del sistema y un nivel, aunque se mostrará una advertencia indicando que solo se puede guardar el nivel modificado en uno de sus propios juegos.</para>
+> en el podrás escoger el nivel que quieras editar. Podrás elegir un juego del sistema y un nivel, aunque se mostrará una advertencia indicando que solo se puede guardar el nivel modificado en uno de tus propios juegos.</para>
 </listitem>
 </varlistentry>
 
@@ -1355,9 +1367,9 @@ linkend="settings-menu"
 <para
 >Muestra el diálogo de <guilabel
 >Seleccionar juego</guilabel
-> con los ajustes predeterminados apropiados para guardar un nivel nuevo o editado. Puede cambiar el juego y el nivel, lo que tendrá un efecto similar a «Guardar como...». Este diálogo tiene un botón especial, <guibutton
+> con los ajustes predeterminados apropiados para guardar un nivel nuevo o editado. Puedes cambiar el juego y el nivel, lo que tendrá un efecto similar a «Guardar como...». Este diálogo tiene un botón especial, <guibutton
 >Editar nombre del nivel o pista</guibutton
->, que muestra un diálogo donde podrá añadir un nombre opcional y una pista para su nivel.</para>
+>, que muestra un diálogo donde podrás añadir un nombre opcional y una pista para el nivel.</para>
 </listitem>
 </varlistentry>
 
@@ -1374,9 +1386,9 @@ linkend="settings-menu"
 <para
 >Esta es una operación en dos pasos. Antes de usar <guimenuitem
 >Mover nivel...</guimenuitem
->, debe cargar el nivel que se moverá, seleccionándolo para editarlo o para jugar. Luego se mostrará el diálogo <guilabel
+>, debes cargar el nivel que se moverá, seleccionándolo para editarlo o para jugar. Luego se mostrará el diálogo <guilabel
 >Seleccionar juego</guilabel
->, donde escogerá un nuevo lugar para el nivel cargado. Puede cambiar tanto el juego como el nivel, para mover un nivel a otro juego, o solo el nivel para reordenar los niveles dentro de un juego. No puede mover un nivel del sistema.</para>
+>, donde escogerás un nuevo lugar para el nivel cargado. Puedes cambiar tanto el juego como el nivel, para mover un nivel a otro juego, o solo el nivel para reordenar los niveles dentro de un juego. No puedes mover un nivel del sistema.</para>
 </listitem>
 </varlistentry>
 
@@ -1393,7 +1405,7 @@ linkend="settings-menu"
 <para
 >Muestra el diálogo <guilabel
 >Seleccionar juego</guilabel
->, donde podrá escoger el nivel que se va a borrar. Los niveles del sistema no se pueden borrar.</para>
+>, donde podrás escoger el nivel que se va a borrar. Los niveles del sistema no se pueden borrar.</para>
 </listitem>
 </varlistentry>
 
@@ -1408,7 +1420,7 @@ linkend="settings-menu"
 </term>
 <listitem>
 <para
->Esta opción se utiliza antes de empezar a crear sus propios niveles de &kgoldrunner;. Muestra un diálogo en el que se podrá introducir el nombre para el nuevo juego, entre 1 y 5 caracteres para el prefijo de los nombres de los niveles, las reglas por defecto de los niveles («&kgoldrunner;» o «Tradicionales») y una descripción o un comentario opcionales acerca del juego.</para>
+>Esta opción se utiliza antes de empezar a crear tus propios niveles de &kgoldrunner;. Muestra un diálogo en el que podrás introducir el nombre para el nuevo juego, entre 1 y 5 caracteres para el prefijo de los nombres de los niveles, las reglas por defecto de los niveles («&kgoldrunner;» o «Tradicionales») y una descripción o un comentario opcional sobre el juego.</para>
 </listitem>
 </varlistentry>
 
@@ -1418,14 +1430,14 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 ><guimenuitem
-> Editar información de la partida...</guimenuitem
+> Editar información del juego...</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
 <para
 >Muestra el diálogo <guilabel
 >Seleccionar juego</guilabel
->, donde puede escoger un juego para editarlo, mostrándose a continuación información sobre el mismo en un diálogo donde podrá editar el nombre, las reglas y la descripción, pero no el prefijo del nombre de archivo, en el caso de que haya guardado varios niveles. Esto es así porque el prefijo se usa internamente en los archivos de nivel.</para>
+>, donde puedes escoger un juego para editarlo, mostrándose a continuación información sobre el mismo en un diálogo donde podrás modificar el nombre, las reglas y la descripción, pero no el prefijo del nombre del archivo, en el caso de que hayas guardado varios niveles. Esto es así porque el prefijo se usa internamente en los archivos de nivel.</para>
 </listitem>
 </varlistentry>
 
@@ -1449,7 +1461,7 @@ linkend="settings-menu"
 ></term>
 <listitem>
 <para
->Este menú le permite elegir el tema del fondo o «mundos» en los que jugar. Puede cambiar el tema en cualquier momento, incluso mientras está jugando. Para aquellos con inclinaciones artísticas, es posible componer temas nuevos, incluyendo gráficos y sonidos, y añadirlos a &kgoldrunner;. Contacte con el autor para obtener los detalles.</para>
+>Este menú te permite elegir el tema del fondo (o «mundo») en el que vas a jugar. Puedes cambiar el tema en cualquier momento, incluso mientras estás jugando. Para quienes tengan inclinaciones artísticas, se pueden componer temas nuevos, con gráficos y sonidos, y añadirlos a &kgoldrunner;. Ponte en contacto con el autor para obtener más detalles.</para>
 <variablelist>
 
 <varlistentry>
@@ -1459,7 +1471,7 @@ linkend="settings-menu"
 ></term>
 <listitem>
 <para
->Matt Goldrunner se encuentra en un antiguo templo egipcio, y le persiguen momias que están determinadas a proteger sus joyas ancestrales a cualquier precio.</para>
+>Matt Goldrunner se encuentra en un antiguo templo egipcio, perseguido por momias que están determinadas a proteger sus joyas ancestrales a cualquier precio.</para>
 </listitem>
 </varlistentry>
 
@@ -1470,14 +1482,14 @@ linkend="settings-menu"
 ></term>
 <listitem>
 <para
->Este tema esta diseñado para unidades gráficas pobres y se dibuja solo en blanco y negro. Se pretende ayudar a los jugadores que tienen problemas visuales. El autor apreciaría respuestas de correo electrónico indicándole lo efectivo que es y las mejoras de visibilidad que podrían hacerse.</para>
+>Este tema esta diseñado para equipos con recursos gráficos muy modestos y solo usa blanco y negro. Está indicado para jugadores que tienen problemas visuales. El autor apreciaría respuestas por correo electrónico que indiquen si es realmente efectivo y si se podría hacer alguna mejora de visibilidad.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term
 ><guimenuitem
->Por omisión de &kgoldrunner;</guimenuitem
+>Predeterminado de &kgoldrunner;</guimenuitem
 ></term>
 <listitem>
 <para
@@ -1492,7 +1504,7 @@ linkend="settings-menu"
 ></term>
 <listitem>
 <para
->Nuestro héroe está atrapado dentro de una máquina ¿escapará cuando alcance el último nivel?</para>
+>Nuestro héroe está atrapado dentro de una máquina. ¿Escapará cuando alcance el último nivel?</para>
 </listitem>
 </varlistentry>
 
@@ -1503,7 +1515,7 @@ linkend="settings-menu"
 ></term>
 <listitem>
 <para
->Evoca el juego del Apple II, en los que los ladrillos y el hormigón eran de un bonito color azul, el héroe era blanco, los enemigos tenía pantalones blancos y camisetas naranjas (color carne) y el oro tiene cuadros blancos con paneles naranjas. Se utiliza el efecto fuzzier (un sistema de suavizado por hardware), hecho con ladrillos, que da una impresión tridimensional, difícil de recrear en los monitores de puntos hoy día.</para>
+>Evoca el juego de Apple II, donde los ladrillos y el hormigón eran de un bonito color azul, el héroe era blanco, los enemigos tenían pantalón blanco y camiseta naranja (de color carne) y el oro tenía cuadros blancos con paneles naranjas. Se usa un efecto «fuzzier» (un sistema de suavizado por hardware), que hace que los ladrillos tengan una apariencia casi tridimensional (difícil de recrear en los monitores nítidos de hoy en día).</para>
 </listitem>
 </varlistentry>
 
@@ -1514,7 +1526,7 @@ linkend="settings-menu"
 ></term>
 <listitem>
 <para
->Evoca los días de los juegos del Apple II y Commodore 64 originales, en los que tenía que enchufar su máquina a su TV, si es que no tenía un monitor monocromo. Para aquellos que no recuerdan aquellos días heroicos, no se trata de una reproducción exacta, pero les da una idea general. Por ejemplo, el héroe era blanco, y hoy es azul.</para>
+>Evoca los días de los juegos de Apple II y Commodore 64 originales, en los que había que conectar la máquina a la TV cuando no se disponía de un monitor monocromo. Para los que no recuerden aquellos días heroicos, no se trata de una reproducción exacta, aunque da una idea general. Por ejemplo, el héroe era blanco, mientras que hoy es azul.</para>
 </listitem>
 </varlistentry>
 
@@ -1548,7 +1560,7 @@ linkend="settings-menu"
 ></term>
 <listitem>
 <para
->Activa o desactiva los sonidos de pisadas.</para>
+>Activa o desactiva los sonidos de las pisadas.</para>
 </listitem>
 </varlistentry>
 
@@ -1563,7 +1575,7 @@ linkend="settings-menu"
 ></term>
 <listitem>
 <para
->Activa o desactiva la demostración del inicio (ver <link linkend="how-to-play"
+>Activa o desactiva la demostración del inicio (consulta <link linkend="how-to-play"
 >Comenzar el juego</link
 >).</para>
 </listitem>
@@ -1580,7 +1592,7 @@ linkend="settings-menu"
 ></term>
 <listitem>
 <para
->Activa el control del héroe con el ratón (ver <link linkend="mouse-control"
+>Activa el control del héroe con el ratón (consulta <link linkend="mouse-control"
 > Moverse</link
 >).</para>
 </listitem>
@@ -1597,7 +1609,7 @@ linkend="settings-menu"
 ></term>
 <listitem>
 <para
->Activa el control del héroe con el teclado (ver <link linkend="keyboard-control"
+>Activa el control del héroe con el teclado (consulta <link linkend="keyboard-control"
 >Control con el teclado</link
 >).</para>
 </listitem>
@@ -1614,7 +1626,7 @@ linkend="settings-menu"
 ></term>
 <listitem>
 <para
->Establece el control híbrido del héroe para equipos portátiles, donde se utiliza el touchpad u otro dispositivo señalador para guiar al héroe y el teclado para cavar a izquierda y derecha.</para>
+>Usa el control híbrido del héroe para equipos portátiles, donde se utiliza el panel táctil u otro dispositivo apuntador para guiar al héroe, y el teclado para cavar a izquierda y derecha.</para>
 </listitem>
 </varlistentry>
 
@@ -1629,7 +1641,7 @@ linkend="settings-menu"
 ></term>
 <listitem>
 <para
->En el modo de teclado, pulse una tecla de dirección para empezar a moverse y continuar el movimiento hasta que pulse otra tecla.</para>
+>En el modo de teclado, pulsa una tecla de dirección para empezar a moverte y continuar el movimiento hasta que pulses otra tecla.</para>
 </listitem>
 </varlistentry>
 
@@ -1644,7 +1656,7 @@ linkend="settings-menu"
 ></term>
 <listitem>
 <para
->En el modo de teclado, mantenga pulsada una tecla de dirección para moverse y suéltela para detenerse.</para>
+>En el modo de teclado, mantén pulsada una tecla de dirección para moverte y suéltala para detenerte.</para>
 </listitem>
 </varlistentry>
 
@@ -1674,7 +1686,7 @@ linkend="settings-menu"
 ></term>
 <listitem>
 <para
->Activa la velocidad de principiante (6 unidades, la mitad de lo normal).</para>
+>Activa la velocidad de principiante (5 unidades, la mitad de lo normal).</para>
 </listitem>
 </varlistentry>
 
@@ -1689,7 +1701,7 @@ linkend="settings-menu"
 ></term>
 <listitem>
 <para
->Activa la velocidad de campeón (18 unidades, 1,5 veces la velocidad normal).</para>
+>Activa la velocidad de campeón (15 unidades, una vez y media la velocidad normal).</para>
 </listitem>
 </varlistentry>
 
@@ -1708,7 +1720,7 @@ linkend="settings-menu"
 ></term>
 <listitem>
 <para
->Incrementa la velocidad del juego en una unidad, hasta un máximo de 20 unidades (el doble de la velocidad normal). Puede usar el atajo de teclado <keycap
+>Aumenta la velocidad del juego en una unidad, hasta un máximo de 20 unidades (el doble de la velocidad normal). Puedes usar el atajo de teclado <keycap
 >+</keycap
 >.</para>
 </listitem>
@@ -1729,7 +1741,7 @@ linkend="settings-menu"
 ></term>
 <listitem>
 <para
->Disminuye la velocidad del juego en una unidad, hasta un mínimo de 2 unidades (la quinta parte de la velocidad normal). También puede usar el atajo de teclado <keycap
+>Disminuye la velocidad del juego en una unidad, hasta un mínimo de 2 unidades (la quinta parte de la velocidad normal). También puedes usar el atajo de teclado <keycap
 >-</keycap
 >.</para>
 </listitem>
@@ -1746,7 +1758,7 @@ linkend="settings-menu"
 ></term>
 <listitem>
 <para
->En el escritorio de &kde; este elemento permite cambiar las asociaciones de teclado (&eg;, control del héroe a través del teclado) o asociar sus propios atajos de teclado para cada elemento del menú.</para>
+>En el escritorio de &kde;, este elemento permite cambiar las asociaciones de teclado (por ejemplo, para controlar al héroe con el teclado) o asociar tus propios atajos de teclado para cada elemento del menú.</para>
 </listitem>
 </varlistentry>
 
@@ -1760,7 +1772,7 @@ linkend="settings-menu"
 <para
 >Además, &kgoldrunner; tiene las opciones de menú <guimenu
 >Ayuda</guimenu
-> comunes de &kde;. Para obtener más información, consulte las secciones sobre el <ulink url="help:/fundamentals/menus.html#menus-help"
+> comunes de &kde;. Para obtener más información, consulta las secciones sobre el <ulink url="help:/fundamentals/menus.html#menus-help"
 >Menú «Ayuda»</ulink
 > de los «Aspectos básicos de &kde;». </para>
 
@@ -1774,63 +1786,63 @@ linkend="settings-menu"
 
 <sect1 id="editor-start">
 <title
->Comenzando con el editor</title>
+>Primeros pasos con el editor</title>
 
 <sect2 id="creating-a-game">
 <title
->Creando un Juego</title>
+>Creación de un Juego</title>
 
 <para
->Antes de crear o editar un nivel de &kgoldrunner;, debe crear un juego en el que guardarlo. Use la opción del menú <menuchoice
+>Antes de crear o modificar un nivel de &kgoldrunner;, debes crear un juego en el que guardarlo. Usa la opción del menú <menuchoice
 ><guimenu
 >Editor</guimenu
 > <guimenuitem
 >Crear juego...</guimenuitem
 ></menuchoice
->. Si se olvida de ello, se le mostrará un recordatorio.</para>
+>. Si te olvidas de ello, se mostrará un recordatorio.</para>
 
 <para
->La decisión más importante que se tendrá que tomar es elegir las reglas que se van a seguir («Tradicionales» o «&kgoldrunner;», ver <link linkend="choice-of-rules"
+>La decisión más importante que tendrás que tomar es la elección de las reglas que se van a seguir («Tradicionales» o de «&kgoldrunner;», consulta <link linkend="choice-of-rules"
 >Elegir las reglas</link
->) y elegir un nombre único de entre 1 y 15 caracteres. También necesitará dar un nombre y escribir la descripción del juego, aunque tanto uno como otra se podrán cambiar fácilmente a posteriori.</para>
+>) y escoger un nombre único de entre 1 y 15 caracteres. También tendrás que darle un nombre y escribir la descripción del juego, aunque podrás cambiar estas dos cosas posteriormente con facilidad.</para>
 
 <para
->El prefijo lo usa &kgoldrunner; internamente para identificar los archivos de nivel, las mejores puntuaciones y los juegos guardados. Puede utilizar sus iniciales como prefijo, siempre que no coincidan con un prefijo de &kgoldrunner;. En este momento se usan los prefijos «level», «plws», «wad», «plwv», «sot», «tute» y «tutea».</para>
+>El prefijo lo usa &kgoldrunner; internamente para identificar los archivos de nivel, las mejores puntuaciones y los juegos guardados. Puedes usar tus iniciales como prefijo, siempre que no coincidan con un prefijo de &kgoldrunner;. En este momento se usan los prefijos «level», «plws», «wad», «plwv», «sot», «tute» y «tutea».</para>
 
 <para
->El prefijo de cuatro letras «tute» está reservado para los juegos tutoriales, que muestran la descripción del juego y los consejos en cada nivel mientras se está jugando. Si crea su propio juego tutorial puede utilizar el prefijo «tutex», para crear un tutorial y no confundirlo con los básicos, como son tutorial o tutorial avanzado (prefijos «tute» y «tutea»).</para>
+>El prefijo de cuatro letras «tute» está reservado para los juegos de tutorial, que muestran la descripción del juego y los consejos en cada nivel mientras juegas. Si creas tu propio juego de tutorial, puedes usar el prefijo «tutex», para crear un tutorial y no confundirlo con los básicos, como «Tutorial» o «Tutorial avanzado» (prefijos «tute» y «tutea»).</para>
 
 </sect2>
 
 <sect2 id="creating-a-level">
 <title
->Creando un nivel</title>
+>Creación de un nivel</title>
 
 <para
->Cuando haya configurado un juego, use la opción del menú <menuchoice
+>Cuando hayas configurado un juego, usa la opción del menú <menuchoice
 ><guimenu
 >Editor</guimenu
 > <guimenuitem
 >Crear nivel</guimenuitem
 ></menuchoice
-> para empezar a crear un nivel. Le proporciona un área en blanco de 28x20 cuadrados, con el héroe en la parte superior izquierda. Si lo prefiere, puede colocar al héroe en cualquier otra parte y tampoco tiene que usar la totalidad del área de 28x20. Un buen número de niveles interesantes usan áreas pequeñas.</para>
+> para empezar a crear un nivel. Te proporciona un área en blanco de 28x20 cuadrados, con el héroe en la parte superior izquierda. Si lo prefieres, puedes colocar al héroe en cualquier otra parte. Tampoco tienes que usar la totalidad del área de 28x20. Un buen número de niveles interesantes usan áreas más pequeñas.</para>
 
 <para
->Los requerimientos mínimos para que un nivel sea jugable es tener un héroe que esté situado sobre algo en la parte superior del área de juego, pero eso es un caso trivial. De una forma más realista, podría tener un laberinto que resolver y algunas escaleras visibles que lleven arriba, pero sin oro. No necesita tener enemigos, oro, barras, escaleras ocultas o incluso ladrillos. Hay muchos niveles desafiantes que no tienen enemigos ni ladrillos; sin embargo, la mayoría de niveles tienen al menos una pieza de oro, algunos enemigos y algunas escaleras ocultas que aparecen cuando la última pieza de oro es recogida.</para>
+>El requisito mínimo para que un nivel se pueda jugar es tener un héroe que esté situado sobre algo en la parte superior del área de juego, pero eso es un caso trivial. De una forma más realista, podrías tener un laberinto que se deba resolver y algunas escaleras visibles que lleven arriba, pero sin oro. No necesitas tener enemigos, oro, barras, escaleras ocultas ni ladrillos. Hay muchos niveles desafiantes que no tienen enemigos ni ladrillos; sin embargo, la mayoría de los niveles tienen al menos una pieza de oro, algunos enemigos y algunas escaleras ocultas que aparecen cuando se recoge la última pieza de oro.</para>
 
 </sect2>
 </sect1>
 
 <sect1 id="editing-and-testing">
 <title
->Editar y comprobar</title>
+>Edición y comprobación</title>
 
 <sect2 id="editing-a-level">
 <title
 >Editar un nivel</title>
 
 <para
->Use la opción del menú <menuchoice
+>Usa la opción del menú <menuchoice
 ><guimenu
 >Editor</guimenu
 > <guimenuitem
@@ -1845,7 +1857,7 @@ linkend="settings-menu"
 > para empezar a editar un nuevo nivel.</para>
 
 <para
->Si elige un nivel de Sistema, será avisado de que no podrá guardarlo a no ser en uno de sus propios juegos. En otro caso, lo predeterminado es guardar el nivel en el anterior, pero puede cambiar esto.</para>
+>Si eliges un nivel del sistema, se te recordará que no podrás guardarlo a no ser que lo hagas en uno de tus propios juegos. En cualquier otro caso, lo predeterminado es guardar el nivel en el anterior, pero puedes cambiar esto.</para>
 
 </sect2>
 
@@ -1854,13 +1866,13 @@ linkend="settings-menu"
 >Dibujar objetos en un nivel</title>
 
 <para
->La imagen inferior muestra la barra de herramientas de edición, que aparecerá cuando elige las opciones <guimenuitem
+>La imagen inferior muestra la barra de herramientas de edición, que aparecerá cuando elijas las opciones <guimenuitem
 >Crear nivel</guimenuitem
 > o <guimenuitem
 >Editar nivel...</guimenuitem
 > en el menú <guimenu
 >Editor</guimenu
->, cambiando del modo de juego al modo de edición. Desaparecerá al volver al modo de juego. Tenga en cuenta que en el modo de edición los falsos ladrillos y las escaleras ocultas son visibles en el área de juego.</para>
+>, cambiando del modo de juego al modo de edición. Desaparecerá al volver al modo de juego. Ten en cuenta que en el modo de edición los falsos ladrillos y las escaleras ocultas son visibles en el área de juego.</para>
 
 <para
 >Los tres iconos de la parte izquierda de la barra de herramientas de edición tienen las mismas acciones que las opciones del menú <guimenuitem
@@ -1873,7 +1885,7 @@ linkend="settings-menu"
 
 
 <para
->De izquierda a derecha los otros once iconos son, <guiicon
+>De izquierda a derecha, los otros once iconos son: <guiicon
 >Nombre/pista</guiicon
 > (bombilla encendida), <guiicon
 >Borrar</guiicon
@@ -1895,7 +1907,7 @@ linkend="settings-menu"
 >poste (o barra)</guiicon
 > y <guiicon
 >pepita de oro</guiicon
->. Los gráficos para estos iconos, excepto para la bombilla encendida se copian del tema de &kgoldrunner; que esté utilizando.</para>
+>. Los gráficos para estos iconos, excepto para la bombilla encendida, se copian del tema de &kgoldrunner; que estés usando.</para>
 
 <screenshot>
 <screeninfo
@@ -1914,61 +1926,61 @@ linkend="settings-menu"
 <para
 >El icono de <guiicon
 >Nombre/pista</guiicon
-> hará aparecer un diálogo con el que crear o editar el nombre del nivel y la pista. Ambos son opcionales, y a la vez esenciales para los niveles del tutorial y es normal usarlos en los niveles más difíciles, como los juegos de los campeonatos (ver el juego «La venganza de Peter W»).</para>
+> mostrará un diálogo para crear o editar el nombre del nivel y la pista. Ambos son opcionales y, a la vez, esenciales para los niveles de tutorial y es normal que se usen en los niveles más difíciles, como los juegos de campeonato (consulta el juego «La venganza de Peter W»).</para>
 
 <para
->Cuando pulse alguno de los otros 10 iconos, el ratón se convierte en una «brocha» que dibuja este icono. Inicialmente la brocha activada es el «ladrillo».</para>
+>Cuando pulses alguno de los otros 10 iconos, el ratón se convierte en una «brocha» que dibuja dicho icono. La brocha que se está activada al principio es la de «ladrillo».</para>
 
 <para
->Puede dibujar en cualquier punto pulsando con el &LMB;, para poner un único objeto en un cuadro, o manteniéndolo apretado y arrastrando el &LMB; para rellenar un área, como una escalera larga, o un bloque grande de ladrillos o un suelo de cemento. Parará de dibujar en el momento en que suelte el botón del ratón. Si comete un error puede utilizar el &RMB; para borrarlo, o seleccionar el icono <guiicon
+>Puedes dibujar en cualquier punto pulsando con el &LMB;, para poner un único objeto en un cuadro, o manteniéndolo pulsado y arrastrando el &LMB; para rellenar un área, como una escalera larga, un bloque grande de ladrillos o un suelo de cemento. Dejará de dibujar en el momento en que sueltes el botón del ratón. Si cometes un error, puedes usar el &RMB; para borrarlo, o seleccionar el icono <guiicon
 >Borrar</guiicon
 > y dibujar con él.</para>
 
 <para
->El icono del héroe funciona de forma diferente, puesto que solo puede haber un héroe, por tanto solo se moverá desde su posición inicial a la posición en la que haya liberado el botón del ratón.</para>
+>El icono del héroe funciona de forma diferente: como solo puede haber un héroe, solo se moverá desde su posición inicial a la posición en la que hayas soltado el botón del ratón.</para>
 
 </sect2>
 
 <sect2 id="saving-your-work">
 <title
->Guardando su trabajo</title>
+>Guardar el trabajo</title>
 
 <para
->Cuando termine de dibujar, guarde su trabajo usando el icono del <guiicon
+>Cuando termines de dibujar, guarda tu trabajo usando el icono del <guiicon
 >disco</guiicon
 > o una de las opciones del menú <menuchoice
 ><guimenu
 >Editor</guimenu
 > <guimenuitem
->Guardar las ediciones...</guimenuitem
+>Guardar ediciones...</guimenuitem
 ></menuchoice
 > o <menuchoice
 ><guimenu
 >Juego</guimenu
 > <guimenuitem
->Guardar las ediciones...</guimenuitem
+>Guardar ediciones...</guimenuitem
 ></menuchoice
->. Debe guardar siempre en sus propios juegos, nunca en los juegos del sistema.</para>
+>. Debes guardar siempre en tus propios juegos, nunca en los juegos del sistema.</para>
 
 <para
->Si está creando un nivel, use el diálogo <guilabel
+>Si estás creando un nivel, usa el diálogo <guilabel
 >Seleccionar juego</guilabel
-> para asociarlo a un juego y a un número de nivel. Puede usar el mismo diálogo si ya estaba editando el nivel, aunque por defecto se guardará en el mismo al que pertenecía. Puede cambiar el juego y el nivel, lo que tiene el mismo efecto que si utilizase la opción «Guardar como». Si está editando un nivel del sistema, deberá guardarlo como una copia en uno de sus propios juegos.</para>
+> para asociarlo a un juego y a un número de nivel. Puedes usar el mismo diálogo si ya estabas editando el nivel, aunque por defecto se guardará en el mismo al que pertenecía. Puedes cambiar el juego y el nivel, lo que tiene el mismo efecto que si usaras la opción «Guardar como». Si estás editando un nivel del sistema, deberás guardarlo como una copia en uno de tus propios juegos.</para>
 
 </sect2>
 
 <sect2 id="adding-name-and-hint">
 <title
->Añadir un nombre de nivel y un consejo</title>
+>Añadir un nombre de nivel y una pista</title>
 
 <para
 >En la sección «Guardar» del diálogo <guilabel
 >Seleccionar juego</guilabel
 > hay un botón <guibutton
 >Editar el nombre del nivel o la pista</guibutton
->. Puede usarlo para dar los últimos retoques a su nivel añadiendo un nombre y una pista. Ambos son opcionales, aunque son esenciales para los niveles del tutorial y suele ser habitual proporcionarlos en niveles muy difíciles, como los juegos del «Campeonato» (consulte el juego «La venganza de Peter W»). Por supuesto, también puede usar el icono <guiicon
+>. Puedes usarlo para dar los últimos retoques a tu nivel añadiendo un nombre y una pista. Ambos son opcionales, aunque son esenciales para los niveles de tutorial y suelen ser habituales en niveles muy difíciles, como los juegos de «Campeonato» (consulta el juego «La venganza de Peter W»). Por supuesto, también puedes usar el icono <guiicon
 >Editar nombre/pista</guiicon
-> en cualquier momento para añadir o editar el nombre y la pista.</para>
+> en cualquier momento para añadir o modificar el nombre y la pista.</para>
 
 </sect2>
 
@@ -1977,19 +1989,19 @@ linkend="settings-menu"
 >Comprobar un nivel</title>
 
 <para
->Después de guardar un nivel editado, puede probarlo usando la opción del menú <menuchoice
+>Después de guardar un nivel editado, puedes probarlo usando la opción del menú <menuchoice
 ><guimenu
 >Juego</guimenu
 > <guimenuitem
 >Nuevo juego...</guimenuitem
 ></menuchoice
-> o el correspondiente atajo del teclado. De forma predeterminada, el juego y el número del nivel se recuerdan, por lo que puede ir directamente a dicho nivel con unos pocos clics. Si desea editar alguna cosa más, lo mismo sigue siendo cierto si vuelve a usar la opción del menú <menuchoice
+> o el correspondiente atajo del teclado. De forma predeterminada, el juego y el número del nivel se recuerdan, por lo que puedes ir directamente a dicho nivel con unos pocos clics. Si deseas modificar algo más, lo mismo sigue siendo cierto si vuelves a usar la opción del menú <menuchoice
 ><guimenu
 >Juego</guimenu
 > <guimenuitem
 >Editar nivel...</guimenuitem
 ></menuchoice
->. Es esencial que pruebe todos los niveles que cree para asegurarse de que se pueden completar y que no son demasiado fáciles.</para>
+>. Es esencial que pruebes todos los niveles que crees para asegurarte de que se pueden completar y no son demasiado fáciles.</para>
 
 </sect2>
 </sect1>
@@ -2000,23 +2012,23 @@ linkend="settings-menu"
 
 <sect2 id="moving-a-level">
 <title
->Moviendo un nivel</title>
+>Mover un nivel</title>
 
 <para
->Puede usar la opción <guimenuitem
+>Puedes usar la opción <guimenuitem
 >Mover nivel</guimenuitem
 > del menú <guimenu
 >Editor</guimenu
 > para reordenar o renumerar los niveles de un juego o para mover un nivel de un juego a otro. <guimenuitem
 >Mover nivel</guimenuitem
-> es una operación en dos partes: primero debe cargar un nivel seleccionándolo para editarlo o para jugar; luego use <guimenuitem
+> es una operación en dos partes: primero debes cargar un nivel seleccionándolo para editarlo o para jugar; a continuación, usa <guimenuitem
 >Mover nivel</guimenuitem
 > para mostrar el diálogo <guilabel
 >Seleccionar juego</guilabel
->, donde podrá seleccionar el nuevo número nivel y el juego (según sea necesario).</para>
+>, donde podrás seleccionar el nuevo número nivel y el juego (según sea necesario).</para>
 
 <para
->Mover no deja huecos en la secuencia del número de nivel de un juego. Por ejemplo, si mueve el nivel 10 del juego A al nivel 3 del juego B, los niveles 11 y superiores del juego A se renumerarán hacia abajo (para cerrar el hueco) y los niveles 3 y superiores en el juego B se renumerarán hacia arriba (para hacer sitio al nuevo nivel).</para>
+>Los movimientos no dejan huecos en la secuencia de números de nivel de un juego. Por ejemplo, si mueves el nivel 10 del juego A al nivel 3 del juego B, los niveles 11 y superiores del juego A se renumerarán hacia abajo (para cerrar el hueco) y los niveles 3 y superiores en el juego B se renumerarán hacia arriba (para hacer sitio al nuevo nivel).</para>
 
 </sect2>
 
@@ -2025,13 +2037,13 @@ linkend="settings-menu"
 >Borrar un nivel</title>
 
 <para
->Puede usar la opción del menú <menuchoice
+>Puedes usar la opción del menú <menuchoice
 ><guimenu
 >Editor</guimenu
 > <guimenuitem
 >Borrar nivel...</guimenuitem
 ></menuchoice
-> para eliminar un nivel que no quiera conservar. El resto de niveles se renumerarán para cerrar el hueco de la secuencia.</para>
+> para eliminar un nivel que no quieras conservar. El resto de niveles se renumerarán para cerrar el hueco de la secuencia.</para>
 
 </sect2>
 </sect1>
@@ -2047,7 +2059,7 @@ linkend="settings-menu"
 >Introducción</title>
 
 <para
->Este capítulo presenta algunos consejos y pistas generales para jugar con &kgoldrunner;, a diferencia de las pistas específicas que encontrará en los niveles de los juegos del tutorial y de campeonato (consulte <link linkend="move-menu"
+>Este capítulo presenta algunos consejos y pistas generales para jugar con &kgoldrunner;, a diferencia de las pistas específicas que encontrarás en los niveles de los juegos de tutorial y de campeonato (consulta <link linkend="move-menu"
 ><menuchoice
 > <guimenu
 >Mover</guimenu
@@ -2099,43 +2111,43 @@ linkend="settings-menu"
 <itemizedlist>
 <listitem>
 <para
->Siempre puede atrapar en un agujero a un enemigo que se acerca, coger su oro y echar a correr sobre él sin matarlo. Algunas veces puede ser una buena idea cavar detrás de usted para retrasarlo, pero esto puede matarlo. En algunos niveles no es buena idea matar a los enemigos.</para>
+>Siempre puedes atrapar en un agujero a un enemigo que se acerca, quitarle el oro y echar a correr sobre él sin matarlo. Algunas veces puede ser una buena idea cavar detrás de ti para retrasarlo, aunque esto puede matarlo. En algunos niveles no es buena idea matar a los enemigos.</para>
 </listitem>
 <listitem>
 <para
->Normalmente podrá atrapar dos enemigos que se acercan en dos hoyos, tomar su oro y correr sobre ellos, pero es peligroso hacerlo si están separados por dos o tres espacios. Algunas veces los dos agujeros matan a alguno de los enemigos y el resto escapa y otras veces escapan todos. Con las reglas &kgoldrunner; es sencillo atrapar dos enemigos y correr por encima de ellos, ya que permanecen en sus agujeros durante un tiempo.</para>
+>Por lo general, podrás atrapar a dos enemigos que se acercan en dos hoyos, quitarles el oro y correr sobre ellos, aunque es peligroso hacerlo si están separados por dos o tres espacios. A veces, los dos agujeros matan a alguno de los enemigos y el resto escapa. Otras veces se escapan todos. Con las reglas de &kgoldrunner; es sencillo atrapar a dos enemigos y correr por encima de ellos, ya que permanecen en sus agujeros durante un tiempo.</para>
 </listitem>
 <listitem>
 <para
->Casi nunca es posible atrapar tres enemigos que se acercan y pasar sobre ellos. Tendrá que matarlos, cavar y salir a través del suelo o simplemente correr.</para>
+>Casi nunca es posible atrapar a tres enemigos que se acercan y correr sobre ellos. Tendrás que matarlos, cavar y salir a través del suelo o simplemente correr.</para>
 </listitem>
 <listitem>
 <para
->Intente que los enemigos corran en grupo. Esto hará que no le envuelvan mientras recoge tranquilamente el oro al estar detrás suyo.</para>
+>Intenta que los enemigos corran en grupo. Esto hará que no te rodeen mientras recoges tranquilamente el oro mientras te persiguen.</para>
 </listitem>
 <listitem>
 <para
->Algunas veces puede matar al enemigo con dos agujeros, pero frecuentemente esto necesitará entre tres y nueve agujeros para matar hasta cinco enemigos.</para>
+>Algunas veces puedes matar al enemigo con dos agujeros, aunque con frecuencia necesitarás entre tres y nueve agujeros para matar hasta cinco enemigos.</para>
 </listitem>
 <listitem>
 <para
->Es posible matar un enemigo con un agujero si está lo suficientemente lejos de él cuando cava.</para>
+>Se puede matar a un enemigo con un agujero si está lo suficientemente lejos de él cuando cavas.</para>
 </listitem>
 <listitem>
 <para
->El juego con reglas «Tradicionales», puede atrapar a un enemigo permanentemente en un foso de ladrillo o de hormigón moviéndose bajo el cuadro (del nivel del piso en el que está el foso) y el enemigo normalmente irá hacia él.</para>
+>En el juego con reglas «Tradicionales», puedes atrapar a un enemigo permanentemente en un agujero de ladrillo o de hormigón. Sitúate cerca del borde del pozo en el lado opuesto al enemigo. A medida que se acerca al pozo, desplázate un cuadrado hacia abajo (hasta el nivel del suelo del pozo) y, por lo general, el enemigo correrá hacia el pozo.</para>
 </listitem>
 <listitem>
 <para
->En algunos niveles con las reglas «Tradicionales», puede forzar al enemigo a trepar por una escalera si le espera en la parte superior de la misma.</para>
+>En algunos niveles con las reglas «Tradicionales», puedes forzar al enemigo a trepar por una escalera si lo esperas en la parte superior de la misma.</para>
 </listitem>
 <listitem>
 <para
->Con las reglas «&kgoldrunner;», puede atrapar un enemigo en un hoyo haciéndolo que caiga detrás suyo, y continuación correr por el lateral y cavar para que no le alcancen.</para>
+>Con las reglas de «&kgoldrunner;», puedes atrapar a un enemigo en un pozo haciéndolo caer desde encima de ti y luego correr hacia un lado y cavar antes de que te alcance.</para>
 </listitem>
 <listitem>
 <para
->Con las reglas «&kgoldrunner;», los enemigos no puede correr a través de los ladrillos rotos, por eso en algunos casos puede utilízalos como una barrera o lugar oculto.</para>
+>Con las reglas de «&kgoldrunner;», los enemigos no pueden correr a través de los ladrillos excavados, por lo que en algunos casos puedes usarlos como barrera o lugar oculto.</para>
 </listitem>
 </itemizedlist>
 
@@ -2148,31 +2160,27 @@ linkend="settings-menu"
 <itemizedlist>
 <listitem>
 <para
->Para cavar más de un nivel de ladrillos, empiece cavando tantos ladrillos como niveles, salte dentro, cave un bloque de ladrillos menos, y así sucesivamente.</para>
+>Para excavar más de una capa de ladrillos, empieza cavando tantos ladrillos como capas haya; salta y cava un ladrillo menos. Y así sucesivamente.</para>
 </listitem>
 <listitem>
 <para
->Si cava al lado de una escalera o de una sucesión de barras, puede cavar cualquier número de niveles y subir hasta cinco o seis ladrillos horizontalmente. Vuelva a la escalera o a la barra después de cavar cada nivel, y baje por la escalera, salga y cave el siguiente nivel.</para>
+>Si cavas al lado de una escalera o de una sucesión de barras, puedes cavar cualquier número de capas y subir hasta cinco o seis ladrillos horizontalmente. Vuelve a la escalera o a la barra después de cavar cada capa y baja por la escalera, sal y cava la siguiente capa.</para>
 </listitem>
 <listitem>
 <para
->Si cavar un túnel parece imposible, piense que puede existir algún falso ladrillo en él. Quizá el nivel inferior sea falso o quizá pueda esperar en un falso ladrillo y cavar cerca de él.</para>
+>Si cavar un túnel parece imposible, piensa que puede existir algún ladrillo falso en él. Quizá la capa inferior sea falsa o tal vez puedas esperar en un ladrillo falso y cavar cerca de él.</para>
 </listitem>
 <listitem>
 <para
->Piense en el orden en que va a recoger el oro. Si lo hace en el orden correcto, cavar resultará más fácil.</para>
+>Piensa en el orden en que vas a recoger el oro. Si lo haces en el orden correcto, cavar te resultará más fácil.</para>
 </listitem>
 <listitem>
 <para
->Algunos niveles requieren cavar a través de una pared de ladrillos, correr, recoger algo de oro y salir fuera antes de que se cierre el ladrillo y le atrape.</para>
+>Algunos niveles requieren cavar a través de una pared de ladrillos, correr, recoger algo de oro y salir fuera antes de que se cierre el ladrillo y te atrape.</para>
 </listitem>
 <listitem>
 <para
->Es posible cavar mientras cae a través del espacio vacío, si puede coordinarlo. No necesita tener un enemigo para correr sobre él. Es un fallo que se ha convertido en «funcionalidad» y se utiliza extensivamente en los juegos «Estado de terror», <quote
->Cuenta</quote
-> y <quote
->La maldición de la momia</quote
->.</para>
+>Es posible cavar mientras caes a través del espacio vacío, si puedes coordinarlo. No necesitas tener un enemigo para correr sobre él. Es un fallo que se ha convertido en «funcionalidad» y se usa bastante en los juegos «Estado de terror», «Cuenta» y «La maldición de la momia».</para>
 </listitem>
 </itemizedlist>
 
@@ -2185,19 +2193,19 @@ linkend="settings-menu"
 <itemizedlist>
 <listitem>
 <para
->Sino puede recoger una pieza de oro, piense en quitársela a un enemigo. Piense en usar la cabeza de su enemigo como puente para salvar un foso o un precipicio.</para>
+>Si no puedes obtener una pieza de oro, piensa en conseguir que un enemigo vaya allí y la recoja. Piensa incluso en usar la cabeza de un enemigo como puente para cruzar un pozo o un precipicio.</para>
 </listitem>
 <listitem>
 <para
->En algunos niveles hay pepitas que han de ser recogidas las últimas, porque necesitará las escaleras ocultas que existan para llegar a su posición.</para>
+>En algunos niveles hay pepitas que se deben recoger en último lugar, porque necesitarás las escaleras ocultas que existan para huir de esa posición.</para>
 </listitem>
 <listitem>
 <para
->En algunas situaciones un enemigo puede ser matado quedándose el oro que transporte. El oro se convierte en «pepita perdida». No tendrá puntos por hacer que un enemigo pierda su pepita, pero al menos podrá termina el nivel.</para>
+>En algunas situaciones, un enemigo puede morir sin soltar el oro que transporte. Ese oro se convierte en una «pepita perdida». No obtendrás puntos por hacer que un enemigo pierda una pepita, pero al menos podrás terminar el nivel.</para>
 </listitem>
 <listitem>
 <para
->Sino hay nada que cavar evite a sus enemigos corriendo sobre el hormigón y sobre la parte superior de las escaleras, pudiendo recoger el oro de forma aleatoria.</para>
+>Si no hay dónde cavar, mantén a los enemigos corriendo sobre el cemento y las partes superiores de las escaleras para que suelten su oro al azar.</para>
 </listitem>
 </itemizedlist>
 
@@ -2210,37 +2218,37 @@ linkend="settings-menu"
 <itemizedlist>
 <listitem>
 <para
->Cambie la configuración de la velocidad del juego haciéndola más lenta.</para>
+>Cambia la configuración de la velocidad del juego haciéndola más lenta.</para>
 </listitem>
 <listitem>
 <para
->Use el editor para «inspeccionar» en que lugar están los falsos ladrillos y las escaleras ocultas.</para>
+>Usa el editor para «inspeccionar» dónde están los falsos ladrillos y las escaleras ocultas.</para>
 </listitem>
 <listitem>
 <para
->Use el editor para guardar el nivel en uno de sus propios juegos, a continuación podrá editarlo de forma que no necesite empezar siempre en el mismo sitio cuando muera. Esto le permite desarrollar soluciones por etapas.</para>
+>Usa el editor para guardar el nivel en uno de tus propios juegos. A continuación podrás editarlo de forma que no tengas que empezar siempre en el mismo sitio cuando mueras. Esto te permite desarrollar soluciones por etapas.</para>
 </listitem>
 <listitem>
 <para
->Al cavar los túneles, busque los falsos ladrillos para saltar dentro, de forma que pueda seguir cavando. O considere utilizar a un enemigo cercano, de forma que permaneciendo sobre su cabeza pueda cavar.</para>
+>Al cavar los túneles, busca los falsos ladrillos para saltar dentro, de forma que puedas seguir cavando. O considera utilizar a un enemigo cercano, de forma que puedas permanecer sobre su cabeza y cavar.</para>
 </listitem>
 <listitem>
 <para
->Busque los trucos del nivel, como pasar sobre la cabeza de un enemigo, atrapar a todos los enemigos en un foso, atrayéndolos hacia una esquina en la que se queden de forma que no puedan cazarle. Atrayendo a los enemigos hacia un foso falso podrá cruzarlo para recoger oro, haciendo que los enemigos traigan el oro para usted.</para>
+>Busca un tema o truco en el nivel, como cabalgar sobre la cabeza de un enemigo, atrapar a todos los enemigos en un pozo, atraer a los enemigos a una esquina donde se quedarán y no te perseguirán, atraer a los enemigos a pozos que debes cruzar para llegar a algo de oro, hacer que los enemigos te traigan el oro o encontrar lugares donde puedas pararte y hacer que un enemigo se mueva a donde quieras.</para>
 </listitem>
 <listitem>
 <para
->Use la opción del menú <menuchoice
+>Usa la opción del menú <menuchoice
 ><guimenu
 >Mover</guimenu
 > <guimenuitem
 >Mostrar una solución...</guimenuitem
 ></menuchoice
-> para comprobar si hay una solución guardada para el nivel. Esto le mostrará algunas maneras de manejar las dificultades del nivel, pero no necesariamente las mejores. A menudo hay varias formas de ganar en un nivel, y cada vez que juegue habrá pequeñas diferencias en el ritmo, etc. Así que probablemente no será capaz de copiar la solución grabada de manera exacta.</para>
+> para comprobar si hay una solución guardada para el nivel. Esto te mostrará algunas maneras de lidiar con las dificultades del nivel, aunque no necesariamente las mejores. A menudo hay varias formas de pasar un nivel, y cada vez que juegues habrá pequeñas diferencias en el ritmo, etc. Por lo que probablemente no podrás reproducir la solución grabada de manera exacta.</para>
 </listitem>
 <listitem>
 <para
->Utilice <menuchoice
+>Usa <menuchoice
 ><guimenu
 >Mover</guimenu
 > <guimenuitem
@@ -2252,7 +2260,7 @@ linkend="settings-menu"
 > <guimenuitem
 >Reproducir último nivel</guimenuitem
 ></menuchoice
-> para reproducir un nivel hasta un punto antes de donde haya tenido problemas. Entonces, interrumpa la reproducción e intente otro enfoque.</para>
+> para reproducir un nivel hasta un punto anterior a donde hayas tenido problemas. Entonces, interrumpe la reproducción e intenta otro enfoque.</para>
 </listitem>
 </itemizedlist>
 </sect1>
@@ -2286,7 +2294,7 @@ linkend="settings-menu"
 >Créditos y licencia</title>
 
 <para
->Derechos de autor de &kgoldrunner;. 2003. Ian Wadham y Marco Krüger.</para>
+>Copyright de &kgoldrunner; 2003 Ian Wadham y Marco Krüger.</para>
 
 <para
 >&kgoldrunner; está basado en un sencillo juego de ordenador llamado <trademark
@@ -2298,18 +2306,18 @@ linkend="settings-menu"
 >. Originalmente se desarrollo para el Apple II y para el Commodore 64 con los que la familia Wadham y Marco Krüger estaban enganchados. Fue uno de los más vendidos en su día y es uno de los mejores juegos de ordenador de todos los tiempos.</para>
 
 <para
->Puede encontrar más información sobre <trademark
+>Puedes encontrar más información sobre <trademark
 >Lode Runner</trademark
 > y las diferentes versiones que han aparecido desde 1983 en la página web <ulink url="https://entropymine.com/jason/lr/"
 >Jason's Lode Runner Archive</ulink
 > (https://entropymine.com/jason/lr/). Aquí se hace referencia a la historia del desarrollo del juego original en el archivo <ulink url="https://entropymine.com/jason/lr/misc/ldhist.html"
 >misc/ldhist.html</ulink
->. Wikipedia también tiene un buen artículo sobre <trademark
+>. La Wikipedia también tiene un buen artículo sobre <trademark
 >Lode Runner</trademark
 >, con interesantes enlaces a otros sitios.</para>
 
 <para
->&kgoldrunner; es a un intento de preservar el espíritu del juego clásico original en una plataforma a la que se portaría al cabo de unos años. Está disponible como software libre en su forma de código fuente. Ahora es posible conseguir copias del original ya que las máquinas en las que corrían están en los museos.</para>
+>&kgoldrunner; es un intento de preservar el espíritu del juego clásico original en una plataforma en la que será portable y donde permanecerá muchos años. Está disponible como software libre en forma de código fuente. Ahora es posible conseguir copias del original ya que las máquinas en las que corrían están en los museos.</para>
 
 <para
 >Marco Krüger desarrolló &kgoldrunner; en su versión 0.3 por nostalgia del juego de su Commodore 64. Ian Wadham añadió algunas características y niveles y creó la versión actual. Peter, el hermano mayor de Ian creo los 100 niveles del juego de «iniciación» y los 20 complicados niveles de «la venganza de Peter W». Los otros niveles fueron creados por Ian, Peter, Marco Krüger y sus amigos, y por los hijos de Ian Simon y Genevieve. </para>
@@ -2319,7 +2327,7 @@ linkend="settings-menu"
 <para
 >Steve Mann, de Waterloo, en Canadá, contribuyó al juego <quote
 >Contar</quote
->  y al juego <quote
+> y al juego <quote
 >La maldición de la momia</quote
 > en 2008. Ambos usan las reglas tradicionales e incluyen temas interesantes, además de ser bastante difíciles.</para>
 
@@ -2330,7 +2338,7 @@ linkend="settings-menu"
 >Agradecimientos especiales a &Mauricio.Piacentini; y Dmitry Suzdalev, que portaron &kgoldrunner; a &Qt; 4 y a &kde; 4, y a muchos artistas gráficos que contribuyeron a los gráficos y temas nuevos en SVG para la versión de &kde; 4: especialmente &Mauricio.Piacentini; por el tema predeterminado y los nuevos corredores, Johann Ollivier Lapeyre por las escaleras y barras, Eugene Trounev por los temas Ciudad geek y El tesoro de Egipto y, por último pero no por menos, Luciano Montanaro por los dos temas de Nostalgia, y el de accesibilidad Blanco y negro, mejoras en los jugadores, varios fondos y algunas otras ideas.</para>
 
 <para
->Traducido por Rocío Gallego, <email
+>Documentación traducida por Rocío Gallego <email
 >traducciones@rociogallego.com</email
 >, Rafael Osuna <email
 >rosuna@wol.es</email
@@ -2338,6 +2346,10 @@ linkend="settings-menu"
 >santi@kde-es.org</email
 > y Kira J. Fernández <email
 >kirajfdez@gmail.com</email
+>.</para
+><para
+>Corregida por Eloy Cuadra <email
+>ecuadra@eloihr.net</email
 >.</para
 > &underFDL; &underGPL; </chapter>
 
