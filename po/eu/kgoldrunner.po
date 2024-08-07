@@ -13,14 +13,14 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-06 00:36+0000\n"
-"PO-Revision-Date: 2024-05-23 00:21+0200\n"
+"PO-Revision-Date: 2024-08-06 20:23+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #, kde-format
@@ -1718,9 +1718,9 @@ msgstr ""
 "ziurrenik berarekin ondo moldatu beharko duzu..."
 
 #: gamedata/game_GMEP.txt:98
-#, fuzzy, kde-format
+#, kde-format
 msgid "Teamwork (2) - Diving Platforms"
-msgstr "Talde-lana (2) - "
+msgstr "Talde-lana (2) - Urpekaritza-plataformak"
 
 #: gamedata/game_GMEP.txt:99
 #, kde-format
@@ -1954,6 +1954,12 @@ msgid ""
 "digging through. If you go all the way round, the enemy will chase you and "
 "block your exit."
 msgstr ""
+"Etsai batzuk saihestu ditzakezu, erortzeko, gezurrezko adreilu bat aurkituz. "
+"Besteei dagokienean, zulatzeko leku bat aurkitu edo haien ingurutik igaro "
+"behar duzu.\n"
+"Ezkerreko eskaileraren gaineko urre-zati bakarrera zulatuz iritsi behar "
+"duzu. Bide osoa egiten baduzu, etsaiak jazarriko zaitu eta zure irteera "
+"oztopatuko du."
 
 #: gamedata/game_GMGR.txt:63
 #, kde-format
@@ -1970,6 +1976,12 @@ msgid ""
 "You are not done yet, because you have to reach the gold before the second "
 "enemy arrives. So speed up!"
 msgstr ""
+"Mailaren izenak esaten dizun bezala, ez zenuke bertan denbora gehiegi eman "
+"behar. Berehala korrika egin, zulatu aurreneko adreilua eta utzi zure etsaia "
+"hartatik erortzen, ondoren korri bigarren adreilura eta zula ezazu.\n"
+"\n"
+"Oraindik ez duzu bukatu, bigarren etsaia iritsi aurretik urrera iritsi behar "
+"baituzu. Azkar ibili!"
 
 #: gamedata/game_GMGR.txt:69
 #, kde-format
@@ -1988,6 +2000,14 @@ msgid ""
 "the trap, then run over the bricks above, dig through to the remaining gold "
 "and get out fast.\n"
 msgstr ""
+"Zure azpiko hormigoizko egituratik irteteko, aurrena behera joan, itxoin "
+"etsaiari, ondoren ibili haren buru gainetik eta ihes egin. Erabili antzeko "
+"amarru bat bigarren etsaiarekin.\n"
+"\n"
+"Hondo ondoko adreiluetako urrezko lerroak pixka bat gehiago pentsatzeabehar "
+"du. Adreiluetako bat tranpa bat denez, tranpara arteko adreilu denak zulatu "
+"behar dituzu, ondoren gaineko adreiluen gainetik korrika egin, gainontzeko "
+"urreraino zulatu eta azkar atera.\n"
 
 #: gamedata/game_GMGR.txt:76
 #, kde-format
@@ -2004,6 +2024,13 @@ msgid ""
 "\n"
 "You are free again!"
 msgstr ""
+"Etsaiengana iritsitakoan, hartu urre guztia. Ondoren zulatu adreiluetako "
+"bat, salto hartara eta zulatu berehala bi aldeetan. Zure alde bietako "
+"etsaiak 9tik 10 alditan harrapatuta geldituko dira. Orain, jar zaitez "
+"etsaietako baten gainean, zulatu erdiko adreilua eta handik barrena salto "
+"egin.\n"
+"\n"
+"Berriz aske zara!"
 
 #: gamedata/game_GMGR.txt:82 gamedata/game_GotD.txt:237
 #: gamedata/game_plws.txt:116
@@ -2021,6 +2048,11 @@ msgid ""
 "into their arms, and not too late, because then you will not reach the other "
 "side."
 msgstr ""
+"Honek denbora ondo neurtzea eskatzen du.\n"
+"\n"
+"Hormigoiko hobitik sartu zarenean, itxoin etsaien gainetik ibiltzeko une "
+"egokia: ez azkarregi, zuzenean beraien besoetara joango zarelako, eta ez "
+"beranduegi, orduan ez zeralako beste aldera iritsiko."
 
 #: gamedata/game_GMGR.txt:88
 #, kde-format
@@ -2043,6 +2075,19 @@ msgid ""
 "tube, run up the ladder and wait for the enemy to fall in. Now you can ride "
 "on his head and step to the right to take the gold."
 msgstr ""
+"Erabili zure laguna.\n"
+"\n"
+"Zulatu, bera handik ateratzeko, ondoren ibili bere buru gainetik ezkerreko "
+"zure azpiko barrara iristeko. Goian ezkerrean dagoen urrea hartu ondoren, "
+"zure laguna berriz askatu.\n"
+"\n"
+"zuregana korrika egin eta zulogunean erortzen denean, egin salto bere buru "
+"gainera eta bildu bost urre-zati bere buru gainean ibili bitartean. Zure "
+"abiadura berearekin egokitu behar duzu.\n"
+"\n"
+"Gezurrezko adreiluen hodi baten ondoko urrezko zatira iristeko, jauzi hodian "
+"barrena, korri eskaileran gora eta itxoin etsaia barrenean erori arte. Orain "
+"bere buru gainean ibili eta urrea hartzeko eskuinera oinkada eman dezakezu."
 
 #: gamedata/game_GMGR.txt:98 gamedata/game_plwv.txt:9
 #, kde-format
