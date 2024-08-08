@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-06 00:36+0000\n"
-"PO-Revision-Date: 2024-08-06 20:23+0200\n"
+"PO-Revision-Date: 2024-08-07 09:28+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -2124,6 +2124,16 @@ msgid ""
 "\n"
 "Trial and error..."
 msgstr ""
+"Horma goraino igotzen den eskailera bakarra dago eta hartara iristeko etsai "
+"bat behar duzu. Beraz, eskuin eta eskez zulatu behar duzu zorura iritsi arte "
+"erortzen zaren bitartean.\n"
+"\n"
+"Hormaren beste aldean, lurrean itxoin beharko duzu etsaia zuganaino iristear "
+"dagoen arte, ondoren oso azkar korrika egin.\n"
+"\n"
+"Baina, nola iristsi beste aldera?\n"
+"\n"
+"Saiatu eta huts eginez..."
 
 #: gamedata/game_GMGR.txt:114
 #, kde-format
@@ -2153,6 +2163,9 @@ msgid ""
 "towards you. When they are nearly upon you, run up, go left and enter the "
 "building. Take the two pieces of gold and dig yourself through."
 msgstr ""
+"Lehenengo eskailerara iritsi ondoren, jaitsi eta itxoin etsaiak zugana joan "
+"arte. Ia zure ondoan daudenean, korri gora, joan ezkerrera eta sartu "
+"eraikinean. Hartu urrezko bi zatiak eta zulatu zure ihesbidea."
 
 #: gamedata/game_GMGR.txt:124
 #, kde-format
@@ -2484,7 +2497,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:85
 #, kde-format
 msgid "Three Little Pieces Of Elegance"
-msgstr ""
+msgstr "Hiru dotorezia pieza txiki"
 
 #: gamedata/game_GotD.txt:86
 #, kde-format
@@ -2560,7 +2573,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:113
 #, kde-format
 msgid "Always Know Your Way Out"
-msgstr ""
+msgstr "Ezagutu beti zure irteerako bidea"
 
 #: gamedata/game_GotD.txt:114
 #, kde-format
@@ -3038,7 +3051,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:277
 #, kde-format
 msgid "Zombie Lemmings"
-msgstr ""
+msgstr "Leming zonbiak"
 
 #: gamedata/game_GotD.txt:278
 #, kde-format
@@ -3135,13 +3148,12 @@ msgstr "Zonbien artean"
 #: gamedata/game_GotD.txt:314
 #, kde-format
 msgid "All it takes is good strong nerves..."
-msgstr ""
+msgstr "Nerbio sendoak besterik ez dira behar..."
 
 #: gamedata/game_GotD.txt:317
-#, fuzzy, kde-format
-#| msgid "The Rose"
+#, kde-format
 msgid "The Horde"
-msgstr "Arrosa"
+msgstr "Horda"
 
 #: gamedata/game_GotD.txt:318
 #, kde-format
@@ -3150,6 +3162,9 @@ msgid ""
 "\n"
 "Hurry up and do those puzzles. The clock is ticking..."
 msgstr ""
+"Zonbiekin hala izaten da: zenbat eta motelago orduan eta beldurgarriagoak.\n"
+"\n"
+"Azkar ibili eta buru-hausgarri horiek ebatzi. Erlojua aurrera doa..."
 
 #: gamedata/game_GotD.txt:323
 #, kde-format
@@ -3162,6 +3177,8 @@ msgid ""
 "The only way to get the gold is to ride the whole way on his head. Yee-hah! "
 "Ride him cowboy!"
 msgstr ""
+"Urrea lortzeko era bakarra bide osoa haren buru gainean egitea da. Aurrera! "
+"Gainean ibili unai bat bezala!"
 
 #: gamedata/game_GotD.txt:327
 #, kde-format
@@ -3187,11 +3204,14 @@ msgid ""
 "who are on their own and not in a row with the others will ruin your day. "
 "Therefore the left side is easier, because there are fewer lone zombies. "
 msgstr ""
+"Zonbiak saihestea uste baino errazagoa da. Errenkadan besteekin ez dabiltzan "
+"zonbi bakanak dira zure eguna zapuztuko duten bakarrak. Horregatik ezker "
+"aldea errazagoa da, zonbi bakarti gutxiago dituelako."
 
 #: gamedata/game_GotD.txt:335
 #, kde-format
 msgid "Death Race"
-msgstr ""
+msgstr "Heriotzaren lasterketa"
 
 #: gamedata/game_GotD.txt:336
 #, kde-format
@@ -3199,6 +3219,8 @@ msgid ""
 "You can distract the zombie from running down when you are on the same level "
 "as him. Who said it had to be fair play?"
 msgstr ""
+"Zonbia beherantz korrika egin ez dezan arreta zureganatu dezakezu bere maila "
+"berean zaudenean. Nork esan du joko garbia izan behar duela?"
 
 #: gamedata/game_GotD.txt:339
 #, kde-format
@@ -3517,7 +3539,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:96
 #, kde-format
 msgid "The Lone Golddigger"
-msgstr ""
+msgstr "Urre bilatzaile bakartia"
 
 #: gamedata/game_GRII.txt:97
 #, kde-format
@@ -3594,7 +3616,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:126
 #, kde-format
 msgid "Never Reaching The Bottom"
-msgstr ""
+msgstr "Inoiz hondora iritsi gabe"
 
 #: gamedata/game_GRII.txt:127
 #, kde-format
@@ -3615,7 +3637,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:134
 #, kde-format
 msgid "Getting Past The Enemy"
-msgstr ""
+msgstr "Etsaia gaindituz"
 
 #: gamedata/game_GRII.txt:135
 #, kde-format
@@ -3679,10 +3701,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GRII.txt:160
-#, fuzzy, kde-format
-#| msgid "The Vault"
+#, kde-format
 msgid "The Breakout"
-msgstr "Kripta"
+msgstr ""
 
 #: gamedata/game_GRII.txt:161
 #, kde-format
@@ -4303,6 +4324,8 @@ msgid ""
 "Look for false floors to get to places that are otherwise inaccessible.  You "
 "have to dig to find a couple of them."
 msgstr ""
+"Bestela iritsi ezin den lekuetara iristeko zoru faltsuak bilatu. Haietako "
+"pare bat aurkitzeko zulatu egin behar duzu."
 
 #: gamedata/game_MAZ.txt:84
 #, kde-format
