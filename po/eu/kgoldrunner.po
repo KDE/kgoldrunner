@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-06 00:36+0000\n"
-"PO-Revision-Date: 2024-08-07 09:28+0200\n"
+"PO-Revision-Date: 2024-08-14 15:15+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -812,7 +812,7 @@ msgstr ""
 "0 barruan egoteko zig-zag itxurako eskaileran gora igo, 0ren ezkerreko "
 "ertzean bost adreilu zulatu, korrikan zig-zag eskaileran berriro igotzea, "
 "poloaren gainean zulatu berri dituzun adreilutan zehar erori eta berehala "
-"eskuinera joatea da 0 barrura sartzeko. Dendora ez da oso estua."
+"eskuinera joatea da 0 barrura sartzeko. Dendora nahiko mugatuta dago."
 
 #: gamedata/game_cnt.txt:14
 #, kde-format
@@ -1318,10 +1318,11 @@ msgstr ""
 "Beheko eskuinean dauden etsaien urrea eskuratzeko, haien ezkerretara dagoen "
 "karratua lurpetik atera, igo eskailera, 6ren eskuineko aldea zulatu, jaregin "
 "bertan, joan lasterka ezkerrera eta 6ren ezkerraldeko karratua lurretik "
-"atera eta jaregin zorura. Denbora estua da, beheko eskuialdeko ataleko etsai "
-"batek edo birek soilik mugitu ahal izango dute ezkerreko atalera. Oraindik "
-"ere 6ren behea zulatu beharko duzu haien urrea eskuratzeko, hala ere piska "
-"bat neketsua izan daiteke 6ren ezkerraldean dauden etsaiak direla eta.\n"
+"atera eta jaregin zoruan. Denbora mugatua dago, beheko eskuialdeko ataleko "
+"etsai batek edo bik soilik mugitu ahal izango dute ezkerreko atalera. "
+"Oraindik ere 6ren behea zulatu beharko duzu haien urrea eskuratzeko, hala "
+"ere piska bat neketsua izan daiteke 6ren ezkerraldean dauden etsaiak direla "
+"eta.\n"
 "\n"
 "Behin urre guztia hartutakoan, irtetzeko biderik errazena 1en zoru faltsua "
 "eharkatzea da eta 1en ezkerraldeko eskaileretatik irtetzea."
@@ -2150,6 +2151,13 @@ msgid ""
 "To make the enemies in the boxes on the left move into position as you make "
 "your escape, just stand at the same height on one side or the other."
 msgstr ""
+"Eskailerara iritsi ondoren eta erdiko zatitik behera iristeko lanean ari "
+"zaren bitartean, bost etsai askatu beharko dituzu, ez gehiago, ez gutxiago. "
+"Eskerrean agertzen diren eskaileratarantz zubi bat osatzen lagunduko dute.\n"
+"\n"
+"Ihes egiten duzunean, ezkerreko kutxetan dauden etsaiak kokalekura "
+"mugitzeko, beraien altuera berean, alde batean edo bestean. jarri besterik "
+"ez duzu egin behar."
 
 #: gamedata/game_GMGR.txt:120
 #, kde-format
@@ -2201,6 +2209,20 @@ msgid ""
 "\n"
 "The timing is very tight. The tiniest hesitation will kill you!"
 msgstr ""
+"Aurrena goiko ezkerreko izkinara iristeko modu bat aurkitu behar duzu.\n"
+"\n"
+"Iristen zarenean, zure azpian bi eskilara daude, bat oso motza eta bestea "
+"luzeagoa. Haien artean adreilu zutabe bat dago. Gaineko biak benetako "
+"adreiluak dira: gainontzekoa tranpa-hodi bat da eta zeharkatu egin behar "
+"duzu.\n"
+"\n"
+"Zulatu bi adreilu zutabetan zehar eskuinean gainean, jo ezkerretik eta igo "
+"eskilaratik gora. Itzuli eskuinera, baina zulatu azken adreilua, haren "
+"ezkerrekoa tranpa bat baita. Joan eskailera handian gora, joan ezkerrera eta "
+"zulatu eskailera txikiaren gaineko adreiluan zehar. Erori haren barruan, "
+"ondoren jo eskuinera eta erori hodian zehar.\n"
+"\n"
+"Denbora oso mugatuta dago. Zalantza txikienak hilko zaitu!"
 
 #: gamedata/game_GMGR.txt:138
 #, kde-format
@@ -3703,7 +3725,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:160
 #, kde-format
 msgid "The Breakout"
-msgstr ""
+msgstr "Ihesaldia"
 
 #: gamedata/game_GRII.txt:161
 #, kde-format
@@ -3818,13 +3840,15 @@ msgid "Demolition"
 msgstr "Eraispena"
 
 #: gamedata/game_lars.txt:3
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Twenty levels that require a bit of thinking and a bit of timing. You need "
 "to dig while falling sometimes.\n"
 "\n"
 "Created by Lars Luthman <lars luthman at gmail com>."
 msgstr ""
+"Pixka bat pentsatzea eta denbora pixka bat neurtzea behar duten hogei maila. "
+"Batzuetan, erortzean zulatu beharko duzu.\n"
 "\n"
 "Sortzailea Lars Luthman <lars luthman at gmail com>."
 
@@ -3840,6 +3864,9 @@ msgid ""
 "make them follow you up in small groups. Once they are up on the bricks you "
 "can kill them and take their gold."
 msgstr ""
+"Trikimailua etsai guztiak gainditu eta eskailera handienera igotzea datza, "
+"ondoren talde txikietan jarrai arazi iezaiezu. Behin goran adreiluetan "
+"daudenean hil eta haien urrea har dezakezu."
 
 #: gamedata/game_lars.txt:12
 #, kde-format
@@ -3890,7 +3917,7 @@ msgstr ""
 #: gamedata/game_lars.txt:28
 #, kde-format
 msgid "Landfill"
-msgstr ""
+msgstr "Hondakindegia"
 
 #: gamedata/game_lars.txt:29
 #, kde-format
@@ -3924,7 +3951,7 @@ msgstr ""
 #: gamedata/game_lars.txt:40
 #, kde-format
 msgid "The Divide"
-msgstr ""
+msgstr "Arrakala"
 
 #: gamedata/game_lars.txt:41
 #, kde-format
@@ -3932,6 +3959,8 @@ msgid ""
 "You can kill one enemy by digging away one of the bottom bricks in the "
 "divider and making him go in there."
 msgstr ""
+"Etsai bat hil dezakezu hondoko arrakalaren adreiluetako bat zulatu eta "
+"bertara joan araziz."
 
 #: gamedata/game_lars.txt:45
 #, kde-format
@@ -3939,6 +3968,8 @@ msgid ""
 "The way up to the escape route on the right is tricky. How do you get past "
 "that last enemy? Timing is everything!"
 msgstr ""
+"Eskuineko ihesbidera igotzeko bidea korapilotsua da. Nola gainditu azken "
+"etsai hori? Denbora ondo neurtu beharra dago! "
 
 #: gamedata/game_lars.txt:48
 #, kde-format
@@ -3957,17 +3988,17 @@ msgstr ""
 #: gamedata/game_lars.txt:52
 #, kde-format
 msgid "Crowd Control"
-msgstr ""
+msgstr "Jendetza kontrolatzea"
 
 #: gamedata/game_lars.txt:53
 #, kde-format
 msgid "Remember 'Landfill'?"
-msgstr ""
+msgstr "Gogoratzen duzu 'Hondakindegia'?"
 
 #: gamedata/game_lars.txt:56
 #, kde-format
 msgid "One Way Up"
-msgstr ""
+msgstr "Bide bat gora"
 
 #: gamedata/game_lars.txt:57 gamedata/game_lars.txt:81
 #, kde-format
@@ -4008,6 +4039,7 @@ msgstr "Erraz-erraza"
 msgid ""
 "You need to walk on an enemy's head to get that gold piece in the middle."
 msgstr ""
+"Etsai baten buru gainean ibili behar duzu erdiko urre zati hori lortzeko."
 
 #: gamedata/game_lars.txt:72
 #, kde-format
@@ -4209,6 +4241,8 @@ msgid ""
 "A straightforward maze: the false brick underneath the ladder near the "
 "bottom center may prove useful."
 msgstr ""
+"Labirinto erraz bat: beheko erdigunetik gertu dagoen eskailera azpiko sasi-"
+"adreilua erabilgarria izan daiteke."
 
 #: gamedata/game_MAZ.txt:50
 #, kde-format
@@ -4585,7 +4619,7 @@ msgid "Dvalin"
 msgstr "Dvalin"
 
 #: gamedata/game_MAZ.txt:163
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "There are two problems.  First, in the early part you want to get the enemy "
 "just to the right of middle trapped in the bottom of that section.  This "
@@ -4605,7 +4639,7 @@ msgid ""
 "him from moving back up the ladder and retaking the gold.  The timing is "
 "tight - good luck!  Alternatively, you can run around and trust to luck - "
 "the enemy will drop the piece of gold eventually!"
-msgstr ""
+msgstr "Bi arazo daude. "
 
 #: gamedata/game_MAZ.txt:169
 #, kde-format
