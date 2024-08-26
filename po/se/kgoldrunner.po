@@ -7162,7 +7162,6 @@ msgstr ""
 
 #: src/kgrgame.cpp:1304
 #, fuzzy, kde-format
-#| msgid "&OK"
 msgctxt "@action:button"
 msgid "&Ok"
 msgstr "&OK"
