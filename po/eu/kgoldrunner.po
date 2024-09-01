@@ -13,14 +13,14 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-06 00:36+0000\n"
-"PO-Revision-Date: 2024-08-14 15:15+0200\n"
+"PO-Revision-Date: 2024-08-31 09:13+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.08.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #, kde-format
@@ -2242,6 +2242,16 @@ msgid ""
 "the last falling enemy. Be quick, because you can only reach the five pieces "
 "of gold on the left by riding on an enemy."
 msgstr ""
+"Ezkerreko urrerako denbora oso ondo neurtu behar duzu, 'Erorketa askea' "
+"antzera, baina zertxobait zailagoa. Saia zaitez etsai baten buru gainean "
+"ibiltzeko une egokia aurkitzen.\n"
+"\n"
+"Eskuin aldean, hasi bi adreilu solte zulatzen, etsaia ezkerrera zulora "
+"joaten uzteko. Eman bere buru gainerako urratsa, zulatu bi aldeetan aldi "
+"berean erori bitartean, ondoren zoaz ezkerrera, hartu urrea, atzera itzuli "
+"eta eman urratsa erortzen den azken etsaiaren gainera. Azkarra izan, "
+"ezkerreko bost urre zatietara iristeko era bakarra etsai baten gainean "
+"ibiltzea baita."
 
 #: gamedata/game_GMGR.txt:144
 #, kde-format
@@ -2755,6 +2765,11 @@ msgid ""
 "zombie: be quick. Wait for him to get close to you, then step down or up in "
 "the last moment and pass him."
 msgstr ""
+"Askatu zonbia eta erabil ezazu ezker aldeko urrera iristeko.\n"
+"\n"
+"Azkenean beheko eskaileratan lur hartzen duzunean, zonbiaren ondotik "
+"igarotzeko era bakarra dago: azkar ibiltzea. Itxoin zuregana hurbil dadin, "
+"ondoren, azken unean, jaitsi edo igo, eta haren ondotik igaro."
 
 #: gamedata/game_GotD.txt:171
 #, kde-format
@@ -3161,6 +3176,11 @@ msgid ""
 "\n"
 "To get past the other zombies, you sometimes need to run over their heads."
 msgstr ""
+"Itxoin zonbia eskaileran goraino igo eta jaisten hasten den unea - hori da "
+"jauzi egiteko unea.\n"
+"\n"
+"Beste zonbien ondotik igarotzeko, batzuetan haien buruen gainetik ibili "
+"beharko duzu."
 
 #: gamedata/game_GotD.txt:313
 #, kde-format
@@ -3213,6 +3233,8 @@ msgid ""
 "Watch what happens if you climb up a ladder on the side, but only to where "
 "you are level with the bricks the zombies are walking on..."
 msgstr ""
+"Begira zer gertatzen den aldameneko eskaileran gora igotzen bazara, baina "
+"bakarrik zonbiak ibiltzen ari diren adreiluen mailaraino..."
 
 #: gamedata/game_GotD.txt:331
 #, kde-format
@@ -3508,6 +3530,12 @@ msgid ""
 "that the enemy will move to a position where you can get past him. You need "
 "to be very, very quick!"
 msgstr ""
+"Alferrik da tranpak bilatzea: ez daude eta!\n"
+"\n"
+"Lehenengo urrea hartzen duzunean, zoaz azkar behera, etsaiak zu jarraitu ez, "
+"baina beste bide batetik joan dadin. Zoaz behera ia ahal duzun urrutien, "
+"etsaia hura gaindi dezakezun kokaleku batean ipin dadin. Oso, oso azkar "
+"ibili behar duzu!"
 
 #: gamedata/game_GRII.txt:78
 #, kde-format
@@ -4183,6 +4211,10 @@ msgid ""
 "\n"
 "Leave the piece of gold at the upper left until the very last."
 msgstr ""
+"Bata bestearen gainean pilatutako bi urre zatietara iristeko, atal horren "
+"gaineko eskaileratako baten azpiko tranpan zehar erori behar duzu.\n"
+"\n"
+"Utzi goiko ezkerreko urre zatia azken-azkenera arte."
 
 #: gamedata/game_MAZ.txt:34
 #, kde-format
@@ -4314,6 +4346,10 @@ msgid ""
 "may find the diggable columns useful.  Dig two layers, wait one from the top "
 "to trap the first enemy and then move to the top to trap the second enemy."
 msgstr ""
+"Zu eta joan nahi duzun lekuaren artean bi etsai edo gehiago badaude, zutabe "
+"zulagarria lagungarri gerta lekizuke. Zulatu bi geruza, itxoin goiko batek "
+"lehenengo etsaia harrapatu arte eta ondoren zoaz goraino bigarren etsaia "
+"harrapatzeko."
 
 #: gamedata/game_MAZ.txt:70
 #, kde-format
@@ -4332,6 +4368,13 @@ msgid ""
 "to the last.  And watch out - since there is only one enemy, it is pretty "
 "fast!"
 msgstr ""
+"Urre asko, etsai bakarra eta harrapatuta dago! Erraza beharko luke!\n"
+"\n"
+"Lehenengo zatiak, urrea hartzeko, (gehienez) zulatzea eskatuko du. Baina "
+"gero ez dago beheko eta ezkerreko urrea hartzeko era argirik. Bilatu tranpa "
+"bat eskailera baten beheko aldearen azpian hura hartzeko. Beste trikimailu "
+"bakarra, beste urre guztia hartu eta etsaia eta bere urre zatia azkenerako "
+"uztea da. Eta kontuz - etsai bakarra dagoenez, nahiko azkarra da!"
 
 #: gamedata/game_MAZ.txt:76
 #, kde-format
@@ -4409,6 +4452,9 @@ msgid ""
 "floors.  Trial and error is your only hope - try mapping it on paper if you "
 "are having trouble."
 msgstr ""
+"Labirinto bat, baina ezin duzu irteerako ibilbidea ikusi. Gezurrezko zorua "
+"erabili behar duzu. Saiatu eta huts egitea da zure esperantza bakarra - "
+"arazoak badituzu, saia zaitez paperean mapa egiten."
 
 #: gamedata/game_MAZ.txt:98 gamedata/game_MAZ.txt:184
 #, kde-format
@@ -4422,6 +4468,9 @@ msgid ""
 "get trapped in and that lone enemy is fast.  Try to lure the enemy down and "
 "into one of the pits.  Then the rest is almost a cake walk."
 msgstr ""
+"Labirinto diagonal hau ez da zailegia, noizbehinka harrapa zaitzakeen zulo "
+"bat dagoela eta etsai bakar hori azkarra dela salbu. Saia zaitez etsaia "
+"behera zuloetako baten barrura erakartzen. Gainerakoa oso erraza da."
 
 #: gamedata/game_MAZ.txt:102
 #, kde-format
@@ -4754,7 +4803,7 @@ msgid ""
 "When you kill the enemies you can trap them permanently in the pit at top "
 "right."
 msgstr ""
-"Zure etsaiak hiltzeko goiko eskuineko putzuan betirako preso utzi ditzakezu."
+"Zure etsaiak hiltzeko goiko eskuineko zuloan betirako preso utzi ditzakezu."
 
 #: gamedata/game_plws.txt:17
 #, kde-format
