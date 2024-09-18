@@ -1211,10 +1211,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GMEP.txt:10
-#, fuzzy, kde-format
-#| msgid "Don't Panic"
+#, kde-format
 msgid "Don't Panic!"
-msgstr "Μην πανικοβάλλεστε"
+msgstr "Μην πανικοβάλλεστε!"
 
 #: gamedata/game_GMEP.txt:11
 #, kde-format
@@ -2658,8 +2657,7 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:293
-#, fuzzy, kde-format
-#| msgid "Fear of Heights"
+#, kde-format
 msgid "Fear Of Heights"
 msgstr "Υψοφοβία"
 
@@ -3099,8 +3097,7 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GRII.txt:106
-#, fuzzy, kde-format
-#| msgid "Left or Right?"
+#, kde-format
 msgid "Left Or Right?"
 msgstr "Αριστερά ή δεξιά;"
 
@@ -3329,10 +3326,9 @@ msgid "The Heartbreaker"
 msgstr "Το εργαστήριο"
 
 #: gamedata/game_GRII.txt:191 gamedata/game_lars.txt:85
-#, fuzzy, kde-format
-#| msgid "   No hint   "
+#, kde-format
 msgid "No hint!"
-msgstr "   Καμία συμβουλή"
+msgstr "Καμία συμβουλή!"
 
 #: gamedata/game_kgr.txt:3 src/main.cpp:29
 #, kde-format
@@ -7449,16 +7445,14 @@ msgid "Press \"%1\" or \"%2\" to PAUSE"
 msgstr "Πατήστε \"%1\" για ΠΑΥΣΗ"
 
 #: src/kgoldrunner.cpp:761
-#, fuzzy, kde-format
-#| msgid "   Has hint   "
+#, kde-format
 msgid "Has hint"
-msgstr "   Έχει συμβουλή"
+msgstr "Έχει συμβουλή"
 
 #: src/kgoldrunner.cpp:761
-#, fuzzy, kde-format
-#| msgid "   No hint   "
+#, kde-format
 msgid "No hint"
-msgstr "   Καμία συμβουλή"
+msgstr "Καμία συμβουλή"
 
 #: src/kgoldrunner.cpp:878
 #, kde-format
@@ -8446,18 +8440,14 @@ msgid "Check for High Score"
 msgstr "Έλεγχος για υψηλή βαθμολογία"
 
 #: src/kgrgame.cpp:1710
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><b>Congratulations !!!</b><br>You have achieved a high score in "
-#| "this game.<br>Please enter your name so that it may be enshrined<br>in "
-#| "the KGoldrunner Hall of Fame.</html>"
+#, kde-format
 msgid ""
 "<html><b>Congratulations !!!</b><br/>You have achieved a high score in this "
 "game.<br/>Please enter your name so that it may be enshrined<br/>in the "
 "KGoldrunner Hall of Fame.</html>"
 msgstr ""
 "<html><b>Συγχαρητήρια!!!</b><br>  Έχετε πετύχει μια υψηλή βαθμολογία για "
-"αυτό το παιχνίδι.  <br>Παρακαλώ εισάγετε το όνομά σας ώστε να συμπεριληφθεί "
+"αυτό το παιχνίδι.<br/>Παρακαλώ εισάγετε το όνομά σας ώστε να συμπεριληφθεί "
 "στο <br>πάνθεο του KGoldrunner.</html>"
 
 #: src/kgrgame.cpp:1724 src/kgrgame.cpp:1811
@@ -8643,11 +8633,10 @@ msgstr ""
 "δικά σας παιχνίδια."
 
 #: src/kgrselector.cpp:99
-#, fuzzy, kde-format
-#| msgid "There is no level %1 in %2, so you cannot play or edit it."
+#, kde-format
 msgid "There is no level %1 in \"%2\", so you cannot play or edit it."
 msgstr ""
-"Δεν υπάρχει κανένα επίπεδο %1 στο %2, έτσι δεν μπορείτε να το παίξετε ή να "
+"Δεν υπάρχει κανένα επίπεδο %1 στο «%2», έτσι δεν μπορείτε να το παίξετε ή να "
 "το επεξεργαστείτε."
 
 #: src/kgrselector.cpp:121 src/kgrselector.cpp:177
