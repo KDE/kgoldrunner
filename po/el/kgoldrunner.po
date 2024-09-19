@@ -7,20 +7,21 @@
 # Toussis Manolis <manolis@koppermind.homelinux.org>, 2006, 2007, 2008, 2009.
 # Σπύρος Γεωργαράς <sngeorgaras@otenet.gr>, 2008.
 # Spiros Georgaras <sngeorgaras@otenet.gr>, 2008.
+# SPDX-FileCopyrightText: 2024 Antonis Geralis <capoiosct@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-06 00:36+0000\n"
-"PO-Revision-Date: 2009-04-23 22:29+0300\n"
-"Last-Translator: Toussis Manolis <manolis@koppermind.homelinux.org>\n"
+"PO-Revision-Date: 2024-09-18 14:49+0300\n"
+"Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 24.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -665,8 +666,8 @@ msgid ""
 msgstr ""
 "Στην αρχή θα πρέπει να τρέξετε στο δάπεδο στα δεξιά. Θα πρέπει να "
 "αιχμαλωτίσετε μερικούς εχθρούς (με λίγη τύχη, θα μαζέψετε ένα κομμάτι χρυσού "
-"στη διαδικασία), ενώ με ευκολία θα μπορέσετε να ανέβαιτε στις σκάλες σε "
-"σχήμα 4, στα δεξιά. \n"
+"στη διαδικασία), ενώ με ευκολία θα μπορέσετε να ανέβετε στις σκάλες σε σχήμα "
+"4, στα δεξιά. \n"
 " \n"
 " Όταν συλλέξετε το χρυσό από το 4, περιμένετε μέχρι οι εχθροί φτάσουν στο "
 "πάνω μέρος στις σκάλες που μοιάζουν με ένα 4. Αυτό θα σας δώσει τον "
