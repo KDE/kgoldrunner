@@ -69,6 +69,7 @@ target_link_libraries(kgoldrunner
     KF6::I18n
     KF6::WidgetsAddons
     KF6::XmlGui
+    KF6::IconThemes
 )
 
 install(TARGETS kgoldrunner  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
