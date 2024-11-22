@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 00:36+0000\n"
+"POT-Creation-Date: 2024-11-22 00:38+0000\n"
 "PO-Revision-Date: 2013-01-02 10:56+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -3914,7 +3914,7 @@ msgstr "The Heartbreaker"
 msgid "No hint!"
 msgstr "គ្មាន​ជំនួយ​​!​"
 
-#: gamedata/game_kgr.txt:3 src/main.cpp:29
+#: gamedata/game_kgr.txt:3 src/main.cpp:47
 #, kde-format
 msgid "KGoldrunner"
 msgstr "KGoldrunner "
@@ -9746,88 +9746,88 @@ msgctxt "@title:window"
 msgid "Help: Select Game & Level"
 msgstr "ជំនួយ ៖ ជ្រើស​ល្បែង និង កម្រិត"
 
-#: src/main.cpp:31
+#: src/main.cpp:49
 #, fuzzy, kde-format
 #| msgid "KGoldrunner is a game of action and puzzle solving"
 msgid "A game of action and puzzle solving"
 msgstr "KGoldrunner ជា​ប្រភេទ​ល្បែង​សកម្មភាព និង ដោះស្រាយ​បញ្ហា"
 
-#: src/main.cpp:33
+#: src/main.cpp:51
 #, kde-format
 msgid "(C) 2003 Ian Wadham and Marco Krüger"
 msgstr "រក្សាសិទ្ធិ​ឆ្នាំ ២​០​០​៣ ដោយ Ian Wadham និង Marco Krüger"
 
-#: src/main.cpp:69
+#: src/main.cpp:87
 #, kde-format
 msgid "Ian Wadham"
 msgstr "Ian Wadham"
 
-#: src/main.cpp:69
+#: src/main.cpp:87
 #, kde-format
 msgid "Current author"
 msgstr "អ្នក​និពន្ធ​បច្ចុប្បន្ន​"
 
-#: src/main.cpp:71
+#: src/main.cpp:89
 #, kde-format
 msgid "Marco Krüger"
 msgstr "Marco Krüger"
 
-#: src/main.cpp:71
+#: src/main.cpp:89
 #, kde-format
 msgid "Original author"
 msgstr "អ្នក​និពន្ធ​ដើម"
 
-#: src/main.cpp:73 src/main.cpp:79
+#: src/main.cpp:91 src/main.cpp:97
 #, kde-format
 msgid "Mauricio Piacentini"
 msgstr "Mauricio Piacentini"
 
-#: src/main.cpp:74
+#: src/main.cpp:92
 #, kde-format
 msgid "Port to KDE4, Qt4 and KGameCanvas classes"
 msgstr "នាំទៅ KDE4, Qt4 និង​ថ្នាក់ KGameCanvas"
 
-#: src/main.cpp:76
+#: src/main.cpp:94
 #, kde-format
 msgid "Maurizio Monge"
 msgstr "Maurizio Monge"
 
-#: src/main.cpp:77
+#: src/main.cpp:95
 #, kde-format
 msgid "KGameCanvas classes for KDE4"
 msgstr "ថ្នាក់ KGameCanvas សម្រាប់ KDE4"
 
-#: src/main.cpp:80
+#: src/main.cpp:98
 #, kde-format
 msgid "Artwork for runners and default theme"
 msgstr "ការងារ​សិល្បៈ​សម្រាប់​អ្នក​រត់ និង​ស្បែក​លំនាំដើម"
 
-#: src/main.cpp:82
+#: src/main.cpp:100
 #, kde-format
 msgid "Johann Ollivier Lapeyre"
 msgstr "Johann Ollivier Lapeyre"
 
-#: src/main.cpp:83
+#: src/main.cpp:101
 #, kde-format
 msgid "Artwork for bars and ladders"
 msgstr "ការ​ងារ​សិល្បៈ​សម្រាប់​របារ និង​ជណ្ដើរ"
 
-#: src/main.cpp:85 src/main.cpp:93
+#: src/main.cpp:103 src/main.cpp:111
 #, kde-format
 msgid "Eugene Trounev"
 msgstr "Eugene Trounev"
 
-#: src/main.cpp:86
+#: src/main.cpp:104
 #, kde-format
 msgid "Artwork for background of Geek City theme"
 msgstr "ការងារ​សិល្បៈ​សម្រាប់​ផ្ទៃ​ខាង​ក្រោយ​របស់​ស្បែក​ទីក្រុង Geek"
 
-#: src/main.cpp:88
+#: src/main.cpp:106
 #, kde-format
 msgid "Luciano Montanaro"
 msgstr "Luciano Montanaro"
 
-#: src/main.cpp:89
+#: src/main.cpp:107
 #, kde-format
 msgid ""
 "Nostalgia themes, improvements to runners, multiple-backgrounds feature, "
@@ -9836,7 +9836,7 @@ msgstr ""
 "ស្បែក Nostalgia និង​កា​រ​ធ្វើ​ឲ្យ​ប្រសើរ​ឡើង​ដល់​អ្នក​រត់ លក្ខណ​ពិសេស​ផ្ទៃ​ខាង​ក្រោយ​ជា​ច្រើន លក្ខណ​ពិសេស​"
 "ច្បាស់​បន្តិច​ម្ដង​/ព្រិល​​បន្តិច​ម្ដង និង​គំនិត​ផ្សេងៗ​ទៀត​ជា​ច្រើន"
 
-#: src/main.cpp:94
+#: src/main.cpp:112
 #, kde-format
 msgid "Artwork for the Treasure of Egypt theme"
 msgstr "ការងារ​​សិល្បៈ​សម្រាប់​ស្បែក​រតន​សម្បត្តិ​​អេហ្ស៊ីប​"

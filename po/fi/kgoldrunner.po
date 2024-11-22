@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 00:36+0000\n"
+"POT-Creation-Date: 2024-11-22 00:38+0000\n"
 "PO-Revision-Date: 2020-07-29 13:47+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -3759,7 +3759,7 @@ msgstr "Ei vihjettä!"
 
 # pmap: =/gen=KGoldrunnerin/
 # pmap: =/elat=KGoldrunnerista/
-#: gamedata/game_kgr.txt:3 src/main.cpp:29
+#: gamedata/game_kgr.txt:3 src/main.cpp:47
 #, kde-format
 msgid "KGoldrunner"
 msgstr "KGoldrunner"
@@ -9071,88 +9071,88 @@ msgctxt "@title:window"
 msgid "Help: Select Game & Level"
 msgstr "Ohje: Valitse peli ja taso"
 
-#: src/main.cpp:31
+#: src/main.cpp:49
 #, fuzzy, kde-format
 #| msgid "KGoldrunner is a game of action and puzzle solving"
 msgid "A game of action and puzzle solving"
 msgstr "KGoldrunner on toiminta- ja ongelmanratkaisupeli"
 
-#: src/main.cpp:33
+#: src/main.cpp:51
 #, kde-format
 msgid "(C) 2003 Ian Wadham and Marco Krüger"
 msgstr "© 2003 Ian Wadham ja Marco Krüger"
 
-#: src/main.cpp:69
+#: src/main.cpp:87
 #, kde-format
 msgid "Ian Wadham"
 msgstr "Ian Wadham"
 
-#: src/main.cpp:69
+#: src/main.cpp:87
 #, kde-format
 msgid "Current author"
 msgstr "Nykyinen tekijä"
 
-#: src/main.cpp:71
+#: src/main.cpp:89
 #, kde-format
 msgid "Marco Krüger"
 msgstr "Marco Krüger"
 
-#: src/main.cpp:71
+#: src/main.cpp:89
 #, kde-format
 msgid "Original author"
 msgstr "Alkuperäinen tekijä"
 
-#: src/main.cpp:73 src/main.cpp:79
+#: src/main.cpp:91 src/main.cpp:97
 #, kde-format
 msgid "Mauricio Piacentini"
 msgstr "Mauricio Piacentini"
 
-#: src/main.cpp:74
+#: src/main.cpp:92
 #, kde-format
 msgid "Port to KDE4, Qt4 and KGameCanvas classes"
 msgstr "Siirros KDE 4:ään, Qt 4:ään ja KGameCanvas-luokkiin"
 
-#: src/main.cpp:76
+#: src/main.cpp:94
 #, kde-format
 msgid "Maurizio Monge"
 msgstr "Maurizio Monge"
 
-#: src/main.cpp:77
+#: src/main.cpp:95
 #, kde-format
 msgid "KGameCanvas classes for KDE4"
 msgstr "KGameCanvas-luokat KDE 4:ään"
 
-#: src/main.cpp:80
+#: src/main.cpp:98
 #, kde-format
 msgid "Artwork for runners and default theme"
 msgstr "Etsijöiden ja oletusteeman taide"
 
-#: src/main.cpp:82
+#: src/main.cpp:100
 #, kde-format
 msgid "Johann Ollivier Lapeyre"
 msgstr "Johann Ollivier Lapeyre"
 
-#: src/main.cpp:83
+#: src/main.cpp:101
 #, kde-format
 msgid "Artwork for bars and ladders"
 msgstr "Tankojen ja tikkaiden grafiikka"
 
-#: src/main.cpp:85 src/main.cpp:93
+#: src/main.cpp:103 src/main.cpp:111
 #, kde-format
 msgid "Eugene Trounev"
 msgstr "Eugene Trounev"
 
-#: src/main.cpp:86
+#: src/main.cpp:104
 #, kde-format
 msgid "Artwork for background of Geek City theme"
 msgstr "Nörttikaupunkiteeman taustataide"
 
-#: src/main.cpp:88
+#: src/main.cpp:106
 #, kde-format
 msgid "Luciano Montanaro"
 msgstr "Luciano Montanaro"
 
-#: src/main.cpp:89
+#: src/main.cpp:107
 #, kde-format
 msgid ""
 "Nostalgia themes, improvements to runners, multiple-backgrounds feature, "
@@ -9161,7 +9161,7 @@ msgstr ""
 "Nostalgiateemat, parannukset etsijöihn, useampitaustaisuus, häivytyspiirre "
 "ja monet muut ideat"
 
-#: src/main.cpp:94
+#: src/main.cpp:112
 #, kde-format
 msgid "Artwork for the Treasure of Egypt theme"
 msgstr "Egyptin aarre -teeman grafiikka"
