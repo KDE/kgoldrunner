@@ -72,6 +72,17 @@ target_link_libraries(kgoldrunner
     KF6::IconThemes
 )
 
+if(APPLE)
+    set_target_properties(kgoldrunner PROPERTIES
+           MACOSX_BUNDLE_DISPLAY_NAME "KGoldrunner"
+        MACOSX_BUNDLE_BUNDLE_NAME "KGoldrunner"
+        MACOSX_BUNDLE_LONG_VERSION_STRING "KGoldrunner ${RELEASE_SERVICE_VERSION}"
+        MACOSX_BUNDLE_SHORT_VERSION_STRING "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}"
+        MACOSX_BUNDLE_BUNDLE_VERSION "${RELEASE_SERVICE_VERSION}"
+        MACOSX_BUNDLE_GUI_IDENTIFIER "org.kde.kgoldrunner"
+        MACOSX_BUNDLE_COPYRIGHT "2024 The KGoldrunner Developers")
+endif()
+
 install(TARGETS kgoldrunner  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 
 install(PROGRAMS org.kde.kgoldrunner.desktop  DESTINATION  ${KDE_INSTALL_APPDIR})
