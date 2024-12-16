@@ -4,20 +4,21 @@
 #
 # Ravishankar Shrivastava <raviratlami@yahoo.com>, 2007.
 # Raghavendra Kamath <raghu@raghukamath.com>, 2021.
+# SPDX-FileCopyrightText: 2024 kali <skkalwar999@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-22 00:38+0000\n"
-"PO-Revision-Date: 2021-08-21 16:25+0530\n"
-"Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
-"Language-Team: kde-hindi\n"
+"PO-Revision-Date: 2024-12-15 19:32+0530\n"
+"Last-Translator: kali <skkalwar999@gmail.com>\n"
+"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Lokalize 21.08.0\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, fuzzy, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -5785,7 +5786,7 @@ msgstr ""
 #| msgid "&New Game..."
 msgctxt "@action"
 msgid "&New Game…"
-msgstr "नया खेल... (&N)"
+msgstr "नया खेल… (&N)"
 
 #: src/kgoldrunner.cpp:187
 #, fuzzy, kde-format
@@ -5812,7 +5813,7 @@ msgstr ""
 #| msgid "&Load Saved Game..."
 msgctxt "@action"
 msgid "&Load Saved Game…"
-msgstr "सहेजा गया खेल लोड करें... (&L)"
+msgstr "सहेजा गया खेल लोड करें… (&L)"
 
 #: src/kgoldrunner.cpp:205
 #, fuzzy, kde-format
@@ -6002,7 +6003,7 @@ msgstr "संपादक"
 #| msgid "&Save Edits..."
 msgctxt "@action"
 msgid "&Save Edits…"
-msgstr "संपादित को सहेजें... (&S)"
+msgstr "संपादित को सहेजें… (&S)"
 
 #: src/kgoldrunner.cpp:313
 #, fuzzy, kde-format
@@ -6107,7 +6108,7 @@ msgstr ""
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Change &Theme…"
-msgstr "खेल बनाएँ..."
+msgstr "खेल बनाएँ…"
 
 #: src/kgoldrunner.cpp:352
 #, kde-format
@@ -7237,7 +7238,7 @@ msgstr "के-गोल्डरनर"
 #| msgid "&New Game..."
 msgctxt "@action:button"
 msgid "&New Game…"
-msgstr "नया खेल... (&N)"
+msgstr "नया खेल… (&N)"
 
 #: src/kgrgame.cpp:724
 #, kde-format
@@ -7799,7 +7800,7 @@ msgstr "स्तर मिटाएँ"
 #| msgid "Move To..."
 msgctxt "@action:button"
 msgid "Move To…"
-msgstr "यहाँ पर खिसकाएँ..."
+msgstr "यहाँ पर खिसकाएँ…"
 
 #: src/kgrselector.cpp:281
 #, fuzzy, kde-format
