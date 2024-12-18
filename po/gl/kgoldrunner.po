@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-06 00:36+0000\n"
-"PO-Revision-Date: 2024-12-15 10:37+0100\n"
+"PO-Revision-Date: 2024-12-16 22:18+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -1345,6 +1345,7 @@ msgstr ""
 "través do falso chan do centro do 1 e saír mediante as escadas á esquerda do "
 "1."
 
+# skip-rule: trasno-file_reverse
 #. i18n:
 #. NOTES: Files 'gamedata/game_*.txt' are KGoldrunner DATA files.  They
 #. are installed in $KDEDIR/share/apps/kgoldrunner/system and contain
@@ -1379,7 +1380,7 @@ msgstr ""
 #, kde-format
 msgid "TRANSLATORS: Please see the notes in the translation comment."
 msgstr ""
-"TRADUTORES: para a tradución deste ficheiro PO, consúltense as notas desta "
+"TRADUCIÓN: para a tradución deste ficheiro PO, consúltense as notas desta "
 "cadea."
 
 #: gamedata/game_fd.txt:2
