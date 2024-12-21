@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kgoldrunner package.
 #
-# giovanni <g.sora@tiscali.it>, 2023, 2024.
+# SPDX-FileCopyrightText: 2023, 2024 giovanni <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-22 00:38+0000\n"
-"PO-Revision-Date: 2024-05-06 12:14+0200\n"
+"PO-Revision-Date: 2024-12-20 15:29+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -5879,7 +5879,7 @@ msgstr "Crea"
 #, kde-format
 msgctxt "@action"
 msgid "&Edit Level…"
-msgstr ""
+msgstr "Modifica Niv&ello..."
 
 #: src/kgoldrunner.cpp:301
 #, kde-format
@@ -5903,7 +5903,7 @@ msgstr "Modifica"
 #, kde-format
 msgctxt "@action"
 msgid "&Save Edits…"
-msgstr ""
+msgstr "&Salveguarda modificationes..."
 
 #: src/kgoldrunner.cpp:313
 #, kde-format
@@ -5945,7 +5945,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "&Delete Level…"
-msgstr ""
+msgstr "&Dele  Nivello..."
 
 #: src/kgoldrunner.cpp:327
 #, kde-format
@@ -5963,7 +5963,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Create &Game…"
-msgstr ""
+msgstr "Crea &Joco..."
 
 #: src/kgoldrunner.cpp:336
 #, kde-format
@@ -6695,7 +6695,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Game"
-msgstr ""
+msgstr "Crea Joco"
 
 #: src/kgrdialog.cpp:186
 #, kde-format
@@ -6833,7 +6833,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Level"
-msgstr ""
+msgstr "Dele  Nivello"
 
 #: src/kgreditor.cpp:420
 #, kde-format
@@ -6851,7 +6851,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "&Delete Level"
-msgstr ""
+msgstr "&Dele Nivello"
 
 #: src/kgreditor.cpp:462
 #, kde-format
@@ -7559,7 +7559,7 @@ msgstr "Salveguarda modification"
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete Level"
-msgstr ""
+msgstr "Dele  Nivello"
 
 #: src/kgrselector.cpp:278
 #, kde-format

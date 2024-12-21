@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-22 00:38+0000\n"
-"PO-Revision-Date: 2024-12-14 01:48+0530\n"
+"PO-Revision-Date: 2024-12-20 22:01+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
@@ -4373,7 +4373,7 @@ msgstr ""
 #: gamedata/game_lars.txt:48
 #, kde-format
 msgid "The Box (1)"
-msgstr "पेटी (१) ९."
+msgstr "पेटी (१)"
 
 #: gamedata/game_lars.txt:49
 #, kde-format
@@ -4465,7 +4465,7 @@ msgstr "शत्रून् वधं परिहरन्तु। तत्
 #: gamedata/game_lars.txt:80
 #, kde-format
 msgid "The Box (2)"
-msgstr "पेटी (२) ९."
+msgstr "पेटी (२)"
 
 #: gamedata/game_lars.txt:84
 #, kde-format
@@ -5694,7 +5694,7 @@ msgstr "बिन्दुरेखा"
 #: gamedata/game_plws.txt:248
 #, kde-format
 msgid "Do Not Look Down (1)"
-msgstr "अधः न पश्यन्तु (१) २."
+msgstr "अधः न पश्यन्तु (१)"
 
 #: gamedata/game_plws.txt:251
 #, kde-format
@@ -6435,7 +6435,7 @@ msgstr ""
 #: gamedata/game_sot.txt:35
 #, kde-format
 msgid "Endless Enemies (1)"
-msgstr "अनन्तशत्रवः (१) २."
+msgstr "अनन्तशत्रवः (१)"
 
 #: gamedata/game_sot.txt:36
 #, kde-format
@@ -6559,7 +6559,7 @@ msgstr ""
 #: gamedata/game_sot.txt:59
 #, kde-format
 msgid "Endless Enemies (2)"
-msgstr "अनन्तशत्रवः (२) २."
+msgstr "अनन्तशत्रवः (२)"
 
 #: gamedata/game_sot.txt:60
 #, kde-format
@@ -8425,7 +8425,7 @@ msgstr "इष्टिका"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint bricks (can dig)"
-msgstr "इष्टकानां रङ्गं (खननं कर्तुं शक्नोति) २."
+msgstr "इष्टकानां रङ्गं (खननं कर्तुं शक्नोति)"
 
 #: src/kgoldrunner.cpp:938
 #, kde-format
@@ -8443,7 +8443,7 @@ msgstr "ठोस"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint concrete (cannot dig)"
-msgstr "कंक्रीटं रङ्गयन्तु (खनितुं न शक्नोति) २."
+msgstr "कंक्रीटं रङ्गयन्तु (खनितुं न शक्नोति)"
 
 #: src/kgoldrunner.cpp:943
 #, kde-format
@@ -8587,13 +8587,13 @@ msgstr "नाम वा संकेतं सम्पादयतु"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name of level:"
-msgstr "स्तरस्य नाम : १."
+msgstr "स्तरस्य नाम :"
 
 #: src/kgrdialog.cpp:63
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Hint for level:"
-msgstr "स्तरस्य कृते संकेतः : १."
+msgstr "स्तरस्य कृते संकेतः :"
 
 #: src/kgrdialog.cpp:103 src/kgrdialog.cpp:172 src/kgrselector.cpp:84
 #, kde-format
@@ -8605,13 +8605,13 @@ msgstr "गेम इन्फो सम्पादयतु"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name of game:"
-msgstr "क्रीडायाः नाम : १."
+msgstr "क्रीडायाः नाम :"
 
 #: src/kgrdialog.cpp:131
 #, kde-format
 msgctxt "@label:textbox"
 msgid "File name prefix:"
-msgstr "सञ्चिकानाम उपसर्गः : १."
+msgstr "सञ्चिकानाम उपसर्गः :"
 
 #: src/kgrdialog.cpp:139
 #, kde-format
@@ -8636,7 +8636,7 @@ msgstr[1] "%1 स्तराः"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "About this game:"
-msgstr "अस्य क्रीडायाः विषये : १."
+msgstr "अस्य क्रीडायाः विषये :"
 
 #: src/kgrdialog.cpp:169
 #, kde-format
@@ -8710,7 +8710,7 @@ msgid ""
 "through bricks, are you? :-)"
 msgstr ""
 "प्रणालीस्तरं सम्पादयितुं ठीकम्, परन्तु भवान् स्वस्य एकस्मिन् क्रीडने स्तरं रक्षतु । त्वं न केवलं "
-"गुप्तसीढीनां, पतन-इष्टकानां च अवलोकनं करोषि, किम्? :-) २."
+"गुप्तसीढीनां, पतन-इष्टकानां च अवलोकनं करोषि, किम्? :-)"
 
 #: src/kgreditor.cpp:242 src/kgreditor.cpp:261 src/kgrgame.cpp:260
 #, kde-format
@@ -9478,7 +9478,7 @@ msgstr "कौशलं"
 #: src/kgrselector.cpp:179
 #, kde-format
 msgid "Level 1 of the selected game is:"
-msgstr "चयनितक्रीडायाः प्रथमस्तरः अस्ति : १."
+msgstr "चयनितक्रीडायाः प्रथमस्तरः अस्ति :"
 
 #: src/kgrselector.cpp:183
 #, kde-format
@@ -9495,7 +9495,7 @@ msgstr "कृपया एकं स्तरं चिनुत:"
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Level number:"
-msgstr "स्तरसङ्ख्या : १."
+msgstr "स्तरसङ्ख्या :"
 
 #: src/kgrselector.cpp:210
 #, kde-format
