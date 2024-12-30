@@ -471,4 +471,7 @@
   <content_rating type="oars-1.1">
     <content_attribute id="violence-cartoon">mild</content_attribute>
   </content_rating>
+  <custom>
+    <value key="KDE::supporters">Dmytro Nezhevenko</value>
+  </custom>
 </component>
