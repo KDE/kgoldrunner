@@ -3,7 +3,7 @@
 #
 #
 #
-# SPDX-FileCopyrightText: 2023, 2024 Adrián Chaves (Gallaecio)
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Adrián Chaves (Gallaecio)
 # Iván Seoane Pardo <talivan.ivan@gmail.com>, 2006.
 # Xabi G. Feal <xabigf@gmx.net>, 2006.
 # mvillarino <mvillarino@users.sourceforge.net>, 2007, 2008, 2009.
@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-06 00:36+0000\n"
-"PO-Revision-Date: 2024-12-16 22:18+0100\n"
+"PO-Revision-Date: 2025-01-06 20:52+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -3466,6 +3466,7 @@ msgstr ""
 msgid "Fear Of Heights"
 msgstr "Medo das alturas"
 
+# skip-rule: trasno-logout-logoff_reverse
 #: gamedata/game_GotD.txt:294
 #, kde-format
 msgid ""
@@ -5268,8 +5269,8 @@ msgstr ""
 "\n"
 "Senón, éche cousa de conseguir que os inimigos queden atrapados en algures "
 "ou superalos dalgún xeito. O único problema de verdade ocorre se un inimigo "
-"colle unha das moedas e queda atrapado nalgún sitio ao que non poidas "
-"acceder. Non sempre se pode gañar.\n"
+"colle unha das moedas e queda atrapado nalgún sitio do que non o poidas "
+"sacar. Non sempre se pode gañar.\n"
 "\n"
 "Para saír da zona central, busca a trampa dobre á esquerda."
 
@@ -5398,8 +5399,8 @@ msgstr ""
 "baixar e sae de aí antes de que o bloque reapareza. Aí hai un falso bloque, "
 "así que intenta cavar a medida que caes nel.\n"
 "\n"
-"Tras coller a derradeira moeda, podes saír polo centro, onde unha nova "
-"escala permíteche cavar e volver acceder á parte esquerda do labirinto."
+"Tras coller a derradeira moeda, podes saír polo centro, onde unha nova "
+"escala permíteche cavar e volver entrar na parte esquerda do labirinto."
 
 #: gamedata/game_MAZ.txt:154
 #, kde-format
@@ -7591,6 +7592,7 @@ msgstr ""
 "\n"
 "Vai á dereita e limpa todos os bloques e escadas da dereita cara á esquerda."
 
+# skip-rule: trasno-logout-logoff_reverse
 #: gamedata/game_wad.txt:21
 #, kde-format
 msgid "Quick Off The Mark"
@@ -7678,6 +7680,7 @@ msgstr ""
 msgid "The Rosette"
 msgstr "A roseta"
 
+# skip-rule: trasno-log/signout-log/signoff_reverse
 #: gamedata/game_wad.txt:46
 #, kde-format
 msgid ""
