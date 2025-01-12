@@ -1,5 +1,5 @@
 # Translators:
-# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Emir SARI <emir_sari@icloud.com>
 # Görkem Çetin <gorkem@kde.org>, 2004.
 # Ömer Fadıl USTA <omer_fad@yahoo.com>, 2004.
 # Serdar Dalgıç <serdar@pardus.org.tr>, 2010.
@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-22 00:38+0000\n"
-"PO-Revision-Date: 2024-10-26 20:17+0300\n"
+"PO-Revision-Date: 2025-01-11 17:12+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 25.03.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -3256,7 +3256,7 @@ msgstr ""
 "Daha tez; ancak belki daha riskli olan bir diğer olasılık, toplamak "
 "istediğiniz bir dizi altın parçasının üzerinde zombiler bir yan merdivende "
 "çıkış noktasının üzerine çıkana kadar beklemek, sonra düşüp altını toplamak "
-"ve ya son beton blokunuza yaslanmaktır; yoksa zombiler çıkışlarına "
+"veya son beton blokunuza yaslanmaktır; yoksa zombiler çıkışlarına "
 "ulaştığında düşerler. Daha sonra merdiveni terk edecekler ve siz onların "
 "altından koşarak bir kez daha merdivene tırmanırken düşecekler.\n"
 "\n"
@@ -5071,7 +5071,7 @@ msgid ""
 "are having trouble."
 msgstr ""
 "Yolu göremediğiniz bir labirent. Tuzak zemini kullanmalısınız. Deneme "
-"yanılma yapmak tek şansınız — sorun yaşarsanız kağıt üzerinde eşlemeyi "
+"yanılma yapmak tek şansınız — sorun yaşarsanız kâğıt üzerinde eşlemeyi "
 "deneyin."
 
 #: gamedata/game_MAZ.txt:98 gamedata/game_MAZ.txt:184
