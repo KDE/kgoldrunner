@@ -1,26 +1,26 @@
 # Translation for kgoldrunner.po to Euskara/Basque (eu).
-# Copyright (C) 2003-2024 This file is copyright:
+# Copyright (C) 2003-2025 This file is copyright:
 # This file is distributed under the same license as the kgoldrunner package.
-# SPDX-FileCopyrightText: 2023, 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Marcos  <marcos@euskalgnu.org>, 2003, 2005.
 # Ion Gaztañaga <igaztanaga@gmail.com>, 2005.
 # Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2009.
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2023, 2024.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2023, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-06 00:36+0000\n"
-"PO-Revision-Date: 2024-12-15 18:50+0100\n"
+"PO-Revision-Date: 2025-01-22 19:36+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.12.0\n"
+"X-Generator: Lokalize 24.12.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #, kde-format
@@ -2723,6 +2723,19 @@ msgid ""
 "them. The place they start from when you lure them down is crucial. Trial "
 "and error will help you figure this one out."
 msgstr ""
+"Urrea lortzea zatirik errazena da: kanpoko tenplura atera eta barruko "
+"tenplura goitik sartu - handik urrerako bidea zulatu dezakezu.\n"
+"\n"
+"Zatirik zailena zonbiak gainditzea da. Ezin dituzu haietako hiru aldi berean "
+"gainditu; beraz, irtenbidea horietako gehienak handik kanpora erakartzea "
+"da.\n"
+"Erakarri barneko tenpluko zonbia beheko hobira, gero eskuineko zonbia "
+"barneko tenplura eraman. Saiatu zaitez hura urrea zegoen lekuan sartzen. "
+"Orduan beste zonbiak ere barruko tenpluan sartzea errazagoa da.\n"
+"\n"
+"Hala ere, zonbiek batzuetan ez dute izango zuk haiek jutea nahi duzun lekura "
+"joateko gogorik. Erakartzen hasten zarenean haien abiapuntuak berebiziko "
+"garrantzia izango du. Probak eta erroreak hau asmatzen lagunduko dizu."
 
 #: gamedata/game_GotD.txt:113
 #, kde-format
@@ -2796,6 +2809,40 @@ msgid ""
 "right to get past the zombie and lure him into the gap on the right by going "
 "down the ladder to the same height."
 msgstr ""
+"Nola egiten diozu aurre lehen zonbiari? Eskaileraren ondoan gezurrezko "
+"adreilu bat dago, hark bertara jauzi egingo du betirako begizta batean "
+"ibiltzeko. Bera gainditzeko bidea, une egokian (bera eskailera igotzen ari "
+"denean) zu tranpatik erortzen uztea da, ondoren bizkor ezkerrera eta behera "
+"joatea.\n"
+"\n"
+"Orain berak hurrengo eskailerara arteko hutsunea betetzea beharko duzu. "
+"Dagoeneko ikasiko zenuen zonbiak halako zuloetara jauzi egiteko manipulatu "
+"daitezkeela. Zoritxarrez hutsunearen azpiko adreilua tranpa bat da, eta "
+"zuloak bi adreiluko sakonera du. Horrek esan nahi du, bera sakonegi ondoratu "
+"baino lehen, haren buru gainetik igarotzeko une labur bat duzula. Saiakera "
+"bat baino gehiago izan dezakezu zure atzeko adreiluak zulatzen badituzu. "
+"Ondoren, behar bezain azkarra izan ez bazina, aske irteten utzi ahalko "
+"diozu.\n"
+"\n"
+"Hurrengo eremua denbora mugatuan zulatzeko buru-hausgarri bat da, hura "
+"ebaztea ez litzateke zaila izan behar.\n"
+"\n"
+"Argi dago bigarren zonbia zulora eraman behar dela, kalterik egingo ez duen "
+"lekura.\n"
+"\n"
+"Hirugarren zonbiak urrea zure ordez hartzea behar duzu. Urrea duen kutxaren "
+"gaineko eskaileren azpian gezurrezko bi adreilu daude. Bata ezkerreko "
+"eskailera ondoan dago, etsaiaren hartzean jartzeko erabil dezakezu. Ondoren "
+"urrats bat behera mugitzen bazara, erdiko tranpan zehar erori eta urrea "
+"hartuko du. Gero beherantz erakarri behar duzu, bera askatzeko zulatuz. "
+"Ziurtatu urrea ez duela bidean jaregiten!\n"
+"\n"
+"Honen ondoren, kezkatzeko moduko azken zonbi bat dago. Konturatuko zara, "
+"ezkerren dagoen eskaileraren gailurretik urrats bat beherago zaudenean "
+"zugana korrika doala. Bere buru gainetik ibiltzeko eta hurrengo eskailerara "
+"iristeko une egokia aurkitu behar duzu. Orain zulatu haren ondoko gaineko bi "
+"adreiluak, jauzi eskuinera zonbia gainditzeko eta erakar ezazu eskuineko "
+"hutsunera eskaileran behera altuera berdinera jaitsiz."
 
 #: gamedata/game_GotD.txt:137
 #, kde-format
@@ -5612,8 +5659,8 @@ msgid ""
 msgstr ""
 "Ezkerraldeko eskailera baten bi albotan dauden bi pipita bilduz amaitu, gero "
 "hilobiaren behean dauden lau eskuratu. Piramidearen ezkerraldean esekita "
-"dagoen pipitaren gainera etsai bat erortzea lortu behar duzu. Beste etsai "
-"batek beheko ezkerreko zuloa bete arazi behar duzu baita ere.\n"
+"dagoen pipitaren gainera etsai bat erortzea lortu behar duzu. Beste bat "
+"behar duzu behe ezkerreko hobia betetzeko.\n"
 "\n"
 "Hainbat puzzle zulatzea besterik ez zaizu falta, gehienetan mugatutako "
 "denbora egongo da zure ihesbideak itxi aurretik. Ongi pasa!"
