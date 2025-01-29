@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-06 00:36+0000\n"
-"PO-Revision-Date: 2025-01-22 19:36+0100\n"
+"PO-Revision-Date: 2025-01-27 18:45+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -2876,6 +2876,19 @@ msgid ""
 "\n"
 "Please watch the solution to get a better idea of how all this works."
 msgstr ""
+"Eskaileratik igo, baina pixka bat itxoin hormigoi errenkadaren maila berean. "
+"Ondoren korrika egin ezazu ezkerreko lehen eskailerarantz. Ezkerreko zonbiak "
+"baino lehenago iritsi behar duzu, baina goiko zonbi bakarra zure atzetik "
+"erori beharko luke.\n"
+"\n"
+"Orain eskaileran gora igo eta joan eskuinera. Hurrengo eskaileran urrats bat "
+"behera jaitsi eta itxoin beheko zonbia igaro arte, gero jaitsi eta itzuli "
+"zure lehen eskailerara. Urrats bat jaitsi eta itxoin zonbi gehienek zure "
+"buru gainetik igaro arte. Orain, eskuineko eskailerak ihesbiderik onena izan "
+"beharko lukete, han bi zonbi bakarrik geratu beharko bailirateke, "
+"gainontzekoak ezkerrean pilatzen diren bitartean.\n"
+"\n"
+"Mesedez, ikusi ebazpidea hau guztia nola dabilen hobeto ulertzeko."
 
 #: gamedata/game_GotD.txt:149
 #, kde-format
@@ -2894,6 +2907,13 @@ msgid ""
 "descending and taking as much gold as possible - never staying too long at "
 "the bottom!"
 msgstr ""
+"Orokorrean hobe da zonbiak dauden lekuan mantentzea. Jakina, beti saia "
+"zaitezke haiek eskuinera erakarri eta hobietako batean eror arazten (duten "
+"urrea kendu ondoren, esan beharrik ez dago), baina hori prozesu nahiko "
+"korapilatsua da.\n"
+"\n"
+"Azkar jaitsi eta ahalik eta urre gehien hartu aurretik, hobe da haien "
+"diagonalera erakartzea - inoiz ez gelditu denbora gehiegi behealdean!"
 
 #: gamedata/game_GotD.txt:155
 #, kde-format
@@ -2996,7 +3016,7 @@ msgid "Encircled"
 msgstr "Inguratuta"
 
 #: gamedata/game_GotD.txt:188
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "The essence of this level is to get the zombies who do not have a piece of "
 "gold separated from the others and locked away in the pit. So it is helpful "
@@ -3004,6 +3024,11 @@ msgid ""
 "is no real problem if zombies who have gold land in the pit: you can always "
 "release them later and get back the gold."
 msgstr ""
+"Maila horren funtsa da urre puskarik ez duten zonbiak besteengandik "
+"bereiztea eta hobian giltzapetzea. Beraz, lagungarria da ahalik eta urre "
+"gehien lortzea zonbietako edozeinek lortu aurretik. Ez da benetako arazoa "
+"urrea duten zonbiak hobian lur hartzen badute: beti askatu ditzakezu gero, "
+"eta urrea berreskuratu."
 
 #: gamedata/game_GotD.txt:191
 #, kde-format
@@ -3289,13 +3314,18 @@ msgid "Overcrowding"
 msgstr "Jendetza"
 
 #: gamedata/game_GotD.txt:290
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "The zombies will eventually group themselves, which makes it easier for you "
 "to avoid them, but harder to steal their gold. Best if you get as much gold "
 "as possible before anyone else. You might not manage to get every piece "
 "before them, but there are some places where it is easier to rob them."
 msgstr ""
+"Azkenean, zonbiak taldekatu egingo dira, eta horrek erraztu egiten dizu "
+"haiek saihestea, baina zailagoa haien urrea lapurtzea. Onena ahalik eta urre "
+"gehien lortzen baduzu beste inork baino lehenago. Agian ez duzu lortuko "
+"pieza bakoitza haien aurretik iristea, baina leku batzuetan errazagoa da "
+"lapurtzea."
 
 #: gamedata/game_GotD.txt:293
 #, kde-format
