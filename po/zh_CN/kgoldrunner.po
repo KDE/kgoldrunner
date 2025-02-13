@@ -5841,7 +5841,7 @@ msgstr "对了，您必须要踩在敌人头上跑，而且是一整路！这只
 #, kde-format
 msgctxt "@action"
 msgid "&New Game…"
-msgstr ""
+msgstr "新建游戏(N)..."
 
 #: src/kgoldrunner.cpp:187
 #, kde-format
@@ -5853,37 +5853,37 @@ msgstr "玩下一关(&Y)"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Play the next level"
-msgstr ""
+msgstr "开始下一关"
 
 #: src/kgoldrunner.cpp:189
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Switches to the next level in the game you are playing."
-msgstr ""
+msgstr "切换到当前游戏的下一关。"
 
 #: src/kgoldrunner.cpp:196
 #, kde-format
 msgctxt "@action"
 msgid "&Load Saved Game…"
-msgstr ""
+msgstr "加载保存的游戏(L)..."
 
 #: src/kgoldrunner.cpp:205
 #, kde-format
 msgctxt "@action"
 msgid "&Save Game…"
-msgstr ""
+msgstr "保存游戏(S)..."
 
 #: src/kgoldrunner.cpp:211
 #, kde-format
 msgctxt "@action"
 msgid "Save a Solution…"
-msgstr ""
+msgstr "保存过关指导..."
 
 #: src/kgoldrunner.cpp:212
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save a solution"
-msgstr ""
+msgstr "保存过关指导"
 
 #: src/kgoldrunner.cpp:213
 #, kde-format
@@ -5892,6 +5892,8 @@ msgid ""
 "Saves a solution for a level into a file called 'sol_&lt;prefix&gt;.txt' in "
 "your user's data directory."
 msgstr ""
+"把关卡的解决方案保存至您的用户数据目录下，文件名为 'sol_&lt;prefix&gt;."
+"txt' 。"
 
 #: src/kgoldrunner.cpp:246
 #, kde-format
@@ -5903,13 +5905,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show how to win this level"
-msgstr ""
+msgstr "显示本关的过关指导"
 
 #: src/kgoldrunner.cpp:248
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Plays a recording of how to win this level, if there is one available."
-msgstr ""
+msgstr "如果有的话，播放本关的过关录像。"
 
 #: src/kgoldrunner.cpp:252
 #, kde-format
@@ -5921,13 +5923,13 @@ msgstr "实时重放(&I)"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Instant replay"
-msgstr ""
+msgstr "实时重放"
 
 #: src/kgoldrunner.cpp:254
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Shows a recording of the level you are currently playing."
-msgstr ""
+msgstr "显示您正在玩的这关的录像。"
 
 #: src/kgoldrunner.cpp:259
 #, kde-format
@@ -5939,7 +5941,7 @@ msgstr "重放上一关(&L)"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Replay last level"
-msgstr ""
+msgstr "重放上一关的录像"
 
 #: src/kgoldrunner.cpp:261
 #, kde-format
@@ -5947,7 +5949,7 @@ msgctxt "@info:whatsthis"
 msgid ""
 "Shows a recording of the last level you played and finished, regardless of "
 "whether you won or lost."
-msgstr ""
+msgstr "显示您玩过的上一关的录像，无论是否打赢。"
 
 #: src/kgoldrunner.cpp:267
 #, kde-format
@@ -5959,13 +5961,13 @@ msgstr "&重放任意关"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Replay any level"
-msgstr ""
+msgstr "重放任意一关的录像"
 
 #: src/kgoldrunner.cpp:269
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Shows a recording of any level you have played so far."
-msgstr ""
+msgstr "显示您曾经玩过的任何一关的录像"
 
 #: src/kgoldrunner.cpp:274
 #, kde-format
@@ -5977,7 +5979,7 @@ msgstr "自杀(&K)"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Kill the hero"
-msgstr ""
+msgstr "自杀"
 
 #: src/kgoldrunner.cpp:276
 #, kde-format
@@ -5985,7 +5987,7 @@ msgctxt "@info:whatsthis"
 msgid ""
 "Kills the hero, in case he finds himself in a situation from which he cannot "
 "escape."
-msgstr ""
+msgstr "当您发现自己身陷绝境无路可逃时，可以选择自杀。"
 
 #: src/kgoldrunner.cpp:293
 #, kde-format
@@ -5997,13 +5999,13 @@ msgstr "&创建关卡"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create level"
-msgstr ""
+msgstr "创建等级"
 
 #: src/kgoldrunner.cpp:295
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Creates a completely new level."
-msgstr ""
+msgstr "创建一个全新的关卡。"
 
 #: src/kgoldrunner.cpp:297
 #, kde-format
@@ -6015,19 +6017,19 @@ msgstr "创建"
 #, kde-format
 msgctxt "@action"
 msgid "&Edit Level…"
-msgstr ""
+msgstr "编辑关卡...(E)"
 
 #: src/kgoldrunner.cpp:301
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit level"
-msgstr ""
+msgstr "编辑关卡"
 
 #: src/kgoldrunner.cpp:302
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Edits any level."
-msgstr ""
+msgstr "编辑任一关卡。"
 
 #: src/kgoldrunner.cpp:304
 #, kde-format
@@ -6039,19 +6041,19 @@ msgstr "编辑"
 #, kde-format
 msgctxt "@action"
 msgid "&Save Edits…"
-msgstr ""
+msgstr "保存编辑内容...(S)"
 
 #: src/kgoldrunner.cpp:313
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save edits"
-msgstr ""
+msgstr "保存编辑"
 
 #: src/kgoldrunner.cpp:314
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Saves your level after editing."
-msgstr ""
+msgstr "编辑完成后保存您的关卡。"
 
 #: src/kgoldrunner.cpp:316
 #, kde-format
@@ -6063,91 +6065,91 @@ msgstr "保存"
 #, kde-format
 msgctxt "@action"
 msgid "&Move Level…"
-msgstr ""
+msgstr "移动关卡...(M)"
 
 #: src/kgoldrunner.cpp:321
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Move level"
-msgstr ""
+msgstr "移动关卡"
 
 #: src/kgoldrunner.cpp:322
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Changes a level's number or move it to another game."
-msgstr ""
+msgstr "更改某个关卡的编号，或将其移至另一个关卡合集内。"
 
 #: src/kgoldrunner.cpp:326
 #, kde-format
 msgctxt "@action"
 msgid "&Delete Level…"
-msgstr ""
+msgstr "删除关卡 (D) "
 
 #: src/kgoldrunner.cpp:327
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete level"
-msgstr ""
+msgstr "删除关卡"
 
 #: src/kgoldrunner.cpp:328
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Deletes a level."
-msgstr ""
+msgstr "删除关卡。"
 
 #: src/kgoldrunner.cpp:335
 #, kde-format
 msgctxt "@action"
 msgid "Create &Game…"
-msgstr ""
+msgstr "新建游戏 (G) ..."
 
 #: src/kgoldrunner.cpp:336
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create game"
-msgstr ""
+msgstr "新建游戏"
 
 #: src/kgoldrunner.cpp:337
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Creates a completely new game."
-msgstr ""
+msgstr "新建一个全新的游戏"
 
 #: src/kgoldrunner.cpp:340
 #, kde-format
 msgctxt "@action"
 msgid "Edit Game &Info…"
-msgstr ""
+msgstr "编辑游戏信息 (I) "
 
 #: src/kgoldrunner.cpp:341
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit game info"
-msgstr ""
+msgstr "编辑游戏信息"
 
 #: src/kgoldrunner.cpp:342
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Changes the name, rules or description of a game."
-msgstr ""
+msgstr "更改游戏的名称、规则或描述。"
 
 #: src/kgoldrunner.cpp:351
 #, kde-format
 msgctxt "@action"
 msgid "Change &Theme…"
-msgstr ""
+msgstr "更改主题 (&T) ..."
 
 #: src/kgoldrunner.cpp:352
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Change the graphics theme"
-msgstr ""
+msgstr "更改图形主题"
 
 #: src/kgoldrunner.cpp:353
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Alters the visual appearance of the runners and background scene."
-msgstr ""
+msgstr "更改玩家和背景的视觉外观。"
 
 #: src/kgoldrunner.cpp:367
 #, kde-format
@@ -6159,13 +6161,13 @@ msgstr "播放声音(&P)"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Play sound effects"
-msgstr ""
+msgstr "播放音效"
 
 #: src/kgoldrunner.cpp:369
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Plays sound effects during the game."
-msgstr ""
+msgstr "在游戏中播放音效。"
 
 #: src/kgoldrunner.cpp:373
 #, kde-format
@@ -6177,31 +6179,31 @@ msgstr "播放脚步声(&F)"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Make sounds of player's footsteps"
-msgstr ""
+msgstr "为玩家的脚步声创建音效"
 
 #: src/kgoldrunner.cpp:375
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Makes sounds of player's footsteps."
-msgstr ""
+msgstr "为玩家的脚步声创建音效"
 
 #: src/kgoldrunner.cpp:380
 #, kde-format
 msgctxt "@option:check"
 msgid "&Demo at Start"
-msgstr ""
+msgstr "启动时运行演示 (&D) "
 
 #: src/kgoldrunner.cpp:381
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Run a demo when the game starts"
-msgstr ""
+msgstr "在游戏启动时运行演示"
 
 #: src/kgoldrunner.cpp:382
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Runs a demo when the game starts."
-msgstr ""
+msgstr "在游戏启动时运行演示。"
 
 #: src/kgoldrunner.cpp:390
 #, kde-format
@@ -6213,7 +6215,7 @@ msgstr "鼠标控制角色(&M)"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mouse controls hero"
-msgstr ""
+msgstr "使用鼠标控制英雄"
 
 #: src/kgoldrunner.cpp:392
 #, kde-format
@@ -6231,7 +6233,7 @@ msgstr "键盘控制角色(&K)"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Keyboard controls hero"
-msgstr ""
+msgstr "使用键盘控制英雄"
 
 #: src/kgoldrunner.cpp:398
 #, kde-format
