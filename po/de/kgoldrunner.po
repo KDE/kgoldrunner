@@ -28,14 +28,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Stefan Winter, Rolf Eike Beer, Martin Ereth, Johannes Obermayr"
+msgstr "Deutsches KDE-Übersetzungsteam"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
-"swinter@kde.org, kde@opensource.sf-tec.de, martin.ereth@arcor.de, "
-"johannesobermayr@gmx.de"
+msgstr "kde-i18n-de@kde.org"
 
 #: gamedata/game_blb.txt:3
 #, kde-format
