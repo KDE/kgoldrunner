@@ -1,26 +1,21 @@
-# translation of kgoldrunner.po to Español
-# traducción de kgoldrunner.po a Español
-# Copyright (C) 2003, 2004, 2006, 2007, 2008 Free Software Foundation, Inc.
+# Spanish translations for kgoldrunner.po package.
+# Copyright (C) 2003-2025 Free Software Foundation, Inc.
 #
-# Sofia Priego <spriego@darksylvania.net>, %Y.
-# Miguel Revilla Rodríguez <yo@miguelrevilla.com>, 2003.
-# Antonio Crevillen <antonio.crevillen@hispalinux.es>, 2003.
-# Rafael Osuna <rosuna@wol.es>, 2003, 2004.
-# Santiago Fernandez Sancho <santi@kde-es.org>, 2004, 2006.
-# Santiago Fernández Sancho <santi@kde-es.org>, 2007, 2008.
-# santi <santi@kde-es.org>, 2009.
+# SPDX-FileCopyrightText: 2003 Miguel Revilla Rodríguez <yo@miguelrevilla.com>
+# SPDX-FileCopyrightText: 2003 Antonio Crevillen <antonio.crevillen@hispalinux.es>
+# SPDX-FileCopyrightText: 2003, 2004 Rafael Osuna <rosuna@wol.es>
+# SPDX-FileCopyrightText: 2004, 2006, 2007, 2008, 2009 Santiago Fernández Sancho <santi@kde-es.org>
 # SPDX-FileCopyrightText: 2009, 2012, 2015, 2017, 2018, 2020, 2021, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
-# Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>, 2009.
-# Huever, 2009, 2010.
-# Kira J. Fernandez <kirajfdez@gmail.com>, 2010, 2011.
-# Rocio Gallego <traducciones@rociogallego.com>, 2012.
-# Sofía Priego <spriego@darksylvania.net>, %Y.
+# SPDX-FileCopyrightText: 2009 Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>
+# SPDX-FileCopyrightText: 2010, 2011 Kira J. Fernandez <kirajfdez@gmail.com>
+# SPDX-FileCopyrightText: 2012 Rocio Gallego <traducciones@rociogallego.com>
+# SPDX-FileCopyrightText: 2024, 2025 Sofía Priego <spriego@darksylvania.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-22 00:38+0000\n"
-"PO-Revision-Date: 2024-06-16 21:07+0100\n"
+"PO-Revision-Date: 2025-03-21 01:45+0100\n"
 "Last-Translator: Sofía Priego <spriego@darksylvania.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -579,7 +574,7 @@ msgstr ""
 "\n"
 "Tras obtener la última pieza de tesoro, sal por la derecha y corre arriba y "
 "abajo por las escaleras. La parte inferior izquierda es la más difícil: "
-"corre bajo las momias de las escaleras que hay sobre ti y maniobra... ¡y ten "
+"corre bajo las momias de las escaleras que hay sobre ti y maniobra… ¡y ten "
 "esperanza!"
 
 #: gamedata/game_CM.txt:118
@@ -1451,8 +1446,8 @@ msgstr ""
 "encuentras en prisión.\n"
 "\n"
 "Pero aquí los policías son implacables, y si intentas escapar no perderán el "
-"sueño si te matan... así que ten cuidado y, lo más importante de todo, sé "
-"rápido... ¡o muere!\n"
+"sueño si te matan… así que ten cuidado y, lo más importante de todo, sé "
+"rápido… ¡o muere!\n"
 "\n"
 "Estos niveles de campeonato usan las reglas rápidas y estrafalarias de "
 "KGoldrunner, y han sido compuestos por Gabriel Miltschitzky [gabriel dot "
@@ -1475,7 +1470,7 @@ msgstr ""
 "pánico.\n"
 "\n"
 "Es muy fácil escaparse de esta cárcel, porque los guardias están atrapados y "
-"no te pueden tocar..."
+"no te pueden tocar…"
 
 #: gamedata/game_GMEP.txt:16
 #, kde-format
@@ -1494,7 +1489,7 @@ msgstr ""
 "\n"
 "El truco es inmovilizar a tus enemigos. Si puedes hacer que caigan sobre un "
 "bloque de hormigón, eso puede ayudar. Por otro lado, también puedes correr "
-"mucho..."
+"mucho…"
 
 #: gamedata/game_GMEP.txt:22
 #, kde-format
@@ -1540,7 +1535,7 @@ msgstr "Enemigos que caen (2) - Excavando"
 #: gamedata/game_GMEP.txt:35
 #, kde-format
 msgid "Start the level with a click. The rest should be self-explanatory..."
-msgstr "Comienza el nivel con un clic. El resto debería ser autoexplicativo..."
+msgstr "Comienza el nivel con un clic. El resto debería ser autoexplicativo…"
 
 #: gamedata/game_GMEP.txt:38
 #, kde-format
@@ -1596,7 +1591,7 @@ msgstr ""
 "Has escapado de ellos fácilmente en los últimos niveles.\n"
 "\n"
 "Ahora vuelves a ser libre y puedes hacer lo que te apetezca. Todo, menos "
-"robar el oro otra vez, no hace falta decirlo..."
+"robar el oro otra vez, no hace falta decirlo…"
 
 #: gamedata/game_GMEP.txt:56
 #, kde-format
@@ -1622,7 +1617,7 @@ msgstr ""
 "Excava los ladrillos cercanos a la barra. Cuando caigas, encuentra "
 "rápidamente una salida de vuelta a la barra, de forma que puedas atravesar "
 "el hueco. Por supuesto, solo puedes tener éxito si conoces el camino y no "
-"dudas. No hay mucho tiempo que perder..."
+"dudas. No hay mucho tiempo que perder…"
 
 #: gamedata/game_GMEP.txt:64
 #, kde-format
@@ -1693,7 +1688,7 @@ msgstr ""
 "este lugar.\n"
 "\n"
 "El siguiente guardia debería ser fácil de pasar, pero después tendrás algo "
-"de trabajo que hacer... Cuando subas por las escaleras que hay cerca del "
+"de trabajo que hacer… Cuando subas por las escaleras que hay cerca del "
 "hormigón, el guardia empezará una carrera de ida y vuelta hacia la escalera "
 "de más a la izquierda. Encuentra el momento exacto para cruzar sobre su "
 "cabeza. Después, el guardia del pozo de hormigón te puede llevar hacia la "
@@ -1765,7 +1760,7 @@ msgstr ""
 "altas.\n"
 "\n"
 "Lo mejor es que seas bueno con tu compañero de equipo: probablemente tendrás "
-"que llevarte bien con él durante los dos siguientes niveles..."
+"que llevarte bien con él durante los dos siguientes niveles…"
 
 #: gamedata/game_GMEP.txt:98
 #, kde-format
@@ -1851,7 +1846,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:16
 #, kde-format
 msgid "Have A Nice Flight..."
-msgstr "Que tengas un buen vuelo..."
+msgstr "Que tengas un buen vuelo…"
 
 #: gamedata/game_GMGR.txt:17
 #, kde-format
@@ -1970,7 +1965,7 @@ msgid ""
 "Before entering any of the structures on the right, make sure you have an "
 "escape route."
 msgstr ""
-"¿Esperar o no esperar? Bueno, inténtalo...\n"
+"¿Esperar o no esperar? Bueno, inténtalo…\n"
 "\n"
 "Antes de entrar en alguna de las estructuras de la derecha, asegúrate de que "
 "tienes una ruta de escape."
@@ -2186,7 +2181,7 @@ msgstr ""
 "\n"
 "Pero ¿cómo consigues llegar al otro lado?\n"
 "\n"
-"Ensayo y error..."
+"Ensayo y error…"
 
 #: gamedata/game_GMGR.txt:114
 #, kde-format
@@ -2381,7 +2376,7 @@ msgid ""
 msgstr ""
 "El apocalipsis zombi ha llegado y eres el último humano que queda con vida "
 "en la Tierra, pero los zombis todavía tienen mucho oro. Sin embargo, al ser "
-"zombis, están más interesados en ti que en el tesoro...\n"
+"zombis, están más interesados en ti que en el tesoro…\n"
 "\n"
 "Cincuenta niveles de campeonato que incluyen sugerencias y soluciones "
 "guardadas, de Gabriel Miltschitzky, abril de 2021."
@@ -2425,7 +2420,7 @@ msgid ""
 msgstr ""
 "¿Eres el único ser humano que ha sobrevivido al apocalipsis zombi y aún no "
 "puedes pensar en otra cosa que en el oro? Pues bien, veamos de qué te "
-"sirve...\n"
+"sirve…\n"
 "\n"
 "Primera sugerencia: cada nivel tiene una solución registrada, así que en "
 "caso de duda, échale un vistazo. Segunda sugerencia: puedes quedarte "
@@ -2503,7 +2498,7 @@ msgid ""
 msgstr ""
 "¡Cuidado! Esto es un zombi. En cuanto lo sueltes, ¡intentará matarte!\n"
 "\n"
-"Por otro lado, no hay otro modo de superarlo...\n"
+"Por otro lado, no hay otro modo de superarlo…\n"
 "\n"
 "No obstante, no es completamente inútil. Caminar sobre su cabeza te "
 "permitirá alcanzar ciertas piezas de oro que de otro modo estarían fuera de "
@@ -2521,7 +2516,7 @@ msgstr "Zigzag"
 #: gamedata/game_GotD.txt:40
 #, kde-format
 msgid "This is as easy as it gets..."
-msgstr "Esto es tan fácil como se pone..."
+msgstr "Esto es tan fácil como se pone…"
 
 #: gamedata/game_GotD.txt:43 gamedata/game_wad.txt:63
 #, kde-format
@@ -3201,7 +3196,7 @@ msgid ""
 "route carefully before you dig down. Zombies can also be used to fill the "
 "gaps."
 msgstr ""
-"No quisiera estropear la sorpresa...\n"
+"No quisiera estropear la sorpresa…\n"
 "\n"
 "Sin embargo, cuando llegues a los ladrillos que hay encima del oro, debes "
 "planificar una ruta de escape con cuidado antes de excavar. Los zombis "
@@ -3235,7 +3230,7 @@ msgid ""
 msgstr ""
 "Usa los ladrillos falsos para deslizarte debajo de los zombis. Cuando "
 "llegues al fondo, deja salir a todos los zombies de la prisión. Puede que "
-"tengas que volver a entrar..."
+"tengas que volver a entrar…"
 
 #: gamedata/game_GotD.txt:223
 #, kde-format
@@ -3289,7 +3284,7 @@ msgstr ""
 "Cuando los cuatro zombis estén cayendo, sube y espera a la derecha del pozo "
 "de hormigón hasta que los zombis se acerquen y lo llenen de nuevo. Luego "
 "cambia de lado y espera a la izquierda del hormigón. Comenzarán este "
-"escalofriante baile de zombis...\n"
+"escalofriante baile de zombis…\n"
 "\n"
 "Ve a la parte superior de la escalera y pasa por encima de sus cabezas hasta "
 "la fila de escaleras cortas. Espera en la parte superior de la escalera "
@@ -3359,7 +3354,7 @@ msgstr ""
 "Si uno de los zombis ha llegado a la escalera antes que tú, intenta subirla. "
 "A menudo eso hará que el zombi huya y tal vez salga por un lado y caiga. El "
 "zombi subirá solo hasta lo que crea que es la salida más cercana, aunque no "
-"entiende muy bien la gravedad... A la derecha hay una barra al lado de la "
+"entiende muy bien la gravedad… A la derecha hay una barra al lado de la "
 "escalera, que está bien, pero a la izquierda hay una pieza de oro al lado de "
 "la escalera y los zombis creen que pueden caminar sobre ella, por lo que "
 "solo pasarán un espacio más allá si los haces subir por la escalera.\n"
@@ -3423,7 +3418,7 @@ msgstr ""
 "el oro) cavando en los ladrillos que hay a su izquierda para atraerlo hacia "
 "ellos. A veces se vuelve inteligente y deja caer el oro antes de quedar "
 "atrapado, por lo que tendrás que repetir todo el proceso. Moverse "
-"rápidamente en primer lugar hace que esto sea menos probable...\n"
+"rápidamente en primer lugar hace que esto sea menos probable…\n"
 "\n"
 "Cuando el zombi reaparezca en la parte superior, debes atraerlo hacia el "
 "lado izquierdo, sobrepasarlo y asegurarte de que te siga cuando caves a "
@@ -3588,7 +3583,7 @@ msgstr ""
 "\n"
 "En cuanto a los rompecabezas de tiempo de excavación de las cajas, sigue mi "
 "consejo de que es mejor entrar con más frecuencia que intentar conseguir "
-"todo de una vez y acabar encerrado..."
+"todo de una vez y acabar encerrado…"
 
 #: gamedata/game_GotD.txt:303
 #, kde-format
@@ -3598,7 +3593,7 @@ msgstr "Lluvia de zombis"
 #: gamedata/game_GotD.txt:304
 #, kde-format
 msgid "Let us see if you have learned your lesson about zombies and ladders..."
-msgstr "Veamos si has aprendido la lección sobre los zombis y las escaleras..."
+msgstr "Veamos si has aprendido la lección sobre los zombis y las escaleras…"
 
 #: gamedata/game_GotD.txt:307
 #, kde-format
@@ -3627,7 +3622,7 @@ msgstr "Entre zombis"
 #: gamedata/game_GotD.txt:314
 #, kde-format
 msgid "All it takes is good strong nerves..."
-msgstr "Todo lo que necesitas son unos nervios de acero..."
+msgstr "Todo lo que necesitas son unos nervios de acero…"
 
 #: gamedata/game_GotD.txt:317
 #, kde-format
@@ -3643,7 +3638,7 @@ msgid ""
 msgstr ""
 "Eso es lo que pasa con los zombis: cuanto más lentos, más espeluznantes.\n"
 "\n"
-"Date prisa y resuelve los rompecabezas. El reloj corre..."
+"Date prisa y resuelve los rompecabezas. El reloj corre…"
 
 #: gamedata/game_GotD.txt:323
 #, kde-format
@@ -3671,7 +3666,7 @@ msgid ""
 "you are level with the bricks the zombies are walking on..."
 msgstr ""
 "Observa lo que ocurre al subir una escalera lateral, pero solo hasta que "
-"estés al nivel de los ladrillos sobre los que caminan los zombis..."
+"estés al nivel de los ladrillos sobre los que caminan los zombis…"
 
 #: gamedata/game_GotD.txt:331
 #, kde-format
@@ -3918,7 +3913,7 @@ msgstr ""
 "\n"
 "Para el oro de la parte inferior, piensa dónde puede estar la ruta de escape "
 "antes de empezar a cavar hacia el oro, ya que no tendrás tiempo de pensarlo "
-"cuando estés dentro del gran pozo..."
+"cuando estés dentro del gran pozo…"
 
 #: gamedata/game_GRII.txt:50 gamedata/game_plwv.txt:61
 #, kde-format
@@ -4107,8 +4102,7 @@ msgstr ""
 "allí hasta que el enemigo salte hacia abajo; ahora debes escalar rápido y "
 "escapar.\n"
 "\n"
-"Si te las apañas para dejar que los tres enemigos sobrevivan, tendrás "
-"suerte..."
+"Si te las apañas para dejar que los tres enemigos sobrevivan, tendrás suerte…"
 
 #: gamedata/game_GRII.txt:88
 #, kde-format
@@ -4188,7 +4182,7 @@ msgstr ""
 "lados a la vez.\n"
 "\n"
 "Tendrás que pensar un poco para llegar al oro que hay dentro de la gran "
-"caja. Y también tendrás que ser rápido..."
+"caja. Y también tendrás que ser rápido…"
 
 #: gamedata/game_GRII.txt:106
 #, kde-format
@@ -4260,7 +4254,7 @@ msgstr ""
 "tres piezas asegurándote de que tienes una ruta de escape. Atrae luego al "
 "enemigo libre hacia arriba y dentro del ladrillo falso de esta sección y "
 "recoge la última pieza de oro. En un punto del camino hacia arriba tendrás "
-"que dejar que el enemigo esté realmente cerca de ti...\n"
+"que dejar que el enemigo esté realmente cerca de ti…\n"
 "\n"
 "Las secciones restantes necesitan pensar un poco y dispondrás de poco tiempo "
 "para completarlas, aunque no deberían ser demasiado difíciles.\n"
@@ -4564,7 +4558,7 @@ msgstr ""
 "Hay que admitirlo: es muy difícil mantener la misma velocidad que el enemigo "
 "mientras caminas sobre su cabeza, pero no es imposible. Si quieres un "
 "desafío real, pruébalo en el modo de teclado. Esto hará que las cosas se "
-"vuelvan un poco más difíciles..."
+"vuelvan un poco más difíciles…"
 
 #: gamedata/game_GRII.txt:190
 #, kde-format
@@ -5734,7 +5728,7 @@ msgstr ""
 "tradicionales.\n"
 "\n"
 "Los últimos niveles son muy difíciles, pero si estás buscando todavía más "
-"desafíos, prueba «La venganza de Peter W»..."
+"desafíos, prueba «La venganza de Peter W»…"
 
 #: gamedata/game_plws.txt:9
 #, kde-format
@@ -6230,9 +6224,8 @@ msgstr ""
 "guerra «Das Boot» y está dedicado a Marco Krüger, de Berlín, el autor "
 "original de KGoldrunner.\n"
 "\n"
-"Solo una pequeña sugerencia... Si te colocas en el lado derecho del barco "
-"podrás hacer que el enemigo caiga en dirección a ti... ¡El resto es cosa "
-"tuya!"
+"Solo una pequeña sugerencia… Si te colocas en el lado derecho del barco "
+"podrás hacer que el enemigo caiga en dirección a ti… ¡El resto es cosa tuya!"
 
 #: gamedata/game_plws.txt:305
 #, kde-format
@@ -6458,7 +6451,7 @@ msgstr ""
 "\n"
 "En tu camino en diagonal abajo a la izquierda hay dos ladrillos falsos. "
 "Déjate caer en el segundo, permanece dentro y excava a la derecha. Ahora cae "
-"en una hilera de escaleras que conducen hasta abajo y a la izquierda..."
+"en una hilera de escaleras que conducen hasta abajo y a la izquierda…"
 
 #: gamedata/game_plwv.txt:67
 #, kde-format
@@ -6471,8 +6464,7 @@ msgid ""
 "Well you just have to be fast and accurate on this one and that is all we "
 "can say ..."
 msgstr ""
-"Debes ser rápido y certero en este nivel, y es todo lo que te podemos "
-"decir..."
+"Debes ser rápido y certero en este nivel, y es todo lo que te podemos decir…"
 
 #: gamedata/game_plwv.txt:71
 #, kde-format
@@ -6569,7 +6561,7 @@ msgid ""
 msgstr ""
 "Mantente siempre subiendo y bajando para esquivar al enemigo. Recoge las "
 "pepitas cuando puedas. Si el enemigo obtiene una, solo podrá dejarla en uno "
-"de los espacios vacíos. Por lo tanto, haz que corra y sé paciente..."
+"de los espacios vacíos. Por lo tanto, haz que corra y sé paciente…"
 
 #: gamedata/game_plwv.txt:93
 #, kde-format
@@ -6593,7 +6585,7 @@ msgstr ""
 "\n"
 "Si hay un enemigo en esta sección, mátalo escondiéndote en la parte inferior "
 "de un muro falso y cava un agujero a su lado. Morirá intentando atraparte. "
-"Esto no funcionará si hay oro sobre el ladrillo que quieres cavar..."
+"Esto no funcionará si hay oro sobre el ladrillo que quieres cavar…"
 
 #: gamedata/game_plwv.txt:99
 #, kde-format
@@ -6801,7 +6793,7 @@ msgid ""
 "\n"
 "Composed by Stuart Popejoy - spopejoy@panix.com"
 msgstr ""
-"Justo cuando creías que ya estabas a salvo... quince niveles de puro terror, "
+"Justo cuando creías que ya estabas a salvo… quince niveles de puro terror, "
 "que usan esas reglas estrafalarias-aunque-rápidas de KGoldrunner. Tendrás "
 "que cavar mientras caes con bastante frecuencia.\n"
 "\n"
@@ -7070,7 +7062,7 @@ msgid ""
 "and dig the next brick in towards the center. Fall onto the enemy and run "
 "right or left, then dig to trap him.  You will have to be quick!"
 msgstr ""
-"Corre rápido y cava bien...\n"
+"Corre rápido y cava bien…\n"
 "En la habitación más recóndita, espera en la parte de más a la izquierda o "
 "de más a la derecha en la parte superior y cava el siguiente ladrillo hacia "
 "el centro. Caie sobre el enemigo y corre a la derecha o a la izquierda; cava "
@@ -7400,7 +7392,7 @@ msgid ""
 msgstr ""
 "Este tutorial es una colección de niveles sencillos que te enseñan las "
 "reglas de KGoldrunner y te ayudan a desarrollar la técnica que precisas para "
-"empezar. Cada nivel tiene una breve descripción; después podrás jugar...\n"
+"empezar. Cada nivel tiene una breve descripción; después podrás jugar…\n"
 "\n"
 "Cuando pases a jugar niveles más avanzados, descubrirás que KGoldrunner "
 "combina acción, estrategia y resolución de jeroglíficos. Todo en un solo "
@@ -7428,7 +7420,7 @@ msgstr ""
 "\n"
 "El héroe (la figura verde) es tu representante. Para recoger las pepitas, "
 "coloca el puntero con el ratón en el punto al que quieras que vaya. Al "
-"principio, la gravedad se hace cargo y hace que caiga..."
+"principio, la gravedad se hace cargo y hace que caiga…"
 
 #: gamedata/game_tute.txt:15
 #, kde-format
@@ -7547,7 +7539,7 @@ msgstr ""
 "Y lo más importante: puedes andar por encima de la cabeza de un enemigo. "
 "Puedes hacerlo precisamente al principio de este nivel. Excava un agujero, "
 "atrapa al enemigo en él, corre entonces por encima del enemigo mientras otro "
-"te persigue...\n"
+"te persigue…\n"
 "\n"
 "Si te sientes un poco estresado, puedes detener el juego en cualquier "
 "momento pulsando la tecla de parada («P» o «Esc», de forma predeterminada) y "
@@ -7566,7 +7558,7 @@ msgid ""
 "onto it."
 msgstr ""
 "Te podrás mover horizontalmente por las barras, pero si te mueves hacia "
-"abajo, te caerás... También podrás recolectar oro cayendo sobre él."
+"abajo, te caerás… También podrás recolectar oro cayendo sobre él."
 
 #: gamedata/game_tute.txt:47
 #, kde-format
@@ -7585,7 +7577,7 @@ msgstr ""
 #: gamedata/game_tute.txt:51 gamedata/game_tutea.txt:31
 #, kde-format
 msgid "Bye ..."
-msgstr "Adiós..."
+msgstr "Adiós…"
 
 #: gamedata/game_tute.txt:52 gamedata/game_tutea.txt:32
 #, kde-format
@@ -7645,12 +7637,12 @@ msgstr ""
 "\n"
 "Si un enemigo tiene un contorno dorado, es que tiene una pepita. Pero podrá "
 "soltarla cuando corra sobre el hormigón o tal vez en lo alto de una "
-"escalera... ¡Paciencia, paciencia!"
+"escalera… ¡Paciencia, paciencia!"
 
 #: gamedata/game_tutea.txt:13
 #, kde-format
 msgid "To kill ..."
-msgstr "¿Matar...?"
+msgstr "¿Matar…?"
 
 #: gamedata/game_tutea.txt:14
 #, kde-format
@@ -7672,7 +7664,7 @@ msgstr ""
 #: gamedata/game_tutea.txt:19
 #, kde-format
 msgid "...  Or not to kill?"
-msgstr "... ¿O no matar?"
+msgstr "… ¿O no matar?"
 
 #: gamedata/game_tutea.txt:20
 #, kde-format
@@ -7684,7 +7676,7 @@ msgid ""
 "the top left, you can still finish the level by digging away the side of the "
 "pit he is in."
 msgstr ""
-"Es mejor no matar al enemigo. Inténtalo y verás por qué... ¡Je, je, je!\n"
+"Es mejor no matar al enemigo. Inténtalo y verás por qué… ¡Je, je, je!\n"
 "\n"
 "Si lo matas sin querer, antes de recoger el oro de la parte superior "
 "izquierda, podrás finalizar el nivel excavando al lado del pozo donde está."
@@ -7711,7 +7703,7 @@ msgstr ""
 "algún momento tendrás que caer sobre algún ladrillo para obtener oro.\n"
 "\n"
 "Al principio, salta al pozo de hormigón, excava y cae por él. Eso hará que "
-"un enemigo quede preso durante un tiempo..."
+"un enemigo quede preso durante un tiempo…"
 
 #: gamedata/game_wad.txt:3
 #, kde-format
@@ -8262,14 +8254,14 @@ msgid ""
 "Yes, you must run on the enemy's head --- all the way across!  All it takes "
 "is a steady hand."
 msgstr ""
-"Sí, debes correr sobre la cabeza del enemigo... ¡hasta el final! Todo lo que "
+"Sí, debes correr sobre la cabeza del enemigo… ¡hasta el final! Todo lo que "
 "necesitas es mano firme."
 
 #: src/kgoldrunner.cpp:184
 #, kde-format
 msgctxt "@action"
 msgid "&New Game…"
-msgstr "&Nueva partida..."
+msgstr "&Nueva partida…"
 
 #: src/kgoldrunner.cpp:187
 #, kde-format
@@ -8293,19 +8285,19 @@ msgstr "Cambia al siguiente nivel del juego que estás jugando."
 #, kde-format
 msgctxt "@action"
 msgid "&Load Saved Game…"
-msgstr "&Cargar partida guardada..."
+msgstr "&Cargar partida guardada…"
 
 #: src/kgoldrunner.cpp:205
 #, kde-format
 msgctxt "@action"
 msgid "&Save Game…"
-msgstr "&Guardar partida..."
+msgstr "&Guardar partida…"
 
 #: src/kgoldrunner.cpp:211
 #, kde-format
 msgctxt "@action"
 msgid "Save a Solution…"
-msgstr "Guardar una solución..."
+msgstr "Guardar una solución…"
 
 #: src/kgoldrunner.cpp:212
 #, kde-format
@@ -8451,7 +8443,7 @@ msgstr "Crear"
 #, kde-format
 msgctxt "@action"
 msgid "&Edit Level…"
-msgstr "&Editar nivel..."
+msgstr "&Editar nivel…"
 
 #: src/kgoldrunner.cpp:301
 #, kde-format
@@ -8475,7 +8467,7 @@ msgstr "Editar"
 #, kde-format
 msgctxt "@action"
 msgid "&Save Edits…"
-msgstr "&Guardar ediciones..."
+msgstr "&Guardar ediciones…"
 
 #: src/kgoldrunner.cpp:313
 #, kde-format
@@ -8499,7 +8491,7 @@ msgstr "Guardar"
 #, kde-format
 msgctxt "@action"
 msgid "&Move Level…"
-msgstr "&Mover nivel..."
+msgstr "&Mover nivel…"
 
 #: src/kgoldrunner.cpp:321
 #, kde-format
@@ -8517,7 +8509,7 @@ msgstr "Cambia el número de un nivel o lo mueve a otro juego."
 #, kde-format
 msgctxt "@action"
 msgid "&Delete Level…"
-msgstr "&Borrar nivel..."
+msgstr "&Borrar nivel…"
 
 #: src/kgoldrunner.cpp:327
 #, kde-format
@@ -8535,7 +8527,7 @@ msgstr "Borra un nivel."
 #, kde-format
 msgctxt "@action"
 msgid "Create &Game…"
-msgstr "Crear &juego..."
+msgstr "Crear &juego…"
 
 #: src/kgoldrunner.cpp:336
 #, kde-format
@@ -8553,7 +8545,7 @@ msgstr "Crea un juego completamente nuevo."
 #, kde-format
 msgctxt "@action"
 msgid "Edit Game &Info…"
-msgstr "Editar &información del juego..."
+msgstr "Editar &información del juego…"
 
 #: src/kgoldrunner.cpp:341
 #, kde-format
@@ -8571,7 +8563,7 @@ msgstr "Cambia el nombre, las reglas o la descripción de un juego."
 #, kde-format
 msgctxt "@action"
 msgid "Change &Theme…"
-msgstr "Cambiar &tema..."
+msgstr "Cambiar &tema…"
 
 #: src/kgoldrunner.cpp:352
 #, kde-format
@@ -9667,7 +9659,7 @@ msgstr "Cerrar KGoldrunner"
 #, kde-format
 msgctxt "@action:button"
 msgid "&New Game…"
-msgstr "&Nueva partida..."
+msgstr "&Nueva partida…"
 
 #: src/kgrgame.cpp:724
 #, kde-format
@@ -10212,7 +10204,7 @@ msgstr "Borrar nivel"
 #, kde-format
 msgctxt "@action:button"
 msgid "Move To…"
-msgstr "Mover a..."
+msgstr "Mover a…"
 
 #: src/kgrselector.cpp:281
 #, kde-format
@@ -10386,7 +10378,7 @@ msgstr ""
 "\n"
 "\n"
 "Para mover (renumerar) un nivel, primero debes seleccionarlo usando «Editar "
-"un nivel...», y después podrás usar «Mover nivel...» para asignarle un nuevo "
+"un nivel…», y después podrás usar «Mover nivel…» para asignarle un nuevo "
 "número o, incluso, un juego diferente. El resto de niveles se renumera "
 "automáticamente. Solo puedes mover niveles de tus propios juegos."
 
@@ -10527,69 +10519,3 @@ msgstr ""
 #, kde-format
 msgid "Artwork for the Treasure of Egypt theme"
 msgstr "Material gráfico para el tesoro y para el tema Egipto."
-
-#~ msgid "&Save Game..."
-#~ msgstr "&Guardar partida..."
-
-#~ msgid "Save A Solution..."
-#~ msgstr "Guardar una solución..."
-
-#~ msgid "Kill Hero."
-#~ msgstr "Matar al héroe."
-
-#~ msgid "&Edit Level..."
-#~ msgstr "&Editar nivel..."
-
-#~ msgid "Edit level..."
-#~ msgstr "Editar nivel..."
-
-#~ msgid "&Move Level..."
-#~ msgstr "&Mover nivel..."
-
-#~ msgid "Move level..."
-#~ msgstr "Mover nivel..."
-
-#~ msgid "&Delete Level..."
-#~ msgstr "&Eliminar nivel..."
-
-#~ msgid "Delete level..."
-#~ msgstr "Eliminar nivel..."
-
-#~ msgid "Create &Game..."
-#~ msgstr "Crear &juego..."
-
-#~ msgid "Create game..."
-#~ msgstr "Crear juego..."
-
-#~ msgid "Edit Game &Info..."
-#~ msgstr "Editar &información del juego..."
-
-#~ msgid "Click Key To Move."
-#~ msgstr "Pulsar una tecla para mover."
-
-#~ msgid "Hold Key To Move."
-#~ msgstr "Mantener pulsada la tecla para mover."
-
-#~ msgid "Save High Score"
-#~ msgstr "Guardar puntuación"
-
-#~ msgid ""
-#~ "Cannot find documentation sub-folder 'en/%1/' in area '%2' of the KDE "
-#~ "folder ($KDEDIRS)."
-#~ msgstr ""
-#~ "No se puede encontrar el subcarpetas de documentación «en/%1/» en la zona "
-#~ "«%2» de la carpeta de KDE ($KDEDIRS)."
-
-#~ msgid ""
-#~ "Cannot find or create user games sub-folder '%1/user/' in area '%2' of "
-#~ "the KDE user area ($KDEHOME)."
-#~ msgstr ""
-#~ "No se puede encontrar o crear el subcarpeta de juegos del usuario «%1/"
-#~ "user/» en la zona «%2» del área de usuario de KDE ($KDEHOME)."
-
-#~ msgid ""
-#~ "Cannot find or create 'levels/' folder in sub-folder '%1/user/' in the "
-#~ "KDE user area ($KDEHOME)."
-#~ msgstr ""
-#~ "No se puede encontrar o crear la carpeta «levels/» en la subcarpeta «%1/"
-#~ "user/» en la zona de usuario de KDE ($KDEHOME)."
