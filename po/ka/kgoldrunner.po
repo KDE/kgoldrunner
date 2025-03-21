@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-22 00:38+0000\n"
-"PO-Revision-Date: 2024-05-06 05:40+0200\n"
+"PO-Revision-Date: 2025-03-20 08:51+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -78,6 +78,17 @@ msgid ""
 "ca>, with a few Egyptian ideas and the Red Sea level contributed by Ian "
 "Wadham."
 msgstr ""
+"მუმიებისა და ეგვიპტის შესახებ ვესტერნის ფილმების ხატებზე დახატვა, დონეების "
+"ეს ნაკრები საუკეთესოდ არის გაშვებული ეგვიპტის საგანძურის ქვეშ. ხანდახან "
+"დაცემისას თხრაც გჭირდებათ.\n"
+"\n"
+"თქვენი ეგვიპტოლოგიის გასაუმჯობესებლად, მინიშნებებში ნახავთ ფაქტობრივ "
+"წვრილმანებს, რომლებიც დაკავშირებულია თითოეულ დონეზე, სადაც ფაქტები აღებულია "
+"ვიკიპედიიდან და არა ჰოლივუდიდან.\n"
+"\n"
+"ჩემპიონობის თამაში შედგენილია: სტივ მანი<smann at cgl uwaterloo ca> "
+"რამდენიმე ეგვიპტური იდეით და წითელი ზღვის დონიდან, რომელსაც იან ვადამი "
+"შეუწყო ხელი."
 
 #: gamedata/game_CM.txt:10
 #, kde-format
@@ -96,6 +107,13 @@ msgid ""
 "too many reappear on the right, it becomes difficult to escape at the end.  "
 "To get started, you will need to use the technique of digging while falling."
 msgstr ""
+"გიზას ნეკროპოლისი პოპულარული ტურისტული ადგილი იყო უძველესი დროიდან და "
+"პოპულარობით სარგებლობდა ელინისტურ ხანაში, როდესაც დიდი პირამიდა სიდონის "
+"ანტიპატერმა მსოფლიოს შვიდ საოცრებათაგან ერთ-ერთ სიაში მოიყვანა. დღეს ის "
+"ერთადერთია იმ საოცრებათაგან, რომელიც ჯერ კიდევ არსებობს.\n"
+"\n"
+"შეიძლება გაგიადვილდეთ ნავიგაცია ამ საოცრებაში, თუ იქ წასვლამდე ორ მუმიას "
+"მიიღებთ შორს მარჯვენა პირამიდაში."
 
 #: gamedata/game_CM.txt:16
 #, kde-format
@@ -126,7 +144,7 @@ msgid ""
 "bottom right of the step pyramid to allow the mummies on the right to enter "
 "the pyramid - if there is more than one mummy on the bottom right before the "
 "escape ladder appears, you will be unable to reach the exit."
-msgstr ""
+msgstr "f"
 
 #: gamedata/game_CM.txt:28
 #, kde-format
@@ -147,7 +165,7 @@ msgid ""
 "\n"
 "This is almost a simple level: good treasure and not too many mummies.  But "
 "your task is to wrest the treasure they carry."
-msgstr ""
+msgstr "f"
 
 #: gamedata/game_CM.txt:36
 #, kde-format
@@ -7678,6 +7696,15 @@ msgid ""
 "level 001, click on the main button at the bottom. Play begins when you move "
 "the mouse or press a key."
 msgstr ""
+"\n"
+"\n"
+"თუ ეს პირველი შემთხვევაა kgoldrunner-ში, აირჩიეთ სამეურვეო თამაში, რომელიც "
+"მოგცემთ მინიშნებებს წასვლისას.\n"
+"\n"
+"\n"
+"წინააღმდეგ შემთხვევაში, უბრალოდ დააწკაპუნეთ ცხრილში თამაშის სახელზე, შემდეგ "
+"კი 001 დონეზე დასაწყებად, დააჭირეთ მთავარ ღილაკს ბოლოში. თამაში იწყება "
+"მაუსის გადაადგილებით ან ღილაკზე დაჭერით."
 
 #: src/kgrselector.cpp:537
 #, kde-format
