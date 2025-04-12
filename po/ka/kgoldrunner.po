@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-22 00:38+0000\n"
-"PO-Revision-Date: 2024-05-06 05:40+0200\n"
+"PO-Revision-Date: 2025-04-12 02:13+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -5422,7 +5422,7 @@ msgstr "ვის სჭირდება მტრები?"
 #: gamedata/game_wad.txt:26
 #, kde-format
 msgid "Keep digging rows of three bricks next to the ladder."
-msgstr ""
+msgstr "გააგრძელეთ სამი აგურის მწკრივის თხრა კიბესთან."
 
 #: gamedata/game_wad.txt:29
 #, kde-format
@@ -5513,7 +5513,7 @@ msgstr ""
 #: gamedata/game_wad.txt:64
 #, kde-format
 msgid "Dig the two bricks next to a ladder, then look for fall-through bricks."
-msgstr ""
+msgstr "ამოთხარეთ ორი აგური კიბესთან, შემდეგ შეხედეთ ჩამოცვენილ აგურებს."
 
 #: gamedata/game_wad.txt:67
 #, kde-format
@@ -5564,7 +5564,7 @@ msgstr ""
 #: gamedata/game_wad.txt:87
 #, kde-format
 msgid "Hair's Breadth Timing"
-msgstr ""
+msgstr "თმის სიგანის დროის ათვლა"
 
 #: gamedata/game_wad.txt:88
 #, kde-format
@@ -5801,7 +5801,7 @@ msgstr "ჩვენება, როგორ მოიგოთ ეს დო�
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Plays a recording of how to win this level, if there is one available."
-msgstr ""
+msgstr "დაუკრავს ჩანაწერს, როგორ მოიგოთ ეს დონე, თუ ის ხელმისაწვდომია."
 
 #: src/kgoldrunner.cpp:252
 #, kde-format
@@ -5877,7 +5877,7 @@ msgctxt "@info:whatsthis"
 msgid ""
 "Kills the hero, in case he finds himself in a situation from which he cannot "
 "escape."
-msgstr ""
+msgstr "მოკლავს გმირს, რის შემდეგაც მოხვდება გარემოში, საიდანაც ვერ გაიქცევა."
 
 #: src/kgoldrunner.cpp:293
 #, kde-format
@@ -6039,7 +6039,7 @@ msgstr "გრაფიკული თემის შეცვლა"
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Alters the visual appearance of the runners and background scene."
-msgstr ""
+msgstr "შეცვლის დამხმარე პროგრამებისა და ფონური სცენის ვიზუალს."
 
 #: src/kgoldrunner.cpp:367
 #, kde-format
@@ -6261,6 +6261,8 @@ msgstr "სიჩქარის გაზრდა"
 msgctxt "@info:whatsthis"
 msgid "Increases the game speed by 0.1 (maximum is 2.0 times normal)."
 msgstr ""
+"გაზრდის თამაშის სიჩქარეს 0.1-ჯერ (მაქსიმუმია 2.0-ჯერ მეტი ნორმალურთან "
+"შედარებით)."
 
 #: src/kgoldrunner.cpp:473
 #, kde-format
@@ -6875,7 +6877,7 @@ msgstr ""
 #: src/kgreditor.cpp:443
 #, kde-format
 msgid "Do you want to delete a level and move higher levels down by one?"
-msgstr ""
+msgstr "გნებავთ წაშალოთ დონე და ჩამოიტანოთ უფრო მაღალი დონეები დაბლა ერთით?"
 
 #: src/kgreditor.cpp:445
 #, kde-format
@@ -7405,7 +7407,7 @@ msgstr "ამოხსნის შენახვა"
 #: src/kgrgame.cpp:2052
 #, kde-format
 msgid "Your solution to level %1 has been saved on file %2"
-msgstr ""
+msgstr "თქვენი ამოხსნა დონისთვის %1 შეინახულია ფაილში %2"
 
 #: src/kgrgameio.cpp:163 src/kgrgameio.cpp:168 src/kgrgameio.cpp:172
 #, kde-format
@@ -7421,7 +7423,7 @@ msgstr "ფაილი '%1' ვერ ვიპოვე."
 #: src/kgrgameio.cpp:173
 #, kde-format
 msgid "Reached end of file '%1' without finding level data."
-msgstr ""
+msgstr "მივაღწიე ფაილის '%1' და დონის მონაცემები მაინც ვერ ვიპოვე."
 
 #: src/kgrgameio.cpp:381 src/kgrgameio.cpp:388
 #, kde-format
@@ -7766,7 +7768,7 @@ msgstr "დახმარება: აირჩიეთ თამაში �
 #: src/main.cpp:49
 #, kde-format
 msgid "A game of action and puzzle solving"
-msgstr ""
+msgstr "თამაში ქმედებისა და თავსატეხებისთვის"
 
 #: src/main.cpp:51
 #, kde-format
@@ -7816,7 +7818,7 @@ msgstr "KGameCanvas კლასები KDE4-სთვის"
 #: src/main.cpp:98
 #, kde-format
 msgid "Artwork for runners and default theme"
-msgstr ""
+msgstr "ნახატები დამხმარე პროგრამებისთვის და ნაგულისხმევი ტემა"
 
 #: src/main.cpp:100
 #, kde-format
@@ -7826,7 +7828,7 @@ msgstr "Johann Ollivier Lapeyre"
 #: src/main.cpp:101
 #, kde-format
 msgid "Artwork for bars and ladders"
-msgstr ""
+msgstr "ნახატები სვეტებისა და კიბეებისთვის"
 
 #: src/main.cpp:103 src/main.cpp:111
 #, kde-format
@@ -7836,7 +7838,7 @@ msgstr "Eugene Trounev"
 #: src/main.cpp:104
 #, kde-format
 msgid "Artwork for background of Geek City theme"
-msgstr ""
+msgstr "ნახატები Geek City-ის თემის ფონისთვის"
 
 #: src/main.cpp:106
 #, kde-format
@@ -7853,7 +7855,7 @@ msgstr ""
 #: src/main.cpp:112
 #, kde-format
 msgid "Artwork for the Treasure of Egypt theme"
-msgstr ""
+msgstr "ნახატები 'ეგვიპტის სიმდიდრის' თემისთვის"
 
 #~ msgid "&Save Game..."
 #~ msgstr "&თამაშის შენახვა..."
