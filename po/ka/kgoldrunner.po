@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-22 00:38+0000\n"
-"PO-Revision-Date: 2025-03-20 08:51+0100\n"
+"PO-Revision-Date: 2025-04-06 02:09+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -144,7 +144,7 @@ msgid ""
 "bottom right of the step pyramid to allow the mummies on the right to enter "
 "the pyramid - if there is more than one mummy on the bottom right before the "
 "escape ladder appears, you will be unable to reach the exit."
-msgstr "f"
+msgstr ""
 
 #: gamedata/game_CM.txt:28
 #, kde-format
@@ -165,7 +165,7 @@ msgid ""
 "\n"
 "This is almost a simple level: good treasure and not too many mummies.  But "
 "your task is to wrest the treasure they carry."
-msgstr "f"
+msgstr ""
 
 #: gamedata/game_CM.txt:36
 #, kde-format
