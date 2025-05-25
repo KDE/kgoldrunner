@@ -237,7 +237,7 @@ msgid ""
 "chambers."
 msgstr ""
 "La gran piràmide va ser l'estructura més alta feta per l'home en el món "
-"durant més de 3.800 anys. Pujar i baixar tot el temps ha d'haver estat una "
+"durant més de 3.800 anys. Pujar i baixar tot el temps ha d'haver sigut una "
 "dura tasca per als antics egipcis, per molt que tu probablement trobes "
 "agradable la tasca de pujar i baixar en esta piràmide.\n"
 "\n"
@@ -726,7 +726,7 @@ msgstr ""
 "l'interior, i van ser tallats sovint d'alabastre.\n"
 "\n"
 "Si no vols que este nivell siga el teu sarcòfag, agafa la peça del tresor "
-"davall el cantó esquerra del sarcòfag a l'inici, d'una altra manera, no hi "
+"davall el cantó esquerre del sarcòfag a l'inici, d'una altra manera, no hi "
 "ha cap forma d'agafar-la."
 
 #: gamedata/game_CM.txt:152
@@ -1605,9 +1605,9 @@ msgstr ""
 "Bé, ací la tens.\n"
 "\n"
 "Excava els maons propers a la barra. En caure, troba una forma de tornar "
-"ràpidament a la barra de manera que pugues creuar per damunt dins del "
-"nínxol. Per descomptat, tan sols ho aconseguiràs si saps com i no "
-"desistixes. No hi ha molt temps a perdre…"
+"ràpidament a la barra de manera que pugues creuar per dins del nínxol. Per "
+"descomptat, tan sols ho aconseguiràs si saps com i no desistixes. No hi ha "
+"molt temps a perdre…"
 
 #: gamedata/game_GMEP.txt:64
 #, kde-format
@@ -1692,7 +1692,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:82
 #, kde-format
 msgid "Caught In The Heights"
-msgstr "Atrapat a les alçades"
+msgstr "Atrapat a les alçàries"
 
 #: gamedata/game_GMEP.txt:83
 #, kde-format
@@ -1735,7 +1735,7 @@ msgstr ""
 "\n"
 "Tal com vas cap a dalt i per damunt cap a la dreta, assegura't que el teu "
 "equip no cau al pou de formigó. Per a arreplegar les tres peces d'or de la "
-"dreta, intenta mantindre-lo a l'esquerra de l'escala de mà, de manera que "
+"dreta, intenta mantindre'l a l'esquerra de l'escala de mà, de manera que "
 "pugues saltar per damunt del seu cap fins a l'or.\n"
 "\n"
 "Quan vages cap a dalt i cap a l'esquerra, hi ha una escala repenjada sobre "
@@ -2396,7 +2396,7 @@ msgstr ""
 "\n"
 "Primer consell: cada nivell té una solució enregistrada, així que, en cas de "
 "dubte, dona un colp d'ull. Segon consell: et pots quedar encallat amb "
-"facilitat si no has estat prou intel·ligent per a preparar una ruta "
+"facilitat si no has sigut prou intel·ligent per a preparar una ruta "
 "d'escapada abans d'anar per una mica d'or.\n"
 "\n"
 "En el cantó inferior dret, cal fer una excavació cronometrada per a preparar "
@@ -2409,7 +2409,7 @@ msgstr ""
 "atrapar. És millor arreplegar primer les columnes exteriors d'or. En altres "
 "àrees, és possible que hages de cavar mentre caus a les trampes.\n"
 "\n"
-"El cantó inferior esquerre està força agitada. La ruta d'escapada per a l'or "
+"El cantó inferior esquerre està força agitat. La ruta d'escapada per a l'or "
 "més a l'esquerra es troba a la dreta, on hi ha dues peces d'or. Deixa un "
 "forat allà abans de passar a l'esquerra. Per a arreplegar l'or més a "
 "l'esquerra i retrocedir en el temps, intenta cavar forats en ambdós costats "
@@ -2556,7 +2556,7 @@ msgstr ""
 "\n"
 "P.D.: Quan estàs a l'escala inferior dreta, és possible caminar per damunt "
 "dels dos zombis, fins i tot si estan lleugerament separats. De fet, és "
-"fonamental mantindre-los mínimament separats, en cas contrari, un d'ells "
+"fonamental mantindre'ls mínimament separats, en cas contrari, un d'ells "
 "caminarà sobre el cap de l'altre i t'impedirà aconseguir l'escala de la "
 "banda esquerra que conduïx al cim. Senzillament ves directament a l'escala a "
 "la part inferior dreta i espera allà fins que estiguen a prop -la distància "
@@ -4163,7 +4163,7 @@ msgstr ""
 "Quan arribes a la part inferior, agafa l'or i corre a l'escala més propera "
 "que porte cap amunt. Continua pujant un moment, però torna a la part "
 "inferior a l'esquerra dels enemics i ves cap a l'escala de l'extrem "
-"esquerre, que et portarà cap al cantó dret superior.\n"
+"esquerre, que et portarà cap al cantó superior dret.\n"
 "\n"
 "Caldrà una mica d'habilitat per a passar els dos enemics. Mou-te cap amunt i "
 "avall fins que els dos enemics pugen i un vinga a l'esquerra per a agafar-"
@@ -4675,7 +4675,7 @@ msgid ""
 "trap enemies if you do not like all of them running around."
 msgstr ""
 "Este nivell és força senzill. Hi ha alguns llocs a on pots atrapar enemics "
-"si no t'agrada tindre-los al voltant."
+"si no t'agrada tindre'ls al voltant."
 
 #: gamedata/game_lars.txt:52
 #, kde-format
@@ -5648,7 +5648,7 @@ msgid ""
 "challenge, have a go at 'Vengeance of Peter W' ..."
 msgstr ""
 "Estos 100 nivells formen una partida introductòria excel·lent, i una bona "
-"oportunitat perquè els experts facen puntuacions altes. Han estat creats per "
+"oportunitat perquè els experts facen puntuacions altes. Han sigut creats per "
 "en Peter Wadham i utilitzen les regles de joc de Tradicional.\n"
 "\n"
 "Els últims nivells són molt difícils, però si busques un repte més gran "
@@ -7496,7 +7496,7 @@ msgstr ""
 "està el manual de KGoldrunner en el menú Ajuda que conté més detalls que "
 "esta partida d'aprenentatge.\n"
 "\n"
-"Ha estat un plaer ensenyar-te. Adeu!"
+"Ha sigut un plaer ensenyar-te. Adeu!"
 
 #: gamedata/game_tutea.txt:3
 #, kde-format
@@ -9197,7 +9197,7 @@ msgid ""
 "Try menu item \"Create Game\"."
 msgstr ""
 "No pots crear i guardar un nivell fins que no hages creat una partida per a "
-"contindre-lo. Prova amb «Crea una partida»."
+"contindre'l. Prova amb «Crea una partida»."
 
 #: src/kgreditor.cpp:115 src/kgreditor.cpp:137
 #, kde-format
@@ -9418,7 +9418,7 @@ msgstr "%1 - %2 - %3"
 #: src/kgrgame.cpp:109
 #, kde-format
 msgid "Click anywhere to begin live play"
-msgstr "Clica en qualsevol lloc per a començar la partida en directe"
+msgstr "Clica damunt de qualsevol lloc per a començar la partida en directe"
 
 #: src/kgrgame.cpp:190
 #, kde-format
@@ -9939,7 +9939,7 @@ msgstr "Puntuació: %1"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Level"
-msgstr "Trieu un nivell"
+msgstr "Tria un nivell"
 
 #: src/kgrselector.cpp:73
 #, kde-format
@@ -9970,7 +9970,7 @@ msgstr "Seleccioneu una partida"
 #: src/kgrselector.cpp:135
 #, kde-format
 msgid "<html><b>Please select a game:</b></html>"
-msgstr "<html><b>Per favor, trieu una partida:</b></html>"
+msgstr "<html><b>Per favor, tria una partida:</b></html>"
 
 #: src/kgrselector.cpp:143
 #, kde-format
@@ -10010,7 +10010,7 @@ msgstr "Seleccioneu una partida/nivell"
 #: src/kgrselector.cpp:185
 #, kde-format
 msgid "Please select a level:"
-msgstr "Trieu un nivell:"
+msgstr "Tria un nivell:"
 
 #: src/kgrselector.cpp:204
 #, kde-format
@@ -10162,10 +10162,10 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Si és la primera vegada que jugues a KGoldrunner, trieu la partida "
+"Si és la primera vegada que jugues a KGoldrunner, tria la partida "
 "d'aprenentatge que et donarà consells mentre hi jugues.\n"
 "\n"
-"Altrament, trieu el nom d'una partida de la taula, després, per a iniciar-la "
+"Altrament, tria el nom d'una partida de la taula, després, per a iniciar-la "
 "al nivell 001, prem el botó principal de la part inferior. La partida "
 "començarà quan mogues el ratolí o premes una tecla."
 
@@ -10300,7 +10300,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Help: Select Game & Level"
-msgstr "Ajuda: Trieu partida i nivell"
+msgstr "Ajuda: Tria partida i nivell"
 
 #: src/main.cpp:49
 #, kde-format
