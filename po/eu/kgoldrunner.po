@@ -13,14 +13,14 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-22 00:38+0000\n"
-"PO-Revision-Date: 2025-01-27 18:45+0100\n"
+"PO-Revision-Date: 2025-07-23 14:01+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 25.04.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #, kde-format
@@ -559,7 +559,7 @@ msgstr ""
 "\n"
 "Altxorraren azken pieza lortu ostean, irten eskuinera eta igo korrika gora "
 "eta behera eskaileretan. Beheko ezkerrekoa da zatirik zailena: egin korrika "
-"zure gaineko eskailerako momien artean... eta zorte on!"
+"zure gaineko eskailerako momien artean… eta zorte on!"
 
 #: gamedata/game_CM.txt:118
 #, kde-format
@@ -686,7 +686,7 @@ msgstr ""
 "aipatu omen zuen urrea 'hautsa baino ugariagoa da' Egipton.\n"
 "\n"
 "Piramide honetan altxorra airean ere badago! Altxor ugari, soilik hiru "
-"momia... honek ezin du zailea izan, ala bai?"
+"momia… honek ezin du zailea izan, ala bai?"
 
 #: gamedata/game_CM.txt:146
 #, kde-format
@@ -1402,7 +1402,7 @@ msgstr ""
 "harrapatzeagatik, presondegian atxikita zaude.\n"
 "\n"
 "Baina polizia gupidagabea da hemen, eta ihes egiten saiatzen bazara, ez dute "
-"zu hiltzeagatik lorik galduko... Beraz, kontuz ibili eta guztietan "
+"zu hiltzeagatik lorik galduko… Beraz, kontuz ibili eta guztietan "
 "garrantzitsuena: azkar ibili --- edo hilda zaude!\n"
 "\n"
 "Txapelketa-maila hauek «KGoldrunner»reko arau bizkor eta xelebreak "
@@ -1425,7 +1425,7 @@ msgstr ""
 "Mailaren izenak adierazi bezala, ez dago izutzeko inolako beharrik.\n"
 "\n"
 "Oso erraza da presondegi honetatik ihes egitea, zaintzaileak beraiek ere "
-"atrapatuta daudelako eta ezin zaitzaketelako ukitu..."
+"atrapatuta daudelako eta ezin zaitzaketelako ukitu…"
 
 #: gamedata/game_GMEP.txt:16
 #, kde-format
@@ -1444,7 +1444,7 @@ msgstr ""
 "\n"
 "Zure etsaiak lotzea da gakoa. Haietako bakoitza hormigoizko bloke batean "
 "eroraraztea lortzen baduzu, lagungarria izan liteke. Bestalde, korrika asko "
-"egin dezakezu..."
+"egin dezakezu…"
 
 #: gamedata/game_GMEP.txt:22
 #, kde-format
@@ -1493,7 +1493,7 @@ msgstr "Erortzen diren etsaiak (2) - Zulatzea"
 msgid "Start the level with a click. The rest should be self-explanatory..."
 msgstr ""
 "Hasi maila klik batekin. Gainontzekoa berez ulergarria izan beharko "
-"litzateke..."
+"litzateke…"
 
 #: gamedata/game_GMEP.txt:38
 #, kde-format
@@ -1549,7 +1549,7 @@ msgstr ""
 "Azken mailetan oso ondo ihes egin diezu.\n"
 "\n"
 "Orain, berriz ere aske zara eta nahi duzuna egin dezakezu. Dena, urrea "
-"berrizlapurtzea ezik, esan beharrik ez dago..."
+"berrizlapurtzea ezik, esan beharrik ez dago…"
 
 #: gamedata/game_GMEP.txt:56
 #, kde-format
@@ -1575,7 +1575,7 @@ msgstr ""
 "Zulatu barraren ondoko adreiluak. Erortzen zarenean, laster barrara "
 "itzultzeko bide bat aurkitu behar duzu, nitxoa gurutzatu ahal izateko. "
 "Jakina, arrakastarako bide bakarra bidea ezagutzean eta zalantzarik ez "
-"egitean datza. Ez dago galtzeko denborarik..."
+"egitean datza. Ez dago galtzeko denborarik…"
 
 #: gamedata/game_GMEP.txt:64
 #, kde-format
@@ -1646,7 +1646,7 @@ msgstr ""
 "guztiekin.\n"
 "\n"
 "Hurrengo zaindaria pasatzea erraza izan beharko litzateke, baino horren "
-"ondoren lan pixka bat izango duzu... Hormigoiaren ondoko eskailera igotzen "
+"ondoren lan pixka bat izango duzu… Hormigoiaren ondoko eskailera igotzen "
 "duzunean, zaindaria ezkerren dagoen eskailerarantz eta atzera korrika hasiko "
 "da. Bere buruaren gainean ibiltzeko une egokia aurkitu behar duzu.\n"
 "\n"
@@ -1716,7 +1716,7 @@ msgstr ""
 "berriz askatu beharko duzu eskailera altuenetara iritsi nahi baduzu.\n"
 "\n"
 "Hobe izango da zure taldekidearekin atsegina izatea: hurrengo bi mailatan "
-"ziurrenik berarekin ondo moldatu beharko duzu..."
+"ziurrenik berarekin ondo moldatu beharko duzu…"
 
 #: gamedata/game_GMEP.txt:98
 #, kde-format
@@ -1802,7 +1802,7 @@ msgstr ""
 #: gamedata/game_GMGR.txt:16
 #, kde-format
 msgid "Have A Nice Flight..."
-msgstr "Hegaldi on..."
+msgstr "Hegaldi on…"
 
 #: gamedata/game_GMGR.txt:17
 #, kde-format
@@ -1922,7 +1922,7 @@ msgid ""
 "Before entering any of the structures on the right, make sure you have an "
 "escape route."
 msgstr ""
-"Itxoin edo ez itxoin? Beno ba, saiatu...\n"
+"Itxoin edo ez itxoin? Beno ba, saiatu…\n"
 "\n"
 "Eskuineko edozein egituratan sartu aurretik, ziurtatu ihesbide bat duzula."
 
@@ -2134,7 +2134,7 @@ msgstr ""
 "\n"
 "Baina, nola iristsi beste aldera?\n"
 "\n"
-"Saiatu eta huts eginez..."
+"Saiatu eta huts eginez…"
 
 #: gamedata/game_GMGR.txt:114
 #, kde-format
@@ -2324,7 +2324,7 @@ msgid ""
 msgstr ""
 "Zonbien Apokalipsia gainean dugu eta lurrean bizirik geratzen den azken "
 "gizakia zara, zonbiek oraindik urre asko dute ordea. Halere, zonbiak izanik, "
-"altxorrarekiko baino zurekiko interes handiagoa dute...\n"
+"altxorrarekiko baino zurekiko interes handiagoa dute…\n"
 "\n"
 "Txapelketako berrogeita hamar maila, aholkuak eta grabatutako ebazpenak "
 "barne, Gabriel Miltschitzky-k eginak, 2021eko apirila."
@@ -2368,7 +2368,7 @@ msgid ""
 msgstr ""
 "Zonbi-apokalipsia biziraun duen gizaki bakarra zara eta hala ere ezin duzu "
 "urrean beste ezertan pentsatu? Tira ba, ikus dezagun zer onura ekartzen "
-"dizun...\n"
+"dizun…\n"
 "\n"
 "Lehen aholkua: maila guztiek grabatutako ebazpen bat dute, zalantza duzunean "
 "haiek begiratu ditzakezu. Bigarren aholkua: erraz geldi zintezke "
@@ -2445,7 +2445,7 @@ msgstr ""
 "Kontuz! Hori zonbi bat da. Askatzen duzun bezain laster, zu hiltzen saiatuko "
 "da!\n"
 "\n"
-"Bestalde, ez dago bera gainditzeko beste biderik...\n"
+"Bestalde, ez dago bera gainditzeko beste biderik…\n"
 "\n"
 "Hala ere, ez da erabat alferrikakoa. Bere buru gainean ibiltzeak, bestela "
 "zure irismenetik at geldituko liratekeen urre-zati jakin batzuetara iristeko "
@@ -2462,7 +2462,7 @@ msgstr "Zig-zaga"
 #: gamedata/game_GotD.txt:40
 #, kde-format
 msgid "This is as easy as it gets..."
-msgstr "Ezin errazago..."
+msgstr "Ezin errazago…"
 
 #: gamedata/game_GotD.txt:43 gamedata/game_wad.txt:63
 #, kde-format
@@ -3092,7 +3092,7 @@ msgid ""
 "route carefully before you dig down. Zombies can also be used to fill the "
 "gaps."
 msgstr ""
-"Ez nuke sorpresa zapuztu nahi...\n"
+"Ez nuke sorpresa zapuztu nahi…\n"
 "\n"
 "Halere, urrearen gaineko adreiluetara iristen zarenean, beheraka zulatu "
 "aurretik, ihesbide bat arretaz planifikatu beharko zenuke. Zonbiak hutsuneak "
@@ -3126,7 +3126,7 @@ msgid ""
 msgstr ""
 "Erabili gezurrezko adreiluak zonbien azpitik ihes egiteko. Hondora iristen "
 "zarenean, utzi zonbi guztiei kartzelatik irteten. Agian berriz sartu beharko "
-"duzu..."
+"duzu…"
 
 #: gamedata/game_GotD.txt:223
 #, kde-format
@@ -3360,7 +3360,7 @@ msgstr "Zonbien euria"
 #: gamedata/game_GotD.txt:304
 #, kde-format
 msgid "Let us see if you have learned your lesson about zombies and ladders..."
-msgstr "Ikus dezagun zonbiak eta eskailerei buruzko lezioa ikasi ote duzun..."
+msgstr "Ikus dezagun zonbiak eta eskailerei buruzko lezioa ikasi ote duzun…"
 
 #: gamedata/game_GotD.txt:307
 #, kde-format
@@ -3389,7 +3389,7 @@ msgstr "Zonbien artean"
 #: gamedata/game_GotD.txt:314
 #, kde-format
 msgid "All it takes is good strong nerves..."
-msgstr "Nerbio sendoak besterik ez dira behar..."
+msgstr "Nerbio sendoak besterik ez dira behar…"
 
 #: gamedata/game_GotD.txt:317
 #, kde-format
@@ -3405,7 +3405,7 @@ msgid ""
 msgstr ""
 "Zonbiekin hala izaten da: zenbat eta motelago orduan eta beldurgarriagoak.\n"
 "\n"
-"Azkar ibili eta buru-hausgarri horiek ebatzi. Erlojua aurrera doa..."
+"Azkar ibili eta buru-hausgarri horiek ebatzi. Erlojua aurrera doa…"
 
 #: gamedata/game_GotD.txt:323
 #, kde-format
@@ -3433,7 +3433,7 @@ msgid ""
 "you are level with the bricks the zombies are walking on..."
 msgstr ""
 "Begira zer gertatzen den aldameneko eskaileran gora igotzen bazara, baina "
-"bakarrik zonbiak ibiltzen ari diren adreiluen mailaraino..."
+"bakarrik zonbiak ibiltzen ari diren adreiluen mailaraino…"
 
 #: gamedata/game_GotD.txt:331
 #, kde-format
@@ -4997,7 +4997,7 @@ msgstr ""
 "erabiliz.\n"
 "\n"
 "Azken mailak oso gogorrak dira, baina erronka gehiago nahi badituzu, saiatu "
-"\"Peter mendekua\"-ra joan..."
+"\"Peter mendekua\"-ra joan…"
 
 #: gamedata/game_plws.txt:9
 #, kde-format
@@ -5492,8 +5492,8 @@ msgstr ""
 "Maila hau urpekontzi alemanen gerrako 'Das boot' filmearen izena du eta "
 "Berlingo Marco Krüger-i eskeinia dago, KGoldrunner-en jatorrizko egileari.\n"
 "\n"
-"Argibide txiki bat... ontziaren eskuineko ertzean bazaude etsaia zuregana "
-"etortzea lortuko duzu... eta amaitu lana !!!!"
+"Argibide txiki bat… ontziaren eskuineko ertzean bazaude etsaia zuregana "
+"etortzea lortuko duzu… eta amaitu lana !!!!"
 
 #: gamedata/game_plws.txt:305
 #, kde-format
@@ -5712,7 +5712,7 @@ msgstr ""
 "\n"
 "Diagonalki ezkerrera jeitsi, hor bi adreilu faltsu daude. Jaregin "
 "bigarrengora, egon horren barruan eta zulatu eskuinera. Orain, erori "
-"beherantz doazen eskailera katera eta joan ezkerrera..."
+"beherantz doazen eskailera katera eta joan ezkerrera…"
 
 #: gamedata/game_plwv.txt:67
 #, kde-format
@@ -5726,7 +5726,7 @@ msgid ""
 "can say ..."
 msgstr ""
 "Azkarra eta zorrotza izan behar duzu oraingoan eta hau da esan daitekeen "
-"guztia..."
+"guztia…"
 
 #: gamedata/game_plwv.txt:71
 #, kde-format
@@ -5822,7 +5822,7 @@ msgstr ""
 "Jarraitu goi eta behearen artean joaten etsaiari iruzur egiteko. Ahal "
 "duzunean har itzazu pipitak. Etsai batek pipita bat hartzen badu, soilik "
 "hutsuneetan soilik jaregingo du. Beraz, eduki ezazu hura haien artean "
-"korrika eta zain egon pazientziarekin..."
+"korrika eta zain egon pazientziarekin…"
 
 #: gamedata/game_plwv.txt:93
 #, kde-format
@@ -5846,7 +5846,7 @@ msgstr ""
 "Atal horretan etsairen bat egonez gero, hil ezazu hura horma faltsuaren "
 "behean ezkutatuz eta harengandik gertu zulo bat eginez. Hura hil egingo da "
 "zu harrapatzen saiatzean. Trikimailu honek ez du funtzionatuko zulatzea nahi "
-"duzun adreiluan urrea badago..."
+"duzun adreiluan urrea badago…"
 
 #: gamedata/game_plwv.txt:99
 #, kde-format
@@ -6049,7 +6049,7 @@ msgid ""
 "\n"
 "Composed by Stuart Popejoy - spopejoy@panix.com"
 msgstr ""
-"Segurua zela uste zenuenean ... izutzeko moduko hamabost maila, "
+"Segurua zela uste zenuenean … izutzeko moduko hamabost maila, "
 "«KGoldrunner»en arau bitxia baina azkar horiek erabiliz. Sarritan, erori "
 "bitartean zulatu beharrean izango zara.\n"
 "\n"
@@ -6321,7 +6321,7 @@ msgid ""
 "and dig the next brick in towards the center. Fall onto the enemy and run "
 "right or left, then dig to trap him.  You will have to be quick!"
 msgstr ""
-"Bizkor ibili eta ongi zulatu...\n"
+"Bizkor ibili eta ongi zulatu…\n"
 "Barne barneko ganberan, goiko ezker ezkerreko edo eskuin eskuineko adreiluan "
 "egon eta zulatu adreilutik gertu zentrurantz. Erori etsaiaren gainera eta "
 "joan lasterka eskuinera edo ezkerrera, gero zulatu hura atrapatzeko. Azkarra "
@@ -6664,7 +6664,7 @@ msgstr ""
 "da, eta hasteko behar dituzun trebetasunak garatzen lagunduko dizu. Ohiko "
 "arau-multzoa erabiltzen du, etxerako lehenengo ordenagailuetan erabiltzen "
 "zirenen antzekoa. Maila bakoitzak azalpen motz bat du, eta ondoren jokatzen "
-"duzu.....\n"
+"duzu…..\n"
 "\n"
 "Maila aurreratuagoak jokatzera iristen zarenean nabarituko duzu "
 "«KGoldrunner»ek, ekintza, estrategia eta buru-hausgarrien ebazpena nahasten "
@@ -6692,7 +6692,7 @@ msgstr ""
 "\n"
 "Heroia, goian ezkerrean, zure ordezkaria da. Pipitak biltzeko, saguarekin "
 "erakutsi nora joan nahi duzun. Hasieran grabitatearen eragina nagusitu eta "
-"erori egiten da..."
+"erori egiten da…"
 
 #: gamedata/game_tute.txt:15
 #, kde-format
@@ -6810,7 +6810,7 @@ msgstr ""
 "Garrantzitsuena, etsaien buruen gainetik ibil zaitezke. Maila honen hasieran "
 "hori egin behar zenuke. Zulo bat zulatu, etsaia harrapatu, hura beheraino "
 "iritsi arte itxoin, eta ondoren haren gainetik ibili, gainerako etsaiak "
-"atzean jarraika dituzula...\n"
+"atzean jarraika dituzula…\n"
 "\n"
 "Estresatuta bazaude, nahi duzunean Etenaldi tekla (era lehenetsian P edo "
 "Ihes) sakatu eta atseden har dezakezu. Berriz sakatu jarraitu nahi duzunean."
@@ -6828,8 +6828,8 @@ msgid ""
 "onto it."
 msgstr ""
 "Barretatik (edo zurtoinetatik) horizontalki mugi zaitezke, baina behera "
-"mugitzen bazara, askatu eta erori egingo zara ... Gainera, kontuan izan "
-"urrera erortzean ura jaso dezakezula."
+"mugitzen bazara, askatu eta erori egingo zara … Gainera, kontuan izan urrera "
+"erortzean ura jaso dezakezula."
 
 #: gamedata/game_tute.txt:47
 #, kde-format
@@ -6848,7 +6848,7 @@ msgstr ""
 #: gamedata/game_tute.txt:51 gamedata/game_tutea.txt:31
 #, kde-format
 msgid "Bye ..."
-msgstr "Agur..."
+msgstr "Agur…"
 
 #: gamedata/game_tute.txt:52 gamedata/game_tutea.txt:32
 #, kde-format
@@ -6886,7 +6886,7 @@ msgid ""
 "middle levels of the 'Initiation' game.  Enjoy ..."
 msgstr ""
 "Tutoretza \"Hasieraketa\" jokoaren erdiko mailetan aurki ditzakezun gauzen "
-"prestakuntza bat da. Ongi pasa ...."
+"prestakuntza bat da. Ongi pasa …."
 
 #: gamedata/game_tutea.txt:7
 #, kde-format
@@ -6908,12 +6908,12 @@ msgstr ""
 "\n"
 "Etsai batek urrezko ingurune bat badu, pipita bat duela esan nahi du. Erori "
 "egin dakioke hormigoian korritzen ari den bitartean edo eskilara batean "
-"dabilela... Pazientzia !!"
+"dabilela… Pazientzia !!"
 
 #: gamedata/game_tutea.txt:13
 #, kde-format
 msgid "To kill ..."
-msgstr "Hiltzea..."
+msgstr "Hiltzea…"
 
 #: gamedata/game_tutea.txt:14
 #, kde-format
@@ -6935,7 +6935,7 @@ msgstr ""
 #: gamedata/game_tutea.txt:19
 #, kde-format
 msgid "...  Or not to kill?"
-msgstr "...  Edo ez hiltzea?"
+msgstr "…  Edo ez hiltzea?"
 
 #: gamedata/game_tutea.txt:20
 #, kde-format
@@ -6947,8 +6947,8 @@ msgid ""
 "the top left, you can still finish the level by digging away the side of the "
 "pit he is in."
 msgstr ""
-"Onena etsaia ez hiltzea da. Saiatu eta konturatuko zara zergatik ... je, je, "
-"je... ;-)\n"
+"Onena etsaia ez hiltzea da. Saiatu eta konturatuko zara zergatik … je, je, "
+"je… ;-)\n"
 "\n"
 "Nahi gabe hiltzen baduzu, goiko ezkerreko urrea eskuratu baino lehen, maila "
 "amaitzeko, zula ezazu etsaia dagoen putzuaren aldea zula dezakezu."
@@ -6974,7 +6974,7 @@ msgstr ""
 "dute. Batzuetan adreilu hauetatik pasa behar duzu urrea hartzeko.\n"
 "\n"
 "Hasieran saltatu hormigoizko putzu batera, zulatu eta erori. Honek etsai bat "
-"preso utziko du momentu batzuetan..."
+"preso utziko du momentu batzuetan…"
 
 #: gamedata/game_wad.txt:3
 #, kde-format
@@ -7521,7 +7521,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "&New Game…"
-msgstr "Joko &berria..."
+msgstr "Joko &berria…"
 
 #: src/kgoldrunner.cpp:187
 #, kde-format
@@ -7545,19 +7545,19 @@ msgstr "Jokatzen ari zaren jokoaren hurrengo mailara aldatzen du."
 #, kde-format
 msgctxt "@action"
 msgid "&Load Saved Game…"
-msgstr "&Zamatu gordetako jokoa..."
+msgstr "&Zamatu gordetako jokoa…"
 
 #: src/kgoldrunner.cpp:205
 #, kde-format
 msgctxt "@action"
 msgid "&Save Game…"
-msgstr "&Gorde jokoa..."
+msgstr "&Gorde jokoa…"
 
 #: src/kgoldrunner.cpp:211
 #, kde-format
 msgctxt "@action"
 msgid "Save a Solution…"
-msgstr "Gorde ebazpen bat..."
+msgstr "Gorde ebazpen bat…"
 
 #: src/kgoldrunner.cpp:212
 #, kde-format
@@ -7703,7 +7703,7 @@ msgstr "Sortu"
 #, kde-format
 msgctxt "@action"
 msgid "&Edit Level…"
-msgstr "&Editatu maila..."
+msgstr "&Editatu maila…"
 
 #: src/kgoldrunner.cpp:301
 #, kde-format
@@ -7727,7 +7727,7 @@ msgstr "Editatu"
 #, kde-format
 msgctxt "@action"
 msgid "&Save Edits…"
-msgstr "&Gorde edizioak..."
+msgstr "&Gorde edizioak…"
 
 #: src/kgoldrunner.cpp:313
 #, kde-format
@@ -7751,7 +7751,7 @@ msgstr "Gorde"
 #, kde-format
 msgctxt "@action"
 msgid "&Move Level…"
-msgstr "&Mugitu maila..."
+msgstr "&Mugitu maila…"
 
 #: src/kgoldrunner.cpp:321
 #, kde-format
@@ -7769,7 +7769,7 @@ msgstr "Maila baten zenbakia aldatzen du edo beste joko batera eramaten du."
 #, kde-format
 msgctxt "@action"
 msgid "&Delete Level…"
-msgstr "&Ezabatu maila..."
+msgstr "&Ezabatu maila…"
 
 #: src/kgoldrunner.cpp:327
 #, kde-format
@@ -7787,7 +7787,7 @@ msgstr "Maila bat ezabatzen du."
 #, kde-format
 msgctxt "@action"
 msgid "Create &Game…"
-msgstr "Sortu &jokoa..."
+msgstr "Sortu &jokoa…"
 
 #: src/kgoldrunner.cpp:336
 #, kde-format
@@ -7805,7 +7805,7 @@ msgstr "Joko erabat berria sortzen du."
 #, kde-format
 msgctxt "@action"
 msgid "Edit Game &Info…"
-msgstr "Editatu jokoaren &informazioa..."
+msgstr "Editatu jokoaren &informazioa…"
 
 #: src/kgoldrunner.cpp:341
 #, kde-format
@@ -7823,7 +7823,7 @@ msgstr "Jokoaren izena, arauak edo deskribapena aldatzen ditu."
 #, kde-format
 msgctxt "@action"
 msgid "Change &Theme…"
-msgstr "Aldatu &gaia..."
+msgstr "Aldatu &gaia…"
 
 #: src/kgoldrunner.cpp:352
 #, kde-format
@@ -8919,7 +8919,7 @@ msgstr "Itxi KGoldrunner"
 #, kde-format
 msgctxt "@action:button"
 msgid "&New Game…"
-msgstr "Joko &berria..."
+msgstr "Joko &berria…"
 
 #: src/kgrgame.cpp:724
 #, kde-format
@@ -9462,7 +9462,7 @@ msgstr "Ezabatu maila"
 #, kde-format
 msgctxt "@action:button"
 msgid "Move To…"
-msgstr "Mugitu hona..."
+msgstr "Mugitu hona…"
 
 #: src/kgrselector.cpp:281
 #, kde-format
@@ -9634,9 +9634,9 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Maila bat mugitzeko (zenbakia aldatzeko), aurrena \"Editatu edozein maila..."
-"\" erabiliz hautatu, ondoren \"Mugitu maila...\" erabil dezakezu zenbaki "
-"berri bat emanez edo baita jokoz aldatzeko ere. Beste mailen zenbakiak "
+"Maila bat mugitzeko (zenbakia aldatzeko), aurrena \"Editatu edozein maila…\" "
+"erabiliz hautatu, ondoren \"Mugitu maila…\" erabil dezakezu zenbaki berri "
+"bat emanez edo baita jokoz aldatzeko ere. Beste mailen zenbakiak "
 "automatikoki zenbatuko dira. Mailak zure jokoen barruan bakarrik mugi "
 "ditzakezu."
 
