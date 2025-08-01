@@ -1,7 +1,7 @@
 # Translation for kgoldrunner.po to Euskara/Basque (eu).
 # Copyright (C) 2003-2025 This file is copyright:
 # This file is distributed under the same license as the kgoldrunner package.
-# SPDX-FileCopyrightText: 2023, 2024, 2025 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Marcos  <marcos@euskalgnu.org>, 2003, 2005.
@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-22 00:38+0000\n"
-"PO-Revision-Date: 2025-07-23 14:01+0200\n"
+"PO-Revision-Date: 2025-07-31 14:38+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -1405,7 +1405,7 @@ msgstr ""
 "zu hiltzeagatik lorik galduko… Beraz, kontuz ibili eta guztietan "
 "garrantzitsuena: azkar ibili --- edo hilda zaude!\n"
 "\n"
-"Txapelketa-maila hauek «KGoldrunner»reko arau bizkor eta xelebreak "
+"Txapelketa-maila hauek KGoldrunner(r)eko arau bizkor eta xelebreak "
 "erabiltzen dituzte eta Gabriel Miltschitzky-k [gabriel puntu miltschitzky at "
 "freenet de] landutakoak dira. Batzuetan erori bitartean zulatu behar duzu."
 
@@ -3016,7 +3016,7 @@ msgid "Encircled"
 msgstr "Inguratuta"
 
 #: gamedata/game_GotD.txt:188
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "The essence of this level is to get the zombies who do not have a piece of "
 "gold separated from the others and locked away in the pit. So it is helpful "
@@ -3024,11 +3024,10 @@ msgid ""
 "is no real problem if zombies who have gold land in the pit: you can always "
 "release them later and get back the gold."
 msgstr ""
-"Maila horren funtsa da urre puskarik ez duten zonbiak besteengandik "
-"bereiztea eta hobian giltzapetzea. Beraz, lagungarria da ahalik eta urre "
-"gehien lortzea zonbietako edozeinek lortu aurretik. Ez da benetako arazoa "
-"urrea duten zonbiak hobian lur hartzen badute: beti askatu ditzakezu gero, "
-"eta urrea berreskuratu."
+"Maila honen funtsa da urre puskarik ez duten zonbiak besteengandik bereiztea "
+"eta hobian giltzapetzea. Beraz, lagungarria zonbiek hartu baino lehen ahalik "
+"eta urre gehien lortzea. Urrea duten zonbiak hobian erortzea ez da arazo "
+"bat: urrea berreskuratzeko nahi duzunean aska ditzakezu."
 
 #: gamedata/game_GotD.txt:191
 #, kde-format
@@ -3059,6 +3058,27 @@ msgid ""
 "Finally you have to collect the remaining gold from the zombies. Never land "
 "on the ground to the right of them."
 msgstr ""
+"Beheko eskuineko hiru eskailerek ondoan gezurrezko adreiluak dituzte, eta, "
+"beraz, bide horretatik ezin da oso gora igo.\n"
+"\n"
+"Hara iristeko, aurrena eskuineko lehenengo eskailera igo behar duzu hurbilen "
+"dagoen zonbiari ihes egiteko. Ondoren, bigarren eskaileraren gaineko urrea "
+"har dezakezu. Baina itxoin eskailera horren behealdean hurrengo zonbia "
+"ezkerretik iritsi arte, azken unean bere buruaren gainean jarri ahal "
+"izateko.\n"
+"\n"
+"Orain igo hirugarren eskailera, hartu han dagoen urrea, erori eta berriz "
+"igo. Itxoin ezkerren dauden eskaileratara joateko une aproposa. Ezkerretik "
+"zonbi bat zure atzetik badator, jar zaitez haren buru gainean eta hasi "
+"korrika.\n"
+"\n"
+"Ezkerrera iritsi ezin baduzu, igo erdiko eskailera txikia igotzeak lekua eta "
+"denbora eman diezazuke. Goranzko bide laburrago bat ere eskain diezazuke - "
+"ebazpena jo, nola egin ikusteko.\n"
+"\n"
+"Orain saiatu goiko mailako urre guztia garbitzen, baina kontuz tranpekin! "
+"Azkenik, zonbiek duten geratzen urrea jaso behar duzu. Ez lurreratu inoiz "
+"haien eskuinaldean."
 
 #: gamedata/game_GotD.txt:203 gamedata/game_lars.txt:44
 #, kde-format
@@ -3314,18 +3334,18 @@ msgid "Overcrowding"
 msgstr "Jendetza"
 
 #: gamedata/game_GotD.txt:290
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "The zombies will eventually group themselves, which makes it easier for you "
 "to avoid them, but harder to steal their gold. Best if you get as much gold "
 "as possible before anyone else. You might not manage to get every piece "
 "before them, but there are some places where it is easier to rob them."
 msgstr ""
-"Azkenean, zonbiak taldekatu egingo dira, eta horrek erraztu egiten dizu "
-"haiek saihestea, baina zailagoa haien urrea lapurtzea. Onena ahalik eta urre "
-"gehien lortzen baduzu beste inork baino lehenago. Agian ez duzu lortuko "
-"pieza bakoitza haien aurretik iristea, baina leku batzuetan errazagoa da "
-"lapurtzea."
+"Zonbiak azkenean taldekatu egingo dira, eta horrek haiek saihestea erraztuko "
+"dizu, baina haien urrea lapurtzea zailtzen du. Onena da beste inork baino "
+"lehen ahalik urre gehien lortzea. Agian ez duzu lortuko haiek baino lehen "
+"pieza guztietara iristea, baina badira leku batzuk non haiei lapurtzea "
+"errazagoa den."
 
 #: gamedata/game_GotD.txt:293
 #, kde-format
@@ -6050,7 +6070,7 @@ msgid ""
 "Composed by Stuart Popejoy - spopejoy@panix.com"
 msgstr ""
 "Segurua zela uste zenuenean … izutzeko moduko hamabost maila, "
-"«KGoldrunner»en arau bitxia baina azkar horiek erabiliz. Sarritan, erori "
+"KGoldrunner(r)en arau bitxia baina azkar horiek erabiliz. Sarritan, erori "
 "bitartean zulatu beharrean izango zara.\n"
 "\n"
 "Konposatzailea: Stuart Popejoy - spopejoy@panix.com"
@@ -6660,14 +6680,14 @@ msgid ""
 "When you move on to play more advanced levels, you will find that "
 "KGoldrunner combines action, strategy and puzzle solving --- all in one game."
 msgstr ""
-"Tutoretza hau, «KGoldrunner»en arauak erakusteko maila errazen bilduma bat "
+"Tutoretza hau, KGoldrunner(r)en arauak erakusteko maila errazen bilduma bat "
 "da, eta hasteko behar dituzun trebetasunak garatzen lagunduko dizu. Ohiko "
 "arau-multzoa erabiltzen du, etxerako lehenengo ordenagailuetan erabiltzen "
 "zirenen antzekoa. Maila bakoitzak azalpen motz bat du, eta ondoren jokatzen "
-"duzu…..\n"
+"duzu…\n"
 "\n"
 "Maila aurreratuagoak jokatzera iristen zarenean nabarituko duzu "
-"«KGoldrunner»ek, ekintza, estrategia eta buru-hausgarrien ebazpena nahasten "
+"KGoldrunner(r)ek, ekintza, estrategia eta buru-hausgarrien ebazpena nahasten "
 "dituela -- guztia joko berean."
 
 #: gamedata/game_tute.txt:9
@@ -6686,7 +6706,7 @@ msgid ""
 "point the mouse where you want him to go.  At first gravity takes over and "
 "he falls ..."
 msgstr ""
-"Kaixo! Ongi etorri «KGoldrunner»era! Jokoaren xedea urrezko pipita guztiak "
+"Kaixo! Ongi etorri KGoldrunner(e)ra! Jokoaren xedea urrezko pipita guztiak "
 "hartzea, jokalekuaren goiko aldera igotzea eta hurrengo mailara iragatea da. "
 "Ezkutuan dagoen eskailera bat agertuko da azken pipita eskuratzen duzunean.\n"
 "\n"
@@ -8510,7 +8530,7 @@ msgstr "Tradiziozko arauak"
 #, kde-format
 msgctxt "@option:radio"
 msgid "KGoldrunner rules"
-msgstr "«KGoldrunner»en arauak"
+msgstr "KGoldrunner(r)en arauak"
 
 #: src/kgrdialog.cpp:149 src/kgrdialog.cpp:184
 #, kde-format
@@ -8831,10 +8851,10 @@ msgid ""
 "This is because no development versions of the OpenAL and SndFile libraries "
 "were present when it was compiled and built."
 msgstr ""
-"Abisua: «KGoldrunner»ren kopia honek ez du soinurik.\n"
+"Abisua: KGoldrunner(r)en kopia honek ez du soinurik.\n"
 "\n"
-"Izan ere, konpilatu eta eraikitzeko fitxategien artean ez zegoen «OpenAL» "
-"eta «SndFile» liburutegien garapen bertsiorik."
+"Izan ere, konpilatu eta eraikitzeko fitxategien artean ez zegoen OpenAL eta "
+"SndFile liburutegien garapen bertsiorik."
 
 #: src/kgrgame.cpp:625 src/kgrgame.cpp:782
 #, kde-format
@@ -8980,7 +9000,7 @@ msgid ""
 "Sorry, although all levels of KGoldrunner can be solved, no solution has "
 "been recorded yet for the level you selected."
 msgstr ""
-"Barkatu, «KGoldrunner»ren maila guztiak ebatz daitezkeen arren, oraindik ez "
+"Barkatu, KGoldrunner(r)en maila guztiak ebatz daitezkeen arren, oraindik ez "
 "da grabatu hautatu duzun mailaren ebazpenik."
 
 #: src/kgrgame.cpp:848
@@ -9166,8 +9186,8 @@ msgid ""
 "KGoldrunner Hall of Fame.</html>"
 msgstr ""
 "<html><b>Zorionak !!!</b><br/>Joko honetan puntuazio altua lortu duzu.<br/> "
-"Mesedez, sartu zure izena,<br/> «KGoldrunner»en ospearen aretoan jasota gera "
-"dadin.</html>"
+"Mesedez, sartu zure izena,<br/> KGoldrunner(r)en ospearen aretoan jasota "
+"gera dadin.</html>"
 
 #: src/kgrgame.cpp:1724 src/kgrgame.cpp:1811
 #, kde-format
@@ -9202,7 +9222,7 @@ msgid ""
 "<center><h2>KGoldrunner Hall of Fame</h2></center><center><h3>\"%1\" Game</"
 "h3></center>"
 msgstr ""
-"<center><h2>«KGoldrunner»ren ospearen aretoa</h2></center><center><h3>\"%1\" "
+"<center><h2>KGoldrunner(r)en ospearen aretoa</h2></center><center><h3>\"%1\" "
 "jokoa</h3></center>"
 
 #: src/kgrgame.cpp:1882
@@ -9504,8 +9524,8 @@ msgstr "Txapelketa"
 #, kde-format
 msgid "1 level, uses KGoldrunner rules."
 msgid_plural "%1 levels, uses KGoldrunner rules."
-msgstr[0] "Maila 1, «KGoldrunner»en arauak erabiltzen ditu."
-msgstr[1] "%1 maila, «KGoldrunner»en arauak erabiltzen dituzte."
+msgstr[0] "Maila 1, KGoldrunner(r)en arauak erabiltzen ditu."
+msgstr[1] "%1 maila, KGoldrunner(r)en arauak erabiltzen dituzte."
 
 #: src/kgrselector.cpp:471
 #, kde-format
@@ -9672,7 +9692,7 @@ msgstr ""
 "Taulan klik egin joko bat hautatzeko. Taulan eta haren azpian hautatutako "
 "jokoari buruzko informazio gehiago ikus dezakezu, tartean, zenbat maila "
 "dituen, jokoaren zailtasuna eta aurkariak jarraitzen dituen arauak (begiratu "
-"«KGoldrunner» eskuliburua).\n"
+"KGoldrunner(r)en eskuliburua).\n"
 "\n"
 "Maila-zenbaki bat hautatzeko hura tekleatu, biraketa-kutxa edo kiribiltze-"
 "barra erabil dezakezu. Jokoa edo maila aldatzen duzun heinean, koadro-txiki "
@@ -9722,7 +9742,7 @@ msgstr "Mauricio Piacentini"
 #: src/main.cpp:92
 #, kde-format
 msgid "Port to KDE4, Qt4 and KGameCanvas classes"
-msgstr "KDE4, Qt4 eta «KGameCanvas»erako eratorpena"
+msgstr "KDE4, Qt4 eta KGameCanvas-erako eratorpena"
 
 #: src/main.cpp:94
 #, kde-format
@@ -9732,7 +9752,7 @@ msgstr "Maurizio Monge"
 #: src/main.cpp:95
 #, kde-format
 msgid "KGameCanvas classes for KDE4"
-msgstr "KDE4rako  «KGameCanvas» klaseak"
+msgstr "KDE4rako  KGameCanvas klaseak"
 
 #: src/main.cpp:98
 #, kde-format
