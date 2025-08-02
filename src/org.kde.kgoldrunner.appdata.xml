@@ -94,7 +94,7 @@
     <p xml:lang="eo">KGoldrunner estas agoludo, kie la heroo kuras tra labirinto, grimpas ŝtuparojn, fosas truojn kaj evitas malamikojn por kolekti ĉiujn ornugetojn kaj eskapi al la sekva nivelo. Viaj malamikoj ankaŭ serĉas la oron. Pli malbone, ili estas post vi!.</p>
     <p xml:lang="es">KGoldrunner es un juego de acción en el que un héroe corre por un laberinto, sube escaleras, cava hoyos y esquiva enemigos para recoger todas las piezas de oro y escapar al siguiente nivel. Los enemigos también van a por el oro. Y, todavía peor, ¡van a por ti!</p>
     <p xml:lang="et">KGoldrunner on tegevusmäng, milles kangelane liigub labürindis, ronib mööda redeleid, kaevab auke ja põikleb kõrvale vaenlaste eest, et koguda kokku kõik kullatükid ja pääseda järgmisele tasemele. Vaenlased jahivad samuti kulda. Aga mis veel hullem, nad jahivad ka sind!</p>
-    <p xml:lang="eu">«KGoldrunner» ekintza-joko bat da, heroia labirinto batean zehar doa, eskailerak igo, zuloak hondeatu eta etsaiak saihestuz, urre pipita guztiak bildu eta hurrengo mailara ihes egiteko. Zure etsaiak ere urrearen atzetik doaz. Okerragoa dena, zu harrapatu nahian doaz.</p>
+    <p xml:lang="eu">KGoldrunner ekintza-joko bat da, heroia labirinto batean zehar doa, eskailerak igo, zuloak hondeatu eta etsaiak saihestuz, urre pipita guztiak bildu eta hurrengo mailara ihes egiteko. Zure etsaiak ere urrearen atzetik doaz. Okerragoa dena, zu harrapatu nahian doaz.</p>
     <p xml:lang="fi">KGoldrunner on toimintapeli, missä sankari kulkee läpi sokkelon, nousee portaita, kaivaa kuoppia ja välttelee vihollisia kerätäkseen kultahippuja ja paetakseen seuraavalle tasolle. Myös vihollisesi himoitsevat kultaa – ne ovat perässäsi!</p>
     <p xml:lang="fr">KGoldRunner est un jeu d'action dans lequel le héros parcourt un labyrinthe, grimpe aux échelles, creuse des trous et évite les ennemis afin de collecter toutes les pépites d'or et de s'échapper vers le niveau suivant. Vos ennemis sont également à la recherche de l'or. Pire encore, ils sont à votre poursuite !</p>
     <p xml:lang="gl">KGoldrunner é un xogo de acción no que o heroe corre a través dun labirinto, sube por escaleiras, cava foxos e esquiva inimigos para recoller todas as moedas de ouro e escapar ao seguinte nivel. Os inimigos tamén van polo ouro. E aínda peor, van tras de ti!</p>
@@ -280,7 +280,7 @@
       <li xml:lang="eo">Du reĝimoj por la malamikoj: klasika kaj KGoldrunner-reĝimo, en KGoldrunner-reĝimo ili estas pli inteligentaj, en la klasika reĝimo estas pli facile trompi ilin</li>
       <li xml:lang="es">Dos modos para los enemigos: clásico y modo KGoldrunner. En el modo KGoldrunner son más inteligentes, mientras que en el modo clásico resulta más fácil engañarlos.</li>
       <li xml:lang="et">Kaht tüüpi vaenlased: klassikalised ja KGoldrunneri omad. KGoldrunneri vaenlased on nupukamad, klassikalisi on küllaltki hõlpus ninapidi vedada</li>
-      <li xml:lang="eu">Etsaientzako bi modu: klasikoa eta «KGoldrunner» modua, «KGoldrunner» moduan adimentsuagoak dira, modu klasikoan haiek engainatzea errazagoa da</li>
+      <li xml:lang="eu">Etsaientzako bi modu: klasikoa eta KGoldrunner modua. KGoldrunner moduan adimentsuagoak dira, modu klasikoan haiek engainatzea errazagoa da</li>
       <li xml:lang="fi">Kahdenlaisia vihollisia: perinteisiä ja KGoldrunner-tyyppisiä. Jälkimmäiset ovat älykkkäämpiä, perinteisiä on helpompi jallittaa</li>
       <li xml:lang="fr">Deux modes pour les ennemis : classique et KGoldRunner. En mode KGoldRunner, les ennemis sont plus intelligents, en mode classique il est plus facile de les tromper</li>
       <li xml:lang="gl">Dous modos para os inimigos: o clásico e o modo de KGoldrunner; no modo de KGoldrunner son máis intelixentes, no clásico é máis doado enganalos.</li>
@@ -435,7 +435,7 @@
       <caption xml:lang="eo">Ludante KGoldrunner</caption>
       <caption xml:lang="es">Jugando KGoldrunner</caption>
       <caption xml:lang="et">KGoldrunneri mängimine</caption>
-      <caption xml:lang="eu">«KGoldrunner»rean jokatzen</caption>
+      <caption xml:lang="eu">KGoldrunner(r)ean jokatzen</caption>
       <caption xml:lang="fr">Partie de KGoldRunner en cours</caption>
       <caption xml:lang="gl">Xogando a KGoldrunner</caption>
       <caption xml:lang="id">Memainkan KGoldrunner</caption>
