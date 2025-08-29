@@ -1,5 +1,6 @@
 [KGameTheme]
 Name=KGoldRunner Default
+Name[ar]=مبدئي جامع الذهب
 Name[bs]=KGoldRunner podrazumijevano
 Name[ca]=Predeterminat del KGoldRunner
 Name[ca@valencia]=Predeterminat del KGoldRunner
@@ -57,6 +58,7 @@ Name[x-test]=xxKGoldRunner Defaultxx
 Name[zh_CN]=KGoldRunner 默认
 Name[zh_TW]=KGoldRunner 預設
 Description=A light and clean theme for KDE4
+Description[ar]=مظهر خفيف ونظيف لـ كيدي4
 Description[bs]=Blaga i čista tema za KDE4
 Description[ca]=Un tema net i lleuger per al KDE 4
 Description[ca@valencia]=Un tema net i lleuger per a KDE 4

@@ -1,5 +1,6 @@
 [KGameTheme]
 Name=Black on White
+Name[ar]=أسود على أبيض
 Name[bs]=Crno na bijelom
 Name[ca]=Negre sobre blanc
 Name[ca@valencia]=Negre sobre blanc
@@ -58,6 +59,7 @@ Name[x-test]=xxBlack on Whitexx
 Name[zh_CN]=白底黑字
 Name[zh_TW]=黑與白
 Description=A monochrome, black on white theme for KGoldrunner
+Description[ar]=سمة أحادية اللون، أسود على أبيض لجامع الذهب
 Description[bs]=Monohromatka, crno na bijelom tema za KTragač zlata
 Description[ca]=Un tema monocrom (negre sobre blanc) per al KGoldrunner
 Description[ca@valencia]=Un tema monocrom (negre sobre blanc) per a KGoldrunner
