@@ -1,5 +1,6 @@
 [KGameTheme]
 Name=The Treasure of Egypt
+Name[ar]=كنز مصر
 Name[be]=Скарб Егіпта
 Name[bs]=Blaga Egipta
 Name[ca]=El tresor d'Egipte
@@ -55,6 +56,7 @@ Name[x-test]=xxThe Treasure of Egyptxx
 Name[zh_CN]=埃及的宝藏
 Name[zh_TW]=埃及的寶藏
 Description=Help Matt Goldrunner escape the traps of ancient Egypt.
+Description[ar]=ساعد جامع الذهب مات على الهروب من أفخاخ مصر القديمة.
 Description[bs]=Pomozi Mattu tragaču zlata da pobjegne od drevnih Egipatskih zamki.
 Description[ca]=Ajuda en Matt Goldrunner a escapar de les trampes de l'antic Egipte.
 Description[ca@valencia]=Ajuda en Matt Goldrunner a escapar de les trampes de l'antic Egipte.
