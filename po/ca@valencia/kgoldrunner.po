@@ -4211,7 +4211,7 @@ msgstr ""
 "pujar quan aparega l'escala oculta.\n"
 "\n"
 "Assegura't que l'enemic de l'extrem esquerre no deixa el seu nínxol. Serà "
-"necessari per a ajudar-te a arribar fins a l'escala d'escapada oculta quan "
+"necessari per ajudar-te a arribar fins a l'escala d'escapada oculta quan "
 "camine per la barra de la part superior esquerra."
 
 #: gamedata/game_GRII.txt:126
@@ -7435,8 +7435,9 @@ msgstr ""
 "fer en iniciar este nivell. Cava un forat, atrapa l'enemic a dins, i corre "
 "sobre ell, mentre un altre inicia una persecució trepidant…\n"
 "\n"
-"Si et sents angoixat, pots prémer la tecla de pausa en qualsevol moment (per "
-"defecte «P» o «Esc») i descansar. Prem-la de nou quan vullgues continuar."
+"Si et sents angoixat, pots prémer la tecla de pausa en qualsevol moment (de "
+"manera predeterminada «P» o «Esc») i descansar. Prem-la de nou quan vullgues "
+"continuar."
 
 #: gamedata/game_tute.txt:43
 #, kde-format
@@ -7553,9 +7554,9 @@ msgstr ""
 "No pots arribar fins a l'or, així que has d'aconseguir que els enemics te "
 "l'acosten. Però com els faràs tornar?\n"
 "\n"
-"Si estàs cansat, pots prémer la tecla de pausa (per defecte «P» o «Esc») i "
-"fer un descans. També, pots emprar el menú «Configuració» per a alentir "
-"l'acció."
+"Si estàs cansat, pots prémer la tecla de pausa (de manera predeterminada «P» "
+"o «Esc») i fer un descans. També, pots emprar el menú «Configuració» per a "
+"alentir l'acció."
 
 #: gamedata/game_tutea.txt:19
 #, kde-format
@@ -9176,7 +9177,7 @@ msgstr "Guarda nou"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Saved Game"
-msgstr "Seleccioneu una partida guardada"
+msgstr "Trieu una partida guardada"
 
 #: src/kgrdialog.cpp:266
 #, kde-format
@@ -9552,8 +9553,8 @@ msgid ""
 "Use the Select Game dialog box to choose a different game or level and start "
 "playing it"
 msgstr ""
-"Utilitza el diàleg Seleccioneu una partida per a triar una partida o un "
-"nivell diferent i comença a jugar"
+"Utilitza el diàleg Trieu una partida per a triar una partida o un nivell "
+"diferent i comença a jugar"
 
 #: src/kgrgame.cpp:730
 #, kde-format
@@ -9965,7 +9966,7 @@ msgstr "No hi ha cap nivell %1 a «%2», per tant, no hi pots jugar o editar-lo.
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Game"
-msgstr "Seleccioneu una partida"
+msgstr "Trieu una partida"
 
 #: src/kgrselector.cpp:135
 #, kde-format
@@ -10005,7 +10006,7 @@ msgstr "El nivell 1 de la partida seleccionada és:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Game/Level"
-msgstr "Seleccioneu una partida/nivell"
+msgstr "Trieu una partida/nivell"
 
 #: src/kgrselector.cpp:185
 #, kde-format
@@ -10292,9 +10293,9 @@ msgstr ""
 "nivells té, com és de difícil i quines regles seguixen els enemics (mira el "
 "manual de KGoldrunner).\n"
 "\n"
-"Selecciona un número de nivell escrivint-lo o utilitzant el botó de selecció "
-"de valors o la barra de desplaçament. En variar la partida o el nivell, "
-"també ho farà la xicoteta imatge del nivell."
+"Tria un número de nivell escrivint-lo o utilitzant el botó de selecció de "
+"valors o la barra de desplaçament. En variar la partida o el nivell, també "
+"ho farà la xicoteta imatge del nivell."
 
 #: src/kgrselector.cpp:589
 #, kde-format
