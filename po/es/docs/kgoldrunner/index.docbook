@@ -236,7 +236,7 @@
 ><guimenu
 >Juego</guimenu
 > <guimenuitem
->Nueva partida...</guimenuitem
+>Nueva partida…</guimenuitem
 ></menuchoice
 > o <keycombo action="simul"
 >&Ctrl;<keycap
@@ -265,7 +265,7 @@
 > para empezar a jugar. También puedes pulsar el botón <guibutton
 >Salir</guibutton
 >, el botón <guibutton
->Nueva partida...</guibutton
+>Nueva partida…</guibutton
 > o el botón <guibutton
 >Usar menú</guibutton
 >. El primero cerrará &kgoldrunner;, si no quieres jugar; el segundo mostrará un diálogo de <link linkend="select-game-dialog"
@@ -344,7 +344,7 @@
 ><guimenu
 >Preferencias</guimenu
 > <guimenuitem
->Configurar atajos de teclado...</guimenuitem
+>Configurar atajos de teclado…</guimenuitem
 ></menuchoice
 >.</para>
 
@@ -577,7 +577,7 @@
 ><guimenu
 >Juego</guimenu
 > <guimenuitem
->Nuevo juego...</guimenuitem
+>Nuevo juego…</guimenuitem
 ></menuchoice
 > o <keycombo action="simul"
 >&Ctrl;<keycap
@@ -709,7 +709,7 @@
 
 <para
 >Este diálogo aparece cuando seleccionas la acción <guimenuitem
->Nueva partida...</guimenuitem
+>Nueva partida…</guimenuitem
 > y también al seleccionar opciones del menú <guimenu
 >Editor</guimenu
 > o con cualquier opción de reproducción del menú <guimenu
@@ -927,7 +927,7 @@ linkend="settings-menu"
 > <guimenu
 >Juego</guimenu
 ><guimenuitem
->Nueva partida...</guimenuitem
+>Nueva partida…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -952,7 +952,7 @@ linkend="settings-menu"
 > <guimenu
 >Juego</guimenu
 ><guimenuitem
->Cargar partida guardada...</guimenuitem
+>Cargar partida guardada…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -992,7 +992,7 @@ linkend="settings-menu"
 ><guimenu
 >Juego</guimenu
 ><guimenuitem
->Guardar partida...</guimenuitem
+>Guardar partida…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1017,7 +1017,7 @@ linkend="settings-menu"
 > <guimenu
 >Juego</guimenu
 ><guimenuitem
->Guardar ediciones...</guimenuitem
+>Guardar ediciones…</guimenuitem
 > </menuchoice>
 </term>
 <listitem
@@ -1028,7 +1028,7 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 > <guimenuitem
->Guardar ediciones...</guimenuitem
+>Guardar ediciones…</guimenuitem
 ></menuchoice
 > y que el icono <guiicon
 >disco</guiicon
@@ -1048,7 +1048,7 @@ linkend="settings-menu"
 > <guimenu
 >Juego</guimenu
 ><guimenuitem
->Guardar una solución...</guimenuitem
+>Guardar una solución…</guimenuitem
 > </menuchoice>
 </term>
 <listitem
@@ -1094,7 +1094,7 @@ linkend="settings-menu"
 > <guimenu
 >Juego</guimenu
 ><guimenuitem
->Mostrar mejores puntuaciones...</guimenuitem
+>Mostrar mejores puntuaciones…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1157,7 +1157,7 @@ linkend="settings-menu"
 ><guimenu
 >Juego</guimenu
 > <guimenuitem
->Juego nuevo...</guimenuitem
+>Juego nuevo…</guimenuitem
 ></menuchoice
 > o <keycombo action="simul"
 >&Ctrl;<keycap
@@ -1211,7 +1211,7 @@ linkend="settings-menu"
 ><guimenu
 >Mover</guimenu
 ><guimenuitem
->Mostrar una solución...</guimenuitem
+>Mostrar una solución…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1326,7 +1326,7 @@ linkend="settings-menu"
 <listitem>
 <para
 >Muestra la barra de herramientas del editor y un área de juego en blanco en la que podrás dibujar un nuevo nivel. Cuando hayas terminado, usa la opción <guimenuitem
->Guardar ediciones...</guimenuitem
+>Guardar ediciones…</guimenuitem
 >, con lo que se asignará un número al nivel, que a su vez se añadirá a un juego.</para>
 </listitem>
 </varlistentry>
@@ -1337,7 +1337,7 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 ><guimenuitem
->Editar nivel...</guimenuitem
+>Editar nivel…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1360,14 +1360,14 @@ linkend="settings-menu"
 > <guimenu
 >Editor</guimenu
 ><guimenuitem
->Guardar ediciones...</guimenuitem
+>Guardar ediciones…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
 <para
 >Muestra el diálogo de <guilabel
 >Seleccionar juego</guilabel
-> con los ajustes predeterminados apropiados para guardar un nivel nuevo o editado. Puedes cambiar el juego y el nivel, lo que tendrá un efecto similar a «Guardar como...». Este diálogo tiene un botón especial, <guibutton
+> con los ajustes predeterminados apropiados para guardar un nivel nuevo o editado. Puedes cambiar el juego y el nivel, lo que tendrá un efecto similar a «Guardar como…». Este diálogo tiene un botón especial, <guibutton
 >Editar nombre del nivel o pista</guibutton
 >, que muestra un diálogo donde podrás añadir un nombre opcional y una pista para el nivel.</para>
 </listitem>
@@ -1379,13 +1379,13 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 ><guimenuitem
->Mover nivel...</guimenuitem
+>Mover nivel…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
 <para
 >Esta es una operación en dos pasos. Antes de usar <guimenuitem
->Mover nivel...</guimenuitem
+>Mover nivel…</guimenuitem
 >, debes cargar el nivel que se moverá, seleccionándolo para editarlo o para jugar. Luego se mostrará el diálogo <guilabel
 >Seleccionar juego</guilabel
 >, donde escogerás un nuevo lugar para el nivel cargado. Puedes cambiar tanto el juego como el nivel, para mover un nivel a otro juego, o solo el nivel para reordenar los niveles dentro de un juego. No puedes mover un nivel del sistema.</para>
@@ -1398,7 +1398,7 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 ><guimenuitem
->Borrar nivel...</guimenuitem
+>Borrar nivel…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1415,7 +1415,7 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 ><guimenuitem
->Crear juego...</guimenuitem
+>Crear juego…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1430,7 +1430,7 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 ><guimenuitem
-> Editar información del juego...</guimenuitem
+> Editar información del juego…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1797,7 +1797,7 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 > <guimenuitem
->Crear juego...</guimenuitem
+>Crear juego…</guimenuitem
 ></menuchoice
 >. Si te olvidas de ello, se mostrará un recordatorio.</para>
 
@@ -1846,7 +1846,7 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 > <guimenuitem
->Editar nivel...</guimenuitem
+>Editar nivel…</guimenuitem
 ></menuchoice
 > para empezar a editar un nivel existente o la opción <menuchoice
 ><guimenu
@@ -1869,7 +1869,7 @@ linkend="settings-menu"
 >La imagen inferior muestra la barra de herramientas de edición, que aparecerá cuando elijas las opciones <guimenuitem
 >Crear nivel</guimenuitem
 > o <guimenuitem
->Editar nivel...</guimenuitem
+>Editar nivel…</guimenuitem
 > en el menú <guimenu
 >Editor</guimenu
 >, cambiando del modo de juego al modo de edición. Desaparecerá al volver al modo de juego. Ten en cuenta que en el modo de edición los falsos ladrillos y las escaleras ocultas son visibles en el área de juego.</para>
@@ -1878,9 +1878,9 @@ linkend="settings-menu"
 >Los tres iconos de la parte izquierda de la barra de herramientas de edición tienen las mismas acciones que las opciones del menú <guimenuitem
 >Crear nivel</guimenuitem
 >, <guimenuitem
->Editar nivel...</guimenuitem
+>Editar nivel…</guimenuitem
 > y <guimenuitem
->Guardar ediciones...</guimenuitem
+>Guardar ediciones…</guimenuitem
 >. Los otros once iconos son para editar y dibujar objetos en el nivel.</para>
 
 
@@ -1952,13 +1952,13 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 > <guimenuitem
->Guardar ediciones...</guimenuitem
+>Guardar ediciones…</guimenuitem
 ></menuchoice
 > o <menuchoice
 ><guimenu
 >Juego</guimenu
 > <guimenuitem
->Guardar ediciones...</guimenuitem
+>Guardar ediciones…</guimenuitem
 ></menuchoice
 >. Debes guardar siempre en tus propios juegos, nunca en los juegos del sistema.</para>
 
@@ -1993,13 +1993,13 @@ linkend="settings-menu"
 ><guimenu
 >Juego</guimenu
 > <guimenuitem
->Nuevo juego...</guimenuitem
+>Nuevo juego…</guimenuitem
 ></menuchoice
 > o el correspondiente atajo del teclado. De forma predeterminada, el juego y el número del nivel se recuerdan, por lo que puedes ir directamente a dicho nivel con unos pocos clics. Si deseas modificar algo más, lo mismo sigue siendo cierto si vuelves a usar la opción del menú <menuchoice
 ><guimenu
 >Juego</guimenu
 > <guimenuitem
->Editar nivel...</guimenuitem
+>Editar nivel…</guimenuitem
 ></menuchoice
 >. Es esencial que pruebes todos los niveles que crees para asegurarte de que se pueden completar y no son demasiado fáciles.</para>
 
@@ -2041,7 +2041,7 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 > <guimenuitem
->Borrar nivel...</guimenuitem
+>Borrar nivel…</guimenuitem
 ></menuchoice
 > para eliminar un nivel que no quieras conservar. El resto de niveles se renumerarán para cerrar el hueco de la secuencia.</para>
 
@@ -2242,7 +2242,7 @@ linkend="settings-menu"
 ><guimenu
 >Mover</guimenu
 > <guimenuitem
->Mostrar una solución...</guimenuitem
+>Mostrar una solución…</guimenuitem
 ></menuchoice
 > para comprobar si hay una solución guardada para el nivel. Esto te mostrará algunas maneras de lidiar con las dificultades del nivel, aunque no necesariamente las mejores. A menudo hay varias formas de pasar un nivel, y cada vez que juegues habrá pequeñas diferencias en el ritmo, etc. Por lo que probablemente no podrás reproducir la solución grabada de manera exacta.</para>
 </listitem>
