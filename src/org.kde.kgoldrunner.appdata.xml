@@ -506,6 +506,6 @@
     <content_attribute id="violence-cartoon">mild</content_attribute>
   </content_rating>
   <custom>
-    <value key="KDE::supporters">Dmytro Nezhevenko</value>
+    <value key="KDE::supporters"></value>
   </custom>
 </component>
