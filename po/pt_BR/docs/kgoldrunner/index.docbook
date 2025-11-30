@@ -1,10 +1,5 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
-  <!ENTITY kgoldrunner "<application
->KGoldrunner</application
->">
-  <!ENTITY kappname "&kgoldrunner;">
-  <!ENTITY package "kdegames">
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % Brazilian-Portuguese "INCLUDE"
 > <!-- change language only here -->
@@ -62,9 +57,9 @@
 >&FDLNotice;</legalnotice>
 
 <date
->16/12/2015</date>
+>30/06/2021</date>
 <releaseinfo
->4.14 (&kde; Applications 15.12)</releaseinfo>
+>KDE Gear 21.04</releaseinfo>
 
 <abstract>
 <para
@@ -76,6 +71,34 @@
 <keywordset>
 <keyword
 >KDE</keyword>
+<keyword
+>kdegames</keyword>
+<keyword
+>jogo</keyword>
+<keyword
+>arcade</keyword>
+<keyword
+>estratégia</keyword>
+<keyword
+>inimigos</keyword>
+<keyword
+>tijolo</keyword>
+<keyword
+>tijolos</keyword>
+<keyword
+>cavar</keyword>
+<keyword
+>cavando</keyword>
+<keyword
+>cair</keyword>
+<keyword
+>queda</keyword>
+<keyword
+>ouro</keyword>
+<keyword
+>escada</keyword>
+<keyword
+>escadas</keyword>
 <keyword
 >KGoldrunner</keyword>
 </keywordset>
@@ -167,12 +190,16 @@
 >Iniciando o jogo</title>
 
 <para
->O &kgoldrunner; começa lhe apresentando uma demonstração gravada do jogo. Você poderá interromper este processo clicando na área de jogo com o mouse, pressionando a barra de espaço ou selecionando um item ou atalho do menu (como o <menuchoice
+>O &kgoldrunner; começa lhe apresentando uma demonstração gravada do jogo. Você poderá interromper este processo clicando na área de jogo com o mouse, pressionando a &Space; ou selecionando um item ou atalho do menu (como o <menuchoice
 > <guimenu
 >Jogo</guimenu
 ><guimenuitem
->Novo Jogo...</guimenuitem
+>Novo jogo…</guimenuitem
 ></menuchoice
+> ou <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
 >). Você poderá saltar esta demonstração no futuro, usando a opção do menu <menuchoice
 > <guimenu
 >Configurações</guimenu
@@ -188,25 +215,23 @@
 >. </para>
 
 <para
->Se você tiver ignorado a demonstração ou usado o mouse ou a barra de espaços para terminá-la, uma primeira janela lhe mostra os nomes, número e antevisão do último jogo e nível que carregou ou, se não tiver jogado anteriormente, a mesma informação para o Nível de Tutorial 1.</para>
+>Se você tiver ignorado a demonstração ou usado o mouse ou a &Space; para terminá-la, uma primeira janela lhe mostra os nomes, número e antevisão do último jogo e nível que carregou ou, se não tiver jogado anteriormente, a mesma informação para o Nível de Tutorial 1.</para>
 
 <para
 >Clique no botão <guibutton
 >JOGAR</guibutton
-> para começar a jogar imediatamente. Caso contrário, você poderá clicar no botão <guibutton
+> para começar a jogar imediatamente. Caso contrário, você poderá clicar nos botões <guibutton
 >Sair</guibutton
->, no botão <guibutton
->Selecionar o Nível</guibutton
-> ou no botão <guibutton
->Usar o Menu</guibutton
->. O primeiro interrompe o &kgoldrunner;, se você não quiser jogar; o segundo lhe apresenta uma janela para <link linkend="level-selection-dialog"
->Selecionar o Nível</link
+>, <guibutton
+>Novo jogo...</guibutton
+> ou <guibutton
+>Usar menu</guibutton
+>. O primeiro interrompe o &kgoldrunner;, se você não quiser jogar; o segundo lhe apresenta uma janela para <link linkend="select-game-dialog"
+>Selecionar jogo</link
 >, onde poderá escolher um jogo e nível diferentes ou simplesmente fechar a janela, deixando-o à vontade para usar o menu do &kgoldrunner;.</para>
 
 <para
->Se você tiver optado por iniciar um jogo e nível, ele irá então aparecer e o cursor do mouse estará sobre o herói. Num jogo de tutorial, existirá uma mensagem de explicação antes do início de cada nível. Você começa a jogar, mexendo o mouse, clicando num dos seus botões ou pressionando qualquer tecla que possa controlar o herói (&eg;, o <keycap
->Espaço</keycap
->), mas evite usar o <keycap
+>Se você tiver optado por iniciar um jogo e nível, ele irá então aparecer e o cursor do mouse estará sobre o herói. Num jogo de tutorial, existirá uma mensagem de explicação antes do início de cada nível. Você começa a jogar, mexendo o mouse, clicando num dos seus botões ou pressionando qualquer tecla que possa controlar o herói (&eg;, o &Space;), mas evite usar o <keycap
 >Q</keycap
 >, o <keycap
 >S</keycap
@@ -269,27 +294,27 @@
 >K</keycap
 >, <keycap
 >L</keycap
-> e <keycap
->Espaço</keycap
-> (num teclado <quote
+> e &Space; (num teclado <quote
 >QWERTY</quote
->) ou com duas mãos usando as teclas dos cursores, o <keycap
->Espaço</keycap
->, o <keycap
+>) ou com duas mãos usando as teclas dos cursores, o &Space;, o <keycap
 >Z</keycap
 > e o <keycap
 >C</keycap
->. Você também poderá escolher outras teclas no menu <guimenu
+>. Você também poderá escolher outras teclas no menu <menuchoice
+><guimenu
 >Configurações</guimenu
->, usando o item <guimenuitem
->Configurar atalhos</guimenuitem
+> <guimenuitem
+>Configurar atalhos...</guimenuitem
+></menuchoice
 >.</para>
 
 <para
->Você entrará no modo do teclado pressionando uma das teclas que poderão controlar o herói ou selecionando o <guimenuitem
+>Você entrará no modo do teclado pressionando uma das teclas que poderão controlar o herói ou selecionando o menu <menuchoice
+><guimenu
+>Configurações</guimenu
+><guimenuitem
 >Controle por Teclado</guimenuitem
-> no menu <guimenuitem
->Configurações</guimenuitem
+></menuchoice
 >.</para>
 
 <para
@@ -301,9 +326,7 @@
 >K</keycap
 >, <keycap
 >L</keycap
-> ou cursores) colocam o herói em movimento para cima, baixo, esquerda ou direita. Ele irá continuar a mover-se nessa direção, se conseguir, até que você pressione outra tecla de movimentação ou no <keycap
->Espaço</keycap
-> para parar. No modo do mouse ou computador portátil, ele irá parar automaticamente quando chegar ao cursor.</para>
+> ou cursores) colocam o herói em movimento para cima, baixo, esquerda ou direita. Ele irá continuar a mover-se nessa direção, se conseguir, até que você pressione outra tecla de movimentação ou no &Space; para parar. No modo do mouse ou computador portátil, ele irá parar automaticamente quando chegar ao cursor.</para>
 
 <para
 >Uma palavra de aviso: usar o teclado é muito mais complicado, a longo prazo, do que usar o mouse. Pense no mouse como um 'joystick'.</para>
@@ -317,10 +340,12 @@
 <para
 >Você poderá parar o jogo a qualquer momento pressionado uma tecla de Pausa (tanto o <keycap
 >P</keycap
-> como o &Esc;). Você poderá depois prosseguir se pressionando novamente na tecla de Pausa. Existe também uma opção de <guimenuitem
->Pausa</guimenuitem
-> no menu <guimenu
+> como o &Esc;). Você poderá depois prosseguir se pressionando novamente na tecla de Pausa. Existe também o item de menu <menuchoice
+><guimenu
 >Jogo</guimenu
+> <guimenuitem
+>Pausa</guimenuitem
+></menuchoice
 >, mas o problema é chegar lá sem mexer o herói e arranjar problemas com isso.</para>
 
 <tip
@@ -375,7 +400,7 @@
 ><guimenu
 >Jogo</guimenu
 ><guimenuitem
->Matar o Herói</guimenuitem
+>Matar herói</guimenuitem
 ></menuchoice
 >. Porque você desejaria fazer isto? Bem, porque algumas vezes você poderá ficar preso num local do qual não conseguirá escapar. Nesse caso, você ficará preso para sempre, a menos que cometa suicídio!</para>
 
@@ -465,7 +490,7 @@
 >Escavar enquanto cai</title>
 
 <para
->No jogo original do Apple II e Commodore 64, o herói precisa estar sobre algo sólido enquanto escava: uma escada, concreto, tijolo, barra --- ou sobre a cabeça de um inimigo. Esta regra foi esquecida no KGoldrunner e, em um determinado dia, o filho do autor descobriu que o jogador poderia escavar enquanto caía! Ele imediatamente criou um nível para explorar isso. Os outros criadores de jogos fizeram o mesmo. Você precisa escavar enquanto cai, nos jogos recentes de Campeonato, como o <quote
+>No jogo original do Apple II e Commodore 64, o herói precisa estar sobre algo sólido enquanto escava: uma escada, concreto, tijolo, barra --- ou sobre a cabeça de um inimigo. Esta regra foi esquecida no &kgoldrunner; e, em um determinado dia, o filho do autor descobriu que o jogador poderia escavar enquanto caía! Ele imediatamente criou um nível para explorar isso. Os outros criadores de jogos fizeram o mesmo. Você precisa escavar enquanto cai, nos jogos recentes de Campeonato, como o <quote
 >Aterrorizante</quote
 >, a <quote
 >Maldição da Múmia</quote
@@ -481,7 +506,7 @@
 >, <quote
 >Iniciação</quote
 >, <quote
->KGoldrunner</quote
+>&kgoldrunner;</quote
 > e <quote
 >Desafio</quote
 >. No jogo <quote
@@ -518,12 +543,16 @@
 >Repetir Último Nível</guimenuitem
 > e <guimenuitem
 >Repetir Qualquer Nível</guimenuitem
->. As soluções e replays podem ser interrompidos a qualquer momento clicando com o mouse na área de jogo, pressionando a barra de espaço ou selecionando o item ou atalho (como <menuchoice
+>. As soluções e replays podem ser interrompidos a qualquer momento clicando com o mouse na área de jogo, pressionando a &Space; ou selecionando o item ou atalho (como <menuchoice
 ><guimenu
 >Jogo</guimenu
 > <guimenuitem
->Novo Jogo...</guimenuitem
+>Novo Jogo…</guimenuitem
 ></menuchoice
+> ou <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
 >).</para>
 
 <para
@@ -547,7 +576,7 @@
 <itemizedlist>
 <listitem>
 <para
->Começa com o 5 vidas.</para>
+>Começa com o 5 vidas</para>
 </listitem>
 <listitem>
 <para
@@ -588,8 +617,8 @@
 >Tradicional</quote
 > e a do <quote
 >&kgoldrunner;</quote
->. É importante que conheça quais as configurações ativas quando você está jogando um jogo. O &kgoldrunner; escolhe automaticamente a configuração correta para um jogo quando você entrar nele; as regras de cada jogo são apresentadas na janela de <link linkend="level-selection-dialog"
->Seleção do Nível</link
+>. É importante que conheça quais as configurações ativas quando você está jogando um jogo. O &kgoldrunner; escolhe automaticamente a configuração correta para um jogo quando você entrar nele; as regras de cada jogo são apresentadas na janela de <link linkend="select-game-dialog"
+>Selecionar jogo</link
 >.</para>
 
 <para
@@ -665,36 +694,37 @@
 </sect1>
 </chapter>
 
-<chapter id="level-selection-dialog">
+<chapter id="select-game-dialog">
 <title
->O diálogo de seleção de níveis</title>
+>O diálogo de seleção de jogo</title>
 
-<sect1 id="level-selection-dialog-box">
+<sect1 id="select-game-dialog-box">
 <title
->Usando o diálogo de seleção de níveis</title>
-
+>Usando o diálogo de seleção de jogo</title>
 <screenshot>
 <screeninfo
->O diálogo de seleção de níveis</screeninfo>
+>O diálogo de seleção de jogo</screeninfo>
 <mediaobject>
 <imageobject>
 <imagedata fileref="select.png" format="PNG"/>
 </imageobject>
 <textobject>
 <phrase
->O diálogo de seleção de níveis</phrase>
+>O diálogo de seleção de jogo</phrase>
 </textobject>
 </mediaobject>
 </screenshot>
 
 <para
->Esta janela aparece quando o jogo começa e também quando você seleciona a opção <guimenu
->Novo Jogo</guimenu
+>Este diálogo aparece quando o jogo começa e também quando você seleciona a opção <guimenuitem
+>Novo jogo...</guimenuitem
 > ou quando selecionar itens do menu <guimenu
 >Editor</guimenu
+> ou qualquer opção de replay do menu <guimenu
+>Mover</guimenu
 >. Você a usa para escolher um jogo e um nível para jogar, editar, salvar, mover, renumerar ou remover. O botão principal abaixo é o botão <guibutton
 >OK</guibutton
->. O seu texto muda de acordo com o que está fazendo: neste caso é a escolha de um jogo e de um nível para editar.</para>
+>. O seu texto muda de acordo com o que está fazendo: neste caso é a escolha de um jogo e de um nível para jogar.</para>
 
 <sect2 id="selecting-a-game">
 <title
@@ -720,7 +750,9 @@
 >Você poderá optar por iniciar um jogo em qualquer nível, mas é sempre melhor começar no nível 1 e trabalhar a partir daí, se pretender obter um recorde. De um modo geral, os níveis com números mais elevados são mais difíceis.</para>
 
 <para
->O nível padrão, quando inicia a janela de seleção de níveis, será algo razoável, como o último nível que jogou ou editou. Você poderá selecionar outro nível usando as setas da caixa de numeração, inserindo o número do nível na caixa ou movendo a barra deslizante. As setas nas bordas aumentam ou diminuem o número por uma unidade. Você também poderá arrastar a barra deslizante com o botão esquerdo do mouse pressionado e alterar o número rapidamente ou poderá variá-lo de 10 unidades se clicar no espaço à esquerda ou à direita do posicionador da barra deslizante.</para>
+>Quando inicia a janela <guilabel
+>Selecionar jogo</guilabel
+>, o nível padrão será algo razoável, como o último nível que jogou ou editou. Você poderá selecionar outro nível usando as setas da caixa de numeração, inserindo o número do nível na caixa ou movendo a barra deslizante. As setas nas bordas aumentam ou diminuem o número por uma unidade. Você também poderá arrastar a barra deslizante com o &LMB; pressionado e alterar o número rapidamente ou poderá variá-lo de 10 unidades se clicar no espaço à esquerda ou à direita do posicionador da barra deslizante.</para>
 
 <para
 >À medida que o número do nível varia, é mostrada uma previsão do nível na pequena caixa de diálogo de previsão, assim como o nome do nível (se tiver um) também aparecerá.</para>
@@ -748,7 +780,7 @@
 >Salvando alterações</title>
 
 <para
->Se você selecionar uma ação do menu <guimenu
+>Se você selecionar uma opção dos menus <guimenu
 >Jogo</guimenu
 >, <guimenu
 >Editor</guimenu
@@ -803,11 +835,9 @@
 ></term>
 <listitem>
 <para
->Este menu contém as opções que afetam o jogo, como o início e a finalização dos jogos, a gravação e a leitura de jogos salvos, a apresentação dos recordes e a apresentação de uma dica (se estiver disponível). O menu <guimenu
->Jogo</guimenu
-> também contém a opção <guimenuitem
+>Este menu contém as opções que afetam o jogo, como o início e a finalização dos jogos, a gravação e a leitura de jogos salvos, a apresentação dos recordes e a apresentação de uma dica (se estiver disponível). Também contém a opção <guimenuitem
 >Sair</guimenuitem
-> e uma opção começar o jogo de Tutorial sem ter que passar pela janela de seleção do nível. Você também poderá sair se clicar no <guiicon
+>, ou você também poderá sair clicando no <guiicon
 >X</guiicon
 > no canto superior direito da janela do &kgoldrunner;.</para>
 </listitem>
@@ -823,6 +853,19 @@
 <listitem>
 <para
 >Este menu contém uma opção para obter uma sugestão (se existir). Os jogos de Campeonato e Tutorial dão sugestões em todos os níveis. Os outros jogos raramente têm estas sugestões. Também contém opções para repetir os jogos salvos, assim como executar demonstrações, mostrar exemplos de soluções e repetir os seus próprios esforços.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><link linkend="view-menu"
+><guimenu
+>Exibir</guimenu
+></link
+></term>
+<listitem>
+<para
+>Este menu contém uma opção para alternar o modo de tela cheia.</para>
 </listitem>
 </varlistentry>
 
@@ -872,7 +915,7 @@ linkend="settings-menu"
 <para
 >O menu de <guimenu
 >Ajuda</guimenu
-> contém o acesso ao Manual do &kgoldrunner; (este documento), a caixa de diálogo <guimenuitem
+> contém o acesso ao Manual do &kgoldrunner; (este documento), e as opções <guimenuitem
 >Sobre o &kgoldrunner;</guimenuitem
 > e <guimenuitem
 >Sobre o &kde;</guimenuitem
@@ -880,7 +923,7 @@ linkend="settings-menu"
 <para
 >Existe também uma opção para comunicar um erro ou um pedido de recurso.</para>
 <para
->Se você quiser fazer uma sugestão ou tiver algum nível novo para contribuir, o endereço de e-mail do autor atual está no item do menu <guimenuitem
+>Se você quiser fazer uma sugestão ou tiver algum nível novo para contribuir, o endereço de e-mail do autor atual está na opção <guimenuitem
 >Sobre o &kgoldrunner;</guimenuitem
 >.</para>
 </listitem>
@@ -906,13 +949,15 @@ linkend="settings-menu"
 > <guimenu
 >Jogo</guimenu
 > <guimenuitem
->Novo Jogo...</guimenuitem
+>Novo jogo…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
 <para
->Mostra a janela de seleção de níveis (ver em <link linkend="level-selection-dialog-box"
->Usar a Janela de Seleção de Níveis</link
+>Mostra a janela <guilabel
+>Selecionar jogo</guilabel
+> (ver em <link linkend="select-game-dialog-box"
+>Usar a janela para selecionar jogo</link
 >), onde poderá escolher um jogo e um nível dentro desse jogo. Na primeira vez, é mais fácil começar no nível 1, uma vez que os níveis estão organizados por ordem de dificuldade. Também é melhor começar aí se quiser obter um recorde.</para>
 </listitem>
 </varlistentry>
@@ -929,7 +974,7 @@ linkend="settings-menu"
 > <guimenu
 >Jogo</guimenu
 ><guimenuitem
->Carregar um Jogo Salvo...</guimenuitem
+>Carregar jogo salvo…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -969,7 +1014,7 @@ linkend="settings-menu"
 > <guimenu
 >Jogo</guimenu
 ><guimenuitem
->Salvar o Jogo...</guimenuitem
+>Salvar jogo…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -994,18 +1039,49 @@ linkend="settings-menu"
 > <guimenu
 >Jogo</guimenu
 ><guimenuitem
->Salvar alterações...</guimenuitem
+>Salvar alterações…</guimenuitem
 > </menuchoice>
 </term>
 <listitem
 ><para
->Esta opção só está ativa se você tiver usado o Editor do Jogo. Ele fará aparecer a caixa de diálogo de seleção do nível e permite-lhe escolher um número de nível e um jogo no qual salvar o seu trabalho. A sua ação é exatamente a mesma que a opção <guimenuitem
->Salvar alterações</guimenuitem
-> no menu <guimenu
+>Esta opção só está ativa se você tiver usado o Editor do Jogo. Ele fará aparecer a janela <guilabel
+>Selecionar jogo</guilabel
+> permitindo-lhe escolher um número de nível e um jogo no qual salvar o seu trabalho. A sua ação é exatamente a mesma do item de menu <menuchoice
+><guimenu
 >Editor</guimenu
-> e que o ícone de <guiicon
+><guimenuitem
+>Salvar alterações</guimenuitem
+></menuchoice
+> e do ícone de <guiicon
 >disco</guiicon
 > na barra do editor.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>S</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Jogo</guimenu
+><guimenuitem
+>Salvar uma solução…</guimenuitem
+> </menuchoice>
+</term>
+<listitem
+><para
+>Salve uma solução de um nível em um arquivo chamado <quote
+><filename
+>sol_<replaceable
+>prefix</replaceable
+>.txt</filename
+></quote
+> na pasta de dados do seu usuário.</para>
 </listitem>
 </varlistentry>
 
@@ -1040,7 +1116,7 @@ linkend="settings-menu"
 > <guimenu
 >Jogo</guimenu
 ><guimenuitem
->Mostrar recordes</guimenuitem
+>Mostrar recordes...</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1099,12 +1175,16 @@ linkend="settings-menu"
 
 <tip
 ><para
->Todos os movimentos da demonstração e repetição repetirão níveis previamente gravados. Todos podem ser interrompidos clicando-se na área de jogo com o mouse, pressionando a barra de espaço ou selecionando um item de menu ou atalho (como <menuchoice
+>Todos os movimentos da demonstração e repetição repetirão níveis previamente gravados. Todos podem ser interrompidos clicando-se na área de jogo com o mouse, pressionando a &Space; ou selecionando um item de menu ou atalho (como <menuchoice
 ><guimenu
 >Jogo</guimenu
 > <guimenuitem
->Novo Jogo...</guimenuitem
+>Novo jogo…</guimenuitem
 ></menuchoice
+> ou <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
 >).</para
 ></tip>
 
@@ -1153,7 +1233,7 @@ linkend="settings-menu"
 ><guimenu
 >Mover</guimenu
 ><guimenuitem
->Mostrar uma Solução...</guimenuitem
+>Mostrar uma solução...</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
@@ -1219,6 +1299,38 @@ linkend="settings-menu"
 
 </sect1>
 
+<sect1 id="view-menu">
+<title
+>Menu Exibir</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>F</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Exibir</guimenu
+> <guimenuitem
+>Modo de tela cheia</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Comuta (liga ou desliga)</action
+> o modo de tela cheia. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
 <sect1 id="editor-menu">
 <title
 >Menu Editor</title>
@@ -1236,7 +1348,7 @@ linkend="settings-menu"
 <listitem>
 <para
 >Exibe a barra de ferramentas do editor e uma área de jogo em branco na qual você poderá desenhar um novo nível. Quando estiver pronto, use a opção <guimenuitem
->Salvar alterações</guimenuitem
+>Salvar alterações...</guimenuitem
 > para atribuir o nível novo a um jogo e um número de nível.</para>
 </listitem>
 </varlistentry>
@@ -1247,12 +1359,14 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 ><guimenuitem
->Editar o Nível...</guimenuitem
+>Editar nível…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
 <para
->Mostra a janela de seleção do nível, na qual você poderá escolher um jogo e um nível para o editar. Você poderá escolher um jogo e um nível do Sistema, mas você irá obter um aviso lhe informando que só poderá gravar o nível editado num dos seus próprios jogos.</para>
+>Mostra a janela <guilabel
+>Selecionar jogo</guilabel
+>, na qual você poderá escolher um jogo e um nível para o editar. Você poderá escolher um jogo e um nível do Sistema, mas você irá obter um aviso lhe informando que só poderá gravar o nível editado num dos seus próprios jogos.</para>
 </listitem>
 </varlistentry>
 
@@ -1268,16 +1382,18 @@ linkend="settings-menu"
 > <guimenu
 >Editor</guimenu
 ><guimenuitem
->Salvar alterações...</guimenuitem
+>Salvar alterações…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
 <para
->Mostra a janela de seleção do nível com uma configuração padrão apropriada para salvar um nível novo ou um editado. Você poderá alterar o jogo e o número do nível e obter um efeito de <quote
->Salvar Como...</quote
+>Mostra a janela <guilabel
+>Selecionar jogo</guilabel
+> com uma configuração padrão apropriada para salvar um nível novo ou um editado. Você poderá alterar o jogo e o número do nível e obter um efeito de <quote
+>Salvar como…</quote
 >. Esta janela tem um botão especial, o <guibutton
->Nome e Dica do Nível</guibutton
->, que lhe mostra uma janela onde você poderá adicionar um nome opcional e uma sugestão para o seu nível.</para>
+>Editar nome e dica do nível</guibutton
+>, que lhe mostra uma janela onde você poderá adicionar um nome opcional e uma dica para o seu nível.</para>
 </listitem>
 </varlistentry>
 
@@ -1287,16 +1403,16 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 ><guimenuitem
->Mover o Nível...</guimenuitem
+>Mover nível…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
 <para
 >Esta uma operação em duas partes. Antes de usar o <guimenuitem
->Mover Nível</guimenuitem
->, você precisa carregar o nível a ser movido, selecionando-o para jogar ou para editar. A opção de <guimenuitem
->Mover Nível</guimenuitem
-> irá mostrar então a caixa de diálogo de seleção do nível, para que possa escolher o novo local para o nível carregado. Você poderá alterar tanto o jogo como o número do nível para mover esse mesmo nível para outro jogo diferente, como poderá apenas alterar o número do nível para reordenar os níveis dentro de um jogo. Você não poderá mover um nível do Sistema.</para>
+>Mover nível...</guimenuitem
+>, você precisa carregar o nível a ser movido, selecionando-o para jogar ou para editar. A janela <guilabel
+>Selecionar jogo</guilabel
+>, onde você pode escolher o novo local para o nível carregado. Você poderá alterar tanto o jogo como o número do nível para mover esse mesmo nível para outro jogo diferente, como poderá apenas alterar o número do nível para reordenar os níveis dentro de um jogo. Você não poderá mover um nível do Sistema.</para>
 </listitem>
 </varlistentry>
 
@@ -1306,12 +1422,14 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 ><guimenuitem
->Remover o Nível...</guimenuitem
+>Remover nível…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
 <para
->Exibe a caixa de diálogo de seleção do nível, onde você poderá escolher o nível a remover. Você não poderá remover um nível do sistema.</para>
+>Exibe a janela <guilabel
+>Selecionar jogo</guilabel
+>, onde você poderá escolher o nível a remover. Você não poderá remover um nível do sistema.</para>
 </listitem>
 </varlistentry>
 
@@ -1321,12 +1439,12 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 ><guimenuitem
->Criar um Jogo...</guimenuitem
+>Criar Jogo…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
 <para
->Você precisa usar esta opção antes de poder criar os seus próprios níveis do &kgoldrunner;. Ele mostra uma caixa de diálogo onde você poderá indicar o nome do jogo novo, um prefixo de 1-5 caracteres para os nomes dos arquivos dos níveis, as regras padrão para o seu jogo (<quote
+>Você precisa usar esta opção antes de poder criar os seus próprios níveis do &kgoldrunner;. Ele mostra uma janela onde você poderá indicar o nome do jogo novo, um prefixo de 1-5 caracteres para os nomes dos arquivos dos níveis, as regras padrão para o seu jogo (<quote
 >&kgoldrunner;</quote
 > ou <quote
 >Tradicionais</quote
@@ -1340,12 +1458,14 @@ linkend="settings-menu"
 ><guimenu
 >Editor</guimenu
 ><guimenuitem
->Editar a Informação do Jogo...</guimenuitem
+>Editar informações do jogo…</guimenuitem
 > </menuchoice>
 </term>
 <listitem>
 <para
->Exibe a caixa de diálogo de seleção de níveis, onde você poderá escolher o jogo a ser editado, e onde mostrará então as informações do jogo e onde você poderá editar o nome, as regras e a descrição, mas não o prefixo do nome do arquivo, no caso de já ter salvo algum nível. Isto deve-se ao fato do prefixo ser usado nos nomes dos arquivos de níveis internamente.</para>
+>Exibe a janela <guilabel
+>Selecionar jogo</guilabel
+>, onde você poderá escolher o jogo a ser editado, e onde mostrará então as informações do jogo e onde você poderá editar o nome, as regras e a descrição, mas não o prefixo do nome do arquivo, no caso de já ter salvo algum nível. Isto deve-se ao fato do prefixo ser usado nos nomes dos arquivos de níveis internamente.</para>
 </listitem>
 </varlistentry>
 
@@ -1358,29 +1478,6 @@ linkend="settings-menu"
 >Menu Configurações</title>
 
 <variablelist>
-<varlistentry>
-<term
-><menuchoice
-><shortcut
-> <keycombo action="simul"
->&Ctrl;&Shift;<keycap
->F</keycap
-></keycombo
-> </shortcut
-> <guimenu
->Configurações</guimenu
-> <guimenuitem
->Modo de tela inteira</guimenuitem
-> </menuchoice
-></term>
-<listitem
-><para
-><action
->Comuta (liga ou desliga)</action
-> o modo de tela inteira. </para
-></listitem>
-</varlistentry>
-
 <varlistentry>
 <term
 ><menuchoice
@@ -1400,22 +1497,22 @@ linkend="settings-menu"
 <varlistentry>
 <term
 ><guimenuitem
->Preto sobre branco</guimenuitem
+>O Tesouro do Egito</guimenuitem
 ></term>
 <listitem>
 <para
->Este tema foi reduzido às suas unidades gráficas mais básicas e é pintado apenas a preto e branco. Pretende ajudar os usuários com necessidades especiais na área da visão. O autor gostaria de obter respostas de e-mail para saber quão eficiente é e que melhorias na visibilidade poderiam ser feitas.</para>
+>O Matt Goldrunner encontra-se num templo do Antigo Egito, sendo perseguido por múmias determinadas a proteger as suas joias ancestrais a todo o custo.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term
 ><guimenuitem
->O Tesouro do Egito</guimenuitem
+>Preto sobre branco</guimenuitem
 ></term>
 <listitem>
 <para
->O Matt Goldrunner encontra-se num templo do Antigo Egito, sendo perseguido por múmias determinadas a proteger as suas joias ancestrais a todo o custo.</para>
+>Este tema foi reduzido às suas unidades gráficas mais básicas e é pintado apenas a preto e branco. Pretende ajudar os usuários com necessidades especiais na área da visão. O autor gostaria de obter respostas de e-mail para saber quão eficiente é e que melhorias na visibilidade poderiam ser feitas.</para>
 </listitem>
 </varlistentry>
 
@@ -1444,22 +1541,22 @@ linkend="settings-menu"
 <varlistentry>
 <term
 ><guimenuitem
->Nostalgia</guimenuitem
+>Nostalgia em Azul</guimenuitem
 ></term>
 <listitem>
 <para
->Lembra os dias do jogo original do Apple II e do Commodore 64, quando você ligava a sua máquina à sua TV &mdash; caso contrário, poderia ter um monitor monocromático. Para quem não se lembra desses dias heroicos, esta não é uma reprodução exata, mas dá uma ideia geral. Por exemplo, o herói era branco naquela época, mas agora é azul.</para>
+>Relembra o jogo do Apple II, onde os tijolos e o cimento era azul, o herói era branco, os inimigos tinham calças brancas e troncos laranjas (cor de pele) e o ouro eram caixas brancas com painéis laranjas. O efeito total era esquisito (uma espécie de 'anti-aliasing' por 'hardware'), o que tornava os tijolos quase tridimensionais &mdash; o que é difícil de recriar nos monitores precisos de hoje em dia.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term
 ><guimenuitem
->Nostalgia em Azul</guimenuitem
+>Nostalgia</guimenuitem
 ></term>
 <listitem>
 <para
->Relembra o jogo do Apple II, onde os tijolos e o cimento era azul, o herói era branco, os inimigos tinham calças brancas e troncos laranjas (cor de pele) e o ouro eram caixas brancas com painéis laranjas. O efeito total era esquisito (uma espécie de 'anti-aliasing' por 'hardware'), o que tornava os tijolos quase tridimensionais &mdash; o que é difícil de recriar nos monitores precisos de hoje em dia.</para>
+>Lembra os dias do jogo original do Apple II e do Commodore 64, quando você ligava a sua máquina à sua TV &mdash; caso contrário, poderia ter um monitor monocromático. Para quem não se lembra desses dias heroicos, esta não é uma reprodução exata, mas dá uma ideia geral. Por exemplo, o herói era branco naquela época, mas agora é azul.</para>
 </listitem>
 </varlistentry>
 
@@ -1686,7 +1783,7 @@ linkend="settings-menu"
 ><guimenu
 >Configurações</guimenu
 ><guimenuitem
->Configurar atalhos...</guimenuitem
+>Configurar atalhos…</guimenuitem
 > </menuchoice
 ></term>
 <listitem>
@@ -1703,8 +1800,13 @@ linkend="settings-menu"
 >Menu Ajuda</title>
 
 <para
->Contém os itens normais do menu de Ajuda do &kde;:</para
->&help.menu.documentation; </sect1>
+>Além disso, o &kgoldrunner; possui os itens comuns do menu <guimenu
+>Ajuda</guimenu
+> do &kde;. Para mais informações, leia a seção sobre o <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menu de Ajuda</ulink
+> dos Fundamentos do &kde;. </para>
+
+</sect1>
 
 </chapter>
 
@@ -1721,11 +1823,13 @@ linkend="settings-menu"
 >Criando um jogo</title>
 
 <para
->Antes de você criar ou editar um nível do &kgoldrunner;, você precisa criar um jogo para o salvar. Use a opção <guimenuitem
-> Criar um Jogo</guimenuitem
-> no menu <guimenu
+>Antes de você criar ou editar um nível do &kgoldrunner;, você precisa criar um jogo para o salvar. Use a opção <menuchoice
+><guimenu
 >Editor</guimenu
->. Se você se esquecer, será relembrado. </para>
+><guimenuitem
+> Criar um Jogo</guimenuitem
+></menuchoice
+> no menu . Se você se esquecer, será relembrado.</para>
 
 <para
 >As decisões mais importantes a tomar quando cria um jogo é escolher as regras que irá seguir (as <quote
@@ -1766,7 +1870,7 @@ linkend="settings-menu"
 >tute</quote
 > e <quote
 >tutea</quote
->). </para>
+>).</para>
 
 </sect2>
 
@@ -1775,11 +1879,13 @@ linkend="settings-menu"
 >Criando um nível</title>
 
 <para
->Quando você tiver um jogo configurado, use a opção <guimenuitem
->Criar Nível</guimenuitem
-> no menu <guimenu
+>Quando você tiver um jogo configurado, use o item de menu <menuchoice
+><guimenu
 >Editor</guimenu
-> para começar a criar um nível. Isto mostrará uma área de jogo em branco com 28x20 quadrados, onde o herói se encontra no canto superior esquerdo. Você poderá colocar o herói noutro lado qualquer, se preferir, e você não terá que usar a área de 28x20 por completo. Muitos níveis interessantes usam áreas menores. </para>
+><guimenuitem
+>Criar Nível</guimenuitem
+></menuchoice
+> para começar a criar um nível. Isto mostrará uma área de jogo em branco com 28x20 quadrados, onde o herói se encontra no canto superior esquerdo. Você poderá colocar o herói noutro lado qualquer, se preferir, e você não terá que usar a área de 28x20 por completo. Muitos níveis interessantes usam áreas menores.</para>
 
 <para
 >O requisito mínimo para um nível ser jogável é ter um herói, uma pepita de ouro que ele possa apanhar e uma escada visível ou oculta que o leve para o topo da área de jogo, mas isso é um caso trivial. De forma mais realista, você poderá ter um labirinto para resolver e algumas escadas que o conduzem ao topo, mas sem ouro.Você não terá que ter inimigos, barras ou mesmo tijolos. Existem muitos níveis desafiantes que não têm inimigos ou tijolos; contudo, a maioria dos níveis deverão ter pelo menos uma pepita e algumas escadas escondidas que aparecem ao apanhar a última pepita.</para>
@@ -1796,10 +1902,18 @@ linkend="settings-menu"
 >Editando um nível</title>
 
 <para
->Use a opção <guimenuitem
->Editar o Nível</guimenuitem
-> para começar a editar um nível existente ou usar o <guimenuitem
->Criar um Nível</guimenuitem
+>Use o menu <menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Editar nível...</guimenuitem
+></menuchoice
+> para começar a editar um nível existente ou use o menu <menuchoice
+><guimenu
+>Editor</guimenu
+><guimenuitem
+>Criar nível...</guimenuitem
+></menuchoice
 > para começar a editar um novo nível.</para>
 
 <para
@@ -1813,9 +1927,9 @@ linkend="settings-menu"
 
 <para
 >A imagem abaixo mostra a barra de menu e a barra de edição, a qual lhe aparece quando você escolhe uma das opções <guimenuitem
->Criar um Nível</guimenuitem
-> ou o <guimenuitem
->Editar o Nível</guimenuitem
+>Criar nível</guimenuitem
+> ou <guimenuitem
+>Editar nível,,,</guimenuitem
 > no menu <guimenu
 >Editor</guimenu
 >, mudando desta forma do modo de Jogo para o de Edição. Ela desaparece quando você voltar para o modo de Jogo. Tenha em mente também que, no modo de Edição, os tijolos falsos e as escadas escondidas estão visíveis na área de jogo.</para>
@@ -1824,10 +1938,10 @@ linkend="settings-menu"
 >Os três ícones à esquerda da barra de edição possuem as mesmas ações que as opções do menu <guimenuitem
 >Criar nível</guimenuitem
 >, <guimenuitem
->Editar nível</guimenuitem
+>Editar nível...</guimenuitem
 > e <guimenuitem
->Salvar alterações</guimenuitem
->. Os outros onze ícones são para a edição e o desenho dos objetos no seu nível. </para>
+>Salvar alterações...</guimenuitem
+>. Os outros onze ícones são para a edição e o desenho dos objetos no seu nível.</para>
 
 
 <para
@@ -1900,19 +2014,25 @@ linkend="settings-menu"
 <para
 >Quando você tiver acabado de desenhar, salve o seu trabalho usando o ícone do <guiicon
 >disco</guiicon
-> ou a opção <guimenuitem
->Salvar alterações</guimenuitem
-> no menu <guimenu
+> ou os itens de menu <menuchoice
+><guimenu
 >Editor</guimenu
->, ou ainda a opção <guimenuitem
->Salvar alterações</guimenuitem
-> no menu <guimenu
+><guimenuitem
+>Salvar alterações...</guimenuitem
+></menuchoice
+> ou <menuchoice
+><guimenu
 >Jogo</guimenu
+><guimenuitem
+>Salvar alterações...</guimenuitem
+></menuchoice
 >. Você deve sempre salvar nos seus próprios jogos, e nunca nos jogos do Sistema.</para>
 
 <para
->Se você estiver criando um nível, você poderá usar o diálogo de seleção do nível para lhe atribuir um jogo e um número de nível. Você irá usar o mesmo diálogo se tiver editado um nível, mas a opção por padrão é salvar no local de onde este nível veio. Você poderá alterar o jogo e o nível para obter um efeito de <quote
->Salvar como...</quote
+>Se você estiver criando um nível, você poderá usar janela <guilabel
+>Selecionar jogo</guilabel
+> para lhe atribuir um jogo e um número de nível. Você irá usar o mesmo diálogo se tiver editado um nível, mas a opção por padrão é salvar no local de onde este nível veio. Você poderá alterar o jogo e o nível para obter um efeito de <quote
+>Salvar como…</quote
 >. Se você tiver editado um nível do sistema, você deverá salvá-lo como uma cópia num dos seus próprios jogos.</para>
 
 </sect2>
@@ -1922,13 +2042,15 @@ linkend="settings-menu"
 >Adicionando o nome do nível e a dica</title>
 
 <para
->Na versão de Gravação da janela de Seleção do Nível existe um botão chamado <guibutton
->Nome &amp; Dica do Nível</guibutton
+>Na versão salva da janela <guilabel
+>Selecionar jogo</guilabel
+> existe um botão chamado <guibutton
+>Editar nome ou dica do nível</guibutton
 >. Você poderá usar este botão para colocar os toques finais no seu nível, adicionando-lhe um nome e uma dica. Ambos os campos são opcionais, mas são essenciais para os níveis de tutorial, e é normal disponibilizá-los nos níveis muito difíceis (veja o jogo da <quote
 >Vingança do Peter W</quote
 >). Obviamente, você poderá usar o ícone para <guiicon
->Editar o Nome/Dica</guiicon
->, em qualquer momento, para adicionar ou editar o nome ou a dica do nível. </para>
+>Editar nome/dica</guiicon
+>, em qualquer momento, para adicionar ou editar o nome ou a dica do nível.</para>
 
 </sect2>
 
@@ -1937,13 +2059,19 @@ linkend="settings-menu"
 >Testando um nível</title>
 
 <para
->Depois de salvar um nível editado, você poderá testá-lo se usar a opção <guimenuitem
->Novo Jogo</guimenuitem
-> no menu <guimenu
+>Depois de salvar um nível editado, você poderá testá-lo se usar o menu <menuchoice
+><guimenu
 >Jogo</guimenu
-> ou o atalho equivalente. Por padrão, o jogo e o número do nível são recordados e você poderá ir direito ao nível com apenas alguns cliques. Se você quiser então editar mais alguns, o mesmo se aplica se usar a opção <guimenuitem
->Editar o Nível</guimenuitem
-> de novo. É essencial testar todos os níveis que compor, para garantir que é possível terminá-lo e que não é demasiado simples.</para>
+><guimenuitem
+>Novo jogo...</guimenuitem
+> </menuchoice
+> ou o atalho equivalente. Por padrão, o jogo e o número do nível são recordados e você poderá ir direito ao nível com apenas alguns cliques. Se você quiser então editar mais alguns, o mesmo se aplica se usar o menu <menuchoice
+><guimenu
+>Jogo</guimenu
+> <guimenuitem
+>Editar nível</guimenuitem
+></menuchoice
+> novamente. É essencial testar todos os níveis que compor, para garantir que é possível terminá-lo e que não é demasiado simples.</para>
 
 </sect2>
 </sect1>
@@ -1965,7 +2093,9 @@ linkend="settings-menu"
 >Mover nível</guimenuitem
 > é uma operação em duas partes. Você precisa primeiro carregar um nível, selecionando-o para o editar ou jogar, e usar então a opção <guimenuitem
 >Mover nível</guimenuitem
->, onde aparece a caixa de diálogo de seleção do nível e onde poderá então selecionar o número de nível e o jogo novos (de acordo com as necessidades).</para>
+>, onde aparece a janela <guilabel
+>Selecionar jogo</guilabel
+> onde poderá então selecionar o número de nível e o jogo novos (de acordo com as necessidades).</para>
 
 <para
 >As mudanças de local não deixam buracos na sequências dos números de níveis num jogo. Por exemplo, se você mover o nível 10 do jogo A para o nível 3 do jogo B, os níveis 11 e superiores do jogo A são renumerados com uma unidade a menos (para fechar o buraco) e os níveis 3 e superiores do jogo B são incrementados (para arranjar espaço para o nível novo).</para>
@@ -1977,11 +2107,13 @@ linkend="settings-menu"
 >Apagando um nível</title>
 
 <para
->Você poderá usar a opção <guimenuitem
->Remover nível</guimenuitem
-> no menu <guimenu
+>Você poderá usar o menu <menuchoice
+><guimenu
 >Editor</guimenu
-> para remover um nível indesejado. Os outros níveis serão renumerados para fechar a lacuna na sequência. </para>
+><guimenuitem
+>Remover nível</guimenuitem
+></menuchoice
+> para remover um nível indesejado. Os outros níveis serão renumerados para fechar a lacuna na sequência.</para>
 
 </sect2>
 </sect1>
@@ -2005,6 +2137,8 @@ linkend="settings-menu"
 >Sugestão</guimenuitem
 ></menuchoice
 ></link
+> ou <keycap
+>H</keycap
 >). As dicas agrupam-se da seguinte maneira:</para>
 
 <itemizedlist>
@@ -2194,13 +2328,13 @@ linkend="settings-menu"
 </listitem>
 <listitem>
 <para
->Use a opção <menuchoice
+>Use o menu <menuchoice
 ><guimenu
 >Mover</guimenu
 > <guimenuitem
->Mostrar uma Solução...</guimenuitem
+>Mostrar uma solução</guimenuitem
 ></menuchoice
-> para verificar se existe uma solução gravada para o nível. Isto mostrará algumas formas de lidar com as dificuldades no nível, mas nem sempre as melhores. Existem diversas maneiras de ganhar um nível e, e cada vez que o jogar, irão existir ligeiras diferenças no tempo, etc. Por isso, provavelmente você não será capaz de copiar a solução gravada de forma exata.</para>
+> para verificar se existe uma solução gravada para o nível. Isto mostrará algumas formas de lidar com as dificuldades no nível, mas nem sempre as melhores. Existem diversas maneiras de ganhar um nível e, e cada vez que o jogar, irão existir ligeiras diferenças no tempo, &etc; Por isso, provavelmente você não será capaz de copiar a solução gravada de forma exata.</para>
 </listitem>
 <listitem>
 <para
@@ -2264,9 +2398,9 @@ linkend="settings-menu"
 <para
 >Você poderá descobrir mais sobre o <trademark
 >Lode Runner</trademark
-> e as várias versões que saíram desde 1983, no sítio Web <ulink url="http://entropymine.com/jason/lr"
+> e as várias versões que saíram desde 1983, no sítio Web <ulink url="https://entropymine.com/jason/lr"
 >Arquivo do Lode Runner do Jason</ulink
-> (http://entropymine.com/jason/lr/). Esse sítio também possui a história do desenvolvimento original do jogo, no arquivo <ulink url="http://entropymine.com/jason/lr/misc/ldhist.html"
+> (https://entropymine.com/jason/lr/). Esse sítio também possui a história do desenvolvimento original do jogo, no arquivo <ulink url="https://entropymine.com/jason/lr/misc/ldhist.html"
 > misc/ldhist.html</ulink
 >. A Wikipédia possui também um artigo muito bom sobre o <trademark
 >Lode Runner</trademark
@@ -2294,10 +2428,10 @@ linkend="settings-menu"
 > em 2008. Ambos usam as regras tradicionais e têm temas interessantes rodando, assim como são bastante difíceis.</para>
 
 <para
->O Peter Wadham compôs os efeitos sonoros em 2008 e o Luciano Montanaro incorporou os sons no programa KGoldrunner.</para>
+>O Peter Wadham compôs os efeitos sonoros em 2008 e o Luciano Montanaro incorporou os sons no programa &kgoldrunner;.</para>
 
 <para
->Muito obrigado ao Mauricio Piacentini e ao Dmitry Suzdalev, que converteram o &kgoldrunner; para o &Qt; 4 e o &kde; 4, e a todos os artistas gráficos que contribuíram para os novos gráficos e temas em SVG na versão para o KDE 4: especialmente ao Mauricio Piacentini pelo tema padrão e pelos novos bonecos, ao Johann Ollivier Lapeyre pelas escadas e barras, ao Eugene Trounev pelos temas <quote
+>Muito obrigado ao &Mauricio.Piacentini; e ao Dmitry Suzdalev, que converteram o &kgoldrunner; para o &Qt; 4 e o &kde; 4, e a todos os artistas gráficos que contribuíram para os novos gráficos e temas em SVG na versão para o &kde; 4: especialmente ao &Mauricio.Piacentini; pelo tema padrão e pelos novos bonecos, ao Johann Ollivier Lapeyre pelas escadas e barras, ao Eugene Trounev pelos temas <quote
 >Cidade dos Geeks</quote
 > e <quote
 >Tesouro do Egito</quote
@@ -2312,34 +2446,6 @@ linkend="settings-menu"
 >marcus.gama@gmail.com</email
 ></para
 > &underFDL; &underGPL; </chapter>
-
-<appendix id="installation">
-<title
->Instalação</title>
-
-<sect1 id="how-to-obtain-kgoldrunner">
-<title
->Como obter o &kgoldrunner;</title
->&install.intro.documentation; </sect1>
-
-<sect1 id="compilation-and-installation">
-<title
->Compilação e instalação</title
->&install.compile.documentation; </sect1>
-
-</appendix>
-
-<appendix id="porting-kgoldrunner">
-<title
->Adaptando o &kgoldrunner; a outras plataformas</title>
-
-<para
->O &kgoldrunner; é feito em C++, usando o &Linux; e a versão para 'software' livre da biblioteca orientada por objetos gráfica que é o &Qt;. A versão atual poderá ser compilada e executada tanto com o &kde; 4 e o &Qt; 4.</para>
-
-<para
->O &kgoldrunner; depende das bibliotecas do &kde; (kdelibs e kdegames), que foram transpostas para outras plataformas, sendo possível obter edições Open Source do &Qt; 4 para outras plataformas. Por isso, em princípio será possível compilar e executar o &kgoldrunner; em plataformas que não sejam o &Linux;.</para>
-
-</appendix>
 
 </book>
 
