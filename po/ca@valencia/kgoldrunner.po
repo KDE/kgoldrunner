@@ -4411,7 +4411,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:172 gamedata/game_plws.txt:254
 #, kde-format
 msgid "Digging Hassle"
-msgstr "Problema en cavar"
+msgstr "Problema mentre es cavava"
 
 #: gamedata/game_GRII.txt:173
 #, kde-format
