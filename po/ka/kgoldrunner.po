@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:49+0000\n"
-"PO-Revision-Date: 2025-04-13 03:41+0200\n"
+"PO-Revision-Date: 2025-12-29 06:46+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.8\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -5391,7 +5391,7 @@ msgstr "ადვილი დასაწყისი"
 #: gamedata/game_wad.txt:8
 #, kde-format
 msgid "Drop through the false brick under the bar."
-msgstr ""
+msgstr "დააგდეთ ცრუ აგურის გავლით პანელის ქვეშ."
 
 #: gamedata/game_wad.txt:11
 #, kde-format
@@ -6849,6 +6849,7 @@ msgstr "დონის გადატანა"
 #, kde-format
 msgid "You must first load a level to be moved. Use the \"%1\" or \"%2\" menu."
 msgstr ""
+"ჯერ გადასასვლელი დონე უნდა ჩატვირთოთ. გამოიყენეთ მენიუ \"%1\", ან \"%2\"."
 
 #: src/kgreditor.cpp:320
 #, kde-format
@@ -6868,6 +6869,8 @@ msgid ""
 "You cannot move a level until you have created a game and at least two "
 "levels. Try menu item \"Create Game\"."
 msgstr ""
+"დონეს ვერ გადაიტანთ, სანამ არ შექმნით თამაშს, მინიმუმ, ორი დონით. სცადეთ "
+"მენიუს პუნქტი \"თამაშის შექმნა\"."
 
 #: src/kgreditor.cpp:342
 #, kde-format
@@ -6891,6 +6894,8 @@ msgid ""
 "You cannot delete a level until you have created a game and a level. Try "
 "menu item \"Create Game\"."
 msgstr ""
+"დონეს ვერ წაშლით მანამდე, სანამ არ შექმნით თამაშს და დონეს. სცადეთ მენიუს "
+"პუნქტი \"თამაშის შექმნა\"."
 
 #: src/kgreditor.cpp:443
 #, kde-format
@@ -7027,6 +7032,10 @@ msgid ""
 "This is because no development versions of the OpenAL and SndFile libraries "
 "were present when it was compiled and built."
 msgstr ""
+"გაფრთხილება: KGoldrunner-ის ამ ასლს ხმა არ აქვს.\n"
+"\n"
+"ეს იმიტომ მოხდა, რომ OpenAL-ის და SndFile ბიბლიოთეკების პროგრამისტებისთვის "
+"საჭირო ნაწილი მაშინ, როცა KGoldrunner-ის აგება მოხდა, დაყენებული არ იყო."
 
 #: src/kgrgame.cpp:625 src/kgrgame.cpp:782
 #, kde-format
@@ -7040,6 +7049,8 @@ msgid ""
 "The replay has stopped and the game is pausing while you prepare to go on "
 "playing. Please press the Pause key (default P or Esc) when you are ready."
 msgstr ""
+"თავიდან დაკვრა გაჩერდა და თამაში შეჩერდება, სანამ თქვენ სამუშაოდ ემზადებით. "
+"როცა მზად იქნებით, დააჭირეთ შეჩერების ღილაკს (ნაგულისხმევად P, ან Esc)."
 
 #: src/kgrgame.cpp:670 src/kgrgame.cpp:676
 #, kde-format
@@ -7052,6 +7063,7 @@ msgstr "უკანასკნელი დონის თავიდან 
 msgid ""
 "ERROR: Could not find and replay a recording of the last level you played."
 msgstr ""
+"შეცდომა: ვერ ვიპოვე და დავუკარი ჩანაწერი ბოლო დონისთვის, რომელიც ითამაშეთ."
 
 #: src/kgrgame.cpp:677
 #, kde-format
@@ -7059,6 +7071,9 @@ msgid ""
 "There is no last level to replay.  You need to play a level to completion, "
 "win or lose, before you can use the Replay Last Level action."
 msgstr ""
+"ბოლო დონე თავიდან დასაკრავად ხელმისაწვდომი არაა.  დონე ჯერ ბოლომდე უნდა "
+"ითამაშოთ, მოიგოთ, ან წააგოთ, სანამ ბოლო დონის ქმედებების თავიდან დაკვრის "
+"გამოყენება შეგეძლებათ."
 
 #: src/kgrgame.cpp:695
 #, kde-format
@@ -7085,6 +7100,8 @@ msgid ""
 "Set up to start playing the game and level being shown, as soon as you "
 "click, move the mouse or press a key"
 msgstr ""
+"მოირგეთ, რომ დაიწყოთ თამაში და დონე დაინახოთ მაშინვე, როცა დააწკაპუნებთ, "
+"გაამოძრავებთ თაგუნას, ან ღილაკს დააჭერთ"
 
 #: src/kgrgame.cpp:719
 #, kde-format
@@ -7117,6 +7134,8 @@ msgid ""
 "Use the Select Game dialog box to choose a different game or level and start "
 "playing it"
 msgstr ""
+"გამოიყენეთ თამაშის არჩევის დიალოგი, რომ აირჩიოთ სხვა თამაში, ან დონე და "
+"დაიწყოთ მისი თამაში"
 
 #: src/kgrgame.cpp:730
 #, kde-format
@@ -7137,6 +7156,8 @@ msgid ""
 "Before playing, use the menus to choose other actions, such as loading a "
 "saved game or changing the theme"
 msgstr ""
+"თამაშის დაწყებამდე გამოიყენეთ მენიუები, რომ აირჩიოთ სხვა ქმედებები, "
+"როგორიცაა შენახული თამაშის ჩატვირთვა, ან თემის შეცვლა"
 
 #: src/kgrgame.cpp:783
 #, kde-format
@@ -7144,6 +7165,8 @@ msgid ""
 "The game is halted. You will need to press the Pause key (default P or Esc) "
 "when you are ready to play."
 msgstr ""
+"თამაში გაჩერდა. როცა სათამაშოდ მზად იქნებით, საჭირო იქნება, შეჩერების ღილაკს "
+"დააჭიროთ (ნაგულისხმევად P, ან Esc)."
 
 #: src/kgrgame.cpp:836
 #, kde-format
@@ -7157,6 +7180,8 @@ msgid ""
 "Sorry, although all levels of KGoldrunner can be solved, no solution has "
 "been recorded yet for the level you selected."
 msgstr ""
+"უკაცრავად, მაგრამ მიუხედავად იმისა, რომ KGoldrunner-ის ყველა დონის გავლა "
+"შეიძლება, გასვლა ჯერ ჩაწერილი არაა დონისთვის, რომელიც თქვენ აირჩიეთ."
 
 #: src/kgrgame.cpp:848
 #, kde-format
@@ -7169,6 +7194,8 @@ msgstr "ნებისმიერი დონის თავიდან თ
 msgid ""
 "Sorry, you do not seem to have played and recorded the selected level before."
 msgstr ""
+"უკაცრავად, მაგრამ როგორც ჩანს, არჩეული დონე ადრე არც გითამაშიათ, არც "
+"ჩაგიწერიათ."
 
 #: src/kgrgame.cpp:1063
 #, kde-format
@@ -7176,6 +7203,8 @@ msgid ""
 "<NOBR><B>GAME OVER !!!</B></NOBR><P>Would you like to try this level again?</"
 "P>"
 msgstr ""
+"<NOBR><B>თამაში დასრულდა !!!</B></NOBR><P>გნებავთ, ეს დონე თავიდან სცადოთ?</"
+"P>"
 
 #: src/kgrgame.cpp:1065
 #, kde-format
@@ -7201,6 +7230,8 @@ msgid ""
 "<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the <b>"
 "\"%1\"</b> game !!</p>"
 msgstr ""
+"<b>გილოცავთ !!!!</b><p>თქვენ დახურეთ ბოლო დონე თამაშისთვის <b>\"%1\"</b> !!</"
+"p>"
 
 #: src/kgrgame.cpp:1298
 #, kde-format
@@ -7274,6 +7305,8 @@ msgid ""
 "Sorry, you cannot save your game play while you are editing. Please try menu "
 "item \"%1\"."
 msgstr ""
+"უკაცრავად, მაგრამ თამაშის შენახვა შეუძლებელია, სანამ მიმდინარეობს "
+"რედაქტირება. აირჩიეთ მენიუს პუნქტი \"%1\"."
 
 #: src/kgrgame.cpp:1495 src/kgrgame.cpp:1539 src/kgrgame.cpp:1654
 #: src/kgrgame.cpp:1857 src/kgrgame.cpp:2023 src/kgrgameio.cpp:169
@@ -7287,6 +7320,8 @@ msgid ""
 "Please note: for reasons of simplicity, your saved game position and score "
 "will be as they were at the start of this level, not as they are now."
 msgstr ""
+"დაიმახსოვრეთ: სიმარტივისთვის თქვენი შენახული თამაშის პოზიცია და ქულა იგივე "
+"იქნება, რაც ამ დონის დაწყებისას და არა იმდენი, რამდენიც ახლა."
 
 #: src/kgrgame.cpp:1520
 #, kde-format
@@ -7414,7 +7449,7 @@ msgstr "თამაშის ინფორმაციის ფაილი 
 #: src/kgrgame.cpp:2027
 #, kde-format
 msgid "Reached end of file '%1' before finding end of game-data."
-msgstr ""
+msgstr "მივაღწიე ფაილის '%1' ბოლოს თამაშის მონაცემების ბოლოს პოვნამდე."
 
 #: src/kgrgame.cpp:2051 src/kgrgame.cpp:2056
 #, kde-format
@@ -7486,21 +7521,28 @@ msgstr "აირჩიეთ დონე"
 #, kde-format
 msgid "Sorry, you can only save or move into one of your own games."
 msgstr ""
+"უკაცრავად, მაგრამ შენახვა და გადასვლა, მხოლოდ, თქვენი საკუთარი თამაშების "
+"შეგიძლიათ."
 
 #: src/kgrselector.cpp:79
 #, kde-format
 msgid "Sorry, you can only delete a level from one of your own games."
 msgstr ""
+"უკაცრავად, მაგრამ დონის წაშლა, მხოლოდ, თქვენი პირადი თამაშებიდან შეგიძლიათ."
 
 #: src/kgrselector.cpp:85
 #, kde-format
 msgid "Sorry, you can only edit the game information on your own games."
 msgstr ""
+"უკაცრავად, მაგრამ თამაშის ინფორმაციის ჩასწორება, მხოლოდ, თქვენი საკუთარი "
+"თამაშებისთვის შეგიძლიათ."
 
 #: src/kgrselector.cpp:99
 #, kde-format
 msgid "There is no level %1 in \"%2\", so you cannot play or edit it."
 msgstr ""
+"\"%2\"-ში დონე %1 არ არსებობს, ასე რომ, მისი თამაში, ან ჩასწორება "
+"შეუძლებელია."
 
 #: src/kgrselector.cpp:121 src/kgrselector.cpp:177
 #, kde-format
