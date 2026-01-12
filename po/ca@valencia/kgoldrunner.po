@@ -4411,7 +4411,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:172 gamedata/game_plws.txt:254
 #, kde-format
 msgid "Digging Hassle"
-msgstr "Problema en cavar"
+msgstr "Problema mentre es cavava"
 
 #: gamedata/game_GRII.txt:173
 #, kde-format
@@ -6654,8 +6654,8 @@ msgstr ""
 "l'esquerra, llança't i puja per l'escala a mà esquerra fins al capdamunt.\n"
 "\n"
 "L'enemic hauria de dirigir-se a la dreta, pel formigó, i caure. Ara baixa "
-"fins al cantó de baix a l'esquerra. L'enemic hauria de caure dins d'un maó "
-"fals al costat de l'or.\n"
+"fins al cantó inferior esquerre. L'enemic hauria de caure dins d'un maó fals "
+"al costat de l'or.\n"
 "\n"
 "Arreplega tot l'or de la part de dalt, i aleshores cava i llançat damunt del "
 "següent enemic. Mantín-te damunt seu, cava a l'esquerra i mou-te a la dreta. "
