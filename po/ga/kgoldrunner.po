@@ -1711,10 +1711,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:47
-#, fuzzy, kde-format
-#| msgid "Navigation"
+#, kde-format
 msgid "Manipulation"
-msgstr "Nascleanúint"
+msgstr ""
 
 #: gamedata/game_GotD.txt:48
 #, kde-format
@@ -1985,10 +1984,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:149
-#, fuzzy, kde-format
-#| msgid "Diagonal Disaster"
+#, kde-format
 msgid "Diagonal"
-msgstr "Tubaiste Trasnánach"
+msgstr ""
 
 #: gamedata/game_GotD.txt:150
 #, kde-format
@@ -2004,10 +2002,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:155
-#, fuzzy, kde-format
-#| msgid "He Has The Gold"
+#, kde-format
 msgid "Give Me That Gold!"
-msgstr "Tá an t-ór aige"
+msgstr ""
 
 #: gamedata/game_GotD.txt:156
 #, kde-format
@@ -2055,10 +2052,9 @@ msgid "Be quicker than the zombies - otherwise they will eat you."
 msgstr ""
 
 #: gamedata/game_GotD.txt:175
-#, fuzzy, kde-format
-#| msgid "The Big Maze"
+#, kde-format
 msgid "The Big Drop"
-msgstr "An Chathair Mhór Ghríobháin"
+msgstr ""
 
 #: gamedata/game_GotD.txt:176
 #, kde-format
@@ -2263,10 +2259,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:251
-#, fuzzy, kde-format
-#| msgid "The Balance"
+#, kde-format
 msgid "The Passage"
-msgstr "An Chóimheá"
+msgstr ""
 
 #: gamedata/game_GotD.txt:252
 #, kde-format
@@ -2351,10 +2346,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:285
-#, fuzzy, kde-format
-#| msgid "Delayed Trap"
+#, kde-format
 msgid "Death Trap"
-msgstr "Gaiste Moillithe"
+msgstr ""
 
 #: gamedata/game_GotD.txt:286
 #, kde-format
@@ -2401,10 +2395,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:303
-#, fuzzy, kde-format
-#| msgid "Awaiting Enemies"
+#, kde-format
 msgid "Raining Zombies"
-msgstr "Ag Fanacht le Naimhde"
+msgstr ""
 
 #: gamedata/game_GotD.txt:304
 #, kde-format
@@ -2436,10 +2429,9 @@ msgid "All it takes is good strong nerves..."
 msgstr ""
 
 #: gamedata/game_GotD.txt:317
-#, fuzzy, kde-format
-#| msgid "The Rose"
+#, kde-format
 msgid "The Horde"
-msgstr "An Rós"
+msgstr ""
 
 #: gamedata/game_GotD.txt:318
 #, kde-format
@@ -2462,10 +2454,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:327
-#, fuzzy, kde-format
-#| msgid "Space Invader"
+#, kde-format
 msgid "Zombie Invaders"
-msgstr "Ionróir Spáis"
+msgstr ""
 
 #: gamedata/game_GotD.txt:328
 #, kde-format
@@ -2512,10 +2503,9 @@ msgid ""
 msgstr ""
 
 #: gamedata/game_GotD.txt:343
-#, fuzzy, kde-format
-#| msgid "The Foundry"
+#, kde-format
 msgid "The End"
-msgstr "An Teilgcheárta"
+msgstr ""
 
 #: gamedata/game_GotD.txt:344
 #, kde-format
@@ -5714,25 +5704,22 @@ msgid ""
 msgstr ""
 
 #: src/kgoldrunner.cpp:184
-#, fuzzy, kde-format
-#| msgid "&New Game..."
+#, kde-format
 msgctxt "@action"
 msgid "&New Game…"
-msgstr "Cluiche &Nua..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:187
-#, fuzzy, kde-format
-#| msgid "Play Next Level"
+#, kde-format
 msgctxt "@action"
 msgid "Pla&y Next Level"
-msgstr "Imir an Chéad Leibhéal Eile"
+msgstr ""
 
 #: src/kgoldrunner.cpp:188
-#, fuzzy, kde-format
-#| msgid "Play Next Level"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Play the next level"
-msgstr "Imir an Chéad Leibhéal Eile"
+msgstr ""
 
 #: src/kgoldrunner.cpp:189
 #, kde-format
@@ -5741,32 +5728,28 @@ msgid "Switches to the next level in the game you are playing."
 msgstr ""
 
 #: src/kgoldrunner.cpp:196
-#, fuzzy, kde-format
-#| msgid "&Load Saved Game..."
+#, kde-format
 msgctxt "@action"
 msgid "&Load Saved Game…"
-msgstr "&Luchtaigh Cluiche Sábháilte..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:205
-#, fuzzy, kde-format
-#| msgid "Save Game"
+#, kde-format
 msgctxt "@action"
 msgid "&Save Game…"
-msgstr "Sábháil an Cluiche"
+msgstr ""
 
 #: src/kgoldrunner.cpp:211
-#, fuzzy, kde-format
-#| msgid "Show Solution"
+#, kde-format
 msgctxt "@action"
 msgid "Save a Solution…"
-msgstr "Taispeáin Réiteach"
+msgstr ""
 
 #: src/kgoldrunner.cpp:212
-#, fuzzy, kde-format
-#| msgid "Show Solution"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Save a solution"
-msgstr "Taispeáin Réiteach"
+msgstr ""
 
 #: src/kgoldrunner.cpp:213
 #, kde-format
@@ -5777,11 +5760,10 @@ msgid ""
 msgstr ""
 
 #: src/kgoldrunner.cpp:246
-#, fuzzy, kde-format
-#| msgid "Show Solution"
+#, kde-format
 msgctxt "@action"
 msgid "&Show a Solution"
-msgstr "Taispeáin Réiteach"
+msgstr ""
 
 #: src/kgoldrunner.cpp:247
 #, kde-format
@@ -5814,18 +5796,16 @@ msgid "Shows a recording of the level you are currently playing."
 msgstr ""
 
 #: src/kgoldrunner.cpp:259
-#, fuzzy, kde-format
-#| msgid "Play Next Level"
+#, kde-format
 msgctxt "@action"
 msgid "Replay &Last Level"
-msgstr "Imir an Chéad Leibhéal Eile"
+msgstr ""
 
 #: src/kgoldrunner.cpp:260
-#, fuzzy, kde-format
-#| msgid "Play Next Level"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Replay last level"
-msgstr "Imir an Chéad Leibhéal Eile"
+msgstr ""
 
 #: src/kgoldrunner.cpp:261
 #, kde-format
@@ -5836,18 +5816,16 @@ msgid ""
 msgstr ""
 
 #: src/kgoldrunner.cpp:267
-#, fuzzy, kde-format
-#| msgid "Play Next Level"
+#, kde-format
 msgctxt "@action"
 msgid "&Replay Any Level"
-msgstr "Imir an Chéad Leibhéal Eile"
+msgstr ""
 
 #: src/kgoldrunner.cpp:268
-#, fuzzy, kde-format
-#| msgid "Edit any level..."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Replay any level"
-msgstr "&Cuir aon leibhéal in eagar..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:269
 #, kde-format
@@ -5856,18 +5834,16 @@ msgid "Shows a recording of any level you have played so far."
 msgstr ""
 
 #: src/kgoldrunner.cpp:274
-#, fuzzy, kde-format
-#| msgid "&Kill Hero"
+#, kde-format
 msgctxt "@action"
 msgid "&Kill Hero"
-msgstr "&Maraigh an Laoch"
+msgstr ""
 
 #: src/kgoldrunner.cpp:275
-#, fuzzy, kde-format
-#| msgid "Kill hero"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Kill the hero"
-msgstr "Maraigh an laoch"
+msgstr ""
 
 #: src/kgoldrunner.cpp:276
 #, kde-format
@@ -5878,74 +5854,64 @@ msgid ""
 msgstr ""
 
 #: src/kgoldrunner.cpp:293
-#, fuzzy, kde-format
-#| msgid "&Create Level"
+#, kde-format
 msgctxt "@action"
 msgid "&Create Level"
-msgstr "&Cruthaigh Leibhéal"
+msgstr ""
 
 #: src/kgoldrunner.cpp:294
-#, fuzzy, kde-format
-#| msgid "Create level."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Create level"
-msgstr "Cruthaigh leibhéal."
+msgstr ""
 
 #: src/kgoldrunner.cpp:295
-#, fuzzy, kde-format
-#| msgid "Create a completely new level."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Creates a completely new level."
-msgstr "Cruthaigh leibhéal úrnua."
+msgstr ""
 
 #: src/kgoldrunner.cpp:297
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgctxt "@action"
 msgid "Create"
-msgstr "Cruthaigh"
+msgstr ""
 
 #: src/kgoldrunner.cpp:300
-#, fuzzy, kde-format
-#| msgid "Edit Level"
+#, kde-format
 msgctxt "@action"
 msgid "&Edit Level…"
-msgstr "Cuir Leibhéal in Eagar"
+msgstr ""
 
 #: src/kgoldrunner.cpp:301
-#, fuzzy, kde-format
-#| msgid "Edit Level"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit level"
-msgstr "Cuir Leibhéal in Eagar"
+msgstr ""
 
 #: src/kgoldrunner.cpp:302
-#, fuzzy, kde-format
-#| msgid "Edit any level..."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Edits any level."
-msgstr "&Cuir aon leibhéal in eagar..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:304
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action"
 msgid "Edit"
-msgstr "Eagar"
+msgstr ""
 
 #: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1461
-#, fuzzy, kde-format
-#| msgid "&Save Edits..."
+#, kde-format
 msgctxt "@action"
 msgid "&Save Edits…"
-msgstr "&Sábháil Athruithe..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:313
-#, fuzzy, kde-format
-#| msgid "Save edits..."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Save edits"
-msgstr "&Sábháil athruithe..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:314
 #, kde-format
@@ -5954,25 +5920,22 @@ msgid "Saves your level after editing."
 msgstr ""
 
 #: src/kgoldrunner.cpp:316
-#, fuzzy, kde-format
-#| msgid "Save"
+#, kde-format
 msgctxt "@action"
 msgid "Save"
-msgstr "Sábháil"
+msgstr ""
 
 #: src/kgoldrunner.cpp:320
-#, fuzzy, kde-format
-#| msgid "Move Level"
+#, kde-format
 msgctxt "@action"
 msgid "&Move Level…"
-msgstr "Bog Leibhéal"
+msgstr ""
 
 #: src/kgoldrunner.cpp:321
-#, fuzzy, kde-format
-#| msgid "Move Level"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Move level"
-msgstr "Bog Leibhéal"
+msgstr ""
 
 #: src/kgoldrunner.cpp:322
 #, kde-format
@@ -5981,60 +5944,52 @@ msgid "Changes a level's number or move it to another game."
 msgstr ""
 
 #: src/kgoldrunner.cpp:326
-#, fuzzy, kde-format
-#| msgid "Delete Level"
+#, kde-format
 msgctxt "@action"
 msgid "&Delete Level…"
-msgstr "Scrios Leibhéal"
+msgstr ""
 
 #: src/kgoldrunner.cpp:327
-#, fuzzy, kde-format
-#| msgid "Delete Level"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete level"
-msgstr "Scrios Leibhéal"
+msgstr ""
 
 #: src/kgoldrunner.cpp:328
-#, fuzzy, kde-format
-#| msgid "Delete a level..."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Deletes a level."
-msgstr "Scrios leibhéal..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:335
-#, fuzzy, kde-format
-#| msgid "Create Game"
+#, kde-format
 msgctxt "@action"
 msgid "Create &Game…"
-msgstr "Cruthaigh Cluiche"
+msgstr ""
 
 #: src/kgoldrunner.cpp:336
-#, fuzzy, kde-format
-#| msgid "Create Game"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Create game"
-msgstr "Cruthaigh Cluiche"
+msgstr ""
 
 #: src/kgoldrunner.cpp:337
-#, fuzzy, kde-format
-#| msgid "Create a completely new game..."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Creates a completely new game."
-msgstr "Cruthaigh cluiche úrnua..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:340
-#, fuzzy, kde-format
-#| msgid "Edit Name/Hint"
+#, kde-format
 msgctxt "@action"
 msgid "Edit Game &Info…"
-msgstr "Cuir Ainm/Leid in Eagar"
+msgstr ""
 
 #: src/kgoldrunner.cpp:341
-#, fuzzy, kde-format
-#| msgid "Edit Name/Hint"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit game info"
-msgstr "Cuir Ainm/Leid in Eagar"
+msgstr ""
 
 #: src/kgoldrunner.cpp:342
 #, kde-format
@@ -6043,11 +5998,10 @@ msgid "Changes the name, rules or description of a game."
 msgstr ""
 
 #: src/kgoldrunner.cpp:351
-#, fuzzy, kde-format
-#| msgid "Change &Theme..."
+#, kde-format
 msgctxt "@action"
 msgid "Change &Theme…"
-msgstr "Athraigh &Téama..."
+msgstr ""
 
 #: src/kgoldrunner.cpp:352
 #, kde-format
@@ -6116,18 +6070,16 @@ msgid "Runs a demo when the game starts."
 msgstr ""
 
 #: src/kgoldrunner.cpp:390
-#, fuzzy, kde-format
-#| msgid "&Mouse Controls Hero"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Mouse Controls Hero"
-msgstr "Stiúrann an &Luch an Laoch"
+msgstr ""
 
 #: src/kgoldrunner.cpp:391
-#, fuzzy, kde-format
-#| msgid "Mouse controls hero."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Mouse controls hero"
-msgstr "Stiúrann an luch an laoch."
+msgstr ""
 
 #: src/kgoldrunner.cpp:392
 #, kde-format
@@ -6136,25 +6088,22 @@ msgid "Use the mouse to control the hero's moves."
 msgstr ""
 
 #: src/kgoldrunner.cpp:396
-#, fuzzy, kde-format
-#| msgid "&Keyboard Controls Hero"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Keyboard Controls Hero"
-msgstr "Stiúrann an &Méarchlár an Laoch"
+msgstr ""
 
 #: src/kgoldrunner.cpp:397
-#, fuzzy, kde-format
-#| msgid "Keyboard controls hero."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Keyboard controls hero"
-msgstr "Stiúrann an méarchlár an laoch."
+msgstr ""
 
 #: src/kgoldrunner.cpp:398
-#, fuzzy, kde-format
-#| msgid "Keyboard controls hero."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Use the keyboard to control the hero's moves."
-msgstr "Stiúrann an méarchlár an laoch."
+msgstr ""
 
 #: src/kgoldrunner.cpp:402
 #, kde-format
@@ -6216,25 +6165,22 @@ msgid ""
 msgstr ""
 
 #: src/kgoldrunner.cpp:447
-#, fuzzy, kde-format
-#| msgid "Normal Speed"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Normal Speed"
-msgstr "Gnáthluas"
+msgstr ""
 
 #: src/kgoldrunner.cpp:448
-#, fuzzy, kde-format
-#| msgid "Set normal speed."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set normal speed"
-msgstr "Socraigh gnáthluas."
+msgstr ""
 
 #: src/kgoldrunner.cpp:449
-#, fuzzy, kde-format
-#| msgid "Set normal game speed."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Set normal game speed."
-msgstr "Socraigh an gnáthluas."
+msgstr ""
 
 #: src/kgoldrunner.cpp:453
 #, kde-format
@@ -6243,11 +6189,10 @@ msgid "Beginner Speed"
 msgstr ""
 
 #: src/kgoldrunner.cpp:454
-#, fuzzy, kde-format
-#| msgid "Set normal speed."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set beginners' speed"
-msgstr "Socraigh gnáthluas."
+msgstr ""
 
 #: src/kgoldrunner.cpp:455
 #, kde-format
@@ -6256,12 +6201,10 @@ msgid "Set beginners' game speed (0.5 times normal)."
 msgstr ""
 
 #: src/kgoldrunner.cpp:460
-#, fuzzy, kde-format
-#| msgctxt "Skill Level"
-#| msgid "Championship"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Champion Speed"
-msgstr "Craobhchluiche"
+msgstr ""
 
 #: src/kgoldrunner.cpp:461
 #, kde-format
@@ -6276,11 +6219,10 @@ msgid "Set champions' game speed (1.5 times normal)."
 msgstr ""
 
 #: src/kgoldrunner.cpp:466
-#, fuzzy, kde-format
-#| msgid "Normal Speed"
+#, kde-format
 msgctxt "@action"
 msgid "Increase Speed"
-msgstr "Gnáthluas"
+msgstr ""
 
 #: src/kgoldrunner.cpp:467
 #, kde-format
@@ -6295,11 +6237,10 @@ msgid "Increases the game speed by 0.1 (maximum is 2.0 times normal)."
 msgstr ""
 
 #: src/kgoldrunner.cpp:473
-#, fuzzy, kde-format
-#| msgid "Normal Speed"
+#, kde-format
 msgctxt "@action"
 msgid "Decrease Speed"
-msgstr "Gnáthluas"
+msgstr ""
 
 #: src/kgoldrunner.cpp:474
 #, kde-format
@@ -6314,60 +6255,52 @@ msgid "Decreases the game speed by 0.1 (minimum is 0.2 times normal)."
 msgstr ""
 
 #: src/kgoldrunner.cpp:505
-#, fuzzy, kde-format
-#| msgid "Stop"
+#, kde-format
 msgctxt "@action"
 msgid "Stop"
-msgstr "Stad"
+msgstr ""
 
 #: src/kgoldrunner.cpp:506
-#, fuzzy, kde-format
-#| msgid "Move Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Right"
-msgstr "Bog Faoi Dheis"
+msgstr ""
 
 #: src/kgoldrunner.cpp:507
-#, fuzzy, kde-format
-#| msgid "Move Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Left"
-msgstr "Bog Faoi Chlé"
+msgstr ""
 
 #: src/kgoldrunner.cpp:508
-#, fuzzy, kde-format
-#| msgid "Move Up"
+#, kde-format
 msgctxt "@action"
 msgid "Move Up"
-msgstr "Bog Suas"
+msgstr ""
 
 #: src/kgoldrunner.cpp:509
-#, fuzzy, kde-format
-#| msgid "Move Down"
+#, kde-format
 msgctxt "@action"
 msgid "Move Down"
-msgstr "Bog Síos"
+msgstr ""
 
 #: src/kgoldrunner.cpp:510
-#, fuzzy, kde-format
-#| msgid "Move Right"
+#, kde-format
 msgctxt "@action"
 msgid "Dig Right"
-msgstr "Bog Faoi Dheis"
+msgstr ""
 
 #: src/kgoldrunner.cpp:511
-#, fuzzy, kde-format
-#| msgid "Dig Deep"
+#, kde-format
 msgctxt "@action"
 msgid "Dig Left"
-msgstr "Tochail go Domhain"
+msgstr ""
 
 #: src/kgoldrunner.cpp:535
-#, fuzzy, kde-format
-#| msgid "Do a Step"
+#, kde-format
 msgctxt "@action"
 msgid "Do a Step"
-msgstr "Céimnigh"
+msgstr ""
 
 #: src/kgoldrunner.cpp:536
 #, kde-format
@@ -6376,41 +6309,36 @@ msgid "Test Bug Fix"
 msgstr ""
 
 #: src/kgoldrunner.cpp:537
-#, fuzzy, kde-format
-#| msgid "Show Solution"
+#, kde-format
 msgctxt "@action"
 msgid "Show Positions"
-msgstr "Taispeáin Réiteach"
+msgstr ""
 
 #: src/kgoldrunner.cpp:538
-#, fuzzy, kde-format
-#| msgid "Start Logging"
+#, kde-format
 msgctxt "@action"
 msgid "Start Logging"
-msgstr "Tosaigh Logáil"
+msgstr ""
 
 #: src/kgoldrunner.cpp:539
-#, fuzzy, kde-format
-#| msgid "Show Hero"
+#, kde-format
 msgctxt "@action"
 msgid "Show Hero"
-msgstr "Taispeáin an Laoch"
+msgstr ""
 
 #: src/kgoldrunner.cpp:540
-#, fuzzy, kde-format
-#| msgid "Show Object"
+#, kde-format
 msgctxt "@action"
 msgid "Show Object"
-msgstr "Taispeáin Réad"
+msgstr ""
 
 #: src/kgoldrunner.cpp:542 src/kgoldrunner.cpp:543 src/kgoldrunner.cpp:544
 #: src/kgoldrunner.cpp:545 src/kgoldrunner.cpp:546 src/kgoldrunner.cpp:547
 #: src/kgoldrunner.cpp:548
-#, fuzzy, kde-format
-#| msgid "Show Enemy"
+#, kde-format
 msgctxt "@action"
 msgid "Show Enemy"
-msgstr "Taispeáin Namhaid"
+msgstr ""
 
 #: src/kgoldrunner.cpp:736
 #, kde-format
@@ -6448,11 +6376,10 @@ msgid "No hint"
 msgstr "Gan leid"
 
 #: src/kgoldrunner.cpp:878
-#, fuzzy, kde-format
-#| msgid "Get Folders"
+#, kde-format
 msgctxt "@window:title"
 msgid "Get Folders"
-msgstr "Faigh Fillteáin"
+msgstr ""
 
 #: src/kgoldrunner.cpp:879
 #, kde-format
@@ -6460,18 +6387,16 @@ msgid "Cannot find system games sub-folder '/system/' in areas '%1'."
 msgstr ""
 
 #: src/kgoldrunner.cpp:912
-#, fuzzy, kde-format
-#| msgid "Edit Name/Hint"
+#, kde-format
 msgctxt "@action"
 msgid "Edit Name/Hint"
-msgstr "Cuir Ainm/Leid in Eagar"
+msgstr ""
 
 #: src/kgoldrunner.cpp:913
-#, fuzzy, kde-format
-#| msgid "Edit Name/Hint"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit level name or hint"
-msgstr "Cuir Ainm/Leid in Eagar"
+msgstr ""
 
 #: src/kgoldrunner.cpp:914
 #, kde-format
@@ -6480,25 +6405,22 @@ msgid "Edits text for the name or hint of a level"
 msgstr ""
 
 #: src/kgoldrunner.cpp:917
-#, fuzzy, kde-format
-#| msgid "Name/Hint"
+#, kde-format
 msgctxt "@action"
 msgid "Name/Hint"
-msgstr "Ainm/Leid"
+msgstr ""
 
 #: src/kgoldrunner.cpp:920
-#, fuzzy, kde-format
-#| msgid "Erase"
+#, kde-format
 msgctxt "@option:check"
 msgid "Erase"
-msgstr "Bánaigh"
+msgstr ""
 
 #: src/kgoldrunner.cpp:920
-#, fuzzy, kde-format
-#| msgid "Erase"
+#, kde-format
 msgctxt "@option:check"
 msgid "Space/Erase"
-msgstr "Bánaigh"
+msgstr ""
 
 #: src/kgoldrunner.cpp:921
 #, kde-format
@@ -6513,18 +6435,16 @@ msgid "Erases objects or paint empty squares."
 msgstr ""
 
 #: src/kgoldrunner.cpp:925
-#, fuzzy, kde-format
-#| msgid "Hero"
+#, kde-format
 msgctxt "@option:check"
 msgid "Hero"
-msgstr "Laoch"
+msgstr ""
 
 #: src/kgoldrunner.cpp:926
-#, fuzzy, kde-format
-#| msgid "Move hero"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Move hero"
-msgstr "Bog an laoch"
+msgstr ""
 
 #: src/kgoldrunner.cpp:927
 #, kde-format
@@ -6533,18 +6453,16 @@ msgid "Changes the hero's starting position."
 msgstr ""
 
 #: src/kgoldrunner.cpp:930
-#, fuzzy, kde-format
-#| msgid "Enemy"
+#, kde-format
 msgctxt "@option:check"
 msgid "Enemy"
-msgstr "Namhaid"
+msgstr ""
 
 #: src/kgoldrunner.cpp:931
-#, fuzzy, kde-format
-#| msgid "Awaiting Enemies"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint enemies"
-msgstr "Ag Fanacht le Naimhde"
+msgstr ""
 
 #: src/kgoldrunner.cpp:932
 #, kde-format
@@ -6553,11 +6471,10 @@ msgid "Paints enemies at their starting positions."
 msgstr ""
 
 #: src/kgoldrunner.cpp:936
-#, fuzzy, kde-format
-#| msgid "Brick"
+#, kde-format
 msgctxt "@option:check"
 msgid "Brick"
-msgstr "Bríce"
+msgstr ""
 
 #: src/kgoldrunner.cpp:937
 #, kde-format
@@ -6590,11 +6507,10 @@ msgid "Paints concrete objects (not diggable)."
 msgstr ""
 
 #: src/kgoldrunner.cpp:946
-#, fuzzy, kde-format
-#| msgid "Trap"
+#, kde-format
 msgctxt "@option:check"
 msgid "Trap"
-msgstr "Gaiste"
+msgstr ""
 
 #: src/kgoldrunner.cpp:946
 #, kde-format
@@ -6615,11 +6531,10 @@ msgid "Paints traps or false bricks (can fall through)."
 msgstr ""
 
 #: src/kgoldrunner.cpp:953
-#, fuzzy, kde-format
-#| msgid "Ladder"
+#, kde-format
 msgctxt "@option:check"
 msgid "Ladder"
-msgstr "Dréimire"
+msgstr ""
 
 #: src/kgoldrunner.cpp:954
 #, kde-format
@@ -6634,18 +6549,16 @@ msgid "Paints ladders (ways to go up or down)."
 msgstr ""
 
 #: src/kgoldrunner.cpp:958
-#, fuzzy, kde-format
-#| msgid "Ladder"
+#, kde-format
 msgctxt "@option:check"
 msgid "H Ladder"
-msgstr "Dréimire"
+msgstr ""
 
 #: src/kgoldrunner.cpp:958
-#, fuzzy, kde-format
-#| msgid "Ladder"
+#, kde-format
 msgctxt "@option:check"
 msgid "Hidden Ladder"
-msgstr "Dréimire"
+msgstr ""
 
 #: src/kgoldrunner.cpp:959
 #, kde-format
@@ -6660,11 +6573,10 @@ msgid "Paints hidden ladders, which appear when all the gold is gone."
 msgstr ""
 
 #: src/kgoldrunner.cpp:964
-#, fuzzy, kde-format
-#| msgid "Bar"
+#, kde-format
 msgctxt "@option:check"
 msgid "Bar"
-msgstr "Barra"
+msgstr ""
 
 #: src/kgoldrunner.cpp:964
 #, kde-format
@@ -6685,11 +6597,10 @@ msgid "Paints bars or poles (can fall from these)."
 msgstr ""
 
 #: src/kgoldrunner.cpp:970
-#, fuzzy, kde-format
-#| msgid "Gold"
+#, kde-format
 msgctxt "@option:check"
 msgid "Gold"
-msgstr "Ór"
+msgstr ""
 
 #: src/kgoldrunner.cpp:970
 #, kde-format
@@ -6722,60 +6633,52 @@ msgid "Edit Toolbar"
 msgstr "Cuir an Barra Uirlisí in Eagar"
 
 #: src/kgrdialog.cpp:34
-#, fuzzy, kde-format
-#| msgid "Edit Name/Hint"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Name or Hint"
-msgstr "Cuir Ainm/Leid in Eagar"
+msgstr ""
 
 #: src/kgrdialog.cpp:56
-#, fuzzy, kde-format
-#| msgid "Name of level:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name of level:"
-msgstr "Ainm an leibhéil:"
+msgstr ""
 
 #: src/kgrdialog.cpp:63
-#, fuzzy, kde-format
-#| msgid "Name of level:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Hint for level:"
-msgstr "Ainm an leibhéil:"
+msgstr ""
 
 #: src/kgrdialog.cpp:103 src/kgrdialog.cpp:172 src/kgrselector.cpp:84
-#, fuzzy, kde-format
-#| msgid "Edit Name/Hint"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Game Info"
-msgstr "Cuir Ainm/Leid in Eagar"
+msgstr ""
 
 #: src/kgrdialog.cpp:123
-#, fuzzy, kde-format
-#| msgid "Name of game:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name of game:"
-msgstr "Ainm an chluiche:"
+msgstr ""
 
 #: src/kgrdialog.cpp:131
-#, fuzzy, kde-format
-#| msgid "File name prefix:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "File name prefix:"
-msgstr "Réamh-mhír ainm an chomhaid:"
+msgstr ""
 
 #: src/kgrdialog.cpp:139
-#, fuzzy, kde-format
-#| msgid "Traditional rules"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Traditional rules"
-msgstr "Rialacha traidisiúnta"
+msgstr ""
 
 #: src/kgrdialog.cpp:140
-#, fuzzy, kde-format
-#| msgid "KGoldrunner rules"
+#, kde-format
 msgctxt "@option:radio"
 msgid "KGoldrunner rules"
-msgstr "Rialacha KGoldrunner"
+msgstr ""
 
 #: src/kgrdialog.cpp:149 src/kgrdialog.cpp:184
 #, kde-format
@@ -6788,25 +6691,22 @@ msgstr[3] "%1 leibhéal"
 msgstr[4] "%1 leibhéal"
 
 #: src/kgrdialog.cpp:152
-#, fuzzy, kde-format
-#| msgid "About this game:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "About this game:"
-msgstr "Maidir leis an gcluiche seo:"
+msgstr ""
 
 #: src/kgrdialog.cpp:169
-#, fuzzy, kde-format
-#| msgid "Create Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Game"
-msgstr "Cruthaigh Cluiche"
+msgstr ""
 
 #: src/kgrdialog.cpp:186
-#, fuzzy, kde-format
-#| msgid "Save Changes"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save Changes"
-msgstr "Sábháil Athruithe"
+msgstr ""
 
 #: src/kgrdialog.cpp:191
 #, kde-format
@@ -6814,18 +6714,16 @@ msgid "0 levels"
 msgstr ""
 
 #: src/kgrdialog.cpp:192 src/kgrselector.cpp:269
-#, fuzzy, kde-format
-#| msgid "Save Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save New"
-msgstr "Sábháil an Cluiche"
+msgstr ""
 
 #: src/kgrdialog.cpp:247
-#, fuzzy, kde-format
-#| msgid "Select Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Saved Game"
-msgstr "Roghnaigh Cluiche"
+msgstr ""
 
 #: src/kgrdialog.cpp:266
 #, kde-format
@@ -6833,11 +6731,10 @@ msgid "Game                       Level/Lives/Score   Day    Date     Time  "
 msgstr "Cluiche                    Leibh/Anamacha/Scór Lá     Dáta     Am    "
 
 #: src/kgreditor.cpp:66
-#, fuzzy, kde-format
-#| msgid "Create Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Level"
-msgstr "Cruthaigh Leibhéal"
+msgstr ""
 
 #: src/kgreditor.cpp:67
 #, kde-format
@@ -6847,11 +6744,10 @@ msgid ""
 msgstr ""
 
 #: src/kgreditor.cpp:115 src/kgreditor.cpp:137
-#, fuzzy, kde-format
-#| msgid "Edit Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Level"
-msgstr "Cuir Leibhéal in Eagar"
+msgstr ""
 
 #: src/kgreditor.cpp:116
 #, kde-format
@@ -6869,11 +6765,10 @@ msgid ""
 msgstr ""
 
 #: src/kgreditor.cpp:242 src/kgreditor.cpp:261 src/kgrgame.cpp:260
-#, fuzzy, kde-format
-#| msgid "Save Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Level"
-msgstr "Sábháil an Leibhéal"
+msgstr ""
 
 #: src/kgreditor.cpp:243
 #, kde-format
@@ -6881,18 +6776,16 @@ msgid "Do you want to insert a level and move existing levels up by one?"
 msgstr ""
 
 #: src/kgreditor.cpp:245
-#, fuzzy, kde-format
-#| msgid "&Insert Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Insert Level"
-msgstr "&Ionsáigh Leibhéal"
+msgstr ""
 
 #: src/kgreditor.cpp:246 src/kgreditor.cpp:446
-#, fuzzy, kde-format
-#| msgid "&Cancel"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Cancel"
-msgstr "&Cealaigh"
+msgstr ""
 
 #: src/kgreditor.cpp:262 src/kgreditor.cpp:782 src/kgrgame.cpp:1485
 #: src/kgrgame.cpp:1693
@@ -6902,11 +6795,10 @@ msgstr ""
 
 #: src/kgreditor.cpp:317 src/kgreditor.cpp:333 src/kgreditor.cpp:341
 #: src/kgreditor.cpp:356
-#, fuzzy, kde-format
-#| msgid "Move Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Move Level"
-msgstr "Bog Leibhéal"
+msgstr ""
 
 #: src/kgreditor.cpp:318
 #, kde-format
@@ -6914,18 +6806,16 @@ msgid "You must first load a level to be moved. Use the \"%1\" or \"%2\" menu."
 msgstr ""
 
 #: src/kgreditor.cpp:320
-#, fuzzy, kde-format
-#| msgid "Game"
+#, kde-format
 msgctxt "@title:menu"
 msgid "Game"
-msgstr "Cluiche"
+msgstr ""
 
 #: src/kgreditor.cpp:320
-#, fuzzy, kde-format
-#| msgid "Editor"
+#, kde-format
 msgctxt "@title:menu"
 msgid "Editor"
-msgstr "Eagarthóir"
+msgstr ""
 
 #: src/kgreditor.cpp:334
 #, kde-format
@@ -6945,11 +6835,10 @@ msgid "You must change the level or the game or both."
 msgstr ""
 
 #: src/kgreditor.cpp:419 src/kgreditor.cpp:442 src/kgreditor.cpp:461
-#, fuzzy, kde-format
-#| msgid "Delete Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Level"
-msgstr "Scrios Leibhéal"
+msgstr ""
 
 #: src/kgreditor.cpp:420
 #, kde-format
@@ -6964,11 +6853,10 @@ msgid "Do you want to delete a level and move higher levels down by one?"
 msgstr ""
 
 #: src/kgreditor.cpp:445
-#, fuzzy, kde-format
-#| msgid "Delete Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Delete Level"
-msgstr "Scrios Leibhéal"
+msgstr ""
 
 #: src/kgreditor.cpp:462
 #, kde-format
@@ -6978,11 +6866,10 @@ msgstr ""
 #: src/kgreditor.cpp:510 src/kgreditor.cpp:520 src/kgreditor.cpp:525
 #: src/kgreditor.cpp:539 src/kgreditor.cpp:557 src/kgreditor.cpp:770
 #: src/kgreditor.cpp:781
-#, fuzzy, kde-format
-#| msgid "Save Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Game Info"
-msgstr "Sábháil an Cluiche"
+msgstr ""
 
 #: src/kgreditor.cpp:511
 #, kde-format
@@ -7010,11 +6897,10 @@ msgid "The filename prefix '%1' is already in use."
 msgstr ""
 
 #: src/kgreditor.cpp:641
-#, fuzzy, kde-format
-#| msgid "Editor"
+#, kde-format
 msgctxt "@title:window"
 msgid "Editor"
-msgstr "Eagarthóir"
+msgstr ""
 
 #: src/kgreditor.cpp:642
 #, kde-format
@@ -7022,18 +6908,16 @@ msgid "You have not saved your work. Do you want to save it now?"
 msgstr ""
 
 #: src/kgreditor.cpp:644
-#, fuzzy, kde-format
-#| msgid "&Save"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Save"
-msgstr "&Sábháil"
+msgstr ""
 
 #: src/kgreditor.cpp:645
-#, fuzzy, kde-format
-#| msgid "&Do Not Save"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Do Not Save"
-msgstr "&Ná Sábháil"
+msgstr ""
 
 #: src/kgreditor.cpp:646
 #, kde-format
@@ -7069,11 +6953,10 @@ msgid "Click anywhere to begin live play"
 msgstr ""
 
 #: src/kgrgame.cpp:190
-#, fuzzy, kde-format
-#| msgid "Play Next Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Play Next Level"
-msgstr "Imir an Chéad Leibhéal Eile"
+msgstr ""
 
 #: src/kgrgame.cpp:191
 #, kde-format
@@ -7101,11 +6984,10 @@ msgid ""
 msgstr ""
 
 #: src/kgrgame.cpp:625 src/kgrgame.cpp:782
-#, fuzzy, kde-format
-#| msgid "Game Paused"
+#, kde-format
 msgctxt "@title:window"
 msgid "Game Paused"
-msgstr "Cluiche Curtha ar Shos"
+msgstr ""
 
 #: src/kgrgame.cpp:626
 #, kde-format
@@ -7115,11 +6997,10 @@ msgid ""
 msgstr ""
 
 #: src/kgrgame.cpp:670 src/kgrgame.cpp:676
-#, fuzzy, kde-format
-#| msgid "Play Next Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Replay Last Level"
-msgstr "Imir an Chéad Leibhéal Eile"
+msgstr ""
 
 #: src/kgrgame.cpp:671
 #, kde-format
@@ -7135,19 +7016,16 @@ msgid ""
 msgstr ""
 
 #: src/kgrgame.cpp:695
-#, fuzzy, kde-format
-#| msgid "Quick Start"
+#, kde-format
 msgctxt "@title:window"
 msgid "Quick Start"
-msgstr "Tosach Tapa"
+msgstr ""
 
 #: src/kgrgame.cpp:712
-#, fuzzy, kde-format
-#| msgctxt "Button text: start playing a game"
-#| msgid "&PLAY"
+#, kde-format
 msgctxt "@action:button start playing a game"
 msgid "&PLAY"
-msgstr "&IMIR"
+msgstr ""
 
 #: src/kgrgame.cpp:713
 #, kde-format
@@ -7164,25 +7042,22 @@ msgid ""
 msgstr ""
 
 #: src/kgrgame.cpp:719
-#, fuzzy, kde-format
-#| msgid "&Quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Quit"
-msgstr "&Scoir"
+msgstr ""
 
 #: src/kgrgame.cpp:720
-#, fuzzy, kde-format
-#| msgid "Close KGoldrunner"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close KGoldrunner"
-msgstr "Dún KGoldrunner"
+msgstr ""
 
 #: src/kgrgame.cpp:723
-#, fuzzy, kde-format
-#| msgid "&New Game..."
+#, kde-format
 msgctxt "@action:button"
 msgid "&New Game…"
-msgstr "Cluiche &Nua..."
+msgstr ""
 
 #: src/kgrgame.cpp:724
 #, kde-format
@@ -7199,11 +7074,10 @@ msgid ""
 msgstr ""
 
 #: src/kgrgame.cpp:730
-#, fuzzy, kde-format
-#| msgid "&Use Menu"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Use Menu"
-msgstr "Ú&sáid Roghchlár"
+msgstr ""
 
 #: src/kgrgame.cpp:732
 #, kde-format
@@ -7227,11 +7101,10 @@ msgid ""
 msgstr ""
 
 #: src/kgrgame.cpp:836
-#, fuzzy, kde-format
-#| msgid "Show Solution"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show a Solution"
-msgstr "Taispeáin Réiteach"
+msgstr ""
 
 #: src/kgrgame.cpp:837
 #, kde-format
@@ -7241,11 +7114,10 @@ msgid ""
 msgstr ""
 
 #: src/kgrgame.cpp:848
-#, fuzzy, kde-format
-#| msgid "Play Next Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Replay Any Level"
-msgstr "Imir an Chéad Leibhéal Eile"
+msgstr ""
 
 #: src/kgrgame.cpp:849 src/kgrgame.cpp:2057
 #, kde-format
@@ -7261,25 +7133,22 @@ msgid ""
 msgstr ""
 
 #: src/kgrgame.cpp:1065
-#, fuzzy, kde-format
-#| msgid "Game Over"
+#, kde-format
 msgctxt "@title:window"
 msgid "Game Over"
-msgstr "Cluiche Thart"
+msgstr ""
 
 #: src/kgrgame.cpp:1066
-#, fuzzy, kde-format
-#| msgid "&Try Again"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Try Again"
-msgstr "&Bain triail eile as"
+msgstr ""
 
 #: src/kgrgame.cpp:1067
-#, fuzzy, kde-format
-#| msgid "&Finish"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Finish"
-msgstr "&Críochnaigh"
+msgstr ""
 
 #: src/kgrgame.cpp:1141
 #, kde-format
@@ -7289,25 +7158,22 @@ msgid ""
 msgstr ""
 
 #: src/kgrgame.cpp:1298
-#, fuzzy, kde-format
-#| msgid "Hint"
+#, kde-format
 msgctxt "@title:window"
 msgid "Hint"
-msgstr "Leid"
+msgstr ""
 
 #: src/kgrgame.cpp:1304
-#, fuzzy, kde-format
-#| msgid "&OK"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Ok"
-msgstr "&OK"
+msgstr ""
 
 #: src/kgrgame.cpp:1305
-#, fuzzy, kde-format
-#| msgid "Show Solution"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Show a Solution"
-msgstr "Taispeáin Réiteach"
+msgstr ""
 
 #: src/kgrgame.cpp:1318
 #, kde-format
@@ -7328,18 +7194,16 @@ msgid ""
 msgstr ""
 
 #: src/kgrgame.cpp:1421
-#, fuzzy, kde-format
-#| msgid "Keyboard Mode"
+#, kde-format
 msgctxt "@title:window"
 msgid "Switch to Keyboard Mode"
-msgstr "Mód an Mhéarchláir"
+msgstr ""
 
 #: src/kgrgame.cpp:1422
-#, fuzzy, kde-format
-#| msgid "Keyboard Mode"
+#, kde-format
 msgctxt "@action:button"
 msgid "Switch to &Keyboard Mode"
-msgstr "Mód an Mhéarchláir"
+msgstr ""
 
 #: src/kgrgame.cpp:1423
 #, kde-format
@@ -7354,11 +7218,10 @@ msgstr "Mód an Mhéarchláir"
 
 #: src/kgrgame.cpp:1458 src/kgrgame.cpp:1484 src/kgrgame.cpp:1494
 #: src/kgrgame.cpp:1513 src/kgrgame.cpp:1519
-#, fuzzy, kde-format
-#| msgid "Save Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Game"
-msgstr "Sábháil an Cluiche"
+msgstr ""
 
 #: src/kgrgame.cpp:1459
 #, kde-format
@@ -7386,11 +7249,10 @@ msgid "Error: Failed to save your game."
 msgstr ""
 
 #: src/kgrgame.cpp:1532 src/kgrgame.cpp:1538 src/kgrgame.cpp:1576
-#, fuzzy, kde-format
-#| msgid "Load Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Game"
-msgstr "Luchtaigh Cluiche"
+msgstr ""
 
 #: src/kgrgame.cpp:1533
 #, kde-format
@@ -7408,11 +7270,10 @@ msgid "Unknown"
 msgstr "Anaithnid"
 
 #: src/kgrgame.cpp:1653 src/kgrgame.cpp:1692
-#, fuzzy, kde-format
-#| msgid "High Scores"
+#, kde-format
 msgctxt "@title:window"
 msgid "Check for High Score"
-msgstr "Na Scóir Is Fearr"
+msgstr ""
 
 #: src/kgrgame.cpp:1710
 #, kde-format
@@ -7423,11 +7284,10 @@ msgid ""
 msgstr ""
 
 #: src/kgrgame.cpp:1724 src/kgrgame.cpp:1811
-#, fuzzy, kde-format
-#| msgid "High Scores"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save High Score"
-msgstr "Na Scóir Is Fearr"
+msgstr ""
 
 #: src/kgrgame.cpp:1812
 #, kde-format
@@ -7435,11 +7295,10 @@ msgid "Error: Failed to save your high score."
 msgstr ""
 
 #: src/kgrgame.cpp:1824 src/kgrgame.cpp:1847 src/kgrgame.cpp:1856
-#, fuzzy, kde-format
-#| msgid "High Scores"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show High Scores"
-msgstr "Na Scóir Is Fearr"
+msgstr ""
 
 #: src/kgrgame.cpp:1825
 #, kde-format
@@ -7461,56 +7320,46 @@ msgstr ""
 "\"%1\"</h3></center>"
 
 #: src/kgrgame.cpp:1882
-#, fuzzy, kde-format
-#| msgctxt "1, 2, 3 etc."
-#| msgid "Rank"
+#, kde-format
 msgctxt "@title:column 1, 2, 3 etc."
 msgid "Rank"
-msgstr "Ionad"
+msgstr ""
 
 #: src/kgrgame.cpp:1883
-#, fuzzy, kde-format
-#| msgctxt "Person"
-#| msgid "Name"
+#, kde-format
 msgctxt "@title:column person"
 msgid "Name"
-msgstr "Ainm"
+msgstr ""
 
 #: src/kgrgame.cpp:1884
-#, fuzzy, kde-format
-#| msgctxt "Game level reached"
-#| msgid "Level"
+#, kde-format
 msgctxt "@title:column game level reached"
 msgid "Level"
-msgstr "Leibhéal"
+msgstr ""
 
 #: src/kgrgame.cpp:1885
-#, fuzzy, kde-format
-#| msgid "Score"
+#, kde-format
 msgctxt "@title:column"
 msgid "Score"
-msgstr "Scór"
+msgstr ""
 
 #: src/kgrgame.cpp:1886
-#, fuzzy, kde-format
-#| msgid "Date"
+#, kde-format
 msgctxt "@title:column"
 msgid "Date"
-msgstr "Dáta"
+msgstr ""
 
 #: src/kgrgame.cpp:1890
-#, fuzzy, kde-format
-#| msgid "High Scores"
+#, kde-format
 msgctxt "@title:window"
 msgid "High Scores"
-msgstr "Na Scóir Is Fearr"
+msgstr ""
 
 #: src/kgrgame.cpp:2016 src/kgrgame.cpp:2022 src/kgrgame.cpp:2026
-#, fuzzy, kde-format
-#| msgid "Edit Name/Hint"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Game Info"
-msgstr "Cuir Ainm/Leid in Eagar"
+msgstr ""
 
 #: src/kgrgame.cpp:2017
 #, kde-format
@@ -7523,11 +7372,10 @@ msgid "Reached end of file '%1' before finding end of game-data."
 msgstr ""
 
 #: src/kgrgame.cpp:2051 src/kgrgame.cpp:2056
-#, fuzzy, kde-format
-#| msgid "Show Solution"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save a Solution"
-msgstr "Taispeáin Réiteach"
+msgstr ""
 
 #: src/kgrgame.cpp:2052
 #, kde-format
@@ -7551,11 +7399,10 @@ msgid "Reached end of file '%1' without finding level data."
 msgstr ""
 
 #: src/kgrgameio.cpp:381 src/kgrgameio.cpp:388
-#, fuzzy, kde-format
-#| msgid "Rename File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rename File"
-msgstr "Athainmnigh Comhad"
+msgstr ""
 
 #: src/kgrgameio.cpp:382
 #, kde-format
@@ -7568,11 +7415,10 @@ msgid "Cannot rename file '%1' to '%2'."
 msgstr ""
 
 #: src/kgrrenderer.cpp:100
-#, fuzzy, kde-format
-#| msgid "Theme Selector"
+#, kde-format
 msgctxt "@title:window"
 msgid "Theme Selector"
-msgstr "Roghnóir Téama"
+msgstr ""
 
 #: src/kgrscene.cpp:277
 #, kde-format
@@ -7586,11 +7432,10 @@ msgstr "Scór: %1"
 
 #: src/kgrselector.cpp:72 src/kgrselector.cpp:78 src/kgrselector.cpp:98
 #: src/kgrselector.cpp:501
-#, fuzzy, kde-format
-#| msgid "Select Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Level"
-msgstr "Roghnaigh Leibhéal"
+msgstr ""
 
 #: src/kgrselector.cpp:73
 #, kde-format
@@ -7613,11 +7458,10 @@ msgid "There is no level %1 in \"%2\", so you cannot play or edit it."
 msgstr ""
 
 #: src/kgrselector.cpp:121 src/kgrselector.cpp:177
-#, fuzzy, kde-format
-#| msgid "Select Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Game"
-msgstr "Roghnaigh Cluiche"
+msgstr ""
 
 #: src/kgrselector.cpp:135
 #, kde-format
@@ -7625,32 +7469,28 @@ msgid "<html><b>Please select a game:</b></html>"
 msgstr "<html><b>Roghnaigh cluiche:</b></html>"
 
 #: src/kgrselector.cpp:143
-#, fuzzy, kde-format
-#| msgid "Name of Game"
+#, kde-format
 msgctxt "@title:column"
 msgid "Name of Game"
-msgstr "Ainm an Chluiche"
+msgstr ""
 
 #: src/kgrselector.cpp:144
-#, fuzzy, kde-format
-#| msgid "Rules"
+#, kde-format
 msgctxt "@title:column"
 msgid "Rules"
-msgstr "Rialacha"
+msgstr ""
 
 #: src/kgrselector.cpp:145
-#, fuzzy, kde-format
-#| msgid "Levels"
+#, kde-format
 msgctxt "@title:column"
 msgid "Levels"
-msgstr "Leibhéil"
+msgstr ""
 
 #: src/kgrselector.cpp:146
-#, fuzzy, kde-format
-#| msgid "Skill"
+#, kde-format
 msgctxt "@title:column"
 msgid "Skill"
-msgstr "Scil"
+msgstr ""
 
 #: src/kgrselector.cpp:179
 #, kde-format
@@ -7658,11 +7498,10 @@ msgid "Level 1 of the selected game is:"
 msgstr ""
 
 #: src/kgrselector.cpp:183
-#, fuzzy, kde-format
-#| msgid "Select Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Game/Level"
-msgstr "Roghnaigh Leibhéal"
+msgstr ""
 
 #: src/kgrselector.cpp:185
 #, kde-format
@@ -7676,81 +7515,70 @@ msgid "Level number:"
 msgstr ""
 
 #: src/kgrselector.cpp:210
-#, fuzzy, kde-format
-#| msgid "Edit Name/Hint"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit Level Name o&r Hint"
-msgstr "Cuir Ainm/Leid in Eagar"
+msgstr ""
 
 #: src/kgrselector.cpp:245
-#, fuzzy, kde-format
-#| msgid "Start Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Game"
-msgstr "Tosaigh Cluiche"
+msgstr ""
 
 #: src/kgrselector.cpp:254
-#, fuzzy, kde-format
-#| msgid "Play Next Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "Play Level"
-msgstr "Imir an Chéad Leibhéal Eile"
+msgstr ""
 
 #: src/kgrselector.cpp:257
-#, fuzzy, kde-format
-#| msgid "Play Next Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "Replay Level"
-msgstr "Imir an Chéad Leibhéal Eile"
+msgstr ""
 
 #: src/kgrselector.cpp:260
-#, fuzzy, kde-format
-#| msgid "Show Solution"
+#, kde-format
 msgctxt "@action:button"
 msgid "Show Solution"
-msgstr "Taispeáin Réiteach"
+msgstr ""
 
 #: src/kgrselector.cpp:263
-#, fuzzy, kde-format
-#| msgid "Show Solution"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save a Solution"
-msgstr "Taispeáin Réiteach"
+msgstr ""
 
 #: src/kgrselector.cpp:266
-#, fuzzy, kde-format
-#| msgid "Edit Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit Level"
-msgstr "Cuir Leibhéal in Eagar"
+msgstr ""
 
 #: src/kgrselector.cpp:272
-#, fuzzy, kde-format
-#| msgid "Save Changes"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save Change"
-msgstr "Sábháil Athruithe"
+msgstr ""
 
 #: src/kgrselector.cpp:275
-#, fuzzy, kde-format
-#| msgid "Delete Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Level"
-msgstr "Scrios Leibhéal"
+msgstr ""
 
 #: src/kgrselector.cpp:278
-#, fuzzy, kde-format
-#| msgid "Move To..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Move To…"
-msgstr "Bog Go..."
+msgstr ""
 
 #: src/kgrselector.cpp:281
-#, fuzzy, kde-format
-#| msgid "Edit Name/Hint"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit Game Info"
-msgstr "Cuir Ainm/Leid in Eagar"
+msgstr ""
 
 #: src/kgrselector.cpp:357
 #, kde-format
@@ -7911,11 +7739,10 @@ msgid ""
 msgstr ""
 
 #: src/kgrselector.cpp:589
-#, fuzzy, kde-format
-#| msgid "Select Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Help: Select Game & Level"
-msgstr "Roghnaigh Leibhéal"
+msgstr ""
 
 #: src/main.cpp:49
 #, kde-format
@@ -8008,101 +7835,3 @@ msgstr ""
 #, kde-format
 msgid "Artwork for the Treasure of Egypt theme"
 msgstr ""
-
-#~ msgid "&Save Game..."
-#~ msgstr "&Sábháil an Cluiche..."
-
-#, fuzzy
-#~| msgid "Show Solution"
-#~ msgid "Save A Solution..."
-#~ msgstr "Taispeáin Réiteach"
-
-#~ msgid "Kill Hero."
-#~ msgstr "Maraigh an Laoch."
-
-#~ msgid "&Edit Level..."
-#~ msgstr "&Cuir Leibhéal in Eagar..."
-
-#~ msgid "Edit level..."
-#~ msgstr "Cuir leibhéal in eagar..."
-
-#~ msgid "&Move Level..."
-#~ msgstr "&Bog Leibhéal..."
-
-#~ msgid "Move level..."
-#~ msgstr "Bog leibhéal..."
-
-#~ msgid "&Delete Level..."
-#~ msgstr "&Scrios Leibhéal..."
-
-#~ msgid "Delete level..."
-#~ msgstr "Scrios leibhéal..."
-
-#~ msgid "Create &Game..."
-#~ msgstr "Cruthaigh &Cluiche..."
-
-#~ msgid "Create game..."
-#~ msgstr "Cruthaigh cluiche..."
-
-#~ msgid "   Score: "
-#~ msgstr "   Scór: "
-
-#~ msgid "   Level: "
-#~ msgstr "   Leibhéal: "
-
-#~ msgid "   No hint   "
-#~ msgstr "   Gan leid   "
-
-#~ msgid "&Themes"
-#~ msgstr "&Téamaí"
-
-#~ msgid "Start Tutorial"
-#~ msgstr "Tosaigh an Cúrsa Teagaisc"
-
-#~ msgid "&Traditional Rules"
-#~ msgstr "&Rialacha Traidisiúnta"
-
-#~ msgid "Set Traditional rules for this game"
-#~ msgstr "Úsáid na rialacha traidisiúnta le haghaidh an chluiche seo"
-
-#~ msgid "K&Goldrunner Rules"
-#~ msgstr "Rialacha K&Goldrunner"
-
-#~ msgid "Set KGoldrunner rules for this game"
-#~ msgstr "Socraigh rialacha KGoldrunner le haghaidh an chluiche seo"
-
-#~ msgctxt "Default action at startup of game"
-#~ msgid "PLAY"
-#~ msgstr "IMIR"
-
-#~ msgctxt "Alternate action at startup of game"
-#~ msgid "Select Level"
-#~ msgstr "Roghnaigh Leibhéal"
-
-#~ msgctxt "Alternate action at startup of game"
-#~ msgid "Use Menu"
-#~ msgstr "Úsáid Roghchlár"
-
-#~ msgid "GAME OVER !!!"
-#~ msgstr "CLUICHE THART !!!"
-
-#~ msgid "Help"
-#~ msgstr "Cabhair"
-
-#~ msgid "Edit &Next Level..."
-#~ msgstr "Cuir An Chéad &Leibhéal Eile in Eagar..."
-
-#~ msgid "More Info"
-#~ msgstr "Eolas Breise"
-
-#~ msgid "About \"%1\""
-#~ msgstr "Eolas faoi \"%1\""
-
-#~ msgid "Help !!!"
-#~ msgstr "Cabhair !!!"
-
-#~ msgid "&Ice Cave"
-#~ msgstr "Ua&imh Oighir"
-
-#~ msgid "&KDE Kool"
-#~ msgstr "&Kool KDE"
