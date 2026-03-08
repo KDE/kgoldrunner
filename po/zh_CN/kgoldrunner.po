@@ -6553,7 +6553,7 @@ msgstr "编辑关卡名称或提示"
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Edits text for the name or hint of a level"
-msgstr "编辑某个关卡的名称或提示文字"
+msgstr "编辑某个关卡的名称或提示文本"
 
 #: src/kgoldrunner.cpp:917
 #, kde-format
