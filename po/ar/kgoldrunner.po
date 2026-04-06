@@ -5378,7 +5378,7 @@ msgstr "سلالم؟  ثق بي!"
 #: gamedata/game_plws.txt:20
 #, kde-format
 msgid "Drop In and Say Hello"
-msgstr "انزل وقل مرحباً"
+msgstr "انزل وقل مرحبًا"
 
 #: gamedata/game_plws.txt:23
 #, kde-format
