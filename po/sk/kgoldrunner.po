@@ -893,7 +893,7 @@ msgstr ""
 "\n"
 "Keď získate zlato zo 4, počkajte, kým nepriatelia dosiahnú horné rebríky "
 "tvaru 4. To vám dá dostatok času na dosiahnutie rebríkov skôr, ako vás "
-"odrežú nepriateli."
+"odrežú nepriatelia."
 
 #: gamedata/game_cnt.txt:36
 #, kde-format
@@ -1256,7 +1256,7 @@ msgstr ""
 "základňu čísla 5. To by vám malo umožniť ľahko získať zlato medzi 1 a 5.\n"
 "\n"
 "Po druhé, ak čakáte na základni 1 napravo od jednotky, nepriatelia napravo "
-"od dvoch rebríkov naľavo od 1 zoselia zo žrde na druhú polovicu základne 1. "
+"od dvoch rebríkov naľavo od 1 zoslia zo žrde na druhú polovicu základne 1. "
 "Ak čakáte vysoko medzi 1 a 5 a potom skočíte na základňu 1, kým nepriatelia "
 "padajú smerom k základni 1, stihnete vybehnúť po rebríku naľavo od 1 a "
 "získať zlato naľavo od 1."
@@ -2794,7 +2794,7 @@ msgstr ""
 "\n"
 "Po tomto vás čaká už len jeden posledný zombi. Zistíte, že beží k vám, keď "
 "stojíte o jeden krok pod vrcholom najľavejšieho rebríka. Nájdite správny "
-"okamih na prechod ponad jeho hlavu a dostanite sa k ďalšiemu rebríku. Teraz "
+"okamih na prechod ponad jeho hlavu a dostaňte sa k ďalšiemu rebríku. Teraz "
 "vykopte horné dve tehly hneď vedľa neho, skočte doprava, aby ste prekonali "
 "zombiho, a nalákajte ho do medzery vpravo zostupom po rebríku na rovnakú "
 "výšku."
@@ -3745,8 +3745,8 @@ msgid ""
 "cut. But you should not count on it."
 msgstr ""
 "Toto nie je príliš ťažké. Hlavná vec je zabrániť nepriateľovi získať kus "
-"zlata. Je to jednoduchšie, ako sa zdá, ak zbierate ľahko dostupné kúsky "
-"najskôr.\n"
+"zlata. Je to jednoduchšie, ako sa zdá, ak ľahko dostupné kúsky zberiete ako "
+"prvé.\n"
 "\n"
 "Snaha o zoskupenie nepriateľov vám pomôže. Ak ste na druhej strane bariéry, "
 "môžete ich zoskupiť pohybom hore a dole.\n"
@@ -4404,7 +4404,7 @@ msgstr ""
 "\n"
 "Je pravda, že je veľmi ťažké udržať sa na rovnakej rýchlosti ako nepriateľ, "
 "keď idete na jeho hlave, ale to rozhodne nie je nemožné. Ak chcete skutočnú "
-"výzvu, skúste to v režime klávesnice. To urobí veci trochu viac náročnými..."
+"výzvu, skúste to v režime klávesnice. To urobí veci trochu náročnejšími..."
 
 #: gamedata/game_GRII.txt:190
 #, kde-format
@@ -4474,7 +4474,7 @@ msgstr "Kop dieťa, kop!"
 #: gamedata/game_lars.txt:13
 #, kde-format
 msgid "This should be fairly easy. No hint!"
-msgstr "To by nemalo byť pomerne jednoduché. Žiadna rada!"
+msgstr "Toto by malo byť pomerne jednoduché. Žiadna rada!"
 
 #: gamedata/game_lars.txt:16
 #, kde-format
@@ -5001,9 +5001,9 @@ msgid ""
 "forget it."
 msgstr ""
 "Jama v pravom hornom rohu je komplikovaná. Ak chcete opustiť bludisko, "
-"budete potrebovať nepriateľa v jame. Ale bolo by lepšie mať ho tam predtým, "
-"ako zoberiete zlato von. A ak sa dvaja nepriatelia dostanú do jamy predtým, "
-"ako dostanete zlato, zabudnite na to."
+"budete potrebovať nepriateľa v jame. Ale radšej by ste ho tam nemali "
+"predtým, ako vyberiete zlato. A ak sa dvaja nepriatelia dostanú do jamy "
+"predtým, ako dostanete zlato, zabudnite na to."
 
 #: gamedata/game_MAZ.txt:80
 #, kde-format
