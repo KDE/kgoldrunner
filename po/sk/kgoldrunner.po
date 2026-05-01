@@ -1519,7 +1519,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:50
 #, kde-format
 msgid "Forbidden Gold"
-msgstr "Zabudnuté zlato"
+msgstr "Zakázané zlato"
 
 #: gamedata/game_GMEP.txt:51
 #, kde-format
@@ -2445,7 +2445,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:47
 #, kde-format
 msgid "Manipulation"
-msgstr "Prenikanie"
+msgstr "Manipulácia"
 
 #: gamedata/game_GotD.txt:48
 #, kde-format
@@ -2659,7 +2659,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:103
 #, kde-format
 msgid "Temple Of Gold"
-msgstr "Zlaté poklady"
+msgstr "Chrám zlata"
 
 #: gamedata/game_GotD.txt:104
 #, kde-format
@@ -2698,7 +2698,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:113
 #, kde-format
 msgid "Always Know Your Way Out"
-msgstr "Kopať cestu von"
+msgstr "Vždy nájdite cestu von"
 
 #: gamedata/game_GotD.txt:114
 #, kde-format
@@ -2812,7 +2812,7 @@ msgstr "Timing is everything."
 #: gamedata/game_GotD.txt:141
 #, kde-format
 msgid "Concrete Desert"
-msgstr "Betónové veže"
+msgstr "Betónová púšť"
 
 #: gamedata/game_GotD.txt:142
 #, kde-format
@@ -2872,7 +2872,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:155
 #, kde-format
 msgid "Give Me That Gold!"
-msgstr "Má zlato"
+msgstr "Daj mi to zlato!"
 
 #: gamedata/game_GotD.txt:156
 #, kde-format
@@ -2912,7 +2912,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:165
 #, kde-format
 msgid "Too Fast?"
-msgstr "Príliš jednoduché?"
+msgstr "Príliš rýchle?"
 
 #: gamedata/game_GotD.txt:166
 #, kde-format
@@ -2942,7 +2942,7 @@ msgstr "Be quicker than the zombies - otherwise they will eat you."
 #: gamedata/game_GotD.txt:175
 #, kde-format
 msgid "The Big Drop"
-msgstr "Veľké bludisko"
+msgstr "Veľký skok dole"
 
 #: gamedata/game_GotD.txt:176
 #, kde-format
@@ -3002,7 +3002,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:191
 #, kde-format
 msgid "Up And Down"
-msgstr "Vzostupy a pády"
+msgstr "Hore a dole"
 
 #: gamedata/game_GotD.txt:192
 #, kde-format
@@ -3071,7 +3071,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:209
 #, kde-format
 msgid "Surprise, Surprise"
-msgstr "Prekvapivý koniec"
+msgstr "Prekvapenie, prekvapenie"
 
 #: gamedata/game_GotD.txt:210
 #, kde-format
@@ -3261,7 +3261,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:251
 #, kde-format
 msgid "The Passage"
-msgstr "Rovnováha"
+msgstr "Chodba"
 
 #: gamedata/game_GotD.txt:252
 #, kde-format
@@ -3393,7 +3393,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:285
 #, kde-format
 msgid "Death Trap"
-msgstr "Pasca na myši"
+msgstr "Smrteľná pasca"
 
 #: gamedata/game_GotD.txt:286
 #, kde-format
@@ -3461,7 +3461,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:303
 #, kde-format
 msgid "Raining Zombies"
-msgstr "Očakávanie nepriateľov"
+msgstr "Dážď zombíkov"
 
 #: gamedata/game_GotD.txt:304
 #, kde-format
@@ -3499,7 +3499,7 @@ msgstr "All it takes is good strong nerves..."
 #: gamedata/game_GotD.txt:317
 #, kde-format
 msgid "The Horde"
-msgstr "Ruža"
+msgstr "Horda"
 
 #: gamedata/game_GotD.txt:318
 #, kde-format
@@ -3529,7 +3529,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:327
 #, kde-format
 msgid "Zombie Invaders"
-msgstr "Space Invader"
+msgstr "Útočníci zombíci"
 
 #: gamedata/game_GotD.txt:328
 #, kde-format
@@ -3587,7 +3587,7 @@ msgstr ""
 #: gamedata/game_GotD.txt:343
 #, kde-format
 msgid "The End"
-msgstr "Zlievareň"
+msgstr "Koniec"
 
 #: gamedata/game_GotD.txt:344
 #, kde-format
@@ -4271,7 +4271,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:160
 #, kde-format
 msgid "The Breakout"
-msgstr "Útek z väzenia"
+msgstr "Únik"
 
 #: gamedata/game_GRII.txt:161
 #, kde-format
@@ -4708,7 +4708,7 @@ msgstr ""
 #: gamedata/game_MAZ.txt:8
 #, kde-format
 msgid "Dopey"
-msgstr "Ospalý"
+msgstr "Hlúpik"
 
 #: gamedata/game_MAZ.txt:9
 #, kde-format
@@ -6839,7 +6839,7 @@ msgstr ""
 #: gamedata/game_sot.txt:54
 #, kde-format
 msgid "Infiltration"
-msgstr "Prenikanie"
+msgstr "Infiltrácia"
 
 #: gamedata/game_sot.txt:55
 #, kde-format
@@ -8658,7 +8658,7 @@ msgstr "Stlačte \"%1\" pre pokračovanie"
 #: src/kgoldrunner.cpp:740
 #, kde-format
 msgid "Press \"%1\" or \"%2\" to RESUME"
-msgstr "Stlačiť \"%1\" alebo \"%2\" pre pauzu"
+msgstr "Stlačiť \"%1\" alebo \"%2\" pre obnovenie"
 
 #: src/kgoldrunner.cpp:747
 #, kde-format
@@ -8834,7 +8834,7 @@ msgstr "Vymaľovať pasce alebo falošné tehly (môžno cez ne prepadnúť)"
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints traps or false bricks (can fall through)."
-msgstr "Vymaľovať pasce alebo falošné tehly (môžno cez ne prepadnúť)"
+msgstr "Vymaľovať pasce alebo falošné tehly (môžno cez ne prepadnúť)."
 
 #: src/kgoldrunner.cpp:953
 #, kde-format
@@ -9046,8 +9046,8 @@ msgid ""
 "You cannot create and save a level until you have created a game to hold it. "
 "Try menu item \"Create Game\"."
 msgstr ""
-"Nemôžete upraviť a uložiť úroveň, kým ste nevytvorili hru a aspoň jednu "
-"úroveň. Použite položku menu \"Vytvoriť hru\"."
+"Nemôžete vytvoriť a uložiť úroveň, kým ste nevytvorili hru, ktorá ju bude "
+"obsahovať. Použite položku menu \"Vytvoriť hru\"."
 
 #: src/kgreditor.cpp:115 src/kgreditor.cpp:137
 #, kde-format
