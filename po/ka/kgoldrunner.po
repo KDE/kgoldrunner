@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:49+0000\n"
-"PO-Revision-Date: 2026-01-12 10:04+0100\n"
+"PO-Revision-Date: 2026-05-02 01:16+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1055,7 +1055,7 @@ msgstr ""
 #: gamedata/game_ende.txt:31
 #, kde-format
 msgid "TRANSLATORS: Please see the notes in the translation comment."
-msgstr "ეს სათარგმნი არაა."
+msgstr "მთარგმნელებისთვის: ეს სათარგმნი არაა."
 
 #: gamedata/game_fd.txt:2
 #, kde-format
