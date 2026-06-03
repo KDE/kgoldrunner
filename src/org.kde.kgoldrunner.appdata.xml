@@ -161,6 +161,7 @@
     <p xml:lang="sr-ijekavianlatin">Mogućnosti:</p>
     <p xml:lang="sv">Funktioner:</p>
     <p xml:lang="tr">Özellikler:</p>
+    <p xml:lang="ug">ئىقتىدار:</p>
     <p xml:lang="uk">Можливості:</p>
     <p xml:lang="zh-CN">功能：</p>
     <p xml:lang="zh-TW">功能：</p>
@@ -388,6 +389,7 @@
       <li xml:lang="sr-ijekavianlatin">Upravljanje tastaturom ili mišem.</li>
       <li xml:lang="sv">Tangentbords- eller musstyrning</li>
       <li xml:lang="tr">Klavye veya fare denetimi</li>
+      <li xml:lang="ug">ھەرپتاختا ياكى چاشقىنەك تىزگىنى</li>
       <li xml:lang="uk">Керування за допомогою клавіатури або миші</li>
       <li xml:lang="zh-CN">键盘或鼠标控制</li>
       <li xml:lang="zh-TW">鍵盤或滑鼠控制</li>
