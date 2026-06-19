@@ -5,20 +5,21 @@
 # Kiszel Kristóf <ulysses@kubuntu.org>, 2010.
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2011.
 # Balázs Úr <urbalazs@gmail.com>, 2012, 2013.
+# SPDX-FileCopyrightText: 2026 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:49+0000\n"
-"PO-Revision-Date: 2013-10-27 09:50+0100\n"
-"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
+"PO-Revision-Date: 2026-06-18 21:49+0200\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -8341,11 +8342,10 @@ msgid "&Insert Level"
 msgstr "Szint b&eszúrása"
 
 #: src/kgreditor.cpp:246 src/kgreditor.cpp:446
-#, fuzzy, kde-format
-#| msgid "&Cancel"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Cancel"
-msgstr "&Mégsem"
+msgstr "&Mégse"
 
 #: src/kgreditor.cpp:262 src/kgreditor.cpp:782 src/kgrgame.cpp:1485
 #: src/kgrgame.cpp:1693
@@ -9325,7 +9325,7 @@ msgid ""
 msgstr ""
 "A lent látható nyomógomb kiírja a választott menübejegyzés szövegét. "
 "Kattintson rá egy játék és a szint kiválasztása után, vagy nyomja meg a "
-"\"Mégsem\" gombot."
+"„Mégse” gombot."
 
 #: src/kgrselector.cpp:528
 #, kde-format
