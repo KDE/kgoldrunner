@@ -51,6 +51,7 @@
   <summary xml:lang="ar">ابحث عن الذهب، وتجنب الأعداء، وحل الألغاز</summary>
   <summary xml:lang="ca">Cerca l'or, esquiva els enemics i resol trencaclosques</summary>
   <summary xml:lang="ca-valencia">Busca l'or, esquiva els enemics i resol trencaclosques</summary>
+  <summary xml:lang="cs">Sbírejte zlato, vyhýbejte se nepřátelům a řešte puzzle</summary>
   <summary xml:lang="de">Gold suchen, Feinden entkommen und Rätsel lösen</summary>
   <summary xml:lang="en-GB">Hunt Gold, Dodge Enemies and Solve Puzzles</summary>
   <summary xml:lang="eo">Ĉasu Oron, Evitu Malamikojn kaj Solvu Enigmojn</summary>
@@ -92,6 +93,7 @@
     <p xml:lang="ar">لعبة جامع الذهب هي لعبة حركة حيث يركض البطل عبر متاهة، ويتسلق السلالم، ويحفر حفراً، ويتفادى الأعداء من أجل جمع كل قطع الذهب والهروب إلى المستوى التالي. أعداؤك يطاردون الذهب أيضاً. والأسوأ من ذلك، أنهم يطاردونك أنت!</p>
     <p xml:lang="ca">El KGoldrunner és un joc d'acció a on l'heroi corre a través d'un laberint, puja escales, cava forats i esquiva els enemics per tal de recollir totes les llavors d'or i escapar al nivell següent. Els enemics també van darrere l'or. Encara pitjor: van darrere teu!</p>
     <p xml:lang="ca-valencia">KGoldrunner és un joc d'acció a on l'heroi corre a través d'un laberint, puja escales, cava forats i esquiva els enemics per tal d'arreplegar totes les llavors d'or i escapar al nivell següent. Els enemics també van darrere l'or. Encara pitjor: van darrere teu!</p>
+    <p xml:lang="cs">KGoldrunner je akční hra, ve které hrdina běží bludištěm, šplhá po schodech, kopá díry a vyhýbá se nepřátelům, aby nasbíral všechny zlaté nugety a postoupil do další úrovně. I tvoji nepřátelé jdou po zlatě. A co hůř, jdou i po tobě!</p>
     <p xml:lang="de">KGoldrunner ist ein Action-Spiel, in dem der Held durch ein Labyrinth läuft, Leitern hochsteigt und Fallgruben gräbt und seine Feinde austrickst, um alle Goldklumpen einzusammeln und schließlich zur nächsten Ebene zu kommen. Die Feinde sind hinter dem Gold und dem Helden her. Wenn sie ihn fangen, wird er von ihnen getötet.</p>
     <p xml:lang="en-GB">KGoldrunner is an action game where the hero runs through a maze, climbs stairs, dig holes and dodges enemies in order to collect all the gold nuggets and escape to the next level. Your enemies are also after the gold. Worse still, they are after you!.</p>
     <p xml:lang="eo">KGoldrunner estas agoludo, kie la heroo kuras tra labirinto, grimpas ŝtuparojn, fosas truojn kaj evitas malamikojn por kolekti ĉiujn ornugetojn kaj eskapi al la sekva nivelo. Viaj malamikoj ankaŭ serĉas la oron. Pli malbone, ili estas post vi!.</p>
@@ -170,6 +172,7 @@
       <li xml:lang="ar">قابل لتعديل السمات</li>
       <li xml:lang="ca">Permet temes</li>
       <li xml:lang="ca-valencia">Permet temes</li>
+      <li xml:lang="cs">S možností přizpůsobení motivu</li>
       <li xml:lang="de">Verschiedene Designs</li>
       <li xml:lang="en-GB">Themeable</li>
       <li xml:lang="eo">Temebla</li>
@@ -284,6 +287,7 @@
       <li xml:lang="ar">وضعان للأعداء: الوضع التقليدي ووضع جامع الذهب، في وضع جامع الذهب يكونون أكثر ذكاءً، وفي الوضع التقليدي يكون من الأسهل خداعهم.</li>
       <li xml:lang="ca">Dos modes per als enemics: mode clàssic i mode KGoldrunner. En el mode KGoldrunner són més intel·ligents, en el mode clàssic és més fàcil que es tornin boigs</li>
       <li xml:lang="ca-valencia">Dos modes per als enemics: mode clàssic i mode KGoldrunner. En el mode KGoldrunner són més intel·ligents, en el mode clàssic és més fàcil que es tornen boigs</li>
+      <li xml:lang="cs">Dva režimy pro nepřátele: klasický a režim KGoldrunner; v režimu KGoldrunner jsou chytřejší, v klasickém režimu je snazší je oklamat</li>
       <li xml:lang="de">Zwei Modi für die Feinde: Klassisch und der KGoldrunner-Modus. Im KGoldrunner-Modus sind die Feinde intelligenter, im klassischen Modus können sie leichter ausgetrickst werden.</li>
       <li xml:lang="en-GB">Two modes for the enemies: classical and KGoldrunner-mode, in KGoldrunner-mode they are more intelligent, in the classical mode it is easier to fool them</li>
       <li xml:lang="eo">Du reĝimoj por la malamikoj: klasika kaj KGoldrunner-reĝimo, en KGoldrunner-reĝimo ili estas pli inteligentaj, en la klasika reĝimo estas pli facile trompi ilin</li>
