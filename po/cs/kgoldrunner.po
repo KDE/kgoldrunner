@@ -3,31 +3,33 @@
 # Vít Pelčák <vit@pelcak.org>, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012, 2013.
 # SPDX-FileCopyrightText: 2021, 2023, 2024 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2026 Libor Filípek <libor.filipek@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:49+0000\n"
-"PO-Revision-Date: 2024-06-25 10:52+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-07-24 20:02+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.05.1\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Ivo Jánský,Klára Cihlářová,Jakub Friedl"
+msgstr "Ivo Jánský,Klára Cihlářová,Jakub Friedl,Libor Filípek"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "Ivo.Jansky@seznam.cz,koty@seznam.cz,jfriedl@suse.cz"
+msgstr ""
+"Ivo.Jansky@seznam.cz,koty@seznam.cz,jfriedl@suse.cz,libor.filipek@gmail.com"
 
 #: gamedata/game_blb.txt:3
 #, kde-format
@@ -47,6 +49,15 @@ msgid ""
 "\n"
 "Jason provided most of the solutions, but some are by Ian Wadham."
 msgstr ""
+"Těchto 70 úrovní představuje postupný úvod do tradiční hry, kterou vytvořil "
+"Jason Self (j@jxself.org). Ačkoli hra neobsahuje žádné nápovědy, ke každé "
+"úrovni je k dispozici nahrané řešení.\n"
+"\n"
+"Hra je určena pro nové hráče, ale pozdější úrovně jsou poměrně obtížné, "
+"takže v průběhu hry sledujte, jak nepřátelé reagují na vaše tahy. Než se "
+"dostanete k úrovni 70, musíte je mít dobře vycvičené.\n"
+"\n"
+"Většinu řešení poskytl Jason, ale některá jsou od Iana Wadhama."
 
 #: gamedata/game_CM.txt:2
 #, kde-format
@@ -68,11 +79,21 @@ msgid ""
 "ca>, with a few Egyptian ideas and the Red Sea level contributed by Ian "
 "Wadham."
 msgstr ""
+"Tato sada úrovní, inspirovaná ikonami západních filmů o mumii a Egyptě, se "
+"nejlépe hodí do tématu Poklad Egypta. Někdy budete muset kopat i během "
+"pádu.\n"
+"\n"
+"Abyste si osvěžili své znalosti egyptologie, najdete v nápovědách "
+"zajímavosti související s každou úrovní, přičemž tyto informace pocházejí "
+"spíše z Wikipedie než z Hollywoodu.\n"
+"\n"
+"Tuto mistrovskou hru vytvořil Steve Mann <smann at cgl uwaterloo ca>, "
+"přičemž několik egyptských nápadů a úroveň Rudé moře přispěl Ian Wadham."
 
 #: gamedata/game_CM.txt:10
 #, kde-format
 msgid "The Giza Plateau"
-msgstr ""
+msgstr "Náhorní plošina v Gíze"
 
 #: gamedata/game_CM.txt:11
 #, kde-format
@@ -86,6 +107,13 @@ msgid ""
 "too many reappear on the right, it becomes difficult to escape at the end.  "
 "To get started, you will need to use the technique of digging while falling."
 msgstr ""
+"Na náhorní plošině v Gíze na předměstí Káhiry se nachází nekropole v Gíze, "
+"kterou tvoří Cheopsova pyramida (Velká pyramida), Chefrénova pyramida, "
+"Menkaureova pyramida, Velká sfinga a řada dalších menších staveb.\n"
+"\n"
+"Při cestě pod náhorní plošinou se snažte nezabíjet mumie: pokud se jich na "
+"pravé straně objeví příliš mnoho, bude na konci obtížné uniknout.  Na "
+"začátek budete muset použít techniku kopání při pádu."
 
 #: gamedata/game_CM.txt:16
 #, kde-format
@@ -117,11 +145,32 @@ msgid ""
 "the pyramid - if there is more than one mummy on the bottom right before the "
 "escape ladder appears, you will be unable to reach the exit."
 msgstr ""
+"Pyramida Djosera (Zosera), neboli stupňovitá pyramida (v egyptštině kbhw-"
+"ntrw), je archeologická památka v nekropoli Sakkára v Egyptě, severozápadně "
+"od města Memfis.\n"
+"\n"
+"Chcete-li tuto úroveň dokončit, je důležité postupovat po krocích: nejprve "
+"osvoboďte mumii na levé straně druhé úrovně (počítáno odspodu), aby mohla "
+"spadnout do skryté jámy v přízemí a zaplnit ji.\n"
+"\n"
+"Nyní vstupte na pravou stranu druhé úrovně, přejděte po tyči přes mumii a "
+"seberte kus pokladu uprostřed, přičemž nezapomeňte vykopat cihlu nalevo od "
+"středu.\n"
+"\n"
+"Mumie na třetí úrovni je trochu problematická, protože vezme kus pokladu a "
+"odnese si ho.  Možná budete mít štěstí a zjistíte, že svůj poklad v určitém "
+"okamžiku opustí, ale můžete ji také pečlivě načasovaným manévrem uvěznit v "
+"jediné vykopatelné cihle vpravo.\n"
+"\n"
+"Nakonec, než získáte poslední kus pokladu, nezapomeňte otevřít pravý dolní "
+"roh stupňovité pyramidy, aby mumie zprava mohly vstoupit do pyramidy – pokud "
+"se v pravém dolním rohu nachází více než jedna mumie předtím, než se objeví "
+"únikový žebřík, nebudete moci dosáhnout východu."
 
 #: gamedata/game_CM.txt:28
 #, kde-format
 msgid "Pharaoh's Barge"
-msgstr ""
+msgstr "Faraonova bárka"
 
 #: gamedata/game_CM.txt:29
 #, kde-format
@@ -138,11 +187,22 @@ msgid ""
 "This is almost a simple level: good treasure and not too many mummies.  But "
 "your task is to wrest the treasure they carry."
 msgstr ""
+"Loď Chufu je zachovalé plavidlo ve skutečné velikosti ze starověkého Egypta, "
+"které bylo kolem roku 2 500 př. n. l. zapečetěno v jámě v pyramidovém "
+"komplexu v Gíze, na úpatí Velké pyramidy v Gíze. Loď byla téměř jistě "
+"postavena pro Chufua (krále Cheopse).\n"
+"\n"
+"Jedná se o jedno z nejstarších, největších a nejlépe zachovaných plavidel ze "
+"starověku, jehož celková délka činí 43,6 m.  Navzdory svému stáří by mohla "
+"plout i dnes, kdyby byla spuštěna na vodu.\n"
+"\n"
+"Toto je téměř jednoduchá úroveň: dobrý poklad a ne příliš mnoho mumií.  "
+"Vaším úkolem však je zmocnit se pokladu, který s sebou nesou."
 
 #: gamedata/game_CM.txt:36
 #, kde-format
 msgid "Pyramid Puzzles"
-msgstr ""
+msgstr "Pyramidové puzzle"
 
 #: gamedata/game_CM.txt:37
 #, kde-format
@@ -166,6 +226,23 @@ msgid ""
 "is possible to release the mummies and trap them in one of the other "
 "chambers."
 msgstr ""
+"Velká pyramida byla po více než 3 800 let nejvyšší stavbou na světě "
+"postavenou lidskou rukou. Neustálé stoupání a sestupování muselo být pro "
+"starověké Egypťany pořádnou dřinou, stejně jako to pravděpodobně bude dřina "
+"i pro vás, když budete stoupat a sestupovat po této pyramidě.\n"
+"\n"
+"Abyste získali druhý poklad zleva, musíte jako most k úniku použít cihlu, "
+"která dole blokuje žebřík.\n"
+"\n"
+"Chcete-li získat čtvrtý poklad zleva, odstraňte tři cihly nad a vpravo od "
+"mumie zcela vlevo; pokud je vykopete ve správném pořadí, získáte právě dost "
+"času na to, abyste popadli poklad a unikli.\n"
+"\n"
+"Některé mumie je nutné osvobodit, abyste získali část pokladu. Než však "
+"jakoukoli mumii osvobodíte, získejte první, druhý a čtvrtý poklad (zleva). "
+"Dávejte pozor, abyste žádnou mumii nezabili; pokud se objeví vpravo od "
+"pyramidy, nebudete moci úroveň dokončit. Je také možné mumie osvobodit a "
+"uvěznit je v jedné z ostatních komnat."
 
 #: gamedata/game_CM.txt:46
 #, kde-format
@@ -186,6 +263,16 @@ msgid ""
 "In this level, it is not the crocodile you need to fear.  Still, a prayer to "
 "Sobek might help you escape the mummies while you gather the treasure."
 msgstr ""
+"Krokodýli se mohou dožít více než 100 let a největší druhy dosahují délky "
+"4,85 metru. Bylo zaznamenáno, že různé druhy útočí na žraloky a zabíjejí "
+"je.\n"
+"\n"
+"Sobek byl zosobněním krokodýlů.  Egypťané, kteří pracovali nebo cestovali po "
+"Nilu, doufali, že pokud se budou modlit k Sobekovi, bohu krokodýlů, ochrání "
+"je před útoky krokodýlů.\n"
+"\n"
+"V této úrovni se nemusíte bát krokodýla.  Modlitba k Sobekovi vám však může "
+"pomoci uniknout mumiím, zatímco sbíráte poklad."
 
 #: gamedata/game_CM.txt:54
 #, kde-format
@@ -203,11 +290,18 @@ msgid ""
 "You may find it easiest to navigate this wonder if you get two mummies in "
 "the far right pyramid before going over there."
 msgstr ""
+"Nekropole v Gíze je oblíbeným turistickým cílem již od starověku a do "
+"popředí se dostala v helénistickém období, kdy Antipater ze Sidonu zařadil "
+"Velkou pyramidu mezi sedm divů světa. Dnes je to jediný z těchto divů, který "
+"se dochoval.\n"
+"\n"
+"Prohlídku tohoto divu si možná usnadníte, pokud si před návštěvou tohoto "
+"místa získáte dvě mumie v pyramidě zcela vpravo."
 
 #: gamedata/game_CM.txt:60
 #, kde-format
 msgid "Tura Caves"
-msgstr ""
+msgstr "Jeskyně Tura"
 
 #: gamedata/game_CM.txt:61
 #, kde-format
@@ -232,11 +326,30 @@ msgid ""
 "Note: If you feel like some variety, you can do all of the right first and "
 "then the left."
 msgstr ""
+"Tura byla hlavním egyptským lomem na vápenec, který byl použit při stavbě "
+"Velké Cheopsovy pyramidy.  Těžba tohoto vápence zanechala jeskyně, které "
+"později během druhé světové války sloužily britské armádě jako tajné "
+"skladiště a které nyní můžete prozkoumat.\n"
+"\n"
+"Vlevo od dna dlouhé šachty se nacházejí dvě skryté jámy.  Osvoboďte mumii "
+"napravo od dlouhé šachty, abyste zaplnili jednu z nich, a osvoboďte mumii ve "
+"velké komoře, abyste zaplnili druhou.  Nezapomeňte sjet dolů na první z "
+"těchto dvou mumií, abyste získali kus pokladu ve výklenku poblíž dna "
+"šachty.  Při opouštění tohoto výklenku několikrát kopejte směrem doprava, "
+"abyste si otevřeli únikovou cestu.\n"
+"\n"
+"Seberte veškerý poklad na levé straně hrací plochy a poté se přesuňte "
+"doprava.  Nezapomeňte vykopat mumii nahoře, abyste později mohli získat její "
+"poklad.  Budete také potřebovat její pomoc k úniku zpět doleva na konci "
+"úrovně.  Poklad vpravo je snazší získat, než se zdá: strategicky umístěné "
+"falešné cihly z této části úrovně dělají tu snadnější polovinu.  Poznámka: "
+"Pokud máte chuť na trochu rozmanitosti, můžete nejprve projít celou pravou "
+"část a teprve poté levou."
 
 #: gamedata/game_CM.txt:68
 #, kde-format
 msgid "Pyramid Crawl"
-msgstr ""
+msgstr "Pyramidový výstup"
 
 #: gamedata/game_CM.txt:69
 #, kde-format
@@ -247,6 +360,11 @@ msgid ""
 "In this pyramid level (built around AD 2008), avoid (by luring away or "
 "killing) getting the two mummies in the middle of the bottom section."
 msgstr ""
+"V Egyptě se nachází přes 100 pyramid, přičemž ta nejstarší byla postavena "
+"kolem roku 2600 př. n. l.\n"
+"\n"
+"V této pyramidové úrovni (postavené kolem roku 2008 n. l.) se vyhněte "
+"(odlákáním nebo zabitím) dvěma mumiím uprostřed spodní části."
 
 #: gamedata/game_CM.txt:74
 #, kde-format
@@ -263,11 +381,17 @@ msgid ""
 "As you grab the treasure inside the sphinx, try to solve The Riddle of the "
 "Sphinx: how do you get past the horde of mummies on the right?"
 msgstr ""
+"Velká sfinga je strážkyní plošiny Gíza, kde je obrácena směrem k "
+"vycházejícímu slunci.  S délkou 73 metrů a výškou 20 metrů je největší "
+"monolitickou sochou na světě a je pouhých 4 500 let mladá.\n"
+"\n"
+"Až se chopíte pokladu uvnitř sfingy, zkuste vyřešit Hádanku sfingy: jak se "
+"dostat přes hordy mumií napravo?"
 
 #: gamedata/game_CM.txt:80
 #, kde-format
 msgid "Ladder Pyramid"
-msgstr ""
+msgstr "Žebříková pyramida"
 
 #: gamedata/game_CM.txt:81
 #, kde-format
@@ -289,6 +413,22 @@ msgid ""
 "escape ladder.  One way to do this is to kill a mummy and cross over on its "
 "back when the mummy crosses from the escape ladder to the main pyramid."
 msgstr ""
+"Většina uznávaných teorií o stavbě pyramid vychází z představy, že byly "
+"postaveny tak, že se obrovské kameny dopravovaly z lomu a poté se táhly a "
+"zvedaly na místo. Názory se liší především v tom, jakým způsobem byly kameny "
+"přepravovány a umisťovány.  Každopádně se při stavbě pravděpodobně používalo "
+"mnoho žebříků, jako například na této úrovni.\n"
+"\n"
+"Tato úroveň spočívá hlavně v běhání.  Sbírat poklady a přitom se vyhýbat "
+"mumiím není tak těžké – ale dostat poklady pryč od mumií je mnohem "
+"náročnější úkol.  Kamenná plošina o šířce tří bloků je užitečným místem k "
+"likvidaci nepřátel, i když budete muset trochu pobíhat, abyste mumie nesoucí "
+"poklady správně seřadili.  Všimněte si také, že prostřední blok této plošiny "
+"je propadací blok.\n"
+"\n"
+"A jakmile získáte všechny poklady, budete muset přejít k únikovému žebříku.  "
+"Jedním ze způsobů, jak toho dosáhnout, je zabít mumii a přejít po jejím "
+"hřbetě, když mumie přechází z únikového žebříku do hlavní pyramidy."
 
 #: gamedata/game_CM.txt:88
 #, kde-format
@@ -304,6 +444,11 @@ msgid ""
 "To keep your life on this level, be careful of the false bricks in the main "
 "Ankh and figure out which of them are useful."
 msgstr ""
+"Ankh byl egyptský hieroglyfický symbol, který znamenal 'život', a jako "
+"symbol slunce byl téměř vždy vyroben ze zlata.\n"
+"\n"
+"Chcete-li si udržet život na této úrovni, dávejte si pozor na falešné cihly "
+"v hlavním Ankh a zjistěte, které z nich jsou užitečné."
 
 #: gamedata/game_CM.txt:94 gamedata/game_plwv.txt:55
 #, kde-format
@@ -328,6 +473,20 @@ msgid ""
 "Repeat this trick to exit after grabbing the lone piece of treasure, only "
 "this time you need to get out on the right side of the pyramid."
 msgstr ""
+"Vědci odhadují, že k výstavbě Velké pyramidy bylo použito 2,3 milionu bloků, "
+"přičemž průměrná hmotnost jednoho bloku činila přibližně 2,5 metrické tuny.\n"
+"\n"
+"Pyramida této úrovně byla postavena z méně než 100 bloků.  Nejprve se "
+"dostaňte dovnitř pyramidy a poté se postavte na jeden z žebříků ve druhé "
+"vrstvě, který je nejblíže vnější stěně na levé straně pyramidy.  Počkejte, "
+"až se mumie shromáždí na druhé straně vnější stěny.  Poté vylezte na vrchol "
+"žebříků na malé pyramidě a počkejte, až mumie vylezou po vysokém žebříku a "
+"seskočí z tyče.  Jakmile seskočí i ta poslední (nebo těsně předtím), "
+"vyběhněte po vysokém žebříku, přeběhněte po tyči a prokopejte se zpět "
+"dovnitř velké pyramidy a do hrobky.\n"
+"\n"
+"Tento trik zopakujte, abyste se dostali ven poté, co seberete osamocený kus "
+"pokladu, tentokrát však musíte vyjít na pravé straně pyramidy."
 
 #: gamedata/game_CM.txt:102
 #, kde-format
@@ -349,11 +508,22 @@ msgid ""
 "To get the mummies to bring you the treasure, you must dig out the five "
 "bricks on the bottom and allow them to pass (or get trapped and killed). "
 msgstr ""
+"Kočka, jakožto v egyptské společnosti a náboženství uctívané a významné "
+"zvíře, byla po smrti mumifikována stejným způsobem jako lidé.\n"
+"\n"
+"Při dokončování této kočičí úrovně se nenechte zmást kočičím ocasem, který "
+"se objeví, jakmile seberete poslední poklad.  Jediný východ je vlevo.  "
+"Musíte tedy nechat mumie, aby vám přinesly poklad, který se nachází napravo "
+"od kočičí hlavy, protože nemůžete sebrat každý kousek a stihnout se včas "
+"vrátit.\n"
+"\n"
+"Abyste přiměli mumie, aby vám poklad přinesly, musíte vykopat pět cihel ve "
+"spodní části a nechat je projít (nebo se nechají uvěznit a zabít). "
 
 #: gamedata/game_CM.txt:110
 #, kde-format
 msgid "Pyramid Power"
-msgstr ""
+msgstr "Síla pyramid"
 
 #: gamedata/game_CM.txt:111
 #, kde-format
@@ -372,6 +542,19 @@ msgid ""
 "down the ladders.  The lower left is the only difficult part: just run under "
 "the mummies on the ladder above you and maneuver ... and hope!"
 msgstr ""
+"Imhotep navrhl Djoserovu stupňovitou pyramidu tak, aby sloužila jako "
+"obrovské schodiště, po kterém by duše zesnulého faraóna mohla vystoupit do "
+"nebes.  Imhotepův počin měl tak velký význam, že ho pozdější Egypťané "
+"prohlásili za boha.\n"
+"\n"
+"Než se budete moci vyšplhat na vrchol této úrovně pyramidy, musíte se "
+"nejprve dostat až na dno.  Chcete-li získat poslední poklad, přesuňte se z "
+"vrcholu doleva, vykopněte další blok a vylezte na mumii pod vámi, poté "
+"pokračujte doprava (zkuste umístit kurzor myši na vrchol).\n"
+"\n"
+"Po získání posledního kousku pokladu vyjděte doprava a běhejte nahoru a dolů "
+"po žebřících.  Jediná obtížná část je vlevo dole: prostě proběhněte pod "
+"mumiemi na žebříku nad vámi a manévrujte... a doufejte!"
 
 #: gamedata/game_CM.txt:118
 #, kde-format
@@ -393,11 +576,21 @@ msgid ""
 "fall in the top pit.  Move across the two trapped mummies and climb to the "
 "top."
 msgstr ""
+"Oko Horovo je staroegyptský symbol ochrany a královské moci pocházející od "
+"bohů.\n"
+"\n"
+"Na této úrovni nabízí oko určitou ochranu, ale ne příliš velkou. Abyste "
+"získali veškerý poklad, budete muset opakovaně přecházet z horní části do "
+"spodní. Nakonec se v levém dolním rohu objeví dvě mumie.  Abyste se kolem "
+"nich dostali, vylezte na vrchol čtvrtého žebříku zleva, kopejte doleva, "
+"slezte dolů a znovu kopejte doleva.  Jedna z mumií spadne do spodní jámy.  "
+"Vylezte po žebříku nahoru.  Druhá mumie vyleze po druhém žebříku a spadne do "
+"horní jámy.  Přejděte přes obě uvězněné mumie a vylezte na vrchol."
 
 #: gamedata/game_CM.txt:124
 #, kde-format
 msgid "Inverted Pyramid"
-msgstr ""
+msgstr "Obrácená pyramida"
 
 #: gamedata/game_CM.txt:125
 #, kde-format
@@ -414,6 +607,17 @@ msgid ""
 "above the bricks inside the pyramid, pause the game and switch back to mouse "
 "mode."
 msgstr ""
+"Pravděpodobně nejde o tradiční egyptský design.\n"
+"\n"
+"Abyste získali veškerý poklad, musíte se pohybovat klikatě sem a tam podél "
+"tyčí.  Chcete-li se vyhnout osamělé mumii, která vás pronásleduje, počkejte "
+"na ni na jedné tyči a těsně předtím, než se k vám dostane, seskočte na tyč "
+"níže a přesuňte se přímo pod ni.\n"
+"\n"
+"Vzhledem k netradičnímu designu zvažte netradiční způsob hraní této úrovně: "
+"manévr seskok a pohyb pod nepřítelem se snáze provádí pomocí klávesnice (je "
+"to snazší, ale stále obtížné).  Jakmile získáte poslední kus pokladu nad "
+"cihlami uvnitř pyramidy, pozastavte hru a přepněte zpět do režimu myši."
 
 #: gamedata/game_CM.txt:132
 #, kde-format
@@ -440,11 +644,27 @@ msgid ""
 "and dig out the square to your right.  Wait for the mummy to fall, get his "
 "treasure, and race up the ladder to confront five mummies blocking the exit."
 msgstr ""
+"Anubis, neboli Inpu, byl egyptský bůh posmrtného života.\n"
+"\n"
+"Chcete-li získat poklad mezi Anubisovýma ušima, vykopejte dva pilíře nalevo "
+"od mumie a postavte se na ni.  Pohybujte se po mumii směrem doleva a zároveň "
+"kopejte vpravo.  Mumie by měla spadnout do otvoru v pilíři zcela vpravo.  "
+"Nyní vykopejte dva levé pilíře, dokud se nedostanete k žebříku ve tvaru "
+"oka.  Sestupte z pravého žebříku u oka a spadnete na tyč pod vámi.\n"
+"\n"
+"Chcete-li získat poklad uvnitř pravého ucha, vykopejte vyšší ze "
+"dvoublokových pilířů a spadněte na pravý dvoublokový pilíř.  Pohybujte se "
+"doleva a vykopejte druhý dvoublokový pilíř.  Nyní se přesuňte doprava a "
+"vykopejte jednoblokový pilíř, čímž osvobodíte mumii.  Posuňte se ještě o "
+"jeden blok doprava a vykopejte tři bloky, abyste měli římsu širokou dva "
+"bloky, na které se můžete postavit.  Posuňte se doleva a vykopejte čtverec "
+"po vaší pravici.  Počkejte, až mumie spadne, seberte její poklad a vyběhněte "
+"po žebříku nahoru, kde se utkáte s pěti mumiemi blokujícími východ."
 
 #: gamedata/game_CM.txt:140
 #, kde-format
 msgid "Pyramid of Treasure"
-msgstr ""
+msgstr "Pyramida pokladů"
 
 #: gamedata/game_CM.txt:141
 #, kde-format
@@ -455,6 +675,11 @@ msgid ""
 "In this pyramid, treasure is even in the air!  Lots of treasure, only three "
 "mummies - it can't be that hard, can it?"
 msgstr ""
+"Núbie byla v Egyptě významným zdrojem zlata.  Mitannský král Tušratta "
+"tvrdil, že zlata je v Egyptě 'víc než hlíny'.\n"
+"\n"
+"V této pyramidě je poklad dokonce i ve vzduchu!  Spousta pokladů, jen tři "
+"mumie – to přece nemůže být tak těžké, nebo snad ano?"
 
 #: gamedata/game_CM.txt:146
 #, kde-format
@@ -473,11 +698,19 @@ msgid ""
 "treasure under the left edge of the sarcophagus at the start - otherwise, "
 "there is no way to get it."
 msgstr ""
+"Sarkofág je pohřební schránka pro mrtvé tělo, nejčastěji vytesaná nebo "
+"vyřezaná z kamene.  Ve starověkém Egyptě tvořil sarkofág vnější ochrannou "
+"vrstvu královské mumie, do níž bylo vloženo několik vrstev rakví, a byl "
+"často vytesán z alabastru.\n"
+"\n"
+"Pokud nechcete, aby se tato úroveň stala vaším sarkofágem, seberte si hned "
+"na začátku poklad pod levým okrajem sarkofágu – jinak už ho nebudete moci "
+"získat."
 
 #: gamedata/game_CM.txt:152
 #, kde-format
 msgid "The Parting of the Red Sea"
-msgstr ""
+msgstr "Rozestoupení Rudého moře"
 
 #: gamedata/game_CM.txt:153
 #, kde-format
@@ -503,6 +736,26 @@ msgid ""
 "Note: It is possible to move up the wall of water to your left initially, "
 "but it is much harder."
 msgstr ""
+"Bible nám vypráví, že Mojžíš rozdělil moře, aby unikl faraonovým mužům.  "
+"Poté, co jste vyplenili pyramidy jeho předků, by vás nemělo překvapit, že i "
+"faraon poslal své muže, aby vás pronásledovali.\n"
+"\n"
+"Naštěstí stačí spadnout na poslední poklad a moře se rozestoupí.  Uniknout "
+"faraonovým mužům však není tak snadné.  Nejprve nechte svého hrdinu "
+"sestoupit co nejníže a pak vyčkejte na správný okamžik.  Poté se vydejte po "
+"vodní stěně doprava, přejděte po tyči do středu a počkejte, až mumie "
+"dosáhnou vrcholu vodní stěny, než se podruhé spustíte dolů.\n"
+"\n"
+"Tentokrát okamžitě vyběhněte po vodní stěně vlevo a proběhněte pod "
+"pronásledujícími mumiemi.  Počkejte v levém horním rohu, kde se k vám mumie "
+"zprava nedostanou.  Jakmile mumie zleva dosáhnou vrcholu, seskočte potřetí "
+"na mořské dno (ani Mojžíš to neměl tak těžké).  Trik, jak se při této "
+"poslední cestě na vrchol dostat kolem mumií, spočívá v tom, že pod nimi a "
+"nalevo od nich proklouznete, zatímco padají v koloně po jednom z dlouhých "
+"úseků žebříků.\n"
+"\n"
+"Poznámka: Je možné zpočátku vyběhnout po vodní stěně po vaší levici, ale je "
+"to mnohem obtížnější."
 
 #: gamedata/game_cnt.txt:2
 #, kde-format
@@ -522,6 +775,14 @@ msgid ""
 "These elegant and rather tricky Championship levels were composed by Steve "
 "Mann <smann at cgl uwaterloo ca>. You need to dig while falling sometimes."
 msgstr ""
+"Tato hra je založena na počítání od 0 do 16 (nebo od 0 do 10 v "
+"hexadecimálním systému).  V první úrovni není žádné zlato ani nepřátelé: "
+"úkolem je najít cestu ven a postoupit do další úrovně.  Poté se počet "
+"nepřátel a zlatých mincí v každé úrovni zvyšuje o 1.  Název každé úrovně "
+"odpovídá počtu nepřátel, zlatých mincí a číslic, které se objevují v "
+"návrhu.\n"
+"Tyto elegantní a poměrně záludné mistrovské úrovně sestavil Steve Mann "
+"<smann at cgl uwaterloo ca>. Někdy budete muset kopat i během pádu."
 
 #: gamedata/game_cnt.txt:8
 #, kde-format
@@ -540,6 +801,13 @@ msgid ""
 "bricks and immediately moving right to get into the 0.  The timing is fairly "
 "tight."
 msgstr ""
+"Jedinou výzvou je dostat se dovnitř čísla 0, což je jediná cesta k východu.\n"
+"\n"
+"Abyste se dostali dovnitř čísla 0, musíte vylézt na vrchol klikatého "
+"žebříku, odkopat pět cihel na levém okraji čísla 0, co nejrychleji se vrátit "
+"na vrchol klikatého žebříku, přelézt tyč, propadnout se skrz právě odkopané "
+"cihly a okamžitě se přesunout doprava, abyste se dostali dovnitř čísla 0. "
+"Načasování je poměrně náročné."
 
 #: gamedata/game_cnt.txt:14
 #, kde-format
@@ -563,6 +831,19 @@ msgid ""
 "into the pit on the right of the 1.  The third way is to destroy the enemy "
 "and hope he reappears over the right side of the 1."
 msgstr ""
+"Získání zlata vyžaduje několik výkopů na správných místech.  Viz však "
+"následující odstavec.\n"
+"\n"
+"Abyste se dostali ven, musíte přimět nepřítele, aby přelezl horní část čísla "
+"1 a zaplnil jámu na dně.  Existují tři způsoby, jak toho dosáhnout.  První a "
+"nejrozumnější je počkat na tyči nad pravým horním okrajem čísla 1, dokud se "
+"nepřítel nedostane téměř k vám, a poté se přesunout doprava a kopat po své "
+"pravici, jakmile dosáhnete dna čísla 1.\n"
+"\n"
+"Druhý způsob spočívá v načasování kopání na zlato (nebo na místo, kde zlato "
+"bylo); přesunutí se na zlato ve správný okamžik způsobí, že nepřítel spadne "
+"do jámy napravo od čísla 1.  Třetím způsobem je zničit nepřítele a doufat, "
+"že se znovu objeví nad pravou stranou čísla 1."
 
 #: gamedata/game_cnt.txt:22
 #, kde-format
@@ -576,6 +857,10 @@ msgid ""
 "either side as you fall.  Immediately dig the square that was just below the "
 "gold and step in.  The false floor will drop you to the bottom."
 msgstr ""
+"Chcete-li, aby na vás shora spadla zlatá kapka zcela vlevo, posuňte se při "
+"pádu o jedno políčko na kteroukoli stranu. Okamžitě vykopejte políčko, které "
+"se nacházelo přímo pod zlatou kapkou, a vkročte do něj. Falešná podlaha vás "
+"spustí až na dno."
 
 #: gamedata/game_cnt.txt:26
 #, kde-format
@@ -590,6 +875,9 @@ msgid ""
 "entice an enemy to follow you, then step across the enemy to reach the "
 "ladder."
 msgstr ""
+"Až získáte všechno zlato, jedinou cestou ven je nejvyšší žebřík vlevo, který "
+"však nikam nevede. Abyste se k němu dostali, budete muset nalákat nepřítele, "
+"aby vás následoval, a pak přes něj přejít, abyste se k žebříku dostali."
 
 #: gamedata/game_cnt.txt:30
 #, kde-format
@@ -608,6 +896,14 @@ msgid ""
 "top of the ladders shaped like a 4.  This will allow you enough time to "
 "reach the ladders before the enemies cut you off."
 msgstr ""
+"Na začátku musíte co nejrychleji doběhnout na podlaží vpravo.  Budete muset "
+"uvěznit několik nepřátel (s trochou štěstí při tom získáte kousek zlata), "
+"ale po žebřících ve tvaru čísla 4 na pravé straně byste měli bez problémů "
+"vystoupat nahoru. \n"
+"\n"
+"Až budete sbírat zlato u čísla 4, počkejte, až nepřátelé dorazí na vrchol "
+"žebříků ve tvaru čísla 4.  Tak budete mít dost času dostat se k žebříkům, "
+"než vám nepřátelé zablokují cestu."
 
 #: gamedata/game_cnt.txt:36
 #, kde-format
@@ -625,6 +921,12 @@ msgid ""
 "the long ladder drops next to you.  Then climb up and to the right to get up "
 "the big ladder."
 msgstr ""
+"Na začátku slezte po prvním žebříku a počkejte na nejnižší příčce, dokud se "
+"nepřátelé neusadí na svých pozicích. Poté seskočte na podlahu a zamiřte k "
+"velkému žebříku vpravo, který má dole rozvětvení.  Právě tato rozvětvená "
+"část vám umožní dostat se přes nepřátele nahoře: počkejte na úrovni levého "
+"stupně (ne pod úrovní podlahy!), dokud nepřítel na dlouhém žebříku nebude "
+"vedle vás.  Poté vylezte nahoru a doprava, abyste se dostali na velký žebřík."
 
 #: gamedata/game_cnt.txt:40
 #, kde-format
@@ -645,6 +947,16 @@ msgid ""
 "and wait for them to come over the poles.  Then drop to the floor and cross "
 "to the ladder."
 msgstr ""
+"První trik v této úrovni spočívá v načasování průchodu spodní částí čísla 6 "
+"tak, aby se nepřítel právě šplhal po žebříku nalevo od čísla 6.  Jakmile "
+"vylezete na žebřík, nepřátelé se po něm budou šplhat pryč od vás, takže "
+"stačí počkat, až na spodní části žebříku nebudou žádní nepřátelé, a teprve "
+"pak se prokopat spodní částí čísla 6.\n"
+"\n"
+"Druhým trikem je přijít na to, jak dostat všechny nepřátele z žebříku na "
+"levé straně obrazovky.  Jedním ze způsobů je posadit se na vrchol velké "
+"šestky uprostřed a počkat, až přelezou tyče.  Poté seskočte na podlahu a "
+"přejděte k žebříku."
 
 #: gamedata/game_cnt.txt:46
 #, kde-format
@@ -658,6 +970,9 @@ msgid ""
 "the left most square of the top of the 7 and wait there until enemies fill "
 "the holes on top of the 7."
 msgstr ""
+"Hlavní výzvou je zlato na vrcholu čísla 7. Na začátku vylezte na čtvereček "
+"nejvíce vlevo v horní části čísla 7 a počkejte tam, dokud nepřátelé nezaplní "
+"otvory na vrcholu čísla 7."
 
 #: gamedata/game_cnt.txt:50
 #, kde-format
@@ -678,6 +993,16 @@ msgid ""
 "You can clear your final escape ladder by hitting the floor again, on the "
 "far right."
 msgstr ""
+"Pečlivými tahy a správným načasováním můžete přilákat dva nepřátele k "
+"žebříku zcela vlevo a nechat je tam, zatímco vy seberete pět nejvýše "
+"umístěných zlatých mincí.\n"
+"\n"
+"Tři nejnižší mince musíte sebrat najednou, ale možná budete muset nejprve "
+"přimět nepřátele, aby se přesunuli na pravou stranu osmičky, abyste se "
+"vyhnuli potížím, až se objeví žebříky a vy dopadnete na podlahu.\n"
+"\n"
+"Poslední únikový žebřík můžete uvolnit tím, že znovu dopadnete na podlahu "
+"zcela vpravo."
 
 #: gamedata/game_cnt.txt:58
 #, kde-format
@@ -700,6 +1025,18 @@ msgid ""
 "gold down.  Grab it, dig to the right, drop down to the pole and escape as "
 "quickly as you can."
 msgstr ""
+"Na začátku se snažte co nejrychleji spustit dolů, abyste se dostali na "
+"podlahu.  Na dně vykopejte několik jam, abyste zpomalili nepřátele při "
+"výstupu po žebříku.  Poté, co se v okolí nenacházejí žádní nepřátelé, "
+"seberte dva kusy zlata z levé strany čísla 9 a po sebrání toho vyššího z "
+"nich se prokopejte dovnitř čísla 9.\n"
+"\n"
+"Chcete-li získat zlato ze dna čísla 9, postavte se na levého nepřítele, "
+"vykopejte díru vlevo a přesuňte se doprava.  Oba nepřátelé se začnou "
+"pohybovat doleva, spadnou a vylezou po žebříku.  Jakmile první z nich uvízne "
+"v místě, kde jste právě vykopali díru, skočte do nejnižší části čísla 9 a "
+"vykopejte díru vlevo.  Další nepřítel s sebou snesl zlato dolů. Seberte ho, "
+"prokopejte se doprava, seskočte na tyč a utečte co nejrychleji."
 
 #: gamedata/game_cnt.txt:64
 #, kde-format
@@ -713,6 +1050,9 @@ msgid ""
 "they will get loose when the hidden ladders appear.  Dropping to the floor "
 "during your escape can help clear your path to the top right."
 msgstr ""
+"V jámách vlevo a vpravo dole můžete uvěznit několik nepřátel, ale ti se "
+"osvobodí, jakmile se objeví skryté žebříky.  Pokud při útěku skočíte na "
+"podlahu, můžete si tím uvolnit cestu do pravého horního rohu."
 
 #: gamedata/game_cnt.txt:68
 #, kde-format
@@ -741,6 +1081,22 @@ msgid ""
 "to the top right of the H of ladders in the middle.  This will cause all the "
 "enemies not in the far right section to move into the left section."
 msgstr ""
+"Nejprve seberte kus zlata pod levou stranou sloupů ve tvaru čísla 11 a poté "
+"vezměte kus na základně levé 1 uprostřed čísla 11. Nyní seskočte na podlahu "
+"těsně nalevo od dvojité vysoké zdi. Nepřátelé se rozdělí do různých sekcí.  "
+"Nyní musíte udělat tři věci: sebrat zlato v levé a střední části, vzít zlato "
+"nepřátelům napravo od vás, když jste na podlaze, a nalákat co nejvíce "
+"nepřátel do části nalevo od čísla 11.\n"
+"\n"
+"První dva úkoly jsou relativně snadné: poslední úkol lze splnit několika "
+"způsoby.  Pokud vyběhnete po středním žebříku a přesunete se doleva, můžete "
+"počkat nad pravou stranou tyčí (případně seskočit na tyče) a nalákat po "
+"několika nepřátelích najednou ze střední části do levé části.  Při tom "
+"můžete také sebrat jeden nebo dva kusy zlata.\n"
+"\n"
+"Jakmile budete mít všechno zlato (kromě kousků napravo od čísla 11), běžte "
+"do pravého horního rohu písmene H tvořeného žebříky uprostřed.  Tím se "
+"všichni nepřátelé, kteří nejsou v pravé krajní části, přesunou do levé části."
 
 #: gamedata/game_cnt.txt:76
 #, kde-format
@@ -779,6 +1135,35 @@ msgid ""
 "last, you should be able to escape without much difficultly.  Otherwise, the "
 "enemies trapped on the far left will cut off your escape route."
 msgstr ""
+"Toto je pomalá úroveň s dlouhým čekáním, než se nepřátelé přesunou tam, kam "
+"chcete.\n"
+"\n"
+"Na začátku se vrhněte na nejbližšího nepřítele, jakmile padne tak se  "
+"přesuňte se na pravé tyče, abyste získali zlatý kousek těsně pod ním. Než na "
+"tento zlatý kousek spadnete, nezapomeňte počkat na otvor mezi nepřáteli "
+"dole.\n"
+"\n"
+"Mřížka 12 políček vpravo je užitečná. Pokud jste na této mřížce, ale pod "
+"jejím vrcholem, nepřátelé šplhající po žebříku hned vlevo od mřížky na "
+"mřížku nespadnou a nepronásledují vás. Můžete počkat blízko spodní části "
+"mřížky, dokud se nepřátelé nepohnou nad jámy s cihlami a betonem vlevo dole, "
+"a pak můžete spadnout na podlahu. To způsobí, že nepřátelé spadnou do jámy a "
+"uvíznou.\n"
+"\n"
+"Dalším užitečným trikem je počkat nahoře na žebříku úplně vlevo (kde "
+"začínáte úroveň). Všichni nepřátelé, kteří jsou dostatečně daleko, přeběhnou "
+"přes mřížku s krabicemi a spadnou do oblasti vpravo.\n"
+"\n"
+"Chcete-li získat zlato v oblasti podlahy úplně vlevo, musíte druhou část "
+"podlahy zaplnit nepřáteli a vykopat čtverce, které blokují nepřátele v "
+"oblasti úplně vlevo. Možná budete chtít toto zlato ztratit (tj. nepřítel "
+"nesoucí zlato vstoupí do vykopaného čtverce a tam bude zničen), i když je "
+"možné tento kus zlata získat, pokud ho opravdu chcete.\n"
+"\n"
+"Pokud necháte zlato zavěšené úplně vlevo na konec, pak je snadné uniknout "
+"nahoru. Alternativně, pokud necháte zlato uvnitř 2 na konec, měli byste být "
+"schopni uniknout bez větších obtíží. Jinak vám nepřátelé uvěznění úplně "
+"vlevo odříznou únikovou cestu."
 
 #: gamedata/game_cnt.txt:90
 #, kde-format
@@ -803,6 +1188,19 @@ msgid ""
 "reasonable choice is the one held by the three enemies in the lowest leg of "
 "the 3, as is the one in the center arm of the 3."
 msgstr ""
+"Na začátku počkejte na vrcholu levé (nebo lépe pravé) větve žebříků zcela "
+"vlevo, dokud nepřátelé uprostřed nevylezou do poloviny středního žebříku.  "
+"Poté seskočte na vodorovný žebřík, přesuňte se úplně doprava a seskočte na "
+"podlahu, čímž uvězníte několik nepřátel.\n"
+"\n"
+"Abyste získali zlato z různých míst, musíte osvobodit většinu nepřátel z "
+"míst, kde jsou uvězněni.  Zejména musíte osvobodit nepřátele uvězněné v levé "
+"polovině podlahy, abyste získali alespoň jeden kus zlata.  \n"
+"\n"
+"Jakmile seberete poslední kus zlata, nepřátelé se vrhnou na středový žebřík, "
+"takže se budete muset rozhodnout, který kus zlata seberete jako poslední.  "
+"Rozumnou volbou je ten, který drží tři nepřátelé v nejnižší noze trojice, "
+"stejně jako ten ve středním rameni trojice."
 
 #: gamedata/game_cnt.txt:98
 #, kde-format
@@ -827,6 +1225,21 @@ msgid ""
 "of gold in or near the floating 14 at middle right.  Then you can run up the "
 "ladder that appears there."
 msgstr ""
+"Čtyři triky: za prvé, nepřekopávejte nepřátele uvězněné v čtvercích 4 vlevo "
+"až do samého konce (stejně tak, pokud se někdo uvězní ve středním čtverci 4) "
+"– díky tomu vám zůstane méně nepřátel, se kterými se budete muset "
+"vypořádat. \n"
+"\n"
+"Za druhé, budete muset sjet dolů přímo na nepřítele, abyste získali uvězněné "
+"zlato v čtvercích 4 vlevo a plovoucí kousek zlata uprostřed.\n"
+"\n"
+"Za třetí, když uvolníte nepřátele v čtvercích 4 vpravo (a případně i ty dva "
+"v čtvercích 4 vlevo), možná zjistíte, že je snazší vykopat je dvakrát a o ty "
+"kousky zlata přijít.\n"
+"\n"
+"A nakonec je nejjednodušší na konci uniknout, pokud si na konec necháte "
+"kousek zlata v plovoucí 14 uprostřed vpravo nebo v její blízkosti.  Pak "
+"můžete vyběhnout po žebříku, který se tam objeví."
 
 #: gamedata/game_cnt.txt:108
 #, kde-format
@@ -848,6 +1261,16 @@ msgid ""
 "are falling toward the base of the 1 you will be able to rush up the ladder "
 "to the left of the 1 and get the gold to the left of the 1."
 msgstr ""
+"Dvě rady: pokud počkáte na jednom z levých dvou žebříků o jednu příčku níže "
+"než je zlatá mince zavěšená mezi těmito dvěma žebříky, nepřátelé uprostřed "
+"skočí na základnu čísla 5.  To by vám mělo umožnit snadno získat zlato mezi "
+"čísly 1 a 5.\n"
+"\n"
+"Za druhé, pokud počkáte na základně čísla 1 vpravo od něj, nepřátelé napravo "
+"od dvou žebříků nalevo od čísla 1 seskočí z tyče na druhou polovinu základny "
+"čísla 1.  Pokud budete čekat vysoko mezi 1 a 5 a poté skočíte k základně 1, "
+"zatímco nepřátelé padají směrem k základně 1, budete moci vyběhnout po "
+"žebříku nalevo od 1 a získat zlato nalevo od 1."
 
 #: gamedata/game_cnt.txt:114
 #, kde-format
@@ -880,6 +1303,27 @@ msgid ""
 "passing through the middle false floor on the 1 and exiting via the ladders "
 "on the left of the 1."
 msgstr ""
+"Sloupek nalevo od čísla 1 vyžaduje rychlý běh dolů a zpět nahoru, přičemž je "
+"třeba se pečlivě vyhýbat nepřátelům v obou směrech.\n"
+"\n"
+"Chcete-li získat zlato uprostřed čísla 6, seskočte na horní část 'O' čísla "
+"6, přesuňte se doprava/kopejte doleva a okamžitě se přesuňte doleva a "
+"kopejte doleva, abyste zdrželi nepřítele, který by vás jinak pravděpodobně "
+"chytil.  Možná však budete chtít tento kus zlata nechat na konec, abyste "
+"předčasně neuvolnili dva další nepřátele; je však možné přimět dva "
+"nepřátele, aby se v této části sami znovu uvěznili.\n"
+"\n"
+"Chcete-li získat zlato, které drží nepřátelé v pravém dolním rohu, vykopejte "
+"blokující čtverec nalevo od nich, vyběhněte po žebříku, vykopejte pravou "
+"stranu čísla 6, seskočte dovnitř, běžte doleva a vykopejte čtverec na levé "
+"straně čísla 6 a seskočte na podlahu.  Načasování je těsné – pouze jeden "
+"nebo dva nepřátelé v pravém dolním rohu se budou moci přesunout do další "
+"sekce vlevo.  Abyste získali jejich zlato, budete muset ještě vykopat spodní "
+"část čísla 6, ale to je jednoduché, i když trochu hektické kvůli nepřátelům, "
+"kteří se zdržují nalevo od čísla 6.\n"
+"\n"
+"Jakmile získáte všechno zlato, nejjednodušší bude odejít přes prostřední "
+"falešnou podlahu na čísle 1 a vystoupit po žebřících nalevo od čísla 1."
 
 #. i18n:
 #. NOTES: Files 'gamedata/game_*.txt' are KGoldrunner DATA files.  They
@@ -914,12 +1358,12 @@ msgstr ""
 #: gamedata/game_ende.txt:31
 #, kde-format
 msgid "TRANSLATORS: Please see the notes in the translation comment."
-msgstr ""
+msgstr "PŘEKLADATELÉ: Přečtěte si prosím poznámky v komentáři k překladu."
 
 #: gamedata/game_fd.txt:2
 #, kde-format
 msgid "Dig While Falling"
-msgstr ""
+msgstr "Kopat při pádu"
 
 #: gamedata/game_fd.txt:3
 #, kde-format
@@ -928,11 +1372,15 @@ msgid ""
 "a graded introduction to that technique, composed by Jason Self (j at jxself "
 "org). Every level has a recorded solution, also provided by Jason."
 msgstr ""
+"Ve soutěžních hrách často musíte kopat i během pádu. Tyto úrovně představují "
+"postupný úvod do této techniky a jejich autorem je Jason Self (j@jxself."
+"org). Ke každé úrovni je k dispozici nahrané řešení, které rovněž poskytl "
+"Jason."
 
 #: gamedata/game_GMEP.txt:2
 #, kde-format
 msgid "Jail Break"
-msgstr ""
+msgstr "Útěk z vězení"
 
 #: gamedata/game_GMEP.txt:3
 #, kde-format
@@ -948,6 +1396,15 @@ msgid ""
 "composed by Gabriel Miltschitzky [gabriel dot miltschitzky at freenet de]. "
 "You need to dig while falling sometimes."
 msgstr ""
+"Byli jste zatčeni za krádeže, loupeže a za to, že jste několikrát nachytali "
+"své nepřátele do pasti, a nyní jste uvězněni.\n"
+"\n"
+"Policie je zde však nemilosrdná a pokud se pokusíte o útěk, bez váhání vás "
+"zabijí...  Buďte tedy opatrní a hlavně: buďte rychlí – jinak zemřete!\n"
+"\n"
+"Tyto mistrovské úrovně využívají rychlá a svérázná pravidla KGoldrunner a "
+"jejich autorem je Gabriel Miltschitzky [gabriel dot miltschitzky at freenet "
+"de]. Někdy budete muset kopat i během pádu."
 
 #: gamedata/game_GMEP.txt:10
 #, kde-format
@@ -962,11 +1419,15 @@ msgid ""
 "It is very easy to escape from this prison, because the guards themselves "
 "are trapped and cannot touch you..."
 msgstr ""
+"Jak už název úrovně napovídá, není vůbec žádný důvod k panice.\n"
+"\n"
+"Z tohoto vězení se dá velmi snadno uniknout, protože strážci jsou sami "
+"uvězněni a nemohou se vás dotknout..."
 
 #: gamedata/game_GMEP.txt:16
 #, kde-format
 msgid "Robbery"
-msgstr ""
+msgstr "Loupež"
 
 #: gamedata/game_GMEP.txt:17
 #, kde-format
@@ -976,11 +1437,16 @@ msgid ""
 "The trick is to tie up your enemies. If you can make each one fall onto a "
 "concrete block, that might help. On the other hand, you can just run a lot..."
 msgstr ""
+"Teď, když jste znovu na svobodě, potřebujete někde sehnat nějaké peníze.\n"
+"\n"
+"Trik spočívá v tom, že musíte své nepřátele znehybnit. Pokud se vám podaří "
+"každého z nich srazit na betonový blok, mohlo by to pomoci. Na druhou stranu "
+"můžete prostě hodně běhat..."
 
 #: gamedata/game_GMEP.txt:22
 #, kde-format
 msgid "Use the Guards"
-msgstr ""
+msgstr "Využijte stráže"
 
 #: gamedata/game_GMEP.txt:23
 #, kde-format
@@ -990,11 +1456,15 @@ msgid ""
 "When you reach the ladders on the right, wait for one guard to jump, then "
 "walk over his head to fetch the gold."
 msgstr ""
+"Možná jsou nemilosrdní, ale jsou předvídatelní.\n"
+"\n"
+"Až se dostanete k žebříkům napravo, počkejte, až jeden strážný vyskočí, a "
+"pak přejděte přes jeho hlavu, abyste si vzali zlato."
 
 #: gamedata/game_GMEP.txt:28
 #, kde-format
 msgid "Falling Enemies (1) - Finding A Way"
-msgstr ""
+msgstr "Padající nepřátelé (1) – Hledání cesty"
 
 #: gamedata/game_GMEP.txt:29
 #, kde-format
@@ -1004,16 +1474,20 @@ msgid ""
 "If there is more than one gap to cross, first make the enemies walk right, "
 "then start walking on their heads."
 msgstr ""
+"Využijte své nepřátele tak, že budete chodit po jejich hlavách.\n"
+"\n"
+"Pokud je třeba překonat více než jednu mezeru, nejprve nechte nepřátele jít "
+"doprava a teprve poté začněte chodit po jejich hlavách."
 
 #: gamedata/game_GMEP.txt:34
 #, kde-format
 msgid "Falling Enemies (2) - Digging"
-msgstr ""
+msgstr "Padající nepřátelé (2) – Kopání"
 
 #: gamedata/game_GMEP.txt:35
 #, kde-format
 msgid "Start the level with a click. The rest should be self-explanatory..."
-msgstr ""
+msgstr "Kliknutím spusťte úroveň. Zbytek by měl být zřejmý..."
 
 #: gamedata/game_GMEP.txt:38
 #, kde-format
@@ -4175,7 +4649,7 @@ msgstr ""
 #: gamedata/game_plws.txt:182
 #, kde-format
 msgid "The Rose"
-msgstr ""
+msgstr "Růže"
 
 #: gamedata/game_plws.txt:185
 #, kde-format
@@ -4788,7 +5262,7 @@ msgstr ""
 #: gamedata/game_sot.txt:18
 #, kde-format
 msgid "The Spiral"
-msgstr ""
+msgstr "Spirála"
 
 #: gamedata/game_sot.txt:19
 #, kde-format
@@ -6379,7 +6853,7 @@ msgstr "Má radu"
 #: src/kgoldrunner.cpp:761
 #, kde-format
 msgid "No hint"
-msgstr "žádná rada"
+msgstr "Žádná rada"
 
 #: src/kgoldrunner.cpp:878
 #, kde-format
@@ -7134,7 +7608,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Replay Any Level"
-msgstr "Hrát jakoukoliv úroveň..."
+msgstr "Hrát jakoukoliv úroveň"
 
 #: src/kgrgame.cpp:849 src/kgrgame.cpp:2057
 #, kde-format
@@ -7329,7 +7803,7 @@ msgstr "Zobrazit nejvyšší skóre"
 #: src/kgrgame.cpp:1825
 #, kde-format
 msgid "Sorry, we do not keep high scores for tutorial games."
-msgstr "Lituji, pro výukovou hru se neudržuje nejvyšší skóre"
+msgstr "Lituji, pro výukovou hru se neudržuje nejvyšší skóre."
 
 #: src/kgrgame.cpp:1848
 #, kde-format
