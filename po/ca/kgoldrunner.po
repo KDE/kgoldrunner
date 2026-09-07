@@ -1,10 +1,10 @@
 # Translation of kgoldrunner.po to Catalan
-# Copyright (C) 2009-2024 This_file_is_part_of_KDE
+# Copyright (C) 2009-2026 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # SPDX-FileCopyrightText: 2014, 2020-2023 Antoni Bella Pérez <antonibella5@yahoo.com>
-# SPDX-FileCopyrightText: 2009-2024 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2009-2024, 2026 Josep M. Ferrer <txemaq@gmail.com>
 # SPDX-FileCopyrightText: 2009-2010 Manuel Tortosa Moreno <manutortosa@gmail.com>
 # SPDX-FileCopyrightText: 2010-2011 Manuel Tortosa <manutortosa@chakra-project.org>
 msgid ""
@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:49+0000\n"
-"PO-Revision-Date: 2024-05-07 12:30+0200\n"
+"PO-Revision-Date: 2026-09-06 18:40+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -395,7 +395,7 @@ msgid ""
 "Sphinx: how do you get past the horde of mummies on the right?"
 msgstr ""
 "La gran esfinx és la guardiana de l'altiplà de Gizeh, on s'enfronta al sol. "
-"Amb els seus 73 metres de llarg i 20 metres d'alçada, és l'estàtua "
+"Amb els seus 73 metres de llarg i 20 metres d'altura, és l'estàtua "
 "monolítica més gran del món i només té 4500 anys de joventut.\n"
 "\n"
 "Mentre agafes el tresor dintre de l'esfinx, intenta resoldre l'enigma de "
@@ -1694,7 +1694,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:82
 #, kde-format
 msgid "Caught In The Heights"
-msgstr "Atrapat a les alçades"
+msgstr "Atrapat a les altures"
 
 #: gamedata/game_GMEP.txt:83
 #, kde-format
@@ -2183,7 +2183,7 @@ msgstr ""
 "apareixeran a l'esquerra.\n"
 "\n"
 "Per a fer que els enemics en els quadres de l'esquerra es moguin a la "
-"posició mentre t'escapes, només cal romandre a la mateixa alçada en un "
+"posició mentre t'escapes, només cal romandre a la mateixa altura en un "
 "costat o l'altre."
 
 #: gamedata/game_GMGR.txt:120
@@ -2720,7 +2720,7 @@ msgstr ""
 "Per a assegurar-te que t'està seguint, de vegades has d'esperar fins que "
 "gairebé t'atrapa abans de moure't -en cas contrari, girarà-.\n"
 "\n"
-"Últim consell: de vegades és important l'alçada exacta a la qual et pares en "
+"Últim consell: de vegades és important l'altura exacta a la qual et pares en "
 "una escala, mentre esperes que el zombi caigui -especialment en l'últim "
 "forat-."
 
@@ -2867,7 +2867,7 @@ msgstr ""
 "de l'escala més a l'esquerra. Troba el moment adequat per a caminar per "
 "sobre del seu cap i arribar a l'escala següent. Ara cava els dos maons "
 "superiors just al costat, salta cap a la dreta per a passar el zombi i atreu-"
-"lo cap a la bretxa de la dreta baixant l'escala fins a la mateixa alçada."
+"lo cap a la bretxa de la dreta baixant l'escala fins a la mateixa altura."
 
 #: gamedata/game_GotD.txt:137
 #, kde-format
@@ -3255,7 +3255,7 @@ msgstr ""
 "d'estar a les escales que condueixen a la dreta.\n"
 "\n"
 "Els zombis de la dreta són una mica difícils de tractar. Anar a la mateixa "
-"alçada que el zombi de dalt farà que comencin a donar voltes, però "
+"altura que el zombi de dalt farà que comencin a donar voltes, però "
 "s'aturaran tan aviat com passis per sobre seu. Es requereix un bon moment "
 "esperant a baix el temps suficient perquè comencin a donar voltes i després "
 "pujar les escales el més ràpid possible per a passar per sobre dels seus "
@@ -3912,7 +3912,7 @@ msgstr ""
 "just.\n"
 "\n"
 "Sigues prou ràpid per a arribar a l'escala de l'esquerra abans que el segon "
-"enemic et barri el pas, després baixa a la mateixa alçada del pou de la "
+"enemic et barri el pas, després baixa a la mateixa altura del pou de la "
 "dreta. L'enemic passarà per sobre teu i caurà dins del pou. Agafa l'or de la "
 "dreta, cava els maons de l'esquerra, atrau el tercer enemic en un maó fals i "
 "puja per sobre el seu cap per a escapar cap amunt.\n"
@@ -4324,7 +4324,7 @@ msgid ""
 msgstr ""
 "Espera el primer enemic en el fons. Les dues escales grans us donaran una "
 "oportunitat d'avançar-lo. Puja per l'escala de l'extrem dret a la mateixa "
-"alçada que les dues escales. Llavors l'enemic les pujarà i no causarà cap "
+"altura que les dues escales. Llavors l'enemic les pujarà i no causarà cap "
 "altre problema.\n"
 "\n"
 "L'enemic que guarda l'or es pot passar en el maó de l'extrem esquerre dels "
