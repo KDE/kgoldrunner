@@ -3,14 +3,15 @@
 # Toplica Tanaskovic <toptan@kde.org.yu>, 2003.
 # Chusslove Illich <caslav.ilic@gmx.net>, 2004, 2005, 2014, 2015, 2017.
 # Slobodan Simic <slsimic@gmail.com>, 2009.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:49+0000\n"
-"PO-Revision-Date: 2017-09-28 17:59+0200\n"
-"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"PO-Revision-Date: 2026-10-09 22:50+0200\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@latin\n"
 "MIME-Version: 1.0\n"
@@ -22,18 +23,18 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 "X-Environment: kde, kgoldrunner\n"
-"X-Associated-UI-Catalogs: kgoldrunner.desktop kconfigwidgets5 "
-"kwidgetsaddons5_qt kxmlgui5\n"
+"X-Associated-UI-Catalogs: kgoldrunner._desktop_ kconfigwidgets6 "
+"kwidgetsaddons6_qt kxmlgui6\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Slobodan Simić,Časlav Ilić"
+msgstr "Slobodan Simić,Časlav Ilić,Nemanja Hiršl"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "slsimic@gmail.com,caslav.ilic@gmx.net"
+msgstr "slsimic@gmail.com,caslav.ilic@gmx.net,nemhirsl@gmail.com"
 
 #: gamedata/game_blb.txt:3
 #, kde-format
@@ -58,7 +59,7 @@ msgstr ""
 "\n"
 "Igra je namenjena novim igračima, ali su kasniji nivoi dosta teški, i zato "
 "posmatrajte kako neprijatelji reaguju na vaše poteze dok napredujete. "
-"Moraćete dobro da se uvežbate do trenutka kad stignete na 70. nivo.\n"
+"Moraćete dobro da ih izvežbate do trenutka kad stignete na 70. nivo.\n"
 "\n"
 "Većinu rešenja dao je Džejson, a neka Ijan Vadam."
 
@@ -155,7 +156,7 @@ msgstr ""
 "Arheološki ostaci Džoserove stepenaste piramide nalaze se u nekropoli u "
 "Sakari, Egiptu, severozapadno od grada Memfisa.\n"
 "\n"
-"Ovaj nivo prelazite u tri koraka. Prvo oslobodite mumiju na levoj strani "
+"Ovaj nivo prelazite korak po korak. Prvo oslobodite mumiju na levoj strani "
 "drugog nivoa (gledano od dna), omogućivši joj da upadne u skrivenu rupu na "
 "prizemnom nivou i popuni je.\n"
 "\n"
@@ -165,8 +166,8 @@ msgstr ""
 "\n"
 "Mumija na trećem nivou je malo problematična, zato što će uzeti parče blaga "
 "i nositi ga sa sobom. Možda vam se posreći pa ispusti to blago u nekom "
-"trenutku, ali je, uz pažljivo tempiranje, takođe možete zarobiti u jednoj od "
-"prokopivih cigala desno.\n"
+"trenutku, ali je, uz pažljivo tempiranje, takođe možete zarobiti u jedinoj "
+"prokopivoj cigli desno.\n"
 "\n"
 "Konačno, pre nego što pokupite poslednje parče blaga, obavezno otvorite "
 "donji desni kraj stepenaste piramide kako bi mumije desno mogle da uđu — ako "
@@ -273,8 +274,8 @@ msgstr ""
 "4,85 metara. Više vrsta je uočeno kako napadaju i ubijaju ajkule.\n"
 "\n"
 "Sobek je bio božanstvo krokodila. Egipćani koji su radili i putovali Nilom "
-"nadali su da će ih Sobek, krokodilski bog, zaštititi od napada krokodila ako "
-"mu se budu molili.\n"
+"nadali su se da će ih Sobek, krokodilski bog, zaštititi od napada krokodila "
+"ako mu se budu molili.\n"
 "\n"
 "Na ovom nivou, krokodili nisu oni kojih se treba plašiti. Pa ipak, molitva "
 "Sobeku vam može pomoći da izbegnete mumijama dok sakupljate blago."
@@ -388,7 +389,7 @@ msgid ""
 "Sphinx: how do you get past the horde of mummies on the right?"
 msgstr ""
 "Velika sfinga je čuvar platoa u Gizi, gde stoji okrenuta izlazećem suncu. "
-"Dugačka 73 metara i visoka 20 metara, najveći je monolitni kip na svetu. "
+"Dugačka 73 metra i visoka 20 metara, najveći je monolitni kip na svetu. "
 "Stara je 4500 godina.\n"
 "\n"
 "Dok skupljate blago unutar sfinge, pokušajte da rešite Sfinginu zagonetku: "
@@ -451,7 +452,7 @@ msgid ""
 "To keep your life on this level, be careful of the false bricks in the main "
 "Ankh and figure out which of them are useful."
 msgstr ""
-"Ank je egipatski hijeroglif koji znači ‘život’, i budući simbol sunca, skoro "
+"Ank je egipatski hijeroglif koji znači „život“, i budući simbol sunca, skoro "
 "uvek je izrađivan od zlata.\n"
 "\n"
 "Da biste sačuvali život na ovom nivou, pazite na lažne cigle u glavnom anku, "
@@ -486,10 +487,10 @@ msgstr ""
 "Piramida na ovom nivou sagrađena je sa manje od 100 blokova. Na početku "
 "vrdajte da uđete u piramidu, pa stanite na jedne od merdevina na drugom "
 "sloju najbližem spoljašnjem zidu na levoj strani piramide. Sačekajte dok se "
-"mumije na okupe na drugoj strani spoljašnjeg zida. Zatim se popnite na vrh "
+"mumije ne okupe na drugoj strani spoljašnjeg zida. Zatim se popnite na vrh "
 "merdevina, na malu piramidu, pa sačekajte da se mumije popnu uz visoke "
 "merdevine i popadaju sa šipke. Pošto poslednja padne (ili malčice pre toga), "
-"ustrčite uz visoke merdevine, preko šipke, pa se kopanjem vratite u nazad "
+"ustrčite uz visoke merdevine, preko šipke, pa se kopanjem vratite nazad u "
 "veliku piramidu i u grobnicu.\n"
 "\n"
 "Ponovite ovu taktiku da pobegnete pošto pokupite usamljeni komad blaga, samo "
@@ -550,7 +551,7 @@ msgid ""
 "the mummies on the ladder above you and maneuver ... and hope!"
 msgstr ""
 "Imhotep je projektovao Džoserovu stepenastu piramidu da služi kao neizmerno "
-"stepenište kojom bi se duša preminulog faraona uspela na nebo. Tolika je "
+"stepenište kojim bi se duša preminulog faraona uspela na nebo. Tolika je "
 "bila važnost Imhotepovog dostignuća, da su ga kasniji Egipćani uzimali za "
 "božanstvo.\n"
 "\n"
@@ -661,7 +662,7 @@ msgstr ""
 "se nadole sa najdešnjih merdevina u oku, i propašćete do šipke ispod.\n"
 "\n"
 "Za blago unutar desnog uha, prokopajte viši od stubova sa dva bloka, tako da "
-"padnete na desni od njih. Pomerite se levo i prokopajte drugi stub. Zatim se "
+"padnete na desni od njih. Pomerite se levo i prokopajte drugi stub. Zatim "
 "pređite desno i prokopajte stub sa jednim blokom, oslobodivši mumiju. Još "
 "jednom desno, pa prokopajte tri bloka tako da vam za stajanje ostane ispust "
 "od dva bloka. Pomerite se levo i prokopajte polje desno. Sačekajte da mumija "
@@ -961,7 +962,7 @@ msgstr ""
 "kroz dno 6.\n"
 "\n"
 "Drugi korak je da otkrijete kako isterati sve neprijatelje sa merdevina na "
-"levoj strani ekrana. Jedan način je stanete na vrh velikog 6 u sredini i "
+"levoj strani ekrana. Jedan način je da stanete na vrh velikog 6 u sredini i "
 "sačekate ih da dođu preko šipki. Tada padnite na pod i pređite na merdevine."
 
 #: gamedata/game_cnt.txt:46
@@ -1092,7 +1093,7 @@ msgstr ""
 "središnjem delu, uzmite zlato od neprijateljâ̂ desno od sebe kada ste na "
 "podu, pa namamite što više neprijatelja u deo levo od 11.\n"
 "\n"
-"Prva dva zadataka relativno su laka. Poslednji zadatak može da se izvede na "
+"Prva dva zadatka relativno su laka. Poslednji zadatak može da se izvede na "
 "više načina. Ako ustrčite uz središnje merdevine i pomerite se levo, možete "
 "da čekate iznad desne strane šipki (možda i padnuvši na šipke) i s vremena "
 "na vreme namamite po nekoliko neprijatelja iz središnjeg u levi deo. Dok se "
@@ -1306,7 +1307,7 @@ msgid ""
 "passing through the middle false floor on the 1 and exiting via the ladders "
 "on the left of the 1."
 msgstr ""
-"Stubac levo jedinice traži da se brzo strči i ustrči, uz pažljivo "
+"Stubac levo od jedinice traži da se brzo strči i ustrči, uz pažljivo "
 "izvrdavanje neprijatelja u oba smera.\n"
 "\n"
 "Da pokupite zlato u sredini šestice, spadnite na gornji deo trbuha šestice, "
@@ -1320,13 +1321,13 @@ msgstr ""
 "blokirajuće polje s njihove leve strane, ustrčite uz merdevine, prokopajte "
 "desnu stranu šestice, upadnite unutra, trčite levo, prokopajte polje na "
 "levoj strani šestice i padnite na pod. Tempiranje je tesno — samo jedan ili "
-"dva neprijatelja iz donjeg desno odeljka moći će da pređu u naredni odeljak "
+"dva neprijatelja iz donjeg desnog odeljka moći će da pređu u naredni odeljak "
 "levo. I dalje ćete morati da prokopate dno šestice da im otmete zlato, ali "
 "to je jednostavno, iako pomalo napeto zbog neprijatelja koji se vrzmaju levo "
 "od šestice.\n"
 "\n"
 "Pošto pokupite svo zlato, možda će vam biti najlakše da pobegnete prolaskom "
-"kroz srednja lažna vrata na jedinici, pa preko merdevina levo od jedinice."
+"kroz srednji lažni pod na jedinici, pa preko merdevina levo od jedinice."
 
 # rewrite-msgid: /.*/./
 #. i18n:
@@ -1480,7 +1481,7 @@ msgstr ""
 "Iskoristite neprijatelje prelazeći im preko glava.\n"
 "\n"
 "Ako treba da prekoračite više od jednog procepa, prvo namamite neprijatelje "
-"da pođu desno, zatim im krenite pre glava."
+"da pođu desno, zatim im krenite preko glava."
 
 #: gamedata/game_GMEP.txt:34
 #, kde-format
@@ -1633,7 +1634,7 @@ msgstr ""
 "Ovaj nivo jeste težak, ali nikako nemoguć.\n"
 "\n"
 "Otarasite se prve grupe stražara namamivši ih do dna. Evo kako. Idite do "
-"najnižih merdevine i sačekajte trenutak na najdešnjim niskim merdevinama, "
+"najnižih merdevina i sačekajte trenutak na najdešnjim niskim merdevinama, "
 "zatim se brzo vratite ulevo tako da samo jedan neprijatelj pođe za vama. "
 "Čekajte na najlevljim niskim merdevinama dok i on ne dosegne najniže "
 "merdevine, zatim se brzo popenjite nagore i ulevo. On će skočiti na zemlju. "
@@ -1655,7 +1656,7 @@ msgstr ""
 #: gamedata/game_GMEP.txt:82
 #, kde-format
 msgid "Caught In The Heights"
-msgstr "Primećen na proplanku"
+msgstr "Uhvaćen na visini"
 
 #: gamedata/game_GMEP.txt:83
 #, kde-format
@@ -1663,8 +1664,8 @@ msgid ""
 "As soon as you move down they will chase you till you are dead. So you are "
 "advised to plan an exact route before you start your escape attempt."
 msgstr ""
-"Čim vas vide, juriće vas sve dok ne klonete. Zato tačno isplanirajte putanju "
-"pre nego što se date u pokušaj bekstva."
+"Čim se spustite, juriće vas sve dok ne klonete. Zato tačno isplanirajte "
+"putanju pre nego što se date u pokušaj bekstva."
 
 #: gamedata/game_GMEP.txt:86
 #, kde-format
@@ -1814,7 +1815,7 @@ msgstr "Kopač zlata"
 #: gamedata/game_GMGR.txt:23
 #, kde-format
 msgid "My suggestion: dig!"
-msgstr "Predlog: kopaj!"
+msgstr "Moj predlog: kopajte!"
 
 #: gamedata/game_GMGR.txt:26
 #, kde-format
@@ -1942,7 +1943,7 @@ msgid ""
 "digging through. If you go all the way round, the enemy will chase you and "
 "block your exit."
 msgstr ""
-"Neke neprijatelje možete izbeći nalaženjem lažne cigle kroz koji biste "
+"Neke neprijatelje možete izbeći nalaženjem lažne cigle kroz koju biste "
 "propali. Što se tiče ostalih, morate naći mesto gde možete kopati ili ih "
 "zaobići.\n"
 "\n"
@@ -2286,12 +2287,12 @@ msgctxt ""
 "level to the next by using the Y key and you can prevent a level from "
 "playing by using the Pause key (P or Escape)."
 msgid " "
-msgstr ""
+msgstr " "
 
 #: gamedata/game_GotD.txt:3
 #, kde-format
 msgid "Gold Of The Living Dead"
-msgstr ""
+msgstr "Zlato živih mrtvaca"
 
 #: gamedata/game_GotD.txt:4
 #, kde-format
@@ -2303,11 +2304,17 @@ msgid ""
 "Fifty Championship levels, including hints and recorded solutions, from "
 "Gabriel Miltschitzky, April 2021."
 msgstr ""
+"Zombi apokalipsa je stigla i vi ste poslednje živo ljudsko biće na Zemlji, "
+"ali zombiji još uvek imaju gomilu zlata. Međutim, pošto su zombiji, više ih "
+"zanimate vi nego blago...\n"
+"\n"
+"Pedeset šampionskih nivoa, sa savetima i snimljenim rešenjima; sastavio "
+"Gabrijel Milčicki, april 2021."
 
 #: gamedata/game_GotD.txt:9
 #, kde-format
 msgid "Last Person On Earth"
-msgstr ""
+msgstr "Poslednji čovek na Zemlji"
 
 #: gamedata/game_GotD.txt:10
 #, kde-format
@@ -2341,11 +2348,39 @@ msgid ""
 "give you more room for error, because you will not get killed when the brick "
 "refills."
 msgstr ""
+"Vi ste jedino ljudsko biće koje je preživelo zombi apokalipsu, a i dalje ne "
+"mislite ni na šta osim na svoje zlato? Dobro onda, da vidimo koliko će vam "
+"ono vredeti...\n"
+"\n"
+"Prvi savet: svaki nivo ima snimljeno rešenje, pa kad ste u nedoumici, "
+"pogledajte ga. Drugi savet: lako možete da se zaglavite ako niste bili "
+"dovoljno pametni da pripremite put za bekstvo pre nego što krenete po neko "
+"zlato.\n"
+"\n"
+"U donjem desnom uglu treba vam tempirano kopanje da pripremite taj put za "
+"bekstvo. Iskopajte najvišu ciglu pored merdevina, zatim malo sačekajte i "
+"iskopajte cigle ispod nje, tačno pre nego što se gornja ponovo popuni. Tako "
+"ćete moći da pređete preko gornje cigle i da na povratku protrčite kroz "
+"donje.\n"
+"\n"
+"Među komadima zlata u sredini ima propadnih cigala (ili zamki) koje mogu da "
+"vas uhvate. Najbolje je da prvo pokupite spoljne stubove zlata. Na drugim "
+"mestima ćete možda morati da kopate dok propadate kroz zamke.\n"
+"\n"
+"Donji levi ugao je prilično užurban. Put za bekstvo za najlevlje zlato je "
+"desno, gde su dva komada zlata. Ostavite tamo rupu pre nego što pređete na "
+"levu stranu. Da biste pokupili najlevlje zlato i vratili se na vreme, "
+"pokušajte da iskopate rupe sa obe svoje strane odjednom.\n"
+"\n"
+"Čak i uz ovaj savet, tempiranje će biti tesno. Možete da uštedite malo "
+"vremena ako iskopate samo treću ciglu odozgo pored merdevina. Dok se "
+"spuštate nazad sleva, iskopajte ciglu desno koja vam blokira izlaz. Tako "
+"ćete imati više slobode za grešku, jer nećete poginuti kad se cigla popuni."
 
 #: gamedata/game_GotD.txt:23
 #, kde-format
 msgid "A Little Digging Warm-Up"
-msgstr ""
+msgstr "Malo zagrevanja u kopanju"
 
 #: gamedata/game_GotD.txt:24
 #, kde-format
@@ -2359,11 +2394,18 @@ msgid ""
 "back out need you to dig bricks on both sides at the same time, by pressing "
 "both mouse keys."
 msgstr ""
+"Ovaj nivo je dobra prilika da uvežbate neke veštine kopanja koje će vam "
+"trebati na kasnijim nivoima.\n"
+"\n"
+"Iako je prilično jednostavan, na kraju vas čeka mala pakosna zamka. Da biste "
+"je izbegli, morate zlatu da priđete s leve strane, što je mala zagonetka "
+"tempiranja kopanja. Za poslednje korake do zlata i nazad morate da kopate "
+"cigle na obe strane istovremeno, pritiskom na oba dugmeta miša."
 
 #: gamedata/game_GotD.txt:29
 #, kde-format
 msgid "Patient Zero"
-msgstr ""
+msgstr "Nulti pacijent"
 
 #: gamedata/game_GotD.txt:30
 #, kde-format
@@ -2379,6 +2421,15 @@ msgid ""
 "P.S. Sometimes he appears somewhere he really should not. If so, you can "
 "only kill the hero and restart the level. Sorry for that one!"
 msgstr ""
+"Pazite! Ovo je zombi. Čim ga pustite, pokušaće da vas ubije!\n"
+"\n"
+"S druge strane, nema drugog puta pored njega...\n"
+"\n"
+"Ipak, nije sasvim beskoristan. Hodanjem po njegovoj glavi moći ćete da "
+"dosegnete neke komade zlata koji bi inače bili van domašaja.\n"
+"\n"
+"P. S. Ponekad se pojavi negde gde zaista ne bi trebalo. Ako se to desi, "
+"možete samo da ubijete junaka i ponovo pokrenete nivo. Izvinite zbog toga!"
 
 #: gamedata/game_GotD.txt:39 gamedata/game_plws.txt:113
 #, kde-format
@@ -2388,7 +2439,7 @@ msgstr "Cik‑cak"
 #: gamedata/game_GotD.txt:40
 #, kde-format
 msgid "This is as easy as it gets..."
-msgstr ""
+msgstr "Lakše od ovoga ne biva..."
 
 #: gamedata/game_GotD.txt:43 gamedata/game_wad.txt:63
 #, kde-format
@@ -2402,12 +2453,14 @@ msgid ""
 "on top of a ladder until a zombie comes really close to you and then you "
 "sneak away beneath him at the right moment."
 msgstr ""
+"Najgori deo je možda izbegavanje zombija na početku. Morate da čekate na "
+"vrhu merdevina dok vam se zombi sasvim ne približi, a onda da se u pravom "
+"trenutku izvučete ispod njega."
 
 #: gamedata/game_GotD.txt:47
-#, fuzzy, kde-format
-#| msgid "Infiltration"
+#, kde-format
 msgid "Manipulation"
-msgstr "Infiltracija"
+msgstr "Manipulacija"
 
 #: gamedata/game_GotD.txt:48
 #, kde-format
@@ -2437,21 +2490,44 @@ msgid ""
 "right and wait there until they are near - the distance they keep if you do "
 "not change anything is ideal."
 msgstr ""
+"Zombijima može da se manipuliše tako da idu i u drugim pravcima, a ne samo "
+"pravo ka vama. Na primer, mogu da pobegnu od vas ako ste ispod njih na "
+"merdevinama (ali ne na dnu merdevina). To saznanje može da vam sačuva život "
+"kad nemate gde da kopate, a može biti i veoma korisno kad želite da se "
+"popnete uz merdevine na viši nivo.\n"
+"\n"
+"Poseban slučaj je kad je jedan zombi blizu ispod vas na merdevinama, a drugi "
+"iznad vas. Tada gornji neće pobeći, već će se spustiti ka vama. Ali obično "
+"će se okrenuti tačno pre nego što vas dohvati. Ovo će vas dočekati na samom "
+"početku i traži jake živce, ali ne bi trebalo da bude preteško kad znate "
+"kako će reagovati.\n"
+"\n"
+"Još jedan koristan trik je da stanete na neki nivo, ali podalje levo ili "
+"desno od jednog ili više zombija. Oni mogu da odu na taj nivo i tu se ukoče, "
+"ako nema direktnog puta do vas, ili mogu da posrću ka vama i upadnu u jamu — "
+"stalnu ili tek iskopanu.\n"
+"\n"
+"P. S. Kad ste na donjim desnim merdevinama, moguće je preći preko oba "
+"zombija, čak i ako su malo razdvojeni. U stvari, ključno je da ih držite "
+"minimalno razdvojene, inače će jedan od njih hodati drugom po glavi i "
+"onemogućiti vam da stignete do merdevina na levoj strani, koje vode do vrha. "
+"Samo idite pravo do merdevina dole desno i čekajte tamo dok se ne približe — "
+"rastojanje koje drže ako ništa ne menjate je idealno."
 
 #: gamedata/game_GotD.txt:57
 #, kde-format
 msgid "Do Not Worry"
-msgstr ""
+msgstr "Ne brinite"
 
 #: gamedata/game_GotD.txt:58
 #, kde-format
 msgid "Come on, they are completely harmless ;-)"
-msgstr ""
+msgstr "Ma hajde, potpuno su bezopasni ;-)"
 
 #: gamedata/game_GotD.txt:61
 #, kde-format
 msgid "They Are So Many!"
-msgstr ""
+msgstr "Ima ih baš mnogo!"
 
 #: gamedata/game_GotD.txt:62
 #, kde-format
@@ -2471,11 +2547,24 @@ msgid ""
 "somewhere. Given time, some of them will not appear above the bricks and "
 "will fall to the floor, which will make this level a bit easier for you."
 msgstr ""
+"Možda ćete primetiti da nisu svi zombiji podjednako brzi. Oni koji se okupe "
+"u veće grupe sporiji su od pojedinačnih — bar malo olakšanje.\n"
+"\n"
+"Uzimaju i zlato — verovatno stari instinkt iz njihovog pređašnjeg života.\n"
+"\n"
+"Ovde je to, međutim, korisno, jer mogu da vam donesu zlato dole.\n"
+"\n"
+"Zamke postavljajte promišljeno: nemate neograničeno prostora da im "
+"izmičete.\n"
+"\n"
+"Primetite i da su zombiji nekako besmrtni: svi će se ponovo negde pojaviti. "
+"Vremenom se neki od njih neće pojaviti iznad cigala, već će pasti na pod, "
+"što će vam malo olakšati ovaj nivo."
 
 #: gamedata/game_GotD.txt:73
 #, kde-format
 msgid "Never Trust The H-Ladders"
-msgstr ""
+msgstr "Nikad ne verujte S‑merdevinama"
 
 #: gamedata/game_GotD.txt:74
 #, kde-format
@@ -2486,11 +2575,16 @@ msgid ""
 "heads. Going up immediately will help you to group them. Make sure no zombie "
 "is walking on the others' heads when you lure them towards you."
 msgstr ""
+"Mislite da su vam merdevine prekratke?\n"
+"\n"
+"Po mom mišljenju, S‑merdevine su dovoljno visoke da se popnete preko glava "
+"zombija. Ako se odmah popnete, lakše ćete ih grupisati. Pazite da nijedan "
+"zombi ne hoda drugima po glavama kad ih mamite ka sebi."
 
 #: gamedata/game_GotD.txt:79
 #, kde-format
 msgid "Please Do Let Me Pass!"
-msgstr ""
+msgstr "Pustite me da prođem, molim vas!"
 
 #: gamedata/game_GotD.txt:80
 #, kde-format
@@ -2503,11 +2597,17 @@ msgid ""
 "ladders. Find the right moment to get up and dig the bricks on the left, "
 "then you will be able to avoid him."
 msgstr ""
+"Nema lažnih cigala kroz koje biste propali, pa morate na teži način. "
+"Prolazak pored poslednjeg zombija može biti pravi izazov.\n"
+"\n"
+"Zapamtite da zombiji beže od vas ako ste na merdevinama ispod njih. Ovaj će "
+"šetati gore‑dole pored procepa levo od merdevina. Nađite pravi trenutak da "
+"se popnete i iskopate cigle levo, pa ćete moći da ga izbegnete."
 
 #: gamedata/game_GotD.txt:85
 #, kde-format
 msgid "Three Little Pieces Of Elegance"
-msgstr ""
+msgstr "Tri mala komada elegancije"
 
 #: gamedata/game_GotD.txt:86
 #, kde-format
@@ -2517,11 +2617,15 @@ msgid ""
 "it. In the first box, for example, this saves your life, because you can run "
 "over the upper brick and then trap the zombie."
 msgstr ""
+"Ovde vas čekaju problemi tempiranja. Najčešće morate da iskopate jednu "
+"ciglu, zatim da sačekate tačno do pred njeno popunjavanje i iskopate ciglu "
+"ispod nje. U prvoj kutiji vam to, na primer, sačuva život, jer možete da "
+"pretrčite preko gornje cigle i onda zarobite zombija."
 
 #: gamedata/game_GotD.txt:89
 #, kde-format
 msgid "Thieves"
-msgstr ""
+msgstr "Lopovi"
 
 #: gamedata/game_GotD.txt:90
 #, kde-format
@@ -2530,11 +2634,13 @@ msgid ""
 "of this level. The trick is to separate the zombies with the gold from the "
 "others and dig them in."
 msgstr ""
+"Primetićete da je najteži deo ovog nivoa vraćanje zlata od zombija. Trik je "
+"u tome da zombije sa zlatom odvojite od ostalih i zakopate ih."
 
 #: gamedata/game_GotD.txt:93
 #, kde-format
 msgid "Climbing And Falling"
-msgstr ""
+msgstr "Penjanje i padanje"
 
 #: gamedata/game_GotD.txt:94
 #, kde-format
@@ -2551,12 +2657,21 @@ msgid ""
 "you wait for the zombie to fall down, is sometimes important - especially at "
 "the last gap."
 msgstr ""
+"Na desnoj strani treba da vas poslednji zombi prati.\n"
+"\n"
+"Dobro, možda će malo oklevati, ali ne brinite, uvek možete da se vratite ako "
+"je nekako imao druge planove i otišao u drugom pravcu.\n"
+"\n"
+"Da biste bili sigurni da vas prati, ponekad morate da sačekate da vas skoro "
+"uhvati pre nego što krenete, inače će se okrenuti.\n"
+"\n"
+"Poslednji savet: tačna visina na kojoj stojite na merdevinama dok čekate da "
+"zombi padne ponekad je važna — posebno kod poslednjeg procepa."
 
 #: gamedata/game_GotD.txt:103
-#, fuzzy, kde-format
-#| msgid "Treasures of Gold"
+#, kde-format
 msgid "Temple Of Gold"
-msgstr "Zlatna bogatstva"
+msgstr "Zlatni hram"
 
 #: gamedata/game_GotD.txt:104
 #, kde-format
@@ -2577,12 +2692,24 @@ msgid ""
 "them. The place they start from when you lure them down is crucial. Trial "
 "and error will help you figure this one out."
 msgstr ""
+"Doći do zlata je lakši deo: izađite u spoljni hram i uđite u unutrašnji hram "
+"odozgo — odatle možete da se prokopate do zlata.\n"
+"\n"
+"Teži deo je proći pored zombija. Ne možete da prođete pored tri odjednom, pa "
+"je rešenje da većinu namamite dalje.\n"
+"\n"
+"Namamite zombija iz unutrašnjeg hrama u donju jamu, zatim dovedite zombija "
+"sa desne strane u unutrašnji hram. Pokušajte da ga dovedete na mesto gde je "
+"bilo zlato. Tada je lakše dovesti i ostale zombije u unutrašnji hram.\n"
+"\n"
+"Međutim, zombiji će ponekad malo oklevati da odu kuda želite. Mesto sa kog "
+"kreću kad ih mamite nadole je ključno. Pokušaji i greške pomoći će vam da "
+"ovo otkrijete."
 
 #: gamedata/game_GotD.txt:113
-#, fuzzy, kde-format
-#| msgid "Dig Your Way Out"
+#, kde-format
 msgid "Always Know Your Way Out"
-msgstr "Prokopaj put napolje"
+msgstr "Uvek znajte put napolje"
 
 #: gamedata/game_GotD.txt:114
 #, kde-format
@@ -2592,11 +2719,15 @@ msgid ""
 "This will be necessary a few times to let a zombie free on one side while "
 "you  escape to the other side."
 msgstr ""
+"Možete da kopate na obe strane istovremeno.\n"
+"\n"
+"To će biti potrebno nekoliko puta, da pustite zombija na jednoj strani dok "
+"vi bežite na drugu."
 
 #: gamedata/game_GotD.txt:119
 #, kde-format
 msgid "Patience?"
-msgstr ""
+msgstr "Strpljenje?"
 
 #: gamedata/game_GotD.txt:120
 #, kde-format
@@ -2604,11 +2735,13 @@ msgid ""
 "Sometimes it is better to wait, but sometimes you should take what is yours "
 "before the zombies steal it."
 msgstr ""
+"Ponekad je bolje sačekati, ali ponekad treba da uzmete ono što je vaše pre "
+"nego što vam zombiji to ukradu."
 
 #: gamedata/game_GotD.txt:123
 #, kde-format
 msgid "Lock Them Away!"
-msgstr ""
+msgstr "Zatvorite ih!"
 
 #: gamedata/game_GotD.txt:124
 #, kde-format
@@ -2645,22 +2778,50 @@ msgid ""
 "right to get past the zombie and lure him into the gap on the right by going "
 "down the ladder to the same height."
 msgstr ""
+"Kako da izađete na kraj sa prvim zombijem? Pored merdevina je lažna cigla u "
+"koju će on upadati dok beskrajno kruži. Pored njega ćete proći tako što u "
+"pravom trenutku (dok se penje uz merdevine) upadnete u zamku, pa brzo odete "
+"levo i nadole.\n"
+"\n"
+"Sada vam treba da on popuni procep do sledećih merdevina. Možda ste do sada "
+"već naučili da zombiji mogu da se navedu da uskoče u takve rupe. Nažalost, "
+"cigla ispod procepa je zamka, pa je rupa duboka dva bloka. To znači da imate "
+"samo kratak trenutak da mu pretrčite preko glave pre nego što potone previše "
+"duboko. Možete da pokušate više puta ako kopate cigle iza sebe. Tada možete "
+"ponovo da ga pustite ako niste bili dovoljno brzi.\n"
+"\n"
+"Sledeći deo je zagonetka tempiranja kopanja, koja ne bi trebalo da bude "
+"preteška.\n"
+"\n"
+"Drugog zombija očigledno treba odvesti u rupu gde ne može da nanese štetu.\n"
+"\n"
+"Treći zombi treba da vam zgrabi zlato. Ispod merdevina iznad kutije sa "
+"zlatom nalaze se dve lažne cigle. Jedna je tačno pored levih merdevina, i "
+"njom možete da dođete iza neprijatelja. Ako se onda spustite jedan korak, on "
+"će propasti kroz zamku u sredini i uzeti zlato. Zatim morate da ga namamite "
+"nadole tako što ga oslobodite kopanjem. Pazite da usput ne ispusti zlato!\n"
+"\n"
+"Posle ovoga ostaje vam da brinete samo o jednom zombiju. Primetićete da trči "
+"ka vama kad ste jedan korak ispod vrha najlevljih merdevina. Nađite pravi "
+"trenutak da mu pređete preko glave i stignete do sledećih merdevina. Sada "
+"iskopajte dve gornje cigle tačno pored njih, skočite udesno da prođete "
+"zombija i namamite ga u procep desno tako što se spustite niz merdevine na "
+"istu visinu."
 
 #: gamedata/game_GotD.txt:137
 #, kde-format
 msgid "Harder Than It Looks"
-msgstr ""
+msgstr "Teže nego što izgleda"
 
 #: gamedata/game_GotD.txt:138
 #, kde-format
 msgid "Timing is everything."
-msgstr ""
+msgstr "Tempiranje je sve."
 
 #: gamedata/game_GotD.txt:141
-#, fuzzy, kde-format
-#| msgid "Concrete Towers"
+#, kde-format
 msgid "Concrete Desert"
-msgstr "Betonske kule"
+msgstr "Betonska pustinja"
 
 #: gamedata/game_GotD.txt:142
 #, kde-format
@@ -2679,12 +2840,23 @@ msgid ""
 "\n"
 "Please watch the solution to get a better idea of how all this works."
 msgstr ""
+"Popnite se uz merdevine, ali sačekajte nakratko na istoj visini kao betonski "
+"red. Zatim otrčite do prvih merdevina levo. Morate da stignete do njih pre "
+"zombija sa leve strane, ali pojedinačni zombi iznad treba da padne iza vas.\n"
+"\n"
+"Sada se popnite uz merdevine i idite desno. Siđite jedan korak niz sledeće "
+"merdevine i sačekajte da zombi ispod prođe, zatim se spustite i vratite do "
+"svojih prvih merdevina. Siđite jedan korak i sačekajte da većina zombija "
+"prođe preko vaše glave. Merdevine desno bi sada trebalo da budu najbolji put "
+"za bekstvo, jer bi tamo trebalo da ostanu samo dva zombija, dok se ostali "
+"guraju levo.\n"
+"\n"
+"Pogledajte rešenje da biste bolje shvatili kako sve ovo radi."
 
 #: gamedata/game_GotD.txt:149
-#, fuzzy, kde-format
-#| msgid "Diagonal Disaster"
+#, kde-format
 msgid "Diagonal"
-msgstr "Dijagonalna katastrofa"
+msgstr "Dijagonala"
 
 #: gamedata/game_GotD.txt:150
 #, kde-format
@@ -2698,12 +2870,17 @@ msgid ""
 "descending and taking as much gold as possible - never staying too long at "
 "the bottom!"
 msgstr ""
+"Uopšte uzev, najbolje je ostaviti sve zombije gde jesu. Naravno, uvek možete "
+"da pokušate da ih namamite udesno i ubacite u neku od jama (pošto iz njih "
+"pokupite zlato, podrazumeva se), ali to je prilično složen postupak.\n"
+"\n"
+"Bolje ih je namamiti na sam vrh njihovih dijagonala, pa se brzo spustiti i "
+"uzeti što više zlata — nikad ne ostajući predugo na dnu!"
 
 #: gamedata/game_GotD.txt:155
-#, fuzzy, kde-format
-#| msgid "He Has The Gold"
+#, kde-format
 msgid "Give Me That Gold!"
-msgstr "On ima zlato"
+msgstr "Daj to zlato!"
 
 #: gamedata/game_GotD.txt:156
 #, kde-format
@@ -2724,12 +2901,25 @@ msgid ""
 "he does not drop to the lower ladders with a piece of gold.  If he reappears "
 "near his original starting position, lucky you..."
 msgstr ""
+"Morate da namamite jednog od zombija u jamu. Kad propadnu kroz lažnu ciglu, "
+"gornji zombi može da pređe drugome preko glave i tako uđe u jamu.\n"
+"\n"
+"Kuda će zombiji poći zavisi od toga gde stojite na merdevinama i koliko su "
+"udaljeni jedan od drugog. Ako su preblizu, držaće se zajedno, a ako su "
+"predaleko, obojica će samo pasti.\n"
+"\n"
+"Da biste mogli da pređete preko glave zarobljenog zombija i uzmete zlato, "
+"morate da propadnete kroz lažne cigle na drugog zombija. Da biste izašli iz "
+"kutije, iskopajte ciglu ispod zarobljenog zombija dok padate.\n"
+"\n"
+"Zombi koji se ponovo pojavljuje može malo da vam zagorča život. Pazite da ne "
+"padne na donje merdevine sa komadom zlata. Ako se ponovo pojavi blizu svog "
+"prvobitnog početnog položaja, imate sreće..."
 
 #: gamedata/game_GotD.txt:165
-#, fuzzy, kde-format
-#| msgid "Too Easy?"
+#, kde-format
 msgid "Too Fast?"
-msgstr "Previše lako?"
+msgstr "Prebrzo?"
 
 #: gamedata/game_GotD.txt:166
 #, kde-format
@@ -2740,22 +2930,26 @@ msgid ""
 "zombie: be quick. Wait for him to get close to you, then step down or up in "
 "the last moment and pass him."
 msgstr ""
+"Pustite zombija i iskoristite ga da dođete do zlata na levoj strani.\n"
+"\n"
+"Kad konačno sletite na niske merdevine, postoji samo jedan način da prođete "
+"zombija: budite brzi. Sačekajte da vam se približi, pa se u poslednjem "
+"trenutku spustite ili popnite korak i prođite ga."
 
 #: gamedata/game_GotD.txt:171
 #, kde-format
 msgid "Running Against Time"
-msgstr ""
+msgstr "Trka s vremenom"
 
 #: gamedata/game_GotD.txt:172
 #, kde-format
 msgid "Be quicker than the zombies - otherwise they will eat you."
-msgstr ""
+msgstr "Budite brži od zombija — inače će vas pojesti."
 
 #: gamedata/game_GotD.txt:175
-#, fuzzy, kde-format
-#| msgid "The Big Maze"
+#, kde-format
 msgid "The Big Drop"
-msgstr "Veliki lavirint"
+msgstr "Veliki pad"
 
 #: gamedata/game_GotD.txt:176
 #, kde-format
@@ -2763,11 +2957,13 @@ msgid ""
 "The two columns of gold on the left need to be taken first. The rest can be "
 "collected on the way back up."
 msgstr ""
+"Prvo morate da uzmete dva stuba zlata na levoj strani. Ostatak možete da "
+"pokupite na putu nazad gore."
 
 #: gamedata/game_GotD.txt:179
 #, kde-format
 msgid "Diving"
-msgstr ""
+msgstr "Poniranje"
 
 #: gamedata/game_GotD.txt:180
 #, kde-format
@@ -2781,11 +2977,19 @@ msgid ""
 "You might notice that there is not enough time to get the gold over on the "
 "right-hand side, so look for a short cut."
 msgstr ""
+"Pravilo broj 17: ne budi junak! (citat iz filma „Zemlja zombija“)\n"
+"\n"
+"Kad ponirete nadole, nikad ne pokušavajte da uradite dve stvari odjednom. Na "
+"levoj strani, na primer, treba jedno poniranje da namamite zombija iz "
+"njegove pećine, jedno da ga izvedete iz prolaza i jedno da odete po zlato.\n"
+"\n"
+"Možda ćete primetiti da nema dovoljno vremena da dođete do zlata na desnoj "
+"strani, pa potražite prečicu."
 
 #: gamedata/game_GotD.txt:187
 #, kde-format
 msgid "Encircled"
-msgstr ""
+msgstr "Opkoljeni"
 
 #: gamedata/game_GotD.txt:188
 #, kde-format
@@ -2796,10 +3000,13 @@ msgid ""
 "is no real problem if zombies who have gold land in the pit: you can always "
 "release them later and get back the gold."
 msgstr ""
+"Suština ovog nivoa je da zombije koji nemaju komad zlata odvojite od ostalih "
+"i zatvorite u jamu. Zato je korisno da pokupite što više zlata pre nego što "
+"ga se dočepa ijedan zombi. Nije pravi problem ako zombiji koji nose zlato "
+"završe u jami: uvek možete kasnije da ih oslobodite i uzmete zlato nazad."
 
 #: gamedata/game_GotD.txt:191
-#, fuzzy, kde-format
-#| msgid "Ups And Downs"
+#, kde-format
 msgid "Up And Down"
 msgstr "Gore‑dole"
 
@@ -2827,6 +3034,27 @@ msgid ""
 "Finally you have to collect the remaining gold from the zombies. Never land "
 "on the ground to the right of them."
 msgstr ""
+"Tri najdešnje merdevine na dnu imaju lažne cigle u blizini, pa tim putem ne "
+"možete da se popnete mnogo visoko. Dve najlevlje merdevine na dnu vode "
+"više.\n"
+"\n"
+"Da biste stigli tamo, prvo morate da se popnete uz najdešnje merdevine da "
+"pobegnete najbližem zombiju. Onda možete da uzmete zlato iznad drugih "
+"merdevina. Ali sačekajte na dnu tih merdevina da sledeći zombi stigne sleva, "
+"da biste mu u poslednjem trenutku prešli preko glave.\n"
+"\n"
+"Sada se popnite uz treće merdevine, uzmite tamošnje zlato, padnite i ponovo "
+"se popnite. Sačekajte idealan trenutak da potrčite ka najlevljim "
+"merdevinama. Ako neki zombi sleva krene za vama, pređite mu preko glave i "
+"počnite trk.\n"
+"\n"
+"Ako ne uspete da stignete levo, penjanje uz male merdevine u sredini može da "
+"vam donese malo prostora i vremena. Možda vam ponudi i kraći put nagore — "
+"pustite rešenje da vidite kako.\n"
+"\n"
+"Sada pokušajte da pokupite svo zlato na gornjim nivoima, ali pazite na "
+"zamke! Na kraju morate da pokupite preostalo zlato od zombija. Nikad ne "
+"slećite na tlo desno od njih."
 
 #: gamedata/game_GotD.txt:203 gamedata/game_lars.txt:44
 #, kde-format
@@ -2841,12 +3069,15 @@ msgid ""
 "The last piece of gold can only be reached with the help of the zombie: the "
 "same goes for the ladders leading back to the top."
 msgstr ""
+"Pokupite svaki komad zlata, inače će vam put nazad biti blokiran.\n"
+"\n"
+"Do poslednjeg komada zlata možete doći samo uz pomoć zombija: isto važi i za "
+"merdevine koje vode nazad na vrh."
 
 #: gamedata/game_GotD.txt:209
-#, fuzzy, kde-format
-#| msgid "Surprise Ending"
+#, kde-format
 msgid "Surprise, Surprise"
-msgstr "Iznenađujući kraj"
+msgstr "Iznenađenje, iznenađenje"
 
 #: gamedata/game_GotD.txt:210
 #, kde-format
@@ -2857,11 +3088,16 @@ msgid ""
 "route carefully before you dig down. Zombies can also be used to fill the "
 "gaps."
 msgstr ""
+"Ne bih da vam kvarim iznenađenje...\n"
+"\n"
+"Međutim, kad stignete do cigala iznad zlata, pažljivo isplanirajte put za "
+"bekstvo pre nego što počnete da kopate nadole. Zombiji mogu da se iskoriste "
+"i za popunjavanje procepa."
 
 #: gamedata/game_GotD.txt:215
 #, kde-format
 msgid "Busy Town"
-msgstr ""
+msgstr "Užurbani grad"
 
 #: gamedata/game_GotD.txt:216
 #, kde-format
@@ -2869,10 +3105,11 @@ msgid ""
 "If you are not too happy with that many zombies running around, there is "
 "more than one opportunity to get rid of them!"
 msgstr ""
+"Ako niste baš srećni što okolo trči toliko zombija, imate više od jedne "
+"prilike da ih se otarasite!"
 
 #: gamedata/game_GotD.txt:219
-#, fuzzy, kde-format
-#| msgid "Jail Break"
+#, kde-format
 msgid "Jailbreak"
 msgstr "Bekstvo iz zatvora"
 
@@ -2883,11 +3120,13 @@ msgid ""
 "bottom, let all the zombies out of the prison. You might have to enter it "
 "again..."
 msgstr ""
+"Iskoristite lažne cigle da skliznete ispod zombija. Kad stignete na dno, "
+"pustite sve zombije iz zatvora. Možda ćete morati ponovo da uđete u njega..."
 
 #: gamedata/game_GotD.txt:223
 #, kde-format
 msgid "Is It Really Worth It?"
-msgstr ""
+msgstr "Isplati li se to zaista?"
 
 #: gamedata/game_GotD.txt:224
 #, kde-format
@@ -2920,6 +3159,31 @@ msgid ""
 "downstairs long enough for them to start circling, then to go upstairs as "
 "quickly as possible, so as to step over their heads."
 msgstr ""
+"Ovaj nivo zavisi od čudnog ponašanja zombija. Vredi pogledati rešenje da "
+"vidite šta se dešava.\n"
+"\n"
+"Pošto se spustite na pod i pokupite zlato, pojaviće se dodatne merdevine. "
+"One omogućavaju da izbegnete zombija levo tako što ga namamite u svoju jamu, "
+"pa se popnete uz merdevine desno i pređete mu preko glave. Ovo treba da "
+"uradite što je brže moguće.\n"
+"\n"
+"Sada sačekajte na vrhu kratkih merdevina ili betonskog bloka levo. Zbog toga "
+"će se neki zombiji sleva popeti iznad vas i odatle pasti. Učiniće to samo "
+"ako ste dovoljno rano stigli do ove tačke.\n"
+"\n"
+"Kad sva četiri zombija padaju, popnite se i sačekajte desno od betonske jame "
+"dok zombiji ne dođu gore i ponovo je popune. Onda pređite na drugu stranu i "
+"sačekajte levo od betona. Počeće taj jezivi ples zombija...\n"
+"\n"
+"Idite na vrh merdevina i pređite im preko glava do niza kratkih merdevina. "
+"Sačekajte na vrhu najlevljih kratkih merdevina i ponovo im pređite preko "
+"glava kad počnu da kruže. Sada bi trebalo da ste na merdevinama koje vode "
+"desno.\n"
+"\n"
+"Sa zombijima desno je malo nezgodno izaći na kraj. Ako odete na istu visinu "
+"kao gornji zombi, počeće da kruže, ali čim odete iznad njih, staće. Potrebno "
+"je vrlo dobro tempiranje da čekate dole dovoljno dugo da počnu da kruže, a "
+"onda da se što brže popnete gore, kako biste im prešli preko glava."
 
 #: gamedata/game_GotD.txt:238
 #, kde-format
@@ -2961,12 +3225,47 @@ msgid ""
 "left when collecting the gold. One last hint: if a zombie drops some gold, "
 "collect it on your next trip, before it gets picked up again."
 msgstr ""
+"Priznajmo: tlo, gde nema kuda da se beži ni gde da se kopa, nije mesto gde "
+"želite da budete kad zombiji dođu po vas. Međutim, svaki put kad pokupite "
+"neko zlato, završite baš dole. Trik je u tome da zombiji padaju iznad vas "
+"dok trčite ispod njih do nekih od bočnih merdevina.\n"
+"\n"
+"Jedna mogućnost je da čekate blizu vrha nekih merdevina (ali ne spoljnih) "
+"dok se i zombiji ne okupe visoko gore. Onda se spustite, ponesite što više "
+"zlata i brzo se vratite do merdevina. Ako imate sreće, zombiji će još biti u "
+"vazduhu kad stignete do njih.\n"
+"\n"
+"Ako je neki od zombija stigao do merdevina pre vas, pokušajte da se popnete "
+"uz njih. To će često naterati zombija da pobegne od vas i možda izađe na "
+"neku stranu i padne. Zombi će se popeti samo do onoga što smatra najbližim "
+"izlazom, ali ne razume baš dobro gravitaciju... Desno je pored merdevina "
+"greda, što je u redu, ali levo je pored merdevina komad zlata i zombiji "
+"misle da mogu da hodaju po njemu, pa će otići samo jedno polje iznad njega "
+"ako ih gurate uz merdevine.\n"
+"\n"
+"Ako imate sreće, zombiji će ukloniti to zlato pre nego što stignete tamo. "
+"Ili će možda biti podalje kad stignete, pa će ga biti lako pokupiti. Ako ne, "
+"morate da gurnete zombije samo malo više od zlata, pa brzo da se popnete, "
+"skočite u stranu i pokupite zlato. Posle toga morate da otrčite nazad do "
+"merdevina i da ih gurnete gore i preko grede, još više, što im je nova tačka "
+"izlaska.\n"
+"\n"
+"Druga mogućnost, brža ali možda rizičnija, jeste da čekate iznad niza komada "
+"zlata koje želite da pokupite, dok zombiji na nekim bočnim merdevinama ne "
+"odu iznad svoje tačke izlaska, pa da padnete i pokupite zlato i ili se "
+"odmorite na svom poslednjem betonskom bloku ili budete u padu kad zombiji "
+"stignu do svog izlaza. Oni će tada napustiti merdevine i pasti dok vi "
+"pretrčavate ispod njih i još jednom se penjete uz merdevine.\n"
+"\n"
+"Ove mogućnosti prikazane su u snimljenom rešenju za „Slobodan pad“, ali ono "
+"stvari radi na teži način: zapravo je lakše skupljati zlato zdesna ulevo. "
+"Poslednji savet: ako neki zombi ispusti zlato, pokupite ga pri sledećem "
+"prolazu, pre nego što ga neko ponovo podigne."
 
 #: gamedata/game_GotD.txt:251
-#, fuzzy, kde-format
-#| msgid "The Balance"
+#, kde-format
 msgid "The Passage"
-msgstr "Ravnoteža"
+msgstr "Prolaz"
 
 #: gamedata/game_GotD.txt:252
 #, kde-format
@@ -2993,11 +3292,31 @@ msgid ""
 "as the pit and wait for the zombie to walk over you and fall in. Then you "
 "are free to go."
 msgstr ""
+"Morate da počnete sa zlatom desno, što znači da morate da izbegnete zombija "
+"u malom prolazu.\n"
+"\n"
+"Tamo ne možete da uzmete donje zlato (možete da uđete, ali ne i da izađete). "
+"Zato morate da namamite zombija u jamu i ubijete ga, zajedno sa zlatom, tako "
+"što iskopate cigle levo od njega i namamite ga u njih. Ponekad se opameti i "
+"ispusti zlato pre nego što bude zarobljen, pa morate da ponovite ceo "
+"postupak. Ako se od početka krećete brzo, to je manje verovatno...\n"
+"\n"
+"Kad se zombi ponovo pojavi na vrhu, namamite ga na levu stranu, prođite "
+"pored njega i pazite da vas prati kad se prokopavate kroz dvostruki stub "
+"cigala.\n"
+"\n"
+"Za poslednji komad zlata namamite zombija u betonsku pećinu, jašite mu na "
+"glavi, uzmite zlato i izađite što brže možete kad se pojave skrivene "
+"merdevine. Ovo je verovatno najteži deo.\n"
+"\n"
+"Kad stignete do jame pred izlaznim merdevinama, siđite na istu visinu kao "
+"jama i sačekajte da zombi pređe preko vas i upadne. Onda ste slobodni da "
+"idete."
 
 #: gamedata/game_GotD.txt:263
 #, kde-format
 msgid "Out Of My Way!"
-msgstr ""
+msgstr "Sklanjaj mi se s puta!"
 
 #: gamedata/game_GotD.txt:264
 #, kde-format
@@ -3008,11 +3327,16 @@ msgid ""
 "After you are past the last one, let them fall onto the concrete, then "
 "collecting the gold will be a cakewalk."
 msgstr ""
+"Lakše je proći ispod zombija. Sačekajte da vam se neki sasvim približi "
+"(čekajte do poslednjeg trenutka), pa se provucite pored njega.\n"
+"\n"
+"Kad prođete poslednjeg, pustite ih da padnu na beton, pa će skupljanje zlata "
+"biti mačji kašalj."
 
 #: gamedata/game_GotD.txt:269
 #, kde-format
 msgid "Waking Up The Dead"
-msgstr ""
+msgstr "Buđenje mrtvih"
 
 #: gamedata/game_GotD.txt:270
 #, kde-format
@@ -3030,11 +3354,22 @@ msgid ""
 "You will need to group the second wave of zombies before you can get past "
 "them."
 msgstr ""
+"Primetićete da se zombiji prvo kreću uspravno u vašem smeru, pa tek onda "
+"vodoravno. To znači da će se većinu vremena kretati pravo nagore. "
+"Iskoristite to da se spustite pored njih.\n"
+"\n"
+"Naravno, prvi talas zombija je prevelik da biste prošli pored njega samo "
+"ovim trikom, pa prvo namamite nekoliko zombija u malu pećinu. Onda prvo "
+"pođite nagore da ih naterate da se penju, pa se spustite. Međutim, za "
+"spuštanje je na početku potrebno malo cik‑caka, jer zombiji neće obrazovati "
+"prav red.\n"
+"\n"
+"Drugi talas zombija moraćete da grupišete pre nego što prođete pored njih."
 
 #: gamedata/game_GotD.txt:277
 #, kde-format
 msgid "Zombie Lemmings"
-msgstr ""
+msgstr "Zombi leminzi"
 
 #: gamedata/game_GotD.txt:278
 #, kde-format
@@ -3049,17 +3384,24 @@ msgid ""
 "over a zombie as you climb the pop-up ladders, note that the zombies use the "
 "same trick themselves to come after you, so you will have to do it twice."
 msgstr ""
+"Penjete se hodajući zombijima po glavama. Teško je samo sa poslednja dva, "
+"jer tu treba precizno tempiranje.\n"
+"\n"
+"Počnite sa zlatom desno. Završite sa srednjim od pet na dnu kutije.\n"
+"\n"
+"Ako se pitate zašto postoje dve grupe S‑merdevina gde morate da prekoračite "
+"zombija dok se penjete uz iskačuće merdevine, imajte na umu da zombiji sami "
+"koriste isti trik da bi došli za vama, pa ćete to morati da uradite dvaput."
 
 #: gamedata/game_GotD.txt:285
-#, fuzzy, kde-format
-#| msgid "Rat Trap"
+#, kde-format
 msgid "Death Trap"
-msgstr "Zamka za pacove"
+msgstr "Smrtonosna zamka"
 
 #: gamedata/game_GotD.txt:286
 #, kde-format
 msgid "Rule Number 22: When in doubt, know your way out!"
-msgstr ""
+msgstr "Pravilo broj 22: kad ste u nedoumici, znajte put napolje!"
 
 #: gamedata/game_GotD.txt:289 gamedata/game_plws.txt:227
 #, kde-format
@@ -3074,10 +3416,13 @@ msgid ""
 "as possible before anyone else. You might not manage to get every piece "
 "before them, but there are some places where it is easier to rob them."
 msgstr ""
+"Zombiji će se na kraju grupisati, pa ćete ih lakše izbegavati, ali će vam "
+"biti teže da im ukradete zlato. Najbolje je da pokupite što više zlata pre "
+"svih drugih. Možda nećete stići da uzmete svaki komad pre njih, ali ima "
+"mesta gde ih je lakše opljačkati."
 
 #: gamedata/game_GotD.txt:293
-#, fuzzy, kde-format
-#| msgid "Fear of Heights"
+#, kde-format
 msgid "Fear Of Heights"
 msgstr "Strah od visine"
 
@@ -3100,22 +3445,36 @@ msgid ""
 "to go inside more frequently than try to get everything at once and be "
 "locked in..."
 msgstr ""
+"Dok idete levo po glavama dvojice zombija, u nekom trenutku će vam još jedan "
+"krenuti u susret. Skočite levo i odmah pretrčite preko njega, inače nećete "
+"moći da se spustite do merdevina.\n"
+"\n"
+"Najbolje je da svo zlato u sredini pokupite u jednom prolazu (sa jednim "
+"izuzetkom), inače će vam biti dug i zamoran posao da vratite neke komade "
+"zlata od zombija.\n"
+"\n"
+"Kad stignete na dno, moglo bi da vam dobro dođe da naterate sve zombije da "
+"se kreću u istom smeru tako što ćete dovoljno dugo čekati na dnu velikih "
+"merdevina.\n"
+"\n"
+"Što se tiče zagonetki tempiranja kopanja u kutijama, poslušajte moj savet da "
+"je bolje ulaziti češće nego pokušati da pokupite sve odjednom i ostati "
+"zarobljeni..."
 
 #: gamedata/game_GotD.txt:303
-#, fuzzy, kde-format
-#| msgid "Awaiting Enemies"
+#, kde-format
 msgid "Raining Zombies"
-msgstr "Iščekujući neprijatelje"
+msgstr "Kiša zombija"
 
 #: gamedata/game_GotD.txt:304
 #, kde-format
 msgid "Let us see if you have learned your lesson about zombies and ladders..."
-msgstr ""
+msgstr "Da vidimo da li ste naučili lekciju o zombijima i merdevinama..."
 
 #: gamedata/game_GotD.txt:307
 #, kde-format
 msgid "A Desperate Jump"
-msgstr ""
+msgstr "Očajnički skok"
 
 #: gamedata/game_GotD.txt:308
 #, kde-format
@@ -3125,22 +3484,26 @@ msgid ""
 "\n"
 "To get past the other zombies, you sometimes need to run over their heads."
 msgstr ""
+"Sačekajte trenutak kad zombi stigne do vrha merdevina i počne da silazi — "
+"tada skočite.\n"
+"\n"
+"Da biste prošli pored ostalih zombija, ponekad morate da im pretrčite preko "
+"glava."
 
 #: gamedata/game_GotD.txt:313
 #, kde-format
 msgid "Among Zombies"
-msgstr ""
+msgstr "Među zombijima"
 
 #: gamedata/game_GotD.txt:314
 #, kde-format
 msgid "All it takes is good strong nerves..."
-msgstr ""
+msgstr "Potrebni su samo dobri, jaki živci..."
 
 #: gamedata/game_GotD.txt:317
-#, fuzzy, kde-format
-#| msgid "The Rose"
+#, kde-format
 msgid "The Horde"
-msgstr "Ruža"
+msgstr "Horda"
 
 #: gamedata/game_GotD.txt:318
 #, kde-format
@@ -3149,11 +3512,14 @@ msgid ""
 "\n"
 "Hurry up and do those puzzles. The clock is ticking..."
 msgstr ""
+"Tako je to sa zombijima: što sporiji, to jeziviji.\n"
+"\n"
+"Požurite i rešite te zagonetke. Sat otkucava..."
 
 #: gamedata/game_GotD.txt:323
 #, kde-format
 msgid "Dance With Death"
-msgstr ""
+msgstr "Ples sa smrću"
 
 #: gamedata/game_GotD.txt:324
 #, kde-format
@@ -3161,13 +3527,14 @@ msgid ""
 "The only way to get the gold is to ride the whole way on his head. Yee-hah! "
 "Ride him cowboy!"
 msgstr ""
+"Jedini način da dođete do zlata je da celim putem jašete na njegovoj glavi. "
+"Jihaaa! Jaši ga, kauboju!"
 
 # skip-rule: t-space
 #: gamedata/game_GotD.txt:327
-#, fuzzy, kde-format
-#| msgid "Space Invader"
+#, kde-format
 msgid "Zombie Invaders"
-msgstr "Napadač iz svemira"
+msgstr "Zombi osvajači"
 
 #: gamedata/game_GotD.txt:328
 #, kde-format
@@ -3175,11 +3542,13 @@ msgid ""
 "Watch what happens if you climb up a ladder on the side, but only to where "
 "you are level with the bricks the zombies are walking on..."
 msgstr ""
+"Pogledajte šta se dešava ako se popnete uz bočne merdevine, ali samo do "
+"visine cigala po kojima hodaju zombiji..."
 
 #: gamedata/game_GotD.txt:331
 #, kde-format
 msgid "Just Survive"
-msgstr ""
+msgstr "Samo preživite"
 
 #: gamedata/game_GotD.txt:332
 #, kde-format
@@ -3188,11 +3557,14 @@ msgid ""
 "who are on their own and not in a row with the others will ruin your day. "
 "Therefore the left side is easier, because there are fewer lone zombies. "
 msgstr ""
+"Izbegavanje zombija lakše je nego što mislite. Samo vam nekoliko zombija, "
+"koji su sami i nisu u nizu sa ostalima, mogu pokvariti dan. Zato je leva "
+"strana lakša, jer tamo ima manje usamljenih zombija. "
 
 #: gamedata/game_GotD.txt:335
 #, kde-format
 msgid "Death Race"
-msgstr ""
+msgstr "Trka smrti"
 
 #: gamedata/game_GotD.txt:336
 #, kde-format
@@ -3200,11 +3572,13 @@ msgid ""
 "You can distract the zombie from running down when you are on the same level "
 "as him. Who said it had to be fair play?"
 msgstr ""
+"Možete da odvratite zombija od trčanja nadole kad ste na istoj visini kao "
+"on. Ko je rekao da mora da bude fer?"
 
 #: gamedata/game_GotD.txt:339
 #, kde-format
 msgid "Zombie Free Zone"
-msgstr ""
+msgstr "Zona bez zombija"
 
 #: gamedata/game_GotD.txt:340
 #, kde-format
@@ -3212,18 +3586,16 @@ msgid ""
 "Finally, you have escaped the horrors of the zombie-infested world. Now that "
 "you are in the zombie-free zone, nothing can go wrong, can it?"
 msgstr ""
+"Konačno ste umakli užasima sveta prepunog zombija. Sad kad ste u zoni bez "
+"zombija, ništa ne može da pođe po zlu, zar ne?"
 
 #: gamedata/game_GotD.txt:343
-#, fuzzy, kde-format
-#| msgid "The Foundry"
+#, kde-format
 msgid "The End"
-msgstr "Kovačnica"
+msgstr "Kraj"
 
 #: gamedata/game_GotD.txt:344
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>CONGRATULATIONS !!!!</b><p>You have conquered the last level in the <b>"
-#| "\"%1\"</b> game !!</p>"
+#, kde-format
 msgid ""
 "CONGRATULATIONS !!!!\n"
 "\n"
@@ -3231,7 +3603,11 @@ msgid ""
 "\n"
 "Or have you?"
 msgstr ""
-"<b>ČESTITAMO!</b><p>Završili ste poslednji nivo u igri „<b>%1</b>“!</p>"
+"ČESTITAMO!!!!\n"
+"\n"
+"Savladali ste sve nivoe igre „Zlato živih mrtvaca“!!!\n"
+"\n"
+"Ili niste?"
 
 #: gamedata/game_GRII.txt:2
 #, kde-format
@@ -3240,20 +3616,7 @@ msgstr "Zlatna groznica 2"
 
 # rewrite-msgid: /need to dig while falling//
 #: gamedata/game_GRII.txt:3
-#, fuzzy, kde-format
-#| msgid ""
-#| "These 20 levels have even harder challenges, more complicated puzzles and "
-#| "tighter timings than the first Gold Rush. They are not for the faint "
-#| "hearted. As before, you need to dig while falling sometimes. Have fun!\n"
-#| "\n"
-#| "Created by Gabriel Miltschitzky [gabriel dot miltschitzky at googlemail "
-#| "dot com], who also provided the recorded solutions.\n"
-#| "\n"
-#| "It is best to play the first Gold Rush levels before attempting Gold Rush "
-#| "II, because you will need many techniques that are easier to learn there. "
-#| "None of the levels in Gold Rush and Gold Rush II are impossible. If in "
-#| "doubt, use menu item 'Move->Show A Solution' to watch solutions provided "
-#| "by the author."
+#, kde-format
 msgid ""
 "These 20 levels have even harder challenges, more complicated puzzles and "
 "tighter timings than the first Gold Rush. They are not for the faint "
@@ -3272,13 +3635,13 @@ msgstr ""
 "tempiranje od prve „Zlatne groznice“. Nisu za nestrpljive. Zabavite se!\n"
 "\n"
 "Sastavio Gabrijel Milčicki [gabriel tačka miltschitzky na googlemail tačka "
-"com]], a priložio i snimke rešavanja.\n"
+"com], a priložio i snimke rešavanja.\n"
 "\n"
 "Najbolje je odigrati nivoe iz prve „Zlatne groznice“ pre oprobavanja u ovom "
 "nastavku, jer će vam trebati mnoge tehnike koje je tamo lakše naučiti. "
 "Nijedan nivo iz bilo koje od „Zlatnih groznica“ nije nemoguć. Ako ste "
-"sumnjičavi, idite na meni „Potez→Prikaži rešenje“ da pogledate rešenja koja "
-"je priložio autor."
+"sumnjičavi, idite na meni „Potez → Prikaži rešenje“ da pogledate rešenja "
+"koja je priložio autor."
 
 #: gamedata/game_GRII.txt:10
 #, kde-format
@@ -3338,7 +3701,7 @@ msgid ""
 "moves up and down on the top rungs, choose the right moment to walk over his "
 "head and reach the gold at the top right. The rest is easy."
 msgstr ""
-"Zlata na desnoj strani samo je pitanje brzine i spretnosti. Isto važi za "
+"Zlato na desnoj strani samo je pitanje brzine i spretnosti. Isto važi za "
 "zlato na donjim nivoima. \n"
 "\n"
 "Da biste dosegli zlato iznad grede na levoj strani, hodajte po glavi "
@@ -3473,8 +3836,8 @@ msgstr ""
 "nagore.\n"
 "\n"
 "Pređite u levi odeljak prokopavanjem cigle pri vrhu. Narednog neprijatelja "
-"možete izbeći propadanjem kroz zamku što vodi nazad u desi odeljak, u ćemu "
-"će vas on ispratiti.\n"
+"možete izbeći propadanjem kroz zamku što vodi nazad u desni odeljak, pri "
+"čemu će vas on ispratiti.\n"
 "\n"
 "Zlato na dnu dohvatićete tako što odmamite neprijatelje, potražite lažne "
 "cigle koje vode nadole, iskopate zadnju ciglu u nizu i brzo pokupite te "
@@ -3516,8 +3879,8 @@ msgstr ""
 "Trebaće vam oba neprijatelja da vam pomognu da završite nivo. Kada dođete do "
 "zlata na betonskom stubu, sačekajte na ivici. Obezbedite da vas prvi pomagač "
 "isprati kad skočite dole. Pokupite zlato levo od sebe, zatim pođite nagore i "
-"brzo kopajte cigle levo od merdevina dok ne bude mogli da produžite levo, s "
-"neprijateljem u pratnji. Pređite mu preko glave do narednih merdevine i "
+"brzo kopajte cigle levo od merdevina dok ne budete mogli da produžite levo, "
+"s neprijateljem u pratnji. Pređite mu preko glave do narednih merdevina i "
 "ponovo krenite nagore.\n"
 "\n"
 "Uskočite u jamu i kopajte na obe strane jednako. Dok se neprijatelj bude "
@@ -3530,7 +3893,7 @@ msgstr ""
 "Dok se budete kretali nazad na desnu stranu, moraćete da nađete okno lažnih "
 "cigala skriveno ispod jedne prokopive cigle. Kad stignete, namamite drugog "
 "neprijatelja za vama do najnižeg nivoa. Ostavite ga tamo, ali ga iskoristite "
-"za vraćanje do merdevine koje vode nagore.\n"
+"za vraćanje do merdevina koje vode nagore.\n"
 "\n"
 "Idite do jame i merdevina u sredini levo i prokopajte okno široko dve cigle "
 "skroz dole do betona, blizu mesta gde stoji neprijatelj. Kada pođe za vama "
@@ -3624,16 +3987,16 @@ msgid ""
 "If you got that far, start collecting the gold quickly, overtaking the "
 "enemies and staying just below them."
 msgstr ""
-"Skočite levo od najviše grede na desnoj strani. Ne odugovlačite: ispod "
+"Skočite ulevo sa najviše grede na desnoj strani. Ne odugovlačite: ispod "
 "najviše grede na levoj strani ne treba da bude više od dva neprijatelja kad "
 "skočite dole.\n"
 "\n"
-"Pređite preko glava padajući neprijatelja kraj sebe i iskopajte višu ciglu. "
+"Pređite preko glava padajućih neprijatelja kraj sebe i iskopajte višu ciglu. "
 "Pređite preko cigle i pokupite zlato. Sačekajte na srednjoj gredi dok prve "
 "merdevine ne budu bez neprijatelja. Ne skačite na njih ni prerano ni "
 "prekasno.\n"
 "\n"
-"Ako ste stigle dovde, brzo krenite da skupljate zlato, pretičući "
+"Ako ste stigli dovde, brzo krenite da skupljate zlato, pretičući "
 "neprijatelje i držeći se tik ispod njih."
 
 #: gamedata/game_GRII.txt:96
@@ -3745,11 +4108,11 @@ msgstr ""
 "odeljku na desnoj strani. Da se izvučete odatle, pređite neprijatelju preko "
 "glave dok bude izlazio iz iskopane cigle.\n"
 "\n"
-"Izmaknite slobodnom neprijatelju, popnite se do najvišeg zlata i uzmite prvi "
-"od tri komada, pazeći da očistite putanju za bekstvo. Zatim namamite "
-"slobodnog neprijatelja gore i u lažnu ciglu u ovom odeljku, pa uzmite "
-"poslednji komad zlata. U jednom trenutku na putu nagore moraćete da ga "
-"pustite da se sasvim približi...\n"
+"Izmaknite slobodnom neprijatelju, popnite se do najvišeg zlata i uzmite prva "
+"tri komada, pazeći da očistite putanju za bekstvo. Zatim namamite slobodnog "
+"neprijatelja gore i u lažnu ciglu u ovom odeljku, pa uzmite poslednji komad "
+"zlata. U jednom trenutku na putu nagore moraćete da ga pustite da se sasvim "
+"približi...\n"
 "\n"
 "Preostali odeljci zahtevaju nešto razmišljanja i tesnog tempiranja, ali ne "
 "bi trebalo da su preteški.\n"
@@ -3796,7 +4159,7 @@ msgstr ""
 #: gamedata/game_GRII.txt:134
 #, kde-format
 msgid "Getting Past The Enemy"
-msgstr "Preko poslednjeg neprijatelja"
+msgstr "Prolazak pored neprijatelja"
 
 #: gamedata/game_GRII.txt:135
 #, kde-format
@@ -4016,7 +4379,7 @@ msgstr ""
 "plus i prokopajte njegovu najvišu ciglu, zatim brzo pođite nagore i "
 "prokopajte ciglu levo od drugog plusa. Tu su tri zamke kroz koje treba "
 "propasti pre nego što se vratite do cigle koju ste prvu iskopali. Uđite u "
-"nju i propadnite korz dve zamke ispod nje.\n"
+"nju i propadnite kroz dve zamke ispod nje.\n"
 "\n"
 "Sada možete da pođete udesno i nađete put do dna tamo."
 
@@ -4226,7 +4589,7 @@ msgstr "Kontrola mase"
 #: gamedata/game_lars.txt:53
 #, kde-format
 msgid "Remember 'Landfill'?"
-msgstr "Setite se „Ispune“."
+msgstr "Sećate li se „Ispune“?"
 
 #: gamedata/game_lars.txt:56
 #, kde-format
@@ -4526,9 +4889,9 @@ msgid ""
 "with them."
 msgstr ""
 "Najteži deo je kada se dva neprijatelja nađu u sredini lavirinta i morate da "
-"pored njih. Pokušajte da krenete nadole i levo od njih, namamite jednog "
-"nadole, zarobite ga i krenete nagore da zarobite drugog. Inače, možete ih se "
-"rešiti domišljatim kopanjem."
+"prođete pored njih. Pokušajte da krenete nadole i levo od njih, namamite "
+"jednog nadole, zarobite ga i krenete nagore da zarobite drugog. Inače, "
+"možete ih se rešiti domišljatim kopanjem."
 
 # |, no-check-spell
 #: gamedata/game_MAZ.txt:54
@@ -4601,8 +4964,9 @@ msgid ""
 "to trap the first enemy and then move to the top to trap the second enemy."
 msgstr ""
 "Ako se između vas i željenog odredišta nađu dva ili više neprijatelja, mogu "
-"vam poslužiti prokopivi stubovi. Iskopajte dva sloja, sačekajte da onaj "
-"gornji zarobi prvog neprijatelja, pa se pomerite nagore da zarobite i drugog."
+"vam poslužiti prokopivi stubovi. Iskopajte dva sloja, sačekajte jedno polje "
+"ispod vrha da zarobite prvog neprijatelja, pa se pomerite na vrh da zarobite "
+"i drugog."
 
 # |, no-check-spell
 #: gamedata/game_MAZ.txt:70
@@ -4662,7 +5026,7 @@ msgid ""
 "Look for false floors to get to places that are otherwise inaccessible.  You "
 "have to dig to find a couple of them."
 msgstr ""
-"Tražite lažna vrata da dospete do mesta koja su inače nepristupačna. "
+"Tražite lažne podove da dospete do mesta koja su inače nepristupačna. "
 "Moraćete da kopate do nekih od njih."
 
 # |, no-check-spell
@@ -4709,14 +5073,14 @@ msgstr ""
 "Puno lažnih cigala, što da vas zarobe što da vam daju pristup različitim "
 "delovima lavirinta. Tražite ispod merdevina i na drugim mestima.\n"
 "\n"
-"Zamka četiri gore prekida žurku: možete proći nazad pored nje tek kad "
-"sakupite svo zlato. Zato se držite podalje od donje desne strane dok ne "
-"raščistite ostatak zlata. Zatim padnite kroz zamku ispod gornjih desnih "
-"merdevina — nema drugog načina da se domognete komada zlata ispod njih. "
-"Jednom dole, ne možete se vratiti nazad dok ne počistite svo zlato. Pošto "
-"pokupite komad zlata u sredini desno, kopajte nadole da stignete do levog od "
-"dva susedna komada. Beg iz donje desne strane počinje kada sakupite svo "
-"zlato i pojavi se malo parče merdevina u sredini."
+"Zamka visoka četiri polja u sredini prekida žurku: možete proći nazad pored "
+"nje tek kad sakupite svo zlato. Zato se držite podalje od donje desne strane "
+"dok ne raščistite ostatak zlata. Zatim padnite kroz zamku ispod gornjih "
+"desnih merdevina — nema drugog načina da se domognete komada zlata ispod "
+"njih. Jednom dole, ne možete se vratiti nazad dok ne počistite svo zlato. "
+"Pošto pokupite komad zlata u sredini desno, kopajte nadole da stignete do "
+"levog od dva susedna komada. Beg iz donje desne strane počinje kada sakupite "
+"svo zlato i pojavi se malo parče merdevina u sredini."
 
 # |, no-check-spell
 #: gamedata/game_MAZ.txt:94
@@ -4825,7 +5189,7 @@ msgid ""
 "route."
 msgstr ""
 "Da se probijete kroz sredinu moraćete da je raščistite od neprijatelja, ali "
-"ima samo jedan prokopiva cigla. Upotrebite je da padnete kroz nju, pojurite "
+"ima samo jedna prokopiva cigla. Upotrebite je da padnete kroz nju, pojurite "
 "desno pa nagore do reda iznad iskopane cigle. Vremena je taman toliko da se "
 "neprijatelj podstakne da upadne u zatvarajuću rupu. Ponovite koliko puta "
 "treba.\n"
@@ -4968,9 +5332,9 @@ msgid ""
 "until a hidden ladder appears."
 msgstr ""
 "Lažni podovi su ključ ovog nivoa. Ulaz u odeljak često nije i izlaz iz "
-"njega. Mnogi neprijatelji će ostati zarobljeni ako se bude kretali dovoljno "
-"nisko. Ostavite zlato pri dnu u sredini za kraj: ne možete izaći iz tog "
-"odeljka dok se ne pojave skrivene merdevine."
+"njega. Mnogi neprijatelji će ostati zarobljeni ako se budete kretali "
+"dovoljno nisko. Ostavite zlato pri dnu u sredini za kraj: ne možete izaći iz "
+"tog odeljka dok se ne pojave skrivene merdevine."
 
 # |, no-check-spell
 #: gamedata/game_MAZ.txt:148
@@ -5078,7 +5442,7 @@ msgstr ""
 "Drugi problem je što će bar jedan neprijatelj pokupiti neki komad zlata. "
 "Biće teško naterati ga da ispusti to zlato. Morate namamiti neprijatelja u "
 "gornji desni odeljak, ili u odeljak dole i levo od toga. Privucite "
-"neprijatelja na merdevine za jazom iznad njih, u sredini odeljka. Čekajte na "
+"neprijatelja na merdevine sa jazom iznad njih, u sredini odeljka. Čekajte na "
 "bilo kojoj strani slobodnog polja, ostavivši ciglu između sebe i slobodnog "
 "polja. Neprijatelj će ići gore‑dole po merdevinama, stupajući na slobodno "
 "polje i napuštajući ga. U nekom trenutku ispustiće zlato na vrhu merdevina, "
@@ -5099,19 +5463,7 @@ msgid "Rumpelstiltskin"
 msgstr "Ramplstilskin"
 
 #: gamedata/game_MAZ.txt:173
-#, fuzzy, kde-format
-#| msgid ""
-#| "The main trick for this level is luring the enemies so that you can get "
-#| "around them, or in one case, so that you can walk over an enemy to "
-#| "collect a piece of gold.  The luring is not so hard, but the distances "
-#| "you have to lure them are long.  Maneuvering the enemy so that you can "
-#| "walk over him to get the piece of gold has timing that is a bit tight, "
-#| "but not too bad.\n"
-#| "\n"
-#| "When you reach the section above your starting point, there are two ways "
-#| "out: one is a false brick under the short ladder.  But if you dig the "
-#| "other square and drop down, there is a a path through a false floor that "
-#| "avoids retracing all the early part of the maze."
+#, kde-format
 msgid ""
 "The main trick for this level is luring the enemies so that you can get "
 "around them, or in one case, so that you can walk over an enemy to collect a "
@@ -5158,7 +5510,7 @@ msgid ""
 msgstr ""
 "Dva komada zlata u donjem levom uglu odsečena su od ostatka lavirinta. Desno "
 "od ovog odeljka nalazi se prazno polje gde možete iskopati ciglu. Da "
-"posetite podvojeni odeljak, iskopajte ciglu i krenite levo i dole kroz lažnu "
+"posetite izdvojeni odeljak, iskopajte ciglu i krenite levo i dole kroz lažnu "
 "ciglu. Moraćete da pojurite, zgrabite jedan komad zlata i vratite se kroz "
 "drugu lažnu ciglu, taman na vreme da prođete kroz iskopanu ciglu pre nego "
 "što se zatvori.\n"
@@ -5189,7 +5541,7 @@ msgstr ""
 "\n"
 "Da pokupite poslednjih nekoliko komada zlata, moraćete da uđete u odeljak "
 "lavirinta levo i dole levo, koji je pregrađen od ostatka. Ovaj odeljak ima "
-"oblik velikog slova L. Prokopajte dve cigle da desnoj ivici L (levo od "
+"oblik velikog slova L. Prokopajte dve cigle na desnoj ivici L (levo od "
 "sredine) i uskočite — tu je lažna cigla koja će vas propustiti.\n"
 "\n"
 "Kad sakupite svo zlato, lavirint će se izmeniti. Morate da se spustite negde "
@@ -5215,7 +5567,7 @@ msgstr ""
 "da popune najrezultate. Sastavio ih je Piter Vadam i koriste tradicionalna "
 "pravila igre.\n"
 "\n"
-"Poslednjih nekoliko nivo je vrlo teško, ali želite još veći izazov, "
+"Poslednjih nekoliko nivoa je vrlo teško, ali ako želite još veći izazov, "
 "oprobajte se u igri „Osveta Pitera V.“."
 
 #: gamedata/game_plws.txt:9
@@ -5938,7 +6290,7 @@ msgstr ""
 "desne strane, zatim pođite dole.\n"
 "\n"
 "Dok budete išli dijagonalno nadole ulevo, na putu su dve lažne cigle. "
-"Propadnite kroz drugu, ostanite unutra i kopajte desno. Sada upadnite u niz "
+"Upadnite u drugu, ostanite unutra i kopajte desno. Sada upadnite u niz "
 "merdevina koji vodi nadole i levo..."
 
 #: gamedata/game_plwv.txt:67
@@ -6002,10 +6354,10 @@ msgstr ""
 "dok ostali trče ka vama. Krenite levo, iskopajte dve rupe da ih zarobite, "
 "zatim trčite desno, kopajte i padnite na dno prvih malih merdevina desno. "
 "Neprijatelji bi trebalo da pođu niz dugačke merdevine i ispune dve lažne "
-"cigle u njenom podnožju.\n"
+"cigle u njihovom podnožju.\n"
 "\n"
 "Kopajte i uhvatite trećeg neprijatelja na vrhu debele zone cigala, zatim "
-"otrčite do drugog razmaka od dna dugačkih merdevina, pored reda cigala. "
+"otrčite do drugog polja od dna dugačkih merdevina, pored reda cigala. "
 "Neprijatelji bi trebalo da poupadaju u jame na levoj strani."
 
 #: gamedata/game_plwv.txt:83
@@ -6029,7 +6381,7 @@ msgstr ""
 "izašli na naredni nivo. Priđite preko zdesna da pokupite grumen na vrhu u "
 "sredini.\n"
 "\n"
-"Prođite neprijatelje na „Bunzenovom plameniku“ pobivši ih levo od njega, "
+"Prođite neprijatelje na „Bunzenovom plameniku“ pobivši ih desno od njega, "
 "tako što propadnete kroz sredinu kad vas skoro dohvate, gde će popadati za "
 "vama, ili tako što skočite levo preko njihovih glava pre nego što stignu do "
 "vrha plamenika."
@@ -6048,8 +6400,9 @@ msgid ""
 "spaces.  So keep him running through them and wait patiently ..."
 msgstr ""
 "Krećite se između vrha i dna da biste izbegavali neprijatelje. Sakupljajte "
-"grumene gde stignete. Ako neprijatelj uzme neki grumen, može ga ispustiti na "
-"praznom prostoru. Zato ga terajte tim putem i strpljivo čekajte..."
+"grumene gde stignete. Ako neprijatelj uzme neki grumen, može ga ispustiti "
+"samo na nekom od praznih polja. Zato ga terajte tim putem i strpljivo "
+"čekajte..."
 
 #: gamedata/game_plwv.txt:93
 #, kde-format
@@ -6113,10 +6466,10 @@ msgstr ""
 "Pođite nagore blizu rupe u betonu, padnite, otrčite desno, uz dugačke "
 "merdevine, padnite levo i skupite zlato.\n"
 "\n"
-"Ako na srednje neprijatelje smestite samo dva neprijatelja, obezbedite da "
-"treći pada sa desnih merdevina pre nego što pretrčite preko. Tada ćete "
-"morati da odete skroz nagore uz dugačke merdevine sačekate dok ne bude "
-"bezbedno da padnete levo i pokupite zlato.\n"
+"Ako na srednje merdevine smestite samo dva neprijatelja, obezbedite da treći "
+"pada sa desnih merdevina pre nego što pretrčite preko. Tada ćete morati da "
+"odete skroz nagore uz dugačke merdevine i sačekate dok ne bude bezbedno da "
+"padnete levo i pokupite zlato.\n"
 "\n"
 "Ako neprijatelji još nose zlato, terajte ih da vas jure okolo po srednjim "
 "merdevinama i padaju na beton dok ga ne ispuste."
@@ -6161,10 +6514,10 @@ msgstr ""
 "ugnežđenih u ciglama. Izađite preko tri mesta koja imaju lažne cigle u "
 "podnožju. Samoubistveno je pasti na sredinu cigala u obliku T.\n"
 "\n"
-"Počnite sakupljanjem zlata levo od T. Onda možete naterati neprijatelja da "
+"Počnite sakupljanjem zlata desno od T. Onda možete naterati neprijatelja da "
 "upadne u jamu u obliku U.\n"
 "\n"
-"Pazite se lažnih cigala u sredini platforme dole levo. Zlato ćete morati da "
+"Pazite se lažne cigle u sredini platforme dole levo. Zlato ćete morati da "
 "pokupite u više prolaza, sleva i zdesna."
 
 #: gamedata/game_plwv.txt:121
@@ -6249,6 +6602,13 @@ msgstr ""
 "padnete na drugog neprijatelja. Tempiranje je VRLO tesno. Morate prokopati i "
 "pasti pre nego što se neprijatelj popne preko vrha levo i potrči desno.\n"
 "\n"
+"Kasnije se popnite uz desne merdevine do vrha, sačekajte na levoj gredi "
+"iznad lažne cigle dok najlevlji neprijatelj ne krene da trči ka vama, pa "
+"padnite. Ponovo sačekajte dok ne počne da pada, zatim iskopajte dve cigle "
+"desno od kratkih merdevina, idite desno i padnite, pa otrčite levo do dna "
+"kratkih merdevina. Neprijatelj bi trebalo da propadne kroz lažnu ciglu i "
+"merdevine u lažnu ciglu ispod.\n"
+"\n"
 "P.P.S. U ovom načinu nema prostora za grešku niti oklevanje! Nema doduše "
 "mnogo ni u prvom!"
 
@@ -6270,7 +6630,7 @@ msgstr ""
 "Baš kada ste pomislili da ste bezbedni... Petnaest nivoa čistog užasa, koji "
 "koriste nezgodna ali brza pravila K‑zlatobojca.\n"
 "\n"
-"Sastavio Stjuart Poupdžoj <spopejoy@panix.com>."
+"Sastavio Stjuart Poupdžoj (spopejoy@panix.com)"
 
 #: gamedata/game_sot.txt:8
 #, kde-format
@@ -6286,9 +6646,8 @@ msgid ""
 "falling, and escape back to the top of the platform. Head upward as quickly "
 "as you can."
 msgstr ""
-"Nastavite nadole od platforme do platforme, to treće od najniže. Sačekajte "
+"Nastavite nadole od platforme do platforme, do treće od najniže. Sačekajte "
 "kod najdešnje tačke da namamite neprijatelje da padnu na dno.\n"
-"\n"
 "Padnite na najnižu platformu, kopajte iznad zlata pa kopajte desno, u toku "
 "padanja, i pobegnite nazad na vrh platforme. Krenite nagore najbrže što "
 "možete."
@@ -6335,8 +6694,7 @@ msgid ""
 "left."
 msgstr ""
 "Probijte se izvan spirale, kopajući da zarobite neprijatelje tik pre nego "
-"što izrone iz tunela.\n"
-"\n"
+"što izronite iz tunela.\n"
 "Produžite do gornjeg levog ugla. Dok trčite udesno, uđite u cik‑cak zonu pre "
 "neprijatelja, tako da izbijete na gornju stranu desno. Pošto pokupite zlato, "
 "kopajte da zarobite neprijatelje na dnu, zatim izađite na vrhu levo."
@@ -6388,18 +6746,15 @@ msgstr ""
 "merdevine i sačekati na vrhu kratkih merdevina desno. Kad se neprijatelj "
 "približi, pretrčite preko njega na šipku. Onda krenite desno i upadnite na "
 "terasu, pa prokopajte i padnite.\n"
-"\n"
 "Utrčite u halu i uz skulpturu merdevina da pokupite zlato. Padnite preko "
 "leve strane na betonski blok i sačekajte da se neprijatelji grupišu. Padnite "
 "levo i otrčite nazad napolje do betonskog ispusta, uz neprijatelje za sobom. "
 "Upotrebite iste merdevine i šipku da se vratite unutra.\n"
-"\n"
 "Ustrčite do samog vrha zgrade uz najdešnje merdevine. Stanite na najlevlju "
 "tačku krova. Sačekajte da neprijatelj padne ispod vas, koraknite nazad, "
 "prokopajte i padnite posle njega na terasu, gde možete skupiti tri komada "
-"zlata. Ako počekate dovoljno dugo na terasi pre nego što padnete, možete "
+"zlata. Ako počekate dovoljno dugo na krovu pre nego što padnete, možete "
 "ubediti nekoliko neprijatelja da vas isprate i zarobe se na terasi.\n"
-"\n"
 "Upotrebite merdevine desno da pokupite preostalo zlato i izađete."
 
 #: gamedata/game_sot.txt:35
@@ -6570,17 +6925,14 @@ msgstr ""
 "Idite levo i padnite na zlato, zatim desno da skupite naredna dva komada. "
 "Sačekajte, visoko gore na šipki skroz desno u igračkoj zoni, da se "
 "neprijatelji okupe u dnu desno.\n"
-"\n"
 "Sada pođite ulevo i nadole, i padnite na najlevlje zlato na dnu. Zanemarite "
 "poslednje zlato za sada, već krenite udesno i nagore duž tri šipke i uz "
 "troje merdevine. Zakoračite ulevo sa trećih merdevina dok kopate ulevo, da "
 "spremite zamku za neprijatelja u kutiji levo.\n"
-"\n"
-"Brzo se vratite nazad dole, padnite na poslednje zlato i spremite se brz "
+"Brzo se vratite nazad dole, padnite na poslednje zlato i spremite se za brz "
 "pokret nagore i ulevo kada se pojave skrivene kratke merdevine ispod i levo "
 "od vas. Neprijatelji će pojuriti na vas, ali nastavite sve do mesta gde ste "
 "pripremili zamku. U njoj sada treba da je jedan neprijatelj.\n"
-"\n"
 "Produžite nagore i ulevo preko kratkih merdevina, zatim nadole i ulevo preko "
 "dugačkih šipki i merdevina do narednih kratkih merdevina. Ponovo idite "
 "nagore i ulevo, zatim nagore i udesno preko još dugačkih merdevina i šipki, "
@@ -6634,14 +6986,12 @@ msgid ""
 "out of the building, dig rapidly while falling next to the left wall."
 msgstr ""
 "Provalite u donju levu sobu, zatim produžite do vrha desno. Krenite levo, "
-"zgrabite zlato i pobegnite kopanjem nadole do sredine sprata. Nastavite "
+"zgrabite zlato i pobegnite kopanjem nadole do srednjeg sprata. Nastavite "
 "skroz nadole, do dna desno.\n"
-"\n"
 "Pre nego što skupite drugi komad zlata, obesite se o gornju šipku središnje "
 "sobe na donjem spratu i prokopajte jednu ciglu iz dvostrukog zida desno. "
 "Pretrčite levo preko glava neprijatelja, zgrabite zlato i pobegnite nazad "
 "kroz iskopanu ciglu.\n"
-"\n"
 "Trčite nagore do gornje desne sobe, pa do donje leve zone preko sredine. "
 "Izbegavajući neprijatelje usput kako god znate, popnite se do gornje leve "
 "sobe. Da izađete iz zgrade, kopajte brzo u padu pored levog zida."
@@ -6724,18 +7074,16 @@ msgid ""
 msgstr ""
 "Prva komora. Kopajte nadole da pokupite gornji levi komad zlata. Padnite na "
 "neprijatelje da uzmete zlato desno. Izbegavajte ih da pokupite ostalo. "
-"Zarobite neprijatelje visoko na desnoj strani dok kopate kroz dno komore. "
+"Zarobite neprijatelje visoko na desnoj strani dok kopate kroz dno komore.\n"
 "Kad se probijete, morate da padnete pravo na merdevine pored betona. Popnite "
 "se uz njih, ispod betona desno, pa onda nagore do vrha sledeće komore.\n"
-"\n"
-"Druga komora. Krenite ulevo pa udesno do okana, služeći se svojim kopačkim "
+"Druga komora. Prolazite kroz okna sleva udesno, služeći se svojim kopačkim "
 "veštinama da sakupite zlato. Kod najdešnjeg okna, kopajte levo dok padate, "
 "zatim padnite levo dok kopate i levo i desno. U preostaloj platformi od tri "
 "cigle, iskopajte levu, zatim desnu i središnju dok padate desno. Pokupite "
 "zlato desno i padnite na poslednji komad zlata dok kopate levo. Ponovo "
 "kopajte levo, padnite na merdevine pored betona, kao pre, pa idite nagore do "
 "sledeće komore.\n"
-"\n"
 "Treća komora. Kopajte desno, padnite na levi komad zlata i odmah kopajte "
 "desno da zarobite neprijatelja, zatim kopajte i izađite levo. Ponovite, "
 "jednu ciglu dalje, za komad zlata desno. Sada se vratite na vrh i padnite u "
@@ -6744,12 +7092,10 @@ msgstr ""
 "Padnite na zlato, kopajte da zarobite neprijatelja, kopajte opet i izađite "
 "levo. Ponovite za drugi viseći komad zlata. Ovog puta kopajte nadole i "
 "napolje, na merdevine pored betona, pa na poslednju komoru.\n"
-"\n"
 "Četvrta komora. Zarobite neprijatelja, trčite na vrh, prokopajte do betona "
 "levo, sačekajte neprijatelja i padnite na njega da dođete do još zlata na "
 "levoj strani. Pošto počistite svo zlato u ovoj komori, otrčite do dna i "
 "padnite kroz pod.\n"
-"\n"
 "Sada pokupite ostatak zlata i brzo umaknite."
 
 #: gamedata/game_sot.txt:94
@@ -7014,7 +7360,7 @@ msgstr ""
 "juri.\n"
 "\n"
 "Ako ste pod stresom, možete pauzirati (podrazumevano taster P ili Esc) i "
-"pribrati se. Pritisnite ga ponovo isti taster kad ste spremni da nastavite."
+"pribrati se. Pritisnite ponovo isti taster kad ste spremni da nastavite."
 
 #: gamedata/game_tute.txt:43
 #, kde-format
@@ -7270,8 +7616,8 @@ msgid ""
 "Leave the bottom left nugget till last.  False bricks give you access to "
 "most of the nuggets, but they are not symmetrically placed."
 msgstr ""
-"Ostavite donji levi grumen za kraj. Lažne cigle vam daju pristup svim "
-"grumenima, ali nisu simetrično postavljene."
+"Ostavite donji levi grumen za kraj. Lažne cigle vam daju pristup većini "
+"grumena, ali nisu simetrično postavljene."
 
 #: gamedata/game_wad.txt:33
 #, kde-format
@@ -7446,11 +7792,11 @@ msgid ""
 "Now fall onto them and collect the gold, then ride the third enemy down and "
 "use him to get across to the ladder."
 msgstr ""
-"Brzo prođite pored prva dva neprijatelja u dvostruku jamu levo od zlata. "
-"Prvo ih obojicu naterajte u malu kutiju, zatim ih pustite levo.\n"
+"Brzo naterajte prva dva neprijatelja u dvostruku jamu levo od zlata. Prvo ih "
+"obojicu naterajte u malu kutiju, zatim ih pustite levo.\n"
 "\n"
 "Sada padnite na njih i pokupite zlato, pa na trećem neprijatelju pođite "
-"nadole i iskoristite ga da pređete preko merdevina."
+"nadole i iskoristite ga da pređete do merdevina."
 
 #: gamedata/game_wad.txt:87
 #, kde-format
@@ -7563,8 +7909,8 @@ msgid ""
 msgstr ""
 "Ovo je zagrevanje za kasniji nivo. Da dohvatite zlato na desnoj strani, "
 "spustite se na neprijateljevu glavu, oslobodite ga levo, krenite ulevo za "
-"njim i, dok mu stoji na glavi idući nadole, kopajte desno. Zatim možete "
-"utrčati, zgrabiti zlato i izađi pre nego što se cigla zatvori.\n"
+"njim i, dok mu stojite na glavi idući nadole, kopajte desno. Zatim možete "
+"utrčati, zgrabiti zlato i izaći pre nego što se cigla zatvori.\n"
 "\n"
 "Ako odete u donji desni ugao, možete namamiti neprijatelja da padne u rupu "
 "koja sadrži zlato."
@@ -7673,7 +8019,7 @@ msgstr ""
 "sobom, zarobivši ga u jamama na dnu levo, dole desno i gore desno. Zatim "
 "možete pretrčati preko betona i skupiti zlato gore.\n"
 "\n"
-"Sledeće, počistite celu levu stranu osim jednog grumena ispod merdevina. Da "
+"Sledeće, počistite celu levu stranu osim jednog grumena iznad merdevina. Da "
 "dohvatite i njega, oslobodite drugog neprijatelja i povedite ga skroz okolo "
 "duž petlje. Ispratite ga uz dugačke merdevine, ostajući na njima dok on ne "
 "pretrči levo i padne. Sada idite na levi kraj betona, dok on kruži na levoj "
@@ -7711,139 +8057,116 @@ msgstr ""
 "treba mirna ruka."
 
 #: src/kgoldrunner.cpp:184
-#, fuzzy, kde-format
-#| msgid "&New Game..."
+#, kde-format
 msgctxt "@action"
 msgid "&New Game…"
-msgstr "&Nova igra..."
+msgstr "&Nova igra…"
 
 #: src/kgoldrunner.cpp:187
-#, fuzzy, kde-format
-#| msgid "Pla&y Next Level"
+#, kde-format
 msgctxt "@action"
 msgid "Pla&y Next Level"
-msgstr "&Idi sledeći nivo"
+msgstr "&Idi na sledeći nivo"
 
 #: src/kgoldrunner.cpp:188
-#, fuzzy, kde-format
-#| msgid "Play next level."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Play the next level"
 msgstr "Pređi na sledeći nivo"
 
 #: src/kgoldrunner.cpp:189
-#, fuzzy, kde-format
-#| msgid "Try the next level in the game you are playing."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Switches to the next level in the game you are playing."
-msgstr "Pokušajte sa sledećim nivoom u igri koju igrate."
+msgstr "Prelazi na sledeći nivo u igri koju igrate."
 
 #: src/kgoldrunner.cpp:196
-#, fuzzy, kde-format
-#| msgid "&Load Saved Game..."
+#, kde-format
 msgctxt "@action"
 msgid "&Load Saved Game…"
-msgstr "&Učitaj poziciju..."
+msgstr "&Učitaj poziciju…"
 
 # >> @title:window
 #: src/kgoldrunner.cpp:205
-#, fuzzy, kde-format
-#| msgid "Save Game"
+#, kde-format
 msgctxt "@action"
 msgid "&Save Game…"
-msgstr "Upisivanje pozicije"
+msgstr "Sačuvaj p&oziciju…"
 
 # >> @title:window
 #: src/kgoldrunner.cpp:211
-#, fuzzy, kde-format
-#| msgid "Save A Solution"
+#, kde-format
 msgctxt "@action"
 msgid "Save a Solution…"
-msgstr "Upisivanje rešenja"
+msgstr "Sačuvaj rešenje…"
 
 # >> @title:window
 #: src/kgoldrunner.cpp:212
-#, fuzzy, kde-format
-#| msgid "Save A Solution"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Save a solution"
-msgstr "Upisivanje rešenja"
+msgstr "Sačuvaj rešenje"
 
 #: src/kgoldrunner.cpp:213
-#, fuzzy, kde-format
-#| msgid ""
-#| "Save a solution for a level into a file called 'sol_&lt;prefix&gt;.txt' "
-#| "in your user's data directory..."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Saves a solution for a level into a file called 'sol_&lt;prefix&gt;.txt' in "
 "your user's data directory."
 msgstr ""
-"Sačuvajte rešenje nivoa u fajl po imenu „sol_&lt;prefiks&gt;.txt“ u svojoj "
+"Upisuje rešenje nivoa u fajl po imenu „sol_&lt;prefiks&gt;.txt“ u vašoj "
 "korisničkoj fascikli podataka."
 
 #: src/kgoldrunner.cpp:246
-#, fuzzy, kde-format
-#| msgid "&Show A Solution"
+#, kde-format
 msgctxt "@action"
 msgid "&Show a Solution"
 msgstr "&Prikaži rešenje"
 
 #: src/kgoldrunner.cpp:247
-#, fuzzy, kde-format
-#| msgid "Show how to win this level."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show how to win this level"
 msgstr "Pokaži kako završiti ovaj nivo"
 
 #: src/kgoldrunner.cpp:248
-#, fuzzy, kde-format
-#| msgid ""
-#| "Play a recording of how to win this level, if there is one available."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Plays a recording of how to win this level, if there is one available."
 msgstr "Pušta snimak rešavanja ovog nivoa, ako ga ima."
 
 #: src/kgoldrunner.cpp:252
-#, fuzzy, kde-format
-#| msgid "&Instant Replay"
+#, kde-format
 msgctxt "@action"
 msgid "&Instant Replay"
 msgstr "&Repriza"
 
 #: src/kgoldrunner.cpp:253
-#, fuzzy, kde-format
-#| msgid "Instant replay."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Instant replay"
 msgstr "Repriza"
 
 #: src/kgoldrunner.cpp:254
-#, fuzzy, kde-format
-#| msgid "Show a recording of the level you are currently playing."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Shows a recording of the level you are currently playing."
 msgstr "Pušta snimak nivoa koji trenutno igrate."
 
 #: src/kgoldrunner.cpp:259
-#, fuzzy, kde-format
-#| msgid "Replay &Last Level"
+#, kde-format
 msgctxt "@action"
 msgid "Replay &Last Level"
 msgstr "&Ponovi poslednji nivo"
 
 #: src/kgoldrunner.cpp:260
-#, fuzzy, kde-format
-#| msgid "Replay last level."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Replay last level"
 msgstr "Ponovi poslednji nivo"
 
 #: src/kgoldrunner.cpp:261
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show a recording of the last level you played and finished, regardless of "
-#| "whether you won or lost."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Shows a recording of the last level you played and finished, regardless of "
@@ -7853,372 +8176,317 @@ msgstr ""
 "li ste pobedili ili izgubili."
 
 #: src/kgoldrunner.cpp:267
-#, fuzzy, kde-format
-#| msgid "&Replay Any Level"
+#, kde-format
 msgctxt "@action"
 msgid "&Replay Any Level"
 msgstr "Ponovi &bilo koji nivo"
 
 #: src/kgoldrunner.cpp:268
-#, fuzzy, kde-format
-#| msgid "Replay any level."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Replay any level"
 msgstr "Ponovi bilo koji nivo"
 
 #: src/kgoldrunner.cpp:269
-#, fuzzy, kde-format
-#| msgid "Show a recording of any level you have played so far."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Shows a recording of any level you have played so far."
 msgstr "Prikazuje snimak nekog od nivoa koji ste do sada igrali."
 
 #: src/kgoldrunner.cpp:274
-#, fuzzy, kde-format
-#| msgid "&Kill Hero"
+#, kde-format
 msgctxt "@action"
 msgid "&Kill Hero"
 msgstr "&Ubij junaka"
 
 #: src/kgoldrunner.cpp:275
-#, fuzzy, kde-format
-#| msgid "&Kill Hero"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Kill the hero"
-msgstr "&Ubij junaka"
+msgstr "Ubij junaka"
 
 #: src/kgoldrunner.cpp:276
-#, fuzzy, kde-format
-#| msgid ""
-#| "Kill the hero, in case he finds himself in a situation from which he "
-#| "cannot escape."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Kills the hero, in case he finds himself in a situation from which he cannot "
 "escape."
-msgstr "Ubijte junaka, u slučaju da se nađe u bezizlaznoj situaciji."
+msgstr "Ubija junaka, u slučaju da se nađe u bezizlaznoj situaciji."
 
 #: src/kgoldrunner.cpp:293
-#, fuzzy, kde-format
-#| msgid "&Create Level"
+#, kde-format
 msgctxt "@action"
 msgid "&Create Level"
 msgstr "&Napravi nivo"
 
 #: src/kgoldrunner.cpp:294
-#, fuzzy, kde-format
-#| msgid "Create level."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Create level"
 msgstr "Napravi nivo"
 
 #: src/kgoldrunner.cpp:295
-#, fuzzy, kde-format
-#| msgid "Create a completely new level."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Creates a completely new level."
-msgstr "Napravite potpuno novi nivo."
+msgstr "Pravi potpuno novi nivo."
 
 #: src/kgoldrunner.cpp:297
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgctxt "@action"
 msgid "Create"
 msgstr "Napravi"
 
 # >> @title:window
 #: src/kgoldrunner.cpp:300
-#, fuzzy, kde-format
-#| msgid "Edit Level"
+#, kde-format
 msgctxt "@action"
 msgid "&Edit Level…"
-msgstr "Uređivanje nivoa"
+msgstr "&Uredi nivo…"
 
 # >> @title:window
 #: src/kgoldrunner.cpp:301
-#, fuzzy, kde-format
-#| msgid "Edit Level"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit level"
-msgstr "Uređivanje nivoa"
+msgstr "Uredi nivo"
 
 #: src/kgoldrunner.cpp:302
-#, fuzzy, kde-format
-#| msgid "Edit any level..."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Edits any level."
-msgstr "Uredi bilo koji nivo..."
+msgstr "Uređuje bilo koji nivo."
 
 #: src/kgoldrunner.cpp:304
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action"
 msgid "Edit"
 msgstr "Uredi"
 
 #: src/kgoldrunner.cpp:312 src/kgrgame.cpp:1461
-#, fuzzy, kde-format
-#| msgid "&Save Edits..."
+#, kde-format
 msgctxt "@action"
 msgid "&Save Edits…"
-msgstr "&Sačuvaj izmene..."
+msgstr "&Sačuvaj izmene…"
 
 #: src/kgoldrunner.cpp:313
-#, fuzzy, kde-format
-#| msgid "Save edits..."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Save edits"
-msgstr "Sačuvaj izmene..."
+msgstr "Sačuvaj izmene"
 
 #: src/kgoldrunner.cpp:314
-#, fuzzy, kde-format
-#| msgid "Save your level after editing..."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Saves your level after editing."
-msgstr "Sačuvajte nivo nakon uređivanja."
+msgstr "Upisuje nivo nakon uređivanja."
 
 #: src/kgoldrunner.cpp:316
-#, fuzzy, kde-format
-#| msgid "Save"
+#, kde-format
 msgctxt "@action"
 msgid "Save"
 msgstr "Sačuvaj"
 
 # >> @title:window
 #: src/kgoldrunner.cpp:320
-#, fuzzy, kde-format
-#| msgid "Move Level"
+#, kde-format
 msgctxt "@action"
 msgid "&Move Level…"
-msgstr "Pomeranje nivoa"
+msgstr "&Pomeri nivo…"
 
 # >> @title:window
 #: src/kgoldrunner.cpp:321
-#, fuzzy, kde-format
-#| msgid "Move Level"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Move level"
-msgstr "Pomeranje nivoa"
+msgstr "Pomeri nivo"
 
 #: src/kgoldrunner.cpp:322
-#, fuzzy, kde-format
-#| msgid "Change a level's number or move it to another game..."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Changes a level's number or move it to another game."
-msgstr "Promenite broj nivoa ili ga prebacite u drugu igru."
+msgstr "Menja broj nivoa ili ga prebacuje u drugu igru."
 
 #: src/kgoldrunner.cpp:326
-#, fuzzy, kde-format
-#| msgid "&Delete Level"
+#, kde-format
 msgctxt "@action"
 msgid "&Delete Level…"
-msgstr "&Obriši nivo"
+msgstr "&Obriši nivo…"
 
 # >> @title:window
 #: src/kgoldrunner.cpp:327
-#, fuzzy, kde-format
-#| msgid "Delete Level"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete level"
-msgstr "Brisanje nivoa"
+msgstr "Obriši nivo"
 
 #: src/kgoldrunner.cpp:328
-#, fuzzy, kde-format
-#| msgid "Delete a level..."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Deletes a level."
 msgstr "Briše nivo."
 
 # >> @title:window
 #: src/kgoldrunner.cpp:335
-#, fuzzy, kde-format
-#| msgid "Create Game"
+#, kde-format
 msgctxt "@action"
 msgid "Create &Game…"
-msgstr "Stvaranje igre"
+msgstr "Napravi &igru…"
 
 # >> @title:window
 #: src/kgoldrunner.cpp:336
-#, fuzzy, kde-format
-#| msgid "Create Game"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Create game"
-msgstr "Stvaranje igre"
+msgstr "Napravi igru"
 
 #: src/kgoldrunner.cpp:337
-#, fuzzy, kde-format
-#| msgid "Create a completely new game..."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Creates a completely new game."
-msgstr "Napravite potpuno novu igru."
+msgstr "Pravi potpuno novu igru."
 
 # >> @title:window
 #: src/kgoldrunner.cpp:340
-#, fuzzy, kde-format
-#| msgid "Edit Game Info"
+#, kde-format
 msgctxt "@action"
 msgid "Edit Game &Info…"
-msgstr "Uređivanje podataka o igri"
+msgstr "Uredi po&datke o igri…"
 
 #: src/kgoldrunner.cpp:341
-#, fuzzy, kde-format
-#| msgid "Edit game info..."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit game info"
-msgstr "Izmeni podatke o igri"
+msgstr "Uredi podatke o igri"
 
 #: src/kgoldrunner.cpp:342
-#, fuzzy, kde-format
-#| msgid "Change the name, rules or description of a game..."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Changes the name, rules or description of a game."
-msgstr "Izmenite naziv, pravila ili opis igre."
+msgstr "Menja ime, pravila ili opis igre."
 
 #: src/kgoldrunner.cpp:351
-#, fuzzy, kde-format
-#| msgid "Change &Theme..."
+#, kde-format
 msgctxt "@action"
 msgid "Change &Theme…"
-msgstr "Promeni &temu..."
+msgstr "Promeni &temu…"
 
 #: src/kgoldrunner.cpp:352
-#, fuzzy, kde-format
-#| msgid "Change the graphics theme..."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Change the graphics theme"
-msgstr "Promenite grafičku temu."
+msgstr "Promeni grafičku temu"
 
 #: src/kgoldrunner.cpp:353
-#, fuzzy, kde-format
-#| msgid "Alter the visual appearance of the runners and background scene..."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Alters the visual appearance of the runners and background scene."
-msgstr "Izmenite izgled trkača i pozadinske scene."
+msgstr "Menja izgled trkača i pozadinske scene."
 
 #: src/kgoldrunner.cpp:367
-#, fuzzy, kde-format
-#| msgid "&Play Sounds"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Play Sounds"
-msgstr "&Zvuk"
+msgstr "Puštaj &zvukove"
 
 #: src/kgoldrunner.cpp:368
-#, fuzzy, kde-format
-#| msgid "Play sound effects."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Play sound effects"
 msgstr "Puštaj zvučne efekte"
 
 #: src/kgoldrunner.cpp:369
-#, fuzzy, kde-format
-#| msgid "Play sound effects during the game."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Plays sound effects during the game."
-msgstr "Puštanje zvučnih efekata tokom igre."
+msgstr "Pušta zvučne efekte tokom igre."
 
 #: src/kgoldrunner.cpp:373
-#, fuzzy, kde-format
-#| msgid "Play &Footstep Sounds"
+#, kde-format
 msgctxt "@option:check"
 msgid "Play &Footstep Sounds"
 msgstr "Zvuk &koraka"
 
 #: src/kgoldrunner.cpp:374
-#, fuzzy, kde-format
-#| msgid "Make sounds of player's footsteps."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Make sounds of player's footsteps"
 msgstr "Puštaj zvuk igračevih koraka"
 
 #: src/kgoldrunner.cpp:375
-#, fuzzy, kde-format
-#| msgid "Make sounds of player's footsteps."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Makes sounds of player's footsteps."
-msgstr "Puštaj zvuk igračevih koraka"
+msgstr "Pušta zvuk igračevih koraka."
 
 #: src/kgoldrunner.cpp:380
-#, fuzzy, kde-format
-#| msgid "&Demo At Start"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Demo at Start"
 msgstr "&Demo na pokretanju"
 
 #: src/kgoldrunner.cpp:381
-#, fuzzy, kde-format
-#| msgid "Run a demo when the game starts."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Run a demo when the game starts"
 msgstr "Započni demo pošto se igra pokrene"
 
 #: src/kgoldrunner.cpp:382
-#, fuzzy, kde-format
-#| msgid "Run a demo when the game starts."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Runs a demo when the game starts."
-msgstr "Započni demo pošto se igra pokrene"
+msgstr "Pušta demo pošto se igra pokrene."
 
 #: src/kgoldrunner.cpp:390
-#, fuzzy, kde-format
-#| msgid "&Mouse Controls Hero"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Mouse Controls Hero"
 msgstr "Junakom se upravlja &mišem"
 
 #: src/kgoldrunner.cpp:391
-#, fuzzy, kde-format
-#| msgid "Mouse controls hero."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Mouse controls hero"
 msgstr "Junakom se upravlja mišem"
 
 #: src/kgoldrunner.cpp:392
-#, fuzzy, kde-format
-#| msgid "Use the mouse to control the hero's moves."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Use the mouse to control the hero's moves."
 msgstr "Koristite miš da upravljate kretanjem junaka."
 
 #: src/kgoldrunner.cpp:396
-#, fuzzy, kde-format
-#| msgid "&Keyboard Controls Hero"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Keyboard Controls Hero"
-msgstr "Junak se upravlja &tastaturom"
+msgstr "Junakom se upravlja t&astaturom"
 
 #: src/kgoldrunner.cpp:397
-#, fuzzy, kde-format
-#| msgid "Keyboard controls hero."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Keyboard controls hero"
-msgstr "Junak se upravlja tastaturom"
+msgstr "Junakom se upravlja tastaturom"
 
 #: src/kgoldrunner.cpp:398
-#, fuzzy, kde-format
-#| msgid "Use the keyboard to control the hero's moves."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Use the keyboard to control the hero's moves."
 msgstr "Koristite tastaturu da upravljate kretanjem junaka."
 
 #: src/kgoldrunner.cpp:402
-#, fuzzy, kde-format
-#| msgid "Hybrid Control (&Laptop)"
+#, kde-format
 msgctxt "@option:check"
 msgid "Hybrid Control (&Laptop)"
 msgstr "Hibridno upravljanje (&laptop)"
 
 #: src/kgoldrunner.cpp:403
-#, fuzzy, kde-format
-#| msgid "Pointer controls hero; dig using keyboard."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Pointer controls hero; dig using keyboard"
 msgstr "Pokazivač upravlja junakom, kopanje preko tastature"
 
 #: src/kgoldrunner.cpp:405
-#, fuzzy, kde-format
-#| msgid ""
-#| "Use the laptop's pointer device to control the hero's moves, and use the "
-#| "keyboard to dig left and right."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Use the laptop's pointer device to control the hero's moves, and use the "
@@ -8228,24 +8496,19 @@ msgstr ""
 "tastaturu za kopanje levo i desno."
 
 #: src/kgoldrunner.cpp:420
-#, fuzzy, kde-format
-#| msgid "&Click Key To Move"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Click Key to Move"
 msgstr "&Klik tasterom za kretanje"
 
 #: src/kgoldrunner.cpp:421
-#, fuzzy, kde-format
-#| msgid "&Click Key To Move"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click key to move"
-msgstr "&Klik tasterom za kretanje"
+msgstr "Klik tasterom za kretanje"
 
 #: src/kgoldrunner.cpp:422
-#, fuzzy, kde-format
-#| msgid ""
-#| "In keyboard mode, click a direction-key to start moving and keep on going "
-#| "until you click another key."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "In keyboard mode, click a direction-key to start moving and keep on going "
@@ -8255,24 +8518,19 @@ msgstr ""
 "dok ne kliknete drugim tasterom."
 
 #: src/kgoldrunner.cpp:428
-#, fuzzy, kde-format
-#| msgid "&Hold Key To Move"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Hold Key to Move"
 msgstr "&Držanje tastera za kretanje"
 
 #: src/kgoldrunner.cpp:429
-#, fuzzy, kde-format
-#| msgid "&Hold Key To Move"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Hold key to move"
-msgstr "&Držanje tastera za kretanje"
+msgstr "Držanje tastera za kretanje"
 
 #: src/kgoldrunner.cpp:430
-#, fuzzy, kde-format
-#| msgid ""
-#| "In keyboard mode, hold down a direction-key to move and release it to "
-#| "stop."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "In keyboard mode, hold down a direction-key to move and release it to stop."
@@ -8281,197 +8539,169 @@ msgstr ""
 "zaustavljanje."
 
 #: src/kgoldrunner.cpp:447
-#, fuzzy, kde-format
-#| msgid "Normal Speed"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Normal Speed"
 msgstr "Normalna brzina"
 
 #: src/kgoldrunner.cpp:448
-#, fuzzy, kde-format
-#| msgid "Set normal speed."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set normal speed"
 msgstr "Postavi normalnu brzinu"
 
 #: src/kgoldrunner.cpp:449
-#, fuzzy, kde-format
-#| msgid "Set normal game speed."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Set normal game speed."
 msgstr "Postavlja normalnu brzinu igre."
 
 #: src/kgoldrunner.cpp:453
-#, fuzzy, kde-format
-#| msgid "Beginner Speed"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Beginner Speed"
 msgstr "Početnička brzina"
 
 #: src/kgoldrunner.cpp:454
-#, fuzzy, kde-format
-#| msgid "Set beginners' speed."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set beginners' speed"
 msgstr "Postavi početničku brzinu"
 
 #: src/kgoldrunner.cpp:455
-#, fuzzy, kde-format
-#| msgid "Set beginners' game speed (0.5 times normal)."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Set beginners' game speed (0.5 times normal)."
 msgstr "Postavlja početničku brzinu igre (0,5 puta normalna)."
 
 #: src/kgoldrunner.cpp:460
-#, fuzzy, kde-format
-#| msgid "Champion Speed"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Champion Speed"
 msgstr "Šampionska brzina"
 
 #: src/kgoldrunner.cpp:461
-#, fuzzy, kde-format
-#| msgid "Set champions' speed."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set champions' speed"
 msgstr "Postavi šampionsku brzinu"
 
 #: src/kgoldrunner.cpp:462
-#, fuzzy, kde-format
-#| msgid "Set champions' game speed (1.5 times normal)."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Set champions' game speed (1.5 times normal)."
 msgstr "Postavlja šampionsku brzinu igre (1,5 puta normalna)."
 
 #: src/kgoldrunner.cpp:466
-#, fuzzy, kde-format
-#| msgid "Increase Speed"
+#, kde-format
 msgctxt "@action"
 msgid "Increase Speed"
 msgstr "Povećaj brzinu"
 
 #: src/kgoldrunner.cpp:467
-#, fuzzy, kde-format
-#| msgid "Increase speed."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Increase speed"
 msgstr "Povećaj brzinu"
 
 #: src/kgoldrunner.cpp:468
-#, fuzzy, kde-format
-#| msgid "Increase the game speed by 0.1 (maximum is 2.0 times normal)."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Increases the game speed by 0.1 (maximum is 2.0 times normal)."
 msgstr "Povećava brzinu igre za 0,1 (najviša je 2,0 puta normalna)."
 
 #: src/kgoldrunner.cpp:473
-#, fuzzy, kde-format
-#| msgid "Decrease Speed"
+#, kde-format
 msgctxt "@action"
 msgid "Decrease Speed"
 msgstr "Smanji brzinu"
 
 #: src/kgoldrunner.cpp:474
-#, fuzzy, kde-format
-#| msgid "Decrease speed."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Decrease speed"
 msgstr "Smanji brzinu"
 
 #: src/kgoldrunner.cpp:475
-#, fuzzy, kde-format
-#| msgid "Decrease the game speed by 0.1 (minimum is 0.2 times normal)."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Decreases the game speed by 0.1 (minimum is 0.2 times normal)."
 msgstr "Smanjuje brzinu igre za 0,1 (najmanja je 0,2 puta normalna)."
 
 #: src/kgoldrunner.cpp:505
-#, fuzzy, kde-format
-#| msgid "Stop"
+#, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "Stani"
 
 #: src/kgoldrunner.cpp:506
-#, fuzzy, kde-format
-#| msgid "Move Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Right"
 msgstr "Idi desno"
 
 #: src/kgoldrunner.cpp:507
-#, fuzzy, kde-format
-#| msgid "Move Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Left"
 msgstr "Idi levo"
 
 #: src/kgoldrunner.cpp:508
-#, fuzzy, kde-format
-#| msgid "Move Up"
+#, kde-format
 msgctxt "@action"
 msgid "Move Up"
 msgstr "Idi gore"
 
 #: src/kgoldrunner.cpp:509
-#, fuzzy, kde-format
-#| msgid "Move Down"
+#, kde-format
 msgctxt "@action"
 msgid "Move Down"
 msgstr "Idi dole"
 
 #: src/kgoldrunner.cpp:510
-#, fuzzy, kde-format
-#| msgid "Dig Right"
+#, kde-format
 msgctxt "@action"
 msgid "Dig Right"
 msgstr "Kopaj desno"
 
 #: src/kgoldrunner.cpp:511
-#, fuzzy, kde-format
-#| msgid "Dig Left"
+#, kde-format
 msgctxt "@action"
 msgid "Dig Left"
 msgstr "Kopaj levo"
 
 #: src/kgoldrunner.cpp:535
-#, fuzzy, kde-format
-#| msgid "Do a Step"
+#, kde-format
 msgctxt "@action"
 msgid "Do a Step"
 msgstr "Korakni"
 
 #: src/kgoldrunner.cpp:536
-#, fuzzy, kde-format
-#| msgid "Test Bug Fix"
+#, kde-format
 msgctxt "@action"
 msgid "Test Bug Fix"
 msgstr "Isprobaj ispravku greške"
 
 #: src/kgoldrunner.cpp:537
-#, fuzzy, kde-format
-#| msgid "Show Positions"
+#, kde-format
 msgctxt "@action"
 msgid "Show Positions"
 msgstr "Prikaži položaje"
 
 #: src/kgoldrunner.cpp:538
-#, fuzzy, kde-format
-#| msgid "Start Logging"
+#, kde-format
 msgctxt "@action"
 msgid "Start Logging"
 msgstr "Počni beleženje"
 
 #: src/kgoldrunner.cpp:539
-#, fuzzy, kde-format
-#| msgid "Show Hero"
+#, kde-format
 msgctxt "@action"
 msgid "Show Hero"
 msgstr "Prikaži junaka"
 
 #: src/kgoldrunner.cpp:540
-#, fuzzy, kde-format
-#| msgid "Show Object"
+#, kde-format
 msgctxt "@action"
 msgid "Show Object"
 msgstr "Prikaži objekat"
@@ -8479,8 +8709,7 @@ msgstr "Prikaži objekat"
 #: src/kgoldrunner.cpp:542 src/kgoldrunner.cpp:543 src/kgoldrunner.cpp:544
 #: src/kgoldrunner.cpp:545 src/kgoldrunner.cpp:546 src/kgoldrunner.cpp:547
 #: src/kgoldrunner.cpp:548
-#, fuzzy, kde-format
-#| msgid "Show Enemy"
+#, kde-format
 msgctxt "@action"
 msgid "Show Enemy"
 msgstr "Prikaži neprijatelja"
@@ -8525,12 +8754,11 @@ msgstr "ima savet"
 #: src/kgoldrunner.cpp:761
 #, kde-format
 msgid "No hint"
-msgstr "nema savet"
+msgstr "nema saveta"
 
 # >> @title:window
 #: src/kgoldrunner.cpp:878
-#, fuzzy, kde-format
-#| msgid "Get Folders"
+#, kde-format
 msgctxt "@window:title"
 msgid "Get Folders"
 msgstr "Dobavljanje fascikli"
@@ -8542,274 +8770,235 @@ msgstr ""
 "Ne mogu da nađem sistemsku potfasciklu sa igrama „/system/“ u oblastima „%1“."
 
 #: src/kgoldrunner.cpp:912
-#, fuzzy, kde-format
-#| msgid "Edit Name/Hint"
+#, kde-format
 msgctxt "@action"
 msgid "Edit Name/Hint"
 msgstr "Uredi ime/savet"
 
 #: src/kgoldrunner.cpp:913
-#, fuzzy, kde-format
-#| msgid "Edit level name or hint"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit level name or hint"
-msgstr "Izmeni ime nivoa ili savet"
+msgstr "Uredi ime nivoa ili savet"
 
 #: src/kgoldrunner.cpp:914
-#, fuzzy, kde-format
-#| msgid "Edit text for the name or hint of a level"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Edits text for the name or hint of a level"
-msgstr "Uredite ime ili tekst saveta nivoa."
+msgstr "Uređuje tekst imena ili saveta nivoa"
 
 #: src/kgoldrunner.cpp:917
-#, fuzzy, kde-format
-#| msgid "Name/Hint"
+#, kde-format
 msgctxt "@action"
 msgid "Name/Hint"
 msgstr "Ime/savet"
 
 #: src/kgoldrunner.cpp:920
-#, fuzzy, kde-format
-#| msgid "Erase"
+#, kde-format
 msgctxt "@option:check"
 msgid "Erase"
 msgstr "Obriši"
 
 #: src/kgoldrunner.cpp:920
-#, fuzzy, kde-format
-#| msgid "Space/Erase"
+#, kde-format
 msgctxt "@option:check"
 msgid "Space/Erase"
-msgstr "Razmakni/obriši"
+msgstr "Prazno polje/obriši"
 
 #: src/kgoldrunner.cpp:921
-#, fuzzy, kde-format
-#| msgid "Paint empty squares or erase"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint empty squares or erase"
 msgstr "Iscrtaj prazna polja ili obriši"
 
 #: src/kgoldrunner.cpp:922
-#, fuzzy, kde-format
-#| msgid "Erase objects or paint empty squares"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Erases objects or paint empty squares."
 msgstr "Briše objekte ili iscrtava prazna polja."
 
 #: src/kgoldrunner.cpp:925
-#, fuzzy, kde-format
-#| msgid "Hero"
+#, kde-format
 msgctxt "@option:check"
 msgid "Hero"
 msgstr "Junak"
 
 #: src/kgoldrunner.cpp:926
-#, fuzzy, kde-format
-#| msgid "Move hero"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Move hero"
 msgstr "Pomeri junaka"
 
 #: src/kgoldrunner.cpp:927
-#, fuzzy, kde-format
-#| msgid "Change the hero's starting position"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Changes the hero's starting position."
-msgstr "Promeniti početni položaj junaka."
+msgstr "Menja početni položaj junaka."
 
 #: src/kgoldrunner.cpp:930
-#, fuzzy, kde-format
-#| msgid "Enemy"
+#, kde-format
 msgctxt "@option:check"
 msgid "Enemy"
 msgstr "Neprijatelj"
 
 #: src/kgoldrunner.cpp:931
-#, fuzzy, kde-format
-#| msgid "Paint enemies"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint enemies"
 msgstr "Iscrtaj neprijatelja"
 
 #: src/kgoldrunner.cpp:932
-#, fuzzy, kde-format
-#| msgid "Paint enemies at their starting positions"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints enemies at their starting positions."
 msgstr "Iscrtava neprijatelje na početnim položajima."
 
 #: src/kgoldrunner.cpp:936
-#, fuzzy, kde-format
-#| msgid "Brick"
+#, kde-format
 msgctxt "@option:check"
 msgid "Brick"
 msgstr "Cigla"
 
 #: src/kgoldrunner.cpp:937
-#, fuzzy, kde-format
-#| msgid "Paint bricks (can dig)"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint bricks (can dig)"
 msgstr "Iscrtaj ciglu (može da se kopa)"
 
 #: src/kgoldrunner.cpp:938
-#, fuzzy, kde-format
-#| msgid "Paint bricks (diggable objects)"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints bricks (diggable objects)."
-msgstr "Iscrtava ciglu, koja može da se kopa."
+msgstr "Iscrtava cigle, koje mogu da se kopaju."
 
 #: src/kgoldrunner.cpp:941
-#, fuzzy, kde-format
-#| msgid "Concrete"
+#, kde-format
 msgctxt "@option:check"
 msgid "Concrete"
 msgstr "Beton"
 
 #: src/kgoldrunner.cpp:942
-#, fuzzy, kde-format
-#| msgid "Paint concrete (cannot dig)"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint concrete (cannot dig)"
 msgstr "Iscrtaj beton (ne može da se kopa)"
 
 #: src/kgoldrunner.cpp:943
-#, fuzzy, kde-format
-#| msgid "Paint concrete objects (not diggable)"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints concrete objects (not diggable)."
-msgstr "Iscrtaj betonski objekat, koji ne može da se kopa."
+msgstr "Iscrtava betonske objekte, koji ne mogu da se kopaju."
 
 #: src/kgoldrunner.cpp:946
-#, fuzzy, kde-format
-#| msgid "Trap"
+#, kde-format
 msgctxt "@option:check"
 msgid "Trap"
 msgstr "Zamka"
 
 #: src/kgoldrunner.cpp:946
-#, fuzzy, kde-format
-#| msgid "Trap/False Brick"
+#, kde-format
 msgctxt "@option:check"
 msgid "Trap/False Brick"
 msgstr "Zamka/lažna cigla"
 
 #: src/kgoldrunner.cpp:947
-#, fuzzy, kde-format
-#| msgid "Paint traps or false bricks (can fall through)"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint traps or false bricks (can fall through)"
-msgstr "Zamke ili lažne cigle (može da se propadne)"
+msgstr "Iscrtaj zamke ili lažne cigle (može da se propadne)"
 
 #: src/kgoldrunner.cpp:949
-#, fuzzy, kde-format
-#| msgid "Paint traps or false bricks (can fall through)"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints traps or false bricks (can fall through)."
-msgstr "Zamke ili lažne cigle (može da se propadne)"
+msgstr "Iscrtava zamke ili lažne cigle (može da se propadne)."
 
 #: src/kgoldrunner.cpp:953
-#, fuzzy, kde-format
-#| msgid "Ladder"
+#, kde-format
 msgctxt "@option:check"
 msgid "Ladder"
 msgstr "Merdevine"
 
 #: src/kgoldrunner.cpp:954
-#, fuzzy, kde-format
-#| msgid "Paint ladders"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint ladders"
 msgstr "Iscrtaj merdevine"
 
 #: src/kgoldrunner.cpp:955
-#, fuzzy, kde-format
-#| msgid "Paint ladders (ways to go up or down)"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints ladders (ways to go up or down)."
-msgstr "Merdevine služe za kretanje nagore i nadole."
+msgstr "Iscrtava merdevine (za kretanje nagore i nadole)."
 
 #: src/kgoldrunner.cpp:958
-#, fuzzy, kde-format
-#| msgid "H Ladder"
+#, kde-format
 msgctxt "@option:check"
 msgid "H Ladder"
 msgstr "S‑merdevine"
 
 #: src/kgoldrunner.cpp:958
-#, fuzzy, kde-format
-#| msgid "Hidden Ladder"
+#, kde-format
 msgctxt "@option:check"
 msgid "Hidden Ladder"
 msgstr "Skrivene merdevine"
 
 #: src/kgoldrunner.cpp:959
-#, fuzzy, kde-format
-#| msgid "Paint hidden ladders"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint hidden ladders"
 msgstr "Iscrtaj skrivene merdevine"
 
 #: src/kgoldrunner.cpp:960
-#, fuzzy, kde-format
-#| msgid "Paint hidden ladders, which appear when all the gold is gone"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints hidden ladders, which appear when all the gold is gone."
 msgstr "Iscrtava skrivene merdevine, koje se pojavljuju kad nema više zlata."
 
 #: src/kgoldrunner.cpp:964
-#, fuzzy, kde-format
-#| msgid "Bar"
+#, kde-format
 msgctxt "@option:check"
 msgid "Bar"
 msgstr "Greda"
 
 #: src/kgoldrunner.cpp:964
-#, fuzzy, kde-format
-#| msgid "Bar/Pole"
+#, kde-format
 msgctxt "@option:check"
 msgid "Bar/Pole"
 msgstr "Greda/šipka"
 
 #: src/kgoldrunner.cpp:965
-#, fuzzy, kde-format
-#| msgid "Paint bars or poles"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint bars or poles"
 msgstr "Iscrtaj grede ili šipke"
 
 #: src/kgoldrunner.cpp:966
-#, fuzzy, kde-format
-#| msgid "Paint bars or poles (can fall from these)"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints bars or poles (can fall from these)."
-msgstr "Iscrtava grede ili šipke (može da se padne)"
+msgstr "Iscrtava grede ili šipke (može da se padne)."
 
 #: src/kgoldrunner.cpp:970
-#, fuzzy, kde-format
-#| msgid "Gold"
+#, kde-format
 msgctxt "@option:check"
 msgid "Gold"
 msgstr "Zlato"
 
 #: src/kgoldrunner.cpp:970
-#, fuzzy, kde-format
-#| msgid "Gold/Treasure"
+#, kde-format
 msgctxt "@option:check"
 msgid "Gold/Treasure"
 msgstr "Zlato/blago"
 
 #: src/kgoldrunner.cpp:971
-#, fuzzy, kde-format
-#| msgid "Paint gold (or other treasure)"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Paint gold (or other treasure)"
 msgstr "Iscrtaj zlato (ili drugo blago)"
 
 #: src/kgoldrunner.cpp:972
-#, fuzzy, kde-format
-#| msgid "Paint gold pieces (or other treasure)"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Paints gold pieces (or other treasure)."
 msgstr "Iscrtava grumene zlata ili drugo blago."
@@ -8828,58 +9017,50 @@ msgstr "Traka uređivanja"
 
 # >> @title:window
 #: src/kgrdialog.cpp:34
-#, fuzzy, kde-format
-#| msgid "Edit Name & Hint"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Name or Hint"
-msgstr "Uređivanje imena i saveta"
+msgstr "Uređivanje imena ili saveta"
 
 #: src/kgrdialog.cpp:56
-#, fuzzy, kde-format
-#| msgid "Name of level:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name of level:"
 msgstr "Ime nivoa:"
 
 #: src/kgrdialog.cpp:63
-#, fuzzy, kde-format
-#| msgid "Hint for level:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Hint for level:"
 msgstr "Savet za nivo:"
 
 # >> @title:window
 #: src/kgrdialog.cpp:103 src/kgrdialog.cpp:172 src/kgrselector.cpp:84
-#, fuzzy, kde-format
-#| msgid "Edit Game Info"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Game Info"
 msgstr "Uređivanje podataka o igri"
 
 #: src/kgrdialog.cpp:123
-#, fuzzy, kde-format
-#| msgid "Name of game:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name of game:"
 msgstr "Ime igre:"
 
 #: src/kgrdialog.cpp:131
-#, fuzzy, kde-format
-#| msgid "File name prefix:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "File name prefix:"
 msgstr "Prefiks imena fajla:"
 
 #: src/kgrdialog.cpp:139
-#, fuzzy, kde-format
-#| msgid "Traditional rules"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Traditional rules"
 msgstr "Tradicionalna pravila"
 
 #: src/kgrdialog.cpp:140
-#, fuzzy, kde-format
-#| msgid "KGoldrunner rules"
+#, kde-format
 msgctxt "@option:radio"
 msgid "KGoldrunner rules"
 msgstr "Pravila K‑zlatobojca"
@@ -8894,23 +9075,20 @@ msgstr[2] "%1 nivoa"
 msgstr[3] "1 nivo"
 
 #: src/kgrdialog.cpp:152
-#, fuzzy, kde-format
-#| msgid "About this game:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "About this game:"
 msgstr "O ovoj igri:"
 
 # >> @title:window
 #: src/kgrdialog.cpp:169
-#, fuzzy, kde-format
-#| msgid "Create Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Game"
 msgstr "Stvaranje igre"
 
 #: src/kgrdialog.cpp:186
-#, fuzzy, kde-format
-#| msgid "Save Changes"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save Changes"
 msgstr "Sačuvaj izmene"
@@ -8921,16 +9099,14 @@ msgid "0 levels"
 msgstr "0 nivoa"
 
 #: src/kgrdialog.cpp:192 src/kgrselector.cpp:269
-#, fuzzy, kde-format
-#| msgid "Save New"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save New"
 msgstr "Sačuvaj novi"
 
 # >> @title:window
 #: src/kgrdialog.cpp:247
-#, fuzzy, kde-format
-#| msgid "Select Saved Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Saved Game"
 msgstr "Izbor pozicije"
@@ -8943,8 +9119,7 @@ msgstr ""
 
 # >> @title:window
 #: src/kgreditor.cpp:66
-#, fuzzy, kde-format
-#| msgid "Create Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Level"
 msgstr "Stvaranje nivoa"
@@ -8956,12 +9131,11 @@ msgid ""
 "Try menu item \"Create Game\"."
 msgstr ""
 "Ne možete da napravite i sačuvate nivo pre nego što napravite igru koja će "
-"ga sadržati. Idite na stavku menija „Stvaranje igre“."
+"ga sadržati. Idite na stavku menija „Napravi igru…“."
 
 # >> @title:window
 #: src/kgreditor.cpp:115 src/kgreditor.cpp:137
-#, fuzzy, kde-format
-#| msgid "Edit Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Level"
 msgstr "Uređivanje nivoa"
@@ -8973,7 +9147,7 @@ msgid ""
 "Try menu item \"Create Game\"."
 msgstr ""
 "Ne možete da uredite i sačuvate nivo pre nego što napravite igru i nivo. "
-"Idite na stavku menija „Stvaranje igre“."
+"Idite na stavku menija „Napravi igru…“."
 
 #: src/kgreditor.cpp:138
 #, kde-format
@@ -8988,8 +9162,7 @@ msgstr ""
 
 # >> @title:window
 #: src/kgreditor.cpp:242 src/kgreditor.cpp:261 src/kgrgame.cpp:260
-#, fuzzy, kde-format
-#| msgid "Save Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Level"
 msgstr "Upisivanje nivoa"
@@ -9000,15 +9173,13 @@ msgid "Do you want to insert a level and move existing levels up by one?"
 msgstr "Želite li da umetnete nivo i pomerite postojeće nivoe za jedan nagore?"
 
 #: src/kgreditor.cpp:245
-#, fuzzy, kde-format
-#| msgid "&Insert Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Insert Level"
 msgstr "&Umetni nivo"
 
 #: src/kgreditor.cpp:246 src/kgreditor.cpp:446
-#, fuzzy, kde-format
-#| msgid "&Cancel"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Cancel"
 msgstr "&Odustani"
@@ -9022,8 +9193,7 @@ msgstr "Ne mogu da otvorim fajl „%1“ za izlaz."
 # >> @title:window
 #: src/kgreditor.cpp:317 src/kgreditor.cpp:333 src/kgreditor.cpp:341
 #: src/kgreditor.cpp:356
-#, fuzzy, kde-format
-#| msgid "Move Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Move Level"
 msgstr "Pomeranje nivoa"
@@ -9036,16 +9206,14 @@ msgstr ""
 
 # >> @title:menu
 #: src/kgreditor.cpp:320
-#, fuzzy, kde-format
-#| msgid "Game"
+#, kde-format
 msgctxt "@title:menu"
 msgid "Game"
 msgstr "Igra"
 
 # >> @title:menu
 #: src/kgreditor.cpp:320
-#, fuzzy, kde-format
-#| msgid "Editor"
+#, kde-format
 msgctxt "@title:menu"
 msgid "Editor"
 msgstr "Uređivač"
@@ -9057,7 +9225,7 @@ msgid ""
 "levels. Try menu item \"Create Game\"."
 msgstr ""
 "Ne možete da pomerite nivo pre nego što napravite igru sa bar dva nivoa. "
-"Idite na stavku menija „Stvaranje igre“."
+"Idite na stavku menija „Napravi igru…“."
 
 #: src/kgreditor.cpp:342
 #, kde-format
@@ -9071,8 +9239,7 @@ msgstr "Morate da promenite nivo, igru, ili oba."
 
 # >> @title:window
 #: src/kgreditor.cpp:419 src/kgreditor.cpp:442 src/kgreditor.cpp:461
-#, fuzzy, kde-format
-#| msgid "Delete Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Level"
 msgstr "Brisanje nivoa"
@@ -9084,7 +9251,7 @@ msgid ""
 "menu item \"Create Game\"."
 msgstr ""
 "Ne možete da obrišete nivo pre nego što napravite igru i nivo. Idite na "
-"stavku menija „Stvaranje igre“."
+"stavku menija „Napravi igru…“."
 
 #: src/kgreditor.cpp:443
 #, kde-format
@@ -9092,8 +9259,7 @@ msgid "Do you want to delete a level and move higher levels down by one?"
 msgstr "Želite li da obrišete nivo i pomerite više nivoe za jedan nadole?"
 
 #: src/kgreditor.cpp:445
-#, fuzzy, kde-format
-#| msgid "&Delete Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Delete Level"
 msgstr "&Obriši nivo"
@@ -9107,8 +9273,7 @@ msgstr "Ne mogu da pronađem fajl „%1“ za brisanje."
 #: src/kgreditor.cpp:510 src/kgreditor.cpp:520 src/kgreditor.cpp:525
 #: src/kgreditor.cpp:539 src/kgreditor.cpp:557 src/kgreditor.cpp:770
 #: src/kgreditor.cpp:781
-#, fuzzy, kde-format
-#| msgid "Save Game Info"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Game Info"
 msgstr "Upisivanje podataka o igri"
@@ -9140,8 +9305,7 @@ msgstr "Prefiks imena fajla „%1“ već je u upotrebi."
 
 # >> @title:menu
 #: src/kgreditor.cpp:641
-#, fuzzy, kde-format
-#| msgid "Editor"
+#, kde-format
 msgctxt "@title:window"
 msgid "Editor"
 msgstr "Uređivač"
@@ -9152,22 +9316,19 @@ msgid "You have not saved your work. Do you want to save it now?"
 msgstr "Niste sačuvali svoj rad. Želite li da ga sačuvate sada?"
 
 #: src/kgreditor.cpp:644
-#, fuzzy, kde-format
-#| msgid "&Save"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Save"
 msgstr "&Sačuvaj"
 
 #: src/kgreditor.cpp:645
-#, fuzzy, kde-format
-#| msgid "&Do Not Save"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Do Not Save"
 msgstr "&Ne upisuj"
 
 #: src/kgreditor.cpp:646
-#, fuzzy, kde-format
-#| msgid "&Go on editing"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Go on Editing"
 msgstr "&Nastavi sa uređivanjem"
@@ -9201,8 +9362,7 @@ msgstr "Kliknite bilo gde da zaigrate"
 
 # >> @title:window
 #: src/kgrgame.cpp:190
-#, fuzzy, kde-format
-#| msgid "Play Next Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Play Next Level"
 msgstr "Prelazak na sledeći nivo"
@@ -9220,8 +9380,7 @@ msgstr "Neprimerena radnja; ne uređujete nivo."
 
 # >> @title:window
 #: src/kgrgame.cpp:420
-#, fuzzy, kde-format
-#| msgid "No Sound"
+#, kde-format
 msgctxt "@title:window"
 msgid "No Sound"
 msgstr "Nema zvuka"
@@ -9241,8 +9400,7 @@ msgstr ""
 "verzije biblioteka OpenAL i libsndfile."
 
 #: src/kgrgame.cpp:625 src/kgrgame.cpp:782
-#, fuzzy, kde-format
-#| msgid "Game Paused"
+#, kde-format
 msgctxt "@title:window"
 msgid "Game Paused"
 msgstr "Igra je pauzirana"
@@ -9259,8 +9417,7 @@ msgstr ""
 
 # >> @title:window
 #: src/kgrgame.cpp:670 src/kgrgame.cpp:676
-#, fuzzy, kde-format
-#| msgid "Replay Last Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Replay Last Level"
 msgstr "Ponavljanje poslednjeg nivoa"
@@ -9283,33 +9440,26 @@ msgstr ""
 "pobedivši ili izgubivši, da biste mogli da upotrebite ovu radnju."
 
 #: src/kgrgame.cpp:695
-#, fuzzy, kde-format
-#| msgid "Quick Start"
+#, kde-format
 msgctxt "@title:window"
 msgid "Quick Start"
 msgstr "Brzi početak"
 
 # ? Нешто боље?
 #: src/kgrgame.cpp:712
-#, fuzzy, kde-format
-#| msgctxt "Button text: start playing a game"
-#| msgid "&PLAY"
+#, kde-format
 msgctxt "@action:button start playing a game"
 msgid "&PLAY"
 msgstr "&ZAIGRAJ"
 
 #: src/kgrgame.cpp:713
-#, fuzzy, kde-format
-#| msgid "Start playing this level"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start playing this level"
 msgstr "Započni igranje ovog nivoa"
 
 #: src/kgrgame.cpp:715
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set up to start playing the game and level being shown, as soon as you "
-#| "click, move the mouse or press a key"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Set up to start playing the game and level being shown, as soon as you "
@@ -9319,38 +9469,31 @@ msgstr ""
 "miš ili pritisnete taster."
 
 #: src/kgrgame.cpp:719
-#, fuzzy, kde-format
-#| msgid "&Quit"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Quit"
 msgstr "&Napusti"
 
 #: src/kgrgame.cpp:720
-#, fuzzy, kde-format
-#| msgid "Close KGoldrunner"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close KGoldrunner"
 msgstr "Napušta K‑zlatobojac"
 
 #: src/kgrgame.cpp:723
-#, fuzzy, kde-format
-#| msgid "&New Game..."
+#, kde-format
 msgctxt "@action:button"
 msgid "&New Game…"
-msgstr "&Nova igra..."
+msgstr "&Nova igra…"
 
 #: src/kgrgame.cpp:724
-#, fuzzy, kde-format
-#| msgid "Start a different game or level"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start a different game or level"
 msgstr "Započni drugu igru ili nivo"
 
 #: src/kgrgame.cpp:726
-#, fuzzy, kde-format
-#| msgid ""
-#| "Use the Select Game dialog box to choose a different game or level and "
-#| "start playing it"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Use the Select Game dialog box to choose a different game or level and start "
@@ -9359,26 +9502,21 @@ msgstr ""
 "Upotrebite dijalog izbora igre za prelazak na igranje druge igre ili nivoa."
 
 #: src/kgrgame.cpp:730
-#, fuzzy, kde-format
-#| msgid "&Use Menu"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Use Menu"
 msgstr "&Meni"
 
 # switch-rule: t-action > t-action-ui
 #: src/kgrgame.cpp:732
-#, fuzzy, kde-format
-#| msgid "Use the menus to choose other actions"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Use the menus to choose other actions"
 msgstr "Meniji za izbor drugih radnji."
 
 # switch-rule: t-action > t-action-ui
 #: src/kgrgame.cpp:734
-#, fuzzy, kde-format
-#| msgid ""
-#| "Before playing, use the menus to choose other actions, such as loading a "
-#| "saved game or changing the theme"
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Before playing, use the menus to choose other actions, such as loading a "
@@ -9398,8 +9536,7 @@ msgstr ""
 
 # >> @title:window
 #: src/kgrgame.cpp:836
-#, fuzzy, kde-format
-#| msgid "Show A Solution"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show a Solution"
 msgstr "Prikaz rešenja"
@@ -9415,8 +9552,7 @@ msgstr ""
 
 # >> @title:window
 #: src/kgrgame.cpp:848
-#, fuzzy, kde-format
-#| msgid "Replay Any Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Replay Any Level"
 msgstr "Ponavljanje bilo kog nivoa"
@@ -9437,22 +9573,19 @@ msgstr ""
 
 # >> @title:window
 #: src/kgrgame.cpp:1065
-#, fuzzy, kde-format
-#| msgid "Game Over"
+#, kde-format
 msgctxt "@title:window"
 msgid "Game Over"
 msgstr "Kraj igre"
 
 #: src/kgrgame.cpp:1066
-#, fuzzy, kde-format
-#| msgid "&Try Again"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Try Again"
 msgstr "&Pokušaj ponovo"
 
 #: src/kgrgame.cpp:1067
-#, fuzzy, kde-format
-#| msgid "&Finish"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Finish"
 msgstr "&Završi"
@@ -9466,22 +9599,19 @@ msgstr ""
 "<b>ČESTITAMO!</b><p>Završili ste poslednji nivo u igri „<b>%1</b>“!</p>"
 
 #: src/kgrgame.cpp:1298
-#, fuzzy, kde-format
-#| msgid "Hint"
+#, kde-format
 msgctxt "@title:window"
 msgid "Hint"
 msgstr "Savet"
 
 #: src/kgrgame.cpp:1304
-#, fuzzy, kde-format
-#| msgid "&OK"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Ok"
 msgstr "&U redu"
 
 #: src/kgrgame.cpp:1305
-#, fuzzy, kde-format
-#| msgid "&Show A Solution"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Show a Solution"
 msgstr "&Prikaži rešenje"
@@ -9503,27 +9633,24 @@ msgid ""
 "switch automatically to keyboard control? Pointer control is easier to use "
 "in the long term - like riding a bike rather than walking!"
 msgstr ""
-"Pritisnuli ste dugme koje može služiti za upravljanje junakom. Želite li da "
+"Pritisnuli ste taster koji može služiti za upravljanje junakom. Želite li da "
 "se automatski prebacite na upravljanje tastaturom? Upravljanje pokazivačem "
 "je lakše na duge staze — kao vožnja bicikla umesto hodanja!"
 
 #: src/kgrgame.cpp:1421
-#, fuzzy, kde-format
-#| msgid "Switch to Keyboard Mode"
+#, kde-format
 msgctxt "@title:window"
 msgid "Switch to Keyboard Mode"
 msgstr "Prebaci na režim tastature"
 
 #: src/kgrgame.cpp:1422
-#, fuzzy, kde-format
-#| msgid "Switch to &Keyboard Mode"
+#, kde-format
 msgctxt "@action:button"
 msgid "Switch to &Keyboard Mode"
 msgstr "Prebaci na režim &tastature"
 
 #: src/kgrgame.cpp:1423
-#, fuzzy, kde-format
-#| msgid "Stay in &Mouse Mode"
+#, kde-format
 msgctxt "@action:button"
 msgid "Stay in &Mouse Mode"
 msgstr "Ostani u režimu &miša"
@@ -9536,8 +9663,7 @@ msgstr "Režim tastature"
 # >> @title:window
 #: src/kgrgame.cpp:1458 src/kgrgame.cpp:1484 src/kgrgame.cpp:1494
 #: src/kgrgame.cpp:1513 src/kgrgame.cpp:1519
-#, fuzzy, kde-format
-#| msgid "Save Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Game"
 msgstr "Upisivanje pozicije"
@@ -9572,8 +9698,7 @@ msgstr "Greška: Ne mogu da sačuvam poziciju."
 
 # >> @title:window
 #: src/kgrgame.cpp:1532 src/kgrgame.cpp:1538 src/kgrgame.cpp:1576
-#, fuzzy, kde-format
-#| msgid "Load Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Game"
 msgstr "Učitavanje pozicije"
@@ -9596,8 +9721,7 @@ msgstr "nepoznat"
 
 # >> @title:window
 #: src/kgrgame.cpp:1653 src/kgrgame.cpp:1692
-#, fuzzy, kde-format
-#| msgid "Check for High Score"
+#, kde-format
 msgctxt "@title:window"
 msgid "Check for High Score"
 msgstr "Provera najrezultata"
@@ -9615,8 +9739,7 @@ msgstr ""
 
 # >> @title:window
 #: src/kgrgame.cpp:1724 src/kgrgame.cpp:1811
-#, fuzzy, kde-format
-#| msgid "Save High Score"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save High Score"
 msgstr "Upisivanje najrezultata"
@@ -9628,8 +9751,7 @@ msgstr "Greška: Ne mogu da sačuvam najrezultate."
 
 # >> @title:window
 #: src/kgrgame.cpp:1824 src/kgrgame.cpp:1847 src/kgrgame.cpp:1856
-#, fuzzy, kde-format
-#| msgid "Show High Scores"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show High Scores"
 msgstr "Prikaz najrezultata"
@@ -9655,59 +9777,49 @@ msgstr ""
 
 # >> @title:column
 #: src/kgrgame.cpp:1882
-#, fuzzy, kde-format
-#| msgctxt "1, 2, 3 etc."
-#| msgid "Rank"
+#, kde-format
 msgctxt "@title:column 1, 2, 3 etc."
 msgid "Rank"
 msgstr "mesto"
 
 # >> @title:column
 #: src/kgrgame.cpp:1883
-#, fuzzy, kde-format
-#| msgctxt "Person"
-#| msgid "Name"
+#, kde-format
 msgctxt "@title:column person"
 msgid "Name"
 msgstr "ime"
 
 # >> @title:column
 #: src/kgrgame.cpp:1884
-#, fuzzy, kde-format
-#| msgctxt "Game level reached"
-#| msgid "Level"
+#, kde-format
 msgctxt "@title:column game level reached"
 msgid "Level"
 msgstr "nivo"
 
 # >> @title:column
 #: src/kgrgame.cpp:1885
-#, fuzzy, kde-format
-#| msgid "Score"
+#, kde-format
 msgctxt "@title:column"
 msgid "Score"
 msgstr "rezultat"
 
 # >> @title:column
 #: src/kgrgame.cpp:1886
-#, fuzzy, kde-format
-#| msgid "Date"
+#, kde-format
 msgctxt "@title:column"
 msgid "Date"
 msgstr "datum"
 
 # >> @title:window
 #: src/kgrgame.cpp:1890
-#, fuzzy, kde-format
-#| msgid "High Scores"
+#, kde-format
 msgctxt "@title:window"
 msgid "High Scores"
 msgstr "Najrezultati"
 
 # >> @title:window
 #: src/kgrgame.cpp:2016 src/kgrgame.cpp:2022 src/kgrgame.cpp:2026
-#, fuzzy, kde-format
-#| msgid "Load Game Info"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Game Info"
 msgstr "Učitavanje podataka o igri"
@@ -9724,8 +9836,7 @@ msgstr "Dosegnut kraj fajla ‘%1’ pre nego što je nađen kraj podataka o igr
 
 # >> @title:window
 #: src/kgrgame.cpp:2051 src/kgrgame.cpp:2056
-#, fuzzy, kde-format
-#| msgid "Save A Solution"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save a Solution"
 msgstr "Upisivanje rešenja"
@@ -9737,8 +9848,7 @@ msgstr "Vaše rešenje nivoa %1 sačuvano je u fajl %2."
 
 # >> @title:window
 #: src/kgrgameio.cpp:163 src/kgrgameio.cpp:168 src/kgrgameio.cpp:172
-#, fuzzy, kde-format
-#| msgid "Read Level Data"
+#, kde-format
 msgctxt "@title:window"
 msgid "Read Level Data"
 msgstr "Učitavanje podataka nivoa"
@@ -9755,8 +9865,7 @@ msgstr "Dosegnut kraj fajla ‘%1’ a da nisu nađeni podaci o nivou."
 
 # >> @title:window
 #: src/kgrgameio.cpp:381 src/kgrgameio.cpp:388
-#, fuzzy, kde-format
-#| msgid "Rename File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rename File"
 msgstr "Preimenovanje fajla"
@@ -9772,8 +9881,7 @@ msgid "Cannot rename file '%1' to '%2'."
 msgstr "Ne mogu da preimenujem fajl „%1“ u „%2“."
 
 #: src/kgrrenderer.cpp:100
-#, fuzzy, kde-format
-#| msgid "Theme Selector"
+#, kde-format
 msgctxt "@title:window"
 msgid "Theme Selector"
 msgstr "Birač tema"
@@ -9793,8 +9901,7 @@ msgstr "rezultat: %1"
 # >> @title:window
 #: src/kgrselector.cpp:72 src/kgrselector.cpp:78 src/kgrselector.cpp:98
 #: src/kgrselector.cpp:501
-#, fuzzy, kde-format
-#| msgid "Select Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Level"
 msgstr "Izbor nivoa"
@@ -9821,8 +9928,7 @@ msgstr "Nema nivoa %1 u „%2“, pa ga ne možete ni igrati ni uređivati."
 
 # >> @title:window
 #: src/kgrselector.cpp:121 src/kgrselector.cpp:177
-#, fuzzy, kde-format
-#| msgid "Select Game"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Game"
 msgstr "Izbor igre"
@@ -9834,32 +9940,28 @@ msgstr "<html><b>Izaberite igru:</b></html>"
 
 # >> @title:column
 #: src/kgrselector.cpp:143
-#, fuzzy, kde-format
-#| msgid "Name of Game"
+#, kde-format
 msgctxt "@title:column"
 msgid "Name of Game"
 msgstr "ime igre"
 
 # >> @title:column
 #: src/kgrselector.cpp:144
-#, fuzzy, kde-format
-#| msgid "Rules"
+#, kde-format
 msgctxt "@title:column"
 msgid "Rules"
 msgstr "pravila"
 
 # >> @title:column
 #: src/kgrselector.cpp:145
-#, fuzzy, kde-format
-#| msgid "Levels"
+#, kde-format
 msgctxt "@title:column"
 msgid "Levels"
 msgstr "nivoa"
 
 # >> @title:column
 #: src/kgrselector.cpp:146
-#, fuzzy, kde-format
-#| msgid "Skill"
+#, kde-format
 msgctxt "@title:column"
 msgid "Skill"
 msgstr "veština"
@@ -9871,8 +9973,7 @@ msgstr "Nivo 1 odabrane igre:"
 
 # >> @title:window
 #: src/kgrselector.cpp:183
-#, fuzzy, kde-format
-#| msgid "Select Game/Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Game/Level"
 msgstr "Izbor igre/nivoa"
@@ -9883,92 +9984,80 @@ msgid "Please select a level:"
 msgstr "Izaberite nivo:"
 
 #: src/kgrselector.cpp:204
-#, fuzzy, kde-format
-#| msgid "Level number:"
+#, kde-format
 msgctxt "@label:spinbox"
 msgid "Level number:"
 msgstr "Broj nivoa:"
 
 #: src/kgrselector.cpp:210
-#, fuzzy, kde-format
-#| msgid "Edit Level Name && Hint"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit Level Name o&r Hint"
-msgstr "Uredi ime i savet nivoa"
+msgstr "Uredi ime &ili savet nivoa"
 
 #: src/kgrselector.cpp:245
-#, fuzzy, kde-format
-#| msgid "Start Game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Game"
 msgstr "Pokreni igru"
 
 #: src/kgrselector.cpp:254
-#, fuzzy, kde-format
-#| msgid "Play Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "Play Level"
 msgstr "Igraj nivo"
 
 #: src/kgrselector.cpp:257
-#, fuzzy, kde-format
-#| msgid "Replay Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "Replay Level"
 msgstr "Ponovi nivo"
 
 #: src/kgrselector.cpp:260
-#, fuzzy, kde-format
-#| msgid "Show Solution"
+#, kde-format
 msgctxt "@action:button"
 msgid "Show Solution"
 msgstr "Prikaži rešenje"
 
 # >> @title:window
 #: src/kgrselector.cpp:263
-#, fuzzy, kde-format
-#| msgid "Save A Solution"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save a Solution"
-msgstr "Upisivanje rešenja"
+msgstr "Sačuvaj rešenje"
 
 # >> @title:window
 #: src/kgrselector.cpp:266
-#, fuzzy, kde-format
-#| msgid "Edit Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit Level"
-msgstr "Uređivanje nivoa"
+msgstr "Uredi nivo"
 
 #: src/kgrselector.cpp:272
-#, fuzzy, kde-format
-#| msgid "Save Change"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save Change"
 msgstr "Sačuvaj izmene"
 
 # >> @title:window
 #: src/kgrselector.cpp:275
-#, fuzzy, kde-format
-#| msgid "Delete Level"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Level"
-msgstr "Brisanje nivoa"
+msgstr "Obriši nivo"
 
 #: src/kgrselector.cpp:278
-#, fuzzy, kde-format
-#| msgid "Move To..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Move To…"
-msgstr "Premesti na..."
+msgstr "Premesti na…"
 
 # >> @title:window
 #: src/kgrselector.cpp:281
-#, fuzzy, kde-format
-#| msgid "Edit Game Info"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit Game Info"
-msgstr "Uređivanje podataka o igri"
+msgstr "Uredi podatke o igri"
 
 #: src/kgrselector.cpp:357
 #, kde-format
@@ -10138,9 +10227,9 @@ msgstr ""
 "\n"
 "\n"
 "Da biste premestili (drugačije numerisali) nivo, prvo ga izaberite pomoću "
-"„Uredi nivo...“, a zatim upotrebite „Pomeranje nivoa“ da mu dodelite novi "
-"broj, ili čak različitu igru. Ostali nivoi biće automatski ponovo numerisani "
-"po potrebi. Nivoe možete premeštati samo unutar sopstvenih igara."
+"„Uredi nivo…“, a zatim upotrebite „Pomeri nivo…“ da mu dodelite novi broj, "
+"ili čak različitu igru. Ostali nivoi biće automatski ponovo numerisani po "
+"potrebi. Nivoe možete premeštati samo unutar sopstvenih igara."
 
 #: src/kgrselector.cpp:571
 #, kde-format
@@ -10182,17 +10271,15 @@ msgstr ""
 # rewrite-msgid: /Help://
 # >> @title:window
 #: src/kgrselector.cpp:589
-#, fuzzy, kde-format
-#| msgid "Help: Select Game & Level"
+#, kde-format
 msgctxt "@title:window"
 msgid "Help: Select Game & Level"
 msgstr "Izbor igre i nivoa"
 
 #: src/main.cpp:49
-#, fuzzy, kde-format
-#| msgid "KGoldrunner is a game of action and puzzle solving"
+#, kde-format
 msgid "A game of action and puzzle solving"
-msgstr "K‑zlatobojac je igra akcije i rešavanja zagonetki"
+msgstr "Igra akcije i rešavanja zagonetki"
 
 #: src/main.cpp:51
 #, kde-format
@@ -10282,49 +10369,3 @@ msgstr ""
 #, kde-format
 msgid "Artwork for the Treasure of Egypt theme"
 msgstr "Grafika za temu „Blago Egipta“"
-
-#~ msgid "&Save Game..."
-#~ msgstr "&Sačuvaj poziciju..."
-
-#~ msgid "Save A Solution..."
-#~ msgstr "Sačuvaj rešenje..."
-
-#~ msgid "Kill Hero."
-#~ msgstr "Ubij junaka"
-
-#~ msgid "&Edit Level..."
-#~ msgstr "&Uredi nivo..."
-
-#~ msgid "Edit level..."
-#~ msgstr "Uredi nivo..."
-
-#~ msgid "&Move Level..."
-#~ msgstr "&Pomeri nivo..."
-
-#~ msgid "Move level..."
-#~ msgstr "Pomeri nivo"
-
-#~ msgid "&Delete Level..."
-#~ msgstr "&Obriši nivo..."
-
-#~ msgid "Delete level..."
-#~ msgstr "Obriši nivo"
-
-#~ msgid "Create &Game..."
-#~ msgstr "Napravi i&gru..."
-
-#~ msgid "Create game..."
-#~ msgstr "Napravi igru"
-
-#~ msgid "Edit Game &Info..."
-#~ msgstr "Izmeni &podatke o igri..."
-
-#~ msgid "Click Key To Move."
-#~ msgstr "Klik tasterom za kretanje"
-
-#~ msgid "Hold Key To Move."
-#~ msgstr "Držanje tastera za kretanje"
-
-# >> @title:window
-#~ msgid "Save High Score"
-#~ msgstr "Upisivanje najrezultata"
