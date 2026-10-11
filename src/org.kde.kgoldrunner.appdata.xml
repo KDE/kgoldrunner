@@ -78,8 +78,8 @@
   <summary xml:lang="sl">Iščite zlato, izmikajte se sovražnikom in rešujte uganke</summary>
   <summary xml:lang="sr">Хватајте злато, избегавајте непријатеље и решавајте загонетке</summary>
   <summary xml:lang="sr-Latn">Hvatajte zlato, izbegavajte neprijatelje i rešavajte zagonetke</summary>
-  <summary xml:lang="sr-ijekavian">Хватајте злато, избегавајте непријатеље и решавајте загонетке</summary>
-  <summary xml:lang="sr-ijekavianlatin">Hvatajte zlato, izbegavajte neprijatelje i rešavajte zagonetke</summary>
+  <summary xml:lang="sr-ijekavian">Хватајте злато, избјегавајте непријатеље и рјешавајте загонетке</summary>
+  <summary xml:lang="sr-ijekavianlatin">Hvatajte zlato, izbjegavajte neprijatelje i rješavajte zagonetke</summary>
   <summary xml:lang="sv">Leta guld, undvik fiender och lös problem</summary>
   <summary xml:lang="tr">Altın Avla, Düşmanlarını Atlat ve Bulmacaları Çöz</summary>
   <summary xml:lang="uk">Шукайте золото, уникайте ворогів і розгадуйте загадки</summary>
@@ -118,10 +118,10 @@
     <p xml:lang="sa">केगोल्डरनरः एकः एक्शन्-क्रीडा अस्ति यत्र नायकः चक्रव्यूहं धावति, सोपानम् आरोहति, छिद्राणि खनति, शत्रून् चकमायति च यत् सर्वाणि सुवर्ण-खण्डानि संग्रहीतुं अग्रिम-स्तरं प्रति पलायितुं च शक्नोति तव शत्रवः अपि सुवर्णस्य पश्चात् सन्ति। इतः अपि दुर्बलतरं, ते भवतः पश्चात् सन्ति!.</p>
     <p xml:lang="sk">KGoldrunner je akčná hra, kde hrdina beží cez bludisko, chodí po schodoch, kope diery a vyhýba sa nepriateľom, aby nazbieral všetky zlat nugety a prešiel do ďalšej úrovne. Vaši nepriatelia idú tiež po zlate. Čo je horšie, idú aj po tebe!</p>
     <p xml:lang="sl">KGoldrunner je akcijska igra, v kateri junak teče skozi labirint, pleza po lestvah, koplje luknje in se izmika sovražnikom, pri tem pa poskuša pobrati vse zlate kepe in pobegniti v naslednjo stopnjo. Tudi vaši nasprotniki želijo zlato. A še huje je to, da vam strežejo po življenju!.</p>
-    <p xml:lang="sr">К‑златобојац је акциона игра у којој јунак трчи кроз лавиринт, пење се уз степенице, копа рупе и избегава непријатеље како био се докопао свих златних груменова и побегао на наредни ниво. И ваши непријатељи јуре за златом, и, још горе, за вама!</p>
-    <p xml:lang="sr-Latn">K‑zlatobojac je akciona igra u kojoj junak trči kroz lavirint, penje se uz stepenice, kopa rupe i izbegava neprijatelje kako bio se dokopao svih zlatnih grumenova i pobegao na naredni nivo. I vaši neprijatelji jure za zlatom, i, još gore, za vama!</p>
-    <p xml:lang="sr-ijekavian">К‑златобојац је акциона игра у којој јунак трчи кроз лавиринт, пење се уз степенице, копа рупе и избегава непријатеље како био се докопао свих златних груменова и побегао на наредни ниво. И ваши непријатељи јуре за златом, и, још горе, за вама!</p>
-    <p xml:lang="sr-ijekavianlatin">K‑zlatobojac je akciona igra u kojoj junak trči kroz lavirint, penje se uz stepenice, kopa rupe i izbegava neprijatelje kako bio se dokopao svih zlatnih grumenova i pobegao na naredni nivo. I vaši neprijatelji jure za zlatom, i, još gore, za vama!</p>
+    <p xml:lang="sr">К‑златобојац је акциона игра у којој јунак трчи кроз лавиринт, пење се уз степенице, копа рупе и избегава непријатеље како би се докопао свих златних груменова и побегао на наредни ниво. И ваши непријатељи јуре за златом, и, још горе, за вама!</p>
+    <p xml:lang="sr-Latn">K‑zlatobojac je akciona igra u kojoj junak trči kroz lavirint, penje se uz stepenice, kopa rupe i izbegava neprijatelje kako bi se dokopao svih zlatnih grumenova i pobegao na naredni nivo. I vaši neprijatelji jure za zlatom, i, još gore, za vama!</p>
+    <p xml:lang="sr-ijekavian">К‑златобојац је акциона игра у којој јунак трчи кроз лавиринт, пење се уз степенице, копа рупе и избјегава непријатеље како би се докопао свих златних груменова и побјегао на наредни ниво. И ваши непријатељи јуре за златом, и, још горе, за вама!</p>
+    <p xml:lang="sr-ijekavianlatin">K‑zlatobojac je akciona igra u kojoj junak trči kroz lavirint, penje se uz stepenice, kopa rupe i izbjegava neprijatelje kako bi se dokopao svih zlatnih grumenova i pobjegao na naredni nivo. I vaši neprijatelji jure za zlatom, i, još gore, za vama!</p>
     <p xml:lang="sv">Kgoldrunner är ett äventyrsspel där hjälten springer genom en labyrint, klättrar på stegar, gräver hål och undviker fiender för att samla in alla guldklimpar och fly till nästa nivå. Fienderna är också ute efter guldet. Vad värre är, de är också är ute efter dig!</p>
     <p xml:lang="tr">K Altın Avı, kahramanımızın labirentte dolaştığı, tüm altın külçelerini toplamak ve bir sonraki düzeye çıkmak için merdiven tırmandığı, delik açtığı ve düşman avı yaptığı bir kaçış aksiyon oyunudur. Düşmanların da altının peşinde. Daha da kötüsü, senin peşindeler!</p>
     <p xml:lang="uk">«Золотошукач» — рухлива гра, де герой подорожує лабіринтом, видирається на стіни, копає ями та втікає від ворогів, збираючи при цьому золоті самородки і переходячи з рівня на рівень. Окрім вашого героя, за золотом полюють і вороги. Вони також не проти звести вашого героя з цього світу!</p>
@@ -471,6 +471,10 @@
       <caption xml:lang="sa">KGoldrunner इति क्रीडन्</caption>
       <caption xml:lang="sk">Hranie KGoldrunner</caption>
       <caption xml:lang="sl">Igra KGoldrunner</caption>
+      <caption xml:lang="sr">Играње К‑златобојца</caption>
+      <caption xml:lang="sr-Latn">Igranje K‑zlatobojca</caption>
+      <caption xml:lang="sr-ijekavian">Играње К‑златобојца</caption>
+      <caption xml:lang="sr-ijekavianlatin">Igranje K‑zlatobojca</caption>
       <caption xml:lang="sv">Spela Kgoldrunner</caption>
       <caption xml:lang="tr">K Altın Avı oynarken</caption>
       <caption xml:lang="uk">Гра у Золотошукача</caption>
