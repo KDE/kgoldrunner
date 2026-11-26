@@ -274,11 +274,8 @@ void KGrLevelPlayer::startDigging (Direction diggingDirection)
 
 void KGrLevelPlayer::processDugBricks (const int scaledTime)
 {
-    DugBrick * dugBrick;
-    QMutableListIterator<DugBrick *> iterator (dugBricks);
-
-    while (iterator.hasNext()) {
-        dugBrick = iterator.next();
+    for (auto iterator = dugBricks.begin(); iterator != dugBricks.end();) {
+        DugBrick * dugBrick = *iterator;
         dugBrick->cycleTimeLeft -= scaledTime;
         if (dugBrick->cycleTimeLeft < scaledTime) {
             dugBrick->cycleTimeLeft += digCycleTime;
@@ -297,9 +294,11 @@ void KGrLevelPlayer::processDugBricks (const int scaledTime)
                 // Dispose of the dug brick and remove it from the list.
                 Q_EMIT deleteSprite (dugBrick->id);
                 delete dugBrick;
-                iterator.remove();
+                iterator = dugBricks.erase(iterator);
+                continue;
             }
         }
+        ++iterator;
     }
 }
 
